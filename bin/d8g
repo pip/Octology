@@ -1,0 +1,24 @@
+#!/usr/bin/perl
+# 73TKJoTg:ptg crE8d by PipStuart <Pip@CPAN.Org> to stamp e-mails for my dad (Gerry - Gtime) and I (Pip - d8ime). E85M6q1A:d8g (renamed to, for d8 zone upd8);
+use strict;use warnings;use utf8;use v5.10;use Octology::d8;my $parm = join(' ',@ARGV);my $d8im = Octology::d8->new(); # doesn't really handle any paramz yet
+use Time::DaysInMonth;my $VERSION='0.0';my $d8VS='EBQLIw5V';
+use Time::DayOfWeek; # below would be to offset from UTC to CST/CDT Wisconsin time -6/-5 (was -= '8000' for old PST/PDT California time)
+if(exists($ENV{'TZ'}) && $ENV{'TZ'} eq 'UTC'){$d8im -= '6000';$d8im += '1000' if(exists($ENV{'DST'}) && $ENV{'DST'});}
+my @fldz =(      0,$d8im->M(),$d8im->D(),$d8im->Y(),$d8im->h()+1,$d8im->m());
+if($fldz[4] <    0 ){$fldz[4] %= 24;$fldz[2]--; # this should only happen if I've subtracted hours from UTC above
+  unless(  $fldz[2]){$fldz[1]--;
+    unless($fldz[1]){$fldz[1]  = 12;$fldz[3]--;}
+    $fldz[2]  = Time::DaysInMonth::days_in($fldz[3], $fldz[1]);}}
+if(  $fldz[4] > 23){$fldz[4] %= 24;$fldz[2]++;
+  if($fldz[2] > Time::DaysInMonth::days_in($fldz[3], $fldz[1])){$fldz[2] = 1;$fldz[1]++;if($fldz[1] > 12){$fldz[1] = 1;$fldz[3]++;}}}
+my @mnth = Time::DayOfWeek::MonthNames();                           $fldz[4] = sprintf("%02d", $fldz[4]);
+$fldz[0] = Time::DayOfWeek::DayOfWeek($fldz[3], $fldz[1], $fldz[2]);$fldz[5] = sprintf("%02d", $fldz[5]);$fldz[1] = $mnth[$fldz[1] - 1];
+$_  = 'echo -n "' . "$fldz[0], $fldz[1] $fldz[2], $fldz[3], $fldz[4]$fldz[5] Gtime / " . sprintf("%02d",($fldz[4]+23)%24) .
+      "$fldz[5] Ptime $d8im" . '"';#. '|xclip -i';
+$_ .= '|xclip -f -si -se p -l 1';                          # specify which  X selection to use: "primary" to use XA_PRIMARY (default),
+#$_.= '|xclip -f -si -se c -l 1'; # -sel [psc]             #                                  "secondary" for    XA_SECONDARY  or
+#$_.= '|xclip -filter -silent -selection primary -loop 1'; #                                  "clipboard" for    XA_CLIPBOARD
+#print "$_\n";
+system($_);
+#print "Thursday, March 29, 2007, 1838 Gtime / 1738 Ptime 73TKHcMG\n"; # to clip
+# It looks like vim could add it to both the primary (mouse-button driven) && regular Ctrl-XCV keyboard clipboards simultaneously by macroing: :r!d8g^M"+YV

@@ -1,0 +1,2 @@
+#!/usr/bin/perl
+use strict;use warnings;use utf8;use Octology::a8;my $a8ob=Octology::a8->new(@ARGV);$a8ob->a8colr();
