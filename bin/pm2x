@@ -1,0 +1,80 @@
+#!/usr/bin/perl
+# G8VMBZ8G:pm2x crE8d by PipStuart <Pip@CPAN.Org> to no longer pb1r Print Base10 Rgb for both Dfalt 8pal8 && 256colrz, now pm2x Pal8 Map 2 Xpanded colrz;
+# 2du:add -help,mk optional modez where you find the closest set to a particular index or RGB,
+#   mk mode 2 gNr8 best next 3 8pal8z ignorng 0..15 as start of 1st 1 all darkest then 2nd midl and last fully brightest,
+#   might need to have w8ing system or search among potentialz to get both setz of increasing brightness && each index close enough to the originalz,
+#   consider making 2nd 2pal8 (1st gNr8d 1) nstd half darkest && half brightest to best contrast similarly to the original 2pal8 but where all can be Bold,
+#   or gNr8 only 16 or 8 of it be darkest,add optn 2 read specified .pal8 file to load $pb10{B.key} with altered valuez (wich might not be active,can't tell),
+#   add optn to prnt out raD8ing blox of closest matchez going Up 1st clockwise R D L then UL UR DR DL && beyond top8 maybe further ringz start UL str8 around,
+#   consider renaming to better reflect purpose && capabilitiez,add new list sorting RGB channel dominance to complement distance listz,
+#   figure out why -size keeps shrinking for multiple -cH;
+use strict;use warnings;use utf8;use v5.10;use Octology::a8;use Color::Similarity::RGB qw(distance);my $d8vs='H5PMCZfs';
+my $tmsz=1;my $cndx= undef;my %pb10;my %pcdm;my %mb10;my @brit;my %rcdm; # Pal8Base10 && Pal8ColrDistMap && MapdBase10 && colrBRIghTness && ResultColrDistMapz
+my $pkyz=$cmap{'8pal8'};$pkyz=~ s/\s+//g;for my $pkey  (split(//,$pkyz)){my $pb6r=$pmap{$pkey};
+  my($pred,$pgrn,$pblu)= map { $sb10{$_} * 4 } split(//,$pb6r)  ;$pb10{"o$pkey"}=[$pred,$pgrn,$pblu];} # rEmMbr thEs Orig b64 RGBz wer handmade from clrz.txt
+for my $p2rn (0..255){my $p2rv=$x256[$p2rn];my($pred,$pgrn,$pblu)=(hex(substr($p2rv,0,2)),hex(substr($p2rv,2,2)),hex(substr($p2rv,4,2)));
+  my $pkey= sprintf("%03d",$p2rn);$brit[$p2rn]=$pred+$pgrn+$pblu;$pb10{  $pkey }=[$pred,$pgrn,$pblu];} # aftr calld,%pb10 wil hold all the anon RGB arrayz4l8r
+for my $pndx (0.. 15     ){$pb10{substr($cmap{'ANSI'},$pndx,1 )}=$pb10{sprintf("%03d",      $pndx )};} # also load up $pb10{ plain b64 8pal8 colr keyz }
+for my $p8ck (keys(%p622)){$pb10{                     $p8ck    }=$pb10{sprintf("%03d",$p622{$p8ck})};} #   from %p622 && mv 2pal8 to 0..15 in ANSI ordr
+sub ccd2{my $kndx= shift(@_);my $mlsz= shift(@_) || $tmsz;my @snls=(16..255);my @mrls=(); # colrKeyiNDeX,MatchListSiZe,SearchiNdexLiSt,MatchResultLiSt
+# for my $xndx (16..255){ my $foun=0;for(0..63){if($xndx == $kndx || (exists($p622{$sb64[$_]}) && $p622{$sb64[$_]} == $xndx)){$foun=1;last;}}
+#   push(@snls,$xndx) unless($foun);} # default omit basic 8pal8 && load up distancez in hash to sort keyz into @mrls
+  for my $sndx (@snls){ # define Calcul8ClosestColorDistance2() function which can be called l8r for whatever
+    my   $rdst= distance($pb10{sprintf("%03d",$kndx)},$pb10{sprintf("%03d",$sndx)});push(@{$rcdm{$kndx}{$rdst    }},$sndx);}
+  my  @dsks= sort { $a <=> $b } keys %{$rcdm{ $kndx }};        $mlsz=@dsks unless($mlsz); # passing in 0 size returns full results list
+                                                        for(0..$mlsz-1){   for my $wndx (@{$rcdm{$kndx}{$dsks[$_]}}){push(@mrls,$wndx);}} return(@mrls);}
+sub pm2x{my $flgz= join(' ',@_) || '';my $ddcf=0; # Did Do Closest Flag for when to prepend newline
+  if($flgz=~  /(^|\s)-?-?h(elp)?      (\s|$)/ix){print
+" pm2x  - Pal8 Map 2 eXpanded color gener8ion utility  d8vs:$d8vs Auth:$auth
+  h    - print this Help text and exit;  pm2x is based on sorted Color::Similarity::RGB->distance() results among xterm 256 colors
+  d    - Design8 Decimal results listed for any -cHX call (maybe should also l8r change parse from HX input to dec)
+  t    - check Tops among original 8pal8 mapping (ignoring .pal8 file actions) into remaining 192 to gener8 3 new layers from
+  n    - No spaces between results;  You can do `S ::R;pm2x c3F` to get Reverse to backgrounds.
+  sD   - Set Selection Size to D decimal number
+  cHX  - Calcul8 Closest Colors to HX HEX index;";return();}
+  if  ($flgz=~  /(^|\s)-?-?s=?\s*( \d+    )/ix){$tmsz=     $2 ;} # set Size param to TopMatchSiZe
+  if  ($flgz=~  /(^|\s)-?-?c=?\s*([\dA-F]+)/ix){$cndx= hex($2);} # set Closest index
+  if(!defined($cndx)){for my $kndx(16..length($pkyz)-1){my $dcou = 0; # skip 2pal8 16 base colrz
+      for my $p2rn(0..255){my $pkey= sprintf("%03d",$p2rn);
+        my   $rdst= distance($pb10{'o'.substr($pkyz,$kndx,1)},$pb10{$pkey});$pcdm{substr($pkyz,$kndx,1)}{$rdst}=$pkey;}
+      for my $dstk(sort { $a <=> $b } keys %{$pcdm{substr($pkyz,$kndx,1)}})  {print   S('#' . sprintf("%02X",$pcdm{substr($pkyz,$kndx,1)}{$dstk})) if($dcou);
+                                                                              print   S('#' . sprintf("%02X",$p622{substr($pkyz,$kndx,1)}))    unless($dcou);
+        my   $spds= sprintf("%32.32f",$dstk);$spds=sprintf("%36s","$spds");my $pcdn=$pcdm{substr($pkyz,$kndx,1)}{$dstk};
+             $pcdn=~ s/^0+//;$pcdn=0 unless(length($pcdn));
+        printf("%s : %-12s : %s $W: $C%3s ",       substr($pkyz,$kndx,1), $pl8n{substr($pkyz,$kndx,1)},$spds,$pcdn                               ) if($dcou);
+        printf("%s : %-12s : %s $W: $C%3s ",       substr($pkyz,$kndx,1), $pl8n{substr($pkyz,$kndx,1)},$spds,$p622{substr($pkyz,$kndx,1)} )    unless($dcou);
+        my   $p2rv=$x256[$p622{substr($pkyz,$kndx,1)}       ];
+             $p2rv=$x256[$pcdm{substr($pkyz,$kndx,1)}{$dstk}] if($dcou);
+        my($pred,$pgrn,$pblu)=(hex(substr($p2rv,0,2)),hex(substr($p2rv,2,2)),hex(substr($p2rv,4,2)));
+        printf("$R%s$G%s$B%s$z\n",$sb64[int($pred/4)],$sb64[int($pgrn/4)],$sb64[int($pblu/4)]);last if($tmsz=~  /^\d+$/ && ++$dcou >= $tmsz);}}}
+  while(defined($cndx) && 0 <= $cndx && $cndx <= 255){$ddcf=1; # build new distance value hash to sort 4 Closest  # by dflt,cull top 8pal8 indiCz from srchlist
+    if($flgz !~  /(^|\s)-?-?s=?\s*(\d+)/i){$tmsz=0;} # set Size param to TopMatchSiZe default 0 for full set, figure out why number of resultz is inconsistent
+    my @fnrl=             ccd2($cndx);my @fhrl;for(@fnrl){push(@fhrl,sprintf("%02X",$_));}
+                                      my @ffrl;for(@fnrl){push(@ffrl,sprintf("%03d",$_));}
+   #if($flgz =~  /(^|\s)-?-?d(\s|\n|$)/i ){print "@fnrl\n";} # print unformatted full Decimal index resultz (easy precolored && unformatted)
+    my $jnrl="@fnrl";for(8,16){$jnrl=~ s/((\d+\s+){$_})/$1 /g;} # add option to peek back at rcdm result distancez
+    if($flgz !~  /(^|\s)-?-?d(\s|\n|$)/i ){ # figure out why colors are skipping over
+       $jnrl=~  s/((\d+\s+){48})/$1\n/g;   $jnrl=~ s/                       (\d+)(\s+|\n|$)/\e\[1;38;5;$1m$1$2/gx; # try looping colors in?
+#     for   (0..$#fnrl                   ){$jnrl=~ s/(^|\s+|\e\[[\d;]+m)$fnrl[$_](\s+|\n|$)/$1\e\[01;38;5;$ffrl[$_]m$fnrl[$_]$2/;}
+      for   (0..$#fnrl                   ){$jnrl=~ s/(^|\s+|\e\[[\d;]+m)$fnrl[$_](\s+|\n|$)/$1$fhrl[$_]$2/;}}
+    else{$jnrl=~s/((\d+\s+){32})/$1\n/g;   $jnrl=~ s/                       (\d+)(\s+|\n|$)/\e\[1;38;5;$1m$1$2/gx;
+      for   (0..$#fnrl                   ){$jnrl=~ s/(^|\s+|\e\[[\d;]+m)$fnrl[$_](\s+|\n|$)/$1$ffrl[$_]$2/;} print "\n";}
+    if($flgz=~   /(^|\s)-?-?n(\s|\n|$)/i ){$jnrl=~ s/ +//g;} print "\n" if($ddcf);print $jnrl; # compact -No spacez flag (nEdz dif nwlnz && losing halfcolrz)
+       $flgz =~ s/(^|\s)-?-?c=?\s*[\dA-F]+//i;
+    if($flgz=~   /(^|\s)-?-?c=?\s*([\dA-F]+)/i){$cndx= hex($2);}else{$cndx= undef;}}
+  if  ($flgz=~   /(^|\s)-?-?t(\s|\n|$)/i ){ # check Topz
+    if(exists($ENV{'COLUMNS'}) && $ENV{'COLUMNS'} <= 80){ $tmsz=8;
+      for(16..63){my @fnrl=ccd2($p622{substr($pkyz,$_,1)});printf("\n%s%s:%03d: ",S(substr($pkyz,$_,1)),substr($pkyz,$_,1),$p622{substr($pkyz,$_,1)});
+        shift(@fnrl) if(substr($pkyz,$_,1)=~  /i/i);shift(@fnrl); # for some reason Ivory && iVORY both have wrong 1st results
+        for my $nndx (@fnrl[0..$tmsz]){if(defined($nndx)){ printf(     "%s%03d ", S('::BX'.sprintf("%02X",$nndx)),$nndx);}} say '' if($_==31||$_==47);}}
+    else{my @dnrl;my @bnrl;my %p226=(reverse(%p622),reverse(%p222)); # do wide stuff to compare each 2pal8 at a time  # nEd2XternalIz dRk&&brIt ndx rslt lstz
+      for( 0..63){my @fnrl;my $pkey=substr($pkyz,$_,1);my $pcxn;if($_ < 16){$pcxn=$p222{$pkey};}else{$pcxn=$p622{$pkey};} @fnrl=ccd2($pcxn);
+        shift(@fnrl) if($pkey=~  /i/i); # for some reason Ivory && iVORY both have wrong 1st results
+        shift(@fnrl) if(@fnrl && $fnrl[0] == $pcxn); # may need to srch 4 same deeper?
+        for my $nndx (0..$#fnrl){next unless(defined($fnrl[$nndx]) && exists($p226{$fnrl[$nndx]})); # also shud skip if is anothr alredy mapd 256bakto64
+          if($brit[$fnrl[$nndx]] < $brit[$pcxn]){push(@{$dnrl[$_]},$fnrl[$nndx]);}else{push(@{$bnrl[$_]},$fnrl[$nndx]);}}
+       #for my $nndx (@dnrl[0..$tmsz]){if(defined($nndx)){ printf(     "%s%03d ", S('::BX'.sprintf("%02X",$nndx)),$nndx);}} say '' if($_==31||$_==47);
+      } # get scorz wi rsltz,sort in2brItz&&dRkz,shO 3dRk clOse thN 10-char 8pal8 nAmz thN brItz,setup4new mapz wi bgcolr&&remvng NtrEz from othr listz;
+    }
+  }}
+pm2x(@ARGV);

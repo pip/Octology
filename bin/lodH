@@ -1,0 +1,165 @@
+#!/usr/bin/perl
+# F3HMAJvw:lodH crE8d by PipStuart <Pip@CPAN.Org> 2XperimNt withpRsing mycustom .Hrc d8afIl format in2my new hybrid array/hash "rash" d8a structure(&&objX?);
+# 2du:considr $Hrcd shudBDfInd rEcursivly of a8->new objX insted of hashrF2 mAn ArAz(&&objXwudsimplify lOdng multi4m@fIlz),
+#   hash wrapper interface shudBAbl2ndX orig mDL && X listz sepR8ly,hash shud alsO LUT Ech kEyz contXt ndX4rEassoC8ion onrEPtedUsez,
+#   shud lookup Ech new contXt4consistNtcolr inBgn && apply to Defaultz of whole line colr 4 u: uSER && h: hOST,
+#   shadow $ajvk 2hav VkEyz wi orig spAcng && 4mDLmAPZ2 or just special cAse spAcz in Ust8z, Dmn8, && aliasez,
+#     bild mM struct as bAs ArA contAning3LMNtstructz wi valU,ls of midlmapz&&Xpansionz,&&subcontXtchldrN suchth@valUzRjust scAlRstrng,mdlmapzRan ArAof2LMNt
+#     (c8 lAyrkEy,valU)ArAz,XpansionzR3LMNtstructz wi valU strngz,optional list of midlmap OvrIdz from :X,optnl Xpansion setnAm or list ofDtectable tr8nAmz2,
+#     mAB midlmapz canapNd a3rdLMNtof'g'2flag wNthey havBnautOgNR8d.4m@shud alow $Xnam: prEfix(or:$Xn)inNd2nAmEch(or bOth2dblnAm),
+#     thNa suprhash ofcontXt thNVshud havahash of c8lk wiXtrakEy'X'shrtcutadded4 1stXpansion&&Xndx pointng2ArAof $Xndx 4EchXpansion&&
+#     alsO Xnam furthrhashng $Xnam 4EchnAmdXpansionset.mAB!bSt2inject/Xn(dx|am)?/kEyzamidst othrwIsOnly c8 lAyrkEyz?acceptcommazinBgin2splitoutwIdrkEyz.V&&X
+#     can!havcommazinvalUzuntil quOtngNAblzdistngushngthM.VsimilRlycan!havunquOtd cOlonEthr.nEthrcancontAn unquOtd'=>'.unquOtdsemIcOlonwilprobablytermin8lIn.
+#     alowlEvng c8lk MpTas''inDfltmidlmapzwichautOUse'F'2kEyinhash.rEgNR8 .Hrc IdNticlyor includ c82S hIlItz.optn2bgcolrBgin,midl,Nnnd=>b:gyr sectnz.alsO optn
+#     2UsegNR8d Ff just4allkEyz wo propag8ing l8rmidlmapz bak.autOapply allmidlmapz4 c: 2evryl8r prEfixUsag.add optnz2sLect DsIrabl gNR8ion p@rnz or methodz.
+#   XtracolrVinEchX;normally midlmapz shud propag8out2apply2all othrUsez ofsAmVkEyz,but X: shudOnly apply4ward infIl,
+#     alow bAscontXt:; termin8d wi nO VkEyz2 setDflt4rStof fIl2allBDfInd as rL8iv undr,autOgN .Hrc fromd8a wi minimum Ff hIlItz,
+#   accept multIcOlon contXtprEfixz2indic8wIdV8kEyz rathrthan conc@N8d snglcharactrz as the string;
+#   mIt alsO want2add anothr fEld2mAn structz2prEsrv NtIre strng of spAcz&&othr nonkEy srcd8a th@ shudBculdfrom prImary valUz butis nEded2rEconstruct l8r,
+#   mk wAz2Dtect|design8 specialcAsez4propr hndlng(lIk cRd8:._=>@ArAz 4 5uited nAmXpansionz or lsd8&&c8em wi rEPtedkEyz sincRDfIning compOnNt fEldz!kidz),
+#     will probably need another hash to reverse-lookup proper earlier indicez when same keyz in same contextz are XtNded && shud!Broutinely appended by index
+#     EvN1st contXtcanBintrOduced&&DfIndon a lIn wi OwnDflt lAyrdmidlmap&&XpansionzB4wEcan lOd 2ndlAyrDflt sOUse outrDfltz until canlOdOver|ignor|!alow&&chsrc,
+#     will need2procS Ech found contXt2mk sure they're already crE8d B4 any child V kEyz XtNd BnEth,alow Ff: midlmap multi-c8lAyrkEyz2set bOth2gethr,
+#   if untermin8d lInzRalowd2continU on nXt thN mor varz&&st8 wil nEd2BXtracted from within per-lIn forloop2hndlDsIrably,alsO hndl multitermin8d cmdz onsAmlIn,
+#     consider wethr betr2alow optional ; termin8or && let comNt or EoL autOtermin8 nEdng lS punctu8ion2generally Use the 4m@,
+#   rEconsidr wethr comNtz shud alwAzOnlyBignOrd bypRsr or if someXtra d8afEldz intherRworthXtractng2,
+# 2duold(from1st atMpt2pRs4m@):fix l: multipl b fieldz cOlId,lAyr progrSive Nd Xpansionz sepR8ly,alow4rEUsed Xpanded nAmz2BAbl2map bak2sepR8 keyz;
+use strict;use warnings;use utf8;use v5.10;
+use Octology::a8;my $d8VS='G7BMLBwU';
+use Octology::b8;my $ckls='-0-9A-Za-z._'; #-zugahMmtxbdO'; # ContextKeyzLiSt regXspanz2prntoutsetz4tStng
+my   $Hrcd; #  new  Hrc compound "rash" d8a structure object which is fundamentally a hierarchy of arrayz adorned with hashez between layerz && Xpansionz
+sub   lodH{ # LOaD .Hrc file as test on top (then automatically instead) of above exported d8a typez (and autom8 renaming filez to match .Hrc casing)
+  my $Hfil=shift(@_);my $trm8='8trm'; $trm8=$ENV{'TERM'} if(exists($ENV{'TERM'})       && length($ENV{'TERM'})); # maybe should Dfalt to xterm ahead of 8trm?
+  if    (defined($Hfil) && !-r $Hfil && $Hfil =~ /^[-0-9A-Z._]+$/i){$ckls=$Hfil;$Hfil=shift(@_) if(@_);}my $Dbug=0;
+  unless(defined($Hfil) &&  -r $Hfil){$Hfil=     '.Hrc';    $Hfil="$ENV{'HOME'}/$Hfil" if(exists($ENV{'HOME'}) && !-r $Hfil);} # unspecified lOdzDfalt
+  if    (defined($Hfil) &&  -r $Hfil){open(HFIL,'<',$Hfil);@{$Hrcd->{'Hfld'}}=<HFIL>;close(HFIL); # slurp HFiLeD8a  # '/' 4contXtsepR8orzwud implyBtwnEchlevL
+    my   $drlc='-'; # init Dfalt Root Level Context under which all will follow && entriez in root willBinitially hashed by (mItBmorUnixy or betr2Use '/'?)
+    my   $ffcc='' ;my $dfcc='c'  ; # init Found&&Dfalt First  Col8 Context key which is Xpectd2Bthe 1stNcountrd non-comNted character reached within any file
+    my   $ffcl='' ;my $dfcl='t'  ; # init Found&&Dfalt First  Col8 Layer   key
+    my   $fscl='' ;my $dscl='F'  ; # init Found&&Dfalt Second Col8 Layer   key which shudget aplId2evry folOng midl-map that neglectz2include any layer key
+    my   $Dlup=  0;
+    for my $lndx(0..$#{$Hrcd->{'Hfld'}}){my $ajvk=''; # Active Joined abbreV8ion Keyz 2 l8r map2 or Xpand  # I ac2lywant2BAbl2custmcolrcomNtzcontNtz inoutput2
+      my $line=$Hrcd->{'Hfld'}[$lndx]; # don't want2modify orig butshudBd8a lIn (nonblank noncomNt), so try2stRtpRsng Bgn contXtz:VkEyz
+      my $pllc='' ;my $cllc=$drlc;my $fbgn=0;my $fbgp=0; # init Potntl&&Curnt LineLevel Context wi abov Dflt2'-'dash as cOde4root,flag4wethrFinshdBGiNsectn4lIn
+      my $pmmv='' ;my $pmcl='';   my $fmxo=0;my $fmxb=0;my $pnxs=''; # PotntlMidlMapValz, PottlMidlC8Layer, FlagMidlmapz2XpansionzOnly(:X), Potntl eNd XpandStr
+      while($line=~ s/^(\s*(\S))//){my $psbc=$1;my $nsbc=$2; # stRt procSng any lIn bystripping any PossiblySpacedBeginningCharacter && isol8 NonSpaceBginChr
+        if    ( $nsbc=~ /[#]/){chomp($line);$Hrcd->{'Hdpz'}[$lndx]{'Cmn'}="$psbc$line";$line=~s/(Pip)/$Y$1$C/g;$line=~s/(Stuart)/$G$1$C/g;print "$C$psbc$line";
+          $line=''; # MpT rSt of comNt lIn  # mAB custmcolrcomNtlIncontNtzin2'Hflc'&&autODtect d8z,c8fnz,Pplznamz,Emlz,&& whatever else wudBgood
+        }elsif(($nsbc=~ /[=]/ && $line=~ s/^[>]//) || $nsbc=~ /[;]/){ # sectn finshd,strip arrow fromBgin of lIn&&prEsrv anyBgin contXt orVkEyz,or tIDup
+          if(!$fbgn){$fbgn=1;my $dbks='';$dbks="$cllc:" if(length($cllc) && $cllc ne $drlc);$dbks.=$ajvk;$Hrcd->{'Hdpz'}[$lndx]{'Bgn'}=$dbks;
+            } # distilled spAcelS Bgn but nEd2prEsrv fullorigspAcez2  # nEd2valid8contXt Xistz or crE8 it&&ck kEyz4new or old  # Dfer prntuntilmABcanUsemidlmap
+          elsif(length($pmmv) == length($ajvk)){my $dmms=' ';if(length($pmcl)){$dmms.="$pmcl:";} if($fmxb){$dmms.="X:";}elsif(!$fmxo){$dmms.='  ';}
+            $dmms.=$pmmv;$dmms.=":X" if($fmxo);
+            unless($fbgp){$fbgp=1;if($cllc ne $drlc){for(0..length($cllc)-1){
+                  if(      exists($Hrcd->{'Hrsh'}{'-'})                            && exists($Hrcd->{'Hrsh'}{'-'}{substr($cllc,0,   1)})){     if($_){
+                      print     S($Hrcd->{'Hrsh'}{     substr($cllc,0,$_  )}{substr($cllc,$_,1)}{'-'})
+                        if(exists($Hrcd->{'Hrsh'}{     substr($cllc,0,$_  )}{substr($cllc,$_,1)}{'-'}));
+                      print     S($Hrcd->{'Hrsh'}{     substr($cllc,0,$_  )}{substr($cllc,$_,1)}{'F'})
+                        if(exists($Hrcd->{'Hrsh'}{     substr($cllc,0,$_  )}{substr($cllc,$_,1)}{'F'}));                                       } else{
+                      print     S($Hrcd->{'Hrsh'}{'-'}{substr($cllc,  $_,1)}{'-'}) if(exists($Hrcd->{'Hrsh'}{'-'}{substr($cllc,  $_,1)}{'-'}));
+                      print     S($Hrcd->{'Hrsh'}{'-'}{substr($cllc,  $_,1)}{'F'}) if(exists($Hrcd->{'Hrsh'}{'-'}{substr($cllc,  $_,1)}{'F'}));}
+                  }else{print(S('^'));} print(  substr($cllc,$_,1));}print "$W:";} # thisnEdz2lookupwutEch contXtchar hasBn colrd2propag8
+              for(0..(length($ajvk)-1)){print(S(substr($pmmv,$_,1)).substr($ajvk,$_,1));print ' ' if(length($ajvk) == 16 && $_ == 7);}
+              if($cllc ne 'C' || $ajvk=~ /[^._]/){
+                if(length($ajvk) == 16){print ' 'x(20-length($Hrcd->{'Hdpz'}[$lndx]{'Bgn'}));}
+                else                   {print ' 'x(12-length($Hrcd->{'Hdpz'}[$lndx]{'Bgn'}));}}}
+            my $dmml=length($dmms);my $dmmc=' ';$dmmc.='  ' if(!length($pmcl) && !$fmxo && !$fmxb);$dmmc='' if($cllc eq 'C' && $ajvk=~ /[._]/);
+            if(length($pmcl)){$dmmc.= S($Hrcd->{'Hrsh'}{'c'}{$pmcl}{'-'})."$pmcl$W:";} $dmmc.=$M."X$W:" if($fmxb);
+            for(0..length($pmmv)-1){if(length($pmcl) && $pmcl=~ /^[bfpsN]$/){$dmmc.= S('G');}else{#$Hrcd->{'Hrsh'}{'c'}{$pmcl});}else{
+                $dmmc.= S(substr($pmmv,$_,1));}$dmmc.=substr($pmmv,$_,1);$dmmc.=' ' if(length($ajvk)== 16 && $_ == 7);}
+            if($cllc ne 'C' || $ajvk=~ /[^._]/){
+              $dmmc.="$W:$M".'X' if($fmxo);$dmmc.=' 'x (12-$dmml) if((12-$dmml) > 0);$dmmc.=' ' if(length($ajvk) == 16);
+              if($pmcl=~ /^[bfpsN]$/){$dmmc.=' ';$dmmc.=' ' if($cllc ne 'T' && $pmcl ne 'N');$dmmc.=' ' if($pmcl=~ /^N$/ && length($ajvk) == 6);}}
+            print("$B=>$dmmc"); # thEse shudalsOlookup c8lAyrcolrz
+            my $c8lr=$drlc;$c8lr=$pmcl if(length($pmcl));if(!$fmxo && !$fmxb){$Hrcd->{'Hrsh'}{$cllc}{$ajvk}{$c8lr}=$pmmv;
+              for(0..length($pmmv)-1){$Hrcd->{'Hrsh'}{$cllc}{substr($ajvk,$_,1)}{$c8lr}=substr($pmmv,$_,1);}}
+            $pmmv=$pmcl=$pnxs='';$fmxo=$fmxb=0; # shud also lOd valz in2 d8a struct B4 rEsetng  # nEd2prEsrv wethr any prEfix: or :suffix is Used
+            push(@{$Hrcd->{'Hdpz'}[$lndx]{'rSt'}}, $dmms);} # typicl midlmap ofsAmsIz askEyz,shud split thM allin2 sOlOd8a structz  # don't want nsbc=onNd
+          else{$pnxs=$pmmv if(!length($pnxs) && length($pmmv));if($nsbc=~ /[=]/){$pnxs.=$psbc;chop($pnxs);}
+            push(@{$Hrcd->{'Hdpz'}[$lndx]{'rSt'}}, $pnxs);
+            unless($fbgp){$fbgp=1;if($cllc ne $drlc){
+                for(0..length($cllc)-1){ # nEdz2lookupwutEch contXtchar hasBn colrd2propag8
+                  if(      exists($Hrcd->{'Hrsh'}{'-'})                            && exists($Hrcd->{'Hrsh'}{'-'}{substr($cllc,0,   1)})){     if($_){
+                      print     S($Hrcd->{'Hrsh'}{     substr($cllc,0,$_  )}{substr($cllc,$_,1)}{'-'})
+                        if(exists($Hrcd->{'Hrsh'}{     substr($cllc,0,$_  )}{substr($cllc,$_,1)}{'-'}));
+                      print     S($Hrcd->{'Hrsh'}{     substr($cllc,0,$_  )}{substr($cllc,$_,1)}{'F'})
+                        if(exists($Hrcd->{'Hrsh'}{     substr($cllc,0,$_  )}{substr($cllc,$_,1)}{'F'}));                                       } else{
+                      print     S($Hrcd->{'Hrsh'}{'-'}{substr($cllc,  $_,1)}{'-'}) if(exists($Hrcd->{'Hrsh'}{'-'}{substr($cllc,  $_,1)}{'-'}));
+                      print     S($Hrcd->{'Hrsh'}{'-'}{substr($cllc,  $_,1)}{'F'}) if(exists($Hrcd->{'Hrsh'}{'-'}{substr($cllc,  $_,1)}{'F'}));}
+#                 if (   exists($Hrcd->{'Hrsh'}) && exists($Hrcd->{'Hrsh'}{'-'})   && exists($Hrcd->{'Hrsh'}{'-'}{substr($cllc,$_,1)}) && #$_ == 0 &&
+#                       (exists($Hrcd->{'Hrsh'}{'-'}{substr($cllc,$_,1)}{'-'})     || exists($Hrcd->{'Hrsh'}{'-'}{substr($cllc,$_,1)}{'F'}))){
+#                   print     S($Hrcd->{'Hrsh'}{'-'}{substr($cllc,$_,1)}{'-'}.'k') if(exists($Hrcd->{'Hrsh'}{'-'}{substr($cllc,$_,1)}{'-'}));
+#                   print     S($Hrcd->{'Hrsh'}{'-'}{substr($cllc,$_,1)}{'F'}.'k') if(exists($Hrcd->{'Hrsh'}{'-'}{substr($cllc,$_,1)}{'F'}));
+                  }else{print(S('O'));}print(substr($cllc,$_,1));}print "$W:";} # nOt:BlO any speclcAs getng midmapz wilnEdBgn done Ovr ther2
+              if   ($cllc eq 'A' && length($ajvk) >   8){print $C.substr($ajvk,0,8).'  '   .substr($ajvk,8,length($ajvk)-8).' 'x (22-length($ajvk));}
+              elsif($cllc eq 'C' && length($ajvk) == 13){print $C.substr($ajvk,0,8).' 'x 9 .substr($ajvk,8,5).'  ';}
+              elsif($cllc eq 'D' && length($ajvk) == 11){print $C.substr($ajvk,0,10-$Dlup).'  '.' 'x $Dlup.substr($ajvk,10-$Dlup,$Dlup+1).' 'x(11-$Dlup++);}
+              elsif($cllc eq 'L' && length($ajvk) == 16){print $C.substr($ajvk,0,8).' '    .substr($ajvk,8,8). ' ';}
+              elsif($cllc eq 'L' && length($ajvk) ==  8){print ' 'x  9 .$C.substr($ajvk,0,8).' ';}
+              elsif($cllc eq 'U' &&(length($ajvk) == 16 || length($ajvk) == 18)){print $C.substr($ajvk,0,8).'  '   .substr($ajvk,8,8).'  ';
+                if(length($ajvk) == 18){print substr($ajvk,16,length($ajvk)-16).'  ';}else{print ' 'x 4;}} # shud EvN out Ust8 VkEyz
+              elsif($cllc eq 'U' &&(length($ajvk) ==  8 || length($ajvk) == 10)){
+                if($ajvk=~ /^[Fus][GtT][HBX][izU]/){print ' 'x 10 .$C.substr($ajvk,0,8).'  ';if(length($ajvk) == 10){print substr($ajvk,8,2);}else{print '  ';}
+                  print '  ';}else{print $C.substr($ajvk,0,8).' 'x 16;}}
+              else                                      {#print "$C$ajvk"; #for(0..(length($ajvk)-1)){print(S(substr($pmmv,$_,1)).substr($ajvk,$_,1));}
+                for(0..length($ajvk)-1){if(exists($Hrcd->{'Hrsh'}) && exists($Hrcd->{'Hrsh'}{'-'}) && exists($Hrcd->{'Hrsh'}{$cllc}{substr($ajvk,$_,1)}) &&
+                     (exists ($Hrcd->{'Hrsh'}{$cllc}{substr($ajvk,$_,1)}{'-'})     || exists($Hrcd->{'Hrsh'}{$cllc}{substr($ajvk,$_,1)}{'F'}))){
+                      print S($Hrcd->{'Hrsh'}{$cllc}{substr($ajvk,$_,1)}{'-'})     if(exists($Hrcd->{'Hrsh'}{$cllc}{substr($ajvk,$_,1)}{'-'}));
+                      print S($Hrcd->{'Hrsh'}{$cllc}{substr($ajvk,$_,1)}{'F'})     if(exists($Hrcd->{'Hrsh'}{$cllc}{substr($ajvk,$_,1)}{'F'}));
+                    }else{print S('B');}print substr($ajvk,$_,1);} # shud add'f'lAyr2
+                if($cllc eq 'C' && $ajvk =~ /[._]/){print '  ';}elsif($cllc ne 'L'){
+                  print ' 'x(26-length($Hrcd->{'Hdpz'}[$lndx]{'Bgn'})) if((26-length($Hrcd->{'Hdpz'}[$lndx]{'Bgn'})) > 0);}}} # simplcma splt brkzQregXquOtdcma
+            my @Xset=();my $scnt=length($ajvk)-1;if($scnt){if($pnxs=~ /(.*?,){$scnt}/){@Xset=split(/,/,$pnxs);}else{#@Xset=split(/\s+/,$pnxs);
+              my $tpnx=$pnxs;while($tpnx=~ s/^(\s*\S+)//){push(@Xset,$1);}$Xset[-1].=$tpnx if($tpnx=~ /^\s+$/);} # try2manUaly split on spcz but prEsrv thM
+             #while($#Xset < $scnt){push(@Xset,'');}if($#Xset > $scnt+1){$Xset[$scnt+1].=join(' ',@Xset[($scnt+2)..$#Xset]);pop(@Xset) while($#Xset>$scnt+1);}
+              if(@Xset > 1 && $Xset[0] eq ''){shift(@Xset);}
+            }else{push(@Xset,$pnxs);} # add sOlO Xpansion valU 2set
+            if(@{$Hrcd->{'Hdpz'}[$lndx]{'rSt'}} > 1 && $Hrcd->{'Hdpz'}[$lndx]{'rSt'}[-2]=~ /^\s*([FX]:)?\s*([0-9A-Za-z._]{$scnt}.)\s*(:X)?\s*$/){
+              $pmmv=$2;print("$R=>$O");#print ' ' if($pnxs!~ /(.*?,){$scnt}/);
+              for (0..length($pmmv)-1){my $T='';my $N=S('B');my $n=S(substr($pmmv,$_,1));print $n;$Hrcd->{'Hrsh'}{$cllc}{substr($ajvk,$_,1)}{'X'}='';
+                if(defined($Xset[$_])){my $t=$Xset[$_];if   (!$_                      && $t=~ /^\s*([^:]+):/      ){$T=$1;}
+                                                       elsif( $_ == (length($pmmv)-1) && $t=~ /\S\s*:([^: ]+)\s*$/){$T=$1;}
+                  if(length($T)){for my $N_ky(keys(%{$Hrcd->{'Hrsh'}{'N_'}})){
+                      $N=S($Hrcd->{'Hrsh'}{'N_'}{$N_ky}{'-'}) if(length($N_ky) == 1 && $T=~ /^\s*$N_ky/);}}#$Hrcd->{'Hrsh'}{'N_'}{$N_ky}{'X'} eq $T);
+                  if($_){$t=~ s/^(.+):[^:]+\s*$/$1$W:$N$T/;}
+                  else  {$t=~ s/^(\s*)[^:]+:/$1$N$T$W:$n/ ;}$Hrcd->{'Hrsh'}{$cllc}{substr($ajvk,$_,1)}{'X'}=$Xset[$_];
+                  print $t;} if($_ < $scnt && $scnt && $pnxs=~ /(.*?,){$scnt}/){print "$W,";}}} # alsO shud stor @Xset in struct
+            elsif(exists($Hrcd->{'Hrsh'}) && exists($Hrcd->{'Hrsh'}{$cllc}) && exists($Hrcd->{'Hrsh'}{$cllc}{$ajvk}) && 
+                 (exists($Hrcd->{'Hrsh'}{$cllc}{$ajvk}{'-'}) || exists($Hrcd->{'Hrsh'}{$cllc}{$ajvk}{'F'}))){
+              $pmmv=$Hrcd->{'Hrsh'}{$cllc}{$ajvk}{'-'} if(exists($Hrcd->{'Hrsh'}{$cllc}{$ajvk}{'-'}));
+              $pmmv=$Hrcd->{'Hrsh'}{$cllc}{$ajvk}{'F'} if(exists($Hrcd->{'Hrsh'}{$cllc}{$ajvk}{'F'}));
+                       print("$R=>$P");#print ' ' if($pnxs!~ /(.*?,){$scnt}/);
+              for (0..length($pmmv)-1){my $T='';my $N=S('B');my $n=S(substr($pmmv,$_,1));print $n;$Hrcd->{'Hrsh'}{$cllc}{substr($ajvk,$_,1)}{'X'}='';
+                if(defined($Xset[$_])){my $t=$Xset[$_];if   (!$_                      && $t=~ /^\s*([^:]+):/      ){$T=$1;}
+                                                       elsif( $_ == (length($pmmv)-1) && $t=~ /\S\s*:([^: ]+)\s*$/){$T=$1;}
+                  if(length($T)){for my $N_ky(keys(%{$Hrcd->{'Hrsh'}{'N_'}})){
+                      $N=S($Hrcd->{'Hrsh'}{'N_'}{$N_ky}{'-'}) if(length($N_ky) == 1 && $T=~ /^\s*$N_ky/);}}#$Hrcd->{'Hrsh'}{'N_'}{$N_ky}{'X'} eq $T);
+                  if($_){$t=~ s/^(.+):[^:]+\s*$/$1$W:$N$T/;}
+                  else  {$t=~ s/^(\s*)[^:]+:/$1$N$T$W:$n/ ;}$Hrcd->{'Hrsh'}{$cllc}{substr($ajvk,$_,1)}{'X'}=$Xset[$_];
+                  print $t;} if($_ < $scnt && $scnt && $pnxs=~ /(.*?,){$scnt}/){print "$W,";}}} # alsO shud stor @Xset in struct
+            else{$pnxs=~ s/(,)/$W$1$M/g;$pnxs=~ s/^(\s*)([^:]+):(.*?\S)/$1$B$2$W:$M$3/g;print("$R=>$M$pnxs");} # shud wrIt earlier mapz2struct sOcanlookup4Xd8a
+            $pmmv=$pmcl=$pnxs='';$fmxo=$fmxb=0;} # proly Xpansion-set mAB with Xnam: prefix or :Xnam suffix not yet handled properly by pmmv aggreg8ing BlO
+          if  ($nsbc=~  /[;]/){my $scnt=length($ajvk)-1; # semicolon cmnd Nder
+            if(@{$Hrcd->{'Hdpz'}[$lndx]{'rSt'}} && $Hrcd->{'Hdpz'}[$lndx]{'rSt'}[-1]!~ /^\s*([FbfpsgrNX]:)?\s*([0-9A-Za-z._]{$scnt}.)\s*(:X)?\s*$/){
+              print ' 'x(length($psbc)-1);}print "$W;";$ajvk=$pllc=$pmmv=$pmcl=$pnxs='';$cllc=$drlc;$fbgn=$fmxo=$fmxb=0;} # rEset st8 4multicmdz onsAmlIn
+        }elsif(!       $fbgn ){
+          if    (!length($ffcc)){$ffcc=$pllc=$ajvk=$nsbc; # might want some more careful valid8ion of acceptable characterz to use as FoundFirstCol8Context
+            printf("!*Warn*! FoundFirst Col8Context:%-3s: differs from expected Dfalt:%-23s: and may cause problemz!\n",$nsbc,$dfcc) if($nsbc ne $dfcc||$Dbug);
+          }elsif( length($ffcc) && $nsbc eq   ':' && length($pllc)){$ajvk =''   ;$cllc =$pllc; # lIklyvalid Potential Context should be accepted as new Current
+            printf("!*Warn*! Found further char    :%-3s: design8z2set CurrentContext:%-23s: and should be fine    !\n",$nsbc,$cllc) if(                $Dbug);
+          }elsif(!length($ffcl) && $cllc eq $ffcc                 ){$ajvk.=$nsbc;$ffcl =$nsbc;
+            printf("!*Warn*! FoundFirst Col8Layer  :%-3s: differs from expected Dfalt:%-23s: and may cause problemz!\n",$nsbc,$dfcl) if($nsbc ne $dfcl||$Dbug);
+          }elsif(!length($fscl) && $cllc eq $ffcc && length($ffcl)){$ajvk.=$nsbc;$fscl =$nsbc;
+            printf("!*Warn*! FoundSecondCol8Layer  :%-3s: differs from expected Dfalt:%-23s: and may cause problemz!\n",$nsbc,$dscl) if($nsbc ne $dscl||$Dbug);
+          }elsif( length($ffcc) && !$fbgn &&        !length($ffcl)){$pllc.=$nsbc; # likely need to keep constructing Potential Context to get on to layerz
+            printf("!*Warn*! Found further char    :%-3s: appending2 PotentialContext:%-23s: and should be fine    !\n",$nsbc,$pllc) if(                $Dbug);
+          }elsif( length($fscl)){ # below here should be the rel8ively normal case of having gotten past defining 1st Context && 2nd Layer both fine
+            if(                $nsbc eq   ':' && length($ajvk)   ){$cllc =$ajvk;$ajvk=''  ;}  # wutmIt havBn mountngkEyz nowlookzlIk contXtsO asIn&&MpTkEyz
+            else                                                  {$ajvk.=$nsbc;           }} # apNd wutis lIkly newSt kEy (probably nEd2ck4alredEXistzthO)
+        }else{ # stRt aggreg8ing mDL mapz or eNd Xpansion set hEre4Stablishd Bgin C:Vz, eNd Xpansion setz nEd suport4quOting&&bAsicSKpz
+          if(                  $nsbc eq   ':'                    ){
+            if(   length($pmmv) == length($ajvk) && $line=~ s/^\s*X\s*//){         $fmxo=1;}  # mAB accept regUlR c8lAyrz as suffix2
+            elsif(length($pmmv)                  && $pmmv=~ /^X$/){$pmcl =$pmmv='';$fmxb=1;}
+            elsif(length($pmmv)                                  ){$pmcl =$pmmv;$pmmv='';$pnxs.=$psbc;}} # mountng mapznow lookzlIk c8lAyr so asIn&&MpTmapz
+          else                                                    {$pmmv.=$nsbc;         $pnxs.=$psbc; } # append wut is likely newest map
+        }}print "\n" if(length($Hrcd->{'Hfld'}[$lndx]) && $Hrcd->{'Hfld'}[$lndx]=~ /\S/);}}} lodH(@ARGV);

@@ -1,0 +1,2 @@
+#!/usr/bin/perl
+use strict;use warnings;use utf8;use Octology::a8;print shfl(@ARGV); # might need to print to duplic8 STDOUT for UTF-8 to go thru

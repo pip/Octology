@@ -1,0 +1,161 @@
+#!/usr/bin/perl
+# CC3LNDkW:c8 by PipStuart <Pip@CPAN.Org> to be similar to GNU cut, but 0-based with packed indices in Perl; originally called pcut,pc,&& ct before c8;
+# Confusingly Conflicted Cut && Cat Column Compressing Colorizer Command? Default c8 aims to be like colorit, then with params becoming like cut or cat;
+# c8 aims to become a nexus or g8 which can detect any filetype by content like vim && apply syntax highlighting, but also grow recognition for typical cmdz2;
+# 2du:detect commas && interpret joined b64 as contiguous #s then, consider leaving a dash after the index to run to EOL rather than enumer8ing to unknown,
+#  allow spans of -2,8-F,U-1j,2x-,switch dfalt ndxz to  '0-_' to mostly pass any d8a thru (&& maybe only allow such format on 1st arg with G::L on following),
+#  potentially allow Larg-smal span descend such that   '_-0' would reverse all column order, so l8r recognition of /-?\d+-?/ will be needed for EOL down too,
+#    (maybe just crE8 a max_columns option that defaults  '_' b10   63 && enumer8 all spans?) that after original   /-?\d+/ was enumer8d 0..$d && cleared,
+#    (&& passing just a ',' comma squares max_columns to '__' b10 4095 to handle way more bytes than typical text columns per screen width, or pixels either)
+#    (&& what surrounds ',' may increase  max_columns further to encompass widest field width index value, && '0-__' would be expectd to expand without comma?)
+#    might want to handle _b10 altern8 versions of all max && span compress && expand routines && expose out through options, (comma's probably needed to 64*=)
+#  learn && use Getopts::Long (or something better) && start adding options to make lsd8-like coloring configurable then detectable,
+#  upd8 d8 ansi coloring to prepend a '0' for escape width consistency of length && increment in embedded d8 colored sizes,
+#  for executables that can't be tested in missing @ARGV directory: cheat by matching /\*$/ for coloring (then disable to know when $subd passes correctly),
+#  figure out why executables get colored correctly when `lsd8xt | c8` but not for `lsd8 | c8` which should be almost identical post Escape stripping,
+#  attempt using just another parameter option to upd8 $subd from @ARGV called with original command, don't shift @ARGV until aftr examining 4 valid ndxz span,
+#  abstract c8.pm to have members: tokenize, columnize, colorize, && load_tmp_file if parameter duping above inadequ8 for thoroughly capable c8,
+#  abstract component matching, alignment, modific8ion, && recoloriz8ion (&& ref0ntific8ion) to be assoC8d with configurable command profiles,
+#  generalize file coloring as option for any filenames passing through c8,
+#  fix dash not getting $W when .m4a $q is already $Y,
+#  fix file profile broken symlinks not showing target with separ8ors as fully red background,
+#  for lsd8 profile: reset pad matching in blocks after every line starting with /^t0tl:/,
+#  fix stripping \n after t0tl: line when passing $ndxz that start beyond 0 index then come back to 0 l8r for single token,
+#  detect which input fields appeared right-justified && reflect in output (&& rmv lsd8 profile's explicit --right-justified=14),
+#  allow explicit packed expandable column indices option specifying undetectable ones which should also get right-justified (with pre && post cut forms),
+#  allow explicit similar options for undetectable d8s, permissions, etc. special fields that require sub-coloring,
+#  develop c8::col8.pm to have layers for text && colors as well as pre && post filtr8ion stages, with main conversion between serialized && layered forms,
+#  record where ANSI codes initially stripped from && gener8 8 color code map (which keep pace with column resizes && delimiters when possible),
+#  reinsert ANSI codes via 8 color code parameter,
+#  add auto-reinsert original colors after tokeniz8ion && realignment as maybe better default than forcing fresh detection-based recoloriz8ion,
+#  add -delimiter optn with regex, --output-delimiter=STRING, && --complement,
+#  add -s to suppress printing of lines that do not contain the field delimiter,
+#  add -byte -char -field optnz (where -[bc] probably bump max_columns),
+#  accept FILE parameter && flesh out `cat`-like abilities && options,
+#  add option to disable escaped color stripping from input,
+#  add option to disable columnize alignment, support right-justified first column like original 8plc,
+#  add option to disable colorize (&& make default when actually cutting input columns?),
+#  mimic --version, study m4 && colorit to maybe utilize or extend ~/.coloritrc && /etc/dictd/colorit.conf format, make cmd coloring profile for di(ct|ff),
+#  extend cut's (&& cat's?) --help for c8, filesize b64 columns should start Red on right && grow OYGCBMP to left, opposing d8::dur8ion objects d8 reflection,
+#  detect different formats or #s of fields to allow auto or explicit skipping of headers, footers, && recognizing distinct contained alignment && color sets,
+#  study `ls /usr/bin | pr -T4 -W72` to provide new columniz8ion,
+use strict;use warnings;use utf8;use v5.10;
+use Octology::a8;
+use Octology::b8;
+#se Octology::c8;
+use Octology::d8;
+use Time::PT; my $VERSION='0.0';my $d8VS='F4SMBLMx';
+my $mcn6 = '_'; # max_column_index_b64 (consider b8 objX  that can *= b10('11') or better another obj that each stringifies configurably, default b64 unpadded)
+my $ndxz = shift(@ARGV);my @ndxd =(); #( && better still to detect *= '11' string before Perl atoi it && b64->new() in there, && b8 is short for Base(8|10|64))
+# now off on a seeming tangent of b8 && d8 objects focused around configuring what stringify does, encouraging such explicit dereferencing over normal methods;
+# unsure how c8 objects should stringify but b8 is where expand_spans should stringify to CSV b10 && compress_spans might prove useful, staying b10 option;
+if(defined $ndxz && length $ndxz && $ndxz =~ /^[-,0-9A-Za-z._]+$/){ # make sure whole param comprised of b64 with dash && comma before attempting expansion
+  if    ($ndxz =~ /,/){ # comma found means joined b64 indices around ranges or even isol8d by commas && shouldn't be splitting for l8r definition of @ndxd
+  }elsif($ndxz =~ /-/){ # single basic span likely surrounded by one or both singular b64 values which should be able to order descending when opposite _-0
+  } # such comma && span design8ions need to also be available to flagging right-justified or d8 fields, or such span features are insignificant?
+}else{ # might need to unshift(@ARGV,$ndxz) before reassigning it default indices so undetected param can resume place in @ARGV for G::L to then process
+   $ndxz = join('','0'..'9','A'..'Z','a'..'z','.','_');} # default indices should be smarter than just 0..63 fields && should span to highest max needed
+if($ndxz =~ /^[0-9A-Za-z._]+$/){@ndxd=split(//,$ndxz);for(0..$#ndxd){$ndxd[$_]=b10($ndxd[$_]) if($ndxd[$_]=~/^[0-9A-Za-z._]+$/);}}
+my $t0tl='0';my $subd='.';my %lsp8;my %lspt;
+my @inpt;if(!-t STDIN){while(<STDIN>){push(@inpt,$_);}}else{die "!*EROR*! Need to pipe d8a through $0!\n";} # original unmodified input d8a
+my @inps;              for  (@inpt  ){push(@inps,$_);$inps[-1] =~ s/\e\[[^m]*m//g;} # strip any ANSI escaped color codes within input text
+my @indt;my @widz;my @ofcc=split(//,'WRYCMRg');my $supf=1; # input d8atext,field widths,output field color codes default column map,suppress flag
+sub spcs{my($ssfn,$sbdr,$q)=@_; # subroutine handling SPeCial separ8or character Substitutions, those being Special Substs on FileNames, SuBDiRectory, &&
+  if(       $ssfn=~/\s->\s.+\*$/                              ){$q=$lspt{'ex'};                                                 # identified Qolor params
+            $ssfn=~s/^(.+?)(\s->\s)([^*]+)(\*)$/$lspt{'ln'}$1$Y$2$q$3$W$4/x; #         executable symlink handling
+  }else{ if($ssfn=~/\s->\s(\e\[[^m]*m)*(.+)$/){my $ltfn=$2;$ltfn=~s/(\e\[[^m]*m)+//g; # srch below 4 subdir arg which should replace '.'
+           if(!-e "$sbdr/$ltfn")                               {$q=$lspt{'mi'};$ltfn=~s/(\[)/\\$1/g; # try escaping brackets to not become char class?
+            $ssfn=~s/^(.*)($ltfn)              /$1$q$2/x;}}                  # end broken         symlink handling
+            $ssfn=~s/^(.+?)(\s->\s)            /$lspt{'ln'}$1$O$2$q/x;       # end non-executable symlink handling
+  }         $ssfn=~s/(\.+)                     /$W$1$q/xg   if($q ne $W);
+            $ssfn=~s/(\.+)                     /$C$1$q/xg   if($q eq $W);
+            $ssfn=~s/(-+)([^>])                /$Y$1$q$2/xg if($q ne $Y);
+            $ssfn=~s/(-+)([^>])                /$W$1$q$2/xg if($q eq $Y);
+            $ssfn=~s/(_+)                      /$C$1$q/xg   if($q ne $C);
+            $ssfn=~s/(_+)                      /$G$1$q/xg   if($q eq $C);
+  return   ($ssfn);}
+# no=00:           NORMAL                  global   dflt (altho idealy evrythng shud b smthng)
+# fi=00:           FILE                    normal   FILE
+# ln=01;37:        LINK                    symbolic LINK (if set to 'target' instead of colr;code;numz,color inherits that of file symlinked to)
+# mh???:           #ULTIHARDLINK           regular  file with more than one link   (used2b just "HARDLINK" with 44;37 but coreutils chngd aroun 9A6J8d7P)
+# or=05;01;01;46:  ORPHAN                  sym------link to nonexistent file
+# mi=05;01;01;41:  MISSING                   && the MISSING file it points to (blinkng alert?) #.ANSI.01.30  01;30 # bright blacK
+# ex=01;32:        EXEC                    file w/ EXECute permission                 (+x    ) #.ANSI.01.31  01;31 # bright Red
+# su=01;37;01;42:  SETUID                  file that is        SETUID                 (   u+s) #.ANSI.01.32  01;32 # bright Green
+# sg=00;30;00;43:  SETGID                  file that is        SETGID                 (   g+s) #.ANSI.01.33  01;33 # bright Yellow
+# di=01;34:        DIR                     DIRectory                                           #.ANSI.01.34  01;34 # bright Blue
+# st=01;37;01;44:  STICKY                  dir  w/ STICKY bit  set && !other-writable (+t,o-w) #.ANSI.01.35  01;35 # bright Magenta (Purple)
+# ow=01;34;01;42:  OTHER_WRITABLE          dir  w/ sticky bit !set &&  OTHER-WRITABLE (   o+w) #.ANSI.01.36  01;36 # bright Cyan
+# tw=00;30;00;45:  STICKY_OTHER_WRITABLE   dir  w/ STICKY bit  set &&  OTHER-WRITABLE (+t,o+w) #.ANSI.01.37  01;37 # bright White     zsh:'%{' ANSI '%}'
+# pi=00;33;00;40:  FIFO                    pipe  (First-In,First-Out)               (orig bcam 40;33 with coreutils chng2 /etc/DIR_COLORS aroun 9A6J8d7P)
+# so=01;35:        SOCK                    SOCKet
+# do=01;35:        DOOR                    DOOR  (not sure why this was commented out before?) I'd gues this is POSIX||BSD-centric but !in Linux FylSys?
+# bd=01;33;01;40:  BLK                     BLocK     device driver
+# cd=01;33;01;40:  CHR                     CHaRacter device driver         #*.2du=01;33:*..#add0thRlsfyLtypz,symlnx..
+                                                   #-rw-------  1 pip pip 123330 2013-08-15 10:49:37.138111806 +0000 Utl.pm
+for(split(':',$ENV{'LS_COLORS'})){my($g2re,$fx2e); #drwxr-xr-x 48 pip users 4096 2009-10-24 22:28:17.180201607 -0700 dvl/
+  if   (/^([^=]*[\*\+\?]+[^=]+)=0(.+)$/){($g2re,$fx2e)=($1,"$SKp8$2m");$g2re=~s/([.])/\\$1/g;$g2re=~s/\?/./g;$g2re=~s/(\*|\+)/.$1/g;
+    $lsp8{qr/^.*\s*$g2re$/}=$fx2e;}
+  elsif(              /^([^=]+)=0(.+)$/){($g2re,$fx2e)=($1,"$SKp8$2m");
+    $lspt{         $g2re  }=$fx2e;}} # regex at bottom uses NOrmal at end but after `eval $(dircolors)` resets $LS_COLORS to defaults, 'no' does! exist giving:
+    $lspt{         'no'   }="${SKp8}00m" unless(exists($lspt{'no'})); # "Use of uninitialized value in concatenation (.) or string ..." so making sure exists
+for(0..$#ndxd){
+  if($ndxd[$#ndxd-$_] eq '-'){}} # splice in ranges, probably better to split $ndxz on commas then expand ranges 1st
+for(0..$#inps){
+  while(length($inps[$_])){
+    if   ($inps[$_] =~ s/(^\S+)//){ push(@{$indt[$_][0]},$1); }
+    elsif($inps[$_] =~ s/(^\s+)//){ push(@{$indt[$_][1]},$1); }}}
+for(0..$#inpt){ # $indt[$_][0][6] should get all following fields joined back with orig whitespace to handle filenames or symlinks with spaces split on above
+  if(defined($indt[$_][0][6]) && $inpt[$_] =~ /^.*($indt[$_][0][6].*)$/){
+             $indt[$_][0][6]=$1;if(@{$indt[$_][0]} > 7){for my $ndxv (7..(@{$indt[$_][0]}-1)){$indt[$_][0][$ndxv]='' if(defined($indt[$_][0][$ndxv]));}}}}
+for(0..$#inps){
+  for my $ndxv (@ndxd){
+    if(   defined                                      $indt[$_][0][$ndxv] && #special test for my l (lsd8) header
+                                                       $indt[$_][0][$ndxv] =~  /^t0tl:/){
+                                                       $indt[$_][0][$ndxv] =~ s/^(t)(0)(tl)(:)([0-9A-Za-z._]+)(K)$/$O$1$Y$2$O$3$W$4$B$5$G$6/;}
+    elsif(defined                                      $indt[$_][0][$ndxv]  &&
+                                                       $indt[$_][0][$ndxv] =~  /^([^:]+)(:)$/){my $sbdc=$subd=$1;$sbdc =~ s/(\/)/$B$1$Y/g;
+                                                       $indt[$_][0][$ndxv] =~ s/^([^:]+)(:)$/$Y$sbdc$W$2/;}
+    elsif(defined                                      $indt[$_][0][$ndxv]  && $ndxv == 6){my $fnam=$indt[$_][0][$ndxv];my $tnam=$fnam; # process filename colr
+      my($n,$s); # renamed $k $kolumn_x to $n for Named color && String to !collide with single-letter variables holding primary escaped colors
+    # if($subd eq '.'&& @ARGV){my $andx=0;while(!-d "$ARGV[$andx]"&& $andx<$#ARGV){$andx++;}if(-d "$ARGV[$andx]"){$subd="$ARGV[$andx]";$subd=~s/\/+$//;}}
+      for  my $svgl(keys(%lspt)){                        $n=$lspt{$svgl};    my($bgin,$fsnm);                      #Typz
+        if   ($svgl eq'ex'&& (($bgin,$fsnm)= $fnam=~/^(.*?)(.+?)\*+  $/x)&& -x "$subd/$fsnm"){
+              $tnam=~s/^($bgin)($fsnm)(\*+)   $/$1$n$2$W$3/x;               $tnam=spcs(   $tnam ,$subd,$n);     }
+        elsif($svgl eq'di'&& (($bgin,$fsnm)= $fnam=~/^(.*?)(.+?)\/+  $/x)&& -d "$subd/$fsnm"){
+              $tnam=~s/^($bgin)($fsnm)(\/+)   $/$1$n$2$Y$3/x;               $tnam=spcs(   $tnam ,$subd,$n);     }
+        elsif($svgl eq'ln'&& (($bgin,$fsnm)= $fnam=~/^(.+?)\s->\s(.+)$/x)&& -l "$subd/$bgin"){my $fanm=$fsnm;
+          for my $shgl(sort keys(%lsp8)){if($fsnm=~/$shgl/){$s=$lsp8{$shgl};$fanm=spcs("$s$fsnm",$subd,$s);last;}} # color symlink's target by extension
+              $tnam=~s/^($bgin)(\s->\s)($fsnm)$/$W$1$Y$2$g$fanm/x;          $tnam=spcs(   $tnam ,$subd,$n);     }}
+      for     my $shgl(sort keys(%lsp8)){if($tnam=~/$shgl/){$n=$lsp8{$shgl};$tnam=spcs("$n$tnam",$subd,$n);last;}} #Gl0b
+      # matching against both names below to hopefully avoid splitting escapes as though they were valid PT or d8 characters (&& can't s/// d8 1st without $n)
+      # setup matching PT range below to be somewhat tightly constrained to just the most expected values && trying to detect dash already with escape prefix
+      if($tnam=~/^.*-(\e\[[^m]*m)*([0-9A-D][1-9A-C][1-9A-V][0-9A-Za-x]{4})                (\e\[[^m]*m)*([-.*\/]|$)/x){my $ptvr=$2;my $ptim=undef; #Dtect old PT
+        if($fnam=~/-$ptvr([-.*\/]|$)/){$ptim=    Time::PT->new($ptvr);my $stim=$ptim->color('ansi');$stim.=$M.'0' if($ptvr=~/0$/);
+        $tnam=~s/$ptvr/$stim/ if(length($stim)==(length($ptvr)  *8));}}
+      if($tnam=~/^.*-(\e\[[^m]*m)*([0-9A-Za-z._][1-9A-C][1-9A-V][0-9A-Za-g][0-9A-Za-x]{4})(\e\[[^m]*m)*([-.*\/]|$)/x){my $d8vr=$2;my $dtim=undef; # &&   new d8
+        if($fnam=~/-$d8vr([-.*\/]|$)/){$dtim=Octology::d8->new($d8vr);my $etim=$dtim->colr( 'a'   );#etim.=$P.'0' if($d8vr=~/0$/);
+        $tnam=~s/$d8vr/$etim/ if(length($etim)==(length($d8vr)  *8));}}
+      if($tnam=~/^.*-(\e\[[^m]*m)*(((19|20)\d\d)([01]\d)([0123]\d))                       (\e\[[^m]*m)*([-.*\/]|$)/x){my($dYMD,$dY,$dM,$dD)=($2,$3,$5,$6);
+        if($fnam=~/-$dYMD([-.*\/]|$)/){                               my $etim="$R$dY$O$dM$Y$dD";                                                 # && YYYYMMDD
+        $tnam=~s/$dYMD/$etim/ if(length($etim)==(length($dYMD)+3*8));}}
+      $indt[$_][0][6] =~ s/^.*$/$g$tnam$lspt{'no'}/;} # substitute colored d8a values && reset to NOrmal at EOL
+    elsif(defined                                      $indt[$_][0][$ndxv]  &&
+        (!defined($widz[$ndxv])||$widz[$ndxv] < length($indt[$_][0][$ndxv]))){
+                                 $widz[$ndxv] = length($indt[$_][0][$ndxv]); }}}
+for(0..$#inps){
+  for my $ndxv (@ndxd){
+    if(defined                                         $indt[$_][0][$ndxv])  {my %ftcc=('-'=>$W,'d'=>$B,'l'=>$G); # octal permissionz 0..7 colors are GgOPBMCR
+      if(    $indt[$_][0][$ndxv] =~  /^([-dl])([0-7])([0-7])([0-7])$/){my($ftyp,$prmo,$prmg,$prme)=($1,$2,$3,$4);my @opcs=($G,$g,$O,$P,$B,$M,$C,$R);
+             $indt[$_][0][$ndxv] =~ s/^.*$/$ftcc{$ftyp}$ftyp$opcs[$prmo]$prmo$opcs[$prmg]$prmg$opcs[$prme]$prme/;
+      }else{print     S($ofcc[$ndxv])       if(defined $ofcc[       $ndxv]);
+      }      $indt[$_][0][$ndxv] =~ s/^([0-9A-Za-z._])([0-9A-C])([0-9A-V])([0-9A-Za-g])([0-9A-N])([0-9A-Za-x])([0-9A-Za-x])([0-9A-Za-x])$/$R$1$O$2$Y$3$G$4$C$5$B$6$M$7$P$8/;
+      if(                 $ndxv  ==   1 || $ndxv == 4){ # hard-coding any column 1 (2nd) && 4 (5th) as only fields to right-justify for now, expecting lsd8xt
+        print(b8colr(sprintf(  "%$widz[$ndxv]s",       $indt[$_][0][$ndxv])));} # pre-wrapping block && file size b64 values in b8colr messes width calc
+      elsif(                               $ndxv >= 6){ # hard-coding any column 6 (7th) or greater should ignore @widz, expecting lsd8xt filenames there
+        print (                                        $indt[$_][0][$ndxv] );}
+      else{
+        printf("%-$widz[$ndxv]s",                      $indt[$_][0][$ndxv] );}
+      print ' '      if($ndxv ne                                   $#ndxd  ); }
+  }   print "\n" unless($supf &&              !defined $indt[$_][0][$ndxd[0]]);
+}

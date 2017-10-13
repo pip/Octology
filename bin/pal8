@@ -1,0 +1,84 @@
+#!/usr/bin/perl
+# DBILFtqq:pal8 by PipStuart <Pip@CPAN.Org> to centralize color palette configur8ion and change terminal colors;
+# 2du:cnt @ARGV 2accept ordr keyz,use GetOpt::Long 2tAk custm colr&&mor Useful optnz lIk %cmap keyz2indic8 folOing ordr;
+use strict;use warnings;use utf8;use v5.10;
+use Octology::a8;
+use Octology::b8;
+my $VERSION='0.0';my $d8VS='H6FM999Q';
+my $term='';$term = $ENV{'TERM'    } if(exists($ENV{'TERM'    }) && $ENV{'TERM'    }); # Terminal type
+my $pqef= 0;$pqef = $ENV{'Pal8Qiet'} if(exists($ENV{'Pal8Qiet'}) && $ENV{'Pal8Qiet'}); # Pal8QietEnvFlag
+my $dfpl= "000 g00 gL0 0g0 0gg 00g g0g ggg  LLL _LL __L L_L L__ LL_ _L_ ___"; # DeFault kernel PaL8 colors after booting (in 2pal8 order) but =~ s/P/L/g;
+my $dxpl= "000 W00 WW0 0W0 0WW 00W W0W mmm  WWW _00 __0 0_0 0__ 00_ _0_ ___"; # Default Xterm  PaL8 colors from base 256 (in 2pal8 order)
+my $cmpl= "000 g00 _SI 0g0 0gg DPf g0g CCC  ggg z99 __L L_L L__ Sdp kOr ___"; # CnvGTP28($cmsv); # CheckMate ckm8 PaL8 colors (from GnomTerm) 2pal8 order
+my @fvpl=("215 T34 _WI 0F9 0SX 06A xK_ GUZ  6DJ _JU __C B_b L__ 7V_ xX_ sy_", # krOgcbPw KRYGCBMW orig TigsFavs converted to 2pal8 order but modified
+          "EEE WEM pX0 EI4 8SQ GQU V9p WWU  QQQ _Qj pp0 QZ8 Guq Xpw p0p __y", # ehodtspi EHyDTSmI with hand gener8d darks ((round Bright/4)*2) other than op
+          "KKK M44 WSO GWQ UWW 00G SSW WSM  eee i88 _vn V_r y__ 00W vv. _th", # .fuaznlj _FUAZNLJ  although looking up dark version3 of each might improve
+          "00I M6C WQ0 6Q6 8GM 4IW UGU WUQ  00Y iCO _r0 CpC HWj 7a_ xWx .wr");# 02468xvq 13579XVQ
+my $cmsv= "#000000000000:#AAAA00000000:#0000AAAA0000:#FF8FBE3548C1:#34346565A4A4:#AAAA0000AAAA:#0000AAAAAAAA:#323232323232:#AAAAAAAAAAAA:#F4AE24172417:#5555FFFF5555:#FFFFFFFF5555:#72729F9FCFCF:#BB056102D47A:#5555FFFFFFFF:#FFFFFFFFFFFF";  # CkM8 StringValue in ~/.gconf/apps/gnome-terminal/profiles/Profile4/%gconf.xml
+sub CnvGTP28{my $tpsv = shift(@_) || $cmsv;my $crps = ''; # CoNVert GnomeTerminal Palette 2 pal8, Term Pal <stringvalue>, Converted Return Pal8 String
+  my @bdpe = split(/:/,$tpsv);s/^#// for(@bdpe);my @bdpf; # Broken Down Palette Entries, BDP Fields
+  for(0..$#bdpe){$bdpf[$_][0] = b64(int(dec(substr($bdpe[$_],0,4)) / 1024));
+                 $bdpf[$_][1] = b64(int(dec(substr($bdpe[$_],4,4)) / 1024));
+                 $bdpf[$_][2] = b64(int(dec(substr($bdpe[$_],8,4)) / 1024));}
+  splice(@bdpf, 2,0,splice(@bdpf, 3,1)); # swap   3 Orange before  2 green               # transl8 ANSI to 2pal8 order
+  splice(@bdpf, 4,0,splice(@bdpf, 6,1)); # slide  6 cyan   before  4 blue  (and Purple )
+  splice(@bdpf,10,0,splice(@bdpf,11,1)); # swap  11 Yellow before 10 Green
+  splice(@bdpf,12,0,splice(@bdpf,14,1)); # slide 14 Cyan   before 12 Blue  (and Magenta)
+  for(0..$#bdpe){$bdpe[$_]    = join('',@{$bdpf[$_]});
+    $crps     .= $bdpe[$_] . ' '; $crps .= ' ' if($_ == 7); # double-space center like above
+  } $crps     =~ s/\s$//;print "cmpl:$cmpl\ncrps:$crps\n";return($crps);
+} my  $bkof = shift(@ARGV) || 0;my $gtpl = ''; # BlocK OFfset, GnomTermPaL
+if   ($bkof =~ /^-*q(u?iet)?$/     ){$pqef    =  1;$bkof = shift(@ARGV) || 0;} # if first arg is -q set Qiet flag && load next arg
+if   ($bkof eq 'd'                 ){$fvpl[0] = $dfpl       ;}
+elsif($bkof eq 'D'                 ){$fvpl[0] = $dxpl       ;}
+elsif($bkof eq 'c'                 ){$fvpl[0] = $cmpl       ;}
+elsif($bkof =~ /^[123]$/           ){$fvpl[0] = $fvpl[$bkof];}
+elsif($bkof =~ /^[0-9A-Za-z._]{3}$/){$fvpl[0] = "$bkof " . join(' ',@ARGV);} # allow just passing in 16 3-char b64 argz as the custom 2pal8 order to load
+elsif($bkof =~ /^-*h(elp)?$/ && !$pqef){print "pal8 v$VERSION d8VS:$d8VS auth:$auth usage:
+  q  sets Quiet mode to not print  default 2pal8 d8a
+  0  loads primary    2pal8 within default 8pal8
+  1  loads secondary  2pal8 within default 8pal8
+  2  loads tertiary   2pal8 within default 8pal8
+  3  loads quaternary 2pal8 within default 8pal8
+  c  loads Ckm8 custom pal8
+  d  loads the Default kernel palette after boot
+  D  loads the Default xterm  palette from 256
+  h  prints this Help text
+     additionally 16 3-char b64 arguments can be
+       given in 2pal8 krOgcbPw KRYGCBMW order or
+       the Octology::a8 pal8 abbreV8ion map char\n";}
+elsif(exists($f8pm{$bkof})){$ENV{'Pal8Qiet'}=$pqef if($pqef);system("$f8pm{$bkof}.pal8");exit();} # XeQt && Xit if valid ~/lib/Octology/f8/pal8/ fIlnAm givN
+my @fpsp = split(/\s+/,join(' ',@fvpl)); $_= $cmap{'8pal8'};s/\s+//g;my @pvsp=split(//,$_);#y %pmap=();#FavPalSePar8d||SPlit && Pal8 abrV8ion letters SePar8d
+for(0..63){$pmap{$pvsp[$_]} = $fpsp[$_];}
+my $jpms=''; # Joined Pal8 Mapd Strngs
+printf  ("pal8 %s %s\n",$cmap{'2pal8'},$fvpl[0]                                     ) if(!$pqef);
+for(0..$#{$cmsp{'ANSI'}}){my @rgbd = split(//,$pmap{$cmsp{'ANSI'}[$_]});for my $cndx (0..$#rgbd){$rgbd[$cndx]=b10($rgbd[$cndx])*4;}
+  $jpms .=                                                          $pmap{$cmsp{'ANSI'}[$_]} . ' ';
+  printf("%s"                                         ,                 S($cmsp{'ANSI'}[$_])) if(!$pqef); # Escape foreground color for row
+ #print  $SKp8, ($_ < 8) ? '47m' : '40m'; # background w or k color
+  printf("%2d:%s:%s:#%2.2X%2.2X%2.2X:%3d:%3d:%3d:%s\n",$_,$cmsp{'ANSI'}[$_],$pmap{$cmsp{'ANSI'}[$_]},@rgbd,@rgbd,$term) if(!$pqef);
+ #printf("\e]P%1.1X%2.2X%2.2X%2.2X"                   ,$_,                           @rgbd)   if($term =~ /^xterm/); # GNU/Lin Console? m// 4 -256color also;
+  printf("\e]4;%d;#%2.2x%2.2x%2.2x\e\\"               ,$_,                           @rgbd)   if($term =~ /^xterm/); # works in GnomTerm AgN (try4screen too?)
+  $rgbd[0] *= 256;$rgbd[1] *= 256;$rgbd[2] *= 256; # scale 8-bit RGB d8a up to 16-bit                                # GnomTerm window focus chng did reset B4
+  $gtpl .= sprintf("#%4.4X%4.4X%4.4X:"                ,                              @rgbd);
+} $gtpl =~ s/:$//;say "$G$gtpl" if(!$pqef); # maybe above should also set bkgr && frgr 0 && 7 like etfp did?
+system  ("etfp $jpms"                                                                     )   if($term eq 'linux');
+#void RsetPale(){int pndx,fndx; // reset palette through appropriate method
+#  if(LOCL && strcmp(term,"xterm")){ // just reset local virtual terminal
+#    if(escr){printf("\e]R");} // escape reset (doesn't work on xterm) ... or GNU/Linux anymore either? =(
+#    else{for(pndx=0;pndx<16;pndx++){if(!strcmp(term,"xterm")){ // xterm
+#          printf(   "\e]4;%d;#%2.2x%2.2x%2.2x\e\\",pndx,b10c(dpal[(pndx*4)+0]) * 4,b10c(dpal[(pndx*4)+1]) * 4,b10c(dpal[(pndx*4)+2]) * 4);
+#          if       (pndx == 0) { // If setting 'black', also set the background
+#            printf( "\e]11;#%2.2x%2.2x%2.2x\e\\"  ,     b10c(dpal[(pndx*4)+0]) * 4,b10c(dpal[(pndx*4)+1]) * 4,b10c(dpal[(pndx*4)+2]) * 4);
+#          } else if(pndx == 7) { // if setting 'white', also set the foreground
+#            printf( "\e]10;#%2.2x%2.2x%2.2x\e\\"  ,     b10c(dpal[(pndx*4)+0]) * 4,b10c(dpal[(pndx*4)+1]) * 4,b10c(dpal[(pndx*4)+2]) * 4);
+#          }}
+#        else{printf("\e]P%1.1X%2.2X%2.2X%2.2X"    ,pndx,b10c(dpal[(pndx*4)+0]) * 4,b10c(dpal[(pndx*4)+1]) * 4,b10c(dpal[(pndx*4)+2]) * 4);}}}} //GNU/LinConsol
+#  else{for(pndx=0;pndx<16;pndx++){for(fndx=0;fndx<3;fndx++){cpal[(pndx*3)+fndx]=b10c(dpal[(pndx*4)+fndx]) * 4;}} // re-initialize global palette
+#    if(ioctl(0,PIO_CMAP,&cpal) == -1){perror("PIO_CMAP");exit(-1);}}}
+#void SettPale(int pndx,int redd,int grnn,int bluu){redd*=4;grnn*=4;bluu*=4; // set pal8 valz,scaled decimalz of b64valz2intz in the 0..255 (actually 252) rang
+#  if(LOCL){ // just change local virtual terminal // may want to scal 0..'_' to 0..255 nstd tho?
+#    if(!strcmp(term,"xterm")){printf("\e]4;%d;#%2.2x%2.2x%2.2x\e\\",pndx,redd,grnn,bluu); // xterm
+#      if     (pndx == 0){     printf("\e]11;#%2.2x%2.2x%2.2x\e\\",       redd,grnn,bluu);}  // If setting 'black', also set the background
+#      else if(pndx == 7){     printf("\e]10;#%2.2x%2.2x%2.2x\e\\",       redd,grnn,bluu);}} // if setting 'white', also set the foreground
+#    else{                     printf("\e]P%1.1X%2.2X%2.2X%2.2X",    pndx,redd,grnn,bluu);}} // GNU/Linux console

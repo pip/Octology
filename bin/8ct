@@ -1,0 +1,35 @@
+#!/usr/bin/perl
+use strict;use warnings;use utf8;use v5.10;use Encode;use Octology::a8;my $VERSION='0.0';my $d8VS='H5LM56uB';my $hflg=0 ; # set Versions && clear HelpFLaG
+open my $out8, '>&', STDOUT or die "Can't open  duplic8 STDOUT handle: $!";binmode $out8, ':encoding(UTF-8)';my $widt=80; # crE8 local duplic8 of global
+if(exists($ENV{'COLUMNS'}) && $ENV{'COLUMNS'} > 0){$widt=$ENV{'COLUMNS'};}
+if(@ARGV){my $lndx=$#ARGV; # preserve orig LastiNDeX of argz before any splicing out changez size, then loop backwardz so splice doesn't disrupt lower order
+  for my $andx (0..$lndx){
+    if   ($ARGV[$lndx-$andx] =~ /^--?s=?(.+)$/i){d8cs($1);splice(@ARGV,$lndx-$andx,1);} # take -sNCS param to set custom color sequence
+    elsif($ARGV[$lndx-$andx] =~ /^--?h(elp)?$/i){print $out8 " 8ct - 8ColrTest utility  Vers:$VERSION  d8VS:$d8VS";say $out8 '' if($widt < 83);
+print $out8 "  by Auth:$auth
+  -h                 - print this very brief Help text out and then exit
+  -sNewColrSequence  - replace default d8 colr sequence ('RoYGCBMp') with"    ;print $out8 "\n   " if($widt <  143); # betr2lOd whol str thNautOsplit?
+print $out8 " NewColrSequence to apply to the test string (e.g., '-sRRRGGB')
+ Any other parameters are treated as test strings to color. You can also pipe";print $out8 "\n  "  if($widt <  143);
+print $out8 " parameters or test strings through (e.g., `echo SmallTest|8ct`).
+ Each argument colors sepR8ly, but piping through is whole line string so"    ;print $out8 "\n "   if($widt <  143);
+say   $out8  " `echo  this is some stuff of various widths|8ct`  is different from:";
+print $out8 "   P.S. Try `sumb 1       |g colr  ` to see summaries from bin;",' ' x 9              if($widt >= 143);
+say   $out8 "  `8ct   this is some stuff of various widths ` .. but is the same as:";
+print $out8 "   P.S. Try `8ct -s8XN75UA|g :|shfl` to see other perspectives;",' ' x 9              if($widt >= 143);
+say   $out8 "  `8ct  'this is some stuff of various widths'` .. where quoted as 1;";$hflg=1;last;}}}
+unless(@ARGV){if(!-t STDIN){chomp(@ARGV= decode('UTF-8',<STDIN>));}                                           # provided paramz 1st, then piping thru,
+              else         { push(@ARGV,qw(I am few test words growin showing in4m8ion compRtmNtalIz8ion));}} # then provide default test if still none
+unless($hflg){ # still not sure why param parsing above needed d8cs("$1") quoted or a new $1 capture group in the implement8ion to avoid uninitd $_ warningz
+  print $out8 $W,S('A'),'8',S('H'),'c',S('5'),"t$W - ",S('A'),"8$B(",S('A'),"Octology$B)",S('H'),'Colr',S('5'),"Test$w with ",
+    S('Xg'),'<<<<<Left<',"$z$Y or ",S('Fr'),'>Right>>>>',"$z$C as starting place$w and ";print $out8 "\n  " if($widt < 136);
+  say   $out8    S('M0'),'Back<<ward',"$z$O or ",S('Aq'),'>For>>ward',"$z$G direction through color ",d8colr('sequence')," $B($W",d8cs('-g'),"$B)$z.";
+  print $out8    bfr8colr("bfr8colr"),"$z:",S('Xg'),"L$z$P",'2',S('Fr'),'R' ,"$z$W:",S('M0'), "bkwd$z${W}:",bfr8colr(@ARGV),"$z:";
+  print $out8 ' ',S('Xg'),"<Left<<$z$P to ",S('Fr'),">Right>$z ",S('M0'),'Back<<ward',$z if($widt >= 110);say $out8 '';
+  print $out8 '  ',b8colr(  "b8colr"),"$z:",S('Fr'),"R$z$P",'2',S('Xg'),'L' ,"$z$W:",S('Aq'), "4wrd$z${W}:",  b8colr(@ARGV),"$z:";
+  print $out8 ' ',S('Fr'),">Right>$z$P to ",S('Xg'),"<Left<<$z ",S('Aq'),'>For>>ward',$z if($widt >= 110);say $out8 '';
+  print $out8 '  ',d8colr(  "d8colr"),"$z:",S('Xg'),"L$z$P",'2',S('Fr'),'R' ,"$z$W:",S('Aq'), "4wrd$z${W}:",  d8colr(@ARGV),"$z:";
+  print $out8 ' ',S('Xg'),"<Left<<$z$P to ",S('Fr'),">Right>$z ",S('Aq'),'>For>>ward',$z if($widt >= 110);say $out8 '';
+  print $out8    dur8colr("dur8colr"),"$z:",S('Fr'),"R$z$P",'2',S('Xg'),'L' ,"$z$W:",S('M0'), "bkwd$z${W}:",dur8colr(@ARGV),"$z:";
+  print $out8 ' ',S('Fr'),">Right>$z$P to ",S('Xg'),"<Left<<$z ",S('M0'),'Back<<ward',$z if($widt >= 110);say $out8 '';} # mAB mk mor XtNded autOtStz up2 160?
+close   $out8               or die "Can't close duplic8 STDOUT handle: $!"; # mAB d8cs($1) pasd a sortof ref in @_ && then loop to m// on $_ reset capturez?

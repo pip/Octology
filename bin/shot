@@ -1,0 +1,74 @@
+#!/usr/bin/perl
+# 26AK9fB0:shot crE8d by PipStuart <Pip@CPAN.Org> to wrap `scrot` with my most commonly preferred options;
+use strict;use warnings;use utf8;
+my $d8VS='G8FMC2UN';my $name = $0;$name =~ s/.*\///;
+my %optz =('file' => $name,   # unique part of filename
+           'scrw' =>     0,   # screen width  (loaded after looping)
+           'scrh' =>     0,   # screen height (loaded after looping)
+           'whol' =>     1,   # whole screen shot?
+           'focu' =>     0,   # grab focused window without requiring explicit selection
+           'bord' =>     0,   # grab window border too?
+           'dela' =>     3,   # delay seconds
+           'coun' =>     1,   # countdown?
+           'exec' =>    '',   # execute on the resultant file
+           'mult' =>     0,   # multi-display shot?
+           'thum' =>   'T',   # make a thumbnail?
+           'thmw' =>    20,   # thumbnail's width  (pixels) orig:128
+           'thmh' =>    '',   # thumbnail's height (pixels) orig: 96
+           'thmm' =>   '%',   # thumbnail mode: x=w/h, %=use width as percentage
+           'slnt' =>     0,); # silent or allow default beeping
+my $parm = '';$_ = join(' ', @ARGV);
+if(/^--?[h?]/){die qq/ 26AK9fB0:$name crE8d by PipStuart <Pip\@CPAN.Org>; d8VS=$d8VS
+  Desc:$name wraps scrot in my most common options. I only want lossless PNG files at maximum compression in 3 seconds, usually don't want thumbnails, etc..
+    usage: $name <filename>
+  -s     Select  window (uppercase shoots windowmanager border too)
+  -u     focUsed window (uppercase shoots windowmanager border too)
+  -c(#)  Countdown # seconds before taking shot (Dflt:3, uc hides count)
+  -e(X)  Exec X on resulting screenshot file
+  -m     grab from Multiple displays && join them (already scrot Dflt?)
+  -t(#)(x|\%)?(#)?  crE8 Thumbnail of size dimensions or % (Dflt:20%)
+  -z     silent (prevent beeping)\n/;}
+if(s/(^|\s)--?(s)(\s|$)/$1$3/     ){$optz{'whol'}=0;}
+if(s/(^|\s)--?(S)(\s|$)/$1$3/     ){$optz{'whol'}=0;                $optz{'bord'}=1;}
+if(s/(^|\s)--?(u)(\s|$)/$1$3/     ){$optz{'whol'}=0;$optz{'focu'}=1;}
+if(s/(^|\s)--?(U)(\s|$)/$1$3/     ){$optz{'whol'}=0;$optz{'focu'}=1;$optz{'bord'}=1;}
+if(s/(^|\s)--?(c)(\d*)(\s|$)/$1$4/){                if(defined($3) && length($3)){$optz{'dela'}=$3;}}
+if(s/(^|\s)--?(C)(\d*)(\s|$)/$1$4/){$optz{'coun'}=0;if(defined($3) && length($3)){$optz{'dela'}=$3;}}
+if(s/(^|\s)--?(e)(\w+)(\s|$)/$1$4/){                if(defined($3) && length($3)){$optz{'exec'}=$3;}}
+if(s/(^|\s)--?(m)(\s|$)/$1$3/     ){$optz{'mult'}=1;}
+if(s/(^|\s)--?(t)(\d*)(x|\%)?(\d*)(\s|$)/$1$6/i){   $optz{'thum'}=$2;
+                                                    if(defined($3) && length($3)){$optz{'thmw'}=$3;}
+                                                    if(defined($4) && length($4)){$optz{'thmm'}=$4;}
+                                                    if(defined($5) && length($5)){$optz{'thmh'}=$5;}}
+if(s/(^|\s)--?(z)(\s|$)/$1$3/     ){$optz{'slnt'}=1;}
+if( /([^ -]\w*)/                  ){$optz{'file'}=$1;} # filename can't start with dash or space or have \W characters for now
+$optz{'file'} =~ s/\.png//i;
+$optz{'file'} .= '_\\$wx\\$h';
+$optz{'fext'}  = '-' . `d8` . '.png';
+$optz{'ofil'}  = "$optz{'file'}-$optz{'thmw'}";
+$optz{'ofil'} .= "$optz{'thmm'}$optz{'thmh'}" if($optz{'thmm'} eq 'x');
+$optz{'ofil'} .= 'prcnt'                      if($optz{'thmm'} eq '%'); # don't really want percents in filenames
+$optz{'ofil'} .= "-thum$optz{'fext'}";
+$optz{'file'} .=       $optz{'fext'};
+$optz{'ofil'} =~ s/\\/\\\\/g; # double-escape backslashes for l8r -e 'mv ...'
+$parm =$optz{'file'}        . ' -q 1 '; # PNG are always lossless quality so -q 1 sets maximum compression
+unless($optz{'whol'}){
+  if  ($optz{'focu'}){$parm .= '-u ';}
+  else               {$parm .= '-s ';}
+  if  ($optz{'bord'}){$parm .= '-b ';}}
+if    ($optz{'dela'}){$parm .= "-d $optz{'dela'} ";}
+if    ($optz{'coun'}){$parm .= '-c ';}
+if    ($optz{'exec'}){$parm .= "-e $optz{'exec'} ";}# unless($optz{'thum'} eq 't');} # exec already will need to be used to move desired thumbnail
+if    ($optz{'mult'}){$parm .= '-m ';}
+if    ($optz{'slnt'}){$parm .= '-z ';}
+if(    $optz{'thum'} eq 't'){
+  if(  $optz{'thmm'} eq '%'){
+    $parm .= "-t $optz{'thmw'} ";
+  }else{ # Note:$name used to rely on scaleimg to crE8 wxh thumbnails && only used scrot if thumb size was specified as percentage, but now scrot for both.
+#   $parm .= "-e 'scaleimg \\\$f $optz{'thmw'} $optz{'thmh'} $optz{'ofil'}'";
+    $parm .= "-t $optz{'thmw'}$optz{'thmm'}$optz{'thmh'} ";
+  }
+# $parm   .= "-e 'mv \$m $optz{'ofil'}' "; # maybe make a new `mvst` for MoVe Shot Thumb to take those params && combine names before moving
+}#rint "scrot    $parm\n";#print "topi:$_\n";for(keys(%optz)){print "$_ => $optz{$_}, ";};print "\n";
+#print "thumofil:$optz{'ofil'}\n";
+system("scrot $parm");

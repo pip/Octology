@@ -1,0 +1,2 @@
+#!/usr/bin/perl
+use strict;use warnings;use utf8;use v5.10;use Octology::U8;asci(@ARGV);

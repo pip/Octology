@@ -1,0 +1,360 @@
+#!/usr/bin/perl -w
+# 31B8fSs - prym created by Pip@CPAN.Org to find prime numbers for fun
+#  (as fast as I can in Perl using a sieve while saving all results)
+#
+#       -->  Press 'x' or Escape to eXit!  <--
+#
+#                  'v' toggles Visible progress
+#                  'b' toggles Base64 integers
+#
+# Desc: This was originally a UserRPL program on my HP48GX calculator
+#   called GetPrime.  I rewrote it in 4Dos batch in 1999 && had fun
+#   with that for many hours.  Now it will be reborn in Perl under a
+#   new name: prym.  Finding prime numbers is a screen-saver of sorts
+#   for me.  I like to watch it =).  Specifically, I like to observe
+#   the percentages slowing descent alongside the MaxCheckDelta (MDlt).
+#   When MDlt gets to zero, the MaxCheckIndex (Mn) increments &&
+#   squares that prime number to get a new MaxCheck (MaxxCk) which
+#   makes the percentages jump up again && descend more slowly.  If
+#   you run `prym p` it will explode Prym.txt (which just stores deltas
+#   in base64) into Prim.txt which will have one prime-per-line so the
+#   nth prime can be found on line n.  `prym pN` where N is a base64
+#   number will print the Nth prime number from Prym.txt.  Uppercase
+#   "P" before N is the same but can be the decimal index of the prime.
+#   I've added a much faster mode where it doesn't use Curses to draw
+#   anything.  The flag for this is called $draw in the code below.
+#   $draw can be given on the command line like `prym 0`.  If $draw is
+#   false (zero), prym will find primes in 65536 blocks before saving
+#   to disk.  This way (without drawing every new found prime) seems to
+#   be finding about 250 new prime numbers per second on my machine
+#   while it was only finding about 3 new ones per second with draw on
+#   (but it is much more fun to watch the progress =) ).  Press Ctrl-C
+#   to break out if you're not drawing (but it won't save the progress
+#   it has made on this loop if you do this so you may want to wait
+#   until it completes a block before breaking execution if you want
+#   progress to be saved... blocks take about 4 minutes each to
+#   complete on my P3-750MHz machine).
+# 2do:
+#   if mxck surpasses @chkz, double csiz && reload chkz
+#   use Time::PT && Frame math instead of Time::HiRes::time
+#   mk prym faster
+#   add any new fields that might be interesting to observe
+#   add other keys
+#   cleanup code
+#   write help
+use Octology::b8;
+use Octology::d8;
+use Time::PT;
+use Time::HiRes;
+use Curses::Simp;
+my $mjvr = 1; my $mnvr = 0; my $d8vr = 'E7SMKsfI';
+my $auth = 'Pip Stuart <Pip@CPAN.Org>';
+my $name = $0; $name =~ s/.*\///;
+my $draw = shift; $draw = 1 unless(defined $draw);
+# set draw to 0 for much faster calculation (it won't draw all the
+#   pretty stats or check for input so you have to Ctrl-C break it)
+
+my @text = (); my @fclr = (); my @bclr = (); my $qiii = "-1"; my $simp;
+my $wich;      my $fclr;      my $bclr;
+my $widt = 0;  my $hite = 0;  my $newl = "";   my $fndx = 0;
+my $bsiz = shift || 65536; # rolling buffer size as the second param
+my $csiz = shift ||  4096; # check array size as third param
+my $lupz = shift ||  4096; # number of times to loop filling buffer as 4th parm
+my @chkz = (); my $buff = ""; my $temp = ""; my $cand = 0; my $done = 0;
+my $psiz = 0;  my $prev = 0;  my $pnum = 0;  my $coun = 0; my $fail = 0;
+my $indx = 0;  my $last = 0;  my $totl = 0;  my $mxnd = 0; my $mxck = 0;
+my $dttl = 0;  my $davg = 0;  my $time = 0;  my $otim = 0;
+my $dwid = 1;  my $bs64 = 0;  my $dtai = 1;  my $bzip = 1; my $visi = 1;
+my $tttl = 0;  my $tavg = 0;  my $fwid = 0;  my $fdln;
+my $pdfl = 'PDsc.txt'; my $ppfl = 'Prym.txt'; my $xpfl = 'Prim.txt';
+my @fdnm = ( 'PipTime',  'PrymNdx',    'BfSiz',       'Dl', 'PrymNumb',
+                'MxNd', 'MaxxChek',   'MxDelt');
+my @fdfc = (       'W',        'C',       'U',         'P',        'G',
+                   'Y',        'o',        'R');
+my @fdbc = (       'u',        'b',       'u',         'b',        'u',
+                   'b',        'u',        'b');
+my @flnm = ("AvgDelta", "FSecsDif", "AvgFSecs", "100th%Pr", "100th%Fl",
+            "Prym/Ndx");
+my @flfc = (       'W',        'C',       'U',         'P',        'G',
+                   'Y');
+my @flbc = (       'b',        'u',       'b',         'u',        'b',
+                   'u');
+my @fdvl = (); my @flvl = ();
+
+sub ShowInfo { # Display an Info dialog window
+  $simp->Mesg('type' => 'info',
+" $name v$mjvr.$mnvr.$d8vr - by $auth
+ 
+$name was written for fun as a nerdy screen saver
+ 
+ Shout out to Keith && all the LBox.Org crew.  Thanks to Beppu-san for
+being a good friend.  I hope you find $name useful.  Please don't
+hesitate to let me know if you app-ree-see-ate it or if you'd like
+me to add something for you.  I'd be glad to improve it given new
+suggestions.  Please support FSF.Org && EFF.Org.  Thanks.  TTFN.
+ 
+                                                       -Pip
+ 
+");
+}
+
+sub ShowHelp { # HELP!
+  $simp->Mesg('type' => 'help',
+" $name v$mjvr.$mnvr.$d8vr - by $auth
+
+                        Global Keys:                                
+  h         - displays this Help screen                             
+  b         - toggles Base64 number representation                  
+  d         - toggles Detailed view                                 
+  v         - toggles Visibility                                    
+
+                        System Stuff:
+       ?/H/F1  - Help  :  i - Info  :  x/q/Esc - eXit");
+}
+
+if($bzip && -e $ppfl . ".bz2") { system("bunzip2 $ppfl.bz2"); }
+if($bzip && -e $pdfl . ".bz2") { system("bunzip2 $pdfl.bz2"); }
+if($draw =~ /^p(\w*)/i){ # gener8 Prim.txt from Prym.txt or just return Nth prime
+  $wich = $1 || undef;
+  if(defined $wich && $draw =~ /^p/) { $wich = b10($wich); }
+  if  (-r $ppfl){ # read Prym
+    if(-r $pdfl){ # read PDsc
+      open(PDFL, "<$pdfl");
+      chomp($temp = <PDFL>);
+      close(PDFL);
+      ($totl, $mxnd, $mxck, $last) = split(/\s+/, $temp);
+      $totl = b10($totl); $last = b10($last);
+      $mxnd = b10($mxnd); $mxck = b10($mxck);}
+    $pnum = 1; $coun = 1; $done = 0; $dwid = 1;
+    open(PPFL, "<$ppfl");
+    open(XPFL, ">$xpfl") unless(defined $wich);
+    while(<PPFL>){
+      while(length($_)){
+        $_ =~ s/^(.{$dwid}|\n)//;
+        if(defined $1){
+          if   ($1 eq "\n"){$dwid = 2; if(length($_)){$dwid += length($_);} $_=''; last;}
+          elsif($1 eq  '0'){$dwid = 1; $pnum++;}
+          else             {$dwid = 1; $pnum += (2 * b10($1));}
+          $coun++;
+          if(defined    $wich){
+            if($coun == $wich){print   $pnum; $done=1; last;}
+          }else{               print XPFL "$pnum\n";}
+          print "coun:$coun last:$pnum\n" unless($coun % 64);
+        }
+      } last if($done);
+    }     print "coun:$coun last:$pnum\n";
+    close(XPFL) unless(defined $wich);
+    close(PPFL);
+  } else {
+    print "!EROR! Could not crE8 $xpfl because $pdfl or $ppfl cannot be read!\n";
+  }
+} else { # finding new primes...
+  if($draw) {
+    $simp = Curses::Simp->new('flagbkgr' => 1);
+    $widt = $simp->Widt(); $hite = $simp->Hite();
+    push(@text, 'Loading check array...');
+    push(@fclr, 'w' x $widt);
+    push(@bclr, 'b' x $widt);
+    while(@text < $hite) {
+      push(@text, ' ' x $widt);
+      push(@fclr, 'w' x $widt);
+      push(@bclr, 'b' x $widt);
+    }
+    $simp->Draw('text' => \@text, 'fclr' => \@fclr, 'bclr' => \@bclr);
+    $temp = 0;
+    foreach(@fdnm) { $temp += length($_); }
+    $fwid = int(($widt - $temp) / @flnm);
+  }
+  if(-r $pdfl) { # read checks from PDsc.txt into @chkz
+    open(PDFL, "<$pdfl");
+    <PDFL>; # get rid of stats line
+    chomp(@chkz = <PDFL>); # snarf it all into checks
+    close(PDFL);
+  }
+  if(@chkz < $csiz) { # either PDsc.txt doesn't exist or isn't large enough to fill @chkz
+    if($draw) {
+      $text[0] .= "Generating first $csiz primes.";
+      $simp->Draw('text' => \@text, 'fclr' => \@fclr, 'bclr' => \@bclr);
+    }
+    @chkz = ( 1..3 ); # so generate it
+    $mxnd = $#chkz;
+    $cand = $chkz[$mxnd];
+    $mxck = ($chkz[$mxnd] * $chkz[$mxnd]);
+    while(@chkz < $csiz) { # load chkz with first csiz primes
+      $cand += 2; # prime candidates can only be odd numbers from 3 on
+      while($cand >= $mxck) {
+        $mxnd++;
+        $mxck = ($chkz[$mxnd] * $chkz[$mxnd]);
+      }
+      $fail = 0;
+      foreach(@chkz[2..$mxnd]) { # don't check for 1 or 2
+        unless($cand % $_) { $fail = 1; last; }
+      }
+      unless($fail) {
+        push(@chkz, $cand);
+        if($draw && int($csiz / 64) && !(@chkz % int($csiz / 64))) {
+          $text[0] .= ".";
+          $simp->Draw('text' => \@text, 'fclr' => \@fclr, 'bclr' => \@bclr);
+        }
+      }
+    }
+  }
+  if     (-r $pdfl) { # get Prym.txt description info
+    open(PDFL, "<$pdfl");
+    chomp($temp = <PDFL>);
+    ($totl, $mxnd, $mxck, $last) = split(/\s+/, $temp);
+    close(PDFL);
+    $totl = b10($totl); $last = b10($last);
+    $mxnd = b10($mxnd); $mxck = b10($mxck);
+  } elsif(-r $ppfl) { # or initialize description info from Prym.txt file (very slow!)
+    open(PPFL, "<$ppfl");
+    $coun = 0; $pnum = 0; $dwid = 1;
+    while(<PPFL>) {
+      while(length($_)) {
+        $_ =~ s/^(.{$dwid})//;
+        if(defined $1) {
+          if   ($1 eq "\n") { $dwid = 2; if(length($_)) { $dwid += length($_); } $_ = ""; last; }
+          elsif($1 eq "0")  { $dwid = 1; $pnum++; }
+          else              { $dwid = 1; $pnum += (2 * b10($1)); }
+          $coun++;
+        }
+      }
+    }
+    close(PPFL);
+    ($totl, $mxnd, $mxck, $last) = ($coun, 2, 4, $pnum);
+  } else {            # or initialize description info for starting clean
+    ($totl, $mxnd, $mxck, $last) = (3, 2, 4, 3);
+  }
+  if($draw) {
+    if(@text && $visi) {
+      $simp->Draw('text' => \@text, 'fclr' => \@fclr, 'bclr' => \@bclr);
+    }
+    @text = (); @fclr = (); @bclr = ();
+    $newl = ""; $newc = "";
+    for($fndx = 0; $fndx < @fdnm; $fndx++) {
+      $fdln  = length($fdnm[$fndx]);
+      $newl .= sprintf("%${fdln}s", $fdnm[$fndx]);
+      if($fndx) {
+        $fclr  = $fdfc[$fndx];
+        $bclr  = $fdbc[$fndx];
+        $newc .= $fclr x $fdln;
+      } else {
+        $newc .= ptcc() . ';';
+      }
+    }
+    for($fndx = 0; $fndx < @flnm; $fndx++) {
+      $newl .= sprintf("%-${fwid}.${fwid}s", $flnm[$fndx]);
+      $fclr  = $flcl[$fndx];
+      $newc .= $fclr x $fwid;
+    }
+    push(@text, $newl);
+    push(@fclr, $newc);
+    $otim = Time::HiRes::time unless($otim);
+  }
+  for($indx = 0; $indx < $lupz; $indx++) {
+    $buff = '';
+    if($totl == 3) { $buff = '00'; $mxnd = 2; }
+    $cand = $last;
+    $mxck = ($chkz[$mxnd] * $chkz[$mxnd]);
+    while(lc($qiii) ne "x" && lc($qiii) ne "q" && ord($qiii) != 27 && length($buff) < $bsiz) { # load buff
+      $cand += 2;
+      while($cand >= $mxck) {
+        $mxnd++;
+        $mxck = ($chkz[$mxnd] * $chkz[$mxnd]);
+      }
+      $fail = 0;
+      foreach(@chkz[2..$mxnd]) { # don't check for 1 or 2
+        unless($cand % $_) { $fail = 1; last; }
+      }
+      unless($fail) {
+        $temp  = (($cand - $last) / 2);
+        $dttl += $temp;
+        $temp  = b64($temp);
+        $buff .= '\n' x (length($temp) - 1) if(length($temp) - 1);
+        $buff .= $temp;
+        $temp  = (($cand - $last) / 2) unless($bs64);
+        $last  = $cand;
+        $totl++;
+        if($draw && $dtai) {
+          if(($indx * $bsiz) + length($buff)) {
+            $davg = ($dttl / (($indx * $bsiz) + length($buff)));
+          }
+          $time = Time::HiRes::time;
+          $otim = ($time - $tavg) if($otim == -1);
+          $tttl += ($time - $otim) if(($time - $otim) < 4096);
+          $tavg = ($tttl / (($indx * $bsiz) + length($buff)))  if(($indx * $bsiz) + length($buff));
+          $newl = "";
+#         @fdnm = ("PipTime","PrmNdx","BfSiz","Dl","B64Prime","MxNd","MaxxChek","MxDelt");
+          if($bs64) {
+            @fdvl = (`pt`, b64($totl), b64(length($buff)), $temp, b64($cand), b64($mxnd), b64($mxck),
+                   b64($mxck - $cand));
+          } else {
+            @fdvl = (`pt`,     $totl ,     length($buff) , $temp,     $cand ,     $mxnd ,     $mxck ,
+                      ($mxck - $cand));
+          }
+#         @flnm = ("AvgDelta", "FSecsDif", "AvgFSecs", "100th%Pr", "100th%Fl", "Prym/Ndx");
+          @flvl = ($davg, ($time - $otim), $tavg, (($chkz[$mxnd] / $cand) * 10000),
+                   (($mxnd / $totl) * 10000), ($cand / $totl));
+          for($fndx = 0; $fndx < @fdvl; $fndx++) {
+            $fdln  = length($fdnm[$fndx]);
+            $newl .= sprintf("%${fdln}s", $fdvl[$fndx]);
+          }
+          for($fndx = 0; $fndx < @flvl; $fndx++) {
+            if($flvl[$fndx] =~ /^(\d+)\.?(\d*)$/) {
+              $temp = 0; $temp = $2 if(defined $2 && $2);
+              $newl .= sprintf("%-${fwid}.${fwid}s",     $1  . '.' .     $temp ); # decimal
+            } else {
+              $newl .= ' ' x $fwid;
+            }
+          }
+          $otim = $time;
+          push(@text, $newl);
+          if(@text > $hite) { $temp = shift(@text); shift(@text); unshift(@text, $temp); }
+          $newc = "";
+          for($fndx = 0; $fndx < @fdnm; $fndx++) {
+            if($fndx) {
+              $newc .= $fdfc[$fndx] x length($fdnm[$fndx]);
+            } else {
+              $newc .= ptcc() . ';';
+            }
+          }
+          for($fndx = 0; $fndx < @flnm; $fndx++) { $newc .= $flcl[$fndx] x $fwid; }
+          push(@fclr, $newc);
+          if(@fclr > $hite) { $temp = shift(@fclr); shift(@fclr); unshift(@fclr, $temp); }
+          $simp->Draw('text' => \@text, 'fclr' => \@fclr) if($visi);
+        }
+      }
+      $qiii = $simp->GetK() if($draw);
+      if   (lc($qiii) eq 'b') { $bs64 ^= 1; }             # toggle Base64 view
+      elsif(lc($qiii) eq 'd') { $dtai ^= 1; $otim = -1; } # toggle Detailedview
+      elsif(lc($qiii) eq 'v') { $visi ^= 1; }             # toggle Visibility
+      elsif(lc($qiii) eq 'i') { ShowInfo(); }
+      elsif(   $qiii  eq 'KEY_F1' ||
+               $qiii  eq '?'      ||
+            lc($qiii) eq 'h') { ShowHelp(); }
+    }
+    open(PDFL, ">$pdfl"); # update PrimesDescription file
+    print PDFL b64($totl) . " " . b64($mxnd) . " " . b64($mxck) . " " . b64($last) . "\n";
+    foreach(@chkz) { print PDFL "$_\n"; }
+    close(PDFL);
+    open(PPFL, ">>$ppfl"); # append new Primes buffer
+    print PPFL $buff;
+    close(PPFL);
+    if($draw) {
+      unless($dtai) {
+        push(@text, "PipTime:" . `pt` . " DoneWithSet#:$indx BfSiz:$bsiz UpToPrime#:$totl = $last");
+        if(@text > $hite) { $temp = shift(@text); shift(@text); unshift(@text, $temp); }
+        push(@fclr, $fdcl[0] x 8 . $fdcl[1] x 8 . $fdcl[2] x 13 . $fdcl[3] x length($indx) .
+              $fdcl[4] x 6 . $fdcl[5] x length($bsiz) . $fdcl[6] x 12 . $fdcl[7] x length($totl) .
+              $fdcl[0] x 3 . $fdcl[1] x length($last));
+        if(@fclr > $hite) { $temp = shift(@fclr); shift(@fclr); unshift(@fclr, $temp); }
+        $simp->Draw('text' => \@text, 'fclr' => \@fclr);
+      }
+    } else {
+      print "PipTime:" . `pt` . " DoneWithSet#:$indx BfSiz:$bsiz UpToPrime#:$totl = $last\n";
+    }
+    last if($qiii eq "x" || ord($qiii) == 27); # finish if x or Escape pressed
+  }
+}
+if($bzip && -e $ppfl) { system("bzip2 $ppfl"); }
+if($bzip && -e $pdfl) { system("bzip2 $pdfl"); }

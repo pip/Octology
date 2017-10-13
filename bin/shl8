@@ -1,0 +1,6 @@
+#!/usr/bin/perl
+use strict;use warnings;use utf8;use v5.10; # ECOLIvk4:shl8 crE8d by PipStuart <Pip@CPAN.Org> to mimic source-highlight (shl);
+use       Octology::a8; # setup Dfalt SourceFile if no valid parameter name was given;
+use       Octology::c8;my $sf=shift(@ARGV);$sf='/home/pip/.xinitrc' unless(defined($sf) && length($sf) && -r "$sf");
+my    $co=Octology::c8->new('flnm'=>$sf); #$co->{'_Stxt'}=~ s/(Pip)/$P$1$G/gi; # do some filtr8ion oper8ion on the d8a
+print $co->{'_Stxt'};

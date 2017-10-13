@@ -1,0 +1,60 @@
+#!/usr/bin/perl
+# 2du:fix prntng of $r darkred colrz(lIkafew in`lsa ~`)2Bdif frombrItAgN,fix lsd8 output2bgcolr grupz2sAm wid up2 00m reset2normal,
+#   wrap long lines of out&&input,implmNt sz somehow,get Btix to Prnt each line as it readz it,load.zsh aliases&&recursively expand them correctly,
+#   add pu&&po that insId of 8trm can colr&&anim8 stack window overlay or cmd hist&&persist4navig8ion,procS multiple cmdz per cmdl,stRt tab completions,
+#   stick most of this code bak in2 c8.pm's term profile,split 8sh,support captive mo && d8ok && gst123 && vim && scrn passing input thru somehow,fast scrlbRz,
+#   have 8trm bakgrnd colr modez for 8sh bakgrnded procSz or altern8 visible frequency to demonstr8 secondary term-centric syntax parsing ability,
+#   add option for mini-scrollbar extending to 1440x800 or inlaying with alpha for Chun,toggle extra background pixelz,mouse navig8,enable selection2clipbord,
+#   enable ckm8 to snap save 8trm screen then take over c8 object with mini-scrollbar of each screen high pixels showing previous board positnz,thNrEstor 8trm;
+use strict ;use warnings;use utf8;use v5.10;
+use         Octology::a8;my $VERSION='0.0';my $d8VS='G7BMMHj4'; #  !$HOST on bash or sh -c 'echo $H..'#...m8->{'_xscl'}=0.8;$trm8->Rsiz(75,240);#tst hi-res
+use         Octology::d8;my($pwid,$cwdr,$user,$host,$hndx);$user=$ENV{'USER'} if(exists($ENV{'USER'}));$cwdr=$ENV{'PWD'} if(exists($ENV{'PWD'}));
+use         Octology::c8;$pwid=18;$cwdr='~'  ;$user='pip' ;$host=$ENV{'HOST'} if(exists($ENV{'HOST'}));  #...m8->{'_xscl'}=2.2;$trm8->Rsiz(25, 80);#tst lo-res
+  my ($d8im,$tcwd)   ;my @hist=();$hndx=  0  ;$host='Aku' ;$host=$ENV{'HOSTNAME'} if(exists($ENV{'HOSTNAME'}) && !exists($ENV{'HOST'})); # in case !zsh
+  my  $tstx=Octology::c8->new('cmds'=>'lsd8');$tstx=Octology::c8->new("/home/$user/.xinitrc"        ) if(-r "/home/$user/.xinitrc"        );
+  my  $tstm=Octology::c8->new('cmds'=>'lsd8');$tstm=Octology::c8->new("/home/$user/.mikmod_playlist") if(-r "/home/$user/.mikmod_playlist");
+      # tst lOd2smal fIleobjX, shud stRt pRsng&&colrng by XtNgrp,XtNsion,thN nAm,thN contNt Dtection
+  my  $tstc=Octology::c8->new('cmds'=>'lsd8');$ENV{'TERM'}='8trm'; # tst lOd cmnd output, && tst whether I can upd8 ENV for lodH in subshell to detect
+  my  $trm8=Octology::c8->new('term'=>1);sub D{$trm8->Draw();}sub K{$trm8->GetK(@_);}if($host=~/(Chun|Taki)/i){$trm8->{'_yscl'}=0.88;$trm8->{'_xscl'}=0.92;}
+sub P{$d8im=Octology::d8->new();$cwdr =~ s/^\/home\/$user/~/;$pwid=length("$user$host$cwdr")+11;push(@hist,'');$hndx=$#hist; # build basic 8sh prompt
+      $trm8->Prnt("\n") if(@{$trm8->{'_text'}}); # && (!exists($trm8->{'_flagbten'}) || !$trm8->{'_flagbten'}));$trm8->{'_flagbten'}=1; # flagdl8stBtix4 \n Nd
+      $tcwd="$B$cwdr";$tcwd=~ s/(\/)/$Y$1$B/g; # do some temporary directory field color8ion
+      $trm8->Prnt($W."[$G$user$B\@$C$host".$d8im->colr('a')."$tcwd$W]");}P; # this 1st P() callz Prnt wich initz SDL
+sub H{$trm8->XCrs($pwid);my($y,$x)=$trm8->Move();$hist[$hndx]=substr($trm8->{'_text'}[$y],$x,length($trm8->{'_text'}[$y])-$x,'');}sub Pr{$trm8->Prnt(@_);}
+sub C{my $cfco=shift||return;for(0..$cfco->{'_hite'}-1){Pr("\n");Pr($cfco->{'_text'}[$_],$cfco->{'_Fclr'}[$_],$cfco->{'_bclr'}[$_],$cfco->{'_f0nt'}[$_]);}}
+my $keey='';my($cmdl,$pcmd); # CatFileCol8Obj above
+while    (    $keey ne 'Ctd'){$keey=K(-1);if(length($keey)){ # any Control-d exits, Lt|Rt mv cursor within cmdl, Up|Dn nav hist, PUp|PDn nav scrolbak
+    if   (    $keey eq  'Lt'){$trm8->{'_xcrs'}-- if($trm8->{'_xcrs'} >                                  $pwid    );}
+    elsif(    $keey eq  'Rt'){$trm8->{'_xcrs'}++ if($trm8->{'_xcrs'} < length($trm8->{'_text'}[$trm8->{'_ycrs'}]));}
+    elsif(    $keey eq  'Up' && $hndx         ){H;Pr($hist[--$hndx]);} # maybe shouldn't let you edit old history?
+    elsif(    $keey eq  'Dn' && $hndx < $#hist){H;Pr($hist[++$hndx]);}
+    elsif(    $keey eq 'PUp'){$trm8->ScBk(     );}
+    elsif(    $keey eq 'PDn'){$trm8->ScFw(     );}
+    elsif(    $keey eq 'Ins'){$trm8->Insr( '^' );}
+    elsif(    $keey eq 'Hom'){$trm8->XCrs($pwid);}                                      # should jump xcrs to start of cmdl (after end of prompt)
+    elsif(    $keey eq 'End'){$trm8->XCrs(length($trm8->{'_text'}[$trm8->{'_ycrs'}]));} # should jump xcrs to end   of cmdl
+    elsif(    $keey eq 'Cto'){$trm8->OvDr( '^' );}
+    elsif(    $keey eq 'Ctp'){$trm8->Prnt("test\e]50;m\e\\med\e]50;r\e\\roman3\e]50;t\e\\tektite");} # Control-p to test Prnt new escapes
+    elsif(    $keey eq 'Ctc'){P;} # Control-c to cancel current commandline && begin a fresh one on the next line
+    elsif(    $keey eq "\b" ){if($trm8->{'_xcrs'} > $pwid){substr($trm8->{'_text'}[$trm8->{'_ycrs'}],--$trm8->{'_xcrs'},1,'');}} # Backspace
+    elsif(ord($keey)==  127 ){my($y,$x)=$trm8->Move();substr($trm8->{'_text'}[$y],$x,1,'') if(length($trm8->{'_text'}[$y]) > $x && $x >= $pwid);} # Delete
+    elsif(ord($keey)==   13 ){my($y,$x)=$trm8->Move();$hndx=$#hist;my $cmdl=$trm8->{'_text'}[$y];$cmdl=~ s/^(.*\[$user\@$host[0-9A-Za-z._]{8}[^\]]+\])//;
+      $hist[$hndx]=$cmdl; # instead of loading cmdl with substr from pwid, better to strip off all up to last prompt (but problemz when cmd spanz linez)
+      if (    $cmdl eq 'L'  ){$cmdl='echo ';C($tstx);} if($cmdl eq 'l'){$cmdl='lsd8';} if($cmdl eq 'f'){$cmdl='c8fn c8-E8AM3T4R.pm';}
+      if (    $cmdl eq 'M'  ){$cmdl='echo ';C($tstm);} if($cmdl eq 'm'){$cmdl='man ';} if($cmdl eq 'd'){$cmdl='df     ';} # basic aliasez
+      if (    $cmdl eq 'C'  ){$cmdl='echo ';C($tstc);} if($cmdl eq 'c'){$cmdl='wc  ';} if($cmdl eq 'p'){$cmdl='ps     ';} #if($cmdl eq '8'){$cmdl='vi';}
+      if (    $cmdl eq 's'  ){$cmdl=          "source-highlight -f esc --style-file=/home/$user/.shl.style -s perl -i /home/$user/dvl/c8/8trm";}
+      if (    $cmdl =~  /^\s*s\s+(.+)/){$cmdl="source-highlight -f esc --style-file=/home/$user/.shl.style -s perl -i       $1               ";}
+              $cmdl =~ s/^ls( |$)/ls -C --color=always -w $trm8->{'_widt'}$1/;$cwdr =~ s/^~/\/home\/$user/; # alias ls -C --color=always -w 160 2B lIke zsh
+   my $didp=0;$pcmd =  $cmdl;$pcmd=~ s/(^\s+|\s+$)//g; # strip surrounding space from potential Path CoMmanD
+      if (    $pcmd =~ m|^[-0-9A-Z._/]+$|i){ # there might be some cmdl text that shouldn't try -d so try to first m// against only tested dircharz
+        if (  $pcmd =~ s/^\.(\.+)/$1/){$cwdr =~ s/\/[^\/]+$// while($pcmd =~ s/^\.//);$cwdr='/' unless(length($cwdr));$didp=1;}
+        elsif($pcmd =~  /^\//  &&
+              -d       "$pcmd"){$cwdr  =   $pcmd ;$cwdr =~ s/^\/+/\//;$cwdr =~ s/(.)\/$/$1/;$didp=1;}
+        elsif($pcmd =~ s/\/$// || ($cwdr eq '/' && -d "/$pcmd") || # when cwdr eq /, don't tst //pcmd
+              -d "$cwdr/$pcmd"){$cwdr .= "/$pcmd";$cwdr =~ s/^\/+/\//;$cwdr =~ s/(.)\/$/$1/;$didp=1;}}
+      if (   !$didp){
+        if   ($cmdl eq 'x'  ){$keey='Ctd';} # x alias for exit pretends Control-d pressed
+        else                 {$cmdl="cd $cwdr;$cmdl 2>&1";$trm8->Prnt("\n");$trm8->Btix( $cmdl );}}P;}
+                                                         #$trm8->Prnt("\n".             `$cmdl`);}}P;}  # similR2Btix but Xtra nwlIn @Nd && flashing
+    else                     {                            $trm8->Prnt(                   $keey );} D;}} #   cursorz @EoLz && seemz slower

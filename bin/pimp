@@ -1,0 +1,2515 @@
+#!/usr/bin/perl -w
+# 35NKJvn5:pimp crE8d by PipStuart <Pip@CPAN.Org>
+#  Desc: Pip's Intergallactive Moosex Plaqueluster (PipsIntrglctMusxPlaqlstr)
+#      alternately: Pimp Is My pimP
+#    pimp is a program which plays music && changes mixer settings
+#      in a very particular (meticulous?) way.  I am weird && hate 
+#      music players that have random playlist functions that repeat 
+#      the same song 2,3,4... times even when the whole list is over 
+#      1023 songs so I was motivated to write a mechanism for 
+#      UniqueRandomness so that there is no preset play order but 
+#      songs won't repeat within a settable threshold.  While I was at
+#      it, I implemented relative volume changing, weighting on how 
+#      frequently a song should randomly be played (I control 
+#      randomness uniquely && frequently! =) Muahaha).  Mixer settings
+#      && play progress are visually described, the interface is very
+#      colorful (&& relatively easy to modify although there's not an
+#      interactive interface to do that yet)... pimp is the music 
+#      player I've always wanted.  You can type a search string &&
+#      see all matching files in your plaqlust.  I'll have to work 
+#      on supporting more music types (like lossless ones) when I have
+#      time but OGG, S3M, IT, XM, MOD, MP3... seem to be a good start. 
+#      I like text-mode because I don't need X11 or to mess with gfx 
+#      but it'll still run nicely in a term window.  Well anyways, 
+#      this software is Free.  Any software I have control over is && 
+#      shall be.  I license it under the GNU General Public License 
+#      (GPL) Version 2.  See the Free Software Foundation (fsf.org) 
+#      for information about your freedom.  Please let me know if you 
+#      like pimp or have coding advice or would like me to implement 
+#      a feature or fix a bug.  I would like to see pimp improve. 
+#      Thanks.  TTFN.  Pip@CPAN.org
+#    pimp relies on zinf, ximp, simp, cnv, && pt for operation.
+#  2do:
+#    add toggle for showing full filenames
+#    fb16 puts prompt cursor one line too high
+#    updating lust should un{chng} any duplicates in @rndx
+#    srch // added files sometimes only show same leng as rndx[sndx]
+#    mk quick nexts wait for completion of previous
+#    fix Cnv bug (shitballs! what is the problem?!? must just be too fast)
+#    get latest libmikmod
+#    add libmikmod to zinf
+#    mk smaller clients to focus on relevant center && larger part empty
+#    consolidate barz && sbrz into one editable focus (&& one DrawBarz())
+#    mk SlctSrch flags global so that they can be shown in title bar
+#    try keeping SlctSrch plf in memory while matching so file doesn't need
+#      to constantly be reopened when not waiting
+#    write generic browse dialog window (Simp::WBrs)
+#    if no Dfalt.plf found, WBrs for one or create
+#    WBrs to add file / dir (recursively?) to end of .plf && reload
+#  2do(hopefully):
+#    add field to list file for flaws (delimited offset skip,pop,trunc,etc.)
+#    mk cdcd fsui like zinf (does zinf already play cd trax?)
+#    fix all file writes in zinf && pimp to be like atomic supercedes(psbl?)
+#    save/load all settings to .rc
+#    let master "A"bandon && exit (while still plyn) && client can take over
+#    use MP3::Info to update fields in file (&& look for OggVorbis equiv.)
+#    add cdparanoia to pimp with hi-res error reporting
+#    research lossless codecs
+#    add playback support (to zinf?) for lossless formats
+#    add easy IF to rip into any lossless format
+#    add easy IF to explode any compressed into .wav then encode into 
+#      configurable quality lossy format (peelable oggs?)
+#    mk WinPrmpt provide Insert/Overstrike modes
+#    provide ctrl-keys to specify which SlctSrch fields to match in
+#    add per-song bookmarks to skip to pre-specified favorite sections
+#      stored as bass64 second indices from start of song
+#    show bookmarks on progress bar as different chars/colz
+#    handle term resize events
+#    handle mouse events (change focus, drag sliders, play different songs)
+#    add interactive recoloring which saves to .rc
+#    update help window
+#  2do(maybe):
+#    mk configurable ripping && compressing of .flac or .wav files into 
+#      any size limitations like portables, cd/dvd, etc. maybe with 
+#      distributed computation, file scaling databases, etc. with user
+#      profiles for preferences like I want as many highly rated oggs 
+#      from my playlist as will fit without any needing a quality below 0
+#    mk WinMMesg to allow multi-line messages to be displayed
+#    mk WinMPrmp to allow multi-line text to be edited
+#    support Requests for larger clients to expand master (&& display 
+#      the relevant center itself as if it were also a smaller client)
+#    pull all .plf extraction code into a single sub or break it up better
+#    mk help && other GetK calls not block && keep updating Progress behind
+#    calculate average bitrate (for oggs && VBR mp3) over whole song for plf
+#    setup configurable music directories which get auto-removed from fnams
+#      but maybe show a b64 ndx of which dir it's from or something with the
+#      expansion toggle
+#  bugs that might be lingering:
+#    slave advance duping =( (fixed? ... keep an eye out for it)
+#    progress draw hiccups (cache last to smooth it out?)
+#    omit parens from any common function that takes only one param
+#      exists,defined,delete,reverse,unlink,???
+#    since these take spaces, are for arith, or close() follows open()...
+#      !length(),ord(),lc(),uc(),chomp(),split(),join(),close(),???  
+use strict;
+use Octology::b8;
+use Curses::Simp;
+my $dbug = 1;
+my $mjvr = "1"; my $mnvr = "0"; my $d8vr = 'E7SMLF2n'; 
+my $dext = ".plf";   #Dfalt PlaqLust File-extension  
+my $dfpl = "Dfalt" . $dext; 
+my $plnm = shift || $dfpl; my $plnt = "TeMptEmP" . $dext; 
+my $path = $ENV{'HOME'} . "/.zinf/"; mkdir("$path") unless(-d $path);
+my $pref = $path . "preferences";
+$path .= "fsui/";                    mkdir("$path") unless(-d $path);
+my $exit = $path . "exit"; my $plyn = $path . "plyn";
+my $info = $path . "info"; my $data = $path . "data";
+my $rwnd = $path . "rwnd"; my $ffwd = $path . "ffwd";
+my $jump = $path . "jump"; my $paus = $path . "paus";
+my $zout = $path . "zout"; my $rndx = $path . "rndx";
+my $pimp = $path . "pimp"; my $mstr = $path . "mstr";
+my $requ = $path . "requ";
+my @attz = ('fnam', 'arti', 'titl', 'leng', 'bitr', 'rvol', 'freq', 'albm',
+            'year', 'genr', 'trac', 'samp', 'chan', 'vers', 'layr', 'cmnt');
+#my @info= ('titl', 'fnam', 'arti', 'albm', 'year', 'genr', 'trac', 'cmnt',
+#           'bitr', 'samp', 'chan', 'vers', 'layr', 'leng', 
+#my @data= ('leng', 'bitr');
+my %conv = ('leng' => 1, 'bitr' => 1, 'year' => 1, 'trac' => 1, 'samp' => 1, 
+            'chan' => 1);
+my $mflg = 0;  my $dflg = 0;  my $fpid = 0;  my $pscn = 0;  
+my %info = (); my %data = (); my @bscr = (); my @bclr = (); 
+my @sscr = (); my @sclr = (); my @lscr = (); my @lclr = (); 
+my @pscr = (); my @pclr = (); my @svps = (); my @svpc = (); 
+my %cflg = ('chgs' => 0, 'chgb' => 1, 'chgr' => 1, 
+            'chgl' => 1, 'chgc' => 1, 'chgi' => 1);
+my %optn = ('load' => 0, 'urnd' => 1, 'wrap' => 1, 'ptim' => "pt",
+            'focu' => 0, 'bs64' => 1, 'popu' => 0, 'delt' => 7,
+            'mode' => 0, 'mute' => 0, 'alll' => 0, 'only' => 0,
+            'wich' => 0, 'swch' => 0, 'size' => 0, 'fpat' => 0); #19 w/ line1?, 21 w/o
+my @focu = ('barz', 'sbrz', 'fnam', 'rvol', 'freq', 'leng', 'titl', 
+            'arti', 'albm', 'cmnt', 'trac', 'year', 'genr');
+my @rndx = (); my %lust = (); my $sndx = 0; #int(($optn{'size'}-0.1)/2);
+my $vhnd = 0;  my $lhnd = 0;  my $shnd = 0; my $onam = 0; my $fine = 0;
+my $rvch = 'pcm'; #'vol' # which channel relative volume changes should affect
+my @dopt = ('vol', 'pcm'); #, 'cd', 'line'); # dfalt mixr bars drawn
+my @sopt = ('rvol', 'freq'); # special mixer options: relative vol && frequency
+my @optz = @dopt; my @scrn = (); my @colz = (); my %setz = ();  my %bkst = (); 
+my %keyz = ();    my %lngz = (); my $lsrc = ""; my $chgr = "";  my $keey = ""; 
+my $temp = "";    my $widt = 0;  my $hite = 0;  my $idle = 0;   my $oidl = 0;
+my @temp = ();    my $oldv = -1; my $newv = -1; my $oldr = 512; my $srch = "";
+my %nlut = ('!' => 1, '@' => 2, '#' => 3, '$' => 4, '%' => 5,
+            '^' => 6, '&' => 7, '*' => 8, '(' => 9, ')' => 0);
+my @chrz = ( { # master array of interface characters, color codes, && strings
+               'blak' => 'bb', # full black for off end of windows or screen
+               'legc' => '[',  # unsel left bar edge
+               'lgcl' => 'gb', # unsel lt br edg col
+               'barc' => '-',  # unselected bar char
+               'bart' => "'",  # unselected bar tick char
+               'brcl' => 'wb', # unsel bar colorz
+               'brtc' => 'cb', # unsel bar tick colorz
+               'regc' => ']',  # unsel rite bar edge
+               'rgcl' => 'gb', # unsel rt br edg col
+               'sldc' => '|',  # unsel slider bar
+               'sdcl' => 'Uu', # unsel slider bar
+               'txcl' => 'ou', # unsel text colorz
+               'mutd' => '*muted*', # unsel muted chan
+               'titc' => 'Gu', # title bar text color
+               'titp' => 'Pu', # title bar PipTime text color
+               'tits' => 'Uu', # title bar search prompt    text color
+               'titd' => 'Yu', # title bar search delimiter text color
+               'titt' => 'Cu', # title bar search string    text color
+               'prmc' => 'Gu', # WinPrmpt text color
+               'msgc' => 'Cu', # WinMesag text color
+               'prsc' => 'Yr', # WinMesag press-any-key color
+               'c64c' => 'Ub', # ConvBs64 command color
+               'c64e' => 'Pb', # ConvBs64 equal-sign color
+               'c64a' => 'Gb', # ConvBs64 answer color
+               'c64p' => 'Yr', # ConvBs64 press-any-key color
+               'hlpt' => 'Ub', # Help text color
+               'hlpp' => 'Yr', # Help press-any-key color
+               'sept' => ':',  # time separator
+               'plfs' => ':',  # PlaqLustFile field Separator character
+               'plft' => '-',  # PlaqLustFile Time field separator
+               'plfc' => '_-', # PlaqLustFile fld separator Replacement char
+               'vndx' => 'Yu', # non-current visible index
+               'lndx' => 'Uu', # non-current lust index
+               'fnam' => 'Gu', # non-current filename
+               'extn' => 'Pu', # non-current extension
+               'rvol' => 'Ru', # non-current relative volume
+               'freq' => 'Cu', # non-current play frequency
+               'leng' => 'Uu', # non-current play length
+ #Fnam ArtiAlbm TracYearBitrSampChanVersLayrGenr
+               'pfna' => 'Rg', # progress area filename
+               'ptit' => 'Rg', # progress area title
+               'part' => 'Gg', # progress area artist
+               'palb' => 'Cg', # progress area album
+               'pcmn' => 'Yg', # progress area comment
+               'ptra' => 'Pg', # progress area track
+               'pyea' => 'Ug', # progress area year
+               'pbit' => 'Gg', # progress area bitrate
+               'psam' => 'Cg', # progress area sample rate
+               'pcha' => 'Yg', # progress area channels
+               'pver' => 'Pg', # progress area version
+               'play' => 'Ug', # progress area layer
+               'pgen' => 'Rg', # progress area genre
+               'prch' => '#',  # complete progress meter character
+               'prcl' => 'Pb', # complete progress meter color
+               'paus' => '*paused*', # small paused text
+             },
+             { # selected hash
+               'legc' => '{',  # sel left bar edge
+               'lgcl' => 'Gb', # sel lt br edg col
+               'barc' => '=',  # selected bar char
+               'bart' => '"',  # selected bar tick char
+               'brcl' => 'Wb', # sel bar colorz
+               'brtc' => 'Cb', # sel bar tick colorz
+               'regc' => '}',  # sel rite bar edge
+               'rgcl' => 'Gb', # sel rt br edg col
+               'sldc' => 'I',  # sel slider bar
+               'sdcl' => 'Pp', # sel slider bar
+               'txcl' => 'Yp', # sel text colorz
+               'mutd' => '@muted@', # sel muted chan
+               'prmc' => 'Wo', # WinPrmpt highlighted text color
+               'vndx' => 'Rb', # current visible index
+               'lndx' => 'Cb', # current lust index
+               'fnam' => 'Yb', # current filename
+               'extn' => 'Wb', # current extension
+               'rvol' => 'Gb', # current relative volume
+               'freq' => 'Ub', # current play frequency
+               'leng' => 'Pb', # current play length
+               'pfna' => 'Wb', # highlighted progress area filename
+               'ptit' => 'Wb', # highlighted progress area title
+               'part' => 'Wb', # highlighted progress area artist
+               'palb' => 'Wb', # highlighted progress area album
+               'pcmn' => 'Wb', # highlighted progress area comment
+               'ptra' => 'Wb', # highlighted progress area track
+               'pyea' => 'Wb', # highlighted progress area year
+               'pgen' => 'Wb', # highlighted progress area genre
+               'prch' => '=',  # incomplete progress meter character
+               'prcl' => 'Cp', # incomplete progress meter color
+               'paus' => '@PAUSED@', # big paused text
+             },
+             { # super-selected hash
+               'vndx' => 'Rr', # playing visible index
+               'lndx' => 'Cr', # playing lust index
+               'fnam' => 'Yr', # playing filename
+               'extn' => 'Wr', # playing extension
+               'rvol' => 'Gr', # playing relative volume
+               'freq' => 'Ur', # playing play frequency
+               'leng' => 'Pr', # playing play length
+               'prch' => '$',  # highlighted complete progress meter char
+               'prcl' => 'Wb', # highlighted complete progress meter color
+             },
+             { # highlighted super-selected hash
+               'fnam' => 'Wb', # highlighted playing filename
+               'rvol' => 'Wb', # highlighted playing relative volume
+               'freq' => 'Wb', # highlighted playing play frequency
+               'leng' => 'Wb', # highlighted playing play length
+               'prch' => '~',  # highlighted incomplete progress meter char
+               'prcl' => 'Bu', # highlighted incomplete progress meter color
+             }
+           );
+
+sub LoadLust {
+  unless(-r $plnm) { $plnm .= $dext; }
+  unless(-r $plnm) { $plnm  = $dfpl; }
+  unless(-r $plnm) { die "EROR: $plnm is not a PlaqLust file!\n"; }
+  if($mflg) { # master
+    $optn{'load'} = 0;
+    open(PLNM, "<$plnm");
+    while(<PLNM>) { $optn{'load'}++; }
+    close(PLNM);
+  }
+  unless($optn{'load'} > 1) {
+    die("EROR: $plnm is not a valid PlaqLust!\n");
+  }
+  if($optn{'size'} && ($optn{'load'} > $optn{'size'})) { 
+    while(@rndx < $optn{'size'}) { Add2URnd(); }
+  }
+}
+
+sub Add2URnd { # Adding one Unique Random entry
+  my $wich = shift; my $lndx = 0; my $fail = 0; my @ldat = ();
+  my $nndx = $optn{'load'} - $sndx;
+
+  if($mflg) { # master
+    unless(-r $plyn && $cflg{'chgi'}) { # playing new song?
+      $wich = "next" unless(defined $wich);
+      StopPlyn("keep") if(-r $plyn); # keep playing next/last song when done
+      if($optn{'urnd'}) { # UniqueRandom
+        $nndx = -1;
+        while($nndx == -1) {
+          $nndx = int(rand($optn{'load'})); 
+          while(exists $lust{$nndx}) { 
+            $nndx = int(rand($optn{'load'})); 
+            $fail++;
+          }
+          $lndx = 0;
+          open(FRND, "<$plnm");
+          while(<FRND>) {
+            chomp;
+            if($lndx == $nndx) {
+              @ldat = split(/$chrz[0]{'plfs'}/, $_);
+              for(my $i = 0; $i < @attz; $i++) { 
+                if(($attz[$i] eq 'freq') && 
+                   (defined $ldat[$i] && length($ldat[$i]))) {
+if($dbug && -r $plyn) {
+print DBUG "Cnv:", $ldat[$i], ":";
+                  $temp = Cnv64_10($ldat[$i]);
+print DBUG "$temp:\n";
+print DBUG "cnv:", $ldat[$i], ":";
+                  $temp = `cnv $ldat[$i] 64 10`;
+print DBUG "$temp:,\n";
+} else {
+                  $temp = `cnv $ldat[$i] 64 10`;
+}
+                  if($temp < int(rand(64*64))) {
+                    $nndx = -1;
+                    $fail++;
+                  }
+                  last;
+                }
+              }
+              if(($nndx != -1) || ($fail >= 64)) { # don't keep failing forever
+                for(my $i = 0; $i < @attz; $i++) { # load all found .plf data
+                  if(@ldat > $i) { 
+                    if(exists $conv{$attz[$i]}) {
+                      $ldat[$i] = 0 unless(length($ldat[$i]));
+                      $lust{$nndx}{$attz[$i]} = Cnv64_10($ldat[$i]); 
+#                      $lust{$nndx}{$attz[$i]} = `cnv $ldat[$i] 64 10`; 
+                    } else {
+                      $lust{$nndx}{$attz[$i]} = $ldat[$i]; 
+                    }
+                  } else { 
+                    $lust{$nndx}{$attz[$i]} = ""; 
+                    if($attz[$i] eq 'rvol' || $attz[$i] eq 'freq') {
+                      $lust{$nndx}{$attz[$i]} = "80";
+                    }
+                  }
+                }
+              }
+            }
+            $lndx++;
+          }
+          close(FRND);
+        }
+      } elsif(@rndx) { # InOrder append
+        if(($rndx[-1] + 1) < $optn{'load'}) { $nndx = $rndx[-1] + 1; }
+        elsif($optn{'wrap'})                { $nndx = 0; }
+        else                                { $nndx = -1; }
+        open(PLNM, "<$plnm");
+        while($lndx <= $nndx) {
+          chomp($_ = <PLNM>);
+          if($lndx == $nndx) {
+            @ldat = split(/$chrz[0]{'plfs'}/, $_);
+            for(my $i = 0; $i < @attz; $i++) { # load all found .plf data
+              if(@ldat > $i) { 
+                if(exists $conv{$attz[$i]}) {
+                  $ldat[$i] = 0 unless(length($ldat[$i]));
+                  $lust{$nndx}{$attz[$i]} = Cnv64_10($ldat[$i]); 
+#                  $lust{$nndx}{$attz[$i]} = `cnv $ldat[$i] 64 10`; 
+                } else {
+                  $lust{$nndx}{$attz[$i]} = $ldat[$i]; 
+                }
+              } else { 
+                $lust{$nndx}{$attz[$i]} = ""; 
+                if($attz[$i] eq 'rvol' || $attz[$i] eq 'freq') {
+                  $lust{$nndx}{$attz[$i]} = "80";
+                }
+              }
+            }
+          }
+          $lndx++;
+        }
+        close(PLNM);
+      } else { # Add the passed $nndx
+        open(PLNM, "<$plnm");
+        while($lndx <= $nndx) {
+          chomp($_ = <PLNM>);
+          if($lndx == $nndx) {
+            @ldat = split(/$chrz[0]{'plfs'}/, $_);
+            for(my $i = 0; $i < @attz; $i++) { # load all found .plf data
+              if(@ldat > $i) { 
+                if(exists $conv{$attz[$i]}) {
+                  $ldat[$i] = 0 unless(length($ldat[$i]));
+                  $lust{$nndx}{$attz[$i]} = Cnv64_10($ldat[$i]); 
+#                  $lust{$nndx}{$attz[$i]} = `cnv $ldat[$i] 64 10`; 
+                } else {
+                  $lust{$nndx}{$attz[$i]} = $ldat[$i]; 
+                }
+              } else { 
+                $lust{$nndx}{$attz[$i]} = ""; 
+                if($attz[$i] eq 'rvol' || $attz[$i] eq 'freq') {
+                  $lust{$nndx}{$attz[$i]} = "80";
+                }
+              }
+            }
+          }
+          $lndx++;
+        }
+        close(PLNM);
+      }
+      if   ($wich eq "next") { push(@rndx, $nndx); } # append newest to queue
+      elsif($wich eq "last") { unshift(@rndx, $nndx); } # prepend newest to q
+      if(@rndx > $optn{'size'}) { # remove other end of queue if too many
+        if   ($wich eq "next") { $temp = shift(@rndx); }
+        elsif($wich eq "last") { $temp = pop(@rndx); }  
+        UpdtLust($temp);
+        foreach(@rndx) { $temp = -1 if($temp == $_); }
+        delete $lust{$temp} unless($temp == -1); 
+      }
+      StrtPlyn("keep") if(-r $plyn);
+      WritMstr();
+    }
+  } else { # slave
+    WritRequ("add2:$wich") if(defined $wich);
+    ReadMstr();
+  }
+  $cflg{'chgl'} = 1;
+  $cflg{'chgi'} = 1;
+}
+
+sub UpdtLust {
+  my $undx = shift; return unless(defined $undx && $mflg); # mstr must give ndx
+  my $lcou = 0;
+  if(exists $lust{$undx} && exists $lust{$undx}{'chng'}) { 
+    open(PLNM,"<$plnm"); open(PLNT,">$plnt");
+    while(<PLNM>) {
+      if($lcou != $undx) {
+        print PLNT $_;
+      } else {
+        for(my $i = 0; $i < @attz; $i++) { # update all current .plf data
+          if(exists  $lust{$undx}{$attz[$i]} && 
+             defined $lust{$undx}{$attz[$i]}) {
+            $lust{$undx}{$attz[$i]} =~ s/$chrz[0]{'plfs'}/$chrz[0]{'plfc'}/g;
+            if(exists $conv{$attz[$i]}) {
+              $temp = $lust{$undx}{$attz[$i]};
+              $temp = 0 unless(length($temp));
+              print PLNT Cnv10_64($temp) . $chrz[0]{'plfs'};
+#              print PLNT `cnv $temp 10 64` . $chrz[0]{'plfs'};
+            } else {
+              print PLNT $lust{$undx}{$attz[$i]} . $chrz[0]{'plfs'};
+            }
+          } else { last; }
+        }
+        print PLNT "\n";
+      }
+      $lcou++;
+    }
+    close(PLNT); close(PLNM);
+    unlink $plnm; rename($plnt, $plnm);
+    delete $lust{$undx}{'chng'}; # remove changed flag
+  }
+}
+
+sub SaveLust { foreach(keys(%lust)) { UpdtLust($_); } }
+
+sub FindChgr {
+  my $test = "";
+  my $chmx = `which ximp`;  chomp($chmx);
+  my $aumx = `which aumix`; chomp($aumx);
+  if   (-e $chmx) { $chgr = "ximp"; }
+  elsif(-e $aumx) { $chgr = "aumix"; }
+  else            { die("Need ximp in your path!!!\n"); }
+#  print "Testing for valid mixer device..."; # die if no /dev/mixer
+  system("$chgr &>testkaka.txt");
+  open(KAKA, "<testkaka.txt"); $test = join('', <KAKA>); close(KAKA);
+  unlink "testkaka.txt";
+  if($test =~ /unable to open/i) { die "No /dev/mixer found!!! =(\n"; }
+#  else { print "found!\n"; }
+}
+
+sub DrawScrn {
+  my $summ = 0; $widt = Widt(); $hite = Hite(); @scrn = (); @colz = ();
+  push(@scrn, " pimp v$mjvr.$mnvr.$d8vr by Pip\@CPAN.Org ");
+  push(@colz, 'Gb' x 6 . 'Wb' . 'Yb' . 'Wb' . 'Cb' . 'Wb' . 
+              'RbobYbGuCuUuPb' . 'Wb' x 4 . 
+              'Gb' x 3 . 'Wb' . 'Yb' x 3 . 'Wb' . 'Cb' x 3 . 'bb');
+              #$chrz[0]{'titc'} x length($scrn[0]));
+  if($srch) {
+    $temp = "   srch: ";
+    $scrn[-1] .= $temp;
+    $colz[-1] .= $chrz[0]{'tits'} x length($temp);
+    $srch =~ /^(\/)([^\/]*)(\/.{0,3})?$/; # regex a regex =)
+    $temp = $1;
+    if(defined $temp) {
+      $scrn[-1] .= $temp;
+      $colz[-1] .= $chrz[0]{'titd'} x length($temp);
+      $temp = $2;
+      if(defined $temp) {
+        $scrn[-1] .= $temp;
+        $colz[-1] .= $chrz[0]{'titt'} x length($temp);
+        $temp = $3;
+        if(defined $temp) {
+          $scrn[-1] .= $temp;
+          $colz[-1] .= $chrz[0]{'titd'} x length($temp);
+        }
+      }
+    }
+  }
+  $temp = `$optn{'ptim'}` . " ";
+  if($widt > (length($scrn[-1]) + length($temp))) {
+    $temp = " " x ($widt - (length($scrn[-1]) + length($temp))) . $temp;
+  }
+  $scrn[-1] .= $temp;
+  $colz[-1] .= $chrz[0]{'titp'} x (length($temp)-8) . 'RbobYbGuCuUuPb' . 'bb';
+  DrawBarz();
+  DrawSBrz();
+  DrawLust();
+  DrawProg();
+  Draw(\@scrn,\@colz);
+  unless($cflg{'chgs'}) { # inverted flag since resize should not be auto
+    $summ = (@bscr + @sscr + @pscr); 
+    $summ = (@bscr + @sscr + 6) if(@pscr < 5);
+    if($optn{'size'} != ($hite - $summ)) {
+      $optn{'size'} = ($hite - $summ); 
+      $optn{'size'} = $optn{'load'} - 1 if($optn{'size'} >= $optn{'load'});
+      $temp = $sndx;
+      $sndx = int(($optn{'size'}-0.1)/2);
+      $optn{'wich'} = 0;
+      unless($mflg) {
+        WritRequ("size:" . $optn{'size'});
+        WritRequ("goto:rndx:" . $sndx);
+      }
+      ShokLust($temp);
+    }
+    ChngAlll();
+  }
+}
+
+sub DrawBarz {
+  my $cndx = 0; 
+
+  if($cflg{'chgb'}) {
+    @bscr = (); @bclr = ();
+    foreach(@optz) {
+      $cndx = 0;
+      $cndx++ if((@focu[$optn{'focu'}] eq 'barz') && 
+                 (defined $optz[$optn{'wich'}])   &&
+                 ($optn{'alll'} || $_ eq $optz[$optn{'wich'}]));
+      push(@bscr, $chrz[$cndx]{'barc'} x $widt);
+      push(@bclr, $chrz[$cndx]{'brcl'} x $widt);
+      $lngz{'undr'} = length($_);
+      $lngz{'undp'} = ($lngz{'undr'} + 1);
+      substr($bscr[$#bscr],  0, $lngz{'undp'}, $chrz[$cndx]{'legc'} . $_);
+      unless(exists $lngz{'legc'}) {
+        $lngz{'legc'} = length($chrz[$cndx]{'legc'});
+      }
+      substr($bclr[$#bclr],  0, $lngz{'legc'}*2, 
+             $chrz[$cndx]{'lgcl'} x $lngz{'legc'});
+      substr($bclr[$#bclr],  $lngz{'legc'}*2, $lngz{'undr'}*2, 
+             $chrz[$cndx]{'txcl'} x $lngz{'undr'});
+      substr($bscr[$#bscr], -1,            1, $chrz[$cndx]{'regc'});
+      unless(exists $lngz{'regc'}) {
+        $lngz{'regc'} = length($chrz[$cndx]{'regc'});
+      }
+      substr($bclr[$#bclr], -1*($lngz{'regc'}*2), $lngz{'regc'}*2, 
+             $chrz[$cndx]{'rgcl'} x $lngz{'regc'});
+      if(length($bscr[$#bscr]) > 15) {
+        $lngz{'vmun'} = length($bscr[$#bscr]) - $lngz{'undp'};
+        substr($bscr[$#bscr], $lngz{'vmun'},   $lngz{'undr'}, $_);
+        substr($bclr[$#bclr], $lngz{'vmun'}*2, $lngz{'undr'}*2, 
+               $chrz[$cndx]{'txcl'} x $lngz{'undr'});
+        if(length($bscr[$#bscr]) > 31) {
+          $temp = $_;
+          if($optn{'mute'} || ($optn{'only'} && $_ ne $optz[$optn{'wich'}])) { 
+            $_ = $chrz[$cndx]{'mutd'}; 
+          } else {
+            $_  =  "(" . $setz{$_} . "%)";
+          }
+          $lngz{'undr'} = length($_);
+          $lngz{'undp'} = ($lngz{'undr'} + 1);
+          $lngz{'vmud'} = int((length($bscr[$#bscr]) - $lngz{'undp'}) / 2.0);
+          substr($bscr[$#bscr], $lngz{'vmud'},   $lngz{'undr'}, $_);
+          substr($bclr[$#bclr], $lngz{'vmud'}*2, $lngz{'undr'}*2, 
+                 $chrz[$cndx]{'txcl'} x $lngz{'undr'});
+          $_ = $temp; 
+        }
+      }
+      $lngz{'sdoh'} = int(($setz{$_} / 100.0) * $widt);
+      unless(exists $lngz{'sldc'}) {
+        $lngz{'sldc'} = length($chrz[$cndx]{'sldc'});
+      }
+      substr($bscr[$#bscr], $lngz{'sdoh'},   1, $chrz[$cndx]{'sldc'});
+      substr($bclr[$#bclr], $lngz{'sdoh'}*2, $lngz{'sldc'}*2,
+             $chrz[$cndx]{'sdcl'} x $lngz{'sldc'});
+      foreach $temp (1..8) {
+        $lngz{'sdoh'} = int(((11 * $temp) / 100.0) * $widt);
+        if(substr($bscr[$#bscr], $lngz{'sdoh'}, 1) eq $chrz[$cndx]{'barc'}) {
+          if($optn{'bs64'}) {
+            substr($bscr[$#bscr], $lngz{'sdoh'}, 1, $chrz[$cndx]{'bart'});
+            $lngz{'sldc'} = length($chrz[$cndx]{'bart'});
+          } else {
+            substr($bscr[$#bscr], $lngz{'sdoh'}, 1, $temp);
+            $lngz{'sldc'} = length($temp);
+          }
+          substr($bclr[$#bclr], $lngz{'sdoh'}*2, $lngz{'sldc'}*2,
+            $chrz[$cndx]{'brtc'} x $lngz{'sldc'});
+        }
+      }
+    }
+    $cflg{'chgb'} = 0;
+  }
+  push(@scrn,@bscr); push(@colz,@bclr);
+}
+  
+sub DrawSBrz {
+  my $cndx = 0; my %flag = (); my $bval;
+  my $maxx = ((64 * 64) - 1);  my $dval = (64 * 8);
+  
+  if($cflg{'chgr'}) {
+    @sscr = (); @sclr = ();
+    if((defined       $rndx[$sndx] ) && # set flags
+       (exists  $lust{$rndx[$sndx]}) &&
+       (defined $lust{$rndx[$sndx]})) {
+      $flag{'rvok'} = 1 if((exists  $lust{$rndx[$sndx]}{'rvol'}) && 
+                           (defined $lust{$rndx[$sndx]}{'rvol'}));
+      $flag{'frok'} = 1 if((exists  $lust{$rndx[$sndx]}{'freq'}) && 
+                           (defined $lust{$rndx[$sndx]}{'freq'}));
+      $flag{'lsok'} = 1;
+    }
+    foreach(@sopt) {
+      $bval = $dval;
+      if(exists $flag{'lsok'}) {
+        if     ($_ eq "rvol" && exists $flag{'rvok'}) {
+          $bval = Cnv64_10($lust{$rndx[$sndx]}{'rvol'});
+#          $bval = `cnv $lust{$rndx[$sndx]}{'rvol'} 64 10`;
+        } elsif($_ eq "freq" && exists $flag{'frok'}) {
+          $bval = Cnv64_10($lust{$rndx[$sndx]}{'freq'});
+#          $bval = `cnv $lust{$rndx[$sndx]}{'freq'} 64 10`;
+        }
+        $flag{'fine'} = 1 if(/f$/);
+      }
+      $cndx = 0;
+      $cndx++ if((@focu[$optn{'focu'}] eq 'sbrz') && 
+                 ($_ eq $sopt[$optn{'swch'}]));
+      push(@sscr, $chrz[$cndx]{'barc'} x $widt);
+      push(@sclr, $chrz[$cndx]{'brcl'} x $widt);
+      $lngz{'undr'} = length($_);
+      $lngz{'undp'} = ($lngz{'undr'} + 1);
+      substr($sscr[$#sscr],  0, $lngz{'undp'}, $chrz[$cndx]{'legc'} . $_);
+      unless(exists $lngz{'legc'}) {
+        $lngz{'legc'} = length($chrz[$cndx]{'legc'});
+      }
+      substr($sclr[$#sclr],  0, $lngz{'legc'}*2, 
+             $chrz[$cndx]{'lgcl'} x $lngz{'legc'});
+      substr($sclr[$#sclr],  $lngz{'legc'}*2, $lngz{'undr'}*2, 
+             $chrz[$cndx]{'txcl'} x $lngz{'undr'});
+      substr($sscr[$#sscr], -1,            1, $chrz[$cndx]{'regc'});
+      unless(exists $lngz{'regc'}) {
+        $lngz{'regc'} = length($chrz[$cndx]{'regc'});
+      }
+      substr($sclr[$#sclr], -1*($lngz{'regc'}*2), $lngz{'regc'}*2, 
+             $chrz[$cndx]{'rgcl'} x $lngz{'regc'});
+      if(length($sscr[$#sscr]) > 15) {
+        $lngz{'vmun'} = length($sscr[$#sscr]) - $lngz{'undp'};
+        substr($sscr[$#sscr], $lngz{'vmun'},   $lngz{'undr'}, $_);
+        substr($sclr[$#sclr], $lngz{'vmun'}*2, $lngz{'undr'}*2, 
+               $chrz[$cndx]{'txcl'} x $lngz{'undr'});
+        if(length($sscr[$#sscr]) > 31) {
+          $temp = $_;
+          if($optn{'mute'} || ($optn{'only'} && $_ ne $sopt[$optn{'swch'}])) { 
+            $_ = $chrz[$cndx]{'mutd'}; 
+          } else {
+            $_  =  "(" . int(($bval / $maxx) * 100) . "%)";
+          }
+          $lngz{'undr'} = length($_);
+          $lngz{'undp'} = ($lngz{'undr'} + 1);
+          $lngz{'vmud'} = int((length($sscr[$#sscr]) - $lngz{'undp'}) / 2.0);
+          substr($sscr[$#sscr], $lngz{'vmud'},   $lngz{'undr'}, $_);
+          substr($sclr[$#sclr], $lngz{'vmud'}*2, $lngz{'undr'}*2, 
+                 $chrz[$cndx]{'txcl'} x $lngz{'undr'});
+          $_ = $temp; 
+        }
+      }
+      $lngz{'sdoh'} = int(($bval / $maxx) * $widt);
+      unless(exists $lngz{'sldc'}) {
+        $lngz{'sldc'} = length($chrz[$cndx]{'sldc'});
+      }
+      substr($sscr[$#sscr], $lngz{'sdoh'},   1, $chrz[$cndx]{'sldc'});
+      substr($sclr[$#sclr], $lngz{'sdoh'}*2, $lngz{'sldc'}*2,
+             $chrz[$cndx]{'sdcl'} x $lngz{'sldc'});
+      foreach $temp (1..8) {
+        $lngz{'sdoh'} = int(((11 * $temp) / 100) * $widt);
+        if(substr($sscr[$#sscr], $lngz{'sdoh'}, 1) eq $chrz[$cndx]{'barc'}) {
+          if($optn{'bs64'}) {
+            substr($sscr[$#sscr], $lngz{'sdoh'}, 1, $chrz[$cndx]{'bart'});
+            $lngz{'sldc'} = length($chrz[$cndx]{'bart'});
+          } else {
+            substr($sscr[$#sscr], $lngz{'sdoh'}, 1, $temp);
+            $lngz{'sldc'} = length($temp);
+          }
+          $lngz{'sldc'} = length($chrz[$cndx]{'bart'});
+          substr($sclr[$#sclr], $lngz{'sdoh'}*2, $lngz{'sldc'}*2,
+            $chrz[$cndx]{'brtc'} x $lngz{'sldc'});
+        }
+      }
+    }
+    $cflg{'chgr'} = 0;
+  }
+  push(@scrn,@sscr); push(@colz,@sclr);
+}
+  
+sub DrawLust {
+  my $cndx = 0;  my $ocnd = 0;  my $fndx = 0;  my @lhms = ();
+  my $line = ""; my $lclr = ""; my $tstr = "";
+  
+  if($cflg{'chgl'}) {
+    @lscr = ();
+    if($cflg{'chgc'}) { @lclr = (); }
+    for(my $i = 0; $i < @rndx; $i++) {
+      $cndx = 0;
+      $cndx = 1 if($i == $sndx);
+      $cndx = 2 if($cndx && (-r $plyn));
+      $temp = $optn{'size'} - 1;
+      if($optn{'bs64'}) { 
+        $tstr = Cnv10_64($i);                                       # r-index
+        $temp = Cnv10_64($temp);
+      } else {
+        $tstr = $i;
+      }
+      if(length($temp) - length($tstr)) {
+        $tstr = "0" x (length($temp) - length($tstr)) . $tstr;
+      }
+      $line  = $tstr;
+      $lclr  = $chrz[$cndx]{'vndx'} x length($line) if($cflg{'chgc'});
+      if(defined $rndx[$i] && $rndx[$i] =~ /\w/) {
+        $temp  = $optn{'load'} - 1;
+        if($optn{'bs64'}) { 
+          $tstr = Cnv10_64($rndx[$i]);                              # l-index
+          $temp = Cnv10_64($temp);
+        } else {
+          $tstr = $rndx[$i];
+        }
+        if(length($temp) - length($tstr)) {
+          $tstr = "0" x (length($temp) - length($tstr)) . $tstr;
+        }
+        $line .= $tstr;
+        $lclr .= $chrz[$cndx]{'lndx'} x length($tstr) if($cflg{'chgc'});
+        $fndx  = length($line); # save place where fnam will be inserted at end
+        $tstr  = "";
+        if((exists $lust{$rndx[$i]}{'fnam'}) && 
+           (length($lust{$rndx[$i]}{'fnam'}) >= 3)) {
+          $tstr = substr($lust{$rndx[$i]}{'fnam'}, -3, 3);             # extn
+        }
+        if(length($tstr) < 3) {
+          $tstr = " " x (length($tstr) - 3) . $tstr;
+        }
+        $line .= $tstr;
+        $lclr .= $chrz[$cndx]{'extn'} x length($tstr) if($cflg{'chgc'});
+        $temp  = (64*64) - 1;
+        if($optn{'bs64'}) { 
+          $tstr = $lust{$rndx[$i]}{'rvol'};                            # rvol
+          $temp = Cnv10_64($temp);
+#          $temp = `cnv $temp 10 64`;
+        } else {
+          $tstr = Cnv64_10($lust{$rndx[$i]}{'rvol'});
+#          $tstr = `cnv $lust{$rndx[$i]}{'rvol'} 64 10`;
+        }
+        $tstr  = "" unless(defined $tstr);
+        if(length($temp) - length($tstr)) {
+          $tstr = "0" x (length($temp) - length($tstr)) . $tstr;
+        }
+        $line .= $tstr;
+        if($cflg{'chgc'}) {
+          if($cndx && (@focu[$optn{'focu'}] eq 'rvol')) {
+            $ocnd = $cndx; $cndx = 3;
+          }
+          $lclr .= $chrz[$cndx]{'rvol'} x length($tstr);
+          $cndx = $ocnd if($cndx == 3);
+        }
+        if($optn{'bs64'}) { 
+          $tstr = $lust{$rndx[$i]}{'freq'};                            # freq
+        } else {
+          $tstr = Cnv64_10($lust{$rndx[$i]}{'freq'});
+#          $tstr = `cnv $lust{$rndx[$i]}{'freq'} 64 10`;
+        }
+        $tstr  = "" unless(defined $tstr);
+        if(length($temp) - length($tstr)) {
+          $tstr = "0" x (length($temp) - length($tstr)) . $tstr;
+        }
+        $line .= $tstr;
+        if($cflg{'chgc'}) {
+          if($cndx && (@focu[$optn{'focu'}] eq 'freq')) {
+            $ocnd = $cndx; $cndx = 3;
+          }
+          $lclr .= $chrz[$cndx]{'freq'} x length($tstr);
+          $cndx = $ocnd if($cndx == 3);
+        }
+        $tstr = "";
+        if($optn{'bs64'}) { 
+          if(exists  $lust{$rndx[$i]}{'leng'} && 
+             defined $lust{$rndx[$i]}{'leng'} &&
+              length($lust{$rndx[$i]}{'leng'})) {
+if($dbug && -r $plyn) {
+print DBUG "Cnv:", $lust{$rndx[$i]}{'leng'}, ":";
+            $tstr = Cnv10_64($lust{$rndx[$i]}{'leng'});
+print DBUG "$tstr:\n";
+print DBUG "cnv:", $lust{$rndx[$i]}{'leng'}, ":";
+            $tstr = `cnv $lust{$rndx[$i]}{'leng'} 10 64`;
+print DBUG "$tstr:.\n";
+} else {
+            $tstr = `cnv $lust{$rndx[$i]}{'leng'} 10 64`;
+}
+          }
+          $tstr = "0" x (2 - length($tstr)) . $tstr if(2 > length($tstr));
+        } else {
+          if(exists  $lust{$rndx[$i]}{'leng'} && 
+             defined $lust{$rndx[$i]}{'leng'} &&
+              length($lust{$rndx[$i]}{'leng'})) {
+            $lhms[0]  = $lust{$rndx[$i]}{'leng'}; # calc hms from leng 
+            $lhms[1]  = int($lhms[0] / 60);
+            $lhms[0] -=    ($lhms[1] * 60);
+            $lhms[2]  = int($lhms[1] / 60);
+            $lhms[1] -=    ($lhms[2] * 60);
+            for(my $i = 0; $i < @lhms; $i++) {
+              if(2 > length($lhms[$i])) {
+                $lhms[$i] = "0" x (2 - length($lhms[$i])) . $lhms[$i];
+              }
+            }
+            $tstr = join($chrz[0]{'sept'}, reverse @lhms); 
+          } else {
+            $tstr = "  :  :  ";
+          }
+        }
+        $line .= $tstr;
+        if($cflg{'chgc'}) {
+          if($cndx && (@focu[$optn{'focu'}] eq 'leng')) {
+            $ocnd = $cndx; $cndx = 3;
+          }
+          $lclr .= $chrz[$cndx]{'leng'} x length($tstr);
+          $cndx = $ocnd if($cndx == 3);
+        }
+        $tstr = "";
+        $tstr =  $lust{$rndx[$i]}{'fnam'} if(exists $lust{$rndx[$i]}{'fnam'});
+        $tstr =~ s/(^.*\/)//g unless($optn{'fpat'}); # strip path from filename
+        $tstr =~ s/(\.[^\.]+$)//g;                   # strip extension off filename
+        $temp = $widt - length($line);
+        if(length($tstr) > $temp) { $tstr = substr($tstr, -$temp, $temp); }
+        $tstr = sprintf("%-${temp}s", $tstr);
+        substr($line, $fndx, 0, $tstr);
+      }
+      if($cflg{'chgc'}) {
+        if($cndx && (@focu[$optn{'focu'}] eq 'fnam')) {
+          $ocnd = $cndx; $cndx = 3;
+        }
+        if(defined $fndx && (($fndx*2) <= length($lclr))) {
+          substr($lclr, ($fndx*2), 0, $chrz[$cndx]{'fnam'} x length($tstr));
+        }
+        $cndx = $ocnd if($cndx == 3);
+        push(@lclr, $lclr);
+      }
+      push(@lscr, $line); 
+    }
+    $cflg{'chgl'} = 0;
+    $cflg{'chgc'} = 0;
+  }
+  push(@scrn,@lscr); push(@colz,@lclr);
+}
+
+sub DrawProg {
+  my $line = ""; my $lclr = ""; my $tstr = ""; my @lhms = (); my %aflg = ();
+  my $llen = 0;  my $cndx = 0;  my $advn = 0;  my $foun = 0;
+  if($cflg{'chgi'} && defined $rndx[$sndx]) {
+    if(-r $data && -r $info) {
+      open(INFO, "<$info");
+      while(<INFO>) { chomp; /^(....)(.*)$/; $info{$1} = "$2"; }
+      close(INFO);
+      foreach(@attz) {
+        %aflg = ('iexi' => 0, 'idef' => 0, 'ilen' => 0, 'sdef' => 0, 
+                 'lexi' => 0, 'ldef' => 0, 'llen' => 0, 'ndef' => 0,
+                 'rexi' => 0, 'rdef' => 0);
+        $aflg{'iexi'} = 1 if(                 exists  $info{$_});
+        $aflg{'idef'} = 1 if($aflg{'iexi'} && defined $info{$_});
+        $aflg{'ilen'} = 1 if($aflg{'idef'} && length($info{$_}));
+        $aflg{'sdef'} = 1 if(                 defined $sndx);
+        $aflg{'ndef'} = 1 if($aflg{'sdef'} && defined $rndx[$sndx]);
+        $aflg{'rexi'} = 1 if($aflg{'ndef'} && exists  $lust{$rndx[$sndx]});
+        $aflg{'rdef'} = 1 if($aflg{'rexi'} && defined $lust{$rndx[$sndx]});
+        $aflg{'lexi'} = 1 if($aflg{'rdef'} && exists  $lust{$rndx[$sndx]}{$_});
+        $aflg{'ldef'} = 1 if($aflg{'lexi'} && defined $lust{$rndx[$sndx]}{$_});
+        $aflg{'llen'} = 1 if($aflg{'ldef'} && length($lust{$rndx[$sndx]}{$_}));
+        if($aflg{'llen'}) {
+          $info{$_} = $lust{$rndx[$sndx]}{$_}; # override zinf dat with plf dat
+        } else {
+          if(!$aflg{'idef'}) { 
+            if   ($_ eq 'rvol' || $_ eq 'freq') { $info{$_} = "80"; }
+            elsif(exists $conv{$_})             { $info{$_} = 0;    }
+            else                                { $info{$_} = "";   }
+            $aflg{'idef'} = 1;
+          }
+          $data{$_} = $info{$_} if($_ eq 'bitr');
+          $info{$_} = int($info{$_} + 0.5) if($_ eq 'leng' && $info{$_});
+          if($aflg{'idef'} && $aflg{'ldef'} && 
+             $info{$_} ne $lust{$rndx[$sndx]}{$_}) {
+            $lust{$rndx[$sndx]}{'chng'} = 1;
+          }
+          $lust{$rndx[$sndx]}{$_} = $info{$_}; 
+        }
+      }
+    } else {
+      foreach(@attz) {
+        if(defined $sndx && defined $rndx[$sndx] && 
+           exists $lust{$rndx[$sndx]}     && defined $lust{$rndx[$sndx]} && 
+           exists $lust{$rndx[$sndx]}{$_} && defined $lust{$rndx[$sndx]}{$_}) {
+          $info{$_} = $lust{$rndx[$sndx]}{$_};
+        } else {
+          if   ($_ eq 'rvol' || $_ eq 'freq') { $info{$_} = "80"; }
+          elsif(exists $conv{$_})             { $info{$_} = 0;    }
+          else                                { $info{$_} = "";   }
+        }
+        if($_ eq 'bitr') {
+          if(length($info{$_})) { $data{$_} = $info{$_}; }
+          else                  { $data{$_} = 0; }
+        }
+      }
+    }
+    if(exists $info{'leng'}) {
+      @svps = (); @svpc = (); 
+  #titl,fnam,arti,albm,year,genr,trac,cmnt,bitr,samp,chan,vers,layr,leng
+      $line = "Titl:$info{'titl'}";
+      if(length($line) > $widt) { $line = substr($line, -$widt, $widt); }
+      $cndx = 0; $cndx++ if(@focu[$optn{'focu'}] eq 'titl');
+      push(@svps, $line); push(@svpc, $chrz[$cndx]{'ptit'} x length($line));
+      $temp  = int(($widt + 1) / 2);
+      $line  = sprintf("Arti:%-${temp}s", $info{'arti'});
+      $line  = substr($line, 0, $temp) if(length($line) > $temp);
+      $line .= "Albm:" . $info{'albm'};
+      push(@svps, $line); 
+      $cndx = 0; $cndx++ if(@focu[$optn{'focu'}] eq 'arti');
+      push(@svpc,  $chrz[$cndx]{'part'} x int( $widt    / 2));
+      $cndx = 0; $cndx++ if(@focu[$optn{'focu'}] eq 'albm');
+      $svpc[-1] .= $chrz[$cndx]{'palb'} x int(($widt+1) / 2);
+      $line = sprintf("Cmnt:%s", $info{'cmnt'});
+      $cndx = 0; $cndx++ if(@focu[$optn{'focu'}] eq 'cmnt');
+      $lclr = $chrz[$cndx]{'pcmn'} x length($line);
+      push(@svps, $line); push(@svpc, $lclr);
+      $pscn = @svps;
+    }
+    $cflg{'chgl'} = 1;
+    $cflg{'chgi'} = 0 if(exists $info{'fnam'} && defined $rndx[$sndx] && 
+        exists $lust{$rndx[$sndx]} && exists $lust{$rndx[$sndx]}{'fnam'} && 
+        $info{'fnam'} eq $lust{$rndx[$sndx]}{'fnam'});
+  } elsif(-r $plyn && !-r $data) {# &&
+#     exists $info{'leng'} && defined $info{'leng'} && length($info{'leng'}) &&
+#     exists $data{'leng'} && defined $data{'leng'} && length($data{'leng'}) &&
+#       $info{'leng'} && $info{'leng'} <= $data{'leng'}) { 
+    $advn = 1;
+  }
+  if(exists $info{'leng'}) {
+    $temp  = $info{'trac'} || 0;
+    if($optn{'bs64'}) {
+      $temp = Cnv10_64($temp);
+#      $temp = `cnv $temp 10 64`;
+    } else {
+      $temp = " " x (2 - length($temp)) . $temp if(2 > length($temp));
+    }
+    $tstr  = "Trac:$temp";
+    $line  = $tstr;
+    $cndx  = 0; $cndx++ if(@focu[$optn{'focu'}] eq 'trac');
+    $lclr  = $chrz[$cndx]{'ptra'} x length($tstr);
+    $temp  = $info{'year'} || 0;
+    if($optn{'bs64'}) {
+      $temp = Cnv10_64($temp);
+#      $temp = `cnv $temp 10 64`;
+      $temp = "0" x (2 - length($temp)) . $temp if(2 > length($temp));
+    } else {
+      $temp = " " x (4 - length($temp)) . $temp if(4 > length($temp));
+    }
+    $tstr  = "Year:$temp";
+    $line .= $tstr;
+    $cndx  = 0; $cndx++ if(@focu[$optn{'focu'}] eq 'year');
+    $lclr .= $chrz[$cndx]{'pyea'} x length($tstr);
+    $temp  = 0;
+    if     (exists $data{'bitr'} && length($data{'bitr'})) { 
+      $temp = $data{'bitr'}; 
+    } elsif(length($info{'bitr'})) { 
+      $temp = $info{'bitr'}; 
+    }
+    if($optn{'bs64'}) {
+      $temp = Cnv10_64($temp);
+#      $temp = `cnv $temp 10 64`;
+      $temp = "0" x (2 - length($temp)) . $temp if(2 > length($temp));
+    } else {
+      $temp = " " x (3 - length($temp)) . $temp if(3 > length($temp));
+    }
+    $tstr  = "Bitr:$temp";
+    $line .= $tstr;
+    $lclr .= $chrz[$cndx]{'pbit'} x length($tstr);
+    $temp  = $info{'samp'} || 0;
+    if($optn{'bs64'}) { $temp = Cnv10_64($temp); }
+#    if($optn{'bs64'}) { $temp = `cnv $temp 10 64`; }
+    $tstr  = "Samp:$temp";
+    $line .= $tstr;
+    $lclr .= $chrz[$cndx]{'psam'} x length($tstr);
+    $temp  = $info{'chan'} || 0;
+    if($optn{'bs64'}) { $temp = Cnv10_64($temp); }
+#    if($optn{'bs64'}) { $temp = `cnv $temp 10 64`; }
+    $tstr  = "Chan:$temp";
+    $line .= $tstr;
+    $lclr .= $chrz[$cndx]{'pcha'} x length($tstr);
+    $temp  = $info{'vers'}; $temp = 0 unless(length($temp));
+    if($optn{'bs64'}) { $temp = Cnv10_64($temp); }
+#    if($optn{'bs64'}) { $temp = `cnv $temp 10 64`; }
+    $tstr  = "Vers:$temp";
+    $line .= $tstr;
+    $lclr .= $chrz[$cndx]{'pver'} x length($tstr);
+    $temp  = $info{'layr'}; $temp = 0 unless(length($temp));
+    if($optn{'bs64'}) { $temp = Cnv10_64($temp); }
+#    if($optn{'bs64'}) { $temp = `cnv $temp 10 64`; }
+    $tstr  = "Layr:$temp";
+    $line .= $tstr;
+    $lclr .= $chrz[$cndx]{'play'} x length($tstr);
+    $temp  = $info{'genr'};
+    $tstr  = "Genr:$temp";
+    $line .= $tstr;
+    $cndx = 0; $cndx++ if(@focu[$optn{'focu'}] eq 'genr');
+    $lclr .= $chrz[$cndx]{'pgen'} x length($tstr);
+    $svps[$pscn]   = $line;           $svpc[$pscn]   = $lclr;
+    $svps[$pscn+1] = " "; $cndx = 0;  $svpc[$pscn+1] = $chrz[$cndx]{'ptit'};
+    $svps[$pscn+2] = " ";             $svpc[$pscn+2] = $chrz[$cndx]{'blak'};
+    @pscr = @svps; @pclr = @svpc;
+    if(-r $data) {
+      open(DATA, "<$data");
+      while(<DATA>) { chomp; /^(....)(.*)$/; $data{$1} = "$2"; }
+      close(DATA);
+      $data{'leng'} = 0 unless(exists $data{'leng'} && defined $data{'leng'});
+      $temp = 0;
+      $temp = int(($data{'leng'} / $info{'leng'}) * $widt) if($info{'leng'});
+      $cndx = 0;
+      $line  = $chrz[$cndx]{'prch'} x          $temp;
+      $lclr  = $chrz[$cndx]{'prcl'} x          $temp;
+      $cndx++;
+      $line .= $chrz[$cndx]{'prch'} x ($widt - $temp);
+      $lclr .= $chrz[$cndx]{'prcl'} x ($widt - $temp);
+      $cndx = 0;
+      if($optn{'bs64'}) { 
+        $tstr = Cnv10_64($data{'leng'});
+#        $tstr = `cnv $data{'leng'} 10 64`;
+        if(length($tstr) < 2) { $tstr = "0" x (2 - length($tstr)) . $tstr; }
+      } else {
+        if(exists  $data{'leng'} && 
+           defined $data{'leng'} &&
+            length($data{'leng'})) {
+          $lhms[0]  = $data{'leng'}; # calc hms from leng 
+          $lhms[1]  = int($lhms[0] / 60);
+          $lhms[0] -=    ($lhms[1] * 60);
+          $lhms[2]  = int($lhms[1] / 60);
+          $lhms[1] -=    ($lhms[2] * 60);
+          for(my $i = 0; $i < @lhms; $i++) {
+            if(2 > length($lhms[$i])) {
+              $lhms[$i] = "0" x (2 - length($lhms[$i])) . $lhms[$i];
+            }
+          }
+          $tstr = join($chrz[0]{'sept'}, reverse @lhms); 
+        } else {
+          $tstr = "  :  :  ";
+        }
+      }
+      substr($line, 3, length($tstr), $tstr);
+      if(-r $paus) { $dflg ^= 1; $tstr = $chrz[$dflg]{'paus'}; }
+      else { 
+        $tstr = 0;
+        if($info{'leng'}) {
+          $tstr = sprintf("(%d%%)", ($data{'leng'} / $info{'leng'}) * 100);
+        }
+      }
+      substr($line,int(($widt-length($tstr))/2),length($tstr),$tstr);
+      if($optn{'bs64'}) { 
+        $tstr = Cnv10_64($info{'leng'}) if($info{'leng'});
+#        $tstr = `cnv $info{'leng'} 10 64` if($info{'leng'});
+        if(length($tstr) < 2) { $tstr = "0" x (2 - length($tstr)) . $tstr; }
+      } else {
+        if(exists  $info{'leng'} && 
+           defined $info{'leng'} &&
+            length($info{'leng'})) {
+          $lhms[0]  = $info{'leng'}; # calc hms from leng 
+          $lhms[1]  = int($lhms[0] / 60);
+          $lhms[0] -=    ($lhms[1] * 60);
+          $lhms[2]  = int($lhms[1] / 60);
+          $lhms[1] -=    ($lhms[2] * 60);
+          for(my $i = 0; $i < @lhms; $i++) {
+            if(2 > length($lhms[$i])) {
+              $lhms[$i] = "0" x (2 - length($lhms[$i])) . $lhms[$i];
+            }
+          }
+          $tstr = join($chrz[0]{'sept'}, reverse @lhms); 
+        } else {
+          $tstr = "  :  :  ";
+          $cflg{'chgi'} = 1; # no length so keep trying to load one in info
+        }
+      }
+      substr($line, (length($line) - 3 - length($tstr)), length($tstr), $tstr);
+      $pscr[$pscn+1] = $line; $pclr[$pscn+1] = $lclr;
+    }
+# forcibly populate plf data every popu seconds if popu is set
+    if(-r $plyn             && length($optn{'popu'}) && $optn{'popu'} &&
+       exists $data{'leng'} && length($data{'leng'}) && $data{'leng'} &&
+       ($data{'leng'} >= $optn{'popu'})) {
+      $advn = 1;
+    }
+  }
+  Add2URnd("next") if($mflg && $advn); # master can advance to next song
+  push(@scrn,@pscr); push(@colz,@pclr);
+}
+  
+sub ChngBarz {
+  AlllBarz() if($optn{'alll'});
+  SaveSetz();
+  WritMstr() if($mflg);
+  $cflg{'chgb'} = 1;
+  $cflg{'chgr'} = 1;
+}
+  
+sub SaveSetz {
+  foreach(keys(%setz)) { `$chgr $_ $setz{$_} $setz{$_}`; }
+}
+  
+sub LoadSetz {
+  my $curr = ""; my @linz = ();
+  $curr = `$chgr -q`;
+  @linz = split(/\n/, $curr);
+  foreach(@linz) {
+    if(/^(\w+) (\d+), (\d+)/) {
+      $setz{$1} = int( ($2 + $3) / 2.0 ); # avg. channels
+    }
+  }
+  $cflg{'chgb'} = 1;
+  $cflg{'chgr'} = 1;
+}
+  
+sub SaveValz {
+  open(RCFL, ">$ENV{'HOME'}/.pimprc");
+  foreach(sort(keys(%setz))) { print RCFL "$_:$setz{$_}:$setz{$_}\n"; }
+  close(RCFL);
+}
+  
+sub LoadValz {
+  my @fldz = ();
+  
+  if(-r "$ENV{'HOME'}/.pimprc") {
+    open(RCFL, "<$ENV{'HOME'}/.pimprc");
+    foreach(<RCFL>) {
+      @fldz = split(/:/);
+      $setz{$fldz[0]} = int(($fldz[1] + $fldz[2]) / 2);
+    }
+    close(RCFL);
+    $optn{'mute'} = 0; $optn{'only'} = 0;
+    SaveSetz();
+  }
+  ChngAlll();
+}
+  
+sub ChngAlll {
+  foreach(keys(%cflg)) { $cflg{$_} = 1; } # redraw everything
+}
+  
+sub ToglMode {
+  my $line = "";
+  if($mflg) { # master
+    $optn{'mode'} ^= 1; $optn{'wich'} = 0;
+    if($optn{'mode'}) {
+      @optz = sort(keys(%setz));
+    } else {
+      @optz = @dopt;
+    }
+    $cflg{'chgb'} = 1;
+    $cflg{'chgr'} = 1;
+    $line = " Mode:";
+    if($optn{'mode'}) { $line .= " on  "; }
+    else              { $line .= " off "; }
+    WinMesag($line, "Toggle:", -1);
+    WritMstr();
+  } else { # slave
+    WritRequ("mode:");
+  }
+}
+  
+sub ToglMute {
+  my $line = "";
+  if($mflg) { # master
+    $optn{'mute'} ^= 1;
+    if($optn{'mute'}) {
+      foreach(keys(%setz)) { $bkst{$_} = $setz{$_}; $setz{$_} = 0; }
+    } else {
+      foreach(keys(%bkst)) { $setz{$_} = $bkst{$_}; }
+    }
+    ChngBarz();
+    $line = " Mute:";
+    if($optn{'mute'}) { $line .= " on  "; }
+    else              { $line .= " off "; }
+    WinMesag($line, "Toggle:", -1);
+    WritMstr();
+  } else { # slave
+    WritRequ("mute:");
+  }
+}
+  
+sub ToglAlll {
+  my $line = "";
+  if($mflg) { # master
+    $optn{'alll'} ^= 1;
+    ChngBarz();
+    $line = " Alll:";
+    if($optn{'alll'}) { $line .= " on  "; }
+    else              { $line .= " off "; }
+    WinMesag($line, "Toggle:", -1);
+    WritMstr();
+  } else { # slave
+    WritRequ("alll:");
+  }
+}
+  
+sub ToglOnly {
+  my $line = "";
+  if($mflg) { # master
+    $optn{'only'} ^= 1;
+    foreach(keys(%setz)) { 
+      if($_ ne $optz[$optn{'wich'}]) { 
+        if($optn{'only'}) { 
+          $bkst{$_} = $setz{$_}; $setz{$_} = 0; $optn{'alll'} = 0; 
+        } else { 
+          $setz{$_} = $bkst{$_}; 
+        }
+      }
+    }
+    ChngBarz();
+    $line = " Only:";
+    if($optn{'only'}) { $line .= " on  "; }
+    else              { $line .= " off "; }
+    WinMesag($line, "Toggle:", -1);
+    WritMstr();
+  } else { # slave
+    WritRequ("only:");
+  }
+}
+  
+sub AlllBarz {
+  foreach(@optz) { $setz{$_} = $setz{$optz[$optn{'wich'}]}; }
+}
+  
+sub AsinChan {
+  my $chan = shift || return;
+  
+  for($optn{'wich'} = 0; $optn{'wich'} < @optz; $optn{'wich'}++) {
+    last if($optz[$optn{'wich'}] eq $chan);
+  }
+  for($optn{'focu'} = 0; $optn{'focu'} < @focu; $optn{'focu'}++) {
+    last if($focu[$optn{'focu'}] eq 'barz');
+  }
+  ChngAlll();
+  if($mflg) { # master
+    WritMstr();
+  } else {    # slave
+    WritRequ("asin:$chan");
+  }
+}
+
+sub ChngSBrz {
+  if($focu[$optn{'focu'}] eq 'sbrz' && $sopt[$optn{'swch'}] =~ /^r/) {
+    if($oldv != $newv) { # restore old volume accounting for changes
+      $temp = 0;
+      $temp = ($setz{$rvch} / $newv) if($newv);
+#`echo oldv:$oldv newv:$newv vol:$setz{$rvch} fctr:$temp > kaka`;
+      $setz{$rvch} = ($temp * $oldv);
+#    ChngBarz(); 
+    }
+    $oldr = Cnv64_10($lust{$rndx[$sndx]}{'rvol'}); # save rvol
+    $temp = ($oldr / (64*8)); # calc scale factor(where bs64x80 = 64*8 = 512)
+    $oldv = $setz{$rvch};     # store old vol
+    $newv = int($oldv*$temp); # store new vol
+    $setz{$rvch} = $newv; 
+  }
+  ChngBarz();
+}
+
+sub StopPlyn {
+  my $wich = shift || "stop";
+  if($mflg) { # master
+    if(-r $paus) { unlink $paus; } # unpause first
+    if(-r $data) { # try to exit
+      open(EXIT,">$exit"); close(EXIT); 
+    }
+    if(exists $lust{$rndx[$sndx]} && exists  $lust{$rndx[$sndx]}{'rvol'} &&
+                                     defined $lust{$rndx[$sndx]}{'rvol'}) { 
+      $temp = Cnv64_10($lust{$rndx[$sndx]}{'rvol'}); # get current rvol
+      if($temp != $oldr) { # check if relative volume was changed while playing
+        $temp /= $oldr if($oldr);
+        $newv *= $temp;
+        $setz{$rvch} = $newv;
+        ChngBarz(); 
+      }
+    }
+    if(!$cflg{'chgi'}) { # wait for child
+      wait; 
+    }
+    if($wich ne "keep" && -r $plyn) { unlink $plyn; } # really stop all plyn
+    else                            { $cflg{'chgi'} = 1; } # reset ChngProgres
+  } else { # slave
+    WritRequ("stop:$wich");
+  }
+  $cflg{'chgl'} = 1;
+  $cflg{'chgc'} = 1;
+}
+  
+sub StrtPlyn {
+  my $wich = shift || "paus";
+  if(-r $data) {
+    if($wich eq "paus") { # normal song advancing will not be "paus" here
+      if(-r $paus) { unlink $paus; } 
+      else         { open(PAUS,">$paus"); close(PAUS); }
+    }
+  } elsif($mflg) { # only master can start zinf child if not already running
+    StopPlyn() if(-r $data);
+    if($fpid = fork) { # parent process
+      %info = (); %data = (); # need all new info && data
+      unless(-r $plyn) { 
+        open(PLYN,">$plyn"); print PLYN `pt`; close(PLYN); 
+        WritMstr();
+      }
+      if($oldv != $newv) { # restore old volume accounting for changes
+        $temp = 0;
+        $temp = ($setz{$rvch} / $newv) if($newv);
+  #`echo oldv:$oldv newv:$newv vol:$setz{$rvch} fctr:$temp > kaka`;
+        $setz{$rvch} = ($temp * $oldv);
+        ChngBarz(); 
+      }
+      $oldr = Cnv64_10($lust{$rndx[$sndx]}{'rvol'}); # save rvol
+      $temp = ($oldr / (64*8)); # calc scale factor(where bs64x80 = 64*8 = 512)
+      $oldv = $setz{$rvch};     # store old vol
+      $newv = int($oldv*$temp); # store new vol
+      $setz{$rvch} = $newv; 
+      ChngBarz(); # maybe this should just be SaveSetz so Alll doesn't get wild
+    } elsif(defined $fpid) { # forked child to start zinf
+      if((@rndx < $sndx) || !defined $rndx[$sndx] || ($rndx[$sndx] == -1)) {
+        WinMesag("PlaqLust Finished!");
+      } elsif(defined $lust{$rndx[$sndx]}{'fnam'}) {
+        $temp = $lust{$rndx[$sndx]}{'fnam'};
+        if(-r $temp) {
+          system("zinf -ui fsui \"$temp\" >$zout"); 
+          if(-r $zout) { 
+            open(ZOUT, "<$zout"); $temp = join('', <ZOUT>); close(ZOUT); 
+            unlink $zout;
+            if($temp =~ /bad output/i) { die("Zinf wouldn't start!!! =(\n"); }
+          }
+        } else {
+          WinMesag("$temp not found!");
+        }
+      }
+      exit;
+    } else {
+      WinMesag("Weird Fork Error!?!");
+    }
+  } else { # slave
+    WritRequ("strt:$wich");
+  }
+  $cflg{'chgl'} = 1;
+  $cflg{'chgc'} = 1;
+  $cflg{'chgi'} = 1;
+}
+
+sub TimeJump {
+  my $file = shift || $jump;
+  open(JUMP, ">$file"); print JUMP $optn{'delt'}; close(JUMP);
+}
+
+sub ChngDelt {
+  my $delt = shift;
+  if(defined $delt) {
+    $optn{'delt'} = $delt;
+  } else {
+    $optn{'delt'} = Cnv10_64($optn{'delt'}) if($optn{'bs64'});
+    $optn{'delt'} = WinPrmpt("Enter a New Jump Delta:", $optn{'delt'}, -1);
+  }
+  if(exists  $optn{'delt'} && length($optn{'delt'})) {
+    if($optn{'bs64'}) { $optn{'delt'} = Cnv64_10($optn{'delt'}); } 
+  } else { $optn{'delt'} = 0; }
+  $optn{'delt'} =~ s/[^0-9\.]*//g;
+  if(exists $optn{'delt'} && length($optn{'delt'}) && 0 <= $optn{'delt'}) {
+    if(defined $info{'leng'} && length($info{'leng'}) && 
+       $optn{'delt'} > $info{'leng'}) {
+      $optn{'delt'} = $info{'leng'};
+    }
+  } else { $optn{'delt'} = 0; } # handle out-of-bounds errors
+  if($mflg) { WritMstr(); } 
+  else      { WritRequ("delt:" . $optn{'delt'}); }
+}
+
+sub ChngPopu {
+  my $popu = shift;
+  if(defined $popu) {
+    $optn{'popu'} = $popu;
+  } else {
+    $optn{'popu'} = Cnv10_64($optn{'popu'}) if($optn{'bs64'});
+    $optn{'popu'} = WinPrmpt("Enter a New Intro Time (aUto-advance):", $optn{'popu'}, -1);
+  }
+  if(exists  $optn{'popu'} && length($optn{'popu'})) {
+    if($optn{'bs64'}) { $optn{'popu'} = Cnv64_10($optn{'popu'}); } 
+  } else { $optn{'popu'} = 0; }
+  $optn{'popu'} =~ s/[^0-9\.]*//g;
+  if(exists $optn{'popu'} && length($optn{'popu'}) && 0 <= $optn{'popu'}) {
+    if(defined $info{'leng'} && length($info{'leng'}) && 
+       $optn{'popu'} > $info{'leng'}) {
+      $optn{'popu'} = $info{'leng'};
+    }
+  } else { $optn{'popu'} = 0; } # handle out-of-bounds errors
+  if($mflg) { WritMstr(); } 
+  else      { WritRequ("popu:" . $optn{'popu'}); }
+}
+
+sub ChngPtim {
+  $optn{'ptim'} = shift || 
+                WinPrmpt("Enter a New Time Command (pt):", $optn{'ptim'}, -1);
+  if($mflg) { WritMstr(); } 
+  else      { WritRequ("ptim:" . $optn{'ptim'}); }
+}
+  
+sub ConvBs64 {
+  my @cscr = (); my @cclr = (); my $chnd = 0; my $line = ""; my $lclr = "";
+  my $nm64 = WinPrmpt("Enter a Bass64 Number to Convert to Decimal:", 
+                      Cnv10_64($rndx[$sndx]), -1);
+     $nm64 .= " 64 10" unless($nm64 =~ /\s/);
+     $nm64 =~ s/[;|].*//g; # try to catch any bad additional commands
+  my $nm10 = `cnv $nm64` if(defined $nm64 && length($nm64) && $nm64);
+  $line  = "  \`cnv $nm64\` "; 
+  $lclr  = $chrz[0]{'c64c'} x length($line);
+  $line .= "= ";
+  $lclr .= $chrz[0]{'c64e'} x 2;
+  $line .= "$nm10  ";
+  $lclr .= $chrz[0]{'c64a'} x (length($nm10) + 2);
+  push(@cscr, $line); push(@cclr, $lclr);
+  $lclr  = $chrz[0]{'c64p'} x length($line);
+  $line  = "Press Any Key...";
+  $line  = " " x (int((length($cscr[0])-length($line))/2)) . $line;
+  push(@cscr, $line); push(@cclr, $lclr);
+  $chnd = DrwW(\@cscr,\@cclr,-1,-1,"Bass64 Conversion");
+  GetK(-1); # get a blocking keypress
+  DelW($chnd);
+}
+  
+sub ToglBs64 { 
+  my $line = "";
+  $optn{'bs64'} ^= 1; 
+  if(exists $optn{'ptim'} && length($optn{'ptim'})) { 
+    if     ( $optn{'bs64'} && $optn{'ptim'} eq "pt pt") {
+      $optn{'ptim'} = "pt";
+    } elsif(!$optn{'bs64'} && $optn{'ptim'} eq "pt") {
+      $optn{'ptim'} = "pt pt";
+    }
+  }
+  ChngAlll(); 
+  $line = " Bs64:";
+  if($optn{'bs64'}) { $line .= " on  "; }
+  else              { $line .= " off "; }
+  WinMesag($line, "Toggle:", -1);
+  if($mflg) { WritMstr(); } 
+  else      { WritRequ("bs64:"); }
+}
+  
+sub ToglInOr { 
+  my $line = "";
+  $optn{'urnd'} ^= 1; 
+  $line = " URnd:";
+  if($optn{'urnd'}) { $line .= " on  "; }
+  else              { $line .= " off "; }
+  WinMesag($line, "Toggle:", -1);
+  if($mflg) { WritMstr(); }
+  else      { WritRequ("inor:"); }
+}
+
+sub ToglWrap { 
+  my $line = "";
+  $optn{'wrap'} ^= 1; 
+  $line = " Wrap:";
+  if($optn{'wrap'}) { $line .= " on  "; }
+  else              { $line .= " off "; }
+  WinMesag($line, "Toggle:", -1);
+  if($mflg) { WritMstr(); } 
+  else      { WritRequ("wrap:"); }
+}
+
+sub ToglFPat { 
+  my $line = "";
+  $optn{'fpat'} ^= 1; 
+  $line = " FPat:";
+  if($optn{'fpat'}) { $line .= " on  "; }
+  else              { $line .= " off "; }
+  WinMesag($line, "Toggle:", -1);
+  if($mflg) { WritMstr(); } 
+  else      { WritRequ("fpat:"); }
+  $cflg{'chgl'} = 1;
+  $cflg{'chgi'} = 1;
+}
+
+sub ShokLust {
+  my $svnd = shift; my $save = undef;
+  if($mflg) { # master
+    $svnd = $sndx unless(defined $svnd && $svnd ne ""); 
+    if(-r $plyn) {
+      $save = $rndx[$svnd];
+      open(PLYN, "<$plyn"); chomp($svnd = <PLYN>); close(PLYN);
+      unlink $plyn;
+    }
+    for(my $i = 0; $i < @rndx; $i++) {
+      unless(defined $save && $save == $rndx[$i]) { delete $lust{$rndx[$i]}; }
+    }
+    @rndx = (); LoadLust(); # erase all current songs && load all new ones
+    if(defined $save) { 
+      open(PLYN, ">$plyn"); print PLYN $svnd; close(PLYN); 
+      if($save != $rndx[$sndx]) {
+        $temp = $rndx[$sndx];
+        foreach(@rndx) { $temp = -1 if($temp == $_); }
+        delete $lust{$temp} unless($temp == -1); 
+        $rndx[$sndx] = $save; # restore saved current song
+      }
+    }
+    WritMstr();
+  } else { # slave
+    $svnd = $sndx unless(defined $svnd && $svnd ne ""); 
+    WritRequ("shok:$svnd");
+  }
+  $cflg{'chgl'} = 1;
+  $cflg{'chgi'} = 1;
+}
+
+sub EdtField {
+  my $strn = ""; my $focu = ""; my $cnfm = "y"; my $i = 0;
+  if($optn{'load'} && @rndx && (defined $rndx[$sndx]) &&
+      (exists $lust{$rndx[$sndx]})) {
+    $focu = $focu[$optn{'focu'}];
+    if($mflg) { # master
+      if     (($focu eq 'fnam') ||
+              ($focu eq 'rvol') ||
+              ($focu eq 'freq') ||
+              ($focu eq 'leng') ||
+              ($focu eq 'titl') ||
+              ($focu eq 'arti') ||
+              ($focu eq 'albm') ||
+              ($focu eq 'cmnt') ||
+              ($focu eq 'trac') ||
+              ($focu eq 'year') ||
+              ($focu eq 'genr')) {
+        $strn = WinPrmpt("Enter New $focu Field:", $lust{$rndx[$sndx]}{$focu});
+        if($lust{$rndx[$sndx]}{$focu} ne $strn) {
+          if($focu eq 'fnam') { # handle special real file renaming
+            $cnfm = WinPrmpt("Are you SURE you want to rename the file (y/n)?",
+                             "n", -1);
+            if(lc($cnfm) eq "y" && -r $lust{$rndx[$sndx]}{'fnam'} && 
+               length($strn)) {
+              open(SOUR, "<$lust{$rndx[$sndx]}{'fnam'}");
+              open(DEST, ">$strn");
+              binmode(SOUR);
+              binmode(DEST);
+              if(-r $strn) { while(<SOUR>) { print DEST $_; } }
+              else         { $cnfm = "n"; WinMesag("EROR! Couldn't write!"); }
+              close(DEST);
+              close(SOUR);
+              if(-r $strn && -w $lust{$rndx[$sndx]}{'fnam'}) { 
+# maybe verify that the file sizes are the same before deleting
+#                unlink $lust{$rndx[$sndx]}{'fnam'}; 
+              }
+            } else         { $cnfm = "n"; WinMesag("EROR! Couldn't copy!"); }
+          }
+          if(lc($cnfm) eq "y") {
+            $info{$focu} = $strn if(exists $info{$focu});
+            $data{$focu} = $strn if(exists $data{$focu});
+            $lust{$rndx[$sndx]}{$focu}  = $strn;
+            $lust{$rndx[$sndx]}{'chng'} = 1;
+            ChngSBrz() if($focu eq 'rvol');
+            UpdtLust($rndx[$sndx]);
+          }
+        }
+        ChngAlll();
+      } elsif($focu eq 'sbrz') {
+        $strn = join(',', @sopt);
+        $strn = WinPrmpt("Enter New SpecialBarz List (rvol|freq):", $strn);
+        @sopt = split(/,/, $strn);
+        @temp = ();
+        for($i = 0; $i < @sopt; $i++) { # !!! EROR check passed values
+          if($sopt[$i] eq 'rvol' || $sopt[$i] eq 'freq') { 
+            push(@temp, $sopt[$i]); 
+          }
+        }
+        @sopt = @temp;
+        $cflg{'chgs'} = 0; # resize lust too
+      } elsif($focu eq 'barz') {
+        $strn = join(',', @optz);
+        $strn = WinPrmpt("Enter New Barz List (".join('|',@dopt)."):", $strn);
+        @optz = split(/,/, $strn);
+        @temp = ();
+        for($i = 0; $i < @optz; $i++) { # !!! EROR check passed values
+          if(exists $setz{$optz[$i]}) { push(@temp, $optz[$i]); }
+        }
+        @optz = @temp;
+        @optz = ($rvch) unless(@optz);
+        $cflg{'chgs'} = 0; # resize lust too
+      }
+      WritMstr();
+    } else { # slave
+      WritRequ("edit:$focu");
+    }
+  }
+}
+
+sub WinPrmpt {
+  my $wttl = shift; my $whnd = 0; my $wkey = ""; my $curs = 0;
+     $wttl = "Enter Text:" unless(defined $wttl);
+  my $dtxt = shift; 
+     $dtxt = "" unless(defined $dtxt);
+  my $text = $dtxt; my $dflg = length($dtxt);
+  my $size = shift || ($widt - 2); my $xoff = 0; # full width by default
+  if($size == -1) { $size = (length($wttl) + 4); $xoff = -1; } # fit to title
+  my $tsiz; my $blin = " " x $size; 
+  my @wscr = ($blin); my @wclr = ($chrz[0]{'prmc'} x length($blin));
+  if($dflg) {
+    $temp = $size - 1;
+    if     (length($text) <= $temp) { # no scrolling necessary
+      substr($wscr[0], 0,  length($text), $text);
+      substr($wclr[0], 0, (length($text)*2), $chrz[1]{'prmc'} x length($text));
+    } else {                          # scrolling off to the left
+      substr($wscr[0], 0, $temp, substr($text, -$temp, $temp));
+      substr($wclr[0], 0,        ($temp *2), $chrz[1]{'prmc'} x $temp);
+    }
+  }
+  $whnd = DrwW(\@wscr,\@wclr,-1,$xoff,$wttl); # Draw prmpt Window center w/titl
+  while(!defined $wkey || (ord($wkey) != 13)) {
+    $temp = length($text) - ($curs + 1);
+    if(length($text) > ($size - 2)) {
+      if($curs > ($size - 2)) { $temp = -1; }
+      else                    { $temp = ($size - 2) - $curs; }
+    }
+    Move(int($hite / 2) - 1, int(($widt - ($size - 2))/ 2) + $temp);
+                                               # no - 2 for overstrike mode
+    $wkey = GetK(-1);
+    if(defined $wkey) { 
+      if(length($wkey) == 1) {
+        if(ord(' ') <= ord($wkey) && ord($wkey) <= ord('z')) {
+          if($dflg) { 
+            substr($wclr[0], 0, length($dtxt)*2, 
+                   $chrz[0]{'prmc'} x length($dtxt));
+            $text = ""; $dflg = 0; 
+          }
+          if($curs) { substr($text, (length($text)-$curs), 0, $wkey); }
+          else      { $text .= $wkey; }
+        } elsif(ord($wkey) == 27) { # handle Escape
+          $text = $dtxt; $dflg = 1;# restore initial dfalt text
+          substr($wclr[0], 0, length($dtxt)*2, 
+                 $chrz[1]{'prmc'} x length($dtxt));
+        }
+      } elsif(exists $keyz{$wkey}) {  # handle %KEYZ
+        if($dflg) { 
+          substr($wclr[0], 0, length($dtxt)*2, 
+                 $chrz[0]{'prmc'} x length($dtxt));
+          $dflg = 0;
+        }
+        if     ($keyz{$wkey} eq "KEY_BACKSPACE") { 
+          if($curs) { substr($text, (length($text)-$curs-1), 1, ""); }
+          else      { chop($text) if(length($text)); }
+        } elsif($keyz{$wkey} eq "KEY_LEFT") { 
+          $curs++ if($curs < length($text));
+        } elsif($keyz{$wkey} eq "KEY_RIGHT") { 
+          $curs-- if($curs);
+        } elsif($keyz{$wkey} eq "KEY_HOME") { 
+          $curs = length($text);
+        } elsif($keyz{$wkey} eq "KEY_END") { 
+          $curs = 0;
+        } elsif($keyz{$wkey} eq "KEY_UP") { # uppercase cursor letter
+          if($curs) { 
+            $temp = substr($text, (length($text)-$curs-1), 1);
+            substr($text, (length($text)-$curs-1), 1, uc($temp)); 
+          }
+        } elsif($keyz{$wkey} eq "KEY_DOWN") { # lowercase cursor letter
+          if($curs) { 
+            $temp = substr($text, (length($text)-$curs-1), 1);
+            substr($text, (length($text)-$curs-1), 1, lc($temp)); 
+          }
+        }
+      }
+    }
+    $wscr[0] = $blin; $temp = $size - 1;
+    if     (length($text) <= $temp) { # no scrolling necessary
+      substr($wscr[0], 0, length($text), $text);
+    } elsif($curs > ($size - 2)) {    # cursor is back farther than scrn width
+      substr($wscr[0], 0, $temp, substr($text, -$curs, $temp));
+    } else {                          # scrolling off to the left
+      substr($wscr[0], 0, $temp, substr($text, -$temp, $temp));
+    }
+    $temp = DrwW(\@wscr,\@wclr,-1,$xoff,$wttl);
+    DelW($whnd) if($whnd);
+    $whnd = $temp;
+  }
+  DelW($whnd) if($whnd);
+  Move();
+  return($text);
+}
+
+sub WinMesag {
+  my $mesg = shift || "EROR!"; my $whnd = 0; my $wkey = ""; my $xoff = -1;
+  my $wttl = shift || "EROR!"; my $pres = shift || 0; my $line = "";
+  my $shrt = ((length($wttl) + 2) - length($mesg));
+  $mesg .= " " x $shrt unless($shrt < 0);
+  if(length($mesg) >= ($widt - 2)) { 
+    substr($mesg, ($widt - 2), (length($mesg) - ($widt - 2)), "");
+    $xoff = 0;
+  }
+  my @wscr = ($mesg); my @wclr = ($chrz[0]{'msgc'} x length($mesg));
+  $pres = 1023 if($pres == -1);
+  unless($pres) { 
+    $line = "Press A Key...";
+    if((length($wscr[-1]) - length($line)) > 0) {
+      $line = " " x (int((length($wscr[-1])-length($line))/2)) . $line;
+    }
+    push(@wscr, $line);
+    push(@wclr, $chrz[0]{'prsc'} x length($line));
+  }
+  $whnd = DrwW(\@wscr,\@wclr,-1,$xoff,$wttl);
+  if($pres) { Wait($pres); } 
+  else      { GetK(-1); }
+  DelW($whnd) if($whnd);
+}
+
+sub SnglSrch {
+  my $mtch = shift || WinPrmpt("Enter Part of a Song Name:", $lsrc, -1);
+  my $refl = ""; my $indx = 0; my $lcou = 0; my @ldat = ();
+
+  if($mflg) { # master
+    if($mtch =~ /\/(.{0,3})$/) { # catch terminating regex flags //gi?
+      $refl = $1; 
+      $mtch =~ s/\/(.{0,3})$//;
+    }
+    open(PLNM, "<$plnm");
+    while(<PLNM>) { 
+      chomp;
+      if((($refl =~ /i/) && ($_ =~ /$mtch/i)) || 
+                            ($_ =~ /$mtch/  )) {
+        @ldat = split(/$chrz[0]{'plfs'}/);
+        for(my $i = 0; $i < @attz; $i++) { # load all found .plf data
+          if(@ldat > $i) { 
+            if(exists $conv{$attz[$i]}) {
+              $ldat[$i] = 0 unless(length($ldat[$i]));
+              $lust{$lcou}{$attz[$i]} = Cnv64_10($ldat[$i]); 
+            } else {
+              $lust{$lcou}{$attz[$i]} = $ldat[$i]; 
+            }
+          } else { 
+            $lust{$lcou}{$attz[$i]} = ""; 
+            if($attz[$i] eq 'rvol' || $attz[$i] eq 'freq') {
+              $lust{$lcou}{$attz[$i]} = "80";
+            }
+          }
+        }
+        splice(@rndx, ($sndx + 1), 0, $lcou); # insert matched song index next
+        if(@rndx > $optn{'size'}) {
+          $temp = pop(@rndx);
+          foreach $indx (@rndx) { $temp = -1 if($temp == $indx); }
+          delete $lust{$temp} unless($temp == -1); 
+        }
+        last;
+      }
+      $lcou++;
+    }
+    close(PLNM);
+  } else { # slave
+    WritRequ("sngl:$mtch");
+  }
+  $cflg{'chgl'} = 1;
+  $cflg{'chgi'} = 1;
+  $lsrc = $mtch;
+}
+
+sub SlctSrch { # get keys && search for string && draw results until Enter
+  my $skey = undef; my $curs = 0;
+  my %flag = ('igcs' => 0, 'name' => 0, 'wait' => 1, 'done' => 0); 
+  my %lsbk = %lust; my @rnbk = @rndx; my $snbk = $sndx;
+  $srch = "/"; $sndx = 0;
+  MtchLust();
+  while(!defined $skey || !$flag{'done'}) {
+    $skey = GetK();
+    LoadSetz();
+    $oidl = $idle;
+    if(defined $skey) {
+      if($skey ne "-1") { 
+        if     ($skey =~ /^(\w| |\/)$/i) { 
+          $srch .= $skey; 
+          MtchLust($flag{'name'}, $flag{'igcs'}) unless($flag{'wait'}); 
+        } elsif(   ord($skey) ==  9) {  # Ctrl-I   IgnoreCase
+          $flag{'igcs'} ^= 1; 
+          MtchLust($flag{'name'}, $flag{'igcs'}) unless($flag{'wait'}); 
+        } elsif(   ord($skey) == 13) {  # Enter either submits search or picks
+          if($flag{'wait'}) {
+            MtchLust($flag{'name'}, $flag{'igcs'});
+            $flag{'wait'} = 0;
+          } else { # not waiting so insert choice && be done
+            if($rndx[$sndx] ne "" && $rndx[$sndx] < $optn{'load'}) {
+              splice(@rnbk, ($snbk + 1), 0, $rndx[$sndx]); # insert chosen song
+              $lsbk{$rndx[$sndx]} = $lust{$rndx[$sndx]};
+              if(@rnbk > $optn{'size'}) {
+                $temp = pop(@rnbk);
+                foreach(@rnbk) { $temp = -1 if($temp == $_); }
+                delete $lsbk{$temp} unless($temp == -1); 
+              }
+            }
+            $flag{'done'} = 1;
+          }
+        } elsif(   ord($skey) == 14) {  # Ctrl-N   just match fileName
+          $flag{'name'} ^= 1;
+          MtchLust($flag{'name'}, $flag{'igcs'}) unless($flag{'wait'}); 
+        } elsif(   ord($skey) == 23) {  # Ctrl-W   Wait for enter
+          $flag{'wait'} ^= 1;
+          MtchLust($flag{'name'}, $flag{'igcs'}) unless($flag{'wait'}); 
+        } elsif(   ord($skey) == 27 || !length($srch)) { # Esc or no srch quits
+            $flag{'done'} = 1;
+        } elsif(exists $keyz{$skey}) {  # handle %KEYZ
+          if     ($keyz{$skey} eq "KEY_UP")        { 
+            $sndx = @rndx unless($sndx); $sndx--;  
+            $cflg{'chgc'} = 1; $cflg{'chgi'} = 1;
+          } elsif($keyz{$skey} eq "KEY_DOWN")      { 
+            $sndx++; $sndx = 0 if($sndx >= @rndx);
+            $cflg{'chgc'} = 1; $cflg{'chgi'} = 1;
+          } elsif($keyz{$skey} eq "KEY_HOME")      { 
+            $sndx = 0;
+            $cflg{'chgc'} = 1; $cflg{'chgi'} = 1;
+          } elsif($keyz{$skey} eq "KEY_END")       { 
+            $sndx = $#rndx;
+            $cflg{'chgc'} = 1; $cflg{'chgi'} = 1;
+          } elsif($keyz{$skey} eq "KEY_BACKSPACE") { 
+            if($curs) { substr($srch, (length($srch)-$curs-1), 1, ""); }
+            else      { chop($srch) if(length($srch)); }
+            MtchLust($flag{'name'}, $flag{'igcs'}) unless($flag{'wait'}); 
+          } elsif($keyz{$skey} eq "KEY_F1") { 
+            SrchHelp();
+          } else {
+            IdlSleep();
+          }
+        }
+      }
+    } else {
+      SrchHelp();
+    }
+    if($idle == $oidl) { $idle = 0; }
+    DrawScrn();
+  }
+  $sndx = $snbk; @rndx = @rnbk; %lust = %lsbk; $srch  = ""; 
+  ChngAlll();
+  DrawScrn();
+}
+
+sub MtchLust {
+  my $name = shift || 0; my $igcs = shift || 0; my $strn = ""; my $refl = "";
+  my @ldat = (); my $line = ""; my $lcou = 0; my $foun = 0; my $i;
+  %lust = ();
+  for($i = 0; $i < @rndx; $i++) { $rndx[$i] = ""; }
+  if($srch =~ /\/([^\/]*)\/?(.{0,3})$/) { # catch terminating regex flags //gi?
+    $strn = $1; $refl = $2; 
+    $igcs = 1 if($refl =~ /i/);
+  }
+  if(length($strn)) {
+    open(PLNM, "<$plnm");
+    while(<PLNM>) { 
+      last if($foun == @rndx); # filled up
+      chomp;
+      $line = $_;
+      $line =~ s/$chrz[0]{'plfs'}.*// if($name); # strip past field separator
+      if(($igcs && $line =~ /$strn/i) || 
+                  ($line =~ /$strn/ )) {
+        @ldat = split(/$chrz[0]{'plfs'}/, $_);
+        for(my $i = 0; $i < @attz; $i++) { # load all found .plf data
+          if(@ldat > $i) { 
+            if(exists $conv{$attz[$i]}) {
+              $ldat[$i] = 0 unless(length($ldat[$i]));
+              $lust{$lcou}{$attz[$i]} = Cnv64_10($ldat[$i]); 
+            } else {
+              $lust{$lcou}{$attz[$i]} = $ldat[$i]; 
+            }
+          } else { 
+            $lust{$lcou}{$attz[$i]} = ""; 
+            if($attz[$i] eq 'rvol' || $attz[$i] eq 'freq') {
+              $lust{$lcou}{$attz[$i]} = "80";
+            }
+          }
+        }
+        $rndx[$foun++] = $lcou;
+      }
+      $lcou++;
+    }
+    close(PLNM);
+    $sndx = $#rndx if($sndx >= @rndx); 
+  }
+  ChngAlll();
+}
+
+sub SrchHelp {
+  my @hscr = (); my @hclr = (); my $hhnd = 0; my $line = "";
+  my $hdat = # first line is the meter for centering the PressAnyKey line
+" $0 Selectable Search Help:                                                 
+
+ You can type a string to match in your plaqlust file.
+ Ctrl-I toggles ignoring the case of your string (same as trailing '/i')
+ Ctrl-N toggles whether the search should only try to match filenames
+ Ctrl-W toggles whether the search should be performed after every character
+  or only after you've pressed Enter.  The default is to wait until you
+  press Enter since searching every time is quite slow.  After a search has 
+  been performed, the plaqlust area will display the matches in the order it 
+  found them in your plaqlust file.  You can use the arrow keys to select 
+  which one you would like to insert && press Enter to choose it.";
+  push(@hscr, split(/\n/, $hdat));
+  foreach(@hscr) {   push(@hclr, $chrz[0]{'hlpt'} x $widt); }
+  $line  = "Press Any Key...";
+  $line  = " " x (int((length($hscr[0])-length($line))/2)) . $line;
+  push(@hscr, $line); push(@hclr, $chrz[0]{'hlpp'} x $widt); 
+  $hhnd = DrwW(\@hscr,\@hclr);
+  GetK(-1); # get a blocking keypress
+  DelW($hhnd);
+}
+
+sub GotoSong {
+  my $wich = shift; $wich = "rndx" unless(defined $wich); my $indx = 0;
+  my $nndx = shift; my $lndx = 0; my @ldat = (); my $olds = $sndx;
+
+  StopPlyn("keep") if(-r $plyn && $mflg);
+  if     ($wich eq "rndx") {
+    $temp = ($optn{'size'} - 1);
+    $temp = Cnv10_64($temp) if($optn{'bs64'});
+    unless(defined $nndx) {
+      $nndx = WinPrmpt("Enter a Song Number (0-$temp):", "", -1);
+    }
+    $sndx = $nndx;
+    $sndx = int(($optn{'size'}-0.1)/2) unless(defined $sndx && $sndx ne "");
+    if(( length($sndx) && $optn{'bs64'} && ($sndx !~ /^(0|d )/i)) ||
+       ((length($sndx) > 1)             && ($sndx =~ /^(0)/i   ))) {
+      $sndx = Cnv64_10($sndx);
+    }
+    $sndx = 0 if($sndx < 0);
+    $sndx = ($optn{'size'}-1) if($sndx > ($optn{'size'}-1));
+  } elsif($wich eq "lust") {
+    $temp = ($optn{'load'} - 1);
+    $temp = Cnv10_64($temp) if($optn{'bs64'});
+    unless(defined $nndx) { 
+      $nndx = WinPrmpt("Enter a PlaqLust Song Number (0-$temp):", "", -1);
+    }
+    if(( length($nndx) && $optn{'bs64'} && ($nndx !~ /^(0|d )/i)) ||
+       ((length($nndx) > 1)             && ($nndx =~ /^(0)/i   ))) {
+      $nndx = Cnv64_10($nndx);
+    }
+    $nndx = 0 if(($nndx < 0) || ($nndx > ($optn{'load'}-1)));
+    if($mflg && ($nndx != $rndx[$sndx])) {
+      $temp = $rndx[$sndx];
+      foreach $indx (@rndx) { $temp = -1 if($temp == $indx); }
+      delete $lust{$temp} unless($temp == -1); 
+      $rndx[$sndx] = $nndx; 
+      open(PLNM, "<$plnm");
+      while($lndx <= $nndx) {
+        chomp($_ = <PLNM>);
+        if($lndx == $nndx) {
+          @ldat = split(/$chrz[0]{'plfs'}/, $_);
+          for(my $i = 0; $i < @attz; $i++) { # load all found .plf data
+            if(@ldat > $i) { 
+              if(exists $conv{$attz[$i]}) {
+                $ldat[$i] = 0 unless(length($ldat[$i]));
+                $lust{$nndx}{$attz[$i]} = Cnv64_10($ldat[$i]); 
+              } else {
+                $lust{$nndx}{$attz[$i]} = $ldat[$i]; 
+              }
+            } else { 
+              $lust{$nndx}{$attz[$i]} = ""; 
+              if($attz[$i] eq 'rvol' || $attz[$i] eq 'freq') {
+                $lust{$nndx}{$attz[$i]} = "80";
+              }
+            }
+          }
+        }
+        $lndx++;
+      }
+      close(PLNM);
+    }
+  } else {
+    $sndx = $wich;
+    $sndx = 0 if(($sndx < 0) || ($sndx > ($optn{'size'}-1)));
+  }
+  if($mflg) { # master
+    WritMstr() if($olds ne $sndx);
+    StrtPlyn("keep") if(-r $plyn);
+  } else { # slave
+    $wich = "" unless(defined $wich);
+    $nndx = "" unless(defined $nndx);
+    WritRequ("goto:$wich:$nndx");
+  }
+  $cflg{'chgl'} = 1;
+  $cflg{'chgc'} = 1;
+  $cflg{'chgi'} = 1;
+}
+
+sub ResetDat {
+  if($mflg) { # master
+    # maybe mk an Are-You-Sure? dialog: WinCnfrm()
+    foreach(@attz) { $lust{$rndx[$sndx]}{$_} = "" unless($_ eq 'fnam'); }
+    $lust{$rndx[$sndx]}{'rvol'} = "80";
+    $lust{$rndx[$sndx]}{'freq'} = "80";
+    $lust{$rndx[$sndx]}{'chng'} = 1;
+    UpdtLust();
+    WinMesag("PlaqLust entry: $rndx[$sndx] has been reset", "Reset Data:", -1);
+  } else { # slave
+    WritRequ("rset:");
+  }
+}
+
+sub IdlSleep {
+  if($mflg) { 
+#    ($idle++ <= 255) ? Wait(63)  : Wait(127); # mildly responsive, heavy on cpu
+#    ($idle++ <= 255) ? Wait(255) : Wait(2047); # more sluggish, light cpu load
+  } else {
+    ($idle++ <= 255) ? Wait(31)  : Wait(63); 
+  }
+}
+
+sub ZinfPref {
+  my $prfb = $pref . "." . `pt`; my $chgf = 0;
+  if(-r $pref) { # back up old prefs first
+    open(PREF,"<$pref"); open(PRFB,">$prfb");
+    while(<PREF>) { print PRFB $_; }
+    close(PREF); close(PRFB);
+  }
+  if(-r $prfb && -w $pref) { # set new prefs
+    open(PRFB,"<$prfb"); open(PREF,">$pref");
+    while(<PRFB>) { 
+      if     (/^TextUI: (.*)/) {
+        if($1 !~ /fsui/) {
+          print PREF "TextUI: fsui.ui\n";      $chgf = 1;
+        } else { print PREF $_; }
+      } elsif(/^PlaylistRepeat: [^0]/) {
+        print PREF "PlaylistRepeat: 0\n";      $chgf = 1;
+      } elsif(/^PlaylistShuffle: true/) {
+        print PREF "PlaylistShuffle: false\n"; $chgf = 1;
+      } else {
+        print PREF $_; 
+      }
+    }
+    close(PRFB); close(PREF);
+  }
+  unlink $prfb unless($chgf); # delete backup if no change was made
+}
+
+sub WritRequ {
+  my $rstr = shift || return;
+  unless(-r $requ) {
+    open(REQU, ">$requ");
+    print REQU $rstr;
+    close(REQU);
+    while(-r $requ) { IdlSleep(); } # wait for Request to be accepted
+  }
+}
+
+sub ReadRequ {
+  my $rstr = "";
+  if(-r $requ) {
+    open(REQU, "<$requ");
+    while(<REQU>) {
+      chomp($rstr = $_);
+      if   ($rstr =~ /^goto:(.*):(.*)$/) { GotoSong($1,$2); }
+      elsif($rstr =~ /^add2:(.*)$/) { Add2URnd($1); }
+      elsif($rstr =~ /^shok:(.*)$/) { ShokLust($1); }
+      elsif($rstr =~ /^sngl:(.*)$/) { SnglSrch($1); }
+      elsif($rstr =~ /^delt:(.*)$/) { ChngDelt($1); }
+      elsif($rstr =~ /^popu:(.*)$/) { ChngPopu($1); }
+      elsif($rstr =~ /^ptim:(.*)$/) { ChngPtim($1); }
+      elsif($rstr =~ /^strt:(.*)$/) { StrtPlyn($1); }
+      elsif($rstr =~ /^stop:(.*)$/) { StopPlyn($1); }
+      elsif($rstr =~ /^asin:(.*)$/) { AsinChan($1); }
+      elsif($rstr =~ /^edit:(.*)$/) { EdtField(); }
+      elsif($rstr =~ /^rset:(.*)$/) { ResetDat(); }
+      elsif($rstr =~ /^bs64:(.*)$/) { ToglBs64(); }
+      elsif($rstr =~ /^inor:(.*)$/) { ToglInOr(); }
+      elsif($rstr =~ /^wrap:(.*)$/) { ToglWrap(); }
+      elsif($rstr =~ /^fpat:(.*)$/) { ToglFPat(); }
+      elsif($rstr =~ /^only:(.*)$/) { ToglOnly(); }
+      elsif($rstr =~ /^alll:(.*)$/) { ToglAlll(); }
+      elsif($rstr =~ /^mute:(.*)$/) { ToglMute(); }
+      elsif($rstr =~ /^mode:(.*)$/) { ToglMode(); }
+      elsif($rstr =~ /^focu:(.*)$/) { 
+        if(defined $1 && length($1)) { $optn{'focu'} = $1; WritMstr(); }
+      }
+      elsif($rstr =~ /^wich:(.*)$/) { 
+        if(defined $1 && length($1)) { $optn{'wich'} = $1; WritMstr(); }
+      }
+      elsif($rstr =~ /^swch:(.*)$/) { 
+        if(defined $1 && length($1)) { $optn{'swch'} = $1; WritMstr(); }
+      }
+      elsif($rstr =~ /^size:(.*)$/) { 
+        if(defined $1 && length($1)) { $optn{'size'} = $1; WritMstr(); }
+      }
+    }
+    close(REQU);
+    unlink $requ;
+  }
+}
+
+sub WritMstr {
+  open(PIMP,">$pimp"); 
+  print PIMP "plnm:$plnm\n";
+  print PIMP "sndx:$sndx\n";
+  print PIMP "optn:\n";
+  foreach(keys(%optn)) { print PIMP " $_:$optn{$_}\n"; }
+  $temp = join(',', @optz);
+  print PIMP "optz:$temp\n";
+  close(PIMP); 
+  open(RNDX,">$rndx"); 
+  foreach(@rndx) { print RNDX "$_\n"; }
+  close(RNDX); 
+}
+
+sub ReadMstr {
+  my $line = ""; my $olin = ""; my %tlst = (); my @ldat = (); my $lndx = 0;
+  if (-r $pimp) {
+    open(PIMP, "<$pimp");
+    while(<PIMP>) {
+      chomp($line = $_);
+      if($line =~ /^plnm:(.*)$/) { 
+        if($plnm ne $1) { ChngAlll(); }
+        $plnm = $1; 
+      }
+      if($line =~ /^sndx:(.*)$/) { 
+        if($sndx ne $1) { $cflg{'chgl'} = 1; $cflg{'chgc'} = 1; }
+        $sndx = $1; 
+      }
+      if($line =~ /^optn:$/) {
+        chomp($olin = <PIMP>);
+        while($olin =~ /^ (\w+):(.*)$/) {
+          if($optn{$1} ne $2) {
+            if($1 eq "wich" || $1 eq "swch" || $1 eq "only" || 
+               $1 eq "alll" || $1 eq "mute") {
+              $cflg{'chgb'} = 1;
+              $cflg{'chgr'} = 1;
+            }
+            if($1 eq "focu") {
+              $cflg{'chgb'} = 1;
+              $cflg{'chgr'} = 1;
+              $cflg{'chgc'} = 1;
+              $cflg{'chgi'} = 1;
+            }
+            if($1 eq "mode" || $1 eq "bs64" || $1 eq "size") {
+              $cflg{'chgs'} = 0;
+            }
+          }
+          $optn{$1} = $2;
+          chomp($olin = <PIMP>);
+        }
+      }
+      if($line =~ /^optz:(.*)$/) { 
+        $temp =  join(',', @optz);
+        if($temp ne $1) {
+          $cflg{'chgs'} = 0;
+        }
+        @optz = split(/,/, $1); 
+      }
+    }
+    close(PIMP);
+  }
+  if (-r $rndx) {
+    @rndx = ();
+    open(RNDX, "<$rndx");
+    while(<RNDX>) { 
+      chomp; push(@rndx, $_); $tlst{$_} = 1; 
+      $lndx = 0;
+      unless(exists $lust{$_}) {
+        open(PLNM, "<$plnm");
+        while($temp = <PLNM>) {
+          chomp($temp);
+          if($lndx == $_) {
+            @ldat = split(/$chrz[0]{'plfs'}/, $temp);
+            for(my $i = 0; $i < @attz; $i++) { # load all found .plf data
+              if(@ldat > $i) { 
+                if(exists $conv{$attz[$i]}) {
+                  $ldat[$i] = 0 unless(length($ldat[$i]));
+                  $lust{$_}{$attz[$i]} = Cnv64_10($ldat[$i]); 
+                } else {
+                  $lust{$_}{$attz[$i]} = $ldat[$i]; 
+                }
+              } else { 
+                $lust{$_}{$attz[$i]} = ""; 
+                if($attz[$i] eq 'rvol' || $attz[$i] eq 'freq') {
+                  $lust{$_}{$attz[$i]} = "80";
+                }
+              }
+            }
+          }
+          $lndx++;
+        }
+        close(PLNM);
+        $cflg{'chgl'} = 1; # added a new one so make sure to redraw lust
+        $cflg{'chgc'} = 1;
+        $cflg{'chgi'} = 1;
+      }
+    }
+    close(RNDX);
+    foreach(keys(%lust)) { 
+      unless(exists $tlst{$_}) {
+        delete $lust{$_};
+        $cflg{'chgl'} = 1; # removed an old one so make sure to redraw lust
+        $cflg{'chgc'} = 1;
+        $cflg{'chgi'} = 1;
+      }
+    }
+  }
+}
+
+sub Cnv64_10 { # converts a bass64 number (string) to decimal
+  my $t = shift || 0; my @n = reverse(split(//, $t)); 
+return(`cnv $t 64 10`);
+  $t = 0;
+  for(my $i = 0; $i < @n; $i++) {
+    if   ($n[$i] =~ /[A-Z]/) { $n[$i] = ord($n[$i]) - 55; }
+    elsif($n[$i] =~ /[a-z]/) { $n[$i] = ord($n[$i]) - 61; }
+    elsif($n[$i] eq ".")     { $n[$i] = 62; }
+    elsif($n[$i] eq "_")     { $n[$i] = 63; }
+    $t += ((64 ** $i) * $n[$i]);
+  }
+  return($t);
+}
+
+sub Cnv10_64 { # converts a decimal number to a bass64 number (string)
+  my $n = shift || 0; my @t = (0); my $i = 0; my $o; my $b;
+return(`cnv $n 10 64`);
+  while((64 ** $i) <= $n) { $i++; } # find number of goal digits
+  while($i--) {
+    $b = (64 ** $i);
+    $t[$i] = int($n / $b);
+    $n -= ($t[$i] * $b);
+    if   ($t[$i] < 10) { }#$t[$i] = $t[$i]; }
+    elsif($t[$i] < 36) { $t[$i] = chr($t[$i] + 55); }
+    elsif($t[$i] < 62) { $t[$i] = chr($t[$i] + 61); }
+    elsif($t[$i] < 63) { $t[$i] = "."; }
+    elsif($t[$i] < 64) { $t[$i] = "_"; }
+  }
+  return(join('', reverse @t));
+}
+
+sub ShowHelp {
+  my @hscr = (); my @hclr = (); my $hhnd = 0; my $line = "";
+# remember that the first line is the meter for centering the PressAnyKey line
+  my $hdat = " $0 Help:"; $hdat .= " " x (40 - (length($hdat)));
+  $hdat .= "h/? - displays this Help screen         
+  m  - toggle Mute                       a  - locks slider bar in All channels
+  v  - jump to Volume channel            c  - jump to Cd channel
+  p  - Play current song / toggle Pause  s  - Stop playing
+  f  - FastForward player                r  - Rewind player
+  j  - Jumps to specific time            d  - enter a new (f,r,j) jump Delta
+  n  - play Next song                    l  - play Last song (ie. previous)
+  u  - set aUto-advance time limit       c  - convert bass64 number to decimal
+ Tab/i/I - move section focus            b  - toggle bass64 display
+  t  - set titlebar time format ('pt'=terse,'pt pt'=verbose,'pt -e'=EpochSecs)
+  o  - toggle InOrder / UniqueRandom play Order
+  w  - toggles Wraping (ie. loop InOrder when reaching end of PlaqLust)
+  z  - refresh visible lust (shocks with new songs according to play order)
+  g  - Goto a visible lust song (by index number)
+  G  - Goto a big lust song (by line number in PlaqLust file)
+  /  - enter a regex matching a song to insert next
+ Shift 0-9 - move slider to equivalent percentage on spectrum
+   If a mixer slider bar is highlighted:
+  LeftArrow  - lower mixer channel level  RightArrow - raise channel level
+  DownArrow  - go to next mixer channel   UpArrow    - go to previous channel
+   If the middle lust song has a field highlighted:
+  LeftArrow  - goto previous visible song RightArrow - goto next visible song
+  DownArrow  - play next song             UpArrow    - play previous song
+   If details about a song are highlighted: E - Edit field
+  x or q     - eXit / Quit
+
+ Note: All pimp numbers are displayed in Bass64 by default where zero is the
+    first number (eg. the first song in your .plf file will be index 0.";
+  push(@hscr, split(/\n/, $hdat));
+  foreach(@hscr) {   push(@hclr, $chrz[0]{'hlpt'} x $widt); }
+  $line  = "Press Any Key...";
+  $line  = " " x (int((length($hscr[0])-length($line))/2)) . $line;
+  push(@hscr, $line); push(@hclr, $chrz[0]{'hlpp'} x $widt); 
+  $hhnd = DrwW(\@hscr,\@hclr);
+  GetK(-1); # get a blocking keypress
+  DelW($hhnd);
+}
+
+
+# !!! BGIN PIMPIN !!!  # !!! BGIN PIMPIN !!!  # !!! BGIN PIMPIN !!!
+open(DBUG, ">dbug") if($dbug);
+FindChgr(); # verify that a valid /dev/mixer && changer can be found
+unless(-r $mstr) { # become master
+  $mflg = 1;
+  open(MSTR, ">$mstr"); print MSTR `pt`; close(MSTR); 
+  ZinfPref(); # initialize Zinf preferences for pimp to run normally
+  LoadLust(); # load %lust with random unique songs from the .plf file
+} else { # become slave && load data from master
+  $mflg = 0;
+  ReadMstr();
+}
+OScr();     # Open a new curses SCReen
+%keyz = Keyz(); # initialize keyz hash
+LoadSetz(); # load current mixer settings
+DrawScrn();
+while(!defined $keey || (lc($keey) ne 'x' && lc($keey) ne 'q')) {
+  $keey = GetK();
+  LoadSetz();
+  if($mflg) { ReadRequ(); }
+  else      { ReadMstr(); }
+  $oidl = $idle;
+  if(defined $keey) { # taken: abcdefghij lmnopQrstuvwX z
+                      # avail:           k             y 
+    if   (lc($keey)    eq "h") { ShowHelp(); }
+    elsif(lc($keey)    eq "m") { ToglMute(); }
+    elsif(lc($keey)    eq "a") { ToglAlll(); }
+    elsif(lc($keey)    eq "v") { AsinChan("vol"); }
+    elsif(lc($keey)    eq "n") { Add2URnd("next"); }
+    elsif(lc($keey)    eq "l") { Add2URnd("last"); }
+    elsif(   $keey     eq " ") { StrtPlyn("paus") if(-r $data); }
+    elsif(lc($keey)    eq "p") { StrtPlyn(); }
+    elsif(lc($keey)    eq "s") { StopPlyn(); }
+    elsif(   $keey     eq "f") { TimeJump($ffwd); }
+    elsif(   $keey     eq "r") { TimeJump($rwnd); }
+    elsif(lc($keey)    eq "j") { TimeJump($jump); }
+    elsif(lc($keey)    eq "d") { ChngDelt(); }
+    elsif(lc($keey)    eq "u") { ChngPopu(); }
+    elsif(lc($keey)    eq "t") { ChngPtim(); }
+    elsif(lc($keey)    eq "c") { ConvBs64(); }
+    elsif(lc($keey)    eq "b") { ToglBs64(); }
+    elsif(lc($keey)    eq "o") { ToglInOr(); }
+    elsif(lc($keey)    eq "w") { ToglWrap(); }
+    elsif(   $keey     eq "F") { ToglFPat(); }
+    elsif(lc($keey)    eq "z") { ShokLust(); }
+    elsif(lc($keey)    eq "e") { EdtField(); }
+    elsif(   $keey     eq "g") { GotoSong(); }
+    elsif(   $keey     eq "G") { GotoSong("lust"); }
+    elsif(   $keey     eq "R") { ResetDat(); }
+    elsif(   $keey     eq "?") { SnglSrch(); }
+    elsif(   $keey     eq "/") { SlctSrch(); }
+    elsif(   $keey     =~ /^[0-9]$/) {           # handle regular number keys
+      if     ($focu[$optn{'focu'}] eq "barz") {
+        if(int($keey * 11) < $setz{$optz[$optn{'wich'}]}) { # only down
+          $setz{$optz[$optn{'wich'}]} = int($keey * 11);            ChngBarz();
+        }
+      } elsif($focu[$optn{'focu'}] eq "sbrz") {
+        $onam = 'rvol';
+        $onam = 'freq' if($sopt[$optn{'swch'}] =~ /^f/);
+        $temp = Cnv64_10($lust{$rndx[$sndx]}{$onam});
+        $cflg{'chgl'} = 1;
+        $temp = int($keey*((64*64)/9));
+        if($temp < Cnv64_10($lust{$rndx[$sndx]}{$onam})) {
+          $lust{$rndx[$sndx]}{$onam} = Cnv10_64($temp); 
+          WritRequ("swch:" . $optn{'swch'}) unless($mflg); ChngSBrz();
+        }
+      }
+    } elsif(   $keey     =~ /^[!@#\$%^&*()]$/) { # handle shifted number keys
+      if     ($focu[$optn{'focu'}] eq "barz") {
+        $setz{$optz[$optn{'wich'}]} = int($nlut{$keey} * 11);       ChngBarz();
+      } elsif($focu[$optn{'focu'}] eq "sbrz") {
+        $onam = 'rvol';
+        $onam = 'freq' if($sopt[$optn{'swch'}] =~ /^f/);
+        $temp = Cnv64_10($lust{$rndx[$sndx]}{$onam});
+        $cflg{'chgl'} = 1;
+        $temp = int($nlut{$keey}*((64*64)/9));
+        $lust{$rndx[$sndx]}{$onam} = Cnv10_64($temp); 
+        WritRequ("swch:" . $optn{'swch'}) unless($mflg); ChngSBrz();
+      }
+    } elsif( $keey     eq "," || $keey eq "<") { # fine SpecialBarz dec manip
+      if     ($focu[$optn{'focu'}] eq "barz") {
+        $setz{$optz[$optn{'wich'}]}-- if($setz{$optz[$optn{'wich'}]});
+        WritRequ("wich:" . $optn{'wich'}) unless($mflg); ChngBarz();
+      } elsif($focu[$optn{'focu'}] eq "sbrz") {
+        $onam = 'rvol';
+        $onam = 'freq' if($sopt[$optn{'swch'}] =~ /^f/);
+        $temp = Cnv64_10($lust{$rndx[$sndx]}{$onam});
+        $cflg{'chgl'} = 1;
+        if($temp) { 
+          $temp--; 
+          $lust{$rndx[$sndx]}{$onam} = Cnv10_64($temp); 
+        }
+        WritRequ("swch:" . $optn{'swch'}) unless($mflg); ChngSBrz();
+      }
+    } elsif( $keey     eq "." || $keey eq ">") { # fine SpecialBarz inc manip
+      if     ($focu[$optn{'focu'}] eq "barz") {
+        $setz{$optz[$optn{'wich'}]}++ if($setz{$optz[$optn{'wich'}]} < 99);
+        WritRequ("wich:" . $optn{'wich'}) unless($mflg); ChngBarz();
+      } elsif($focu[$optn{'focu'}] eq "sbrz") {
+        $onam = 'rvol';
+        $onam = 'freq' if($sopt[$optn{'swch'}] =~ /^f/);
+        $temp = Cnv64_10($lust{$rndx[$sndx]}{$onam});
+        $cflg{'chgl'} = 1;
+        if($temp < ((64*64)-1)) { 
+          $temp++; 
+          $lust{$rndx[$sndx]}{$onam} = Cnv10_64($temp); 
+        }
+        WritRequ("swch:" . $optn{'swch'}) unless($mflg); ChngSBrz();
+      }
+    } elsif(($keey     eq "i") || (ord($keey) == 9)) { # i Tab (^I) next area
+      $optn{'focu'}++; 
+      $optn{'focu'}++ if($focu[$optn{'focu'}] eq "sbrz");
+      $optn{'focu'} = 0 if($optn{'focu'} >= @focu);
+      WritRequ("focu:" . $optn{'focu'}) unless($mflg); ChngAlll();
+    } elsif( $keey     eq "I") { # shift I  to change focus to prev area
+      $optn{'focu'} = @focu unless($optn{'focu'} > 1); 
+      $optn{'focu'}--;
+      $optn{'focu'} = 0 if($focu[$optn{'focu'}] eq "sbrz");
+      WritRequ("focu:" . $optn{'focu'}) unless($mflg); ChngAlll();
+    } elsif(exists $keyz{$keey}) {  # handle %KEYZ
+      if     ($keyz{$keey} eq "KEY_F1") { 
+        ShowHelp();
+      } elsif($focu[$optn{'focu'}] eq 'barz') {
+        if     ($keyz{$keey} eq "KEY_LEFT")  { 
+          $setz{$optz[$optn{'wich'}]}-- if($setz{$optz[$optn{'wich'}]});
+          WritRequ("wich:" . $optn{'wich'}) unless($mflg); ChngBarz();
+        } elsif($keyz{$keey} eq "KEY_RIGHT") { 
+          $setz{$optz[$optn{'wich'}]}++ if($setz{$optz[$optn{'wich'}]} < 99);
+          WritRequ("wich:" . $optn{'wich'}) unless($mflg); ChngBarz();
+        } elsif($keyz{$keey} eq "KEY_HOME") { 
+          $setz{$optz[$optn{'wich'}]} = 0;
+          WritRequ("wich:" . $optn{'wich'}) unless($mflg); ChngBarz();
+        } elsif($keyz{$keey} eq "KEY_END") { 
+          $setz{$optz[$optn{'wich'}]} = 99;
+          WritRequ("wich:" . $optn{'wich'}) unless($mflg); ChngBarz();
+        } elsif($keyz{$keey} eq "KEY_UP")    { 
+          if($optn{'wich'} <= 0) { 
+            if(@sopt) { $optn{'focu'}++; $optn{'swch'} = $#sopt; } 
+            else      { $optn{'wich'} = $#optz; }
+          } else { $optn{'wich'}--; }
+          WritRequ("wich:" . $optn{'wich'}) unless($mflg); ChngBarz();
+        } elsif($keyz{$keey} eq "KEY_DOWN")  { 
+          if($optn{'wich'} >= $#optz) { 
+            if(@sopt) { $optn{'focu'}++; $optn{'swch'} = 0; } 
+            else      { $optn{'wich'} = 0; }
+          } else { $optn{'wich'}++; }
+          WritRequ("wich:" . $optn{'wich'}) unless($mflg); ChngBarz();
+        } elsif($keey != -1) {
+          ShowHelp();
+        } else {
+          IdlSleep();
+        }
+      } elsif($focu[$optn{'focu'}] eq 'sbrz') {
+        $onam = 'rvol';
+        $onam = 'freq' if($sopt[$optn{'swch'}] =~ /^f/);
+        $fine = 0;
+        $fine = 1      if($sopt[$optn{'swch'}] =~ /f$/);
+        $temp = Cnv64_10($lust{$rndx[$sndx]}{$onam});
+        $cflg{'chgl'} = 1;
+        if     ($keyz{$keey} eq "KEY_LEFT")  { 
+          if($fine) { 
+            if($temp) { 
+              $temp--; 
+              $lust{$rndx[$sndx]}{$onam} = Cnv10_64($temp); 
+            }
+          } else {
+            $temp -= int((64*64) / 100);
+            $temp  = 0 if($temp < 0);
+            $lust{$rndx[$sndx]}{$onam} = Cnv10_64($temp); 
+          }
+          WritRequ("swch:" . $optn{'swch'}) unless($mflg); ChngSBrz();
+        } elsif($keyz{$keey} eq "KEY_RIGHT") { 
+          if($fine) { 
+            if($temp < ((64*64)-1)) { 
+              $temp++; 
+              $lust{$rndx[$sndx]}{$onam} = Cnv10_64($temp); 
+            }
+          } else {
+            $temp += int((64*64) / 100);
+            $temp  = ((64*64)-1) if($temp >= (64*64));
+            $lust{$rndx[$sndx]}{$onam} = Cnv10_64($temp); 
+          }
+          WritRequ("swch:" . $optn{'swch'}) unless($mflg); ChngSBrz();
+        } elsif($keyz{$keey} eq "KEY_HOME") { 
+          if($fine) {
+          } else {
+            $lust{$rndx[$sndx]}{$onam} = "  ";
+          }
+          WritRequ("swch:" . $optn{'swch'}) unless($mflg); ChngSBrz();
+        } elsif($keyz{$keey} eq "KEY_END") { 
+          if($fine) {
+          } else {
+#            $lust{$rndx[$sndx]}{$onam} = "__";
+          }
+          WritRequ("swch:" . $optn{'swch'}) unless($mflg); ChngSBrz();
+        } elsif($keyz{$keey} eq "KEY_UP")    { 
+          if($optn{'swch'} <= 0) { $optn{'focu'}--; $optn{'wich'} = $#optz; }
+          else                   { $optn{'swch'}--; }
+          WritRequ("swch:" . $optn{'swch'}) unless($mflg); ChngBarz();
+        } elsif($keyz{$keey} eq "KEY_DOWN")  { 
+          $optn{'swch'}++;
+          if($optn{'swch'} >= @sopt) { 
+            $optn{'swch'} = 0; $optn{'focu'}--; $optn{'wich'} = 0; 
+          }
+          WritRequ("swch:" . $optn{'swch'}) unless($mflg); ChngBarz();
+        } elsif($keey != -1)                 {
+          ShowHelp();
+        } else {
+          IdlSleep();
+        }
+      } elsif(($focu[$optn{'focu'}] eq 'fnam') ||
+              ($focu[$optn{'focu'}] eq 'rvol') ||
+              ($focu[$optn{'focu'}] eq 'freq') ||
+              ($focu[$optn{'focu'}] eq 'leng')) {
+        if     ($keyz{$keey} eq "KEY_LEFT")  { 
+          Add2URnd("last");
+        } elsif($keyz{$keey} eq "KEY_RIGHT") { 
+          Add2URnd("next");
+        } elsif($keyz{$keey} eq "KEY_HOME") { 
+          GotoSong(0);
+        } elsif($keyz{$keey} eq "KEY_END") { 
+          GotoSong($optn{'size'}-1);
+        } elsif($keyz{$keey} eq "KEY_UP")    { 
+          GotoSong($sndx-1);
+        } elsif($keyz{$keey} eq "KEY_DOWN")  { 
+          GotoSong($sndx+1);
+        } elsif($keey != -1)                 {
+          ShowHelp();
+        } else {
+          IdlSleep();
+        }
+      }
+    } elsif(lc($keey) ne 'x' && lc($keey) ne 'q') {
+#    } elsif(lc($keey) eq 'h' || lc($keey) eq '?') {
+      ShowHelp();
+    }
+  }
+  if($idle == $oidl) { $idle = 0; }
+  DrawScrn();
+}
+if($mflg) {
+  StopPlyn();
+  SaveLust();
+  unlink $mstr;
+}
+CScr();     # Close curses SCReen
+close(DBUG) if($dbug);

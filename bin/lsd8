@@ -1,0 +1,202 @@
+#!/usr/bin/perl
+# D94MHThP:lsd8 crE8d by PipStuart <Pip@CPAN.Org> 2XtNsively manipUl8 typical `ls -l` output2convey octal permz,Base64 sizez,d8 stampz,&& many colrz&&f0ntz!
+# 2du:would be cool to detect && accept piping in && use that to temporarily re-map all a8 export colors && map `S` uses to then `lsd8|subS|lsd8` 2 revamp,
+#   add colr 4 drwxrwxr-t ~/muz/flac/mix like ls with probably just st STICKY,figUr out wich muz subdirz hav prolyUTFchrz th@ caus failUr&&hndl thM,
+#   tw STICKY_OTHER_WRITABLE 00;30;45 /run/(lock|shm) rwt permz on some subdirz,-k tstz just sticky but not sure how to identify other writable yet,
+#   aftr c8 getz psgr 4  blinK 05 ANSI rEwrIt symlink mi MISSING ck somehow 2 hIlIt `l /etc/alt*/[alrw]*` && Dtect or ORPHAN also && tSt thM && all .lrc attrz,
+#   rEmMbr that /minute/ && any othr l8r regXz can pOtNtially match against the termin8or pRtz of already inserted SKp cOdez && mS bOthup sO think of some fix,
+#   add special zipped archive detection of /(\.\w+?)\.((t(ar)?\.)?[7bg]?z(ip)?)$/ to multi-colr Xtension partz separ8ly,upd8 a8:c8fn && mk flag2alt Use hEre,
+#   add Dtection ofall reso $Xx$Y &&(40|80|132|160|240)x\d as sepR8colrtXt resoz,add mode wrapping basic ls in c8fn&&retrO hIlIt 8trm aftr nXt l glob as typd,
+#   fix lsd8(xt)?|c8 /dev/(tty|pts/)* to handle c[0-7]{3} permissions && \d+,\s+\d+ filesize && du special file colring of 8?pal8 index or map,
+#   search all deep system subdirectoriez for filenamez or typez that aren't handled consistently yet&&grow support4every filetype&&allowed namez I can loc8,
+#   when file extensions are listed thru here which have no .ls?rc entry offer optional filetype colred category selection dialog2mk it easy to exhaust typz,
+#   check @ARGV for non-default flagz, multiple directoriez, && shell glob parameterz which should alter output in consistent && useful wayz,
+#   probably better to separ8 text reformatting && colring into distinct steps that can l8r call out to c8 btwn to redo columns (if not also colr there too),
+#   probably also best to include behavior like `ls --color=auto` && maybe eventually also standard shell ls column packing ability by testing4interactivity,
+#   check out `l -d *(/)|sS x|perl -MOctology::a8 -pe "\$a=S('::B');s/pip/\${G}p\${z}i\${G}p/;s/pip/\$a\${p}p\${M}i\${p}p/"`,
+# bug:misalInmNt of grup && b64 size widthz:`l /etc` just4 at.deny 1st wider grup 'daemon' pushz size1 2far,8trm is mising 0m rIt aftr grup&&kEpz bgclr1Xtra,
+#   `l /` has no spcBtwn prmz && blsz 4etc&&proc,                                    Note:from shell was ~/muz/mp3/PepeDeluxé$'\351' && ls showd as just '?';
+# tst:rEmMbr ls sortz:-Un Size Xten time ver reverse,-rStUvX all good2tst in /boot,shud genR8 tst dirz containing varE8ionz on pwnr,grup,fsiz widthz2ck alIn;
+use strict;use warnings;use utf8;use v5.10; # mAB tSt if just regUlR -t STDIN && -t STDOUT R Dtectng intractiviT corectly 1st,B4 fallng bak on IO::Interactive
+#se IO::Interactive qw(is_interactive); # employ if(is_interactive()){} around all colring to attempt to behave like `ls --color=auto` when piped away
+use Encode;use Octology::a8;#se Octology::c8;
+           use Octology::b8;use Octology::d8;use Time::PT;my $VERSION='0.0';my $d8VS='H99MLGfa';my $sllw=0; # SymLink LargestWidth to track for alignment
+open my $out8,'>&',STDOUT or die "Can't open  duplic8 STDOUT handle: $!"; binmode $out8,':encoding(UTF-8)'; # crE8 local duplic8 of global
+my $vsrt='-v'; my @b64d;my $t;my $sbdr;my $b64c;my($pwnw,$grpw,$grpx);$pwnw=$grpw=$grpx=0; # default -v Version SoRT,reversed b8 Colr List matchz Dfalt d8 ordr
+my $jfdz=join('|',@Day);my $jfmz=join('|',@Mon); # Joined Fieldz for DayZ and MonthZ to regex with  # BlO mAB some ARGVz shud!B sNt thru -d tSt so Dtect 1st?
+my $tpwd= 4;# set just the b64 T0talPaddingWiDth (3 of the subdirz in my ~/muz/ reach a width of 4, but the vast majority of dirz are only 1or2 b64 charz wId)
+my $hwid=64;#$hwid=$ENV{'HWid'} if(exists($ENV{'HWid'}) && length($ENV{'HWid'})); # lOd terminal 8sh"H"WIDth2rIt-justify dir t0tlz AgNst (if uncomNtd aftrDflt)
+for(@ARGV){if   (-d  "$_" ){s/([()&!'])/\\$1/g;}  # atMpt2alow`l *`2work bySKpng pRNz&&othr spcl chrz in dir||fIlnAm pRamz&&DcOd4wId
+  elsif         (-e  "$_" ){s/^(.+   )$/"$1"/x;}
+  elsif         (/^-?-?V$/){    $vsrt  = $_='';}} # try2alow invalid -V to actually not do default -v passed on to ls,shud Dtect -help like this also
+my @ldat=`ls -lF $vsrt --full-time --color=never @ARGV`;my $t0tl='0';my $subd='.';my($list,$prmz,$blsz,$pwnr,$grup,$fsiz,$d8tz,$fnam,$cmpr,$b6bs,$b6fs);
+my %lsp8;my %sqrm;my %sqra;my $cqrk;my $psdl=0; # Separ8or QuotedRegex Main&&Altern8 mapz, Current QuotedRegex Key, Previous SubDirectory Length
+my %lspt=('re'=>$z,'no'=>  $z   ,'fi'=>  $z   ,'ln'=>  $W   ,'or'=>S('RcK'),'mi'=>S('WrK'),'ex'=>$G,'su'=>S('Wg'),'sg'=>S('ky'),  # mk sureDcNtDfaltzXist
+          'di'=>$B,'st'=>S('Wb'),'ow'=>S('Bg'),'tw'=>S('km'),'pi'=>S('yk' ),'so'=>  $M    ,'do'=>$M,'bd'=>S('Yk'),'cd'=>S('Yk')); #   wich shudB sAm as .lrc
+   $cqrk= qr/(\.+)/  ;$sqrm{$cqrk}=$W;$sqra{$cqrk}=$C;$cqrk= qr/([&]+)/ ;$sqrm{$cqrk}=$M;$sqra{$cqrk}=$R;
+   $cqrk= qr/(_+)/   ;$sqrm{$cqrk}=$C;$sqra{$cqrk}=$M;$cqrk= qr/([!]+)/ ;$sqrm{$cqrk}=$R;$sqra{$cqrk}=$B;
+   $cqrk= qr/(\++)/  ;$sqrm{$cqrk}=$R;$sqra{$cqrk}=$B;$cqrk= qr/([']+)/ ;$sqrm{$cqrk}=$G;$sqra{$cqrk}=$o;
+   $cqrk= qr/([()]+)/;$sqrm{$cqrk}=$o;$sqra{$cqrk}=$Y;$cqrk= qr/([,]+)/ ;$sqrm{$cqrk}=$o;$sqra{$cqrk}=$B;
+   $cqrk= qr/([{}]+)/;$sqrm{$cqrk}=$R;$sqra{$cqrk}=$G;$cqrk= qr/([\/]+)/;$sqrm{$cqrk}=$Y;$sqra{$cqrk}=$R;
+# b64 WiDth basedon OriginalLengthOfSize calQl8ion BlO (filesize length needz Xtra checkz4preceding 'pip' vs. 'root' diff width groupz skewing alignment)
+sub b6wd{#y($olos)=@_;return($olos);} # doing nothing here would just leave b64 width wastefully same as orig b10 until c8 makez it easier to recolumnize
+         my $olos=shift(@_);my $wchc=0;$wchc=shift(@_) if(@_);$olos-- if($olos);$olos*=3.25;$olos/=6.0;#$olos+=$grpx if($wchc);
+            $olos++ if($olos > int($olos));$olos=int($olos); # since padding l8r shorter grup namez, adding Xpansion width2the b64 size duplic8z Xtra spAcng
+            $olos++ if($olos == 1);return($olos);} # trying2compute minsize needed && only Xtend thereaftr when init grup width growz
+sub spcs{my($ssfn,$sbdr,$q)=@_; # hndl SPeCial sepR8or char Substitutnz,SpecialSubsts on FileNames,SuBDiRectory,&& IdNtifId Qolr paramz
+  for(keys(%sqrm)){             if($q ne $sqrm{$_}){$ssfn=~ s/$_/$sqrm{$_}$1$q/g;}else{$ssfn=~ s/$_/$sqra{$_}$1$q/g;}} # all bAsic sepR8orz shud s//$colr$1$q/g
+  $cqrk= qr/(-+)([^>])/        ;if($q ne $Y       ){$ssfn=~ s/$cqrk/$Y$1$q$2/g  ;}else{$ssfn=~ s/$cqrk/$G$1$q$2/g  ;}  #   Xcept - dash (non-symlink) &&
+  $cqrk= qr/(^|[^\e])([\[\]]+)/;if($q ne $P       ){$ssfn=~ s/$cqrk/$1$P$2$q/g  ;}else{$ssfn=~ s/$cqrk/$1$R$2$q/g  ;} return($ssfn);} #   [] square bracketz
+if   (exists(    $ENV{'LS_COLORS'}) && length($ENV{'LS_COLORS'})){ # does the NvIronmNt EvN have NEthing2match fIle typez or XtNsionz against?
+  for( split(':',$ENV{'LS_COLORS'})){ my  ($g2re,$fx2e);
+    if   (/^([^=]*[\*\+\?]+[^=]+)=(.+)$/){($g2re,$fx2e)=($1,"$SKp8$2m");$g2re=~s/([.])/\\$1/g;$g2re=~s/\?/./g;$g2re=~s/(\*|\+)/.$1/g;
+      $lsp8{qr/^.*\s*$g2re$/}=$fx2e;}
+    elsif(              /^([^=]+)=(.+)$/){($g2re,$fx2e)=($1,"$SKp8$2m");
+      $lspt{         $g2re  }=$fx2e;}}} # regX @ bottom uses NOrmal at end but after `eval $(dircolors)` resets $LS_COLORS to defaults,'no' duz!Xist&&warnz
+for(@ldat){if(($prmz,$blsz,$pwnr,$grup,$fsiz,$d8tz,$fnam)= /^(\S{10})(\s+\d+)(\s+\S+)(\s+\S+)(\s+\d+)\s+(\S{10}\s+\S+\s+\S+)\s+(.*)$/){$b6bs=b64($blsz);
+                                                                                                                            my $hflg=0;$b6fs=b64($fsiz);
+    if($pwnw < length($pwnr)){$grpw-=(length($pwnr)-$pwnw) if($grpw);$pwnw=length($pwnr);} # trak pwnr width first, since lt && rt justifyz sepR8
+ elsif($pwnw > length($pwnr)){my $pwnx=$pwnw-length($pwnr);$pwnr.=' 'x $pwnx if($grup=~ s/^(\s{$pwnx})//        );} # &&shft spAcz from ^grup 2 pwnr$ 2realign
+    if($grpw < length($grup)){$grpx+=(length($grup)-$grpw) if($grpw);$grpw=length($grup);$fsiz=~ s/^/ / if($grpx);} # trak grup wid&&Xpansion amt4columnz
+ elsif($grpw > length($grup)){my $tgrx=$grpw-length($grup);$grup.=' 'x $tgrx;            $fsiz=~ s/^\s{$tgrx}//  ;} # pad  grup 2widest width so far
+    $b6bs=b8colr(' 'x(b6wd(length($blsz)  )-length($b6bs)).$b6bs);my $tnam=$fnam;#tnam=decode('UTF-8',$tnam) if length($fnam) != length(decode('UTF-8',$tnam));
+    $b6fs=b8colr(' 'x(b6wd(length($fsiz),1)-length($b6fs)).$b6fs);my($n,$s); # renAmd $k $kolumn_x 2 $n 4 Named colr 2!collide with a8's eScapd dark blacK colr
+    $cmpr=$prmz;$cmpr=~s/^(d)/$B$1/;my $d8im=Octology::d8->new('lsft'=>$d8tz);my $ttim=$d8im->colr('a').$k;
+    $cmpr=~s/^(-)/$W$1/; $ttim.='0'x(8-int((length($ttim)-7)/8)) if(length($ttim)<(8*8 +7));
+    $cmpr=~s/rwx/${R}7/g;$cmpr=~s/-wx/${SKpb}3/g;$cmpr=~s/rws/${Y}7/g;$cmpr=~s/rwt/${m}7/g;
+    $cmpr=~s/rw-/${C}6/g;$cmpr=~s/-w-/${O}2/g; # stil wnt2Uz ~/.lsrc 2mABNcod prmz asumng PXX(400,644,755..[azB64?]) 2OvrId fIl colrz by .X10shn
+    $cmpr=~s/r-x/${M}5/g;$cmpr=~s/--x/${g}1/g;$cmpr=~s/r-s/${O}5/g;$cmpr=~s/r-t/${m}5/g; #Uzr&&Grp?
+    $cmpr=~s/r--/${B}4/g;$cmpr=~s/---/${G}0/g; #?prmzRblszYpwnrCgrupPfsiz?dayt?tymeGtz0n?fnam..
+    if($subd eq '.'&& @ARGV){my $andx=0;while(!-d "$ARGV[$andx]"&& $andx<$#ARGV){$andx++;}if(-d "$ARGV[$andx]"){$subd="$ARGV[$andx]";$subd=~s/\/+$//;}}
+    if($tnam=~  /-([-0-9A-Z_]{11})-([0-9A-Z._]{6})-(NA_|[0-9A-Z._][1-9A-C][1-9A-V])\./i){my $epch=b8colr($2);my $uld8=d8colr($3);d8cs('U2b8');
+       $uld8="$M$3" if($3 eq 'NA_');                                                     my $idnt=b8colr($1);                    d8cs();
+       # above override default d8 colr8ion when uldt was Not Available  # this hIlIting is specifically for U2b8 -> U2b4 name resultz
+       # might want to try to strip out idnt && epch so l8r spcs won't recolr their /[-._]/, then after add back before uldt.xtn
+       $tnam=~ s/-([-0-9A-Z_]{11})-([0-9A-Z._]{6})-(NA_|[0-9A-Z._][1-9A-C][1-9A-V])\./-$idnt-$epch-$uld8./i; # l8r colr uldr && mAB Artist columz sepR8ly2
+       # since most of my typical audio filez are colrd $Y by .ls?rc && vidz are $P, subfield colrz here mostly avoid those unless they're mainly in the othr
+       $tnam=~ s/(^|\D)([12]\d{3})(\D)/$1$R$2$3/g; # basic detection of potential Year from previous or this millennium, wrapped by non-digitz
+       my $jfnz=join('|',@Monz);$tnam=~s/($jfnz)/$o$1/gi;$jfnz=join('|',@Dayz);$tnam=~ s/($jfnz)/$Y$1/gi;$tnam=~ s/(Years?)/$R$1/gi; # cud du @Mon|Day too
+                                $tnam=~s/_(Sept(ember)?)_/_$o$1_/gi; # this is for Month of an 8-Bit Gaming Mix video && maybe should add other full names
+       $tnam=~ s/(Drumstep         )/$M$1/gix;$tnam=~s/((Day|Week)s?)/$Y$1/gix;$tnam=~ s/(hours?   )/$C$1/gix; # colr top8 genrez from .Hrc Monstercat map
+       $tnam=~ s/(Halo[^A-Z]       )/$W$1/gix;$tnam=~ s/(minutes?   )/$B$1/gix;$tnam=~ s/(seconds? )/$M$1/gix; # colr typical d8 field Xpanded nAmez (&& /z$/?)
+       $tnam=~ s/(Glitc[H_]+op     )/$K$1/gix;$tnam=~ s/((Re)?[fm]ix)/$o$1/gix;$tnam=~ s/(\d+[-_]?)(hrs?)/$o$1$C$2/gx; # mAB colr whole uldr colum sepR8ly?
+       $tnam=~ s/(Dr?ubstyle?      )/$B$1/gix;$tnam=~ s/(100)(BPM)_/$Y$1_$R$2/gix;$tnam=~ s/(1080p?)/$R$1/gx; # shud tID this allup lIk %sqrm in spcs()
+       $tnam=~ s/(Hardstyle?       )/$B$1/gix;$tnam=~ s/([-_])([Aa]nd)([A-Z])/"$1$c" . lc($2) .   "$z$3"/gex; # try to get PegNerdz&&Grabbitz2colr similR
+      #$tnam=~ s/(Dr?ubstep        )/$P$1/gix; # mAB do all this aftr XtNshn Dtectd2rEstor aftr Ech&&alsO prOvId altern8z 4wN bAse colr sAme as Dfalt map
+       $tnam=~ s/(Dr?ubstep        )/$C$1/gix;$tnam=~ s/(Liquid     )/$B$1/gix;$tnam=~ s/(F(ea)?t\.)/$B$1/gix;$tnam=~s/(Mr)(Suicide)/$C$1$r$2/gix;
+       $tnam=~ s/(Chillout         )/$B$1/gix;$tnam=~ s/(Deep_*House?)/$c$1/gi;$tnam=~ s/(Ambient  )/$g$1/gix;$tnam=~s/(Dope(st)?|Ganja)(  [^A-Z])/$z$1$3/gix;
+       $tnam=~ s/(Chil+step        )/$w$1/gix;$tnam=~ s/(Vocal      )/$z$1/gix;$tnam=~ s/(Free     )/$B$1/gix;$tnam=~s/(Drop|Blue|Water)(s?[^A-Z])/$B$1$2/gix;
+       $tnam=~ s/(Unbelievable     )/$c$1/gix;$tnam=~ s/(PlayList   )/$B$1/gix;$tnam=~ s/(New      )/$C$1/gix;$tnam=~s/(Sun |Burn|Fire )(  [^A-Z])/$R$1$2/gix;
+       $tnam=~ s/(Download         )/$g$1/gix;$tnam=~ s/(Mega       )/$R$1/gix;$tnam=~ s/([^m])(Bass   )/$1$R$2/gix;$tnam=~ s/(Vol(ume)?)/$M$1/gix;
+       $tnam=~ s/(Kisses           )/$r$1/gix;$tnam=~ s/(Nova       )/$o$1/gix;$tnam=~ s/(Explode      )/$r$1/gix  ;$tnam=~ s/(  _(N)_)/_$z$2_/gix;
+       $tnam=~ s/(Fonik            )/$G$1/gix;$tnam=~ s/(Best       )/$B$1/gix;$tnam=~ s/(Obsidia)([-_]|Media)/$G$1$R$2/gix; $tnam=~ s/(CoMa)/$M$1/gx;
+       $tnam=~ s/(Knife   [-_]?)(Party[^A-Z])/$o$1$o$2/gix;$tnam=~ s/(Aero[-_]?)(Chord[^A-Z])/$R$1$R$2/gix;$tnam=~ s/(DotEXE)/$Y$1/gix; # Dtect more Rtistz
+       $tnam=~ s/(Rich  [-_]?)(Edwards[^A-Z])/$r$1$r$2/gix;$tnam=~ s/(Tut [-_]?)(Tut[-_]?)(Child[^A-Z])/$B$1$B$2$B$3/gix;$tnam=~ s/(StdHouse)/$o$1/gi;
+       $tnam=~ s/(Pegboard[-_]?)(Nerds[^A-Z])/$G$1$G$2/gix;$tnam=~ s/((Re)?uploads)/$g$1/gix;$tnam=~ s/(Red)/$R$1/g;$tnam=~ s/(^|[-_.])(to [-_.])/$1$g$2/gix;
+       $tnam=~ s/(Tristam          )/$C$1/gix;$tnam=~ s/(Muzzy      )/$R$1/gix;$tnam=~ s/(Nero)/$M$1/gix;           $tnam=~ s/(^|[-_.])(in [-_.])/$1$g$2/gix;
+       $tnam=~ s/(Vexare           )/$C$1/gix;$tnam=~ s/(Vital      )/$z$1/gix;$tnam=~ s/([-_])(and[-_])/$1$c$2/gix;$tnam=~ s/(^|[-_.])(of [-_.])/$1$c$2/gix;
+       $tnam=~ s/(SirensCeol       )/$B$1/gix;$tnam=~ s/(Skrillex )/$C$1/gix;$tnam=~ s/(^|[-_])(the[-_])/$1$w$2/gix;$tnam=~ s/(^|[-_.])(by [-_.])/$1$w$2/gix;
+       $tnam=~ s/(Tucsky           )/$o$1/gix;$tnam=~ s/(Phantom    )/$R$1/gix;$tnam=~ s/(Reality      )/$B$1/gix  ;$tnam=~ s/(UKF)/$G$1/gx;
+       $tnam=~ s/(Trap    (Bass)?  )/$K$1/gix;$tnam=~ s/(Monstercat )/$B$1/gix;$tnam=~ s/(Release      )/$w$1/gix  ;$tnam=~ s/(VIP)/$M$1/gx;
+       $tnam=~ s/(Drum[-_]?Bass|DnB)/$R$1/gix;$tnam=~ s/(Official   )/$Y$1/gix;$tnam=~ s/([-_])( EP[-_])/$1$K$2/gx ;$tnam=~ s/(^|[-_.])( 1 [-_.])/$1$o$2/gix;
+       $tnam=~ s/(Tran+ce          )/$C$1/gix;$tnam=~ s/(Lyrics     )/$R$1/gix;$tnam=~ s/([-_])( HQ[-_])/$1$R$2/gx ;$tnam=~ s/(^|[-_.])( 2 [-_.])/$1$R$2/gix;
+       $tnam=~ s/(Electro_?H(ouse)?)/$Y$1/gix;$tnam=~ s/(EDM        )/$c$1/gx ;$tnam=~ s/([-_])( HD[-_])/$1$W$2/gx ;$tnam=~ s/(^|[-_.])( 3 [-_.])/$1$B$2/gix;
+       $tnam=~ s/(Progr(es)?si?ve?_?H(ouse)?)/$o$1/gix;                        $tnam=~ s/([-_])( DJ[-_])/$1$G$2/gx ;$tnam=~ s/(^|[-_.])(One[-_.])/$1$o$2/gix;
+       $tnam=~ s/(^|[-_.])((Moon)?Lights?)([-_.])/$1$Y$2$4/gi;      $tnam=~ s/(^|[-_.])(Three[-_.])/$1$B$2/gi ;$tnam=~ s/(^|[-_.])((Tw|Du)o[-_.])/$1$R$2/gi;
+       $tnam=~ s/(Aphenda          )/$G$1/gix;$tnam=~s/(Pulse)(8)(Music)/$M$1$G$2$r$3/gix;$tnam=~ s/(Music)(HD)(TV)/$O$1$W$2$c$3/gix;
+       $tnam=~ s/(Rachael)(Lust)/$Y$1$r$2/gix;$tnam=~s/(Pulse)(8)/$B$1$G$2/gix;}
+    my     ($bgin,$fsnm);my($bpth,$fpth)=('',''); # ck common typz                                                  # abov IsOl8z sepR8 first few digitz
+    if    (($bgin,$fsnm)= $fnam=~/^(.+?)\s->\s(.+)$/    ){if($sllw <= length($bgin)){$sllw=length($bgin);}else{$bgin.=' 'x ($sllw - length($bgin));}
+                                                          $n=$lspt{'di' };if($bgin=~ s/^(.*\/)//){$bpth=spcs("$n$1",$subd,$n);} # split off pathz
+                                                                          if($fsnm=~ s/^(.*\/)//){$fpth=spcs("$n$1",$subd,$n);}
+                                                          $n=$lspt{'ln' };$bgin=spcs("$n$bgin",$subd,$n); # sepR8ly colr pRtz
+      if    ($fsnm=~  /\*$/){                             $n=$lspt{'ex' };$fsnm=spcs("$n$fsnm",$subd,$n);$fsnm=~ s/(\*)$/$W$1/;
+      }elsif($fsnm=~  /\/$/){                             $n=$lspt{'di' };$fsnm=spcs("$n$fsnm",$subd,$n);
+      }elsif($fsnm=~  /\=$/){                             $n=$lspt{'so' };$fsnm=spcs("$n$fsnm",$subd,$n);$fsnm=~ s/(\=)$/$R$1/; # some SOCKETz 2tSt in /run
+      }else                 {                                                                     # could also matchup socketz above with permz =~ /^s/ too
+        for my $shgl(sort keys(%lsp8)){if($fsnm=~/$shgl/){$s=$lsp8{$shgl};$fsnm=spcs("$s$fsnm",$subd,$s);last;}}} # colr just symlink's tRgetby1stmtch XtNsion
+      $tnam=~ s/^.+?(\s->\s).+$/$bpth$bgin$M$1$B$fpth$z$fsnm/;$hflg=1;                                            # colr all segmNtz (mAB du -> dif wN $s sAm?)
+    }elsif((      $fsnm)= $fnam=~/^(.+)\*$/             ){$n=$lspt{'di' };if($fsnm=~ s/^(.*\/)//){$fpth=spcs("$n$1",$subd,$n);}                            #-x?
+                                                          $n=$lspt{'ex' };   $tnam=~ s/^(.+)(\*)$/$n$fsnm$W$2/;$tnam=$fpth . spcs($tnam,$subd,$n);$hflg=1;
+    }elsif((      $fsnm)= $fnam=~/^(.+)\/$/             ){$n=$lspt{'di' };   $tnam=~ s/^(.+)(\/)$/$n$fsnm$Y$2/;$tnam=        spcs($tnam,$subd,$n);$hflg=1; #-d?
+    }elsif((      $fsnm)= $fnam=~/^(.+)\=$/             ){$n=$lspt{'so' };   $tnam=~ s/^(.+)(\=)$/$n$fsnm$R$2/;$tnam=        spcs($tnam,$subd,$n);$hflg=1;}#-S?
+    if(!$hflg){ # Only srch 4regUlR file Xtension match if not already handled by some detected type above; since main symlink colrng code upd8d,sEmz2hndl all;
+                # it Used2B that wo hflg ck here, no symlinkz would get thru2Bcolrd by spcs() but wi it,around half would get altern8 colrd4nice varE8ion;
+                                                          $n=$lspt{'di' };if($tnam=~ s/^(.*\/)//){$fpth=spcs("$n$1",$subd,$n);}
+      for   my $shgl(sort keys(%lsp8)){if($tnam=~/$shgl/){$n=$lsp8{$shgl};$t=$tnam;         $tnam=$fpth.spcs("$n$t",$subd,$n);$hflg=1;last;}}} #Gl0b
+    if(!$hflg){                                           $n=$z          ;$t=$tnam;         $tnam=$fpth.spcs("$n$t",$subd,$n);} # stil!mtchsOtry2colrpath&&sepz
+    # matching against both names below to hopefully avoid splitting escapes as though they were valid PT or d8 characters (&& can't s/// d8 1st without $n)
+    # setup matching PT range below to be somewhat tightly constrained to just the most expected values && trying to detect dash already with escape prefix
+    my $tryc=0;my $trym=8; # Try Count && Max since need some additional fall-through mechanism so all these while loops below don't hang
+    while($tnam=~/^.*-(\e\[([\d;]*)m)*(((19|20)\d\d)([01]\d)([0123]\d))               (\e\[([\d;]*)m)*([-.*\/]|\d|$)/x                      && # YYYYMMDD
+      $tryc++ < $trym){my($dYMD,$dd8Y,$dd8M,$dd8D)=($3,$4,$6,$7); # this one needs to go before d8 since these match both
+      if($fnam=~/-$dYMD([-._*\/]|\d|$)/){                    my $etim="$R$dd8Y$o$dd8M$Y$dd8D";$tnam=~s/$dYMD/$etim/;}}               $tryc=0;
+    while($tnam=~/^.*-(\e\[([\d;]*)m)*([0-9A-D][1-9A-C][1-9A-V][0-9A-N][0-9A-Za-x]{3})                        (\e\[([\d;]*)m)*([-.*\/]|$)/x &&
+      $tryc++ < $trym){my $ptvr=$3;my $ptim=undef;
+      if($fnam=~/-$ptvr([-._*\/]|$)/){$ptim=    Time::PT->new($ptvr);my $stim=$ptim->color('ansi');$stim.=$M.'0' if($ptvr=~/0$/);
+        $stim=~s/(\e\[[\d;]+)(m)/$1;41$2/g;$stim.=$z; # try2insrt bg dark red2betr distnguish old PT from d8
+        $tnam=~s/$ptvr/$stim/;}}                                                                                                     $tryc=0;
+    while($tnam=~/^.*-(\e\[([\d;]*)m)*([0-9A-Za-z._][0-9A-Za-q][0-9A-Za-z._][0-9A-Za-g][0-9A-N][0-9A-Za-x]{3})(\e\[([\d;]*)m)*([-.*\/]|$)/  &&
+      $tryc++ < $trym){my $d8vr=$3;my $dtim; # apNding2 $etim belo whN d8 Nded in 0 mAde leng off so wouldn't s///
+      if($fnam=~/-$d8vr([-._*\/]|$)/){$dtim=Octology::d8->new($d8vr);my $etim=$dtim->colr( 'a'   ); # now need to add 5 to length test for auto-appended $z
+        $tnam=~s/$d8vr/$etim/;}}                                                                                                     $tryc=0;
+    if($tnam=~ /  -((?:\e\[[\d;]*m)*)(n)(o)(w)((?:\e\[[\d;]*m)*)([-.*\/]|$)/x){my($secz,$eecz,$ettc)=($1,$5,$6);
+      $secz='' unless(defined($secz));$eecz='' unless(defined($eecz));$ettc='' unless(defined($ettc));
+      $tnam =~s/  -((?:\e\[[\d;]*m)*)(n)(o)(w)((?:\e\[[\d;]*m)*)([-.*\/]|$)/-$M$2$M$3$M$4$secz$eecz$ettc/x;} # match 'now' diff from just YMD
+    while($tnam=~/^.*-(   \e\[([\d;]*)m)*([0-9A-Za-z._])([0-9A-Za-q])([0-9A-Za-z._])(\e\[([\d;]*)m)*([-.*\/]|$)/x                           && # d8-4m@ YMD
+      $tryc++ < $trym){my(      $d8vY,$d8vM,$d8vD)=($3,$4,$5   ); # rmvd d8-obj crE8ion&&leng valid8n4quik d8-4m@ -YMD-
+      $tnam =~s/  -((?:\e\[ [\d;]* m)*)($d8vY)($d8vM)($d8vD)/-$R$2$o$3$Y$4$1/x;}                                                     $tryc=0;
+    while($tnam=~/^.*-(\e\[([\d;]*)m)*(($jfdz)?($jfmz)([0123]?\d)(st|nd|rd|th)?((19|20)\d\d))(\e\[([\d;]*)m)*([-.*\/]|$)/                   && # DowMonDthYear
+      $tryc++ < $trym){my($dMDY,$dd8Y,$dd8M,$dd8D)=($3,$8,$5,$6);my($dd8w,$dd8s)=('','');$dd8w=$4 if(defined($4));$dd8s=$7 if(defined($7));
+      if($fnam=~/-$dMDY([-._*\/]|$)/){                       my $etim="$Y$dd8w$o$dd8M$Y$dd8D$B$dd8s$R$dd8Y";$tnam=~s/$dMDY/$etim/;}} $tryc=0;
+    while($tnam=~/^.*-(\e\[(?:[\d;]*)m)*(([01]?\d)(\e\[(?:[\d;]*)m)*-(\e\[(?:[\d;]*)m)*([0123]?\d)(\e\[(?:[\d;]*)m)*
+                     -(\e\[(?:[\d;]*)m)*((19|20)\d\d))(\e\[(?:[\d;]*)m)*([-._*\/]|\d|$)/x                                                   && # MM-DD-YYYY
+      $tryc++ < $trym){my($dMDY,$dd8Y,$dd8M,$dd8D)=($2,$9,$3,$6);$dMDY=~s/(\[)/\\$1/g;
+      if($tnam=~ /   -(\e\[(  [\d;]*)m)*$dMDY         (\e\[(  [\d;]*)m)*([-._*\/]|\d|$)/x){my $etim="$o$dd8M$B-$Y$dd8D$B-$R$dd8Y";$tnam=~s/$dMDY/$etim/;}}
+    my $fnmz= 'Pip   |Heather    |Danny  |Maga   |Bill   |John  |Tom  |Pat     |DanNGin|Marty |Mike    '; # capitalIzd proper First && Last names 2 hIlIt
+    my $lnmz= 'Stuart|Gozdzialski|Wyckoff|Mathews|Carlson|Womble|Jadin|Steffens|Lennon |Arnold|Lopresti'; # mABBlOshudBcAsinsNsitiv&&match no prECdngSKp cOdez?
+    if($tnam=~ /(\e\[[\d;]*m)+(([0-9A-Za-z._,]+|\e\[[\d;]*m)+)(Vs)(([0-9A-Za-z._,]+|\e\[[\d;]*m)+)/x){ # try2m@ch any Wht_Vs_blK wo Xplicit nmz
+      my $wtnz=$2;my $bknz=$5;$wtnz=~s/(,)(\e\[[\d;]*m)*/$1$W/;$bknz=~s/(,)(\e\[[\d;]*m)*/$1$K/; # Xtra procS around likely commas in names
+       $tnam=~s/(\e\[[\d;]*m)+(([0-9A-Za-z._,]+|\e\[[\d;]*m)+)(Vs)(([0-9A-Za-z._,]+|\e\[[\d;]*m)+)/$W$wtnz$1$4$K$bknz$1/;} # m@ch any Wht_Vs_blK wo Xplicit nmz
+       $tnam=~s/(\e\[[\d;]*m)+($fnmz)                  (Vs)($fnmz)/$W$2$1$3$K$4$1/gx;   # special cases for ckm8 versus playerz game logz
+       $tnam=~s/(\e\[[\d;]*m)+($fnmz)((\e\[[\d;]*m|_)+)(Vs)($fnmz)/$W$2$3$1$5$K$6$1/gx; # handle when White player name has trailing underscores before "Vs"
+       $tnam=~s/(\e\[[\d;]*m)+($fnmz)((\e\[[\d;]*m  )+|[._-]|   $)/$C$2$1$3/gx if($tnam !~ /\e\[[\d;]*mVs\e\[[\d;]*m/); # colr First NaMZ whN!already ckm8 Vs
+       $tnam=~s/(\e\[[\d;]*m)+($lnmz)((\e\[[\d;]*m  )+|[._-]|   $)/$G$2$1$3/gx;
+    my $tS=S('G2'); #D3"\e[01;33;32;47;41m"; # try 8ANSI SKp cOdez to tSt just with pwnr && grup columnz
+    my $gS=S('Vn'); #mN"\e[01;33;35;45;44m"; # mAB prEfr .ls?rc cfgurable $lspt{'no'} 2reset over a8:$z
+    $tnam=~ s/(B(lood|omb) )/$r$1$n/gix;$tnam=~ s/(Veela  )/$z$1$n/gx ;$tnam=~ s/(B)(u)(l)(l)(s)(e)(y)(e)   /$W$1$R$2$W$3$R$4$W$5$R$6$W$7$R$8$n/gix;
+    $tnam=~ s/(Black |Night)/$K$1$n/gix;$tnam=~ s/(Snakes?)/$Y$1$n/gix;$tnam=~ s/(M)(u)(s)(h)(r)(o)(o)(m)   /$R$1$o$2$Y$3$G$4$C$5$B$6$M$7$P$8$n/gix;
+    $tnam=~ s/(Blast |White)/$W$1$n/gix;$tnam=~ s/(First  )/$G$1$n/gix;#tnam=~ s/(C)(o)(l)(o)(r)            /$R$1$Y$2$G$3$B$4$M$5$n/gix; # alIn $[1-9] columnz
+                                                                       $tnam=~ s/(C)(o)(l)(o)(r)            /$C$1$o$2$M$3$o$4$R$5$n/gix; # new CoMoR order
+    $tnam=~ s/(Bone  |Death)/$w$1$n/gix;$tnam=~ s/(Album  )/$o$1$n/gix;$tnam=~ s/(N)(u)(c)(l)(e)(a)(r)   /$SKpb$1$K$2$w$3$r$4$R$5$o$6$Y$7$n/gix;
+    $tnam=~ s/(Snow  |Sheep)/$W$1$n/gix;$tnam=~ s/(Ravens?)/$K$1$n/gix;$tnam=~ s/(C)(h)(r)(i)(s)(t)(m)(a)(s)/$R$1$G$2$R$3$G$4$R$5$G$6$R$7$G$8$R$9$n/gix;
+    $tnam=~ s/(Gold        )/$o$1$n/gix;$tnam=~ s/(Gecko  )/$G$1$n/gix;$tnam=~ s/(DanykaNadeau)/$G$1$n/gix ;$tnam=~ s/(Au5)/$o$1$n/gx;
+    my $H=S('H');                       $tnam=~ s/(Money  )/$z$1$n/gix;$tnam=~ s/(Stars?)([^t])/$Y$1$n$2/gi; # rEdu yLO stRz *<^>* but!amidst comon "Start"
+    $tnam=~ s/(Pink  |Skin )/$H$1$n/gix; # tSt 1st XtNded colr H 4 Hotpink wich shud Bcome visible as distinct from standRd 16 ANSI colrz within 8trm&&GnomTerm
+    $tnam=~ s/(Inferno     )/$o$1$n/gix;$tnam=~ s/(Green  )/$G$1$n/gix;$tnam=~ s/(Love   )/$r$1$n/gix;
+    #tnam=~ s/(Cerulean    )/$B$1$n/gix; # sO fR abov early field colr8ion Only done for U2b fIlez but thEse l8r 1z R dun for all (&& mAB thOse shudBdn hEre?)
+    if(0&& exists($ENV{'TERM'}) && $ENV{'TERM'} !~ /^([Ex]|st)term/){ # only substitute custom f0nt code escapez 4 terminals that support or ignore such codez
+      my($ft,$fc,$fr,$fm,$fa,$fE,$fq)= qw(t c r m a E q);#(S('f:t'),S('f:c'),S('f:r'),S('f:m'),S('f:a'),S('f:E'),S('f:q'));
+          $_ = "$ft$cmpr$fc$b6bs$tS$fr$pwnr$z$gS$fm$grup$z $fa$b6fs $fE$ttim $fq$z$tnam$lspt{'no'}\n";  # add colrz && f0ntz to d8a && reset to NOrmal @EOL
+    }else{$_ =    "$cmpr$b6bs$tS$pwnr$z$gS$grup$z " .        "$b6fs "."$ttim "."$z$tnam$lspt{'no'}\n";} # add colrz          to d8a && reset to NOrmal @EOL
+  }elsif(/^total\s+(\d+)/){$t0tl=b8colr(sprintf("%${tpwd}s",b64($1)));my $rjtp='';$rjtp=' 'x ($hwid-$psdl-6-$tpwd) if($hwid     &&  $psdl &&
+                                                                                             ($hwid-$psdl-6-$tpwd) > 0); # rEvrscolrb64$t0tl
+    for my $achr (split(//,$subd)){$rjtp.=' ' if(192 <= ord($achr) && ord($achr) <= 385);} # realign t0tlz aftr dirnamez with high-bit charz but then actually
+                      # leave misaligned for when pre && post decode forms are mixed so that pre ($'\351') can be noticed more easily && migr8d to proper form
+                       s/^total\s+(\d+)K?/$rjtp${C}t${M}0${C}tl$W:$t0tl${P}K/i;$pwnw=$grpw=$grpx=$sllw=$psdl=0;    #   && above crE8 RightJustifiedT0talPadding
+  }elsif(/^(.+):$/       ){$sbdr=$subd=     $1  ;$sbdr=~ s/([()\[\]{}.+])/\\$1/g; # SKp special regX charz B4 substi2ting in colrz
+                       s/^($sbdr)(:)$/$B$1$W$2/ ;s/(\/)/$Y$1$B/g;$psdl=length($subd)+1; # F1ELI5fD:this wuz YBW B4 BYW && abov wuz OYOWBG B4 CMCWb8colrP
+    for my $sqrk (keys(%sqrm)){   if($B ne $sqrm{$sqrk}){s/$sqrk/$sqrm{$sqrk}$1$B/g;}   # special-colr sepR8or charz like when subdirz are listed normally
+                                  else                  {s/$sqrk/$sqra{$sqrk}$1$B/g;}}  #   but EvN2ly proly betr2sNd all Uni4mly thru a8:c8fn aftr upd8d
+    $cqrk= qr/(-+)([^>])/        ;                       s/$cqrk/$Y$1$B$2/g;  chomp;    # this new Dflt chomp shud join lInz sO that t0tlz dIrectly folO $sbdr:
+    $cqrk= qr/(^|[^\e])([\[\]]+)/;                       s/$cqrk/$1$P$2$B/g;} # BlO Only prnt fInl lInz if they contAin non-whItspAce            # M@chzDCodFlg
+  if(/\S/){my $mdcf=0; my $dcul=decode('UTF-8',$_);#rintf $out8 "'%-32s decoded:'%-32s","$_'","$dcul'";print $out8 ' -d' if -d "$_";say $out8 '';# DeCodUtf8Lin
+#   for my $achr(split(//,$dcul)){if(192 <= ord($achr) && ord($achr) <= 385){$mdcf=1;last;}} # 192-385 +120 312-505  `l ~/muz/mp3/Fa* ~/muz/mp3/Pe*`
+#   if($mdcf){print $out8 $dcul;} # don't re-encode output (just print to normal STDOUT) if DecOded lIne alreaD contAins lIkely UTF-8 chrz (but thNruinz ordr?)
+#   else     {print $out8 $_;}
+    my @uscz=split(//,$_   );            # UndecodedSplitCharZ
+    my @dscz=split(//,$dcul);my $dgap=0; #   DecodedSplitCharZ, DecodingGAP between these arrayz
+    for my $cndx (0..$#dscz){ # try to split && step charz together (but will need offsetz for diff countz) && backslash digitz might ascend octal nstd of dec?
+      if(192  <= ord($dscz[$cndx]) && ord($dscz[$cndx]) <= 385){print $out8 $dscz[$cndx];$dgap++;}  # 192-385 +120 312-505 `l ~/muz/mp3/Fa* ~/muz/mp3/Pe*`
+      elsif( defined($uscz[$cndx +$dgap ])                    ){print $out8 $uscz[$cndx +$dgap ];}} # ck DfInd just2B sure
+  }} close $out8 or die "Can't close duplic8 STDOUT handle: $!"; # if lIn contAins bOth types of hI-bit chars,try2 Dcode just those that most likely need it

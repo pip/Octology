@@ -1,0 +1,78 @@
+#!/usr/bin/perl
+# F3TMKNob:die8 crE8d by PipStuart <Pip@CPAN.Org> as atMpt2adapt c8:TeSTSubstituteInput in2CLI of new compact b64 4m@2 Rolz.Org; I have strived to make all
+#   Xpanded formz and resultz output closely resemble Rolz, but a major departure I've made is that die8 lone digitz (along with remaining b64 characterz) are
+#   understood as BaseDie size specific8ionz rather than as simple numberz. Modifierz should append to die specz with no spacez and allow trailng [-+] to
+#   include result of following die rollz. Maybe for debugging, output multi-linez of @dt but generally omit @dt && just focus on multi-result 4multidiespecz;
+# 2du:tokenize for all possible fieldz repeating per sub-command, allow basic math of joined math tokenz after default solo die interpret8ionz are Xpanded,
+#   add CLI -h help,add captive c8 interface to highlight auto-select previous entriez to be clobbered or cursor jumped to edit with history and help,
+#   add support for die type /[dubkwv*]/i => Die, fUdge roll -X..X, Body damage, Kill damage, Wild die, V wild wiot failure optn, && * multiplier,
+#   add /[rfms:]/i => ReRoll, successes minus Failurez, successes "plus" rolling Max resultz again, SucceSSeS with everything, : successes wi multi dice,
+#   add /[x]/i => maX possible die result countz as   2 successes, probably won't support gen gener8orz until standard dice support is thorough,
+#   add /(r(ep(eat)?)?|s(um)?)/ and attributez:/[rxmRXdc]/ => lc(rErOLL,Rx,RmAX,Round,eXplode,dIE,cOUNT), add rule && crit commandz for defining criticalz,
+#   add macroz && save && load, Obsidia-NeverSayDie8? so maybe rename die8 to rol8,
+#   redesign && rewrite entirely around b64 I/O && V8z 4all optionz wi new flagz to widen default number of b64 charz/input field2Binterpreted or autoDtect?,
+use strict;use warnings;my $d8VS='H4MMGG1W'; # Rolz: '4d10l2' retrnz&&skipz 0z (proly trEtd as 10z) but 4 die8: '4Al2' runs 1..10 taking actual lowest 2 throwz
+use utf8  ;use  v5.10  ;my $VERSION=  '0.0';
+use        Octology::a8; # standard 7 b64 die8: 4 6 8 A C K 1a  (last 4 b10: 10 12 20 100); lone b64 value just die size,2 prependz count, [-+HhLlEe#]b64 for
+use        Octology::b8;my @dS; # DieScaped;                                     #   modifierz, keep highz or lowz, Equal or gr8r, && comNtz 4now
+use        Octology::c8;my @dt;my   $eg;my $oc=0;my $ra='';my $cm='' ;my $rr=''; # Die Throwz, Equal orGr8r, Onez Count, Result Addendum, CoMment, RepeatResult
+my     $cc=Octology::c8->new('cmnd'=>1);my $cn=1;my $bd= 8;my $ms='+';my $md= 0;my $hl='';my $rs=0; # dfltdieCouNt,B10Die,ModifierSign,MoDval,High orLow,ReSult
+my     $xt=1;$xt=0 if(exists($ENV{'TERM'}) && $ENV{'TERM'} !~ /^([Ex]|st)term/); # flag Xcluded Term for custom f0nt code escape support (or just ignored)
+my($fc,$fq,$ft,$fb,$fm,$fr,$fa);$fc=$fq=$ft=$fb=$fm=$fr=$fa='';
+  ($fc,$fq,$ft,$fb,$fm,$fr,$fa)=(S('f:c'),S('f:q'),S('f:t'),S('f:b'),S('f:m'),S('f:r'),S('f:a')) unless($xt);
+if    ($cc->{'_Stxt'}=~  /^\s*$/ && @ARGV){  # good Eqorgr8r test paramz: '8FeD' , '__ex' && general: /4?[018][-+hle]?2?/
+       $cc->{'_Stxt'}=  join(' ',   @ARGV);} # funnel any CLI paramz in2 space-only piped d8a  # BlO handl sngl digitz as DsIrd sngl die sIze!Rolz same valz
+if    ($cc->{'_Stxt'}=~ s/^(.*?)(#.*)$/$1/){$cm=$2;} # strip and save basic commentz
+if    ($cc->{'_Stxt'}=~  /^\s*(1a|[0-9A-Za-z._])\s*$/               ){            $bd=b10($1); # shortcut special '1a' 4 d100 as only supported die beyond _ 63
+}elsif($cc->{'_Stxt'}=~  /^\s*([0-9A-Za-z._])(1a|[0-9A-Za-z._])\s*$/){$cn=b10($1);$bd=b10($2); #        b64 note:A,1a 10, 100
+}elsif($cc->{'_Stxt'}=~  /^\s*([0-9A-Za-z._])(1a|[0-9A-Za-z._])([-+])([0-9A-Za-z._])\s*$/  ){$cn=b10($1);$bd=b10($2);$ms=$3;$md=b10($4);$md*=-1 if($3 eq '-');
+}elsif($cc->{'_Stxt'}=~  /^\s*([0-9A-Za-z._])(1a|[0-9A-Za-z._])([hl])([0-9A-Za-z._])?\s*$/i){$cn=b10($1);$bd=b10($2);$hl=$3;$md=b10($4) if  (defined($4));
+}elsif($cc->{'_Stxt'}=~  /^\s*([0-9A-Za-z._])(1a|[0-9A-Za-z._])([Ee])([0-9A-Za-z._])?\s*$/ ){$cn=b10($1);$bd=b10($2);       $eg=b10($4) if  (defined($4));
+                                                                                                                            $eg=$bd-1 unless(defined($4));
+                                                                                                                            $eg=    1   if  ($eg == -1  );
+}  for  (1..$cn){                push(@dt,int(rand($bd))   );$dt[-1]++ if($bd);$rs+=$dt[-1];} # accept postmodifIrz thN pRs multi "+-;",furthr attribUtz,
+  my    $mm=$B; if($md  ){$mm.=$ms if($md >=    0);$mm.=$md ;$rs+=$md;} # Maybe Modifier      #   repeat,gen,&& macroz  # High or Low below
+if      ( length(  $hl) ){@dt=();push(@dt,int(rand($bd))   ) for(1..$cn);@dt=sort {$a <=> $b} @dt;for(@dt){$_++ if($bd);}$rs=0;unless($md){$md=$cn-1;}if($md){
+        $md=$cn if($md                  >   $cn); # fix '11h2' to stop looping past count to coincide with Rolz.Org 'd1h2' result
+    for (1..$md){if(lc($hl) eq 'h'){$rs+=$dt[$cn-$_  ];$dS[$cn-$_  ]=$G;}  # no more shift|pop, just mk $md positv && colr cntd
+                 if(lc($hl) eq 'l'){$rs+=$dt[    $_-1];$dS[    $_-1]=$G;}} # Rolz.Org d0 => d6 but my 0 => 0 like 1 => 1
+    for (1..$cn){                                      $dS[    $_-1]=$R unless(defined($dS[    $_-1]));} # try2 Red  -colr uncounted
+  }                                                    $dS[       0]=$G if($cn == 1 && $md == 1);  # if only high/low, keep as green
+        $mm=$M.     uc($hl)                     ;$mm.=$md if($md);$ra.=' 'x 6;  # more Maybe Modifier
+}elsif  (defined(   $eg)){@dt=();push(@dt,int(rand($bd))   ) for(1..$cn);@dt=sort {$a <=> $b} @dt;for(@dt){$_++ if($bd);}$rs=0; # Equal or Gr8r
+  for   (0..$#dt        ){                             $dS[    $_  ]=$R;   # default Red
+    if  ($dt[$_] == 1   ){$oc++;                       $dS[    $_  ]=$O;}  # count&& Orange colr onez
+    if  ($dt[$_] >= $eg ){$rs++;                       $dS[    $_  ]=$G;}} # count&& Green  colr DieThrowz Equal orGr8r than the threshold
+  $ra.=" $w;$c"."1z$w:$O$oc" if($oc);$ra.=' 'x 6 unless($oc); # maybe don't show 0 1z within repeat loop but do for standalone clarity?
+}else{                               $ra.=' 'x 6;} # space out to align dt for just plain no modifierz or otherwise so far undetected
+if      (@dt){                                                          @dt=sort {$a <=> $b} @dt; # make sure sorted before output
+  for   (0..$#dt){$dS[$_]=$G unless(defined($dS[$_]));} # make sure default DieThrow colr is Green
+  for   (@dt){$_=sprintf("%2s",$_);}           $ra.="$w;${g}dt$w:";for(0..$#dt){$ra.=$dS[$_].$dt[$_].' ';}$ra=~s/\s+$//;} # append Scape colrd spaced DieThrowz
+my       $bm=$bd;if(defined($eg)){$bm.="${Y}E$eg";}else{$bm.=$mm;}
+         $bm   .=' '        while(  length($bm) <    14);$bm=~ s/^($bd)/$1$fc/ if(!$xt); # trying to work around && also insert SKp codez
+my       $Sl=length(       $cc->{'_Stxt'});$cc->{'_Stxt'} = sprintf("%-5s",$cc->{'_Stxt'})."$w=>"; # try2split src inpt chrz&&colr thM commonly too,allGrn wrkd
+if      ($xt){ # Xcluded Term for f0ntz?
+  if    ($Sl == 1){        $cc->{'_Stxt'}=~ s/^(.)\s/ $G$1/;
+  }elsif($Sl == 2){if(     $cc->{'_Stxt'}=~  /^(.)(.)/){my $d1=$1;my $d2=$2;
+      if("$d1$d2" eq '1a'){$cc->{'_Stxt'}=~ s/^(.)(.)/$G$d1$d2/;} # here and further will need special 1a GG handling also
+      else                {$cc->{'_Stxt'}=~ s/^(.)(.)/$R$1$G$2/;}}
+  }elsif($Sl >= 3){                      my $mc=$B;
+      if($cc->{'_Stxt'}=~  /^(.)(.)(.)/){my $m2=$3; # needed to further test $3 to know which BMY to colr it
+        if   (    $m2  =~  /[hl]/i     ){   $mc=$M;}
+        elsif(    $m2  =~  /[Ee]/      ){   $mc=$Y;}}
+         $cc->{'_Stxt'}=~ s/^(.)(.)(.)/$R$1$G$2$mc$3/;}
+         $cc->{'_Stxt'}.= sprintf("$R%2s${G}D%-14s$w=>$B%3s$ra",$cn,$bm,$rs); # try2align comma arrowz && right-justify resultz... && \n?
+         $cc->{'_Stxt'}.= "$w; $C$cm" if(length($cm));
+}else{
+  if    ($Sl == 1){        $cc->{'_Stxt'}=~ s/^(.)\s/ $fq$G$1/;
+  }elsif($Sl == 2){if(     $cc->{'_Stxt'}=~  /^(.)(.)/){my $d1=$1;my $d2=$2;
+      if("$d1$d2" eq '1a'){$cc->{'_Stxt'}=~ s/^(.)(.)/$fq$G$d1$d2/;} # here and further will need special 1a GG handling also
+      else                {$cc->{'_Stxt'}=~ s/^(.)(.)/$fq$R$1$G$2/;}}
+  }elsif($Sl >= 3){                      my $mc=$B;
+      if($cc->{'_Stxt'}=~  /^(.)(.)(.)/){my $m2=$3; # needed to further test $3 to know which BMY to colr it
+        if   (    $m2  =~  /[hl]/i     ){   $mc=$M;}
+        elsif(    $m2  =~  /[Ee]/      ){   $mc=$Y;}}
+         $cc->{'_Stxt'}=~ s/^(.)(.)(.)/$fq$R$1$G$2$mc$3/;}
+         $cc->{'_Stxt'}.= sprintf("$R$ft%2s$G${fa}D%-14s$w$fb=>$B$fm%3s$ra",$cn,$bm,$rs); # try2align comma arrowz && right-justify resultz... && \n?
+         $cc->{'_Stxt'}.= "$w; $C$fr$cm" if(length($cm));}
+print    $cc->{'_Stxt'};

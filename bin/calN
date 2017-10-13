@@ -1,0 +1,60 @@
+#!/usr/bin/perl
+# FCBLK3LK:calN crE8d by PipStuart <Pip@CPAN.Org> to be a d8-centric Utility similar to `cal` && `ncal`;
+# 2du:add -[13y] optnz,add 2|3|4|6|12 column wide modez,accept d8 param as focus versus now,would be useful to have interactive mode l8r for d8 selection;
+#  F1  Jan  F2  Feb  F3  Mar  F4  Apr  F5  May  F6  Jun  F7  Jul  F8  Aug  F9  Sep  FA  Oct  FB  Nov  FC  Dec
+#  SMTWtFs  SMTWtFs  SMTWtFs  SMTWtFs  SMTWtFs  SMTWtFs  SMTWtFs  SMTWtFs  SMTWtFs  SMTWtFs  SMTWtFs  SMTWtFs
+#      123  1234567  1234567     1234       12   123456     1234        1    12345      123  1234567    12345
+#  456789A  89ABCDE  89ABCDE  56789AB  3456789  789ABCD  56789AB  2345678  6789ABC  456789A  89ABCDE  6789ABC
+#  BCDEFGH  FGHIJKL  FGHIJKL  CDEFGHI  ABCDEFG  EFGHIJK  CDEFGHI  9ABCDEF  DEFGHIJ  BCDEFGH  FGHIJKL  DEFGHIJ
+#  IJKLMNO  MNOPQRS  MNOPQRS  JKLMNOP  HIJKLMN  LMNOPQR  JKLMNOP  GHIJKLM  KLMNOPQ  IJKLMNO  MNOPQRS  KLMNOPQ
+#  PQRSTUV           TUV      QRSTU    OPQRSTU  STU      QRSTUV   NOPQRST  RSTU     PQRSTUV  TU       RSTUV  
+#                                      V                          UV                                         
+use strict;use warnings;use utf8;use v5.10;my $VERSION='0.0';my $d8VS='H1NL9GL4';
+use Octology::a8; # maybe use @Mon
+use Octology::b8; # probably need to use Time::DaysInMonth && DayOfWeek && might not even need d8.pm below
+use Octology::d8;my $d8nw=Octology::d8->new();my $d8fY=Octology::d8->new(b64($d8nw->Y()-2000).'11'); # make new now && first of this Year d8 objectz
+use Time::DaysInMonth;
+my $optn=shift(@ARGV); # l8r support other formatz
+print '  '.$R.'S'.$O.'M'.$Y.'T'.$G.'W'.$C.'t'.$B.'F'.$M.'s'."\n";
+print $R.b64($d8nw->Y()-2000).$O.'1';print ' 'x $d8fY->dow() . S('Yc'); # space over to dow of d8fY then loop thru Monthz && weekz
+for my $Mnth (1 .. 12){
+  for(1..days_in($d8nw->Y(),$Mnth)){if($Mnth % 2){print S('Yc');}else{print S('Yk');}print S('Wr') if($Mnth == $d8nw->M() && $_ == $d8nw->D());print b64($_);
+    my $d8fM=Octology::d8->new(b64(        $d8nw->Y()-2000).     b64($Mnth).'1'); # make d8 object of loop thru Month's beginning
+    unless(($_ + $d8fM->dow(   )      ) % 7){
+      if($_ > days_in($d8nw->Y(),$Mnth) - 7){
+        if($Mnth < 12){print $z."\n$R".b64($d8nw->Y()-2000)."$O".b64($Mnth+1);}
+        else          {print $z."\n$R".b64($d8nw->Y()-1999)."$O".         '1';}}
+      else            {print $z;print S('KO') if($Mnth == $d8nw->M());
+                       print    "\n";
+        if($Mnth == $d8nw->M() && abs($_ - $d8nw->D()) < 7){
+                       print       ">>";}
+        else{          print       "  ";}}}}}
+#  # week list almost fits my 160x50 terminal dimensionz && altern8z bclr for Monthz && could include single b64 character for week numberz
+#    SMTWtFs    SMTWtFs
+#  F1    123  F7STU1234
+#    456789A    56789AB
+#    BCDEFGH    CDEFGHI
+#    IJKLMNO    JKLMNOP
+#    PQRSTUV  F8QRSTUV1
+#  F21234567    2345678
+#    89ABCDE    9ABCDEF
+#    FGHIJKL    GHIJKLM
+#    MNOPQRS    NOPQRST
+#  F31234567  F9UV12345
+#    89ABCDE    6789ABC
+#    FGHIJKL    DEFGHIJ
+#    MNOPQRS    KLMNOPQ
+#  F4TUV1234  FARSTU123
+#    56789AB    456789A
+#    CDEFGHI    BCDEFGH
+#    JKLMNOP    IJKLMNO
+#  F5QRSTU12    PQRSTUV
+#    3456789  FB1234567
+#    ABCDEFG    89ABCDE
+#    HIJKLMN    FGHIJKL
+#    OPQRSTU    MNOPQRS
+#  F6V123456  FCTU12345
+#    789ABCD    6789ABC
+#    EFGHIJK    DEFGHIJ
+#    LMNOPQR    KLMNOPQ
+#               RSTUV

@@ -1,0 +1,308 @@
+#!/usr/bin/perl
+# E7KM8R8R:g8 crE8d by PipStuart <Pip@CPAN.Org> as extra-functional git wrapper and old .bak/* versioned file migr8or when run as `g8 bak2`;
+# 2du:learn about other git-rel8d packages: git-daemon-run git-daemon-sysvinit git-el git-email git-gui gitweb tig,
+#   fix bak2 commit counts to stay in sync or decrement for orphans&&same hashz,auto-cnv all hex hash names to/from b64,
+#   build global loc8 option into bak2 to ptcnv && search for basefiles to reunite with orphans in prepar8ion for more complete gener8ion of .git/ parallel;
+# Notz:Basic git storage of project:`cd $ProjPath;g8 init;g8 add .;g8 commit` will prompt for commit message;
+#   Modify fyl0 and fyl1 then `g8 add fyl0 fyl1` adds upd8s to index ready for commit. `g8 diff --cached` will show yet to be committed. Omit --cached to see
+#     changes not yet added to index. `g8 status` summarizes. Instead of running add first, `g8 commit -a` auto-adds modified (but not new) files. Good to
+#     begin commit messages with single short (<50char) summary line (taken as commit title throughout Git), then blank line, then thorough description;
+#   `g8 log` to view change history. Append -p to see complete diffs. Append --stat --summary for overview;
+#   `g8 branch experimental` crE8s an "experimental" branch. `g8 branch` lists existing with asterisk marking current. `g8 checkout experimental` switches.
+#     When master is checked out `g8 merge experimental` attempts a merge if changes don't conflict. `g8 diff` shows conflicts to resolve;
+#   `gitk` shows graphical represent8ion of history. `g8 branch -d experimental` deletes after done merging. -D force deletes;
+#   Collabor8ion on same machine: bob$ g8 clone /home/ali/proj repo; crE8s new directory repo for Bob. (edit files) bob$ g8 commit -a; then tell Ali to pull
+#     with ali$ cd /home/ali/proj; ali$ g8 pull /home/bob/repo master; attempting to merge Bob's changed "master" into Ali's current branch (might conflict).
+#     Generally want to commit local changes before "pull". Ali can peek at Bob's changes without merger first by using "fetch" command and special symbol
+#     "FETCH_HEAD" like ali$ g8 fetch /home/bob/repo master; ali$ g8 log -p HEAD..FETCH_HEAD; which is safe even if Ali has uncommitted local changes. Range
+#     not8ion means show everything reachable from FETCH_HEAD but exclude reachable from HEAD. Visualize what Bob did since their histories forked with
+#     `gitk HEAD..FETCH_HEAD` or 3-dots to view what both did since fork. 3-dots would mean "show everything reachable from either, but exclude anything
+#     reachable from both". When working in small group, it's common to interact with same repository repeatedly. ali$ g8 remote add bob /home/bob/repo;
+#     defines remote shorthand allowing Ali to perform first part of "pull" without merging with her own branch using ali$ g8 fetch bob; Unlike longhand form,
+#     Ali fetching from Bob using remote repository, what was fetched is stored in remote-tracking branch (in this case bob/master) so afterward
+#     ali$ g8 log -p master..bob/master; lists all Bob's changes. After examining changes, Ali could ali$ g8 merge bob/master; to merge changes into her
+#     master. This merge can also be done by pulling from her own remote-tracking branch like ali$ g8 pull . remotes/bob/master; Note `g8 pull` always merges
+#     into current branch. Later Bob can upd8 his repo with Ali's l8st changes using bob$ g8 pull; He doesn't need to give path since during original clone,
+#     Git stored Ali's repo loc8ion in the repository configur8ion and it uses it for pulls. bob$ g8 config --get remote.origin.url \n?/home/ali/proj; Complete
+#     configur8ion crE8d by `g8 clone` visible with `g8 config -l`. Git also keeps pristine copy of Ali's master branch under "origin/master":
+#     bob$ g8 branch -r\n?  origin/master; If Bob l8r decides to work from different host, can still perform clones and pulls using ssh (or rsync or n8ive):
+#     bob$ g8 clone ali.org:/home/ali/proj repo;
+#   Git history represented as series of interrel8d commits. `g8 log` lists commits. First line of each entry gives hex name which can be given to `g8 show`.
+#     There are other ways to refer to commits. Any uniquely identifying initial part of name works. $ g8 show HEAD; tip of current branch. $ g8 show
+#     experimental; tip of "experimental" branch. Every commit usually has one "parent" commit pointing to previous project st8. $ g8 show HEAD^; parent of
+#     HEAD. $ g8 show HEAD^^; grandparent of HEAD. $ g8 show HEAD~4; gr8-gr8 grandparent of HEAD. Merge commits may have more than 1 parent. $ g8 show HEAD^1;
+#     first parent of HEAD (same as HEAD^). $ g8 show HEAD^2; second parent. Can also give commits names with $ g8 tag v2.5 1b2e1d63ff; which allows latter
+#     hex name to be referred to by "v2.5". If intending to share name (like for release version), should crE8 "tag" object and perhaps sign it. git-tag has
+#     details. $ g8 diff v2.5 HEAD; compares current HEAD to v2.5. $ g8 branch stable v2.5; starts new "stable" branch based at v2.5. $ g8 reset --hard HEAD^;
+#     resets current branch and working directory to st8 at HEAD^. Use caution as also removes all l8r commits from branch. If current branch was only 1
+#     containing those commits, they'll be lost. Don't use `g8 reset` on publicly-visible branch that other developers pull from, as it will force needless
+#     merges on other developers to clean up history. To undo changes you've pushed, use `g8 revert` instead. To search for strings in any version of your
+#     project $ g8 grep "hello" v2.5; If you omit commit name, will search any files managed in current directory. Many Git commands take sets of commits.
+#     $ g8 log v2.5..v2.6; commits between v2.5 and v2.6. $ g8 log v2.5..; since v2.5. $ g8 log --since="2 weeks ago"; last 2 weeks. $ g8 log v2.5.. Makefile;
+#     commits since v2.5 which modify Makefile. First in commit range doesn't have to be ancestor of second, like if the tips of branches "stable" and "master"
+#     diverged from common old commit, then $ g8 log stable..master; lists commits in master branch that aren't in stable. Switch order for opposite. `g8 log`
+#     weakness that it must present commits in list. When history has lines of development that diverged then merged, the presented order is meaningless.
+#     Most projects with multiple contributors (like Linux kernel or Git itself) have frequent merges. gitk does better job of visualizing history like
+#     $ gitk --since="2 weeks ago" drivers/; browses commits from last 2 weeks modifying files under "drivers" directory. Adjust fonts with Control "-" or "+".
+#     Most commands that take filenames optionally allow preceding with commit name to specify particular version $ g8 diff v2.5:Makefile HEAD:Makefile.in; or
+#     $ g8 show v2.5:Makefile; as another way to see any such file. `g8 show $cmithash:$filename` seems to show whole old version of file in $PAGER and
+#     `g8 cat-file -s $cmithash:$filename` returns byte size, and   `g8 show $cmithash:$filename > tst.txt` crE8s a copy of the old committed version to test.
+#     Use `g8 ls-files --debug` to show extensive details of files available to typical `ls` (but not yet sure if can work for old versions somehow too);
+#   Next Steps:Depth and power of Git based on object d8abase (stores history of project files, directories, and commits) and index file (cache of st8 of
+#     directory tree, used to crE8 commits, checkout working directories, and hold various trees for a merge). Below HTTP://Git-SCM.Com/docs/gittutorial-2.html
+#   Following gittutorial-2: Every object in Git history stored under 40-digit hex name (160-bit SHA-1 hash of object's contents). 7-char hex strings abbreV8
+#     long names and are usually unambiguous. Full names require 27 b64 chars and abbreV8ions need 5 b64 chars. Note that attempting to transl8 Git's default
+#     hex hashes to my typical b64 encoding will run afoul with dots in ranges like from `g8 diff --no-ext-diff`, but I still want to figure out the best way I
+#     can to support either intuitively and make shorter b64 the new default for g8. Maybe a special case of b8 can use commas instead of dots or something.
+#     CrE8ing tst-proj/ (originally "test-project/" in tutorial) allows asking Git about objects like $ g8 cat-file -t 596540a; yielding "commit" so then
+#     $ g8 cat-file commit 596540a; yields "tree 92b8b694ffb1675e5975148e1121810081dbdffe\nauthor PipStuart <Pip@CPAN.Org> 1405889240 -0500
+#     committer PipStuart <Pip@CPAN.Org> 1405889240 -0500\n\ninitial commit\n". A tree can refer to 1 or more "blob" objects, each corresponding to a file.
+#     A tree can also refer to other tree objects, crE8ing a directory hierarchy. $ g8 ls-tree 92b8b69; yields
+#     "100644 blob 3b18e512dba79e4c8300dd08aeb37f8e728b8dad     file.txt\n". This tree has 1 file with the hash referring to the file's d8a.
+#     $ g8 cat-file -t 3b18e51; yields "blob\n". $ g8 cat-file blob 3b18e51; yields "hello world\n". $ find .git/objects/; shows all objects stored under their
+#     hash names inside the Git directory, and the contents of the files is just the compressed d8a plus a header identifying length and type. Type is 1 of
+#     blob, tree, commit, or tag. Simplest commit to find is HEAD from $ cat .git/HEAD; yielding "ref: refs/heads/master\n" telling current branch by naming
+#     file under .git/ which contains hash name referring to commit object which can be examined like $ cat .git/refs/heads/master; yielding
+#     "bdd4102547d518ef05c21dd4bf6454ee3923cea1\n". $ g8 cat-file -t bdd4102; yields "commit\n" then $ g8 cat-file commit bdd4102; yields
+#     "tree d0492b368b66bdabf2ac1fd8c92b39d3db916e59\nparent 596540a6cc9f9fcb49ca965e7e742d6a560d20f2\nauthor PipStuart <Pip@CPAN.Org> 1405889295 -0500
+#     committer PipStuart <Pip@CPAN.Org> 1405889295 -0500\n\nadd emphasis\n". This "tree" object refers to new st8 of tree. $ g8 ls-tree d0492b3; yields
+#     "100644 blob a0423896973644771497bdc03eb99d5281615b51     file.txt\n" and $ g8 cat-file blob a042389; yields "hello world!\n" and "parent" object refers
+#     to previous commit with $ g8 cat-file commit 596540a; yielding "tree 92b8b694ffb1675e5975148e1121810081dbdffe
+#     author PipStuart <Pip@CPAN.Org> 1405889240 -0500\ncommitter PipStuart <Pip@CPAN.Org> 1405889240 -0500\n\ninitial commit\n". This tree object is the tree
+#     we examined first and this commit is unusual in that it lacks any parent. Most commits have only 1 parent, but multiple parents is also common due to
+#     the represent8ion of merges with parent references pointing to heads of merged branches. "commit" objects refer to "tree" objects representing snapshot
+#     of directory tree at point in history and refer to "parent" commits to show history connection. "tree" objects represent st8 of single directory,
+#     assoC8ing directory names to "blob" objects containing file d8a and "tree" objects containing subdirectory inform8ion. "blob" objects contain file d8a
+#     without any other structure. See git-tag for details on "tag" objects. References to commit objects at head of each branch are stored in files under
+#     .git/refs/heads/. Name of current branch stored in .git/HEAD. Note that many commands take a tree as argument, which can be usually be referred to by any
+#     of hash name, name of commit that refers to tree, or by name of branch whose head refers. "tree-ish" is sometimes used to design8 such flexible argument.
+#     Index file: Primary tool used above to crE8 commits is `git-commit -a` which crE8s a commit including every change made to working tree. Commits can be
+#     constructed more flexibly to only commit changes to certain files or only certain changes to certain files. `g8 diff` (without HEAD) compares against
+#     .git/index which is stored in binary format but can be examined with ls-files. `g8 add` stores new blob and puts reference to it in index file.
+#     `g8 diff HEAD` shows difference between working directory and last commit while `g8 diff --cached` shows between index and last commit. By default
+#     `g8 commit` uses index to crE8 commit, not working tree, but -a option tells to first upd8 index with all changes in working tree. Running
+#     `g8 add $newfile` also affects index by adding new file blob entry. `g8 status` gives quick situ8ional summary. In addition to index file being staging
+#     area for new commits, it is also popul8d from object d8abase when checking out a branch, and is used to hold trees involved in a merge.
+#   Maybe use the following command list to enable (at least unique, if not also ambiguous to most common) abbreV8ion expansion within @ARGV:
+#The most commonly used git commands are: (listed from just `g8` which calls git with no arguments so it prints help)
+#  add bisect branch checkout clone commit diff fetch grep help init log merge mv pull push rebase reset rm show status tag
+#[pip@AkuE7KMBssp~/dvl/g8]g8 h -a
+#usage: git [--version] [--help] [-C <path>] [-c name=value] [--exec-path[=<path>]] [--html-path] [--man-path] [--info-path] [-p|--paginate|--no-pager]
+#           [--no-replace-objects] [--bare] [--git-dir=<path>] [--work-tree=<path>] [--namespace=<name>] <command> [<args>]
+#available git commands in '/usr/lib/git-core'
+#  add                       config                    get-tar-commit-id         merge-recursive           remote                    stage
+#  add--interactive          count-objects             grep                      merge-resolve             remote-ext                stash
+#  am                        credential                hash-object               merge-subtree             remote-fd                 status
+#  annotate                  credential-cache          help                      merge-tree                remote-ftp                stripspace
+#  apply                     credential-cache--daemon  http-backend              mergetool                 remote-ftps               submodule
+#  archive                   credential-store          http-fetch                mktag                     remote-http               subtree
+#  bisect                    daemon                    http-push                 mktree                    remote-https              symbolic-ref
+#  bisect--helper            describe                  imap-send                 mv                        remote-testsvn            tag
+#  blame                     diff                      index-pack                name-rev                  repack                    unpack-file
+#  branch                    diff-files                init                      notes                     replace                   unpack-objects
+#  bundle                    diff-index                init-db                   p4                        request-pull              update-index
+#  cat-file                  diff-tree                 instaweb                  pack-objects              rerere                    update-ref
+#  check-attr                difftool                  log                       pack-redundant            reset                     update-server-info
+#  check-ignore              difftool--helper          ls-files                  pack-refs                 rev-list                  upload-archive
+#  check-mailmap             fast-export               ls-remote                 patch-id                  rev-parse                 upload-pack
+#  check-ref-format          fast-import               ls-tree                   prune                     revert                    var
+#  checkout                  fetch                     mailinfo                  prune-packed              rm                        verify-pack
+#  checkout-index            fetch-pack                mailsplit                 pull                      send-pack                 verify-tag
+#  cherry                    filter-branch             merge                     push                      sh-i18n--envsubst         web--browse
+#  cherry-pick               fmt-merge-msg             merge-base                quiltimport               shell                     whatchanged
+#  clean                     for-each-ref              merge-file                read-tree                 shortlog                  write-tree
+#  clone                     format-patch              merge-index               rebase                    show
+#  column                    fsck                      merge-octopus             receive-pack              show-branch
+#  commit                    fsck-objects              merge-one-file            reflog                    show-index
+#  commit-tree               gc                        merge-ours                relink                    show-ref
+#[pip@AkuE7KMBtCb~/dvl/g8]g8 h -g
+#The common Git guides are:
+#  attributes   Defining attributes per path
+#  glossary     A Git glossary
+#  ignore       Specifies intentionally untracked files to ignore
+#  modules      Defining submodule properties
+#  revisions    Specifying revisions and ranges for Git
+#  tutorial     A tutorial introduction to Git (for version 1.5.1 or newer)
+#  workflows    An overview of recommended workflows with Git
+#`g8 commit --date=<date>` accepted formats should be same as for GIT_(AUTHO|COMMITTE)R_DATE env vars (and may need quoting but shouldn't need DayOfWeek):
+#  rfc2822: Mon, 3 Jul 2006 17:18:43 +0200      default: Mon Jul 3 17:18:43 2006 +0200    relative: 2 weeks ago
+#  iso8601:      2006-07-03 17:18:43 +0200      local  : Mon Jul 3 15:18:43 2006          raw     : <UNIX epoch seconds timestamp> <timezone offset>
+#  short  :      2006-07-03  or  YYYY.MM.DD  or  MM/DD/YYYY  or  DD.MM.YYYY         Above raw is Git's internal format.`date +%s`shows current UNIX timestamp.
+#When attempting to transl8 all 40-char hex hash names to && from b64, it's unfortun8 that 27-char b64 can't occupy top 2 most significant bits so they all
+#  start with just a HEX [0-9A-F] character before following with much better variety thereafter, probably becoming unique after just 4 most significant chars
+#  and with the top 5 chars (28 bits) becoming equivalent to the common 7-char hex used in the tutorial-2 (which should be fully tested thru g8 with b64);
+#Considering migr8ing bak to g8: Should add global option to bak2 to `loc8 .bak/` to build massive index to first ptcnv then navig8 all nearby directories to
+#  autom8 much orphan reuniting with findable basefiles in a separ8 index before bak2 for every .bak/ lacking existing parallel .git/. Also bear in mind that
+#  some orphans are crE8d intentionally, when I want to save edit history on a basefile that's no longer useful. Git should be able to crE8 the basefile and
+#  commit historical changes on it and then rm it from the working tree, which will need to be a special case for bak2 and g82 to handle properly.
+#  Add to classic bak behavior by also auto-committing with every SuperSave. Learn how to retroactively elabor8 on previously autom8d commit message stamps to
+#  begin transitioning to more inform8ive development document8ion practices. I should expect to remain primarily reliant on SuperSaves writing to both for a
+#  while before I acclim8 to git sufficiently and become ready to phase out (and start to rm) baks. Autom8d lone-file commits or even `bak *` grouping will
+#  remain blunt compared to git's index. bak's repo/proj concept is sorely limited to single directories. Keep considering useful vim basic, Super, and Ultra
+#  save behaviors. Maybe Ultra should just add edited saved current file to the index for l8r manual commit with group edits description (probably still
+#  auto-popul8d with current d8 though). Good idea to allow upd8d bak SuperSave to detect when only git is already being used to no longer write to .bak when
+#  I deliber8ly setup new git projects to get comfortable with. Eventually better to rely on actual d8.pm d8sort. Along with improving Super and UltraSaves, I
+#  should polish updt and hotkey `perl -c` before pushing to ~/(bin|lib)/ from vim and start using e again. Also upd8 old vim PTVR refresher key to save
+#  cursor position, jump to top, search for proper d8VS declar8ion, refresh, and jump back;
+#Another really good simple introduction to git usage is HTTP://TutorialZine.Com/2016/06/learn-git-in-30-minutes ;
+# H87MGx8q:Yet another good way to understand git is by the graph structure described at HTTPS://MaryRosecook.Com/blog/post/git-from-the-inside-out ;
+use strict;use warnings;use utf8;use v5.10;
+use Octology::a8;
+use Octology::b8;
+#se Octology::c8;
+use Octology::d8;my $VERSION='0.0';my $d8VS='G64MHNOW';
+my @gmcc=(qw(add bisect branch checkout clone commit diff fetch grep help init log merge mv pull push rebase reset rm show status tag));# GitMostCommonCmdz
+my @gacl=(qw(add                   config                    get-tar-commit-id     merge-recursive       remote                stage
+             add--interactive      count-objects             grep                  merge-resolve         remote-ext            stash
+             am                    credential                hash-object           merge-subtree         remote-fd             status
+             annotate              credential-cache          help                  merge-tree            remote-ftp            stripspace
+             apply                 credential-cache--daemon  http-backend          mergetool             remote-ftps           submodule
+             archive               credential-store          http-fetch            mktag                 remote-http           subtree
+             bisect                daemon                    http-push             mktree                remote-https          symbolic-ref
+             bisect--helper        describe                  imap-send             mv                    remote-testsvn        tag
+             blame                 diff                      index-pack            name-rev              repack                unpack-file
+             branch                diff-files                init                  notes                 replace               unpack-objects
+             bundle                diff-index                init-db               p4                    request-pull          update-index
+             cat-file              diff-tree                 instaweb              pack-objects          rerere                update-ref
+             check-attr            difftool                  log                   pack-redundant        reset                 update-server-info
+             check-ignore          difftool--helper          ls-files              pack-refs             rev-list              upload-archive
+             check-mailmap         fast-export               ls-remote             patch-id              rev-parse             upload-pack
+             check-ref-format      fast-import               ls-tree               prune                 revert                var
+             checkout              fetch                     mailinfo              prune-packed          rm                    verify-pack
+             checkout-index        fetch-pack                mailsplit             pull                  send-pack             verify-tag
+             cherry                filter-branch             merge                 push                  sh-i18n--envsubst     web--browse
+             cherry-pick           fmt-merge-msg             merge-base            quiltimport           shell                 whatchanged
+             clean                 for-each-ref              merge-file            read-tree             shortlog              write-tree
+             clone                 format-patch              merge-index           rebase                show
+             column                fsck                      merge-octopus         receive-pack          show-branch
+             commit                fsck-objects              merge-one-file        reflog                show-index
+             commit-tree           gc                        merge-ours            relink                show-ref));                    # GitAll    CommandList
+my @gcgl=(qw(attributes            glossary     ignore       modules               revisions             tutorial          workflows)); # GitConceptGuide  List
+my $fcgv=0;my $fagv=0; # FoundCommonGitV8 && FoundAnyGitV8 flags
+if(@ARGV){ # do some basic matching && argument expansion for known command abbreV8ions
+  if($ARGV[0] eq 'ln'){          printf("g8 2ndarg:%-8s expanding to opt:--name-only\n",'n');unshift(@ARGV,'l');$ARGV[1] = '--name-only';} # special LogName
+  for    (@gmcc){if(/^$ARGV[0]/){printf("g8 V8 arg:%-8s expanding to cmd:$_\n",$ARGV[0]);$ARGV[0]=$_;$fcgv=1;last;}} # Xpnd abbreV8d common cmd arg 2 1st match
+  if($fcgv){if($ARGV[0] eq 'help' && @ARGV > 1){ # g8 presently only mainly attempts auto-expansion of command abbreV8ions found within the very first argument
+    for  (@gacl){if(/^$ARGV[1]/){printf(" help arg:%-8s expanding to cmd:$_\n",$ARGV[1]);$ARGV[1]=$_;$fagv=1;last;}} # try 2nd arg Xpansion when 1st is h=>help
+    unless($fagv){
+      for(@gcgl){if(/^$ARGV[1]/){printf(" help arg:%-8s expanding 2guide:$_\n",$ARGV[1]);$ARGV[1]=$_;        last;}}}} # try help concept guides if !cmd matchd
+  }else{
+    for  (@gacl){if(/^$ARGV[0]/){printf("g8 V8 arg:%-8s expanding to cmd:$_\n",$ARGV[0]);$ARGV[0]=$_;$fagv=1;last;}}}
+  if($ARGV[0] eq 'log'){if(@ARGV > 1 && $ARGV[1] eq 'n'){$ARGV[1] = '--name-only';
+                                 printf("g8 2ndarg:%-8s expanding to opt:--name-only\n",'n');}
+    if(1&& @ARGV > 1 && $ARGV[1] eq '--name-only'){ # this version of --name-only resembles `lsd8 .bak` but lacks permissions, bloksize, ownr, grup,&& fIlsysd8
+      my $glco = `git @ARGV`;my @glno = split(/\n/,$glco);my $glsz = $#glno; # and is kinda inbetween original `g8 ln` format below && new g82bak regener8or
+      for(0..$#glno){if(!length($glno[$glsz-$_]) || $glno[$glsz-$_] =~ /^Date:/){splice(@glno,$glsz-$_,1);}} # in reverse order, splice out blank && Date lines
+      for(0..$#glno){if($glno[$_] =~ s/^(commit)\s+([0-9a-f]{40})$/$1: $2/){my $chsh=$2; # loop has landed on a commit line so process expected following lines
+        if  ($glno[$_+1] =~ s/^(Author:)\s+(.*)$//){my $autn=$2;$autn =~ s/(Pip)/$C$1/g;$autn =~ s/(Stuart)/$G$1/;$autn =~ s/(CPAN)/$Y$1/;$autn=~s/(Org)/$M$1/;
+          $autn =~ s/([<@.>])/$W$1/g;$glno[$_].=" ${Y}Author$W: $autn";
+          if($glno[$_+2] =~ s/^\s+(.*)$//){my $comm=$1;my $fcou=0;my @fyll;
+            while($#glno >= ($_+3+$fcou) && $glno[$_+3+$fcou] !~ /^(commit)\s+([0-9a-f]{40})$/){ # loop to load the whole list of committed files
+              $glno[$_+3+$fcou++] =~ s/^(.*)$//;push(@fyll,$1);
+            }#$comm = d8colr($comm); # do! need 2 just d8colr commit message of lone d8 from original bak filename since c8fn can now work on whole made name
+            for my $fyln (@fyll){my $fyld=$fyln;
+              my $fyls=`git cat-file -s $chsh:$fyln`;chomp($fyls);$fyls=b64(    $fyls );$fyls=b8colr(sprintf("%5s"  ,$fyls));
+             #if($fyld =~ /^(\w*)(\.\w{1,5})$/){$fyld =~ s/^(\w*)(\.)(\w{1,5})$/$G$1$Y-$comm$W$2$G$3/;}else{$fyld="$G$fyld$Y-$comm";} # reinsert d8 stamp
+              if($fyld =~ /^(\w*)(\.\w{1,5})$/){$fyld =~ s/^(\w*)(\.)(\w{1,5})$/$1-$comm$2$3/;}else{$fyld.="-$comm";} $fyld = c8fn($fyld); # reinsert d8 stamp
+              $glno[$_].= " $fyls $fyld"; # keep appending multiple filesizes with reconstructed names onto original commit line
+            }                                                     $chsh=b64(dec($chsh));$chsh=b8colr(sprintf("%027s",$chsh));
+                                                                  $glno[$_] =~ s/^(commit)(: )([0-9a-f]{40})/$C$1$W$2$chsh/;
+          }
+        }
+      }} $glsz = $#glno;
+      for(0..$#glno){if(!length($glno[$glsz-$_])){splice(@glno,$glsz-$_,1);}} # in reverse order, again splice out blank lines
+      if(0){ # basically comment out old exclusive regex approach since I'm not sure how to detect multiple committed files that way
+      while($glco =~  /\n?(\n?commit)\s+([0-9a-f]{40})\nAuthor:\s+([^\n]*)\nDate:([^\n]*)\n\n\s+(\w+)\n\n([^\n]+)\n/){my $coml=$1;my $chsh=$2;my $autn=$3;
+        my $d8st=$4;my $comm=$5;my $fyln=$6;my $fyls=`git cat-file -s $chsh:$fyln`;chomp($fyls);$fyls=b64(    $fyls );$fyls=sprintf("%5s"  ,$fyls);
+                                                                                                $chsh=b64(dec($chsh));$chsh=sprintf("%027s",$chsh);
+        if($fyln  =~  /^(\w*)(\.\w{1,5})$/){$fyln =~ s/^(\w*)(\.\w{1,5})$/$1-$comm$2/;}else{$fyln .= "-$comm";} # reinsert d8 stamp b4 Xtnsion or append2base
+        $glco     =~ s/\n?(\n?commit)\s+([0-9a-f]{40})\nAuthor:\s+([^\n]*)\nDate:([^\n]*)\n\n\s+(\w+)\n\n([^\n]+)\n/$coml: $chsh Author: $autn $fyls $fyln\n/;
+      } print $glco;
+      } print join("\n",@glno),"\n";
+    }else{
+      my $glco = `git @ARGV`;                                   $glco =~ s/\n?(\n?commit)\s+([0-9a-f]{40})/$1: $2/g; # GitLogCommandOutput
+      while($glco =~ /commit: ([0-9a-f]{40})/){my $chsh = $1;my $b64c = b8colr(sprintf("%027s",b64(dec($chsh))));   # using b8.pm 2colr with 27 b64 char padng
+                                                                $glco =~ s/(commit)(: )$chsh\n/$C$1$W$2$b64c /g;}
+        # 40 4-bit hex chars are 160 bits and fit in under 27 6-bit b64 chars and around 50 3.25-bit b10 chars, if my calcul8ions are correct
+      while($glco =~ /(Author:\s+[^\n]*)\nDate:\s+\w+\s+(\w+\s+\d+\s+\d+:\d+:\d+)\s+(\d+)\s+([-+]?\d+)\n\n\s+(\w+)/){
+        my $auth = $1;my $mdtm = $2;my $year = $3;my $zone = $4;my $mesg = $5;my $d8im=Octology::d8->new('expand'=>"$mdtm:00 $zone $year");my $saut = $auth;
+        my $cd8s = $d8im->colr('a').$G; if($mesg =~ /^[0-9A-Za-z._][1-9A-C][1-9A-V][0-9A-Za-g][0-9A-Za-x]{4}$/){$mesg = d8colr($mesg) . $G;}
+        $saut=~s/^(Author)(: )/$Y$1$W$2/;$saut=~s/(Pip)/$C$1/g;$saut=~s/(Stuart)/$G$1/;$saut=~s/(CPAN)/$Y$1/;$saut=~s/(Org)/$M$1/;$saut=~s/([<@.>])/$W$1/g;
+        if($#ARGV > 0 && $ARGV[1] eq '--name-only' && $glco =~  /$auth\nDate:[^\n]*\n\n\s+\w+\n\n(\S+)/){my $glfn = c8fn($1);
+                                                      $glco =~ s/$auth\nDate:[^\n]*\n\n\s+\w+\n\n(\S+)/$saut ${R}d${O}8$W: $cd8s $mesg $glfn/;}
+        else                                         {$glco =~ s/$auth\nDate:[^\n]*\n\n\s+\w+/$saut ${R}d${O}8$W: $cd8s $mesg/;}
+      } print $glco; # eventually differing Author lengths above will need widest sprintf padding for realignment of d8s that follow
+    }
+  }elsif($ARGV[0] =~ /^g82/){ # g82bak file version converter attempts to reconstruct original .bak/ file versions from what bak2g8 already put in git
+    my $glco = `git log --name-only`;my @glno = split(/\n/,$glco);my $glsz = $#glno;
+    for(0..$#glno){if(!length($glno[$glsz-$_]) || $glno[$glsz-$_] =~ /^Date:/){splice(@glno,$glsz-$_,1);}} # in reverse order, splice out blank && Date lines
+    for(0..$#glno){if($glno[$_] =~ s/^(commit)\s+([0-9a-f]{40})$/$1: $2/){my $chsh=$2; # loop has landed on a commit line so process expected following lines
+      if  ($glno[$_+1] =~ s/^(Author:)\s+(.*)$//){my $autn=$2;$glno[$_].= " Author: $autn";
+        if($glno[$_+2] =~ s/^\s+(.*)$//){my $comm=$1;my $fcou=0;my @fyll;
+          while($#glno >= ($_+3+$fcou) && $glno[$_+3+$fcou] !~ /^(commit)\s+([0-9a-f]{40})$/){ # loop to load the whole list of committed files
+            $glno[$_+3+$fcou++] =~ s/^(.*)$//;push(@fyll,$1);
+          }
+          for my $fyln (@fyll){my $fyld=$fyln; # some of my largest filesizes are DVD ~/.inst/*.iso && need 6 b64 chars but almost all fit within just 5 below
+            my $fyls=`git cat-file -s $chsh:$fyln`;chomp($fyls);$fyls=b64(    $fyls );$fyls=sprintf("%5s"  ,$fyls); # shouldn't really need size for g82bak
+            if($fyld =~ /^(\w*)(\.\w{1,5})$/){$fyld =~ s/^(\w*)(\.\w{1,5})$/$1-$comm$2/;}else{$fyld.= "-$comm";} # reinsert d8 stamp b4 Xtnsion or append2base
+            unless(-d '.bak'){`mkdir .bak`;} # make sure there's a .bak/ destin8ion directory
+            `git show $chsh:$fyln > .bak/$fyld`; # should regener8 .bak from git as g82 reverse from bak2 gener8ion command
+            $glno[$_].= " $fyls .bak/$fyld"; # keep appending multiple filesizes with reconstructed names onto original commit line
+          }                                                     $chsh=b64(dec($chsh));$chsh=sprintf("%027s",$chsh);
+                                                                $glno[$_] =~  s/^(commit: )([0-9a-f]{40})/$1$chsh/;
+        } # by default not coloring any g82bak output && using message d8 stamp with frames for .bak filenames instead of git's Date with no sub-seconds
+      }
+    }} $glsz = $#glno;
+    for(0..$#glno){if(!length($glno[$glsz-$_])){splice(@glno,$glsz-$_,1);}} # in reverse order, again splice out blank lines
+    print join("\n",@glno),"\n";
+  }elsif($ARGV[0] =~ /^bak2/){ # bak2g8 file version converter (should maybe start with `bak *` so local basefiles aren't clobbered unrecoverably by cp?)
+    if(-d '.bak'){my %dsgd; # if local .bak/ directory found, declare D8StampGroupD8a hash to be popul8d below
+      my  @bfls = `ls -A .bak/`; # load Bak File LiSt with All (including hidden) entries, but omit . and ..
+      for(@bfls){chomp;my $ofns = $_;my $nfns = $_; # Original && New FileName Strings  # renaming behavior useful outside of .bak/ for regular PT>d8 names too
+        if    (/ \. ([0-9A-Z]             [1-9A-V]           [0-9A-Za-x]{3})           $ /x){ # need to stuD PTold delimiters and ranges
+  #           printf("!*WARN*! File: '.bak/%-32s seems to contain a PTold      version stamp.\n", $_ . "'");
+          my $pt5v = $1; # upd8d ptcnv to help rename .PTold -d8
+          my $p2d8 = `ptcnv $pt5v`;$nfns =~ s/\.$pt5v$/-$p2d8/;
+          if($nfns =~ /(\.\w{1,5})-$p2d8$/){$nfns =~ s/(\.\w{1,5})-$p2d8$/-$p2d8$1/;} # for name like '2do_mrb.txt.IANFA', mv '.txt' extension to end
+              printf("mv .bak/%-32s .bak/%s\n", $ofns, $nfns);
+              print  `mv .bak/$ofns .bak/$nfns`; # this renaming behavior should be similar to `ptcnv -fix` run from within a .bak/ directory
+        }elsif(/[-.]([0-9A-Za-z._][1-9A-C][1-9A-V]           [0-9A-Za-x]{4})(\.\w{1,5}|$)/x){ # need to stuD PT    delimiters and ranges
+  #           printf("!*WARN*! File: '.bak/%-32s seems to contain a PT         version stamp.\n", $_ . "'");
+  #/^.*-(\e\[([\d;]*)m)*([0-9A-D]     [1-9A-C][1-9A-V]           [0-9A-Za-x]{4})(\e\[([\d;]*)m)*([-.*\/]|$)/x # regex from lsd8 2Dtect PT mAB BtwEn SKpz
+  #/^.*-(\e\[([\d;]*)m)*([0-9A-Za-z._][1-9A-C][1-9A-V][0-9A-Za-g][0-9A-Za-x]{4})(\e\[([\d;]*)m)*([-.*\/]|$)/x #                     && d8
+          my $pt7v = $1;my $xtns = $2;
+          my $p2d8 = `ptcnv $pt7v`;$nfns =~ s/[-.]$pt7v$xtns$/-$p2d8$xtns/;
+          if($nfns =~ /(\.\w{1,5})-$p2d8$/){$nfns =~ s/(\.\w{1,5})-$p2d8$/-$p2d8$1/;} # attempt to mv extension to end
+              printf("mv .bak/%-32s .bak/%s\n", $ofns, $nfns);
+              print  `mv .bak/$ofns .bak/$nfns`;
+        }elsif(   /-([0-9A-Za-z._][1-9A-C][1-9A-V][0-9A-Za-g][0-9A-Za-x]{4})(\.\w{1,5}|$)/x){ # need to stuD d8    delimiters and ranges
+  #           printf("!*WARN*! File: '.bak/%-32s seems to contain a d8         version stamp.\n", $_ . "'");
+        }else{printf("!*EROR*! File: '.bak/%-32s does not contain a detectable version stamp!\n", $_ . "'");
+        }
+      }   @bfls = `ls -A .bak/`; # reload Bak File LiSt after renames
+      for(@bfls){chomp;
+        if    (   /-([0-9A-Za-z._][1-9A-C][1-9A-V][0-9A-Za-g][0-9A-Za-x]{4})(\.\w{1,5}|$)/x){push(@{$dsgd{$1}},$_);} # load D8StampGroupD8a hash of arrays
+      }
+      for(sort(keys(%dsgd))){ # eventually better 2use custom d8sort routine rather than this basic ASCII ordering I'm starting with to approxim8 time progress
+        my $comf = 0; # COMmit Flag to track whether any adds are made below
+        for my $fbfn (@{$dsgd{$_}}){my $obfn = $fbfn;$obfn =~ s/-$_//; # loop thru FullBakFileNames with same d8 stamp && OrigBaseFileNames
+          if(-e $obfn){ # found original base file in expected parent directory of .bak/ (but should eventually search around for it if not here)
+            my $glcl = '';my $comc = 0; # initialize empty GitLogCommitList and COMmitCount
+            my $glfo = `git ls-files $obfn 2>&1`;#print "git ls-files $obfn:$glfo\n"; # needed to redirect STDERR to STDOUT to capture fatal message
+            if($glfo =~ /^fatal: Not a git repo/){print `git init`;}else{ # may need better way to check repo to see if bak2 already ran successfully so abort
+               $glcl = `git log`;while($glcl =~ s/commit [0-9a-f]{40}//){$comc++;} # try counting commits in log to compare against d8 keys
+             #printf("comc:$comc keys:%d\n",scalar(keys(%dsgd)));
+              last if($comc >= scalar(keys(%dsgd))); # still some discrepancy between these counts since 2nd `g8 bak2` in my test commits twice extra
+            }                                        # probably at least one of mismatch is due2 orphan .bak/qcnvtest file's d8 is in keys but has no basefile
+                                                     # and other issue appears to arise from romz-2A8* being no diff from romz-2A9* so git stores just once
+                                                     # need ways to keep counts in sync even after these issues crop up
+            `cp .bak/$fbfn $obfn`; # copy full bak version over original base
+            `git add       $obfn`; # add version to index
+            $comf = 1;             # flag that l8r commit will be needed
+          }                        # regex below converts `d8 e` format: Mon Jul 21 17:29:16:46 -0500 2014 to Git's default: Mon Jul 21 17:29:16 2014 -0500
+        } my $dd8f = Octology::d8->new('d8'=>$_)->expand();$dd8f =~ s/^(.*):\d\d ([-+]?\d+) (\d+)$/$1 $3 $2/;
+        print `git commit --date="$dd8f" -m "$_"` if($comf); # commit whole d8 stamp group together only if file versions were added above
+      }
+    }else{print "!*EROR*! No local '.bak/' subdirectory found for bak2g8 to convert!\n";}
+  }else{system("git @ARGV");} # maybe better or equivalent to: print `git @ARGV`; instead?
+}  else{system("git      ");} # no args should be same as help

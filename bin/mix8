@@ -1,0 +1,13 @@
+#!/usr/bin/perl
+# FCELDsXE:mix8 crE8d by PipStuart <Pip@CPAN.Org> to adjust PulseAudio volumes; PA seemz to have replaced old ALSA && ESound which used /dev/mixer so now
+#  `pacmd dump` && `pacmd set-sink-volume $ndx|$nam $lvl` instead with decimal or hex level on 16-bit 65536 range? dump-volumes is documented as Debug.
+#   set-sink-volume alsa_output.pci-0000_04_00.1.hdmi-stereo 0xb304
+# 2du:start taking CLI optionz like old ximp && pmix (&& mAB ch nAm2pmix AgN4Pulse or pacv PAChangeVolume),mAB require /^\+/ to increase Xplicitly,
+#   mAB should increment by just 100thz as 1% or b64thz (which would be about 1.6% or each about 1/4th of Ubu scroll events 6% over speaker icon);
+use strict;use warnings;use utf8;use v5.10;my $VERSION='0.0';my $d8VS='FCELDsXE';
+use Octology::b8;my $ssnm;my $ssvl;my $avld=int(65536 * 0.03); # SelectedSink NaMe&&VolumeLevel,AdjustVolumeLevelDecrement (default ~3%)
+my $pado=`pacmd dump`;my @padl=split(/\n/,$pado); # PulseAudioDump Output&&Linez
+if (@ARGV && $ARGV[0]=~  /^\+?(-?\d+)$/){$avld*=$1;}else{$avld*=-1;} # param should be decimal multiplier of default decrement
+for(@padl){if(  /^set-sink-volume ([^ ]+) 0x([0-9a-f]{4})/){$ssnm=$1;$ssvl=dec($2); # might need to select among multiple sink namez
+    print ("pacmd set-sink-volume $ssnm ".($ssvl+$avld));
+    system("pacmd set-sink-volume $ssnm ".($ssvl+$avld));}}

@@ -1,0 +1,1892 @@
+! E8KM2Ocw:~/.Xrc by PipStuart <Pip@CPAN.Org> to start having some additional xterm && maybe urxvt or aterm settings on Aku. According to this 2014 site:
+! $VERSION='0.0';$d8VS='G8RMLfbL'; HTTPS://Wiki.ArchLinux.Org/index.php/x_resources .Xdefaults is deprec8d for .Xresources (or my .Xrc) wich requires xorg-xrdb
+!   be installed 2run:`xrdb ~/.Xrc`; If I someday return to using `startx`, I will probably need to add2 my ~/.xinitrc "[[ -f ~/.Xrc ]] && xrdb -merge ~/.Xrc".
+!   See default settings for installed X11 apps in /usr/share/X11/app-defaults (if it exists) && see currently loaded resources with `xrdb -query -all`.
+!   Comment must start bang !, not hash #. Maybe `xrdb -remove .Xrc` will remove these values from server while -n -merge will Not actually merge but will show
+!   what would happen if it did.
+! `for T in `find /usr/share/terminfo -type f -printf '%f '`;do echo "$T `tput -T $T colors`";done|sort -nk2` shows a ton of supported terms to maybe try:
+!     Eterm-88color    Eterm-256color      mlterm-256color    putty-256color           screen-256color-s    Probably test:Eterm,aterm,urxvt,konsole,vte,
+!     rxvt-88color     gnome-256color      mrxvt-256color     rxvt-256color            terminator             terminator,nsterm,mrxvt,mlterm,putty,iTerm
+!     xterm-88color    iTerm.app           nsterm             rxvt-unicode-256color    vte-256color   agi eterm aterm rxvt-unicode-256color xvt evilvte tilda
+!     xterm+88color    konsole-256color    nsterm-256color    screen-256color-bce-s    xterm+256color   lxterminal sakura pterm (konsole wudpull2much KDEstuf)
+! E8PMMMMM:Ubu srch"term"rsltz:gnome-terminal(Terminal),pterm(PuTTY Terminal),u?rxvt(-unicode)?,u?xterm,evilvte(recfg reqs recompIl8ion);
+! E8RM7bZB:Eterm from my old zsh Et alias with few custom parameters flickers constantly && is terribly slow to upd8, Menus are hard to select too.
+!          aterm worked rel8ively fine once but was a little slow (especially scrolling) && starts with a bunch of weird backslashes && now won^t respond,
+!          urxvt works fine && has a ton of options to fiddle with l8r,
+!            xvt works but defaulted to displaying only in green (with or without bold) && starts with backslashes like aterm (but can load XTerm resources),
+!        evilvte works fast && similarly to my xterm but apparently configur8ion is done by editing source && recompiling (but view with `showvte` command),
+!     lxterminal started pretty nicely but going to the menu Edit > Preferences spit 3 lines of Gtk-WARNING Unknown property: GtkTable.valign
+!             && it writes a sparse ~/.config/lxterminal/lxterminal.conf,
+!         sakura started nicely with~/.config/sakura/sakura.conf && is based on GTK+ && VTE but has few dependencies && does not require full GNOME desktop,
+!          pterm prints constant GLib-CRITICAL Source ID \d+ was not found when attempting to remove it errors with every key press (but looks workable)
+!             && apparently Ubu14.04 GLib has begun spewing errors for applic8ions that call some function twice improperly so maybe need to w8 4 a l8r fix,
+! EC6L7Qr7:pterm, sakura, evilvte, lxterminal, xterm, && Eterm sEm2wrk nice,urxvt nEded rvrsVid,xvt just grayz,aterm frEzez@zsh prmpt; aftr `xrdb .Xrc`:
+!   rxvt(-unicode)? looking good like pterm,urxvt good wIdr 160x50,xvt grEnz,aterm still frEzez;
+!   Display all 256 colors across screen fast (although my GnomTerm && XTerm currently only show first 8 with bright colors && none on the rest) with:
+!     `(x=`tput op` y=`printf %76s`;for i in {0..256};do o=00$i;echo -e ${o:${#o}-3:3} `tput setaf $i;tput setab $i`${y// /=}$x;done)`
+! G7LM8px7:Running Ctrl-Alt-t Ubu keyboard shortcut to open a terminal then `p h p$PPID o cmd` printz '/usr/bin/python /usr/bin/x-terminal-emulator' && it has
+!   a bright red top-bar with a group menu button. This suggests it should be feasible to develop similar VTE-based terminal emul8or entirely in Perl someday.
+!   Curiously, `echo $TERM`:'xterm'; while most of my other termz now report 'xterm-256color'. Then `echo $COLORTERM`:'gnome-terminal'; which is no longer
+!   exported from recent versions of GnomTerm, so maybe this was forked a while back? 4um posterz recommend now testing for $VTE_VERSION instead of $COLORTERM.
+!   x-terminal-emulator has no $VTE_VERSION but most of my terminalz now print it as '4205'. `m x-terminal-emulator` showed a 2008 man page for terminator but
+!   it looks like it has seen some active LaunchPad development since then. Ckot mlterm,roxterm,aterm-ml,mrxvt,rxvt-ml,yeahconsole,st[jt]erm,xfce4-terminal;
+! G8RMHBpu:Installed mate-terminal, qterminal, && GNUstep terminal.app as well as vttest&&tmate 2also tSt AgNst alongside stterm && stjerm,&&instld lilyterm;
+*background:                    black
+*foreground:                    grey90
+! Many of these settings were originally gleaned from: HTTP://X.Org/archive/X11R6.8.1/doc/xterm.1.html but `man xterm` describes all available resources
+XTerm*Foreground:               green
+XTerm*Background:               black
+XTerm*Border:                   dark blue
+XTerm*VT100.geometry:           160x50
+! Honor the VT102 DECCOLM code to switch 80 to 132 columns (might need to be in class C132 also?):
+XTerm*VT100.c132:               true
+! Below should allow dtterm ops like resize or reposition.
+XTerm*VT100.allowWindowOps:     true
+XTerm*VT100.allowFontOps:       true
+XTerm*VT100.allowTcapOps:       true
+! Specifies whether or not escape sequences to change colors assigned to different attributes are recognized (default might be false?):
+XTerm*dynamicColors:            true
+XTerm*faceName:                 Terminus:style=Regular:size=8
+!XTerm*font:                     -*-dina-medium-r-*-*-16-*-*-*-*-*-*-*  ! Default font:fixed && faceSize:14 && faceName eg. had size=10 (7 or 8 fit well)
+!XTerm*faceSize:                 8
+! Changing Size above does not seem to change anything. Might want to try below l8r instead (with 8x16?):
+!XTerm*faceName:                 Liberation Mono:size=8:antialias=true
+!XTerm*font:                     7x13
+! If locale settings are correct for UTF-8, the following makes xterm interpret all incoming data as UTF-8 encoded: (should learn more about u8 && utf8)
+!XTerm*locale:                   true
+XTerm*utf8:                     2
+! Specifies whether or not control sequences sent by the terminal should be 8-bit characters or escape sequences (default false, true mkz arowkeyz!work):
+XTerm*eightBitControl:          false
+XTerm*eightBitInput:            true
+XTerm*scrollBar:                true
+XTerm*rightScrollBar:           true
+XTerm*saveLines:                65536
+XTerm*scrollKey:                true
+XTerm*scrollTtyOutput:          false
+XTerm*jumpScroll:               true
+XTerm*multiScroll:              true
+! Default cursorBlink 0, On 600, Off 300
+XTerm*cursorBlink:              true
+XTerm*cursorOnTime:             640
+XTerm*cursorOffTime:            320
+XTerm*appcursorDefault:         true
+XTerm*appkeypadDefault:         true
+XTerm*toolBar:                  true
+XTerm*titleBar:                 true
+XTerm*textUnderIcon:            true
+XTerm*allowIconInput:           true
+XTerm*autoRaise:                true
+! Might need the following to get Alt keyboard shortcuts to work?
+!XTerm*metaSendsEscape:          true
+XTerm*termName:                 xterm-256color
+!XTerm*termtype:                 vt100
+!XTerm*ttyModes:                 intr ^c erase ^h susp ^@ dsusp ^@ kill ^u eof ^d
+! xterm understands all of the core X Toolkit resource names and classes. Application specific resources (e.g., “XTerm.$rName”) follow:
+!backarrowKeyIsErase (class BackarrowKeyIsErase): Tie VTxxx backarrowKey && ptyInitialErase resources together by setting DECBKM st8 according to whether
+!  initial value of stty erase is backspace (8) or delete (127) character. “false” value disables this feature.  Default is “true”.
+!fullscreen          (class Fullscreen         ): Specifies whether xterm should ask window manager to use fullscreen layout on startup.
+!  Xterm accepts either a keyword (ignoring case) or the number shown in parentheses:
+!    false  (0) Fullscreen layout is not used initially, but may    be          later via menu-selection or control sequence. Default is "false".
+!    true   (1) Fullscreen layout is     used initially, but may    be disabled later via menu-selection or control sequence.
+!    always (2) Fullscreen layout is     used initially, and cannot be disabled later via menu-selection or control sequence.
+!    never  (3) Fullscreen layout is not used          , and cannot be  enabled later via menu-selection or control sequence.
+!hold (class Hold): If true, xterm will not immeD8ly destroy its window when the shell command completes. It will w8 until the window manager is used to
+!  destroy/kill the window, or if you use the menu entries that send a signal, e.g., HUP or KILL. You may scroll back, select text, etc., to perform most
+!  graphical operations. Resizing the display will lose data, however, since this involves interaction with the shell which is no longer running.
+!hpFunctionKeys      (class HpFunctionKeys     ): Specifies whether HP FunctionKey escape codes should B gener8d 4 F-keys instead of standard escape sequences.
+!  See also the keyboardType resource.
+!iconGeometry        (class IconGeometry       ): Specifies preferred size && position of applic8ion when iconified. Not necSarily obeyed by all window mngrz.
+!iconHint            (class IconHint           ): Specifies an icon which will be added to the window manager hints. xterm provides no default value. Set this
+!  resource to “none” to omit hint entirely, using whatever window manager may decide. If the iconHint resource is given (or is set via the -n option) xterm
+!  searches for a pixmap file with that name, in the current directory as well as /usr/share/pixmaps, if resource does not specify absolute pathname. In each
+!  case, xterm adds “_48x48” and/or “.xpm” to filename after trying without. If able to load file, xterm sets the window manager hint for the icon-pixmap.
+!  These pixmaps are distributed with xterm, and can optionally be compiled-in:
+!    ·     mini.xterm_16x16,  mini.xterm_32x32,  mini.xterm_48x48
+!    ·   filled-xterm_16x16 filled-xterm_32x32 filled-xterm_48x48
+!    ·          xterm_16x16        xterm_32x32        xterm_48x48
+!    ·    xterm-color_16x16  xterm-color_32x32  xterm-color_48x48
+!  In either case, xterm allows for adding a “_48x48” to specify largest of pixmaps as a default. That is, “mini.xterm” is same as “mini.xterm_48x48”.
+!  If no explicit iconHint resource is given (or if none of the compiled-in names matches), xterm uses “mini.xterm” (which is always compiled-in).
+!  The iconHint resource has no effect on “desktop” files, including “panel” and “menu”. Those are typically set via a “.desktop” file; xterm provides samples
+!    for itself (and the uxterm script). The more capable desktop systems allow changing the icon on a per-user basis.
+!iconName            (class IconName           ): Specifies label 4 xterm when iconified. no default value; some window mngrz may assume the applic8ion name,
+!  e.g., “xterm”. Setting iconName resource sets icon label unless overridden by zIconBeep or control sequences which change the window and icon labels.
+!keyboardType        (class KeyboardType       ): Enables one (or none) of various keyboard-type resources: hpFunctionKeys, scoFunctionKeys, sunFunctionKeys,
+!  tcapFunctionKeys, && sunKeyboard. Resource^s value should be one of the corresponding strings “hp”, “sco”, “sun”, “tcap”, or “vt220”. Individual resources
+!  are provided for legacy support; this resource is simpler to use. Default is “unknown”, i.e., none of the assoC8d resources are set via this resource.
+!maxBufSize          (class MaxBufSize         ): Specify maximum size of input buffer. Default is “32768”. This cannot be set to value less than minBufSize.
+!  It will be increased as needed to make that value evenly divide this one. On some systems you may want to increase one or both the min && maxBufSize to
+!    achieve better performance if the oper8ing system prefers larger buffer sizes.
+!maximized           (class Maximized          ): Specifies whether xterm should ask window manager to maximize its layout on startup. Default is “false”.
+!messages            (class Messages           ): Specifies whether write access to terminal is allowed initially. See mesg(1).        Default is  “true”.
+!menuLocale          (class MenuLocale         ): Specify locale used for character-set comput8ionz when loading popup menus. Use this to improve initializ8ion
+!  performance of the Athena popup menus, which may load unnecessary (and very large) fonts, e.g., in a locale having UTF-8 encoding. Default is “C” (POSIX).
+!  To use current locale (only useful if you have localized the resource settings for the menu entries), set the resource to an empty string.
+!minBufSize          (class MinBufSize         ): Minimum size of input buffer, i.e., amount of d8a that xterm requests on each read.  Default is  “4096”.
+!  Cannot be set to a value less than 64.
+!omitTranslation     (class OmitTranslation    ): Selectively omit one or more parts of xterm^s default transl8ionz at startup. Resource value is comma-sepR8d
+!  list of keywords, which may be abbreviated: “fullscreen”, “scroll-lock”, “shift-fonts”, or “wheel-mouse”. Xterm also recognizes “default”, but omitting that
+!  will make the program unusable unless you provide a similar definition in your resource settings.
+!ptyHandshake        (class PtyHandshake       ): If “true”, xterm performs handshaking during initializ8ion to ensure that parent and child processes upd8 the
+!  utmp and stty st8. See also waitForMap which w8z for pseudo-terminal^s notion of screen size, && ptySttySize which resets screen size after other terminal
+!  initializ8ion is complete. Default is “true”.
+!ptyInitialErase     (class PtyInitialErase    ): If “true”, xterm uses pseudo-terminal^s sense of stty erase value. If “false”, xterm sets stty erase value to
+!  match its own configur8ion, using the kb string from the termcap entry as a reference, if available. In either case, the result is applied to the TERMCAP
+!  variable which xterm sets.  See also the ttyModes resource, which may modify this. Default is “false”.
+!ptySttySize         (class PtySttySize        ): If “true”, xterm resets screen size after terminal init is complete. This is needed for some systems whose
+!  pseudo-terminals cannot propag8 terminal characteristics. Where it is not needed, it can interfere with other methods for setting the initial screen size,
+!  e.g., via window manager interaction.  See also waitForMap which w8z for a handshake-message giving the pseudo-terminal^s notion of the screen size.
+!  Default is “false” on Linux and OS X systems, “true” otherwise.
+!sameName            (class SameName           ): If “true”, xterm does not send title and icon name change requests when the request would have no effect: the
+!  name is not changed. This has the advantage of preventing flicker and the disadvantage of requiring an extra round trip to the server to find out the
+!  previous value. In practice this should never be a problem. Default is “true”.
+!scaleHeight         (class ScaleHeight        ): Scale line-height values by resource value, which is limited to “0.9” to “1.5”. Default is “1.0”.
+!  While this resource applies to either bitmap or TrueType fonts, its main purpose is to help workaround incompatible changes in Xft library^s font metrics.
+!  Xterm checks font metrics to find what the library claims are the bounding boxes for each glyph (character). However, some of Xft^s features (such as the
+!  autohinter) can cause glyphs to be scaled larger than bounding boxes, and be partly overwritten by next row.  See useClipping for a rel8d resource.
+!scoFunctionKeys     (class ScoFunctionKeys    ): Whether SCO Function Key escape codes should be gener8d for F-keys.  See also keyboardType resource.
+!sessionMgt          (class SessionMgt         ): If “true”, xterm sets up session manager callbacks for XtNdieCallback && XtNsaveCallback. Default is “true”.
+!sunFunctionKeys     (class SunFunctionKeys    ): Whether Sun Function Key escape codes should be gener8d.  *note*: Above "XtN" are literal &&R!my abrEV8ionz;
+!sunKeyboard         (class SunKeyboard        ): Whether Sun/PC keyboard layout should be assumed rather than DEC VT220. This causes keypad "+" to be mapped
+!  to "," && Ctrl F1-F12 to F11-F20, depending on setting of ctrlFKeys, so xterm emul8z DEC VT220 more accurately. Otherwise (with default "false"), xterm
+!  uses PC-style bindings for function keys and keypad. PC-style bindings use Shift, Alt, Control, && Meta keys as modifiers for function-keys and keypad (see
+!  the document Xterm Control Sequences for details). PC-style bindings are analogous to PCTerm, but not the same thing. Normally these bindings do not
+!  conflict with use of Meta key as described for eightBitInput resource. If they do, note that PC-style bindings are evalU8d first. See also keyboardType.
+!tcapFunctionKeys    (class TcapFunctionKeys   ): Whether function key escape codes read from the termcap/terminfo entry should be gener8d for function keys
+!  instead of standard escape sequences. Default is “false”, i.e., this feature is disabled.  See also the keyboardType resource.
+!termName            (class TermName           ): Specifies the terminal type name to be set in the TERM environment variable.
+!title               (class Title              ): Specifies a string that may be used by the window manager when displaying this applic8ion.
+!toolBar             (class ToolBar            ): Specifies whether or not the toolbar should be displayed. Default is “true”.
+!ttyModes            (class TtyModes           ): Specifies a string containing terminal setting keywords and the characters to which they may be bound.
+!  Allowable keywords include: brk, dsusp, eof, eol, eol2, erase, erase2, flush, intr, kill, lnext, quit, rprnt, start, status, stop, susp, swtch, && weras.
+!  Control characters may be specified as ^char (e.g., ^c or ^u) and ^? may be used to indic8 delete (127). Use ^- to denote undef. Use \034 to represent ^\,
+!    since a literal backslash in an X resource escapes the next character. This is very useful for overriding the default terminal settings without having to
+!    do an stty every time an xterm is started. Note, however, that the stty program on a given host may use different keywords; xterm^s table is built-in.
+!  If ttyModes resource specifies value for erase, that overrides ptyInitialErase setting, i.e., xterm initializes the terminal to match that value.
+!useInsertMode       (class UseInsertMode      ): Force use of insert mode by adding approprE8 entries to TERMCAP env var. This is useful if system termcap is
+!  broken. Default is “false”.
+!utmpDisplayId       (class UtmpDisplayId      ): Whether xterm should try to record the display identifier (display number && screen number) as well as the
+!  hostname in the system utmp log file. Default is “true”.
+!utmpInhibit         (class UtmpInhibit        ): Whether xterm should try to record the user^s terminal in the system utmp log file. If true, xterm will not
+!  try.    Default is “false”.
+!waitForMap          (class WaitForMap         ): Whether xterm should w8 for initial window map before starting the subprocess. This is part of ptyHandshake
+!  logic. When xterm is directed to w8 in this fashion, it passes the terminal size from the display end of the pseudo-terminal to the terminal I/O connection,
+!  e.g., according to the window manager. Otherwise, it uses the size as given in resource values or command-line option -geom. Default is “false”.
+!zIconBeep           (class ZIconBeep          ): Same as -ziconbeep command line argument. If value is non-zero, xterms that produce output while iconified
+!  cause an XBell sound at given volume and have “*** ” prepended to their icon titles. Most window managers detect this change immeD8ly, showing you which
+!  window has the output. (A similar feature was in x10 xterm.) Default is “false”.
+!zIconTitleFormat    (class ZIconTitleFormat   ): Allow customiz8ion of string used in zIconBeep fE8ure. Default is “*** %s”. If value contains “%s”, then
+!  xterm inserts icon title at that point rather than prepending the string to the icon title. (Only the first “%s” is used.)
+!VT100 Widget Resources
+!  The following resources are specified as part of the vt100 widget (class VT100). They are specified by patterns such as “XTerm.VT100.$rName”.
+!  If your xterm is configured to support the “toolbar”, then those patterns need an extra level for the form-widget which holds the toolbar && VT100 widget.
+!  A wildcard between the top-level “XTerm” && the “VT100” widget makes the resource settings work for either, e.g., “XTerm*VT100.$rName”.
+!activeIcon          (class ActiveIcon         ):
+!        Specifies whether or not active icon windows are to be used when the xterm window is iconified, if this feature is compiled into xterm.   The
+!        active  icon is a miniature representation of the content of the window and will update as the content changes.  Not all window managers nec‐
+!        essarily support application icon windows.  Some window managers will allow you to enter keystrokes into the active icon window.  The default
+!        is “default”.
+!        Xterm accepts either a keyword (ignoring case) or the number shown in parentheses:
+!        false (0)
+!               No active icon is shown.
+!        true (1)
+!               The active icon is shown.  If you are using twm, use this setting to enable active-icons.
+!        default (2)
+!                 xterm  checks  at  startup, and shows an active icon only for window managers which it can identify and which are known to support the
+!                 feature.  These are fvwm (full support), and window maker (limited).  A few other windows managers (such  as  twm  and  ctwm)  support
+!                 active icons, but do not support the extensions which allow xterm to identify the window manager.
+!allowBoldFonts (class AllowBoldFonts)
+!        When  set  to  “false”,  xterm  will  not use bold fonts.  This overrides both the alwaysBoldMode and the boldMode resources.  alwaysBoldMode
+!        (class AlwaysBoldMode)
+!allowC1Printable (class AllowC1Printable)
+!        If true, overrides the mapping of C1 controls (codes 128-159) to make them be treated as if they were printable  characters.   Although  this
+!        corresponds to no particular standard, some users insist it is a VT100.  The default is “false”.
+!allowColorOps (class AllowColorOps)
+!        Specifies  whether  control  sequences that set/query the dynamic colors should be allowed.  ANSI colors are unaffected by this resource set‐
+!        ting.  The default is “true”.
+!allowFontOps (class AllowFontOps)
+!        Specifies whether control sequences that set/query the font should be allowed.  The default is “false”.
+!allowPasteControls (class AllowPasteControls)
+!     If true, allow control characters such as BEL and CAN to be pasted.  Formatting characters (tab, newline) are always allowed.  Other C0  control
+!     characters  are suppressed unless this resource is enabled.  The exact set of control characters (C0 and C1) depends upon whether UTF-8 encoding
+!     is used, as well as the allowC1Printable resource.  The default is “false”.
+!allowScrollLock (class AllowScrollLock)
+!        Specifies whether control sequences that set/query the Scroll Lock key should be allowed, as well as whether the Scroll Lock key responds  to
+!        user^s keypress.  The default is “false”.
+!        When  this  feature  is enabled, xterm will sense the state of the Scroll Lock key each time it acquires focus.  Pressing the Scroll Lock key
+!        toggles xterm^s internal state, as well as toggling the associated LED.  While the Scroll Lock is active, xterm attempts to keep  a  viewport
+!        on  the same set of lines.  If the current viewport is scrolled past the limit set by the saveLines resource, then Scroll Lock has no further
+!        effect.
+!        The reason for setting the default to “false” is to avoid user surprise.  This key is generally unused in keyboard  configurations,  and  has
+!        not acquired a standard meaning even when it is used in that manner.  Consequently, users have assigned it for ad hoc purposes.
+!allowSendEvents (class AllowSendEvents)
+!        Specifies  whether  or  not  synthetic key and button events (generated using the X protocol SendEvent request) should be interpreted or dis‐
+!        carded.  The default is “false” meaning they are discarded.  Note that allowing such events would create a very large security  hole,  there‐
+!        fore enabling this resource forcefully disables the allowXXXOps resources.  The default is “false”.
+!allowTcapOps (class AllowTcapOps)
+!        Specifies  whether control sequences that query the terminal^s notion of its function-key strings, as termcap or terminfo capabilities should
+!        be allowed.  The default is “true”.
+!        A few programs, e.g., vim, use this feature to get an accurate description of the terminal^s capabilities, independent  of  the  termcap/ter‐
+!        minfo setting:
+!        ·   xterm  can tell the querying program how many colors it supports.  This is a constant, depending on how it is compiled, typically 16.  It
+!            does not change if you alter resource settings, e.g., the boldColors resource.
+!        ·   xterm can tell the querying program what strings are sent by modified (shift-, control-, alt-) function- and keypad-keys.  Reporting con‐
+!            trol- and alt-modifiers is a feature that relies on the ncurses extended naming.
+!allowTitleOps (class AllowTitleOps)
+!        Specifies whether control sequences that modify the window title or icon name should be allowed.  The default is “true”.
+!allowWindowOps (class AllowWindowOps)
+!        Specifies  whether  extended  window  control sequences (as used in dtterm) should be allowed.  These include several control sequences which
+!        manipulate the window size or position, as well as reporting these values and the title or icon name.  Each of  these  can  be  abused  in  a
+!        script;  curiously  enough  most  terminal emulators that implement these restrict only a small part of the repertoire.  For fine-tuning, see
+!        disallowedWindowOps.  The default is “false”.
+!altIsNotMeta (class AltIsNotMeta)
+!        If “true”, treat the Alt-key as if it were the Meta-key.  Your keyboard may happen to be configured so they are the same.  But  if  they  are
+!        not, this allows you to use the same prefix- and shifting operations with the Alt-key as with the Meta-key.  See altSendsEscape and metaSend‐
+!        sEscape.  The default is “false”.
+!altSendsEscape (class AltSendsEscape)
+!        This is an additional keyboard operation that may be processed after the logic for metaSendsEscape.  It is only available if the altIsNotMeta
+!        resource is set.
+!        ·   If “true”, Alt characters (a character combined with the modifier associated with left/right Alt-keys) are converted into a two-character
+!            sequence with the character itself preceded by ESC.  This applies as well to function key control sequences, unless xterm sees  that  Alt
+!            is used in your key translations.
+!        ·   If  “false”, Alt characters input from the keyboard cause a shift to 8-bit characters (just like metaSendsEscape).  By combining the Alt-
+!            and Meta-modifiers, you can create corresponding combinations of ESC-prefix and 8-bit characters.
+!        The default is “False”.  Xterm provides a menu option for toggling this resource.
+!alternateScroll (class ScrollCond)
+!        If “true”, the scroll-back and scroll-forw actions send cursor-up and -down keys when xterm is displaying the alternate screen.  The  default
+!        is “false”.
+!        The alternateScroll state can also be set using a control sequence.
+!alwaysBoldMode (class AlwaysBoldMode)
+!        Specifies  whether  xterm should check if the normal and bold fonts are distinct before deciding whether to use overstriking to simulate bold
+!        fonts.  If this resource is true, xterm does not make the check for distinct fonts when deciding how to handle the  boldMode  resource.   The
+!        default is “false”.
+!        boldMode   alwaysBoldMode   Comparison   Action
+!        ────────────────────────────────────────────────────
+!        false      false            ignored      use font
+!        false      true             ignored      use font
+!        true       false            same         overstrike
+!        true       false            different    use font
+!        true       true             ignored      overstrike
+!        This resource is used only for bitmap fonts:
+!        ·   When  using  bitmap  fonts, it is possible that the font server will approximate the bold font by rescaling it from a different font size
+!            than expected.  The alwaysBoldMode resource allows the user to override the (sometimes poor) resulting bold font with overstriking (which
+!            is at least consistent).
+!        ·   The problem does not occur with TrueType fonts (though there can be other unnecessary issues such as different coverage of the normal and
+!            bold fonts).
+!        As an alternative, setting the allowBoldFonts resource to false overrides both the alwaysBoldMode and the boldMode resources.
+!alwaysHighlight (class AlwaysHighlight)
+!        Specifies whether or not xterm should always display a highlighted text cursor.  By default (if this resource is false), a hollow text cursor
+!        is displayed whenever the pointer moves out of the window or the window loses the input focus.  The default is “false”.
+!alwaysUseMods (class AlwaysUseMods)
+!        Override  the  numLock  resource,  telling xterm to use the Alt and Meta modifiers to construct parameters for function key sequences even if
+!        those modifiers appear in the translations resource.  Normally xterm checks if Alt or Meta is used in a translation that would conflict  with
+!        function key modifiers, and will ignore these modifiers in that special case.  The default is “false”.
+!answerbackString (class AnswerbackString)
+!        Specifies the string that xterm sends in response to an ENQ (control/E) character from the host.  The default is a blank string, i.e., “”.  A
+!        hardware VT100 implements this feature as a setup option.
+!appcursorDefault (class AppcursorDefault)
+!        If “true”, the cursor keys are initially in application mode.  This is the same as the VT102 private DECCKM mode, The default is “false”.
+!appkeypadDefault (class AppkeypadDefault)
+!        If “true”, the keypad keys are initially in application mode.  The default is “false”.
+!assumeAllChars (class AssumeAllChars)
+!        If “true”, this enables a special case in bitmap fonts to allow the font server to choose how to display  missing  glyphs.   The  default  is
+!        “false”.
+!autoWrap (class AutoWrap)
+!        Specifies whether or not auto-wraparound should be enabled.  This is the same as the VT102 DECAWM.  The default is “true”.
+!awaitInput (class AwaitInput)
+!        Specifies whether or not the xterm uses a 50 millisecond timeout to await input (i.e., to support the Xaw3d arrow scrollbar).  The default is
+!        “false”.
+!backarrowKey (class BackarrowKey)
+!        Specifies whether the backarrow key transmits a backspace (8) or delete (127) character.  This corresponds to the DECBKM control sequence.  A
+!        “true” value specifies backspace.  The default is “True”.  Pressing the control key toggles this behavior.
+!background (class Background)
+!        Specifies the color to use for the background of the window.  The default is “XtDefaultBackground”.
+!bellIsUrgent (class BellIsUrgent)
+!        Specifies whether to set the Urgency hint for the window manager when making a bell sound.  The default is “false”.
+!bellOnReset (class BellOnReset)
+!        Specifies whether to sound a bell when doing a hard reset.  The default is “true”.
+!bellSuppressTime (class BellSuppressTime)
+!        Number  of  milliseconds  after  a  bell command is sent during which additional bells will be suppressed.  Default is 200.  If set non-zero,
+!        additional bells will also be suppressed until the server reports that processing of the first bell has been completed; this feature is  most
+!        useful with the visible bell.
+!boldColors (class ColorMode)
+!        Specifies whether to combine bold attribute with colors like the IBM PC, i.e., map colors 0 through 7 to colors 8 through 15.  These normally
+!        are the brighter versions of the first 8 colors, hence bold.  The default is “true”.
+!boldFont (class BoldFont)
+!        Specifies the name of the bold font to use instead of overstriking.  There is no default for this resource.
+!        This font must be the same height and width as the normal font, otherwise it is ignored.  If only one of the normal or bold fonts  is  speci‐
+!        fied, it will be used as the normal font and the bold font will be produced by overstriking this font.
+!        See also the discussion of boldMode and alwaysBoldMode resources.
+!boldMode (class BoldMode)
+!        This  specifies whether or not text with the bold attribute should be overstruck to simulate bold fonts if the resolved bold font is the same
+!        as the normal font.  It may be desirable to disable bold fonts when color is being used for the bold attribute.
+!        Note that xterm has one bold font which you may set explicitly.  Xterm attempts to derive a bold font for the other  font  selections  (font1
+!        through  font6).   If  it  cannot  find a bold font, it will use the normal font.  In each case (whether the explicit resource or the derived
+!        font), if the normal and bold fonts are distinct, this resource has no effect.  The default is “true”.
+!        See the alwaysBoldMode resource which can modify the behavior of this resource.
+!        Although xterm attempts to derive a bold font for other font selections, the font server may not cooperate.  Since X11R6, bitmap  fonts  have
+!        been scaled.  The font server claims to provide the bold font that xterm requests, but the result is not always readable.  XFree86 introduced
+!        a feature which can be used to suppress the scaling.   In  the  X  server^s  configuration  file  (e.g.,  “/etc/X11/XFree86”),  you  can  add
+!        “:unscaled” to the end of the directory specification for the “misc” fonts, which comprise the fixed-pitch fonts that are used by xterm.  For
+!        example
+!            FontPath                 "/usr/lib/X11/fonts/misc/"
+!        would become
+!            FontPath                 "/usr/lib/X11/fonts/misc/:unscaled"
+!        Depending on your configuration, the font server may have its own configuration file.  The same “:unscaled” can be added to its configuration
+!        file at the end of the directory specification for “misc”.
+!        The bitmap scaling feature is also used by xterm to implement VT102 double-width and double-height characters.
+!brokenLinuxOSC (class BrokenLinuxOSC)
+!        If  true,  xterm  applies  a  workaround  to  ignore malformed control sequences that a Linux script might send.  Compare the palette control
+!        sequences documented in console_codes with ECMA-48.  The default is “true”.
+!brokenSelections (class BrokenSelections)
+!        If true, xterm in 8-bit mode will interpret STRING selections as carrying text in the current locale^s encoding.  Normally STRING  selections
+!        carry ISO-8859-1 encoded text.  Setting this resource to “true” violates the ICCCM; it may, however, be useful for interacting with some bro‐
+!        ken X clients.  The default is “false”.
+!brokenStringTerm (class BrokenStringTerm)
+!        provides a work-around for some ISDN routers which start an application control string without completing it.  Set this to  “true”  if  xterm
+!        appears to freeze when connecting.  The default is “false”.
+!        Xterm^s state parser recognizes several types of control strings which can contain text, e.g.,
+!        APC (Application Program Command),
+!        DCS (Device Control String),
+!        OSC (Operating System Command),
+!        PM (Privacy Message), and
+!        SOS (Start of String),
+!        Each  should  end  with  a  string-terminator  (a special character which cannot appear in these strings).  Ordinary control characters found
+!        within the string are not ignored; they are processed without interfering with the process of  accumulating  the  control  string^s  content.
+!        Xterm recognizes these controls in all modes, although some of the functions may be suppressed after parsing the control.
+!        When  enabled,  this  feature  allows  the user to exit from an unterminated control string when any of these ordinary control characters are
+!        found:
+!        control/D (used as an end of file in many shells),
+!        control/H (backspace),
+!        control/I (tab-feed),
+!        control/J (line feed aka newline),
+!        control/K (vertical tab),
+!        control/L (form feed),
+!        control/M (carriage return),
+!        control/N (shift-out),
+!        control/O (shift-in),
+!        control/Q (XOFF),
+!        control/X (cancel)
+!c132 (class C132)
+!        Specifies whether or not the VT102 DECCOLM escape sequence, used to switch between 80 and 132 columns, should be  honored.   The  default  is
+!        “false”.
+!cacheDoublesize (class CacheDoublesize)
+!        Tells whether to cache double-sized fonts by xterm.  Set this to zero to disable double-sized fonts altogether.
+!cdXtraScroll (class CdXtraScroll)
+!        Specifies  whether xterm should scroll to a new page when clearing the whole screen.  Like tiXtraScroll, the intent of this option is to pro‐
+!        vide a picture of the full-screen application^s display on the scrollback before wiping out the text.   The  default  for  this  resource  is
+!        “false”.
+!charClass (class CharClass)
+!        Specifies  comma-separated lists of character class bindings of the form [low-]high:value.  These are used in determining which sets of char‐
+!        acters should be treated the same when doing cut and paste.  See the CHARACTER CLASSES section.
+!cjkWidth (class CjkWidth)
+!        Specifies whether xterm should follow the traditional East Asian width convention.  When turned on, characters with East Asian Ambiguous  (A)
+!        category  in  UTR 11 have a column width of 2.  You may have to set this option to “true” if you have some old East Asian terminal based pro‐
+!        grams that assume that line-drawing characters have a column width of 2.  If this resource is false, the mkWidth resource controls the choice
+!        between the system^s wcwidth and xterm^s built-in tables.  The default is “false”.
+!color0 (class Color0)
+!color1 (class Color1)
+!color2 (class Color2)
+!color3 (class Color3)
+!color4 (class Color4)
+!color5 (class Color5)
+!color6 (class Color6)
+!color7 (class Color7)
+!        These specify the colors for the ISO-6429 extension.  The defaults are, respectively, black, red3, green3, yellow3, a customizable dark blue,
+!        magenta3, cyan3, and gray90.  The default shades of color are chosen to allow the colors 8-15 to be used as brighter versions.
+!color8 (class Color8)
+!color9 (class Color9)
+!color10 (class Color10)
+!color11 (class Color11)
+!color12 (class Color12)
+!color13 (class Color13)
+!color14 (class Color14)
+!color15 (class Color15)
+!        These specify the colors for the ISO-6429 extension if the bold attribute is also enabled.  The default  resource  values  are  respectively,
+!        gray30, red, green, yellow, a customizable light blue, magenta, cyan, and white.
+!color16 (class Color16)
+!through
+!color255 (class Color255)
+!        These  specify the colors for the 256-color extension.  The default resource values are for colors 16 through 231 to make a 6x6x6 color cube,
+!        and colors 232 through 255 to make a grayscale ramp.
+!        Resources past color15 are available as a compile-time option.  Due to a hardcoded limit in the X libraries on the total number of  resources
+!        (to  400),  the resources for 256-colors are omitted when wide-character support and luit are enabled.  Besides inconsistent behavior if only
+!        part of the resources were allowed, determining the exact cutoff is difficult, and the X libraries tend to crash if the number  of  resources
+!        exceeds the limit.  The color palette is still initialized to the same default values, and can be modified via control sequences.
+!        On the other hand, the resource limit does permit including the entire range for 88-colors.
+!colorAttrMode (class ColorAttrMode)
+!        Specifies  whether  colorBD, colorBL, colorRV, and colorUL should override ANSI colors.  If not, these are displayed only when no ANSI colors
+!        have been set for the corresponding position.  The default is “false”.
+!colorBD (class ColorBD)
+!        This specifies the color to use to display bold characters if the “colorBDMode” resource is enabled.  The default is “XtDefaultForeground”.
+!        See also the veryBoldColors resource which allows combining bold and color.
+!colorBDMode (class ColorAttrMode)
+!        Specifies whether characters with the bold attribute should be displayed in color or as bold characters.  Note  that  setting  colorMode  off
+!        disables all colors, including bold.  The default is “false”.
+!colorBL (class ColorBL)
+!        This specifies the color to use to display blink characters if the “colorBLMode” resource is enabled.  The default is “XtDefaultForeground”.
+!        See also the veryBoldColors resource which allows combining underline and color.
+!colorBLMode (class ColorAttrMode)
+!        Specifies  whether  characters  with  the blink attribute should be displayed in color.  Note that setting colorMode off disables all colors,
+!        including this.  The default is “false”.
+!colorMode (class ColorMode)
+!        Specifies whether or not recognition of ANSI (ISO-6429) color change escape sequences should be enabled.  The default is “true”.
+!colorRV (class ColorRV)
+!        This specifies the color to use to display reverse characters if the “colorRVMode” resource  is  enabled.   The  default  is  “XtDefaultFore‐
+!        ground”.
+!        See also the veryBoldColors resource which allows combining reverse and color.
+!colorRVMode (class ColorAttrMode)
+!        Specifies  whether  characters with the reverse attribute should be displayed in color.  Note that setting colorMode off disables all colors,
+!        including this.  The default is “false”.
+!colorUL (class ColorUL)
+!        This specifies the color to use to display underlined characters if the “colorULMode” resource is enabled.  The  default  is  “XtDefaultFore‐
+!        ground”.
+!        See also the veryBoldColors resource which allows combining underline and color.
+!colorULMode (class ColorAttrMode)
+!        Specifies whether characters with the underline attribute should be displayed in color or as underlined characters.  Note that setting color‐
+!        Mode off disables all colors, including underlining.  The default is “false”.
+!combiningChars (class CombiningChars)
+!        Specifies the number of wide-characters which can be stored in a cell to overstrike (combine) with the base character of the cell.  This  can
+!        be set to values in the range 0 to 4.  The default is “2”.
+!ctrlFKeys (class CtrlFKeys)
+!        In  VT220  keyboard  mode  (see  sunKeyboard  resource), specifies the amount by which to shift F1-F12 given a control modifier (CTRL).  This
+!        allows you to generate key symbols for F10-F20 on a Sun/PC keyboard.  The default is “10”, which means that CTRL F1 generates the key  symbol
+!        for F11.
+!curses (class Curses)
+!        Specifies whether or not the last column bug in more(1) should be worked around.  See the -cu option for details.  The default is “false”.
+!cursorBlink (class CursorBlink)
+!        Specifies whether to make the cursor blink.  The default is “false”.
+!        Xterm  uses  two variables to determine whether the cursor blinks.  One is set by this resource.  The other is set by control sequences (pri‐
+!        vate mode 12 and DECSCUSR).  Xterm tests the XOR of the two variables.
+!cursorColor (class CursorColor)
+!        Specifies the color to use for the text cursor.  The default is “XtDefaultForeground”.  By default, xterm attempts to keep  this  color  from
+!        being  the same as the background color, since it draws the cursor by filling the background of a text cell.  The same restriction applies to
+!        control sequences which may change this color.
+!        Setting this resource overrides most of xterm^s adjustments to cursor color.  It will still use reverse-video to disallow some cases, such as
+!        a black cursor on a black background.
+!cursorOffTime (class CursorOffTime)
+!        Specifies  the  duration  of  the  “off” part of the cursor blink cycle-time in milliseconds.  The same timer is used for text blinking.  The
+!        default is “300”.
+!cursorOnTime (class CursorOnTime)
+!        Specifies the duration of the “on” part of the cursor blink cycle-time, in milliseconds.  The same timer is  used  for  text  blinking.   The
+!        default is “600”.
+!cutNewline (class CutNewline)
+!        If  “false”,  triple clicking to select a line does not include the Newline at the end of the line.  If “true”, the Newline is selected.  The
+!        default is “true”.
+!cursorUnderLine (class CursorUnderLine)
+!        Specifies whether to make the cursor underlined or a box.  The default is “false”.
+!cutToBeginningOfLine (class CutToBeginningOfLine)
+!        If “false”, triple clicking to select a line selects only from the current word forward.  If  “true”,  the  entire  line  is  selected.   The
+!        default is “true”.
+!decTerminalID (class DecTerminalID)
+!        Specifies  the  emulation  level (100=VT100, 220=VT220, etc.), used to determine the type of response to a DA control sequence.  Leading non-
+!        digit characters are ignored, e.g., “vt100” and “100” are the same.  The default is “420”.
+!defaultString (class DefaultString)
+!        Specify the character (or string) which xterm will substitute when pasted text includes a character which cannot be represented in  the  cur‐
+!        rent  encoding.   For  instance,  pasting  UTF-8 text into a display of ISO-8859-1 characters will only be able to display codes 0-255, while
+!        UTF-8 text can include Unicode values above 255.  The default is “#” (a single pound sign).
+!        If the undisplayable text would be double-width, xterm will add a space after the “#” character, to give  roughly  the  same  layout  on  the
+!        screen as the original text.
+!deleteIsDEL (class DeleteIsDEL)
+!        Specifies  whether  the  Delete  key  on the editing keypad should send DEL (127) or the VT220-style Remove escape sequence.  A “false” value
+!        enables the latter.  The default is “Maybe”.
+!disallowedColorOps (class DisallowedColorOps)
+!        Specify which features will be disabled if allowColorOps is false.  This is a comma-separated list of names.  The default value is
+!        SetColor,GetColor,GetAnsiColor
+!        The names are listed below.  xterm ignores capitalization, but they are shown in mixed-case for clarity.
+!        SetColor
+!             Set a specific dynamic color.
+!        GetColor
+!             Report the current setting of a given dynamic color.
+!        GetAnsiColor
+!             Report the current setting of a given ANSI color (actually any of the colors set via ANSI-style controls).
+!disallowedFontOps (class DisallowedFontOps)
+!        Specify which features will be disabled if allowFontOps is false.  This is a comma-separated list of names.  The default value is
+!        SetFont,GetFont
+!        The names are listed below.  xterm ignores capitalization, but they are shown in mixed-case for clarity.
+!        SetFont
+!             Set the specified font.
+!        GetFont
+!             Report the specified font.
+!disallowedTcapOps (class DisallowedTcapOps)
+!        Specify which features will be disabled if allowTcapOps is false.  This is a comma-separated list of names.  The default value is
+!        SetTcap,GetTcap
+!        The names are listed below.  xterm ignores capitalization, but they are shown in mixed-case for clarity.
+!       SetTcap
+!             (not implemented)
+!        GetTcap
+!             Report specified function- and other special keys.
+!disallowedWindowOps (class DisallowedWindowOps)
+!        Specify which features will be disabled if allowWindowOps is false.  This is a comma-separated list of names, or (for  the  controls  adapted
+!        from dtterm the operation number).  The default value is
+!        1,2,3,4,5,6,7,8,9,11,13,14,18,19,20,21,GetSelection,SetSelection,SetWinLines,SetXprop
+!(i.e. no operations are allowed).
+!        The  names  are  listed below.  xterm ignores capitalization, but they are shown in mixed-case for clarity.  Where a number can be used as an
+!        alternative, it is given in parentheses after the name.
+!        GetIconTitle (20)
+!             Report xterm window^s icon label as a string.
+!        GetScreenSizeChars (19)
+!             Report the size of the screen in characters as numbers.
+!        GetSelection
+!             Report selection data as a base64 string.
+!        GetWinPosition (13)
+!             Report xterm window position as numbers.
+!        GetWinSizeChars (18)
+!             Report the size of the text area in characters as numbers.
+!        GetWinSizePixels (14)
+!             Report xterm window in pixels as numbers.
+!        GetWinState (11)
+!             Report xterm window state as a number.
+!        GetWinTitle (21)
+!             Report xterm window^s title as a string.
+!        LowerWin (6)
+!             Lower the xterm window to the bottom of the stacking order.
+!        MaximizeWin (9)
+!             Maximize window (i.e., resize to screen size).
+!        FullscreenWin (10)
+!             Use full screen (i.e., resize to screen size, without window decorations).
+!        MinimizeWin (2)
+!             Iconify window.
+!        PopTitle (23)
+!             Pop title from internal stack.
+!        PushTitle (22)
+!             Push title to internal stack.
+!        RaiseWin (5)
+!             Raise the xterm window to the front of the stacking order.
+!        RefreshWin (7)
+!             Refresh the xterm window.
+!        RestoreWin (1)
+!             De-iconify window.
+!        SetSelection
+!             Set selection data.
+!        SetWinLines
+!             Resize to a given number of lines, at least 24.
+!        SetWinPosition (3)
+!             Move window to given coordinates.
+!        SetWinSizeChars (8)
+!             Resize the text area to given size in characters.
+!        SetWinSizePixels (4)
+!             Resize the xterm window to given size in pixels.
+!        SetXprop
+!             Set X property on top-level window.
+!dynamicColors (class DynamicColors)
+!        Specifies whether or not escape sequences to change colors assigned to different attributes are recognized.
+!eightBitControl (class EightBitControl)
+!        Specifies whether or not control sequences sent by the terminal should be eight-bit characters or escape sequences.  The default is “false”.
+!eightBitInput (class EightBitInput)
+!        If “true”, Meta characters (a single-byte character combined with the Meta modifier key) input from the keyboard are presented  as  a  single
+!        character, modified according to the eightBitMeta resource.  If “false”, Meta characters are converted into a two-character sequence with the
+!        character itself preceded by ESC.  The default is “true”.
+!        The metaSendsEscape and altSendsEscape resources may override this feature.  Generally keyboards do not have a key labeled “Meta”, but  “Alt”
+!        keys  are  common, and they are conventionally used for “Meta”.  If they were synonymous, it would have been reasonable to name this resource
+!        “altSendsEscape”, reversing its sense.  For more background on this, see the meta function in curses.
+!        Note that the Alt key is not necessarily the same as the Meta modifier.  xmodmap lists your key modifiers.  X defines  modifiers  for  shift,
+!        (caps)  lock  and  control,  as  well as 5 additional modifiers which are generally used to configure key modifiers.  xterm inspects the same
+!        information to find the modifier associated with either Meta key (left or right), and uses that key as the Meta modifier.  It also looks  for
+!        the NumLock key, to recognize the modifier which is associated with that.
+!        If  your  xmodmap  configuration  uses the same keycodes for Alt- and Meta-keys, xterm will only see the Alt-key definitions, since those are
+!        tested before Meta-keys.  NumLock is tested first.  It is important to keep these keys distinct; otherwise some of xterm^s  functionality  is
+!        not available.
+!        The  eightBitInput  resource  is  tested  at  startup  time.  If “true”, the xterm tries to put the terminal into 8-bit mode.  If “false”, on
+!        startup, xterm tries to put the terminal into 7-bit mode.  For some configurations this is unsuccessful; failure is ignored.  After  startup,
+!        xterm does not change the terminal between 8-bit and 7-bit mode.
+!        As  originally  implemented  in  X11,  the  resource value did not change after startup.  However (since patch #216 in 2006) xterm can modify
+!        eightBitInput after startup via a control sequence.  The corresponding terminfo capabilities smm (set meta mode) and rmm  (reset  meta  mode)
+!        have  been recognized by bash for some time.  Interestingly enough, bash^s notion of "meta mode" differs from the standard definition (in the
+!        terminfo manual), which describes the change to the eighth bit of a character.  It happens that bash views "meta mode" as the  ESC  character
+!        that  xterm puts before a character when a special meta key is pressed.  bash^s early documentation talks about the ESC character and ignores
+!        the eighth bit.
+!eightBitMeta (class EightBitMeta)
+!        This controls the way xterm modifies the eighth bit of a single-byte key when the eightBitInput resource is set.  The default is “locale”.
+!        The resource value is a string, evaluated as a boolean after startup.
+!        false
+!             The key is sent unmodified.
+!        locale
+!             The key is modified only if the locale uses eight-bit encoding.
+!        true The key is sent modified.
+!        never
+!             The key is always sent unmodified.
+!        Except for the never choice, xterm honors the terminfo capabilities smm (set meta mode) and rmm (reset meta mode), allowing the feature to be
+!        turned on or off dynamically.
+!        If eightBitMeta is enabled when the locale uses UTF-8, xterm encodes the value as UTF-8 (since patch #183 in 2003).
+!eightBitOutput (class EightBitOutput)
+!        Specifies  whether  or not eight-bit characters sent from the host should be accepted as is or stripped when printed.  The default is “true”,
+!        which means that they are accepted as is.
+!eightBitSelectTypes (class EightBitSelectTypes)
+!        Override xterm^s default selection target list (see SELECT/PASTE) for selections in normal  (ISO-8859-1)  mode.   The  default  is  an  empty
+!        string, i.e., “”, which does not override anything.
+!faceName (class FaceName)
+!        Specify  the  pattern for scalable fonts selected from the FreeType library if support for that library was compiled into xterm.  There is no
+!        default value.
+!        If not specified, or if there is no match for both normal and bold fonts, xterm uses the bitmap font and related resources.
+!        It is possible to select suitable bitmap fonts using a script such as this:
+!            #!/bin/sh
+!            FONT=`xfontsel -print`
+!            test -n "$FONT" && xfd -fn "$FONT"
+!        However (even though xfd accepts a “-fa” option to denote FreeType fonts), xfontsel has not been similarly extended.  As  a  workaround,  you
+!        may try
+!            fc-list :scalable=true:spacing=mono: family
+!        to find a list of scalable fixed-pitch fonts which may be used for the faceName resource value.
+!faceNameDoublesize (class FaceNameDoublesize)
+!        Specify a double-width scalable font for cases where an application requires this, e.g., in CJK applications.  There is no default value.
+!        If the application uses double-wide characters and this resource is not given, xterm will use a scaled version of the font given by faceName.
+!faceSize (class FaceSize)
+!        Specify  the  pointsize  for  fonts  selected  from the FreeType library if support for that library was compiled into xterm.  The default is
+!        “14.0” On the VT Fonts menu, this corresponds to the Default entry.
+!        Although the default is “14.0”, this may not be the same as the pointsize for the default bitmap font,  i.e.,  that  assigned  with  the  -fn
+!        option,  or the font resource.  For example, the “fixed” font usually has a pointsize of “8.0”.  If you set faceSize to match the size of the
+!        bitmap font, then switching between bitmap and TrueType fonts via the font menu will give comparable sizes for the window.
+!        You can specify the pointsize for TrueType fonts selected with the other size-related menu entries such as Medium, Huge, etc., by  using  one
+!        of  the  following  resource values.  If you do not specify a value, they default to “0.0”, which causes xterm to use the ratio of font sizes
+!        from the corresponding bitmap font resources to obtain a TrueType pointsize.
+!        If all of the faceSize resources are set, then xterm will use this information to determine the next smaller/larger  TrueType  font  for  the
+!        larger-vt-font() and smaller-vt-font() actions.  If any are not set, xterm will use only the areas of the bitmap fonts.
+!faceSize1 (class FaceSize1)
+!        Specifies the pointsize of the first alternative font.
+!faceSize2 (class FaceSize2)
+!        Specifies the pointsize of the second alternative font.
+!faceSize3 (class FaceSize3)
+!        Specifies the pointsize of the third alternative font.
+!faceSize4 (class FaceSize4)
+!        Specifies the pointsize of the fourth alternative font.
+!faceSize5 (class FaceSize5)
+!        Specifies the pointsize of the fifth alternative font.
+!faceSize6 (class FaceSize6)
+!        Specifies the pointsize of the sixth alternative font.
+!font (class Font)
+!        Specifies the name of the normal font.  The default is “fixed”.
+!        See the discussion of the locale resource, which describes how this font may be overridden.
+!        NOTE: some resource files use patterns such as
+!            *font: fixed                 ! which are overly broad, affecting both
+!            XTerm.VT100.font        &&
+!            XTerm.VT100.Utf8Fonts.font   ! which is probably not what you intended.
+!fastScroll (class FastScroll)
+!        Modifies the effect of jump scroll (jumpScroll) by suppressing screen refreshes for the special case when output to the screen has completely
+!        shifted the contents off-screen.  For instance, cat^ing a large file to the screen does this.
+!font1 (class Font1)
+!        Specifies the name of the first alternative font, corresponding to “Unreadable” in the standard menu.
+!font2 (class Font2)
+!        Specifies the name of the second alternative font, corresponding to “Tiny” in the standard menu.
+!font3 (class Font3)
+!        Specifies the name of the third alternative font, corresponding to “Small” in the standard menu.
+!font4 (class Font4)
+!        Specifies the name of the fourth alternative font, corresponding to “Medium” in the standard menu.
+!font5 (class Font5)
+!        Specifies the name of the fifth alternative font, corresponding to “Large” in the standard menu.
+!font6 (class Font6)
+!        Specifies the name of the sixth alternative font, corresponding to “Huge” in the standard menu.
+!fontDoublesize (class FontDoublesize)
+!        Specifies whether xterm should attempt to use font scaling to draw double-sized characters.  Some older font servers cannot do this properly,
+!        will  return  misleading  font  metrics.   The default is “true”.  If disabled, xterm will simulate double-sized characters by drawing normal
+!        characters with spaces between them.
+!fontWarnings (class FontWarnings)
+!        Specify whether xterm should report an error if it fails to load a font:
+!        0    Never report an error (though the X libraries may).
+!        1    Report an error if the font name was given as a resource setting.
+!        2    Always report an error on failure to load a font.
+!        The default is “1”.
+!forceBoxChars (class ForceBoxChars)
+!        Specifies whether xterm should assume the normal and bold fonts have VT100 line-drawing characters:
+!        ·   The fixed-pitch ISO-8859-*-encoded fonts used by xterm normally have the VT100 line-drawing glyphs  in  cells  1-31.   Other  fixed-pitch
+!            fonts may be more attractive, but lack these glyphs.
+!        ·   When  using  an  ISO-10646-1  font  and  the wideChars resource is true, xterm uses the Unicode glyphs which match the VT100 line-drawing
+!            glyphs.
+!        If “false”, xterm checks for missing glyphs in the font and makes line-drawing characters directly as needed.  If “true”, xterm  assumes  the
+!        font does not contain the line-drawing characters, and draws them directly.  The default is “false”.
+!forcePackedFont (class ForcePackedFont)
+!        Specifies  whether  xterm  should  use the maximum or minimum glyph width when displaying using a bitmap font.  Use the maximum width to help
+!        with proportional fonts.  The default is “true”, denoting the minimum width.
+!foreground (class Foreground)
+!        Specifies the color to use for displaying text in the window.  Setting the class name instead of the instance name is an  easy  way  to  have
+!        everything that would normally appear in the text color change color.  The default is “XtDefaultForeground”.
+!formatOtherKeys (class FormatOtherKeys)
+!        Overrides the format of the escape sequence used to report modified keys with the modifyOtherKeys resource.
+!        0  send modified keys as parameters for function-key 27 (default).
+!        1  send modified keys as parameters for CSI u.
+!freeBoldBox (class FreeBoldBox)
+!        Specifies  whether xterm should assume the bounding boxes for normal and bold fonts are compatible.  If “false”, xterm compares them and will
+!        reject choices of bold fonts that do not match the size of the normal font.  The default is “false”, which means that the comparison is  per‐
+!        formed.
+!geometry (class Geometry)
+!        Specifies the preferred size and position of the VT102 window.  There is no default for this resource.
+!highlightColor (class HighlightColor)
+!        Specifies  the  color  to  use  for the background of selected (highlighted) text.  If not specified (i.e., matching the default foreground),
+!        reverse video is used.  The default is “XtDefaultForeground”.
+!highlightColorMode (class HighlightColorMode)
+!        Specifies whether xterm should use highlightTextColor and highlightColor to override the reversed foreground/background colors  in  a  selec‐
+!        tion.   The  default  is  unspecified: at startup, xterm checks if those resources are set to something other than the default foreground and
+!        background colors.  Setting this resource disables the check.
+!        The following table shows the interaction of the highlighting resources, abbreviated as shown to fit in this page:
+!        HCM
+!           highlightColorMode
+!        HR highlightReverse
+!        HBG
+!           highlightColor
+!        HFG
+!           highlightTextColor
+!        HCM       HR      HBG       HFG       Highlight
+!        ──────────────────────────────────────────────────────
+!        false     false   default   default   bg/fg
+!        false     false   default   set       bg/fg
+!        false     false   set       default   fg/HBG
+!        false     false   set       set       fg/HBG
+!        ──────────────────────────────────────────────────────
+!        false     true    default   default   bg/fg
+!        false     true    default   set       bg/fg
+!        false     true    set       default   fg/HBG
+!        false     true    set       set       fg/HBG
+!        ──────────────────────────────────────────────────────
+!        true      false   default   default   bg/fg
+!        true      false   default   set       HFG/fg
+!        true      false   set       default   bg/HBG
+!        true      false   set       set       HFG/HBG
+!        ──────────────────────────────────────────────────────
+!        true      true    default   default   fg/fg (useless)
+!        true      true    default   set       HFG/fg
+!        true      true    set       default   fg/HBG
+!        true      true    set       set       HFG/HBG
+!        ──────────────────────────────────────────────────────
+!        default   false   default   default   bg/fg
+!        default   false   default   set       bg/fg
+!        default   false   set       default   fg/HBG
+!        default   false   set       set       HFG/HBG
+!        ──────────────────────────────────────────────────────
+!        default   true    default   default   bg/fg
+!        default   true    default   set       bg/fg
+!        default   true    set       default   fg/HBG
+!        default   true    set       set       HFG/HBG
+!        ──────────────────────────────────────────────────────
+!highlightReverse (class HighlightReverse)
+!        Specifies whether xterm should reverse the selection foreground and background colors when selecting text with reverse-video attribute.  This
+!        applies  only to the highlightColor and highlightTextColor resources, e.g., to match the color scheme of xwsh.  If “true”, xterm reverses the
+!        colors, If “false”, xterm does not reverse colors, The default is “true”.
+!highlightSelection (class HighlightSelection)
+!        If “false”, selecting with the mouse highlights all positions on the screen between the beginning of the selection and the current  position.
+!        If “true”, xterm highlights only the positions that contain text that can be selected.  The default is “false”.
+!        Depending  on the way your applications write to the screen, there may be trailing blanks on a line.  Xterm stores data as it is shown on the
+!        screen.  Erasing the display changes the internal state of each cell so it is not considered a blank for the purpose  of  selection.   Blanks
+!        written since the last erase are selectable.  If you do not wish to have trailing blanks in a selection, use the trimSelection resource.
+!highlightTextColor (class HighlightTextColor)
+!        Specifies  the  color  to  use  for the foreground of selected (highlighted) text.  If not specified (i.e., matching the default background),
+!        reverse video is used.  The default is “XtDefaultBackground”.
+!hpLowerleftBugCompat (class HpLowerleftBugCompat)
+!        Specifies whether to work around a bug in HP^s xdb, which ignores termcap and always sends ESC F to move to the lower  left  corner.   “true”
+!        causes xterm to interpret ESC F as a request to move to the lower left corner of the screen.  The default is “false”.
+!i18nSelections (class I18nSelections)
+!        If  false,  xterm  will not request the targets COMPOUND_TEXT or TEXT.  The default is “true”. It may be set to false in order to work around
+!        ICCCM violations by other X clients.
+!iconBorderColor (class BorderColor)
+!        Specifies the border color for the active icon window if this feature is compiled into xterm.  Not all window managers  will  make  the  icon
+!        border visible.
+!iconBorderWidth (class BorderWidth)
+!        Specifies  the  border width for the active icon window if this feature is compiled into xterm.  The default is “2”.  Not all window managers
+!        will make the border visible.
+!iconFont (class IconFont)
+!        Specifies the font for the miniature active icon window, if this feature is compiled into xterm.  The default is “nil2”.
+!initialFont (class InitialFont)
+!        Specifies which of the VT100 fonts to use initially.  Values are the same  as  for  the  set-vt-font  action.   The  default  is  “d”,  i.e.,
+!        “default”.
+!inputMethod (class XtCInputMethod)
+!        Tells xterm which type of input method to use.  There is no default method.
+!internalBorder (class BorderWidth)
+!        Specifies the number of pixels between the characters and the window border.  The default is “2”.
+!italicULMode (class ColorAttrMode)
+!        Specifies  whether  characters  with the underline attribute should be displayed in an italic font or as underlined characters.  It is imple‐
+!        mented only for TrueType fonts.
+!jumpScroll (class JumpScroll)
+!        Specifies whether or not jump scroll should be used.  This corresponds to the VT102 DECSCLM  private  mode.   The  default  is  “true”.   See
+!        fastScroll for a variation.
+!keepSelection (class KeepSelection)
+!        Specifies  whether  xterm  will  keep  the selection even after the selected area was touched by some output to the terminal.  The default is
+!        “true”.
+!keyboardDialect (class KeyboardDialect)
+!        Specifies the initial keyboard dialect, as well as the default value when the terminal is reset.  The value given is the same  as  the  final
+!        character in the control sequences which change character sets.  The default is “B”, which corresponds to US ASCII.
+!nameKeymap (class NameKeymap)
+!        See the discussion of the keymap() action.
+!limitResize (class LimitResize)
+!        Limits resizing of the screen via control sequence to a given multiple of the display dimensions.  The default is “1”.
+!locale (class Locale)
+!        Specifies how to use luit, an encoding converter between UTF-8 and locale encodings.  The resource value (ignoring case) may be:
+!        true
+!            xterm will use the encoding specified by the users^ LC_CTYPE locale (i.e., LC_ALL, LC_CTYPE, or LANG variables) as far as possible.  This
+!            is realized by always enabling UTF-8 mode and invoking luit in non-UTF-8 locales.
+!        medium
+!            xterm will follow users^ LC_CTYPE locale only for UTF-8, east Asian, and Thai locales, where the encodings were not supported by  conven‐
+!            tional 8bit mode with changing fonts.  For other locales, xterm will use conventional 8bit mode.
+!        checkfont
+!            If  mini-luit  is compiled-in, xterm will check if a Unicode font has been specified.  If so, it checks if the character encoding for the
+!            current locale is POSIX, Latin-1 or Latin-9, uses the appropriate mapping to support those with the Unicode font.  For  other  encodings,
+!            xterm assumes that UTF-8 encoding is required.
+!        false
+!            xterm will use conventional 8bit mode or UTF-8 mode according to utf8 resource or -u8 option.
+!        Any  other  value, e.g., “UTF-8” or “ISO8859-2”, is assumed to be an encoding name; luit will be invoked to support the encoding.  The actual
+!        list of supported encodings depends on luit.  The default is “medium”.
+!        Regardless of your locale and encoding, you need an ISO-10646-1 font to display the result.  Your configuration may not include this font, or
+!        locale-support  by  xterm may not be needed.  At startup, xterm uses a mechanism equivalent to the load-vt-fonts(utf8Fonts, Utf8Fonts) action
+!        to load font name subresources of the VT100 widget.  That is, resource patterns such as “*VT100.Utf8Fonts.font” will be loaded, and (if  this
+!        resource  is enabled), override the normal fonts.  If no subresources are found, the normal fonts such as “*VT100.font”, etc., are used.  The
+!        resource files distributed with xterm use ISO-10646-1 fonts, but do not rely on them unless you are using the locale mechanism.
+!localeFilter (class LocaleFilter)
+!        Specifies the file name for the encoding converter from/to locale encodings and UTF-8 which is used with the -lc option or  locale  resource.
+!        The help message shown by “xterm -help” lists the default value, which depends on your system configuration.
+!        If the encoding converter requires command-line parameters, you can add those after the command, e.g.,
+!            *localeFilter: xterm-filter -p
+!        Alternatively,  you  may  put  those  parameter  within  a shell script to execute the converter, and set this resource to point to the shell
+!        script.
+!        When using a locale-filter, e.g., with the -e option, or the shell, xterm first tries passing control via that filter.  If  it  fails,  xterm
+!        will retry without the locale-filter.  Xterm warns about the failure before retrying.
+!loginShell (class LoginShell)
+!        Specifies whether or not the shell to be run in the window should be started as a login shell.  The default is “false”.
+!marginBell (class MarginBell)
+!        Specifies whether or not the bell should be rung when the user types near the right margin.  The default is “false”.
+!metaSendsEscape (class MetaSendsEscape)
+!        If  “true”,  Meta characters (a character combined with the Meta modifier key) are converted into a two-character sequence with the character
+!        itself preceded by ESC.  This applies as well to function key control sequences, unless xterm sees that Meta is used  in  your  key  transla‐
+!        tions.  If “false”, Meta characters input from the keyboard are handled according to the eightBitInput resource.  The default is “False”.
+!mkSamplePass (class MkSamplePass)
+!        If  mkSampleSize is nonzero, and mkWidth (and cjkWidth) are false, on startup xterm compares its built-in tables to the system^s wide charac‐
+!        ter width data to decide if it will use the system^s data.  It tests the first mkSampleSize character values, and allows up  to  mkSamplePass
+!        mismatches before the test fails.  The default (for the allowed number of mismatches) is 256.
+!mkSampleSize (class MkSampleSize)
+!        With  mkSamplePass, this specifies a startup test used for initializing wide character width calculations.  The default (number of characters
+!        to check) is 1024.
+!mkWidth (class MkWidth)
+!        Specifies whether xterm should use a built-in version of the wide character width calculation.  See also  the  cjkWidth  resource  which  can
+!        override this.  The default is “false”.
+!        Here is a summary of the resources which control the choice of wide character width calculation:
+!        cjkWidth   mkWidth   Action
+!        ───────────────────────────────────────────────────────────────
+!        false      false     use system tables subject to mkSamplePass
+!        false      true      use built-in tables
+!        true       false     use built-in CJK tables
+!        true       true      use built-in CJK tables
+!modifyCursorKeys (class ModifyCursorKeys)
+!        Tells  how  to  handle  the  special  case  where Control-, Shift-, Alt- or Meta-modifiers are used to add a parameter to the escape sequence
+!        returned by a cursor-key.  The default is “2”:
+!        -1   disables the feature.
+!        0    uses the old/obsolete behavior.
+!        1    prefixes modified sequences with CSI.
+!        2    forces the modifier to be the second parameter if it would otherwise be the first.
+!        3    marks the sequence with a “>” to hint that it is private.
+!modifyFunctionKeys (class ModifyFunctionKeys)
+!        Tells how to handle the special case where Control-, Shift-, Alt- or Meta-modifiers are used to  add  a  parameter  to  the  escape  sequence
+!        returned by a (numbered) function-key.  The default is “2”.  The resource values are similar to modifyCursorKeys:
+!        -1   permits the user to use shift- and control-modifiers to construct function-key strings using the normal encoding scheme.
+!        0    uses the old/obsolete behavior.
+!        1    prefixes modified sequences with CSI.
+!        2    forces the modifier to be the second parameter if it would otherwise be the first.
+!        3    marks the sequence with a “>” to hint that it is private.
+!        If  modifyFunctionKeys  is zero, xterm uses Control- and Shift-modifiers to allow the user to construct numbered function-keys beyond the set
+!        provided by the keyboard:
+!        Control
+!             adds the value given by the ctrlFKeys resource.
+!        Shift
+!             adds twice the value given by the ctrlFKeys resource.
+!        Control/Shift
+!             adds three times the value given by the ctrlFKeys resource.
+!modifyKeyboard (class ModifyKeyboard)
+!        Normally xterm makes a special case regarding modifiers (shift, control, etc.)  to handle special keyboard layouts (legacy and vt220).   This
+!        is done to provide compatible keyboards for DEC VT220 and related terminals that implement user-defined keys (UDK).
+!        The bits of the resource value selectively enable modification of the given category when these keyboards are selected.  The default is “0”:
+!        0    The  legacy/vt220  keyboards  interpret  only the Control-modifier when constructing numbered function-keys.  Other special keys are not
+!             modified.
+!        1    allows modification of the numeric keypad
+!        2    allows modification of the editing keypad
+!        4    allows modification of function-keys, overrides use of Shift-modifier for UDK.
+!        8    allows modification of other special keys
+!modifyOtherKeys (class ModifyOtherKeys)
+!        Like modifyCursorKeys, tells xterm to construct an escape sequence for other keys (such as “2”) when modified by Control-, Alt- or Meta-modi‐
+!        fiers.  This feature does not apply to function keys and well-defined keys such as ESC or the control keys.  The default is “0”:
+!        0    disables this feature.
+!        1    enables  this feature for keys except for those with well-known behavior, e.g., Tab, Backarrow and some special control character cases,
+!             e.g., Control-Space to make a NUL.
+!        2    enables this feature for keys including the exceptions listed.
+!multiClickTime (class MultiClickTime)
+!        Specifies the maximum time in milliseconds between multi-click select events.  The default is “250” milliseconds.
+!multiScroll (class MultiScroll)
+!        Specifies whether or not scrolling should be done asynchronously.  The default is “false”.
+!nMarginBell (class Column)
+!        Specifies the number of characters from the right margin at which the margin bell should be rung, when enabled by  the  marginBell  resource.
+!        The default is “10”.
+!numLock (class NumLock)
+!        If  “true”,  xterm  checks if NumLock is used as a modifier (see xmodmap(1)).  If so, this modifier is used to simplify the logic when imple‐
+!        menting special NumLock for the sunKeyboard resource.  Also (when sunKeyboard is false), similar logic is used to find the  modifier  associ‐
+!        ated with the left and right Alt keys.  The default is “true”.
+!oldXtermFKeys (class OldXtermFKeys)
+!        If  “true”,  xterm will use old-style control sequences for function keys F1 to F4, for compatibility with X Consortium xterm.  Otherwise, it
+!        uses the VT100-style codes for PF1 to PF4.  The default is “false”.
+!on2Clicks (class On2Clicks)
+!on3Clicks (class On3Clicks)
+!on4Clicks (class On4Clicks)
+!on5Clicks (class On5Clicks)
+!        Specify selection behavior in response to multiple mouse clicks.  A single mouse click is always interpreted as described  in  the  SELECTION
+!        section  (see  POINTER USAGE).  Multiple mouse clicks (using the button which activates the select-start action) are interpreted according to
+!        the resource values of on2Clicks, etc.  The resource value can be one of these:
+!        word
+!           Select a “word” as determined by the charClass resource.  See the CHARACTER CLASSES section.
+!        line
+!           Select a line (counting wrapping).
+!        group
+!           Select a group of adjacent lines (counting wrapping).  The selection stops on a blank line, and does not extend outside the current page.
+!        page
+!           Select all visible lines, i.e., the page.
+!        all
+!           Select all lines, i.e., including the saved lines.
+!        regex
+!           Select a “word” as determined by the regular expression which follows in the resource value.
+!        none
+!           No selection action is associated with this resource.  xterm interprets it as the end of the list.  For example, you may use it to disable
+!           triple (and higher) clicking by setting on3Clicks to “none”.
+!        The  default  values  for on2Clicks and on3Clicks are “word” and “line”, respectively.  There is no default value for on4Clicks or on5Clicks,
+!        making those inactive.  On startup, xterm determines the maximum number of clicks by the onXClicks resource values which are set.
+!openIm (class XtCOpenIm)
+!        Tells xterm whether to open the input method at startup.  The default is “true”.
+!pointerColor (class PointerColor)
+!        Specifies the foreground color of the pointer.  The default is “XtDefaultForeground”.
+!pointerColorBackground (class PointerColorBackground)
+!        Specifies the background color of the pointer.  The default is “XtDefaultBackground”.
+!pointerMode (class PointerMode)
+!        Specifies when the pointer may be hidden as the user types.  It will be redisplayed if the user moves the mouse, or clicks one  of  its  but‐
+!        tons.
+!        0  never
+!        1  the application running in xterm has not activated mouse mode.  This is the default.
+!        2  always.
+!pointerShape (class Cursor)
+!        Specifies the name of the shape of the pointer.  The default is “xterm”.
+!popOnBell (class PopOnBell)
+!        Specifies whether the window would be raised when Control-G is received.  The default is “false”.
+!        If the window is iconified, this has no effect.  However, the zIconBeep resource provides you with the ability to see which iconified windows
+!        have sounded a bell.
+!precompose (class XtCPrecompose)
+!        Tells xterm whether to precompose UTF-8 data into Normalization Form C, which combines commonly-used accents onto  base  characters.   If  it
+!        does not do this, accents are left as separatate characters.  The default is “true”.
+!preeditType (class XtCPreeditType)
+!        Tells xterm which types of preedit (preconversion) string to display.  The default is “OverTheSpot,Root”.
+!printAttributes (class PrintAttributes)
+!        Specifies  whether  to  print graphic attributes along with the text.  A real DEC VTxxx terminal will print the underline, highlighting codes
+!        but your printer may not handle these.
+!        ·   “0” disables the attributes.
+!        ·   “1” prints the normal set of attributes (bold, underline, inverse and blink) as VT100-style control sequences.
+!        ·   “2” prints ANSI color attributes as well.
+!        The default is “1”.
+!printFileImmediate (PrintFileImmediate)
+!        When the print-immediate action is invoked, xterm prints the screen contents directly to a file.  Set this resource  to  the  prefix  of  the
+!        filename (a timestamp will be appended to the actual name).
+!        The default is an empty string, i.e., “”, However, when the print-immediate action is invoked, if the string is empty, then “XTerm” is used.
+!printFileOnXError (PrintFileOnXError)
+!        If  xterm  exits with an X error, e.g., your connection is broken when the server crashes, it can be told to write the contents of the screen
+!        to a file.  To enable the feature, set this resource to the prefix of the filename (a timestamp will be appended to the actual name).
+!        The default is an empty string, i.e., “”, which disables this feature.  However, when the print-on-error action is invoked, if the string  is
+!        empty, then “XTermError” is used.
+!        These error codes are handled: ERROR_XERROR, ERROR_XIOERROR and ERROR_ICEERROR.
+!printModeImmediate (PrintModeImmediate)
+!        When the print-immediate action is invoked, xterm prints the screen contents directly to a file.  You can use the printModeImmediate resource
+!        to tell it to use escape sequences to reconstruct the video attributes and  colors.   This  uses  the  same  values  as  the  printAttributes
+!        resource.  The default is “0”.
+!printModeOnXError (PrintModeOnXError)
+!        Xterm implements the printFileOnXError feature using the printer feature, although the output is written directly to a file.  You can use the
+!        printModeOnXError resource to tell it to use escape sequences to reconstruct the video attributes and colors.  This uses the same  values  as
+!        the printAttributes resource.  The default is “0”.
+!printOptsImmediate (PrintOptsImmediate)
+!        Specify the range of text which is printed to a file when the print-immediately action is invoked.
+!        ·   If  zero (0), then this selects the current (visible screen) plus the saved lines, except if the alternate screen is being used.  In that
+!            case, only the alternate screen is selectd.
+!        ·   If nonzero, the bits of this resource value (checked in descending order) select the range:
+!            8  selects the saved lines.
+!            4  selects the alternate screen.
+!            2  selects the normal screen.
+!            1  selects the current screen, which can be either the normal or alternate screen.
+!        The default is “9”, which selects the current visible screen plus saved lines, with no special case for the alternated screen.
+!printOptsOnXError (PrintOptsOnXError)
+!        Specify the range of text which is printed to a file when the print-on-error action is invoked.  The resource value is interpreted  the  same
+!        as in printOptsImmediate.
+!        The default is “9”, which selects the current visible screen plus saved lines, with no special case for the alternated screen.
+!printerAutoClose (class PrinterAutoClose)
+!        If “true”, xterm will close the printer (a pipe) when the application switches the printer offline with a Media Copy command.  The default is
+!        “false”.
+!printerCommand (class PrinterCommand)
+!        Specifies a shell command to which xterm will open a pipe when the first MC (Media Copy) command is  initiated.   The  default  is  an  empty
+!        string, i.e., “”.  If the resource value is given as an empty string, the printer is disabled.
+!printerControlMode (class PrinterControlMode)
+!        Specifies  the printer control mode.  A “1” selects autoprint mode, which causes xterm to print a line from the screen when you move the cur‐
+!        sor off that line with a line feed, form feed or vertical tab character, or an autowrap occurs.  Autoprint mode is overridden by printer con‐
+!        troller mode (a “2”), which causes all of the output to be directed to the printer.  The default is “0”.
+!printerExtent (class PrinterExtent)
+!        Controls  whether a print page function will print the entire page (true), or only the the portion within the scrolling margins (false).  The
+!        default is “false”.
+!printerFormFeed (class PrinterFormFeed)
+!        Controls whether a form feed is sent to the printer at the end of a print page function.  The default is “false”.
+!printerNewLine (class PrinterNewLine)
+!        Controls whether a newline is sent to the printer at the end of a print page function.  The default is “true”.
+!privateColorRegisters (class privateColorRegisters)
+!        If true, allocate separate color registers for each sixel device control string, e.g., for DECGCI.  If not true, color  registers  are  allo‐
+!        cated only once, when the terminal is reset.  The default is “true”.
+!quietGrab (class QuietGrab)
+!        Controls  whether  the  cursor is repainted when NotifyGrab and NotifyUngrab event types are received during change of focus.  The default is
+!        “false”.
+!renderFont (class RenderFont)
+!        If xterm is built with the Xft library, this controls whether the faceName resource is used.  The default is “default”.
+!        The resource values are strings, evaluated as booleans after startup.
+!        false
+!             disable the feature and use the normal (bitmap) font.
+!        true
+!             startup using the TrueType font specified by the faceName and faceSize resource settings.  If there is no value  for  faceName,  disable
+!             the feature and use the normal (bitmap) font.
+!             After startup, you can still switch to/from the bitmap font using the “TrueType Fonts” menu entry.
+!        default
+!             startup using the normal (bitmap) font, but enable the “TrueType Fonts” menu entry to allow runtime switching to/from TrueType fonts.
+!             If there is no faceName resource set, then runtime switching to TrueType fonts is disabled.  Xterm has a separate  compiled-in value for
+!             faceName for the special case where renderFont is “default”.  That is normally “mono”.
+!resizeGravity (class ResizeGravity)
+!        Affects the behavior when the window is resized to be taller or shorter.  NorthWest specifies that the top line of text on  the  screen  stay
+!        fixed.   If the window is made shorter, lines are dropped from the bottom; if the window is made taller, blank lines are added at the bottom.
+!        This is compatible with the behavior in R4.  SouthWest (the default) specifies that the bottom line of text on the screen stay fixed.  If the
+!        window  is  made  taller, additional saved lines will be scrolled down onto the screen; if the window is made shorter, lines will be scrolled
+!        off the top of the screen, and the top saved lines will be dropped.
+!retryInputMethod (class XtCRetryInputMethod)
+!        Tells xterm how many times to retry, in case the input-method server is not responding.  This is a different issue than  unsupported  preedit
+!        type,  etc.   You  may encounter retries if your X configuration (and its libraries) are missing pieces.  Setting this resource to zero ``0^^
+!        will cancel the retrying.  The default is ``3^^.
+!reverseVideo (class ReverseVideo)
+!        Specifies whether or not reverse video should be simulated.  The default is “false”.
+!        There are several aspects to reverse video in xterm:
+!        ·   The command-line -rv option tells the X libraries to reverse the foreground and background  colors.   Xterm^s  command-line  options  set
+!            resource values.  In particular, the X Toolkit sets the reverseVideo resource when the -rv option is used.
+!        ·   If  the  user has also used command-line options -fg or -bg to set the foreground and background colors, xterm does not see these options
+!            directly.  Instead, it examines the resource values to reconstruct the command-line options, and determine which of  the  colors  is  the
+!            user^s  intended  foreground,  etc.   Their  actual values are irrelevant to the reverse video function; some users prefer the X defaults
+!            (black text on a white background), others prefer white text on a black background.
+!        ·   After startup, the user can toggle the “Enable Reverse Video” menu entry.  This exchanges the current foreground and background colors of
+!            the VT100 widget, and repaints the screen.  Because of the X resource hierarchy, the reverseVideo resource applies to more than the VT100
+!            widget.
+!        Programs running in an xterm can also use control sequences to enable the VT100 reverse video mode.  These are independent of  the  reverseV‐
+!        ideo  resource  and the menu entry.  Xterm exchanges the current foreground and background colors when drawing text affected by these control
+!        sequences.
+!        Other control sequences can alter the foreground and background colors which are used:
+!        ·   Programs can also use the ANSI color control sequences to set the foreground and background colors.
+!        ·   Extensions to the ANSI color controls (such as 16-, 88- or 256-colors) are treated similarly to the ANSI control.
+!        ·   Using other control sequences (the “dynamic colors” feature), a program can change the foreground and background colors.
+!reverseWrap (class ReverseWrap)
+!        Specifies whether or not reverse-wraparound should be enabled.  This corresponds to xterm^s private mode 45.  The default is “false”.
+!rightScrollBar (class RightScrollBar)
+!        Specifies whether or not the scrollbar should be displayed on the right rather than the left.  The default is “false”.
+!saveLines (class SaveLines)
+!        Specifies the number of lines to save beyond the top of the screen when a scrollbar is turned on.  The default is “64”.
+!scrollBar (class ScrollBar)
+!        Specifies whether or not the scrollbar should be displayed.  The default is “false”.
+!scrollBarBorder (class ScrollBarBorder)
+!        Specifies the width of the scrollbar border.  Note that this is drawn to overlap the border of the xterm window.  Modifying  the  scrollbar^s
+!        border affects only the line between the VT100 widget and the scrollbar.  The default value is 1.
+!scrollKey (class ScrollCond)
+!        Specifies  whether  or  not pressing a key should automatically cause the scrollbar to go to the bottom of the scrolling region.  This corre‐
+!        sponds to xterm^s private mode 1011.  The default is “false”.
+!scrollLines (class ScrollLines)
+!        Specifies the number of lines that the scroll-back and scroll-forw actions should use as a default.  The default value is 1.
+!scrollTtyOutput (class ScrollCond)
+!        Specifies whether or not output to the terminal should automatically cause the scrollbar to go to the bottom of the  scrolling  region.   The
+!        default is “true”.
+!selectToClipboard (class SelectToClipboard)
+!        Tells  xterm  whether to use the PRIMARY or CLIPBOARD for SELECT tokens in the selection mechanism.  The set-select action can change this at
+!        runtime, allowing the user to work with programs that handle only one of these mechanisms.  The default is “false”, which  tells  it  to  use
+!        PRIMARY.
+!shiftFonts (class ShiftFonts)
+!        Specifies  whether  to  enable the actions larger-vt-font() and smaller-vt-font(), which are normally bound to the shifted KP_Add and KP_Sub‐
+!        tract.  The default is “true”.
+!showBlinkAsBold (class ShowBlinkAsBold)
+!        Tells xterm whether to display text with blink-attribute the same as bold.  If xterm has not been configured to support  blinking  text,  the
+!        default is “true”, which corresponds to older versions of xterm, otherwise the default is “false”.
+!showMissingGlyphs (class ShowMissingGlyphs)
+!        Tells  xterm  whether  to  display  a  box outlining places where a character has been used that the font does not represent.  The default is
+!        “false”.
+!showWrapMarks (class ShowWrapMarks)
+!        For debugging xterm and applications that may manipulate the wrapped-line flag by writing text at the right margin, show a mark on the  right
+!        inner-border of the window.  The mark shows which lines have the flag set.
+!signalInhibit (class SignalInhibit)
+!        Specifies whether or not the entries in the “Main Options” menu for sending signals to xterm should be disallowed.  The default is “false”.
+!sixelScrolling (class SixelScrolling)
+!        If true, graphics scroll up one line at a time when sixels would be written past the bottom line on the window.  The default is “false”.
+!tekGeometry (class Geometry)
+!        Specifies the preferred size and position of the Tektronix window.  There is no default for this resource.
+!tekInhibit (class TekInhibit)
+!        Specifies whether or not the escape sequence to enter Tektronix mode should be ignored.  The default is “false”.
+!tekSmall (class TekSmall)
+!        Specifies  whether  or not the Tektronix mode window should start in its smallest size if no explicit geometry is given.  This is useful when
+!        running xterm on displays with small screens.  The default is “false”.
+!tekStartup (class TekStartup)
+!        Specifies whether or not xterm should start up in Tektronix mode.  The default is “false”.
+!tiXtraScroll (class TiXtraScroll)
+!        Specifies whether xterm should scroll to a new page when processing the ti termcap entry, i.e., the private modes 47, 1047 or 1049.  This  is
+!        only  in  effect if titeInhibit is “true”, because the intent of this option is to provide a picture of the full-screen application^s display
+!        on the scrollback without wiping out the text that would be shown before the application was initialized.  The default for this  resource  is
+!        “false”.
+!titeInhibit (class TiteInhibit)
+!        Specifies  whether  or not xterm should remove ti and te termcap entries (used to switch between alternate screens on startup of many screen-
+!        oriented programs) from the TERMCAP string.  If set, xterm also ignores the escape sequence to switch to the alternate  screen.   Xterm  sup‐
+!        ports  terminfo  in  a different way, supporting composite control sequences (also known as private modes) 1047, 1048 and 1049 which have the
+!        same effect as the original 47 control sequence.  The default for this resource is “false”.
+!titleModes (class TitleModes)
+!        Tells xterm whether to accept or return window- and icon-labels in ISO-8859-1 (the default) or UTF-8.  Either can be encoded in  hexadecimal.
+!        The default for this resource is “0”.
+!        Each bit (bit “0” is 1, bit “1” is 2, etc.)  corresponds to one of the parameters set by the title modes control sequence:
+!        0    Set window/icon labels using hexadecimal
+!        1    Query window/icon labels using hexadecimal
+!        2    Set window/icon labels using UTF-8 (overrides utf8Title resource).
+!        3    Query window/icon labels using UTF-8
+!translations (class Translations)
+!        Specifies  the  key  and button bindings for menus, selections, “programmed strings”, etc.  The translations resource, which provides much of
+!        xterm^s configurability, is a feature of the X Toolkit Intrinsics library (Xt).  See the ACTIONS section.
+!trimSelection (class TrimSelection)
+!        If you set highlightSelection, you can see the text which is selected, including any trailing spaces.  Clearing the screen (or a line) resets
+!        it  to a state containing no spaces.  Some lines may contain trailing spaces when an application writes them to the screen.  However, you may
+!        not wish to paste lines with trailing spaces.  If this resource is true, xterm will trim trailing spaces from text  which  is  selected.   It
+!        does not affect spaces which result in a wrapped line, nor will it trim the trailing newline from your selection.  The default is “false”.
+!underLine (class UnderLine)
+!        This  specifies whether or not text with the underline attribute should be underlined.  It may be desirable to disable underlining when color
+!        is being used for the underline attribute.  The default is “true”.
+!useClipping (class UseClipping)
+!        Tell xterm whether to use clipping to keep from producing dots outside the text drawing area.  Originally used to work around for  overstrik‐
+!        ing effects, this is also needed to work with some incorrectly-sized fonts.  The default is “true”.
+!utf8 (class Utf8)
+!        This specifies whether xterm will run in UTF-8 mode.  If you set this resource, xterm also sets the wideChars resource as a side-effect.  The
+!        resource can be set via the menu entry “UTF-8 Encoding”.  The default is “default”.
+!        Xterm accepts either a keyword (ignoring case) or the number shown in parentheses:
+!        false (0)
+!           UTF-8 mode is initially off.  The command-line option +u8 sets the resource to this value.  Escape sequences for turning UTF-8 mode on/off
+!           are allowed.
+!        true (1)
+!           UTF-8 mode is initially on.  Escape sequences for turning UTF-8 mode on/off are allowed.
+!        always (2)
+!           The command-line option -u8 sets the resource to this value.  Escape sequences for turning UTF-8 mode on/off are ignored.
+!        default (3)
+!           This is the default value of the resource.  It is changed during initialization depending on whether the locale resource was set, to false
+!           (0) or always (2).  See the locale resource for additional discussion of non-UTF-8 locales.
+!        If you want to set the value of utf8, it should be in this range.  Other nonzero values are treated the same as “1”, i.e., UTF-8 mode is ini‐
+!        tially on, and escape sequences for turning UTF-8 mode on/off are allowed.
+!utf8Fonts (class Utf8Fonts)
+!        See  the  discussion  of  the  locale  resource.   This  specifies whether xterm will use UTF-8 fonts specified via resource patterns such as
+!        “*VT100.Utf8Fonts.font” or normal (ISO-8859-1) fonts via patterns such as “*VT100.font”.  The resource can be set via the menu  entry  “UTF-8
+!        Fonts”.  The default is “default”. Xterm accepts either a keyword (ignoring case) or the number shown in parentheses:
+!          false   (0) Use the ISO-8859-1 fonts.  The menu entry is enabled, allowing the choice of fonts to be changed at runtime.
+!          true    (1) Use the UTF-8 fonts.  The menu entry is enabled, allowing the choice of fonts to be changed at runtime.
+!          always  (2) Always use the UTF-8 fonts.  This also disables the menu entry.
+!          default (3) At startup, the resource is set to true or false, according to the effective value of the utf8 resource.
+!utf8Latin1 (class Utf8Latin1)
+!        If true, allow an ISO-8859-1 normal font to be combined with an ISO-10646 font if the latter is given via the -fw option or its corresponding
+!        resource value.  The default is “false”.
+!utf8SelectTypes (class Utf8SelectTypes)
+!        Override xterm^s default selection target list (see SELECT/PASTE) for selections in wide-character (UTF-8) mode.  The  default  is  an  empty
+!        string, i.e., “”, which does not override anything.
+!utf8Title (class Utf8Title)
+!        Applications can set xterm^s title by writing a control sequence.  Normally this control sequence follows the VT220 convention, which encodes
+!        the string in ISO-8859-1 and allows for an 8-bit string terminator.  If xterm is started in a UTF-8  locale,  it  translates  the  ISO-8859-1
+!        string to UTF-8 to work with the X libraries which assume the string is UTF-8.
+!        However,  some  users  may wish to write a title string encoded in UTF-8.  The window manager is responsible for drawing window titles.  Some
+!        window managers (not all) support UTF-8 encoding of window titles.  Set this resource to “true” to allow UTF-8 encoded title  strings.   That
+!        cancels the translation to UTF-8, allowing UTF-8 strings to be displayed as is.
+!        This feature is available as a menu entry, since it is related to the particular applications you are running within xterm.  You can also use
+!        a control sequence (see the discussion of “Title Modes” in the control sequences document),  to  set  an  equivalent  flag.   The  titleModes
+!        resource sets the same value, which overrides this resource.
+!        The default is “false”.
+!veryBoldColors (class VeryBoldColors)
+!        Specifies  whether to combine video attributes with colors specified by colorBD, colorBL, colorRV and colorUL.  The resource value is the sum
+!        of values for each attribute:
+!          1 for reverse,
+!          2 for underline,
+!          4 for bold and
+!          8 for blink.
+!        The default is “0”.
+!visualBell (class VisualBell)
+!        Specifies whether or not a visible bell (i.e., flashing) should be used instead of an audible bell when Control-G is received.   The  default
+!        is “false”, which tells xterm to use an audible bell.
+!visualBellDelay (class VisualBellDelay)
+!        Number of milliseconds to delay when displaying a visual bell.  Default is 100.  If set to zero, no visual bell is displayed.  This is useful
+!        for very slow displays, e.g., an LCD display on a laptop.
+!visualBellLine (class VisualBellLine)
+!        Specifies whether to flash only the current line when displaying a visual bell.  rather than flashing  the  entire  screen:  The  default  is
+!        “false”, which tells xterm to flash the entire screen.
+!vt100Graphics (class VT100Graphics)
+!        This  specifies whether xterm will interpret VT100 graphic character escape sequences while in UTF-8 mode.  The default is “true”, to provide
+!        support for various legacy applications.
+!wideBoldFont (class WideBoldFont)
+!        This option specifies the font to be used for displaying bold wide text.  By default, it will attempt to use a font twice as wide as the font
+!        that will be used to draw bold text.  If no double-width font is found, it will improvise, by stretching the bold font.
+!wideChars (class WideChars)
+!        Specifies if xterm should respond to control sequences that process 16-bit characters.  The default is “false”.
+!wideFont (class WideFont)
+!        This option specifies the font to be used for displaying wide text.  By default, it will attempt to use a font twice as wide as the font that
+!        will be used to draw normal text.  If no double-width font is found, it will improvise, by stretching the normal font.
+!ximFont (class XimFont)
+!        This option specifies the font to be used for displaying the preedit string in the “OverTheSpot” input method.
+!        In “OverTheSpot” preedit type, the preedit (preconversion) string is displayed at the position of the cursor.  It is the XIM server^s respon‐
+!        sibility  to  display  the  preedit string.  The XIM client must inform the XIM server of the cursor position.  For best results, the preedit
+!        string must be displayed with a proper font.  Therefore, xterm informs the XIM server of the proper font.  The  font  is  be  supplied  by  a
+!        "fontset", whose default value is “*”.  This matches every font, the X library automatically chooses fonts with proper charsets.  The ximFont
+!        resource is provided to override this default font setting.
+!  Tek4014 Widget Resources
+!The following resources are specified as part of the tek4014 widget (class Tek4014).  These are specified by patterns such as “XTerm.tek4014.NAME”:
+!font2 (class Font)
+!        Specifies font number 2 to use in the Tektronix window.
+!font3 (class Font)
+!fontLarge (class Font)
+!        Specifies the large font to use in the Tektronix window.
+!fontSmall (class Font)
+!        Specifies the small font to use in the Tektronix window.
+!ginTerminator (class GinTerminator)
+!        Specifies what character(s) should follow a GIN report or status report.  The possibilities are “none”, which sends  no  terminating  charac‐
+!        ters, “CRonly”, which sends CR, and “CR&EOT”, which sends both CR and EOT.  The default is “none”.
+!height (class Height)
+!        Specifies the height of the Tektronix window in pixels.
+!initialFont (class InitialFont)
+!        Specifies which of the four Tektronix fonts to use initially.  Values are the same as for the set-tek-text action.  The default is “large”.
+!width (class Width)
+!        Specifies the width of the Tektronix window in pixels.
+!  Menu Resources
+!The  resources that may be specified for the various menus are described in the documentation for the Athena SimpleMenu widget.  The name and classes
+!of the entries in each of the menus are listed below.  Resources named “lineN” where N is a number are separators with class SmeLine.
+!As with all X resource-based widgets, the labels mentioned are customary defaults for the application.
+!The Main Options menu (widget name mainMenu) has the following entries:
+!toolbar (class SmeBSB)
+!        This entry invokes the set-toolbar(toggle) action.
+!securekbd (class SmeBSB)
+!        This entry invokes the secure() action.
+!allowsends (class SmeBSB)
+!        This entry invokes the allow-send-events(toggle) action.
+!redraw (class SmeBSB)
+!        This entry invokes the redraw() action.
+!logging (class SmeBSB)
+!        This entry invokes the logging(toggle) action.
+!print-immediate (class SmeBSB)
+!        This entry invokes the print-immediate() action.
+!print-on-error (class SmeBSB)
+!        This entry invokes the print-on-error() action.
+!print (class SmeBSB)
+!        This entry invokes the print() action.
+!print-redir (class SmeBSB)
+!        This entry invokes the print-redir() action.
+!8-bit-control (class SmeBSB)
+!        This entry invokes the set-8-bit-control(toggle) action.
+!backarrow key (class SmeBSB)
+!        This entry invokes the set-backarrow(toggle) action.
+!num-lock (class SmeBSB)
+!        This entry invokes the set-num-lock(toggle) action.
+!alt-esc (class SmeBSB)
+!        This entry invokes the alt-sends-escape(toggle) action.
+!meta-esc (class SmeBSB)
+!        This entry invokes the meta-sends-escape(toggle) action.
+!delete-is-del (class SmeBSB)
+!        This entry invokes the delete-is-del(toggle) action.
+!oldFunctionKeys (class SmeBSB)
+!        This entry invokes the old-function-keys(toggle) action.
+!hpFunctionKeys (class SmeBSB)
+!        This entry invokes the hp-function-keys(toggle) action.
+!scoFunctionKeys (class SmeBSB)
+!        This entry invokes the sco-function-keys(toggle) action.
+!sunFunctionKeys (class SmeBSB)
+!        This entry invokes the sun-function-keys(toggle) action.
+!sunKeyboard (class SmeBSB)
+!        This entry invokes the sunKeyboard(toggle) action.
+!suspend (class SmeBSB)
+!        This entry invokes the send-signal(tstp) action on systems that support job control.
+!continue (class SmeBSB)
+!        This entry invokes the send-signal(cont) action on systems that support job control.
+!interrupt (class SmeBSB)
+!        This entry invokes the send-signal(int) action.
+!hangup (class SmeBSB)
+!        This entry invokes the send-signal(hup) action.
+!terminate (class SmeBSB)
+!        This entry invokes the send-signal(term) action.
+!kill (class SmeBSB)
+!        This entry invokes the send-signal(kill) action.
+!quit (class SmeBSB)
+!        This entry invokes the quit() action.
+!The VT Options menu (widget name vtMenu) has the following entries:
+!scrollbar (class SmeBSB)
+!        This entry invokes the set-scrollbar(toggle) action.
+!jumpscroll (class SmeBSB)
+!        This entry invokes the set-jumpscroll(toggle) action.
+!reversevideo (class SmeBSB)
+!        This entry invokes the set-reverse-video(toggle) action.
+!autowrap (class SmeBSB)
+!        This entry invokes the set-autowrap(toggle) action.
+!reversewrap (class SmeBSB)
+!        This entry invokes the set-reversewrap(toggle) action.
+!autolinefeed (class SmeBSB)
+!        This entry invokes the set-autolinefeed(toggle) action.
+!appcursor (class SmeBSB)
+!        This entry invokes the set-appcursor(toggle) action.
+!appkeypad (class SmeBSB)
+!        This entry invokes the set-appkeypad(toggle) action.
+!scrollkey (class SmeBSB)
+!        This entry invokes the set-scroll-on-key(toggle) action.
+!scrollttyoutput (class SmeBSB)
+!        This entry invokes the set-scroll-on-tty-output(toggle) action.
+!allow132 (class SmeBSB)
+!        This entry invokes the set-allow132(toggle) action.
+!cursesemul (class SmeBSB)
+!        This entry invokes the set-cursesemul(toggle) action.
+!visualbell (class SmeBSB)
+!        This entry invokes the set-visualbell(toggle) action.
+!bellIsUrgent (class SmeBSB)
+!        This entry invokes the set-bellIsUrgent(toggle) action.
+!poponbell (class SmeBSB)
+!        This entry invokes the set-poponbell(toggle) action.
+!cursorblink (class SmeBSB)
+!        This entry invokes the set-cursorblink(toggle) action.
+!titeInhibit (class SmeBSB)
+!        This entry invokes the set-titeInhibit(toggle) action.
+!activeicon (class SmeBSB)
+!        This entry toggles active icons on and off if this feature was compiled into xterm.  It is enabled only if xterm was started with the command
+!        line option +ai or the activeIcon resource is set to “true”.
+!softreset (class SmeBSB)
+!        This entry invokes the soft-reset() action.
+!hardreset (class SmeBSB)
+!        This entry invokes the hard-reset() action.
+!clearsavedlines (class SmeBSB)
+!        This entry invokes the clear-saved-lines() action.
+!tekshow (class SmeBSB)
+!        This entry invokes the set-visibility(tek,toggle) action.
+!tekmode (class SmeBSB)
+!        This entry invokes the set-terminal-type(tek) action.
+!vthide (class SmeBSB)
+!        This entry invokes the set-visibility(vt,off) action.
+!altscreen (class SmeBSB)
+!        This entry invokes the set-altscreen(toggle) action.
+!sixelScrolling (class SmeBSB)
+!        This entry invokes the set-sixel-scrolling(toggle) action.
+!The VT Fonts menu (widget name fontMenu) has the following entries:
+!fontdefault (class SmeBSB)
+!        This entry invokes the set-vt-font(d) action, setting the font using the font (default) resource, e.g., “Default” in the menu.
+!font1 (class SmeBSB)
+!        This entry invokes the set-vt-font(1) action, setting the font using the font1 resource, e.g., “Unreadable” in the menu.
+!font2 (class SmeBSB)
+!        This entry invokes the set-vt-font(2) action, setting the font using the font2 resource, e.g., “Tiny” in the menu.
+!font3 (class SmeBSB)
+!        This entry invokes the set-vt-font(3) action, setting the font using the font3 resource, e.g., “Small” in the menu.
+!font4 (class SmeBSB)
+!        This entry invokes the set-vt-font(4) action, letting the font using the font4 resource, e.g., “Medium” in the menu.
+!font5 (class SmeBSB)
+!        This entry invokes the set-vt-font(5) action, letting the font using the font5 resource, e.g., “Large” in the menu.
+!font6 (class SmeBSB)
+!        This entry invokes the set-vt-font(6) action, letting the font using the font6 resource, e.g., “Huge” in the menu.
+!fontescape (class SmeBSB)
+!        This entry invokes the set-vt-font(e) action.
+!fontsel (class SmeBSB)
+!        This entry invokes the set-vt-font(s) action.
+!font-linedrawing (class SmeBSB)
+!        This entry invokes the set-font-linedrawing(s) action.
+!font-packed (class SmeBSB)
+!        This entry invokes the set-font-packed(s) action.
+!font-doublesize (class SmeBSB)
+!        This entry invokes the set-font-doublesize(s) action.
+!render-font (class SmeBSB)
+!        This entry invokes the set-render-font(s) action.
+!utf8-mode (class SmeBSB)
+!        This entry invokes the set-utf8-mode(s) action.
+!utf8-title (class SmeBSB)
+!        This entry invokes the set-utf8-title(s) action.
+!The TEK Options menu (widget name tekMenu) has the following entries:
+!tektextlarge (class SmeBSB)
+!        This entry invokes the set-tek-text(large) action.
+!tektext2 (class SmeBSB)
+!        This entry invokes the set-tek-text(2) action.
+!tektext3 (class SmeBSB)
+!        This entry invokes the set-tek-text(3) action.
+!tektextsmall (class SmeBSB)
+!        This entry invokes the set-tek-text(small) action.
+!tekpage (class SmeBSB)
+!        This entry invokes the tek-page() action.
+!tekreset (class SmeBSB)
+!        This entry invokes the tek-reset() action.
+!tekcopy (class SmeBSB)
+!        This entry invokes the tek-copy() action.
+!vtshow (class SmeBSB)
+!        This entry invokes the set-visibility(vt,toggle) action.
+!vtmode (class SmeBSB)
+!        This entry invokes the set-terminal-type(vt) action.
+!tekhide (class SmeBSB)
+!        This entry invokes the set-visibility(tek,toggle) action.
+!  Scrollbar Resources
+!The following resources are useful when specified for the Athena Scrollbar widget:
+!thickness (class Thickness)
+!        Specifies the width in pixels of the scrollbar.
+!background (class Background)
+!        Specifies the color to use for the background of the scrollbar.
+!foreground (class Foreground)
+!        Specifies  the  color  to use for the foreground of the scrollbar.  The “thumb” of the scrollbar is a simple checkerboard pattern alternating
+!        pixels for foreground and background color.
+
+!man xvt
+!X RESOURCES - Almost all command line optionz have Xrc counterparts && use class name "XTerm" so settingz should work for both xterm && xvt (but they do not).
+!   Command line           X resource:  instance          Class
+!───────────────────────────────────────────────────────────────────────
+!-bg or -background                   background        Background
+!-bd                                  borderColor       BorderColor
+!-bw                                  borderWidth       BorderWidth
+!-C  or -console                      -                 -
+!-cc                                  charClass         CharClass
+!-cr                                  cursorColor       CursorColor
+!-display                             -                 -
+!-e                                   -                 -
+!-fb                                  boldFont          BoldFont
+!-fn or -font                         font              Font
+!-fg or -foreground                   foreground        Foreground
+!-geometry                            geometry          Geometry
+!-iconic                              iconic            Iconic
+!-ls                                  loginShell        LoginShell
+!-msg                                 messages          Messages
+!-n                                   iconName          IconName
+!-name                                -                 -
+!-rv                                  reverseVideo      ReverseVideo
+!-rw                                  reverseWrap       ReverseWrap
+!-sb                                  scrollBar         ScrollBar
+!-sf                                  sunFunctionKeys   SunFunctionKeys
+!-sl                                  saveLines         SaveLines
+!-T  or -title                        title             Title
+!-8 (on)  &&  -7 (off)                eightBitInput     EightBitInput
+! study aterm options && .zshrc At() parameters to make these settings more comfortable
+ATerm*geometry:                 160x50
+!ATerm*font:                     -*-terminus-*-*-*-*-*-*-*-*-*-*-*-*
+ATerm*background:               black
+ATerm*foreground:               green
+ATerm*cursorColor:              white
+!ATerm*transparent:              false
+!ATerm*tinting:                  gray
+!ATerm*shading:                  30
+!ATerm*fading:                   70
+!ATerm*saveLines:                65536
+!ATerm*scrollBar:                true
+!ATerm*scrollBar_right:          true
+!ATerm*transpscrollbar:          false
+!ATerm*borderwidth:              0
+!man pterm
+!X RESOURCES
+! pterm  can  be  more completely configured by means of X resources. All of these resources are of the form pterm.FOO for some FOO; you can make pterm
+! look them up under another name, such as xyz.FOO, by specifying the command-line option `-name xyz`.
+!
+!PTerm.CloseOnExit
+!        This option should be set to 0, 1 or 2; the default is 2. It controls what pterm does when the process running inside it terminates. When  set
+!        to  2  (the  default),  pterm will close its window as soon as the process inside it terminates. When set to 0, pterm will print the process`s
+!        exit status, and the window will remain present until a key is pressed (allowing you to inspect the scrollback, and copy and paste text out of
+!        it).
+!
+!        When  this  setting  is set to 1, pterm will close immediately if the process exits cleanly (with an exit status of zero), but the window will
+!        stay around if the process exits with a non-zero code or on a signal. This enables you to see what went wrong if the process suffers an error,
+!        but not to have to bother closing the window in normal circumstances.
+!PTerm.WarnOnClose
+!        This  option  should  be set to either 0 or 1; the default is 1. When set to 1, pterm will ask for confirmation before closing its window when
+!        you press the close button.
+!PTerm.TerminalType
+!        This controls the value set in the TERM environment variable inside the new terminal. The default is `xterm`.
+!PTerm.BackspaceIsDelete
+!        This option should be set to either 0 or 1; the default is 1. When set to 0, the ordinary Backspace  key  generates  the  Backspace  character
+!        (^H);  when set to 1, it generates the Delete character (^?). Whichever one you set, the terminal device inside pterm will be set up to expect
+!        it.
+!PTerm.RXVTHomeEnd
+!        This option should be set to either 0 or 1; the default is 0. When it is set to 1, the Home and End keys generate the control  sequences  they
+!        would generate in the rxvt terminal emulator, instead of the more usual ones generated by other emulators.
+!PTerm.LinuxFunctionKeys
+!        This  option  can  be set to any number between 0 and 5 inclusive; the default is 0. The modes vary the control sequences sent by the function
+!        keys; for more complete documentation, it is probably simplest to try each option in `pterm -e cat`, and press the keys to see what they  gen‐
+!        erate.
+!PTerm.NoApplicationKeys
+!        This  option  should be set to either 0 or 1; the default is 0. When set to 1, it stops the server from ever switching the numeric keypad into
+!        application mode (where the keys send function-key-like sequences instead of numbers or arrow keys). You  probably  only  need  this  if  some
+!        application is making a nuisance of itself.
+!PTerm.NoApplicationCursors
+!        This  option  should  be  set  to either 0 or 1; the default is 0. When set to 1, it stops the server from ever switching the cursor keys into
+!        application mode (where the keys send slightly different sequences). You probably only need this if some application is making a  nuisance  of
+!        itself.
+!PTerm.NoMouseReporting
+!        This  option  should  be  set  to  either 0 or 1; the default is 0. When set to 1, it stops the server from ever enabling mouse reporting mode
+!        (where mouse clicks are sent to the application instead of controlling cut and paste).
+!PTerm.NoRemoteResize
+!        This option should be set to either 0 or 1; the default is 0. When set to 1, it stops the server from being able to remotely control the  size
+!        of the pterm window.
+!PTerm.NoAltScreen
+!        This  option  should  be set to either 0 or 1; the default is 0. When set to 1, it stops the server from using the `alternate screen` terminal
+!        feature, which lets full-screen applications leave the screen exactly the way they found it.
+!PTerm.NoRemoteWinTitle
+!        This option should be set to either 0 or 1; the default is 0. When set to 1, it stops the server from remotely controlling the  title  of  the
+!        pterm window.
+!PTerm.NoRemoteQTitle
+!        This  option  should  be  set to either 0 or 1; the default is 1. When set to 1, it stops the server from remotely requesting the title of the
+!        pterm window.
+!
+!        This feature is a POTENTIAL SECURITY HAZARD. If a malicious application can write data to your terminal (for example, if you merely cat a file
+!        owned  by  someone  else  on  the  server  machine), it can change your window title (unless you have disabled this using the NoRemoteWinTitle
+!        resource) and then use this service to have the new window title sent back to the server as if typed at the keyboard. This allows an  attacker
+!        to  fake  keypresses  and  potentially cause your server-side applications to do things you didn`t want. Therefore this feature is disabled by
+!        default, and we recommend you do not turn it on unless you really know what you are doing.
+!PTerm.NoDBackspace
+!        This option should be set to either 0 or 1; the default is 0. When set to 1, it disables the normal action of the Delete (^?)  character  when
+!        sent from the server to the terminal, which is to move the cursor left by one space and erase the character now under it.
+!PTerm.ApplicationCursorKeys
+!        This option should be set to either 0 or 1; the default is 0. When set to 1, the default initial state of the cursor keys are application mode
+!        (where the keys send function-key-like sequences instead of numbers or arrow keys). When set to 0, the default state is the normal one.
+!PTerm.ApplicationKeypad
+!        This option should be set to either 0 or 1; the default is 0. When set to 1, the default initial state of the numeric  keypad  is  application
+!        mode (where the keys send function-key-like sequences instead of numbers or arrow keys). When set to 0, the default state is the normal one.
+!PTerm.NetHackKeypad
+!        This  option  should be set to either 0 or 1; the default is 0. When set to 1, the numeric keypad operates in NetHack mode. This is equivalent
+!        to the -nethack command-line option.
+!PTerm.Answerback
+!        This option controls the string which the terminal sends in response to receiving the ^E character (`tell me about yourself`). By default this
+!        string is `PuTTY`.
+!PTerm.HideMousePtr
+!        This  option  should  be set to either 0 or 1; the default is 0. When it is set to 1, the mouse pointer will disappear if it is over the pterm
+!        window and you press a key. It will reappear as soon as you move it.
+!PTerm.WindowBorder
+!        This option controls the number of pixels of space between the text in the pterm window and the window  frame.  The  default  is  1.  You  can
+!        increase this value, but decreasing it to 0 is not recommended because it can cause the window manager`s size hints to work incorrectly.
+!PTerm.CurType
+!        This  option  should  be  set  to  either 0, 1 or 2; the default is 0. When set to 0, the text cursor displayed in the window is a rectangular
+!        block. When set to 1, the cursor is an underline; when set to 2, it is a vertical line.
+!PTerm.BlinkCur
+!        This option should be set to either 0 or 1; the default is 0. When it is set to 1, the text cursor will blink when the window is active.
+!PTerm.Beep
+!        This option should be set to either 0 or 2 (yes, 2); the default is 0. When it is set to 2, pterm will respond to a  bell  character  (^G)  by
+!        flashing the window instead of beeping.
+!PTerm.BellOverload
+!        This option should be set to either 0 or 1; the default is 0. When it is set to 1, pterm will watch out for large numbers of bells arriving in
+!        a short time and will temporarily disable the bell until they stop. The idea is that if you cat a binary file, the frantic beeping will mostly
+!        be silenced by this feature and will not drive you crazy.
+!
+!        The  bell  overload mode is activated by receiving N bells in time T; after a further time S without any bells, overload mode will turn itself
+!        off again.
+!
+!        Bell overload mode is always deactivated by any keypress in the terminal. This means it can respond to large unexpected streams of  data,  but
+!        does not interfere with ordinary command-line activities that generate beeps (such as filename completion).
+!PTerm.BellOverloadN
+!        This option counts the number of bell characters which will activate bell overload if they are received within a length of time T. The default
+!        is 5.
+!PTerm.BellOverloadT
+!        This option specifies the time period in which receiving N or more bells will activate bell overload mode. It is measured in microseconds,  so
+!        (for example) set it to 1000000 for one second. The default is 2000000 (two seconds).
+!PTerm.BellOverloadS
+!        This option specifies the time period of silence required to turn off bell overload mode. It is measured in microseconds, so (for example) set
+!        it to 1000000 for one second. The default is 5000000 (five seconds of silence).
+!PTerm.ScrollbackLines
+!        This option specifies how many lines of scrollback to save above the visible terminal screen. The default is 200. This resource is  equivalent
+!        to the -sl command-line option.
+!PTerm.DECOriginMode
+!        This  option should be set to either 0 or 1; the default is 0. It specifies the default state of DEC Origin Mode. (If you don`t know what that
+!        means, you probably don`t need to mess with it.)
+!PTerm.AutoWrapMode
+!        This option should be set to either 0 or 1; the default is 1. It specifies the default state of auto wrap mode. When set to 1, very long lines
+!        will wrap over to the next line on the terminal; when set to 0, long lines will be squashed against the right-hand edge of the screen.
+!PTerm.LFImpliesCR
+!        This  option  should  be  set  to  either 0 or 1; the default is 0. When set to 1, the terminal will return the cursor to the left side of the
+!        screen when it receives a line feed character.
+!PTerm.WinTitle
+!        This resource is the same as the -T command-line option: it controls the initial title of the window. The default is `pterm`.
+!PTerm.TermWidth
+!        This resource is the same as the width part of the -geometry command-line option: it controls the number of columns of text in the window. The
+!        default is 80.
+!PTerm.TermHeight
+!        This resource is the same as the width part of the -geometry command-line option: it controls the number of columns of text in the window. The
+!        defaults is 24.
+PTerm.TermWidth:                160
+PTerm.TermHeight:                   50
+!XTerm*VT100.geometry:          160x50
+!PTerm.Font
+!        This resource is the same as the -fn command-line option: it controls the font used to display normal text. The default is `fixed`.
+!PTerm.BoldFont
+!        This resource is the same as the -fb command-line option: it controls the font used to display bold text when BoldAsColour is set to 0  or  2.
+!        The default is unset (the font will be bolded by printing it twice at a one-pixel offset).
+!PTerm.WideFont
+!        This  resource  is the same as the -fw command-line option: it controls the font used to display double-width characters. The default is unset
+!        (double-width characters cannot be displayed).
+!PTerm.WideBoldFont
+!        This resource is the same as the -fwb command-line option: it controls the font used to display double-width characters in bold, when  BoldAs‐
+!        Colour is set to 0 or 2. The default is unset (double-width characters are displayed in bold by printing them twice at a one-pixel offset).
+!PTerm.ShadowBoldOffset
+!        This resource can be set to an integer; the default is ‐1. It specifies the offset at which text is overprinted when using `shadow bold` mode.
+!        The default (1) means that the text will be printed in the normal place, and also one character to the right; this seems to work well for most
+!        X  bitmap  fonts, which have a blank line of pixels down the right-hand side. For some fonts, you may need to set this to ‐1, so that the text
+!        is overprinted one pixel to the left; for really large fonts, you may want to set it higher than 1 (in one direction or the other).
+!PTerm.BoldAsColour
+!        This option should be set to either 0, 1, or 2; the default is 1. It specifies how bold text should be displayed. When set to 1, bold text  is
+!        shown by displaying it in a brighter colour; when set to 0, bold text is shown by displaying it in a heavier font; when set to 2, both effects
+!        happen at once (a heavy font and a brighter colour).
+!PTerm.Colour0, pterm.Colour1, ..., pterm.Colour21
+!        These options control the various colours used to display text in the pterm window. Each one should be specified as a triple of  decimal  num‐
+!        bers giving red, green and blue values: so that black is `0,0,0`, white is `255,255,255`, red is `255,0,0` and so on.
+!        Colours  0  and  1  specify the foreground colour and its bold equivalent (the -fg and -bfg command-line options). Colours 2 and 3 specify the
+!        background colour and its bold equivalent (the -bg and -bbg command-line options). Colours 4 and 5 specify the text and block colours used for
+!        the  cursor  (the  -cfg and -cbg command-line options). Each even number from 6 to 20 inclusive specifies the colour to be used for one of the
+!        ANSI primary colour specifications (black, red, green, yellow, blue, magenta, cyan, white, in that order); the odd numbers from 7 to 21 inclu‐
+!        sive specify the bold version of each colour, in the same order. The defaults are:
+!
+!        PTerm.Colour0: 187,187,187
+!        PTerm.Colour1: 255,255,255
+!        PTerm.Colour2: 0,0,0
+!        PTerm.Colour3: 85,85,85
+!        PTerm.Colour4: 0,0,0
+!        PTerm.Colour5: 0,255,0
+!        PTerm.Colour6: 0,0,0
+!        PTerm.Colour7: 85,85,85
+!        PTerm.Colour8: 187,0,0
+!        PTerm.Colour9: 255,85,85
+!        PTerm.Colour10: 0,187,0
+!        PTerm.Colour11: 85,255,85
+!        PTerm.Colour12: 187,187,0
+!        PTerm.Colour13: 255,255,85
+!        PTerm.Colour14: 0,0,187
+!        PTerm.Colour15: 85,85,255
+!        PTerm.Colour16: 187,0,187
+!        PTerm.Colour17: 255,85,255
+!        PTerm.Colour18: 0,187,187
+!        PTerm.Colour19: 85,255,255
+!        PTerm.Colour20: 187,187,187
+!        PTerm.Colour21: 255,255,255
+!PTerm.RectSelect
+!        This  option should be set to either 0 or 1; the default is 0. When set to 0, dragging the mouse over several lines selects to the end of each
+!        line and from the beginning of the next; when set to 1, dragging the mouse over several lines selects a  rectangular  region.  In  each  case,
+!        holding down Alt while dragging gives the other behaviour.
+!PTerm.MouseOverride
+!        This  option should be set to either 0 or 1; the default is 1. When set to 1, if the application requests mouse tracking (so that mouse clicks
+!        are sent to it instead of doing selection), holding down Shift will revert the mouse to normal selection. When set to 0, mouse  tracking  com‐
+!        pletely disables selection.
+!PTerm.Printer
+!        This  option  is unset by default. If you set it, then server-controlled printing is enabled: the server can send control sequences to request
+!        data to be sent to a printer. That data will be piped into the command you specify here; so you might want to set it to `lpr`, for example, or
+!        `lpr -Pmyprinter`.
+!PTerm.ScrollBar
+!        This option should be set to either 0 or 1; the default is 1. When set to 0, the scrollbar is hidden (although Shift-PageUp and Shift-PageDown
+!        still work). This is the same as the -sb command-line option.
+!PTerm.ScrollbarOnLeft
+!        This option should be set to either 0 or 1; the default is 0. When set to 1, the scrollbar will be displayed  on  the  left  of  the  terminal
+!        instead of on the right.
+!PTerm.ScrollOnKey
+!        This option should be set to either 0 or 1; the default is 0. When set to 1, any keypress causes the position of the scrollback to be reset to
+!        the very bottom.
+!PTerm.ScrollOnDisp
+!        This option should be set to either 0 or 1; the default is 1. When set to 1, any activity in the display causes the position of the scrollback
+!        to be reset to the very bottom.
+!PTerm.LineCodePage
+!        This option specifies the character set to be used for the session. This is the same as the -cs command-line option.
+!PTerm.NoRemoteCharset
+!        This  option disables the terminal`s ability to change its character set when it receives escape sequences telling it to. You might need to do
+!        this to interoperate with programs which incorrectly change the character set to something they think is sensible.
+!PTerm.BCE
+!        This option should be set to either 0 or 1; the default is 1. When set to 1, the various control sequences that erase parts  of  the  terminal
+!        display will erase in whatever the current background colour is; when set to 0, they will erase in black always.
+!PTerm.BlinkText
+!        This  option  should be set to either 0 or 1; the default is 0. When set to 1, text specified as blinking by the server will actually blink on
+!        and off; when set to 0, pterm will use the less distracting approach of making the text`s background colour bold.
+!PTerm.StampUtmp
+!        This option should be set to either 0 or 1; the default is 1. When set to 1, pterm will log the login in the various system  log  files.  This
+!        resource is equivalent to the -ut command-line option.
+!PTerm.LoginShell
+!        This  option should be set to either 0 or 1; the default is 1. When set to 1, pterm will execute your shell as a login shell. This resource is
+!        equivalent to the -ls command-line option.
+! u?rxvt here originally from Pat^s Puppy QuirkyTahr Wary 5.5.1 rel8ively minimal machine, so probably hardly applicable to Aku yet
+!Rxvt*keysym.0xFF50:             \001
+!Rxvt*keysym.0xFF57:             \005
+! but urxvt in quirky etc needs these...
+!Rxvt.keysym.Home:               \033[1~
+!Rxvt.keysym.End:                \033[4~
+! broomdodger reports this works in both 431 and quirky (rxvt and urxvt)...
+!Rxvt.keysym.0xFF50:             \033[1~
+!Rxvt.keysym.0xFF57:             \033[4~ 
+!Rxvt*menu:                      ~/.rxvt.menu
+!Rxvt*saveLines:                 65536
+
+!URxvt.reverseVideo:             1
+!URxvt.foreground:               #000000000000
+!URxvt.background:               #f8f8f8f8f8f8
+URxvt.foreground:               #1000f8f83000
+URxvt.background:               #000000000000
+URxvt.underlineColor:           #ffff00000000
+! fonts: run `fc-list` for a list of available fonts, below was:pixelsize=14
+URxvt.font:                     xft:Nimbus Mono L:style=Regular:pixelsize=12
+URxvt.geometry:                 160x50
+URxvt.scrollBar:                1
+URxvt.scrollBar_right:          1
+URxvt.scrollTtyOutput:          0
+URxvt.scrollTtyKeypress:        1
+URxvt.secondaryScroll:          1
+URxvt.saveLines:                65536
+URxvt.cursorUnderline:          0
+URxvt.cursorBlink:              1
+URxvt.borderLess:               0
+URxvt.transparent:              0
+URxvt.shading:                  85
+!urxvt -h
+!rxvt-unicode (urxvt) v9.21 - released: 2014-12-31
+!options: perl,xft,styles,combining,blink,iso14755,unicode3,encodings=eu+vn+jp+jp-ext+kr+zh+zh-ext,fade,transparent,tint,pixbuf,XIM,frills,selectionscrolling,wheel,slipwheel,smart-resize,cursorBlink,pointerBlank,scrollbars=plain+rxvt+NeXT+xterm
+!Usage: urxvt [-help] [--help]
+! [-display string] [-tn string] [-geometry geometry] [-C] [-iconic]
+! [-cd string] [-dockapp] [-/+rv] [-/+ls] [-mc number] [-/+j] [-/+ss] [-/+ptab]
+! [-/+sb] [-/+sr] [-/+st] [-sbt number] [-/+si] [-/+sk] [-/+sw] [-/+ip] [-/+tr]
+! [-tint color] [-sh number] [-blr HxV] [-fade number] [-fadecolor color]
+! [-/+ut] [-/+vb] [-/+tcw] [-/+insecure] [-/+uc] [-/+bc] [-/+pb] [-bg color]
+! [-fg color] [-hc color] [-cr color] [-pr color] [-pr2 color] [-bd color]
+! [-pixmap file[;geom]] [-icon file] [-fn fontname] [-fb fontname]
+! [-fi fontname] [-fbi fontname] [-/+is] [-im name] [-pt style]
+! [-imlocale string] [-imfont fontname] [-name string] [-title string]
+! [-n string] [-sl number] [-embed windowid] [-depth number] [-visual number]
+! [-/+override-redirect] [-pty-fd fileno] [-/+hold] [-w number] [-b number]
+! [-/+bl] [-lsp number] [-letsp number] [-/+sbg] [-mod modifier] [-/+ssc]
+! [-/+ssr] [-pe string] [-e command arg ...]
+!urxvt --help
+!rxvt-unicode (urxvt) v9.21 - released: 2014-12-31
+!options: perl,xft,styles,combining,blink,iso14755,unicode3,encodings=eu+vn+jp+jp-ext+kr+zh+zh-ext,fade,transparent,tint,pixbuf,XIM,frills,selectionscrolling,wheel,slipwheel,smart-resize,cursorBlink,pointerBlank,scrollbars=plain+rxvt+NeXT+xterm
+!Usage: urxvt [options] [-e command args]
+!where resources (long-options) include:
+!  termName:                       string
+!  geometry:                       geometry
+!  chdir:                          string
+!  reverseVideo:                   boolean
+!  loginShell:                     boolean
+!  multiClickTime:                 number
+!  jumpScroll:                     boolean
+!  skipScroll:                     boolean
+!  pastableTabs:                   boolean
+!  scrollstyle:                    mode
+!  scrollBar:                      boolean
+!  scrollBar_right:                boolean
+!  scrollBar_floating:             boolean
+!  scrollBar_align:                mode
+!  thickness:                      number
+!  scrollTtyOutput:                boolean
+!  scrollTtyKeypress:              boolean
+!  scrollWithBuffer:               boolean
+!  inheritPixmap:                  boolean
+!  transparent:                    boolean
+!  tintColor:                      color
+!  shading:                        number
+!  blurRadius:                     HxV
+!  fading:                         number
+!  fadeColor:                      color
+!  utmpInhibit:                    boolean
+!  urgentOnBell:                   boolean
+!  visualBell:                     boolean
+!  mapAlert:                       boolean
+!  meta8:                          boolean
+!  mouseWheelScrollPage:           boolean
+!  tripleclickwords:               boolean
+!  insecure:                       boolean
+!  cursorUnderline:                boolean
+!  cursorBlink:                    boolean
+!  pointerBlank:                   boolean
+!  background:                     color
+!  foreground:                     color
+!  color0:                         color
+!  color1:                         color
+!  color2:                         color
+!  color3:                         color
+!  color4:                         color
+!  color5:                         color
+!  color6:                         color
+!  color7:                         color
+!  color8:                         color
+!  color9:                         color
+!  color10:                        color
+!  color11:                        color
+!  color12:                        color
+!  color13:                        color
+!  color14:                        color
+!  color15:                        color
+!  colorBD:                        color
+!  colorIT:                        color
+!  colorUL:                        color
+!  colorRV:                        color
+!  underlineColor:                 color
+!  scrollColor:                    color
+!  troughColor:                    color
+!  highlightColor:                 color
+!  highlightTextColor:             color
+!  cursorColor:                    color
+!  cursorColor2:                   color
+!  pointerColor:                   color
+!  pointerColor2:                  color
+!  borderColor:                    color
+!  path:                           search path
+!  backgroundPixmap:               file[;geom]
+!  iconFile:                       file
+!  font:                           fontname
+!  boldFont:                       fontname
+!  italicFont:                     fontname
+!  boldItalicFont:                 fontname
+!  intensityStyles:                boolean
+!  inputMethod:                    name
+!  preeditType:                    style
+!  imLocale:                       string
+!  imFont:                         fontname
+!  title:                          string
+!  iconName:                       string
+!  saveLines:                      number
+!  buffered:                       boolean
+!  depth:                          number
+!  visual:                         number
+!  transient-for:                  windowid
+!  override-redirect:              boolean
+!  hold:                           boolean
+!  externalBorder:                 number
+!  internalBorder:                 number
+!  borderLess:                     boolean
+!  lineSpace:                      number
+!  letterSpace:                    number
+!  skipBuiltinGlyphs:              boolean
+!  pointerBlankDelay:              number
+!  backspacekey:                   string
+!  deletekey:                      string
+!  print-pipe:                     string
+!  modifier:                       modifier
+!  cutchars:                       string
+!  answerbackString:               string
+!  secondaryScreen:                boolean
+!  secondaryScroll:                boolean
+!  perl-lib:                       string
+!  perl-eval:                      perl-eval
+!  perl-ext-common:                string
+!  perl-ext:                       string
+!  iso14755:                       boolean
+!  iso14755_52:                    boolean
+!  xrm:                            string
+!  keysym.sym:                     keysym
+!  background.border:              boolean
+!  background.expr:                string
+!  background.interval:            seconds
+!  bell-command:                   string
+!  kuake.hotkey:                   string
+!  matcher.button:                 string
+!  matcher.launcher:               string
+!  matcher.launcher.*:             string
+!  matcher.pattern.*:              string
+!  matcher.rend.*:                 string
+!  remote-clipboard.fetch:         string
+!  remote-clipboard.store:         string
+!  searchable-scrollback:          string
+!  selection-autotransform.*:      string
+!  selection-pastebin.cmd:         string
+!  selection-pastebin.url:         string
+!  selection.pattern-0:            string
+!  tab-bg:                         colour
+!  tab-fg:                         colour
+!  tabbar-bg:                      colour
+!  tabbar-fg:                      colour
+!  url-launcher:                   string
+
+! =lxterm is sh script ckng locale thN wrapping uxterm, but =lxterminal is a separ8 binary XeQtabl && uxterm does!sEm2 accept a geometry resource here (VT100)?
+!uxterm*VT100.geometry:          160x50
+!uxterm.textWidth:               160
+!uxterm.textHeight:                  50
+
+xclock*Foreground:              black
+xclock*Background:              light grey
+xclock*Border:                  navy       blue
+xclock*Highlight:               cornflower blue
+xclock*Hands:                   slate      blue
+xclock*Mode:                    analog
+!xclock*analog:                  1
+xclock*update:                  1
+! Maybe these originally came from some fonts.conf but attempting`xrdb -remove .Xrc`to just pull xterm entries out again removed everything so this to restore:
+*customization:                 -color
+Xft.antialias:                  1
+Xft.dpi:                        144
+Xft.hinting:                    1
+Xft.hintstyle:                  hintslight
+Xft.rgba:                       rgb

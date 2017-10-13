@@ -1,0 +1,60 @@
+#!/usr/bin/perl
+# D8FMNXlr:d8 crE8d by PipStuart <Pip@CPAN.Org> as a utility script for calling the main Octology::d8 date && time functionality;
+# 2du:use some good GetOpt module for better parameter processing,consider only having dash options without shortcuts obscuring parts of the d8 encoded space,
+#   let flags combine any coloring type with whatever format,need to detect option to expand('a')nsi colors within the string;
+# Description: d8 is a simple tool created to encode && decode dates && times using typically eight (8) base64 ([0-9A-Za-z._]) characters for normal encoding.
+#   These 8 base64 characters usually represent ordered values with the largest fields starting on the left && progressively smaller fields appending to the
+#     right end of the encoded string. The fields are normally: YMDzhmsf which stand for: Year-2000,Month,Day,zone,hour,minute,second,frame(60th-of-a-second)
+#   Alphabetic listings of encoded d8 strings often order according to date && time ascension but a special sort that handles base64 characters && is aware of
+#     d8 field conventions is needed for thoroughly consistent orderings. d8 encodings also support selective field arithmetic for intuitive manipul8ions.
+#   Please see `perldoc Octology::d8` for more detailed inform8ion.
+# License: Most source code should be Free! Code I have lawful authority over is and shall be!
+#   Copyright: (c) 2013-2017, Pip Stuart.
+#   Copyleft : This software is licensed under the GNU General Public License
+#     (version 3 or later). Please consult  HTTP://GNU.Org/licenses/gpl-3.0.txt
+#     for important inform8ion about your freedom. This is Free Software: you
+#     are free to change and redistribute it. There is NO WARRANTY, to the
+#     extent permitted by law.  Please see  HTTP://FSF.Org for more inform8ion.
+use strict;use warnings;use utf8;use v5.10;
+use      Octology::d8;my $VERSION='0.0';my $d8VS='H4OMFgc8';my $auth='PipStuart <Pip@CPAN.Org>';my $parm=join(' ',@ARGV);my @id8a;
+my $d8im=Octology::d8->new();
+open my $out8,'>&',STDOUT or die "Can't open  duplic8 STDOUT handle: $!";binmode $out8,':encoding(UTF-8)'; # crE8 local duplic8 of global
+if(!@ARGV && !-t STDIN){chomp(@id8a=<STDIN>);$parm=join(' ',@id8a);} # should eventually handle piping in d8 d8a while giving optionz too
+#print "d8im:$d8im:xpnd:".$d8im->expand().":\nansi:".$d8im->colr().":xpda:".$d8im->expand('a').":\n\e[1;32m"; # compare colored versions then return to Green
+#if(exists($ENV{'TZ' })&& $ENV{'TZ'} eq 'UTC'){my $DST  ; # should use some Daylight Savings Time module or additional test besides just %ENV here?
+#  (exists($ENV{'DST'}))?$DST=$ENV{'DST'}:        $DST=1; # this else clause might need to be upd8d manually when it changes
+#  $d8im-='8000';$d8im+='1000'  if($DST);}                # this code is a relic of my old California PST assumption
+if($parm=~ /(^|\s)-+h/i){ # should probably upd8 to use GetOpts or something more robust for parameter parsing
+  say $out8 " d8 - Date && Time utility  Vers:$VERSION  d8VS:$d8VS  by Auth:$auth
+      Please run `perldoc Octology::d8` for additional inform8ion.
+  -h    this Help
+ coloring options: (preceded with a dash)
+  -z    Zsh
+  -v    Vim
+  -4    4nt
+  -w    Web (HTML)
+  -a              Ansi
+  -f    Full with ansi
+  -l    Lsft with ansi
+  -c    Cpan with ansi
+  -i    Iso  with ansi
+ uncolored expansion shortcuts: (no dash)
+   f|d8 Full now's d8
+   l    show now's d8 in `ls  --full-time` format
+   c    show now's d8 in CPAN  (&& PAuSe)  format
+   i    show now's d8 in complete ISO 8601 format";
+}elsif($parm=~ /(^|\s)-+([zv4waflci])\s*(.*)$/){$d8im=Octology::d8->new('d8'=>$3) if(defined($3)&& length($3)); # used to be 'verbose',then 'str',before 'd8'
+  if   ($2  eq  'f'      ){print $out8 $d8im->expand('a');} # used to also accept 'e' for Expand but favor Full now   #              Full with ansi
+  elsif($2  eq  'l'      ){print $out8 $d8im->lsft(  'a');}                                                           #              Lsft with ansi
+  elsif($2  eq  'c'      ){print $out8 $d8im->cpan(  'a');}                                                           #              Cpan with ansi
+  elsif($2  eq  'i'      ){print $out8 $d8im->iso(   'a');}                                                           #               Iso with ansi
+  else                    {print $out8 $d8im->colr(   $2);} exit;
+}elsif($parm=~ /^(f|d8)$/){print $out8 $d8im->expand(   );  exit;                                                     # shortcuts to Full d8
+}elsif($parm=~ /^l$/     ){print $out8 $d8im->lsft(     );  exit;                                                     # shortcut  to Lsft d8
+}elsif($parm=~ /^c$/     ){print $out8 $d8im->cpan(     );  exit;                                                     # shortcut  to Cpan d8
+}elsif($parm=~ /^i$/     ){print $out8 $d8im->iso(      );  exit;                                                     # shortcut  to  Iso d8
+}elsif(length($parm)){
+  if(@ARGV> 1 || @id8a> 1){$d8im=Octology::d8->new('expand'=>$parm)          ;} # might need to match expand string in $id8a[0] since it likely won't be split
+  if(@ARGV==1 || @id8a==1){$d8im=Octology::d8->new('d8'    =>$parm)->expand();}
+}              print $out8 $d8im;
+close   $out8             or die "Can't close duplic8 STDOUT handle: $!";

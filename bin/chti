@@ -1,0 +1,5 @@
+#!/usr/bin/perl
+use strict;use warnings;use utf8;use Octology::a8; # basic CHange window && icon TItle function using XTerm dtterm control sequence:
+#   OSC Ps;Pt ST ...like "\e\]\d;NwTi\e\\" with \d being just a [012] param where 0=both, 1=IconName, 2=WindowTitle;
+open my $out8,'>&',STDOUT or die "Can't open  duplic8 STDOUT handle: $!";binmode $out8,':encoding(UTF-8)';print $out8 chti(@ARGV);
+close   $out8             or die "Can't close duplic8 STDOUT handle: $!";

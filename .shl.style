@@ -1,0 +1,87 @@
+// E89M3pQc:~/.shl.style crE8d by PipStuart <Pip@CPAN.Org> as a source-highlight shl style file meant to mimic my familiar vim syntax highlighting colors;
+// This file is adapted mainly from /usr/share/source-highlight/(default|esc).style files && gets close to vim except for sub names, regexes, && filehandles;
+//color         "white"         ; // the background color for documents
+bgcolor          black          ; // the background color for documents
+context          gray           ; // the color for context lines (when specified with line ranges)
+//yword          blue         b ; // for language keywords
+keyword          yellow       b ; // for language keywords
+//pe             darkgreen      ; // for basic types
+type             cyan         b ; // for basic types
+usertype         teal           ; // for user defined types
+//ring           red          f ; // for strings and chars
+string           purple       b ; // for strings and chars
+//gexp           orange       f ; // for strings and chars
+regexp           red          b ; // for strings and chars
+specialchar      pink         f ; // for special chars, e.g., \n, \t, \\
+//mment          brown        i, noref; // for comments
+comment          cyan         b, noref; // for comments; shl doesn't seem to detect #! line as different from other comments like vim making it blue b
+number           purple       b ; // for literal numbers
+//eproc          teal         b ; // from style3.style
+preproc          darkblue     b ; // for preproc directives (e.g. #include, import)
+//mbol           darkred        ; // for symbols (e.g. <, >, +)
+symbol           brightgreen  b ; // for symbols (e.g. <, >, +)
+//nction         black        b ; // for function calls and declarations
+function         cyan         b ; // for function calls and declarations
+//racket         red            ; // for block brackets (e.g. {, })
+cbracket         brightgreen  b ; // for block brackets (e.g. {, })
+todo          bg:cyan         b ; // for TODO and FIXME
+code          bg:brightgreen  b ; // for code snippets
+predef_var       darkblue       ; //Predefined variables and functions (for instance glsl)
+predef_func      darkblue     b ;
+//assname        teal           ; // for class names, e.g., in Java and C++ // for OOP
+classname        teal         b ; // for class names, e.g., in Java and C++
+//neno           orange       b ; // from style3.style
+linenum          black        f ; // line numbers
+url              blue         u, f ; // Internet related
+date             blue         b ; // other elements for ChangeLog and Log files
+time, file       darkblue     b ;
+ip, name         darkgreen      ;
+//riable         darkgreen      ; // for Prolog, Perl...
+variable         cyan         b ;
+italics          darkgreen    i ; // explicit for Latex
+bold             darkgreen    b ;
+underline        darkgreen    u ;
+fixed            green        f ;
+argument         darkgreen      ;
+optionalargument purple         ;
+math             orange         ;
+bibtex           blue           ;
+oldfile          orange         ; // for diffs
+newfile          darkgreen      ;
+difflines        blue           ;
+selector         purple         ; // for css
+property         blue           ;
+value            darkgreen    i ;
+atom             orange         ; // for oz
+meta                          i ;
+path             orange         ; // for file system
+label            teal         b ; // for C (or other language) labels
+error            purple         ; // for errors
+warning          darkgreen      ;
+
+// esc.style
+//keyword          blue         b ;
+//type, classname  darkgreen      ;
+//string           red            ;
+//regexp           orange         ;
+//specialchar      pink           ;
+//comment          cyan         i ;
+//number           purple         ;
+//preproc          darkblue     b ;
+//symbol           darkred        ;
+//function         black        b ;
+//cbracket         red            ;
+//variable         darkgreen      ;
+//linenum          yellow         ; // line numbers
+//date             blue           ; // other elements for ChangeLog and Log files
+//time             darkblue       ;
+//ip               darkgreen      ;
+//file             darkblue       ;
+//name             darkgreen      ;
+//url              blue         u ; // Internet related
+//oldfile          orange         ; // for diffs
+//newfile          darkgreen      ;
+//difflines        blue           ;
+//selector         purple         ; // for css
+//property         blue           ;
+//value            darkgreen    i ;

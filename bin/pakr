@@ -1,0 +1,178 @@
+#!/usr/bin/perl
+# 153KNxv0:pr (PackRube) by PipStuart <Pip@CPAN.Org> ECJL3BQT:pakr rename to avoid /usr/bin/pr; Utility to convert between QbixRube represent8ions;
+# Mainly designed to convert between 40-HEX-char verbose && 75-bit packed formats. Should l8r handle Singmaster not8ion described in miker.txt as:
+#   UF UR UB UL DF DR DB DL FR FL BR BL UFR URB UBL ULF DRF DFL DLB DBR            Should also check out KDE's Kubrick;
+# 75-bit format is printed out as up to 13 b64-characters. The packing goes from largest elements to smallest in the following order:
+#     4 4-bit edge positions                  16 bits
+#     4 3-bit corn positions                 +12 = 28  maybe should segment after here too to keep values under 32-bits (making 3 parts of 28,20,&& 27-bits)
+#     4 3-bit edge positions                 +12 = 40    but then b64 of 28 && 20 aren't evenly divisible by 6 so needed 0-padding && combining is harder
+#     2 2-bit corn positions                 + 4 = 44    but could mAB be done by doing 3-bit corn pos 1st then only first 3 of 4-bit edge pos for 4-b64-chars
+#     2 2-bit edge positions                 + 4 = 48  segmented here into lo48 && hi27 to avoid needing Math::BigInt to handle larger than 64-bit numbers
+#     7 2-bit corn rot8ions                  +14 = 62    but 48 is still too large for any old 32-bit Perl
+#     1 1-bit edge position                  + 1 = 63
+#     1 1-bit corn position                  + 1 = 64
+#     * 1-bit edge rot8ions (up to 11 bits)  +11 = 75
+# Any extra inform8ion that can be modulo encoded in early bits design8s the smallest bits in reverse order from the end. The list is packed
+#   least-significant to most in order. The packing saves an average of about 6 of the highest bits but the worst case I've seen so far is only saving 2 bits.
+#   This means that the resulting b64 string is only very rarely going to require all 13 chars && should usually be much less when the rube is close to solved.
+# Bit-packing could be allowed to spill up into the last 1-bit corner && edge positions but it is diminishing returns to special-case everything necessary
+#   when, at that point, the cube is mostly solved anyway && doesn't seem worth the effort to maybe squeeze another bit or two free from the top (especially
+#   because it has already gotten down to just a 64-bit number by then too, which is wonderfully clean to me).
+# Maybe I should use Math::BigInt instead of splitting the number? This should definitely be done because not all machines are capable of multiplying the
+#   huge numbers necessary to perform these conversions (&& even some machines that can don't have a 64-bit Perl... naughty old LBox! ;) ).
+# Wikipedia's Rubik's page says any rube might be able to be optimally solved in 20 moves maximum (but then says some positions require 20 minimum?).
+#   Apparently Jessica Fridrich's solution employs about 120 sequences to solve in 55 moves on average. Other mentioned methods seem interesting too.
+# I tried only packing 1 erots instead of 0 && reversing unpak but roundtrip erord && init was no longer just 0. Also checking for ecou already theoretical
+#   max of 11 ruined init being 0 too so disabled (as just == -1). =(
+use strict;use warnings;use Octology::b8;my $VERSION='0.0';my $d8VS='H4OMDifQ';my $rbin=shift(@ARGV) || 0;my $ecou=0; # RuBeINput, EndEdgeCOUnt
+my @corn;my @edge;my @crot;my @erot;my @lflg;my $lo48;my $hi27=''; my $v40s='';my $prnm=0; # LoopFLaGs?, PackedRubeNuMber?
+my($tval,$tshf); # are these TempVALue && TempSHiFt? should probably name them better
+if(@ARGV == 19 && $rbin =~ /^[FURBDL]{2}$/){} # convert Singmaster not8ion describing full rube (which I can't yet find details of) to normal 40-HEX format
+  #my @ccol = ( 0,1,2,  0,5,1,  0,4,5,  0,2,4,   3,5,4,  3,4,2,  3,2,1,  3,1,5 ); # Qblet colors indexing WRYBOG
+  #my @ecol = ( 0,1, 0,5, 0,4, 0,2,   3,4, 3,2, 3,1, 3,5,   1,2, 1,5, 4,5, 4,2 );
+  # probably just default W as F && R as U to then map rest of colors && loop thru @ARGV to build proper positions && rot8ions
+elsif(length($rbin) == 40){ # normal 40-HEX-character to 75-bit conversion  # mAB test @ARGV for another param to design8 cnv 40-char to Singmaster
+  for(split(//,$rbin)){if(@crot < 8){if(@corn == @crot){push(@corn,    $_ );}else{push(@crot,$_);}}  # break 40-char string down into the four component
+                       else         {if(@edge == @erot){push(@edge,dec($_));}else{push(@erot,$_);}}} #   d8a-sets (de-interleave positions && rot8ions)
+  for(0..3){$tval = $edge[$_  ];$tshf = 16 - 12 + $_; # this runs 4..7 for 1st 4 edge positions && I forget why                # 4 4-bit edge positions
+    if($tval < $tshf){$tval -= $tshf unless(               $erot[11 - ++$ecou]);} # test if end edge rot8ion can be encoded here.
+    $tval += $tshf;$prnm +=16 ** $_ * $tval                             ;for my $endx (($_+1)..$#edge){$edge[$endx]-- if($edge[$endx] > $edge[$_  ]);}} # 16bit
+  for(0..3){$tval = $corn[$_  ];$tshf = $_;                                                                                    # 4 3-bit corn positions
+    if($tval < $tshf){$tval -= $tshf unless(               $erot[11 - ++$ecou]);}
+    $tval += $tshf;$prnm += 8 ** $_ * $tval *                      16**4;for my $cndx (($_+1)..$#corn){$corn[$cndx]-- if($corn[$cndx] > $corn[$_  ]);}} # 28bit
+  for(0..3){$tval = $edge[$_+4];$tshf = $_;                                                                                    # 4 3-bit edge positions
+    if($tval < $tshf){$tval -= $tshf unless($ecou == -1 || $erot[11 - ++$ecou]);} # cud hv pakd in all 11 erots by this point so start checking for max ecou
+    $tval += $tshf;$prnm += 8 ** $_ * $tval *               8**4 * 16**4;for my $endx (($_+5)..$#edge){$edge[$endx]-- if($edge[$endx] > $edge[$_+4]);}} # 40bit
+  for(0..1){$tval = $corn[$_+4];$tshf = $_;                                                                                    # 2 2-bit corn positions
+    if($tval < $tshf){$tval -= $tshf unless($ecou == -1 || $erot[11 - ++$ecou]);}
+    $tval += $tshf;$prnm += 4 ** $_ * $tval *        8**4 * 8**4 * 16**4;for my $cndx (($_+5)..$#corn){$corn[$cndx]-- if($corn[$cndx] > $corn[$_+4]);}} # 44bit
+  for(0..1){$tval = $edge[$_+8];$tshf = $_;                                                                                    # 2 2-bit edge positions
+    if($tval < $tshf){$tval -= $tshf unless($ecou == -1 || $erot[11 - ++$ecou]);}
+    $tval += $tshf;$prnm += 4 ** $_ * $tval * 4**2 * 8**4 * 8**4 * 16**4;for my $endx (($_+9)..$#edge){$edge[$endx]-- if($edge[$endx] > $edge[$_+8]);}} # 48bit
+  $lo48 = b64($prnm);$prnm=0; # this should be exactly 8 b64 characters converted so split the number on the nice boundary here
+  for(0..6){$tval = $crot[$_  ];$tshf = 1; # all corn rots are 0,1,or2 so 1 remaining val in 2-bits can design8 end-bit        # 7 2-bit corn rot8ions
+    if($tval < $tshf){$tval -= $tshf unless($ecou == -1 || $erot[11 - ++$ecou]);}
+    $tval += $tshf;$prnm += 4 ** $_ * $tval;} $prnm += $edge[10] *                   4**7;                                     # 1 1-bit edge position
+                                              $prnm += $corn[ 6] *               2 * 4**7;                                     # 1 1-bit corn position
+  for(0..10-$ecou){                           $prnm += 2 ** $_ * $erot[$_] * 2 * 2 * 4**7;} # up2 11bits but less alreD pakd   # * 1-bit edge rot8ions
+  $hi27 = b64($prnm);if($hi27 eq '0'){$hi27='';}else{$lo48="0$lo48" while(length($lo48) < 8);} # mk sure lo48 take full 8 b64-chars if any hi nEds 2 precede
+  print $hi27,$lo48;} # init ecou was 19 here, maybe neg8ively indexing backward through erots? seems bad to potentially index past end
+else{ # unpacking up to 75-bits (from up to 13-b64-characters) into 40-HEX-characters
+  $hi27 =    substr($rbin,0,length($rbin)-8,'') if(length($rbin) > 8);
+  $lo48       =     $rbin;
+  $prnm       = b10($lo48);
+  for(0..3){ # 4 4-bit edge positions
+    $tval     = $prnm & 15;
+    $tshf     = 16 - 12 + $_;
+    $tval    -= $tshf;
+    if  ($tval< $tshf){ # test if end edge rot8ion was encoded here
+      if($tval< 0    ){$erot[11 - ++$ecou]=0;$tval += $tshf;}
+      else            {$erot[11 - ++$ecou]=1;               }}
+    $edge[$_] = $tval;
+    $prnm    /= 16; #$prnm >> 4; # divide by 16
+    for my $lndx (0..($_-1)){$lflg[$lndx]=0;}
+    for(my $lndx=0;$lndx<$_;$lndx++){ # needed to restore classic for loop with explicit $lndx++ for reset to -1 below to work
+      if(!$lflg[$lndx] && $edge[$lndx]<=$edge[$_]){
+          $lflg[$lndx]=1;               $edge[$_]++;$lndx = -1;}}} # reset loop in case increment can match earlier lower indices now
+  for(0..3){ # 4 3-bit corn positions
+    $tval     = $prnm & 7;
+    $tshf     = $_;
+    $tval    -= $tshf;
+    if  ($tval< $tshf){ # test if end edge rot8ion was encoded here
+      if($tval< 0    ){$erot[11 - ++$ecou]=0;$tval+=$tshf;}
+      else            {$erot[11 - ++$ecou]=1;             }}
+    $corn[$_] = $tval;
+    $prnm    /= 8; #$prnm >> 3; # divide by 8
+    for my $lndx (0..($_-1)){$lflg[$lndx]=0;}
+    for(my $lndx=0;$lndx<$_;$lndx++){
+      if(!$lflg[$lndx] && $corn[$lndx]<=$corn[$_]){
+          $lflg[$lndx]=1;               $corn[$_]++;$lndx = -1;}}}
+  for(0..3){ # 4 3-bit edge positions
+    $tval     = $prnm & 7;
+    $tshf     = $_;
+    $tval    -= $tshf;
+    if  ($tval< $tshf){ # test if end edge rot8ion was encoded here
+      if($ecou< 11   ){ # cap the bit packing at the 11 edge rot8ions (which leaves the whole thing as a nice 64-bit number)
+        if   ($tval < 0){$erot[11 - ++$ecou]=0;$tval+=$tshf;}
+        else            {$erot[11 - ++$ecou]=1;             }
+      } elsif($tval < 0){                      $tval+=$tshf;}}
+    $edge[$_ + 4] = $tval;
+    $prnm    /= 8; #$prnm >> 3; # divide by 8
+    for my $lndx (0..($_+3)){$lflg[$lndx]=0;}
+    for(my $lndx=0;$lndx<($_+4);$lndx++){
+      if(!$lflg[$lndx] && $edge[$lndx]<=$edge[$_+4]){
+          $lflg[$lndx]=1;               $edge[$_+4]++;$lndx = -1;}}}
+  for(0,1){ # 2 2-bit corn positions
+    $tval     = $prnm & 3;
+    $tshf     = $_;
+    $tval    -= $tshf;
+    if  ($tval< $tshf){
+      if($ecou< 11   ){
+        if   ($tval < 0){$erot[11 - ++$ecou]=0;$tval+=$tshf;}
+        else            {$erot[11 - ++$ecou]=1;             }
+      } elsif($tval < 0){                      $tval+=$tshf;}}
+    $corn[$_ + 4] = $tval;
+    $prnm    /= 4; #$prnm >> 2; # divide by 4
+    for my $lndx (0..($_+3)){$lflg[$lndx]=0;}
+    for(my $lndx=0;$lndx<($_+4);$lndx++){
+      if(!$lflg[$lndx] && $corn[$lndx]<=$corn[$_+4]){
+          $lflg[$lndx]=1;               $corn[$_+4]++;$lndx = -1;}}}
+  for(0,1){ # 2 2-bit edge positions
+    $tval     = $prnm & 3;
+    $tshf     = $_;
+    $tval    -= $tshf;
+    if  ($tval< $tshf){
+      if($ecou< 11   ){
+        if   ($tval < 0){$erot[11 - ++$ecou]=0;$tval+=$tshf;}
+        else            {$erot[11 - ++$ecou]=1;             }
+      } elsif($tval < 0){                      $tval+=$tshf;}}
+    $edge[$_ + 8] = $tval;
+    $prnm    /= 4; #$prnm >> 2; # divide by 4
+    for my $lndx (0..($_+7)){$lflg[$lndx]=0;}
+    for(my $lndx=0;$lndx<($_+8);$lndx++){
+      if(!$lflg[$lndx] && $edge[$lndx]<=$edge[$_+8]){
+          $lflg[$lndx]=1;               $edge[$_+8]++;$lndx = -1;}}}
+  $prnm       = b10($hi27);
+  $lflg[0]    = 0; # sum corner rot8ions to find parity for 8th one
+  for(0..6){ # 7 2-bit corn rot8ions
+    $tval     = $prnm & 3;
+    $tshf     = 1; # all corner rot8ions have values of 0, 1, or 2 so there is 1 remaining value in each of their 2-bits that could design8 an end-bit
+    $tval    -= $tshf;
+    if  ($tval< $tshf){
+      if($ecou< 11   ){
+        if   ($tval < 0){$erot[11 - ++$ecou]=0;$tval+=$tshf;}
+        else            {$erot[11 - ++$ecou]=1;             }
+      } elsif($tval < 0){                      $tval+=$tshf;}}
+    $lflg[0] += $tval;
+    $crot[$_] = $tval;
+    $prnm    /= 4;}
+  $crot[ 7]   = (3 - ($lflg[0] % 3)) % 3; # take the parity sum && reflect it around the modulo to get the final corner rot8ion
+  $edge[10]   = $prnm & 1; # 1 1-bit edge position
+  $prnm      /= 2;
+  for my $lndx (0..9){$lflg[$lndx]=0;}
+  for(my $lndx=0;$lndx<10;$lndx++){
+    if(!$lflg[$lndx] && $edge[$lndx]<=$edge[10]){
+        $lflg[$lndx]=1;               $edge[10]++;$lndx = -1;}}
+  $corn[ 6]   = $prnm & 1; # 1 1-bit corn position
+  $prnm      /= 2;
+  for my $lndx (0..5){$lflg[$lndx]=0;}
+  for(my $lndx=0;$lndx<6;$lndx++){
+    if(!$lflg[$lndx] && $corn[$lndx]<=$corn[ 6]){
+        $lflg[$lndx]=1;               $corn[ 6]++;$lndx = -1;}}
+  $edge[11]   = 11;
+  for(0..10){       $lflg[      $_ ]=0;}
+  for(0..10){       $lflg[$edge[$_]]=1;} # find last edge position by flagging those already specified
+  for(0..10){unless($lflg[      $_ ]){$edge[11]=$_;last;}}
+  $corn[ 7]   =  7;
+  for(0.. 6){       $lflg[      $_ ]=0;}
+  for(0.. 6){       $lflg[$corn[$_]]=1;}
+  for(0.. 6){unless($lflg[      $_ ]){$corn[ 7]=$_;last;}}
+  for(0..10-$ecou){ # * 1-bit edge rot8ions (up to 11 bits but less those already encoded in temp-values above)
+    $erot[$_] = $prnm & 1;
+    $prnm    /= 2;}
+  $lflg[0]    = 0; # sum edge rot8ions to find parity for 12th one
+  for(0..10){$lflg[0]+=$erot[$_];}
+  $erot[11]   = $lflg[0] % 2; # take the parity sum && make it even
+  $v40s      .=     $corn[$_]  . $crot[$_] for(0.. 7); # build 40-char string back
+  $v40s      .= HEX($edge[$_]) . $erot[$_] for(0..11);
+  print $v40s;}

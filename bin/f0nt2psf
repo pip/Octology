@@ -1,0 +1,10 @@
+#!/usr/bin/perl
+# A78MD2HG:f0nt2psf by PipStuart <Pip@CPAN.Org>
+use strict;use warnings;use utf8;use v5.10;use Octology::f8;
+my $srcf = shift ||  'dflt.f0nt';$srcf .=   '.f0nt' unless(-e $srcf); # might want some better error checking on names && types
+my $dstf = shift ||        $srcf;$dstf =~ s/\.f0nt$/.psf/  if($dstf eq $srcf); # this should work for specified .fnt destin8ion file too
+my $f8ob;
+if(-e $srcf){
+   $f8ob =     Octology::f8->new($srcf);
+   $f8ob->savef0nt(              $dstf);}
+else{print "!*EROR*! Source f0nt file:$srcf not found!\n";}

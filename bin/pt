@@ -1,0 +1,28 @@
+#!/usr/bin/perl
+# 2CNJ4sip:pt (PackTime) crE8d by PipStuart <Pip@CPAN.Org> on
+#   Mon Dec 23 04:54:44:51 -0800 2002.
+# Description: pt is a simple tool created to en/decode the date and time
+#   using typically seven (7) base-64 characters. They are in decending
+#   order such that alphabetic listings will typically show time ascension
+#   and field arithmetic can be easily performed.
+#     Each character is (usually) a single field in the following order:
+# Year - 2000, Month, Day,  hour, minute, second, frame (60th-of-a-second)
+#                  Please see `perldoc Time::PT` for more information.
+use strict;use warnings    ;use        Time::PT;
+my $parm = join(' ', @ARGV);my $ptim = Time::PT->new();
+if($parm =~ /(^|\s)--?h/i){print "pt help: please run \`perldoc Time::PT\`\n";}
+else { # used to have kludgy UTC zone shifting of hour, but shouldn't need
+  if     ($parm eq '--?cp'     ){ # short for Colored Prompt to be used in Zsh
+    print $ptim->color('zsh' );exit;
+  } elsif($parm =~ /--?v(.*)$/ ){ # all parameters should be preceded by 1 or
+    print $ptim->color('vim' );exit; # 2 dashes, except they are optional for
+  } elsif($parm =~ /--?4(.*)$/ ){ #    before an 'e' or 'pt' parameter below
+    print $ptim->color('4NT' );exit;
+  } elsif($parm =~ /--?c(.*)$/ ){ # regular   Coloring of fields
+    print $ptim->color('ansi');exit; # passing 'pt' below is like calling
+  } elsif($parm =~ /(^|\s)-?-?(e|pt)(\s|$)/){ # system("pt " . `pt`) as a
+    print $ptim->expand(     );exit; #      shortcut for expanding now time
+  } elsif($parm){ # above all format now time, while these convert any time
+    if(@ARGV >  1){$ptim = Time::PT->new('verbose' => $parm)          ;}
+    if(@ARGV == 1){$ptim = Time::PT->new('str'     => $parm)->expand();}
+  } print $ptim;}

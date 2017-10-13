@@ -1,0 +1,48 @@
+#!/usr/bin/perl
+# 785K6rqP:frip crE8d by PipStuart <Pip@CPAN.Org> to wrap cdparanoia to RIP audio CDs into FLAC format; Need to run `cdcd` 1st to setup ~/.cdcdrc with device;
+# 2du:setup track-info CDDB stuf to use CDDB_(cache|query).pm, s/(cd)\1/$1paranoia/ && upd8 track-info gathrng c0d2!need cdcd,my $cdpa=`cdparanoia -vsQ 2>&1`;
+#   should setup all to handle UTF-8 filenames&&test,add optn to rip all .wav at once thN2 flac l8r,maybe parse track dur8ionz && add to names like P.M.Dawn,
+#   add verbose option to show rip && flacenc progress;
+use strict;use warnings;use utf8;use v5.10;use Octology::a8;use File::Temp;my($trfh,$trfn);my %edat =();my $cdat =`cdcd tracks`;my $numb;
+my $VERSION='0.0'; my $d8VS='G8FMMEwq';my %data =('albm'=> '','arti'=>'','trax'=>0,'leng'=>0,'tinf'=>[],'path'=>"$ENV{'HOME'}/muz/flac/");
+open my $out8,'>&',STDOUT or die "Can't open  duplic8 STDOUT handle: $!";binmode $out8,':encoding(UTF-8)'; # crE8 local duplic8 of global
+sub FixxName{my $name= shift;my $fpth=shift;$name=~s/\//-/g if(!$fpth);$name=~s/['"*\<\>?\[\]]//g;$name=~s/(__)_+/$1/g;# RgXSubzT2N4Charz&&P@rnz 2mk gud fylnmz
+                $name=~s/^_?(\d\d?-_)/-$1/ ;$name=~s/ /_/g;$name=~s/:/-_/g;$name=~s/(^|[^\\])([!&=+()])/$1\\$2/g;$name=~s/_+\W?$//;return($name);}
+$data{'albm'}=FixxName($1)if($cdat=~ /^Album\s+name:\s+(.*)\n/);
+$data{'arti'}=FixxName($1)if($cdat=~/\nAlbum artist:\s+(.*)\n/);
+                          if($cdat=~/\nTotal tracks:\s+(\d+)\s+Disc length:\s+(\d+:\d+)\n/){$data{'trax'}=$1;$data{'leng'}=$2;
+  for(my $indx = 0;$indx < $data{'trax'};$indx++){$numb  =$indx + 1;
+    if ( $cdat =~/\n\s?$numb:[ \>]{5}(\[[ 0-9]\d:\d\d\.\d\d\] +([^\n]*))\n/){my $trki=$1;$trki=$2 if(defined($2)&& length($2));
+         $data{'tinf'}[$indx]=FixxName($trki);}}}
+$trfh=File::Temp->new();binmode $trfh,':encoding(UTF-8)';$trfn=$trfh->filename();
+say      $trfh "# EditFileNamz - arti/albm/ will be crE8d as dirs in path && in filenamez";
+say      $trfh "path:$data{'path'}\narti:$data{'arti'}\nalbm:$data{'albm'}"  ;
+for(my   $indx = 0;$indx < $data{'trax'};$indx++){$numb=sprintf("%02d",$indx+1);
+  say    $trfh "$numb:",$data{'tinf'}[   $indx];
+} close  $trfh or die "!*EROR*! Couldn't close TraxFile:$trfn! $!\n";system($ENV{'EDITOR'}. " $trfn"); # need TempFile to persist enough to edit
+open     $trfh,'<',$trfn or die "!*EROR*! Couldn't open TraxFile:$trfn for reading! $!\n";binmode $trfh,':encoding(UTF-8)';
+while  (<$trfh>){if( /^path:(.*)/){$edat{'path'}=$1  ;$edat{'path'}       =~ s/\/*$/\//;}
+              elsif( /^arti:(.*)/){$edat{'arti'}=                          FixxName($1);}
+              elsif( /^albm:(.*)/){$edat{'albm'}=                          FixxName($1);}
+              elsif(/^(\d+):(.*)/){my    $indx  =$1-1;$edat{'tinf'}[$indx]=FixxName($2);}}
+close    $trfh or die "!*EROR*! Couldn't close TraxFile:$trfn!  $!\n";unlink0($trfh,$trfn)
+               or die "!*EROR*! Couldn't unlink file:$trfn safely!\n";
+unless(  exists($edat{'tinf'}) && defined($edat{'tinf'}) && @{$edat{'tinf'}}){
+  for(sort(keys(%data))){say  $out8 "keey:$_ => '" . $data{$_} . "'";} die("!*EROR*! No tracks specified! Quitting...\n");}
+$edat{'mpat'}  =$edat{'path'};$edat{'mpat'} .= $edat{'arti'} . '/' if(exists($edat{'arti'}));
+$edat{'spat'}  =$edat{'mpat'};$edat{'spat'}  =~ s/\\([^\\])/$1/g;mkdir($edat{'spat'}, 0755) unless(-d   $edat{'spat'});
+$edat{'mpat'} .=$edat{'albm'} . '/' if(exists( $edat{'albm'}));
+$edat{'spat'}  =$edat{'mpat'};$edat{'spat'}  =~ s/\\([^\\])/$1/g;mkdir($edat{'spat'}, 0755) unless(-d   $edat{'spat'});
+for(my $indx   =0;    $indx<@{$edat{'tinf'}};$indx++){
+  if(defined(   $edat{'tinf'}[$indx])){ my $null;$numb=sprintf("%02d",$indx + 1);
+    my $fnam   =$numb . '_' . $edat{'arti'} .'-'.$edat{'albm'}  . '-';$fnam .=$edat{'tinf'}[$indx];
+    my $snam   =$fnam;$snam =~s/\\([^\\])/$1/g; # `cdparanoia -B -- '1-'` ripz all trax from cdx then `lame -b 256 -h -m s $wavf $mp3f` or --r3mix encodez
+    if( !-e "$snam.wav" ){say   $out8 "${C}frip$W:" . c8fn("$snam.wav" ) . "$z....";
+      $null=`cdparanoia  -svw  $numb $fnam.wav                2>&1`;} # -d /dev/cdrom2
+    if( !-e "$snam.flac"){say   $out8 "${Y} -> $W:" . c8fn("$snam.flac") .  "$z...";
+      $null=`flac                    $fnam.wav                2>&1`;}
+    if(  -e "$snam.wav" ){unlink("$snam.wav");}else{say $out8 "!*EROR*! Could not find: $snam.wav  to ", "unlink!";}
+    if(  -e "$snam.flac"){print $out8 "${M}mvto$W:" . c8fn($edat{'path'}).  "$z...";
+      $null=`mv                      $fnam.flac $edat{'mpat'} 2>&1`;                say $out8              "done!";}
+                                               else{say $out8 "!*EROR*! Could not find: $snam.flac to ", "  move!";}}}
+close   $out8             or die "Can't close duplic8 STDOUT handle: $!";
