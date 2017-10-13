@@ -1,0 +1,65 @@
+GCULATAX:sfv.txt crE8d by PipStuart <Pip@CPAN.Org> to track my personal Street Fighter V progress in online rankings starting seriously on New Year's Day 2017;
+ 2du:Bt someTrialz,GeneralStory&&Xtra; # HardSurvival trophy said only 0.6% of players had gotten it so far. It sure was tedious but cheesy from the U2b video;
+#  LeaguePointz, Rankz[out of ~2LW7(612,359)], && Levelz in b64 (+Rank Top%) before planning2play at least 4ranked matchez (probably about 30 minutes) per day;
+GCULATAX:Fr:LP=64(   388):Rank=1Ph0(367,296):Lvl:Plyr=1Q( 90):Ryu=J(19):66%; # Surprised2go from top 2/3rdz 2top half in 1 serious day of just 9ranked battlez!
+H11LEVEL:Su:LP=Cb(   805):Rank=12wf(274,089):Lvl:Plyr=2g(170):Ryu=K(20):49%; # won1st7,lost last2. HTTPS://YouTu.be/YVdhFLW1qTY 4awsm slOmOSeason2 Ryu hitboxz;
+H12LHS21:Mo:LP=Dr(   885):Rank= .hb(256,741):Lvl:Plyr=2h(171):Ryu=L(21):46%; # lost 1st2 bad2 Rygar39,won next2 vs gutsajax, casual beggingmercy88 Lvl88 weird;
+H14LAffs:We: # casual TheManupod    557,237 && bossman84 weird2! # skipd H13:Tu since busy stuDing Go 4 besting Lopresti, mAB daily is 2much? 885 can be chill;
+H1BL7xTp:We: # casual Tipman89      563,831  Lvl8&&8 coincident too; H1C && D had problMz with BEST_KOREA on PC gaining all losses (mostly perfectz) @top rank;
+# after 4 basic cheap fightz vs UltraYoX turbo-short, AshBrisco's PlyrLvl(88) Ryu got my colors,helped with corner missilez mission,Bt mE bad EvN thO Cmd clOs;
+H1ILAhsT:We: # rankz finally fixd, just watched top rEplAyz && only plAyd a few casual matchez; Casual easy versus Super_White Lvl8&&8 Cmz to be hapNing a lot;
+H1OL8QXx:Tu: # rank hax PC BEST_KOREA then .kr3k. then PS Sugar1014 just result LP bug? Maybe just casual until PlyrLvl38 trOphy? strong rnkng4all but Hellsrv;
+H26LIGHT:Mo:LP=Dr(   885):Rank=12CS(271,132):Lvl:Plyr=2q(180):Ryu=P(25):47%; H23LDbal:Fr: # won 14/15 fun lounge vs J3suz8X 4basic FightMoney ChallengeMission;
+H2ML8RYU:We:LP=Dr(   885):Rank=13Qk(276,142):Lvl:Plyr=3h(235):Ryu=Q(26):47%; # Spent several hours beating all EasySurvival this morn2level well over 200 goal;
+H3VMCbJs:Fr:LP=D3(   835):Rank=195x(299,387):Lvl:Plyr=54(324):Ryu=U(30):49%; # Decided 2 get back into more SFV after Bting HardSurvival ySterday spamming SRK;
+# Lost 1 game today 2 str8skill     212,812  Lvl43&&17 with 1,091LP but then I won the next 2. According2the growing ultra rare trophies I am getting now, I am
+#  either much better than just the top 50% of all players &&/or I've just played much more time than most&&have gone for increasingly hard&&rare trOphEz(59%);
+H46M0ZcQ:Th: # A-Ryu1979 seems to be a new cheating Ryu always perfected but high LP; H47MATCH:Fr:Looks like he's back to normal&&just not as good as his rank;
+                                     See HTTPS://GameFAQs.Com/ps4/895976-street-fighter-v/faqs/72952 for lots of game detail breakdowns;
+Hopefully Season2 FrameD8a to study from HTTPS://FullMeter.Com/fatonline/#/framedata/Ryu  Still need dash d8a too. Maybe make util to print table colorized;
+    MoveName               Startup  Active  Recovery  OnHit  OnBlock  Damage    Stun   AttackLvl  CancelInto   KDAdv  KDRAdv  KDRBAdv
+  stand                  LP   3       2        7        4       2       30        70       H       su/sp/vt      ~       ~       ~
+  stand                  MP   5       3       10        7       1       60       100       H       su/sp/vt      ~       ~       ~
+  stand                  HP   8       3       20        3      -1       90       150       H             vt     99      35      40   # !sure why Fierce has Adv
+  stand                  LK   4       3       11       -1      -2       30        70       H       su/sp/vt      ~       ~       ~   #   here when!norm a KD mv
+  stand                  MK   8       3       16        2      -2       60       100       H             vt      ~       ~       ~   # mABjust whN CrushCountr?
+  stand                  HK  10       2       20        4      -1       90       150       H             vt      ~       ~       ~
+  crouch                 LP   4       3        5        3       2       30        70       H       su/sp/vt      ~       ~       ~
+  crouch                 MP   6       3       12        4       2       60       100       H          sp/vs      ~       ~       ~
+  crouch                 HP   6       4       24       -7     -10       90       150       H          sp/vs      ~       ~       ~
+  crouch                 LK   4       2        7        2       1       20        70       L             vt      ~       ~       ~
+  crouch                 MK   7       3       13        1      -3       50       100       L       su/sp/vt      ~       ~       ~
+  crouch                 HK   8       2       22       KD     -11       90       150       L             vt     69      20      25
+  jump                   LP   3       6        ~        ~       ~       40        70       M           ~         ~       ~       ~
+  jump                   MP   7       8        ~        ~       ~     30*30     50*50      M          sp         ~       ~       ~
+  jump                   HP   7       5        ~        ~       ~       90       150       M           ~         ~       ~       ~
+  jump                   LK   4       6        ~        ~       ~       40        70       M           ~         ~       ~       ~
+  jump                   MK   6       4        ~        ~       ~       60       100       M           ~         ~       ~       ~
+  jump                   HK   9       5        ~        ~       ~       90       150       M           ~         ~       ~       ~
+  Collarbone Breaker   f+MP  22       4       17        1      -6     30*30     60*40     M*M          -         ~       ~       ~
+  Solar Plexus Strike  f+HP  17     2(1)2     18        8      -2     45*45      150      H*H          -         ~       ~       ~
+  Axe Kick             b+HK   8     3(3)4     16        4      -2     40*40     60*90     H*H      su/sp/vt      ~       ~       ~
+  Jodan  Nirengeki    HP>HK   7       ~        ~       KD      -7     90*63    150*72     H*H            vt     78      25      30
+  Jodan Sanrengeki MP>HP>HK   5       ~        ~       KD      -7   60*54*56 100*100*100 H*H*H           vt     80      27      32
+  Shoulder   Throw  f+LP+LK   5       2       18       KD      KD      120       120       T           -        55       6       6
+  Somersault Throw  b+LP+LK   5       2       18       KD      KD      140       200       T           -        47      -2      -2
+  Denjin Renki           vt   ~       ~        ~        ~       ~        ~         ~       ~           -         ~       ~       ~
+  Mind's Eye             vs   3       7       32        ~       ~        ~         ~       ~             vs      ~       ~       ~   # V-Skill can cancel into
+  Hashogeki        f+PPP vr  17       2       24       KD      -2       60         0       H           -        85      26      31   #   another  V-Skill only
+                HadouKen LP  14       ~       33       -1      -6       60       100       H       su            ~       ~       ~   #   aftr 1st parrys proly
+                HadouKen MP  14       ~       33       -1      -6       60       100       H       su            ~       ~       ~
+                HadouKen HP  14       ~       33       -1      -6       60       100       H       su            ~       ~       ~
+                HadouKen EX  11       ~       33       KD       2     40*60     0*150     H*H      su           95      37      42
+               ShoRyuKen LP   3      12       30       KD     -24      100       150       H           -        89      30      35
+               ShoRyuKen MP   4      11       39       KD     -32      120       150       H           -        81      22      27
+               ShoRyuKen HP   5      10       44       KD     -36      120       150       H           -        79      20      25
+               ShoRyuKen EX   3      12       44       KD     -37     80*80     0*200     H*H          -        72      13      18
+     TatsumakiSenpukyaku LK  10       ~       21       KD     -10       90       150       H           -        95      36      41
+     TatsumakiSenpukyaku MK  12       ~       21       KD     -10      100       150       H           -        77      18      23
+     TatsumakiSenpukyaku HK  14       ~       31       KD     -10      110       150       H           -        64       5      10
+     TatsumakiSenpukyaku EX  10       ~       26       KD     -19     28x5       150       H           -        91      32      37
+  AirTatsumakiSenpukyaku LK   9       ~       14       KD       ~      100       200       H           -         ~       ~       ~
+  AirTatsumakiSenpukyaku MK   9       ~       14       KD       ~      100       200       H           -         ~       ~       ~
+  AirTatsumakiSenpukyaku HK   9       ~       14       KD       ~      100       200       H           -         ~       ~       ~
+  AirTatsumakiSenpukyaku EX   8       ~       14       KD       ~      170       250       H           -         ~       ~       ~
+  Shinkuu       HadouKen su   4       ~       61       KD     -17      320         0       H           -        80      21      26

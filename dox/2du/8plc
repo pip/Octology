@@ -1,0 +1,91 @@
+#!/usr/bin/perl
+# D6OMHm3L:8plc crE8d to read PipStuart's <Pip@CPAN.Org> 8.txt (mainly 2 specific columns) to tabul8 && print the 8 Precursor Letter Counts;
+# 2du: add more colrz to fulc|title|total|varz|headerz|dashez,maybe color letters by collapsed 8pal8 after f8.pm exports or full if run in l8r 8trm,
+#   add sepR8 tabul8ion of every 8-word used in l8r document8ion with not8ion for which have yet to be included in the primary list from the top,
+#   xtract fulc to sepR8 b8:ccnt Utl,mk optn for fulc mode to use just 1 column for betr grep,mAB show percNtz too as optn,upd8 nocolr version;
+use strict;use warnings;use utf8;use v5.10;
+use Octology::a8;
+use Octology::b8;
+my $d8VS='HACM5w5w';       my $clrf=1;my $fulf=0;my $argz='';$argz= join(' ',@ARGV) if(@ARGV);
+my $edVS=        '';       my %fulc=();  $fulf=1 if($argz=~ /(^|\s)-?-?f/i); # find -?f(ull) flag to count && sort all chars at end
+if($argz=~ /(^|\s)-?-?[nc]/i){$clrf=0;} # accepts -?(no)?c(olor)? argument for vim ':r!8plc c' to be like ':r!8plc|sS'
+my $efyl ='8.txt';my @lcnt;$lcnt[$_]=0 for(0..61);my @acnt;$acnt[$_]=0 for(0..61);my $done=0;my $t0tl=0;my $text;my $actx;my $sclc;my $gttl=0;
+unless(-r         "$efyl"){$efyl=$ENV{'HOME'} . "/dox/2du/$efyl" if(exists($ENV{'HOME'}));} # try2add likely path when file not in local dir
+open(my $eflh,'<',"$efyl") or die "!*EROR*! Couldn't open eight-file to read counts! $!";binmode $eflh,':encoding(UTF-8)';
+while( <$eflh>){my $ldat=$_;$done=1 if(/^$/); # sets done to true when first blank line encountered
+  if(/^#.*?\$d8VS\s*=\s*(['"])([0-9A-Za-z._]{8})\1\s*;/){$edVS=$2;} # this match regex seems to still need \1 && presumably ${1} would work in s/// replacement
+  if(!$done &&  $ldat  !~ /^\s*#/){ # the header lines (&& potentially l8r blocks) have pound as first non-whitespace character design8ing comments to skip
+    if(  length($ldat) >= 16  ){my $pltr;
+      if(substr($ldat,    16,1) eq '8'){$pltr=substr($ldat,15,1);} # hard-coding columns as aligned interest (used to be 14 && 13, now 16 && 15)
+      elsif(    $ldat =~   /^.*?(\w)8/){$pltr=$1;} # for a few lines with particularly long 8 names, the 8 wouldn't fit in the same column so search for 1st 8
+      $lcnt[b10($pltr)]++    if(defined($pltr) );}}
+      $text .=  $ldat;       if($fulf){my @chrz= split(//,$ldat);for my $char (@chrz){$fulc{$char}=0 unless(exists($fulc{$char}));$fulc{$char}++;}}}
+close($eflh)               or die "!*EROR*! Couldn't close eight-file after reading! $!";
+     #$text =~ s/[EGHI]8[0-9A-V][LM][0-9A-Za-x]{4}://g ; # first strip out any known d8 stamps since those aren't precursor letters I'm interested in counting
+     #$text =~ s/(E5TM8MED|E65MCKM8|H1LL8PML)     ://gx; # get rid known d8 stamps containing 8 that also  aren't precursor letters
+     #$text =~ s/ \d\d 8      V M S                //gx; # get rid of Vee's initials in license pl8z
+#if($fulf){%fulc=();for(split(//,'the of and to a in is I that it for you was with on as have but be they')){$fulc{$_}=0 if(!exists($fulc{$_}));$fulc{$_}++;}}
+# temporarily try to hijack fullcharcounts above to just look within top 20 English words to compare; should extract ccnt to be like this && wc wi vary columnz
+# results: Idrv:1, bfuwy:2, ns:3, ei:4, ho:5, a:6, t:8, ' ':19; # "I drive by you fway and say ho 8 Space!"
+while($text =~ s/(\w)8//){$acnt[b10($1)]++;}   # counts chopping out all PLs && 8s
+my @scnt = sort { $a <=> $b } (@lcnt);
+for(my $sndx=$#scnt;$sndx >= 0;$sndx--){
+  if(($sndx > 0 && $scnt[$sndx] == $scnt[$sndx - 1]) || ($sndx == 0 && $scnt[0] == 0)){splice(@scnt,$sndx,1);}} # below2 sepR8 prnt blox for not color or with
+open my $out8,'>&',STDOUT or die "Can't open  duplic8 STDOUT handle: $!";binmode $out8,':encoding(UTF-8)'; # crE8 local duplic8 of global
+if(!$clrf){                                           printf("8PrecursorLetterCounter: "."d8VS=%s\n",                                        $d8VS );
+  my $efsz = length($efyl);                           printf("  efyl=%s".' 'x (18-$efsz)."edVS=%s\n",                          $efyl ,       $edVS );
+                                                      print  "8PreLetr Ct FullDocuCntz\n";
+                                                      print  "-------- -- ------------\n";
+  for(@scnt){                                                                                        $sclc=0;$actx ='';
+    for my $lndx (0..$#lcnt){
+      if(defined($lcnt[$lndx]) && $lcnt[$lndx] == $_){print                    b64($lndx) ;$t0tl+=$_;$sclc++;$actx.=' '.   sprintf("%2s",b64($acnt[$lndx])) ;
+                                                                                           $gttl+=$acnt[$lndx];}}
+    print ' '  x (4 - $sclc);                         printf(   "%s$actx\n",                   sprintf("%2s",b64($_)) );}
+                                                      print   "-------- -- --\n";
+                                                      printf( "t0t %s %s : $t0tl $gttl\n",     sprintf("%2s",b64($t0tl)) , sprintf("%2s",b64($gttl)) );
+  if($fulf){my %cvlz=reverse(%fulc);my @ccnt= sort { $a <=> $b } keys(%cvlz); # 2-columns of full counts fits nicely in just less than 50 lines
+    for     my $cndx (0..  int(@ccnt/2)){my $coun=$ccnt[$cndx];        my $pcnt=0;my $w82o=''; # FullFile CharCounts abov as Values (or values(%fulc) nEdzUniq)
+      for   my $char (sort(keys(%fulc))){ # then above CharCouniNDeX loops just unique counts && (was Probably) PrintCouNT before Wait to Output8
+        if    ($coun ==    $fulc{$char}){ $pcnt++ if($char=~ /(印|注|米|\n)/); # special count for only double-wide characters
+          $w82o      .= ($char eq "\n") ? '\n' : $char;$pcnt++;} # probably only newline shouldn't be printed normally to ruin formatting
+      }   print $out8   (' ' x (18-$pcnt)),"$w82o:",sprintf("%7s ,    ",cma($coun));
+                                        $coun=$ccnt[int(@ccnt/2)+ ((int(@ccnt/2) % 2) ? $cndx+1 : $cndx)
+                                        ];$pcnt=0;   $w82o=''; # restore conditions for always 2nd column for now (ad optn l8r)
+      if(defined($coun)){ # odd number of chars may leave last invalid coun so check
+        for my $char (sort(keys(%fulc))){
+          if  ($coun ==    $fulc{$char}){ $pcnt++ if($char=~ /(印|注|米|\n)/); # special count for only double-wide characters
+          $w82o      .= ($char eq "\n") ? '\n' : $char;$pcnt++;} # probably only newline shouldn't be printed normally to ruin formatting
+        } print $out8   (' ' x (18-$pcnt)),"$w82o:",sprintf("%7s ;\n"  ,cma($coun));
+      }}}}
+else      {                                           printf("${C}8${M}Precursor${Y}Letter${R}Counter$W:$G d8VS$C=%s$G\n",            d8colr($d8VS));
+  my $efsz = length($efyl);                           printf("$O  efyl$C=%s".' 'x (18-$efsz).$G.          "edVS$C=%s$G\n",c8fn($efyl),d8colr($edVS));
+                                                      print  "${C}8${M}Pre${Y}Letr$R Ct$G FullDocuCntz\n";
+                                                      print    "$B-------- -- ------------\n";
+  for(@scnt){                                                                                        $sclc=0;$actx ='';
+    for my $lndx (0..$#lcnt){
+      if(defined($lcnt[$lndx]) && $lcnt[$lndx] == $_){print               "$Y".b64($lndx) ;$t0tl+=$_;$sclc++;$actx.=' '.              b8colr(
+                                                                                                                           sprintf("%2s",b64($acnt[$lndx])));
+                                                                                           $gttl+=$acnt[$lndx];}}
+    $sclc = 9 - $sclc;$sclc=0 if($sclc < 0);
+    print ' '  x $sclc;                               printf(  "%s$actx\n",             b8colr(sprintf("%2s",b64($_))));}
+                                                      print    "$B-------- -- --\n";
+                                                      printf("${C}t${M}0${C}tlz    %s %s$W :$G $t0tl $gttl\n",
+                                                                                        b8colr(sprintf("%2s",b64($t0tl))),b8colr(sprintf("%2s",b64($gttl))));
+  if($fulf){my %cvlz=reverse(%fulc);my @ccnt= sort { $a <=> $b } keys(%cvlz);my $sumn=0; # 2-columns of full counts fits nicely in just less than 50 lines
+    for     my $cndx (0..  int(@ccnt/2)){my $coun=$ccnt[$cndx];        my $pcnt=0;my $w82o=''; # FullFile CharCounts abov as Values (or values(%fulc) nEdzUniq)
+      if($cndx < int(@ccnt/2)){
+        for my $char (sort(keys(%fulc))){ # then above CharCouniNDeX loops just unique counts && (was Probably) PrintCouNT before Wait to Output8
+          if  ($coun ==    $fulc{$char}){ $pcnt++ if($char=~ /^(印|注|米|\n)$/); # special count for only double-wide characters
+            $sumn    +=  $coun                    if($char=~ /^[0-79]$/       ); # special sum of Non-8 digits to compare at end
+            $w82o    .= ($char eq "\n") ? '\n' : $char;$pcnt++;} # probably only newline shouldn't be printed normally to ruin formatting
+        } print $out8   (' ' x (32-$pcnt)),"$w82o$B:$M",sprintf("%7s$B: %s$W,$C"  ,cma($coun),b8colr(sprintf("%4s",b64($coun))));
+      } $coun=$ccnt[int(@ccnt/2)+ ((int(@ccnt/2) % 2) ? $cndx+1 : $cndx)];$pcnt=0;   $w82o=''; # restore conditions for always 2nd column for now (ad optn l8r)
+      if(defined($coun)){ # odd number of chars may leave last invalid coun so check
+        for my $char (sort(keys(%fulc))){
+          if  ($coun ==    $fulc{$char}){ $pcnt++ if($char=~ /^(印|注|米|\n)$/); # special count for only double-wide characters
+            $sumn    +=  $coun                    if($char=~ /^[0-79]$/       ); # special sum of Non-8 digits to compare at end
+            $w82o    .= ($char eq "\n") ? '\n' : $char;$pcnt++;} # probably only newline shouldn't be printed normally to ruin formatting
+        } print $out8   (' ' x ( 8-$pcnt)),"$w82o$B:$M",sprintf("%7s$B: %s$Y;\n$G",cma($coun),b8colr(sprintf("%4s",b64($coun))));#,S(substr($cmap{'d8bo'},b64(int(rand(8))),1)));
+      }}  print $out8 "$G Sum of 0..7,9$W:$M",$sumn,$z;
+  }}
+close           $out8     or die "Can't close duplic8 STDOUT handle: $!";

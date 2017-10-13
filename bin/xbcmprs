@@ -1,0 +1,13 @@
+#!/usr/bin/perl
+# 61TJDXae:xbcmprs crE8d by PipStuart <Pip@CPAN.Org> to bcompress() XML documents into a binary representation.
+# The accepted parameters to this script are:
+#    input_filename
+#   output_filename   (optional)
+# This utility is part of the XML::Tidy Perl Module. Please run
+#   `perldoc XML::Tidy` from the command-line for further documentation.
+# This code is licensed under the GNU General Public License version 3+.
+use strict;use warnings;use XML::Tidy;
+my $flnm = shift() || die "USAGE: `$0 FileName.xml <OutputFileName>`\n";
+my $ofln = shift();my $tidy = XML::Tidy->new($flnm);
+if(!defined($ofln) || $ofln !~ /\.xtb$/i){$ofln = $flnm;$ofln =~ s/\.xml$/.xtb/i;}
+                      $tidy->bcompress(   $ofln);
