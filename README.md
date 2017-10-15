@@ -1,5 +1,5 @@
 # Octology
-An ontology based on organizing code and data at least initially into groups of 8.
+An ontology based on organizing everything by the number 8.
 
 This is basically a preview of version 0.0 of my development files.
 
