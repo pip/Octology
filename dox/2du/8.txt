@@ -1,5 +1,5 @@
 # D6RMF1V1:8.txt - by8π : JAPH : K3wlD00d : 1337H4xr : PipStuart's Octology (hopefully eventually an Ontology of 8) - Convention, Conversion, && Categoriz8ion:
-# $VERSION='0.0';$d8VS='HABMB8DI'; # Octology attempts to rel8 the universe through medit8ion on mnemonic abbreV8ion (via 8-based  limit8ion) &&    elucid8ion.
+# $VERSION='0.0';$d8VS='HAKM6pip'; # Octology attempts to rel8 the universe through medit8ion on mnemonic abbreV8ion (via 8-based  limit8ion) &&    elucid8ion.
 # CEBBICTI:Crossing Every Bridge Before I Come To It? I.e., not a d8 stamp. Trying to make my Dad's birthday (August 8th) more special by thinking 2far ahead?
 # Octology intends to pursue implic8ion && ramific8ion as substantE8ion for adequ8 particip8ion, if not also 2 oblig8ion toward implement8ion &&   promulg8ion.
 # Conceptually, Octology is a system that st8s that every organiz8ional principle is valuable, but 8 tends to be a useful starting place for valuable d8a sets.
@@ -23,7 +23,7 @@
            valU8   :tool to track what a particular user paid for items they own && what amounts they would be willing to sell or trade them with others for
              st8us :tool to query the current progress levels or returned final results of particular long-running system processes or objects of comput8ion
              gr8   :autom8d determin8ions based on previous highest r8ings about "greatest" d8a (&& also "grate" iron bars to hold fire or to grind && aggrav8)
-        cancell8   :gr8 && m8rix lattice-like structure of raised lines at right angles pierced with holes or windows from Zoology or vein network from Botany
+          cancL8   :gr8 && m8rix lattice-like structure of raised lines at right angles pierced with holes or windows from Zoology or vein network from Botany
          clathr8   :design8ing or rel8ing to compound where one component is physically enclosed in crystal structure of other or lattice in Botany && Zoology
          granul8   :gr8ing something down to becoming grain-like or granular && having just rough surface with numerous small elev8ions, masses, or asperities
           levig8   :gr8ing away to become free from grit && polished smooth in various senses, or thoroughly mixing of liquids or semi-liquids to become fluid
@@ -143,7 +143,7 @@ internationaliz8ion:tools to transl8 for I18N the document8ion && applic8ion int
            port8   :not erect but diagonal
             raD8   :general circular d8a manager && radial d8a selection && modific8ion interface (also useful for d8ok), with pronunC8ion also like "r88"
          circul8
-          stell8
+            stL8
            eman8
        dissemin8
         continU8   :general extension tool
@@ -169,7 +169,7 @@ internationaliz8ion:tools to transl8 for I18N the document8ion && applic8ion int
            isol8
           insul8
           prepR8ion
-            vel8
+             vL8
            furc8
          bifurc8
         trifurc8
@@ -211,6 +211,7 @@ internationaliz8ion:tools to transl8 for I18N the document8ion && applic8ion int
          glomer8
       conglomer8
          culmin8
+       amplific8ion
          aggreg8   :d8a summariz8ion tool
          combin8
            summ8ion
@@ -270,6 +271,7 @@ internationaliz8ion:tools to transl8 for I18N the document8ion && applic8ion int
         comment8   :system for aligning or8 commentary over existing media or just general website, blog, or wiki shared comment section
           navig8   :tool to layout other tools or maybe GoogleMaps wannabe (or expanded name for already existing p8/nvg8 graph path-finding implement8ions)
           gener8   :command to generate abbreV8ions from long names (&& also tool to gener8 patterned or pseudo-random d8a && graphs && files from templ8s)
+          templ8   :system maybe inspired by TemplateToolkit && similar which facilit8s autom8d gener8ion of d8a && configur8ion files popul8d as desired
        randomiz8ion:tool for pseudo-randomization algorithm && seed management
         memoriz8ion:memory assisting tool && quizzing (probably quite a bit like the old VemonicPicards idea Vee && I thought of together back around 2008)
        concentr8   :tool to assist && practice focusing on tasks && d8a (maybe rel8d to fix8 or concentric circul8ing curv8s?)
@@ -323,7 +325,7 @@ internationaliz8ion:tools to transl8 for I18N the document8ion && applic8ion int
               p8riot
          rep8rE8
          exp8rE8
-          liber8   :advoc8 for empathy towards almost all marginalized groups (i.e., non-fascists) && particularly feminism at least by criticisms of misogyny
+          liber8   :advoc8 for empathy && improvement of the conditions of the most subjug8d peoples
         emancip8
         legaliz8ion:advoc8 for UnitedSt8s federal government to termin8 outd8d "War on Drugs" && fully legalize at least recrE8ional marijuana as a good start
    decriminaliz8ion
@@ -342,7 +344,7 @@ internationaliz8ion:tools to transl8 for I18N the document8ion && applic8ion int
          crimin8
        incrimin8
          deport8ion
-          litig8
+          litig8   :maybe some tool primarily rel8d to legalities of software licenses, copyright, patents, intellectual property, etc.
        incarcer8
           revoc8
           desol8   :first Dubstep track from the Before The Storm EP by Obsidia
@@ -377,7 +379,7 @@ internationaliz8ion:tools to transl8 for I18N the document8ion && applic8ion int
            pron8   :Tennis videogame referring to grips && maybe also to applied spin
           supin8
        triangul8   :curved-surface fitting, Level-Of-Detail,
-        tessell8   : && general mip-mapping tools
+          tessL8   : && general mip-mapping tools
             orn8   :tool to add filtr8ion effects, flair, or flourishes to 2D/3D scenes
           decor8   :2D/3D room beautific8ion utility
         illustr8   :2D/3D drawing applic8ion with eventually tablet or smart-phone multi-touch sketching that can be incorpor8d into above crE8 models/textures
@@ -431,11 +433,13 @@ internationaliz8ion:tools to transl8 for I18N the document8ion && applic8ion int
           moder8   :tool to facilit8 having someone oversee the orderly flow of a deb8 or a mechanism to r8 quality && relevance of forum posts or comments
        expostul8
        remonstr8
+       argument8ion
            hort8ion
          exhort8ion
         solicit8
          alterc8
        confront8ion
+        percont8ion
          denunC8
        interrog8   :communic8 specialized as an intense interview system
        investig8   :d8a && network gathering, inspection, reporting via loc8
@@ -454,18 +458,12 @@ internationaliz8ion:tools to transl8 for I18N the document8ion && applic8ion int
       interpret8ion:maybe inspector && debugger for general command && language interpreters
        interpol8   :models to read d8a trends && project them further (either inwardly or outwardly) as well as 2D/3D classic key-frame anim8ion tool
        extrapol8
-         correl8
+          corrL8
            caus8ion
-          adequ8
-        inadequ8
-        inaccur8
-          accur8
      proportion8
   disproportion8
     incommensur8
       commensur8
-        inordin8
-        immoder8
        importun8
        intemper8
       extortion8
@@ -477,21 +475,23 @@ internationaliz8ion:tools to transl8 for I18N the document8ion && applic8ion int
        determin8ion
         unhesit8ing
           hesit8
-       contempl8
          specul8
-         postul8   :math, philosophy, etc. proof specific8ion && evalU8ion tool
-     underestim8
+       contempl8
+     underestim8   :just obvious qualific8ions of estim8
           estim8
       overestim8
+         postul8   :math, philosophy, etc. proof specific8ion && evalU8ion tool
        approxim8
         anticip8   :prediction && aw8ing outcomes with b8d breath (like hopefully someday a growing user-base eager for next major release of Octology upd8s)
      prognostic8
        pontific8   :generally dogmatic && pompous talk or actually referring to the government of the Roman Catholic Church or the Pope (Francis is gr8!)
          auspic8
-           imit8   :comedy tools (&& maybe add satiriz8ion, sarcastic8, && percont8ion mark notes here)
+           imit8   :comedy tools
        imperson8
           p8riz8   :imit8 father
          fabric8
+      sarcastic8
+        satiriz8ion
        improvis8ion
            infl8   :special core d8a manipul8ion tool
            defl8
@@ -520,7 +520,7 @@ internationaliz8ion:tools to transl8 for I18N the document8ion && applic8ion int
             equ8or
          gravit8
          rebarb8ive
-       constell8   :star-gazing with music visualiz8ion color strobes, names, && galactic zoom
+         constL8   :star-gazing with music visualiz8ion color strobes, names, && galactic zoom
             gyr8   :maybe plan8 rot8or or tornado simul8or
         acceler8
         deceler8
@@ -540,7 +540,7 @@ internationaliz8ion:tools to transl8 for I18N the document8ion && applic8ion int
             sed8
       detoxific8ion
        hallucin8   :maybe aggreg8 research regarding mental illnesses && extreme sleep depriv8ion, DMT, LSD, THC, && mushroom impacts, UFO sightings, etc.
-        intoxic8   :alcohol drinking && other impairment games && tests that can priv8ly record, measure, graph, && correl8 dexterity && other deterior8ion
+        intoxic8   :alcohol drinking && other impairment games && tests that can priv8ly record, measure, graph, && corrL8 dexterity && other deterior8ion
          inebrE8
             lib8ion:bartending tool
         ferment8ion:home-brew  tool
@@ -571,7 +571,7 @@ internationaliz8ion:tools to transl8 for I18N the document8ion && applic8ion int
         passion8
            vitE8   :debauched moral corruption by sensuality that maybe is somehow invalid8ing
          fornic8
-           fell8
+             fL8
         menstru8
            ovul8   :sex && fertility tracking tool
          lubric8
@@ -638,7 +638,7 @@ internationaliz8ion:tools to transl8 for I18N the document8ion && applic8ion int
            salv8ion
           divin8ion
       reconcilE8ion
-          revel8ion
+           revL8ion
          incarn8
   transubstantE8
           tempt8ion
@@ -697,7 +697,7 @@ internationaliz8ion:tools to transl8 for I18N the document8ion && applic8ion int
             pir8   :with a Pi symbol? file sharing via I2P, FreeNet, GNUNet, BitTorrent, etc. or tracking of actual modern piracy of frig8s on the high-seas
              cr8   :maybe FirstPersonShooter engine && game (a bit cynically, since the FPS genre is notorious for having levels that are inund8d with crates?)
             SSN8   :code for an "assassin8" FPS like Half-Life or maybe some ambitious elements of OverWatch
-         superl8ive:gr8St   fighting                   game with many supers per character?
+         superl8ive:gr8est  fighting                   game with many supers per character?
               f8l  :general fighting         engine && game "fatal"
              sk8   :general skateboarding    engine && game
               p8   :general bullet-hell      engine && game like Parsec47 ("pate" means crown or top of head, so royalty or cranium could be part of theme?)
@@ -714,7 +714,7 @@ internationaliz8ion:tools to transl8 for I18N the document8ion && applic8ion int
          edific8ion:general structural building tool for designing maybe homes, offices, or other edifices (or illustr8ion and explan8ion toward educ8ion?)
             bov8   :ancient land measurement roughly equivalent to 15 acres
               b8   :scarce resource diminishment manager (or fishing "bait" tool?), or main Octology::b8 Base-transl8 && general math objects && utilities
-        inciner8   : or flame-b8 tool for design8ing fascist, racist, sexist, && other h8ful trolls && their ilk as worth moder8ion to l8r be able to avoid
+        inciner8   : or flame-b8 tool for design8ing trolls && their ilk as worth moder8ion to l8r be able to avoid
          burnin8   :HomeStarRunner StrongBad Trogdor countryside && peasant flamer game
           immol8   :sacrifice, kill, or destroy by fire
        conflagr8
@@ -742,7 +742,7 @@ internationaliz8ion:tools to transl8 for I18N the document8ion && applic8ion int
         vaporiz8ion
      crystalliz8ion
        calcific8ion
-          satur8
+          satur8   :maybe some tool to implement HSLuv perceptually uniform color space based on Hue, Satur8ion, && Lightness with mapping to RGB, CMYK, etc.
         adulter8
        contamin8
           confl8
@@ -772,7 +772,7 @@ internationaliz8ion:tools to transl8 for I18N the document8ion && applic8ion int
           chrom8
         chlorin8
          mangan8
-           mell8
+             mL8
          mellit8
             mor8
            acer8   :aceric acid with salifiable base or long, narrow, pointed needle
@@ -809,8 +809,8 @@ internationaliz8ion:tools to transl8 for I18N the document8ion && applic8ion int
           inund8
            ruin8
        machicol8
-        castell8
-         crenel8
+          castL8
+          crenL8
          crenul8
            cren8
            dent8
@@ -852,7 +852,7 @@ internationaliz8ion:tools to transl8 for I18N the document8ion && applic8ion int
          objurg8
          excorE8
        decortic8
-        flagell8
+          flagL8
          fustig8
          retalE8
           repuD8
@@ -887,18 +887,26 @@ internationaliz8ion:tools to transl8 for I18N the document8ion && applic8ion int
              sp8ial:space tool
         coloniz8ion:Mars via Elon Musk's SpaceX rockets?
           spect8   :sports/concert/performance viewer && r8ing system
+            tan8   :Nipponese raccoon dog with short bushy tail (from Zoology)
+              k8   :"kate" is a brambling finch                 (from Zoology)
               c8   :"cate" is an obsolete term for food... or my version of the GNU/Linux cut command (as well as probably several others l8r also)
               y8   :"yate" is an obsolete term for gate
-              k8   :"kate" is a brambling finch                 (from Zoology)
-            tan8   :Nipponese raccoon dog with short bushy tail (from Zoology)
 
-old:  unregener8
-        regener8   :also just redo gener8ion of some d8a or file from a chosen templ8
+# above are my 888 current favorite 8-words that I'd most like to consider developing into distinct applic8ions (or component specializ8ions && fE8ures)
+# below are the additional possible 8-words I've cut, often due to conceptual similarity to existing entries or to unify more around typical pronunC8ion
+        inordin8
+        inaccur8
+          accur8
+          adequ8
+        inadequ8
+      unregener8
+        regener8   :also just redo gener8ion of some d8a or file from a chosen templ8 (with better ending "ate" pronunC8ion)
           delic8
         effemin8
          mascul8
           celib8
         immacul8
+        immoder8
             NfN8           :Infinite followable inter-connections between 8d8a (as part of 8b8a?), likely with some possible mapping to any complete unific8ion
              DN8           :DNA genome sequencer/modeler && maybe protein-folding game
        UnitedSt8s          :USA d8a, maps, details, history, etc.
@@ -3545,3 +3553,16 @@ mainly wealthy && powerful men have gotten away with it for too long && should b
 HACMG38L:According to CounterArguments YouTube video on Islamophobia, a bigot is not interested in having a balanced discussion in deb8s, is not interested in
 learning about those they disagree with, && is not interested in reforming the issue in question or changing anything either. Many popular liberals fit this;
 HADMAd8a:Since I experience regular heart-pain && suspect I may pass away anytime soon, && I want Octology to outlive me, I might upload it to GitHub today;
+HAFMCX8u:The top 8 people I'm right now impressed or inspired by, or fascin8d with: Christopher Hitchens, Elon Musk, Jonathan Blow, Liana Kerzner, Hannah Fry,
+Rachael Lust, Greg Armoured Skeptic, && June Shoe0nHead. Each has many gr8 videos on YouTube. Just thought I'd mention their significant influence on me l8ly.
+I also highly recommend everyone read Mondo2000.Com && Angela Nagle's Kill All Normies: Online Culture Wars From 4Chan and Tumblr to Trump and the Alt-Right;
+HAIM5PUC:HN linked to HTTPS://ProgrammingDesignSystems.Com/color/perceptually-uniform-color-spaces && rsrch Candid which apparently ArmouredSkeptic uses now;
+HAIMBUJC:MikeLopresti said to check out JosephCampbell. TheDailyWire's BenShapiro recommends probably good HTTPS://TheTrackR.Com BlueTooth coin-sized tracker.
+Also HTTPS://PrepareWith.Com/ben MyPatriotSupply $17.76 72-hour EmergencyFoodKit (limit:4, 16Servings, 25YearShelfLife) sounds probably worthwhile to get too;
+HAJM7bl8:I'm also gr8ly appreC8ing JordanPeterson's perspective on many topics l8ly. Regarding BenShapiro, I don't consider myself conserv8ive right now, but
+generally agree with his way of thinking && deb8ing. Also just discovered the very popular PhilipDeFranco && find his present8ion of news pretty worthwhile.
+Now that Octology is public for the first time, I think I should spend some time soon reevalU8ing my b8a.ls plans, mainly to upd8 goals with the new d8 I might
+be able to achieve each by. Maybe also try to break goals down further, in order to re-prioritize && hopefully become more consistently productive toward them;
+HAJMJVGo:LianaKerzner's gr8 2-hour interview with JamesDamore recommends reading The Righteous Mind. I really like him && his opinions, evidence, && empathy;
+HAKM4SAK:From Proggit re-read HTTPS://StaticO.GitHub.IO/vim3.html && incorpor8 probably at least fzf somehow && maybe comment about recent Octology release.
+Also just found && really like Paige J's RedHeadRedemption U2b channel && posted a couple candid comments of support, including a link back to Octology here;
