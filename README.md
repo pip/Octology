@@ -7,7 +7,7 @@ I am not yet too interested in serious collaboration at this point.
 
 I just wanted to start a repository as a framework for future efforts.
 
-The .tgz files in the lib/ directory will need to be uncompressed.
+Any .tgz files in the lib/ directory may need to be uncompressed.
 
 Several bin/ commands print some help text when given a -h parameter.
 
