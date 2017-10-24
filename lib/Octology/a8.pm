@@ -491,7 +491,7 @@ our %sgrm=('N' =>  0 ,  'S' => 26     , # 0 'N Normal / reset; # SelectGrphcRndi
      $sgrm{'d'}=  24 ; #  d => u or remap to Double overline or just Double underline off but leave potential single Underline (or from B4) intact?
      $sgrm{'k'}=  25 ; #  k => l or remap to some new special custom blinK pulsing color pattern?
      $sgrm{'e'}=  54 ; #  e => m or remap to double fraMEd with some other code, or just turn Encircled off to leave fraMed maybe still on l8r?
-sub S{my $Sstr='';my $codz='';if(@_){$codz= join('',@_);} # might want l8r flag optionz as sepR8d by spacez for these joinz though
+sub S{my $Sstr='';my $codz='';if(@_ && defined($_[0])){$codz= join('',@_);} # might want l8r flag optionz as sepR8d by spacez for these joinz though
 if((!defined($codz) || !length($codz)) && !-t STDIN){chomp($codz= join('',<STDIN>));}
   if(defined($codz) && length($codz)){ # problM mAB doing !-t ck twice from bin/S to S()?
     if($codz=~  /^--?h/i){print # need to fix lodH usage of old S && gnp8

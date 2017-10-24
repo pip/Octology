@@ -23,10 +23,6 @@
            valU8   :tool to track what a particular user paid for items they own && what amounts they would be willing to sell or trade them with others for
              st8us :tool to query the current progress levels or returned final results of particular long-running system processes or objects of comput8ion
              gr8   :autom8d determin8ions based on previous highest r8ings about "greatest" d8a (&& also "grate" iron bars to hold fire or to grind && aggrav8)
-          cancL8   :gr8 && m8rix lattice-like structure of raised lines at right angles pierced with holes or windows from Zoology or vein network from Botany
-         clathr8   :design8ing or rel8ing to compound where one component is physically enclosed in crystal structure of other or lattice in Botany && Zoology
-         granul8   :gr8ing something down to becoming grain-like or granular && having just rough surface with numerous small elev8ions, masses, or asperities
-          levig8   :gr8ing away to become free from grit && polished smooth in various senses, or thoroughly mixing of liquids or semi-liquids to become fluid
             abl8   :gr8ing away some material substance down to nothing through erosion or vaporiz8ion, or to remove an organ or some other bodily structure
              ab8   :general resource or r8ing diminisher likely based on scheduled d8/dur8ions when chosen d8a values should deprecE8 or dissip8 by some r8io
             fix8   :r8 specialized to emphacize user-specified focal priorities && desired radius at which to apply a r8d r8io level of falloff among d8a sets
@@ -797,6 +793,10 @@ internationaliz8ion:tools to transl8 for I18N the document8ion && applic8ion int
       contritur8
          tritur8
        pulveriz8ion:disintegr8ion by gr8ing, grinding, or pounding something down into nothing more than a fine dust or powder
+          cancL8   :gr8 && m8rix lattice-like structure of raised lines at right angles pierced with holes or windows from Zoology or vein network from Botany
+         clathr8   :design8ing or rel8ing to compound where one component is physically enclosed in crystal structure of other or lattice in Botany && Zoology
+         granul8   :gr8ing something down to becoming grain-like or granular && having just rough surface with numerous small elev8ions, masses, or asperities
+          levig8   :gr8ing away to become free from grit && polished smooth in various senses, or thoroughly mixing of liquids or semi-liquids to become fluid
          breccE8   :gr8ing against rudaceous rock (comprised of minerals && cement) which breaks it down into merely jagged stone fragments && pebbles
          liquid8   :also to make clear or to determine by agreement or litig8ion regarding the precise amount of debt
           abrog8   :to revoke formally, neg8, or invalid8
@@ -893,6 +893,12 @@ internationaliz8ion:tools to transl8 for I18N the document8ion && applic8ion int
               y8   :"yate" is an obsolete term for gate
 
 # above are my 888 current favorite 8-words that I'd most like to consider developing into distinct applic8ions (or component specializ8ions && fE8ures)
+# here are candid8 words to next consider replacing others above with, or to just store away with all the others further below that have been cut so far
+         permut8
+       persever8
+      politiciz8ion
+   democraticiz8ion
+        conserv8ive
 # below are the additional possible 8-words I've cut, often due to conceptual similarity to existing entries or to unify more around typical pronunC8ion
         inordin8
         inaccur8
@@ -3565,4 +3571,21 @@ Now that Octology is public for the first time, I think I should spend some time
 be able to achieve each by. Maybe also try to break goals down further, in order to re-prioritize && hopefully become more consistently productive toward them;
 HAJMJVGo:LianaKerzner's gr8 2-hour interview with JamesDamore recommends reading The Righteous Mind. I really like him && his opinions, evidence, && empathy;
 HAKM4SAK:From Proggit re-read HTTPS://StaticO.GitHub.IO/vim3.html && incorpor8 probably at least fzf somehow && maybe comment about recent Octology release.
-Also just found && really like Paige J's RedHeadRedemption U2b channel && posted a couple candid comments of support, including a link back to Octology here;
+I also just found PaigeJennings' awesome RedHeadRedemption U2b channel && posted a few comments of support, including a link to this 8.txt on GitHub asking for
+her thoughts. She has a growing following of 50K subscribers && has said she'd like to release decent new content daily, so realistically she's probably too
+busy to ever notice me (at least until I can summarize && demonstr8 Octology ideas better). She's also like 14 years younger than me, so my attraction &&
+yearning for any kind of connection is likely delusional && misplaced. Regardless, it's still somewhat fun to dream about becoming closer with her someday;
+HALMCYON:IsabelleMercier's Zero-Tolerance TEDx talk seems to be an inadequ8 argument for being an "H.E.R.O." by toler8ing only things that don't make you
+worry. While I might be inclined to agree that most people worry too much && about the wrong things, && even that this hinders performance, driving them away
+from achieving their potential, I consider at least some worry to still be quite important && tolerance of worry (as well as many other unpleasant reactions)
+to be even more crucial for personal && societal abilities to engage with differing attitudes && opinions, to learn from them, && to enable meaningful growth;
+HALMJ1CJ:CassieJaye's new Meeting The Enemy TEDx talk is just perfect, as well as LianaKerzner's #MeToo discussion about sexual assault && harrassment issues.
+Also add persever8 from psychology, as response repetition; HAMMC9UL:Maga sent HTTPS://OnBeing.Org/blog/courtney-martin-for-guys-reading-metoo-testimonies &&
+HTTP://DailyGood.Org/story/1790/authentic-conversations-moving-from-manipulation-to-truth-and-commitment-james-d-showkeir-jamie-showkeir-and-maren-showkeir
+as a so-so article about #MeToo && a gr8 one regarding improving organiz8ional culture by transforming usually harmful parent-child convers8ions into more
+resilient && truthful adult-adult ones. The first article initially seemed poor to me because I fix8d on a few words && concepts used, namely "priviledge",
+"center", "lifetime", && "safe". After a bit of discussion with my Mom, I l8r re-read it && became somewhat better at trying to understand things from the
+author's perspective with more compassion. Also listened to the gr8 HTTPS://OnBeing.Org/programs/jonathan-haidt-the-psychology-of-self-righteousness-oct2017 ;
+HAMMFYl8:Dad just GMailed me a cute black&&white picture of us together when I was 4-YearsOld (which I promptly uploaded to FaceBook) as well as a 1-hour talk
+by one of his favorite mentors, Napoleon Hill, titled The Law of Attraction HTTPS://YouTube.Com/watch?v=oct1UjNetik which I want to listen to completely l8r;
+HANMEbug:Proggit Learner's Syndrome article by JoeyClover linked to interesting prolifer8ion of HTTPS://GitHub.Com/mraible/history-of-web-frameworks-timeline ;

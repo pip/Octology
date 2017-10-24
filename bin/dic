@@ -16,7 +16,7 @@
 # H9NMN12d:upd8d /etc/dictd/dictd.order to add other installed dicts and place Moby last (but then have2 `dictdconfig -w` && `/etc/init.d/dictd restart`) with:
 #web1913 gcide wn foldoc jargon vera devil elements easton hitchcock bouvier gazetteer gaz2k-zips gaz2k-places gaz2k-counties moby-thesaurus
 # Currently, the only special pRameter that `dic` swallows 4 itself is lone '-w' which design8s any dFinitions should be formatted as *NOT* default Wide mode.
-use strict;use warnings;use utf8;use v5.10;my $VERSION='0.0';my $d8VS='H9SMLm8d'; # orig started from TeST Substitute Input, now extended d8 utility,l8r c8 IF?
+use strict;use warnings;use utf8;use v5.10;my $VERSION='0.0';my $d8VS='HAOM8pad'; # orig started from TeST Substitute Input, now extended d8 utility,l8r c8 IF?
 use Octology::a8;my $word='';my $wclr=S('Wr');my $dhfn=$ENV{'HOME'} . '/.dic_history';my %dhst; # setup global word colr SKp && DicHistFileName && hist hash
 use Octology::d8;my $cc;     my $eclr=S('Yf');my $widf=1 ; # below hopefully strips -w param 2flag disabling dflt wide-mode or load $word 4l8r colr8ion if!flag
 my $cw=160;$cw=$ENV{'COLUMNS'} if(exists($ENV{'COLUMNS'})); # try to setup potentially wider ColumnWidth for when attempting to join shorter linez
@@ -66,6 +66,7 @@ if(0){ # alignment attempt introducez trailing newlinez && sometimez skipz over 
       $cc->{'_Stxt'}.="$St[-1]\n"; # finish rebuilding last line
       # if non-STDERR results
       $cc->{'_Stxt'}=~ s/(;)/$C$1$G/g; # this ruined SKpz when done l8r
+      $cc->{'_Stxt'}=~ s/(Collaborative)( International)( Dictionary)( of)( English)/$C$1$M$2$W$3$c$4$Y$5/g;
       $cc->{'_Stxt'}=~ s/($word)/$wclr$1$z$G/gi if(length($word)); # colr looked-up word (if detected) && belo colr tail of most common 8-words for distinction
       $cc->{'_Stxt'}=~ s/(\w)((ated?|(ait|[ae]ight|at))(ed|i(ng|ve|ons?|ous))?(ly)?)(\W|$)/$1$eclr$2$z$G$8/gi; # (knowing some matchd pronunC8ions wil difer)
 if(   $cc->{'_Stxt'}=~  /^(\d+) definition(s)? found/       ){my $dFct=$1;my $dFst=' dFinitN';$dFst.='z' if(defined($2));
@@ -75,7 +76,6 @@ if(   $cc->{'_Stxt'}=~  /(\n +?)(\d+) Moby Thesaurus words/ ){my $MTct=$2;my $MT
       $cc->{'_Stxt'}=~ s/(\n +?)(\d+)( Moby Thesaurus words)/$MTin$B$MTct$G$3/;}
       $cc->{'_Stxt'}=~ s/(\]:)\n/$1/g;
       $cc->{'_Stxt'}=~ s/\s+$//;
-      $cc->{'_Stxt'}=~ s/(Collaborative)( International)( Dictionary)( of)( English)/$C$1$M$2$W$3$c$4$Y$5/g;
       $cc->{'_Stxt'}=~ s/( v)(.)(\d+)(.)(\d+)/$P$1$W$2$B$3$W$4$R$5/g;
       $cc->{'_Stxt'}=~ s/(\[)(g)(c)(i)(d)(e)(\])/$B$1$O$2$C$3$M$4$W$5$Y$6$B$7$G/g;        # broke  CIDE  apart like above
       $cc->{'_Stxt'}=~ s/(Word)(Net )(\()(r)(\))( 3)(.)(0)/$O$1$M$2$w$3$Y$4$w$5$B$6$W$7$M$8/;
