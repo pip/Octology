@@ -1,0 +1,43 @@
+#!/usr/bin/perl -w
+# A8VB87r: f0z2tylz byPipStuart <Pip@CPAN.Org>
+use strict;use warnings;use Math::BaseCnv qw(:all);my %cdat =();my $rowe = 0;my $indx = 0;
+for my $f0nt (<*.psf>){ my @hedr =('s','4','0','G');my @data = ();
+  print "f0nt:$f0nt...\n";
+  open(FONT,'<',$f0nt);
+  while(<FONT>){
+    push(@{$cdat{$f0nt}},unpack('C*',$_));}close(FONT);
+}
+#my $dstf = shift || $srcf;$dstf =~ s/\.(psf|fnt)$/.f0nt/ if($dstf eq $srcf);open(DSTF,'>',$dstf);
+#my @hedr =('s','4','0','G');if($srcf !~ /\.fnt$/){for(0..3){$hedr[$_] = b64(shift(@data));}}
+#my $hite = b10($hedr[3]); print DSTF "f80p @hedr\n";
+#for       my $indx(0..15){print DSTF b64($indx*16).'-'.b64($indx*16+15)."\n";
+#  for     my $rowe(0..($hite-1)){
+#    for   my $cndx(0..15){
+#      for my $colm(reverse(0..7)){
+#        if($data[($indx*16+$cndx)*$hite+$rowe] >= 2**$colm){print DSTF '#';$data[($indx*16+$cndx)*$hite+$rowe] -= 2**$colm;}
+#        else                                               {print DSTF '-';}
+#      } print DSTF ' ' if($cndx < 15);
+#    }   print DSTF "\n";
+#  }
+#} close(DSTF);
+#    if(/^f80p (\S+) (\S+) (\S+) (\S+)/i){@hedr =($1,$2,$3,$4);}
+#    elsif(/^([0-9A-Za-z._]+)-/){$indx = b10($1);$rowe = 0;}
+#    else{my @ldat = split(/ /,$_);
+#      for my $cndx(0..$#ldat){$cdat{$f0nt}{b64($indx+$cndx)}[$rowe] = 0 unless(exists($cdat{$f0nt}{b64($indx+$cndx)}) && defined($cdat{$f0nt}{b64($indx+$cndx)}[$rowe]));
+#        for my $colm(0..7){
+#          if(substr($ldat[$cndx],7-$colm,1) !~ /^[- ]$/){$cdat{$f0nt}{b64($indx+$cndx)}[$rowe] += 2**$colm;}
+#        }
+#      } $rowe++;
+#    }
+#  }
+## print DSTF pack('C',b10($_)) for(@hedr);
+## for(0..255){
+##   for my $rowe(0..b10($hedr[3])-1){
+##     print DSTF pack('C',$cdat{$f0nt}{b64($_)}[$rowe]) if(exists($cdat{$f0nt}{b64($_)}) && defined($cdat{$f0nt}{b64($_)}[$rowe]));
+##   }
+## }
+#  close(FONT);
+#}
+for(sort(keys(%cdat))){
+  print "cdat:$_\n";
+}
