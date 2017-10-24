@@ -25,7 +25,7 @@ Hopefully if I am unable to continue this project, at least this
 
 ![Octology-tstc-shot_1614x902-HAOM95Nx](https://github.com/pip/Octology/blob/master/gfx/sho/Octology-tstc-shot_1614x902-HAOM95Nx.png "Octology-tstc-HAOM95Nx")
 
-![Octology-tsgr-shot_1614x902-HAOM97rX](https://github.com/pip/Octology/blob/master/gfx/sho/Octology-tsgr-shot_1614x902-HAOM97rX.png "Octology-tsgr-HAOM97rX")
+![Octology-tsgr-shot_1614x902-HAOMC0II](https://github.com/pip/Octology/blob/master/gfx/sho/Octology-tsgr-shot_1614x902-HAOMC0II.png "Octology-tsgr-HAOMC0II")
 
 ![Octology-ftst-shot_1614x902-HAOM99L1](https://github.com/pip/Octology/blob/master/gfx/sho/Octology-ftst-shot_1614x902-HAOM99L1.png "Octology-ftst-HAOM99L1")
 
