@@ -17,7 +17,15 @@ If you're able to setup a Perl environment like mine, try running:
 Hopefully if I am unable to continue this project, at least this
   repo will provide others the ability to utilize some of my work. =)
 
+
 ### Screen Shots
+I'm not yet sure what I need to do to make these images show. Trying a few possibilities...
+
+                                        https://github.com/pip/Octology/blob/master/gfx/sho/Octology-sumb-shot_1614x902-HAOM93s3.png
+![AltTxt lowercase blob no description](https://github.com/pip/Octology/blob/master/gfx/sho/Octology-sumb-shot_1614x902-HAOM93s3.png)
+
+!(https://github.com/pip/Octology/raw/master/gfx/sho/Octology-sumb-shot_1614x902-HAOM93s3.png "no AltTxt lowercase raw with description")
+
 ![Octology-sumb-shot_1614x902-HAOM93s3](HTTPS://GitHub.Com/pip/Octology/blob/master/gfx/sho/Octology-sumb-shot_1614x902-HAOM93s3.png "Octology-sumb-HAOM93s3")
 
 ![Octology-dic8-shot_1614x902-HAOM900M](HTTPS://GitHub.Com/pip/Octology/blob/master/gfx/sho/Octology-dic8-shot_1614x902-HAOM900M.png "Octology-dic8-HAOM900M")
@@ -33,6 +41,7 @@ Hopefully if I am unable to continue this project, at least this
 ![Octology-g3Ob-shot_1614x902-HAOM9cKA](HTTPS://GitHub.Com/pip/Octology/blob/master/gfx/sho/Octology-g3Ob-shot_1614x902-HAOM9cKA.png "Octology-g3Ob-HAOM9cKA")
 
 ![Octology-ckm8-shot_1536x960-HAOM9HKQ](HTTPS://GitHub.Com/pip/Octology/blob/master/gfx/sho/Octology-ckm8-shot_1536x960-HAOM9HKQ.png "Octology-ckm8-HAOM9HKQ")
+
 
 ### Forgive Me For a Bit of Self-Promotion
 Please e-mail me if you'd like to donate to my development effort and
