@@ -3588,4 +3588,13 @@ resilient && truthful adult-adult ones. The first article initially seemed poor 
 author's perspective with more compassion. Also listened to the gr8 HTTPS://OnBeing.Org/programs/jonathan-haidt-the-psychology-of-self-righteousness-oct2017 ;
 HAMMFYl8:Dad just GMailed me a cute black&&white picture of us together when I was 4-YearsOld (which I promptly uploaded to FaceBook) as well as a 1-hour talk
 by one of his favorite mentors, Napoleon Hill, titled The Law of Attraction HTTPS://YouTube.Com/watch?v=oct1UjNetik which I want to listen to completely l8r;
-HANMEbug:Proggit Learner's Syndrome article by JoeyClover linked to interesting prolifer8ion of HTTPS://GitHub.Com/mraible/history-of-web-frameworks-timeline ;
+HANMEbug:Proggit Learner's Syndrome article by JoeyClover linked to interesting prolifer8ion at HTTPS://GitHub.Com/mraible/history-of-web-frameworks-timeline ;
+HAOMIlkY:Apparently new Ubuntu 17.10 Gnome (replacing Unity) doesn't scale well so I may need to reconfigure to still use Unity or try `agi kubuntu-desktop`.
+I wish it were easy for my to duplic8 hard drives like I used to, so I could rollback easier from bad upgrades. MissMisa && FreedomToons on U2b are both cool;
+HAOMMARU:HTTPS://CasperVonB.GitHub.IO/toneofsorting anim8s several algorithms performing with beeps. It should be mimicked by a text demonstr8ion applic8ion;
+HAPM6g3P:From Proggit HTTPS://LucidChart.Com/techblog/2017/10/23/base64-encoding-a-visual-explanation is pretty basic && clearly just web-oriented, but it
+starts with a cool encoding anim8ion I should replic8. Author TyLewis asks for novel b64 uses to be mentioned in the comments. Maybe I should post there l8r.
+HTTPS://Blog.Isomorf.IO/the-accidental-complexity-of-syntax-7ecd8b1fb42 seeks to identify essential semantic && other complexity, && get rid of the accidental.
+HTTPS://DanLuu.Com/filesystem-errors describes quite recent Linux block-device error tests which suggest btrfs, ext4, && xfs are probably the best choices now.
+HTTPS://Medium.Com/@FrancisStokes/techniques-for-creative-coding-220ea4cfffe0 has good advice for modul8ing systems variables && decoupling d8a deliber8ly &&
+HTTPS://Medium.Com/@angelicabraccia/creative-coding-76d9310962d5 has cool HTTP://ORA.Systems 6-dimensional Halo d8a visualiz8ion, sound Synaesthetis && more;

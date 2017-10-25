@@ -23,7 +23,7 @@ use SDLx::App;
 #se SDLx::Text; # also learn TTF && Pango, probably don't need SFont
 use SDLx::Sprite;} $sdlf = 0 if(exists($ENV{'TTY'}) && $ENV{'TTY'}=~ /^\/dev\/tty/); # disAbl SDL whN in fullscrn tXt-mOde acordng2 $TTY (or try `tty`?)
 #ur @EXPORT=  qw(); # mvd only orig Xportz sube && e2c8 over2 a8.pm (&& since renamed e to S for SKp consistency)
-our $VERSION='0.0';my $d8VS='G7BMGDIU';our $auth='PipStuart <Pip@CPAN.Org>';my $name='c8';
+our $VERSION='0.0';my $d8VS='HAPM1CMS';our $auth='PipStuart <Pip@CPAN.Org>';my $name='c8';
 my %GLBL=( # GLOBAL CLASS VARIABLES
   'FLAGOPEN'=> 0); # flag for if SDL window crE8d yet (in Simp was for if a main curses screen had been opened yet)
 #y @DISPSTAK=(); # global stack of crE8d c8 objects for display order
@@ -248,7 +248,7 @@ sub L8rc{my $self=shift;my $rcfn=shift;my @rcfd;my $scmd; # Load8TrmResources fi
 #     my $tA2d="ABCD\'EFGH";my $tA2s='ABCD\'EFGH';print "tA2d:$tA2d:tA2s:$tA2s:\n"; # prntz ABCD'EFGH ABCD'EFGH
 #     my $tA3d="ABCD\EFGH" ;my $tA3s='ABCD\EFGH' ;print "tA3d:$tA3d:tA3s:$tA3s:\n"; # prntz ABCDFGH   ABCD\EFGH
   }}
-sub L8fd{my $self=shift;  my $flnm=$self->{'_flnm'}; # Load8shFileD8a; maybe load $_Stxt first as single EscapedTeXT pre-split into @_text then S2 col8d
+sub L8fd{my $self=shift;  my $flnm=$self->{'_flnm'}; # Load8shFileD8a; maybe load $_Stxt first as single EscapedTeXT pre-split into @_text then S2f4 col8d
   if(-r "$flnm"){$self->{'_ycrs'} =$self->{'_xcrs'}=$self->{'_hite'}=$self->{'_widt'}=$self->{'_flagcvis'}=0;
     open( FILE,'<',$flnm); chomp(@{$self->{'_text'}}=<FILE>);close(FILE); # maybe linez shouldn't be chompd so like .pal8 file !ending in \n can be seen?
     $self->{'_hite'}     =scalar(@{$self->{'_text'}});$self->{'_Stxt'}='';
@@ -265,7 +265,7 @@ sub L8fd{my $self=shift;  my $flnm=$self->{'_flnm'}; # Load8shFileD8a; maybe loa
       }elsif($flnm =~ /MANIFEST$/){
         $self->{'_text'}[$_]  = c8fn($self->{'_text'}[$_]);
       } $self->{'_Stxt'}     .= $self->{'_text'}[$_] . "\n"; # preserve parse resultz in obj for efficient reuse l8r && stage oper8ionz wher 1st might just
-      my @c8d8=S2(              $self->{'_text'}[$_]);       #   reformat plain txt, 2nd colrz foregr, 3rd colrz backgr, 4th layerz f0ntz && each stage
+      my @c8d8=S2f4(            $self->{'_text'}[$_]);       #   reformat plain txt, 2nd colrz foregr, 3rd colrz backgr, 4th layerz f0ntz && each stage
       $self->{  '_text'}[$_]  = $c8d8[0];                    #   should preserve incoming st8 B4 upd8ing the visible represent8ion so stagez can be audited;
       $self->{  '_Fclr'}[$_]  = $c8d8[1];
       $self->{  '_bclr'}[$_]  = $c8d8[2];
@@ -273,7 +273,7 @@ sub L8fd{my $self=shift;  my $flnm=$self->{'_flnm'}; # Load8shFileD8a; maybe loa
     }#$self->cc2e(); # this is pretty badly broken =(
   }}
 sub L8cd{my $self=shift;my $cmds=$self->{'_cmds'};my $cmdd=$self->{'_cmdd'}; # Load8shCommandD8a like Btix wo shifting to Term scrolbak (or pIpeSTDIN && oper8)
-  # eventually want to optionally read both backtickz && STDIN by line (or full) into _Stxt pre-col8 && allow pre-oper8 on that or layerz post-S2
+  # eventually want to optionally read both backtickz && STDIN by line (or full) into _Stxt pre-col8 && allow pre-oper8 on that or layerz post-S2f4
   #   && also add ability to pass in full 8sh cmnd line that executed before piping through this, as well as what follows, to assist in oper8ion selection
   # load single EscapedTeXT first then expand to col8 (Stxt appendz to keep sync with _text etc because each Load() pushez)
   if    (defined($cmds) && length($cmds)){$self->{'_Stxt'}.=        `$cmds` ; # might want2 backtick into array context instead of scalar to multi-line better?
@@ -287,9 +287,9 @@ sub L8cd{my $self=shift;my $cmds=$self->{'_cmds'};my $cmdd=$self->{'_cmdd'}; # L
   # maybe set a GLBL if any term already crE8d to know which type of cmnd to prefer?
   $self->xe2c() if(defined($self->{'_Stxt'}) && length($self->{'_Stxt'}));}
 sub xe2c{my $self=shift;for(@tFbf){$self->{"_$_"  }= [];} # eXpand   Escapetextd8a to C8 (after emptying main col8 arrayz)
-  my   @ec8o=S2($self->{'_Stxt'}) if( exists($self->{'_Stxt'}) &&  defined($self->{'_Stxt'}) &&   length($self->{'_Stxt'}));
-  if  (@ec8o    &&                   defined($ec8o[0]) &&          defined($ec8o[1]) &&          defined($ec8o[2]) &&          defined($ec8o[3])){
-    if($ec8o[0] =~ /\n/){my @ec80=split(/\n/,$ec8o[0]);my @ec81=split(/\n/,$ec8o[1]);my @ec82=split(/\n/,$ec8o[2]);my @ec83=split(/\n/,$ec8o[3]);
+  my   @ec8o=S2f4($self->{'_Stxt'}) if( exists($self->{'_Stxt'}) &&  defined($self->{'_Stxt'}) &&   length($self->{'_Stxt'}));
+  if  (@ec8o    &&                     defined($ec8o[0]) &&          defined($ec8o[1]) &&          defined($ec8o[2]) &&          defined($ec8o[3])){
+    if($ec8o[0] =~ /\n/){my @ec80=  split(/\n/,$ec8o[0]);my @ec81=split(/\n/,$ec8o[1]);my @ec82=split(/\n/,$ec8o[2]);my @ec83=split(/\n/,$ec8o[3]);
       for(0..$#ec80){push(@{$self->{'_text'}} ,$ec80[$_]);$self->{'_Fclr'}[$#{$self->{'_text'}}]=$ec81[$_];
         $self->{'_bclr'}[$#{$self->{'_text'}}]=$ec82[$_] ;$self->{'_f0nt'}[$#{$self->{'_text'}}]=$ec83[$_];}}
     else{            push(@{$self->{'_text'}} ,$ec8o[ 0]);$self->{'_Fclr'}[$#{$self->{'_text'}}]=$ec8o[ 1];
@@ -297,8 +297,8 @@ sub xe2c{my $self=shift;for(@tFbf){$self->{"_$_"  }= [];} # eXpand   Escapetextd
     $self->{    '_hite'}= @{$self->{'_text'}};            $self->{'_widt'}= 0; # upd8 wdht aftr new cmnd
     for(0..($self->{'_hite'} -1)){ $self->{'_widt'}= length($self->{'_text'}[$_]) if($self->{'_widt'}< length($self->{'_text'}[$_]));}}}
 sub cc2e{my $self=shift;           $self->{'_Stxt'}= '';  # Compress C8 to Escapetextd8a (after emptying lone Stxt scalar) but should join insted of append \n?
-  for(0..(@{$self->{'_text'}}-1)){ $self->{'_Stxt'}.=    c2($self->{'_text'}[$_],$self->{'_Fclr'}[$_],$self->{'_bclr'}[$_],$self->{'_f0nt'}[$_]) . "\n";
-                                                #print   c2($self->{'_text'}[$_],$self->{'_Fclr'}[$_],$self->{'_bclr'}[$_],$self->{'_f0nt'}[$_]) . "\n";
+  for(0..(@{$self->{'_text'}}-1)){ $self->{'_Stxt'}.=  c2f4($self->{'_text'}[$_],$self->{'_Fclr'}[$_],$self->{'_bclr'}[$_],$self->{'_f0nt'}[$_]) . "\n";
+                                                #print c2f4($self->{'_text'}[$_],$self->{'_Fclr'}[$_],$self->{'_bclr'}[$_],$self->{'_f0nt'}[$_]) . "\n";
                                                 #print join("\n",$self->{'_text'}[$_],$self->{'_Fclr'}[$_],$self->{'_bclr'}[$_],$self->{'_f0nt'}[$_]);
                                                  }}
 sub new{my( $nvkr,$ityp,   $idat)=@_;  my $nobj=ref($nvkr); # basically same as TIEARRAY below just without commented old Curses code (adding fldz stuff)
@@ -393,10 +393,10 @@ sub OScr{my $self = shift; # in Simp OScr was global but trying in c8 as method
         $GLBL{'_nbtz'}=SDL::Joystick::num_buttons($GLBL{'_jstk'});}
       $GLBL{'FLAGOPEN'}=1;
     }elsif($ucsf){ # if Using Simp, set pal8 at start
-      for(0..$#avlo){my @rgbd = split(//,  $pmap{$avlo[$_]});for(@rgbd){$_=b10($_)*4;} # silently print color changes (or sys pal8?) B4 new Simp
-       #printf("%2d:%s:%s:%3d:%3d:%3d:%s\n"  ,$_,$avlo[$_],$pmap{$avlo[$_]},@rgbd,    $ENV{'TERM'});
-       #printf("\e]P%1.1X%2.2X%2.2X%2.2X"    ,$_,                           @rgbd) if($ENV{'TERM'} eq 'xterm'); #GNU/Lin Console?
-        printf("\e]4;%d;#%2.2x%2.2x%2.2x\e\\",$_,                           @rgbd) if($ENV{'TERM'} eq 'xterm'); # maybe if TERM ne 'linux'?
+      for(0..$#{$cmsp{'ANSI'}}){my @rgbd= split(//, $pmap{$cmsp{'ANSI'}[$_]});for(@rgbd){$_=b10($_)*4;} # silently prnt colr changes (or sys pal8?) B4 new Simp
+       #printf("%2d:%s:%s:%3d:%3d:%3d:%s\n"  ,$_,$$cmsp{'ANSI'}[$_],$pmap{$$cmsp{'ANSI'}[$_]},@rgbd,    $ENV{'TERM'});
+       #printf("\e]P%1.1X%2.2X%2.2X%2.2X"    ,$_,                                             @rgbd) if($ENV{'TERM'} eq 'xterm'); #GNU/Lin Console?
+        printf("\e]4;%d;#%2.2x%2.2x%2.2x\e\\",$_,                                             @rgbd) if($ENV{'TERM'} eq 'xterm'); # maybe if TERM ne 'linux'?
       } # maybe should also set bkgr && frgr 0 && 7 like etfp did?
       # do old Simp OScr stuf
       $GLBL{'FLAGOPEN'}=1;
@@ -659,7 +659,7 @@ sub GetK{my $self=shift;my $tmot=shift||0;my $tkey='-1';my $stix;my $ctix;
     }} return($tkey);}
 sub PrcS{my $self=shift;my $pt2p=shift; # PText2Process (handling most common escapez 4 pseudo-printing with Prnt)
   while($pt2p =~ s/^(.*?)(\e\[([\d;]*)[A-MPSTXZ]|\n)//){my $pret=$1;my $esco=$2;
-#   if(defined($pret) && length($pret)){$self->Prnt(S2($pret));
+#   if(defined($pret) && length($pret)){$self->Prnt(S2f4($pret));
 #     if($pret =~ /\e]4;\d+;#[0-9a-f]{6}\e\\/){#%{$GLBL{'_sprm'}}=(); # test attempt to invalid8 all Spritez if any escape to upd8 term color value
 #       for(keys(%{$GLBL{'_sprm'}})){delete($GLBL{'_sprm'}{$_});}
 #       $self->Draw();} # && full-screen redraw
@@ -710,7 +710,7 @@ sub PrcS{my $self=shift;my $pt2p=shift; # PText2Process (handling most common es
           for my $c8la(@tFbf){splice(@{$self->{"_$c8la"}},$self->{'_ycrs'},0,'');pop(@{$self->{"_$c8la"}}) if(@{$self->{"_$c8la"}} > $self->{'_hite'});}}$self->Move($ycrs,$xcrs); # scroll dn (insert top lines)
       }
     }
-  }$self->Prnt(S2($pt2p));
+  }$self->Prnt(S2f4($pt2p));
 # if($pt2p =~ /\e]4;\d+;#[0-9a-f]{6}\e\\/){#%{$GLBL{'_sprm'}}=();
 #   for(keys(%{$GLBL{'_sprm'}})){delete($GLBL{'_sprm'}{$_});}
 #   $self->Draw();}
@@ -914,11 +914,14 @@ sub Prnt{my $self=shift;my $ptxt=shift;my $pfcl=shift;my $pbcl=shift;my $pf0n=sh
       #   with support for 1:132-columns,2:printer,6:selective erase,9:NatnlReplcChr setz,15:technical characters,18:user windows,21:horizontal scrolling,
       #   22:ANSI color maybe like VT525. ">c" => "^[[>41;297;0c" also meaning VT420 with 297 firmware version.
 sub MkSp{my $spid=shift;$spid=' ' unless(defined($spid) && length($spid)); # Make global character Sprites if they don't yet exist
-  $spid.='W' if(length($spid)==1);$spid.='W' if(length($spid)==2);$spid.='0' if(length($spid)==3); #' WW0'
-  my   @spis=split(//, $spid); #"$ltxd[$cndx]$lfcd[$cndx]$lbcd[$cndx]$lfvd[$cndx]" # MaKe a SPrite for the joined col8 layers
+  $spid.='W' if(length($spid)==1);$spid.='W' if(length($spid)==2);$spid.='W' if(length($spid)==3); #' WWW'
   unless(exists($GLBL{'_sprm'}{$spid})){ # could eventually also add scales, pal8s, etc.
-    my @frgb=split(//,$pmap{$spis[1]});for(@frgb){$_=b10($_)*4;}
-    my @brgb=split(//,$pmap{$spis[2]});for(@brgb){$_=b10($_)*4;}
+    my @frgb=('_','_','_');#$spid=~ s/^(.):/$1W/;$spid=~ s/:(.)$/W$1/;$spid=~ s/:$/W/;
+    my @brgb=('_','_','_');#say "spid=$spid=";
+    my @spis=split(//,      $spid    ); #"$ltxd[$cndx]$lfcd[$cndx]$lbcd[$cndx]$lfvd[$cndx]" # MaKe a SPrite for the joined col8 layers
+       @frgb=split(//,$pmap{$spis[1]}) if($#spis >= 1 && defined($spis[1]) && exists($pmap{$spis[1]}));for(@frgb){$_=b10($_)*4;}
+       @brgb=split(//,$pmap{$spis[2]}) if($#spis >= 2 && defined($spis[2]) && exists($pmap{$spis[2]}));for(@brgb){$_=b10($_)*4;}
+    $spis[3]='W'                   unless($#spis >= 3 && defined($spis[3]) && exists($GLBL{'_f8om'}{$spis[3]}));
     $GLBL{'_sprm'}{$spid}=  SDLx::Sprite->new(width => 8,height => 16);
     $GLBL{'_sprm'}{$spid}->surface->draw_rect([ 0, 0,  8,          16],[@brgb,255]);
     my $fhit=   @{$GLBL{'_f8om'}{$spis[3]}->{'f0nt'}[ord($spis[0])]}; # array of rows should be f0nt hite (&&should also be same in 'f0nthedr')
@@ -934,7 +937,7 @@ sub Zoom{my $self=shift;
  #my $sttf=SDLx::Text  ->new(font => '/usr/share/fonts/truetype/liberation/LiberationMono-Regular.ttf',color => [255,255,255,255]);
                             #size => 16, x => 0, y => 0, h_align => 'left', shadow => 1, bold => 1, text => 'Test',  # other Text->new atrbutz
     #$sttf->write_xy($sxap,288,288,'More Test Text!');
-  $GLBL{'_sxap'}->update();} # note that Draw's default ' Gk0' belo has diff f0nt from Prnt's ' Gkt'
+  $GLBL{'_sxap'}->update();} # note that Draw's default used to be ' Gk0' belo with diff f0nt from Prnt's ' Gkt', but now are same
 sub Draw{my $self=shift;my $ln2d=shift;my @lrng; # allow passing in LiNe2Draw parameter # below declares VisibleCursorDrawnFlag
   if($sdlf){$self->OScr() unless($GLBL{'FLAGOPEN'});my $vcdf=0; # need Open main Screen for what was a new Simp obj but now initializes SDL here instead
     if(!defined($ln2d)){$GLBL{'_xfss'}->draw_rect([0,0,$self->{'_widt'}*8,$self->{'_hite'}*16],[0,0,0,255]);@lrng=(0..@{$self->{'_text'}}-1);}
@@ -942,11 +945,15 @@ sub Draw{my $self=shift;my $ln2d=shift;my @lrng; # allow passing in LiNe2Draw pa
     for my $lndx(@lrng){  $self->{'_text'}[$lndx]  = ' '                                   unless(defined($self->{'_text'}[$lndx])); # init undef txt lines2spc
                           $self->{'_Fclr'}[$lndx]  = 'G'x  length($self->{'_text'}[$lndx]) unless(defined($self->{'_Fclr'}[$lndx])); # init empty colrz||f0ntz
                           $self->{'_bclr'}[$lndx]  = 'k'x  length($self->{'_text'}[$lndx]) unless(defined($self->{'_bclr'}[$lndx]));
-                          $self->{'_f0nt'}[$lndx]  = '0'x  length($self->{'_text'}[$lndx]) unless(defined($self->{'_f0nt'}[$lndx])); # pad short d8a
+                          $self->{'_f0nt'}[$lndx]  = 't'x  length($self->{'_text'}[$lndx]) unless(defined($self->{'_f0nt'}[$lndx])); # pad short d8a
                           $self->{'_Fclr'}[$lndx] .= 'G'x (length($self->{'_text'}[$lndx])-length($self->{'_Fclr'}[$lndx])) if(length($self->{'_text'}[$lndx]) > length($self->{'_Fclr'}[$lndx]));
                           $self->{'_bclr'}[$lndx] .= 'k'x (length($self->{'_text'}[$lndx])-length($self->{'_bclr'}[$lndx])) if(length($self->{'_text'}[$lndx]) > length($self->{'_bclr'}[$lndx]));
-                          $self->{'_f0nt'}[$lndx] .= '0'x (length($self->{'_text'}[$lndx])-length($self->{'_f0nt'}[$lndx])) if(length($self->{'_text'}[$lndx]) > length($self->{'_f0nt'}[$lndx])); # maybe below tst _atcl Altern8 Text Col8 Layer to swap into @ltxd && cycle to help visualize layers and debug 8trm
-                          my @ltxd=split(//,$self->{'_text'}[$lndx]); # start looping Line iNDeX through text rows, load Line TeXt             D8a
+                          $self->{'_f0nt'}[$lndx] .= 't'x (length($self->{'_text'}[$lndx])-length($self->{'_f0nt'}[$lndx])) if(length($self->{'_text'}[$lndx]) > length($self->{'_f0nt'}[$lndx])); # maybe below tst _atcl Altern8 Text Col8 Layer to swap into @ltxd && cycle to help visualize layers and debug 8trm
+                   if(0){say 'ltxd='       ,$self->{'_text'}[$lndx],'=';
+                         say 'lfcd='       ,$self->{'_Fclr'}[$lndx],'=';
+                         say 'lbcd='       ,$self->{'_bclr'}[$lndx],'=';
+                         say 'lfvd='       ,$self->{'_f0nt'}[$lndx],'=';
+                        } my @ltxd=split(//,$self->{'_text'}[$lndx]); # start looping Line iNDeX through text rows, load Line TeXt             D8a
                           my @lfcd=split(//,$self->{'_Fclr'}[$lndx]); # start looping Line iNDeX through text rows, load Line Foreground Color D8a
                           my @lbcd=split(//,$self->{'_bclr'}[$lndx]); # start looping Line iNDeX through text rows, load Line Background Color D8a
                           my @lfvd=split(//,$self->{'_f0nt'}[$lndx]); # start looping Line iNDeX through text rows, load Line F0nt  abbreV8ion D8a
@@ -960,12 +967,18 @@ sub Draw{my $self=shift;my $ln2d=shift;my @lrng; # allow passing in LiNe2Draw pa
           $lfcd[$cndx]='P' if($lfcd[$cndx] eq 'p'); # remap P=>M,p=>P,y=>O
           $lfcd[$cndx]='O' if($lfcd[$cndx] eq 'y');}# remap P=>M,p=>P,y=>O  # below reverse fg && bg of visible cursor char && force bright bg
         if($self->{'_flagcvis'}&& $lndx == $self->{'_ycrs'} && $cndx == $self->{'_xcrs'}){($lfcd[$cndx],$lbcd[$cndx])=($lbcd[$cndx],uc($lfcd[$cndx]));$vcdf=1;}
-        MkSp(          "$ltxd[$cndx]$lfcd[$cndx]$lbcd[$cndx]$lfvd[$cndx]");
-        $GLBL{'_sprm'}{"$ltxd[$cndx]$lfcd[$cndx]$lbcd[$cndx]$lfvd[$cndx]"}->draw_xy($GLBL{'_xfss'}->surface(),         $cndx  *8,         $lndx  *16);}}
+        $lfcd[$cndx]=~ s/:/G/; # Fgcl, bgcl, && f0nt layrz coming thru as colonz ':' don't work for building sprite to display, so convert them to defaultz
+        $lbcd[$cndx]=~ s/:/k/;
+        $lfvd[$cndx]=~ s/:/t/;
+        MkSp(                    "$ltxd[$cndx]$lfcd[$cndx]$lbcd[$cndx]$lfvd[$cndx]");
+        if(exists($GLBL{'_sprm'}{"$ltxd[$cndx]$lfcd[$cndx]$lbcd[$cndx]$lfvd[$cndx]"})){
+          $GLBL{        '_sprm'}{"$ltxd[$cndx]$lfcd[$cndx]$lbcd[$cndx]$lfvd[$cndx]"}->draw_xy(
+                                                  $GLBL{'_xfss'}->surface(),         $cndx  *8,         $lndx  *16);}}}
     $self->OverDraw() if($self->{'_flagovdr'} && !$ln2d); # try over drawing if enabled && already normally drawing whole window rather than just 1 line
 #   $self->MiniScbr() if($self->{'_flagmnsb'}          ); # try over drawing if enabled, a new mini scrollbar (probably only want for _flagterm?)
     if(!$vcdf && $self->{'_flagcvis'}){MkSp(); # build general bright sprite && draw_xy for visible cursor moved beyond above drawn @text dimensions
-      $GLBL{  '_sprm'}{                                            ' WW0'}->draw_xy($GLBL{'_xfss'}->surface(),$self->{'_xcrs'}*8,$self->{'_ycrs'}*16);}
+      if  (exists($GLBL{'_sprm'}{' WWW'})){
+        $GLBL{          '_sprm'}{' WWW'}->draw_xy($GLBL{'_xfss'}->surface(),$self->{'_xcrs'}*8,$self->{'_ycrs'}*16);}}
     $self->Zoom();}}
 sub MiniScbr{my $self=shift;my $shit=$self->{'_hite'}*16; # drawing miniature scrollbar sprite, Self2ScrollbarHITe (height)
   # 2du:forget this and crE8 mini during regular draw, build by mini linez to avoid regen, precompute colr conversions if avoids redoing any l8r
@@ -1103,7 +1116,7 @@ sub ScFw{my $self=shift;my $nm2s=shift||1; # Scroll Forward
     if(exists($self->{'_tsfd'}{'_text'})&& @{$self->{'_tsfd'}{'_text'}}){$self->S2SB();
       for(@tFbf){push   (@{$self->{"_$_"}},shift(@{$self->{'_tsfd'}{"_$_"}}));}$self->Draw();}}}
 sub Btix{my $self=shift;my $exes=shift; # Backtickz wrapper method  # tryd2prnt \n aftr cmd B4 outpt here but did!wrk, old BackTickzEndedinNewline flag below
-  if(defined($exes) && length($exes)){my $exop=`$exes`;my @ec8o=S2($exop); $self->{'_flagbten'}=0 if($exop !~ /\n$/);
+  if(defined($exes) && length($exes)){my $exop=`$exes`;my @ec8o=S2f4($exop); $self->{'_flagbten'}=0 if($exop !~ /\n$/);
     if($ec8o[0] =~ /\n/){my @ec80=split(/\n/,$ec8o[0]);my @ec81=split(/\n/,$ec8o[1]);my @ec82=split(/\n/,$ec8o[2]);my @ec83=split(/\n/,$ec8o[3]);
       for(0..$#ec80){ # if @text==hite&&term shft each layer to scrlbak
         if  (@{$self->{'_text'}} == $self->{'_hite'} && $self->{'_flagterm'}){$self->S2SB();}

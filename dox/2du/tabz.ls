@@ -1,3 +1,96 @@
+HAPM1WdN: chv0 Lt: GMail  /.  PerlMonks.Org  Reddit.Com/r/programming  News.YCombinator.Com  Vox.Com
+# chv0 Md https://github.com/ncw/rclone
+          https://rclone.org
+          https://github.com/odeke-em/drive
+          https://GitHub.Com/pip/Octology
+          https://GitHub.Com/pip/Octology/raw/master/dox/2du/8.txt
+          https://guides.github.com/activities/hello-world
+          https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet
+          http://Mondo2000.Com
+# chv1 Lt https://www.youtube.com/results?search_query=MixHound+Chillstep+Melodic+Dubstep+Livestream
+          https://www.youtube.com/results?search_query=Pulse8+Live+Chill+Music+24%2F7+Ambient+Melodic
+          https://www.youtube.com/results?search_query=24%2F7+Monstercat+Radio+Gaming+Live+Stream
+          https://www.youtube.com/results?search_query=Monstafluff+Gaming+Music+Radio+Live+Stream+Dubstep
+          https://www.youtube.com/results?search_query=UKF+Drum+Bass+24%2F7+Mix+Liquid+Radio
+# chv1 Md https://www.youtube.com/watch?v=BH1GMGDYndo
+          https://www.youtube.com/user/DubstepLyrics2/videos?shelf_id=1&view=0&sort=dd
+          https://www.youtube.com/results?q=Vital+EDM+Trap&sp=CAFQFA%253D%253D
+          https://www.youtube.com/results?search_query=Trap+City+2017+best
+          https://www.thisamericanlife.org/radio-archives
+          https://secure.meetup.com/messages/
+          https://jordanbpeterson.com/12-rules-for-life/
+# chv1 Rt https://www.youtube.com
+          https://www.youtube.com/watch?v=PsFb0CYnnWM
+          https://www.youtube.com/channel/UC9woec5S4CA4q0tcxtJDzsA/videos
+          https://www.youtube.com/watch?v=_1viz4P4j04
+          https://www.youtube.com/watch?v=6EGWd9QrBqo
+          https://www.youtube.com/watch?v=nPdPhA9beio
+          https://www.youtube.com/watch?v=LDp75bwNlso
+          https://www.youtube.com/channel/UCpHZ2Zja5MDrAv1L577Z-TQ/videos
+          https://www.youtube.com/watch?v=oct1UjNetik
+# chv2 Md http://cpansearch.perl.org/src/RURBAN/illguts-0.49/index.html
+          http://perldoc.perl.org/perlvar.html
+          http://blogs.perl.org/
+          http://www.perlconference.us/tpc-2017-dc/schedule/
+# chv4 Lt http://www.unicode.org/charts/
+          https://en.wikipedia.org/wiki/Unicode_block
+          https://en.wikipedia.org/wiki/Portable_Game_Notation
+          https://www.chessclub.com/user/help/PGN-spec
+          https://chessprogramming.wikispaces.com/Chess
+          http://search.cpan.org/~pip/
+          https://metacpan.org/pod/Curses#Available-Constants
+          https://metacpan.org/pod/Term::Cap
+          https://metacpan.org/pod/distribution/perl/ext/POSIX/lib/POSIX.pod
+          https://www.gnu.org/software/termutils/manual/termcap-1.3/html_node/termcap_26.html
+          https://en.wikipedia.org/wiki/ANSI_escape_code
+          https://rt.cpan.org/
+          https://help.github.com/articles/caching-your-github-password-in-git/
+          https://www.google.com/search?q=.gitconfig+github+section+user&nfpr=1&sa=X&ved=0ahUKEwihzPD0i4vXAhUl7IMKHUnPCbwQvgUIJigB&biw=1159&bih=565
+# chv4 Md file:///usr/share/doc/coq-doc-html/Tutorial.v.html
+          http://cvs.savannah.gnu.org/viewvc/bool2/bool2/
+          http://search.cpan.org/~pjacklam/Math-BigInt-1.999811/lib/Math/BigInt.pm
+          https://senseis.xmp.net/?SGFEditor
+          https://senseis.xmp.net/?GNUGo
+          https://senseis.xmp.net/?SGF
+          http://www.lysator.liu.se/~gunnar/gtp/
+          http://git.savannah.gnu.org/cgit/gnugo.git
+          https://github.com/xyproto/monkeyjump
+          http://www.hellogovernance.com/android-apps/andgs
+# chv5 Lt https://support.screeps.com/hc/en-us
+          http://docs.screeps.com/third-party.html
+          https://support.screeps.com/hc/en-us/articles/207689119-Important-change-game-objects-prototypes
+          http://docs.screeps.com/api/#Room.energyAvailable
+          https://stackoverflow.com/questions/610406/javascript-equivalent-to-printf-string-format
+          https://github.com/search?q=Dissi+Screeps&type=Code&utf8=%E2%9C%93
+          https://github.com/jedislight/screeps_room_layout_generator/blob/master/main.js
+          https://stackoverflow.com/questions/27080471/how-to-extend-the-creep-class-in-screeps
+          https://stackoverflow.com/questions/30147800/extend-source-prototype-to-have-a-memory-object
+          https://github.com/Pantek59/Screeps-Noob-Code/wiki/Flags
+          https://steamcommunity.com/app/464350/discussions/
+# chv5 Rt file:///home/pip/dvl/Ppl/Jer/sapi/docs/api.1#PathFinder.CostMatrix.constructor
+          file:///home/pip/dvl/Ppl/Jer/sapi/docs/api/index.html#Game.resources
+          file:///home/pip/dvl/Ppl/Jer/sapi/docs/ptr.html
+          http://docs.screeps.com/creeps.html
+          http://docs.screeps.com/contributed/modifying-prototypes.html
+          http://docs.screeps.com/contributed/caching-overview.html
+          https://arcath.net/2017/07/screeps-part-17-room-planning/
+          http://screeps.dissi.me/buildingplanner/#N4IgdghgtgpiBcIAuMAeSCiqAOB7ATkiADQgDOAFhPgCYLlW0AMJI+AxgDb0AcrARgFcAlpxrCwAczIJQaFGDLDcYWSDwz4AbVCoEAZgBMpAJ4IAbAF9iug-tMXrt+PoCMD+AHYnIPS+MgZl4+fvoALB7eNr4GTB48IQbugQgJ0aH2KfBpzuHxiS5xWQCcBUYepel2FWXJQa5MZQH1jQC61si4AO4w+GoaCDoxhZGW7aT4uBB08KAD2rmZQVG5zam1NVUjWQ1jHWTYEF2qs+q4mkN+hsUerq57lpZAA
+          https://screeps.com/forum/
+# chv6 Rt https://en.wikipedia.org/wiki/Priority_queue
+          https://en.wikipedia.org/wiki/Fibonacci_heap
+          https://en.wikipedia.org/wiki/Jump_point_search
+          https://zerowidth.com/2013/05/05/jump-point-search-explained.html
+          http://users.cecs.anu.edu.au/~dharabor/data/papers/harabor-grastien-aaai11.pdf
+          https://www.aaai.org/ocs/index.php/SOCS/SOCS12/paper/viewFile/5396/5212
+          http://users.cecs.anu.edu.au/~dharabor/data/papers/harabor-grastien-icaps14.pdf
+          http://search.cpan.org/~bobmath/Array-Heap-ModifiablePriorityQueue-1.10/lib/Array/Heap/ModifiablePriorityQueue.pm
+          http://www.leekillough.com/heaps/
+          http://people.mpi-inf.mpg.de/~sanders/programs/spq/
+          https://gist.github.com/bzy-xyz/9c4d8c9f9498a2d7983d
+          https://gist.github.com/NhanHo/87c679ca456c83185b82
+          https://github.com/screepers/node-screeps-api/blob/master/docs/Endpoints.md
+          https://github.com/screepers/python-screeps/blob/master/docs/Endpoints.md
+          https://gist.github.com/dzhu/d6999d126d0182973b5c
 H5GMFDrZ: HTTPS://GameFAQs.Com/dreamcast/197249-evolution/faqs has walkthroughs I followed for Evolution RPG up to Level64 (when I quit playing it months ago).
           HTTPS://MetaCPAN.Org/pod/PulseAudio should be better for eventual pmix replacement, mix8.
           HTTP://Appleton.Org/residents/valley-transit/maps-schedules    bus routes for Appleton.
