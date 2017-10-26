@@ -1,5 +1,7 @@
 # Octology
-An ontology based on organizing everything by the number 8.
+An ontology based on organizing everything by the number 8 (or 64).
+
+`$VERSION='0.0';$d8VS='HAQM0jAx';`
 
 This is basically a preview of version 0.0 of my development files.
 
@@ -7,14 +9,12 @@ I am not yet too interested in serious collaboration at this point.
 
 I just wanted to start a repository as a framework for future efforts.
 
-Any .tgz files in the lib/ directory may need to be uncompressed.
+Many bin/ commands print some help text when given a -h parameter.
 
-Several bin/ commands print some help text when given a -h parameter.
+If your Perl environment is comparable, to learn a bit try running:
+`    sumb, ftst,  tsgr, tstc,    gnp8, pal8,  calN, lodH`
 
-If you're able to setup a Perl environment like mine, try running:
-  sumb, pal8, ftst, tstc, gnp8, tsgr, calN, and lodH to learn a bit.
-
-Hopefully if I am unable to continue this project, at least this
+Hopefully if I am unable to continue on this project, at least this
   repo will provide others the ability to utilize some of my work. =)
 
 
@@ -39,6 +39,16 @@ Hopefully if I am unable to continue this project, at least this
 ### Forgive Me For a Bit of Self-Promotion
 Please e-mail me if you'd like to donate to my development effort and
   feel free to include the top 8 features you'd most like to see.
-  
-Please also e-mail me if you're a like-minded person in the Oshkosh
+
+Please also e-mail me if you're an open-minded person in the Oshkosh
   area who is interested in friendship. I'm lonely much of the time.
+
+If you would like to learn about the long-term goals, plans, thinking,
+  and research for this project, please read the dox/2du/8.txt file.
+
+Thank you for your consideration as well as any constructive criticism,
+  recommendations, or whatever other feedback you may be able to offer.
+
+  Sincerely,
+
+`                                              -PipStuart  8<3`
