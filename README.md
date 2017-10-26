@@ -1,7 +1,7 @@
 # Octology
 An ontology based on organizing everything by the number 8 (or 64).
 
-`$VERSION='0.0';$d8VS='HAQM0jAx';`
+`$VERSION='0.0';$d8VS='HAQMH98c';`
 
 This is basically a preview of version 0.0 of my development files.
 
@@ -44,11 +44,10 @@ Please also e-mail me if you're an open-minded person in the Oshkosh
   area who is interested in friendship. I'm lonely much of the time.
 
 If you would like to learn about the long-term goals, plans, thinking,
-  and research for this project, please read the dox/2du/8.txt file.
+  and research for this project, please read:
+  [8.txt](https://github.com/pip/Octology/blob/master/dox/2du/8.txt "8.txt")
 
 Thank you for your consideration as well as any constructive criticism,
   recommendations, or whatever other feedback you may be able to offer.
 
-  Sincerely,
-
-`                                              -PipStuart  8<3`
+  Sincerely,  `  -PipStuart =)`

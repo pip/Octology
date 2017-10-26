@@ -1,6 +1,7 @@
 # H83M3sV4: Octology::p8::psps::gmap.pm crE8d by PipStuart <Pip@CPAN.Org> as "Pip's Screeps Global Map" to make an object like original JavaScript Game.map;
-# 2du:fix lodt to save opn[srt] Open(Shard|Room|Terrain)&&only load if diff&&retn to all othr map queries,
-#   study WebAPI && add availability flags,add lbst to load full JSON prv8 terrain d8a read from local db file as altern8ive to ported JS gbst function;
+# 2du:need2redo wbst2XtNd shrd1 md8a from old 50 out2nw 60,fix lodt to save opn[srt] Open(Shard|Room|Terrain)&&only load if diff&&retn to all othr map queries,
+#   stuD Path::Tiny && use slurp_utf8 to replace poor File::Slurp,
+#   stuD WebAPI && add availability flags,add lbst to load full JSON prv8 terrain d8a read from local db file as altern8ive to ported JS gbst function;
 package     Octology::p8::psps::gmap;
 use strict; use warnings;use utf8;use v5.10;use File::Slurp qw(slurp);
 use         Octology::a8;
@@ -19,7 +20,7 @@ for  my  $mdir (qw(.tmp simu prv8  s0ws s0es s0wn s0en  s1ws s1es s1wn s1en)){ #
   mkdir("$mapd/$mdir"                      ,0755) unless(-d "$mapd/$mdir");}
 my       @atrz=();my        %dvlz=();
 push(    @atrz,'shard'    );$dvlz{$atrz[-1]}={'name'=>'prv8','type'=>'normal','ptr'=>0}; # mAB l8r replace with sepR8 global shard obj queriable thru psps?
-push(    @atrz,'worldSize');$dvlz{$atrz[-1]}={'0'=>202,'1'=>102,'8'=>11}; # these should replace WORLD_(WIDTH|HEIGHT) (odd prv8 only has 0..10 WN so far)
+push(    @atrz,'worldSize');$dvlz{$atrz[-1]}={'0'=>202,'1'=>122,'8'=>11}; # these should replace WORLD_(WIDTH|HEIGHT) (odd prv8 only has 0..10 WN so far)
 sub atrb{@atrz;} # attribute methods and default values
 sub dval{my($self,$attr)=@_;$dvlz{$attr};} # probably fine that this just returns undef when attr does not exist?
 sub dxtz{my $self=shift(@_);my $rmnm=shift(@_);my @xitz=(undef,undef,undef,undef); # may need2inherit proper server shard info from psps Game obj4map lookup
@@ -109,7 +110,10 @@ sub wbst{my $self=shift(@_);my $shrd=shift(@_);my $rmnm=shift(@_) ;my $xrnm; # W
     open  my $sdfh,'>' ,$mpth . cbrn("$xdir$xsnu$ydir$ysnu") . '.md8a'                                   or carp "!*Warn*! Couldn't open  md8a file! $!";
     for   my $ynum ($ysnu..$ysnu+9){
       for my $xnum ($xsnu..$xsnu+9){    my     $lrnm="$xdir$xnum$ydir$ynum"   ;my  $crnm= cbrn($lrnm); # set Loop && Compressed Room NaMes
-        unless  (      -r    "$mapd/.tmp/$shrd$lrnm.json" || ($shrd eq '0' && ($xnum > 100 || $ynum > 100)) || ($shrd eq '1' && ($xnum > 50 || $ynum > 50))
+        unless  (      -r    "$mapd/.tmp/$shrd$lrnm.json" || ($shrd eq '0' && ($xnum > int(($self->{'worldSize'}->{$shrd}-2)/2)   || # used2Xplicit 0 > 100
+                                                                               $ynum > int(($self->{'worldSize'}->{$shrd}-2)/2))) ||
+                                                             ($shrd eq '1' && ($xnum > int(($self->{'worldSize'}->{$shrd}-2)/2)   || #           or 1 >  50
+                                                                               $ynum > int(($self->{'worldSize'}->{$shrd}-2)/2)))
                                                          ){say $out8 "wget:  $mapd/.tmp/$shrd$lrnm.json ..."; # chngd abov 2 skip past worldSize edgez
           system("wget -q -O '$mapd/.tmp/$shrd$lrnm.json' '$sapi$shrd&room=$lrnm&encoded=true'"); sleep(2) unless($shrd eq '8');} # mAB need2sleep or miss some
         if      (      -r    "$mapd/.tmp/$shrd$lrnm.json"){ my $jd8a= slurp("$mapd/.tmp/$shrd$lrnm.json" ); carp "!*Warn*! Bad slurp! $!" if(!defined($jd8a));
