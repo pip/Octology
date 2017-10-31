@@ -1,12 +1,12 @@
-# F5VM5oZT:b8a.ls crE8d by PipStuart <Pip@CPAN.Org> 2 stRt sepR8ing Octology fE8ure prIoriTz 4 mIlstOnz with release schedule; $VERSION='0.2';$d8VS='G9IM0Nai';
-E:8sln:epsilon:H3U ThuMar30th2017:~6Monthz from 2Day:upd8 this plan to start enumer8ing fE8urez DsIred 4 at least z8a && alf8 (if!alsO b8a, rls8, && otherz);
-Z: z8a:  zeta :H6U FriJun30th2017:~3Monthz from 8sln:try to complete all major core module experiment8ion && shift gearz into stabilizing 4m@z && interfacez;
-H:  8a:   eta :H9U ShaSep30th2017:~3Monthz from  z8a:flesh out core document8ion with interactive demonstr8ionz && migr8 all filez2 g8 4 future collabor8ion;
-T:th8a: theta :HCU ShaDec30th2017:~3Monthz from   8a:elabor8 thorough autom8d testing of all major fE8urez planned for alpha && gener8 valid8ion tSt summREz;
-A:alf8: alpha :I3U FriMar30th2018:~3Monthz from th8a:core fE8urez to demonstr8 to Danny && Beppu-san to hopefully inspire them to help me alpha-test&&scOp b8a;
-B: b8a:  beta :I6U ShaJun30th2018:~3Monthz from alf8:main fE8urez to start sharing with many more old programmer friendz && fam 4 wider b8a-testing && feedbak;
-C:cnd8:candid8:I9U SunSep30th2018:~3Monthz from  b8a:main fE8urez polished4pOtNTal rElEs && mAB sharedwith IRC.Perl.Org #sdl && #perl 4 fInal tStng && feedbak;
-R:rls8:release:ICU SunDec30th2018:~3Monthz from cnd8:first public release of Octology v1.0 to CPAN && GitTorrent or Gitorious or GitHub(if!a beter altern8ive);
+# F5VM5oZT:b8a.ls crE8d by PipStuart <Pip@CPAN.Org> 2 stRt sepR8ing Octology fE8ure prIoriTz 4 mIlstOnz with release schedule; $VERSION='0.0';$d8VS='HAVM4tBZ';
+E:8sln:epsilon:HB8 WedNov 8th2017:~1Month  from  HAD:upd8 this plan to start enumer8ing fE8urez DsIred 4 at least z8a && alf8 (if!alsO b8a, rls8, && otherz);
+Z: z8a:  zeta :HC8 FriDec 8th2017:~1Month  from 8sln:try to complete all major core module experiment8ion && shift gearz into stabilizing 4m@z && interfacez;
+H:  8a:   eta :I18 MonJan 8th2018:~1Month  from  z8a:flesh out core document8ion with interactive demonstr8ionz && migr8 all filez2 g8 4 future collabor8ion;
+T:th8a: theta :I28 ThuFeb 8th2018:~1Month  from   8a:elabor8 thorough autom8d testing of all major fE8urez planned for alpha && gener8 valid8ion tSt summREz;
+A:alf8: alpha :I48 SunApr 8th2018:~2Monthz from th8a:core fE8urez to demonstr8 to Danny && Beppu-san to hopefully inspire them to help me alpha-test&&scOp b8a;
+B: b8a:  beta :I68 FriJun 8th2018:~2Monthz from alf8:main fE8urez to start sharing with many more old programmer friendz && fam 4 wider b8a-testing && feedbak;
+C:cnd8:candid8:I88 WedAug 8th2018:~2Monthz from  b8a:main fE8urez polished4pOtNTal rElEs && mAB sharedwith IRC.Perl.Org #sdl && #perl 4 fInal tStng && feedbak;
+R:rls8:release:IA8 MonOct 8th2018:~2Monthz from cnd8:first public release of Octology v1.0 to CPAN && GitTorrent or Gitorious or GitHub(if!a beter altern8ive);
 
 nEdz:stuD perluni(intro|tut|code) 2hndl UTF8 in b8z && all othr cOd,stuD OpenType|WOFF2.0|bSt SVG fontz availabl2rNder in SDL,stuD crypto HMAC SHA512 4securiT;
 a8:funcz 4colrz|f0ntz|SKpz|2&&from c8|c8fn|chti|cma && Hrc c8-anOt8d V8 objz 4cNtralIzd configUr8ion of SNtial d8a contXtz 4all othr mAjor systMz;

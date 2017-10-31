@@ -693,10 +693,10 @@ sub OScr{ no strict 'subs'; # Open a new Curses Screen && setup all useful stuff
       { 'ul' => '+', 'rt' => '{', 'lt' => '}', 'ur' => '+',             #   032:20: !"#$%&'   040:28:()*+,-./   048:30:01234567   056:38:89:;<=>?
                      'tt' => '+', 'bt' => '+',                          #   064:40:@ABCDEFG   072:48:HIJKLMNO   080:50:PQRSTUVW   088:58:XYZ[\]^_
         'll' => '+', 'hl' => '-', 'vl' => '|', 'lr' => '+',          }, #   096:60:`abcdefg   104:68:hijklmno   112:70:pqrstuvw   120:78:xyz{|}~
-      { 'ul' => ' ', 'rt' => ' ', 'lt' => ' ', 'ur' => ' ',             #   160:A0: ¡¢£¤¥¦§   168:A8:¨©ª«¬­®¯   176:B0:°±²³´µ¶·   184:B8:¸¹º»¼½¾¿
-                     'tt' => ' ', 'bt' => ' ',                          #   192:C0:ÀÁÂÃÄÅÆÇ   200:C8:ÈÉÊËÌÍÎÏ   208:D0:ĞÑÒÓÔÕÖ×   216:D8:ØÙÚÛÜİŞß
-        'll' => ' ', 'hl' => ' ', 'vl' => ' ', 'lr' => ' ',          }, #   224:E0:àáâãäåæç   232:E8:èéêëìíîï   240:F0:ğñòóôõö÷   248:F8:øùúûüışÿ
-      { 'ul' => ACS_PLUS,                      'ur' => ACS_PLUS,
+      { 'ul' => ' ', 'rt' => ' ', 'lt' => ' ', 'ur' => ' ',             #   160:A0: ... had 160-255 here but with new Ubu17.10 && Perl 5.26.0, after
+                     'tt' => ' ', 'bt' => ' ',                          #   192:C0:     `pmfi Curses` trying `d8ok` said malformed UTF-8 chars here &&
+        'll' => ' ', 'hl' => ' ', 'vl' => ' ', 'lr' => ' ',          }, #   224:E0:     also down in CPik definition of @bchz block chars so replaced
+      { 'ul' => ACS_PLUS,                      'ur' => ACS_PLUS,        #               them with normal characters below 128. `d8ok` seems fine now;
                      'rt' => ACS_RARROW,'lt' => ACS_LARROW,
                      'tt' => ACS_UARROW,'bt' => ACS_DARROW,
                      'hl' => ACS_HLINE, 'vl' => ACS_VLINE,
@@ -2429,8 +2429,7 @@ sub CPik{
   my $main = shift;my($keey,$valu);my $char;my $tchr;my $text = '';
   my $self = bless({}, ref($main));
   my $cmov;my $pick;my $done = 0;
-#    ' ¡¢£¤¥¦§¨©ª«¬­®¯°±²³´µ¶·¸¹º»¼½¾¿','ÀÁÂÃÄÅÆÇÈÉÊËÌÍÎÏĞÑÒÓÔÕÖ×ØÙÚÛÜİŞß',
-  my @bchz = ( 'X', '@', '#', '$', 'Û', '²', '±', '°'); # block chars
+  my @bchz = ( 'X', '@', '#', '%', 'X', '@', '#', '%'); # block chars
   my @styz = ( 'barz', 'blox', 'squr' ); # color display styles
   for my $attr($self->AttrNamz()){
     $self->{$attr} = $self->DfltValu($attr); # init defaults
