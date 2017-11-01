@@ -54,4 +54,5 @@ H4JMHSFJ: Ubu17.04 upgrade: Copied ~/lib/perl5/lib/perl5/Math/Base ~/lib/Math/ t
  Copied Color && Algorithm into ~/lib/ since they're likely2work4newer perls && it should be more convenient2keep them near my home lib with other essentialz;
 H5GMJLPr:`pmei YAML Term::Screen` to study how to best upd8 Simp since my original test.pl was based on it;
 H5LMBaZ6:rEmMbr Ubu SysSetingz Keybd Shortctz are how Shift-F11 && F12 do volume down && up. Zoom && Neg8ive mappingz are in CompizConfigSetzMngr instead;
-H99M6eH4:rEmMbr to pmei File::Slurp since Octology::p8 is using it && may be faster to use elsewhere when multi-line parsing is needed. Try evaling it;
+HAVMDEFT:rEmMbr to pmei Path::Tiny for slurp_utf8 (instead of poor File::Slurp) since Octology::p8::psps::gmap uses it && slurping may be faster to use
+elsewhere when multi-line parsing is needed. Try evaling it, && then to fallback on joining all gathered lines whenever it's not installed && available;
