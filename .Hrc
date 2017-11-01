@@ -1,4 +1,4 @@
-# F1IL2Vhp:~/.Hrc crE8d by PipStuart <Pip@CPAN.Org> as 8sh"H"rEsourcz2configUr core fEld abbreV8ion,type colr8ion,&& aliasing; $VERSION='0.0';$d8VS='H9TM2dic';
+# F1IL2Vhp:~/.Hrc crE8d by PipStuart <Pip@CPAN.Org> as 8sh"H"rEsourcz2configUr core fEld abbreV8ion,type colr8ion,&& aliasing; $VERSION='0.0';$d8VS='HB1MFETA';
 c           =>   C        => cOL  =>   cOL8 =>    cOLR =>   cOLM; # core c8 lAyrz;c:* sepR8lAyrzBlODterminprEfixz4allfolOing middle-map columnz th@ R!Dfalt F:;
 c:tFbSGRsgr =>   WGBZOMzom=> tXt  Fgc  bGC  Slc  Gfc  Rnd  sLC  gFC  rND ; # c8 objectz shudBgoverned by thEs lAyrz from hEr proly thru a8:new
 c:tFbSGRsgr               => tEXt Fclr bCLR Slct Grfc Rndt sLCT gRFC rNDT => tEXt, Forecolr, bACKCOLR, Select, Graphic, Rendition, sELECT, gRAPHIC, rENDITION;
@@ -71,8 +71,8 @@ L:.fuaznlj  =>   .fuaznlj => GRAY.63   , fIREBRICK, BISQuE, aQUaMaRINE ,  AzURE 
 L:02468xvq  =>   02468xvq => DARKBLUE-0, MAROON-2 , GOLD-4, LIMEGREEN-6,  DODGERBLUE-8, xTEELBLUE, vIOLET  , ANTIqUEWHITE; #   2toglallXcAs
 L:KRYGCBMW  =>   KRYGCBMW => blacK     , Red      , Yellow,     Green  ,  Cyan        ,      Blue, Magenta ,        White; # c8:colr:Dflt brItFg
 L:EHyDTSmI  =>   EHyDTSmI => dimgrEy   , Hotpink  , yELLOW, oliveDrab  ,  Turquoise   ,   Skyblue, mAGENTA ,        Ivory; #   uc,odd,&& _
-L:_FUAZNLJ  =>   _FUAZNLJ => gray_63   , Firebrick, bisqUe, AquAmArine ,  aZure       ,      Navy, Lavender,  navaJowhite;
-L:13579XVQ  =>   13579XVQ => darkblue-1, maroon-3 , gold-5, limegreen-7,  dodgerblue-9, Xteelblue, Violet  , antiQuewhite;
+L:_FUAZNLJ  =>   _FUAZNLJ => gray_63   , Firebrick, bisqUe, AquAmArine ,  aZure       ,      Navy, Lavender,  navaJowhite; # Abov b64 RGB out-of-d8,mAB mk 4-
+L:13579XVQ  =>   13579XVQ => darkblue-1, maroon-3 , gold-5, limegreen-7,  dodgerblue-9, Xteelblue, Violet  , antiQuewhite; #   char 24-bit nstd of just 18;
 sB          =>   YW       =>  Trp:sEP, Bkt; # dirSepar8or "/", Bracketz "<>" (or "[]" for zsh or 8sh promptz, mAB should be defined sepR8ly?)
 rH          =>   RO       =>  Trp:rUT, Hom; #   solo Root "/", Home "~"  # these should probably just B varE8ionz on s=>Sep && lsrc di=>dir mABin s:rtoh
 Ro          =>   GC       =>  Trp:oRt, oHM; #   Othr Root "/", Home "~"  #   for Root,Tilde,Othroot,Home rathr than wasting Ech on own newtop namespacez
@@ -88,7 +88,7 @@ A:HIJKLMNO  =>   HIJKLMNO =>          h,          i,       j,   'k -9',     'ls 
 A:PQRSTUVW  =>   PQRSTUVW =>       pal8,          q,       r,  ~/bin/S,         tee,       U2b8, vim.tiny,  whereis; #   signifcnt spAcez;
 A:XYZabcde  =>   XYZABCDE => /usr/bin/X,          y,      zc,     asci,          bk,    ~/bin/c,      dic, 'e $TTY'; # d was 'du -sb',now dic since more common
 A:fghijklm  =>   FGHIJKLM =>       find,       grep, history,     info,        jobs,       kill,     lsd8,      man; # p is now 'cd;clear;echo -n -e "\e[3J"'
-A:nopqrstu  =>   NOPQRSTU =>       ncal,      orpie,     CCC,"sl calQ",  built-in-r,       shlp, 'tsgr b',     upd8; # q is not literal but SymbolicLink 2 calQ
+A:nopqrstu  =>   NOPQRSTU =>       ncal,      orpie,     CCC,  ~/bin/q,  built-in-r,       shlp, 'tsgr b',     upd8; # q is not literal but SymbolicLink 2 calQ
 A:vwxyz.    =>   VWXYZ_   =>         v8, /usr/bin/w,    exit,     yelp,          zp, built-in-.;
 S           =>   c        =>  Trp:Shl => Source-highlight; # .shl.style fieldz Fg foregrnd (lEving Octology core d8a dFz abov4Xtrnl prog shl,St8z&&gmz BlO)
 S:bcktusrS  =>   WKBCcMRR => bGCOLOR  , cONTEXT, kEYWORD, tYPE     , uSERTYPE, sTRING  , rEGEXP          , Specialchar; # mAB mk S: Dflt&&have / rEsume root?

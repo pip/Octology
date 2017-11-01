@@ -717,9 +717,8 @@ sub sumb{  my $widt=0;$widt=1 if(exists($ENV{'COLUMNS'}) && $ENV{'COLUMNS'} >= 1
      @bfls= split(/\n/,`ls   /usr/local/bin`) if(!exists($ENV{'HOME'}) && -d   "/usr/local/bin"); # make BinFileLiSt fallback if no ~/bin to /usr/local instead
   my %bfst=( # BinFileSummaryText
     '8ct'      => "a8 *ColrTest of all 4 b8 and d8 orient8ions for sequence comparison    ",
-    '8trm'     => "c8  applic8ion like a TeRMinal   (a fancy slow SDL backtick wrapper)   ", # mAB add 8trm features to GnomTerm source instead of SDL App
+    '8trm'     => "c8  applic8ion like a TeRMinal (a broken slow SDL backtick wrapper!)   ", # mAB add 8trm features to GnomTerm source instead of SDL App
     'a8'       => "a8  new d8a object representing ~/.Hrc with printing out like `lodH`   ", # fix 2 fully load obj && output same as lodH
-    'asci'     => "U8 *wide display of most printable ASCII (or UTF-8) chars on 4 lines   ", # mAB add more sets of logical blocks && colr b8 char-sets
     'b10'      => "b8  converter from base-64 number-strings  to    base-10 (decimal)     ",
     'b110'     => "b8  converter from base128 number-strings  to    base-10 (decimal)     ", # rEnAmd from orig `bb10`
     'b128'     => "b8  converter from base-10 to base-128    (Chess and Cards in UTF-8)   ", # rEtIr b128 b110 ocT deC&&Use b8 nstd?
@@ -736,7 +735,7 @@ sub sumb{  my $widt=0;$widt=1 if(exists($ENV{'COLUMNS'}) && $ENV{'COLUMNS'} >= 1
     'c2f4'     => "a8  converter from 4-layer c8 format to compressed with escape codes   ",
     'c8'       => "c8  `lsd8` deriv8ive with some cut and hoping to also cat eventually   ", # flesh out interface for cut part at least (&& mAB cat too)
     'c8fn'     => "a8  colorizer that loads environment LS_COLORS for path and FileName   ",
-    'calQ'     => "b8 *calcul8or from the command-line using Math::BigFloat objects       ", # fix to use oper8or precedence && parens (prolly nEd2B quOtd)
+    'calQ'     => "b8 *calcul8or from the command-line using Math::BigFloat obj or sl q   ", # fix to use oper8or precedence && parens (prolly nEd2B quOtd)
     'calN'     => "d8  calendar utility that shows the current Year   (1 week per line)   ", # add good optionz like `cal -3` && 2,3,4,6,12-column modez
     'choo'     => "b8  n choose m with factorials from combin8orics    n! / (m!*(n-m)!)   ",
     'chti'     => "a8 *CHange TItle of a terminal window within the desktop environment   ",
@@ -783,7 +782,7 @@ sub sumb{  my $widt=0;$widt=1 if(exists($ENV{'COLUMNS'}) && $ENV{'COLUMNS'} >= 1
     'pt'       => "Time::PT *for original PipTime module (as precursor to Octology::d8)   ",
     'ptcnv'    => "d8  converter from `pt` to new `d8` format   (inserting likely zone)   ", # mAB slurp ptold in as optn,in case future autOcnv nEded
     'ptold'    => "Time::PT  original 5-character PipTime utility from before March2006   ", # mAB rEtIr or fold code in2ptcnv?
-    'q'        => "b8 *symbolic link to `calQ` which can call Quick from vim :r!q 63x31   ", # mAB just mv calQ to q instead?
+    'q'        => "b8 *calQl8or from command-line uses Math::BigFloat && vim :r!q 63x31   ", # fix to use oper8or precedence && parens (prolly nEd2B quOtd)
     'qbix'     => "c8  Curses::Simp Rubik's Cube as a spoonerism 'QbixRube' applic8ion    ", # port to qbx3 wi CLI, Curses, && GL IFz
     'reso'     => "a8  common monitor display RESOlution list gener8or  (matches lines)   ", # mAB color
     'rot1'     => "b8  utility to rot8 each character of passed in b256 number-strings    ", # lIk vim Visual sele thN 'g?' 2rot13
@@ -791,7 +790,7 @@ sub sumb{  my $widt=0;$widt=1 if(exists($ENV{'COLUMNS'}) && $ENV{'COLUMNS'} >= 1
     'S'        => "a8 *converter from c8 (col8) format to ANSI eScape codes    (Fbs in)   ",
     'S2'       => "a8  converter from eScape coded input to compact c8 (col8) format      ",
     'S2f4'     => "a8  converter from eScape coded input to 4-layer c8 (col8) format      ",
-    'shfl'     => "a8  array or string randomizer (like G::C::Poker->Shuffle && `shuf`)   ",
+    'shfl'     => "a8  array or string randomizer (like G:Cards:Poker->Shuffle&&`shuf`)   ",
     'shl8'     => "c8  Source-HighLight8 utility to color detectable syntax in Octology   ", # flesh out c8 hIlItng systM && incrEs suported formatz
     'shot'     => "    `scrot`  wrapper  utility to simplify taking  basic  screenSHOTs   ",
     'sS'       => "a8 *Substitute out (regex Strip) eScape codes by type or Commas (-c)   ", # was subS;mAB betr than -c 2`fact 64|b64|coma|perl -pe 's/,//g'`?
@@ -805,6 +804,7 @@ sub sumb{  my $widt=0;$widt=1 if(exists($ENV{'COLUMNS'}) && $ENV{'COLUMNS'} >= 1
     'U2b3'     => "U8  download from YouTube just audio in MP3 format  (usu.transcoded)   ", # proly transcOded NEwA
     'U2b4'     => "U8  reformat 're4mat' name of a downloaded U2b file to align fields    ",
     'U2b8'     => "U8  download from YouTube a normal video file  (in default 1280x720)   ",
+    'UTF8'     => "U8 *wide display of most printable UTF-8 (or ASCII) chars up 2 index   ", # mAB add more sets of logical blocks && colr b8 char-sets
     'upd8'     => "U8  update development code into ~/lib/ or ~/bin/ after valid8ion      ",
     'wdht'     => "c8  Curses::Simp utility to show terminal WiDth && HeighT as resized   ",
     'xbcmprs'  => "m8  XML Binary CoMPReSs utility  (give an .xml file to    make .xtb)   ", # mAB rEtIr XML cmprs && xpnd utilz since so rarely nEded
@@ -814,6 +814,9 @@ sub sumb{  my $widt=0;$widt=1 if(exists($ENV{'COLUMNS'}) && $ENV{'COLUMNS'} >= 1
     'xmltidy'  => "m8  XML Tidy to insert indenting whitespace by node nesting depth      ",
     'xx'       => "c8  XxX square teXt eXpansion utility   (scaling with 8trm overdraw)   ", # mAB add reverse oper8ion with scaling back down4neg8iv option
     'xxpnd'    => "m8  XML  text   eXPaND  utility  (restores orig .xml before xcmprs)    ",);
+# HB1MFGao:made asci alias to new U8:UTF8;
+#   'asci'     => "U8 *wide display of most printable ASCII (or UTF-8) chars on 4 lines   ", # mAB add more sets of logical blocks && colr b8 char-sets
+#   'q'        => "b8 *symbolic link to `calQ` which can call Quick from vim :r!q 63x31   ", # mAB just mv calQ to q instead?
 # H65MDRlb:pokr BKm G::C::Poker/ex/txholdem.pl && should become colrd, accept st8 4 MonteCarlo, gener8 new pre-computed odds mAB rEsMbling .Hrc mor than XML;
 #   'pokr'     => "    Games::Cards::Poker simple synopsis example Texas Hold'Em game     ", # mAB colr&&tAk pRamz4how many roundz2run&&sumRIz wi bnkrolz
 #   'readhead' => "    read header inform8ion out of binary d8a files (like image size)   ", # rEtIrd as just Utl:rdhd() (mAB mk as shL func2?)
@@ -848,7 +851,7 @@ sub sumb{  my $widt=0;$widt=1 if(exists($ENV{'COLUMNS'}) && $ENV{'COLUMNS'} >= 1
  # H4NM4NM4:keeping to exactly 1 160x50 page contains barely worthwhile:c8,curs,mix8,pimp,pmix,prym,readhead,shl8 so try2upd8 them to be useful or retire them;
   my $bfle=$#bfls;my %bftc=('grup'=>{'a8'=>'F:A','b8'=>'F:B','c8'=>'F:C','d8'=>'F:R','f8'=>'F:o','m8'=>'F:M','U8'=>'F:Y', # BinFilzListEnd && TypeCodez
                        'dirz'=>'F:N','no'=>'F:W',           'Time::DayOfWeek'=>'F:F','Time::PT'=>'F:F',     'Utl'=>'F:5',}, # mABall keyz shudB qr// nstd?
-                            'modu'=>{ 'Math::BaseCnv'=>'F:B','Color::Similarity::RGB->distance'=>'F:C','G::C::Poker->Shuffle'=>'F:p','XML::Tidy'=>'pb',
+                            'modu'=>{ 'Math::BaseCnv'=>'D:B','Color::Similarity::RGB->distance'=>'F:C','G:Cards:Poker->Shuffle'=>'F:p','XML::Tidy'=>'pb',
                                      'C::S'=>'Zb','Curses::Simp'=>'Zb', 'Games::Cards::Poker'=>'F:p', 'C::Simp'=>'Zb',
                                               'M:B:C'=>'F:X',  'Octology::d8'=>'F:R','Math::BigFloat'=>'F:X',            },
                             'file'=>{'~' =>'F:B','\/'=>'F:Y','\.'=>'Ib','fn'=>'Mb','`' =>'yk','cf'=>'F:G','\*'=>'W1','\+'=>'Rb','mixer'=>'F:o',
@@ -856,8 +859,8 @@ sub sumb{  my $widt=0;$widt=1 if(exists($ENV{'COLUMNS'}) && $ENV{'COLUMNS'} >= 1
                  'LS_COLORS'=>'Yn','bin'=>'F:B','\.bak'=>'F:B','\.Hrc'=>'F:M','\.psf'=>'F:M','\.f0nt'=>'Cg','\.xml'=>'ob','\.xtb'=>'F:B', # SKpspecialz
       'down'=>'F:U','SKpz'=>'F:7',   '!' =>'Fk','HTTP'=>'F:H','Rolz'=>'F:M','Org'=>'F:X','gst123'=>'F:G','git'=>'F:G','kpcli'=>'F:G','YouTube'=>'5r',
       'load'=>'F:5','cRdz'=>'Cc','Chess'=>'Ww','base'=>'F:X', 'UTF'=>'gb','SDL'=>'SN','pmix'=>'F:G','aumix'=>'F:G','U2b'=>'5r',},
-                            'base'=>{' 8'=>'ok','16'=>'5r','64'=>'Ac','128'=>'Cg','256'=>'Md','10'=>'Fn','dec'=>'Fn','ocT'=>'ok',},
-                            'colr'=>{'L' =>'Xg','R' =>'Fr', '4'=>'Aq', 'B'=>'M0', '2'=>'F:V',},
+                            'base'=>{' 8'=>'ok','16'=>'5r','64'=>'Ac','128'=>'Cb','256'=>'Md','10'=>'Fn','dec'=>'Fn','ocT'=>'ok',},
+                            'colr'=>{'L' =>'Xg','R' =>'Pr', '4'=>'Aq', 'B'=>'M0', '2'=>'F:V',},
   # mAB2du:bSt2 bg hIlI all -flgz nXt,thN!alreD '8'z Xplicitly;
                             'b64r'=>{'\['=>'Xw','-'=>'pk','0'=>'ob','9'=>'pb','A'=>'gb','Z'=>'Fb','\.'=>'Wb','_'=>'Ub',}, # rEmMbr2ignor thiswhol tkey
                             'xmlt'=>{'text'=>'F:R','Binary'=>'F:B','CoMPReSs'=>'F:C','eXPaND'=>'F:Y','whitespace'=>'F:W',},
@@ -964,7 +967,7 @@ sub sumb{  my $widt=0;$widt=1 if(exists($ENV{'COLUMNS'}) && $ENV{'COLUMNS'} >= 1
                                    say    $out8  $z;}
         }
       }
-    }else{
+    }else{ # HB1MFcat:presumably just 48 even no modulo is ordering lower right corner double rot8d only when `sumb u` trying to append undescribeds;
       for (0 ..         $blih-1){  printf($out8 "$h%-9s",$bfls[$_        ]);print $out8 $bfst{$bfls[$_        ]} if(exists($bfst{$bfls[$_        ]}));
         if  (@bfls > $_+$blih  ){  printf($out8 "$h%-9s",$bfls[$_+$blih  ]);print $out8 $bfst{$bfls[$_+$blih  ]} if(exists($bfst{$bfls[$_+$blih  ]}));
                                    say    $out8  $z;}}
@@ -1346,6 +1349,7 @@ sub comma{my $strn=shift;my $comc=shift||',';my $blok=shift||3; # ECKLNcb3:`cma`
                                                           #cwrd=~s/([^,\s]{$blok})([^,\s])/$1$comc$2/g;
                                      $cwrd =reverse $cwrd;#cwrd=~s/^(\s*)$comc/$1/g;
                                      s/$word/$cwrd/;}}
+  # HB1MAhmX:if this ever needs it? but b8:cma should accept something like -cCOLUMN_MASK like `df|cma -c1-3` which will delay && stretch all cols by max cmas;
       $strn =  join("\n",@strz);return($strn);} # orig!enuf cuz must insrt coma,then recalc pos&&from:
 sub ftst{ # 37MK06SK:ftst Utl2run thruPerlzFileTeSTz on its parameter Filename
   open my $out8,'>&',STDOUT or die "Can't open  duplic8 STDOUT handle: $!";binmode $out8,':encoding(UTF-8)'; # crE8 local duplic8 of global

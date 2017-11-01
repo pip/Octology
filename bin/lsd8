@@ -1,6 +1,7 @@
 #!/usr/bin/perl
 # D94MHThP:lsd8 crE8d by PipStuart <Pip@CPAN.Org> 2XtNsively manipUl8 typical `ls -l` output2convey octal permz,Base64 sizez,d8 stampz,&& many colrz&&f0ntz!
-# 2du:would be cool to detect && accept piping in && use that to temporarily re-map all a8 export colors && map `S` uses to then `lsd8|subS|lsd8` 2 revamp,
+# 2du:full-screen console on Chun after bkgrnd owner colr && after directory classiFic8ion slashes in `l ~` so Dtect && fix,
+#   would be cool to detect && accept piping in && use that to temporarily re-map all a8 export colors && map `S` uses to then `lsd8|subS|lsd8` 2 revamp,
 #   add colr 4 drwxrwxr-t ~/muz/flac/mix like ls with probably just st STICKY,figUr out wich muz subdirz hav prolyUTFchrz th@ caus failUr&&hndl thM,
 #   tw STICKY_OTHER_WRITABLE 00;30;45 /run/(lock|shm) rwt permz on some subdirz,-k tstz just sticky but not sure how to identify other writable yet,
 #   aftr c8 getz psgr 4  blinK 05 ANSI rEwrIt symlink mi MISSING ck somehow 2 hIlIt `l /etc/alt*/[alrw]*` && Dtect or ORPHAN also && tSt thM && all .lrc attrz,
@@ -20,7 +21,7 @@
 use strict;use warnings;use utf8;use v5.10; # mAB tSt if just regUlR -t STDIN && -t STDOUT R Dtectng intractiviT corectly 1st,B4 fallng bak on IO::Interactive
 #se IO::Interactive qw(is_interactive); # employ if(is_interactive()){} around all colring to attempt to behave like `ls --color=auto` when piped away
 use Encode;use Octology::a8;#se Octology::c8;
-           use Octology::b8;use Octology::d8;use Time::PT;my $VERSION='0.0';my $d8VS='H99MLGfa';my $sllw=0; # SymLink LargestWidth to track for alignment
+           use Octology::b8;use Octology::d8;use Time::PT;my $VERSION='0.0';my $d8VS='HB1MGRNq';my $sllw=0; # SymLink LargestWidth to track for alignment
 open my $out8,'>&',STDOUT or die "Can't open  duplic8 STDOUT handle: $!"; binmode $out8,':encoding(UTF-8)'; # crE8 local duplic8 of global
 my $vsrt='-v'; my @b64d;my $t;my $sbdr;my $b64c;my($pwnw,$grpw,$grpx);$pwnw=$grpw=$grpx=0; # default -v Version SoRT,reversed b8 Colr List matchz Dfalt d8 ordr
 my $jfdz=join('|',@Day);my $jfmz=join('|',@Mon); # Joined Fieldz for DayZ and MonthZ to regex with  # BlO mAB some ARGVz shud!B sNt thru -d tSt so Dtect 1st?

@@ -1,6 +1,7 @@
 # F4IMHtuH: Octology::U8.pm crE8d by PipStuart <Pip@CPAN.Org> to have effective Ultim8 Utiliz8ion of U "You" tUbe and Useful methodz and Octoformz of upd8ing;
 #   U2b8() Blongz hEre in nw U8.pm 4"Utiliz8ion" module wi Utlz4UniT of U thEm wi U2b && upd8 (as smRt nw port of Utl:updt Using upd8z 4 Octology 4 future),
-# 2du:bild U2bd autOm8dtStmOde4 U2b8 2CrEsult ofruning evry dnlOded fIle thru U2b4&&shO discrepanCz Btwn NE loc8abl fIl wi sAm IdNt fEld2knO wher cOd lackz,
+# 2du:add to upd8 that if HHst eq Aku && fromHome path is in dvl/t8/Octl/Octology/ to also copy there for next `git add..`,
+#   bild U2bd autOm8dtStmOde4 U2b8 2CrEsult ofruning evry dnlOded fIle thru U2b4&&shO discrepanCz Btwn NE loc8abl fIl wi sAm IdNt fEld2knO wher cOd lackz,
 #   port Utl:bak e ?,gNralIzXpct,U2b8:rEplAc `yt-dl` wi Xpct2shOprogrS,rEwrIt die8 here2Dflt b64 wi many more optnz(as "Urol" or "dieU" or othr betr name?),
 #   Xtract the qregex keyz && reuse them in sn() for less redundancy && use ($xp->matchlist)[\d] 4better Unific8ion (altho staging simple B4 complex good2),
 #   stRt generalizing all code for wrapping more commandz && maybe alias all the interfacez to ReadKey && Expect to maybe subclass them as new U8 cmd stuff;
@@ -15,8 +16,8 @@ use             Term::ReadKey ; # rEmMbr2 ReadMode 0 to rEstor TTY setingz aftr 
 use             Expect  ;
 require         Exporter;
 use    base  qw(Exporter); # mainly exporting global Utility functions
-our @EXPORT= qw(upd8 U2b8 U2b2 U2b3 U2b4 asci); # autom8d code upd8 Utl, YouTube 8 4main dnldtool4moviez, 2 cnv2audio, 3 2audio mp3, 4 4name 4matting
-our $VERSION='0.0';my $d8VS='H9TM6log';my $Dbug=0; #  ASCII (or UTF-8) tables;
+our @EXPORT= qw(upd8 U2b8 U2b2 U2b3 U2b4 UTF8); # autom8d code upd8 Utl, YouTube 8 4main dnldtool4moviez, 2 cnv2audio, 3 2audio mp3, 4 4name 4matting
+our $VERSION='0.0';my $d8VS='HB1MB1rD';my $Dbug=0; #  UTF-8 (or ASCII) tables;
 #ReadMode 3; # setup 4 raw mode or 3 cbreak mode where Ctrl-C workz since signalz are enabled
 #$ENV{'TERM'}='linux'; # this is needed for arrow cursor keyz to get interpreted properly (vt100 does not do it)
 my $cm='gst123';my $to= 2;my $so=0.4;my $tS=0;$tS=1 if(-t STDIN); # CoMand strng, TimeOutsecz, SelOutflsecz, ttySTDIN?
@@ -219,14 +220,14 @@ sub U2b4{my   $ogfn=shift(@_);my($psfn,$ocfn,$pcfn); # U2b4m@r (youtube-dl forma
         system( "mv                    $ogfn                     $psfn") if(-r "$ogfn");} # resultz sEm good so attempt 2 mv
       else{print    d8colr($nwd8)."$W: $ocfn\n  $R..above original filename did not match expected U2b8 output format, so no rename (mv) performed;\n";}}}}
 #ub U2bd{} # eventually tSt all log4differencez between U2b4 name output && manual movez matching U2b ID to learn what else might be useful to autom8 above
-sub asci{my $optz=join(' ',@_);my $strt=0;my $uprb= 256; # 2BNJCDfo:asci utility to colorfully print most ASCII characterz (G7KMJqLF: ... now UTF-8 < 256)
+sub UTF8{my $optz=join(' ',@_);my $strt=0;my $uprb= 256; # 2BNJCDfo:asci utility to colorfully print most ASCII characterz (G7KMJqLF: ... now2 UTF8 < 256)
   open my $out8,'>&',STDOUT or die "Can't open  duplic8 STDOUT handle: $!"; # crE8 local duplic8 of global
   my $widf=           0 ;$widf=         1   if(exists($ENV{'COLUMNS'}) && $ENV{'COLUMNS'} >= 153);my $outp; # fitz nicely in either 80 or 160 column termz
   my $trmt=      'xterm';$trmt=$ENV{'TERM'} if(exists($ENV{'TERM'   }));my $tsxf=0;$tsxf=1 if($trmt =~ /^(screen|xterm)/);
   my $lang='en_US.UTF-8';$lang=$ENV{'LANG'} if(exists($ENV{'LANG'   }));
   if($tsxf && $lang =~ /UTF-?8/i){binmode $out8,':encoding(UTF-8)';} # need to encode output if acceptable terminal && language environment settingz
   if  ($optz =~  /(^|\s)(-*h(elp)?)(\s|$)/){ # -h parameter design8z to just print help text as output && exit
-    $outp = " asci  - print out 256 colorful ASCII or UTF-8 characters in order  Vers:$VERSION  d8VS:$d8VS  by Auth:$auth
+    $outp = " UTF8  - print out 256 colorful UTF-8 or ASCII characters in order  Vers:$VERSION  d8VS:$d8VS  by Auth:$auth
    -p    skips over first 32 to start from the predominantly Printable characters  (since most of the 1st 32 are control chars)
    -c    disable printing of escape sequences which are used to Color the default output in 8bow and index columns
    -k    set start and end around Kana      (Nipponese Hiragana and Katakana need some special handling to restore alignment.) 12352-12543=192

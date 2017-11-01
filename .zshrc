@@ -1,5 +1,5 @@
 # 381KF3RN:~/.zshrc by PipStuart <Pip@CPAN.Org>; nOt:I originallythotitbetr2rElymoronstndalOnXecutablUtlz than aliases||shL-scrpt funczDfynd inany .rc Bcuz4mer
-# $VERSION='0.0';$d8VS='HAPMBcWD'; # stAyavail2spwnd procSz wich hvOwn non-zsh sub-shL cfgz(eg,vim:!cln 127/7;perl`b64 1023`)sO I pland2port stufhEr2anew u8.pm
+# $VERSION='0.0';$d8VS='HB1MB9dG'; # stAyavail2spwnd procSz wich hvOwn non-zsh sub-shL cfgz(eg,vim:!cln 127/7;perl`b64 1023`)sO I pland2port stufhEr2anew u8.pm
 #   butIhv rElIzd that c8.pm (inprep4 8sh)wilBAbl2pars .(ba|z)shrc fIlz2lOd thEz&&can mk thMavail2othr shLz bywrapng cmdz wiXpansionUtlz; lern LaunchPad/byobu,
 # 2du:cmNt unUsed aliases,add perVC autostRt nwlOcl`scrn`if!alredy in1,lern`autoload -z`&&sepR8hist,get pcre module&&anyUsefulothrz,
 #   bakon gN2:`em  scummvm`:2use nw"modern"theme4scummvm,add2[scummvm]sect of~/.scummvmrc(aftr runing scummvm once):themepath=/usr/share/games/scummvm/engines
@@ -318,6 +318,7 @@ alias  attrib='   echo "Try chmod instead! ;) "'; # just print advice for this, 
 # Many of these Octology aliases should become special V8 via c8 coloriz8ion command wrappers or otherwise enhanced (&& simplified?) && unified funcs or cmdz:
 alias       A='   a   ';
 alias       a='   asci'; #  a    :           asci
+alias    asci='   UTF8'; #  a    :                (renamed in U8 && bin)
 alias       B='   b   ';
 alias       b='   bk  '; #  b    :             bk
 alias      bk='   bak '; # bk    :            bak            (orig Pip:Utl file backup command)  # for wc BlO,suport`dd --help`like printf style size formats
@@ -387,15 +388,20 @@ alias      s8='   sort'; #  s8   :           sort
 #lias      g8='    git'; #  g8   :            git (was my much earlier attempt at wrapping to handle abbreV8ions && gener8 commits from .bak && vice-versa)
 alias    gaa='     git  add .* *'; # handy alias to Add All (Asterisk) changes, Commit by Message string below, then Push Origin Master (likely to GitHub)
 alias    gcm='     git commit -m'; # tried to call each of these through g8 initially, but maybe -m flag wasn't passing on to git correctly so explicit now
+alias    gac='     gaa; gcm     ';
+alias    gacm='    gac          '; # should maybe make as function which takes parameter or gener8d commit message then gpom with auto user Pip pRam or cnfg?
 alias    gpom='    git push origin master';
 alias       n=' ncal  ';
 alias       N='  calN ';
+alias    caln='  calN ';
 alias      l8='  calN '; #  l8   :            cal|cron|at|batch
 alias      sl='  ln -s'; #  sl   :             ln (maybe on this, since ln usually makes SymbolicLinks?)
 alias       O='  o    ';
 alias       o='  orpie';
 alias       Q='  calQ '; #  cl   :            calQl8|bc|dc like my old calc && symlnk cln (maybe swapping so n reverses meaning to non-default append Newline?)
-#lias       q='  cl   '; # now q is symlink     simple command-line calculator in Octology::b8 with BigFloat (orig:'perl -e "print eval join q( ),@ARGV"')
+alias    calq='     q '; # all lowercase too
+alias    calQ='     q '; # now q is just replacing old calQ
+#lias       q='  cl   '; #     q was symlinkB4g8 - simple command-line calculator in Octology::b8 with BigFloat (orig:'perl -e "print eval join q( ),@ARGV"')
 alias      cl='  cln  ';
 alias     cln='  calQ ';
 alias       R='  r    ';
@@ -631,6 +637,7 @@ alias rs1='noglob eval `resize -s 50 160`';alias rs160='rs1'; # 1 for 160-wide (
 alias rs8='noglob eval `resize -s 25  80`';alias rs80=' rs8'; # 8 for  80-wide (might want to make these only 24 high, like Default Gnome-Terminal profile)
 alias rs3='noglob eval `resize -s  1  34`';alias rsd8=' rs3'; # 3 for  34-wide d8ok termz (somewhat more straightforward && brief 2 use char dimz versus pixlz)
 alias rsd8ok='                      rs3  ';alias rsd='  rs3'; #   && a few more for d8ok  (even though wmctrl -e below is making these rel8ively unnecessary)
+alias rs160x50='rs1';alias rs80x25='rs8 ';alias rs34x1='rs3'; # HB1MBPrr:just removing Ubu17.10 deprec8d -e && -x + pRams to popul8 in GT d8ok profls && this;
 if       [[ "${(L)HHst}" ==  aku    ]]; then # 664||-1882,-e2586 1294w 3840-1958=-1882 wmc -r :ACTIVE: -e 0,664,-1,-1,-1;wmc -r:ACTIVE:-e 0,-1882,-1,-1,-1;
   # Most of these below originally had --title= parameters like d8ok,d8ok-f,othr,2du,muz,mvz but current version no longer supports it. I've run s/title/role/g
   #   since their purpose is similar but I wish GT would just enable titles&&less than 4 rowz again like B4. Lookz like wmctrl is Able2resolv all these issuez.
@@ -639,13 +646,13 @@ if       [[ "${(L)HHst}" ==  aku    ]]; then # 664||-1882,-e2586 1294w 3840-1958
   # Same page: HTTPS://SuperUser.Com/questions/576057/bash-resize-terminal-xterm has `echo -e "\e[8;1;34t"` which also workz nicely 2 resize my d8ok terminalz.
  if      [[     "$H3WF"  ==  "1"    ]]; then # H78M19EK:insertd new H variable test for whether using new Sony 50-inch 1080i TV as 3rd display for Aku;
                                              #   Below used to just have "-e ~/bin/d8ok" before appending the -d parameter so needing the -x instead.
-  alias gtI='gt --geometry=+664-0     --hide-menubar --window-with-profile=d8ok                               --role=d8ok                 -e ~/bin/d8ok     &;
+  alias gtI='gt --geometry=+664-0     --hide-menubar --window-with-profile=d8ok                               --role=d8ok                                   &;
         gtss;wmc -r :ACTIVE: -T d8ok                ;wmc -r :ACTIVE: -b add,skip_pager,sticky;
              wmc -r :ACTIVE: -e  10,664,1006,1306,74;wmc -r :ACTIVE: -b add,skip_taskbar,below;
-             gt --geometry=-0-0       --hide-menubar --window-with-profile=d8ok                               --role=d8ok                 -e ~/bin/d8ok     &;
+             gt --geometry=-0-0       --hide-menubar --window-with-profile=d8ok                               --role=d8ok                                   &;
         gtss;wmc -r :ACTIVE: -T d8ok                ;wmc -r :ACTIVE: -b add,skip_pager,sticky;
              wmc -r :ACTIVE: -e 10,4504,1006,1306,74;wmc -r :ACTIVE: -b add,skip_taskbar,below;
-             gt --geometry=-0-0       --hide-menubar --window-with-profile=d8ok                               --role=d8ok-fd              -x ~/bin/d8ok -fd &;
+             gt --geometry=-0-0       --hide-menubar --window-with-profile=d8fd                               --role=d8fd                                   &;
         gtss;wmc -r :ACTIVE: -T d8ok-fd             ;wmc -r :ACTIVE: -b add,skip_pager,sticky;
              wmc -r :ACTIVE: -e 10,2584,1006,1306,74;wmc -r :ACTIVE: -b add,skip_taskbar,below;
              gt --geometry=+306+0     --show-menubar --window-with-profile=PipsOthrGnomTerm-TestFont-CCIHPS8  --role=othr                                   &;
@@ -664,10 +671,10 @@ if       [[ "${(L)HHst}" ==  aku    ]]; then # 664||-1882,-e2586 1294w 3840-1958
         gtss;wmc -r :ACTIVE: -T mvz                ';
   alias gti='gtI;gtss;chv1;gtss;gtm;gtss;chv2;gtss;gt5;gtss;chv4;gtss;gt5;gtss;chv5;gtss;gt5;gtss;chv6;gtss;gt5;gtss;chv0'; # Aku fully loadz GTz in left 6 VPz
  else # back to older Aku GnomTerm aliases for just 2 24-inch Asus displays, before adding Sony TV as 3rd display
-  alias gtI='gt --geometry=-1882-0    --hide-menubar --window-with-profile=d8ok                               --role=d8ok                 -e ~/bin/d8ok     &;
+  alias gtI='gt --geometry=-1882-0    --hide-menubar --window-with-profile=d8ok                               --role=d8ok                                   &;
         gtss;wmc -r :ACTIVE: -T d8ok                ;wmc -r :ACTIVE: -b add,skip_pager,sticky;
              wmc -r :ACTIVE: -e  10,664,1006,1306,74;wmc -r :ACTIVE: -b add,skip_taskbar,below;
-             gt --geometry=-0-0       --hide-menubar --window-with-profile=d8ok                               --role=d8ok-fd              -x ~/bin/d8ok -fd &;
+             gt --geometry=-0-0       --hide-menubar --window-with-profile=d8fd                               --role=d8fd                                   &;
         gtss;wmc -r :ACTIVE: -T d8ok-fd             ;wmc -r :ACTIVE: -b add,skip_pager,sticky;
              wmc -r :ACTIVE: -e 10,2584,1006,1306,74;wmc -r :ACTIVE: -b add,skip_taskbar,below;
              gt --geometry=-1920+0    --show-menubar --window-with-profile=PipsOthrGnomTerm-TestFont-CCIHPS8  --role=othr                                   &;
@@ -688,7 +695,7 @@ if       [[ "${(L)HHst}" ==  aku    ]]; then # 664||-1882,-e2586 1294w 3840-1958
  fi
 else # following settings will hopefully work well for single-screen Ryu, Ken, && Chun (Taki's hard drive failz && she runz slow && hot, she's pretty dead)
   if     [[ "${(L)HHst}" ==  ken*   ]]; then # should be almost the same as Aku's left screen, but mAB 10-static like Chun will also position best?
-    alias gtI='gt --geometry=-0-0     --hide-menubar --window-with-profile=d8ok                               --role=d8ok                  -e ~/bin/d8ok    &;
+    alias gtI='gt --geometry=-0-0     --hide-menubar --window-with-profile=d8ok                               --role=d8ok                                   &;
         gtss;wmc -r :ACTIVE: -T d8ok                ;wmc -r :ACTIVE: -b add,skip_pager,sticky;
              wmc -r :ACTIVE: -e  10,664,1006,1306,74;wmc -r :ACTIVE: -b add,skip_taskbar,below;
              gt --geometry=-0+0       --show-menubar --window-with-profile=PipsOthrGnomTerm-TestFont-CCIHPS8  --role=othr                                   &;
@@ -696,7 +703,7 @@ else # following settings will hopefully work well for single-screen Ryu, Ken, &
              gt --geometry=+0-0       --show-menubar --window-with-profile=PipsCkm8GnomTerm-NiceFont-DC9LDaPt --role=2du                                    &;
         gtss;wmc -r :ACTIVE: -T 2du                ';
   elif   [[ "${(L)HHst}" ==  ryu*   ]]; then # Ryu should just resize to Aku's d8ok y-offset + 120    (for display pixel heightz 1200 - 1080)
-    alias gtI='gt --geometry=-0-0     --hide-menubar --window-with-profile=d8ok                               --role=d8ok                  -e ~/bin/d8ok    &;
+    alias gtI='gt --geometry=-0-0     --hide-menubar --window-with-profile=d8ok                               --role=d8ok                                   &;
         gtss;wmc -r :ACTIVE: -T d8ok                ;wmc -r :ACTIVE: -b add,skip_pager,sticky;
              wmc -r :ACTIVE: -e  10,664,1126,1306,74;wmc -r :ACTIVE: -b add,skip_taskbar,below;
              gt --geometry=-0+0       --show-menubar --window-with-profile=PipsOthrGnomTerm-TestFont-CCIHPS8  --role=othr                                   &;
@@ -704,8 +711,8 @@ else # following settings will hopefully work well for single-screen Ryu, Ken, &
              gt --geometry=+0-0       --show-menubar --window-with-profile=PipsCkm8GnomTerm-NiceFont-DC9LDaPt --role=2du                                    &;
         gtss;wmc -r :ACTIVE: -T 2du                ';
   elif   [[ "${(L)HHst}" ==  chun*  ]]; then # d8ok resize geometry to fit Chun best, starting 421 602 886 198, each row is 49 pixlz high so less 147 for 3
-    alias gtI='gt --geometry=-0-0     --hide-menubar --window-with-profile=d8ok                               --role=d8ok                  -e ~/bin/d8ok    &;
-        gtss;wmc -r :ACTIVE: -T d8ok                ;wmc -r :ACTIVE: -b add,skip_pager,sticky;
+    alias gtI='gt --geometry=-0-0     --hide-menubar --window-with-profile=d8ok                               --role=d8ok                                   &;
+   gtss;gtss;wmc -r :ACTIVE: -T d8ok                ;wmc -r :ACTIVE: -b add,skip_pager,sticky;
              wmc -r :ACTIVE: -e    10,420,749,886,51;wmc -r :ACTIVE: -b add,skip_taskbar,below;
              gt --geometry=-0+0       --show-menubar --window-with-profile=PipsOthrGnomTerm-TestFont-CCIHPS8  --role=othr                                   &;
         gtss;wmc -r :ACTIVE: -T othr                ;
