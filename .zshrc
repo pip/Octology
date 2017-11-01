@@ -385,7 +385,7 @@ alias      s8='   sort'; #  s8   :           sort
 #lias      d8='   date'; #  d8   :           date|time|pt
 #          g8   already ~/bin/
 #lias      g8='    git'; #  g8   :            git (was my much earlier attempt at wrapping to handle abbreV8ions && gener8 commits from .bak && vice-versa)
-alias    gaa='     git  add    *'; # handy alias to Add All (Asterisk) changes, Commit by Message string below, then Push Origin Master (likely to GitHub)
+alias    gaa='     git  add .* *'; # handy alias to Add All (Asterisk) changes, Commit by Message string below, then Push Origin Master (likely to GitHub)
 alias    gcm='     git commit -m'; # tried to call each of these through g8 initially, but maybe -m flag wasn't passing on to git correctly so explicit now
 alias    gpom='    git push origin master';
 alias       n=' ncal  ';
