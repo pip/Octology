@@ -318,7 +318,9 @@ alias  attrib='   echo "Try chmod instead! ;) "'; # just print advice for this, 
 # Many of these Octology aliases should become special V8 via c8 coloriz8ion command wrappers or otherwise enhanced (&& simplified?) && unified funcs or cmdz:
 alias       A='   a   ';
 alias       a='   asci'; #  a    :           asci
-alias    asci='   UTF8'; #  a    :                (renamed in U8 && bin)
+alias    asci='   UTF8'; #       :                (renamed in U8 && bin)
+alias    utf8='   UTF8';
+alias      u8='   utf8';
 alias       B='   b   ';
 alias       b='   bk  '; #  b    :             bk
 alias      bk='   bak '; # bk    :            bak            (orig Pip:Utl file backup command)  # for wc BlO,suport`dd --help`like printf style size formats
@@ -653,7 +655,7 @@ if       [[ "${(L)HHst}" ==  aku    ]]; then # 664||-1882,-e2586 1294w 3840-1958
         gtss;wmc -r :ACTIVE: -T d8ok                ;wmc -r :ACTIVE: -b add,skip_pager,sticky;
              wmc -r :ACTIVE: -e 10,4504,1006,1306,74;wmc -r :ACTIVE: -b add,skip_taskbar,below;
              gt --geometry=-0-0       --hide-menubar --window-with-profile=d8fd                               --role=d8fd                                   &;
-        gtss;wmc -r :ACTIVE: -T d8ok-fd             ;wmc -r :ACTIVE: -b add,skip_pager,sticky;
+        gtss;wmc -r :ACTIVE: -T d8fd                ;wmc -r :ACTIVE: -b add,skip_pager,sticky;
              wmc -r :ACTIVE: -e 10,2584,1006,1306,74;wmc -r :ACTIVE: -b add,skip_taskbar,below;
              gt --geometry=+306+0     --show-menubar --window-with-profile=PipsOthrGnomTerm-TestFont-CCIHPS8  --role=othr                                   &;
         gtss;wmc -r :ACTIVE: -T othr                ;

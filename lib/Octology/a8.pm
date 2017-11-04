@@ -49,7 +49,7 @@ our @EXPORT= qw(bfr8colr b8colr d8colr dur8colr    d8cs @d8cl  chti  c8fn     S2
     $z    $k    $r    $o    $y    $g     $c $SKpb    $m    $p    $w  tstc    $K    $R    $O    $Y    $G    $C    $B    $M    $P    $W    %p622 %p222
  $tnhf $ucdf  spff  spfd  spfX   shfl  reso $auth %cmsp %p8k2 @p82k  chp8     S2f4 c2f4 dm2u cdst %crgb %cbrt @snls @mrls %cdrd %cdrn    %nrgb         gnp8);
  # of 52 posibl sngl-letr var nmz,a8 Xportz 20,$b && $a unavail,so shudB thEs30 lFt4quik shortSt nAmz: 'def hij l n  q stuv x', 'A  DEF HIJ L N  Q STUV X Z'
-our $VERSION='0.0';my  $d8VS='H9NM3tLi';our $auth='PipStuart <Pip@CPAN.Org>'; # above not exporting $b since collidez with sort{$a  <=> $b}
+our $VERSION='0.0';my  $d8VS='HB4M6YTD';our $auth='PipStuart <Pip@CPAN.Org>'; # above not exporting $b since collidez with sort{$a  <=> $b}
 our $ucdf= eval('use Color::Similarity::RGB qw(distance);1') || 0; # try2set UseColorDistanceFlag if optional module is available
 our @Monz=qw(January February March   April     May June July   August September October November December);our @Mon=();push(@Mon,substr($_,0,3)) for(@Monz);
 our @Dayz=qw(Sunday  Monday   Tuesday Wednesday Thursday Friday Saturday                                  );our @Day=();push(@Day,substr($_,0,3)) for(@Dayz);
@@ -737,6 +737,7 @@ sub sumb{  my $widt=0;$widt=1 if(exists($ENV{'COLUMNS'}) && $ENV{'COLUMNS'} >= 1
     'c8fn'     => "a8  colorizer that loads environment LS_COLORS for path and FileName   ",
     'calQ'     => "b8 *calcul8or from the command-line using Math::BigFloat obj or sl q   ", # fix to use oper8or precedence && parens (prolly nEd2B quOtd)
     'calN'     => "d8  calendar utility that shows the current Year   (1 week per line)   ", # add good optionz like `cal -3` && 2,3,4,6,12-column modez
+    'cdst'     => "a8 *sort known Color sets according to closest DiSTance from param     ",
     'choo'     => "b8  n choose m with factorials from combin8orics    n! / (m!*(n-m)!)   ",
     'chti'     => "a8 *CHange TItle of a terminal window within the desktop environment   ",
     'ckm8'     => "c8  NotYetInModule,textual Chess applic8ion in SDL (or Curses::Simp)   ",
@@ -764,6 +765,7 @@ sub sumb{  my $widt=0;$widt=1 if(exists($ENV{'COLUMNS'}) && $ENV{'COLUMNS'} >= 1
     'ftst'     => "a8 *colorful listing through all available Perl File-TeST conditions   ",
     'g3'       => "    NotYetInModule,`gst123`Expect wrapper which reformats and colors   ",
     'g8'       => "    NotYetInModule,`git`wrapper to match long commands and cnv .bak/   ",
+   #'gnp8'     => "a8  GeNer8 full 256-pal8 color blocks by 4 planes of 4 shifts of 16    ", # mAB these colr pal8 blox shud B new optnz for tstc or tsgr nstd
     'HEX'      => "b8  converter from decimal (base-10)  to UpperCase HEXadecimal (b16)   ",
     'kpc'      => "   *`kpcli` deriv8ive for strong text-mode KeePass (pswd management)   ",
     'lodH'     => "a8  load ~/.Hrc into d8a-structure and print in color    (like `a8`)   ", # mAB rEtIr once a8 struct&&color becomes more capable
@@ -771,6 +773,7 @@ sub sumb{  my $widt=0;$widt=1 if(exists($ENV{'COLUMNS'}) && $ENV{'COLUMNS'} >= 1
     'lrc'      => "a8 *utility 2 gener8 ~/.lsrc file from ~/.lrc format (for LS_COLORS)   ",
     'mix8'     => "    NotYetInModule,started a PulseAudio C::S mixer (like pmix/aumix)   ", # flesh out commandz && CLI before bilding new Curses interface
     'ocT'      => "b8  converter from deCimal     (base-10)   to    ocTal   (base- 8)     ",
+   #'oupd'     => "a8  ~/dvl/t8/Octl/Octology/ dir UPD8d with l8st files from my ~/ dir   ", # this is too fragile to include in t8/Octl/Octology/.git yet
     'pakr'     => "    NotYetInModule,PackRube Rubik's Cube format converter (in`qbix`)   ", # add standRd Singmaster not8ion conversion && mAB put in b8.pm
     'pal8'     => "f8 *utility 2 modify 16-color palettes in either terminal or console   ", # ad suport4 b256 24bit colrz,8pal8z,&&remapngz
    # pimp cryptic name:Pips Intergallactive Moosex Plaqueluster
@@ -790,22 +793,23 @@ sub sumb{  my $widt=0;$widt=1 if(exists($ENV{'COLUMNS'}) && $ENV{'COLUMNS'} >= 1
     'S'        => "a8 *converter from c8 (col8) format to ANSI eScape codes    (Fbs in)   ",
     'S2'       => "a8  converter from eScape coded input to compact c8 (col8) format      ",
     'S2f4'     => "a8  converter from eScape coded input to 4-layer c8 (col8) format      ",
-    'shfl'     => "a8  array or string randomizer (like G:Cards:Poker->Shuffle&&`shuf`)   ",
+    'shfl'     => "a8  SHuFfLe lines or string (like G::Cards::Poker->Shuffle &&`shuf`)   ",
     'shl8'     => "c8  Source-HighLight8 utility to color detectable syntax in Octology   ", # flesh out c8 hIlItng systM && incrEs suported formatz
     'shot'     => "    `scrot`  wrapper  utility to simplify taking  basic  screenSHOTs   ",
     'sS'       => "a8 *Substitute out (regex Strip) eScape codes by type or Commas (-c)   ", # was subS;mAB betr than -c 2`fact 64|b64|coma|perl -pe 's/,//g'`?
     'sum8'     => "b8  SUM8ion function adding num down to 1 (actually just multiplies)   ",
     'sumb'     => "a8 *SUMmarize all known files in ~/bin/ colorfully  (displaying now)   ",
+   #'supd'     => "a8 *Screeps scripts UPD8d into local ~/.config/ directory for client   ",
     'tiglet'   => "f8  basic interactive selection of desired `figlet` font and text      ", # proly rEwrIt with Curses IF
     'tsgr'     => "c8  Test SelectGraphicRendition escapes && xterm-256color Blocks(-b)   ", # mAB shud mv2 a8 lIk tstc?
-    'tst'      => "    directory where I experiment with new candid8 binary executables   ",
     'tstc'     => "a8 *TeST eScapes `S` of c8 `c` format for pal8 colors and attributes   ", # mAB fold in2 tsgr && mv latr2 a8,or mk -blox in tstc?
     'U2b2'     => "U8  download from YouTube just audio in high-quality    (auto-best?)   ",
     'U2b3'     => "U8  download from YouTube just audio in MP3 format  (usu.transcoded)   ", # proly transcOded NEwA
     'U2b4'     => "U8  reformat 're4mat' name of a downloaded U2b file to align fields    ",
     'U2b8'     => "U8  download from YouTube a normal video file  (in default 1280x720)   ",
-    'UTF8'     => "U8 *wide display of most printable UTF-8 (or ASCII) chars up 2 index   ", # mAB add more sets of logical blocks && colr b8 char-sets
     'upd8'     => "U8  update development code into ~/lib/ or ~/bin/ after valid8ion      ",
+    'UTF8'     => "U8 *wide printing of most UTF-8 (or ASCII) characters up to index      ", # mAB add more sets of logical blocks && colr b8 char-sets
+    'w8'       => "d8 *wait for a dur8(ion) like '3U' for 3.5secs or '1j' for 1.75secs    ",
     'wdht'     => "c8  Curses::Simp utility to show terminal WiDth && HeighT as resized   ",
     'xbcmprs'  => "m8  XML Binary CoMPReSs utility  (give an .xml file to    make .xtb)   ", # mAB rEtIr XML cmprs && xpnd utilz since so rarely nEded
     'xbxpnd'   => "m8  XML Binary  eXPaND  utility  (give an .xtb file to restore .xml)   ", # shud colr fIl XtNsionz
@@ -813,7 +817,9 @@ sub sumb{  my $widt=0;$widt=1 if(exists($ENV{'COLUMNS'}) && $ENV{'COLUMNS'} >= 1
     'xmlstrip' => "m8  XML strip   all   mixed-node whitespace utility (from XML::Tidy)   ",
     'xmltidy'  => "m8  XML Tidy to insert indenting whitespace by node nesting depth      ",
     'xx'       => "c8  XxX square teXt eXpansion utility   (scaling with 8trm overdraw)   ", # mAB add reverse oper8ion with scaling back down4neg8iv option
-    'xxpnd'    => "m8  XML  text   eXPaND  utility  (restores orig .xml before xcmprs)    ",);
+    'xxpnd'    => "m8  XML  text   eXPaND  utility  (restores orig .xml before`xcmprs`)   ",);
+# HB4M6rF8:moved old ~/bin/tst ~/bin/.tst to hide it away from sumb && my t8/Octl/Octology/.git repo so scrnshotz can seem more similar && added w8 2 rebalance
+#   'tst'      => "    directory where I experiment with new candid8 binary executables   ", # hid this directory as ~/bin/.tst/ instead of handling special -d
 # HB1MFGao:made asci alias to new U8:UTF8;
 #   'asci'     => "U8 *wide display of most printable ASCII (or UTF-8) chars on 4 lines   ", # mAB add more sets of logical blocks && colr b8 char-sets
 #   'q'        => "b8 *symbolic link to `calQ` which can call Quick from vim :r!q 63x31   ", # mAB just mv calQ to q instead?
@@ -851,16 +857,16 @@ sub sumb{  my $widt=0;$widt=1 if(exists($ENV{'COLUMNS'}) && $ENV{'COLUMNS'} >= 1
  # H4NM4NM4:keeping to exactly 1 160x50 page contains barely worthwhile:c8,curs,mix8,pimp,pmix,prym,readhead,shl8 so try2upd8 them to be useful or retire them;
   my $bfle=$#bfls;my %bftc=('grup'=>{'a8'=>'F:A','b8'=>'F:B','c8'=>'F:C','d8'=>'F:R','f8'=>'F:o','m8'=>'F:M','U8'=>'F:Y', # BinFilzListEnd && TypeCodez
                        'dirz'=>'F:N','no'=>'F:W',           'Time::DayOfWeek'=>'F:F','Time::PT'=>'F:F',     'Utl'=>'F:5',}, # mABall keyz shudB qr// nstd?
-                            'modu'=>{ 'Math::BaseCnv'=>'D:B','Color::Similarity::RGB->distance'=>'F:C','G:Cards:Poker->Shuffle'=>'F:p','XML::Tidy'=>'pb',
-                                     'C::S'=>'Zb','Curses::Simp'=>'Zb', 'Games::Cards::Poker'=>'F:p', 'C::Simp'=>'Zb',
-                                              'M:B:C'=>'F:X',  'Octology::d8'=>'F:R','Math::BigFloat'=>'F:X',            },
+                            'modu'=>{ 'Math::BaseCnv'=>'D:B',       'Similarity::RGB->distance'=>'F:C','G::Cards::Poker->Shuffle'=>'F:p','XML::Tidy'=>'pb',
+                                     'C::S'=>'Zb','Curses::Simp'=>'Zb', 'Games::Cards::Poker'=>'F:p', 'C::Simp'=>'Zb','DiSTance'=>'F:C',
+                                              'M:B:C'=>'Xn' ,  'Octology::d8'=>'F:R','Math::BigFloat'=>'F:C',            },
                             'file'=>{'~' =>'F:B','\/'=>'F:Y','\.'=>'Ib','fn'=>'Mb','`' =>'yk','cf'=>'F:G','\*'=>'W1','\+'=>'Rb','mixer'=>'F:o',
-     'strings'=>'F:8','ANSI'=>'ob', ',' =>'Lk','bfr8'=>'F:B','col8'=>'F:C','dur8'=>'F:R',      '\('=>'Wn','\)'=>'Wn','\['=>'ob','\]'=>'ob',
-                 'LS_COLORS'=>'Yn','bin'=>'F:B','\.bak'=>'F:B','\.Hrc'=>'F:M','\.psf'=>'F:M','\.f0nt'=>'Cg','\.xml'=>'ob','\.xtb'=>'F:B', # SKpspecialz
+     'strings'=>'F:8','ANSI'=>'ob', ',' =>'Lk','bfr8'=>'F:B','col8'=>'F:C','dur8'=>'F:R',      '\('=>'Wn','\)'=>'Wn','\['=>'ob','\]'=>'ob','ASCII'=>'Ab',
+  'EDITOR'=>'Un','LS_COLORS'=>'Yn','bin'=>'F:B','\.bak'=>'F:B','\.Hrc'=>'F:M','\.psf'=>'F:M','\.f0nt'=>'Cg','\.xml'=>'ob','\.xtb'=>'F:B', # SKpspecialz
       'down'=>'F:U','SKpz'=>'F:7',   '!' =>'Fk','HTTP'=>'F:H','Rolz'=>'F:M','Org'=>'F:X','gst123'=>'F:G','git'=>'F:G','kpcli'=>'F:G','YouTube'=>'5r',
-      'load'=>'F:5','cRdz'=>'Cc','Chess'=>'Ww','base'=>'F:X', 'UTF'=>'gb','SDL'=>'SN','pmix'=>'F:G','aumix'=>'F:G','U2b'=>'5r',},
+      'load'=>'F:5','cRdz'=>'Cc','Chess'=>'Ww','base'=>'F:X', 'UTF'=>'Gb','SDL'=>'SN','pmix'=>'F:G','aumix'=>'F:G','U2b'=>'5r',},
                             'base'=>{' 8'=>'ok','16'=>'5r','64'=>'Ac','128'=>'Cb','256'=>'Md','10'=>'Fn','dec'=>'Fn','ocT'=>'ok',},
-                            'colr'=>{'L' =>'Xg','R' =>'Pr', '4'=>'Aq', 'B'=>'M0', '2'=>'F:V',},
+                            'colr'=>{'L' =>'Xg','R' =>'Rw', '4'=>'Aq', 'B'=>'M0', '2'=>'F:V',},
   # mAB2du:bSt2 bg hIlI all -flgz nXt,thN!alreD '8'z Xplicitly;
                             'b64r'=>{'\['=>'Xw','-'=>'pk','0'=>'ob','9'=>'pb','A'=>'gb','Z'=>'Fb','\.'=>'Wb','_'=>'Ub',}, # rEmMbr2ignor thiswhol tkey
                             'xmlt'=>{'text'=>'F:R','Binary'=>'F:B','CoMPReSs'=>'F:C','eXPaND'=>'F:Y','whitespace'=>'F:W',},
@@ -869,7 +875,7 @@ sub sumb{  my $widt=0;$widt=1 if(exists($ENV{'COLUMNS'}) && $ENV{'COLUMNS'} >= 1
   my $i;my $j="$z$SKp1".'m'; # Jump_bak2zero_bold
   my $d;my $e;my $f;my $h; # additional SKp code holder variablez; $i reInit && $j Jumpbak are the locl onez 2 prEserv
   my $l;my $n;my $q;my $s; # have 'defh lnqs' 8 2Uz4 b64r especially, but then can be used for plenty else, forgot $a is for sort, still avail: $t $u $v $x
-  for (0..$bfle){my $grup='';$grup='dirz' if(-d "$ENV{'HOME'}/bin/$bfls[$bfle - $_]");
+  for (0..$bfle){my $grup='';#$grup='dirz' if(-d "$ENV{'HOME'}/bin/$bfls[$bfle - $_]"); # commenting out subdirectory check, because trying to hide priv8 tst/
     if( exists($bfst{$bfls[$bfle - $_]})){
       if($bfst{$bfls[$bfle - $_]}=~  /^\s*(\S+)/){$grup=$1 unless($grup eq 'dirz');$i=$j; # look for group to match Xpected as always 1st non-space string
         $grup='no' unless( exists($bftc{'grup'}{  $grup})); # if no match, set group to 'no'
@@ -879,7 +885,9 @@ sub sumb{  my $widt=0;$widt=1 if(exists($ENV{'COLUMNS'}) && $ENV{'COLUMNS'} >= 1
        #$l=S($bftc{'file'}{ '\]' });$bfst{$bfls[$bfle-$_]}=~ s/([\]]+)/$l$1$i/gx; # Xplicitly do brak Rite
         $h=S($bftc{'file'}{ '!'  });$bfst{ $bfls[$bfle - $_]}=~ s/(\W|n|m)(!)/$1$h$2$i/g;d8cs('oCRoMoGY' ); # tryng some non-d8bo colrsequ for Octology too
         $h=d8colr('Octology'      );$bfst{ $bfls[$bfle - $_]}=~ s/Octology   /$h$i/gx   ;d8cs('CoMoR'    ); # colr all bangz 1st thng,thN all"color",cnv,&& utl
-        $h=d8colr('color'         );$bfst{ $bfls[$bfle - $_]}=~ s/([^`])color/$1$h$i/g  ;d8cs('XXXNNN111'); # alsObAsic2pal8regXzBlO du!Use any $h or $l 2lFt
+        $h=d8colr('color'         );$bfst{ $bfls[$bfle - $_]}=~ s/([^`])color/$1$h$i/g  ;                   # alsObAsic2pal8regXzBlO du!Use any $h or $l 2lFt
+        $h=d8colr('Color'         );$bfst{ $bfls[$bfle - $_]}=~ s/([^`])Color/$1$h$i/g  ;d8cs('IIIIJQQ'  ); # && new cdst description has capitalized "Color"
+        $h=d8colr('wrapper'       );$bfst{ $bfls[$bfle - $_]}=~ s/wrapper    /$h$i/gx   ;d8cs('XXXNNN111'); # && new White "wrapper" varE8ionz
         $h=d8colr('converter'     );$bfst{ $bfls[$bfle - $_]}=~ s/converter  /$h$i/gx   ;d8cs('ZC9TVmM'  ); # rEmMbr2rEset2 d8bo whN done BlO
         $h=d8colr('utility'       );$bfst{ $bfls[$bfle - $_]}=~ s/utility    /$h$i/gx   ;d8cs('mmmMMMppVVVVVV'); # NYIM was orig S('mkB') at very end
         $h=d8colr('NotYetInModule');$bfst{ $bfls[$bfle - $_]}=~ s/NotYetInModule/$h$i/gx;d8cs('d8bo'     ); # du!Uz $i $j 2map 8pal8z in2 fldz BlO
@@ -917,7 +925,7 @@ sub sumb{  my $widt=0;$widt=1 if(exists($ENV{'COLUMNS'}) && $ENV{'COLUMNS'} >= 1
         $bfst{ $bfls[$bfle - $_]}=~ s/  (b(ase)?)(256 )(\s   )/$1$d$3$i$4/gx        ;$s=S($bftc{'d8fz'}{'2006'  }); # du 256 hopefully both b256 && base256
         $bfst{ $bfls[$bfle - $_]}=~ s/   (xterm-)(256 )(color)/$1$d$2$i$3/gx        ;$d=S($bftc{'d8fz'}{'March' }); # du 256 more
         $bfst{ $bfls[$bfle - $_]}=~ s/   (\s)   (March)(2006 )/$1$d$2$s$3$i/gx      ;$d=S($bftc{'file'}{ 'cRdz' }); # du d8 fldz M && Y from ptold
-        $bfst{ $bfls[$bfle - $_]}=~ s/   (\s)   (Cards)(\s   )/$1$d$2$i$3/gx        ;$d=S($bftc{'file'}{ 'SKpz' }); # just get b128 Cards, not Gmz:Cards:Pokr
+        $bfst{ $bfls[$bfle - $_]}=~ s/   (\s|:) (Cards)(\s   )/$1$d$2$i$3/gx        ;$d=S($bftc{'file'}{ 'SKpz' }); # just get b128 Cards, not Gmz:Cards:Pokr
         $bfst{ $bfls[$bfle - $_]}=~ s/   (\s)(e[Ss]capes?)(\s)/$1$d$2$i$3/gx        ;$d=S($bftc{'file'}{ 'down' }); # mAB want to d8colr for SKpz too?
                                                                                      $l=S($bftc{'file'}{ 'load' }); # du downloadz in half
         $bfst{ $bfls[$bfle - $_]}=~ s/   (\s)   (down)(load(ed)?)/$1$d$2$l$3$i/gx   ;
@@ -936,8 +944,11 @@ sub sumb{  my $widt=0;$widt=1 if(exists($ENV{'COLUMNS'}) && $ENV{'COLUMNS'} >= 1
         $h=S($bftc{'colr'}{ '2'});$bfst{$bfls[$bfle-$_]}=~ s/(-to- )/$h$1$i/gx;  # Xplicitly do colr btwn Lz && Rz
        #$d=S($bftc{'d8fz'}{'NotYetInModule'     });$bfst{$bfls[$bfle-$_]}=~ s/(NotYetInModule     )/$d$1$i/gx; # try2fInaly do !YetInMod
       }
-    }else{if($sunf){$bfls[$bfle - $_] .= ' ' x (80 - length($bfls[$bfle - $_]));push(@ufls,$bfls[$bfle - $_]);} # ShowUndescribedFiles saved for l8r
-          elsif(    $bfls[$bfle - $_] ne 'tst'){     splice(@bfls,$bfle - $_,1);} # or cut non-dir may no longr B needed since dflt rebilds BinFileLiSt ordr
+    }else{
+          if($sunf){                                                            push(@ufls,$bfls[$bfle - $_]);} # ShowUNdescribedFiles saved for l8r
+                                                     splice(@bfls,$bfle - $_,1);  # && cut out as will no longr B needed since dflt rebilds BinFileLiSt ordr
+         #if($sunf){$bfls[$bfle - $_] .= ' ' x (80 - length($bfls[$bfle - $_]));push(@ufls,$bfls[$bfle - $_]);} # ShowUndescribedFiles saved for l8r
+         #elsif(    $bfls[$bfle - $_] ne 'tst'){     splice(@bfls,$bfle - $_,1);} # or cut non-dir may no longr B needed since dflt rebilds BinFileLiSt ordr
          }}
   my   $blih=int(@bfls/2); # BinListInHalf
   my   @bgls=qw(a8 b8 c8 d8 Time::DayOfWeek Time::PT f8 m8 U8 Utl none dir);my %bgml=();for(@bgls){$bgml{$_} =   [];} # init BinGroupLiSt && BinGroupMemberList
@@ -980,7 +991,7 @@ sub sumb{  my $widt=0;$widt=1 if(exists($ENV{'COLUMNS'}) && $ENV{'COLUMNS'} >= 1
                                    printf($out8 "$h%-9s",$bfls[$_        ]);print $out8 $bfst{$bfls[$_        ]} if(exists($bfst{$bfls[$_        ]}));
       }
                                    say    $out8  $z;}}
-  if($sunf){                       say    $out8  $_ for(@ufls);} # try to just show Undescribed File LiSt at end before mAB reorg into 2nd bkgr desc sumb page?
+  if($sunf){                       print  $out8  $z,join(' ',reverse(@ufls));} # Show UNdescribed File LiSt at end (mAB reorg into 2nd bkgr desc sumb page?)
   close   $out8             or die "Can't close duplic8 STDOUT handle: $!";}
 our %f8fm=( # defining default F8F0ntMap top64 with unique b64 keys && favorites mapping to first letter of names, others map to any letter of name
             #   or are arranged otherwise logically like BinC are ._, foreign cyrillic, greek, hebrew, && thai are all uppercase of their first letters
@@ -2280,9 +2291,8 @@ sub tstc{my $retn='';my $argz='';my $widt=80;$widt=$ENV{'COLUMNS'} if(exists($EN
     elsif    (   $gren ==  4){$retn.="$C #   more widespread in the" ;}
     elsif    (   $gren ==  5){$retn.="$C #   more colorful future.=)"  ;}
     $retn.="\n$z";} # now the grayscale ramp #$retn.="Grayscale ramp:\n";
- $retn.="${G}Lengthy numeric codes remained too obscure, even after much familiarity, so I reordered them logically by approxim8 rainbow order and did a lot of
-  searching and sorting among rgb.txt and colors.txt values to construct a new way to represent color palettes. Each color is primarily a single represent8ive
-  character, instead of an arcane digit sequence like \"\\e[01;33;44m\" or \"\\x1B[01;38;5;085;48;5;017m\". Also have High intensity F 90..97 and b 100..107.
+ $retn.="${G}Even after much use, I still consider long digit codes like \"\\e[01;33;44m\" or \"\\x1B[01;38;5;085;48;5;017m\" too unwieldy. So I sorted and searched
+  rgb.txt and colors.txt to represent colors as just 1 or 2 descriptive characters. There are also High intensity Foregrnd 90..97 and backgrnd 100..107.
 I call a \"pal8\" a generic term for 8 (or any multiple) of such remapped color-codes. A \"2pal8\" is meant to describe the old standard first 16 colors
   renamed (or l8r extended sets of 16 that correspond back to the original 16). In order to attain my default \"8bow\" of " . d8colr($cmap{'8bow'}) . "$G, I needed to promote
  $O dark$Y yellow$G to$O bright Orange$G and$P dark$M magenta$G to$P bright PurPle$G. I'm still not sure if$P PurPle$G should order before$M Magenta$G, being closer to$B Blue$G?

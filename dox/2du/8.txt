@@ -1,5 +1,5 @@
 # D6RMF1V1:8.txt - by8π : JAPH : K3wlD00d : 1337H4xr : PipStuart's Octology (hopefully eventually an Ontology of 8) - Convention, Conversion, && Categoriz8ion:
-# $VERSION='0.0';$d8VS='HAKM6pip'; # Octology attempts to rel8 the universe through medit8ion on mnemonic abbreV8ion (via 8-based  limit8ion) &&    elucid8ion.
+# $VERSION='0.0';$d8VS='HB3MJYEA'; # Octology attempts to rel8 the universe through medit8ion on mnemonic abbreV8ion (via 8-based  limit8ion) &&    elucid8ion.
 # CEBBICTI:Crossing Every Bridge Before I Come To It? I.e., not a d8 stamp. Trying to make my Dad's birthday (August 8th) more special by thinking 2far ahead?
 # Octology intends to pursue implic8ion && ramific8ion as substantE8ion for adequ8 particip8ion, if not also 2 oblig8ion toward implement8ion &&   promulg8ion.
 # Conceptually, Octology is a system that st8s that every organiz8ional principle is valuable, but 8 tends to be a useful starting place for valuable d8a sets.
@@ -343,7 +343,7 @@ internationaliz8ion:tools to transl8 for I18N the document8ion && applic8ion int
           litig8   :maybe some tool primarily rel8d to legalities of software licenses, copyright, patents, intellectual property, etc.
        incarcer8
           revoc8
-          desol8   :first Dubstep track from the Before The Storm EP by Obsidia
+          desol8   :first Dubstep track from the Before The Storm EP by Obsidia (released around Dec. 9th,2013)
            viol8
             inm8
          exoner8
@@ -396,7 +396,7 @@ internationaliz8ion:tools to transl8 for I18N the document8ion && applic8ion int
             dur8ion:d8 fields specialized for profiling && other timing activities (akin to old Time::Frame objects for representing lengths or spans of time)
               l8nt :dur8ion specialized for analyzing && tuning latencies between networked or otherwise somehow synchronized Octology applic8ion components
            form8ion:m8 pattern tool ("4m8ion" seems natural but just attempting the limit8ion of mostly clear 8s in names should be plenty for the main scope)
-          inchO8
+          inchO8   : below also Drumstep track Initiate by Obsidia (released around May 30th,2013)
           initE8   :an optionally interactive demonstr8ion of the most bl8antly useful && accessible applic8ions within Octology to indoctrin8 new users with
       initializ8ion:tool to analyze initial definitions of values assoC8d with applic8ion code declar8ions of contants, globals, locals, && object attributes
           immeD8   :maybe d8/dur8ion-based applic8ion upd8 response l8ncy tool for specifying desired thresholds to achieve through profiling && optimiz8ion
@@ -787,8 +787,8 @@ internationaliz8ion:tools to transl8 for I18N the document8ion && applic8ion int
           fumig8
        extermin8
          eradic8
-        annihil8
-        obliter8
+        annihil8   :Dubstyle track by Obsidia (released around Sep. 2nd,2011)
+        obliter8   :Dubstep  track by Obsidia (released around Sep.12th,2011)
       disintegr8
       contritur8
          tritur8
@@ -845,7 +845,7 @@ internationaliz8ion:tools to transl8 for I18N the document8ion && applic8ion int
             vex8ion
          trepid8ion
         intimid8   :threatening behavior probably mainly meant to stifle criticism or deb8
-          domin8   :another fighting game or maybe general competition, ranking, && tournament system
+          domin8   :another fighting game or maybe general competition, ranking, && tournament system, && Obsidia Dubstep (released around Sep. 9th,2010)
              ir8   :hopefully somehow potentially constructive (or at least cathartic) tool to facilit8 expressions of extreme anger && rage
             ber8   :ir8 devast8ion of reput8tion through critical language && lengthy heated rebuke
          castig8

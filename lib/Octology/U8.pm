@@ -254,7 +254,7 @@ sub UTF8{my $optz=join(' ',@_);my $strt=0;my $uprb= 256; # 2BNJCDfo:asci utility
     $outp .= ' ' x (19*4) if($strt==  32 && $widf); # space align if skipping 1st unprintablez block
     for(my $indx = $strt;$indx < $uprb;$indx++){my $ib6c=b8colr(b64($indx)); # added colrz using a8::b8colr && b8::b64
       $ib6c= " $ib6c" if($indx <   64);         my $hexi=       HEX($indx) ; # pad top-row b64 indicez with a space to the left if they're just one char
-      if($widf){$outp .= "$W:\n" if($indx &&  !($indx % 64)             );}
+      if($widf){$outp .= "$W:\n" if($indx &&  !($indx % 64) && defined($outp)                );} # hopefully adding defined tst here will stop empty : line
       else     {$outp .= "$W:\n" if($indx &&  !($indx % 32) && ($indx >   32 || $optz !~ /p/));}
       unless   ($indx % 8){
         if   ($indx <=  255){$outp .= sprintf("$W:$G%3d$W:$B%02s$W:%s$W:",$indx,$hexi,$ib6c);}
@@ -270,9 +270,9 @@ sub UTF8{my $optz=join(' ',@_);my $strt=0;my $uprb= 256; # 2BNJCDfo:asci utility
       else     { # 8trm can directly handle all characterz (Xcept chr(10) x0A \n) because it has no standard Ctrl-code interpret8ion yet
         if     ($indx ==  10                                 ){ $outp .= "$R!"            ;}
         else   {$outp .= S(substr($cmap{'8bow'},$indx % 8, 1 )) . chr($indx);}}
-      if     (($indx >=  768 && $indx <  880) ||
-              ($indx >= 1155 && $indx < 1162) ||
-              ($indx >= 1425 && $indx < 1477)){
+      if      (($indx >=   768 && $indx <   880) ||
+               ($indx >=  1155 && $indx <  1162) ||
+               ($indx >=  1425 && $indx <  1477)){ # also here add more spaces && some newlines for -radicals && -kana to also align
         $outp .= ' ';}} # try to space out what are presumably something like combin8ion code-points without whole grapheme clusterz
     $outp .= "$W:";$outp = sS($outp) unless($clrf);
   } say $out8 $outp;close $out8 or die "Can't close duplic8 STDOUT handle: $!";}
