@@ -14,7 +14,7 @@ push(    @atrz,'m8xo'     );$dvlz{$atrz[-1]}=     undef; # this should get loade
 #ush(    @atrz,'widt'     );$dvlz{$atrz[-1]}=ROOM_WIDTH; # should l8r probably add things like jpsf JumpPointSearchFlag, hscl HeuristicSCaLe float, etc.
 #ush(    @atrz,'fill'     );$dvlz{$atrz[-1]}=         2;
 sub atrb{@atrz;} # attribute methods to query defaults
-sub dval{my($self,$attr)=@_;$dvlz{$attr};} # should be able to pass undefined shrn on thru both m8rx && gmap lodt calls below to just get default '8W8N3'
+sub dval{my($self,$attr)=@_;$dvlz{$attr};} # should be able to pass undefined shrn on thru both m8rx && gmap lodt calls below to just get default '8W8N8',wasN3
 sub lodm{my $self= shift(@_);my $shrn= shift(@_);$self->{'m8xo'}= Octology::p8::m8rx->new();return($self->{'m8xo'}->lodt($shrn));} # very basic LOaD M8rix
 sub astr{my $self= shift(@_);my $frxy= shift(@_);my $toxy= shift(@_);               my($fr_x,$fr_y,$to_x,$to_y); # take either cmprSd b64 xy rpos or x,y, x,y
   $self->lodm() unless(exists($self->{'m8xo'})); # try to load default map room terrain if not done already

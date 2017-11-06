@@ -720,7 +720,11 @@ sub Prnt{my $self=shift;my $ptxt=shift;my $pfcl=shift;my $pbcl=shift;my $pf0n=sh
     if(defined($pfcl) && length($pfcl) &&
        defined($pbcl) && length($pbcl) &&
        defined($pf0n) && length($pf0n)){ # 4 layer params provided so write into object arrays && display
-      ($ptxt,$pfcl,$pbcl,$pf0n)=(sS($ptxt),sS($pfcl),sS($pbcl),sS($pf0n)); # strip escapes
+     #($ptxt,$pfcl,$pbcl,$pf0n)=(sS($ptxt),sS($pfcl),sS($pbcl),sS($pf0n)); # strip escapes
+      $ptxt=sS($ptxt) if(lc($ptxt) ne 'h'); # sS can also take other flags, so probably need to check && maybe use '--' to flag no more parameter parsing
+      $pfcl=sS($pfcl) if(lc($pfcl) ne 'h');
+      $pbcl=sS($pbcl) if(lc($pbcl) ne 'h');
+      $pf0n=sS($pf0n) if(lc($pf0n) ne 'h'); # strip escapes (if not just Help flag)
       unless(@{$self->{'_text'}} > $self->{'_ycrs'}){$self->{'_text'}[$self->{'_ycrs'}]=' 'x ($self->{'_xcrs'}); # make sure @text up to cursor defined
                                                      $self->{'_Fclr'}[$self->{'_ycrs'}]='G'x ($self->{'_xcrs'});
                                                      $self->{'_bclr'}[$self->{'_ycrs'}]='k'x ($self->{'_xcrs'});
@@ -914,14 +918,14 @@ sub Prnt{my $self=shift;my $ptxt=shift;my $pfcl=shift;my $pbcl=shift;my $pf0n=sh
       #   with support for 1:132-columns,2:printer,6:selective erase,9:NatnlReplcChr setz,15:technical characters,18:user windows,21:horizontal scrolling,
       #   22:ANSI color maybe like VT525. ">c" => "^[[>41;297;0c" also meaning VT420 with 297 firmware version.
 sub MkSp{my $spid=shift;$spid=' ' unless(defined($spid) && length($spid)); # Make global character Sprites if they don't yet exist
-  $spid.='W' if(length($spid)==1);$spid.='W' if(length($spid)==2);$spid.='W' if(length($spid)==3); #' WWW'
+  $spid.='W' if(length($spid)==1);$spid.='k' if(length($spid)==2);$spid.='t' if(length($spid)==3); #' Wkt'
   unless(exists($GLBL{'_sprm'}{$spid})){ # could eventually also add scales, pal8s, etc.
-    my @frgb=('_','_','_');#$spid=~ s/^(.):/$1W/;$spid=~ s/:(.)$/W$1/;$spid=~ s/:$/W/;
+    my @frgb=('_','_','_');$spid=~ s/^(.):/$1W/;$spid=~ s/:(.)$/k$1/;$spid=~ s/:$/t/;
     my @brgb=('_','_','_');#say "spid=$spid=";
     my @spis=split(//,      $spid    ); #"$ltxd[$cndx]$lfcd[$cndx]$lbcd[$cndx]$lfvd[$cndx]" # MaKe a SPrite for the joined col8 layers
        @frgb=split(//,$pmap{$spis[1]}) if($#spis >= 1 && defined($spis[1]) && exists($pmap{$spis[1]}));for(@frgb){$_=b10($_)*4;}
        @brgb=split(//,$pmap{$spis[2]}) if($#spis >= 2 && defined($spis[2]) && exists($pmap{$spis[2]}));for(@brgb){$_=b10($_)*4;}
-    $spis[3]='W'                   unless($#spis >= 3 && defined($spis[3]) && exists($GLBL{'_f8om'}{$spis[3]}));
+    $spis[3]='t'                   unless($#spis >= 3 && defined($spis[3]) && exists($GLBL{'_f8om'}{$spis[3]}));
     $GLBL{'_sprm'}{$spid}=  SDLx::Sprite->new(width => 8,height => 16);
     $GLBL{'_sprm'}{$spid}->surface->draw_rect([ 0, 0,  8,          16],[@brgb,255]);
     my $fhit=   @{$GLBL{'_f8om'}{$spis[3]}->{'f0nt'}[ord($spis[0])]}; # array of rows should be f0nt hite (&&should also be same in 'f0nthedr')
@@ -977,8 +981,8 @@ sub Draw{my $self=shift;my $ln2d=shift;my @lrng; # allow passing in LiNe2Draw pa
     $self->OverDraw() if($self->{'_flagovdr'} && !$ln2d); # try over drawing if enabled && already normally drawing whole window rather than just 1 line
 #   $self->MiniScbr() if($self->{'_flagmnsb'}          ); # try over drawing if enabled, a new mini scrollbar (probably only want for _flagterm?)
     if(!$vcdf && $self->{'_flagcvis'}){MkSp(); # build general bright sprite && draw_xy for visible cursor moved beyond above drawn @text dimensions
-      if  (exists($GLBL{'_sprm'}{' WWW'})){
-        $GLBL{          '_sprm'}{' WWW'}->draw_xy($GLBL{'_xfss'}->surface(),$self->{'_xcrs'}*8,$self->{'_ycrs'}*16);}}
+      if  (exists($GLBL{'_sprm'}{' Wkt'})){
+        $GLBL{          '_sprm'}{' Wkt'}->draw_xy($GLBL{'_xfss'}->surface(),$self->{'_xcrs'}*8,$self->{'_ycrs'}*16);}}
     $self->Zoom();}}
 sub MiniScbr{my $self=shift;my $shit=$self->{'_hite'}*16; # drawing miniature scrollbar sprite, Self2ScrollbarHITe (height)
   # 2du:forget this and crE8 mini during regular draw, build by mini linez to avoid regen, precompute colr conversions if avoids redoing any l8r
@@ -1096,11 +1100,14 @@ sub OverDraw{my $self=shift; # drawing multiple sized char spritez over 4 or 16 
               substr($omsk           [$lndx+$sndx  ],$cndx,$bksz,            '#' x $bksz);}
           my   $cfsk=substr($self->{'_text'}[$lndx],$cndx,1).substr($self->{'_Fclr'}[$lndx  ],   $cndx,1) . # col8 fieldz sprite key
                      substr($self->{'_bclr'}[$lndx],$cndx,1).substr($self->{'_f0nt'}[$lndx  ],   $cndx,1);
+               $cfsk=~ s/^(.):/$1G/;$cfsk=~ s/^:/ /;
+               $cfsk=~ s/:(.)$/k$1/;$cfsk=~ s/:$/t/;
           MkSp($cfsk); # need to scale sprite
-          unless(exists($GLBL{'_sprm'}{"$cfsk$bksz"})){
-            my $szsf=SDL::GFX::Rotozoom::zoom_surface($GLBL{'_sprm'}{$cfsk}->surface(),$bksz,$bksz,SMOOTHING_ON); # SpriteZooMSurFace
-            $GLBL{'_sprm'}{"$cfsk$bksz"}=SDLx::Sprite->new(              width =>  8*$bksz,height => 16*$bksz,surface => $szsf);}
-          $GLBL{  '_sprm'}{"$cfsk$bksz"}->draw_xy($GLBL{'_xfss'}->surface(),$cndx* 8,          $lndx*16);}}}}}
+          if(exists($GLBL{'_sprm'}{$cfsk})){ # make sure regular sprite was made before trying to scale it
+            unless(exists($GLBL{'_sprm'}{"$cfsk$bksz"})){
+              my $szsf=SDL::GFX::Rotozoom::zoom_surface($GLBL{'_sprm'}{$cfsk}->surface(),$bksz,$bksz,SMOOTHING_ON); # SpriteZooMSurFace
+              $GLBL{'_sprm'}{"$cfsk$bksz"}=SDLx::Sprite->new(              width =>  8*$bksz,height => 16*$bksz,surface => $szsf);}
+            $GLBL{  '_sprm'}{"$cfsk$bksz"}->draw_xy($GLBL{'_xfss'}->surface(),$cndx* 8,          $lndx*16);}}}}}}
 sub TestDraw{ # Test whether an auto-Draw() should be called
   $_[0]->Draw() if($_[0]->{'_text'} && @{$_[0]->{'_text'}} && $_[0]->{'_flagaudr'});}
 sub S2SB{my $self=shift;my $nm2s=shift||1; # Shift top lines to Scroll Back

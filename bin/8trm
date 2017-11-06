@@ -41,7 +41,7 @@ while    (    $keey ne 'Ctd'){$keey=K(-1);if(length($keey)){ # any Control-d exi
     elsif(ord($keey)==   13 ){my($y,$x)=$trm8->Move();$hndx=$#hist;my $cmdl=$trm8->{'_text'}[$y];$cmdl=~ s/^(.*\[$user\@$host[0-9A-Za-z._]{8}[^\]]+\])//;
       $hist[$hndx]=$cmdl; # instead of loading cmdl with substr from pwid, better to strip off all up to last prompt (but problemz when cmd spanz linez)
       if (    $cmdl eq 'L'  ){$cmdl='echo ';C($tstx);} if($cmdl eq 'l'){$cmdl='lsd8';} if($cmdl eq 'f'){$cmdl='c8fn c8-E8AM3T4R.pm';}
-      if (    $cmdl eq 'M'  ){$cmdl='echo ';C($tstm);} if($cmdl eq 'm'){$cmdl='man ';} if($cmdl eq 'd'){$cmdl='df     ';} # basic aliasez
+      if (    $cmdl eq 'M'  ){$cmdl='echo ';C($tstm);} if($cmdl eq 'm'){$cmdl='man ';} if($cmdl eq 'd'){$cmdl='dic    ';} # basic aliasez
       if (    $cmdl eq 'C'  ){$cmdl='echo ';C($tstc);} if($cmdl eq 'c'){$cmdl='wc  ';} if($cmdl eq 'p'){$cmdl='ps     ';} #if($cmdl eq '8'){$cmdl='vi';}
       if (    $cmdl eq 's'  ){$cmdl=          "source-highlight -f esc --style-file=/home/$user/.shl.style -s perl -i /home/$user/dvl/c8/8trm";}
       if (    $cmdl =~  /^\s*s\s+(.+)/){$cmdl="source-highlight -f esc --style-file=/home/$user/.shl.style -s perl -i       $1               ";}

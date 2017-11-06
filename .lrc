@@ -1,5 +1,5 @@
 # F1RLLK2K:~/.lrc  by PipStuart <Pip@CPAN.Org> as an altern8 format for .lsrc ideally having new ~/bin/lrc gNR8 either from the other;
-# $VERSION='0.0';$d8VS='HAVM6k38'; 2du:mkUtl2gNR8 altrn8 versN of .lsrc th@purposfuly varEz colrz of comon typz,try addng bakgrnd colrz2all dFz&&tst,
+# $VERSION='0.0';$d8VS='HB5LBt8s'; 2du:mkUtl2gNR8 altrn8 versN of .lsrc th@purposfuly varEz colrz of comon typz,try addng bakgrnd colrz2all dFz&&tst,
 #   add interaction2 lsd8 wN it Dtectz unrecognIzd XtNshNz offerng c@egOrEz with comon colr2autOm@ically insrt chOsN NtrEz,mAB add *-* NtrEz from .zshrc hEr &&
 #   mk lsrc gNR8 either,confirm all accept f0nt cOdez wi dash accepting Dfalt foreground then redo NORMAL FILE LINK as no fi ln,mAB 8trm added2TERM ls someday;
 # 819J2Pip:~/.lsrc by PipStuart <Pip@CPAN.Org> izAheavily modifId`dircolors`cfgfIl(Orig ~/.DIR_COLORS)wich setz $ENV{'LS_COLORS'} 4GNU`ls --color`&&`lsd8`;
@@ -478,6 +478,7 @@ CHR                           Yk           #cd= 01;33;40    01;33;40  CHaRacter 
 .wpl                                       # Windows PlayList muz filz in a  XML       format for Microsoft WindowsMediaPlayer
 .spi
 .itl                          P            # iTunes Library
+.aup                                       # Audacity Project
 .anx                                       # HTTP://Wiki.Xiph.Org/index.php/MIME_Types_and_File_Extensions
 .axv                                       # HTTP://Wiki.Xiph.Org/index.php/MIME_Types_and_File_Extensions
 .ogv                                       # HTTP://Wiki.Xiph.Org/index.php/MIME_Types_and_File_Extensions
@@ -869,6 +870,7 @@ CHR                           Yk           #cd= 01;33;40    01;33;40  CHaRacter 
 .jpeg
 .JPG                          r
 .jpg
+.kra                          M            # Krita.Org Art
 .mng
 .mkv                                       # Matroska.Org
 .m2v                                       # MPEG-2 Video    only

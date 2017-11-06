@@ -12,7 +12,7 @@ push(    @atrz,'widt');$dvlz{$atrz[-1]}=ROOM_WIDTH ; # these dimensions apply to
 push(    @atrz,'hite');$dvlz{$atrz[-1]}=ROOM_HEIGHT;
 push(    @atrz,'fill');$dvlz{$atrz[-1]}=          0; # default FILL value
 push(    @atrz,'tfil');$dvlz{$atrz[-1]}=          2; # default FILl value for secondary Terrain layr (should be 2 or 1 in most cases)
-push(    @atrz,'tsrn');$dvlz{$atrz[-1]}=    '8W8N3'; # default Terrain SHaRd code (8 for 'prv8' server) joined with eXpanded standard RoomName
+push(    @atrz,'tsrn');$dvlz{$atrz[-1]}=    '8W8N8'; # default Terrain SHaRd code (8 for 'prv8' server) joined with eXpanded standard RoomName
 push(    @atrz,'m8rx');$dvlz{$atrz[-1]}=         []; # initially empty anonymous M8RiX array which should get thoroughly popul8d from new constructor
 sub atrb{@atrz;} # attribute methods to query defaults
 sub dval{my($self,$attr)=@_;$dvlz{$attr};} # used2have w,h,sz,&&rs methods2 upd8 obj width,height,size(both w&&h at once),&&resize aftr any prev but cut4now

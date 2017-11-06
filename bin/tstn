@@ -1,0 +1,24 @@
+#!/usr/bin/perl
+use strict;use warnings;use utf8;use v5.10; # this simple test should accept most expected arguments in any order to change w8, map, or path loops to search
+use      Octology::d8::dur8; # set d8::dur8ion to w8 for some base-64 number of frames (like b10('U') == 30 to w8 half-of-a-second or '3F' for 3.25 seconds)
+use      Octology::p8::nvg8;  my $durs       =   '88';for(0..$#ARGV){if($ARGV[$_]=~ /^\d?[A-Z]\d?$/i){$durs= $ARGV[$_]; splice(@ARGV,$_,1); last();}} # char
+my $nvg8=Octology::p8::nvg8->new();     my $s='8W8N8';for(0..$#ARGV){if($ARGV[$_]=~ /^[018][WE]\d+/i){$s   = $ARGV[$_]; splice(@ARGV,$_,1); last();}} # room
+my $dur8=Octology::d8::dur8->new($durs);my $l=    88 ;$l=shift(@ARGV)if(@ARGV && $ARGV[0]=~ /^\d+$/ );my($fx,$fy, $tx,$ty, $rx,$ry, $i);my $d8VS='HB5LHLOD';
+print "This is a test script for my first A* path-finding implement8ion in my nvg8 'navig8ion' module based on real public and private Screeps.Com map d8a.
+Please keep pressing enter to see new random tests on the same map and press 'r' then enter to pick a new Random map for the next test. Additionally, you
+can enter the name of any particular real room map by joining the shard number (0 or 1) with a room name, like '0W16S32' or '1E31N7'. The room maps are all
+50x50 square grids, so you should probably run this in a terminal with dimensions of at least 160x50. The dark 'w' blocks are impenetrable Walls. The gray
+'p' blocks are normal Plains with essentially each a path-cost of 1 and the remaining bright 's' squares stand for Swamps, each having a path-cost of 5.
+Simply press 'x' then enter whenever you want to eXit. Please press enter now to begin testing...";<STDIN>;
+for my $n(1..$l){$nvg8->lodm($s);#int(rand(2)) . ((int(rand(2))) ? 'W' : 'E') . int(rand(51)) . ((int(rand(2))) ? 'S' : 'N') . int(rand(51)));
+  for    (1..$l){ ($fx   ,$tx    )=(undef,undef); #'8W' . int(rand(11)) . 'N' . int(rand(11))); # tst on rand shard01 mapz abov or just rand in prv8 from here
+    while(!defined($fx)){($rx,$ry)=(int(rand(50)),int(rand(50)));($fx,$fy)=($rx,$ry) if($nvg8->{'m8xo'}->get($rx,$ry,1) < 255                              );}
+    while(!defined($tx)){($rx,$ry)=(int(rand(50)),int(rand(50)));($tx,$ty)=($rx,$ry) if($nvg8->{'m8xo'}->get($rx,$ry,1) < 255 && ($rx != $fx || $ry != $fy));}
+    $nvg8->astr(  $fx,$fy,$tx,$ty);chomp($i=<STDIN>);exit() if($i=~ /[xq]/i); # w8ng for entered Input txt of eXit or Quit now
+    $nvg8->lodm($i) if($i=~ /^[018][WE]\d+[SN]\d+$/i);                        #   or new Shard && RoomName   # rand still defaults 8W8N8 for any invalid load
+    if     ($i =~ /r/i){my $d= int(rand(3));                                  #   or 'r' for random new room anywhere on live Shard0 or 1 or my local prv8
+      if   ($d == 0){$nvg8->lodm('0' . ((int(rand(2))) ? 'W' : 'E') . int(rand(101)) . ((int(rand(2))) ? 'S' : 'N') . int(rand(101)));} # not sure why 8W8N8
+      elsif($d == 1){$nvg8->lodm('1' . ((int(rand(2))) ? 'W' : 'E') . int(rand( 51)) . ((int(rand(2))) ? 'S' : 'N') . int(rand( 51)));} #   still so frequent
+      elsif($d == 2){$nvg8->lodm('8' .                   'W'        . int(rand( 11)) .                         'N'  . int(rand( 11)));}}
+   #$dur8->w8(); # old just w8 dur8ion timeout before next autom8d random test loop
+  }}

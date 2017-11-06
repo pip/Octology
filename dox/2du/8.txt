@@ -3613,3 +3613,6 @@ HARM7jSB:Consider trying HTTPS://Stack.Foundation/#!/sandbox for autom8ing setup
 HARMFoXY:Registered 'PipStuart' on Minds.Com && Gab.AI today. Both seem to contain much unappealing right-wing content so far, but I hope more moder8 && left
 voices join l8r too. I'm skeptical of doxxing site (SocialAutopsy) starter CandaceOwens who seems to have lied several times, so maybe she is also not genuine
 on her RedPillBlack U2b channel (but I'm still subscribed). I also edited down two silly long comments (removing 8.txt link) from RedHeadRedemption's videos;
+HB5L7cut:My sweet new Wacom Intuos art CrE8ive Pen && Touch tablet came, && I have Gimp && Krita installed on both Akuma && Chun. So now I'm ready to learn how
+to configure buttons && start using it. HTTPS://AskUbuntu.Com/questions/839161/limit-a-graphics-tablet-to-one-monitor mentions `xrandr` which reports my
+displays from left-middle-right are DVI-0, DVI-1, HDMI-0. `xinput` can bind stylus or touch to one display && `xsetwacom` maps buttons with a shell-script;
