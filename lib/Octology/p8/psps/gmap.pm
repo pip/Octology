@@ -1,17 +1,16 @@
 # H83M3sV4: Octology::p8::psps::gmap.pm crE8d by PipStuart <Pip@CPAN.Org> as "Pip's Screeps Global Map" to make an object like original JavaScript Game.map;
 # 2du:need2redo wbst2XtNd shrd1 md8a from old 50 out2nw 60+ && stRt getng shrd2 out to l8st sizes,
 #   fix lodt to save opn[srt] Open(Shard|Room|Terrain)&&only load if diff&&retn to all othr map queries,
-#   stuD Path::Tiny && use slurp_utf8 to replace poor File::Slurp,
 #   stuD WebAPI && add availability flags,add lbst to load full JSON prv8 terrain d8a read from local db file as altern8ive to ported JS gbst function;
 package     Octology::p8::psps::gmap;
-use strict; use warnings;use utf8;use v5.10;use File::Slurp qw(slurp);
+use strict; use warnings;use utf8;use v5.10;use Path::Tiny;
 use         Octology::a8;
 use         Octology::b8;
 #se         Octology::c8; # eventually use c8 && Simp && TkAC for similarly rendering anim8ing interactive interfaces for running the local Game simul8ion
 #se         Octology::d8;
 use         Octology::p8::psps::cnst; # import all the Global Constants
 use         Carp; # below mkdir $HOME/lib/Octology/p8/psps/gmap/(\.tmp|simu|prv8|[sp][01][we][sn])/ for 19 dirs:3 solo,Screeps.com orPtr,shrd0or1,&&WS ES WN EN
-my  $VERSION='0.0';my $d8VS='HBBL0Ds2';            my $mapd="$ENV{'HOME'}/lib/Octology/p8/psps/gmap";
+my  $VERSION='0.0';my $d8VS='HBCL6UTF';            my $mapd="$ENV{'HOME'}/lib/Octology/p8/psps/gmap";
 mkdir  ("$ENV{'HOME'}/lib"                 ,0755) unless(-d "$ENV{'HOME'}/lib"                 ); # mk sure proper lib gmap dirz exist
 mkdir  ("$ENV{'HOME'}/lib/Octology"        ,0755) unless(-d "$ENV{'HOME'}/lib/Octology"        ); # betr 2 l8r use auto-mkdir module
 mkdir  ("$ENV{'HOME'}/lib/Octology/p8"     ,0755) unless(-d "$ENV{'HOME'}/lib/Octology/p8"     );
@@ -117,7 +116,8 @@ sub wbst{my $self=shift(@_);my $shrd=shift(@_);my $rmnm=shift(@_) ;my $xrnm; # W
                                                                                $ynum > int(($self->{'worldSize'}->{$shrd}-2)/2)))
                                                          ){say $out8 "wget:  $mapd/.tmp/$shrd$lrnm.json ..."; # chngd abov 2 skip past worldSize edgez
           system("wget -q -O '$mapd/.tmp/$shrd$lrnm.json' '$sapi$shrd&room=$lrnm&encoded=true'"); sleep(2) unless($shrd eq '8');} # mAB need2sleep or miss some
-        if      (      -r    "$mapd/.tmp/$shrd$lrnm.json"){ my $jd8a= slurp("$mapd/.tmp/$shrd$lrnm.json" ); carp "!*Warn*! Bad slurp! $!" if(!defined($jd8a));
+        if      (      -r    "$mapd/.tmp/$shrd$lrnm.json"){ my $jd8a= path("$mapd/.tmp/$shrd$lrnm.json")->slurp_utf8();
+          carp "!*Warn*! Bad path->slurp_utf8! $!" if(!defined($jd8a));
           if    (defined($jd8a)){my $b_id;my $crtd; # try to quickly detect correct JSON hash d8a in either order below
             if   ($jd8a=~ /"terrain":"([^"]+)",.*?"_id":"([^"]+)"/){$crtd=    cbrt($1) ;$b_id= b64(dec($2));} # prv8 idz only 15 heX charz while
             elsif($jd8a=~ /"_id":"([^"]+)",.*?"terrain":"([^"]+)"/){$b_id= b64(dec($1));$crtd=    cbrt($2) ;} # live idz  are 24 heX charz, so get non-quotez

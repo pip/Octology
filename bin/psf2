@@ -1,6 +1,6 @@
 #!/usr/bin/perl
-# A78MD2HG:psf2f0nt by PipStuart <Pip@CPAN.Org>;  # this now basically interchangeable with f0nt2psf since either can take both arguments to convert either way
-use strict;use warnings;use utf8;use v5.10;use Octology::f8;
+# A78MD2HG:psf2 crE8d by PipStuart <Pip@CPAN.Org> to convert psf files to f0nt;  # this utility is now basically interchangeable with 2psf since
+use strict;use warnings;use utf8;use v5.10;use Octology::f8;                     #   either one can take both arguments to convert either way
 my $srcf = shift ||   'dflt.psf';$srcf .=   '.psf'  unless(-e $srcf); # each utility just defines default behavior when arguments are limited
 my $dstf = shift ||        $srcf;$dstf =~ s/\.psf$/.f0nt/  if($dstf eq $srcf);
 my $f8ob;

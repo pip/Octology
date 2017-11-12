@@ -1,5 +1,5 @@
 " EBQLIh15:.vimrc by PipStuart <Pip@CPAN.Org> to highly customize my Vim sessions to have my favorite status bar, edit settings, key mappings, && behaviors;
-" 2du:stuD Conway's awesome code&&plugins at bottom,stuD HTTPS://Statico.GitHub.IO/vim.html && vim[23].html,ckout best HTTPS://VimAwesome.Com plugins;
+" 2du:stuD Conway's awesome code&&plugins at bottom,stuD HTTPS://Statico.GitHub.IO/vim.html && vim[23].html,ckout best HTTPS://VimAwesome.Com plugins too;
 "set? || setl(ocal)? || let   " wN setting, trailing variable wi bang (!) || prepending 'inv' wil togl boolean flag's value; trail ? 2 query;  BlO so(urce)?
 se   nocp                     " nocompatible    - add  Vim NhancmNtz without strIving for vi compatibility (mustB1stBcuzit chngz othr optnz as side effect)
 se    enc=utf-8               "     encoding    - was already loading utf-8 from current $LANG locale, && might need termencoding also if they diverge
@@ -58,7 +58,7 @@ if   &term ==# "screen.linux"
 en
 if   &term ==# "screen" || &term ==# "xterm"
   se   t_kb=                " NAblz bkspc 2 BhAv consistNtly thru CygWin (wud B betr 2 ck &OSTYPE or smthng instd of just &term abov)
-" se   t_kD=^v<Delete>
+" se   t_kD=^v<Delete>        " not sure if maybe some Chun's console ssh to Aku multiplexing screen term to share vim edit session ruins block cursor somehow?
 " fix " since Taki's old CygWin Vim bkspc mkz ^? thru xterm ssh connection, fixdel switches t_kb && t_kD from ^? && ^H to <Del> but I want <BS> =(
 en " if literal <C-m> at the end below gets filtered out, might need to `v .bak/.vimrc-D8JMEEjh .vimrc` to yank line 45 there && restore here
 se   t_cv=                " set the cursor to be included in visual selections even if it can't be invis && here's a <CR> char for when literal needed: 

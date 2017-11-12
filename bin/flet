@@ -22,19 +22,20 @@ my @favz = split /\s+/, $favs;
 
 if ($text =~ m/^\s*-a/i) { $text =~ s/^\s*-a//i; $lall = 1; }
 
-print "                       Tigger's Figlet Chooser v0.2\n";
-print "USAGE:  me\@myserver:\% perl tiglet.pl \"KakA NachoZ\"\n";
-print "Tiglet lets you interactively select the perfect figlet font \n";
-print " for your .sig or msg or title or... =) smiley!  \n";
-print "Specify -a on the command line to rotate through all available\n";
-print " fonts or just run normally to rotate only favorites\n"; 
-print "Please email suggestions or constructive criticisms to Pip\@BinQ.org\n";
-print "n or Enter - checks next font, p - checks previous font\n";
-print "  Any specific number jumps directly to that font\n";
-print "t - prompts for text change, e - prompts for filename to export to\n";
-print "Y - SAVES selected text to specified exportfile and quits\n";
-print "Q - QUITS without saving, ... the parameters are not case-sensitive\n";
-print "Toggles: s=squish, k=kern, o=overlap, c=center, l=left, r=right, f=favorite\n";
+print "         Tigger's Figlet Chooser v0.2
+  (which was renamed from 'tiglet' to 'flet' on d8:HBCL7flt)
+USAGE:  me\@myserver:\% flet \"KakA NachoZ\"
+flet lets you interactively select the perfect figlet font
+  for your .sig or msg or title or... =) smiley!
+Specify -a on the command line to rotate through all available
+  fonts or just run normally to rotate only favorites
+Please e-mail suggestions or constructive criticisms to <Pip\@CPAN.Org>
+n or Enter - checks next font, p - checks previous font
+  Any specific number jumps directly to that font
+t - prompts for text change, e - prompts for filename to export to
+Y - SAVES selected text to specified exportfile and quits
+Q - QUITS without saving, ... the parameters are not case-sensitive
+Toggles: s=squish, k=kern, o=overlap, c=center, l=left, r=right, f=favorite\n";
 
 if ($text eq "") {
     $text = "KakA NachoZ";

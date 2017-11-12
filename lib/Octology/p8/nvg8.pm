@@ -8,7 +8,7 @@ use         Octology::p8::m8rx;
 use         Octology::p8::tabh;
 use         Octology::p8::psps::cnst;
 use         Curses::Simp;
-my  $VERSION ='0.0';my $d8VS='H9AMKu9A';
+my  $VERSION ='0.0';my $d8VS='HBCL4vg8';
 my       @atrz=()  ;my      %dvlz=()   ; # setup default nvg8 object attributes && values
 push(    @atrz,'m8xo'     );$dvlz{$atrz[-1]}=     undef; # this should get loaded with a m8rx object from new calling lodm
 #ush(    @atrz,'widt'     );$dvlz{$atrz[-1]}=ROOM_WIDTH; # should l8r probably add things like jpsf JumpPointSearchFlag, hscl HeuristicSCaLe float, etc.
@@ -98,7 +98,7 @@ sub astr{my $self= shift(@_);my $frxy= shift(@_);my $toxy= shift(@_);           
       elsif  ($yndx <  $self->{'m8xo'}->{'hite'}-3){printf $out8 "$C%s\n"     ,$self->{'m8xo'}->{'tsrn'};}  # 4th to last line should show shrd && roomname
       elsif  ($yndx <  $self->{'m8xo'}->{'hite'}-2){printf $out8 "$G%2d,%-2d\n"      ,$fr_x,$fr_y       ;}  # 3rd && 2nd to last end with from x,y
       elsif  ($yndx <  $self->{'m8xo'}->{'hite'}-1){printf $out8 "$R%2d,%-2d $Y%2d\n",$to_x,$to_y, $rang;}  #                          &&   to x,y && range
-      else                                         {printf $out8 "$W%s\n"            ,substr($xsps,0,59);}} # last line has eXpandedSerializedPathString
+      else                                         {printf $out8 "$W%s"              ,substr($xsps,0,58);}} # last line has eXpandedSerializedPathString
     for(0..$#path){my @tpxy= split(//,$path[$_]);my($curx,$cury)=($sb10{$tpxy[0]},$sb10{$tpxy[1]});$self->{'m8xo'}->set($curx,$cury,0);} # reset layr 0 ndxz
     close     $out8             or die "Can't close duplic8 STDOUT handle: $!";return($xsps);}} # also returned path str from the method
 # Octology::p8::nvg8 object constructor as class method or copy as object method. First param can be ref to copy. Not including optional ref from copy,

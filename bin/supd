@@ -1,6 +1,6 @@
 #!/usr/bin/perl
 # H78MKnBJ:supd crE8d by PipStuart <Pip@CPAN.Org> to UPD8 Screeps working-directory JavaScript code into the proper scripts directories;
-# 2du:add srvr DB.JSON bkup && restore optnz,xport a8:aucolr(auto $auth) && mk empty d8colr() auto now-d8,then back here colr rest of help more;
+# 2du:add srvr DB.JSON bkup && restore optnz,xport a8:aucolr(auto $auth) && mk empty d8colr() auto now-d8,then back here colr rest of help more,mv2 a8;
 use strict;use warnings;use utf8;use v5.10;use Octology::a8;my $d8VS='H8SM0gdc'; # my priv8servr dir is:~/.steam/steam/steamapps/common/Screeps/server/
 open my $out8,'>&',STDOUT or die "Can't open  duplic8 STDOUT handle: $!";binmode $out8,':encoding(UTF-8)'; # crE8 local duplic8 of global
 my $argz='';$argz= join(' ',@ARGV) if( @ARGV);$argz='l' unless(length($argz)  && $argz=~ /[hslarpj]/i); # may want2 Dcode UTF-8 from ARGV l8r 4diverse input

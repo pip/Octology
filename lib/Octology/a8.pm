@@ -49,7 +49,7 @@ our @EXPORT= qw(bfr8colr b8colr d8colr dur8colr    d8cs @d8cl  chti  c8fn     S2
     $z    $k    $r    $o    $y    $g     $c $SKpb    $m    $p    $w  tstc    $K    $R    $O    $Y    $G    $C    $B    $M    $P    $W    %p622 %p222
  $tnhf $ucdf  spff  spfd  spfX   shfl  reso $auth %cmsp %p8k2 @p82k  chp8     S2f4 c2f4 dm2u cdst %crgb %cbrt @snls @mrls %cdrd %cdrn    %nrgb         gnp8);
  # of 52 posibl sngl-letr var nmz,a8 Xportz 20,$b && $a unavail,so shudB thEs30 lFt4quik shortSt nAmz: 'def hij l n  q stuv x', 'A  DEF HIJ L N  Q STUV X Z'
-our $VERSION='0.0';my  $d8VS='HBBLAPXS';our $auth='PipStuart <Pip@CPAN.Org>'; # above not exporting $b since collidez with sort{$a  <=> $b}
+our $VERSION='0.0';my  $d8VS='HBCLASSY';our $auth='PipStuart <Pip@CPAN.Org>'; # above not exporting $b since collidez with sort{$a  <=> $b}
 our $ucdf= eval('use Color::Similarity::RGB qw(distance);1') || 0; # try2set UseColorDistanceFlag if optional module is available
 our @Monz=qw(January February March   April     May June July   August September October November December);our @Mon=();push(@Mon,substr($_,0,3)) for(@Monz);
 our @Dayz=qw(Sunday  Monday   Tuesday Wednesday Thursday Friday Saturday                                  );our @Day=();push(@Day,substr($_,0,3)) for(@Dayz);
@@ -727,13 +727,14 @@ sub sumb{  my $widt=0;$widt=1 if(exists($ENV{'COLUMNS'}) && $ENV{'COLUMNS'} >= 1
   my @bfls= split(/\n/,`ls $ENV{'HOME'}/bin`) if( exists($ENV{'HOME'}) && -d "$ENV{'HOME'}/bin"); # make BinFileLiSt              # 'char'=>6,'rot'=>5,
      @bfls= split(/\n/,`ls   /usr/local/bin`) if(!exists($ENV{'HOME'}) && -d   "/usr/local/bin"); # make BinFileLiSt fallback if no ~/bin to /usr/local instead
   my %bfst=( # BinFileSummaryText
+    '2psf'     => "f8  converter from .f0nt plain-text format to the .psf binary format   ",
     '8ct'      => "a8 *ColrTest of all 4 b8 and d8 orient8ions for sequence comparison    ",
     '8trm'     => "c8  applic8ion like a TeRMinal   (a fancy slow SDL backtick wrapper)   ", # mAB add 8trm features to GnomTerm source instead of SDL App
     'a8'       => "a8  new d8a object representing ~/.Hrc with printing out like `lodH`   ", # fix 2 fully load obj && output same as lodH
-    'b10'      => "b8  converter from base-64 number-strings  to    base-10 (decimal)     ",
-    'b110'     => "b8  converter from base128 number-strings  to    base-10 (decimal)     ", # rEnAmd from orig `bb10`
+    'b10'      => "b8  converter from base-64 number-strings  to 0-9 base-10 (decimal)    ",
+    'b110'     => "b8  converter from base128 number-strings  to 0-9 base-10 (decimal)    ", # rEnAmd from orig `bb10`
     'b128'     => "b8  converter from base-10 to base-128    (Chess and Cards in UTF-8)   ", # rEtIr b128 b110 ocT deC&&Use b8 nstd?
-    'b210'     => "b8  converter from base256 number-strings  to    base-10 (decimal)     ",
+    'b210'     => "b8  converter from base256 number-strings  to 0-9 base-10 (decimal)    ",
     'b256'     => "b8  converter from base-10 to base-256    (128 plus common in UTF-8)   ",
     'b64'      => "b8  converter from base-10  digit-strings  to base-64 number-strings   ",
     'b8'       => "b8  converter that tries to auto-detect intended number base (M:B:C)   ",
@@ -759,8 +760,8 @@ sub sumb{  my $widt=0;$widt=1 if(exists($ENV{'COLUMNS'}) && $ENV{'COLUMNS'} >= 1
     'd8colr'   => "a8  colorizer for d8 (Date and Time) stamps    (Left -to-Right 4wrd)   ",
     'd8g'      => "d8  DateTime stamp utility for heading up e-mail with Gerry (my Dad)   ",
     'd8ok'     => "c8  Curses::Simp text-mode clOcK with varying speeds and meter bars    ",
-    'dec'      => "b8  converter from HEXadecimal (base-16)   to    decimal (base-10)     ",
-    'deC'      => "b8  converter from ocTal       (base- 8)   to    deCimal (base-10)     ",
+    'dec'      => "b8  converter from HEXadecimal (base-16)   to 0-9 decimal (base-10)    ",
+    'deC'      => "b8  converter from ocTal [0-7] (base- 8)   to 0-9 deCimal (base-10)    ",
     'dic'      => "b8  wrapper for `dict`(ionary) command  (like piping thru `colorit`)   ",
     'die8'     => "c8  pretty terse dice-rolling  utility (similar to HTTP://Rolz.Org )   ",
     'dm2u'     => "a8 *converter of Dos or Mac line-ends to Unix  (-s double to Single)   ",
@@ -768,11 +769,10 @@ sub sumb{  my $widt=0;$widt=1 if(exists($ENV{'COLUMNS'}) && $ENV{'COLUMNS'} >= 1
     'dur8colr' => "a8  colorizer for d8 dur8(ion) time-spans      (Right-to-Left  Bkwd)   ",
     'e'        => "Utl EDITOR wrapper which includes fragile old package templ8 system    ", # mAB rEwrIt most useful behavior as new cleaner U8:e
     'etfp'     => "f8 *actual binary executable to  gET or sET  console Fonts and Pal8s   ",
-    'f0nt2psf' => "f8  converter from .f0nt plain-text format to the .psf binary format   ",
     'fact'     => "b8  FACTorial calcul8or multiplying number down to 1 (was in `choo`)   ",
     'fibo'     => "b8  FIBOnacci sequence element calcul8or when given a decimal index    ",
-    'frip'     => "    NotYetInModule,`flac`Free lossless CD audio 'RIPper' (extractor)   ",
-    'ftst'     => "a8 *colorful listing through all available Perl File-TeST conditions   ",
+    'frip'     => "    NotYetInModule,`flac` Free Lossless Audio CD 'RIPper'(extractor)   ",
+    'ftst'     => "a8 *colorful listing of Perl File-TeSTs (and backslash escape codes)   ",
     'g3'       => "    NotYetInModule,`gst123`Expect wrapper which reformats and colors   ",
     'g8'       => "    NotYetInModule,`git`wrapper to match long commands and cnv .bak/   ",
    #'gnp8'     => "a8  GeNer8 full 256-pal8 color blocks by 4 planes of 4 shifts of 16    ", # mAB these colr pal8 blox shud B new optnz for tstc or tsgr nstd
@@ -782,16 +782,16 @@ sub sumb{  my $widt=0;$widt=1 if(exists($ENV{'COLUMNS'}) && $ENV{'COLUMNS'} >= 1
     'lsd8'     => "d8  highly reformatted `ls -l`  (for file-system stamps as d8 codes)   ",
     'lrc'      => "a8 *utility 2 gener8 ~/.lsrc file from ~/.lrc format (for LS_COLORS)   ",
     'mix8'     => "    NotYetInModule,started a PulseAudio C::S mixer (like pmix/aumix)   ", # flesh out commandz && CLI before bilding new Curses interface
-    'ocT'      => "b8  converter from deCimal     (base-10)   to    ocTal   (base- 8)     ",
+    'ocT'      => "b8  converter from deCimal 0-9 (base-10)   to ocTal [0-7] (base- 8)    ",
    #'oupd'     => "a8  ~/dvl/t8/Octl/Octology/ dir UPD8d with l8st files from my ~/ dir   ", # this is too fragile to include in t8/Octl/Octology/.git yet
     'pakr'     => "    NotYetInModule,PackRube Rubik's Cube format converter (in`qbix`)   ", # add standRd Singmaster not8ion conversion && mAB put in b8.pm
     'pal8'     => "f8 *utility 2 modify 16-color palettes in either terminal or console   ", # ad suport4 b256 24bit colrz,8pal8z,&&remapngz
-   # pimp cryptic name:Pips Intergallactive Moosex Plaqueluster
+   # pimp's cryptic original name was:Pips Intergallactive Moosex Plaqueluster
     'pimp'     => "    NotYetInModule,PipsInteractiveMusicPlaylister C::S shuffle audio   ", # mAB rEtIr sinc g3 is alreD gr8 (but consider rand playlistz)
     'pm2x'     => "a8  Pal8 Map to eXtended (based on Color::Similarity::RGB->distance)   ", # add optz2gNr8 clOsSt 8pal8z 3mor tImz2filup all xtrm256colrz
     'pmix'     => "c8  Curses::Simp /dev/mixer manipul8ion utility  (not used by Pulse)   ", # mAB rEtIr aftr mix8 good sinc Pulse proly fUtur
     'prym'     => "c8  Curses::Simp prime-number gener8ion screensaver (old && broken!)   ", # port to prim as new CLI && Curses IF
-    'psf2f0nt' => "f8  converter from the .psf binary format to .f0nt plain-text format   ",
+    'psf2'     => "f8  converter from the .psf binary format to .f0nt plain-text format   ",
     'pt'       => "Time::PT *for original PipTime module (as precursor to Octology::d8)   ",
     'ptcnv'    => "d8  CoNVerter from `pt` to new `d8` format   (inserting likely zone)   ", # mAB slurp ptold in as optn,in case future autOcnv nEded
     'ptold'    => "Time::PT  original 5-character PipTime utility from before March2006   ", # mAB rEtIr or fold code in2ptcnv?
@@ -810,11 +810,11 @@ sub sumb{  my $widt=0;$widt=1 if(exists($ENV{'COLUMNS'}) && $ENV{'COLUMNS'} >= 1
     'sum8'     => "b8  SUM8ion function adding num down to 1 (actually just multiplies)   ",
     'sumb'     => "a8 *SUMmarize all known files in ~/bin/ colorfully  (displaying now)   ",
    #'supd'     => "a8 *Screeps scripts UPD8d into local ~/.config/ directory for client   ",
-    'tiglet'   => "f8  basic interactive selection of desired `figlet` fonts and text     ", # proly rEwrIt with Curses IF as 8let with d8colr ability
+    'flet'     => "f8  basic interactive selection of desired `figlet` Font LETter text   ", # proly rEwrIt with Curses IF as 8let with d8colr ability
     'tsgr'     => "c8  Test SelectGraphicRendition escapes && xterm-256color Blocks(-b)   ", # mAB shud mv2 a8 lIk tstc?
     'tstc'     => "a8 *TeST eScapes `S` of c8 `c` format for pal8 colors and attributes   ", # mAB fold in2 tsgr && mv latr2 a8,or mk -blox in tstc?
    #'tstn'     => "p8  TeST Navig8ion of A* paths thru HTTPS://Screeps.Com room map d8a   ",
-    'U2b2'     => "U8  download from YouTube just audio in high-quality  (2 auto-best?)   ",
+    'U2b2'     => "U8  download from YouTube just audio in high-quality (2to auto-best)   ",
     'U2b3'     => "U8  download from YouTube just audio in mp3 format  (usu.transcoded)   ", # proly transcOded NEwA
     'U2b4'     => "U8  reformat 're4mat' name of a downloaded U2b file to align fields    ",
     'U2b8'     => "U8  download from YouTube a normal video file  (in default 1280x720)   ",
@@ -822,13 +822,13 @@ sub sumb{  my $widt=0;$widt=1 if(exists($ENV{'COLUMNS'}) && $ENV{'COLUMNS'} >= 1
     'UTF8'     => "U8 *wide printing of most UTF-8 (or ASCII) chars to index (or range)   ", # mAB add more sets of logical blocks && colr b8 char-sets
     'w8'       => "d8 *wait a dur8(ion) like '3U' as 3.5seconds or '2qm' as 2.88minutes   ",
     'wdht'     => "c8  Curses::Simp utility showing resizing terminal WiDth and HeighT    ",
-    'xbcmprs'  => "m8  XML Binary CoMPReSs utility  (give an .xml file to    make .xtb)   ", # mAB rEtIr XML cmprs && xpnd utilz since so rarely nEded
-    'xbxpnd'   => "m8  XML Binary  eXPaND  utility  (give an .xtb file to restore .xml)   ", # shud colr fIl XtNsionz
-    'xcmprs'   => "m8  XML  text  CoMPReSs utility  (yields smaller.xml with same tree)   ",
-    'xmlstrip' => "m8  XML strip   all   mixed-node whitespace utility (from XML::Tidy)   ",
-    'xmltidy'  => "m8  XML Tidy to insert indenting whitespace by node nesting depth      ",
-    'xx'       => "c8  XxX square teXt eXpansion utility   (scaling with 8trm overdraw)   ", # mAB add reverse oper8ion with scaling back down4neg8iv option
-    'xxpnd'    => "m8  XML  text   eXPaND  utility  (restores orig .xml before`xcmprs`)   ",);
+    'xstrp'    => "m8  XML STRiP   all   mixed-node whitespace utility (from XML::Tidy)   ",
+    'xtidy'    => "m8  XML::Tidy  inserts indenting whitespace for node nesting depths    ",
+    'xbc'      => "m8  XML Binary Compress utility  (give an .xml file to    make .xtb)   ", # mAB rEtIr XML cmprs && xpnd utilz since so rarely nEded
+    'xbx'      => "m8  XML Binary  eXpand  utility  (give an .xtb file to restore .xml)   ", # shud colr fIl XtNsionz
+    'xtc'      => "m8  XML  Text  Compress utility  (yields smaller.xml with same tree)   ",
+    'xtx'      => "m8  XML  Text   eXpand  utility  (restores orig .xml of before`xtc`)   ",
+    'xx'       => "c8  XxX square teXt eXpansion utility   (scaling with 8trm overdraw)   ",); # mAB add reverse oper8ion with scaling back down4neg8iv option
 # HB4M6rF8:moved old ~/bin/tst ~/bin/.tst to hide it away from sumb && my t8/Octl/Octology/.git repo so scrnshotz can seem more similar && added w8 2 rebalance
 #   'tst'      => "    directory where I experiment with new candid8 binary executables   ", # hid this directory as ~/bin/.tst/ instead of handling special -d
 # HB1MFGao:made asci alias to new U8:UTF8;
@@ -877,12 +877,12 @@ sub sumb{  my $widt=0;$widt=1 if(exists($ENV{'COLUMNS'}) && $ENV{'COLUMNS'} >= 1
   'EDITOR'=>'Un','LS_COLORS'=>'Yn','bin'=>'F:B','\.bak'=>'F:B','\.Hrc'=>'F:M','\.psf'=>'F:M','\.f0nt'=>'Cg','\.xml'=>'ob','\.xtb'=>'F:B', # SKpspecialz
       'down'=>'F:U','SKpz'=>'F:7',   '!' =>'Fk','HTTP'=>'F:H','Rolz'=>'F:M','Org'=>'F:X','gst123'=>'F:G','git'=>'F:G','kpcli'=>'F:G','YouTube'=>'5r',
       'load'=>'F:5','cRdz'=>'Cc','Chess'=>'Ww','base'=>'F:X', 'UTF'=>'Gb','SDL'=>'SN',   'pmix'=>'F:G','aumix'=>'F:G', 'time'=>'F:F',    'U2b'=>'5r',
-      'Perl'=>'Cb' ,'vim' =>'Vb','Unix' =>'Xb',                                                                                  }, # mAB squEz all fIlz into
+      'Perl'=>'Cb' ,'vim' =>'Vb','Unix' =>'Xb','text'=>'F:F',                                                                    }, # mAB squEz all fIlz into
                             'base'=>{' 8'=>'ok','16'=>'5r','64'=>'Ac','128'=>'Cb','256'=>'Md','10'=>'Fn','dec'=>'Fn','ocT'=>'ok',}, #   betr vertical column?
                             'colr'=>{'L' =>'Xg','R' =>'Rw', '4'=>'Aq', 'B'=>'M0', '2'=>'F:V',                                    },
   # mAB2du:bSt2 bg hIlI all -flgz nXt,thN!alreD '8'z Xplicitly;
-                            'b64r'=>{'\['=>'Xw','-'=>'pk','0'=>'ob','9'=>'pb','A'=>'gb','Z'=>'Fb','\.'=>'Wb','_'=>'Ub',          }, # rEmMbr2ignorthiswhol tkey
-                            'xmlt'=>{'text'=>'F:R','Binary'=>'F:B','CoMPReSs'=>'F:C','eXPaND'=>'F:Y','whitespace'=>'F:W',        },
+                            'b64r'=>{'\['=>'Xw','-'=>'pk','0'=>'ob','9'=>'pb','A'=>'gb','Z'=>'Fb','\.'=>'Wb','_'=>'Ub','7'=>'Ub',}, # rEmMbr2ignorthiswhol tkey
+                            'xmlt'=>{'Text'=>'F:R','Binary'=>'F:B','Compress'=>'F:C','eXpand'=>'F:Y','whitespace'=>'F:W',        },
                             'd8fz'=>{'Year'=>'Fb','Month'=>'ob','Day'=>'Yb',  'displaying'=>'HARL','now'=>'HIRK', # try2 bLinK summary of sumb itself
                                      '2006'=>'Fb','March'=>'ob','zone'=>'Gb','week'=>'ok',                                       },);
   my $i;my $j="$z$SKp1".'m'; # Jump_bak2zero_bold
@@ -929,6 +929,9 @@ sub sumb{  my $widt=0;$widt=1 if(exists($ENV{'COLUMNS'}) && $ENV{'COLUMNS'} >= 1
         $s=S($bftc{'b64r'}{ '_'});
         $bfst{ $bfls[$bfle - $_]}=~ s/(\/)(\[)(0)(-)(9)(\])(\+\/)/$1$d$2$f$3$e$4$h$5$d$6$i$7/x; # just co?ma regXz stRtd as basic 2pal8, mAB nEd pRam shft BlO?
         $bfst{ $bfls[$bfle - $_]}=~ s/ \/ (\[)(A)(-)(Z)(\.)(_)(0)(-)(9)\]\+\//\/$d$1$l$2$e$3$n$4$q$5$s$6$f$7$e$8$h$9$d\]$i+\//x; # 1st9duz!capture clos braket
+        $bfst{ $bfls[$bfle - $_]}=~ s/    (\s)(0)(-)(9)(\s)      /$1$f$2$e$3$h$4$i$5/x; # just get non-regex non-bracketed decimal rangez too
+        $h=S($bftc{'b64r'}{ '7'});
+        $bfst{ $bfls[$bfle - $_]}=~ s/(\s)(\[)(0)(-)(7)(\])(\s  )/$1$d$2$f$3$e$4$h$5$d$6$i$7/x; # then [0-7] ocT rangez enclosed
         $h=S($bftc{'file'}{'cf'});
         $l=S($bftc{'file'}{'`' });
         $bfst{ $bfls[$bfle - $_]}=~ s/(`)([^`]+)(`)/$l$1$h$2$l$3$i/g; # Xplicitly do baktikd CommandFile 2gether 1st (Cmz2wrk wL)

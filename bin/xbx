@@ -1,5 +1,5 @@
 #!/usr/bin/perl
-# 61TJDWCR:xxpnd crE8d by PipStuart <Pip@CPAN.Org> to expand() previously compress()ed XML documents.
+# 61TJDaMS:xbx crE8d by PipStuart <Pip@CPAN.Org> to bexpand() previously bcompress()ed files back into normal XML documents.
 # The accepted parameters to this script are:
 #    input_filename
 #   output_filename   (optional)
@@ -7,5 +7,7 @@
 #   `perldoc XML::Tidy` from the command-line for further documentation.
 # This code is licensed under the GNU General Public License version 3+.
 use strict;use warnings;use XML::Tidy;
-my $flnm = shift() || die "USAGE: `$0 FileName.xml <OutputFileName>`\n";
-my $ofln = shift() || $flnm;my $tidy = XML::Tidy->new($flnm);$tidy->expand();$tidy->write($ofln);
+my $flnm = shift() || die "USAGE: `$0 FileName.xtb <OutputFileName>`\n";
+my $ofln = shift();my $tidy = XML::Tidy->bexpand($flnm);
+if(defined($ofln)){   $tidy->write($ofln);}
+else              {   $tidy->write();     }

@@ -1,12 +1,13 @@
 #!/usr/bin/perl
-# 62DJM1iM:xmlstrip crE8d by PipStuart <Pip@CPAN.Org> to strip() out all the element indenting from XML documents.
+# 61TJDCfN:xtc crE8d by PipStuart <Pip@CPAN.Org> to compress() XML documents.
 # The accepted parameters to this script are:
-#    input_filename
-#   output_filename   (optional)
+#      input_filename
+#     output_filename   (optional)
+#   compress_settings   (optional)
 # This utility is part of the XML::Tidy Perl Module. Please run
 #   `perldoc XML::Tidy` from the command-line for further documentation.
 # This code is licensed under the GNU General Public License version 3+.
 use strict;use warnings;use XML::Tidy;
 my $flnm = shift() || die "USAGE: `$0 FileName.xml <OutputFileName>`\n";
 my $ofln = shift() || $flnm;my $tidy = XML::Tidy->new($flnm);
-                               $tidy->strip(shift());$tidy->write($ofln);
+                               $tidy->compress(shift());$tidy->write($ofln);

@@ -1,5 +1,5 @@
 #!/usr/bin/perl
-# 61TJDXae:xbcmprs crE8d by PipStuart <Pip@CPAN.Org> to bcompress() XML documents into a binary representation.
+# 61TJDXae:xbc crE8d by PipStuart <Pip@CPAN.Org> to bcompress() XML documents into a binary represent8ion.
 # The accepted parameters to this script are:
 #    input_filename
 #   output_filename   (optional)
