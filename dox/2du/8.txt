@@ -1,5 +1,5 @@
 # D6RMF1V1:8.txt - by8π : JAPH : K3wlD00d : 1337H4xr : PipStuart's Octology (hopefully eventually an Ontology of 8) - Convention, Conversion, && Categoriz8ion:
-# $VERSION='0.0';$d8VS='HB3MJYEA'; # Octology attempts to rel8 the universe through medit8ion on mnemonic abbreV8ion (via 8-based  limit8ion) &&    elucid8ion.
+# $VERSION='0.0';$d8VS='HBALISAG'; # Octology attempts to rel8 the universe through medit8ion on mnemonic abbreV8ion (via 8-based  limit8ion) &&    elucid8ion.
 # CEBBICTI:Crossing Every Bridge Before I Come To It? I.e., not a d8 stamp. Trying to make my Dad's birthday (August 8th) more special by thinking 2far ahead?
 # Octology intends to pursue implic8ion && ramific8ion as substantE8ion for adequ8 particip8ion, if not also 2 oblig8ion toward implement8ion &&   promulg8ion.
 # Conceptually, Octology is a system that st8s that every organiz8ional principle is valuable, but 8 tends to be a useful starting place for valuable d8a sets.
@@ -121,7 +121,6 @@ compartmentaliz8ion
      standardiz8ion:tools to valid8 applic8ion compliance against best development standards or to facilit8 submitting innov8ions as candid8s for new standards
        normaliz8ion:maybe basic 2D/3D tools to gener8 normal vectors or m8rices for use in comput8ions of geometry visibility or illumin8ion techniques
        formaliz8ion
-       rasteriz8ion
       transform8ion
          transl8   :tools to convert spoken languages with segment8ions design8d along figur8ive versus literal (BavL? Note: BavL is Hebrew for "g8 of God")
 internationaliz8ion:tools to transl8 for I18N the document8ion && applic8ion interface dialogs with prioritiz8ion for most valuable tools && desired languages
@@ -130,8 +129,7 @@ internationaliz8ion:tools to transl8 for I18N the document8ion && applic8ion int
         vocaliz8ion:or8/dict8 audio recording && cataloging (could also be audible comment8 submissions that align over existing media like DVD commentary)
           enunC8   :emphasis on clear vocaliz8ions which distinguish syllables well
         pronunC8ion
-            col8   :Col8 On Layer 8, A.K.A. FSCK (FsckSlayerCursesKing), my layered Curses::Simp system for aligned arrays representing generally textual d8a
-           coll8   :compare st8s && texts critically or general sequence editor (maybe double-consonant precursor to 8 in names should usually be collapsed?)
+           coll8   :compare st8s && texts critically or general sequence editor (double-consonant precursor to 8 in names should usually persist for clarity)
        serializ8ion
      stringific8ion:overloaded method by which Perl turns objects into string forms (used configurably by b8 && d8 in particular)
          corrug8   :tool to fold other d8a into parallel ridges (i.e., rows && columns forming m8rices)
@@ -139,7 +137,9 @@ internationaliz8ion:tools to transl8 for I18N the document8ion && applic8ion int
            port8   :not erect but diagonal
             raD8   :general circular d8a manager && radial d8a selection && modific8ion interface (also useful for d8ok), with pronunC8ion also like "r88"
          circul8
+      centraliz8ion
             stL8
+           palm8   :shaped like hand with raD8ing fingers, or three toes connected by thin web in feet of water birds (was ricinolE8 salt of palmic acid)
            eman8
        dissemin8
         continU8   :general extension tool
@@ -152,6 +152,8 @@ internationaliz8ion:tools to transl8 for I18N the document8ion && applic8ion int
           color8
         coloriz8ion
      personaliz8ion
+       rasteriz8ion
+          pixel8   :dividing an image into pixels (typically for digital display or storage), or enlargement revealing pixel details, or disguise method
        configur8   :specialized system .conf manager && editor as file-management && templ8 gener8ion compartmentaliz8ion of administr8ion tools
            oper8   :OperatingSystem manager or forum oversight Operator status or VOIP like telephone Operator or medical procedure Operation tracker?
          calibr8   :system monitoring && tuning
@@ -159,7 +161,6 @@ internationaliz8ion:tools to transl8 for I18N the document8ion && applic8ion int
       implement8ion:software details pertaining to particular applic8ion functionality
       virtualiz8ion:Virtual Machine manager (HyperVisor stuff)
         reticul8   :network         manager
-              N8   :pronunC8ion as "innate", to be a succinct primary general d8a-set manager
            sepR8
           alien8
            isol8
@@ -299,6 +300,8 @@ internationaliz8ion:tools to transl8 for I18N the document8ion && applic8ion int
         equivoc8
          affect8ion
          machin8ion
+      politiciz8ion
+     democratiz8ion
              sN8
           feder8
         urbaniz8ion:Baudrillard's 4th phenomenon in Simulacra && Simul8ion (also in 1st m8rix movie) that sepR8s humans so far from reality to cause alien8ion
@@ -456,10 +459,6 @@ internationaliz8ion:tools to transl8 for I18N the document8ion && applic8ion int
        extrapol8
           corrL8
            caus8ion
-     proportion8
-  disproportion8
-    incommensur8
-      commensur8
        importun8
        intemper8
       extortion8
@@ -469,13 +468,11 @@ internationaliz8ion:tools to transl8 for I18N the document8ion && applic8ion int
      indetermin8
        determin8
        determin8ion
-        unhesit8ing
           hesit8
          specul8
        contempl8
-     underestim8   :just obvious qualific8ions of estim8
+         permut8   :maybe some kind of math game designed with Danny && his GNU bool2 project, Boolean Algebras, good automorphisms, Group Theory, etc.
           estim8
-      overestim8
          postul8   :math, philosophy, etc. proof specific8ion && evalU8ion tool
        approxim8
         anticip8   :prediction && aw8ing outcomes with b8d breath (like hopefully someday a growing user-base eager for next major release of Octology upd8s)
@@ -538,6 +535,7 @@ internationaliz8ion:tools to transl8 for I18N the document8ion && applic8ion int
        hallucin8   :maybe aggreg8 research regarding mental illnesses && extreme sleep depriv8ion, DMT, LSD, THC, && mushroom impacts, UFO sightings, etc.
         intoxic8   :alcohol drinking && other impairment games && tests that can priv8ly record, measure, graph, && corrL8 dexterity && other deterior8ion
          inebrE8
+          pixil8d
             lib8ion:bartending tool
         ferment8ion:home-brew  tool
        regurgit8   :recommended techniques for triggering someone to puke up ingested poisons or potential overdoses of swallowed medic8ions (like charcoal?)
@@ -615,6 +613,7 @@ internationaliz8ion:tools to transl8 for I18N the document8ion && applic8ion int
             tom8o
        pomegran8
         preserv8ion
+        conserv8ion
               f8ful
               f8h  :"faith" religion, myths, miracles, && other supernatural belief-rel8d stuff which should probably be refuted && deb8d on basis of evidence
               f8hful
@@ -706,7 +705,7 @@ internationaliz8ion:tools to transl8 for I18N the document8ion && applic8ion int
          integr8   :general merging or calculus && advanced math visualiz8ion && manipul8ion tool
           deriv8
      differentE8
-          abber8ion
+          aberr8ion
          edific8ion:general structural building tool for designing maybe homes, offices, or other edifices (or illustr8ion and explan8ion toward educ8ion?)
             bov8   :ancient land measurement roughly equivalent to 15 acres
               b8   :scarce resource diminishment manager (or fishing "bait" tool?), or main Octology::b8 Base-transl8 && general math objects && utilities
@@ -718,7 +717,8 @@ internationaliz8ion:tools to transl8 for I18N the document8ion && applic8ion int
             vol8ile
           deton8
          fulmin8
-            ceS8ion
+             cS8ion:"cessation" with a bit of an awkward abbreV8d double-consonant into UpperCase syllable spelling
+       persever8   :repeating a response after cS8ion of the original stimulus (from Psychology)
       incapacit8
         capacit8
          substr8   :integr8d circuit tool
@@ -771,6 +771,7 @@ internationaliz8ion:tools to transl8 for I18N the document8ion && applic8ion int
              mL8
          mellit8
             mor8
+       ricinolE8   :salt of ricinoleic acid (formerly called palm8 of palmic acid)
            acer8   :aceric acid with salifiable base or long, narrow, pointed needle
           arist8   :having a slender, sharp, or spinelike tip (from Zoology)
            hast8   :having a triangular spearhead-shaped point of a leaf
@@ -833,7 +834,6 @@ internationaliz8ion:tools to transl8 for I18N the document8ion && applic8ion int
         exasper8
          infurE8
          indign8ion
-      disapprob8ion
          humilE8
          subjug8
        subordin8
@@ -893,13 +893,31 @@ internationaliz8ion:tools to transl8 for I18N the document8ion && applic8ion int
               y8   :"yate" is an obsolete term for gate
 
 # above are my 888 current favorite 8-words that I'd most like to consider developing into distinct applic8ions (or component specializ8ions && fE8ures)
-# here are candid8 words to next consider replacing others above with, or to just store away with all the others further below that have been cut so far
-         permut8
-       persever8
-      politiciz8ion
-   democraticiz8ion
-        conserv8ive
+# here are candid8 words (if any) to next contempl8 for replacing others above with, or to store with all others further below that have been cut so far
+        conturb8ion:agit8ion, trepid8ion, or vex8ion
+        perturb8ion
+        flutter8ion
+        tumultu8ion
 # below are the additional possible 8-words I've cut, often due to conceptual similarity to existing entries or to unify more around typical pronunC8ion
+             pN8   :winged or plume-shaped, same as "pinn8" (from Botany)
+            jug8d  :coupled together                        (from Botany)
+          bijug8   :having two pairs, as of leaflets        (from Botany)
+        bigemin8
+        ingemin8
+          gemin8   :in pairs or twains, two together, twin  (from Botany)
+          divag8   :deV8 (5 synonyms from divag8 to peregrin8)
+        divaric8
+        exorbit8
+         pererr8
+       peregrin8
+     underestim8   :these are just obvious conjug8ions which probably don't warrant their own sepR8d applic8ion name
+      overestim8
+     proportion8
+  disproportion8
+      disapprob8ion
+        unhesit8ing
+    incommensur8
+      commensur8
         inordin8
         inaccur8
           accur8
@@ -907,12 +925,14 @@ internationaliz8ion:tools to transl8 for I18N the document8ion && applic8ion int
         inadequ8
       unregener8
         regener8   :also just redo gener8ion of some d8a or file from a chosen templ8 (with better ending "ate" pronunC8ion)
+        immoder8
+        immacul8
           delic8
         effemin8
          mascul8
           celib8
-        immacul8
-        immoder8
+            col8   :Col8 On Layer 8, A.K.A. FSCK (FsckSlayerCursesKing), my layered Curses::Simp system for aligned arrays representing generally textual d8a
+              N8   :pronunC8ion as "innate", to be a succinct primary general d8a-set manager (probably cut because pronunC8ion && spelling are too far off)
             NfN8           :Infinite followable inter-connections between 8d8a (as part of 8b8a?), likely with some possible mapping to any complete unific8ion
              DN8           :DNA genome sequencer/modeler && maybe protein-folding game
        UnitedSt8s          :USA d8a, maps, details, history, etc.
@@ -3614,5 +3634,20 @@ HARMFoXY:Registered 'PipStuart' on Minds.Com && Gab.AI today. Both seem to conta
 voices join l8r too. I'm skeptical of doxxing site (SocialAutopsy) starter CandaceOwens who seems to have lied several times, so maybe she is also not genuine
 on her RedPillBlack U2b channel (but I'm still subscribed). I also edited down two silly long comments (removing 8.txt link) from RedHeadRedemption's videos;
 HB5L7cut:My sweet new Wacom Intuos art CrE8ive Pen && Touch tablet came, && I have Gimp && Krita installed on both Akuma && Chun. So now I'm ready to learn how
-to configure buttons && start using it. HTTPS://AskUbuntu.Com/questions/839161/limit-a-graphics-tablet-to-one-monitor mentions `xrandr` which reports my
-displays from left-middle-right are DVI-0, DVI-1, HDMI-0. `xinput` can bind stylus or touch to one display && `xsetwacom` maps buttons with a shell-script;
+to configure buttons && start using it. HTTPS://AskUbuntu.Com/questions/839161/limit-a-graphics-tablet-to-one-monitor mentions `xrandr` which is reporting my
+displays from left-middle-right are DVI-0, DVI-1, HDMI-0. `xinput` can bind just stylus or touch to 1 display && `xsetwacom` maps buttons with a shell-script;
+HBALHbio:Vox has a good new U2b video on "Biomimicry" with shape, process, or ecosystem designs. Also MissMisa recommended the gr8 'Just a Robot' U2b channel;
+HBBL28Xs:Several cool Proggit links: HTTPS://Art.PixLab.IO using decision-tree to render images real-time as ASCII-art. Should port it to 8trm colored f0nts.
+HTTPS://GitHub.Com/SSARCandy/Coherent-Line-Drawing is an interesting research technique to analyze images && interactively tune resulting approxim8ion lines.
+HTTP://TechAED.Com/how-to-code-like-the-top-programmers-at-nasa-10-critical-rules is a highly useful, pragmatic, && succinct list for coding securely (in C).
+HTTPS://Gojko.Net/2017/11/07/five-things-about-unicode.html followed familiar d8:3A8 JoelOnSoftware Unicode article with new: 0) Many points are not visible.
+1) Many code points look similar. 2) Normaliz8ion isn't that normal. 3) No rel8ionship between display length && memory size. 4) It is more than passive d8a.
+HTTP://ShapeCatcher.Com (referenced from Gojko) is also a very cool site to study, where you can sketch anything to recognize 11,817 possible glyphs against.
+I'm thinking it good to start sepR8 8.dic file of all 8-words sorted with autom8d colorable definitions && thesaurus entries to manually tune && explore l8r.
+Maybe all should popul8 like sorted 8-list above preserving indenting for typical 8 && colon columns, then fixed width part-of-speech then definition to 159.
+Retrying the RedHotChiliPeppers logo in ShapeCatcher now yielded (in favorite order):  ⁕ (2055), ❋ (274B), ✳ (2733), ✷ (2737), ✴ (2734), ⵥ (2D65), ⎈ (2388),
+Flower punctuation mark, Heavy eight teardrop-spoked propeller asterisk, Eight spoked asterisk, Eight pointed rectilinear black star, Eight pointed black star,
+Tifinagh letter yazz, Helm symbol. All results were pretty close to matching my drawing, but many only had six points so I didn't include them in this list.
+From H4x0rNews.YCombin8or, HTTPS://8th-Dev.Com seems compelling to study && learn from for cross-platform initially, but it gets ripped apart in the comments;
+HBBLID8a:Proggit had so-so Python HTTPS://Mubaris.Com/2017-11-11/dataviz-mastery-part2 on WordClouds && Part1 on TreeMaps, to l8r code as interactive in Perl.
+Reddit GameDev had 56 awesome anim8d PixelArt tutorials at HTTPS://ImgUR.Com/gallery/tFxyX with some overlap on HTTP://Blog.StudioMiniBoss.Com/pixelart too;

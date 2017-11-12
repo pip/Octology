@@ -47,7 +47,7 @@
 use strict;use warnings;use utf8;use v5.10;use Encode;
 use Octology::a8;
 use Octology::b8;
-use Octology::d8;my $VERSION='0.0';my $d8VS='GC8LFBlk';my $name=$0;$name =~ s/^.*\///;my $Dbug=0; # version,program name
+use Octology::d8;my $VERSION='0.0';my $d8VS='HBBL5erl';my $name=$0;$name =~ s/^.*\///;my $Dbug=0; # version,program name
 open my $out8,'>&',STDOUT or die "Can't open  duplic8 STDOUT handle: $!";binmode $out8,':encoding(UTF-8)';select($out8);$|=1; # crE8 locl autoflush dup of glbl
 if(           @ARGV && $ARGV[0]=~ /^-*h/i){say $out8 " ckm8  - experimental   Curses and SDL Chess program  Vers:$VERSION  d8VS:$d8VS by Auth:$auth
   <pW>v<pK>  sets roster tags for Players White and BlacK and for output filename where pW and pK are single-letter keys in the player registry hash (v optnal)
@@ -83,8 +83,9 @@ my $spnf=1;my $sele=11;my $keey;my @text;my @Fclr;my @bclr; # Show Pc Namez Flag
 my $xscl = 1.0;my $widt =160;if(exists($ENV{'COLUMNS'})){$widt = $ENV{'COLUMNS'};} # SDL X && Y SCaLes rel8ive to inherited text dimensions * 8x16
 my $yscl = 1.0;my $hite = 50;if(exists($ENV{'LINES'}  )){$hite = $ENV{'LINES'}  ;} # default    160x50 => 1280x800 before any scaling
    $xscl = $yscl = 0.88;
-   $xscl =         0.93;
-   $xscl = $yscl = 1.2       if(exists($ENV{'HOSTNAME'}) && length($ENV{'HOSTNAME'}) == 3); # scale Dflt down a little for laptopz && up a little for desktopz
+   $xscl =         0.93; # was scaling both by 1.2 below, before reverted to normal just 1.0
+   $xscl = $yscl = 1.0       if(exists($ENV{'HOSTNAME'}) && length($ENV{'HOSTNAME'}) == 3); # scale Dflt down a little for laptopz && up a little for desktopz
+                         #   if(exists($ENV{'HOSTNAME'}) &&     lc($ENV{'HOSTNAME'}) eq 'aku'){$xscl=1.2609375;$yscl=1.1275;} # 1280x800 2 1614x902 lIkGnomTrmz
 # ($ucsf,$widt,$hite,$xscl,$yscl)=(0, 80, 25,  2,  2); # uncomment to    double pixel scale for  80x25 => 1280x800 similar to SVGA && below Mode13
 # ($ucsf,$widt,$hite,$xscl,$yscl)=(0, 40, 12,  4,  4); # uncomment to quadruple pixel scale for  40x12 => 1280x768 nd2allow 12.5 chars for last 32 pixel rows
 # ($ucsf,$widt,$hite,$xscl,$yscl)=(0,320,100,0.6,0.6); # uncomment to quadruple tXt dimNsnz for 320x100=> 1280x800 for super tiny text, BlO LoadedLogFileName

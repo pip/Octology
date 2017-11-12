@@ -25,7 +25,7 @@ while  (<$trfh>){if( /^path:(.*)/){$edat{'path'}=$1  ;$edat{'path'}       =~ s/\
               elsif( /^arti:(.*)/){$edat{'arti'}=                          FixxName($1);}
               elsif( /^albm:(.*)/){$edat{'albm'}=                          FixxName($1);}
               elsif(/^(\d+):(.*)/){my    $indx  =$1-1;$edat{'tinf'}[$indx]=FixxName($2);}}
-close    $trfh or die "!*EROR*! Couldn't close TraxFile:$trfn!  $!\n";unlink0($trfh,$trfn)
+close    $trfh or die "!*EROR*! Couldn't close TraxFile:$trfn!  $!\n";unlink($trfh,$trfn)
                or die "!*EROR*! Couldn't unlink file:$trfn safely!\n";
 unless(  exists($edat{'tinf'}) && defined($edat{'tinf'}) && @{$edat{'tinf'}}){
   for(sort(keys(%data))){say  $out8 "keey:$_ => '" . $data{$_} . "'";} die("!*EROR*! No tracks specified! Quitting...\n");}

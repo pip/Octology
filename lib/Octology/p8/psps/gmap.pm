@@ -1,5 +1,6 @@
 # H83M3sV4: Octology::p8::psps::gmap.pm crE8d by PipStuart <Pip@CPAN.Org> as "Pip's Screeps Global Map" to make an object like original JavaScript Game.map;
-# 2du:need2redo wbst2XtNd shrd1 md8a from old 50 out2nw 60,fix lodt to save opn[srt] Open(Shard|Room|Terrain)&&only load if diff&&retn to all othr map queries,
+# 2du:need2redo wbst2XtNd shrd1 md8a from old 50 out2nw 60+ && stRt getng shrd2 out to l8st sizes,
+#   fix lodt to save opn[srt] Open(Shard|Room|Terrain)&&only load if diff&&retn to all othr map queries,
 #   stuD Path::Tiny && use slurp_utf8 to replace poor File::Slurp,
 #   stuD WebAPI && add availability flags,add lbst to load full JSON prv8 terrain d8a read from local db file as altern8ive to ported JS gbst function;
 package     Octology::p8::psps::gmap;
@@ -10,17 +11,17 @@ use         Octology::b8;
 #se         Octology::d8;
 use         Octology::p8::psps::cnst; # import all the Global Constants
 use         Carp; # below mkdir $HOME/lib/Octology/p8/psps/gmap/(\.tmp|simu|prv8|[sp][01][we][sn])/ for 19 dirs:3 solo,Screeps.com orPtr,shrd0or1,&&WS ES WN EN
-my  $VERSION='0.0';my $d8VS='H8SMA8PG';            my $mapd="$ENV{'HOME'}/lib/Octology/p8/psps/gmap";
+my  $VERSION='0.0';my $d8VS='HBBL0Ds2';            my $mapd="$ENV{'HOME'}/lib/Octology/p8/psps/gmap";
 mkdir  ("$ENV{'HOME'}/lib"                 ,0755) unless(-d "$ENV{'HOME'}/lib"                 ); # mk sure proper lib gmap dirz exist
 mkdir  ("$ENV{'HOME'}/lib/Octology"        ,0755) unless(-d "$ENV{'HOME'}/lib/Octology"        ); # betr 2 l8r use auto-mkdir module
 mkdir  ("$ENV{'HOME'}/lib/Octology/p8"     ,0755) unless(-d "$ENV{'HOME'}/lib/Octology/p8"     );
 mkdir  ("$ENV{'HOME'}/lib/Octology/p8/psps",0755) unless(-d "$ENV{'HOME'}/lib/Octology/p8/psps"); # probably all PTR variantz are same
 mkdir  ("$mapd"                            ,0755) unless(-d "$mapd"                            ); #   as live Screeps.com so skip 4now?
-for  my  $mdir (qw(.tmp simu prv8  s0ws s0es s0wn s0en  s1ws s1es s1wn s1en)){ # prv8 is probably all like shrd0, W0N0..W10N10 (until mAB admin map Xpansion?)
+for  my  $mdir (qw(.tmp simu prv8  s0ws s0es s0wn s0en s1ws s1es s1wn s1en s2ws s2es s2wn s2en)){ # prv8 proly lIk s0:W0N0..W10N10 (until mABadmn mapXpnsion?)
   mkdir("$mapd/$mdir"                      ,0755) unless(-d "$mapd/$mdir");}
 my       @atrz=();my        %dvlz=();
 push(    @atrz,'shard'    );$dvlz{$atrz[-1]}={'name'=>'prv8','type'=>'normal','ptr'=>0}; # mAB l8r replace with sepR8 global shard obj queriable thru psps?
-push(    @atrz,'worldSize');$dvlz{$atrz[-1]}={'0'=>202,'1'=>122,'8'=>11}; # these should replace WORLD_(WIDTH|HEIGHT) (odd prv8 only has 0..10 WN so far)
+push(    @atrz,'worldSize');$dvlz{$atrz[-1]}={'0'=>202,'1'=>122,'2'=>22,'8'=>11}; # these shud replac WORLD_(WIDTH|HEIGHT) (odd prv8 only has 0..10 WN sOfR)
 sub atrb{@atrz;} # attribute methods and default values
 sub dval{my($self,$attr)=@_;$dvlz{$attr};} # probably fine that this just returns undef when attr does not exist?
 sub dxtz{my $self=shift(@_);my $rmnm=shift(@_);my @xitz=(undef,undef,undef,undef); # may need2inherit proper server shard info from psps Game obj4map lookup

@@ -23,7 +23,7 @@ use SDLx::App;
 #se SDLx::Text; # also learn TTF && Pango, probably don't need SFont
 use SDLx::Sprite;} $sdlf = 0 if(exists($ENV{'TTY'}) && $ENV{'TTY'}=~ /^\/dev\/tty/); # disAbl SDL whN in fullscrn tXt-mOde acordng2 $TTY (or try `tty`?)
 #ur @EXPORT=  qw(); # mvd only orig Xportz sube && e2c8 over2 a8.pm (&& since renamed e to S for SKp consistency)
-our $VERSION='0.0';my $d8VS='HAPM1CMS';our $auth='PipStuart <Pip@CPAN.Org>';my $name='c8';
+our $VERSION='0.0';my $d8VS='HBBLAPv8';our $auth='PipStuart <Pip@CPAN.Org>';my $name='c8';
 my %GLBL=( # GLOBAL CLASS VARIABLES
   'FLAGOPEN'=> 0); # flag for if SDL window crE8d yet (in Simp was for if a main curses screen had been opened yet)
 #y @DISPSTAK=(); # global stack of crE8d c8 objects for display order
@@ -306,8 +306,8 @@ sub new{my( $nvkr,$ityp,   $idat)=@_;  my $nobj=ref($nvkr); # basically same as 
         #y  $clas=shift; # orig c8 new only shifted clas, but now trying to rip d8::fldz new hoping for file vs. term separ8ion
   my        $self=bless({},$clas);
   for   my  $attr ($self->AttrNamz()){
-    $self->{$attr}=     []                  if($attr =~ /^_(text|[fb](clr|0nt))$/);
-    $self->{$attr}=$self->DfltValu(  $attr) if($attr !~ /^_(text|[fb](clr|0nt))$/); # init Dfaltz (Xcept colIding objX problM hEr wi all base col8 arrayz)
+    $self->{$attr}=     []                  if($attr =~ /^_(text|[Ffb](clr|0nt))$/);
+    $self->{$attr}=$self->DfltValu(  $attr) if($attr !~ /^_(text|[Ffb](clr|0nt))$/); # init Dfaltz (Xcept colIding objX problM hEr wi all base col8 arrayz)
     $self->{$attr}=$nvkr->{$attr} if($nobj);} #  && copy if supposed to
   for(@KMODNAMZ){  $self->{'_kmod'}{$_}=0  ;} shift ; # shed nvkr or clas name B4 looping ky=>vl
   while(@_){my $foun=0;my($keey,$valu)=(shift,shift);
@@ -722,9 +722,9 @@ sub Prnt{my $self=shift;my $ptxt=shift;my $pfcl=shift;my $pbcl=shift;my $pf0n=sh
        defined($pf0n) && length($pf0n)){ # 4 layer params provided so write into object arrays && display
      #($ptxt,$pfcl,$pbcl,$pf0n)=(sS($ptxt),sS($pfcl),sS($pbcl),sS($pf0n)); # strip escapes
       $ptxt=sS($ptxt) if(lc($ptxt) ne 'h'); # sS can also take other flags, so probably need to check && maybe use '--' to flag no more parameter parsing
-      $pfcl=sS($pfcl) if(lc($pfcl) ne 'h');
-      $pbcl=sS($pbcl) if(lc($pbcl) ne 'h');
-      $pf0n=sS($pf0n) if(lc($pf0n) ne 'h'); # strip escapes (if not just Help flag)
+      $pfcl=sS($pfcl) if(lc($pfcl) ne 'h'); # probably also need to specially handle additional CFbsXxfpEedzc flags, require '-' for flags, or only call...
+      $pbcl=sS($pbcl) if(lc($pbcl) ne 'h'); #   ...it here when these already match at least an eScape \e, or some better way to isol8 desired behaviors
+      $pf0n=sS($pf0n) if(lc($pf0n) ne 'h'); # strip escapes (if not just solo 'h' Help flag)
       unless(@{$self->{'_text'}} > $self->{'_ycrs'}){$self->{'_text'}[$self->{'_ycrs'}]=' 'x ($self->{'_xcrs'}); # make sure @text up to cursor defined
                                                      $self->{'_Fclr'}[$self->{'_ycrs'}]='G'x ($self->{'_xcrs'});
                                                      $self->{'_bclr'}[$self->{'_ycrs'}]='k'x ($self->{'_xcrs'});
@@ -923,8 +923,17 @@ sub MkSp{my $spid=shift;$spid=' ' unless(defined($spid) && length($spid)); # Mak
     my @frgb=('_','_','_');$spid=~ s/^(.):/$1W/;$spid=~ s/:(.)$/k$1/;$spid=~ s/:$/t/;
     my @brgb=('_','_','_');#say "spid=$spid=";
     my @spis=split(//,      $spid    ); #"$ltxd[$cndx]$lfcd[$cndx]$lbcd[$cndx]$lfvd[$cndx]" # MaKe a SPrite for the joined col8 layers
-       @frgb=split(//,$pmap{$spis[1]}) if($#spis >= 1 && defined($spis[1]) && exists($pmap{$spis[1]}));for(@frgb){$_=b10($_)*4;}
-       @brgb=split(//,$pmap{$spis[2]}) if($#spis >= 2 && defined($spis[2]) && exists($pmap{$spis[2]}));for(@brgb){$_=b10($_)*4;}
+      #@frgb=split(//,$pmap{$spis[1]}) if($#spis >= 1 && defined($spis[1]) && exists($pmap{$spis[1]}));for(@frgb){$_=b10($_)*4;}
+      #@brgb=split(//,$pmap{$spis[2]}) if($#spis >= 2 && defined($spis[2]) && exists($pmap{$spis[2]}));for(@brgb){$_=b10($_)*4;}
+       @frgb=@brgb=(255,255,255); # try to load at least first 8pal8 plane from a8 map instead of old b64 RGB pmap set, but will still need new layer for DALOH
+    if($#spis >= 1 && defined($spis[1]) && exists($p8k2{'F'}{$spis[1]})){
+      $frgb[0]=hex(substr($x256[$p8k2{'F'}{$spis[1]}],0,2));
+      $frgb[1]=hex(substr($x256[$p8k2{'F'}{$spis[1]}],2,2));
+      $frgb[2]=hex(substr($x256[$p8k2{'F'}{$spis[1]}],4,2)); }
+    if($#spis >= 2 && defined($spis[2]) && exists($p8k2{'F'}{$spis[2]})){
+      $brgb[0]=hex(substr($x256[$p8k2{'F'}{$spis[2]}],0,2));
+      $brgb[1]=hex(substr($x256[$p8k2{'F'}{$spis[2]}],2,2));
+      $brgb[2]=hex(substr($x256[$p8k2{'F'}{$spis[2]}],4,2)); }
     $spis[3]='t'                   unless($#spis >= 3 && defined($spis[3]) && exists($GLBL{'_f8om'}{$spis[3]}));
     $GLBL{'_sprm'}{$spid}=  SDLx::Sprite->new(width => 8,height => 16);
     $GLBL{'_sprm'}{$spid}->surface->draw_rect([ 0, 0,  8,          16],[@brgb,255]);

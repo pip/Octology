@@ -49,7 +49,7 @@ our @EXPORT= qw(bfr8colr b8colr d8colr dur8colr    d8cs @d8cl  chti  c8fn     S2
     $z    $k    $r    $o    $y    $g     $c $SKpb    $m    $p    $w  tstc    $K    $R    $O    $Y    $G    $C    $B    $M    $P    $W    %p622 %p222
  $tnhf $ucdf  spff  spfd  spfX   shfl  reso $auth %cmsp %p8k2 @p82k  chp8     S2f4 c2f4 dm2u cdst %crgb %cbrt @snls @mrls %cdrd %cdrn    %nrgb         gnp8);
  # of 52 posibl sngl-letr var nmz,a8 Xportz 20,$b && $a unavail,so shudB thEs30 lFt4quik shortSt nAmz: 'def hij l n  q stuv x', 'A  DEF HIJ L N  Q STUV X Z'
-our $VERSION='0.0';my  $d8VS='HB5LIbp8';our $auth='PipStuart <Pip@CPAN.Org>'; # above not exporting $b since collidez with sort{$a  <=> $b}
+our $VERSION='0.0';my  $d8VS='HBBLAPXS';our $auth='PipStuart <Pip@CPAN.Org>'; # above not exporting $b since collidez with sort{$a  <=> $b}
 our $ucdf= eval('use Color::Similarity::RGB qw(distance);1') || 0; # try2set UseColorDistanceFlag if optional module is available
 our @Monz=qw(January February March   April     May June July   August September October November December);our @Mon=();push(@Mon,substr($_,0,3)) for(@Monz);
 our @Dayz=qw(Sunday  Monday   Tuesday Wednesday Thursday Friday Saturday                                  );our @Day=();push(@Day,substr($_,0,3)) for(@Dayz);
@@ -587,7 +587,9 @@ sub S2f4{my($text,$Fclr,$bclr,$f0nt  );my $dFbf=':::';my($nxtF,$nxtb,$nxtf)=(spl
     if(defined($pret) && length($pret)){$text.=$pret;$Fclr.=$nxtF x length($pret);$bclr.=$nxtb x length($pret);$f0nt.=$nxtf x length($pret);}
     if   ($esco eq "\n"               ){$text.=$esco;$Fclr.=$esco                ;$bclr.=$esco;                $f0nt.=$esco;}
     elsif($esco =~ /^\e\[   0  *  m$/x){($nxtF,$nxtb,$nxtf)=(split(//,$dFbf));} # atMpt2recognIze shL outputting empty m (or just zeroez) 2reset2 Normal green
-    elsif($esco =~ /^\e\[ [\d;]*  m$/x){my $cofe=c($esco);if(length($cofe) >= 1 && substr($cofe,0,1) ne ':'){$nxtF=substr($cofe,0,1);}
+    elsif($esco =~ /^\e\[ [\d;]*  m$/x){my $cofe=c($esco);
+      $cofe=~ s/^([FDALOH])?([bdaloh])?:([0-9A-Za-z._]+)/$3/; # hopefully just ignore any non-Fclr or bclr 8pal8 planes for now, until c8 gets new plane layers
+                                                          if(length($cofe) >= 1 && substr($cofe,0,1) ne ':'){$nxtF=substr($cofe,0,1);}
                                                           if(length($cofe) >= 2 && substr($cofe,1,1) ne ':'){$nxtb=substr($cofe,1,1);}}
     elsif($esco =~ /^\e\[([012]?) K$/x){my $ecp0=0;$ecp0=$1 if(defined($1)); # specially handle ls output having [K to Xplicitly blank past line end
       ($nxtF,$nxtb,$nxtf)=(split(//,$dFbf)) unless($ecp0);} # CSI n K : EL - Erase in Line (0=cursor to EOL,1=cursor to BOL,2=clear entire line)
