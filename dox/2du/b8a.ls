@@ -58,9 +58,8 @@ nOtz:First 4 milestonez (EZHT) are just for me. Prioritiez should be determined 
 ckls: # folOng shudBA d8stampd cklist of whN I hav mAd progrS on Octology fE8urz,modulz,&&applic8ionz DscrIbd abov with st@us: stRtd|frthr|cmplt; b8 0-_ done?
   F61M8Uqp:stRtd:Aku :pmei Tk; successfully tested dvl/Tk/EMT/DiagEMT.pl 2still run as it used2; I still need to install Tk on all my other machinez though;
   F61MKEl3:frthr:Chun:pmei Tk; failed (with IO::Tty && Expect) Bcuz nEded`touch /usr/lib/x86_64-linux-gnu/perl/5.20/CORE/fakethr.h`&&perlsfio.h B4,thN workd;
-
 F9TMLG3p:Upd8ing b8a list d8z since some of my moms && landlord put me in a 4th mental hospital. I had proposed August 6th as a reasonable d8 to convene (or at
 least discuss), but my ideaz are alpha applied art which cause repercussionz. ;) # I thot some1 who had run `g3` or `l` cud hLp Xplain screenshots to my mom;
-
 HBCL1ENT:So I'm a bit l8 for the planned E:8sln:epsilon:HB8 (by 4Dayz),but still close. So I should probably take new nOtz down here 2 audit&&revise all above.
 Enumer8 major fE8urez for every d8d goal stage to complete E. Maybe it'd just be easier to try to edit everything in-place above to fit back into 1 solid page;
+HBCLNit4:Now that I've crE8d a p8reon account, I should prioritize adding my bank routing number && crE8ing compelling Rewards, Goals, && Thanks for my p8rons;

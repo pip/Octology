@@ -1,21 +1,29 @@
 # Octology
-An ontology based on the power of 8. ` $VERSION='0.0';$d8VS='HBCLMCom'; `
+An ontology based on the power of 8. `$VERSION='0.0';$d8VS='HBDL7LST';`
 
 This is basically the first public preview of my early development files.
 
-I'm not yet interested in serious collaboration, but welcome feedback.
+I am not yet ready for serious code collaboration, but welcome feedback.
 
-I mainly wanted to start this repository as a site for future efforts.
+I mainly wanted to start this repository as my locus for future efforts.
 
-I'd also like to show off screen shots conveying novel capabilities.
+I would also like to show top screen shots that convey nice capabilities.
 
-Many bin/ commands print some Help text when given a `-h` parameter.
+Many `bin/` commands print useful Help text when given a `-h` parameter.
 
-If your Perl environment and paths are sufficiently similar, please try
-  to run: ` sumb, tstn,  tstc, tsgr,   gnp8, pal8,  calN, lodH `
+If your paths and Perl environment are setup like mine, please try to run:
+* `sumb`
+* `tstn`
+* `tstc`
+* `tsgr`
+* `gnp8`
+* `pal8`
+* `calN`
+* `lodH`
 
-If I become unable to continue this project for any reason, at least this repo
-  should hopefully provide others the ability to utilize much of my work. `=)`
+If I ever become unable to continue developing this project further (for
+  any reason), my great hope is that at least this repository will provide
+  others the ability to utilize much of my meticulous work and ideas. `=)`
 
 ### Current Top 8 Screen Shots
 ![Octology-sumb-shot_1614x902-HBBLK9D3](https://github.com/pip/Octology/blob/master/gfx/sho/Octology-sumb-shot_1614x902-HBBLK9D3.png "Octology-sumb-HBBLK9D3")
@@ -28,21 +36,26 @@ If I become unable to continue this project for any reason, at least this repo
 ![Octology-ckm8-shot_1280x800-HBBLJwau](https://github.com/pip/Octology/blob/master/gfx/sho/Octology-ckm8-shot_1280x800-HBBLJwau.png "Octology-ckm8-HBBLJwau")
 
 ### Forgive Me For a Bit of Self-Promotion
-If you would like to promote my development effort, please visit my
+If you would like to fund my ongoing development effort, please visit my
   [Patreon](https://patreon.com/PipStuart "Pip's Octology Patreon Page")
-  and feel free to e-mail me the top 8 features you'd most like to have.
+  and feel free to send me the **Top 8** new features you would most want.
 
-Please also e-mail me if you're an open-minded person in the Oshkosh
-  area who is interested in friendship. I'm lonely much of the time.
+Please also contact me if you are an open-minded thinker who is interested in
+  friendship and conversation (especially within my local Oshkosh, Wisconsin
+  area). I am lonely much of the time, and crave more interpersonal contact.
 
 To learn about the long-term goals, plans, thinking, and research behind
-  this extensive project, please read:
+  this extensive and expanding project, please read: 
   [8.txt](https://github.com/pip/Octology/blob/master/dox/2du/8.txt "dox/2du/8.txt")
 
 Thank you for your consideration as well as any constructive criticism,
   recommendations, or whatever other feedback you may be able to offer.
 
-  Sincerely,  `  -PipStuart  8<3  NfN8L0v3  8pI  Ate Pie  =)  `
+```
+Sincerely,
+-PipStuart  8<3  NfN8L0v3  8pI  Ate Pie  =)
+
+```
 
 ##### No Longer Top Screen Shots (listed from most recent down to oldest)
 ![Octology-cdst-shot_1614x902-HB4M92CH](https://github.com/pip/Octology/blob/master/gfx/sho/Octology-cdst-shot_1614x902-HB4M92CH.png "Octology-cdst-HB4M92CH")
