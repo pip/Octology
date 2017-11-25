@@ -15,16 +15,16 @@ use strict;use warnings;use utf8;use v5.10;
 #   add cache limitz && new thorO alt2prEsrv&&indX evry NtIr cnv contXt sO objX canBgrOwn in2 setz of at lEst cnv hist stringz,
 #   add valid8ion&&tStz&&Carp problMz,mAB add benchmRkz,Xplor specialIzng Use as reso pairz or c8 IDa of rAng spanz or IPaddrz or fOn numz etc;
 require     Exporter ;
-use base qw(Exporter);
-use         Math::Base::Convert;my $umbc=1; # Use Math::Base::Convert flag (doesn't work if eval'd)
-use         Math::BigFloat;
-use         Math::BigInt;
+use base qw(Exporter);our $umbc=1; # Use Math::Base::Convert flag (doesn't work if eval'd), but maybe if not much faster then remove the dependency
+use         Math::Base::Convert;
+use         Math::BigFloat     ;
+use         Math::BigInt       ;
 use         Encode;
 use         Carp; # orig Math::BaseCnv BlO memoized sum8(as summ) hEr&&had nO fibo&&OnlyXportd cnv byDflt but now Octology Xportz almOst evrythng promiscuously
 use Memoize;memoize('fact');memoize('choo');memoize('fibo');memoize('prim');
-our @EXPORT= qw(b8 cnv ocT deC dec heX HEX b10 b64 b64sort b110 b128 b210 b256 dig diginit cma coma
-              sum8 sumz  fact fctz  choo  fibo fibz  prim prmz  rotW rot1     calQ);
-our $VERSION='0.0';my  $d8VS='H92MJK4D';my $auth='PipStuart <Pip@CPAN.Org>';
+our @EXPORT= qw(b8 cnv ocT deC dec heX HEX b10 b64 b64sort b110 b128 b210 b256 dig diginit
+    cma coma  sum8 sumz   fact fctz  choo  fibo fibz  prim prmz  rotW rot1    calQ   $umbc);
+our $VERSION='0.0';my  $d8VS='HBPL6dbg';my $auth='PipStuart <Pip@CPAN.Org>';
 my $pkgn =        __PACKAGE__;
 my $pkgl = length __PACKAGE__;
 my $bssb = $pkgn . '::_bs::' ; # indentify 'base sub'

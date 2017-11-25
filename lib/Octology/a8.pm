@@ -731,109 +731,118 @@ sub sumb{  my $widt=0;$widt=1 if(exists($ENV{'COLUMNS'}) && $ENV{'COLUMNS'} >= 1
   my @ufls=();for(@_){$widt=0 if(/^-?-?1/ );} # -1 force each description to 1 line (so reset width flag)                         # '!'=> 5 (also much in choo)
   my @bfls= split(/\n/,`ls $ENV{'HOME'}/bin`) if( exists($ENV{'HOME'}) && -d "$ENV{'HOME'}/bin"); # make BinFileLiSt              # 'char'=>6,'rot'=>5,
      @bfls= split(/\n/,`ls   /usr/local/bin`) if(!exists($ENV{'HOME'}) && -d   "/usr/local/bin"); # make BinFileLiSt fallback if no ~/bin to /usr/local instead
-  my %bfst=( # BinFileSummaryText
-    '2psf'  => "f8  converter from .f0nt plain-text encoding to the .psf binary format    ",
+  my %bfst=( # BinFileSummaryText (originally was listed in default ls order, but now is reorganized into colored module group sections like default output)
     '8ct'   => "a8 *ColrTest of all four b8 and d8 orient8ions for sequence comparison    ",
-    '8trm'  => "c8  TeRMinal-like applic8ion   (experimental slow SDL backtick wrapper)   ", # mAB add 8trm features to GnomTerm source instead of SDL App
     'a8'    => "a8  new d8a object representing ~/.Hrc  (with printing out like `lodH`)   ", # fix 2 fully load obj && output same as lodH
-    'b10'   => "b8  converter from base-64 number-strings  to  [0-9] base-10 (decimal)    ",
-    'b110'  => "b8  converter from base128 number-strings  to  [0-9] base-10 (decimal)    ", # rEnAmd from orig `bb10`
-    'b128'  => "b8  converter from base-10 to base-128       (Chess and Cards in UTF-8)   ", # rEtIr b128 b110 ocT deC&&Use b8 nstd?
-    'b210'  => "b8  converter from base256 number-strings  to  [0-9] base-10 (decimal)    ",
-    'b256'  => "b8  converter from base-10 to base-256       (128 plus common in UTF-8)   ",
-    'b64'   => "b8  converter from base-10  digit-strings  to base-64   number-strings    ",
-    'b8'    => "b8  converter that tries to auto-detect intended number base (Math:B:C)   ",
+    'b8c'   => "a8  colorizer for  b8  b64 number-strings   (>Right>-to-<Left<< >4wrd>)   ",
     'b8clr' => "a8  colorizer for  b8  b64 which  handles bfr8 (%fractions) and commas    ",
-    'b8c'   => "a8  colorizer for  b8  b64 number-strings     (Right>-to-<Left< >4wrd>)   ",
-    'bak'   => "Utl  auto-save now d8-stamp in the end-name of a .bak/ backup file copy   ",
-    'bfr8c' => "a8  colorizer for  b8 bfr8 fractions as b64   (<Left<-to-Right> <Bkwd<)   ",
+    'bfr8c' => "a8  colorizer for  b8 bfr8 fractions as b64 (<Left<<-to->Right> <Bkwd<)   ",
     'c'     => "a8 *converter from ANSI escape codes to c8 (col8) format    (FbSGR out)   ",
     'c2'    => "a8  converter from new compact c8 format 2 compressed with escape codes   ",
     'c2f4'  => "a8  converter from old 4-layer c8 format 2 compressed with escape codes   ",
-    'c8'    => "c8  `lsd8` deriv8ive with some cut and hoping to also do cat eventually   ", # flesh out interface for cut part at least (&& mAB cat too)
     'c8fn'  => "a8  colorizer that loads environment LS_COLORS for paths and FileNames    ",
-    'calN'  => "d8  caleNdar utility that shows the current Year (with 1 week per line)   ", # add good optionz like `cal -3` && 2,3,4,6,12-column modez
     'cdst'  => "a8 *sort known Color sets according to closest DiSTance from parameter    ",
-    'choo'  => "b8  n CHOOse m with factorials from combin8orics as  n! / (m! * (n-m)!)   ",
     'chti'  => "a8 *CHange TItle for current terminal window within desktop environment   ",
-    'ckm8'  => "c8  NotYetInModule, textual Chess SDL applic8ion   (or Curses::Simp -c)   ", # need to fix Simp core-dumps on exit
-    'cma'   => "b8  CoMmA inserting utility for every 3 digit characters    (/[0-9]+/ )   ",
-    'cnv'   => "b8  Math::BaseCnv CoNVerter, tries to detect intended base  (like `b8`)   ", # mAB rEtIr orig cnv once b8 is thoroughly reliable instead
-    'coma'  => "b8  COMmA inserting utility for every 4  b64  charactrs(/[A-Z._0-9]+/i)   ",
     'curs'  => "a8 *CURSor changing utility for colors, size, and blink  (only console)   ", # mAB rEtIr unless can be extended to alter terminal cursors
-    'd8'    => "d8 *DateTime stamps and conversion util (-a ANSI color, -f Full format)   ",
-    'd8c'   => "a8  colorizer for d8 (Date and Time) stamps   (<Left<-to-Right> >4wrd>)   ",
-    'd8g'   => "d8  DateTime stamp  utility as header for e-mails with  Gerry  (my Dad)   ",
-    'd8ok'  => "c8  Curses::Simp text-mode clOcK with varying speed,form,and meter bars   ",
-    'dec'   => "b8  converter from HEXadecimal (base-16)   to  [0-9] decimal (base-10)    ",
-    'deC'   => "b8  converter from ocTal [0-7] (base- 8)   to  [0-9] deCimal (base-10)    ",
-    'dic'   => "b8  wrapper for `dict`(ionary) command  (like piping through `colorit`)   ",
-    'die8'  => "c8  pretty terse dice-rolling  utility    (similar to HTTP://Rolz.Org )   ",
-    'dm2u'  => "a8 *converter from Dos or Mac line-ends to Unix   (double to Single -s)   ",
-    'dow'   => "Time::DayOfWeek *utility taking Year, Month, and Day parameters or now    ",
-    'dur8c' => "a8  colorizer for d8 dur8(ion) time-spans     (Right>-to-<Left< <Bkwd<)   ",
-    'e'     => "Utl  EDITOR wrapper which includes a fragile old package templ8 system    ", # mAB rEwrIt mOst Useful BhAVor as nw clEnr U8:e or let dokr:e
-    'etfp'  => "f8 *actual binary executable to gET or sET console Fonts (psf) && Pal8s   ",
-    'fact'  => "b8  FACTorial calcul8or multiplying a number down to 1  (was in `choo`)   ",
-    'fibo'  => "b8  FIBOnacci sequence element calcul8or which takes the decimal index    ",
-    'frip'  => "    NotYetInModule,`flac` Free Lossless Audio CD 'RIPper'  (extractor)    ",
+    'd8c'   => "a8  colorizer for d8 (Date and Time) stamps (<Left<<-to->Right> >4wrd>)   ",
+    'dm2u'  => "a8 *converter of Dos or Mac line-endings to Unix  (double to Single -s)   ",
+    'dur8c' => "a8  colorizer for d8 dur8(ion) time-spans   (>Right>-to-<Left<< <Bkwd<)   ",
     'ftst'  => "a8 *colorful listing of Perl File-TeSTs  (and backslashed escape codes)   ",
-    'g3'    => "    NotYetInModule,`gst123` Expect wrapper which reformats and  colors    ",
-    'g8'    => "    NotYetInModule,`git` wrapper to match long commands and cnvrt .bak/   ",
    #'gnp8'  => "a8  GeNer8 full 256-pal8 color blocks with 4 planes  of 4 shifts of 16    ", # mAB these colr pal8 blox shud B new optnz for tstc or tsgr nstd
-    'HEX'   => "b8  converter from decimal (base-10)  to UpperCase HEXadecimal   (b16)    ",
-    'kpc'   => "   *`kpcli` deriv8ive for strong text-mode KeePass   (pswd management)    ",
     'lodH'  => "a8  load ~/.Hrc into d8a-structure and print out colorfully (like `a8`)   ", # mAB rEtIr once a8 struct&&color becomes more capable
-    'lsd8'  => "d8  highly reformatted `ls -lvF`    (with file-system Time as d8-stamp)   ",
     'lrc'   => "a8 *utility to gener8 ~/.lsrc file from ~/.lrc format   (for LS_COLORS)   ",
-    'mix8'  => "    NotYetInModule,started a PulseAudio C::Simp mixer (like pmix/aumix)   ", # flesh out commandz && CLI before bilding new Curses interface
-    'ocT'   => "b8  converter from deCimal 0-9 (base-10)   to ocTal   [0-7]  (base- 8)    ",
    #'oupd'  => "a8  UPD8 ~/dvl/t8/Octl/Octology/ git repo with l8st files from ~/ dir     ", # this is too fragile to include in t8/Octl/Octology/.git yet
-    'pakr'  => "    NotYetInModule, PackRube Rubik's Cube format converter  (in `qbix`)   ", # add standRd Singmaster not8ion conversion && mAB put in b8.pm
-    'pal8'  => "f8 *utility to modify 16-color palettes in either  terminal or console    ", # ad suport4 b256 24bit colrz,8pal8z,&&remapngz
-   # pimp's cryptic original name was:Pips Intergallactive Moosex Plaqueluster
-    'pimp'  => "    NotYetInModule,PipsInteractiveMusicPlaylister C::Simp shuffle audio   ", # mAB rEtIr sinc g3 is alreD gr8 (but consider rand playlistz)
     'pm2x'  => "a8  Pal8 Map to eXtended   (based on Color::Similarity::RGB->distance)    ", # add optz2gNr8 clOsSt 8pal8z 3mor tImz2filup all xtrm256colrz
-    'pmix'  => "c8  Curses::Simp /dev/mixer manipul8ion utility (not used byPulseAudio)   ", # mAB rEtIr aftr mix8 good sinc Pulse proly fUtur
-    'prym'  => "c8  Curses::Simp prime-number gener8ion screensaver   (old && broken!)    ", # port to prim as new CLI && Curses IF
-    'psf2'  => "f8  converter from the .psf binary format to .f0nt plain-text encoding    ",
-    'pt'    => "Time::PT *for original PipTime module (was a precursor to Octology::d8)   ",
-    'ptcnv' => "d8  CoNVerter from `pt` to new `d8` format   (by inserting likely zone)   ", # mAB slurp ptold in as optn,in case future autOcnv nEded
-    'ptold' => "Time::PT  original 5-character PipTime utility from before  March 2006    ", # mAB rEtIr or fold code in2ptcnv?
-    'q'     => "b8 *calQl8or of command-line Math::BigFloat  (in vim :r!q 63xx31 | cma)   ", # fix to use oper8or precedence && parens (prolly nEd2B quOtd)
-    'qbix'  => "c8  Curses::Simp Rubik's Cube as spoonerism 'QbixRube' text applic8ion    ", # port to qbx3 wi CLI, Curses, && GL IFz
     'reso'  => "a8  monitor display RESOlution list gener8or   (params match each line)   ", # mAB color
-    'rot1'  => "b8  utility to ROT8 each char of passed in b256 number-strings (by 128)   ", # lIk vim Visual sele thN 'g?' 2rot13
-    'rotW'  => "b8  utility to ROT8 each char of passed in b64  number-strings (by  32)   ",
     'S'     => "a8 *converter from c8 (col8) V8 format to ANSI eScape codes (FbSGR in )   ",
     'S2'    => "a8  converter from eScape encoded input to new compact c8 (col8) format   ",
     'S2f4'  => "a8  converter from eScape encoded input to old 4-layer c8 (col8) format   ",
     'shfl'  => "a8  SHuFfLe lines or chars (like Games::Cards::Poker->Shuffle &&`shuf`)   ",
-    'shl8'  => "c8  Source-HighLight8 utility colors detectable syntax within Octology    ", # flesh out c8 hIlItng systM && incrEs suported formatz
-    'shot'  => "   *NotYetInModule,`scrot` wrapper utility to autom8 basic screen SHOTs   ",
     'sS'    => "a8 *Substitute out (regex Strip) eScape codes by types   or Commas (-c)   ", # was subS;mAB betr than -c 2`fact 64|b64|coma|perl -pe 's/,//g'`?
-    'sum8'  => "b8  SUM8ion function adding number down to 1 (actually just multiplies)   ",
     'sumb'  => "a8 *SUMmarize ~/bin/ described files by color category (displaying now)   ",
    #'supd'  => "a8 *Screeps UPD8 scripts utility into ~/.config/ directory for  client    ",
-    'flet'  => "f8  basic interactive utility to pick desired Font LETters for `figlet`   ", # proly rEwrIt with Curses IF as 8let with d8colr ability
-    'tsgr'  => "c8  Test Select Graphic Rendition escapes && xterm-256color Blocks (-b)   ", # mAB shud mv2 a8 lIk tstc?
     'tstc'  => "a8 *TeST eScapes `S` of c8 `c` format for pal8 colors && SGR attributes   ", # mAB fold in2 tsgr && mv latr2 a8,or mk -blox in tstc?
-   #'tstn'  => "p8  TeST random Navig8ion of A* paths thru HTTPS://Screeps.Com maps d8a   ",
+
+    'b10'   => "b8  converter from base-64 number-strings  to  [0-9] base-10 (decimal)    ",
+    'b110'  => "b8  converter from base128 number-strings  to  [0-9] base-10 (decimal)    ", # rEnAmd from orig `bb10`
+    'b128'  => "b8  converter from base-10 to base-128 b128  (Chess and Cards in UTF-8)   ", # rEtIr b128 b110 ocT deC&&Use b8 nstd?
+    'b210'  => "b8  converter from base256 number-strings  to  [0-9] base-10 (decimal)    ",
+    'b256'  => "b8  converter from base-10 to base-256 b256  (128 plus common in UTF-8)   ",
+    'b64'   => "b8  converter from base-10  digit-strings  to base-64   number-strings    ",
+    'b8'    => "b8  converter that tries to auto-detect intended number base (Math:B:C)   ",
+    'choo'  => "b8  n CHOOse m with factorials from combin8orics as  n! / (m! * (n-m)!)   ",
+    'cma'   => "b8  CoMmA insert utility for every 3 digit characters (\\d or /[0-9]+/ )   ",
+    'cnv'   => "b8  Math::BaseCnv CoNVerter, tries to detect intended base  (like `b8`)   ", # mAB rEtIr orig cnv once b8 is thoroughly reliable instead
+    'coma'  => "b8  COMmA insert utility for every 4  b64  characters ( /[A-Z._0-9]+/i)   ",
+    'dec'   => "b8  converter from HEXadecimal (base-16)   to  [0-9] decimal (base-10)    ",
+    'deC'   => "b8  converter from ocTal [0-7] (base- 8)   to  [0-9] deCimal (base-10)    ",
+    'fact'  => "b8  FACTorial calcul8or multiplying a number down to 1  (was in `choo`)   ",
+    'fibo'  => "b8  FIBOnacci sequence element calcul8or which takes the decimal index    ",
+    'HEX'   => "b8  converter from decimal (base-10)  to UpperCase HEXadecimal   (b16)    ",
+    'ocT'   => "b8  converter from deCimal 0-9 (base-10)   to ocTal   [0-7]  (base- 8)    ",
+    'q'     => "b8 *calQl8or of command-line Math::BigFloat  (in vim :r!q 63xx31 | cma)   ", # fix to use oper8or precedence && parens (prolly nEd2B quOtd)
+    'rot1'  => "b8  utility to ROT8 each char of passed in b256 number-strings (by 128)   ", # lIk vim Visual sele thN 'g?' 2rot13
+    'rotW'  => "b8  utility to ROT8 each char of passed in b64  number-strings (by  32)   ",
+    'sum8'  => "b8  SUM8ion function adding number down to 1 (actually just multiplies)   ",
+
+    '8trm'  => "c8  TeRMinal-like applic8ion (a slow experimental SDL backtick wrapper)   ", # mAB add 8trm features to GnomTerm source instead of SDL App
+    'c8'    => "c8  `lsd8` deriv8ive with some cut and hoping to also do cat eventually   ", # flesh out interface for cut part at least (&& mAB cat too)
+    'ckm8'  => "c8  ChecKMate custom text Chess SDL applic8ion  (or in Curses::Simp -c)   ", # still need to fix Simp to not core-dump on exit
+    'd8ok'  => "c8  Curses::Simp text-mode clOcK with varying speed,form,and meter bars   ",
+    'die8'  => "c8  terse random dice-rolling  utility  (as similar to HTTP://Rolz.Org)   ",
+    'pmix'  => "c8  Curses::Simp /dev/mixer manipul8ion utility (not used byPulseAudio)   ", # mAB rEtIr aftr mix8 good sinc Pulse proly fUtur
+    'prym'  => "c8  Curses::Simp prime-number gener8ion screensaver (currently broken!)   ", # port to prim as new CLI && Curses IF
+    'qbix'  => "c8  Curses::Simp Rubik's Cube as spoonerism 'QbixRube' text applic8ion    ", # port to qbx3 wi CLI, Curses, && GL IFz
+    'shl8'  => "c8  Source-HighLight8 utility colors detectable syntax within Octology    ", # flesh out c8 hIlItng systM && incrEs suported formatz
+    'tsgr'  => "c8  Test Select Graphic Rendition escapes && xterm-256color Blocks (-b)   ", # mAB shud mv2 a8 lIk tstc?
+    'wdht'  => "c8  Curses::Simp utility shows resize terminal dimension WiDth x HeighT   ",
+    'xx'    => "c8  XxX square teXt eXpansion utility (which scales with 8trm overdraw)   ",
+
+    'calN'  => "d8  caleNdar utility that shows the current Year (with 1 week per line)   ", # add good optionz like `cal -3` && 2,3,4,6,12-column modez
+    'd8'    => "d8 *DateTime stamps and conversion util (-a ANSI color, -f Full format)   ",
+    'd8g'   => "d8  DateTime stamp  utility as header for e-mails with  Gerry  (my Dad)   ",
+    'dic'   => "d8  wrapper for `dict`(ionary) command  (like piping through `colorit`)   ",
+    'lsd8'  => "d8  highly reformatted `ls -lF --full-time` (file-sys Time as d8-stamp)   ",
+    'ptcnv' => "d8  CoNVerter from `pt` to new `d8` format   (by inserting likely zone)   ", # mAB slurp ptold in as optn,in case future autOcnv nEded
+    'w8'    => "d8 *wait a dur8(ion) like '3U' as 3.5 seconds or '2qm' as 2.88 minutes    ",
+    'pt'    => "Time::PT *for original PipTime module  (main precursor to Octology::d8)   ",
+    'dow'   => "Time::DayOfWeek *utility taking Year, Month, and Day parameters or now    ",
+
+    '2psf'  => "f8  converter from .f0nt plain-text encoding to the .psf binary format    ",
+    'etfp'  => "f8 *actual binary executable to gET or sET console Fonts (psf) && Pal8s   ",
+    'flet'  => "f8  basic interactive utility to pick desired Font LETters for `figlet`   ", # proly rEwrIt with Curses IF as 8let with d8colr ability
+    'pal8'  => "f8 *utility to modify 16-color palettes in either  terminal or console    ", # ad suport4 b256 24bit colrz,8pal8z,&&remapngz
+    'psf2'  => "f8  converter from the .psf binary format to .f0nt plain-text encoding    ",
+
+    'xbc'   => "m8  XML Binary Compress utility   (give an .xml file  to     make .xtb)   ", # mAB rEtIr XML cmprs && xpnd utilz since so rarely nEded
+    'xbx'   => "m8  XML Binary  eXpand  utility   (give an .xtb file  to  restore .xml)   ", # shud colr fIl XtNsionz
+    'xstrp' => "m8  XML STRiP  all   mixed-node whitespace   utility   (from XML::Tidy)   ",
+    'xtc'   => "m8  XML  Text  Compress utility (yields smaller .xml  with   same tree)   ",
+    'xtidy' => "m8  XML::Tidy inserts indenting whitespace for mixed-node nesting depth   ",
+    'xtx'   => "m8  XML  Text   eXpand  utility (restores orig. .xml from before `xtc`)   ",
+
+   #'tstn'  => "p8  TeST random Navig8ion of A* paths thru HTTPS://Screeps.Com maps d8a   ", # new PurPle colr p8 section here is re-comNted sinc just tst4now
+
     'U2b2'  => "U8  download from YouTube just audio in high-quality ('2'=to auto-best)   ",
     'U2b3'  => "U8  download from YouTube just audio in mp3 format (usually transcoded)   ", # proly transcOded NEwA
     'U2b4'  => "U8  reformat 're4mat' the name of a downloaded U2b file to align fields   ",
     'U2b8'  => "U8  download from YouTube a normal video file (in default 1280x720 res)   ",
     'upd8'  => "U8  UPDate development files into ~/lib/ or ~/bin/ dirs after valid8ion   ",
     'UTF8'  => "U8 *wide printing of most UTF-8 (or ASCII) chars up to index (or range)   ", # mAB add more sets of logical blocks && colr b8 char-sets
-    'w8'    => "d8 *wait a dur8(ion) like '3U' as 3.5 seconds or '2qm' as 2.88 minutes    ",
-    'wdht'  => "c8  Curses::Simp utility shows resize terminal dimension WiDth x HeighT   ",
-    'xstrp' => "m8  XML STRiP  all   mixed-node whitespace   utility   (from XML::Tidy)   ",
-    'xtidy' => "m8  XML::Tidy inserts indenting whitespace for mixed-node nesting depth   ",
-    'xbc'   => "m8  XML Binary Compress utility   (give an .xml file  to     make .xtb)   ", # mAB rEtIr XML cmprs && xpnd utilz since so rarely nEded
-    'xbx'   => "m8  XML Binary  eXpand  utility   (give an .xtb file  to  restore .xml)   ", # shud colr fIl XtNsionz
-    'xtc'   => "m8  XML  Text  Compress utility (yields smaller .xml  with   same tree)   ",
-    'xtx'   => "m8  XML  Text   eXpand  utility (restores orig. .xml from before `xtc`)   ",
-    'xx'    => "c8  XxX square teXt eXpansion utility (which scales with 8trm overdraw)   ",); # mAB add reverse oper8ion with scaling back down4neg8iv option
+    'bak'   => "Utl  auto-save now d8-stamp in the end-name of a .bak/ backup file copy   ",
+    'e'     => "Utl  EDITOR wrapper which includes a fragile old package templ8 system    ", # mAB rEwrIt mOst Useful BhAVor as nw clEnr U8:e or let dokr:e
+
+    'frip'  => "    NotYetInModule,`flac` Free Lossless Audio CD 'RIPper'  (extractor)    ",
+    'g3'    => "    NotYetInModule,`gst123` Expect wrapper which reformats and  colors    ",
+    'g8'    => "    NotYetInModule,`git` wrapper to match long commands and cnvrt .bak/   ",
+    'kpc'   => "   *NotYetInModule,`kpcli` deriv8ive for text KeePass (pswd management)   ",
+    'mix8'  => "    NotYetInModule,started a PulseAudio C::Simp mixer (like pmix/aumix)   ", # flesh out commandz && CLI before bilding new Curses interface
+    'pakr'  => "    NotYetInModule, PackRube Rubik's Cube format converter  (in `qbix`)   ", # add standRd Singmaster not8ion conversion && mAB put in b8.pm
+    'pimp'  => "    NotYetInModule,PipsInteractiveMusicPlaylister C::Simp shuffle audio   ", # mAB rEtIr sinc g3 is alreD gr8 (but consider rand playlistz)
+    'shot'  => "   *NotYetInModule,`scrot` wrapper utility to autom8 basic screen SHOTs   ",
+    ); # mAB add reverse oper8ion with scaling back down4neg8iv option
+# HBPL5end:moved around order by module sections, moved dic from wrong b8 to d8 section, removed ptold since shud be easy to remake in d8 if ever needed AgN;
+#   'ptold' => "Time::PT  original 5-character PipTime utility from before  March 2006    ", # mAB rEtIr or fold code in2ptcnv?
 # HB4M6rF8:moved old ~/bin/tst ~/bin/.tst to hide it away from sumb && my t8/Octl/Octology/.git repo so scrnshotz can seem more similar && added w8 2 rebalance
 #   'tst'      => "    directory where I experiment with new candid8 binary executables   ", # hid this directory as ~/bin/.tst/ instead of handling special -d
 # HB1MFGao:made asci alias to new U8:UTF8;
@@ -872,16 +881,17 @@ sub sumb{  my $widt=0;$widt=1 if(exists($ENV{'COLUMNS'}) && $ENV{'COLUMNS'} >= 1
   # 'ZdifTriq' => $W."    old Gentoo hard-drive /z to /Z comparison utility                  ",
   # 'zpmt'     => $G."a8  format escaped text for Zsh ProMpT command-line width detection    ", # now replaced with `sS z`
  # H4NM4NM4:keeping to exactly 1 160x50 page contains barely worthwhile:c8,curs,mix8,pimp,pmix,prym,readhead,shl8 so try2upd8 them to be useful or retire them;
-  my $bfle=$#bfls;my %bftc=('grup'=>{'a8'=>'F:A','b8'=>'F:B','c8'=>'F:C','d8'=>'F:R','f8'=>'F:o','m8'=>'F:M','U8'=>'F:Y', # BinFilzListEnd && TypeCodez
-                       'dirz'=>'F:N','no'=>'F:W',           'Time::DayOfWeek'=>'F:F','Time::PT'=>'F:F',     'Utl'=>'F:5',        }, # mABkeyz shudB qr// nstd?
+  my $bfle=$#bfls;my %bftc=('grup'=>{'a8'=>'F:A','b8'=>'F:B','c8'=>'F:C','d8'=>'F:R','f8'=>'F:o','m8'=>'F:M','U8' =>'F:Y', # BinFilzListEnd && TypeCodez
+                       'dirz'=>'F:N','no'=>'F:W',     'Time::DayOfWeek'=>'F:F','Time::PT'=>'F:F','p8'=>'F:p','Utl'=>'F:5',       }, # mABkeyz shudB qr// nstd?
                             'modu'=>{ 'Math::BaseCnv'=>'D:B',       'Similarity::RGB->distance'=>'F:C','Games::Cards::Poker->Shuffle'=>'F:p','XML::Tidy'=>'pb',
                                      'C::S'=>'Zb','Curses::Simp'=>'Zb', 'C::Simp'=>'Zb', 'DiSTance'=>'F:C',
                                               'M:B:C'=>'Xn' ,  'Octology::d8'=>'F:R','Math::BigFloat'=>'F:C',                    },
                             'file'=>{'~' =>'F:B','\/'=>'F:Y','\.'=>'Ib','fn'=>'Mb','`' =>'yk','cf'=>'F:G','\*'=>'W1','\+'=>'Rb','mixer'=>'F:o','Date'=>'L:R',
      'strings'=>'F:8','ANSI'=>'ob', ',' =>'Lk','bfr8'=>'F:B','col8'=>'F:C','dur8'=>'F:R',      '\('=>'Wn','\)'=>'Wn','\['=>'ob','\]'=>'ob','ASCII'=>'Ab',
   'EDITOR'=>'Un','LS_COLORS'=>'Yn','bin'=>'F:B','\.bak'=>'F:B','\.Hrc'=>'F:M','\.psf'=>'F:M','\.f0nt'=>'Cg','\.xml'=>'ob','\.xtb'=>'F:B', # SKpspecialz
-      'down'=>'F:U','SKpz'=>'F:7',   '!' =>'Fk','HTTP'=>'F:H','Rolz'=>'F:M','Org'=>'F:X','gst123'=>'F:G','git'=>'F:G','kpcli'=>'F:G','YouTube'=>'5r',
-      'load'=>'F:5','cRdz'=>'Cc','Chess'=>'Ww','base'=>'F:X', 'UTF'=>'Gb','SDL'=>'SN',   'pmix'=>'F:G','aumix'=>'F:G', 'time'=>'F:F',    'U2b'=>'5r',
+      'down'=>'F:U','SKpz'=>'F:7',   '!' =>'Fk','HTTP' =>'F:H','Org'=>'F:X','Rolz'=>'F:M','gst123'=>'F:G','git'=>'F:G','kpcli'=>'F:G','YouTube'=>'5r',
+                                                'HTTPS'=>'F:H','Com'=>'F:B','Screeps'=>'F:C', # testing additions for p8:tstn new section && URL
+      'load'=>'F:5','cRdz'=>'Cc','Chess'=>'Ww','base'=>'F:X', 'UTF'=>'Gb','SDL'=>'SN',    'pmix'=>'F:G','aumix'=>'F:G', 'time'=>'F:F',    'U2b'=>'5r',
       'Perl'=>'Cb' ,'vim' =>'Vb','Unix' =>'Xb','text'=>'F:F',                                                                    }, # mAB squEz all fIlz into
                             'base'=>{' 8'=>'ok','16'=>'5r','64'=>'Ac','128'=>'Cb','256'=>'Md','10'=>'Fn','dec'=>'Fn','ocT'=>'ok',}, #   betr vertical column?
                             'colr'=>{'L' =>'Xg','R' =>'Rw', '4'=>'Aq', 'B'=>'M0', '2'=>'F:V',                                    },
@@ -956,7 +966,7 @@ sub sumb{  my $widt=0;$widt=1 if(exists($ENV{'COLUMNS'}) && $ENV{'COLUMNS'} >= 1
         $bfst{ $bfls[$bfle - $_]}=~ s/   (\s)    (HEX )(adeci)/$1$d$2$i$3/gx        ;$d=S($bftc{'base'}{ 'ocT'  }); # du HEX
         $bfst{ $bfls[$bfle - $_]}=~ s/   (\s)    (ocT )(al   )/$1$d$2$i$3/gx        ;$d=S($bftc{'base'}{  '10'  }); # du ocT
         $bfst{ $bfls[$bfle - $_]}=~ s/   (\s|\() (de[cC])(ima)/$1$d$2$i$3/gx        ;$d=S($bftc{'base'}{ '128'  }); # du deC or dec
-        $bfst{ $bfls[$bfle - $_]}=~ s/  ( base  )(128 )(\s   )/$1$d$2$i$3/gx        ;$d=S($bftc{'base'}{ '256'  }); # du 128
+        $bfst{ $bfls[$bfle - $_]}=~ s/  (b(ase)?)(128 )(\s   )/$1$d$3$i$4/gx        ;$d=S($bftc{'base'}{ '256'  }); # du 128
         $bfst{ $bfls[$bfle - $_]}=~ s/  (b(ase)?)(256 )(\s   )/$1$d$3$i$4/gx        ;$s=S($bftc{'d8fz'}{'2006'  }); # du 256 hopefully both b256 && base256
         $bfst{ $bfls[$bfle - $_]}=~ s/   (xterm-)(256 )(color)/$1$d$2$i$3/gx        ;$d=S($bftc{'d8fz'}{'March' }); # du 256 more
         $bfst{ $bfls[$bfle - $_]}=~ s/   (\s)   (March)(2006 )/$1$d$2$s$3$i/gx      ;$d=S($bftc{'file'}{ 'cRdz' }); # du d8 fldz M && Y from ptold
@@ -964,13 +974,12 @@ sub sumb{  my $widt=0;$widt=1 if(exists($ENV{'COLUMNS'}) && $ENV{'COLUMNS'} >= 1
         $bfst{ $bfls[$bfle - $_]}=~ s/   (\s)(e[Ss]capes?)(\s)/$1$d$2$i$3/gx        ;$d=S($bftc{'file'}{ 'down' }); # mAB want to d8colr for SKpz too?
                                                                                      $l=S($bftc{'file'}{ 'load' }); # du downloadz in half
         $bfst{ $bfls[$bfle - $_]}=~ s/   (\s)   (down)(load(ed)?)/$1$d$2$l$3$i/gx   ;$d=S($bftc{'file'}{ 'time' }); # du all time && Time
+        $bfst{ $bfls[$bfle - $_]}=~ s/  (full-)(   time)(  \W)/$G$1$G$2$i$3/gx      ; # pre-colr ls flag's "-time" B4 next match would make Reddish
         $bfst{ $bfls[$bfle - $_]}=~ s/   (\s|e)([Tt]ime)(  \W)/$1$d$2$i$3/gx        ; # mAB shud add Date
         for   my $tkey (sort(keys(  %bftc        ))){ # these orderz probably matter too
           for my $ckey (sort(keys(%{$bftc{$tkey}}))){$h=S($bftc{$tkey}{$ckey}); # load Hilite, then start doing some key transl8ion before searching on it
-             #my $srch=$ckey;$srch='Left\ ' if($srch eq 'L');$srch='Bkwd' if($srch eq 'B');
-             #               $srch='Right'  if($srch eq 'R');$srch='4wrd' if($srch eq '4');
-              my $srch=$ckey;$srch='<Left<' if($srch eq 'L');$srch='<Bkwd<' if($srch eq 'B');
-                             $srch='Right>' if($srch eq 'R');$srch='>4wrd>' if($srch eq '4');
+              my $srch=$ckey;$srch='<Left<<' if($srch eq 'L');$srch='<Bkwd<' if($srch eq 'B');
+                             $srch='>Right>' if($srch eq 'R');$srch='>4wrd>' if($srch eq '4');
             if  ($ckey !~  /^(no|cf|fn|dirz|~|bin|\.bak|\.Hrc|\*|\(|\)|\[|\]|\+|:|2|!)$/ && $tkey ne 'b64r'){ # don't do None group,CmdFil,FlNm etc or b64regX
               if($srch =~  /^(\.|,)$/){$bfst{$bfls[$bfle - $_]}=~ s/      ($srch)      /$h$1$i/gx  ;}    # try non-delimited just for keyz that seem fine
               else                    {$bfst{$bfls[$bfle - $_]}=~ s/(\W  )($srch)(\W)/$1$h$2$i$3/gx;}}}} # try just lookng4IsOl8d srchz;
@@ -990,7 +999,7 @@ sub sumb{  my $widt=0;$widt=1 if(exists($ENV{'COLUMNS'}) && $ENV{'COLUMNS'} >= 1
          #elsif(    $bfls[$bfle - $_] ne 'tst'){     splice(@bfls,$bfle - $_,1);} # or cut non-dir may no longr B needed since dflt rebilds BinFileLiSt ordr
          }}
   my   $blih=int(@bfls/2); # BinListInHalf
-  my   @bgls=qw(a8 b8 c8 d8 Time::DayOfWeek Time::PT f8 m8 U8 Utl none dir);my %bgml=();for(@bgls){$bgml{$_} =   [];} # init BinGroupLiSt && BinGroupMemberList
+  my   @bgls=qw(a8 b8 c8 d8 Time::PT Time::DayOfWeek f8 m8 p8 U8 Utl none dir);my %bgml=();for(@bgls){$bgml{$_}= [];} # init BinGroupLiSt && BinGroupMemberList
   for (@bfls){#f(-d "$ENV{'HOME'}/bin/$_"){my $dlen=length($_)+1;$_ = "$B$_$Y/";$_ .= ' ' x (9-$dlen) if(9 > $dlen);} # old custom colr of any bin subdirz
     if($gbym){if(-d "$ENV{'HOME'}/bin/$_"){       push(@{$bgml{'dir'}},$_);} # directories used to get a slash appended above, which was checked for here
            elsif(exists($bfst{$_})){my $fdsc=$bfst{$_};$fdsc=~ s/^(\s+|\e\[[0-9;]*m)+//g; # strip leading SKpd colrz from Ech FileDeSCription to reveal module
