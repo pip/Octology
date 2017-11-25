@@ -1,6 +1,6 @@
-# 315J9mLT:Octology::b8.pm crE8d by PipStuart <Pip@CPAN.Org> to construct custom precision Big numbers && perform arbitrary Base-transl8ions. I love Bass!
-package    Octology::b8;
-use strict;use warnings;use utf8;use v5.10;
+# 315J9mLT: Octology::b8.pm crE8d by PipStuart <Pip@CPAN.Org> to construct custom precision Big numbers && perform arbitrary Base-transl8ions. I love Bass!
+package     Octology::b8;
+use strict; use warnings;use utf8;use v5.10;
 # 2du:rewrite fibo wo recursion,mk new calQ parser for real precedence,
 #   mk pfcz to hash up a loop to list all Prime FaCtorZ (with powerz) of any BigInt param,bNchmRk memoized fact vs bfac && prim vs not && fibo iter8ive vs not,
 #   stuD Math::Base::Convert && bNchmRk2lern how2Use just scalar or 32-bit reg when it fitz4sPd && Xpand2othr objz B4 BigFloat && rmv all M:B:C if sPd close,
@@ -15,8 +15,8 @@ use strict;use warnings;use utf8;use v5.10;
 #   add cache limitz && new thorO alt2prEsrv&&indX evry NtIr cnv contXt sO objX canBgrOwn in2 setz of at lEst cnv hist stringz,
 #   add valid8ion&&tStz&&Carp problMz,mAB add benchmRkz,Xplor specialIzng Use as reso pairz or c8 IDa of rAng spanz or IPaddrz or fOn numz etc;
 require     Exporter ;
-use base qw(Exporter);our $umbc=1; # Use Math::Base::Convert flag (doesn't work if eval'd), but maybe if not much faster then remove the dependency
-use         Math::Base::Convert;
+use base qw(Exporter);our $umbc=1; # Use Math::Base::Convert flag (doesn't work if eval'd), but maybe if not normally much faster then remove the dependency
+use         Math::Base::Convert;   #   although maybe eventually preparing efficient dependencies in docker container can ease such distribution burdens
 use         Math::BigFloat     ;
 use         Math::BigInt       ;
 use         Encode;

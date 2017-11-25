@@ -1,3 +1,0 @@
-#!/usr/bin/perl
-# 41MJ4K9h:dow (DayOfWeek) <Year> <Month> <Day> by Pip Stuart <Pip@CPAN.Org> to calculate the week day of a particular date, or of now with no parameters;
-use strict;use warnings;use utf8;use Time::DayOfWeek qw(:dow);print Dow(@ARGV);

@@ -50,7 +50,7 @@ our @EXPORT= qw(bfr8c    b8c    d8c    dur8c       a8c   a8colr
     $z    $k    $r    $o    $y    $g     $c $SKpb    $m    $p    $w  tstc    $K    $R    $O    $Y    $G    $C    $B    $M    $P    $W    %p622 %p222
  $tnhf $ucdf  spff  spfd  spfX   shfl  reso $auth %cmsp %p8k2 @p82k  chp8     S2f4 c2f4 dm2u cdst %crgb %cbrt @snls @mrls %cdrd %cdrn    %nrgb         gnp8);
  # of 52 posibl sngl-letr var nmz,a8 Xportz 20,$b && $a unavail,so shudB thEs30 lFt4quik shortSt nAmz: 'def hij l n  q stuv x', 'A  DEF HIJ L N  Q STUV X Z'
-our $VERSION='0.0';my  $d8VS='HBELEave';our $auth='PipStuart <Pip@CPAN.Org>'; # above not exporting $b since collidez with sort{$a  <=> $b}
+our $VERSION='0.0';my  $d8VS='HBPL81d8';our $auth='PipStuart <Pip@CPAN.Org>'; # above not exporting $b since collidez with sort{$a  <=> $b}
 our $ucdf= eval('use Color::Similarity::RGB qw(distance);1') || 0; # try2set UseColorDistanceFlag if optional module is available
 our @Monz=qw(January February March   April     May June July   August September October November December);our @Mon=();push(@Mon,substr($_,0,3)) for(@Monz);
 our @Dayz=qw(Sunday  Monday   Tuesday Wednesday Thursday Friday Saturday                                  );our @Day=();push(@Day,substr($_,0,3)) for(@Dayz);
@@ -801,12 +801,12 @@ sub sumb{  my $widt=0;$widt=1 if(exists($ENV{'COLUMNS'}) && $ENV{'COLUMNS'} >= 1
     'calN'  => "d8  caleNdar utility that shows the current Year (with 1 week per line)   ", # add good optionz like `cal -3` && 2,3,4,6,12-column modez
     'd8'    => "d8 *DateTime stamps and conversion util (-a ANSI color, -f Full format)   ",
     'd8g'   => "d8  DateTime stamp  utility as header for e-mails with  Gerry  (my Dad)   ",
+    'd8ow'  => "d8 *DayOfWeek utility taking Year, Month, && Day as d8 YMD param or now   ",
     'dic'   => "d8  wrapper for `dict`(ionary) command  (like piping through `colorit`)   ",
     'lsd8'  => "d8  highly reformatted `ls -lF --full-time` (file-sys Time as d8-stamp)   ",
     'ptcnv' => "d8  CoNVerter from `pt` to new `d8` format   (by inserting likely zone)   ", # mAB slurp ptold in as optn,in case future autOcnv nEded
     'w8'    => "d8 *wait a dur8(ion) like '3U' as 3.5 seconds or '2qm' as 2.88 minutes    ",
     'pt'    => "Time::PT *for original PipTime module  (main precursor to Octology::d8)   ",
-    'dow'   => "Time::DayOfWeek *utility taking Year, Month, and Day parameters or now    ",
 
     '2psf'  => "f8  converter from .f0nt plain-text encoding to the .psf binary format    ",
     'etfp'  => "f8 *actual binary executable to gET or sET console Fonts (psf) && Pal8s   ",
@@ -841,7 +841,8 @@ sub sumb{  my $widt=0;$widt=1 if(exists($ENV{'COLUMNS'}) && $ENV{'COLUMNS'} >= 1
     'pimp'  => "    NotYetInModule,PipsInteractiveMusicPlaylister C::Simp shuffle audio   ", # mAB rEtIr sinc g3 is alreD gr8 (but consider rand playlistz)
     'shot'  => "   *NotYetInModule,`scrot` wrapper utility to autom8 basic screen SHOTs   ",
     ); # mAB add reverse oper8ion with scaling back down4neg8iv option
-# HBPL5end:moved around order by module sections, moved dic from wrong b8 to d8 section, removed ptold since shud be easy to remake in d8 if ever needed AgN;
+# HBPL7end:reordered by module sections,moved dic from wrong b8 to d8 section,retired ptold sinc shudBeasy2rEmk in d8 if evr nEdedAgN,mAd nw d8ow 2 calc dow;
+#   'dow'   => "Time::DayOfWeek *utility taking Year, Month, and Day parameters or now    ",
 #   'ptold' => "Time::PT  original 5-character PipTime utility from before  March 2006    ", # mAB rEtIr or fold code in2ptcnv?
 # HB4M6rF8:moved old ~/bin/tst ~/bin/.tst to hide it away from sumb && my t8/Octl/Octology/.git repo so scrnshotz can seem more similar && added w8 2 rebalance
 #   'tst'      => "    directory where I experiment with new candid8 binary executables   ", # hid this directory as ~/bin/.tst/ instead of handling special -d
@@ -922,7 +923,8 @@ sub sumb{  my $widt=0;$widt=1 if(exists($ENV{'COLUMNS'}) && $ENV{'COLUMNS'} >= 1
         $h=d8colr('CoNVerter'     );$bfst{ $bfls[$bfle - $_]}=~ s/CoNVerter     /$h$i/gx    ;d8cs('GBZOM'    ); # && try to get S && c col8 post-text layrz
         $h=d8colr('FbSGR'         );$bfst{ $bfls[$bfle - $_]}=~ s/FbSGR         /$h$i/gx    ;d8cs('ZC9TVmM'  ); # rEmMbr2rEset2 d8bo whN done BlO
         $h=d8colr('utility'       );$bfst{ $bfls[$bfle - $_]}=~ s/utility       /$h$i/gx    ;
-        $h=d8colr('util'          );$bfst{ $bfls[$bfle - $_]}=~ s/util          /$h$i/gx    ;d8cs('mmmMMMppVVVVVV'); # NYIM was orig S('mkB') at very end
+        $h=d8colr('util'          );$bfst{ $bfls[$bfle - $_]}=~ s/util          /$h$i/gx    ;d8cs('d8bo'     ); # should be same as 'RoY' or close
+        $h=d8colr('YMD'           );$bfst{ $bfls[$bfle - $_]}=~ s/YMD           /$h$i/gx    ;d8cs('mmmMMMppVVVVVV'); # NYIM was orig S('mkB') at very end
         $h=d8colr('NotYetInModule');$bfst{ $bfls[$bfle - $_]}=~ s/NotYetInModule/$h$i/gx    ;d8cs('d8bo'     ); # du!Uz $i $j 2map 8pal8z in2 fldz BlO
         $h=S('Z');$bfst{$bfls[$bfle-$_]}=~ s/(Select\s*)(Graphic\s*)(Rendition)/$h$1$O$2$M$3$i/; # get SGR ZOM 4 tsgr
         if($grup eq 'd8' && $bfls[$bfle - $_] eq 'w8'){ # should properly color quoted example dur8ions in whatever w8 description
@@ -999,7 +1001,7 @@ sub sumb{  my $widt=0;$widt=1 if(exists($ENV{'COLUMNS'}) && $ENV{'COLUMNS'} >= 1
          #elsif(    $bfls[$bfle - $_] ne 'tst'){     splice(@bfls,$bfle - $_,1);} # or cut non-dir may no longr B needed since dflt rebilds BinFileLiSt ordr
          }}
   my   $blih=int(@bfls/2); # BinListInHalf
-  my   @bgls=qw(a8 b8 c8 d8 Time::PT Time::DayOfWeek f8 m8 p8 U8 Utl none dir);my %bgml=();for(@bgls){$bgml{$_}= [];} # init BinGroupLiSt && BinGroupMemberList
+  my   @bgls=qw(a8 b8 c8 d8 Time::PT f8 m8 p8 U8 Utl none dir);my %bgml=();for(@bgls){$bgml{$_}= [];} # init BinGroupLiSt && BinGroupMemberList
   for (@bfls){#f(-d "$ENV{'HOME'}/bin/$_"){my $dlen=length($_)+1;$_ = "$B$_$Y/";$_ .= ' ' x (9-$dlen) if(9 > $dlen);} # old custom colr of any bin subdirz
     if($gbym){if(-d "$ENV{'HOME'}/bin/$_"){       push(@{$bgml{'dir'}},$_);} # directories used to get a slash appended above, which was checked for here
            elsif(exists($bfst{$_})){my $fdsc=$bfst{$_};$fdsc=~ s/^(\s+|\e\[[0-9;]*m)+//g; # strip leading SKpd colrz from Ech FileDeSCription to reveal module

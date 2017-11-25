@@ -1,0 +1,22 @@
+#!/usr/bin/perl
+# HBPL7DOW:d8ow crE8d by PipStuart <Pip@CPAN.Org> as a utility script for just calling Time::DayOfWeek functionality through Octology::d8 objects;
+# 2du:fix -f Full day name output option,slurp all of this into d8.pm so this can become just another basic stub;
+use strict;use warnings;use utf8;use v5.10;
+use      Octology::d8;my $VERSION='0.0';my $d8VS='HBPL7DOW';my $auth='PipStuart <Pip@CPAN.Org>';my $parm=join(' ',@ARGV);my @id8a;
+my $d8im=Octology::d8->new();
+open my $out8,'>&',STDOUT or die "Can't open  duplic8 STDOUT handle: $!";binmode $out8,':encoding(UTF-8)'; # crE8 local duplic8 of global
+if(!@ARGV && !-t STDIN){chomp(@id8a=<STDIN>);$parm=join(' ',@id8a);}
+if($parm=~ /(^|\s)-+h/i){ # should probably upd8 to use GetOpts or something more robust for parameter parsing
+  say $out8 " d8ow - Date of the Week utility  Vers:$VERSION  d8VS:$d8VS  by Auth:$auth
+   You can provide a specific d8 as 3 b64 chars: YMD to get the DayOfWeek for.
+   If you only provide Y or YM, the remainder may be filled in as 0 but then
+     is calculated against as if it were 1. It's best to provide 3 explicitly.
+  -h    print out this Help text, then the current DayOfWeek before exiting
+  -f    Full day name returned (instead of just the default first 3 letters)  *Note:*this option does not work yet!";
+}elsif($parm=~ /(^|\s)-+([f])\s*(.*)$/){$d8im=Octology::d8->new('d8'=>$3) if(defined($3)&& length($3)); # used to be 'verbose',then 'str',before 'd8'
+  if   ($2  eq  'f'      ){print $out8 $d8im->DoW();} exit; # Full format should expand day name (but may need to be added to d8.pm better)
+}elsif(length($parm)){
+  if(@ARGV> 1 || @id8a> 1){$d8im=Octology::d8->new('expand'=>$parm);} # might need to match expand string in $id8a[0] since it likely won't be split
+  if(@ARGV==1 || @id8a==1){$d8im=Octology::d8->new('d8'    =>$parm);} # used to auto-expand specified d8 here, but then Dow() won't work on expand string
+} print $out8                          $d8im->Dow();
+close   $out8             or die "Can't close duplic8 STDOUT handle: $!";
