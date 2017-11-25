@@ -55,4 +55,7 @@ H4JMHSFJ: Ubu17.04 upgrade: Copied ~/lib/perl5/lib/perl5/Math/Base ~/lib/Math/ t
 H5GMJLPr:`pmei YAML Term::Screen` to study how to best upd8 Simp since my original test.pl was based on it;
 H5LMBaZ6:rEmMbr Ubu SysSetingz Keybd Shortctz are how Shift-F11 && F12 do volume down && up. Zoom && Neg8ive mappingz are in CompizConfigSetzMngr instead;
 HAVMDEFT:rEmMbr to pmei Path::Tiny for slurp_utf8 (instead of poor File::Slurp) since Octology::p8::psps::gmap uses it && slurping may be faster to use
-elsewhere when multi-line parsing is needed. Try evaling it, && then to fallback on joining all gathered lines whenever it's not installed && available;
+ elsewhere when multi-line parsing is needed. Try evaling it, && then to fallback on joining all gathered lines whenever it's not installed && available;
+HBGL0LVM:Takeaway from pswd article was use `ai scrypt` for key deriv8ion looping slowed HMAC (Hashing Message Authentic8ion Code) described as available for
+ file encryption vs lib(digest-bcrypt|crypt-pbkdf2)-perl vs Argon2 maybe PublicDomain since 2015 vs SCRAM(SaltedChallengeResponseAuthentic8ionMechanism)4pswd;
+HBHLMWR4:Hal_Porter on /. assembly sign8ure:`echo -e 'global _start\n _start:\n mov eax, 2\n int 80h\n jmp _start' > a.asm; nasm a.asm -f elf; ld a.o -o a`;

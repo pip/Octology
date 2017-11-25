@@ -67,7 +67,9 @@ if(0){ # alignment attempt introducez trailing newlinez && sometimez skipz over 
       # if non-STDERR results
       $Stxt=~ s/(;)/$C$1$G/g; # this ruined SKpz when done l8r
       $Stxt=~ s/(Collaborative)( International)( Dictionary)( of)( English)/$C$1$M$2$W$3$c$4$Y$5/g;
-      $Stxt=~ s/($word)/$wclr$1$z$G/gi if(length($word)); # colr looked-up word (if detected) && belo colr tail of most common 8-words for distinction
+  if(length($word)){
+      $Stxt=~ s/($word +)(imp|vb|v|t|i|n|p|pr|cf|fr|a|adv)( +)(1: +)/$1$R$2$3$C$4/g; # try to catch part-of-speech and 1st definition number after WN word
+      $Stxt=~ s/($word)/$wclr$1$z$G/gi;} # colr looked-up word (if detected) && belo colr tail of most common 8-words for distinction
       $Stxt=~ s/(\w)((ated?|(ait|[ae]ight|at\B))(en)?(ed|i(ng|ve|ons?|ous))?(ly)?)(\W|$)/$1$eclr$2$z$G$9/gi; # (knowing some matchd pronunC8ions wil difer)
 if(   $Stxt=~  /^(\d+) definition(s)? found/       ){my $dFct=$1;my $dFst=' dFinitN';$dFst.='z' if(defined($2)); # tried2add non-word Boundary aftr at
       $Stxt=~ s/^\d+ definitions?( found)/$C$dFct$Y$dFst$M$1$G/;}
@@ -82,7 +84,7 @@ if(   $Stxt=~  /(\n +?)(\d+) Moby Thesaurus words/ ){my $MTct=$2;my $MTin=$1;cho
       $Stxt=~ s/ (\()(2006)(\))/ $c$1$R$2$c$3/;
       $Stxt=~ s/(\[)(w)(n)(\])/$B$1$O$2$M$3$B$4$G/;
       $Stxt=~ s/(Free)( On)(-)(line)( Dictionary)( of)( Computing)/$Y$1$B$2$C$3$M$4$W$5$w$6$O$7/g;
-      $Stxt=~ s/ (\()(\d+)( March)( 20\d+)(\))/ $c$1$Y$2$O$3$R$4$c$5/g;
+      $Stxt=~ s/ (\()(\d+)( January| March)( 20\d+)(\))/ $c$1$Y$2$O$3$R$4$c$5/g; # might want to just join all reasonable Month names here l8r
       $Stxt=~ s/(\[)(f)(o)(l)(d)(o)(c)(\])/$B$1$Y$2$B$3$M$4$W$5$w$6$O$7$B$8$G/g; # broke FOLDoC apart like above
       $Stxt=~ s/(Jargon)( File )(\()(version)( \d+)(\.)(\d+)(\.)(\d+)/$C$1$R$2$G$3$P$4$B$5$W$6$M$7$W$8$R$9/g;
       $Stxt=~ s/,( \d+)( \w+)( 20\d+)(\) )(\[)(jargon)(\])/,$Y$1$O$2$R$3$G$4$B$5$C$6$B$7/g;
@@ -119,6 +121,7 @@ if(   $Stxt=~  /(\n +?)(\d+) Moby Thesaurus words/ ){my $MTct=$2;my $MTin=$1;cho
       $Stxt=~ s/([\{\}])/$M$1$G/g;
       $Stxt=~ s/([<>])/$Y$1$G/g;
       $Stxt=~ s/\n *\n/\n/g;
+      $Stxt=~ s/([^-\n ])(-)([^-\n \e])/$1$W$2$G$3/g; # try to catch typical mid-word hyphens for sepR8 distinction
       $Stxt=~ s/(--)/$O$1$G/g;
       $Stxt=~ s/(\\)/$O$1$G/g; # this ruined SKpz?
       $Stxt=~ s/(\.)/$W$1$G/g;

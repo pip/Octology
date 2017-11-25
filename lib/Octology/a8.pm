@@ -49,7 +49,7 @@ our @EXPORT= qw(bfr8colr b8colr d8colr dur8colr    d8cs @d8cl  chti  c8fn     S2
     $z    $k    $r    $o    $y    $g     $c $SKpb    $m    $p    $w  tstc    $K    $R    $O    $Y    $G    $C    $B    $M    $P    $W    %p622 %p222
  $tnhf $ucdf  spff  spfd  spfX   shfl  reso $auth %cmsp %p8k2 @p82k  chp8     S2f4 c2f4 dm2u cdst %crgb %cbrt @snls @mrls %cdrd %cdrn    %nrgb         gnp8);
  # of 52 posibl sngl-letr var nmz,a8 Xportz 20,$b && $a unavail,so shudB thEs30 lFt4quik shortSt nAmz: 'def hij l n  q stuv x', 'A  DEF HIJ L N  Q STUV X Z'
-our $VERSION='0.0';my  $d8VS='HBCLASSY';our $auth='PipStuart <Pip@CPAN.Org>'; # above not exporting $b since collidez with sort{$a  <=> $b}
+our $VERSION='0.0';my  $d8VS='HBELEave';our $auth='PipStuart <Pip@CPAN.Org>'; # above not exporting $b since collidez with sort{$a  <=> $b}
 our $ucdf= eval('use Color::Similarity::RGB qw(distance);1') || 0; # try2set UseColorDistanceFlag if optional module is available
 our @Monz=qw(January February March   April     May June July   August September October November December);our @Mon=();push(@Mon,substr($_,0,3)) for(@Monz);
 our @Dayz=qw(Sunday  Monday   Tuesday Wednesday Thursday Friday Saturday                                  );our @Day=();push(@Day,substr($_,0,3)) for(@Dayz);
@@ -740,7 +740,7 @@ sub sumb{  my $widt=0;$widt=1 if(exists($ENV{'COLUMNS'}) && $ENV{'COLUMNS'} >= 1
     'b8'       => "b8  converter that tries to auto-detect intended number base (M:B:C)   ",
     'b8clr'    => "a8  colorizer for  b8  b64 which handles bfr8(%fractions) and commas   ",
     'b8colr'   => "a8  colorizer for  b8  b64 number-strings      (Right-to-Left  4wrd)   ",
-    'bak'      => "Utl auto-save a new d8-stamp in the name of a .bak/ backup file copy   ",
+    'bak'      => "Utl  auto-save now d8-stamp in the name of a .bak/ backup file copy    ",
     'bfr8colr' => "a8  colorizer for  b8 bfr8 fractions as b64    (Left -to-Right Bkwd)   ",
     'c'        => "a8 *converter from ANSI escape codes to c8 (col8) format (FbSGR out)   ",
     'c2'       => "a8  converter from compact c8 format to compressed with escape codes   ",
@@ -767,7 +767,7 @@ sub sumb{  my $widt=0;$widt=1 if(exists($ENV{'COLUMNS'}) && $ENV{'COLUMNS'} >= 1
     'dm2u'     => "a8 *converter of Dos or Mac line-ends to Unix  (-s double to Single)   ",
     'dow'      => "Time::DayOfWeek *utility taking Year,Month,and Day parameters or now   ",
     'dur8colr' => "a8  colorizer for d8 dur8(ion) time-spans      (Right-to-Left  Bkwd)   ",
-    'e'        => "Utl EDITOR wrapper which includes fragile old package templ8 system    ", # mAB rEwrIt most useful behavior as new cleaner U8:e
+    'e'        => "Utl  EDITOR wrapper which includes fragile old package templ8 system   ", # mAB rEwrIt mOst Useful BhAVor as nw clEnr U8:e or let dokr:e
     'etfp'     => "f8 *actual binary executable to  gET or sET  console Fonts and Pal8s   ",
     'fact'     => "b8  FACTorial calcul8or multiplying number down to 1 (was in `choo`)   ",
     'fibo'     => "b8  FIBOnacci sequence element calcul8or when given a decimal index    ",
@@ -779,7 +779,7 @@ sub sumb{  my $widt=0;$widt=1 if(exists($ENV{'COLUMNS'}) && $ENV{'COLUMNS'} >= 1
     'HEX'      => "b8  converter from decimal (base-10)  to UpperCase HEXadecimal (b16)   ",
     'kpc'      => "   *`kpcli` deriv8ive for strong text-mode KeePass (pswd management)   ",
     'lodH'     => "a8  load ~/.Hrc into d8a-structure and print colorfully  (like `a8`)   ", # mAB rEtIr once a8 struct&&color becomes more capable
-    'lsd8'     => "d8  highly reformatted `ls -l`  (for file-system stamps as d8 codes)   ",
+    'lsd8'     => "d8  highly reformatted `ls -lFv` (with file-system Time as d8-stamp)   ",
     'lrc'      => "a8 *utility 2 gener8 ~/.lsrc file from ~/.lrc format (for LS_COLORS)   ",
     'mix8'     => "    NotYetInModule,started a PulseAudio C::S mixer (like pmix/aumix)   ", # flesh out commandz && CLI before bilding new Curses interface
     'ocT'      => "b8  converter from deCimal 0-9 (base-10)   to ocTal [0-7] (base- 8)    ",
@@ -805,7 +805,7 @@ sub sumb{  my $widt=0;$widt=1 if(exists($ENV{'COLUMNS'}) && $ENV{'COLUMNS'} >= 1
     'S2f4'     => "a8  converter from eScape encoded input to 4-layer c8 (col8) format    ",
     'shfl'     => "a8  SHuFfLe lines or chars (like G::Cards::Poker->Shuffle and`shuf`)   ",
     'shl8'     => "c8  Source-HighLight8 utility to color detectable syntax in Octology   ", # flesh out c8 hIlItng systM && incrEs suported formatz
-    'shot'     => "    NotYetInModule,`scrot` wrapper utility to take basic screenSHOTs   ",
+    'shot'     => "   *NotYetInModule,`scrot` wrapper utility to take basic screenSHOTs   ",
     'sS'       => "a8 *Substitute out (regex Strip) eScape codes by type or Commas (-c)   ", # was subS;mAB betr than -c 2`fact 64|b64|coma|perl -pe 's/,//g'`?
     'sum8'     => "b8  SUM8ion function adding num down to 1 (actually just multiplies)   ",
     'sumb'     => "a8 *SUMmarize all known files in ~/bin/ colorfully  (displaying now)   ",
@@ -881,7 +881,7 @@ sub sumb{  my $widt=0;$widt=1 if(exists($ENV{'COLUMNS'}) && $ENV{'COLUMNS'} >= 1
                             'base'=>{' 8'=>'ok','16'=>'5r','64'=>'Ac','128'=>'Cb','256'=>'Md','10'=>'Fn','dec'=>'Fn','ocT'=>'ok',}, #   betr vertical column?
                             'colr'=>{'L' =>'Xg','R' =>'Rw', '4'=>'Aq', 'B'=>'M0', '2'=>'F:V',                                    },
   # mAB2du:bSt2 bg hIlI all -flgz nXt,thN!alreD '8'z Xplicitly;
-                            'b64r'=>{'\['=>'Xw','-'=>'pk','0'=>'ob','9'=>'pb','A'=>'gb','Z'=>'Fb','\.'=>'Wb','_'=>'Ub','7'=>'Ub',}, # rEmMbr2ignorthiswhol tkey
+                            'b64r'=>{'\['=>'Xw','-'=>'pk','0'=>'Gb','9'=>'pb','A'=>'gb','Z'=>'Fb','\.'=>'Wb','_'=>'Ub','7'=>'Ub',}, # rEmMbr2ignorthiswhol tkey
                             'xmlt'=>{'Text'=>'F:R','Binary'=>'F:B','Compress'=>'F:C','eXpand'=>'F:Y','whitespace'=>'F:W',        },
                             'd8fz'=>{'Year'=>'Fb','Month'=>'ob','Day'=>'Yb',  'displaying'=>'HARL','now'=>'HIRK', # try2 bLinK summary of sumb itself
                                      '2006'=>'Fb','March'=>'ob','zone'=>'Gb','week'=>'ok',                                       },);

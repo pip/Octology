@@ -1,10 +1,10 @@
 # F1RLLK2K:~/.lrc  by PipStuart <Pip@CPAN.Org> as an altern8 format for .lsrc ideally having new ~/bin/lrc gNR8 either from the other;
-# $VERSION='0.0';$d8VS='HBCL6fkn'; 2du:mkUtl2gNR8 altrn8 versN of .lsrc th@purposfuly varEz colrz of comon typz,try addng bakgrnd colrz2all dFz&&tst,
+# $VERSION='0.0';$d8VS='HBIL8dic'; 2du:mkUtl2gNr8 altrn8 versN of .lsrc th@purposfuly varEz colrz of comon typz,try addng bakgrnd colrz2all dFz&&tst,
 #   add interaction2 lsd8 wN it Dtectz unrecognIzd XtNshNz offerng c@egOrEz with comon colr2autOm@ically insrt chOsN NtrEz,mAB add *-* NtrEz from .zshrc hEr &&
-#   mk lsrc gNR8 either,confirm all accept f0nt cOdez wi dash accepting Dfalt foreground then redo NORMAL FILE LINK as no fi ln,mAB 8trm added2TERM ls someday;
+#   mk lrc gNr8 either,confirm all accept f0nt cOdez wi dash accepting Dfalt foreground then redo NORMAL FILE LINK as no fi ln,mAB 8trm added2TERM ls someday;
 # 819J2Pip:~/.lsrc by PipStuart <Pip@CPAN.Org> izAheavily modifId`dircolors`cfgfIl(Orig ~/.DIR_COLORS)wich setz $ENV{'LS_COLORS'} 4GNU`ls --color`&&`lsd8`;
 # nOt:I'm pretty sure itz Chunz(!Takiz)`ls`&&`dircolors`th@cud!hndl (MULTI)?HARDLINK sO rEmMbr2kEp th@ lIn cmNtd out4her(&&kEptstng2cnfirm);
-# Keywords COLOR,OPTIONS,&& EIGHTBIT (honored by Slackware dircolors) are recognized but ignored; TERMz && XtNsionz syncd2 2014;
+# Keywords COLOR,OPTIONS,&& EIGHTBIT (honored by Slackware dircolors) are recognized but ignored; TERMz && XtNsionz syncd2 2016;
 # Copyright(C) 1996-2016 FreeSoftwareFound8ion,Inc. Copying and distribution of this file, with or without modific8ion, are permitted provided the
 # copyright notice and this notice are preserved. BlO shud B a TERM per colrIzabl term-type. ck /etc/mime.types 4aditNl aprOprE8 NtrEz; mABmkUtl2Dtect thM?;
 # Categoriez:rc cfg dif log muz it r(c)   Y  .2d*,.*shrc && cfg (incl this .lsrc && old DIR_COLORS filz),muz audio, difference,patch,&& log filz
@@ -90,8 +90,8 @@ FILE                          ^            #fi= 00          00        normal   F
 DIR                           B            #di= 01;34       01;34     normal   DIrectory
 LINK                          W            #ln= 01;37       01;36     symbolic LiNk (if set2'target'instd of colr;codez,colr inherits file symlinked2)
 MULTIHARDLINK                 ^            #mh= 00          00        regular  file with more than one link (Usd2B"HARDLINK"wi 44;37 B4 9A6J8d7P)
-ORPHAN                        Rc:L         #or= 01;31;46;05 01;31;40  sym------link to nonexistent file
-MISSING                       Wr:L         #mi= 01;37;41;05 00          && the MISSING file it points to (blinkng alert?)
+ORPHAN                        RcL          #or= 01;31;46;05 01;31;40  sym------link to nonexistent file
+MISSING                       WrL          #mi= 01;37;41;05 00          && the MISSING file it points to (blinkng alert?)
 EXEC                          G            #ex= 01;32       01;32     file w/ EXECute permission                 (+x    )
 SETUID                        Wg           #su= 01;37;42    00;37;41  file that is        SETUID                 (   u+s)
 SETGID                        kO           #sg= 00;30;43    00;30;43  file that is        SETGID                 (   g+s)

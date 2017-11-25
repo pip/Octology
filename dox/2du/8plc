@@ -1,12 +1,11 @@
 #!/usr/bin/perl
 # D6OMHm3L:8plc crE8d to read PipStuart's <Pip@CPAN.Org> 8.txt (mainly 2 specific columns) to tabul8 && print the 8 Precursor Letter Counts;
-# 2du:add more colrz2 fulc|title|total|varz|headerz|dashez,mAB colr letrz by collapsed 8pal8 aftr f8.pm Xportz or full if run in l8r 8trm&&add f0ntz there2,
-#   add sepR8 tabul8ion of every 8-word used in l8r document8ion with not8ion for which have yet to be included in the primary list from the top,
-#   xtract fulc to sepR8 b8:ccnt Utl,mk optn for fulc mode to use just 1 column for betr grep,mAB show percNtz too as optn;
+# 2du:colr letrz,add f0ntz4 8trm,add 4m@d percNtz,mk easy optn4 fulc 2use 1colm 4grep,stuD wc && mk a8:8c wi fulc -f? && 8plc as -l? optnz (redoing hedr txt),
+#   mk sepR8 tabul8ion of 8-words used in l8r document8ion wi not8ion 4thos not yet included in top lists (then optn2ignore easy conjug8ions && pre/suffixes);
 use strict;use warnings;use utf8;use v5.10;
 use Octology::a8;
 use Octology::b8;
-my $d8VS='HBBL6KpR';       my $clrf=1;my $fulf=0;my $argz='';$argz= join(' ',@ARGV) if(@ARGV);my $Stxt='';
+my $d8VS='HBFLClov';       my $clrf=1;my $fulf=0;my $argz='';$argz= join(' ',@ARGV) if(@ARGV);my $Stxt='';
 my $edVS=        '';       my %fulc=();  $fulf=1 if($argz=~ /(^|\s)-?-?f/i); # find -?f(ull) flag to count && sort all chars at end
 if($argz=~ /(^|\s)-?-?[nc]/i){$clrf=0;} # accepts -?(no)?c(olor)? argument for vim ':r!8plc c' to be like ':r!8plc|sS'
 my $efyl ='8.txt';my @lcnt;$lcnt[$_]=0 for(0..61);my @acnt;$acnt[$_]=0 for(0..61);my $done=0;my $t0tl=0;my $text;my $actx;my $sclc;my $gttl=0;
@@ -40,23 +39,23 @@ for(@scnt){                                                                     
   $sclc = 9 - $sclc;$sclc=0 if($sclc < 0);
   $Stxt.=sprintf ' '  x $sclc; $Stxt.=             sprintf(  "%s $actx\n",            b8colr(sprintf("%2s",b64($_))));}
 $Stxt.=                                            sprintf   "$B-------- -- ---\n";
-$Stxt.=                                            sprintf("${C}t${M}0${C}tlz    %s %s$W :$G $t0tl $gttl\n",
-                                                                                      b8colr(sprintf("%2s",b64($t0tl))),b8colr(sprintf("%2s",b64($gttl))));
-if($fulf){my %cvlz=reverse(%fulc);my @ccnt= sort { $a <=> $b } keys(%cvlz);my $sumn=0; # 2-columns of full counts fits nicely in just less than 50 lines
+$Stxt.=                                            sprintf("${C}t${M}0${C}tlz    %s %s$W :  $B(${R}b10$B)$G  %s$M  %s$W;$z",
+                                                    b8colr(sprintf("%2s",b64($t0tl))),b8colr(sprintf("%2s",b64($gttl))),cma($t0tl),cma($gttl));
+if($fulf){$Stxt.="\n";my %cvlz=reverse(%fulc);my @ccnt= sort { $a <=> $b } keys(%cvlz);my $sumn=0; # 2-colms of full counts fits nice under 50 lines so far
   for     my $cndx (0..  int(@ccnt/2)){my $coun=$ccnt[$cndx];        my $pcnt=0;my $w82o=''; # FullFile CharCounts abov as Values (or values(%fulc) nEdzUniq)
     if($cndx < int(@ccnt/2)){
       for my $char (sort(keys(%fulc))){ # then above CharCouniNDeX loops just unique counts && (was Probably) PrintCouNT before Wait to Output8
         if  ($coun ==    $fulc{$char}){ $pcnt++ if($char=~ /^(印|注|米|\n)$/); # special count for only double-wide characters
           $sumn    +=  $coun                    if($char=~ /^[0-79]$/       ); # special sum of Non-8 digits to compare at end
           $w82o    .= ($char eq "\n") ? '\n' : $char;$pcnt++;} # probably only newline shouldn't be printed normally to ruin formatting
-      } $Stxt.=sprintf((' ' x (32-$pcnt))."$w82o$B:$M".sprintf("%7s$B: %s$W,$C"  ,cma($coun),b8colr(sprintf("%4s",b64($coun)))));
+      } $Stxt.=sprintf((' ' x (32-$pcnt))."$G$w82o$B:$M".sprintf("%7s$B: %s$W,"  ,cma($coun),b8colr(sprintf("%4s",b64($coun)))));
     } $coun=$ccnt[int(@ccnt/2)+ ((int(@ccnt/2) % 2) ? $cndx+1 : $cndx)];$pcnt=0;   $w82o=''; # restore conditions for always 2nd column for now (ad optn l8r)
     if(defined($coun)){ # odd number of chars may leave last invalid coun so check
       for my $char (sort(keys(%fulc))){
         if  ($coun ==    $fulc{$char}){ $pcnt++ if($char=~ /^(印|注|米|\n)$/); # special count for only double-wide characters
           $sumn    +=  $coun                    if($char=~ /^[0-79]$/       ); # special sum of Non-8 digits to compare at end
           $w82o    .= ($char eq "\n") ? '\n' : $char;$pcnt++;} # probably only newline shouldn't be printed normally to ruin formatting
-      } $Stxt.=sprintf((' ' x ( 8-$pcnt))."$w82o$B:$M".sprintf("%7s$B: %s$Y;\n$G",cma($coun),b8colr(sprintf("%4s",b64($coun)))));#,S(substr($cmap{'d8bo'},b64(int(rand(8))),1)));
-    }}  $Stxt.=sprintf "$G Sum of 0..7,9$W:$M$sumn$z"; }  $Stxt=sS($Stxt) unless($clrf);
+      } $Stxt.=sprintf((' ' x ( 8-$pcnt))."$C$w82o$B:$M".sprintf("%7s$B: %s$W,\n",cma($coun),b8colr(sprintf("%4s",b64($coun)))));#,S(substr($cmap{'d8bo'},b64(int(rand(8))),1)));
+    }}  $Stxt.=sprintf("$C  Sum of$B: ${G}0$W..${G}7$W,${G}9$B: $M%s$W;$z",cma($sumn));} $Stxt=sS($Stxt) unless($clrf); # mAB flag2strip SKp colrz out B4 print
 open my $out8,'>&',STDOUT or die "Can't open  duplic8 STDOUT handle: $!";binmode $out8,':encoding(UTF-8)';print $out8 $Stxt; # crE8 local duplic8 of global
 close   $out8             or die "Can't close duplic8 STDOUT handle: $!";

@@ -298,9 +298,9 @@ sub cma {my $strn=shift;my $comc=shift||',';my $blok=shift||3; # ECKLNcb3:`cma`c
   my  @strz = split(/\n/,$strn); # H92MJK4D:cma && coma were exported from a8.pm for a while but have migr8d here to b8.pm since more applicable with Big numz;
   for(@strz){if(/^\s*[-+]?(\d+)/){my $word = $1; # Bl0Xmplfr0mPerlFAQ5Ab0v; Just:s/^(-?\d+)(\d{3})/$1,$2/g;
                                   my $cwrd =reverse $word;1 while $cwrd=~s/([^,\s]{$blok})([^,\s])/$1$comc$2/; # needs to reset each match or gets $blok+1
-                                                          #cwrd=~s/([^,\s]{$blok})([^,\s])/$1$comc$2/g;
+                                                          #        cwrd=~s/([^,\s]{$blok})([^,\s])/$1$comc$2/g;
                                      $cwrd =reverse $cwrd;#cwrd=~s/^(\s*)$comc/$1/g;
-                                     s/$word/$cwrd/;}}
+                                     s/$word/$cwrd/;}} # HBGL0kXa:2du add cma.aft,rde,cim,alp,oin,t as shud not be needing reverse since matchd Lt2Rt raD8 dot;
       $strn =  join("\n",@strz);return($strn);} # orig!enuf cuz must insrt coma,then recalc pos&&from:
 sub coma{my $strn=shift;my $comc=shift||',';my $blok=shift||4; # ...like above but dflt comma charz between groups of 4 b64 charz
   if(!defined($strn) && !-t STDIN){$strn.= decode('UTF-8',$_) while(<STDIN>);}
