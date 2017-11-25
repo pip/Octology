@@ -1,0 +1,5 @@
+#!/usr/bin/perl
+use strict;use warnings;use utf8;use Octology::a8;
+open my $out8,'>&',STDOUT or die "Can't open  duplic8 STDOUT handle: $!";binmode $out8,':encoding(UTF-8)'; # crE8 local duplic8 of global
+d8cs('ROYGWCBMPW') if(@ARGV && $ARGV[0] =~ /,/ );print $out8   b8c(@ARGV); # insert Whitez 4 `coma` positionz in d8ColorString if commaz detected in input
+close   $out8             or die "Can't close duplic8 STDOUT handle: $!" ; # but doesn't handle piping commaz through STDIN yet

@@ -79,7 +79,7 @@ my  $FOUND_DIR    = '_found'; # The find command's results go in /_found/
 my  $MAX_ATTACH_SIZE    = 2*1024**2; # Maximum size of entry file attachments
 # Application name and version
 my  $APP_NAME           = basename($0);$APP_NAME =~ s/\.(pl|exe)$//;
-my  $VERSION            = "3.201";my $d8VS='HBOLFBin'; # (VERSION was originally 3.0 B4 Pip modified source code into personal 3.2, then 3.1 => 3.201)
+my  $VERSION            = "3.201";my $d8VS='HBOLITES'; # (VERSION was originally 3.0 B4 Pip modified source code into personal 3.2, then 3.1 => 3.201)
 our $HISTORY_FILE       = ""; # Gets set in the MyGetOpts() function
 my  $opts               = MyGetOpts(); # Will only return with options we think we can use
 my  $doc_passwd_gen     =
@@ -204,7 +204,7 @@ my $term;$term = new Term::ShellUI( # Setup Term::ShellUI object
       minargs  => 1, maxargs => 1,
       args     => \&complete_groups,
       method   => \&cli_mkdir,},
-    md         => { alias    => 'mkdir' }, # just 'mk' is aliased l8r to 'new', like 'add'
+    md         => { alias    => 'mkdir' }, # just 'mk' is aliased l8r to 'new', with 'add'
     rmdir      => {
       desc     => "Delete  a  group (rmdir <group_name>) (\"rd\" also works)",
       minargs  => 1, maxargs => 1,
@@ -226,7 +226,7 @@ my $term;$term = new Term::ShellUI( # Setup Term::ShellUI object
     dir        => { alias    => 'ls' },
     new        => {
       desc     => "Create a new entry: new <optional path&|title>",
-      doc      => "\nThe new command is used to create a new entry. Usage is straightforward.\n\n$doc_passwd_gen",
+      doc      => "\nThe new command is used to create a new entry. Usage is straightforward. Also 'add' or 'mk' alias.\n\n$doc_passwd_gen",
       minargs  => 0, maxargs => 1,
       args     => [\&complete_groups],
       method   => sub { run_no_TSTP(\&cli_new, @_); },},
@@ -255,7 +255,7 @@ my $term;$term = new Term::ShellUI( # Setup Term::ShellUI object
     xx         => {
       desc     => "Clear         the clipboard: xx",
       minargs  => 0, maxargs => 0,
-      method   => sub { cli_xN('xx'); }},
+      method   => sub { cli_xN('xx'    ); }},
     pwck       => {
       desc     => "Check password quality: pwck <entry|group>",
       doc      => "\nThe pwck command tests password quality for entries. You can check an individual entry or all entries inside of a group, recursively.\n" .
@@ -350,38 +350,38 @@ my $term;$term = new Term::ShellUI( # Setup Term::ShellUI object
       method   => sub { cli_cd($term, {'args'=>['/']}); },},
     'cd/'      => { alias    => '/' },
     '..'       => {
-      desc     => "Change up  one  directory   (path to                   parent group)",
+      desc     => "Change up  one  directory   (path to               Parent group)",
       minargs  => 0, maxargs => 0,
       args     => \&complete_groups,
-      method   => sub { cli_cd($term, {'args'=>['..']}); },},
-    '../'      => { alias    => '..' },
-    'cd..'     => { alias    => '..' },
+      method   => sub { cli_cd($term, {'args'=>['..'            ]}); },},
+    '../'      => { alias    => '..'     },
+    'cd..'     => { alias    => '..'     },
     '...'      => {
-      desc     => "Change up  two  directories (path to             grand-parent group)",
+      desc     => "Change up  two  directories (path to          GrandParent group)",
       minargs  => 0, maxargs => 0,
       args     => \&complete_groups,
-      method   => sub { cli_cd($term, {'args'=>['../..']}); },},
-    '.../'     => { alias    => '...' },
-    'cd...'    => { alias    => '...' },
+      method   => sub { cli_cd($term, {'args'=>['../..'         ]}); },},
+    '.../'     => { alias    => '...'    },
+    'cd...'    => { alias    => '...'    },
     '....'     => {
-      desc     => "Change up three directories (path to         gr8-grand-parent group)",
+      desc     => "Change up three directories (path to       Gr8GrandParent group)",
       minargs  => 0, maxargs => 0,
       args     => \&complete_groups,
-      method   => sub { cli_cd($term, {'args'=>['../..']}); },},
-    '..../'    => { alias    => '....' },
-    'cd....'   => { alias    => '....' },
+      method   => sub { cli_cd($term, {'args'=>['../../..'      ]}); },},
+    '..../'    => { alias    => '....'   },
+    'cd....'   => { alias    => '....'   },
     '.....'    => {
-      desc     => "Change up four  directories (path to     gr8-gr8-grand-parent group)",
+      desc     => "Change up four  directories (path to    Gr8Gr8GrandParent group)",
       minargs  => 0, maxargs => 0,
       args     => \&complete_groups,
-      method   => sub { cli_cd($term, {'args'=>['../../..']}); },},
-    '...../'   => { alias    => '.....' },
-    'cd.....'  => { alias    => '.....' },
+      method   => sub { cli_cd($term, {'args'=>['../../../..'   ]}); },},
+    '...../'   => { alias    => '.....'  },
+    'cd.....'  => { alias    => '.....'  },
     '......'   => {
-      desc     => "Change up four  directories (path to gr8-gr8-gr8-grand-parent group)",
+      desc     => "Change up five  directories (path to Gr8Gr8Gr8GrandParent group)",
       minargs  => 0, maxargs => 0,
       args     => \&complete_groups,
-      method   => sub { cli_cd($term, {'args'=>['../../../..']}); },},
+      method   => sub { cli_cd($term, {'args'=>['../../../../..']}); },},
     '....../'  => { alias    => '......' },
     'cd......' => { alias    => '......' },
   },);
