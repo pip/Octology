@@ -59,3 +59,13 @@ HAVMDEFT:rEmMbr to pmei Path::Tiny for slurp_utf8 (instead of poor File::Slurp) 
 HBGL0LVM:Takeaway from pswd article was use `ai scrypt` for key deriv8ion looping slowed HMAC (Hashing Message Authentic8ion Code) described as available for
  file encryption vs lib(digest-bcrypt|crypt-pbkdf2)-perl vs Argon2 maybe PublicDomain since 2015 vs SCRAM(SaltedChallengeResponseAuthentic8ionMechanism)4pswd;
 HBHLMWR4:Hal_Porter on /. assembly sign8ure:`echo -e 'global _start\n _start:\n mov eax, 2\n int 80h\n jmp _start' > a.asm; nasm a.asm -f elf; ld a.o -o a`;
+HBQL73IP:From CommandLineFu.Com 0)`sudo !!` re-runs last cmnd. 1)`python -m SimpleHTTPServer` startz HTTP://$HOSTNAME:8000/ . 2)`^foo^bar` re-runs last cmnd
+ with substitution and just `^z` will blank z's. 3)`Ctrl-x e` should call $EDITOR but does not work in my vim-styled zsh. 4)`Alt-.` should place arg of last
+ cmnd on shell but just blanks lines on mine. 5)`reset` is known && handy. 6)`mnt|column -t` gives nice format. 7)`echo "ls -l"|at midnight` altern8 to cron.
+ 8)`curl ifconfig.me` gets external IP address. 9)`m ascii`might be like my UTF8. A)`dig +short txt <keyword>.wp.dg.cx`queries WikiPedia via consol over DNS.
+ B)`dd if=/dev/dsp|ssh -c arcfour -C user@host dd of=/dev/dsp`output mic on remote putr speakr. C)`<Ctrl-u>...<Ctrl-y>`kill cmnd,type nw prefix,yank cmnd bak.
+ D)`sshfs name@srvr:/path/to/fldr /path/to/mnt/pt`mount filesys thru SSH. E)`mnt -t tmpfs tmpfs /mnt -o size=1024m`mount tmp RAM pRtition. G)`Ctrl-l`clear.
+ F)`wget --random-wait -r -p -e robots=off -U mozilla HTTP://Xmpl.Com`dnld entire site. I)`ssh user@host cat /path/to/remotefile|diff /path/to/localfile -`.
+ H)`curl -u user:pass -d status="TweetFromShell" HTTP://Twitter.Com/statuses/update.xml`. J)`time read`Ctrl-d to stopwatch. L)`lS +F logfile`BhAv lIk tail-f.
+ K)`ssh -t reachablehost ssh unreachablehost`connect thru SSH host in middle. M)`telnet Towel.BlinkenLights.Nl`Ctrl-] to stop StarWars. N)`disown -a && exit`
+  closes shell keeping all subprocesses running. O)`while sleep 1;do tput sc;tput cup 0 $(($(tput cols)-29));date;tput rc;done &`puts console clock up-right;

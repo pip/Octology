@@ -1,5 +1,5 @@
 # D6RMF1V1:8.txt - by8π : JAPH : K3wlD00d : 1337H4xr : PipStuart's Octology (hopefully eventually an Ontology of 8) - Convention, Conversion, && Categoriz8ion:
-# $VERSION='0.0';$d8VS='HBFL8ff8'; # Octology attempts to rel8 the universe through medit8ion on mnemonic abbreV8ion (via 8-based  limit8ion) &&    elucid8ion.
+# $VERSION='0.0';$d8VS='HBQLCat8'; # Octology attempts to rel8 the universe through medit8ion on mnemonic abbreV8ion (via 8-based  limit8ion) &&    elucid8ion.
 # CEBBICTI:Crossing Every Bridge Before I Come To It? I.e., not a d8 stamp. Trying to make my Dad's birthday (August 8th) more special by thinking 2far ahead?
 # Octology intends to pursue implic8ion && ramific8ion as substantE8ion for adequ8 particip8ion, if not also 2 oblig8ion toward implement8ion &&   promulg8ion.
 # Conceptually, Octology is a system st8ing that every organiz8ional principle is valuable, but 8 tends to be a nearly ideal starting place for most d8a sets.
@@ -90,12 +90,12 @@ compartmentaliz8ion
             don8   :way to contribute (monetarily or reput8ion?) to rel8d people or causes   # Pro-science! Pro-choice! Pro-woman! Pro-immigrant! Pro-minority!
          appreC8   :don8 with extra appreciation in honor of Angie =)  # Protect  Voting Rights Act!  Take serious felonies outside  military chain-of-command!
          fortun8       # Enact Guaranteed Basic Income && Universal Health-Care! Close Guantanamo Bay! Clemency for Edward Snowden! Make sepR8 Palestinian st8!
-             gr8ful    # Protect free speech (especially unpopular && offensive)! Advoc8 justice && gender equality thru both classic feminism && men's rights!
-        monetiz8ion    # Stop censorship! Don't just listen && believe. Trust but verify! AppreC8 candid rational deb8. Forms of criticism are *NOT* h8-speech!
+             gr8ful    # Protect free-speech (especially unpopular && offensive)! Advoc8 justice && gender equality thru both classic feminism && men's rights!
+        monetiz8ion    # Ban censorship! Don't just listen && believe. Trust but verify! AppreC8 candid rational deb8. Protect h8-speech! Eradic8 global ICBMs!
        approprE8   :same as alloc8 for design8ing funds for a purpose or maybe politial correctness && social faux pas educ8ion && avoidance recommend8ions?
         compens8   :don8 repurposed for payments && payrolls
         remuner8
-        deprecE8   :don8 based on some other calcul8d diminishing value
+         depreC8   :don8 based on some other calcul8d diminishing value (deliber8ly misspelled && mispronounced to match up with Anch liking to say "appreC8")
            pror8   :don8 based on proportions of used resources
             reb8   :don8 to refund portions of prior payments?
           evacU8   :safety && emergency escape planning tool and maybe collabor8 on upd8ing safer harder-to-puncture explosive rail && truck trailer car design
@@ -897,6 +897,9 @@ internationaliz8ion:tools to transl8 for I18N the document8ion && applic8ion int
               n8ive
            vers8ile
           abdic8
+       stabiliz8ion
+       moderniz8ion
+   industrializ8ion
    circumstantE8   :substantE8, authentic8, valid8, or corrobor8
         conturb8ion:agit8ion, trepid8ion, or vex8ion
         perturb8ion
@@ -964,23 +967,23 @@ internationaliz8ion:tools to transl8 for I18N the document8ion && applic8ion int
           celib8
             col8   :Col8 On Layer 8, further abbreV8d into Octology::c8.pm, also FSCK (FsckSlayerCursesKing), aligned text && attribute d8a like Curses::Simp
               N8   :pronunC8ion as "innate", to be a succinct primary general d8a-set manager (probably cut because pronunC8ion && spelling are too far off)
+             DN8           :DNA (Deoxyribo-Nucleic Acid8) human genome sequencer/modeler && maybe chromosome strand splicing && protein-folding type games
             NfN8           :Infinite followable inter-connections between 8d8a (as part of 8b8a?), likely with some possible mapping to any complete unific8ion
-             DN8           :DNA genome sequencer/modeler && maybe protein-folding game
-       UnitedSt8s          :USA d8a, maps, details, history, etc.
-        Unitedn8ions       :tool to monitor the UN
-              n8o          :NATO history && presently known agenda
- UnitedArabEmir8s          :UAE also just "Emirates", an absolute monarchy in Western Asia on the Persian Gulf which is a feder8ion of 7 emir8s
+       UnitedSt8s          :USA d8a, maps, details, history, popul8ion, etc. for each of the sepR8 50 St8s, WashingtonDC capital, && other assoC8d territories
+        Unitedn8ions       :tool to monitor the UN, an intergovernmental organiz8ion tasked to promote intern8ional cooper8ion && to crE8 && maintain order
+ UnitedArabEmir8s          :UAE also just called "Emirates", which is an absolute monarchy in Western Asia on the Persian Gulf && is a feder8ion of 7 emir8s
             Kuw8           :Middle East "Kuwait" country as handle for ISIS war reporting/analysis tool or Iraq, Syria, && Afghanistan neighboring details
-              h8i          :"Haiti" the country, just because it also fits name-wise ;)
-              b8HaMikdash  :Jewish Holy Temple
+              n8o          :NATO history && presently known agenda for this NorthAtlanticTreatyOrganiz8ion, a post-WorldWarII military alliance of democracies
+              h8i          :"Haiti" the country which is a republic in the West Indies of the Caribbean on Hispaniola island, because it also fits name-wise ;)
+              b8HaMikdash  :Jewish Holy Temple, or "The Sanctified House" according to rabbinical liter8ure, && only the Temple in Yerushalayim has this name
      PontiusPil8           :Roman procur8or of Judea who ordered Y'shua (A.K.A. Jesus) to be crucified (according to Christian mythology, maybe not history)
-  ParksAndRecrE8ion        :comedy show
-       Colbertn8ion        :Stephen ColbertReport show
-              r8chelMaddow :TRMS
-              n8Silver     :model math user with generally rel8ively accur8 prediction models
-     Catherinez8aJones     :talented actress && fellow individual diagnosed with Bipolar Disorder, although I hope we both keep living well with it
+  ParksAndRecrE8ion        :pretty intelligent && funny comedy show about small-town politics starring Amy Poehler && very attractive Aubrey Plaza
+       Colbertn8ion        :Stephen ColbertReport show back on ComedyCentral from before he took over the CBS l8Show, premiering on September 8th of 2015
+              n8Silver     :model math user with generally rel8ively accur8 prediction models (@NateSilver538 founder/editor-in-chief of FiveThirtyEight.Com)
+              r8chelMaddow :TRMS (TheRachelMaddowShow) as a slight, but deliber8, mispronunC8ion of the very bl8antly left-leaning MSNBC host's name
+     Catherinez8aJones     :talented actress && fellow individual diagnosed with BiPolar Disorder, although I hope we both continue living well with it
          PlaySt8ion        :Sony's series of videogame consoles && hardware media players (which bear my initials && are my favor8s in every console gener8ion)
-              v8rPercussion:Vater company that made my double-sided drum pad && Los Angeles sticks that Tim gifted to me
+              v8rPercussion:Vater company that made my double-sided drum-pad && sweet Los Angeles drum-sticks that my awesome little brother Tim gifted to me
 
   demonstr8ion
 
@@ -3692,3 +3695,5 @@ HBEL0pcm:After reading weak MindMap post, found gr8 HTTP://SijinJoseph.Com/progr
 HBFL8ff8:Good ThyNameIsSkepticism channel link to rather lame HTTPS://IDRLabs.Com/gender/test.php where I got 58% male, 42% female. I'm "Casually Masculine";
 HBQL4BIG:Proggit had cool HTTP://CommandLineFu.Com/commands/browse/sort-by-votes && present8ion post recommending introducing complete newbies to your chosen
 topic for a couple minutes, then proceeding through a twice practiced live-coding session with big fonts && backup git commits to jump to when getting stuck;
+HBQL678P:Also HTTPS://Scrimba.Com for client-side interactive code-casting might be a good resource to learn from when planning Octology coding demonstr8ions.
+HTTPS://Developers.GoogleBlog.Com/2017/11/introducing-container-diff-tool-for.html also may prove useful for maintaining eventual Docker containers for code;
