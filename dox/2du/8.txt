@@ -2,15 +2,15 @@
 # $VERSION='0.0';$d8VS='HBFL8ff8'; # Octology attempts to rel8 the universe through medit8ion on mnemonic abbreV8ion (via 8-based  limit8ion) &&    elucid8ion.
 # CEBBICTI:Crossing Every Bridge Before I Come To It? I.e., not a d8 stamp. Trying to make my Dad's birthday (August 8th) more special by thinking 2far ahead?
 # Octology intends to pursue implic8ion && ramific8ion as substantE8ion for adequ8 particip8ion, if not also 2 oblig8ion toward implement8ion &&   promulg8ion.
-# Conceptually, Octology is a system that st8s that every organiz8ional principle is valuable, but 8 tends to be a useful starting place for valuable d8a sets.
+# Conceptually, Octology is a system st8ing that every organiz8ional principle is valuable, but 8 tends to be a nearly ideal starting place for most d8a sets.
              iD8   :encouragement software for the mentally ill to concentr8 on self-esteem and positive iD8ion and to divert from degener8 suicidal fix8ions
         coordin8   :core numerical d8a value, which is mainly a 2D or 3D point in space, but may eventually be extended to support an arbitrary dimensionality
           ordin8   :just y-axis values (with "abscissa" as the expected consistent name to standardize on for any corresponding assoC8d x-axis coordin8 values)
          applic8   :just z-axis values (which will only become particularly relevant l8r in development after 2D interfaces are adequ8 && ready for 3D OpenGL)
-            str8   :core line  tool (main coordin8 pairs) <<<<\\//>>>>>//^^\\  starting from left && going counter-clockwise to up      (default axis-aligned)
-           curv8   :core curve tool (spline) "We D  ReaM" WestDownRightMnorth   or "MeRe DeW" reversing order going Noon to 9-O'Clock   (degener8 as any raD8)
-             st8   :term for core elements of w8,d8,r8,m8,etc. && also basic st8 crE8ion tool   (axes could intuitively become both l8,d8,r8,U8 && w8,s8,E8,N8)
-             tr8   :term for traits which assoC8 with states   && also basic tr8 crE8ion tool   (initial tr8s may extend to design8 destin8ion st8s for links)
+            str8   :core line  tool (main coordin8 pairs) <<<<\\//>>>>>//^^\\ starting from left && going counter-clockwise to up Noon  (default axis-aligned)
+           curv8   :core curve tool (spline) "We D  ReaM" WestDownRightMnorth   or "MeRe DeW" reversing order going Noon to  9-O'Clock  (degener8 as any raD8)
+             st8   :term for core elements of w8,d8,r8,m8,etc. && also basic st8  crE8ion tool  (axes could intuitively become both l8,d8,r8,U8 && w8,s8,E8,N8)
+             tr8   :term for traits which assoC8 with states   && also basic tr8  crE8ion tool  (initial tr8s may extend to design8 destin8ion st8s for links)
          applic8ion:term for any particular tool of this entire 8-based represent8ion && categoriz8ion system ("Octology") along with expressive recombin8ions
           gradu8   :general labeled ticked bar made of combin8ion of editable str8 line objects (&& also eventually when an educ8 certific8 has been completed)
               m8rix:general 2D d8a grid manager which primarily conform to 8x8 layouts && views (&& also MMO virtual 3D Metaverse like Wachowski movie trilogy)
@@ -40,17 +40,16 @@
          expect8ion:description of anticip8d or desired behavior primarily as part of a valid8 testing framework but may origin8 within an earlier specific8ion
        authoriz8ion:secure account password && permission management via my KeePassCLI fork (as well as SSL, GPG, OAuth2, && any other encryption-rel8d stuff)
       authentic8   :maybe eventually some combin8ion of authorized user authentic8ion mechanisms to facilit8 multi-factor valid8ion via e-mail, SMS, && others
+      administr8   :collection of tools to manage && autom8 all core GNU/Linux system software maybe mainly by regener8ion of /etc configur8ion files
+        registr8   :  I doubt I'll want to have any form of software registr8ion, but maybe this can be a personal registry tool of some useful kind?
        recogniz8ion:maybe biometrics management with fingerprint, vocal, facial, retinal, plus pattern, sign8ure, && gesture recognition with priv8 controls
            priv8   :design8 privacy settings for arbitrary groups of d8a (admitting such spelling is a bit of a stretch versus pronunC8ion more like "priv@")
        anonymiz8ion:possibly mechanisms to enable routing all network-based applic8ion activities through Tor or any other comparable protocols for anonymity
-        verific8ion
           valid8   :autom8d testing framework which executes code versus each specific8ion expect8ion, && also a sepR8 manual disapproval/approval r8ing tool
-        invalid8
+        verific8ion
         confirm8ion
       substantE8
-       corrobor8   :vouching for accounts of events within a group
-        registr8   :  I doubt I'll want to have any form of software registr8ion, but maybe this can be a personal registry tool of some useful kind?
-      administr8   :collection of tools to manage && autom8 all core GNU/Linux system software maybe mainly by regener8ion of /etc configur8ion files
+       corrobor8   :vouching for accounts of events within a group, like maybe recounting events of a crime-scene or momentous record-breaking achievements
           activ8   :turn stuff on? maybe daemon && other process manager or some form of applic8ion enabler like an energized power-up installer or something
           alloc8   :prepar8ory d8a or memory manager or even design8ing disk space or network utiliz8ion thresholds for use among applic8ions that employ them
        fragment8ion:dynamic    d8a or memory manager for defragmenting or initE8ing or scheduling autom8d garbage collection to enable efficient alloc8ion l8r
@@ -60,6 +59,7 @@
          abbreV8   :general aliasing && enhanced wrapping mechanism for commands as well as m8 specialized for mapping arbitrary abbreviations visually
         nomencl8ure:especially technical V8 naming && not8ion conventions
             rel8   :m8 specialized for mapping diverse social or other networks with various relationships
+            inn8   :n8ive, unconditioned or unlearned talent or reflex (which may still eventually be abbreV8d as slightly mispronounced "N8" core d8a manager)
            conn8
            cogn8
             agn8
@@ -69,7 +69,7 @@
          destin8ion
           gener8ion:rel8 for family trees
               m8riarch
-              p8riarch:maybe could append a "y" && then try to discuss faulty concept from modern feminism which implies permanent privilege oppression
+              p8riarch:could append "y" in attempt to discuss faulty concept from modern feminism which assumes or implies permanent privilege over oppressed
           found8ion
         fratern8
        director8
@@ -894,22 +894,28 @@ internationaliz8ion:tools to transl8 for I18N the document8ion && applic8ion int
 
 # above are my 888 current favorite 8-words that I'd most like to consider developing into distinct applic8ions (or component specializ8ions && fE8ures)
 # here are candid8 words (if any) to next contempl8 for replacing others above with, or to store with all others further below that have been cut so far
-            inn8   :better instead of old N8 core d8a manager
+              n8ive
            vers8ile
           abdic8
+   circumstantE8   :substantE8, authentic8, valid8, or corrobor8
         conturb8ion:agit8ion, trepid8ion, or vex8ion
         perturb8ion
         flutter8ion
         tumultu8ion
 # below are the additional possible 8-words I've cut, often due to conceptual similarity to existing entries or to unify more around typical pronunC8ion
+         remigr8   :bl8ant varE8ions on migr8
+      transmigr8
+      intermigr8
+        invalid8   :bl8ant neg8ion
         percont8ion:rare archaic word for an act or process of questioning or inquiry generally referred to regarding irony demarc8ion, demoted for obscurity
          bifurc8   :obvious special double && triple forms of furc8 should probably be demoted
         trifurc8
-      incapacit8   :obvious neg8d form of capacit8 so demoted
-     disarticul8   :obvious neg8d form of at least movement meaning of articul8 && similar enough to disloc8 to be demoted for now
+      incapacit8   :bl8ant neg8d form of capacit8 so demoted
+     disarticul8   :bl8ant neg8d form of at least movement meaning of articul8 && similar enough to disloc8 to be demoted for now
         deactiv8   :respective disablers which correspond directly to whatever processes, extensions, configur8ions, etc. might become able to be activ8d above
-         dissoC8   :obvious neg8d form of assoC8 should probably be demoted
+         dissoC8   :bl8ant neg8d form of assoC8 should probably be demoted
             SSN8   :code for an "assassin8" FPS game like Half-Life or with some ambitious elements of OverWatch using cr8 engine? (demoted for poor spelling)
+       reincarn8   :bl8ant repetition
               f8ful:  fateful like fortuitous, tragic, or otherwise highly significant events that were destined to influence what would follow (too like f8)
               f8hful:faithful loyalty in adherence (too like f8h)
          interf8h
@@ -919,11 +925,14 @@ internationaliz8ion:tools to transl8 for I18N the document8ion && applic8ion int
         bigemin8
         ingemin8
           gemin8   :in pairs or twains, two together, twin  (from Botany)
-          divag8   :deV8 (5 synonyms from divag8 to peregrin8)
+          divag8   :deV8 (8 synonyms from divag8 down to circumambul8, mainly meaning to travel, wander, or walk about)
         divaric8
         exorbit8
+    peripatetic8
          pererr8
        peregrin8
+       perambul8
+    circumambul8
      underestim8   :these are just obvious conjug8ions which probably don't warrant their own sepR8d applic8ion name
       overestim8
      proportion8
@@ -3681,3 +3690,5 @@ the comment discussion is gr8 too. HTTPS://Medium.Com/@karpathy/software-2-0-a64
 having many clear advantages over 1.0 && rel8ively few downsides so far. HTTPS://DeepMind.Com/blog/wavenet-launches-google-assistant is gr8 Text2Speech demo;
 HBEL0pcm:After reading weak MindMap post, found gr8 HTTP://SijinJoseph.Com/programmer-competency-matrix where it seems I'd mostly fall in end Levels 3 or 2;
 HBFL8ff8:Good ThyNameIsSkepticism channel link to rather lame HTTPS://IDRLabs.Com/gender/test.php where I got 58% male, 42% female. I'm "Casually Masculine";
+HBQL4BIG:Proggit had cool HTTP://CommandLineFu.Com/commands/browse/sort-by-votes && present8ion post recommending introducing complete newbies to your chosen
+topic for a couple minutes, then proceeding through a twice practiced live-coding session with big fonts && backup git commits to jump to when getting stuck;

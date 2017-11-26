@@ -1,24 +1,48 @@
 #!/usr/bin/perl
-# 73TKJoTg:ptg crE8d by PipStuart <Pip@CPAN.Org> to stamp e-mails for my dad (Gerry - Gtime) and I (Pip - d8ime). E85M6q1A:d8g (renamed to, for d8 zone upd8);
+# 73TKJoTg:ptg crE8d by PipStuart <Pip@CPAN.Org> to time-stamp the headers of Gmails between my Dad (Gerry - Gtime) and myself (Pip - Ptime);
+# E85M6q1A:d8g is what this utility was renamed to when upd8d to use new 8-character d8 format that inserts zone field into old Time::PT 7-char form;
+# 2du:maybe slurp all this into d8.pm as common configurable options && releg8 this as merely another stub utility (or even just new `d8 -g` option);
 use strict;use warnings;use utf8;use v5.10;use Octology::d8;my $parm = join(' ',@ARGV);my $d8im = Octology::d8->new(); # doesn't really handle any paramz yet
-use Time::DaysInMonth;my $VERSION='0.0';my $d8VS='EBQLIw5V';
+use Time::DaysInMonth;my $VERSION='0.0';my $d8VS='HBPLEASE';my $ohmf = 1;$ohmf=0 if($parm=~ /(^|\s)-?-?[mn]/i); # set OutputHtmlMarkupFlag
 use Time::DayOfWeek; # below would be to offset from UTC to CST/CDT Wisconsin time -6/-5 (was -= '8000' for old PST/PDT California time)
 if(exists($ENV{'TZ'}) && $ENV{'TZ'} eq 'UTC'){$d8im -= '6000';$d8im += '1000' if(exists($ENV{'DST'}) && $ENV{'DST'});}
-my @fldz =(      0,$d8im->M(),$d8im->D(),$d8im->Y(),$d8im->h()+1,$d8im->m());
-if($fldz[4] <    0 ){$fldz[4] %= 24;$fldz[2]--; # this should only happen if I've subtracted hours from UTC above
+my   @fldz=(     0,$d8im->M(),$d8im->D(),$d8im->Y(),$d8im->h()+1,$d8im->m()); # shud l8r add -help option to output -n as only other option for No-markup flag
+if  ($fldz[4] <  0 ){$fldz[4] %= 24;$fldz[2]--; # this should only happen if I've subtracted hours from UTC above
   unless(  $fldz[2]){$fldz[1]--;
     unless($fldz[1]){$fldz[1]  = 12;$fldz[3]--;}
-    $fldz[2]  = Time::DaysInMonth::days_in($fldz[3], $fldz[1]);}}
-if(  $fldz[4] > 23){$fldz[4] %= 24;$fldz[2]++;
+    $fldz[ 2] = Time::DaysInMonth::days_in($fldz[3], $fldz[1]);}}
+if  ($fldz[4] > 23 ){$fldz[4] %= 24;$fldz[2]++;
   if($fldz[2] > Time::DaysInMonth::days_in($fldz[3], $fldz[1])){$fldz[2] = 1;$fldz[1]++;if($fldz[1] > 12){$fldz[1] = 1;$fldz[3]++;}}}
 my @mnth = Time::DayOfWeek::MonthNames();                           $fldz[4] = sprintf("%02d", $fldz[4]);
 $fldz[0] = Time::DayOfWeek::DayOfWeek($fldz[3], $fldz[1], $fldz[2]);$fldz[5] = sprintf("%02d", $fldz[5]);$fldz[1] = $mnth[$fldz[1] - 1];
-$_  = 'echo -n "' . "$fldz[0], $fldz[1] $fldz[2], $fldz[3], $fldz[4]$fldz[5] Gtime / " . sprintf("%02d",($fldz[4]+23)%24) .
-      "$fldz[5] Ptime $d8im" . '"';#. '|xclip -i';
-$_ .= '|xclip -f -si -se p -l 1';                          # specify which  X selection to use: "primary" to use XA_PRIMARY (default),
-#$_.= '|xclip -f -si -se c -l 1'; # -sel [psc]             #                                  "secondary" for    XA_SECONDARY  or
-#$_.= '|xclip -filter -silent -selection primary -loop 1'; #                                  "clipboard" for    XA_CLIPBOARD
-#print "$_\n";
-system($_);
-#print "Thursday, March 29, 2007, 1838 Gtime / 1738 Ptime 73TKHcMG\n"; # to clip
-# It looks like vim could add it to both the primary (mouse-button driven) && regular Ctrl-XCV keyboard clipboards simultaneously by macroing: :r!d8g^M"+YV
+$_       = 'echo -n "';my $fntc='<font color=\"';my @d8fz= split(//,$d8im);
+if  ($ohmf){$_ .=  "$fntc#FFFF00\\\">$fldz[0]</font>$fntc#000000\\\">,</font> $fntc#FF9900\\\">$fldz[1]</font> $fntc#FFFF00\\\">$fldz[2]</font>" .
+  "$fntc#000000\\\">,</font> $fntc#FF0000\\\">$fldz[3]</font> $fntc#000000\\\">-</font> $fntc#00FFFF\\\">$fldz[4]</font>$fntc#0000FF\\\">$fldz[5]</font> " .
+  "<span style=\\\"background-color: rgb( 39,  78,  19);color: rgb(255,   0, 255);\\\">G</span>"      .
+  "<span style=\\\"background-color: rgb(255, 255, 255);color: rgb(  0, 255,   0);\\\">time</span>"   . " $fntc#000000\\\">/</font> " . 
+  "$fntc#00FFFF\\\">" . sprintf("%02d",($fldz[4]+23)%24) . "</font>$fntc#0000FF\\\">$fldz[5]</font> " .
+  "<span style=\\\"background-color: rgb( 32,  18,  77);color: rgb(255,   0, 255);\\\">P</span>"      .
+  "<span style=\\\"background-color: rgb(255, 255, 255);color: rgb(  0, 255,   0);\\\">time</span> : <b>" .
+  "$fntc#FF0000\\\">$d8fz[0]</font>$fntc#FF9900\\\">$d8fz[1]</font>$fntc#FFFF00\\\">$d8fz[2]</font>$fntc#00FF00\\\">$d8fz[3]</font>" .
+  "$fntc#00FFFF\\\">$d8fz[4]</font>$fntc#0000FF\\\">$d8fz[5]</font>$fntc#FF00FF\\\">$d8fz[6]</font>$fntc#9900FF\\\">$d8fz[7]</font>" .
+  "</b><br/><br/>Dear <b>$fntc#FF0000\\\">Dad</font></b>,<br/><br/><br/>Love,<br/><b>$fntc#0000FF\\\">-Pip =)</font></b>"; # mAB nEd some div in there2?
+}else      {$_ .= "$fldz[0], $fldz[1] $fldz[2], $fldz[3] - $fldz[4]$fldz[5] Gtime / " . sprintf("%02d",($fldz[4]+23)%24) . "$fldz[5] Ptime : $d8im";}
+$_ .= '"|xclip -f -si -se p -l 1';                          # specify which  X selection to use: "primary" to use XA_PRIMARY (default),
+#$_.= '"|xclip -f -si -se c -l 1'; # -sel [psc]             #                                  "secondary" for    XA_SECONDARY  or
+#$_.= '"|xclip -filter -silent -selection primary -loop 1'; #                                  "clipboard" for    XA_CLIPBOARD
+#print "$_\n"; # used to print something like "Thursday, March 29, 2007, 1838 Gtime / 1738 Ptime 73TKHcMG\n"; # to clip
+system( $_  );say '';
+# It looks like vim could add it to both the primary (mouse-button driven) && regular Ctrl-XCV keyboard clipboards simultaneously by macroing: :r!d8g^M"+YV ;
+# HBPLEASE:So after starting a new draft e-mail to Dad just now, I thought to manually edit my typical bold colors (which are still nowhere near as elabor8 &&
+#   expressive as Dad's normally are). Then I highlighted the results && the Right-Click menu offered "View Selection Source" revealing following goodness:
+#     Saturday, November 25, 2017, 1510 Gtime / 1410 Ptime <font color="#ff0000"><b>H<font color="#ff9900">B<font color="#ffff00">P<font color="#00ff00">L
+#     <font color="#00ffff">E<font color="#0000ff">A<font color="#ff00ff">S<font color="#9900ff">E</font></font></font></font></font></font></font></b></font>
+#     HBPLEASE<br><br></div>Shabbat Shalom <font color="#ff0000"><b>Dad</b></font>,<br><br></div>I would like to ask a few probing questions.<br><br><br><br>
+#     </div>I love you <font color="#ff0000"><b>Dad</b></font>.<br><br></div>Love,<br></div><font color="#0000ff"><b>-Philip =)</b>  suggesting more to autom8!
+#   Also, after more field coloring: <span style="color: rgb(255, 255, 0);">Saturday</span>, <span style="color: rgb(255, 153, 0);">November</span> 
+#     <span style="color: rgb(255, 255, 0);">25</span>, <span style="color: rgb(255, 0, 0);">2017</span> - <span style="color: rgb(0, 255, 255);">15</span>
+#     <span style="color: rgb(0, 0, 255);">10</span> <span style="color: rgb(255, 0, 255);"><span style="background-color: rgb(39, 78, 19);">G</span></span>
+#     <span style="background-color: rgb(255, 255, 255);"><font color="#00ff00">time</font></span> / <span style="color: rgb(0, 255, 255);">14</span>
+#     <span style="color: rgb(0, 0, 255);">10</span> <span style="color: rgb(255, 0, 255);"><span style="background-color: rgb(32, 18, 77);">P</span></span>
+#     <font color="#00ff00">time</font> <font color="#ff0000"><b>H<font color="#ff9900">B<font color="#ffff00">P<font color="#00ff00">L
+#     <font color="#00ffff">E<font color="#0000ff">A<font color="#ff00ff">S<font color="#9900ff">E</font>

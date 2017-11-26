@@ -5,9 +5,9 @@ This is basically the first public preview of my early development files. I am n
 
 I mainly wanted to start this repository as my locus for future efforts and to start showing top screen shots that convey noteworthy capabilities.
 
-Many `bin/` commands print useful Help text when given a `-h` parameter. If your paths and Perl environment are setup similarly to mine, please try:
- * `sumb` - SUMmarize most ~/bin/ executable files with many colors
- * `tstn` - TeST Navig8ion of Screeps 50x50 maps with A-Star algorithm
+Many `bin/` commands print useful Help text when given a `-h` parameter. If your paths and Perl environment are setup similarly, please try to run:
+ * `sumb` - SUMmarize most ~/bin/ executable files very colorfully
+ * `tstn` - TeST Navig8ion of A-Star algorithm in Screeps 50x50 maps
  * `tstc` - TeST c8 Col8 color8ion classic representation progression
  * `tsgr` - Test Select Graphic Rendition additional text attributes
  * `gnp8` - GeNerate a complete mapping of b64 into 256-color Pal8
@@ -26,10 +26,10 @@ Many `bin/` commands print useful Help text when given a `-h` parameter. If your
 ![Octology-ckm8-shot_1280x800-HBBLJwau](https://github.com/pip/Octology/raw/master/gfx/sho/Octology-ckm8-shot_1280x800-HBBLJwau.png "Octology-ckm8-HBBLJwau")
 
 ### Forgive Me For a Bit of Self-Promotion
-If you would like to fund my ongoing development effort, please visit my [Patreon](https://patreon.com/PipStuart "Pip's Octology Patreon Page")
+If you are willing to fund this development effort, please visit my [Patreon](https://patreon.com/PipStuart "Pip's Octology Patreon Page")
   and feel free to send me the **Top8** new features you most want to see.
 
-Please also contact me if you are an open-minded thinker who is interested in friendship and conversation (especially near Oshkosh, Wisconsin).
+Please also contact me if you are an open-minded thinker interested in friendship and conversation (especially near Oshkosh, Wisconsin).
 
 To learn about the long-term goals, plans, thinking, and research behind this ever-expanding project, please read:
   [8.txt](https://github.com/pip/Octology/blob/master/dox/2du/8.txt "dox/2du/8.txt")
