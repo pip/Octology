@@ -1,5 +1,5 @@
 # D6RMF1V1:8.txt - by8π : JAPH : K3wlD00d : 1337H4xr : PipStuart's Octology (hopefully eventually an Ontology of 8) - Convention, Conversion, && Categoriz8ion:
-# $VERSION='0.0';$d8VS='HBQLCat8'; # Octology attempts to rel8 the universe through medit8ion on mnemonic abbreV8ion (via 8-based  limit8ion) &&    elucid8ion.
+# $VERSION='0.0';$d8VS='HBRLEARN'; # Octology attempts to rel8 the universe through medit8ion on mnemonic abbreV8ion (via 8-based  limit8ion) &&    elucid8ion.
 # CEBBICTI:Crossing Every Bridge Before I Come To It? I.e., not a d8 stamp. Trying to make my Dad's birthday (August 8th) more special by thinking 2far ahead?
 # Octology intends to pursue implic8ion && ramific8ion as substantE8ion for adequ8 particip8ion, if not also 2 oblig8ion toward implement8ion &&   promulg8ion.
 # Conceptually, Octology is a system st8ing that every organiz8ional principle is valuable, but 8 tends to be a nearly ideal starting place for most d8a sets.
@@ -217,7 +217,6 @@ internationaliz8ion:tools to transl8 for I18N the document8ion && applic8ion int
       sophistic8
         complic8
          obfusc8   :obfu contests for Perl, golf, && 8! =)
-         intric8
          elucid8
            catN8
         concatN8
@@ -322,6 +321,7 @@ internationaliz8ion:tools to transl8 for I18N the document8ion && applic8ion int
             tax8ion:free tax prepR8ion, filing, && audit management
            magn8
           optim8
+              n8ive
               p8rician
               p8riot
          rep8rE8
@@ -440,11 +440,11 @@ internationaliz8ion:tools to transl8 for I18N the document8ion && applic8ion int
        remonstr8
        argument8ion
          alterc8
+         denunC8
            hort8ion
          exhort8ion
         solicit8
        confront8ion
-         denunC8
        interrog8   :communic8 specialized as an intense interview system
        investig8   :d8a && network gathering, inspection, reporting via loc8
       congratul8   :happy event messaging
@@ -510,8 +510,7 @@ internationaliz8ion:tools to transl8 for I18N the document8ion && applic8ion int
               k8   :"kate" is a brambling finch                 (from Zoology)
               n8ure:nature  simul8or
            clim8   :climate simul8or && change tracker for mitig8ing disasterous consequences of human influence on rising global temper8ures
-           plan8   :planet  simul8or
-             cr8or :plan8   modeler
+             cr8or :planet  simul8or && modeler
             equ8or
          explor8ion:educ8 about space race && entire 8 system
         coloniz8ion:eventually inhabiting Mars && elsewhere via Elon Musk's SpaceX rockets?
@@ -662,6 +661,7 @@ internationaliz8ion:tools to transl8 for I18N the document8ion && applic8ion int
          recant8ion
          renunC8ion
           abjur8ion
+          abdic8
          declin8
         disclam8ion
       disaffirm8ion
@@ -894,11 +894,9 @@ internationaliz8ion:tools to transl8 for I18N the document8ion && applic8ion int
 
 # above are my 888 current favorite 8-words that I'd most like to consider developing into distinct applic8ions (or component specializ8ions && fE8ures)
 # here are candid8 words (if any) to next contempl8 for replacing others above with, or to store with all others further below that have been cut so far
-              n8ive
-           vers8ile
-          abdic8
-       stabiliz8ion
+       stabiliz8ion:*not8*:normally prefer shorter distinct concept names above, but maybe these good long words are better than wrong pronunC8ion duplic8s?
        moderniz8ion
+      generaliz8ion
    industrializ8ion
    circumstantE8   :substantE8, authentic8, valid8, or corrobor8
         conturb8ion:agit8ion, trepid8ion, or vex8ion
@@ -906,6 +904,9 @@ internationaliz8ion:tools to transl8 for I18N the document8ion && applic8ion int
         flutter8ion
         tumultu8ion
 # below are the additional possible 8-words I've cut, often due to conceptual similarity to existing entries or to unify more around typical pronunC8ion
+           vers8ile:wrong pronunC8ion
+           plan8   :wrong pronunC8ion for original planet simul8or idea
+         intric8   :wrong pronunC8ion
          remigr8   :bl8ant varE8ions on migr8
       transmigr8
       intermigr8
@@ -3697,3 +3698,13 @@ HBQL4BIG:Proggit had cool HTTP://CommandLineFu.Com/commands/browse/sort-by-votes
 topic for a couple minutes, then proceeding through a twice practiced live-coding session with big fonts && backup git commits to jump to when getting stuck;
 HBQL678P:Also HTTPS://Scrimba.Com for client-side interactive code-casting might be a good resource to learn from when planning Octology coding demonstr8ions.
 HTTPS://Developers.GoogleBlog.Com/2017/11/introducing-container-diff-tool-for.html also may prove useful for maintaining eventual Docker containers for code;
+HBQLEnet:HTTPS://GamaSutra.Com/view/feature/131577/halflife_and_team_fortress_.php old May 2000 HalfLife networking article could l8r inform my multi-player.
+Also HTTP://SolipSys.Co.UK/new/TheMutilatedChessboard.html also has interesting matching problems && myriad other seemingly interesting links to math puzzles.
+HTTP://OReilly.Com/data/free/archive.html contains many potentially useful free d8a ebooks regarding Big d8a Science, AI, bots, MachineLearning, && Analytics;
+HBRLA5UM:Just paid $10 on my Community1st Visa card (leaving maybe about $40 left?) to take Dr. Jordan B. Peterson's HTTPS://UnderstandMyself.Com Big5Aspects
+and scored:  Agreeableness(54%): Compassion(91%) && Politeness( 9%),   Conscientiousness(41%): Industriousness(50%) && Orderliness(36%),   Extraversion(69%):
+Enthusiasm(59%) && Assertiveness(73%),   Neuroticism(24%): Withdrawal(36%) && Volatility(17%),  Openness to Experience(96%): Intellect(96%) && Openness(87%);
+HBRLDow8:Gr8 interview with Michael Simmons && Marek Rosa on GAI && limited DeepLearning:1stPrinciples,mentors,guided learning,goals,randomiz8ion,meta-patrns,
+imbuing future with better valU8ion,adapt8ion,invention,limited reinvention,augment8ion for own knowledge,efficiency,knowing what to ignore,learning to learn,
+reflection,future anticip8ion,getting faster&&slower,stronger,better informed,reinforcement,minimal memoriz8ion,scaling improvements,size,graduaLearning,grit.
+Consider GoodAI competition,alignment,actors,neural lace,recurse self-improvement,good to start solving hard problems early,mitig8ing awful mistakes or fails;

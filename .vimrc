@@ -6,7 +6,7 @@ se   nocp                     " nocompatible    - add  Vim NhancmNtz without str
 se    enc=utf-8               "     encoding    - was already loading utf-8 from current $LANG locale, && might need termencoding also if they diverge
 "se  fenc=utf-8               " fileencoding    - might needed this if ever trying LightLine + ALE with special chars from HTTPS://StaticO.GitHub.IO/vim3.html
 let  g:VERSION='0.0'
-let     g:d8VS='HBOLKAGE'     " d8VersionString - l8st significant upd8 to whole file was then
+let     g:d8VS='HBRLB2fx'     " d8VersionString - l8st significant upd8 to whole file was then
 let     g:vid8=system('d8')   " VimInit d8      - save d8 when this Vim session first stRtz up to use as dRk pRt at Nd of STatusLine just before bright upd8 d8
 let     g:cucf=1              " CUrsorColumFlag - flag to toggle whether :se cuc should be used (since dflt of it on gets slow whN lots of syntx hili on scrn)
 let     g:culb=1              " CUrsorLineBold  - flag to toggle whether :se cul below should use highlight with bold across whole line (dbl-mapd2Ctrl-L&&hls)
@@ -114,7 +114,8 @@ map    <C-k>                               :se spell!<CR>
 "   then i enters insert mode. The vnoremap <C-r> inserts named register contents (instead of Redo). Following '=' is expression register for List result.
 vn   p <Esc>:let current_reg = @"<CR>gvdi<C-r>=current_reg<CR><Esc>
 "[clisnoxv]?ab(brev)? || [clisnoxv]?una(bbrev)? $abrv, :abc for all ab clear
-"cab p perldo
+"cab p perldo  " below should Format Wider from cmnd-mode after some Vis-mode selection chose lines (like Ctrl-f map on non-Vis-mode cursor paragraph above)
+cab fw !fmt -w158
 "  '" jumps to last open position in file  ... This was in my .zshrc e() before moving into Pip::Utl::e().
 "  '. jumps to last edit position in file
 au   BufNewFile,BufRead *.Xrc setf xdefaults    " add detection of my custom .Xresources file extension (instd of appending modeline '! vim:syntax=xdefaults')

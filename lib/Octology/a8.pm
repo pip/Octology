@@ -50,7 +50,7 @@ our @EXPORT= qw(bfr8c    b8c    d8c    dur8c       a8c   a8colr
     $z    $k    $r    $o    $y    $g     $c $SKpb    $m    $p    $w  tstc    $K    $R    $O    $Y    $G    $C    $B    $M    $P    $W    %p622 %p222
  $tnhf $ucdf  spff  spfd  spfX   shfl  reso $auth %cmsp %p8k2 @p82k  chp8     S2f4 c2f4 dm2u cdst %crgb %cbrt @snls @mrls %cdrd %cdrn    %nrgb         gnp8);
  # of 52 posibl sngl-letr var nmz,a8 Xportz 20,$b && $a unavail,so shudB thEs30 lFt4quik shortSt nAmz: 'def hij l n  q stuv x', 'A  DEF HIJ L N  Q STUV X Z'
-our $VERSION='0.0';my  $d8VS='HBPL81d8';our $auth='PipStuart <Pip@CPAN.Org>'; # above not exporting $b since collidez with sort{$a  <=> $b}
+our $VERSION='0.0';my  $d8VS='HBRL6DBC';our $auth='PipStuart <Pip@CPAN.Org>'; # above not exporting $b since collidez with sort{$a  <=> $b}
 our $ucdf= eval('use Color::Similarity::RGB qw(distance);1') || 0; # try2set UseColorDistanceFlag if optional module is available
 our @Monz=qw(January February March   April     May June July   August September October November December);our @Mon=();push(@Mon,substr($_,0,3)) for(@Monz);
 our @Dayz=qw(Sunday  Monday   Tuesday Wednesday Thursday Friday Saturday                                  );our @Day=();push(@Day,substr($_,0,3)) for(@Dayz);
@@ -769,9 +769,9 @@ sub sumb{  my $widt=0;$widt=1 if(exists($ENV{'COLUMNS'}) && $ENV{'COLUMNS'} >= 1
     'b210'  => "b8  converter from base256 number-strings  to  [0-9] base-10 (decimal)    ",
     'b256'  => "b8  converter from base-10 to base-256 b256  (128 plus common in UTF-8)   ",
     'b64'   => "b8  converter from base-10  digit-strings  to base-64   number-strings    ",
-    'b8'    => "b8  converter that tries to auto-detect intended number base (Math:B:C)   ",
+    'b8'    => "b8  converter that tries to auto-detect intended from && to number base   ",
     'choo'  => "b8  n CHOOse m with factorials from combin8orics as  n! / (m! * (n-m)!)   ",
-    'cma'   => "b8  CoMmA insert utility for every 3 digit characters (\\d or /[0-9]+/ )   ",
+    'cma'   => 'b8  CoMmA insert utility for every 3 digit characters (\d or /[0-9]+/ )   ',
     'cnv'   => "b8  Math::BaseCnv CoNVerter, tries to detect intended base  (like `b8`)   ", # mAB rEtIr orig cnv once b8 is thoroughly reliable instead
     'coma'  => "b8  COMmA insert utility for every 4  b64  characters ( /[A-Z._0-9]+/i)   ",
     'dec'   => "b8  converter from HEXadecimal (base-16)   to  [0-9] decimal (base-10)    ",
@@ -885,22 +885,18 @@ sub sumb{  my $widt=0;$widt=1 if(exists($ENV{'COLUMNS'}) && $ENV{'COLUMNS'} >= 1
   my $bfle=$#bfls;my %bftc=('grup'=>{'a8'=>'F:A','b8'=>'F:B','c8'=>'F:C','d8'=>'F:R','f8'=>'F:o','m8'=>'F:M','U8' =>'F:Y', # BinFilzListEnd && TypeCodez
                        'dirz'=>'F:N','no'=>'F:W',     'Time::DayOfWeek'=>'F:F','Time::PT'=>'F:F','p8'=>'F:p','Utl'=>'F:5',       }, # mABkeyz shudB qr// nstd?
                             'modu'=>{ 'Math::BaseCnv'=>'D:B',       'Similarity::RGB->distance'=>'F:C','Games::Cards::Poker->Shuffle'=>'F:p','XML::Tidy'=>'pb',
-                                     'C::S'=>'Zb','Curses::Simp'=>'Zb', 'C::Simp'=>'Zb', 'DiSTance'=>'F:C',
-                                              'M:B:C'=>'Xn' ,  'Octology::d8'=>'F:R','Math::BigFloat'=>'F:C',                    },
+             'Math::BigFloat'=>'F:C', 'C::S'=>'Zb','Curses::Simp'=>'Zb', 'C::Simp'=>'Zb','DiSTance'=>'F:C','Octology::d8'=>'F:R',},
                             'file'=>{'~' =>'F:B','\/'=>'F:Y','\.'=>'Ib','fn'=>'Mb','`' =>'yk','cf'=>'F:G','\*'=>'W1','\+'=>'Rb','mixer'=>'F:o','Date'=>'L:R',
      'strings'=>'F:8','ANSI'=>'ob', ',' =>'Lk','bfr8'=>'F:B','col8'=>'F:C','dur8'=>'F:R',      '\('=>'Wn','\)'=>'Wn','\['=>'ob','\]'=>'ob','ASCII'=>'Ab',
   'EDITOR'=>'Un','LS_COLORS'=>'Yn','bin'=>'F:B','\.bak'=>'F:B','\.Hrc'=>'F:M','\.psf'=>'F:M','\.f0nt'=>'Cg','\.xml'=>'ob','\.xtb'=>'F:B', # SKpspecialz
       'down'=>'F:U','SKpz'=>'F:7',   '!' =>'Fk','HTTP' =>'F:H','Org'=>'F:X','Rolz'=>'F:M','gst123'=>'F:G','git'=>'F:G','kpcli'=>'F:G','YouTube'=>'5r',
-                                                'HTTPS'=>'F:H','Com'=>'F:B','Screeps'=>'F:C', # testing additions for p8:tstn new section && URL
-      'load'=>'F:5','cRdz'=>'Cc','Chess'=>'Ww','base'=>'F:X', 'UTF'=>'Gb','SDL'=>'SN',    'pmix'=>'F:G','aumix'=>'F:G', 'time'=>'F:F',    'U2b'=>'5r',
-      'Perl'=>'Cb' ,'vim' =>'Vb','Unix' =>'Xb','text'=>'F:F',                                                                    }, # mAB squEz all fIlz into
+      'Perl'=>'Cb' ,'vim' =>'Vb','Unix' =>'Xb', 'HTTPS'=>'F:H','Com'=>'F:B','Screeps'=>'F:C',            'text'=>'F:F', 'time'=>'F:F',    'U2b'=>'5r',
+      'load'=>'F:5','cRdz'=>'Cc','Chess'=>'Ww','base'=>'F:X', 'UTF'=>'Gb','SDL'=>'SN',    'pmix'=>'F:G','aumix'=>'F:G',          }, # mAB squEz all fIlz into
                             'base'=>{' 8'=>'ok','16'=>'5r','64'=>'Ac','128'=>'Cb','256'=>'Md','10'=>'Fn','dec'=>'Fn','ocT'=>'ok',}, #   betr vertical column?
                             'colr'=>{'L' =>'Xg','R' =>'Rw', '4'=>'Aq', 'B'=>'M0', '2'=>'F:V',                                    },
-  # mAB2du:bSt2 bg hIlI all -flgz nXt,thN!alreD '8'z Xplicitly;
                             'b64r'=>{'\['=>'Xw','-'=>'pk','0'=>'Gb','9'=>'pb','A'=>'gb','Z'=>'Fb','\.'=>'Wb','_'=>'Ub','7'=>'Ub',}, # rEmMbr2ignorthiswhol tkey
                             'xmlt'=>{'Text'=>'F:R','Binary'=>'F:B','Compress'=>'F:C','eXpand'=>'F:Y','whitespace'=>'F:W',        },
-                            'd8fz'=>{'Year'=>'Fb','Month'=>'ob','Day'=>'Yb',  'displaying'=>'HARL','now'=>'HIRK', # try2 bLinK summary of sumb itself
-                                     '2006'=>'Fb','March'=>'ob','zone'=>'Gb','week'=>'ok',                                       },);
+                            'd8fz'=>{'Year'=>'Fb','Month'=>'ob','Day'=>'Yb','week'=>'ok','zone'=>'Gb','displaying'=>'HARL','now'=>'HIRK',},);
   my $i;my $j="$z$SKp1".'m'; # Jump_bak2zero_bold
   my $d;my $e;my $f;my $h; # additional SKp code holder variablez; $i reInit && $j Jumpbak are the locl onez 2 prEserv
   my $l;my $n;my $q;my $s; # have 'defh lnqs' 8 2Uz4 b64r especially, but then can be used for plenty else, forgot $a is for sort, still avail: $t $u $v $x

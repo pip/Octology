@@ -1,7 +1,7 @@
 # 315J9mLT: Octology::b8.pm crE8d by PipStuart <Pip@CPAN.Org> to construct custom precision Big numbers && perform arbitrary Base-transl8ions. I love Bass!
 package     Octology::b8;
 use strict; use warnings;use utf8;use v5.10;
-# 2du:rewrite fibo wo recursion,mk new calQ parser for real precedence,
+# 2du:rewrite fibo wo recursion,mk new calQ parser for closer to real oper8or && paren precedence handling,
 #   mk pfcz to hash up a loop to list all Prime FaCtorZ (with powerz) of any BigInt param,bNchmRk memoized fact vs bfac && prim vs not && fibo iter8ive vs not,
 #   stuD Math::Base::Convert && bNchmRk2lern how2Use just scalar or 32-bit reg when it fitz4sPd && Xpand2othr objz B4 BigFloat && rmv all M:B:C if sPd close,
 #   get rid of old Moose attempt,stOr sepR8 usrFromTo digsetz,add cache cfg,add from() && tobs() && all mUt8orz,retool intrfAc4allfuncz2alsOB obj methodz,
@@ -15,8 +15,8 @@ use strict; use warnings;use utf8;use v5.10;
 #   add cache limitz && new thorO alt2prEsrv&&indX evry NtIr cnv contXt sO objX canBgrOwn in2 setz of at lEst cnv hist stringz,
 #   add valid8ion&&tStz&&Carp problMz,mAB add benchmRkz,Xplor specialIzng Use as reso pairz or c8 IDa of rAng spanz or IPaddrz or fOn numz etc;
 require     Exporter ;
-use base qw(Exporter);our $umbc=1; # Use Math::Base::Convert flag (doesn't work if eval'd), but maybe if not normally much faster then remove the dependency
-use         Math::Base::Convert;   #   although maybe eventually preparing efficient dependencies in docker container can ease such distribution burdens
+use base qw(Exporter);our $umbc=0; # Use Math::Base::Convert flag (doesn't work if eval'd), but commented out the only-for-efficiency dependency for now...
+#se         Math::Base::Convert;   #   although maybe eventually preparing efficient dependencies in docker container can ease any such distribution burdens
 use         Math::BigFloat     ;
 use         Math::BigInt       ;
 use         Encode;
@@ -24,7 +24,7 @@ use         Carp; # orig Math::BaseCnv BlO memoized sum8(as summ) hEr&&had nO fi
 use Memoize;memoize('fact');memoize('choo');memoize('fibo');memoize('prim');
 our @EXPORT= qw(b8 cnv ocT deC dec heX HEX b10 b64 b64sort b110 b128 b210 b256 dig diginit
     cma coma  sum8 sumz   fact fctz  choo  fibo fibz  prim prmz  rotW rot1    calQ   $umbc);
-our $VERSION='0.0';my  $d8VS='HBPL6dbg';my $auth='PipStuart <Pip@CPAN.Org>';
+our $VERSION='0.0';my  $d8VS='HBRL6MBC';my $auth='PipStuart <Pip@CPAN.Org>';
 my $pkgn =        __PACKAGE__;
 my $pkgl = length __PACKAGE__;
 my $bssb = $pkgn . '::_bs::' ; # indentify 'base sub'
@@ -428,65 +428,63 @@ sub calQ{my $ajps='';if(@_){$ajps=join('',@_);}elsif(!-t STDIN){$ajps=join('',<S
       elsif($oper eq  '&'){$bgfl &= Math::BigFloat->new("$nxtn");}
       elsif($oper eq  '|'){$bgfl |= Math::BigFloat->new("$nxtn");}elsif($oper    eq  '^'){$bgfl ^= Math::BigFloat->new("$nxtn");}}}
   return   ($bgfl);}
-
-package Math::Base::Convert;no warnings;    # redefine vet subroutine to have b64 defaults (&& disable the redef warnings)
-sub vet{my $class = shift;my $from = shift || '';my $to = shift || '';
-  $to   =~ s/\s+//g if $to   && !ref $to  ; # strip white space
-  $from =~ s/\s+//g if $from && !ref $from;
-  unless($from){$to   = &dec;  # was HEX    # defaults if not defined
-                $from = &b64;} # was dec
-  else         {$from = validbase($from);
-    unless($to){$to   = &b64;} # was HEX
-    else       {$to   = validbase($to  );}}
-  # convert sub ref's    to variables
-  #    $to            =&$to  ;
-  #   ($from,my $fhsh)=&$from;
-  my $prefix =  ref     $to  ;
-  if   ($prefix =~ /heX$/ ){$prefix = '';}#0x';}
-  elsif($prefix =~ /ocT$/i){$prefix = '0' ;}
-  elsif($prefix =~ /bin$/ ){$prefix = '0b';}
-  else                     {$prefix =   '';}
-  bless{to      =>          $to    ,
-        tbase   =>  scalar @$to    ,
-        from    =>          $from  ,
-        fhsh    =>  basemap($from) ,
-        fbase   =>  scalar @$from  ,
-        prefix  =>          $prefix,},$class;}
-my %maxdlen=(2  => 31,  # 2^1  # digits, key is base
-             4  => 16,  # 2^2
-             8  => 10,  # 2^3
-            16  =>  8,  # 2^4
-            32  =>  6,  # 2^5
-            64  =>  5,  # 2^6
-           128  =>  4,  # 2^7
-           256  =>  4); # 2^8
-sub cnvpre{my $bc = &_cnv;return $bc unless ref $bc;
-  my($from,$fbase,$to,$tbase,$sign,$prefix,$nstr)=@{$bc}{qw(from fbase to tbase sign prefix nstr)};#$nstr =~ s/\s+//g;
-  my $slen = length($nstr);
-  my $tref =    ref($to  );
-  unless(   $slen                   ){$nstr = $to->[0];}   # zero length input, return zero
-  elsif (lc $tref eq lc ref($from)  ){ # no base conversion
-    if  (   $tref ne    ref($from)  ){ #   convert case?
-      if   ($tref =~ /(DNA|HEX|B36)/){$nstr = uc $nstr;}   #    force upper case
-      elsif($tref =~ /(dna|heX|b36)/){$nstr = lc $nstr;}}} # or force lower case
-  else{ my $fblen = length($fbase);    # convert
-    if($fbase & $fbase -1 || $fblen > 256                             ){        $bc->useFROMbaseto32wide ;}  # from base is not power of 2, no shortcuts...
-    elsif(                   $fblen >  32 && !$slen > $maxdlen{$fbase}){        $bc->useFROMbaseto32wide ;}  # big  base && digit str fit32reg  # CalcPP faster
-    else                                                               {        $bc->useFROMbaseShortcuts;}  # shortcuts faster for big numbers
-    ################################
-    # input converted to base 2^32 #
-    ################################
-    if($tbase & $tbase -1 || $tbase > 256                             ){$nstr = $bc->use32wideTObase     ;}  # from base is not power of 2, no shortcuts...
-    elsif(                   $tbase >  32 && @{$bc->{b32str}} == 1    ){$nstr = $bc->use32wideTObase     ;}  # big  base && digit str fit32reg  # CalcPP faster
-    else                                                               {$nstr = $bc->useTObaseShortcuts  ;}} # shortcuts faster for big numbers
-  $nstr = $to->[0] unless length($nstr);
-  if   (    $tref =~ /(DNA|HEX|B36)/){$nstr = uc $nstr;}   #    force upper case
-  elsif(    $tref =~ /(dna|heX|b36)/){$nstr = lc $nstr;}   # or force lower case
-  return($sign,$prefix,$nstr) if wantarray;
-  if(#$prefix ne '' &&  # 0x, 0, 0b
-     $tbase <= $signedBase && $tref ne 'user'){return($sign . $prefix . $nstr);} # base in signed set
-                                               return(        $prefix . $nstr);}
-package Octology::b8;
+# used to prefer benchmarked fast module when possible, but needed clunky overrides below for interface compatibility, now commented probably l8r to be rmvd
+#package Math::Base::Convert;no warnings;    # redefine vet subroutine to have b64 defaults (&& disable the redef warnings)
+#sub vet{my $class = shift;my $from = shift || '';my $to = shift || '';
+# $to   =~ s/\s+//g if $to   && !ref $to  ; # strip white space
+# $from =~ s/\s+//g if $from && !ref $from;
+# unless($from){$to   = &dec;  # was HEX    # defaults if not defined
+#               $from = &b64;} # was dec
+# else         {$from = validbase($from);
+#   unless($to){$to   = &b64;} # was HEX
+#   else       {$to   = validbase($to  );}}
+# # convert sub ref's    to variables
+# #    $to            =&$to  ;
+# #   ($from,my $fhsh)=&$from;
+# my $prefix =  ref     $to  ;
+# if   ($prefix =~ /heX$/ ){$prefix = '';}#0x';}
+# elsif($prefix =~ /ocT$/i){$prefix = '0' ;}
+# elsif($prefix =~ /bin$/ ){$prefix = '0b';}
+# else                     {$prefix =   '';}
+# bless{to      =>          $to    ,
+#       tbase   =>  scalar @$to    ,
+#       from    =>          $from  ,
+#       fhsh    =>  basemap($from) ,
+#       fbase   =>  scalar @$from  ,
+#       prefix  =>          $prefix,},$class;}
+#my %maxdlen=(2  => 31,  # 2^1  # digits, key is base
+#            4  => 16,  # 2^2
+#            8  => 10,  # 2^3
+#           16  =>  8,  # 2^4
+#           32  =>  6,  # 2^5
+#           64  =>  5,  # 2^6
+#          128  =>  4,  # 2^7
+#          256  =>  4); # 2^8
+#sub cnvpre{my $bc = &_cnv;return $bc unless ref $bc;
+# my($from,$fbase,$to,$tbase,$sign,$prefix,$nstr)=@{$bc}{qw(from fbase to tbase sign prefix nstr)};#$nstr =~ s/\s+//g;
+# my $slen = length($nstr);
+# my $tref =    ref($to  );
+# unless(   $slen                   ){$nstr = $to->[0];}   # zero length input, return zero
+# elsif (lc $tref eq lc ref($from)  ){ # no base conversion
+#   if  (   $tref ne    ref($from)  ){ #   convert case?
+#     if   ($tref =~ /(DNA|HEX|B36)/){$nstr = uc $nstr;}   #    force upper case
+#     elsif($tref =~ /(dna|heX|b36)/){$nstr = lc $nstr;}}} # or force lower case
+# else{ my $fblen = length($fbase);    # convert
+#   if($fbase & $fbase -1 || $fblen > 256                             ){        $bc->useFROMbaseto32wide ;}  # from base is not power of 2, no shortcuts...
+#   elsif(                   $fblen >  32 && !$slen > $maxdlen{$fbase}){        $bc->useFROMbaseto32wide ;}  # big  base && digit str fit32reg  # CalcPP faster
+#   else                                                               {        $bc->useFROMbaseShortcuts;}  # shortcuts faster for big numbers
+#   # input converted to base 2^32 #
+#   if($tbase & $tbase -1 || $tbase > 256                             ){$nstr = $bc->use32wideTObase     ;}  # from base is not power of 2, no shortcuts...
+#   elsif(                   $tbase >  32 && @{$bc->{b32str}} == 1    ){$nstr = $bc->use32wideTObase     ;}  # big  base && digit str fit32reg  # CalcPP faster
+#   else                                                               {$nstr = $bc->useTObaseShortcuts  ;}} # shortcuts faster for big numbers
+# $nstr = $to->[0] unless length($nstr);
+# if   (    $tref =~ /(DNA|HEX|B36)/){$nstr = uc $nstr;}   #    force upper case
+# elsif(    $tref =~ /(dna|heX|b36)/){$nstr = lc $nstr;}   # or force lower case
+# return($sign,$prefix,$nstr) if wantarray;
+# if(#$prefix ne '' &&  # 0x, 0, 0b
+#    $tbase <= $signedBase && $tref ne 'user'){return($sign . $prefix . $nstr);} # base in signed set
+#                                              return(        $prefix . $nstr);}
+#package Octology::b8;
 8;
 
 =encoding utf8
@@ -497,7 +495,8 @@ Octology::b8 - Basic functions or BigFloat or Math::Base::Convert objects for Ba
 
 =head1 VERSION
 
-This document8ion refers to version 0.0 of Octology::b8, which was released on Sun Jul 24 11:48:07:24 -0500 2016.
+This document8ion refers to version 0.0 of Octology::b8, which was released on 
+.
 
 =head1 SYNOPSIS
 
