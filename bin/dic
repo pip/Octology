@@ -14,8 +14,9 @@
 #  `d four` has last entry: "a playing card or domino or die whose upward face shows four pips" which are each key partz of Octology && ~/.Hrc =)
 # H9NMN12d:upd8d /etc/dictd/dictd.order to add other installed dicts and place Moby last (but then have2 `dictdconfig -w` && `/etc/init.d/dictd restart`) with:
 #web1913 gcide wn foldoc jargon vera devil elements easton hitchcock bouvier gazetteer gaz2k-zips gaz2k-places gaz2k-counties moby-thesaurus
+# HC2LNewD:fixd `d BLT` to properly Decode UTF-8 double-quotes from dict && noted also qw(server reverse reserve severer)=~ s/e//g; # srvr rvrs rsrv svrr;
 # Currently, the only special pRameter that `dic` swallows 4 itself is lone '-w' which design8s any dFinitions should be formatted as *NOT* default Wide mode.
-use strict;use warnings;use utf8;use v5.10;my $VERSION='0.0';my $d8VS='HBBLEdic'; # orig started from TeST Substitute Input, now extended d8 utility,l8r c8 IF?
+use strict;use warnings;use utf8;use v5.10;use Encode;my $VERSION='0.0';my $d8VS='HBBLEdic'; # orig from TeST Substitute Input,now XtNded d8 util,l8r c8 IF?
 use Octology::a8;my $word='';my $wclr=S('Wr');my $logd="$ENV{'HOME'}/.log";my %dlog; # setup global word colr SKp && LogDirectory && DicLog hash
 use Octology::d8;my $Stxt   ;my $eclr=S('Yf');my $widf=1  ; # BlO hopefully strips -w param 2flag disabling dflt wide-mode or load $word 4l8r colr8ion if!flag
 my $cw=160;$cw=$ENV{'COLUMNS'} if(exists($ENV{'COLUMNS'})); # try to setup potentially wider ColumnWidth for when attempting to join shorter linez
@@ -35,9 +36,9 @@ if    (    -e $dlfn){my $argz= join(' ',@ARGV); # load dic.log so that duplic8z 
     my   $nwd8=Octology::d8->new();say $dlfh "$nwd8:$argz";
     close     $dlfh            or die "!*EROR*! Couldn't close dic log file:$dlfn! $!\n";}}
 if(@ARGV){for(my $andx=$#ARGV;$andx>=0;$andx--){if($ARGV[$andx]=~ /^-?-?w$/){$widf=0;splice(@ARGV,$andx,1);}else{$word=$ARGV[$andx];}}}
-if(@ARGV)       {$Stxt=`dict              @ARGV`  ;} # orig had b64 countz&&color8ion but b10 is better for now&&had buggy c8 cmds, so changing back
-elsif(!-t STDIN){$Stxt= join('',         <STDIN> );  # enable piping through like colorit if STDIN is not a TTY
-  if ($Stxt=~  /\nFrom [^\n]*\n\n  (\w+)/){$word=$1; # try to detect first defined parameter word for highlighting
+if(@ARGV)       {$Stxt=decode('UTF-8',`dict @ARGV`);} # orig had b64 countz&&color8ion but b10 is better for now&&had buggy c8 cmds, so changing back
+elsif(!-t STDIN){$Stxt= join('',           <STDIN>);  # enable piping through like colorit if STDIN is not a TTY
+  if ($Stxt=~  /\nFrom [^\n]*\n\n  (\w+)/){$word=$1;  # try to detect first defined parameter word for highlighting
     unless(exists($dlog{lc($word)})){
       open my $dlfh,'>>',$dlfn or die "!*EROR*! Couldn't open  dic log file:$dlfn for writing! $!\n";binmode $dlfh,':encoding(UTF-8)';
       my $nwd8=Octology::d8->new();say $dlfh "$nwd8:$word";
@@ -70,7 +71,7 @@ if(0){ # alignment attempt introducez trailing newlinez && sometimez skipz over 
   if(length($word)){
       $Stxt=~ s/($word +)(imp|vb|v|t|i|n|p|pr|cf|fr|a|adv)( +)(1: +)/$1$R$2$3$C$4/g; # try to catch part-of-speech and 1st definition number after WN word
       $Stxt=~ s/($word)/$wclr$1$z$G/gi;} # colr looked-up word (if detected) && belo colr tail of most common 8-words for distinction
-      $Stxt=~ s/(\w)((ated?|(ait|[ae]ight|at\B))(en)?(ed|i(ng|ve|ons?|ous))?(ly)?)(\W|$)/$1$eclr$2$z$G$9/gi; # (knowing some matchd pronunC8ions wil difer)
+      $Stxt=~ s/(\w)((ated?|(ait|[ae]ight|at\B))(en|ant|or)?(ed|i(ng|ve|ons?a?l?|ous))?(istic|ly)?)(\W|$)/$1$eclr$2$z$G$9/gi; # (som m@chd pronuns wil difr)
 if(   $Stxt=~  /^(\d+) definition(s)? found/       ){my $dFct=$1;my $dFst=' dFinitN';$dFst.='z' if(defined($2)); # tried2add non-word Boundary aftr at
       $Stxt=~ s/^\d+ definitions?( found)/$C$dFct$Y$dFst$M$1$G/;}
 if(   $Stxt=~  /(\n +?)(\d+) Moby Thesaurus words/ ){my $MTct=$2;my $MTin=$1;chop($MTin) if(length($2) > 2);

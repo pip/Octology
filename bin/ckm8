@@ -764,18 +764,27 @@ sub DrawBord{$scal=int(($hite-2)/8) if($scal*8+2 > $hite); # don't scale beyond 
         $lfcd[$cndx] = 'M' if($lfcd[$cndx] eq 'P'); # remap P=>M,p=>P,y=>O
         $lfcd[$cndx] = 'P' if($lfcd[$cndx] eq 'p'); # remap P=>M,p=>P,y=>O
         $lfcd[$cndx] = 'O' if($lfcd[$cndx] eq 'y'); # remap P=>M,p=>P,y=>O
-        unless(exists($sprm{$ltxd[$cndx] . $lfcd[$cndx] . $lbcd[$cndx]})){ # could eventually add f0nt V8 field, scales, pal8s, etc.
-          my @frgb = split(//,$lmap{$lfcd[$cndx]}); for(@frgb){$_ = b10($_)*4;}
-          my @brgb = split(//,$lmap{$lbcd[$cndx]}); for(@brgb){$_ = b10($_)*4;}
-          $sprm{      $ltxd[$cndx] . $lfcd[$cndx] . $lbcd[$cndx]} = SDLx::Sprite->new(width => 8,height => 16 );
-          $sprm{      $ltxd[$cndx] . $lfcd[$cndx] . $lbcd[$cndx]}->surface->draw_rect([    0,    0,      8,16 ],[@brgb,255]);
-          for   my $rndx (0..15){ # Row   iNDeX
-            for my $pndx (0.. 7){ # Pixel iNDeX
-              if(substr($f0nt[ord($ltxd[$cndx])][$rndx],$pndx,1) eq '#'){my $prwd = 1;my $prht = 1;my $opnd = $pndx;my $ornd = $rndx;
-                $sprm{$ltxd[$cndx] . $lfcd[$cndx] . $lbcd[$cndx]}->surface->draw_rect([$opnd,$ornd,$prwd,$prht],[@frgb,255]);}}}
-        } $sprm{      $ltxd[$cndx] . $lfcd[$cndx] . $lbcd[$cndx]}->         draw_xy  ( $sfss,$cndx*8,$lndx*16);
+        if(ord($ltxd[$cndx]) > 255){ # maybe should be 128 or just skip few needed escapes?
+          my   @frgb = split(//,$lmap{$lfcd[$cndx]}); for(@frgb){$_ = b10($_)*4;}
+          my   @brgb = split(//,$lmap{$lbcd[$cndx]}); for(@brgb){$_ = b10($_)*4;}
+          my $sttf = SDLx::Text->new( font => '/usr/share/fonts/truetype/liberation/LiberationMono-Regular.ttf', color => [@frgb,255]);
+                                     #size => 16, x => 0, y => 0, h_align => 'left', shadow => 1, bold => 1, text => $ltxd[$cndx],  # other Text->new atrbutz
+             $sttf->write_xy($sfss,$cndx*8,$lndx*16,$ltxd[$cndx]);
+        }else{
+          unless(exists($sprm{$ltxd[$cndx] . $lfcd[$cndx] . $lbcd[$cndx]})){ # could eventually add f0nt V8 field, scales, pal8s, etc.
+            my @frgb = split(//,$lmap{$lfcd[$cndx]}); for(@frgb){$_ = b10($_)*4;}
+            my @brgb = split(//,$lmap{$lbcd[$cndx]}); for(@brgb){$_ = b10($_)*4;}
+            $sprm{      $ltxd[$cndx] . $lfcd[$cndx] . $lbcd[$cndx]} = SDLx::Sprite->new(width => 8,height => 16 );
+            $sprm{      $ltxd[$cndx] . $lfcd[$cndx] . $lbcd[$cndx]}->surface->draw_rect([    0,    0,      8,16 ],[@brgb,255]);
+            for   my $rndx (0..15){ # Row   iNDeX
+              for my $pndx (0.. 7){ # Pixel iNDeX
+                if(substr($f0nt[ord($ltxd[$cndx])][$rndx],$pndx,1) eq '#'){my $prwd = 1;my $prht = 1;my $opnd = $pndx;my $ornd = $rndx;
+                  $sprm{$ltxd[$cndx] . $lfcd[$cndx] . $lbcd[$cndx]}->surface->draw_rect([$opnd,$ornd,$prwd,$prht],[@frgb,255]);}}}
+          } $sprm{      $ltxd[$cndx] . $lfcd[$cndx] . $lbcd[$cndx]}->         draw_xy  ( $sfss,$cndx*8,$lndx*16);
+        }
       }} my $zmsf = SDL::GFX::Rotozoom::zoom_surface($sfss,$xscl,$yscl,SMOOTHING_ON ); # use ZooMSurFace && SPrite to scale SdlFullScreenSurface at end
     my      $zmsp = SDLx::Sprite->new(width =>  $widt*8*$xscl,height => $hite*16*$yscl,surface => $zmsf); $zmsp->draw_xy ($sxap,  0,  0);
+    # also /usr/share/fonts/truetype/msttcorefonts/Andale_Mono.ttf && Courier_New.ttf (10 Pitch) both regular size 8
    #my      $sttf = SDLx::Text  ->new( font => '/usr/share/fonts/truetype/liberation/LiberationMono-Regular.ttf', color => [255,255,255,255]);
                                       #size => 16, x => 0, y => 0, h_align => 'left', shadow => 1, bold => 1, text => 'Test',  # other Text->new atrbutz
                                                                                                          #$sttf->write_xy($sxap,288,288, 'More Test Text!');

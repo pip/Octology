@@ -44,13 +44,13 @@ package     Octology::a8;
 use strict; use warnings;use utf8;use v5.10;use Encode;
 require         Exporter;  # add new colr systM
 use base     qw(Exporter); # mainly exporting global utility functions && variables originally inherited from c8.pm as well as a few f8.pm d8a structures
-our @EXPORT= qw(bfr8c    b8c    d8c    dur8c       a8c   a8colr
+our @EXPORT= qw(bfr8c    b8c    d8c    dur8c       a8c   a8colr      h2rl   rl2h
                 bfr8colr b8colr d8colr dur8colr    d8cs @d8cl  chti  c8fn     S2   c2  S c   sS    lodl @Monz @Mon     %mc2F %mc2b %mF2c %mb2c        %sb10
  $SKp8 $SKp0 $SKp1 $SKp2 b8clr  $SKpf $SKpt %pmap %cmap       %pl8n  ftst       %f8fm %f8pm %sgrm %sgrn @Dayz @Day  lrc      comma  curs  sumb @x256  @sb64
     $z    $k    $r    $o    $y    $g     $c $SKpb    $m    $p    $w  tstc    $K    $R    $O    $Y    $G    $C    $B    $M    $P    $W    %p622 %p222
  $tnhf $ucdf  spff  spfd  spfX   shfl  reso $auth %cmsp %p8k2 @p82k  chp8     S2f4 c2f4 dm2u cdst %crgb %cbrt @snls @mrls %cdrd %cdrn    %nrgb         gnp8);
  # of 52 posibl sngl-letr var nmz,a8 Xportz 20,$b && $a unavail,so shudB thEs30 lFt4quik shortSt nAmz: 'def hij l n  q stuv x', 'A  DEF HIJ L N  Q STUV X Z'
-our $VERSION='0.0';my  $d8VS='HBRL6DBC';our $auth='PipStuart <Pip@CPAN.Org>'; # above not exporting $b since collidez with sort{$a  <=> $b}
+our $VERSION='0.0';my  $d8VS='HC3LEirl';our $auth='PipStuart <Pip@CPAN.Org>'; # above not exporting $b since collidez with sort{$a  <=> $b}
 our $ucdf= eval('use Color::Similarity::RGB qw(distance);1') || 0; # try2set UseColorDistanceFlag if optional module is available
 our @Monz=qw(January February March   April     May June July   August September October November December);our @Mon=();push(@Mon,substr($_,0,3)) for(@Monz);
 our @Dayz=qw(Sunday  Monday   Tuesday Wednesday Thursday Friday Saturday                                  );our @Day=();push(@Day,substr($_,0,3)) for(@Dayz);
@@ -492,6 +492,18 @@ our %sgrm=('N' =>  0 ,  'S' => 26     , # 0 'N Normal / reset; # SelectGrphcRndi
      $sgrm{'d'}=  24 ; #  d => u or remap to Double overline or just Double underline off but leave potential single Underline (or from B4) intact?
      $sgrm{'k'}=  25 ; #  k => l or remap to some new special custom blinK pulsing color pattern?
      $sgrm{'e'}=  54 ; #  e => m or remap to double fraMEd with some other code, or just turn Encircled off to leave fraMed maybe still on l8r?
+sub rl2h{ # convert any typical b64 RGBL into RRGGBB HEX with Last Low bits Loaded Layered aLready
+  my $rgbh=shift(@_);my $valu=0;           my $rgbs='';my @rgbd=split(//,('0'x 4));if(length($rgbh) == 4){#$rgbh=uc($rgbh) if($rgbh=~ /[a-z]/);
+                                                          @rgbd=split(//,$rgbh); # do $sb64[..] aftr each b10 valu pRtoff b64 6-bit chars while filng lowbits
+    $valu= $sb10{$rgbd[0]} * 4;$valu+=2 if($sb10{$rgbd[3]} & 32);$valu+=1 if($sb10{$rgbd[3]} & 16);$rgbs.= sprintf("%2.2X",$valu);
+    $valu= $sb10{$rgbd[1]} * 4;$valu+=2 if($sb10{$rgbd[3]} &  8);$valu+=1 if($sb10{$rgbd[3]} &  4);$rgbs.= sprintf("%2.2X",$valu);
+    $valu= $sb10{$rgbd[2]} * 4;$valu+=2 if($sb10{$rgbd[3]} &  2);$valu+=1 if($sb10{$rgbd[3]} &  1);$rgbs.= sprintf("%2.2X",$valu);         } return($rgbs);}
+sub h2rl{ # convert any typical HEX RRGGBB into RGBL b64 with Last Low bits Layered (might not want to uc() if 4-char leng or maybe flagd 2cnv bak2 HEX)
+  my $rgbh=shift(@_);my $valu=0;my $lowb=0;my $rgbs='';my @rgbd=split(//,('0'x 6));if(length($rgbh) == 6){#$rgbh=uc($rgbh) if($rgbh=~ /[a-z]/);
+                                                          @rgbd=split(//,$rgbh); # do $sb64[..] aftr each b10 valu pRtoff b64 6-bit chars while filng lowbits
+    $valu= hex($rgbd[0]) * 16 + hex($rgbd[1]);$rgbs.=$sb64[int($valu/4)];$lowb+=2 if($valu & 2);$lowb+=1 if($valu & 1);$lowb*=4;
+    $valu= hex($rgbd[2]) * 16 + hex($rgbd[3]);$rgbs.=$sb64[int($valu/4)];$lowb+=2 if($valu & 2);$lowb+=1 if($valu & 1);$lowb*=4;
+    $valu= hex($rgbd[4]) * 16 + hex($rgbd[5]);$rgbs.=$sb64[int($valu/4)];$lowb+=2 if($valu & 2);$lowb+=1 if($valu & 1);$rgbs.=$sb64[$lowb];} return($rgbs);}
 sub S{my $Sstr='';my $codz='';if(@_ && defined($_[0])){$codz= join('',@_);} # might want l8r flag optionz as sepR8d by spacez for these joinz though
 if((!defined($codz) || !length($codz)) && !-t STDIN){chomp($codz= join('',<STDIN>));}
   if(defined($codz) && length($codz)){ # problM mAB doing !-t ck twice from bin/S to S()?
@@ -758,7 +770,7 @@ sub sumb{  my $widt=0;$widt=1 if(exists($ENV{'COLUMNS'}) && $ENV{'COLUMNS'} >= 1
     'S2'    => "a8  converter from eScape encoded input to new compact c8 (col8) format   ",
     'S2f4'  => "a8  converter from eScape encoded input to old 4-layer c8 (col8) format   ",
     'shfl'  => "a8  SHuFfLe lines or chars (like Games::Cards::Poker->Shuffle &&`shuf`)   ",
-    'sS'    => "a8 *Substitute out (regex Strip) eScape codes by types   or Commas (-c)   ", # was subS;mAB betr than -c 2`fact 64|b64|coma|perl -pe 's/,//g'`?
+    'sS'    => "a8 *Substitute out (regex Strip) eScape codes by types (just Commas -c)   ", # was subS;mAB betr than -c 2`fact 64|b64|coma|perl -pe 's/,//g'`?
     'sumb'  => "a8 *SUMmarize ~/bin/ described files by color category (displaying now)   ",
    #'supd'  => "a8 *Screeps UPD8 scripts utility into ~/.config/ directory for  client    ",
     'tstc'  => "a8 *TeST eScapes `S` of c8 `c` format for pal8 colors && SGR attributes   ", # mAB fold in2 tsgr && mv latr2 a8,or mk -blox in tstc?
@@ -800,11 +812,11 @@ sub sumb{  my $widt=0;$widt=1 if(exists($ENV{'COLUMNS'}) && $ENV{'COLUMNS'} >= 1
 
     'calN'  => "d8  caleNdar utility that shows the current Year (with 1 week per line)   ", # add good optionz like `cal -3` && 2,3,4,6,12-column modez
     'd8'    => "d8 *DateTime stamps and conversion util (-a ANSI color, -f Full format)   ",
-    'd8g'   => "d8  DateTime stamp  utility as header for e-mails with  Gerry  (my Dad)   ",
+    'd8g'   => "d8  DateTime stamp  utility as header for G-mails with  Gerry  (my Dad)   ",
     'd8ow'  => "d8 *DayOfWeek utility taking Year, Month, && Day as d8 YMD param or now   ",
     'dic'   => "d8  wrapper for `dict`(ionary) command  (like piping through `colorit`)   ",
     'lsd8'  => "d8  highly reformatted `ls -lF --full-time` (file-sys Time as d8-stamp)   ",
-    'ptcnv' => "d8  CoNVerter from `pt` to new `d8` format   (by inserting likely zone)   ", # mAB slurp ptold in as optn,in case future autOcnv nEded
+    'ptcnv' => "d8  CoNVerter from `pt` to new `d8` format (by inserting likely 'zone')   ", # mAB slurp ptold in as optn,in case future autOcnv nEded
     'w8'    => "d8 *wait a dur8(ion) like '3U' as 3.5 seconds or '2qm' as 2.88 minutes    ",
     'pt'    => "Time::PT *for original PipTime module  (main precursor to Octology::d8)   ",
 
@@ -832,13 +844,13 @@ sub sumb{  my $widt=0;$widt=1 if(exists($ENV{'COLUMNS'}) && $ENV{'COLUMNS'} >= 1
     'bak'   => "Utl  auto-save now d8-stamp in the end-name of a .bak/ backup file copy   ",
     'e'     => "Utl  EDITOR wrapper which includes a fragile old package templ8 system    ", # mAB rEwrIt mOst Useful BhAVor as nw clEnr U8:e or let dokr:e
 
-    'frip'  => "    NotYetInModule,`flac` Free Lossless Audio CD 'RIPper'  (extractor)    ",
-    'g3'    => "    NotYetInModule,`gst123` Expect wrapper which reformats and  colors    ",
-    'g8'    => "    NotYetInModule,`git` wrapper to match long commands and cnvrt .bak/   ",
+    'frip'  => "    NotYetInModule,`flac` Free Lossless Audio Codec CD RIPper (extract)   ",
+    'g3'    => "    NotYetInModule,`gst123` Expect wrapper,heavily reformats and colors   ",
+    'g8'    => "    NotYetInModule,`git` wrapper,match long commands && .bak/ converter   ",
     'kpc'   => "   *NotYetInModule,`kpcli` deriv8ive for text KeePass (pswd management)   ",
-    'mix8'  => "    NotYetInModule,started a PulseAudio C::Simp mixer (like pmix/aumix)   ", # flesh out commandz && CLI before bilding new Curses interface
-    'pakr'  => "    NotYetInModule, PackRube Rubik's Cube format converter  (in `qbix`)   ", # add standRd Singmaster not8ion conversion && mAB put in b8.pm
-    'pimp'  => "    NotYetInModule,PipsInteractiveMusicPlaylister C::Simp shuffle audio   ", # mAB rEtIr sinc g3 is alreD gr8 (but consider rand playlistz)
+    'mix8'  => "    NotYetInModule,`pmix`  deriv8ive for PulseAudio Curses::Simp mixer    ", # flesh out commandz && CLI before bilding new Curses interface
+    'pakr'  => "    NotYetInModule,`qbix` PAcKRube Rubik's Cube format converter  (b64)   ", # add standRd Singmaster not8ion conversion && mAB put in b8.pm
+    'pimp'  => "    NotYetInModule,`zinf`  wrapper PipsInteractiveMusicPlaylister audio   ", # mAB rEtIr sinc g3 is alreD gr8 (but consider rand playlistz)
     'shot'  => "   *NotYetInModule,`scrot` wrapper utility to autom8 basic screen SHOTs   ",
     ); # mAB add reverse oper8ion with scaling back down4neg8iv option
 # HBPL7end:reordered by module sections,moved dic from wrong b8 to d8 section,retired ptold sinc shudBeasy2rEmk in d8 if evr nEdedAgN,mAd nw d8ow 2 calc dow;
@@ -922,7 +934,8 @@ sub sumb{  my $widt=0;$widt=1 if(exists($ENV{'COLUMNS'}) && $ENV{'COLUMNS'} >= 1
         $h=d8colr('util'          );$bfst{ $bfls[$bfle - $_]}=~ s/util          /$h$i/gx    ;d8cs('d8bo'     ); # should be same as 'RoY' or close
         $h=d8colr('YMD'           );$bfst{ $bfls[$bfle - $_]}=~ s/YMD           /$h$i/gx    ;d8cs('mmmMMMppVVVVVV'); # NYIM was orig S('mkB') at very end
         $h=d8colr('NotYetInModule');$bfst{ $bfls[$bfle - $_]}=~ s/NotYetInModule/$h$i/gx    ;d8cs('d8bo'     ); # du!Uz $i $j 2map 8pal8z in2 fldz BlO
-        $h=S('Z');$bfst{$bfls[$bfle-$_]}=~ s/(Select\s*)(Graphic\s*)(Rendition)/$h$1$O$2$M$3$i/; # get SGR ZOM 4 tsgr
+        $h=S('Z');$bfst{$bfls[$bfle-$_]}=~ s/(Select\s*)(Graphic\s*)(Rendition)/$h$1$O$2$M$3$i/;    # get SGR ZOM 4 tsgr
+                  $bfst{$bfls[$bfle-$_]}=~ s/      (\s+)(S)(G)(R)(\s+)       /$1$h$2$O$3$M$4$i$5/x; # get SGR ZOM 4 tstc (spc-sepR8d)
         if($grup eq 'd8' && $bfls[$bfle - $_] eq 'w8'){ # should properly color quoted example dur8ions in whatever w8 description
           while($bfst{$bfls[$bfle - $_]}=~  /(\s)(['"])([0-9A-Za-x]+)\2/){$s=$1;$q=$2;$d=$3;$e=dur8colr($d);
             $bfst{    $bfls[$bfle - $_]}=~ s/($s)(['"])([0-9A-Za-x]+)\2/$1$G$2$e$G$2$i/;}
@@ -955,11 +968,13 @@ sub sumb{  my $widt=0;$widt=1 if(exists($ENV{'COLUMNS'}) && $ENV{'COLUMNS'} >= 1
         $bfst{ $bfls[$bfle - $_]}=~ s/   (\/)(dev)(\/)(mixer )/$l$1$h$2$l$3$s$4$i/gx;$s=S($bftc{'file'}{'\.bak' }); # get ~/ *  / dirz
         $bfst{ $bfls[$bfle - $_]}=~ s/   (\s)(\.)(bak)(\/)    /$1$d$2$s$3$l$4$i/gx  ;$s=S($bftc{'file'}{'\.Hrc' }); # get   .bak/ dirz
         $bfst{ $bfls[$bfle - $_]}=~ s/(~)(\/)(\.)([Hl]s?rc   )/$h$1$l$2$d$3$s$4$i/gx;$s=S($bftc{'file'}{'\.psf' }); # get ~/.*rc  filz
+        $bfst{ $bfls[$bfle - $_]}=~ s/   (\s)(\()(psf )(\s|\))/$1$2$s$3$i$4/gx      ;                               # get   (psf)
         $bfst{ $bfls[$bfle - $_]}=~ s/   (\s)(\.)(psf )(\s   )/$1$d$2$s$3$i$4/gx    ;$s=S($bftc{'file'}{'\.f0nt'}); # get   .psf  filz
         $bfst{ $bfls[$bfle - $_]}=~ s/   (\s)(\.)(f0nt)(\s   )/$1$d$2$s$3$i$4/gx    ;$s=S($bftc{'file'}{'\.xml' }); # get   .f0nt filz
         $bfst{ $bfls[$bfle - $_]}=~ s/(er|\s)(\.)(xml )(\s|\))/$1$d$2$s$3$i$4/gx    ;$s=S($bftc{'file'}{'\.xtb' }); # get   .xml  filz (1rItaftr'smaller'nospc)
         $bfst{ $bfls[$bfle - $_]}=~ s/   (\s)(\.)(xtb )(\s|\))/$1$d$2$s$3$i$4/gx    ;$d=S($bftc{'base'}{  '64'  }); # get   .xtb  filz
-        $bfst{ $bfls[$bfle - $_]}=~ s/   (\sb)   ( 64 )       /$1$d$2$i/gx          ;$d=S($bftc{'base'}{  '16'  }); # get    b64
+        $bfst{ $bfls[$bfle - $_]}=~ s/   (\(b)   ( 64 )       /(${B}b$d$2$i/gx      ;                               # get    b64
+        $bfst{ $bfls[$bfle - $_]}=~ s/   (\sb)   ( 64 )       /$1$d$2$i/gx          ;$d=S($bftc{'base'}{  '16'  }); # get    b16
         $bfst{ $bfls[$bfle - $_]}=~ s/   (\(b)   ( 16 )       /$1$d$2$i/gx          ;                               # du b16
         $bfst{ $bfls[$bfle - $_]}=~ s/   (\s)    (HEX )(adeci)/$1$d$2$i$3/gx        ;$d=S($bftc{'base'}{ 'ocT'  }); # du HEX
         $bfst{ $bfls[$bfle - $_]}=~ s/   (\s)    (ocT )(al   )/$1$d$2$i$3/gx        ;$d=S($bftc{'base'}{  '10'  }); # du ocT

@@ -1,5 +1,5 @@
 # D6RMF1V1:8.txt - by8π : JAPH : K3wlD00d : 1337H4xr : PipStuart's Octology (hopefully eventually an Ontology of 8) - Convention, Conversion, && Categoriz8ion:
-# $VERSION='0.0';$d8VS='HBRLEARN'; # Octology attempts to rel8 the universe through medit8ion on mnemonic abbreV8ion (via 8-based  limit8ion) &&    elucid8ion.
+# $VERSION='0.0';$d8VS='HC2LJhEl'; # Octology attempts to rel8 the universe through medit8ion on mnemonic abbreV8ion (via 8-based  limit8ion) &&    elucid8ion.
 # CEBBICTI:Crossing Every Bridge Before I Come To It? I.e., not a d8 stamp. Trying to make my Dad's birthday (August 8th) more special by thinking 2far ahead?
 # Octology intends to pursue implic8ion && ramific8ion as substantE8ion for adequ8 particip8ion, if not also 2 oblig8ion toward implement8ion &&   promulg8ion.
 # Conceptually, Octology is a system st8ing that every organiz8ional principle is valuable, but 8 tends to be a nearly ideal starting place for most d8a sets.
@@ -68,7 +68,7 @@
          origin8   :m8-based mapping for represent8ion of home or start loc8ion && social-network tracking rel8d hometown && travels, vac8ions, && explor8ion
          destin8ion
           gener8ion:rel8 for family trees
-              m8riarch
+              m8riarch:"y" here could discuss female gendered issues && powers, influence, assumption of oppression (maybe analyzed), privilege of high worth
               p8riarch:could append "y" in attempt to discuss faulty concept from modern feminism which assumes or implies permanent privilege over oppressed
           found8ion
         fratern8
@@ -894,9 +894,10 @@ internationaliz8ion:tools to transl8 for I18N the document8ion && applic8ion int
 
 # above are my 888 current favorite 8-words that I'd most like to consider developing into distinct applic8ions (or component specializ8ions && fE8ures)
 # here are candid8 words (if any) to next contempl8 for replacing others above with, or to store with all others further below that have been cut so far
+           vers8ile:*not8*:normally wrong pronunC8ion, but vers-ate-ile is quite valid as well && likely deserves to supplant some poorer word above
        stabiliz8ion:*not8*:normally prefer shorter distinct concept names above, but maybe these good long words are better than wrong pronunC8ion duplic8s?
        moderniz8ion
-      generaliz8ion
+      generaliz8ion:*not8*:around 95 cut or candid8 here, but maybe just let grow?
    industrializ8ion
    circumstantE8   :substantE8, authentic8, valid8, or corrobor8
         conturb8ion:agit8ion, trepid8ion, or vex8ion
@@ -904,7 +905,7 @@ internationaliz8ion:tools to transl8 for I18N the document8ion && applic8ion int
         flutter8ion
         tumultu8ion
 # below are the additional possible 8-words I've cut, often due to conceptual similarity to existing entries or to unify more around typical pronunC8ion
-           vers8ile:wrong pronunC8ion
+     overelabor8   :bl8ant prefix
            plan8   :wrong pronunC8ion for original planet simul8or idea
          intric8   :wrong pronunC8ion
          remigr8   :bl8ant varE8ions on migr8
@@ -962,6 +963,7 @@ internationaliz8ion:tools to transl8 for I18N the document8ion && applic8ion int
          approb8
         immoder8
         immacul8
+        indelic8
           delic8
         effemin8
          mascul8
@@ -3708,3 +3710,8 @@ HBRLDow8:Gr8 interview with Michael Simmons && Marek Rosa on GAI && limited Deep
 imbuing future with better valU8ion,adapt8ion,invention,limited reinvention,augment8ion for own knowledge,efficiency,knowing what to ignore,learning to learn,
 reflection,future anticip8ion,getting faster&&slower,stronger,better informed,reinforcement,minimal memoriz8ion,scaling improvements,size,graduaLearning,grit.
 Consider GoodAI competition,alignment,actors,neural lace,recurse self-improvement,good to start solving hard problems early,mitig8ing awful mistakes or fails;
+HBRLFREE:Idea to develop intelligent agents to learn && grow efficiently, gaining more familiarity with increasingly significant models && abstractions based
+on coherently respectfully proportion8 growing appreC8ion of universe && human (&& progressively others) value systems. Collabor8 on solutions with AkumaChun;
+HBRLHIYa:Shantanu Aryan 8 hours ago U2b posted light goes 299,792,458 HtdXA m/s && 1 s is 9,192,631,770 8Zx6tQ certain raD8ion periods of Cs-133 atom precise;
+HBRLJTVH:Earliest 8.txt backup is from Halloween October 31st of 2012 with pt CAVHTTP pre-d8, many months after Dr. Peterson seriously started composing his
+"12 Rules for Life: An Antidote to Chaos", and February of 2012 that Dad was handed (by his Father) syllabus outline assignment for Personal Development sent;

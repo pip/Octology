@@ -8,7 +8,7 @@ B= b8a:  beta :I68 FriJun 8th2018:~2Monthz from alf8:main fE8urez should all sol
 C=cnd8:candid8:I88 WedAug 8th2018:~2Monthz from  b8a:main fE8urez should be polished 4 potential release candid8 v0.8 in prepar8ion 4 fInal testing && feedbak;
 R=rls8:release:IA8 MonOct 8th2018:~2Monthz from cnd8:first complete major public release of fE8ureful Octology v1.0 should be made from GitHub over 2 the CPAN;
 
-E=nEdz:stuD perluni(intro|tut|code) 2hndl UTF8 in b8z&&all othr cOd,stuD OpenType|WOFF2.0|bSt SVG fontz availabl2rNder in SDL,stuD crypto HMAC SHA512 4securiT;
+Z=nEdz:stuD perluni(intro|tut|code) 2hndl UTF8 in b8z&&all othr cOd,stuD OpenType|WOFF2.0|bSt SVG fontz availabl2rNder in SDL,stuD crypto HMAC SHA512 4securiT;
 a8:funcz 4colrz|f0ntz|SKpz|2&&from c8|c8fn|chti|cma && .Hrc c8-anOt8d V8 objectz 4 cNtralIzd configUr8ion of essential d8a contextz for all othr major systemz;
 b8:funcz&&num objz 4trnsl8ng bAsez,cudhav %bfr8^xpn8 pRtz,cfg DsIrd output bAse|prEcision|accUraC|sprintf4m@wiround|cma|dolR (apply ordr m@rz),Use n8ivez 4sPd;
 c8:objz wi col8 lAyrz2sepR8 CrEalIzd SKpz 2rNder in SDL|Cursez|Tk && start emUl8ing standard trmnalz in 8trm or single standalone SDL applic8ionz like in ckm8;
@@ -16,7 +16,7 @@ d8:d8ime objz 4calQl8ng mOmNtz|dur8ionz (both bilt on comon fldz),In&&Out tXt&&c
 f8:objz 4hndlng f0ntz|pal8z with In&&Out fIl4m@z,XtNdOrig f0ntz 4anyXtra bitmapz2Unicodepointz or crE8 new scAlabl varE8ionz 2introper8; b8:fOn.ls|resoz|rAngz;
 U8:funcz 4 upd8z|U2b-dlz|UTF8|Xpct|bk|e && any other specialized Utility applic8ionz or aggreg8d component behaviorz which draw from many of the above modulez;
 
-Z=nEdz: #c8()4cut|cat,d8()4CLIobj wrapr,f8()4f0ntcnv|pal8lOdr|intractv editr. c8 fIlobjz shud pRs4m@z(lIk ls?rc)in2trEz(ASTz?)4manipUl8ion&&rEgNR8ion(lIk shl);
+H=nEdz: #c8()4cut|cat,d8()4CLIobj wrapr,f8()4f0ntcnv|pal8lOdr|intractv editr. c8 fIlobjz shud pRs4m@z(lIk ls?rc)in2trEz(ASTz?)4manipUl8ion&&rEgNR8ion(lIk shl);
 b8:fixIF,mk tStz&&bNchmRkz,stuD Rithmetic cOdng&&any wAyz2sPd nrml math&&cnvz,if fastEnuf try as bAsis4 d8:fldz or just dur8:tix in ms from SDL|Cursez|GLclock;
 a8:fix cma 4dif b8z&&lodH,popUl8 all othr cOd with Hd8a,add lsd8 fIlnAm colr d8a2Hrc,upd8 c8fn 2Use,mAB lEv lsd8 sepR8 implMNt8ion 4AwhIl4verific8ion of DsIrd;
 U8:mk Xpct|U2b|g3 with Hrc Q: contXt4prOgrSiv tXt manipUl8ionz&&colrz,mk ls8 dic ag loc8 rsync8,tSt Cursez,U2b4 try apNdng tImzOn&&auDO dur8 2 uld8 in fIlnAmz;
@@ -25,7 +25,7 @@ c8:upd8 4Uni col8 d8a&&f0ntz,8trm s/Btix/Xpct/,add lAyrz psgr SGRn or altrn8optn
   sPdrawz|dblclikwrdz2clip|undrlIn lnkwrdz lIkGT&&clik2newbrwsrtab|mdlclikpAstclip|rItmousbutn3 mNU2drag cp c8lAyrz+t|fixpal8upd8SKpz2purg sprIt hash for rEgN,
   fEdbak XtNsion asOC8ionz from lrc pRs trE in2 a8:c8fn,mk mo lIk most|less but kEp c8lAyrz,pRs vimrc in2 obj,stRt viii (l8r sepR8 editor oper8ionz in2 v8.pm);
 
-H=nEd!:stuD tXt:hndlbRz && all l8st tMpl8 systMz (&&mAB crE8 nw U8:Mpl8) 4gNR8ng pRtzof (z|ba)shrc from [Hl]rc (as U8:gNr8?) && U8:v8 cOd gN lIk old Utl:e pkg;
+T=nEd!:stuD tXt:hndlbRz && all l8st tMpl8 systMz (&&mAB crE8 nw U8:Mpl8) 4gNR8ng pRtzof (z|ba)shrc from [Hl]rc (as U8:gNr8?) && U8:v8 cOd gN lIk old Utl:e pkg;
 a8:stRt c8* Utlz4l8r synhIlItz,grO Hrc Q: 2oper8 on c8 objz&&Bgin asOC8ng withXtNsionz|cmdz|Dtectabl contNt,mk gnr8 wi good rulz4allHrc+countrEz|LMNtz|fItgAmz;
 U8:upd8 Hrc with a8:chti V8 map thN mv2 just U8:cht,g8:stuD Git(Hub)? 4Btwn putrz2 s/bak/g8/,rEwrIt Utl:bak|e &&audit wich othrz 2du&&allVERSIONsepR8from d8VS;
 d8:combIn fam in2 bd8z&&upd8,integr8 str[fp]tIm,stRt grd8 as gradu8d d8-rAng objz4new c8-bAsd colrd intractv navig8ion intrfAc,XtNd grd8 2incorpor8 dur8 spanz;

@@ -1,5 +1,5 @@
 # Octology
-An ontology based on the power of 8. `$VERSION='0.0';$d8VS='HBRLEHGI';`
+An ontology based on the power of 8. `$VERSION='0.0';$d8VS='HC3LGame';`
 
 This is basically the first public preview of my early development files. I am not yet ready for serious code collaboration, but welcome feedback.
 

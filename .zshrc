@@ -1,5 +1,5 @@
 # 381KF3RN:~/.zshrc by PipStuart <Pip@CPAN.Org>; nOt:I originallythotitbetr2rElymoronstndalOnXecutablUtlz than aliases||shL-scrpt funczDfynd inany .rc Bcuz4mer
-# $VERSION='0.0';$d8VS='HBFLACUk'; # stAyavail2spwnd procSz wich hvOwn non-zsh sub-shL cfgz(eg,vim:!cln 127/7;perl`b64 1023`)sO I pland2port stufhEr2anew u8.pm
+# $VERSION='0.0';$d8VS='HC3L0ADS'; # stAyavail2spwnd procSz wich hvOwn non-zsh sub-shL cfgz(eg,vim:!cln 127/7;perl`b64 1023`)sO I pland2port stufhEr2anew u8.pm
 #   butIhv rElIzd that c8.pm (inprep4 8sh)wilBAbl2pars .(ba|z)shrc fIlz2lOd thEz&&can mk thMavail2othr shLz bywrapng cmdz wiXpansionUtlz; lern LaunchPad/byobu,
 # 2du:cmNt unUsed aliases,add perVC autostRt nwlOcl`scrn`if!alredy in1,lern`autoload -z`&&sepR8hist,get pcre module&&anyUsefulothrz,
 #   bakon gN2:`em  scummvm`:2use nw"modern"theme4scummvm,add2[scummvm]sect of~/.scummvmrc(aftr runing scummvm once):themepath=/usr/share/games/scummvm/engines
@@ -576,8 +576,9 @@ alias echoe='echo -e'; #  enable interpret8ion of backslashed escapes (default i
 alias echon='echo -n'; # disable trailing Newline
 alias echos='echon  ';
 alias eqx='/home/pip/dvl/m8/clda/eqx/eqx-0.9.4.26/equinox3d-0.9.4.26-Linux64bit/eqx &'; # Gabor Nagy's awesome EQuinoX3D
-alias fstat='  perl -MTime::PT -e "@s=split(/ /,scalar(localtime((stat(shift))[9])));print  \"@s\n\"    ;"';
-alias fstatpt='perl -MTime::PT -e "@s=split(/ /,scalar(localtime((stat(shift))[9])));print pt(@s),\"\n\";"';
+alias fstat='  perl -MTime::PT     -e "@s=split(/ /,scalar(localtime((stat(shift))[9])));print   \"@s\"      ;"';
+#lias fstatpt='perl -MTime::PT     -e "@s=split(/ /,scalar(localtime((stat(shift))[9])));print `pt @s`,\"\n\";"'; #pt(@s) not exported,so try shell,leav Nwln?
+alias fstd8='  perl -MOctology::d8 -e "@s=split(/ /,scalar(localtime((stat(shift))[9])));print Octology::d8->new(\"expand\"=>\"@s\");"'; 
 alias    xt=' xterm          -geometry 160x50   &'; #     xt used2B a symlink2 ~/bin/xmltidy but more consistent with gt,Et,st to have it as xterm now instead
 alias uxtrm='uxterm          -geometry 160x50   &';alias uxt='uxtrm';alias st='stterm -g 160x50 -T st &'; # also SimpleTerminal st
 alias lxtrm='lxterminal     --geometry=160x50   &';alias lxt='lxtrm'; # =lxterm is a separ8 sh script wich testz locale && wrapz plain uxterm for UTF-8
@@ -650,6 +651,7 @@ alias rs8='noglob eval `resize -s 25  80`';alias rs80=' rs8'; # 8 for  80-wide (
 alias rs3='noglob eval `resize -s  1  34`';alias rsd8=' rs3'; # 3 for  34-wide d8ok termz (somewhat more straightforward && brief 2 use char dimz versus pixlz)
 alias rsd8ok='                      rs3  ';alias rsd='  rs3'; #   && a few more for d8ok  (even though wmctrl -e below is making these rel8ively unnecessary)
 alias rs160x50='rs1';alias rs80x25='rs8 ';alias rs34x1='rs3'; # HB1MBPrr:just removing Ubu17.10 deprec8d -e && -x + pRams to popul8 in GT d8ok profls && this;
+# HC3L0DNV:noglob eval around backticks may try to reach out to propag8 exported upd8 dimensions to invoking parent environment && variables, workz without?;
 if       [[ "${(L)HHst}" ==  aku    ]]; then # 664||-1882,-e2586 1294w 3840-1958=-1882 wmc -r :ACTIVE: -e 0,664,-1,-1,-1;wmc -r:ACTIVE:-e 0,-1882,-1,-1,-1;
   # Most of these below originally had --title= parameters like d8ok,d8ok-f,othr,2du,muz,mvz but current version no longer supports it. I've run s/title/role/g
   #   since their purpose is similar but I wish GT would just enable titles&&less than 4 rowz again like B4. Lookz like wmctrl is Able2resolv all these issuez.
