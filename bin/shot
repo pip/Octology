@@ -1,12 +1,12 @@
 #!/usr/bin/perl
 # 26AK9fB0:shot crE8d by PipStuart <Pip@CPAN.Org> to wrap `scrot` with my most commonly preferred options;
 use strict;use warnings;use utf8;
-my $d8VS='HBRLFSon';my $name = $0;$name =~ s/.*\///;
+my $d8VS='HC8L74f8';my $name = $0;$name =~ s/.*\///;
 my %optz =('file' => $name,   # unique part of filename
            'scrw' =>     0,   # screen width  (loaded after looping)
            'scrh' =>     0,   # screen height (loaded after looping)
            'whol' =>     1,   # whole screen shot?
-           'focu' =>     1,   # grab focused window without requiring explicit selection
+           'focu' =>     0,   # grab focused window without requiring explicit selection
            'bord' =>     0,   # grab window border too?
            'dela' =>     3,   # delay seconds
            'coun' =>     1,   # countdown?
@@ -22,7 +22,7 @@ if(/^--?[h?]/){die qq/ 26AK9fB0:$name crE8d by PipStuart <Pip\@CPAN.Org>; d8VS=$
   Desc:$name wraps scrot in my most common options. I only want lossless PNG files at maximum compression in 3 seconds, usually don't want thumbnails, etc..
     usage: $name <filename>
   -s     Select  window (uppercase shoots windowmanager border too)
-  -u     focUsed window (uppercase shoots windowmanager border too) new Dflt
+  -u     focUsed window (uppercase shoots windowmanager border too)
   -c(#)  Countdown # seconds before taking shot (Dflt:3, uc hides count)
   -e(X)  Exec X on resulting screenshot file
   -m     grab from Multiple displays && join them (already scrot Dflt?)
@@ -30,8 +30,8 @@ if(/^--?[h?]/){die qq/ 26AK9fB0:$name crE8d by PipStuart <Pip\@CPAN.Org>; d8VS=$
   -z     silent (prevent beeping)\n/;}
 if(s/(^|\s)--?(s)(\s|$)/$1$3/     ){$optz{'whol'}=0;}
 if(s/(^|\s)--?(S)(\s|$)/$1$3/     ){$optz{'whol'}=0;                 $optz{'bord'}=1;}
-if(s/(^|\s)--?(u)(\s|$)/$1$3/     ){$optz{'whol'}=0;$optz{'focu'}^=1;}
-if(s/(^|\s)--?(U)(\s|$)/$1$3/     ){$optz{'whol'}=0;$optz{'focu'}^=1;$optz{'bord'}=1;}
+if(s/(^|\s)--?(u)(\s|$)/$1$3/     ){$optz{'whol'}=0;$optz{'focu'} =1;} # considering making focused new dflt with ^=1 xor togl here,so -uU would get fulscrnz
+if(s/(^|\s)--?(U)(\s|$)/$1$3/     ){$optz{'whol'}=0;$optz{'focu'} =1;$optz{'bord'}=1;}
 if(s/(^|\s)--?(c)(\d*)(\s|$)/$1$4/){                if(defined($3) && length($3)){$optz{'dela'}=$3;}}
 if(s/(^|\s)--?(C)(\d*)(\s|$)/$1$4/){$optz{'coun'}=0;if(defined($3) && length($3)){$optz{'dela'}=$3;}}
 if(s/(^|\s)--?(e)(\w+)(\s|$)/$1$4/){                if(defined($3) && length($3)){$optz{'exec'}=$3;}}

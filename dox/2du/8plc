@@ -5,7 +5,7 @@
 use strict;use warnings;use utf8;use v5.10;
 use Octology::a8;
 use Octology::b8;
-my $d8VS='HBFLClov';       my $clrf=1;my $fulf=0;my $argz='';$argz= join(' ',@ARGV) if(@ARGV);my $Stxt='';
+my $d8VS='HC8L6OpN';       my $clrf=1;my $fulf=0;my $argz='';$argz= join(' ',@ARGV) if(@ARGV);my $Stxt='';
 my $edVS=        '';       my %fulc=();  $fulf=1 if($argz=~ /(^|\s)-?-?f/i); # find -?f(ull) flag to count && sort all chars at end
 if($argz=~ /(^|\s)-?-?[nc]/i){$clrf=0;} # accepts -?(no)?c(olor)? argument for vim ':r!8plc c' to be like ':r!8plc|sS'
 my $efyl ='8.txt';my @lcnt;$lcnt[$_]=0 for(0..61);my @acnt;$acnt[$_]=0 for(0..61);my $done=0;my $t0tl=0;my $text;my $actx;my $sclc;my $gttl=0;
@@ -38,9 +38,9 @@ for(@scnt){                                                                     
                                                                                          $gttl+=$acnt[$lndx];}}
   $sclc = 9 - $sclc;$sclc=0 if($sclc < 0);
   $Stxt.=sprintf ' '  x $sclc; $Stxt.=             sprintf(  "%s $actx\n",            b8colr(sprintf("%2s",b64($_))));}
-$Stxt.=                                            sprintf   "$B-------- -- ---\n";
-$Stxt.=                                            sprintf("${C}t${M}0${C}tlz    %s %s$W :  $B(${R}b10$B)$G  %s$M  %s$W;$z",
-                                                    b8colr(sprintf("%2s",b64($t0tl))),b8colr(sprintf("%2s",b64($gttl))),cma($t0tl),cma($gttl));
+$Stxt.=                                            sprintf   "$B-------- -- ---\n";my $cttl=$M . cma($gttl);$cttl=~ s/(,)/$Y$1$M/g; # pre-colr comma'd total
+$Stxt.=                                            sprintf("${C}t${M}0${C}tlz    %s %s$W :  $B(${R}b10$B)$G  %s  %s$W;$z",
+                                                    b8colr(sprintf("%2s",b64($t0tl))),b8colr(sprintf("%2s",b64($gttl))),cma($t0tl),$cttl);
 if($fulf){$Stxt.="\n";my %cvlz=reverse(%fulc);my @ccnt= sort { $a <=> $b } keys(%cvlz);my $sumn=0; # 2-colms of full counts fits nice under 50 lines so far
   for     my $cndx (0..  int(@ccnt/2)){my $coun=$ccnt[$cndx];        my $pcnt=0;my $w82o=''; # FullFile CharCounts abov as Values (or values(%fulc) nEdzUniq)
     if($cndx < int(@ccnt/2)){

@@ -69,4 +69,6 @@ HBQL73IP:From CommandLineFu.Com 0)`sudo !!` re-runs last cmnd. 1)`python -m Simp
  H)`curl -u user:pass -d status="TweetFromShell" HTTP://Twitter.Com/statuses/update.xml`. J)`time read`Ctrl-d to stopwatch. L)`lS +F logfile`BhAv lIk tail-f.
  K)`ssh -t reachablehost ssh unreachablehost`connect thru SSH host in middle. M)`telnet Towel.BlinkenLights.Nl`Ctrl-] to stop StarWars. N)`disown -a && exit`
   closes shell keeping all subprocesses running. O)`while sleep 1;do tput sc;tput cup 0 $(($(tput cols)-29));date;tput rc;done &`puts console clock up-right;
-HBSLHPDE:Contempl8 altern8ives to Ubu 17.10 default Gnome 3,maybe preserving Unity 7, helping Unity 8?, trying Mate, XFCE, FluxBox, KDE, WindoMaker, othrz?;
+HBSLHPDE:Contempl8 altern8ives to Ubu 17.10 default Gnome 3, maybe preserving Unity 7, helping Unity 8?, trying out Mate, XFCE, Cinnamon, FluxBox, WindowMaker,
+ KDE, && research any other capable altern8ives, maybe trying all the stable DE releases within VirtualBox (or othr VM) for experiment8ion && fE8ure evalU8ion;
+HC6LNDRM:/. article on explaining copyright had comment recommending EPubs with Calibre as DRM-free content format for at least Kindle eBooks && maybe others?;

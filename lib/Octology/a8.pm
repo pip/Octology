@@ -1,5 +1,6 @@
-# E86MAxFB: Octology::a8.pm crE8dby PipStuart <Pip@CPAN.Org> 2 automatically alloc8 common applic8ion d8a like ANSI SKpz and assoC8d attributes or arguments;
-# 2du:stuD term codes from: HTTP://Vim.Wikia.Com/wiki/Xterm256_color_names_for_console_Vim for any diffz for a8 main mapz here && l8r f8:pal8 d8a layrd namz,
+# E86MAxFB: Octology::a8.pm crE8d by PipStuart <Pip@CPAN.Org> to automatically alloc8 common applic8ion d8a like ANSI SKpz and assoC8d attributes or arguments;
+# 2du:rEgNr8 all 6-HEX RGB thru h2rl && upd8 all usagez,
+#   stuD term codes from: HTTP://Vim.Wikia.Com/wiki/Xterm256_color_names_for_console_Vim for any diffz for a8 main mapz here && l8r f8:pal8 d8a layrd namz,
 #   cmus Curses colr themez uses intz in -1..255. wi namez -1=>'default' for whatever terminal default,
 #     Fg&&bg:0.. 7 =>  black,     red,     green,     yellow,      blue,     magenta,     cyan, gray, &&          ... also "reverse|underline|blink" optz below
 #     Fg    :8..15=>darkgray,lightred,lightgreen,lightyellow, lightblue,lightmagenta,lightcyan,white, && Attrz set of namez "standout|bold" wi "default"=>none,
@@ -50,7 +51,7 @@ our @EXPORT= qw(bfr8c    b8c    d8c    dur8c       a8c   a8colr      h2rl   rl2h
     $z    $k    $r    $o    $y    $g     $c $SKpb    $m    $p    $w  tstc    $K    $R    $O    $Y    $G    $C    $B    $M    $P    $W    %p622 %p222
  $tnhf $ucdf  spff  spfd  spfX   shfl  reso $auth %cmsp %p8k2 @p82k  chp8     S2f4 c2f4 dm2u cdst %crgb %cbrt @snls @mrls %cdrd %cdrn    %nrgb         gnp8);
  # of 52 posibl sngl-letr var nmz,a8 Xportz 20,$b && $a unavail,so shudB thEs30 lFt4quik shortSt nAmz: 'def hij l n  q stuv x', 'A  DEF HIJ L N  Q STUV X Z'
-our $VERSION='0.0';my  $d8VS='HC3LEirl';our $auth='PipStuart <Pip@CPAN.Org>'; # above not exporting $b since collidez with sort{$a  <=> $b}
+our $VERSION='0.0';my  $d8VS='HC8L5Yes';our $auth='PipStuart <Pip@CPAN.Org>'; # above not exporting $b since collidez with sort{$a  <=> $b}
 our $ucdf= eval('use Color::Similarity::RGB qw(distance);1') || 0; # try2set UseColorDistanceFlag if optional module is available
 our @Monz=qw(January February March   April     May June July   August September October November December);our @Mon=();push(@Mon,substr($_,0,3)) for(@Monz);
 our @Dayz=qw(Sunday  Monday   Tuesday Wednesday Thursday Friday Saturday                                  );our @Day=();push(@Day,substr($_,0,3)) for(@Dayz);
@@ -760,12 +761,12 @@ sub sumb{  my $widt=0;$widt=1 if(exists($ENV{'COLUMNS'}) && $ENV{'COLUMNS'} >= 1
     'dm2u'  => "a8 *converter of Dos or Mac line-endings to Unix  (double to Single -s)   ",
     'dur8c' => "a8  colorizer for d8 dur8(ion) time-spans   (>Right>-to-<Left<< <Bkwd<)   ",
     'ftst'  => "a8 *colorful listing of Perl File-TeSTs  (and backslashed escape codes)   ",
-   #'gnp8'  => "a8  GeNer8 full 256-pal8 color blocks with 4 planes  of 4 shifts of 16    ", # mAB these colr pal8 blox shud B new optnz for tstc or tsgr nstd
+   #'gnp8'  => "a8  GeNer8 full 256-Pal8 color blocks (with 4 planes of 4 shifts of 16)   ", # mAB these colr pal8 blox shud B new optnz for tstc or tsgr nstd
     'lodH'  => "a8  load ~/.Hrc into d8a-structure and print out colorfully (like `a8`)   ", # mAB rEtIr once a8 struct&&color becomes more capable
     'lrc'   => "a8 *utility to gener8 ~/.lsrc file from ~/.lrc format   (for LS_COLORS)   ",
    #'oupd'  => "a8  UPD8 ~/dvl/t8/Octl/Octology/ git repo with l8st files from ~/ dir     ", # this is too fragile to include in t8/Octl/Octology/.git yet
-    'pm2x'  => "a8  Pal8 Map to eXtended   (based on Color::Similarity::RGB->distance)    ", # add optz2gNr8 clOsSt 8pal8z 3mor tImz2filup all xtrm256colrz
-    'reso'  => "a8  monitor display RESOlution list gener8or   (params match each line)   ", # mAB color
+    'pm2x'  => 'a8  Pal8Map to "2" eXtended (based on Color::Similarity::RGB->distance)   ', # add optz2gNr8 clOsSt 8pal8z 3mor tImz2filup all xtrm256colrz
+    'reso'  => "a8  display RESOlution list gener8or  (parameters will match each line)   ", # mAB color
     'S'     => "a8 *converter from c8 (col8) V8 format to ANSI eScape codes (FbSGR in )   ",
     'S2'    => "a8  converter from eScape encoded input to new compact c8 (col8) format   ",
     'S2f4'  => "a8  converter from eScape encoded input to old 4-layer c8 (col8) format   ",

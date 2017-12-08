@@ -1,6 +1,9 @@
 #!/usr/bin/perl
 # DBBLCxAn:ckm8 crE8d by PipStuart <Pip@CPAN.Org> as an experimental Chess program; The code is released under the GNU General Public License,version 3 or l8r;
-# 2du:colr cmps wi wId bkgz&&have portionz of bkgrBcolrd acordng2wichPc just mvd&&lS of wichPc wuz captured2betrDscrIb wutz plAing,
+# 2du:fix Use of uninitialized value within @lbcd      in string eq at /home/pip/bin/ckm8 line 763. (+3linez) for GoogleDeepMindAlpha0 233-ply long PGN game
+#         Use of uninitialized value in concatenation (.) or string at /home/pip/bin/ckm8 line 774. (warningz showed when right-side plyz passed 4 columnz)
+#         Use of uninitialized value in concatenation (.) or string at /home/pip/bin/ckm8 line 783. (also were earlier warningz on line 782),
+#   colr cmps wi wId bkgz&&have portionz of bkgrBcolrd acordng2wichPc just mvd&&lS of wichPc wuz captured2betrDscrIb wutz plAing,
 #   sPdDraw,impKing rvrs lkup alongsId2compAr wi rEcursivPCM2,bild rAng d8d gmz_log from multi*.pgn or agreg8.cd8a,
 #   agreg8 could stRt just ply ndx(skip d8)PcGoCapcRestXmdfCmdf thN nStd hashz2cnt frEq&&list'- 'log filenamez(wi dupz,but don't cnt4mAn frEq)2rvrs sortB4wrIt,
 #     mAB includ cmprSd fInal bordz,nEd r8ng valU8ion&&not8 varE8ionz2cnv fromPGN,persist from.ckm8,&&propag8 2.cd8a 4AImv w8ng,mIt wantboth depth&&breadth1st,

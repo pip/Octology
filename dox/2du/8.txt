@@ -1,5 +1,5 @@
 # D6RMF1V1:8.txt - by8π : JAPH : K3wlD00d : 1337H4xr : PipStuart's Octology (hopefully eventually an Ontology of 8) - Convention, Conversion, && Categoriz8ion:
-# $VERSION='0.0';$d8VS='HC2LJhEl'; # Octology attempts to rel8 the universe through medit8ion on mnemonic abbreV8ion (via 8-based  limit8ion) &&    elucid8ion.
+# $VERSION='0.0';$d8VS='HC7LHeal'; # Octology attempts to rel8 the universe through medit8ion on mnemonic abbreV8ion (via 8-based  limit8ion) &&    elucid8ion.
 # CEBBICTI:Crossing Every Bridge Before I Come To It? I.e., not a d8 stamp. Trying to make my Dad's birthday (August 8th) more special by thinking 2far ahead?
 # Octology intends to pursue implic8ion && ramific8ion as substantE8ion for adequ8 particip8ion, if not also 2 oblig8ion toward implement8ion &&   promulg8ion.
 # Conceptually, Octology is a system st8ing that every organiz8ional principle is valuable, but 8 tends to be a nearly ideal starting place for most d8a sets.
@@ -893,20 +893,49 @@ internationaliz8ion:tools to transl8 for I18N the document8ion && applic8ion int
         gamific8ion
 
 # above are my 888 current favorite 8-words that I'd most like to consider developing into distinct applic8ions (or component specializ8ions && fE8ures)
+# *note*:normally preferring shorter distinct concept names above, but some good long words are better than poor pronunC8ion duplic8s of useful meanings
+# *note*:over  108 words (so far) are listed as new candid8 here or likely cut below, but maybe the top list should just be let to grow well beyond 988?
 # here are candid8 words (if any) to next contempl8 for replacing others above with, or to store with all others further below that have been cut so far
-           vers8ile:*not8*:normally wrong pronunC8ion, but vers-ate-ile is quite valid as well && likely deserves to supplant some poorer word above
-       stabiliz8ion:*not8*:normally prefer shorter distinct concept names above, but maybe these good long words are better than wrong pronunC8ion duplic8s?
+           vers8ile:normally wrong pronunC8ion, but "vers-ate-ile" is quite valid as well && likely deserves to replace some poorer 8-word concept above
+        habilit8   :to fit out, equip, qualify, entitle, dress, or clothe (maybe should be inserted beside more prevalent "rehabilit8" concept above)
+       qualific8ion
+     diversific8ion
+          alter8ion
+         stipul8
+         lingul8   :ligul8 or tongue-shaped
+         cingul8   :brain cortex situ8d in medial aspect of cerebral cortex (includes gyrus && sulcus), is involved in processing emotion && behavior regul8ion
+          hernE8ion:hernia or rupture in smooth muscle tissue through which bodily structure protrudes
+         resver8rol:polyphenol compound in certain plants && red wine, has antioxidant properties, has been investig8d for possible anticarcinogenic effects
+          jubil8
+       commemor8   :celebr8 some remembrance (rel8d to dedic8, vener8, && consecr8)
+         exuber8
+         luxurE8
+       prolifer8   :accumul8, propag8, veget8 (gr8 growth), or maybe like public8ion?
+         pullul8
+         germin8
+             gM8   :"gemmate" as having && reproducing by buds (from Botany)
+          numer8   :pagin8, folE8
+         enumer8
+        innumer8
+        quantiz8ion
+      quantific8ion
+      generaliz8ion
+       stabiliz8ion
        moderniz8ion
-      generaliz8ion:*not8*:around 95 cut or candid8 here, but maybe just let grow?
    industrializ8ion
    circumstantE8   :substantE8, authentic8, valid8, or corrobor8
-        conturb8ion:agit8ion, trepid8ion, or vex8ion
-        perturb8ion
+# below are the additional possible 8-words I've cut, often due to conceptual similarity to existing entries or to unify more around typical pronunC8ion
+         reform8ion:bl8ant repetition
+         deform8ion:bl8ant neg8ion
+     decontamin8   :bl8ant neg8ion
+      revivific8ion:bl8ant repetition
+        legitim8   :wrong pronunC8ion
+        perturb8ion:agit8ion, trepid8ion, or vex8ion (4 synonyms from perturb8ion down to tumultu8ion)
+        conturb8ion
         flutter8ion
         tumultu8ion
-# below are the additional possible 8-words I've cut, often due to conceptual similarity to existing entries or to unify more around typical pronunC8ion
      overelabor8   :bl8ant prefix
-           plan8   :wrong pronunC8ion for original planet simul8or idea
+           plan8   :wrong pronunC8ion for original "planet" simul8or idea, which can be incorpor8d within various other altern8ive rel8d concepts
          intric8   :wrong pronunC8ion
          remigr8   :bl8ant varE8ions on migr8
       transmigr8
@@ -944,13 +973,16 @@ internationaliz8ion:tools to transl8 for I18N the document8ion && applic8ion int
   disproportion8
       disapprob8ion
         unhesit8ing
-       determin8
+        unmitig8d  :bl8ant prefix && past-tense
+           unab8d
+       determin8   :conceptually potentially quite distinct from "ion" varE8ion still included in top-list
      indetermin8
     indiscrimin8
     undiscrimin8ing
    undifferentE8d
     incommensur8
       commensur8
+         mensur8   :measure
         inordin8
         inaccur8
           accur8
@@ -3715,3 +3747,8 @@ on coherently respectfully proportion8 growing appreC8ion of universe && human (
 HBRLHIYa:Shantanu Aryan 8 hours ago U2b posted light goes 299,792,458 HtdXA m/s && 1 s is 9,192,631,770 8Zx6tQ certain raD8ion periods of Cs-133 atom precise;
 HBRLJTVH:Earliest 8.txt backup is from Halloween October 31st of 2012 with pt CAVHTTP pre-d8, many months after Dr. Peterson seriously started composing his
 "12 Rules for Life: An Antidote to Chaos", and February of 2012 that Dad was handed (by his Father) syllabus outline assignment for Personal Development sent;
+HC7L1ght:Maybe search for critique (or write my own) of HTTPS://Medium.Com/@francois.chollet/the-impossibility-of-intelligence-explosion-5be4a9eda6ec && note
+that interesting topics include basic mut8ions:JAI, GAI, && GBI (as JBlow888's gmz dvl language, General Artificial Intelligence, && Guaranteed Basic Income).
+For any future BavL work, note that HTTPS://En.WikiPedia.Org/wiki/Propaedeutic_value_of_Esperanto seems a good path for learning new spoken languages quickly;
+HC7L8Ins:RedHeadRedemption recommended CrE8orInsider channel as gr8 resource for if I ever try monetizing Octology demonstr8ion (or some other) videos on U2b;
+HC7LIPA8:The International Phonetic Alphabet seems to describe "8" pronunC8ions most commonly as /eɪt/ while my typical Google definitions offer /āt/ instead;
