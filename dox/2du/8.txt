@@ -1,5 +1,5 @@
 # D6RMF1V1:8.txt - by8π : JAPH : K3wlD00d : 1337H4xr : PipStuart's Octology (hopefully eventually an Ontology of 8) - Convention, Conversion, && Categoriz8ion:
-# $VERSION='0.0';$d8VS='HC7LHeal'; # Octology attempts to rel8 the universe through medit8ion on mnemonic abbreV8ion (via 8-based  limit8ion) &&    elucid8ion.
+# $VERSION='0.0';$d8VS='HCALISOL'; # Octology attempts to rel8 the universe through medit8ion on mnemonic abbreV8ion (via 8-based  limit8ion) &&    elucid8ion.
 # CEBBICTI:Crossing Every Bridge Before I Come To It? I.e., not a d8 stamp. Trying to make my Dad's birthday (August 8th) more special by thinking 2far ahead?
 # Octology intends to pursue implic8ion && ramific8ion as substantE8ion for adequ8 particip8ion, if not also 2 oblig8ion toward implement8ion &&   promulg8ion.
 # Conceptually, Octology is a system st8ing that every organiz8ional principle is valuable, but 8 tends to be a nearly ideal starting place for most d8a sets.
@@ -27,7 +27,7 @@
             abl8   :gr8ing away some material substance down to nothing through erosion or vaporiz8ion, or to remove an organ or some other bodily structure
              ab8   :general resource or r8ing diminisher likely based on scheduled d8/dur8ions when chosen d8a values should deprecE8 or dissip8 by some r8io
             fix8   :r8 specialized to emphacize user-specified focal priorities && desired radius at which to apply a r8d r8io level of falloff among d8a sets
-            neg8   :general purpose inverter which reverses core elements, gradu8d str8s, etc. (with ability to extend to negative number ranges intuitively)
+            neg8   :or neg8iv8 as general purpose inverter for core elements, gradu8d str8s, etc. (with ability to extend to neg8ive number ranges intuitively)
               h8   :r8 auto-neg8d to convey dynamic magnitude of hatred (&& recognizing that h8-speech should be protected as important unpopular free speech)
       prioritiz8ion:r8 specialized for evalU8ing sepR8d tasks or facilit8ing the management of any other useful prioritized altern8ive lists or comparable d8a
       identific8ion:tool to label any d8a element with particular tr8 tags or maybe government ID card utility or management of general personal profile d8a
@@ -46,11 +46,16 @@
            priv8   :design8 privacy settings for arbitrary groups of d8a (admitting such spelling is a bit of a stretch versus pronunC8ion more like "priv@")
        anonymiz8ion:possibly mechanisms to enable routing all network-based applic8ion activities through Tor or any other comparable protocols for anonymity
           valid8   :autom8d testing framework which executes code versus each specific8ion expect8ion, && also a sepR8 manual disapproval/approval r8ing tool
+        invalid8
+      illegitim8
+        legitim8
         verific8ion
         confirm8ion
       substantE8
+   circumstantE8
        corrobor8   :vouching for accounts of events within a group, like maybe recounting events of a crime-scene or momentous record-breaking achievements
           activ8   :turn stuff on? maybe daemon && other process manager or some form of applic8ion enabler like an energized power-up installer or something
+        deactiv8   :respective disablers which correspond directly to whatever processes, extensions, configur8ions, etc. might become able to be activ8d above
           alloc8   :prepar8ory d8a or memory manager or even design8ing disk space or network utiliz8ion thresholds for use among applic8ions that employ them
        fragment8ion:dynamic    d8a or memory manager for defragmenting or initE8ing or scheduling autom8d garbage collection to enable efficient alloc8ion l8r
          comput8ion:manage long-running processor-intensive tasks or Math::BigFloat unlimited-precision calcul8ions like prime-factoriz8ion or long sequences
@@ -64,10 +69,12 @@
            cogn8
             agn8
           assoC8
+         dissoC8
          affilE8
          origin8   :m8-based mapping for represent8ion of home or start loc8ion && social-network tracking rel8d hometown && travels, vac8ions, && explor8ion
          destin8ion
           gener8ion:rel8 for family trees
+             rL8ive
               m8riarch:"y" here could discuss female gendered issues && powers, influence, assumption of oppression (maybe analyzed), privilege of high worth
               p8riarch:could append "y" in attempt to discuss faulty concept from modern feminism which assumes or implies permanent privilege over oppressed
           found8ion
@@ -87,12 +94,19 @@ compartmentaliz8ion
           dedic8   :special recognition for the influential && deceased
          chocol8   :r8 various usually brown cocoa candy (hopefully coating Reese's peanut butter && optionally made without cow-milk please ;) )
           advoc8   :way to affect change primarily on social issues?   # Net-Neutrality! Minimize suffering && global warming! More empathy! Marriage equality!
-            don8   :way to contribute (monetarily or reput8ion?) to rel8d people or causes   # Pro-science! Pro-choice! Pro-woman! Pro-immigrant! Pro-minority!
-         appreC8   :don8 with extra appreciation in honor of Angie =)  # Protect  Voting Rights Act!  Take serious felonies outside  military chain-of-command!
+            don8   :way to contribute (monetarily or reput8ion?) to rel8d people or causes   # Pro-science! Pro-individual! Pro-legal-immigr8ion! Pro-minority!
+         appreC8   :don8 with extra appreciation in honor of Angie <3  # Protect  Voting Rights Act!  Take serious felonies outside  military chain-of-command!
          fortun8       # Enact Guaranteed Basic Income && Universal Health-Care! Close Guantanamo Bay! Clemency for Edward Snowden! Make sepR8 Palestinian st8!
-             gr8ful    # Protect free-speech (especially unpopular && offensive)! Advoc8 justice && gender equality thru both classic feminism && men's rights!
-        monetiz8ion    # Ban censorship! Don't just listen && believe. Trust but verify! AppreC8 candid rational deb8. Protect h8-speech! Eradic8 global ICBMs!
+             gr8ful    # Protect free-speech (especially unpopular && offensive)! Promote societal justice && equality for both genders through egalitarianism!
+        monetiz8ion    # Reject censorship! Do not just listen && believe. Trust but verify! Men's rights matter also! Protect h8-speech! Eradic8 global ICBMs!
+              p8ron:don8 system like Patreon with tracking && support for crE8ors && donors  # Promote good research, evidence, cit8ions, && result duplic8ion!
        approprE8   :same as alloc8 for design8ing funds for a purpose or maybe politial correctness && social faux pas educ8ion && avoidance recommend8ions?
+    misapproprE8
+   maladministr8ion
+        malvers8
+         profan8ion
+          pecul8
+         defalc8   :fraudulent approprE8ion, embezzlement, or to cut off with a sickle
         compens8   :don8 repurposed for payments && payrolls
         remuner8
          depreC8   :don8 based on some other calcul8d diminishing value (deliber8ly misspelled && mispronounced to match up with Anch liking to say "appreC8")
@@ -104,7 +118,7 @@ compartmentaliz8ion
          cooper8   :maybe altern8 for coordin8 is also like cooper8 && collabor8, each with possibly nuanced specializ8ions like an oversight or sharing focus
        collabor8   :online && web ability to share && cooperatively edit d8a
        particip8   :same as collabor8 (or politics manager?)
-              b8a  :online 8 applic8ion test trial during prepar8ory period  (&& maybe everything will start as b8a then get r8ings promoting to full release)
+              b8a  :online 8 applic8ion test trial during prepR8ory period  (&& maybe all should receive r8ings to become b8a before promotion to full release)
             upd8   :8 system updater or maybe general collabor8 behavior manager
          propag8   : or git upd8 "pull" propag8 "push" interface? or public8ion?  (thinking behind git upd8 non-obviously being "pull" is from apt-get update)
      synchroniz8ion:same as upd8 or maybe auto sys/collabor8/git sync settings or replacing ntpd with chrony for secure standard time synchroniz8ion
@@ -113,16 +127,25 @@ compartmentaliz8ion
         denomin8
           indic8
        authorit8ive
+         stalem8
+            ckm8   :"CheckMate" is hopefully Octology's eventually superb Chess applic8ion
               y8   :"yate" is an obsolete term for gate but could probably be a uniquely useful && nicely abbreV8d varE8ion on the concept
               g8   :tool to set gates as thresholds which gener8 events &&   (... and g8 is already a V8 for git command and "gait" tool for anim8 walk-cycles)
           autom8   : bind them to automatic actions (coll8 event scripts?)
-            ckm8   :"CheckMate" is hopefully eventually the superb Chess applic8ion within Octology (&& "stalem8" could l8r become a rel8d tool as well)
+          anted8
+          backd8
+          fored8
+          postd8
+           pred8
+           outd8d
+             aw8
               w8   :unit, weight, && measurement specific8ion && conversion or d8a weighting meta-r8ings or d8/dur8ion-based "wait" delay && crontab interface
          temper8   :temperature section of above "weight" standards rel8ion and conversion system
      standardiz8ion:tools to valid8 applic8ion compliance against best development standards or to facilit8 submitting innov8ions as candid8s for new standards
        normaliz8ion:maybe basic 2D/3D tools to gener8 normal vectors or m8rices for use in comput8ions of geometry visibility or illumin8ion techniques
        formaliz8ion
       transform8ion
+     transliter8   :express or represent in characters of another alphabet
          transl8   :tools to convert spoken languages with segment8ions design8d along figur8ive versus literal (BavL? Note: BavL is Hebrew for "g8 of God")
 internationaliz8ion:tools to transl8 for I18N the document8ion && applic8ion interface dialogs with prioritiz8ion for most valuable tools && desired languages
        globaliz8ion
@@ -131,12 +154,15 @@ internationaliz8ion:tools to transl8 for I18N the document8ion && applic8ion int
           enunC8   :emphasis on clear vocaliz8ions which distinguish syllables well
         pronunC8ion
               c8   :"cate" is an obsolete term for food... or version of GNU/Linux cut && cat commands (as well as Octology::c8 col8 layered text d8a objects)
+            col8   :Col8 On Layer 8, further abbreV8d into Octology::c8.pm, also FSCK (FsckSlayerCursesKing), aligned text && attribute d8a like Curses::Simp
            coll8   :compare st8s && texts critically or general sequence editor (double-consonant precursor to 8 in names should usually persist for clarity)
        serializ8ion
      stringific8ion:overloaded method by which Perl turns objects into string forms (used configurably by b8 && d8 in particular)
          corrug8   :tool to fold other d8a into parallel ridges (i.e., rows && columns forming m8rices)
            strI8
            port8   :not erect but diagonal
+           falc8   :curved like a sickle
+            lun8   :crescent moon shaped
             raD8   :general circular d8a manager && radial d8a selection && modific8ion interface (also useful for d8ok), with pronunC8ion also like "r88"
          circul8
       centraliz8ion
@@ -150,6 +176,14 @@ internationaliz8ion:tools to transl8 for I18N the document8ion && applic8ion int
           modul8   :same as customiz8ion or maybe simple audio editor or just Octology tool to maybe autom8 packaging or other administr8ion of Perl Modules
             deV8
          varieg8
+          divag8
+        divaric8
+        exorbit8
+    peripatetic8
+         pererr8
+       peregrin8
+       perambul8
+    circumambul8
            limb8
           color8
         coloriz8ion
@@ -170,6 +204,8 @@ internationaliz8ion:tools to transl8 for I18N the document8ion && applic8ion int
           prepR8ion
              vL8
            furc8
+         bifurc8
+        trifurc8
            tern8
              al8   :"alate" adj. of seeds or insects having winglike extensions
            folE8
@@ -183,6 +219,7 @@ internationaliz8ion:tools to transl8 for I18N the document8ion && applic8ion int
           sanit8   :indent8ion or d8a cleaner (XML::Tidy or tidyp) or Perl code lint static-analysis or style-guide or escaping tool to avoid injection risks
             bin8   :binary tree specific8ion && manipul8ion tool
          elabor8   :verbose d8a description tool to expand well beyond the basic fundamental st8 names && tr8s assoC8d through the typical m8 interface
+     overelabor8
          explan8ion:same as elabor8 or maybe more general description/document8ion
      demystific8ion:specifically trying to demonstr8 "mystically" complic8d things
          explic8
@@ -208,14 +245,34 @@ internationaliz8ion:tools to transl8 for I18N the document8ion && applic8ion int
        agglomer8
       conglomer8
          glomer8
+       prolifer8
+         pullul8
+         germin8
+             gM8   :"gemmate" as having && reproducing by buds (from Botany)
+             pN8   :winged or plume-shaped                     (from Botany)
+           pinn8
+            jug8d  :coupled together                           (from Botany)
+          bijug8   :having two pairs, as of leaflets           (from Botany)
+        bigemin8
+        ingemin8
+          gemin8   :in pairs or twains, two together, twin     (from Botany)
+          numer8   :pagin8, folE8
+         enumer8
+        innumer8
+        quantiz8ion
+      quantific8ion
        amplific8ion
          aggreg8   :d8a summariz8ion tool
          combin8
            summ8ion
        summariz8ion
       simplific8ion
+      generaliz8ion
+       stabiliz8ion
+     destabiliz8ion
       sophistic8
         complic8
+         intric8
          obfusc8   :obfu contests for Perl, golf, && 8! =)
          elucid8
            catN8
@@ -251,7 +308,6 @@ internationaliz8ion:tools to transl8 for I18N the document8ion && applic8ion int
           admir8ion
           spect8   :sports/concert/performance viewer && r8ing system
             thE8r  :d8-based, yet non-linear video editor with narr8ive abilities
-              p8ron:don8 system like Patreon with tracking && support for consumers && customers, && maybe also crowd-funding mechanism like KickStarter
           inton8
          syncop8
        harmoniz8ion
@@ -312,6 +368,8 @@ internationaliz8ion:tools to transl8 for I18N the document8ion && applic8ion int
        domestic8
        domicilE8
         civiliz8ion
+       moderniz8ion
+   industrializ8ion
      government8ion
       militariz8ion
        sequestr8ion
@@ -335,18 +393,28 @@ internationaliz8ion:tools to transl8 for I18N the document8ion && applic8ion int
            migr8   :rFUG tracking (narr8 home atrocity document8ion), asylum applic8ion assistance with transl8d recommend8ions, maybe volunteer sanctuary help
           emigr8
          immigr8
+         remigr8
+      transmigr8
+      intermigr8
         infiltr8
         conform8
+           vers8ile
+          alter8ion
           adapt8ion
         assimil8
        accultur8
       naturaliz8ion
+       qualific8ion
+    disqualific8ion
+     diversific8ion
      marginaliz8ion
       stigmatiz8ion
      criminaliz8ion
        incrimin8
          crimin8
+        perpetr8
           litig8   :maybe some tool primarily rel8d to legalities of software licenses, copyright, patents, intellectual property, etc.
+         ajudic8
        imprison8
        incarcer8
          deport8ion
@@ -357,7 +425,9 @@ internationaliz8ion:tools to transl8 for I18N the document8ion && applic8ion int
          exoner8
          exculp8
          vindic8
+        habilit8   :to fit out, equip, qualify, entitle, dress, or clothe
       rehabilit8
+         stipul8   :specific8ion of contract or agreement condition terms or requirements, or furnished with stipules like a leaf (from Botany)
           revoc8
            prob8   :judicial certific8s && legal validity of wills && other official document8ion
           lamin8   :maybe some way to order plastic-coated certific8 print-outs (or protection meta4 like encryption or cloud storage for electronic documents)
@@ -380,6 +450,7 @@ internationaliz8ion:tools to transl8 for I18N the document8ion && applic8ion int
             crE8   :2D/3D object    modeling        tool
     characteriz8ion:2D/3D character modeling        tool
         articul8   :2D/3D character model  anim8ion tool
+     disarticul8
             rot8   :2D/3D d8a layout oper8ion  or maybe tools specialized for particular rot8ion purposes
            pron8   :Tennis videogame referring to grips && maybe also to applied spin
           supin8
@@ -420,6 +491,9 @@ internationaliz8ion:tools to transl8 for I18N the document8ion && applic8ion int
          predic8   :grammar-specific && essential logic educ8ion
          conjug8
         alliter8   :poetry or letter matching && rhyming tools
+        illiter8   :uneduc8d, unable to read or write, ignorant of letters or books, uncultiv8d, or unscholarly (wrong pronunC8ion)
+          liter8   :educ8d && knowledgeable regarding reading && writing, versed in liter8ure or other fields   (wrong pronunC8ion)
+          liter8ure:educ8ional reading material lists with public8ions, r8ings, summariz8ions, rel8ions, cit8ions, annot8ions, transl8ions, && narr8ions
        matricul8
        certific8   :educ8 testing system for somewhat authorit8ive evalU8ion of topic mastery or expertise which can be gradu8d from, conferring credentials
        accredit8ion
@@ -445,10 +519,15 @@ internationaliz8ion:tools to transl8 for I18N the document8ion && applic8ion int
          exhort8ion
         solicit8
        confront8ion
-       interrog8   :communic8 specialized as an intense interview system
+        percont8ion:rare archaic word for an act or process of questioning or inquiry generally referred to regarding irony demarc8ion
+       interrog8   :communic8 specialized as an intense interview && questioning system
        investig8   :d8a && network gathering, inspection, reporting via loc8
       congratul8   :happy event messaging
          celebr8   :party planner
+       commemor8
+         exuber8
+          jubil8
+         luxurE8
         modific8ion:basic filtr8ion system that performs some consistent alter8ion or just a tr8 modifier
         codific8ion:coding       && programming tool
         optimiz8ion:maybe profiling or other mechanisms for optimizing code
@@ -466,25 +545,59 @@ internationaliz8ion:tools to transl8 for I18N the document8ion && applic8ion int
            caus8ion
        importun8
       extortion8
+          adequ8
+        inadequ8
+       intemper8
+      unregener8
+        regener8   :also just redo gener8ion of some d8a or file from a chosen templ8 (with better ending "ate" pronunC8ion)
+         reprob8
+         approb8
+        immoder8
+        immacul8
+        indelic8
+          delic8
        determin8ion
           hesit8
+        unhesit8ing
          specul8
        contempl8
-         permut8   :maybe some kind of math game designed with Danny && his GNU bool2 project, Boolean Algebras, good automorphisms, Group Theory, etc.
           estim8
+     underestim8
+      overestim8
+     proportion8
+  disproportion8
+      disapprob8ion
+       determin8
+     indetermin8
+    indiscrimin8
+    undiscrimin8ing
+   undifferentE8d
+    incommensur8
+      commensur8
+         mensur8   :measure
+        inordin8
+        inaccur8
+          accur8
+             gM8ria:poor pronunC8ion (should be more like: "geh-mah-tree-uh"), but could be Hebrew-ish name of gr8 word, math, && pattern educ8ion type game?
+         permut8   :maybe some kind of math game designed with Danny && his GNU bool2 project, Boolean Algebras, good automorphisms, Group Theory, etc.
+       recombin8ion:combining charges or electron transfer in gas neutralizing ions (from Physics), or combining genes (from Genetics)
+         reform8ion
+         deform8ion
          postul8   :math, philosophy, etc. proof specific8ion && evalU8ion tool
        approxim8
         anticip8   :prediction && aw8ing outcomes with b8d breath (like hopefully someday a growing user-base eager for next major release of Octology upd8s)
      prognostic8
        pontific8   :generally dogmatic && pompous talk or actually referring to the government of the Roman Catholic Church or the Pope (Francis is gr8!)
          auspic8
+      prefabric8   :fabric8 synthetically, artificially, or stereotypically && unoriginally
+         fabric8
+         charic8ure:maybe some f8 f0nt character manipul8ion utility, instead of n8ural aggreg8 comedic represent8ions of popular figures or similar
            imit8   :comedy tools
        imperson8
-          p8riz8   :imit8 father
-         fabric8
+          p8riz8   :imit8ion of the father
        improvis8ion
-      sarcastic8
         satiriz8ion
+      sarcastic8
            infl8   :special core d8a manipul8ion tool
            defl8
            elev8
@@ -499,6 +612,7 @@ internationaliz8ion:tools to transl8 for I18N the document8ion && applic8ion int
          oscill8
          vacill8
            vibr8   :tele-dildonics with audio && video coordin8ion?
+       reverber8   :some audio modific8ion && other processing tool for production
           reson8   :community organiz8ion or audio stuff
           simul8   :physics-based simul8ions (maybe dynamics && universe?)
            prim8   :biology simul8or
@@ -510,7 +624,8 @@ internationaliz8ion:tools to transl8 for I18N the document8ion && applic8ion int
               k8   :"kate" is a brambling finch                 (from Zoology)
               n8ure:nature  simul8or
            clim8   :climate simul8or && change tracker for mitig8ing disasterous consequences of human influence on rising global temper8ures
-             cr8or :planet  simul8or && modeler
+           plan8   :planet  simul8or
+             cr8or :planet  modeler
             equ8or
          explor8ion:educ8 about space race && entire 8 system
         coloniz8ion:eventually inhabiting Mars && elsewhere via Elon Musk's SpaceX rockets?
@@ -542,6 +657,7 @@ internationaliz8ion:tools to transl8 for I18N the document8ion && applic8ion int
           pixil8d
             lib8ion:bartending tool
         ferment8ion:home-brew  tool
+         resver8rol:polyphenol compound in certain plants && red wine, has antioxidant properties, has been investig8d for possible anticarcinogenic effects
           nausE8
        regurgit8   :recommended techniques for triggering someone to puke up ingested poisons or potential overdoses of swallowed medic8ions (like charcoal?)
        resuscit8   :quick && clear emergency medical directions like 911, Heimlich, CPR, treating burns, shock, frostbite, bites from spider, tick, snake, etc.
@@ -561,12 +677,16 @@ internationaliz8ion:tools to transl8 for I18N the document8ion && applic8ion int
        eroticiz8ion
        fetishiz8ion
        sexualiz8ion
+        effemin8
+         mascul8
+          celib8
         masturb8   :pr0n viewer && manager with r8ings
          palpit8ion
         perspir8ion:exercise tracking tool
              sw8   :"swate" is an obsolete imperative? form of sweat
             lor8   :thongs, strips, && straps
           ligul8   :same as lor8 or floral
+         lingul8   :tongue-shaped
           intim8
         passion8
            vitE8   :debauched moral corruption by sensuality that maybe is somehow invalid8ing
@@ -588,6 +708,8 @@ internationaliz8ion:tools to transl8 for I18N the document8ion && applic8ion int
            lact8
             dil8   :maybe pregnancy or eyesight or general circle-rel8d tool
           prost8
+          hernE8ion:hernia or rupture in smooth muscle tissue through which bodily structure protrudes
+         cingul8   :brain cortex situ8d in medial aspect of cerebral cortex (includes gyrus && sulcus), is involved in processing emotion && behavior regul8ion
         emascul8
           castr8
           enerv8
@@ -622,8 +744,12 @@ internationaliz8ion:tools to transl8 for I18N the document8ion && applic8ion int
         conserv8ion
           divin8ion
            revL8ion
+              f8ful:  fateful like fortuitous, tragic, or otherwise highly significant events that were destined to influence what would follow
               f8h  :"faith" religion, myths, miracles, && other supernatural belief-rel8d stuff which should probably be refuted && deb8d on basis of evidence
+              f8hful:faithful loyalty in adherence
+         interf8h
          incarn8
+       reincarn8
   transubstantE8
       reconcilE8ion
          lament8ion
@@ -632,6 +758,7 @@ internationaliz8ion:tools to transl8 for I18N the document8ion && applic8ion int
            repR8ion
            salv8ion
         vivific8   :giving life, vigor, vitality, spirit, anim8ion or to reduce && bring metal from an oxide or solution back to metallic form (in Chemistry)
+      revivific8ion
              rN8
          inculc8
          infeud8
@@ -677,6 +804,8 @@ internationaliz8ion:tools to transl8 for I18N the document8ion && applic8ion int
            plac8   :peace && consensus building tool
           toler8
           mitig8
+        unmitig8d
+           unab8d
           alleV8
            elim8
             obV8
@@ -703,8 +832,10 @@ internationaliz8ion:tools to transl8 for I18N the document8ion && applic8ion int
              sk8   :general skateboarding    engine && game
               p8   :general bullet-hell      engine && game like Parsec47 ("pate" means crown or top of head, so royalty or cranium could be part of theme?)
             equ8   :general equation editor && calcul8or which can maybe eventually solve for symbols algebraically or offer other rel8d comput8ions
+       equilibr8
+         formul8   :some type of specialized equ8ion or other formula editor && comput8ion applic8ion
          calcul8   :HP48/TI85 based calcul8or or maybe just my ~/bin/q symbolic link pointing to ~/bin/calQ which uses Math::BigFloat objects in b8.pm
-          evalU8   :maybe general math equ8ion or formula processing with parameters or symbolic variables (or just some tool to design8 rel8ive valU8ions)
+          evalU8   :maybe general math equ8ion or formula processing with parameters or symbolic variables (or just some tool to design8 rL8ive valU8ions)
               r8io :same as calcul8 or maybe more general math comparison tool for manipul8ing fractions && expressing rel8ions as quotients consistently
        fraction8
        factoriz8ion
@@ -712,7 +843,7 @@ internationaliz8ion:tools to transl8 for I18N the document8ion && applic8ion int
          integr8   :general merging or calculus && advanced math visualiz8ion && manipul8ion tool
           deriv8
      differentE8
-          aberr8ion
+          aberr8
          edific8ion:general structural building tool for designing maybe homes, offices, or other edifices (or illustr8ion and explan8ion toward educ8ion?)
             bov8   :ancient land measurement roughly equivalent to 15 acres
               b8   :scarce resource diminishment manager (or fishing "bait" tool?), or main Octology::b8 Base-transl8 && general math objects && utilities
@@ -727,6 +858,7 @@ internationaliz8ion:tools to transl8 for I18N the document8ion && applic8ion int
              cS8ion:"cessation" with a bit of an awkward abbreV8d double-consonant into UpperCase syllable spelling
        persever8   :repeating a response after cS8ion of the original stimulus (from Psychology)
         capacit8
+      incapacit8
          substr8   :integr8d circuit tool
            titr8   :chemistry simul8or
          sublim8
@@ -744,9 +876,11 @@ internationaliz8ion:tools to transl8 for I18N the document8ion && applic8ion int
         vaporiz8ion
      crystalliz8ion
        calcific8ion
+         carbur8or :apparatus in which coal gas, hydrogen, or air is passed through or over a vol8ile hydrocarbon to confer or increase power (from Chemistry)
           satur8   :maybe some tool to implement HSLuv perceptually uniform color space based on Hue, Satur8ion, && Lightness with mapping to RGB, CMYK, etc.
         adulter8
        contamin8
+     decontamin8
        consolid8
         condens8
           confl8
@@ -777,6 +911,8 @@ internationaliz8ion:tools to transl8 for I18N the document8ion && applic8ion int
              mL8
          mellit8
             mor8
+           form8   :salt of formic     acid
+          formE8
        ricinolE8   :salt of ricinoleic acid (formerly called palm8 of palmic acid)
            acer8   :aceric acid with salifiable base or long, narrow, pointed needle
           arist8   :having a slender, sharp, or spinelike tip (from Zoology)
@@ -788,6 +924,7 @@ internationaliz8ion:tools to transl8 for I18N the document8ion && applic8ion int
          carbon8   :soda && cola carbonation content evalU8or or maybe measurements of it in the atmosphere, metropolitan smog, && elsewhere
         hydrogN8
           oxygN8
+           oxid8   :to oxidize or enter into a combin8ion with oxygen or become converted into an oxide
             aer8
           aspir8
          suffoc8
@@ -810,8 +947,9 @@ internationaliz8ion:tools to transl8 for I18N the document8ion && applic8ion int
          liquid8   :also to make clear or to determine by agreement or litig8ion regarding the precise amount of debt
           abrog8   :to revoke formally, neg8, or invalid8
           decim8   :also just to take a 10th of something
-         depred8
         deracin8
+         depred8
+           pred8ion
         despolE8ion
           spolE8
          extirp8
@@ -831,6 +969,8 @@ internationaliz8ion:tools to transl8 for I18N the document8ion && applic8ion int
          lancin8
           ulcer8
         excrucE8
+     compassion8
+     dispassion8
              bl8   :cry
            ulul8   :howl
          coagul8   :bleed (or more accur8ly the clotting process of blood in which a liquid thickens, curdles, or congeals && is transformed into a semisolid)
@@ -838,6 +978,10 @@ internationaliz8ion:tools to transl8 for I18N the document8ion && applic8ion int
          aggrav8
            agit8
           irrit8
+        perturb8ion
+        conturb8ion
+        flutter8ion
+        tumultu8ion
          frustr8
         exasper8
          infurE8
@@ -862,9 +1006,11 @@ internationaliz8ion:tools to transl8 for I18N the document8ion && applic8ion int
          castig8
         calumnE8
          abomin8
+         profan8
          objurg8
          imprec8
         vituper8
+    discombobul8
        decortic8
          denigr8
          fustig8
@@ -877,13 +1023,13 @@ internationaliz8ion:tools to transl8 for I18N the document8ion && applic8ion int
          obstin8
          retard8ion
       bastardiz8ion
+      neutraliz8ion
        socializ8ion
         polariz8ion
        dramatiz8ion
       radicaliz8ion
        weaponiz8ion
        terroriz8ion
-    discombobul8
       traumatiz8ion
        victimiz8ion
         ramific8ion
@@ -891,119 +1037,41 @@ internationaliz8ion:tools to transl8 for I18N the document8ion && applic8ion int
        constern8
         gasific8ion
         gamific8ion
-
-# above are my 888 current favorite 8-words that I'd most like to consider developing into distinct applic8ions (or component specializ8ions && fE8ures)
-# *note*:normally preferring shorter distinct concept names above, but some good long words are better than poor pronunC8ion duplic8s of useful meanings
-# *note*:over  108 words (so far) are listed as new candid8 here or likely cut below, but maybe the top list should just be let to grow well beyond 988?
-# here are candid8 words (if any) to next contempl8 for replacing others above with, or to store with all others further below that have been cut so far
-           vers8ile:normally wrong pronunC8ion, but "vers-ate-ile" is quite valid as well && likely deserves to replace some poorer 8-word concept above
-        habilit8   :to fit out, equip, qualify, entitle, dress, or clothe (maybe should be inserted beside more prevalent "rehabilit8" concept above)
-       qualific8ion
-     diversific8ion
-          alter8ion
-         stipul8
-         lingul8   :ligul8 or tongue-shaped
-         cingul8   :brain cortex situ8d in medial aspect of cerebral cortex (includes gyrus && sulcus), is involved in processing emotion && behavior regul8ion
-          hernE8ion:hernia or rupture in smooth muscle tissue through which bodily structure protrudes
-         resver8rol:polyphenol compound in certain plants && red wine, has antioxidant properties, has been investig8d for possible anticarcinogenic effects
-          jubil8
-       commemor8   :celebr8 some remembrance (rel8d to dedic8, vener8, && consecr8)
-         exuber8
-         luxurE8
-       prolifer8   :accumul8, propag8, veget8 (gr8 growth), or maybe like public8ion?
-         pullul8
-         germin8
-             gM8   :"gemmate" as having && reproducing by buds (from Botany)
-          numer8   :pagin8, folE8
-         enumer8
-        innumer8
-        quantiz8ion
-      quantific8ion
-      generaliz8ion
-       stabiliz8ion
-       moderniz8ion
-   industrializ8ion
-   circumstantE8   :substantE8, authentic8, valid8, or corrobor8
-# below are the additional possible 8-words I've cut, often due to conceptual similarity to existing entries or to unify more around typical pronunC8ion
-         reform8ion:bl8ant repetition
-         deform8ion:bl8ant neg8ion
-     decontamin8   :bl8ant neg8ion
-      revivific8ion:bl8ant repetition
-        legitim8   :wrong pronunC8ion
-        perturb8ion:agit8ion, trepid8ion, or vex8ion (4 synonyms from perturb8ion down to tumultu8ion)
-        conturb8ion
-        flutter8ion
-        tumultu8ion
-     overelabor8   :bl8ant prefix
-           plan8   :wrong pronunC8ion for original "planet" simul8or idea, which can be incorpor8d within various other altern8ive rel8d concepts
-         intric8   :wrong pronunC8ion
-         remigr8   :bl8ant varE8ions on migr8
-      transmigr8
-      intermigr8
-        invalid8   :bl8ant neg8ion
-        percont8ion:rare archaic word for an act or process of questioning or inquiry generally referred to regarding irony demarc8ion, demoted for obscurity
-         bifurc8   :obvious special double && triple forms of furc8 should probably be demoted
-        trifurc8
-      incapacit8   :bl8ant neg8d form of capacit8 so demoted
-     disarticul8   :bl8ant neg8d form of at least movement meaning of articul8 && similar enough to disloc8 to be demoted for now
-        deactiv8   :respective disablers which correspond directly to whatever processes, extensions, configur8ions, etc. might become able to be activ8d above
-         dissoC8   :bl8ant neg8d form of assoC8 should probably be demoted
-            SSN8   :code for an "assassin8" FPS game like Half-Life or with some ambitious elements of OverWatch using cr8 engine? (demoted for poor spelling)
-       reincarn8   :bl8ant repetition
-              f8ful:  fateful like fortuitous, tragic, or otherwise highly significant events that were destined to influence what would follow (too like f8)
-              f8hful:faithful loyalty in adherence (too like f8h)
-         interf8h
-             pN8   :winged or plume-shaped, same as "pinn8" (from Botany)
-            jug8d  :coupled together                        (from Botany)
-          bijug8   :having two pairs, as of leaflets        (from Botany)
-        bigemin8
-        ingemin8
-          gemin8   :in pairs or twains, two together, twin  (from Botany)
-          divag8   :deV8 (8 synonyms from divag8 down to circumambul8, mainly meaning to travel, wander, or walk about)
-        divaric8
-        exorbit8
-    peripatetic8
-         pererr8
-       peregrin8
-       perambul8
-    circumambul8
-     underestim8   :these are just obvious conjug8ions which probably don't warrant their own sepR8d applic8ion name
-      overestim8
-     proportion8
-  disproportion8
-      disapprob8ion
-        unhesit8ing
-        unmitig8d  :bl8ant prefix && past-tense
-           unab8d
-       determin8   :conceptually potentially quite distinct from "ion" varE8ion still included in top-list
-     indetermin8
-    indiscrimin8
-    undiscrimin8ing
-   undifferentE8d
-    incommensur8
-      commensur8
-         mensur8   :measure
-        inordin8
-        inaccur8
-          accur8
-          adequ8
-        inadequ8
-       intemper8
-      unregener8
-        regener8   :also just redo gener8ion of some d8a or file from a chosen templ8 (with better ending "ate" pronunC8ion)
-         reprob8
-         approb8
-        immoder8
-        immacul8
-        indelic8
-          delic8
-        effemin8
-         mascul8
-          celib8
-            col8   :Col8 On Layer 8, further abbreV8d into Octology::c8.pm, also FSCK (FsckSlayerCursesKing), aligned text && attribute d8a like Curses::Simp
+          ultim8um
+          ultim8
+       penultim8
+         dispar8   :sepR8d as fundamentally distinct in quality or kind, or pertaining to 2-coordin8 species or divisions (from Logic)
+         desper8   :marked by despair or loss of hope
+      disconsol8   :desper8, desol8, or unconsolable
+         consol8   :to console or comfort
+         consul8   :office, jurisdiction, or residence of a    consul
+      proconsul8   :office  jurisdiction               of a proconsul, or the term of their office
+      protector8   :government by a protector, or a st8 or territory partly controlled by a stronger st8 that is established by treaty
+        princip8   :supreme rule
+         caliph8   :era of Islam's ascendency from death of prophet Mohammed until the 13th century, or the office, dignity, or government of a caliph
+         sultan8   :the rule or dominion               of a sultan
+         rector8   :office   or st8ion                 of a rector
+         tribun8   :office   or st8                    of a tribune
+         vizier8   :office, dignity, or authority      of a vizier
+       p8riarch8   :office, dignity, or jurisdiction   of a patriarch, or a patriarchal form of government or society (from Ethnology)
+     chancellor8   :office  of a chancellor or the time during which one is chancellor
+   archiepiscop8   :office  of an         archbishop
+   metropolitan8   :the see of a metropolitan bishop
+           emir8   :office   or domain controlled by an emir
+            leg8   :official emissary, ambassador, or envoy representing a government or the pope
+           dict8or :maybe some mechanism for evalU8ing historical && modern rulers according to aspects of authoritarianism && levels of devast8ion caused
+           pred8or
+            SSN8   :code for an "assassin8" FPS game like Half-Life or with some ambitious elements of OverWatch using cr8 engine?
               N8   :pronunC8ion as "innate", to be a succinct primary general d8a-set manager (probably cut because pronunC8ion && spelling are too far off)
-             DN8           :DNA (Deoxyribo-Nucleic Acid8) human genome sequencer/modeler && maybe chromosome strand splicing && protein-folding type games
-            NfN8           :Infinite followable inter-connections between 8d8a (as part of 8b8a?), likely with some possible mapping to any complete unific8ion
+             DN8   :DNA (Deoxyribo-Nucleic Acid8) human genome sequencer/modeler && maybe chromosome strand splicing && protein-folding type puzzle games
+            NfN8   :"infinite" followable inter-connections between any of Octology's 8d8a, likely having some possible mapping in any complete unific8ion
+
+# The original intention for the nearly exhaustive list of 8-words above was to organize the best 888 as names for distinct future applic8ions && fE8ures,
+#   but after surpassing 1,024 unique candid8s, it appears better to revoke seemingly arbitrary limit8ions && allow for inclusion of any number of concepts.
+# The plan is to eventually describe, assoC8, && implement intuitive applic8ions && specializ8ions for a gr8 many of the imaginably useful interpret8ions
+#   among ultim8ly all 8-words. This should be explored in a prioritized && efficient fashion, preferring rel8ively consistent approaches to extrapol8ion;
+
+# Those concepts which remain isol8d below seem to fail on some level of qualific8ion for direct consider8ion as worthwhile names of unique new applic8ions;
        UnitedSt8s          :USA d8a, maps, details, history, popul8ion, etc. for each of the sepR8 50 St8s, WashingtonDC capital, && other assoC8d territories
         Unitedn8ions       :tool to monitor the UN, an intergovernmental organiz8ion tasked to promote intern8ional cooper8ion && to crE8 && maintain order
  UnitedArabEmir8s          :UAE also just called "Emirates", which is an absolute monarchy in Western Asia on the Persian Gulf && is a feder8ion of 7 emir8s
@@ -1014,7 +1082,7 @@ internationaliz8ion:tools to transl8 for I18N the document8ion && applic8ion int
      PontiusPil8           :Roman procur8or of Judea who ordered Y'shua (A.K.A. Jesus) to be crucified (according to Christian mythology, maybe not history)
   ParksAndRecrE8ion        :pretty intelligent && funny comedy show about small-town politics starring Amy Poehler && very attractive Aubrey Plaza
        Colbertn8ion        :Stephen ColbertReport show back on ComedyCentral from before he took over the CBS l8Show, premiering on September 8th of 2015
-              n8Silver     :model math user with generally rel8ively accur8 prediction models (@NateSilver538 founder/editor-in-chief of FiveThirtyEight.Com)
+              n8Silver     :model math user with generally rL8ively accur8 prediction models (@NateSilver538 founder/editor-in-chief of FiveThirtyEight.Com)
               r8chelMaddow :TRMS (TheRachelMaddowShow) as a slight, but deliber8, mispronunC8ion of the very bl8antly left-leaning MSNBC host's name
      Catherinez8aJones     :talented actress && fellow individual diagnosed with BiPolar Disorder, although I hope we both continue living well with it
          PlaySt8ion        :Sony's series of videogame consoles && hardware media players (which bear my initials && are my favor8s in every console gener8ion)
@@ -1049,7 +1117,7 @@ underscore "_" to complete a useful base-64 character encoding. This is employed
 
 Octology alliter8ly: "Don't w8! Design8 this d8 to crE8, rel8, and r8 gr8 d8a!"
 
-A goal of Octology is to make it intuitively easy to combine rel8ively basic tools into a diverse array of expressive specialized interfaces which can be
+A goal of Octology is to make it intuitively easy to combine rL8ively basic tools into a diverse array of expressive specialized interfaces which can be
 customized to every useful applic8ion.
 
 A long-term goal is to provide a dynamic system for augmented memory in general and widespread narr8ive autobiographic works to be undertaken for posterity.
@@ -1624,7 +1692,7 @@ The exceptions to the one-character-per-field rule are:
 These allow any 60th-of-a-second instant from Midnight New Year's of 1489 through the end of December 31st 2511 to be represented within its precise time zone.
 It looks like there are 27 integer hour offsets which range from +14 to -12 around UTC. These are packed within 0..26 by subtracting the quantity of the
 negative offsets from 27. Then there remain 13 additional zone offsets possible (that I've found on Wikipedia so far) that don't align on integer hours. I aim
-to explicitly specify these as encoded zone values packed in indices 27..39 (where their value is not directly indic8ive of their rel8ive offset like 0..26, so
+to explicitly specify these as encoded zone values packed in indices 27..39 (where their value is not directly indic8ive of their rL8ive offset like 0..26, so
 they must be looked up separ8ly). This thoroughness of support for existing misaligned zone offset values means there's insufficient room to handle any
 additional Year shift within the zone field. Oh well. Broader Year ranges can probably be better accommod8d l8r with long-form d8 encoding anyway. Outliers:
   -09:30
@@ -1966,7 +2034,7 @@ Might be nice to wrap /etc/issue.net or whatever && ssh with ss to show b64 IP a
 D2HAX0R passed a bit ago && I thought I should try to do something. c8 formatting aguu with colored alignment should be simple && sweet. Livened routine. =)
 I'm imagining ways to initE8 neophytes to 8 through entry points into useful explor8ions. I want to show that customiz8ion of any visible f0nt, color, pal8,
 tyl, etc. can be personal && efficient, mnemonic, && hopefully also Perlishly DWIM intuitive. I imagine a simple explan8ion just starting from V8 && explaining
-everything rel8ive to summariz8ion && then alter8ion (via filtr8ion). Another probably more complic8d level can start from a basic default VGA font && explain
+everything rL8ive to summariz8ion && then alter8ion (via filtr8ion). Another probably more complic8d level can start from a basic default VGA font && explain
 old text modes with persisting limit8ions based on their standards, then convey the intentional growability of 8 f0nt && pal8 formats (which admittedly have
 their own sometimes similarly conspicuous limit8ions based on 8 constrained dimensions). Maybe it'd be useful to attempt to contrast the limit8ions &&
 respective shortcomings of my approaches compared with standards. Maybe other people could (or should, for objectivity reasons) do that once I publish?
@@ -2064,7 +2132,7 @@ Additionally, genders are probably most predictably evened out by mostly altern8
 pieces starting on White squares && black pieces starting on black squares tend to be females with those remaining pieces of a particular side's color that
 begin on opposite colored squares tending to be male).
 This would somewhat intuitively intersperse expected genders along with a strengthened assoC8ion between particular pieces with their origin square's color
-rel8ive to their side's color. I think there should be room for transgendered piece characters && names, even though I'm not initially designing any specific
+rL8ive to their side's color. I think there should be room for transgendered piece characters && names, even though I'm not initially designing any specific
 ones to be categorized distinctly from male or female keyed to their side && start colors (just for binary clarity). It used to be nice to recognize that most
 pawns would be promoted to Queens && so might be predicted to also likely have female genders to oppose the King's expected maleness (although this whole
 exercise is somewhat silly being based on assumptions && gender logic which already challenge the more likely expect8ion that all pieces but Queens are male
@@ -2146,7 +2214,7 @@ demonstr8 utilize coll8 event scripts to show my d8 timed typing inputs to anim8
   5) r8 for universal dynamic valU8ion
   6) c8   s8    l   g     etc.cmdline applic8ions
   7) 8trm 8scrn 8sh viii  etc.captive applic8ions
-  8) ckm8 p8    f8l SSN8  etc.gaming  applic8ions, sk8 gem8ria intoxic8 simul8
+  8) ckm8 p8    f8l SSN8  etc.gaming  applic8ions, sk8 gM8ria intoxic8 simul8
 Need gradu8 && m8rix to visually convey b8 first as most logical numerical basis for all 8 apps. Need m8 for visual V8 next. coll8 scripts should become
 replayable records, live editable, && exportable to non-interactive video in order to maximally educ8 the interested world about Octology. Would be cool to
 enable each l8r script to precede themselves with progressively faster fast-motion replays of earlier scripts as dynamically reconfigurable refresher courses.
@@ -2154,7 +2222,7 @@ Interactive b8 (maybe diverging from coll8 script) can offer way to redefine the
 maybe doing so will have unintended side-effects && is better discouraged or sandboxed or easily overrideable with default? Just as graphical b8 should convey
 simultaneous multi-view of binary bit values alongside 1D or 2D spectrum primary represent8ion, r8 should play with words (or any tokens mapping to b64) with
 their 8 inherited numbers as median,mean,meridian,sum,product,d8,etc. like gematria highlighting text as numbers should be done && fun (when possible). Maybe
-make gem8ria game that reinforces assoC8ions between rel8d represent8ions of numbers, text, && values showing emerging new rel8ionships to math && oper8ions.
+make gM8ria game that reinforces assoC8ions between rel8d represent8ions of numbers, text, && values showing emerging new rel8ionships to math && oper8ions.
 Playing MvC2 with Jer, thinking f8l should totally offer recent configur8ions for teams && assist types as well as show mini assist anim8ions when selecting.
 Primarily text-mode of viii can optionally overlay higher perspective showing whole file syntax highlighted chars as pixels && maybe similar also eventually
 available in increasingly colorful 8term with bird's-eye perspective on scrollback as altern8ive to standard scrollbar provided hidden like gnome-terminal.
@@ -2231,7 +2299,7 @@ coordin8d windows; Intent is to intuitively isol8 every processed instrument and
 Performance mode might need to help your timing or dampen improvis8ion if desired goal is audible similarity to original throughout dur8ion of track;
 E1JLBZxi:p8 like p47 scrolling shooter should play if you zoom in on DDR button bars; synchronizing the obstacles && colors with the buttons && music is key;
 will probably require pre-execution analysis in order to make difficulty level at all consistent; ship controls should start as just keyboard && joystick maybe
-adding some mouse && touch forms l8r. If a song is pretty well trained with existing joystick buttons on major sonic events && thus rel8ively consistent
+adding some mouse && touch forms l8r. If a song is pretty well trained with existing joystick buttons on major sonic events && thus rL8ively consistent
 obstacle && difficulty progression, it'd be cool to have other person improvising buttons to sounds throughout the song while keyboard p8 player can surf
 through potentially pretty customized new territory while leaving a lot of familiarity with what sounds && hurdles are generally available about when;
 Should tap into pulseaudio && gstreamer visualiz8ions to just gener8 && play p8 tripz from existing tracks without needing joy buttons or pre-analysis;
@@ -2397,7 +2465,7 @@ Could also interpret pal8 RGB triplets as d8 YMD or b8 numbers less than 262,144
 E3QMFPlX:c8-derived utilities should detect and handle being command filters as well as wrapping invoc8ion with their own preferred parameters when executed
 directly. Prefer having col8 layers altered separ8ly to allow for easier isol8ion of modific8ions. `comma` should default to segmenting 3 b10 characters while
 separ8 `coma` should do 4 b64 characters. Both should expect to be piped through usually, but also accept oper8ing on parameters and should be modularized;
-Thinking of breaking my own developmental rel8ive gridlock could inspire the U.S. sN8 to become unstuck too, although I shouldn't think of Octology as so gr8?
+Thinking of breaking my own developmental rL8ive gridlock could inspire the U.S. sN8 to become unstuck too, although I shouldn't think of Octology as so gr8?
 Try to stay focused on just me being my own target audience for even tutorial stories. Maybe new idea for ckm8 AI is to teach players position evalU8ion too;
 E3RMBRKN:I hope I can someday help diminish suicides (22 Iraq and Afghanistan veterans per day!). Especially voluntary military service and willing sacrifice
 is to be honored and heralded, even when such servants have been deployed as part of unjust or misguided oper8ions; On second thought, maybe encouraging a
@@ -2414,7 +2482,7 @@ format will toggle number base for all other quantities; It sometimes seems pecu
 awareness that I can do almost anything software-wise and hopefully also an increasing willingness to attempt to do almost everything remotely worthwhile.
 I need to bring myself to every bridge I've already imagined crossing; E3TMDdxg:Let's see how well I can introduce Octology within a single page of 160x50:
 
-Hello and welcome to Octology! This is a thorough new approach to software. This system builds up gr8 complexity out of a rel8ively small set of intuitive
+Hello and welcome to Octology! This is a thorough new approach to software. This system builds up gr8 complexity out of a rL8ively small set of intuitive
 concepts and conventions. These are introduced below in a logical construction order, minimizing forward references to facilit8 easier comprehension.
 0: Zero is the first number. Almost any numbers used throughout Octology have values corresponding to non-neg8ive index or offset rather than positive count.
 1: Most Octology applic8ions are spelled with an "8" in their name. Names are pronounced with separ8 syllables when the letter preceding the 8 is uppercase
@@ -2527,7 +2595,7 @@ Thinking about media player with d8-line of corresponding inputs to Obsidia-Outs
 Turn-That-Shit-Up!! app texts people proxim8 to user that the music rocks so please crank it (with viz option or play on device)! Ironic "shit" since gr8;)
 My bak system made the right assumption about storage space prolifer8ion but remains naggingly inefficient and in need of a good git conversion && navig8ions.
 Git should validly be the g8 of files version storage. I feel maybe pompous intending to streamline git without even knowing as much as I should about it yet.
-Media player should allow specific8ion of at least 64 degrees of knowledge of track and rel8ive drunk or stonedness maybe subsumed by caffein8dness or alert.
+Media player should allow specific8ion of at least 64 degrees of knowledge of track and rL8ive drunk or stonedness maybe subsumed by caffein8dness or alert.
 Maybe intoxic8 drinking and other impairment game maps dexterity deterior8ion and identifies diverse players and patterns. There's a right time to party and to
 determine whether the user is willing to be chronicled and analysed! HaDouKen Shin-ShoRyuKen! InebrE8 should start on joysticks and move to keyboard and mice.
 At least let your fingers dance to any rhythm. Monstercat Podcast 008 last track TutChild Drink_Up! Octology should be a !2simple party of fun play ideas. =)
@@ -2930,7 +2998,7 @@ galvanize around shared h8red, discrimin8ion, or stigmatiz8ion between subcultur
 malicious individualz, trollz, impostorz, or moder8orz who appear likely to have had their credentialz compromised in order to affect more administr8or level
 harm on vulnerable partz of the community or to target people for unwarranted abuse, intimid8ion, or revenge should be routinely stifled. Diligence to
 successfully investig8 && address any credible complaintz while similarly rewarding most constructive activitiez should be key aspectz of selecting my top7.
-Then I may be rel8ively demoted to command 1/8th of the top8 administr8ion power. If the community becomez strong && valuable while I remain in any solitary
+Then I may be rL8ively demoted to command 1/8th of the top8 administr8ion power. If the community becomez strong && valuable while I remain in any solitary
 leadership role for too long, there would be increasing risk that I would pose an unintentional threat to everyone else by being a single point-of-failure
 that could have my own credentialz compromised (through criminal or government fabric8ion of my identific8ion or seizure of my equipment && connectivity).
 I could also be somewhat catastrophically be unjustly incarcer8d, crippled, murdered, or even just be incapacit8d or killed by accident. Certain fallback
@@ -2942,7 +3010,7 @@ with me). The concept of using Octology'z r8 system for voting && deleg8ion of a
 the community voluntarily continuez to recognize me as best suited to arbitr8 among top-level conflictz && I can selectively weigh in with somewhat domin8ing
 influence on lesser issuez, according to my discretion (but hopefully such escal8d oversight actionz should be accompanied by candid explan8ion of my reasoning
 as elucid8d justific8ion, to preserve typical preference for transparency && bolster confidence in my position). Maybe I would eventually be able to conduct
-thingz under most normal circumstancez as a somewhat less prominent top-level administr8or sharing rel8ively equal authority with that wider group, rarely
+thingz under most normal circumstancez as a somewhat less prominent top-level administr8or sharing rL8ively equal authority with that wider group, rarely
 feeling it necessary to override anything. If I have some period of CEO-level domin8ion that seemz important to preserve, I should still probably allow my top8
 meta-moder8ing administr8orz to similarly override even my decisionz by achieving consensus or some high level of confidence that doing so is warranted &&
 important. This should include deposing me if I become unreachable for too long or betray my own (&& our hopefully shared) goalz too persistently. There will
@@ -2955,7 +3023,7 @@ established to minimize additional threatz of sepR8ion posed by hostile actorz l
 disempowering or disbanding the remaining community which still wishez to cleave together). These are certainly daunting existential problemz to imagine &&
 account for (&& they will hopefully remain so unlikely that any counter-terror planz will never need to be brought into play), but I think these && similar
 scenarioz are feasible enough to imagine that some consistent level of forethought && risk-analysis should be dedic8d to compens8ing for the worst damagez.
-There may be considerable justifiable reasonz to favor some form of rel8ively (or maybe intentionally && dedic8dly) anonymous Tor-like darknet for encrypted
+There may be considerable justifiable reasonz to favor some form of rL8ively (or maybe intentionally && dedic8dly) anonymous Tor-like darknet for encrypted
 priv8 engagement of like-minded leaderz to selectively oversee constrained growth (by broadly valid8d invit8ion only && ability to rapidly protect the healthy
 community from even large-scale overthrow attemptz by surreptitious infiltr8orz). A clandestine incub8ion period could be cultiv8d with the intent to
 inconspicuously lift up the most down-trodden in society through some arm of covert philanthropy. Anyone enslaved, homeless, mentally ill, ongoingly assaulted,
@@ -3053,7 +3121,7 @@ conservatively, and prudently. Optimistic enthusiasm is valuable, but tempering 
 will probably yield better resultz than unpredictable contribution. Please remember to reserve plenty of extra money to ensure your personal needz (and those
 needz of all your children, spousez, family memberz, or anyone else who is already depending on your provision) are all being met comfortably, before
 committing to particip8. While I recognize that some needz are particularly urgent (and therefore may require exceptional discretion to know when it would be
-better to preempt this advice), I believe robust reliability and resilience will make this system more effective in the long run, and rel8ively minor initial
+better to preempt this advice), I believe robust reliability and resilience will make this system more effective in the long run, and rL8ively minor initial
 delayz can be ultim8ly very worthwhile, to improve eventual trust. Disclaimer:Of course, I recognize that all of the ideaz throughout every description of
 Octology above (including 8flp here) have been primarily dreamt up by me as experimentz and strategiez for achieving broader goalz. Once more d8a can be
 gathered and interpreted, I expect all of these specific guidelinez and piecez of advice to be adapted to better accommod8 the achievement of the underlying
@@ -3086,12 +3154,12 @@ sponsor employer a "Taker", while the poorer employee in need is a "Maker" or "G
 respective worth and value, as well as traditional rolez. A "Taker" is an employer with a camera (who has saved up 8 monthz worth of pay, and who can continue
 to afford to pay that monthly amount). The "Maker" is an employee who agreez to meet once-per-month to get paid up-front for *making* a pose with their handz
 holding the money. A picture of this pose is *taken* with the camera every month. It should alwayz be at least one monthly picture of Maker handz (or closest
-possible altern8ive for amputeez and the like). This can be useful to provide simultaneous document8ion (with some rel8ive anonymity for participantz) of
+possible altern8ive for amputeez and the like). This can be useful to provide simultaneous document8ion (with some rL8ive anonymity for participantz) of
 mutually voluntary, direct, and consistent monetary transactionz as paymentz, while also providing slight insight into material impact of ongoing progress (as
 Makerz hopefully take pride in showing improvementz in the quality and sensitivity of their handz). This could include multiple consentual close-up photoz or
 videoz documenting the progressive healing of primarily hand and forearm woundz, lacer8ionz, burnz, scarz, particularly painful and public hypodermic drug
 injection sitez (mainly assoC8d with the most severe casez of Substance-Abuse Disorder), functional limit8ionz, as well as many smaller afflictionz, attributez
-indic8ing other issuez, and rel8ively incidental identific8ion characteristicz. By "functional limit8ionz", I mean something like monthly observ8ion of each
+indic8ing other issuez, and rL8ively incidental identific8ion characteristicz. By "functional limit8ionz", I mean something like monthly observ8ion of each
 Maker'z ability to pose their handz in wayz that still comfortably exercise their available range-of-motion (as well as maybe grasping and sens8ion
 capabilitiez) following impairing casez of malform8ion during developmental stagez, broken bonez, castz, splintz, bracez, bandagez, or lost fingernailz. By
 "smaller afflictionz", I'm thinking of still painful or irrit8ing thingz like wartz, rashez, cutz, scrapez, disloc8ionz, ingrown nailz, or similar. By
@@ -3099,7 +3167,7 @@ capabilitiez) following impairing casez of malform8ion during developmental stag
 as jewelry, or tattooz and piercingz as body-art. The Maker is essentially hired with one specific task: Schedule to meet with your Taker at least once each
 month, to get pre-paid and then allow at least one picture to be *taken* of their handz holding that money. It might be a good simple routine to just take a
 hand-focused selfie of each Maker holding cash visibly (and somewhat verifiably) in one hand, while showing thumbz-upz or fist-bumping, shaking handz, or
-interlocking fingerz more intim8ly with their other hand and the Taker'z non-camera hand. If this approach could also be refined toward rel8ive consistency
+interlocking fingerz more intim8ly with their other hand and the Taker'z non-camera hand. If this approach could also be refined toward rL8ive consistency
 (such as picturez being taken at uniform monthly intervalz from similar devicez, anglez, lighting conditionz, etc.), they should provide a better basis for
 measuring at least a few aspectz which could indic8 meaningful progress. An important factor of all this is that the prepR8ory candid8 explor8ion must include
 explan8ion and negotE8ion prior to agreement. This is followed by a mutual expect8ion of permanence. Ideally, these rel8ionshipz should be mutually understood
@@ -3137,7 +3205,7 @@ painful to indic8 or explain, and then peace signz, gang signz, middle-fingerz, 
 some simple shadow, sock, or paper-bag animal puppetz could be demonstr8d. These could be precious opportunitiez for crE8ive collabor8ive decor8ion of each
 puppet'z appearance, with optionz to design8 unique tr8z such as speciez, name, personality, dreamz and motiv8ionz, narr8or vocaliz8ionz, rel8ionshipz, sourcez
 of inspir8ion or who they may symbolize a represent8ion of, back-story, and any other detailz a Maker wishez to crE8. While everyone should be ideally
-respected and challenged individually, it will probably be best to generally keep expect8ionz low for the first many monthz, gravit8ing towardz rel8ively
+respected and challenged individually, it will probably be best to generally keep expect8ionz low for the first many monthz, gravit8ing towardz rL8ively
 simple and trivial puppet interactionz (like silly videoz of puppetz singing favorite songz, or8ing poetry, or re-enacting favorite movie or TV dialog scenez).
 Once thingz seem comfortable enough, maybe recommending some imagin8ion like light-hearted, humorous, or absurd fictitious or personalized adapt8ionz of
 earlier songz, concocted new scenez between already familiar characterz, parodiez, mash-upz, and anything else fitting. Maybe crafting propz or backdrop
@@ -3150,7 +3218,7 @@ flip-book anim8ionz or painted before, or would like to learn to improve ahead. 
 be genuinely appreC8d. If Makerz want their monthly picture to be their handz holding their favorite stuffed animal, article of clothing, magazine, book, food,
 drink, drug, or even a weapon, their crE8ive integrity should be fostered. Of course everyone should stay safe. It should be mutually respectful, casual,
 comfortable, and careful. Communic8ion is critical. Even if a Maker would gr8ly like to demonstr8 their loaded firearm or favorite edged weapon eviscer8ing
-melonz and bottlez under rel8ively safe conditionz (like hopefully outside, with nothing living nearby where it is already legal to do so), I think it should
+melonz and bottlez under rL8ively safe conditionz (like hopefully outside, with nothing living nearby where it is already legal to do so), I think it should
 be fine for a Taker to deny such a desire until both feel adequ8ly reassured that the actual risk of any grave mishap or threat is sufficiently low and
 comfortable to all partiez who could forseeably be impacted. The emphasis should be on safe and crE8ive expressionz of handz. While Takerz may technically be
 "taking" the picturez or videoz (and potentially dedic8ing much additional time and resourcez to editing, prior to concerned Maker valid8ion and approval for
@@ -3220,13 +3288,13 @@ needz into account felt hostile, which seemed to require defensive measurez on m
 disrespecting me, and I overlooked Tim's underlying reasonz and valuez and simply socially adopted Pat's mistaken estim8ion that Tim is incapable of reasoned
 thought. This has been totally wrong of me. I learned that profoundly over about an hour. I had realized that not only did I need to completely forgive him
 for his actually harmless "offense", but I need to care about him personally enough to actually care about understanding him as well as I can. Tim does not
-stutter (like Danny was thankfully relieved from in adulthood, but I still do it sometimes. I rarely stutter, but it can be assoC8d with rel8ive mania or
+stutter (like Danny was thankfully relieved from in adulthood, but I still do it sometimes. I rarely stutter, but it can be assoC8d with rL8ive mania or
 depression for me. It's a neg8ive feedback loop. The overwhelming emotion or pressure or discomfort or underlying grief or pain can cause some conflicting
 neurological thought-to-speech path selection (anywhere along the route) to manifest as audible stuttering (at least as far as I understand some likely
 explan8ions of my own anyway, since Danny and other sufferers will likely present and explain distinctly from me). So today Tim and Pat hung out and we smoked
 a little and listened to my music. I tried much harder to listen carefully to Tim. He often mumbles to himself. He often vocalizes unintelligibly and meekly.
 He often utters mimickry while others are speaking. Our society has wrongly assumed this is feedback is too distracting and uncouth to be acceptable. It is
-used to justify disrespecting Tim, ignoring or superceding any of his opinions. He is rel8ively voiceless and powerless. I began listening closely to Tim
+used to justify disrespecting Tim, ignoring or superceding any of his opinions. He is rL8ively voiceless and powerless. I began listening closely to Tim
 today. Both Pat and Tim are accustomed to talking in unison, with Pat domin8ing convers8ion and further stigm8izing and marginalizing Tim by completely
 assuming useless gibberish most of the time. While some is echoing, many other times they both say totally different things together toward me. I had to
 interrupt them a bit first today to ask them to please only take turns, so we all can hear and try to understand each other. Pat takes liberty to decide and
@@ -3422,7 +3490,7 @@ another array for SGR, && the serializ8ion of S2 poses a similar but slightly di
 really would like to unify as much as possible. This suggestz I should scrap the assumption that tFbf is the best arrangement for the first 4 aligned layerz,
 since only 8trm in SDL can reasonably employ 64 different f0ntz && it's highly unlikely that standard terminal programz are going to gain support for anything
 similar anytime soon. So maybe a8:S && c as well as S2 && c2 should be upd8d to just use tFb. All the extra f0nt d8a is just a waste for the most common use
-casez. Then coming up with a rel8ively consistent mechanism for describing all possible SGR d8a should be prioritized next. After that, maybe I can reintroduce
+casez. Then coming up with a rL8ively consistent mechanism for describing all possible SGR d8a should be prioritized next. After that, maybe I can reintroduce
 a non-default special case option for f0ntz exclusively for 8trm (&& hopefully its resumed support won't need to disrupt or clutter the other formatz much).
 I'd really like S2 && c2 to form the basis for interoper8ing between tied array interfaces that can be common to Simp && 8trm, eventually leading to c8.pm
 providing compatible support for rendering to either SDL or Curses (as well as maybe l8r Tk, GTK, Wx, etc). So S && c should then just focus on Fb as default
@@ -3574,7 +3642,7 @@ to have to answer to. Only self-imposed dead-lines for now. Liberty to pursue fa
 to ultim8ly produce minimal results for weeks or months at a time. I cannot now fully dedic8 myself to someday taking on all (or even most) of the intense
 pressures and stresses that work-life used to bring for me, unless the rewards for voluntarily subjecting myself to those again, and potentially even worse
 ahead, are clearly commensur8 with the renewed agonies I'm likely to face. There are many gr8 possible outcomes. If I could figure out a way to complete an
-adequ8 set of rel8ively well-scheduled releases of Octology code and document8ion, such that I could thereafter return to being somehow paid the equivalent of
+adequ8 set of rL8ively well-scheduled releases of Octology code and document8ion, such that I could thereafter return to being somehow paid the equivalent of
 a modest professional programmer's yearly salary, and that the expect8ions placed on me to earn this income were lax enough to grant me overwhelming autonomy
 and authority in deciding whatever is best to work on next, well something like that would be a very wonderful outcome. I could then confidently get off of
 these meager Disability payments, I'd be able to afford to drive and travel again, and I would still retain the majority of my discretion to work my own way.
@@ -3589,7 +3657,7 @@ and striving to meet high-level career-oriented goals as my most desired outcome
 customers or a don8ing user-base that respects my independence and integrity enough to place few undue constraints or burdens on my time and attentions.
 "I want to stay free to do what I think is best at every point, but also to usually have regular options to address issues and requests that others may have."
 I think that one sentence sums up one of my highest goals pretty well, so I'm putting it in quotes. It may have to be tempered somewhat, when I l8r try to
-introduce specific goals for building myself up to eventually deriving sustaining income from my efforts, but I think it's probably a rel8ively good place to
+introduce specific goals for building myself up to eventually deriving sustaining income from my efforts, but I think it's probably a rL8ively good place to
 start by clearly st8ing what I most want, while recommending directions to take in my future code milestones and career goals which serve to balance interests.
 Maybe some of my career goals can become refined and succinct, like Danny's mantras or good corpor8 mission st8ments, providing project guidance and purpose.
 Hopefully a mostly prioritized set of measurable career goals can eventually dovetail with many code goals, so that they facilit8 and reinforce each other.
@@ -3725,7 +3793,7 @@ HBCLEARN:From Proggit, saw NadiaEghbal's gr8 RebuildingTheCathedral. Commented t
 HBDL5w8X:Might want to contempl8 trying GNURoot.Debian from PlayStore or $93 DeX with new display, HHKB, && SlimBlade to run Ubuntu ARM dvl from my loved S8;
 HBDL9US2:From Proggit HTTP://AntiPope.Org/charlie/blog-static/2017/11/burn-the-programmer.html is a good article for my incant8ion "magic" code idea above &&
 the comment discussion is gr8 too. HTTPS://Medium.Com/@karpathy/software-2-0-a64152b37c35 discusses future Software 2.0 dealing much more with NeuralNet d8a,
-having many clear advantages over 1.0 && rel8ively few downsides so far. HTTPS://DeepMind.Com/blog/wavenet-launches-google-assistant is gr8 Text2Speech demo;
+having many clear advantages over 1.0 && rL8ively few downsides so far. HTTPS://DeepMind.Com/blog/wavenet-launches-google-assistant is gr8 Text2Speech demo;
 HBEL0pcm:After reading weak MindMap post, found gr8 HTTP://SijinJoseph.Com/programmer-competency-matrix where it seems I'd mostly fall in end Levels 3 or 2;
 HBFL8ff8:Good ThyNameIsSkepticism channel link to rather lame HTTPS://IDRLabs.Com/gender/test.php where I got 58% male, 42% female. I'm "Casually Masculine";
 HBQL4BIG:Proggit had cool HTTP://CommandLineFu.Com/commands/browse/sort-by-votes && present8ion post recommending introducing complete newbies to your chosen
@@ -3752,3 +3820,16 @@ that interesting topics include basic mut8ions:JAI, GAI, && GBI (as JBlow888's g
 For any future BavL work, note that HTTPS://En.WikiPedia.Org/wiki/Propaedeutic_value_of_Esperanto seems a good path for learning new spoken languages quickly;
 HC7L8Ins:RedHeadRedemption recommended CrE8orInsider channel as gr8 resource for if I ever try monetizing Octology demonstr8ion (or some other) videos on U2b;
 HC7LIPA8:The International Phonetic Alphabet seems to describe "8" pronunC8ions most commonly as /eɪt/ while my typical Google definitions offer /āt/ instead;
+HC9LC6as:Since I gr8ly care to learn about (&& ultim8ly help contribute to any mitig8ion of) every existential crisis our world may face, Vox's new video on
+big asteroid threats at HTTPS://YouTube.Com/watch?v=EZSCtgfmEO0 makes me want to study further (even though catastrophic probabilities seem to be quite low).
+Rel8dly, U2b has several "Ways the World Could End" videos I should study, in order to best prioritize areas for further research (but AI seems likely gr8st).
+Ideally, humanity will be able to develop rL8ively safe GAI soon, which could help limit or resolve the harm posed by almost every other major issue we face.
+From HTTPS://HardWare.SlashDot.Org/story/17/12/08/2049204/elon-musk-says-tesla-is-building-dedicated-chips-for-autopilot apparently we're approxim8ly 7 or 8
+years from GAI. My intuition is early viral or animalistic (&& thus naive or cruel) AI poses a gr8r threat to other life than likely super-human forms would;
+HC9LDON8:With all the backlash about Patreon changing fees on HCI && a good H3H3 Philip DeFranco interview discussing the potentially conflicting perceptions
+of it being for don8ions rather than subscriptions && wanting to transition away, maybe I should acceler8 plans to evalU8 the whole crowd-funding competitive
+space in order to start fleshing out my own aspir8ions for developing distinctive Octology applic8ions for both "don8" && "p8ron" to particip8 in that arena;
+HC9LKhan:HTTPS://YouTube.Com/watch?v=_Lj_diKtrzw is intriguing TEDx talk by MinaKhan on HC8 about MixedReality MathLand to teach math && physics through play;
+HCALFMe2:HTTPS://The-American-Interest.Com/2017/12/06/the-warlock-hunt is a totally phenomenal article on #MeToo too far that Dr. Peterson tweeted out today;
+HCALKGr8:Just want to note that I have lifted the 888 limit8ion on the list of top 8-words today && begun including many distinct prefixed varE8ions but I am
+still generally not crE8ing sepR8 suffix conjug8ions, except when they occupy particularly unique interpret8ions, like "predate", "predator", && "predation";

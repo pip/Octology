@@ -539,7 +539,7 @@ alias m3='   mpg123 '; # replace  wi Xpct l8r too
 #    -fixed-vo only with xv, x11, xvidix, gl, gl_tiled, && svga (ignoring irrelevant Matrox); # swapping mp && mplyr alias dFinitionz due2frEquNC of use&&mM
 alias mplyr='mplayer'; # EBIL4AcZ:just upgraded all machines to mplayer2 so need --no-keepaspect to allow scaling to full window dimensions
 alias mp='   mplayer -vo xv  -fixed-vo                              -cache 16384 -cache-min 99'; # should try different -vo (xv was default) for performance
-alias mpns='cd ~/mvz/U2b/nxt;mp $(ls B* Dr* *Tut* Ex* M* O*-Res* Var* *Trap* *Trap* *Boy*|shfl)'; # mk MPlyrNxtShfl alias for quick favor8 mvz Drub&&Trap vidz
+alias mpns='cd ~/mvz/U2b/nxt;mp $(ls B* Dr* *Tut* Ex* M* O*-Res* Var* *Trap* *Trap* *Boy*|shfl);cd ..'; # mk MPlyrNxtShfl 4 quik favor8 mvz Drub&&Trap vidz
 alias mpx='  mp      -fs'; #-x 1920 -y 1080';  used2have -noborder abov but then cud!mv wndw
 alias mply=' mplayer -vo xv  -fixed-vo -nosound -loop 0          -geometry 1916x1052+0+0    '; #-x 1916 -y 1052' # mplayer can only strt wi1920maxBcuzXinerama?
 #lias mpr0=' mplayer                   -nosound --no-keepaspect  -geometry 1920x1052+0+0    '; # still needs vid file params like ~/mvz/U2b/Obsidia*.mp4

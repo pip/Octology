@@ -1,6 +1,7 @@
 #!/usr/bin/perl
 # FCDL7piI:dic crE8d by PipStuart <Pip@CPAN.Org> as a basic very colorful wrapper similar to `dict word|colorit` with some reformatting capabilities as well;
-# 2du:Dtect -h with nO folOing Host srvr or --help 2prnt some Help txt from here B4 passing latter on2`dict`,accept&&highlight&&loop multiple word pRameterz,
+# 2du:fix mor than 2 lIn join 4 Caliphate && othr tStz aftr thinkng mor abou probz,mAB accept word8 pRamz&&rEplAc wi "ate?" &&l8r try othr spLngz th@ R DfInd,
+#   Dtect -h with nO folOing Host srvr or --help 2prnt some Help txt from here B4 passing latter on2`dict`,accept&&highlight&&loop multiple word pRameterz,
 #   fix2hndl quotd spAcd pRamz2pass thru like `dict 'et cetera'`,Dtect&&auto-apNd comNtz4faild queriez,mk mode2fillin all old faild queriez&&mAB agreg8 thM2,
 #   demarc8 which 8-words are not yet in 8.txt top list (maybe with uc && spelling remaps like 'ci8'=>'C8','pi8'=>'P8','i8'=>'E8','u8'=>'U8', etc.),
 #   (if possible) it would be nice to eventually figure out how to enable zsh Tab-completion for dict to also work the same for both dic && just d alias too;
@@ -16,7 +17,7 @@
 #web1913 gcide wn foldoc jargon vera devil elements easton hitchcock bouvier gazetteer gaz2k-zips gaz2k-places gaz2k-counties moby-thesaurus
 # HC2LNewD:fixd `d BLT` to properly Decode UTF-8 double-quotes from dict && noted also qw(server reverse reserve severer)=~ s/e//g; # srvr rvrs rsrv svrr;
 # Currently, the only special pRameter that `dic` swallows 4 itself is lone '-w' which design8s any dFinitions should be formatted as *NOT* default Wide mode.
-use strict;use warnings;use utf8;use v5.10;use Encode;my $VERSION='0.0';my $d8VS='HBBLEdic'; # orig from TeST Substitute Input,now XtNded d8 util,l8r c8 IF?
+use strict;use warnings;use utf8;use v5.10;use Encode;my $VERSION='0.0';my $d8VS='HC9LHUNT'; # orig from TeST Substitute Input,now XtNded d8 util,l8r c8 IF?
 use Octology::a8;my $word='';my $wclr=S('Wr');my $logd="$ENV{'HOME'}/.log";my %dlog; # setup global word colr SKp && LogDirectory && DicLog hash
 use Octology::d8;my $Stxt   ;my $eclr=S('Yf');my $widf=1  ; # BlO hopefully strips -w param 2flag disabling dflt wide-mode or load $word 4l8r colr8ion if!flag
 my $cw=160;$cw=$ENV{'COLUMNS'} if(exists($ENV{'COLUMNS'})); # try to setup potentially wider ColumnWidth for when attempting to join shorter linez
@@ -57,21 +58,40 @@ if(0){ # alignment attempt introducez trailing newlinez && sometimez skipz over 
          $St[$_  ]= "$1$bp$2";}
 }
   if($widf){ # this wide-mode line concaten8ion is extremely basic && may ruin some l8r color8ion && alignment of some numbered lists && such
-    if  ($St[$_  ]=~  /^( {4,})/         ){my $il=length($1); # IndentLength
-      if($St[$_+1]=~  /^ {$il}/ && length("$St[$_]$St[$_+1]") < $cw){
-         $St[$_+1]=~ s/^ +/  /;$St[$_].=$St[$_+1];$St[$_+1]='';}}
-    if  ($St[$_  ]=~  /^(  \S| {7}\d+\.)/){my $il=length($1); # IndentLength  # sepR8 smarter indent tests for Bouvier where normal blocks seem to have just
-      if($St[$_+1]=~  /^  / && $St[$_+1]!~  /^ {7}\d+\./ && length("$St[$_]$St[$_+1]") < $cw){ # 2-spc indNt but furthr NtrEz have 7-spc indNt then \d+\.
-         $St[$_+1]=~ s/^ +/  /;$St[$_].=$St[$_+1];$St[$_+1]='';}}}
+    if    ($St[$_  ]=~  /^( {4,})/         ){my $il=length($1); # IndentLength
+      if  ($St[$_+1]=~  /^ {$il}/ &&  length("$St[$_]$St[$_+1]") < $cw){
+           $St[$_+1]=~ s/^ +/  / ;$St[$_].=$St[$_+1];$St[$_+1]='';}}
+
+# sinc `d Caliphate` shOwd mor than just2lInz shud proly B joind smtImz,tryd 2 add 3rd BlO && workd just for that but ruind `d four`&&proly othrz so cmntd4now
+#   if    ($St[$_  ]=~  /^  +/             ){
+#     if  ($St[$_+1]=~  /^  +/ &&  length("$St[$_]$St[$_+1]") < $cw){
+#          $St[$_+1]=~ s/^  +/  /;$St[$_].=$St[$_+1];$St[$_+1]=''; # sinc `d Caliphate` shOwd mor than just2lInz shud proly B joind smtImz,tryd 2 add 3rd BlO
+#       if(    $_    <  ($#St-1)){#  && # avoid uninit warning at end
+##f(        $St[$_+2]=~  /^  ( +)/ &&  length("$St[$_]$St[$_+2]") - length($1) < $cw){ # try 2 not Xpect IndentLength spAcez on 3rd lIn but at lEst 2?
+#if(        $St[$_+2]=~  /^  ( +)/){
+##rint "$W d_:$_ $M 02:",length("$St[$_]$St[$_+2]")," $Y d1:",length($1)," $C cw:",$cw,"\n";
+##rint "$W '",                  "$St[$_]$St[$_+2]'\n";
+# if(length("$St[$_]$St[$_+2]") - length($1) < $cw){ # try 2 not Xpect IndentLength spAcez on 3rd lIn but at lEst 2?
+##rint "$R GotHere!\n";
+#          $St[$_+2]=~ s/^  +/  /;$St[$_].=$St[$_+2];$St[$_+2]='';}}} # mAB nEd 4th or thEs shud just B loopz until leng wud surpass $cw nstd?
+# }
+#}
+
+    if    ($St[$_  ]=~  /^(  \S| {7}\d+\.)/){my $il=length($1); # IndentLength  # sepR8 smarter indent tests for Bouvier where normal blocks seem to have just
+      if  ($St[$_+1]=~  /^  / &&  $St[$_+1]!~  /^ {7}\d+\./ && length("$St[$_]$St[$_+1]") < $cw){ # 2-spc indNt but furthr NtrEz have 7-spc indNt then \d+\.
+           $St[$_+1]=~ s/^  +/  /;$St[$_].=$St[$_+1];$St[$_+1]='';}}}
       $Stxt.="$St[$_]\n";}# if(length($St[$_])); # decent attempt to join consecutive linez with the same indent level (but \d[.:]|(\w) should DpN)
       $Stxt.="$St[-1]\n"; # finish rebuilding last line
+
+#     $Stxt=~ s/([^:]\n) *\n/$1/g; # try 2 strip blank lInz left from 3-lIn join atMptz 4 Caliphate wich brOk othrz so cmntd4now
+
       # if non-STDERR results
       $Stxt=~ s/(;)/$C$1$G/g; # this ruined SKpz when done l8r
-      $Stxt=~ s/(Collaborative)( International)( Dictionary)( of)( English)/$C$1$M$2$W$3$c$4$Y$5/g;
+      $Stxt=~ s/(Collaborative)( International)( Dictionary)( of)( English)/$C$1$M$2$W$3$c$4$Y$5/g; # doing this early so *ative can do 8-word colr BlO
   if(length($word)){
-      $Stxt=~ s/($word +)(imp|vb|v|t|i|n|p|pr|cf|fr|a|adv)( +)(1: +)/$1$R$2$3$C$4/g; # try to catch part-of-speech and 1st definition number after WN word
-      $Stxt=~ s/($word)/$wclr$1$z$G/gi;} # colr looked-up word (if detected) && belo colr tail of most common 8-words for distinction
-      $Stxt=~ s/(\w)((ated?|(ait|[ae]ight|at\B))(en|ant|or)?(ed|i(ng|ve|ons?a?l?|ous))?(istic|ly)?)(\W|$)/$1$eclr$2$z$G$9/gi; # (som m@chd pronuns wil difr)
+      $Stxt=~ s/($word +)(imp|vb|v|t|i|n|p|pr|cf|fr|a|adv)( +)(1: +)/$1$R$2$3$C$4/gi; # try 2 catch pRt-of-sPch && 1st dFinition num aftr WN word (&& ignrcAs2)
+      $Stxt=~ s/($word)/$wclr$1$z$G/gi;} # colr looked-up word (if Dtectd) && BlO colr tail of most comon 8-words 4 distinction (some m@chd pronunC8s wil difr)
+      $Stxt=~ s/(\w)((ated?|(ait|[ae]ight|at\B))(en|ant|or|ure)?(ed|i(ng|ve|ons?a?l?|ous))?(istic|ment|ly|s)?)(\W|$)/$1$eclr$2$z$G$9/gi;
 if(   $Stxt=~  /^(\d+) definition(s)? found/       ){my $dFct=$1;my $dFst=' dFinitN';$dFst.='z' if(defined($2)); # tried2add non-word Boundary aftr at
       $Stxt=~ s/^\d+ definitions?( found)/$C$dFct$Y$dFst$M$1$G/;}
 if(   $Stxt=~  /(\n +?)(\d+) Moby Thesaurus words/ ){my $MTct=$2;my $MTin=$1;chop($MTin) if(length($2) > 2);
@@ -112,9 +132,9 @@ if(   $Stxt=~  /(\n +?)(\d+) Moby Thesaurus words/ ){my $MTct=$2;my $MTin=$1;cho
       $Stxt=~ s/\s*\n(From (The)?)/\n$K$1/g;
       $Stxt=~ s/(\W)(syn:)/$1$M$2/gi;
       $Stxt=~ s/(\W)(ant:)/$1$Y$2/gi;
-      $Stxt=~ s/(\W)(imp|vb|v|t|i|n|p|pr|cf|fr|a|adv)(\.)/$1$R$2$3/g;
-      $Stxt=~ s/(\n +?)(n |v |adj |adv )(\d+[\.:] )/$1$R$2$C$3/g; # accept all pRtz of sPch B4 NdX && mAB shft bak so digz alIn
-      $Stxt=~ s/(\n +?)(\d+[\.:] )/$1$C$2/g;
+      $Stxt=~ s/(\W)(imp|vb|v|t|i|n|p|pr|cf|fr|a|adv)(\.)/$1$R$2$3/g;  # try 2 keep watch 4 any othrz that shO up uncolrd 2 add here l8r too
+      $Stxt=~ s/(\n +?)(n|v|adj|adv) +(\d+[\.:] )/$1$R$2 $C$3/g; # shud upd8 2 accept all pRtz of sPch B4 NdX && mAB shft bak so digz alIn
+      $Stxt=~ s/(\n +?|\S  )(\d+[\.:] )/$1$C$2/g; # try 2 altern8ly accept already joined new NdXz wich shud folO just 2 spAcz aftr prEv tXt
       $Stxt=~ s/(\n +?)(\()([a-z])(\) )/$1$P$2$Y$3$P$4$G/g;
       $Stxt=~ s/(\D[^m\e])([\[\]])/$1$O$2$G/g; # colr all remaining [] which aren't already prECded by SKpz from above && aren't part of SKpz either
       $Stxt=~ s/(\D[^m])([\(\)])/$1$B$2$G/g;   # `d soar` has 1993] so failz the non-Digit char
