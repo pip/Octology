@@ -1,20 +1,41 @@
 #!/usr/bin/perl
 # D6OMHm3L:8plc crE8d to read PipStuart's <Pip@CPAN.Org> 8.txt (mainly 2 specific columns) to tabul8 && print the 8 Precursor Letter Counts;
-# 2du:colr letrz,add f0ntz4 8trm,add 4m@d percNtz,mk easy optn4 fulc 2use 1colm 4grep,stuD wc && mk a8:8c wi fulc -f? && 8plc as -l? optnz (redoing hedr txt),
+# 2du:for -f fix %\033 invalid conversion in 1 of the sprintf on line 51 (mAB in $w82o ?),mAB rewrite all fol\digit countz to use single array of hashez nstd,
+#   colr letrz,add f0ntz4 8trm,add 4m@d percNtz,mk easy optn4 fulc 2use 1colm 4grep,stuD wc && mk a8:8c wi fulc -f? && 8plc as -l? optnz (redoing hedr txt),
 #   mk sepR8 tabul8ion of 8-words used in l8r document8ion wi not8ion 4thos not yet included in top lists (then optn2ignore easy conjug8ions && pre/suffixes);
 use strict;use warnings;use utf8;use v5.10;use Octology::a8;use Octology::b8;
-my $d8VS='HCALCUL8';       my $clrf=1;my $fulf=0;my $argz='';$argz= join(' ',@ARGV) if(@ARGV);my $Stxt='';
-my $edVS=        '';       my %fulc=();  $fulf=1 if($argz=~ /(^|\s)-?-?f/i); # find -?f(ull) flag to count && sort all chars at end
+my $d8VS='HCALCUL8';       my $clrf=1;my $fulf=0;my $argz='';$argz= join(' ',@ARGV) if(@ARGV);my $Stxt='';my $folf=0; # add 4-Or-Less-Flag
+my $edVS=        '';       my %fulc=();  $fulf=1 if($argz=~ /(^|\s)-?-?f/i   ); # find -?f(ull) flag to count && sort all         characters at end
+my %fol2;my %fol3;my %fol4;my %fol5=();  $folf=1 if($argz=~ /(^|\s)-?-?[0-9]/); # find -?digitz flag to count && sort all maximum char-words at end
+my %fol6;my %fol7;my %fol8;my %fol9=();my %fo10;my %fo11;my %fo12;my %fo13;my %fo14;my %fo15;my %fo16;my %fo17;my %fo18;
 if($argz=~ /(^|\s)-?-?[nc]/i){$clrf=0;} # accepts -?(no)?c(olor)? argument for vim ':r!8plc c' to be like ':r!8plc|sS'
 my $efyl ='8.txt';my @lcnt;$lcnt[$_]=0 for(0..61);my @acnt;$acnt[$_]=0 for(0..61);my $done=0;my $t0tl=0;my $text;my $actx;my $sclc;my $gttl=0;
 unless(-r         "$efyl"){$efyl=$ENV{'HOME'} . "/dox/2du/$efyl" if(exists($ENV{'HOME'}));} # try2add likely path when file not in local dir
 open(my $eflh,'<',"$efyl") or die "!*EROR*! Couldn't open eight-file to read counts! $!";binmode $eflh,':encoding(UTF-8)';
 while( <$eflh>){my $ldat=$_;$done=1 if(/^$/); # sets done to true when first blank line encountered
   if(/^#.*?\$d8VS\s*=\s*(['"])([0-9A-Za-z._]{8})\1\s*;/){$edVS=$2;} # this match regex seems to still need \1 && presumably ${1} would work in s/// replacement
-  if(!$done &&  $ldat  !~ /^\s*#/){ # the header lines (&& potentially l8r blocks) have pound as first non-whitespace character design8ing comments to skip
-    if(  length($ldat) >= 16  ){my $pltr;
-      if(substr($ldat,    16,1) eq '8'){$pltr=substr($ldat,15,1);} # hard-coding columns as aligned interest (used to be 14 && 13, now 16 && 15)
-      elsif(    $ldat =~   /^.*?(\w)8/){$pltr=$1;} # for a few lines with particularly long 8 names, the 8 wouldn't fit in the same column so search for 1st 8
+  if  (!$done &&  $ldat  !~ /^\s*#/){ # the header lines (&& potentially l8r blocks) have pound as first non-whitespace character design8ing comments to skip
+    if     (length($ldat) >= 16  ){my $pltr;
+      if   (substr($ldat,    16,1) eq '8'){$pltr=substr($ldat,15,1);} # hard-coding columns as aligned interest (used to be 14 && 13, now 16 && 15)
+      elsif(       $ldat =~   /^.*?(\w)8/){$pltr=$1;} # for a few lines with particularly long 8 names, the 8 wouldn't fit in the same column so srch for 1st 8
+      if   (       $ldat =~   /^\s*(\w{0,17}8\w{0,17})(\s|:)/i && $folf){my $ewrd=$1;
+        if   (length($ewrd) <= 2){$fol2{$ewrd} = 0 if(!exists($fol2{$ewrd}));$fol2{$ewrd}++;}
+        elsif(length($ewrd) == 3){$fol3{$ewrd} = 0 if(!exists($fol3{$ewrd}));$fol3{$ewrd}++;}
+        elsif(length($ewrd) == 4){$fol4{$ewrd} = 0 if(!exists($fol4{$ewrd}));$fol4{$ewrd}++;}
+        elsif(length($ewrd) == 5){$fol5{$ewrd} = 0 if(!exists($fol5{$ewrd}));$fol5{$ewrd}++;}
+        elsif(length($ewrd) == 6){$fol6{$ewrd} = 0 if(!exists($fol6{$ewrd}));$fol6{$ewrd}++;}
+        elsif(length($ewrd) == 7){$fol7{$ewrd} = 0 if(!exists($fol7{$ewrd}));$fol7{$ewrd}++;}
+        elsif(length($ewrd) == 8){$fol8{$ewrd} = 0 if(!exists($fol8{$ewrd}));$fol8{$ewrd}++;}
+        elsif(length($ewrd) == 9){$fol9{$ewrd} = 0 if(!exists($fol9{$ewrd}));$fol9{$ewrd}++;}
+        elsif(length($ewrd) ==10){$fo10{$ewrd} = 0 if(!exists($fo10{$ewrd}));$fo10{$ewrd}++;}
+        elsif(length($ewrd) ==11){$fo11{$ewrd} = 0 if(!exists($fo11{$ewrd}));$fo11{$ewrd}++;}
+        elsif(length($ewrd) ==12){$fo12{$ewrd} = 0 if(!exists($fo12{$ewrd}));$fo12{$ewrd}++;}
+        elsif(length($ewrd) ==13){$fo13{$ewrd} = 0 if(!exists($fo13{$ewrd}));$fo13{$ewrd}++;}
+        elsif(length($ewrd) ==14){$fo14{$ewrd} = 0 if(!exists($fo14{$ewrd}));$fo14{$ewrd}++;}
+        elsif(length($ewrd) ==15){$fo15{$ewrd} = 0 if(!exists($fo15{$ewrd}));$fo15{$ewrd}++;}
+        elsif(length($ewrd) ==16){$fo16{$ewrd} = 0 if(!exists($fo16{$ewrd}));$fo16{$ewrd}++;}
+        elsif(length($ewrd) ==17){$fo17{$ewrd} = 0 if(!exists($fo17{$ewrd}));$fo17{$ewrd}++;}
+        elsif(length($ewrd) ==18){$fo18{$ewrd} = 0 if(!exists($fo18{$ewrd}));$fo18{$ewrd}++;}}
       $lcnt[b10($pltr)]++    if(defined($pltr) );}}
       $text .=  $ldat;       if($fulf){my @chrz= split(//,$ldat);for my $char (@chrz){$fulc{$char}=0 unless(exists($fulc{$char}));$fulc{$char}++;}}}
 close($eflh)               or die "!*EROR*! Couldn't close eight-file after reading! $!";
@@ -40,7 +61,24 @@ for(@scnt){                                                                     
 $Stxt.=                                            sprintf   "$B-------- -- ---\n";my $cttl=$M . cma($gttl);$cttl=~ s/(,)/$Y$1$M/g; # pre-colr comma'd total
 $Stxt.=                                            sprintf("${C}t${M}0${C}tlz    %s %s$W :  $B(${R}b10$B)  %s  %s$W;$z",
                                                     b8colr(sprintf("%2s",b64($t0tl))),b8colr(sprintf("%2s",b64($gttl))),$ct0t,$cttl);
-if($fulf){$Stxt.="\n";my %cvlz=reverse(%fulc);my @ccnt= sort { $a <=> $b } keys(%cvlz);my $sumn=0; # 2-colms of full counts fits nice under 50 lines so far
+if ($folf){$Stxt.="\n";my @folk=sort(keys(%fol2));$Stxt.= $Y . cma(scalar(@folk)) . " $G@folk\n";   # hopefully just dump sorted 8-words that R 4 or less chars
+                          @folk=sort(keys(%fol3));$Stxt.= $Y . cma(scalar(@folk)) . " $G@folk\n";   # HCOL8fol:had 15 ?8, 33 3-letrz, && 60 4-letrz (108 t0tl)
+                          @folk=sort(keys(%fol4));$Stxt.= $Y . cma(scalar(@folk)) . " $G@folk\n";   #   mAB 12 of wich canB DmOtd 2mk nw 96 desciptz like sumb
+                          @folk=sort(keys(%fol5));$Stxt.= $Y . cma(scalar(@folk)) . " $G@folk\n";   #   thN l8r apNded only  97  5-letr wordz (1pastOwn 96pAge)
+                          @folk=sort(keys(%fol6));$Stxt.= $Y . cma(scalar(@folk)) . " $G@folk\n";   #   thN l8r apNded only 163  6-letr wordz (too many 2worry
+                          @folk=sort(keys(%fol7));$Stxt.= $Y . cma(scalar(@folk)) . " $G@folk\n";   #   thN l8r apNded only 200  7-letr wordz    muchmoreabout)
+                          @folk=sort(keys(%fol8));$Stxt.= $Y . cma(scalar(@folk)) . " $G@folk\n";   #   thN l8r apNded only 132  8-letr wordz
+                          @folk=sort(keys(%fol9));$Stxt.= $Y . cma(scalar(@folk)) . " $G@folk\n";   #   thN l8r apNded only 110  9-letr wordz
+                          @folk=sort(keys(%fo10));$Stxt.= $Y . cma(scalar(@folk)) . " $G@folk\n";   #   thN l8r apNded only  76 10-letr wordz
+#                         @folk=sort(keys(%fo11));$Stxt.= $Y . cma(scalar(@folk)) . " $G@folk\n";   #   thN l8r apNded only  63 11-letr wordz
+#                         @folk=sort(keys(%fo12));$Stxt.= $Y . cma(scalar(@folk)) . " $G@folk\n";   #   thN l8r apNded only  54 12-letr wordz
+#                         @folk=sort(keys(%fo13));$Stxt.= $Y . cma(scalar(@folk)) . " $G@folk\n";   #   thN l8r apNded only  37 13-letr wordz
+#                         @folk=sort(keys(%fo14));$Stxt.= $Y . cma(scalar(@folk)) . " $G@folk\n";   #   thN l8r apNded only  23 14-letr wordz
+#                         @folk=sort(keys(%fo15));$Stxt.= $Y . cma(scalar(@folk)) . " $G@folk\n";   #   thN l8r apNded only   3 15-letr wordz
+#                         @folk=sort(keys(%fo16));$Stxt.= $Y . cma(scalar(@folk)) . " $G@folk\n";   #   thN l8r apNded only   6 16-letr wordz
+#                         @folk=sort(keys(%fo17));$Stxt.= $Y . cma(scalar(@folk)) . " $G@folk\n";   #   thN l8r apNded only   1 17-letr wordz
+#                         @folk=sort(keys(%fo18));$Stxt.= $Y . cma(scalar(@folk)) . " $G@folk\n";   #   thN l8r apNded only   0 18-letr wordz (long tail...)
+}if($fulf){$Stxt.="\n";my %cvlz=reverse(%fulc);my @ccnt= sort { $a <=> $b } keys(%cvlz);my $sumn=0; # 2-colms of full counts fits nice under 50 lines so far
   for     my $cndx (0..  int(@ccnt/2)){my $coun=$ccnt[$cndx];        my $pcnt=0;my $w82o=''; # FullFile CharCounts abov as Values (or values(%fulc) nEdzUniq)
     if($cndx < int(@ccnt/2)){
       for my $char (sort(keys(%fulc))){ # then above CharCouniNDeX loops just unique counts && (was Probably) PrintCouNT before Wait to Output8

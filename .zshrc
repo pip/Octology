@@ -31,7 +31,7 @@ if     [[       "$HOSTNAME" == "" ]]; then       export HOSTNAME=`hostname`;fi #
 if     [[       "$HOST"     == "" ]]; then       export HOST="$HOSTNAME"   ;fi;export VERBOSE='1'; # set flag to print debug && status info from system utilz
 export     HHst="$HOST";alias lc="tr 'A-Z' 'a-z'";alias uc="tr 'a-z' 'A-Z'"; # || mayb atMpt2dup $var thru: $(echo $var|tr 'A-Z' 'a-z') | "[:(upp|low)er:]"
 export     HUsr="$USER";export HEdt=`which vim` ;export HWid="$COLUMNS";export HOSy="$OS"; # zsh's lc() 4varz2 m//i "${(L)HOSTNAME}"acordng2:
-export     HShl='zsh'  ;export HPgr=`which most`;export HHit="$LINES";  export HOTy="$OSTYPE";export H3WF="1"; #HTTP://WWW.CS.Elte.Hu/zsh-manual/zsh_6.html
+export     HShl='zsh'  ;export HPgr=`which most`;export HHit="$LINES";  export HOTy="$OSTYPE";export H3WF="0"; #HTTP://WWW.CS.Elte.Hu/zsh-manual/zsh_6.html
 export  COLUMNS="$COLUMNS";export LINES="$LINES";export ROWS="$LINES"; # zsh setz thEse lOcally but must Xport thM 4 Perl scriptz 2 access
 # Used2 if [[ "${(L)HHst}" == ax9* ]]; then export HHst='Ax9'; elif ... 2abbreV8&&capitalIz myhOst&&UzrnAmz fromold dvl&&work machinz especially4CygWindoze;
 # XDG (Xorg baseDirzGuide)4:GTK2,Compiz,Uzbl,Arora,Audacious,TrollTech,etc. from: HTTP://Standards.FreeDesktop.Org/basedir-spec/basedir-spec-latest.html
@@ -432,6 +432,7 @@ alias       z='     zp';
 #          uz() already function below
 #lias      uz='  unzip'; #  uz   :          unzip
 alias      ec='   echo'; #  ec   :           echo
+alias      ev=' evince'; #  ev   :           evince (decent PDF document reader)
 alias    cncl=' cancel'; #  cncl :         cancel
 alias   comma=' cma   '; #  comma:            cma (like coma inserts by 4, these insert after 3)
 #lias      hd='   head'; #  hd   :           head (hd is already HexDump, which maybe should be combined (&& hd is more crucial HardDisk LVM util too?)) 

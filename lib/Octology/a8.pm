@@ -765,7 +765,7 @@ sub sumb{  my $widt=0;$widt=1 if(exists($ENV{'COLUMNS'}) && $ENV{'COLUMNS'} >= 1
     'lodH'  => "a8  load ~/.Hrc into d8a-structure and print out colorfully (like `a8`)   ", # mAB rEtIr once a8 struct&&color becomes more capable
     'lrc'   => "a8 *utility to gener8 ~/.lsrc file from ~/.lrc format   (for LS_COLORS)   ",
    #'oupd'  => "a8  UPD8 ~/dvl/t8/Octl/Octology/ git repo with l8st files from ~/ dir     ", # this is too fragile to include in t8/Octl/Octology/.git yet
-    'pm2x'  => 'a8  Pal8Map to "2" eXtended (based on Color::Similarity::RGB->distance)   ', # add optz2gNr8 clOsSt 8pal8z 3mor tImz2filup all xtrm256colrz
+    'pm2x'  => "a8  Pal8Map to '2' eXtended (based on Color::Similarity::RGB->distance)   ", # add optz2gNr8 clOsSt 8pal8z 3mor tImz2filup all xtrm256colrz
     'reso'  => "a8  display RESOlution list gener8or  (parameters will match each line)   ", # mAB color
     'S'     => "a8 *converter from c8 (col8) V8 format to ANSI eScape codes (FbSGR in )   ",
     'S2'    => "a8  converter from eScape encoded input to new compact c8 (col8) format   ",

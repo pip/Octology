@@ -1,5 +1,5 @@
 # D6RMF1V1:8.txt - by8π : JAPH : K3wlD00d : 1337H4xr : PipStuart's Octology (hopefully eventually an Ontology of 8) - Convention, Conversion, && Categoriz8ion:
-# $VERSION='0.0';$d8VS='HCALISOL'; # Octology attempts to rel8 the universe through medit8ion on mnemonic abbreV8ion (via 8-based  limit8ion) &&    elucid8ion.
+# $VERSION='0.0';$d8VS='HCOL3afc'; # Octology attempts to rel8 the universe through medit8ion on mnemonic abbreV8ion (via 8-based  limit8ion) &&    elucid8ion.
 # CEBBICTI:Crossing Every Bridge Before I Come To It? I.e., not a d8 stamp. Trying to make my Dad's birthday (August 8th) more special by thinking 2far ahead?
 # Octology intends to pursue implic8ion && ramific8ion as substantE8ion for adequ8 particip8ion, if not also 2 oblig8ion toward implement8ion &&   promulg8ion.
 # Conceptually, Octology is a system st8ing that every organiz8ional principle is valuable, but 8 tends to be a nearly ideal starting place for most d8a sets.
@@ -113,6 +113,7 @@ compartmentaliz8ion
            pror8   :don8 based on proportions of used resources
             reb8   :don8 to refund portions of prior payments?
           evacU8   :safety && emergency escape planning tool and maybe collabor8 on upd8ing safer harder-to-puncture explosive rail && truck trailer car design
+       consider8   :maybe niceness r8ing or particular cur8d discussion or news topics hopefully worthy of some consider8ion towards contempl8ion
        commiser8   :don8 to rel8d people who had to evacU8 for some reason
            narr8   :or8-based tool for describing events && recollections to tell and share cohesive stories which may layer meta-inform8ion on existing media
          cooper8   :maybe altern8 for coordin8 is also like cooper8 && collabor8, each with possibly nuanced specializ8ions like an oversight or sharing focus
@@ -126,8 +127,9 @@ compartmentaliz8ion
          design8   : && these are probably implicit r8-based voting tools too
         denomin8
           indic8
-       authorit8ive
-         stalem8
+         inclin8ion
+       authorit8ive:maybe authoring tools or d8abase of author details for code, books, articles, blogs, lyrics, etc.
+         stalem8   :maybe for ckm8  end-game d8abase for l8r analysis && incorpor8ion into eventual AI opponent besides just StockFish && good competitors
             ckm8   :"CheckMate" is hopefully Octology's eventually superb Chess applic8ion
               y8   :"yate" is an obsolete term for gate but could probably be a uniquely useful && nicely abbreV8d varE8ion on the concept
               g8   :tool to set gates as thresholds which gener8 events &&   (... and g8 is already a V8 for git command and "gait" tool for anim8 walk-cycles)
@@ -349,6 +351,7 @@ internationaliz8ion:tools to transl8 for I18N the document8ion && applic8ion int
            bloV8
              bl8ant
              tr8or
+      unexagger8d
         exagger8
          overst8
        prevaric8
@@ -422,6 +425,7 @@ internationaliz8ion:tools to transl8 for I18N the document8ion && applic8ion int
           desol8   :first Dubstep track from the Before The Storm EP by Obsidia (released around Dec. 9th,2013)
            viol8
             inm8
+           appL8   :typically an "appellate court" rel8ing to or taking account of appeals
          exoner8
          exculp8
          vindic8
@@ -590,12 +594,14 @@ internationaliz8ion:tools to transl8 for I18N the document8ion && applic8ion int
        pontific8   :generally dogmatic && pompous talk or actually referring to the government of the Roman Catholic Church or the Pope (Francis is gr8!)
          auspic8
       prefabric8   :fabric8 synthetically, artificially, or stereotypically && unoriginally
+       unfabric8d
          fabric8
          charic8ure:maybe some f8 f0nt character manipul8ion utility, instead of n8ural aggreg8 comedic represent8ions of popular figures or similar
+         unimit8d
            imit8   :comedy tools
        imperson8
-          p8riz8   :imit8ion of the father
        improvis8ion
+          p8riz8   :imit8ion of the father
         satiriz8ion
       sarcastic8
            infl8   :special core d8a manipul8ion tool
@@ -638,6 +644,7 @@ internationaliz8ion:tools to transl8 for I18N the document8ion && applic8ion int
         deceler8
         perpetu8   :simul8ion scheduler or d8a prioritiz8ion for propag8ion
         exacerb8
+        unsimul8d
           motiv8   :tool to help motivate, encourage, && inspire users to strive for lofty goals && to achieve meaningful levels of success
          inspir8ion
           medic8   :drug manager with reminders of when to take them && refill prescriptions
@@ -666,6 +673,7 @@ internationaliz8ion:tools to transl8 for I18N the document8ion && applic8ion int
      romanticiz8ion
          delect8
           flirt8ion
+      affection8
        reciproc8   :maybe this should be regrouped with main math oper8ions instead of intim8 rel8ionship stuff here
          infatu8
         invigor8
@@ -879,6 +887,7 @@ internationaliz8ion:tools to transl8 for I18N the document8ion && applic8ion int
          carbur8or :apparatus in which coal gas, hydrogen, or air is passed through or over a vol8ile hydrocarbon to confer or increase power (from Chemistry)
           satur8   :maybe some tool to implement HSLuv perceptually uniform color space based on Hue, Satur8ion, && Lightness with mapping to RGB, CMYK, etc.
         adulter8
+      unadulter8
        contamin8
      decontamin8
        consolid8
@@ -1023,6 +1032,8 @@ internationaliz8ion:tools to transl8 for I18N the document8ion && applic8ion int
          obstin8
          retard8ion
       bastardiz8ion
+   bureaucratiz8ion
+     infantiliz8ion
       neutraliz8ion
        socializ8ion
         polariz8ion
@@ -1034,6 +1045,7 @@ internationaliz8ion:tools to transl8 for I18N the document8ion && applic8ion int
        victimiz8ion
         ramific8ion
          examin8ion
+         realiz8ion
        constern8
         gasific8ion
         gamific8ion
@@ -1060,7 +1072,9 @@ internationaliz8ion:tools to transl8 for I18N the document8ion && applic8ion int
            emir8   :office   or domain controlled by an emir
             leg8   :official emissary, ambassador, or envoy representing a government or the pope
            dict8or :maybe some mechanism for evalU8ing historical && modern rulers according to aspects of authoritarianism && levels of devast8ion caused
-           pred8or
+           pred8or :maybe some serious analysis of sexual or otherwise violent criminals, or some type of hunting && combat or survival && stealth type game
+         procur8or :agent, altern8, deputy, proxy, proctor, or represent8ive who manages another's legal affairs, or provincial governor from Roman antiquity
+         surrog8   :like procur8or but also frequently refers to a foster parent or child (such that there is typically no rel8ion by blood or law)
             SSN8   :code for an "assassin8" FPS game like Half-Life or with some ambitious elements of OverWatch using cr8 engine?
               N8   :pronunC8ion as "innate", to be a succinct primary general d8a-set manager (probably cut because pronunC8ion && spelling are too far off)
              DN8   :DNA (Deoxyribo-Nucleic Acid8) human genome sequencer/modeler && maybe chromosome strand splicing && protein-folding type puzzle games
@@ -1072,6 +1086,8 @@ internationaliz8ion:tools to transl8 for I18N the document8ion && applic8ion int
 #   among ultim8ly all 8-words. This should be explored in a prioritized && efficient fashion, preferring rel8ively consistent approaches to extrapol8ion;
 
 # Those concepts which remain isol8d below seem to fail on some level of qualific8ion for direct consider8ion as worthwhile names of unique new applic8ions;
+            Dec8urIllinois :largest city && county seat of Macon  County, founded in 1829 along Sangamon River && Lake Dec8ur, with 2016 popul8ion of 72,706
+            Dec8urGeorgia  :just a  city && county seat of DeKalb County, part of Atlanta metropolitan area, has MARTA rails , with 2013 popul8ion of 20,148
        UnitedSt8s          :USA d8a, maps, details, history, popul8ion, etc. for each of the sepR8 50 St8s, WashingtonDC capital, && other assoC8d territories
         Unitedn8ions       :tool to monitor the UN, an intergovernmental organiz8ion tasked to promote intern8ional cooper8ion && to crE8 && maintain order
  UnitedArabEmir8s          :UAE also just called "Emirates", which is an absolute monarchy in Western Asia on the Persian Gulf && is a feder8ion of 7 emir8s
@@ -1084,6 +1100,7 @@ internationaliz8ion:tools to transl8 for I18N the document8ion && applic8ion int
        Colbertn8ion        :Stephen ColbertReport show back on ComedyCentral from before he took over the CBS l8Show, premiering on September 8th of 2015
               n8Silver     :model math user with generally rL8ively accur8 prediction models (@NateSilver538 founder/editor-in-chief of FiveThirtyEight.Com)
               r8chelMaddow :TRMS (TheRachelMaddowShow) as a slight, but deliber8, mispronunC8ion of the very bl8antly left-leaning MSNBC host's name
+   GerardusMerc8or         :Flemish geographer who lived in Germany from 1512-1594 and invented the projection of maps of the globe which bears his surname
      Catherinez8aJones     :talented actress && fellow individual diagnosed with BiPolar Disorder, although I hope we both continue living well with it
          PlaySt8ion        :Sony's series of videogame consoles && hardware media players (which bear my initials && are my favor8s in every console gener8ion)
               v8rPercussion:Vater company that made my double-sided drum-pad && sweet Los Angeles drum-sticks that my awesome little brother Tim gifted to me
@@ -3832,4 +3849,19 @@ space in order to start fleshing out my own aspir8ions for developing distinctiv
 HC9LKhan:HTTPS://YouTube.Com/watch?v=_Lj_diKtrzw is intriguing TEDx talk by MinaKhan on HC8 about MixedReality MathLand to teach math && physics through play;
 HCALFMe2:HTTPS://The-American-Interest.Com/2017/12/06/the-warlock-hunt is a totally phenomenal article on #MeToo too far that Dr. Peterson tweeted out today;
 HCALKGr8:Just want to note that I have lifted the 888 limit8ion on the list of top 8-words today && begun including many distinct prefixed varE8ions but I am
-still generally not crE8ing sepR8 suffix conjug8ions, except when they occupy particularly unique interpret8ions, like "predate", "predator", && "predation";
+still generally not crE8ing sepR8 suffix conjug8ions, except when they occupy particularly unique interpret8ions, like "predate", "predator", && "predation".
+Regarding future plans to develop some form of ckm8 AI HTTPs://Reddit.Com/r/programming/comments/7i0f8i/deepmind_learns_chess_from_scratch_beats_the_best may
+be a good resource to review again. Regarding rel8d GAI safety issue explor8ion for l8r, evalU8 HTTP://Yudkowsky.Net/singularity/aibox experiments thoroughly;
+HCCLBDb8:HTTPS://Kialo.Com is a somewhat capable topical deb8 forum with helpful tree-based hierarchical organiz8ion as well as curious radial represent8ion;
+HCDLAKP2:KeePass2 USB Keyboard Plugin should let my GalaxyS8 with priv8 d8abase be used to login on any rel8ively untrusted remote machines I can't install2;
+HCEL4wrd:HTTPS://Mubaris.Com/2017/12/14/word2vec is my first introduction to a lot of new AI && comput8ional linguistic rel8d NLP (n8ural Language Processing)
+concepts && techniques like embedding words as vectors with each having integer forms as well through Google TensorFlow 2-layer NN (NeuralNet) Python library.
+It uses a prediction model rather than frequency, analyzing to make w8d guesses through varE8ion 0) CBoW (Continuous Bag of Words) && 1) SkipGram such that
+the former predicts words from context while latter predicts context from each word. These result in visualiz8ions nicely conveying clusters of similar words;
+HCHLBadA:Recently a tweet from HTTPS://StevenPinker.Com linked to a new article at HTTP://Quillette.Com/2017/12/14/irrational-ai-nxiety/#comment-12120 which
+describes the "Value Alignment" issue as a "pseudo-problem". It seems both are unfamiliar with Yudkowski or otherwise uninformed, so I posted a comment there;
+HCHLD11a:HTTP://Diiagrams.Com is an interesting interactive site for gener8ing ASCII diagrams from rel8ively intuitive drawing primitives, to stuD l8r for m8.
+HTTPS://GitHub.Com/eliukblau/pixterm is a nice tool to render images in true-color monospaced ANSI terminals that include lower-half block Unicode character;
+HCHLJBrd:HTTPS://Google.GitHub.IO/boardgame.io may contain code which likely could prove ultim8ly useful for attempting to eventually make ckm8 multi-player;
+HCOL8SIG:HTTPS://Medium.Com/incerto/on-neo-cons-and-their-mental-defects-d12685585b11 about interventionistas not having Skin-In-the-Game was linked from /.;
+HCOLD8OK:HTTPS://Brilliant.Org/standupmaths may be good weekly puzzle site mentioned from U2b channel video about impossible to solve Rubik's Cube form8ions;
