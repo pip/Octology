@@ -1,5 +1,5 @@
 # D6RMF1V1:8.txt - by8π : JAPH : K3wlD00d : 1337H4xr : PipStuart's Octology (hopefully eventually an Ontology of 8) - Convention, Conversion, && Categoriz8ion:
-# $VERSION='0.0';$d8VS='HCOL3afc'; # Octology attempts to rel8 the universe through medit8ion on mnemonic abbreV8ion (via 8-based  limit8ion) &&    elucid8ion.
+# $VERSION='0.0';$d8VS='HCOLLATE'; # Octology attempts to rel8 the universe through medit8ion on mnemonic abbreV8ion (via 8-based  limit8ion) &&    elucid8ion.
 # CEBBICTI:Crossing Every Bridge Before I Come To It? I.e., not a d8 stamp. Trying to make my Dad's birthday (August 8th) more special by thinking 2far ahead?
 # Octology intends to pursue implic8ion && ramific8ion as substantE8ion for adequ8 particip8ion, if not also 2 oblig8ion toward implement8ion &&   promulg8ion.
 # Conceptually, Octology is a system st8ing that every organiz8ional principle is valuable, but 8 tends to be a nearly ideal starting place for most d8a sets.
@@ -60,7 +60,7 @@
        fragment8ion:dynamic    d8a or memory manager for defragmenting or initE8ing or scheduling autom8d garbage collection to enable efficient alloc8ion l8r
          comput8ion:manage long-running processor-intensive tasks or Math::BigFloat unlimited-precision calcul8ions like prime-factoriz8ion or long sequences
            emul8   :tools for managing various emul8ors of different hardware platforms (particularly game consoles) as well as terminal && other hardware
-              m8   :general graph editor, defaulting to basic directed graphs without other constraints, but eventually supporting every common type
+              m8   :general graph editor, default basic directed graphs without other constraints, eventually supporting every common type,also Markup ManpUl8n
          abbreV8   :general aliasing && enhanced wrapping mechanism for commands as well as m8 specialized for mapping arbitrary abbreviations visually
         nomencl8ure:especially technical V8 naming && not8ion conventions
             rel8   :m8 specialized for mapping diverse social or other networks with various relationships
@@ -191,7 +191,7 @@ internationaliz8ion:tools to transl8 for I18N the document8ion && applic8ion int
         coloriz8ion
      personaliz8ion
        rasteriz8ion
-          pixel8   :dividing an image into pixels (typically for digital display or storage), or enlargement revealing pixel details, or disguise method
+           pixL8   :dividing an image into pixels (typically for digital display or storage), or enlargement revealing pixel details, or disguise method
        configur8   :specialized system .conf manager && editor as file-management && templ8 gener8ion compartmentaliz8ion of administr8ion tools
            oper8   :OperatingSystem manager or forum oversight Operator status or VOIP like telephone Operator or medical procedure Operation tracker?
          calibr8   :system monitoring && tuning
@@ -1102,8 +1102,11 @@ internationaliz8ion:tools to transl8 for I18N the document8ion && applic8ion int
               r8chelMaddow :TRMS (TheRachelMaddowShow) as a slight, but deliber8, mispronunC8ion of the very bl8antly left-leaning MSNBC host's name
    GerardusMerc8or         :Flemish geographer who lived in Germany from 1512-1594 and invented the projection of maps of the globe which bears his surname
      Catherinez8aJones     :talented actress && fellow individual diagnosed with BiPolar Disorder, although I hope we both continue living well with it
+           Colg8.Edu       :a priv8 top liberal arts university in Central New York St8, which had at one time 2,900 undergradu8 students pursuing 55 majors
+           Colg8.Com       :oral health && dental care company mainly selling toothpastes (including for possible teeth whitening), toothbrushes, && mouthwash
          PlaySt8ion        :Sony's series of videogame consoles && hardware media players (which bear my initials && are my favor8s in every console gener8ion)
               v8rPercussion:Vater company that made my double-sided drum-pad && sweet Los Angeles drum-sticks that my awesome little brother Tim gifted to me
+# There are probably many other noteworthy people, places, products, etc. which also incorpor8 an "8" in their names, to eventually consider including too;
 
   demonstr8ion
 
@@ -3864,4 +3867,5 @@ HCHLD11a:HTTP://Diiagrams.Com is an interesting interactive site for gener8ing A
 HTTPS://GitHub.Com/eliukblau/pixterm is a nice tool to render images in true-color monospaced ANSI terminals that include lower-half block Unicode character;
 HCHLJBrd:HTTPS://Google.GitHub.IO/boardgame.io may contain code which likely could prove ultim8ly useful for attempting to eventually make ckm8 multi-player;
 HCOL8SIG:HTTPS://Medium.Com/incerto/on-neo-cons-and-their-mental-defects-d12685585b11 about interventionistas not having Skin-In-the-Game was linked from /.;
-HCOLD8OK:HTTPS://Brilliant.Org/standupmaths may be good weekly puzzle site mentioned from U2b channel video about impossible to solve Rubik's Cube form8ions;
+HCOLD8OK:HTTPS://Brilliant.Org/standupmaths may be good weekly puzzle site mentioned from U2b channel video about impossible-to-solve Rubik's Cube form8ions;
+HCOLN2HN:HTTP://Cipht.Net/2017/10/17/build-your-own-shell.html linked off HackerNews itself linked good for C HTTPS://Lysator.Liu.Se/c/ten-commandments.html ;

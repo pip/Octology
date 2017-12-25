@@ -64,8 +64,8 @@ $Stxt.=                                            sprintf("${C}t${M}0${C}tlz   
 if ($folf){$Stxt.="\n";my @folk=sort(keys(%fol2));$Stxt.= $Y . cma(scalar(@folk)) . " $G@folk\n";   # hopefully just dump sorted 8-words that R 4 or less chars
                           @folk=sort(keys(%fol3));$Stxt.= $Y . cma(scalar(@folk)) . " $G@folk\n";   # HCOL8fol:had 15 ?8, 33 3-letrz, && 60 4-letrz (108 t0tl)
                           @folk=sort(keys(%fol4));$Stxt.= $Y . cma(scalar(@folk)) . " $G@folk\n";   #   mAB 12 of wich canB DmOtd 2mk nw 96 desciptz like sumb
-                          @folk=sort(keys(%fol5));$Stxt.= $Y . cma(scalar(@folk)) . " $G@folk\n";   #   thN l8r apNded only  97  5-letr wordz (1pastOwn 96pAge)
-                          @folk=sort(keys(%fol6));$Stxt.= $Y . cma(scalar(@folk)) . " $G@folk\n";   #   thN l8r apNded only 163  6-letr wordz (too many 2worry
+                          @folk=sort(keys(%fol5));$Stxt.= $Y . cma(scalar(@folk)) . " $G@folk\n";   #   thN l8r apNded only  98  5-letr wordz (2pastOwn 96pAge)
+                          @folk=sort(keys(%fol6));$Stxt.= $Y . cma(scalar(@folk)) . " $G@folk\n";   #   thN l8r apNded only 162  6-letr wordz (too many 2worry
                           @folk=sort(keys(%fol7));$Stxt.= $Y . cma(scalar(@folk)) . " $G@folk\n";   #   thN l8r apNded only 200  7-letr wordz    muchmoreabout)
                           @folk=sort(keys(%fol8));$Stxt.= $Y . cma(scalar(@folk)) . " $G@folk\n";   #   thN l8r apNded only 132  8-letr wordz
                           @folk=sort(keys(%fol9));$Stxt.= $Y . cma(scalar(@folk)) . " $G@folk\n";   #   thN l8r apNded only 110  9-letr wordz
@@ -76,8 +76,10 @@ if ($folf){$Stxt.="\n";my @folk=sort(keys(%fol2));$Stxt.= $Y . cma(scalar(@folk)
 #                         @folk=sort(keys(%fo14));$Stxt.= $Y . cma(scalar(@folk)) . " $G@folk\n";   #   thN l8r apNded only  23 14-letr wordz
 #                         @folk=sort(keys(%fo15));$Stxt.= $Y . cma(scalar(@folk)) . " $G@folk\n";   #   thN l8r apNded only   3 15-letr wordz
 #                         @folk=sort(keys(%fo16));$Stxt.= $Y . cma(scalar(@folk)) . " $G@folk\n";   #   thN l8r apNded only   6 16-letr wordz
-#                         @folk=sort(keys(%fo17));$Stxt.= $Y . cma(scalar(@folk)) . " $G@folk\n";   #   thN l8r apNded only   1 17-letr wordz
-#                         @folk=sort(keys(%fo18));$Stxt.= $Y . cma(scalar(@folk)) . " $G@folk\n";   #   thN l8r apNded only   0 18-letr wordz (long tail...)
+#                         @folk=sort(keys(%fo17));$Stxt.= $Y . cma(scalar(@folk)) . " $G@folk\n";   #   thN l8r apNded only   1 17-letr wordz (longer narrow
+#                         @folk=sort(keys(%fo18));$Stxt.= $Y . cma(scalar(@folk)) . " $G@folk\n";   #   thN l8r apNded only   0 18-letr wordz    tail trail...)
+# maybe hide 12 including already existing in bin/ to form into next sumb 96, then hide 2 more for next 96 of just 5-letrz, then maybe add previously culled
+#   14 then 4 blank entries then 78 of 6-letrz, then next 96 page of remaining 84 6-letrz then 4 blanks then first 8 7-letrz, then 2 full 96 pagez of 7-letz;
 }if($fulf){$Stxt.="\n";my %cvlz=reverse(%fulc);my @ccnt= sort { $a <=> $b } keys(%cvlz);my $sumn=0; # 2-colms of full counts fits nice under 50 lines so far
   for     my $cndx (0..  int(@ccnt/2)){my $coun=$ccnt[$cndx];        my $pcnt=0;my $w82o=''; # FullFile CharCounts abov as Values (or values(%fulc) nEdzUniq)
     if($cndx < int(@ccnt/2)){

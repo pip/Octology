@@ -1,48 +1,48 @@
-# F5VM5oZT:b8a.ls crE8d by PipStuart <Pip@CPAN.Org> to sepR8 Octology fE8ure priorities for scheduled milestone release goals;$VERSION='0.0';$d8VS='HC9L9FbS';
+# F5VM5oZT:b8a.ls crE8d by PipStuart <Pip@CPAN.Org> to sepR8 Octology fE8ure priorities for scheduled milestone release goals;$VERSION='0.0';$d8VS='HCPLAYER';
 # Note:These goals should lean toward ambitious more than easy, yet be flexible enough to allow for needed adapt8ion && l8r revisions to upd8 main priorities;
 0.1 E=8sln:8psilon:HB8 WedNov 8th2017:~1Month  from  HAD:upd8 this plan 2 EnumEr8 E fE8urEz DsIrEd 4 Each of thE following d8d milEstonE stagEz && fit2 1pagE;
 0.2 Z= z8a:  zeta :I18 MonJan 8th2018:~2Monthz from 8sln:try2 complete all major core module XperimNt8ion&&shift gearZ in2 stabiliZing all Z 4m@Z&&interfaceZ;
 0.3 H= h8a:  heta :I28 ThuFeb 8th2018:~1Month  from  z8a:flesH out core docUmNt8ion witH interactive demonstr8ionz of H && upd8 g8 4future collabor8 brancHez;
 0.4 T=th8a: theta :I48 SunApr 8th2018:~2Monthz from  h8a:elabor8 Thorough auTom8d TsTz of all major fE8urez planned 4 alpha8 && gNer8 valid8ion T TsT sumRiez;
 0.5 A=alf8: alpha8:I58 TueMay 8th2018:~1Month  from th8a:core fE8urez should be well implemented&&demonstr8d 2 hopefully inspire otherz 2 help me AlphA-tSt A;
-0.6 B= b8a:  beta :I78 SunJul 8th2018:~2Monthz from alf8:main fE8urez should all solidify with intNt2 solicit more developerz 4wider B B8a-testing && feedBak;
-0.8 C=cnd8:candid8:I88 WedAug 8th2018:~1Month  from  b8a:main fE8urez should be polished 4 pOtNtial release Candid8 C in prepR8ion 4 fInal testing && feedbak;
+0.6 B= b8a:  beta :I78 SunJul 8th2018:~2Monthz from alf8:main fE8urez should all solidify with intNt2 solicit more developerz 4wider B B8a-tsting && feedBack;
+0.8 C=cnd8:candid8:I88 WedAug 8th2018:~1Month  from  b8a:main fE8urez should be polished 4 pOtNtial release Candid8 C in prepR8ion 4 fInal tsting && feedbaCk;
 1.0 R=rls8:releas8:IA8 MonOct 8th2018:~2Monthz from cnd8:1st complete majoR public Release of fE8uReful Octology v1.0 to be made fRom GitHub oveR to the CPAN;
 
 # 2du:rEordr ItMz hEr,brk old ItMz dn&&bild bak up in2 stAgz cklstz,rE4m@ dNse 1pAg Year plan4 v1.0;
-Z= # stil nEd2stuD&&XperimNt wi thEs taskz&&ordr (now th@ d8z hav bn rEstructrd 2 giv z8a an Xtra Month in2 Jan2018,admitng prIoriTz shudv bn set bak in Nov)
- b8:mkBigFloat objX,
- c8:fix ckm8 long PGN warnz&& -c SimpXit cordump,
- SGR:NBAVbv+Hh prefer S,IFi+Mm G,Rr+E R, LKl+Oo s,Cc+Tt g,UDu+Gg r layrz(wi sgr crosng Ovr,Cntr,UndrDbl)but mA want2justXpnd any nstd of <=6(or12+UIQ)chanLz,
- tFbfPpDdAaLlOoHhXxCcNnWwMmSsGgRrUuIiQq,BEeJjKkTVvYyZz?,+grups shft2 UIQ(+2+2-1),T && B rEmAin frE wi lOwcAsez alreD alOc8d text && bclr,cnsidr Fb=Cc&&Kklen,
- a8:fix S YkB|c 2!retn F:Yx01,mk brc .zsh2.bashrc tmpl8 4 Termux,prep bash,pkg inst vim perl,
- a8:fix sS 2 rEquIr -h dashd pRamz,
- a8:add Xportz h2rl&&rl2h,upd8 tstc,S2:add hedr&&SGRsectnz,
- a8:mv c8:tsgr&&gnp8 2tstc(mkng bSt posibl colrblox4consol2)&&pm2x 2cdst(or sepR8 t/*.t fIlz),a8:stuDshuf&&rm shfl,add([os]upd|h2rl|rl2h)as aliasz?,
- a8:lrc mk sure can S on xx section hedrz wi FbS,
- Simp:addcolrlayrz&&SGRf as tied sectnz d8a,
- a8:rm[cS]2f4,
- b8:s8 stRt as sort -n |some shfl flag|b8 b64(wi%bfr8)|b256|d8|dur8 && othr bSt optnz,
- c8:addSGR|Simp|cut&&cat,
- c8:rEwrIt8trm 2rEquSt f0nt layr from S2,
- c8:prym fix(b8),8trm fix basic cursor,autOnwlIn aftr cmd wrap,mk nw lAyrz 4full 256colrz,
- c8:8trm mk SGRs && cursr blink,mk input key auto-scrl botm,mk drag hilite copy clipbord,mk running .pal8 chng colrz,addOverDraw&&AutoF0ntPiggyBackOnColrToglz,
- d8:fix dic 4mor lIn joinz&&add retro cmnt failz wi suggStnz,dup dic log as mn man wrapr,
- d8:mvUtl:bak+e 2 d8:bk+e wi!$TTY wich goes up from lib/ dirz&&hndlzUTF8flnmz,,
- f8:XtNdf0nt b64 2UTF8,cma nstd of dash sepR8,9x18,2x2,3x3 resoz,&&pal8z2 b64RGBLowbitz inHrc2,
- a8:fix`a8`4lodH wi rEd&&wrIt wi quOtng,a8:mk styl 2gNr8.styl,
- a8:mo as basic vim-like UTF8 colr ReadKey pager2push more than1page of dic,mn,lsd8,etc output in2,addmore -help,upd8 sumb,cmpIl orpie src,mknwTop8shotz&&push,
- b8:q rEwrIt precedNce,
- f8:pal8 stRt SDL manager,upd8 top8 2hav dRk rgcw && brIter OP,
- U8:rEmk lrld as l8rm 2clEn.arc&&frEdrvspc,Xpct U2b8,frip,aguu alIn+acs,acs+instald,agi,mplr,
- dvl/**/*.pm new s/refcalls/isa/ like d8->w8,
- BaseCnv:UTF8,PT&&Simp:clEn,upd8POD,tst,pkg,
- p8:getScreeps shrd[12] 60+,clEnJS,tst fmt utlz,port all c&&x,tst,doc&&msgJer,cmp auth wapi2cmdz,XtNd md8a,
- p8:mk gNeric qbix(+pakr) && ckm8 d8a && fIl mngmNt 2 B apRt from rNdrng,stRt gom8 Xpct gnugo,mk othr gmz .pmz as rEUsabl pRtz 4 mor l8r,
- stuDdokr,reboot&&upd8A,bilddokrimg&&tstA2CR,pwrdnA,swpDVI&&pwrupK,synfR2K&&up17.10+TtyCursSDLrendokr(C2),swpDVIK2A,
- d8:sync lsd8 logic2a8:c8fn,
- f8:pikTop64flet&&pr0gfIlzinHrc,XtNd pal8 2 64or of256,
- f8:mk new 8let from tiglet->flet,
+Z= # stil nEd2stuD&&XperimNt wi thEs taskz&&ordr in2 Jan2018&&l8r stuf B4 Feb&&mAB eventual plan for 8 consistent nice stages,but XperimNt8ion morethan E&&Z;
+  b8:mkBigFloat objX,add cnfgUr8ion4 constructor in BaseTransl8&&4m@ing out stringific8ionz,Xplor Xpanding objX to represent Unumz,
+  c8:fix ckm8 long PGN warnz&& -c SimpXit cordump,
+  SGR:NBAVbv+Hh prefer S,IFi+Mm G,Rr+E R, LKl+Oo s,Cc+Tt g,UDu+Gg r layrz(wi sgr crosng Ovr,Cntr,UndrDbl)but mA want2justXpnd any nstd of <=6(or12+UIQ)chanLz,
+  tFbfPpDdAaLlOoHhXxCcNnWwMmSsGgRrUuIiQq,BEeJjKkTVvYyZz?,+grups shft2 UIQ(+2+2-1),T && B rEmAin frE wi lOwcAsez alreD alOc8d text && bclr,cnsidr Fb=Cc&&Kklen,
+  a8:fix S YkB|c 2!retn F:Yx01,mk brc .zsh2.bashrc tmpl8 4 Termux,prep bash,pkg inst vim perl,
+  a8:fix sS 2 rEquIr -h dashd pRamz,
+  a8:upd8 tstc,S2:add hedr&&SGRsectnz,
+  a8:mv c8:tsgr&&gnp8 2tstc(mkng bSt posibl colrblox4consol2)&&pm2x 2cdst(or sepR8 t/*.t fIlz),a8:stuDshuf&&rm shfl,add([os]upd)as aliasz?,
+  a8:lrc mk sure can S on xx section hedrz wi FbS,
+  Simp:addcolrlayrz&&SGRf as tied sectnz d8a,
+  a8:rm[cS]2f4,
+  b8:s8 stRt as sort -n |some shfl flag|b8 b64(wi%bfr8)|b256|d8|dur8 && othr bSt optnz,
+  c8:addSGR|Simp|cut&&cat,
+  c8:rEwrIt8trm 2rEquSt f0nt layr from S2,
+  c8:prym fix(b8),8trm fix basic cursor,autOnwlIn aftr cmd wrap,mk nw lAyrz 4full 256colrz,
+  c8:8trm mk SGRs && cursr blink,mk input key auto-scrl botm,mk drag hilite copy clipbord,mk running .pal8 chng colrz,addOverDraw&&AutoF0ntPigyBackOnColrToglz,
+  d8:fix dic 4mor lIn joinz&&add retro cmnt failz wi suggStnz,dup dic log as mn man wrapr,
+  d8:mvUtl:bak+e 2 d8:bk+e wi!$TTY wich goes up from lib/ dirz&&hndlzUTF8flnmz,,
+  f8:XtNdf0nt b64 2UTF8,cma nstd of dash sepR8,9x18,2x2,3x3 resoz,&&pal8z2 b64RGBLowbitz inHrc2,
+  a8:fix`a8`4lodH wi rEd&&wrIt wi quOtng,a8:mk styl 2gNr8.styl,
+  a8:mo as basic vim-like UTF8 colr ReadKey pager2push more than1page of dic,mn,lsd8,etc output in2,addmor -help,upd8 sumb,cmpIl orpie src,mknwTop8shotz&&push,
+  b8:q rEwrIt precedNce,
+  f8:pal8 stRt SDL manager,upd8 top8 2hav dRk rgcw && brIter OP,
+  U8:rEmk lrld as l8rm 2clEn.arc&&frEdrvspc,Xpct U2b8,frip,aguu alIn+acs,acs+instald,agi,mplr,
+  dvl/**/*.pm new s/refcalls/isa/ like d8->w8,
+  BaseCnv:UTF8,PT&&Simp:clEn,upd8POD,tst,pkg,
+  p8:getScreeps shrd[12] 60+,clEnJS,tst fmt utlz,port all c&&x,tst,doc&&msgJer,cmp auth wapi2cmdz,XtNd md8a,
+  p8:mk gNeric qbix(+pakr) && ckm8 d8a && fIl mngmNt 2 B apRt from rNdrng,stRt gom8 Xpct gnugo,mk othr gmz .pmz as rEUsabl pRtz 4 mor l8r,
+  stuDdokr,reboot&&upd8A,bilddokrimg&&tstA2CR,pwrdnA,swpDVI&&pwrupK,synfR2K&&up17.10+TtyCursSDLrendokr(C2),swpDVIK2A,
+  d8:sync lsd8 logic2a8:c8fn,
+  f8:pikTop64flet&&pr0gfIlzinHrc,XtNd pal8 2 64or of256,
+  f8:mk new 8let from tiglet->flet,
 
 # 2du-l8r: (mAB 2 insrt abov) ... alsO considr wethr kEpng bin limit ~96 is bSt or 2 add othr dirz|sumb pAgez or what (&& mAB EqualIz a8 27 b8 21 to both 24?)
  bin:mAB upd8 curs as a8:crsr,mAB mv f?ts(t?|gr) 2 .?t/ (aded2path) && t8.pm,stuD && fnsh upd8ng kpc,mAB mv shot in2 d8.pm,think abou othr XeQtblz worth adng,

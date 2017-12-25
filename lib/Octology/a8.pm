@@ -494,13 +494,15 @@ our %sgrm=('N' =>  0 ,  'S' => 26     , # 0 'N Normal / reset; # SelectGrphcRndi
      $sgrm{'k'}=  25 ; #  k => l or remap to some new special custom blinK pulsing color pattern?
      $sgrm{'e'}=  54 ; #  e => m or remap to double fraMEd with some other code, or just turn Encircled off to leave fraMed maybe still on l8r?
 sub rl2h{ # convert any typical b64 RGBL into RRGGBB HEX with Last Low bits Loaded Layered aLready
-  my $rgbh=shift(@_);my $valu=0;           my $rgbs='';my @rgbd=split(//,('0'x 4));if(length($rgbh) == 4){#$rgbh=uc($rgbh) if($rgbh=~ /[a-z]/);
+  my $rgbh=shift(@_);my $valu=0;           my $rgbs='';my @rgbd=split(//,('0'x 4));return('') unless(defined($rgbh) && length($rgbh));
+  if(length($rgbh) == 4){#$rgbh=uc($rgbh) if($rgbh=~ /[a-z]/);
                                                           @rgbd=split(//,$rgbh); # do $sb64[..] aftr each b10 valu pRtoff b64 6-bit chars while filng lowbits
     $valu= $sb10{$rgbd[0]} * 4;$valu+=2 if($sb10{$rgbd[3]} & 32);$valu+=1 if($sb10{$rgbd[3]} & 16);$rgbs.= sprintf("%2.2X",$valu);
     $valu= $sb10{$rgbd[1]} * 4;$valu+=2 if($sb10{$rgbd[3]} &  8);$valu+=1 if($sb10{$rgbd[3]} &  4);$rgbs.= sprintf("%2.2X",$valu);
     $valu= $sb10{$rgbd[2]} * 4;$valu+=2 if($sb10{$rgbd[3]} &  2);$valu+=1 if($sb10{$rgbd[3]} &  1);$rgbs.= sprintf("%2.2X",$valu);         } return($rgbs);}
 sub h2rl{ # convert any typical HEX RRGGBB into RGBL b64 with Last Low bits Layered (might not want to uc() if 4-char leng or maybe flagd 2cnv bak2 HEX)
-  my $rgbh=shift(@_);my $valu=0;my $lowb=0;my $rgbs='';my @rgbd=split(//,('0'x 6));if(length($rgbh) == 6){#$rgbh=uc($rgbh) if($rgbh=~ /[a-z]/);
+  my $rgbh=shift(@_);my $valu=0;my $lowb=0;my $rgbs='';my @rgbd=split(//,('0'x 6));return('') unless(defined($rgbh) && length($rgbh));
+  if(length($rgbh) == 6){#$rgbh=uc($rgbh) if($rgbh=~ /[a-z]/);
                                                           @rgbd=split(//,$rgbh); # do $sb64[..] aftr each b10 valu pRtoff b64 6-bit chars while filng lowbits
     $valu= hex($rgbd[0]) * 16 + hex($rgbd[1]);$rgbs.=$sb64[int($valu/4)];$lowb+=2 if($valu & 2);$lowb+=1 if($valu & 1);$lowb*=4;
     $valu= hex($rgbd[2]) * 16 + hex($rgbd[3]);$rgbs.=$sb64[int($valu/4)];$lowb+=2 if($valu & 2);$lowb+=1 if($valu & 1);$lowb*=4;
