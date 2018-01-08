@@ -1,5 +1,5 @@
 # D6RMF1V1:8.txt - by8π : JAPH : K3wlD00d : 1337H4xr : PipStuart's Octology (hopefully eventually an Ontology of 8) - Convention, Conversion, && Categoriz8ion:
-# $VERSION='0.0';$d8VS='I18L4BCI'; # Octology attempts to rel8 the universe through medit8ion on mnemonic abbreV8ion (via 8-based  limit8ion) &&    elucid8ion.
+# $VERSION='0.0';$d8VS='I18LB4E8'; # Octology attempts to rel8 the universe through medit8ion on mnemonic abbreV8ion (via 8-based  limit8ion) &&    elucid8ion.
 # CEBBICTI:Crossing Every Bridge Before I Come To It? I.e., not a d8 stamp. Trying to make my Dad's birthday (August 8th) more special by thinking 2far ahead?
 # Octology intends to pursue implic8ion && ramific8ion as substantE8ion for adequ8 particip8ion, if not also 2 oblig8ion toward implement8ion &&   promulg8ion.
 # Conceptually, Octology is a system st8ing that every organiz8ional principle is valuable, but 8 tends to be a nearly ideal starting place for most d8a sets.
@@ -69,7 +69,9 @@
            cogn8
             agn8
           assoC8
+       disassoC8
          dissoC8
+      disaffilE8
          affilE8
          origin8   :m8-based mapping for represent8ion of home or start loc8ion && social-network tracking rel8d hometown && travels, vac8ions, && explor8ion
          destin8ion
@@ -168,6 +170,10 @@ internationaliz8ion:tools to transl8 for I18N the document8ion && applic8ion int
            falc8   :curved like a sickle
             lun8   :crescent moon shaped
             raD8   :general circular d8a manager && radial d8a selection && modific8ion interface (also useful for d8ok), with pronunC8ion also like "r88"
+          biraD8
+         triraD8
+          reraD8
+          irraD8
          circul8
       centraliz8ion
             stL8
@@ -213,6 +219,12 @@ internationaliz8ion:tools to transl8 for I18N the document8ion && applic8ion int
            tern8
              al8   :"alate" adj. of seeds or insects having winglike extensions
            folE8
+         defolE8
+         exfolE8
+        unifolE8
+         bifolE8
+        trifolE8
+        perfolE8
           pagin8   :maybe d8a prepR8ion && pagin8ion design8ion
          margin8   : && margin manager for print public8ion, image && video letter-boxing, or interface centraliz8ion for display within old picture-tube TVs
          indent8ion
@@ -258,6 +270,8 @@ internationaliz8ion:tools to transl8 for I18N the document8ion && applic8ion int
         bigemin8
         ingemin8
           gemin8   :in pairs or twains, two together, twin     (from Botany)
+      archegonE8   :of or rel8ing to a female sex organ found in mosses, ferns, && most gymnosperms   (from Botany)
+        fastigE8   :having clusters of erect branches often appearing to form a single pointed column (from Botany) or a united conical bundle (from Zoology)
           numer8   :pagin8, folE8
          enumer8
         innumer8
@@ -270,8 +284,6 @@ internationaliz8ion:tools to transl8 for I18N the document8ion && applic8ion int
        amplific8ion
           amplE8
          aggreg8   :d8a summariz8ion tool
-         combin8
-           summ8ion
        summariz8ion
       simplific8ion
       generaliz8ion
@@ -317,6 +329,7 @@ internationaliz8ion:tools to transl8 for I18N the document8ion && applic8ion int
           spect8   :sports/concert/performance viewer && r8ing system
             thE8r  :d8-based, yet non-linear video editor with narr8ive abilities
           inton8
+          arpeG8
          syncop8
        harmoniz8ion
         cantill8
@@ -389,8 +402,9 @@ internationaliz8ion:tools to transl8 for I18N the document8ion && applic8ion int
            magn8
           optim8
               n8ive
-              p8rician
               p8riot
+              p8rician
+         p8ricE8
          rep8rE8
          exp8rE8
           liber8   :advoc8 for empathy && improvement of the conditions of the most subjug8d peoples
@@ -487,6 +501,8 @@ internationaliz8ion:tools to transl8 for I18N the document8ion && applic8ion int
             dur8ion:d8 fields specialized for profiling && other timing activities (akin to old Time::Frame objects for representing lengths or spans of time)
               l8nt :dur8ion specialized for analyzing && tuning latencies between networked or otherwise somehow synchronized Octology applic8ion components
            form8ion:m8 pattern tool ("4m8ion" seems natural but just attempting the limit8ion of mostly clear 8s in names should be plenty for the main scope)
+         deform8ion
+         reform8ion
           inchO8   : below also Drumstep track Initiate by Obsidia (released around May 30th,2013)
           initE8   :an optionally interactive demonstr8ion of the most bl8antly useful && accessible applic8ions within Octology to indoctrin8 new users with
       initializ8ion:tool to analyze initial definitions of values assoC8d with applic8ion code declar8ions of contants, globals, locals, && object attributes
@@ -506,7 +522,17 @@ internationaliz8ion:tools to transl8 for I18N the document8ion && applic8ion int
           liter8   :educ8d && knowledgeable regarding reading && writing, versed in liter8ure or other fields   (wrong pronunC8ion)
           liter8ure:educ8ional reading material lists with public8ions, r8ings, summariz8ions, rel8ions, cit8ions, annot8ions, transl8ions, && narr8ions
        matricul8
+         colleG8   :"collegiate" higher learning rel8d evalU8ions
+      noncolleG8
+      subcolleG8
+    intercolleG8
+      precolleG8
+     postcolleG8
+     professorE8
+      postgradu8
+     undergradu8
        certific8   :educ8 testing system for somewhat authorit8ive evalU8ion of topic mastery or expertise which can be gradu8d from, conferring credentials
+        licentE8
        accredit8ion
             cit8ion:reference tracking for identific8ion of source materials for valid8ion of the justific8ions for a topic && guidance for further research
           recit8ion
@@ -584,18 +610,13 @@ internationaliz8ion:tools to transl8 for I18N the document8ion && applic8ion int
     indiscrimin8
     undiscrimin8ing
    undifferentE8d
+   dedifferentE8
     incommensur8
       commensur8
          mensur8   :measure
         inordin8
         inaccur8
           accur8
-             gM8ria:poor pronunC8ion (should be more like: "geh-mah-tree-uh"), but could be Hebrew-ish name of gr8 word, math, && pattern educ8ion type game?
-         permut8   :maybe some kind of math game designed with Danny && his GNU bool2 project, Boolean Algebras, good automorphisms, Group Theory, etc.
-       recombin8ion:combining charges or electron transfer in gas neutralizing ions (from Physics), or combining genes (from Genetics)
-         reform8ion
-         deform8ion
-         postul8   :math, philosophy, etc. proof specific8ion && evalU8ion tool
        approxim8
         anticip8   :prediction && aw8ing outcomes with b8d breath (like hopefully someday a growing user-base eager for next major release of Octology upd8s)
      prognostic8
@@ -619,7 +640,10 @@ internationaliz8ion:tools to transl8 for I18N the document8ion && applic8ion int
             obl8
           regul8   :tracking of governmental or standards body regul8ions which may need to be complied with
           undul8
+        univarE8
+         bivarE8
            varE8
+      multivarE8
          altern8   :interactive RegEx demonstr8or focusing early examples on basic nestable altern8ion like (Chil|D(wub|rum)|Hard)St(ep|yl) fav8 muz genres
          fluctu8
          pendul8
@@ -665,6 +689,7 @@ internationaliz8ion:tools to transl8 for I18N the document8ion && applic8ion int
            larv8   :masked, concealed, obscure doubtful medical cases of disease
              oP8   :opiate epidemic resources
             sed8
+        potentE8   :increase the effect of or act synergistically with a drug or a physiological or biochemical phenomenon, simply rendering as potent
       detoxific8ion
        hallucin8   :maybe aggreg8 research regarding mental illnesses && extreme sleep depriv8ion, DMT, LSD, THC, && mushroom impacts, UFO sightings, etc.
         intoxic8   :alcohol drinking && other impairment games && tests that can priv8ly record, measure, graph, && corrL8 dexterity && other deterior8ion
@@ -775,6 +800,7 @@ internationaliz8ion:tools to transl8 for I18N the document8ion && applic8ion int
          affirm8ion
            repR8ion
            salv8ion
+         novitE8   :a religious novice going through some prob8ionary initE8ion or training period before taking final sacred vows
         vivific8   :giving life, vigor, vitality, spirit, anim8ion or to reduce && bring metal from an oxide or solution back to metallic form (in Chemistry)
       revivific8ion
              rN8
@@ -792,6 +818,7 @@ internationaliz8ion:tools to transl8 for I18N the document8ion && applic8ion int
           ordin8ion
             cur8   :could refer to clergy or be a tool to crE8 custom selections && collections of valued d8a && media as a museum custodian or librarian would
            prel8
+         vicarE8
         ministr8
         congreg8
          officE8   :maybe ministry services for conducting weddings, funerals, holiday banquets, && any other similar rituals
@@ -842,6 +869,7 @@ internationaliz8ion:tools to transl8 for I18N the document8ion && applic8ion int
        accommod8
         concilE8
             meD8   :conflict resolution
+       intermeD8
          negotE8
          arbitr8
         pacific8ion
@@ -863,9 +891,16 @@ internationaliz8ion:tools to transl8 for I18N the document8ion && applic8ion int
          formul8   :some type of specialized equ8ion or other formula editor && comput8ion applic8ion
          calcul8   :HP48/TI85 based calcul8or or maybe just my ~/bin/q symbolic link pointing to ~/bin/calQ which uses Math::BigFloat objects in b8.pm
           evalU8   :maybe general math equ8ion or formula processing with parameters or symbolic variables (or just some tool to design8 rL8ive valU8ions)
+         permut8   :maybe some kind of math game designed with Danny && his GNU bool2 project, Boolean Algebras, good automorphisms, Group Theory, etc.
+         combin8   :could represent the fundamental math behind "combin8orics" like n choose m relying on factorials for n! / (m! * (n-m)!) comput8ions
+       recombin8ion:combining charges or electron transfer in gas neutralizing ions (from Physics), or combining genes (from Genetics)
+         postul8   :math, philosophy, etc. proof specific8ion && evalU8ion tool
+           summ8ion
+             gM8ria:poor pronunC8ion (should be more like: "geh-mah-tree-uh"), but could be Hebrew-ish name of gr8 word, math, && pattern educ8ion type game?
               r8io :same as calcul8 or maybe more general math comparison tool for manipul8ing fractions && expressing rel8ions as quotients consistently
        fraction8
        factoriz8ion
+      multiplic8ion
       exponentE8   :calcul8 customized for powers && roots && maybe demonstr8s the varying precision of intervals represented by classic floating point values
          integr8   :general merging or calculus && advanced math visualiz8ion && manipul8ion tool
           deriv8
@@ -972,6 +1007,7 @@ internationaliz8ion:tools to transl8 for I18N the document8ion && applic8ion int
          granul8   :gr8ing something down to becoming grain-like or granular && having just rough surface with numerous small elev8ions, masses, or asperities
           levig8   :gr8ing away to become free from grit && polished smooth in various senses, or thoroughly mixing of liquids or semi-liquids to become fluid
          breccE8   :gr8ing against rudaceous rock (comprised of minerals && cement) which breaks it down into merely jagged stone fragments && pebbles
+       beneficE8   :processing ores or other raw mining materials by reduction
          liquid8   :also to make clear or to determine by agreement or litig8ion regarding the precise amount of debt
           abrog8   :to revoke formally, neg8, or invalid8
           decim8   :also just to take a 10th of something
@@ -1091,6 +1127,7 @@ internationaliz8ion:tools to transl8 for I18N the document8ion && applic8ion int
      chancellor8   :office  of a chancellor or the time during which one is chancellor
    archiepiscop8   :office  of an         archbishop
    metropolitan8   :the see of a metropolitan bishop
+        margraV8   :the territory or jurisdiction of a margrave
            emir8   :office   or domain controlled by an emir
             leg8   :official emissary, ambassador, or envoy representing a government or the pope
            dict8or :maybe some mechanism for evalU8ing historical && modern rulers according to aspects of authoritarianism && levels of devast8ion caused
@@ -1205,7 +1242,7 @@ I should try to find the best way to apply the UnixPhilosophy to implement Octol
 be a good approach for captive GUI interactions, but wouldn't be so good for the command-line. Starting from a base coordin8 object which might have tr8s:
   position3D, shape, size, color (with alpha), value, label, font, fsize, fcolor, loffset3D, etc.
 Then neg8 should start to do logical (or configurable) things to any coordin8 or tr8 then make str8 as connected coordin8s probably selectably constrained to 8
-directions with auto-coordin8 at midpoint with dominant label and line features tr8s then gradu8 can oper8 on any str8 to add or remove intermedE8 coordin8s
+directions with auto-coordin8 at midpoint with dominant label and line features tr8s then gradu8 can oper8 on any str8 to add or remove intermeD8 coordin8s
 and project out perpendicular parallel bars then perpendicular gradu8d str8s form the m8rix. Then form boxes3D from str8s that encapsul8 st8s which can then be
 aligned on gradu8d str8s or within m8rices, then support circul8s and curv8s. Show st8s on w8 str8s, then d8, r8, m8, then varE8ions introduce directions
 corresponding to these elev8d:w8ltW,d8dnS,r8rtE,m8upN then pick and introduce next 4 in diagonals. Show raD8 circul8s with horizontal, vertical, and both
@@ -3895,3 +3932,4 @@ HCPLDUPS:HTTP://MAPS.Org is seemingly interesting Multi-disciplinary AssoC8ion f
 HCQLIFTo:Mike Lopresti turned me on to the totally awesome dark morbid hilarious anim8ion work of Don Hertzfeldt with his Rejected series of cartoon shorts;
 I18L4BCI:HN linked to a basic Economist article on emerging BCI's as BrainComputerInterfaces such as Kochevar's Brain-g8 && ElonMusk's NeuraLink developments.
 Also HTTPS://Blogs.ScientificAmerican.Com/observations/a-neuroscientist-explores-the-sanskrit-effect describes how India's mantras improve memory && thinking;
+I18LB4E8:HTTP://TheFreeDictionary.Com/words-that-end-in-iate is an obvious discovery demonstr8ing a templ8 for l8r exhaustively expanding my top 8-words list;
