@@ -1,4 +1,4 @@
-# F5VM5oZT:b8a.ls crE8d by PipStuart <Pip@CPAN.Org> to sepR8 Octology fE8ure priorities for scheduled milestone release goals;$VERSION='0.0';$d8VS='HCPLAYER';
+# F5VM5oZT:b8a.ls crE8d by PipStuart <Pip@CPAN.Org> to sepR8 Octology fE8ure priorities for scheduled milestone release goals;$VERSION='0.0';$d8VS='I18L6I18';
 # Note:These goals should lean toward ambitious more than easy, yet be flexible enough to allow for needed adapt8ion && l8r revisions to upd8 main priorities;
 0.1 E=8sln:8psilon:HB8 WedNov 8th2017:~1Month  from  HAD:upd8 this plan 2 EnumEr8 E fE8urEz DsIrEd 4 Each of thE following d8d milEstonE stagEz && fit2 1pagE;
 0.2 Z= z8a:  zeta :I18 MonJan 8th2018:~2Monthz from 8sln:try2 complete all major core module XperimNt8ion&&shift gearZ in2 stabiliZing all Z 4m@Z&&interfaceZ;
@@ -9,10 +9,11 @@
 0.8 C=cnd8:candid8:I88 WedAug 8th2018:~1Month  from  b8a:main fE8urez should be polished 4 pOtNtial release Candid8 C in prepR8ion 4 fInal tsting && feedbaCk;
 1.0 R=rls8:releas8:IA8 MonOct 8th2018:~2Monthz from cnd8:1st complete majoR public Release of fE8uReful Octology v1.0 to be made fRom GitHub oveR to the CPAN;
 
-# 2du:rEordr ItMz hEr,brk old ItMz dn&&bild bak up in2 stAgz cklstz,rE4m@ dNse 1pAg Year plan4 v1.0;
-Z= # stil nEd2stuD&&XperimNt wi thEs taskz&&ordr in2 Jan2018&&l8r stuf B4 Feb&&mAB eventual plan for 8 consistent nice stages,but XperimNt8ion morethan E&&Z;
+# 2du:rEthnk top stAg IDaz,rEordr bSt ItMz hEr,brk old ItMz dn&&bild bak up in2 stAgz cklstz,rE4m@ AgN in2 dNse 1pAg Year2018 plan4 v1.0;
+H= # stil nEd2stuD&&XperimNt wi thEs taskz&&ordr in2 Feb2018&&l8r stuf&&mAB EvNtual plan4 8 consistNt nIc stAgz,but XperimNt8ion nEdz more than E&&Z&&H;
+  a8:sS add optn2cnv SKpz in2 HTML, upd8 8plc 2fit term wrapng long lInz,add afewgd gM8ria 4mz,Xtract sectnz in2 cnt8 && nw `8c` lIk wc,
   b8:mkBigFloat objX,add cnfgUr8ion4 constructor in BaseTransl8&&4m@ing out stringific8ionz,Xplor Xpanding objX to represent Unumz,
-  c8:fix ckm8 long PGN warnz&& -c SimpXit cordump,
+  c8:fix ckm8 long PGN warnz&& -c SimpXit cordump,figure out if possible to enable && receive FingerTouch Wacom tablet events,or ideally get stylus pressure,
   SGR:NBAVbv+Hh prefer S,IFi+Mm G,Rr+E R, LKl+Oo s,Cc+Tt g,UDu+Gg r layrz(wi sgr crosng Ovr,Cntr,UndrDbl)but mA want2justXpnd any nstd of <=6(or12+UIQ)chanLz,
   tFbfPpDdAaLlOoHhXxCcNnWwMmSsGgRrUuIiQq,BEeJjKkTVvYyZz?,+grups shft2 UIQ(+2+2-1),T && B rEmAin frE wi lOwcAsez alreD alOc8d text && bclr,cnsidr Fb=Cc&&Kklen,
   a8:fix S YkB|c 2!retn F:Yx01,mk brc .zsh2.bashrc tmpl8 4 Termux,prep bash,pkg inst vim perl,

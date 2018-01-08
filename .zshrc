@@ -1,5 +1,5 @@
 # 381KF3RN:~/.zshrc by PipStuart <Pip@CPAN.Org>; nOt:I originallythotitbetr2rElymoronstndalOnXecutablUtlz than aliases||shL-scrpt funczDfynd inany .rc Bcuz4mer
-# $VERSION='0.0';$d8VS='HCOLGr8r'; # stAyavail2spwnd procSz wich hvOwn non-zsh sub-shL cfgz(eg,vim:!cln 127/7;perl`b64 1023`)sO I pland2port stufhEr2anew u8.pm
+# $VERSION='0.0';$d8VS='HCSL8Df8'; # stAyavail2spwnd procSz wich hvOwn non-zsh sub-shL cfgz(eg,vim:!cln 127/7;perl`b64 1023`)sO I pland2port stufhEr2anew u8.pm
 #   butIhv rElIzd that c8.pm (inprep4 8sh)wilBAbl2pars .(ba|z)shrc fIlz2lOd thEz&&can mk thMavail2othr shLz bywrapng cmdz wiXpansionUtlz; lern LaunchPad/byobu,
 # 2du:cmNt unUsed aliases,add perVC autostRt nwlOcl`scrn`if!alredy in1,lern`autoload -z`&&sepR8hist,get pcre module&&anyUsefulothrz,
 #   bakon gN2:`em  scummvm`:2use nw"modern"theme4scummvm,add2[scummvm]sect of~/.scummvmrc(aftr runing scummvm once):themepath=/usr/share/games/scummvm/engines
@@ -31,13 +31,29 @@ if     [[       "$HOSTNAME" == "" ]]; then       export HOSTNAME=`hostname`;fi #
 if     [[       "$HOST"     == "" ]]; then       export HOST="$HOSTNAME"   ;fi;export VERBOSE='1'; # set flag to print debug && status info from system utilz
 export     HHst="$HOST";alias lc="tr 'A-Z' 'a-z'";alias uc="tr 'a-z' 'A-Z'"; # || mayb atMpt2dup $var thru: $(echo $var|tr 'A-Z' 'a-z') | "[:(upp|low)er:]"
 export     HUsr="$USER";export HEdt=`which vim` ;export HWid="$COLUMNS";export HOSy="$OS"; # zsh's lc() 4varz2 m//i "${(L)HOSTNAME}"acordng2:
-export     HShl='zsh'  ;export HPgr=`which most`;export HHit="$LINES";  export HOTy="$OSTYPE";export H3WF="0"; #HTTP://WWW.CS.Elte.Hu/zsh-manual/zsh_6.html
+export     HShl='zsh'  ;export HPgr=`which most`;export HHit="$LINES";  export HOTy="$OSTYPE";export H3WF="1"; #HTTP://WWW.CS.Elte.Hu/zsh-manual/zsh_6.html
 export  COLUMNS="$COLUMNS";export LINES="$LINES";export ROWS="$LINES"; # zsh setz thEse lOcally but must Xport thM 4 Perl scriptz 2 access
 # Used2 if [[ "${(L)HHst}" == ax9* ]]; then export HHst='Ax9'; elif ... 2abbreV8&&capitalIz myhOst&&UzrnAmz fromold dvl&&work machinz especially4CygWindoze;
 # XDG (Xorg baseDirzGuide)4:GTK2,Compiz,Uzbl,Arora,Audacious,TrollTech,etc. from: HTTP://Standards.FreeDesktop.Org/basedir-spec/basedir-spec-latest.html
 export XConfHom="$HOME/.config";     export XConfDrz="/etc/xdg";                   export XDG_CONFIG_HOME="$XConfHom";export XDG_CONFIG_DIRS="$XConfDrz";
 export XDataHom="$HOME/.local/share";export XDataDrz="/usr/local/share:/usr/share";export   XDG_DATA_HOME="$XDataHom";export   XDG_DATA_DIRS="$XDataDrz";
 export XCachHom="$HOME/.cache";      export XSESSION='Gnome';                      export  XDG_CACHE_HOME="$XCachHom";export XDG_MENU_PREFIX='gnome-';
+export bk="\e[40m"   ;export br="\e[41m"   ;export bo="\e[43m"   ;export by="\e[43m"   ;export bg="\e[42m"   ; # set shell col8 colr escape codez akin to a8.pm
+export bc="\e[46m"   ;export bb="\e[44m"   ;export bm="\e[45m"   ;export bp="\e[45m"   ;export bw="\e[47m"   ; # first add bkgr colrz, then shorter fgrndclrz
+export  k="\e[22;30m";export  r="\e[22;31m";export  o="\e[22;33m";export  y="\e[22;33m";export  g="\e[22;32m"; # set shell col8 colr escape codez akin to a8.pm
+export  c="\e[22;36m";export  b="\e[22;34m";export  m="\e[22;35m";export  p="\e[22;35m";export  w="\e[22;37m";export SKpb="$b"; # like a8.pm altern8 cmp $b
+export  K="\e[01;30m";export  R="\e[01;31m";export  O="\e[22;33m";export  Y="\e[01;33m";export  G="\e[01;32m";export    z="\e[00m"; # like a8 $SKp0 . 'm'
+export  C="\e[01;36m";export  B="\e[01;34m";export  M="\e[01;35m";export  P="\e[22;35m";export  W="\e[01;37m"; # these then should become able to use in Uk etc
+export hk="\e[100m"  ;export hr="\e[101m"  ;export ho="\e[103m"  ;export hy="\e[103m"  ;export hg="\e[102m"  ; # also setup High-intensity varE8ionz, which
+export hc="\e[106m"  ;export hb="\e[104m"  ;export hm="\e[105m"  ;export hp="\e[105m"  ;export hw="\e[107m"  ; #   a8.pm doesn't even include to export yet
+export HK="\e[90m"   ;export HR="\e[91m"   ;export HO="\e[93m"   ;export HY="\e[93m"   ;export HG="\e[92m"   ; # '_'=>'01;30'  '^'=>'00'
+export HC="\e[96m"   ;export HB="\e[94m"   ;export HM="\e[95m"   ;export HP="\e[95m"   ;export HW="\e[97m"   ; # '.'=>'22;30'
+# HCSL8BCz:note that all these new minimal variable names for color-codes have a good chance of colliding in minimal shell-script usages defined l8r below;
+alias    clrz='echo -en "$z hk:$hk#$z; hr:$hr#$z; ho:$ho#$z; hy:$hy#$z; hg:$hg#$z; hc:$hc#$z; hb:$hb#$z; hm:$hm#$z; hp:$hp#$z; hw:$hw#$z; z:#; z lIk a8 ^;
+ bk:$bk#$z; br:$br#$z; bo:$bo#$z; by:$by#$z; bg:$bg#$z; bc:$bc#$z; bb:$bb#$z; bm:$bm#$z; bp:$bp#$z; bw:$bw#$z;
+  k:$k#$z;  r:$r#$z;  o:$o#$z;  y:$y#$z;  g:$g#$z;  c:$c#$z;  b:$b#$z;  m:$m#$z;  p:$p#$z;  w:$w#$z;
+  K:$K#$z;  R:$R#$z;  O:$O#$z;  Y:$Y#$z;  G:$G#$z;  C:$C#$z;  B:$B#$z;  M:$M#$z;  P:$P#$z;  W:$W#$z;
+ HK:$HK#$z; HR:$HR#$z; HO:$HO#$z; HY:$HY#$z; HG:$HG#$z; HC:$HC#$z; HB:$HB#$z; HM:$HM#$z; HP:$HP#$z; HW:$HW#$z;"'; # prnt tStset4 bSt mAjr colrcOdz2suport
 # 99RJGN8g:from old gN2 root@Ryu`em xinit`:IfUUse`startx`nstd ofa login mngr like gdm/kdm,Ucan set XSESSION 2anythng in /etc/X11/Sessions/ or any executable.
 #   wNU`startx`,itwilrunthis astheloginsession.Ucan set this ina filein /etc/env.d 4NtIrsys,orsetit perUser in ~/.bash_profile (or similR4othr shLz). Xamplof
 #   setng4wholsys:`echo XSESSION="Gnome" > /etc/env.d/90xsession; env-update && source /etc/profile`; EBJLAkY8:AkuUbu14.10 nolongrhas thOsdirz sOprolyunUsed;
@@ -475,14 +491,22 @@ alias      tf='tumiki-fighters';
 alias      xb='xboard';alias xbsf='xb -fcp stockfish -fUCI'; # gr8 Chess program with shortcut to top StockFish engine as FirstChessPlayer
 alias    kpcl='kpcli --kdb=~/.kp/pswd.kdb --histfile=/dev/null --no-recycle'; # to not store any history or entry changes in /Backup or "/Recycle Bin"
 alias      kp='kpc   --kdb=~/.kp/pswd.kdb --histfile=/dev/null --no-recycle'; # alias to modified kpcli-3.0 with more aliases && alignment
-alias    U='   U2b8';alias Ukey='Uk';alias ukey='uk';#lias uk='Uk'; # shud l8r add 1-column <98wide mode && some a8 auto-colrz 2further hilite mapingz
-alias    Uk='echo -n "m c b : togl volMute Caption Bakgr colr [ U2b-hotKey ];  Dn Up : lowr 5%vol (arowkyz) rais 5%vol;
+alias    U='   U2b8';alias U2bk='Uk';alias u2bk='uk'; # shud l8r add 1-colm <98wId mOd&&some a8 autOcolrz 2furthr hIlIt mapngz
+alias    Ukey='echo -n "m c b : togl volMute Caption Bakgr colr [ U2b-hotKey ];  Dn Up : lowr 5%vol (arowkyz) rais 5%vol;
 p f n : Prevplayls toglFulsc Nextplayls (Escap=2exitf);  Lt Rt : bkwd 5secs (arowkyz) 4wrd 5secs;
 j k l : bkwd10secs toglpause 4wrd10secs (Space=2pause);   , .  : bkwd 1fram (ifpausd) 4wrd 1fram;
  0-9  : jump to N *10% playbak position (Home/End=0/9);   < >  : slow down< playbkspd >up> fastr;"';
-alias    uk='echo -n "m c b:volu Muted toglCaptn Bakgr cycl;(Home/End= 0/9 2)> 0-9 :jmp% \$n*10 plabakpos =r8io %abs; < > :slow down< plabakspd >upup fast;
+alias    ukey='echo -n "m c b:volu Muted toglCaptn Bakgr cycl;(Home/End= 0/9 2)> 0-9 :jmp% \$n*10 plabakpos =r8io %abs; < > :slow down< plabakspd >upup fast;
 j k l:bkwd 10sec toglpausd 10sec 4wrd<(Spacebar=pause2);Lt Rt:bkwd -5sec arrowkeys +5sec 4wrd; , . :bkwd -1frm whenpausd +1frm 4wrd;
 p f n:Prev plals toglFulsc plals Next<(Escapkey=exitf2);Dn Up:dec% -5vol arrowkeys +5vol %inc;"';
+alias    Uk='echo -en "${R}m$G c$K b$W :$B togl$M vol${R}Mute$G Caption$K Bakgr$C colr$Y [$G U2b$C-${R}hot${r}Key$Y ]$W;$M  Dn$G Up$W :$M lowr$C 5$Y%${w}vol$Y (${O}arow${r}kyz$Y)$G rais$C 5$Y%${w}vol$W;
+${M}p$C f$B n$W :$M Prev${P}play${c}ls$B togl${C}Fulsc$B Next${P}play${c}ls$Y (${O}Escap$W=${g}2${R}exit${C}f${Y})$W;$Y  Lt$R Rt$W :$B bkwd$C 5${M}secs$Y (${O}arow${r}kyz$Y)$R 4wrd$C 5${M}secs$W;
+${B}j$M k$R l$W :$B bkwd${G}10${M}secs$B togl${M}pause$R 4wrd${G}10${M}secs$Y (${M}Space$W=${g}2${M}pause$Y)$W;$B   ,$M .$W  :$B bkwd$O 1${c}fram$Y (if${M}pausd$Y)$R 4wrd$O 1${c}fram$W;
+$C 0$O-${R}9$W  :$Y jump$w to$r N$C *${G}10$Y%$O play${B}bak$P position$Y (${C}Home$Y/${R}End$W=${C}0$Y/${R}9$Y)$W;$M   <$G >$W  :$r slow$M down<$O play${B}bk${c}spd$G >up>$K fastr$W;"';
+alias    uk='echo -en "${R}m$G c$K b$W:${M}volu$R Muted$B togl${G}Captn$K Bakgr$C cycl$W;$Y(${C}Home$Y/${R}End$W=$C 0$Y/${R}9$g 2$Y)$W>$C 0$O-${R}9$W :${O}jmp$Y%$G \$${r}n$C*${G}10$O pla${B}bak${P}pos$W =${R}r8io$Y %${P}abs$W;$M <$G >$W :${r}slow$M down<$O pla${B}bak${c}spd$G >upup$K fast$W;
+${B}j$M k$R l$W:${B}bkwd$G 10${M}sec$B togl${M}pausd$G 10${M}sec$R 4wrd$W<$Y(${M}Spacebar$W=${M}pause${g}2$Y)$W;${Y}Lt$R Rt$W:${B}bkwd$g -${C}5${M}sec$O arrow${r}keys$G +${C}5${M}sec$R 4wrd$W;$B ,$M .$W :${B}bkwd$g -${O}1${c}frm$w when${M}pausd$G +${O}1${c}frm$R 4wrd$W;
+${M}p$C f$B n$W:${M}Prev$O pla${c}ls$B togl${C}Fulsc$O pla${c}ls$B Next$W<$Y(${O}Escap${r}key$W=${R}exit${C}f${g}2$Y)$W;${M}Dn$G Up$W:${M}dec$Y%$g -${C}5${M}vol$O arrow${r}keys$G +${C}5${M}vol$Y %${G}inc$W;"';
+alias    ukz='Uk;echo;uk';
 alias    U2b=' echo "U2b=youtube-dl 2save file2probably runthru U2b4 aftr orbetr2Use U2b8..."; youtube-dl'; # precede dl with some of my help text
 alias    U2bm='U2b  -o "%(title)s-tItL-%(uploader)s-uldr-%(extractor)s-Xtrc-%(id)s-IdNt-%(epoch)s-epch-%(upload_date)s-uldt-%(autonumber)s-otnm.%(ext)s" --restrict-filenames';
 #lias    U2b3='U2bm -x --audio-format=mp3  --audio-quality=0'; # just having --audio-format=mp3 was converting to just 32K quality =( hopefully 0 will improve
@@ -563,10 +587,12 @@ m0() { # mplayer pr0n function
       echo                               ' h - print this Help text && exit;  No pRam runs mpr0 on mpg,wmv,avi * (left scrn,mpr1 right).'
       echo                               ' 1 - runs mpr1 on     wmv,avi,mpg ht*;    (this 1 && v below ignore any l8r pRameters so far)'
       echo                               ' 2 - runs mpr2 on mpg,wmv,avi     ht*;'
+      echo                               ' s - runs mpr2 on mpg,wmv,avi shfl   ;'
       echo                               ' v - runs  vp  in   .VelvetPound/    ;    Other pRams will just be passed on to mpr0 for now;';return 0;
     elif   [[ "$1"  ==  *v ]]; then                                                cd ~/mvz/.pr0/.VP/     ;vp
     elif   [[ "$1"  ==  *1 ]]; then                                                cd ~/mvz/.pr0/         ;mpr1 mpg/ht* wmv/ht* avi/ht*
     elif   [[ "$1"  ==  *2 ]]; then                                                cd ~/mvz/.pr0/         ;mpr2         wmv/*   avi/*   mpg/*
+    elif   [[ "$1"  ==  *s ]]; then                                                cd ~/mvz/.pr0/         ;mpr2 $(ls    wmv/*   avi/*   mpg/* | shfl)
       # & \ abov just bkgrndz 0 procS so nEd2du smthng lIk vp 2spawn 2sepR8 windOz && 4nO pRamz else BlO  ;mpr0 wmv/ht* avi/ht* mpg/ht*
     else                                                                                                   mpr0 $@;fi # assume othr pRamz mEn alreD in fIn dir
   elif     [[ `pwd` ==  *.pr0/mpg/  ]] || [[ `pwd` ==  *.pr0/wmv/  ]] || [[ `pwd` ==  *.pr0/avi/  ]]; then mpr0 *
@@ -619,6 +645,7 @@ export ETERM_THEME_ROOT="~/.Eterm/themes"; # wuz ~/.Eterm/themes/Eterm          
 #lias gtpm='    gtd0 --class=pmix     --geometry 160x3+1921+1141 --hide-menubar --window-with-profile=GT67x3Lincoln12-pmix --title=pmix -e pmix&';#160,180,282
 alias gtt='gnome-tweak-tool'; # mainly used (so far) for scaling all fontz to 1.5 && making CapsLock a Ctrl; XperimNt wi Caps2:Hyper,Menu,Win2see wutcan map2?
 alias gt=' gnome-terminal';alias wmc='wmctrl'; # mAB -x zsh (-c)? s2 & or wiout aliasz: pushd ~/dox/2du;screen -h 9999 -S 2du -t 2du e 2;popd;
+alias xr='xrandr --output DVI-0 --mode 1920x1080 --rate 60'; # need to set Viotek GN32C over DVI from default 144 refresh down to supported 60
 if       [[ "${(L)HHst}" ==  aku    ]]; then  alias gtss='sleep 1'; # GnomeTerminal SleepSeconds 2 delay 4 gti init   # only Akuma was fast Enuf2kEp up with 1
 else                                          alias gtss='sleep 2'; fi            # ... second before && hopefully Ryu, Ken, && Chun can all handle just 2 now
 # below set 8sh "H" Viewport Width 1..3 | Height 1 defaults of all 3840x1080 then override as approprE8 for host-specific display resolution varE8ionz

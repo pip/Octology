@@ -380,9 +380,9 @@ sub new{my($nvkr,$ityp,$idat)=@_;my $nobj=ref($nvkr);
     $self->{$attr}=$self->_default_value($attr) unless(defined($self->{$attr}));}
 # Handle Year shifts (but maybe this shouldn't always be done, like when init params intend to design8 a huge value in a single field)
   $self->{'Y'} -= 2000;
-#   0) Each 13 added to the Month adds  64 to the Year.
-#   1)      24 added to the Hour  adds 256 to the Year.
-#   2)      32 added to the Day   makes the year negative just before adding 2k
+#   0) Each 13 added to the Month adds  64 to the Year.  # `d8 _eX`   FriJan 1st1745 to `d8 _pV`   MonDec31st2255 (all Midnights)
+#   1)      24 added to the Hour  adds 256 to the Year.  # `d8 _eX0O` TueJan 1st1489 to `d8 _pV0O` ThuDec31st2511 (s/O$/lxxx/ for last frame of Year)
+#   2)      32 added to the Day   makes the year negative just before adding 2k  # here Day:'W'..'_', above hour:'O'..'l' (up Oh to lo eL)
   # set values back to 0 of last block if off the known end
   $self->{       'M'}  = 39 if($self->{'M'} >            51); # 4 month blocks go 0..51  (0..12, 13..25, 26..38, 39..51)
   $self->{       'D'}  = 32 if($self->{'D'} >            63); #   day   blocks go 0..63  (0..31, 32..63)

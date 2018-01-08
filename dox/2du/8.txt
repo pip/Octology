@@ -1,5 +1,5 @@
 # D6RMF1V1:8.txt - by8π : JAPH : K3wlD00d : 1337H4xr : PipStuart's Octology (hopefully eventually an Ontology of 8) - Convention, Conversion, && Categoriz8ion:
-# $VERSION='0.0';$d8VS='HCOLLATE'; # Octology attempts to rel8 the universe through medit8ion on mnemonic abbreV8ion (via 8-based  limit8ion) &&    elucid8ion.
+# $VERSION='0.0';$d8VS='I18L4BCI'; # Octology attempts to rel8 the universe through medit8ion on mnemonic abbreV8ion (via 8-based  limit8ion) &&    elucid8ion.
 # CEBBICTI:Crossing Every Bridge Before I Come To It? I.e., not a d8 stamp. Trying to make my Dad's birthday (August 8th) more special by thinking 2far ahead?
 # Octology intends to pursue implic8ion && ramific8ion as substantE8ion for adequ8 particip8ion, if not also 2 oblig8ion toward implement8ion &&   promulg8ion.
 # Conceptually, Octology is a system st8ing that every organiz8ional principle is valuable, but 8 tends to be a nearly ideal starting place for most d8a sets.
@@ -98,8 +98,10 @@ compartmentaliz8ion
          appreC8   :don8 with extra appreciation in honor of Angie <3  # Protect  Voting Rights Act!  Take serious felonies outside  military chain-of-command!
          fortun8       # Enact Guaranteed Basic Income && Universal Health-Care! Close Guantanamo Bay! Clemency for Edward Snowden! Make sepR8 Palestinian st8!
              gr8ful    # Protect free-speech (especially unpopular && offensive)! Promote societal justice && equality for both genders through egalitarianism!
-        monetiz8ion    # Reject censorship! Do not just listen && believe. Trust but verify! Men's rights matter also! Protect h8-speech! Eradic8 global ICBMs!
               p8ron:don8 system like Patreon with tracking && support for crE8ors && donors  # Promote good research, evidence, cit8ions, && result duplic8ion!
+        monetiz8ion    # Reject censorship! Do not just listen && believe. Trust but verify! Men's rights matter also! Protect h8-speech! Eradic8 global ICBMs!
+       marketiz8ion
+   commercializ8ion
        approprE8   :same as alloc8 for design8ing funds for a purpose or maybe politial correctness && social faux pas educ8ion && avoidance recommend8ions?
     misapproprE8
    maladministr8ion
@@ -185,7 +187,7 @@ internationaliz8ion:tools to transl8 for I18N the document8ion && applic8ion int
          pererr8
        peregrin8
        perambul8
-    circumambul8
+    circumambul8   :Jungian philosophy about potential future selves influencing interest && attention through patterns, which Dr. Jordan Peterson lectures on
            limb8
           color8
         coloriz8ion
@@ -232,12 +234,10 @@ internationaliz8ion:tools to transl8 for I18N the document8ion && applic8ion int
          cerebr8
    conceptualiz8ion
    contextualiz8ion:tool to design8 && configure additional context-sensitive behaviors for particular combin8ions of applic8ions
-       glorific8ion
      rationaliz8ion
        justific8ion:maybe along with natural logical interpret8ion this could also be a contextual formatting tool for basic left, center, or right alignment
         mobiliz8ion
            actu8
-        amalgam8
        fascicul8
          collig8
          colloc8
@@ -263,7 +263,12 @@ internationaliz8ion:tools to transl8 for I18N the document8ion && applic8ion int
         innumer8
         quantiz8ion
       quantific8ion
+        minimiz8ion
+          maxim8ion
+        maximiz8ion
+       magnific8ion
        amplific8ion
+          amplE8
          aggreg8   :d8a summariz8ion tool
          combin8
            summ8ion
@@ -288,6 +293,7 @@ internationaliz8ion:tools to transl8 for I18N the document8ion && applic8ion int
           trunc8
           amput8
         augment8ion
+       scarific8ion
          enuclE8   :remove cell nucleus or something like an eye or tumor from an enveloping sac or cover
           mutil8
             mut8
@@ -412,6 +418,7 @@ internationaliz8ion:tools to transl8 for I18N the document8ion && applic8ion int
      diversific8ion
      marginaliz8ion
       stigmatiz8ion
+       testific8ion:maybe some elabor8 autom8d testing framework, instead of just the typical interpret8ion of delivering some presumably legal testimony
      criminaliz8ion
        incrimin8
          crimin8
@@ -532,10 +539,11 @@ internationaliz8ion:tools to transl8 for I18N the document8ion && applic8ion int
          exuber8
           jubil8
          luxurE8
+     commodific8ion:maybe tool to recognize items or resources as commodities somehow
         modific8ion:basic filtr8ion system that performs some consistent alter8ion or just a tr8 modifier
         codific8ion:coding       && programming tool
         optimiz8ion:maybe profiling or other mechanisms for optimizing code
-     objectific8ion:Object Oriented programming tool
+     objectific8ion:Object Oriented programming tool (&& maybe summary of analysis on purportedly devaluing human bodies when seen as merely desirable objects)
          orient8   :2D/3D perspective gathering tool to show various zooms && pans to convey contextual position descriptively (even if abstractly)
        instantE8   :object instantiation
          replic8   :make a separ8 copy             of an object
@@ -596,7 +604,7 @@ internationaliz8ion:tools to transl8 for I18N the document8ion && applic8ion int
       prefabric8   :fabric8 synthetically, artificially, or stereotypically && unoriginally
        unfabric8d
          fabric8
-         charic8ure:maybe some f8 f0nt character manipul8ion utility, instead of n8ural aggreg8 comedic represent8ions of popular figures or similar
+          caric8ure:maybe some f8 f0nt character manipul8ion utility, instead of n8ural aggreg8 comedic represent8ions of popular figures or similar
          unimit8d
            imit8   :comedy tools
        imperson8
@@ -682,6 +690,7 @@ internationaliz8ion:tools to transl8 for I18N the document8ion && applic8ion int
              el8
          stimul8
          exhilR8
+       beatific8
        eroticiz8ion
        fetishiz8ion
        sexualiz8ion
@@ -715,6 +724,7 @@ internationaliz8ion:tools to transl8 for I18N the document8ion && applic8ion int
          procrE8
            lact8
             dil8   :maybe pregnancy or eyesight or general circle-rel8d tool
+           dil88ion:rather peculiar double-8 word normally spelled "dilatation" describing the st8 of stretching or distention of an anatomical canal or organ
           prost8
           hernE8ion:hernia or rupture in smooth muscle tissue through which bodily structure protrudes
          cingul8   :brain cortex situ8d in medial aspect of cerebral cortex (includes gyrus && sulcus), is involved in processing emotion && behavior regul8ion
@@ -734,7 +744,7 @@ internationaliz8ion:tools to transl8 for I18N the document8ion && applic8ion int
         degener8
        deterior8
               s8   :command which provides diverse sorting capabilities  (&& also eventually r8 specialized for food, recipes, restaurants, etc.)
-            s8E8   :"satiate" might be the best most succinct double-eight word (&& maybe dieting tool using "I8" to track meals, calories, etc.)
+            s8E8   :"satiate" some particular craving or hunger          (&& maybe also a dieting tool using "I8" to track meals, calories, etc.)
              pl8   :menu or dish inventory manager
          reserv8ion:restaurant, hotel, or other similar schedule booking, ticketing, etc.
        refriger8   :home appliance tool maybe for new Internet-of-Things online smart devices
@@ -771,6 +781,14 @@ internationaliz8ion:tools to transl8 for I18N the document8ion && applic8ion int
          inculc8
          infeud8
       indoctrin8
+     immortaliz8ion
+      sanctific8ion
+       glorific8ion
+       dignific8ion
+        canoniz8ion
+         deific8ion
+          exalt8ion
+           laud8ion
           ordin8ion
             cur8   :could refer to clergy or be a tool to crE8 custom selections && collections of valued d8a && media as a museum custodian or librarian would
            prel8
@@ -779,6 +797,7 @@ internationaliz8ion:tools to transl8 for I18N the document8ion && applic8ion int
          officE8   :maybe ministry services for conducting weddings, funerals, holiday banquets, && any other similar rituals
             exP8
         dispens8ion
+         idoliz8ion
           tempt8ion
         condemn8ion
            damn8ion
@@ -984,9 +1003,12 @@ internationaliz8ion:tools to transl8 for I18N the document8ion && applic8ion int
            ulul8   :howl
          coagul8   :bleed (or more accur8ly the clotting process of blood in which a liquid thickens, curdles, or congeals && is transformed into a semisolid)
         stridul8   :make shrill creaking or musical sound by gr8ing together special body structures, often by many male insects like crickets && grasshoppers
+     intensific8ion
          aggrav8
            agit8
           irrit8
+          escal8
+         provoc8ion
         perturb8ion
         conturb8ion
         flutter8ion
@@ -1076,9 +1098,9 @@ internationaliz8ion:tools to transl8 for I18N the document8ion && applic8ion int
          procur8or :agent, altern8, deputy, proxy, proctor, or represent8ive who manages another's legal affairs, or provincial governor from Roman antiquity
          surrog8   :like procur8or but also frequently refers to a foster parent or child (such that there is typically no rel8ion by blood or law)
             SSN8   :code for an "assassin8" FPS game like Half-Life or with some ambitious elements of OverWatch using cr8 engine?
-              N8   :pronunC8ion as "innate", to be a succinct primary general d8a-set manager (probably cut because pronunC8ion && spelling are too far off)
-             DN8   :DNA (Deoxyribo-Nucleic Acid8) human genome sequencer/modeler && maybe chromosome strand splicing && protein-folding type puzzle games
             NfN8   :"infinite" followable inter-connections between any of Octology's 8d8a, likely having some possible mapping in any complete unific8ion
+             DN8   :DNA (Deoxyribo-Nucleic Acid8) human genome sequencer/modeler && maybe chromosome strand splicing && protein-folding type puzzle games
+              N8   :pronunC8ion as "innate", to be a succinct primary general d8a-set manager (probably cut because pronunC8ion && spelling are too far off)
 
 # The original intention for the nearly exhaustive list of 8-words above was to organize the best 888 as names for distinct future applic8ions && fE8ures,
 #   but after surpassing 1,024 unique candid8s, it appears better to revoke seemingly arbitrary limit8ions && allow for inclusion of any number of concepts.
@@ -3869,3 +3891,7 @@ HCHLJBrd:HTTPS://Google.GitHub.IO/boardgame.io may contain code which likely cou
 HCOL8SIG:HTTPS://Medium.Com/incerto/on-neo-cons-and-their-mental-defects-d12685585b11 about interventionistas not having Skin-In-the-Game was linked from /.;
 HCOLD8OK:HTTPS://Brilliant.Org/standupmaths may be good weekly puzzle site mentioned from U2b channel video about impossible-to-solve Rubik's Cube form8ions;
 HCOLN2HN:HTTP://Cipht.Net/2017/10/17/build-your-own-shell.html linked off HackerNews itself linked good for C HTTPS://Lysator.Liu.Se/c/ten-commandments.html ;
+HCPLDUPS:HTTP://MAPS.Org is seemingly interesting Multi-disciplinary AssoC8ion for Psychedelic Studies making strong cases for positive MDMA-rel8d therapies;
+HCQLIFTo:Mike Lopresti turned me on to the totally awesome dark morbid hilarious anim8ion work of Don Hertzfeldt with his Rejected series of cartoon shorts;
+I18L4BCI:HN linked to a basic Economist article on emerging BCI's as BrainComputerInterfaces such as Kochevar's Brain-g8 && ElonMusk's NeuraLink developments.
+Also HTTPS://Blogs.ScientificAmerican.Com/observations/a-neuroscientist-explores-the-sanskrit-effect describes how India's mantras improve memory && thinking;

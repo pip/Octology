@@ -40,3 +40,8 @@ b) Write a letter to the government if you see something that needs fixing -- an
 c) Remember that what you do not yet know is more important than what you already know.
 d) Be grateful in spite of your suffering.
 # Dr. Peterson's l8st book, "12 Rules for Life: An Antidote to Chaos" is distilled from the above list and should become available during January of 2018;
+# HCULCODE:started compiling good extra quotes up to _ 63;
+e) Criticize boxes of the culture as represent8ions of both "Wise King" and "Despot/Tyrant" with gratitude, not resentment, arrogance, or deceit. # 9fDJqkmoXW4
+# CrE8ive people tend to have trouble staying in nested boxes within culture and n8ure (m8ron). Dragon of chaos can rear from the dark at any time, being the
+#   "unknown unknown" or undescribed sub-structure from which all structures are formed. The Hero individual is Son of the gr8 Father, Any 3rd can be primary.
+#   "Nemesis" adversary of Hero are locked together in eternal battle between good and evil in psyche with other interdependent planes of culture and n8ure;
