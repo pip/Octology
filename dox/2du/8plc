@@ -5,7 +5,7 @@
 #   mk sepR8 tabul8ion of 8-words used in l8r document8ion wi not8ion 4thOs not yet included in top lists (thN optn2ignor easy conjug8ions && pre/suffixes),
 #   mk easy optn4 fulc 2use 1colm 4grep,add 4m@d percNtz,stuD wc && mk a8:cnt8/8c wi fulc -f? && 8plc as -l? optnz(rEdo hedrtXt),colr letrz,add f0ntz4 8trm;
 use strict;use warnings;use utf8;use v5.10;use Octology::a8;use Octology::b8;
-my $d8VS='I18LCNT8';       my $clrf=1;my $fulf=0;my $argz='';$argz= join(' ',@ARGV) if(@ARGV);my $Stxt='';my $folf=0; # add 4-Or-Less-Flag
+my $d8VS='I18LHigh';       my $clrf=1;my $fulf=0;my $argz='';$argz= join(' ',@ARGV) if(@ARGV);my $Stxt='';my $folf=0; # add 4-Or-Less-Flag
 my $edVS=        '';       my $pg1f=0;   $pg1f=1 if($argz=~ /(^|\s)-?-?[^p]*p/i); # find -?p(age) flag2limit some extra long output to first 48-line page
 my $mxws=        19;       my $lpsf=0;   $lpsf=1 if($argz=~ /(^|\s)-?-?[^l]*l/i); # find -?LetrPrecursShortsFlag  # if MaXWordSize evr grOz,wil nEd2incrEs|Dtct
 my $clmz=        80;       my $gm8f=0;   $gm8f=1 if($argz=~ /(^|\s)-?-?[^g]*g/i); # find -?g(m8r) flag2count&&adorn wi math 4mUl8ions stRting wi 2letr
@@ -70,14 +70,14 @@ $Stxt.=                                            sprintf("${C}t${M}0${C}tlz   
 if($lpsf){$Stxt.="\n${C}All${R}Counts${o}Not${M}Matching${Y}Words${B}List$G -$K likely from just d8-stamps, pal8 codes, or other non-word strings with 8$W:\n";
   for(0..63){if(defined($acnt[$_]) && $acnt[$_] && !exists($lpsd{b64($_)})){$Stxt.="$z ".b64($_)."$W:";$Stxt.=$r;$Stxt.=$R if($acnt[$_]>2);$Stxt.=$acnt[$_];}}
   $Stxt        .="\n${Y}Letter${M}Pre-cursor${C}Shortests${B}List$G -$K shows all entries by$M P${Y}L$K with growing word-sizes$W:\n";for(@scnt){
-    for     my $lndx (0..$#lcnt){if(defined($lcnt[$lndx]) && $_ ==   $lcnt[    $lndx]){my $letr=b64($lndx);$Stxt=~ s/ $/\n/ if($letr=~ /[RGUD]/);
+    for     my $lndx (0..$#lcnt){if(defined($lcnt[$lndx]) && $_ ==   $lcnt[    $lndx]){my $letr=b64($lndx);$Stxt=~ s/ $/\n/ if($letr=~ /[RGUDC]/);
                                                                                        my $ltot=     0    ;$Stxt.="$Y$letr$R:"; # hRdcOded prEnwlInz abov
         for my $wsiz (2..$mxws ){if(exists ($lpsd{$letr}) && defined($lpsd{$letr}       ) && scalar(@{$lpsd{$letr}       }) &&
                                                              defined($lpsd{$letr}[$wsiz]) && scalar(@{$lpsd{$letr}[$wsiz]})){
             for my $wndx (0 ..$#{$lpsd{$letr}[$wsiz]}){              $lpsd{$letr}[$wsiz][$wndx]=~        s/($letr)(8)/$o$1$G$2$z/g;} # colr 8PLz
             $Stxt.="$B$wsiz$W:$z".join(' ',@{$lpsd{$letr}[$wsiz]}).' ';$ltot+=               scalar(@{$lpsd{$letr}[$wsiz]});}
         }   $Stxt.="$M$ltot ";$Stxt=~ s/ $/\n/ unless($ltot <= 8); }}}} # maybe insert other newlines above when reaching terminal width for long listz?
-if($folf){$Stxt.="\n${Y}Word${R}Sort${C}By${B}Size$G -$z up to current maximum$M $mxws$K or first page if given$p -p$W:\n";my $maxs=$mxws;$maxs=10 if($pg1f);
+if($folf){$Stxt.="\n${Y}Word${R}Sort${C}By${B}Size$G -$K up to current maximum$M $mxws$K or one$p page$K if given$p -p$W:\n";my $maxs=$mxws;$maxs=10 if($pg1f);
   for   my $wsiz (2..$maxs ){my @folk=sort(keys(%{$folc[$wsiz]}));$Stxt.=$M.scalar(@folk);$Stxt.="$R $wsiz" unless(scalar(@folk));
     for my $fndx (0..$#folk){my $foln=$folk[$fndx];$foln=~    s/([$letz])(8)/$Y$1$G$2$z/g;$Stxt.="$z $foln";} $Stxt.="\n";}} # used2B $Stxt.="$G @folk\n";
 # HCOL8fol:had 15 \w8, 33 3-letrz, && 60 4-letrz (108 t0tl, mAB 12 of wich alredy Xist in bin/ stably or canB tmp DmOtd 2mk nxt nw 96 Dsciptnz pAg lIk sumb),
@@ -136,6 +136,6 @@ if($fulf){$Stxt.="\n";my %cvlz=reverse(%fulc);my @ccnt= sort { $a <=> $b } keys(
           $jus8     =  $coun                    if($char=~ /^8$/            ); # special just       8        to compare at end
           $w82o    .= ($char eq "\n") ? '\n' : $char;$pcnt++;} # probably only newline shouldn't be printed normally to ruin formatting
       } $Stxt.=sprintf((' ' x ( 8-$pcnt))."$C$w82o$B:$M".sprintf("%7s$B: %s$W,\n",cma($coun),b8colr(sprintf("%4s",b64($coun)))));#,S(substr($cmap{'d8bo'},b64(int(rand(8))),1)));
-    }}  $Stxt.=sprintf("$C  Sum of$B: ${G}0$W..${G}7$W,${G}9$B: $M%s$o      dif$Y:    $B%s$W;$z",cma($sumn), ($jus8-$sumn));} $Stxt=sS($Stxt) unless($clrf);
+    }}  $Stxt.=sprintf("$C  Sum of$B: ${G}0$W..${G}7$W,${G}9$B: $M%s$o      dif$Y:  $B%s$W;$z", cma($sumn), cma($jus8-$sumn));} $Stxt=sS($Stxt) unless($clrf);
 open my $out8,'>&',STDOUT or die "Can't open  duplic8 STDOUT handle: $!";binmode $out8,':encoding(UTF-8)';print $out8 $Stxt; # crE8 local duplic8 of global
 close   $out8             or die "Can't close duplic8 STDOUT handle: $!";

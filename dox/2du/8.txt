@@ -1,5 +1,5 @@
 # D6RMF1V1:8.txt - by8π : JAPH : K3wlD00d : 1337H4xr : PipStuart's Octology (hopefully eventually an Ontology of 8) - Convention, Conversion, && Categoriz8ion:
-# $VERSION='0.0';$d8VS='I18LB4E8'; # Octology attempts to rel8 the universe through medit8ion on mnemonic abbreV8ion (via 8-based  limit8ion) &&    elucid8ion.
+# $VERSION='0.0';$d8VS='I18LGate'; # Octology attempts to rel8 the universe through medit8ion on mnemonic abbreV8ion (via 8-based  limit8ion) &&    elucid8ion.
 # CEBBICTI:Crossing Every Bridge Before I Come To It? I.e., not a d8 stamp. Trying to make my Dad's birthday (August 8th) more special by thinking 2far ahead?
 # Octology intends to pursue implic8ion && ramific8ion as substantE8ion for adequ8 particip8ion, if not also 2 oblig8ion toward implement8ion &&   promulg8ion.
 # Conceptually, Octology is a system st8ing that every organiz8ional principle is valuable, but 8 tends to be a nearly ideal starting place for most d8a sets.
@@ -261,15 +261,17 @@ internationaliz8ion:tools to transl8 for I18N the document8ion && applic8ion int
          glomer8
        prolifer8
          pullul8
-         germin8
              gM8   :"gemmate" as having && reproducing by buds (from Botany)
              pN8   :winged or plume-shaped                     (from Botany)
            pinn8
+           nerv8
             jug8d  :coupled together                           (from Botany)
           bijug8   :having two pairs, as of leaflets           (from Botany)
         bigemin8
         ingemin8
           gemin8   :in pairs or twains, two together, twin     (from Botany)
+         germin8
+           glaD8   :sword-shaped in form, as the leaf of the iris or the gladiolus                    (from Botany)
       archegonE8   :of or rel8ing to a female sex organ found in mosses, ferns, && most gymnosperms   (from Botany)
         fastigE8   :having clusters of erect branches often appearing to form a single pointed column (from Botany) or a united conical bundle (from Zoology)
           numer8   :pagin8, folE8
@@ -438,6 +440,7 @@ internationaliz8ion:tools to transl8 for I18N the document8ion && applic8ion int
          crimin8
         perpetr8
           litig8   :maybe some tool primarily rel8d to legalities of software licenses, copyright, patents, intellectual property, etc.
+         legisl8
          ajudic8
        imprison8
        incarcer8
@@ -571,6 +574,7 @@ internationaliz8ion:tools to transl8 for I18N the document8ion && applic8ion int
         optimiz8ion:maybe profiling or other mechanisms for optimizing code
      objectific8ion:Object Oriented programming tool (&& maybe summary of analysis on purportedly devaluing human bodies when seen as merely desirable objects)
          orient8   :2D/3D perspective gathering tool to show various zooms && pans to convey contextual position descriptively (even if abstractly)
+       encapsul8
        instantE8   :object instantiation
          replic8   :make a separ8 copy             of an object
          duplic8
@@ -633,8 +637,12 @@ internationaliz8ion:tools to transl8 for I18N the document8ion && applic8ion int
           p8riz8   :imit8ion of the father
         satiriz8ion
       sarcastic8
-           infl8   :special core d8a manipul8ion tool
            defl8
+           infl8   :special core d8a manipul8ion tool
+          inhal8ion
+         respir8ion
+          exhal8ion
+           effl8   :maybe concentr8d breathing exercises
            elev8
            prol8
             obl8
@@ -653,6 +661,7 @@ internationaliz8ion:tools to transl8 for I18N the document8ion && applic8ion int
        reverber8   :some audio modific8ion && other processing tool for production
           reson8   :community organiz8ion or audio stuff
           simul8   :physics-based simul8ions (maybe dynamics && universe?)
+           speC8   :species simul8or for exploring evolutionary developments && emergent specializ8ions which lead to improved environmental suitability
            prim8   :biology simul8or
             pup8   :insect  simul8or, modeling && AI (&& larva development)
              aV8   :bird    simul8or (or general flight tools?)
@@ -686,6 +695,7 @@ internationaliz8ion:tools to transl8 for I18N the document8ion && applic8ion int
          vaccin8   :maybe focused on vaccines && statistics to encourage trusting their general safety && getting them done
               m8ron:nurse or prison wardress tracker or should just be female form of business customer or crowd-funding p8ron?
               p8ient:maybe same as medic8 or priv8 personal medical records or opposite of imp8ient && rel8d to wait w8 somehow?
+        fibrill8   :making fine, irregular, rapid twitching movements, such as the convultions from within the chest of a p8ient suffering a heart-attack
            larv8   :masked, concealed, obscure doubtful medical cases of disease
              oP8   :opiate epidemic resources
             sed8
@@ -882,10 +892,11 @@ internationaliz8ion:tools to transl8 for I18N the document8ion && applic8ion int
            frig8   :fr8 ship/boat tracking or maybe some ocean-based resource-management simul8ion game with domestic markets && sea-life disturbance metrics
              fr8   :"freight" package shipment manager, tracker, && organizer
              cr8   :maybe FirstPersonShooter engine && game (a bit cynically, since the FPS genre is notorious for having levels that are inund8d with crates?)
-         superl8ive:gr8est  fighting                   game with many supers per character?
               f8l  :general fighting         engine && game "fatal"
              sk8   :general skateboarding    engine && game
               p8   :general bullet-hell      engine && game like Parsec47 ("pate" means crown or top of head, so royalty or cranium could be part of theme?)
+           glaD8or :professional combatant or captive in ancient Rome often engaging in mortal sword fights to entertain the public, so a sword-fighting game?
+         superl8ive:gr8est  fighting                   game with many supers per character?
             equ8   :general equation editor && calcul8or which can maybe eventually solve for symbols algebraically or offer other rel8d comput8ions
        equilibr8
          formul8   :some type of specialized equ8ion or other formula editor && comput8ion applic8ion
@@ -932,6 +943,7 @@ internationaliz8ion:tools to transl8 for I18N the document8ion && applic8ion int
         inspiss8
         gelatin8
          attenU8
+            elu8   :liquid solution resulting from elution, the process of extracting one material from another by washing with solvent, like uranium ions
             ion8
        liquific8ion
          evapor8   :e-cigarette reviews && any rel8d safety d8a which can be aggreg8d for providing quality hardware && juice brand recommend8ions && cautions
@@ -961,6 +973,7 @@ internationaliz8ion:tools to transl8 for I18N the document8ion && applic8ion int
           desic8
           salin8
             bor8
+            mic8   :to add mica to, which is any various hydrous silic8 minerals of aluminum or potassium that crystallize allowing thin leaf cleavages
             kin8
            quin8
            citr8
@@ -971,8 +984,8 @@ internationaliz8ion:tools to transl8 for I18N the document8ion && applic8ion int
           chrom8
         chlorin8
          mangan8
-             mL8
          mellit8
+             mL8
             mor8
            form8   :salt of formic     acid
           formE8
@@ -3933,3 +3946,5 @@ HCQLIFTo:Mike Lopresti turned me on to the totally awesome dark morbid hilarious
 I18L4BCI:HN linked to a basic Economist article on emerging BCI's as BrainComputerInterfaces such as Kochevar's Brain-g8 && ElonMusk's NeuraLink developments.
 Also HTTPS://Blogs.ScientificAmerican.Com/observations/a-neuroscientist-explores-the-sanskrit-effect describes how India's mantras improve memory && thinking;
 I18LB4E8:HTTP://TheFreeDictionary.Com/words-that-end-in-iate is an obvious discovery demonstr8ing a templ8 for l8r exhaustively expanding my top 8-words list;
+I18LDjai:jblow888 shared 3 Month-ish Jai initial release plan && HTTPS://GitHub.Com/BSVino/JaiPrimer/blob/master/JaiPrimer.md rel8s bits of outd8d inform8ion.
+Pinker tweeted HTTPS://ArtPlusMarketing.Com/putting-out-the-twitter-trashfire-3ac6cb1af3e rant article by RandiLeeHarper which would be good to study for pr8;
