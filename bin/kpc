@@ -1,7 +1,9 @@
 #!/usr/bin/perl
 # G7TMNDcx:kpc crE8d by PipStuart <Pip@CPAN.Org> to customize kpcli-3.0.pl mainly to add my most familiar aliases, better alignment, and many more colors;
 #   Stopped reformatting on get_prepped_readline_term() line 1124, for now (about 25% thru file).
-# 2du:add auto-cd with "$path/?",test partial reconstruction then loading compatibility with original kpcli-3.0.pl,add longer descriptions wi better alignment,
+# 2du:try2rm blnk lInz btwn `ls *` subdirz && mAB Xtra hIlIt sepR8 dirz but if too dense just rE4m@ Dflt singl 80-colm mOd in2doubl 160-colm as betr norm4mE,
+#   try adding sepR8 new hIlItd singl b64-char ls ndx colm wich can alsO altrn8ly B aceptd by `show` nstd of stndRd b10 ndx or nAm,mAB prnt UsrnAmz2 4 `ls *`,
+#   add auto-cd with "$path/?",test partial reconstruction then loading compatibility with original kpcli-3.0.pl,add longer descriptions wi better alignment,
 #   mAB add command-line option of entry name to immeD8ly auto-show after pswd entered (but proly don't auto-exit since still want xx to clear clipboard aftr);
 ##############################################################################################################################################################
 # kpcli - KeePass Command Line Interface; Author: Lester Hightower <hightowe at cpan dot org>; This program was inspired by  "kedpm -c" and resulted despite

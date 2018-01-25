@@ -1,6 +1,3 @@
-I18L9q9c: HTTPS://YouTube.Com/watch?v=SMZFb4UhmFU "Why do we Believe a voice in our head could be God - Jordan Peterson" # also addiction:"To Hell With It"?
-# I would like to share the above with Dad for discussion somewhat l8r, accepting reinforcment but critical of characterizing drug use as embracing "Hell";
-          HTTPS://YouTube.Com/watch?v=kteHW6t4G0g "Jordan Peterson Interview of Ben Shapiro: Telos, Responsibility, and Cultiv8ion" # 27mins; above:10mins;
 HAPM1WdN: chv0 Lt: GMail  /.  PerlMonks.Org  Reddit.Com/r/programming  News.YCombinator.Com  Vox.Com
 # chv0 Md https://github.com/ncw/rclone
           https://rclone.org

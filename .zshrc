@@ -1,5 +1,5 @@
 # 381KF3RN:~/.zshrc by PipStuart <Pip@CPAN.Org>; nOt:I originallythotitbetr2rElymoronstndalOnXecutablUtlz than aliases||shL-scrpt funczDfynd inany .rc Bcuz4mer
-# $VERSION='0.0';$d8VS='HCSL8Df8'; # stAyavail2spwnd procSz wich hvOwn non-zsh sub-shL cfgz(eg,vim:!cln 127/7;perl`b64 1023`)sO I pland2port stufhEr2anew u8.pm
+# $VERSION='0.0';$d8VS='I1OLB8dh'; # stAyavail2spwnd procSz wich hvOwn non-zsh sub-shL cfgz(eg,vim:!cln 127/7;perl`b64 1023`)sO I pland2port stufhEr2anew u8.pm
 #   butIhv rElIzd that c8.pm (inprep4 8sh)wilBAbl2pars .(ba|z)shrc fIlz2lOd thEz&&can mk thMavail2othr shLz bywrapng cmdz wiXpansionUtlz; lern LaunchPad/byobu,
 # 2du:cmNt unUsed aliases,add perVC autostRt nwlOcl`scrn`if!alredy in1,lern`autoload -z`&&sepR8hist,get pcre module&&anyUsefulothrz,
 #   bakon gN2:`em  scummvm`:2use nw"modern"theme4scummvm,add2[scummvm]sect of~/.scummvmrc(aftr runing scummvm once):themepath=/usr/share/games/scummvm/engines
@@ -325,6 +325,7 @@ alias     plb='   perl -MOctology::b8  -e'; # setup PerL eval        with Base-t
 alias     pab='   perl -MOctology::a8 -MOctology::b8  -e'; # Perl eval with A8  &&  B8   exports together like `pab "b8colr(b64(calQ('4096xx2048')))"`
 alias    h2rl='   pa  "print h2rl(@ARGV)"'; # HEX to RgbLowbitz
 alias    rl2h='   pa  "print rl2h(@ARGV)"'; #        RgbLowbitz to HEX
+alias    drkh='   pa  "print drkh(@ARGV)"'; # HEX to RgbL with 8th intensities
 alias    sumz='   plb "      sumz(@ARGV)"'; # printing these was just yielding an extra 1 at each end, after they printed output themselves instead of returnd
 alias    fctz='   plb "      fctz(@ARGV)"';
 alias    fibz='   plb "      fibz(@ARGV)"';
@@ -482,7 +483,8 @@ alias       s='   shlp'; # assume Perl since an upd8 to source-highlight seems t
 alias      S8='   shl8'; # my primitive c8:SourceHighLight8 Utl to hopefully eventually approach functional parity with source-highlight before surpassing it
 alias     sho='cd ~/gfx/sho;shot -u'; # change to typical local Octology screenshot directory && take a shot of the focUsed window (no border) in 3 seconds
 alias    resp='   reso spec'; # joining like =~ /^respect/ shortcut to list resolution specific8ionz  # abovUsed2B S=shl,s=shl8 but S repurposed in a8 4 SKpz
-alias    ctor='ctorrent -e 15 -C 64';
+alias   xical='xinput-calibrator';alias xic='xical';alias xbk='xbindkeys';alias xdt='xdotool'; # basic Chun touch-scrn && X re-binding && scripting utlz
+alias    ctor='ctorrent -e 15 -C 64'; # abov: %eval $(xdotool getmouselocation --shell); %echo $X,$Y; will override Dflt $Y bright Yellow mapping with coordz
 alias     p47='parsec47'; # some of my favorite Kenta Cho Shmups ("Bullet Hell") in /usr/games
 alias      a7='a7xpg';
 alias      rr='rrootage';
@@ -499,6 +501,8 @@ j k l : bkwd10secs toglpause 4wrd10secs (Space=2pause);   , .  : bkwd 1fram (ifp
 alias    ukey='echo -n "m c b:volu Muted toglCaptn Bakgr cycl;(Home/End= 0/9 2)> 0-9 :jmp% \$n*10 plabakpos =r8io %abs; < > :slow down< plabakspd >upup fast;
 j k l:bkwd 10sec toglpausd 10sec 4wrd<(Spacebar=pause2);Lt Rt:bkwd -5sec arrowkeys +5sec 4wrd; , . :bkwd -1frm whenpausd +1frm 4wrd;
 p f n:Prev plals toglFulsc plals Next<(Escapkey=exitf2);Dn Up:dec% -5vol arrowkeys +5vol %inc;"';
+alias    uky=' echo    "j k l:bkwd 10sec toglpausd 10sec 4wrd<(Spc=pausHmEnd0-9); 0-9 :jmp% \$n*10 plabakpos =r8io %abs;Lt Rt:bkwd -5sec +5sec 4wrd; < > :slow down< >upup fast;
+p f n:Prev plals toglFulsc plals Next<(Escapekey=exitf2);m c b:volu Muted toglCaptn Bakgr cycl;Dn Up:dec% -5vol +5vol %inc; , . :bkwd -1frm +1frm 4wrd;"';
 alias    Uk='echo -en "${R}m$G c$K b$W :$B togl$M vol${R}Mute$G Caption$K Bakgr$C colr$Y [$G U2b$C-${R}hot${r}Key$Y ]$W;$M  Dn$G Up$W :$M lowr$C 5$Y%${w}vol$Y (${O}arow${r}kyz$Y)$G rais$C 5$Y%${w}vol$W;
 ${M}p$C f$B n$W :$M Prev${P}play${c}ls$B togl${C}Fulsc$B Next${P}play${c}ls$Y (${O}Escap$W=${g}2${R}exit${C}f${Y})$W;$Y  Lt$R Rt$W :$B bkwd$C 5${M}secs$Y (${O}arow${r}kyz$Y)$R 4wrd$C 5${M}secs$W;
 ${B}j$M k$R l$W :$B bkwd${G}10${M}secs$B togl${M}pause$R 4wrd${G}10${M}secs$Y (${M}Space$W=${g}2${M}pause$Y)$W;$B   ,$M .$W  :$B bkwd$O 1${c}fram$Y (if${M}pausd$Y)$R 4wrd$O 1${c}fram$W;

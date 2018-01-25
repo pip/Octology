@@ -45,13 +45,13 @@ package     Octology::a8;
 use strict; use warnings;use utf8;use v5.10;use Encode;
 require         Exporter;  # add new colr systM
 use base     qw(Exporter); # mainly exporting global utility functions && variables originally inherited from c8.pm as well as a few f8.pm d8a structures
-our @EXPORT= qw(bfr8c    b8c    d8c    dur8c       a8c   a8colr      h2rl   rl2h
+our @EXPORT= qw(bfr8c    b8c    d8c    dur8c       a8c   a8colr      h2rl   rl2h       drkh
                 bfr8colr b8colr d8colr dur8colr    d8cs @d8cl  chti  c8fn     S2   c2  S c   sS    lodl @Monz @Mon     %mc2F %mc2b %mF2c %mb2c        %sb10
  $SKp8 $SKp0 $SKp1 $SKp2 b8clr  $SKpf $SKpt %pmap %cmap       %pl8n  ftst       %f8fm %f8pm %sgrm %sgrn @Dayz @Day  lrc      comma  curs  sumb @x256  @sb64
     $z    $k    $r    $o    $y    $g     $c $SKpb    $m    $p    $w  tstc    $K    $R    $O    $Y    $G    $C    $B    $M    $P    $W    %p622 %p222
  $tnhf $ucdf  spff  spfd  spfX   shfl  reso $auth %cmsp %p8k2 @p82k  chp8     S2f4 c2f4 dm2u cdst %crgb %cbrt @snls @mrls %cdrd %cdrn    %nrgb         gnp8);
  # of 52 posibl sngl-letr var nmz,a8 Xportz 20,$b && $a unavail,so shudB thEs30 lFt4quik shortSt nAmz: 'def hij l n  q stuv x', 'A  DEF HIJ L N  Q STUV X Z'
-our $VERSION='0.0';my  $d8VS='HC8L5Yes';our $auth='PipStuart <Pip@CPAN.Org>'; # above not exporting $b since collidez with sort{$a  <=> $b}
+our $VERSION='0.0';my  $d8VS='I1OLB8dh';our $auth='PipStuart <Pip@CPAN.Org>'; # above not exporting $b since collidez with sort{$a  <=> $b}
 our $ucdf= eval('use Color::Similarity::RGB qw(distance);1') || 0; # try2set UseColorDistanceFlag if optional module is available
 our @Monz=qw(January February March   April     May June July   August September October November December);our @Mon=();push(@Mon,substr($_,0,3)) for(@Monz);
 our @Dayz=qw(Sunday  Monday   Tuesday Wednesday Thursday Friday Saturday                                  );our @Day=();push(@Day,substr($_,0,3)) for(@Dayz);
@@ -493,20 +493,29 @@ our %sgrm=('N' =>  0 ,  'S' => 26     , # 0 'N Normal / reset; # SelectGrphcRndi
      $sgrm{'d'}=  24 ; #  d => u or remap to Double overline or just Double underline off but leave potential single Underline (or from B4) intact?
      $sgrm{'k'}=  25 ; #  k => l or remap to some new special custom blinK pulsing color pattern?
      $sgrm{'e'}=  54 ; #  e => m or remap to double fraMEd with some other code, or just turn Encircled off to leave fraMed maybe still on l8r?
+sub drkh{ # convert any RRGGBB HEX with channel intensities dropped to 8th int before returning RGBl result, or try better interface? (2du:fix2gNr8 rsltz)
+  my $rgbh=shift( @_);my $scal=shift(@_)||(1.0/8);my $valu=0;my $lowb=0;my $rgbs='';
+  my @rgbd=split(//,('0'x 6));return('') unless(defined($rgbh) && length($rgbh));
+  if(length($rgbh) == 6){@rgbd=split(//,$rgbh); # do $sb64[..] aftr each b10 valu pRtoff b64 6-bit chars while filng lowbits
+    for my $rndx ( 0..2){$rgbd[$rndx]=sprintf("%2.2X",int((hex($rgbd[$rndx*2])*16+hex($rgbd[$rndx*2+1]))*$scal));
+    } return(h2rl(join('',@rgbd))); } } # should setup taken HEX RGB && scale to darken maybe default colors from d8/fldz.pm for d8g deep darkz
 sub rl2h{ # convert any typical b64 RGBL into RRGGBB HEX with Last Low bits Loaded Layered aLready
-  my $rgbh=shift(@_);my $valu=0;           my $rgbs='';my @rgbd=split(//,('0'x 4));return('') unless(defined($rgbh) && length($rgbh));
-  if(length($rgbh) == 4){#$rgbh=uc($rgbh) if($rgbh=~ /[a-z]/);
-                                                          @rgbd=split(//,$rgbh); # do $sb64[..] aftr each b10 valu pRtoff b64 6-bit chars while filng lowbits
-    $valu= $sb10{$rgbd[0]} * 4;$valu+=2 if($sb10{$rgbd[3]} & 32);$valu+=1 if($sb10{$rgbd[3]} & 16);$rgbs.= sprintf("%2.2X",$valu);
-    $valu= $sb10{$rgbd[1]} * 4;$valu+=2 if($sb10{$rgbd[3]} &  8);$valu+=1 if($sb10{$rgbd[3]} &  4);$rgbs.= sprintf("%2.2X",$valu);
-    $valu= $sb10{$rgbd[2]} * 4;$valu+=2 if($sb10{$rgbd[3]} &  2);$valu+=1 if($sb10{$rgbd[3]} &  1);$rgbs.= sprintf("%2.2X",$valu);         } return($rgbs);}
+  my   $rgbs='';while(@_){ # loop all params && join into single end-result string
+    my $rgbh=shift( @_);my $valu=0;                       my @rgbd=split(//,('0'x 4));return('') unless(defined($rgbh) && length($rgbh));
+    if(length($rgbh) == 4){#$rgbh=uc($rgbh) if($rgbh=~ /[a-z]/);
+                                                             @rgbd=split(//,$rgbh); # do $sb64[..] aftr Ech b10 valU pRtoff b64 6-bit chars whIl filng lowbits
+      $valu= $sb10{$rgbd[0]} * 4;$valu+=2 if($sb10{$rgbd[3]} & 32);$valu+=1 if($sb10{$rgbd[3]} & 16);$rgbs.= sprintf("%2.2X",$valu);
+      $valu= $sb10{$rgbd[1]} * 4;$valu+=2 if($sb10{$rgbd[3]} &  8);$valu+=1 if($sb10{$rgbd[3]} &  4);$rgbs.= sprintf("%2.2X",$valu);
+      $valu= $sb10{$rgbd[2]} * 4;$valu+=2 if($sb10{$rgbd[3]} &  2);$valu+=1 if($sb10{$rgbd[3]} &  1);$rgbs.= sprintf("%2.2X",$valu);         } $rgbs.=' ';}
+  $rgbs=~ s/ $//;return($rgbs);}
 sub h2rl{ # convert any typical HEX RRGGBB into RGBL b64 with Last Low bits Layered (might not want to uc() if 4-char leng or maybe flagd 2cnv bak2 HEX)
-  my $rgbh=shift(@_);my $valu=0;my $lowb=0;my $rgbs='';my @rgbd=split(//,('0'x 6));return('') unless(defined($rgbh) && length($rgbh));
-  if(length($rgbh) == 6){#$rgbh=uc($rgbh) if($rgbh=~ /[a-z]/);
-                                                          @rgbd=split(//,$rgbh); # do $sb64[..] aftr each b10 valu pRtoff b64 6-bit chars while filng lowbits
-    $valu= hex($rgbd[0]) * 16 + hex($rgbd[1]);$rgbs.=$sb64[int($valu/4)];$lowb+=2 if($valu & 2);$lowb+=1 if($valu & 1);$lowb*=4;
-    $valu= hex($rgbd[2]) * 16 + hex($rgbd[3]);$rgbs.=$sb64[int($valu/4)];$lowb+=2 if($valu & 2);$lowb+=1 if($valu & 1);$lowb*=4;
-    $valu= hex($rgbd[4]) * 16 + hex($rgbd[5]);$rgbs.=$sb64[int($valu/4)];$lowb+=2 if($valu & 2);$lowb+=1 if($valu & 1);$rgbs.=$sb64[$lowb];} return($rgbs);}
+  my   $rgbs='';while(@_){
+    my $rgbh=shift( @_);my $valu=0;my $lowb=0;my $rgbs='';my @rgbd=split(//,('0'x 6));return('') unless(defined($rgbh) && length($rgbh));
+    if(length($rgbh) == 6){                                  @rgbd=split(//,$rgbh); # do $sb64[..] aftr Ech b10 valU pRtoff b64 6-bit chars whIl filng lowbits
+      $valu= hex($rgbd[0]) * 16 + hex($rgbd[1]);$rgbs.=$sb64[int($valu/4)];$lowb+=2 if($valu & 2);$lowb+=1 if($valu & 1);$lowb*=4;
+      $valu= hex($rgbd[2]) * 16 + hex($rgbd[3]);$rgbs.=$sb64[int($valu/4)];$lowb+=2 if($valu & 2);$lowb+=1 if($valu & 1);$lowb*=4;
+      $valu= hex($rgbd[4]) * 16 + hex($rgbd[5]);$rgbs.=$sb64[int($valu/4)];$lowb+=2 if($valu & 2);$lowb+=1 if($valu & 1);$rgbs.=$sb64[$lowb];} $rgbs.=' ';}
+  $rgbs=~ s/ $//;return($rgbs);}
 sub S{my $Sstr='';my $codz='';if(@_ && defined($_[0])){$codz= join('',@_);} # might want l8r flag optionz as sepR8d by spacez for these joinz though
 if((!defined($codz) || !length($codz)) && !-t STDIN){chomp($codz= join('',<STDIN>));}
   if(defined($codz) && length($codz)){ # problM mAB doing !-t ck twice from bin/S to S()?

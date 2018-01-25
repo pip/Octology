@@ -1,5 +1,5 @@
 # D6RMF1V1:8.txt - by8π : JAPH : K3wlD00d : 1337H4xr : PipStuart's Octology (hopefully eventually an Ontology of 8) - Convention, Conversion, && Categoriz8ion:
-# $VERSION='0.0';$d8VS='I18LGate'; # Octology attempts to rel8 the universe through medit8ion on mnemonic abbreV8ion (via 8-based  limit8ion) &&    elucid8ion.
+# $VERSION='0.0';$d8VS='I1PL5sk8'; # Octology attempts to rel8 the universe through medit8ion on mnemonic abbreV8ion (via 8-based  limit8ion) &&    elucid8ion.
 # CEBBICTI:Crossing Every Bridge Before I Come To It? I.e., not a d8 stamp. Trying to make my Dad's birthday (August 8th) more special by thinking 2far ahead?
 # Octology intends to pursue implic8ion && ramific8ion as substantE8ion for adequ8 particip8ion, if not also 2 oblig8ion toward implement8ion &&   promulg8ion.
 # Conceptually, Octology is a system st8ing that every organiz8ional principle is valuable, but 8 tends to be a nearly ideal starting place for most d8a sets.
@@ -102,8 +102,9 @@ compartmentaliz8ion
              gr8ful    # Protect free-speech (especially unpopular && offensive)! Promote societal justice && equality for both genders through egalitarianism!
               p8ron:don8 system like Patreon with tracking && support for crE8ors && donors  # Promote good research, evidence, cit8ions, && result duplic8ion!
         monetiz8ion    # Reject censorship! Do not just listen && believe. Trust but verify! Men's rights matter also! Protect h8-speech! Eradic8 global ICBMs!
-       marketiz8ion
+       marketiz8ion    # above are just example position slogans which generally align with at least some of my previous sentiments;      Keep right to offend!
    commercializ8ion
+        cheapsk8
        approprE8   :same as alloc8 for design8ing funds for a purpose or maybe politial correctness && social faux pas educ8ion && avoidance recommend8ions?
     misapproprE8
    maladministr8ion
@@ -259,11 +260,13 @@ internationaliz8ion:tools to transl8 for I18N the document8ion && applic8ion int
        agglomer8
       conglomer8
          glomer8
-       prolifer8
-         pullul8
              gM8   :"gemmate" as having && reproducing by buds (from Botany)
              pN8   :winged or plume-shaped                     (from Botany)
            pinn8
+         pullul8
+       prolifer8
+          calcR8   :having a spur or being spurred, as the flowers of the toadflax && larkspur (from Botany)         or armed with a spur (from Zoology)
+            lyr8   :lyre-shaped or spatul8 && oblong as a leaf (from Botany) or like curv8ure in the tail of the blackcock, the lyre bird (from Zoology)
            nerv8
             jug8d  :coupled together                           (from Botany)
           bijug8   :having two pairs, as of leaflets           (from Botany)
@@ -308,6 +311,7 @@ internationaliz8ion:tools to transl8 for I18N the document8ion && applic8ion int
           amput8
         augment8ion
        scarific8ion
+      methotrex8   :toxic antimetabolite limiting cellular reproduction as folic acid antagonist (treats certain cancers, psoriasis, && rheumatoid arthritis)
          enuclE8   :remove cell nucleus or something like an eye or tumor from an enveloping sac or cover
           mutil8
             mut8
@@ -421,7 +425,6 @@ internationaliz8ion:tools to transl8 for I18N the document8ion && applic8ion int
          remigr8
       transmigr8
       intermigr8
-        infiltr8
         conform8
            vers8ile
           alter8ion
@@ -655,6 +658,7 @@ internationaliz8ion:tools to transl8 for I18N the document8ion && applic8ion int
          altern8   :interactive RegEx demonstr8or focusing early examples on basic nestable altern8ion like (Chil|D(wub|rum)|Hard)St(ep|yl) fav8 muz genres
          fluctu8
          pendul8
+           puls8
          oscill8
          vacill8
            vibr8   :tele-dildonics with audio && video coordin8ion?
@@ -778,6 +782,8 @@ internationaliz8ion:tools to transl8 for I18N the document8ion && applic8ion int
          emacer8
         degener8
        deterior8
+            ans8   :having a handle or a part resembling a handle
+            lys8   :the material produced by lysis (in Biology)
               s8   :command which provides diverse sorting capabilities  (&& also eventually r8 specialized for food, recipes, restaurants, etc.)
             s8E8   :"satiate" some particular craving or hunger          (&& maybe also a dieting tool using "I8" to track meals, calories, etc.)
              pl8   :menu or dish inventory manager
@@ -828,6 +834,7 @@ internationaliz8ion:tools to transl8 for I18N the document8ion && applic8ion int
           ordin8ion
             cur8   :could refer to clergy or be a tool to crE8 custom selections && collections of valued d8a && media as a museum custodian or librarian would
            prel8
+           vicR8
          vicarE8
         ministr8
         congreg8
@@ -961,9 +968,11 @@ internationaliz8ion:tools to transl8 for I18N the document8ion && applic8ion int
           confl8
         amalgam8
         purific8ion:recommend8ion of V8-Fusion brand delicious blended fruit juices for healthy cleansing hydr8ion, especially "Peach Mango" flavor
-          filtr8
           permE8
          percol8
+        infiltr8
+          filtr8
+        exfiltr8
         caffein8   :recommend8ion of 8-O'Clock brand "Alert" high-caffeine ground coffee, as well as "Dark Italian Espresso" && "Hazelnut" flavors
        particul8
              sp8   :"spate" is a surge or sudden forceful water flow or abundance so maybe a deluge or whole lot of 8 stuff like this list itself?
@@ -987,9 +996,10 @@ internationaliz8ion:tools to transl8 for I18N the document8ion && applic8ion int
          mellit8
              mL8
             mor8
-           form8   :salt of formic     acid
+           fumR8   :salt (or ester) of fumaric    acid produced as a key chemical intermeD8 during the urea (or Krebs?) cycle (from Biochemistry)
+           form8   :salt            of formic     acid
           formE8
-       ricinolE8   :salt of ricinoleic acid (formerly called palm8 of palmic acid)
+       ricinolE8   :salt            of ricinoleic acid (formerly called palm8 of palmic acid)
            acer8   :aceric acid with salifiable base or long, narrow, pointed needle
           arist8   :having a slender, sharp, or spinelike tip (from Zoology)
            hast8   :having a triangular spearhead-shaped point of a leaf
@@ -1123,7 +1133,7 @@ internationaliz8ion:tools to transl8 for I18N the document8ion && applic8ion int
           ultim8um
           ultim8
        penultim8
-         dispar8   :sepR8d as fundamentally distinct in quality or kind, or pertaining to 2-coordin8 species or divisions (from Logic)
+          dispR8   :sepR8d as fundamentally distinct in quality or kind, or pertaining to 2-coordin8 species or divisions (from Logic)
          desper8   :marked by despair or loss of hope
       disconsol8   :desper8, desol8, or unconsolable
          consol8   :to console or comfort
@@ -1164,6 +1174,7 @@ internationaliz8ion:tools to transl8 for I18N the document8ion && applic8ion int
         Unitedn8ions       :tool to monitor the UN, an intergovernmental organiz8ion tasked to promote intern8ional cooper8ion && to crE8 && maintain order
  UnitedArabEmir8s          :UAE also just called "Emirates", which is an absolute monarchy in Western Asia on the Persian Gulf && is a feder8ion of 7 emir8s
             Kuw8           :Middle East "Kuwait" country as handle for ISIS war reporting/analysis tool or Iraq, Syria, && Afghanistan neighboring details
+             kR8           :"Karate" (badly mispronounced) Japanese martial art in which sharp blows && kicks are delivered to pressure-sensitive body points
               n8o          :NATO history && presently known agenda for this NorthAtlanticTreatyOrganiz8ion, a post-WorldWarII military alliance of democracies
               h8i          :"Haiti" the country which is a republic in the West Indies of the Caribbean on Hispaniola island, because it also fits name-wise ;)
               b8HaMikdash  :Jewish Holy Temple, or "The Sanctified House" according to rabbinical liter8ure, && only the Temple in Yerushalayim has this name
@@ -3948,3 +3959,17 @@ Also HTTPS://Blogs.ScientificAmerican.Com/observations/a-neuroscientist-explores
 I18LB4E8:HTTP://TheFreeDictionary.Com/words-that-end-in-iate is an obvious discovery demonstr8ing a templ8 for l8r exhaustively expanding my top 8-words list;
 I18LDjai:jblow888 shared 3 Month-ish Jai initial release plan && HTTPS://GitHub.Com/BSVino/JaiPrimer/blob/master/JaiPrimer.md rel8s bits of outd8d inform8ion.
 Pinker tweeted HTTPS://ArtPlusMarketing.Com/putting-out-the-twitter-trashfire-3ac6cb1af3e rant article by RandiLeeHarper which would be good to study for pr8;
+I1BLCB88:HTTP://CarsieBlanton.Com/blog/post/169154246689/the-problem-with-panic is probably the best article about #MeToo and sex in culture I've read so far.
+I've also discovered HTTPS://CheekyVideos.Net with rather remarkable Murdoch Murdoch Alt-Right series which caused me to recognize their heralded 14-words of:
+"We must secure the existence of our people and a future for white children." or altern8 slogan: "Because the beauty of the White Aryan woman must not perish
+from the earth." as well as their coincidental emphasis with 88-precepts as parts of Woltansvolk movement which may have been described by David Lane && then
+also Chapter 8 of Mein Kampf being exactly 88-words && the 8th letter being doubled to also stand for the extremely iconic && potent salut8ion: "Heil Hitler".
+I also downloaded an MP3 PodCast between Dr. Michael Shermer && HTTPS://ChrisRyanPhD.Com/blog/2014/7/14/what-should-a-sex-show-show which asks good questions;
+I1OL8HH8:I clearly see H through Octology as 17th, 5pm, or my eventual shell rather than basic 8th typical letter. Despite the disappointing discovery of the
+coincidence that this fundamental 88 pattern interpret8ion also signifies profound internal contradiction against much else that I hoped to do, I find myself
+inspired to reiter8 that I am *not* an anti-Semite. I am *not* a Neo-Nazi. I am *not* a knowing participant in any genocidal or authoritarian group of revolt.
+Also today, fantasy && science-fiction author (&& good tough-minded feminist?), Ursula K. Le Guin, of popular Earthsea series, passed away at 88 Years of age;
+I1OLCmov:HTTPS://GitHub.Com/xoreaxeaxeax has cool movfuscator branchless 7-hour/frame DOOM && sandsifter (maybe genius?) for dealing with Spectre && Meltdown.
+Also via HTTPS://GitHub.Com/mjswensen/themer is probably interesting to study, learn from, experiment with, && expand on for Octology color schemes && themes.
+HTTPS://GitHub.Com/OculusVR/Flicks also interestingly describes a "flick" as 1/705,600,000th of a second to allow integers to specify most common refresh-r8s.
+HTTPS://HackerNoon.Com/why-should-i-learn-android-14687b27e062 may contain compelling advice for porting Octology to Android using Kotlin (rather than Java);

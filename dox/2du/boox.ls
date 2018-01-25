@@ -1,3 +1,6 @@
+# I1OL5rEd: Danny's l8st permut8ion group topics about challenge of expanding algebras of succeeding Boolean oper8or spaces of weakly inaccessible cardinals
+Automorphisms of First Order Structures
+Oligomorphic Permutation Groups
 # H3LM8X41: from TRMS last night
 A Colony in a Nation - Chris Hayes
 # F7AM9kJV: from F72 D8lyShow (with awesome anti-Trump racism intro segment, and Vowell talking about U.S. history around early wars and French particip8ion)

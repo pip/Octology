@@ -5,7 +5,7 @@
 #   mk sepR8 tabul8ion of 8-words used in l8r document8ion wi not8ion 4thOs not yet included in top lists (thN optn2ignor easy conjug8ions && pre/suffixes),
 #   mk easy optn4 fulc 2use 1colm 4grep,add 4m@d percNtz,stuD wc && mk a8:cnt8/8c wi fulc -f? && 8plc as -l? optnz(rEdo hedrtXt),colr letrz,add f0ntz4 8trm;
 use strict;use warnings;use utf8;use v5.10;use Octology::a8;use Octology::b8;
-my $d8VS='I18LHigh';       my $clrf=1;my $fulf=0;my $argz='';$argz= join(' ',@ARGV) if(@ARGV);my $Stxt='';my $folf=0; # add 4-Or-Less-Flag
+my $d8VS='I1CLKEd8';       my $clrf=1;my $fulf=0;my $argz='';$argz= join(' ',@ARGV) if(@ARGV);my $Stxt='';my $folf=0; # add 4-Or-Less-Flag
 my $edVS=        '';       my $pg1f=0;   $pg1f=1 if($argz=~ /(^|\s)-?-?[^p]*p/i); # find -?p(age) flag2limit some extra long output to first 48-line page
 my $mxws=        19;       my $lpsf=0;   $lpsf=1 if($argz=~ /(^|\s)-?-?[^l]*l/i); # find -?LetrPrecursShortsFlag  # if MaXWordSize evr grOz,wil nEd2incrEs|Dtct
 my $clmz=        80;       my $gm8f=0;   $gm8f=1 if($argz=~ /(^|\s)-?-?[^g]*g/i); # find -?g(m8r) flag2count&&adorn wi math 4mUl8ions stRting wi 2letr
@@ -52,9 +52,9 @@ while($text=~ s/(\w)8//){$acnt[b10($1)]++;}   # counts chopping out all PLs && 8
 my @scnt = sort { $a <=> $b } (@lcnt);
 for(my $sndx=$#scnt;$sndx >= 0;$sndx--){
   if(($sndx > 0 && $scnt[$sndx] == $scnt[$sndx - 1]) || ($sndx == 0 && $scnt[0] == 0)){splice(@scnt,$sndx,1);}} # below2 sepR8 prnt blox for not color or with
-$Stxt.=                                            sprintf("${C}8${M}Precursor${Y}Letter${R}Counter$W:$G d8VS$C=%s$G\n",            d8colr($d8VS));
-my $efsz = length($efyl);$Stxt.=                   sprintf("$O  efyl$C=%s".' 'x (18-$efsz).$G.          "edVS$C=%s$G\n",c8fn($efyl),d8colr($edVS));
-$Stxt.=                                            sprintf "${C}8${M}Pre${Y}Letr$R Ct$C Full${W}Document${R}Countz\n";
+$Stxt.=                                            sprintf("${C}8${M}Pre-cursor${Y}Letter${R}Counter$W:$G d8VS$C=%s$G\n",            d8colr($d8VS));
+my $efsz = length($efyl);$Stxt.=                   sprintf("$O  efyl$C=%s".' 'x (18-$efsz).$G.          " edVS$C=%s$G\n",c8fn($efyl),d8colr($edVS));
+$Stxt.=                                            sprintf "${C}8${M}Pre${Y}Letr$R Ct$C Full${W}Document${R}Counts\n";
 $Stxt.=                                            sprintf   "$B-------- -- ------------------\n";
 for(@scnt){                                                                                        $sclc=0;$actx ='';
   for my $lndx (0..$#lcnt){
@@ -67,8 +67,11 @@ for(@scnt){                                                                     
 $Stxt.=                                            sprintf   "$B-------- -- ---\n";my $cttl=$M . cma($gttl);$cttl=~ s/(,)/$Y$1$M/g; # pre-colr comma'd total
 $Stxt.=                                            sprintf("${C}t${M}0${C}tlz    %s %s$W :  $B(${R}b10$B)  %s  %s$W;$z",
                                                     b8colr(sprintf("%2s",b64($t0tl))),b8colr(sprintf("%2s",b64($gttl))),$ct0t,$cttl);
-if($lpsf){$Stxt.="\n${C}All${R}Counts${o}Not${M}Matching${Y}Words${B}List$G -$K likely from just d8-stamps, pal8 codes, or other non-word strings with 8$W:\n";
-  for(0..63){if(defined($acnt[$_]) && $acnt[$_] && !exists($lpsd{b64($_)})){$Stxt.="$z ".b64($_)."$W:";$Stxt.=$r;$Stxt.=$R if($acnt[$_]>2);$Stxt.=$acnt[$_];}}
+if($lpsf){$Stxt.="\n${C}All${R}Counts${o}Not${M}Matching${Y}Words${B}List$G -$K likely from just d8-stamps, pal8 codes, or other non-word strings with 8";
+  my @acor;my $slin= '';$Stxt.=" (ordered by freq then letr)$W:\n"; # AllCountsORdered, SortedLINe
+  for(0..63){if(defined($acnt[$_]) && $acnt[$_] && !exists($lpsd{b64($_)})){$slin.="$Y ".b64($_)."$W:";$slin.=$r;$slin.=$R if($acnt[$_]>2);$slin.=$acnt[$_];
+      push(@{$acor[$acnt[$_]]},b64($_));}}
+  for(0..63){if(defined($acor[$_]) && $acor[$_]){$Stxt.=" $R";$Stxt.=$r if($_ <= 2);$Stxt.=b64($_) . "$W:$Y" . join('',@{$acor[$_]});}} $Stxt.="\n$slin";
   $Stxt        .="\n${Y}Letter${M}Pre-cursor${C}Shortests${B}List$G -$K shows all entries by$M P${Y}L$K with growing word-sizes$W:\n";for(@scnt){
     for     my $lndx (0..$#lcnt){if(defined($lcnt[$lndx]) && $_ ==   $lcnt[    $lndx]){my $letr=b64($lndx);$Stxt=~ s/ $/\n/ if($letr=~ /[RGUDC]/);
                                                                                        my $ltot=     0    ;$Stxt.="$Y$letr$R:"; # hRdcOded prEnwlInz abov
@@ -78,8 +81,8 @@ if($lpsf){$Stxt.="\n${C}All${R}Counts${o}Not${M}Matching${Y}Words${B}List$G -$K 
             $Stxt.="$B$wsiz$W:$z".join(' ',@{$lpsd{$letr}[$wsiz]}).' ';$ltot+=               scalar(@{$lpsd{$letr}[$wsiz]});}
         }   $Stxt.="$M$ltot ";$Stxt=~ s/ $/\n/ unless($ltot <= 8); }}}} # maybe insert other newlines above when reaching terminal width for long listz?
 if($folf){$Stxt.="\n${Y}Word${R}Sort${C}By${B}Size$G -$K up to current maximum$M $mxws$K or one$p page$K if given$p -p$W:\n";my $maxs=$mxws;$maxs=10 if($pg1f);
-  for   my $wsiz (2..$maxs ){my @folk=sort(keys(%{$folc[$wsiz]}));$Stxt.=$M.scalar(@folk);$Stxt.="$R $wsiz" unless(scalar(@folk));
-    for my $fndx (0..$#folk){my $foln=$folk[$fndx];$foln=~    s/([$letz])(8)/$Y$1$G$2$z/g;$Stxt.="$z $foln";} $Stxt.="\n";}} # used2B $Stxt.="$G @folk\n";
+  for   my $wsiz (2..$maxs ){my @folk=sort(keys(%{$folc[$wsiz]}));$Stxt.=$M.sprintf("%${wsiz}d",scalar(@folk));  $Stxt.="$R $wsiz" unless(scalar(@folk));
+    for my $fndx (0..$#folk){my $foln=$folk[$fndx];$foln=~    s/([$letz])(8)/$Y$1$G$2$z/g;$Stxt.=  "$z $foln" ;} $Stxt.="\n";}} # used2B $Stxt.="$G @folk\n";
 # HCOL8fol:had 15 \w8, 33 3-letrz, && 60 4-letrz (108 t0tl, mAB 12 of wich alredy Xist in bin/ stably or canB tmp DmOtd 2mk nxt nw 96 Dsciptnz pAg lIk sumb),
 #   98 5letr wordz (2past own nw 3rd 96 sumb pAg), 162 6z, 200 7z, 132 8z, 110 9z, 76 10z, 63 11z, 54 12z, 37 13z, 23 14z, 3 15z, 6 16z, 1 17z, 0 18z, 2 19z ;
 # HCQL3VIP:sOfR of just 2z 3z 4z,nEd2cut 12 2fit nXt 96 sumb pAg,b8 c8 d8 g8 w8 ckm8 pal8 upd8 alredy bin is 8,DlA sumb4 N8 DN8 NfN8 SSN8 as obtuse;lFt9,32,55
@@ -92,7 +95,7 @@ if($gm8f){delete($folc[2]{ 'N8'});delete($folc[2]{  'b8'});delete($folc[2]{  'c8
           delete($folc[5]{'m8rix'});delete($folc[5]{'coll8'}); # not sure if coll8 is best 2nd to remove of 5z, but m8rix is probably good enough as p8:m8rx
   $Stxt.="\n";for my $wsiz (2..$mxws){my @folk=sort(keys(%{$folc[$wsiz]}));my @fola=();$Stxt.=$G; # prEstrip12cutz abov lEvng justnXt Xctly96 2fOcus on
     my $stcz=int($clmz / 6); # normal initial alignments are 5 characters plus space, which should normally fit original 26 word columns within 160 char colmz
-    if($wsiz == 2){ $Stxt.="${W}Only 2z fit with preceding linez of b8 (2 4095), productz only also fit 3z, most otherz should fit sumz B4 && avrgz aftr.\n$p";
+    if($wsiz == 2){ $Stxt.="${W}Only 2z fit with preceding lines of b8 (2 4095), products only also fit 3z, otherz should fit sums && averages (B4nw2ad).\n$B";
       for my $fndx (0..$#folk){my $b10w=b10($folk[$fndx]);$Stxt.=sprintf(" %5d"      ,$b10w);$Stxt.="\n" unless(($fndx+1) % $stcz);} $Stxt.="\n$M";
       for my $fndx (0..$#folk){my $prod=1;$prod*=b10($_) for(split(//,$folk[$fndx]));
                                                           $Stxt.=sprintf(" %5d"      ,$prod);$Stxt.="\n" unless(($fndx+1) % $stcz);} $Stxt.="\n$C";}
@@ -101,18 +104,19 @@ if($gm8f){delete($folc[2]{ 'N8'});delete($folc[2]{  'b8'});delete($folc[2]{  'c8
                                                           $Stxt.=sprintf(" %5d"      ,$prod);$Stxt.="\n" unless(($fndx+1) % $stcz);} $Stxt.="\n"  ;}
     if($wsiz <= 5){                                                                                                                  $Stxt.=   $C ;
       for my $fndx (0..$#folk){my $sumc=0;$sumc+=b10($_) for(split(//,$folk[$fndx]));$fola[$fndx]=$sumc*1.0/$wsiz;
-                                  $Stxt.=sprintf(" %5d"        ,$sumc       );$Stxt.="\n" unless(($fndx+1) % $stcz);} $Stxt.="\n$z";
+                                  $Stxt.=sprintf(" %5d"        ,$sumc       );$Stxt.="\n" unless(($fndx+1) % $stcz);} $Stxt.="\n$R";
+      for my $fndx (0..$#folk){my $fstr =sprintf(" %2.2f"      ,$fola[$fndx]);$fstr=~ s/(\.?0+)$/$r$1$R/;
+                                  $Stxt.=                       $fstr        ;$Stxt.="\n" unless(($fndx+1) % $stcz);} $Stxt.="\n$z";
       for my $fndx (0..$#folk){my $foln =sprintf(" %5s"        ,$folk[$fndx]);$foln=~ s/([$letz])(8)/$Y$1$G$2$z/g; # valid PLz
-                                  $Stxt.=                       $foln        ;$Stxt.="\n" unless(($fndx+1) % $stcz);} $Stxt.="\n$R";
-      for my $fndx (0..$#folk){   $Stxt.=sprintf(" %2.2f"      ,$fola[$fndx]);$Stxt.="\n" unless(($fndx+1) % $stcz);} $Stxt.="\n";}
+                                  $Stxt.=                       $foln        ;$Stxt.="\n" unless(($fndx+1) % $stcz);} $Stxt.="\n";}
     elsif(scalar(@folk)){      my $wrdw=int($clmz / ($wsiz+1) );$Stxt.=$C; # skip over empty 18z
       for my $fndx (0..$#folk){my $sumc=0;$sumc+=b10($_) for(split(//,$folk[$fndx]));$fola[$fndx]=$sumc*1.0/$wsiz;
-                                  $Stxt.=sprintf(" %${wsiz}s"  ,$sumc       );$Stxt.="\n" unless(($fndx+1) % $wrdw || $fndx==$#folk);} $Stxt.="\n$z";
-      for my $fndx (0..$#folk){my $foln =sprintf(" %${wsiz}s"  ,$folk[$fndx]);$foln=~ s/([$letz])(8)/$Y$1$G$2$z/g;
-                                  $Stxt.=                       $foln        ;$Stxt.="\n" unless(($fndx+1) % $wrdw || $fndx==$#folk);} $Stxt.="\n$R";
+                                  $Stxt.=sprintf(" %${wsiz}s"  ,$sumc       );$Stxt.="\n" unless(($fndx+1) % $wrdw || $fndx==$#folk);} $Stxt.="\n$R";
       for my $fndx (0..$#folk){my $frsz =$wsiz-3; # mAB special cAs 8 2fit just %2.3f or mk trail zer0z dRk red nstd?
                                my $fstr =sprintf(" %2.${frsz}f",$fola[$fndx]);$fstr=~ s/(\.?0+)$/$k$1$R/;
-                                  $Stxt.=                       $fstr        ;$Stxt.="\n" unless(($fndx+1) % $wrdw || $fndx==$#folk);} $Stxt.="\n";}
+                                  $Stxt.=                       $fstr        ;$Stxt.="\n" unless(($fndx+1) % $wrdw || $fndx==$#folk);} $Stxt.="\n$z";
+      for my $fndx (0..$#folk){my $foln =sprintf(" %${wsiz}s"  ,$folk[$fndx]);$foln=~ s/([$letz])(8)/$Y$1$G$2$z/g;
+                                  $Stxt.=                       $foln        ;$Stxt.="\n" unless(($fndx+1) % $wrdw || $fndx==$#folk);} $Stxt.="\n";}
 # try2loop avrgz abov nstd but mA nEd special wrapz dn from 26 B4 6 to 6:22, 7:20, 8:17, ... shud B formUla or Dtectabl
 # old notez4wsiz 2: this is probably more useful mean average summariez && think of prime factorz or othr wayz to represent mostly unique partz
 #                5: try to cut 2 (or 6 if adding 4 N8 varE8ionz bakin) to get 5z dn2 3rd rel8ively clean concise set of 96 to make another sumb page out of
@@ -136,6 +140,6 @@ if($fulf){$Stxt.="\n";my %cvlz=reverse(%fulc);my @ccnt= sort { $a <=> $b } keys(
           $jus8     =  $coun                    if($char=~ /^8$/            ); # special just       8        to compare at end
           $w82o    .= ($char eq "\n") ? '\n' : $char;$pcnt++;} # probably only newline shouldn't be printed normally to ruin formatting
       } $Stxt.=sprintf((' ' x ( 8-$pcnt))."$C$w82o$B:$M".sprintf("%7s$B: %s$W,\n",cma($coun),b8colr(sprintf("%4s",b64($coun)))));#,S(substr($cmap{'d8bo'},b64(int(rand(8))),1)));
-    }}  $Stxt.=sprintf("$C  Sum of$B: ${G}0$W..${G}7$W,${G}9$B: $M%s$o      dif$Y:  $B%s$W;$z", cma($sumn), cma($jus8-$sumn));} $Stxt=sS($Stxt) unless($clrf);
+    }}  $Stxt.=sprintf("$C  Sum of$B: ${G}0$W..${G}7$W,${G}9$B: $M%s$o      dif$Y:$B%7s$W;$z",cma($sumn),cma($jus8-$sumn));} $Stxt=sS($Stxt) unless($clrf);
 open my $out8,'>&',STDOUT or die "Can't open  duplic8 STDOUT handle: $!";binmode $out8,':encoding(UTF-8)';print $out8 $Stxt; # crE8 local duplic8 of global
 close   $out8             or die "Can't close duplic8 STDOUT handle: $!";

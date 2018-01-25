@@ -1,5 +1,5 @@
 # Octology
-The ontology of 8. `$VERSION='0.0';$d8VS='I18L8888';`
+The ontology of 8. `$VERSION='0.0';$d8VS='I1PL8d8a';`
 
 This is basically a public preview of my early development files. I am not yet ready for serious collaboration, but welcome any sort of feedback.
 
@@ -30,21 +30,18 @@ Many `bin/` commands print useful Help text when given a `-h` parameter. If your
 If you are willing to fund this development effort, please visit my [Patreon](https://patreon.com/PipStuart "Pip's Octology Patreon Page")
   and feel free to send me the **Top8** new features you want most.
 
-Please also contact me if you are an open-minded thinker interested in friendship and conversation (especially near Oshkosh, Wisconsin).
+Please also contact me if you are an open-minded thinker interested in any conversation or friendship (especially near Oshkosh, Wisconsin).
 
-To learn about the long-term goals, plans, thinking, and research behind this expansive project, please read:
+To learn about the long-term goals, plans, thinking, and research behind this expansive project, please consult latest development notes at:
   [8.txt](https://github.com/pip/Octology/blob/master/dox/2du/8.txt "dox/2du/8.txt")
 
 Thank you for your consideration as well as any constructive criticism, recommendations, or whatever other feedback you may be able to offer.
-
 ```
 Sincerely,
   -PipStuart  8<3  NfN8L0v3  8pI  Ate Pie  =)
 
 ```
-
 ---
-
 #### Public Purpose
 If I ever become unable to continue developing this project further, my hope is that at least this repository can provide others the ability to
   utilize any of my beneficial work and ideas (hopefully to further FreeLibreSoftware with derivatives also seeing release under the GPLv3+).
@@ -60,5 +57,5 @@ If I ever become unable to continue developing this project further, my hope is 
 ![Octology-ftst-shot_1614x902-HAOM99L1](https://github.com/pip/Octology/raw/master/gfx/sho/Octology-ftst-shot_1614x902-HAOM99L1.png "Octology-ftst-HAOM99L1")
 ![Octology-dic8-shot_1614x902-HAOM900M](https://github.com/pip/Octology/raw/master/gfx/sho/Octology-dic8-shot_1614x902-HAOM900M.png "Octology-dic8-HAOM900M")
 
-*Note*: Please bear in mind that these older shots are far more likely than those in the current Top8 list to portray behaviors and exhibit details
-which have been modified somewhat (or possibly replaced entirely) since the d8 that the shot was taken.
+*Note*: Please bear in mind that these older shots shown at the bottom here are far more likely than those in the current Top8 list above to portray behaviors
+and exhibit details which have been modified somewhat (or possibly replaced entirely) within the time that lapsed since the d8 a particular shot was taken on.

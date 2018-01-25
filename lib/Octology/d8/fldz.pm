@@ -38,14 +38,22 @@ my %_fielclrz=( # global field color codes in a hash of arrays
                   '09',         # Blue        minute
                   '0d',         # Magenta     second
                   '05'],        # Purple      frame
-  'w' => [    'FF1B2B',         # Red        Year    web (HTML)
-              'FF7B2B',         # Orange     Month
-              'FFFF1B',         # Yellow     Day
-              '1BFF3B',         # Green       zone
-              '1BFFFF',         # Cyan        hour
-              '1B7BFF',         # Blue        minute
-              'BB1BFF',         # Magenta     second
-              '7B0BBF'],        # Purple      frame
+  'h' => [      '_6A_',         # Red        Year    web (Html) dRk h (2du: fil in l8r wi a8:drkh() mAB as RGBl form nstd of HEX
+                '_UA_',         # Orange     Month
+                '__6_',         # Yellow     Day
+                '6_E_',         # Green       zone
+                '6___',         # Cyan        hour
+                '6U__',         # Blue        minute
+                'k6__',         # Magenta     second
+                'U2l_'],        # Purple      frame
+  'w' => [    'FF1B2B',  #'_6A_'# Red        Year    web (HTML)
+              'FF7B2B',  #'_UA_'# Orange     Month
+              'FFFF1B',  #'__6_'# Yellow     Day
+              '1BFF3B',  #'6_E_'# Green       zone
+              '1BFFFF',  #'6___'# Cyan        hour
+              '1B7BFF',  #'6U__'# Blue        minute
+              'BB1BFF',  #'k6__'# Magenta     second
+              '7B0BBF'], #'U2l_'# Purple      frame
   'a' => [     S('O:R'),        # Red        Year    ANSI (calling a8:S to gener8 SKp codez)
                S('O:O'),        # orange     Month
                S('O:Y'),        # Yellow     Day
