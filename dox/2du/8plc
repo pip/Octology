@@ -124,8 +124,8 @@ if($gm8f){delete($folc[2]{ 'N8'});delete($folc[2]{  'b8'});delete($folc[2]{  'c8
     $Stxt.="$Y  6$W:${G}?$Y  7$W:${G}?$Y ...\n";
 } # hopefully above -g will align a b10 line over b64 lines, && mAB l8r add sumz,productz,modez,meanz,medianz,cnsidr delta difz && r8ioz,add colrz?
 if($fulf){$Stxt.="\n";my %cvlz=reverse(%fulc);my @ccnt= sort { $a <=> $b } keys(%cvlz);my $jus8=0;my $sumn=0; # 2-colms of fulcountz fitz nIc undr50lInz sOfR
-  for     my $cndx (0..  int(@ccnt/2)){my $coun=$ccnt[$cndx];        my $pcnt=0;my $w82o=''; # FullFile CharCounts abov as Values (or values(%fulc) nEdzUniq)
-    if($cndx < int(@ccnt/2)){
+  for     my $cndx (0..int(@ccnt/2+1)){my $coun=$ccnt[$cndx];        my $pcnt=0;my $w82o=''; # FullFile CharCounts abov as Values (or values(%fulc) nEdzUniq)
+    if($cndx < int(@ccnt/2+1)){
       for my $char (sort(keys(%fulc))){ # then above CharCouniNDeX loops just unique counts && (was Probably) PrintCouNT before Wait to Output8
         if  ($coun ==    $fulc{$char}){ $pcnt++ if($char=~ /^(印|注|米|\n)$/); # special count for only double-wide characters
           $sumn    +=  $coun                    if($char=~ /^[0-79]$/       ); # special sum of Non-8 digits to compare at end
@@ -140,6 +140,7 @@ if($fulf){$Stxt.="\n";my %cvlz=reverse(%fulc);my @ccnt= sort { $a <=> $b } keys(
           $jus8     =  $coun                    if($char=~ /^8$/            ); # special just       8        to compare at end
           $w82o    .= ($char eq "\n") ? '\n' : $char;$pcnt++;} # probably only newline shouldn't be printed normally to ruin formatting
       } $Stxt.=sprintf((' ' x ( 8-$pcnt))."$C$w82o$B:$M".sprintf("%7s$B: %s$W,\n",cma($coun),b8colr(sprintf("%4s",b64($coun)))));#,S(substr($cmap{'d8bo'},b64(int(rand(8))),1)));
-    }}  $Stxt.=sprintf("$C  Sum of$B: ${G}0$W..${G}7$W,${G}9$B: $M%s$o      dif$Y:$B%7s$W;$z",cma($sumn),cma($jus8-$sumn));} $Stxt=sS($Stxt) unless($clrf);
+    }}  $Stxt.="\n" if(scalar(@ccnt) % 2); # skip over blank final second column entry for odd elements, but stil shud hav off-by-1 bugz so 2du:ful rEwrIt;
+        $Stxt.=sprintf("$C  Sum of$B: ${G}0$W..${G}7$W,${G}9$B: $M%s$o      dif$Y:$B%7s$W;$z",cma($sumn),cma($jus8-$sumn));} $Stxt=sS($Stxt) unless($clrf);
 open my $out8,'>&',STDOUT or die "Can't open  duplic8 STDOUT handle: $!";binmode $out8,':encoding(UTF-8)';print $out8 $Stxt; # crE8 local duplic8 of global
 close   $out8             or die "Can't close duplic8 STDOUT handle: $!";

@@ -35,9 +35,13 @@ if  ($ohmf){
   "<span style=\\\"background-color: rgb(155,155,255);color: rgb(  0,  0, 15);\\\">P</span>"    .
   "<span style=\\\"background-color: rgb(155,255,255);color: rgb(  0, 31,  0);\\\">time</span>" . " $fntk:</font> " .
   "<span style=\\\"font-family: monospace, monospace;\\\"><b>" .
-  "$fntc#FF0000\\\">$d8fz[0]</font>$fntc#FF9900\\\">$d8fz[1]</font>$fntc#FFFF00\\\">$d8fz[2]</font>$fntc#00FF00\\\">$d8fz[3]</font>" .
-  "$fntc#00FFFF\\\">$d8fz[4]</font>$fntc#0000FF\\\">$d8fz[5]</font>$fntc#FF00FF\\\">$d8fz[6]</font>$fntc#9900FF\\\">$d8fz[7]</font>" .
-  "</b></span><br/><br/>Dear <b>$fntc#FF0000\\\">Dad</font></b>,<br/><br/><br/>Love,<br/><b>$fntc#0000FF\\\">-Pip =)</font></b>"; # mAB nEd some div in there2?
+# "$fntc#FF0000\\\">$d8fz[0]</font>$fntc#FF9900\\\">$d8fz[1]</font>$fntc#FFFF00\\\">$d8fz[2]</font>$fntc#00FF00\\\">$d8fz[3]</font>" .
+# "$fntc#00FFFF\\\">$d8fz[4]</font>$fntc#0000FF\\\">$d8fz[5]</font>$fntc#FF00FF\\\">$d8fz[6]</font>$fntc#9900FF\\\">$d8fz[7]</font>" . "</b></span><br/>";
+#           $_ .=  "$fntk$fldz[0], $fldz[1] $fldz[2]" . ", $fldz[3] - $fldz[4]$fldz[5] Gtime / " .  sprintf("%02d",($fldz[4]+23)%24) . "$fldz[5]</font> " .
+# "Ptime : </font><span style=\\\"font-family: monospace, monospace;\\\"><b>" .
+  "$fntc#880000\\\">$d8fz[0]</font>$fntc#885500\\\">$d8fz[1]</font>$fntc#888800\\\">$d8fz[2]</font>$fntc#008800\\\">$d8fz[3]</font>" .
+  "$fntc#008888\\\">$d8fz[4]</font>$fntc#000088\\\">$d8fz[5]</font>$fntc#880088\\\">$d8fz[6]</font>$fntc#550088\\\">$d8fz[7]</font>" .
+  "</b></span><br/><br/>Dear <b>$fntc#880000\\\">Dad</font></b>,<br/><br/><br/>Love,<br/><b>$fntc#000088\\\">-Pip =)</font></b>"; # mAB nEd some div in there2?
 }else      {$_ .= "$fldz[0], $fldz[1] $fldz[2], $fldz[3] - $fldz[4]$fldz[5] Gtime / " . sprintf("%02d",($fldz[4]+23)%24) . "$fldz[5] Ptime : $d8im";}
 $_ .= '"|xclip -f -si -se p -l 1';                          # specify which  X selection to use: "primary" to use XA_PRIMARY (default),
 #$_.= '"|xclip -f -si -se c -l 1'; # -sel [psc]             #                                  "secondary" for    XA_SECONDARY  or

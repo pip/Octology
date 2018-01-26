@@ -1,5 +1,5 @@
 # D6RMF1V1:8.txt - by8π : JAPH : K3wlD00d : 1337H4xr : PipStuart's Octology (hopefully eventually an Ontology of 8) - Convention, Conversion, && Categoriz8ion:
-# $VERSION='0.0';$d8VS='I1PL5sk8'; # Octology attempts to rel8 the universe through medit8ion on mnemonic abbreV8ion (via 8-based  limit8ion) &&    elucid8ion.
+# $VERSION='0.0';$d8VS='I1QLDIES'; # Octology attempts to rel8 the universe through medit8ion on mnemonic abbreV8ion (via 8-based  limit8ion) &&    elucid8ion.
 # CEBBICTI:Crossing Every Bridge Before I Come To It? I.e., not a d8 stamp. Trying to make my Dad's birthday (August 8th) more special by thinking 2far ahead?
 # Octology intends to pursue implic8ion && ramific8ion as substantE8ion for adequ8 particip8ion, if not also 2 oblig8ion toward implement8ion &&   promulg8ion.
 # Conceptually, Octology is a system st8ing that every organiz8ional principle is valuable, but 8 tends to be a nearly ideal starting place for most d8a sets.
@@ -85,6 +85,8 @@
          corpor8
         organiz8ion:rel8 for org charts or general purpose d8a organizer or maybe tools to help users to legally run a Non-Profit Organiz8ion in the UnitedSt8s
            situ8   :                       general purpose d8a organizer
+        ratific8ion
+      stratific8ion
       categoriz8ion:each of these is probably just a custom extension of any basis unific8ion
       classific8ion
 compartmentaliz8ion
@@ -265,10 +267,11 @@ internationaliz8ion:tools to transl8 for I18N the document8ion && applic8ion int
            pinn8
          pullul8
        prolifer8
-          calcR8   :having a spur or being spurred, as the flowers of the toadflax && larkspur (from Botany)         or armed with a spur (from Zoology)
+          crisp8   :having a curled, ruffled, or waved appearance, as the margins of certain leaves (from Botany)
+          calcR8   :having a spur or being spurred, as the flowers of the toadflax && larkspur      (from Botany)    or armed with a spur (from Zoology)
             lyr8   :lyre-shaped or spatul8 && oblong as a leaf (from Botany) or like curv8ure in the tail of the blackcock, the lyre bird (from Zoology)
            nerv8
-            jug8d  :coupled together                           (from Botany)
+            jug8   :coupled together                           (from Botany)
           bijug8   :having two pairs, as of leaflets           (from Botany)
         bigemin8
         ingemin8
@@ -308,6 +311,8 @@ internationaliz8ion:tools to transl8 for I18N the document8ion && applic8ion int
             lux8
          disloc8
           trunc8
+         expurg8
+      bowdleriz8ion:censorship where existing literary works or other expressive media materials are revised to omit offensive, immoral, or indecent portions
           amput8
         augment8ion
        scarific8ion
@@ -344,11 +349,12 @@ internationaliz8ion:tools to transl8 for I18N the document8ion && applic8ion int
      instrument8ion:music instrument manager && maybe also code debugging && profiling mechanism for setting break-points, watch-points, profile-points, etc.
        orchestr8   :music composition tracking software
          syndic8   :maybe like public8ion or way to manage subscribers too?
-            not8   :maybe general note system or notation manager like transl8?
           annot8   :meta-not8?
+            not8   :maybe general note system or notation manager like transl8?
              sl8   :not8 or maybe collabor8 && educ8 with virtual chalkboards
              or8   :speech recording tool with basic cataloguing && editing fE8ures
            dict8   : && the applic8ion of voice-recognition for hopefully mostly autom8d transcription (probably quite like narr8)
+       lemmatiz8ion:gener8ion of headings which indic8 the subject of an annot8ion, literary composition, or dictionary entry (in n8ural Language Processing)
         comment8   :system for aligning or8 commentary over existing media or just general website, blog, or wiki shared comment section
           navig8   :tool to layout other tools or maybe GoogleMaps wannabe (or expanded name for already existing p8/nvg8 graph path-finding implement8ions)
           gener8   :command to generate abbreV8ions from long names (&& also tool to gener8 patterned or pseudo-random d8a && graphs && files from templ8s)
@@ -368,6 +374,8 @@ internationaliz8ion:tools to transl8 for I18N the document8ion && applic8ion int
           accus8ion
           alleg8ion
          annunC8
+        assever8
+         nuncup8
         promulg8
               n8ion:voting && politics manager (st8, particip8, && deleg8 also encompass rel8d concepts, but they're already used for more intuitive tools)
           nomin8
@@ -400,6 +408,11 @@ internationaliz8ion:tools to transl8 for I18N the document8ion && applic8ion int
    industrializ8ion
      government8ion
       militariz8ion
+       fortific8ion
+          casem8   :bombproof chamber, usually of masonry, where cannons may fire through embrasures, or hollow molding chiefly in cornices (from Architecture)
+           vall8ion
+     circumvall8ion
+     contravall8ion
        sequestr8ion
         inaugur8
           coron8
@@ -419,6 +432,7 @@ internationaliz8ion:tools to transl8 for I18N the document8ion && applic8ion int
    decriminaliz8ion
       transport8ion:maybe typical vehicle tool or travel manager
        teleport8ion:SciFi (hyperloop or better) travel evalU8ion
+            ing8   :an import or other thing that enters or comes in (from Commerce), or opening in a mould where molten metal can pour in (from Metallurgy)
            migr8   :rFUG tracking (narr8 home atrocity document8ion), asylum applic8ion assistance with transl8d recommend8ions, maybe volunteer sanctuary help
           emigr8
          immigr8
@@ -438,6 +452,9 @@ internationaliz8ion:tools to transl8 for I18N the document8ion && applic8ion int
      marginaliz8ion
       stigmatiz8ion
        testific8ion:maybe some elabor8 autom8d testing framework, instead of just the typical interpret8ion of delivering some presumably legal testimony
+         attest8ion
+           purg8ion
+        compurg8ion
      criminaliz8ion
        incrimin8
          crimin8
@@ -455,6 +472,7 @@ internationaliz8ion:tools to transl8 for I18N the document8ion && applic8ion int
            appL8   :typically an "appellate court" rel8ing to or taking account of appeals
          exoner8
          exculp8
+        disculp8
          vindic8
         habilit8   :to fit out, equip, qualify, entitle, dress, or clothe
       rehabilit8
@@ -699,8 +717,11 @@ internationaliz8ion:tools to transl8 for I18N the document8ion && applic8ion int
          vaccin8   :maybe focused on vaccines && statistics to encourage trusting their general safety && getting them done
               m8ron:nurse or prison wardress tracker or should just be female form of business customer or crowd-funding p8ron?
               p8ient:maybe same as medic8 or priv8 personal medical records or opposite of imp8ient && rel8d to wait w8 somehow?
+           palp8   :to examine or explore by gently touching or percussing (an organ or area of the body), usually as a medical diagnostic aid
         fibrill8   :making fine, irregular, rapid twitching movements, such as the convultions from within the chest of a p8ient suffering a heart-attack
+         sphacL8   :medical term describing death, mortific8ion, undergoing necrosis, or becoming affected by gangrene
            larv8   :masked, concealed, obscure doubtful medical cases of disease
+            rug8   :a fold, crease, or wrinkle, as in the lining of the stomach (from Biology)
              oP8   :opiate epidemic resources
             sed8
         potentE8   :increase the effect of or act synergistically with a drug or a physiological or biochemical phenomenon, simply rendering as potent
@@ -766,6 +787,7 @@ internationaliz8ion:tools to transl8 for I18N the document8ion && applic8ion int
            dil88ion:rather peculiar double-8 word normally spelled "dilatation" describing the st8 of stretching or distention of an anatomical canal or organ
           prost8
           hernE8ion:hernia or rupture in smooth muscle tissue through which bodily structure protrudes
+           cusp8   :having a cusp or cusps, or being shaped like a cusp or cusp-like (from Anatomy)
          cingul8   :brain cortex situ8d in medial aspect of cerebral cortex (includes gyrus && sulcus), is involved in processing emotion && behavior regul8ion
         emascul8
           castr8
@@ -789,6 +811,7 @@ internationaliz8ion:tools to transl8 for I18N the document8ion && applic8ion int
              pl8   :menu or dish inventory manager
          reserv8ion:restaurant, hotel, or other similar schedule booking, ticketing, etc.
        refriger8   :home appliance tool maybe for new Internet-of-Things online smart devices
+      vitaminiz8ion:processing foods to include vitamins as a supplement
        tenderiz8ion
           marin8
           saliv8
@@ -860,6 +883,7 @@ internationaliz8ion:tools to transl8 for I18N the document8ion && applic8ion int
          renunC8ion
           abjur8ion
           abdic8
+          abneg8
          declin8
         disclam8ion
       disaffirm8ion
@@ -925,7 +949,8 @@ internationaliz8ion:tools to transl8 for I18N the document8ion && applic8ion int
      differentE8
           aberr8
          edific8ion:general structural building tool for designing maybe homes, offices, or other edifices (or illustr8ion and explan8ion toward educ8ion?)
-            bov8   :ancient land measurement roughly equivalent to 15 acres
+           virg8   :early English land measurement roughly equivalent to 30 acres (12 hectares), or shaped like a wand or rod, being str8, long, && slender
+            bov8   :ancient       land measurement roughly equivalent to 15 acres
               b8   :scarce resource diminishment manager (or fishing "bait" tool?), or main Octology::b8 Base-transl8 && general math objects && utilities
         inciner8   : or flame-b8 tool for design8ing trolls && their ilk as worth moder8ion to l8r be able to avoid
           immol8   :sacrifice, kill, or destroy by fire
@@ -966,6 +991,7 @@ internationaliz8ion:tools to transl8 for I18N the document8ion && applic8ion int
        consolid8
         condens8
           confl8
+          lustr8
         amalgam8
         purific8ion:recommend8ion of V8-Fusion brand delicious blended fruit juices for healthy cleansing hydr8ion, especially "Peach Mango" flavor
           permE8
@@ -981,11 +1007,12 @@ internationaliz8ion:tools to transl8 for I18N the document8ion && applic8ion int
           irrig8
           desic8
           salin8
-            bor8
+             ag8   :cryptocrystalline translucent quartz variety, usually with whitish color && luster nearly like wax (from Minerology) or diminutive person
             mic8   :to add mica to, which is any various hydrous silic8 minerals of aluminum or potassium that crystallize allowing thin leaf cleavages
             kin8
            quin8
            citr8
+            bor8
            brom8
          bromin8
            sulf8
@@ -995,7 +1022,9 @@ internationaliz8ion:tools to transl8 for I18N the document8ion && applic8ion int
          mangan8
          mellit8
              mL8
+            mal8   :salt (or ester) of malic      acid (or also could be an anion)
             mor8
+            phN8   :salt            of phenic     acid
            fumR8   :salt (or ester) of fumaric    acid produced as a key chemical intermeD8 during the urea (or Krebs?) cycle (from Biochemistry)
            form8   :salt            of formic     acid
           formE8
@@ -1076,6 +1105,7 @@ internationaliz8ion:tools to transl8 for I18N the document8ion && applic8ion int
         exasper8
          infurE8
          indign8ion
+       mortific8ion
          humilE8
          subjug8
        subordin8
@@ -3973,3 +4003,5 @@ I1OLCmov:HTTPS://GitHub.Com/xoreaxeaxeax has cool movfuscator branchless 7-hour/
 Also via HTTPS://GitHub.Com/mjswensen/themer is probably interesting to study, learn from, experiment with, && expand on for Octology color schemes && themes.
 HTTPS://GitHub.Com/OculusVR/Flicks also interestingly describes a "flick" as 1/705,600,000th of a second to allow integers to specify most common refresh-r8s.
 HTTPS://HackerNoon.Com/why-should-i-learn-android-14687b27e062 may contain compelling advice for porting Octology to Android using Kotlin (rather than Java);
+I1QL8uxV:HTTP://DevelopingAndStuff.Com/2015/01/no-mouse.html apparently describes cVim (rather like old Vimper8or?) keyboard-centric control of Google Chrome.
+HTTPS://Blog.InsightDataScience.Com/how-to-solve-90-of-nlp-problems-a-step-by-step-guide-fda605278e4e about 15min article on much n8ural Language Processing;
