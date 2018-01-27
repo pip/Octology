@@ -1,5 +1,5 @@
 # HBQLISTV:know.ls crE8d by PipStuart <Pip@CPAN.Org> to duplic8 Dr. Jordan B. Peterson's Quora.Com answer of "40 most valuable things everyone should know";
-# $VERSION='0.0';$d8VS='I1QL8888'; # 2du:start chronicling Dr. Peterson's many topical videos with new section for post-title subject summaries or explor8ion;
+# $VERSION='0.0';$d8VS='I1QLLtr8'; # 2du:start chronicling Dr. Peterson's many topical videos with new section for post-title subject summaries or explor8ion;
 0) Tell the truth.
 1) Do not do things that you hate.
 2) Act so that you can tell the truth about how you act.
@@ -65,7 +65,7 @@ HTTPS://YouTube.Com/watch?v=IFmQ5waavJY "Jordan Peterson - Why it's so Hard to S
 HTTPS://YouTube.Com/watch?v=Au6HgG8y5jE "Jordan Peterson: She Was Trying to Domin8 Me" # 12mins analysis of Channel4 CathyNewman (be better with less wit?);
 # I1OLGod8:Continuity in existence && biblical transition of consciousness && responsibility consistently shifting away from an involved God to individuals.
 HTTPS://YouTube.Com/watch?v=_dNCs4RSABg "Jordan Peterson - The Emergence of the Individual in the Bible" # 10mins discussing complex lives amidst transition.
-HTTPS://YouTube.Com/watch?v=6NL4mcq-Vhc "If Evil ever reared its ugly head they would all faint" # 5mins discussing deconstructing genders && LindsayShephard.
+HTTPS://YouTube.Com/watch?v=6NL4mcq-Vhc "If Evil ever reared its ugly head they would all faint" # 5mins discussing deconstructing genders && LindsayShepherd.
 HTTPS://YouTube.Com/watch?v=lbqVEYHz8sk "revivifying western mythology - Jordan Peterson" # 8mins talking myth as actually "meta-truth" of divine individual.
 HTTPS://YouTube.Com/watch?v=Mff2I8Jzjl0 "Heavens on Earth with skeptical Dr. Michael Shermer" # 1hour14mins talking thru aspects of "aiming up" && afterlife.
 # Maybe aiming for "protopia" is wiser than too much more simplified utopian concepts? Here && now matters, in Brooklyn && the world. Thoughts on complexity;
@@ -79,3 +79,14 @@ HTTPS://YouTube.Com/watch?v=wVtj-lQsxV0 "Is ADHD over diagnosed? - Jordan Peters
 _) The fundamental racist idea is the mistaken assumption that differences between groups are gr8r than those between the individuals within groups. #mAB!top?
 # Tr8 agreeableness (compassion && politeness) is higher in about 60% of women, but higher disparity exists between female interest in people versus things.
 HTTPS://YouTube.Com/watch?v=QCPDByRb4no "The Fundamental Racist idea - Jordan Peterson" # 5mins about diversity in PostModernism && varE8ion between people;
+# I1QLLtr8:The good doctor explains how even virtues can go so far that positive feedback loops take over && can drive everything else in life off of a cliff.
+# He interestingly mentions addiction (particularly for alcohol && cocaine) as becoming critically ingrained once the drug is used more to combat withdrawals.
+HTTPS://YouTube.Com/watch?v=1folk_w-CWs "Jordan Peterson On Money, Risk Taking, and Finance" # 15mins covering many rel8d questions on risk && bad extremes.
+f) Embark on the crucial voyage to set the world str8 by constraining the malevolence within your own heart. # HTTPS://YouTube.Com/watch?v=CQ67dya8Ejk 8mins;
+HTTPS://YouTube.Com/watch?v=IjqY6-waTYo "The fundamental difference between Men and Women - Sam Harris & Bret Weinstein" # 6mins gr8 FarLeft gender responses;
+HTTPS://YouTube.Com/watch?v=AS2R_c_YZfc "Jordan Peterson Owen Benjamin LGBTQ Christianity and Lasting Rel8ionships" # 11mins in which I really like Owen's gr8
+# characteriz8ion of promiscuous polyamorous sex with many frequently changing partners as analogous to merely looping the first act of an entirely gr8 film.
+# The rel8ively trivial modific8ion I would introduce is that instead of Forrest Gump as the example movie to imagine, my preference would be either 2003 X2
+# opening scene with Nightcrawler bamf-battle-fighting dozens of armed, yet still inept, security agents to infiltr8 White House && assassin8 the President:
+HTTPS://YouTube.Com/watch?v=StnmzjqMKRo or HTTPS://YouTube.Com/watch?v=u31OjOPF-ZI # the 1999 m8rix opening of Trinity's fight, agent chase, && narrow escape.
+HTTPS://YouTube.Com/watch?v=covUnyZGVaQ "Is There Life After This Life?" # 6mins of almost entirely terrible Prager st8ments that lack justific8ion && logic;

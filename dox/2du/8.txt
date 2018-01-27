@@ -1,5 +1,5 @@
 # D6RMF1V1:8.txt - by8π : JAPH : K3wlD00d : 1337H4xr : PipStuart's Octology (hopefully eventually an Ontology of 8) - Convention, Conversion, && Categoriz8ion:
-# $VERSION='0.0';$d8VS='I1QLDIES'; # Octology attempts to rel8 the universe through medit8ion on mnemonic abbreV8ion (via 8-based  limit8ion) &&    elucid8ion.
+# $VERSION='0.0';$d8VS='I1RLEASE'; # Octology attempts to rel8 the universe through medit8ion on mnemonic abbreV8ion (via 8-based  limit8ion) &&    elucid8ion.
 # CEBBICTI:Crossing Every Bridge Before I Come To It? I.e., not a d8 stamp. Trying to make my Dad's birthday (August 8th) more special by thinking 2far ahead?
 # Octology intends to pursue implic8ion && ramific8ion as substantE8ion for adequ8 particip8ion, if not also 2 oblig8ion toward implement8ion &&   promulg8ion.
 # Conceptually, Octology is a system st8ing that every organiz8ional principle is valuable, but 8 tends to be a nearly ideal starting place for most d8a sets.
@@ -235,6 +235,7 @@ internationaliz8ion:tools to transl8 for I18N the document8ion && applic8ion int
          delinE8
         delimit8
       discrimin8
+       individu8   :giving individual character, shape, or form to things such that they become distinguished from others of their species
           sanit8   :indent8ion or d8a cleaner (XML::Tidy or tidyp) or Perl code lint static-analysis or style-guide or escaping tool to avoid injection risks
             bin8   :binary tree specific8ion && manipul8ion tool
          elabor8   :verbose d8a description tool to expand well beyond the basic fundamental st8 names && tr8s assoC8d through the typical m8 interface
@@ -399,6 +400,7 @@ internationaliz8ion:tools to transl8 for I18N the document8ion && applic8ion int
           feder8
         urbaniz8ion:Baudrillard's 4th phenomenon in Simulacra && Simul8ion (also in 1st m8rix movie) that sepR8s humans so far from reality to cause aliN8ion
       gentrific8ion
+       balkaniz8ion
          restor8ion
           habit8ion
        domestic8
@@ -826,6 +828,7 @@ internationaliz8ion:tools to transl8 for I18N the document8ion && applic8ion int
         conserv8ion
           divin8ion
            revL8ion
+           vulg8   :Latin edition of Bible transl8d from Hebrew && Greek mainly by St. Jerome at end of 4th century, revised in 1592 for Roman Catholic Church
               f8ful:  fateful like fortuitous, tragic, or otherwise highly significant events that were destined to influence what would follow
               f8h  :"faith" religion, myths, miracles, && other supernatural belief-rel8d stuff which should probably be refuted && deb8d on basis of evidence
               f8hful:faithful loyalty in adherence
@@ -4005,3 +4008,5 @@ HTTPS://GitHub.Com/OculusVR/Flicks also interestingly describes a "flick" as 1/7
 HTTPS://HackerNoon.Com/why-should-i-learn-android-14687b27e062 may contain compelling advice for porting Octology to Android using Kotlin (rather than Java);
 I1QL8uxV:HTTP://DevelopingAndStuff.Com/2015/01/no-mouse.html apparently describes cVim (rather like old Vimper8or?) keyboard-centric control of Google Chrome.
 HTTPS://Blog.InsightDataScience.Com/how-to-solve-90-of-nlp-problems-a-step-by-step-guide-fda605278e4e about 15min article on much n8ural Language Processing;
+I1RLEASE:Cool thoughts of adding various b8 bar-graph row characters && also current 34? arrayed in 8 joystick directions holding 4 each,with 2 lEst OS omit?
+Also octal nested navig8ions from various convertible mappings, && expanding on sS to transform best ANSI eScape codes to term-like mono HTML of all text d8a;

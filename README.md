@@ -1,5 +1,5 @@
 # Octology
-The ontology of 8. `$VERSION='0.0';$d8VS='I1PL8d8a';`
+The ontology of 8. `$VERSION='0.0';$d8VS='I1RLEASE';`
 
 This is basically a public preview of my early development files. I am not yet ready for serious collaboration, but welcome any sort of feedback.
 
