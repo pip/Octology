@@ -90,3 +90,8 @@ HTTPS://YouTube.Com/watch?v=AS2R_c_YZfc "Jordan Peterson Owen Benjamin LGBTQ Chr
 # opening scene with Nightcrawler bamf-battle-fighting dozens of armed, yet still inept, security agents to infiltr8 White House && assassin8 the President:
 HTTPS://YouTube.Com/watch?v=StnmzjqMKRo or HTTPS://YouTube.Com/watch?v=u31OjOPF-ZI # the 1999 m8rix opening of Trinity's fight, agent chase, && narrow escape.
 HTTPS://YouTube.Com/watch?v=covUnyZGVaQ "Is There Life After This Life?" # 6mins of almost entirely terrible Prager st8ments that lack justific8ion && logic;
+HTTPS://YouTube.Com/watch?v=Ixc9i1G7eew "The Metaphysics of Pepe with Jonathan Pageau" # 32mins about the chaotic shadow of SJW && the margin frog gold ball;
+# I1SL8Grn:AppreC8 green potent imagery symmetry between Dr.Pete,Pepe,Pip as m8rix,RGB,margin frogs that plumb chaos (fight dragons) to return with the most
+# important things (the Logos,Word,Messiah). This pred8ory snake,cat,bird should include green frog as margin channel from water-to-land && land-to-sky both
+# together. Also I was born in the Chinese zodiac Year of the Dragon just before the 1988 one, with lucky numbers 1,6,7 && lucky colors gold,silver,gray white.
+# Maybe allig8or deserves next green fraction8ion && fractaliz8ion of Chaos pred8ory margin mirror machine oper8ing on borders of known (pip) && unknown (kek);
