@@ -94,4 +94,5 @@ HTTPS://YouTube.Com/watch?v=Ixc9i1G7eew "The Metaphysics of Pepe with Jonathan P
 # I1SL8Grn:AppreC8 green potent imagery symmetry between Dr.Pete,Pepe,Pip as m8rix,RGB,margin frogs that plumb chaos (fight dragons) to return with the most
 # important things (the Logos,Word,Messiah). This pred8ory snake,cat,bird should include green frog as margin channel from water-to-land && land-to-sky both
 # together. Also I was born in the Chinese zodiac Year of the Dragon just before the 1988 one, with lucky numbers 1,6,7 && lucky colors gold,silver,gray white.
-# Maybe allig8or deserves next green fraction8ion && fractaliz8ion of Chaos pred8ory margin mirror machine oper8ing on borders of known (pip) && unknown (kek);
+# Maybe allig8or deserves next green fraction8ion && fractaliz8ion of Chaos pred8ory margin mirror machine oper8ing on borders of known (pip) && unknown (kek)
+# Kermie,Corri,remember the froggie. Also (pep) && (quq) to kaka && TstTester with HTTPS://YouTube.Com/watch?v=aaG23Zv_-_8 with 77777777 QEK mad 4(8)Chan dubz;

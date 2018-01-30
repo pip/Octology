@@ -2,6 +2,7 @@
 # $VERSION='0.0';$d8VS='I1RLEASE'; # Octology attempts to rel8 the universe through medit8ion on mnemonic abbreV8ion (via 8-based  limit8ion) &&    elucid8ion.
 # CEBBICTI:Crossing Every Bridge Before I Come To It? I.e., not a d8 stamp. Trying to make my Dad's birthday (August 8th) more special by thinking 2far ahead?
 # Octology intends to pursue implic8ion && ramific8ion as substantE8ion for adequ8 particip8ion, if not also 2 oblig8ion toward implement8ion &&   promulg8ion.
+# Contribute to potential solutions to the "Value Alignment" problems formul8d around General Artificial Intelligence along with plausible God concerns also.
 # Conceptually, Octology is a system st8ing that every organiz8ional principle is valuable, but 8 tends to be a nearly ideal starting place for most d8a sets.
              iD8   :encouragement software for the mentally ill to concentr8 on self-esteem and positive iD8ion and to divert from degener8 suicidal fix8ions
         coordin8   :core numerical d8a value, which is mainly a 2D or 3D point in space, but may eventually be extended to support an arbitrary dimensionality
@@ -4010,3 +4011,6 @@ I1QL8uxV:HTTP://DevelopingAndStuff.Com/2015/01/no-mouse.html apparently describe
 HTTPS://Blog.InsightDataScience.Com/how-to-solve-90-of-nlp-problems-a-step-by-step-guide-fda605278e4e about 15min article on much n8ural Language Processing;
 I1RLEASE:Cool thoughts of adding various b8 bar-graph row characters && also current 34? arrayed in 8 joystick directions holding 4 each,with 2 lEst OS omit?
 Also octal nested navig8ions from various convertible mappings, && expanding on sS to transform best ANSI eScape codes to term-like mono HTML of all text d8a;
+I1ULC1PL:After some deflection to mostly Dr. Peterson rel8d explor8ion in know.ls, I had somewhat more like an epiphany (past Pepe): A purpose of Octology is
+to contribute to potential solutions to the "Value Alignment" problems formul8d around General Artificial Intelligence along with plausible God concerns too.
+I've copied this purpose line to the top header && maybe it should be made smaller for the README. Likely shows bug in `8plc f` double-6 ls && coun.Implic8nz;
