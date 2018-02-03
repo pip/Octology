@@ -4,13 +4,13 @@
 0.2 Z= z8a:  zeta :I18 MonJan 8th2018:~2Monthz from 8sln:try2 complete all major core module XperimNt8ion&&shift gearZ in2 stabiliZing all Z 4m@Z&&interfaceZ;
 0.3 H= h8a:  heta :I28 ThuFeb 8th2018:~1Month  from  z8a:flesH out core docUmNt8ion witH interactive demonstr8ionz of H && upd8 g8 4future collabor8 brancHez;
 0.4 T=th8a: theta :I48 SunApr 8th2018:~2Monthz from  h8a:elabor8 Thorough auTom8d TsTz of all major fE8urez planned 4 alpha8 && gNer8 valid8ion T TsT sumRiez;
-0.5 A=alf8: alpha8:I58 TueMay 8th2018:~1Month  from th8a:core fE8urez should be well implemented&&demonstr8d 2 hopefully inspire otherz 2 help me AlphA-tSt A;
+0.5 A=alf8: alpha8:I58 TueMay 8th2018:~1Month  from th8a:core fE8urez should be well implMNted && dMonstr8d to hopefully inspire otherz 2 help me AlphA-tst A;
 0.6 B= b8a:  beta :I78 SunJul 8th2018:~2Monthz from alf8:main fE8urez should all solidify with intNt2 solicit more developerz 4wider B B8a-tsting && feedBack;
 0.8 C=cnd8:candid8:I88 WedAug 8th2018:~1Month  from  b8a:main fE8urez should be polished 4 pOtNtial release Candid8 C in prepR8ion 4 fInal tsting && feedbaCk;
 1.0 R=rls8:releas8:IA8 MonOct 8th2018:~2Monthz from cnd8:1st complete majoR public Release of fE8uReful Octology v1.0 to be made fRom GitHub oveR to the CPAN;
 
-# 2du:rEthnk top stAg IDaz,rEordr bSt ItMz hEr,brk old ItMz dn&&bild bak up in2 stAgz cklstz,rE4m@ AgN in2 dNse 1pAg Year2018 plan4 v1.0;
-H= # stil nEd2stuD&&XperimNt wi thEs taskz&&ordr in2 Feb2018&&l8r stuf&&mAB EvNtual plan4 8 consistNt nIc stAgz,but XperimNt8ion nEdz more than E&&Z&&H;
+# 2du:rEthnk top stAg IDaz,rEordr bSt ItMz hEr,brk old ItMz dn&&bild bak up in2 stAgz cklstz,rE4m@ AgN in2 dNse 1pAg Year2018 plan4 prep v1.0 (or4 2019nstd?);
+T= # stil nEd2stuD&&XperimNt wi thEs taskz&&ordr l8r stuf&&mAB EvNtual plan4 8consistNt nIc dvl stAgz perYear,but XperimNt8ion mA nEd2rEmAn pRtofall until1.0;
   a8:sS add optn2cnv SKpz in2 HTML, upd8 8plc 2fit term wrapng long lInz,add afewgd gM8ria 4mz,Xtract sectnz in2 cnt8 && nw `8c` lIk wc,
   b8:mkBigFloat objX,add cnfgUr8ion4 constructor in BaseTransl8&&4m@ing out stringific8ionz,Xplor Xpanding objX to represent Unumz,
   c8:fix ckm8 long PGN warnz&& -c SimpXit cordump,figure out if possible to enable && receive FingerTouch Wacom tablet events,or ideally get stylus pressure,

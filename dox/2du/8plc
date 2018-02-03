@@ -5,7 +5,7 @@
 #   mk sepR8 tabul8ion of 8-words used in l8r document8ion wi not8ion 4thOs not yet included in top lists (thN optn2ignor easy conjug8ions && pre/suffixes),
 #   mk easy optn4 fulc 2use 1colm 4grep,add 4m@d percNtz,stuD wc && mk a8:cnt8/8c wi fulc -f? && 8plc as -l? optnz(rEdo hedrtXt),colr letrz,add f0ntz4 8trm;
 use strict;use warnings;use utf8;use v5.10;use Octology::a8;use Octology::b8;
-my $d8VS='I1SL7vL8';       my $clrf=1;my $fulf=0;my $argz='';$argz= join(' ',@ARGV) if(@ARGV);my $Stxt='';my $folf=0; # add 4-Or-Less-Flag
+my $d8VS='I21LLClc';       my $clrf=1;my $fulf=0;my $argz='';$argz= join(' ',@ARGV) if(@ARGV);my $Stxt='';my $folf=0; # add 4-Or-Less-Flag
 my $edVS=        '';       my $pg1f=0;   $pg1f=1 if($argz=~ /(^|\s)-?-?[^p]*p/i); # find -?p(age) flag2limit some extra long output to first 48-line page
 my $mxws=        19;       my $lpsf=0;   $lpsf=1 if($argz=~ /(^|\s)-?-?[^l]*l/i); # find -?LetrPrecursShortsFlag  # if MaXWordSize evr grOz,wil nEd2incrEs|Dtct
 my $clmz=        80;       my $gm8f=0;   $gm8f=1 if($argz=~ /(^|\s)-?-?[^g]*g/i); # find -?g(m8r) flag2count&&adorn wi math 4mUl8ions stRting wi 2letr
@@ -37,12 +37,12 @@ while( <$eflh>){my $ldat=$_;$done=1 if(/^$/); # sets done to true when first bla
     if     (length($ldat) >= 16  ){my $pltr; # 16th column is l8st dflt 8 loc8ion, but some l8r could slide furthr
       if   (substr($ldat,    16,1) eq '8'){$pltr=substr($ldat,15,1);} # hard-coding columns as aligned interest (used to be 14 && 13, now 16 && 15)
       elsif(       $ldat =~   /^.*?(\w)8/){$pltr=$1;} # for a few lines with particularly long 8 names, the 8 wouldn't fit in the same column so srch for 1st 8
-      if   (       $ldat =~   /^\s*(\w{0,15}8\w*)(\s|:)/i && ($folf || $gm8f || $lpsf)){my $ewrd=$1; # if mAB FindOrdrdLsFlag,thN lOdup Cntz arAy of subhashes
-        push(@{$lpsd{$pltr}[       length($ewrd)]}, $ewrd) if(                  $lpsf); # bild LetterPrecursorShortestsD8a for -l
-        for my $wsiz (2..$mxws){if(length($ewrd) == $wsiz){$folc[$wsiz]{$ewrd}++;
+      if   (       $ldat =~   /^\s*(\w{0,15}8\w*)(\s|:)/i &&  ($folf || $gm8f || $lpsf)){my $ewrd=$1; # if mAB FindOrdrdLsFlag,thN lOdup Cntz arAy of subhashes
+        push(@{$lpsd{$pltr}[        length($ewrd)]}, $ewrd) if(                  $lpsf); # bild LetterPrecursorShortestsD8a for -l
+        for my $wsiz (2..$mxws){if( length($ewrd) == $wsiz){$folc[$wsiz]{$ewrd}++;
             print "$G!*EROR*! duplic8 of wsiz:$wsiz for ewrd:$ewrd to remove l8r;\n"    if($folc[$wsiz]{$ewrd} > 1);}}} # sneak in Xtra duplic8ion error check
-      $lcnt[b10($pltr)]++    if(defined($pltr) );}}
-      $text .=  $ldat;       if($fulf){my @chrz= split(//,$ldat);for my $char (@chrz){$fulc{$char}++;}}}
+      $lcnt[b10(   $pltr )]++   if(defined($pltr) );}} # wrapng $pltr in lc() B4 b10() showz just 23(/34) countz in rvrs ordr: rnlc tzeg mdvp usbx fwkh iyo
+      $text .=     $ldat;       if($fulf){my @chrz= split(//,$ldat);for my $char (@chrz){$fulc{$char}++;}}} # &&!lc: rnlc tzEm gpdv usbN LDCV URxf Gwkh PMIy SO
 my    $letz  =join('',keys(%lpsd)); # these PLz won't be in order, but should be good enough for regex char-classes
 close($eflh)               or die "!*EROR*! Couldn't close eight-file after reading! $!";
 #if($fulf){%fulc=();for(split(//,'the of and to a in is I that it for you was with on as have but be they')){$fulc{$_}=0 if(!exists($fulc{$_}));$fulc{$_}++;}}
@@ -52,17 +52,16 @@ while($text=~ s/(\w)8//){$acnt[b10($1)]++;}   # counts chopping out all PLs && 8
 my @scnt = sort { $a <=> $b } (@lcnt);
 for(my $sndx=$#scnt;$sndx >= 0;$sndx--){ # 2du:append bar-graphs of respective count values;
   if(($sndx > 0 && $scnt[$sndx] == $scnt[$sndx - 1]) || ($sndx == 0 && $scnt[0] == 0)){splice(@scnt,$sndx,1);}} # below2 sepR8 prnt blox for not color or with
-$Stxt.=                                            sprintf("${C}8${M}Pre-cursor${Y}Letter${R}Counter$W:$G d8VS$C=%s$G\n",            d8colr($d8VS));
-my $efsz = length($efyl);$Stxt.=                   sprintf("$O  efyl$C=%s".' 'x (18-$efsz).$G.          " edVS$C=%s$G\n",c8fn($efyl),d8colr($edVS));
+$Stxt.=                                            sprintf("${C}8${M}Pre-cursor${Y}Letter${R}Counter$W:$G d8VS$C=%s$G\n",            d8c($d8VS));
+my $efsz = length($efyl);$Stxt.=                   sprintf("$O  efyl$C=%s".' 'x (18-$efsz).$G.          " edVS$C=%s$G\n",c8fn($efyl),d8c($edVS));
 $Stxt.=                                            sprintf "${C}8${M}Pre${Y}Letr$R Ct$C Full${W}Document${R}Counts\n";
 $Stxt.=                                            sprintf   "$B-------- -- ------------------\n";
 for(@scnt){                                                                                        $sclc=0;$actx ='';
   for my $lndx (0..$#lcnt){
-    if(defined($lcnt[$lndx]) && $lcnt[$lndx] == $_){$Stxt.=   $Y           . b64($lndx) ;$t0tl+=$_;$sclc++;$actx.=' '.              b8colr(
-                                                                                                                         sprintf("%2s",b64($acnt[$lndx])));
+    if(defined($lcnt[$lndx]) && $lcnt[$lndx] == $_){$Stxt.=   $Y           . b64($lndx) ;$t0tl+=$_;$sclc++;$actx.=' '.b8c(sprintf("%2s",b64($acnt[$lndx])));
                                                                                          $gttl+=$acnt[$lndx];}}
   $sclc = 9 - $sclc;$sclc=0 if($sclc < 0);
-  $Stxt.=sprintf ' '  x $sclc; $Stxt.=             sprintf(  "%s $actx\n",            b8colr(sprintf("%2s",b64($_))));}
+  $Stxt.=sprintf ' '  x $sclc; $Stxt.=             sprintf(  "%s $actx\n",b8c(sprintf("%2s",b64($_))));}
                                                                                    my $ct0t=$G . cma($t0tl);$ct0t=~ s/(,)/$Y$1$G/g; # pre-colr comma'd t0tal
 $Stxt.=                                            sprintf   "$B-------- -- ---\n";my $cttl=$M . cma($gttl);$cttl=~ s/(,)/$Y$1$M/g; # pre-colr comma'd total
 $Stxt.=                                            sprintf("${C}t${M}0${C}tlz    %s %s$W :  $B(${R}b10$B)  %s  %s$W;$z",

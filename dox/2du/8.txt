@@ -1,5 +1,5 @@
 # D6RMF1V1:8.txt - by8π : JAPH : K3wlD00d : 1337H4xr : PipStuart's Octology (hopefully eventually an Ontology of 8) - Convention, Conversion, && Categoriz8ion:
-# $VERSION='0.0';$d8VS='I1RLEASE'; # Octology attempts to rel8 the universe through medit8ion on mnemonic abbreV8ion (via 8-based  limit8ion) &&    elucid8ion.
+# $VERSION='0.0';$d8VS='I23L1CLI'; # Octology attempts to rel8 the universe through medit8ion on mnemonic abbreV8ion (via 8-based  limit8ion) &&    elucid8ion.
 # CEBBICTI:Crossing Every Bridge Before I Come To It? I.e., not a d8 stamp. Trying to make my Dad's birthday (August 8th) more special by thinking 2far ahead?
 # Octology intends to pursue implic8ion && ramific8ion as substantE8ion for adequ8 particip8ion, if not also 2 oblig8ion toward implement8ion &&   promulg8ion.
 # Contribute to potential solutions to the "Value Alignment" problems formul8d around General Artificial Intelligence along with plausible God concerns also.
@@ -105,14 +105,14 @@ compartmentaliz8ion
              gr8ful    # Protect free-speech (especially unpopular && offensive)! Promote societal justice && equality for both genders through egalitarianism!
               p8ron:don8 system like Patreon with tracking && support for crE8ors && donors  # Promote good research, evidence, cit8ions, && result duplic8ion!
         monetiz8ion    # Reject censorship! Do not just listen && believe. Trust but verify! Men's rights matter also! Protect h8-speech! Eradic8 global ICBMs!
-       marketiz8ion    # above are just example position slogans which generally align with at least some of my previous sentiments;      Keep right to offend!
-   commercializ8ion
-        cheapsk8
+       marketiz8ion    # above are just example position slogans which generally align with at least some of my previous sentiments;  Keep the right to offend!
+   commercializ8ion    # Protect the right to discrimin8 && freedom to assoC8 on personal levels, while upholding equal treatment under the law for all people!
+        cheapsk8       # Seriously contempl8 prosecuting false accusers in rel8ively fair ways, proportional to the punishment standards for the crime claimed!
        approprE8   :same as alloc8 for design8ing funds for a purpose or maybe politial correctness && social faux pas educ8ion && avoidance recommend8ions?
-    misapproprE8
-   maladministr8ion
-        malvers8
-         profan8ion
+    misapproprE8       # Body-positivity is usually good, but fat-acceptance is not! Approxim8 perfection! Aspire! ReProve! Gender is overwhelmingly binary!
+   maladministr8ion    # Refuse compulsory speech! Deny ideological possession! Challenge assumptions, evidence, r8ionality, && also any deriv8ive conclusions!
+        malvers8       # Remember that all people make mistakes, are capable of learning, can change our minds, && can practice moder8ing our old behaviors!
+         profan8ion    # This whole "advoc8" off-shoot of mostly policy slogans && mantras as exclam8ion post-hash comments are not necessarily still believed!
           pecul8
          defalc8   :fraudulent approprE8ion, embezzlement, or to cut off with a sickle
         compens8   :don8 repurposed for payments && payrolls
@@ -199,6 +199,7 @@ internationaliz8ion:tools to transl8 for I18N the document8ion && applic8ion int
        perambul8
     circumambul8   :Jungian philosophy about potential future selves influencing interest && attention through patterns, which Dr. Jordan Peterson lectures on
            limb8
+           iris8   :making something exhibit the prismatic colors, become irised, or iridescent
           color8
         coloriz8ion
      personaliz8ion
@@ -221,6 +222,7 @@ internationaliz8ion:tools to transl8 for I18N the document8ion && applic8ion int
          bifurc8
         trifurc8
            tern8
+          arill8   :(of some seeds) having a fleshy && usually brightly colored cover, having an aril
              al8   :"alate" adj. of seeds or insects having winglike extensions
            folE8
          defolE8
@@ -318,11 +320,19 @@ internationaliz8ion:tools to transl8 for I18N the document8ion && applic8ion int
           amput8
         augment8ion
        scarific8ion
+       cauteriz8ion:to burn, sear, or freeze (tissue) using a hot iron, electric current, a caustic agent, or a cautery (also make insensitive or callous)
       methotrex8   :toxic antimetabolite limiting cellular reproduction as folic acid antagonist (treats certain cancers, psoriasis, && rheumatoid arthritis)
          enuclE8   :remove cell nucleus or something like an eye or tumor from an enveloping sac or cover
           mutil8
             mut8
   transmogrific8ion
+           epil8
+          depil8   :to strip of or remove body hair, to husk (maybe rel8ing to hair styling or shaving && waxing methods)
+          manic8   :covered with hairs or pubescense so platted together && interwoven as to form a mass easily removed    (from Botany )
+            mec8   :a rope of hair or of maguey fiber, for tying horses, etc. [Southwestern U.S.]
+            jub8   :having a mane, or being fringed with long, pendant hair                                                (from Zoology)
+            lan8   :wooly, covered with fine long hair or hairlike filaments, or dense cottony often matted or curly hairs (from Biology)
+          reduz8   :sediment accumul8d under reducing conditions && consequently rich in organic carbon && iron sulfide minerals, like coal && shale (Geology)
           excav8   :geology, fossils, digs, etc.
              hI8us :sabbatical, suspension, or break planning
             vac8   :logistical movement planning
@@ -685,6 +695,7 @@ internationaliz8ion:tools to transl8 for I18N the document8ion && applic8ion int
            vibr8   :tele-dildonics with audio && video coordin8ion?
        reverber8   :some audio modific8ion && other processing tool for production
           reson8   :community organiz8ion or audio stuff
+         solmiz8   :to sing by using syllables like 'do', 're', && 'mi' to represent the tones of the scale (taught to children in the Sound of Music film?)
           simul8   :physics-based simul8ions (maybe dynamics && universe?)
            speC8   :species simul8or for exploring evolutionary developments && emergent specializ8ions which lead to improved environmental suitability
            prim8   :biology simul8or
@@ -786,10 +797,11 @@ internationaliz8ion:tools to transl8 for I18N the document8ion && applic8ion int
           incub8
          procrE8
            lact8
-            dil8   :maybe pregnancy or eyesight or general circle-rel8d tool
+            dil8   :maybe pregnancy or eyesight or other sphincter radial expansion measurement or just a generalized circle-rel8d tool
            dil88ion:rather peculiar double-8 word normally spelled "dilatation" describing the st8 of stretching or distention of an anatomical canal or organ
           prost8
           hernE8ion:hernia or rupture in smooth muscle tissue through which bodily structure protrudes
+          vesic8   :to raise little bladders or blisters upon, or to inflame && sepR8 the cuticle of
            cusp8   :having a cusp or cusps, or being shaped like a cusp or cusp-like (from Anatomy)
          cingul8   :brain cortex situ8d in medial aspect of cerebral cortex (includes gyrus && sulcus), is involved in processing emotion && behavior regul8ion
         emascul8
@@ -828,7 +840,7 @@ internationaliz8ion:tools to transl8 for I18N the document8ion && applic8ion int
         preserv8ion
         conserv8ion
           divin8ion
-           revL8ion
+           revL8ion:maybe insert "Hecate" Greek mythological goddess of fertility (l8r assoC8d with Persephone, goddess of underworld, protector of witches)
            vulg8   :Latin edition of Bible transl8d from Hebrew && Greek mainly by St. Jerome at end of 4th century, revised in 1592 for Roman Catholic Church
               f8ful:  fateful like fortuitous, tragic, or otherwise highly significant events that were destined to influence what would follow
               f8h  :"faith" religion, myths, miracles, && other supernatural belief-rel8d stuff which should probably be refuted && deb8d on basis of evidence
@@ -964,20 +976,22 @@ internationaliz8ion:tools to transl8 for I18N the document8ion && applic8ion int
             vol8ile
           deton8
          fulmin8
-             cS8ion:"cessation" with a bit of an awkward abbreV8d double-consonant into UpperCase syllable spelling
+             cS8   :"cessate" with a bit of an awkward abbreV8d double-consonant into UpperCase syllable spelling (as probably only S8 entry for a while)
        persever8   :repeating a response after cS8ion of the original stimulus (from Psychology)
         capacit8
       incapacit8
          substr8   :integr8d circuit tool
-           titr8   :chemistry simul8or
+           titr8   :chemistry simul8or (may want to add chL8 compound of metal ion attached by coordin8 bonds to 2 or more non-metal ions, or Zoology dF)
          sublim8
         distill8
          dissip8
           lixiV8
+       vulcaniz8   :change the properties of by chemically treating, as with metallic chlorides, to form a substance like ebonite, caoutchouc, or India rubber
        precipit8
         incrass8
         inspiss8
         gelatin8
+        alkaliz8   :rel8ing to or containing an alkali, having a pH gr8r than 7, such as soils derived from chalk or limestone (from Chemistry)
          attenU8
             elu8   :liquid solution resulting from elution, the process of extracting one material from another by washing with solvent, like uranium ions
             ion8
@@ -1008,6 +1022,9 @@ internationaliz8ion:tools to transl8 for I18N the document8ion && applic8ion int
              sp8   :"spate" is a surge or sudden forceful water flow or abundance so maybe a deluge or whole lot of 8 stuff like this list itself?
            hydr8   :water && further chemistry rel8d oper8ions which should all be able to be simul8d to various degress of accuracy eventually
          dehydr8
+       hydrolyz8   :process causing splitting of a chemical bond by adding the elements of water, causing form8ion of 2 compounds from the first plus water
+        pyrolyz8   :transform8ion of a substance produced by the action of heat (from Chemistry)
+        autolyz8   :lysis of plant or animal cells or tissues due to enzymatic activity within the cell, occurring to higher animals when organism is detached
           irrig8
           desic8
           salin8
@@ -1028,6 +1045,7 @@ internationaliz8ion:tools to transl8 for I18N the document8ion && applic8ion int
              mL8
             mal8   :salt (or ester) of malic      acid (or also could be an anion)
             mor8
+           oxal8   :salt (or ester) of oxalic     acid
             phN8   :salt            of phenic     acid
            fumR8   :salt (or ester) of fumaric    acid produced as a key chemical intermeD8 during the urea (or Krebs?) cycle (from Biochemistry)
            form8   :salt            of formic     acid
@@ -1052,6 +1070,7 @@ internationaliz8ion:tools to transl8 for I18N the document8ion && applic8ion int
           fumig8
        extermin8
          eradic8
+           enec8
         annihil8   :Dubstyle track by Obsidia (released around Sep. 2nd,2011)
         obliter8   :Dubstep  track by Obsidia (released around Sep.12th,2011)
       disintegr8
@@ -1194,7 +1213,7 @@ internationaliz8ion:tools to transl8 for I18N the document8ion && applic8ion int
             SSN8   :code for an "assassin8" FPS game like Half-Life or with some ambitious elements of OverWatch using cr8 engine?
             NfN8   :"infinite" followable inter-connections between any of Octology's 8d8a, likely having some possible mapping in any complete unific8ion
              DN8   :DNA (Deoxyribo-Nucleic Acid8) human genome sequencer/modeler && maybe chromosome strand splicing && protein-folding type puzzle games
-              N8   :pronunC8ion as "innate", to be a succinct primary general d8a-set manager (probably cut because pronunC8ion && spelling are too far off)
+              N8   :"enate" growing out, or one who is rel8d on the mother's side, maternal, matrikin, matrisib, matrilineal kin or sib (a maternal grandma)
 
 # The original intention for the nearly exhaustive list of 8-words above was to organize the best 888 as names for distinct future applic8ions && fE8ures,
 #   but after surpassing 1,024 unique candid8s, it appears better to revoke seemingly arbitrary limit8ions && allow for inclusion of any number of concepts.
@@ -1207,13 +1226,16 @@ internationaliz8ion:tools to transl8 for I18N the document8ion && applic8ion int
        UnitedSt8s          :USA d8a, maps, details, history, popul8ion, etc. for each of the sepR8 50 St8s, WashingtonDC capital, && other assoC8d territories
         Unitedn8ions       :tool to monitor the UN, an intergovernmental organiz8ion tasked to promote intern8ional cooper8ion && to crE8 && maintain order
  UnitedArabEmir8s          :UAE also just called "Emirates", which is an absolute monarchy in Western Asia on the Persian Gulf && is a feder8ion of 7 emir8s
+           Zelz8           :a         municipality  in the province of East Flanders    in     Belgium, on January 1, 2006 popul8ion density was 888 p/km^2
+           Lazz8           :a comune (municipality) in the province of Monza && Brianza in the Italian region Lombardy, about 25kilometers (16mi) NW of Milan
+            Azz8           :a comune (municipality) in the province of Varese           in the Italian region Lombardy, home to pop-artist Erminia Giordano
             Kuw8           :Middle East "Kuwait" country as handle for ISIS war reporting/analysis tool or Iraq, Syria, && Afghanistan neighboring details
              kR8           :"Karate" (badly mispronounced) Japanese martial art in which sharp blows && kicks are delivered to pressure-sensitive body points
               n8o          :NATO history && presently known agenda for this NorthAtlanticTreatyOrganiz8ion, a post-WorldWarII military alliance of democracies
               h8i          :"Haiti" the country which is a republic in the West Indies of the Caribbean on Hispaniola island, because it also fits name-wise ;)
               b8HaMikdash  :Jewish Holy Temple, or "The Sanctified House" according to rabbinical liter8ure, && only the Temple in Yerushalayim has this name
      PontiusPil8           :Roman procur8or of Judea who ordered Y'shua (A.K.A. Jesus) to be crucified (according to Christian mythology, maybe not history)
-  ParksAndRecrE8ion        :pretty intelligent && funny comedy show about small-town politics starring Amy Poehler && very attractive Aubrey Plaza
+  ParksAndRecrE8ion        :pretty intelligent && funny comedy show about small-town politics starring Amy Poehler && distractingly attractive Aubrey Plaza
        Colbertn8ion        :Stephen ColbertReport show back on ComedyCentral from before he took over the CBS l8Show, premiering on September 8th of 2015
               n8Silver     :model math user with generally rL8ively accur8 prediction models (@NateSilver538 founder/editor-in-chief of FiveThirtyEight.Com)
               r8chelMaddow :TRMS (TheRachelMaddowShow) as a slight, but deliber8, mispronunC8ion of the very bl8antly left-leaning MSNBC host's name
@@ -4013,4 +4035,14 @@ I1RLEASE:Cool thoughts of adding various b8 bar-graph row characters && also cur
 Also octal nested navig8ions from various convertible mappings, && expanding on sS to transform best ANSI eScape codes to term-like mono HTML of all text d8a;
 I1ULC1PL:After some deflection to mostly Dr. Peterson rel8d explor8ion in know.ls, I had somewhat more like an epiphany (past Pepe): A purpose of Octology is
 to contribute to potential solutions to the "Value Alignment" problems formul8d around General Artificial Intelligence along with plausible God concerns too.
-I've copied this purpose line to the top header && maybe it should be made smaller for the README. Likely shows bug in `8plc f` double-6 ls && coun.Implic8nz;
+I've copied this purpose line to the top header && maybe it should be made smaller for the README. Showed bug in `8plc f` of double-6 in list && digit counts;
+I21LLHit:Added /. link to putr.txt about hard-drive reliability with HGST (HitachiGlobStorTech) better than other WesternDigital (since HGST was bought by WD)
+&& with SeaGate in-between. HTTPS://Ask.SlashDot.Org/story/18/02/01/2141205/ask-slashdot-which-tech-company-do-you-respect-most lists LavaBit (SilentCircle),
+OpenWhisperSystems (makers of Signal), NextCloud, LibreOffice, Let's Encrypt, GNU, EFF, Tor, && Sonic (ISP) as notably good && trustworthy tech organiz8ions.
+Other worthwhile mentions are DuckDuckGo, PaleMoon.Org (web-browser), ProtonMail.Com or FastMail (web-mail), && NearlyFreeSpeech.Net (web-host, fair deals?);
+I22L11FS:HTTPS://GitHub.Com/dbkaplun/fse-made-easy contains Python code for efficient Finite-St8-Entropy encoding in ways that Perl might find useful as well.
+HTTP://OilShell.Org/blog/2018/01/28.html might have some reasoning to diverge from bash && zsh or description of fE8ures worth exploring for my eventual 8sh.
+HTTPS://Reddit.Com/r/programming/comments/7ubtz9/xi_an_editor_for_the_next_20_years_raph_levien discussion might contain details to consider for viii l8r too.
+HTTPS://GitHub.Com/jwilm/alacritty (fastest terminal emul8or) mentioned in Xi video is example of how to upd8 text, scroll, && render as fast as GPU is able;
+I22LCHAO:HTTPS://En.WikiPedia.Org/wiki/Symbol_of_Chaos is yet another interesting 8 arrows, Symbol-of-Eight, or Chaos-Star origin8ing in stories by Moorcock.
+I've begun reading Dr. Peterson's 12 Rules against Chaos && thinking of Kekis. It seems 8 usually symbolizes chaos, but Octology may be ushering in gr8 order;
