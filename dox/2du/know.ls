@@ -1,5 +1,5 @@
 # HBQLISTV:know.ls crE8d by PipStuart <Pip@CPAN.Org> to duplic8 Dr. Jordan B. Peterson's Quora.Com answer of "40 most valuable things everyone should know";
-# $VERSION='0.0';$d8VS='I1QLLtr8'; # 2du:start chronicling Dr. Peterson's many topical videos with new section for post-title subject summaries or explor8ion;
+# $VERSION='0.0';$d8VS='I23L8joy'; # 2du:start chronicling Dr. Peterson's many topical videos with new section for post-title subject summaries or explor8ion;
 0) Tell the truth.
 1) Do not do things that you hate.
 2) Act so that you can tell the truth about how you act.
@@ -96,3 +96,4 @@ HTTPS://YouTube.Com/watch?v=Ixc9i1G7eew "The Metaphysics of Pepe with Jonathan P
 # together. Also I was born in the Chinese zodiac Year of the Dragon just before the 1988 one, with lucky numbers 1,6,7 && lucky colors gold,silver,gray white.
 # Maybe allig8or deserves next green fraction8ion && fractaliz8ion of Chaos pred8ory margin mirror machine oper8ing on borders of known (pip) && unknown (kek)
 # Kermie,Corri,remember the froggie. Also (pep) && (quq) to kaka && TstTester with HTTPS://YouTube.Com/watch?v=aaG23Zv_-_8 with 77777777 QEK mad 4(8)Chan dubz;
+HTTPS://YouTu.be/pVuz-EmKP4M "Jordan Peterson: Men who know this are ahead of the competition" # I23L8God:15mins about TheDao, Hero/Anti archtypes && balance;

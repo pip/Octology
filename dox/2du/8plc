@@ -5,7 +5,7 @@
 #   mk sepR8 tabul8ion of 8-words used in l8r document8ion wi not8ion 4thOs not yet included in top lists (thN optn2ignor easy conjug8ions && pre/suffixes),
 #   mk easy optn4 fulc 2use 1colm 4grep,add 4m@d percNtz,stuD wc && mk a8:cnt8/8c wi fulc -f? && 8plc as -l? optnz(rEdo hedrtXt),colr letrz,add f0ntz4 8trm;
 use strict;use warnings;use utf8;use v5.10;use Octology::a8;use Octology::b8;
-my $d8VS='I21LLClc';       my $clrf=1;my $fulf=0;my $argz='';$argz= join(' ',@ARGV) if(@ARGV);my $Stxt='';my $folf=0; # add 4-Or-Less-Flag
+my $d8VS='I23L9bar';       my $clrf=1;my $fulf=0;my $argz='';$argz= join(' ',@ARGV) if(@ARGV);my $Stxt='';my $folf=0; # add 4-Or-Less-Flag
 my $edVS=        '';       my $pg1f=0;   $pg1f=1 if($argz=~ /(^|\s)-?-?[^p]*p/i); # find -?p(age) flag2limit some extra long output to first 48-line page
 my $mxws=        19;       my $lpsf=0;   $lpsf=1 if($argz=~ /(^|\s)-?-?[^l]*l/i); # find -?LetrPrecursShortsFlag  # if MaXWordSize evr grOz,wil nEd2incrEs|Dtct
 my $clmz=        80;       my $gm8f=0;   $gm8f=1 if($argz=~ /(^|\s)-?-?[^g]*g/i); # find -?g(m8r) flag2count&&adorn wi math 4mUl8ions stRting wi 2letr
@@ -60,7 +60,12 @@ for(@scnt){                                                                     
   for my $lndx (0..$#lcnt){
     if(defined($lcnt[$lndx]) && $lcnt[$lndx] == $_){$Stxt.=   $Y           . b64($lndx) ;$t0tl+=$_;$sclc++;$actx.=' '.b8c(sprintf("%2s",b64($acnt[$lndx])));
                                                                                          $gttl+=$acnt[$lndx];}}
-  $sclc = 9 - $sclc;$sclc=0 if($sclc < 0);
+  my $spad=21 - 3*$sclc;$spad=0 if($spad < 0);$actx.=' ' x $spad;my $blsz=43;my $r8io=$blsz/64.0; # prEpad Nd of acnt ndxz B4 sclc flipz 4 stRtng letr colm
+  $sclc   = 9 -   $sclc;$sclc=0 if($sclc < 0); # exploring gener8ing additional new bar-graphs of b8 Counts across remaining line width
+  if($clmz >= 160){my  $ddig =$_   ;$actx.=' ' x (126-int($_*$r8io)); # (96-int($_/2)) wi spad=50-3*sclc abov,thN (114-int($_*$r8io)) wi spad=32-3*sclc
+    while($ddig >= 64){$ddig-=   64;$actx.= $o . ('#' x  ($blsz- 1)) . "$R@";} my $mdig=$ddig % 2; # try2mk Orange 2nd blox Nd in last Red boundry
+                       $ddig*=$r8io;$actx.= $R . ('#' x   $ddig    ); # odd mod rEmAndr BlO reprEsNtd betr whN Ech 64 blok fitXactly32chrz,sO just4 sOlO 1now
+    if($mdig && ($blsz==32||$_==1)){$actx.= $R .  '1'               ;}} # outr colm widt tSt shud only draw bRz 4 wId termz now
   $Stxt.=sprintf ' '  x $sclc; $Stxt.=             sprintf(  "%s $actx\n",b8c(sprintf("%2s",b64($_))));}
                                                                                    my $ct0t=$G . cma($t0tl);$ct0t=~ s/(,)/$Y$1$G/g; # pre-colr comma'd t0tal
 $Stxt.=                                            sprintf   "$B-------- -- ---\n";my $cttl=$M . cma($gttl);$cttl=~ s/(,)/$Y$1$M/g; # pre-colr comma'd total

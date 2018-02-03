@@ -1,5 +1,5 @@
 # D6RMF1V1:8.txt - by8π : JAPH : K3wlD00d : 1337H4xr : PipStuart's Octology (hopefully eventually an Ontology of 8) - Convention, Conversion, && Categoriz8ion:
-# $VERSION='0.0';$d8VS='I23L1CLI'; # Octology attempts to rel8 the universe through medit8ion on mnemonic abbreV8ion (via 8-based  limit8ion) &&    elucid8ion.
+# $VERSION='0.0';$d8VS='I23L8PKD'; # Octology attempts to rel8 the universe through medit8ion on mnemonic abbreV8ion (via 8-based  limit8ion) &&    elucid8ion.
 # CEBBICTI:Crossing Every Bridge Before I Come To It? I.e., not a d8 stamp. Trying to make my Dad's birthday (August 8th) more special by thinking 2far ahead?
 # Octology intends to pursue implic8ion && ramific8ion as substantE8ion for adequ8 particip8ion, if not also 2 oblig8ion toward implement8ion &&   promulg8ion.
 # Contribute to potential solutions to the "Value Alignment" problems formul8d around General Artificial Intelligence along with plausible God concerns also.
@@ -994,12 +994,14 @@ internationaliz8ion:tools to transl8 for I18N the document8ion && applic8ion int
         alkaliz8   :rel8ing to or containing an alkali, having a pH gr8r than 7, such as soils derived from chalk or limestone (from Chemistry)
          attenU8
             elu8   :liquid solution resulting from elution, the process of extracting one material from another by washing with solvent, like uranium ions
+            met8   :flat or somewhat hollowed stone on which grain or other food is ground, by means of smaller stone or pestle [Southwestern U.S. && Sp.Amer.]
             ion8
        liquific8ion
          evapor8   :e-cigarette reviews && any rel8d safety d8a which can be aggreg8d for providing quality hardware && juice brand recommend8ions && cautions
         vaporiz8ion
      crystalliz8ion
        calcific8ion
+        catalyz8ion:causing chemical reaction to proceed more quickly by contacting the reactant(s) with another substance, like water to iron oxid8ion in air
          carbur8or :apparatus in which coal gas, hydrogen, or air is passed through or over a vol8ile hydrocarbon to confer or increase power (from Chemistry)
           satur8   :maybe some tool to implement HSLuv perceptually uniform color space based on Hue, Satur8ion, && Lightness with mapping to RGB, CMYK, etc.
         adulter8
@@ -4046,3 +4048,6 @@ HTTPS://Reddit.Com/r/programming/comments/7ubtz9/xi_an_editor_for_the_next_20_ye
 HTTPS://GitHub.Com/jwilm/alacritty (fastest terminal emul8or) mentioned in Xi video is example of how to upd8 text, scroll, && render as fast as GPU is able;
 I22LCHAO:HTTPS://En.WikiPedia.Org/wiki/Symbol_of_Chaos is yet another interesting 8 arrows, Symbol-of-Eight, or Chaos-Star origin8ing in stories by Moorcock.
 I've begun reading Dr. Peterson's 12 Rules against Chaos && thinking of Kekis. It seems 8 usually symbolizes chaos, but Octology may be ushering in gr8 order;
+I23L8PKD:HTTPS://YouTu.be/bbW6ZOmoFgY contains a powerful explor8ion of Philip K. Dick's prescient visions && writings. When I was attending college about 2
+decades ago at the University of California at Irvine, a friend named Brian gifted me the book, Valis, which fE8ures a protagonist who is reverber8ingly named
+Philip (with just 1 L, also like Philip DeFranco) && while I read through the story, I experienced many supern8ural sens8ions about the synergy between us 3;
