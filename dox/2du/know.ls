@@ -1,5 +1,5 @@
 # HBQLISTV:know.ls crE8d by PipStuart <Pip@CPAN.Org> to duplic8 Dr. Jordan B. Peterson's Quora.Com answer of "40 most valuable things everyone should know";
-# $VERSION='0.0';$d8VS='I23L8joy'; # 2du:start chronicling Dr. Peterson's many topical videos with new section for post-title subject summaries or explor8ion;
+# $VERSION='0.0';$d8VS='I28L8888'; # 2du:start chronicling Dr. Peterson's many topical videos with new section for post-title subject summaries or explor8ion;
 0) Tell the truth.
 1) Do not do things that you hate.
 2) Act so that you can tell the truth about how you act.
@@ -72,7 +72,8 @@ HTTPS://YouTube.Com/watch?v=Mff2I8Jzjl0 "Heavens on Earth with skeptical Dr. Mic
 # I1QL1FAD:"ADHD is definitely over-diagnosed && is a very unreliable psychiatric diagnosis, being hard to distinguish from temperamental varE8ion. There is
 # absolutely no evidence whatsoever that long-term use of psychomotor stimulants produces increases in cognitive gain. Zero. Plenty of evidence it's harmful."
 # My critique includes uncharacteristic (for him) oversimplific8ion, certitude, && dismissiveness of beneficial stimulants. Recognizing conditions contributing
-# to growing diagnosis among boys increasingly deprived of rough play, but then denying that others may need to self-medic8 who also need such treatment.
+# to growing diagnosis among boys increasingly deprived of rough play, but then denying others may need to self-medic8 who also benefit from such treatments.
+# For many years of my life, I felt confident regular amphetamines benefited me, ahead of known harms, and still suspect an Adderall prescription may help me.
 # Seeming contradiction with his openness towards, && recognition of, therapeutic hallucinogens (as discussed in other similar lecture videos), when compared
 # against seeming completely closed about stimulants, but why exactly? Maybe old studies were particularly rigorous && definitive enough to establish their
 HTTPS://YouTube.Com/watch?v=wVtj-lQsxV0 "Is ADHD over diagnosed? - Jordan Peterson" # 6mins ...findings as so credible && conclusive they deny reconsider8ion?

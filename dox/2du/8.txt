@@ -113,7 +113,7 @@ compartmentaliz8ion
    maladministr8ion    # Refuse compulsory speech! Deny ideological possession! Challenge assumptions, evidence, r8ionality, && also any deriv8ive conclusions!
         malvers8       # Remember that all people make mistakes, are capable of learning, can change our minds, && can practice moder8ing our old behaviors!
          profan8ion    # This whole "advoc8" off-shoot of mostly policy slogans && mantras as exclam8ion post-hash comments are not necessarily still believed!
-          pecul8
+          pecul8       # Deny "multiple intelligences"!
          defalc8   :fraudulent approprE8ion, embezzlement, or to cut off with a sickle
         compens8   :don8 repurposed for payments && payrolls
         remuner8
@@ -704,8 +704,8 @@ internationaliz8ion:tools to transl8 for I18N the document8ion && applic8ion int
           allig8or :animal  simul8or
           acerv8   :fungus  simul8or
             tan8   :Nipponese raccoon dog with short bushy tail (from Zoology)
-              k8   :"kate" is a brambling finch                 (from Zoology)
-              n8ure:nature  simul8or
+              k8   :"kate" is a brambling finch                 (from Zoology) # below may w8 4 4 more c8 && l8, but n8l could also be a baby f8l game
+              n8ure:nature  simul8or       # maybe also add n8l ( or "n8al"? ) here as rel8ing to birth, babies, or buttocks (with pre, anti, && post)
            clim8   :climate simul8or && change tracker for mitig8ing disasterous consequences of human influence on rising global temper8ures
            plan8   :planet  simul8or
              cr8or :planet  modeler
@@ -939,8 +939,8 @@ internationaliz8ion:tools to transl8 for I18N the document8ion && applic8ion int
            frig8   :fr8 ship/boat tracking or maybe some ocean-based resource-management simul8ion game with domestic markets && sea-life disturbance metrics
              fr8   :"freight" package shipment manager, tracker, && organizer
              cr8   :maybe FirstPersonShooter engine && game (a bit cynically, since the FPS genre is notorious for having levels that are inund8d with crates?)
-              f8l  :general fighting         engine && game "fatal"
-             sk8   :general skateboarding    engine && game
+              f8l  :general fighting         engine && game "fatal" (which omits the 2nd "a" in abbreV8d spelling, for efficiency, already of good pronunC8ion)
+             sk8   :general skateboarding    engine && game    # also seems good to rel8ively generalize the most compelling game concepts to defer to brevity
               p8   :general bullet-hell      engine && game like Parsec47 ("pate" means crown or top of head, so royalty or cranium could be part of theme?)
            glaD8or :professional combatant or captive in ancient Rome often engaging in mortal sword fights to entertain the public, so a sword-fighting game?
          superl8ive:gr8est  fighting                   game with many supers per character?

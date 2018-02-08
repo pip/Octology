@@ -136,7 +136,7 @@ if($fulf){$Stxt.="\n";my %cvlz=reverse(%fulc);my @ccnt= sort { $a <=> $b } keys(
           $jus8     =  $coun                    if($char=~ /^8$/            ); # special just       8        to compare at end
           $w82o    .= ($char eq "\n") ? '\n' : $char;$pcnt++;} # probably only newline shouldn't be printed normally to ruin formatting
       } $Stxt.=' ' x (32-$pcnt)."$G$w82o$B:$M".sprintf("%7s$B: %s$W,",cma($coun),b8colr(sprintf("%4s",b64($coun))));
-    } $coun=$ccnt[int(@ccnt/2)+ ((int(@ccnt/2) % 2) ? $cndx+1 : $cndx)];$pcnt=0;   $w82o=''; # restore conditions for always 2nd column for now (ad optn l8r)
+    } $coun=$ccnt[int(@ccnt/2)+$cndx+ ((int(@ccnt/2) % 2) ? 1 : 0)];$pcnt=0;   $w82o=''; # restore conditions for always 2nd column for now (ad optn l8r)
     if(defined($coun)){ # odd number of chars may leave last invalid coun so check
       for my $char (sort(keys(%fulc))){
         if  ($coun ==    $fulc{$char}){ $pcnt++ if($char=~ /^(印|注|米|\n)$/); # special count for only double-wide characters
