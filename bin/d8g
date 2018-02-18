@@ -8,7 +8,7 @@
 #   add -help optn,valid8 that UTF8 subjectz R handled correctly,contMpl8 pRsing ThunderBird Inbox 2autOgNer8 DtAld thred lst d8a,
 #   mAB slurp all this in2 d8.pm as common configurable options && releg8 this as merely another stub utility (or EvN just new `d8 -g` or -d option);
 use strict;use warnings;use utf8;use v5.10;use Octology::d8;my $parm = join(' ',@ARGV);my $d8im = Octology::d8->new(); # doesn't really handle any paramz yet
-use Time::DaysInMonth;my $VERSION='0.0';my $d8VS='I22L8rFT';my $ohmf = 1;$ohmf=0 if($parm=~ /(^|\s)-?-?m/i); # disable OutputHtmlMarkupFlag if -m
+use Time::DaysInMonth;my $VERSION='0.0';my $d8VS='I28LB8d8';my $ohmf = 1;$ohmf=0 if($parm=~ /(^|\s)-?-?m/i); # disable OutputHtmlMarkupFlag if -m
 use Time::DayOfWeek  ;my $trfn='';my $cntn='';my @td8a=( # setup ThreadReFerenceNumber, CaNToNumber, && init Thread d8a-array with MpT indX0 sO numz match Dadz
   [  0,  0,'0','HAFM0000',"" # 1-based Line && Thread numbering was begun by Dad starting from Sun. October 15th, 2017 && proceeding sequentially from there
 ],[  1, 16,'P','HAFMD2BO',"First Public Octology Release" # with next column being total Cantos in thread so far, then thread starter P or G (sent to other)
@@ -31,7 +31,8 @@ use Time::DayOfWeek  ;my $trfn='';my $cntn='';my @td8a=( # setup ThreadReFerence
 ],[ 18,  2,'G','HCML4V00',"Fall Off Planet ? No."
 ],[ 19, 10,'G','HCULNx00',"Happy New Year's Eve-Eve"
 ],[ 20,  2,'P','I1CLGGg4',"Are You Okay?"
-],[ 21,  3,'G','I1NLAh00',"Light & Easy"
+],[ 21,  5,'G','I?????00',"Light & Easy"
+],[ 22,  1,'G','I26L0800',"Narration Project"
 ],);if($parm=~ /(^|\s)-?-?l    /xi){my($W,$R,$Y,$G, $C,$B,$M,$z)=("\e[1;37m","\e[1;31m","\e[1;33m","\e[1;32m", "\e[1;36m","\e[1;34m","\e[1;35m","\e[0m");
   print "$Y  T$C  C$B f$R    d8$W:$z    subject$W:    (${Y}Thread#$C Cantos#sofar$B first_from$R   draft_date$z   subject_string$W)$z\n";
   for my $lndx (1..$#td8a){ printf("$B%3d$R%3d$z ",$lndx,$td8a[$lndx][1]);print $M if($td8a[$lndx][2] eq 'P'); # set lOcl colr SKp cOdz without nEdng a8.pm
