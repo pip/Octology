@@ -1,49 +1,13 @@
 #!/usr/bin/perl
 # 73TKJoTg:ptg crE8d by PipStuart <Pip@CPAN.Org> to gener8 time-stamp header text for Gmails between my Dad (Gerry - Gtime) and myself (Pip - Ptime);
 # E85M6q1A:d8g is what this utility was renamed to when upd8d to use new 8-character d8 format that inserts zone field into old Time::PT 7-char form;
-# 2du:eval whether redundant line && thread numbers shud stay sepR8 && if Xtra d8a && flagz nEded 4 Ech Canto 2 design8 all sNderz/rEciPNtz (mAB asum altrn8z),
-#   add optn 2gNer8 rFz from l8st subj matchng substr or b64 ndxz,XperimNt wi how2DlEt tAbl divz from GMail editor (NcOded Dper?),
-#   add pRamz 2 tAk DtAlz4 d8|Thred#|Canto#/t0tl|[DP]2? 4fUtur rFrNc stmpz that popUl8 from Subject lst d8a,
-#   Xtract all colr codez as RGBL cfg optnz,NAbl fEdng pRticUlR -d$d8 in 2OvrId now 4hedr,
+# 2du:Xtract all colr codez as RGBL cfg optnz,NAbl fEdng pRticUlR -d$d8 in 2OvrId now 4hedr,
 #   add -help optn,valid8 that UTF8 subjectz R handled correctly,contMpl8 pRsing ThunderBird Inbox 2autOgNer8 DtAld thred lst d8a,
 #   mAB slurp all this in2 d8.pm as common configurable options && releg8 this as merely another stub utility (or EvN just new `d8 -g` or -d option);
 use strict;use warnings;use utf8;use v5.10;use Octology::d8;my $parm = join(' ',@ARGV);my $d8im = Octology::d8->new(); # doesn't really handle any paramz yet
-use Time::DaysInMonth;my $VERSION='0.0';my $d8VS='I28LB8d8';my $ohmf = 1;$ohmf=0 if($parm=~ /(^|\s)-?-?m/i); # disable OutputHtmlMarkupFlag if -m
-use Time::DayOfWeek  ;my $trfn='';my $cntn='';my @td8a=( # setup ThreadReFerenceNumber, CaNToNumber, && init Thread d8a-array with MpT indX0 sO numz match Dadz
-  [  0,  0,'0','HAFM0000',"" # 1-based Line && Thread numbering was begun by Dad starting from Sun. October 15th, 2017 && proceeding sequentially from there
-],[  1, 16,'P','HAFMD2BO',"First Public Octology Release" # with next column being total Cantos in thread so far, then thread starter P or G (sent to other)
-],[  2,  1,'P','HAHM7G11',"Sasha Fibonacci MP3" # then d8 code for either the composition start time or the final sent time (maybe a bit inconsistent early on)
-],[  3,  5,'G','HALMLl00',"Help ? How ? Why ?"  # finally just the subject string that should be common throughout the whole thread (may need more escaping?)
-],[  4,  3,'P','HAOMBPT8',"Top8 Octology ScreenShots"
-],[  5,  1,'P','HAQM5ruJ',"Napoleon Hill and Dr. Jordan Peterson"
-],[  6,  1,'P','HAQM8e00',"Great Theological Discussion"
-],[  7,  8,'P','HB5LC2PR',"Fix TheRadio Script_000.0"
-],[  8,  1,'P','HBBLCA2F',"Truly Smart or Just Average Medium Article?"
-],[  9,  1,'P','HBBLDm2e',"Another Great New Dr. Peterson Lecture"
-],[ 10, 13,'P','HBHLISTN',"Belief in God by One Means or Another?"
-],[ 11,  2,'P','HBQL8P3V',"Testing d8g Code and Music Article"
-],[ 12,  4,'P','HBRL7ZBK',"Preview of Dr. Peterson's New Book"
-],[ 13,  1,'P','HBRLG5RY',"Music on Fix the Radio?"
-],[ 14,  1,'G','HBSLAq00',"Tuesday & 7 other Daze of the Week"
-],[ 15,  2,'P','HBTLGGpo',"FtR + Octology Scrobbler?"
-],[ 16, 13,'P','HC9LKxeS',"Two Videos to Share"
-],[ 17,  3,'G','HCDL4H00',"Happy Birthday - Number 41"
-],[ 18,  2,'G','HCML4V00',"Fall Off Planet ? No."
-],[ 19, 10,'G','HCULNx00',"Happy New Year's Eve-Eve"
-],[ 20,  2,'P','I1CLGGg4',"Are You Okay?"
-],[ 21,  5,'G','I?????00',"Light & Easy"
-],[ 22,  1,'G','I26L0800',"Narration Project"
-],);if($parm=~ /(^|\s)-?-?l    /xi){my($W,$R,$Y,$G, $C,$B,$M,$z)=("\e[1;37m","\e[1;31m","\e[1;33m","\e[1;32m", "\e[1;36m","\e[1;34m","\e[1;35m","\e[0m");
-  print "$Y  T$C  C$B f$R    d8$W:$z    subject$W:    (${Y}Thread#$C Cantos#sofar$B first_from$R   draft_date$z   subject_string$W)$z\n";
-  for my $lndx (1..$#td8a){ printf("$B%3d$R%3d$z ",$lndx,$td8a[$lndx][1]);print $M if($td8a[$lndx][2] eq 'P'); # set lOcl colr SKp cOdz without nEdng a8.pm
-    printf("%s %s $W\"$G%s$W\"$z\n",$td8a[$lndx][2],Octology::d8->new(  $td8a[$lndx][3])->colr('a'), $td8a[$lndx][4]);}}
-# for my $lndx (1..$#td8a){ printf("${Y}T$W:$R%3d$C C$W:$B%3d$z ",$lndx,$td8a[$lndx][1]);print $M if($td8a[$lndx][2] eq 'P'); # set lOcl colr SKp cOdz without
-#   printf("%s %s $W\"$G%s$W\"$z\n",$td8a[$lndx][2],Octology::d8->new(  $td8a[$lndx][3])->colr('a'), $td8a[$lndx][4]);}}      #   needing to use all of a8.pm
-if    ($parm=~ /(^|\s)-?-?t(\d*)/i){if(defined($2   ) && length( $2)){ $trfn=$2;}else{     $trfn  =$#td8a ;} # hopefully -t$Thred_ndx && -c$Canto_ndx
-  $trfn=~ s/^0+//;$trfn=$#td8a  unless( length($trfn) && 1 <= $trfn &&                     $trfn <=$#td8a);}
-if    ($parm=~ /(^|\s)-?-?c(\d*)/i){if(defined($2   ) && length( $2)){ $cntn=$2;}else{     $cntn  = $td8a[$trfn][1] if(defined($trfn) && $trfn=~ /^\d+$/);}
-  $cntn=~ s/^0+//;$cntn=''      unless( length($cntn) && 1 <= $cntn && (!defined($trfn) || $cntn <= $td8a[$trfn][1]));}
-# below would be to offset from UTC to CST/CDT Wisconsin time -6/-5 (was -= '8000' for old PST/PDT California time)
+use Time::DaysInMonth;my $VERSION='0.0';my $d8VS='I2PLIANT';my $ohmf = 1;$ohmf=0 if($parm=~ /(^|\s)-?-?m/i); # disable OutputHtmlMarkupFlag if -m
+use Time::DayOfWeek  ;my $trfn='';my $cntn='';#y @td8a=( # setup ThreadReFerenceNumber, CaNToNumber, && init Thread d8a-array with MpT indX0 sO numz match Dadz
+# below would be to offset from UTC to CST/CDT Wisconsin time -6/-5 (was -= '8000' for old PST/PDT California time)  # I2PLIANT:abov mAd Thredz prIv8 dvl `gg`;
 if(exists($ENV{'TZ'}) && $ENV{'TZ'} eq 'UTC'){$d8im -= '6000';$d8im += '1000' if(exists($ENV{'DST'}) && $ENV{'DST'});}
 my   @fldz=(     0,$d8im->M(),$d8im->D(),$d8im->Y(),$d8im->h()+1,$d8im->m()); # shud l8r add -help option to output -n as only other option for No-markup flag
 if  ($fldz[4] <  0 ){$fldz[4] %= 24;$fldz[2]--; # this should only happen if I've subtracted hours from UTC above
@@ -55,26 +19,7 @@ if  ($fldz[4] > 23 ){$fldz[4] %= 24;$fldz[2]++;
 my @mnth = Time::DayOfWeek::MonthNames();                           $fldz[4] = sprintf("%02d", $fldz[4]);
 $fldz[0] = Time::DayOfWeek::DayOfWeek($fldz[3], $fldz[1], $fldz[2]);$fldz[5] = sprintf("%02d", $fldz[5]);$fldz[1] = $mnth[$fldz[1] - 1];
 $_       = 'echo -n "';my $fntc='<font color=\"';my $fntk="$fntc#000000\\\">";my @d8fz= split(//,$d8im);
-if  ($ohmf){
-  if($trfn){my $cntz=$td8a[$trfn][1];my $porg=$td8a[$trfn][2];my $d8st=Octology::d8->new($td8a[$trfn][3]);my $subj=$td8a[$trfn][4];
-    if($porg eq 'P'){$porg='P&gt;D';}else{$porg='D&gt;P';} # convert P or G thread starter to arrow with D for Dad instead
-    my $d8do=$d8st->Dow();my $d8mo=$d8st->monname();$cntn=$cntz unless(defined($cntn) && length($cntn) && $cntn=~ /^\d+$/);
-    my $d8da=$d8st->D();my $d8hr=sprintf("%02d",$d8st->h());my $d8gh=sprintf("%02d",$d8st->h()+1);
-    my $d8yr=$d8st->Y();my $d8mn=sprintf("%02d",$d8st->m());   $d8gh='00' if($d8st->h() == 23);
-    $subj=~ s/&/&amp;/g;$subj=~ s/</&lt;/g;$subj=~ s/>/&gt;/g; # not sure what other subject characters are likely to need to be encoded (as EntityRefz?)
-    $_ .= "..B4<br/><div class=\\\"gmail_default\\\" style=\\\"color:rgb(0,0,255);font-family:verdana,sans-serif;font-size:small\\\">
-  <table style=\\\"margin:auto auto auto 0.25in;border:currentColor;border-collapse:collapse\\\" cellspacing=\\\"0\\\" cellpadding=\\\"0\\\" border=\\\"1\\\">
-    <tbody><tr><td style=\\\"padding:0.1in 0.2in;border:4.5pt solid cornflowerblue;background-color:transparent\\\" valign=\\\"top\\\">
-          <p style=\\\"margin:0in 0in 0pt\\\">
-            <span style=\\\"background:aqua;color:blue;font-family:&quot;Calibri&quot;,&quot;sans-serif&quot;\\\">
-              <font size=\\\"3\\\">Thread subjected:</font></span>
-            <span style=\\\"color:blue;font-family:&quot;Calibri&quot;,&quot;sans-serif&quot;\\\">
-              <font size=\\\"3\\\">&nbsp; \\\"$subj\\\" T$trfn,<span style=\\\"background:fuchsia\\\">C$cntn</span>/$cntz ($porg) </font></span></p>
-          <p style=\\\"margin:0in 0in 0pt\\\"><font size=\\\"3\\\">
-              <span style=\\\"background:aqua;color:blue;font-family:&quot;Calibri&quot;,&quot;sans-serif&quot;\\\">sent</span>
-              <span style=\\\"color:blue;font-family:&quot;Calibri&quot;,&quot;sans-serif&quot;\\\"> $d8do $d8mo $d8da $d8yr,
-                $d8gh$d8mn Gtime / $d8hr$d8mn Ptime</span></font></p></td></tr></tbody></table></div><br/>af..";
-  }else{
+if  ($ohmf){ # was testing if($trfn) then do Thread ReFerence Number based marked-up table gener8ion in here, but probably better to hide future subjects
 #           $_ .=  "$fntc#FFFF00\\\">$fldz[0]</font>$fntc#000000\\\">,</font> $fntc#FF9900\\\">$fldz[1]</font> $fntc#FFFF00\\\">$fldz[2]</font>" .
 # "$fntc#000000\\\">,</font> $fntc#FF0000\\\">$fldz[3]</font> $fntc#000000\\\">-</font> $fntc#00FFFF\\\">$fldz[4]</font>$fntc#0000FF\\\">$fldz[5]</font> " .
 # "<span style=\\\"background-color: rgb( 39,  78,  19);color: rgb(255,   0, 255);\\\">G</span>"      .
@@ -99,127 +44,13 @@ if  ($ohmf){
   "$fntc#880000\\\">$d8fz[0]</font>$fntc#885500\\\">$d8fz[1]</font>$fntc#888800\\\">$d8fz[2]</font>$fntc#008800\\\">$d8fz[3]</font>" .
   "$fntc#008888\\\">$d8fz[4]</font>$fntc#000088\\\">$d8fz[5]</font>$fntc#880088\\\">$d8fz[6]</font>$fntc#550088\\\">$d8fz[7]</font>" .
   "</b></span><br/><br/>Dear <b>$fntc#880000\\\">Dad</font></b>,<br/><br/><br/>Love,<br/><b>$fntc#000088\\\">-Pip =)</font></b>"; # mAB nEd some div in there2?
-  }
 }else      {$_ .= "$fldz[0], $fldz[1] $fldz[2], $fldz[3] - $fldz[4]$fldz[5] Gtime / " . sprintf("%02d",($fldz[4]+23)%24) . "$fldz[5] Ptime : $d8im";}
 $_ .= '"|xclip -f -si -se p -l 1';                          # specify which  X selection to use: "primary" to use XA_PRIMARY (default),
 #$_.= '"|xclip -f -si -se c -l 1'; # -sel [psc]             #                                  "secondary" for    XA_SECONDARY  or
 #$_.= '"|xclip -filter -silent -selection primary -loop 1'; #                                  "clipboard" for    XA_CLIPBOARD
 #print "$_\n"; # used to print something like "Thursday, March 29, 2007, 1838 Gtime / 1738 Ptime 73TKHcMG\n"; # to clip
 system( $_  );say '';
-
-#  ThreadList with Dad since Oct.15,2017:
-#1 HAFMD2BO P2G First Public Octology Release
-#2 HAH      P2G Sasha Fibonacci MP3
-#3 HALMLl00 G2P Help ? How ? Why ?
-#4 HAO      P2G Top8 Octology ScreenShots
-#5 HAQ      P2G Napoleon Hill and Dr. Jordan Peterson
-#6 HAQ      P2G Great Theological Discussion
-#7 HB5LC2PR P2G FixTheRadio Script_000.0
-#8 HBB      P2G Truly Smart or Just Average Medium Article?
-#9 HBB      P2G Another Great New Dr. Peterson Lecture
-#A HBHLISTN P2G Belief in God by One Means or Another?
-#B HBQL8P3V P2G Testing d8g Code and Music Article
-#C HBRL7ZBK P2G Preview of Dr. Peterson's New Book
-#D HBR      P2G Music on Fix the Radio?
-#E HBSLAq00 G2P Tuesday & 7 other Daze of the Week
-#F HBTLGGpo P2G FtR + Octology Scrobbler?
-#G HC9LKxeS P2G Two Videos to Share
-#H HCDL4H00 G2P Happy Birthday - Number 41
-#I HCML4V00 G2P Fall Off Planet ? No.
-#J HCULNx00 G2P Happy New Year's Eve-Eve
-#K I1CLGGg4 P2G Are You Okay?
-#L I1NLAh00 G2P Light & Easy
-
-# && here's Dad's table text:
-# Pip/Dad Email Threads Log  -  V:1  -  Wednesday, January 31, 2018  -  2121 Gtime / 2021 Ptime
-# Line#  CantosSoFar  FirstSentDate         ThreadSubject
-#    Thread#    FirstSentBy       d8-stamp
-#    1    1   16   P   0'10-15-17  HAFMD2BO  First Public Octology Release
-#    2    2    1   P   2'10-17-17  HAH       Sasha Fibonacci MP3
-#    3    3    5   G   6'10-21-17  HALMLl00  Help ? How ? Why ?
-#    4    4    3   P   2'10-24-17  HAO       Top8 Octology ScreenShots
-#    5    5    1   P   4'10-26-17  HAQ       Napoleon Hill and Dr. Jordan Peterson
-#    6    6    1   P   4'10-26-17  HAQ       Great Theological Discussion
-#    7    7    8   P   0'11-05-17  HB5LC2PR  Fix TheRadio Script_000.0
-#    8    8    1   P   6'11-11-17  HBB       Truly Smart or Just Average Medium Article?
-#    9    9    1   P   6'11-11-17  HBB       Another Great New Dr. Peterson Lecture
-#   10   10   13   P   5'11-17-17  HBHLISTN  Belief in God by One Means or Another?
-#   11   11    2   P   0'11-26-17  HBQL8P3V  Testing d8g Code and Music Article
-#   12   12    4   P   1'11-27-17  HBRL7ZBK  Preview of Dr. Peterson's New Book
-#   13   13    1   P   1'11-27-17  HBR       Music on Fix the Radio?
-#   14   14    1   G   2'11-28-17  HBSLAq00  Tuesday & 7 other Daze of the Week
-#   15   15    2   P   3'11-29-17  HBTLGGpo  FtR + Octology Scrobbler?
-#   16   16   13   P   6'12-09-17  HC9LKxeS  Two Videos to Share
-#   17   17    3   G   3'12-13-17  HCDL4H00  Happy Birthday - Number 41
-#   18   18    2   G   5'12-22-17  HCML4V00  Fall Off Planet ? No.
-#   19   19   10   G   0'12-31-17  HCULNx00  Happy New Year's Eve-Eve
-#   20   20    2   P   5'01-12-18  I1CLGGg4  Are You Okay?
-#   21   21    3   G   2'01-23-18  I1NLAh00  Light & Easy
-
-# hopefully includes new table border for thread references to isol8 then gener8:
-
-#<div class="gmail_default" style="color:rgb(0,0,255);font-family:verdana,sans-serif;font-size:small">
-# <table style="margin:auto auto auto 0.25in;border:currentColor;border-collapse:collapse" cellspacing="0" cellpadding="0" border="1">
-#   <tbody>
-#     <tr>
-#       <td style="padding:0.1in 0.2in;border:4.5pt solid cornflowerblue;background-color:transparent" valign="top">
-#         <font size="3" face="Times New Roman" color="#000000"></font>
-#         <p style="margin:0in 0in 0pt">
-#           <span style="background:aqua;color:blue;font-family:&quot;Calibri&quot;,&quot;sans-serif&quot;">
-#             <font size="3">Thread subjected:</font>
-#           </span>
-#           <span style="color:blue;font-family:&quot;Calibri&quot;,&quot;sans-serif&quot;">
-#             <font size="3">&nbsp; “Light &amp; Easy” T21,<span style="background:fuchsia">C3</span></font>
-#             <font size="3">/3 (D&gt;P) </font>
-#           </span>
-#         </p>
-#         <font size="3" face="Times New Roman" color="#000000"></font>
-#         <p style="margin:0in 0in 0pt">
-#           <font size="3">
-#             <span style="background:aqua;color:blue;font-family:&quot;Calibri&quot;,&quot;sans-serif&quot;">sent</span>
-#             <span style="color:blue;font-family:&quot;Calibri&quot;,&quot;sans-serif&quot;"> Wed</span>
-#             <span style="color:blue;font-family:&quot;Calibri&quot;,&quot;sans-serif&quot;"> Jan 31 2018, 2358 Gtime / 2258 Ptime</span>
-#           </font>
-#         </p>
-#         <font size="3" face="Times New Roman" color="#000000"></font>
-#       </td>
-#     </tr>
-#   </tbody>
-# </table>
-#</div>
-
-# <font face="Times New Roman">&nbsp;</font></span></p><div class="gmail_default" style="color:rgb(0,0,255);font-family:verdana,sans-serif;font-size:small"><font size="3" face="Times New Roman" color="#000000">
-#</font><font size="3" face="Times New Roman" color="#000000">
-#</font><font size="3" face="Times New Roman" color="#000000">
-#</font><font size="3" face="Times New Roman" color="#000000">
-#</font><font size="3" face="Times New Roman" color="#000000">
-#</font></div><div class="gmail_default" style="color:rgb(0,0,255);font-family:verdana,sans-serif;font-size:small"><table style="margin:auto auto auto 0.25in;border:currentColor;border-collapse:collapse" cellspacing="0" cellpadding="0" border="1"><tbody><tr><td style="padding:0.1in 0.2in;border:4.5pt solid cornflowerblue;background-color:transparent" valign="top"><font size="3" face="Times New Roman" color="#000000">
-#</font><p style="margin:0in 0in 0pt"><span style="background:aqua;color:blue;font-family:&quot;Calibri&quot;,&quot;sans-serif&quot;"><font size="3">Thread subjected:</font></span><span style="color:blue;font-family:&quot;Calibri&quot;,&quot;sans-serif&quot;"><font size="3">&nbsp; “Light &amp; Easy” T21,<span style="background:fuchsia">C3</span></font><font size="3">/3 (D&gt;P) </font></span></p><font size="3" face="Times New Roman" color="#000000">
-#</font><p style="margin:0in 0in 0pt"><font size="3"><span style="background:aqua;color:blue;font-family:&quot;Calibri&quot;,&quot;sans-serif&quot;">sent</span><span style="color:blue;font-family:&quot;Calibri&quot;,&quot;sans-serif&quot;"> Wed</span><span style="color:blue;font-family:&quot;Calibri&quot;,&quot;sans-serif&quot;"> Jan 31 2018, 2358 Gtime / 2258 Ptime</span></font></p><font size="3" face="Times New Roman" color="#000000">
-#</font></td></tr></tbody></table></div><div class="gmail_default" style="color:rgb(0,0,255);font-family:verdana,sans-serif;font-size:small"><font size="3" face="Times New Roman" color="#000000">
-#</font></div><p class="gmail_default" style="margin:0in 0in 0pt;color:rgb(0,0,255);font-family:verdana,sans-serif;font-size:small"><span style="color:blue;font-family:&quot;Calibri&quot;,&quot;sans-serif&quot;;font-size:12pt">&nbsp;</span>
-
-# has new covert format spotted horiz-rule of x2219 except xB7 on columnz 18, 36, 54, 72, 90/92
-# ∙∙∙∙∙∙∙∙∙∙∙∙∙∙∙∙∙·∙∙∙∙∙∙∙∙∙∙∙∙∙∙∙∙∙·∙∙∙∙∙∙∙∙∙∙∙∙∙∙∙∙∙·∙∙∙∙∙∙∙∙∙∙∙∙∙∙∙∙∙·∙∙∙∙∙∙∙∙∙∙∙∙∙∙∙∙∙·∙∙
-# Thread subjected:  Happy New Year's Eve-Eve
-# T19,C6/10 (D>P) sent Sun Jan 7 2018, 1221 Gtime / 1121 Ptime
-# ∙∙∙∙∙∙∙∙∙∙∙∙∙∙∙∙∙·∙∙∙∙∙∙∙∙∙∙∙∙∙∙∙∙∙·∙∙∙∙∙∙∙∙∙∙∙∙∙∙∙∙∙·∙∙∙∙∙∙∙∙∙∙∙∙∙∙∙∙∙·∙∙∙∙∙∙∙∙∙∙∙∙∙∙∙∙∙·∙∙
-# need to scrutinize GMail HTML gutz:
-
-# <div class="gmail_default" style="color:rgb(0,0,255);font-family:verdana,sans-serif"><br></div><div class="gmail_default" style="color:rgb(0,0,255);font-family:verdana,sans-serif"><div class="gmail_default" style="color:rgb(0,0,255);font-family:verdana,sans-serif">∙∙∙∙∙∙∙∙∙∙∙∙∙∙∙∙∙·∙∙∙∙∙∙∙∙∙∙∙∙<wbr>∙∙∙∙∙·∙∙∙∙∙∙∙∙∙∙∙∙∙∙∙∙∙·∙∙∙∙∙∙<wbr>∙∙∙∙∙∙∙∙∙∙∙·∙∙∙∙∙∙∙∙∙∙∙∙∙∙∙∙∙·<wbr>∙∙<br></div><div class="gmail_default" style="color:rgb(0,0,255);font-family:verdana,sans-serif"><font style="background-color:rgb(0,255,255)">Thread subjected:</font>&nbsp; First Public Octology Release<br></div><div class="gmail_default" style="color:rgb(0,0,255);font-family:verdana,sans-serif">T1,<strong><font style="background-color:rgb(255,0,255)">C5</font></strong>/16 (P&gt;D) <font style="background-color:rgb(0,255,255)">sent</font> Tue Oct 17 2017, 0752 Gtime / 0652 Ptime<br></div><div class="gmail_default" style="color:rgb(0,0,255);font-family:verdana,sans-serif"><div class="gmail_default" style="color:rgb(0,0,255);font-family:verdana,sans-serif">∙∙∙∙∙∙∙∙∙∙∙∙∙∙∙∙∙·∙∙∙∙∙∙∙∙∙∙∙∙<wbr>∙∙∙∙∙·∙∙∙∙∙∙∙∙∙∙∙∙∙∙∙∙∙·∙∙∙∙∙∙<wbr>∙∙∙∙∙∙∙∙∙∙∙·∙∙∙∙∙∙∙∙∙∙∙∙∙∙∙∙∙·<wbr>∙∙</div></div></div><div class="gmail_default" style="color:rgb(0,0,255);font-family:verdana,sans-serif">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; (possibly followed by some sub-sectional information)</div>
-# Ctrl-f fmt jackz UTF8 x2219
-
-# starting to revert header colors to just black (or mAB l8r real darks) for most non-d8 fields again for Dad's preferred legibility
-# <div id=":160" class="Am Al editable LW-avf" hidefocus="true" aria-label="Message Body" g_editable="true" role="textbox" aria-multiline="true"
-# style="direction: ltr; min-height: 223px;" tabindex="1" contenteditable="true"><font color="#FFFF00">Wednesday</font><font color="#000000">,</font>
-# <font color="#FF9900">January</font> <font color="#FFFF00">24</font><font color="#000000">,</font> <font color="#FF0000">2018</font> <font color="#000000">-
-# </font> <font color="#00FFFF">12</font><font color="#0000FF">17</font> <span style="background-color: rgb(39, 78, 19); color: rgb(255, 0,
-# 255);">G</span><span style="background-color: rgb(255, 255, 255); color: rgb(0, 255, 0);">time</span> <font color="#000000">/</font> <font
-# color="#00FFFF">11</font><font color="#0000FF">17</font> <span style="background-color: rgb(32, 18, 77); color: rgb(255, 0, 255);">P</span><span style="background-color: rgb(255, 255, 255); color: rgb(0, 255, 0);">time</span> :<span style="font-family: monospace, monospace;"> <b><font
-# color="#FF0000">I</font><font color="#FF9900">1</font><font color="#FFFF00">O</font><font color="#00FF00">L</font><font color="#00FFFF">B</font><font
-# color="#0000FF">H</font><font color="#FF00FF">x</font><font color="#9900FF">t</font></b></span><br><br>Dear <b><font
-# color="#FF0000">Dad</font></b>,<br><br><br>Love,<br><b><font color="#0000FF">-Pip =)</font></b></div>
-
+# Originally, there were many comments here showing various HTML that seemed somewhat relevant to gener8 for e-mails with Dad, but moved to ~/dvl/d8/bin/gg ;
 # It looks like vim could add it to both the primary (mouse-button driven) && regular Ctrl-XCV keyboard clipboards simultaneously by macroing: :r!d8g^M"+YV ;
 # HBPLEASE:So after starting a new draft e-mail to Dad just now, I thought to manually edit my typical bold colors (which are still nowhere near as elabor8 &&
 #   expressive as Dad's normally are). Then I highlighted the results && the Right-Click menu offered "View Selection Source" revealing following goodness:

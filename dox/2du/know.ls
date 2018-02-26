@@ -98,3 +98,5 @@ HTTPS://YouTube.Com/watch?v=Ixc9i1G7eew "The Metaphysics of Pepe with Jonathan P
 # Maybe allig8or deserves next green fraction8ion && fractaliz8ion of Chaos pred8ory margin mirror machine oper8ing on borders of known (pip) && unknown (kek)
 # Kermie,Corri,remember the froggie. Also (pep) && (quq) to kaka && TstTester with HTTPS://YouTube.Com/watch?v=aaG23Zv_-_8 with 77777777 QEK mad 4(8)Chan dubz;
 HTTPS://YouTu.be/pVuz-EmKP4M "Jordan Peterson: Men who know this are ahead of the competition" # I23L8God:15mins about TheDao, Hero/Anti archtypes && balance;
+HTTPS://YouTu.be/zQCTeGKHsVc "Documentary: A Glitch in the Matrix (David Fuller production)"   # I2PLCRE8:Interesting 54min analysis of JP on new && old media;
+g) One "First Principle" to assume is the dignity of the human soul, particip8ing in crE8ion, && deciding whether to make reality more like Heaven or Hell.

@@ -72,3 +72,4 @@ HBQL73IP:From CommandLineFu.Com 0)`sudo !!` re-runs last cmnd. 1)`python -m Simp
 HBSLHPDE:Contempl8 altern8ives to Ubu 17.10 default Gnome 3, maybe preserving Unity 7, helping Unity 8?, trying out Mate, XFCE, Cinnamon, FluxBox, WindowMaker,
  KDE, && research any other capable altern8ives, maybe trying all the stable DE releases within VirtualBox (or othr VM) for experiment8ion && fE8ure evalU8ion;
 HC6LNDRM:/. article on explaining copyright had comment recommending EPubs with Calibre as DRM-free content format for at least Kindle eBooks && maybe others?;
+I2PLEASE:After Akuma reboot && auu getting lots, included linux4.13.0-36 that spewed many warnings "W: Possible missing firmware /lib/firmware/amdgpu/raven_*";

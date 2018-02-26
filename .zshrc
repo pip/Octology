@@ -1,5 +1,5 @@
 # 381KF3RN:~/.zshrc by PipStuart <Pip@CPAN.Org>; nOt:I originallythotitbetr2rElymoronstndalOnXecutablUtlz than aliases||shL-scrpt funczDfynd inany .rc Bcuz4mer
-# $VERSION='0.0';$d8VS='I1OLB8dh'; # stAyavail2spwnd procSz wich hvOwn non-zsh sub-shL cfgz(eg,vim:!cln 127/7;perl`b64 1023`)sO I pland2port stufhEr2anew u8.pm
+# $VERSION='0.0';$d8VS='I2MLCHUN'; # stAyavail2spwnd procSz wich hvOwn non-zsh sub-shL cfgz(eg,vim:!cln 127/7;perl`b64 1023`)sO I pland2port stufhEr2anew u8.pm
 #   butIhv rElIzd that c8.pm (inprep4 8sh)wilBAbl2pars .(ba|z)shrc fIlz2lOd thEz&&can mk thMavail2othr shLz bywrapng cmdz wiXpansionUtlz; lern LaunchPad/byobu,
 # 2du:cmNt unUsed aliases,add perVC autostRt nwlOcl`scrn`if!alredy in1,lern`autoload -z`&&sepR8hist,get pcre module&&anyUsefulothrz,
 #   bakon gN2:`em  scummvm`:2use nw"modern"theme4scummvm,add2[scummvm]sect of~/.scummvmrc(aftr runing scummvm once):themepath=/usr/share/games/scummvm/engines
@@ -323,6 +323,7 @@ alias      pa='   perl -MOctology::a8  -e'; # setup Perl eval        with Attrib
 alias     pla='   pa  '; # pb is already taken by pingb
 alias     plb='   perl -MOctology::b8  -e'; # setup PerL eval        with Base-transl8   export globals of B8
 alias     pab='   perl -MOctology::a8 -MOctology::b8  -e'; # Perl eval with A8  &&  B8   exports together like `pab "b8colr(b64(calQ('4096xx2048')))"`
+alias      gg='   perl ~/dvl/d8/bin/gg   '; # basic perl call to priv8 non-executable development utility to Gener8 G-mail stamps for Gerry (my Dad)
 alias    h2rl='   pa  "print h2rl(@ARGV)"'; # HEX to RgbLowbitz
 alias    rl2h='   pa  "print rl2h(@ARGV)"'; #        RgbLowbitz to HEX
 alias    drkh='   pa  "print drkh(@ARGV)"'; # HEX to RgbL with 8th intensities
@@ -407,7 +408,8 @@ alias      f8f='    ls       ~/lib/Octology/f8/f0nt';alias lsf0nt='f8f'; # event
 alias      f8p='    ls       ~/lib/Octology/f8/pal8';alias lspal8='f8p';
 alias   fixfont=' etfp -s -f ~/lib/Octology/f8/f0nt/psf/rOMAN3.psf';  # these hopefully restore usable f0nts to full-screen console (or 8trm also eventually)
 alias resetfont=' etfp -s -f ~/lib/Octology/f8/f0nt/psf/france9.psf'; # these maybe should be `setfont` instead of `etfp` for more reliable compatibility
-alias      s8='   sort'; #  s8   :           sort
+alias      s8n='  sort -n'; # "Prince of Darkness"  game eventually? or just simple Numeric Sorting alias until then
+alias      s8='   sort'; #  s8   :           sort (maybe eventually a collection of my own custom sortings for orders beyond the default `sort` offerings)
 #          d8   already ~/bin/
 #lias      d8='   date'; #  d8   :           date|time|pt
 #          g8   already ~/bin/
@@ -658,7 +660,7 @@ if       [[ "${(L)HHst}" ==  aku    ]];                                  then   
   if     [[     "$H3WF"  ==  "1"    ]];                                  then export HVW1='5760';export HVW2='11520';export HVW3='17280';                fi
 elif     [[ "${(L)HHst}" ==  ryu*   ]] || [[ "${(L)HHst}" ==  ken*   ]]; then export HVW1='1920';                    export HVW3='5760' ;                    fi
 if       [[ "${(L)HHst}" ==  ryu*   ]];                                  then                                                            export HVH1='1200'; fi
-if       [[ "${(L)HHst}" ==  chun*  ]] || [[ "${(L)HHst}" ==  taki*  ]]; then export HVW1='1280';export HVW2='2560' ;                    export HVH1='800' ; fi
+if       [[ "${(L)HHst}" ==  chun*  ]] || [[ "${(L)HHst}" ==  taki*  ]]; then export HVW1='1280';export HVW2='2560';export gtss='sleep 3';export HVH1='800'; fi
 chvp() { # CHange ViewPort ("virtual desktop") thru wmc -o ... based on host dimz && Compiz 8 viewportz in 4x2 grid
   if     [[ "$1"         ==     ""  ]] ||
          [[ "$1"         ==    "0"  ]]; then wmc -o     0,0;

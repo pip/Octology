@@ -1,5 +1,5 @@
 # Octology
-The ontology of 8. `$VERSION='0.0';$d8VS='I1RLEASE';`
+The ontology of 8. `$VERSION='0.0';$d8VS='I2PLIGHT';`
 
 This is basically a public preview of my early development files. I am not yet ready for serious collaboration, but welcome any sort of feedback.
 
@@ -39,11 +39,10 @@ Thank you for your consideration as well as any constructive criticism, recommen
 ```
 Sincerely,
   -PipStuart  8<3  NfN8L0v3  8pI  Ate Pie  =)
-
 ```
 ---
 #### Public Purpose
-If I ever become unable to continue developing this project further, my hope is that at least this repository can provide others the ability to
+If I ever become unable to continue developing this project further, my hope is that at least this repository provides others the ability to
   utilize any of my beneficial work and ideas (hopefully to further FreeLibreSoftware with derivatives also seeing release under the GPLv3+).
 
 ##### Retired Old8 Screen Shots (*typically listed from most recent down to oldest*)

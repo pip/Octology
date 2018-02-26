@@ -1,5 +1,5 @@
 # D6RMF1V1:8.txt - by8π : JAPH : K3wlD00d : 1337H4xr : PipStuart's Octology (hopefully eventually an Ontology of 8) - Convention, Conversion, && Categoriz8ion:
-# $VERSION='0.0';$d8VS='I23L8PKD'; # Octology attempts to rel8 the universe through medit8ion on mnemonic abbreV8ion (via 8-based  limit8ion) &&    elucid8ion.
+# $VERSION='0.0';$d8VS='I2PLEASE'; # Octology attempts to rel8 the universe through medit8ion on mnemonic abbreV8ion (via 8-based  limit8ion) &&    elucid8ion.
 # CEBBICTI:Crossing Every Bridge Before I Come To It? I.e., not a d8 stamp. Trying to make my Dad's birthday (August 8th) more special by thinking 2far ahead?
 # Octology intends to pursue implic8ion && ramific8ion as substantE8ion for adequ8 particip8ion, if not also 2 oblig8ion toward implement8ion &&   promulg8ion.
 # Contribute to potential solutions to the "Value Alignment" problems formul8d around General Artificial Intelligence along with plausible God concerns also.
@@ -57,6 +57,7 @@
        corrobor8   :vouching for accounts of events within a group, like maybe recounting events of a crime-scene or momentous record-breaking achievements
           activ8   :turn stuff on? maybe daemon && other process manager or some form of applic8ion enabler like an energized power-up installer or something
         deactiv8   :respective disablers which correspond directly to whatever processes, extensions, configur8ions, etc. might become able to be activ8d above
+        dealloc8
           alloc8   :prepar8ory d8a or memory manager or even design8ing disk space or network utiliz8ion thresholds for use among applic8ions that employ them
        fragment8ion:dynamic    d8a or memory manager for defragmenting or initE8ing or scheduling autom8d garbage collection to enable efficient alloc8ion l8r
          comput8ion:manage long-running processor-intensive tasks or Math::BigFloat unlimited-precision calcul8ions like prime-factoriz8ion or long sequences
@@ -161,8 +162,9 @@ internationaliz8ion:tools to transl8 for I18N the document8ion && applic8ion int
        globaliz8ion
         localiz8ion
         vocaliz8ion:or8/dict8 audio recording && cataloging (could also be audible comment8 submissions that align over existing media like DVD commentary)
-          enunC8   :emphasis on clear vocaliz8ions which distinguish syllables well
         pronunC8ion
+          enunC8   :emphasis on clear vocaliz8ions which distinguish syllables well
+          sibil8   :to utter or pronounce with a hissing sound, like with a lisp? (from Phonetics && Phonology), so maybe a way to lightly disapprove things?
               c8   :"cate" is an obsolete term for food... or version of GNU/Linux cut && cat commands (as well as Octology::c8 col8 layered text d8a objects)
             col8   :Col8 On Layer 8, further abbreV8d into Octology::c8.pm, also FSCK (FsckSlayerCursesKing), aligned text && attribute d8a like Curses::Simp
            coll8   :compare st8s && texts critically or general sequence editor (double-consonant precursor to 8 in names should usually persist for clarity)
@@ -1029,6 +1031,7 @@ internationaliz8ion:tools to transl8 for I18N the document8ion && applic8ion int
         autolyz8   :lysis of plant or animal cells or tissues due to enzymatic activity within the cell, occurring to higher animals when organism is detached
           irrig8
           desic8
+        desalin8
           salin8
              ag8   :cryptocrystalline translucent quartz variety, usually with whitish color && luster nearly like wax (from Minerology) or diminutive person
             mic8   :to add mica to, which is any various hydrous silic8 minerals of aluminum or potassium that crystallize allowing thin leaf cleavages
@@ -1235,6 +1238,7 @@ internationaliz8ion:tools to transl8 for I18N the document8ion && applic8ion int
              kR8           :"Karate" (badly mispronounced) Japanese martial art in which sharp blows && kicks are delivered to pressure-sensitive body points
               n8o          :NATO history && presently known agenda for this NorthAtlanticTreatyOrganiz8ion, a post-WorldWarII military alliance of democracies
               h8i          :"Haiti" the country which is a republic in the West Indies of the Caribbean on Hispaniola island, because it also fits name-wise ;)
+              s8n          :"Satan" the Evil One, Prince of Darkness, the Devil maybe eventually as some adventure or educ8ion game, just `sort -n` alias now
               b8HaMikdash  :Jewish Holy Temple, or "The Sanctified House" according to rabbinical liter8ure, && only the Temple in Yerushalayim has this name
      PontiusPil8           :Roman procur8or of Judea who ordered Y'shua (A.K.A. Jesus) to be crucified (according to Christian mythology, maybe not history)
   ParksAndRecrE8ion        :pretty intelligent && funny comedy show about small-town politics starring Amy Poehler && distractingly attractive Aubrey Plaza
@@ -4056,3 +4060,4 @@ a primary probably spectrum-analysis video but the 4 corners can be overlayed wi
 detected keyboards, LowerRight trackball or mouse with sub-corners buttons and scrolls, LowerLeft an 8-way joystick with 8 fighting layout buttons to dance on;
 I2IL8tab:Of course also eventually want multi-touch && pressure-sensitive tablet supported over or apart from mouse. Multi-mice or all at once seem so cool.
 Maybe ov8(ion) instead of thE8r or something more descriptive of "hand-dancing"? Interesting that Paul Julius Moebius described neurology syndrome 1st in 1888;
+I2NLFbad:Consider adding de(alloc|salin)8 with some l8 s8n AAA Hah-Sah-tahn (Hebrew) like katana (Nihongo) as probably just `sort -n` alias or some demon game;
