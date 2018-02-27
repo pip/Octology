@@ -511,8 +511,8 @@ ${B}j$M k$R l$W :$B bkwd${G}10${M}secs$B togl${M}pause$R 4wrd${G}10${M}secs$Y ($
 $C 0$O-${R}9$W  :$Y jump$w to$r N$C *${G}10$Y%$O play${B}bak$P position$Y (${C}Home$Y/${R}End$W=${C}0$Y/${R}9$Y)$W;$M   <$G >$W  :$r slow$M down<$O play${B}bk${c}spd$G >up>$K fastr$W;"';
 alias    uk='echo -en "${R}m$G c$K b$W:${M}volu$R Muted$B togl${G}Captn$K Bakgr$C cycl$W;$Y(${C}Home$Y/${R}End$W=$C 0$Y/${R}9$g 2$Y)$W>$C 0$O-${R}9$W :${O}jmp$Y%$G \$${r}n$C*${G}10$O pla${B}bak${P}pos$W =${R}r8io$Y %${P}abs$W;$M <$G >$W :${r}slow$M down<$O pla${B}bak${c}spd$G >upup$K fast$W;
 ${B}j$M k$R l$W:${B}bkwd$G 10${M}sec$B togl${M}pausd$G 10${M}sec$R 4wrd$W<$Y(${M}Spacebar$W=${M}pause${g}2$Y)$W;${Y}Lt$R Rt$W:${B}bkwd$g -${C}5${M}sec$O arrow${r}keys$G +${C}5${M}sec$R 4wrd$W;$B ,$M .$W :${B}bkwd$g -${O}1${c}frm$w when${M}pausd$G +${O}1${c}frm$R 4wrd$W;
-${M}p$C f$B n$W:${M}Prev$O pla${c}ls$B togl${C}Fulsc$O pla${c}ls$B Next$W<$Y(${O}Escap${r}key$W=${R}exit${C}f${g}2$Y)$W;${M}Dn$G Up$W:${M}dec$Y%$g -${C}5${M}vol$O arrow${r}keys$G +${C}5${M}vol$Y %${G}inc$W;"';
-alias    ukz='Uk;echo;uk';
+${M}p$C f$B n$W:${M}Prev$O pla${c}ls$B togl${C}Fulsc$O pla${c}ls$B Next$W<$Y(${O}Escap${r}key$W=${R}exit${C}f${g}2$Y)$W;${M}Dn$G Up$W:${M}dec$Y%$g -${C}5${M}vol$O arrow${r}keys$G +${C}5${M}vol$Y %${G}inc$W;"'; # should consider making new 1-column Uk varE8ion which auto-resizes term @start && only needs rescaling2Bbig
+alias    ukz='Uk;echo;uk'; # for clearest biggest, open Default 80x24 purple GnomTerm, resize to 97x5, scale up a couple times, then run just `Uk`
 alias    U2b=' echo "U2b=youtube-dl 2save file2probably runthru U2b4 aftr orbetr2Use U2b8..."; youtube-dl'; # precede dl with some of my help text
 alias    U2bm='U2b  -o "%(title)s-tItL-%(uploader)s-uldr-%(extractor)s-Xtrc-%(id)s-IdNt-%(epoch)s-epch-%(upload_date)s-uldt-%(autonumber)s-otnm.%(ext)s" --restrict-filenames';
 #lias    U2b3='U2bm -x --audio-format=mp3  --audio-quality=0'; # just having --audio-format=mp3 was converting to just 32K quality =( hopefully 0 will improve

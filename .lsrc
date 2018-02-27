@@ -1,8 +1,8 @@
 # 819J2Pip:~/.lsrc by PipStuart <Pip@CPAN.Org> izAheavily modifId`dircolors`cfgfIl(Orig ~/.DIR_COLORS)wich setz $ENV{'LS_COLORS'} 4GNU`ls --color`&&`lsd8`;
-# $VERSION='0.0';$d8VS='I2PLELP2'; 2du:mkUtl2gNr8 altrn8 versN of .lsrc th@purposfuly varEz colrz of comon typz,try addng bakgrnd colrz2all dFz&&tst,
+# $VERSION='0.0';$d8VS='I2PLM4TH'; 2du:mkUtl2gNr8 altrn8 versN of .lsrc th@purposfuly varEz colrz of comon typz,try addng bakgrnd colrz2all dFz&&tst,
 #   add interaction2 lsd8 wN it Dtectz unrecognIzd XtNshNz offerng c@egOrEz with comon colr2autOm@ically insrt chOsN NtrEz,mAB add *-* NtrEz from .zshrc hEr &&
 #   mk lrc gNr8 either,confirm all accept f0nt cOdez wi dash accepting Dfalt foreground then redo NORMAL FILE LINK as no fi ln,mAB 8trm added2TERM ls someday;
-# This file was gNR8d by `lrc` Vers:0.0 d8VS:I1OLB8dh on d8:I2PLELOL. Please edit ~/.lrc and run `lrc` then `src` to see changes;
+# This file was gNR8d by `lrc` Vers:0.0 d8VS:I1OLB8dh on d8:I2PLMP0p. Please edit ~/.lrc and run `lrc` then `src` to see changes;
 # nOt:I'm pretty sure itz Chunz(!Takiz)`ls`&&`dircolors`th@cud!hndl (MULTI)?HARDLINK sO rEmMbr2kEp th@ lIn cmNtd out4her(&&kEptstng2cnfirm);
 # Keywords COLOR,OPTIONS,&& EIGHTBIT (honored by Slackware dircolors) are recognized but ignored; TERMz && XtNsionz syncd2 2016;
 # Copyright(C) 1996-2016 FreeSoftwareFound8ion,Inc. Copying and distribution of this file, with or without modific8ion, are permitted provided the
@@ -921,8 +921,9 @@ CHR                       01;38;5;011;48;5;000 #cd= 01;33;40    01;33;40  CHaRac
 .docx#                    01;38;5;009      # LibreOffice .~lock  file
 .bp1                      01;38;5;164      # BusiPlan
 .css                      01;38;5;013      # Cascading Style Sheets
-.sxw                      01;38;5;013      #  OpenOffice.Org Stndrd?XmlWord-processing dox?
-.tex                      01;38;5;013      # DonKnuth LaTeX  DVI,etc. (Dopeish)
+.sxw                      01;38;5;013      #  OpenOffice.Org Stndrd?XmlWord-processing dox?  # below simple URL probably for Danny's l8st public thoughts
+.tex                      01;38;5;014      # DonKnuth LaTeX  DVI,etc. (Dopeish), HTTP://Web.CVS.Savannah.NonGNU.Org/viewvc/bool2/bool2/theory/goodaut.tex
+.aux                      01;38;5;164      # DonKnuth LaTeX  AUXiliary file (along with .log as extra output from `pdflatex *.tex`) for cross-referencing
 .djvu                     01;38;5;164      # DjVu              image          4m@
 .pdf                      01;38;5;013      # AdObE           P0rtable DocUmNt 4m@
 .ps                       01;38;5;013      # AdObE           P0st Scrpt

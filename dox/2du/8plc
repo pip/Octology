@@ -1,11 +1,11 @@
 #!/usr/bin/perl
 # D6OMHm3L:8plc crE8d to read PipStuart's <Pip@CPAN.Org> 8.txt (mainly 2 specific columns) to tabul8 && print the 8 Precursor Letter Counts;
-# 2du:fix LetrPrecShorts2wrap long lInz&&hndl -p 1st pAg,add gM8r optz4prIm factrz,mode,median,etc,
-#   Dtect nstd of hRdcOd 16th colm,add dur8z around sectnz&&mAB try2optimIz per4manc of slOSt pRtz,
+# 2du:fix LetrPrecShorts2wrap long lInz&&hndl -p 1st pAg,Dtect nstd of hRdcOd 16th colm,add dur8z around sectnz&&mAB try2optimIz per4manc of slOSt pRtz,
+#   4 -g gM8ria try2add sumz,productz,modez,meanz,medianz,cnsidr delta difz&&r8ioz,prIm factrz,add colrz,graph rangez,iconz,contMpl8 othr good posibl repz,
 #   mk sepR8 tabul8ion of 8-words used in l8r document8ion wi not8ion 4thOs not yet included in top lists (thN optn2ignor easy conjug8ions && pre/suffixes),
 #   mk easy optn4 fulc 2use 1colm 4grep,add 4m@d percNtz,stuD wc && mk a8:cnt8/8c wi fulc -f? && 8plc as -l? optnz(rEdo hedrtXt),colr letrz,add f0ntz4 8trm;
 use strict;use warnings;use utf8;use v5.10;use Octology::a8;use Octology::b8;
-my $d8VS='I23L9bar';       my $clrf=1;my $fulf=0;my $argz='';$argz= join(' ',@ARGV) if(@ARGV);my $Stxt='';my $folf=0; # add 4-Or-Less-Flag
+my $d8VS='I2QLJURI';       my $clrf=1;my $fulf=0;my $argz='';$argz= join(' ',@ARGV) if(@ARGV);my $Stxt='';my $folf=0; # add 4-Or-Less-Flag
 my $edVS=        '';       my $pg1f=0;   $pg1f=1 if($argz=~ /(^|\s)-?-?[^p]*p/i); # find -?p(age) flag2limit some extra long output to first 48-line page
 my $mxws=        19;       my $lpsf=0;   $lpsf=1 if($argz=~ /(^|\s)-?-?[^l]*l/i); # find -?LetrPrecursShortsFlag  # if MaXWordSize evr grOz,wil nEd2incrEs|Dtct
 my $clmz=        80;       my $gm8f=0;   $gm8f=1 if($argz=~ /(^|\s)-?-?[^g]*g/i); # find -?g(m8r) flag2count&&adorn wi math 4mUl8ions stRting wi 2letr
@@ -125,26 +125,27 @@ if($gm8f){delete($folc[2]{ 'N8'});delete($folc[2]{  'b8'});delete($folc[2]{  'c8
 # old notez4wsiz 2: this is probably more useful mean average summariez && think of prime factorz or othr wayz to represent mostly unique partz
 #                5: try to cut 2 (or 6 if adding 4 N8 varE8ionz bakin) to get 5z dn2 3rd rel8ively clean concise set of 96 to make another sumb page out of
   } $Stxt.="${C}cutz$W:$Y 2$W:${G}N8 $o(${K}b8 c8 d8 g8 w8$o)$Y  3$W:${G}DN8$Y  4$W:${G}NfN8 SSN8 $o(${K}ckm8 pal8 upd8$o)$Y  5$W:${G}m8rix coll8$Y";
-    $Stxt.="$Y  6$W:${G}?$Y  7$W:${G}?$Y ...\n";
-} # hopefully above -g will align a b10 line over b64 lines, && mAB l8r add sumz,productz,modez,meanz,medianz,cnsidr delta difz && r8ioz,add colrz?
+    $Stxt.="$Y  6$W:${G}?$Y  7$W:${G}?$Y ...\n"; } # hopefully above -g will align a b10 line over b64 lines
 if($fulf){$Stxt.="\n";my %cvlz=reverse(%fulc);my @ccnt= sort { $a <=> $b } keys(%cvlz);my $jus8=0;my $sumn=0; # 2-colms of fulcountz fitz nIc undr50lInz sOfR
-  for     my $cndx (0..int(@ccnt/2+1)){my $coun=$ccnt[$cndx];        my $pcnt=0;my $w82o=''; # FullFile CharCounts abov as Values (or values(%fulc) nEdzUniq)
-    if($cndx < int(@ccnt/2+1)){
+  for     my $cndx (0..$#ccnt){my $coun=$ccnt[$cndx];my $pcnt=0;my $w82o=''; # FullFile CharCounts abov as Values (or values(%fulc) nEdzUniq)
+    for   my $char (sort(keys(%fulc))){ # this now is intended to be just a single linear column which duplic8z the content of the orig 2-columnz below
+      if    ($coun ==    $fulc{$char}){ $pcnt++ if($char=~ /^(印|注|米|\n)$/); # special count for only double-wide characters
+        $sumn      +=  $coun                    if($char=~ /^[0-79]$/       ); # special sum of Non-8 digits to compare at end
+        $jus8       =  $coun                    if($char=~ /^8$/            ); # special just       8        to compare at end
+        $w82o      .= ($char eq "\n") ? '\n' : $char;$pcnt++;} # probably only newline shouldn't be printed normally to ruin formatting
+    }   $Stxt.=' ' x (32-$pcnt)."$G$w82o$B:$M".sprintf("%7s$B: %s$W,$z  cndx$W:$G%2d\n",cma($coun),b8colr(sprintf("%4s",b64($coun))),$cndx); } $Stxt.="\n";
+  for     my $cndx (0..int($#ccnt/2 )){my $coun=$ccnt[$cndx];my $pcnt=0;my $w82o=''; # FullFile CharCounts abov as Values (or values(%fulc) nEdzUniq)
+    if($cndx < int($#ccnt/2)+1){ # +1 was abov with @ccnt nstd of $#ccnt && originally had the +1 inside the int() call here
       for my $char (sort(keys(%fulc))){ # then above CharCouniNDeX loops just unique counts && (was Probably) PrintCouNT before Wait to Output8
         if  ($coun ==    $fulc{$char}){ $pcnt++ if($char=~ /^(印|注|米|\n)$/); # special count for only double-wide characters
-          $sumn    +=  $coun                    if($char=~ /^[0-79]$/       ); # special sum of Non-8 digits to compare at end
-          $jus8     =  $coun                    if($char=~ /^8$/            ); # special just       8        to compare at end
           $w82o    .= ($char eq "\n") ? '\n' : $char;$pcnt++;} # probably only newline shouldn't be printed normally to ruin formatting
-      } $Stxt.=' ' x (32-$pcnt)."$G$w82o$B:$M".sprintf("%7s$B: %s$W,",cma($coun),b8colr(sprintf("%4s",b64($coun))));
-    } $coun=$ccnt[int(@ccnt/2)+$cndx+ ((int(@ccnt/2) % 2) ? 1 : 0)];$pcnt=0;   $w82o=''; # restore conditions for always 2nd column for now (ad optn l8r)
-    if(defined($coun)){ # odd number of chars may leave last invalid coun so check
-      for my $char (sort(keys(%fulc))){
+      } $Stxt.=' ' x (32-$pcnt)."$G$w82o$B:$M".sprintf("%7s$B: %s$W,"  ,cma($coun),b8colr(sprintf("%4s",b64($coun))));
+    } $coun=$ccnt[int($#ccnt/2)+$cndx+1];                       $pcnt=0;   $w82o=''; # restore conditions for always 2nd column for now (ad optn l8r)
+    if(defined($coun)){ # odd number of chars may leave last invalid coun so check   # abov hook used to be ?1:0 but now testing whether necessary
+      for my $char (sort(keys(%fulc))){ # no longer trying to sum non-8 digitz during 2-column printing down here, doing it once during the single column abov
         if  ($coun ==    $fulc{$char}){ $pcnt++ if($char=~ /^(印|注|米|\n)$/); # special count for only double-wide characters
-          $sumn    +=  $coun                    if($char=~ /^[0-79]$/       ); # special sum of Non-8 digits to compare at end
-          $jus8     =  $coun                    if($char=~ /^8$/            ); # special just       8        to compare at end
-          $w82o    .= ($char eq "\n") ? '\n' : $char;$pcnt++;} # probably only newline shouldn't be printed normally to ruin formatting
-      } $Stxt.=sprintf((' ' x ( 8-$pcnt))."$C$w82o$B:$M".sprintf("%7s$B: %s$W,\n",cma($coun),b8colr(sprintf("%4s",b64($coun)))));#,S(substr($cmap{'d8bo'},b64(int(rand(8))),1)));
-    }}  $Stxt.="\n" if(scalar(@ccnt) % 2); # skip over blank final second column entry for odd elements, but stil shud hav off-by-1 bugz so 2du:ful rEwrIt;
-        $Stxt.=sprintf("$C  Sum of$B: ${G}0$W..${G}7$W,${G}9$B: $M%s$o      dif$Y:$B%7s$W;$z",cma($sumn),cma($jus8-$sumn));} $Stxt=sS($Stxt) unless($clrf);
+          $w82o    .= ($char eq "\n") ? '\n' : $char;$pcnt++;} # belo was once trying some random colrz with: ,S(substr($cmap{'d8bo'},b64(int(rand(8))),1)));
+      } $Stxt.=sprintf((' ' x ( 8-$pcnt))."$C$w82o$B:$M".sprintf("%7s$B: %s$W,\n",cma($coun),b8colr(sprintf("%4s",b64($coun)))));
+    } } $Stxt.=sprintf("$C  Sum of$B: ${G}0$W..${G}7$W,${G}9$B: $M%s$o      dif$Y:$B%7s$W;$z",cma($sumn),cma($jus8-$sumn));} $Stxt=sS($Stxt) unless($clrf);
 open my $out8,'>&',STDOUT or die "Can't open  duplic8 STDOUT handle: $!";binmode $out8,':encoding(UTF-8)';print $out8 $Stxt; # crE8 local duplic8 of global
 close   $out8             or die "Can't close duplic8 STDOUT handle: $!";
