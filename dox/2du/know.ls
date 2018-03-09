@@ -100,3 +100,19 @@ HTTPS://YouTube.Com/watch?v=Ixc9i1G7eew "The Metaphysics of Pepe with Jonathan P
 HTTPS://YouTu.be/pVuz-EmKP4M "Jordan Peterson: Men who know this are ahead of the competition" # I23L8God:15mins about TheDao, Hero/Anti archtypes && balance;
 HTTPS://YouTu.be/zQCTeGKHsVc "Documentary: A Glitch in the Matrix (David Fuller production)"   # I2PLCRE8:Interesting 54min analysis of JP on new && old media;
 g) One "First Principle" to assume is the dignity of the human soul, particip8ing in crE8ion, && deciding whether to make reality more like Heaven or Hell.
+HTTPS://YouTu.be/AwXAB6cICG0 "Jordan Peterson's Truth - Debunked" # I2RLI8Ed:17mins by RationalityRules disputing "Peterson Truth" rather well && convincingly;
+HTTPS://YouTu.be/aOY9WOO0-Oc "Philosophical Failures of Christian Apologetics, Part 10: Other Religions" # I2RLMgtw:23mins AntiCitizenX furthers my skepticism.
+# I look forward to any further JP Debunkings or corrections && know that has deflected me apart from the good doctor to be a bit more critical of his claims.
+# Regarding encountering the iconic arrangement of 8 prominent (mutually exclusive?) religions into a 4-wide by 2-high grid which likely fits into Octology:
+# Islam(Green), Hinduism(Red), Zoroastrian(White), Christianity(Yellow),  Judaism(Blue), Shinto(Peach), Sikhism(Gold), Jainism(Orange)+Ate:8GoddessOfMischeif.
+# Also want to make note that J.P may retain e-mail access with UToronto.Ca which may be hectic && require passing triage if I ever try to write him directly;
+HTTPS://YouTu.be/5j5vSnR-azI "Why lazy people around can be a gift - Jordan Peterson" # I2SLBRAU:3mins on RuleW taking responsibility && being indispensable;
+HTTPS://YouTu.be/sTny-9AKvCE "Jordan Peterson: Clueless Modern Atheists?" # I31L00K2:9mins indic8ing science && religion are sepR8 tools to explore different
+# types of truth, which are each distinctly valuable && capable of yielding results throughout many layers of analysis. Maybe Materialism is an incomplete way
+# to approach understanding the universe, if it turns out some metaphysical or spiritual realm becomes any credible explan8ion for the alter8ion of matter,
+# the influence over decisions, and ... something else I forget now. Even if some religion has always been a "human universal", it still may be better left;
+HTTPS://YouTu.be/6Swy9tRrh7g "The Thing About Jordan Peterson" # I31L9TOW:23mins of PaulElam providing mostly persuasive interpret8ion of JP's apology about
+# "MGTOW are pathetic weasels" as coming from a prominent firstborn "Hero" role, but Elam asserts a few things as approprE8 conclusions to draw from leveled
+# criticisms which seemed to me are wrong (or may just deserve clarific8ion by mention of significant caveats && exceptions). Review may enable adding details;
+HTTPS://YouTu.be/iprkoV7Icz8 "Are you Order, Chaos, or the Process that transforms - Jordan Peterson" # I32LA2OC:10mins of gr8 response to phoenix confusion;
+h) Voluntarily and regularly become the transform8ion process between Order && Chaos (rather than stagn8ing as primarily either) to integr8 your capabilities.

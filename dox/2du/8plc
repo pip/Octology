@@ -21,7 +21,7 @@ if($argz=~ /(^|\s)-?-?[^h]*h/i){$Stxt.=" $0 - 8.txt Precursor Letter Counter d8V
   p   - print below options as limited to just first $lnmx-line Page instead of default everything (only works for -w Words so far);
   a   - print All extra options below (like calling `$0 lwgf`);
   l   - print Letters of precursors sorted by size (maybe l8r will add extra -p handling to only print up to first $lnmx-line Page as how many up2 'c'?);
-  w   - print Words sorted by size up to current maximum of $mxws  (with -p only printing from 2 to 10 for just first $lnmx-line Page);
+  w   - print Words sorted by size up to current maximum of $mxws  (with -p only printing from 2 to  9 for just first $lnmx-line Page);
   g   - print gM8ria 'Gematria' word valU8ions in aligned sections as preliminary trial of a few short approaches to some numerology;
   f   - print Full character counts (maybe l8r extracted to a8:cnt8 and `8c` like `wc`);";
   if(20 < $clmz && $clmz < 160){my @htxt=split(/\n/,$Stxt);$Stxt='';my $lsiz;my $tokn;for(@htxt){$lsiz=0;while(s/^(\s*\S+)//){$tokn=$1; # smRt split Help tXt
@@ -38,7 +38,7 @@ while( <$eflh>){my $ldat=$_;$done=1 if(/^$/); # sets done to true when first bla
       if   (substr($ldat,    16,1) eq '8'){$pltr=substr($ldat,15,1);} # hard-coding columns as aligned interest (used to be 14 && 13, now 16 && 15)
       elsif(       $ldat =~   /^.*?(\w)8/){$pltr=$1;} # for a few lines with particularly long 8 names, the 8 wouldn't fit in the same column so srch for 1st 8
       if   (       $ldat =~   /^\s*(\w{0,15}8\w*)(\s|:)/i &&  ($folf || $gm8f || $lpsf)){my $ewrd=$1; # if mAB FindOrdrdLsFlag,thN lOdup Cntz arAy of subhashes
-        push(@{$lpsd{$pltr}[        length($ewrd)]}, $ewrd) if(                  $lpsf); # bild LetterPrecursorShortestsD8a for -l
+        push(@{$lpsd{$pltr}[        length($ewrd)]}, $ewrd) if($folf ||          $lpsf); # bild LetterPrecursorShortestsD8a for -l
         for my $wsiz (2..$mxws){if( length($ewrd) == $wsiz){$folc[$wsiz]{$ewrd}++;
             print "$G!*EROR*! duplic8 of wsiz:$wsiz for ewrd:$ewrd to remove l8r;\n"    if($folc[$wsiz]{$ewrd} > 1);}}} # sneak in Xtra duplic8ion error check
       $lcnt[b10(   $pltr )]++   if(defined($pltr) );}} # wrapng $pltr in lc() B4 b10() showz just 23(/34) countz in rvrs ordr: rnlc tzeg mdvp usbx fwkh iyo
@@ -84,7 +84,7 @@ if($lpsf){$Stxt.="\n${W}All${R}Counts${o}Not${M}Matching${C}Words${B}List$G -$K 
             for my $wndx (0 ..$#{$lpsd{$letr}[$wsiz]}){              $lpsd{$letr}[$wsiz][$wndx]=~        s/($letr)(8)/$o$1$G$2$z/g;} # colr 8PLz
             $Stxt.="$B$wsiz$W:$z".join(' ',@{$lpsd{$letr}[$wsiz]}).' ';$ltot+=               scalar(@{$lpsd{$letr}[$wsiz]});}
         }   $Stxt.="$M$ltot ";$Stxt=~ s/ $/\n/ unless($ltot <= 3); }}}} # maybe insert other newlines above when reaching terminal width for long listz?
-if($folf){$Stxt.="\n${Y}Word${R}Sort${C}By${B}Size$G -$K up to current maximum$M $mxws$K or one$p page$K if given$p -p$W:\n";my $maxs=$mxws;$maxs=10 if($pg1f);
+if($folf){$Stxt.="\n${Y}Word${R}Sort${C}By${B}Size$G -$K up to current maximum$M $mxws$K or one$p page$K if given$p -p$W:\n";my $maxs=$mxws;$maxs= 9 if($pg1f);
   for   my $wsiz (2..$maxs ){my @folk=sort(keys(%{$folc[$wsiz]}));$Stxt.=$M.sprintf("%${wsiz}d",scalar(@folk));  $Stxt.="$R $wsiz" unless(scalar(@folk));
     for my $fndx (0..$#folk){my $foln=$folk[$fndx];$foln=~    s/([$letz])(8)/$Y$1$G$2$z/g;$Stxt.=  "$z $foln" ;} $Stxt.="\n";}} # used2B $Stxt.="$G @folk\n";
 # HCOL8fol:had 15 \w8, 33 3-letrz, && 60 4-letrz (108 t0tl, mAB 12 of wich alredy Xist in bin/ stably or canB tmp DmOtd 2mk nxt nw 96 Dsciptnz pAg lIk sumb),
@@ -133,13 +133,13 @@ if($fulf){$Stxt.="\n";my %cvlz=reverse(%fulc);my @ccnt= sort { $a <=> $b } keys(
         $sumn      +=  $coun                    if($char=~ /^[0-79]$/       ); # special sum of Non-8 digits to compare at end
         $jus8       =  $coun                    if($char=~ /^8$/            ); # special just       8        to compare at end
         $w82o      .= ($char eq "\n") ? '\n' : $char;$pcnt++;} # probably only newline shouldn't be printed normally to ruin formatting
-    }   $Stxt.=' ' x (32-$pcnt)."$G$w82o$B:$M".sprintf("%7s$B: %s$W,$z  cndx$W:$G%2d\n",cma($coun),b8colr(sprintf("%4s",b64($coun))),$cndx); } $Stxt.="\n";
+    }   $Stxt.=' ' x (32-$pcnt)."$G$w82o$B:$M".sprintf("%7s$B: %s$W,$z    %4d$B;\n",cma($coun),b8colr(sprintf("%4s",b64($coun))),$cndx); } $Stxt.="\n";
   for     my $cndx (0..int($#ccnt/2 )){my $coun=$ccnt[$cndx];my $pcnt=0;my $w82o=''; # FullFile CharCounts abov as Values (or values(%fulc) nEdzUniq)
     if($cndx < int($#ccnt/2)+1){ # +1 was abov with @ccnt nstd of $#ccnt && originally had the +1 inside the int() call here
       for my $char (sort(keys(%fulc))){ # then above CharCouniNDeX loops just unique counts && (was Probably) PrintCouNT before Wait to Output8
         if  ($coun ==    $fulc{$char}){ $pcnt++ if($char=~ /^(印|注|米|\n)$/); # special count for only double-wide characters
           $w82o    .= ($char eq "\n") ? '\n' : $char;$pcnt++;} # probably only newline shouldn't be printed normally to ruin formatting
-      } $Stxt.=' ' x (32-$pcnt)."$G$w82o$B:$M".sprintf("%7s$B: %s$W,"  ,cma($coun),b8colr(sprintf("%4s",b64($coun))));
+      } $Stxt.=' ' x (32-$pcnt)."$G$w82o$B:$M".sprintf("%7s$B: %s$W,",cma($coun),b8colr(sprintf("%4s",b64($coun))));
     } $coun=$ccnt[int($#ccnt/2)+$cndx+1];                       $pcnt=0;   $w82o=''; # restore conditions for always 2nd column for now (ad optn l8r)
     if(defined($coun)){ # odd number of chars may leave last invalid coun so check   # abov hook used to be ?1:0 but now testing whether necessary
       for my $char (sort(keys(%fulc))){ # no longer trying to sum non-8 digitz during 2-column printing down here, doing it once during the single column abov

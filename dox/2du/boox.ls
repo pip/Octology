@@ -1,3 +1,7 @@
+# I2RL0iQi: Sam Harris interviewed an AI expert && author I highly admire on episode #116 of Waking Up podcast at HTTPS://YouTu.be/AaNLX71Hl88 referring to:
+Inadequ8 Equilibria: Where and How Civiliz8ions Get Stuck              - Eliezer Yudkowsky # discussion is totally in-depth on AI "Value Alignment" problems
+#   Above is his newest book, which I should buy && read carefully. Their discussion is deep && concerning. Maybe I should re-listen && take detailed notes.
+#   Since I may qualify as "brilliant Computer-Scientist", applying at Intelligence.Org/engineers (non-profit MIRI) to work on such problems is a good idea;
 # I2PLIPEW: PewDiePie's January 2018 book review consisted primarily of the following science-fiction dystopian stories:
 Brave New World                                                        - Aldous Huxley # gave 5 out of 5 stars with glowing review, likened to Orwell's 1984
 The Picture of Dorian Gray                                             - Oscar Wilde   # apparently the favorite book of PewDiePie's girlfriend (Marcia?)
