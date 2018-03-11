@@ -1579,7 +1579,7 @@ optionally modify the stored bitmap font itself (&& simultaneously every existin
 just this singular instance or every one of these on this line, in this sentence, paragraph, on this page, in this file or within this design8d d8a category.
 Every modific8ion should be easily undoable && auto-saved.
 
-I've also been thinking about 64-bit numbers being the archtypal base 8x8 m8rix because a single bit per intersection is the minimum d8a that could fit that
+I've also been thinking about 64-bit numbers being the archetypal base 8x8 m8rix because a single bit per intersection is the minimum d8a that could fit that
 way. A m8rix will typically contain 64 b64 values, which are 6-bits each or 384-bits. Eventually, a m8rix should also contain elaborate st8s with complex
 d8a. 64-bit numbers can be written with 11 b64 characters (wasting 2 bits). I like the idea of 64-bit numbers being tiles of m8rix bit patterns seen in
 every included && detected bitmapped font that has dimensions of 8. All fonts should be joined into a global little m8rix icon registry of 64-bit numbers
@@ -4071,7 +4071,7 @@ Let me start with the qualific8ion that my primary conception for most levels of
 binary divisions. Consequentially, they may initially appear to suffer from both the Black-or-White (A.K.A. Either-Or, False Dilemma/Dichotomy) fallacy as well
 as from oversimplific8ion that shrouds critical conditions, caveats, && any seemingly inherent contradictions among available definitions && conclusions which
 might be best to draw. The first might be 0/1, no/yes, off/on, false/true, dark/light, Black/White, && Yin/Yang all directly correspond to Chaos/Order as the
-archtypal realms which both must be explored for change && growth. Ideally, critical aspects && consequences from them can be navig8d through for cognitive
+archetypal realms which both must be explored for change && growth. Ideally, critical aspects && consequences from them can be navig8d through for cognitive
 consider8ion && then competently assimil8d, in sufficiently stable && sustainable sequences of chunks && r8s of change that they script selective journeys for
 compounding improvements to be preserved && the success of whatever their evolving structural models shift as, to provide suggestions for how to progress more.
 So maybe the next best assoC8ion to make is Female/Male as represent8ionally corresponding mostly with Chaos/Order (but of course there are tons of ways that
@@ -4097,7 +4097,7 @@ apprentice/wizard, slave/master, malicious/benevolent, polymorphic/abiding, inco
 Also rather interesting that before 4 minutes into Paul Elam's 20-minute HTTPS://YouTu.be/fHDmStorikk he recommends DSM IV as less feminist-influenced than V.
 Further rel8ing to tactical phases of BPD (Borderline Personality Disorder) or Narcissism are devalU8ion/idealiz8ion. Of course many of these differentE8ions
 should be downplayed or ignored (especially when they correl8 almost entirely or hardly at all with what is already being analyzed), so maybe constructing an
-interactive estim8ion, prioritiz8ion, && integr8ion mechanism would be illumin8ing. HTTPS://YouTu.be/RLRBcjDYCfc is 10mins of JP conveying this as archtypal.
+interactive estim8ion, prioritiz8ion, && integr8ion mechanism would be illumin8ing. HTTPS://YouTu.be/RLRBcjDYCfc is 10mins of JP conveying this as archetypal.
 Something fascin8ing that I find myself now contempl8ing is how much overlap there is (or appears to be), on some useful level, between spiritual/physical &&
 Chaos/Order. Maybe even the notion of a concept is this predominantly non-physical potential as some iD8ion which materializes within the physical structures
 of a mind before gaining the opportunity to become expressed (likely into some linguistic or visual description) as a considerable new manifest8ion in reality;
@@ -4120,3 +4120,8 @@ being mainly about domin8ion rather than competence or other potent tr8s of orga
 I also feel inclined to agree with SamHarris that furthering concepts of animal or human sacrifice as offerings needed to pay for sins should be rethought;
 Imagining some anim8ion of the fraction8ion of LGBT makes me think Trans-sexual as transitional, while Trans-human means more than human or superhuman instead.
 Of course some argue for more than two genders, but seem to do so based on whim, emotion, or maybe sens8ion, but I find no biological basis past hermaphrodite;
+I3ALEd8d:HTTPS://YouTu.be/4Cp60nQ8xko is 17mins of BrendanO'Neill talking "Corruption of Political Language" with UK, UN, US war as "peace-keeping", barbarism
+as "humanitarian" && many other potent examples of branding for demoniz8ion of Populist && others with "dishonest, destructive, self-interested [term] misuse";
+I3ALHEVN:While I think my knowledge is agnostic && my belief is atheist (as considering theism to fail burden of proof), there may exist potent religious &&
+theistic aspects to what I also imagine could be. If Jung's "Collective Unconscious" remains an apt explan8ion of ingrained iD8ion of mythology && archetypes,
+this may indic8 a form of meta-truths that at least served some historically significant function (which might be rather symbolic, especially in hindsight);

@@ -115,4 +115,4 @@ HTTPS://YouTu.be/6Swy9tRrh7g "The Thing About Jordan Peterson" # I31L9TOW:23mins
 # "MGTOW are pathetic weasels" as coming from a prominent firstborn "Hero" role, but Elam asserts a few things as approprE8 conclusions to draw from leveled
 # criticisms which seemed to me are wrong (or may just deserve clarific8ion by mention of significant caveats && exceptions). Review may enable adding details;
 HTTPS://YouTu.be/iprkoV7Icz8 "Are you Order, Chaos, or the Process that transforms - Jordan Peterson" # I32LA2OC:10mins of gr8 response to phoenix confusion;
-h) Voluntarily and regularly become the transform8ion process between Order && Chaos (rather than stagn8ing as primarily either) to integr8 your capabilities.
+HTTPS://YouTu.be/VW2bxDOAx3Q "Jordan Peterson's Archetypes Debunked" # I3ALF8RR:16mins of excellent RationalityRules further evalU8ion of "real", "true", etc.;

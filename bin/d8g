@@ -1,11 +1,10 @@
 #!/usr/bin/perl
 # 73TKJoTg:ptg crE8d by PipStuart <Pip@CPAN.Org> to gener8 time-stamp header text for Gmails between my Dad (Gerry - Gtime) and myself (Pip - Ptime);
 # E85M6q1A:d8g is what this utility was renamed to when upd8d to use new 8-character d8 format that inserts zone field into old Time::PT 7-char form;
-# 2du:Xtract all colr codez as RGBL cfg optnz,NAbl fEdng pRticUlR -d$d8 in 2OvrId now 4hedr,
-#   add -help optn,valid8 that UTF8 subjectz R handled correctly,contMpl8 pRsing ThunderBird Inbox 2autOgNer8 DtAld thred lst d8a,
+# 2du:Xtract all colr codez as RGBL cfg optnz,NAbl fEdng pRticUlR -d$d8 in 2OvrId now 4hedr,add -help optn,
 #   mAB slurp all this in2 d8.pm as common configurable options && releg8 this as merely another stub utility (or EvN just new `d8 -g` or -d option);
 use strict;use warnings;use utf8;use v5.10;use Octology::d8;my $parm = join(' ',@ARGV);my $d8im = Octology::d8->new(); # doesn't really handle any paramz yet
-use Time::DaysInMonth;my $VERSION='0.0';my $d8VS='I2PLIANT';my $ohmf = 1;$ohmf=0 if($parm=~ /(^|\s)-?-?m/i); # disable OutputHtmlMarkupFlag if -m
+use Time::DaysInMonth;my $VERSION='0.0';my $d8VS='I3ALIVEN';my $ohmf = 1;$ohmf=0 if($parm=~ /(^|\s)-?-?m/i); # disable OutputHtmlMarkupFlag if -m
 use Time::DayOfWeek  ;my $trfn='';my $cntn='';#y @td8a=( # setup ThreadReFerenceNumber, CaNToNumber, && init Thread d8a-array with MpT indX0 sO numz match Dadz
 # below would be to offset from UTC to CST/CDT Wisconsin time -6/-5 (was -= '8000' for old PST/PDT California time)  # I2PLIANT:abov mAd Thredz prIv8 dvl `gg`;
 if(exists($ENV{'TZ'}) && $ENV{'TZ'} eq 'UTC'){$d8im -= '6000';$d8im += '1000' if(exists($ENV{'DST'}) && $ENV{'DST'});}
