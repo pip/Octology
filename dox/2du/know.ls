@@ -116,3 +116,9 @@ HTTPS://YouTu.be/6Swy9tRrh7g "The Thing About Jordan Peterson" # I31L9TOW:23mins
 # criticisms which seemed to me are wrong (or may just deserve clarific8ion by mention of significant caveats && exceptions). Review may enable adding details;
 HTTPS://YouTu.be/iprkoV7Icz8 "Are you Order, Chaos, or the Process that transforms - Jordan Peterson" # I32LA2OC:10mins of gr8 response to phoenix confusion;
 HTTPS://YouTu.be/VW2bxDOAx3Q "Jordan Peterson's Archetypes Debunked" # I3ALF8RR:16mins of excellent RationalityRules further evalU8ion of "real", "true", etc.;
+HTTPS://YouTu.be/c-kWEDr6VS0 "March 2018 - Patreon Q & A" # I3BMMar4:1h36mins of Dr.P answering well, as usual. Recognizing that truths from the scientific
+# description of the material world and truths about ethics which come from religions that have had their found8ions seriously shaken. Rel8ions are unclear.
+# Integr8d Islam && st8s are a big problem. Depression is distinct from terrible life. Opiates && amphetamines can manage severe pain. Polyamory is wrong.
+# Hallucinogens help ease fear of death && quit smoking. We don't understand them. Jung:Beware of unearned wisdom! Don't play with them. Expect transform8ion
+# from attempts at experience integr8ion. Transl8 the truth into Chinese humbly && carefully. Play with kids on how to ask for hugs when feeling lonesome.
+# Classes about diversity, equity, inclusivity, gender, white privilege, etc. try to have kids leave class rather than accept such likely bad indoctrin8ion;

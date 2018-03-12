@@ -1,5 +1,5 @@
 # D6RMF1V1:8.txt - by8π : JAPH : K3wlD00d : 1337H4xr : PipStuart's Octology (hopefully eventually an Ontology of 8) - Convention, Conversion, && Categoriz8ion:
-# $VERSION='0.0';$d8VS='I2QLISJC'; # Octology attempts to rel8 the universe through medit8ion on mnemonic abbreV8ion (via 8-based  limit8ion) &&    elucid8ion.
+# $VERSION='0.0';$d8VS='I3CM0VED'; # Octology attempts to rel8 the universe through medit8ion on mnemonic abbreV8ion (via 8-based  limit8ion) &&    elucid8ion.
 # CEBBICTI:Crossing Every Bridge Before I Come To It? I.e., not a d8 stamp. Trying to make my Dad's birthday (August 8th) more special by thinking 2far ahead?
 # Octology intends to pursue implic8ion && ramific8ion as substantE8ion for adequ8 particip8ion, if not also 2 oblig8ion toward implement8ion &&   promulg8ion.
 # Contribute to potential solutions to the "Value Alignment" problems formul8d around General Artificial Intelligence along with plausible God concerns also.
@@ -70,6 +70,7 @@
            conn8
            cogn8
             agn8
+            soC8
           assoC8
        disassoC8
          dissoC8
@@ -181,6 +182,7 @@ internationaliz8ion:tools to transl8 for I18N the document8ion && applic8ion int
           reraD8
           irraD8
          circul8
+       contornE8   :to make a circuit or outline of contours, or a species of medal or medallion of bronze with deep furrow on the contour or edge
       centraliz8ion
             stL8
            palm8   :shaped like hand with raD8ing fingers, or three toes connected by thin web in feet of water birds (was ricinolE8 salt of palmic acid)
@@ -229,6 +231,7 @@ internationaliz8ion:tools to transl8 for I18N the document8ion && applic8ion int
            folE8
          defolE8
          exfolE8
+      interfolE8
         unifolE8
          bifolE8
         trifolE8
@@ -251,8 +254,12 @@ internationaliz8ion:tools to transl8 for I18N the document8ion && applic8ion int
         dissert8
          lucubr8
           exp8E8
-          cogit8
+          cogit8   :could insert excogit8 too
          cerebr8
+       ratiocin8
+           ment8ion
+            ill8ion
+ intellectualiz8ion
    conceptualiz8ion
    contextualiz8ion:tool to design8 && configure additional context-sensitive behaviors for particular combin8ions of applic8ions
      rationaliz8ion
@@ -271,12 +278,16 @@ internationaliz8ion:tools to transl8 for I18N the document8ion && applic8ion int
              gM8   :"gemmate" as having && reproducing by buds (from Botany)
              pN8   :winged or plume-shaped                     (from Botany)
            pinn8
+           plic8   :being folded into pleats resembling a fan or some types of leaf
          pullul8
        prolifer8
-          crisp8   :having a curled, ruffled, or waved appearance, as the margins of certain leaves (from Botany)
-          calcR8   :having a spur or being spurred, as the flowers of the toadflax && larkspur      (from Botany)    or armed with a spur (from Zoology)
+         brachE8   :having boughs or branches like arms, from brackium, branches in pairs, decuss8d   (from Botany)  or swinging from one hold to the next
+          crisp8   :having a curled, ruffled, or waved appearance, as the margins of certain leaves   (from Botany)
+          calcR8   :having a spur or being spurred, as the flowers of the toadflax && larkspur        (from Botany)  or armed with a spur (from Zoology)
+           clav8   :having the form or shape of a club, or growing gradually thicker toward the top   (from Botany)  && also club antenna (from Zoology)
             lyr8   :lyre-shaped or spatul8 && oblong as a leaf (from Botany) or like curv8ure in the tail of the blackcock, the lyre bird (from Zoology)
            nerv8
+           valv8   :meeting at the edges without overlapping, or opening as if by doors or valves     (from Botany)  as most kinds of capsules && some anthers
             jug8   :coupled together                           (from Botany)
           bijug8   :having two pairs, as of leaflets           (from Botany)
         bigemin8
@@ -334,6 +345,7 @@ internationaliz8ion:tools to transl8 for I18N the document8ion && applic8ion int
             mec8   :a rope of hair or of maguey fiber, for tying horses, etc. [Southwestern U.S.]
             jub8   :having a mane, or being fringed with long, pendant hair                                                (from Zoology)
             lan8   :wooly, covered with fine long hair or hairlike filaments, or dense cottony often matted or curly hairs (from Biology)
+           cilE8   :of or rel8ing to cilia projecting from the surface of a cell, endowed with vibr8ory motion, rel8ing to the human eyelash, hairlike fringe
           reduz8   :sediment accumul8d under reducing conditions && consequently rich in organic carbon && iron sulfide minerals, like coal && shale (Geology)
           excav8   :geology, fossils, digs, etc.
              hI8us :sabbatical, suspension, or break planning
@@ -425,6 +437,7 @@ internationaliz8ion:tools to transl8 for I18N the document8ion && applic8ion int
       militariz8ion
        fortific8ion
           casem8   :bombproof chamber, usually of masonry, where cannons may fire through embrasures, or hollow molding chiefly in cornices (from Architecture)
+           carE8   :a supporting column sculptured in the form of a draped female figure, also called caryatid                              (from Architecture)
            vall8ion
      circumvall8ion
      contravall8ion
@@ -525,6 +538,8 @@ internationaliz8ion:tools to transl8 for I18N the document8ion && applic8ion int
         illustr8   :2D/3D drawing applic8ion with eventually tablet or smart-phone multi-touch sketching that can be incorpor8d into above crE8 models/textures
         illumin8   :static && dynamic 3D model && scene lighting
         accentu8
+           minE8   :to paint or decor8 (manuscripts) with letters in red lead or vermilion (&& could l8r insert rubric8 with another l8 && n8)
+            nov8   :replace with something new, especially for an old oblig8ion
           renov8
       beautific8ion
           titiv8
@@ -702,7 +717,9 @@ internationaliz8ion:tools to transl8 for I18N the document8ion && applic8ion int
            speC8   :species simul8or for exploring evolutionary developments && emergent specializ8ions which lead to improved environmental suitability
            prim8   :biology simul8or
             pup8   :insect  simul8or, modeling && AI (&& larva development)
+          antlE8   :insects of lepidopterous type having an antlia, or spiral tubular proboscis (from Zoology) && faint southern constL8ion near Hydra && Vela
              aV8   :bird    simul8or (or general flight tools?)
+          cranE8   :animals having a bony or cartilaginous skeleton with a segmented spinal column && a large brain enclosed in a skull or cranium
           allig8or :animal  simul8or
           acerv8   :fungus  simul8or
             tan8   :Nipponese raccoon dog with short bushy tail (from Zoology)
@@ -804,6 +821,7 @@ internationaliz8ion:tools to transl8 for I18N the document8ion && applic8ion int
           prost8
           hernE8ion:hernia or rupture in smooth muscle tissue through which bodily structure protrudes
           vesic8   :to raise little bladders or blisters upon, or to inflame && sepR8 the cuticle of
+         ganglE8   :having ganglia, as the cords of the sympathetic nervous system   (from Anatomy)
            cusp8   :having a cusp or cusps, or being shaped like a cusp or cusp-like (from Anatomy)
          cingul8   :brain cortex situ8d in medial aspect of cerebral cortex (includes gyrus && sulcus), is involved in processing emotion && behavior regul8ion
         emascul8
@@ -881,6 +899,7 @@ internationaliz8ion:tools to transl8 for I18N the document8ion && applic8ion int
         congreg8
          officE8   :maybe ministry services for conducting weddings, funerals, holiday banquets, && any other similar rituals
             exP8
+            unE8   :rel8ing to former Eastern Christian or Orthodox churches received under Church of Rome jurisdiction && Pope, but retaining own rituals
         dispens8ion
          idoliz8ion
           tempt8ion
@@ -944,6 +963,7 @@ internationaliz8ion:tools to transl8 for I18N the document8ion && applic8ion int
               f8l  :general fighting         engine && game "fatal" (which omits the 2nd "a" in abbreV8d spelling, for efficiency, already of good pronunC8ion)
              sk8   :general skateboarding    engine && game    # also seems good to rel8ively generalize the most compelling game concepts to defer to brevity
               p8   :general bullet-hell      engine && game like Parsec47 ("pate" means crown or top of head, so royalty or cranium could be part of theme?)
+            sav8   :        fighting                   game for a form of boxing in which kicking is permitted as well as punching (maybe quite like MMA/BJJ)
            glaD8or :professional combatant or captive in ancient Rome often engaging in mortal sword fights to entertain the public, so a sword-fighting game?
          superl8ive:gr8est  fighting                   game with many supers per character?
             equ8   :general equation editor && calcul8or which can maybe eventually solve for symbols algebraically or offer other rel8d comput8ions
@@ -985,11 +1005,13 @@ internationaliz8ion:tools to transl8 for I18N the document8ion && applic8ion int
          substr8   :integr8d circuit tool
            titr8   :chemistry simul8or (may want to add chL8 compound of metal ion attached by coordin8 bonds to 2 or more non-metal ions, or Zoology dF)
          sublim8
+        debullE8   :to boil over
         distill8
          dissip8
           lixiV8
        vulcaniz8   :change the properties of by chemically treating, as with metallic chlorides, to form a substance like ebonite, caoutchouc, or India rubber
        precipit8
+         passiv8   :to treat or coat (a metal) to reduce the chemical reactivity of its surface (like an oxide layer to protect && stabilize semiconductors)
         incrass8
         inspiss8
         gelatin8
@@ -1054,7 +1076,7 @@ internationaliz8ion:tools to transl8 for I18N the document8ion && applic8ion int
             phN8   :salt            of phenic     acid
            fumR8   :salt (or ester) of fumaric    acid produced as a key chemical intermeD8 during the urea (or Krebs?) cycle (from Biochemistry)
            form8   :salt            of formic     acid
-          formE8
+          formE8   :the anionic univalent CHO2 group derived from formic acid, or a compound containing this group
        ricinolE8   :salt            of ricinoleic acid (formerly called palm8 of palmic acid)
            acer8   :aceric acid with salifiable base or long, narrow, pointed needle
           arist8   :having a slender, sharp, or spinelike tip (from Zoology)
@@ -1167,6 +1189,7 @@ internationaliz8ion:tools to transl8 for I18N the document8ion && applic8ion int
          retalE8
         proflig8
          insens8
+          insiD8   :to lie in ambush for
           obdur8
          obstin8
          retard8ion
@@ -4125,3 +4148,7 @@ as "humanitarian" && many other potent examples of branding for demoniz8ion of P
 I3ALHEVN:While I think my knowledge is agnostic && my belief is atheist (as considering theism to fail burden of proof), there may exist potent religious &&
 theistic aspects to what I also imagine could be. If Jung's "Collective Unconscious" remains an apt explan8ion of ingrained iD8ion of mythology && archetypes,
 this may indic8 a form of meta-truths that at least served some historically significant function (which might be rather symbolic, especially in hindsight);
+I3BMNBg5:JP: Agreeableness(80%): Compassion(hi%) && Politeness(30%),   Conscientiousness(75%): Industriousness(99%) && Orderliness(hi%),   Extraversion(99%)$
+Mine again : Agreeableness(54%): Compassion(91%) && Politeness( 9%),   Conscientiousness(41%): Industriousness(50%) && Orderliness(36%),   Extraversion(69%):$
+Enthusiasm(80%) && Assertiveness(99%),   Neuroticism(dp%): Withdrawal(lo%) && Volatility(hi%),  Openness to Experience(99%): Intellect(99%) && Openness(95%)
+Enthusiasm(59%) && Assertiveness(73%),   Neuroticism(24%): Withdrawal(36%) && Volatility(17%),  Openness to Experience(96%): Intellect(96%) && Openness(87%);

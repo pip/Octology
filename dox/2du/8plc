@@ -38,7 +38,7 @@ while( <$eflh>){my $ldat=$_;$done=1 if(/^$/); # sets done to true when first bla
       if   (substr($ldat,    16,1) eq '8'){$pltr=substr($ldat,15,1);} # hard-coding columns as aligned interest (used to be 14 && 13, now 16 && 15)
       elsif(       $ldat =~   /^.*?(\w)8/){$pltr=$1;} # for a few lines with particularly long 8 names, the 8 wouldn't fit in the same column so srch for 1st 8
       if   (       $ldat =~   /^\s*(\w{0,15}8\w*)(\s|:)/i &&  ($folf || $gm8f || $lpsf)){my $ewrd=$1; # if mAB FindOrdrdLsFlag,thN lOdup Cntz arAy of subhashes
-        push(@{$lpsd{$pltr}[        length($ewrd)]}, $ewrd) if($folf ||          $lpsf); # bild LetterPrecursorShortestsD8a for -l
+        push(@{$lpsd{$pltr}[        length($ewrd)]}, $ewrd) if($folf || $gm8f || $lpsf); # bild LetterPrecursorShortestsD8a for -l
         for my $wsiz (2..$mxws){if( length($ewrd) == $wsiz){$folc[$wsiz]{$ewrd}++;
             print "$G!*EROR*! duplic8 of wsiz:$wsiz for ewrd:$ewrd to remove l8r;\n"    if($folc[$wsiz]{$ewrd} > 1);}}} # sneak in Xtra duplic8ion error check
       $lcnt[b10(   $pltr )]++   if(defined($pltr) );}} # wrapng $pltr in lc() B4 b10() showz just 23(/34) countz in rvrs ordr: rnlc tzeg mdvp usbx fwkh iyo
@@ -125,15 +125,37 @@ if($gm8f){delete($folc[2]{ 'N8'});delete($folc[2]{  'b8'});delete($folc[2]{  'c8
 # old notez4wsiz 2: this is probably more useful mean average summariez && think of prime factorz or othr wayz to represent mostly unique partz
 #                5: try to cut 2 (or 6 if adding 4 N8 varE8ionz bakin) to get 5z dn2 3rd rel8ively clean concise set of 96 to make another sumb page out of
   } $Stxt.="${C}cutz$W:$Y 2$W:${G}N8 $o(${K}b8 c8 d8 g8 w8$o)$Y  3$W:${G}DN8$Y  4$W:${G}NfN8 SSN8 $o(${K}ckm8 pal8 upd8$o)$Y  5$W:${G}m8rix coll8$Y";
-    $Stxt.="$Y  6$W:${G}?$Y  7$W:${G}?$Y ...\n"; } # hopefully above -g will align a b10 line over b64 lines
+    $Stxt.="$Y  6$W:${G}?$Y  7$W:${G}?$Y ...\n"; # hopefully above -g will align a b10 line over b64 lines
+  # try new small set of sequential prime number alloc8ions && then multiply recurring subset primes then try to refactor && reconstruct from gr8st down
+  $Stxt  .="${W}Attempting to gener8 new gM8ria primes for names...\n";$mxws=6;my $mxpa=1;my %w2pm;my %wh2p;my @wpls;
+  # maybe should pre-load && prime-alloc8 most popular precursor-letters with their 8 && maybe all post-8 suffixes should be popularly ordered before those
+  for   my $wsiz (2..$mxws ){my @folk=sort(keys(%{$folc[$wsiz]}));my @fola=();$Stxt.=$G; # prEstrip12cutz abov lEvng justnXt Xctly96 2fOcus on
+    for my $fndx (0..$#folk){my $curw=$folk[$fndx];my $tstw=substr($curw,1);my $newf=0;my $prim=0;
+      if($wsiz >  2 && exists($w2pm{$tstw})){$curw=substr($folk[$fndx],0,1);} # also want to loop down checking other sizes besides just chopping first char
+      $newf=1   unless(exists($w2pm{$curw}));
+      $w2pm{$curw}=$prim=prim($mxpa) if($newf);
+      push (@wpls, $w2pm{$curw});
+      if   (exists($w2pm{$tstw})){$wpls[-1]*= $w2pm{$tstw};}
+      # also check whole words to composited primes for reusability too
+      $wh2p{$folk[$fndx]}=$wpls[-1];
+      $Stxt.=sprintf("%4d prim:%5d curw:%6s tstw:%5s wpls:%4s %8d; ",$mxpa,$prim,$curw,$tstw,b64($wpls[-1]),$wpls[-1]);
+      $Stxt.="\n" if($fndx == $#folk || $fndx % 2);
+      $mxpa++ if($newf);
+    }
+  } # then try to just loop the result wpls && reconstruct all whole names from their composite primes
+}   # then again, maybe multiplying && factoring primes as essentially bit-flags requiring escal8ing order building words to the left according to growing wsiz
+    #   order is inefficient && still indirect, but maybe less useful than searching the whole word-set entirely to build all at once deliber8ly right-to-left
+    #   with priorities for most popular && largest strings that can emerge completely from such a breakdown approach? maybe conceptually similar but more
+    #   simplistic would be to first add all post-8 suffixes by popularity, then all PL+8, && finally all popular prefixes for a 3-segment predictable form?
 if($fulf){$Stxt.="\n";my %cvlz=reverse(%fulc);my @ccnt= sort { $a <=> $b } keys(%cvlz);my $jus8=0;my $sumn=0; # 2-colms of fulcountz fitz nIc undr50lInz sOfR
+  if(0){ # just disabling now redundant double-long single column full counts list
   for     my $cndx (0..$#ccnt){my $coun=$ccnt[$cndx];my $pcnt=0;my $w82o=''; # FullFile CharCounts abov as Values (or values(%fulc) nEdzUniq)
     for   my $char (sort(keys(%fulc))){ # this now is intended to be just a single linear column which duplic8z the content of the orig 2-columnz below
       if    ($coun ==    $fulc{$char}){ $pcnt++ if($char=~ /^(印|注|米|\n)$/); # special count for only double-wide characters
         $sumn      +=  $coun                    if($char=~ /^[0-79]$/       ); # special sum of Non-8 digits to compare at end
         $jus8       =  $coun                    if($char=~ /^8$/            ); # special just       8        to compare at end
         $w82o      .= ($char eq "\n") ? '\n' : $char;$pcnt++;} # probably only newline shouldn't be printed normally to ruin formatting
-    }   $Stxt.=' ' x (32-$pcnt)."$G$w82o$B:$M".sprintf("%7s$B: %s$W,$z    %4d$B;\n",cma($coun),b8colr(sprintf("%4s",b64($coun))),$cndx); } $Stxt.="\n";
+    }   $Stxt.=' ' x (32-$pcnt)."$G$w82o$B:$M".sprintf("%7s$B: %s$W,$z    %4d$B;\n",cma($coun),b8colr(sprintf("%4s",b64($coun))),$cndx); } $Stxt.="\n"; }
   for     my $cndx (0..int($#ccnt/2 )){my $coun=$ccnt[$cndx];my $pcnt=0;my $w82o=''; # FullFile CharCounts abov as Values (or values(%fulc) nEdzUniq)
     if($cndx < int($#ccnt/2)+1){ # +1 was abov with @ccnt nstd of $#ccnt && originally had the +1 inside the int() call here
       for my $char (sort(keys(%fulc))){ # then above CharCouniNDeX loops just unique counts && (was Probably) PrintCouNT before Wait to Output8
