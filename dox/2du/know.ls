@@ -1,5 +1,5 @@
 # HBQLISTV:know.ls crE8d by PipStuart <Pip@CPAN.Org> to duplic8 Dr. Jordan B. Peterson's Quora.Com answer of "40 most valuable things everyone should know";
-# $VERSION='0.0';$d8VS='I28L8888'; # 2du:start chronicling Dr. Peterson's many topical videos with new section for post-title subject summaries or explor8ion;
+# $VERSION='0.0';$d8VS='I3CM9I3C'; # 2du:start chronicling Dr. Peterson's many topical videos with new section for post-title subject summaries or explor8ion;
 0) Tell the truth.
 1) Do not do things that you hate.
 2) Act so that you can tell the truth about how you act.
@@ -122,3 +122,4 @@ HTTPS://YouTu.be/c-kWEDr6VS0 "March 2018 - Patreon Q & A" # I3BMMar4:1h36mins of
 # Hallucinogens help ease fear of death && quit smoking. We don't understand them. Jung:Beware of unearned wisdom! Don't play with them. Expect transform8ion
 # from attempts at experience integr8ion. Transl8 the truth into Chinese humbly && carefully. Play with kids on how to ask for hugs when feeling lonesome.
 # Classes about diversity, equity, inclusivity, gender, white privilege, etc. try to have kids leave class rather than accept such likely bad indoctrin8ion;
+HTTPS://YouTu.be/T6J2nhwpnUY 'Jordan Peterson "I think that Fundamentalists & Atheistic Scientists have the same problem ..."' # I3CM9I3C:11mins about truths;
