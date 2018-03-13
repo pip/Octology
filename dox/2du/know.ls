@@ -123,3 +123,8 @@ HTTPS://YouTu.be/c-kWEDr6VS0 "March 2018 - Patreon Q & A" # I3BMMar4:1h36mins of
 # from attempts at experience integr8ion. Transl8 the truth into Chinese humbly && carefully. Play with kids on how to ask for hugs when feeling lonesome.
 # Classes about diversity, equity, inclusivity, gender, white privilege, etc. try to have kids leave class rather than accept such likely bad indoctrin8ion;
 HTTPS://YouTu.be/T6J2nhwpnUY 'Jordan Peterson "I think that Fundamentalists & Atheistic Scientists have the same problem ..."' # I3CM9I3C:11mins about truths;
+HTTPS://YouTu.be/WsUFacnI-A0 "Red Pill Reviews: Fight Club - Part Six" # I3DM8dun:16mins of PaulElam closing with the terror of confusing shadow as savior, &&
+# also that denying it control or ignoring its existence is quite bad too. Totally excellently thoughtful series of meticulous analysis about so much. Gr8!
+# Maybe the shadow is akin to anima throughout a predominantly Blue Pill black-&&-white denial of shadow to be brought closer to the archetypal woman who only
+# need to reciproc8, but awful to surrender control to the shadow. Concluding with shooting the self to become closer to a hellish woman as better than none.
+HTTPS://YouTu.be/qNI3oEWMSeU "A Flash of Red From The President" # 19mins of Elam highlighting some powerful tr8s of honorable excellence in Trump leadership;

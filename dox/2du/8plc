@@ -145,7 +145,7 @@ if($gm8f){delete($folc[2]{ 'N8'});delete($folc[2]{  'b8'});delete($folc[2]{  'c8
       $Stxt.="\n" if($fndx == $#folk || $fndx % 2);
       $mxpa++ if($newf); }
   } # then try to just loop the result wpls && reconstruct all whole names from their composite primes
-  $Stxt  .="${W}Attempting to gener8 now gM8ria primes for names by 3 segments...\n$G";$mxws=19;my %sufz=('0'=>4095);my %pl8z;my %prez;my %kvs8;
+  $Stxt  .="${W}Attempting to gener8 now gM8ria primes for names by 3 segments...\n$G";$mxws=19;my %sufz=('0'=>1023);my %pl8z;my %prez;my %kvs8;
                                                                                     $mxpa=1;%w2pm=();%wh2p=();@wpls=();
   for   my $wsiz (2..$mxws ){my @folk=sort(keys(%{$folc[$wsiz]})); # prEstrip12cutz abov lEvng justnXt Xctly96 2fOcus on
     for my $fndx (0..$#folk){my $curw=$folk[$fndx];
@@ -182,6 +182,40 @@ if($gm8f){delete($folc[2]{ 'N8'});delete($folc[2]{  'b8'});delete($folc[2]{  'c8
     for my $fndx (0..$#folk){my $curw=$folk[$fndx];$w2pm{prim($mxpa++)}=$curw;}}
   for   my $kyct (sort {$a <=> $b} keys(%w2pm)){$Stxt.=sprintf("%10d %6s:%-19s; ",$kyct,b64($kyct),$w2pm{$kyct});$colc++;if($colc==4){$colc=0;$Stxt.="\n";}}
   # or might try more aggressive abbreV8ions by interleaving all most prevalent && searching for lengthy substrings throughout long prefixes
+  $Stxt.="\n${W}Attempting to gener8 new gM8ria primes for names still by 3 segments woven...\n$G";$mxws=19;%sufz=();%pl8z=();%prez=();%kvs8=();
+                                                                                    $mxpa=1;%w2pm=();%wh2p=();@wpls=();my %allc;
+  for   my $wsiz (2..$mxws ){my @folk=sort(keys(%{$folc[$wsiz]})); # prEstrip12cutz abov lEvng justnXt Xctly96 2fOcus on
+    for my $fndx (0..$#folk){my $curw=$folk[$fndx];
+      if($curw=~ /^(\w*?)([A-Z])8(\w*)$/i){$pl8z{$2}=0 unless(exists($pl8z{$2}));$pl8z{$2}++;
+        if(defined($1) && length($1)     ){$prez{$1}=0 unless(exists($prez{$1}));$prez{$1}++;}
+        if(defined($3) && length($3)     ){$sufz{$3}=0 unless(exists($sufz{$3}));$sufz{$3}++;}
+        else                             {$sufz{'0'}=0 unless(exists($sufz{'0'}));$sufz{'0'}++;} } } }
+  # try sorting sufz by count values before realloc8ing 1st primes there, then extend to sorting && alloc8ing all pl8z, finally build composite wholes
+  for   my $kyst (sort(keys(%pl8z))){push(@{$kvs8{$pl8z{$kyst}}},$kyst);}
+  for   my $kvct (sort {$b <=> $a} keys(%kvs8)){push(@{$allc{$kvct}},sort(@{$kvs8{$kvct}}));
+    for my $sprt (sort(@{$kvs8{$kvct}})){$w2pm{$sprt}=prim($mxpa++);}}
+  %kvs8=();
+  for   my $kyst (sort(keys(%sufz))){push(@{$kvs8{$sufz{$kyst}}},$kyst);} # nice that there are exactly 8 count categories of sufz, 14 PLz, 6 prez (28 totl)
+  for   my $kvct (sort {$b <=> $a} keys(%kvs8)){push(@{$allc{$kvct}},sort(@{$kvs8{$kvct}}));
+    for my $sprt (sort(@{$kvs8{$kvct}})){$w2pm{$sprt}=prim($mxpa++) unless(exists($w2pm{$sprt}));}} # try to reuse earlier segments
+  %kvs8=();
+  for   my $kyst (sort(keys(%prez))){push(@{$kvs8{$prez{$kyst}}},$kyst);}
+  for   my $kvct (sort {$b <=> $a} keys(%kvs8)){push(@{$allc{$kvct}},sort(@{$kvs8{$kvct}}));
+    for my $sprt (sort(@{$kvs8{$kvct}})){$w2pm{$sprt}=prim($mxpa++) unless(exists($w2pm{$sprt}));}} # try to keep reusing earlier segments
+  $mxpa=1;%w2pm=();
+  for   my $kvct (sort {$b <=> $a} keys(%allc)){$Stxt.=sprintf("alct:%4d alst:%s\n",$kvct,join(' ',sort {length($a) <=> length($b)} @{$allc{$kvct}}));
+    for my $mfst (                                                                                 sort {length($a) <=> length($b)} @{$allc{$kvct}}){
+      $w2pm{$mfst}=prim($mxpa++) unless(exists($w2pm{$mfst}));$Stxt.="$mfst:$w2pm{$mfst};\n";}}
+  for   my $wsiz (2..$mxws ){my @folk=sort(keys(%{$folc[$wsiz]})); # prEstrip12cutz abov lEvng justnXt Xctly96 2fOcus on
+    for my $fndx (0..$#folk){my $curw=$folk[$fndx];
+      if($curw=~ /^(\w*?)([A-Z])8(\w*)$/i){my $pltr=$2;my $sfix='0';$sfix=$3 if(defined($3) && length($3));my $pfix='';$pfix=$1 if(defined($1) && length($1));
+        my $cmps=$w2pm{$pltr};$cmps*=$w2pm{$sfix}   if($sfix ne '0' || length($pfix));$cmps*=$w2pm{$pfix} if(length($pfix));$wh2p{$cmps}=$curw;
+        $Stxt.=sprintf("%19s:%10d %6s;\n",$curw,$cmps,b64($cmps));
+      }}} $colc=0; # let's see if this joined order produces more desirable results... yeah! total is less than half of older, with final 8 b10 8-digit numz
+  for   my $kyct (sort {$a <=> $b} keys(%wh2p)){$Stxt.=sprintf("%10d %6s:%-19s; ",$kyct,b64($kyct),$wh2p{$kyct});$colc++;if($colc==4){$colc=0;$Stxt.="\n";}}
+  # or instead of interleave, just order all parts together by frequency to str8 alloc8 into, but should sort last single refs back to by size (but expecting
+  #   just the lowest primed first encountered single character should always indic8 the PL may actually be wrong when like combined b8a might have a higher)
+  #   so it really would be good to attempt to compare originals with the same LookUpTables to test whether factoriz8ion of any forms can endure reconstructs
 }   # then again, maybe multiplying && factoring primes as essentially bit-flags requiring escal8ing order building words to the left according to growing wsiz
     #   order is inefficient && still indirect, but maybe less useful than searching the whole word-set entirely to build all at once deliber8ly right-to-left
     #   with priorities for most popular && largest strings that can emerge completely from such a breakdown approach? maybe conceptually similar but more
