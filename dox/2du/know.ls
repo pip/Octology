@@ -128,3 +128,12 @@ HTTPS://YouTu.be/WsUFacnI-A0 "Red Pill Reviews: Fight Club - Part Six" # I3DM8du
 # Maybe the shadow is akin to anima throughout a predominantly Blue Pill black-&&-white denial of shadow to be brought closer to the archetypal woman who only
 # need to reciproc8, but awful to surrender control to the shadow. Concluding with shooting the self to become closer to a hellish woman as better than none.
 HTTPS://YouTu.be/qNI3oEWMSeU "A Flash of Red From The President" # 19mins of Elam highlighting some powerful tr8s of honorable excellence in Trump leadership;
+h) Recognize inherent sovereignty && divinity of each human, comprised of both good && evil, Jesus && s8n archetype instances, regardless of gender, race,etc..
+# Don't succumb to such prey as lacking self-respect && embodying too old archetypes of Servant, Slave, or Scapegoat, but maybe still some Savior is more good;
+HTTPS://YouTu.be/XNrBHq0TfII "Introduction - A Word On Jordan Peterson - The Order of Chaos: An Antidote to Meaning" # I3IMF8TJ:18mins of TJ Kirk laying out
+# his reasons for producing his own audio-book apart from 12 Rules, which might become interesting and provoc8ive as it develops, but I don't agree with much
+# of the initial justific8ion that Peterson is just offering totalitarian authoritarian prescriptivist rules for purposeful order in place of whatever form of
+# evil chaos (probably as ideology like Neo-Marxism, Post-Modernism, Nihilism, Communism, Feminism, Socialism, etc.). TJ Kirk also goes by The Amazing Atheist
+# mostly for mocking Christians && Social-Justice-Warriors, but wants to take Peterson on more seriously. None of the old videos seem particularly gr8 so far.
+HTTPS://YouTu.be/pp9DXpDWzSU 'Jordan Peterson Q&A 2018 on his "cult", and nature of reality' # 12mins of explaining nobody should want a cult, having a cult
+# of individuality && responsibility doesn't make sense, meaning is found when balancing order (left-brain) && chaos (right), && good may persist in reality;
