@@ -137,3 +137,5 @@ HTTPS://YouTu.be/XNrBHq0TfII "Introduction - A Word On Jordan Peterson - The Ord
 # mostly for mocking Christians && Social-Justice-Warriors, but wants to take Peterson on more seriously. None of the old videos seem particularly gr8 so far.
 HTTPS://YouTu.be/pp9DXpDWzSU 'Jordan Peterson Q&A 2018 on his "cult", and nature of reality' # 12mins of explaining nobody should want a cult, having a cult
 # of individuality && responsibility doesn't make sense, meaning is found when balancing order (left-brain) && chaos (right), && good may persist in reality;
+HTTPS://YouTu.be/xLomDDzCIMs "Jordan Peterson interview on Chaotic, Desic8d, Soy-Boy Culture." # I3KM6XCB:40mins discussing Dr. Peterson's cathedral dream of
+# returning to the center of the cross, the X as the locus of suffering as all individuals must, && I see the crux of all order && chaos as the middle of '8';
