@@ -1,6 +1,7 @@
 #!/usr/bin/perl
 # D6OMHm3L:8plc crE8d to read PipStuart's <Pip@CPAN.Org> 8.txt (mainly 2 specific columns) to tabul8 && print the 8 Precursor Letter Counts;
-# 2du:fix LetrPrecShorts2wrap long lInz&&hndl -p 1st pAg,Dtect nstd of hRdcOd 16th colm,add dur8z around sectnz&&mAB try2optimIz per4manc of slOSt pRtz,
+# 2du:fix LetrPrecShorts2wrap long lInz&&hndl -p 1st pAg,Dtect nstd of hRdcOd 16th colm,
+#   add dur8z around sectnz&&mAB try2optimIz per4manc of slOSt pRtz(tkz about 12-18secs for basic to all),
 #   4 -g:try reloopng 4 Ech singl rOw alInmNtz nstd of init blox,
 #   4 -g gM8ria:try2add sumz,productz,modez,meanz,medianz,cnsidr delta difz&&r8ioz,prIm factrz,add colrz,graph rangez,iconz,contMpl8 othr good posibl repz,
 #   mk sepR8 tabul8ion of 8-words used in l8r document8ion wi not8ion 4thOs not yet included in top lists (thN optn2ignor easy conjug8ions && pre/suffixes),
@@ -95,8 +96,9 @@ if($folf){$Stxt.="\n${Y}Word${R}Sort${C}By${B}Size$G -$K up to current maximum$M
 # 33  DN8 aV8 ab8 al8 aw8 b8a bl8 cr8 el8 f8h f8l fL8 fr8 gM8 gr8 iD8 ir8 mL8 oP8 or8 pN8 pl8 pr8 rN8 sN8 sk8 sl8 sp8 st8 sw8 tr8 ur8 vL8
 # 60 NfN8 SSN8 abl8 aer8 agn8 aur8 bel8 ber8 bin8 bor8 bov8 ckm8 col8 crE8 crN8 cur8 deV8 deb8 dil8 don8 equ8 est8 exP8 fix8 gyr8 inm8 inn8 ion8 kin8 l8nt
 #    leg8 lig8 loc8 lor8 lun8 lux8 meD8 mor8 mut8 neg8 not8 obV8 obl8 orn8 pal8 pir8 pup8 r8io raD8 reb8 rel8 rot8 s8E8 sed8 stL8 str8 tan8 upd8 vac8 zon8
-if($gm8f){$Stxt.="${W}Gener8 gM8ria primes for names by 3 segments (PreLetters, Suffixes, Prefixes)...\n$G";my $eqfz='';my $eqct=0;my $mxpa=1;#$mxws=19;
+if($gm8f){$Stxt.="${W}Gener8 gM8ria primes for names by$B 3$W segments (${Y}PreLetters$W,$G Suffixes$W,$C Prefixes$W)...\n$G"; my $eqfz='';my $eqct=0;
   my %w2pm;my %wh2p;my @wpls;my %kvs8;my %pl8z;my %sufz;my %prez;my %pl8s;my %sufs;my %pres;my %allc;my %allp;my @plrl;my %ppbs;my $bbct=0;my $colc=0;
+  my $mxpa=1;#$mxws=19;
   for   my $wsiz (2..$mxws ){my @folk=sort(keys(%{$folc[$wsiz]})); # prEstrip12cutz abov lEvng justnXt Xctly96 2fOcus on
     for my $fndx (0..$#folk){my $curw=$folk[$fndx];
       if($curw=~ /^(\w*?)([A-Z])8(\w*)$/i){$pl8z{$2 }=0 unless(exists($pl8z{$2 }));$pl8z{$2 }++;
@@ -112,7 +114,8 @@ if($gm8f){$Stxt.="${W}Gener8 gM8ria primes for names by 3 segments (PreLetters, 
   for   my $kyst (sort(keys(%prez))){push(@{$kvs8{$prez{$kyst}}},$kyst);}
   for   my $kvct (sort {$b <=> $a} keys(%kvs8)){$Stxt.=sprintf("${C}prct$W:$M%4d$C prez$W:$z%s\n",$kvct,join(' ',sort(@{$kvs8{$kvct}})));
     for my $sprt (sort(@{$kvs8{$kvct}})){$w2pm{$sprt}=prim($mxpa++) unless(exists($w2pm{$sprt}));}}                # try to keep reusing earlier segments
-  $Stxt  .="${W}gM8ria primes with 3 sepR8 sections: PL, suffixes, prefixes but with special case 1st suffixes: _ && ion for smaller highest nums...\n";
+  $Stxt  .="${W}gM8ria primes with$B 3$W sepR8 sections:$Y PL$W,$G suffixes$W,$C prefixes$W but with special case 1st$G suffixes$W:$z _$W &&$z ion$W for ";
+  $Stxt  .="smaller highest nums...\n";
   %pl8s=();%sufs=();%pres=();%w2pm=();%wh2p=();%kvs8=();@wpls=();%allc=();%allp=();$bbct=$colc=0;$mxpa=1;
   for   my $wsiz (2..$mxws ){my @folk=sort(keys(%{$folc[$wsiz]}));
     for my $fndx (0..$#folk){my $curw=$folk[$fndx];
@@ -128,7 +131,7 @@ if($gm8f){$Stxt.="${W}Gener8 gM8ria primes for names by 3 segments (PreLetters, 
   for   my $pltr (@plrl                        ){for my $sprt  (      @{$ppbs{$pltr}}        ){unless(           exists($pres{$sprt})){
                                                                                                $allp{prim($mxpa)}=$sprt;$pres{$sprt}=prim($mxpa++);}}}
   $Stxt  .="${z}pres${C}By${B}Size$W:$z";for my $sprt (sort {length($a) <=> length($b)} sort(keys(%pres))){
-    $Stxt.= S(substr('RoYGBCMp',(length($sprt) % 8)-1,1)) . "$sprt ";} # try2 use d8bo colrz by sizez
+    $Stxt.= S(substr('YCMGRBop',(length($sprt) % 8)-1,1)) . "$sprt ";} # started wi d8bo colrz by sizez, but rearranged for more distinction
   for   my $wsiz (2..$mxws ){my @folk=sort(keys(%{$folc[$wsiz]}));
     for my $fndx (0..$#folk){my $curw=$folk[$fndx];
       if($curw=~ /^(\w*?)([A-Z])8(\w*)$/i){my $pltr=$2;my $sfix='_';$sfix=$3 if(defined($3) && length($3));my $pfix='';$pfix=$1 if(defined($1) && length($1));
