@@ -88,7 +88,8 @@ if($lpsf){$Stxt.="\n${W}All${R}Counts${o}Not${M}Matching${C}Words${B}List$G -$K 
         }   $Stxt.="$M$ltot ";$Stxt=~ s/ $/\n/ unless($ltot <= 3 || $ltot >= 187); }}}} # mAB insrt othr nwlInz abov whN reachng terminal widt for long listz?
 if($folf){$Stxt.="\n${Y}Word${R}Sort${C}By${B}Size$G -$K up to current maximum$M $mxws$K or one$p page$K if given$p -p$W:\n";my $maxs=$mxws;$maxs= 9 if($pg1f);
   for   my $wsiz (2..$maxs ){my @folk=sort(keys(%{$folc[$wsiz]}));$Stxt.=$B.sprintf("%${wsiz}d",scalar(@folk));  $Stxt.="$R $wsiz" unless(scalar(@folk));
-    for my $fndx (0..$#folk){my $foln=$folk[$fndx];$foln=~    s/([$letz])(8)/$Y$1$G$2$z/g;$Stxt.=  "$z $foln" ;} $Stxt.="\n";}} # used2B $Stxt.="$G @folk\n";
+    for my $fndx (0..$#folk){my $foln=$folk[$fndx];$foln=~    s/([$letz])(8)/$Y$1$G$2$z/g;$foln=~ s/(ion\s*)$/$C$1/; # mk ion suffix Cyan like l8r gM8ria Blue
+                                                                                          $Stxt.=  "$z $foln" ;} $Stxt.="\n";}} # used2B $Stxt.="$G @folk\n";
 # HCOL8fol:had 15 \w8, 33 3-letrz, && 60 4-letrz (108 t0tl, mAB 12 of wich alredy Xist in bin/ stably or canB tmp DmOtd 2mk nxt nw 96 Dsciptnz pAg lIk sumb),
 #   98 5letr wordz (2past own nw 3rd 96 sumb pAg), 162 6z, 200 7z, 132 8z, 110 9z, 76 10z, 63 11z, 54 12z, 37 13z, 23 14z, 3 15z, 6 16z, 1 17z, 0 18z, 2 19z ;
 # HCQL3VIP:sOfR of just 2z 3z 4z,nEd2cut 12 2fit nXt 96 sumb pAg,b8 c8 d8 g8 w8 ckm8 pal8 upd8 alredy bin is 8,DlA sumb4 N8 DN8 NfN8 SSN8 as obtuse;lFt9,32,55
@@ -106,15 +107,20 @@ if($gm8f){$Stxt.="${W}Gener8 gM8ria primes for names by$B 3$W segments (${Y}PreL
         if(defined($3) && length($3)     ){$sufz{$3 }=0 unless(exists($sufz{$3 }));$sufz{$3 }++;}
         else                              {$sufz{'_'}=0 unless(exists($sufz{'_'}));$sufz{'_'}++;}}}}
   for   my $kyst (sort(keys(%pl8z))){push(@{$kvs8{$pl8z{$kyst}}},$kyst);}
-  for   my $kvct (sort {$b <=> $a} keys(%kvs8)){$Stxt.=sprintf("${Y}plct$W:$M%4d$Y pl8z$W:$o%s\n",$kvct,join(' ',sort(@{$kvs8{$kvct}})));
-    for my $sprt (sort(@{$kvs8{$kvct}})){$w2pm{$sprt}=prim($mxpa++)                             ;}} %kvs8=();$Stxt.="\n";
+  for   my $kvct (sort {$b <=> $a} keys(%kvs8)){$Stxt.=sprintf("${Y}plct$W:%s$M%4d$Y pl8z$W:$o%s\n"   ,b8c(sprintf("%3s",b64($kvct))),$kvct,
+    join(' ',     sort(@{$kvs8{$kvct}})));
+    for my $sprt (sort(@{$kvs8{$kvct}})){$w2pm{$sprt}=prim($mxpa++)                             ;}} %kvs8=();#$Stxt.="\n";
   for   my $kyst (sort(keys(%sufz))){push(@{$kvs8{$sufz{$kyst}}},$kyst);} # nice that there are exactly 8 count categories of sufz, 14 PLz, 6 prez (28 totl)
-  for   my $kvct (sort {$b <=> $a} keys(%kvs8)){$Stxt.=sprintf("${G}sfct$W:$M%4d$G sufz$W:$z%s\n",$kvct,join(' ',sort(@{$kvs8{$kvct}})));
-    for my $sprt (sort(@{$kvs8{$kvct}})){$w2pm{$sprt}=prim($mxpa++) unless(exists($w2pm{$sprt}));}} %kvs8=();$Stxt.="\n"; # try to reuse earlier segments
+  for   my $kvct (sort {$b <=> $a} keys(%kvs8)){if(@{$kvs8{$kvct}} == 1 && $kvs8{$kvct}[0] eq  'ion'){
+      $Stxt                                          .=sprintf("${G}sfct$W:%s$M%4d$G sufz$W:${B}ion\n",b8c(sprintf("%3s",b64($kvct))),$kvct);}else{
+      $Stxt                                          .=sprintf("${G}sfct$W:%s$M%4d$G sufz$W:$z%s\n"   ,b8c(sprintf("%3s",b64($kvct))),$kvct,
+    join(' ',     sort(@{$kvs8{$kvct}})));}
+    for my $sprt (sort(@{$kvs8{$kvct}})){$w2pm{$sprt}=prim($mxpa++) unless(exists($w2pm{$sprt}));}} %kvs8=();#$Stxt.="\n"; # try to reuse earlier segments
   for   my $kyst (sort(keys(%prez))){push(@{$kvs8{$prez{$kyst}}},$kyst);}
-  for   my $kvct (sort {$b <=> $a} keys(%kvs8)){$Stxt.=sprintf("${C}prct$W:$M%4d$C prez$W:$z%s\n",$kvct,join(' ',sort(@{$kvs8{$kvct}})));
+  for   my $kvct (sort {$b <=> $a} keys(%kvs8)){my $s8ls='';for my $ssvl (sort(@{$kvs8{$kvct}})){$s8ls.=S(substr('YCMGRBop',b10(substr($ssvl,0,1)) % 8,1)) .
+      "$ssvl ";} $s8ls=~ s/ $//;                $Stxt.=sprintf("${C}prct$W:%s$M%4d$C prez$W:$z%s\n"   ,b8c(sprintf("%3s",b64($kvct))),$kvct,$s8ls);
     for my $sprt (sort(@{$kvs8{$kvct}})){$w2pm{$sprt}=prim($mxpa++) unless(exists($w2pm{$sprt}));}}                # try to keep reusing earlier segments
-  $Stxt  .="${W}gM8ria primes with$B 3$W sepR8 sections:$Y PL$W,$G suffixes$W,$C prefixes$W but with special case 1st$G suffixes$W:$z _$W &&$z ion$W for ";
+  $Stxt  .="${W}gM8ria primes with$B 3$W sepR8 sections:$Y PL$W,$G suffixes$W,$C prefixes$W but with special case 1st$G suffixes$W:$z _$W &&$B ion$W for ";
   $Stxt  .="smaller highest nums...\n";
   %pl8s=();%sufs=();%pres=();%w2pm=();%wh2p=();%kvs8=();@wpls=();%allc=();%allp=();$bbct=$colc=0;$mxpa=1;
   for   my $wsiz (2..$mxws ){my @folk=sort(keys(%{$folc[$wsiz]}));
@@ -131,7 +137,7 @@ if($gm8f){$Stxt.="${W}Gener8 gM8ria primes for names by$B 3$W segments (${Y}PreL
   for   my $pltr (@plrl                        ){for my $sprt  (      @{$ppbs{$pltr}}        ){unless(           exists($pres{$sprt})){
                                                                                                $allp{prim($mxpa)}=$sprt;$pres{$sprt}=prim($mxpa++);}}}
   $Stxt  .="${z}pres${C}By${B}Size$W:$z";for my $sprt (sort {length($a) <=> length($b)} sort(keys(%pres))){
-    $Stxt.= S(substr('YCMGRBop',(length($sprt) % 8)-1,1)) . "$sprt ";} # started wi d8bo colrz by sizez, but rearranged for more distinction
+    $Stxt.= S(substr('YCMGRBop',length($sprt) % 8,1)) . "$sprt ";} # started wi d8bo colrz by sizez, but rearranged for more distinction
   for   my $wsiz (2..$mxws ){my @folk=sort(keys(%{$folc[$wsiz]}));
     for my $fndx (0..$#folk){my $curw=$folk[$fndx];
       if($curw=~ /^(\w*?)([A-Z])8(\w*)$/i){my $pltr=$2;my $sfix='_';$sfix=$3 if(defined($3) && length($3));my $pfix='';$pfix=$1 if(defined($1) && length($1));
@@ -149,7 +155,7 @@ if($gm8f){$Stxt.="${W}Gener8 gM8ria primes for names by$B 3$W segments (${Y}PreL
         elsif(length($twrd) == 2 && $sfxf == 0){$twrd.= $allp{$tprm} if($allp{$tprm} ne '_');$sfxf=1;}
         elsif($twrd =~ /^(ion)$/ && $sfxf == 1){$twrd ="$allp{$tprm}8$twrd";}  # 27,676,799 ostent8ious last (wi 8 pad digitz,4btwn sectnz 4 mor stabl growth)
         else                                   {$twrd ="$allp{$tprm}$twrd" ;}}}
-    $tpmz=~ s/,$//;my $trmc='!';if($wh2p{$kyct} eq $twrd){$trmc=';';$eqct++;}else{$eqfz.="$G$wh2p{$kyct}$W:$B$twrd$W, ";}
+    $tpmz=~ s/,$//;my $trmc='!';if($wh2p{$kyct} eq $twrd){$trmc=';';$eqct++;}else{$eqfz.="$G$wh2p{$kyct}$W:$B$twrd$W, ";} $vwrd=~ s/(ion\s*)$/$B$1/; # tryBlu
     $Stxt.=sprintf("$M%11s %s$z %s$W%s",cma($kyct),b8c(sprintf("%5s",b64($kyct))),$vwrd,$trmc);if(++$colc == 4){$colc=0;$Stxt.="\n";}
   } $eqfz=~ s/, $//;  $Stxt=~ s/\n?$/$W\n/;$colc=0;#Stxt.="eqct:$eqct totl:" . scalar(keys(%wh2p)) . " eqfz:$eqfz"; # rebild Cmz2alreDB fIn4 100% of cur8wrdz
   open my $log8,'>',"$ENV{'HOME'}/.log/8p.ls" or die "Can't open  log 8primes.list file handle: $!";binmode $log8,':encoding(UTF-8)';

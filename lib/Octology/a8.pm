@@ -747,13 +747,15 @@ sub sumb{  my $widt=0;$widt=1 if(exists($ENV{'COLUMNS'}) && $ENV{'COLUMNS'} >= 1
    l  - List in ls order (instead of GroupByModule);    consistNt,EficiNt,doQmNted,&&hOpfuly dMonstr8ive in some wA;
    u  - Undescribed files should be listed too     ; (this was broken for new ~/bin/ dirs, also auto-wide doesn't color tst/ dir properly like -1 mode)
    1  - force each name && description onto 1 line ; (within the current text of sumb, the character [or single-char string] '8' appears precisely 90 times)
+   2  - just start listing 2nd page of descriptions;
    s  - Shuffle list                               ;";}} # H7BM1pTe:sumb word popularity show quite the startling symmetries, patterns, && trends with halves:
 #   'to' => 56, 'from' => 28, 'convert' => 22, 'utility' => 22,  'base' => 13, 'decimal' => 6, 'XML' => 6, 'NotYetInModule' => 6; # these R probably top8 4now
-  my $gbym= 1;for(@_){$gbym=0 if(/^-?-?l/i);} # -l List in ls order (used to be -g GroupByModule to enable what is now default)   # tfcu bdXN top8 abbreV8ions
-  my $shuf= 0;for(@_){$shuf=1 if(/^-?-?s/i);} # -s Shuffle list  # totally forgot 'color' above at 19, 'number'=>10, 'string'=>8; # && Wow! '10'=>10, '64'=> 7
-  my $sunf= 0;for(@_){$sunf=1 if(/^-?-?u/i);} # -u show Undescribed files                                                         # '*'=>19 (butonly18R4 -help)
-  my @ufls=();for(@_){$widt=0 if(/^-?-?1/ );} # -1 force each description to 1 line (so reset width flag)                         # '!'=> 5 (also much in choo)
-  my @bfls= split(/\n/,`ls $ENV{'HOME'}/bin`) if( exists($ENV{'HOME'}) && -d "$ENV{'HOME'}/bin"); # make BinFileLiSt              # 'char'=>6,'rot'=>5,
+  my $gbym= 1;for(@_){$gbym=0 if(/^-?-?[su12]*l/i);} # -l List in ls order (used to be -g GroupByModule 2NAbl the now default)    # tfcu bdXN top8 abbreV8ions
+  my $shuf= 0;for(@_){$shuf=1 if(/^-?-?[lu12]*s/i);} # -s Shuffle list  # totally forgot 'color'abov 19,'number'=>10,'string'=>8; # && Wow! '10'=>10, '64'=> 7
+  my $sunf= 0;for(@_){$sunf=1 if(/^-?-?[ls12]*u/i);} # -u show Undescribed files                                                  # '*'=>19 (butonly18R4 -help)
+  my @ufls=();for(@_){$widt=0 if(/^-?-?[lsu2]*1/i);} # -1 force each description to 1 line (so reset width flag)                  # '!'=> 5 (also much in choo)
+  my $s2pf= 0;for(@_){$s2pf=1 if(/^-?-?[lsu1]*2/i);} # -2 just start listing 2nd page                                             # 'char'=>6,'rot'=>5,
+  my @bfls= split(/\n/,`ls $ENV{'HOME'}/bin`) if( exists($ENV{'HOME'}) && -d "$ENV{'HOME'}/bin"); # make BinFileLiSt
      @bfls= split(/\n/,`ls   /usr/local/bin`) if(!exists($ENV{'HOME'}) && -d   "/usr/local/bin"); # make BinFileLiSt fallback if no ~/bin to /usr/local instead
   my %bfst=( # BinFileSummaryText (originally was listed in default ls order, but now is reorganized into colored module group sections like default output)
     '8ct'   => "a8 *ColrTest of all four b8 and d8 orient8ions for sequence comparison    ",
@@ -773,19 +775,21 @@ sub sumb{  my $widt=0;$widt=1 if(exists($ENV{'COLUMNS'}) && $ENV{'COLUMNS'} >= 1
     'dur8c' => "a8  colorizer for d8 dur8(ion) time-spans   (>Right>-to-<Left<< <Bkwd<)   ",
     'ftst'  => "a8 *colorful listing of Perl File-TeSTs  (and backslashed escape codes)   ",
    #'gnp8'  => "a8  GeNer8 full 256-Pal8 color blocks (with 4 planes of 4 shifts of 16)   ", # mAB these colr pal8 blox shud B new optnz for tstc or tsgr nstd
+   #'h2rl'  => "a8  converter from 6-char HEX to b64 Rgb with 4th char as Low-bit-pairs   ",
     'lodH'  => "a8  load ~/.Hrc into d8a-structure and print out colorfully (like `a8`)   ", # mAB rEtIr once a8 struct&&color becomes more capable
     'lrc'   => "a8 *utility to gener8 ~/.lsrc file from ~/.lrc format   (for LS_COLORS)   ",
-   #'oupd'  => "a8  UPD8 ~/dvl/t8/Octl/Octology/ git repo with l8st files from ~/ dir     ", # this is too fragile to include in t8/Octl/Octology/.git yet
-    'pm2x'  => "a8  Pal8Map to '2' eXtended (based on Color::Similarity::RGB->distance)   ", # add optz2gNr8 clOsSt 8pal8z 3mor tImz2filup all xtrm256colrz
+   #'oupd'  => "a8  UPD8 ~/dvl/t8/Octl/Octology/ git repo with l8st files from ~/ dir     ", # was too fragile, but then got included stable
+    'pm2x'  => "a8 *Pal8Map to '2' eXtended (based on Color::Similarity::RGB->distance)   ", # add optz2gNr8 clOsSt 8pal8z 3mor tImz2filup all xtrm256colrz
     'reso'  => "a8  display RESOlution list gener8or  (parameters will match each line)   ", # mAB color
+   #'rl2h'  => "a8  converter from b64 Rgb with 4th char as Low-bit-pairs to 6-char HEX   ",
     'S'     => "a8 *converter from c8 (col8) V8 format to ANSI eScape codes (FbSGR in )   ",
     'S2'    => "a8  converter from eScape encoded input to new compact c8 (col8) format   ",
     'S2f4'  => "a8  converter from eScape encoded input to old 4-layer c8 (col8) format   ",
     'shfl'  => "a8  SHuFfLe lines or chars (like Games::Cards::Poker->Shuffle &&`shuf`)   ",
     'sS'    => "a8 *Substitute out (regex Strip) eScape codes by types (just Commas -c)   ", # was subS;mAB betr than -c 2`fact 64|b64|coma|perl -pe 's/,//g'`?
     'sumb'  => "a8 *SUMmarize ~/bin/ described files by color category (displaying now)   ",
-   #'supd'  => "a8 *Screeps UPD8 scripts utility into ~/.config/ directory for  client    ",
-    'tstc'  => "a8 *TeST eScapes `S` of c8 `c` format for pal8 colors && SGR attributes   ", # mAB fold in2 tsgr && mv latr2 a8,or mk -blox in tstc?
+   #'supd'  => "a8 *HTTPS://Screeps.Com UPD8 scripts util to ~/.config/ dir for client    ",
+   #'tstc'  => "a8 *TeST eScapes `S` of c8 `c` format for pal8 colors && SGR attributes   ", # mAB fold in2 tsgr && mv latr2 a8,or mk -blox in tstc?
 
     'b10'   => "b8  converter from base-64 number-strings  to  [0-9] base-10 (decimal)    ",
     'b110'  => "b8  converter from base128 number-strings  to  [0-9] base-10 (decimal)    ", # rEnAmd from orig `bb10`
@@ -801,13 +805,18 @@ sub sumb{  my $widt=0;$widt=1 if(exists($ENV{'COLUMNS'}) && $ENV{'COLUMNS'} >= 1
     'dec'   => "b8  converter from HEXadecimal (base-16)   to  [0-9] decimal (base-10)    ",
     'deC'   => "b8  converter from ocTal [0-7] (base- 8)   to  [0-9] deCimal (base-10)    ",
     'fact'  => "b8  FACTorial calcul8or multiplying a number down to 1  (was in `choo`)   ",
+   #'fctz'  => "b8  FaCTorlZ listed up to filling in 48 lines with normally 160 columns   ",
     'fibo'  => "b8  FIBOnacci sequence element calcul8or which takes the decimal index    ",
+   #'fibz'  => "b8  FIBonacZ listed up to filling in 48 lines with normally 160 columns   ",
     'HEX'   => "b8  converter from decimal (base-10)  to UpperCase HEXadecimal   (b16)    ",
     'ocT'   => "b8  converter from deCimal 0-9 (base-10)   to ocTal   [0-7]  (base- 8)    ",
+    'prim'  => "b8  PRIMe num sequence element calcul8or which takes the decimal index    ",
+   #'prmz'  => "b8  PRiMe..Z listed up to filling in 48 lines with normally 160 columns   ",
     'q'     => "b8 *calQl8or of command-line Math::BigFloat  (in vim :r!q 63xx31 | cma)   ", # fix to use oper8or precedence && parens (prolly nEd2B quOtd)
     'rot1'  => "b8  utility to ROT8 each char of passed in b256 number-strings (by 128)   ", # lIk vim Visual sele thN 'g?' 2rot13
     'rotW'  => "b8  utility to ROT8 each char of passed in b64  number-strings (by  32)   ",
     'sum8'  => "b8  SUM8ion function adding number down to 1 (actually just multiplies)   ",
+   #'sumz'  => "b8  SUM8ionZ listed up to filling in 48 lines with normally 160 columns   ",
 
     '8trm'  => "c8  TeRMinal-like applic8ion (a slow experimental SDL backtick wrapper)   ", # mAB add 8trm features to GnomTerm source instead of SDL App
     'c8'    => "c8  `lsd8` deriv8ive with some cut and hoping to also do cat eventually   ", # flesh out interface for cut part at least (&& mAB cat too)
@@ -865,6 +874,21 @@ sub sumb{  my $widt=0;$widt=1 if(exists($ENV{'COLUMNS'}) && $ENV{'COLUMNS'} >= 1
     'pimp'  => "    NotYetInModule,`zinf`  wrapper PipsInteractiveMusicPlaylister audio   ", # mAB rEtIr sinc g3 is alreD gr8 (but consider rand playlistz)
     'shot'  => "   *NotYetInModule,`scrot` wrapper utility to autom8 basic screen SHOTs   ",
     ); # mAB add reverse oper8ion with scaling back down4neg8iv option
+  if($s2pf){%bfst=( # BinFileSummaryText (getting set to just 2nd page d8a)
+    'gnp8'  => "a8  GeNer8 full 256-Pal8 color blocks (with 4 planes of 4 shifts of 16)   ", # mAB these colr pal8 blox shud B new optnz for tstc or tsgr nstd
+   #'h2rl'  => "a8  converter from 6-char HEX to b64 Rgb with 4th char as Low-bit-pairs   ",
+    'oupd'  => "a8  UPD8 ~/dvl/t8/Octl/Octology/ `git` repo with l8st files from ~/ dir   ", # was too fragile, but then got included as seeming stable enough
+   #'rl2h'  => "a8  converter from b64 Rgb with 4th char as Low-bit-pairs to 6-char HEX   ",
+    'supd'  => "a8 *util to UPD8 HTTPS://Screeps.Com Scripts ~/.config/ for game client   ",
+    'tstc'  => "a8 *TeST eScapes `S` of c8 `c` format for pal8 colors && SGR attributes   ", # mAB fold in2 tsgr && mv latr2 a8,or mk -blox in tstc?
+
+   #'fctz'  => "b8  FaCTorlZ listed   (takes lines-1 47 and 1 b64 or 2 b256 parameters)   ", # `fctz 47 1` is like `fctz | b64` just with different nwln wrapz
+   #'fibz'  => "b8  FIBonacZ listed up to filling in 48 lines with normally 160 columns   ",
+   #'prmz'  => "b8  PRiMe..Z listed up to filling in 48 lines with normally 160 columns   ",
+   #'sumz'  => "b8  SUM8ionZ listed up to filling in 48 lines with normally 160 columns   ",
+
+    'tstn'  => "p8  TeST random Navig8ion of A* paths thru HTTPS://Screeps.Com maps d8a   ", # new PurPle colr p8 section here is re-comNted sinc just tst4now
+    );}
 # HBPL7end:reordered by module sections,moved dic from wrong b8 to d8 section,retired ptold sinc shudBeasy2rEmk in d8 if evr nEdedAgN,mAd nw d8ow 2 calc dow;
 #   'dow'   => "Time::DayOfWeek *utility taking Year, Month, and Day parameters or now    ",
 #   'ptold' => "Time::PT  original 5-character PipTime utility from before  March 2006    ", # mAB rEtIr or fold code in2ptcnv?
@@ -912,6 +936,7 @@ sub sumb{  my $widt=0;$widt=1 if(exists($ENV{'COLUMNS'}) && $ENV{'COLUMNS'} >= 1
              'Math::BigFloat'=>'F:C', 'C::S'=>'Zb','Curses::Simp'=>'Zb', 'C::Simp'=>'Zb','DiSTance'=>'F:C','Octology::d8'=>'F:R',},
                             'file'=>{'~' =>'F:B','\/'=>'F:Y','\.'=>'Ib','fn'=>'Mb','`' =>'yk','cf'=>'F:G','\*'=>'W1','\+'=>'Rb','mixer'=>'F:o','Date'=>'L:R',
      'strings'=>'F:8','ANSI'=>'ob', ',' =>'Lk','bfr8'=>'F:B','col8'=>'F:C','dur8'=>'F:R',      '\('=>'Wn','\)'=>'Wn','\['=>'ob','\]'=>'ob','ASCII'=>'Ab',
+                                             '\.config'=>'F:B',
   'EDITOR'=>'Un','LS_COLORS'=>'Yn','bin'=>'F:B','\.bak'=>'F:B','\.Hrc'=>'F:M','\.psf'=>'F:M','\.f0nt'=>'Cg','\.xml'=>'ob','\.xtb'=>'F:B', # SKpspecialz
       'down'=>'F:U','SKpz'=>'F:7',   '!' =>'Fk','HTTP' =>'F:H','Org'=>'F:X','Rolz'=>'F:M','gst123'=>'F:G','git'=>'F:G','kpcli'=>'F:G','YouTube'=>'5r',
       'Perl'=>'Cb' ,'vim' =>'Vb','Unix' =>'Xb', 'HTTPS'=>'F:H','Com'=>'F:B','Screeps'=>'F:C',            'text'=>'F:F', 'time'=>'F:F',    'U2b'=>'5r',
@@ -976,9 +1001,12 @@ sub sumb{  my $widt=0;$widt=1 if(exists($ENV{'COLUMNS'}) && $ENV{'COLUMNS'} >= 1
         $bfst{ $bfls[$bfle - $_]}=~ s/(`)([^`]+)(`)/$l$1$h$2$l$3$i/g; # Xplicitly do baktikd CommandFile 2gether 1st (Cmz2wrk wL)
         $h=S($bftc{'file'}{'~' });$s=S($bftc{'file'}{'bin'});
         $l=S($bftc{'file'}{'\/'});$d=S($bftc{'file'}{'\.' });
-        $bfst{ $bfls[$bfle - $_]}=~ s/(~)(\/)(bin|lib)(\/)    /$h$1$l$2$s$3$l$4$i/gx;$s=S($bftc{'file'}{ 'mixer'}); # get  /dev/mixer dir
+        $bfst{ $bfls[$bfle - $_]}=~ s/(~)(\/)(dvl)(\/)(t8)(\/)(Octl)(\/)/$h$1$l$2$s$3$l$4$s$5$l$6$s$7$l$8$i/gx;
+        $bfst{ $bfls[$bfle - $_]}=~ s/(~)(\/)(\.)(config )(\/)/$h$1$l$2$d$3$h$4$l$5$i/gx;
+        $bfst{ $bfls[$bfle - $_]}=~ s/(~)(\/)(bin|lib    )(\/)/$h$1$l$2$s$3$l$4$i/gx;
+        $bfst{ $bfls[$bfle - $_]}=~ s/(~)(\/)(\s)             /$h$1$l$2$3$i/gx      ;$s=S($bftc{'file'}{ 'mixer'}); # get  /dev/mixer dir
         $bfst{ $bfls[$bfle - $_]}=~ s/   (\/)(dev)(\/)(mixer )/$l$1$h$2$l$3$s$4$i/gx;$s=S($bftc{'file'}{'\.bak' }); # get ~/ *  / dirz
-        $bfst{ $bfls[$bfle - $_]}=~ s/   (\s)(\.)(bak)(\/)    /$1$d$2$s$3$l$4$i/gx  ;$s=S($bftc{'file'}{'\.Hrc' }); # get   .bak/ dirz
+        $bfst{ $bfls[$bfle - $_]}=~ s/   (\s)(\.)(bak    )(\/)/$1$d$2$s$3$l$4$i/gx  ;$s=S($bftc{'file'}{'\.Hrc' }); # get   .bak/ dirz
         $bfst{ $bfls[$bfle - $_]}=~ s/(~)(\/)(\.)([Hl]s?rc   )/$h$1$l$2$d$3$s$4$i/gx;$s=S($bftc{'file'}{'\.psf' }); # get ~/.*rc  filz
         $bfst{ $bfls[$bfle - $_]}=~ s/   (\s)(\()(psf )(\s|\))/$1$2$s$3$i$4/gx      ;                               # get   (psf)
         $bfst{ $bfls[$bfle - $_]}=~ s/   (\s)(\.)(psf )(\s   )/$1$d$2$s$3$i$4/gx    ;$s=S($bftc{'file'}{'\.f0nt'}); # get   .psf  filz
