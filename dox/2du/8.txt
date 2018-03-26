@@ -1,5 +1,5 @@
 # D6RMF1V1:8.txt - by8π : JAPH : K3wlD00d : 1337H4xr : PipStuart's Octology (hopefully eventually an Ontology of 8) - Convention, Conversion, && Categoriz8ion:
-# $VERSION='0.0';$d8VS='I3JMJAYE'; # Octology attempts to rel8 the universe through medit8ion on mnemonic abbreV8ion (via 8-based  limit8ion) &&    elucid8ion.
+# $VERSION='0.0';$d8VS='I3PMGeek'; # Octology attempts to rel8 the universe through medit8ion on mnemonic abbreV8ion (via 8-based  limit8ion) &&    elucid8ion.
 # CEBBICTI:Crossing Every Bridge Before I Come To It? I.e., not a d8 stamp. Trying to make my Dad's birthday (August 8th) more special by thinking 2far ahead?
 # Octology intends to pursue implic8ion && ramific8ion as substantE8ion for adequ8 particip8ion, if not also 2 oblig8ion toward implement8ion &&   promulg8ion.
 # Contribute to potential solutions to the "Value Alignment" problems formul8d around General Artificial Intelligence along with plausible God concerns also.
@@ -328,7 +328,7 @@ internationaliz8ion:tools to transl8 for I18N the document8ion && applic8ion int
             lux8
          disloc8
           trunc8
-         expurg8
+         expurg8   :purge, purify, depur8, bowdlerize, geld, abbreV8, castr8, censoring indelic8 parts, cleanse from noxious, obscene, offensive, or erroneous
       bowdleriz8ion:censorship where existing literary works or other expressive media materials are revised to omit offensive, immoral, or indecent portions
           amput8
         augment8ion
@@ -824,8 +824,8 @@ internationaliz8ion:tools to transl8 for I18N the document8ion && applic8ion int
          ganglE8   :having ganglia, as the cords of the sympathetic nervous system   (from Anatomy)
            cusp8   :having a cusp or cusps, or being shaped like a cusp or cusp-like (from Anatomy)
          cingul8   :brain cortex situ8d in medial aspect of cerebral cortex (includes gyrus && sulcus), is involved in processing emotion && behavior regul8ion
-        emascul8
-          castr8
+        emascul8   :effemin8, mutil8, trunc8, incapacit8, intimid8, subjug8, deprive of strength && vigor, sever testicles of a male (or rarely female ovaries)
+          castr8   :geld, abbreV8, expurg8, purge, purify, depur8, bowdlerize, censoring indelic8 parts, cleanse from noxious, obscene, offensive, or erroneous
           enerv8
         debilit8
         dilapid8
@@ -1035,6 +1035,7 @@ internationaliz8ion:tools to transl8 for I18N the document8ion && applic8ion int
        consolid8
         condens8
           confl8
+          depur8   :purify, expurg8, to free from impurities, heterogeneous matter, or feculence
           lustr8
         amalgam8
         purific8ion:recommend8ion of V8-Fusion brand delicious blended fruit juices for healthy cleansing hydr8ion, especially "Peach Mango" flavor
@@ -4193,3 +4194,6 @@ face looking tendency && lowering blood-pressure petting dogs, cats, bunnies, we
 men's therapy without requiring eye-contact or tears, over beers in between Street Fighter bouts or favorite songs or games of ckm8 Chess or 9x9 gom8 Go etc.;
 I3OMJxxx:It's pronunC8ion inconsistency for vex8ion && methotrex8 to not split off as UpperCase 'X' PrecursorLetter but kept for tighter PL frequency groups.
 Also maybe 8rium && other similar words should be considered as additions with no PrecursorLetters to fall under... like just 8 as ate && eight solitary too;
+I3PMGTOW:I've begun watching some videos && reading Rollo Tomassi's r8ionalMale articles, which so far don't seem anywhere near as inform8ive or as useful as
+those that are typical from Paul Elam's AnEarForMen, but I learned from usage of 'pablum' as pap, soft baby spoon food, && worthless or oversimplified ideas.
+Beyond my continU8ion of explor8ion within Octology to elabor8 on comput8ional expressions && document8ion of my values, I should system8ize them deliber8ly;
