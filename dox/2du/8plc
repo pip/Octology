@@ -210,9 +210,10 @@ if($gm8f){$Stxt.="${W}Gener8 gM8ria primes for names by$B 3$W segments (${Y}PreL
 # try2loop avrgz abov nstd but mA nEd special wrapz dn from 26 B4 6 to 6:22, 7:20, 8:17, ... shud B formUla or Dtectabl
 # old notez4wsiz 2: this is probably more useful mean average summariez && think of prime factorz or othr wayz to represent mostly unique partz
 #                5: try to cut 2 (or 6 if adding 4 N8 varE8ionz bakin) to get 5z dn2 3rd rel8ively clean concise set of 96 to make another sumb page out of
-  } $Stxt.="${C}cutz$W:$Y 2$W:${G}N8 $o(${K}b8 c8 d8 g8 w8$o)$Y  3$W:${G}DN8$Y  4$W:${G}NfN8 SSN8 $o(${K}ckm8 pal8 upd8$o)$Y  5$W:${G}m8rix coll8$Y";
+  } $Stxt.="${C}cuts$W:$Y 2$W:${G}N8 $o(${K}b8 c8 d8 g8 w8$o)$Y  3$W:${G}DN8$Y  4$W:${G}NfN8 SSN8 $o(${K}ckm8 pal8 upd8$o)$Y  5$W:${G}m8rix coll8$Y";
     $Stxt.="$Y  6$W:${G}?$Y  7$W:${G}?$Y ...\n"; # hopefully above -g will align a b10 line over b64 lines
   # try new small set of sequential prime number alloc8ions && then multiply recurring subset primes then try to refactor && reconstruct from gr8st down
+  # I3QMIGHT:now 128 (2=>9,3=>34,4=>85) entries left after above cuts,but may want to splice more drastically down 32 more to top 96ish for next bin sumb page;
   $folc[2]{ 'N8'}=$folc[2]{  'b8'}=$folc[2]{  'c8'}=$folc[2]{  'd8'}=$folc[2]{  'g8'}=$folc[2]{  'w8'}=1;
   $folc[3]{'DN8'}=$folc[4]{'NfN8'}=$folc[4]{'SSN8'}=$folc[4]{'ckm8'}=$folc[4]{'pal8'}=$folc[4]{'upd8'}=1;
   $folc[5]{'m8rix'}=$folc[5]{'coll8'}=1; # need to try to put cuts back in so PL counts can match again
