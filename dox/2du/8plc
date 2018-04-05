@@ -141,10 +141,10 @@ if($gm8f){$Stxt.="${W}Gener8 gM8ria primes for names by$B 3$W segments (${Y}PreL
                                                                                                $allp{prim($mxpa)}='ion';$sufs{'ion'}=prim($mxpa++);
   for   my $kvct (sort {$b <=> $a} keys(%kvs8) ){for my $sprt  ( sort(@{$kvs8{$kvct}})       ){$allp{prim($mxpa)}=$sprt;$pl8s{$sprt}=prim($mxpa++);
                                                                                                                 unshift(@plrl,$sprt)              ; }}
-  for   my $pdig (0..3                         ){                                              $allp{prim($mxpa++)}="$pdig";} # pad4digitz2grow curNt stably?
+ #for   my $pdig (0..3                         ){                                              $allp{prim($mxpa++)}="$pdig";} # pad4digitz2grow curNt stably?
   for   my $kyst (sort {length($a) <=> length($b)} sort(keys(%sufz))){if($kyst !~ /^(_|ion)$/){$allp{prim($mxpa)}=$kyst;$sufs{$kyst}=prim($mxpa++); }}
-  for   my $pdig (4..7                         ){                                              $allp{prim($mxpa++)}="$pdig";} # digz wil nEd2ch if evrin spLng
-  for   my $pltr (@plrl                        ){for my $sprt  (      @{$ppbs{$pltr}}        ){unless(           exists($pres{$sprt})){
+ #for   my $pdig (4..7                         ){                                              $allp{prim($mxpa++)}="$pdig";} # digz wil nEd2ch if evrin spLng
+  for   my $pltr (@plrl                        ){for my $sprt  (      @{$ppbs{$pltr}}        ){unless(           exists($pres{$sprt})){ # mABtry rvrs @plrl?
                                                                                                $allp{prim($mxpa)}=$sprt;$pres{$sprt}=prim($mxpa++);}}}
   $Stxt  .="${z}pres${C}By${B}Size$W:$z";my $rtot=11;for my $sprt (sort {length($a) <=> length($b)} sort(keys(%pres))){
     if($rtot + length($sprt) + 1 >= $clmz){ $Stxt.="\n";$rtot=0;}
@@ -166,7 +166,7 @@ if($gm8f){$Stxt.="${W}Gener8 gM8ria primes for names by$B 3$W segments (${Y}PreL
           else                                 {$twrd ="$allp{$tprm}8"     ;}} # stil quite simpl3sections always in ordr (Xcept special _|ion sufxz)
         elsif(length($twrd) == 2 && $sfxf == 0){$twrd.= $allp{$tprm} if($allp{$tprm} ne '_');$sfxf=1;}
         elsif($twrd =~ /^(ion)$/ && $sfxf == 1){$twrd ="$allp{$tprm}8$twrd";}  # 27,676,799 ostent8ious last (wi 8 pad digitz,4btwn sectnz 4 mor stabl growth)
-        else                                   {$twrd ="$allp{$tprm}$twrd" ;}}}
+        else                                   {$twrd ="$allp{$tprm}$twrd" ;}}}# 25,287,721 ostent8ious last (after a few additions && removing digit padding)
     $tpmz=~ s/,$//;my $trmc='!';if($wh2p{$kyct} eq $twrd){$trmc=';';$eqct++;}else{$eqfz.="$G$wh2p{$kyct}$W:$B$twrd$W, ";} $vwrd=~ s/(ion\s*)$/$B$1/; # tryBlu
     if($pg1f){last if($kyct> 103754);$Stxt.=sprintf("%s$z%s$W%s",b8c(sprintf("%4s",b64($kyct))),$vwrd,$trmc);if(++$colc == 6){$colc=0;$Stxt.="\n";}}
     else     {    $Stxt.=sprintf("$M%11s %s$z %s$W%s",cma($kyct),b8c(sprintf("%5s",b64($kyct))),$vwrd,$trmc);if(++$colc == 4){$colc=0;$Stxt.="\n";}}

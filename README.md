@@ -1,5 +1,5 @@
 # Octology
-The ontology of 8. `$VERSION='0.0';$d8VS='I2PLIGHT';`
+The ontology of 8. `$VERSION='0.0';$d8VS='I45MD8m8';`
 
 This is basically a public preview of my early development files. I am not yet ready for serious collaboration, but welcome any sort of feedback.
 
@@ -12,11 +12,11 @@ Many `bin/` commands print useful Help text when given a `-h` parameter. If your
  * `tsgr` - Test Select Graphic Rendition additional text attributes
  * `gnp8` - GeNerate a complete Pal8 mapping of b64 into 256-colors
  * `pal8` - set first 16-color PALette ("8") for terminal or console
- * `calN` - display a CALeNdar of the colored d8-based current Year
+ * `calN` - display a CALeNdar of the colored d8-based recent Years
  * `lodH` - LOaD ~/.Hrc d8a-file to parse then print colored fields
 
 ## Current Top8 Screen Shots
-![Octology-sumb-shot_1614x952-HC8L77m5](https://github.com/pip/Octology/raw/master/gfx/sho/Octology-sumb-shot_1614x952-HC8L77m5.png "Octology-sumb-HC8L77m5")
+![Octology-sumb-shot_1614x952-I45MD8m8](https://github.com/pip/Octology/raw/master/gfx/sho/Octology-sumb-shot_1614x952-I45MD8m8.png "Octology-sumb-I45MD8m8")
 ![Octology-tstn-shot_1614x952-HC8L7J3A](https://github.com/pip/Octology/raw/master/gfx/sho/Octology-tstn-shot_1614x952-HC8L7J3A.png "Octology-tstn-HC8L7J3A")
 ![Octology-dpip-shot_1614x902-HBBLJowx](https://github.com/pip/Octology/raw/master/gfx/sho/Octology-dpip-shot_1614x902-HBBLJowx.png "Octology-dpip-HBBLJowx")
 ![Octology-lsd8-shot_1614x902-HBBLJagR](https://github.com/pip/Octology/raw/master/gfx/sho/Octology-lsd8-shot_1614x902-HBBLJagR.png "Octology-lsd8-HBBLJagR")

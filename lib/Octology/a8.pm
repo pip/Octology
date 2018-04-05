@@ -51,7 +51,7 @@ our @EXPORT= qw(bfr8c    b8c    d8c    dur8c       a8c   a8colr      h2rl   rl2h
     $z    $k    $r    $o    $y    $g     $c $SKpb    $m    $p    $w  tstc    $K    $R    $O    $Y    $G    $C    $B    $M    $P    $W    %p622 %p222
  $tnhf $ucdf  spff  spfd  spfX   shfl  reso $auth %cmsp %p8k2 @p82k  chp8     S2f4 c2f4 dm2u cdst %crgb %cbrt @snls @mrls %cdrd %cdrn    %nrgb         gnp8);
  # of 52 posibl sngl-letr var nmz,a8 Xportz 20,$b && $a unavail,so shudB thEs30 lFt4quik shortSt nAmz: 'def hij l n  q stuv x', 'A  DEF HIJ L N  Q STUV X Z'
-our $VERSION='0.0';my  $d8VS='I1OLB8dh';our $auth='PipStuart <Pip@CPAN.Org>'; # above not exporting $b since collidez with sort{$a  <=> $b}
+our $VERSION='0.0';my  $d8VS='I45MCalN';our $auth='PipStuart <Pip@CPAN.Org>'; # above not exporting $b since collidez with sort{$a  <=> $b}
 our $ucdf= eval('use Color::Similarity::RGB qw(distance);1') || 0; # try2set UseColorDistanceFlag if optional module is available
 our @Monz=qw(January February March   April     May June July   August September October November December);our @Mon=();push(@Mon,substr($_,0,3)) for(@Monz);
 our @Dayz=qw(Sunday  Monday   Tuesday Wednesday Thursday Friday Saturday                                  );our @Day=();push(@Day,substr($_,0,3)) for(@Dayz);
@@ -831,7 +831,7 @@ sub sumb{  my $widt=0;$widt=1 if(exists($ENV{'COLUMNS'}) && $ENV{'COLUMNS'} >= 1
     'wdht'  => "c8  Curses::Simp utility shows resize terminal dimension WiDth x HeighT   ",
     'xx'    => "c8  XxX square teXt eXpansion utility (which scales with 8trm overdraw)   ",
 
-    'calN'  => "d8  caleNdar utility that shows the current Year (with 1 week per line)   ", # add good optionz like `cal -3` && 2,3,4,6,12-column modez
+    'calN'  => "d8 *caleNdar utility showing the past many Years (with 1 week per line)   ", # add good optionz like `cal -3` && 2,3,4,6,12-column modez
     'd8'    => "d8 *DateTime stamps and conversion util (-a ANSI color, -f Full format)   ",
     'd8g'   => "d8  DateTime stamp  utility as header for G-mails with  Gerry  (my Dad)   ",
     'd8ow'  => "d8 *DayOfWeek utility taking Year, Month, && Day as d8 YMD param or now   ",

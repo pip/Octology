@@ -148,4 +148,4 @@ HTTPS://YouTu.be/Z7n0cevXj-c "A psychologist, atheist, and Christian discuss God
 i) The fundamental religious idea is that there are modes of being which nobly justify the suffering that is a necessary consequence of human limit8ions.
 # "Being is suffering tainted by malevolence, and so what's the meaning? There's pain to alleV8. There's chaos to confront. There's order to establish and
 #  revivify. There's evil to constrain, not least in our own hearts, and that's meaning enough for everyone." -Dr. Jordan Peterson's closing advice st8ment;
-HTTPS://YouTu.be/orJlObCJuUM "The Trap of the Hero" # I3RM8MAN:8mins of JohnTheOther advising rejection of the Hero myth as primary useful narr8d archetype;
+HTTPS://YouTu.be/orJlObCJuUM "The Trap of the Hero" # I3RM8MAN:8mins of JohnTheOther JohnHembling advising rejection of Hero myth as primary useful archetype;

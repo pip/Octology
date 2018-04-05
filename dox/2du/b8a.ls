@@ -1,24 +1,26 @@
-# F5VM5oZT:b8a.ls crE8d by PipStuart <Pip@CPAN.Org> to sepR8 Octology fE8ure priorities for scheduled milestone release goals;$VERSION='0.0';$d8VS='I3PM00DY';
+# F5VM5oZT:b8a.ls crE8d by PipStuart <Pip@CPAN.Org> to sepR8 Octology fE8ure priorities for scheduled milestone release goals;$VERSION='0.0';$d8VS='I45M789A';
 # Note:These goals should lean toward ambitious more than easy, yet be flexible enough to allow for needed adapt8ion && l8r revisions to upd8 main priorities;
-0.0 E=8sln:8psilon:HB8 WedNov 8th2017:~1Month  from  HAD:tidying everything initially released;
-0.0 Z= z8a:  zeta :I18 MonJan 8th2018:~2Monthz from 8sln:working know.ls;
-0.0 H= h8a:  heta :I28 ThuFeb 8th2018:~1Month  from  z8a:upd8ing 8plc;
-0.0 T=th8a: theta :I48 SunApr 8th2018:~2Monthz from  h8a:shifted 1.0 ramp to 2019, leaving most of 2018 as 0.0 plan for future version stages up to release;
-0.0 A=alf8: alpha8:I58 TueMay 8th2018:~1Month  from th8a:?;
-0.0 B= b8a:  beta :I78 SunJul 8th2018:~2Monthz from alf8:?;
-0.0 C=cnd8:candid8:I88 WedAug 8th2018:~1Month  from  b8a:?;
-0.0 R=rls8:releas8:IA8 MonOct 8th2018:~2Monthz from cnd8:refine all descriptions of stage plans below;
-0.1 E=8sln:8psilon:IB8 ThuNov 8th2018:~1Month  from rls8:upd8 this plan 2 EnumEr8 E fE8urEz DsIrEd 4 Each of thE following d8d milEstonE stagEz && fit2 1pagE;
-0.2 Z= z8a:  zeta :J18 TueJan 8th2019:~2Monthz from 8sln:try2 complete all major core module XperimNt8ion&&shift gearZ in2 stabiliZing all Z 4m@Z&&interfaceZ;
-0.3 H= h8a:  heta :J28 FriFeb 8th2019:~1Month  from  z8a:flesH out core docUmNt8ion witH interactive demonstr8ionz of H && upd8 g8 4future collabor8 brancHez;
-0.4 T=th8a: theta :J48 MonApr 8th2019:~2Monthz from  h8a:elabor8 Thorough auTom8d TsTz of all major fE8urez planned 4 alpha8 && gNer8 valid8ion T TsT sumRiez;
-0.5 A=alf8: alpha8:J58 WedMay 8th2019:~1Month  from th8a:core fE8urez should be well implMNted && dMonstr8d to hopefully inspire otherz 2 help me AlphA-tst A;
-0.6 B= b8a:  beta :J78 MonJul 8th2019:~2Monthz from alf8:main fE8urez should all solidify with intNt2 solicit more developerz 4wider B B8a-tsting && feedBack;
-0.8 C=cnd8:candid8:J88 ThuAug 8th2019:~1Month  from  b8a:main fE8urez should be polished 4 pOtNtial release Candid8 C in prepR8ion 4 fInal tsting && feedbaCk;
-1.0 R=rls8:releas8:JA8 TueOct 8th2019:~2Monthz from cnd8:1st complete majoR public Release of fE8uReful Octology v1.0 to be made fRom GitHub oveR to the CPAN;
+0.0 E=8sln:8psilon:HB8 WedNov 8th2017:~1Mnth from  HAD:d8 FriOct13th2017 saw initial public release, then spent following weeks tidying most glaring issues;
+0.0 Z= z8a:  zeta :I18 MonJan 8th2018:2Mnthz from 8sln:working know.ls mainly as new list of Dr. Jordan Peterson's advice, quotes, video links, && comments;
+0.0 H= h8a:  heta :I28 ThuFeb 8th2018:1Mnth  from  z8a:upd8ing 8plc to mainly explore more colorful 8-word analysis && organiz8ions, attempting some gM8ria;
+0.0 T=th8a: theta :I48 SunApr 8th2018:2Mnthz from  h8a:shifted 1.0 ramp to 2019, leaving most of 2018 as 0.0 plan for future version stages up to a release;
+0.0 A=alf8: alpha8:I58 TueMay 8th2018:1Mnth  from th8a:?plan && prioritize fE8ures into l8r stages?;
+0.0 B= b8a:  beta :I78 SunJul 8th2018:2Mnthz from alf8:?;
+0.0 C=cnd8:candid8:I88 WedAug 8th2018:1Mnth  from  b8a:?;
+0.0 R=rls8:releas8:IA8 MonOct 8th2018:2Mnthz from cnd8:refine all descriptions of stage plans below;  # End 2018 public experiment8ion with no collabor8ion;
+0.1 E=8sln:8psilon:IB8 ThuNov 8th2018:1M from 0.0 rls8:upd8 this plan 2 EnumEr8 E fE8urEz DsIrEd 4 Each of thE following d8d milEstonE stagEz && fit2 1pagE;
+0.2 Z= z8a:  zeta :J18 TueJan 8th2019:2Mnthz from 8sln:try2 complete all major core module XperimNt8ion&&shift gearZ in2 stabiliZing all Z 4m@Z&&interfaceZ;
+0.3 H= h8a:  heta :J28 FriFeb 8th2019:1Mnth  from  z8a:flesH out core docUmNt8ion witH interactive demonstr8ionz of H && upd8 g8 4future collabor8 brancHez;
+0.4 T=th8a: theta :J48 MonApr 8th2019:2Mnthz from  h8a:elabor8 Thorough auTom8d TsTz of all major fE8urez planned 4 alpha8 && gNer8 valid8ion T TsT sumRiez;
+0.5 A=alf8: alpha8:J58 WedMay 8th2019:1Mnth  from th8a:core fE8urez should be well implMNted && dMonstr8d to hopefully inspire otherz 2 help me AlphA-tst A;
+0.6 B= b8a:  beta :J78 MonJul 8th2019:2Mnthz from alf8:main fE8urez should all solidify with intNt2 solicit more developerz 4wider B B8a-tsting && feedBack;
+0.8 C=cnd8:candid8:J88 ThuAug 8th2019:1Mnth  from  b8a:main fE8urez should be polished 4 pOtNtial release Candid8 C in prepR8ion 4 fInal tsting && feedbaCk;
+1.0 R=rls8:releas8:JA8 TueOct 8th2019:2Mnthz from cnd8:1st complete majoR public Release of fE8uReful Octology v1.0 to be made fRom GitHub oveR to the CPAN;
 
-# 2du:rEthnk top stAg IDaz,rEordr bSt ItMz hEr,brk old ItMz dn&&bild bak up in2 stAgz cklstz,rE4m@ AgN in2 dNse 1pAg Year2018 plan4 prep v1.0 (or4 2019nstd?);
-T= # stil nEd2stuD&&XperimNt wi thEs taskz&&ordr l8r stuf&&mAB EvNtual plan4 8consistNt nIc dvl stAgz perYear,but XperimNt8ion mA nEd2rEmAn pRtofall until1.0;
+# 2du:rEthnk top stAg IDaz,rEordr bSt ItMz hEr,brk old ItMz dn&&bild bak up in2 stAgz cklstz,rE4m@ AgN in2 dNse 1pAg Year plan4 prep v1.0;
+#   contMpl8 kEpng bin top96 + ~4 Xtra prOmOt cndid8z or Xpndng2nXt sumb pAg4 192,mAB add r8ngz4cmplEtnS|valU|nEd2Bdistinct vs.combInabiliT|orig|novLT|plAyabl,
+#   considr mkng h2rl|rl2h|sumz|fibz|fctz|prmz in bin,eval sloc,stuD grepz && mk new g wi PCRE dflt nstd of SKpd altrn8ion meta-pRNz|pIpz,plan morgmz&&dvlUtlz,
+A= # stil nEd2stuD&&XperimNt wi thEs taskz&&ordr l8r stuf&&mAB EvNtual plan4 8consistNt nIc dvl stAgz perYear,but XperimNt8ion mA nEd2rEmAn pRtofall until1.0;
   a8:sS add optn2cnv SKpz in2 HTM, upd8 8plc 2fit term wrapng long lInz,add afewgd gM8ria 4mz,Xtract sectnz in2 cnt8 && nw `8c` lIk wc,
   b8:mkBigFloat objX,add cnfgUr8ion4 constructor in BaseTransl8&&4m@ing out stringific8ionz,Xplor Xpanding objX to represent Unumz,
   c8:fix ckm8 long PGN warnz&& -c SimpXit cordump,figure out if possible to enable && receive FingerTouch Wacom tablet events,or ideally get stylus pressure,
@@ -31,15 +33,15 @@ T= # stil nEd2stuD&&XperimNt wi thEs taskz&&ordr l8r stuf&&mAB EvNtual plan4 8co
   a8:lrc mk sure can S on xx section hedrz wi FbS,
   Simp:addcolrlayrz&&SGRf as tied sectnz d8a,
   a8:rm[cS]2f4,
-  b8:s8 stRt as sort -n |some shfl flag|b8 b64(wi%bfr8)|b256|d8|dur8 && othr bSt optnz(&&mAB s8 shudBin a8 lIk shfl nstd of b8?),
+  b8:s8 stRt as sort -n |some shfl flag(wi seed ctrl)|b8 b64(wi%bfr8)|b256|d8|dur8 && othr bSt optnz(&&mAB s8 shudBin a8 lIk shfl nstd of b8?),
   a8:stuDshuf&&rm shfl,add([os]upd)as aliasz?,
-  c8:addSGR|Simp|cut&&cat,
+  c8:addSGR|Simp|cut&&cat|sloc,
   c8:rEwrIt8trm 2rEquSt f0nt layr from S2,
   c8:prym fix(b8),8trm fix basic cursor,autOnwlIn aftr cmd wrap,mk nw lAyrz 4full 256colrz,
   c8:8trm mk SGRs && cursr blink,mk input key auto-scrl botm,mk drag hilite copy clipbord,mk running .pal8 chng colrz,addOverDraw&&AutoF0ntPigyBackOnColrToglz,
   d8:fix dic 4mor lIn joinz&&add retro cmnt failz wi suggStnz,dup dic log as mn man wrapr,
   d8:mvUtl:bak+e 2 d8:bk+e wi!$TTY wich goes up from lib/ dirz&&hndlzUTF8flnmz,,
-  f8:XtNdf0nt b64 2UTF8,cma nstd of dash sepR8,9x18,2x2,3x3 resoz,&&pal8z2 b64RGBLowbitz inHrc2,
+  f8:XtNdf0nt b64 2UTF8,cma nstd of dash sepR8,9x18,2x2,3x3 resoz,pal8:add 256colrz wi dflt b64RGBLowbitz,upd8 Hrc&&all pal fIlz wi l8st RGBL,
   a8:fix`a8`4lodH wi rEd&&wrIt wi quOtng,a8:mk styl 2gNr8.styl,
   a8:mo as basic vim-like UTF8 colr ReadKey pager2push more than1page of dic,mn,lsd8,etc output in2,addmor -help,upd8 sumb,cmpIl orpie src,mknwTop8shotz&&push,
   b8:q rEwrIt precedNce,
@@ -53,6 +55,8 @@ T= # stil nEd2stuD&&XperimNt wi thEs taskz&&ordr l8r stuf&&mAB EvNtual plan4 8co
   d8:sync lsd8 logic2a8:c8fn,
   f8:pikTop64flet&&pr0gfIlzinHrc,XtNd pal8 2 64or of256,
   f8:mk new 8let from tiglet->flet,
+  U8:Xpct:g3-style wrapper for ag where apt already nicely improves on plain apt-get but could be cool to analyze summariz8ion proportions in blank line above
+    botm progress line showing literal 100ths with low common denomin8or then closest to very small digits to maybe 8ths with ticked bar-graph && deeper b64s?,
 
 # 2du-l8r: (mAB 2 insrt abov) ... alsO considr wethr kEpng bin limit ~96 is bSt or 2 add othr dirz|sumb pAgez or what (&& mAB EqualIz a8 27 b8 21 to both 24?)
  bin:mAB upd8 curs as a8:crsr,mAB mv f?ts(t?|gr) 2 .?t/ (aded2path) && t8.pm,stuD && fnsh upd8ng kpc,mAB mv shot in2 d8.pm,think abou othr XeQtblz worth adng,
