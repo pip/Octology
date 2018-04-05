@@ -1,5 +1,5 @@
 # D6RMF1V1:8.txt - by8π : JAPH : K3wlD00d : 1337H4xr : PipStuart's Octology (hopefully eventually an Ontology of 8) - Convention, Conversion, && Categoriz8ion:
-# $VERSION='0.0';$d8VS='I44MIcln'; # Octology attempts to rel8 the universe through medit8ion on mnemonic abbreV8ion (via 8-based  limit8ion) &&    elucid8ion.
+# $VERSION='0.0';$d8VS='I45MGOD8'; # Octology attempts to rel8 the universe through medit8ion on mnemonic abbreV8ion (via 8-based  limit8ion) &&    elucid8ion.
 # CEBBICTI:Crossing Every Bridge Before I Come To It? I.e., not a d8 stamp. Trying to make my Dad's birthday (August 8th) more special by thinking 2far ahead?
 # Octology intends to pursue implic8ion && ramific8ion as substantE8ion for adequ8 particip8ion, if not also 2 oblig8ion toward implement8ion &&   promulg8ion.
 # Contribute to potential solutions to the "Value Alignment" problems formul8d around General Artificial Intelligence along with plausible God concerns also.
@@ -47,7 +47,7 @@
            priv8   :design8 privacy settings for arbitrary groups of d8a (admitting such spelling is a bit of a stretch versus pronunC8ion more like "priv@")
        anonymiz8ion:possibly mechanisms to enable routing all network-based applic8ion activities through Tor or any other comparable protocols for anonymity
           valid8   :autom8d testing framework which executes code versus each specific8ion expect8ion, && also a sepR8 manual disapproval/approval r8ing tool
-        invalid8
+        invalid8   :  # for unspecified or undescribed 8-words listed further, they probably have assumed meaning rel8ive to those before or aw8 specializ8ion
       illegitim8
         legitim8
         verific8ion
@@ -63,9 +63,9 @@
          comput8ion:manage long-running processor-intensive tasks or Math::BigFloat unlimited-precision calcul8ions like prime-factoriz8ion or long sequences
            emul8   :tools for managing various emul8ors of different hardware platforms (particularly game consoles) as well as terminal && other hardware
               m8   :general graph editor, default basic directed graphs without other constraints, eventually supporting every common type,also Markup ManpUl8n
-         abbreV8   :general aliasing && enhanced wrapping mechanism for commands as well as m8 specialized for mapping arbitrary abbreviations visually
-        nomencl8ure:especially technical V8 naming && not8ion conventions
-            rel8   :m8 specialized for mapping diverse social or other networks with various relationships
+         abbreV8   :general aliasing && enhanced wrap mechanism for commands as well as m8 specialized for mapping arbitrary abbreV8ion represent8ions visually
+        nomencl8ure:especially technical V8 naming && not8ion conventions (like UrbanDictionary, RedPillTerms, TextMessages, AdvancedMethematics, Medicine...)
+            rel8   :m8 specialized for mapping diverse social or other networks with various relationships between essentially st8s with any varying axis tr8s
             inn8   :n8ive, unconditioned or unlearned talent or reflex (which may still eventually be abbreV8d as slightly mispronounced "N8" core d8a manager)
            conn8
            cogn8
@@ -77,20 +77,20 @@
       disaffilE8
          affilE8
          origin8   :m8-based mapping for represent8ion of home or start loc8ion && social-network tracking rel8d hometown && travels, vac8ions, && explor8ion
-         destin8ion
-          gener8ion:rel8 for family trees
-             rL8ive
+         destin8ion:experiment8ion toward improvements to l8st && best GlobalPositioningSatellite navig8ion direction, visualiz8ion, && vocaliz8ion techniques
+          gener8ion:rel8 for family trees or the autom8d production of particular understood d8a values, components, streams, files, etc. in used configur8ion
+             rL8ive:rel8 for friend trees beyond heritage && professional, casual, personal, close, distant, etc. valU8ions for rel8ional assoC8ions defined
               m8riarch:"y" here could discuss female gendered issues && powers, influence, assumption of oppression (maybe analyzed), privilege of high worth
               p8riarch:could append "y" in attempt to discuss faulty concept from modern feminism which assumes or implies permanent privilege over oppressed
-          found8ion
-        fratern8
-       director8
-         corpor8
+          found8ion:possibly some reformul8ion of Dr.Peterson's && others fundamental principles upon which more elabor8 && accur8 edifices seem able to stand
+        fratern8   :Greek system common to college && university campus organiz8ions (also sororit8?), like my brotherhood in AlphaEpsilonPi ZetaTau PsiClass
+       director8   :tools to track critical or influential Boards-of-Directors, CEOs, CIOs, CFOs, administr8ions, maybe even share-holder or p8ron sentiments
+         corpor8   :utilities to assist with incorpor8ing a startup business or similar venture according to some discoverably predictable && efficient fashion
         organiz8ion:rel8 for org charts or general purpose d8a organizer or maybe tools to help users to legally run a Non-Profit Organiz8ion in the UnitedSt8s
            situ8   :                       general purpose d8a organizer
         ratific8ion
       stratific8ion
-      categoriz8ion:each of these is probably just a custom extension of any basis unific8ion
+      categoriz8ion:each of these is probably just a custom extension of any basis unific8ion, such as this original 8-words list or any l8r shuffle or subset
       classific8ion
 compartmentaliz8ion
         segment8ion
@@ -115,13 +115,13 @@ compartmentaliz8ion
    maladministr8ion    # Refuse compulsory speech! Deny ideological possession! Challenge assumptions, evidence, r8ionality, && also any deriv8ive conclusions!
         malvers8       # Remember that all people make mistakes, are capable of learning, can change our minds, && can practice moder8ing our old behaviors!
          profan8ion    # This whole "advoc8" off-shoot of mostly policy slogans && mantras as exclam8ion post-hash comments are not necessarily still believed!
-          pecul8       # Deny "multiple intelligences"!
-         defalc8   :fraudulent approprE8ion, embezzlement, or to cut off with a sickle
-        compens8   :don8 repurposed for payments && payrolls
-        remuner8
+          pecul8       # Deny "multiple intelligences"! Reject victimhood tribalism! Free && remuner8 innocent comedian Count Dankula in the United Kingdom!
+         defalc8   :fraudulent approprE8ion, embezzlement, or to cut off with a sickle  # No Marxism, Communism, Socialism, RadicalFeminism, EqualOutcomism!
+        compens8   :don8 repurposed for payments && payrolls, or repay fresh reput8ion victims of false accus8ions && misapproprE8ion of legal injustice
+        remuner8       # Freedom ahead of comfort! Presumption of Innocence must abide! Intent && context matters! Humorlessness fails as justific8ion to jail!
          depreC8   :don8 based on some other calcul8d diminishing value (deliber8ly misspelled && mispronounced to match up with Anch liking to say "appreC8")
-           pror8   :don8 based on proportions of used resources
-            reb8   :don8 to refund portions of prior payments?
+           pror8   :don8 based on proportions of used resources  # Stop #MeToo && #TimesUp with socially networked character-assassin8ion from the ControlLeft!
+            reb8   :don8 to refund portions of prior payments?   # Enshroud open deb8ing!  Demand unfettered present8ion, convers8ion, dialog, && argument8ion!
           evacU8   :safety && emergency escape planning tool and maybe collabor8 on upd8ing safer harder-to-puncture explosive rail && truck trailer car design
        consider8   :maybe niceness r8ing or particular cur8d discussion or news topics hopefully worthy of some consider8ion towards contempl8ion
        commiser8   :don8 to rel8d people who had to evacU8 for some reason
@@ -141,7 +141,7 @@ compartmentaliz8ion
        authorit8ive:maybe authoring tools or d8abase of author details for code, books, articles, blogs, lyrics, etc.
          stalem8   :maybe for ckm8  end-game d8abase for l8r analysis && incorpor8ion into eventual AI opponent besides just StockFish && good competitors
             ckm8   :"CheckMate" is hopefully Octology's eventually superb Chess applic8ion
-              y8   :"yate" is an obsolete term for gate but could probably be a uniquely useful && nicely abbreV8d varE8ion on the concept
+              y8   :"yate" is an obsolete term for gate but could probably be a uniquely useful && nicely abbreV8d varE8ion on the concept (solo y Pre8-Letter)
               g8   :tool to set gates as thresholds which gener8 events &&   (... and g8 is already a V8 for git command and "gait" tool for anim8 walk-cycles)
           autom8   : bind them to automatic actions (coll8 event scripts?)
           anted8
@@ -254,9 +254,9 @@ internationaliz8ion:tools to transl8 for I18N the document8ion && applic8ion int
         dissert8
          lucubr8
           exp8E8
-          cogit8   :could insert excogit8 too
+          cogit8   :could insert excogit8 too (need matching *z8 for both to pull a little farther from only non-leader "r" other solitary "E" wanted closer)
          cerebr8
-       ratiocin8
+        r8iocin8   :"ratiocinate" for reasoning methodologically && logically, especially deductively, or to offer a kind of stable && reasonable argument8ion
            ment8ion
             ill8ion
  intellectualiz8ion
@@ -338,8 +338,8 @@ internationaliz8ion:tools to transl8 for I18N the document8ion && applic8ion int
        cauteriz8ion:to burn, sear, or freeze (tissue) using a hot iron, electric current, a caustic agent, or a cautery (also make insensitive or callous)
       methotrex8   :toxic antimetabolite limiting cellular reproduction as folic acid antagonist (treats certain cancers, psoriasis, && rheumatoid arthritis)
          enuclE8   :remove cell nucleus or something like an eye or tumor from an enveloping sac or cover
-          mutil8
-            mut8
+          mutil8   :hopefully compelling argument8ion that even Orthodox Jews might consider w8ing from 8 days to 18 years before BritMilah covenant best kept
+            mut8   : && otherwise both Male && Female Genital Mutil8ion should be eradic8d as inhumane infant torture && imm8ure sexual organ desensitiz8ion
   transmogrific8ion
            epil8
           depil8   :to strip of or remove body hair, to husk (maybe rel8ing to hair styling or shaving && waxing methods)
@@ -714,20 +714,21 @@ internationaliz8ion:tools to transl8 for I18N the document8ion && applic8ion int
            vibr8   :tele-dildonics with audio && video coordin8ion?
        reverber8   :some audio modific8ion && other processing tool for production
           reson8   :community organiz8ion or audio stuff
-         solmiz8   :to sing by using syllables like 'do', 're', && 'mi' to represent the tones of the scale (taught to children in the Sound of Music film?)
+         solmiz8   :to sing by using syllables like 'do', 're', && 'mi' to represent the tones of the scale (taught to children in the Sound of Music movie?)
           simul8   :physics-based simul8ions (maybe dynamics && universe?) # maybe add dissimul8 to dissemble, feign, pretend, or hide (feelings) from others
            speC8   :species simul8or for exploring evolutionary developments && emergent specializ8ions which lead to improved environmental suitability
-           prim8   :biology simul8or
+           prim8   :biology simul8or, demonstr8 best effort at evolution progression && available empirical evidence for mut8ion, adapt8ion, modific8ion, etc.
             pup8   :insect  simul8or, modeling && AI (&& larva development)
           antlE8   :insects of lepidopterous type having an antlia, or spiral tubular proboscis (from Zoology) && faint southern constL8ion near Hydra && Vela
-             aV8   :bird    simul8or (or general flight tools?)
+             aV8   :bird    simul8or or general flight path planning && navig8ion tools && games (also funny that Moby Thesaurus has "aV8ion badge" for "pip")
           cranE8   :animals having a bony or cartilaginous skeleton with a segmented spinal column && a large brain enclosed in a skull or cranium
           allig8or :animal  simul8or
           acerv8   :fungus  simul8or
             tan8   :Nipponese raccoon dog with short bushy tail (from Zoology)
               k8   :"kate" is a brambling finch                 (from Zoology)
-              n8l  :birth   simul8or or f8l game varE8ion with baby characters && maybe designed to introduce very young kids to some basic competition
-              n8ure:nature  simul8or  # n8l rel8s to birth, babies, or buttocks (with pre, anti, && post to probably be included with 3 more *c8 && *l8)
+              n8l  :birth   simul8or or f8l game varE8ion with baby characters && maybe designed to introduce very young kids to some basic competition types
+           pren8l  :human?  simul8or of cellular division, genetic replic8ion amidst protein sub-structures which culmin8 in fetal development in prepR8ion
+              n8ure:nature  simul8or  # n8l rel8s to birth, babies, or buttocks (with pre, ante, anti, peri, && post to include with 4 more *c8 && *l8 l8r)
            clim8   :climate simul8or && change tracker for mitig8ing disasterous consequences of human influence on rising global temper8ures
            plan8   :planet  simul8or
              cr8or :planet  modeler
@@ -1297,8 +1298,8 @@ This 8 system (Octology) is comprised of myriad specialized applic8ions, each wi
 When the letter preceding the 8 is uppercase, this indic8s that they are to be pronounced as two distinct syllables, as in "pronunC8ion", "abbreV8", and
 "valU8". Lowercase indic8s the two should be pronounced together as a single syllable, as in "rel8", "collabor8", and "reput8ion". This facilit8s more diverse
 categoriz8ion and navig8ion of 8 applic8ions, at the minor expense of case-sensitivity (which I aim to demonstr8 is indispensable). Another convention
-regarding spelling is to generally omit any silent "e" following the 8, but including most other trailing vowels since they tend to vary the sound more
-and therefore seem better clarified.
+regarding spelling is to generally omit any silent "e" (or sometimes "a") following the 8, but including most other trailing vowels since they tend to vary
+the sound more (and therefore seem better clarified).
 
   rel8ion
 
@@ -1315,13 +1316,15 @@ customized to every useful applic8ion.
 A long-term goal is to provide a dynamic system for augmented memory in general and widespread narr8ive autobiographic works to be undertaken for posterity.
 
 The above attempt at compiling an exhaustive list of candid8 applic8ions is roughly prioritized for implement8ion order, however gr8 care was taken to group
-rel8d concepts and interpret8ions together. Many of the names that aren't followed by a colon ":" and a description can presumably start as aliases for the
-described applic8ion they follow (but only when it would make some sense for them to). Of course taking suggestions and allowing for further specializ8ion per
-name (even though they should already be understood well contextually) can allow Octology to grow beyond any initially planned names and aliases.
+rel8d concepts and interpret8ions together. In fact, many of the similar spellings and even word-size progressions are often arranged deliber8ly as well.
+Many of the names that aren't followed by a colon ":" and a description can presumably start under the assumption of being optional aliases for the described
+applic8ion they follow (but only when it would make some sense for them to, since intuition of expect8ion in prevailing interpret8ion is also r8d quite high).
+Of course taking suggestions and allowing for further specializ8ion per name (even though they should already be understood well contextually) can allow
+Octology to grow beyond any initially planned names and aliases. Each alias also has opportunity invit8ion to perform any modific8ion && specializ8ion easily.
 
   implement8ion
 
-Note to self: Try not to worry about premature distractions regarding promotional demonstr8ion videos or how anyone besides me is likely to react to whatever
+Note to self: Try not to worry about prem8ure distractions regarding promotional demonstr8ion videos or how anyone besides me is likely to react to whatever
 decisions I make here. No other person has ever shown much interest in my past ideas which have been precursors to Octology, so try to stay focused on
 primarily whatever matters most to me without trying to anticip8 what might appeal to others. Octology is mainly designed and developed by Pip for Pip.
 Expecting any of this to become understood and appreC8d by anyone other than me is probably a waste and just setting myself up for further disappointment.
@@ -4206,3 +4209,4 @@ to "soft-power" by deleg8ing overt leadership to get men to do their bidding && 
 I also find further concepts of hypergamy && n8alism or neoteny worthy of deeper consider8ion && scrutiny towards proactive response. Anna Akana is gr8 too;
 I44MBUSD:Had a couple beers && buds. Thought of "Badly Unfortun8 Student Dismount" game where kids attempt to flip away from schoolbus doors amidst hazards.
 Probably first level would be a timer countdown of when helmet && armor-clad kid will leap from door && big speedbumps ahead but l8r having silly obstacles;
+I45MIXLi:Sargon of Akkad has an awesome dismantling of a FarLeft response to Lindsay Shepherd announcing that she has decided on leaving Leftism herself now;

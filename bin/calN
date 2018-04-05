@@ -76,7 +76,7 @@ close   $out8             or die "Can't close duplic8 STDOUT handle: $!";
 #  PQRSTUV           TUV      QRSTU    OPQRSTU  STU      QRSTUV   NOPQRST  RSTU     PQRSTUV  TU       RSTUV  
 #                                      V                          UV                                         
 #    SMTWtFs    SMTWtFs  # week list almost fits 160x50 terminal && altern8z bclr for Monthz, now also includes single b64 character for most week numberz
-#  F1    123  F7STU1234
+#  F1    123  F7STU1234  # with all the default  160x50 alignment, almost all top 17 Januarys scroll off, leaving very close to 187 (17*11) total Monthz seen
 #    456789A    56789AB
 #    BCDEFGH    CDEFGHI
 #    IJKLMNO    JKLMNOP
