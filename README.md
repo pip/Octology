@@ -15,7 +15,8 @@ Many `bin/` commands print useful Help text when given a `-h` parameter. If your
  * `calN` - display a CALeNdar of the colored d8-based recent Years
  * `lodH` - LOaD ~/.Hrc d8a-file to parse then print colored fields
 
-## Current Top8 Screen Shots (*mostly examples matching terse list from here above*) -- [**no longer adhering to strict reverse d8 order**]
+## Current Top8 Screen Shots
+##### (*mostly examples matching above*) -- [**no longer adhering to strict reverse d8 order**]
 ![Octology-sumb-shot_1614x952-I45MD8m8](https://github.com/pip/Octology/raw/master/gfx/sho/Octology-sumb-shot_1614x952-I45MD8m8.png "Octology-sumb-I45MD8m8")
 ![Octology-tstn-shot_1614x952-HC8L7J3A](https://github.com/pip/Octology/raw/master/gfx/sho/Octology-tstn-shot_1614x952-HC8L7J3A.png "Octology-tstn-HC8L7J3A")
 ![Octology-tstc-shot_1614x902-HB4M8jYm](https://github.com/pip/Octology/raw/master/gfx/sho/Octology-tstc-shot_1614x902-HB4M8jYm.png "Octology-tstc-HB4M8jYm")
@@ -38,14 +39,15 @@ To learn about the long-term goals, plans, thinking, and research behind this ex
 Thank you for your consideration as well as any constructive criticism, recommendations, or whatever other feedback you may be able to offer.
 ```
 Sincerely,
-  -PipStuart  8<3  NfN8L0v3  8pI  Ate Pie  =)
+  -PipStuart  8<3  NfN8L0v3  8pI  Ate Pie  =)  Eight-Π
 ```
 ---
-#### Public Purpose
+### Public Purpose
 If I ever become unable to continue developing this project further, my hope is that at least this repository provides others the ability to
   utilize any of my beneficial work and ideas (hopefully to further FreeLibreSoftware with derivatives also seeing release under the GPLv3+).
 
-##### Retired Old8 Screen Shots (*several rather older examples*) -- [**no longer listed from recent down to oldest**]
+#### Retired Old8 Screen Shots
+##### (*several rather older examples*) -- [**no longer listed from recent down to oldest**]
 ![Octology-sumb-shot_1280x800-HBBLJe4o](https://github.com/pip/Octology/raw/master/gfx/sho/Octology-sumb-shot_1280x800-HBBLJe4o.png "Octology-sumb-HBBLJe4o")
 ![Octology-8trm-shot_1280x800-HBBLK762](https://github.com/pip/Octology/raw/master/gfx/sho/Octology-8trm-shot_1280x800-HBBLK762.png "Octology-8trm-HBBLK762")
 ![Octology-ftst-shot_1614x902-HAOM99L1](https://github.com/pip/Octology/raw/master/gfx/sho/Octology-ftst-shot_1614x902-HAOM99L1.png "Octology-ftst-HAOM99L1")
