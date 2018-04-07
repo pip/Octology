@@ -1,5 +1,5 @@
 # 381KF3RN:~/.zshrc by PipStuart <Pip@CPAN.Org>; nOt:I originallythotitbetr2rElymoronstndalOnXecutablUtlz than aliases||shL-scrpt funczDfynd inany .rc Bcuz4mer
-# $VERSION='0.0';$d8VS='I2MLCHUN'; # stAyavail2spwnd procSz wich hvOwn non-zsh sub-shL cfgz(eg,vim:!cln 127/7;perl`b64 1023`)sO I pland2port stufhEr2anew u8.pm
+# $VERSION='0.0';$d8VS='I46MKRE8'; # stAyavail2spwnd procSz wich hvOwn non-zsh sub-shL cfgz(eg,vim:!cln 127/7;perl`b64 1023`)sO I pland2port stufhEr2anew u8.pm
 #   butIhv rElIzd that c8.pm (inprep4 8sh)wilBAbl2pars .(ba|z)shrc fIlz2lOd thEz&&can mk thMavail2othr shLz bywrapng cmdz wiXpansionUtlz; lern LaunchPad/byobu,
 # 2du:cmNt unUsed aliases,add perVC autostRt nwlOcl`scrn`if!alredy in1,lern`autoload -z`&&sepR8hist,get pcre module&&anyUsefulothrz,
 #   bakon gN2:`em  scummvm`:2use nw"modern"theme4scummvm,add2[scummvm]sect of~/.scummvmrc(aftr runing scummvm once):themepath=/usr/share/games/scummvm/engines
@@ -324,13 +324,13 @@ alias     pla='   pa  '; # pb is already taken by pingb
 alias     plb='   perl -MOctology::b8  -e'; # setup PerL eval        with Base-transl8   export globals of B8
 alias     pab='   perl -MOctology::a8 -MOctology::b8  -e'; # Perl eval with A8  &&  B8   exports together like `pab "b8colr(b64(calQ('4096xx2048')))"`
 alias      gg='   perl ~/dvl/d8/bin/gg   '; # basic perl call to priv8 non-executable development utility to Gener8 G-mail stamps for Gerry (my Dad)
-alias    h2rl='   pa  "print h2rl(@ARGV)"'; # HEX to RgbLowbitz
-alias    rl2h='   pa  "print rl2h(@ARGV)"'; #        RgbLowbitz to HEX
 alias    drkh='   pa  "print drkh(@ARGV)"'; # HEX to RgbL with 8th intensities
-alias    sumz='   plb "      sumz(@ARGV)"'; # printing these was just yielding an extra 1 at each end, after they printed output themselves instead of returnd
-alias    fctz='   plb "      fctz(@ARGV)"';
-alias    fibz='   plb "      fibz(@ARGV)"';
-alias    prmz='   plb "      prmz(@ARGV)"';
+#lias    h2rl='   pa  "print h2rl(@ARGV)"'; # HEX to RgbLowbitz    # actually trying to reform these alias wrappers to standalone usable new ~/bin page2 utlz
+#lias    rl2h='   pa  "print rl2h(@ARGV)"'; #        RgbLowbitz to HEX
+#lias    fctz='   plb "      fctz(@ARGV)"';
+#lias    fibz='   plb "      fibz(@ARGV)"';
+#lias    prmz='   plb "      prmz(@ARGV)"';
+#lias    sumz='   plb "      sumz(@ARGV)"'; # printing these was just yielding an extra 1 at each end, after they printed output themselves instead of returnd
 alias      dv='   dirs -v';
 alias    dirz='   dirs -p | perl -pe "\$_ = \$. - 1 . q. . . \$_"'; # sho lynz
 alias     d2u='   dm2u   ';

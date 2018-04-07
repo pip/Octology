@@ -1,5 +1,5 @@
 # HBQLISTV:know.ls crE8d by PipStuart <Pip@CPAN.Org> to duplic8 Dr. Jordan B. Peterson's Quora.Com answer of "40 most valuable things everyone should know";
-# $VERSION='0.0';$d8VS='I3PMATHE'; # 2du:start chronicling Dr. Peterson's many topical videos with new section for post-title subject summaries or explor8ion;
+# $VERSION='0.0';$d8VS='I45MKDSW'; # 2du:start chronicling Dr. Peterson's many topical videos with new section for post-title subject summaries or explor8ion;
 0) Tell the truth.
 1) Do not do things that you hate.
 2) Act so that you can tell the truth about how you act.
@@ -141,7 +141,7 @@ HTTPS://YouTu.be/xLomDDzCIMs "Jordan Peterson interview on Chaotic, Desic8d, Soy
 # returning to the center of the cross, the X as the locus of suffering as all individuals must, && I see the crux of all order && chaos as the middle of '8';
 HTTPS://YouTu.be/bTVXCxbC2to 'Jordan Peterson "I\'d Vote Donald Trump and Here\'s Why"' # I3PM8Tru:9mins of audio from an interview about the 2016 UnitedSt8s
 # election, the far left's escal8ion of identity politics, abandonment of the working class, zero-sum tribalism, && the impossibility of equality of outcomes.
-HTTPS://YouTu.be/UWuYSo-nL08 "Jordan Peterson is NOT a Christian" # 15mins of MattDillahunty evalU8ing 6 prevalent definitions of Christian to demonstr8 that
+HTTPS://YouTu.be/UWuYSo-nL08 "Jordan Peterson is NOT a Christian" # 15mins of StephenWoodford evalU8ing 6 prevalent definitions of Christian to demonstr8 that
 # Dr. Peterson's st8ments indic8 that he should not qualify, since he leans on metaphorical truths while agnostic to God's existence && literal resurrection.
 HTTPS://YouTu.be/Z7n0cevXj-c "A psychologist, atheist, and Christian discuss God" # 54mins of Dr. Jordan Peterson deb8ing with Jewish Dr. Rebecca Newberger
 # Goldstein && Dr. William Lane Craig regarding philosophical questions around religion, transcendental morality, n8uralism, objective good vs. evil, etc..

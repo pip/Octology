@@ -1,5 +1,5 @@
 # Octology
-The ontology of 8. `$VERSION='0.0';$d8VS='I45MD8m8';`
+The ontology of 8. `$VERSION='0.0';$d8VS='I46MKGAP';`
 
 This is basically a public preview of my early development files. I am not yet ready for serious collaboration, but welcome any sort of feedback.
 
@@ -15,16 +15,16 @@ Many `bin/` commands print useful Help text when given a `-h` parameter. If your
  * `calN` - display a CALeNdar of the colored d8-based recent Years
  * `lodH` - LOaD ~/.Hrc d8a-file to parse then print colored fields
 
-## Current Top8 Screen Shots
+## Current Top8 Screen Shots (*mostly examples matching terse list from here above*) -- [**no longer adhering to strict reverse d8 order**]
 ![Octology-sumb-shot_1614x952-I45MD8m8](https://github.com/pip/Octology/raw/master/gfx/sho/Octology-sumb-shot_1614x952-I45MD8m8.png "Octology-sumb-I45MD8m8")
 ![Octology-tstn-shot_1614x952-HC8L7J3A](https://github.com/pip/Octology/raw/master/gfx/sho/Octology-tstn-shot_1614x952-HC8L7J3A.png "Octology-tstn-HC8L7J3A")
+![Octology-8trm-shot_1280x800-HBBLK762](https://github.com/pip/Octology/raw/master/gfx/sho/Octology-8trm-shot_1280x800-HBBLK762.png "Octology-8trm-HBBLK762")
 ![Octology-dpip-shot_1614x902-HBBLJowx](https://github.com/pip/Octology/raw/master/gfx/sho/Octology-dpip-shot_1614x902-HBBLJowx.png "Octology-dpip-HBBLJowx")
-![Octology-lsd8-shot_1614x902-HBBLJagR](https://github.com/pip/Octology/raw/master/gfx/sho/Octology-lsd8-shot_1614x902-HBBLJagR.png "Octology-lsd8-HBBLJagR")
 
 ![Octology-gnp8-shot_1614x902-HBBLKDgD](https://github.com/pip/Octology/raw/master/gfx/sho/Octology-gnp8-shot_1614x902-HBBLKDgD.png "Octology-gnp8-HBBLKDgD")
+![Octology-lsd8-shot_1614x902-HBBLJagR](https://github.com/pip/Octology/raw/master/gfx/sho/Octology-lsd8-shot_1614x902-HBBLJagR.png "Octology-lsd8-HBBLJagR")
+![Octology-calN-shot_1294x914-I46MK8B8](https://github.com/pip/Octology/raw/master/gfx/sho/Octology-calN-shot_1294x914-I46MK8B8.png "Octology-calN-I46MK8B8")
 ![Octology-lodH-shot_1614x902-HBBLJiDO](https://github.com/pip/Octology/raw/master/gfx/sho/Octology-lodH-shot_1614x902-HBBLJiDO.png "Octology-lodH-HBBLJiDO")
-![Octology-8trm-shot_1280x800-HBBLK762](https://github.com/pip/Octology/raw/master/gfx/sho/Octology-8trm-shot_1280x800-HBBLK762.png "Octology-8trm-HBBLK762")
-![Octology-ckm8-shot_1280x800-HBBLJwau](https://github.com/pip/Octology/raw/master/gfx/sho/Octology-ckm8-shot_1280x800-HBBLJwau.png "Octology-ckm8-HBBLJwau")
 
 ### Forgive Some Self-Promotion
 If you are willing to fund this development effort, please visit my [Patreon](https://patreon.com/PipStuart "Pip's Octology Patreon Page")
