@@ -18,8 +18,8 @@ Many `bin/` commands print useful Help text when given a `-h` parameter. If your
 ## Current Top8 Screen Shots (*mostly examples matching terse list from here above*) -- [**no longer adhering to strict reverse d8 order**]
 ![Octology-sumb-shot_1614x952-I45MD8m8](https://github.com/pip/Octology/raw/master/gfx/sho/Octology-sumb-shot_1614x952-I45MD8m8.png "Octology-sumb-I45MD8m8")
 ![Octology-tstn-shot_1614x952-HC8L7J3A](https://github.com/pip/Octology/raw/master/gfx/sho/Octology-tstn-shot_1614x952-HC8L7J3A.png "Octology-tstn-HC8L7J3A")
-![Octology-8trm-shot_1280x800-HBBLK762](https://github.com/pip/Octology/raw/master/gfx/sho/Octology-8trm-shot_1280x800-HBBLK762.png "Octology-8trm-HBBLK762")
-![Octology-dpip-shot_1614x902-HBBLJowx](https://github.com/pip/Octology/raw/master/gfx/sho/Octology-dpip-shot_1614x902-HBBLJowx.png "Octology-dpip-HBBLJowx")
+![Octology-tstc-shot_1614x902-HB4M8jYm](https://github.com/pip/Octology/raw/master/gfx/sho/Octology-tstc-shot_1614x902-HB4M8jYm.png "Octology-tstc-HB4M8jYm")
+![Octology-tsgr-shot_1614x902-HB4M8hZ6](https://github.com/pip/Octology/raw/master/gfx/sho/Octology-tsgr-shot_1614x902-HB4M8hZ6.png "Octology-tsgr-HB4M8hZ6")
 
 ![Octology-gnp8-shot_1614x902-HBBLKDgD](https://github.com/pip/Octology/raw/master/gfx/sho/Octology-gnp8-shot_1614x902-HBBLKDgD.png "Octology-gnp8-HBBLKDgD")
 ![Octology-lsd8-shot_1614x902-HBBLJagR](https://github.com/pip/Octology/raw/master/gfx/sho/Octology-lsd8-shot_1614x902-HBBLJagR.png "Octology-lsd8-HBBLJagR")
@@ -45,16 +45,16 @@ Sincerely,
 If I ever become unable to continue developing this project further, my hope is that at least this repository provides others the ability to
   utilize any of my beneficial work and ideas (hopefully to further FreeLibreSoftware with derivatives also seeing release under the GPLv3+).
 
-##### Retired Old8 Screen Shots (*typically listed from most recent down to oldest*)
+##### Retired Old8 Screen Shots (*several rather older examples*) -- [**no longer listed from recent down to oldest**]
 ![Octology-sumb-shot_1280x800-HBBLJe4o](https://github.com/pip/Octology/raw/master/gfx/sho/Octology-sumb-shot_1280x800-HBBLJe4o.png "Octology-sumb-HBBLJe4o")
-![Octology-tstc-shot_1614x902-HB4M8jYm](https://github.com/pip/Octology/raw/master/gfx/sho/Octology-tstc-shot_1614x902-HB4M8jYm.png "Octology-tstc-HB4M8jYm")
-![Octology-tsgr-shot_1614x902-HB4M8hZ6](https://github.com/pip/Octology/raw/master/gfx/sho/Octology-tsgr-shot_1614x902-HB4M8hZ6.png "Octology-tsgr-HB4M8hZ6")
+![Octology-8trm-shot_1280x800-HBBLK762](https://github.com/pip/Octology/raw/master/gfx/sho/Octology-8trm-shot_1280x800-HBBLK762.png "Octology-8trm-HBBLK762")
+![Octology-ftst-shot_1614x902-HAOM99L1](https://github.com/pip/Octology/raw/master/gfx/sho/Octology-ftst-shot_1614x902-HAOM99L1.png "Octology-ftst-HAOM99L1")
 ![Octology-g3Ob-shot_1614x902-HAOM9cKA](https://github.com/pip/Octology/raw/master/gfx/sho/Octology-g3Ob-shot_1614x902-HAOM9cKA.png "Octology-g3Ob-HAOM9cKA")
 
 ![Octology-ckm8-shot_1536x960-HAOM9HKQ](https://github.com/pip/Octology/raw/master/gfx/sho/Octology-ckm8-shot_1536x960-HAOM9HKQ.png "Octology-ckm8-HAOM9HKQ")
-![Octology-lodH-shot_1614x902-HAOM9A8m](https://github.com/pip/Octology/raw/master/gfx/sho/Octology-lodH-shot_1614x902-HAOM9A8m.png "Octology-lodH-HAOM9A8m")
-![Octology-ftst-shot_1614x902-HAOM99L1](https://github.com/pip/Octology/raw/master/gfx/sho/Octology-ftst-shot_1614x902-HAOM99L1.png "Octology-ftst-HAOM99L1")
+![Octology-dpip-shot_1614x902-HBBLJowx](https://github.com/pip/Octology/raw/master/gfx/sho/Octology-dpip-shot_1614x902-HBBLJowx.png "Octology-dpip-HBBLJowx")
 ![Octology-dic8-shot_1614x902-HAOM900M](https://github.com/pip/Octology/raw/master/gfx/sho/Octology-dic8-shot_1614x902-HAOM900M.png "Octology-dic8-HAOM900M")
+![Octology-lodH-shot_1614x902-HAOM9A8m](https://github.com/pip/Octology/raw/master/gfx/sho/Octology-lodH-shot_1614x902-HAOM9A8m.png "Octology-lodH-HAOM9A8m")
 
 *Note*: Please bear in mind that these older shots shown at the bottom here are far more likely than those in the current Top8 list above to portray behaviors
 and exhibit details which have been modified somewhat (or possibly replaced entirely) within the time that lapsed since the d8 a particular shot was taken on.
