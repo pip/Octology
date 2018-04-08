@@ -1,4 +1,4 @@
-# ECILIpU5:~/dox/2du/tipz.ls crE8d by PipStuart <Pip@CPAN.Org> to track full-screen GNU/Linux console login fortune-like tipz that are worth remembering;
+# ECILIpU5:~/dox/2du/tipz.ls crE8d by PipStuart <Pip@CPAN.Org> to track full-scrn GNU/Linux console login fortune-like tipz worth remembering;$d8VS='I47M04sS';
  ApNd ssh kE2srvr's authkEz wi`ssh-copy-id user@srvradrS`&& GitHub advIsez`eval "$(ssh-agent -s)"`&&`ssh-add -l`2tk nOt of fngrprntz2tSt4m@ch acctSSH kEz;
  Shell curly bracez iter8 comma separ8d list like: `cp /long/path/to/file/name{,.orig}`;
 F6IME9nq:For getting precise Google search resultz, you can perform a search query first then under 'Search Tools' drop-down 'All Results' can be changed
@@ -73,3 +73,8 @@ HBSLHPDE:Contempl8 altern8ives to Ubu 17.10 default Gnome 3, maybe preserving Un
  KDE, && research any other capable altern8ives, maybe trying all the stable DE releases within VirtualBox (or othr VM) for experiment8ion && fE8ure evalU8ion;
 HC6LNDRM:/. article on explaining copyright had comment recommending EPubs with Calibre as DRM-free content format for at least Kindle eBooks && maybe others?;
 I2PLEASE:After Akuma reboot && auu getting lots, included linux4.13.0-36 that spewed many warnings "W: Possible missing firmware /lib/firmware/amdgpu/raven_*";
+I46MNuts:Might want to try new sS gener8ion for monospace HTML for GitHub MarkDown with {::nomarkdown} <!-- HTML CODE--> {:/} && StackOverflow links whitelist
+of tags HTTPS://GitHub.Com/jch/html-pipeline/blob/master/lib/html/pipeline/sanitization_filter.rb#L41-L44 includes: h1 h2 h3 h4 h5 h6 h7 h8 br b i strong em
+a pre code img tt div ins del sup sub p ol ul table thead tbody tfoot blockquote dl dt dd kbd q samp var hr ruby rt rp li tr td th s strike summary details.
+MarkDown supports backslash eScaping of: \ backslash, ` backtick, * asterisk, _ underscore, {} curly braces, [] square brackets, () parentheses, # hash mark,
++ plus sign, - minus sign (hyphen), . dot, && last ! exclam8ion point. SepR8 after blank line && all code blocks indented 4 spaces wrap <pre> around <code>;

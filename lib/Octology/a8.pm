@@ -871,12 +871,12 @@ sub sumb{  my $widt=0;$widt=1 if(exists($ENV{'COLUMNS'}) && $ENV{'COLUMNS'} >= 1
     'supd'  => "a8 *util to UPD8 HTTPS://Screeps.Com Scripts ~/.config/ for game client   ",
     'tstc'  => "a8 *TeST eScapes `S` of c8 `c` format for pal8 colors && SGR attributes   ", # mAB fold in2 tsgr && mv latr2 a8,or mk -blox in tstc?
 
-    'fctz'  => "b8  FaCTorlZ listed   (takes lines-1 47 and 1 b64 or 2 b256 parameters)   ", # `fctz 47 1` is like `fctz | b64` just with different nwln wrapz
+    'fctz'  => "b8  FaCTorlZ listed (takes (lines-1) 47 and 1 b64 or 2 b256 parameters)   ", # `fctz 47 1` is like `fctz | b64` just with different nwln wrapz
     'fibz'  => "b8  FIBonacZ listed up to filling in 48 lines with normally 160 columns   ",
     'prmz'  => "b8  PRiMe..Z listed up to filling in 48 lines with normally 160 columns   ",
     'sumz'  => "b8  SUM8ionZ listed up to filling in 48 lines with normally 160 columns   ",
 
-    'sloc'  => "c8  Beppu-san sent me SlowCat.pl simul8ing default 9600 baud text print   ",
+    'sloc'  => "c8  Beppu-san sent `SlowCat.pl` simul8ing default 9600 baud print speed   ",
 
     'tstn'  => "p8  TeST random Navig8ion of A* paths thru HTTPS://Screeps.Com maps d8a   ", # new PurPle colr p8 section here is re-comNted sinc just tst4now
     );} # might want to add a8:g for new grep varE8ion && a8:s8 for standard && custom sorts && shuffles
@@ -927,7 +927,7 @@ sub sumb{  my $widt=0;$widt=1 if(exists($ENV{'COLUMNS'}) && $ENV{'COLUMNS'} >= 1
              'Math::BigFloat'=>'F:C', 'C::S'=>'Zb','Curses::Simp'=>'Zb', 'C::Simp'=>'Zb','DiSTance'=>'F:C','Octology::d8'=>'F:R',},
                             'file'=>{'~' =>'F:B','\/'=>'F:Y','\.'=>'Ib','fn'=>'Mb','`' =>'yk','cf'=>'F:G','\*'=>'W1','\+'=>'Rb','mixer'=>'F:o','Date'=>'L:R',
      'strings'=>'F:8','ANSI'=>'ob', ',' =>'Lk','bfr8'=>'F:B','col8'=>'F:C','dur8'=>'F:R',      '\('=>'Wn','\)'=>'Wn','\['=>'ob','\]'=>'ob','ASCII'=>'Ab',
-                                             '\.config'=>'F:B',
+                                             '\.config'=>'F:B','columns'=>'Ck',
   'EDITOR'=>'Un','LS_COLORS'=>'Yn','bin'=>'F:B','\.bak'=>'F:B','\.Hrc'=>'F:M','\.psf'=>'F:M','\.f0nt'=>'Cg','\.xml'=>'ob','\.xtb'=>'F:B', # SKpspecialz
       'down'=>'F:U','SKpz'=>'F:7',   '!' =>'Fk','HTTP' =>'F:H','Org'=>'F:X','Rolz'=>'F:M','gst123'=>'F:G','git'=>'F:G','kpcli'=>'F:G','YouTube'=>'5r',
       'Perl'=>'Cb' ,'vim' =>'Vb','Unix' =>'Xb', 'HTTPS'=>'F:H','Com'=>'F:B','Screeps'=>'F:C',            'text'=>'F:F', 'time'=>'F:F',    'U2b'=>'5r',
@@ -957,7 +957,9 @@ sub sumb{  my $widt=0;$widt=1 if(exists($ENV{'COLUMNS'}) && $ENV{'COLUMNS'} >= 1
         $h=d8colr('wrapper'       );$bfst{ $bfls[$bfle - $_]}=~ s/wrapper       /$h$i/gx    ;d8cs('XXXNNN111'); # && new White "wrapper" varE8ionz
         $h=d8colr('converter'     );$bfst{ $bfls[$bfle - $_]}=~ s/converter     /$h$i/gx    ;                   # && get old BaseCnv cnv capitalized
         $h=d8colr('CoNVerter'     );$bfst{ $bfls[$bfle - $_]}=~ s/CoNVerter     /$h$i/gx    ;d8cs('GBZOM'    ); # && try to get S && c col8 post-text layrz
-        $h=d8colr('FbSGR'         );$bfst{ $bfls[$bfle - $_]}=~ s/FbSGR         /$h$i/gx    ;d8cs('ZC9TVmM'  ); # rEmMbr2rEset2 d8bo whN done BlO
+        $h=d8colr('FbSGR'         );$bfst{ $bfls[$bfle - $_]}=~ s/FbSGR         /$h$i/gx    ;d8cs('9TZZB'    ); # shud upd8 these 2use more Blue shAdz,!Cyanz
+        $h=d8colr('lines'         );$bfst{ $bfls[$bfle - $_]}=~ s/lines         /$h$i/gx    ;d8cs('9TBZZZ'   );
+        $h=d8colr('listed'        );$bfst{ $bfls[$bfle - $_]}=~ s/listed        /$h$i/gx    ;d8cs('ZC9TVmM'  ); # rEmMbr2rEset2 d8bo whN done BlO
         $h=d8colr('utility'       );$bfst{ $bfls[$bfle - $_]}=~ s/utility       /$h$i/gx    ;
         $h=d8colr('util'          );$bfst{ $bfls[$bfle - $_]}=~ s/util          /$h$i/gx    ;d8cs('d8bo'     ); # should be same as 'RoY' or close
         $h=d8colr('YMD'           );$bfst{ $bfls[$bfle - $_]}=~ s/YMD           /$h$i/gx    ;d8cs('mmmMMMppVVVVVV'); # NYIM was orig S('mkB') at very end
@@ -1012,7 +1014,13 @@ sub sumb{  my $widt=0;$widt=1 if(exists($ENV{'COLUMNS'}) && $ENV{'COLUMNS'} >= 1
         $bfst{ $bfls[$bfle - $_]}=~ s/   (\s|\() (de[cC])(ima)/$1$d$2$i$3/gx        ;$d=S($bftc{'base'}{ '128'  }); # du deC or dec
         $bfst{ $bfls[$bfle - $_]}=~ s/  (b(ase)?)(128 )(\s   )/$1$d$3$i$4/gx        ;$d=S($bftc{'base'}{ '256'  }); # du 128
         $bfst{ $bfls[$bfle - $_]}=~ s/  (b(ase)?)(256 )(\s   )/$1$d$3$i$4/gx        ;$s=S($bftc{'d8fz'}{'2006'  }); # du 256 hopefully both b256 && base256
-        $bfst{ $bfls[$bfle - $_]}=~ s/   (xterm-)(256 )(color)/$1$d$2$i$3/gx        ;$d=S($bftc{'d8fz'}{'March' }); # du 256 more
+        $bfst{ $bfls[$bfle - $_]}=~ s/   (xterm-)(256 )(color)/$1$d$2$i$3/gx        ;$d=S('Mb');
+        $bfst{ $bfls[$bfle - $_]}=~ s/   (\D    )(  4 )(\D   )/$1$d$2$i$3/gx        ;$d=S('Yg');
+        $bfst{ $bfls[$bfle - $_]}=~ s/   (\D    )(  6 )(\D   )/$1$d$2$i$3/gx        ;$d=S('ob'); # du some basic sumb page2 b8 sequence listz
+        $bfst{ $bfls[$bfle - $_]}=~ s/   (\D    )( 47 )(\D   )/$1$d$2$i$3/gx        ;$d=S('Yb');
+        $bfst{ $bfls[$bfle - $_]}=~ s/   (\s    )( 48 )(\s   )/$1$d$2$i$3/gx        ;$d=S('Gr');
+        $bfst{ $bfls[$bfle - $_]}=~ s/   (\s    )(160 )(\s   )/$1$d$2$i$3/gx        ;$d=S('Rk');
+        $bfst{ $bfls[$bfle - $_]}=~ s/   (\s    )(9600)(\s   )/$1$d$2$i$3/gx        ;$d=S($bftc{'d8fz'}{'March' }); # du 256 more
         $bfst{ $bfls[$bfle - $_]}=~ s/   (\s)   (March)(2006 )/$1$d$2$s$3$i/gx      ;$d=S($bftc{'file'}{ 'cRdz' }); # du d8 fldz M && Y from ptold
         $bfst{ $bfls[$bfle - $_]}=~ s/   (\s|:) (Cards)(\s|:|\e)/$1$d$2$i$3/gx      ;$d=S($bftc{'file'}{ 'SKpz' }); # just get b128 Cards, not Gmz:Cards:Pokr
         $bfst{ $bfls[$bfle - $_]}=~ s/   (\s)(e[Ss]capes?)(\s)/$1$d$2$i$3/gx        ;$d=S($bftc{'file'}{ 'down' }); # mAB want to d8colr for SKpz too?
