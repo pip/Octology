@@ -63,7 +63,7 @@ for(@scnt){                                                                     
   for my $lndx (0..$#lcnt){
     if(defined($lcnt[$lndx]) && $lcnt[$lndx] == $_){$Stxt.=   $Y           . b64($lndx) ;$t0tl+=$_;$sclc++;$actx.=' '.b8c(sprintf("%2s",b64($acnt[$lndx])));
                                                                                          $gttl+=$acnt[$lndx];}}
-  my $spad=21 - 3*$sclc;$spad=0 if($spad < 0);$actx.=' ' x $spad;my $blsz=43;my $r8io=$blsz/64.0; # prEpad Nd of acnt ndxz B4 sclc flipz 4 stRtng letr colm
+  my $spad=21 - 3*$sclc;$spad=0 if($spad < 0);$actx.=' ' x $spad;my $blsz=41;my $r8io=$blsz/64.0; # prEpad Nd of acnt ndxz B4 sclc flipz 4 stRtng letr colm
   $sclc   = 9 -   $sclc;$sclc=0 if($sclc < 0); # exploring gener8ing additional new bar-graphs of b8 Counts across remaining line width
   if($clmz >= 160){my  $ddig =$_   ;$actx.=' ' x (126-int($_*$r8io)); # (96-int($_/2)) wi spad=50-3*sclc abov,thN (114-int($_*$r8io)) wi spad=32-3*sclc
     while($ddig >= 64){$ddig-=   64;$actx.= $o . ('#' x  ($blsz- 1)) . "$R@";} my $mdig=$ddig % 2; # try2mk Orange 2nd blox Nd in last Red boundry

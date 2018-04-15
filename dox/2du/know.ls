@@ -149,3 +149,5 @@ i) The fundamental religious idea is that there are modes of being which nobly j
 # "Being is suffering tainted by malevolence, and so what's the meaning? There's pain to alleV8. There's chaos to confront. There's order to establish and
 #  revivify. There's evil to constrain, not least in our own hearts, and that's meaning enough for everyone." -Dr. Jordan Peterson's closing advice st8ment;
 HTTPS://YouTu.be/orJlObCJuUM "The Trap of the Hero" # I3RM8MAN:8mins of JohnTheOther JohnHembling advising rejection of Hero myth as primary useful archetype;
+HTTPS://AlastairAdversaria.Com/2018/04/06/discourse-in-the-culture-wars-and-the-hunger-for-catharsis "Discourse in the Culture Wars and Hunger for Catharsis"
+# I48MAN48:Seems to be a high-quality article defending Dr. Jordan Peterson's recent 12 Rules for Life and challenging the many scathing criticisms leveled;
