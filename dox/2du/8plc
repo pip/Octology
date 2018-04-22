@@ -16,7 +16,7 @@ my $linz=        24;       my %fulc=();  $fulf=1 if($argz=~ /(^|\s)-?-?[^f]*f/i)
                            my @folc=();  $folf=1 if($argz=~ /(^|\s)-?-?[^w]*w/i); # find -?w(ord) flag to count && sort all maximum char-words at end
                            my %lpsd=();  $clrf=0 if($argz=~ /(^|\s)-?-?[^s]*s/i); # find -?s(SKp) flag arg4vim ':r!8plc s' 2B lIk ':r!8plc|sS'
 $clmz=$ENV{'COLUMNS'} if(exists($ENV{'COLUMNS'})); # mAB also Dtect H varE8ionz
-$linz=$ENV{'LINES'  } if(exists($ENV{'LINES'  }));my $lnmx=$linz - 2;
+$linz=$ENV{'LINES'  } if(exists($ENV{'LINES'  }));my $lnmx=$linz - 2;my @jd8a;
 if($argz=~ /(^|\s)-?-?[^a]*a/i){   $lpsf=$gm8f=$fulf=$folf=1;} # set All optional section flags at once
 if($argz=~ /(^|\s)-?-?[^h]*h/i){$Stxt.=" $0 - 8.txt Precursor Letter Counter d8VS:$d8VS by $auth to gener8 Octology applic8ion name d8a analysis;
   h   - print this Help text and exit; below options are flags which can be combined in any order, but extra sections print in order of comput8ion;
@@ -203,6 +203,39 @@ if($gm8f){$Stxt.="${W}Gener8 gM8ria primes for names by$B 3$W segments (${Y}PreL
 # print   $log8 "# $d8VS:~/.log/8ps.ls gener8d by 8plc with 8.txt edVS:$edVS to save sepR8 reference to 8-word prime maps by PipStuart <Pip\@CPAN.Org>;\n";
 # for  my $prmk (sort {$a <=> $b} keys(%alpn)){print $log8 sprintf("%-4d %-15s ",$prmk,$alpn{$prmk});if(++$colc == 7){$colc=0;print $log8 "\n";}}
 # close   $log8                                or die "Can't close log 8PrimesSidestring.LiSt file handle: $!"; # try2wrItout prImz list for l8r sepR8 rFrNc
+  my %jmap=('c'=>0,'z'=>1,'l'=>2,'t'=>3,'n'=>4,'E'=>5,'r'=>6,'g'=>7,'_'=>8);my @jmls=(split(//,'czltnErg_')); # cycl joystk dirs from down clockwise around
+  my $bwid=52;my @sepm=(''); # it looks like the largest 9 PreLetters fit almost all their members, probably getting close to 68% of all 8-words in 8 blox
+  for   my $wsiz (2..$mxws ){my @folk=sort(keys(%{$folc[$wsiz]}));
+    for my $fndx (0..$#folk){my $curw=$folk[$fndx];
+      if($curw=~ /^(\w*?)([A-Z])8(\w*)$/i){my $pltr=$2;my $sfix='';$sfix=$3 if(defined($3) && length($3));my $pfix='';$pfix=$1 if(defined($1)&& length($1));
+        my $sfcl=$B;$sfcl=$C if($sfix ne 'ion'); # Wow! echoing all 8 blox && piping thru `wc -w` yielded exactly 888 =)
+        if($pltr eq 'm'){ # try to load sepR8d special m d8a to shoehorn in below g in the lower right 7 blok
+          if(length( "$pfix$sfix " . sS($sepm[-1])) > $bwid){push(@sepm,'');}
+          $sepm[-1].="$z$pfix$sfcl$sfix " if($#sepm <  16 && length("$pfix$sfix") && length("$pfix$sfix " . sS($sepm[-1])) <= $bwid);}
+        if(exists($jmap{$pltr})){$jd8a[$jmap{$pltr}]=[''] unless(defined($jd8a[$jmap{$pltr}]));
+          if($#{$jd8a[$jmap{$pltr}]} <  16){my $jrnd=$#{$jd8a[$jmap{$pltr}]}; # try2bild 8chr blox of $bwid proly 53 or a bit less colmz by 16 rowz each belo
+            $jd8a[$jmap{$pltr}][$jrnd] ='' unless(defined($jd8a[$jmap{$pltr}][$jrnd]));
+            if(length("$pfix$sfix " . sS($jd8a[$jmap{$pltr}][$jrnd])) > $bwid && @{$jd8a[$jmap{$pltr}]} <  16){$jd8a[$jmap{$pltr}][++$jrnd] ='';}
+            $jd8a[$jmap{$pltr}][$jrnd].="$z$pfix$sfcl$sfix " if($jrnd <  16 && length("$pfix$sfix") && # hopefully won't space ahead for l8, r8, g8, etc.
+                                                                               length("$pfix$sfix " . sS($jd8a[$jmap{$pltr}][$jrnd])) <= $bwid);}}}}}
+  for   my $rndx (0..15){
+    for my $jbnd (3.. 5){
+      if($#{$jd8a[$jmap{$jmls[$jbnd]}]} >= $rndx              ){my $rosl=$bwid - length(sS($jd8a[$jmap{$jmls[$jbnd]}][$rndx]));$rosl=0 if($rosl < 0);
+        $Stxt.=$jd8a[$jmap{$jmls[$jbnd]}][$rndx] . ' ' x $rosl;}else{$Stxt.=' 'x $bwid;}} $Stxt.="\n";}
+  for   my $rndx (0..15){
+    for my $jbnd (2,8,6){
+      if($#{$jd8a[$jmap{$jmls[$jbnd]}]} >= $rndx && $jbnd != 8){my $rosl=$bwid - length(sS($jd8a[$jmap{$jmls[$jbnd]}][$rndx]));$rosl=0 if($rosl < 0);
+        $Stxt.=$jd8a[$jmap{$jmls[$jbnd]}][$rndx] . ' ' x $rosl;}else{$Stxt.=' 'x $bwid;if($jbnd == 8){my $hbwd=int($bwid/2)+4;my $stal=' ' x ($hbwd-5);
+          if   ($rndx == 7){$Stxt=~ s/\s{$hbwd}$/$Y$jmls[3] $jmls[4] $jmls[5]$stal/;}
+          elsif($rndx == 8){$Stxt=~ s/\s{$hbwd}$/$Y$jmls[2]   $jmls[6]$stal/;}
+          elsif($rndx == 9){$Stxt=~ s/\s{$hbwd}$/$Y$jmls[1] $jmls[0] $jmls[7]$stal/;}
+          elsif($rndx ==10){$Stxt=~ s/\s{$hbwd}$/$Y    m$stal/;}}                      }} $Stxt.="\n";}
+  for   my $rndx (0..15){
+    for my $jbnd (1,0,7){
+      if($#{$jd8a[$jmap{$jmls[$jbnd]}]} >= $rndx              ){my $rosl=$bwid - length(sS($jd8a[$jmap{$jmls[$jbnd]}][$rndx]));$rosl=0 if($rosl < 0);
+        $Stxt.=$jd8a[$jmap{$jmls[$jbnd]}][$rndx] . ' ' x $rosl;}else{ # try to squeeze "m" in the lower half of blok 7 lowr rite belo "g" in top half
+        if($rndx >= 8 && defined($sepm[$rndx - 8])){$Stxt.=$sepm[$rndx - 8];}else{$Stxt.=' 'x $bwid;}
+                                                                                       }} $Stxt.="\n";}
   # maybe since most prefixes are longer also altern8 inward from both ends preferring more total chars culled for wider from top 8 solos or some thresh?
   # ..or actually resummarize all above thoughts to 1st prime 2 given to suffix outside-in R2L for ion then 2nd 3 given to permanently termin8 any further
   #   attempts to altern8 for now known complete suffix for almost 94% of all words, then try biggest in L2R altern8 out for prefixes until all accounted

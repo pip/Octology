@@ -88,6 +88,7 @@
          corpor8   :utilities to assist with incorpor8ing a startup business or similar venture according to some discoverably predictable && efficient fashion
         organiz8ion:rel8 for org charts or general purpose d8a organizer or maybe tools to help users to legally run a Non-Profit Organiz8ion in the UnitedSt8s
            situ8   :                       general purpose d8a organizer
+         analyz8ion
         ratific8ion
       stratific8ion
       categoriz8ion:each of these is probably just a custom extension of any basis unific8ion, such as this original 8-words list or any l8r shuffle or subset
@@ -96,10 +97,10 @@ compartmentaliz8ion
         segment8ion
          segreg8
             zon8
-          limit8ion
-          reput8ion:r8 personal m8ings (rel8ionships) along any useful axes
-          dedic8   :special recognition for the influential && deceased
-         chocol8   :r8 various usually brown cocoa candy (hopefully coating Reese's peanut butter && optionally made without cow-milk please ;) )
+          limit8
+          reput8ion:r8 personal m8ings (rel8ionships) along any useful axes   # Value individuality as gr8r than infinitely fraction8ing victim group rankings!
+          dedic8   :special recogniz8ion for at least the particularly influential && deceased  # Diversity of token stereotypical groups fails to be strength!
+         chocol8   :r8 various brown cocoa candies (hopefully coating Reese's peanut butter && optionally without cow-milk please?)    # Learn && go approprE8!
           advoc8   :way to affect change primarily on social issues?   # Net-Neutrality! Minimize suffering && global warming! More empathy! Marriage equality!
             don8   :way to contribute (monetarily or reput8ion?) to rel8d people or causes   # Pro-science! Pro-individual! Pro-legal-immigr8ion! Pro-minority!
          appreC8   :don8 with extra appreciation in honor of Angie <3  # Protect  Voting Rights Act!  Take serious felonies outside  military chain-of-command!
@@ -295,6 +296,8 @@ internationaliz8ion:tools to transl8 for I18N the document8ion && applic8ion int
            clav8   :having the form or shape of a club, or growing gradually thicker toward the top   (from Botany)  && also club antenna (from Zoology)
             lyr8   :lyre-shaped or spatul8 && oblong as a leaf (from Botany) or like curv8ure in the tail of the blackcock, the lyre bird (from Zoology)
             laB8   :having limb of tubular corolla or calyx divided in unequal lip parts, like catnip (from Botany)  or to labialize or have lip-like parts
+          bilaB8
+         superB8
            nerv8
            valv8   :meeting at the edges without overlapping, or opening as if by doors or valves     (from Botany)  as most kinds of capsules && some anthers
             jug8   :coupled together                           (from Botany)
@@ -531,8 +534,9 @@ internationaliz8ion:tools to transl8 for I18N the document8ion && applic8ion int
         decapit8   :maybe sword videogame where you start slashing caps off bottles, then ballcaps off displays, then cartoony or model heads?
         eviscer8   : .. or slashing keyboard caps? or toons or puppets or robots or animals or dinosaurs or aliens or dummies or Ppl
         exenter8   :disembowel or surgically remove bodily organs
+          eruct8   :to burp, belch, or eject wind from the stomach
            urin8
-         flatul8   :fart recording && r8ing tool in honor of Nissim ;)
+         flatul8   :fart recording && r8ing tool in honor of Nissim ;)  # idea of eventually some "Street Farter" competitive social game sounds clever && fun
         constip8
          obstip8
             lax8ion
@@ -1196,6 +1200,7 @@ trachelobranchE8
          serrul8
            serr8
           lacer8
+         lacinE8   :finely slashed, fringed, or having fringed border, or cuts into deep, narrow, && irregular lobes (from Botany && Zoology)
          lancin8
           ulcer8
      compassion8
@@ -4394,3 +4399,6 @@ I4MM0Jon:HTTPS://YouTu.be/8so_FSpJ17I is 11 minutes of Jonathan Haidt rel8ing hu
 sacred, then evalU8s "New Atheists" like Sam Harris && Daniel Dennett as sacrilizing reason && r8ionality even more angrily than many of the most prominent
 dogmatic right-wing conserv8ive comment8ors. Reason alone must suffer inherent limit8ions when seeking truth && progress. Intuitionism can produce superior
 outcomes than enumer8ing explicit prioritized reasons for every decision. Diversity of thought, perspective, outlook, && opinion are essential for educ8ion;
+I4MM8X4:So rather conveniently, the top 4 8plc Pre-cursor Letters are "clnr" which could order for joystick or arrow keys Crouch, Left, North, Right to give
+an axis of access to around 45% of the currently 1,307 tabul8d 8-words. Adding diagonals for "Etzg" East, Top, Zest, Ground gets next 29% covering 3/4ths of
+the total, leaving "m" then 8 smaller count groups of remaining 27 letters can become further releg8d to rare obscurity to fill out the final 26% of 8-words;
