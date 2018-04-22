@@ -1,5 +1,5 @@
 # D6RMF1V1:8.txt - by8Π : JAPH : K3wlD00d : 1337H4xr : PipStuart's Octology (hopefully eventually an Ontology of 8) - Convention, Conversion, && Categoriz8ion:
-# $VERSION='0.0';$d8VS='I4BMANIA'; # Octology attempts to rel8 the universe through medit8ion on mnemonic abbreV8ion (via 8-based  limit8ion) &&    elucid8ion.
+# $VERSION='0.0';$d8VS='I4MM4T88'; # Octology attempts to rel8 the universe through medit8ion on mnemonic abbreV8ion (via 8-based  limit8ion) &&    elucid8ion.
 # CEBBICTI:Crossing Every Bridge Before I Come To It? I.e., not a d8 stamp. Trying to make my Dad's birthday (August 8th) more special by thinking 2far ahead?
 # Octology intends to pursue implic8ion && ramific8ion as substantE8ion for adequ8 particip8ion, if not also 2 oblig8ion toward implement8ion &&   promulg8ion.
 # Contribute to potential solutions to the "Value Alignment" problems formul8d around General Artificial Intelligence along with plausible God concerns also.
@@ -153,6 +153,7 @@ compartmentaliz8ion
              aw8
               w8   :unit, weight, && measurement specific8ion && conversion or d8a weighting meta-r8ings or d8/dur8ion-based "wait" delay && crontab interface
          temper8   :temperature section of above "weight" standards rel8ion and conversion system
+          imper8ive:gr8st w8, authorit8ive, maxim, axiom, aphorism, apothegm, adage, proverb, saying, oblig8ory, grammar expressive of command or exhort8ion
      standardiz8ion:tools to valid8 applic8ion compliance against best development standards or to facilit8 submitting innov8ions as candid8s for new standards
        normaliz8ion:maybe basic 2D/3D tools to gener8 normal vectors or m8rices for use in comput8ions of geometry visibility or illumin8ion techniques
        formaliz8ion
@@ -173,8 +174,10 @@ internationaliz8ion:tools to transl8 for I18N the document8ion && applic8ion int
      stringific8ion:overloaded method by which Perl turns objects into string forms (used configurably by b8 && d8 in particular)
          corrug8   :tool to fold other d8a into parallel ridges (i.e., rows && columns forming m8rices)
            strI8
+           glaC8   :to cover with ice, snow, or glaciers, && also to become frozen, or to produce strI8d glacial effects upon by action of ice (from Geology)
            port8   :not erect but diagonal
            falc8   :curved like a sickle
+           lanE8   :to tear into pieces
             lun8   :crescent moon shaped
             raD8   :general circular d8a manager && radial d8a selection && modific8ion interface (also useful for d8ok), with pronunC8ion also like "r88"
           biraD8
@@ -184,6 +187,7 @@ internationaliz8ion:tools to transl8 for I18N the document8ion && applic8ion int
          circul8
        contornE8   :to make a circuit or outline of contours, or a species of medal or medallion of bronze with deep furrow on the contour or edge
       centraliz8ion
+          eluct8   :to struggle out or wrestle
             stL8
            palm8   :shaped like hand with raD8ing fingers, or three toes connected by thin web in feet of water birds (was ricinolE8 salt of palmic acid)
            eman8
@@ -239,6 +243,7 @@ internationaliz8ion:tools to transl8 for I18N the document8ion && applic8ion int
           pagin8   :maybe d8a prepR8ion && pagin8ion design8ion
          margin8   : && margin manager for print public8ion, image && video letter-boxing, or interface centraliz8ion for display within old picture-tube TVs
          indent8ion
+          dimiD8   :to divide into two equal parts, or to cut or reduce to half in shape or form
          demarc8
          delinE8
         delimit8
@@ -262,11 +267,14 @@ internationaliz8ion:tools to transl8 for I18N the document8ion && applic8ion int
  intellectualiz8ion
    conceptualiz8ion
    contextualiz8ion:tool to design8 && configure additional context-sensitive behaviors for particular combin8ions of applic8ions
-     rationaliz8ion: # can prepend here recontextualiz8ion once another *t8 word can be added to maintain the tz pairing
-       justific8ion:maybe along with natural logical interpret8ion this could also be a contextual formatting tool for basic left, center, or right alignment
+ recontextualiz8ion
+     rationaliz8ion
+      demoraliz8ion
+        moraliz8ion
         mobiliz8ion
-           actu8
+       justific8ion:maybe along with natural logical interpret8ion this could also be a contextual formatting tool for basic left, center, or right alignment
        fascicul8
+           actu8
          collig8
          colloc8
          culmin8
@@ -286,6 +294,7 @@ internationaliz8ion:tools to transl8 for I18N the document8ion && applic8ion int
           calcR8   :having a spur or being spurred, as the flowers of the toadflax && larkspur        (from Botany)  or armed with a spur (from Zoology)
            clav8   :having the form or shape of a club, or growing gradually thicker toward the top   (from Botany)  && also club antenna (from Zoology)
             lyr8   :lyre-shaped or spatul8 && oblong as a leaf (from Botany) or like curv8ure in the tail of the blackcock, the lyre bird (from Zoology)
+            laB8   :having limb of tubular corolla or calyx divided in unequal lip parts, like catnip (from Botany)  or to labialize or have lip-like parts
            nerv8
            valv8   :meeting at the edges without overlapping, or opening as if by doors or valves     (from Botany)  as most kinds of capsules && some anthers
             jug8   :coupled together                           (from Botany)
@@ -295,6 +304,7 @@ internationaliz8ion:tools to transl8 for I18N the document8ion && applic8ion int
           gemin8   :in pairs or twains, two together, twin     (from Botany)
          germin8
            glaD8   :sword-shaped in form, as the leaf of the iris or the gladiolus                    (from Botany)
+          asciD8   :a pitcher-shaped or bottle-shaped part or organ, such as hollow tubular leaves    (from Botany)
       archegonE8   :of or rel8ing to a female sex organ found in mosses, ferns, && most gymnosperms   (from Botany)
         fastigE8   :having clusters of erect branches often appearing to form a single pointed column (from Botany) or a united conical bundle (from Zoology)
          reiter8
@@ -309,7 +319,7 @@ internationaliz8ion:tools to transl8 for I18N the document8ion && applic8ion int
         maximiz8ion
        magnific8ion
        amplific8ion
-          amplE8
+          amplE8   :to make wider or enlarge, or having the outer edge prominent, like the wings of insects (from Zoology)
          aggreg8   :d8a summariz8ion tool
        summariz8ion
       simplific8ion
@@ -328,10 +338,11 @@ internationaliz8ion:tools to transl8 for I18N the document8ion && applic8ion int
         catenul8
        agglutin8
       conglobul8
+         disloc8
             lig8   :binding/bandaging tool maybe to concatN8 strands of DN8?
             lux8
-         disloc8
           trunc8
+          front8   :growing broader && broader, as a leaf (from Botany), or trunc8
          expurg8   :purge, purify, depur8, bowdlerize, geld, abbreV8, castr8, censoring indelic8 parts, cleanse from noxious, obscene, offensive, or erroneous
       bowdleriz8ion:censorship where existing literary works or other expressive media materials are revised to omit offensive, immoral, or indecent portions
           amput8
@@ -440,6 +451,7 @@ internationaliz8ion:tools to transl8 for I18N the document8ion && applic8ion int
      government8ion
       militariz8ion
        fortific8ion
+        columnE8ion:the usage of structural columns, or the descriptive layout pattern of any such usage of columnar edific8ions            (from Architecture)
           casem8   :bombproof chamber, usually of masonry, where cannons may fire through embrasures, or hollow molding chiefly in cornices (from Architecture)
            carE8   :a supporting column sculptured in the form of a draped female figure, also called caryatid                              (from Architecture)
            vall8ion
@@ -567,6 +579,7 @@ internationaliz8ion:tools to transl8 for I18N the document8ion && applic8ion int
       initializ8ion:tool to analyze initial definitions of values assoC8d with applic8ion code declar8ions of contants, globals, locals, && object attributes
           immeD8   :maybe d8/dur8ion-based applic8ion upd8 response l8ncy tool for specifying desired thresholds to achieve through profiling && optimiz8ion
             imp8ient:tool to r8 applic8ion responsiveness as inadequ8 (this && immeD8 will likely require extending dur8ions to at least float frames or jinx)
+          expeD8   :to hasten or expedite (this is also somewhat nicely abbreV8d as just "XPD8")
      procrastin8   :maybe some sort of task delay manager or guidance on how to avoid delaying accomplishment of identifiable && important priorities
             bel8   :d8/dur8ion-based scheduling like l8 "late" or w8 "wait" as an Octology interface for providing crontab-like activity autom8ion behavior
             loc8   :general search tool with optional history explor8ion && natural integr8ion of autom8d or custom-configured categoriz8ions for result d8a
@@ -818,8 +831,9 @@ internationaliz8ion:tools to transl8 for I18N the document8ion && applic8ion int
          lubric8
         consumm8
          penetr8
-          copul8
          ejacul8
+          copul8
+          capaC8   :to become active sperm in the female reproduction system, so as to be able to penetr8 an ovum (from Biology)
         insemin8
         impregn8
        fertiliz8ion
@@ -833,6 +847,33 @@ internationaliz8ion:tools to transl8 for I18N the document8ion && applic8ion int
           hernE8ion:hernia or rupture in smooth muscle tissue through which bodily structure protrudes
           vesic8   :to raise little bladders or blisters upon, or to inflame && sepR8 the cuticle of
          ganglE8   :having ganglia, as the cords of the sympathetic nervous system   (from Anatomy)
+        branchE8   :furnished or provided with gills or branchia, like some tadpoles (from Anatomy)
+       abranchE8   :gill-less, abranchial, or abranchious, with no branchE8 segments (from Anatomy)
+      dibranchE8   : # these are varE8ions on many specialized sub-types of branchia
+     unibranchE8
+   dermobranchE8
+   dorsibranchE8
+   cyclobranchE8
+  cryptobranchE8
+  caducibranchE8
+  elasmobranchE8
+  inferobranchE8
+  palliobranchE8
+ pectinibranchE8
+ perennibranchE8
+ pulmonibranchE8
+   pulmobranchE8
+   scutibranchE8
+ siphonobranchE8
+   tectibranchE8
+   tetrabranchE8
+trachelobranchE8
+ opisthobranchE8
+ lamellibranchE8
+   lophobranchE8
+    notobranchE8
+    nudibranchE8
+    zygobranchE8
            cusp8   :having a cusp or cusps, or being shaped like a cusp or cusp-like (from Anatomy)
          cingul8   :brain cortex situ8d in medial aspect of cerebral cortex (includes gyrus && sulcus), is involved in processing emotion && behavior regul8ion
         emascul8   :effemin8, mutil8, trunc8, incapacit8, intimid8, subjug8, deprive of strength && vigor, sever testicles of a male (or rarely female ovaries)
@@ -879,36 +920,41 @@ internationaliz8ion:tools to transl8 for I18N the document8ion && applic8ion int
          interf8h
          incarn8
        reincarn8
+        supplic8
   transubstantE8
       reconcilE8ion
          lament8ion
-        supplic8
          affirm8ion
            repR8ion
            salv8ion
+          crucE8   :having leaves or petals arranged in the form of a cross (from Botany), or otherwise cross-shaped, or to crucify, torture, or torment
+        excrucE8
          novitE8   :a religious novice going through some prob8ionary initE8ion or training period before taking final sacred vows
         vivific8   :giving life, vigor, vitality, spirit, anim8ion or to reduce && bring metal from an oxide or solution back to metallic form (in Chemistry)
       revivific8ion
-             rN8
-         infeud8   : # with another *t8 word, could add feudaliz8ion from 12th century Europe which likely contributed to modern expression of gynocentrism
-         inculc8   : # above could analyze C.S. Lewis' "feudaliz8ion of love" describing male vassals being fully obedient && subject to their female lords
+       feudaliz8ion:from 12th century Europe, the process which likely contributed to modern expression of gynocentrism
+         infeud8   : # for above could analyze C.S. Lewis' "feudaliz8ion of love" describing male vassals being fully obedient && subject to their female lords
+         inculc8
       indoctrin8
      immortaliz8ion
       sanctific8ion
-       glorific8ion
+       sacraliz8ion
        dignific8ion
+       glorific8ion
         canoniz8ion
          deific8ion
-          exalt8ion
-           laud8ion
           ordin8ion
+           laud8ion
+             rN8
             cur8   :could refer to clergy or be a tool to crE8 custom selections && collections of valued d8a && media as a museum custodian or librarian would
+           deit8
            prel8
            vicR8
          vicarE8
         ministr8
         congreg8
          officE8   :maybe ministry services for conducting weddings, funerals, holiday banquets, && any other similar rituals
+          exalt8
             exP8
             unE8   :rel8ing to former Eastern Christian or Orthodox churches received under Church of Rome jurisdiction && Pope, but retaining own rituals
         dispens8ion
@@ -953,13 +999,14 @@ internationaliz8ion:tools to transl8 for I18N the document8ion && applic8ion int
           alleV8
            elim8
             obV8
-          oblig8
+          oblig8   :maybe also oblig8ive && oblig8ory
          instig8
         capitul8
-       accommod8
         concilE8
-            meD8   :conflict resolution
+       accommod8
        intermeD8
+            meD8   :conflict resolution
+          negoC8
          negotE8
          arbitr8
         pacific8ion
@@ -1021,6 +1068,7 @@ internationaliz8ion:tools to transl8 for I18N the document8ion && applic8ion int
         distill8
          dissip8
           lixiV8
+        benficE8   :subject to a reduction process, such as benficiate ores
        vulcaniz8   :change the properties of by chemically treating, as with metallic chlorides, to form a substance like ebonite, caoutchouc, or India rubber
        precipit8
          passiv8   :to treat or coat (a metal) to reduce the chemical reactivity of its surface (like an oxide layer to protect && stabilize semiconductors)
@@ -1028,6 +1076,7 @@ internationaliz8ion:tools to transl8 for I18N the document8ion && applic8ion int
         inspiss8
         gelatin8
         alkaliz8   :rel8ing to or containing an alkali, having a pH gr8r than 7, such as soils derived from chalk or limestone (from Chemistry)
+         ammonE8   :to treat with ammonia (from Chemistry)
          attenU8
             elu8   :liquid solution resulting from elution, the process of extracting one material from another by washing with solvent, like uranium ions
             met8   :flat or somewhat hollowed stone on which grain or other food is ground, by means of smaller stone or pestle [Southwestern U.S. && Sp.Amer.]
@@ -1076,25 +1125,26 @@ internationaliz8ion:tools to transl8 for I18N the document8ion && applic8ion int
             bor8
            brom8
          bromin8
-           sulf8
          phosph8
+           sulf8
           chrom8
         chlorin8
          mangan8
          mellit8
              mL8
-            mal8   :salt (or ester) of malic      acid (or also could be an anion)
+            mal8   :salt (or ester) of      malic acid (or also could be an anion)
             mor8   # activ8d cell microtubule proteins (h(om|eter)o)?(mono|di|tri|tetra|oligo|poly)meriz8 macromolecule complexes (from Biochemistry)
-           oxal8   :salt (or ester) of oxalic     acid # above 8 *z8 possible future additions will need explor8ion of 8 *t8 to keep TimeZone pair
-            phN8   :salt            of phenic     acid
-           fumR8   :salt (or ester) of fumaric    acid produced as a key chemical intermeD8 during the urea (or Krebs?) cycle     (from Biochemistry)
-           form8   :salt            of formic     acid
+            phN8   :salt            of     phenic acid # above 8 *z8 possible future additions will need explor8ion of 8 *t8 to keep TimeZone pair
+           pect8   :salt            of     pectic acid
+           oxal8   :salt (or ester) of     oxalic acid
+           fumR8   :salt (or ester) of    fumaric acid produced as a key chemical intermeD8 during the urea (or Krebs?) cycle     (from Biochemistry)
+           form8   :salt            of     formic acid
           formE8   :the anionic univalent CHO2 group derived from formic acid, or a compound containing this group
        ricinolE8   :salt            of ricinoleic acid (formerly called palm8 of palmic acid)
            acer8   :aceric acid with salifiable base or long, narrow, pointed needle
           arist8   :having a slender, sharp, or spinelike tip                  (from Zoology)
-           hast8   :having a triangular spearhead-shaped point of a leaf
           cultr8   :sharp-edged && pointed like a pruning knife or certain bird beaks
+           hast8   :having a triangular spearhead-shaped point of a leaf       (from Botany )
              ur8
             aur8
            nitr8
@@ -1148,7 +1198,6 @@ internationaliz8ion:tools to transl8 for I18N the document8ion && applic8ion int
           lacer8
          lancin8
           ulcer8
-        excrucE8
      compassion8
      dispassion8
              bl8   :cry
@@ -1236,11 +1285,12 @@ internationaliz8ion:tools to transl8 for I18N the document8ion && applic8ion int
       proconsul8   :office  jurisdiction               of a proconsul, or the term of their office
       protector8   :government by a protector, or a st8 or territory partly controlled by a stronger st8 that is established by treaty
         princip8   :supreme rule
+        archont8   :office  term                       of an   archon
          caliph8   :era of Islam's ascendency from death of prophet Mohammed until the 13th century, or the office, dignity, or government of a caliph
-         sultan8   :the rule or dominion               of a sultan
-         rector8   :office   or st8ion                 of a rector
-         tribun8   :office   or st8                    of a tribune
-         vizier8   :office, dignity, or authority      of a vizier
+         sultan8   :the rule or dominion               of a    sultan
+         rector8   :office   or st8ion                 of a    rector
+         tribun8   :office   or st8                    of a   tribune
+         vizier8   :office, dignity, or authority      of a    vizier
        p8riarch8   :office, dignity, or jurisdiction   of a patriarch, or a patriarchal form of government or society (from Ethnology)
      chancellor8   :office  of a chancellor or the time during which one is chancellor
    archiepiscop8   :office  of an         archbishop
@@ -4319,7 +4369,7 @@ a vampire with my invisible flight. It was strange to wake up just when discover
 at least the memorable major details were worth documenting here, before I tried to sleep again. I then had a series of dreams about battling sexes. Some men,
 particularly younger ones, posed hard questions, then mocked me for wrangling with them inadequ8ly, before coming around to seeing that some answers could be
 found && that their derision wasn't helping much. Feminism is sexist, obviously, by naming everything good as feminine && calling their ubiquitous evil enemy
-just p8riarchy. It is a puritanical cult, unconcerned with equality of opportunity, pursuing equality of beneficial outcomes without regard for equal
+just p8riarchy. It is a puritanical cult, unconcerned with equality of opportunity, pursuing equality of beneficial outcomes without regard for any equal
 accountability or represent8ion in dangerous circumstances. I am contempl8ing my ckm8 ideas, establishing equal gender outcomes in the piece names as maybe
 poor revisionist history where over 95% of combat-rel8d deaths were of men, the sole Queen being most powerful, && her often being the lynchpin in achieving
 victory through checkm8, or ending in a stalem8 draw if she had already been captured. I want to develop a coherent theory of civiliz8ion. Gynocentrism that
@@ -4340,3 +4390,7 @@ order to achive more fairness && parity. Of course valuing men much higher would
 to superhuman proportions would be ultim8ly foolish. Forget "women && children first"! Maybe "man the life-boats" would be a better altern8ive to start from.
 I am re-evalU8ing all the influence my favor8 movies have had on me. So many gr8 heroic romantic chivalrous sacrifical saviors, from Neo to V, Val Kilmer in
 the Saint, El Mariachi, even Jeffrey in the Killer && ScarFace with their "No women, no kids!" attitudes regarding assassin8ions. Jack Skellington && Sally;
+I4MM0Jon:HTTPS://YouTu.be/8so_FSpJ17I is 11 minutes of Jonathan Haidt rel8ing human socializ8ion through repeated religious circling around whatever we find
+sacred, then evalU8s "New Atheists" like Sam Harris && Daniel Dennett as sacrilizing reason && r8ionality even more angrily than many of the most prominent
+dogmatic right-wing conserv8ive comment8ors. Reason alone must suffer inherent limit8ions when seeking truth && progress. Intuitionism can produce superior
+outcomes than enumer8ing explicit prioritized reasons for every decision. Diversity of thought, perspective, outlook, && opinion are essential for educ8ion;

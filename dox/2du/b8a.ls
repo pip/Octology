@@ -22,6 +22,7 @@
 #   considr mkng h2rl|rl2h|sumz|fibz|fctz|prmz in bin,eval sloc,stuD grepz && mk new g wi PCRE dflt nstd of SKpd altrn8ion meta-pRNz|pIpz,plan morgmz&&dvlUtlz,
 A= # stil nEd2stuD&&XperimNt wi thEs taskz&&ordr l8r stuf&&mAB EvNtual plan4 8consistNt nIc dvl stAgz perYear,but XperimNt8ion mA nEd2rEmAn pRtofall until1.0;
   c8:tsgr && a8:ftst colr gORwDflt/AquA SKp map like...sumb:colr up b8:[fps]?[bmt]z Dscrptnz(&&longlInz hangfixther2),
+  a8:ftst apNd colrd map of most common regex flag meanings for ignorecase, global, multi-line, single-string, evalU8, o-something, etc.,
   2du:8plc mv2 [ab]8 bin?,kEp thnkng altrn8 prIm bigSt string dismissal sets but permuting on several tops a few deep && mAB try oversight trial picking,
   a8:sS add optn2cnv SKpz in2 HTM, upd8 8plc 2fit term wrapng long lInz,add afewgd gM8ria 4mz,Xtract sectnz in2 cnt8 && nw `8c` lIk wc,
   b8:mkBigFloat objX,add cnfgUr8ion4 constructor in BaseTransl8&&4m@ing out stringific8ionz,Xplor Xpanding objX to represent Unumz,

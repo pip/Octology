@@ -4,10 +4,12 @@
 #   set-sink-volume alsa_output.pci-0000_04_00.1.hdmi-stereo 0xb304
 # 2du:start taking CLI optionz like old ximp && pmix (&& mAB ch nAm2pmix AgN4Pulse or pacv PAChangeVolume),mAB require /^\+/ to increase Xplicitly,
 #   mAB should increment by just 100thz as 1% or b64thz (which would be about 1.6% or each about 1/4th of Ubu scroll events 6% over speaker icon);
-use strict;use warnings;use utf8;use v5.10;my $VERSION='0.0';my $d8VS='FCELDsXE';
-use Octology::b8;my $ssnm;my $ssvl;my $avld=int(65536 * 0.03); # SelectedSink NaMe&&VolumeLevel,AdjustVolumeLevelDecrement (default ~3%)
-my $pado=`pacmd dump`;my @padl=split(/\n/,$pado); # PulseAudioDump Output&&Linez
+use strict;use warnings;use utf8;use v5.10;my $VERSION='0.0';my $d8VS='I4LMCYAN';
+use Octology::a8;my $ssnm;my $ssvl;my $avld=int(65536 * 0.03); # SelectedSink NaMe&&VolumeLevel,AdjustVolumeLevelDecrement (default ~3%)
+use Octology::b8;my $pado=`pacmd dump`;my @padl=split(/\n/,$pado);#rint "pado:$pado\n"; # PulseAudioDump Output&&Linez
 if (@ARGV && $ARGV[0]=~  /^\+?(-?\d+)$/){$avld*=$1;}else{$avld*=-1;} # param should be decimal multiplier of default decrement
-for(@padl){if(  /^set-sink-volume ([^ ]+) 0x([0-9a-f]{4})/){$ssnm=$1;$ssvl=dec($2); # might need to select among multiple sink namez
-    print ("pacmd set-sink-volume $ssnm ".($ssvl+$avld));
-    system("pacmd set-sink-volume $ssnm ".($ssvl+$avld));}}
+for(@padl){if(  /^set-sink-volume ([^ ]+) 0x([0-9a-f]{1,4})/i){$ssnm=$1;$ssvl=dec( $2); # might need to select among multiple sink namez
+    $ssvl =abs($avld) if($ssvl+$avld <  0   );my $ssnc=$ssnm;$ssnc=~ s/(-)([^-])/$Y$1$B$2/g;$ssnc=~ s/\.(\d)\./.$Y$1./g;$ssnc=~ s/(\.)([^.])/$G$1$B$2/g;
+    $ssvl-=abs($avld) if($ssvl+$avld > 65535);$ssnc=~ s/(\d{4})_(\d)(\d)_(\d\d)/$C$1_$o$2$R$3_$C$4/g;$ssnc=~ s/(_)([^_])/$M$1$B$2/g; # mAB xtra bkgr colr too?
+    print ("${z}pacmd$C set$Y-${C}sink$Y-${C}volume$B $ssnc$W 0${o}x$M".heX($ssvl+$avld),sprintf("$R %2.4f$W%%",($ssvl+$avld)/65535.0*100));
+    system("pacmd set-sink-volume $ssnm 0x".heX($ssvl+$avld));}}

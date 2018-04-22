@@ -554,6 +554,7 @@ alias s2du='pu ~/dox/2du;export TERM="xterm";scrn -S 2du -t 2du     e  2    ;exp
 alias sirc='             scrn -S irc -t irc irssi       ;  ';alias si='sirc';  # don't need -c IRC.Perl.Org or -n Pip since specified in ~/.irssi/config now
 #lias s2du='pu ~/dox/2du;scrn -S 2du -t 2du     e  2    ;po';alias s2='s2du';  # reverted to exporting TERM=xterm around s2 2mk vim statusbar dRk AgN
 alias s28x='pu ~/dox/2du;scrn -S 8xt -t 8xt     e  8    ;po';alias s28='s28x'; # s8 is already aliased to sort; weird that e 8 didn't have e 2 problM
+alias sb8a='pu ~/dox/2du;scrn -S b8a -t b8a     e b8a.ls;po';alias sb='sb8a';
 alias sdvl='pu ~/dvl    ;scrn -S dvl -t dvl             ;po';alias sd='sdvl';
 alias smuz='pu ~/muz    ;scrn -S muz -t muz             ;po';alias sm='smuz';
 alias srut='pu  /etc    ;scrn -S rut -t rut sudo  -E zsh;po';alias sr='srut';
