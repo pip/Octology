@@ -151,3 +151,8 @@ i) The fundamental religious idea is that there are modes of being which nobly j
 HTTPS://YouTu.be/orJlObCJuUM "The Trap of the Hero" # I3RM8MAN:8mins of JohnTheOther JohnHembling advising rejection of Hero myth as primary useful archetype;
 HTTPS://AlastairAdversaria.Com/2018/04/06/discourse-in-the-culture-wars-and-the-hunger-for-catharsis "Discourse in the Culture Wars and Hunger for Catharsis"
 # I48MAN48:Seems to be a high-quality article defending Dr. Jordan Peterson's recent 12 Rules for Life and challenging the many scathing criticisms leveled;
+HTTPS://YouTu.be/9MJUhDQKJcY "Jordan Peterson: The Dangerous I.Q. Deb8" # I4NM0HEY:20mins of totally excellent elabor8ion on intelligence && racial issues.
+HTTPS://YouTu.be/FCFnRrgEtMM "Income Inequality | Jordan Peterson and Bret Weinstein" # 26mins of my favor8s deliber8ing on Pareto distributions all around.
+HTTPS://YouTu.be/1TN_Ig8sjxc "Intelligence, Wisdom and Evolution by Bret Weinstein" # 36mins of totally fabulous discussion on smarts, intuition, && wisdom.
+HTTPS://YouTu.be/AIWlsSOubts "The Fourth Frontier: Discovering Humanity's Future" # 44mins of BretWeinstein presenting gr8 analysis of risks && potentials.
+HTTPS://YouTu.be/CLHdY5Cyf58 "The Path to an Excellent World" # 37mins of BretWeinstein clearly laying out his insightful plan for improving human condition;

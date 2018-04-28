@@ -17,14 +17,14 @@
 0.8 C=cnd8:candid8:J88 ThuAug 8th2019:1Mnth  from  b8a:main fE8urez should be polished 4 pOtNtial release Candid8 C in prepR8ion 4 fInal tsting && feedbaCk;
 1.0 R=rls8:releas8:JA8 TueOct 8th2019:2Mnthz from cnd8:1st complete majoR public Release of fE8uReful Octology v1.0 to be made fRom GitHub oveR to the CPAN;
 
-# 2du:rEthnk top stAg IDaz,rEordr bSt ItMz hEr,brk old ItMz dn&&bild bak up in2 stAgz cklstz,rE4m@ AgN in2 dNse 1pAg Year plan4 prep v1.0;
-#   contMpl8 kEpng bin top96 + ~4 Xtra prOmOt cndid8z or Xpndng2nXt sumb pAg4 192,mAB add r8ngz4cmplEtnS|valU|nEd2Bdistinct vs.combInabiliT|orig|novLT|plAyabl,
-#   considr mkng h2rl|rl2h|sumz|fibz|fctz|prmz in bin,eval sloc,stuD grepz && mk new g wi PCRE dflt nstd of SKpd altrn8ion meta-pRNz|pIpz,plan morgmz&&dvlUtlz,
+# 2du:rEthnk top stAg IDaz,rEordr bSt ItMz hEr,brk old ItMz dn&&bild bak up in2 stAgz cklstz,rE4m@ AgN in2 dNse 1pAg Year plan4 prep v1.0,eval sloc 4~/bin rm,
+#   contMpl8 cndid8z Xpndng2nXt sumb pAg4 192,mAB add r8ngz4cmplEtnS|valU|nEd2Bdistinct vs.combInabiliT|orig|novLT|plAyabl,plan morgmz&&dvlUtlz,
 A= # stil nEd2stuD&&XperimNt wi thEs taskz&&ordr l8r stuf&&mAB EvNtual plan4 8consistNt nIc dvl stAgz perYear,but XperimNt8ion mA nEd2rEmAn pRtofall until1.0;
-  c8:tsgr && a8:ftst colr gORwDflt/AquA SKp map like...sumb:colr up b8:[fps]?[bmt]z Dscrptnz(&&longlInz hangfixther2),
-  a8:ftst apNd colrd map of most common regex flag meanings for ignorecase, global, multi-line, single-string, evalU8, o-something, etc.,
+  a8:ftst apNd colrd map of most common regex flag meanings for ignorecase,global,multi-match,single-string,evalU8,optimIz-brAk,current,Xpandcmntz,LUAD,etc.,
+  a8:reso colr like sumb,b8:(f(ct|ib)|(pr|su)m)z&&fixlonglInzhang&&mABmk just b64 pRam ndx of 48 pAgz2gNer8 && dflt b64 out,
   2du:8plc mv2 [ab]8 bin?,kEp thnkng altrn8 prIm bigSt string dismissal sets but permuting on several tops a few deep && mAB try oversight trial picking,
   a8:sS add optn2cnv SKpz in2 HTM, upd8 8plc 2fit term wrapng long lInz,add afewgd gM8ria 4mz,Xtract sectnz in2 cnt8 && nw `8c` lIk wc,
+  a8:g aftr stuD grepz && mk new PCRE dflt nstd of SKpd altrn8ion meta-pRNz|pIpz,
   b8:mkBigFloat objX,add cnfgUr8ion4 constructor in BaseTransl8&&4m@ing out stringific8ionz,Xplor Xpanding objX to represent Unumz,
   c8:fix ckm8 long PGN warnz&& -c SimpXit cordump,figure out if possible to enable && receive FingerTouch Wacom tablet events,or ideally get stylus pressure,
   SGR:NBAVbv+Hh prefer S,IFi+Mm G,Rr+E R, LKl+Oo s,Cc+Tt g,UDu+Gg r layrz(wi sgr crosng Ovr,Cntr,UndrDbl)but mA want2justXpnd any nstd of <=6(or12+UIQ)chanLz,

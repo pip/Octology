@@ -1,5 +1,5 @@
 # Octology
-The ontology of 8. `$VERSION='0.0';$d8VS='I46MKGAP';`
+The ontology of 8. `$VERSION='0.0';$d8VS='I4SMGLpp';`
 
 This is basically a public preview of my early development files. I am not yet ready for serious collaboration, but welcome any sort of feedback.
 
@@ -50,7 +50,7 @@ If I ever become unable to continue developing this project further, my hope is 
 ##### (*several rather older examples*) -- [**no longer listed from recent down to oldest**]
 ![Octology-sumb-shot_1280x800-HBBLJe4o](https://github.com/pip/Octology/raw/master/gfx/sho/Octology-sumb-shot_1280x800-HBBLJe4o.png "Octology-sumb-HBBLJe4o")
 ![Octology-8trm-shot_1280x800-HBBLK762](https://github.com/pip/Octology/raw/master/gfx/sho/Octology-8trm-shot_1280x800-HBBLK762.png "Octology-8trm-HBBLK762")
-![Octology-ftst-shot_1614x902-HAOM99L1](https://github.com/pip/Octology/raw/master/gfx/sho/Octology-ftst-shot_1614x902-HAOM99L1.png "Octology-ftst-HAOM99L1")
+![Octology-ftst-shot_1614x952-I4SMGG88](https://github.com/pip/Octology/raw/master/gfx/sho/Octology-ftst-shot_1614x952-I4SMGG88.png "Octology-ftst-I4SMGG88")
 ![Octology-g3Ob-shot_1614x902-HAOM9cKA](https://github.com/pip/Octology/raw/master/gfx/sho/Octology-g3Ob-shot_1614x902-HAOM9cKA.png "Octology-g3Ob-HAOM9cKA")
 
 ![Octology-ckm8-shot_1536x960-HAOM9HKQ](https://github.com/pip/Octology/raw/master/gfx/sho/Octology-ckm8-shot_1536x960-HAOM9HKQ.png "Octology-ckm8-HAOM9HKQ")

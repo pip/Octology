@@ -45,13 +45,13 @@ package     Octology::a8;
 use strict; use warnings;use utf8;use v5.10;use Encode;
 require         Exporter;  # add new colr systM
 use base     qw(Exporter); # mainly exporting global utility functions && variables originally inherited from c8.pm as well as a few f8.pm d8a structures
-our @EXPORT= qw(bfr8c    b8c    d8c    dur8c       a8c   a8colr      h2rl   rl2h       drkh
+our @EXPORT= qw(bfr8c    b8c    d8c    dur8c       a8c   a8colr      h2rl   rl2h       drkh  o8
                 bfr8colr b8colr d8colr dur8colr    d8cs @d8cl  chti  c8fn     S2   c2  S c   sS    lodl @Monz @Mon     %mc2F %mc2b %mF2c %mb2c        %sb10
  $SKp8 $SKp0 $SKp1 $SKp2 b8clr  $SKpf $SKpt %pmap %cmap       %pl8n  ftst       %f8fm %f8pm %sgrm %sgrn @Dayz @Day  lrc      comma  curs  sumb @x256  @sb64
     $z    $k    $r    $o    $y    $g     $c $SKpb    $m    $p    $w  tstc    $K    $R    $O    $Y    $G    $C    $B    $M    $P    $W    %p622 %p222
  $tnhf $ucdf  spff  spfd  spfX   shfl  reso $auth %cmsp %p8k2 @p82k  chp8     S2f4 c2f4 dm2u cdst %crgb %cbrt @snls @mrls %cdrd %cdrn    %nrgb         gnp8);
  # of 52 posibl sngl-letr var nmz,a8 Xportz 20,$b && $a unavail,so shudB thEs30 lFt4quik shortSt nAmz: 'def hij l n  q stuv x', 'A  DEF HIJ L N  Q STUV X Z'
-our $VERSION='0.0';my  $d8VS='I45MCalN';our $auth='PipStuart <Pip@CPAN.Org>'; # above not exporting $b since collidez with sort{$a  <=> $b}
+our $VERSION='0.0';my  $d8VS='I4SM0KIN';our $auth='PipStuart <Pip@CPAN.Org>'; # above not exporting $b since collidez with sort{$a  <=> $b}
 our $ucdf= eval('use Color::Similarity::RGB qw(distance);1') || 0; # try2set UseColorDistanceFlag if optional module is available
 our @Monz=qw(January February March   April     May June July   August September October November December);our @Mon=();push(@Mon,substr($_,0,3)) for(@Monz);
 our @Dayz=qw(Sunday  Monday   Tuesday Wednesday Thursday Friday Saturday                                  );our @Day=();push(@Day,substr($_,0,3)) for(@Dayz);
@@ -152,6 +152,14 @@ sub chp8{ # should do similar stuff but all may need to use joined layer keyz wi
   $c=S('c');$C=S('C');$SKpb=S('b');$B=S('B');$m=S('m');$M=S('M');$p=S('p');$P=S('P');$w=S('w');$W=S('W'); #avoid sort $b
 } # since these all may now have layer prefixes, maybe the hashes can be combined?
 chp8(); # gotta call it to init d8a!
+sub o8{my $Uflg=1;my $Stxt='';$Stxt.=join(' ',@_) if(@_);
+  if($Stxt=~ s/(^|\s)-?-u(tf8|flg)?(\s|$)//gi ){$Uflg=0;}
+  if($Stxt=~ s/(^|\s)-?-h(elp    )?(\s|$)//gix){$Stxt=" o8 Help text - autom8 printing out UTF-8 encoded texts which may also include ANSI escape codes" .
+    " for colors or SGR attributes;\n This is basically an example of a manipul8ion parameter, but may not make standalone CLI;\n -h - show this Help text;
+ -u - disable default Utf-8 encoding;";}
+  if(defined($Stxt) && length($Stxt)){ # mA want2ck Dflt $_ or STDIN if!givN pRam2prnt ANSI SKpd colors on UTF-8 STDOUT
+    open my $out8,'>&',STDOUT or die "Can't open  duplic8 STDOUT handle: $!";if($Uflg){binmode $out8,':encoding(UTF-8)';}print $out8 $Stxt; # crE8 locl duplic8
+    close   $out8             or die "Can't close duplic8 STDOUT handle: $!";}} # this can allow intermeD8 prints when not needing to manipul8 aggreg8
 our @x256=(qw[000000 800000  008000 808000   000080 800080  008080 C0C0C0    808080 FF0000  00FF00 FFFF00   0000FF FF00FF  00FFFF FFFFFF
               000000 00005F  000087 0000AF   0000D7 0000FF  005F00 005F5F    005F87 005FAF  005FD7 005FFF   008700 00875F  008787 0087AF
               0087D7 0087FF  00AF00 00AF5F   00AF87 00AFAF  00AFD7 00AFFF    00D700 00D75F  00D787 00D7AF   00D7D7 00D7FF  00FF00 00FF5F
@@ -168,6 +176,22 @@ our @x256=(qw[000000 800000  008000 808000   000080 800080  008080 C0C0C0    808
               FF8700 FF875F  FF8787 FF87AF   FF87D7 FF87FF  FFAF00 FFAF5F    FFAF87 FFAFAF  FFAFD7 FFAFFF   FFD700 FFD75F  FFD787 FFD7AF
               FFD7D7 FFD7FF  FFFF00 FFFF5F   FFFF87 FFFFAF  FFFFD7 FFFFFF    080808 121212  1C1C1C 262626   303030 3A3A3A  444444 4E4E4E
               585858 626262  6C6C6C 767676   808080 8A8A8A  949494 9E9E9E    A8A8A8 B2B2B2  BCBCBC C6C6C6   D0D0D0 DADADA  E4E4E4 EEEEEE]); # XTerm256colr pal8
+              # 0000 W000  0W00 WW00   00W0 W0W0  0WW0 mmm0    WWW0 _00m  0_0C __0y   00_3 _0_p  0__F ____  # rslt of echoing above HEX RRGGBB pIpd thru h2rl:
+              # 0000 00N3  00X3 00h3   00r3 00_3  0N0C 0NNF    0NXF 0NhF  0NrF 0N_F   0X0C 0XNF  0XXF 0XhF
+              # 0XrF 0X_F  0h0C 0hNF   0hXF 0hhF  0hrF 0h_F    0r0C 0rNF  0rXF 0rhF   0rrF 0r_F  0_0C 0_NF
+              # 0_XF 0_hF  0_rF 0__F   N00m N0Np  N0Xp N0hp    N0rp N0_p  NN0y NNN_   NNX_ NNh_  NNr_ NN__
+              # NX0y NXN_  NXX_ NXh_   NXr_ NX__  Nh0y NhN_    NhX_ Nhh_  Nhr_ Nh__   Nr0y NrN_  NrX_ Nrh_
+              # Nrr_ Nr__  N_0y N_N_   N_X_ N_h_  N_r_ N___    X00m X0Np  X0Xp X0hp   X0rp X0_p  XN0y XNN_
+              # XNX_ XNh_  XNr_ XN__   XX0y XXN_  XXX_ XXh_    XXr_ XX__  Xh0y XhN_   XhX_ Xhh_  Xhr_ Xh__
+              # Xr0y XrN_  XrX_ Xrh_   Xrr_ Xr__  X_0y X_N_    X_X_ X_h_  X_r_ X___   h00m h0Np  h0Xp h0hp
+              # h0rp h0_p  hN0y hNN_   hNX_ hNh_  hNr_ hN__    hX0y hXN_  hXX_ hXh_   hXr_ hX__  hh0y hhN_
+              # hhX_ hhh_  hhr_ hh__   hr0y hrN_  hrX_ hrh_    hrr_ hr__  h_0y h_N_   h_X_ h_h_  h_r_ h___
+              # r00m r0Np  r0Xp r0hp   r0rp r0_p  rN0y rNN_    rNX_ rNh_  rNr_ rN__   rX0y rXN_  rXX_ rXh_
+              # rXr_ rX__  rh0y rhN_   rhX_ rhh_  rhr_ rh__    rr0y rrN_  rrX_ rrh_   rrr_ rr__  r_0y r_N_
+              # r_X_ r_h_  r_r_ r___   _00m _0Np  _0Xp _0hp    _0rp _0_p  _N0y _NN_   _NX_ _Nh_  _Nr_ _N__
+              # _X0y _XN_  _XX_ _Xh_   _Xr_ _X__  _h0y _hN_    _hX_ _hh_  _hr_ _h__   _r0y _rN_  _rX_ _rh_
+              # _rr_ _r__  __0y __N_   __X_ __h_  __r_ ____    2220 444g  7770 999g   CCC0 EEEg  HHH0 JJJg
+              # MMM0 OOOg  RRR0 TTTg   WWW0 YYYg  bbb0 dddg    ggg0 iiig  lll0 nnng   qqq0 sssg  vvv0 xxxg
 our %nrgb=( 'aliceblue'           => 'F0F8FF',  'antiquewhite'        => 'FAEBD7',  'antiquewhite1'       => 'FFEFDB',  'antiquewhite2'       => 'EEDFCC',
             'antiquewhite3'       => 'CDC0B0',  'antiquewhite4'       => '8B8378',  'aqua'                => '00FFFF',  'aquamarine'          => '7FFFD4',
             'aquamarine1'         => '7FFFD4',  'aquamarine2'         => '76EEC6',  'aquamarine3'         => '66CDAA',  'aquamarine4'         => '458B74',
@@ -500,25 +524,42 @@ sub drkh{ # convert any RRGGBB HEX with channel intensities dropped to 8th int b
     for my $rndx ( 0..2){$rgbd[$rndx]=sprintf("%2.2X",int((hex($rgbd[$rndx*2])*16+hex($rgbd[$rndx*2+1]))*$scal));
     } return(h2rl(join('',@rgbd))); } } # should setup taken HEX RGB && scale to darken maybe default colors from d8/fldz.pm for d8g deep darkz
 sub rl2h{ # convert any typical b64 RGBL into RRGGBB HEX with Last Low bits Loaded Layered aLready
-  my   $rgbs='';while(@_){ # loop all params && join into single end-result string
-    my $rgbh=shift( @_);my $valu=0;                       my @rgbd=split(//,('0'x 4));return('') unless(defined($rgbh) && length($rgbh));
-    if(length($rgbh) == 4){#$rgbh=uc($rgbh) if($rgbh=~ /[a-z]/);
-                                                             @rgbd=split(//,$rgbh); # do $sb64[..] aftr Ech b10 valU pRtoff b64 6-bit chars whIl filng lowbits
-      $valu= $sb10{$rgbd[0]} * 4;$valu+=2 if($sb10{$rgbd[3]} & 32);$valu+=1 if($sb10{$rgbd[3]} & 16);$rgbs.= sprintf("%2.2X",$valu);
-      $valu= $sb10{$rgbd[1]} * 4;$valu+=2 if($sb10{$rgbd[3]} &  8);$valu+=1 if($sb10{$rgbd[3]} &  4);$rgbs.= sprintf("%2.2X",$valu);
-      $valu= $sb10{$rgbd[2]} * 4;$valu+=2 if($sb10{$rgbd[3]} &  2);$valu+=1 if($sb10{$rgbd[3]} &  1);$rgbs.= sprintf("%2.2X",$valu);         } $rgbs.=' ';}
-  $rgbs=~ s/ $//;return($rgbs);}
+  my $twbf=0; # could also accept basic 12-bit HTML HEX #RGB into b64 RB
+  if(!@_ && !-t STDIN){push(@_,<STDIN>);} #unshift(@_,decode('UTF-8',join('',<STDIN>)));} # probably need to ck STDIN if not -tty && no params passed in
+  my   $rgbs='';my $rgbp;while($rgbp=shift(@_)){ # loop all params && join into single end-result string
+    if   ($rgbp  =~  /(^|\s)-?-h(elp     )?(\s|$)/ix ){$rgbs.=" rl2h -h Help text for looping && parsing from b64 RGBL to 6 HEX RRGGBB with h2rl reverse;\n";}
+    if   ($rgbp  =~  /(^|\s)-?-t(welvebit)?(\s|$)/i  ){$twbf^=  1;}
+    while($rgbp  =~  /(^|\s)([0-9A-Z._]{4})(\s|$)/i  ){my $rgbh=$2;my $rgbr='';my  $valu= 0; #$rgbh=uc($rgbh) if($rgbh=~  /[a-z]/);
+      my @rgbd=split(//,$rgbh); # do $sb64[..] aftr Ech b10 valU pRtoff b64 6-bit chars whIl filng lobits
+      $valu= $sb10{$rgbd[0]} * 4;$valu+=2 if($sb10{$rgbd[3]} & 32);$valu+=1 if($sb10{$rgbd[3]} & 16);$rgbr.= sprintf("%2.2X",$valu);
+      $valu= $sb10{$rgbd[1]} * 4;$valu+=2 if($sb10{$rgbd[3]} &  8);$valu+=1 if($sb10{$rgbd[3]} &  4);$rgbr.= sprintf("%2.2X",$valu);
+      $valu= $sb10{$rgbd[2]} * 4;$valu+=2 if($sb10{$rgbd[3]} &  2);$valu+=1 if($sb10{$rgbd[3]} &  1);$rgbr.= sprintf("%2.2X",$valu);
+      $rgbp      =~ s/(^|\s)([0-9A-Z._]{4})(\s|$)/$1$rgbr$3/i ;} next unless($twbf);
+    while($rgbp  =~  /(^|\s)([0-9A-Z._]{2})(\s|$)/i  ){my $rgbh=$2;my $rgbr='';my  $valu= 0; #$rgbh=uc($rgbh) if($rgbh=~  /[a-z]/);
+      my @rgbd=split(//,$rgbh); # do $sb64[..] aftr Ech b10 valU pRtoff b64 6-bit chars whIl filng lobits
+      $valu=     $sb10{$rgbd[0]} & 15 ;                                                                      $rgbr.= sprintf("%1.1X",$valu);
+      $valu= int($sb10{$rgbd[0]} / 16);$valu+= 4 if($sb10{$rgbd[1]} & 16);$valu+= 8 if($sb10{$rgbd[1]} & 32);$rgbr.= sprintf("%1.1X",$valu);
+      $valu=     $sb10{$rgbd[1]} & 15 ;                                                                      $rgbr.= sprintf("%1.1X",$valu);
+      $rgbp      =~ s/(^|\s)([0-9A-Z._]{2})(\s|$)/$1$rgbr$3/i ;} $rgbs.="$rgbp ";} $rgbs=~ s/ $//;return($rgbs);}
 sub h2rl{ # convert any typical HEX RRGGBB into RGBL b64 with Last Low bits Layered (might not want to uc() if 4-char leng or maybe flagd 2cnv bak2 HEX)
-  my   $rgbs='';while(@_){
-    my $rgbh=shift( @_);my $valu=0;my $lowb=0;my $rgbs='';my @rgbd=split(//,('0'x 6));return('') unless(defined($rgbh) && length($rgbh));
-    if(length($rgbh) == 6){                                  @rgbd=split(//,$rgbh); # do $sb64[..] aftr Ech b10 valU pRtoff b64 6-bit chars whIl filng lowbits
-      $valu= hex($rgbd[0]) * 16 + hex($rgbd[1]);$rgbs.=$sb64[int($valu/4)];$lowb+=2 if($valu & 2);$lowb+=1 if($valu & 1);$lowb*=4;
-      $valu= hex($rgbd[2]) * 16 + hex($rgbd[3]);$rgbs.=$sb64[int($valu/4)];$lowb+=2 if($valu & 2);$lowb+=1 if($valu & 1);$lowb*=4;
-      $valu= hex($rgbd[4]) * 16 + hex($rgbd[5]);$rgbs.=$sb64[int($valu/4)];$lowb+=2 if($valu & 2);$lowb+=1 if($valu & 1);$rgbs.=$sb64[$lowb];} $rgbs.=' ';}
-  $rgbs=~ s/ $//;return($rgbs);}
+  my $twbf=0; # could also accept basic 12-bit HTML HEX #RGB into b64 RB
+  if(!@_ && !-t STDIN){push(@_,<STDIN>);} #unshift(@_,decode('UTF-8',join('',<STDIN>)));} # probably need to ck STDIN if not -tty && no params passed in
+  my      $rgbs='';my $rgbp;while($rgbp=shift(@_)){ # re-tokenize any param d8a nstd of requiring actual params be exactly 6 HEX chars only
+    if   ($rgbp  =~  /(^|\s)-?-h(elp     )?(\s|$)/ix ){$rgbs.=" h2rl -h Help text for looping && parsing from 6 HEX RRGGBB to b64 RGBL with rl2h reverse;\n";}
+    if   ($rgbp  =~  /(^|\s)-?-t(welvebit)?(\s|$)/i  ){$twbf^=   1;}
+    while($rgbp  =~  /(^|\s)([0-9A-F]{6}  )(\s|$)/ix ){my $rgbh=$2;my $rgbr='';my  $valu= 0;my $lowb=0;
+      my  @rgbd= split(//,$rgbh); # do $sb64[..] aftr Ech b10 valU pRtoff b64 6-bit chars whIl filng lobits
+      $valu  = hex($rgbd[0]) * 16 +  hex($rgbd[1]);$rgbr.=$sb64[int($valu/4)];$lowb+=2 if($valu & 2);$lowb+=1 if($valu & 1);$lowb*=4;
+      $valu  = hex($rgbd[2]) * 16 +  hex($rgbd[3]);$rgbr.=$sb64[int($valu/4)];$lowb+=2 if($valu & 2);$lowb+=1 if($valu & 1);$lowb*=4;
+      $valu  = hex($rgbd[4]) * 16 +  hex($rgbd[5]);$rgbr.=$sb64[int($valu/4)];$lowb+=2 if($valu & 2);$lowb+=1 if($valu & 1);$rgbr.=$sb64[$lowb];
+      $rgbp      =~ s/(^|\s)([0-9A-F]{6}  )(\s|$)/$1$rgbr$3/ix;} next unless($twbf); # try tighter twelve-bit RGB from HEX to RB in b64
+    while($rgbp  =~  /(^|\s)([0-9A-F]{3}  )(\s|$)/ix ){my $rgbh=$2;my $rgbr='';my  $valu= 0; my @rgbd= split(//,$rgbh); # do $sb64[..] aftr Ech b10 valU
+      $valu  = hex($rgbd[0]);$valu+=16 if(hex($rgbd[1]) &  1);$valu+=32 if(hex($rgbd[1]) &  2);$rgbr.=$sb64[$valu];
+      $valu  = hex($rgbd[2]);$valu+=16 if(hex($rgbd[1]) &  4);$valu+=32 if(hex($rgbd[1]) &  8);$rgbr.=$sb64[$valu]; # shud add -twelvebit 2rvrs
+      $rgbp      =~ s/(^|\s)([0-9A-F]{3}  )(\s|$)/$1$rgbr$3/ix;} $rgbs.="$rgbp ";} $rgbs=~ s/ $//;return($rgbs);}
 sub S{my $Sstr='';my $codz='';if(@_ && defined($_[0])){$codz= join('',@_);} # might want l8r flag optionz as sepR8d by spacez for these joinz though
 if((!defined($codz) || !length($codz)) && !-t STDIN){chomp($codz= join('',<STDIN>));}
-  if(defined($codz) && length($codz)){ # problM mAB doing !-t ck twice from bin/S to S()?
+  if(defined($codz) &&  length($codz)){ # problM mAB doing !-t ck twice from bin/S to S()?
     if($codz=~  /^--?h/i){print # need to fix lodH usage of old S && gnp8
 "   S  - produce eScape codes from c8 Fbs     Vers:$VERSION  d8VS:$d8VS  Auth:$auth
         No more passing ':' colon as placeholder for F or b but instead now colon can be prefixed with desired
@@ -695,33 +736,36 @@ sub sS{      my $Stxt=shift;my $sefz=shift; # eScape TeXT, SubstituteEscapeFlagZ
 our @d8cl=();for(split(//,$cmap{'d8bo'})){push(@d8cl,S($_));} # the default d8ColrList is loaded with eScaped formz described by ColrMap's d8bo sequence
 sub   d8colr {return(  d8c(@_));}
 sub   d8c    {my $rtns = ''; # maybe these should eventually accept flags to select among most useful coloring options
-  if(!@_ && !-t STDIN){chomp(@_=decode('UTF-8',<STDIN>));}
+  if(!@_ && !-t STDIN){     (@_=decode('UTF-8',join(''  ,<STDIN>)));}
   for my $d8st (@_){my @d8di = split(//,        $d8st );my $d8dc = '';for(0..$#d8di){$d8dc .= $d8cl[          $_%@d8cl ] . $d8di[$_]        ;} $rtns.="$d8dc ";
   }      $rtns =~ s/\s$//;return($rtns);}
 sub dur8colr {return(dur8c(@_));}
 sub dur8c    {my $rtns = ''; # should build     dur8ion colors right-to-left like b8colr but reversing the d8bo color order
-  if(!@_ && !-t STDIN){chomp(@_=decode('UTF-8',<STDIN>));}
+  if(!@_ && !-t STDIN){     (@_=decode('UTF-8',join(''  ,<STDIN>)));}
   for my $d8st (@_){my @d8di = split(//,reverse($d8st));my $d8dc = '';for(0..$#d8di){$d8dc  = $d8cl[$#d8cl - ($_%@d8cl)] . $d8di[$_] . $d8dc;} $rtns.="$d8dc ";
   }      $rtns =~ s/\s$//;return($rtns);}
 sub bfr8colr {return(bfr8c(@_));}
 sub bfr8c    {my $rtns = ''; # should build b8 fraction colors left-to-right like d8colr but reversing the d8bo color order
-  if(!@_ && !-t STDIN){chomp(@_=decode('UTF-8',<STDIN>));} # turn only piping thru in2chompd paramz since skipng over \n (&&what else?) wNrot8ing colrz is hRdr
+  if(!@_ && !-t STDIN){     (@_=decode('UTF-8',join(''  ,<STDIN>)));} # turnOnly pIpngthruin2chompd pRamz sinc skipng Ovr \n (&&what Ls?)wNrot8ng colrz is hRdr
   for my $b8st (@_){my @b64d = split(//,        $b8st );my $b64c = '';for(0..$#b64d){$b64c .= $d8cl[$#d8cl - ($_%@d8cl)] . $b64d[$_]        ;} $rtns.="$b64c ";
   }      $rtns =~ s/\s$//;return($rtns);}
 sub   b8colr {return(  b8c(@_));}
 sub   b8c    {my $rtns = ''; # just do coloring stringwise for when sprintf zero-padding a specific width is needed   # mk b8clr 2Dtect commaz && % B4 coloring
-  if(!@_ && !-t STDIN){chomp(@_=decode('UTF-8',<STDIN>));}
+  if(!@_ && !-t STDIN){     (@_=decode('UTF-8',join(''  ,<STDIN>)));}
   for my $b8st (@_){my @b64d = split(//,reverse($b8st));my $b64c = '';for(0..$#b64d){$b64c  = $d8cl[          $_%@d8cl ] . $b64d[$_] . $b64c;} $rtns.="$b64c ";
   }      $rtns =~ s/\s$//;return($rtns);}
-sub   b8clr  {my $rtns = ''; # Dtect commaz && % B4 coloring
-  if(!@_ && !-t STDIN){chomp(@_=decode('UTF-8',<STDIN>));}
-  for my $b8st (@_){my $tdst;my $iprt=0;my $fprt=0;my $comw=0;
+sub   b8clr  {my $rtns = ''; # Dtect commaz && % B4 coloring  # mAB base4 [bd][fu]?r?8c colrngz shud stA similar with simple uniform applic8ion
+  if(!@_ && !-t STDIN){while(my $inln=<STDIN>){#$inln=~ s/\n?$/\n/; # ensure input ends wi newline, may reapNd if chomped, mIt nEd2Bdone aftr decode?
+    push(@_,split(/ /,decode('UTF-8',$inln)));}} # for some reason backtickz like "b8clr `prmz 47 1`" aren't including the typical nwlInz,mAB tix get noColmz?
+  for my $b8st (@_){my $tdst;my $iprt=0;my $fprt=0;my $comw=0;my $nwlf=0; # shud also tune b8clr 2 hndl b256 as well as b64
     if  ($b8st=~ /^(.+?)[%](.+)$/){$iprt=$1;$fprt=$2;}else{$iprt=$b8st;}
     if  ($iprt=~ /,([^,]+)$/){$comw= length($1);} d8cs('RoYGWCBMpW') if($comw); # assume coma 4 b64 char blox
+    $nwlf=1 if($iprt=~ s/\n$//);
     $tdst   =            b8colr($iprt);
-    if  ($fprt){$comw=0;
+    if  ($fprt){$comw=0; # used to $rtns =~ s/\s$//; before d8cs('d8bo'); was restored, but seems to join d8a lines unnecessarily so match just tail real space
       if($fprt=~ /^([^,]+),/){$comw= length($1);} d8cs('WRoYGWCBMp') if($comw); # assume coma 4 b64 char blox reversed
-      $tdst.= "$W\%" . bfr8colr($fprt) . $z;} $rtns.= "$tdst ";} $rtns =~ s/\s$//;d8cs('d8bo');return($rtns);} # try2restore default ColrSequ before returning
+      $tdst.= "$W\%" . bfr8colr($fprt) . $z;} $rtns.= "$tdst ";$rtns=~ s/ $/\n/ if($nwlf);}
+  $rtns=~ s/ $//;d8cs('d8bo');return($rtns);} # try2rEstOr Dflt ColrSequ B4 rEturning
 sub   d8cs   {my $dccs = ''; # d8 ColrSet (or ColrSequence), d8 ColrCodeString
   if(!@_ && !-t STDIN){chomp(@_=<STDIN>);} # turn only piping thru into paramz
   if(!@_){           unshift(@_,'d8bo' );} # should loop through all @_ paramz below appending to dccs,accepting XtNded colr cOdez && use S() nstd of eval $c
@@ -817,7 +861,7 @@ sub sumb{  my $widt=0;$widt=1 if(exists($ENV{'COLUMNS'}) && $ENV{'COLUMNS'} >= 1
     'prym'  => "c8  Curses::Simp prime-number gener8ion screensaver (currently broken!)   ", # port to prim as new CLI && Curses IF
     'qbix'  => "c8  Curses::Simp Rubik's Cube as spoonerism 'QbixRube' text applic8ion    ", # port to qbx3 wi CLI, Curses, && GL IFz
     'shl8'  => "c8  Source-HighLight8 utility colors detectable syntax within Octology    ", # flesh out c8 hIlItng systM && incrEs suported formatz
-    'tsgr'  => "c8  Test Select Graphic Rendition escapes && xterm-256color Blocks (-b)   ", # mAB shud mv2 a8 lIk tstc?
+    'tsgr'  => "c8 *Test Select Graphic Rendition escapes && xterm-256color Blocks (-b)   ", # mAB shud mv2 a8 lIk tstc?
     'wdht'  => "c8  Curses::Simp utility shows resize terminal dimension WiDth x HeighT   ",
     'xx'    => "c8  XxX square teXt eXpansion utility (which scales with 8trm overdraw)   ",
 
@@ -927,7 +971,7 @@ sub sumb{  my $widt=0;$widt=1 if(exists($ENV{'COLUMNS'}) && $ENV{'COLUMNS'} >= 1
              'Math::BigFloat'=>'F:C', 'C::S'=>'Zb','Curses::Simp'=>'Zb', 'C::Simp'=>'Zb','DiSTance'=>'F:C','Octology::d8'=>'F:R',},
                             'file'=>{'~' =>'F:B','\/'=>'F:Y','\.'=>'Ib','fn'=>'Mb','`' =>'yk','cf'=>'F:G','\*'=>'W1','\+'=>'Rb','mixer'=>'F:o','Date'=>'L:R',
      'strings'=>'F:8','ANSI'=>'ob', ',' =>'Lk','bfr8'=>'F:B','col8'=>'F:C','dur8'=>'F:R',      '\('=>'Wn','\)'=>'Wn','\['=>'ob','\]'=>'ob','ASCII'=>'Ab',
-                                             '\.config'=>'F:B','columns'=>'Ck',
+                                             '\.config'=>'F:B','columns'=>'Xk',
   'EDITOR'=>'Un','LS_COLORS'=>'Yn','bin'=>'F:B','\.bak'=>'F:B','\.Hrc'=>'F:M','\.psf'=>'F:M','\.f0nt'=>'Cg','\.xml'=>'ob','\.xtb'=>'F:B', # SKpspecialz
       'down'=>'F:U','SKpz'=>'F:7',   '!' =>'Fk','HTTP' =>'F:H','Org'=>'F:X','Rolz'=>'F:M','gst123'=>'F:G','git'=>'F:G','kpcli'=>'F:G','YouTube'=>'5r',
       'Perl'=>'Cb' ,'vim' =>'Vb','Unix' =>'Xb', 'HTTPS'=>'F:H','Com'=>'F:B','Screeps'=>'F:C',            'text'=>'F:F', 'time'=>'F:F',    'U2b'=>'5r',
@@ -957,9 +1001,10 @@ sub sumb{  my $widt=0;$widt=1 if(exists($ENV{'COLUMNS'}) && $ENV{'COLUMNS'} >= 1
         $h=d8colr('wrapper'       );$bfst{ $bfls[$bfle - $_]}=~ s/wrapper       /$h$i/gx    ;d8cs('XXXNNN111'); # && new White "wrapper" varE8ionz
         $h=d8colr('converter'     );$bfst{ $bfls[$bfle - $_]}=~ s/converter     /$h$i/gx    ;                   # && get old BaseCnv cnv capitalized
         $h=d8colr('CoNVerter'     );$bfst{ $bfls[$bfle - $_]}=~ s/CoNVerter     /$h$i/gx    ;d8cs('GBZOM'    ); # && try to get S && c col8 post-text layrz
-        $h=d8colr('FbSGR'         );$bfst{ $bfls[$bfle - $_]}=~ s/FbSGR         /$h$i/gx    ;d8cs('9TZZB'    ); # shud upd8 these 2use more Blue shAdz,!Cyanz
-        $h=d8colr('lines'         );$bfst{ $bfls[$bfle - $_]}=~ s/lines         /$h$i/gx    ;d8cs('9TBZZZ'   );
-        $h=d8colr('listed'        );$bfst{ $bfls[$bfle - $_]}=~ s/listed        /$h$i/gx    ;d8cs('ZC9TVmM'  ); # rEmMbr2rEset2 d8bo whN done BlO
+        $h=d8colr('FbSGR'         );$bfst{ $bfls[$bfle - $_]}=~ s/FbSGR         /$h$i/gx    ;d8cs('11XXN'    ); # shud upd8 these 2use more Blue shAdz,!Cyanz
+        $h=d8colr('lines'         );$bfst{ $bfls[$bfle - $_]}=~ s/lines         /$h$i/gx    ;d8cs('11NXXX'   );
+        $h=d8colr('listed'        );$bfst{ $bfls[$bfle - $_]}=~ s/listed        /$h$i/gx    ;d8cs('X1111NN'  );
+        $h=d8colr('filling'       );$bfst{ $bfls[$bfle - $_]}=~ s/filling       /$h$i/gx    ;d8cs('ZC9TVmM'  ); # rEmMbr2rEset2 d8bo whN done BlO
         $h=d8colr('utility'       );$bfst{ $bfls[$bfle - $_]}=~ s/utility       /$h$i/gx    ;
         $h=d8colr('util'          );$bfst{ $bfls[$bfle - $_]}=~ s/util          /$h$i/gx    ;d8cs('d8bo'     ); # should be same as 'RoY' or close
         $h=d8colr('YMD'           );$bfst{ $bfls[$bfle - $_]}=~ s/YMD           /$h$i/gx    ;d8cs('mmmMMMppVVVVVV'); # NYIM was orig S('mkB') at very end
@@ -1465,7 +1510,7 @@ sub comma{my $strn=shift;my $comc=shift||',';my $blok=shift||3; # ECKLNcb3:`cma`
       $strn =  join("\n",@strz);return($strn);} # orig!enuf cuz must insrt coma,then recalc pos&&from:
 sub ftst{ # 37MK06SK:ftst Utl2run thruPerlzFileTeSTz on its parameter Filename
   open my $out8,'>&',STDOUT or die "Can't open  duplic8 STDOUT handle: $!";binmode $out8,':encoding(UTF-8)'; # crE8 local duplic8 of global
-  my $file=shift(@_)||$_||'-h';my $hlpf=0; # E89M7xUl:upd8d list below slightly to reflect: HTTP://JohnBokma.Com/perl/perl-quick-reference-card.pdf
+  my $file=shift(@_)||$_||'';my $hlpf=0; # E89M7xUl:upd8d list below slightly to reflect: HTTP://JohnBokma.Com/perl/perl-quick-reference-card.pdf
   my @oper=('r','  readable by effective UID/GID  ','R','  Readable by     real  UID/GID  ',
             'w','  writable by effective UID/GID  ','W','  Writable by     real  UID/GID  ',
             'x','executable by effective UID/GID  ','X','eXecutable by     real  UID/GID  ',
@@ -1484,18 +1529,23 @@ sub ftst{ # 37MK06SK:ftst Utl2run thruPerlzFileTeSTz on its parameter Filename
   if($file =~  /^-?-?h(elp)?$/ && !-e $file){$hlpf=1;$file='';} $file="$ENV{'HOME'}/.Hrc" unless(length($file));
   if($hlpf){say $out8 " ftst  - loop through Perl dash-Flag File TeSTs on parameter Filename  Vers:$VERSION  d8VS:$d8VS by Auth:$auth
          Note that -T in Perl 5.24 is a heuristic guess whether it is an ASCII or UTF-8 Text file, which is useful beyond MicroSoft Windows environments;
-   -h  - print this Help text; If no filename parameter is given, \$_ then the default Octology \$HOME/.Hrc d8a file is tested.
-         Also prints Perl regex && string backslash eScape codes in one 160x48 page to keep similar reference together for now;";}
-  for(my $i=0;$i<@oper;$i+=2){print  $out8 "$G($Y-" . S(uc($oper[$i])) . "$oper[$i] $file$G)$W==$G($C";my $etrv=0;
+   -h  - print this Help text; If no filename parameter is given, \$_ then the default Octology \$HOME/.Hrc d8a file is tested;
+         Also prints Perl regex && string backslash eScape codes in one 160x48 page to keep similar reference maps together;";exit;}
+  for(my $i=0;$i<@oper;$i+=2){my $oprS=S(uc($oper[$i]));
+                              print  $out8 "$G($Y-$oprS$oper[$i] $file$G)$W==$G($C";my $etrv=0;
     if(0&& $oper[$i] =~ /[TB]/ && $^O !~ /^MSWin/){ # or $^O or $ENV{'OSTYPE'} used to test for what were MicroSoft only flags
                               print  $out8 "Can't test, except in MSWindows!";}
     else                     {$etrv=eval(    "(-" .                      "$oper[$i] \'$file\')"); $etrv=0 unless(defined($etrv) && $etrv);
                               print  $out8            $etrv  if($oper[$i] !~ /^[MACs]$/); # originally only checked if eval succeeded but did!retn actual value
                               print  $out8      comma($etrv) if($oper[$i] eq      's'  );
                               printf $out8 "%23.18f", $etrv  if($oper[$i] =~ /^[MAC]$/ ); # align age floats
-                             }print  $out8 "$G)$W:$R$oper[$i+1]";print $out8 ' ' x  (34 - length(comma($etrv))) if($oper[$i] eq 's');
+                             }my     $dscs=$oper[$i+1];$dscs=~ s/(UID)/$C$1/gi;$dscs=~ s/(GID )/$G$1/gi;$dscs=~ s/( by )/$g$1/gi;$dscs=~ s/(size)/$o$1/gi;
+    $dscs=~ s/(bit )/$W$1/gix;$dscs=~ s/(age )(\()(\@)(stRtup)(\))( in)( Days)( since)/$o$1$B$2$R$3$C$4$B$5$c$6$Y$7$p$8$oprS/gi;
+    $dscs=~ s/([\/])/$o$1/gi ;$dscs=~ s/(real)/$r$1$R/g;$dscs=~ s/(effective)/$M$1$B/g;$dscs=~ s/(special)( file)/$c$1$G$2/g;
+    $dscs=~ s/(\()([^)]+)(\))/$B$1$W$2$B$3/gi;
+                              print  $out8 "$G)$W:$oprS$dscs";print $out8 ' ' x  (34 - length(comma($etrv))) if($oper[$i] eq 's');
                               print  $out8 "\n" if(!exists($ENV{'COLUMNS'}) || $ENV{'COLUMNS'} <= 108 || $i % 4 || $i > ($#oper-8));}
-  say $out8 S('A')," AquAmArine compact list of Perl backslash eScape codes for both regular-expressions and character-strings:
+  my $bScs=" compact list of Perl backslash eScape codes for both regular-expressions and character-strings: (was AllAquA)
   \\000              escape                             Octal sequence.    \\o{};(See also)  # /!in\\[\\];\$/ mEnz!usable in bracket char class (like [\\dA-Z])
   \\1, \\2, ..past 9?        absolute (can \${d+} in s///) backreference.   !in[];  # Character Escapes - Fixed characters: 7 chars have a dedicated escape.
   \\a                Alarm                or                      bell         ;  #   Following table shows them with their ASCII code points (in dec && HEX),
@@ -1527,8 +1577,20 @@ sub ftst{ # 37MK06SK:ftst Utl2run thruPerlzFileTeSTz on its parameter Filename
   \\Q                Quote (disable) pattern metacharacters until \\E.     !in[];\\cA-D:01 StartOfHeading,02 StartofTeXt,03 breakEndofTXt,04 EndOfTransmission,
   \\cE 05 ENQuiry,\\cF 06 positiveACKnowlegment,\\cN 0E ShiftOut,\\cO 0F ShiftIn(XON resume output),\\cP 10 DataLinkEscape HTTP://DC.Org/files/asciitable.pdf
   \\cQ-T DeviceControlcharacter1-4,\\cU 15 NegativeAcKnowledgement,\\cV 16 SYNchronousidle,\\cW 17 EndofTransBlock,\\cX 18 CANcel,\\cY 19 EndofMedium,
-  \\cZ 1A SUBstitute/endoffile,\\c[ 1B ESCape,\\c\\ 1C FileSeparator,\\c] 1D GroupSeparator ,\\c^ 1E RecordSeparator,\\c_ 1F UnitSeparator,20 SPace!",
+  \\cZ 1A SUBstitute/endoffile,\\c[ 1B ESCape,\\c\\ 1C FileSeparator,\\c] 1D GroupSeparator ,\\c^ 1E RecordSeparator,\\c_ 1F UnitSeparator,20 SPace!" .
  "\"#\$%&'()*+,..."; # `pdoc perlvar` describes all the shortest variables && perlrun has runtime flags
+  my $A=S('A');my $X=S('1');my $H=S('H');#$bScs=~ s/(\\\\)/$M$1$A/g; # looking pretty good for most potential matches
+  $bScs=~ s/(white      )/$W$1$A/gix;$bScs=~ s/(characters?)/$C$1$A/g  ;$bScs=~ s/(unicode)/$Y$1$A/gi;$bScs=~ s/(# )(.*)/$C$1$W$2/g;$bScs=~ s/(!)/$R$1$A/g;
+  $bScs=~ s/(horizontal )/$O$1$A/gix;$bScs=~ s/(vertical   )/$M$1$A/gix;$bScs=~ s/(word )/$p$1$A/gix;$bScs=~ s/(, )/$Y$1$A/gx;$bScs=~ s/(\.)/$p$1$A/g ;
+  $bScs=~ s/(Property   )/$p$1$A/gix;$bScs=~ s/(sequence   )/$c$1$A/gix;$bScs=~ s/(given)/$g$1$A/gi ;$bScs=~ s/(\/)/$Y$1$A/g ;$bScs=~ s/(- )/$Y$1$A/gx;
+  $bScs=~ s/(Boundary   )/$B$1$A/gix;$bScs=~ s/(Newline    )/$o$1$A/gix;$bScs=~ s/(Digits)/$K$1$A/gi;$bScs=~ s/(' )/$C$1$A/gx;my $F=S('F');my $N=S('N');
+  $bScs=~ s/(Escapes?   )/$F$1$A/gix;$bScs=~ s/(Octal      )/$O$1$A/gix;$bScs=~ s/( of )/$K$1$A/gi;$bScs=~ s/( or )/$c$1$A/gi;$bScs=~ s/(case)/$B$1$A/gi;
+  $bScs=~ s/(Space      )/$N$1$A/gix;$bScs=~ s/(octet      )/$o$1$z/gix;$bScs=~ s/(back)/$K$1$z/gix;$bScs=~ s/(until)/$w$1$z/gi;$bScs=~ s/(Lower)/$H$1$z/gi;
+  $bScs=~ s/(strings?   )/$r$1$z/gix;$bScs=~ s/(end        )/$H$1$z/gix;$bScs=~ s/(absolute)/$W$1$z/gix;$bScs=~ s/(Named)/$Y$1$A/gix;$X=S('Yr');$H=S('Wb');
+  $bScs=~ s/(heXadecimal)/$X$1$z/gix;$bScs=~ s/(slash      )/$H$1$A/gix;$bScs=~ s/(\()([^)]+)(\))/$C$1$R$2$C$3$A/gix;my $t=S('tk');my $U=S('5');
+  $bScs=~ s/(tab)/$t$1$W/gix;$bScs=~ s/(next)/$U$1$z/gix;
+  $bScs=~ s/(non)/$R$1$A/gix;$bScs=~ s/(class)( 4)/$c$1$M$2$A/g;$bScs=~ s/(in)(\[\])(;)/$z$1$o$2$W$3$z/g;$bScs=~ s/(;)(  \S|$)/$W$1$z$2/g;
+  say $out8 $A,$bScs;
   # functions that use $_ as a default argument: abs, alarm, chomp, chop, chr, chroot, cos, defined, eval, evalbytes, exp, fc, glob, hex, int, lc, lcfirst,
   #   length, log, lstat, mkdir, oct, ord, pos, print, printf, quotemeta, readlink, readpipe, ref, require, reverse (in scalar context only), rmdir, say, sin,
   #   split (for its second argument), sqrt, stat, study, uc, ucfirst, unlink, && unpack.  all solo file tests use $_ except for -t , which defaults to STDIN.

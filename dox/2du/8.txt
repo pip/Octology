@@ -1067,7 +1067,7 @@ trachelobranchE8
       incapacit8
          substr8   :integr8d circuit tool
            titr8   :chemistry simul8or (may want to add chL8 compound of metal ion attached by coordin8 bonds to 2 or more non-metal ions, or Zoology dF)
-         sublim8
+         sublim8   :purified product heated from solid to vapor (without first melting), then cool condens8ion back to solid, or elev8, distill, concentr8
         debullE8   :to boil over
         distill8
          dissip8

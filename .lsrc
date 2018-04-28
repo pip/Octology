@@ -2,7 +2,7 @@
 # $VERSION='0.0';$d8VS='I3MMHip8'; 2du:mkUtl2gNr8 altrn8 versN of .lsrc th@purposfuly varEz colrz of comon typz,try addng bakgrnd colrz2all dFz&&tst,
 #   add interaction2 lsd8 wN it Dtectz unrecognIzd XtNshNz offerng c@egOrEz with comon colr2autOm@ically insrt chOsN NtrEz,mAB add *-* NtrEz from .zshrc hEr &&
 #   mk lrc gNr8 either,confirm all accept f0nt cOdez wi dash accepting Dfalt foreground then redo NORMAL FILE LINK as no fi ln,mAB 8trm added2TERM ls someday;
-# This file was gNR8d by `lrc` Vers:0.0 d8VS:I1OLB8dh on d8:I3MMHtaa. Please edit ~/.lrc and run `lrc` then `src` to see changes;
+# This file was gNR8d by `lrc` Vers:0.0 d8VS:I45MCalN on d8:I4RMGgdJ. Please edit ~/.lrc and run `lrc` then `src` to see changes;
 # nOt:I'm pretty sure itz Chunz(!Takiz)`ls`&&`dircolors`th@cud!hndl (MULTI)?HARDLINK sO rEmMbr2kEp th@ lIn cmNtd out4her(&&kEptstng2cnfirm);
 # Keywords COLOR,OPTIONS,&& EIGHTBIT (honored by Slackware dircolors) are recognized but ignored; TERMz && XtNsionz syncd2 2016;
 # Copyright(C) 1996-2016 FreeSoftwareFound8ion,Inc. Copying and distribution of this file, with or without modific8ion, are permitted provided the
@@ -1260,38 +1260,39 @@ CHR                       01;38;5;011;48;5;000 #cd= 01;33;40    01;33;40  CHaRac
 .ANSI.01.35               01;38;5;013
 .ANSI.01.36               01;38;5;014
 .ANSI.01.37               01;38;5;015      # BlO /boot Linux kernelz versionz  # F1ELGnuL:ROYG CBMP => 1;3[1o32 645p]; mAB EvN2LE gNR8 upd8z from `ls /boot`;
-.13.0-37-generic          01;38;5;009
-.13.0-36-generic          01;38;5;172
-.13.0-32-generic          01;38;5;011
-.13.0-31-generic          01;38;5;010
-.13.0-25-generic          01;38;5;014
-.13.0-21-generic          01;38;5;012
-.13.0-17-generic          01;38;5;013
-.13.0-16-generic          01;38;5;092
-.10.0-38-generic          01;38;5;009
-.10.0-37-generic          01;38;5;172
-.10.0-35-generic          01;38;5;011
-.10.0-33-generic          01;38;5;010
-.10.0-32-generic          01;38;5;014
-.10.0-30-generic          01;38;5;012
-.10.0-28-generic          01;38;5;013
-.10.0-26-generic          01;38;5;092
-.10.0-24-generic          01;38;5;009
-.10.0-22-generic          01;38;5;172
-.10.0-21-generic          01;38;5;011
-.10.0-20-generic          01;38;5;010
-.10.0-19-generic          01;38;5;014
-.8.0-46-generic           01;38;5;012
-.8.0-45-generic           01;38;5;013
-.8.0-44-generic           01;38;5;092
-.8.0-41-generic           01;38;5;009
-.8.0-40-generic           01;38;5;172
-.8.0-39-generic           01;38;5;011
-.8.0-34-generic           01;38;5;010
-.8.0-30-generic           01;38;5;014
-.8.0-28-generic           01;38;5;012
-.8.0-27-generic           01;38;5;013
-.8.0-26-generic           01;38;5;092
+.13.0-39-generic          01;38;5;009
+.13.0-37-generic          01;38;5;172
+.13.0-36-generic          01;38;5;011
+.13.0-32-generic          01;38;5;010
+.13.0-31-generic          01;38;5;014
+.13.0-25-generic          01;38;5;012
+.13.0-21-generic          01;38;5;013
+.13.0-17-generic          01;38;5;092
+.13.0-16-generic          01;38;5;009
+.10.0-38-generic          01;38;5;172
+.10.0-37-generic          01;38;5;011
+.10.0-35-generic          01;38;5;010
+.10.0-33-generic          01;38;5;014
+.10.0-32-generic          01;38;5;012
+.10.0-30-generic          01;38;5;013
+.10.0-28-generic          01;38;5;092
+.10.0-26-generic          01;38;5;009
+.10.0-24-generic          01;38;5;172
+.10.0-22-generic          01;38;5;011
+.10.0-21-generic          01;38;5;010
+.10.0-20-generic          01;38;5;014
+.10.0-19-generic          01;38;5;012
+.8.0-46-generic           01;38;5;013
+.8.0-45-generic           01;38;5;092
+.8.0-44-generic           01;38;5;009
+.8.0-41-generic           01;38;5;172
+.8.0-40-generic           01;38;5;011
+.8.0-39-generic           01;38;5;010
+.8.0-34-generic           01;38;5;014
+.8.0-30-generic           01;38;5;012
+.8.0-28-generic           01;38;5;013
+.8.0-27-generic           01;38;5;092
+.8.0-26-generic           01;38;5;009
 #                                          # zsh wraps '%{' ANSI '%}' && vim User[1-9] colrz specify BlO ForeGroundz all on darkblue BakGrnd4statuslIn
 #     4NT    etfp   vim  c8  color              ANSI      HTML    Octology::d8::fldz (`d8`)
 #     0f     Fsy_   %*    W WhiteBright         \e[1;37m  FEFDFF            # vim %* resets statuslIn colr 2 Dfalt   White on darkblue so has max 10 colrz

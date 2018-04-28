@@ -169,7 +169,7 @@ export   LS_COLORS="$LS_COLORS*.serverauth.???=00;32:*.serverauth.????=00;31:*.s
 export GREP_COLORS="mt=01;34"; bindkey -v; #`bindkey -e`setzEmacs-stylCmdLynEdtng; -v hazBn betRsofR4mE,butdu!4getEmaxAtaxBax; #rEmMbr"^foo^bar"subst prEv cmd;
 alias  grp='  grep --color=auto'; # want grep --color=auto all za tym2(&&mayB`dircolrz ~/.gprc`?)&&2hv -nubTHZ?fulnSwi:Hedrfylnmz,lyNumZeroUnixTabalyndBytofstz
 alias fgrep='fgrep --color=auto'; #   ...also fgrep ndz auto2,wud B cool 2 mk perl grep from grepp&&sarep 2 auto colr multiple m@chz difrNtly;
-alias egrep='egrep --color=auto'; #   ...also egrep
+alias egrep='egrep --color=auto'; #   ...also egrep  # UbuTip:"Edit the command line with cut and paste: ctrl-k for cut, and ctrl-y for paste." prolyOnly4Emacs
 alias  gpnt=' grp  -nubTH';alias gpnz='gpnt -Z'; # nd2tst4nmspc cOlIdz of`gpn?`&&stuD`(perl|xargs) -0`,`(sort|grep) -z`;
 # from`man grep`:".*Uzd wiCmdz lyk:`find -print0`,`perl -0`,`sort -z`,&&`xargs -0` 2procRbitrarEfylnamz,EvNthoz contNngNwLnz(azNulTrmN8dCstylStrzNstdOvNwLn).";
 if     [   -z  "${debian_chroot:-}" ] && [ -r /etc/debian_chroot ]; then   # set variable IdNtifyng the chroot U wrk in (Used in prmpt bElO)

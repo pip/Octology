@@ -2,7 +2,7 @@
 use strict;use warnings;use utf8;use v5.10; # F33L8iqa:testng installed terminals for SGR Select Graphic Rendition support to mimic in 8trm aftr c8 adds layrz,
 use Octology::a8; # might want to add codez to a8 d8a then ref here? My custom f0nt codes in here are making l8st xterm resize! Learn how.
 use Octology::b8; # just for b64
-use Octology::d8;my $d8VS='HC3LGNR8';my $term='';$term=$ENV{'TERM'} if(exists($ENV{'TERM'})); # `msgcat --color=test` haz intNsiv HSV color test to learn from.
+use Octology::d8;my $d8VS='I4SMAhLp';my $term='';$term=$ENV{'TERM'} if(exists($ENV{'TERM'})); # `msgcat --color=test` haz intNsiv HSV color test to learn from.
 open my $out8,'>&',STDOUT or die "Can't open  duplic8 STDOUT handle: $!";binmode $out8,':encoding(UTF-8)'; # crE8 local duplic8 of global
 # 2du:mk Blox mode text blacK in middle && White on sidez (like SVG),mk 80col-b; # argumentz: (dashez are optional)
 my @sd8a=([ 0     , 'N Normal / reset                                        '], #   -c omitz Color map, -B showz color gradient Blockz, -b Bkgr Blox
@@ -67,11 +67,24 @@ my @sd8a=([ 0     , 'N Normal / reset                                        '],
 my %ster=(2=>1,8=>1,9=>1,10=>1,20=>1,21=>1,26=>1,28=>1,29=>1,38=>1,48=>1,50=>1,51=>1,52=>1,53=>1,54=>1,55=>1,60=>1,61=>1,62=>1,63=>1,64=>1,65=>1); # STerm ERor
 my $widt=0;$widt=1 if(exists($ENV{'COLUMNS'}) && $ENV{'COLUMNS'} >= 144);my $cwid=16;$cwid=32 if($widt); # support normal or double wide output
 my $argz='';$argz= join(' ',@ARGV) if(@ARGV);
+if($argz =~ /h/i){print $out8 " -h - Help text for tsgr a TeSting Script which loops through Select Graphic Rendition attributes by auth:$auth at d8VS:$d8VS;
+ -s - something special for saying when not in stterm, maybe resetting SKp codes to Zero \$z too;
+ -c - cull out the color chart ; #  dashes are optional, option letters can be combined; Usually custom behavior between 160 and 80 column modes;
+ -b - build the blocks of  pal8; # -B colors  just those Foreground;
+ -p - show local main b64 8pal8; # -P hides bright blacK Foreground;
+ -l - make the   length  little;";exit;} # maybe should exit out after minimal manual help message, instead of still running default tests, then color chart
 if($argz !~ /s/i){
   for(0..$#sd8a){my $d8ca=Octology::d8->new()->colr('a');    printf($out8 "\e[m%3d ",$sd8a[$_]->[0]);  # new d8 obj Colored with Ansi, && locl code prntd, !S
     if($term !~ /^stterm/ || !exists($ster{$sd8a[$_]->[0]})){printf($out8 "\e[%dm"  ,$sd8a[$_]->[0]);} # say below got loop $_ before given explicit '' param
-                                                             printf($out8 "%s$z%s"  ,$sd8a[$_]->[1],$d8ca);say $out8 '' if(!$widt || $_ % 2);}}
-if($argz !~ /c/i){say $out8 $z if($widt);if($argz =~ /b/i){my $p88c=$cmap{'8pal8'};$p88c=~ s/\s+//g;my $q=38;$q=48 if($argz =~ /b/); # showing color tables
+    my                                                              $dscs          = $sd8a[$_]->[1] ;          $dscs=~ s/(\W)(on )(\W)/$1$G$2$K$3/gx;
+    $dscs=~ s/(ideogram )/$P$1$z/gix;$dscs=~ s/(sup)$/$C$1/;$dscs=~ s/([!+])/$R$1/g;$dscs=~ s/([,\/])/$Y$1$K/g;$dscs=~ s/(\W)(off)(\W)/$1$R$2$K$3/g ;
+    $dscs=~ s/(intensity)/$M$1$K/g  ;$dscs=~ s/(min\s)/$B$1$K/g ;$dscs=~ s/(150)/$p$1$K/g;$dscs=~ s/(ground)/$o$1$K/g;$dscs=~ s/(lined?)/$C$1$K/g;
+    $dscs=~ s/(normal   )/$z$1$K/gix;$dscs=~ s/(set\s)/$M$1$K/g ;$dscs=~ s/(Reverse)/$p$1$K/gi ;$dscs=~ s/(rigHt)/$r$1$K/gi;$dscs=~ s/(lefT)/$c$1$K/gi;
+    $dscs=~ s/(default  )/$Y$1$K/gix;$dscs=~ s/(colo?r)/$C$1$K/g;$dscs=~ s/(reVeal )/$O$1$K/gix;$dscs=~ s/(conceal)/$c$1$K/gi;$dscs=~ s/(Fraktur)/$Y$1$K/gi;
+    $dscs=~ s/(double   )/$w$1$K/gix;$dscs=~ s/(encircled)/$C$1$K/gi;$dscs=~ s/(hRdl)/$r$1$K/gix;$dscs=~ s/(wId)/$R$1$K/gi;$dscs=~ s/([-.])/$g$1$K/gi;
+    $dscs=~ s/(de)(creased)/$R$1$c$2$K/gi;$dscs=~ s/(in)(creased)/$G$1$c$2$W/gi; # mA want2add fore back,under over,or,not,text,remap,framed,reserved,extended
+    $dscs=~ s/([()])/$B$1$w/g;$dscs=~ s/([:?])/$W$1/g;       printf($out8 "%s$z%s"  ,$dscs,$d8ca   );say $out8 '' if(!$widt || $_ % 2);}}
+if($argz !~ /c/i){say $out8 $z if($widt);if($argz =~ /b/i){my $p88c=$cmap{'8pal8'};$p88c=~  s/\s+//g; my $q=38;$q=48 if($argz =~ /b/); # showing color tables
     if($widt){ # try to make Foreground text color blacK over bright blocks        # big blockz in lowercase b background mode, B for Fg both uppercase
       if  ($argz=~ /p/i){my $oF='K';$oF='' if($argz=~ /P/); # show locl 8pal8?
         for(  0,   1){for my $p82n (0..31){my $n=$_*32 + $p82n;printf($out8 "%s%s  %2d",      S($oF.substr($p88c,$n,1)),$sb64[$n]   ,$n   );}
