@@ -20,7 +20,7 @@ Many `bin/` commands print useful Help text when given a `-h` parameter. If your
 ![Octology-sumb-shot_1614x952-I45MD8m8](https://github.com/pip/Octology/raw/master/gfx/sho/Octology-sumb-shot_1614x952-I45MD8m8.png "Octology-sumb-I45MD8m8")
 ![Octology-tstn-shot_1614x952-HC8L7J3A](https://github.com/pip/Octology/raw/master/gfx/sho/Octology-tstn-shot_1614x952-HC8L7J3A.png "Octology-tstn-HC8L7J3A")
 ![Octology-tstc-shot_1614x902-HB4M8jYm](https://github.com/pip/Octology/raw/master/gfx/sho/Octology-tstc-shot_1614x902-HB4M8jYm.png "Octology-tstc-HB4M8jYm")
-![Octology-tsgr-shot_1614x902-HB4M8hZ6](https://github.com/pip/Octology/raw/master/gfx/sho/Octology-tsgr-shot_1614x902-HB4M8hZ6.png "Octology-tsgr-HB4M8hZ6")
+![Octology-tsgr-shot_1614x952-I4SML8OF](https://github.com/pip/Octology/raw/master/gfx/sho/Octology-tsgr-shot_1614x952-I4SML8OF.png "Octology-tsgr-I4SML8OF")
 
 ![Octology-gnp8-shot_1614x902-HBBLKDgD](https://github.com/pip/Octology/raw/master/gfx/sho/Octology-gnp8-shot_1614x902-HBBLKDgD.png "Octology-gnp8-HBBLKDgD")
 ![Octology-lsd8-shot_1614x902-HBBLJagR](https://github.com/pip/Octology/raw/master/gfx/sho/Octology-lsd8-shot_1614x902-HBBLJagR.png "Octology-lsd8-HBBLJagR")

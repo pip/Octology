@@ -1564,7 +1564,7 @@ sub ftst{ # 37MK06SK:ftst Utl2run thruPerlzFileTeSTz on its parameter Filename
   \\G                pos                      assertion.                  !in[];  \\s                character class 4                  whiteSpace          ;
   \\h                character class 4      Horizontal whitespace              ;  \\S                character class 4  non-            whiteSpace          ;
   \\H                character class 4  non-Horizontal whitespace              ;  \\t                Tab                         character                  ;
-  \\k{}, \\k<>, \\k''  named                        bacKreference.          !in[];  \\u                titlecase (Uc) next         character.            !in[];
+  \\k{}, \\k<>, \\k''  named                               bacKreference.   !in[];  \\u                titlecase (Uc) next         character.            !in[];
   \\K                Keep the stuff left  of                      \\K.     !in[];  \\U                Uppercase                              until \\E.  !in[];
   \\l                Lowercase      next         character.               !in[];  \\v                character class 4         Vertical whitespace          ;
   \\L                Lowercase                              until \\E.     !in[];  \\V                character class 4  non-   Vertical whitespace          ;
