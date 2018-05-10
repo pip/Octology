@@ -1,3 +1,5 @@
+# I59MAZED: HTTPS://Medium.Com/the-mission/while-everyone-is-distracted-by-social-media-successful-people-double-down-on-a-totally-underrated-5a86701e9a27
+The Beginning of Infinity: Explanations That Transform the World       - David Deutsch
 # I2RL0iQi: Sam Harris interviewed an AI expert && author I highly admire on episode #116 of Waking Up podcast at HTTPS://YouTu.be/AaNLX71Hl88 referring to:
 Inadequ8 Equilibria: Where and How Civiliz8ions Get Stuck              - Eliezer Yudkowsky # discussion is totally in-depth on AI "Value Alignment" problems
 #   Above is his newest book, which I should buy && read carefully. Their discussion is deep && concerning. Maybe I should re-listen && take detailed notes.

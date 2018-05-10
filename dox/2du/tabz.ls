@@ -1,3 +1,5 @@
+I59MAZED: HTTP://IntellectualDark.WebSite  # linked from the following NYTimes Bari Weiss Opinion article "Meet the Renegades of the Intellectual Dark Web":
+          HTTPS://NYTimes.Com/2018/05/08/opinion/intellectual-dark-web.html
 HAPM1WdN: chv0 Lt: GMail  /.  PerlMonks.Org  Reddit.Com/r/programming  News.YCombinator.Com  Vox.Com
 # chv0 Md https://github.com/ncw/rclone
           https://rclone.org

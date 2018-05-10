@@ -500,7 +500,7 @@ internationaliz8ion:tools to transl8 for I18N the document8ion && applic8ion int
      marginaliz8ion: # could add devalU8ion above with additional *R8 && *V8 entries to keep triplet together from 8 (or add 4 more *U8 to catch C && D at 13)
       stigmatiz8ion
        testific8ion:maybe some elabor8 autom8d testing framework, instead of just the typical interpret8ion of delivering some presumably legal testimony
-         attest8ion
+           test8ion:maybe add attest8 && intest8 as tools for making a legally valid will before death or tests && 2 new *E8 s(ch|yst)ematiz8ion additions
            purg8ion
         compurg8ion
      criminaliz8ion
@@ -4402,3 +4402,13 @@ outcomes than enumer8ing explicit prioritized reasons for every decision. Divers
 I4MM8X4:So rather conveniently, the top 4 8plc Pre-cursor Letters are "clnr" which could order for joystick or arrow keys Crouch, Left, North, Right to give
 an axis of access to around 45% of the currently 1,307 tabul8d 8-words. Adding diagonals for "Etzg" East, Top, Zest, Ground gets next 29% covering 3/4ths of
 the total, leaving "m" then 8 smaller count groups of remaining 27 letters can become further releg8d to rare obscurity to fill out the final 26% of 8-words;
+I4UMATHS:I feel I should really study much more to begin designing && constructing my own approach to eventually General AI with inherent Friendliness toward
+humanity as progressively better mechanisms can quantify && calibr8 alignment between respective value hierarchies (eventually incorpor8ing some of the most
+major aspects of Judeo-Christian values, with attempts for reconcilE8ion to God). I would also like to review && study more of BretWeinstein's plans to take
+steps toward a brighter future. This should benefit from incorpor8ing new research into various implement8ions of any advanced voting && particip8ion systems
+including valU8ion collabor8ion on policy prioritiz8ions for legisl8ive generaliz8ions to make alter8ion to safety versus risk, free speech versus h8, etc.
+as well as applic8ions of game-theory for coordin8ion problems to improve incentives && foster convers8ion && deb8 regarding best navig8ions into the future;
+I51MBELO:Contempl8 starting ~/bin/r8 after studying HTTPS://En.WikiPedia.Org/wiki/Elo_rating_system && SFV varE8ion closely before evalU8ing all ckm8 r8ings.
+Try gener8ing progressive results according to parameters used by various sports etc. before choosing my b64 represent8ions && incorpor8 standard deV8ions;
+I53MB8ls:JohnTheOther had old HTTPS://YouTu.be/2Bt7k-968WE 4mins18secs about being for: 0) free speech, 1) civil rights, 2) individualism, 3) volunteerism &&
+is against: 4) human rights, 5) coercion, 6) political correctness, 7) censorship, together an Octology-friendly varE8ion on r8ing top 8 valU8ions (half h8);

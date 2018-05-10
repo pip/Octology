@@ -156,3 +156,6 @@ HTTPS://YouTu.be/FCFnRrgEtMM "Income Inequality | Jordan Peterson and Bret Weins
 HTTPS://YouTu.be/1TN_Ig8sjxc "Intelligence, Wisdom and Evolution by Bret Weinstein" # 36mins of totally fabulous discussion on smarts, intuition, && wisdom.
 HTTPS://YouTu.be/AIWlsSOubts "The Fourth Frontier: Discovering Humanity's Future" # 44mins of BretWeinstein presenting gr8 analysis of risks && potentials.
 HTTPS://YouTu.be/CLHdY5Cyf58 "The Path to an Excellent World" # 37mins of BretWeinstein clearly laying out his insightful plan for improving human condition;
+HTTPS://YouTu.be/0cLLFSdKZLI "Q&A with Bret Weinstein, Jordan Peterson and Jonathan Pageau | SFL Regional Conference, Vancouver" # I4UMAf8h:gr8 1hour23mins;
+HTTPS://YouTu.be/cU1LhcEh8Ms "Jordan Peterson doesn't understand postmodernism" # 18mins of CuckPhilosophy against JP's potentially bad mischaracteriz8ions;
+HTTPS://YouTu.be/LFLIDkL0_HE "Scott Adams vs. Sam Harris and Jordan Peterson vs. Matt Dillahunty" # 1hour19mins of PaulVanderKlay discussing lots of deb8s;

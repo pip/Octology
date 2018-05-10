@@ -1,5 +1,5 @@
 # Octology
-The ontology of 8. `$VERSION='0.0';$d8VS='I4SMGLpp';`
+The ontology of 8. `$VERSION='0.0';$d8VS='I5AMBt8a';`
 
 This is basically a public preview of my early development files. I am not yet ready for serious collaboration, but welcome any sort of feedback.
 
@@ -46,8 +46,8 @@ Sincerely,
 If I ever become unable to continue developing this project further, my hope is that at least this repository provides others the ability to
   utilize any of my beneficial work and ideas (hopefully to further FreeLibreSoftware with derivatives also seeing release under the GPLv3+).
 
-#### Retired Old8 Screen Shots
-##### (*several rather older examples*) -- [**no longer listed from recent down to oldest**]
+#### Secondary Old8 Screen Shots
+##### (*several mostly older examples*)
 ![Octology-sumb-shot_1280x800-HBBLJe4o](https://github.com/pip/Octology/raw/master/gfx/sho/Octology-sumb-shot_1280x800-HBBLJe4o.png "Octology-sumb-HBBLJe4o")
 ![Octology-8trm-shot_1280x800-HBBLK762](https://github.com/pip/Octology/raw/master/gfx/sho/Octology-8trm-shot_1280x800-HBBLK762.png "Octology-8trm-HBBLK762")
 ![Octology-ftst-shot_1614x952-I4SMGG88](https://github.com/pip/Octology/raw/master/gfx/sho/Octology-ftst-shot_1614x952-I4SMGG88.png "Octology-ftst-I4SMGG88")
@@ -60,3 +60,6 @@ If I ever become unable to continue developing this project further, my hope is 
 
 *Note*: Please bear in mind that these older shots shown at the bottom here are far more likely than those in the current Top8 list above to portray behaviors
 and exhibit details which have been modified somewhat (or possibly replaced entirely) within the time that lapsed since the d8 a particular shot was taken on.
+
+*P.S.*: I feel confident suggesting that if almost anyone were to read through 8.txt and then examine the other documentation, code, and data files that are
+distributed as Octology, they could learn much about GNU/Linux, Perl, and general programming from a sometimes manic, yet still usually competent, game coder.
