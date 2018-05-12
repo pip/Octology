@@ -99,12 +99,13 @@ compartmentaliz8ion
             zon8
           limit8
           reput8ion:r8 personal m8ings (rel8ionships) along any useful axes   # Value individuality as gr8r than infinitely fraction8ing victim group rankings!
-          dedic8   :special recogniz8ion for at least the particularly influential && deceased  # Diversity of token stereotypical groups fails to be strength!
          chocol8   :r8 various brown cocoa candies (hopefully coating Reese's peanut butter && optionally without cow-milk please?)    # Learn && go approprE8!
-          advoc8   :way to affect change primarily on social issues?   # Net-Neutrality! Minimize suffering && global warming! More empathy! Marriage equality!
+         fortun8       # Enact Guaranteed Basic Income && Universal Health-Care! Close Guantanamo Bay! Clemency for Edward Snowden! Make sepR8 Palestinian st8!
+          dedic8   :special recogniz8ion for at least the particularly influential && deceased  # Diversity of token stereotypical groups fails to be strength!
             don8   :way to contribute (monetarily or reput8ion?) to rel8d people or causes   # Pro-science! Pro-individual! Pro-legal-immigr8ion! Pro-minority!
          appreC8   :don8 with extra appreciation in honor of Angie <3  # Protect  Voting Rights Act!  Take serious felonies outside  military chain-of-command!
-         fortun8       # Enact Guaranteed Basic Income && Universal Health-Care! Close Guantanamo Bay! Clemency for Edward Snowden! Make sepR8 Palestinian st8!
+          advoc8   :way to affect change primarily on social issues?   # Net-Neutrality! Minimize suffering && global warming! More empathy! Marriage equality!
+           aggr8   :way to please someone or add to their gr8fulness   # Try to shoulder all your suffering nobly.  Seek the meaningful ahead of the expedient.
              gr8ful    # Protect free-speech (especially unpopular && offensive)! Promote societal justice && equality for both genders through egalitarianism!
               p8ron:don8 system like Patreon with tracking && support for crE8ors && donors  # Promote good research, evidence, cit8ions, && result duplic8ion!
         monetiz8ion    # Reject censorship! Do not just listen && believe. Trust but verify! Men's rights matter also! Protect h8-speech! Eradic8 global ICBMs!
@@ -136,7 +137,7 @@ compartmentaliz8ion
      synchroniz8ion:same as upd8 or maybe auto sys/collabor8/git sync settings or replacing ntpd with chrony for secure standard time synchroniz8ion
           deleg8   :ways to specify others as authorities in domains to inherit   # Legalize freely flying any Confeder8 flag, && stop banning as racist h8red!
          design8   : && these are probably implicit r8-based voting tools too
-        denomin8
+        denomin8   : # consider inserting monopoliz8ion probably somewhat above once a new *E8 && a new *t8 can be added to keep the "Etz" group together
           indic8
          inclin8ion
        authorit8ive:maybe authoring tools or d8abase of author details for code, books, articles, blogs, lyrics, etc.
@@ -497,10 +498,10 @@ internationaliz8ion:tools to transl8 for I18N the document8ion && applic8ion int
     disqualific8ion
      diversific8ion
       dehumaniz8ion:contempl8 shame mainly by women that "Real Men" are not: b8a,dog,pig,fag,cuck,simp,sissy,pussy,creep,mangina,lap-dog,soy-boy,neckbeard,etc.
-     marginaliz8ion: # could add devalU8ion above with additional *R8 && *V8 entries to keep triplet together from 8 (or add 4 more *U8 to catch C && D at 13)
+     marginaliz8ion: # could add devalU8 above once new *R8 && *V8 entries found to keep "RUV" group together from 8 each so far up to 9 each together instead
       stigmatiz8ion
        testific8ion:maybe some elabor8 autom8d testing framework, instead of just the typical interpret8ion of delivering some presumably legal testimony
-           test8ion:maybe add attest8 && intest8 as tools for making a legally valid will before death or tests && 2 new *E8 s(ch|yst)ematiz8ion additions
+           test8   :maybe add attest8 && intest8 as tools for making a legally valid will before death or tests with 2 new *E8 words && s(ch|yst)ematiz8ion
            purg8ion
         compurg8ion
      criminaliz8ion
@@ -701,6 +702,8 @@ internationaliz8ion:tools to transl8 for I18N the document8ion && applic8ion int
      prognostic8
        pontific8   :generally dogmatic && pompous talk or actually referring to the government of the Roman Catholic Church or the Pope (Francis is gr8!)
          auspic8
+         adumbr8   :to faintly umbra shade, shadow, foreshadow, or outline, to describe roughly, briefly, give main points or summary, or give to understand
+           umbr8
       prefabric8   :fabric8 synthetically, artificially, or stereotypically && unoriginally
        unfabric8d
          fabric8
@@ -750,7 +753,7 @@ internationaliz8ion:tools to transl8 for I18N the document8ion && applic8ion int
               k8   :"kate" is a brambling finch                 (from Zoology)  # maybe putrific8ion can be added with postn8l once another *l8 is loc8d
               n8l  :birth   simul8or or f8l game varE8ion with baby characters && maybe designed to introduce very young kids to some basic competition types
            pren8l  :human?  simul8or of cellular division, genetic replic8ion amidst protein sub-structures which culmin8 in fetal development in prepR8ion
-              n8ure:nature  simul8or  # n8l rel8s to birth, babies, or buttocks (with pre, ante, anti, peri, && post to include with 4 more *c8 && *l8 l8r)
+              n8ure:nature  simul8or  # n8l rel8s to birth, babies, or buttocks (with pre, ante, anti, peri, && post to include with 4 more *l8 && *c8 l8r)
            clim8   :climate simul8or && change tracker for mitig8ing disasterous consequences of human influence on rising global temper8ures
            plan8   :planet  simul8or
              cr8or :planet  modeler
@@ -879,22 +882,22 @@ trachelobranchE8
     nudibranchE8
     zygobranchE8
            cusp8   :having a cusp or cusps, or being shaped like a cusp or cusp-like (from Anatomy)
+          castr8   :geld, abbreV8, expurg8, purge, purify, depur8, bowdlerize, censoring indelic8 parts, cleanse from noxious, obscene, offensive, or erroneous
          cingul8   :brain cortex situ8d in medial aspect of cerebral cortex (includes gyrus && sulcus), is involved in processing emotion && behavior regul8ion
         emascul8   :effemin8, mutil8, trunc8, incapacit8, intimid8, subjug8, deprive of strength && vigor, sever testicles of a male (or rarely female ovaries)
-          castr8   :geld, abbreV8, expurg8, purge, purify, depur8, bowdlerize, censoring indelic8 parts, cleanse from noxious, obscene, offensive, or erroneous
-          enerv8
-        debilit8
-        dilapid8
-         extenU8
-          pallE8
+         extenU8   : # add exanim8 && inanim8 probably around here once new *g8        words are found to extend the "gm"  group together
           etiol8
-         depriv8ion
-          starv8ion
-           emaC8
-          macer8
+          enerv8
          emacer8
-        degener8
+          macer8
+           emaC8
+          starv8ion: # add  stagn8            probably around here once new *c8 && *l8 words are found to extend the "cln" group together
+         depriv8ion
+        debilit8
        deterior8
+        degener8
+        dilapid8
+          pallE8
             ans8   :having a handle or a part resembling a handle
             lys8   :the material produced by lysis (in Biology)
               s8   :command which provides diverse sorting capabilities  (&& also eventually r8 specialized for food, recipes, restaurants, etc.)
@@ -915,12 +918,12 @@ trachelobranchE8
        pomegran8
         preserv8ion
         conserv8ion
-          divin8ion
-           revL8ion:maybe insert "Hecate" Greek mythological goddess of fertility (l8r assoC8d with Persephone, goddess of underworld, protector of witches)
+          divin8ion:maybe insert "Hecate" Greek mythological goddess of fertility (l8r assoC8d with Persephone, goddess of underworld, protector of witches)
+           revL8ion:contempl8 Friedrich Schleiermacher's notion of revL8ory as every "original && new communic8ion of the Universe to man" && miracle events
            vulg8   :Latin edition of Bible transl8d from Hebrew && Greek mainly by St. Jerome at end of 4th century, revised in 1592 for Roman Catholic Church
               f8ful:  fateful like fortuitous, tragic, or otherwise highly significant events that were destined to influence what would follow
               f8h  :"faith" religion, myths, miracles, && other supernatural belief-rel8d stuff which should probably be refuted && deb8d on basis of evidence
-              f8hful:faithful loyalty in adherence
+              f8hful:faithful loyalty in adherence  # should add vaticin8 to foretell, predict, or reveal through divine inspir8ion prophesy (with *c8 && *l8)
          interf8h
          incarn8
        reincarn8
@@ -1137,11 +1140,11 @@ trachelobranchE8
          mellit8
              mL8
             mal8   :salt (or ester) of      malic acid (or also could be an anion)
-            mor8   # activ8d cell microtubule proteins (h(om|eter)o)?(mono|di|tri|tetra|oligo|poly)meriz8 macromolecule complexes (from Biochemistry)
-            phN8   :salt            of     phenic acid # above 8 *z8 possible future additions will need explor8ion of 8 *t8 to keep TimeZone pair
+            mor8   : # activ8d cell microtubule proteins (h(om|eter)o)?(mono|di|tri|tetra|oligo|poly)meriz8 macromolecule complexes (from Biochemistry)
+            phN8   :salt            of     phenic acid # above 8 *z8 possible additions will need 8 new *E8 && 8 new *t8 words to keep "Etz" group together
            pect8   :salt            of     pectic acid
            oxal8   :salt (or ester) of     oxalic acid
-           fumR8   :salt (or ester) of    fumaric acid produced as a key chemical intermeD8 during the urea (or Krebs?) cycle     (from Biochemistry)
+           fumR8   :salt (or ester) of    fumaric acid produced as a key chemical intermeD8 during the urea (or Krebs?) cycle       (from Biochemistry)
            form8   :salt            of     formic acid
           formE8   :the anionic univalent CHO2 group derived from formic acid, or a compound containing this group
        ricinolE8   :salt            of ricinoleic acid (formerly called palm8 of palmic acid)
@@ -4412,3 +4415,11 @@ I51MBELO:Contempl8 starting ~/bin/r8 after studying HTTPS://En.WikiPedia.Org/wik
 Try gener8ing progressive results according to parameters used by various sports etc. before choosing my b64 represent8ions && incorpor8 standard deV8ions;
 I53MB8ls:JohnTheOther had old HTTPS://YouTu.be/2Bt7k-968WE 4mins18secs about being for: 0) free speech, 1) civil rights, 2) individualism, 3) volunteerism &&
 is against: 4) human rights, 5) coercion, 6) political correctness, 7) censorship, together an Octology-friendly varE8ion on r8ing top 8 valU8ions (half h8);
+I5CM8Ani:HTTPS://YouTu.be/LmUKKAbVqt4 is  8mins22secs of TheChenDynasty elucid8ing "8 Things You'll Find in EVERY Anime Series", for some levity in Octology.
+I5CM8Bad:HTTPS://YouTu.be/F_HxOPIu7Ow is 13mins of "Bret Weinstein: 8 Bad Assumptions of SJW and Their Consequences" describing such ideology as "hermetically
+sealed" in that any criticism is mapped to whatever nearest canned response had been pre-computed. 0) lived experience is exclusively valid && popul8ion-level
+analysis is incapable of discerning oppression or bias, 1) reasonable people cannot disagree, 2) inquiry itself is bad, 3) meritocracy is some kind of trap,
+4) swapping leaders based on skin-color can be done without adverse impact, 5) discomfort is harmful injury (rather than essential to educ8ion), 6) if you are
+on the defensive, it means your opponent has "pulled a fast one" with some kind of bad-f8h action, 7) when an opponent makes gains, it is indic8ive of some
+conspiracy being perpetr8d (which confounds Occam's Razor in seeking truth with fewest assumptions). Such bad assumptions lead to similarly bad conclusions;
+I5CMDisc:I have crE8d a new Discord text && video chat account @PipStuart#5538 alongside an "Octology" server with permanent invit8ion link S_D*.GG/kT586yW;

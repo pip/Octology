@@ -1,5 +1,5 @@
 # HBQLISTV:know.ls crE8d by PipStuart <Pip@CPAN.Org> to duplic8 Dr. Jordan B. Peterson's Quora.Com answer of "40 most valuable things everyone should know";
-# $VERSION='0.0';$d8VS='I45MKDSW'; # 2du:start chronicling Dr. Peterson's many topical videos with new section for post-title subject summaries or explor8ion;
+# $VERSION='0.0';$d8VS='I5CM8DvP'; # 2du:start chronicling Dr. Peterson's many topical videos with new section for post-title subject summaries or explor8ion;
 0) Tell the truth.
 1) Do not do things that you hate.
 2) Act so that you can tell the truth about how you act.
@@ -158,4 +158,8 @@ HTTPS://YouTu.be/AIWlsSOubts "The Fourth Frontier: Discovering Humanity's Future
 HTTPS://YouTu.be/CLHdY5Cyf58 "The Path to an Excellent World" # 37mins of BretWeinstein clearly laying out his insightful plan for improving human condition;
 HTTPS://YouTu.be/0cLLFSdKZLI "Q&A with Bret Weinstein, Jordan Peterson and Jonathan Pageau | SFL Regional Conference, Vancouver" # I4UMAf8h:gr8 1hour23mins;
 HTTPS://YouTu.be/cU1LhcEh8Ms "Jordan Peterson doesn't understand postmodernism" # 18mins of CuckPhilosophy against JP's potentially bad mischaracteriz8ions;
-HTTPS://YouTu.be/LFLIDkL0_HE "Scott Adams vs. Sam Harris and Jordan Peterson vs. Matt Dillahunty" # 1hour19mins of PaulVanderKlay discussing lots of deb8s;
+HTTPS://YouTu.be/FmH7JUeVQb8 "An Evening With Matt Dillahunty & Jordan Peterson" # 1hour44mins of gr8 discussion of religion, reality, morality, && questions;
+HTTPS://YouTu.be/LFLIDkL0_HE "Scott Adams vs. Sam Harris and Jordan Peterson vs. Matt Dillahunty" # 1hour19mins of PaulVanderKlay, a minister in Sacramento,
+#  California, pastoring LivingStones ChristianReformedChurch, who begins digesting popular recent deb8s && delves into his initial interpret8ion && analysis.
+HTTP://ReasonRevolution.Org/my-disappointment-with-the-matt-dillahunty-and-jordan-peterson-discussion # TylorLovins presents a cogent && well-sourced article
+#  with solid recommend8ions for conducting more productive future deb8s between secular humanists && the religious, furthering my f8h && reason conceptions;
