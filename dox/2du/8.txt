@@ -17,7 +17,7 @@
               m8rix:general 2D d8a grid manager which primarily conform to 8x8 layouts && views (&& also MMO virtual 3D Metaverse like Wachowski movie trilogy)
           tabul8   :m8rix specialized for comput8ion like basic spreadsheets && other table-centric views && manipul8ions of 2D or multi-page 3D d8a objects
             pal8   :palette color organiz8ion system (pronounced closer to "pal@") which applies to the configurability of every core 8 element && applic8ion
-              f8   :A.K.A. f80p ("Fateful Oper8ion") f0nt && pal8 objects, d8a-files, && editor (&& also eventually "fate" as a romantic interest d8ing system)
+              f8   :A.K.A. f80p ("Fateful Oper8ion") f0nt && pal8 objects, d8a-files, && editor (&& also eventually "fate" as unromantic interest d8ing system)
               d8   :8-character b64 encoding of date && time as well as conversions && setting  (&& gradu8 specialized for a powerfully navigable DateTimeLine)
               l8   :d8 specialized for calendaring/scheduling (anticip8ing that "late" is not too pessimistic a name to employ for timely schedule coordin8ion)
               r8   :gradu8 specialized to facilit8 users design8ing && manipul8ing arbitrary ratings along dynamic valU8ion ranges (initially discrete 8 or 64)
@@ -69,7 +69,7 @@
             inn8   :n8ive, unconditioned or unlearned talent or reflex (which may still eventually be abbreV8d as slightly mispronounced "N8" core d8a manager)
            conn8
            cogn8
-            agn8
+            agn8   :p8rnal, p8rikin, p8risib, p8rilineal, or rel8d on the father's side
             soC8
           assoC8
        disassoC8
@@ -144,8 +144,9 @@ compartmentaliz8ion
          stalem8   :maybe for ckm8  end-game d8abase for l8r analysis && incorpor8ion into eventual AI opponent besides just StockFish && good competitors
             ckm8   :"CheckMate" is hopefully Octology's eventually superb Chess applic8ion
               y8   :"yate" is an obsolete term for gate but could probably be a uniquely useful && nicely abbreV8d varE8ion on the concept (solo y Pre8-Letter)
-              g8   :tool to set gates as thresholds which gener8 events &&   (... and g8 is already a V8 for git command and "gait" tool for anim8 walk-cycles)
-          autom8   : bind them to automatic actions (coll8 event scripts?)
+              g8   :tool to set gates as thresholds which gener8 events && bind those to autom8d actions (possibly in some form of coll8 event action scripts?)
+            alg8   :always, wholly, everywhere, by any means, at all events, or notwithstanding && g8 is already my git V8 && "gait" tool for anim8 walk-cycles
+          autom8
           anted8
           backd8
           fored8
@@ -186,7 +187,9 @@ internationaliz8ion:tools to transl8 for I18N the document8ion && applic8ion int
          triraD8
           reraD8
           irraD8
+          annul8   :as furnished with, composed of, or surrounded by rings or circles of color, && also of or pertaining to one of the Annulata  (from Zoology)
          circul8
+         circin8   :to make round, circular, ringed, encompassed, or annul8d, && also folE8ion or leafing rolled down together with tip centered (from  Botany)
        contornE8   :to make a circuit or outline of contours, or a species of medal or medallion of bronze with deep furrow on the contour or edge
       centraliz8ion
           eluct8   :to struggle out or wrestle
@@ -299,8 +302,9 @@ internationaliz8ion:tools to transl8 for I18N the document8ion && applic8ion int
             laB8   :having limb of tubular corolla or calyx divided in unequal lip parts, like catnip (from Botany)  or to labialize or have lip-like parts
           bilaB8
          superB8
-           nerv8
+          vagin8   :invested with, or as if with, a sheath or vagina, such as that which wraps a stem (from Botany), or one invested by tubular base of a leaf
            valv8   :meeting at the edges without overlapping, or opening as if by doors or valves     (from Botany)  as most kinds of capsules && some anthers
+           nerv8
             jug8   :coupled together                           (from Botany)
           bijug8   :having two pairs, as of leaflets           (from Botany)
         bigemin8
@@ -432,7 +436,7 @@ internationaliz8ion:tools to transl8 for I18N the document8ion && applic8ion int
              bl8ant
              tr8or
       unexagger8d
-        exagger8   : # add aggrandiz8ion around here with new *E8 && *t8 words when found to keep "Etz" group together
+        exagger8   : # l8r add aggrandiz8ion probably around here with some new *E8 && *t8 words when found to keep "Etz" group together
          overst8
        prevaric8
       tergivers8
@@ -512,7 +516,7 @@ internationaliz8ion:tools to transl8 for I18N the document8ion && applic8ion int
         perpetr8
           litig8   :maybe some tool primarily rel8d to legalities of software licenses, copyright, patents, intellectual property, etc.
          legisl8
-         ajudic8
+        adjudic8
        imprison8
        incarcer8
          deport8ion
@@ -542,6 +546,9 @@ internationaliz8ion:tools to transl8 for I18N the document8ion && applic8ion int
          flatul8   :fart recording && r8ing tool in honor of Nissim ;)  # idea of eventually some "Street Farter" competitive social game sounds clever && fun
         constip8
          obstip8
+          obtur8
+          oppil8   :to stop or block up, thrust or ram down, crowd together, or fill with obstructions
+       disoppil8
             lax8ion
           defec8
          elimin8   :                        resource removal  ?
@@ -719,6 +726,7 @@ internationaliz8ion:tools to transl8 for I18N the document8ion && applic8ion int
         satiriz8ion
       sarcastic8
           suffl8
+          perfl8   :to blow through
            defl8
            infl8   :special core d8a manipul8ion tool
           inhal8ion
@@ -747,7 +755,8 @@ internationaliz8ion:tools to transl8 for I18N the document8ion && applic8ion int
           simul8   :physics-based simul8ions (maybe dynamics && universe?)
            speC8   :species simul8or for exploring evolutionary developments && emergent specializ8ions which lead to improved environmental suitability
            prim8   :biology simul8or, demonstr8 best effort at evolution progression && available empirical evidence for mut8ion, adapt8ion, modific8ion, etc.
-            pup8   :insect  simul8or, modeling && AI (&& larva development)
+            pup8   :insect  simul8or, modeling && AI (&& larva development)  # below sense organs are in mouth of insects, arachnids, crustaceans, && annelids
+           epal8   :insect  having no palpi,  where each palpus (from Zoology) or palp is a feeler, especially as jointed mandibular spider sense or sex organ
           antlE8   :insects of lepidopterous type having an antlia, or spiral tubular proboscis (from Zoology) && faint southern constL8ion near Hydra && Vela
              aV8   :bird    simul8or or general flight path planning && navig8ion tools && games (also funny that Moby Thesaurus has "aV8ion badge" for "pip")
           cranE8   :animals having a bony or cartilaginous skeleton with a segmented spinal column && a large brain enclosed in a skull or cranium
@@ -757,9 +766,12 @@ internationaliz8ion:tools to transl8 for I18N the document8ion && applic8ion int
               k8   :"kate" is a brambling finch                 (from Zoology)
               n8ure:nature  simul8or
               n8l  :birth   simul8or or f8l game varE8ion with baby characters && maybe designed to introduce very young kids to some basic competition types
+           pron8l
            pren8l  :human   simul8or of cellular division, genetic replic8ion amidst protein sub-structures which culmin8 in fetal development in prepR8ion
           perin8l  :infant  simul8or of period around birth typically spanning from 5 months before to 1 month after, during which gr8 care is most needed
-          postn8l  :child   simul8or as n8l rel8s to birth, babies, or buttocks  # add ant[ei]n8l with 2 new *c8 && 2 new *l8 words l8r
+          postn8l  :child   simul8or as n8l rel8s to birth, babies, or buttocks
+          anten8l
+          antin8l  :philosophical position assigning neg8ive value to birth mainly advanced by DavidBen8r, ArthurSchopenhauer, EmilCioran, && PeterWesselZapffe
            clim8   :climate simul8or && change tracker for mitig8ing disasterous consequences of human influence on rising global temper8ures
            plan8   :planet  simul8or
              cr8or :planet   modeler with configur8ion specializ8ions for moons, comets, asteroids, && maybe then stars, nebula, galaxies, && black holes too
@@ -793,8 +805,9 @@ internationaliz8ion:tools to transl8 for I18N the document8ion && applic8ion int
             rug8   :a fold, crease, or wrinkle, as in the lining of the stomach (from Biology)
              oP8   :opiate epidemic resources advoc8ing clean syringe practices (never shared), injection site steriliz8ion, avoiding Fentanyl, Xanax, && booze
             sed8
+           calm8ive
         potentE8   :increase the effect of or act synergistically with a drug or a physiological or biochemical phenomenon, simply rendering as potent
-       barbitur8   :organic compound having powerful soporific effect where overdose can be f8l, or something anodyne or  # add calm8ive l8r with new *g8 "gm"
+       barbitur8   :organic compound having powerful soporific effect where overdose can be f8l, or something anodyne or calm8ive, causing some pacific8ion
       detoxific8ion
        hallucin8   :maybe aggreg8 research regarding mental illnesses && extreme sleep depriv8ion, DMT, LSD, THC, && mushroom impacts, UFO sightings, etc.
         intoxic8   :alcohol drinking && other impairment games && tests that can priv8ly record, measure, graph, && corrL8 dexterity && other deterior8ion
@@ -805,19 +818,19 @@ internationaliz8ion:tools to transl8 for I18N the document8ion && applic8ion int
          resver8rol:polyphenol compound in certain plants && red wine, has antioxidant properties, has been investig8d for possible anticarcinogenic effects
           nausE8
        regurgit8   :recommended techniques for triggering someone to puke up ingested poisons or potential overdoses of swallowed medic8ions (like charcoal?)
+     romanticiz8ion
        resuscit8   :quick && clear emergency medical directions like 911, Heimlich, CPR, treating burns, shock, frostbite, bites from spider, tick, snake, etc.
          rejuvN8
-              d8ing:romantic dating profile management && recommend8ion system for matching up with potentially mutually interested m8ing partners
-     romanticiz8ion
          delect8
+              d8ing:unromantic (MGTOW?) dating profile management && recommend8ion system for matching up with potentially mutually interested m8ing partners
           flirt8ion
       affection8
-       reciproc8   :maybe this should be regrouped with main math oper8ions instead of intim8 rel8ionship stuff here
-         infatu8
+       reciproc8   : # maybe this conceptualiz8ion should reloc8 around main math oper8ions instead of primarily rel8ing to balanced intim8 rel8ionships here
         invigor8
+         infatu8
            sens8
-          titil8
              el8
+          titil8
          stimul8
          exhilR8
        beatific8
@@ -854,9 +867,11 @@ internationaliz8ion:tools to transl8 for I18N the document8ion && applic8ion int
            gest8
           incub8
          procrE8
-           lact8
+           lact8   : # add dL8 as toler8, defer, delay, carry abroad, conduct, convey, spread, make public, bring a charge against, accuse, denounce, or dil8
             dil8   :maybe pregnancy or eyesight or other sphincter radial expansion measurement or just a generalized circle-rel8d tool
            dil88ion:rather peculiar double-8 word normally spelled "dilatation" describing the st8 of stretching or distention of an anatomical canal or organ
+          elong8
+        prolong8   :to extend in space by pulling && stretching out into a long && slender form, or to protract in time by dragging out for a lengthy dur8ion
           prost8
           hernE8ion:hernia or rupture in smooth muscle tissue through which bodily structure protrudes
           vesic8   :to raise little bladders or blisters upon, or to inflame && sepR8 the cuticle of
@@ -892,7 +907,9 @@ trachelobranchE8
           castr8   :geld, abbreV8, expurg8, purge, purify, depur8, bowdlerize, censoring indelic8 parts, cleanse from noxious, obscene, offensive, or erroneous
          cingul8   :brain cortex situ8d in medial aspect of cerebral cortex (includes gyrus && sulcus), is involved in processing emotion && behavior regul8ion
         emascul8   :effemin8, mutil8, trunc8, incapacit8, intimid8, subjug8, deprive of strength && vigor, sever testicles of a male (or rarely female ovaries)
-         extenU8   : # add exanim8 && inanim8 probably around here once new *g8        words are found to extend the "gm"  group together
+         extenU8
+         exanim8
+         inanim8
           etiol8
           enerv8
          emacer8
@@ -929,10 +946,11 @@ trachelobranchE8
         conserv8ion
           divin8ion
            revL8ion:contempl8 Friedrich Schleiermacher's notion of revL8ory as every "original && new communic8ion of the Universe to man" && miracle events
+        vaticin8   :to foretell, predict, prophesy, or reveal some form of valuable truth through divine inspir8ion, which appears to be supern8ural && holy
            vulg8   :Latin edition of Bible transl8d from Hebrew && Greek mainly by St. Jerome at end of 4th century, revised in 1592 for Roman Catholic Church
               f8ful:  fateful like fortuitous, tragic, or otherwise highly significant events that were destined to influence what would follow
               f8h  :"faith" religion, myths, miracles, && other supernatural belief-rel8d stuff which should probably be refuted && deb8d on basis of evidence
-              f8hful:faithful loyalty in adherence  # should add vaticin8 to foretell, predict, or reveal through divine inspir8ion prophesy (with *c8 && *l8)
+              f8hful:faithful loyalty in adherence
          interf8h
          incarn8
        reincarn8
@@ -967,8 +985,9 @@ trachelobranchE8
            prel8
            vicR8
          vicarE8
-        ministr8
+         cleric8
         congreg8
+        ministr8
          officE8   :maybe ministry services for conducting weddings, funerals, holiday banquets, && any other similar rituals
           exalt8
             exP8
@@ -1078,7 +1097,7 @@ trachelobranchE8
         capacit8
       incapacit8
          substr8   :integr8d circuit tool
-           titr8   :chemistry simul8or  # add chL8 compound of metal ion attached by coordin8 bonds to 2 or more non-metal ions (&& *CDN8), or Zoology dFinitn
+           titr8   :chemistry simul8or  # add chL8 compound of metal ion attached by coordin8 bonds to 2 or more non-metal ions (&& *CDN8), or Zoology def
          sublim8   :purified product heated from solid to vapor (without first melting), then cool condens8ion back to solid, or elev8, distill, concentr8
         debullE8   :to boil over
         distill8
@@ -1150,14 +1169,20 @@ trachelobranchE8
             mor8   : # add activ8d cell microtubule proteins (h(om|eter)o)?(mono|di|tri|tetra|oligo|poly)meriz8 macromolecule complexes (from Biochemistry)
             phN8   :salt            of     phenic acid  # add above 8 *z8 possibilities with 8 new *E8 && 8 new *t8 words to keep "Etz" group together
            pect8   :salt            of     pectic acid
-           oxal8   :salt (or ester) of     oxalic acid
-          silic8   :salt (or ester) of    silicic acid  # from mineralogical chemistry silic8s include to add (uni|ortho|bi|meta|poly|sub) && 6 *l8 && 6 *n8
-           fumR8   :salt (or ester) of    fumaric acid produced as a key chemical intermeD8 during the urea (or Krebs?) cycle           (from Biochemistry)
            form8   :salt            of     formic acid
           formE8   :the anionic univalent CHO2 group derived from formic acid, or a compound containing this group
+           fumR8   :salt (or ester) of    fumaric acid produced as a key chemical intermeD8 during the urea (or Krebs?) cycle           (from Biochemistry)
+           oxal8   :salt (or ester) of     oxalic acid
+          silic8   :salt (or ester) of    silicic acid
+        bisilic8   : # these varE8ions are each groups && salt types of acid silic8s (sometimes hydr8d), which are included within Mineralogical Chemistry
+       subsilic8
+      metasilic8
+     orthosilic8
+      polysilic8
+       unisilic8
        ricinolE8   :salt            of ricinoleic acid (formerly called palm8 of palmic acid)
              ag8   :cryptocrystalline translucent quartz variety, usually with whitish color && luster nearly like wax (from Minerology) or diminutive person
-            mic8   :to add mica to, which is any various hydrous silic8 minerals of aluminum or potassium that crystallize allowing thin leaf cleavages
+            mic8   :to add mica to, which is any various hydrous silic8 minerals of aluminum or potassium with crystalliz8ion that allows thin leaf cleavages
            acer8   :aceric acid with salifiable base or long, narrow, pointed needle
           arist8   :having a slender, sharp, or spinelike tip                  (from Zoology)
           cultr8   :sharp-edged && pointed like a pruning knife or certain bird beaks
@@ -1218,6 +1243,8 @@ trachelobranchE8
           ulcer8
      compassion8
      dispassion8
+         bombin8
+         bombil8   :buzz
              bl8   :cry
            ulul8   :howl
          coagul8   :bleed (or more accur8ly the clotting process of blood in which a liquid thickens, curdles, or congeals && is transformed into a semisolid)
@@ -1310,6 +1337,7 @@ trachelobranchE8
          tribun8   :office   or st8                    of a   tribune
          vizier8   :office, dignity, or authority      of a    vizier
        p8riarch8   :office, dignity, or jurisdiction   of a patriarch, or a patriarchal form of government or society (from Ethnology)
+       cardinal8   :office, dignity, or rank           of a  cardinal, or a group of cardinals referred to collectively
      chancellor8   :office  of a chancellor or the time during which one is chancellor
    archiepiscop8   :office  of an         archbishop
    metropolitan8   :the see of a metropolitan bishop
@@ -4435,3 +4463,7 @@ on the defensive, it means your opponent has "pulled a fast one" with some kind 
 conspiracy being perpetr8d (which confounds Occam's Razor in seeking truth with fewest assumptions). Such bad assumptions lead to similarly bad conclusions;
 I5CMDisc:I have crE8d a new Discord text && video chat account @PipStuart#5538 alongside an "Octology" server with permanent invit8ion link S_D*.GG/kT586yW;
 I5CMGrep:`g -i '^ *[a-z8]*8[a-z8]* *[:#].*add .*8' ~/dox/2du/8.txt` is my rel8ively basic command to preserve for loc8ing not8ions of l8r planned additions;
+I5DM8l8r:I should code my own `g` with PCRE to simplify the above command. It looks like I still have not8ions for 12 *z8, 2 *t8, 2 *L8, && 1 *U8 to add l8r;
+I5EM8p2p:Although a bit old && read before, perusing Beppu-san's tweet reminded me about HTTPS://VentureBeat.Com/2017/11/04/the-end-of-the-cloud-is-coming ;
+I5KM8plc:Next 4 Pre-Letters stand for Down, Parry, Vital, Back (over crnl). Then South(east), Up(forward), Ceiling(westCorner), Down(back)  (over g+m,Etz).
+Left, North, Right, Under (over lnrc). Vital, Guard, Forward, Xeric (over tz,g+m,E). Back, High, Kneel, Weapon (over lncr). Leaves IMPO && Sy as last Etzg+m;

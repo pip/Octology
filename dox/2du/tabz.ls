@@ -1,3 +1,5 @@
+I5DMGerA: HTTPS://NYTimes.Com/2018/05/12/opinion/sunday/liberals-youre-not-as-smart-as-you-think-you-are.html  # noticed 1 of my heroes, Dr. Jordan Peterson,
+# tweeted this highly coincidental link to another NYTimes Opinion piece, but is more conspicuous with author Gerard Alexander (my-Dad's-1st my-middle-name);
 I59MAZED: HTTP://IntellectualDark.WebSite  # linked from Bari Weiss' following NYTimes Opinion piece titled "Meet the Renegades of the Intellectual Dark Web":
           HTTPS://NYTimes.Com/2018/05/08/opinion/intellectual-dark-web.html  # might be behind a pay-wall, if 5 freebie promotional article views were used up
 HAPM1WdN: chv0 Lt: GMail  /.  PerlMonks.Org  Reddit.Com/r/programming  News.YCombinator.Com  Vox.Com

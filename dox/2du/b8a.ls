@@ -1,13 +1,13 @@
-# F5VM5oZT:b8a.ls crE8d by PipStuart <Pip@CPAN.Org> to sepR8 Octology fE8ure priorities for scheduled milestone release goals;$VERSION='0.0';$d8VS='I45M789A';
+# F5VM5oZT:b8a.ls crE8d by PipStuart <Pip@CPAN.Org> to sepR8 Octology fE8ure priorities for scheduled milestone release goals;$VERSION='0.0';$d8VS='I5DM5Tau';
 # Note:These goals should lean toward ambitious more than easy, yet be flexible enough to allow for needed adapt8ion && l8r revisions to upd8 main priorities;
 0.0 E=8sln:8psilon:HB8 WedNov 8th2017:~1Mnth from  HAD:d8 FriOct13th2017 saw initial public release, then spent following weeks tidying most glaring issues;
 0.0 Z= z8a:  zeta :I18 MonJan 8th2018:2Mnthz from 8sln:working know.ls mainly as new list of Dr. Jordan Peterson's advice, quotes, video links, && comments;
 0.0 H= h8a:  heta :I28 ThuFeb 8th2018:1Mnth  from  z8a:upd8ing 8plc to mainly explore more colorful 8-word analysis && organiz8ions, attempting some gM8ria;
 0.0 T=th8a: theta :I48 SunApr 8th2018:2Mnthz from  h8a:shifted 1.0 ramp to 2019, leaving most of 2018 as 0.0 plan for future version stages up to a release;
 0.0 A=alf8: alpha8:I58 TueMay 8th2018:1Mnth  from th8a:?plan && prioritize fE8ures into l8r stages?;
-0.0 B= b8a:  beta :I78 SunJul 8th2018:2Mnthz from alf8:?;
-0.0 C=cnd8:candid8:I88 WedAug 8th2018:1Mnth  from  b8a:?;
-0.0 R=rls8:releas8:IA8 MonOct 8th2018:2Mnthz from cnd8:refine all descriptions of stage plans below;  # End 2018 public experiment8ion with no collabor8ion;
+0.0 B= b8a:  beta :I78 SunJul 8th2018:2Mnthz from alf8:still need to do better priority planning...;
+0.0 C=cnd8:candid8:I88 WedAug 8th2018:1Mnth  from  b8a:maybe establish some routine priority utils?;
+0.0 R=rls8:releas8:IA8 MonOct 8th2018:2Mnthz from cnd8:refine all descriptions of stage plans below;  # End 2018 public experiment8ion without collabor8ion;
 0.1 E=8sln:8psilon:IB8 ThuNov 8th2018:1M from 0.0 rls8:upd8 this plan 2 EnumEr8 E fE8urEz DsIrEd 4 Each of thE following d8d milEstonE stagEz && fit2 1pagE;
 0.2 Z= z8a:  zeta :J18 TueJan 8th2019:2Mnthz from 8sln:try2 complete all major core module XperimNt8ion&&shift gearZ in2 stabiliZing all Z 4m@Z&&interfaceZ;
 0.3 H= h8a:  heta :J28 FriFeb 8th2019:1Mnth  from  z8a:flesH out core docUmNt8ion witH interactive demonstr8ionz of H && upd8 g8 4future collabor8 brancHez;
@@ -20,46 +20,35 @@
 # 2du:rEthnk top stAg IDaz,rEordr bSt ItMz hEr,brk old ItMz dn&&bild bak up in2 stAgz cklstz,rE4m@ AgN in2 dNse 1pAg Year plan4 prep v1.0,eval sloc 4~/bin rm,
 #   contMpl8 cndid8z Xpndng2nXt sumb pAg4 192,mAB add r8ngz4cmplEtnS|valU|nEd2Bdistinct vs.combInabiliT|orig|novLT|plAyabl,plan morgmz&&dvlUtlz,
 A= # stil nEd2stuD&&XperimNt wi thEs taskz&&ordr l8r stuf&&mAB EvNtual plan4 8consistNt nIc dvl stAgz perYear,but XperimNt8ion mA nEd2rEmAn pRtofall until1.0;
-  a8:ftst apNd colrd map of most common regex flag meanings for ignorecase,global,multi-match,single-string,evalU8,optimIz-brAk,current,Xpandcmntz,LUAD,etc.,
-  a8:reso colr like sumb,b8:(f(ct|ib)|(pr|su)m)z&&fixlonglInzhang&&mABmk just b64 pRam ndx of 48 pAgz2gNer8 && dflt b64 out,
-  2du:8plc mv2 [ab]8 bin?,kEp thnkng altrn8 prIm bigSt string dismissal sets but permuting on several tops a few deep && mAB try oversight trial picking,
-  a8:sS add optn2cnv SKpz in2 HTM, upd8 8plc 2fit term wrapng long lInz,add afewgd gM8ria 4mz,Xtract sectnz in2 cnt8 && nw `8c` lIk wc,
   a8:g aftr stuD grepz && mk new PCRE dflt nstd of SKpd altrn8ion meta-pRNz|pIpz,
-  b8:mkBigFloat objX,add cnfgUr8ion4 constructor in BaseTransl8&&4m@ing out stringific8ionz,Xplor Xpanding objX to represent Unumz,
+  a8:reso colr like sumb,b8:(f(ct|ib)|(pr|su)m)z&&fixlonglInzhang&&mABmk just b64 pRam ndx of 48 pAgz2gNer8 && dflt b64 out,
+  a8:sS add optn2cnv SKpz in2 HTM, upd8 8plc -p to measure by linz,mkup new&&add gd gM8ria 4mz,Xtract sectnz in2 cnt8 && nw `8c` lIk wc,
+  2du:8plc mv2 [ab]8 bin?,kEp thnkng altrn8 prIm bigSt string dismissal sets but permuting on several tops a few deep && mAB try oversight trial picking,
+  b8:mkBigFloat objX,add cnfgUr8ion4 constructor in BaseTransl8&&4m@ing out stringific8ionz,Xplor Xpanding objX to represent Unumz,q:rEwrIt precedNce,
   c8:fix ckm8 long PGN warnz&& -c SimpXit cordump,figure out if possible to enable && receive FingerTouch Wacom tablet events,or ideally get stylus pressure,
   SGR:NBAVbv+Hh prefer S,IFi+Mm G,Rr+E R, LKl+Oo s,Cc+Tt g,UDu+Gg r layrz(wi sgr crosng Ovr,Cntr,UndrDbl)but mA want2justXpnd any nstd of <=6(or12+UIQ)chanLz,
-  tFbfPpDdAaLlOoHhXxCcNnWwMmSsGgRrUuIiQq,BEeJjKkTVvYyZz?,+grups shft2 UIQ(+2+2-1),T && B rEmAin frE wi lOwcAsez alreD alOc8d text && bclr,cnsidr Fb=Cc&&Kklen,
-  a8:fix S YkB|c 2!retn F:Yx01,mk brc .zsh2.bashrc tmpl8 4 Termux,prep bash,pkg inst vim perl,
-  a8:fix sS 2 rEquIr -h dashd pRamz,
-  a8:upd8 tstc,S2:add hedr&&SGRsectnz,add mOd2wrIt .htm fIlz nstdof sS justpIpfiltr,
-  a8:mv c8:tsgr&&gnp8 2tstc(mkng bSt posibl colrblox4consol2)&&pm2x 2cdst(or sepR8 t/*.t fIlz),
-  a8:lrc mk sure can S on xx section hedrz wi FbS,
-  Simp:addcolrlayrz&&SGRf as tied sectnz d8a,
-  a8:rm[cS]2f4,
-  b8:s8 stRt as sort -n |some shfl flag(wi seed ctrl)|b8 b64(wi%bfr8)|b256|d8|dur8 && othr bSt optnz(&&mAB s8 shudBin a8 lIk shfl nstd of b8?),
-  a8:stuDshuf&&rm shfl,add([os]upd)as aliasz?,
-  c8:addSGR|Simp|cut&&cat|sloc,
-  c8:rEwrIt8trm 2rEquSt f0nt layr from S2,
-  c8:prym fix(b8),8trm fix basic cursor,autOnwlIn aftr cmd wrap,mk nw lAyrz 4full 256colrz,
+  tFbfPpDdAaLlOoHhXxCcNnWwMmSsGgRrUuIiQq,BEeJjKkTVvYyZz?,+grups shft2 UIQ(+2+2-1),T && B rEmAin frE wi lOKsez alreD alOc8d tXt&&bclr,cnsidr Fb=Ccore&&Kklen,
+  a8:fix S YkB|c 2!retn F:Yx01,mk brc .zsh2.bashrc tmpl8 4 Termux,prep bash,pkg inst vim perl,fix sS 2 rEquIr -h dashd pRamz so just 'h' can passthru,
+  a8:upd8 tstc,S2:add hedr&&SGRsectnz,add mOd2wrIt .htm fIlz nstdof sS justpIpfiltr,lrc:mk sure can S on xx section hedrz wi FbS,
+  Simp:addcolrlayrz&&SGRf as tied sectnz d8a so [cS]2 can take over from old [cS]2f4 rigid quadlayrz(&&deprec8 thM?),
+  a8:mAB mv c8:tsgr&&gnp8 2tstc(mkng bSt posibl colrblox4consol2)&&pm2x 2cdst(or sepR8 t/*.t fIlz),
+  b8:s8 stRt as sort -n |some shfl flag(wi seed ctrl)|b8 b64(wi%bfr8)|b256|d8|dur8 && othr bSt optnz(&&mAB s8 shudBin a8 lIk shfl nstd of b8?),mAB rm shfl?,
+  c8:addSGR|Simp|cut&&cat|sloc,rEwrIt8trm 2rEquSt f0nt layr from S2,prym:fix(b8),8trm fix basic cursor,autOnwlIn aftr cmd wrap,mk nw lAyrz 4full 256colrz,
   c8:8trm mk SGRs && cursr blink,mk input key auto-scrl botm,mk drag hilite copy clipbord,mk running .pal8 chng colrz,addOverDraw&&AutoF0ntPigyBackOnColrToglz,
   d8:fix dic 4mor lIn joinz&&add retro cmnt failz wi suggStnz,dup dic log as mn man wrapr,
-  d8:mvUtl:bak+e 2 d8:bk+e wi!$TTY wich goes up from lib/ dirz&&hndlzUTF8flnmz,,
+  d8:mvUtl:bak+e 2 d8:bk+e wi!$TTY wich goes up from lib/ dirz&&hndlzUTF8flnmz,sync lsd8 logic2a8:c8fn,
   f8:XtNdf0nt b64 2UTF8,cma nstd of dash sepR8,9x18,2x2,3x3 resoz,pal8:add 256colrz wi dflt b64RGBLowbitz,upd8 Hrc&&all pal fIlz wi l8st RGBL,
   a8:fix`a8`4lodH wi rEd&&wrIt wi quOtng,a8:mk styl 2gNr8.styl,
   a8:mo as basic vim-like UTF8 colr ReadKey pager2push more than1page of dic,mn,lsd8,etc output in2,addmor -help,upd8 sumb,cmpIl orpie src,mknwTop8shotz&&push,
-  b8:q rEwrIt precedNce,
-  f8:pal8 stRt SDL manager,upd8 top8 2hav dRk rgcw && brIter OP,
-  U8:rEmk lrld as l8rm 2clEn.arc&&frEdrvspc,Xpct U2b8,frip,aguu alIn+acs,acs+instald,agi,mplr,
-  dvl/**/*.pm new s/refcalls/isa/ like d8->w8,
-  BaseCnv:UTF8,PT&&Simp:clEn,upd8POD,tst,pkg,
+  f8:pal8 stRt SDL manager,upd8 top8 2hav dRk rgcw && brIter OP,pikTop64flet&&pr0gfIlzin.Hrc,XtNd pal8 2 64or of256,mk new 8let from tiglet->flet,
+  dvl/**/*.pm new s/refcalls/isa/ like d8->w8,BaseCnv:UTF8,PT&&Simp:clEn,upd8POD,tst,pkg,
+  r8:mk all Elo varE8ionz for competitive ranked r8ingz d8a&&comput8ionz,
   p8:getScreeps shrd[12] 60+,clEnJS,tst fmt utlz,port all c&&x,tst,doc&&msgJer,cmp auth wapi2cmdz,XtNd md8a,
   p8:mk gNeric qbix(+pakr) && ckm8 d8a && fIl mngmNt 2 B apRt from rNdrng,stRt gom8 Xpct gnugo,mk othr gmz .pmz as rEUsabl pRtz 4 mor l8r,
-  stuDdokr,reboot&&upd8A,bilddokrimg&&tstA2CR,pwrdnA,swpDVI&&pwrupK,synfR2K&&up17.10+TtyCursSDLrendokr(C2),swpDVIK2A,
-  d8:sync lsd8 logic2a8:c8fn,
-  f8:pikTop64flet&&pr0gfIlzinHrc,XtNd pal8 2 64or of256,
-  f8:mk new 8let from tiglet->flet,
+  U8:rEmk lrld as l8rm 2clEn.arc&&frEdrvspc,Xpct U2b8,frip,aguu alIn+acs,acs+instald,agi,mplr,
   U8:Xpct:g3-style wrapper for ag where apt already nicely improves on plain apt-get but could be cool to analyze summariz8ion proportions in blank line above
-    botm progress line showing literal 100ths with low common denomin8or then closest to very small digits to maybe 8ths with ticked bar-graph && deeper b64s?,
+    botm progress line showing literal 100ths with low common denomin8or then closest to very small digits to maybe 8ths with ticked bar-graph && deeper b64z?,
+  stuDdokr,reboot&&upd8A,bilddokrimg&&tstA2CR,pwrdnA,swpDVI&&pwrupK,synfR2K&&up17.10+TtyCursSDLrendokr(C2),swpDVIK2A,
 
 # 2du-l8r: (mAB 2 insrt abov) ... alsO considr wethr kEpng bin limit ~96 is bSt or 2 add othr dirz|sumb pAgez or what (&& mAB EqualIz a8 27 b8 21 to both 24?)
  bin:mAB upd8 curs as a8:crsr,mAB mv f?ts(t?|gr) 2 .?t/ (aded2path) && t8.pm,stuD && fnsh upd8ng kpc,mAB mv shot in2 d8.pm,think abou othr XeQtblz worth adng,
@@ -151,3 +140,4 @@ HBCL1ENT:So I'm a bit l8 for the planned E:8sln:epsilon:HB8 (by 4Dayz),but still
 Enumer8 major fE8urez for every d8d goal stage to complete E. Maybe it'd just be easier to try to edit everything in-place above to fit back into 1 solid page;
 HBCLNit4:Now that I've crE8d a p8reon account, I should prioritize adding my bank routing number && crE8ing compelling Rewards, Goals, && Thanks for my p8rons;
 HC7L7Git:Started to heavily revise the dense early plan, so that fresh new b8a stages can be planned && described which reflect recent upd8s && goals better;
+I5DM5Tau:Sign-up, study, && try out Ovid's Free2Play Sci-Fi MMO called TauSt8ion at HTTP://NewRPG.Com/browser-games/tau-station && HTTPS://TauStation.Space ;

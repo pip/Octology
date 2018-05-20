@@ -1,85 +1,94 @@
 #!/usr/bin/perl
 # D6OMHm3L:8plc crE8d to read PipStuart's <Pip@CPAN.Org> 8.txt (mainly 2 specific columns) to tabul8 && print the 8 Precursor Letter Counts;
-# 2du:Dtect nstd of hRdcOd 16th colm,add dur8z around sectnz&&mAB try2optimIz per4manc of slOSt pRtz(tkz about 12-18secs for basic to -all),
-#   4 -g gM8ria:try2add sumz,productz,modez,meanz,medianz,cnsidr delta difz&&r8ioz,prIm factrz,add colrz,graph rangez,iconz,contMpl8 othr good posibl repz,
-#     also try deltas with sub-colr 4grndz by magnitude gradu8ionz or syswIdfrEqz,
-#   4 -g:try reloopng 4 Ech singl rOw alInmNtz nstd of init blox,fix all -p pg1f to count up to actual linz rather than hardcode 160x48 limitz,
+# 2du:4 -g gM8ria:try2add sumz,productz,modez,meanz,medianz,cnsidr delta difz&&r8ioz,prIm factrz,add colrz,graph rangez,iconz,contMpl8 othr good posibl repz,
+#       also try deltas with sub-colr 4grndz by magnitude gradu8ionz or syswIdfrEqz,
+#     4 -g:try reloopng 4 Ech singl rOw alInmNtz nstd of init blox,fix all -p pg1f to count up to actual linz rather than hardcode 160x48 limitz,
 #   mAB try more agrSiv minimIz8ion of gM8ria prImz whN l8r sufx or prEfx alreD in PLz,alsO try special rEordr of lRgSt prEfxz2trim dn rAng,
+#   add dur8z around sectnz&&mAB try2optimIz per4manc of slOSt pRtz(tkz about 12-18secs for basic to -all),
 #   mk sepR8 tabul8ion of 8-words used in l8r document8ion wi not8ion 4thOs not yet included in top lists (thN optn2ignor easy conjug8ions && pre/suffixes),
 #   mk easy optn4 fulc 2use 1colm 4grep,add 4m@d percNtz,stuD wc && mk a8:cnt8/8c wi fulc -f? && 8plc as -l? optnz(rEdo hedrtXt),colr letrz,add f0ntz4 8trm;
 use strict;use warnings;use utf8;use v5.10;use Octology::a8;use Octology::b8;
-my $d8VS='I4RMILo8';       my $clrf=1;my $fulf=0;my $argz='';$argz= join(' ',@ARGV) if(@ARGV);my $Stxt='';my $folf=0; # add 4-Or-Less-Flag
+my $d8VS='I5KM8cNt';       my $clrf=1;my $fulf=0;my $argz='';$argz= join(' ',@ARGV) if(@ARGV);my $Stxt='';my $folf=0; # add 4-Or-Less-Flag
 my $edVS=        '';       my $pg1f=0;   $pg1f=1 if($argz=~ /(^|\s)-?-?[^p]*p/i); # find -?p(age) flag2limit some extra long output to first 48-line page
-my $mxws=        19;       my $lpsf=0;   $lpsf=1 if($argz=~ /(^|\s)-?-?[^l]*l/i); # find -?LetrPrecursShortsFlag  # if MaXWordSize evr grOz,wil nEd2incrEs|Dtct
-my $clmz=        80;       my $gm8f=0;   $gm8f=1 if($argz=~ /(^|\s)-?-?[^g]*g/i); # find -?g(m8r) flag2count&&adorn wi math 4mUl8ions stRting wi 2letr
-my $linz=        24;       my %fulc=();  $fulf=1 if($argz=~ /(^|\s)-?-?[^f]*f/i); # find -?f(ull) flag to count && sort all         characters at end
+my $clmz=        80;       my $lpsf=0;   $lpsf=1 if($argz=~ /(^|\s)-?-?[^l]*l/i); # find -?LetrPrecursShortsFlag  # if MaXWordSize evr grOz,wil nEd2incrEs|Dtct
+my $linz=        24;       my $gm8f=0;   $gm8f=1 if($argz=~ /(^|\s)-?-?[^g]*g/i); # find -?g(m8r) flag2count&&adorn wi math 4mUl8ions stRting wi 2letr
+                           my %fulc=();  $fulf=1 if($argz=~ /(^|\s)-?-?[^f]*f/i); # find -?f(ull) flag to count && sort all         characters at end
                            my @folc=();  $folf=1 if($argz=~ /(^|\s)-?-?[^w]*w/i); # find -?w(ord) flag to count && sort all maximum char-words at end
                            my %lpsd=();  $clrf=0 if($argz=~ /(^|\s)-?-?[^s]*s/i); # find -?s(SKp) flag arg4vim ':r!8plc s' 2B lIk ':r!8plc|sS'
-$clmz=$ENV{'COLUMNS'} if(exists($ENV{'COLUMNS'})); # mAB also Dtect H varE8ionz
-$linz=$ENV{'LINES'  } if(exists($ENV{'LINES'  }));my $lnmx=$linz - 2;my @jd8a;
-if($argz=~ /(^|\s)-?-?[^a]*a/i){   $lpsf=$gm8f=$fulf=$folf=1;} # set All optional section flags at once
-if($argz=~ /(^|\s)-?-?[^h]*h/i){$Stxt.=" $0 - 8.txt Precursor Letter Counter d8VS:$d8VS by $auth to gener8 Octology applic8ion name d8a analysis;
-  h   - print this Help text and exit; below options are flags which can be combined in any order, but extra sections print in order of comput8ion;
-  s   - print below options as just plain text (Strip default eScape color codes, like running `$0 | sS` post-process);
+$clmz=$ENV{'COLUMNS'} if(exists($ENV{'COLUMNS'})); # mAB also Dtect H varE8ionz   # now MaXimumWordSize && CoLuMnof8 && Pre-letrz R Dtectd dynamicly(!hRdcOded)
+$linz=$ENV{'LINES'  } if(exists($ENV{'LINES'  }));my $lnmx=$linz - 2;my @jd8a;my $mxws=8;my $clm8= 8;my $clmp=$clm8-1;my $rcnt=0;
+if($argz=~ /(^|\s)-?-?[^a]*a/i){   $lpsf=$gm8f=$fulf=$folf=1;} # set All optional section flags at once for any -a parameter
+if($argz=~ /(^|\s)-?-?[^h]*h/i){$Stxt.=" $0 - 8.txt Precursor Letter Counter d8VS:$d8VS by: $auth to gener8 Octology applic8ion 8-words d8a analysis;
+  h   - print this Help text and exit; below options are flags which can be combined in any order, but l8r sections print in comput8ion order;
+  s   - print below options as just plain text (Strip default eScape color codes,like running `$0 | sS` strip eScape post-process);
   p   - print below options as limited to just first $lnmx-line Page instead of default everything (fixed 160x50 single Pages work for -l -w -g);
-  a   - print All extra options below (like calling `$0 lwgf`)   (with -p limiting almost all sections to just 1 160x50 Page of output for each);
-  l   - print Letters of precursors sorted by size                 (with -p only printing up to z 102 and cutting off before c 131 as 1 Page);
-  w   - print Words sorted by size up to current maximum of $mxws     (with -p only printing from 2 to  9 for just first $lnmx-line Page);
+  a   - print All extra options below (like calling `$0 lwgf`)   (with -p limiting most sections to  160x50 just 1 Page of output for each);
+  l   - print Letters of precursors sorted by size with colors     (with -p only printing up to z 110 and cutting off before c 142 as 1 Page);
+  w   - print Words sorted by size up to current maximum of 19     (with -p only printing from  2 to  8 for just first $lnmx-line Page);
   g   - print gM8ria 'Gematria' word valU8ions in aligned sections as preliminary trial of a few short approaches to some numerology;
   f   - print Full character counts (maybe l8r extracted to a8:cnt8 and `8c` like `wc`);";
   if(20 < $clmz && $clmz < 160){my @htxt=split(/\n/,$Stxt);$Stxt='';my $lsiz;my $tokn;for(@htxt){$lsiz=0;while(s/^(\s*\S+)//){$tokn=$1; # smRt split Help tXt
         if($lsiz + length($tokn) > $clmz){$Stxt.="\n" . (' ' x 8);$lsiz=8;$tokn=~ s/^\s+//;} $Stxt.=$tokn;$lsiz+=length($tokn);} $Stxt.="\n";}}o8($Stxt);exit;}
-my $efyl ='8.txt';my @lcnt;$lcnt[$_]=0 for(0..b10('z'));my @acnt;$acnt[$_]=0 for(0..b10('z'));my $done=0;my $t0tl=0;my $text;my $actx;my $sclc;my $gttl=0;
+my $efyl ='8.txt';my @lcnt;$lcnt[$_]=0 for(0..b10('z'));my @acnt;$acnt[$_]=0 for(0..b10('z'));my $donw=0;my $t0tl=0;my $text;my $actx;my $sclc;my $gttl=0;
 unless(-r         "$efyl"){$efyl=$ENV{'HOME'} . "/dox/2du/$efyl" if(exists($ENV{'HOME'}));} # try2add likely path when file not in local dir
 open(my $eflh,'<',"$efyl") or die "!*EROR*! Couldn't open eight-file to read counts! $!";binmode $eflh,':encoding(UTF-8)';
-while( <$eflh>){my $ldat=$_;$done=1 if(/^$/); # sets done to true when first blank line encountered
+while( <$eflh>){my $ldat=$_;$donw=1 if(/^$/); # sets DONe-Words true when 1st blank line found (shud be 1-based line#:8-word cnt+1blnk+6cmnt-hedr,4now)
   if(/^#.*?\$d8VS\s*=\s*(['"])([0-9A-Za-z._]{8})\1\s*;/){$edVS=$2;} # this match regex seems to still need \1 && presumably ${1} would work in s/// replacement
-  if  (!$done &&  $ldat  !~ /^\s*#/){ # the header lines (&& potentially l8r blocks) have pound as first non-whitespace character design8ing comments to skip
-    if     (length($ldat) >= 16  ){my $pltr; # 16th column is l8st dflt 8 loc8ion, but some l8r could slide furthr
-      if   (substr($ldat,    16,1) eq '8'){$pltr=substr($ldat,15,1);} # hard-coding columns as aligned interest (used to be 14 && 13, now 16 && 15)
-      elsif(       $ldat =~   /^.*?(\w)8/){$pltr=$1;} # for a few lines with particularly long 8 names, the 8 wouldn't fit in the same column so srch for 1st 8
-      if   (       $ldat =~   /^\s*(\w{0,15}8\w*)(\s|:)/i &&  ($folf || $gm8f || $lpsf)){my $ewrd=$1; # if mAB FindOrdrdLsFlag,thN lOdup Cntz arAy of subhashes
-        push(@{$lpsd{$pltr}[        length($ewrd)]}, $ewrd) if($folf || $gm8f || $lpsf); # bild LetterPrecursorShortestsD8a for -l
-        for my $wsiz (2..$mxws){if( length($ewrd) == $wsiz){$folc[$wsiz]{$ewrd}++;
-            print "$G!*EROR*! duplic8 of wsiz:$wsiz for ewrd:$ewrd to remove l8r;\n"    if($folc[$wsiz]{$ewrd} > 1);}}} # sneak in Xtra duplic8ion error check
-      $lcnt[b10(   $pltr )]++   if(defined($pltr) );}} # wrapng $pltr in lc() B4 b10() showz just 23(/34) countz in rvrs ordr: rnlc tzeg mdvp usbx fwkh iyo
-      $text .=     $ldat;       if($fulf){my @chrz= split(//,$ldat);for my $char (@chrz){$fulc{$char}++;}}} # &&!lc: rnlc tzEm gpdv usbN LDCV URxf Gwkh PMIy SO
-my    $letz  =join('',keys(%lpsd)); # these PLz won't be in order, but should be good enough for regex char-classes
+  if  (!$donw &&   $ldat  !~ /^\s*#/){ # the header lines (&& potentially l8r blocks) have pound as first non-whitespace character design8ing comments to skip
+    if     (length($ldat) >= $clm8  ){my $pltr; # 16th colm is l8st dflt 8 loc8ion,but some l8r found very long 8-words could slide furthr so now srch 15+
+      if   (       $clm8  <=     8  ){while(length($ldat) >= $clm8 && substr($ldat,$clmp,1) ne '8'){$clmp=$clm8++;}} # non-hedr 8-word loop up2 dflt 8colm
+      if   (substr($ldat,    $clm8,1) eq     '8' ){$pltr=substr($ldat,$clmp,1);} # no more hard-coding colmz as aligned interest (was 14 && 13, then 16 && 15)
+      elsif(       $ldat  =~ /^.*?(\w)        8/x){$pltr=$1;} # for any lines with very long 8-words, if the 8 wouldn't fit the dflt colm srch for 1st 8
+      if   (       $ldat  =~ /^\s*(\w{0,$clmp}8\w*)(\s|:)/i && ($folf || $gm8f || $lpsf)){my $ewrd=$1; # if mAB FindOrdrdLsFlag,thN lOdup Cntz arAyof subhashz
+        push(@{$lpsd{$pltr}[        length($ewrd)]}, $ewrd)  if($folf || $gm8f || $lpsf); my $wsiz= length($ewrd);$folc[$wsiz]{$ewrd}++; # do Xtra duplic8ion
+        print                   "$R!*EROR*! duplic8 of wsiz:$wsiz for ewrd:$ewrd to remove l8r;$z\n"           if($folc[$wsiz]{$ewrd} > 1); # error check
+        $mxws=$wsiz if($wsiz > $mxws);} # this upd8z MaXimumWordSize for l8r loop limit8ionz && abov push bildz LetterPrecursorShortestsD8a struct for -l pRam
+      $rcnt                ++   if(defined($pltr) && $pltr  eq 'r'); # track sepR8 max count for scaling size barz below in $blsz nstd of old hardcoded 40
+      $lcnt[b10(   $pltr )]++   if(defined($pltr));}} # wrapng $pltr in lc() B4 b10() shOz just 23(/35) countz in rEvrs ordr:rcln etzg mdvp ubsf xhkw ioy
+      $text .=     $ldat;       if($fulf){my @chrz= split(//,$ldat);for my $char (@chrz ){$fulc{$char}++;}}} # !lc:rcln Etzg mdpv bsuC DLNR UVGf xBhk wIMP OSy
+my    $letz  =join('',keys(%lpsd)); # these PLz won't be in order, but should be good enough for regex char-classes; abov lc() 23 ruinz 12 grupz in2 15 nstd
 close($eflh)               or die "!*EROR*! Couldn't close eight-file after reading! $!";
 #if($fulf){%fulc=();for(split(//,'the of and to a in is I that it for you was with on as have but be they')){$fulc{$_}=0 if(!exists($fulc{$_}));$fulc{$_}++;}}
 # temporarily try to hijack fullcharcounts above to just look within top 20 English words to compare; should extract ccnt to be like this && wc wi vary columnz
 # results: Idrv:1, bfuwy:2, ns:3, ei:4, oh:5, a:6, t:8, ' ':19; # "I drive by your freeway and say 'oh a tea Space!'"
 while($text=~ s/(\w)8//){$acnt[b10($1)]++;}   # counts chopping out all PLs && 8s
-my @scnt = sort { $a <=> $b } (@lcnt);
-for(my $sndx=$#scnt;$sndx >= 0;$sndx--){ # 2du:append bar-graphs of respective count values;
+my @scnt = sort { $a <=> $b } (@lcnt);my $pttl=0;my $apcn=0;
+for(my $sndx=$#scnt;$sndx >= 0;$sndx--){
   if(($sndx > 0 && $scnt[$sndx] == $scnt[$sndx - 1]) || ($sndx == 0 && $scnt[0] == 0)){splice(@scnt,$sndx,1);}} # below2 sepR8 prnt blox for not color or with
-$Stxt.=                                            sprintf("${C}8${M}Pre-cursor${Y}Letter${R}Counter$W:$G d8VS$C=%s$G\n",            d8c($d8VS));
-my $efsz = length($efyl);$Stxt.=                   sprintf("$O  efyl$C=%s".' 'x (18-$efsz).$G.          " edVS$C=%s$G\n",c8fn($efyl),d8c($edVS));
-$Stxt.=                                            sprintf "${C}8${M}Pre${Y}Letr$R Ct$C Full${W}Document${R}Counts\n";
-$Stxt.=                                            sprintf   "$B-------- -- ------------------\n";
-for(@scnt){                                                                                        $sclc=0;$actx ='';
-  for my $lndx (0..$#lcnt){
+$Stxt.=                               sprintf("${C}8${M}Pre-cursor${Y}Letter${R}Counter$W:$G d8VS$C=%s$G\n",            d8c($d8VS));
+my $efsz = length($efyl);$Stxt  .=    sprintf("$O  efyl$C=%s".' 'x (18-$efsz).$G.          " edVS$C=%s$G\n",c8fn($efyl),d8c($edVS));
+$Stxt.=                                       "${C}8${M}Pre${Y}Letr$R Ct$C Full${W}Document${R}Counts$Y Sz${p}b10${M}Ct${G}Percent$W%\n";
+$Stxt.=                                       "$B-------- -- ------------------ ---------------\n";
+for(@scnt){for my $lndx (0..$#lcnt){ # just loop initially to Pre-compute the ToTaL for l8r gener8ing Percentz Per Pre-letter group as they get Processed2Prnt
+    if(defined($lcnt[$lndx]) && $lcnt[$lndx] == $_){                                     $pttl+=$_;}}}
+for(@scnt){my @ascz=($R,$W,$C,$Y,$M,$o,$B,$G);                                                     $sclc=0;$actx ='';
+  for          my $lndx (0..$#lcnt){ # for the Ansi eSCape ColorZ with the rot8ing PerCeNt iNdex below, skip over Cyan,Green,&& OldOrange for betr contrast
     if(defined($lcnt[$lndx]) && $lcnt[$lndx] == $_){$Stxt.=   $Y           . b64($lndx) ;$t0tl+=$_;$sclc++;$actx.=' '.b8c(sprintf("%2s",b64($acnt[$lndx])));
-                                                                                         $gttl+=$acnt[$lndx];}}
-  my $spad=21 - 3*$sclc;$spad=0 if($spad < 0);$actx.=' ' x $spad;my $blsz=41;my $r8io=$blsz/64.0; # prEpad Nd of acnt ndxz B4 sclc flipz 4 stRtng letr colm
-  $sclc   = 9 -   $sclc;$sclc=0 if($sclc < 0); # exploring gener8ing additional new bar-graphs of b8 Counts across remaining line width
-  if($clmz >= 160){my  $ddig =$_   ;$actx.=' ' x (126-int($_*$r8io)); # (96-int($_/2)) wi spad=50-3*sclc abov,thN (114-int($_*$r8io)) wi spad=32-3*sclc
+                                                                                         $gttl+=$acnt[$lndx];}} # swap Cyan or Green wi Magenta4percNtz BlO?
+  my $spad=33 - 3*$sclc;$spad=0 if($spad < 0);$actx.=' ' x ($spad - 14);$actx.=$ascz[$sclc] if(defined($ascz[ $sclc         ]));my $apcS=$ascz[++$apcn % 8];
+  $apcn++     if( $apcn =~ /^(2|4)$/        );$actx.= $sclc;$actx.= $ascz[ ($sclc + 4) % 8] if(defined($ascz[($sclc + 4) % 8]));my $apcx=$apcS;my $prcs;
+  $apcS = $ascz[ ($sclc + 0) % 8] if(defined($ascz[($sclc + 0) % 8])); # test matching percent numbz with group sizes && percent charz with 'x' multiplierz
+  $apcx = $ascz[ ($sclc + 4) % 8] if(defined($ascz[($sclc + 4) % 8]));$prcs=sprintf("%8.3f",$t0tl*100.0/$pttl);$prcs=~ s/(\.)/$W$1$apcx/;#prcs=~s/(000)$/$K$1/;
+  $apcS=$G    if( $apcS eq $G);$actx.=sprintf("x$M%4d%s%s%s%%%%",$_,$apcx,$prcs,$apcS);$apcn-= 8 while($apcn > 7); # SKpng percNt4l8r sprintf BlO
+  my $blsz=int($rcnt/6);my $r8io=$blsz /64.0 ; # prEpadNdof acnt ndxzB4 sclc flipz4stRtngletrcolm  # top4grupz8+1joy directnz rcln Etzg+m cover almost 79% wrdz
+  $sclc   = 9 -   $sclc;$sclc=0 if($sclc < 0); # gener8ing bar-graphs of b8 Counts across remaining line widthz  # botm8grupz dpvb suCD LNRU VGfx B... last 21%
+  if($clmz >= 160){my  $ddig =$_   ;$actx.=' ' x abs(112-int($_*$r8io)); # (96-int($_/2)) wi spad=50-3*sclc abov,thN (114-int($_*$r8io)) wi spad=32-3*sclc
     while($ddig >= 64){$ddig-=   64;$actx.= $o . ('#' x  ($blsz- 1)) . "$R@";} my $mdig=$ddig % 2; # try2mk Orange 2nd blox Nd in last Red boundry
                        $ddig*=$r8io;$actx.= $R . ('#' x   $ddig    ); # odd mod rEmAndr BlO reprEsNtd betr whN Ech 64 blok fitXactly32chrz,sO just4 sOlO 1now
     if($mdig && ($blsz==32||$_==1)){$actx.= $R .  '1'               ;}} # outr colm widt tSt shud only draw bRz 4 wId termz now
-  $Stxt.=sprintf ' '  x $sclc; $Stxt.=             sprintf(  "%s $actx\n",b8c(sprintf("%2s",b64($_))));}
-                                                                                   my $ct0t=$G . cma($t0tl);$ct0t=~ s/(,)/$Y$1$G/g; # pre-colr comma'd t0tal
-$Stxt.=                                            sprintf   "$B-------- -- ---\n";my $cttl=$M . cma($gttl);$cttl=~ s/(,)/$Y$1$M/g; # pre-colr comma'd total
-$Stxt.=                                            sprintf("${C}t${M}0${C}tlz    %s %s$W :  $B(${R}b10$B)  %s  %s$W;$z",
+  $Stxt.=' ' x   $sclc;$Stxt.=                     sprintf(  "%s $actx\n",b8c(sprintf("%2s",b64($_))));}
+                                                                                   my $ct0t=$M . cma($t0tl);$ct0t=~ s/(,)/$Y$1$M/g; # pre-colr comma'd t0tal
+$Stxt.=                                            sprintf   "$B-------- -- ---\n";my $cttl=$B . cma($gttl);$cttl=~ s/(,)/$Y$1$B/g; # pre-colr comma'd total
+$Stxt.=                                            sprintf("${C}t${M}0${C}tlz    %s %s $z(${r}b64$z)$W  :  $z(${p}b10$z) %s   %s$W;$z",
                                                     b8colr(sprintf("%2s",b64($t0tl))),b8colr(sprintf("%2s",b64($gttl))),$ct0t,$cttl);
-$Stxt=sS($Stxt) unless($clrf);o8($Stxt);$Stxt ='';
+$Stxt=sS($Stxt) unless($clrf);o8($Stxt);$Stxt ='';  print  "$R!*EROR*! pttl:$pttl != t0tl:$t0tl;$z\n" if($pttl != $t0tl); # error check expecting t0tal match
 if($lpsf){$Stxt.="\n${W}All${R}Counts${o}Not${M}Matching${C}Words${B}List$G -$K likely from just d8-stamps, pal8 codes, or other non-word strings with 8";
   my $ptot=0;my @acor;my $slin= '';$Stxt.=" (ordered by freq then letr)$W:\n"; # PrevrowTOTalwidth, AllCountsORdered, SortedLINe
   for(0..63){if(defined($acnt[$_]) && $acnt[$_] && !exists($lpsd{b64($_)})){$slin.="$C ".b64($_)."$W:";$slin.=$r;$slin.=$R if($acnt[$_]>2);$slin.=$acnt[$_];
       push(@{$acor[$acnt[$_]]},b64($_));}}
   for(0..63){if(defined($acor[$_]) && $acor[$_]){$Stxt.=" $R";$Stxt.=$r if($_ <= 2);$Stxt.=b64($_) . "$W:$C" . join('',@{$acor[$_]});}} $Stxt.="\n$slin";
   $Stxt        .="\n${Y}Letter${M}Pre-cursor${C}Shortests${B}List$G -$K shows all entries by$M P${Y}L$K with growing word-sizes$W:\n\n";for(@scnt){
-    last if($_ >= 108 && $pg1f); # for single -p page try to skip out after t && z 102 before c && l && n 131
+    last if($_ >= 128 && $pg1f); # for single -p page try to skip out after Etz 110 && before cln 142
     for     my $lndx (0..$#lcnt){if(defined($lcnt[$lndx]) && $_ ==   $lcnt[    $lndx]){my $letr=b64($lndx);
         my                                                                 $rtot=2 ;   my $ltot=     0    ;$Stxt.="$Y$letr$R:"; # hRdcOded prEnwlInz abov
         for my $wsiz (2..$mxws ){if(exists ($lpsd{$letr}) && defined($lpsd{$letr}       ) && scalar(@{$lpsd{$letr}       }) &&
@@ -95,7 +104,7 @@ if($lpsf){$Stxt.="\n${W}All${R}Counts${o}Not${M}Matching${C}Words${B}List$G -$K 
         $rtot            +=length($ltot                     ) + 1 ;                      $Stxt.=  "$M$ltot ";
         if($ptot + $rtot <= $clmz){$Stxt=~ s/(.*)\n/$1/s;$ptot+=$rtot;}else{$ptot=$rtot;}$Stxt.="\n";$rtot=0;}}}} $Stxt=~ s/\n$//;
 $Stxt=sS($Stxt) unless($clrf);o8($Stxt);$Stxt ='';
-if($folf){$Stxt.="\n${Y}Word${R}Sort${C}By${B}Size$G -$K up to current maximum$M $mxws$K or one$p page$K if given$p -p$W:\n";my $maxs=$mxws;$maxs= 9 if($pg1f);
+if($folf){$Stxt.="\n${Y}Word${R}Sort${C}By${B}Size$G -$K up to current maximum$M $mxws$K or one$p page$K if given$p -p$W:\n";my $maxs=$mxws;$maxs= 8 if($pg1f);
   for   my $wsiz (2..$maxs ){my @folk=sort(keys(%{$folc[$wsiz]}));$Stxt.= $B.sprintf("%${wsiz}d ",scalar(@folk));my $rtot=$wsiz+1;
                                                                   $Stxt.="$R $wsiz"        unless(scalar(@folk));
     for my $fndx (0..$#folk){my $foln=$folk[$fndx];if($rtot + length($foln) + 1 >  $clmz){$Stxt.="\n";$rtot=0  ;} $rtot+=length($foln)+1;
@@ -172,7 +181,7 @@ if($gm8f){$Stxt.="${W}Gener8 gM8ria primes for names by$B 3$W segments (${Y}PreL
         elsif($twrd =~ /^(ion)$/ && $sfxf == 1){$twrd ="$allp{$tprm}8$twrd";}  # 27,676,799 ostent8ious last (wi 8 pad digitz,4btwn sectnz 4 mor stabl growth)
         else                                   {$twrd ="$allp{$tprm}$twrd" ;}}}# 25,308,869 ostent8ious last (after some additions && removing 8digit padding)
     $tpmz=~ s/,$//;my $trmc='!';if($wh2p{$kyct} eq $twrd){$trmc=';';$eqct++;}else{$eqfz.="$G$wh2p{$kyct}$W:$B$twrd$W, ";} $vwrd=~ s/(ion\s*)$/$B$1/; # tryBlu
-    if($pg1f){last if($kyct> 103754);$Stxt.=sprintf("%s$z%s$W%s",b8c(sprintf("%4s",b64($kyct))),$vwrd,$trmc);if(++$colc == 6){$colc=0;$Stxt.="\n";}}
+    if($pg1f){last if($kyct> 106426);$Stxt.=sprintf("%s$z%s$W%s",b8c(sprintf("%4s",b64($kyct))),$vwrd,$trmc);if(++$colc == 6){$colc=0;$Stxt.="\n";}}
     else     {    $Stxt.=sprintf("$M%11s %s$z %s$W%s",cma($kyct),b8c(sprintf("%5s",b64($kyct))),$vwrd,$trmc);if(++$colc == 4){$colc=0;$Stxt.="\n";}}
   } $eqfz=~ s/, $//;  $Stxt=~ s/\n?$/$W\n/;$colc=0;#Stxt.="eqct:$eqct totl:" . scalar(keys(%wh2p)) . " eqfz:$eqfz"; # rebild Cmz2alreDB fIn4 100% of cur8wrdz
   $Stxt=sS($Stxt) unless($clrf);o8($Stxt);$Stxt ='';
@@ -320,3 +329,1150 @@ if($fulf){$Stxt=~ s/\n?$/\n/;my %cvlz=reverse(%fulc);my @ccnt= sort { $a <=> $b 
       } $Stxt.=sprintf((' ' x ( 8-$pcnt))."$C$w82o$B:$M".sprintf("%7s$B: %s$W,\n",cma($coun),b8colr(sprintf("%4s",b64($coun)))));
     } } $Stxt.=sprintf("$C  Sum of$B: ${G}0$W..${G}7$W,${G}9$B: $M%s$o      dif$Y:$B%7s$W;$z",cma($sumn),cma($jus8-$sumn));}
 $Stxt=sS($Stxt) unless($clrf);o8($Stxt);
+
+# 2du:gener8 all entries below into new d8a-struct && sepR8 ones for *t8(ion)? && *E8 as *iat(e|ion) ends to then compare against loc8d 8-words 4 diffz 2add;
+#   rel8ively few results just for *z8 end
+# Albizzate
+# Baranzate
+# Costa di Mezzate
+# Istituto Europeo Studi Tecnologie Avanzate
+# Ouarzazate, Morocco - Ouarzazate
+# Solemnizate
+# Valdezate
+# Alkalizate
+# Cadrezzate
+# Dialyzate
+# Lazzate
+# Patrizate
+# solmizate
+# vulcanizate
+# Associazione Ticinese Truppe Motorizzate
+# Cenizate
+# Engineering Thermoplastic Vulcanizate
+# Mozzate
+# Preconizate
+# Thermoplastic Vulcanizate
+# Zelzate
+# autolyzate
+# Centro Studi e Applicazioni in Tecnologie Avanzate
+# Guanzate
+# NZATE
+# pyrolyzate
+# Torricella Verzate
+# Azzate
+# Colzate
+# hydrolyzate
+# Ouarzazate
+# reduzate
+# Trapezate
+
+#   there were more than 200 results which were trunc8d from *z8ion ending
+# animaliz8ion
+# Antiglobaliz8ion
+# arterializ8ion
+# Brachycephaliz8ion
+# centrifugaliz8ion
+# constitutionaliz8ion
+# Cyborgiz8ion
+# decriminaliz8ion
+# dematerializ8ion
+# depoliticiz8ion
+# devocaliz8ion
+# editorializ8ion
+# epithelializ8ion
+# Fetishiz8ion
+# fluidiz8ion
+# Franciz8ion
+# Glocaliz8ion
+# Hiberniciz8ion
+# idealiz8ion
+# internationaliz8ion
+# Judaiz8ion
+# localiz8ion
+# medicaliz8ion
+# misvocaliz8ion
+# Neologiz8ion
+# Operationaliz8ion
+# patrializ8ion
+# philosophiz8ion
+# plasticiz8ion
+# procliticiz8ion
+# racializ8ion
+# recanaliz8ion
+# Resocializ8ion
+# self-realiz8ion
+# signaliz8ion
+# specializ8ion
+# subvocaliz8ion
+# theologiz8ion
+# tropicaliz8ion
+# Aggrandiz8ion
+# anodiz8ion
+# Antimondializ8ion
+# Backwardiz8ion
+# canaliz8ion
+# cephaliz8ion
+# conventionaliz8ion
+# de-angliciz8ion
+# Deindusrtializ8ion
+# Democraticiz8ion
+# deradicaliz8ion
+# diagonaliz8ion
+# emotionaliz8ion
+# eroticiz8ion
+# feudaliz8ion
+# fluoridiz8ion
+# Gaeliciz8ion
+# God-realiz8ion
+# hierarchiz8ion
+# illegaliz8ion
+# iodiz8ion
+# labializ8ion
+# marbleiz8ion
+# memorializ8ion
+# musicaliz8ion
+# Nitridiz8ion
+# optimaliz8ion
+# penaliz8ion
+# phonemiciz8ion
+# politicaliz8ion
+# professionaliz8ion
+# radializ8ion
+# regionaliz8ion
+# romanticiz8ion
+# Selfrealiz8ion
+# Siniciz8ion
+# Spheroidiz8ion
+# syllogiz8ion
+# Thermaliz8ion
+# vandaliz8ion
+# alkaliz8ion
+# anthologiz8ion
+# Appleiz8ion
+# banaliz8ion
+# cannibaliz8ion
+# cliticiz8ion
+# Copy-initializ8ion
+# de-energiz8ion
+# deindustrializ8ion
+# demythologiz8ion
+# derealiz8ion
+# diphthongiz8ion
+# Encephaliz8ion
+# etherealiz8ion
+# fictionaliz8ion
+# focaliz8ion
+# Galliciz8ion
+# grammaticaliz8ion
+# Hispaniciz8ion
+# industrializ8ion
+# iridiz8ion
+# laiciz8ion
+# marginaliz8ion
+# mercurializ8ion
+# mythiciz8ion
+# nomadiz8ion
+# Orthonormaliz8ion
+# Periodiz8ion
+# phoneticiz8ion
+# politiciz8ion
+# pronominaliz8ion
+# radicaliz8ion
+# reindustrializ8ion
+# ruggediz8ion
+# sensationaliz8ion
+# socializ8ion
+# standardiz8ion
+# tabloidiz8ion
+# topicaliz8ion
+# verbaliz8ion
+# Anarchiz8ion
+# anthropomorphiz8ion
+# Arabiciz8ion
+# bastardiz8ion
+# catechiz8ion
+# commercializ8ion
+# corticaliz8ion
+# Debuccaliz8ion
+# deinstitutionaliz8ion
+# denationaliz8ion
+# Deserializ8ion
+# Direct-initializ8ion
+# encliticiz8ion
+# fanaticiz8ion
+# finaliz8ion
+# formaliz8ion
+# gleiz8ion
+# Haploidiz8ion
+# historiciz8ion
+# initializ8ion
+# Islamiciz8ion
+# legaliz8ion
+# marsupializ8ion
+# methodiz8ion
+# mythologiz8ion
+# Nominaliz8ion
+# overspecializ8ion
+# personaliz8ion
+# physicaliz8ion
+# potentializ8ion
+# provincializ8ion
+# rationaliz8ion
+# Renationaliz8ion
+# scandaliz8ion
+# serializ8ion
+# spacializ8ion
+# subsidiz8ion
+# territorializ8ion
+# tribaliz8ion
+# Villagiz8ion
+# Angliciz8ion
+# Anti-globaliz8ion
+# Arabiz8ion
+# bestializ8ion
+# catholiciz8ion
+# conditionaliz8ion
+# criminaliz8ion
+# decimaliz8ion
+# delocaliz8ion
+# deoxidiz8ion
+# detribaliz8ion
+# dockiz8ion
+# energiz8ion
+# faradiz8ion
+# Finlandiz8ion
+# fractionaliz8ion
+# globaliz8ion
+# Hebraiz8ion
+# hybridiz8ion
+# institutionaliz8ion
+# italiciz8ion
+# lexicaliz8ion
+# materializ8ion
+# minimaliz8ion
+# nationaliz8ion
+# normaliz8ion
+# oxidiz8ion
+# Pharyngealiz8ion
+# pictorializ8ion
+# Pro-globaliz8ion
+# publiciz8ion
+# realiz8ion
+# renormaliz8ion
+# sectionaliz8ion
+# sherardiz8ion
+# Spatializ8ion
+# subspecializ8ion
+# theatricaliz8ion
+# trivializ8ion
+# vocaliz8ion
+
+# monopoliz8ion, schematiz8ion, && systematiz8ion didn't make the above 200 cut
+
+#   had to run sepR8 *meriz8ion end to get following list but may still need to rediscover correct HTTPS://En.WikiPedia.Org/wiki/Microtubule page of varE8ions
+# Addition polymerization
+# Atom-transfer radical-polymerization
+# catalytic polymerization
+# Cobalt-Mediated Catalytic Chain-Transfer Polymerization
+# copolymerization
+# Depolymerization
+# Epimerization
+# isomerization
+# Living polymerization
+# oligomerization
+# photodimerization
+# polymerization
+# Ring opening polymerization
+# Solution polymerization
+# Tautomerization
+# Trans-cis isomerization
+# Anionic addition polymerization
+# autopolymerization
+# cationic polymerization
+# cold-cure polymerization
+# cross polymerization
+# Dimerization
+# Hazardous polymerization
+# IT consumerization
+# mesmerization
+# Organometallic Catalysts and Olefin Polymerization
+# photoinitiated polymerization
+# Radiation-Induced Graft Polymerization
+# Ring-opening metathesis polymerization
+# Stable Free Radical Polymerization
+# telomerization
+# vinyl polymerization
+# anionic polymerization
+# butane vapor-phase isomerization
+# Cationic Ring-Opening Polymerization
+# Condensation polymerization
+# cross-linked polymerization
+# Emulsion polymerization
+# Heterodimerization
+# Leveling-Off Degree of Polymerization
+# Microwave-Assisted Ring-Opening Polymerization
+# Organometallic-Mediated Radical Polymerization
+# Photoisomerization
+# Radical polymerization
+# Ring-opening polymerization
+# Step-growth polymerization
+# Thermal depolymerization
+# Anomerization
+# California polymerization
+# Chain-growth polymerization
+# consumerization
+# Customerization
+# Enzymatic Ring-Opening Polymerization
+# Homodimerization
+# light polymerization
+# Nitroxide-Mediated Radical Polymerization
+# phosphoric acid polymerization
+# Photopolymerization
+# Reversible addition-fragmentation chain-transfer polymerization
+# RNA-dependent DNA polymerization
+# Stereospecific Polymerization
+# thermal polymerization
+# Atom Transfer Radical Polymerization
+# Catalytic depolymerization
+# Cis/trans isomerization
+# Coordination polymerization
+# Degree of polymerization
+# enzyme isomerization
+# ionic polymerization
+# Living Anionic Surface Initiated Polymerization
+# Olefin polymerization
+# photo polymerization
+# Plasma polymerization
+# Ring Opening Multibranching Polymerization
+# selective polymerization
+# Suspension polymerization
+# Thymine dimerization
+
+# Detyrosination
+# Acetylation
+# Polyglutamylation
+# Polyglycylation
+# phosphorylated
+# ubiquitinated
+# sumoylated
+# palmitoylated
+
+#   looks like HTTPS://En.WikiPedia.Org/wiki/Oligomer contains the original details I extrapol8d into:
+# homomeriz8ion
+# heteromeriz8ion
+# monomeriz8ion
+# dimeriz8ion
+# trimeriz8ion
+# tetrameriz8ion
+# oligomeriz8ion
+# polymeriz8ion
+
+#   where above homo && hetero may be able to precede any of the others && further examin8ion of the text loc8d additional:
+# telomeriz8ion
+
+#   first 200 *iate:
+# affiliate
+# antliate
+# ascidiate
+# benficiate
+# Biradiate
+# calumniate
+# Compendiate
+# Contorniate
+# craniate
+# Debulliate
+# depreciate
+# Dimidiate
+# Disintermediate
+# Effigiate
+# Eradiate
+# Expediate
+# foliate
+# glaciate
+# Heterogangliate
+# Indulgiate
+# Inodiate
+# Interfoliate
+# Lamellibranchiate
+# Lophobranchiate
+# microsporangiate
+# negociate
+# nudibranchiate
+# palliate
+# Perennibranchiate
+# precollegiate
+# Pulmonibranchiate
+# remediate
+# retaliate
+# Sinupalliate
+# speciate
+# Superbiate
+# Trachelobranchiate
+# Uniate
+# vicariate
+# abranchiate
+# Ampliate
+# appreciate
+# Asperifoliate
+# bifoliate
+# brachiate
+# capaciate
+# conciliate
+# Contourniate
+# cruciate
+# defoliate
+# Dermobranchiate
+# disaffiliate
+# dissociate
+# Elasmobranchiate
+# Erudiate
+# expiate
+# Forisfamiliate
+# gladiate
+# Hinniate
+# Inexpiate
+# Insaniate
+# intermediate
+# Laniate
+# Lycopodiate
+# miniate
+# noncollegiate
+# Nunciate
+# Palliobranchiate
+# perfoliate
+# Premediate
+# quadrifoliate
+# renegociate
+# Scammoniate
+# Siphonobranchiate
+# Spoliate
+# taeniate
+# Transpeciate
+# Unibranchiate
+# Viciate
+# Absinthiate
+# Angustifoliate
+# archegoniate
+# associate
+# bilabiate
+# branchiate
+# Cariate
+# Conglaciate
+# Conviciate
+# Cryptobranchiate
+# Deliciate
+# dibranchiate
+# Disappreciate
+# domiciliate
+# emaciate
+# eusporangiate
+# fasciate
+# Formiate
+# glochidiate
+# Homogangliate
+# Inferobranchiate
+# Insidiate
+# irradiate
+# Latifoliate
+# Maleficiate
+# misappreciate
+# Notobranchiate
+# officiate
+# parvifoliate
+# petechiate
+# Primordiate
+# quinquefoliate
+# Renunciate
+# Scutibranchiate
+# Sociate
+# Stipendiate
+# talliate
+# trifoliate
+# unifoliate
+# Vindemiate
+# Acutifoliate
+# annunciate
+# arpeggiate
+# Auriphrygiate
+# Bilaciniate
+# brecciate
+# ciliate
+# Connate-perfoliate
+# Corradiate
+# curvifoliate
+# Dentate-ciliate
+# Digladiate
+# disassociate
+# Dorsibranchiate
+# Emolliate
+# excruciate
+# fastigiate
+# free-associate
+# hellgrammiate
+# humiliate
+# Infoliate
+# Insociate
+# labiate
+# leptosporangiate
+# marsupiate
+# multifoliate
+# noviciate
+# Opiniate
+# patriciate
+# photodissociate
+# Provinciate
+# radiate
+# repudiate
+# Serrate-ciliate
+# somniate
+# subcollegiate
+# Tectibranchiate
+# Tripudiate
+# Unifolliate
+# x-irradiate
+# Adversifoliate
+# antimoniate
+# Arseniate
+# beneficiate
+# Binarseniate
+# Caducibranchiate
+# collegiate
+# consociate
+# Corrodiate
+# Cyclobranchiate
+# Denunciate
+# Dilaniate
+# Discruciate
+# Ebulliate
+# enunciate
+# exfoliate
+# filiate
+# gangliate
+# herniate
+# immediate
+# Ingeniate
+# intercollegiate
+# laciniate
+# Licenciate
+# mediate
+# Multiradiate
+# Nudibrachiate
+# Opisthobranchiate
+# Pectinibranchiate
+# postcollegiate
+# pulmobranchiate
+# Reassociate
+# reradiate
+# Sexradiate
+# Sorediate
+# Subtiliate
+# tetrabranchiate
+# Triradiate
+# Unilabiate
+# Zygobranchiate
+
+#   first 200 *iation
+# abbreviation
+# alluviation
+# Annihiliation
+# appropriation
+# aviation
+# bloviation
+# cheluviation
+# columniation
+# consubstantiation
+# Defiliation
+# denunciation
+# Digladiation
+# Disappropriation
+# Effigiation
+# Eradiation
+# exodeviation
+# exponentiation
+# Feriation
+# foliation
+# Gloriation
+# illuviation
+# infuriation
+# Instanciation
+# Irreconciliation
+# lixiviation
+# miniation
+# negotiation
+# palliation
+# Piation
+# Prefoliation
+# Principiation
+# Prounounciation
+# Reappropriation
+# renegotiation
+# retaliation
+# Seriation
+# striation
+# Taliation
+# unappreciation
+# vitiation
+# Abrenunciation
+# ammoniation
+# annunciation
+# Arpeggiation
+# beneficiation
+# brachiation
+# chemexfoliation
+# conciliation
+# Corradiation
+# defoliation
+# depreciation
+# Dilaniation
+# disassociation
+# elutriation
+# esodeviation
+# expatiation
+# expropriation
+# filiation
+# Forisfamiliation
+# herniation
+# Impropriation
+# ingratiation
+# instantiation
+# laciniation
+# Luxuriation
+# misappreciation
+# Non-repudiation
+# Patriation
+# piliation
+# preinitiation
+# Prononciation
+# raciation
+# reconciliation
+# renunciation
+# satiation
+# Sociation
+# subassociation
+# Transsubstantiation
+# undifferentiation
+# x-irradiation
+# Adfiliation
+# Ampliation
+# Antidifferentiation
+# Asphixiation
+# Biliation
+# brecciation
+# ciliation
+# Conglaciation
+# covariation
+# Deforciation
+# despoliation
+# Dimidiation
+# disintermediation
+# eluviation
+# excoriation
+# expatriation
+# Exspoliation
+# fimbriation
+# Free-association
+# Hiation
+# Inanitiation
+# Inhiation
+# intercolumniation
+# Laniation
+# Maleficiation
+# misappropriation
+# Obriviation
+# perfoliation
+# postirradiation
+# prenegotiation
+# Pronounciation
+# radiation
+# redifferentiation
+# repatriation
+# self-depreciation
+# speciation
+# substantiation
+# transubstantiation
+# Unsubstantiation
+# X-radiation
+# affiliation
+# Angariation
+# antidisintermediation
+# asphyxiation
+# bioremediation
+# calumniation
+# circumstantiation
+# consociation
+# Cruciation
+# deglaciation
+# deviation
+# Diradiation
+# dissociation
+# emaciation
+# excruciation
+# expiation
+# exuviation
+# Floriation
+# Friation
+# humiliation
+# Inappreciation
+# initiation
+# intermediation
+# licentiation
+# Materiation
+# Mispronounciation
+# obviation
+# Photodissociation
+# potentiation
+# Prenunciation
+# pronunciation
+# re-intermediation
+# Reintermediation
+# repudiation
+# self-dissociation
+# spoliation
+# Supercolumniation
+# Tripudiation
+# variation
+# zone of eluviation
+# alleviation
+# Annhiliation
+# appreciation
+# association
+# bisociation
+# centuriation
+# Colluviation
+# Consopiation
+# dedifferentiation
+# Deliquiation
+# differentiation
+# disaffiliation
+# domiciliation
+# enunciation
+# exfoliation
+# Expoliation
+# fasciation
+# fluviation
+# glaciation
+# Hydroaviation
+# inebriation
+# innidiation
+# irradiation
+# List of botanists by author abbreviation
+# mediation
+# mispronunciation
+# officiation
+# phytoremediation
+# Praefoliation
+# Prestigiation
+# propitiation
+# reaffiliation
+# remediation
+# reradiation
+# self-renunciation
+# storiation
+# Superfoliation
+# tritiation
+# Vindemiation
+# zone of illuviation
+
+#   first 200 *tate
+# Abirritate
+# ambidentate
+# Archontate
+# benzonatate
+# Butylacetate
+# Chloroacetate
+# commentate
+# Curvidentate
+# decrepitate
+# dentate
+# digitate
+# edentate
+# Eluctate
+# Exagitate
+# Expeditate
+# Febricitate
+# fragmentate
+# Hectate
+# imitate
+# Indubitate
+# instrumentate
+# jactitate
+# Limitate
+# metate
+# multidentate
+# nictitate
+# Oblectate
+# Overagitate
+# Paridigitate
+# placentate
+# Pregravitate
+# quantitate
+# redictate
+# Resultate
+# Saccholactate
+# Serrate-dentate
+# Stabilitate
+# Suscitate
+# tractate
+# Tripalmitate
+# ablactate
+# amphidentate
+# Arietate
+# bidentate
+# CANTATE
+# Circumagitate
+# Counterirritate
+# debilitate
+# Deitate
+# Dequantitate
+# Discapacitate
+# Edetate
+# eructate
+# Exaltate
+# Exsuscitate
+# felicitate
+# Frontate
+# hesitate
+# Imparidigitate
+# Inequitate
+# Interdigitate
+# Kaopectate
+# Lubricitate
+# Methylacetate
+# Multidigitate
+# Nippitate
+# Octodentate
+# oxalacetate
+# pectate
+# potentate
+# premeditate
+# Quinquedentate
+# regurgitate
+# resuscitate
+# saltate
+# simplicidentate
+# stipitate
+# Sustentate
+# Tri-acetate
+# Tubulidentate
+# acetate
+# Amyl-acetate
+# Ashton-Tate
+# Bidigitate
+# capacitate
+# coarctate
+# crepitate
+# Decantate
+# Delectate
+# dictate
+# Dishabilitate
+# Efflagitate
+# Ethylacetate
+# Excitate
+# Exuscitate
+# Fertilitate
+# gravitate
+# Hospitate
+# Impunctate
+# infinitate
+# interpretate
+# lactate
+# Mannitate
+# methylprednisolone-21-dimethylaminoacetate
+# mussitate
+# Nobilitate
+# orientate
+# oxaloacetate
+# peltate
+# precipitate
+# punctate
+# quinquedigitate
+# rehabilitate
+# Retractate
+# sanitate
+# Solicitate
+# Subacetate
+# Tate
+# triacetate
+# vegetate
+# acetoacetate
+# ancipitate
+# Attentate
+# Bipeltate
+# capitate
+# cogitate
+# Cruentate
+# decapitate
+# delimitate
+# Difficilitate
+# disorientate
+# egurgitate
+# Ethylenediaminetetraacetate
+# excogitate
+# facilitate
+# Flagitate
+# habilitate
+# humectate
+# incapacitate
+# ingurgitate
+# Inusitate
+# Latidentate
+# meditate
+# militate
+# necessitate
+# Noritate
+# Oscitate
+# palmitate
+# Periclitate
+# Precogitate
+# Quadridentate
+# Ratitate
+# Reluctate
+# Retráctate
+# sedimentate
+# spectate
+# superfetate
+# Tolnaftate
+# tridentate
+# Venditate
+# agitate
+# Angulo-dentate
+# auscultate
+# Bipunctate
+# cavitate
+# cohabitate
+# cryoprecipitate
+# Decemdentate
+# Dementate
+# Difficultate
+# Dubitate
+# Elicitate
+# Evitate
+# Exorbitate
+# Farctate
+# Fluoroacetate
+# hebetate
+# Imbecilitate
+# Indigitate
+# Inhabitate
+# irritate
+# levitate
+# Mellitate
+# multicapitate
+# nictate
+# Obequitate
+# ostentate
+# palpitate
+# pernoctate
+# predentate
+# quadridigitate
+# Recapacitate
+# reorientate
+# revegetate
+# segmentate
+# Squarroso-dentate
+# Suppeditate
+# tomtate
+# tridigitate
+# volitate
+
+#   first 200 *tation
+# abirritation
+# affectation
+# Attrectation
+# capitation
+# Co-habitation
+# Coimmunoprecipitation
+# crepitation
+# decrepitation
+# depositation
+# dishabilitation
+# Eluctation
+# eructation
+# excogitation
+# expeditation
+# Fetation
+# fugitation
+# hebetation
+# immunoprecipitation
+# Inexpectation
+# Insanitation
+# Inusitation
+# labefactation
+# limitation
+# militation
+# multifetation
+# nictitation
+# Obluctation
+# overexploitation
+# Pernoctation
+# Preexpectation
+# Propititation
+# recitation
+# Resucitation
+# revisitation
+# Self-exaltation
+# Solvatation
+# superfetation
+# Suscitation
+# Tritation
+# vegetation
+# ablactation
+# agitation
+# Blacksploitation
+# Carbonatation
+# Co-immunoprecipitation
+# Colluctation
+# cunctation
+# Delactation
+# Devitation
+# disinvitation
+# Enatation
+# Evitation
+# exercitation
+# exploitation
+# Flagitation
+# gravitation
+# hesitation
+# Inaffectation
+# ingraftation
+# Insectation
+# invitation
+# lactation
+# Luctation
+# Miscitation
+# mussitation
+# Nobilitation
+# Obtrectation
+# palpitation
+# Photoexcitation
+# premeditation
+# punctation
+# regurgitation
+# resuscitation
+# Ructation
+# self-limitation
+# Spectation
+# Superfoetation
+# Tarditation
+# Unexpectation
+# Velitation
+# Acclimatation
+# Allectation
+# blaxploitation
+# Castrametation
+# coarctation
+# Concitation
+# debilitation
+# delectation
+# dictation
+# Ditation
+# Engraftation
+# Exagitation
+# Exfetation
+# Exsuscitation
+# floatation
+# gurgitation
+# Humectation
+# incapacitation
+# ingurgitation
+# interdigitation
+# irritation
+# Latitation
+# Mactation
+# misinterpretation
+# natation
+# nonexploitation
+# occultation
+# peltation
+# Pollicitation
+# Presdigitation
+# quantitation
+# rehabilitation
+# Resussitation
+# saltation
+# sexploitation
+# strepitation
+# Supernatation
+# Tractation
+# unpremeditation
+# Venditation
+# accreditation
+# arctation
+# bronchodilatation
+# cavitation
+# cogitation
+# constatation
+# decapacitation
+# delimitation
+# digitation
+# Dubitation
+# equitation
+# exaltation
+# Exhereditation
+# facilitation
+# floccitation
+# habilitation
+# Illimitation
+# incitation
+# inhabitation
+# interpretation
+# jactation
+# levitation
+# meditation
+# Mislactation
+# necessitation
+# Nonlimitation
+# Oscitation
+# perfectation
+# precipitation
+# Prestadigitation
+# Quiritation
+# reinterpretation
+# retractation
+# sanitation
+# siltation
+# Subagitation
+# Supparasitation
+# Transfretation
+# vasodilatation
+# visitation
+# addubitation
+# Arietation
+# capacitation
+# Citation
+# cohabitation
+# counterirritation
+# decapitation
+# Deploitation
+# dilatation
+# elicitation
+# Erructation
+# excitation
+# expectation
+# felicitation
+# Foetation
+# habitation
+# imitation
+# Indigitation
+# Inquietation
+# intervisitation
+# jactitation
+# Licitation
+# Méditation
+# Morsitation
+# nictation
+# Oblectation
+# overexpectation
+# Periclitation
+# Precogitation
+# prestidigitation
+# reaccreditation
+# Reluctation
+# revegetation
+# Sciscitation
+# solicitation
+# Superexaltation
+# Suppeditation
+# Transnatation
+# Vectitation
+# volitation
