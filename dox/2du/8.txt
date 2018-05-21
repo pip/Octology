@@ -1,5 +1,5 @@
 # D6RMF1V1:8.txt - by8Π : JAPH : K3wlD00d : 1337H4xr : PipStuart's Octology (hopefully eventually an Ontology of 8) - Convention, Conversion, && Categoriz8ion:
-# $VERSION='0.0';$d8VS='I5CMGrnd'; # Octology attempts to rel8 the universe through medit8ion on mnemonic abbreV8ion (via 8-based  limit8ion) &&    elucid8ion.
+# $VERSION='0.0';$d8VS='I5LM5gr8'; # Octology attempts to rel8 the universe through medit8ion on mnemonic abbreV8ion (via 8-based  limit8ion) &&    elucid8ion.
 # CEBBICTI:Crossing Every Bridge Before I Come To It? I.e., not a d8 stamp. Trying to make my Dad's birthday (August 8th) more special by thinking 2far ahead?
 # Octology intends to pursue implic8ion && ramific8ion as substantE8ion for adequ8 particip8ion, if not also 2 oblig8ion toward implement8ion &&   promulg8ion.
 # Contribute to potential solutions to the "Value Alignment" problems formul8d around General Artificial Intelligence along with plausible God concerns also.
@@ -152,8 +152,8 @@ compartmentaliz8ion
           fored8
           postd8
            pred8
-           outd8d
-             aw8
+           outd8d  : # maybe append add w8y, w8iness, && w8less with 3 new *[Bhk]8 each;
+             aw8   : # prepend ((und|ov)er|(penn|h(eav|undred)y?))w8, append (live|dead)w8 add wi 7 new *[Bhk]8 if posibl to discover && incorpor8 kept group;
               w8   :unit, weight, && measurement specific8ion && conversion or d8a weighting meta-r8ings or d8/dur8ion-based "wait" delay && crontab interface
          temper8   :temperature section of above "weight" standards rel8ion and conversion system
           imper8ive:gr8st w8, authorit8ive, maxim, axiom, aphorism, apothegm, adage, proverb, saying, oblig8ory, grammar expressive of command or exhort8ion
@@ -383,6 +383,8 @@ internationaliz8ion:tools to transl8 for I18N the document8ion && applic8ion int
          observ8ion:d8 based video player or webcam stuff?
              ov8ion:d8 based media player showing r8d playlist details with ability to map and visualize inputs to train on audio features and then play back
            adul8
+            agr8   :in gross, 1502. en masse, agr8, or altogether, 1580. by the lot, 1622.
+           ingr8   :to make gr8, enlarge, or magnify, or ingredience
          ingr8E8   :tool to assoC8 big-money donors to political candid8s in effort to illumin8 inadequ8 subtlety toward bribery, corruption, && quid-pro-quo
          insinU8
           vener8   :appreC8ing veterans and providing assistance
@@ -1053,6 +1055,10 @@ trachelobranchE8
            sper8   :things hoped for?
            frig8   :fr8 ship/boat tracking or maybe some ocean-based resource-management simul8ion game with domestic markets && sea-life disturbance metrics
              fr8   :"freight" package shipment manager, tracker, && organizer
+             fr8age
+             fr8r
+          airfr8
+         overfr8
              cr8   :maybe FirstPersonShooter engine && game (a bit cynically, since the FPS genre is notorious for having levels that are inund8d with crates?)
               f8l  :general fighting         engine && game "fatal" (which omits the 2nd "a" in abbreV8d spelling, for efficiency, already of good pronunC8ion)
              sk8   :general skateboarding    engine && game    # also seems good to rel8ively generalize the most compelling game concepts to defer to brevity

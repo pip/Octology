@@ -91,7 +91,7 @@ if(0){ # alignment attempt introducez trailing newlinez && sometimez skipz over 
   if(length($word)){
       $Stxt=~ s/($word +)(imp|vb|v|t|i|n|p|pr|cf|fr|a|adv)( +)(1: +)/$1$R$2$3$C$4/gi; # try 2 catch pRt-of-sPch && 1st dFinition num aftr WN word (&& ignrcAs2)
       $Stxt=~ s/($word)/$wclr$1$z$G/gi;} # colr looked-up word (if Dtectd) && BlO colr tail of most comon 8-words 4 distinction (some m@chd pronunC8s wil difr)
-      $Stxt=~ s/(\w)((ated?|(ait|[ae]ight|at\B))(en|ant|or|ure)?(ed|i(ng|ve|ons?a?l?|ous))?(istic|ment|ly|s)?)(\W|$)/$1$eclr$2$z$G$9/gi;
+      $Stxt=~ s/(\w)((reat|ated?|(ait|[ae]ight|at\B))(en|est|ant|or|ure)?(ed|i(ng|ve|ons?a?l?y?|ous))?(istic|ment|ly|s)?)(\W|$)/$1$eclr$2$z$G$9/gi;
 if(   $Stxt=~  /^(\d+) definition(s)? found/       ){my $dFct=$1;my $dFst=' dFinitN';$dFst.='z' if(defined($2)); # tried2add non-word Boundary aftr at
       $Stxt=~ s/^\d+ definitions?( found)/$C$dFct$Y$dFst$M$1$G/;}
 if(   $Stxt=~  /(\n +?)(\d+) Moby Thesaurus words/ ){my $MTct=$2;my $MTin=$1;chop($MTin) if(length($2) > 2);

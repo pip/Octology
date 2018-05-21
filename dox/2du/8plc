@@ -221,7 +221,7 @@ if($gm8f){$Stxt.="${W}Gener8 gM8ria primes for names by$B 3$W segments (${Y}PreL
   for   my $wsiz (2..$mxws ){my @folk=sort(keys(%{$folc[$wsiz]})); # if disabling the suffixes, the percentage covered only bumps up to about 71% 926 shown
     for my $fndx (0..$#folk){my $curw=$folk[$fndx]; # should be able to set SHowSuffixFlag to zero to disable suffix inclusion again whenever easily now
       if($curw=~ /^(\w*?)([A-Z])8(\w*)$/i){my $pltr=$2;my $sfix='';$sfix=$3 if(defined($3) && length($3));my $pfix='';$pfix=$1 if(defined($1)&& length($1));
-        my $sfcl=$B;$sfcl=$C if($sfix ne 'ion'); # Wow! echoing all 8 blox && piping thru `wc -w` yielded exactly 888 =)
+        my $sfcl=$B;$sfcl=$C if($sfix ne 'ion'); # Wow! echoing all 8 blox && piping thru `wc -w` yielded exactly 888 =) I5LM6d8a:now minus 9 PLz got 898<3;
         if($pltr eq 'm'){ # try to load sepR8d special m d8a to shoehorn in below g in the lower right 7 blok
           if($shsf){push(@sepm,'') if(length( "$pfix$sfix " . sS($sepm[-1])) > $bwid);
             $sepm[-1].="$z$pfix$sfcl$sfix " if($#sepm <  16 && length("$pfix$sfix") && length("$pfix$sfix " . sS($sepm[-1])) <= $bwid);}

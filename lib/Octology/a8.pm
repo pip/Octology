@@ -51,7 +51,7 @@ our @EXPORT= qw(bfr8c    b8c    d8c    dur8c       a8c   a8colr      h2rl   rl2h
     $z    $k    $r    $o    $y    $g     $c $SKpb    $m    $p    $w  tstc    $K    $R    $O    $Y    $G    $C    $B    $M    $P    $W    %p622 %p222
  $tnhf $ucdf  spff  spfd  spfX   shfl  reso $auth %cmsp %p8k2 @p82k  chp8     S2f4 c2f4 dm2u cdst %crgb %cbrt @snls @mrls %cdrd %cdrn    %nrgb         gnp8);
  # of 52 posibl sngl-letr var nmz,a8 Xportz 20,$b && $a unavail,so shudB thEs30 lFt4quik shortSt nAmz: 'def hij l n  q stuv x', 'A  DEF HIJ L N  Q STUV X Z'
-our $VERSION='0.0';my  $d8VS='I5KMFlag';our $auth='PipStuart <Pip@CPAN.Org>'; # above not exporting $b since collidez with sort{$a  <=> $b}
+our $VERSION='0.0';my  $d8VS='I5LM11I5';our $auth='PipStuart <Pip@CPAN.Org>'; # above not exporting $b since collidez with sort{$a  <=> $b}
 our $ucdf= eval('use Color::Similarity::RGB qw(distance);1') || 0; # try2set UseColorDistanceFlag if optional module is available
 our @Monz=qw(January February March   April     May June July   August September October November December);our @Mon=();push(@Mon,substr($_,0,3)) for(@Monz);
 our @Dayz=qw(Sunday  Monday   Tuesday Wednesday Thursday Friday Saturday                                  );our @Day=();push(@Day,substr($_,0,3)) for(@Dayz);
@@ -1520,19 +1520,19 @@ sub ftst{ # 37MK06SK:ftst Utl2run thruPerlzFileTeSTz on its parameter Filename
             'd','directory                      . ','l','link                           . ',
             'p','named pipe       (FIFO)        . ','S','Socket                         . ',
             'b','block     special file         . ','c','character special file         . ',
-            't','tty                            . ','u','setuid bit                     . ',
-            'k','sticky bit                     . ','g','setgid bit    (can also /aa =>). ',
+            't','tty                            . ','u','setuid bit    (can also /aa =>). ',
+            'k','sticky bit                     . ','g','setgid bit                     . ',
             'T','Text          (wasMSWinB4 5.24). ','B','Binary        (opposite of: -T). ',
             'M','part Days (@stRtup) since Modific8ion                                . ', # was 'M','age of file (at startup) in (fractional) days...
             'A','part Days (@stRtup) since last Access                                . ', #   ...since Modification', before I distilled that down heavily
             'C','part Days (@stRtup) since inodeChange                                . ',);
-  my @flag=('i','Ignore-case      ( InsensItIve). ','g','Global Greedy (GobblingGrabber). ',
-            'x','Xpanded comments (Xplicit spcs). ','e','EvalU8 (can bE rEpEatEd,xx too). ',
-            'm',' Multi-Match     (Many anchors). ','s','Single-String(dot getS newlinS). ',
+  my @flag=('i','Ignore-case      (InsensItIveI). ','x','Xpanded comments (Xplicit spcs). ',
+            'g','Global Greedy (GobblingGrabber). ','e','EvalU8 (can bE rEpEatEd,xx too). ',
+            's','Single-String (dot getS nwlinS). ','m',' Multi-Match     (Many anchors). ',
             'c','Current pos kept on repeat mtCh. ','l','sets char-set to       LocaLe  . ',
-            'u','sets char-set to       Unicode . ','a','ASCII d8A Alone(ignore unicode). ',
+            'u','sets char-set to       Unicode . ','a','ASCII d8A Alone  (ignr unicode). ',
             'd','pre-5.14 problem chars Default . ','r','non-destRuctive and RetuRn Rslt. ',
-            'o','Optimize pretend(brOken OptiOn). ','p','Preserve Pattern Parts PostProc. ',
+            'o','Optimize pretend (brOkn OptiOn). ','p','Preserve Pattern Parts PostProc. ',
             'n','preveNt meta-pareNs capturiNg  . ',); # now everything fits very tightly
   if($file =~  /^-?-?h(elp)?$/ && !-e $file){$hlpf=1;$file='';}
   unless(length($file)){$file='.';
@@ -1542,7 +1542,7 @@ sub ftst{ # 37MK06SK:ftst Utl2run thruPerlzFileTeSTz on its parameter Filename
    -h  - print this Help text; If no filename parameter is given, \$_ then the default Octology \$HOME/.Hrc d8a file is tested;
          Also prints Perl regex && string backslash eScape codes in one 160x48 page to keep similar reference maps together.
          Added measured default ~/.Hrc to fit regular-expression flag descriptors up beside the default File TeSTs now too;";exit;}
-  my $A=S('A');my $F=S('F');my $N=S('N');
+  my $A=S('A');my $F=S('F');my $N=S('N');my $X=S('X');
   for(my $i=0;$i<@oper;$i+=2){my $oprS=S(uc($oper[$i]));my $flgS=$F;my $sizl= 32 - 4;
                               print  $out8 "$G($Y-$oprS$oper[$i] $file$G)$W==$G($C";my $etrv=0;
     if(0&& $oper[$i] =~ /[TB]/ && $^O !~ /^MSWin/){ # or $^O or $ENV{'OSTYPE'} used to test for what were MicroSoft only flags prior to Perl 5.24
@@ -1560,12 +1560,12 @@ sub ftst{ # 37MK06SK:ftst Utl2run thruPerlzFileTeSTz on its parameter Filename
                               print  $out8 "$G)$W:$oprS$dscs";print $out8 ((' ' x $sizl) . "$w.$C # ") if($oper[$i] eq 's');
     if                       (length($file) <= 16 &&   exists($ENV{'COLUMNS'}) && $ENV{'COLUMNS'} >= 160 &&($i % 4 || $i > ($#oper-6))){
       my $nthi=int($i/2)-1;$nthi=$#flag - ($#oper - $i ) if($i > ($#oper-6)); # try to shift pnr back over age stamps
-      $flgS=S(uc($flag[$nthi])) if(defined($flag[$nthi]) && $flag[$nthi]=~ /^[igxemsocDUALpnr]$/i && defined($flag[$nthi+1]));$dscs='';
+      $flgS=S(uc($flag[$nthi])) if(defined($flag[$nthi]) && $flag[$nthi]=~ /^[ixgemscluadropn]$/i && defined($flag[$nthi+1]));$dscs='';
       $dscs= "$Y/$flgS$flag[$nthi] $z: $flgS$flag[$nthi+1]" if(defined($flag[$nthi]) && defined($flag[$nthi+1]));$dscs=~ s/(.*)(\.)/$1$w$2/;
-      $dscs=~ s/(,)/$R$1$Y/g   ;$dscs=~ s/(comments)  /$c$1$Y/gx;$dscs=~ s/(b)(E )(r)(E)(p)(E)(at)(E)(d)/$Y$1$flgS$2$Y$3$flgS$4$Y$5$flgS$6$Y$7$flgS$8$Y$9/gi;
-      $dscs=~ s/(-)/$F$1$flgS/g;$dscs=~ s/(Xplicit )/$flgS$1$Y/g;$dscs=~ s/(br)(O)(ken )(O)(pti)(O)(n)/$Y$1$flgS$2$Y$3$flgS$4$Y$5$flgS$6$Y$7/gi;
-      $dscs=~ s/(I)(nsens)(I)(t)(I)(ve)/$flgS$1$Y$2$flgS$3$Y$4$flgS$5$Y$6/gi;$dscs=~ s/( get)(S )(newlin)(S)/$Y$1$flgS$2$Y$3$flgS$4/gi;
-      $dscs=~ s/(G)(obbling)(G)(rabber)/$flgS$1$Y$2$flgS$3$Y$4/gi;$dscs=~ s/(M)(any )/$flgS$1$Y$2/gi;
+      $dscs=~ s/(,)/$R$1$Y/g   ;$dscs=~ s/(comments  )/$c$1$Y/gx;$dscs=~ s/(b)(E )(r)(E)(p)(E)(at)(E)(d)/$Y$1$flgS$2$Y$3$flgS$4$Y$5$flgS$6$Y$7$flgS$8$Y$9/gi;
+      $dscs=~ s/(-)/$F$1$flgS/g;$dscs=~ s/(X)(plicit )/$flgS$1$Y$2/g;$dscs=~ s/(br)(O)(kn )(O)(pti)(O)(n)/$Y$1$flgS$2$Y$3$flgS$4$Y$5$flgS$6$Y$7/gi;
+      $dscs=~ s/(I)(nsens)(I)(t)(I)(ve)(I)/$flgS$1$Y$2$flgS$3$Y$4$flgS$5$Y$6$flgS$7/gi;$dscs=~ s/( get)(S )(nwlin)(S)/$Y$1$flgS$2$Y$3$flgS$4/gi;
+      $dscs=~ s/(G)(obbling)(G)(rabber)/$flgS$1$Y$2$flgS$3$Y$4/gi;$dscs=~ s/(M)(any )/$flgS$1$Y$2/gi;$dscs=~ s/(xx )/$X$1$Y/i;
       $dscs=~ s/(\()([^)]*)(\))/$M$1$Y$2$M$3/g;$dscs=~ s/(spa?ce?s?)/$N$1$A/gi;
                               print  $out8 "$dscs";}
                               print  $out8    "\n" if(!exists($ENV{'COLUMNS'}) || $ENV{'COLUMNS'} <= 108 || $i % 4 || $i > ($#oper-8) );}
@@ -1603,7 +1603,7 @@ sub ftst{ # 37MK06SK:ftst Utl2run thruPerlzFileTeSTz on its parameter Filename
   \\cQ-T DeviceControlcharacter1-4,\\cU 15 NegativeAcKnowledgement,\\cV 16 SYNchronousidle,\\cW 17 EndofTransBlock,\\cX 18 CANcel,\\cY 19 EndofMedium,
   \\cZ 1A SUBstitute/endoffile,\\c[ 1B ESCape,\\c\\ 1C FileSeparator,\\c] 1D GroupSeparator ,\\c^ 1E RecordSeparator,\\c_ 1F UnitSeparator,20 SPace!" .
  "\"#\$%&'()*+,..."; # `pdoc perlvar` describes all the shortest variables && perlrun has runtime flags
-  my $X=S('1');my $H=S('H');#$bScs=~ s/(\\\\)/$M$1$A/g; # looking pretty good for most potential matches
+  $X=S('1');my $H=S('H');#$bScs=~ s/(\\\\)/$M$1$A/g; # looking pretty good for most potential matches
   $bScs=~ s/(white      )/$W$1$A/gix;$bScs=~ s/(characters?)/$C$1$A/g  ;$bScs=~ s/(unicode)/$Y$1$A/gi;$bScs=~ s/(# )(.*)/$C$1$W$2/g;$bScs=~ s/(!)/$R$1$A/g;
   $bScs=~ s/(horizontal )/$O$1$A/gix;$bScs=~ s/(vertical   )/$M$1$A/gix;$bScs=~ s/(word )/$p$1$A/gix;$bScs=~ s/(, )/$Y$1$A/gx;$bScs=~ s/(\.)/$p$1$A/g ;
   $bScs=~ s/(Property   )/$p$1$A/gix;$bScs=~ s/(sequence   )/$c$1$A/gix;$bScs=~ s/(given)/$g$1$A/gi ;$bScs=~ s/(\/)/$Y$1$A/g ;$bScs=~ s/(- )/$Y$1$A/gx;
@@ -1612,7 +1612,7 @@ sub ftst{ # 37MK06SK:ftst Utl2run thruPerlzFileTeSTz on its parameter Filename
   $bScs=~ s/(Space      )/$N$1$A/gix;$bScs=~ s/(octet      )/$o$1$z/gix;$bScs=~ s/(back)/$K$1$z/gix;$bScs=~ s/(until)/$w$1$z/gi;$bScs=~ s/(Lower)/$H$1$z/gi;
   $bScs=~ s/(strings?   )/$r$1$z/gix;$bScs=~ s/(end        )/$H$1$z/gix;$bScs=~ s/(absolute)/$W$1$z/gix;$bScs=~ s/(Named)/$Y$1$A/gix;$X=S('Yr');$H=S('Wb');
   $bScs=~ s/(heXadecimal)/$X$1$z/gix;$bScs=~ s/(slash      )/$H$1$A/gix;$bScs=~ s/(\()([^)]+)(\))/$C$1$R$2$C$3$A/gix;my $t=S('tk');my $U=S('5');
-  $bScs=~ s/(tab)/$t$1$W/gix;$bScs=~ s/(next)/$U$1$z/gix;
+  $bScs=~ s/(tab)/$t$1$W/gix;$bScs=~ s/(next)/$U$1$z/gix;$bScs=~ s/(\/)(aa )/$Y$1$A$2$W/i;
   $bScs=~ s/(non)/$R$1$A/gix;$bScs=~ s/(class)( 4)/$c$1$M$2$A/g;$bScs=~ s/(in)(\[\])(;)/$z$1$o$2$W$3$z/g;$bScs=~ s/(;)(  \S|$)/$W$1$z$2/g;
   say $out8 $A,$bScs;
   # functions that use $_ as a default argument: abs, alarm, chomp, chop, chr, chroot, cos, defined, eval, evalbytes, exp, fc, glob, hex, int, lc, lcfirst,
