@@ -169,5 +169,5 @@ HTTPS://YouTu.be/ZBBPyCSJDEo "Jordan Peterson Explains Why Males Are Increasingl
 #  Don't obliter8 terribly, facilit8 play arenas with fairness, && actively reward the good progressions && achievements, with compar8ively few penaliz8ions;
 HTTPS://YouTu.be/aBXd9YtBnMQ "UK: BRAVE New FAHRENHEIT 1984" # I5LM5LMI:12mins32secs of BlackPigeonSpeaks critical of rabid-radical-left (not r8ional-left);
 HTTPS://YouTu.be/X3sOS1-hDhw "How men's issues show men's strength | Neg8ive Sum Game 2" # 34mins31secs of Alison emphasizing the cultiv8ion of self-reliance
-#  (resilience) rather than depriving those intended to be helped with forms of toxic-charity. Also rel8ing to several aspects of mental health && depression,
+#  (resilience) rather than depriving those intended to be helped with form8ion of toxic-charity && rel8ing to several aspects of mental health && depression,
 #  potentially leading to suicidal iD8ion under distinct stressors && pressures. Ethical-charity should be orchestr8d on client assets rather than otherwise;

@@ -316,8 +316,8 @@ alias    ............='cd ../../../../../../../../../../..   ';alias cd.........
 alias   .............='cd ../../../../../../../../../../../..';alias cd.............='.............';
 alias      mk='   make'; # following are my main super-terse aliases for performing almost every core GNU/Linux system utility (with some inherited from DOS)
 alias      sz='   sudo -E zsh';
-alias      pu='  pushd';
-alias      po='   popd';
+alias      pu='  pushd';alias  ua='un    '; # just add a couple basic abbreV8ions for sys-info
+alias      po='   popd';alias una='un -a ';
 alias      pe='   perl -MOctology::a8 -pe'; # setup Perl Eval filter easy to give a 's///' after
 alias      pa='   perl -MOctology::a8  -e'; # setup Perl eval        with Attribute Auto-export globals of A8
 alias     pla='   pa  '; # pb is already taken by pingb

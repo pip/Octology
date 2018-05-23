@@ -8,7 +8,7 @@
 #   mk sepR8 tabul8ion of 8-words used in l8r document8ion wi not8ion 4thOs not yet included in top lists (thN optn2ignor easy conjug8ions && pre/suffixes),
 #   mk easy optn4 fulc 2use 1colm 4grep,add 4m@d percNtz,stuD wc && mk a8:cnt8/8c wi fulc -f? && 8plc as -l? optnz(rEdo hedrtXt),colr letrz,add f0ntz4 8trm;
 use strict;use warnings;use utf8;use v5.10;use Octology::a8;use Octology::b8;
-my $d8VS='I5KM8cNt';       my $clrf=1;my $fulf=0;my $argz='';$argz= join(' ',@ARGV) if(@ARGV);my $Stxt='';my $folf=0; # add 4-Or-Less-Flag
+my $d8VS='I5MMGrup';       my $clrf=1;my $fulf=0;my $argz='';$argz= join(' ',@ARGV) if(@ARGV);my $Stxt='';my $Smap='';my $folf=0; # add 4-Or-Less-Flag
 my $edVS=        '';       my $pg1f=0;   $pg1f=1 if($argz=~ /(^|\s)-?-?[^p]*p/i); # find -?p(age) flag2limit some extra long output to first 48-line page
 my $clmz=        80;       my $lpsf=0;   $lpsf=1 if($argz=~ /(^|\s)-?-?[^l]*l/i); # find -?LetrPrecursShortsFlag  # if MaXWordSize evr grOz,wil nEd2incrEs|Dtct
 my $linz=        24;       my $gm8f=0;   $gm8f=1 if($argz=~ /(^|\s)-?-?[^g]*g/i); # find -?g(m8r) flag2count&&adorn wi math 4mUl8ions stRting wi 2letr
@@ -216,7 +216,11 @@ if($gm8f){$Stxt.="${W}Gener8 gM8ria primes for names by$B 3$W segments (${Y}PreL
 # print   $log8 "# $d8VS:~/.log/8ps.ls gener8d by 8plc with 8.txt edVS:$edVS to save sepR8 reference to 8-word prime maps by PipStuart <Pip\@CPAN.Org>;\n";
 # for  my $prmk (sort {$a <=> $b} keys(%alpn)){print $log8 sprintf("%-4d %-15s ",$prmk,$alpn{$prmk});if(++$colc == 7){$colc=0;print $log8 "\n";}}
 # close   $log8                                or die "Can't close log 8PrimesSidestring.LiSt file handle: $!"; # try2wrItout prImz list for l8r sepR8 rFrNc
-  my %jmap=('c'=>0,'z'=>1,'l'=>2,'t'=>3,'n'=>4,'E'=>5,'r'=>6,'g'=>7,'_'=>8);my @jmls=(split(//,'czltnErg_')); # cycl joystk dirs from down clockwise around
+  my %jmap=('c'=> 0,'z'=> 1,'l'=> 2,'t'=> 3,'n'=> 4,'E'=> 5,'r'=> 6,'g'=> 7,'m'=> 8,'d'=> 9,'p'=>10,'v'=>11,'b'=>12,'s'=>13,'u'=>14,'C'=>15,'D'=>16,'L'=>17,
+            'N'=>18,'R'=>19,'U'=>20,'V'=>21,'G'=>22,'f'=>23,'x'=>24,'B'=>25,'h'=>26,'k'=>27,'w'=>28,'I'=>29,'M'=>30,'P'=>31,'O'=>32,'S'=>33,'y'=>34);
+  my @jmls=(split(//,'czltnErgmdpvbsuCDLNRUVGfxBhkwIMPOSy')); # cycl joystk dirs from down clockwise around,may need to reorder l8r loops to keep winding?
+     %jmap=();
+  for   my $pndx (0..$#jmls){$jmap{$jmls[$pndx]}=$pndx;} # try2gNr8 rvrs lookup of pre-letters to indices
   my $bwid=52;my @sepm=(''); my $shsf=1; # looks like largest 9 PreLetters fit almost all their members, probably getting close to 68% of all 8-words in 8 blox
   for   my $wsiz (2..$mxws ){my @folk=sort(keys(%{$folc[$wsiz]})); # if disabling the suffixes, the percentage covered only bumps up to about 71% 926 shown
     for my $fndx (0..$#folk){my $curw=$folk[$fndx]; # should be able to set SHowSuffixFlag to zero to disable suffix inclusion again whenever easily now
@@ -242,16 +246,46 @@ if($gm8f){$Stxt.="${W}Gener8 gM8ria primes for names by$B 3$W segments (${Y}PreL
         $Stxt.=$jd8a[$jmap{$jmls[$jbnd]}][$rndx] . ' ' x $rosl;}else{$Stxt.=' 'x $bwid;              }} $Stxt.="\n";}
   for   my $rndx (0..15){for my $jbnd (2,8,6){
       if($#{$jd8a[$jmap{$jmls[$jbnd]}]} >= $rndx && $jbnd != 8){my $rosl=$bwid - length(sS($jd8a[$jmap{$jmls[$jbnd]}][$rndx]));$rosl=0 if($rosl < 0);
-        $Stxt.=$jd8a[$jmap{$jmls[$jbnd]}][$rndx] . ' ' x $rosl;}else{$Stxt.=' 'x $bwid;if($jbnd == 8){my $hbwd=int($bwid/2)+4;my $stal=' ' x ($hbwd-5);
-          if   ($rndx == 7){$Stxt=~ s/\s{$hbwd}$/$Y$jmls[3] $jmls[4] $jmls[5]$stal/;}
-          elsif($rndx == 8){$Stxt=~ s/\s{$hbwd}$/$Y$jmls[2]   $jmls[6]$stal/;} # these are special central replacements for Yellow PreLetters by alloc8d blox
-          elsif($rndx == 9){$Stxt=~ s/\s{$hbwd}$/$Y$jmls[1] $jmls[0] $jmls[7]$stal/;}
-          elsif($rndx ==10){$Stxt=~ s/\s{$hbwd}$/$Y    m$stal/;}}                                    }} $Stxt.="\n";}
+        $Stxt.=$jd8a[$jmap{$jmls[$jbnd]}][$rndx] . ' ' x $rosl;}else{$Stxt.=' 'x $bwid;if($jbnd == 8){my $hbwd=int($bwid/2)+ 6;my $stal=' ' x abs($hbwd- 7);
+                                                       my $A=S('A');my $D=S('D');my $s=5;my $t=' ' x   $s;$hbwd=int($bwid   -2) -$s;$stal=
+                                                                                               ' ' x (abs($hbwd-(($s*($s+1))-0))-8); # lots Xtra parNz
+          if   ($rndx == 0){$Stxt=~ s/\s{8}(\s{$hbwd})$/${M}Precursor${Y}Letters${c}in$G 8$W-${D}DirectnsDown${C}Clokwise$W:${Y}clnr${o}ztEg${G}m$W;$z /;}
+          if   ($rndx == 2){$Stxt=~ s/\s{8}(\s{$hbwd})$/$z $jmls[29]$R$jmls[21]$C$jmls[17]$M$jmls[11]$C$jmls[18]$R$jmls[20]$z$jmls[31]$1/;}
+          elsif($rndx == 3){$Stxt=~ s/\s{8}(\s{$hbwd})$/$B $jmls[25]$G$jmls[14]$o$jmls[ 3]$Y$jmls[ 4]$o$jmls[ 5]$G$jmls[15]$B$jmls[26]$1/;}
+          elsif($rndx == 4){$Stxt=~ s/\s{8}(\s{$hbwd})$/$M $jmls[12]$Y$jmls[ 2]$K$jmls[32]$r$jmls[34]$K$jmls[33]$Y$jmls[ 6]$M$jmls[10]$1/;}
+          elsif($rndx == 5){$Stxt=~ s/\s{8}(\s{$hbwd})$/$B $jmls[27]$G$jmls[13]$o$jmls[ 1]$Y$jmls[ 0]$o$jmls[ 7]$G$jmls[ 8]$B$jmls[24]$1/;}
+          elsif($rndx == 6){$Stxt=~ s/\s{8}(\s{$hbwd})$/$z $jmls[28]$R$jmls[22]$C$jmls[16]$M$jmls[ 9]$C$jmls[19]$R$jmls[23]$z$jmls[30]$1/;}
+          elsif($rndx == 8){$Stxt=~ s/\s{8}(\s{$hbwd})$/${z} ${z} ${z} ${K}O${r}y${K}S${z} ${z} $z$1/;}
+          elsif($rndx == 9){$Stxt=~ s/\s{8}(\s{$hbwd})$/${Y}c${o}z${Y}l${o}t${Y}n${o}E${Y}r${o}g$z$1/;}
+          elsif($rndx ==10){$Stxt=~ s/\s{8}(\s{$hbwd})$/${M}d${C}D${M}b${C}L${M}v${C}N${M}p${G}m$z$1/;}
+          elsif($rndx ==11){$Stxt=~ s/\s{8}(\s{$hbwd})$/${R}G${G}s${R}V${G}u${R}U${G}C${R}f${C}R$z$1/;}
+          elsif($rndx ==12){$Stxt=~ s/\s{8}(\s{$hbwd})$/${z}w${B}k${z}I${B}B${z}P${B}h${z}M${B}x$z$1/;}
+          if   ($rndx == 1){$Stxt=~ s/\s{$hbwd}$/$z $jmls[29]mpuls$jmls[29]veub $C$jmls[17]eft   $C$jmls[18]orth$jmls[18]ext $z$jmls[31]erry_u$jmls[31]$stal/;}
+          elsif($rndx == 2){$Stxt=~ s/\s{$hbwd}$/$z $jmls[29]$t$R$jmls[21]$t$C$jmls[17]$t$M$jmls[11]$t$C$jmls[18]$t$R$jmls[20]$t$z$jmls[31]$stal/;}
+          elsif($rndx == 3){$Stxt=~ s/\s{$hbwd}$/$z       $R$jmls[21]ital$jmls[21]ect   $M$jmls[11]ERT$jmls[11]APOR   $R$jmls[20]p$t$z$stal/;}
+          elsif($rndx == 4){$Stxt=~
+            s/\s{$hbwd}$/$z $B$jmls[25]ack$jmls[25]egin$o RE$jmls[ 3]REA$jmls[ 3]OP $jmls[ 5]ast$jmls[ 5]nd $B$jmls[26]EALT$jmls[26]IG$jmls[26]OP$z$t/;}
+          elsif($rndx == 5){$Stxt=~ s/\s{$hbwd}$/$z $B$jmls[25]$t$G$jmls[14]$t$o$jmls[ 3]$t$Y$jmls[ 4]$t$o$jmls[ 5]$t$G$jmls[15]$t$B$jmls[26]$stal/;}
+          elsif($rndx == 6){$Stxt=~ s/\s{$hbwd}$/$z       $G$jmls[14]P       $Y$jmls[ 4]OO$jmls[ 4]ORTH  $G$jmls[15]rash$jmls[15]eiling$z$stal/;}
+          elsif($rndx == 7){$Stxt=~
+            s/\s{$hbwd}$/$z $M$jmls[12]ACK$jmls[12]EFORE  $K$jmls[32]rigin  $jmls[33]tr8$jmls[33]tep   $M$jmls[10]ERRY$jmls[10]OKE$z    /;}
+          elsif($rndx == 8){$Stxt=~ s/\s{$hbwd}$/$z $M$jmls[12]$t$Y$jmls[ 2]$t$K$jmls[32]$t$r$jmls[34]$t$K$jmls[33]$t$Y$jmls[ 6]$t$M$jmls[10]$stal/;}
+          elsif($rndx == 9){$Stxt=~ s/\s{$hbwd}$/$z       $Y$jmls[ 2]EFT   $r M$jmls[34]TO$jmls[34]      $Y$jmls[ 6]IGHT$jmls[ 6]EACH  $z$stal/;}
+          elsif($rndx ==10){$Stxt=~
+            s/\s{$hbwd}$/$z $G$jmls[13]HIELD$jmls[13]IT$jmls[13]TAY     $Y$jmls[ 0]ROU$jmls[ 0]H $G$jmls[ 8]OUNT$jmls[ 8]IX    $z$stal/;}
+          elsif($rndx ==11){$Stxt=~ s/\s{$hbwd}$/$z $B$jmls[27]$t$G$jmls[13]$t$o$jmls[ 1]$t$Y$jmls[ 0]$t$o$jmls[ 7]$t$G$jmls[ 8]$t$B$jmls[24]$stal/;}
+          elsif($rndx ==12){$Stxt=~
+            s/\s{$hbwd}$/$z $B$jmls[27]EEP_BLAC$jmls[27]  $o$jmls[ 1]EST$jmls[ 1]ONE  $jmls[ 7]O$jmls[ 7]ROUND  $B CRU$jmls[24]OL$z$t/;}
+          elsif($rndx ==13){$Stxt=~ s/\s{$hbwd}$/$z $R$jmls[22]round$jmls[22]uard $M$jmls[ 9]IRECT$jmls[ 9]OWN $R$jmls[23]ORWARD$jmls[23]RONT  $z$stal/;}
+          elsif($rndx ==14){$Stxt=~ s/\s{$hbwd}$/$z $jmls[28]$t$R$jmls[22]$t$C$jmls[16]$t$M$jmls[ 9]$t$C$jmls[19]$t$R$jmls[23]$t$z$jmls[30]$stal/;}
+          elsif($rndx ==15){$Stxt=~
+            s/\s{$hbwd}$/$z $jmls[28]EST    $C$jmls[16]own$jmls[16]efen$jmls[16]rop   $C$jmls[19]ight  $z$jmls[30]ount$jmls[30]ove$z    /;}
+        }}} $Stxt.="\n";}
   for   my $rndx (0..15){for my $jbnd (1,0,7){
       if($#{$jd8a[$jmap{$jmls[$jbnd]}]} >= $rndx              ){my $rosl=$bwid - length(sS($jd8a[$jmap{$jmls[$jbnd]}][$rndx]));$rosl=0 if($rosl < 0);
         $Stxt.=$jd8a[$jmap{$jmls[$jbnd]}][$rndx] . ' ' x $rosl;}else{ # try to squeeze "m" in the lower half of blok 7 lowr rite belo "g" in top half
         if($rndx >= 8 && defined($sepm[$rndx - 8])){$Stxt.=$sepm[$rndx - 8];}else{$Stxt.=' 'x $bwid;}}} $Stxt.="\n";}
-  $Stxt=sS($Stxt) unless($clrf);o8($Stxt);$Stxt ='';
+  $Stxt=sS($Stxt) unless($clrf);$Smap=$Stxt;o8($Stxt);$Stxt ='';
   # maybe since most prefixes are longer also altern8 inward from both ends preferring more total chars culled for wider from top 8 solos or some thresh?
   # ..or actually resummarize all above thoughts to 1st prime 2 given to suffix outside-in R2L for ion then 2nd 3 given to permanently termin8 any further
   #   attempts to altern8 for now known complete suffix for almost 94% of all words, then try biggest in L2R altern8 out for prefixes until all accounted
@@ -328,1151 +362,112 @@ if($fulf){$Stxt=~ s/\n?$/\n/;my %cvlz=reverse(%fulc);my @ccnt= sort { $a <=> $b 
           $w82o    .= ($char eq "\n") ? '\n' : $char;$pcnt++;} # belo was once trying some random colrz with: ,S(substr($cmap{'d8bo'},b64(int(rand(8))),1)));
       } $Stxt.=sprintf((' ' x ( 8-$pcnt))."$C$w82o$B:$M".sprintf("%7s$B: %s$W,\n",cma($coun),b8colr(sprintf("%4s",b64($coun)))));
     } } $Stxt.=sprintf("$C  Sum of$B: ${G}0$W..${G}7$W,${G}9$B: $M%s$o      dif$Y:$B%7s$W;$z",cma($sumn),cma($jus8-$sumn));}
-$Stxt=sS($Stxt) unless($clrf);o8($Stxt);
+$Stxt=sS($Stxt) unless($clrf);o8($Stxt);o8("\n$Smap") if($gm8f && defined($Smap) && length($Smap));
 
-# 2du:gener8 all entries below into new d8a-struct && sepR8 ones for *t8(ion)? && *E8 as *iat(e|ion) ends to then compare against loc8d 8-words 4 diffz 2add;
-#   rel8ively few results just for *z8 end
-# Albizzate
-# Baranzate
-# Costa di Mezzate
-# Istituto Europeo Studi Tecnologie Avanzate
-# Ouarzazate, Morocco - Ouarzazate
-# Solemnizate
-# Valdezate
-# Alkalizate
-# Cadrezzate
-# Dialyzate
-# Lazzate
-# Patrizate
-# solmizate
-# vulcanizate
-# Associazione Ticinese Truppe Motorizzate
-# Cenizate
-# Engineering Thermoplastic Vulcanizate
-# Mozzate
-# Preconizate
-# Thermoplastic Vulcanizate
-# Zelzate
-# autolyzate
-# Centro Studi e Applicazioni in Tecnologie Avanzate
-# Guanzate
-# NZATE
-# pyrolyzate
-# Torricella Verzate
-# Azzate
-# Colzate
-# hydrolyzate
-# Ouarzazate
-# reduzate
-# Trapezate
-
-#   there were more than 200 results which were trunc8d from *z8ion ending
-# animaliz8ion
-# Antiglobaliz8ion
-# arterializ8ion
-# Brachycephaliz8ion
-# centrifugaliz8ion
-# constitutionaliz8ion
-# Cyborgiz8ion
-# decriminaliz8ion
-# dematerializ8ion
-# depoliticiz8ion
-# devocaliz8ion
-# editorializ8ion
-# epithelializ8ion
-# Fetishiz8ion
-# fluidiz8ion
-# Franciz8ion
-# Glocaliz8ion
-# Hiberniciz8ion
-# idealiz8ion
-# internationaliz8ion
-# Judaiz8ion
-# localiz8ion
-# medicaliz8ion
-# misvocaliz8ion
-# Neologiz8ion
-# Operationaliz8ion
-# patrializ8ion
-# philosophiz8ion
-# plasticiz8ion
-# procliticiz8ion
-# racializ8ion
-# recanaliz8ion
-# Resocializ8ion
-# self-realiz8ion
-# signaliz8ion
-# specializ8ion
-# subvocaliz8ion
-# theologiz8ion
-# tropicaliz8ion
-# Aggrandiz8ion
-# anodiz8ion
-# Antimondializ8ion
-# Backwardiz8ion
-# canaliz8ion
-# cephaliz8ion
-# conventionaliz8ion
-# de-angliciz8ion
-# Deindusrtializ8ion
-# Democraticiz8ion
-# deradicaliz8ion
-# diagonaliz8ion
-# emotionaliz8ion
-# eroticiz8ion
-# feudaliz8ion
-# fluoridiz8ion
-# Gaeliciz8ion
-# God-realiz8ion
-# hierarchiz8ion
-# illegaliz8ion
-# iodiz8ion
-# labializ8ion
-# marbleiz8ion
-# memorializ8ion
-# musicaliz8ion
-# Nitridiz8ion
-# optimaliz8ion
-# penaliz8ion
-# phonemiciz8ion
-# politicaliz8ion
-# professionaliz8ion
-# radializ8ion
-# regionaliz8ion
-# romanticiz8ion
-# Selfrealiz8ion
-# Siniciz8ion
-# Spheroidiz8ion
-# syllogiz8ion
-# Thermaliz8ion
-# vandaliz8ion
-# alkaliz8ion
-# anthologiz8ion
-# Appleiz8ion
-# banaliz8ion
-# cannibaliz8ion
-# cliticiz8ion
-# Copy-initializ8ion
-# de-energiz8ion
-# deindustrializ8ion
-# demythologiz8ion
-# derealiz8ion
-# diphthongiz8ion
-# Encephaliz8ion
-# etherealiz8ion
-# fictionaliz8ion
-# focaliz8ion
-# Galliciz8ion
-# grammaticaliz8ion
-# Hispaniciz8ion
-# industrializ8ion
-# iridiz8ion
-# laiciz8ion
-# marginaliz8ion
-# mercurializ8ion
-# mythiciz8ion
-# nomadiz8ion
-# Orthonormaliz8ion
-# Periodiz8ion
-# phoneticiz8ion
-# politiciz8ion
-# pronominaliz8ion
-# radicaliz8ion
-# reindustrializ8ion
-# ruggediz8ion
-# sensationaliz8ion
-# socializ8ion
-# standardiz8ion
-# tabloidiz8ion
-# topicaliz8ion
-# verbaliz8ion
-# Anarchiz8ion
-# anthropomorphiz8ion
-# Arabiciz8ion
-# bastardiz8ion
-# catechiz8ion
-# commercializ8ion
-# corticaliz8ion
-# Debuccaliz8ion
-# deinstitutionaliz8ion
-# denationaliz8ion
-# Deserializ8ion
-# Direct-initializ8ion
-# encliticiz8ion
-# fanaticiz8ion
-# finaliz8ion
-# formaliz8ion
-# gleiz8ion
-# Haploidiz8ion
-# historiciz8ion
-# initializ8ion
-# Islamiciz8ion
-# legaliz8ion
-# marsupializ8ion
-# methodiz8ion
-# mythologiz8ion
-# Nominaliz8ion
-# overspecializ8ion
-# personaliz8ion
-# physicaliz8ion
-# potentializ8ion
-# provincializ8ion
-# rationaliz8ion
-# Renationaliz8ion
-# scandaliz8ion
-# serializ8ion
-# spacializ8ion
-# subsidiz8ion
-# territorializ8ion
-# tribaliz8ion
-# Villagiz8ion
-# Angliciz8ion
-# Anti-globaliz8ion
-# Arabiz8ion
-# bestializ8ion
-# catholiciz8ion
-# conditionaliz8ion
-# criminaliz8ion
-# decimaliz8ion
-# delocaliz8ion
-# deoxidiz8ion
-# detribaliz8ion
-# dockiz8ion
-# energiz8ion
-# faradiz8ion
-# Finlandiz8ion
-# fractionaliz8ion
-# globaliz8ion
-# Hebraiz8ion
-# hybridiz8ion
-# institutionaliz8ion
-# italiciz8ion
-# lexicaliz8ion
-# materializ8ion
-# minimaliz8ion
-# nationaliz8ion
-# normaliz8ion
-# oxidiz8ion
-# Pharyngealiz8ion
-# pictorializ8ion
-# Pro-globaliz8ion
-# publiciz8ion
-# realiz8ion
-# renormaliz8ion
-# sectionaliz8ion
-# sherardiz8ion
-# Spatializ8ion
-# subspecializ8ion
-# theatricaliz8ion
-# trivializ8ion
-# vocaliz8ion
-
-# monopoliz8ion, schematiz8ion, && systematiz8ion didn't make the above 200 cut
-
-#   had to run sepR8 *meriz8ion end to get following list but may still need to rediscover correct HTTPS://En.WikiPedia.Org/wiki/Microtubule page of varE8ions
-# Addition polymerization
-# Atom-transfer radical-polymerization
-# catalytic polymerization
-# Cobalt-Mediated Catalytic Chain-Transfer Polymerization
-# copolymerization
-# Depolymerization
-# Epimerization
-# isomerization
-# Living polymerization
-# oligomerization
-# photodimerization
-# polymerization
-# Ring opening polymerization
-# Solution polymerization
-# Tautomerization
-# Trans-cis isomerization
-# Anionic addition polymerization
-# autopolymerization
-# cationic polymerization
-# cold-cure polymerization
-# cross polymerization
-# Dimerization
-# Hazardous polymerization
-# IT consumerization
-# mesmerization
-# Organometallic Catalysts and Olefin Polymerization
-# photoinitiated polymerization
-# Radiation-Induced Graft Polymerization
-# Ring-opening metathesis polymerization
-# Stable Free Radical Polymerization
-# telomerization
-# vinyl polymerization
-# anionic polymerization
-# butane vapor-phase isomerization
-# Cationic Ring-Opening Polymerization
-# Condensation polymerization
-# cross-linked polymerization
-# Emulsion polymerization
-# Heterodimerization
-# Leveling-Off Degree of Polymerization
-# Microwave-Assisted Ring-Opening Polymerization
-# Organometallic-Mediated Radical Polymerization
-# Photoisomerization
-# Radical polymerization
-# Ring-opening polymerization
-# Step-growth polymerization
-# Thermal depolymerization
-# Anomerization
-# California polymerization
-# Chain-growth polymerization
-# consumerization
-# Customerization
-# Enzymatic Ring-Opening Polymerization
-# Homodimerization
-# light polymerization
-# Nitroxide-Mediated Radical Polymerization
-# phosphoric acid polymerization
-# Photopolymerization
-# Reversible addition-fragmentation chain-transfer polymerization
-# RNA-dependent DNA polymerization
-# Stereospecific Polymerization
-# thermal polymerization
-# Atom Transfer Radical Polymerization
-# Catalytic depolymerization
-# Cis/trans isomerization
-# Coordination polymerization
-# Degree of polymerization
-# enzyme isomerization
-# ionic polymerization
-# Living Anionic Surface Initiated Polymerization
-# Olefin polymerization
-# photo polymerization
-# Plasma polymerization
-# Ring Opening Multibranching Polymerization
-# selective polymerization
-# Suspension polymerization
-# Thymine dimerization
-
-# Detyrosination
-# Acetylation
-# Polyglutamylation
-# Polyglycylation
-# phosphorylated
-# ubiquitinated
-# sumoylated
-# palmitoylated
-
-#   looks like HTTPS://En.WikiPedia.Org/wiki/Oligomer contains the original details I extrapol8d into:
-# homomeriz8ion
-# heteromeriz8ion
-# monomeriz8ion
-# dimeriz8ion
-# trimeriz8ion
-# tetrameriz8ion
-# oligomeriz8ion
-# polymeriz8ion
-
-#   where above homo && hetero may be able to precede any of the others && further examin8ion of the text loc8d additional:
-# telomeriz8ion
-
-#   first 200 *iate:
-# affiliate
-# antliate
-# ascidiate
-# benficiate
-# Biradiate
-# calumniate
-# Compendiate
-# Contorniate
-# craniate
-# Debulliate
-# depreciate
-# Dimidiate
-# Disintermediate
-# Effigiate
-# Eradiate
-# Expediate
-# foliate
-# glaciate
-# Heterogangliate
-# Indulgiate
-# Inodiate
-# Interfoliate
-# Lamellibranchiate
-# Lophobranchiate
-# microsporangiate
-# negociate
-# nudibranchiate
-# palliate
-# Perennibranchiate
-# precollegiate
-# Pulmonibranchiate
-# remediate
-# retaliate
-# Sinupalliate
-# speciate
-# Superbiate
-# Trachelobranchiate
-# Uniate
-# vicariate
-# abranchiate
-# Ampliate
-# appreciate
-# Asperifoliate
-# bifoliate
-# brachiate
-# capaciate
-# conciliate
-# Contourniate
-# cruciate
-# defoliate
-# Dermobranchiate
-# disaffiliate
-# dissociate
-# Elasmobranchiate
-# Erudiate
-# expiate
-# Forisfamiliate
-# gladiate
-# Hinniate
-# Inexpiate
-# Insaniate
-# intermediate
-# Laniate
-# Lycopodiate
-# miniate
-# noncollegiate
-# Nunciate
-# Palliobranchiate
-# perfoliate
-# Premediate
-# quadrifoliate
-# renegociate
-# Scammoniate
-# Siphonobranchiate
-# Spoliate
-# taeniate
-# Transpeciate
-# Unibranchiate
-# Viciate
-# Absinthiate
-# Angustifoliate
-# archegoniate
-# associate
-# bilabiate
-# branchiate
-# Cariate
-# Conglaciate
-# Conviciate
-# Cryptobranchiate
-# Deliciate
-# dibranchiate
-# Disappreciate
-# domiciliate
-# emaciate
-# eusporangiate
-# fasciate
-# Formiate
-# glochidiate
-# Homogangliate
-# Inferobranchiate
-# Insidiate
-# irradiate
-# Latifoliate
-# Maleficiate
-# misappreciate
-# Notobranchiate
-# officiate
-# parvifoliate
-# petechiate
-# Primordiate
-# quinquefoliate
-# Renunciate
-# Scutibranchiate
-# Sociate
-# Stipendiate
-# talliate
-# trifoliate
-# unifoliate
-# Vindemiate
-# Acutifoliate
-# annunciate
-# arpeggiate
-# Auriphrygiate
-# Bilaciniate
-# brecciate
-# ciliate
-# Connate-perfoliate
-# Corradiate
-# curvifoliate
-# Dentate-ciliate
-# Digladiate
-# disassociate
-# Dorsibranchiate
-# Emolliate
-# excruciate
-# fastigiate
-# free-associate
-# hellgrammiate
-# humiliate
-# Infoliate
-# Insociate
-# labiate
-# leptosporangiate
-# marsupiate
-# multifoliate
-# noviciate
-# Opiniate
-# patriciate
-# photodissociate
-# Provinciate
-# radiate
-# repudiate
-# Serrate-ciliate
-# somniate
-# subcollegiate
-# Tectibranchiate
-# Tripudiate
-# Unifolliate
-# x-irradiate
-# Adversifoliate
-# antimoniate
-# Arseniate
-# beneficiate
-# Binarseniate
-# Caducibranchiate
-# collegiate
-# consociate
-# Corrodiate
-# Cyclobranchiate
-# Denunciate
-# Dilaniate
-# Discruciate
-# Ebulliate
-# enunciate
-# exfoliate
-# filiate
-# gangliate
-# herniate
-# immediate
-# Ingeniate
-# intercollegiate
-# laciniate
-# Licenciate
-# mediate
-# Multiradiate
-# Nudibrachiate
-# Opisthobranchiate
-# Pectinibranchiate
-# postcollegiate
-# pulmobranchiate
-# Reassociate
-# reradiate
-# Sexradiate
-# Sorediate
-# Subtiliate
-# tetrabranchiate
-# Triradiate
-# Unilabiate
-# Zygobranchiate
-
-#   first 200 *iation
-# abbreviation
-# alluviation
-# Annihiliation
-# appropriation
-# aviation
-# bloviation
-# cheluviation
-# columniation
-# consubstantiation
-# Defiliation
-# denunciation
-# Digladiation
-# Disappropriation
-# Effigiation
-# Eradiation
-# exodeviation
-# exponentiation
-# Feriation
-# foliation
-# Gloriation
-# illuviation
-# infuriation
-# Instanciation
-# Irreconciliation
-# lixiviation
-# miniation
-# negotiation
-# palliation
-# Piation
-# Prefoliation
-# Principiation
-# Prounounciation
-# Reappropriation
-# renegotiation
-# retaliation
-# Seriation
-# striation
-# Taliation
-# unappreciation
-# vitiation
-# Abrenunciation
-# ammoniation
-# annunciation
-# Arpeggiation
-# beneficiation
-# brachiation
-# chemexfoliation
-# conciliation
-# Corradiation
-# defoliation
-# depreciation
-# Dilaniation
-# disassociation
-# elutriation
-# esodeviation
-# expatiation
-# expropriation
-# filiation
-# Forisfamiliation
-# herniation
-# Impropriation
-# ingratiation
-# instantiation
-# laciniation
-# Luxuriation
-# misappreciation
-# Non-repudiation
-# Patriation
-# piliation
-# preinitiation
-# Prononciation
-# raciation
-# reconciliation
-# renunciation
-# satiation
-# Sociation
-# subassociation
-# Transsubstantiation
-# undifferentiation
-# x-irradiation
-# Adfiliation
-# Ampliation
-# Antidifferentiation
-# Asphixiation
-# Biliation
-# brecciation
-# ciliation
-# Conglaciation
-# covariation
-# Deforciation
-# despoliation
-# Dimidiation
-# disintermediation
-# eluviation
-# excoriation
-# expatriation
-# Exspoliation
-# fimbriation
-# Free-association
-# Hiation
-# Inanitiation
-# Inhiation
-# intercolumniation
-# Laniation
-# Maleficiation
-# misappropriation
-# Obriviation
-# perfoliation
-# postirradiation
-# prenegotiation
-# Pronounciation
-# radiation
-# redifferentiation
-# repatriation
-# self-depreciation
-# speciation
-# substantiation
-# transubstantiation
-# Unsubstantiation
-# X-radiation
-# affiliation
-# Angariation
-# antidisintermediation
-# asphyxiation
-# bioremediation
-# calumniation
-# circumstantiation
-# consociation
-# Cruciation
-# deglaciation
-# deviation
-# Diradiation
-# dissociation
-# emaciation
-# excruciation
-# expiation
-# exuviation
-# Floriation
-# Friation
-# humiliation
-# Inappreciation
-# initiation
-# intermediation
-# licentiation
-# Materiation
-# Mispronounciation
-# obviation
-# Photodissociation
-# potentiation
-# Prenunciation
-# pronunciation
-# re-intermediation
-# Reintermediation
-# repudiation
-# self-dissociation
-# spoliation
-# Supercolumniation
-# Tripudiation
-# variation
-# zone of eluviation
-# alleviation
-# Annhiliation
-# appreciation
-# association
-# bisociation
-# centuriation
-# Colluviation
-# Consopiation
-# dedifferentiation
-# Deliquiation
-# differentiation
-# disaffiliation
-# domiciliation
-# enunciation
-# exfoliation
-# Expoliation
-# fasciation
-# fluviation
-# glaciation
-# Hydroaviation
-# inebriation
-# innidiation
-# irradiation
-# List of botanists by author abbreviation
-# mediation
-# mispronunciation
-# officiation
-# phytoremediation
-# Praefoliation
-# Prestigiation
-# propitiation
-# reaffiliation
-# remediation
-# reradiation
-# self-renunciation
-# storiation
-# Superfoliation
-# tritiation
-# Vindemiation
-# zone of illuviation
-
-#   first 200 *tate
-# Abirritate
-# ambidentate
-# Archontate
-# benzonatate
-# Butylacetate
-# Chloroacetate
-# commentate
-# Curvidentate
-# decrepitate
-# dentate
-# digitate
-# edentate
-# Eluctate
-# Exagitate
-# Expeditate
-# Febricitate
-# fragmentate
-# Hectate
-# imitate
-# Indubitate
-# instrumentate
-# jactitate
-# Limitate
-# metate
-# multidentate
-# nictitate
-# Oblectate
-# Overagitate
-# Paridigitate
-# placentate
-# Pregravitate
-# quantitate
-# redictate
-# Resultate
-# Saccholactate
-# Serrate-dentate
-# Stabilitate
-# Suscitate
-# tractate
-# Tripalmitate
-# ablactate
-# amphidentate
-# Arietate
-# bidentate
-# CANTATE
-# Circumagitate
-# Counterirritate
-# debilitate
-# Deitate
-# Dequantitate
-# Discapacitate
-# Edetate
-# eructate
-# Exaltate
-# Exsuscitate
-# felicitate
-# Frontate
-# hesitate
-# Imparidigitate
-# Inequitate
-# Interdigitate
-# Kaopectate
-# Lubricitate
-# Methylacetate
-# Multidigitate
-# Nippitate
-# Octodentate
-# oxalacetate
-# pectate
-# potentate
-# premeditate
-# Quinquedentate
-# regurgitate
-# resuscitate
-# saltate
-# simplicidentate
-# stipitate
-# Sustentate
-# Tri-acetate
-# Tubulidentate
-# acetate
-# Amyl-acetate
-# Ashton-Tate
-# Bidigitate
-# capacitate
-# coarctate
-# crepitate
-# Decantate
-# Delectate
-# dictate
-# Dishabilitate
-# Efflagitate
-# Ethylacetate
-# Excitate
-# Exuscitate
-# Fertilitate
-# gravitate
-# Hospitate
-# Impunctate
-# infinitate
-# interpretate
-# lactate
-# Mannitate
-# methylprednisolone-21-dimethylaminoacetate
-# mussitate
-# Nobilitate
-# orientate
-# oxaloacetate
-# peltate
-# precipitate
-# punctate
-# quinquedigitate
-# rehabilitate
-# Retractate
-# sanitate
-# Solicitate
-# Subacetate
-# Tate
-# triacetate
-# vegetate
-# acetoacetate
-# ancipitate
-# Attentate
-# Bipeltate
-# capitate
-# cogitate
-# Cruentate
-# decapitate
-# delimitate
-# Difficilitate
-# disorientate
-# egurgitate
-# Ethylenediaminetetraacetate
-# excogitate
-# facilitate
-# Flagitate
-# habilitate
-# humectate
-# incapacitate
-# ingurgitate
-# Inusitate
-# Latidentate
-# meditate
-# militate
-# necessitate
-# Noritate
-# Oscitate
-# palmitate
-# Periclitate
-# Precogitate
-# Quadridentate
-# Ratitate
-# Reluctate
-# Retráctate
-# sedimentate
-# spectate
-# superfetate
-# Tolnaftate
-# tridentate
-# Venditate
-# agitate
-# Angulo-dentate
-# auscultate
-# Bipunctate
-# cavitate
-# cohabitate
-# cryoprecipitate
-# Decemdentate
-# Dementate
-# Difficultate
-# Dubitate
-# Elicitate
-# Evitate
-# Exorbitate
-# Farctate
-# Fluoroacetate
-# hebetate
-# Imbecilitate
-# Indigitate
-# Inhabitate
-# irritate
-# levitate
-# Mellitate
-# multicapitate
-# nictate
-# Obequitate
-# ostentate
-# palpitate
-# pernoctate
-# predentate
-# quadridigitate
-# Recapacitate
-# reorientate
-# revegetate
-# segmentate
-# Squarroso-dentate
-# Suppeditate
-# tomtate
-# tridigitate
-# volitate
-
-#   first 200 *tation
-# abirritation
-# affectation
-# Attrectation
-# capitation
-# Co-habitation
-# Coimmunoprecipitation
-# crepitation
-# decrepitation
-# depositation
-# dishabilitation
-# Eluctation
-# eructation
-# excogitation
-# expeditation
-# Fetation
-# fugitation
-# hebetation
-# immunoprecipitation
-# Inexpectation
-# Insanitation
-# Inusitation
-# labefactation
-# limitation
-# militation
-# multifetation
-# nictitation
-# Obluctation
-# overexploitation
-# Pernoctation
-# Preexpectation
-# Propititation
-# recitation
-# Resucitation
-# revisitation
-# Self-exaltation
-# Solvatation
-# superfetation
-# Suscitation
-# Tritation
-# vegetation
-# ablactation
-# agitation
-# Blacksploitation
-# Carbonatation
-# Co-immunoprecipitation
-# Colluctation
-# cunctation
-# Delactation
-# Devitation
-# disinvitation
-# Enatation
-# Evitation
-# exercitation
-# exploitation
-# Flagitation
-# gravitation
-# hesitation
-# Inaffectation
-# ingraftation
-# Insectation
-# invitation
-# lactation
-# Luctation
-# Miscitation
-# mussitation
-# Nobilitation
-# Obtrectation
-# palpitation
-# Photoexcitation
-# premeditation
-# punctation
-# regurgitation
-# resuscitation
-# Ructation
-# self-limitation
-# Spectation
-# Superfoetation
-# Tarditation
-# Unexpectation
-# Velitation
-# Acclimatation
-# Allectation
-# blaxploitation
-# Castrametation
-# coarctation
-# Concitation
-# debilitation
-# delectation
-# dictation
-# Ditation
-# Engraftation
-# Exagitation
-# Exfetation
-# Exsuscitation
-# floatation
-# gurgitation
-# Humectation
-# incapacitation
-# ingurgitation
-# interdigitation
-# irritation
-# Latitation
-# Mactation
-# misinterpretation
-# natation
-# nonexploitation
-# occultation
-# peltation
-# Pollicitation
-# Presdigitation
-# quantitation
-# rehabilitation
-# Resussitation
-# saltation
-# sexploitation
-# strepitation
-# Supernatation
-# Tractation
-# unpremeditation
-# Venditation
-# accreditation
-# arctation
-# bronchodilatation
-# cavitation
-# cogitation
-# constatation
-# decapacitation
-# delimitation
-# digitation
-# Dubitation
-# equitation
-# exaltation
-# Exhereditation
-# facilitation
-# floccitation
-# habilitation
-# Illimitation
-# incitation
-# inhabitation
-# interpretation
-# jactation
-# levitation
-# meditation
-# Mislactation
-# necessitation
-# Nonlimitation
-# Oscitation
-# perfectation
-# precipitation
-# Prestadigitation
-# Quiritation
-# reinterpretation
-# retractation
-# sanitation
-# siltation
-# Subagitation
-# Supparasitation
-# Transfretation
-# vasodilatation
-# visitation
-# addubitation
-# Arietation
-# capacitation
-# Citation
-# cohabitation
-# counterirritation
-# decapitation
-# Deploitation
-# dilatation
-# elicitation
-# Erructation
-# excitation
-# expectation
-# felicitation
-# Foetation
-# habitation
-# imitation
-# Indigitation
-# Inquietation
-# intervisitation
-# jactitation
-# Licitation
-# Méditation
-# Morsitation
-# nictation
-# Oblectation
-# overexpectation
-# Periclitation
-# Precogitation
-# prestidigitation
-# reaccreditation
-# Reluctation
-# revegetation
-# Sciscitation
-# solicitation
-# Superexaltation
-# Suppeditation
-# Transnatation
-# Vectitation
-# volitation
+# 2du:gener8 all entries below into new d8a-struct && sepR8 ones for *t8(ion)? && *E8 as *iat(e|ion) ends, to then compare against loc8d 8-words 4 diffz 2add;
+#   rel8ively few results just for *z8 end... then maybe all these should load into hashes to match against l8st presently defined 8.txt 8-words 2sync or add;
+my   @dz8_=(sort(qw(Albizz8 Baranz8 Costa_di_Mezz8 Istituto_Europeo_Studi_Tecnologie_Avanz8 Ouarzaz8_Morocco_-_Ouarzaz8 Solemniz8 Valdez8 Alkaliz8 Cadrezz8
+  Dialyz8 Lazz8 Patriz8 solmiz8 vulcaniz8 Associazione_Ticinese_Truppe_Motorizz8 Ceniz8 Engineering_Thermoplastic_Vulcaniz8 Mozz8 Preconiz8 Ouarzaz8 Trapez8
+  Thermoplastic_Vulcaniz8 Zelz8 autolyz8 Centro_Studi_e_Applicazioni_in_Tecnologie_Avanz8 Guanz8 Nz8 pyrolyz8 Torricella_Verz8 Azz8 Colz8 hydrolyz8 reduz8)));
+#  there were more than 200 results which were trunc8d from *z8ion ending
+my   @dz8n=(sort(qw(animaliz8ion Antiglobaliz8ion arterializ8ion Brachycephaliz8ion centrifugaliz8ion constitutionaliz8ion Cyborgiz8ion decriminaliz8ion
+  dematerializ8ion depoliticiz8ion devocaliz8ion editorializ8ion epithelializ8ion Fetishiz8ion fluidiz8ion Franciz8ion Glocaliz8ion Hiberniciz8ion
+  idealiz8ion internationaliz8ion Judaiz8ion localiz8ion medicaliz8ion misvocaliz8ion Neologiz8ion Operationaliz8ion patrializ8ion philosophiz8ion
+  plasticiz8ion procliticiz8ion racializ8ion recanaliz8ion Resocializ8ion self-realiz8ion signaliz8ion specializ8ion subvocaliz8ion theologiz8ion
+  tropicaliz8ion Aggrandiz8ion anodiz8ion Antimondializ8ion Backwardiz8ion canaliz8ion cephaliz8ion conventionaliz8ion de-angliciz8ion Deindusrtializ8ion
+  Democraticiz8ion deradicaliz8ion diagonaliz8ion emotionaliz8ion eroticiz8ion feudaliz8ion fluoridiz8ion Gaeliciz8ion God-realiz8ion hierarchiz8ion
+  illegaliz8ion iodiz8ion labializ8ion marbleiz8ion memorializ8ion musicaliz8ion Nitridiz8ion optimaliz8ion penaliz8ion phonemiciz8ion politicaliz8ion
+  professionaliz8ion radializ8ion regionaliz8ion romanticiz8ion Selfrealiz8ion Siniciz8ion Spheroidiz8ion syllogiz8ion Thermaliz8ion vandaliz8ion
+  alkaliz8ion anthologiz8ion Appleiz8ion banaliz8ion cannibaliz8ion cliticiz8ion Copy-initializ8ion de-energiz8ion deindustrializ8ion demythologiz8ion
+  derealiz8ion diphthongiz8ion Encephaliz8ion etherealiz8ion fictionaliz8ion focaliz8ion Galliciz8ion grammaticaliz8ion Hispaniciz8ion industrializ8ion
+  iridiz8ion laiciz8ion marginaliz8ion mercurializ8ion mythiciz8ion nomadiz8ion Orthonormaliz8ion Periodiz8ion phoneticiz8ion politiciz8ion pronominaliz8ion
+  radicaliz8ion reindustrializ8ion ruggediz8ion sensationaliz8ion socializ8ion standardiz8ion tabloidiz8ion topicaliz8ion verbaliz8ion Anarchiz8ion
+  anthropomorphiz8ion Arabiciz8ion bastardiz8ion catechiz8ion commercializ8ion corticaliz8ion Debuccaliz8ion deinstitutionaliz8ion denationaliz8ion
+  Deserializ8ion Direct-initializ8ion encliticiz8ion fanaticiz8ion finaliz8ion formaliz8ion gleiz8ion Haploidiz8ion historiciz8ion initializ8ion
+  Islamiciz8ion legaliz8ion marsupializ8ion methodiz8ion mythologiz8ion Nominaliz8ion overspecializ8ion personaliz8ion physicaliz8ion potentializ8ion
+  provincializ8ion rationaliz8ion Renationaliz8ion scandaliz8ion serializ8ion spacializ8ion subsidiz8ion territorializ8ion tribaliz8ion Villagiz8ion
+  Angliciz8ion Anti-globaliz8ion Arabiz8ion bestializ8ion catholiciz8ion conditionaliz8ion criminaliz8ion decimaliz8ion delocaliz8ion deoxidiz8ion
+  detribaliz8ion dockiz8ion energiz8ion faradiz8ion Finlandiz8ion fractionaliz8ion globaliz8ion Hebraiz8ion hybridiz8ion institutionaliz8ion
+  italiciz8ion lexicaliz8ion materializ8ion minimaliz8ion nationaliz8ion normaliz8ion oxidiz8ion Pharyngealiz8ion pictorializ8ion Pro-globaliz8ion
+  publiciz8ion realiz8ion renormaliz8ion sectionaliz8ion sherardiz8ion Spatializ8ion subspecializ8ion theatricaliz8ion trivializ8ion vocaliz8ion
+  monopoliz8ion schematiz8ion systematiz8ion))); # last 3 here didn't make the first 200 cut
+#  had to run sepR8 *meriz8ion end to get following list but may still need to rediscover correct HTTPS://En.WikiPedia.Org/wiki/Microtubule page of varE8ions
+push(@dz8n, sort(qw(Addition_polymeriz8ion Atom-transfer_radical-polymeriz8ion catalytic_polymeriz8ion Cobalt-MeD8d_Catalytic_Chain-Transfer_Polymeriz8ion
+  copolymeriz8ion Depolymeriz8ion Epimeriz8ion isomeriz8ion Living_polymeriz8ion oligomeriz8ion photodimeriz8ion polymeriz8ion Ring_opening_polymeriz8ion
+  Solution_polymeriz8ion Tautomeriz8ion Trans-cis_isomeriz8ion Anionic_addition_polymeriz8ion autopolymeriz8ion cationic_polymeriz8ion cold-cure_polymeriz8ion
+  cross_polymeriz8ion Dimeriz8ion Hazardous_polymeriz8ion IT_consumeriz8ion mesmeriz8ion Organometallic_Catalysts_and_Olefin_Polymeriz8ion
+  photoinitE8d_polymeriz8ion RaD8ion-Induced_Graft_Polymeriz8ion Ring-opening_metathesis_polymeriz8ion Stable_Free_Radical_Polymeriz8ion telomeriz8ion
+  vinyl_polymeriz8ion anionic_polymeriz8ion butane_vapor-phase_isomeriz8ion Cationic_Ring-Opening_Polymeriz8ion Condens8ion_polymeriz8ion
+  cross-linked_polymeriz8ion Emulsion_polymeriz8ion Heterodimeriz8ion Leveling-Off_Degree_of_Polymeriz8ion Microwave-Assisted_Ring-Opening_Polymeriz8ion
+  Organometallic-MeD8d_Radical_Polymeriz8ion Photoisomeriz8ion Radical_polymeriz8ion Ring-opening_polymeriz8ion Step-growth_polymeriz8ion
+  Thermal_depolymeriz8ion Anomeriz8ion California_polymeriz8ion Chain-growth_polymeriz8ion consumeriz8ion Customeriz8ion Enzymatic_Ring-Opening_Polymeriz8ion
+  Homodimeriz8ion light_polymeriz8ion Nitroxide-MeD8d_Radical_Polymeriz8ion phosphoric_acid_polymeriz8ion Photopolymeriz8ion
+  Reversible_addition-fragment8ion_chain-transfer_polymeriz8ion RNA-dependent_DNA_polymeriz8ion Stereospecific_Polymeriz8ion thermal_polymeriz8ion
+  Atom_Transfer_Radical_Polymeriz8ion Catalytic_depolymeriz8ion Cis/trans_isomeriz8ion Coordin8ion_polymeriz8ion Degree_of_polymeriz8ion enzyme_isomeriz8ion
+  ionic_polymeriz8ion Living_Anionic_Surface_InitE8d_Polymeriz8ion Olefin_polymeriz8ion photo_polymeriz8ion Plasma_polymeriz8ion
+  Ring_Opening_Multibranching_Polymeriz8ion selective_polymeriz8ion Suspension_polymeriz8ion Thymine_dimeriz8ion)));
+my   @do8n=(sort(qw(Detyrosin8ion Acetyl8ion Polyglutamyl8ion Polyglycyl8ion phosphoryl8d ubiquitin8d sumoyl8d palmitoyl8d)));
+#  looks like HTTPS://En.WikiPedia.Org/wiki/Oligomer contains the original details I extrapol8d into:
+push(@dz8n, sort(qw(homomeriz8ion heteromeriz8ion monomeriz8ion dimeriz8ion trimeriz8ion tetrameriz8ion oligomeriz8ion polymeriz8ion telomeriz8ion)));
+#  where above homo && hetero may be able to precede any of the others && further examin8ion of the text loc8d additional: first 200 *iate:
+my   @dE8_=(sort(qw(affilE8 antlE8 ascidE8 benficE8 BiradE8 calumnE8 CompendE8 ContornE8 cranE8 DebullE8 deprecE8 DimidE8 DisintermedE8 EffigE8 EradE8
+  ExpedE8 folE8 glacE8 HeteroganglE8 IndulgE8 InodE8 InterfolE8 LamellibranchE8 LophobranchE8 microsporangE8 negocE8 nudibranchE8 pallE8 PerennibranchE8
+  precollegE8 PulmonibranchE8 remedE8 retalE8 SinupallE8 specE8 SuperbE8 TrachelobranchE8 UnE8 vicarE8 abranchE8 AmplE8 apprecE8 AsperifolE8 bifolE8
+  brachE8 capacE8 concilE8 ContournE8 crucE8 defolE8 DermobranchE8 disaffilE8 dissocE8 ElasmobranchE8 ErudE8 expE8 ForisfamilE8 gladE8 HinnE8 InexpE8
+  InsanE8 intermedE8 LanE8 LycopodE8 minE8 noncollegE8 NuncE8 PalliobranchE8 perfolE8 PremedE8 quadrifolE8 renegocE8 ScammonE8 SiphonobranchE8 SpolE8
+  taenE8 TranspecE8 UnibranchE8 VicE8 AbsinthE8 AngustifolE8 archegonE8 assocE8 bilabE8 branchE8 CarE8 ConglacE8 ConvicE8 CryptobranchE8 DelicE8 dibranchE8
+  DisapprecE8 domicilE8 emacE8 eusporangE8 fascE8 FormE8 glochidE8 HomoganglE8 InferobranchE8 InsidE8 irradE8 LatifolE8 MaleficE8 misapprecE8 NotobranchE8
+  officE8 parvifolE8 petechE8 PrimordE8 quinquefolE8 RenuncE8 ScutibranchE8 SocE8 StipendE8 tallE8 trifolE8 unifolE8 VindemE8 AcutifolE8 annuncE8 arpeggE8
+  AuriphrygE8 BilacinE8 breccE8 cilE8 Connate-perfolE8 CorradE8 curvifolE8 Dentate-cilE8 DigladE8 disassocE8 DorsibranchE8 EmollE8 excrucE8 fastigE8
+  free-assocE8 hellgrammE8 humilE8 InfolE8 InsocE8 labE8 leptosporangE8 marsupE8 multifolE8 novicE8 OpinE8 patricE8 photodissocE8 ProvincE8 radE8 repudE8
+  Serr8-cilE8 somnE8 subcollegE8 TectibranchE8 TripudE8 UnifollE8 x-irradE8 AdversifolE8 antimonE8 ArsenE8 beneficE8 BinarsenE8 CaducibranchE8 collegE8
+  consocE8 CorrodE8 CyclobranchE8 DenuncE8 DilanE8 DiscrucE8 EbullE8 enuncE8 exfolE8 filE8 ganglE8 hernE8 immedE8 IngenE8 intercollegE8 lacinE8 LicencE8
+  medE8 MultiradE8 NudibrachE8 OpisthobranchE8 PectinibranchE8 postcollegE8 pulmobranchE8 ReassocE8 reradE8 SexradE8 SoredE8 SubtilE8 tetrabranchE8
+  TriradE8 UnilabE8 ZygobranchE8))); # first 200 *iation
+my   @dE8n=(sort(qw(abbrevE8ion alluvE8ion AnnihilE8ion approprE8ion avE8ion blovE8ion cheluvE8ion columnE8ion consubstantE8ion DefilE8ion denuncE8ion
+  DigladE8ion DisapproprE8ion EffigE8ion EradE8ion exodevE8ion exponentE8ion FerE8ion folE8ion GlorE8ion illuvE8ion infurE8ion InstancE8ion IrreconcilE8ion
+  lixivE8ion minE8ion negotE8ion pallE8ion PE8ion PrefolE8ion PrincipE8ion ProunouncE8ion ReapproprE8ion renegotE8ion retalE8ion SerE8ion strE8ion
+  TalE8ion unapprecE8ion vitE8ion AbrenuncE8ion ammonE8ion annuncE8ion ArpeggE8ion beneficE8ion brachE8ion chemexfolE8ion concilE8ion CorradE8ion
+  defolE8ion deprecE8ion DilanE8ion disassocE8ion elutrE8ion esodevE8ion expatE8ion exproprE8ion filE8ion ForisfamilE8ion hernE8ion ImproprE8ion
+  ingratE8ion instantE8ion lacinE8ion LuxurE8ion misapprecE8ion Non-repudE8ion PatrE8ion pilE8ion preinitE8ion PrononcE8ion racE8ion reconcilE8ion
+  renuncE8ion satE8ion SocE8ion subassocE8ion TranssubstantE8ion undifferentE8ion x-irradE8ion AdfilE8ion AmplE8ion AntidifferentE8ion AsphixE8ion
+  BilE8ion breccE8ion cilE8ion ConglacE8ion covarE8ion DeforcE8ion despolE8ion DimidE8ion disintermedE8ion eluvE8ion excorE8ion expatrE8ion ExspolE8ion
+  fimbrE8ion Free-assocE8ion HE8ion InanitE8ion InhE8ion intercolumnE8ion LanE8ion MaleficE8ion misapproprE8ion ObrivE8ion perfolE8ion postirradE8ion
+  prenegotE8ion PronouncE8ion radE8ion redifferentE8ion repatrE8ion self-deprecE8ion specE8ion substantE8ion transubstantE8ion UnsubstantE8ion X-radE8ion
+  affilE8ion AngarE8ion antidisintermedE8ion asphyxE8ion bioremedE8ion calumnE8ion circumstantE8ion consocE8ion CrucE8ion deglacE8ion devE8ion DiradE8ion
+  dissocE8ion emacE8ion excrucE8ion expE8ion exuvE8ion FlorE8ion FrE8ion humilE8ion InapprecE8ion initE8ion intermedE8ion licentE8ion MaterE8ion
+  MispronouncE8ion obvE8ion PhotodissocE8ion potentE8ion PrenuncE8ion pronuncE8ion re-intermedE8ion ReintermedE8ion repudE8ion self-dissocE8ion
+  spolE8ion SupercolumnE8ion TripudE8ion varE8ion zone of eluvE8ion allevE8ion AnnhilE8ion apprecE8ion assocE8ion bisocE8ion centurE8ion ColluvE8ion
+  ConsopE8ion dedifferentE8ion DeliquE8ion differentE8ion disaffilE8ion domicilE8ion enuncE8ion exfolE8ion ExpolE8ion fascE8ion fluvE8ion glacE8ion
+  HydroavE8ion inebrE8ion innidE8ion irradE8ion List_of_botanists_by_author_abbrevE8ion medE8ion mispronuncE8ion officE8ion phytoremedE8ion PraefolE8ion
+  PrestigE8ion propitE8ion reaffilE8ion remedE8ion reradE8ion self-renuncE8ion storE8ion SuperfolE8ion tritE8ion VindemE8ion zone_of_illuvE8ion))); # 1st200*t8
+my   @dt8_=(sort(qw(Abirrit8 ambident8 Archont8 benzonat8 Butylacet8 Chloroacet8 comment8 Curvident8 decrepit8 dent8 digit8 edent8 Eluct8 Exagit8 Expedit8
+  Febricit8 fragment8 Hect8 imit8 Indubit8 instrument8 jactit8 Limit8 met8 multident8 nictit8 Oblect8 Overagit8 Paridigit8 placent8 Pregravit8 quantit8
+  redict8 Result8 Saccholact8 Serrate-dent8 Stabilit8 Suscit8 tract8 Tripalmit8 ablact8 amphident8 Ariet8 bident8 CANt8 Circumagit8 Counterirrit8 debilit8
+  Deit8 Dequantit8 Discapacit8 Edet8 eruct8 Exalt8 Exsuscit8 felicit8 Front8 hesit8 Imparidigit8 Inequit8 Interdigit8 Kaopect8 Lubricit8 Methylacet8
+  Multidigit8 Nippit8 Octodent8 oxalacet8 pect8 potent8 premedit8 Quinquedent8 regurgit8 resuscit8 salt8 simplicident8 stipit8 Sustent8 Tri-acet8
+  Tubulident8 acet8 Amyl-acet8 Ashton-t8 Bidigit8 capacit8 coarct8 crepit8 Decant8 Delect8 dict8 Dishabilit8 Efflagit8 Ethylacet8 Excit8 Exuscit8
+  Fertilit8 gravit8 Hospit8 Impunct8 infinit8 interpret8 lact8 Mannit8 methylprednisolone-21-dimethylaminoacet8 mussit8 Nobilit8 orient8 oxaloacet8 pelt8
+  precipit8 punct8 quinquedigit8 rehabilit8 Retract8 sanit8 Solicit8 Subacet8 t8 triacet8 veget8 acetoacet8 ancipit8 Attent8 Bipelt8 capit8 cogit8 Cruent8
+  decapit8 delimit8 Difficilit8 disorient8 egurgit8 Ethylenediaminetetraacet8 excogit8 facilit8 Flagit8 habilit8 humect8 incapacit8 ingurgit8 Inusit8
+  Latident8 medit8 milit8 necessit8 Norit8 Oscit8 palmit8 Periclit8 Precogit8 Quadrident8 Ratit8 Reluct8 Retráct8 sediment8 spect8 superfet8 Tolnaft8
+  trident8 Vendit8 agit8 Angulo-dent8 auscult8 Bipunct8 cavit8 cohabit8 cryoprecipit8 Decemdent8 Dement8 Difficult8 Dubit8 Elicit8 Evit8 Exorbit8 Farct8
+  Fluoroacet8 hebet8 Imbecilit8 Indigit8 Inhabit8 irrit8 levit8 Mellit8 multicapit8 nict8 Obequit8 ostent8 palpit8 pernoct8 predent8 quadridigit8
+  Recapacit8 reorient8 reveget8 segment8 Squarroso-dent8 Suppedit8 tomt8 tridigit8 volit8))); # first 200 *tation
+my   @dt8n=(sort(qw(abirrit8ion affect8ion Attrect8ion capit8ion Co-habit8ion Coimmunoprecipit8ion crepit8ion decrepit8ion deposit8ion dishabilit8ion
+  Eluct8ion eruct8ion excogit8ion expedit8ion Fet8ion fugit8ion hebet8ion immunoprecipit8ion Inexpect8ion Insanit8ion Inusit8ion labefact8ion limit8ion
+  milit8ion multifet8ion nictit8ion Obluct8ion overexploit8ion Pernoct8ion Preexpect8ion Propitit8ion recit8ion Resucit8ion revisit8ion Self-exalt8ion
+  Solvat8ion superfet8ion Suscit8ion Trit8ion veget8ion ablact8ion agit8ion Blacksploit8ion Carbonat8ion Co-immunoprecipit8ion Colluct8ion cunct8ion
+  Delact8ion Devit8ion disinvit8ion Enat8ion Evit8ion exercit8ion exploit8ion Flagit8ion gravit8ion hesit8ion Inaffect8ion ingraft8ion Insect8ion
+  invit8ion lact8ion Luct8ion Miscit8ion mussit8ion Nobilit8ion Obtrect8ion palpit8ion Photoexcit8ion premedit8ion punct8ion regurgit8ion resuscit8ion
+  Ruct8ion self-limit8ion Spect8ion Superfoet8ion Tardit8ion Unexpect8ion Velit8ion Acclimat8ion Allect8ion blaxploit8ion Castramet8ion coarct8ion
+  Concit8ion debilit8ion delect8ion dict8ion Dit8ion Engraft8ion Exagit8ion Exfet8ion Exsuscit8ion float8ion gurgit8ion Humect8ion incapacit8ion
+  ingurgit8ion interdigit8ion irrit8ion Latit8ion Mact8ion misinterpret8ion nat8ion nonexploit8ion occult8ion pelt8ion Pollicit8ion Presdigit8ion
+  quantit8ion rehabilit8ion Resussit8ion salt8ion sexploit8ion strepit8ion Supernat8ion Tract8ion unpremedit8ion Vendit8ion accredit8ion arct8ion
+  bronchodilat8ion cavit8ion cogit8ion constat8ion decapacit8ion delimit8ion digit8ion Dubit8ion equit8ion exalt8ion Exheredit8ion facilit8ion
+  floccit8ion habilit8ion Illimit8ion incit8ion inhabit8ion interpret8ion jact8ion levit8ion medit8ion Mislact8ion necessit8ion Nonlimit8ion Oscit8ion
+  perfect8ion precipit8ion Prestadigit8ion Quirit8ion reinterpret8ion retract8ion sanit8ion silt8ion Subagit8ion Supparasit8ion Transfret8ion vasodilat8ion
+  visit8ion addubit8ion Ariet8ion capacit8ion Cit8ion cohabit8ion counterirrit8ion decapit8ion Deploit8ion dilat8ion elicit8ion Erruct8ion excit8ion
+  expect8ion felicit8ion Foet8ion habit8ion imit8ion Indigit8ion Inquiet8ion intervisit8ion jactit8ion Licit8ion Médit8ion Morsit8ion nict8ion Oblect8ion
+  overexpect8ion Periclit8ion Precogit8ion prestidigit8ion reaccredit8ion Reluct8ion reveget8ion Sciscit8ion solicit8ion Superexalt8ion Suppedit8ion
+  Transnat8ion Vectit8ion volit8ion)));
