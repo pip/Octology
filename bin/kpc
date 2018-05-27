@@ -1,6 +1,6 @@
 #!/usr/bin/perl
 # G7TMNDcx:kpc crE8d by PipStuart <Pip@CPAN.Org> to customize kpcli-3.0.pl mainly to add my most familiar aliases, better alignment, and many more colors;
-#   Stopped reformatting on get_prepped_readline_term() line 1124, for now (about 25% thru file).
+#   Stopped reformatting on get_prepped_readline_term() line 1124, for now (about 25% thru verylong srcfile). As of I5R, l8st upd8z syncd 2 public vers: 3.1;
 # 2du:try2rm blnk lInz btwn `ls *` subdirz && mAB Xtra hIlIt sepR8 dirz but if too dense just rE4m@ Dflt singl 80-colm mOd in2doubl 160-colm as betr norm4mE,
 #   try adding sepR8 new hIlItd singl b64-char ls ndx colm wich can alsO altrn8ly B aceptd by `show` nstd of stndRd b10 ndx or nAm,mAB prnt UsrnAmz2 4 `ls *`,
 #   add auto-cd with "$path/?",test partial reconstruction then loading compatibility with original kpcli-3.0.pl,add longer descriptions wi better alignment,
@@ -81,7 +81,7 @@ my  $FOUND_DIR    = '_found'; # The find command's results go in /_found/
 my  $MAX_ATTACH_SIZE    = 2*1024**2; # Maximum size of entry file attachments
 # Application name and version
 my  $APP_NAME           = basename($0);$APP_NAME =~ s/\.(pl|exe)$//;
-my  $VERSION            = "3.201";my $d8VS='HBOLITES'; # (VERSION was originally 3.0 B4 Pip modified source code into personal 3.2, then 3.1 => 3.201)
+my  $VERSION            = "3.201";my $d8VS='I5RM8KPC'; # (VERSION was originally 3.0 B4 Pip modified source code into personal 3.2, then 3.1 => 3.201)
 our $HISTORY_FILE       = ""; # Gets set in the MyGetOpts() function
 my  $opts               = MyGetOpts(); # Will only return with options we think we can use
 my  $doc_passwd_gen     =
@@ -226,6 +226,16 @@ my $term;$term = new Term::ShellUI( # Setup Term::ShellUI object
       method   => \&cli_ls,},
     l          => { alias    => 'ls' },
     dir        => { alias    => 'ls' },
+    la         => {
+      desc     => "Lists All Asterisk (\"star\") items Autom8d in pwd (\"L\" also works)",
+      minargs  => 0, maxargs => 99,
+      args     => \&complete_groups_and_entries,
+      method   => \&cli_lsa,}, # autOprOvId iniTaly DsIrd EquivAlNt of stR RgUmNt Xpnded inside of sepR8 function call
+    L          => { alias    => 'la' },
+    LA         => { alias    => 'la' },
+    lsa        => { alias    => 'la' },
+    lA         => { alias    => 'la' },
+    ll         => { alias    => 'la' },
     new        => {
       desc     => "Create a new entry: new <optional path&|title>",
       doc      => "\nThe new command is used to create a new entry. Usage is straightforward. Also 'add' or 'mk' alias.\n\n$doc_passwd_gen",
@@ -2500,7 +2510,80 @@ sub cli_ls{my $self = shift @_;my $params = shift @_;our $state;
                                    color('clear') . color(     'magenta') . ' ===' . color('clear') . "\n";
       #"=== Groups ===\n";
       #rint join("\n", @{get_human_group_list(\@groups                                    )}) . "\n";
-      for my $hgle(@{get_human_group_list(\@groups)}){print c8fn($hgle) . "$z\n";} # print all HumanGroupListElementz
+      for my $hgle(sort(@{get_human_group_list(\@groups)})){print c8fn($hgle) . "$z\n";} # print all HumanGroupListElementz
+      $have_output++;                                         }
+    if(scalar(@entries) > 0){#rint                  color('bold magenta') . '=== ' . color('bold cyan') . 'Entryz' .
+                             #                      color('bold magenta') . ' ===' . color('clear') . "\n";
+      #"=== Entries ===\n";
+      print join("\n", @{get_human_entry_list(\@entries, scalar(@{$state->{last_ls_ents}}))}) . "\n";
+      $have_output++;push @{$state->{last_ls_ents}}, @entries;}}
+  return 0;}
+sub cli_lsa{my $self = shift @_;my $params = shift @_;our $state;
+  $state->{last_ls_ents} =[]; # We reload this state in this function
+  if(recent_sigint()){return undef;} # Bail on SIGINT
+  my @paths =();
+  if(defined($params) && defined($params->{'args'}) && ref($params->{'args'}) eq 'ARRAY'){
+    @paths  = @{$params->{'args'}};}
+  if(scalar(@paths) == 0){push @paths,'*';}#get_pwd();} # just fully duplic8d cli_ls() as lsa with auto-star path argument instead of pwd, finally workz! =)
+  my $paths_count = scalar(@paths);
+  my @ent_matches = (); # Collects entries we've been directly asked to list
+  my @grp_paths   = (); # Collects groups  we've been          asked to list
+  my $k           = $state->{kdb};
+  for my $path(@paths){
+    my $norm_path = normalize_path_string($path);
+    if    (defined($state->{all_grp_paths_fwd}->{$norm_path}) || length($norm_path) < 1){
+      push @grp_paths, $path;
+    }elsif(defined($state->{all_ent_paths_fwd}->{$norm_path})){
+      my $tmp_ent = $k->find_entry({id=>$state->{all_ent_paths_fwd}->{$norm_path}});
+      push @ent_matches, $tmp_ent;
+    }else{
+      my @tmp_ents= shell_expansion($path);
+      for my $tmp_ent(@tmp_ents){
+        if    (defined(  $state->{all_ent_paths_fwd}->{$tmp_ent})){
+          my $entry_id = $state->{all_ent_paths_fwd}->{$tmp_ent};
+          my $ent = $state->{kdb}->find_entry( {id=>$entry_id} );
+          push @ent_matches, $ent;
+        }elsif(defined(  $state->{all_grp_paths_fwd}->{$tmp_ent})){
+          push @grp_paths, '/' . humanize_path($tmp_ent);}}}}
+  my $have_output=0; # Helps manage "\n" placements below.
+  # First present the entries that we were directly asked to list
+  if(scalar(@ent_matches) > 0){
+    @ent_matches = sort { ncmp($a->{title},$b->{title}); } @ent_matches;
+    if($have_output){print "\n";}
+    #rint "=== Entries ===\n";
+    print color('clear') . color('magenta') . '=== ' . color('bold green') . 'Entryz' . color('clear') . color('magenta') . ' ===' . color('clear') . "\n";
+    print join("\n", @{get_human_entry_list(\@ent_matches, scalar(@{$state->{last_ls_ents}}))}) ."\n";
+    push @{$state->{last_ls_ents}}, @ent_matches;
+    $have_output++;}
+  # Now present the groups that we were asked to list
+  for my $path(sort { ncmp($a,$b) } @grp_paths){
+    my $norm_path    = normalize_path_string($path);
+    if($have_output){print "\n";}
+    if(scalar(@ent_matches) > 0 || scalar(@grp_paths) > 1){
+      #rint "$path:\n";
+      print c8fn($path) . "$W:$z\n";
+      $have_output++;}
+    my @groups       =();my @entries =();
+    if(length($norm_path) < 1){
+      @groups        = $k->find_groups( {level=>0});
+      @entries       = $k->find_entries({level=>0});
+    }else{
+      my $group_id   = $state->{all_grp_paths_fwd}->{$norm_path};
+      @entries       = sort { ncmp($a->{title},$b->{title}); } $k->find_entries({group_id=>$group_id});
+      my $this_grp   = $k->find_group({id=>$group_id});
+      if(defined($this_grp->{groups})){
+        @groups      = sort group_sort @{$this_grp->{groups}};}}
+    my @good_entries =(); # Eliminate "system" entries inside this group that we don't want to show
+    MATCHES: for my $ent(@entries){
+      #my $ent = $k->find_entry({id=>$state->{all_ent_paths_fwd}->{$match}});
+      if(defined($ent) && $ent->{'title'} eq 'Meta-Info' && $ent->{'username'} eq 'SYSTEM'){next MATCHES;}
+      push @good_entries, $ent;}
+    @entries = @good_entries; # Display the groups and entries that we have
+    if(scalar(@groups ) > 0){print color('clear') . color(     'magenta') . '=== ' . color('bold cyan') . 'Groupz' .
+                                   color('clear') . color(     'magenta') . ' ===' . color('clear') . "\n";
+      #"=== Groups ===\n";
+      #rint join("\n", @{get_human_group_list(\@groups                                    )}) . "\n";
+      for my $hgle(sort(@{get_human_group_list(\@groups)})){print c8fn($hgle) . "$z\n";} # print all HumanGroupListElementz
       $have_output++;                                         }
     if(scalar(@entries) > 0){#rint                  color('bold magenta') . '=== ' . color('bold cyan') . 'Entryz' .
                              #                      color('bold magenta') . ' ===' . color('clear') . "\n";

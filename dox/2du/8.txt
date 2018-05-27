@@ -55,6 +55,8 @@
       substantE8
    circumstantE8
        corrobor8   :vouching for accounts of events within a group, like maybe recounting events of a crime-scene or momentous record-breaking achievements
+       reintegr8
+        reactiv8   :activ8ion varE8ion for reinst8ment, rehabilit8ion, reintegr8ion, or renov8ion typically approprE8 only after some deactiv8ion was performed
           activ8   :turn stuff on? maybe daemon && other process manager or some form of applic8ion enabler like an energized power-up installer or something
         deactiv8   :respective disablers which correspond directly to whatever processes, extensions, configur8ions, etc. might become able to be activ8d above
         dealloc8
@@ -95,9 +97,9 @@
       classific8ion
 compartmentaliz8ion
         segment8ion
-         segreg8
-            zon8
-          limit8
+         segreg8   : # maybe add   demonetiz8ion below to probably initially highlight YouTube's opaque && seemingly biased system denying advertizement income
+            zon8   : # maybe add editorializ8ion expressing opinion in or as in an editorial, or inject personal interpret8ions in an otherwise factual account
+          limit8   : # maybe add asport8ion above approprE8 as felonious removal, carrying away, or taking of goods from where deposited (with new *E8 && *z8)
           reput8ion:r8 personal m8ings (rel8ionships) along any useful axes   # Value individuality as gr8r than infinitely fraction8ing victim group rankings!
          chocol8   :r8 various brown cocoa candies (hopefully coating Reese's peanut butter && optionally without cow-milk please?)    # Learn && go approprE8!
          fortun8       # Enact Guaranteed Basic Income && Universal Health-Care! Close Guantanamo Bay! Clemency for Edward Snowden! Make sepR8 Palestinian st8!
@@ -112,7 +114,7 @@ compartmentaliz8ion
        marketiz8ion    # above are just example position slogans which generally align with at least some of my previous sentiments;  Keep the right to offend!
    commercializ8ion    # Protect the right to discrimin8 && freedom to assoC8 on personal levels, while upholding equal treatment under the law for all people!
         cheapsk8       # Seriously contempl8 prosecuting false accusers in rel8ively fair ways, proportional to the punishment standards for the crime claimed!
-       approprE8   :same as alloc8 for design8ing funds for a purpose or maybe politial correctness && social faux pas educ8ion && avoidance recommend8ions?
+       approprE8   :same as alloc8 for design8ing purposed funds or maybe antiqu8d politial correctness && social faux pas educ8ion && avoidance recommend8ions
     misapproprE8       # Body-positivity is usually good, but fat-acceptance is not! Approxim8 perfection! Aspire! ReProve! Gender is overwhelmingly binary!
    maladministr8ion    # Refuse compulsory speech! Deny ideological possession! Challenge assumptions, evidence, r8ionality, && also any deriv8ive conclusions!
         malvers8       # Remember that all people make mistakes, are capable of learning, can change our minds, && can practice moder8ing our old behaviors!
@@ -194,6 +196,7 @@ internationaliz8ion:tools to transl8 for I18N the document8ion && applic8ion int
       centraliz8ion
           eluct8   :to struggle out or wrestle
             stL8
+            ped8   :shaped like foot with raD8ing lateral lobes, each deeply cleft or divided into two or more segments, having or resembling a foot   (Botany)
            palm8   :shaped like hand with raD8ing fingers, or three toes connected by thin web in feet of water birds (was ricinolE8 salt of palmic acid)
            eman8
        dissemin8
@@ -302,6 +305,7 @@ internationaliz8ion:tools to transl8 for I18N the document8ion && applic8ion int
             laB8   :having limb of tubular corolla or calyx divided in unequal lip parts, like catnip (from Botany)  or to labialize or have lip-like parts
           bilaB8
          superB8
+         evagin8   :unsheathed, protruded, extended, or grown or turned inside out, as an evagin8 membrane, or to become or cause to be evagin8 without sheath
           vagin8   :invested with, or as if with, a sheath or vagina, such as that which wraps a stem (from Botany), or one invested by tubular base of a leaf
            valv8   :meeting at the edges without overlapping, or opening as if by doors or valves     (from Botany)  as most kinds of capsules && some anthers
            nerv8
@@ -378,7 +382,8 @@ internationaliz8ion:tools to transl8 for I18N the document8ion && applic8ion int
             vac8ion:vacation planning tool
             voc8ion:job search, resume, career building tool
            avoc8   :altern8 calling
-          occup8ion: # maybe add preoccup8ion as the st8 of being preoccupied, taking possession beforehand, or anticip8ing objections (with new *d8 && *v8)
+          occup8ion
+       preoccup8ion:st8 of being preoccupied, taking possession beforehand, or anticip8ing objections
        horripil8   :d8 based movie player with scary implic8ions
          observ8ion:d8 based video player or webcam stuff?
              ov8ion:d8 based media player showing r8d playlist details with ability to map and visualize inputs to train on audio features and then play back
@@ -590,9 +595,10 @@ internationaliz8ion:tools to transl8 for I18N the document8ion && applic8ion int
               l8nt :dur8ion specialized for analyzing && tuning latencies between networked or otherwise somehow synchronized Octology applic8ion components
            form8ion:m8 pattern tool ("4m8ion" seems natural but just attempting the limit8ion of mostly clear 8s in names should be plenty for the main scope)
          deform8ion
-         reform8ion
+         reform8ion: # maybe add reinst8 && inst8 as initE8ions which set, place, or establish rank, office, or condition (with 2 new *E8 && 2 *z8 words "Etz")
           inchO8   : below also Drumstep track Initiate by Obsidia (released around May 30th,2013)
           initE8   :an optionally interactive demonstr8ion of the most bl8antly useful && accessible applic8ions within Octology to indoctrin8 new users with
+        install8ion:tool to manage custom applic8ion install8ions locally, as well as any needed configur8ion && administr8ion details
       initializ8ion:tool to analyze initial definitions of values assoC8d with applic8ion code declar8ions of contants, globals, locals, && object attributes
           immeD8   :maybe d8/dur8ion-based applic8ion upd8 response l8ncy tool for specifying desired thresholds to achieve through profiling && optimiz8ion
             imp8ient:tool to r8 applic8ion responsiveness as inadequ8 (this && immeD8 will likely require extending dur8ions to at least float frames or jinx)
@@ -649,8 +655,9 @@ internationaliz8ion:tools to transl8 for I18N the document8ion && applic8ion int
        interrog8   :communic8 specialized as an intense interview && questioning system
        investig8   :d8a && network gathering, inspection, reporting via loc8
       congratul8   :happy event messaging
-         celebr8   :party planner
        commemor8
+         celebr8   :party planner
+         birthd8   :d8-based calendar && reminder notific8ion system for specific8ion && present8ion of important birthday events for rel8d family && friends
          exuber8
           jubil8
          luxurE8
@@ -832,10 +839,11 @@ internationaliz8ion:tools to transl8 for I18N the document8ion && applic8ion int
          infatu8
            sens8
              el8
-          titil8
+         titill8
          stimul8
          exhilR8
        beatific8
+       gratific8ion
        eroticiz8ion
        fetishiz8ion
        sexualiz8ion
@@ -1054,10 +1062,11 @@ trachelobranchE8
             pir8   :with a Pi symbol? file sharing via I2P, FreeNet, GNUNet, BitTorrent, etc. or tracking of actual modern piracy of frig8s on the high-seas
            sper8   :things hoped for?
            frig8   :fr8 ship/boat tracking or maybe some ocean-based resource-management simul8ion game with domestic markets && sea-life disturbance metrics
+          airfr8   :transport8ion of cargo fr8 by air
+         overfr8   :to put too much fr8 in or upon, to load too full or too heavily, to overload
              fr8   :"freight" package shipment manager, tracker, && organizer
+             fr8r  :one who loads a ship (may also charter), is employed receiving && forwarding fr8, for whom fr8 is transported, or any fr8-carrying vessel
              fr8age:the charged expense r8 for transport8ion of cargo fr8
-          airfr8   : # probably add fr8r as one who loads a ship, is employed receiving && forwarding fr8, for whom fr8 is transported, or fr8-carrying vessel
-         overfr8   : #    above add fr8r back in there once any other new 8-words are added to this list, since I want to preserve b8 "LA" 1,354 total for now
              cr8   :maybe FirstPersonShooter engine && game (a bit cynically, since the FPS genre is notorious for having levels that are inund8d with crates?)
               f8l  :general fighting         engine && game "fatal" (which omits the 2nd "a" in abbreV8d spelling, for efficiency, already of good pronunC8ion)
              sk8   :general skateboarding    engine && game    # also seems good to rel8ively generalize the most compelling game concepts to defer to brevity
@@ -1166,6 +1175,7 @@ trachelobranchE8
          bromin8
          phosph8
            sulf8
+           silv8   :same as sylvate (from Chemistry)
           chrom8
         chlorin8
          mangan8
@@ -1273,7 +1283,8 @@ trachelobranchE8
        mortific8ion: # maybe add supplant8ion as the act of supplanting, displacing, or subrog8ing ... or surrog8ing or substituting     (with new *E8 && *z8)
        subordin8   : # maybe add    deput8ion as group of represent8ives or deleg8s, or authoriz8ion of subordin8s to make certain decisions (with *E8 && *z8)
          subjug8   : # maybe add   subrog8    as substituting one creditor (or comparable place) for another, but might be better below surrog8 (with new *m8)
-          arrog8   : # maybe add    usurp8ion as viol8ion by unlawful seizing && enjoying of another's property, office, or powers by force  (with *d8 && *v8)
+          arrog8
+          usurp8ion:viol8ion or trespass through unlawful seizing by force && enjoying of another's property, office, or powers
          devast8
         confisc8
        exproprE8
