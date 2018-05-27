@@ -1,5 +1,5 @@
 # D6RMF1V1:8.txt - by8Π : JAPH : K3wlD00d : 1337H4xr : PipStuart's Octology (hopefully eventually an Ontology of 8) - Convention, Conversion, && Categoriz8ion:
-# $VERSION='0.0';$d8VS='I5LM5gr8'; # Octology attempts to rel8 the universe through medit8ion on mnemonic abbreV8ion (via 8-based  limit8ion) &&    elucid8ion.
+# $VERSION='0.0';$d8VS='I5RM0G8N'; # Octology attempts to rel8 the universe through medit8ion on mnemonic abbreV8ion (via 8-based  limit8ion) &&    elucid8ion.
 # CEBBICTI:Crossing Every Bridge Before I Come To It? I.e., not a d8 stamp. Trying to make my Dad's birthday (August 8th) more special by thinking 2far ahead?
 # Octology intends to pursue implic8ion && ramific8ion as substantE8ion for adequ8 particip8ion, if not also 2 oblig8ion toward implement8ion &&   promulg8ion.
 # Contribute to potential solutions to the "Value Alignment" problems formul8d around General Artificial Intelligence along with plausible God concerns also.
@@ -153,13 +153,13 @@ compartmentaliz8ion
           postd8
            pred8
            outd8d  : # maybe append add w8y, w8iness, && w8less with 3 new *[Bhk]8 each;
-             aw8   : # prepend ((und|ov)er|(penn|h(eav|undred)y?))w8, append (live|dead)w8 add wi 7 new *[Bhk]8 if posibl to discover && incorpor8 kept group;
+             aw8   : # prepend ((und|ov)er|(penn|h(eav|undred))y?)w8, append (live|dead)w8 add wi 7 new *[Bhk]8 if posibl to discover && incorpor8 kept group;
               w8   :unit, weight, && measurement specific8ion && conversion or d8a weighting meta-r8ings or d8/dur8ion-based "wait" delay && crontab interface
          temper8   :temperature section of above "weight" standards rel8ion and conversion system
           imper8ive:gr8st w8, authorit8ive, maxim, axiom, aphorism, apothegm, adage, proverb, saying, oblig8ory, grammar expressive of command or exhort8ion
      standardiz8ion:tools to valid8 applic8ion compliance against best development standards or to facilit8 submitting innov8ions as candid8s for new standards
        normaliz8ion:maybe basic 2D/3D tools to gener8 normal vectors or m8rices for use in comput8ions of geometry visibility or illumin8ion techniques
-       formaliz8ion
+       formaliz8ion: # maybe prepend add renormaliz8ion as quantum electrodynamics procedure to solve the "divergence problem" in 1947-1949 (with *E8 && *t8)
       transform8ion
      transliter8   :express or represent in characters of another alphabet
          transl8   :tools to convert spoken languages with segment8ions design8d along figur8ive versus literal (BavL? Note: BavL is Hebrew for "g8 of God")
@@ -378,7 +378,7 @@ internationaliz8ion:tools to transl8 for I18N the document8ion && applic8ion int
             vac8ion:vacation planning tool
             voc8ion:job search, resume, career building tool
            avoc8   :altern8 calling
-          occup8ion
+          occup8ion: # maybe add preoccup8ion as the st8 of being preoccupied, taking possession beforehand, or anticip8ing objections (with new *d8 && *v8)
        horripil8   :d8 based movie player with scary implic8ions
          observ8ion:d8 based video player or webcam stuff?
              ov8ion:d8 based media player showing r8d playlist details with ability to map and visualize inputs to train on audio features and then play back
@@ -482,7 +482,7 @@ internationaliz8ion:tools to transl8 for I18N the document8ion && applic8ion int
          p8ricE8
          rep8rE8
          exp8rE8
-          liber8   :advoc8 for empathy && improvement of the conditions of the most subjug8d peoples
+          liber8   :advoc8 for empathy && improvement of the conditions of the most enslaved && subjug8d peoples
         emancip8
         legaliz8ion:advoc8 for UnitedSt8s federal government to termin8 outd8d "War on Drugs" && fully legalize at least recrE8ional marijuana as a good start
    decriminaliz8ion
@@ -745,7 +745,7 @@ internationaliz8ion:tools to transl8 for I18N the document8ion && applic8ion int
            varE8
       multivarE8
          altern8   :interactive RegEx demonstr8or focusing early examples on basic nestable altern8ion like (Chil|D(wub|rum)|Hard)St(ep|yl) fav8 muz genres
-         fluctu8
+         fluctu8   : # maybe add commut8 as reversing direction of altern8ing electric current each half cycle producing unidirectnl curNt (with *E8 && *z8)
          pendul8
            puls8
          oscill8
@@ -956,7 +956,7 @@ trachelobranchE8
          interf8h
          incarn8
        reincarn8
-        supplic8
+        supplic8   : # maybe add rog8ion as a solemn litany or supplic8ion ceremony prescribed by the church, asking, or begging (with new *m8 word)
   transubstantE8
       reconcilE8ion
          lament8ion
@@ -1055,10 +1055,9 @@ trachelobranchE8
            sper8   :things hoped for?
            frig8   :fr8 ship/boat tracking or maybe some ocean-based resource-management simul8ion game with domestic markets && sea-life disturbance metrics
              fr8   :"freight" package shipment manager, tracker, && organizer
-             fr8age
-             fr8r
-          airfr8
-         overfr8
+             fr8age:the charged expense r8 for transport8ion of cargo fr8
+          airfr8   : # probably add fr8r as one who loads a ship, is employed receiving && forwarding fr8, for whom fr8 is transported, or fr8-carrying vessel
+         overfr8   : #    above add fr8r back in there once any other new 8-words are added to this list, since I want to preserve b8 "LA" 1,354 total for now
              cr8   :maybe FirstPersonShooter engine && game (a bit cynically, since the FPS genre is notorious for having levels that are inund8d with crates?)
               f8l  :general fighting         engine && game "fatal" (which omits the 2nd "a" in abbreV8d spelling, for efficiency, already of good pronunC8ion)
              sk8   :general skateboarding    engine && game    # also seems good to rel8ively generalize the most compelling game concepts to defer to brevity
@@ -1066,8 +1065,9 @@ trachelobranchE8
             sav8   :        fighting                   game for a form of boxing in which kicking is permitted as well as punching (maybe quite like MMA/BJJ)
            glaD8or :professional combatant or captive in ancient Rome often engaging in mortal sword fights to entertain the public, so a sword-fighting game?
          superl8ive:gr8est  fighting                   game with many supers per character?
-            equ8   :general equation editor && calcul8or which can maybe eventually solve for symbols algebraically or offer other rel8d comput8ions
+           libr8   :to vibr8 as a balance does before resting in equilibrium (hence, to be poised), to level, make even, deliber8, or determine the w8 of
        equilibr8
+            equ8   :general equation editor && calcul8or which can maybe eventually solve for symbols algebraically or offer other rel8d comput8ions
          formul8   :some type of specialized equ8ion or other formula editor && comput8ion applic8ion
          calcul8   :HP48/TI85 based calcul8or or maybe just my ~/bin/q symbolic link pointing to ~/bin/calQ which uses Math::BigFloat objects in b8.pm
           evalU8   :maybe general math equ8ion or formula processing with parameters or symbolic variables (or just some tool to design8 rL8ive valU8ions)
@@ -1120,9 +1120,9 @@ trachelobranchE8
          ammonE8   :to treat with ammonia (from Chemistry)
          attenU8
             elu8   :liquid solution resulting from elution, the process of extracting one material from another by washing with solvent, like uranium ions
-            met8   :flat or somewhat hollowed stone on which grain or other food is ground, by means of smaller stone or pestle [Southwestern U.S. && Sp.Amer.]
             ion8
-       liquific8ion
+            met8   :flat or somewhat hollowed stone on which grain or other food is ground, by means of smaller stone or pestle [Southwestern U.S. && Sp.Amer.]
+       liquific8ion: # maybe prepend add magnetiz8ion as the act of magnetizing or st8 of being magnetized as a physical property (with new *E8 && *t8 words)
          evapor8   :e-cigarette reviews && any rel8d safety d8a which can be aggreg8d for providing quality hardware && juice brand recommend8ions && cautions
         vaporiz8ion
      crystalliz8ion
@@ -1266,16 +1266,16 @@ trachelobranchE8
         flutter8ion
         tumultu8ion
          frustr8
+         humilE8
         exasper8
          infurE8
          indign8ion
-       mortific8ion
-         humilE8
-         subjug8
-       subordin8
-        confisc8
+       mortific8ion: # maybe add supplant8ion as the act of supplanting, displacing, or subrog8ing ... or surrog8ing or substituting     (with new *E8 && *z8)
+       subordin8   : # maybe add    deput8ion as group of represent8ives or deleg8s, or authoriz8ion of subordin8s to make certain decisions (with *E8 && *z8)
+         subjug8   : # maybe add   subrog8    as substituting one creditor (or comparable place) for another, but might be better below surrog8 (with new *m8)
+          arrog8   : # maybe add    usurp8ion as viol8ion by unlawful seizing && enjoying of another's property, office, or powers by force  (with *d8 && *v8)
          devast8
-          arrog8
+        confisc8
        exproprE8
         exploit8ion
             vex8ion
@@ -4473,3 +4473,17 @@ I5DM8l8r:I should code my own `g` with PCRE to simplify the above command. It lo
 I5EM8p2p:Although a bit old && read before, perusing Beppu-san's tweet reminded me about HTTPS://VentureBeat.Com/2017/11/04/the-end-of-the-cloud-is-coming ;
 I5KM8plc:Next 4 Pre-Letters stand for Down, Parry, Vital, Back (over crnl). Then South(east), Up(forward), Ceiling(westCorner), Down(back)  (over g+m,Etz).
 Left, North, Right, Under (over lnrc). Vital, Guard, Forward, Xeric (over tz,g+m,E). Back, High, Kneel, Weapon (over lncr). Leaves IMPO && Sy as last Etzg+m;
+I5QMDGSH:Reddit CommandLine linked HTTPS://WWW2.DMST.Aueb.Gr/dds/sw/dgsh powerful DirectedAcyclicGraph SHell for big-d8a-set && multi-core stream pipelines.
+Maybe my eventual 8sh ("H") Octology shell could benefit from incorpor8ing some of the better fE8ures of dgsh. Also, HTTPS://GitHub.Com/p-gen/smenu described
+in HTTP://Linux-Magazine.Com/Issues/2017/205/smenu may be similarly worth studying to learn ways to improve Curses::Simp => FSCK => col8 => Octology::c8.pm;
+I5QMISCI:Exploring a few curious m8rix movie interpret8ions on YouTube led me to ponder if Baudrillard's Simulacra && Simul8ion (as well as the Wachowskis'
+reknowned cinematic trilogy) represents post-modernist ideology in maybe threatening or catastrophically pal8able forms (which Dr. Peterson contends with).
+Also intriguing is the significance from Octology pronunC8ion categoriz8ion to the Euler b8a function && the 1969 proposal of Chan-p8on rules which enabled
+isospin factors to be incorpor8d in models of string vibr8ion theory. Apparently Dr. Sylvester James g8s the 6th (Jr.) is a prominent theoretical physicist
+who did pioneering work at MIT on supersymmetry, supergravity, && superstring theory. Maybe rel8d are equ8d st8s of perturb8ions within quantum field theory;
+I5QMMWEB:HTTPS://YouTu.be/hHG8io5qIU8 is 9mins of a favor8 of mine, Hannah Fry on the Numberphile channel, explaining Weber's Law which stipul8s the majority
+of areas of human perception adhere to a logarithmic, rather than a more expected linear, distribution. She demonstr8s the principle with various metallic
+w8s being estim8d as the gr8r between each hand, but then extrapol8s out to light-sensitivity, sens8ion of passing years as we age, && applic8ions in markets
+for product size && quality versus pricing changes as discernible for luxury or common items. Her initial interest in this topic apparently arose from some
+careful analysis of a gr8 set of d8a describing criminal sentencing disparities, being quite granular at the low end but then gravit8ing towards rel8ively
+uniform && convenient prison term dur8ions being judged approprE8 at the high end. Also coincident that sponsor Brilliant.Org uses 8 principles of learning;

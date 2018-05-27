@@ -1,3 +1,5 @@
+I5QMECAT: HTTPS://CatIt.Com/flower-fountain-getting-started  # seems like a nice drinking device to consider ordering for feline friends, at around $30 each;
+          HTTPS://Arbital.Com/p/bayes_frequency_diagram  # somewhat older interactive page that was probably referenced in Yudkowsky bias stuff or Brilliant;
 I5DMGerA: HTTPS://NYTimes.Com/2018/05/12/opinion/sunday/liberals-youre-not-as-smart-as-you-think-you-are.html  # noticed 1 of my heroes, Dr. Jordan Peterson,
 # tweeted this highly coincidental link to another NYTimes Opinion piece, but is more conspicuous with author Gerard Alexander (my-Dad's-1st my-middle-name);
 I59MAZED: HTTP://IntellectualDark.WebSite  # linked from Bari Weiss' following NYTimes Opinion piece titled "Meet the Renegades of the Intellectual Dark Web":

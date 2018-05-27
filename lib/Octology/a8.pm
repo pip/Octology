@@ -1500,7 +1500,7 @@ sub dm2u{my $flnm=shift||'h';my $rslt=shift||'u';my $oopt=shift||'';my $coun=1;m
 sub comma{my $strn=shift;my $comc=shift||',';my $blok=shift||3; # ECKLNcb3:`cma`cre,8d2,add,com,mas,2lo,ng#,str
   if(!defined($strn) && !-t STDIN){$strn.=$_ while(<STDIN>);}   #   HTTP://Perl.Com/doc/manual/html/pod/perlfaq5.html#How_can_I_output_my_numbers_with
   if(!defined($strn)){$strn='';} # set strn to empty string if not loaded from param or piping through
-  my  @strz = split(/\n/,$strn); # H92MJ9gf:cma migr8d to b8.pm but leaving version here as comma for ftst && reso to use below;
+  my  @strz = split(/\n/,$strn); # H92MJ9gf:cma migr8d to b8.pm but leaving version here as comma for ftst && reso to use below (without a8.pm needing b8.pm);
   for(@strz){if(/^\s*[-+]?(\d+)/){my $word = $1; # Bl0Xmplfr0mPerlFAQ5Ab0v; Just:s/^(-?\d+)(\d{3})/$1,$2/g;
                                   my $cwrd =reverse $word;1 while $cwrd=~s/([^,\s]{$blok})([^,\s])/$1$comc$2/; # needs to reset each match or gets $blok+1
                                                           #cwrd=~s/([^,\s]{$blok})([^,\s])/$1$comc$2/g;
@@ -1556,9 +1556,12 @@ sub ftst{ # 37MK06SK:ftst Utl2run thruPerlzFileTeSTz on its parameter Filename
                              }my     $dscs=$oper[$i+1];$dscs=~ s/(UID)/$C$1/gi;$dscs=~ s/(GID )/$G$1/gi;$dscs=~ s/( by )/$g$1/gi;$dscs=~ s/(size)/$o$1/gi;
     $dscs  =~ s/(bit  )/$W$1/gix;$dscs=~ s/(part )(Days )(\()(\@)(stRtup)(\))( since)/$o$1$Y$2$B$3$R$4$C$5$B$6$c$7$p$oprS/gi;
     $dscs  =~ s/([|])/$o$1$G/g  ;$dscs=~ s/(real)/$r$1$R/g;$dscs=~ s/(effective)/$M$1$B/g;$dscs=~ s/(special)( file)/$c$1$G$2/g;
-    $dscs  =~ s/(\()([^)]+)(\))/$B$1$W$2$B$3/gi;$dscs=~ s/(.*)(\.)/$1$w$2$C #$A/;
+    $dscs  =~ s/(\()([^)]+)(\))/$B$1$W$2$B$3/gi;my $sfsp='';
+    if(length($file) < 14){$sfsp= ' ' x (14 - length($file));$sizl += (14 - length($file));} # default /home/pip/.Hrc shud B 14 long,so upd8 pad && size length
+    $dscs  =~ s/(.*)(\.)/$1$w$sfsp$2$C #$A/; # try to sneak in the ShortFileSpacesPadding to hopefully preserve some of the intended alignment for non-defaults
                               print  $out8 "$G)$W:$oprS$dscs";print $out8 ((' ' x $sizl) . "$w.$C # ") if($oper[$i] eq 's');
-    if                       (length($file) <= 16 &&   exists($ENV{'COLUMNS'}) && $ENV{'COLUMNS'} >= 160 &&($i % 4 || $i > ($#oper-6))){
+    # 2du:when file leng more than 14, like for ~/.lsrc or ~/.zshrc, either use more aggressive substitutions to preserve alignment, or just omit flag section;
+    if                       (length($file) <= 15 &&   exists($ENV{'COLUMNS'}) && $ENV{'COLUMNS'} >= 160 &&($i % 4 || $i > ($#oper-6))){
       my $nthi=int($i/2)-1;$nthi=$#flag - ($#oper - $i ) if($i > ($#oper-6)); # try to shift pnr back over age stamps
       $flgS=S(uc($flag[$nthi])) if(defined($flag[$nthi]) && $flag[$nthi]=~ /^[ixgemscluadropn]$/i && defined($flag[$nthi+1]));$dscs='';
       $dscs= "$Y/$flgS$flag[$nthi] $z: $flgS$flag[$nthi+1]" if(defined($flag[$nthi]) && defined($flag[$nthi+1]));$dscs=~ s/(.*)(\.)/$1$w$2/;
