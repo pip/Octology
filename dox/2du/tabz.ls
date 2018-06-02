@@ -1,3 +1,5 @@
+I61M7DAt: HTTPS://YouTu.be/ccLzVKpGXQc # 15mins of Defl8ingAtheism dismantling r8ionalityRules attempt to debunk "Can't prove God doesn't exist". This was my
+# 1st memorable encounter with DA && while he's quite snide with contempt, his points seem logical. The channel likely deserves serious further consider8ion;
 I5QMECAT: HTTPS://CatIt.Com/flower-fountain-getting-started  # seems like a nice drinking device to consider ordering for feline friends, at around $30 each;
           HTTPS://Arbital.Com/p/bayes_frequency_diagram  # somewhat older interactive page that was probably referenced in Yudkowsky bias stuff or Brilliant;
 I5DMGerA: HTTPS://NYTimes.Com/2018/05/12/opinion/sunday/liberals-youre-not-as-smart-as-you-think-you-are.html  # noticed 1 of my heroes, Dr. Jordan Peterson,

@@ -1,14 +1,15 @@
 #!/usr/bin/perl
 # D6OMHm3L:8plc crE8d to read PipStuart's <Pip@CPAN.Org> 8.txt (mainly 2 specific columns) to tabul8 && print the 8 Precursor Letter Counts;
-# 2du:4 -g gM8ria:try2add sumz,productz,modez,meanz,medianz,cnsidr delta difz&&r8ioz,prIm factrz,add colrz,graph rangez,iconz,contMpl8 othr good posibl repz,
-#       also try deltas with sub-colr 4grndz by magnitude gradu8ionz or syswIdfrEqz,
+# 2du:4 -g map try colrng blox by midlmap4mor vivid PreLetr grup assoC8nz (&& recolr ion or othr sufxz whN grup colr is alsO Blu or Cyan),
+#     4 -g gM8ria:try2add sumz,productz,modez,meanz,medianz,cnsidr delta difz&&r8ioz,prIm factrz,add colrz,graph rangez,iconz,contMpl8 othr good posibl repz,
+#       also try deltas with sub-colr 4grndz by magnitude gradu8ionz or syswIdfrEqz,try various b64 xor && bAsic prOgrSiv charhash techniquez4usualyUniqrepz,
 #     4 -g:try reloopng 4 Ech singl rOw alInmNtz nstd of init blox,fix all -p pg1f to count up to actual linz rather than hardcode 160x48 limitz,
 #   mAB try more agrSiv minimIz8ion of gM8ria prImz whN l8r sufx or prEfx alreD in PLz,alsO try special rEordr of lRgSt prEfxz2trim dn rAng,
 #   add dur8z around sectnz&&mAB try2optimIz per4manc of slOSt pRtz(tkz about 12-18secs for basic to -all),
 #   mk sepR8 tabul8ion of 8-words used in l8r document8ion wi not8ion 4thOs not yet included in top lists (thN optn2ignor easy conjug8ions && pre/suffixes),
 #   mk easy optn4 fulc 2use 1colm 4grep,add 4m@d percNtz,stuD wc && mk a8:cnt8/8c wi fulc -f? && 8plc as -l? optnz(rEdo hedrtXt),colr letrz,add f0ntz4 8trm;
 use strict;use warnings;use utf8;use v5.10;use Octology::a8;use Octology::b8;
-my $d8VS='I5MMGrup';       my $clrf=1;my $fulf=0;my $argz='';$argz= join(' ',@ARGV) if(@ARGV);my $Stxt='';my $Smap='';my $folf=0; # add 4-Or-Less-Flag
+my $d8VS='I62M7TOW';       my $clrf=1;my $fulf=0;my $argz='';$argz= join(' ',@ARGV) if(@ARGV);my $Stxt='';my $Smap='';my $folf=0; # add 4-Or-Less-Flag
 my $edVS=        '';       my $pg1f=0;   $pg1f=1 if($argz=~ /(^|\s)-?-?[^p]*p/i); # find -?p(age) flag2limit some extra long output to first 48-line page
 my $clmz=        80;       my $lpsf=0;   $lpsf=1 if($argz=~ /(^|\s)-?-?[^l]*l/i); # find -?LetrPrecursShortsFlag  # if MaXWordSize evr grOz,wil nEd2incrEs|Dtct
 my $linz=        24;       my $gm8f=0;   $gm8f=1 if($argz=~ /(^|\s)-?-?[^g]*g/i); # find -?g(m8r) flag2count&&adorn wi math 4mUl8ions stRting wi 2letr
@@ -218,8 +219,8 @@ if($gm8f){$Stxt.="${W}Gener8 gM8ria primes for names by$B 3$W segments (${Y}PreL
 # close   $log8                                or die "Can't close log 8PrimesSidestring.LiSt file handle: $!"; # try2wrItout prImz list for l8r sepR8 rFrNc
   my %jmap=('c'=> 0,'z'=> 1,'l'=> 2,'t'=> 3,'n'=> 4,'E'=> 5,'r'=> 6,'g'=> 7,'m'=> 8,'d'=> 9,'p'=>10,'v'=>11,'b'=>12,'s'=>13,'u'=>14,'C'=>15,'D'=>16,'L'=>17,
             'N'=>18,'R'=>19,'U'=>20,'V'=>21,'G'=>22,'f'=>23,'x'=>24,'B'=>25,'h'=>26,'k'=>27,'w'=>28,'I'=>29,'M'=>30,'P'=>31,'O'=>32,'S'=>33,'y'=>34);
-  my @jmls=(split(//,'czltnErgmdpvbsuCDLNRUVGfxBhkwIMPOSy'));%jmap=(); # cycl joystk dirz frm dn clokwIse around,mA nEd2reordr l8r loopz2kEp wInding?
-  my %sepm=();my $bwid=53;my $shsf=1;my $boff;my $jbnx;my $prlt;my $rosl;my $hbwd;my $stal;my $A=S('A');my $D=S('D');my $s=5;my $t=' ' x $s;
+  my @jmls=(split(//,'czltnErgmdpvbsuCDLNRUVGfxBhkwIMPOSy'));%jmap=();my $A=S('A');my $D=S('D'); # cycljoystkdirzfrm dn clkwIs aroun,mAnEd2rEordrl8rloopz4wIndz
+  my %sepm=();my $bwid=53;my $shsf=1;my $boff;my $jbnx;my $prlt;my $rosl;my $hbwd;my $stal;my $s=5;my $t=' ' x $s;my $bhwd=int($bwid/2);my %pwsf; #PrntdWzSoFar
   for   my $pndx (0..$#jmls){$jmap{$jmls[$pndx]}=$pndx;} # try2gNr8 rvrs lookup of pre-letters to indices
   for   my $wsiz (2..$mxws ){my @folk=sort(keys(%{$folc[$wsiz]})); # if disabling the suffixes, the percentage covered only bumps up to about 71% 926 shown
     for my $fndx (0..$#folk){my $curw=$folk[$fndx]; # should be able to set SHowSuffixFlag to zero to disable suffix inclusion again whenever easily now
@@ -241,90 +242,94 @@ if($gm8f){$Stxt.="${W}Gener8 gM8ria primes for names by$B 3$W segments (${Y}PreL
             else     {$jd8a[$jmap{$pltr}][++$jrnd] ='' if(length("$pfix "      . sS($jd8a[$jmap{$pltr}][$jrnd])) > $bwid && @{$jd8a[$jmap{$pltr}]} <  16);
               $jd8a[$jmap{$pltr}][$jrnd].="$z$pfix "           if($jrnd <  16 && length("$pfix") && # hopefully won't space ahead for l8, r8, g8, etc.
                                                                                  length("$pfix " . sS($jd8a[$jmap{$pltr}][$jrnd])) <= $bwid);}}}}}}
-  for   my $rndx (0..15){for my $jbnd (3.. 5){      $boff=  0;  $jbnx=$jbnd;
-      if     ($jbnx ==   3 && $rndx >= 11){$jbnx=14;$boff= 11;}
-      if     ($jbnx ==  14 && $rndx >= 12){$jbnx=17;$boff= 12;}
-      if     ($jbnx ==  17 && $rndx >= 13){$jbnx=21;$boff= 13;}
-      if     ($jbnx ==  21 && $rndx >= 14){$jbnx=25;$boff= 14;}
-      if     ($jbnx ==  25 && $rndx >= 15){$jbnx=29;$boff= 15;}
-      if     ($jbnx ==  29 && $rndx >= 16){$jbnx=29;$boff= 16;}                     # uplt tuLVBI => 3,14,17,21,25,29
-      if     ($jbnx ==   4 && $rndx >= 15){$jbnx=11;$boff= 15;}
-      if     ($jbnx ==  11 && $rndx >= 16){$jbnx=11;$boff= 16;}                     # up   nv     => 4,11
-      if     ($jbnx ==   5 && $rndx >= 11){$jbnx=15;$boff= 11;}
-      if     ($jbnx ==  15 && $rndx >= 12){$jbnx=18;$boff= 12;}
-      if     ($jbnx ==  18 && $rndx >= 13){$jbnx=20;$boff= 13;}
-      if     ($jbnx ==  20 && $rndx >= 14){$jbnx=26;$boff= 14;}
-      if     ($jbnx ==  26 && $rndx >= 15){$jbnx=31;$boff= 15;}
-      if     ($jbnx ==  31 && $rndx >= 16){$jbnx=31;$boff= 16;} $prlt=$jmls[$jbnx]; # uprt ECNUhP => 5,15,18,20,26,31
-      if     ($#{$jd8a[$jmap{ $prlt}]} >= abs($rndx-$boff)){    $rosl=$bwid-length( sS($jd8a[$jmap{$prlt}][abs($rndx-$boff)]));$rosl=0 if($rosl < 0);
-        $Stxt .= $jd8a[$jmap{ $prlt}][    abs($rndx-$boff)]  .  ' ' x $rosl;
-        $Stxt =~ s/\s{$rosl}$/ $W:$Y$jd8a[$jmap{$prlt}][$rndx-$boff]$W: / if( $jbnx ==  3 && $rndx == 13);}
-      elsif  ($rndx >= $boff && defined($jd8a[$jmap{$prlt}][abs($rndx-$boff)])){$Stxt.=$jd8a[$jmap{$prlt}][abs($rndx-$boff)];}
-      else   {$Stxt .= ' ' x  $bwid;}}  $Stxt  .= "\n";}
-  for   my $rndx (0..15){for my $jbnd (2,8,6){      $boff=  0;  $jbnx=$jbnd;
-      if     ($jbnx ==   2 && $rndx >= 15){$jbnx=12;$boff= 15;}
-      if     ($jbnx ==  12 && $rndx >= 16){$jbnx=12;$boff= 16;}                     #   lt lb     => 2,12
-      if     ($jbnx ==   6 && $rndx >= 15){$jbnx=10;$boff= 15;}
-      if     ($jbnx ==  10 && $rndx >= 16){$jbnx=10;$boff= 16;} $prlt=$jmls[$jbnx]; #   rt rp     => 6,10
-      if     ($#{$jd8a[$jmap{ $prlt}]} >= abs($rndx-$boff) && $jbnd != 8){$rosl=$bwid-length( sS($jd8a[$jmap{$prlt}][abs($rndx-$boff)]));$rosl=0 if($rosl < 0);
-        $Stxt .= $jd8a[$jmap{ $prlt}][    abs($rndx-$boff)]  .  ' ' x $rosl;}else{$Stxt.= ' ' x $bwid;}
-      if($jbnd == 8){$hbwd=int($bwid/2)+6     ;$stal= ' ' x  abs($hbwd- 7);
-                     $hbwd=int($bwid   -4) -$s;$stal= ' ' x (abs($hbwd-(($s*($s+1))-0))-8); # lots Xtra parNz
-          if   ($rndx == 0){$Stxt=~ s/\s{9}(\s{$hbwd})$/${M}Precursor${Y}Letters${c}in${G}8${D}DirectnsDown${C}CloCkwise$W:${Y}clnr${o}ztEg${G}m$z   /;}
-          if   ($rndx == 2){$Stxt=~ s/\s{8}(\s{$hbwd})$/$z$jmls[29]$R$jmls[21]$C$jmls[17]$M$jmls[11]$C$jmls[18]$R$jmls[20]$z$jmls[31] $1/;}
-          elsif($rndx == 3){$Stxt=~ s/\s{8}(\s{$hbwd})$/$B$jmls[25]$G$jmls[14]$o$jmls[ 3]$Y$jmls[ 4]$o$jmls[ 5]$G$jmls[15]$B$jmls[26] $1/;}
-          elsif($rndx == 4){$Stxt=~ s/\s{8}(\s{$hbwd})$/$M$jmls[12]$Y$jmls[ 2]$K$jmls[32]$r$jmls[34]$K$jmls[33]$Y$jmls[ 6]$M$jmls[10] $1/;}
-          elsif($rndx == 5){$Stxt=~ s/\s{8}(\s{$hbwd})$/$B$jmls[27]$G$jmls[13]$o$jmls[ 1]$Y$jmls[ 0]$o$jmls[ 7]$G$jmls[ 8]$B$jmls[24] $1/;}
-          elsif($rndx == 6){$Stxt=~ s/\s{8}(\s{$hbwd})$/$z$jmls[28]$R$jmls[22]$C$jmls[16]$M$jmls[ 9]$C$jmls[19]$R$jmls[23]$z$jmls[30] $1/;}
-          elsif($rndx == 7){$Stxt=~ s/\s{9}(\s{$hbwd})$/${z} ${z} ${z} ${K}O${r}y${K}S${z} ${z}  $z$1/;}
-          elsif($rndx == 8){$Stxt=~ s/\s{9}(\s{$hbwd})$/${Y}c${o}z${Y}l${o}t${Y}n${o}E${Y}r${o}g $z$1/;}
-          elsif($rndx == 9){$Stxt=~ s/\s{9}(\s{$hbwd})$/${M}d${C}D${M}b${C}L${M}v${C}N${M}p${G}m $z$1/;}
-          elsif($rndx ==10){$Stxt=~ s/\s{9}(\s{$hbwd})$/${R}G${G}s${R}V${G}u${R}U${G}C${R}f${C}R $z$1/;}
-          elsif($rndx ==11){$Stxt=~ s/\s{9}(\s{$hbwd})$/${B}k${z}w${B}B${z}I${B}h${z}P${B}x${z}M $z$1/;}
-          elsif($rndx ==13){$Stxt=~ s/\s{9}(\s{$hbwd})$/${C}L${o}t${Y}n${o}E${G}u${M}v${G}C${C}N $z$1/;} # add just2mAin dIamondz:y clnr dbvp:on botm3lInz
-          elsif($rndx ==14){$Stxt=~ s/\s{9}(\s{$hbwd})$/${K}O${Y}l${r}y${Y}r${M}b${r}y${M}p${K}S $z$1/;}
-          elsif($rndx ==15){$Stxt=~ s/\s{9}(\s{$hbwd})$/${C}D${o}z${Y}c${o}g${G}s${M}d${G}m${C}R $z$1/;}
-          if   ($rndx == 1){$Stxt=~ s/\s{$hbwd}$/$z $jmls[29]mpuls$jmls[29]veub $C$jmls[17]eft   $C$jmls[18]orth$jmls[18]ext $z$jmls[31]arry_u$jmls[31]$stal/;}
-          elsif($rndx == 2){$Stxt=~ s/\s{$hbwd}$/$z $jmls[29]$t$R$jmls[21]$t$C$jmls[17]$t$M$jmls[11]$t$C$jmls[18]$t$R$jmls[20]$t$z$jmls[31]$stal/;}
-          elsif($rndx == 3){$Stxt=~ s/\s{$hbwd}$/$z  $R$jmls[21]ital$jmls[21]ect  $M$jmls[11]ERSUS$jmls[11]ERT$jmls[11]APOR   $R$jmls[20]pfj$jmls[20]mp$z$stal/;}
-          elsif($rndx == 4){$Stxt=~
-            s/\s{$hbwd}$/$z $B$jmls[25]ack$jmls[25]egin$o RE$jmls[ 3]REA$jmls[ 3]OP $jmls[ 5]ast$jmls[ 5]nd $B$jmls[26]EALT$jmls[26]IG$jmls[26]OP$z    /;}
-          elsif($rndx == 5){$Stxt=~ s/\s{$hbwd}$/$z $B$jmls[25]$t$G$jmls[14]$t$o$jmls[ 3]$t$Y$jmls[ 4]$t$o$jmls[ 5]$t$G$jmls[15]$t$B$jmls[26]$stal/;}
-          elsif($rndx == 6){$Stxt=~ s/\s{$hbwd}$/$z       $G$jmls[14]PBJ$jmls[14]MP  $Y$jmls[ 4]OO$jmls[ 4]ORTH  $G$jmls[15]rash$jmls[15]eiling$z$stal/;}
-          elsif($rndx == 7){$Stxt=~
-            s/\s{$hbwd}$/$z $M$jmls[12]ACK$jmls[12]EFORE  $K$jmls[32]rigin  $jmls[33]tr8$jmls[33]tep   $M$jmls[10]ARRY$jmls[10]OKE$z   /;}
-          elsif($rndx == 8){$Stxt=~ s/\s{$hbwd}$/$z $M$jmls[12]$t$Y$jmls[ 2]$t$K$jmls[32]$t$r$jmls[34]$t$K$jmls[33]$t$Y$jmls[ 6]$t$M$jmls[10]$stal/;}
-          elsif($rndx == 9){$Stxt=~ s/\s{$hbwd}$/$z       $Y$jmls[ 2]EFT$r NEUTRAL$jmls[34]M$jmls[34]TO$jmls[34] $Y$jmls[ 6]IGHT$jmls[ 6]EACH  $z$stal/;}
-          elsif($rndx ==10){$Stxt=~
-            s/\s{$hbwd}$/$z $G$jmls[13]HIELD$jmls[13]IT$jmls[13]TAY     $Y$jmls[ 0]ROU$jmls[ 0]H $G$jmls[ 8]OUNT$jmls[ 8]IX    $z$stal/;}
-          elsif($rndx ==11){$Stxt=~ s/\s{$hbwd}$/$z $B$jmls[27]$t$G$jmls[13]$t$o$jmls[ 1]$t$Y$jmls[ 0]$t$o$jmls[ 7]$t$G$jmls[ 8]$t$B$jmls[24]$stal/;}
-          elsif($rndx ==12){$Stxt=~
-            s/\s{$hbwd}$/$z $B$jmls[27]EEP$jmls[27]NEEL   $o$jmls[ 1]EST$jmls[ 1]ONE  $jmls[ 7]O$jmls[ 7]ROUND  $B CRU$jmls[24]OL$z    /;}
-          elsif($rndx ==13){$Stxt=~ s/\s{$hbwd}$/$z $R$jmls[22]round$jmls[22]uard $M$jmls[ 9]IRECT$jmls[ 9]OWN $R$jmls[23]ORWARD$jmls[23]RONT  $z$stal/;}
-          elsif($rndx ==14){$Stxt=~ s/\s{$hbwd}$/$z $jmls[28]$t$R$jmls[22]$t$C$jmls[16]$t$M$jmls[ 9]$t$C$jmls[19]$t$R$jmls[23]$t$z$jmls[30]$stal/;}
-          elsif($rndx ==15){$Stxt=~
-            s/\s{$hbwd}$/$z $jmls[28]EST$jmls[28]8  $C$jmls[16]own$jmls[16]efen$jmls[16]rop   $C$jmls[19]ight  $z$jmls[30]ount$jmls[30]ove$z   /;}
-        }} $Stxt.="\n";}
-  for   my $rndx (0..15){for my $jbnd (1,0,7){      $boff=  0;  $jbnx=$jbnd; # try to squeeze "mdpv..." in lowr half of blok 7 lowr rItBlO "g" in top half
-      if     ($jbnx ==   7 && $rndx >=  6){$jbnx= 8;$boff=  6;}
-      if     ($jbnx ==   8 && $rndx >= 12){$jbnx=19;$boff= 12;}
-      if     ($jbnx ==  19 && $rndx >= 13){$jbnx=24;$boff= 13;}
-      if     ($jbnx ==  24 && $rndx >= 14){$jbnx=23;$boff= 14;}
-      if     ($jbnx ==  23 && $rndx >= 15){$jbnx=30;$boff= 15;}
-      if     ($jbnx ==  30 && $rndx >= 16){$jbnx=30;$boff= 16;}                     # dnrt gmRxfM => 7, 8,19,24,23,30  # swapd f && x ordr to taperoff betr
-      if     ($jbnx ==   0 && $rndx >= 15){$jbnx= 9;$boff= 15;}
-      if     ($jbnx ==   9 && $rndx >= 16){$jbnx= 9;$boff= 16;}                     # dn   cd     => 0, 9
-      if     ($jbnx ==   1 && $rndx >= 11){$jbnx=13;$boff= 11;}
-      if     ($jbnx ==  13 && $rndx >= 12){$jbnx=16;$boff= 12;}
-      if     ($jbnx ==  16 && $rndx >= 13){$jbnx=22;$boff= 13;}
-      if     ($jbnx ==  22 && $rndx >= 14){$jbnx=27;$boff= 14;}
-      if     ($jbnx ==  27 && $rndx >= 15){$jbnx=28;$boff= 15;}
-      if     ($jbnx ==  28 && $rndx >= 16){$jbnx=28;$boff= 16;} $prlt=$jmls[$jbnx]; # dnlt zsDGkw => 1,13,16,22,27,28
-      if     ($#{$jd8a[$jmap{ $prlt}]} >= abs($rndx-$boff)){    $rosl=$bwid-length( sS($jd8a[$jmap{$prlt}][abs($rndx-$boff)]));$rosl=0 if($rosl < 0);
-        $Stxt .= $jd8a[$jmap{ $prlt}][    abs($rndx-$boff)]  .  ' ' x $rosl;}
-      elsif  ($rndx >= $boff && defined($jd8a[$jmap{$prlt}][abs($rndx-$boff)])){$Stxt.=$jd8a[$jmap{$prlt}][abs($rndx-$boff)];}
-      else   {$Stxt .= ' ' x  $bwid;}}  $Stxt  .= "\n";}
-  $Stxt=sS($Stxt) unless($clrf);$Smap=$Stxt;o8($Stxt);$Stxt ='';
+  # while I will want to tabUl8 countz for each blok PL section thN subtract from sIz grup2stRt apNdng lFtOvrz in $M,mIt try cmpUtng && squEzng in2midmap 1st?
+  for   my $rndx (0..15){for my $prll (qw(t n E)){$prlt=$prll;$boff=  0; # cud frthr pRamEtrIz propag8d prOgrSn&&zOnsIzs,rthr than such manual
+      if         ($prlt eq 't' &&   $rndx >=  12){$prlt=  'u';$boff= 12;}
+      if         ($prlt eq 'u' &&   $rndx >=  13){$prlt=  'L';$boff= 13;}
+      if         ($prlt eq 'L' &&   $rndx >=  14){$prlt=  'V';$boff= 14;}                     # special substitute 29 I8 onto end of 25 B8
+      if         ($prlt eq 'V' &&   $rndx >=  15){$prlt=  'B';$boff= 15;}                     # uplt tuLVBI => 3,14,17,21,25,29
+      if         ($prlt eq 'n' &&   $rndx >=  14){$prlt=  'v';$boff= 14;}                     # up   nv     => 4,11
+      if         ($prlt eq 'E' &&   $rndx >=  12){$prlt=  'C';$boff= 12;}
+      if         ($prlt eq 'C' &&   $rndx >=  13){$prlt=  'N';$boff= 13;}
+      if         ($prlt eq 'N' &&   $rndx >=  14){$prlt=  'U';$boff= 14;}                     # special substitute 31 P8 onto end of 26 h8
+      if         ($prlt eq 'U' &&   $rndx >=  15){$prlt=  'h';$boff= 15;}                     # uprt ECNUhP => 5,15,18,20,26,31
+      if         ($#{$jd8a[$jmap{ $prlt}]} >= abs($rndx-$boff)){     $rosl=$bwid-length( sS($jd8a[$jmap{$prlt}][abs($rndx-$boff)]));$rosl=0 if($rosl < 0);
+        $Stxt     .= $jd8a[$jmap{ $prlt}][    abs($rndx-$boff)]   .  ' ' x $rosl;my $jltl=$bwid - $bhwd - 1; # set JoinedLineTailLength to pad blok end
+        $pwsf{$prlt}+=(scalar(split(/\s+/,sS($jd8a[$jmap{$prlt}][abs($rndx-$boff)])))+0);
+        if       ($rndx ==  15){if     ($prlt eq 'B' || $prlt eq 'h'){ # could regex chars together then LUT hash $1 into shared line PLz
+            if   ($prlt eq 'B'){$prlt='I';}
+            elsif($prlt eq 'h'){$prlt='P';}
+            $jltl= abs($jltl -     length(sS($jd8a[$jmap{$prlt}][0])));my $jlts= ' ' x $jltl;$pwsf{$prlt}+=scalar(split(/\s+/,sS($jd8a[$jmap{$prlt}][0])));
+            $Stxt =~            s/\s{$bhwd}$/$jd8a[$jmap{$prlt}][0]$jlts/;}}}
+      elsif      ($rndx >= $boff &&  defined($jd8a[$jmap{$prlt}][abs($rndx-$boff)])){$Stxt.=$jd8a[$jmap{$prlt}][abs($rndx-$boff)];
+        $pwsf{$prlt}+=(scalar(split(/\s+/,sS($jd8a[$jmap{$prlt}][abs($rndx-$boff)])))+0);}
+      else       {$Stxt .= ' ' x  $bwid;}} $Stxt  .= "\n";}
+  for   my $rndx (0..15){for my $prll (qw(l m r)){$prlt=$prll;$boff=  0; # ...mIt try cmpUtng && squEzng in2midmap 1st?
+      if         ($prlt eq 'l' &&   $rndx >=  14){$prlt=  'b';$boff= 14;}                     #   lt lb     => 2,12  # sepR8 hash per PL word rendered counters
+      if         ($prlt eq 'r' &&   $rndx >=  14){$prlt=  'p';$boff= 14;}                     #   rt rp     => 6,10
+      if         ($#{$jd8a[$jmap{$prlt}]}>=abs($rndx-$boff) && $prlt ne 'm'){$rosl=$bwid-length(sS($jd8a[$jmap{$prlt}][abs($rndx-$boff)]));$rosl=0 if($rosl<0);
+        $Stxt     .= $jd8a[$jmap{$prlt}][  abs($rndx-$boff)]  .  ' ' x $rosl;$pwsf{$prlt}+=(scalar(split(/\s+/,sS($jd8a[$jmap{$prlt}][abs($rndx-$boff)])))+0);}
+      else{$Stxt  .= ' ' x $bwid;}
+      if         ($prlt eq 'm'){$hbwd=int($bwid/2)+6     ;$stal= ' ' x  abs($hbwd- 7);
+                                $hbwd=int($bwid   -4) -$s;$stal= ' ' x (abs($hbwd-(($s*($s+1))-0))-8); # lots Xtra parNz
+          if     ($rndx ==  0 ){$Stxt=~ s/\s{9}(\s{$hbwd})$/${M}Precursor${Y}Letters${c}in${G}8${D}DirectnsDown${C}CloCkwise$W:${Y}clnr${o}ztEg${G}m$z   /;}
+          if     ($rndx ==  2 ){$Stxt=~ s/\s{8}(\s{$hbwd})$/${z}I${R}V${C}L${M}v${C}N${R}U${z}P $1/;} # IVLvNUP
+          elsif  ($rndx ==  3 ){$Stxt=~ s/\s{8}(\s{$hbwd})$/${B}B${G}u${o}t${Y}n${o}E${G}C${B}h $1/;} # ButnECh
+          elsif  ($rndx ==  4 ){$Stxt=~ s/\s{8}(\s{$hbwd})$/${M}b${Y}l${K}O${r}y${K}S${Y}r${M}p $1/;} # blOySrp
+          elsif  ($rndx ==  5 ){$Stxt=~ s/\s{8}(\s{$hbwd})$/${B}k${G}s${o}z${Y}c${o}g${G}m${B}x $1/;} # kszcgmx
+          elsif  ($rndx ==  6 ){$Stxt=~ s/\s{8}(\s{$hbwd})$/${z}w${R}G${C}D${M}d${C}R${R}f${z}M $1/;} # wGDdRfM
+          elsif  ($rndx ==  7 ){$Stxt=~ s/\s{9}(\s{$hbwd})$/${z} ${z} ${z} ${K}O${r}y${K}S${z} ${z}  $z$1/;}
+          elsif  ($rndx ==  8 ){$Stxt=~ s/\s{9}(\s{$hbwd})$/${Y}c${o}z${Y}l${o}t${Y}n${o}E${Y}r${o}g $z$1/;}
+          elsif  ($rndx ==  9 ){$Stxt=~ s/\s{9}(\s{$hbwd})$/${M}d${C}D${M}b${C}L${M}v${C}N${M}p${G}m $z$1/;}
+          elsif  ($rndx == 10 ){$Stxt=~ s/\s{9}(\s{$hbwd})$/${R}G${G}s${R}V${G}u${R}U${G}C${R}f${C}R $z$1/;}
+          elsif  ($rndx == 11 ){$Stxt=~ s/\s{9}(\s{$hbwd})$/${B}k${z}w${B}B${z}I${B}h${z}P${B}x${z}M $z$1/;}
+          elsif  ($rndx == 13 ){$Stxt=~ s/\s{9}(\s{$hbwd})$/${C}L${o}t${Y}n${o}E${G}u${M}v${G}C${C}N $z$1/;} # add just2mAin dIamondz:y clnr dbvp:on botm3lInz
+          elsif  ($rndx == 14 ){$Stxt=~ s/\s{9}(\s{$hbwd})$/${K}O${Y}l${r}y${Y}r${M}b${r}y${M}p${K}S $z$1/;}
+          elsif  ($rndx == 15 ){$Stxt=~ s/\s{9}(\s{$hbwd})$/${C}D${o}z${Y}c${o}g${G}s${M}d${G}m${C}R $z$1/;}
+          if     ($rndx ==  1 ){$Stxt=~ s/\s{$hbwd}$/$z ImpulsIveub ${C}Left   NorthNext ${z}Parry_uP$stal/;}
+          elsif  ($rndx ==  2 ){$Stxt=~ s/\s{$hbwd}$/$z I$t${R}V$t${C}L$t${M}v$t${C}N$t${R}U$t${z}P$stal/;}
+          elsif  ($rndx ==  3 ){$Stxt=~ s/\s{$hbwd}$/$z  ${R}VitalVect  ${M}vERSUSvERTvAPOR   ${R}UpfjUmp$z$stal/;}
+          elsif  ($rndx ==  4 ){$Stxt=~ s/\s{$hbwd}$/$z ${B}BackBegin$o REtREAtOP EastEnd ${B}hEALThIGhOP$z    /;}
+          elsif  ($rndx ==  5 ){$Stxt=~ s/\s{$hbwd}$/$z ${B}B$t${G}u$t${o}t$t${Y}n$t${o}E$t${G}C$t${B}h$stal/;}
+          elsif  ($rndx ==  6 ){$Stxt=~ s/\s{$hbwd}$/$z   ${G}uPBJuMPuSuRP$Y nOOnORTH $G CrashCeiling$z$stal/;}
+          elsif  ($rndx ==  7 ){$Stxt=~ s/\s{$hbwd}$/$z$M bACKbEFORE $K Origin  Str8Step  $M pARRYpOKE$z   /;}
+          elsif  ($rndx ==  8 ){$Stxt=~ s/\s{$hbwd}$/$z$M b$t${Y}l$t${K}O$t${r}y$t${K}S$t${Y}r$t${M}p$stal/;}
+          elsif  ($rndx ==  9 ){$Stxt=~ s/\s{$hbwd}$/$z   $Y lUllEFT$r NEUTRALyMyTOy$Y rIGHTrEACH  $z$stal/;}
+          elsif  ($rndx == 10 ){$Stxt=~ s/\s{$hbwd}$/$z$G sHIELDsITsOUTH   $Y cROUcH$G mOUNTmIX    $z$stal/;}
+          elsif  ($rndx == 11 ){$Stxt=~ s/\s{$hbwd}$/$z$B k$t${G}s$t${o}z$t${Y}c$t${o}g$t${G}m$t${B}x$stal/;}
+          elsif  ($rndx == 12 ){$Stxt=~ s/\s{$hbwd}$/$z$B kEEPkNEEL  $o zESTzONE  gOgROUND  $B CRUxOL$z    /;}
+          elsif  ($rndx == 13 ){$Stxt=~ s/\s{$hbwd}$/$z$R GroundGuard$M dIRECTdOWN$R fORWARDfRONT  $z$stal/;}
+          elsif  ($rndx == 14 ){$Stxt=~ s/\s{$hbwd}$/$z w$t${R}G$t${C}D$t${M}d$t${C}R$t${R}f$t${z}M$stal/;}
+          elsif  ($rndx == 15 ){$Stxt=~ s/\s{$hbwd}$/$z wESTw8 $C DownDefenDrop  $C Right $z MountMove$z   /;} }} $Stxt.="\n";}
+  for   my $rndx (0..15){for my $prll (qw(z c g)){$prlt=$prll;$boff=  0;
+      if         ($prlt eq 'g' &&   $rndx >=  6 ){$prlt=  'm';$boff=  6;}
+      if         ($prlt eq 'm' &&   $rndx >= 13 ){$prlt=  'R';$boff= 13;}
+      if         ($prlt eq 'R' &&   $rndx >= 14 ){$prlt=  'x';$boff= 14;}                     # special substitute 30 M8 onto end of 23 f8
+      if         ($prlt eq 'x' &&   $rndx >= 15 ){$prlt=  'f';$boff= 15;}                     # dnrt gmRxfM => 7, 8,19,24,23,30  # swpd f&&x ordr2tAperoffbetr
+      if         ($prlt eq 'c' &&   $rndx >= 14 ){$prlt=  'd';$boff= 14;}                     # dn   cd     => 0, 9
+      if         ($prlt eq 'z' &&   $rndx >= 12 ){$prlt=  's';$boff= 12;}
+      if         ($prlt eq 's' &&   $rndx >= 13 ){$prlt=  'D';$boff= 13;}
+      if         ($prlt eq 'D' &&   $rndx >= 14 ){$prlt=  'G';$boff= 14;}                     # special substitute 28 w8 onto end of 27 k8
+      if         ($prlt eq 'G' &&   $rndx >= 15 ){$prlt=  'k';$boff= 15;}                     # dnlt zsDGkw => 1,13,16,22,27,28
+      if         ($#{$jd8a[$jmap{ $prlt}]} >= abs($rndx-$boff)){     $rosl=$bwid-length( sS($jd8a[$jmap{$prlt}][abs($rndx-$boff)]));$rosl=0 if($rosl < 0);
+        $Stxt     .= $jd8a[$jmap{ $prlt}][    abs($rndx-$boff)]   .  ' ' x $rosl;my $jltl=$bwid - $bhwd - 1; # set JoinedLineTailLength to pad blok end
+        $pwsf{$prlt}+=(scalar(split(/\s+/,sS($jd8a[$jmap{$prlt}][abs($rndx-$boff)])))+0);
+        if       ($rndx ==  15){if     ($prlt eq 'f' || $prlt eq 'k'){ # could regex chars together then LUT hash $1 into shared line PLz
+            if   ($prlt eq 'f'){$prlt='M';$bhwd-=4;$jltl-=4;}
+            elsif($prlt eq 'k'){$prlt='w';}
+            $jltl= abs($jltl -     length(sS($jd8a[$jmap{$prlt}][0])));my $jlts= ' ' x $jltl;$pwsf{$prlt}+=scalar(split(/\s+/,sS($jd8a[$jmap{$prlt}][0])));
+            $Stxt =~            s/\s{$bhwd}$/$jd8a[$jmap{$prlt}][0]$jlts/;}}}
+      elsif      ($rndx >= $boff &&  defined($jd8a[$jmap{$prlt}][abs($rndx-$boff)])){$Stxt.=$jd8a[$jmap{$prlt}][abs($rndx-$boff)];
+        $pwsf{$prlt}+=(scalar(split(/\s+/,sS($jd8a[$jmap{$prlt}][abs($rndx-$boff)])))+0);} # 'm' off by 2 so maybe hackfix 2 just add xtraz below2compNs8?
+      else       {$Stxt .= ' ' x  $bwid;}} $Stxt  .= "\n";} my $ltot=0;for my $splz (split(//,'bcdfghklmprswmm')){$pwsf{$splz}++;} # shOlFtwrdcntzaftrmap4now
+  $Stxt.="${C}Remaining$B Left${o}Over$M Pre${Y}Letter$R Counts$z:  ";my %lowc; # setup reverse hash to preserve Left Over Word Countz of pdifz 2 sort by l8r
+  for   my $tmpl (sort(keys(%pwsf))){$pwsf{$tmpl}--;my $pdif=$lcnt[ b10($tmpl)] - $pwsf{$tmpl};
+    if($pdif){$ltot+=$pdif+1;$lowc{$pdif}.=$tmpl;}}#$Stxt.="$Y$tmpl$W:" . # sEmzlIk 1012/1369 wrdz prntd so far && matchz curNtly calQl8d rsltz
+  for   my $locv (sort {$a <=> $b} keys(%lowc)){ # now these loopz shud reordr by left over countz ascending nstd of alpha
+    for my $tmpl (sort(split(//,$lowc{$locv}))){$Stxt.=sprintf("$Y$tmpl$W:$M%d ",$locv);}} $Stxt.="  ${R}$t0tl $Y- $o$ltot $G= $B" . ($t0tl-$ltot);
+  $Stxt.=sprintf("$M %8.3f$C%%$K shown$W;\n$z",(($t0tl-$ltot)*100.0/$t0tl)); # try to wrap up total map printing with percentage shown in single page
+  $Stxt=sS($Stxt) unless($clrf || $Stxt eq 'h');$Smap=$Stxt;$Stxt=''; # 1pAg map curNtly listz about 1009/1369 = ~73.7% of tOtl 8-wordz now shOwn @once;
+        o8($Smap)     if($pg1f); # slightly repurpose the -p single Page option flag to show the -g 1-page map when gener8d rathr than Dflt @end,sinc focal;
   # maybe since most prefixes are longer also altern8 inward from both ends preferring more total chars culled for wider from top 8 solos or some thresh?
   # ..or actually resummarize all above thoughts to 1st prime 2 given to suffix outside-in R2L for ion then 2nd 3 given to permanently termin8 any further
   #   attempts to altern8 for now known complete suffix for almost 94% of all words, then try biggest in L2R altern8 out for prefixes until all accounted
@@ -401,7 +406,7 @@ if($fulf){$Stxt=~ s/\n?$/\n/;my %cvlz=reverse(%fulc);my @ccnt= sort { $a <=> $b 
           $w82o    .= ($char eq "\n") ? '\n' : $char;$pcnt++;} # belo was once trying some random colrz with: ,S(substr($cmap{'d8bo'},b64(int(rand(8))),1)));
       } $Stxt.=sprintf((' ' x ( 8-$pcnt))."$C$w82o$B:$M".sprintf("%7s$B: %s$W,\n",cma($coun),b8colr(sprintf("%4s",b64($coun)))));
     } } $Stxt.=sprintf("$C  Sum of$B: ${G}0$W..${G}7$W,${G}9$B: $M%s$o      dif$Y:$B%7s$W;$z",cma($sumn),cma($jus8-$sumn));}
-$Stxt=sS($Stxt) unless($clrf);o8($Stxt);o8("\n$Smap") if($gm8f && defined($Smap) && length($Smap));
+$Stxt=sS($Stxt) unless($clrf);o8($Stxt);o8("\n$Smap") if($gm8f && defined($Smap) && length($Smap) && !$pg1f);
 
 # 2du:gener8 all entries below into new d8a-struct && sepR8 ones for *t8(ion)? && *E8 as *iat(e|ion) ends, to then compare against loc8d 8-words 4 diffz 2add;
 #   rel8ively few results just for *z8 end... then maybe all these should load into hashes to match against l8st presently defined 8.txt 8-words 2sync or add;

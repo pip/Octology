@@ -1,5 +1,5 @@
 # HBQLISTV:know.ls crE8d by PipStuart <Pip@CPAN.Org> to duplic8 Dr. Jordan B. Peterson's Quora.Com answer of "40 most valuable things everyone should know";
-# $VERSION='0.0';$d8VS='I5LM1Pep'; # 2du:start chronicling Dr. Peterson's many topical videos with new section for post-title subject summaries or explor8ion;
+# $VERSION='0.0';$d8VS='I61MJPGC'; # 2du:start chronicling Dr. Peterson's many topical videos with new section for post-title subject summaries or explor8ion;
 0) Tell the truth.
 1) Do not do things that you hate.
 2) Act so that you can tell the truth about how you act.
@@ -171,3 +171,4 @@ HTTPS://YouTu.be/aBXd9YtBnMQ "UK: BRAVE New FAHRENHEIT 1984" # I5LM5LMI:12mins32
 HTTPS://YouTu.be/X3sOS1-hDhw "How men's issues show men's strength | Neg8ive Sum Game 2" # 34mins31secs of Alison emphasizing the cultiv8ion of self-reliance
 #  (resilience) rather than depriving those intended to be helped with form8ion of toxic-charity && rel8ing to several aspects of mental health && depression,
 #  potentially leading to suicidal iD8ion under distinct stressors && pressures. Ethical-charity should be orchestr8d on client assets rather than otherwise;
+HTTPS://YouTu.be/m4_WYWpZujc "Jordan Peterson Appears to be a Man of Good Character" # 23mins of SargonOfAkkad analyzing long character assassin8ion failure;
