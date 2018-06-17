@@ -20,7 +20,7 @@
 # 2du:rEthnk top stAg IDaz,rEordr bSt ItMz hEr,brk old ItMz dn&&bild bak up in2 stAgz cklstz,rE4m@ AgN in2 dNse 1pAg Year plan4 prep v1.0,eval sloc 4~/bin rm,
 #   contMpl8 cndid8z Xpndng2nXt sumb pAg4 192,mAB add r8ngz4cmplEtnS|valU|nEd2Bdistinct vs.combInabiliT|orig|novLT|plAyabl,plan morgmz&&dvlUtlz,
 A= # stil nEd2stuD&&XperimNt wi thEs taskz&&ordr l8r stuf&&mAB EvNtual plan4 8consistNt nIc dvl stAgz perYear,but XperimNt8ion mA nEd2rEmAn pRtofall until1.0;
-  a8:g aftr stuD grepz && mk new PCRE dflt nstd of SKpd altrn8ion meta-pRNz|pIpz,
+  a8:g aftr stuD grepz && mk new PCRE dflt nstd of SKpd altrn8ion meta-pRNz|pIpz (HTTPS://GitHub.Com/arsham/blush may also have fE8urez worth incorpor8ing),
   2du:8plc colr joymap&&apNd b8c b64 lFt,mAB trail NEUTRALy map letrz wi sAm colrd cntz,considr lFt 6 rowz nlc thN rIt 3 colm just r to limit map to top4,
   a8:reso colr like sumb,b8:(f(ct|ib)|(pr|su)m)z&&fixlonglInzhang&&mABmk just b64 pRam ndx of 48 pAgz2gNer8 && dflt b64 out,
   2du:8plc stuD && try adding mOde,prIme factorz,&&any othr good represent8ionz which may indic8 distinctions better than existing sumz,averagez,productz,etc,

@@ -6,7 +6,7 @@ se   nocp                     " nocompatible    - add  Vim NhancmNtz without str
 se    enc=utf-8               "     encoding    - was already loading utf-8 from current $LANG locale, && might need termencoding also if they diverge
 "se  fenc=utf-8               " fileencoding    - might needed this if ever trying LightLine + ALE with special chars from HTTPS://StaticO.GitHub.IO/vim3.html
 let  g:VERSION='0.0'
-let     g:d8VS='HBRLB2fx'     " d8VersionString - l8st significant upd8 to whole file was then
+let     g:d8VS='I6GMFmt8'     " d8VersionString - l8st significant upd8 to whole file was then
 let     g:vid8=system('d8')   " VimInit d8      - save d8 when this Vim session first stRtz up to use as dRk pRt at Nd of STatusLine just before bright upd8 d8
 let     g:cucf=1              " CUrsorColumFlag - flag to toggle whether :se cuc should be used (since dflt of it on gets slow whN lots of syntx hili on scrn)
 let     g:culb=1              " CUrsorLineBold  - flag to toggle whether :se cul below should use highlight with bold across whole line (dbl-mapd2Ctrl-L&&hls)
@@ -72,15 +72,16 @@ en
 "(([clisnoxv](un)?|un)m|map) cmdln,[ci],insrt-only,sele,norm,oper-pendng,visual,[sv] modes wi <(C|S|[AM])- for Ctrl,Shft,&&(Alt==Meta)    map  == all([nov])map
 " preceding mapped key wi <silent> tells Vim not to print msg when running cmd    exception sm==smagic (substitution) so use smap         map! == all( [ci])map
 " 2du:fix C-f 2Format again below && stuD which other Ctrl cmdz (or regularz like 'E') might be currently least used, next best onez to remap when needed;
-"map      F  !G perl -MText::Autoformat -e'$t=join(q(),<STDIN>);$t=autoformat($t,{squeeze=>0           });print $t'<CR>  " keep F finding char on line backward
-map    <C-f> !G perl -MText::Autoformat -e'$t=join(q(),<STDIN>);$t=autoformat($t,{squeeze=>0,right=>152});print $t'<CR>
+"map      F  !G perl -MText::Autoformat -e'$t=join(q(),<STDIN>);$t=autoformat($t,{squeeze=>0 origBlO152});print $t'<CR>  " keep F finding char on line backward
+map    <C-f> !G perl -MText::Autoformat -e'$t=join(q(),<STDIN>);$t=autoformat($t,{squeeze=>0,right=>158});print $t'<CR>
 " Normal-mode Noremap C-b ("Back" PgUp) to original B Back word (as opposite of W)    " HTTP://Vim.Wikia.Com/wiki/Mapping_fast_keycodes_in_terminal_Vim 4C-S-b?
 nn     <C-b> B
 "         B sAvz && Bakzup curNt EditFile    " above mapz fmt over Ctrl-Forward FullPageDown since I use C-d && C-u HalfPage mainly && want F to find backward
 map       B  :call SetStatusLineStyle()<CR>:w!<CR>:!bak %<CR><CR>
 "         U bakz && Upd8s  curNt EditFile in2 local ~/(lib|bin)/       " map ovrIdz Undo all changez to line since cursor moved into it (wich I don't use much)
 map       U  :call SetStatusLineStyle()<CR>:w!<CR>:!bak %<CR><CR>:!upd8 %<CR>
-"map      E JJj    " old map to quickly single-space dbl-spcd linez    " If you f<char> then ; && , will repeat the find (or Til) fwd && bak on the currentline
+"map      E  JJj   " old map to quickly single-space dbl-spcd linez    " If you f<char> then ; && , will repeat the find (or Til) fwd && bak on the currentline
+"map      E  A                   :<Esc>JJj                             " was briefly used to join up many distinct transl8ion descriptions with their quot8ions
 "         t insertz  `d8`  curNt date-time stamp (used 2 B PipTime)    " T below was orig like f<char> (find4wrd on curline) but srchng T<char> (unTil bakwrdz)
 map       t  :call SetStatusLineStyle()<CR>i<CR><Esc>k:r!d8<CR>k$:j!<CR>J
 "         T  upd8s   `d8`  in 1st d8VS='EBQLN3PS' lIn (shud B sAvng ai && ic,seting thM,rEplAcing d8,thN rEstOring thM) migr8d to a function now defined below

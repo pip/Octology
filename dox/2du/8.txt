@@ -1,5 +1,5 @@
 # D6RMF1V1:8.txt - by8Π : JAPH : K3wlD00d : 1337H4xr : PipStuart's Octology (hopefully eventually an Ontology of 8) - Convention, Conversion, && Categoriz8ion:
-# $VERSION='0.0';$d8VS='I5RMMiln'; # Octology attempts to rel8 the universe through medit8ion on mnemonic abbreV8ion (via 8-based  limit8ion) &&    elucid8ion.
+# $VERSION='0.0';$d8VS='I6BMBros'; # Octology attempts to rel8 the universe through medit8ion on mnemonic abbreV8ion (via 8-based  limit8ion) &&    elucid8ion.
 # CEBBICTI:Crossing Every Bridge Before I Come To It? I.e., not a d8 stamp. Trying to make my Dad's birthday (August 8th) more special by thinking 2far ahead?
 # Octology intends to pursue implic8ion && ramific8ion as substantE8ion for adequ8 particip8ion, if not also 2 oblig8ion toward implement8ion &&   promulg8ion.
 # Contribute to potential solutions to the "Value Alignment" problems formul8d around General Artificial Intelligence along with plausible God concerns also.
@@ -296,7 +296,7 @@ internationaliz8ion:tools to transl8 for I18N the document8ion && applic8ion int
              pN8   :winged or plume-shaped                     (from Botany)
            pinn8
            plic8   :being folded into pleats resembling a fan or some types of leaf
-         pullul8
+         pullul8   : # mAB add (al|fa)veol8 as deeply pitted with cell-like or honeycombed cavities   (from Botany) with 2 new *c8 && *n8 words (mAB 2 *r8 too)
        prolifer8
          brachE8   :having boughs or branches like arms, from brackium, branches in pairs, decuss8d   (from Botany)  or swinging from one hold to the next
           crisp8   :having a curled, ruffled, or waved appearance, as the margins of certain leaves   (from Botany)
@@ -304,8 +304,8 @@ internationaliz8ion:tools to transl8 for I18N the document8ion && applic8ion int
            clav8   :having the form or shape of a club, or growing gradually thicker toward the top   (from Botany)  && also club antenna (from Zoology)
             lyr8   :lyre-shaped or spatul8 && oblong as a leaf (from Botany) or like curv8ure in the tail of the blackcock, the lyre bird (from Zoology)
             laB8   :having limb of tubular corolla or calyx divided in unequal lip parts, like catnip (from Botany)  or to labialize or have lip-like parts
-          bilaB8
-         superB8   : # maybe add (in)?devirgin8 with 2 new *c8 && 2 *l8 words to keep "cln" 2nd group
+          bilaB8   : # maybe add        a?caud8 as having a tail or tail-like appendage, for Botany leaf shapes, or Biology brain part (with 2 new *p8 && *v8)
+         superB8   : # maybe add (in)?devirgin8 (with 2 new *c8 && *l8 words to keep "cln" 2nd group, && maybe 2 new *r8 also to keep 1st group 64 gr8r)
         invagin8   :  sheathed, to insert as in a sheath, to produce intussusception in, having one portion of hollow organ drawn back within another portion
          evagin8   :unsheathed, protruded, extended, or grown or turned inside out, as an evagin8 membrane, or to become or cause to be evagin8 without sheath
           vagin8   :invested with, or as if with, a sheath or vagina, such as that which wraps a stem (from Botany), or one invested by tubular base of a leaf
@@ -949,20 +949,20 @@ trachelobranchE8
           saliv8
          mastic8
          cultiv8   :farming && gardening (or project && forum) manager?
-         pollin8
-          veget8   :maybe gardening or like relax8ion
-            pot8o
+         pollin8   : # add plant8ion as land est8 cultiv8d for garden crop or orchard growth, or maybe MGTOW labor exploit8ion concepts (with new *E8 && *z8)
+          veget8   :maybe like gardening or relax8ion rel8d applic8ion to facilit8 approprE8 periods of down-time with minimal stress or worry after hard work
             tom8o
+            pot8o
        pomegran8
-        preserv8ion
-        conserv8ion
+        preserv8ion: # add preserv8ive as typically a chemical compound added to protect against injury, deterior8ion, or putrific8ion  (with new *d8 && *p8)
+        conserv8ion: # add conserv8ive as resistant to change, conventional,cautious,avoiding excess, or such social or political views (with new *d8 && *p8)
           divin8ion
            revL8ion:contempl8 Friedrich Schleiermacher's notion of revL8ory as every "original && new communic8ion of the Universe to man" && miracle events
         vaticin8   :to foretell, predict, prophesy, or reveal some form of valuable truth through divine inspir8ion, which appears to be supern8ural && holy
            vulg8   :Latin edition of Bible transl8d from Hebrew && Greek mainly by St. Jerome at end of 4th century, revised in 1592 for Roman Catholic Church
               f8ful:  fateful like fortuitous, tragic, or otherwise highly significant events that were destined to influence what would follow
               f8h  :"faith" religion, myths, miracles, && other supernatural belief-rel8d stuff which should probably be refuted && deb8d on basis of evidence
-              f8hful:faithful loyalty in adherence
+              f8hful:faithful loyalty in scrupulous behavioral adherence to found8ional principles of devout belief or otherwise honorably accepted agreement
          interf8h
          incarn8
        reincarn8
@@ -1046,7 +1046,7 @@ trachelobranchE8
           alleV8
            elim8
             obV8
-          oblig8   :maybe also oblig8ive && oblig8ory
+          oblig8   : # maybe also l8r add distinct oblig8ive && oblig8ory concepts (with 2 new *m8 words to keep "gm" 4th group together)
          instig8
         capitul8
         concilE8   : # both concilE8 && propitE8 may assoC8 closely with religious repR8ion concepts for sacrificial substitutions or other atonements
@@ -1055,7 +1055,7 @@ trachelobranchE8
             meD8   :conflict resolution
           negoC8
          negotE8
-         arbitr8
+         arbitr8   : # maybe add laud8or as obsolete legal term for arbitr8or or someone who communic8s high praise, an extoller (with new *p8 && *v8)
         pacific8ion
        mollific8ion
          resign8ion:                 maybe employee quitting tool
@@ -1398,8 +1398,8 @@ trachelobranchE8
      PontiusPil8           :Roman procur8or of Judea who ordered Y'shua (A.K.A. Jesus) to be crucified (according to Christian mythology, maybe not history)
   ParksAndRecrE8ion        :pretty intelligent && funny comedy show about small-town politics starring Amy Poehler && distractingly attractive Aubrey Plaza
        Colbertn8ion        :Stephen ColbertReport show back on ComedyCentral from before he took over the CBS l8Show, premiering on September 8th of 2015
-              n8Silver     :model math user with generally rL8ively accur8 prediction models (@NateSilver538 founder/editor-in-chief of FiveThirtyEight.Com)
-              r8chelMaddow :TRMS (TheRachelMaddowShow) as a slight, but deliber8, mispronunC8ion of the very bl8antly left-leaning MSNBC host's name
+              n8Silver     :@NateSilver538 FiveThirtyEight.Com Founder/EditorInChief I liked before ElonMusk attacks, sometimes accur8 math prediction models
+              r8chelMaddow :TRMS (TheRachelMaddowShow) as a slight, but deliber8, mispronunC8ion of the very bl8antly left-leaning MSNBC host's first  name
    GerardusMerc8or         :Flemish geographer who lived in Germany from 1512-1594 and invented the projection of maps of the globe which bears his surname
      Catherinez8aJones     :talented actress && fellow individual diagnosed with BiPolar Disorder, although I hope we both continue living well with it
            Colg8.Edu       :a priv8 top liberal arts university in Central New York St8, which had at one time 2,900 undergradu8 students pursuing 55 majors
@@ -4503,3 +4503,31 @@ for product size && quality versus pricing changes as discernible for luxury or 
 careful analysis of a gr8 set of d8a describing criminal sentencing disparities, being quite granular at the low end but then gravit8ing towards rel8ively
 uniform && convenient prison term dur8ions being judged approprE8 at the high end. Also coincident that sponsor Brilliant.Org uses 8 principles of learning;
 I5RMMPLR:HTTPS://YouTu.be/4sENTErdcds is 10mins30secs of powerfully sharp && inspir8ional physicist, Lisa Randall, addressing "Are there Extra Dimensions?";
+I64MFEED:HTTPS://YouTu.be/oFZe1NCyO6M is 15minutes of Thinking-Ape recommending avoidance of "essentializ8ion", which maybe l8r should be added to 8-words;
+I64MNGit:HTTPS://SlashDot.Org/comments.pl?sid=12185106&cid=56725134 has HTTPS://GitEa.IO/en-US && HTTPS://Gogs.IO altern8s to GitHub now being MicroSoft's;
+I6AMNorm:HTTPS://YouTu.be/n5WLNMX4COA "Slaying the Dragon" is 22minutes of AnEarForMen's PaulElam referencing PeterWright && LoveSick regarding supernormal
+stimuli. IRM = Inn8 Releasing Mechanisms, stereotyped (inherited psyche images) or open. CEM = Central Excit8ory Mechanisms. Three hypnotized human instinct
+domains: 1) Neoteny && parental, 2) Sexual && arousal, 3) Pair-bonding (secure && insecure). Super-responses can be harmful or addicting. Combat consciously;
+I6BMBros:On YouTube, I just subscribed to the 2009-crE8d, but newly activ8d channel of EricWeinstein (similarly smart brother of Bret, who had already been a
+favor8 of mine). Both are found8ional figures of the "Intellectual Dark Web" (whose original HTTP://IntellectualDark.WebSite URL is apparently down for now).
+While not yet able to loc8 the intended interpret8ion, I found it noteworthy (at least as another Octology coincidence) that Eric's user name is: "nobani88";
+I6CM8IDW:HTTPS://YouTu.be/cr0OX6ai4Qw is 19minutes of EricWeinstein elabor8ing on his deliber8ly "dark" naming of the IDW as an altern8 sense-making network;
+I6CMAIN5:HTTPS://YouTu.be/8SOQduoLgRw is 19minutes of JonHaidt's 2012 TED talk on common Harm&&Fairness concerns, but conserv8ive Ingroup,Authority,&&Purity;
+I6CMFREE:HTTPS://Quillette.Com/2018/06/10/giving-devil-due-freedom-inquiry-science-politics-inviolable is a very excellent new article by MichaelShermer that
+admirably defends free thought, speech, && inquiry starting with importance of allowing Holocaust denial && extending to many other realms of doubt && h8red;
+I6CMJune:Contempl8ing MythConV && ContraPoints indic8s maybe TransSexuals, the disabled, && men (plus real non-binary gendered?) now deserve higher valU8ion,
+since Lesbians seem to have always been mostly socially acceptable (or just toler8d, long ago?), but next Gay covered both genders (instead of Fag), so women
+assoC8 in all of LGBTQ (exclusively or partially), && now Fags too seem barely discrimin8d against anymore. The original "safe space" declar8ions were hardly
+the culturally approprE8d transform8ion that yielded current characteriz8ions as "free from offense" zones, but Fag shelters from violent assaults && abuses.
+They originally weren't just for emotionally fragile little snowflakes, as far as I can see. Also "trigger warnings" started as approprE8 cautionary messages
+for those still enduring severe traumatiz8ion (likely after clinical PTSD diagnosis), akin to epilepsy risk introductions preceding gr8 DubstepLyrics videos.
+BiSexual people seem to be generally received as normal within society now too. So I could very well be estim8ing rel8ive normalcy inaccur8ly, && am probably
+quite unwelcome attempting to meddle in the fraction8ion of identity politics && intersectional prioritiz8ion, by dismissing still bad homo-h8red && racism?;
+I6GMDARK:Recognizing that YouTube seems to be stagn8ing or deterior8ing, primarily when it comes to monetiz8ion, recommend8ion, filtr8ion, && comment8ing to
+name a few, maybe it would be worthwhile to investig8 whether some decentralized altern8ive video public8ion platform could be constructed that is primarily
+based on BitTorrent swarming propag8ion of subscribed video files to save && view locally on approprE8 peer's computing devices, rather than just streaming.
+It could be gr8 to facilit8 more elabor8 valU8ion r8ing systems (beyond just thumbs up or down) && maybe some sort of blockchain-like applic8ion could stand
+up to allow for decentralized convers8ions to become valid8d as authorit8ive consensus for far more complic8d threading or categoriz8ion of comments posted.
+If designed && implemented properly without any centraliz8ion, it could protect free speech more deliber8ly, as well as hopefully having trustworthy account
+username authentic8ion that is either corrobor8d to varying degree as held by some genuine public figure, is just any standard pseudonym, or is protected as
+carefully as is possible to remain permanently anonymous. The applic8ion name could be public8, syndic8, thE8r, ov8ion, or similar && incorpor8 don8 p8rons;

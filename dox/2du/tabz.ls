@@ -1,11 +1,25 @@
+I6CMBYMO: HTTP://YourMorals.Org # Seems rather old scientific survey site crE8d by JonathanHaidt among others, which might be worth particip8ing in some l8r;
+I6CMANRP: HTTPS://YouTube.Com/channel/UCeY3vg1r0KrvuyPOi7T39eA "RedPillInterviews" # AlexanderGraceful@GMail.Com usually inform8ive.RPGalaxy book maybe good;
+I6CMANEC: HTTP://ManEconomy.Com recommended by "BlackPigeonSpeaks" # Seems small && strangely a "safe space" for men funding men.U2b channel seems deriv8ive;
+I6CM8U2b: # Since it seems wasteful clutter to keep many tabz open mainly to evalU8 && track YouTube channels more l8r,I'm opting to list names here instead:
+# gr8 (almost assuredly already subscribed, but then merely in reverse tab order)[highly likely to agree strongly with or just be quite intrigued regarding]:
+  "An Ear for Men", "CosmicSkeptic", "Rationality Rules", "Jonathan Pageau" (Symbolism), "Pangburn Philosophy", "Liana K", # most gr8s are well-known, by now
+# good(probably as well already subscribed, or strongly considered to be candid8)[pretty likely to agree   mostly with or appreC8 significant aspects a lot]:
+  "The Here and How Podcast", "Colin's Last Stand: Side Quest", "Thinking-Ape", "ContraPointsLive", "Creationist Cat", # still could use further consider8ion
+# soso(probably so far uncompelling regarding dedic8ion for subscription content)[maybe  likely to agree somewhat with or consider  as rather curious a bit]:
+  "Mobile Mgtow" (much off-grid && SHtF prepping?), "MGTOW UNITED" (mainly rambling specul8ion but little substance), "BGS IBMOR" (MRA, but BlackManReform?),
+# odd (probably will not decide subscription ever to be worthy in top recommends)[maybe already subscribed to keep abreast of, even if unlikely to agree on]:
+  "New Thinking Allowed" (Parapsychology), "DeflatingAtheism" (mainly 1hour+ Christian apologetics?), "Thom Avella" (lefty consider8ion, not very academic?),
+# l8r (probably deserve further consider8ion before promoting above or rejecting)[maybe already subscribed though, to help prompt better determin8ion ahead]:
+  "Mark Thorsby" (Phenomenology), "hbomberguy" (liberal issues worse than ContraPoints?), "anarchopac" (leftist culture && ideologies?); # Seems enough 4now;
 I61M7DAt: HTTPS://YouTu.be/ccLzVKpGXQc # 15mins of Defl8ingAtheism dismantling r8ionalityRules attempt to debunk "Can't prove God doesn't exist". This was my
 # 1st memorable encounter with DA && while he's quite snide with contempt, his points seem logical. The channel likely deserves serious further consider8ion;
 I5QMECAT: HTTPS://CatIt.Com/flower-fountain-getting-started  # seems like a nice drinking device to consider ordering for feline friends, at around $30 each;
           HTTPS://Arbital.Com/p/bayes_frequency_diagram  # somewhat older interactive page that was probably referenced in Yudkowsky bias stuff or Brilliant;
 I5DMGerA: HTTPS://NYTimes.Com/2018/05/12/opinion/sunday/liberals-youre-not-as-smart-as-you-think-you-are.html  # noticed 1 of my heroes, Dr. Jordan Peterson,
 # tweeted this highly coincidental link to another NYTimes Opinion piece, but is more conspicuous with author Gerard Alexander (my-Dad's-1st my-middle-name);
-I59MAZED: HTTP://IntellectualDark.WebSite  # linked from Bari Weiss' following NYTimes Opinion piece titled "Meet the Renegades of the Intellectual Dark Web":
-          HTTPS://NYTimes.Com/2018/05/08/opinion/intellectual-dark-web.html  # might be behind a pay-wall, if 5 freebie promotional article views were used up
+I59MAZED: HTTP://IntellectualDark.WebSite  # linked from Bari Weiss' following NYTimesOpinion piece titled "Meet the Renegades of the Intellectual Dark Web":
+          HTTPS://NYTimes.Com/2018/05/08/opinion/intellectual-dark-web.html  # might be behind a pay-wall,if 5 freebie promotional article views were used up
 HAPM1WdN: chv0 Lt: GMail  /.  PerlMonks.Org  Reddit.Com/r/programming  News.YCombinator.Com  Vox.Com
 # chv0 Md https://github.com/ncw/rclone
           https://rclone.org
