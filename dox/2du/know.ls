@@ -192,6 +192,7 @@ HTTPS://YouTu.be/Wd6FgYbMffk "Western Civiliz8ion is Based on Judeo-Christian Va
 # st8d by Dr.JordanPeterson, BenShapiro, StevenCrowder, DennisPrager, JoeRogan, MiloYiannopoulos, RickSantorum, etc. using the l8 ChristopherHitchen's Razor:
 "That which can be asserted without evidence can be dismissed without evidence." # && then illumin8ing history && animal evidence against the poor arguments;
 HTTPS://YouTu.be/74pkrKfug5w "Watch Christopher Hitchens Predict Everything About Feminism In The 80s" # 13mins remarkably foretold toxic feminism && #MeToo;
+HTTPS://YouTu.be/JVCPN24Bz2w "Jordan Peterson VS Christopher Hitchens - Were The Nazis Atheists?" # 8mins23secs of lame Dr.P strawmen && gr8 Hitchens quotes;
 HTTPS://YouTu.be/1J3aFIut0Ro "Why Sam Harris Is Wrong About Religion (Response to his Rubin Report)" # I6GM9GOD:26mins14secs of OwenBenjamin comment8ing over
 # Harris for value in f8h && religion, elabor8ing that the Spanish Inquisition (maybe primarily as response for many hundred years of caliph8) had death-toll
 # estim8s of 2-5,000 total, spread across a few hundred years of Catholics subjug8ing many Jews && Muslims. The magnitude of cruel torture && death has been
@@ -281,8 +282,8 @@ f8h (feɪθ) n.
   5. complete confidence or trust in a person, remedy, etc
   6. any set of firmly held principles or beliefs
   7. allegiance or loyalty, as to a person or cause (esp in the phrases keep f8h, break f8h)
-  8. bad f8h insincerity or dishonesty
-  9. good f8h honesty or sincerity, as of intention in business (esp in the phrase in good f8h)
+  8. bad  f8h insincerity or dishonesty
+  9. good f8h   sincerity or    honesty, as of intention in business (esp in the phrase in good f8h)
 f8h (feɪθ) n.
   1. confidence or trust in a person or thing.
   2. belief that is not based on proof.
@@ -300,7 +301,7 @@ f8h (f[=a]th), n. to trust, to persuade. The ending th is perhaps due to the inf
    3. (Judeo-Christian Theol.)
       (a) The belief in historic truthfulness of the Scripture narr8ive, &&supern8ural origin of its teachings, sometimes called historical&&specul8ive f8h.
       (b) (Christian Theol.) The belief in the facts && truth of the Scriptures, with a practical love of them; especially, that confiding && affection8
-          belief in  the person && work of Christ,which affects the character && life,&& makes a man a true Christian,-- called a practical, evangelical,
+          belief in the person && work of Christ,which affects the character && life,&& makes a man a true Christian, -- called a practical, evangelical,
           or saving f8h.                                                                                                                 [1913 Webster     ]
             Without f8h it is impossible to please him [God].                                                         --Heb.  xi.     6. [1913 Webster     ]
             The f8h of the gospel is that emotion of the mind which is called "trust" or "confidence" exercised toward the moral character of God, &&
@@ -320,7 +321,7 @@ f8h (f[=a]th), n. to trust, to persuade. The ending th is perhaps due to the inf
    {Act    of f8h}. See {Auto-da-f['e]}.
    {Breach of f8h}, {Confession of f8h}, etc. See under {Breach}, {Confession}, etc.
    { f8h cure    }, a method or practice of treating diseases by prayer && the exercise of f8h in God.
-   {In   good f8h}, with perfect sincerity.                                                                                              [1913 Webster     ]
+   { In  good f8h}, with perfect sincerity.                                                                                              [1913 Webster     ]
 f8h interj. By my f8h; in truth; verily.                                                                                                 [1913 Webster     ]
 fecks n. A corruption of the word {f8h}. feculae                                                                      --         Shak  . [1913 Webster     ]
 f8h   n. # Lots of deliber8 reformatting && mostly minor content edits were performed above && below to yield desirably esthetic alignment of common details;
@@ -350,7 +351,7 @@ f8h Probity; good f8h is the very soul of contracts. f8h also signifies confiden
    system of beliefs, teaching, temperance, tenets, the f8h, theism, theological virtues, theology, tie, tradition, troth, true blue, true f8h, trueness,
    trust, vehemence, vener8ion, vow, warmth, warranty, well-grounded hope, willingness, word, word of honor, world view, worship, worshipfulness, zeal
 # Below were some l8r re-st8ments of notes && plans which were written prior to refining much of the above content organiz8ion, aggreg8ion, && present8ion;
-Probably should transcribe the given booklet's Chapter 3 section about things getting generally worse each year, to first refute school shootings as first
+Probably should transcribe the given booklet's Chapter 3 section about things getting generally worse each year, to begin refuting school shootings as first
 offered example, then gun deaths generally, then probably summarize && present Pinker's TED talk, then peruse HumanProgress.Org to hopefully at least convey
 skeptical counter-perspective on some claims. Then try to further investig8 deb8s about science or evolution requiring comparable f8h && distill down to
 something ready to be presented quickly && clearly. Then compile notes before summariz8ion of supposed best arguments for the existence of God && how anyone
@@ -897,3 +898,37 @@ this up again and another time thanks all right thank you thanks guys # So I hop
 # but hopefully the participants will surprise me with at least some of what they have to say, so I may learn a bit more && find all the effort enlightening.
 # Maybe after a few weeks or months of somewhat dedic8d explor8ion, I will reach a more confident place regarding what seems best for me to believe && why.
 # Then I should be able to tidy all this up as summariz8ions of whatever seems best to keep document8ion of before returning to Dr.Peterson && rel8d wisdom;
+HTTPS://YouTu.be/FS0mOV34f6k "Evolution Requires Blind f8h - Kent Hovind vs Atheist Bernie Dehler" # I6HMBf8h:4mins28secs of pretty lame claims transcribed;
+00:00 because you said that he gives religion or even evolution is religion and that upset a lot of atheist because they figure you know they want nothing to
+00:11 do with religion so I thought we'd talk about that for a little bit so I know you claim you like to throw out there that evolution and oh absolutely
+00:23 Everly you have to define two words in that sentence or what do you mean by evolution and what do you mean by religion standard dictionary definition
+00:29 of religion is a belief or belief system on how the world got here is kind of how there's many different religions in the world obviously how did we get
+00:39 here so it's something you believe as opposed to a science which is testable observable demonstrable in a laboratory for example evolution has six
+00:49 different meanings to the word I cover this in my seminar part four you'd have to have cosmic evolution the origin of time space matter you'd have to
+00:59 have chemical evolution the origin of all the chemicals then you'd have to have stellar evolution all the stars would have to evolve you'd have to have
+01:04 organic evolution life would has to start from nonliving material you'd have to have macro evolution where this life-form changed two different kinds
+01:11 of life and then you have Micro evolution which is changes within the kind like dogs and wolves probably have a common ancestor only number six on that
+01:23 list micro evolution is actually science all the other five are religious so when I use the word evolution I am not referring to minor variations within
+01:34 the same kind Darwin wrote a book called the Origin of Species the argument is really not about speciation it's about kinds where do the kinds come from
+01:42 there are 900 species of bats in the world they probably had a common ancestor right I put in six different sections totally unrelated categories all
+02:13 five of the top five are purely religious no one has ever seen a dog produce a non dog so that would be a no that way well do you believe dogs came from
+02:27 something ultimately that was non dog if you go back long enough far enough ago in time well and that you're welcome to believe that but that's my point
+02:38 that's a religious belief that's not scientifically observable we have humans having babies all the time and they're always human dogs have puppies all
+02:45 the time and they're always dogs my point is then it's not then it's not typical science look up the definition of science if science from their Latin
+03:01 words see or to know things that we know by observation testing experimentation can you do some observation to see an animal produce a different kind why
+03:10 would you believe it you believe a dog pointing something watch well you could see them grow you could you could document that that example you cannot
+03:31 see or document dogs coming from non dogs or dogs and bananas having a common ancestor that isn't nobody documents it well I could take a picture every
+03:44 day of my finger nails and probably I think three months it grows from cuticle to cutting length is typical for your fingernails in about six months for
+03:50 the toenails well this is where you have to first define what you mean by science and so I think the standard definition in any dictionary is going to be
+04:09 seer to know what do we know by observation experimentation and testing you don't you don't know that dogs came from this a common ancestor with tomatoes
+04:21 you can believe that but nobody knows that you can't know such a thing that's purely religious which is my point # It seems to be quite a stretch trying
+# to demonstr8 limit8ions on the amount of time scientific observ8ions can be made by using toenail growth as example, but the main point I want to extract out
+# of the above message was the supposed list of six different forms of evolution which all would need to have happened to produce life, since it sounds accur8
+# but each of the initial stages obviously are not biological or explained by n8ural selection. Once those are noted, I will probably delete lame transcript;
+HTTPS://YouTu.be/bn70wDllW38 "PragerU Says Atheists Have f8h in the Multiverse" # 11mins39secs of gr8 God f8h refut8ion by Drew of GeneticallyModifiedSkeptic;
+HTTPS://YouTu.be/iAmWNl0oswY "Jonathan Haidt Thinks New Atheists are Dogmatic (A Response)" # 10mins17secs of more gr8 GMS defense of atheists against Haidt;
+HTTPS://YouTu.be/iIfLTQAKKfg "Jordan Peterson's Most Pseudoscientific Claim Ever" # 11mins22secs of pulverizing Dr.P's specul8ion on m8ing snakes art as DNA;
+HTTPS://YouTu.be/aZ7l1klmen8 "Awful Objections to Anti-Theism" # 9mins37secs with Dr.P cameo then distinguishing theism opposition from just skeptic atheism;
+HTTPS://YouTu.be/6slrNtCOXMM "If Atheists ACTUALLY Acted Religious" # 5mins39secs of GM_Skeptic && friends excellent parody to show atheism is not a religion;
+HTTPS://YouTu.be/XpQUF0Sbw-4 'How does God get "Lost in Transl8ion"?' # 8mins35secs of ShannonQ challenging new interpret8ions, obfusc8ions, && complic8ions;
+HTTPS://YouTu.be/YNR5JCOZp0Q "THE RELIGION DEB8: Jew Ben Shapiro vs. Atheist Michael She[r]mer" # 23mins of good discussion of premises && topics of religion;
