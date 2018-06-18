@@ -1,4 +1,4 @@
-# F5VM5oZT:b8a.ls crE8d by PipStuart <Pip@CPAN.Org> to sepR8 Octology fE8ure priorities for scheduled milestone release goals;$VERSION='0.0';$d8VS='I5DM5Tau';
+# F5VM5oZT:b8a.ls crE8d by PipStuart <Pip@CPAN.Org> to sepR8 Octology fE8ure priorities for scheduled milestone release goals;$VERSION='0.0';$d8VS='I6IMEr8P';
 # Note:These goals should lean toward ambitious more than easy, yet be flexible enough to allow for needed adapt8ion && l8r revisions to upd8 main priorities;
 0.0 E=8sln:8psilon:HB8 WedNov 8th2017:~1Mnth from  HAD:d8 FriOct13th2017 saw initial public release, then spent following weeks tidying most glaring issues;
 0.0 Z= z8a:  zeta :I18 MonJan 8th2018:2Mnthz from 8sln:working know.ls mainly as new list of Dr. Jordan Peterson's advice, quotes, video links, && comments;
@@ -22,7 +22,7 @@
 A= # stil nEd2stuD&&XperimNt wi thEs taskz&&ordr l8r stuf&&mAB EvNtual plan4 8consistNt nIc dvl stAgz perYear,but XperimNt8ion mA nEd2rEmAn pRtofall until1.0;
   a8:g aftr stuD grepz && mk new PCRE dflt nstd of SKpd altrn8ion meta-pRNz|pIpz (HTTPS://GitHub.Com/arsham/blush may also have fE8urez worth incorpor8ing),
   2du:8plc colr joymap&&apNd b8c b64 lFt,mAB trail NEUTRALy map letrz wi sAm colrd cntz,considr lFt 6 rowz nlc thN rIt 3 colm just r to limit map to top4,
-  a8:reso colr like sumb,b8:(f(ct|ib)|(pr|su)m)z&&fixlonglInzhang&&mABmk just b64 pRam ndx of 48 pAgz2gNer8 && dflt b64 out,
+  a8:reso colr like sumb,b8:(f(ct|ib)|(pr|su)m)z&&fixlonglInzhang&&mABmk just b64 pRam ndx of 48 pAgz2gNr8 && dflt b64 out,
   2du:8plc stuD && try adding mOde,prIme factorz,&&any othr good represent8ionz which may indic8 distinctions better than existing sumz,averagez,productz,etc,
   a8:sS add optn2cnv SKpz in2 HTM, upd8 8plc -p to measure by linz,mkup new&&add gd gM8ria 4mz,Xtract sectnz in2 cnt8 && nw `8c` lIk wc,
   2du:8plc mv2 [ab]8 bin?,kEp thnkng altrn8 prIm bigSt string dismissal sets but permuting on several tops a few deep && mAB try oversight trial picking,
@@ -44,7 +44,7 @@ A= # stil nEd2stuD&&XperimNt wi thEs taskz&&ordr l8r stuf&&mAB EvNtual plan4 8co
   a8:mo as basic vim-like UTF8 colr ReadKey pager2push more than1page of dic,mn,lsd8,etc output in2,addmor -help,upd8 sumb,cmpIl orpie src,mknwTop8shotz&&push,
   f8:pal8 stRt SDL manager,upd8 top8 2hav dRk rgcw && brIter OP,pikTop64flet&&pr0gfIlzin.Hrc,XtNd pal8 2 64or of256,mk new 8let from tiglet->flet,
   dvl/**/*.pm new s/refcalls/isa/ like d8->w8,BaseCnv:UTF8,PT&&Simp:clEn,upd8POD,tst,pkg,
-  r8:mk all Elo varE8ionz for competitive ranked r8ingz d8a&&comput8ionz,
+  r8:mk all Elo varE8ionz for competitive ranked r8ingz d8a&&comput8ionz,Bgin rsrchng bSt gNral game-cNtric r8ing altern8iv optnz,stRt r8ing Ppl&&U2b chanLz,
   p8:getScreeps shrd[12] 60+,clEnJS,tst fmt utlz,port all c&&x,tst,doc&&msgJer,cmp auth wapi2cmdz,XtNd md8a,
   p8:mk gNeric qbix(+pakr) && ckm8 d8a && fIl mngmNt 2 B apRt from rNdrng,stRt gom8 Xpct gnugo,mk othr gmz .pmz as rEUsabl pRtz 4 mor l8r,
   U8:rEmk lrld as l8rm 2clEn.arc&&frEdrvspc,Xpct U2b8,frip,aguu alIn+acs,acs+instald,agi,mplr,

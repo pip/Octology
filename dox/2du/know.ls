@@ -198,6 +198,13 @@ HTTPS://YouTu.be/1J3aFIut0Ro "Why Sam Harris Is Wrong About Religion (Response t
 # estim8s of 2-5,000 total, spread across a few hundred years of Catholics subjug8ing many Jews && Muslims. The magnitude of cruel torture && death has been
 # broadly exagger8d, confl8d as somehow equivalent to millions massacred by effectively atheist dict8ors leading the most genocidal regimes through history.
 # Owen defends Dr.Peterson somewhat && provides rel8ively flimsy argument8ion that the West is inculc8d with Judeo-Christian values, which seems less clear;
+HTTPS://YouTu.be/bn70wDllW38 "PragerU Says Atheists Have f8h in the Multiverse" # 11mins39secs of gr8 God f8h refut8ion by Drew of GeneticallyModifiedSkeptic;
+HTTPS://YouTu.be/iAmWNl0oswY "Jonathan Haidt Thinks New Atheists are Dogmatic (A Response)" # 10mins17secs of more gr8 GMS defense of atheists against Haidt;
+HTTPS://YouTu.be/iIfLTQAKKfg "Jordan Peterson's Most Pseudoscientific Claim Ever" # 11mins22secs of pulverizing Dr.P's specul8ion on m8ing snakes art as DNA;
+HTTPS://YouTu.be/aZ7l1klmen8 "Awful Objections to Anti-Theism" # 9mins37secs with Dr.P cameo then distinguishing theism opposition from just skeptic atheism;
+HTTPS://YouTu.be/6slrNtCOXMM "If Atheists ACTUALLY Acted Religious" # 5mins39secs of GM_Skeptic && friends excellent parody to show atheism is not a religion;
+HTTPS://YouTu.be/XpQUF0Sbw-4 'How does God get "Lost in Transl8ion"?' # 8mins35secs of ShannonQ challenging new interpret8ions, obfusc8ions, && complic8ions;
+HTTPS://YouTu.be/YNR5JCOZp0Q "THE RELIGION DEB8: Jew Ben Shapiro vs. Atheist Michael She[r]mer" # 23mins of good discussion of premises && topics of religion;
 # I6GMESIJ:As a rather unintended && unrel8d explor8ion of a tangent straying away from top rules && wisdom worth knowing from Dr.Peterson && assoC8d figures,
 # && since I have been receiving increasingly regular visits to my apartment from a local Jehovah's Witness elder who has motiv8d me to become more educ8d on
 # deb8s about Christian apologetics versus agnostic atheism, arguments for the divine inspir8ion of the Bible && various transl8ions, as well as potentially
@@ -925,10 +932,3 @@ HTTPS://YouTu.be/FS0mOV34f6k "Evolution Requires Blind f8h - Kent Hovind vs Athe
 # to demonstr8 limit8ions on the amount of time scientific observ8ions can be made by using toenail growth as example, but the main point I want to extract out
 # of the above message was the supposed list of six different forms of evolution which all would need to have happened to produce life, since it sounds accur8
 # but each of the initial stages obviously are not biological or explained by n8ural selection. Once those are noted, I will probably delete lame transcript;
-HTTPS://YouTu.be/bn70wDllW38 "PragerU Says Atheists Have f8h in the Multiverse" # 11mins39secs of gr8 God f8h refut8ion by Drew of GeneticallyModifiedSkeptic;
-HTTPS://YouTu.be/iAmWNl0oswY "Jonathan Haidt Thinks New Atheists are Dogmatic (A Response)" # 10mins17secs of more gr8 GMS defense of atheists against Haidt;
-HTTPS://YouTu.be/iIfLTQAKKfg "Jordan Peterson's Most Pseudoscientific Claim Ever" # 11mins22secs of pulverizing Dr.P's specul8ion on m8ing snakes art as DNA;
-HTTPS://YouTu.be/aZ7l1klmen8 "Awful Objections to Anti-Theism" # 9mins37secs with Dr.P cameo then distinguishing theism opposition from just skeptic atheism;
-HTTPS://YouTu.be/6slrNtCOXMM "If Atheists ACTUALLY Acted Religious" # 5mins39secs of GM_Skeptic && friends excellent parody to show atheism is not a religion;
-HTTPS://YouTu.be/XpQUF0Sbw-4 'How does God get "Lost in Transl8ion"?' # 8mins35secs of ShannonQ challenging new interpret8ions, obfusc8ions, && complic8ions;
-HTTPS://YouTu.be/YNR5JCOZp0Q "THE RELIGION DEB8: Jew Ben Shapiro vs. Atheist Michael She[r]mer" # 23mins of good discussion of premises && topics of religion;
