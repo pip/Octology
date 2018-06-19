@@ -205,6 +205,11 @@ HTTPS://YouTu.be/aZ7l1klmen8 "Awful Objections to Anti-Theism" # 9mins37secs wit
 HTTPS://YouTu.be/6slrNtCOXMM "If Atheists ACTUALLY Acted Religious" # 5mins39secs of GM_Skeptic && friends excellent parody to show atheism is not a religion;
 HTTPS://YouTu.be/XpQUF0Sbw-4 'How does God get "Lost in Transl8ion"?' # 8mins35secs of ShannonQ challenging new interpret8ions, obfusc8ions, && complic8ions;
 HTTPS://YouTu.be/YNR5JCOZp0Q "THE RELIGION DEB8: Jew Ben Shapiro vs. Atheist Michael She[r]mer" # 23mins of good discussion of premises && topics of religion;
+HTTPS://YouTu.be/Ndw_ouz3rDE "If Atheists Argued Like Theists" # 4mins4secs of Drew illustr8ing tables turned (references books && people for l8r explor8ion);
+HTTPS://YouTu.be/xHXNJaqi2XA "An Atheist's Guide to Homosexuality in the Bible" # 8mins35secs of Drew describing interpret8ions of scripture rel8ing to gays;
+HTTPS://YouTu.be/ZklIM43axlQ "What You Lose by Being Religious | An Atheist's Response to Pascal's Wager" # 5mins51secs of Drew listing neg8ive costs of f8h;
+HTTPS://YouTu.be/p1PdswhKtXA '11 "unanswerable" questions for atheists - answered' # 18mins21secs of AronRa which I haven't viewed && contempl8d yet, but l8r;
+HTTPS://YouTu.be/Yc03ejsMkpQ "Losing My Religion: Abandoning Ideology" # 17mins36secs of WizardOfCause I also want to note here so I  can evalU8 properly l8r;
 # I6GMESIJ:As a rather unintended && unrel8d explor8ion of a tangent straying away from top rules && wisdom worth knowing from Dr.Peterson && assoC8d figures,
 # && since I have been receiving increasingly regular visits to my apartment from a local Jehovah's Witness elder who has motiv8d me to become more educ8d on
 # deb8s about Christian apologetics versus agnostic atheism, arguments for the divine inspir8ion of the Bible && various transl8ions, as well as potentially

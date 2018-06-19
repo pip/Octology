@@ -245,13 +245,13 @@ if($gm8f){$Stxt.="${W}Gener8 gM8ria primes for names by$B 3$W segments (${Y}PreL
                                                                                  length("$pfix " . sS($jd8a[$jmap{$pltr}][$jrnd])) <= $bwid);}}}}}}
   # while I will want to tabUl8 countz for each blok PL section thN subtract from sIz grup2stRt apNdng lFtOvrz in $M,mIt try cmpUtng && squEzng in2midmap 1st?
   for   my $rndx (0..15){for my $prll (qw(t n E)){$prlt=$prll;$boff=  0; # cud frthr pRamEtrIz propag8d prOgrSn&&zOnsIzs,rthr than such manual
-      if         ($prlt eq 't' &&   $rndx >=  12){$prlt=  'u';$boff= 12;}
+      if         ($prlt eq 't' &&   $rndx >=  11){$prlt=  'u';$boff= 11;}
       if         ($prlt eq 'u' &&   $rndx >=  13){$prlt=  'L';$boff= 13;}
       if         ($prlt eq 'L' &&   $rndx >=  14){$prlt=  'V';$boff= 14;}                     # special substitute 29 I8 onto end of 25 B8
       if         ($prlt eq 'V' &&   $rndx >=  15){$prlt=  'B';$boff= 15;}                     # uplt tuLVBI => 3,14,17,21,25,29
-      if         ($prlt eq 'n' &&   $rndx >=  14){$prlt=  'v';$boff= 14;}                     # up   nv     => 4,11
-      if         ($prlt eq 'E' &&   $rndx >=  12){$prlt=  'C';$boff= 12;}
-      if         ($prlt eq 'C' &&   $rndx >=  13){$prlt=  'N';$boff= 13;}
+      if         ($prlt eq 'n' &&   $rndx >=  13){$prlt=  'v';$boff= 13;}                     # up   nv     => 4,11
+      if         ($prlt eq 'E' &&   $rndx >=  11){$prlt=  'C';$boff= 11;}
+      if         ($prlt eq 'C' &&   $rndx >=  13){$prlt=  'N';$boff= 13;} # seems that N countz of 5 lFt is wrong since adding lIn only mkz 1 new, so why?
       if         ($prlt eq 'N' &&   $rndx >=  14){$prlt=  'U';$boff= 14;}                     # special substitute 31 P8 onto end of 26 h8
       if         ($prlt eq 'U' &&   $rndx >=  15){$prlt=  'h';$boff= 15;}                     # uprt ECNUhP => 5,15,18,20,26,31
       if         ($#{$jd8a[$jmap{ $prlt}]} >= abs($rndx-$boff)){     $rosl=$bwid-length( sS($jd8a[$jmap{$prlt}][abs($rndx-$boff)]));$rosl=0 if($rosl < 0);
@@ -321,7 +321,7 @@ if($gm8f){$Stxt.="${W}Gener8 gM8ria primes for names by$B 3$W segments (${Y}PreL
       if         ($prlt eq 'm' &&   $rndx >= 13 ){$prlt=  'R';$boff= 13;}
       if         ($prlt eq 'R' &&   $rndx >= 14 ){$prlt=  'x';$boff= 14;}                     # special substitute 30 M8 onto end of 23 f8
       if         ($prlt eq 'x' &&   $rndx >= 15 ){$prlt=  'f';$boff= 15;}                     # dnrt gmRxfM => 7, 8,19,24,23,30  # swpd f&&x ordr2tAperoffbetr
-      if         ($prlt eq 'c' &&   $rndx >= 14 ){$prlt=  'd';$boff= 14;}                     # dn   cd     => 0, 9
+      if         ($prlt eq 'c' &&   $rndx >= 13 ){$prlt=  'd';$boff= 13;}                     # dn   cd     => 0, 9
       if         ($prlt eq 'z' &&   $rndx >= 10 ){$prlt=  's';$boff= 10;}
       if         ($prlt eq 's' &&   $rndx >= 12 ){$prlt=  'D';$boff= 12;}
       if         ($prlt eq 'D' &&   $rndx >= 14 ){$prlt=  'G';$boff= 14;}                     # special substitute 28 w8 onto end of 27 k8
