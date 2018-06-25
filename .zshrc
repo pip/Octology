@@ -1,5 +1,5 @@
 # 381KF3RN:~/.zshrc by PipStuart <Pip@CPAN.Org>; nOt:I originallythotitbetr2rElymoronstndalOnXecutablUtlz than aliases||shL-scrpt funczDfynd inany .rc Bcuz4mer
-# $VERSION='0.0';$d8VS='I62MCTor'; # stAyavail2spwnd procSz wich hvOwn non-zsh sub-shL cfgz(eg,vim:!cln 127/7;perl`b64 1023`)sO I pland2port stufhEr2anew u8.pm
+# $VERSION='0.0';$d8VS='I6OMI4Uk'; # stAyavail2spwnd procSz wich hvOwn non-zsh sub-shL cfgz(eg,vim:!cln 127/7;perl`b64 1023`)sO I pland2port stufhEr2anew u8.pm
 #   butIhv rElIzd that c8.pm (inprep4 8sh)wilBAbl2pars .(ba|z)shrc fIlz2lOd thEz&&can mk thMavail2othr shLz bywrapng cmdz wiXpansionUtlz; lern LaunchPad/byobu,
 # 2du:cmNt unUsed aliases,add perVC autostRt nwlOcl`scrn`if!alredy in1,lern`autoload -z`&&sepR8hist,get pcre module&&anyUsefulothrz,
 #   bakon gN2:`em  scummvm`:2use nw"modern"theme4scummvm,add2[scummvm]sect of~/.scummvmrc(aftr runing scummvm once):themepath=/usr/share/games/scummvm/engines
@@ -341,6 +341,15 @@ alias    move='     mv';
 alias  attrib='   echo "Try chmod instead! ;) "'; # just print advice for this, since calling semantics are so different
 #lias    mutt='   mutt; ~/lib/Octology/f8/pal8/TIGSfAVS.pal8'; # mutt clears pal8 colors so at least restore favor8s afterward
 # Many of these Octology aliases should become special V8 via c8 coloriz8ion command wrappers or otherwise enhanced (&& simplified?) && unified funcs or cmdz:
+alias       0='echo 0 '; #       : # figure out good aliases for remaining numbers
+alias       1=' mpg321'; # m 321 :                audio-player
+alias       2=' mpg123'; # m 123 :                audio-player
+alias       3='   g3  '; #  g3   :         gst123 audio-player wrapped with Expect manipul8ion layer
+alias       4='echo 4 '; #       :
+alias       5='echo 5 '; #       :
+alias       6='echo 6 '; #       :
+alias       7='echo 7 '; #       :
+alias       9='echo 9 '; #       :
 alias       A='   a   ';
 alias       a='   asci'; #  a    :           asci
 alias    asci='   UTF8'; #       :                (renamed in U8 && bin)
@@ -501,15 +510,15 @@ alias    Ukey='echo -n "m c b : togl volMute Caption Bakgr colr [ U2b-hotKey ]; 
 p f n : Prevplayls toglFulsc Nextplayls (Escap=2exitf);  Lt Rt : bkwd 5secs (arowkyz) 4wrd 5secs;
 j k l : bkwd10secs toglpause 4wrd10secs (Space=2pause);   , .  : bkwd 1fram (ifpausd) 4wrd 1fram;
  0-9  : jump to N *10% playbak position (Home/End=0/9);   < >  : slow down< playbkspd >up> fastr;"';
-alias    ukey='echo -n "m c b:volu Muted toglCaptn Bakgr cycl;(Home/End= 0/9 2)> 0-9 :jmp% \$n*10 plabakpos =r8io %abs; < > :slow down< plabakspd >upup fast;
+alias    ukey='echo -n  "m c b:volu Muted toglCaptn Bakgr cycl;(Home/End= 0/9 2)> 0-9 :jmp% \$n*10 plabakpos =r8io %abs; < > :slow down< plabakspd >upup fast;
 j k l:bkwd 10sec toglpausd 10sec 4wrd<(Spacebar=pause2);Lt Rt:bkwd -5sec arrowkeys +5sec 4wrd; , . :bkwd -1frm whenpausd +1frm 4wrd;
 p f n:Prev plals toglFulsc plals Next<(Escapkey=exitf2);Dn Up:dec% -5vol arrowkeys +5vol %inc;"';
-alias    uky=' echo    "j k l:bkwd 10sec toglpausd 10sec 4wrd<(Spc=pausHmEnd0-9); 0-9 :jmp% \$n*10 plabakpos =r8io %abs;Lt Rt:bkwd -5sec +5sec 4wrd; < > :slow down< >upup fast;
+alias    uky=' echo     "j k l:bkwd 10sec toglpausd 10sec 4wrd<(Spc=pausHmEnd0-9); 0-9 :jmp% \$n*10 plabakpos =r8io %abs;Lt Rt:bkwd -5sec +5sec 4wrd; < > :slow down< >upup fast;
 p f n:Prev plals toglFulsc plals Next<(Escapekey=exitf2);m c b:volu Muted toglCaptn Bakgr cycl;Dn Up:dec% -5vol +5vol %inc; , . :bkwd -1frm +1frm 4wrd;"';
-alias    Uk='echo -en "${R}m$G c$K b$W :$B togl$M vol${R}Mute$G Caption$K Bakgr$C colr$Y [$G U2b$C-${R}hot${r}Key$Y ]$W;$M  Dn$G Up$W :$M lowr$C 5$Y%${w}vol$Y (${O}arow${r}kyz$Y)$G rais$C 5$Y%${w}vol$W;
-${M}p$C f$B n$W :$M Prev${P}play${c}ls$B togl${C}Fulsc$B Next${P}play${c}ls$Y (${O}Escap$W=${g}2${R}exit${C}f${Y})$W;$Y  Lt$R Rt$W :$B bkwd$C 5${M}secs$Y (${O}arow${r}kyz$Y)$R 4wrd$C 5${M}secs$W;
-${B}j$M k$R l$W :$B bkwd${G}10${M}secs$B togl${M}pause$R 4wrd${G}10${M}secs$Y (${M}Space$W=${g}2${M}pause$Y)$W;$B   ,$M .$W  :$B bkwd$O 1${c}fram$Y (if${M}pausd$Y)$R 4wrd$O 1${c}fram$W;
-$C 0$O-${R}9$W  :$Y jump$w to$r N$C *${G}10$Y%$O play${B}bak$P position$Y (${C}Home$Y/${R}End$W=${C}0$Y/${R}9$Y)$W;$M   <$G >$W  :$r slow$M down<$O play${B}bk${c}spd$G >up>$K fastr$W;"';
+alias    Uk='  echo -en "${R}m$G c$K b${W}:${B}togl${M}vol${R}Mute${G}Caption${K}Bakgr${C}colr${Y}[${G}U2b$C-${R}hot${r}Key${Y}]${W}${M}Dn$G Up${W}:${M}lowr${C}5${Y}%${w}vol${Y}(${O}arow${r}kyz${Y})${G}rais${C}5${Y}%${w}vol
+${M}p$C f$B n${W}:${M}Prev${P}pla${c}ls${B}togl${C}Fulsc${B}Next${P}pla${c}ls${Y}(${O}Esc${W}=${g}2${R}exit${C}f${Y})${W}${Y}Lt$R Rt${W}:${B}bkwd${C}5${M}secs${Y}(${O}arow${r}kyz$Y)${R}4wrd${C}5${M}secs
+${B}j$M k$R l${W}:${B}bkwd${G}10${M}sec${B}togl${M}pause${R}4wrd${G}10${M}sec${Y}(${M}Spc${W}=${g}2${M}pause${Y})${W}$B ,$M .$W :${B}bkwd${O}1${c}fram${Y}(if${M}pausd${Y})${R}4wrd${O}1${c}fram
+$C 0$O-${R}9$W :${Y}jump${w}to$r N${C}*${G}10${Y}%${O}play${B}bak${P}position${Y}(${C}Hm${Y}/${R}End${W}=${C}0${Y}/${R}9${Y})${W}$M <$G >$W :${r}slow${M}down<${O}play${B}bk${c}spd${G}>up${K}fastr${W};"'; # squEzdout most spaces so whole keymap now fitz 80x4 term dimNsions,c turns Captions off but!togl on,no b bkgrnd
 alias    uk='echo -en "${R}m$G c$K b$W:${M}volu$R Muted$B togl${G}Captn$K Bakgr$C cycl$W;$Y(${C}Home$Y/${R}End$W=$C 0$Y/${R}9$g 2$Y)$W>$C 0$O-${R}9$W :${O}jmp$Y%$G \$${r}n$C*${G}10$O pla${B}bak${P}pos$W =${R}r8io$Y %${P}abs$W;$M <$G >$W :${r}slow$M down<$O pla${B}bak${c}spd$G >upup$K fast$W;
 ${B}j$M k$R l$W:${B}bkwd$G 10${M}sec$B togl${M}pausd$G 10${M}sec$R 4wrd$W<$Y(${M}Spacebar$W=${M}pause${g}2$Y)$W;${Y}Lt$R Rt$W:${B}bkwd$g -${C}5${M}sec$O arrow${r}keys$G +${C}5${M}sec$R 4wrd$W;$B ,$M .$W :${B}bkwd$g -${O}1${c}frm$w when${M}pausd$G +${O}1${c}frm$R 4wrd$W;
 ${M}p$C f$B n$W:${M}Prev$O pla${c}ls$B togl${C}Fulsc$O pla${c}ls$B Next$W<$Y(${O}Escap${r}key$W=${R}exit${C}f${g}2$Y)$W;${M}Dn$G Up$W:${M}dec$Y%$g -${C}5${M}vol$O arrow${r}keys$G +${C}5${M}vol$Y %${G}inc$W;"'; # should consider making new 1-column Uk varE8ion which auto-resizes term @start && only needs rescaling2Bbig
@@ -863,7 +872,9 @@ tStc() { # tSt 8pal8 colrz (this is a very slow precursor to ~/bin/tstc since ma
 wh8() { # see which most basic 64 commands are what
   for B64N in 0 1 2 3 4 5 6 7 8 9 A B C D E F G H I J K L M N O P Q R S T U V W X Y Z a b c d e f g h i j k l m n o p q r s t u v w x y z '.' '_'; do
     if [[ "$#" -eq 0 ]]; then echo -n `S $B64N` ;fi # for every b64 char, on sepR8 lines used to: export A=`S A`;echo -n "$A A:";wh A;
-                              echo -n   "$B64N:";which $B64N;done} # not sure why somtImz`wh`will recursively Xpand alias pRamEterz while biltin`which`does not
+                              echo -n   "$B64N:";BNWH=`which $B64N`;echo -n "$BNWH           "; # may want to pass thru some perl substitutes && sprintf
+   #if [[ "$B10N" -eq 0 ]]; then echo;fi # may want to pass 64 into `b10` then maybe `q %` then write quick inverter from rows to columns util
+  done} # not sure why somtImz`wh`will recursively Xpand alias pRamEterz while biltin`which`does not
 goo() { w3m "HTTP://Google.Com/search?q=$1+$2+$3+$4+$5+$6+$7+$8"     ; } # should probably pass $@ =~ s/ /+/g; or something smarter than this
 mcp() { if [[ $# -gt 2 ]] && [[ ! -d ${$#} ]]; then    /bin/cp $@ .  ; return 0; fi; # adds a basic many-argument form of `cp` where all parameters are remote
                                                        /bin/cp $@    ; }             #   files to be copied into the current directory

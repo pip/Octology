@@ -1,5 +1,7 @@
-# E4TMAL2W:/home/pip/dox/2du/putr.txt - Pip's main document for detailing what computer hardware && rel8d equipment seems best to buy next.
-# ~/dox/putr/ contains more general computer hardware or software document8ion as well as my machine-specific directories && configur8ions.
+# E4TMAL2W:/home/pip/dox/2du/putr.txt - Pip's main document for detailing what computer hardware && rel8d equipment seems best to buy next;
+# ~/dox/putr/ contains more general computer hardware or software document8ion as well as my machine-specific directories && configur8ions;
+I6OMEPut: Phoronix.Com has a good comparison making me want an AMD Radeon RX Vega 64 (8GB) whenever I can start building a new desktop for future development.
+  Done May 2018, the configur8ion had an Asus Prime motherboard with Intel i7-8700K CPU, which I'll also want to swap out for some l8st new AMD Ryzen instead;
 I21LLHit: HTTPS://HardWare.SlashDot.Org/story/18/02/01/1810222/backblaze-hard-drive-stats-for-2017 considering stats on tens of thousands of hard drives indic8
   HGST (HitachiGlobalStorageTech) more reliable than other WesternDigital (since former bought by latter), && SeaGate maybe falls between (omiting outliers);
 H77MJYkw: Got nice Sony SXRD 50-Inch 1080i KDS-R50XBR1 TV with RCA RCRN04GZ R25947 4T25CX remote from Amanda. Maybe when Aku dies buy parts to fix && new snd

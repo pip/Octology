@@ -4,6 +4,7 @@
 #   Dtect -h with nO folOing Host srvr or --help 2prnt some Help txt from here B4 passing latter on2`dict`,accept&&highlight&&loop multiple word pRameterz,
 #   fix2hndl quotd spAcd pRamz2pass thru like `dict 'et cetera'`,Dtect&&auto-apNd comNtz4faild queriez,mk mode2fillin all old faild queriez&&mAB agreg8 thM2,
 #   demarc8 which 8-words are not yet in 8.txt top list (maybe with uc && spelling remaps like 'ci8'=>'C8','pi8'=>'P8','i8'=>'E8','u8'=>'U8', etc.),
+#     maybe for this part, just prefixes && pre-letters could be matched within ~/.log/8pc.ls instead of trying to load all of 8.txt similar either way,
 #   (if possible) it would be nice to eventually figure out how to enable zsh Tab-completion for dict to also work the same for both dic && just d alias too;
 #  `d card` has WordNet && FOLDoC,Jargon,VERA with 8 dFinitNz && '[Obs.]' before Webster in GCIDE
 #  `d flip` has FOLDoC

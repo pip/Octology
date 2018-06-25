@@ -456,7 +456,7 @@ internationaliz8ion:tools to transl8 for I18N the document8ion && applic8ion int
       politiciz8ion
      democratiz8ion
              sN8
-          feder8
+          feder8   : # add confeder8 maybe with new words for "cln" 2nd group to keep them exactly 64 behind 1st group of solo "r"
         urbaniz8ion:Baudrillard's 4th phenomenon in Simulacra && Simul8ion (also in 1st m8rix movie) that sepR8s humans so far from reality to cause aliN8ion
       gentrific8ion
        balkaniz8ion
@@ -473,7 +473,7 @@ internationaliz8ion:tools to transl8 for I18N the document8ion && applic8ion int
         columnE8ion:the usage of structural columns, or the descriptive layout pattern of any such usage of columnar edific8ions            (from Architecture)
           casem8   :bombproof chamber, usually of masonry, where cannons may fire through embrasures, or hollow molding chiefly in cornices (from Architecture)
            carE8   :a supporting column sculptured in the form of a draped female figure, also called caryatid                              (from Architecture)
-           vall8ion
+           vall8ion: # add arcU8 as forming or resembling an arch, bent or curved in the form of a bow, arced, with another *R8 && *V8 words for "RUV" group
      circumvall8ion
      contravall8ion
        sequestr8ion
@@ -525,7 +525,7 @@ internationaliz8ion:tools to transl8 for I18N the document8ion && applic8ion int
         perpetr8
           litig8   :maybe some tool primarily rel8d to legalities of software licenses, copyright, patents, intellectual property, etc.
          legisl8
-        adjudic8
+        adjudic8   : # add arrest8ion with new *E8 && *z8 (like galvaniz8ion) words for "Etz" group
        imprison8
        incarcer8
          deport8ion
@@ -669,7 +669,7 @@ internationaliz8ion:tools to transl8 for I18N the document8ion && applic8ion int
         optimiz8ion:maybe profiling or other mechanisms for optimizing code
      objectific8ion:Object Oriented programming tool (&& maybe summary of analysis on purportedly devaluing human bodies when seen as merely desirable objects)
          orient8   :2D/3D perspective gathering tool to show various zooms && pans to convey contextual position descriptively (even if abstractly)
-       encapsul8
+       encapsul8   : # add capsul8 && coarct8 as surrounded, enclosed, pressed together, crowded, str8ned, confined (from Zoology) with new *c8 *n8 && *E8 *z8
        instantE8   :object instantiation
          replic8   :make a separ8 copy             of an object
          duplic8
@@ -812,11 +812,12 @@ internationaliz8ion:tools to transl8 for I18N the document8ion && applic8ion int
         fibrill8   :making fine, irregular, rapid twitching movements, such as the convultions from within the chest of a p8ient suffering a heart-attack
          sphacL8   :medical term describing death, mortific8ion, undergoing necrosis, or becoming affected by gangrene
          suppur8   :to cause typically a sore or wound to ripen, fester, && gener8 pus which is discharged
+          ulcer8   : # add exud8 as usually liquid substance that oozes from plant or animal pores (like sweat), with new *p8 && *v8 words for "dpv" group
            larv8   :masked, concealed, obscure doubtful medical cases of disease
             rug8   :a fold, crease, or wrinkle, as in the lining of the stomach (from Biology)
              oP8   :opiate epidemic resources advoc8ing clean syringe practices (never shared), injection site steriliz8ion, avoiding Fentanyl, Xanax, && booze
             sed8
-           calm8ive
+           calm8ive: # add arct8ion as constriction of n8ural passage, as in constip8ion from inflamm8ion (from Biology), with new *E8 && *z8 words 4 "Etz" grp
         potentE8   :increase the effect of or act synergistically with a drug or a physiological or biochemical phenomenon, simply rendering as potent
        barbitur8   :organic compound having powerful soporific effect where overdose can be f8l, or something anodyne or calm8ive, causing some pacific8ion
       detoxific8ion
@@ -869,7 +870,7 @@ internationaliz8ion:tools to transl8 for I18N the document8ion && applic8ion int
            ovul8   :sex && fertility tracking tool
          lubric8
         consumm8
-         penetr8
+         penetr8   : # add excit8 with new *E8 && *z8 words for "Etz" group
          ejacul8
           copul8
           capaC8   :to become active sperm in the female reproduction system, so as to be able to penetr8 an ovum (from Biology)
@@ -1137,7 +1138,7 @@ trachelobranchE8
        liquific8ion: # maybe prepend add magnetiz8ion as the act of magnetizing or st8 of being magnetized as a physical property (with new *E8 && *t8 words)
          evapor8   :e-cigarette reviews && any rel8d safety d8a which can be aggreg8d for providing quality hardware && juice brand recommend8ions && cautions
         vaporiz8ion
-     crystalliz8ion
+     crystalliz8ion: # add solidific8ion && electrific8ion with 2 new *l8 && *n8 words for "cln" group
        calcific8ion
         catalyz8ion:causing chemical reaction to proceed more quickly by contacting the reactant(s) with another substance, like water to iron oxid8ion in air
          carbur8or :apparatus in which coal gas, hydrogen, or air is passed through or over a vol8ile hydrocarbon to confer or increase power (from Chemistry)
@@ -1260,7 +1261,6 @@ trachelobranchE8
           lacer8
          lacinE8   :finely slashed, fringed, or having fringed border, or cuts into deep, narrow, && irregular lobes (from Botany && Zoology)
          lancin8
-          ulcer8
      compassion8
      dispassion8
          bombin8
@@ -1269,16 +1269,16 @@ trachelobranchE8
            ulul8   :howl
          coagul8   :bleed (or more accur8ly the clotting process of blood in which a liquid thickens, curdles, or congeals && is transformed into a semisolid)
         stridul8   :make shrill creaking or musical sound by gr8ing together special body structures, often by many male insects like crickets && grasshoppers
-     intensific8ion
+     intensific8ion: # add (in)?flamm8ion with 2 new *g8 words for "gm" group
          aggrav8
            agit8
-          irrit8
           escal8
+          irrit8
          provoc8ion
         perturb8ion
         conturb8ion
-        flutter8ion
         tumultu8ion
+        flutter8ion
          frustr8
          humilE8
         exasper8
@@ -4540,3 +4540,5 @@ Apparently HTTPS://HookTube.Com provides access to every video edited by YouTube
 I6JMIP81:HTTPS://YouTu.be/M98YnTsa6N4 'How the Media is Screwing Up Coverage of "Gaming Addiction"' is 32minutes of LianaK lambasting New York Times bl8antly
 trying to stigmatize gamers, infl8 findings, promote advertisers, so fucking gross! Fuck Tiffany Hsu! "Avoidant compulsive disorder" better for <1-3%, not 9!
 World Health Organiz8ion described at least 1 Year str8 of compulsive videogaming impairing function, according to the praiseworthy CBC use of AssoC8d Press;
+I6NMIadd:foment8 imput8 incit8 wi *E8 && *z8 f(edera|ossi)liz8, (con)?gel8 wi *c8 ([ch]orn|dens|l(apid|ith)|oss|petr|vitr)ific8 && *n8, may need to s/$/ion/;
+I6NMLiv8:Regarding eventual v8 viii (Neo)?Vim clone, contempl8 maybe analyzing Beppu-san's nice Emacs plus Vim-emul8ion plugin && maybe potent spacebar menu;

@@ -6,7 +6,7 @@ se   nocp                     " nocompatible    - add  Vim NhancmNtz without str
 se    enc=utf-8               "     encoding    - was already loading utf-8 from current $LANG locale, && might need termencoding also if they diverge
 "se  fenc=utf-8               " fileencoding    - might needed this if ever trying LightLine + ALE with special chars from HTTPS://StaticO.GitHub.IO/vim3.html
 let  g:VERSION='0.0'
-let     g:d8VS='I6GMFmt8'     " d8VersionString - l8st significant upd8 to whole file was then
+let     g:d8VS='I6PM7Cw8'     " d8VersionString - l8st significant upd8 to whole file was then
 let     g:vid8=system('d8')   " VimInit d8      - save d8 when this Vim session first stRtz up to use as dRk pRt at Nd of STatusLine just before bright upd8 d8
 let     g:cucf=1              " CUrsorColumFlag - flag to toggle whether :se cuc should be used (since dflt of it on gets slow whN lots of syntx hili on scrn)
 let     g:culb=1              " CUrsorLineBold  - flag to toggle whether :se cul below should use highlight with bold across whole line (dbl-mapd2Ctrl-L&&hls)
@@ -90,6 +90,8 @@ map       t  :call SetStatusLineStyle()<CR>i<CR><Esc>k:r!d8<CR>k$:j!<CR>J
 "ap       T  :call SetStatusLineStyle()<CR>:if &ai<CR>let g:vcai=1<CR>el<CR>let g:vcai=0<CR>en<CR><CR>:se noai<CR>:if &ic<CR>let g:vcic=1<CR>el<CR>let g:vcic=0<CR>en<CR><CR>:se ic<CR>:if getline('.') !~ 'd8VS'<CR>kt<CR>en<CR><CR>:call setpos('.',[0,1,1,0])<CR>/d8VS=<CR>6lcw<CR><Esc>k:r!d8<CR>k$:j!<CR>Jx8h:if g:vcai<CR>se ai<CR>el<CR>se noai<CR>en<CR><CR>:if getline('.') !~ 'd8VS'<CR>echo "'t"<CR>en<CR><CR>:if g:vcic<CR>se ic<CR>el<CR>se noic<CR>en<CR><CR>
 map       T  :keepj     call Upd8VerS()<CR>
 " above command mode kt should set the mark similar to normal mode mt && ':ma(rk)? t' would also work with the space between
+"       gqvKV#*\= might be unbounds (but goto, q?, visual, K?, Visual, comment #, *?, \?, =?)
+"       C-ACKOVWX might be unbounds (but screen A, break C, spellchecK below, O does some awesome back thru files jumping, Visual, W has some submenu, X?);
 "       C-t key inserts `d8g` into both XOrg Primary && Clipboard buffers (EvN thO d8g already wrapz xclip 2 set Primary selection buffer itself)
 map    <C-t> :call SetStatusLineStyle()<CR>:r!d8g    <CR>"+YVD
 "       C-n should detect multi-window && du next C-w window like in vimdiff instead of just separ8 full bufferz (IDly cycl thru all wndwz of Ech bufr nXt lup)
@@ -102,6 +104,8 @@ map    <C-h> :call ToglCursorLineBold()<CR>:se   hls!<CR>
 nn     <C-l> :call ToglCursorLineBold()<CR>:se  list!<CR><C-l>
 map    <C-k>                               :se spell!<CR>
 "map   <C-m>                               :if &mouse != 'a'<CR>se mouse=a<CR>el<CR>se mouse= <CR>en<CR><CR>
+" I6PM7Cw8:temporarily sidelined Ctrl-H HiLightSearch togl wi curs bold for descriptive YouTu.be U2b URL squirter (mAB mvd below);
+map    <C-w> iHTTPS://YouTu.be/ " " # 18m ;<Left><Left><Left><Left><Left><Left><Left><Left><Left><Left><Left><Left>
 " above toglz List (show \t&&\n,keep stndRd scrn redraw wi nnoremap),checK spelling,C-m Dfalt <CR> tried togl mouse but probz ensue when shelling out
 "ap  <S-F12> :call SetStatusLineStyle()<CR>:if &mouse != 'a'<CR>se mouse=a<CR>el<CR>se mouse= <CR>en<CR><CR>  " My Ubuntu trapz S-F12 as VolumeUp B4 vim getzit
 "ap    <F12>                               :se paste!<CR>

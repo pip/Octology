@@ -208,8 +208,40 @@ HTTPS://YouTu.be/YNR5JCOZp0Q "THE RELIGION DEB8: Jew Ben Shapiro vs. Atheist Mic
 HTTPS://YouTu.be/Ndw_ouz3rDE "If Atheists Argued Like Theists" # 4mins4secs of Drew illustr8ing tables turned (references books && people for l8r explor8ion);
 HTTPS://YouTu.be/xHXNJaqi2XA "An Atheist's Guide to Homosexuality in the Bible" # 8mins35secs of Drew describing interpret8ions of scripture rel8ing to gays;
 HTTPS://YouTu.be/ZklIM43axlQ "What You Lose by Being Religious | An Atheist's Response to Pascal's Wager" # 5mins51secs of Drew listing neg8ive costs of f8h;
-HTTPS://YouTu.be/p1PdswhKtXA '11 "unanswerable" questions for atheists - answered' # 18mins21secs of AronRa which I haven't viewed && contempl8d yet, but l8r;
-HTTPS://YouTu.be/Yc03ejsMkpQ "Losing My Religion: Abandoning Ideology" # 17mins36secs of WizardOfCause I also want to note here so I  can evalU8 properly l8r;
+HTTPS://YouTu.be/qaa64Ol_wTg "Why Cant We h8 Men - TFF episode 84" # 7mins43secs of Fiamengo delivering the most amazing response to feminist opinion in WaPo;
+HTTPS://YouTu.be/h1Hqg3Yv0ug "PragerU Are The Dangerous People Teaching Your Kids (with Jordan Peterson!)" # 23mins of CrE8ionistCat undermining conserv8ive
+# "propaganda" gener8d by particularly rich donors to familiar sources && intended to favor a narr8ive aligned maybe not as much with free speech as claimed;
+HTTPS://YouTu.be/Ssf5XN5o9q4 "Steven Pinker vs Nick Spencer - Have science, reason, && humanism replaced f8h?" # 41m of better-moder8d strong pointed deb8ing;
+HTTPS://YouTu.be/p1PdswhKtXA '11 "unanswerable" questions for atheists - answered' # I6PM11QA:18m21s of AronRa soundly responding to rel8ively easy questions;
+HTTPS://YouTu.be/Yc03ejsMkpQ "Losing My Religion: Abandoning Ideology" # 17m36s where WizardOfCause smashes dogmatic sycophants of various prevalent stripes;
+HTTPS://YouTu.be/FS0mOV34f6k "Evolution Requires Blind f8h - Kent Hovind vs Atheist Bernie Dehler" # I6HMBf8h:4m28s of lame claims plucked from transcription;
+00:00 because you said that he gives religion or even evolution is religion and that upset a lot of atheist because they figure you know they want nothing to
+00:11 do with religion so I thought we'd talk about that for a little bit so I know you claim you like to throw out there that evolution and oh absolutely
+00:23 Everly you have to define two words in that sentence or what do you mean by evolution and what do you mean by religion standard dictionary definition
+00:29 of religion is a belief or belief system on how the world got here is kind of how there's many different religions in the world obviously how did we get
+00:39 here so it's something you believe as opposed to a science which is testable observable demonstrable in a laboratory for example evolution has six
+00:49 different meanings to the word I cover this in my seminar part four you'd have to have cosmic evolution the origin of time space matter you'd have to
+00:59 have chemical evolution the origin of all the chemicals then you'd have to have stellar evolution all the stars would have to evolve you'd have to have
+01:04 organic evolution life would has to start from nonliving material you'd have to have macro evolution where this life-form changed two different kinds
+01:11 of life and then you have Micro evolution which is changes within the kind like dogs and wolves probably have a common ancestor only number six on that
+01:23 list micro evolution is actually science all the other five are religious so when I use the word evolution I am not referring to minor variations within
+01:34 the same kind Darwin wrote a book called the Origin of Species the argument is really not about speciation it's about kinds where do the kinds come from
+01:42 there are 900 species of bats in the world they probably had a common ancestor right I put in six different sections totally unrelated categories all
+02:13 five of the top five are purely religious no one has ever seen a dog produce a non dog so that would be a no that way well do you believe dogs came from
+02:27 something ultimately that was non dog if you go back long enough far enough ago in time well and that you're welcome to believe that but that's my point
+02:38 that's a religious belief that's not scientifically observable we have humans having babies all the time and they're always human dogs have puppies all
+02:45 the time and they're always dogs my point is then it's not then it's not typical science look up the definition of science if science from their Latin
+03:01 words see or to know things that we know by observation testing experimentation can you do some observation to see an animal produce a different kind why
+03:10 would you believe it you believe a dog pointing something watch well you could see them grow you could you could document that that example you cannot
+03:31 see or document dogs coming from non dogs or dogs and bananas having a common ancestor that isn't nobody documents it well I could take a picture every
+03:44 day of my finger nails and probably I think three months it grows from cuticle to cutting length is typical for your fingernails in about six months for
+03:50 the toenails well this is where you have to first define what you mean by science and so I think the standard definition in any dictionary is going to be
+04:09 seer to know what do we know by observation experimentation and testing you don't you don't know that dogs came from this a common ancestor with tomatoes
+04:21 you can believe that but nobody knows that you can't know such a thing that's purely religious which is my point # It seems to be quite a stretch trying
+# to demonstr8 limit8ions on the amount of time scientific observ8ions can be made by using toenail growth as example, but the main point I want to extract out
+# of the above message was the supposed list of six different forms of evolution which all would need to have happened to produce life, since it sounds accur8
+# but each of the initial stages obviously are not biological or explained by n8ural selection. Once those are noted, I will probably delete lame transcript;
+# I6PM6PSI:Of course the shuffling of chronology for the above mostly waste of a text at least has title somewhat addressed by explor8ion of "f8hs" early l8r;
 # I6GMESIJ:As a rather unintended && unrel8d explor8ion of a tangent straying away from top rules && wisdom worth knowing from Dr.Peterson && assoC8d figures,
 # && since I have been receiving increasingly regular visits to my apartment from a local Jehovah's Witness elder who has motiv8d me to become more educ8d on
 # deb8s about Christian apologetics versus agnostic atheism, arguments for the divine inspir8ion of the Bible && various transl8ions, as well as potentially
@@ -230,16 +262,16 @@ place, as in heaven, also on earth." (Matthew 6:10) As we will see l8r in this b
 itself will replace all of them. (Read Daniel 2:44.) Then God's Kingdom will usher in an earthly paradise." # Curious of why JW denomin8ion is nontrinitarian;
 # So there's a lot that could be delved further into there && contended against eventually, but my initial thoughts, plans, notes, && ideas are formul8d next;
 Regarding world potentially becoming more dangerous year by year: John's first example was school shootings, so probably investig8 prevalence of such shootings
-in U.S. && other western societies schools over time, mass shootings in general, && global gun f8alities all together probably providing sound refut8ion there.
+in U.S. && other western societies schools over time, mass shootings in general, && global gun f8lities all together probably providing some refut8ion there.
 Then recommend HumanProgress.Org && Steven Pinker's TED talk from April 2018, published to YouTube on May 21st, titled "Is the world getting better or worse?
-A look at the numbers" as a good present8ion on optimism about progress. By his 10 measured areas: 1) Life, 2) Health, 3) Sustenance, 4) Prosperity, 5) Peace,
-6) Freedom, 7) Safety, 8) Knowledge, 9) Leisure, 10) Happiness, maybe improvement is mostly steady. Concede that even if life could be said to get worse each
+A look at the numbers" as a good present8ion on optimism about progress. By his 10 measured areas: 0) Life, 1) Health, 2) Sustenance, 3) Prosperity, 4) Peace,
+5) Freedom, 6) Safety, 7) Knowledge, 8) Leisure, 9) Happiness, improvement is mostly slow && steady. Concede that even if life could be said to get worse each
 year, it doesn't seem clear that would indic8 s8n staying in power either though, or sin && suffering necessarily prevailing generally. Might be a finer point.
 Then contempl8 accus8ion that belief in evolution requires f8h in the same (or sufficiently similar) fashion as belief in God does. Initially contend that the
 amount of objective evidence in support of each, && therefore reasons to believe, are not comparable. Further explore his contention that there remains some
 degree of inadequ8 evidence for adapt8ion producing observed varE8ion between sepR8 species (if that's what he meant?), beyond just modific8ion of each alone;
 So maybe initial definitions should be evalU8d, exploring the referenced verse about f8h concerning expect8ion && hope, but also incorpor8ing holding beliefs
-without any reason (blind) or bolstered by various degrees of evidence as increasingly reliable in ability to accur8ly predict outcomes in some useful fashion.
+without any reason (blind) or bolstered by various degrees of evidence as increasingly reliable in ability to accur8ly predict outcomes in some useful manner.
 Then delve into recognition of distinctions between micro && macro evolution (which I earlier described as drift versus emergent attribute adapt8ion), which
 may also be characterized descriptively as individu8ion versus speC8ion, on a somewhat broader scale. Evidence seems to be compounding ongoingly for the best
 estim8s we have for dur8ion of existence of our universe, sun, planet, && life-forms, as well as indic8ions that both forms of evolution are likely to have
@@ -257,26 +289,26 @@ Berean Literal           Bible:Now f8h is  the    assurance       of     things 
 NewAmerican    Standard  Bible:Now f8h is  the    assurance       of     things    hoped for,    the  conviction of     things                not       seen.
         KingJames        Bible:Now f8h is  the    substance       of     things    hoped for,    the  evidence   of     things                not       seen.
 Christian      Standard  Bible:Now f8h is  the     reality        of   what is     hoped for,    the     proof   of                what is    not       seen.
-Contemporary    EnglishVersion:    F8h makes  us    sure          of   what     we hope  for && gives us proof   of                what we cannot       see .
+Contemporary    EnglishVersion:    f8h makes  us    sure          of   what     we hope  for && gives us proof   of                what we cannot       see .
 GoodNews       Transl8ion     :To have f8h is to be sure          of the things we hope  for, to  be  certain    of the things          we cannot       see .
 HolmanChristianStandard  Bible:Now f8h is  the    reality         of   what is     hoped for,    the     proof   of                what is    not       seen.
 NET                      Bible:Now f8h is being     sure          of   what     we hope  for, being   convinced  of                what we do not       see .
 NewHeart        English  Bible:Now f8h is being  confident        of   what     we hope  for,         convinced about   things          we do not       see .
 NewAmerican    Standard   1977:Now f8h is  the    assurance       of     things    hoped for,    the  conviction of     things                not       seen.
-Jubilee              2000Bible:    F8h,therefore,is the substance of     things w8d      for,    the  evidence   of     things                not       seen.
+Jubilee              2000Bible:    f8h,therefore,is the substance of     things w8d      for,    the  evidence   of     things                not       seen.
         KingJames    2000Bible:Now f8h is  the    substance       of     things    hoped for,    the  evidence   of     things                not       seen.
 AmericanKingJames      Version:Now f8h is  the    substance       of     things    hoped for,    the  evidence   of     things                not       seen.
 American       StandardVersion:Now f8h is         assurance       of     things    hoped for, a       conviction of     things                not       seen.
 Darby          Transl8ionBible:Now f8h is [the]   substantE8ing   of     things    hoped for,   [the] conviction of     things                not       seen.
          RevisedEnglishVersion:Now f8h is  the    assurance       of     things    hoped for,    the     proving of     things                not       seen.
+Douay-Rheims             Bible:Now f8h is  the    substance       of     things to be hoped for, the  evidence   of     things that    appear not           .
 Webster's      Transl8ionBible:Now f8h is  the    substance       of     things    hoped for,    the  evidence   of     things                not       seen.
 World           English  Bible:Now f8h is         assurance       of     things    hoped for,            proof   of     things                not       seen.
+God'sWord®     Transl8ion     :    f8h            assures   us    of     things we expect    &&       convinces us of the existence of things we cannot see .
+WeymouthNewTestament          :Now f8h is a well-grounded assurance of that for which we hope, && a conviction of the reality of things which we do not see .
 International  StandardVersion:Now f8h is  the    assurance       that what     we hope  for will come about && the certainty that what we cannot see exists.
-God'sWord®     Transl8ion     :    F8h            assures   us    of     things we expect    &&       convinces us of the existence of things we cannot see .
-Douay-Rheims             Bible:Now f8h is  the    substance       of     things to be hoped for, the  evidence   of     things that    appear       not     .
-WeymouthNewTestament          :Now f8h is a well-grounded assurance of that for which we hope,&& a conviction of the reality of things which  we do not see .
+NewLiving      Transl8ion     :    f8h is  the   confidence       that what we hope  for will actually happen;it gives us assurance about things we cannot see.
 Young'sLiteral Transl8ion     :And f8h is                         of     things    hoped for  a       confidence,of    matters         not seen a conviction,
-NewLiving      Transl8ion     :    F8h is  the   confidence       that what we hope  for will actually happen;it gives us assurance about things we cannot see.
 Aramaic  inPlainEnglish  Bible:Now f8h is  the   conviction concerning those things that are in hope, as if it were these things in action, && the revL8ion
                                                                                                                  of those things   that are           unseen;
 f8h (fāth) n. # These collections of definitions were copy/pasted from HTTPS://TheFreeDictionary.Com search results with reformatting && a few minor edits;
@@ -368,8 +400,28 @@ offered example, then gun deaths generally, then probably summarize && present P
 skeptical counter-perspective on some claims. Then try to further investig8 deb8s about science or evolution requiring comparable f8h && distill down to
 something ready to be presented quickly && clearly. Then compile notes before summariz8ion of supposed best arguments for the existence of God && how anyone
 can be confident the Bible is His word, as the 2 fundamental issues I indic8d seemed most critical to attempt to explore, discuss, && resolve before others;
-HTTPS://TheBigConversation.Show/podcast "The Unbelievable? Podcast" # 1hour22mins46secs as 4th podcast listed (maybe about 6mins longer than Enlightainment);
-HTTPS://YouTu.be/A48zsMFodG4 "Ed Feser Deb8s Arif Ahmed on 5 Proofs of the Existence of God" # 1hour17mins of Dec.8th,2017 deb8 that's maybe "Unbelievable?";
+HTTPS://YouTu.be/NL4uBOA9Dnk "Always Check the Label!" # I6PMLabl:8m of ShannonQ with good represent8ion of mental schem8a lent to misapplic8ion of labeling.
+# I'm totally deferring particip8ion or evalU8ion in several initially seeming lackluster deb8s, thinking more of r8ing design8ing kinds of label affilE8ion.
+# I may have a shifting assoC8ion with any label derived from any distinct synonym or particular definition for f8h, as is under present8ion just here above;
+# I suspect that my two primary questions of how && why to believe God of Yisrael exists && that modern Bible transl8ions are His inerrant Word... are really
+#   just a distill8ion into something like "Modern Bibles are the best proof of Yisrael's God's perceived influence, involvement, && maybe somehow inerrancy"
+#   such that there must remain scarcely any new opportunities to witness acts of any possibly recognizable gods or God, if any exist sufficiently beyond
+#   inculc8d && indoctrin8d imagin8ions. An observable (even if unapproachable) god, or not by sight but verifiable as somehow conspicuously && ongoingly
+#   active in some part of our physical universe, then time would accumul8 commonality of accounts vouching for some actual deity performing in Mothern8ure.
+# Contempl8ing the probably progressively increasingly accur8 estim8ions for the age of our universe, star, plan8, && life contrasting anachronistic crE8ion
+#   accounts complic8ing the word "Day", as conveniently taking symbolic mythical meaning once literal interpret8ion has become sufficiently contradicted.
+# Then maybe it was always necessarily a fable in a form our minds could identify with, even if a Day makes no sense without our plan8 rot8ing to our Sun?
+# Maybe trying Ayahuasca carefully sometime could at least reveal some biased to similar description framing around a communal && subjective transcendence?
+# So I think I'm leaning strongly on labels: agnostic atheist, && freshly on anti-theist, with secular humanist, r8ionalist, skeptic, mythicist, scientist,
+#   logician, philosopher, programmer, mathematician,  liberalist, conserv8ive, libertarian, centrist, humorist, equal opportunist, inform8ionalist,  mist.
+# Without Y'shua doing an encore of miraculous healings at popular farmer's market type places && resurrection of some who had died, it seems Bible is solo;
+HTTPS://YouTu.be/eIho2S0ZahI "How to speak so that people want to listen | Julian Treasure" # 10m of TED talk with lots of good advice to speak with HAIL
+#   good cheer for Honesty, Authenticity, Integrity, && Love. Less judgmental, or offensive. There were other good lists of details worth reviewing again;
+HTTPS://YouTu.be/-xBXomSRwa0 "How to Fit Christianity with Science (feat. Aron Ra)" # 14m21s of GM_Skeptic with apropos present8ion of arguments && myths;
+HTTPS://YouTu.be/GHNZi9JsDr8 "Why I'm an Atheist Advoc8" # 8m31s of ShannonQ laying out some stigmatiz8ion && defending to "helping elev8 the discourse";
+HTTPS://YouTu.be/mLdjoEWOnec "A Believer's Guide to Atheism in 9 Minutes" # JohnCedars channel seems to have good message && inspiring purposeful culmin8ion;
+
+HTTPS://YouTu.be/A48zsMFodG4 "Ed Feser Deb8s Arif Ahmed on 5 Proofs of the Existence of God" # 1h17m of Dec.8th,2017 deb8 that's maybe good "Unbelievable?";
 [Music] premiere podcasts a very good afternoon and welcome along to unbelievable I'm Justin Briley and this is the show every Saturday afternoon here on
 premiere Christian radio as part of faith explored that brings Christians and non-christians together for conversations that matter and we'll be diving deep
 into philosophical arguments for the existence of God today on the show really excited about the guests joining me today I'll be introducing them in a
@@ -910,30 +962,3 @@ this up again and another time thanks all right thank you thanks guys # So I hop
 # but hopefully the participants will surprise me with at least some of what they have to say, so I may learn a bit more && find all the effort enlightening.
 # Maybe after a few weeks or months of somewhat dedic8d explor8ion, I will reach a more confident place regarding what seems best for me to believe && why.
 # Then I should be able to tidy all this up as summariz8ions of whatever seems best to keep document8ion of before returning to Dr.Peterson && rel8d wisdom;
-HTTPS://YouTu.be/FS0mOV34f6k "Evolution Requires Blind f8h - Kent Hovind vs Atheist Bernie Dehler" # I6HMBf8h:4mins28secs of pretty lame claims transcribed;
-00:00 because you said that he gives religion or even evolution is religion and that upset a lot of atheist because they figure you know they want nothing to
-00:11 do with religion so I thought we'd talk about that for a little bit so I know you claim you like to throw out there that evolution and oh absolutely
-00:23 Everly you have to define two words in that sentence or what do you mean by evolution and what do you mean by religion standard dictionary definition
-00:29 of religion is a belief or belief system on how the world got here is kind of how there's many different religions in the world obviously how did we get
-00:39 here so it's something you believe as opposed to a science which is testable observable demonstrable in a laboratory for example evolution has six
-00:49 different meanings to the word I cover this in my seminar part four you'd have to have cosmic evolution the origin of time space matter you'd have to
-00:59 have chemical evolution the origin of all the chemicals then you'd have to have stellar evolution all the stars would have to evolve you'd have to have
-01:04 organic evolution life would has to start from nonliving material you'd have to have macro evolution where this life-form changed two different kinds
-01:11 of life and then you have Micro evolution which is changes within the kind like dogs and wolves probably have a common ancestor only number six on that
-01:23 list micro evolution is actually science all the other five are religious so when I use the word evolution I am not referring to minor variations within
-01:34 the same kind Darwin wrote a book called the Origin of Species the argument is really not about speciation it's about kinds where do the kinds come from
-01:42 there are 900 species of bats in the world they probably had a common ancestor right I put in six different sections totally unrelated categories all
-02:13 five of the top five are purely religious no one has ever seen a dog produce a non dog so that would be a no that way well do you believe dogs came from
-02:27 something ultimately that was non dog if you go back long enough far enough ago in time well and that you're welcome to believe that but that's my point
-02:38 that's a religious belief that's not scientifically observable we have humans having babies all the time and they're always human dogs have puppies all
-02:45 the time and they're always dogs my point is then it's not then it's not typical science look up the definition of science if science from their Latin
-03:01 words see or to know things that we know by observation testing experimentation can you do some observation to see an animal produce a different kind why
-03:10 would you believe it you believe a dog pointing something watch well you could see them grow you could you could document that that example you cannot
-03:31 see or document dogs coming from non dogs or dogs and bananas having a common ancestor that isn't nobody documents it well I could take a picture every
-03:44 day of my finger nails and probably I think three months it grows from cuticle to cutting length is typical for your fingernails in about six months for
-03:50 the toenails well this is where you have to first define what you mean by science and so I think the standard definition in any dictionary is going to be
-04:09 seer to know what do we know by observation experimentation and testing you don't you don't know that dogs came from this a common ancestor with tomatoes
-04:21 you can believe that but nobody knows that you can't know such a thing that's purely religious which is my point # It seems to be quite a stretch trying
-# to demonstr8 limit8ions on the amount of time scientific observ8ions can be made by using toenail growth as example, but the main point I want to extract out
-# of the above message was the supposed list of six different forms of evolution which all would need to have happened to produce life, since it sounds accur8
-# but each of the initial stages obviously are not biological or explained by n8ural selection. Once those are noted, I will probably delete lame transcript;
