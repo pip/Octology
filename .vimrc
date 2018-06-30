@@ -105,7 +105,7 @@ nn     <C-l> :call ToglCursorLineBold()<CR>:se  list!<CR><C-l>
 map    <C-k>                               :se spell!<CR>
 "map   <C-m>                               :if &mouse != 'a'<CR>se mouse=a<CR>el<CR>se mouse= <CR>en<CR><CR>
 " I6PM7Cw8:temporarily sidelined Ctrl-H HiLightSearch togl wi curs bold for descriptive YouTu.be U2b URL squirter (mAB mvd below);
-map    <C-w> iHTTPS://YouTu.be/ " " # 18m ;<Left><Left><Left><Left><Left><Left><Left><Left><Left><Left><Left><Left>
+map    <C-w> iHTTPS://YouTu.be/ "" # `d8`:18m ;<Left><Left><Left><Left><Left><Left><Left><Left><Left><Left><Left><Left><Left><Left><Left><Left>
 " above toglz List (show \t&&\n,keep stndRd scrn redraw wi nnoremap),checK spelling,C-m Dfalt <CR> tried togl mouse but probz ensue when shelling out
 "ap  <S-F12> :call SetStatusLineStyle()<CR>:if &mouse != 'a'<CR>se mouse=a<CR>el<CR>se mouse= <CR>en<CR><CR>  " My Ubuntu trapz S-F12 as VolumeUp B4 vim getzit
 "ap    <F12>                               :se paste!<CR>

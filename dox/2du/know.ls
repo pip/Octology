@@ -420,6 +420,8 @@ HTTPS://YouTu.be/eIho2S0ZahI "How to speak so that people want to listen | Julia
 HTTPS://YouTu.be/-xBXomSRwa0 "How to Fit Christianity with Science (feat. Aron Ra)" # 14m21s of GM_Skeptic with apropos present8ion of arguments && myths;
 HTTPS://YouTu.be/GHNZi9JsDr8 "Why I'm an Atheist Advoc8" # 8m31s of ShannonQ laying out some stigmatiz8ion && defending to "helping elev8 the discourse";
 HTTPS://YouTu.be/mLdjoEWOnec "A Believer's Guide to Atheism in 9 Minutes" # JohnCedars channel seems to have good message && inspiring purposeful culmin8ion;
+HTTPS://YouTu.be/RwJV4eWxi_c "How Peaceful Religion Kills | Religion as a Placebo" # 7m24s of Drew laying down the knowledge about prayer accomplishes none;
+HTTPS://YouTu.be/Hrt9k-GJEMA "Victor D. Hanson: The 4 Groups that Benefit from Illegal Immigr8ion" # I6PMIBmk:10m8s of very well reasoned critique for walls;
 
 HTTPS://YouTu.be/A48zsMFodG4 "Ed Feser Deb8s Arif Ahmed on 5 Proofs of the Existence of God" # 1h17m of Dec.8th,2017 deb8 that's maybe good "Unbelievable?";
 [Music] premiere podcasts a very good afternoon and welcome along to unbelievable I'm Justin Briley and this is the show every Saturday afternoon here on

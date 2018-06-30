@@ -964,7 +964,7 @@ trachelobranchE8
               f8ful:  fateful like fortuitous, tragic, or otherwise highly significant events that were destined to influence what would follow
               f8h  :"faith" religion, myths, miracles, && other supernatural belief-rel8d stuff which should probably be refuted && deb8d on basis of evidence
               f8hful:faithful loyalty in scrupulous behavioral adherence to found8ional principles of devout belief or otherwise honorably accepted agreement
-         interf8h
+         interf8h  : # maybe add f8hless with new *G8 && *x8 words for "Gfx" group && also "RUV" together too, to preserve 33x pattern governing groups
          incarn8
        reincarn8
         supplic8   : # maybe add rog8ion as a solemn litany or supplic8ion ceremony prescribed by the church, asking, or begging (with new *m8 word)
@@ -4542,3 +4542,4 @@ trying to stigmatize gamers, infl8 findings, promote advertisers, so fucking gro
 World Health Organiz8ion described at least 1 Year str8 of compulsive videogaming impairing function, according to the praiseworthy CBC use of AssoC8d Press;
 I6NMIadd:foment8 imput8 incit8 wi *E8 && *z8 f(edera|ossi)liz8, (con)?gel8 wi *c8 ([ch]orn|dens|l(apid|ith)|oss|petr|vitr)ific8 && *n8, may need to s/$/ion/;
 I6NMLiv8:Regarding eventual v8 viii (Neo)?Vim clone, contempl8 maybe analyzing Beppu-san's nice Emacs plus Vim-emul8ion plugin && maybe potent spacebar menu;
+I6QM1Suf:Watching buddy Chris' NetFlix of LukeCage season 2 episode 6 when totally recognized Jamaican RastaFari to add suffer8ion with new "cln" group too;

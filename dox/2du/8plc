@@ -9,7 +9,7 @@
 #   mk sepR8 tabul8ion of 8-words used in l8r document8ion wi not8ion 4thOs not yet included in top lists (thN optn2ignor easy conjug8ions && pre/suffixes),
 #   mk easy optn4 fulc 2use 1colm 4grep,add 4m@d percNtz,stuD wc && mk a8:cnt8/8c wi fulc -f? && 8plc as -l? optnz(rEdo hedrtXt),colr letrz,add f0ntz4 8trm;
 use strict;use warnings;use utf8;use v5.10;use Octology::a8;use Octology::b8;
-my $d8VS='I6OMGdnS';my $clrf=1;my $fulf=0;my $argz='';$argz= join(' ',@ARGV) if(@ARGV);my $Stxt='';my $Smap='';my $folf=0; # add 4-Or-Less-Flag
+my $d8VS='I6UMGPNK';my $clrf=1;my $fulf=0;my $argz='';$argz= join(' ',@ARGV) if(@ARGV);my $Stxt='';my $Smap='';my $folf=0; # add 4-Or-Less-Flag
 my $edVS=        '';my $pg1f=0;   $pg1f=1 if($argz=~ /(^|\s)-?-?[^p]*p/i); # find -?p(age) flag2limit some extra long output to first 48-line page
 my $clmz=        80;my $lpsf=0;   $lpsf=1 if($argz=~ /(^|\s)-?-?[^l]*l/i); # find -?LetrPrecursShortsFlag  # if MaXWordSize evr grOz,wil nEd2incrEs|Dtct
 my $linz=        24;my $gm8f=0;   $gm8f=1 if($argz=~ /(^|\s)-?-?[^g]*g/i); # find -?g(m8r) flag2count&&adorn wi math 4mUl8ions stRting wi 2letr
@@ -308,14 +308,14 @@ if($gm8f){$Stxt.="${W}Gener8 gM8ria primes for names by$B 3$W segments (${Y}PreL
           elsif  ($rndx ==  3 ){$Stxt=~ s/\s{$hbwd}$/$z$R VitValVectr$M vERSUSvERTvAPORIZ$R Upf4wdjUmp  $z /  ;}
           elsif  ($rndx ==  4 ){$Stxt=~ s/\s{$hbwd}$/$z$B BackBegin$o REtREAtOP EastEnd ${B}hEALThIGhOPhAh$z /;}
           elsif  ($rndx ==  5 ){$Stxt=~ s/\s{$hbwd}$/$z$B B$t${G}u$t${o}t$t${Y}n$t${o}E$t${G}C$t${B}h$stal/   ;}
-          elsif  ($rndx ==  6 ){$Stxt=~ s/\s{$hbwd}$/$z$G uPBAKJuMPuSuRP$Y nOOnORTH $G CrashCeiling$z$stal/   ;}
+          elsif  ($rndx ==  6 ){$Stxt=~ s/\s{$hbwd}$/$z$G uPBAKJuMPuSuRP$Y nOOnORTH $G CrashCeilingClimb$z /  ;}
           elsif  ($rndx ==  7 ){$Stxt=~ s/\s{$hbwd}$/$z$M bACKbE4$K inchO8Orig Str8cS8Step$M pARRYpOKE$z   /  ;}
           elsif  ($rndx ==  8 ){$Stxt=~ s/\s{$hbwd}$/$z$M b$t${Y}l$t${K}O$t${r}y$t${K}S$t${Y}r$t${M}p$stal/   ;}
           elsif  ($rndx ==  9 ){$Stxt=~ s/\s{$hbwd}$/$z$Y lEANlUlEFT$r NEUTRALyMy_y8$Y rIGHTrEACHFOrWrD$z  /  ;}
           elsif  ($rndx == 10 ){$Stxt=~ s/\s{$hbwd}$/$z$G sHIELDsITsOUTHsAs$Y cROUcH$G mOUNTmIXmINImUm$z   /  ;}
           elsif  ($rndx == 11 ){$Stxt=~ s/\s{$hbwd}$/$z$B k$t${G}s$t${o}z$t${Y}c$t${o}g$t${G}m$t${B}x$stal/   ;}
           elsif  ($rndx == 12 ){$Stxt=~ s/\s{$hbwd}$/$z$B kEEPkNEELOk$o zWESTzONE gOgROUND ${B}AxCRUxOLxML$z /;}
-          elsif  ($rndx == 13 ){$Stxt=~ s/\s{$hbwd}$/$z$R GroundGuard$M dIRECTdOWN$R fORWARDfRONT  $z$stal/   ;}
+          elsif  ($rndx == 13 ){$Stxt=~ s/\s{$hbwd}$/$z$R GroundGuard$M dIRECTdOWN$R fORWARDfRONTfALfLAT$z /  ;}
           elsif  ($rndx == 14 ){$Stxt=~ s/\s{$hbwd}$/$z w$t${R}G$t${C}D$t${M}d$t${C}R$t${R}f$t${z}M$stal/     ;}
           elsif  ($rndx == 15 ){$Stxt=~ s/\s{$hbwd}$/$z wESTw8 $C DownDefenDrop$C RoRight $z MountMovMnt$z /  ;}
         }}elsif  ($rndx == 15 && $prll eq 'm'){$hbwd=int($bwid/2)+6     ;$stal= ' ' x  abs($hbwd- 7);$prlt='r';$boff=14; # also insrt last b8 word in -c noCntr
@@ -354,8 +354,8 @@ if($gm8f){$Stxt.="${W}Gener8 gM8ria primes for names by$B 3$W segments (${Y}PreL
     if($pdif){$ltot+=$pdif+1;$lowc{$pdif}.=$tmpl;}}#$Stxt.="$Y$tmpl$W:" .    # below (2linzdn)cutz15off left total to account for l8st differencez
   for   my $locv (sort {$a <=> $b} keys(%lowc)){ # now these loopz shud reordr by left over countz ascending nstd of alpha
     for my $tmpl (sort(split(//,$lowc{$locv}))){$Stxt.=sprintf("$Y$tmpl$W:$R%s",b8c(b64($locv)));$Stxt.=sprintf("$W:$M%d",$locv) if($locv >  9);
-                                                $Stxt.=' ' x 2;}}        $ltot+=7; # estim8 special cases to adjust LTotal by (was -15 B4 +  7)
-  $Stxt.=$R.' ' x 3 .cma($t0tl)." $Y- $o".cma($ltot)." $G= $B".cma($t0tl-$ltot);   # I6OMGtot:pasting `8plc gc` map quoted into echo | wc -w 1025/1369 now;
+                                                $Stxt.=' ' x 2;}}        $ltot+= 4; # estim8 special cases to adjust LTotal by (was -15 B4 +  7)
+  $Stxt.=$R.' ' x 3 .cma($t0tl)." $Y- $o".cma($ltot)." $G= $B".cma($t0tl-$ltot)   ; # I6OMGtot:pasting `8plc gc` map quoted into echo | wc -w 1025/1369 now;
   $Stxt.=sprintf("$M %8.3f$C%%$K shown$W;\n$z",(($t0tl-$ltot)*100.0/$t0tl)); # try to wrap up total map printing with percentage shown in single page
   $Stxt=sS($Stxt) unless($clrf || $Stxt eq 'h');$Smap=$Stxt;$Stxt=''; # 1pAg map curNtly listz about 1035/1369 = ~75.603% of tOtl 8-wordz now shOwn @once;
         o8($Smap)     if($pg1f); # slightly repurpose the -p single Page option flag to show the -g 1-page map when gener8d rathr than Dflt @end,sinc focal;
