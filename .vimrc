@@ -6,7 +6,7 @@ se   nocp                     " nocompatible    - add  Vim NhancmNtz without str
 se    enc=utf-8               "     encoding    - was already loading utf-8 from current $LANG locale, && might need termencoding also if they diverge
 "se  fenc=utf-8               " fileencoding    - might needed this if ever trying LightLine + ALE with special chars from HTTPS://StaticO.GitHub.IO/vim3.html
 let  g:VERSION='0.0'
-let     g:d8VS='I6PM7Cw8'     " d8VersionString - l8st significant upd8 to whole file was then
+let     g:d8VS='I72M7Ck8'     " d8VersionString - l8st significant upd8 to whole file was then
 let     g:vid8=system('d8')   " VimInit d8      - save d8 when this Vim session first stRtz up to use as dRk pRt at Nd of STatusLine just before bright upd8 d8
 let     g:cucf=1              " CUrsorColumFlag - flag to toggle whether :se cuc should be used (since dflt of it on gets slow whN lots of syntx hili on scrn)
 let     g:culb=1              " CUrsorLineBold  - flag to toggle whether :se cul below should use highlight with bold across whole line (dbl-mapd2Ctrl-L&&hls)
@@ -73,42 +73,46 @@ en
 " preceding mapped key wi <silent> tells Vim not to print msg when running cmd    exception sm==smagic (substitution) so use smap         map! == all( [ci])map
 " 2du:fix C-f 2Format again below && stuD which other Ctrl cmdz (or regularz like 'E') might be currently least used, next best onez to remap when needed;
 "map      F  !G perl -MText::Autoformat -e'$t=join(q(),<STDIN>);$t=autoformat($t,{squeeze=>0 origBlO152});print $t'<CR>  " keep F finding char on line backward
-map    <C-f> !G perl -MText::Autoformat -e'$t=join(q(),<STDIN>);$t=autoformat($t,{squeeze=>0,right=>158});print $t'<CR>
+ map   <C-f> !G perl -MText::Autoformat -e'$t=join(q(),<STDIN>);$t=autoformat($t,{squeeze=>0,right=>158});print $t'<CR>
 " Normal-mode Noremap C-b ("Back" PgUp) to original B Back word (as opposite of W)    " HTTP://Vim.Wikia.Com/wiki/Mapping_fast_keycodes_in_terminal_Vim 4C-S-b?
 nn     <C-b> B
 "         B sAvz && Bakzup curNt EditFile    " above mapz fmt over Ctrl-Forward FullPageDown since I use C-d && C-u HalfPage mainly && want F to find backward
-map       B  :call SetStatusLineStyle()<CR>:w!<CR>:!bak %<CR><CR>
+ map      B  :call SetStatusLineStyle()<CR>:w!<CR>:!bak %<CR><CR>
 "         U bakz && Upd8s  curNt EditFile in2 local ~/(lib|bin)/       " map ovrIdz Undo all changez to line since cursor moved into it (wich I don't use much)
-map       U  :call SetStatusLineStyle()<CR>:w!<CR>:!bak %<CR><CR>:!upd8 %<CR>
+ map      U  :call SetStatusLineStyle()<CR>:w!<CR>:!bak %<CR><CR>:!upd8 %<CR>
 "map      E  JJj   " old map to quickly single-space dbl-spcd linez    " If you f<char> then ; && , will repeat the find (or Til) fwd && bak on the currentline
 "map      E  A                   :<Esc>JJj                             " was briefly used to join up many distinct transl8ion descriptions with their quot8ions
 "         t insertz  `d8`  curNt date-time stamp (used 2 B PipTime)    " T below was orig like f<char> (find4wrd on curline) but srchng T<char> (unTil bakwrdz)
-map       t  :call SetStatusLineStyle()<CR>i<CR><Esc>k:r!d8<CR>k$:j!<CR>J
+ map      t  :call SetStatusLineStyle()<CR>i<CR><Esc>k:r!d8<CR>k$:j!<CR>J
 "         T  upd8s   `d8`  in 1st d8VS='EBQLN3PS' lIn (shud B sAvng ai && ic,seting thM,rEplAcing d8,thN rEstOring thM) migr8d to a function now defined below
 "map      T  :call SetStatusLineStyle()                      <CR>:0<CR>/d8VS=<CR>6lcw<CR><Esc>k:r!d8<CR>k$:j!<CR>Jx8h
 "map      T  :call SetStatusLineStyle()<CR>:se noai<CR>:se ic<CR>:0<CR>/d8VS=<CR>6lcw<CR><Esc>k:r!d8<CR>k$:j!<CR>Jx8h:se ai<CR>
 "ap       T  :call SetStatusLineStyle()<CR>:if &ai<CR>let g:vcai=1<CR>el<CR>let g:vcai=0<CR>en<CR><CR>:se noai<CR>:if &ic<CR>let g:vcic=1<CR>el<CR>let g:vcic=0<CR>en<CR><CR>:se ic<CR>:if getline('.') !~ 'd8VS'<CR>kt<CR>en<CR><CR>:call setpos('.',[0,1,1,0])<CR>/d8VS=<CR>6lcw<CR><Esc>k:r!d8<CR>k$:j!<CR>Jx8h:if g:vcai<CR>se ai<CR>el<CR>se noai<CR>en<CR><CR>:if getline('.') !~ 'd8VS'<CR>echo "'t"<CR>en<CR><CR>:if g:vcic<CR>se ic<CR>el<CR>se noic<CR>en<CR><CR>
-map       T  :keepj     call Upd8VerS()<CR>
+ map      T  :keepj     call Upd8VerS()<CR>
 " above command mode kt should set the mark similar to normal mode mt && ':ma(rk)? t' would also work with the space between
 "       gqvKV#*\= might be unbounds (but goto, q?, visual, K?, Visual, comment #, *?, \?, =?)
 "       C-ACKOVWX might be unbounds (but screen A, break C, spellchecK below, O does some awesome back thru files jumping, Visual, W has some submenu, X?);
 "       C-t key inserts `d8g` into both XOrg Primary && Clipboard buffers (EvN thO d8g already wrapz xclip 2 set Primary selection buffer itself)
-map    <C-t> :call SetStatusLineStyle()<CR>:r!d8g    <CR>"+YVD
+ map   <C-t> :call SetStatusLineStyle()<CR>:       r!d8g    <CR>"+YVD
 "       C-n should detect multi-window && du next C-w window like in vimdiff instead of just separ8 full bufferz (IDly cycl thru all wndwz of Ech bufr nXt lup)
-map    <C-n> :call SetStatusLineStyle()<CR>:bn       <CR>
+ map   <C-n> :call SetStatusLineStyle()<CR>:       bn       <CR>
 "           should proly ck winnr('$') but &stl doesn't sEm Abl2shO mor than 1    " Buffer Next above, Prev below
-map    <C-p> :call SetStatusLineStyle()<CR>:bp       <CR>
-"       C-i Dfalt Indent<Tab> was togl IgnoreCase but sAmazTab,C-h DfaltBackSpace<BS> rathr togl HighLightSearch,C-l Dfalt refresh screen still done aftr togl
-"map   <C-i>                               :se    ic!<CR> " C-i && C-m indistict from Tab && CR but C-h && BkSpc work sepR8ly in normal mode (but not insert)
-map    <C-h> :call ToglCursorLineBold()<CR>:se   hls!<CR>
-nn     <C-l> :call ToglCursorLineBold()<CR>:se  list!<CR><C-l>
-map    <C-k>                               :se spell!<CR>
-"map   <C-m>                               :if &mouse != 'a'<CR>se mouse=a<CR>el<CR>se mouse= <CR>en<CR><CR>
+ map   <C-p> :call SetStatusLineStyle()<CR>:       bp       <CR>
+"       C-i Dfalt Indent<Tab> was togl IgnoreCase but sAmazTab,C-h DfaltBackSpace<BS> rathr togl HighLightSearch,C-l Dfalt refresh screen still done after togl
+"map   <C-i>                               :       se    ic!<CR> " C-i && C-m indistnct frm Tab&&CR but C-h&&BkSpc work sepR8ly in Normal mode (but not Insert)
 " I6PM7Cw8:temporarily sidelined Ctrl-H HiLightSearch togl wi curs bold for descriptive YouTu.be U2b URL squirter (mAB mvd below);
-map    <C-w> iHTTPS://YouTu.be/ "" # `d8`:18m ;<Left><Left><Left><Left><Left><Left><Left><Left><Left><Left><Left><Left><Left><Left><Left><Left>
+ map   <C-h>                               :       se   hls!<CR>
+nn     <C-l> :call ToglCursorLineBold()<CR>:       se  list!<CR><C-l>
+imap   <C-k>                                <Esc>u:se spell!<CR>
+nmap   <C-k> iHTTPS://YouTu.be/ "" # d8:18m;<Esc>12<Left>i
+" I71M6Ck8:just realized need Ctrl-w to jump Windows when doing vimdiff, so reapproprE8d C-k for spell-checKer toggle above && remapped to U2b with loop here;
+" I72M7Ck8:add Insert-mode map of 2nd Ctrl-k to undo back out (16<L>31x) of an unpopul8d Normal-mode inserting of U2b templ8, also toggling spell-checK flag;
+"let  g:U2bL='HTTPS://YouTu.be/ "" # d8:18m;'  " hopefully try to just insert U2b URL templ8 variable string below instead of leaving literal, not sure how2?
+"nmap  <C-k> :i g:U2bL<CR>12<Left>i            " not yet sure how to colon command insert a particular global variable at cursor before adjusting auto-insert
+"map   <C-m>                               :if &mouse != 'a'<CR>se mouse=a<CR>el<CR>se mouse= <CR>en<CR><CR>
 " above toglz List (show \t&&\n,keep stndRd scrn redraw wi nnoremap),checK spelling,C-m Dfalt <CR> tried togl mouse but probz ensue when shelling out
-"ap  <S-F12> :call SetStatusLineStyle()<CR>:if &mouse != 'a'<CR>se mouse=a<CR>el<CR>se mouse= <CR>en<CR><CR>  " My Ubuntu trapz S-F12 as VolumeUp B4 vim getzit
-"ap    <F12>                               :se paste!<CR>
+"map <S-F12> :call SetStatusLineStyle()<CR>:if &mouse != 'a'<CR>se mouse=a<CR>el<CR>se mouse= <CR>en<CR><CR>  " My Ubuntu trapz S-F12 as VolumeUp B4 vim getzit
+"map   <F12>                               :se paste!<CR>
 " mapng MiddleMouse only works if mouse=a so that vim's mapping is applied instead wichever of XOrg,FluxBox,or GPM
 "ap    <MiddleMouse>                       :se paste <CR>"*p:se nopaste<CR>
 " nOt: mA stil want 2 map other mouse=a butnz 2 BhAv more similRly 2 mouse=

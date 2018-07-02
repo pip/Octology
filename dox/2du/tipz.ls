@@ -78,3 +78,8 @@ of tags HTTPS://GitHub.Com/jch/html-pipeline/blob/master/lib/html/pipeline/sanit
 a pre code img tt div ins del sup sub p ol ul table thead tbody tfoot blockquote dl dt dd kbd q samp var hr ruby rt rp li tr td th s strike summary details.
 MarkDown supports backslash eScaping of: \ backslash, ` backtick, * asterisk, _ underscore, {} curly braces, [] square brackets, () parentheses, # hash mark,
 + plus sign, - minus sign (hyphen), . dot, && last ! exclam8ion point. SepR8 after blank line && all code blocks indented 4 spaces wrap <pre> around <code>;
+I71M0USB:Last night my HHKBLite2USB on Aku 17.10 stopped working repeatedly && sometimes replugging resolved temporarily, only to fail again a little bit l8r.
+HTTPS://AskUbuntu.Com/questions/966799/ubuntu-17-10-keyboard-not-working-after-login-following-upgrade-from-17-04-gnom suggests `agr fwupd` may fix problem.
+Also ran `aar` to AutoRemove libdfu1 as well. HTTPS://AskUbuntu.Com/questions/997008/keyboard-issue-in-ubuntu-17-10 similar problem description indic8s that
+maybe `ag --purge autoremove xserver-xorg-input-all && agi xserver-xorg-input-all` then rebooting may be another avenue for resolving whatever the issue is.
+With Ubuntu 18.04LTS, might want to track down obsolete cowsay-off_ensive quote pool && gnome-tweak-tool, to see what happened, whether incorpor8d elsewhere;

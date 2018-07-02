@@ -79,7 +79,8 @@ export PKG_CONFIG_PATH="/usr/lib/pkgconfig";              # E2LLATsm:Added4SrcHi
                                                  export TZ='America/Chicago'; # .. which is the same as my /etc/timezone file && maybe CDT -5 at D8FCQgn;
 #xport DST='0'; watch=(notme);                  #export TZ='CST';     # DaylightSavingsTime?;                            | Coordinated Universal Time (UTC|GMT)
 #f   [[ "${(L)HOTy}" ==         cygwin* ]]; then export TZ='PST'; fi; # United States of America / Los Angeles (PST|PDT) | Coordinated Universal Time (UTC|GMT)
-#xport LANG='en_US.UTF-8';export LC_ALL="$LANG";export LC_CTYPE="$LANG"; # 4urxvt? # 82DJ06ZE:seemz betr2set /etc/env.d/02locale or2use `localedef`? 
+#xport LANG='en_US.UTF-8';export LC_ALL="$LANG"; export LC_CTYPE="$LANG";export LANGUAGE="$LANG"; # orig mA hav nEded thEs lang setngz4 urxvt?
+# 82DJ06ZE:instead of abov relying on exported ENV variablez it seemz betr2set /etc/(env.)?d(efault)?/(02)?locale or2use `localedef` probably4mostUsecases?;
 #xport TERM='linux'; # find out when explicit TERM assignment has seemed necessary (maybe for vim colors but fixed by .vimrc "set background=dark"?)
 export EDITOR="$HEdt" ;export PERL5LIB="$HOME/lib:$HOME/lib/perl5/lib/perl5/x86_64-linux-gnu-thread-multi:$HOME/lib/perl5/lib/perl5:./lib"; # `which vim `; #dflt(&&preferred)way2load my *.pm (butTaki shud nstd get i386 path)
 export  PAGER="$HPgr" ;export PERL_TEST_POD='1'   ; #`which most`||PAGER=`which less`||PAGER=`which more`;export PAGER; #a good practice for Perl Kwalitee
@@ -188,6 +189,7 @@ alias dp="export PS1='%{[1;37m%}%(!.<.[)%{[1;32m%}%n%{[1;34m%}@%{[1;36m%}$HH
 # From HTTP://StackOverFlow.Com/questions/17814123/determining-the-type-of-terminal-classic-unix-terminal-vs-graphical-terminal it might be better to do:
 #parent=$(ps --pid $(ps --pid $$ --no-headers --format ppid) --no-headers --format cmd); # might need2 s/cmd/comm/ 2ch 4m@ prOfIl for result to =~ /^login/
 #if [[ $parent == login* ]]; then ... else ... fi to detect a full-screen console login rather than cking for graphical $TERM, although $TTY might be easier?
+# I71M8PS1:2du mAB rewrite sp,np,dp 2B ps1 varE8ionz && basicz wi no Perl DpNdNCz to calm warnz,mAB try2zsh regX colr pwd&&gNr8 aprox colrd d8stampz2 4comp@;
 export HISTFILE=~/.zsh_history;alias sp="export PS1='%(!.<.[)%n@$HHst:\`d8\`:%~%(!.>.])'"; #Prmptz:SimplPrmt||NormlPrmt Uzd2hvBigPrmt2but ch eq2Norm soIrmd;
 export HISTSIZE=4096;export BdOn="tput smso";export Bond='BdOn';alias setfp='etfp -s'; #from`man tput`:BoldOn&&Off TermSeQNcz4:`echo "${BdOn}NtrNm:${BdOf}\c"`
 export SAVEHIST=4096;export BdOf="tput rmso";export Bofd='BdOf';alias setf='setfp -f';alias setf0='setf -o';alias setp='setfp -p'; # mk .?ttyrc 2gN folOing
@@ -430,7 +432,7 @@ alias    gac='     gaa; gcm     ';
 alias    gacm='    gac          '; # should maybe make as function which takes parameter or gener8d commit message then gpom with auto user Pip pRam or cnfg?
 alias    gpom='    git push origin master';
 alias       n=' ncal  ';
-alias       N='  calN ';
+alias       N='  calN '; #  N    :            calN (use `rsn` ReSize4calN 171x57 to show 19-Years, 2000-2018 solidly in slightly lRgr than Dflt 160x50 size)
 alias    caln='  calN ';
 alias      l8='  calN '; #  l8   :            cal|cron|at|batch
 alias      sl='  ln -s'; #  sl   :             ln (maybe on this, since ln usually makes SymbolicLinks?)
@@ -519,6 +521,11 @@ alias    Uk='  echo -en "${R}m$G c$K b${W}:${B}togl${M}vol${R}Mute${G}Caption${K
 ${M}p$C f$B n${W}:${M}Prev${P}pla${c}ls${B}togl${C}Fulsc${B}Next${P}pla${c}ls${Y}(${O}Esc${W}=${g}2${R}exit${C}f${Y})${W}${Y}Lt$R Rt${W}:${B}bkwd${C}5${M}secs${Y}(${O}arow${r}kyz$Y)${R}4wrd${C}5${M}secs
 ${B}j$M k$R l${W}:${B}bkwd${G}10${M}sec${B}togl${M}pause${R}4wrd${G}10${M}sec${Y}(${M}Spc${W}=${g}2${M}pause${Y})${W}$B ,$M .$W :${B}bkwd${O}1${c}fram${Y}(if${M}pausd${Y})${R}4wrd${O}1${c}fram
 $C 0$O-${R}9$W :${Y}jump${w}to$r N${C}*${G}10${Y}%${O}play${B}bak${P}position${Y}(${C}Hm${Y}/${R}End${W}=${C}0${Y}/${R}9${Y})${W}$M <$G >$W :${r}slow${M}down<${O}play${B}bk${c}spd${G}>up${K}fastr${W};"'; # squEzdout most spaces so whole keymap now fitz 80x4 term dimNsions,c turns Captions off but!togl on,no b bkgrnd
+alias    Uk2=' echo -e  "${R}m$G c$K b${W}:${R}Mute${G}Caption${K}Bkgr${Y}[${G}U2b$C-${R}hot${r}Key${Y}]$W;${M}Dn$G Up${W}:${M}lowr${C}5${Y}%${w}vol${G}rais$W;${B}j$M k$R l${W}:${B}bkwd${G}10${M}secs${R}4wrd${Y}(${M}Spc${W}=${M}K${g}2${M}paus${Y})$W;$B ,$M .$W :${B}bkwd${O}1${c}frm${Y}(${M}pausd${Y})${R}4wrd$W;
+${M}p$C f$B n${W}:${M}Prv${z}ls${C}Fulsc${B}Nxt${z}ls${Y}(${O}Esc${W}=${g}2${R}exit${C}f${Y})$W;${Y}Lt$R Rt${W}:${B}bkwd${C}5${M}secs${R}4wrd$W;$C 0$O-${R}9$W :${Y}jmp${R}N${C}*${G}10${Y}%${O}pla${P}pos${Y}(${C}Hm${Y}/${R}End${W}=${C}0${Y}/${R}9${Y})$W;$M <$G >$W :${r}slo${M}<down<${O}pla${c}spd${G}>up>$W;"';
+# abov try2cram Uk in2 lt 160x2 (or 113x2 4now) wi just colrz 4 mAn Keyz
+alias    uk2=' echo -e  "${R}m$G c$K b${W}:${B}togl${M}vol${R}Mute${G}Caption${K}Bakgr${C}colr${Y}[${G}U2b$C-${R}hot${r}Key${Y}]$W;${M}Dn$G Up${W}:${M}lowr${C}5${Y}%${w}vol${Y}(${O}arow${r}kyz${Y})${G}rais${C}5${Y}%${w}vol$W;${B}j$M k$R l${W}:${B}bkwd${G}10${M}sec${B}togl${M}pause${R}4wrd${G}10${M}sec${Y}(${M}Spc${W}=${g}2${M}pause${Y})$W;$B ,$M .$W :${B}bkwd${O}1${c}fram${Y}(if${M}pausd${Y})${R}4wrd${O}1${c}fram$W;
+${M}p$C f$B n${W}:${M}Prev${P}pla${c}ls${B}togl${C}Fulsc${B}Next${P}pla${c}ls${Y}(${O}Esc${W}=${g}2${R}exit${C}f${Y})$W;${Y}Lt$R Rt${W}:${B}bkwd${C}5${M}secs${Y}(${O}arow${r}kyz$Y)${R}4wrd${C}5${M}secs$W;$C 0$O-${R}9$W :${Y}jump${w}to$r N${C}*${G}10${Y}%${O}play${B}bak${P}position${Y}(${C}Hm${Y}/${R}End${W}=${C}0${Y}/${R}9${Y})$W;$M <$G >$W :${r}slow${M}down<${O}play${B}bk${c}spd${G}>up>${K}fastr${W};"'; # try"2"cram Uk 80x4 in2 just 160x2 nstd (mAB 178+wId 2fit prmpt2wi -n)
 alias    uk='echo -en "${R}m$G c$K b$W:${M}volu$R Muted$B togl${G}Captn$K Bakgr$C cycl$W;$Y(${C}Home$Y/${R}End$W=$C 0$Y/${R}9$g 2$Y)$W>$C 0$O-${R}9$W :${O}jmp$Y%$G \$${r}n$C*${G}10$O pla${B}bak${P}pos$W =${R}r8io$Y %${P}abs$W;$M <$G >$W :${r}slow$M down<$O pla${B}bak${c}spd$G >upup$K fast$W;
 ${B}j$M k$R l$W:${B}bkwd$G 10${M}sec$B togl${M}pausd$G 10${M}sec$R 4wrd$W<$Y(${M}Spacebar$W=${M}pause${g}2$Y)$W;${Y}Lt$R Rt$W:${B}bkwd$g -${C}5${M}sec$O arrow${r}keys$G +${C}5${M}sec$R 4wrd$W;$B ,$M .$W :${B}bkwd$g -${O}1${c}frm$w when${M}pausd$G +${O}1${c}frm$R 4wrd$W;
 ${M}p$C f$B n$W:${M}Prev$O pla${c}ls$B togl${C}Fulsc$O pla${c}ls$B Next$W<$Y(${O}Escap${r}key$W=${R}exit${C}f${g}2$Y)$W;${M}Dn$G Up$W:${M}dec$Y%$g -${C}5${M}vol$O arrow${r}keys$G +${C}5${M}vol$Y %${G}inc$W;"'; # should consider making new 1-column Uk varE8ion which auto-resizes term @start && only needs rescaling2Bbig
@@ -562,7 +569,7 @@ alias irc='irssi';
 alias swip='screen -wipe  '; # learn how to restore block cursor within multiplexed vim from the $TERM=screen.linux console (sEmz scrn mustXitB4 `curs` resetz)
 alias scrn='screen -h 9999'; # might not need to temporarily change TERM for irc (or any of these if TERM becomes working screen.xterm-256color) below
 alias s2du='pu ~/dox/2du;export TERM="xterm";scrn -S 2du -t 2du     e  2    ;export TERM="xterm-256color";po';alias s2='s2du'; # Usd2wrap2ovrId TERM=screen
-alias sirc='             scrn -S irc -t irc irssi       ;  ';alias si='sirc';  # don't need -c IRC.Perl.Org or -n Pip since specified in ~/.irssi/config now
+alias sirc='ct "irssi"  ;scrn -S irc -t irc irssi       ;  ';alias si='sirc';  # don't need -c IRC.Perl.Org or -n Pip since specified in ~/.irssi/config now
 #lias s2du='pu ~/dox/2du;scrn -S 2du -t 2du     e  2    ;po';alias s2='s2du';  # reverted to exporting TERM=xterm around s2 2mk vim statusbar dRk AgN
 alias s28x='pu ~/dox/2du;scrn -S 8xt -t 8xt     e  8    ;po';alias s28='s28x'; # s8 is already aliased to sort; weird that e 8 didn't have e 2 problM
 alias sb8a='pu ~/dox/2du;scrn -S b8a -t b8a     e b8a.ls;po';alias sb='sb8a';
@@ -663,7 +670,7 @@ export ETERM_THEME_ROOT="~/.Eterm/themes"; # wuz ~/.Eterm/themes/Eterm          
 #lias gtpm='    gtd0 --class=pmix     --geometry 160x3+1921+1141 --hide-menubar --window-with-profile=GT67x3Lincoln12-pmix --title=pmix -e pmix&';#160,180,282
 alias gtt='gnome-tweak-tool'; # mainly used (so far) for scaling all fontz to 1.5 && making CapsLock a Ctrl; XperimNt wi Caps2:Hyper,Menu,Win2see wutcan map2?
 alias gt=' gnome-terminal';alias wmc='wmctrl'; # mAB -x zsh (-c)? s2 & or wiout aliasz: pushd ~/dox/2du;screen -h 9999 -S 2du -t 2du e 2;popd;
-alias xr='xrandr --output DVI-0 --mode 1920x1080 --rate 60'; # need to set Viotek GN32C over DVI from default 144 refresh down to supported 60
+alias xr='xrandr --output DVI-0 --mode 1920x1080 --rate 60';alias cx='ct "init";xr'; # nEd2set ViotekGN32C over DVI from Dflt 144 rEfresh down2cAbl suportd 60
 if       [[ "${(L)HHst}" ==  aku    ]]; then  alias gtss='sleep 1'; # GnomeTerminal SleepSeconds 2 delay 4 gti init   # only Akuma was fast Enuf2kEp up with 1
 else                                          alias gtss='sleep 2'; fi            # ... second before && hopefully Ryu, Ken, && Chun can all handle just 2 now
 # below set 8sh "H" Viewport Width 1..3 | Height 1 defaults of all 3840x1080 then override as approprE8 for host-specific display resolution varE8ionz
@@ -699,6 +706,7 @@ alias   gt5='gt4;
              gt --geometry=-3840+0    --show-menubar --window-with-profile=PipsOthrGnomTerm-TestFont-CCIHPS8                                                &;
         gtss;wmc -r :ACTIVE: -T othr               '; # so far, it's too bad that Othr background dark green looks just black with l8st Sony TV settingz
 alias rs=' resize'; # also able to pass '-s $rowz $colz' to set term dimensionz, so maybe convert this alias into a function with parameter optionz l8r
+alias rsN='noglob eval `resize -s 57 171`';alias rsn='  rsN'; # N for 171-wide (for calN to show 19-Years slightly lRgr than Dflt 160x50 standRd Used Lswhere)
 alias rs1='noglob eval `resize -s 50 160`';alias rs160='rs1'; # 1 for 160-wide (not sure how necessary noglob, eval, or backtix are, but they make cmnd quiet)
 alias rs8='noglob eval `resize -s 25  80`';alias rs80=' rs8'; # 8 for  80-wide (might want to make these only 24 high, like Default Gnome-Terminal profile)
 alias rs3='noglob eval `resize -s  1  34`';alias rsd8=' rs3'; # 3 for  34-wide d8ok termz (somewhat more straightforward && brief 2 use char dimz versus pixlz)
@@ -711,18 +719,22 @@ if       [[ "${(L)HHst}" ==  aku    ]]; then # 664||-1882,-e2586 1294w 3840-1958
   #     gtss;wmc -r :ACTIVE: -b add,sticky,below; # this was all linez aftr any d8ok (B4Itried2set -Titlez,add skip_(pager|taskbar) && upd8 geom wi -e rEsize)
   # Apparently 1st resize field is gravity:0-WinMngr shud use grav specified in WM_SIZE_HINTS.win_gravity,1-NW,2-N,3-NE,4-W,5-cNtr,6-E,7-SW,8-S,9-SE,10-static.
   # Same page: HTTPS://SuperUser.Com/questions/576057/bash-resize-terminal-xterm has `echo -e "\e[8;1;34t"` which also workz nicely 2 resize my d8ok terminalz.
- if      [[     "$H3WF"  ==  "1"    ]]; then # H78M19EK:insertd new H variable test for whether using new Sony 50-inch 1080i TV as 3rd display for Aku;
+ if      [[     "$H3WF"  ==  "1"    ]]; then # H78M19EK:insertd new H variable test for whether using Sony50"1080iTV or 32"Viotek display as 3-Wide-Flag 4Aku;
                                              #   Below used to just have "-e ~/bin/d8ok" before appending the -d parameter so needing the -x instead.
-  alias gtI='gt --geometry=+664-0     --hide-menubar --window-with-profile=d8ok                               --role=d8ok                                   &;
+  # I71M8wxh:Maybe Ubu18.04 upd8d GnomTerm or GnomTwekTool gone dropd scaling so old d8ok32->36 && main8->7.9 nEdz x664,4504,2584 chopd 4 4mor char widthz;
+  # q 1306/34=38.41176470588235294117647058823529411765
+  # 1306-1292=14 mAB scrlbR widt; 4x38=152; 512,4352,2432; mIt nEd2scAl 1306 wIdr2 1458;
+  # q 1458/34=42.882352941176470; 4x42=166; 496,4336,2416; othr was +306+0 up2 466;
+  alias gtI='gt --geometry=+496-0     --hide-menubar --window-with-profile=d8ok                               --role=d8ok                                   &;
         gtss;wmc -r :ACTIVE: -T d8ok                ;wmc -r :ACTIVE: -b add,skip_pager,sticky;
-             wmc -r :ACTIVE: -e  10,664,1006,1306,74;wmc -r :ACTIVE: -b add,skip_taskbar,below;
+             wmc -r :ACTIVE: -e  10,496,1006,1458,74;wmc -r :ACTIVE: -b add,skip_taskbar,below;
              gt --geometry=-0-0       --hide-menubar --window-with-profile=d8ok                               --role=d8ok                                   &;
         gtss;wmc -r :ACTIVE: -T d8ok                ;wmc -r :ACTIVE: -b add,skip_pager,sticky;
-             wmc -r :ACTIVE: -e 10,4504,1006,1306,74;wmc -r :ACTIVE: -b add,skip_taskbar,below;
+             wmc -r :ACTIVE: -e 10,4336,1006,1458,74;wmc -r :ACTIVE: -b add,skip_taskbar,below;
              gt --geometry=-0-0       --hide-menubar --window-with-profile=d8fd                               --role=d8fd                                   &;
         gtss;wmc -r :ACTIVE: -T d8fd                ;wmc -r :ACTIVE: -b add,skip_pager,sticky;
-             wmc -r :ACTIVE: -e 10,2584,1006,1306,74;wmc -r :ACTIVE: -b add,skip_taskbar,below;
-             gt --geometry=+306+0     --show-menubar --window-with-profile=PipsOthrGnomTerm-TestFont-CCIHPS8  --role=othr                                   &;
+             wmc -r :ACTIVE: -e 10,2416,1006,1458,74;wmc -r :ACTIVE: -b add,skip_taskbar,below;
+             gt --geometry=+466+0     --show-menubar --window-with-profile=PipsOthrGnomTerm-TestFont-CCIHPS8  --role=othr                                   &;
         gtss;wmc -r :ACTIVE: -T othr                ;
              gt --geometry=-1920+0    --show-menubar --window-with-profile=PipsOthrGnomTerm-TestFont-CCIHPS8  --role=sys                                    &;
         gtss;wmc -r :ACTIVE: -T sys                 ;
@@ -735,9 +747,9 @@ if       [[ "${(L)HHst}" ==  aku    ]]; then # 664||-1882,-e2586 1294w 3840-1958
              gt --geometry=-3840+0    --show-menubar --window-with-profile=PipsOthrGnomTerm-TestFont-CCIHPS8  --role=muz    --working-directory=muz/U2b     &;
         gtss;wmc -r :ACTIVE: -T muz                 ;
              gt --geometry=+0-0       --show-menubar --window-with-profile=PipsCkm8GnomTerm-NiceFont-DC9LDaPt --role=mvz    --working-directory=mvz/U2b     &;
-        gtss;wmc -r :ACTIVE: -T mvz                ';
-  alias gti='gtI;gtss;chv1;gtss;gtm;gtss;chv2;gtss;gt5;gtss;chv4;gtss;gt5;gtss;chv5;gtss;gt5;gtss;chv6;gtss;gt5;gtss;chv0'; # Aku fully loadz GTz in left 6 VPz
- else # back to older Aku GnomTerm aliases for just 2 24-inch Asus displays, before adding Sony TV as 3rd display
+        gtss;wmc -r :ACTIVE: -T mvz                '; # Aku gti below fully loadz GTz in all 8 ViewPortz
+  alias gti='gtI;gtss;chv1;gtss;gtm;gtss;chv2;gtss;gt5;gtss;chv4;gtss;gt5;gtss;chv5;gtss;gt5;gtss;chv6;gtss;gt5;gtss;chv7;gtss;gt5;gtss;chv3;gtss;gt5;chv0';
+ else # back to older Aku GnomTerm aliases for just 2 24-inch Asus displays, before adding SonyTV or new curved as 3rd display
   alias gtI='gt --geometry=-1882-0    --hide-menubar --window-with-profile=d8ok                               --role=d8ok                                   &;
         gtss;wmc -r :ACTIVE: -T d8ok                ;wmc -r :ACTIVE: -b add,skip_pager,sticky;
              wmc -r :ACTIVE: -e  10,664,1006,1306,74;wmc -r :ACTIVE: -b add,skip_taskbar,below;
@@ -820,7 +832,7 @@ tStc() { # tSt 8pal8 colrz (this is a very slow precursor to ~/bin/tstc since ma
       echo " z -             check roundtripZ of each 8pal8 color code going through S && c to be back to the same (slo)"
       echo " b - call S '^'  reset Bold making all fonts normal 4 colrs gr8rthan 15 (dfalt is Bold for all gr8rthan 7)"
       echo " A - call S ':A' set fAint SelectGraphicRendition attribute on all colrs printed after the 1st 2pal8"
-      echo " I - call S ':I' set Italics"
+      echo " I - call S ':I' set Italics             (most parameter flags can be combined like 'IRULFCOD' top8)"
       echo " U - call S ':U' set Underline           (see 'tsgr' for my typical mapping of all these attributes)"
       echo " L - call S ':L' set bLink               (slow,lessthan 150/min)"
       echo " K - call S ':K' set blinK               (fast,morethan 150/min)"
@@ -846,35 +858,49 @@ tStc() { # tSt 8pal8 colrz (this is a very slow precursor to ~/bin/tstc since ma
                            printf "%-8s"  `S $B64N|sS d`; # just substitute out && show internal Digitz && semicolonz from the current colr's eScape code
     if     [[ "$#"        -gt   0 ]]; then # starting non-1st 8 row on next loop iter8ion && a parameter was given
       if   [[ "${(L)B64N}" ==  w  ]] || [[ "${(L)B64N}" == i ]] || [[ "${(L)B64N}" == j ]] || [[ $B64N == q ]]; then
-        if [[ "${(L)1}"    == *b  ]]; then S '^'     ;fi       # reset Bold making all fontz normal 4 colrz gr8rthan 15 (dfalt is Bold for all gr8rthan 7)
-        if [[     "$1"     == *A  ]]; then S ':A'    ;fi       # set fAint SelectGraphicRendition attribute on all colrz printed after the 1st 2pal8
-        if [[     "$1"     == *I  ]]; then S ':I'    ;fi       # set Italics                   (&& accept upper or lowercased parameterz for any of these)
-        if [[     "$1"     == *U  ]]; then S ':U'    ;fi       # set Underline                 (see `tsgr` for my typical mapping of all these attributez)
-        if [[     "$1"     == *L  ]]; then S ':L'    ;fi       # set bLink                (slow,lessthan 150/min)
-        if [[     "$1"     == *K  ]]; then S ':K'    ;fi       # set blinK                (fast,morethan 150/min)
-        if [[     "$1"     == *R  ]]; then S ':R'    ;fi       # set Reverse
-        if [[     "$1"     == *V  ]]; then S ':V'    ;fi       # set inVisible            # would be nicer to regex on these to more easily allow combind flagz
-        if [[     "$1"     == *C  ]]; then S ':C'    ;fi       # set Crossed-out
-        if [[     "$1"     == *F  ]]; then S ':F'    ;fi       # set Fraktur font         (hardly ever supported)
-        if [[     "$1"     == *D  ]]; then S ':D'    ;fi       # set underline Double     (hardly ever supported)
-        if [[     "$1"     == *M  ]]; then S ':M'    ;fi       # set fraMed               (hardly ever supported)
-        if [[     "$1"     == *E  ]]; then S ':E'    ;fi       # set Encircled            (hardly ever supported)
-        if [[     "$1"     == *O  ]]; then S ':O'    ;fi       # set Overlined            (hardly ever supported)
-        if [[     "$1"     == *H  ]]; then S ':H'    ;fi       # set ideogram line rigHt  (hardly ever supported)  (this just uprcase2provide help at top)
-        if [[     "$1"     == *T  ]]; then S ':T'    ;fi       # set ideogram line lefT   (hardly ever supported)
-        if [[     "$1"     == *G  ]]; then S ':G'    ;fi;fi;fi # set ideoGram stress mark (hardly ever supported)
+        if [[ "${(L)1}"    =~  b  ]]; then S '^'     ;fi       # reset Bold making all fontz normal 4 colrz gr8rthan 15 (dfalt is Bold for all gr8rthan 7)
+        if [[     "$1"     =~  A  ]]; then S ':A'    ;fi       # set fAint SelectGraphicRendition attribute on all colrz printed after the 1st 2pal8
+        if [[     "$1"     =~  I  ]]; then S ':I'    ;fi       # set Italics                   (&& accept upper or lowercased parameterz for any of these)
+        if [[     "$1"     =~  U  ]]; then S ':U'    ;fi       # set Underline                 (see `tsgr` for my typical mapping of all these attributez)
+        if [[     "$1"     =~  L  ]]; then S ':L'    ;fi       # set bLink                (slow,lessthan 150/min)
+        if [[     "$1"     =~  K  ]]; then S ':K'    ;fi       # set blinK                (fast,morethan 150/min)
+        if [[     "$1"     =~  R  ]]; then S ':R'    ;fi       # set Reverse
+        if [[     "$1"     =~  V  ]]; then S ':V'    ;fi       # set inVisible            # would be nicer to regex on these to more easily allow combind flagz
+        if [[     "$1"     =~  C  ]]; then S ':C'    ;fi       # set Crossed-out
+        if [[     "$1"     =~  F  ]]; then S ':F'    ;fi       # set Fraktur font         (hardly ever supported)
+        if [[     "$1"     =~  D  ]]; then S ':D'    ;fi       # set underline Double     (hardly ever supported)
+        if [[     "$1"     =~  M  ]]; then S ':M'    ;fi       # set fraMed               (hardly ever supported)
+        if [[     "$1"     =~  E  ]]; then S ':E'    ;fi       # set Encircled            (hardly ever supported)
+        if [[     "$1"     =~  O  ]]; then S ':O'    ;fi       # set Overlined            (hardly ever supported)
+        if [[     "$1"     =~  H  ]]; then S ':H'    ;fi       # set ideogram line rigHt  (hardly ever supported)  (this just uprcase2provide help at top)
+        if [[     "$1"     =~  T  ]]; then S ':T'    ;fi       # set ideogram line lefT   (hardly ever supported)
+        if [[     "$1"     =~  G  ]]; then S ':G'    ;fi;fi;fi # set ideoGram stress mark (hardly ever supported)
     if     [[ "$#" -gt 0 ]] && [[ "${(L)1}" == *s  ]] && [[ "$COLUMNS" -ge 160 ]]; then # check AgN for Squeezed rowz parameter to only newline aftr each 2pal8
       if   [[      $B64N   ==  W  ]] || [[      $B64N   == I ]] || [[      $B64N   == J ]] || [[ $B64N == Q ]]; then echo;fi
     elif   [[ "${(L)B64N}" ==  w  ]] || [[ "${(L)B64N}" == i ]] || [[ "${(L)B64N}" == j ]] || [[ $B64N == q ]]; then echo
     elif   [[ "$COLUMNS"  -ge 110 ]]; then                       # maybe above testz could be replaced with a regex like =~ /^[wij]$/i && just q still sepR8?
       if   [[      $B64N   !=  Q  ]]; then echo -n '  ';fi       # only dblspace them out if term is wide enough
     elif   [[      $B64N   ==  Q  ]]; then echo        ;fi;done} # && finish with newline if term is narrow (although wrapping at likely 80 should look same)
-wh8() { # see which most basic 64 commands are what
-  for B64N in 0 1 2 3 4 5 6 7 8 9 A B C D E F G H I J K L M N O P Q R S T U V W X Y Z a b c d e f g h i j k l m n o p q r s t u v w x y z '.' '_'; do
-    if [[ "$#" -eq 0 ]]; then echo -n `S $B64N` ;fi # for every b64 char, on sepR8 lines used to: export A=`S A`;echo -n "$A A:";wh A;
-                              echo -n   "$B64N:";BNWH=`which $B64N`;echo -n "$BNWH           "; # may want to pass thru some perl substitutes && sprintf
-   #if [[ "$B10N" -eq 0 ]]; then echo;fi # may want to pass 64 into `b10` then maybe `q %` then write quick inverter from rows to columns util
-  done} # not sure why somtImz`wh`will recursively Xpand alias pRamEterz while biltin`which`does not
+wh8()   { # same as wh8ch below but with 8rows flipped to 8columns,otherwise very similar (mAwant2add pRamz2du mor than just disabl colr,sinc sS alreDduzfIn)
+  for B64N in 0 8 G O W e m u  1 9 H P X f n v  2 A I Q Y g o w  3 B J R Z h p x  4 C K S a i q y  5 D L T b j r z  6 E M U c k s '.'  7 F N V d l t '_'; do
+    if     [[ "$#" -eq   0          ]]; then echo -n `S $B64N`;
+      if   [[ $B64N =~ ^[k]$        ]]; then echo -n `S  w   `;fi;fi   ;BNWH=`which $B64N`" '";
+    BNWH=${BNWH:s/ aliased to /alias2\'} ;BNWH=${BNWH:s/      e   / e} ;BNWH=${BNWH:s/ whereis/whereis};
+    BNWH=${BNWH:s/\'lsd8 \'/\' lsd8   \'};BNWH=${BNWH:s/tiny \'/tiny\'};BNWH=${BNWH:s/ls  -F \'/  ls -F \'};BNWH=${BNWH:s/\'Et \'/\'   Et   \'};
+    BNWH=${BNWH:s/ shell built-in command \'/shel biltin cmd}          ;BNWH=${BNWH:s/ not found \'/ cmd not found};
+    if     [[ $B64N =~   ^[SXcqw_]$ ]]; then BNWH="$B64N= ${BNWH:gs/ \'/}";fi;printf "%-18s" $BNWH;echo -n `S W`';';
+    if     [[ $B64N =~ ^[OPQRSTUV]$ ]] && [[ "$COLUMNS" -lt 160 ]] || # had2upd8 where to insert newlinez for reordering
+           [[ $B64N =~ ^[uvwxyz._]$ ]]; then echo;fi;done}
+wh8ch() { # see which most basic 64 single-character commands are mapped to what (majority being aliases, then just a few built-in or not yet found commands)
+  for B64N in 0 1 2 3 4 5 6 7  8 9 A B C D E F  G H I J K L M N  O P Q R S T U V  W X Y Z a b c d  e f g h i j k l  m n o p q r s t  u v w x y z '.' '_'; do
+    if     [[ "$#" -eq   0          ]]; then echo -n `S $B64N`; # BlO set to dark wHITE for invisibly dark BLACk b64 number to color (leave bLUE 4now)
+      if   [[ $B64N =~ ^[k]$        ]]; then echo -n `S  w   `;fi;fi   ;BNWH=`which $B64N`" '"; # 4 b64,on sepR8lInzUsed2:export A=`S A`;echo -n "$A A:";wh A;
+    BNWH=${BNWH:s/ aliased to /alias2\'} ;BNWH=${BNWH:s/      e   / e} ;BNWH=${BNWH:s/ whereis/whereis}; # cud :gs// 4glbl or ${BNWH//litrl/subst} 4nonwIldcRd
+    BNWH=${BNWH:s/\'lsd8 \'/\' lsd8   \'};BNWH=${BNWH:s/tiny \'/tiny\'};BNWH=${BNWH:s/ls  -F \'/  ls -F \'};BNWH=${BNWH:s/\'Et \'/\'   Et   \'}; # alIn quOtz
+    BNWH=${BNWH:s/ shell built-in command \'/shel biltin cmd}          ;BNWH=${BNWH:s/ not found \'/ cmd not found}; # mA want2add Xtra colrz4thEs?
+    if     [[ $B64N =~   ^[SXcqw_]$ ]]; then BNWH="$B64N= ${BNWH:gs/ \'/}";fi;printf "%-18s" $BNWH;echo -n `S W`';'; # biltin printf
+    if     [[ $B64N =~ ^[3BJRZhpx]$ ]] && [[ "$COLUMNS" -lt 160 ]] || # addXtra nwlnz 4orig 80colm mOd,fitz 64 mapz on 16lInz in 80x18 nIcely wrapd in prmptz
+           [[ $B64N =~ ^[7FNVdlt_]$ ]]; then echo;fi;done} # !sureYsomtImz`wh`rEcursvlyXpndz alias pRamz whIl biltin`which`duznot
 goo() { w3m "HTTP://Google.Com/search?q=$1+$2+$3+$4+$5+$6+$7+$8"     ; } # should probably pass $@ =~ s/ /+/g; or something smarter than this
 mcp() { if [[ $# -gt 2 ]] && [[ ! -d ${$#} ]]; then    /bin/cp $@ .  ; return 0; fi; # adds a basic many-argument form of `cp` where all parameters are remote
                                                        /bin/cp $@    ; }             #   files to be copied into the current directory

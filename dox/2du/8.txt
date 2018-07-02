@@ -454,7 +454,7 @@ internationaliz8ion:tools to transl8 for I18N the document8ion && applic8ion int
          affect8ion
          machin8ion
       politiciz8ion
-     democratiz8ion
+     democratiz8ion: # add westerniz8ion with new *E8 && *t8 words for "Etz" 3rd group to maybe close in on "cln" 2nd a bit
              sN8
           feder8   : # add confeder8 maybe with new words for "cln" 2nd group to keep them exactly 64 behind 1st group of solo "r"
         urbaniz8ion:Baudrillard's 4th phenomenon in Simulacra && Simul8ion (also in 1st m8rix movie) that sepR8s humans so far from reality to cause aliN8ion
