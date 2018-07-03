@@ -58,7 +58,7 @@ my @scnt = sort { $a <=> $b } (@lcnt);my $pttl=0;my $apcn=0;my $brtc=' ->';
 for(my $sndx=$#scnt;$sndx >= 0;$sndx--){
   if(($sndx > 0 && $scnt[$sndx] == $scnt[$sndx - 1]) || ($sndx == 0 && $scnt[0] == 0)){splice(@scnt,$sndx,1);}} # below2 sepR8 prnt blox for not color or with
 $Stxt.=                               sprintf("${C}8${M}Pre-cursor${Y}Letter${R}Counter$W:$G d8VS$C=%s$G\n",            d8c($d8VS));
-my $efsz = length($efyl);$Stxt  .=    sprintf("$O  efyl$C=%s".' 'x (18-$efsz).$G.          " edVS$C=%s$G\n",c8fn($efyl),d8c($edVS));
+my $efsz = length($efyl);$Stxt  .=    sprintf("$O  efyl$C=%s".(' 'x abs(18-$efsz)).      "$G edVS$C=%s$G\n",c8fn($efyl),d8c($edVS));
 $Stxt.=                                       "${C}8${M}Pc${Y}Ltr$R Ct$C Full${W}Document${R}Counts$Y Sz${p}b10${M}Ct${G}Percent$W%\n";
 $Stxt.=                                       "$B------ -- ---$c-$B--$c-$B--$c-$B--$c-$B--$c-$B-- --$c-$B---$c-$B-------$W-\n";
 for(@scnt){for my $lndx (0..$#lcnt){ # just loop initially to Pre-compute the ToTaL for l8r gener8ing Percentz Per Pre-letter group as they get Processed2Prnt

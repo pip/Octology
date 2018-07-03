@@ -589,8 +589,10 @@ if((!defined($codz) || !length($codz)) && !-t STDIN){chomp($codz= join('',<STDIN
         elsif(/[f]/      && $sepc[0]=~ /^[0-9A-Z._]$/i  ){$Sl8f = $SKpf . $sepc[0] . $SKpt;} # hopefully don't need to add a -f flag just 2 design8 f0nt layer
         shift(@sepc);}} # should only be 1 or 2 of these since not checking f0nt for now  # might want to save dash skip above for bg -1 versus real 0 blacK
     my $sndx=0;while($sndx <= $#sepc){
-      if     ($sepc[$sndx] eq 'X' && $#sepc >= $sndx+2        ){$Sstr.= ';' if(length($Sstr));$Sstr.='01;38;5;'. hex($sepc[$sndx+1].$sepc[$sndx+2]);$sndx+=2;}
-      elsif  ($sepc[$sndx] eq 'x' && $#sepc >= $sndx+2        ){$Sstr.= ';' if(length($Sstr));$Sstr.=   '48;5;'. hex($sepc[$sndx+1].$sepc[$sndx+2]);$sndx+=2;}
+      if     ($sepc[$sndx] eq 'X' && $#sepc >= $sndx+2        ){$Sstr.= ';' if(length($Sstr));$Sstr.='01;38;5;'. hex($sepc[$sndx+1].$sepc[$sndx+2]); $sndx+=2;}
+      elsif  ($sepc[$sndx] eq 'x' && $#sepc >= $sndx+2        ){$Sstr.= ';' if(length($Sstr));
+        if   ($sepc[$sndx+1] eq 'o'  ||  $sepc[$sndx+2] eq 'o'){                              $Sstr.=   '48;5;015';}
+        else                                                   {                              $Sstr.=   '48;5;'. hex($sepc[$sndx+1].$sepc[$sndx+2]);}$sndx+=2;}
       elsif  (exists(        $sgrm{$sepc[   $sndx]})){ # mk Bold codez overide Xisting st8 of Fclr,or prepend new,&& append all othrz (until grup ordrz)
         if   ($sepc[$sndx] eq 'b'){if($Sstr=~ /(^|;) 0? 1  (;|$)/x){$Sstr=~ s/(^|;) 0? 1  (;|$)/${1}22$2/x;}else{$Sstr=~ s/^(\d)/22;$1/;}}
         elsif($sepc[$sndx] eq 'B'){if($Sstr=~ /(^|;)(0*|22)(;|$)/ ){$Sstr=~ s/(^|;)(0*|22)(;|$)/${1}01$3/ ;}else{$Sstr=~ s/^(\d)/01;$1/;}} # uprcase Bold on

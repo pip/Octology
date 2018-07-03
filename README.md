@@ -1,5 +1,5 @@
 # Octology
-The ontology of 8. `$VERSION='0.0';$d8VS='I6PMAJOR';`
+The ontology of 8. `$VERSION='0.0';$d8VS='I72ML8wh';`
 
 This is basically a public preview of my early development files. I am not yet ready for serious collaboration, but welcome any sort of feedback.
 
@@ -51,7 +51,7 @@ If I ever become unable to continue developing this project further, my hope is 
 ![Octology-sumb-shot_1280x800-HBBLJe4o](https://github.com/pip/Octology/raw/master/gfx/sho/Octology-sumb-shot_1280x800-HBBLJe4o.png "Octology-sumb-HBBLJe4o")
 ![Octology-8trm-shot_1280x800-HBBLK762](https://github.com/pip/Octology/raw/master/gfx/sho/Octology-8trm-shot_1280x800-HBBLK762.png "Octology-8trm-HBBLK762")
 ![Octology-ftst-shot_1614x952-I4SMGG88](https://github.com/pip/Octology/raw/master/gfx/sho/Octology-ftst-shot_1614x952-I4SMGG88.png "Octology-ftst-I4SMGG88")
-![Octology-8plc-shot_1614x952-I6PMAPS8](https://github.com/pip/Octology/raw/master/gfx/sho/Octology-8plc-shot_1614x952-I6PMAPS8.png "Octology-8plc-I6PMAPS8")
+![Octology-wh8z-shot_1614x952-I72ML8wh](https://github.com/pip/Octology/raw/master/gfx/sho/Octology-wh8z-shot_1614x952-I72ML8wh.png "Octology-wh8z-I72ML8wh")
 
 ![Octology-ckm8-shot_1536x960-HAOM9HKQ](https://github.com/pip/Octology/raw/master/gfx/sho/Octology-ckm8-shot_1536x960-HAOM9HKQ.png "Octology-ckm8-HAOM9HKQ")
 ![Octology-g3Ob-shot_1614x902-HAOM9cKA](https://github.com/pip/Octology/raw/master/gfx/sho/Octology-g3Ob-shot_1614x902-HAOM9cKA.png "Octology-g3Ob-HAOM9cKA")
@@ -60,6 +60,9 @@ If I ever become unable to continue developing this project further, my hope is 
 
 *Note*: Please bear in mind that these older shots at the bottom here are far more likely than those in the current **Top8** list above to portray behaviors
 and exhibit details which have been modified somewhat (or possibly replaced entirely) within the time that lapsed since the d8 a particular shot was taken on.
+
+*8plc*: If you would like to download a pre-gener8d colored output file for running a recent: `8plc a` to finalize with l8st -gM8ria block map for l8r `cat`:
+  [8plc-I62MD8Pi.ansi](https://github.com/pip/Octology/blob/master/gfx/sho/8plc-I62MD8Pi.ansi "gfx/sho/8plc-I62MD8Pi.ansi")
 
 *P.S.*: I feel confident suggesting that if almost anyone were to read through 8.txt and then examine the other documentation, code, and data files that are
 distributed as Octology, they could learn much about GNU/Linux, Perl, and general programming from a sometimes manic, yet still usually competent, game coder.

@@ -433,3 +433,4 @@ HTTPS://YouTu.be/zmrpiCsuv6w "Atheists Are Murderers - Debunked (Jordan Peterson
 # Make the case for mounting attack && defense with minimum necessary force. Don't push back any harder than you have to. Maybe Intersex emphasis situ8ions;
 HTTPS://YouTu.be/0ZDy5SdKdew "Atheist Deb8s - A nicer Pope?" # 12m48s of MattDillahunty breaking down a gr8 deal of refut8ion for papal infallibility, etc.;
 HTTPS://YouTu.be/6tcquI2ylNM "Morality Can't Be Objective, Even If God Exists (Morality p.1)" # I72M7Mp1:22m of CosmicSkeptic's Alex laying out subjectivity;
+HTTPS://YouTu.be/DXROAFSRpJA "How a dice can show that God exists" # I72MIdie:4m32s of Unbelievable? spouting incredulity, f8h in chance,&& gr8 fingerprints;

@@ -1,5 +1,5 @@
 # 381KF3RN:~/.zshrc by PipStuart <Pip@CPAN.Org>; nOt:I originallythotitbetr2rElymoronstndalOnXecutablUtlz than aliases||shL-scrpt funczDfynd inany .rc Bcuz4mer
-# $VERSION='0.0';$d8VS='I6OMI4Uk'; # stAyavail2spwnd procSz wich hvOwn non-zsh sub-shL cfgz(eg,vim:!cln 127/7;perl`b64 1023`)sO I pland2port stufhEr2anew u8.pm
+#   stAyavail2spwnd procSz wich hvOwn non-zsh sub-shL cfgz(eg,vim:!cln 127/7;perl`b64 1023`)sO I pland2port stufhEr2anew u8.pm
 #   butIhv rElIzd that c8.pm (inprep4 8sh)wilBAbl2pars .(ba|z)shrc fIlz2lOd thEz&&can mk thMavail2othr shLz bywrapng cmdz wiXpansionUtlz; lern LaunchPad/byobu,
 # 2du:cmNt unUsed aliases,add perVC autostRt nwlOcl`scrn`if!alredy in1,lern`autoload -z`&&sepR8hist,get pcre module&&anyUsefulothrz,
 #   bakon gN2:`em  scummvm`:2use nw"modern"theme4scummvm,add2[scummvm]sect of~/.scummvmrc(aftr runing scummvm once):themepath=/usr/share/games/scummvm/engines
@@ -26,6 +26,7 @@ unsetopt                \
 # menu_complete         \# setng mkz 1st tab XplOd m@ch list;    # bash_rematch mAB mkz regX capturez use $BASH_REMATCH instead of default $match?
 # auto_pushd            \# setng addz dirz 2 stack wN just normally chngng 2 thM (wich I du not normally lIk or want)
 # ksh_arrays            \# rEmMbr wNwrItng scrptz[or funcz]2include'setopt [localoptions] ksharrays'sO arAzR 0-bAsed(but!glOblBcuzmOst scrptzRstndrdly 1-bAsed)
+export vers='0.0';export d8VS='I72MHELP';export auth='PipStuart <Pip@CPAN.Org>'; # above not exporting $b since collidez with sort{$a  <=> $b}
 if     [[       "$SHELL"    == "" ]]; then       export SHELL=`  which zsh`;fi # 8sh should parse this && OverId it    # shud `man zshall` /OSTYP 2lern4BlO
 if     [[       "$HOSTNAME" == "" ]]; then       export HOSTNAME=`hostname`;fi #`hostname`retnz fsckd nwlInz\n4CygWinzRxvt... ||smthng els lame  =(
 if     [[       "$HOST"     == "" ]]; then       export HOST="$HOSTNAME"   ;fi;export VERBOSE='1'; # set flag to print debug && status info from system utilz
@@ -882,15 +883,25 @@ tStc() { # tSt 8pal8 colrz (this is a very slow precursor to ~/bin/tstc since ma
       if   [[      $B64N   !=  Q  ]]; then echo -n '  ';fi       # only dblspace them out if term is wide enough
     elif   [[      $B64N   ==  Q  ]]; then echo        ;fi;done} # && finish with newline if term is narrow (although wrapping at likely 80 should look same)
 wh8()   { # same as wh8ch below but with 8rows flipped to 8columns,otherwise very similar (mAwant2add pRamz2du mor than just disabl colr,sinc sS alreDduzfIn)
-  for B64N in 0 8 G O W e m u  1 9 H P X f n v  2 A I Q Y g o w  3 B J R Z h p x  4 C K S a i q y  5 D L T b j r z  6 E M U c k s '.'  7 F N V d l t '_'; do
-    if     [[ "$#" -eq   0          ]]; then echo -n `S $B64N`;
-      if   [[ $B64N =~ ^[k]$        ]]; then echo -n `S  w   `;fi;fi   ;BNWH=`which $B64N`" '";
-    BNWH=${BNWH:s/ aliased to /alias2\'} ;BNWH=${BNWH:s/      e   / e} ;BNWH=${BNWH:s/ whereis/whereis};
-    BNWH=${BNWH:s/\'lsd8 \'/\' lsd8   \'};BNWH=${BNWH:s/tiny \'/tiny\'};BNWH=${BNWH:s/ls  -F \'/  ls -F \'};BNWH=${BNWH:s/\'Et \'/\'   Et   \'};
-    BNWH=${BNWH:s/ shell built-in command \'/shel biltin cmd}          ;BNWH=${BNWH:s/ not found \'/ cmd not found};
-    if     [[ $B64N =~   ^[SXcqw_]$ ]]; then BNWH="$B64N= ${BNWH:gs/ \'/}";fi;printf "%-18s" $BNWH;echo -n `S W`';';
-    if     [[ $B64N =~ ^[OPQRSTUV]$ ]] && [[ "$COLUMNS" -lt 160 ]] || # had2upd8 where to insert newlinez for reordering
-           [[ $B64N =~ ^[uvwxyz._]$ ]]; then echo;fi;done}
+  if       [[ "$#" -gt   0 && "${(L)1}" =~  h  ]]; then echo -n " wh8 - show WHich primary single b64 && other valued commands by:$auth vers:$vers d8VS:$d8VS;
+  h  - print out this basic Help text message then return; Any parameter other than h right now just strips colors && SGR attributes out;";return 0;fi
+  for B64N in 0 8 G O W e m u  1 9 H P X f n v  2 A I Q Y g o w  3 B J R Z h p x  4 C K S a i q y  5 D L T b j r z  6 E M U c k s '.'  7 F N V d l t '_'  mk sz pu po pe pa pla plb pab gg drkh dv ag agar ai auu dirz d2u u2d del copy move grp attrib mutt asci utf8 u8 bk cls CC CCC eg zg hX ka k9 pp lS mo md rd dm mnt umnt chm cho chg chr chs chf cht ct c8 zc f8 fp fixfont s8 d8 g8 gaa gcm gac gacm gpom caln l8 sl calq calQ cl cln dif loc8 updt uptm uni dic zp ec ev cncl comma hd tl tp wd pw pn pb ic msg wh lsm lsc lsp lsu ren srchl shlp shl S8 sho resp xical ctor p47 a7 rr tt tf xb viii lc v8 uc ss chv0 gt wmc chv7 scrn sx xt st uxtrm uxt lxtrm lxt satrm sak tn8r xf4t Et rox Etrm un pdoc; do
+    if     [[ "$#" -eq   0                          ]]; then echo -n `S $B64N`; # also below tries to strip out all contained newlines
+      if   [[ $B64N =~ ^(k|pp|rr|ss|CC|[ag][ag]|tt) ]]; then echo -n `S  w   `; # for many doubled names, try wHITE unless 2nd char is w so try blacK instead
+        if [[ $B64N =~ ^([a-zA-Z]w)                 ]]; then echo -n `S  K   `;fi;fi;fi;BNWH=`which $B64N`" '"    ;BNWH=${BNWH:gs/	/  }    ;BNWH=${BNWH:gs/
+/} ;BNWH=${BNWH:s/ aliased to /alias2\'}    ;BNWH=${BNWH:s/      e   / e}     ;BNWH=${BNWH:s/ whereis/whereis}    ;BNWH=${BNWH:s/     q  /q};
+    BNWH=${BNWH:s/\'lsd8 \'/\' lsd8   \'}   ;BNWH=${BNWH:s/tiny \'/tiny\'}    ;BNWH=${BNWH:s/ls  -F \'/  ls -F \'};BNWH=${BNWH:s/\'Et \'/\'   Et   \'};
+    BNWH=${BNWH:s/ shell built-in command \'/shel biltin cmd}                 ;BNWH=${BNWH:s/ not found \'/ cmd not found};BNWH=${BNWH:s/     ls  /ls};
+    BNWH=${BNWH:s/ifconfig /ifconfig}       ; # try to squeeze in from term brdr
+    if     [[ "$COLUMNS" -lt 160    ]]; then # leave actual newlines inside of variable assignment regex substitution options && custom AlIn 4m@d outputz
+      if   [[ $B64N =~ ^v8$         ]]; then BNWH=${BNWH:s/elif/elif
+};    elif [[ $B64N =~ ^ss$         ]]; then BNWH=${BNWH:s/    then/ then
+};    fi;fi # should be mostly tidied up colorful results
+    if     [[ $B64N =~ ^([SXqwc_]|[cdgv]8|hd|dic|ss|un)$ ]]; then BNWH="$B64N= ${BNWH:gs/ \'/}";fi;printf "%-18s" $BNWH;echo -n `S W`';';
+    if     [[ $B64N =~                                ^(pb|zg|wd|lsm|lsu|srchl|shl|resp|ctor|tt|lc|uc|wmc)$ ]] ||
+           [[ $B64N =~ ^[OPQRSTUV]$ ]] || [[ $B64N =~ ^(pu|pla|plb|drkh|auu|del|mutt|u8|CC|mo|chm|chg|ct|fp|fixfont|gaa|gac|caln|dif|loc8|zp|ev)$ ]] &&
+           [[ "$COLUMNS" -lt 160    ]] || # this left-to-right order of or 80-column limits then and with not wide then back to or for main 160 limits
+           [[ $B64N =~ ^[uvwxyz._]$ ]] || [[ $B64N =~ ^(pe|pab|agar|dirz|grp|bk|ka|dm|chs|[fdSv]8|gacm|calQ|uptm|comma|ic|ren|p47|viii|s[sx]|(ux|sa|E)trm|Et)$ ]]; then echo;fi;done}
 wh8ch() { # see which most basic 64 single-character commands are mapped to what (majority being aliases, then just a few built-in or not yet found commands)
   for B64N in 0 1 2 3 4 5 6 7  8 9 A B C D E F  G H I J K L M N  O P Q R S T U V  W X Y Z a b c d  e f g h i j k l  m n o p q r s t  u v w x y z '.' '_'; do
     if     [[ "$#" -eq   0          ]]; then echo -n `S $B64N`; # BlO set to dark wHITE for invisibly dark BLACk b64 number to color (leave bLUE 4now)
