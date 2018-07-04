@@ -6,10 +6,12 @@
 #   nowon ubu:`agi scummvm`&&mAB -d8a shud wrk2plA around wi2D advN2rz AgN;
 # nOt:`sz`in/etc/init.d c@chz lOcl sudo* bin daemon nstd of /usr/bin versN,prmpt similRly chOkz tryng`d8`within~/.inst/perl-5.8.8 sO mAB rEordr path2!hv probz?
 #[[   -e /sw/bin/init.sh ]] && source /sw/bin/init.sh; # fink:FreeBSD special shL stufInEded2src4zsh on oldLBoxB4Keith rEvertd bak2 gN2; "${(L)OSTYPE}"== *bsd?
+zmodload       zsh/pcre
   setopt                \
   auto_cd               \
   auto_name_dirs        \
   complete_in_word      \
+  re_____match_____pcre \
   hist___________verify \
   hist__ignore_all_dups \
   pushd_ignore_____dups \
@@ -26,7 +28,8 @@ unsetopt                \
 # menu_complete         \# setng mkz 1st tab XplOd m@ch list;    # bash_rematch mAB mkz regX capturez use $BASH_REMATCH instead of default $match?
 # auto_pushd            \# setng addz dirz 2 stack wN just normally chngng 2 thM (wich I du not normally lIk or want)
 # ksh_arrays            \# rEmMbr wNwrItng scrptz[or funcz]2include'setopt [localoptions] ksharrays'sO arAzR 0-bAsed(but!glOblBcuzmOst scrptzRstndrdly 1-bAsed)
-export vers='0.0';export d8VS='I72MHELP';export auth='PipStuart <Pip@CPAN.Org>'; # above not exporting $b since collidez with sort{$a  <=> $b}
+# re_____match_____pcre \# mA want2set for Z-SHell scripting RegularExpressions to utilize PerlCompatibility styles && mA insert 'zmodload zsh/(pc)?re(gex)?';
+export vers='0.0';export d8VS='I74M88wh';export auth='PipStuart <Pip@CPAN.Org>'; # above not exporting $b since collidez with sort{$a  <=> $b}
 if     [[       "$SHELL"    == "" ]]; then       export SHELL=`  which zsh`;fi # 8sh should parse this && OverId it    # shud `man zshall` /OSTYP 2lern4BlO
 if     [[       "$HOSTNAME" == "" ]]; then       export HOSTNAME=`hostname`;fi #`hostname`retnz fsckd nwlInz\n4CygWinzRxvt... ||smthng els lame  =(
 if     [[       "$HOST"     == "" ]]; then       export HOST="$HOSTNAME"   ;fi;export VERBOSE='1'; # set flag to print debug && status info from system utilz
@@ -257,10 +260,10 @@ alias lFif='lF   -I=*(.)';alias llif='ll   -I=*(.)';alias lif='l   -I=*(.)';alia
 # mAB stRting ./ as root owned  (even if not that restrictive 755 permissions) can't find way to ~/ from there? Wrap p[uo] makes sense 2rElEtRgetfromNEwher
 ea(){ if [[ `dirs` != '~' ]]; then pushd ~; fi;e a; # try to quell warning "popd: directory stack empty" && not found pu or po
       if [[ `dirs` != '~' ]]; then popd   ; fi}     # Orig: alias ea='pu ~;e a;po';
-alias e='      e    $TTY';                          alias e2='pu ~/dox/2du;e 2;po';alias e3='e 3     ';alias upd8-mime-d8bs='md8';alias larv='laff; ripv';
+alias e='      e    $TTY';alias up='        upd8  ';alias e2='pu ~/dox/2du;e 2;po';alias e3='e 3     ';alias upd8-mime-d8bs='md8';alias larv='laff; ripv';
 alias e4='     e    4   ';alias e5='     e 5      ';alias e6='             e 6   ';alias e7='e 7     ';alias   e8='pu ~/dox/2du;e 8;po';alias e9='e 9';
 alias bak='    bak  $TTY';alias   ept='  echo `pt`';alias upd8-mdb=' md8       ';alias upd8-md8b='md8';alias update-mime-db='md8';alias lar8='larv; updb';
-                          alias    loc8='   locate';alias mdb-upd8=' md8       ';alias md8b-upd8='md8';alias mime-db-update='md8';alias mdb8='  mdb-upd8';
+alias ud='     updb     ';alias    loc8='   locate';alias mdb-upd8=' md8       ';alias md8b-upd8='md8';alias mime-db-update='md8';alias mdb8='  mdb-upd8';
 alias updb='   upd8db   ';alias upd8d8ab='  upd8db';alias   updtdb='updb       ';alias md8b='mdb-upd8';alias md8='update-mime-database -V';
 alias rc8=' rc-upd8     ';alias rc-upd8='rc-update';alias etc-upd8='etc-update ';alias etc8='etc-upd8';alias env8='env-upd8';alias  env-upd8='env-update';
 alias pl8=' pl-upd8     ';alias pl-upd8='plcl     ';alias plcl='pl-clnr     all';alias pl8c='pl8     ';alias pl8l='pl8     ';
@@ -335,7 +338,7 @@ alias    drkh='   pa  "print drkh(@ARGV)"'; # HEX to RgbL with 8th intensities
 #lias    prmz='   plb "      prmz(@ARGV)"';
 #lias    sumz='   plb "      sumz(@ARGV)"'; # printing these was just yielding an extra 1 at each end, after they printed output themselves instead of returnd
 alias      dv='   dirs -v';
-alias    dirz='   dirs -p | perl -pe "\$_ = \$. - 1 . q. . . \$_"'; # sho lynz
+alias    dirz='   dirs -p|perl -pe "\$_ = \$. - 1 . q. . . \$_"'; # sho lynz
 alias     d2u='   dm2u   ';
 alias     u2d='   dm2u  d';
 alias     del='     rm';
@@ -364,7 +367,7 @@ alias      bk='   bak '; # bk    :            bak            (orig Pip:Utl file 
 alias     cls='  clear'; #  cls  :          clear (like DOS command for CLearScreen)
 alias       C='  cls  '; #  C    :B4 clear was wc (Count charz,words,&&lines&&eventually bits,bytes,[KMGTPEZY]i?bits|Bytes,code points,paragraphs,subs,etc.)
 alias      CC='  cd;C '; #       :                (combines Change directory back2 home ~ && then Clear screen,pretty easy2type 1-handed but Enter is a reach)
-alias     CCC='CC;echo -n -e "\e[3J"'; # special super Clear of scrollback too (goodaftr `kp` along wi xx 2clear paste buffers);CSI n J - ED(Erase in Display)
+alias     CCC='CC;en -e "\e[3J"' ; # special super Clear of scrollback too (goodaftr `kp` along wi xx 2clear paste buffers);CSI n J - ED(Erase in Display)
 #lias       d=' du -sb'; #  d    :             du|df|dfc     (Disk usage, free, etc.) with -sb to Summarize (only total4each arg) with block-size Bytes
 # no longer just aliasing du above since better to apply to ~/bin/dic which is my colorful enhanced dict wrapper that I employ much more frequently
 alias       F='   f   ';
@@ -421,7 +424,7 @@ alias      f8f='    ls       ~/lib/Octology/f8/f0nt';alias lsf0nt='f8f'; # event
 alias      f8p='    ls       ~/lib/Octology/f8/pal8';alias lspal8='f8p';
 alias   fixfont=' etfp -s -f ~/lib/Octology/f8/f0nt/psf/rOMAN3.psf';  # these hopefully restore usable f0nts to full-screen console (or 8trm also eventually)
 alias resetfont=' etfp -s -f ~/lib/Octology/f8/f0nt/psf/france9.psf'; # these maybe should be `setfont` instead of `etfp` for more reliable compatibility
-alias      s8n='  sort -n'; # "Prince of Darkness"  game eventually? or just simple Numeric Sorting alias until then
+alias      s8n='    s8 -n'; # "Prince of Darkness"  game eventually? or just simple Numeric Sorting alias until then
 alias      s8='   sort'; #  s8   :           sort (maybe eventually a collection of my own custom sortings for orders beyond the default `sort` offerings)
 #          d8   already ~/bin/
 #lias      d8='   date'; #  d8   :           date|time|pt
@@ -469,7 +472,9 @@ alias      zp='    tar czvf'; #zp:            tgz|tar|zip|7z (eventually inspect
 alias       z='     zp';
 #          uz() already function below
 #lias      uz='  unzip'; #  uz   :          unzip
-alias      ec='   echo'; #  ec   :           echo
+alias      ec='  echo '; #  ec   :           echo
+alias      en='  ec -n';
+alias     ene='  en -e';
 alias      ev=' evince'; #  ev   :           evince (decent PDF document reader)
 alias    cncl=' cancel'; #  cncl :         cancel
 alias   comma=' cma   '; #  comma:            cma (like coma inserts by 4, these insert after 3)
@@ -639,14 +644,14 @@ alias eqx='/home/pip/dvl/m8/clda/eqx/eqx-0.9.4.26/equinox3d-0.9.4.26-Linux64bit/
 alias fstat='  perl -MTime::PT     -e "@s=split(/ /,scalar(localtime((stat(shift))[9])));print   \"@s\"      ;"';
 #lias fstatpt='perl -MTime::PT     -e "@s=split(/ /,scalar(localtime((stat(shift))[9])));print `pt @s`,\"\n\";"'; #pt(@s) not exported,so try shell,leav Nwln?
 alias fstd8='  perl -MOctology::d8 -e "@s=split(/ /,scalar(localtime((stat(shift))[9])));print Octology::d8->new(\"expand\"=>\"@s\");"'; 
-alias    xt=' xterm          -geometry 160x50   &'; #     xt used2B a symlink2 ~/bin/xmltidy but more consistent with gt,Et,st to have it as xterm now instead
-alias uxtrm='uxterm          -geometry 160x50   &';alias uxt='uxtrm';alias st='stterm -g 160x50 -T st &'; # also SimpleTerminal st
-alias lxtrm='lxterminal     --geometry=160x50   &';alias lxt='lxtrm'; # =lxterm is a separ8 sh script wich testz locale && wrapz plain uxterm for UTF-8
-alias satrm='sakura          -c 160     -r 50   &';alias sak='satrm'; # thEse termz are each made pretty similar to my Dfalt GT dimensionz
-alias  tn8r='terminator     --geometry=1608x932 &'; # geom here is strangely pixLz nstd of charz with char dimensionz about 10x18 pixLz plus border && tabbar
-alias  xf4t='xfce4-terminal --geometry=160x50   &'; # need to config terminalrc to use smaller font
-alias  rox='roxterm         --geometry=160x50                 &'; # another VTE-based xterm (-z $ZoomFrom1.0 [want 0.833333] spits CRITICAL assertion pango)
-alias  Etrm=' Eterm         --geometry 160x50 --scrollbar-width 15 --cmod 227 -L 65536 &';alias Et='Etrm';alias E='Et'; # used to be 'Eterm -t E &' but it...
+alias    xt=' xterm      -geometry 160x50   &'; #     xt used2B a symlink2 ~/bin/xmltidy but more consistent with gt,Et,st to have it as xterm now instead
+alias uxtrm='uxterm      -geometry 160x50   &';alias uxt='uxtrm';alias st='stterm -g 160x50 -T st &'; # also SimpleTerminal st
+alias lxtrm='lxterminal --geometry=160x50   &';alias lxt='lxtrm'; # =lxterm is a separ8 sh script wich testz locale && wrapz plain uxterm for UTF-8
+alias satrm='sakura      -c 160     -r 50   &';alias sak='satrm'; # thEse termz are each made pretty similar to my Dfalt GT dimensionz
+alias  tn8r='terminator --geometry=1608x932 &'; # geom here is strangely pixLz nstd of charz with char dimensionz about 10x18 pixLz plus border && tabbar
+alias  xf4t=' x4t       --geometry=160x50   &';alias x4t='xfce4-terminal'; # need to config terminalrc to use smaller font
+alias  rox='  rxt       --geometry=160x50   &';alias rxt='roxterm'; # anothr VTE-bAsd xterm (-z $ZoomFrom1.0 [want 0.8333] spits CRITICAL assertion pango)
+alias  Etrm=' Eterm     --geometry 160x50 --scrollbar-width 15 --cmod 227 -L 65536 &';alias Et='Etrm';alias E='Et'; # used to be 'Eterm -t E &' but it...
 export ETERM_THEME_ROOT="~/.Eterm/themes"; # wuz ~/.Eterm/themes/Eterm                       # ...looks like I don't even need that plain old  E theme anymore
 #lias E=' Eterm -t E --scrollbar-type motif --scrollbar-width 15 &'; # --cmod 227 &';
 #lias Et='Eterm --background-pixmap mits1024.jpg -c orange -T PipzEtrm --scrollbar-type motif --scrollbar-color blue --scrollbar-width 15 --scrollbar-right --path /home/pip/.Eterm/ --default-font-index 4 &'
@@ -882,26 +887,34 @@ tStc() { # tSt 8pal8 colrz (this is a very slow precursor to ~/bin/tstc since ma
     elif   [[ "$COLUMNS"  -ge 110 ]]; then                       # maybe above testz could be replaced with a regex like =~ /^[wij]$/i && just q still sepR8?
       if   [[      $B64N   !=  Q  ]]; then echo -n '  ';fi       # only dblspace them out if term is wide enough
     elif   [[      $B64N   ==  Q  ]]; then echo        ;fi;done} # && finish with newline if term is narrow (although wrapping at likely 80 should look same)
-wh8()   { # same as wh8ch below but with 8rows flipped to 8columns,otherwise very similar (mAwant2add pRamz2du mor than just disabl colr,sinc sS alreDduzfIn)
+wh8()   {  LP_F='0'; # same as wh8ch BlO but wi 8rows flipd2 8columns,othrwIz very similR (mAwant2add pRamz2du mor than just disabl colr,sinc sS duzfIn)
   if       [[ "$#" -gt   0 && "${(L)1}" =~  h  ]]; then echo -n " wh8 - show WHich primary single b64 && other valued commands by:$auth vers:$vers d8VS:$d8VS;
   h  - print out this basic Help text message then return; Any parameter other than h right now just strips colors && SGR attributes out;";return 0;fi
-  for B64N in 0 8 G O W e m u  1 9 H P X f n v  2 A I Q Y g o w  3 B J R Z h p x  4 C K S a i q y  5 D L T b j r z  6 E M U c k s '.'  7 F N V d l t '_'  mk sz pu po pe pa pla plb pab gg drkh dv ag agar ai auu dirz d2u u2d del copy move grp attrib mutt asci utf8 u8 bk cls CC CCC eg zg hX ka k9 pp lS mo md rd dm mnt umnt chm cho chg chr chs chf cht ct c8 zc f8 fp fixfont s8 d8 g8 gaa gcm gac gacm gpom caln l8 sl calq calQ cl cln dif loc8 updt uptm uni dic zp ec ev cncl comma hd tl tp wd pw pn pb ic msg wh lsm lsc lsp lsu ren srchl shlp shl S8 sho resp xical ctor p47 a7 rr tt tf xb viii lc v8 uc ss chv0 gt wmc chv7 scrn sx xt st uxtrm uxt lxtrm lxt satrm sak tn8r xf4t Et rox Etrm un pdoc; do
-    if     [[ "$#" -eq   0                          ]]; then echo -n `S $B64N`; # also below tries to strip out all contained newlines
-      if   [[ $B64N =~ ^(k|pp|rr|ss|CC|[ag][ag]|tt) ]]; then echo -n `S  w   `; # for many doubled names, try wHITE unless 2nd char is w so try blacK instead
-        if [[ $B64N =~ ^([a-zA-Z]w)                 ]]; then echo -n `S  K   `;fi;fi;fi;BNWH=`which $B64N`" '"    ;BNWH=${BNWH:gs/	/  }    ;BNWH=${BNWH:gs/
-/} ;BNWH=${BNWH:s/ aliased to /alias2\'}    ;BNWH=${BNWH:s/      e   / e}     ;BNWH=${BNWH:s/ whereis/whereis}    ;BNWH=${BNWH:s/     q  /q};
-    BNWH=${BNWH:s/\'lsd8 \'/\' lsd8   \'}   ;BNWH=${BNWH:s/tiny \'/tiny\'}    ;BNWH=${BNWH:s/ls  -F \'/  ls -F \'};BNWH=${BNWH:s/\'Et \'/\'   Et   \'};
-    BNWH=${BNWH:s/ shell built-in command \'/shel biltin cmd}                 ;BNWH=${BNWH:s/ not found \'/ cmd not found};BNWH=${BNWH:s/     ls  /ls};
-    BNWH=${BNWH:s/ifconfig /ifconfig}       ; # try to squeeze in from term brdr
-    if     [[ "$COLUMNS" -lt 160    ]]; then # leave actual newlines inside of variable assignment regex substitution options && custom AlIn 4m@d outputz
+  for B64N in 0 8 G O W e m u  1 9 H P X f n v  2 A I Q Y g o w  3 B J R Z h p x  4 C K S a i q y  5 D L T b j r z  6 E M U c k s '.'  7 F N V d l t '_'  mk sz pu po pdoc ka pe   pa pla plb pab ag   drkh gg dv ac acs apts   auu aar ai dirz ic   s8 d2u u2d del copy move attrib   s8n grp asci utf8 u8 CC CCC cls   eg zg hX k9 pp lS mo md rd   dm ct chm cho chg chr chs chf cht   mnt umnt bk c8 zc d8 fp   fixfont g8 gaa gcm gac   gacm gpom caln l8 sl calq calQ cln   cl comma hd dif loc8 dic zp ud   updb upd8db up updt uptm ec en   uni cncl tl tp wd pw pn pb msg   ren wh lsm lsc lsp lsu xical S8   srchl shlp shl sho   p47 a7 rr tt tf gtt viii   lc chv0 v8   uc chv7 ss   wmc resp ctor scrn sx gt   xt st uxtrm uxt lxt   lxtrm satrm sak tn8r   xf4t rox Etrm   x4t rxt Et un ev pl   xbk xb xbsf kp   xdt; do
+    if     [[ "$#" -eq   0                             ]]; then echo -n `S $B64N`; # also below tries to strip out all contained newlines
+      if   [[ $B64N =~ ^([bk]|pp|rr|ss|CC|[ag][ag]|tt) ]]; then echo -n `S  w   `; # 4many dbld nAmz,try wHITE unlS 2nd char is w so thN try blacK nstd
+        if [[ $B64N =~ ^([a-zA-Z]w)                    ]]; then echo -n `S  K   `;fi;fi;fi; BNWH=`which $B64N`;BNWH=${BNWH:s/      e    / e };
+    if     [[ $LP_F =~ ^[0]$        ]]; then BNWH="$BNWH ";BNWH=${BNWH:s/ Et /    Et   };BNWH=${BNWH:s/tiny /tiny};BNWH=${BNWH:s/ whereis /whereis };
+      if   [[ $B64N =~ ^[_]$        ]]; then LP_F='1'     ;                       fi;fi # assign LoopPast_underscoreFlag to track once top64 are done
+    BNWH=${BNWH:s/ aliased to /alias2\'}    ;BNWH="$BNWH'";BNWH=${BNWH:gs/	/  };BNWH=${BNWH:s/2\'apt                     /2\'apt}; # EndSpaceLoopCount
+    BNWH=${BNWH:s/\'lsd8 \'/\'   lsd8 \'}   ;BNWH=${BNWH:s/ls  -F \'/  ls -F \'};BNWH=${BNWH:s/\'ls   /\'ls}      ;BNWH=${BNWH:s/    q /q};BNWH=${BNWH:gs/
+/}; if     [[ $LP_F =~ ^[1]$        ]]; then BNWH=${BNWH:s/     /};BNWH=${BNWH:s/              \&/\&}             ;BNWH=${BNWH:s/--geom/ --geom};
+      for ESLC in 0 1 2 3; do BNWH=${BNWH:s/2\' /2\'};BNWH=${BNWH:s/ \'/\'};done;BNWH=${BNWH:s/ \'/\'}        ;BNWH=${BNWH:s/    --geom/ --geom};
+      BNWH=${BNWH:gs/  uname/uname};BNWH=${BNWH:s/  uname -a    return 0  /uname -a;return 0};fi # note:brkng dn nwlnz from funcz mA lose nEded ';'semiz;
+    BNWH=${BNWH:s/ shell built-in command \'/ shel biltin cmd}    ;BNWH=${BNWH:s/ not found\'/ not found cmd} ;BNWH=${BNWH:s/srchl    -i/srchl -i};
+    BNWH=${BNWH:s/sakura     -c 160     -r 50   \&/sakura -c 160 -r 50 \&}      ;BNWH=${BNWH:s/  --geometry=160x50   \&/ --geometry=160x50 \&};
+    BNWH=${BNWH:s/uxterm     -geometry 160x50   \&/uxterm -geometry 160x50 \&}  ;BNWH=${BNWH:s/git  ad/git ad};BNWH=${BNWH:s/gaa; gcm/gaa;gcm};
+    if     [[ "$COLUMNS" -lt 160    ]]; then  # leave actual newlines inside of variable assignment regex substitution options && custom AlIn 4m@d outputz
       if   [[ $B64N =~ ^v8$         ]]; then BNWH=${BNWH:s/elif/elif
 };    elif [[ $B64N =~ ^ss$         ]]; then BNWH=${BNWH:s/    then/ then
-};    fi;fi # should be mostly tidied up colorful results
-    if     [[ $B64N =~ ^([SXqwc_]|[cdgv]8|hd|dic|ss|un)$ ]]; then BNWH="$B64N= ${BNWH:gs/ \'/}";fi;printf "%-18s" $BNWH;echo -n `S W`';';
+};    fi;fi # below left-to-right order of or 80-column limits then and with not wide then back to or for main dflt 160-colm limits
+    if     [[ $B64N =~ ^([SXqwc_]|[cdfg]8|hd|dic|mutt)$ ]]; then BNWH=${BNWH:gs/ \'/\'};BNWH="$B64N= ${BNWH:gs/\'/}";fi
+    if     [[ $LP_F =~ ^[0]$        ]]; then printf "%-18s" $BNWH; else echo -n $BNWH;fi # mAB try2!pad up past top64
+    echo -n `S W`';'; # tried2add /bin/ matchz wi $ end but syntax && escaping must be somewhat unconventional, probably nEd2rEd&&stuD mor PCRE dox
     if     [[ $B64N =~                                ^(pb|zg|wd|lsm|lsu|srchl|shl|resp|ctor|tt|lc|uc|wmc)$ ]] ||
-           [[ $B64N =~ ^[OPQRSTUV]$ ]] || [[ $B64N =~ ^(pu|pla|plb|drkh|auu|del|mutt|u8|CC|mo|chm|chg|ct|fp|fixfont|gaa|gac|caln|dif|loc8|zp|ev)$ ]] &&
-           [[ "$COLUMNS" -lt 160    ]] || # this left-to-right order of or 80-column limits then and with not wide then back to or for main 160 limits
-           [[ $B64N =~ ^[uvwxyz._]$ ]] || [[ $B64N =~ ^(pe|pab|agar|dirz|grp|bk|ka|dm|chs|[fdSv]8|gacm|calQ|uptm|comma|ic|ren|p47|viii|s[sx]|(ux|sa|E)trm|Et)$ ]]; then echo;fi;done}
+           [[ $B64N =~ ^[OPQRSTUV]$ ]] || [[ $B64N =~ ^(pu|pla|plb|drkh|auu|del|mo|chm|chg|ct|caln|dif|loc8)$ ]] &&
+           [[ "$COLUMNS" -lt 160    ]] || [[ $B64N =~ ^(pe|apts|ag|ic|attrib|cls|rd|cht|fp|gac|cln|ud|en|msg|sho|viii|[Sv]8|ss)$ ]] ||
+           [[ $B64N =~ ^[uvwxyz._]$ ]] || [[ $B64N =~ ^(gt|lxt|tn8r|Etrm|pl|kp)$ ]]; then echo $z;fi;done}
 wh8ch() { # see which most basic 64 single-character commands are mapped to what (majority being aliases, then just a few built-in or not yet found commands)
   for B64N in 0 1 2 3 4 5 6 7  8 9 A B C D E F  G H I J K L M N  O P Q R S T U V  W X Y Z a b c d  e f g h i j k l  m n o p q r s t  u v w x y z '.' '_'; do
     if     [[ "$#" -eq   0          ]]; then echo -n `S $B64N`; # BlO set to dark wHITE for invisibly dark BLACk b64 number to color (leave bLUE 4now)

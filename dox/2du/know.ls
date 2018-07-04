@@ -434,3 +434,8 @@ HTTPS://YouTu.be/zmrpiCsuv6w "Atheists Are Murderers - Debunked (Jordan Peterson
 HTTPS://YouTu.be/0ZDy5SdKdew "Atheist Deb8s - A nicer Pope?" # 12m48s of MattDillahunty breaking down a gr8 deal of refut8ion for papal infallibility, etc.;
 HTTPS://YouTu.be/6tcquI2ylNM "Morality Can't Be Objective, Even If God Exists (Morality p.1)" # I72M7Mp1:22m of CosmicSkeptic's Alex laying out subjectivity;
 HTTPS://YouTu.be/DXROAFSRpJA "How a dice can show that God exists" # I72MIdie:4m32s of Unbelievable? spouting incredulity, f8h in chance,&& gr8 fingerprints;
+HTTPS://YouTu.be/Kl2kmVtmyFE "Why Do People Laugh at CrE8ionist (Part 47) -TOO finely tuned!" # I72MMCrE:22m22s of Thunderf00t dismantling the PragerU video;
+HTTPS://YouTu.be/Lvqmka8LYQ4 "Why Should We Take the Bible Seriously? | Andrew - Twinsburg | Atheist Experience 22.25" # 20m of divine-inspir8ion refut8ion;
+HTTPS://YouTu.be/8Ni7cuWEu-o "20 Reforms That Could Fix Watchtower" # I74M1RAJ:22m11s of JohnCedars laying out a respectable list of changes for JWitnesses;
+HTTPS://YouTu.be/_sjZVwAnwPA "An Overview of Common Logical Fallacies" # 18m26s of Thinking-Ape helpfully summarizing bad argument types from April 6th,2015;
+HTTPS://YouTu.be/A51lFpNLmko "Everything You Need to Know About Jehovah's Witnesses in 5 Minutes" # I74MAJul:LloydEvans (JohnCedars' channel) March 6th,2018;

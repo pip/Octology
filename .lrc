@@ -837,6 +837,10 @@ CHR                           Yk           #cd= 01;33;40    01;33;40  CHaRacter 
 .err
 .fla
 .3rc                                       # /etc/qt3/ or ~/.qt/
+.esd                                       # I73M73MI:upd8ng 4 l8st krnl identified these 4 new aliases as newest candid8z 4 incorpor8ion here;
+.dwm
+.swm
+.wim
 .deny
 .SKIP                                      # MANIFEST.SKIP from Perl packages
 .lock
@@ -1243,6 +1247,8 @@ CHR                           Yk           #cd= 01;33;40    01;33;40  CHaRacter 
 .D.0                          g
 .E.0                          b
 .F.0                          k
+.asc                          o            # I74M2ASC:added entries for PGP-signed 7776 pswd list from Diceware && stored in ~/dox/dvl/ref/ plain ASCII text;
+.ascii                        O
 .ansi                         Y
 .ANSI.00.30                   k            # \.ANSI\.[01]\.3[0-7] dotted color-code extensions
 .ANSI.00.31                   r
@@ -1284,20 +1290,21 @@ CHR                           Yk           #cd= 01;33;40    01;33;40  CHaRacter 
 .10.0-21-generic              y
 .10.0-20-generic              g
 .10.0-19-generic              c
-.13.0-45-generic              R            # for slightly old 4.13.* kernelz before upgrading to Ubuntu 18.04 on Chun 1st, then maybe sync R2K, then upgr KRA
-.13.0-43-generic              o
-.13.0-41-generic              Y
-.13.0-39-generic              G
-.13.0-37-generic              C
-.13.0-36-generic              B
-.13.0-32-generic              M
-.13.0-31-generic              p
-.13.0-25-generic              R
-.13.0-21-generic              o
-.13.0-17-generic              Y
-.13.0-16-generic              G            # BlO /boot Linux kernelz versionz  # F1ELGnuL:ROYG CBMP => 1;3[1o32 645p]; mAB EvN2LE gNR8 upd8z from `ls /boot`;
-.15.0-23-generic              R
-.15.0-22-generic              o
+.13.0-45-generic              Rb           # for slightly old 4.13.* kernelz before upgrading to Ubuntu 18.04 on Chun 1st, then maybe sync R2K, then upgr KRA
+.13.0-43-generic              ob
+.13.0-41-generic              Yb
+.13.0-39-generic              Gb
+.13.0-37-generic              Cb
+.13.0-36-generic              Bb
+.13.0-32-generic              Mb
+.13.0-31-generic              pb
+.13.0-25-generic              Rb
+.13.0-21-generic              ob
+.13.0-17-generic              Yb
+.13.0-16-generic              Gb           # BlO /boot Linux kernelz versionz  # F1ELGnuL:ROYG CBMP => 1;3[1o32 645p]; mAB EvN2LE gNR8 upd8z from `ls /boot`;
+.15.0-24-generic              R
+.15.0-23-generic              o
+.15.0-22-generic              Y
 #                                          # zsh wraps '%{' ANSI '%}' && vim User[1-9] colrz specify BlO ForeGroundz all on darkblue BakGrnd4statuslIn
 #     4NT    etfp   vim  c8  color              ANSI      HTML    Octology::d8::fldz (`d8`)
 #     0f     Fsy_   %*    W WhiteBright         \e[1;37m  FEFDFF            # vim %* resets statuslIn colr 2 Dfalt   White on darkblue so has max 10 colrz
