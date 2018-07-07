@@ -308,17 +308,17 @@ alias MkNwKrnl='echo "em gen2-srcz;/usr/src/linux;mkMnuCfg;mk;mkModIns;bak.cfg;c
 alias vimuse='vim /usr/portage/profiles/use.desc /etc/make.conf /usr/portage/profiles/use.local.desc /etc/portage/package.use   /etc/portage/package.keywords';
 alias vimUz=' vimuse                                                                                 /etc/portage/package.*mask /etc/portage/color.map';
 #lias scp='noglob scp'; # still want to glob locally so just intentionally escape remote globs wi \* etc; #Rot13perLyn:`vim $fyl`Vg?
-alias              ..='cd ..                 ';alias cdup='..';alias cd..='           ..           ';
-alias             ...='cd ../..                              ';alias cd...='          ...          ';
-alias            ....='cd ../../..                           ';alias cd....='         ....         ';
-alias           .....='cd ../../../..                        ';alias cd.....='        .....        ';
-alias          ......='cd ../../../../..                     ';alias cd......='       ......       ';
-alias         .......='cd ../../../../../..                  ';alias cd.......='      .......      ';
-alias        ........='cd ../../../../../../..               ';alias cd........='     ........     ';
-alias       .........='cd ../../../../../../../..            ';alias cd.........='    .........    ';
-alias      ..........='cd ../../../../../../../../..         ';alias cd..........='   ..........   ';
-alias     ...........='cd ../../../../../../../../../..      ';alias cd...........='  ...........  ';
-alias    ............='cd ../../../../../../../../../../..   ';alias cd............=' ............ ';
+alias              ..='cd ..                 ';alias cdup='..';alias cd..='..                      ';
+alias             ...='cd ../..                              ';alias cd...='...                    ';
+alias            ....='cd ../../..                           ';alias cd....='....                  ';
+alias           .....='cd ../../../..                        ';alias cd.....='.....                ';
+alias          ......='cd ../../../../..                     ';alias cd......='......              ';
+alias         .......='cd ../../../../../..                  ';alias cd.......='.......            ';
+alias        ........='cd ../../../../../../..               ';alias cd........='........          ';
+alias       .........='cd ../../../../../../../..            ';alias cd.........='.........        ';
+alias      ..........='cd ../../../../../../../../..         ';alias cd..........='..........      ';
+alias     ...........='cd ../../../../../../../../../..      ';alias cd...........='...........    ';
+alias    ............='cd ../../../../../../../../../../..   ';alias cd............='............  ';
 alias   .............='cd ../../../../../../../../../../../..';alias cd.............='.............';
 alias      mk='   make'; # following are my main super-terse aliases for performing almost every core GNU/Linux system utility (with some inherited from DOS)
 alias      sz='   sudo -E zsh';
@@ -473,7 +473,8 @@ alias       z='     zp';
 #          uz() already function below
 #lias      uz='  unzip'; #  uz   :          unzip
 alias      ec='  echo '; #  ec   :           echo
-alias      en='  ec -n';
+alias      ee='  ec -e';
+alias     en='   ec -n';
 alias     ene='  en -e';
 alias      ev=' evince'; #  ev   :           evince (decent PDF document reader)
 alias    cncl=' cancel'; #  cncl :         cancel
@@ -674,7 +675,7 @@ export ETERM_THEME_ROOT="~/.Eterm/themes"; # wuz ~/.Eterm/themes/Eterm          
 #lias gtpt='    gtd0 --class=ptok     --geometry  27x1-0-0       --hide-menubar --window-with-profile=GT27x1AndaleMonoBold40-ptok --title=ptok -e ptok &';
 #lias gtpto='   gtd0 --class=ptok     --geometry  27x1+3002+1141 --hide-menubar --window-with-profile=GT27x1AndaleMono40-ptok     --title=ptok -e ptok &';
 #lias gtpm='    gtd0 --class=pmix     --geometry 160x3+1921+1141 --hide-menubar --window-with-profile=GT67x3Lincoln12-pmix --title=pmix -e pmix&';#160,180,282
-alias gtt='gnome-tweak-tool'; # mainly used (so far) for scaling all fontz to 1.5 && making CapsLock a Ctrl; XperimNt wi Caps2:Hyper,Menu,Win2see wutcan map2?
+alias gtt='gnome-tweaks'; # used to be gt-tool scaling all fontz to 1.5 && mkng CapsLock a Ctrl;XperimNt wi Caps2:Hyper,Menu,Win2see wut else can map too?
 alias gt=' gnome-terminal';alias wmc='wmctrl'; # mAB -x zsh (-c)? s2 & or wiout aliasz: pushd ~/dox/2du;screen -h 9999 -S 2du -t 2du e 2;popd;
 alias xr='xrandr --output DVI-0 --mode 1920x1080 --rate 60';alias cx='ct "init";xr'; # nEd2set ViotekGN32C over DVI from Dflt 144 rEfresh down2cAbl suportd 60
 if       [[ "${(L)HHst}" ==  aku    ]]; then  alias gtss='sleep 1'; # GnomeTerminal SleepSeconds 2 delay 4 gti init   # only Akuma was fast Enuf2kEp up with 1
@@ -729,14 +730,14 @@ if       [[ "${(L)HHst}" ==  aku    ]]; then # 664||-1882,-e2586 1294w 3840-1958
                                              #   Below used to just have "-e ~/bin/d8ok" before appending the -d parameter so needing the -x instead.
   # I71M8wxh:Maybe Ubu18.04 upd8d GnomTerm or GnomTwekTool gone dropd scaling so old d8ok32->36 && main8->7.9 nEdz x664,4504,2584 chopd 4 4mor char widthz;
   # q 1306/34=38.41176470588235294117647058823529411765
-  # 1306-1292=14 mAB scrlbR widt; 4x38=152; 512,4352,2432; mIt nEd2scAl 1306 wIdr2 1458;
+  # 1306-1292=14 mAB scrlbR widt; 4x38=152; 512,4352,2432; mIt nEd2scAl 1306 wIdr2 1458; try even shorter 1268, wi each of 34 char widz 38px or 33 wo padspc?
   # q 1458/34=42.882352941176470; 4x42=166; 496,4336,2416; othr was +306+0 up2 466;
-  alias gtI='gt --geometry=+496-0     --hide-menubar --window-with-profile=d8ok                               --role=d8ok                                   &;
+  alias gtI='gt --geometry=+664-0     --hide-menubar --window-with-profile=d8ok                               --role=d8ok                                   &;
         gtss;wmc -r :ACTIVE: -T d8ok                ;wmc -r :ACTIVE: -b add,skip_pager,sticky;
-             wmc -r :ACTIVE: -e  10,496,1006,1458,74;wmc -r :ACTIVE: -b add,skip_taskbar,below;
+             wmc -r :ACTIVE: -e  10,664,1006,1268,74;wmc -r :ACTIVE: -b add,skip_taskbar,below;
              gt --geometry=-0-0       --hide-menubar --window-with-profile=d8ok                               --role=d8ok                                   &;
         gtss;wmc -r :ACTIVE: -T d8ok                ;wmc -r :ACTIVE: -b add,skip_pager,sticky;
-             wmc -r :ACTIVE: -e 10,4336,1006,1458,74;wmc -r :ACTIVE: -b add,skip_taskbar,below;
+             wmc -r :ACTIVE: -e 10,4504,1006,1268,74;wmc -r :ACTIVE: -b add,skip_taskbar,below;
              gt --geometry=-0-0       --hide-menubar --window-with-profile=d8fd                               --role=d8fd                                   &;
         gtss;wmc -r :ACTIVE: -T d8fd                ;wmc -r :ACTIVE: -b add,skip_pager,sticky;
              wmc -r :ACTIVE: -e 10,2416,1006,1458,74;wmc -r :ACTIVE: -b add,skip_taskbar,below;
@@ -887,28 +888,30 @@ tStc() { # tSt 8pal8 colrz (this is a very slow precursor to ~/bin/tstc since ma
     elif   [[ "$COLUMNS"  -ge 110 ]]; then                       # maybe above testz could be replaced with a regex like =~ /^[wij]$/i && just q still sepR8?
       if   [[      $B64N   !=  Q  ]]; then echo -n '  ';fi       # only dblspace them out if term is wide enough
     elif   [[      $B64N   ==  Q  ]]; then echo        ;fi;done} # && finish with newline if term is narrow (although wrapping at likely 80 should look same)
+  # 2du:contMpl8 adng au, agr, && ee ene around en;
 wh8()   {  LP_F='0'; # same as wh8ch BlO but wi 8rows flipd2 8columns,othrwIz very similR (mAwant2add pRamz2du mor than just disabl colr,sinc sS duzfIn)
+  # 2du:contMpl8 adng au, agr, && ee ene around en;
   if       [[ "$#" -gt   0 && "${(L)1}" =~  h  ]]; then echo -n " wh8 - show WHich primary single b64 && other valued commands by:$auth vers:$vers d8VS:$d8VS;
   h  - print out this basic Help text message then return; Any parameter other than h right now just strips colors && SGR attributes out;";return 0;fi
-  for B64N in 0 8 G O W e m u  1 9 H P X f n v  2 A I Q Y g o w  3 B J R Z h p x  4 C K S a i q y  5 D L T b j r z  6 E M U c k s '.'  7 F N V d l t '_'  mk sz pu po pdoc ka pe   pa pla plb pab ag   drkh gg dv ac acs apts   auu aar ai dirz ic   s8 d2u u2d del copy move attrib   s8n grp asci utf8 u8 CC CCC cls   eg zg hX k9 pp lS mo md rd   dm ct chm cho chg chr chs chf cht   mnt umnt bk c8 zc d8 fp   fixfont g8 gaa gcm gac   gacm gpom caln l8 sl calq calQ cln   cl comma hd dif loc8 dic zp ud   updb upd8db up updt uptm ec en   uni cncl tl tp wd pw pn pb msg   ren wh lsm lsc lsp lsu xical S8   srchl shlp shl sho   p47 a7 rr tt tf gtt viii   lc chv0 v8   uc chv7 ss   wmc resp ctor scrn sx gt   xt st uxtrm uxt lxt   lxtrm satrm sak tn8r   xf4t rox Etrm   x4t rxt Et un ev pl   xbk xb xbsf kp   xdt; do
+  for B64N in 0 8 G O W e m u   1 9 H P X f n v   2 A I Q Y g o w   3 B J R Z h p x   4 C K S a i q y   5 D L T b j r z   6 E M U c k s '.'   7 F N V d l t '_'   mk sz pu po pdoc ka pe  pa pla plb pab ag  drkh gg dv ac acs apts  auu aar ai dirz ic  s8 d2u u2d del copy move attrib  s8n grp asci utf8 u8 CC CCC cls  eg zg hX k9 pp lS mo md rd  dm ct chm cho chg chr chs chf cht  mnt umnt bk c8 zc d8 fp  fixfont g8 gaa gcm gac  gacm gpom caln l8 sl calq calQ cln  cl comma hd dif loc8 dic zp ud  updb upd8db up updt uptm ec en  uni cncl tl tp wd pw pn pb msg  ren wh lsm lsc lsp lsu xical S8  srchl shlp shl sho  p47 a7 rr tt tf gtt viii  lc chv0 v8  uc chv7 ss  wmc resp ctor scrn sx gt  xt st uxtrm uxt lxt  lxtrm satrm sak tn8r  xf4t rox Etrm  x4t rxt Et un ev pl  xbk xb xbsf kp   xdt s2 s28 sb sd si  au agr; do
     if     [[ "$#" -eq   0                             ]]; then echo -n `S $B64N`; # also below tries to strip out all contained newlines
       if   [[ $B64N =~ ^([bk]|pp|rr|ss|CC|[ag][ag]|tt) ]]; then echo -n `S  w   `; # 4many dbld nAmz,try wHITE unlS 2nd char is w so thN try blacK nstd
         if [[ $B64N =~ ^([a-zA-Z]w)                    ]]; then echo -n `S  K   `;fi;fi;fi; BNWH=`which $B64N`;BNWH=${BNWH:s/      e    / e };
     if     [[ $LP_F =~ ^[0]$        ]]; then BNWH="$BNWH ";BNWH=${BNWH:s/ Et /    Et   };BNWH=${BNWH:s/tiny /tiny};BNWH=${BNWH:s/ whereis /whereis };
-      if   [[ $B64N =~ ^[_]$        ]]; then LP_F='1'     ;                       fi;fi # assign LoopPast_underscoreFlag to track once top64 are done
-    BNWH=${BNWH:s/ aliased to /alias2\'}    ;BNWH="$BNWH'";BNWH=${BNWH:gs/	/  };BNWH=${BNWH:s/2\'apt                     /2\'apt}; # EndSpaceLoopCount
-    BNWH=${BNWH:s/\'lsd8 \'/\'   lsd8 \'}   ;BNWH=${BNWH:s/ls  -F \'/  ls -F \'};BNWH=${BNWH:s/\'ls   /\'ls}      ;BNWH=${BNWH:s/    q /q};BNWH=${BNWH:gs/
+      if   [[ $B64N =~ ^[_]$        ]]; then LP_F='1';fi  ;BNWH=${BNWH:s/h       /   h    };BNWH=${BNWH:s/k9      /   k9   }; #n LoopPast_undrscorFlag4 64
+    fi;BNWH=${BNWH:s/ aliased to /alias2\'} ;BNWH="$BNWH'";BNWH=${BNWH:gs/	/  };BNWH=${BNWH:s/2\'apt                     /2\'apt}; # EndSpaceLoopCount
+    BNWH=${BNWH:s/\'lsd8 \'/\'   lsd8 \'}   ;BNWH=${BNWH:s/ls  -F \'/  ls -F \'};BNWH=${BNWH:s/\'ls      /\'ls}   ;BNWH=${BNWH:s/    q /q};BNWH=${BNWH:gs/
 /}; if     [[ $LP_F =~ ^[1]$        ]]; then BNWH=${BNWH:s/     /};BNWH=${BNWH:s/              \&/\&}             ;BNWH=${BNWH:s/--geom/ --geom};
       for ESLC in 0 1 2 3; do BNWH=${BNWH:s/2\' /2\'};BNWH=${BNWH:s/ \'/\'};done;BNWH=${BNWH:s/ \'/\'}        ;BNWH=${BNWH:s/    --geom/ --geom};
-      BNWH=${BNWH:gs/  uname/uname};BNWH=${BNWH:s/  uname -a    return 0  /uname -a;return 0};fi # note:brkng dn nwlnz from funcz mA lose nEded ';'semiz;
+      BNWH=${BNWH:gs/  uname/uname};BNWH=${BNWH:s/  uname -a    return 0  /uname -a;return 0};fi              ;BNWH=${BNWH:s/160     -r 50  /160 -r 50};
     BNWH=${BNWH:s/ shell built-in command \'/ shel biltin cmd}    ;BNWH=${BNWH:s/ not found\'/ not found cmd} ;BNWH=${BNWH:s/srchl    -i/srchl -i};
-    BNWH=${BNWH:s/sakura     -c 160     -r 50   \&/sakura -c 160 -r 50 \&}      ;BNWH=${BNWH:s/  --geometry=160x50   \&/ --geometry=160x50 \&};
+    BNWH=${BNWH:s/\'ls      /\'ls} ;BNWH=${BNWH:s/  --geometry=160x50   \&/ --geometry=160x50 \&};
     BNWH=${BNWH:s/uxterm     -geometry 160x50   \&/uxterm -geometry 160x50 \&}  ;BNWH=${BNWH:s/git  ad/git ad};BNWH=${BNWH:s/gaa; gcm/gaa;gcm};
-    if     [[ "$COLUMNS" -lt 160    ]]; then  # leave actual newlines inside of variable assignment regex substitution options && custom AlIn 4m@d outputz
-      if   [[ $B64N =~ ^v8$         ]]; then BNWH=${BNWH:s/elif/elif
-};    elif [[ $B64N =~ ^ss$         ]]; then BNWH=${BNWH:s/    then/ then
+    if     [[ "$COLUMNS" -lt 160    ]]; then  # brkngdn nwlnz from funcz mA lose nEded';'semiz,so leave actual nwlnz insIdof var asInmNt regX subst optnz&&alIn
+      if   [[ $B64N =~ ^v8$         ]]; then BNWH=${BNWH:  s/elif/elif
+};    elif [[ $B64N =~ ^ss$         ]]; then BNWH=${BNWH:  s/    then/ then
 };    fi;fi # below left-to-right order of or 80-column limits then and with not wide then back to or for main dflt 160-colm limits
-    if     [[ $B64N =~ ^([SXqwc_]|[cdfg]8|hd|dic|mutt)$ ]]; then BNWH=${BNWH:gs/ \'/\'};BNWH="$B64N= ${BNWH:gs/\'/}";fi
+    if     [[ $B64N =~ ^([SXqwc_]|[cdfg]8|hd|dic|mutt)$ ]]; then BNWH=${BNWH:gs/ };BNWH="$B64N= ${BNWH:gs/\'/}";fi
     if     [[ $LP_F =~ ^[0]$        ]]; then printf "%-18s" $BNWH; else echo -n $BNWH;fi # mAB try2!pad up past top64
     echo -n `S W`';'; # tried2add /bin/ matchz wi $ end but syntax && escaping must be somewhat unconventional, probably nEd2rEd&&stuD mor PCRE dox
     if     [[ $B64N =~                                ^(pb|zg|wd|lsm|lsu|srchl|shl|resp|ctor|tt|lc|uc|wmc)$ ]] ||

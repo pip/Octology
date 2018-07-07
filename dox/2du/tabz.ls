@@ -1,3 +1,12 @@
+I75MABIT: HTTPS://BitMEx.Com/app/trade/XBTUSD # mainly BitCoin links from Beppu-san && Electrum cryptocurrency wallets are worth investig8ing more l8r too;
+          HTTPS://BitMEx.Com/chartEmbed?symbol=XBTUSD
+          HTTPS://NPMJS.Com/search?q=bitmex
+          HTTPS://GitHub.Com/ccxt/ccxt
+          HTTPS://TruffleFrameWork.Com
+          HTTPS://ShapeShift.IO
+          HTTPS://VPNBook.Com/freevpn # probably De or Fr versions ahead of Euro1 or Euro2;
+          HTTPS://LinuxConfig.Org/how-to-install-bitcoin-wallet-on-ubuntu-18-04-bionic-beaver-linux
+          HTTPS://Ethereum.Org && HTTPS://Ethereum.StackExchange.Com/questions/2699/is-there-any-ether-mixer-tumbler-available
 I6CMBYMO: HTTP://YourMorals.Org # Seems rather old scientific survey site crE8d by JonathanHaidt among others, which might be worth particip8ing in some l8r;
 I6CMANRP: HTTPS://YouTube.Com/channel/UCeY3vg1r0KrvuyPOi7T39eA "RedPillInterviews" # AlexanderGraceful@GMail.Com usually inform8ive.RPGalaxy book maybe good;
 I6CMANEC: HTTP://ManEconomy.Com recommended by "BlackPigeonSpeaks" # Seems small && strangely a "safe space" for men funding men.U2b channel seems deriv8ive;

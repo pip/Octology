@@ -439,3 +439,7 @@ HTTPS://YouTu.be/Lvqmka8LYQ4 "Why Should We Take the Bible Seriously? | Andrew -
 HTTPS://YouTu.be/8Ni7cuWEu-o "20 Reforms That Could Fix Watchtower" # I74M1RAJ:22m11s of JohnCedars laying out a respectable list of changes for JWitnesses;
 HTTPS://YouTu.be/_sjZVwAnwPA "An Overview of Common Logical Fallacies" # 18m26s of Thinking-Ape helpfully summarizing bad argument types from April 6th,2015;
 HTTPS://YouTu.be/A51lFpNLmko "Everything You Need to Know About Jehovah's Witnesses in 5 Minutes" # I74MAJul:LloydEvans (JohnCedars' channel) March 6th,2018;
+HTTPS://YouTu.be/XyTcINLKq4c "Four billion years of evolution in six minutes | Prosanta Chakrabarty" # I76MFish:5m41s of needed upd8 to common misconceptions;
+HTTPS://YouTu.be/7bCAYJSXaz8 "The Found8ions of f8h: Six Content CrE8ors Discuss" # 1h57m of 'The NonSequitur Show' "Never Follow", where audio starts around
+#   2m32s for Kyle&&Steve's banter promotion then introductions of SkylarFiction,Mr.Atheist,Dr.JoshBowen, RobertRowe,Dr.KennyRhodes,&&RCA after 8m && 12m16s.
+# The 8 joined streams suffer extensive issues with audio && video, but some hearty discussion ensues, with many examples of unfamiliar character references;
