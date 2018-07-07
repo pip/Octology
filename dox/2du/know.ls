@@ -445,4 +445,5 @@ HTTPS://YouTu.be/7bCAYJSXaz8 "The Found8ions of f8h: Six Content CrE8ors Discuss
 # The 8 joined streams suffer extensive issues with audio && video, but some hearty discussion ensues, with many examples of unfamiliar character references;
 HTTPS://YouTu.be/xHHb7R3kx40 "Why fascism is so tempting -- && how your d8a could power it | Yuval Noah Harari" # I76MLd8a:18m22s of good cautions to observe,
 #   interesting hologram conveying TED talk on seductive vain mirror of fascism with n8ion as supreme, democracy threatened by central d8a overpowering, etc.;
-# It seems that the OpenAI project (also just subscribed to) as well as my public GitHub intentions for Octology are to democr8ize d8a && useful manipul8ions;
+# It seems that the OpenAI project (also just subscribed to) as well as my public GitHub intentions for Octology are to democr8ize d8a && useful manipul8ions.
+# Authoritarian dict8orships with inform8ion && biotechnology feeding machine learning AI may swing concentr8ion as gr8 dominance over distributed comput8ion;
