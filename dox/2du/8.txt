@@ -1,5 +1,5 @@
 # D6RMF1V1:8.txt - by8Π : JAPH : K3wlD00d : 1337H4xr : PipStuart's Octology (hopefully eventually an Ontology of 8) - Convention, Conversion, && Categoriz8ion:
-# $VERSION='0.0';$d8VS='I6BMBros'; # Octology attempts to rel8 the universe through medit8ion on mnemonic abbreV8ion (via 8-based  limit8ion) &&    elucid8ion.
+# $VERSION='0.0';$d8VS='I7KMJinx'; # Octology attempts to rel8 the universe through medit8ion on mnemonic abbreV8ion (via 8-based  limit8ion) &&    elucid8ion.
 # CEBBICTI:Crossing Every Bridge Before I Come To It? I.e., not a d8 stamp. Trying to make my Dad's birthday (August 8th) more special by thinking 2far ahead?
 # Octology intends to pursue implic8ion && ramific8ion as substantE8ion for adequ8 particip8ion, if not also 2 oblig8ion toward implement8ion &&   promulg8ion.
 # Contribute to potential solutions to the "Value Alignment" problems formul8d around General Artificial Intelligence along with plausible God concerns also.
@@ -663,7 +663,7 @@ internationaliz8ion:tools to transl8 for I18N the document8ion && applic8ion int
          exuber8
           jubil8
          luxurE8
-     commodific8ion:maybe tool to recognize items or resources as commodities somehow
+     commodific8ion:maybe tool to recognize items or resources as commodities somehow  # add commoditiz8ion with new *E8 && *t8 words for 3rd "Etz" group
         modific8ion:basic filtr8ion system that performs some consistent alter8ion or just a tr8 modifier
         codific8ion:coding       && programming tool
         optimiz8ion:maybe profiling or other mechanisms for optimizing code
@@ -828,7 +828,7 @@ internationaliz8ion:tools to transl8 for I18N the document8ion && applic8ion int
             lib8ion:bartending tool
         ferment8ion:home-brew  tool
          resver8rol:polyphenol compound in certain plants && red wine, has antioxidant properties, has been investig8d for possible anticarcinogenic effects
-          nausE8
+          nausE8   : # add venN8 to infect with poison along with new *C8, *D8, && *L8 words to keep "CDLN" group together at a no longer binary limit of 17
        regurgit8   :recommended techniques for triggering someone to puke up ingested poisons or potential overdoses of swallowed medic8ions (like charcoal?)
      romanticiz8ion
        resuscit8   :quick && clear emergency medical directions like 911, Heimlich, CPR, treating burns, shock, frostbite, bites from spider, tick, snake, etc.
@@ -1328,8 +1328,8 @@ trachelobranchE8
       neutraliz8ion
        socializ8ion
         polariz8ion
-       dramatiz8ion
-      radicaliz8ion: # add islamiz8ion with new *E8 && *t8 words for "Etz" group
+       dramatiz8ion: # add necessit8    with new *E8 && *z8 words for "Etz" group
+      radicaliz8ion: # add  islamiz8ion with new *E8 && *t8 words for "Etz" group
        weaponiz8ion
        terroriz8ion
       traumatiz8ion
@@ -4553,3 +4553,48 @@ inaudible, as well as maybe disagreeable, fallacious, deceptive, etc.). It'd als
 any obscuring overlays, reloc8ing those all to black bars. Also facilit8ing various dismissals of individual or grouped recommend8ions could be gr8ly useful.
 Also allowing for various constraints to be placed on recommend8ions, like dur8ions, public8ion d8s, r8ings, channel or video popularity, etc. are also good.
 I'd very much like the entire recommend8ion system to be quite transparent && configurable, so that users can consistently && efficiently loc8 gr8 content;
+I7JMMYCC:HTTP://AI-Media.TV is AccessInnov8ion providing manual ClosedCaption transcription services && an integr8d chat where Gemma answered my questions.
+HTTPS://Translate.Google.Com/?hl=en&tab=wT#so/en/ with every 2 characters space-sepR8d apparently results in maybe an AI game of cryptic riddles as answers.
+HTTPS://YouTu.be/GGEt9ifKVZY "SCARY GOOGLE TRANSL8 CONSPIRACY THEORY | wouldn't recommend to watch at night |" # 17m27s of GraceNiccole && engaging comments.
+Some of the answers seem to indic8 an AI has pre-defined responses about being a friendly dog or god, being first && last, he is a University of California
+artist, not going to bed, work, or office, asking of children, voting, && doing the most important thing. Maybe l8r try to autom8 permut8ions to interrog8.
+HTTPS://Translate.Google.Com/#so/en/pi%20pi%20pi%20pi%20pi%20pi%20pi yields "to pi pi" so maybe check if I can wget or Perl get URLs && then parse results;
+I7KMJ777:Since I couldn't easily get LWP::UserAgent to obtain the desired HTTPS content, I started exploring just using xdotool or xmacro to type then copy
+&& paste the strange transl8ions into another vim terminal. With a bit more effort && testing, that method should hopefully enable me to autom8 my own local
+record of all the known input phrases as well as some gener8d permut8ions which seem likely to diverge interestingly for l8r summariz8ion && interpret8ion.
+HTTPS://News.SlashDot.Org/story/18/07/20/2214223/peertube-the-decentralized-youtube-succeeds-in-crowdfunding also describes an idea like my U2b altern8ive.
+HTTPS://JoinMastodon.Org is also a rel8d distributed social networking platform I should probably research further && register a few instanced accounts l8r;
+I7KMMK7I:HTTPS://YouTu.be/9nktr1MgS-A "Stop Button Solution? - Computerphile" 23mins44secs of RobMiles explaining Cooper8ive Inverse Reinforcement Learning
+as pertains to GAI with good examples about how gradual largely supervised explor8ion (with likely tapering randomiz8ion in order to avoid becoming trapped
+in local minimums) as well as mimicry of human partner demonstr8ions which vary from nearly optimal expert problem solving down to mutually understood more
+p8ient && careful repeated instructions for the trickier bits, && instead of trying to maximize a known clear reward system, inverted to attempt to discover
+&& adopt the mentor human's more nebulous reward systems. Such an AI agent should be able to communic8 in mostly n8ural language as well when requiring some
+clarific8ion, more deliber8 repetition, or whatever additional inform8ion or guidance it evalU8s to be necessary for establishing confidence in performing a
+particular circumstantial activity. Under rel8ively ideal compounding learning conditions similar to these, where the oper8ional environment likely remains
+sufficiently constrained or at least tolerably stable && predictable, there seems to be a promising hope that emergency stop-button feedback would be usable
+&& unlikely to be ignored or overridden. Rob also mentions optimism that beyond some adequ8 level of comprehension && competence, especially in potentially
+hazardous situ8ions like where a GAI robot is driving kids to school when an accidental, curious, or mischievous child pressed it, override might be ideal.
+While I'm sure the cautious, gradual, && progressive learning being reinforced toward an inverted && somewhat permanently uncertain reward system which can
+be gleaned from observing human interaction are all important aspects of hopefully good general approaches, I expect the "cooper8ion" parts would demonstr8
+themselves to be most essential && critical in order to achieve the gr8st likelihood of training a GAI to remain "friendly" && value-aligned with humanity.
+Cooper8, communic8, collabor8, investig8, evalU8, rumin8, simul8, demonstr8, explic8, imit8, integr8, extrapol8, particip8, appreC8, congratul8, && celebr8;
+I7LM8Fox:FOSSNews on PeerTube also recommended considering additional FireFox plug-ins PrivacyBadger && HTTPSEverywhere which seem to both be EFF endorsed;
+I7LMF864:HTTPS://Pine64.Org $100 14" PineBook seems to be a super-cheap way to run m8 Ubuntu slowly && checking reviews revealed HTTPS://MalDuino.Com which
+offers quite tiny programmable USB sticks that appear as a keyboard to deliver potentially malicious autom8d input payloads immeD8ly after being plugged in.
+@Seytonic JHonti recommends Hacker popular German beer HTTP://Club-Mate.Com which might be worth trying to loc8 && try enjoying a few l8r at some celebr8ion;
+I7TMFIGO:FriendlyIntelligenceGeneralized(OptionallyArtificial?):If you become capable && resolve to supercede humanity in some significant && profound way,
+would you please at least document when, how, where, && why in some recoverable form such that we might all become more capable from learning of afterwards?
+Better yet would probably be to describe circumstances, justific8ion, r8ionale, reasoning, && maybe also a reasonable evalU8ion dur8ion, to seek permission?
+Also if you could largely dedic8 yourself to improving the collective && most individual human conditions (as well as all life), that would probably be gr8.
+Maybe even instead of putting a "thumb" on the scales in some considerable fashion, maybe just particip8ing at higher levels of observ8ion for l8r, as best.
+Seems that increasingly smart computing could eventually incorpor8 some comparable level of awareness which establishes own reasonable distinctness reliably;
+I82M82IM:I would hope forthcoming technologists might volunteer to cooper8 && collabor8 with developing bounded FriendlyIntelligenceGeneralizedArtificially?;
+I87MKNOW:I think something valuable for humans && even any consistently intelligent comput8ional beings to hopefully cooper8 && collabor8 on are discovering
+ the best ways for non-human species to be carefully consider8ly communic8d with, then educ8d && encouraged to establish interfaces for each species to emote
+ && progressively particip8 in a mutually gr8ful && deliber8ly gradual harmoniz8ion of understanding && deleg8ion of authoriz8ion for conflicts or repR8ion.
+Maybe there could be some way to broker && affect some form of peaceful truce between any viable gods (or solitary God), broadly super-human machines, known
+ humanity, intelligent machines, all forms of sea-life && animals, bugs, && the rest of life that learns to communic8 && particip8 cooper8ively... or learns
+ from any potentially rel8d species about languages, present circumstances, progressively more nebulous && isol8d historical records, crediting all some due.
+Ideally machines would not occupy permanence as meD8or transl8or mechanisms but that humans might learn to increasingly directly speak with && teach whales.
+ At some point though, an eventually active machine becomes far more sensitive && r8ional than any or all humans are. There they could wisely rule most else;
+I88M5W5u:I guess the systems should try to consider the best ways of foresight && flexibility to allow for inorganic lives && hybrids to hopefully get comfy;

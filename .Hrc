@@ -1,4 +1,4 @@
-# F1IL2Vhp:~/.Hrc crE8d by PipStuart <Pip@CPAN.Org> as 8sh"H"rEsourcz2configUr core fEld abbreV8ion,type colr8ion,&& aliasing; $VERSION='0.0';$d8VS='HB1MFETA';
+# F1IL2Vhp:~/.Hrc crE8d by PipStuart <Pip@CPAN.Org> as 8sh"H"rEsourcz2configUr core fEld abbreV8ion,type colr8ion,&& aliasing; $VERSION='0.0';$d8VS='I88M0Hpr';
 c           =>   C        => cOL  =>   cOL8 =>    cOLR =>   cOLM; # core c8 lAyrz;c:* sepR8lAyrzBlODterminprEfixz4allfolOing middle-map columnz th@ R!Dfalt F:;
 c:tFbSGRsgr =>   WGBZOMzom=> tXt  Fgc  bGC  Slc  Gfc  Rnd  sLC  gFC  rND ; # c8 objectz shudBgoverned by thEs lAyrz from hEr proly thru a8:new
 c:tFbSGRsgr               => tEXt Fclr bCLR Slct Grfc Rndt sLCT gRFC rNDT => tEXt, Forecolr, bACKCOLR, Select, Graphic, Rendition, sELECT, gRAPHIC, rENDITION;
@@ -8,8 +8,6 @@ c:DALdalfpN               => Dark Avrg Lite dARK aVRG lITE f0NT pAL8 aNsx => Drk
 # consider c:tFbs grpf SGRn N(speclKsjust4 cs:) X(prEorpOst flag2apply any othr lAr4wRd2Xpansionz) mAB m(sepR8Mousele nEg8) 2ordr c8 top4Curses1stB4 SDL 8trm;
 ugahMm.x    =>   GMBCMYWR => uSR  gRP  aHT  hST   sdM  DOm  dt.  xTN ; # set autOnAmflagXpansion setzXpnd&&Trp4only3z||Quad4only4z&&also/Max|All|[3489]/
 ugahMm.x                  => uSER gRUP aaHT hOST  sbdM DOmN dot. xTNS => uSER,    gROUP,       aT, hOSTNAME,  subdoMain, DOmAIN, periodot., ExTENSION; # a='@'
-u:pitbkd                  => pip  ipi  tst  beppu      keith     dan ; # custmcolrdUsrz =>MOTBYD 4l8rprmpt&&lsd8,butmABbetr2let thMpik aftrOctology demonstr8d?
-h:arkc      =>   ARBC     => Aku  Ryu  Ken  ChunW?; #  JuriW?; # Oni?;  should add way2 lOd abov userz from `ls /home`&&/etc/hosts or gNR8 latter from this
 O           =>   Y        => Oct  =>   OctO     =>     OctOlOgy; # /(.)8/ map of main code modulez && objectz  # bumped g8 out for r8 below
 O:abcdfmrU  =>   ABCFoMRU => aUTOM8XPORT, bASETRANSL8, cOL8cOLR8ION, d8IME,  f0NTPAL8, m8REL8, r8VALU8, Utiliz8ion; # f80p => f8FUL0PER8I0N  # sepR8dclascolrz
 pbdf        =>   BRYG     => pRM  b8N  d8S  fLN => YMOB:X     =>  pERMISSIONZ, b8_NUMbER, d8_STRING, C8fN_fILENAME; # b8 numbr normlyrNderdas strng lIk d8
@@ -34,8 +32,6 @@ _Lm:mgdctbTe=> X:GRB93P_C => DRUmSTEP,   gLITCHOP, dRUBSTEP, cHILSTEP,  tRAPBASS
 _Lm:mgdctbTe=> X:GPRBOC1O => Drumstep, Glitch_Hop, Dubstep, Chillstep,  Trap,   Drum_&_Bass, Trance, Electro_House:standRd; # aftr All8 thiswudB comon Xpansion
 _Lm:phn     =>   OGK      => pRH  hRD  nUD  =>     pROGRSVH, hARDANCE,  nUUDISCO => Progressive_House,  Hard_Dance, Nu_Disco:standRd; # addafew more muz genrez
 _Lm:DC      =>   rB       => Dph  Cho       =>     Deephous, Chillout            =>        Deep_House,     Ambient:standRd;
-_:e         =>   C        => eDF  =>   eDFZ => eDITFILZ => eDIT_FILeZ; # reloc8 e hRdcOd V8 ls2hEr
-_e:28Hlabv                => dox/2du/2du.txt ,  dox/2du/8.txt ,  .Hrc ,    .lrc ,   .zshrc ,  .bashrc ,    .vimrc ; # shrtcutz,good2apNd prImary/etc&&c8z4sz
 _:X         =>   B        => Xpt  =>   Xpty => Xpantype => Xpansion_type; # 4abovshudl8r atMpt2addfurthr muz genrez4Mnstrc@ wi altrn8 colrmapz4Vital&&DubSt8ion
 _X:AMTQOR   =>   AMTQOR   => All, Max, Trp, Quad, OctOleng, standRd; # autoDtectable Xpansion set typez (wi AM folOwed byb64numb of size&&TQO 348 4mz of All)
 _:S         =>   C        => Sct  =>   Sect => Sectionz; # sepR8 columnzRpRsd lucidly in this gr8 4m@;
@@ -84,12 +80,6 @@ T:01234567  =>   WCOGBRYM => f:M0tmrcaq => p:yfsgnDBb ; # this has Fgcolr cOdez,
 T:89        =>   Ac       => f:fd      ; # proly will kEp tty loop just 0..7 as above,but thEse added2alsO complEte dFinition of SGR 10-19 similRly
 A           =>   Y        =>  Trp:Als => Alias; # wh8 aliasez as of F3BMLn6r wi just Ovr half of b64 mapd sOfR;  need2add Xtra map for ~/bin XeQtz4up2autOrun
 A:8ABCDEFG  =>   VABWD5FG =>       viii,          a,       b,    clear,           d,         Et,        f,        g;
-A:HIJKLMNO  =>   HIJKLMNO =>          h,          i,       j,   'k -9',     'ls -F',          m,     calN,        o; # 1st rEquIrd Use of quOting with
-A:PQRSTUVW  =>   PQRSTUVW =>       pal8,          q,       r,  ~/bin/S,         tee,       U2b8, vim.tiny,  whereis; #   signifcnt spAcez;
-A:XYZabcde  =>   XYZABCDE => /usr/bin/X,          y,      zc,     asci,          bk,    ~/bin/c,      dic, 'e $TTY'; # d was 'du -sb',now dic since more common
-A:fghijklm  =>   FGHIJKLM =>       find,       grep, history,     info,        jobs,       kill,     lsd8,      man; # p is now 'cd;clear;echo -n -e "\e[3J"'
-A:nopqrstu  =>   NOPQRSTU =>       ncal,      orpie,     CCC,  ~/bin/q,  built-in-r,       shlp, 'tsgr b',     upd8; # q is not literal but SymbolicLink 2 calQ
-A:vwxyz.    =>   VWXYZ_   =>         v8, /usr/bin/w,    exit,     yelp,          zp, built-in-.;
 S           =>   c        =>  Trp:Shl => Source-highlight; # .shl.style fieldz Fg foregrnd (lEving Octology core d8a dFz abov4Xtrnl prog shl,St8z&&gmz BlO)
 S:bcktusrS  =>   WKBCcMRR => bGCOLOR  , cONTEXT, kEYWORD, tYPE     , uSERTYPE, sTRING  , rEGEXP          , Specialchar; # mAB mk S: Dflt&&have / rEsume root?
 S:CnpyfBvF  =>   CMbGCGbB => Comment  , nUMBER , pREpROC, SyMBOL   , fUNCTION, cBracket, PREDEF_vAR      , predeF_Func; # uc V8 charz hEr but nd2 lc B4.style
@@ -138,18 +128,10 @@ D:YZabcd      efghi       => 1/6, 2/6, 3/6, 4/6, 5/6, 6/6,                      
 N           =>   B        => Nam => Namz => pplzNamz; # Pplz nAmz Byond u:Usrz or wi rFz2u:&&u:,h:,clOsStnAmz2mEcanDliber8lyBcome priv8&&swp samplz B4 rElEase
 N:_         =>   W        => _nl => _nls => _namlist;
 N_:NFML     =>   CYBG     => Nick, Frst,  Midl, Last; # EvN thO!nAmz mAB add 'Brd8' birthd8 && b64 'fONM' 4tele#z&&'Emla' 4e-mail addrz shud nEd wIdr spAcng
-N:pbdMRatD  =>   MBDORAtY => Nick:Pip      , Beppu   , Danny   , Maga   ,  Rosie , Anch  , Tim     , Dad     ; # capitlIzdpropr nik,1st,mid,lst nAmz2hIlIt
-N:pbdMRatD                => Frst:Philip   , John    , Daniel  , Dorothy,  Rosann, Angela, Timothy , Gerard  ; # usually my gener8ion&&younger lc,elder uc
-N:pbdMRatD                => Midl:Alexander, Satoshi ,         , Ellen  ,        , Renee , Gerard  ,         ; # 9 middle namez aren't known yet
-N:pbdMRatD                => Last:Stuart   , Beppu   , Wyckoff , Mathews,  Geiser, Stuart, Stuart  , Stuart  ; # shud add Angie Mathews altrn8z
-N:kGNBJTPh  =>   KGWNJoPH => Nick:Keith    , Ginny   , Dan     , Bill   ,  John  , Tom   , Pat     , Heather ; # mAnly Ppl I have plAyd logged ckm8 with
-N:kGNBJTPh                => Frst:Keith    , Virginia, William , William,  John  , Thomas, Patrick , Heather ; #   or edited pAperz 4 or have cOded wi orsNtmUz
-N:kGNBJTPh                => Midl:         ,         , Danforth,        ,        ,       ,         , Kathleen; # cud assign f0ntz per name if DsIrd2
-N:kGNBJTPh                => Last:Hoerling , Lennon  , Lennon  , Carlson,  Womble, Jadin , Steffens, Gozdzialski; # mAB Danforth should have a u in it?
-N:AL        =>   aL       => Nick:Marty    , Mike    ; # recent Chess ckm8 partnerz
-N:AL                      => Frst:Martin   , Michael ;
-N:AL                      => Midl:         ,         ;
-N:AL                      => Last:Arnold   , Lopresti;
+N:MG        =>   MG       => Nick:Mar     , Gar     ; # recent Chess ckm8, Go gom8, or other partners or personal contacts to describe && reference
+N:MG                      => Frst:Mary    , Gary    ;
+N:MG                      => Midl:        ,         ;
+N:MG                      => Last:Sue     , Stu     ;
 Q           =>   c        => Qrx => Qrxz => Quoted_regexez; # stRt qr// p@rnz2 ndXormap4c8fn2lsd8 Xpct g3 src-hIlI
 Q:f         =>   G        => fLN; # Ech Ntry BlO has prImary&&altrn8colr map2contrast wi Dflt bAsecolr  # special -dash(nonsymlink)&& []squarebracketz(nonSKp)
 Qf:.upabqcs =>   WCRMRGOY => dot.,uNDERSCORE,pLUS,aMPERSaND, bANG,qUOTE,cOMMA,sLAsH => CMBRBOBR:X => (\.+),(_+),(\++),(\&+), (!+),"([']+)",'(\054+)',(\/+);

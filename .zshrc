@@ -1,9 +1,9 @@
 # 381KF3RN:~/.zshrc by PipStuart <Pip@CPAN.Org>; nOt:I originallythotitbetr2rElymoronstndalOnXecutablUtlz than aliases||shL-scrpt funczDfynd inany .rc Bcuz4mer
-#   stAyavail2spwnd procSz wich hvOwn non-zsh sub-shL cfgz(eg,vim:!cln 127/7;perl`b64 1023`)sO I pland2port stufhEr2anew u8.pm
+#   stAyavail2spwnd procSz wich hvOwn non-zsh sub-shL cfgz(eg,insrtngPerl2vim:r!q 127/7;b64 1023)sO I pland2port stufhEr2myOctology libz&&~/bin
 #   butIhv rElIzd that c8.pm (inprep4 8sh)wilBAbl2pars .(ba|z)shrc fIlz2lOd thEz&&can mk thMavail2othr shLz bywrapng cmdz wiXpansionUtlz; lern LaunchPad/byobu,
-# 2du:cmNt unUsed aliases,add perVC autostRt nwlOcl`scrn`if!alredy in1,lern`autoload -z`&&sepR8hist,get pcre module&&anyUsefulothrz,
+# 2du:add perVC autostRt nwlOcl`scrn`if!alredy in1,lern`autoload -z`&&sepR8hist,get any othrUseful modulz lIk pcre,
 #   bakon gN2:`em  scummvm`:2use nw"modern"theme4scummvm,add2[scummvm]sect of~/.scummvmrc(aftr runing scummvm once):themepath=/usr/share/games/scummvm/engines
-#   nowon ubu:`agi scummvm`&&mAB -d8a shud wrk2plA around wi2D advN2rz AgN;
+#   nowon ubu:`agi scummvm`&&mAB -d8a shud wrk2plA around wi2D advN2rz AgN; If cmd cursr is by an alias Ctrl-x,a will _expand_alias&&mABcan disAblit4 wh pRam?
 # nOt:`sz`in/etc/init.d c@chz lOcl sudo* bin daemon nstd of /usr/bin versN,prmpt similRly chOkz tryng`d8`within~/.inst/perl-5.8.8 sO mAB rEordr path2!hv probz?
 #[[   -e /sw/bin/init.sh ]] && source /sw/bin/init.sh; # fink:FreeBSD special shL stufInEded2src4zsh on oldLBoxB4Keith rEvertd bak2 gN2; "${(L)OSTYPE}"== *bsd?
 zmodload       zsh/pcre
@@ -29,7 +29,7 @@ unsetopt                \
 # auto_pushd            \# setng addz dirz 2 stack wN just normally chngng 2 thM (wich I du not normally lIk or want)
 # ksh_arrays            \# rEmMbr wNwrItng scrptz[or funcz]2include'setopt [localoptions] ksharrays'sO arAzR 0-bAsed(but!glOblBcuzmOst scrptzRstndrdly 1-bAsed)
 # re_____match_____pcre \# mA want2set for Z-SHell scripting RegularExpressions to utilize PerlCompatibility styles && mA insert 'zmodload zsh/(pc)?re(gex)?';
-export vers='0.0';export d8VS='I74M88wh';export auth='PipStuart <Pip@CPAN.Org>'; # above not exporting $b since collidez with sort{$a  <=> $b}
+export vers='0.0';export d8VS='I88MAN88';export auth='PipStuart <Pip@CPAN.Org>'; # above not exporting $b since collidez with sort{$a  <=> $b}
 if     [[       "$SHELL"    == "" ]]; then       export SHELL=`  which zsh`;fi # 8sh should parse this && OverId it    # shud `man zshall` /OSTYP 2lern4BlO
 if     [[       "$HOSTNAME" == "" ]]; then       export HOSTNAME=`hostname`;fi #`hostname`retnz fsckd nwlInz\n4CygWinzRxvt... ||smthng els lame  =(
 if     [[       "$HOST"     == "" ]]; then       export HOST="$HOSTNAME"   ;fi;export VERBOSE='1'; # set flag to print debug && status info from system utilz
@@ -63,7 +63,8 @@ alias    clrz='echo -en "$z hk:$hk#$z; hr:$hr#$z; ho:$ho#$z; hy:$hy#$z; hg:$hg#$
 #   setng4wholsys:`echo XSESSION="Gnome" > /etc/env.d/90xsession; env-update && source /etc/profile`; EBJLAkY8:AkuUbu14.10 nolongrhas thOsdirz sOprolyunUsed;
 export JAVA_HOME='/usr/lib/jvm/java-7-openjdk-amd64';     # D7PM1TjA:upd8d4Ubu13.04&&ant4Android dvl 2add2pathBlO
 ulimit  -c 65535; # 33,553,920-bytes # setz coredump size limit2 32MB (4Dbugng) wher #-param is *512-byte blox or 'unlimited' canBUsed
-typeset -U path ; path=($HOME/bin $HOME/.local/bin /usr/local/sbin /usr/sbin /sbin . /usr/local/bin /usr/bin /bin /opt/bin $HOME/lib/perl5/bin $HOME/lib/Octology/f8/pal8 $HOME/dvl/t8/dmd/linux/bin $JAVA_HOME/bin $HOME/dvl/t8/ndrd/adt/sdk/tools $path); # atmptd2nstl DMDv2.052 on Java7OpenJDK && GoogleAndroid-18 (4.2)
+typeset -U path ; path=($HOME/bin $HOME/.local/bin /usr/local/sbin /usr/sbin /sbin . /usr/local/bin /usr/bin /bin /opt/bin $HOME/lib/perl5/bin $HOME/lib/Octology/f8/pal8 $HOME/dvl/t8/dmd/linux/bin $JAVA_HOME/bin $HOME/dvl/t8/ndrd/adt/sdk/tools $HOME/dvl/t8/node $HOME/.nodebrew/current/bin $path); # atmptd2nstl DMDv2.052 on Java7OpenJDK && GoogleAndroid-18 (4.2)
+#          path=($path  $HOME/dvl/t8/node $HOME/.nodebrew/current/bin );export path; # I7CMBrew:got GitHub NodeBrew 4NodeJS; Not sure why src doesn't get this?
 #          path=($path  $HOME/dvl/jobz/InnovationProtocol/Android/Android-Google-Linux_x86-SDK-1.6_r1-99GFQiD/tools); # old2009GoogleAndroid dvlpmnt-toolz path
 #f   [[ -d             "$HOME/.rakudobrew/bin" ]]; then # examples prepended Rakudo's bin/ to $PATH but I'd rather append them for now (if bin/ dir is found)
 #          path=($path  $HOME/.rakudobrew/bin $HOME/.rakudobrew/moar-nom/install/share/perl6/site/bin              ); # G1NLJQKA:try out RakudoBrew for Perl6
@@ -351,11 +352,11 @@ alias       0='echo 0 '; #       : # figure out good aliases for remaining numbe
 alias       1=' mpg321'; # m 321 :                audio-player
 alias       2=' mpg123'; # m 123 :                audio-player
 alias       3='   g3  '; #  g3   :         gst123 audio-player wrapped with Expect manipul8ion layer
-alias       4='echo 4 '; #       :
-alias       5='echo 5 '; #       :
-alias       6='echo 6 '; #       :
-alias       7='echo 7 '; #       :
-alias       9='echo 9 '; #       :
+alias       4='en   4 '; #       :
+alias       5='ec   5 '; #       :
+alias       6='en   6 '; #       :
+alias       7='ec   7 '; #       :
+alias       9='en   9 '; #       :
 alias       A='   a   ';
 alias       a='   asci'; #  a    :           asci
 alias    asci='   UTF8'; #       :                (renamed in U8 && bin)
@@ -430,9 +431,10 @@ alias      s8='   sort'; #  s8   :           sort (maybe eventually a collection
 #lias      d8='   date'; #  d8   :           date|time|pt
 #          g8   already ~/bin/
 #lias      g8='    git'; #  g8   :            git (was my much earlier attempt at wrapping to handle abbreV8ions && gener8 commits from .bak && vice-versa)
+alias   g8st8='    git status   '; # basic Octology-memorable combined rhyme 1-string altern8 way to call what should be effectively the same as: `g8 st`
 alias    gaa='     git  add .* *'; # handy alias to Add All (Asterisk) changes, Commit by Message string below, then Push Origin Master (likely to GitHub)
 alias    gcm='     git commit -m'; # tried to call each of these through g8 initially, but maybe -m flag wasn't passing on to git correctly so explicit now
-alias    gac='     gaa; gcm     ';
+alias    gac='     gaa; gcm     '; # should setup gcm to auto-commit basic gener8d d8-stamp message && maybe list biggest few file changes, if no mesg given
 alias    gacm='    gac          '; # should maybe make as function which takes parameter or gener8d commit message then gpom with auto user Pip pRam or cnfg?
 alias    gpom='    git push origin master';
 alias       n=' ncal  ';
@@ -490,9 +492,10 @@ alias      pn=' ping  '; #  pn   :           ping
 alias      pb=' pingb '; #  pb   :           pingb      (needed2`sz; echo net.ipv4.icmp_echo_ignore_broadcasts=0 >> /etc/sysctl.conf; sysctl -p`)
 alias     ic='ifconfig'; #  ic   :       ifconfig
 alias     msg='   mesg'; #  msg  :           mesg|write
-alias      W=' whereis'; #  W    :                      whereis
-alias      wh='which  '; #  wh   :          who|w|which|where|whence (like wi uptm prefix line ls of loggedin userz)  (tried whence -w for single word typez)
-alias     lsm='  lsmod'; #  lsm  :          lsmod
+alias      W=' whereis'; #  W    :                      whereis      # below replaced wh which alias with function nstd 2 avoid early pRam Xpansion
+#lias      wh='which  '; #  wh   :     type|who|w|which|where|whence (like wi uptm prefix line ls of loggedin userz)  (tried whence -w for single word typez)
+wh(){          which $@; } # maybe the original wh alias abov was expanding to an old Csh binary nstd of DsIrd Zsh biltin && thN alsO Xpandng pRam2or nahLswr2?
+alias     lsm='  lsmod'; #  lsm  :          lsmod                    # HTTPS://Unix.StackExchange.Com/questions/85249/why-not-use-which-what-to-use-then DtAlz
 alias     lsc='  lscpu'; #  lsc  :          lscpu
 alias     lsp='  lspci'; #  lsp  :          lspci
 alias     lsu='  lsusb'; #  lsu  :          lsusb
@@ -504,16 +507,15 @@ alias       s='   shlp'; # assume Perl since an upd8 to source-highlight seems t
 alias      S8='   shl8'; # my primitive c8:SourceHighLight8 Utl to hopefully eventually approach functional parity with source-highlight before surpassing it
 alias     sho='cd ~/gfx/sho;shot -u'; # change to typical local Octology screenshot directory && take a shot of the focUsed window (no border) in 3 seconds
 alias    resp='   reso spec'; # joining like =~ /^respect/ shortcut to list resolution specific8ionz  # abovUsed2B S=shl,s=shl8 but S repurposed in a8 4 SKpz
-alias   xical='xinput-calibrator';alias xic='xical';alias xbk='xbindkeys';alias xdt='xdotool'; # basic Chun touch-scrn && X re-binding && scripting utlz
+alias   xical='xinput-calibrator';alias xic='xical';alias xbk='xbindkeys';alias xdt='xdotool';alias xd2='xdt'; # basic Chun touch-scrn&&X re-bind&&scrpt utlz
 alias    ctor='ctorrent -e 16 -z 64'; # abov: %eval $(xdotool getmouselocation --shell); %echo $X,$Y; will override Dflt $Y bright Yellow mapping with coordz
-alias     p47='parsec47'; # some of my favorite Kenta Cho Shmups ("Bullet Hell") in /usr/games
-alias      a7='a7xpg';
-alias      rr='rrootage';
-alias      tt='torus-trooper';
-alias      tf='tumiki-fighters';
+alias     sig='signal-desktop'; # I7GMFSIG:installed HTTPS://Signal.Org on my Android phone && Aku here as likely better than Slack or Discord 4the future;
+alias     p47='parsec47';alias a7='a7xpg'; # some of my favorite Kenta Cho Shmups ("Bullet Hell") in /usr/games
+alias      rr='rrootage';alias tt='torus-trooper';alias tf='tumiki-fighters'; # would be gr8 to study BulletML && explor own similRly themed varE8ions someday
 alias      xb='xboard';alias xbsf='xb -fcp stockfish -fUCI'; # gr8 Chess program with shortcut to top StockFish engine as FirstChessPlayer
-alias    kpcl='kpcli --kdb=~/.kp/pswd.kdb --histfile=/dev/null --no-recycle'; # to not store any history or entry changes in /Backup or "/Recycle Bin"
-alias      kp='kpc   --kdb=~/.kp/pswd.kdb --histfile=/dev/null --no-recycle'; # alias to modified kpcli-3.0 with more aliases && alignment
+alias    kpcl=' kpcli --kdb=~/.kp/pswd.kdb --histfile=/dev/null --no-recycle'; # to not stor any hist or entry changes in /Backup or "/Recycle Bin" old dfalts
+alias    kp='  pu ~/.kp;kpc --kdb=pswd.kdb --histfile=/dev/null --no-recycle;chm 600 pswd.kdb;b pswd.kdb;po'; # alias2modifId kpcli-3.0 wimore aliasz&&alInmNt
+alias    kp8=' pu ~/.kp;ec "--kdb=...;chm 600 ...;po"; kpc      --no-recycle --histfile=/dev/null '; # quite similar manual auto-wrapper for isol8d moreprIv8z
 alias    U='   U2b8';alias U2bk='Uk';alias u2bk='uk'; # shud l8r add 1-colm <98wId mOd&&some a8 autOcolrz 2furthr hIlIt mapngz
 alias    Ukey='echo -n "m c b : togl volMute Caption Bakgr colr [ U2b-hotKey ];  Dn Up : lowr 5%vol (arowkyz) rais 5%vol;
 p f n : Prevplayls toglFulsc Nextplayls (Escap=2exitf);  Lt Rt : bkwd 5secs (arowkyz) 4wrd 5secs;
@@ -551,6 +553,7 @@ alias ckya='w3m Mail.Yahoo.Com';alias gnuya='gnuyahoo -u=piptigger '; # Ubu brws
 #lias cktm='w3m HTTP://Time.Gov'; # need to enable JavaScript in w3m for redirect to /HTML5/ to work so maybe just use FireFox or Chrome
 # mAB Ubu brwsrz:FireFox Chrom(e|ium) Epiphany Arora Dillo WebBrowser-App (cudinstl) QupZilla Konqueror NetSurf Links2 (!in acs) Yandex PaleMoon Midori Brave;
 alias crmm='chromium-browser  ';alias crom=' google-chrome         ';alias epip='epiphany';alias aror='arora';alias dilo='dillo';alias lnx2='links2';
+alias brav='brave';alias brvb='brave';alias brav='brave';alias bb='brvb'; # prEferprv8bb&&ffmor than abovnow
 alias 2lo=' perl -e "rename(\$_,lc) for @ARGV"'; # orig fIlnAm lOwrcAsng 1-lInr was ~/bin/tolo thN as 2lo but mAB zsh func can't stRt wi '2'? Alias workz tho!
 alias j2k=' joy2key $TTY -terminal -rcfile ~/.joy2keyrc -axis Left Right Up Down -buttons a b c d e f g h i j &';
 alias j2kx='joy2key      -X        -rcfile ~/.joy2keyrc                                                       &';
@@ -636,6 +639,7 @@ alias kamp='ka -q -9 mplayer'; # -quiet (!warn if!mtch) && -9 kill force signal 
 alias kasd='ka -q speech-dispatcher'; # resolve Aku's buggy loud HDMI audio clicking loop from "cicero" tXt2sPch4 mbrola wich surfaced aftr watching Twitch vid
 alias kafp='ka -q plugin-container'; #'kill `ps ax | grep firefox | grep flash | cut -d" " -f1`'; # Kill crashed adobe Flash plugin (altho bad if ever running additional firefox plugins && will have to restart those too). Could also use   | c8 0';#now instead.
 #/usr/lib/firefox/plugin-container /usr/lib/flashplugin-installer/libflashplayer.so -greomni /usr/lib/firefox/omni.ja 1881 true plugin
+alias kas=' kasd'; # KillAllStupidScratchySpeechSoundStaticShockSparkSpaz
 alias  klok='dclock -date "%A %B %d, %Y" -geometry 256x88-1920-0 -miltime -bg "#03071B" -led_off "#031B0B" -fn Fixed &';
 alias xklok='xclock -digital -fg yellow -bg black -rv -geometry 512x64 -update 1 &'; # stuD fdclock gworldclock osd_?clock twclock tzwatch 2add more good here
 alias echoe='echo -e'; #  enable interpret8ion of backslashed escapes (default is -E to disable)
@@ -894,30 +898,34 @@ wh8()   {  LP_F='0'; # same as wh8ch BlO but wi 8rows flipd2 8columns,othrwIz ve
   if       [[ "$#" -gt   0 && "${(L)1}" =~  h  ]]; then echo -n " wh8 - show WHich primary single b64 && other valued commands by:$auth vers:$vers d8VS:$d8VS;
   h  - print out this basic Help text message then return; Any parameter other than h right now just strips colors && SGR attributes out;";return 0;fi
   for B64N in 0 8 G O W e m u   1 9 H P X f n v   2 A I Q Y g o w   3 B J R Z h p x   4 C K S a i q y   5 D L T b j r z   6 E M U c k s '.'   7 F N V d l t '_'   mk sz pu po pdoc ka pe  pa pla plb pab ag  drkh gg dv ac acs apts  auu aar ai dirz ic  s8 d2u u2d del copy move attrib  s8n grp asci utf8 u8 CC CCC cls  eg zg hX k9 pp lS mo md rd  dm ct chm cho chg chr chs chf cht  mnt umnt bk c8 zc d8 fp  fixfont g8 gaa gcm gac  gacm gpom caln l8 sl calq calQ cln  cl comma hd dif loc8 dic zp ud  updb upd8db up updt uptm ec en  uni cncl tl tp wd pw pn pb msg  ren wh lsm lsc lsp lsu xical S8  srchl shlp shl sho  p47 a7 rr tt tf gtt viii  lc chv0 v8  uc chv7 ss  wmc resp ctor scrn sx gt  xt st uxtrm uxt lxt  lxtrm satrm sak tn8r  xf4t rox Etrm  x4t rxt Et un ev pl  xbk xb xbsf kp   xdt s2 s28 sb sd si  au agr; do
+ # crmm='chromium-browser  ';alias crom=' google-chrome         ';alias epip='epiphany';alias aror='arora';alias dilo='dillo';alias lnx2='links2';
+ # brav='brave';brvb='brave';alias brv='brave';alias bb='brvb';alias irc='irssi'; # prEferprv8bb&&ffmornow
+ # 2lo=' perl -e "rename(\$_,lc) for @ARGV"'; # orig fIlnAm lOwrcAsng 1-lInr was ~/bin/tolo thN as 2lo but mAB zsh func can't stRt wi '2'? Alias workz tho!
+ # glxg='glxgears -info -geometry 1920x1056+0+0'; # had to agi libssl-dev to configure opusfile, then below should be good to compress speech for Dad
     if     [[ "$#" -eq   0                             ]]; then echo -n `S $B64N`; # also below tries to strip out all contained newlines
       if   [[ $B64N =~ ^([bk]|pp|rr|ss|CC|[ag][ag]|tt) ]]; then echo -n `S  w   `; # 4many dbld nAmz,try wHITE unlS 2nd char is w so thN try blacK nstd
-        if [[ $B64N =~ ^([a-zA-Z]w)                    ]]; then echo -n `S  K   `;fi;fi;fi; BNWH=`which $B64N`;BNWH=${BNWH:s/      e    / e };
-    if     [[ $LP_F =~ ^[0]$        ]]; then BNWH="$BNWH ";BNWH=${BNWH:s/ Et /    Et   };BNWH=${BNWH:s/tiny /tiny};BNWH=${BNWH:s/ whereis /whereis };
+        if [[ $B64N =~ ^([a-zA-Z]w)                    ]]; then echo -n `S  K   `;fi;fi;fi; BNWH=`which $B64N`  ;BNWH=${BNWH:s/      e    / e };
+    if     [[ $LP_F =~ ^[0]$        ]]; then BNWH="$BNWH ";BNWH=${BNWH:s/ Et /    Et   };BNWH=${BNWH:s/tiny /tiny}  ;BNWH=${BNWH:s/ whereis /whereis };
       if   [[ $B64N =~ ^[_]$        ]]; then LP_F='1';fi  ;BNWH=${BNWH:s/h       /   h    };BNWH=${BNWH:s/k9      /   k9   }; #n LoopPast_undrscorFlag4 64
     fi;BNWH=${BNWH:s/ aliased to /alias2\'} ;BNWH="$BNWH'";BNWH=${BNWH:gs/	/  };BNWH=${BNWH:s/2\'apt                     /2\'apt}; # EndSpaceLoopCount
-    BNWH=${BNWH:s/\'lsd8 \'/\'   lsd8 \'}   ;BNWH=${BNWH:s/ls  -F \'/  ls -F \'};BNWH=${BNWH:s/\'ls      /\'ls}   ;BNWH=${BNWH:s/    q /q};BNWH=${BNWH:gs/
-/}; if     [[ $LP_F =~ ^[1]$        ]]; then BNWH=${BNWH:s/     /};BNWH=${BNWH:s/              \&/\&}             ;BNWH=${BNWH:s/--geom/ --geom};
-      for ESLC in 0 1 2 3; do BNWH=${BNWH:s/2\' /2\'};BNWH=${BNWH:s/ \'/\'};done;BNWH=${BNWH:s/ \'/\'}        ;BNWH=${BNWH:s/    --geom/ --geom};
-      BNWH=${BNWH:gs/  uname/uname};BNWH=${BNWH:s/  uname -a    return 0  /uname -a;return 0};fi              ;BNWH=${BNWH:s/160     -r 50  /160 -r 50};
-    BNWH=${BNWH:s/ shell built-in command \'/ shel biltin cmd}    ;BNWH=${BNWH:s/ not found\'/ not found cmd} ;BNWH=${BNWH:s/srchl    -i/srchl -i};
+    BNWH=${BNWH:s/\'lsd8 \'/\'   lsd8 \'}   ;BNWH=${BNWH:s/ls  -F \'/  ls -F \'};BNWH=${BNWH:s/\'ls      /\'ls}     ;BNWH=${BNWH:s/    q /q};BNWH=${BNWH:gs/
+/}; if     [[ $LP_F =~ ^[1]$        ]]; then BNWH=${BNWH:s/     /};BNWH=${BNWH:s/              \&/\&}               ;BNWH=${BNWH:s/--geom/ --geom};
+      for ESLC in 0 1 2 3; do BNWH=${BNWH:s/2\' /2\'};BNWH=${BNWH:s/ \'/\'};done;BNWH=${BNWH:s/ \'/\'}          ;BNWH=${BNWH:s/    --geom/ --geom};
+      BNWH=${BNWH:gs/  uname/uname};BNWH=${BNWH:s/  uname -a    return 0  /uname -a;return 0};fi                ;BNWH=${BNWH:s/160     -r 50  /160 -r 50};
+    BNWH=${BNWH:s/ shell built-in command \'/ shel biltin cmd}    ;BNWH=${BNWH:s/ not found\'/: !not found! cmd};BNWH=${BNWH:s/srchl    -i/srchl -i};
     BNWH=${BNWH:s/\'ls      /\'ls} ;BNWH=${BNWH:s/  --geometry=160x50   \&/ --geometry=160x50 \&};
-    BNWH=${BNWH:s/uxterm     -geometry 160x50   \&/uxterm -geometry 160x50 \&}  ;BNWH=${BNWH:s/git  ad/git ad};BNWH=${BNWH:s/gaa; gcm/gaa;gcm};
+    BNWH=${BNWH:s/uxterm     -geometry 160x50   \&/uxterm -geometry 160x50 \&}  ;BNWH=${BNWH:s/git  ad/git ad}  ;BNWH=${BNWH:s/gaa; gcm/gaa;gcm};
     if     [[ "$COLUMNS" -lt 160    ]]; then  # brkngdn nwlnz from funcz mA lose nEded';'semiz,so leave actual nwlnz insIdof var asInmNt regX subst optnz&&alIn
       if   [[ $B64N =~ ^v8$         ]]; then BNWH=${BNWH:  s/elif/elif
 };    elif [[ $B64N =~ ^ss$         ]]; then BNWH=${BNWH:  s/    then/ then
 };    fi;fi # below left-to-right order of or 80-column limits then and with not wide then back to or for main dflt 160-colm limits
-    if     [[ $B64N =~ ^([SXqwc_]|[cdfg]8|hd|dic|mutt)$ ]]; then BNWH=${BNWH:gs/ };BNWH="$B64N= ${BNWH:gs/\'/}";fi
+    if     [[ $B64N =~ ^([SXqwc]|[cdfg]8|hd|dic|mutt)$ ]]; then BNWH=${BNWH:gs/ /};BNWH="$B64N= ${BNWH:gs/\'/}";fi # subst to just chop end space?
     if     [[ $LP_F =~ ^[0]$        ]]; then printf "%-18s" $BNWH; else echo -n $BNWH;fi # mAB try2!pad up past top64
     echo -n `S W`';'; # tried2add /bin/ matchz wi $ end but syntax && escaping must be somewhat unconventional, probably nEd2rEd&&stuD mor PCRE dox
     if     [[ $B64N =~                                ^(pb|zg|wd|lsm|lsu|srchl|shl|resp|ctor|tt|lc|uc|wmc)$ ]] ||
            [[ $B64N =~ ^[OPQRSTUV]$ ]] || [[ $B64N =~ ^(pu|pla|plb|drkh|auu|del|mo|chm|chg|ct|caln|dif|loc8)$ ]] &&
            [[ "$COLUMNS" -lt 160    ]] || [[ $B64N =~ ^(pe|apts|ag|ic|attrib|cls|rd|cht|fp|gac|cln|ud|en|msg|sho|viii|[Sv]8|ss)$ ]] ||
-           [[ $B64N =~ ^[uvwxyz._]$ ]] || [[ $B64N =~ ^(gt|lxt|tn8r|Etrm|pl|kp)$ ]]; then echo $z;fi;done}
+           [[ $B64N =~ ^[uvwxyz._]$ ]] || [[ $B64N =~ ^(gt|lxt|tn8r|Etrm|pl|kp|agr)$ ]]; then echo $z;fi;done}
 wh8ch() { # see which most basic 64 single-character commands are mapped to what (majority being aliases, then just a few built-in or not yet found commands)
   for B64N in 0 1 2 3 4 5 6 7  8 9 A B C D E F  G H I J K L M N  O P Q R S T U V  W X Y Z a b c d  e f g h i j k l  m n o p q r s t  u v w x y z '.' '_'; do
     if     [[ "$#" -eq   0          ]]; then echo -n `S $B64N`; # BlO set to dark wHITE for invisibly dark BLACk b64 number to color (leave bLUE 4now)

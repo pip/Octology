@@ -1,8 +1,8 @@
 # 819J2Pip:~/.lsrc by PipStuart <Pip@CPAN.Org> izAheavily modifId`dircolors`cfgfIl(Orig ~/.DIR_COLORS)wich setz $ENV{'LS_COLORS'} 4GNU`ls --color`&&`lsd8`;
-# $VERSION='0.0';$d8VS='I6JMADE8'; 2du:mkUtl2gNr8 altrn8 versN of .lsrc th@purposfuly varEz colrz of comon typz,try addng bakgrnd colrz2all dFz&&tst,
+# $VERSION='0.0';$d8VS='I87MIk30'; 2du:mkUtl2gNr8 altrn8 versN of .lsrc th@purposfuly varEz colrz of comon typz,try addng bakgrnd colrz2all dFz&&tst,
 #   add interaction2 lsd8 wN it Dtectz unrecognIzd XtNshNz offerng c@egOrEz with comon colr2autOm@ically insrt chOsN NtrEz,mAB add *-* NtrEz from .zshrc hEr &&
 #   mk lrc gNr8 either,confirm all accept f0nt cOdez wi dash accepting Dfalt foreground then redo NORMAL FILE LINK as no fi ln,mAB 8trm added2TERM ls someday;
-# This file was gNR8d by `lrc` Vers:0.0 d8VS:I5LM11I5 on d8:I74M3OPN. Please edit ~/.lrc and run `lrc` then `src` to see changes;
+# This file was gNR8d by `lrc` Vers:0.0 d8VS:I87MFTST on d8:I88M6FVw. Please edit ~/.lrc and run `lrc` then `src` to see changes;
 # nOt:I'm pretty sure itz Chunz(!Takiz)`ls`&&`dircolors`th@cud!hndl (MULTI)?HARDLINK sO rEmMbr2kEp th@ lIn cmNtd out4her(&&kEptstng2cnfirm);
 # Keywords COLOR,OPTIONS,&& EIGHTBIT (honored by Slackware dircolors) are recognized but ignored; TERMz && XtNsionz syncd2 2016;
 # Copyright(C) 1996-2016 FreeSoftwareFound8ion,Inc. Copying and distribution of this file, with or without modific8ion, are permitted provided the
@@ -126,6 +126,7 @@ CHR                       01;38;5;011;48;5;000 #cd= 01;33;40    01;33;40  CHaRac
 .hax                      01;38;5;011
 .emacs                    01;38;5;003
 .vimrc                    01;38;5;011
+.Hrc.                     01;38;5;000
 .Hrc                      01;38;5;010      #  8sh ~ fyl
 .lrc                      01;38;5;010      #  lsd8 lsrc
 .bxrc                     01;38;5;011
@@ -268,6 +269,7 @@ CHR                       01;38;5;011;48;5;000 #cd= 01;33;40    01;33;40  CHaRac
 .conf                     01;38;5;003      # config filz,(basic) play-list filz,shell-scripts,bookmarks,&& DOS-style executablz
 .dmrc                     01;38;5;003      # Dsktp Menu|Mngr? on Chun
 .gtkrc                    01;38;5;003
+.toprc                    01;38;5;003      # nstd of htop, can input "zxcVm1t0" then g[2-4] to go2 sepR8 wndoz&&du similR inputz then W writez cnfg
 .mmixrc                   01;38;5;003
 .alsarc                   01;38;5;009
 .aumixrc                  01;38;5;003
@@ -349,6 +351,7 @@ CHR                       01;38;5;011;48;5;000 #cd= 01;33;40    01;33;40  CHaRac
 .url                      01;38;5;003      # text filz containing web URLs
 .URL                      01;38;5;003
 .use                      01;38;5;003
+.xl8                      01;38;5;003      # ~/dvl/t8/**/xl8/ gener8d d8a files from attempt to autom8 complex transl8ion evalU8ions with xdotool .xd2 scripts
 .MANIFEST                 01;38;5;003
 .bookmarks                01;38;5;003
 .gtk-bookmarks            01;38;5;006      # ~ file that I'd rather vary the color of seen commonly there than match other *.bookmarks elsewhere
@@ -528,6 +531,7 @@ CHR                       01;38;5;011;48;5;000 #cd= 01;33;40    01;33;40  CHaRac
 .logo                     01;38;5;013      # ASCII art file maybe containing ANSI escaped colors && figlet-gend text (eg,/etc/issue.logo w/"Gentoo")
 .login                    01;38;5;013
 .lesshst                  01;38;5;013
+.wget-hsts                01;38;5;013
 .history                  01;38;5;013
 .zsh_history              01;38;5;013      # .*history
 .zprofile                 01;38;5;006
@@ -631,6 +635,7 @@ CHR                       01;38;5;011;48;5;000 #cd= 01;33;40    01;33;40  CHaRac
 .gpg~                     01;38;5;006
 .pgp                      01;38;5;014
 .sxp                      01;38;5;014
+.xd2                      01;38;5;014      # xdotool command script to gener8 ~/dvl/t8/**/xl8/ d8a files in attempt to autom8 complex transl8ion evalU8ions
 .xinitrc                  01;38;5;014      # ch2brItCyan from drkGrn .x* dflt4xinitz
 .xinitrc-compiz           01;38;5;014
 .xinitrc-flux2x2          01;38;5;014
@@ -912,6 +917,7 @@ CHR                       01;38;5;011;48;5;000 #cd= 01;33;40    01;33;40  CHaRac
 .xpm                      01;38;5;164
 .xwd                      01;38;5;164
 .yuv                      01;38;5;164
+.kdb.                     01;38;5;000
 .kdb                      01;38;5;164      # KeePass  v1 DataBase
 .kdbx                     01;38;5;164      # KeePassX v2 DataBase
 .uot                      01;38;5;164      # LibreOffice Writer  Unified Office format Text
@@ -1302,9 +1308,11 @@ CHR                       01;38;5;011;48;5;000 #cd= 01;33;40    01;33;40  CHaRac
 .13.0-21-generic          01;38;5;172;48;5;004
 .13.0-17-generic          01;38;5;011;48;5;004
 .13.0-16-generic          01;38;5;010;48;5;004 # BlO /boot Linux kernelz versionz  # F1ELGnuL:ROYG CBMP => 1;3[1o32 645p]; mAB EvN2LE gNR8 upd8z from `ls /boot`;
-.15.0-24-generic          01;38;5;009
-.15.0-23-generic          01;38;5;172
-.15.0-22-generic          01;38;5;011
+.15.0-30-generic          01;38;5;009
+.15.0-29-generic          01;38;5;172
+.15.0-24-generic          01;38;5;011
+.15.0-23-generic          01;38;5;010
+.15.0-22-generic          01;38;5;014
 #                                          # zsh wraps '%{' ANSI '%}' && vim User[1-9] colrz specify BlO ForeGroundz all on darkblue BakGrnd4statuslIn
 #     4NT    etfp   vim  c8  color              ANSI      HTML    Octology::d8::fldz (`d8`)
 #     0f     Fsy_   %*    W WhiteBright         \e[1;37m  FEFDFF            # vim %* resets statuslIn colr 2 Dfalt   White on darkblue so has max 10 colrz

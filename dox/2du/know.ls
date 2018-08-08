@@ -1,46 +1,46 @@
 # HBQLISTV:know.ls crE8d by PipStuart <Pip@CPAN.Org> to duplic8 Dr. Jordan B. Peterson's Quora.Com answer of "40 most valuable things everyone should know";
-# $VERSION='0.0';$d8VS='I6GMIGHT'; # 2du:start chronicling Dr. Peterson's many topical videos with new section for post-title subject summaries or explor8ion;
+# $VERSION='0.0';$d8VS='I88M4K20'; # 2du:start chronicling Dr. Peterson's many topical videos with new section for post-title subject summaries or explor8ion;
 0) Tell the truth.
-1) Do not do things that you hate.
+1) Do not do things that you h8.
 2) Act so that you can tell the truth about how you act.
 3) Pursue what is meaningful, not what is expedient.
 4) If you have to choose, be the one who does things, instead of the one who is seen to do things.
 5) Pay attention.
 6) Assume that the person you are listening to might know something you need to know. Listen to them hard enough so that they will share it with you.
-7) Plan and work diligently to maintain the romance in your relationships.
+7) Plan && work diligently to maintain the romance in your rel8ionships.
 8) Be careful who you share good news with.
-9) Be careful who you share bad news with.
+9) Be careful who you share bad  news with.
 A) Make at least one thing better every single place you go.
-B) Imagine who you could be, and then aim single-mindedly at that.
+B) Imagine who you could be, && then aim single-mindedly at that.
 C) Do not allow yourself to become arrogant or resentful.
 D) Try to make one room in your house as beautiful as possible.
 E) Compare yourself to who you were yesterday, not to who someone else is today.
-F) Work as hard as you possibly can on at least one thing and see what happens.
-G) If old memories still make you cry, write them down carefully and completely.
+F) Work as hard as you possibly can on at least one thing && see what happens.
+G) If old memories still make you cry, write them down carefully && completely.
 H) Maintain your connections with people.
-I) Do not carelessly denigrate social institutions or artistic achievement.
+I) Do not carelessly denigr8 social institutions or artistic achievement.
 J) Treat yourself as if you were someone that you are responsible for helping.
 K) Ask someone to do you a small favour, so that he or she can ask you to do one in the future.
 L) Make friends with people who want the best for you.
-M) Do not try to rescue someone who does not want to be rescued, and be very careful about rescuing someone who does.
+M) Do not try to rescue someone who does not want to be rescued, && be very careful about rescuing someone who does.
 N) Nothing well done is insignificant.
 O) Set your house in perfect order before you criticize the world.
 P) Dress like the person you want to be.
 Q) Be precise in your speech.
-R) Stand up straight with your shoulders back.
-S) Don't avoid something frightening if it stands in your way -- and don't do unnecessarily dangerous things.
+R) Stand up str8 with your shoulders back.
+S) Don't avoid something frightening if it stands in your way -- && don't do unnecessarily dangerous things.
 T) Do not let your children do anything that makes you dislike them.
 U) Do not transform your wife into a maid.
 V) Do not hide unwanted things in the fog.
-W) Notice that opportunity lurks where responsibility has been abdicated.
-X) Read something written by someone great.
+W) Notice that opportunity lurks where responsibility has been abdic8d.
+X) Read something written by someone gr8.
 Y) Pet a cat when you encounter one on the street.
-Z) Do not bother children when they are skateboarding.
+Z) Do not bother children when they are sk8boarding.
 a) Don't let bullies get away with it.
-b) Write a letter to the government if you see something that needs fixing -- and propose a solution.
+b) Write a letter to the government if you see something that needs fixing -- && propose a solution.
 c) Remember that what you do not yet know is more important than what you already know.
-d) Be grateful in spite of your suffering.
-# Dr. Peterson's l8st book, "12 Rules for Life: An Antidote to Chaos" is distilled from the above list and should become available during l8 January of 2018;
+d) Be gr8ful in spite of your suffering.
+# Dr. Peterson's l8st book,"12 Rules for Life: An Antidote to Chaos" is distilled from the above list && should become available during l8 January of 2018;
 # HCULCODE:started compiling good extra quotes up to _ 63 (so start competition for next 24 best lessons to also glean from his relevant lecture material);
 e) Criticize boxes of the culture as represent8ions of both "Wise King" and "Despot/Tyrant" with gratitude, not resentment, arrogance, or deceit. # 9fDJqkmoXW4
 # CrE8ive people tend to have trouble staying in nested boxes within culture and n8ure (m8ron). Dragon of chaos can rear from the dark at any time, being the
@@ -214,34 +214,6 @@ HTTPS://YouTu.be/h1Hqg3Yv0ug "PragerU Are The Dangerous People Teaching Your Kid
 HTTPS://YouTu.be/Ssf5XN5o9q4 "Steven Pinker vs Nick Spencer - Have science, reason, && humanism replaced f8h?" # 41m of better-moder8d strong pointed deb8ing;
 HTTPS://YouTu.be/p1PdswhKtXA '11 "unanswerable" questions for atheists - answered' # I6PM11QA:18m21s of AronRa soundly responding to rel8ively easy questions;
 HTTPS://YouTu.be/Yc03ejsMkpQ "Losing My Religion: Abandoning Ideology" # 17m36s where WizardOfCause smashes dogmatic sycophants of various prevalent stripes;
-HTTPS://YouTu.be/FS0mOV34f6k "Evolution Requires Blind f8h - Kent Hovind vs Atheist Bernie Dehler" # I6HMBf8h:4m28s of lame claims plucked from transcription;
-00:00 because you said that he gives religion or even evolution is religion and that upset a lot of atheist because they figure you know they want nothing to
-00:11 do with religion so I thought we'd talk about that for a little bit so I know you claim you like to throw out there that evolution and oh absolutely
-00:23 Everly you have to define two words in that sentence or what do you mean by evolution and what do you mean by religion standard dictionary definition
-00:29 of religion is a belief or belief system on how the world got here is kind of how there's many different religions in the world obviously how did we get
-00:39 here so it's something you believe as opposed to a science which is testable observable demonstrable in a laboratory for example evolution has six
-00:49 different meanings to the word I cover this in my seminar part four you'd have to have cosmic evolution the origin of time space matter you'd have to
-00:59 have chemical evolution the origin of all the chemicals then you'd have to have stellar evolution all the stars would have to evolve you'd have to have
-01:04 organic evolution life would has to start from nonliving material you'd have to have macro evolution where this life-form changed two different kinds
-01:11 of life and then you have Micro evolution which is changes within the kind like dogs and wolves probably have a common ancestor only number six on that
-01:23 list micro evolution is actually science all the other five are religious so when I use the word evolution I am not referring to minor variations within
-01:34 the same kind Darwin wrote a book called the Origin of Species the argument is really not about speciation it's about kinds where do the kinds come from
-01:42 there are 900 species of bats in the world they probably had a common ancestor right I put in six different sections totally unrelated categories all
-02:13 five of the top five are purely religious no one has ever seen a dog produce a non dog so that would be a no that way well do you believe dogs came from
-02:27 something ultimately that was non dog if you go back long enough far enough ago in time well and that you're welcome to believe that but that's my point
-02:38 that's a religious belief that's not scientifically observable we have humans having babies all the time and they're always human dogs have puppies all
-02:45 the time and they're always dogs my point is then it's not then it's not typical science look up the definition of science if science from their Latin
-03:01 words see or to know things that we know by observation testing experimentation can you do some observation to see an animal produce a different kind why
-03:10 would you believe it you believe a dog pointing something watch well you could see them grow you could you could document that that example you cannot
-03:31 see or document dogs coming from non dogs or dogs and bananas having a common ancestor that isn't nobody documents it well I could take a picture every
-03:44 day of my finger nails and probably I think three months it grows from cuticle to cutting length is typical for your fingernails in about six months for
-03:50 the toenails well this is where you have to first define what you mean by science and so I think the standard definition in any dictionary is going to be
-04:09 seer to know what do we know by observation experimentation and testing you don't you don't know that dogs came from this a common ancestor with tomatoes
-04:21 you can believe that but nobody knows that you can't know such a thing that's purely religious which is my point # It seems to be quite a stretch trying
-# to demonstr8 limit8ions on the amount of time scientific observ8ions can be made by using toenail growth as example, but the main point I want to extract out
-# of the above message was the supposed list of six different forms of evolution which all would need to have happened to produce life, since it sounds accur8
-# but each of the initial stages obviously are not biological or explained by n8ural selection. Once those are noted, I will probably delete lame transcript;
-# I6PM6PSI:Of course the shuffling of chronology for the above mostly waste of a text at least has title somewhat addressed by explor8ion of "f8hs" early l8r;
 # I6GMESIJ:As a rather unintended && unrel8d explor8ion of a tangent straying away from top rules && wisdom worth knowing from Dr.Peterson && assoC8d figures,
 # && since I have been receiving increasingly regular visits to my apartment from a local Jehovah's Witness elder who has motiv8d me to become more educ8d on
 # deb8s about Christian apologetics versus agnostic atheism, arguments for the divine inspir8ion of the Bible && various transl8ions, as well as potentially
@@ -309,73 +281,56 @@ WeymouthNewTestament          :Now f8h is a well-grounded assurance of that for 
 International  StandardVersion:Now f8h is  the    assurance       that what     we hope  for will come about && the certainty that what we cannot see exists.
 NewLiving      Transl8ion     :    f8h is  the   confidence       that what we hope  for will actually happen;it gives us assurance about things we cannot see.
 Young'sLiteral Transl8ion     :And f8h is                         of     things    hoped for  a       confidence,of    matters         not seen a conviction,
-Aramaic  inPlainEnglish  Bible:Now f8h is  the   conviction concerning those things that are in hope, as if it were these things in action, && the revL8ion
-                                                                                                                 of those things   that are           unseen;
-f8h (fāth) n. # These collections of definitions were copy/pasted from HTTPS://TheFreeDictionary.Com search results with reformatting && a few minor edits;
-  1. a. Belief in God or in a set of religious doctrines.
-     b. A set of religious doctrines; a body of dogma: adhered to the Muslim f8h.
+Aramaic  inPlainEnglish  Bible:Now f8h is  the   conviction concerning those things that are in hope, as if it were these things in action, && the revL8ion...
+f8h (fāth) n. # These definitions copied from HTTPS://TheFreeDictionary.Com with reformatting && minor edits; ...of those things   that are           unseen;
+  1. a. Belief in God or in a set of religious doctrines.                    b. A set of religious doctrines; a body of dogma: adhered to the Muslim f8h.
      c. often f8h Christianity Secure belief in God and a trusting acceptance of God's will viewed as a theological virtue.
   2. Confident or unquestioning belief in the truth, value, or trustworthiness of a person, idea, or thing. See Synonyms at belief, trust.
-  3. Loyalty to a person or thing; allegiance: keeping f8h with one's supporters; refused to break f8h with his friends.
-  Idiom: in f8h: Indeed; truly.
-f8h (feɪθ) n.
-  1. strong or unshakeable belief in something, esp without proof or evidence
-  2. a specific system of religious beliefs: the Jewish f8h.
-  3. (Theology) Christianity trust in God and in his actions and promises
-  4. (Theology) a conviction of the truth of certain doctrines of religion, esp when this is not based on reason
-  5. complete confidence or trust in a person, remedy, etc
-  6. any set of firmly held principles or beliefs
-  7. allegiance or loyalty, as to a person or cause (esp in the phrases keep f8h, break f8h)
-  8. bad  f8h insincerity or dishonesty
-  9. good f8h   sincerity or    honesty, as of intention in business (esp in the phrase in good f8h)
-f8h (feɪθ) n.
-  1. confidence or trust in a person or thing.
-  2. belief that is not based on proof.
-  3. belief in God or in the doctrines or teachings of religion.
-  4. belief in anything, as a code of ethics or standards of merit.
-  5. a system of religious belief: the Jewish f8h.
-  6. the oblig8ion of loyalty or fidelity to a person, promise, engagement, etc.
-  7. the observance of this oblig8ion; fidelity to one's promise, oath, allegiance, etc. # Below definitions are from HTTP://Dict.Org RFC2229 GNU/Linux dictd;
-f8h (f[=a]th), n. to trust, to persuade. The ending th is perhaps due to the influence of such words as truth, health, wealth.
-   1. Belief; the assent of the mind to the truth of what is declared by another, resting solely && implicitly on his authority && veracity;
-      reliance on testimony.                                                                                                             [1913 Webster     ]
-   2. The assent of the mind to the st8ment or proposition of another, on the ground of the manifest truth of what he utters; firm && earnest belief, on
-      probable evidence of any kind, especially in regard to important moral truth.                                                      [1913 Webster     ]
-         f8h, that is, fidelity, -- the fealty of the finite will && understanding to the reason.                     --      Coleridge. [1913 Webster     ]
-   3. (Judeo-Christian Theol.)
-      (a) The belief in historic truthfulness of the Scripture narr8ive, &&supern8ural origin of its teachings, sometimes called historical&&specul8ive f8h.
-      (b) (Christian Theol.) The belief in the facts && truth of the Scriptures, with a practical love of them; especially, that confiding && affection8
-          belief in the person && work of Christ,which affects the character && life,&& makes a man a true Christian, -- called a practical, evangelical,
-          or saving f8h.                                                                                                                 [1913 Webster     ]
-            Without f8h it is impossible to please him [God].                                                         --Heb.  xi.     6. [1913 Webster     ]
-            The f8h of the gospel is that emotion of the mind which is called "trust" or "confidence" exercised toward the moral character of God, &&
-              particularly of the Savior.                                                                             --Dr.   T. Dwight. [1913 Webster     ]
-            f8h is an affection8, practical confidence in the testimony of God.                                       --      J. Hawes . [1913 Webster     ]
-   4. That which is believed on any subject, whether in science, politics, or religion; especially (Theol.), a system of religious belief of any kind; as,
-      the Jewish or Mohammedan f8h; the Christian f8h; also, the creed or belief of a Christian society or church.                       [1913 Webster +PJC]
-         Which to believe of her, Must be a f8h that reason without miracle Could never plant in me.                  --         Shak  . [1913 Webster     ]
-         Now preacheth the f8h which once he destroyed.                                                               --Gal.  i.     23. [1913 Webster     ]
-   5. Fidelity to one's promises, or allegiance to duty, or to a person honored && beloved; loyalty.                                     [1913 Webster     ]
-         Children in whom is no f8h.                                                                                  --Deut. xxvii. 20. [1913 Webster     ]
-         Whose failing, while her f8h to me remains, I should conceal.                                                --         Milton. [1913 Webster     ]
-   6. Word or honor pledged; promise given; fidelity; as, he viol8d his f8h.                                                             [1913 Webster     ]
-         For you alone I broke me f8h with injured Palamon.                                                           --         Dryden. [1913 Webster     ]
-   7. Credibility or truth.                                                                                                         [R.] [1913 Webster     ]
-         The  f8h of the foregoing narr8ive.                                                                          --        Mitford. [1913 Webster     ]
-   {Act    of f8h}. See {Auto-da-f['e]}.
-   {Breach of f8h}, {Confession of f8h}, etc. See under {Breach}, {Confession}, etc.
-   { f8h cure    }, a method or practice of treating diseases by prayer && the exercise of f8h in God.
-   { In  good f8h}, with perfect sincerity.                                                                                              [1913 Webster     ]
-f8h interj. By my f8h; in truth; verily.                                                                                                 [1913 Webster     ]
-fecks n. A corruption of the word {f8h}. feculae                                                                      --         Shak  . [1913 Webster     ]
+  3. Loyalty to a person or thing; allegiance: keeping f8h with one's supporters; refused to break f8h with his friends.    Idiom: in f8h: Indeed; truly.
+f8h (feɪθ) n.                                                                           f8h (feɪθ) n.
+  1. strong or unshakeable belief in something, esp without proof or evidence.            1. confidence or trust in a person or thing.
+  2. a specific system of religious beliefs: the Jewish f8h.                              2. belief that is not based on proof.
+  3. (Theology) Christianity trust in God and in his actions and promises.                3. belief in God or in the doctrines or teachings of religion.
+  4. (Theology) conviction of truth of religious doctrines, esp. when not reason based.   4. belief in anything, as code of ethics or standards of merit.
+  5. complete confidence or trust in a person, remedy, etc.                               5. a system of religious belief: the Jewish f8h.
+  6. any set of firmly held principles or beliefs.                                        6. oblig8ion of loyalty/fidelity to person, promise, engagement, etc.
+  7. allegiance or loyalty, as to person or cause (esp. in phrases "keep/break f8h").     7. the observance of this oblig8ion; fidelity to one's promise, ...
+  8. bad  f8h insincerity or dishonesty.                                                     ... oath, allegiance, etc.
+  9. good f8h   sincerity or    honesty, as of intention in business (esp. phrase "in good f8h").   # Below are from HTTP://Dict.Org RFC2229 GNU/Linux dictd;
+f8h (f[=a]th), n. to trust, to persuade. The ending "th" is perhaps due to the influence of such words as truth, health, wealth, etc.
+   1. Belief; assent of mind to truth of another's declar8ion,resting solely && implicitly on his authority && veracity;reliance on testimony. [1913 Webster]
+   2. The assent of the mind to the st8ment or proposition of another, on the ground of the manifest truth of what he utters;
+        firm && earnest belief, on probable evidence of any kind, especially in regard to important moral truth.                               [1913 Webster]
+         f8h, that is, fidelity, -- the fealty of the finite will && understanding to the reason.                           --      Coleridge. [1913 Webster]
+   3. (a) (Judeo-Christian Theol.) Belief in historic truth of Scripture narr8ive&&supern8ural origin of teachings,sometimes called historical&&specul8ive f8h.
+      (b) (      Christian Theol.) Belief in facts && truth of Scriptures, with a practical love of them; esp. that confiding && affection8 belief in person &&
+          work of Christ, which affects the character && life, && makes a man a true Christian -- called practical, evangelical,or saving f8h. [1913 Webster]
+            Without f8h it is impossible to please him [God].    {Dr. Dwight quote below gr8ly rephrased for brevity}       --Heb.  xi.     6. [1913 Webster]
+            Gospel f8h is mind emotion called "trust" or "confidence" toward moral character of God && Savior particularly. --Dr.   T. Dwight. [1913 Webster]
+            f8h is an affection8, practical confidence in the testimony of God.                                             --      J. Hawes . [1913 Webster]
+   4. That which is believed on any subject, whether in science, politics, or religion; especially (Theol.), a system of religious belief of any kind;
+        as, the Jewish or Mohammedan f8h; the Christian f8h; also, the creed or belief of a Christian society or church.                       [1913 Web+PJC]
+          Which to believe of her, Must be a f8h that reason without miracle Could never plant in me.                       --         Shak  . [1913 Webster]
+          Now preacheth the f8h which once he destroyed.                                                                    --Gal.  i.     23. [1913 Webster]
+   5. Fidelity to one's promises, or allegiance to duty, or to a person honored && beloved; loyalty.                                           [1913 Webster]
+          Children in whom is no f8h.                                                                                       --Deut. xxvii. 20. [1913 Webster]
+          Whose failing, while her f8h to me remains, I should conceal.                                                     --         Milton. [1913 Webster]
+   6. Word or honor pledged; promise given; fidelity; as, he viol8d his f8h.                                                                   [1913 Webster]
+          For you alone I broke me f8h with injured Palamon.                                                                --         Dryden. [1913 Webster]
+   7. Credibility or truth.                                                                                                               [R.] [1913 Webster]
+          The f8h of the foregoing narr8ive.                                                                                --        Mitford. [1913 Webster]
+   {Act    of f8h}. See {Auto-da-f['e]}.                       {f8h cure}, a method or practice of treating diseases by prayer && the exercise of f8h in God.
+   {Breach of f8h}, {Confession of f8h}, etc. See under {Breach}, {Confession}, etc.                    {In good f8h}, with perfect sincerity. [1913 Webster]
+f8h interj. By my f8h; in truth; verily.                                                                                                       [1913 Webster]
+fecks n. A corruption of the word {f8h}. feculae                                                                            --         Shak  . [1913 Webster]
 f8h   n. # Lots of deliber8 reformatting && mostly minor content edits were performed above && below to yield desirably esthetic alignment of common details;
    1: a strong belief in supern8ural powers that control human destiny; "he lost his f8h but not his morality"    [syn:{religion},{f8h},{  religious belief}]
    2: complete confidence in a person or plan etc;"he cherished the f8h of a good woman";"the doctor-p8ient rel8ionship is based on trust"[syn:{f8h},{trust}]
    3: institution to express belief in divine power;"he was raised Baptist";"a member of his f8h contradicted him"[syn:{religion},{f8h},{organized religion}]
    4: loyalty or allegiance to a cause or a person; "keep the f8h"; "they broke f8h with their investors"
 f8h   n. Belief without evidence in what is told by one who speaks without knowledge, of things without parallel.
-f8h Probity; good f8h is the very soul of contracts. f8h also signifies confidence, belief; as, full f8h && credit ought to be given to the acts of a
-   magistr8 while acting within his jurisdiction. Vide Bona fide.
+f8h Probity; "good f8h" is the very soul of contracts. f8h also signifies confidence, belief;
+   as    in: "full f8h && credit ought to be given to the acts of a magistr8 while acting within his jurisdiction". Vide Bona fide.
 231 Moby Thesaurus words for "f8h": Weltanschauung, abandon, accept8ion, acception, acquiescence, activity, adherence, adherents, adhesion, ador8ion,
    allegiance, apostolic f8h, ardency, ardor, arrogance, articles of religion, aspir8ion, assumption, assurance, assured f8h, assuredness, attachment,
    avouch, avouchment, belief, bona fides, bond, bonne foi, campaign, cardinal virtues, catechism, cause, certainty, certitude, charity, cheerful expect8ion,
@@ -447,3 +402,19 @@ HTTPS://YouTu.be/xHHb7R3kx40 "Why fascism is so tempting -- && how your d8a coul
 #   interesting hologram conveying TED talk on seductive vain mirror of fascism with n8ion as supreme, democracy threatened by central d8a overpowering, etc.;
 # It seems that the OpenAI project (also just subscribed to) as well as my public GitHub intentions for Octology are to democr8ize d8a && useful manipul8ions.
 # Authoritarian dict8orships with inform8ion && biotechnology feeding machine learning AI may swing concentr8ion as gr8 dominance over distributed comput8ion;
+HTTPS://YouTu.be/r8-3ZnHPgPY "Why You Shouldnt Join Jehovahs Witnesses - Misinterpreted Doctrine" # I77MKNOW:9m43s of Telltale_Atheist elabor8ing criticisms;
+l) We have to treat each other like divine centers of consciousness in order for society to work. # I7KMLIFE:Tweeted just now from followed @JBPetersonQuote;
+HTTPS://YouTu.be/u1qvFxEnB3o "Jordan Peterson: Heated Interview w/ Another Leftist Host" # I7LMBDrP:42m of totally excellent new talk which Peterson domin8s;
+HTTPS://YouTu.be/pLem3HXm0Jg "Jordan Petersons Advice is Incomplete..." # 24m of RichardCooper's EntrepreneursInCars channel dealing with...             ...?;
+HTTPS://YouTu.be/KaDAuiLaT2Q "Jordan Peterson Misrepresents Science" # I7SMGkep:14m16s of Drew, the Genetically Modified Skeptic saying  ...             ...?;
+HTTPS://YouTu.be/W7Kk-W86giU "Jordan Peterson | The Responsible Man" # 16m of Thinking-Ape (Stardusk) speaking about duty, oblig8ions,etc...             ...?;
+HTTPS://YouTu.be/E104RsU8dWc "Thoughts on the Sam Harris && Jordan Peterson Deb8s" # 8m25s of JonathanPageau addressing SamHarris' deb8  ...             ...?;
+HTTPS://YouTu.be/3fG-1kK96zU "ICMI'18 Karen Straughan" # I82MAKar:56m42s of gr8 talk about women needing to dismantle feminism then a solidly detailed Q && A;
+# I87MDeed:Just started watching JosephCampbell's 1988 ThePowerOfMyth beginning on HeroOf1000Faces typified by deeds of gr8 physical or spiritual achievement.
+#   Often deed is to slay a monster, save life, sacrifice, rescue or quest for father, etc. with common triple-tempt8ion && then teaching of chosen disciples.
+# Emphasis on transform8ion through trials && revL8ions, including every person's birth as a transform8ive gest8ion journey through also heroic mother's womb.
+#   Interesting consider8ion of each social environment as a "system" which contends against each individual's humanity, && needs be rejected in some fashion.
+# It deals with the edge && interface between that which can never be known && the realm of knowledge humankind inhabits && must struggle to make sense about.
+#   Nirvana is psychological, not a physical place like Heaven. It's where you are free from desire, fear, or societal oblig8ions which facilit8 a deep peace.
+# Claims that everything is a form of consciousness && deliber8 foreknowledge (like flowers turning toward the sun) rather than stimulus response are dubious.
+#   The main theme of mythology is that there's an invisible plane that supports the physical one which we inhabit, such that human && animal life transcends;

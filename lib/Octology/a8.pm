@@ -51,7 +51,7 @@ our @EXPORT= qw(bfr8c    b8c    d8c    dur8c       a8c   a8colr      h2rl   rl2h
     $z    $k    $r    $o    $y    $g     $c $SKpb    $m    $p    $w  tstc    $K    $R    $O    $Y    $G    $C    $B    $M    $P    $W    %p622 %p222
  $tnhf $ucdf  spff  spfd  spfX   shfl  reso $auth %cmsp %p8k2 @p82k  chp8     S2f4 c2f4 dm2u cdst %crgb %cbrt @snls @mrls %cdrd %cdrn    %nrgb         gnp8);
  # of 52 posibl sngl-letr var nmz,a8 Xportz 20,$b && $a unavail,so shudB thEs30 lFt4quik shortSt nAmz: 'def hij l n  q stuv x', 'A  DEF HIJ L N  Q STUV X Z'
-our $VERSION='0.0';my  $d8VS='I5LM11I5';our $auth='PipStuart <Pip@CPAN.Org>'; # above not exporting $b since collidez with sort{$a  <=> $b}
+our $VERSION='0.0';my  $d8VS='I87MFTST';our $auth='PipStuart <Pip@CPAN.Org>'; # above not exporting $b since collidez with sort{$a  <=> $b}
 our $ucdf= eval('use Color::Similarity::RGB qw(distance);1') || 0; # try2set UseColorDistanceFlag if optional module is available
 our @Monz=qw(January February March   April     May June July   August September October November December);our @Mon=();push(@Mon,substr($_,0,3)) for(@Monz);
 our @Dayz=qw(Sunday  Monday   Tuesday Wednesday Thursday Friday Saturday                                  );our @Day=();push(@Day,substr($_,0,3)) for(@Dayz);
@@ -1525,17 +1525,25 @@ sub ftst{ # 37MK06SK:ftst Utl2run thruPerlzFileTeSTz on its parameter Filename
             't','tty                            . ','u','setuid bit    (can also /aa =>). ',
             'k','sticky bit                     . ','g','setgid bit                     . ',
             'T','Text          (wasMSWinB4 5.24). ','B','Binary        (opposite of: -T). ',
-            'M','part Days (@stRtup) since Modific8ion                                . ', # was 'M','age of file (at startup) in (fractional) days...
-            'A','part Days (@stRtup) since last Access                                . ', #   ...since Modification', before I distilled that down heavily
-            'C','part Days (@stRtup) since inodeChange                                . ',);
-  my @flag=('i','Ignore-case      (InsensItIveI). ','x','Xpanded comments (Xplicit spcs). ',
-            'g','Global Greedy (GobblingGrabber). ','e','EvalU8 (can bE rEpEatEd,xx too). ',
-            's','Single-String (dot getS nwlinS). ','m',' Multi-Match     (Many anchors). ',
-            'c','Current pos kept on repeat mtCh. ','l','sets char-set to       LocaLe  . ',
-            'u','sets char-set to       Unicode . ','a','ASCII d8A Alone  (ignr unicode). ',
-            'd','pre-5.14 problem chars Default . ','r','non-destRuctive and RetuRn Rslt. ',
-            'o','Optimize pretend (brOkn OptiOn). ','p','Preserve Pattern Parts PostProc. ',
-            'n','preveNt meta-pareNs capturiNg  . ',); # now everything fits very tightly
+            'M','part Days (@staRtup) since Modific8ion                               . ', # was 'M','age of file (at startup) in (fractional) days...
+            'A','part Days (@staRtup) since last Access                               . ', #   ...since Modification', before I distilled that down heavily
+            'C','part Days (@staRtup) since inodeChange                               . ',);
+  my @flag=('i','Ignore-case      (InsensItIveI). ', # roughly ordered by significance && rel8ive frequency of familiarity or my past applic8ions needing it
+            'x','Xpanded comments (Xplicit spcs). ', # also attempted pronunC8ion of just flags as: "ick-jemms-clue-adorn-p" like "pick gems" if end p rot8d
+            'g','Global Greedy (GobblingGrabber). ', # also somewhat organized for vertical alignment of parenthetical && description groupings, dashes, etc.
+            'e','EvalU8 (can bE rEpEatEd,xx too). ',
+            'm',' Multi-Match     (Many anchors). ',
+            's','Single-String (dotgetSnewlineS). ',
+            'c','Curent pos kept on repeat matCh. ',
+            'l','L:sets char-set to     LocaLe  . ',
+            'u','U:sets char-set to     Unicode . ',
+            'a','Ascii d8A Alone  (ignr unicode). ',
+            'd','pre-5.14 problem chars Default . ',
+            'o','Optimize pretend (brOkn OptiOn). ',
+            'r','non-destRuctive and RetuRn Rslt. ',
+            'n','preveNt meta-pareNs uNcapturiNg. ',
+            'p','Preserve PatternParts Post-Proc. ',
+            ); # now everything fits very tightly
   if($file =~  /^-?-?h(elp)?$/ && !-e $file){$hlpf=1;$file='';}
   unless(length($file)){$file='.';
     $file="$ENV{'HOME'}" if(exists($ENV{'HOME'}));$file.="/.Hrc";}
@@ -1556,20 +1564,21 @@ sub ftst{ # 37MK06SK:ftst Utl2run thruPerlzFileTeSTz on its parameter Filename
                               print  $out8      comma($etrv) if($oper[$i] eq      's'  );
                               printf $out8 "%23.18f", $etrv  if($oper[$i] =~ /^[MAC]$/ ); # align age floats
                              }my     $dscs=$oper[$i+1];$dscs=~ s/(UID)/$C$1/gi;$dscs=~ s/(GID )/$G$1/gi;$dscs=~ s/( by )/$g$1/gi;$dscs=~ s/(size)/$o$1/gi;
-    $dscs  =~ s/(bit  )/$W$1/gix;$dscs=~ s/(part )(Days )(\()(\@)(stRtup)(\))( since)/$o$1$Y$2$B$3$R$4$C$5$B$6$c$7$p$oprS/gi;
+    $dscs  =~ s/(bit  )/$W$1/gix;$dscs=~ s/(part )(Days )(\()(\@)(staRtup)(\))( since)/$o$1$Y$2$B$3$R$4$z$5$B$6$c$7$p$oprS/gi;
     $dscs  =~ s/([|])/$o$1$G/g  ;$dscs=~ s/(real)/$r$1$R/g;$dscs=~ s/(effective)/$M$1$B/g;$dscs=~ s/(special)( file)/$c$1$G$2/g;
-    $dscs  =~ s/(\()([^)]+)(\))/$B$1$W$2$B$3/gi;my $sfsp='';
+    $dscs  =~ s/(\()(can also )(\/)(a+)([^)]+)(\))/$B$1$W$2$Y$3$A$4$W$5$B$6/gi;
+    $dscs  =~ s/(\()([^)]+)(\))/$B$1$W$2$B$3/gi;  my $sfsp='';
     if(length($file) < 14){$sfsp= ' ' x (14 - length($file));$sizl += (14 - length($file));} # default /home/pip/.Hrc shud B 14 long,so upd8 pad && size length
     $dscs  =~ s/(.*)(\.)/$1$w$sfsp$2$C #$A/; # try to sneak in the ShortFileSpacesPadding to hopefully preserve some of the intended alignment for non-defaults
                               print  $out8 "$G)$W:$oprS$dscs";print $out8 ((' ' x $sizl) . "$w.$C # ") if($oper[$i] eq 's');
     # 2du:when file leng more than 14, like for ~/.lsrc or ~/.zshrc, either use more aggressive substitutions to preserve alignment, or just omit flag section;
     if                       (length($file) <= 15 &&   exists($ENV{'COLUMNS'}) && $ENV{'COLUMNS'} >= 160 &&($i % 4 || $i > ($#oper-6))){
       my $nthi=int($i/2)-1;$nthi=$#flag - ($#oper - $i ) if($i > ($#oper-6)); # try to shift pnr back over age stamps
-      $flgS=S(uc($flag[$nthi])) if(defined($flag[$nthi]) && $flag[$nthi]=~ /^[ixgemscluadropn]$/i && defined($flag[$nthi+1]));$dscs='';
+      $flgS=S(uc($flag[$nthi])) if(defined($flag[$nthi]) && $flag[$nthi]=~ /^[ixgemscluadornp]$/i && defined($flag[$nthi+1]));$dscs='';
       $dscs= "$Y/$flgS$flag[$nthi] $z: $flgS$flag[$nthi+1]" if(defined($flag[$nthi]) && defined($flag[$nthi+1]));$dscs=~ s/(.*)(\.)/$1$w$2/;
       $dscs=~ s/(,)/$R$1$Y/g   ;$dscs=~ s/(comments  )/$c$1$Y/gx;$dscs=~ s/(b)(E )(r)(E)(p)(E)(at)(E)(d)/$Y$1$flgS$2$Y$3$flgS$4$Y$5$flgS$6$Y$7$flgS$8$Y$9/gi;
       $dscs=~ s/(-)/$F$1$flgS/g;$dscs=~ s/(X)(plicit )/$flgS$1$Y$2/g;$dscs=~ s/(br)(O)(kn )(O)(pti)(O)(n)/$Y$1$flgS$2$Y$3$flgS$4$Y$5$flgS$6$Y$7/gi;
-      $dscs=~ s/(I)(nsens)(I)(t)(I)(ve)(I)/$flgS$1$Y$2$flgS$3$Y$4$flgS$5$Y$6$flgS$7/gi;$dscs=~ s/( get)(S )(nwlin)(S)/$Y$1$flgS$2$Y$3$flgS$4/gi;
+      $dscs=~ s/(I)(nsens)(I)(t)(I)(ve)(I)/$flgS$1$Y$2$flgS$3$Y$4$flgS$5$Y$6$flgS$7/gi;$dscs=~ s/(get)(S)(newline)(S)/$Y$1$flgS$2$Y$3$flgS$4/gi;
       $dscs=~ s/(G)(obbling)(G)(rabber)/$flgS$1$Y$2$flgS$3$Y$4/gi;$dscs=~ s/(M)(any )/$flgS$1$Y$2/gi;$dscs=~ s/(xx )/$X$1$Y/i;
       $dscs=~ s/(\()([^)]*)(\))/$M$1$Y$2$M$3/g;$dscs=~ s/(spa?ce?s?)/$N$1$A/gi;
                               print  $out8 "$dscs";}

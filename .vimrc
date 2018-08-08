@@ -1,16 +1,25 @@
 " EBQLIh15:.vimrc by PipStuart <Pip@CPAN.Org> to highly customize my Vim sessions to have my favorite status bar, edit settings, key mappings, && behaviors;
 " 2du:stuD Conway's awesome code&&plugins at bottom,stuD HTTPS://Statico.GitHub.IO/vim.html && vim[23].html,ckout best HTTPS://VimAwesome.Com plugins too,
-"   also stuD HTTPS://GitHub.Com/airblade/vim-gitgutter if I might want 2du some local diffs between changed code hunk lines instead of usual side-by-side;
+"   also stuD HTTPS://GitHub.Com/airblade/vim-gitgutter if I might want 2du some local diffs between changed code hunk lines instead of usual side-by-side
+"     (although that may throw many of my :se list! Ctrl-L past 160), reread && stuD useful 8-Year veteran HTTPS://TomJWatson.Com/blog/vim-tips && practice,
+"   stuD best plug-in managers && autom8 loading of best loc8d JSX inline syntax support (instead of persisting with antiqu8d manual plug-in configur8ions);
 "set? || setl(ocal)? || let   " wN setting, trailing variable wi bang (!) || prepending 'inv' wil togl boolean flag's value; trail ? 2 query;  BlO so(urce)?
 se   nocp                     " nocompatible    - add  Vim NhancmNtz without strIving for vi compatibility (mustB1stBcuzit chngz othr optnz as side effect)
 se    enc=utf-8               "     encoding    - was already loading utf-8 from current $LANG locale, && might need termencoding also if they diverge
 "se  fenc=utf-8               " fileencoding    - might needed this if ever trying LightLine + ALE with special chars from HTTPS://StaticO.GitHub.IO/vim3.html
 let  g:VERSION='0.0'
-let     g:d8VS='I72M7Ck8'     " d8VersionString - l8st significant upd8 to whole file was then
+let     g:d8VS='I88M88U8'     " d8VersionString - l8st significant upd8 to whole file was then
 let     g:vid8=system('d8')   " VimInit d8      - save d8 when this Vim session first stRtz up to use as dRk pRt at Nd of STatusLine just before bright upd8 d8
 let     g:cucf=1              " CUrsorColumFlag - flag to toggle whether :se cuc should be used (since dflt of it on gets slow whN lots of syntx hili on scrn)
 let     g:culb=1              " CUrsorLineBold  - flag to toggle whether :se cul below should use highlight with bold across whole line (dbl-mapd2Ctrl-L&&hls)
 "so  $VIMRUNTIME/mswin.vim    "be mswin         - ick! du*not*want! MSWindowsCtrl-xcv sux compared2 swEt Ctrl-v hIlIt blox sO nO source or behave on that crap!
+" HTTPS://GitHub.Com/junegunn/vim-plug && HTTPS://Drivy.Engineering/setting-up-vim-for-react hopefully for future plugins && React_n8ive dvl && also had to
+"   install HTTPS://FaceBook.GitHub.IO/watchman to be able to `npm start` in ~/dvl/t8/rn8v/d8st after `create-react-native-app d8st` did initial setup.
+" It also required `agi python-dev` in order to have the proper Python.h file for watchman to be able to make properly before `sudo make install`;
+call  plug#begin('~/.vim/vim-plug') " this was frustr8ingly setting fo formatoptions=croql && auto-extending comments messing up my T map to upd8 d8VS d8a
+Plug 'pangloss/vim-javascript'
+Plug 'mxw/vim-jsx'
+call  plug#end()
 se   list                     " l?              - show Tab(\t <Tab>) && NewLine(\n \<CR>) charactrz(&&my Ctrl-l mapng BlO toglz this option) (bkslshB4CRjust2..
 "se  ru                       " ruler           - show cursor line && column in status bar  (my stl addz these separ8ly in my preferred way)   ..fix synhilitz)
 se   hid                      " hidden
@@ -20,8 +29,9 @@ se   sw=2                     " shiftwidth=2    - was 4 before 2
 "se  sts=2                    " softtabstop=2
 "se  sr                       " shiftround      - setting this should always indent/outdent 2 nearest tabstop
 se   ls=2                     " laststatus=2
-se   tw=0                     " textwidth=0     - this should NAbl Vim 2 Dtect width from shL && term rather than Xplicit 78
+se   tw=0                     " textwidth=0     - this should NAbl Vim 2 Dtect width from shL && term rather than Xplicit 78,but mAB shudBset2 158 nstd?
 let  g:leave_my_textwidth_alone=1 " this stops the autocommand in /etc/vim/vimrc from forcing textwidth=78 for *.txt
+se   fo=ql                    " formatoptions   - I think new vim-plug ins set this to 'croql' but auto-commentz messup my T d8VS map. see :help fo-table
 se     ai                     "    autoindent
 se   nosi                     " nosmartindent
 se   nocin                    " nocindent
@@ -103,12 +113,17 @@ nn     <C-b> B
 " I6PM7Cw8:temporarily sidelined Ctrl-H HiLightSearch togl wi curs bold for descriptive YouTu.be U2b URL squirter (mAB mvd below);
  map   <C-h>                               :       se   hls!<CR>
 nn     <C-l> :call ToglCursorLineBold()<CR>:       se  list!<CR><C-l>
-imap   <C-k>                                <Esc>u:se spell!<CR>
+"imap   <C-k>                                <Esc>u:se spell!<CR>
 nmap   <C-k> iHTTPS://YouTu.be/ "" # d8:18m;<Esc>12<Left>i
 " I71M6Ck8:just realized need Ctrl-w to jump Windows when doing vimdiff, so reapproprE8d C-k for spell-checKer toggle above && remapped to U2b with loop here;
 " I72M7Ck8:add Insert-mode map of 2nd Ctrl-k to undo back out (16<L>31x) of an unpopul8d Normal-mode inserting of U2b templ8, also toggling spell-checK flag;
 "let  g:U2bL='HTTPS://YouTu.be/ "" # d8:18m;'  " hopefully try to just insert U2b URL templ8 variable string below instead of leaving literal, not sure how2?
 "nmap  <C-k> :i g:U2bL<CR>12<Left>i            " not yet sure how to colon command insert a particular global variable at cursor before adjusting auto-insert
+" I88M4Ck8:initial glances through Google suggest Ctrl-k is mainly an Emacs or Gnome shortcut for deleting from cursor to end-of-line, like vim 'D' probably;
+" I88M4PIE:initial glances through Go─hhogle && interestingly disabling imap C-k above && trying in insert-mode gives dark '?' then hjkl? seemed to do lines.
+"   study && carefully experiment with originally available C-k behaviors && contempl8 best places to reloc8 spell-checK && U2b desKription Komponent KrE8or.
+"   Also may want to remember to explore ASCII x0B for probably name && Ctrl-k mapping && maybe some other sequences, or maybe concealed somewhat deliber8ly;
+" I88M6crm:ftst had 2 old notes of C-k being Vertical-Tab so apparently a somewhat weird, inconsistent, usually remappable, possibly potent, etc. capability;
 "map   <C-m>                               :if &mouse != 'a'<CR>se mouse=a<CR>el<CR>se mouse= <CR>en<CR><CR>
 " above toglz List (show \t&&\n,keep stndRd scrn redraw wi nnoremap),checK spelling,C-m Dfalt <CR> tried togl mouse but probz ensue when shelling out
 "map <S-F12> :call SetStatusLineStyle()<CR>:if &mouse != 'a'<CR>se mouse=a<CR>el<CR>se mouse= <CR>en<CR><CR>  " My Ubuntu trapz S-F12 as VolumeUp B4 vim getzit
@@ -281,7 +296,8 @@ fu!  Upd8VerS()
   el
     se noai
   en
-endf " Damian Conway's PerlToolsForVim inserted below, from talk HTTPS://YouTube.Com/watch?v=9u6O0dLuqhI && description at HTTP://YAPCNA.Org/yn2016/talk/6833
+endf
+" Damian Conway's PerlToolsForVim inserted below, from talk HTTPS://YouTube.Com/watch?v=9u6O0dLuqhI && description at HTTP://YAPCNA.Org/yn2016/talk/6833
 autocmd BufNewFile,BufRead *.t setfiletype perl " .t files are perl
 "highlight Comment term=bold ctermfg=white      " Comments are important
 function! AskQuit (msg, options, quit_option)   " magically build interim directories, if necessary
