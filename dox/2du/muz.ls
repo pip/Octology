@@ -134,8 +134,6 @@ Groove Coverage - Run Away
 Justice - Waters of Nazareth
 Karma De La Luna - Genius & Broken Sound
 MacGuyver - Download Sequence
-Rabiha: Lady in Red
-Rabiha: Guilty Feet (have got no rhythm)
 ScuL - Promo Mix (June 2006)
 StarChild - StarChild
 Tsunami Presents - Talamasca (September 2005)

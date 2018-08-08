@@ -810,7 +810,7 @@ internationaliz8ion:tools to transl8 for I18N the document8ion && applic8ion int
               p8ient:maybe same as medic8 or priv8 personal medical records or opposite of imp8ient && rel8d to wait w8 somehow?
            palp8   :to examine or explore by gently touching or percussing (an organ or area of the body), usually as a medical diagnostic aid
         fibrill8   :making fine, irregular, rapid twitching movements, such as the convultions from within the chest of a p8ient suffering a heart-attack
-         sphacL8   :medical term describing death, mortific8ion, undergoing necrosis, or becoming affected by gangrene
+         sphacL8   :medical term describing death, mortific8ion, undergoing necrosis, or becoming affected by gangrene  # mAB add desquam8ion with new *g8
          suppur8   :to cause typically a sore or wound to ripen, fester, && gener8 pus which is discharged
           ulcer8   : # add exud8 as usually liquid substance that oozes from plant or animal pores (like sweat), with new *p8 && *v8 words for "dpv" group
            larv8   :masked, concealed, obscure doubtful medical cases of disease
@@ -1283,7 +1283,7 @@ trachelobranchE8
          humilE8
         exasper8
          infurE8
-         indign8ion
+         indign8ion: # maybe add     exuV8    like mortific8ion, sphacL8ion, desquam8ion, slough, shedding snake-like skin or covering   (with new *R8 && *U8)
        mortific8ion: # maybe add supplant8ion as the act of supplanting, displacing, or subrog8ing ... or surrog8ing or substituting     (with new *E8 && *z8)
        subordin8   : # maybe add    deput8ion as group of represent8ives or deleg8s, or authoriz8ion of subordin8s to make certain decisions (with *E8 && *z8)
          subjug8   : # maybe add   subrog8    as substituting one creditor (or comparable place) for another, but might be better below surrog8 (with new *m8)
