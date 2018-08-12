@@ -1,5 +1,5 @@
 # HBQLISTV:know.ls crE8d by PipStuart <Pip@CPAN.Org> to duplic8 Dr. Jordan B. Peterson's Quora.Com answer of "40 most valuable things everyone should know";
-# $VERSION='0.0';$d8VS='I88M4K20'; # 2du:start chronicling Dr. Peterson's many topical videos with new section for post-title subject summaries or explor8ion;
+# $VERSION='0.0';$d8VS='I8BMAron'; # 2du:start chronicling Dr. Peterson's many topical videos with new section for post-title subject summaries or explor8ion;
 0) Tell the truth.
 1) Do not do things that you h8.
 2) Act so that you can tell the truth about how you act.
@@ -418,3 +418,12 @@ HTTPS://YouTu.be/3fG-1kK96zU "ICMI'18 Karen Straughan" # I82MAKar:56m42s of gr8 
 #   Nirvana is psychological, not a physical place like Heaven. It's where you are free from desire, fear, or societal oblig8ions which facilit8 a deep peace.
 # Claims that everything is a form of consciousness && deliber8 foreknowledge (like flowers turning toward the sun) rather than stimulus response are dubious.
 #   The main theme of mythology is that there's an invisible plane that supports the physical one which we inhabit, such that human && animal life transcends;
+HTTPS://YouTu.be/X05Wn1ZAlfE "The Future of Morality" # I8BM8dRk:15m17s gr8 DarkMatter2525 anim8ion found with powerful message to: Stop justifying genocide!,
+#   whether in the Biblical or more recent past, to help avoid recurrence... but subtext of this caric8ure of God && His wrath also indic8s Bible immorality.
+# If moral rel8ivism propag8s devast8ingly, then maybe some stabiliz8ion could come from reflection on the purpose && utility of believing morality objective;
+HTTPS://YouTu.be/pvKt5uFUsTM "Abiogenesis is not Spontaneous" # 7m of AronRa laying out gr8 Evolution delinE8ion as descent with inherent genetic modific8ion,
+#   (also in Aphenda's gr8 Endless track, though I first thought it said "dissent") apart from the gradual && also significant form8ion of life from non-life;
+HTTPS://YouTu.be/tAaTahfhqDM 'Response to Rachel Oates "Let\'s Talk Anti-Theism"' # I8BMBATA:29m of gr8 NoelPlum Anti-Theism critique && rant on Agnosticism;
+HTTPS://YouTu.be/62-APh1bu34 "Ra-Men ep88 - Alpha God" # I8BMEP88:38m of AronRa's recent stream with HectorGarciaPsyD discussing brilliant anti-religion book;
+HTTPS://YouTu.be/QHg_NL4EUAE "Atheist Deb8s - Can f8h Be r8ional? Matt Dillahunty && Blake Giunta" # I8BMF8R8:2h29m of I7V Jul31st2018 deb8 to contempl8 l8r;
+HTTPS://YouTu.be/l2vy2ZTCAvs "Top 10 Reasons Jesus Hasn't Returned" # 12m of DarkMatter2525 anim8s gr8 sharp, logical, && funny results radically demonstr8d;

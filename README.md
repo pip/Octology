@@ -1,5 +1,5 @@
 # Octology
-The ontology of 8. `$VERSION='0.0';$d8VS='I88M6Top';`
+The ontology of 8. `$VERSION='0.0';$d8VS='I8BMJAMS';`
 
 This is basically a public preview of my early development files. I am not yet ready for serious collaboration, but welcome any sort of feedback.
 
@@ -17,7 +17,8 @@ Many `bin/` commands print useful Help text when given a `-h` parameter. If your
  * `calN` - display a CALeNdar of the colored d8-based recent Years
 <!-- * `lodH` - LOaD ~/.Hrc d8a-file to parse then print colored fields-->
 
-## Current Top6 Screen Shots
+<!-- even though of course originally above command && below screen shot lists were each Top8, they're now slightly more focused on just most public Top6 -->
+## Current Top Screen Shots
 ##### (*mostly examples matching above*) -- [**no longer adhering to strict reverse d8 order**]
 ![Octology-sumb-shot_1614x952-I45MD8m8](https://github.com/pip/Octology/raw/master/gfx/sho/Octology-sumb-shot_1614x952-I45MD8m8.png "Octology-sumb-I45MD8m8")
 ![Octology-tstn-shot_1614x952-HC8L7J3A](https://github.com/pip/Octology/raw/master/gfx/sho/Octology-tstn-shot_1614x952-HC8L7J3A.png "Octology-tstn-HC8L7J3A")
@@ -48,7 +49,7 @@ Sincerely,
 If I ever become unable to continue developing this project further, my hope is that at least this repository provides others the ability to
   utilize any of my beneficial work and ideas (hopefully to further FreeLibreSoftware with derivatives also seeing release under the GPLv3+).
 
-#### Secondary Old6 Screen Shots
+#### Secondary Old Screen Shots
 ##### (*several mostly older examples*)
 ![Octology-sumb-shot_1280x800-HBBLJe4o](https://github.com/pip/Octology/raw/master/gfx/sho/Octology-sumb-shot_1280x800-HBBLJe4o.png "Octology-sumb-HBBLJe4o")
 ![Octology-8trm-shot_1280x800-HBBLK762](https://github.com/pip/Octology/raw/master/gfx/sho/Octology-8trm-shot_1280x800-HBBLK762.png "Octology-8trm-HBBLK762")
@@ -59,12 +60,3 @@ If I ever become unable to continue developing this project further, my hope is 
 ![Octology-g3Ob-shot_1614x902-HAOM9cKA](https://github.com/pip/Octology/raw/master/gfx/sho/Octology-g3Ob-shot_1614x902-HAOM9cKA.png "Octology-g3Ob-HAOM9cKA")
 ![Octology-dic8-shot_1614x902-HAOM900M](https://github.com/pip/Octology/raw/master/gfx/sho/Octology-dic8-shot_1614x902-HAOM900M.png "Octology-dic8-HAOM900M")
 <!--![Octology-lodH-shot_1614x902-HBBLJiDO](https://github.com/pip/Octology/raw/master/gfx/sho/Octology-lodH-shot_1614x902-HBBLJiDO.png "Octology-lodH-HBBLJiDO")-->
-
-*Note*: Please bear in mind that these older shots at the bottom here are far more likely than those in the current **Top8** list above to portray behaviors
-and exhibit details which have been modified somewhat (or possibly replaced entirely) within the time that lapsed since the d8 a particular shot was taken on.
-
-*8plc*: If you would like to download a pre-gener8d colored output file for running a recent: `8plc a` to finalize with l8st -gM8ria block map for l8r `cat`:
-  [8plc-I88M7gr8.ansi](https://github.com/pip/Octology/blob/master/gfx/sho/8plc-I88M7gr8.ansi "gfx/sho/8plc-I88M7gr8.ansi")
-
-*P.S.*: I feel confident suggesting that if almost anyone were to read through 8.txt and then examine the other documentation, code, and data files that are
-distributed as Octology, they could learn much about GNU/Linux, Perl, and general programming from a sometimes manic, yet still usually competent, game coder.

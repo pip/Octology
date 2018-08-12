@@ -513,9 +513,16 @@ alias     sig='signal-desktop'; # I7GMFSIG:installed HTTPS://Signal.Org on my An
 alias     p47='parsec47';alias a7='a7xpg'; # some of my favorite Kenta Cho Shmups ("Bullet Hell") in /usr/games
 alias      rr='rrootage';alias tt='torus-trooper';alias tf='tumiki-fighters'; # would be gr8 to study BulletML && explor own similRly themed varE8ions someday
 alias      xb='xboard';alias xbsf='xb -fcp stockfish -fUCI'; # gr8 Chess program with shortcut to top StockFish engine as FirstChessPlayer
-alias    kpcl=' kpcli --kdb=~/.kp/pswd.kdb --histfile=/dev/null --no-recycle'; # to not stor any hist or entry changes in /Backup or "/Recycle Bin" old dfalts
-alias    kp='  pu ~/.kp;kpc --kdb=pswd.kdb --histfile=/dev/null --no-recycle;chm 600 pswd.kdb;b pswd.kdb;po'; # alias2modifId kpcli-3.0 wimore aliasz&&alInmNt
-alias    kp8=' pu ~/.kp;ec "--kdb=...;chm 600 ...;po"; kpc      --no-recycle --histfile=/dev/null '; # quite similar manual auto-wrapper for isol8d moreprIv8z
+alias    kpcl=' kpcli      --kdb=~/.kp/pswd.kdb --histfile=/dev/null --no-recycle'; # 2!stor any hist or entry changes in /Backup or "/Recycle Bin" old dfalts
+alias    kp='  pu  ~/.kp;    kpc --kdb=pswd.kdb --histfile=/dev/null --no-recycle;chm 600 pswd.kdb;b pswd.kdb;po';  # alias2 kpcli-3.0 modwimor aliasz&&alInmNt
+kp8(){       KDBF='pswd';if [[ "$#" -gt 0 && "$1" != "" ]]; then KDBF=${1:s/^.*/.}; fi; # if [[ $B64N =~ ^([a-zA-Z]w) ]]; then BNWH=${BNWH:s/   e   / e }; fi;
+  if   ! [[ $KDBF =~ .kdb$  ]]; then    KDBF="${KDBF}.kdb";
+    if ! [[ $KDBF =~  pswd  ]]; then    KDBF="${KDBF}."   ; fi; fi;
+  pu               ~/.kp;
+  if     [[       -e $KDBF  ]]; then # try to only load file up if exists (&& should be read/writable to user too)
+                             kpc --kdb=$KDBF    --histfile=/dev/null --no-recycle;chm 600 $KDBF   ;
+    if   [[ $KDBF =~  pswd  ]]; then b $KDBF; fi; fi; # ideally this should all behave quite similarly to just basic kp alias above
+  po;} # en "F:$KDBF;";}
 alias    U='   U2b8';alias U2bk='Uk';alias u2bk='uk'; # shud l8r add 1-colm <98wId mOd&&some a8 autOcolrz 2furthr hIlIt mapngz
 alias    Ukey='echo -n "m c b : togl volMute Caption Bakgr colr [ U2b-hotKey ];  Dn Up : lowr 5%vol (arowkyz) rais 5%vol;
 p f n : Prevplayls toglFulsc Nextplayls (Escap=2exitf);  Lt Rt : bkwd 5secs (arowkyz) 4wrd 5secs;
