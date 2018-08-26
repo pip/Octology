@@ -427,3 +427,6 @@ HTTPS://YouTu.be/tAaTahfhqDM 'Response to Rachel Oates "Let\'s Talk Anti-Theism"
 HTTPS://YouTu.be/62-APh1bu34 "Ra-Men ep88 - Alpha God" # I8BMEP88:38m of AronRa's recent stream with HectorGarciaPsyD discussing brilliant anti-religion book;
 HTTPS://YouTu.be/QHg_NL4EUAE "Atheist Deb8s - Can f8h Be r8ional? Matt Dillahunty && Blake Giunta" # I8BMF8R8:2h29m of I7V Jul31st2018 deb8 to contempl8 l8r;
 HTTPS://YouTu.be/l2vy2ZTCAvs "Top 10 Reasons Jesus Hasn't Returned" # 12m of DarkMatter2525 anim8s gr8 sharp, logical, && funny results radically demonstr8d;
+# Rule 9/12 Assume the person you're talking to might know something you don't. HTTPS://YouTu.be/TPjTnP4_eDk 8m I8J Jordan B. Peterson, the Doctor, interview:
+# Conserv8ives must defend && preserve the legitim8 hierarchies of all types, while also engaging in dialog to contend with mass dispossession at the bottoms.
+# I think Alexander Grace indic8d success over challenges in intim8 rel8ionships (&& much of life) is gr8st if started with sincerity && courage, built upon;

@@ -7,7 +7,10 @@
 #     right end of the encoded string. The fields are normally: YMDzhmsf which stand for: Year-2000,Month,Day,zone,hour,minute,second,frame(60th-of-a-second)
 #   Alphabetic listings of encoded d8 strings often order according to date && time ascension but a special sort that handles base64 characters && is aware of
 #     d8 field conventions is needed for thoroughly consistent orderings. d8 encodings also support selective field arithmetic for intuitive manipul8ions.
-#   Please see `perldoc Octology::d8` for more detailed inform8ion.
+#   0) Each 13 added to the Month adds  64 to the Year.  # `d8 _eX`   FriJan 1st1745 to `d8 _pV`   MonDec31st2255 (all Midnights)
+#   1)      24 added to the Hour  adds 256 to the Year.  # `d8 _eX0O` TueJan 1st1489 to `d8 _pV0O` ThuDec31st2511 (s/O$/lxxx/ for last frame of Year)
+#   2)      32 added to the Day   makes the year negative just before adding 2k  # here Day:'W'..'_', above hour:'O'..'l' (up Oh to lo eL)
+#   Please see `perldoc Octology::d8` for more detailed inform8ion.  # 1024-Year range in 8-characters, extends non-minuteMonth rename Millennium (Thousand?);
 # License: Most source code should be Free! Code I have lawful authority over is and shall be!
 #   Copyright: (c) 2013-2017, Pip Stuart.
 #   Copyleft : This software is licensed under the GNU General Public License
@@ -16,7 +19,7 @@
 #     are free to change and redistribute it. There is NO WARRANTY, to the
 #     extent permitted by law.  Please see  HTTP://FSF.Org for more inform8ion.
 use strict;use warnings;use utf8;use v5.10;
-use      Octology::d8;my $VERSION='0.0';my $d8VS='H4OMFgc8';my $auth='PipStuart <Pip@CPAN.Org>';my $parm=join(' ',@ARGV);my @id8a;
+use      Octology::d8;my $VERSION='0.0';my $d8VS='I8QMBQT8';my $auth='PipStuart <Pip@CPAN.Org>';my $parm=join(' ',@ARGV);my @id8a;
 my $d8im=Octology::d8->new();
 open my $out8,'>&',STDOUT or die "Can't open  duplic8 STDOUT handle: $!";binmode $out8,':encoding(UTF-8)'; # crE8 local duplic8 of global
 if(!@ARGV && !-t STDIN){chomp(@id8a=<STDIN>);$parm=join(' ',@id8a);} # should eventually handle piping in d8 d8a while giving optionz too
@@ -25,24 +28,45 @@ if(!@ARGV && !-t STDIN){chomp(@id8a=<STDIN>);$parm=join(' ',@id8a);} # should ev
 #  (exists($ENV{'DST'}))?$DST=$ENV{'DST'}:        $DST=1; # this else clause might need to be upd8d manually when it changes
 #  $d8im-='8000';$d8im+='1000'  if($DST);}                # this code is a relic of my old California PST assumption
 if($parm=~ /(^|\s)-+h/i){ # should probably upd8 to use GetOpts or something more robust for parameter parsing
-  say $out8 " d8 - Date && Time utility  Vers:$VERSION  d8VS:$d8VS  by Auth:$auth
-      Please run `perldoc Octology::d8` for additional inform8ion.
+  if(!exists($ENV{'COLUMNS'}) || $ENV{'COLUMNS'} < 160){
+    say $out8 " d8 - Date && Time utility  Vers:$VERSION  d8VS:$d8VS
+    by Auth:$auth
+      Please run `perldoc Octology::d8` for additional inform8ion. First try:
+`d8 _eX` to `d8 _pV` && `d8 _eX0O` to `d8 _pV0l`,  &&  append 'xxx' for last;
   -h    this Help
- coloring options: (preceded with a dash)
-  -z    Zsh
-  -v    Vim
-  -4    4nt
-  -w    Web (HTML)
-  -a              Ansi
-  -f    Full with ansi
-  -l    Lsft with ansi
-  -c    Cpan with ansi
-  -i    Iso  with ansi
+ coloring options: (preceded with a dash)   ##  d8 fields (left-right,lo-hi)
+  -z    Zsh (SHELL)                         ## Y Year     2000 - 2063
+  -v    Vim (EDITOR)                        ## M Month      01 -   12
+  -4    4nt (MS-DOS)                        ## D Day        01 -   31
+  -w    Web (HTML)5?                        ##       offset or index codes z:
+  -a      colored Ansi   # Adore            ##  z zONE       0 -   37?
+  -f    Full with ansi   # Fuzzy            ##  h hOUR       0 -   23
+  -l    Lsft with ansi   # LittLe           ##  m mINUTE    00 -   59
+  -c    Cpan with ansi   # CrE8ures         ##  s sECOND    00 -   59
+  -i    Iso  wIth ansI   # Imper8Ive        ##  f?fRAME?    00 -   59
  uncolored expansion shortcuts: (no dash)
    f|d8 Full now's d8
    l    show now's d8 in `ls  --full-time` format
    c    show now's d8 in CPAN  (&& PAuSe)  format
-   i    show now's d8 in complete ISO 8601 format";
+   i    show now's d8 in complete ISO 8601 format;"; exit(); } # should research reminders && mk notes about default && recommended Perl && shell exit codes
+  say $out8 " d8 - Date && Time utility  Vers:$VERSION  d8VS:$d8VS  by Auth:$auth
+      Please run `perldoc Octology::d8` for additional inform8ion. Initially try: `d8 _eX` to `d8 _pV0N` && `d8 _eX0O` to `d8 _pV0lxxx` (for reaching 2last);
+  -h    this Help  # Humor-Held~HiddenHind, Healthy-Habit~HonoredHearts... I mean Hashy pound sign comment columns contain corresponding Happen Hardly Heard;
+ coloring options: (preceded with a dash)   # ^_^ '4aditnl in4m\@n' && `cat =d8` ( >~..^< 4ever *purr~meow* darlings 8<3 && happyDjays 2djust *yawn~woof*!)  ;)
+  -z    Zsh (SHELL)   # Zero       [ Zen ]  ## Y Year     2000 - 2063     [= - N P - =]          || # Non-deterministic Polynomial (could be:'hard','complete')
+  -v    Vim (EDITOR)  # Vigor     / Vision  ## M Month      01 -   12   (neutral pairing)          == Not a Problem!
+  -4    4nt (MS-DOS)  # -4for4     / 4fwd4  ## D Day        01 -   31     [= - N P - =]          ||
+  -w    Web (HTML)5?  # Worst!! ;     [We]  # Well When Would We Wonder Why World Webbed 4m@ Was Wanted With Wiser gener8ion && markup option altern8ives?  ;
+  -a      colored Ansi   # Adore   [ All ]  ##  z zONE       0 -   37? offset or index codes   <<--Pip's double-hash-pounded depth listed internal d8 fields.
+  -f    Full with ansi   # Fuzzy  / Furry   ##  h hOUR       0 -   23     [= N + + P =]          ||
+  -l    Lsft with ansi   # LittLe  / Lover  ##  m mINUTE    00 -   59   (n8ural parenths)          == Never Perfect!  # Neither Phase or SixtiethSofSecS,butp?
+  -c    Cpan with ansi   # CrE8ures / C\@s   ##  s sECOND    00 -   59     [= N + + P =]          || # Not Persuaded by SubSecS,Hertz,or pz,mAB fITEfAZEfREQZ?
+  -i    Iso  wIth ansI   # Imper8Ive! ;[I]  ##  f?fRAMEblp? 00 -   59   (needs renamings)      // alInd p\@erns group dimNsions evolving modific8ion withDscNt
+ uncolored expansion shortcuts: (no dash)   #  Usually Elev8 Synergies: (Neg8 Devast8ion)      // hopefully not2 jarring && uncouth4 colloquial contXt8voices
+   f|d8 Full now's d8    # Note: Each of these shortcuts str8 clobber access to these few also valid d8 values, so trail empty 0 Months to altern8ly specify.
+   l    show now's d8 in `ls  --full-time` 4m@ format  # Rather curiously, original implement8ion design8d that dashy -h was best way for Help to avoid h d8;
+   c    show now's d8 in CPAN  (&& PAuSe)  4m@ format  # (&& Pip Alex Stu... Pi appreC8s you 4for at least 8 XponentE8able implicit reasons unmet *too2*!)  ;)
+   i    show now's d8 in complete ISO 8601 4m@ format  #  'You *can* say it too! I appreC8 you!' --2An PiPi Stu     8<3;";
 }elsif($parm=~ /(^|\s)-+([zv4waflci])\s*(.*)$/){$d8im=Octology::d8->new('d8'=>$3) if(defined($3)&& length($3)); # used to be 'verbose',then 'str',before 'd8'
   if   ($2  eq  'f'      ){print $out8 $d8im->expand('a');} # used to also accept 'e' for Expand but favor Full now   #              Full with ansi
   elsif($2  eq  'l'      ){print $out8 $d8im->lsft(  'a');}                                                           #              Lsft with ansi

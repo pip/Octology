@@ -29,7 +29,7 @@ unsetopt                \
 # auto_pushd            \# setng addz dirz 2 stack wN just normally chngng 2 thM (wich I du not normally lIk or want)
 # ksh_arrays            \# rEmMbr wNwrItng scrptz[or funcz]2include'setopt [localoptions] ksharrays'sO arAzR 0-bAsed(but!glOblBcuzmOst scrptzRstndrdly 1-bAsed)
 # re_____match_____pcre \# mA want2set for Z-SHell scripting RegularExpressions to utilize PerlCompatibility styles && mA insert 'zmodload zsh/(pc)?re(gex)?';
-export vers='0.0';export d8VS='I88MAN88';export auth='PipStuart <Pip@CPAN.Org>'; # above not exporting $b since collidez with sort{$a  <=> $b}
+export vers='0.0';export d8VS='I8GM8k8g';export auth='PipStuart <Pip@CPAN.Org>'; # above not exporting $b since collidez with sort{$a  <=> $b}
 if     [[       "$SHELL"    == "" ]]; then       export SHELL=`  which zsh`;fi # 8sh should parse this && OverId it    # shud `man zshall` /OSTYP 2lern4BlO
 if     [[       "$HOSTNAME" == "" ]]; then       export HOSTNAME=`hostname`;fi #`hostname`retnz fsckd nwlInz\n4CygWinzRxvt... ||smthng els lame  =(
 if     [[       "$HOST"     == "" ]]; then       export HOST="$HOSTNAME"   ;fi;export VERBOSE='1'; # set flag to print debug && status info from system utilz
@@ -374,6 +374,10 @@ alias     CCC='CC;en -e "\e[3J"' ; # special super Clear of scrollback too (good
 alias       F='   f   ';
 alias       f='   find'; #  f    :           find            (with combined interface to loc8?)
 alias       g='   grp '; #  g    :          sarep|(e|f)?grep (sed|awk too?)
+alias      gi='   g -i'; #                              grep -i to      Ignore_case
+alias      gv='   g -v'; #                              grep -v to                     inVert_match_results
+alias     giv='  gi -v'; #                              grep    to both Ignore_case && inVert_match_results
+alias    gad8='  gi "^ *[a-z8]*8[a-z8]* *[:#].*add .*8" ~/dox/2du/8.txt'; # utility alias to grep 8.txt for all comments describing potential words to add l8r
 alias      eg='  egrep'; # eg    :                 e    grep
 alias      zg='  zgrep'; # zg    :                     zgrep (like zcat for *.gz)
 alias       G='  zg   ';                        # (if hX duz!wrk BlO,try`HEX|perl -pe 'lc'`or shL func.Note:had2unalias lc ls -ct ChngTime 2mk tr 4lowr&&uc.)
@@ -431,13 +435,13 @@ alias      s8='   sort'; #  s8   :           sort (maybe eventually a collection
 #lias      d8='   date'; #  d8   :           date|time|pt
 #          g8   already ~/bin/
 #lias      g8='    git'; #  g8   :            git (was my much earlier attempt at wrapping to handle abbreV8ions && gener8 commits from .bak && vice-versa)
-alias   g8st8='    git status   '; # basic Octology-memorable combined rhyme 1-string altern8 way to call what should be effectively the same as: `g8 st`
+alias    g8st='    git status   '; # basic Octology-memorable combined rhyme 1-string altern8 way to call what should be effectively the same as: `g8 st`
 alias    gaa='     git  add .* *'; # handy alias to Add All (Asterisk) changes, Commit by Message string below, then Push Origin Master (likely to GitHub)
 alias    gcm='     git commit -m'; # tried to call each of these through g8 initially, but maybe -m flag wasn't passing on to git correctly so explicit now
 alias    gac='     gaa; gcm     '; # should setup gcm to auto-commit basic gener8d d8-stamp message && maybe list biggest few file changes, if no mesg given
 alias    gacm='    gac          '; # should maybe make as function which takes parameter or gener8d commit message then gpom with auto user Pip pRam or cnfg?
-alias    gpom='    git push origin master';
-alias       n=' ncal  ';
+alias    gpom='    git push origin master';alias g8st8='g8st';alias g8s='g8 s';alias g8h='g8 h';alias g8l='g8 l';alias g8d='g8 d';alias g8p='g8 p';
+alias       n=' ncal  ';           # above shortcuts are: status,           show,            help,            log,             diff,            pull
 alias       N='  calN '; #  N    :            calN (use `rsn` ReSize4calN 171x57 to show 19-Years, 2000-2018 solidly in slightly lRgr than Dflt 160x50 size)
 alias    caln='  calN ';
 alias      l8='  calN '; #  l8   :            cal|cron|at|batch
@@ -515,14 +519,15 @@ alias      rr='rrootage';alias tt='torus-trooper';alias tf='tumiki-fighters'; # 
 alias      xb='xboard';alias xbsf='xb -fcp stockfish -fUCI'; # gr8 Chess program with shortcut to top StockFish engine as FirstChessPlayer
 alias    kpcl=' kpcli      --kdb=~/.kp/pswd.kdb --histfile=/dev/null --no-recycle'; # 2!stor any hist or entry changes in /Backup or "/Recycle Bin" old dfalts
 alias    kp='  pu  ~/.kp;    kpc --kdb=pswd.kdb --histfile=/dev/null --no-recycle;chm 600 pswd.kdb;b pswd.kdb;po';  # alias2 kpcli-3.0 modwimor aliasz&&alInmNt
-kp8(){       KDBF='pswd';if [[ "$#" -gt 0 && "$1" != "" ]]; then KDBF=${1:s/^.*/.}; fi; # if [[ $B64N =~ ^([a-zA-Z]w) ]]; then BNWH=${BNWH:s/   e   / e }; fi;
-  if   ! [[ $KDBF =~ .kdb$  ]]; then    KDBF="${KDBF}.kdb";
-    if ! [[ $KDBF =~  pswd  ]]; then    KDBF="${KDBF}."   ; fi; fi;
-  pu               ~/.kp;
-  if     [[       -e $KDBF  ]]; then # try to only load file up if exists (&& should be read/writable to user too)
-                             kpc --kdb=$KDBF    --histfile=/dev/null --no-recycle;chm 600 $KDBF   ;
-    if   [[ $KDBF =~  pswd  ]]; then b $KDBF; fi; fi; # ideally this should all behave quite similarly to just basic kp alias above
-  po;} # en "F:$KDBF;";}
+k8(){        KDBF='pswd';if [[ "$#" -gt 0 && "$1" != "" ]]; then KDBF=".$1"; fi; # if [[ $B64N =~ ^([a-zA-Z]w) ]]; then BNWH=${BNWH:s/  e    / e }; fi; # Xmpl
+  if   ! [[ $KDBF =~ .kdb$  ]]; then    KDBF="${KDBF}.kdb"; #    KDBF=".${1:gs/\^./}"; orig atMpt abov was trying2 GloblStrip all anchord stRt dotz,but syntax?
+    if ! [[ $KDBF =~  pswd  ]]; then    KDBF="${KDBF}."   ; fi; fi; # so now just any non-default param for d8abase name getz forced hidN prEpNded dot &&apNd2
+  pu               ~/.kp; # it would just be so much simpler if shell variable regex syntax could optionally resemble Perl, but then less arcana to learn about
+  if     [[       -e $KDBF  ]]; then # try to only load up whatever the default or priv8 specified file if it exists (&& should be read/writable to user alreD)
+                             kpc --kdb=$KDBF    --histfile=/dev/null --no-recycle;chm 600 $KDBF   ; # might also want to chm 600 the file above before kpc too?
+    if   [[ $KDBF =~  pswd  ]]; then b $KDBF; fi;     # ideally this should all behave quite similarly to just basic kp alias above && may replace it once same
+  else   ec   "k8 failed to loc8 ~/.kp/$KDBF;";   fi; # should print out passed in or manipul8d file when it didn't exist where it was expected to be openable
+  po;} # simply popd back to the original working directory before the default home d8abase directory was pushd added above the standard shell directory stack
 alias    U='   U2b8';alias U2bk='Uk';alias u2bk='uk'; # shud l8r add 1-colm <98wId mOd&&some a8 autOcolrz 2furthr hIlIt mapngz
 alias    Ukey='echo -n "m c b : togl volMute Caption Bakgr colr [ U2b-hotKey ];  Dn Up : lowr 5%vol (arowkyz) rais 5%vol;
 p f n : Prevplayls toglFulsc Nextplayls (Escap=2exitf);  Lt Rt : bkwd 5secs (arowkyz) 4wrd 5secs;

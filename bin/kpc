@@ -3,7 +3,7 @@
 #   Stopped reformatting on get_prepped_readline_term() line 1124, for now (about 25% thru verylong srcfile). As of I5R, l8st upd8z syncd 2 public vers: 3.1;
 # 2du:elabor8 colr get_human_entry_list,autO rm blnk lInz btwn `ls *` subdirz Only whN tOtl ls won't fit1wId pAg,Xtract colr schEm as CLI optnz,
 #   fix chmod 644 back2 600 aftr .kdb edit&&thN bak?,colr up new pswd interactive toggle word-mode && start adding switching to 13 coins or 4/5 6-sided dice,
-#   add sepR8 new hIlItd singl b64-char ls ndx colm wich can alsO altrn8ly B aceptd by `show` nstd of stndRd b10 ndx or nAm,
+#   add sepR8 new hIlItd singl b64-char ls ndx colm wich can alsO altrn8ly B aceptd by `show` nstd of stndRd b10 ndx or nAm,prolygd2hv pw modperzOnIFor machn,
 #   add d8VS &&mAB Xpnded&&colrd 4m 2 `vers` vv cmd,colrIz hLp&&vv tXtz,add bAsic scriptabiliT 4batch importng2newDBfrom simplPerl arAz|hashz|mAB JSON nstd,
 #   add auto-cd with "$path/?",test partial reconstruction then loading compatibility with original kpcli-3.0.pl,add longer descriptions wi better alignment,
 #   mAB add command-line option of entry name to immeD8ly auto-show after pswd entered (but proly don't auto-exit since still want xx to clear clipboard aftr);

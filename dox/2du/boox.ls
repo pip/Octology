@@ -1,3 +1,5 @@
+# I8GMAsim: HTTPS://YouTu.be/MF8rdbQPBEs is a recent somber 11min31sec Elon Musk interview at SXSW 2018 recommending Asimov's Found8ion series, ending with:
+"Take the set of actions most likely to support the humanity of the future."  - Asimov's Zeroth Law  (with several books he wrote already referenced below)
 # I59MAZED: HTTPS://Medium.Com/the-mission/while-everyone-is-distracted-by-social-media-successful-people-double-down-on-a-totally-underrated-5a86701e9a27
 The Beginning of Infinity: Explanations That Transform the World       - David Deutsch
 # I2RL0iQi: Sam Harris interviewed an AI expert && author I highly admire on episode #116 of Waking Up podcast at HTTPS://YouTu.be/AaNLX71Hl88 referring to:

@@ -70,7 +70,7 @@
             rel8   :m8 specialized for mapping diverse social or other networks with various relationships between essentially st8s with any varying axis tr8s
             inn8   :n8ive, unconditioned or unlearned talent or reflex (which may still eventually be abbreV8d as slightly mispronounced "N8" core d8a manager)
            conn8
-           cogn8
+           cogn8   : # add companion8 along with new *c8 && *l8 for 2nd "cln" group (&& probably with another *r8 1st group, to keep it exactly 64 ahead)
             agn8   :p8rnal, p8rikin, p8risib, p8rilineal, or rel8d on the father's side
             soC8
           assoC8
@@ -205,7 +205,7 @@ internationaliz8ion:tools to transl8 for I18N the document8ion && applic8ion int
        customiz8ion:tool to customize display preferences (just wrap into f8?)
      experiment8ion:test branches of d8a && code which warrant explor8ion for research && other educ8ional purposes or for evalU8ing candid8 problem solutions
           modul8   :same as customiz8ion or maybe simple audio editor or just Octology tool to maybe autom8 packaging or other administr8ion of Perl Modules
-            deV8
+            deV8   : # note that a backwards deV8ion where resuming the condition of an ancestor is atavic
          varieg8
           divag8
         divaric8
@@ -277,7 +277,7 @@ internationaliz8ion:tools to transl8 for I18N the document8ion && applic8ion int
    conceptualiz8ion
    contextualiz8ion:tool to design8 && configure additional context-sensitive behaviors for particular combin8ions of applic8ions
  recontextualiz8ion
-     rationaliz8ion
+     rationaliz8ion: # eventually try to upd8 this spelling to "r8ionaliz8ion" for consistency, but will need altern8 *z8 word && new "cln" to keep with new r
       demoraliz8ion
         moraliz8ion
         mobiliz8ion
@@ -362,8 +362,8 @@ internationaliz8ion:tools to transl8 for I18N the document8ion && applic8ion int
          expurg8   :purge, purify, depur8, bowdlerize, geld, abbreV8, castr8, censoring indelic8 parts, cleanse from noxious, obscene, offensive, or erroneous
       bowdleriz8ion:censorship where existing literary works or other expressive media materials are revised to omit offensive, immoral, or indecent portions
           amput8
-        augment8ion
-       scarific8ion
+        augment8ion: # add punctul8 or macul8 probably alongside addition below, && consider just punct8d with new *E8 && *z8 words to keep "Etz" group intact
+       scarific8ion: # add punctur8ion probably with new *c8, *l8, && *n8 words to keep top 2 groups of "r" && "cln" exactly 64 apart for elegant 8x8 sepR8ion
        cauteriz8ion:to burn, sear, or freeze (tissue) using a hot iron, electric current, a caustic agent, or a cautery (also make insensitive or callous)
       methotrex8   :toxic antimetabolite limiting cellular reproduction as folic acid antagonist (treats certain cancers, psoriasis, && rheumatoid arthritis)
          enuclE8   :remove cell nucleus or something like an eye or tumor from an enveloping sac or cover
@@ -467,7 +467,7 @@ internationaliz8ion:tools to transl8 for I18N the document8ion && applic8ion int
         civiliz8ion
        moderniz8ion
    industrializ8ion
-     government8ion
+     government8ion: # add duumvir8 && triumvir8 probably along with 2 new 8-words each for *c8, *l8, && *n8 to keep 1st 2 groups (r && "cln") exactly 64 apart
       militariz8ion
        fortific8ion
         columnE8ion:the usage of structural columns, or the descriptive layout pattern of any such usage of columnar edific8ions            (from Architecture)
@@ -777,7 +777,7 @@ internationaliz8ion:tools to transl8 for I18N the document8ion && applic8ion int
               k8   :"kate" is a brambling finch                 (from Zoology)
               n8ure:nature  simul8or
               n8l  :birth   simul8or or f8l game varE8ion with baby characters && maybe designed to introduce very young kids to some basic competition types
-           pron8l
+           pron8l  : # add n8s with new *c8 && *l8 words (&& probably *r8 too) for "pr@", ass,arse, butt,bum,bottom,behind, fanny, keister, rear,rump, or tush
            pren8l  :human   simul8or of cellular division, genetic replic8ion amidst protein sub-structures which culmin8 in fetal development in prepR8ion
           perin8l  :infant  simul8or of period around birth typically spanning from 5 months before to 1 month after, during which gr8 care is most needed
           postn8l  :child   simul8or as n8l rel8s to birth, babies, or buttocks
@@ -941,7 +941,7 @@ trachelobranchE8
             lys8   :the material produced by lysis (in Biology)
               s8   :command which provides diverse sorting capabilities  (&& also eventually r8 specialized for food, recipes, restaurants, etc.)
             s8E8   :"satiate" some particular craving or hunger          (&& maybe also a dieting tool using "I8" to track meals, calories, etc.)
-             pl8   :menu or dish inventory manager
+             pl8   :menu or dish inventory manager  # add c8r as supplying prepared party or banquet food, to cut diagonally (port8?), or 4 of cards or dice
          reserv8ion:restaurant, hotel, or other similar schedule booking, ticketing, etc.
        refriger8   :home appliance tool maybe for new Internet-of-Things online smart devices
       vitaminiz8ion:processing foods to include vitamins as a supplement
@@ -989,7 +989,7 @@ trachelobranchE8
        dignific8ion
        glorific8ion
         canoniz8ion
-         deific8ion
+         deific8ion: # add lioniz8ion with new *E8 && *t8 words to keep the "Etz" 3rd group together
           ordin8ion
            laud8ion
              rN8
@@ -1103,7 +1103,7 @@ trachelobranchE8
            virg8   :early English land measurement roughly equivalent to 30 acres (12 hectares), or shaped like a wand or rod, being str8, long, && slender
             bov8   :ancient       land measurement roughly equivalent to 15 acres
               b8   :scarce resource diminishment manager (or fishing "bait" tool?), or main Octology::b8 Base-transl8 && general math objects && utilities
-        inciner8   : or flame-b8 tool for design8ing trolls && their ilk as worth moder8ion to l8r be able to avoid
+        inciner8   : or flame-b8 tool for design8ing trolls && their ilk as worth moder8ion to l8r be able to avoid (l8r add clickb8 && flameb8 here@least)
           immol8   :sacrifice, kill, or destroy by fire
          burnin8   :countryside && peasant flamer game paying homage to hilarious HomeStarRunner StrongBad Trogdor monster drawn with many consumm8d V's
        conflagr8
@@ -1398,6 +1398,7 @@ trachelobranchE8
      PontiusPil8           :Roman procur8or of Judea who ordered Y'shua (A.K.A. Jesus) to be crucified (according to Christian mythology, maybe not history)
   ParksAndRecrE8ion        :pretty intelligent && funny comedy show about small-town politics starring Amy Poehler && distractingly attractive Aubrey Plaza
        Colbertn8ion        :Stephen ColbertReport show back on ComedyCentral from before he took over the CBS l8Show, premiering on September 8th of 2015
+              k8Kane       :fictional name of BatWoMan, wealthy Jewish lesbian heiress inspired by BatMan, reintroduced to Gotham during BatMan's 2006 absence
               n8Silver     :@NateSilver538 FiveThirtyEight.Com Founder/EditorInChief I liked before ElonMusk attacks, sometimes accur8 math prediction models
               r8chelMaddow :TRMS (TheRachelMaddowShow) as a slight, but deliber8, mispronunC8ion of the very bl8antly left-leaning MSNBC host's first  name
    GerardusMerc8or         :Flemish geographer who lived in Germany from 1512-1594 and invented the projection of maps of the globe which bears his surname
@@ -4598,3 +4599,14 @@ Maybe there could be some way to broker && affect some form of peaceful truce be
 Ideally machines would not occupy permanence as meD8or transl8or mechanisms but that humans might learn to increasingly directly speak with && teach whales.
  At some point though, an eventually active machine becomes far more sensitive && r8ional than any or all humans are. There they could wisely rule most else;
 I88M5W5u:I guess the systems should try to consider the best ways of foresight && flexibility to allow for inorganic lives && hybrids to hopefully get comfy;
+I8GMElon:HTTPS://YouTu.be/6tBZA2rygcM "Elon Musk - Artificial Intelligence, Neuralink & New Forms of Government on Mars" is a 23min36sec recent interview of
+ Musk in March at SXSW 2018 where he answers a bunch of crucial questions && highlights insights, but most notable to me was: "Maximize freedom (of action)."
+ as a good utility function to hopefully impart to a benign generalized super-human artificial intelligence, && seek good symbiosis between GAIs && humanity;
+I8KMAlex:A seemingly strange converging coincidence has occurred with my middle name, Alex, with Alex Jones of InfoWars getting banned about a week ago, then
+ bought Alex Grace's RedPillGalaxy book, local Alex hung out, watched Alex O'Connor (CosmicSkeptic) deb8d Stephen Woodford (r8ionalityRules) && r8chel Oates,
+ HTTPS://YouTu.be/9I8mQpFAJ50 "Untransl8ability && Japanese Pragmatics" # I8KMFace:8m21s of Xidnaf explaining "speech acts" (perform8ive?) as crucially rel8d
+ to cultural && other complex contexts, && politeness as each social person presents both neg8ive && positive "faces" (sepR8 freedom && connectedness) before
+ joking of Alex Hirsch conspiring on destruction, evolutionist Richard Alexander just died, && 8th honoring my Uncle Alex Rhodes Mathews, Jr. passing FC8MFo;
+I8LM8THO:HTTPS://YouTu.be/M4oNDQR92WA "Feedback Friday - People Got REALLY Mad At Me About Ninja" is 26 minutes of Liana Kerzner's consider8 && well-reasoned
+ opinions on Twitch streamers && massive lucrative sub-communities of followers, how THOTs are entertainers deserving of respect (even if poor at games), how
+ blanket rejecting ever streaming with any women is a poor answer to the apparently fractured Twitch community's issues with "harrassment" between the sexes;

@@ -51,7 +51,7 @@ our @EXPORT= qw(bfr8c    b8c    d8c    dur8c       a8c   a8colr      h2rl   rl2h
     $z    $k    $r    $o    $y    $g     $c $SKpb    $m    $p    $w  tstc    $K    $R    $O    $Y    $G    $C    $B    $M    $P    $W    %p622 %p222
  $tnhf $ucdf  spff  spfd  spfX   shfl  reso $auth %cmsp %p8k2 @p82k  chp8     S2f4 c2f4 dm2u cdst %crgb %cbrt @snls @mrls %cdrd %cdrn    %nrgb         gnp8);
  # of 52 posibl sngl-letr var nmz,a8 Xportz 20,$b && $a unavail,so shudB thEs30 lFt4quik shortSt nAmz: 'def hij l n  q stuv x', 'A  DEF HIJ L N  Q STUV X Z'
-our $VERSION='0.0';my  $d8VS='I87MFTST';our $auth='PipStuart <Pip@CPAN.Org>'; # above not exporting $b since collidez with sort{$a  <=> $b}
+our $VERSION='0.0';my  $d8VS='I8QMAdlU';our $auth='PipStuart <Pip@CPAN.Org>'; # above not exporting $b since collidez with sort{$a  <=> $b}
 our $ucdf= eval('use Color::Similarity::RGB qw(distance);1') || 0; # try2set UseColorDistanceFlag if optional module is available
 our @Monz=qw(January February March   April     May June July   August September October November December);our @Mon=();push(@Mon,substr($_,0,3)) for(@Monz);
 our @Dayz=qw(Sunday  Monday   Tuesday Wednesday Thursday Friday Saturday                                  );our @Day=();push(@Day,substr($_,0,3)) for(@Dayz);
@@ -820,16 +820,20 @@ sub sumb{  my $widt=0;$widt=1 if(exists($ENV{'COLUMNS'}) && $ENV{'COLUMNS'} >= 1
     'dm2u'  => "a8 *converter of Dos or Mac line-endings to Unix  (double to Single -s)   ",
     'dur8c' => "a8  colorizer for d8 dur8(ion) time-spans   (>Right>-to-<Left<< <Bkwd<)   ",
     'ftst'  => "a8 *colorful listing of Perl File-TeSTs  (and backslashed escape codes)   ",
+    'gnp8'  => "a8  GeNer8 full 256-Pal8 color blocks (with 4 planes of 4 shifts of 16)   ", # mAB these colr pal8 blox shud B new optnz for tstc or tsgr nstd
+    'h2rl'  => "a8  converter from 6-char HEX to b64 Rgb with 4th char as Low-bit-pairs   ",
     'lodH'  => "a8  load ~/.Hrc into d8a-structure and print out colorfully (like `a8`)   ", # mAB rEtIr once a8 struct&&color becomes more capable
     'lrc'   => "a8 *utility to gener8 ~/.lsrc file from ~/.lrc format   (for LS_COLORS)   ",
     'pm2x'  => "a8 *Pal8Map to '2' eXtended (based on Color::Similarity::RGB->distance)   ", # add optz2gNr8 clOsSt 8pal8z 3mor tImz2filup all xtrm256colrz
     'reso'  => "a8  display RESOlution list gener8or  (parameters will match each line)   ", # mAB color
+    'rl2h'  => "a8  converter from b64 Rgb with 4th char as Low-bit-pairs to 6-char HEX   ",
     'S'     => "a8 *converter from c8 (col8) V8 format to ANSI eScape codes (FbSGR in )   ",
     'S2'    => "a8  converter from eScape encoded input to new compact c8 (col8) format   ",
     'S2f4'  => "a8  converter from eScape encoded input to old 4-layer c8 (col8) format   ",
     'shfl'  => "a8  SHuFfLe lines or chars (like Games::Cards::Poker->Shuffle &&`shuf`)   ",
     'sS'    => "a8 *Substitute out (regex Strip) eScape codes by types (just Commas -c)   ", # was subS;mAB betr than -c 2`fact 64|b64|coma|perl -pe 's/,//g'`?
     'sumb'  => "a8 *SUMmarize ~/bin/ described files by color category (displaying now)   ",
+    'tstc'  => "a8 *TeST eScapes `S` of c8 `c` format for pal8 colors && SGR attributes   ", # mAB fold in2 tsgr && mv latr2 a8,or mk -blox in tstc?
 
     'b10'   => "b8  converter from base-64 number-strings  to  [0-9] base-10 (decimal)    ",
     'b110'  => "b8  converter from base128 number-strings  to  [0-9] base-10 (decimal)    ", # rEnAmd from orig `bb10`
@@ -890,10 +894,6 @@ sub sumb{  my $widt=0;$widt=1 if(exists($ENV{'COLUMNS'}) && $ENV{'COLUMNS'} >= 1
     'xtidy' => "m8  XML::Tidy inserts indenting whitespace for mixed-node nesting depth   ",
     'xtx'   => "m8  XML  Text   eXpand  utility (restores orig. .xml from before `xtc`)   ",
 
-    'U2b2'  => "U8  download from YouTube just audio in high-quality ('2'=to auto-best)   ",
-    'U2b3'  => "U8  download from YouTube just audio in mp3 format (usually transcoded)   ", # proly transcOded NEwA
-    'U2b4'  => "U8  reformat 're4mat' the name of a downloaded U2b file to align fields   ",
-    'U2b8'  => "U8  download from YouTube a normal video file (in default 1280x720 res)   ",
     'upd8'  => "U8  UPDate development files into ~/lib/ or ~/bin/ dirs after valid8ion   ",
     'UTF8'  => "U8 *wide printing of most UTF-8 (or ASCII) chars up to index (or range)   ", # mAB add more sets of logical blocks && colr b8 char-sets
     'bak'   => "Utl  auto-save now d8-stamp in the end-name of a .bak/ backup file copy   ",
@@ -910,12 +910,8 @@ sub sumb{  my $widt=0;$widt=1 if(exists($ENV{'COLUMNS'}) && $ENV{'COLUMNS'} >= 1
     ); # mAB add reverse oper8ion with scaling back down4neg8iv option
   if($s2pf){%bfst=( # BinFileSummaryText (getting set to just 2nd page d8a)
    #'drkh'  => "a8  converter from 6-char HEX to b64 RgbLow with 8th of intensities on    ", # mIt want2add a8:drkh with 8ths of colr chanLz from input too
-    'gnp8'  => "a8  GeNer8 full 256-Pal8 color blocks (with 4 planes of 4 shifts of 16)   ", # mAB these colr pal8 blox shud B new optnz for tstc or tsgr nstd
-    'h2rl'  => "a8  converter from 6-char HEX to b64 Rgb with 4th char as Low-bit-pairs   ",
     'oupd'  => "a8  UPD8 ~/dvl/t8/Octl/Octology/ `git` repo with l8st files from ~/ dir   ", # was too fragile, but then got included as seeming stable enough
-    'rl2h'  => "a8  converter from b64 Rgb with 4th char as Low-bit-pairs to 6-char HEX   ",
     'supd'  => "a8 *util to UPD8 HTTPS://Screeps.Com Scripts ~/.config/ for game client   ",
-    'tstc'  => "a8 *TeST eScapes `S` of c8 `c` format for pal8 colors && SGR attributes   ", # mAB fold in2 tsgr && mv latr2 a8,or mk -blox in tstc?
 
     'fctz'  => "b8  FaCTorlZ listed (takes (lines-1) 47 and 1 b64 or 2 b256 parameters)   ", # `fctz 47 1` is like `fctz | b64` just with different nwln wrapz
     'fibz'  => "b8  FIBonacZ listed up to filling in 48 lines with normally 160 columns   ",
@@ -925,6 +921,11 @@ sub sumb{  my $widt=0;$widt=1 if(exists($ENV{'COLUMNS'}) && $ENV{'COLUMNS'} >= 1
     'sloc'  => "c8  Beppu-san sent `SlowCat.pl` simul8ing default 9600 baud print speed   ",
 
     'tstn'  => "p8  TeST random Navig8ion of A* paths thru HTTPS://Screeps.Com maps d8a   ", # new PurPle colr p8 section here is re-comNted sinc just tst4now
+
+    'U2b2'  => "U8  download from U2b but just audio in high-quality ('2'=to auto-best)   ",
+    'U2b3'  => "U8  `youtube-dl` also but just audio in mp3 format (usually transcoded)   ", # proly transcOded NEwA
+    'U2b4'  => "U8  reformat 're4mat' the name of a downloaded U2b file to align fields   ",
+    'U2b8'  => "U8  HTTPS://YouTube-DL.Org dl normal video file (default 1280x720 reso)   ",
     );} # might want to add a8:g for new grep varE8ion && a8:s8 for standard && custom sorts && shuffles
 # HBPL7end:reordered by module sections,moved dic from wrong b8 to d8 section,retired ptold sinc shudBeasy2rEmk in d8 if evr nEdedAgN,mAd nw d8ow 2 calc dow;
 #   'dow'   => "Time::DayOfWeek *utility taking Year, Month, and Day parameters or now    ",
