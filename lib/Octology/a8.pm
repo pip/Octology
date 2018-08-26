@@ -2443,7 +2443,11 @@ sub tstc{my $retn='';my $argz='';my $widt=80;$widt=$ENV{'COLUMNS'} if(exists($EN
     my $pv2n=$p8k2{$layr}{$_};$pv2n=0 unless defined $pv2n;
     if($argz=~ /z/i                ){      $_=    c(S($_));} # used to do sS(S($_),'d') nstd of just loading key to 256 ndx
     if($argz=~ /s/i && $widt >= 160){$retn.= sprintf("$blyr$_%03d"       ,$pv2n          );$retn.="\n" if(/^ [IQ]  $/x );}
-    else                            {$retn.= sprintf("$blyr:$_ %03d %12s",$pv2n,$pl8n{$_});$retn.="\n" if(/^[wijq] $/ix);
+    else                            {my    $clan=sprintf(           "%8s",      $pl8n{$_}); # Combined Layer And Name (for each c8 && f8 pal8 styl colr abrV8z)
+      if(length($clan) < 12){my $shrl=$blyr;if($shrl eq 'd'){$shrl.='RK:';}elsif($shrl eq 'a'){$shrl.='VG;';}elsif($shrl eq 'l'){$shrl.='IT=';}
+                                                        else{$shrl.='KGR';} # SHoRt 1st-3char 4m ofLayerz
+        $clan= substr($shrl,0,(12 - length($clan))) . $clan;} # try2prepend part of abbreV8d Layer Plane names underneath before normal names (nowIsOl8dCase)
+                                     $retn.= sprintf("$blyr:$_ %03d %12s",$pv2n,$clan    );$retn.="\n" if(/^[wijq] $/ix);
                                                                                            $retn.="\n" if(/^[gda67]$/i && $widt ==  80);}}}
   $retn.=  "$z${G}Maybe since around 1979, ANSI escape sequences were: $z";for(30..37,40..47){$retn.=$G if($_ >= 40);
                                                                                               $retn.="\e[${_}m$_$z ";}

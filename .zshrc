@@ -855,7 +855,7 @@ tStc() { # tSt 8pal8 colrz (this is a very slow precursor to ~/bin/tstc since ma
       echo " z -             check roundtripZ of each 8pal8 color code going through S && c to be back to the same (slo)"
       echo " b - call S '^'  reset Bold making all fonts normal 4 colrs gr8rthan 15 (dfalt is Bold for all gr8rthan 7)"
       echo " A - call S ':A' set fAint SelectGraphicRendition attribute on all colrs printed after the 1st 2pal8"
-      echo " I - call S ':I' set Italics             (most parameter flags can be combined like 'IRULFCOD' top8)"
+      echo " I - call S ':I' set Italics             (most parameter flags can be combined like 'IFDOCURL' top8)"
       echo " U - call S ':U' set Underline           (see 'tsgr' for my typical mapping of all these attributes)"
       echo " L - call S ':L' set bLink               (slow,lessthan 150/min)"
       echo " K - call S ':K' set blinK               (fast,morethan 150/min)"

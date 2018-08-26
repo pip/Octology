@@ -1,5 +1,5 @@
 # Octology
-The ontology of 8. `$VERSION='0.0';$d8VS='I8QMCUSP';`
+The ontology of 8. `$VERSION='0.0';$d8VS='I8QMFDrk';`
 
 This is basically a public preview of my early development files. I am not yet ready for serious collaboration, but welcome any sort of feedback.
 
@@ -33,8 +33,11 @@ Many `bin/` commands print useful Help text when given a `-h` parameter. If your
 ### Great Thanks, Appreciation, and Gratitude
 I would mainly like to thank all the developers who have ever contributed to:
   <!-- 2du:make links out of all listed -->
-  YouTube, youtube-dl, kpcli, SlowCat.pl, Screeps, git, gst123, figlet, zinf,
-  Perl, Curses, SDL, Linux, GNU, Ubuntu, Compiz, Irssi, FireFox, Chrome, Zsh, GMail, DuckDuckGo, etc..
+  * YouTube, youtube-dl, kpcli, SlowCat.pl, Screeps,
+  * git, gst123, figlet, zinf, Vim, FLAC, cdparanoia,
+  * Perl, Curses, SDL, GNU, Linux, Ubuntu, Compiz,
+  * Irssi, FireFox, Chrome, Zsh, GMail, DuckDuckGo,
+  * Gnome-Terminal, PulseAudio, AMD processors, etc.
 
 If I have failed or in any way improperly identified any other entity who is deserving of better credit and recognition, please recognize this as unintentional
   and let me know the best way to remedy it.
@@ -68,4 +71,4 @@ If I ever become unable to continue developing this project further, my hope is 
 ![Octology-g3Ob-shot_1614x902-HAOM9cKA](https://github.com/pip/Octology/raw/master/gfx/sho/Octology-g3Ob-shot_1614x902-HAOM9cKA.png "Octology-g3Ob-HAOM9cKA")
 ![Octology-dic8-shot_1614x902-HAOM900M](https://github.com/pip/Octology/raw/master/gfx/sho/Octology-dic8-shot_1614x902-HAOM900M.png "Octology-dic8-HAOM900M")
 
-P.S. I also hope that someday any of the above could be seen as logical UTF-8 or ASCII art, or at least inspire bits of those;
+P.S. I also hope that someday any of the above could be seen as logical UTF-8 or ASCII art, or at least inspire bits of those. I'd like them all even nicer;
