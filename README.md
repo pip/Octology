@@ -1,13 +1,13 @@
 # Octology
-The ontology of 8. `$VERSION='0.0';$d8VS='I98MCure';`
+The ontology of 8. `$VERSION='0.0';$d8VS='I98MESHO';`
 
-This is basically a public preview of my early development files. I am not yet ready for serious collaboration, but welcome any sort of feedback.
+This is basically a public preview of my early development files. I am not yet ready for serious collaboration, but welcome any sorts of feedback.
 
 I mainly wanted to start this repository as my locus for future efforts and to start showing top screen shots that convey noteworthy capabilities.
 
 Many `bin/` commands print useful Help text when given a `-h` parameter (white stars on blue after class name in `sumb` results, mainly a8 && d8).
 
-If your paths and Perl environment are setup similarly, to gain a bearing on fundamental Octology utilities and organization, please try to run:
+If your paths and Perl environment are setup similarly, to gain a bearing on fundamental Octology utilities and organiz8ion, please try executing:
 
  * `sumb` - SUMmarize most ~/bin/ executaBle files rather colorfully
  * `tstn` - TeST Navig8ion of A-Star algorithm in Screeps 50x50 maps
@@ -17,7 +17,7 @@ If your paths and Perl environment are setup similarly, to gain a bearing on fun
  * `gnp8` - GeNerate a complete Pal8 mapping of b64 into 256-colors
  * `pal8` - set first 16-color PALette ("8") for terminal or console
  * `calN` - display a CALeNdar of the colored d8-based recent Years
-<!-- * `lodH` - LOaD ~/.Hrc d8a-file to parse then print colored fields-->
+<!-- * `lodH` - LOaD ~/.Hrc d8a-file to parse and print colorized fields-->
 
 <!-- even though of course originally above command && below screen shot lists were each Top8, they're now slightly more focused on just most public Top6 -->
 ## Current Top Screen Shots
@@ -25,8 +25,7 @@ If your paths and Perl environment are setup similarly, to gain a bearing on fun
 ![Octology-sumb-shot_1614x952-I8QMCLU2](https://github.com/pip/Octology/raw/master/gfx/sho/Octology-sumb-shot_1614x952-I8QMCLU2.png "Octology-sumb-I8QMCLU2")
 ![Octology-tstn-shot_1614x952-HC8L7J3A](https://github.com/pip/Octology/raw/master/gfx/sho/Octology-tstn-shot_1614x952-HC8L7J3A.png "Octology-tstn-HC8L7J3A")
 ![Octology-reph-shot_1614x952-I8RM8qV8](https://github.com/pip/Octology/raw/master/gfx/sho/Octology-reph-shot_1614x952-I8RM8qV8.png "Octology-reph-I8RM8qV8")
-<!-- show  tstc short after lsd8 ~ && reso spec HD pre Pi color greps elabor8 aliases, fully amidst reph new crystal clarity layers of some transparency now;
-![Octology-tstc-shot_1614x902-HB4M8jYm](https://github.com/pip/Octology/raw/master/gfx/sho/Octology-tstc-shot_1614x902-HB4M8jYm.png "Octology-tstc-HB4M8jYm")-->
+<!-- show  tstc short after lsd8 ~ && reso spec HD pre Pi color greps elabor8 aliases,fully amidst reph new crystal clarity layers of some transparency now;-->
 
 ![Octology-gnp8-shot_1614x902-HBBLKDgD](https://github.com/pip/Octology/raw/master/gfx/sho/Octology-gnp8-shot_1614x902-HBBLKDgD.png "Octology-gnp8-HBBLKDgD")
 ![Octology-g3Ob-shot_1614x952-I8QMCFLC](https://github.com/pip/Octology/raw/master/gfx/sho/Octology-g3Ob-shot_1614x952-I8QMCFLC.png "Octology-g3Ob-I8QMCFLC")
@@ -73,7 +72,7 @@ If I ever become unable to continue developing this project further, my hope is 
 ![Octology-ftst-shot_1614x952-I4SMGG88](https://github.com/pip/Octology/raw/master/gfx/sho/Octology-ftst-shot_1614x952-I4SMGG88.png "Octology-ftst-I4SMGG88")
 
 ![Octology-ckm8-shot_1536x960-HAOM9HKQ](https://github.com/pip/Octology/raw/master/gfx/sho/Octology-ckm8-shot_1536x960-HAOM9HKQ.png "Octology-ckm8-HAOM9HKQ")
-![Octology-reph-shot_1614x952-I8RM8qV8](https://github.com/pip/Octology/raw/master/gfx/sho/Octology-reph-shot_1614x952-I8RM8qV8.png "Octology-reph-I8RM8qV8")
+![Octology-tstc-shot_1614x902-HB4M8jYm](https://github.com/pip/Octology/raw/master/gfx/sho/Octology-tstc-shot_1614x902-HB4M8jYm.png "Octology-tstc-HB4M8jYm")
 ![Octology-dic8-shot_1614x902-HAOM900M](https://github.com/pip/Octology/raw/master/gfx/sho/Octology-dic8-shot_1614x902-HAOM900M.png "Octology-dic8-HAOM900M")
 
 P.S. I also hope that someday any of the above could be seen as logical UTF-8 or ASCII art, or at least inspire bits of those. I'd like them all even nicer;

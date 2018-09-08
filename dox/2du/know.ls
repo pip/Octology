@@ -1,5 +1,5 @@
 # HBQLISTV:know.ls crE8d by PipStuart <Pip@CPAN.Org> to duplic8 Dr. Jordan B. Peterson's Quora.Com answer of "40 most valuable things everyone should know";
-# $VERSION='0.0';$d8VS='I8BMAron'; # 2du:start chronicling Dr. Peterson's many topical videos with new section for post-title subject summaries or explor8ion;
+# $VERSION='0.0';$d8VS='I98MDefm'; # 2du:start chronicling Dr. Peterson's many topical videos with new section for post-title subject summaries or explor8ion;
 0) Tell the truth.
 1) Do not do things that you h8.
 2) Act so that you can tell the truth about how you act.
@@ -433,3 +433,4 @@ HTTPS://YouTu.be/l2vy2ZTCAvs "Top 10 Reasons Jesus Hasn't Returned" # 12m of Dar
 HTTPS://YouTu.be/ycPr5-27vSI "Joe Rogan Experience #1169 - Elon Musk" # I97MMUSK:2h37m of extremely interesting technical interview (even just up to halfway).
 # I should study fE8ures && start tracking minimum costs of new && used Tesla S, X, && 3, since they are obviously the smartest, safest, highest performance;
 HTTPS://YouTu.be/XS7LgbMr1m4 "Joel Baden: The Bible Doesn't Say What You Think it Does" # I98M4dis:20m speech from 2013 Nantucket Project on truth discourse;
+HTTPS://YouTu.be/BIAffh9GUEA "This Was An Ignorant Response To Jordan Peterson (Lawsuit Upd8)" # I98MDJoe:12m10s is TimPool at 2m31s rel8s Equity Adria Joel;
