@@ -9,7 +9,7 @@
 #   mk sepR8 tabul8ion of 8-words used in l8r document8ion wi not8ion 4thOs not yet included in top lists (thN optn2ignor easy conjug8ions && pre/suffixes),
 #   mk easy optn4 fulc 2use 1colm 4grep,add 4m@d percNtz,stuD wc && mk a8:cnt8/8c wi fulc -f? && 8plc as -l? optnz(rEdo hedrtXt),colr letrz,add f0ntz4 8trm;
 use strict;use warnings;use utf8;use v5.10;use Octology::a8;use Octology::b8;
-my $d8VS='I6UMGPNK';my $clrf=1;my $fulf=0;my $argz='';$argz= join(' ',@ARGV) if(@ARGV);my $Stxt='';my $Smap='';my $folf=0; # add 4-Or-Less-Flag
+my $d8VS='I98MBigP';my $clrf=1;my $fulf=0;my $argz='';$argz= join(' ',@ARGV) if(@ARGV);my $Stxt='';my $Smap='';my $folf=0; # add 4-Or-Less-Flag
 my $edVS=        '';my $pg1f=0;   $pg1f=1 if($argz=~ /(^|\s)-?-?[^p]*p/i); # find -?p(age) flag2limit some extra long output to first 48-line page
 my $clmz=        80;my $lpsf=0;   $lpsf=1 if($argz=~ /(^|\s)-?-?[^l]*l/i); # find -?LetrPrecursShortsFlag  # if MaXWordSize evr grOz,wil nEd2incrEs|Dtct
 my $linz=        24;my $gm8f=0;   $gm8f=1 if($argz=~ /(^|\s)-?-?[^g]*g/i); # find -?g(m8r) flag2count&&adorn wi math 4mUl8ions stRting wi 2letr
@@ -28,14 +28,24 @@ if($argz=~ /(^|\s)-?-?[^h]*h/i){$Stxt.=" $0 - 8.txt Precursor Letter Counter d8V
   l   - print Letters of precursors sorted by size with colors     (with -p only printing up to z 110 and cutting off before c 142 as 1 Page);
   w   - print Words sorted by size up to current maximum of 19     (with -p only printing from  2 to  8 for just first $lnmx-line Page);
   g   - print gM8ria 'Gematria' word valU8ions in aligned sections as preliminary trial of a few short approaches to some numerology;
-  f   - print Full character counts (l8r extract to a8:cnt8 && `8c` like `wc`) (-c Clear Center Colors from -g map for Clean Counts);\n";
+  f   - print Full character counts (l8r extract to a8:cnt8 && `8c` like `wc`) (-c Clear Center Colors from -g map for Clean Counts);
+# Note:present matching K,1k,2K,3K, 5th group dpv of 35 is same number as all PrecLetrs, 4th gm 2x 55 = 3rd Etz 110, count pattern: odd,Even,ooEEE,ooEEE,
+#   && lowest 6 of 12 counts 1,2,3,7,8,16 all match for some 2**n(-1)? while the big half 20,35,55,110,148,212 all departed early binary threshold trend;\n";
   if(20 < $clmz && $clmz < 160){my @htxt=split(/\n/,$Stxt);$Stxt='';my $lsiz;my $tokn;for(@htxt){$lsiz=0;while(s/^(\s*\S+)//){$tokn=$1; # smRt split Help tXt
         if($lsiz + length($tokn) > $clmz){$Stxt.="\n" . (' ' x 8);$lsiz=8;$tokn=~ s/^\s+//;} $Stxt.=$tokn;$lsiz+=length($tokn);} $Stxt.="\n";}}o8($Stxt);exit;}
 my $efyl ='8.txt';my @lcnt;$lcnt[$_]=0 for(0..b10('z'));my @acnt;$acnt[$_]=0 for(0..b10('z'));my $donw=0;my $t0tl=0;my $text;my $actx;my $sclc;my $gttl=0;
 unless(-r         "$efyl"){$efyl=$ENV{'HOME'} . "/dox/2du/$efyl" if(exists($ENV{'HOME'}));} # try2add likely path when file not in local dir
-open(my $eflh,'<',"$efyl") or die "!*EROR*! Couldn't open eight-file to read counts! $!";binmode $eflh,':encoding(UTF-8)';
+open(my $eflh,'<',"$efyl") or die "!*EROR*! Couldn't open eight-file to read counts! $!";binmode $eflh,':encoding(UTF-8)';my %adw8;my %adpl;
 while( <$eflh>){my $ldat=$_;$donw=1 if(/^$/); # sets DONe-Words true when 1st blank line found (shud be 1-based line#:8-word cnt+1blnk+6cmnt-hedr,4now)
   if(/^#.*?\$d8VS\s*=\s*(['"])([0-9A-Za-z._]{8})\1\s*;/){$edVS=$2;} # this match regex seems to still need \1 && presumably ${1} would work in s/// replacement
+  if  (!$donw &&   $ldat  =~ /^\s*[a-z8@]*8[a-z8@]*\s*:.*?\s+add\S*\s+([^\n]*[^*\n]([a-z])8\S*)/i){my $psta=$1;
+    if( $psta=~ /.*?(\S+([a-z])8.*)/i && $1 ne 'form8ion' && $1 ne 'filtr8ion' && $1 ne 'combin8ions of applic8ions' && $1 ne 'gr8fulness' && $1 ne 'silic8'
+      ){my $tfwm=$1;my $tplm=$2; # and-clauses to reject false positives rather manually
+      if(  $tfwm!~  /^(silic|capsul|attest|plant|editorializ)8(ion)?/){ # 2du:Dtect real long *t8 entries to fewer lines;
+        $tfwm   =~ s/(toler8).*( or dil8)/$1$2/;$tfwm=~ s/ as the act of magnetizing or st8//;$tfwm=~ s/(preserv8ive).*/$1/;
+        $tfwm   =~ s/, as in constip8ion from inflamm8ion//;
+        $tfwm   =~ s/^((asport|arrest|reinst|commut|supplant|deput)8(ion)?).*/$1/;
+        $adw8{$tfwm}=$ldat;push(@{$adpl{$tplm}},$tfwm);}}} # gi "^ *[a-z8]*8[a-z8]* *[:#].* add.*8" 8.txt  # 2du:figuroutYalias gets 65 vs 62 thN 61 here
   if  (!$donw &&   $ldat  !~ /^\s*#/){ # the header lines (&& potentially l8r blocks) have pound as first non-whitespace character design8ing comments to skip
     if     (length($ldat) >= $clm8  ){my $pltr; # 16th colm is l8st dflt 8 loc8ion,but some l8r found very long 8-words could slide furthr so now srch 15+
       if   (       $clm8  <=     8  ){while(length($ldat) >= $clm8 && substr($ldat,$clmp,1) ne '8'){$clmp=$clm8++;}} # non-hedr 8-word loop up2 dflt 8colm
@@ -72,7 +82,8 @@ for(@scnt){my @ascz=($R,$W,$C,$Y,$M,$o,$B,$G);                                  
   $apcS = $ascz[ ($sclc + 0) % 8] if(defined($ascz[($sclc + 0) % 8])); # test matching percent numbz with group sizes && percent charz with 'x' multiplierz
   $apcx = $ascz[ ($sclc + 4) % 8] if(defined($ascz[($sclc + 4) % 8]));$prcs=sprintf("%8.3f",$t0tl*100.0/$pttl);$prcs=~ s/(\.)/$W$1$apcx/;#prcs=~s/(000)$/$K$1/;
   $apcS=$G    if( $apcS eq $G);$actx.=sprintf("x$M%4d%s%s%s%%%%",$_,$apcx,$prcs,$apcS);$apcn-= 8 while($apcn > 7); # SKpng percNt4l8r sprintf BlO
-  my $blsz=int($rcnt/6.4);my $r8io=$blsz /64.0 ; # prEpadNdof acnt ndxzB4 sclc flipz4stRtngletrcolm  # top4grupz8+1joy directnz rcln Etzg+m covr ~80% wrdz
+  my $blsz=int($rcnt/6.6);my $r8io=$blsz /64.0 ; # prEpadNdof acnt ndxzB4 sclc flipz4stRtngletrcolm  # top4grupz8+1joy directnz rcln Etzg+m covr ~80% wrdz
+  # l8r when more *r8 words span too wide again, increase magic constant denomin8or (or better gener8 its comput8ion) to shrink the scaling down further
   $sclc   = 7 -   $sclc;$sclc=0 if($sclc < 0); # gener8ing bar-graphs of b8 Counts across remaining line widthz  # botm8grupz dpvb suCD LNRU VGfx B... last 21%
   if($clmz >= 160){my  $ddig =$_   ;my $pdwd=abs(108-int($_*$r8io));my $apcd=$g;$apcd=$r if($apcx eq $R);$apcd=$c if($apcx eq $B);$apcd=$O if($apcx eq $o);
     $actx.="$apcd  ".$brtc x int($pdwd/3.0)."$z  "; # above remaps Ansi Percent Color Darkz from earlier bright apcx multiplier colorz
@@ -349,14 +360,14 @@ if($gm8f){$Stxt.="${W}Gener8 gM8ria primes for names by$B 3$W segments (${Y}PreL
         $pwsf{$prlt}+=(scalar(split(/\s+/,sS($jd8a[$jmap{$prlt}][abs($rndx-$boff)])))+0);} # 'm' off by 2 so maybe hackfix 2 just add xtraz below2compNs8?
       else       {$Stxt .= ' ' x  $bwid;}} $Stxt  .= "\n";} my $ltot=0;
   for   my $splz (split(//,'bcdfghklmprswmmGbdd')){$pwsf{$splz}++;} # shOw leFt word cntz aftr map 4now
-  $Stxt.="${C}Remaining$B Left${o}Over$M Pre${Y}Letter$R Counts$z:". ' ' x 3;my %lowc; # setup reverse hash2prEsrv LeftOver WordCountz of pdifz2sort by l8r
+  $Stxt.="${C}Remaining$B Left${o}Over$M Pre${Y}Letter$R Counts$z:". ' ' x 2;my %lowc; # setup reverse hash2prEsrv LeftOver WordCountz of pdifz2sort by l8r
   for   my $tmpl (sort(keys(%pwsf))){$pwsf{$tmpl}--;my $pdif=$lcnt[ b10($tmpl)] - $pwsf{$tmpl};
     if($pdif){$ltot+=$pdif+1;$lowc{$pdif}.=$tmpl;}}#$Stxt.="$Y$tmpl$W:" .    # below (2linzdn)cutz15off left total to account for l8st differencez
   for   my $locv (sort {$a <=> $b} keys(%lowc)){ # now these loopz shud reordr by left over countz ascending nstd of alpha
     for my $tmpl (sort(split(//,$lowc{$locv}))){$Stxt.=sprintf("$Y$tmpl$W:$R%s",b8c(b64($locv)));$Stxt.=sprintf("$W:$M%d",$locv) if($locv >  9);
-                                                $Stxt.=' ' x 2;}}        $ltot+= 4; # estim8 special cases to adjust LTotal by (was -15 B4 +  7)
-  $Stxt.=$R.' ' x 3 .cma($t0tl)." $Y- $o".cma($ltot)." $G= $B".cma($t0tl-$ltot)   ; # I6OMGtot:pasting `8plc gc` map quoted into echo | wc -w 1025/1369 now;
-  $Stxt.=sprintf("$M %8.3f$C%%$K shown$W;\n$z",(($t0tl-$ltot)*100.0/$t0tl)); # try to wrap up total map printing with percentage shown in single page
+                                                $Stxt.=' ' x 1;}}        $ltot+= 4; # estim8 special cases to adjust LTotal by (was -15 B4 +  7)
+  $Stxt.=$R.' ' x 2 .cma($t0tl)." $Y- $o".cma($ltot)." $G= $B".cma($t0tl-$ltot)   ; # I6OMGtot:pasting `8plc gc` map quoted into echo | wc -w 1025/1369 now;
+  $Stxt.=sprintf("$M%8.3f$C%%$K shown$W;\n$z",(($t0tl-$ltot)*100.0/$t0tl)); # try to wrap up total map printing with percentage shown in single page
   $Stxt=sS($Stxt) unless($clrf || $Stxt eq 'h');$Smap=$Stxt;$Stxt=''; # 1pAg map curNtly listz about 1035/1369 = ~75.603% of tOtl 8-wordz now shOwn @once;
         o8($Smap)     if($pg1f); # slightly repurpose the -p single Page option flag to show the -g 1-page map when gener8d rathr than Dflt @end,sinc focal;
   # maybe since most prefixes are longer also altern8 inward from both ends preferring more total chars culled for wider from top 8 solos or some thresh?
@@ -412,7 +423,17 @@ if($gm8f){$Stxt.="${W}Gener8 gM8ria primes for names by$B 3$W segments (${Y}PreL
   $folc[5]{'m8rix'}=$folc[5]{'coll8'}=1; # need to try to put cuts back in so PL counts can match again
 }   # maybe multiplying && factoring primes as essentially bit-flags requiring escal8ing order to build words to according to growing wsiz ordr is inefficient
     #   && still indirect, but mAB less useful than srchng whole word-set entirely to build all at once deliber8ly right-to-left wi prioritized substringz?
-$Stxt=sS($Stxt) unless($clrf);o8($Stxt);$Stxt ='';
+$Stxt=sS($Stxt) unless($clrf);o8($Stxt);$Stxt ="\n";my $tals=''; # TempAddLineString  # %adpl has PrecursLetr keyz to array of add-word-string matched2ordr l8r
+#for(    (keys(%adw8))){if(exists($ENV{'COLUMNS'}) && length(sS("$tals$_ ; ")) > $ENV{'COLUMNS'}){$Stxt.="$tals\n";$tals='';}
+#  $tals.="$z$_ $W;$z ";} $Stxt.=$tals if(length($tals));
+#$Stxt=~ s/((^|\s)?[^ ;]*)([^ 8])(8)([^0-9m;])/$1$Y$3$B$4$z$5/g; # $Stxt=~ s/(\s+)(\S)/$1$z$2/g; # $Stxt=~ s/(( +\S+){12}) +/$1\n/g;
+#$Stxt.= "$R 2${O}Add${C}Count$W:$M " . scalar(keys(%adw8)) . "$W;"; # I97MKOUN:`gad` gets 65 linez && this Perl varE8ion gets 62,so some mismatch;
+my $lbac=0;for(@scnt){for my $lndx (0..$#lcnt){ # init new LetrBasedAddCount
+    if(defined($lcnt[$lndx]) && $lcnt[$lndx] == $_ && exists($adpl{b64($lndx)})){
+      $Stxt  .="$Y" . b64($lndx) . "$W:$z";my $lasz=scalar(@{$adpl{b64($lndx)}}); # LetrAddSiZe
+      for my $addl (@{$adpl{b64($lndx)}}){$addl=~ s/([a-z])(8)/$Y$1${G}8$z/gi;$Stxt.="$addl ";$lbac++;} $Stxt=~ s/ $/$W;$M$lasz\n/;}}
+}     $Stxt=~ s/\n*$/$R Add${C}T${M}o${C}TL$W:$B $lbac/;
+$Stxt=sS($Stxt) unless($clrf);o8($Stxt) if($fulf);$Stxt =''; # mAB l8r upd8 %adw8 to key PreCurs letrz then val sorted array of matched wordz in group ordr
 if($fulf){$Stxt=~ s/\n?$/\n/;my %cvlz=reverse(%fulc);my @ccnt= sort { $a <=> $b } keys(%cvlz);my $jus8=0;my $sumn=0; # 2colmzof fulcntz fitznIc undr50lInz sOfR
   for     my $cndx (0..$#ccnt){my $coun=$ccnt[$cndx];my $pcnt=0;my $w82o=''; # FullFile CharCounts abov as Values (or values(%fulc) nEdzUniq)
     for   my $char (sort(keys(%fulc))){ # this now is intended to be just a single linear column which duplic8z the content of the orig 2-columnz below

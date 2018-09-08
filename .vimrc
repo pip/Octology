@@ -90,6 +90,7 @@ nn     <C-b> B
  map      B  :call SetStatusLineStyle()<CR>:w!<CR>:!bak %<CR><CR>
 "         U bakz && Upd8s  curNt EditFile in2 local ~/(lib|bin)/       " map ovrIdz Undo all changez to line since cursor moved into it (wich I don't use much)
  map      U  :call SetStatusLineStyle()<CR>:w!<CR>:!bak %<CR><CR>:!upd8 %<CR>
+"map      E  Jj
 "map      E  JJj   " old map to quickly single-space dbl-spcd linez    " If you f<char> then ; && , will repeat the find (or Til) fwd && bak on the currentline
 "map      E  A                   :<Esc>JJj                             " was briefly used to join up many distinct transl8ion descriptions with their quot8ions
 "         t insertz  `d8`  curNt date-time stamp (used 2 B PipTime)    " T below was orig like f<char> (find4wrd on curline) but srchng T<char> (unTil bakwrdz)

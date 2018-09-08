@@ -29,7 +29,7 @@ unsetopt                \
 # auto_pushd            \# setng addz dirz 2 stack wN just normally chngng 2 thM (wich I du not normally lIk or want)
 # ksh_arrays            \# rEmMbr wNwrItng scrptz[or funcz]2include'setopt [localoptions] ksharrays'sO arAzR 0-bAsed(but!glOblBcuzmOst scrptzRstndrdly 1-bAsed)
 # re_____match_____pcre \# mA want2set for Z-SHell scripting RegularExpressions to utilize PerlCompatibility styles && mA insert 'zmodload zsh/(pc)?re(gex)?';
-export vers='0.0';export d8VS='I8GM8k8g';export auth='PipStuart <Pip@CPAN.Org>'; # above not exporting $b since collidez with sort{$a  <=> $b}
+export vers='0.0';export d8VS='I98M8l8r';export auth='PipStuart <Pip@CPAN.Org>'; # above not exporting $b since collidez with sort{$a  <=> $b}
 if     [[       "$SHELL"    == "" ]]; then       export SHELL=`  which zsh`;fi # 8sh should parse this && OverId it    # shud `man zshall` /OSTYP 2lern4BlO
 if     [[       "$HOSTNAME" == "" ]]; then       export HOSTNAME=`hostname`;fi #`hostname`retnz fsckd nwlInz\n4CygWinzRxvt... ||smthng els lame  =(
 if     [[       "$HOST"     == "" ]]; then       export HOST="$HOSTNAME"   ;fi;export VERBOSE='1'; # set flag to print debug && status info from system utilz
@@ -169,9 +169,10 @@ else                                   eval $($dircolors -b            ); fi #  
          LS_COLORS="*makefile=01;35:*installhtml=01;35:*Artistic=01;37:*Changes=00;33:*Copying=01;37:$LS_COLORS"; #`lsd8`duz gout #~/.inst/perl-5.8.8
 #xport   LS_COLORS="abi-3.*-generic=01;31:config-3.*-generic=00;33:initrd.img-3.*-generic=01;33:System.map-3.*-generic=01;32:vmlinuz-3.*-generic=01;36:$LS_COLORS"; # /boot spec from both endz is unparsable && just front end duz!wrk; ECKL6HM1:below the Linux kernel version numbers as p@rnzR ROYG CBMP newest to oldest;
 #        LS_COLORS="*-3.16.0-29-generic=01;31:*-3.16.0-28-generic=00;33:*-3.16.0-25-generic=01;33:*-3.13.0-39-generic=01;32:$LS_COLORS";  # /boot altern8 versN
-#        LS_COLORS="*-3.11.0-19-generic=01;36:*-3.8.0-33-generic=01;34:*-3.5.0-36-generic=01;35:*-3.2.0-35-generic=00;35:$LS_COLORS";     #   && oldrfrom ChunW # F1ELGnuL:ROYG CBMP => 1;3[1o32 645p] thEse lInz should evN2LE get gNR8d from `ls /boot`;
-         LS_COLORS="$LS_COLORS*-interface-security=01;31:*-shim-state=01;36:";                                                    #/run
-export   LS_COLORS="$LS_COLORS*.serverauth.???=00;32:*.serverauth.????=00;31:*.serverauth.?????=00;35:*.goutputstream-??????=00;31:"; #*.gout*-? duz!wrk4`ls`
+#        LS_COLORS="*-3.11.0-19-generic=01;36:*-3.8.0-33-generic=01;34:*-3.5.0-36-generic=01;35:*-3.2.0-35-generic=00;35:$LS_COLORS";     #   && oldrfrom ChunW # F1ELGnuL:ROYG CBMP => 1;3[1o32 645p] thEse lInz should evN2LE get gNR8d from `ls /boot`; I98M89I9:rEsortd2XplicitNtrEzB4quStnz sinc wrkin lsd8 but!nrml `ls`;
+         LS_COLORS="$LS_COLORS*.png.=0;35;45:*.Hrc.=0;30:*.ls.=0;34;44:*.log.=0;32:*.kdb.=0;30;40:*.txt.=0;36:"; # somemainXtraz  # gNrl  # .?mkbgkc prvz m b k
+         LS_COLORS="$LS_COLORS*-interface-security=01;31:*-shim-state=01;36:*.?.=0;36:*.??.=0;34:*.???.=0;30:*.????.=0;32:";      # /run  # .?. cbkg prvz
+export   LS_COLORS="$LS_COLORS*.serverauth.???=00;32:*.serverauth.????=00;31:*.serverauth.?????=00;35:*.goutputstream-??????=00;31:"; #*.gout*-? duz!wrk4 `ls`;
 export GREP_COLORS="mt=01;34"; bindkey -v; #`bindkey -e`setzEmacs-stylCmdLynEdtng; -v hazBn betRsofR4mE,butdu!4getEmaxAtaxBax; #rEmMbr"^foo^bar"subst prEv cmd;
 alias  grp='  grep --color=auto'; # want grep --color=auto all za tym2(&&mayB`dircolrz ~/.gprc`?)&&2hv -nubTHZ?fulnSwi:Hedrfylnmz,lyNumZeroUnixTabalyndBytofstz
 alias fgrep='fgrep --color=auto'; #   ...also fgrep ndz auto2,wud B cool 2 mk perl grep from grepp&&sarep 2 auto colr multiple m@chz difrNtly;
@@ -322,7 +323,7 @@ alias     ...........='cd ../../../../../../../../../..      ';alias cd.........
 alias    ............='cd ../../../../../../../../../../..   ';alias cd............='............  ';
 alias   .............='cd ../../../../../../../../../../../..';alias cd.............='.............';
 alias      mk='   make'; # following are my main super-terse aliases for performing almost every core GNU/Linux system utility (with some inherited from DOS)
-alias      sz='   sudo -E zsh';
+alias      sz='   sudo -E zsh';alias SS='sudo shutdown -h now'; # possible emergency Sudo Shutdown now!
 alias      pu='  pushd';alias  ua='un    '; # just add a couple basic abbreV8ions for sys-info
 alias      po='   popd';alias una='un -a ';
 alias      pe='   perl -MOctology::a8 -pe'; # setup Perl Eval filter easy to give a 's///' after
@@ -369,20 +370,27 @@ alias     cls='  clear'; #  cls  :          clear (like DOS command for CLearScr
 alias       C='  cls  '; #  C    :B4 clear was wc (Count charz,words,&&lines&&eventually bits,bytes,[KMGTPEZY]i?bits|Bytes,code points,paragraphs,subs,etc.)
 alias      CC='  cd;C '; #       :                (combines Change directory back2 home ~ && then Clear screen,pretty easy2type 1-handed but Enter is a reach)
 alias     CCC='CC;en -e "\e[3J"' ; # special super Clear of scrollback too (goodaftr `kp` along wi xx 2clear paste buffers);CSI n J - ED(Erase in Display)
-#lias       d=' du -sb'; #  d    :             du|df|dfc     (Disk usage, free, etc.) with -sb to Summarize (only total4each arg) with block-size Bytes
-# no longer just aliasing du above since better to apply to ~/bin/dic which is my colorful enhanced dict wrapper that I employ much more frequently
+alias    dusb=' du -sb'; #  du   :             du|df|dfc     (Disk usage, free, etc.) with -sb to Summarize (only total4each arg) with block-size Bytes
+alias     dus=' dusb  '; #                        it's often pretty useful to pipe the raw decimal size Summary in Bytes in2 `cma` 4isol8ing Thou,Mill,Bill...z
+alias      ds=' dus   '; #                        might be nice to l8r offer parameter options to `b64` && `b256` to only oper8 on 1st decimal field(lIk `cma`)
+alias     dub=' dusb  ';                        # maybe EvN2ally `dub` shudB realloc8d as somehow rel8d 2gr8 Obsidia|PegBoardNerds|Tristam|TutTut Dubstep mUzic
+alias      db=' dub   ';                        # maybe EvN2ally `db`  shudB realloc8d as somehow rel8d 2 d8a-base (PostGreSQL?) queries, manipUl8ion,&& mngmNt
+# no longer just d aliasing du above since better to apply to ~/bin/dic (my colorful enhanced `dict` wrapper, like piping thru `colorit`) since I Use it fR mor
 alias       F='   f   ';
 alias       f='   find'; #  f    :           find            (with combined interface to loc8?)
 alias       g='   grp '; #  g    :          sarep|(e|f)?grep (sed|awk too?)
 alias      gi='   g -i'; #                              grep -i to      Ignore_case
 alias      gv='   g -v'; #                              grep -v to                     inVert_match_results
 alias     giv='  gi -v'; #                              grep    to both Ignore_case && inVert_match_results
-alias    gad8='  gi "^ *[a-z8]*8[a-z8]* *[:#].*add .*8" ~/dox/2du/8.txt'; # utility alias to grep 8.txt for all comments describing potential words to add l8r
+alias    gadd='  gi "^ *[a-z8]*8[a-z8]* *[:#].* add.*8" ~/dox/2du/8.txt'; # early varE8ion which didn't require pound after colon,like Blow expecting both l8r
+alias    gad8='  gi "^ *[a-z8]*8[a-z8]* *:.*#.* add.*8" ~/dox/2du/8.txt'; # utility alias to grep 8.txt for all comments describing potential words to add l8r
+alias     gad='  gad8 '; # while the above 2 originally differed into more restricted result count, material text has been upd8d such that they match on I98
 alias      eg='  egrep'; # eg    :                 e    grep
-alias      zg='  zgrep'; # zg    :                     zgrep (like zcat for *.gz)
+alias      zg='  zgrep'; # zg    :                     zgrep (like zcat for *.gz)      # below heX aliasing must get decimal input piped thru, can't du pRam
 alias       G='  zg   ';                        # (if hX duz!wrk BlO,try`HEX|perl -pe 'lc'`or shL func.Note:had2unalias lc ls -ct ChngTime 2mk tr 4lowr&&uc.)
-alias      hX='HEX|lc '; #  hX   :            heX (should be rel8ively equivalent to ~/bin/heX of Octology::b8->heX() turning decimal input in2 lowercase hX)
-alias       H='h      '; #       :       "H"  8sh (should eventually be custom Octology shell instead of just history)
+alias     heX='HEX|lc '; #  heX  :            heX (shouldbe rel8ively equivalent 2old ~/bin/heX of Octology::b8->heX() 2turn decimal input in2 lowercase heX)
+alias      hX='heX    '; #   hX  :              # (just more terse varE8ion with same pronunC8ion for lowercase  heX ) # might want to sepR8 implement8ions?
+alias       H='  htop '; #       :       "H"  8sh (should EvN2ally be custom Octology shell instead of just UpperCase administr8ion access2 htop diagnostics)
 alias       h='history'; #  h    :        history (built-in in zsh && probably needs to be built-in for 8sh too)
 alias       I='   i   ';
 alias       i='   info'; #  i    :           info
@@ -399,8 +407,8 @@ alias       p='   CCC '; #  p    :            CCC (p used to be just 'ps' "Proce
 alias      pp='pu;p;po'; #  pp   :       prepriv8 (same as single p for CCC cd,clear,cut scrollback but wrapped with pushd && popd aliases to undo the cd ~)
 alias       pl='  perl'; #  pl   :           perl
 alias       T='   tee '; #  tee  :            tee (maybe can wrap into c8 with cut,cat,colored columns?); rEmMbr standRd `tr -d ...` is transl8 DlEt like subS
-alias       t=' tsgr b'; #       :            tsgr b   (show xterm-256color pal8 as Blocks)
-alias       tb='t     ';
+alias       t='   tmux'; #  tmux :           tmux|screen ... any other altern8ive multiplexers forked out there? (orig:  `tsgr b` shO xtrm256colr pal8 Blox)
+alias       tb='tsgr b';
 alias       x='   exit'; #  x    :           exit
 alias      lS='   less'; #  lS   :           less
 alias      mo='   most'; #  mo   :           most|more
@@ -469,11 +477,11 @@ alias    updt='perl -MPip::Utl -e "updt @ARGV"'; # replace old tiny ~/bin/updt w
 alias    uptm=' uptime'; #  uptm :           uptime
 alias     uni='   uniq'; #  uni  :           uniq
 #         dic   already ~/bin/
-#lias     dic='   dict'; #  dic  :           dict     (reformatted for 160 or other columns, colored, with reviewable query history in ~/.dic_history file)
-alias       D='   d   '; #                            ("D" short for pronunC8ion of "define" too)
+#lias     dic='   dict'; #  dic  :           dict     (reformatted for 160 or other columns, colored, with reviewable query history in ~/.log/dic.log file)
 alias       d='   dic ';
-alias       Y='   y   ';
+alias       D='   dfc '; #                            ("D" Used2alsOBshort4 pronunC8ion of "define" too, before realloc8ion to administr8ion DiskFreeColor)
 alias       y='   yelp';
+alias       Y='   y   ';
 alias      zp='    tar czvf'; #zp:            tgz|tar|zip|7z (eventually inspect parameters to detect which zip to use)
 alias       z='     zp';
 #          uz() already function below
@@ -488,6 +496,7 @@ alias   comma=' cma   '; #  comma:            cma (like coma inserts by 4, these
 #lias      hd='   head'; #  hd   :           head (hd is already HexDump, which maybe should be combined (&& hd is more crucial HardDisk LVM util too?)) 
 alias      tl='   tail'; #  tl   :           tail
 alias      tp='    top'; #  tp   :            top|htop
+alias     htp='   htop'; # htp   :                (ht is already HyperText? in /usr/bin which appears to gener8 HTML from TeX input files, but H also is htop)
 #          ss() already function below
 #lias      ss='    ssh'; #  ss   :            ssh
 alias      wd='    pwd'; #  wd   :            pwd
@@ -511,6 +520,8 @@ alias       s='   shlp'; # assume Perl since an upd8 to source-highlight seems t
 alias      S8='   shl8'; # my primitive c8:SourceHighLight8 Utl to hopefully eventually approach functional parity with source-highlight before surpassing it
 alias     sho='cd ~/gfx/sho;shot -u'; # change to typical local Octology screenshot directory && take a shot of the focUsed window (no border) in 3 seconds
 alias    resp='   reso spec'; # joining like =~ /^respect/ shortcut to list resolution specific8ionz  # abovUsed2B S=shl,s=shl8 but S repurposed in a8 4 SKpz
+alias    resh='   res  HD  ';alias res='reso';alias re='res'; # basic a8.pm resolution HD limit8ion (not to get confused with resoLVE or resoURCE varE8ionz)
+alias    reph='re Pi|gi pi;re HD|gi hd'; # example alias isol8ing matches case-sensitively for reso && grep, but not gi, so just Pixelz in title then HighDef
 alias   xical='xinput-calibrator';alias xic='xical';alias xbk='xbindkeys';alias xdt='xdotool';alias xd2='xdt'; # basic Chun touch-scrn&&X re-bind&&scrpt utlz
 alias    ctor='ctorrent -e 16 -z 64'; # abov: %eval $(xdotool getmouselocation --shell); %echo $X,$Y; will override Dflt $Y bright Yellow mapping with coordz
 alias     sig='signal-desktop'; # I7GMFSIG:installed HTTPS://Signal.Org on my Android phone && Aku here as likely better than Slack or Discord 4the future;
@@ -844,6 +855,8 @@ At() { echo At params without residue: 11,12,17,18,20,22,23,28,31,32,40,41,49 \n
   if [[ "$1" == "" ]]; then aterm -geometry 80x30 -color3 "#FFAA33" -color13 "#9933BB" -bg "#03071B" -fg "#88F8B0" --cursorColor "#30D0F0" --cursorColor2 "#204080" -pr "#D8D870" -vb -fn "-*-*-*-*-*-*-18-*-*-*-*-*-*-*" -fb "-*-*-*-*-*-*-18-*-*-*-*-*-*-*" -tr -trsb -sh 31 -fade 63 -sb -sr -sl 2047 &; #2>&1 >/dev/null &;
   else                      aterm -geometry 80x30 -color3 "#FFAA33" -color13 "#9933BB" -bg "#03071B" -fg "#88F8B0" --cursorColor "#30D0F0" --cursorColor2 "#204080" -pr "#D8D870" -vb -fn "-*-*-*-*-*-*-$1-*-*-*-*-*-*-*" -fb "-*-*-*-*-*-*-$1-*-*-*-*-*-*-*" -tr -trsb -sh 31 -fade 63 -sb -sr -sl 2047 2>&1 >/dev/null &;
   fi}
+alias tStl='tStc R;ec;tStc R d;ec;tStc R a;ec;tStc R l'; # loop all 4 colr layrz, leaving Lite last, calling just Reverse to pretend lower L indic8s bkgrounds
+alias tStL='tStc F;ec;tStc F D;ec;tStc F A;ec;tStc F L'; # loop all 4 colr layrz, leaving Lite last, calling just Fraktur which probably rarely does anything
 tStc() { # tSt 8pal8 colrz (this is a very slow precursor to ~/bin/tstc since many sub-processes need to load zsh,perl,&&a8 d8a just to manipUl8 eScApe valUez)
   if       [[ "$#" -gt 0 ]]; then # print out some help text for just h or -h or --help as first parameter && then return
     if     [[ "$1" == *h ]] || [[ "${(L)1}" == *help ]]; then # this function was originally named 'tS8()' but has been renamed to reflect similarity to `tstc`
@@ -857,28 +870,36 @@ tStc() { # tSt 8pal8 colrz (this is a very slow precursor to ~/bin/tstc since ma
       echo " A - call S ':A' set fAint SelectGraphicRendition attribute on all colrs printed after the 1st 2pal8"
       echo " I - call S ':I' set Italics             (most parameter flags can be combined like 'IFDOCURL' top8)"
       echo " U - call S ':U' set Underline           (see 'tsgr' for my typical mapping of all these attributes)"
-      echo " L - call S ':L' set bLink               (slow,lessthan 150/min)"
-      echo " K - call S ':K' set blinK               (fast,morethan 150/min)"
-      echo " R - call S ':R' set Reverse"
+      echo " L - call S ':L' set bLink               (slow,lessthan 150/min) # can give second param 'DAL' layer"
+      echo " K - call S ':K' set blinK               (fast,morethan 150/min) ever supported?"
+      echo " R - call S ':R' set Reverse             " # 2du:xtnd main gener8ion thru FDAL;" # or mAB optn 2 invrt 2 bdal nstd
       echo " V - call S ':V' set inVisible"  ; # lookz like var form uses fnmatch where '*' is like a glob, not prev mod && `man regex` DscrIbz the =~ 4m@
       echo " C - call S ':C' set Crossed-out"; # pure bash: HTTP://StackOverFlow.Com/questions/13043344/search-and-replace-in-bash-using-regular-expressions
-      echo " F - call S ':F' set Fraktur font        (hardly ever supported)"; #hello=ho02123ware38384you443d34o3434ingtod38384day
-      echo " D - call S ':D' set underline Double    (hardly ever supported)"; #re='(.*)[0-9]+(.*)'; # zsh has just $match versus $BASH_REMATCH
+      echo " F - call S ':F' set Fraktur  font       (hardly ever supported)"; #hello=ho02123ware38384you443d34o3434ingtod38384day
+      echo " D - call S ':D' set underline Double    (!Gnome-Term supported)"; #re='(.*)[0-9]+(.*)'; # zsh has just $match versus $BASH_REMATCH
       echo " M - call S ':M' set fraMed              (hardly ever supported)"; #while [[ $hello =~ $re ]]; do hello=${BASH_REMATCH[1]}${BASH_REMATCH[2]}; done
       echo " E - call S ':E' set Encircled           (hardly ever supported)"; #echo "$hello"; # yields just letters
-      echo " O - call S ':O' set Overlined           (hardly ever supported)"; #   or        | perl -pe  's/[a-z]/X/gi and s/[0-9]/N/g' for even more familiar
+      echo " O - call S ':O' set Overlined           (!Gnome-Term supported)"; #   or        | perl -pe  's/[a-z]/X/gi and s/[0-9]/N/g' for even more familiar
       echo " H - call S ':H' set ideogram line rigHt (hardly ever supported)"; # echo $MyVar | sed -e 's/[a-zA-Z]/X/g' -e 's/[0-9]/N/g' should be even easier
       echo " T - call S ':T' set ideogram line lefT  (hardly ever supported)"; # might be able to loop all paramz && construct ordrd flagz from pasd SGR codz
       echo " G - call S ':G' set ideoGram stressmark (hardly ever supported)";return 0;fi;fi # ${variable//pattern/replacement} basic shL regX from StakOvrflO
   for B64N in k r O g c b P w K R Y G C B M W   e h o d t s p i E H y D T S m I   '.' f u a z n l j '_' F U A Z N L J   0 2 4 6 8 x v q 1 3 5 7 9 X V Q;do
-                                           S $B64N   ;      # 4 every b64 char in 8pal8 ordr, print 8-per-line roundtrip && their eScape digitz in colr
-                           echo     -n      "$B64N:" ;      # parameter testz BlO wrapd in starz so they can then all be combined together within 1st arg
+      LAYR="F"; # setup some default && optional equals  =altern8 8pal8 64 Layer from Foreground through Dark, Avrg, Lite
+    if     [[ "$#"        -ge   2 ]] && [[ "${(L)2}" == *d  ]]; then LAYR="D"; # could just give F first param && also OH layers as second
+    elif   [[ "$#"        -ge   2 ]] && [[ "${(L)2}" == *a  ]]; then LAYR="A";
+    elif   [[ "$#"        -ge   2 ]] && [[ "${(L)2}" == *l  ]]; then LAYR="L";
+    elif   [[ "$#"        -ge   2 ]] && [[ "${(L)2}" == *o  ]]; then LAYR="O"; # trying Orig && High layerz too
+    elif   [[ "$#"        -ge   2 ]] && [[ "${(L)2}" == *h  ]]; then LAYR="H"; fi
+                                           S "$LAYR:$B64N"    ; # inject new layer codes which will collide with available renditions Doublundrlin,fAint,bLink
+    if     [[ "$#"        -ne   0 ]] && [[ "${(L)1}" == *s  ]]; then # check for Squeeze rowz parameter to try to fit each 16 2pal8 on just 4 linez instead
+                           echo     -n       "$B64N=";      # parameter testz BlO wrapd in starz so they can then all be combined together within 1st arg
+    else                   echo     -n       "$LAYR:"; fi   # when in Short mode, skip layer colon && just try to show Base64 Name of single color abbreV8ionz
     if     [[ "$COLUMNS"  -ge  96 ]]; then                  # if terminal should be wide enough to not wrap the linez, then show duplic8 code 4 comparison
       if   [[ "$#"        -eq   0 ]] || [[ "${(L)1}" != *s  ]]; then # check for Squeeze rowz parameter to try to fit each 16 2pal8 on just 4 linez instead
         if [[ "$#"        -eq   0 ]] || [[ "${(L)1}" != *z  ]]; then # normally echo initial duplic8 fast unless -z flag given to check roundtripZ slowly
-                           echo     -n      "$B64N:" ; #*z* really need to learn shell regexes instead of trying double-glob, or send through g grep or sed?
-        else                               S $B64N|c ;echo -n ':';fi;fi;fi # didn't nEd2 echo -n wi backtix around S above or BlO 4 Bold&&fAint&&etc pRamz
-                           printf "%-8s"  `S $B64N|sS d`; # just substitute out && show internal Digitz && semicolonz from the current colr's eScape code
+                           echo     -n       "$B64N="; #*z* really need to learn shell regexes instead of trying double-glob, or send through g grep or sed?
+        else                               S "$LAYR:$B64N"|c  ; echo -n '=';fi;fi;fi # didn't nEd2 ec -n wi bktix around S abov or BlO4 Bold&&fAint&&etc pRamz
+                           printf "%-8s"  `S  $LAYR:$B64N |sS d`; # just substitute out && show intrnl Digitz && semicolonz from current colr's eScape code
     if     [[ "$#"        -gt   0 ]]; then # starting non-1st 8 row on next loop iter8ion && a parameter was given
       if   [[ "${(L)B64N}" ==  w  ]] || [[ "${(L)B64N}" == i ]] || [[ "${(L)B64N}" == j ]] || [[ $B64N == q ]]; then
         if [[ "${(L)1}"    =~  b  ]]; then S '^'     ;fi       # reset Bold making all fontz normal 4 colrz gr8rthan 15 (dfalt is Bold for all gr8rthan 7)

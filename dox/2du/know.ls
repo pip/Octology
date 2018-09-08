@@ -430,3 +430,6 @@ HTTPS://YouTu.be/l2vy2ZTCAvs "Top 10 Reasons Jesus Hasn't Returned" # 12m of Dar
 # Rule 9/12 Assume the person you're talking to might know something you don't. HTTPS://YouTu.be/TPjTnP4_eDk 8m I8J Jordan B. Peterson, the Doctor, interview:
 # Conserv8ives must defend && preserve the legitim8 hierarchies of all types, while also engaging in dialog to contend with mass dispossession at the bottoms.
 # I think Alexander Grace indic8d success over challenges in intim8 rel8ionships (&& much of life) is gr8st if started with sincerity && courage, built upon;
+HTTPS://YouTu.be/ycPr5-27vSI "Joe Rogan Experience #1169 - Elon Musk" # I97MMUSK:2h37m of extremely interesting technical interview (even just up to halfway).
+# I should study fE8ures && start tracking minimum costs of new && used Tesla S, X, && 3, since they are obviously the smartest, safest, highest performance;
+HTTPS://YouTu.be/XS7LgbMr1m4 "Joel Baden: The Bible Doesn't Say What You Think it Does" # I98M4dis:20m speech from 2013 Nantucket Project on truth discourse;
