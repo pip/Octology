@@ -1,5 +1,5 @@
 # Octology
-The ontology of 8. `$VERSION='0.0';$d8VS='I92MDRbk';`
+The ontology of 8. `$VERSION='0.0';$d8VS='I98MCure';`
 
 This is basically a public preview of my early development files. I am not yet ready for serious collaboration, but welcome any sort of feedback.
 
@@ -24,7 +24,9 @@ If your paths and Perl environment are setup similarly, to gain a bearing on fun
 ##### (*mostly examples matching above*)
 ![Octology-sumb-shot_1614x952-I8QMCLU2](https://github.com/pip/Octology/raw/master/gfx/sho/Octology-sumb-shot_1614x952-I8QMCLU2.png "Octology-sumb-I8QMCLU2")
 ![Octology-tstn-shot_1614x952-HC8L7J3A](https://github.com/pip/Octology/raw/master/gfx/sho/Octology-tstn-shot_1614x952-HC8L7J3A.png "Octology-tstn-HC8L7J3A")
-![Octology-tstc-shot_1614x902-HB4M8jYm](https://github.com/pip/Octology/raw/master/gfx/sho/Octology-tstc-shot_1614x902-HB4M8jYm.png "Octology-tstc-HB4M8jYm")
+![Octology-reph-shot_1614x952-I8RM8qV8](https://github.com/pip/Octology/raw/master/gfx/sho/Octology-reph-shot_1614x952-I8RM8qV8.png "Octology-reph-I8RM8qV8")
+<!-- show  tstc short after lsd8 ~ && reso spec HD pre Pi color greps elabor8 aliases, fully amidst reph new crystal clarity layers of some transparency now;
+![Octology-tstc-shot_1614x902-HB4M8jYm](https://github.com/pip/Octology/raw/master/gfx/sho/Octology-tstc-shot_1614x902-HB4M8jYm.png "Octology-tstc-HB4M8jYm")-->
 
 ![Octology-gnp8-shot_1614x902-HBBLKDgD](https://github.com/pip/Octology/raw/master/gfx/sho/Octology-gnp8-shot_1614x902-HBBLKDgD.png "Octology-gnp8-HBBLKDgD")
 ![Octology-g3Ob-shot_1614x952-I8QMCFLC](https://github.com/pip/Octology/raw/master/gfx/sho/Octology-g3Ob-shot_1614x952-I8QMCFLC.png "Octology-g3Ob-I8QMCFLC")
