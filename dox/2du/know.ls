@@ -1,5 +1,5 @@
 # HBQLISTV:know.ls crE8d by PipStuart <Pip@CPAN.Org> to duplic8 Dr. Jordan B. Peterson's Quora.Com answer of "40 most valuable things everyone should know";
-# $VERSION='0.0';$d8VS='I98MDefm'; # 2du:start chronicling Dr. Peterson's many topical videos with new section for post-title subject summaries or explor8ion;
+# $VERSION='0.0';$d8VS='I9AMJone'; # 2du:start chronicling Dr. Peterson's many topical videos with new section for post-title subject summaries or explor8ion;
 0) Tell the truth.
 1) Do not do things that you h8.
 2) Act so that you can tell the truth about how you act.
@@ -434,3 +434,9 @@ HTTPS://YouTu.be/ycPr5-27vSI "Joe Rogan Experience #1169 - Elon Musk" # I97MMUSK
 # I should study fE8ures && start tracking minimum costs of new && used Tesla S, X, && 3, since they are obviously the smartest, safest, highest performance;
 HTTPS://YouTu.be/XS7LgbMr1m4 "Joel Baden: The Bible Doesn't Say What You Think it Does" # I98M4dis:20m speech from 2013 Nantucket Project on truth discourse;
 HTTPS://YouTu.be/BIAffh9GUEA "This Was An Ignorant Response To Jordan Peterson (Lawsuit Upd8)" # I98MDJoe:12m10s is TimPool at 2m31s rel8s Equity Adria Joel;
+HTTPS://YouTu.be/Knd_pcE86t4 "Jordan Bernt Peterson - with BBC channel 4 - What are morality && ethics today?" # I99MName:31m26s "Dose of Truth" J*B*P=Bernt;
+HTTPS://YouTu.be/8vlyhnYeRoY "9 BANNED BOOKS Amazon Has Started Modern Book Burning" # I9AMJAPH:13m35s of TimCast (Pool altern8), defending RooshV's 9 books;
+# Pretty amazingly continuingly coincidental that, even as maybe four or more further Alex names have also surfaced before me without scrupulous document8ion
+#   these times, curious that juncture of Alex Jones, this file started around what to know from "Jo" B. Peterson, && 44 hero Elon Musk on Rogan,loc8d Baden,
+#   then noticed Adria as LindsayShepherd's lying accuser Diversity&&EquityStaff? StarCouncil? at WilfridLaurierUniversity for showing class gr8 Dr.Peterson;
+# Next I would guess his newly discovered middle initial "B." expansion name may be pronounced almost precisely like the past-tense of I9A Inflamm8 9 Amazon;

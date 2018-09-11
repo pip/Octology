@@ -202,7 +202,16 @@ sub _color_fields{ # return a color string for a fldz object
     for(my $i=0;$i<=length($fstr);$i++){$clrz[$i]='%'.($i+1).'*';} # gener8 vim ascending index codes
     $rstr.=$clrz[$coun].substr($fstr,$coun++,1)           while(length($fstr)> $coun);
   }else{ # default anything else assumes 'a' (or 'z' wrapping) ANSI
-    $rstr.=$clrz[$coun].substr($fstr,$coun++,1)           while(length($fstr)> $coun);if($ctyp=~ /^z/i){$rstr.='%{'.$z.'%}';}else{$rstr.=$z;}
+   #$rstr.=$clrz[$coun].substr($fstr,$coun++,1)           while(length($fstr)> $coun);if($ctyp=~ /^z/i){$rstr.='%{'.$z.'%}';}else{$rstr.=$z;}
+   # this whole looping approach completely assumes max-length is 8, so coun should never exceed boundz of @clrz but obvious super-Xpanded 4m@ aparNtly 41long
+    if   (length($fstr)> 8    ){substr($fstr,8,(length($fstr)-8),'');$fstr=~ s/[^0-9a-z._]/-/gi;} # chop longz off, until betr Dtectn && resolv is Dtermind?
+    while(length($fstr)> $coun){my $tccs=$z;$tccs=$clrz[$coun] if(defined($clrz[$coun])); # try to mitig8 uninit val in cat or strng warnz wi TmpClrzCounStr
+     #if (!defined($clrz[$coun])){$rstr.="WarnCoun:$coun;";} # du special output of which counz are undefined in clrz 2 help find orig lsd8 failz getng hEr
+      # for whatever the `l ~/dox/putr/NetRtrG8Wz/*Fs*` is trying to coerce into colored d8 here, the coun overagez are running from 8..40 at the moment
+      # it's actually the *-2GT624v3-* product-code partz of those filenamez including G for the Month which triez to shift Year into some bad super-Xpanding
+      #   && each of thoz codez are found twice in each filename (just to be aware of), but that's probably not the source of the long expansion && colr probz
+      $rstr.=$tccs.substr($fstr,$coun++,1);} $rstr.='%{' if($ctyp=~ /^z/i);$rstr.=$z; # apNd special ZshL prmpt wraprz around fInal $z SKp cOd2 zerO reset...
+    $rstr  .=                                       '%}' if($ctyp=~ /^z/i);           #   which concludez gNr8d colrd output sEquNcez for ANSI or ZSH ctypz
   }return($rstr);}
 sub colr{my $self=shift;my $fstr="$self";return($self->_color_fields($fstr,@_));} # generic self colr method to call overloaded subclass colorfields
 sub     time{my $self=shift;return($self->hmsf(    @_));}

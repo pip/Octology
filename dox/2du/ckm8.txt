@@ -1,4 +1,5 @@
-DASM8kGD: ckm8.txt by PipStuart <Pip@CPAN.Org> as my plan to have my Mom help oversee me developing a simple Chess program by the end of D 2013;
+# DASM8kGD:ckm8.txt crE8d by PipStuart <Pip@CPAN.Org> as initial plan to have my Mom help oversee development of a simple Chess program by the end of D 2013;
+# $VERSION='0.0';$d8VS='I99MCKM8';2du:?;
  A Oct   B Nov   C Dec
 sMTWtFS sMTWtFS sMTWtFS
   12345      12 1234567
@@ -84,3 +85,6 @@ ckm8 main innov8ions: 0) every piece has become unique, named (with expected gen
 DBILDu41:cnv *.fpp wi ANSI krgObPcw KRGYBMCW 2 krOgcbPw KRYGCBMW .pal8 && pick initial 8 pal8 && 8 f0nt files to begin using;
                    && !VGA kbgcrPOw KBGCRMYW
 H4AM8Au5:U2b chat emoji (with middle short ones overlapping or combining out of 6 faces?):😶😐🙂☺😀😁 && kitty 😸;
+I99MCKM8:Probably would be good to extract best SDL pal8 definition into a new standalone .pal8 file which can then be run before `ckm8 -c` to contrast well.
+Figure out why Simp segfaults (coredump) at exit with priority. Eventually it would be cool to take a minimal standard 80x25 (or 40x12 even?) Curses terminal
+  to build up some easily discernible introduction, demonstr8ion, && educ8ion;

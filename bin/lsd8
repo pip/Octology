@@ -21,7 +21,7 @@
 use strict;use warnings;use utf8;use v5.10; # mAB tSt if just regUlR -t STDIN && -t STDOUT R Dtectng intractiviT corectly 1st,B4 fallng bak on IO::Interactive
 #se IO::Interactive qw(is_interactive); # employ if(is_interactive()){} around all colring to attempt to behave like `ls --color=auto` when piped away
 use Encode;use Octology::a8;#se Octology::c8;
-           use Octology::b8;use Octology::d8;use Time::PT;my $VERSION='0.0';my $d8VS='I76MD8ms';my $sllw=0; # SymLink LargestWidth to track for alignment
+           use Octology::b8;use Octology::d8;use Time::PT;my $VERSION='0.0';my $d8VS='I9AM0NTH';my $sllw=0; # SymLink LargestWidth to track for alignment
 open my $out8,'>&',STDOUT or die "Can't open  duplic8 STDOUT handle: $!"; binmode $out8,':encoding(UTF-8)'; # crE8 local duplic8 of global
 my $vsrt='-v'; my @b64d;my $t;my $sbdr;my $b64c;my($pwnw,$grpw,$grpx);$pwnw=$grpw=$grpx=0; # default -v Version SoRT,reversed b8 Colr List matchz Dfalt d8 ordr
 my $jfdz=join('|',@Day);my $jfmz=join('|',@Mon); # Joined Fieldz for DayZ and MonthZ to regex with  # BlO mAB some ARGVz shud!B sNt thru -d tSt so Dtect 1st?
@@ -136,9 +136,10 @@ for(@ldat){if(($prmz,$blsz,$pwnr,$grup,$fsiz,$d8tz,$fnam)= /^(\S{10})(\s+\d+)(\s
       $tryc++ < $trym){my $ptvr=$3;my $ptim=undef;
       if($fnam=~/-$ptvr([-._*\/]|$)/){$ptim=    Time::PT->new($ptvr);my $stim=$ptim->color('ansi');$stim.=$M.'0' if($ptvr=~/0$/);
         $stim=~s/(\e\[[\d;]+)(m)/$1;41$2/g;$stim.=$z; # try2insrt bg dark red2betr distnguish old PT from d8
-        $tnam=~s/$ptvr/$stim/;}}                                                                                                     $tryc=0;
-    while($tnam=~/^.*-(\e\[([\d;]*)m)*([0-9A-Za-z._][0-9A-Za-q][0-9A-Za-z._][0-9A-Za-g][0-9A-N][0-9A-Za-x]{3})(\e\[([\d;]*)m)*([-.*\/]|$)/  &&
-      $tryc++ < $trym){my $d8vr=$3;my $dtim; # apNding2 $etim belo whN d8 Nded in 0 mAde leng off so wouldn't s///
+        $tnam=~s/$ptvr/$stim/;}}                                                                                                     $tryc=0; # putr/NetRtrG8Wz
+   #while($tnam=~/^.*-(\e\[([\d;]*)m)*([0-9A-Za-z._][0-9A-Za-q][0-9A-Za-z._][0-9A-Za-g][0-9A-N][0-9A-Za-x]{3})(\e\[([\d;]*)m)*([-.*\/]|$)/  && # *2GT624v3* bad
+    while($tnam=~/^.*-(\e\[([\d;]*)m)*([0-9A-Za-z._][012A-C3-9][0-9A-Za-z._][0-9A-Za-g][0-9A-N][0-9A-Za-x]{3})(\e\[([\d;]*)m)*([-.*\/]|$)/  &&
+      $tryc++ < $trym){my $d8vr=$3;my $dtim; # apNding2 $etim belo whN d8 Nded in 0 mAde leng off so wouldn't s///; abov tried2allow full Month rang but cutdn
       if($fnam=~/-$d8vr([-._*\/]|$)/){$dtim=Octology::d8->new($d8vr);my $etim=$dtim->colr( 'a'   ); # now need to add 5 to length test for auto-appended $z
         $tnam=~s/$d8vr/$etim/;}}                                                                                                     $tryc=0;
     if($tnam=~ /  -((?:\e\[[\d;]*m)*)(n)(o)(w)((?:\e\[[\d;]*m)*)([-.*\/]|$)/x){my($secz,$eecz,$ettc)=($1,$5,$6);

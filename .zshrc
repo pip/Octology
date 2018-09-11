@@ -29,7 +29,7 @@ unsetopt                \
 # auto_pushd            \# setng addz dirz 2 stack wN just normally chngng 2 thM (wich I du not normally lIk or want)
 # ksh_arrays            \# rEmMbr wNwrItng scrptz[or funcz]2include'setopt [localoptions] ksharrays'sO arAzR 0-bAsed(but!glOblBcuzmOst scrptzRstndrdly 1-bAsed)
 # re_____match_____pcre \# mA want2set for Z-SHell scripting RegularExpressions to utilize PerlCompatibility styles && mA insert 'zmodload zsh/(pc)?re(gex)?';
-export vers='0.0';export d8VS='I98M8l8r';export auth='PipStuart <Pip@CPAN.Org>'; # above not exporting $b since collidez with sort{$a  <=> $b}
+export vers='0.0';export d8VS='I99MCrsZ';export auth='PipStuart <Pip@CPAN.Org>'; # above not exporting $b since collidez with sort{$a  <=> $b}
 if     [[       "$SHELL"    == "" ]]; then       export SHELL=`  which zsh`;fi # 8sh should parse this && OverId it    # shud `man zshall` /OSTYP 2lern4BlO
 if     [[       "$HOSTNAME" == "" ]]; then       export HOSTNAME=`hostname`;fi #`hostname`retnz fsckd nwlInz\n4CygWinzRxvt... ||smthng els lame  =(
 if     [[       "$HOST"     == "" ]]; then       export HOST="$HOSTNAME"   ;fi;export VERBOSE='1'; # set flag to print debug && status info from system utilz
@@ -408,7 +408,6 @@ alias      pp='pu;p;po'; #  pp   :       prepriv8 (same as single p for CCC cd,c
 alias       pl='  perl'; #  pl   :           perl
 alias       T='   tee '; #  tee  :            tee (maybe can wrap into c8 with cut,cat,colored columns?); rEmMbr standRd `tr -d ...` is transl8 DlEt like subS
 alias       t='   tmux'; #  tmux :           tmux|screen ... any other altern8ive multiplexers forked out there? (orig:  `tsgr b` shO xtrm256colr pal8 Blox)
-alias       tb='tsgr b';
 alias       x='   exit'; #  x    :           exit
 alias      lS='   less'; #  lS   :           less
 alias      mo='   most'; #  mo   :           most|more
@@ -499,7 +498,7 @@ alias      tp='    top'; #  tp   :            top|htop
 alias     htp='   htop'; # htp   :                (ht is already HyperText? in /usr/bin which appears to gener8 HTML from TeX input files, but H also is htop)
 #          ss() already function below
 #lias      ss='    ssh'; #  ss   :            ssh
-alias      wd='    pwd'; #  wd   :            pwd
+alias      wd='    pwd'; #  wd   :            pwd # eventually rep this with new b8:wd in bin like width in wdht span for f(ib|ct)z (su|pr)mz sizing pRam linz
 alias      pw=' passwd'; #  pw   :         passwd
 alias      pn=' ping  '; #  pn   :           ping
 alias      pb=' pingb '; #  pb   :           pingb      (needed2`sz; echo net.ipv4.icmp_echo_ignore_broadcasts=0 >> /etc/sysctl.conf; sysctl -p`)
@@ -576,7 +575,9 @@ alias ckya='w3m Mail.Yahoo.Com';alias gnuya='gnuyahoo -u=piptigger '; # Ubu brws
 #lias cktm='w3m HTTP://Time.Gov'; # need to enable JavaScript in w3m for redirect to /HTML5/ to work so maybe just use FireFox or Chrome
 # mAB Ubu brwsrz:FireFox Chrom(e|ium) Epiphany Arora Dillo WebBrowser-App (cudinstl) QupZilla Konqueror NetSurf Links2 (!in acs) Yandex PaleMoon Midori Brave;
 alias crmm='chromium-browser  ';alias crom=' google-chrome         ';alias epip='epiphany';alias aror='arora';alias dilo='dillo';alias lnx2='links2';
-alias brav='brave';alias brvb='brave';alias brav='brave';alias bb='brvb'; # prEferprv8bb&&ffmor than abovnow
+alias brav='brave';alias brvb='brave';alias brav='brave';alias bb='brvb';alias tb='torb'; # prEfer prv8 tb&&bb&&ff mor than old (proly WebKit-based?) abovz now
+alias torb='pu ~/bin/.tst/tor-brwsr-linux64-8.0_en-US-I98MKtor;./start-tor-browser.desktop;po';alias tor='tb'; # new d8d locl v8.0 instal of sepR8 brwzr methd
+alias brwz='en "PipzBrwz: ff=FireFox, bb=Brave, tb=Tor, crom=Chrome, crmm=Chromium, epip=Epiphany, aror=Arora, dilo=Dillo, lnx2=Links2;"'; # echo reminderz
 alias 2lo=' perl -e "rename(\$_,lc) for @ARGV"'; # orig fIlnAm lOwrcAsng 1-lInr was ~/bin/tolo thN as 2lo but mAB zsh func can't stRt wi '2'? Alias workz tho!
 alias j2k=' joy2key $TTY -terminal -rcfile ~/.joy2keyrc -axis Left Right Up Down -buttons a b c d e f g h i j &';
 alias j2kx='joy2key      -X        -rcfile ~/.joy2keyrc                                                       &';
@@ -739,10 +740,13 @@ alias   gt4='gt3;
 alias   gt5='gt4;
              gt --geometry=-3840+0    --show-menubar --window-with-profile=PipsOthrGnomTerm-TestFont-CCIHPS8                                                &;
         gtss;wmc -r :ACTIVE: -T othr               '; # so far, it's too bad that Othr background dark green looks just black with l8st Sony TV settingz
-alias rs=' resize'; # also able to pass '-s $rowz $colz' to set term dimensionz, so maybe convert this alias into a function with parameter optionz l8r
+alias rs=' resize'; # also able to pass '-s $rowz $colz' to set term dimNsionz,sO mAB cnvrt this alias in2 function wi pRam optnz l8r Dtectng ${W}x$H 4m@z too
 alias rsN='noglob eval `resize -s 57 171`';alias rsn='  rsN'; # N for 171-wide (for calN to show 19-Years slightly lRgr than Dflt 160x50 standRd Used Lswhere)
-alias rs1='noglob eval `resize -s 50 160`';alias rs160='rs1'; # 1 for 160-wide (not sure how necessary noglob, eval, or backtix are, but they make cmnd quiet)
+alias rsz='noglob eval `resize -s 50 160`';alias rs160='rsz'; # zdflt 160-wide (not sure how necessary noglob, eval, or backtix are, but they make cmnd quiet)
 alias rs8='noglob eval `resize -s 25  80`';alias rs80=' rs8'; # 8 for  80-wide (might want to make these only 24 high, like Default Gnome-Terminal profile)
+alias rs4='noglob eval `resize -s 12  40`';alias rs40=' rs4'; # 4 for  40 && also 2 for 20 as good halvingz 2l8r suport4low-reso nEdz (thO int(25/2)= just 12)
+alias rs2='noglob eval `resize -s  6  20`';alias rs20=' rs2'; # if ever capable of displaying on large 4K HD monitorz, may want to try out a huge 320x100 too
+alias rs1='noglob eval `resize -s  3  10`';alias rs10=' rs1'; # continue halving standards to obtain dimensions all the way down to just 30 characters total
 alias rs3='noglob eval `resize -s  1  34`';alias rsd8=' rs3'; # 3 for  34-wide d8ok termz (somewhat more straightforward && brief 2 use char dimz versus pixlz)
 alias rsd8ok='                      rs3  ';alias rsd='  rs3'; #   && a few more for d8ok  (even though wmctrl -e below is making these rel8ively unnecessary)
 alias rs160x50='rs1';alias rs80x25='rs8 ';alias rs34x1='rs3'; # HB1MBPrr:just removing Ubu17.10 deprec8d -e && -x + pRams to popul8 in GT d8ok profls && this;
@@ -1060,7 +1064,7 @@ uz() {   [[         $#  -lt  1    ]] && {
     if   [[ "$VERBOSE"   ==  1    ]]; then echo "!*EROR*! Nothing to   UnTarB?X?Zip! $0 file: ??!";                                           fi; return 1; }
                file=$1; succ=0;
   if     [[   -f             "$1" ]] && [[   -r            "$1" ]];                                                              then
-    if   [[ "${file:e}"  ==  "xz" ]] || [[ "${file:e}" == "txz" ]];                                                              then
+    if   [[ "${file:e}"  ==  "xz" ]] || [[ "${file:e}" == "txz" ]];                                                              then # l8r detect unlzma too
       if tar xJvf $@ 2>/dev/null     ||                                unxz   $@ 2>/dev/null;                                    then succ=1; fi
     elif [[ "${file:e}"  ==  "bz" ]] || [[ "${file:e}" == "tbz" ]] || [[ "${file:e}" == "bz2" ]] || [[ "${file:e}" == "tbz2" ]]; then
       if tar xjvf $@ 2>/dev/null     || tar xvf  $@ 2>/dev/null    || bunzip2 $@ 2>/dev/null;                                    then succ=1; fi # was xIvf

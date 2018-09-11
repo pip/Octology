@@ -50,7 +50,7 @@
 use strict;use warnings;use utf8;use v5.10;use Encode;
 use Octology::a8;
 use Octology::b8;
-use Octology::d8;my $VERSION='0.0';my $d8VS='HBBL5erl';my $name=$0;$name =~ s/^.*\///;my $Dbug=0; # version,program name
+use Octology::d8;my $VERSION='0.0';my $d8VS='I99MLwrn';my $name=$0;$name =~ s/^.*\///;my $Dbug=0; # version,program name
 open my $out8,'>&',STDOUT or die "Can't open  duplic8 STDOUT handle: $!";binmode $out8,':encoding(UTF-8)';select($out8);$|=1; # crE8 locl autoflush dup of glbl
 if(           @ARGV && $ARGV[0]=~ /^-*h/i){say $out8 " ckm8  - experimental   Curses and SDL Chess program  Vers:$VERSION  d8VS:$d8VS by Auth:$auth
   <pW>v<pK>  sets roster tags for Players White and BlacK and for output filename where pW and pK are single-letter keys in the player registry hash (v optnal)
@@ -762,11 +762,11 @@ sub DrawBord{$scal=int(($hite-2)/8) if($scal*8+2 > $hite); # don't scale beyond 
      #for(@lfcd){$_ = b64(int(rand(64)));} # SLOW! maybe pre-gen? tst rand colrz, could de-spc $cmap{8pal8} but map ends up same as dflt b64
      #for(@lbcd){$_ = b64(int(rand(64)));} # renders unintelligible
       for my $cndx (0..$#ltxd){                                   # start looping Colm iNDeX through current         Line TeXt             D8a
-        $lfcd[$cndx] = 'k' if($lfcd[$cndx] eq ' '); # Simp supporting space black fg for SDL
-        $lbcd[$cndx] = 'k' if($lbcd[$cndx] eq ' '); # Simp supporting space black bg for SDL
-        $lfcd[$cndx] = 'M' if($lfcd[$cndx] eq 'P'); # remap P=>M,p=>P,y=>O
-        $lfcd[$cndx] = 'P' if($lfcd[$cndx] eq 'p'); # remap P=>M,p=>P,y=>O
-        $lfcd[$cndx] = 'O' if($lfcd[$cndx] eq 'y'); # remap P=>M,p=>P,y=>O
+        $lfcd[$cndx] = 'k' if(defined($lfcd[$cndx]) && $lfcd[$cndx] eq ' '); # Simp supporting space black fg for SDL
+        $lbcd[$cndx] = 'k' if(defined($lbcd[$cndx]) && $lbcd[$cndx] eq ' '); # Simp supporting space black bg for SDL
+        $lfcd[$cndx] = 'M' if(defined($lfcd[$cndx]) && $lfcd[$cndx] eq 'P'); # remap P=>M,p=>P,y=>O
+        $lfcd[$cndx] = 'P' if(defined($lfcd[$cndx]) && $lfcd[$cndx] eq 'p'); # remap P=>M,p=>P,y=>O
+        $lfcd[$cndx] = 'O' if(defined($lfcd[$cndx]) && $lfcd[$cndx] eq 'y'); # remap P=>M,p=>P,y=>O
         if(ord($ltxd[$cndx]) > 255){ # maybe should be 128 or just skip few needed escapes?
           my   @frgb = split(//,$lmap{$lfcd[$cndx]}); for(@frgb){$_ = b10($_)*4;}
           my   @brgb = split(//,$lmap{$lbcd[$cndx]}); for(@brgb){$_ = b10($_)*4;}
@@ -774,9 +774,12 @@ sub DrawBord{$scal=int(($hite-2)/8) if($scal*8+2 > $hite); # don't scale beyond 
                                      #size => 16, x => 0, y => 0, h_align => 'left', shadow => 1, bold => 1, text => $ltxd[$cndx],  # other Text->new atrbutz
              $sttf->write_xy($sfss,$cndx*8,$lndx*16,$ltxd[$cndx]);
         }else{
-          unless(exists($sprm{$ltxd[$cndx] . $lfcd[$cndx] . $lbcd[$cndx]})){ # could eventually add f0nt V8 field, scales, pal8s, etc.
-            my @frgb = split(//,$lmap{$lfcd[$cndx]}); for(@frgb){$_ = b10($_)*4;}
-            my @brgb = split(//,$lmap{$lbcd[$cndx]}); for(@brgb){$_ = b10($_)*4;}
+          $ltxd[$cndx] = '-' unless(defined($ltxd[$cndx])); # originally `rs4` minimal 40x12 term dimensions could spew many undef warningz in this block
+          $lfcd[$cndx] = 'k' unless(defined($lfcd[$cndx]));
+          $lbcd[$cndx] = ' ' unless(defined($lbcd[$cndx]));
+          unless(exists($sprm{$ltxd[$cndx] . $lfcd[$cndx] . $lbcd[$cndx]})){my @frgb;my @brgb; # could eventually add f0nt V8 field, scales, pal8s, etc.
+            if  (exists($lmap{$lfcd[$cndx]})){@frgb = split(//,$lmap{$lfcd[$cndx]}); for(@frgb){$_ = b10($_)*4;}}
+            if  (exists($lmap{$lbcd[$cndx]})){@brgb = split(//,$lmap{$lbcd[$cndx]}); for(@brgb){$_ = b10($_)*4;}}
             $sprm{      $ltxd[$cndx] . $lfcd[$cndx] . $lbcd[$cndx]} = SDLx::Sprite->new(width => 8,height => 16 );
             $sprm{      $ltxd[$cndx] . $lfcd[$cndx] . $lbcd[$cndx]}->surface->draw_rect([    0,    0,      8,16 ],[@brgb,255]);
             for   my $rndx (0..15){ # Row   iNDeX

@@ -1,5 +1,5 @@
 # Octology
-The ontology of 8. `$VERSION='0.0';$d8VS='I98MESHO';`
+The ontology of 8. `$VERSION='0.0';$d8VS='I9AMKRAD';`
 
 This is basically a public preview of my early development files. I am not yet ready for serious collaboration, but welcome any sorts of feedback.
 
@@ -31,24 +31,30 @@ If your paths and Perl environment are setup similarly, to gain a bearing on fun
 ![Octology-g3Ob-shot_1614x952-I8QMCFLC](https://github.com/pip/Octology/raw/master/gfx/sho/Octology-g3Ob-shot_1614x952-I8QMCFLC.png "Octology-g3Ob-I8QMCFLC")
 ![Octology-calN-shot_1294x914-I46MK8B8](https://github.com/pip/Octology/raw/master/gfx/sho/Octology-calN-shot_1294x914-I46MK8B8.png "Octology-calN-I46MK8B8")
 
-### Great Thanks, Appreciation, and Gratitude
-I would mainly like to thank all the developers who have ever contributed to:
+### Great Thanks, AppreC8ion, and Gratitude
+I'd first like to thank every p8ient Chess player who endured me logging personal matches in ckm8, then thank you to all developers who ever contributed to:
 
   * YouTube, youtube-dl, kpcli, SlowCat.pl, Screeps,
   * git, gst123, figlet, zinf, Vim, FLAC, cdparanoia,
-  * original authors of MS-DOS .com files before .f0nt,
-<!-- 2du:make links out of all listed -->
+  * original makers of MS-DOS .com files before .f0nt,
+<!-- 2du:add best URLs around all thanked projects-->
 
   * Perl, Curses, SDL, GNU, Linux, Ubuntu, Compiz,
   * Irssi, FireFox, Chrome, Zsh, GMail, DuckDuckGo,
-  * Gnome-Terminal, PulseAudio, Erno: Rubik, AMD, etc.
+  * Gnome-Terminal, PulseAudio, Erno: Rubik,AMD,etc.
+
+More thanks go out to all of the competitive, cooper8ive, casual, etc. game players who have ever particip8d in versions of Go, Chess, Screeps, or Rubik's Cube
+  descriptions, demonstr8ions, discussions, groups, or gatherings.
+
+Also all cards, dominoes, and dice game players who have ever lived contributed (at least indirectly) to my gr8st sources for communal educ8ion and inspir8ion.
+  Good games! GoGo gamers! Grow gr8ful! Grip gratitude!
 
 If I have failed or in any way improperly identified any other entity who is deserving of better credit and recognition, please recognize this as unintentional
   and let me know the best way to remedy it.
 
 ### Forgive Some Self-Promotion
 If you are willing to fund this development effort, please visit my [Patreon](https://patreon.com/PipStuart "Pip's Octology Patreon Page")
-  and feel free to send me the **Top8** new features you want most.
+  and feel free to send me the **Top** new fixes and fE8ures you would want most.
 
 Please also contact me if you are an open-minded thinker interested in any conversation or friendship (especially near Oshkosh, Wisconsin).
 
@@ -75,4 +81,4 @@ If I ever become unable to continue developing this project further, my hope is 
 ![Octology-tstc-shot_1614x902-HB4M8jYm](https://github.com/pip/Octology/raw/master/gfx/sho/Octology-tstc-shot_1614x902-HB4M8jYm.png "Octology-tstc-HB4M8jYm")
 ![Octology-dic8-shot_1614x902-HAOM900M](https://github.com/pip/Octology/raw/master/gfx/sho/Octology-dic8-shot_1614x902-HAOM900M.png "Octology-dic8-HAOM900M")
 
-P.S. I also hope that someday any of the above could be seen as logical UTF-8 or ASCII art, or at least inspire bits of those. I'd like them all even nicer;
+P.S. I also hope someday aspects of the above shots could be seen as logical UTF-8 or ASCII art, or at least inspire bits of it. I'd like all modified nicer;
