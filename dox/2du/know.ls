@@ -402,13 +402,14 @@ HTTPS://YouTu.be/xHHb7R3kx40 "Why fascism is so tempting -- && how your d8a coul
 #   interesting hologram conveying TED talk on seductive vain mirror of fascism with n8ion as supreme, democracy threatened by central d8a overpowering, etc.;
 # It seems that the OpenAI project (also just subscribed to) as well as my public GitHub intentions for Octology are to democr8ize d8a && useful manipul8ions.
 # Authoritarian dict8orships with inform8ion && biotechnology feeding machine learning AI may swing concentr8ion as gr8 dominance over distributed comput8ion;
-HTTPS://YouTu.be/r8-3ZnHPgPY "Why You Shouldnt Join Jehovahs Witnesses - Misinterpreted Doctrine" # I77MKNOW:9m43s of Telltale_Atheist elabor8ing criticisms;
+HTTPS://YouTu.be/r8-3ZnHPgPY "Why You Shouldn't Join Jehovah's Witnesses - Misinterpreted Doctrine" # I77MKNOW:9m43s of Telltale_Atheist's elabor8 criticisms;
 l) We have to treat each other like divine centers of consciousness in order for society to work. # I7KMLIFE:Tweeted just now from followed @JBPetersonQuote;
 HTTPS://YouTu.be/u1qvFxEnB3o "Jordan Peterson: Heated Interview w/ Another Leftist Host" # I7LMBDrP:42m of totally excellent new talk which Peterson domin8s;
-HTTPS://YouTu.be/pLem3HXm0Jg "Jordan Petersons Advice is Incomplete..." # 24m of RichardCooper's EntrepreneursInCars channel dealing with...             ...?;
-HTTPS://YouTu.be/KaDAuiLaT2Q "Jordan Peterson Misrepresents Science" # I7SMGkep:14m16s of Drew, the Genetically Modified Skeptic saying  ...             ...?;
-HTTPS://YouTu.be/W7Kk-W86giU "Jordan Peterson | The Responsible Man" # 16m of Thinking-Ape (Stardusk) speaking about duty, oblig8ions,etc...             ...?;
-HTTPS://YouTu.be/E104RsU8dWc "Thoughts on the Sam Harris && Jordan Peterson Deb8s" # 8m25s of JonathanPageau addressing SamHarris' deb8  ...             ...?;
+HTTPS://YouTu.be/pLem3HXm0Jg "Jordan Peterson's Advice is Incomplete..." # 24m of RichardCooper's EntrepreneursInCars channel on Dr.P's "Oneitis" wife Tammy;
+HTTPS://YouTu.be/KaDAuiLaT2Q "Jordan Peterson  Misrepresents Science" # I7SMGkep:14m16s of Drew (GMSkeptic) illumin8ing Dr.P misrepresent8ion && fabric8ions;
+HTTPS://YouTu.be/eKwSDqJAum8 "4 Ways Quacks Manipul8 Their Audiences" # I8UMGkep:14m36s of Drew delving into Dr.P's usage of narr8ives && other manipul8ions;
+HTTPS://YouTu.be/W7Kk-W86giU "Jordan Peterson  | The Responsible Man" # I79MANSD:16m11s of StarDusk (Thinking-Ape) on Dr.P's responsibility to warn men more;
+HTTPS://YouTu.be/E104RsU8dWc "Thoughts on the Sam Harris && Jordan Peterson Deb8s" # 8m25s of JonathanPageau...? (l8r sumRIzJP's thotz onJBP aftrCingDb8z1st);
 HTTPS://YouTu.be/3fG-1kK96zU "ICMI'18 Karen Straughan" # I82MAKar:56m42s of gr8 talk about women needing to dismantle feminism then a solidly detailed Q && A;
 # I87MDeed:Just started watching JosephCampbell's 1988 ThePowerOfMyth beginning on HeroOf1000Faces typified by deeds of gr8 physical or spiritual achievement.
 #   Often deed is to slay a monster, save life, sacrifice, rescue or quest for father, etc. with common triple-tempt8ion && then teaching of chosen disciples.
@@ -440,3 +441,21 @@ HTTPS://YouTu.be/8vlyhnYeRoY "9 BANNED BOOKS Amazon Has Started Modern Book Burn
 #   these times, curious that juncture of Alex Jones, this file started around what to know from "Jo" B. Peterson, && 44 hero Elon Musk on Rogan,loc8d Baden,
 #   then noticed Adria as LindsayShepherd's lying accuser Diversity&&EquityStaff? StarCouncil? at WilfridLaurierUniversity for showing class gr8 Dr.Peterson;
 # Next I would guess his newly discovered middle initial "B." expansion name may be pronounced almost precisely like the past-tense of I9A Inflamm8 9 Amazon;
+HTTPS://YouTu.be/FUD8h9JpEVQ "Does Hollywood ruin books?" # I9BM9FRY:13m of Hannah Fry for Numberphile explaining false impressions of neg8ive d8a correl8ion.
+# After 4 minutes && 8 seconds into the video, Fry mentions an important research paper by Joseph (yet another) Berkson evalU8s hospital d8a analysis limits;
+HTTPS://YouTu.be/bJTSxRBbCQA "Casually Explained: Memes" # I9BM9mem:8m (exactly, after long outro padding) gives gr8 meme history explan8ion && demonstr8ion;
+# I9BMCAGo:Another curiously coincidental word, game, name, && service is (description copied from DuckDuckGo) Amazon Go, 2 partially-autom8d grocery stores;
+HTTPS://YouTu.be/Mc_ENmvKoV8 "Jordan Peterson: What Talking to Sam Harris Made Me Realize in the Past Few Months" # I9BMM8hi:13m19s gr8 revL8ions from deb8s;
+HTTPS://YouTu.be/A9AyyEgmfsI "Jordan Peterson h8r Destroyed" # I9GMDJBP:27m43s of ThinkClub illumin8ing Dr. Peterson's moral actionable Darwinian truth being
+#   higher than embedded scientific objective truth arguments as essential for ethical survival of our species, which r8ionalityRules misses or misrepresents;
+HTTPS://YouTu.be/d-Z9EZE8kpo "01 Harris/Weinstein/Peterson Discussion: Vancouver" # I9GMDisc:2h06m30s starts on conceptual points of agreement then conflict;
+HTTPS://YouTu.be/BtkwF5qA6uE "02 Harris/Weinstein/Peterson Discussion: Vancouver" # I9GMGr8D:2h16m23s steel-manning then elabor8ing into metaphorical truths;
+HTTPS://YouTu.be/ZZI-FwSQRn8 "03 Harris/Murray   /Peterson Discussion: Dublin   " # I9KMJewC:1h58m18s ?; # diverted onto following important "I don't know!";
+HTTPS://YouTu.be/YfdaAGZvYsA "04 Harris/Murray   /Peterson Discussion: London   " # I9KM????:1h56m15s ?; # maybe all the "*K" in l8st 8plc indic8 2day gpom?;
+HTTPS://YouTu.be/AP_Q6JqFMf0 "GOD vs NO GOD - && the Winner Is?" # I9KMIPOS:20m2s of Dr.DavidEagleman talking at PopTech 2010 on scientific "Possibilianism";
+# The process which transforms from a good Heaven toward an evil Hell of maximal suffering might be an embodied personality that's actually even deeper Hell;
+# Kant suggested the meD8ing structure between pure r8ionality && empiricism is perceptual elev8ion of facts into values, but is inadequ8 if just 1 or other;
+  I9KMKosh:In "03 H/M/P Discuss: Dub" before 1h10m Dr.P maybe paraphrased says: "I'm *NOT* saying that that interpretive structure is infallible. It clearly
+    isn't, && neither is the process that gives rise to it. You see this, for example, in conditions like manic depressive disorder with religious delusions
+    or schizophrenia. What you see in those situ8ions is a pathologiz8ion of that overlay of meaning. That can clearly happen!" which may pertain much to me?
+  P:"What do we do about that?" H:"r8ionality!" ... P:"Playing games is found8ional which are old && deeper than pure top-down r8ionality." H:"Adult narr8.";

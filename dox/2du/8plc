@@ -9,7 +9,7 @@
 #   mk sepR8 tabul8ion of 8-words used in l8r document8ion wi not8ion 4thOs not yet included in top lists (thN optn2ignor easy conjug8ions && pre/suffixes),
 #   mk easy optn4 fulc 2use 1colm 4grep,add 4m@d percNtz,stuD wc && mk a8:cnt8/8c wi fulc -f? && 8plc as -l? optnz(rEdo hedrtXt),colr letrz,add f0ntz4 8trm;
 use strict;use warnings;use utf8;use v5.10;use Octology::a8;use Octology::b8;
-my $d8VS='I98MBigP';my $clrf=1;my $fulf=0;my $argz='';$argz= join(' ',@ARGV) if(@ARGV);my $Stxt='';my $Smap='';my $folf=0; # add 4-Or-Less-Flag
+my $d8VS='I9BMB91k';my $clrf=1;my $fulf=0;my $argz='';$argz= join(' ',@ARGV) if(@ARGV);my $Stxt='';my $Smap='';my $folf=0; # add 4-Or-Less-Flag
 my $edVS=        '';my $pg1f=0;   $pg1f=1 if($argz=~ /(^|\s)-?-?[^p]*p/i); # find -?p(age) flag2limit some extra long output to first 48-line page
 my $clmz=        80;my $lpsf=0;   $lpsf=1 if($argz=~ /(^|\s)-?-?[^l]*l/i); # find -?LetrPrecursShortsFlag  # if MaXWordSize evr grOz,wil nEd2incrEs|Dtct
 my $linz=        24;my $gm8f=0;   $gm8f=1 if($argz=~ /(^|\s)-?-?[^g]*g/i); # find -?g(m8r) flag2count&&adorn wi math 4mUl8ions stRting wi 2letr
@@ -25,12 +25,12 @@ if($argz=~ /(^|\s)-?-?[^h]*h/i){$Stxt.=" $0 - 8.txt Precursor Letter Counter d8V
   s   - print below options as just plain text (Strip default eScape color codes,like running `$0 | sS` strip eScape post-process);
   p   - print below options as limited to just first $lnmx-line Page instead of default everything (fixed 160x50 single Pages work for -l -w -g);
   a   - print All extra options below (like calling `$0 lwgf`)   (with -p limiting most sections to  160x50 just 1 Page of output for each);
-  l   - print Letters of precursors sorted by size with colors     (with -p only printing up to z 110 and cutting off before c 142 as 1 Page);
-  w   - print Words sorted by size up to current maximum of 19     (with -p only printing from  2 to  8 for just first $lnmx-line Page);
-  g   - print gM8ria 'Gematria' word valU8ions in aligned sections as preliminary trial of a few short approaches to some numerology;
-  f   - print Full character counts (l8r extract to a8:cnt8 && `8c` like `wc`) (-c Clear Center Colors from -g map for Clean Counts);
-# Note:present matching K,1k,2K,3K, 5th group dpv of 35 is same number as all PrecLetrs, 4th gm 2x 55 = 3rd Etz 110, count pattern: odd,Even,ooEEE,ooEEE,
-#   && lowest 6 of 12 counts 1,2,3,7,8,16 all match for some 2**n(-1)? while the big half 20,35,55,110,148,212 all departed early binary threshold trend;\n";
+  l   - print Letters of precursors sorted by size with colors     (with -p only printing up to z 110 and cutting off before c 148 as 1 Page);
+  w   - print Words sorted by size up to current maximum of 19     (with -p only printing from  2 to  8 for just showing first  $lnmx-line Page);
+  g   - print gM8ria 'Gematria' word valU8ions in aligned sections as preliminary trial of a few short approaches to some numerology; # just early explor8ion
+  f   - print Full character counts (l8r extract to a8:cnt8 && `8c` like `wc`) (-c Clear Center Colors from -g map for Clean Counts); * 1k below is lowercase
+# Note:now matching K,1k*,2K,3K, 6th bsu 20 + 5th largest size (same as total PrecursLetter count) dpv 35 = 4th gm 55 2x = 3rd Etz 110,size count pattern:
+#   odd,Even,ooEEE,ooEEE, && low 6 of 12 counts 1,2,3,7,8,16 all match for some 2**n(-1)? while the big half 20,35,55,110,148,212 all away from 2xxN(-1)?;\n";
   if(20 < $clmz && $clmz < 160){my @htxt=split(/\n/,$Stxt);$Stxt='';my $lsiz;my $tokn;for(@htxt){$lsiz=0;while(s/^(\s*\S+)//){$tokn=$1; # smRt split Help tXt
         if($lsiz + length($tokn) > $clmz){$Stxt.="\n" . (' ' x 8);$lsiz=8;$tokn=~ s/^\s+//;} $Stxt.=$tokn;$lsiz+=length($tokn);} $Stxt.="\n";}}o8($Stxt);exit;}
 my $efyl ='8.txt';my @lcnt;$lcnt[$_]=0 for(0..b10('z'));my @acnt;$acnt[$_]=0 for(0..b10('z'));my $donw=0;my $t0tl=0;my $text;my $actx;my $sclc;my $gttl=0;
@@ -243,6 +243,7 @@ if($gm8f){$Stxt.="${W}Gener8 gM8ria primes for names by$B 3$W segments (${Y}PreL
   my @jmls=(split(//,'czltnErgmdpvbsuCDLNRUVGfxBhkwIMPOSy'));%jmap=();my $A=S('A');my $D=S('D'); # cycljoystkdirzfrm dn clkwIs aroun,mAnEd2rEordrl8rloopz4wIndz
   my @jmcl=(split(//,'YoYoYoYoGMMMMGGGCCCCRRRRBBBBzzzzKKr'));%clrm=(); # JoystickMapColorsList
   my %sepm=();my $bwid=53;my $shsf=1;my $boff;my $jbnx;my $prlt;my $rosl;my $hbwd;my $stal;my $s=5;my $t=' ' x $s;my $bhwd=int($bwid/2);my %pwsf; #PrntdWzSoFar
+# maybe here should branch off detecting $ENV{'COLUMNS'} being less than 160 to try to just expand the middle-map to be illustr8ive for target 80x25 standard
   for   my $pndx (0..$#jmls){$jmap{$jmls[$pndx]}=$pndx;$clrm{$jmls[$pndx]} =S($jmcl[$pndx]);} #'z' try2gNr8 rvrs lookup of pre-letters to indices && CoLoRMap
   for   my $wsiz (2..$mxws ){my @folk=sort(keys(%{$folc[$wsiz]})); # if disabling the suffixes, the percentage covered only bumps up to about 71% 926 shown
     for my $fndx (0..$#folk){my $curw=$folk[$fndx]; # should be able to set SHowSuffixFlag to zero to disable suffix inclusion again whenever easily now

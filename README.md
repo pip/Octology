@@ -1,5 +1,5 @@
 # Octology
-The ontology of 8. `$VERSION='0.0';$d8VS='I9AMKRAD';`
+The ontology of 8. `$VERSION='0.0';$d8VS='I9KMLeft';`
 
 This is basically a public preview of my early development files. I am not yet ready for serious collaboration, but welcome any sorts of feedback.
 
@@ -41,7 +41,7 @@ I'd first like to thank every p8ient Chess player who endured me logging persona
 
   * Perl, Curses, SDL, GNU, Linux, Ubuntu, Compiz,
   * Irssi, FireFox, Chrome, Zsh, GMail, DuckDuckGo,
-  * Gnome-Terminal, PulseAudio, Erno: Rubik,AMD,etc.
+  * Gnome-Terminal, PulseAudio, ErnöRubik, AMD, etc.
 
 More thanks go out to all of the competitive, cooper8ive, casual, etc. game players who have ever particip8d in versions of Go, Chess, Screeps, or Rubik's Cube
   descriptions, demonstr8ions, discussions, groups, or gatherings.
@@ -54,7 +54,7 @@ If I have failed or in any way improperly identified any other entity who is des
 
 ### Forgive Some Self-Promotion
 If you are willing to fund this development effort, please visit my [Patreon](https://patreon.com/PipStuart "Pip's Octology Patreon Page")
-  and feel free to send me the **Top** new fixes and fE8ures you would want most.
+  and feel free to send me the **Top** new fixes and features you would want most.
 
 Please also contact me if you are an open-minded thinker interested in any conversation or friendship (especially near Oshkosh, Wisconsin).
 
@@ -81,4 +81,4 @@ If I ever become unable to continue developing this project further, my hope is 
 ![Octology-tstc-shot_1614x902-HB4M8jYm](https://github.com/pip/Octology/raw/master/gfx/sho/Octology-tstc-shot_1614x902-HB4M8jYm.png "Octology-tstc-HB4M8jYm")
 ![Octology-dic8-shot_1614x902-HAOM900M](https://github.com/pip/Octology/raw/master/gfx/sho/Octology-dic8-shot_1614x902-HAOM900M.png "Octology-dic8-HAOM900M")
 
-P.S. I also hope someday aspects of the above shots could be seen as logical UTF-8 or ASCII art, or at least inspire bits of it. I'd like all modified nicer;
+P.S. I also hope someday aspects of the above shots could be seen as logical UTF-8 or ASCII art, or at least inspire bits of it. I'd like more improvements;

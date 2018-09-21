@@ -606,10 +606,10 @@ alias s2du='pu ~/dox/2du;export TERM="xterm";scrn -S 2du -t 2du     e  2    ;exp
 alias sirc='ct "irssi"  ;scrn -S irc -t irc irssi       ;  ';alias si='sirc';  # don't need -c IRC.Perl.Org or -n Pip since specified in ~/.irssi/config now
 #lias s2du='pu ~/dox/2du;scrn -S 2du -t 2du     e  2    ;po';alias s2='s2du';  # reverted to exporting TERM=xterm around s2 2mk vim statusbar dRk AgN
 alias s28x='pu ~/dox/2du;scrn -S 8xt -t 8xt     e  8    ;po';alias s28='s28x'; # s8 is already aliased to sort; weird that e 8 didn't have e 2 problM
-alias sb8a='pu ~/dox/2du;scrn -S b8a -t b8a     e b8a.ls;po';alias sb='sb8a';
-alias sdvl='pu ~/dvl    ;scrn -S dvl -t dvl             ;po';alias sd='sdvl';
-alias smuz='pu ~/muz    ;scrn -S muz -t muz             ;po';alias sm='smuz';
-alias srut='pu  /etc    ;scrn -S rut -t rut sudo  -E zsh;po';alias sr='srut';
+alias sb8a='pu ~/dox/2du;scrn -S b8a -t b8a     e b8a.ls;po';alias sb='sb8a';  # below just list:  (Annihil|Deso|Domin|InitE|Obliter)8
+alias sdvl='pu ~/dvl    ;scrn -S dvl -t dvl             ;po';alias sd='sdvl';alias ob8='pu ~/muz/U2b;l            obs/*ate_* Ob*ate_*;po';
+alias smuz='pu ~/muz    ;scrn -S muz -t muz             ;po';alias sm='smuz';alias ob=' pu ~/muz/U2b;scrn -S muo -t muo 3 **/Ob*     ;po';
+alias srut='pu  /etc    ;scrn -S rut -t rut sudo  -E zsh;po';alias sr='srut';alias Ob=' ob';alias Ob8='ob8';
 alias sx='  scrn -x '; # study screenie && mk my own version?
 #lias g3='   gst123 '; # replaced by Xpct XperimNt
 alias m3='   mpg123 '; # replace  wi Xpct l8r too
@@ -934,7 +934,7 @@ wh8()   {  LP_F='0'; # same as wh8ch BlO but wi 8rows flipd2 8columns,othrwIz ve
   # 2du:contMpl8 adng au, agr, && ee ene around en;
   if       [[ "$#" -gt   0 && "${(L)1}" =~  h  ]]; then echo -n " wh8 - show WHich primary single b64 && other valued commands by:$auth vers:$vers d8VS:$d8VS;
   h  - print out this basic Help text message then return; Any parameter other than h right now just strips colors && SGR attributes out;";return 0;fi
-  for B64N in 0 8 G O W e m u   1 9 H P X f n v   2 A I Q Y g o w   3 B J R Z h p x   4 C K S a i q y   5 D L T b j r z   6 E M U c k s '.'   7 F N V d l t '_'   mk sz pu po pdoc ka pe  pa pla plb pab ag  drkh gg dv ac acs apts  auu aar ai dirz ic  s8 d2u u2d del copy move attrib  s8n grp asci utf8 u8 CC CCC cls  eg zg hX k9 pp lS mo md rd  dm ct chm cho chg chr chs chf cht  mnt umnt bk c8 zc d8 fp  fixfont g8 gaa gcm gac  gacm gpom caln l8 sl calq calQ cln  cl comma hd dif loc8 dic zp ud  updb upd8db up updt uptm ec en  uni cncl tl tp wd pw pn pb msg  ren wh lsm lsc lsp lsu xical S8  srchl shlp shl sho  p47 a7 rr tt tf gtt viii  lc chv0 v8  uc chv7 ss  wmc resp ctor scrn sx gt  xt st uxtrm uxt lxt  lxtrm satrm sak tn8r  xf4t rox Etrm  x4t rxt Et un ev pl  xbk xb xbsf kp   xdt s2 s28 sb sd si  au agr; do
+  for B64N in 0 8 G O W e m u   1 9 H P X f n v   2 A I Q Y g o w   3 B J R Z h p x   4 C K S a i q y   5 D L T b j r z   6 E M U c k s '.'   7 F N V d l t '_'   mk sz pu po pdoc ka pe  pa pla plb pab ag  drkh gg dv ac acs apts  auu aar ai dirz ic  s8 d2u u2d del copy move attrib  s8n grp asci utf8 u8 CC CCC cls  eg zg hX k9 pp lS mo md rd  dm ct chm cho chg chr chs chf cht  mnt umnt bk c8 zc d8 fp  fixfont g8 gaa gcm gac  gacm gpom caln l8 sl calq calQ cln  cl comma hd dif loc8 dic zp ud  updb upd8db up updt uptm ec en  uni cncl tl tp wd pw pn pb msg  ren wh lsm lsc lsp lsu xical S8  srchl shlp shl sho  p47 a7 rr tt tf gtt viii  lc chv0  uc chv7  ss  wmc resp ctor scrn sx gt  xt st uxtrm uxt lxt  lxtrm satrm sak tn8r  xf4t rox Etrm  x4t rxt Et un ev pl  xbk xb xbsf  kp   xdt s2 s28 sb sd si  au agr; do
  # crmm='chromium-browser  ';alias crom=' google-chrome         ';alias epip='epiphany';alias aror='arora';alias dilo='dillo';alias lnx2='links2';
  # brav='brave';brvb='brave';alias brv='brave';alias bb='brvb';alias irc='irssi'; # prEferprv8bb&&ffmornow
  # 2lo=' perl -e "rename(\$_,lc) for @ARGV"'; # orig fIlnAm lOwrcAsng 1-lInr was ~/bin/tolo thN as 2lo but mAB zsh func can't stRt wi '2'? Alias workz tho!
@@ -962,7 +962,7 @@ wh8()   {  LP_F='0'; # same as wh8ch BlO but wi 8rows flipd2 8columns,othrwIz ve
     if     [[ $B64N =~                                ^(pb|zg|wd|lsm|lsu|srchl|shl|resp|ctor|tt|lc|uc|wmc)$ ]] ||
            [[ $B64N =~ ^[OPQRSTUV]$ ]] || [[ $B64N =~ ^(pu|pla|plb|drkh|auu|del|mo|chm|chg|ct|caln|dif|loc8)$ ]] &&
            [[ "$COLUMNS" -lt 160    ]] || [[ $B64N =~ ^(pe|apts|ag|ic|attrib|cls|rd|cht|fp|gac|cln|ud|en|msg|sho|viii|[Sv]8|ss)$ ]] ||
-           [[ $B64N =~ ^[uvwxyz._]$ ]] || [[ $B64N =~ ^(gt|lxt|tn8r|Etrm|pl|kp|agr)$ ]]; then echo $z;fi;done}
+           [[ $B64N =~ ^[uvwxyz._]$ ]] || [[ $B64N =~ ^(gt|lxt|tn8r|Etrm|pl|kp|agr|chv7|xbsf)$ ]]; then echo $z;fi;done}
 wh8ch() { # see which most basic 64 single-character commands are mapped to what (majority being aliases, then just a few built-in or not yet found commands)
   for B64N in 0 1 2 3 4 5 6 7  8 9 A B C D E F  G H I J K L M N  O P Q R S T U V  W X Y Z a b c d  e f g h i j k l  m n o p q r s t  u v w x y z '.' '_'; do
     if     [[ "$#" -eq   0          ]]; then echo -n `S $B64N`; # BlO set to dark wHITE for invisibly dark BLACk b64 number to color (leave bLUE 4now)

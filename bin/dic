@@ -18,7 +18,7 @@
 #web1913 gcide wn foldoc jargon vera devil elements easton hitchcock bouvier gazetteer gaz2k-zips gaz2k-places gaz2k-counties moby-thesaurus
 # HC2LNewD:fixd `d BLT` to properly Decode UTF-8 double-quotes from dict && noted also qw(server reverse reserve severer)=~ s/e//g; # srvr rvrs rsrv svrr;
 # Currently, the only special pRameter that `dic` swallows 4 itself is lone '-w' which design8s any dFinitions should be formatted as *NOT* default Wide mode.
-use strict;use warnings;use utf8;use v5.10;use Encode;my $VERSION='0.0';my $d8VS='HC9LHUNT'; # orig from TeST Substitute Input,now XtNded d8 util,l8r c8 IF?
+use strict;use warnings;use utf8;use v5.10;use Encode;my $VERSION='0.0';my $d8VS='I9BMLadj'; # orig from TeST Substitute Input,now XtNded d8 util,l8r c8 IF?
 use Octology::a8;my $word='';my $wclr=S('Wr');my $logd="$ENV{'HOME'}/.log";my %dlog; # setup global word colr SKp && LogDirectory && DicLog hash
 use Octology::d8;my $Stxt   ;my $eclr=S('Yf');my $widf=1  ; # BlO hopefully strips -w param 2flag disabling dflt wide-mode or load $word 4l8r colr8ion if!flag
 my $cw=160;$cw=$ENV{'COLUMNS'} if(exists($ENV{'COLUMNS'})); # try to setup potentially wider ColumnWidth for when attempting to join shorter linez
@@ -90,9 +90,10 @@ if(0){ # alignment attempt introducez trailing newlinez && sometimez skipz over 
       $Stxt=~ s/(;)/$C$1$G/g; # this ruined SKpz when done l8r
       $Stxt=~ s/(Collaborative)( International)( Dictionary)( of)( English)/$C$1$M$2$W$3$c$4$Y$5/g; # doing this early so *ative can do 8-word colr BlO
   if(length($word)){
-      $Stxt=~ s/($word +)(imp|vb|v|t|i|n|p|pr|cf|fr|a|adv)( +)(1: +)/$1$R$2$3$C$4/gi; # try 2 catch pRt-of-sPch && 1st dFinition num aftr WN word (&& ignrcAs2)
+      $Stxt=~ s/($word +)(imp|vb|v|t|i|n|p|pr|cf|fr|a|ad[jv])( +)(1: +)/$1$R$2$3$C$4/gi; # try2catch pRt-of-sPch&&1st dFinition num aftr WN word (&& ignrcAs2)
       $Stxt=~ s/($word)/$wclr$1$z$G/gi;} # colr looked-up word (if Dtectd) && BlO colr tail of most comon 8-words 4 distinction (some m@chd pronunC8s wil difr)
       $Stxt=~ s/(\w)((reat|ated?|atron|(ait|[ae]ight|at\B))(en|est|ant|or|ure|ize?)?(ed|i(ng|ve|ons?a?l?y?|ous))?(istic|ment|ly|s)?)(\W|$)/$1$eclr$2$z$G$9/gi;
+      $Stxt=~ s/(\w)(aight(forward)?)(\W|$)/$1$eclr$2$z$G$4/gi; # special case on sepR8 line here because above was already right up against right 158 columns
 if(   $Stxt=~  /^(\d+) definition(s)? found/       ){my $dFct=$1;my $dFst=' dFinitN';$dFst.='z' if(defined($2)); # tried2add non-word Boundary aftr at
       $Stxt=~ s/^\d+ definitions?( found)/$C$dFct$Y$dFst$M$1$G/;}
 if(   $Stxt=~  /(\n +?)(\d+) Moby Thesaurus words/ ){my $MTct=$2;my $MTin=$1;chop($MTin) if(length($2) > 2);
