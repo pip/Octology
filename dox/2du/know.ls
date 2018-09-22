@@ -1,5 +1,5 @@
 # HBQLISTV:know.ls crE8d by PipStuart <Pip@CPAN.Org> to duplic8 Dr. Jordan B. Peterson's Quora.Com answer of "40 most valuable things everyone should know";
-# $VERSION='0.0';$d8VS='I9AMJone'; # 2du:start chronicling Dr. Peterson's many topical videos with new section for post-title subject summaries or explor8ion;
+# $VERSION='0.0';$d8VS='I9LMKNOW'; # 2du:start chronicling Dr. Peterson's many topical videos with new section for post-title subject summaries or explor8ion;
 0) Tell the truth.
 1) Do not do things that you h8.
 2) Act so that you can tell the truth about how you act.
@@ -455,7 +455,9 @@ HTTPS://YouTu.be/YfdaAGZvYsA "04 Harris/Murray   /Peterson Discussion: London   
 HTTPS://YouTu.be/AP_Q6JqFMf0 "GOD vs NO GOD - && the Winner Is?" # I9KMIPOS:20m2s of Dr.DavidEagleman talking at PopTech 2010 on scientific "Possibilianism";
 # The process which transforms from a good Heaven toward an evil Hell of maximal suffering might be an embodied personality that's actually even deeper Hell;
 # Kant suggested the meD8ing structure between pure r8ionality && empiricism is perceptual elev8ion of facts into values, but is inadequ8 if just 1 or other;
-  I9KMKosh:In "03 H/M/P Discuss: Dub" before 1h10m Dr.P maybe paraphrased says: "I'm *NOT* saying that that interpretive structure is infallible. It clearly
-    isn't, && neither is the process that gives rise to it. You see this, for example, in conditions like manic depressive disorder with religious delusions
-    or schizophrenia. What you see in those situ8ions is a pathologiz8ion of that overlay of meaning. That can clearly happen!" which may pertain much to me?
-  P:"What do we do about that?" H:"r8ionality!" ... P:"Playing games is found8ional which are old && deeper than pure top-down r8ionality." H:"Adult narr8.";
+I9KMKosh:In "03 H/M/P Discuss: Dub" before 1h10m Dr.P maybe paraphrased says: "I'm *NOT* saying that that interpretive structure is infallible. It clearly
+  isn't, && neither is the process that gives rise to it. You see this, for example, in conditions like manic depressive disorder with religious delusions
+  or schizophrenia. What you see in those situ8ions is a pathologiz8ion of that overlay of meaning. That can clearly happen!" which may pertain much to me?
+P:"What do we do about that?" H:"r8ionality!" ... P:"Playing games is found8ional which are old && deeper than pure top-down r8ionality." H:"Adult narr8.";
+I9LMJone:Interesting that HTTPS://YouTu.be/ZTSo2AQRM6Y "A Letter to Millennials" # 10m32s of DaisyCousens gr8 bleeping elabor8ion of how imm8ure && infantile
+#  triggered snowflakes are with no ground left to stand on, enticing them over to the conserv8ive "dark-side" (with coincidental p8ron PeterAlexanderJones);

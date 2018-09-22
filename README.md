@@ -1,5 +1,5 @@
 # Octology
-The ontology of 8. `$VERSION='0.0';$d8VS='I9KMLeft';`
+The ontology of 8. `$VERSION='0.0';$d8VS='I9MM6Use';`
 
 This is basically a public preview of my early development files. I am not yet ready for serious collaboration, but welcome any sorts of feedback.
 
@@ -24,12 +24,13 @@ If your paths and Perl environment are setup similarly, to gain a bearing on fun
 ##### (*mostly examples matching above*)
 ![Octology-sumb-shot_1614x952-I8QMCLU2](https://github.com/pip/Octology/raw/master/gfx/sho/Octology-sumb-shot_1614x952-I8QMCLU2.png "Octology-sumb-I8QMCLU2")
 ![Octology-tstn-shot_1614x952-HC8L7J3A](https://github.com/pip/Octology/raw/master/gfx/sho/Octology-tstn-shot_1614x952-HC8L7J3A.png "Octology-tstn-HC8L7J3A")
-![Octology-reph-shot_1614x952-I8RM8qV8](https://github.com/pip/Octology/raw/master/gfx/sho/Octology-reph-shot_1614x952-I8RM8qV8.png "Octology-reph-I8RM8qV8")
-<!-- show  tstc short after lsd8 ~ && reso spec HD pre Pi color greps elabor8 aliases,fully amidst reph new crystal clarity layers of some transparency now;-->
+![Octology-8plc-shot_1454x977-I9MM6MMI](https://github.com/pip/Octology/raw/master/gfx/sho/Octology-8plc-shot_1454x977-I9MM6MMI.png "Octology-8plc-I9MM6MMI")
+<!--[Octology-reph-shot_1614x952-I8RM8qV8](https://github.com/pip/Octology/raw/master/gfx/sho/Octology-reph-shot_1614x952-I8RM8qV8.png "Octo-reph-I8RM8qV8")-->
 
 ![Octology-gnp8-shot_1614x902-HBBLKDgD](https://github.com/pip/Octology/raw/master/gfx/sho/Octology-gnp8-shot_1614x902-HBBLKDgD.png "Octology-gnp8-HBBLKDgD")
 ![Octology-g3Ob-shot_1614x952-I8QMCFLC](https://github.com/pip/Octology/raw/master/gfx/sho/Octology-g3Ob-shot_1614x952-I8QMCFLC.png "Octology-g3Ob-I8QMCFLC")
 ![Octology-calN-shot_1294x914-I46MK8B8](https://github.com/pip/Octology/raw/master/gfx/sho/Octology-calN-shot_1294x914-I46MK8B8.png "Octology-calN-I46MK8B8")
+<!-- show  tstc short after lsd8 ~ && reso spec HD pre Pi color greps elabor8 aliases,fully amidst reph new crystal clarity layers of some transparency now;-->
 
 ### Great Thanks, AppreC8ion, and Gratitude
 I'd first like to thank every p8ient Chess player who endured me logging personal matches in ckm8, then thank you to all developers who ever contributed to:
@@ -47,7 +48,7 @@ More thanks go out to all of the competitive, cooper8ive, casual, etc. game play
   descriptions, demonstr8ions, discussions, groups, or gatherings.
 
 Also all cards, dominoes, and dice game players who have ever lived contributed (at least indirectly) to my gr8st sources for communal educ8ion and inspir8ion.
-  Good games! GoGo gamers! Grow gr8ful! Grip gratitude!
+  Good games! GoGo gamers! Grow gratitude! Grip gr8fulness!
 
 If I have failed or in any way improperly identified any other entity who is deserving of better credit and recognition, please recognize this as unintentional
   and let me know the best way to remedy it.
@@ -81,4 +82,7 @@ If I ever become unable to continue developing this project further, my hope is 
 ![Octology-tstc-shot_1614x902-HB4M8jYm](https://github.com/pip/Octology/raw/master/gfx/sho/Octology-tstc-shot_1614x902-HB4M8jYm.png "Octology-tstc-HB4M8jYm")
 ![Octology-dic8-shot_1614x902-HAOM900M](https://github.com/pip/Octology/raw/master/gfx/sho/Octology-dic8-shot_1614x902-HAOM900M.png "Octology-dic8-HAOM900M")
 
-P.S. I also hope someday aspects of the above shots could be seen as logical UTF-8 or ASCII art, or at least inspire bits of it. I'd like more improvements;
+##### (*here's my 3 screens, almost to 4K HD*)
+![Octology-3Obs-shot_5760x1080-I9HMG3Ob](https://github.com/pip/Octology/raw/master/gfx/sho/Octology-3Obs-shot_5760x1080-I9HMG3Ob.png "Octology-3Obs-I9HMG3Ob")
+
+P.S. I also hope someday aspects of above shots might be seen as logical utility UTF-8 or ASCII art, or at least inspire bits of it. I'd like more elabor8ions;

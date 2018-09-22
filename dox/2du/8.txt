@@ -677,7 +677,7 @@ internationaliz8ion:tools to transl8 for I18N the document8ion && applic8ion int
         optimiz8ion:maybe profiling or other mechanisms for optimizing code
      objectific8ion:Object Oriented programming tool (&& maybe summary of analysis on purportedly devaluing human bodies when seen as merely desirable objects)
          orient8   :2D/3D perspective gathering tool to show various zooms && pans to convey contextual position descriptively (even if abstractly)
- l       capsul8   :surrounded, enclosed, pressed together, crowded, confined, coarct8d, or str8ened (from Zoology)
+         capsul8   :surrounded, enclosed, pressed together, crowded, confined, coarct8d, or str8ened (from Zoology)
        encapsul8
        instantE8   :object instantiation
          replic8   :make a separ8 copy             of an object

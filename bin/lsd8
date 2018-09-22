@@ -1,6 +1,7 @@
 #!/usr/bin/perl
 # D94MHThP:lsd8 crE8d by PipStuart <Pip@CPAN.Org> 2XtNsively manipUl8 typical `ls -l` output2convey octal permz,Base64 sizez,d8 stampz,&& many colrz&&f0ntz!
-# 2du:full-screen console on Chun after bkgrnd owner colr && after directory classiFic8ion slashes in `l ~` so Dtect && fix,
+# 2du:fix `l /dev` to handl "crw-rw-rw-  1 root root      1,   5 2018-09-20 13:14:16.717590724 -0500 zero",
+#   full-screen console on Chun after bkgrnd owner colr && after directory classiFic8ion slashes in `l ~` so Dtect && fix,
 #   would be cool to detect && accept piping in && use that to temporarily re-map all a8 export colors && map `S` uses to then `lsd8|subS|lsd8` 2 revamp,
 #   add colr 4 drwxrwxr-t ~/muz/flac/mix like ls with probably just st STICKY,figUr out wich muz subdirz hav prolyUTFchrz th@ caus failUr&&hndl thM,
 #   tw STICKY_OTHER_WRITABLE 00;30;45 /run/(lock|shm) rwt permz on some subdirz,-k tstz just sticky but not sure how to identify other writable yet,
