@@ -245,7 +245,8 @@ if($gm8f){$Stxt.="${W}Gener8 gM8ria primes for names by$B 3$W segments (${Y}PreL
             'N'=>18,'R'=>19,'U'=>20,'V'=>21,'G'=>22,'f'=>23,'x'=>24,'B'=>25,'h'=>26,'k'=>27,'w'=>28,'I'=>29,'M'=>30,'P'=>31,'O'=>32,'S'=>33,'y'=>34);my %clrm;
   my @jmls=(split(//,'czltnErgmdpvbsuCDLNRUVGfxBhkwIMPOSy'));%jmap=();my $A=S('A');my $D=S('D'); # cycljoystkdirzfrm dn clkwIs aroun,mAnEd2rEordrl8rloopz4wIndz
   my @jmcl=(split(//,'YoYoYoYoGMMMMGGGCCCCRRRRBBBBzzzzKKr'));%clrm=(); # JoystickMapColorsList
-  my %sepm=();my $bwid=53;my $shsf=1;my $boff;my $jbnx;my $prlt;my $rosl;my $hbwd;my $stal;my $s=5;my $t=' ' x $s;my $bhwd=int($bwid/2);my %pwsf; #PrntdWzSoFar
+  my %sepm=();my $bwid=53;$bwid=80 if($clmz >= 240);
+  my $shsf= 1;my $boff;my $jbnx;my $prlt;my $rosl;my $hbwd;my $stal;my $s=5;my $t=' ' x $s;my $bhwd=int($bwid/2);my %pwsf; #PrntdWzSoFar
 # maybe here should branch off detecting $ENV{'COLUMNS'} being less than 160 to try to just expand the middle-map to be illustr8ive for target 80x25 standard
   for   my $pndx (0..$#jmls){$jmap{$jmls[$pndx]}=$pndx;$clrm{$jmls[$pndx]} =S($jmcl[$pndx]);} #'z' try2gNr8 rvrs lookup of pre-letters to indices && CoLoRMap
   for   my $wsiz (2..$mxws ){my @folk=sort(keys(%{$folc[$wsiz]})); # if disabling the suffixes, the percentage covered only bumps up to about 71% 926 shown
@@ -272,7 +273,8 @@ if($gm8f){$Stxt.="${W}Gener8 gM8ria primes for names by$B 3$W segments (${Y}PreL
               $jd8a[$jmap{$pltr}][$jrnd].="$clrm{$pltr}$pfix " if($jrnd <  16 && length("$pfix") && # hopefully won't space ahead for l8, r8, g8, etc.
                                                                                  length("$pfix " . sS($jd8a[$jmap{$pltr}][$jrnd])) <= $bwid);}}}}}}
   # while I will want to tabUl8 countz for each blok PL section thN subtract from sIz grup2stRt apNdng lFtOvrz in $M,mIt try cmpUtng && squEzng in2midmap 1st?
-  if      ($clmz <  160){
+  if      ($clmz >= 240){ # want to just extend each secondary 8 lines
+  }elsif  ($clmz <  160){
     $Stxt.="${M}Precursor${Y}Letters${c}in${G}8${D}DirectnsDown${C}CloCkwise$W:${Y}clnr${o}ztEg${G}m$z   \n";                 #   0
     $Stxt.="$z I${R}V${C}L${M}v${C}N${R}U${z}P "; # IVLvNUP zRCMCRz : PLz => colrz                                           #   1  # were old $1 capturz4smthn
     $Stxt.="$z ImpulsIveub ${C}LeftLeap NxtNorth ${z}ParryuPfliP  \n";                                                        #   1
@@ -305,6 +307,7 @@ if($gm8f){$Stxt.="${W}Gener8 gM8ria primes for names by$B 3$W segments (${Y}PreL
     $Stxt.=" " x  9; #${M}disappro${Y}b${G}8${B}ion$z"; # try2sneak last b8 word undr colrd PL blok mapz,was zYGBz           #  15
     $Stxt.="$z wESTw8 $C DownDefenDrop$C RoRight $z MountMovMnt$z \n";                                                        #  15
   }else{
+  # I9NM60ft:started thinking about :se syntax=off to enable vim navig8ion without horrid scrolling lag to elabor8 240x67 or 75?;
     for   my $rndx (0..15){for my $prll (qw(t n E)){$prlt=$prll;$boff=  0; # cud frthr pRamEtrIz propag8d prOgrSn&&zOnsIzs,rthr than such manual
         if         ($prlt eq 't' &&   $rndx >=  11){$prlt=  'u';$boff= 11;}
         if         ($prlt eq 'u' &&   $rndx >=  13){$prlt=  'L';$boff= 13;}

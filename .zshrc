@@ -29,7 +29,7 @@ unsetopt                \
 # auto_pushd            \# setng addz dirz 2 stack wN just normally chngng 2 thM (wich I du not normally lIk or want)
 # ksh_arrays            \# rEmMbr wNwrItng scrptz[or funcz]2include'setopt [localoptions] ksharrays'sO arAzR 0-bAsed(but!glOblBcuzmOst scrptzRstndrdly 1-bAsed)
 # re_____match_____pcre \# mA want2set for Z-SHell scripting RegularExpressions to utilize PerlCompatibility styles && mA insert 'zmodload zsh/(pc)?re(gex)?';
-export vers='0.0';export d8VS='I9MM5Zrs';export auth='PipStuart <Pip@CPAN.Org>'; # above not exporting $b since collidez with sort{$a  <=> $b}
+export vers='0.0';export d8VS='I9RM9CRM';export auth='PipStuart <Pip@CPAN.Org>'; # above not exporting $b since collidez with sort{$a  <=> $b}
 if     [[       "$SHELL"    == "" ]]; then       export SHELL=`  which zsh`;fi # 8sh should parse this && OverId it    # shud `man zshall` /OSTYP 2lern4BlO
 if     [[       "$HOSTNAME" == "" ]]; then       export HOSTNAME=`hostname`;fi #`hostname`retnz fsckd nwlInz\n4CygWinzRxvt... ||smthng els lame  =(
 if     [[       "$HOST"     == "" ]]; then       export HOST="$HOSTNAME"   ;fi;export VERBOSE='1'; # set flag to print debug && status info from system utilz
@@ -574,7 +574,7 @@ alias idmg='identify          ';alias idmv=' idmg     -verbose     '; # ImageMag
 alias ckya='w3m Mail.Yahoo.Com';alias gnuya='gnuyahoo -u=piptigger '; # Ubu brwsrz not in Dflt repoz: Opera Vivaldi (mAB some othrz listed below);
 #lias cktm='w3m HTTP://Time.Gov'; # need to enable JavaScript in w3m for redirect to /HTML5/ to work so maybe just use FireFox or Chrome
 # mAB Ubu brwsrz:FireFox Chrom(e|ium) Epiphany Arora Dillo WebBrowser-App (cudinstl) QupZilla Konqueror NetSurf Links2 (!in acs) Yandex PaleMoon Midori Brave;
-alias crmm='chromium-browser  ';alias crom=' google-chrome         ';alias epip='epiphany';alias aror='arora';alias dilo='dillo';alias lnx2='links2';
+alias crmm='chromium-browser  ';alias crom=' google-chrome';alias crm='crom';alias epip='epiphany';alias aror='arora';alias dilo='dillo';alias lnx2='links2';
 alias brav='brave';alias brvb='brave';alias brav='brave';alias bb='brvb';alias tb='torb'; # prEfer prv8 tb&&bb&&ff mor than old (proly WebKit-based?) abovz now
 alias torb='pu ~/bin/.tst/tor-brwsr-linux64-8.0_en-US-I98MKtor;./start-tor-browser.desktop;po';alias tor='tb'; # new d8d locl v8.0 instal of sepR8 brwzr methd
 alias brwz='en "PipzBrwz: ff=FireFox, bb=Brave, tb=Tor, crom=Chrome, crmm=Chromium, epip=Epiphany, aror=Arora, dilo=Dillo, lnx2=Links2;"'; # echo reminderz
@@ -607,9 +607,9 @@ alias sirc='ct "irssi"  ;scrn -S irc -t irc irssi       ;  ';alias si='sirc';  #
 #lias s2du='pu ~/dox/2du;scrn -S 2du -t 2du     e  2    ;po';alias s2='s2du';  # reverted to exporting TERM=xterm around s2 2mk vim statusbar dRk AgN
 alias s28x='pu ~/dox/2du;scrn -S 8xt -t 8xt     e  8    ;po';alias s28='s28x'; # s8 is already aliased to sort; weird that e 8 didn't have e 2 problM
 alias sb8a='pu ~/dox/2du;scrn -S b8a -t b8a     e b8a.ls;po';alias sb='sb8a';  # below just list:  (Annihil|Deso|Domin|InitE|Obliter)8
-alias sdvl='pu ~/dvl    ;scrn -S dvl -t dvl             ;po';alias sd='sdvl';alias ob8='pu ~/muz/U2b;l            obs/*ate_* Ob*ate_*;po';
-alias smuz='pu ~/muz    ;scrn -S muz -t muz             ;po';alias sm='smuz';alias ob=' pu ~/muz/U2b;scrn -S muo -t muo 3 **/Ob*     ;po';
-alias srut='pu  /etc    ;scrn -S rut -t rut sudo  -E zsh;po';alias sr='srut';alias Ob=' ob';alias Ob8='ob8';
+alias sdvl='pu ~/dvl    ;scrn -S dvl -t dvl             ;po';alias sd='sdvl';alias Ob8='ob8';alias ob8='pu ~/muz/U2b;l                     **/*Obs*ate_*;po';
+alias smuz='pu ~/muz    ;scrn -S muz -t muz             ;po';alias sm='smuz';alias Ob=' ob ';alias ob=' pu ~/muz/U2b;scrn -S mob -t mob g3 **/*Obs*     ;po';
+alias srut='pu  /etc    ;scrn -S rut -t rut sudo  -E zsh;po';alias sr='srut';alias so=' ob ';alias sob='ob';alias obs='ob';alias Obs='ob';alias sobs='ob';
 alias sx='  scrn -x '; # study screenie && mk my own version?
 #lias g3='   gst123 '; # replaced by Xpct XperimNt
 alias m3='   mpg123 '; # replace  wi Xpct l8r too

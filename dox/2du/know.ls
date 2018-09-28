@@ -1,5 +1,5 @@
 # HBQLISTV:know.ls crE8d by PipStuart <Pip@CPAN.Org> to duplic8 Dr. Jordan B. Peterson's Quora.Com answer of "40 most valuable things everyone should know";
-# $VERSION='0.0';$d8VS='I9LMKNOW'; # 2du:start chronicling Dr. Peterson's many topical videos with new section for post-title subject summaries or explor8ion;
+# $VERSION='0.0';$d8VS='I9SM4UBI'; # 2du:start chronicling Dr. Peterson's many topical videos with new section for post-title subject summaries or explor8ion;
 0) Tell the truth.
 1) Do not do things that you h8.
 2) Act so that you can tell the truth about how you act.
@@ -461,3 +461,16 @@ I9KMKosh:In "03 H/M/P Discuss: Dub" before 1h10m Dr.P maybe paraphrased says: "I
 P:"What do we do about that?" H:"r8ionality!" ... P:"Playing games is found8ional which are old && deeper than pure top-down r8ionality." H:"Adult narr8.";
 I9LMJone:Interesting that HTTPS://YouTu.be/ZTSo2AQRM6Y "A Letter to Millennials" # 10m32s of DaisyCousens gr8 bleeping elabor8ion of how imm8ure && infantile
 #  triggered snowflakes are with no ground left to stand on, enticing them over to the conserv8ive "dark-side" (with coincidental p8ron PeterAlexanderJones);
+HTTPS://YouTu.be/DR2rYCxT0lg "Jordan Peterson on Universal Basic Income.. 'Money ISN\'T the Problem!'" # I9SM4Pet:16m on true deep needs for responsibility,
+#  lasting meaning, goals, purpose, direction, challenge, educ8ion, etc. much more than just money to waste away on sex && drugs && frivolous beach tequila;
+HTTPS://YouTu.be/qtPG-QH3q-A "The Fourth Frontier | Bret Weinstein" # 11m40s discussing visible goal habit8ions don't yet recommend best paths to attempt to
+#  traverse, but we can prototype structures for making needed jumps in delayed responsiveness due to widespread comforts && complacency risking stagn8ion.
+# Conserv8ives need to awake to necessity of embracing difficult changes. Liberals need coherence on why to change what. Sustainable biology && technology-
+#  conducive habitats for far more than mere humanity, cautiously venturing multi-planetary, retooling nuclear reactors which demand permanent upkeep labor;
+HTTPS://YouTu.be/WozTbBN7aoU "Heather Heying: Free Speech on Campus" # I9SM4beg:10m of really gr8 defense of higher educ8ion's Chicago principles, admonishing
+#  administr8ors to standup for the free expression && inquiry in staff who will be defended, && reject authoritarian uprisings. Wrong "begs question" pedant;
+HTTPS://YouTu.be/a66PZpSrWMQ "The Fermi Paradox | Bret Weinstein" # 3m48s of sobering recognition that we bear far too many existential risks which we must
+#  endeavor to cautiously reign in the potentials for extinction-level cataclysms to even be accidentally visited upon us due to gr8 powers && inadequ8 forms
+#  of restraint, defenses, counter-measures, strategic contingency oper8ions, accur8 ramific8ion extrapol8ions, adapt8ions && innov8ions to traverse hazards;
+HTTPS://YouTu.be/5ZN-9RlGfRg "Advice for Beginners: Choosing Your Arch-Nemesis to Last a Lifetime" # 14m7s of EricWeinstein elabor8ing curious ideal dynamics;
+HTTPS://YouTu.be/RoELwyoeCoI "Is Jordan Peterson a Con-Man? | Bret Weinstein Explains" # I9SM6pen:18m16s wrapping up with need to end cross-ideology penalty;
