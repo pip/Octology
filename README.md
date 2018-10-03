@@ -1,5 +1,5 @@
 # Octology
-The ontology of 8. `$VERSION='0.0';$d8VS='I9MM6Use';`
+The ontology of 8. `$VERSION='0.0';$d8VS='IA3MHelp';`
 
 This is basically a public preview of my early development files. I am not yet ready for serious collaboration, but welcome any sorts of feedback.
 
@@ -22,7 +22,7 @@ If your paths and Perl environment are setup similarly, to gain a bearing on fun
 <!-- even though of course originally above command && below screen shot lists were each Top8, they're now slightly more focused on just most public Top6 -->
 ## Current Top Screen Shots
 ##### (*mostly examples matching above*)
-![Octology-sumb-shot_1614x952-I8QMCLU2](https://github.com/pip/Octology/raw/master/gfx/sho/Octology-sumb-shot_1614x952-I8QMCLU2.png "Octology-sumb-I8QMCLU2")
+![Octology-sumb-shot_1614x952-IA3MGSUM](https://github.com/pip/Octology/raw/master/gfx/sho/Octology-sumb-shot_1614x952-IA3MGSUM.png "Octology-sumb-IA3MGSUM")
 ![Octology-tstn-shot_1614x952-HC8L7J3A](https://github.com/pip/Octology/raw/master/gfx/sho/Octology-tstn-shot_1614x952-HC8L7J3A.png "Octology-tstn-HC8L7J3A")
 ![Octology-8plc-shot_1454x977-I9MM6MMI](https://github.com/pip/Octology/raw/master/gfx/sho/Octology-8plc-shot_1454x977-I9MM6MMI.png "Octology-8plc-I9MM6MMI")
 <!--[Octology-reph-shot_1614x952-I8RM8qV8](https://github.com/pip/Octology/raw/master/gfx/sho/Octology-reph-shot_1614x952-I8RM8qV8.png "Octo-reph-I8RM8qV8")-->
@@ -73,13 +73,13 @@ If I ever become unable to continue developing this project further, my hope is 
   utilize any of my beneficial work and ideas (hopefully to further FreeLibreSoftware with derivatives also seeing release under the GPLv3+).
 
 #### Secondary Old Screen Shots
-##### (*several mostly older examples*)
-![Octology-sumb-shot_1280x800-HBBLJe4o](https://github.com/pip/Octology/raw/master/gfx/sho/Octology-sumb-shot_1280x800-HBBLJe4o.png "Octology-sumb-HBBLJe4o")
+##### (*several decently upd8d examples*)
+![Octology-8trm-shot_1280x800-IA3MHsum](https://github.com/pip/Octology/raw/master/gfx/sho/Octology-8trm-shot_1280x800-IA3MHsum.png "Octology-8trm-IA3MHsum")
 ![Octology-8trm-shot_1280x800-HBBLK762](https://github.com/pip/Octology/raw/master/gfx/sho/Octology-8trm-shot_1280x800-HBBLK762.png "Octology-8trm-HBBLK762")
-![Octology-ftst-shot_1614x952-I4SMGG88](https://github.com/pip/Octology/raw/master/gfx/sho/Octology-ftst-shot_1614x952-I4SMGG88.png "Octology-ftst-I4SMGG88")
+![Octology-ftst-shot_1614x952-IA3MGato](https://github.com/pip/Octology/raw/master/gfx/sho/Octology-ftst-shot_1614x952-IA3MGato.png "Octology-ftst-IA3MGato")
 
 ![Octology-ckm8-shot_1536x960-HAOM9HKQ](https://github.com/pip/Octology/raw/master/gfx/sho/Octology-ckm8-shot_1536x960-HAOM9HKQ.png "Octology-ckm8-HAOM9HKQ")
-![Octology-tstc-shot_1614x902-HB4M8jYm](https://github.com/pip/Octology/raw/master/gfx/sho/Octology-tstc-shot_1614x902-HB4M8jYm.png "Octology-tstc-HB4M8jYm")
+![Octology-tstc-shot_1614x952-IA3MGr8C](https://github.com/pip/Octology/raw/master/gfx/sho/Octology-tstc-shot_1614x952-IA3MGr8C.png "Octology-tstc-IA3MGr8C")
 ![Octology-dic8-shot_1614x902-HAOM900M](https://github.com/pip/Octology/raw/master/gfx/sho/Octology-dic8-shot_1614x902-HAOM900M.png "Octology-dic8-HAOM900M")
 
 ##### (*here's my 3 screens, almost to 4K HD*)

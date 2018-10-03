@@ -29,7 +29,7 @@ unsetopt                \
 # auto_pushd            \# setng addz dirz 2 stack wN just normally chngng 2 thM (wich I du not normally lIk or want)
 # ksh_arrays            \# rEmMbr wNwrItng scrptz[or funcz]2include'setopt [localoptions] ksharrays'sO arAzR 0-bAsed(but!glOblBcuzmOst scrptzRstndrdly 1-bAsed)
 # re_____match_____pcre \# mA want2set for Z-SHell scripting RegularExpressions to utilize PerlCompatibility styles && mA insert 'zmodload zsh/(pc)?re(gex)?';
-export vers='0.0';export d8VS='I9RM9CRM';export auth='PipStuart <Pip@CPAN.Org>'; # above not exporting $b since collidez with sort{$a  <=> $b}
+export vers='0.0';export d8VS='IA3MEsc8';export auth='PipStuart <Pip@CPAN.Org>'; # not Xportng $b sinc cOlIdz wi sort{$a <=> $b} /defhijlnqstuvx/i + AZ 4golf;
 if     [[       "$SHELL"    == "" ]]; then       export SHELL=`  which zsh`;fi # 8sh should parse this && OverId it    # shud `man zshall` /OSTYP 2lern4BlO
 if     [[       "$HOSTNAME" == "" ]]; then       export HOSTNAME=`hostname`;fi #`hostname`retnz fsckd nwlInz\n4CygWinzRxvt... ||smthng els lame  =(
 if     [[       "$HOST"     == "" ]]; then       export HOST="$HOSTNAME"   ;fi;export VERBOSE='1'; # set flag to print debug && status info from system utilz
@@ -331,6 +331,8 @@ alias      pa='   perl -MOctology::a8  -e'; # setup Perl eval        with Attrib
 alias     pla='   pa  '; # pb is already taken by pingb
 alias     plb='   perl -MOctology::b8  -e'; # setup PerL eval        with Base-transl8   export globals of B8
 alias     pab='   perl -MOctology::a8 -MOctology::b8  -e'; # Perl eval with A8  &&  B8   exports together like `pab "b8colr(b64(calQ('4096xx2048')))"`
+alias    pabd='   perl -MOctology::a8 -MOctology::b8 -MOctology::d8  -e'; # Perl eval with A8 && B8 && D8 (although d8 mainly crE8s new objects, not exports)
+alias     pep='   perl -MOctology::a8 -MOctology::b8 -MOctology::d8 -pe'; # Perl Eval with A8 && B8 && D8 for Piping filtr8ion
 alias      gg='   perl ~/dvl/d8/bin/gg   '; # basic perl call to priv8 non-executable development utility to Gener8 G-mail stamps for Gerry (my Dad)
 alias    drkh='   pa  "print drkh(@ARGV)"'; # HEX to RgbL with 8th intensities
 #lias    h2rl='   pa  "print h2rl(@ARGV)"'; # HEX to RgbLowbitz    # actually trying to reform these alias wrappers to standalone usable new ~/bin page2 utlz
@@ -599,41 +601,65 @@ alias irc='irssi';
 #lias       sc='      irssi -c IRC.Prison.Net        -n PipStuart'; #soulcalibur # used to use -n Pipsurugi
 #lias       srk='     irssi -c IRC.ServerCentral.Net -n PipStuart'; #srk         # can also do -w evl2003 to include pswd && might need -p to chng port BlO
 #lias       srk='     irssi -c IRC.INet.Tele.Dk:6667 -n PipStuart'; #srk         # altern8 IRC servers to try to connect to if otherz are down or net-split
-#  otherz:  EFNet.Demon.Co.UK  IRC.Nijenrode.Nl  HomeLien.No  QEast.Net
+#  otherz:  EFNet.Demon.Co.UK  IRC.Nijenrode.Nl  HomeLien.No  QEast.Net          # for ScreenOctology*.pm editz BlO had2rEplAc e wi vim for multi-fIl OpNng
 alias swip='screen -wipe  '; # learn how to restore block cursor within multiplexed vim from the $TERM=screen.linux console (sEmz scrn mustXitB4 `curs` resetz)
 alias scrn='screen -h 9999'; # might not need to temporarily change TERM for irc (or any of these if TERM becomes working screen.xterm-256color) below
-alias s2du='pu ~/dox/2du;export TERM="xterm";scrn -S 2du -t 2du     e  2    ;export TERM="xterm-256color";po';alias s2='s2du'; # Usd2wrap2ovrId TERM=screen
+alias s2du='pu ~/dox/2du;export TERM="xterm";scrn -S 2du -t 2du e 2;export TERM="xterm-256color";po';alias s2='s2du'; # Used2wrap2ovrId TERM=screen ,xterm betr
 alias sirc='ct "irssi"  ;scrn -S irc -t irc irssi       ;  ';alias si='sirc';  # don't need -c IRC.Perl.Org or -n Pip since specified in ~/.irssi/config now
-#lias s2du='pu ~/dox/2du;scrn -S 2du -t 2du     e  2    ;po';alias s2='s2du';  # reverted to exporting TERM=xterm around s2 2mk vim statusbar dRk AgN
-alias s28x='pu ~/dox/2du;scrn -S 8xt -t 8xt     e  8    ;po';alias s28='s28x'; # s8 is already aliased to sort; weird that e 8 didn't have e 2 problM
-alias sb8a='pu ~/dox/2du;scrn -S b8a -t b8a     e b8a.ls;po';alias sb='sb8a';  # below just list:  (Annihil|Deso|Domin|InitE|Obliter)8
-alias sdvl='pu ~/dvl    ;scrn -S dvl -t dvl             ;po';alias sd='sdvl';alias Ob8='ob8';alias ob8='pu ~/muz/U2b;l                     **/*Obs*ate_*;po';
-alias smuz='pu ~/muz    ;scrn -S muz -t muz             ;po';alias sm='smuz';alias Ob=' ob ';alias ob=' pu ~/muz/U2b;scrn -S mob -t mob g3 **/*Obs*     ;po';
-alias srut='pu  /etc    ;scrn -S rut -t rut sudo  -E zsh;po';alias sr='srut';alias so=' ob ';alias sob='ob';alias obs='ob';alias Obs='ob';alias sobs='ob';
-alias sx='  scrn -x '; # study screenie && mk my own version?
-#lias g3='   gst123 '; # replaced by Xpct XperimNt
-alias m3='   mpg123 '; # replace  wi Xpct l8r too
-#lias m1='   mpg321 '; # replace  wi Xpct l8r too
-#lias m0='   mpr0   '; # replace  wi Xpct l8r too;  already replaced by function below for now!
-# H7IM3Qvo:mp -vo help; MPlayer 1.3.0 (Debian), built with gcc-6.3.0 (C) 2000-2016 MPlayer Team; Available video output drivers:
+#lias s2du='pu ~/dox/2du;scrn -S 2du -t 2du e     2     ;po';alias s2='s2du';  # reverted to exporting TERM=xterm around s2 2mk vim statusbar dRk AgN
+alias s28x='pu ~/dox/2du;scrn -S 8xt -t 8xt e     8     ;po';alias s28='s28x'; # s8 is already aliased to sort; weird that e 8 didn't have e 2 problM
+alias s8lc='pu ~/dox/2du;scrn -S 8lc -t 8lc e     8plc  ;po';alias s8l='s8lc'; # elabor8ing out2 tRget all sepR8 doQmNtz stil mAntAnd as 2du EvN2ally
+alias satl='pu ~/dox/2du;scrn -S atl -t atl e     at.ls ;po';alias sa='satl';alias soa='pu ~/dvl/a8;scrn -S oa8 -t oa8 e a8.pm;po'; # OpenOctology *8.PlModulez
+alias sb8a='pu ~/dox/2du;scrn -S b8a -t b8a e    b8a.ls ;po';alias sb='sb8a';alias sob='pu ~/dvl/b8;scrn -S ob8 -t ob8 e b8.pm;po'; # Screen_lib/Octology/\w.pm
+alias sbxl='pu ~/dox/2du;scrn -S bxl -t bxl e   boox.ls ;po';alias sB='sbxl';alias scS='            scrn -S                      '; # kinda similR2old e fIl.ls
+alias scm8='pu ~/dox/2du;scrn -S cm8 -t cm8 e   ckm8.txt;po';alias sc='scm8';alias soc='pu ~/dvl/c8;scrn -S oc8 -t oc8 e c8.pm;po'; #   ..2Elabor8Uni4m abrEV8z
+alias skno='pu ~/dox/2du;scrn -S kno -t kno e   know.ls ;po';alias sk='skno';alias sod='pu ~/dvl/d8/lib/Octology;scS od8 -t od8 vim d8.pm d8/[df]??[8z].pm;po';
+alias smul='pu ~/dox/2du;scrn -S mul -t mul e    muz.ls ;po';alias Sm='smul';alias som='pu ~/dvl/m8/xml         ;scS om8 -t om8 vim [MT][ei][rd]*[ey]/*.pm;po';
+alias smvl='pu ~/dox/2du;scrn -S mvl -t mvl e    mvz.ls ;po';alias SM='smvl';alias sop='pu ~/dvl/p8;scS op8 -t op8 vim [tmnp]??[hx8s]/[tmnp]??[hx8s].pm   ;po';
+alias sput='pu ~/dox/2du;scrn -S put -t put e   putr.txt;po';alias sP='sput';alias sot='pu ~/dvl/t8/Octl/Octology;scS ot8 -t ot8 vim *.md;po;en oupd,gac,gpom';
+alias ssfv='pu ~/dox/2du;scrn -S sfv -t sfv e    sfv.txt;po';alias sf='ssfv';alias sof='pu ~/dvl/f8;scrn -S of8 -t of8 e f8.pm;po'; # mABl8r vary4asOC8d binz2
+alias stab='pu ~/dox/2du;scrn -S tab -t tab e   tabz.ls ;po';alias sT='stab';alias sog='pu ~/dvl/g8;scrn -S og8 -t og8 e g8   ;po'; # not A sepR8 PlModule yet
+alias stip='pu ~/dox/2du;scrn -S tip -t tip e   tipz.ls ;po';alias sI='stip';alias soU='pu ~/dvl/U8;scrn -S ou8 -t ou8 e U8.pm;po';alias sou='soU'; # bOthKsez
+alias sdvl='pu ~/dvl    ;scrn -S dvl -t dvl             ;po';alias sd='sdvl';  # mAB some new sD can lOd Xtra Dvl lIk Utl Tk Time Math anythng else important
+alias smuz='pu ~/muz    ;scrn -S muz -t muz             ;po';alias sm='smuz';alias so=' ob ';alias mob='ob';alias obs='ob';alias Obs='ob';alias sobs='   ob';
+alias smvz='pu ~/mvz    ;scrn -S mvz -t mvz             ;po';alias sM='smvz';alias Ob=' ob ';alias ob=' pu ~/muz/U2b;scrn -S mob -t mob g3 **/*Obs*     ;po';
+alias srut='pu  /etc    ;scrn -S rut -t rut sudo -E  zsh;po';alias sr='srut';alias Ob8='lob';alias lob='pu          ;l              m[uv]z/**/*Obs*ate_*;po';
+alias sadm='pu  /root   ;scrn -S adm -t adm sudo    bash;po';alias sA='sadm'; #abovOb8 orig just listed: (Annihil|Deso|Domin|InitE|Obliter)8 B4XtNdng2alldirz
+alias sx='  scrn -x '; # would also be good to upd8 abov openingz of scrnz 2ck4 `scrn -ls $mtch` for already crE8d wich shud just B -x reattached 2 nstdofnew
+#lias sls=' scrn -ls'; # stuD screenie 2mkOwn version. wrapd `scrn -ls` BlObutl8r tAkthOs b8 && d8 rE4m@z as valid pRamz2reattach2. rEplAc scrn wi autO sx;
+alias sls=' pabd "\$v=q(screen -ls);\$v.=qq( @ARGV) if(@ARGV > 0);\$S=\`\$v\`;while(\$S=~ /\t((\d+)\.(\S+)\s+\((\d+)\/(\d+)\/(\d+)\s+(\d+:\d+:\d+)\s+([AP])
+  M\)\t\(([AD])[te]tached\)\n)/x){\$L=\$1;\$I=b8c(b64(\$2));\$H=\$3;\$N=\$4;\$D=\$5;\$E=\$6;\$T=\$7;\$n=\$8;\$t=\$9;\$x=S(q(Rr));\$t=\$x.\$t if(\$t=~ /D/);
+  if(\$n=~ /P/ && \$T=~ /^(\d+):/){\$h=\$1+12;\$h%=24;\$T=~ s/^(\d+):/\$h:/;}   \$A= S   (q(Ab));\$x=q(XtracmNt:Repurposd RedOnRed detached in2filr text;);
+  \$d=Octology::d8->new(q(expand)=>\$Mon[\$N-1].q( ).\$D.q( ).\$T.q( ).\$E);\$e=\$d->colr(q(a) );\$S=~ s/\Q\$L\E/\$I\$K.\$A\$H\$z\t\$e \$G\$t\$z\n/igixi;};
+\$S  =~ s/(There)( are| is a)( screens?)( on)(:)/\$B\$1\$p\$2\$G\$3\$o\$4\$W\$5/gig;\$x=q(XtracmNt:sinc -ls tAk m@chpRam,1st passin ARGV B4wrap ZshLfunc;);
+if(\$S=~ /(\d+)( Sockets?)( in )(.+)\..*/){\$s=b8c(b64(\$1));\$X=\$2;\$i=\$3;\$F=c8fn(\$4);\$x=q(XtracmNt:CmzlIk6.5solidsourclInz puttz mE undrpR4ashole;);
+  \$S=~ s/(\d+)( Sockets?)( in )(.+)\..*/\$s\$C\$X\$p\$i\$Y\$F\$W;\$z/;}print \$S;"'; # 2du:s/// tabz wi spAcpadz justifyng 4m@ng alInmNt; # /mE isA putzr?
+#There are screens on: #	17836.b8a	(10/03/2018 04:09:10 AM)	(Detached)  # /defhijlnqstuvx/i + AZ are sOlOz avAl 4 golf abov (aftr a8 sOlO color Xportz);
+# cangiv m@chpRam now; #	 5604.irc	(10/02/2018 07:48:46 PM)	(Attached)\n#2 Sockets in /run/screen/S-pip.  # SCreenLiStcmnd=S,ScreenLINe=L,PRocessIDnt=I,
+#lias g3='   gst123 '; # replaced by Xpct XperimNt  # sux2havnOsyntxhIlIt  # ScreenTiTL(PID.TTY.Host)=H,moNth=N,Day=D,yEar=E,Time=T,afterNoon=n,deTached=t,
+alias m3='   mpg123 '; # replace  wi Xpct l8r too   # butsumvrynIcalInmNt  # Hour=h,d8OBject=d,d8colrEskaped=e,Socketcount=s,soX=X,In=i,screenpathFilenm=F,
+#lias m1='   mpg321 '; # replace  wi Xpct l8r too   # guessngaboutARGVthO  # eXtra_detached_color_with_red_background=x (mOmNtary modific8ionB4cmNt filrz);
+#lias m0='   mpr0   '; # replace  wi Xpct l8r too;  already replaced by function below for now!   # OMG! Such consistNtly blockedout p@rnz of alInmNt abov;
+alias dvdb=' dvdbackup -M -p';alias dvdbak='dvdb';  # default DVD backups -Mirroring full disc into current working directory && upd8ing d8a copy -progress
+# H7IM3Qvo:mp -vo help; MPlayer 1.3.0 (Debian), built with gcc-6.3.0 (C) 2000-2016 MPlayer Team; Available video output drivers: # pretty old optnz now
 # vdpau      X11 VDPAU                                           fbdev    Framebuffer Device                        xvmc     XVideo Motion Compensation
 # xv         X11/Xv                                              fbdev2   Framebuffer Device                        mpegpes  MPEG-PES to DVB card
 # X11        X11 ( XImage/Shm )                                  aa       AAlib                                     yuv4mpeg yuv4mpeg output for mjpegtools
 # xover      General X11 drvr4overlay capable vidout drvrz       caca     libcaca                                   png      PNG  file
 # sdl        SDL YUV/RGB/BGR renderer (SDL v1.1.7+ only!)        v4l2     V4L2 MPEG Video Decoder Output            jpeg     JPEG file
 # gl_nosw         OpenGL no software rendering                   directfb Direct Framebuffer Device                 gif89a   animated GIF output
-# gl              OpenGL                                         dfbmga   DirectFB/Matrox G200/G400/G450/G550       tga      Targa output
+# gl              OpenGL                                         dfbmga   DirectFB/Matrox G200/G400/G450/G550       tga      Targa        output
 # gl_tiled   X11 (OpenGL) - multiple textures version            xvidix   X11    (VIDIX)                            pnm      PPM/PGM/PGMYUV file
 # matrixview     (OpenGL) MatrixView                             cvidix   console VIDIX                             md5sum   md5sum of each frame
 # dga        DGA (Direct Graphic Access V2.0)                    null     Null video output   # drvrz listed in likely most useful ordr(&&bak2 xv fixd stutr)
 #    -fixed-vo only with xv, x11, xvidix, gl, gl_tiled, && svga (ignoring irrelevant Matrox); # swapping mp && mplyr alias dFinitionz due2frEquNC of use&&mM
 alias mplyr='mplayer'; # EBIL4AcZ:just upgraded all machines to mplayer2 so need --no-keepaspect to allow scaling to full window dimensions
 alias mp='   mplayer -vo xv  -fixed-vo                              -cache 16384 -cache-min 99'; # should try different -vo (xv was default) for performance
-alias mpns='cd ~/mvz/U2b/nxt;mp $(ls B* Dr* *Tut* Ex* M* O*-Res* Var* *Trap* *Trap* *Boy*|shfl);cd ..'; # mk MPlyrNxtShfl 4 quik favor8 mvz Drub&&Trap vidz
-alias mpx='  mp      -fs'; #-x 1920 -y 1080';  used2have -noborder abov but then cud!mv wndw
-alias mply=' mplayer -vo xv  -fixed-vo -nosound -loop 0          -geometry 1916x1052+0+0    '; #-x 1916 -y 1052' # mplayer can only strt wi1920maxBcuzXinerama?
-#lias mpr0=' mplayer                   -nosound --no-keepaspect  -geometry 1920x1052+0+0    '; # still needs vid file params like ~/mvz/U2b/Obsidia*.mp4
-alias mpr0=' mplayer -vo xv  -fixed-vo -nosound -nokeepaspect    -geometry 1920x1052+0+0    -loop 0'; # this 4 MPlayer && above 4 MPlayer2 (wich I had4 awhile)
+alias mpns='cd ~/mvz/U2b/nxt;mp $(ls B* Dr* *Tut* Ex* M* O*-Res* Var* *Trap* *Trap* *Boy*|shfl);cd ..'; # mk MPlyrNxtShfl 4 quik favor8 mvz Drub&&Trap vidzls
+alias mpx='  mp      -fs'; #-x 1920 -y 1080'; # originally quite a long time ago, I used to include -noborder optn abov but thN cud!mv wndw
+alias mply=' mplayer -vo xv  -fixed-vo -nosound -loop 0          -geometry 1916x1052+0+0    '; #-x 1916 -y 1052' # mplayer canOnly stRt wi1920maxBcuzXinerama?
+#lias mpr0=' mplayer                   -nosound --no-keepaspect  -geometry 1920x1052+0+0    '; # still needs vid file params like: ~/mvz/U2b/**/*Obsidia*.opus
+alias mpr0=' mplayer -vo xv  -fixed-vo -nosound -nokeepaspect    -geometry 1920x1052+0+0    -loop 0'; # this 4 MPlayer && above 4 MPlayer2 (wich I had4 awhIl)
 alias mpr1=' mplayer -vo xv  -fixed-vo -nosound -nokeepaspect    -geometry 1920x1052+888+88 -loop 0'; # this 4 same as mpr0 but on Aku's  middle   24" display
 alias mpr2=' mplayer -vo xv            -nosound -nokeepaspect    -geometry 1920x1052+1919+0 -loop 0'; # this 4 same as mpr0 but on Aku's far right 50" display
 alias mpr0t='mplayer -vo xv  -fixed-vo -nosound -msgcolor -noborder -cache 16384 -cache-min 99 -geometry 1916x1052+0+0 -msglevel all=0:identify=4 ~/mvz/.pr0/tst/Aut0pr0-9AS4gTn/pr0-*/*'; # test if messages can report desired details; # for some reason,above mpr1 won't take geom 2full midl display so just offset a bit?

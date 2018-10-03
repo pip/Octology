@@ -1,5 +1,5 @@
 # HBQLISTV:know.ls crE8d by PipStuart <Pip@CPAN.Org> to duplic8 Dr. Jordan B. Peterson's Quora.Com answer of "40 most valuable things everyone should know";
-# $VERSION='0.0';$d8VS='I9SM4UBI'; # 2du:start chronicling Dr. Peterson's many topical videos with new section for post-title subject summaries or explor8ion;
+# $VERSION='0.0';$d8VS='I9SMGoow'; # 2du:start chronicling Dr. Peterson's many topical videos with new section for post-title subject summaries or explor8ion;
 0) Tell the truth.
 1) Do not do things that you h8.
 2) Act so that you can tell the truth about how you act.
@@ -474,3 +474,8 @@ HTTPS://YouTu.be/a66PZpSrWMQ "The Fermi Paradox | Bret Weinstein" # 3m48s of sob
 #  of restraint, defenses, counter-measures, strategic contingency oper8ions, accur8 ramific8ion extrapol8ions, adapt8ions && innov8ions to traverse hazards;
 HTTPS://YouTu.be/5ZN-9RlGfRg "Advice for Beginners: Choosing Your Arch-Nemesis to Last a Lifetime" # 14m7s of EricWeinstein elabor8ing curious ideal dynamics;
 HTTPS://YouTu.be/RoELwyoeCoI "Is Jordan Peterson a Con-Man? | Bret Weinstein Explains" # I9SM6pen:18m16s wrapping up with need to end cross-ideology penalty;
+HTTPS://YouTu.be/tUl7-SvntQ4 "Eric Weinstein: The Future of The Intellectual Dark Web" # I9SMGate:2h6m of DaveRubin interview on odd path-dependent monopolies
+#  poignantly referring to Google being able to internally resolve by controlling some conflicts by reading through all of your e-mails, crE8d MSM d8a-voids.
+# Deny their insistence that their members deserve ultim8 forgiveness while deserving complete policing of everyone else,#KillAllMen not even microaggression.
+# "Safe-Spaces" may not be about defending against traumatic triggers, but actually rather about protecting senseless narr8ives from capable critical figures.
+# Try hard to love even liars with empathy && compassion, to coax people out from the confused cult which can only feign empathy for trans but not white men;

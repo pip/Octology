@@ -50,9 +50,9 @@ our @EXPORT= qw(bfr8c    b8c    d8c    dur8c       a8c   a8colr      h2rl   rl2h
  $SKp8 $SKp0 $SKp1 $SKp2 b8clr  $SKpf $SKpt %pmap %cmap       %pl8n  ftst       %f8fm %f8pm %sgrm %sgrn @Dayz @Day  lrc      comma  curs  sumb @x256  @sb64
     $z    $k    $r    $o    $y    $g     $c $SKpb    $m    $p    $w  tstc    $K    $R    $O    $Y    $G    $C    $B    $M    $P    $W    %p622 %p222
  $tnhf $ucdf  spff  spfd  spfX   shfl  reso $auth %cmsp %p8k2 @p82k  chp8     S2f4 c2f4 dm2u cdst %crgb %cbrt @snls @mrls %cdrd %cdrn    %nrgb         gnp8);
- # of 52 posibl sngl-letr var nmz,a8 Xportz 20,$b && $a unavail,so shudB thEs30 lFt4quik shortSt nAmz: 'def hij l n  q stuv x', 'A  DEF HIJ L N  Q STUV X Z'
-our $VERSION='0.0';my  $d8VS='I8QMAdlU';our $auth='PipStuart <Pip@CPAN.Org>'; # above not exporting $b since collidez with sort{$a  <=> $b}
-our $ucdf= eval('use Color::Similarity::RGB qw(distance);1') || 0; # try2set UseColorDistanceFlag if optional module is available
+ # of 52 posibl sngl-letr var nmz,a8 Xportz 20,$b && $a unavail,so shudB thEs30 lFt4quik shortSt nAmz: 'def hij l n  q stuv x', 'A  DEF HIJ L N  Q STUV X Z';
+our $VERSION='0.0';my  $d8VS='IA3MALLo';our $auth='PipStuart <Pip@CPAN.Org>'; # above not exporting $b since collidez with sort{$a  <=> $b};unalloc'd sOlOz^;
+our $ucdf= eval('use Color::Similarity::RGB qw(distance);1') || 0; # try2set UseColorDistanceFlag if optional module is available; /defhijlnqstuvx/i + /AZ/^;
 our @Monz=qw(January February March   April     May June July   August September October November December);our @Mon=();push(@Mon,substr($_,0,3)) for(@Monz);
 our @Dayz=qw(Sunday  Monday   Tuesday Wednesday Thursday Friday Saturday                                  );our @Day=();push(@Day,substr($_,0,3)) for(@Dayz);
 our $SKp8="\e[";our $SKp0=$SKp8.'00';our $SKp1=$SKp8.'01';our $SKp2=$SKp8.'22';our $tnhf=0; # ANSI "NC" eScApe "SKp" cOdez && TermCanHandleF0ntz flag
@@ -576,8 +576,8 @@ if((!defined($codz) || !length($codz)) && !-t STDIN){chomp($codz= join('',<STDIN
         $sepc[0]= 'P' if($sepc[0] eq 'p');} # hopefully those are the only 2 in need of correction, && also that this is the right place to do it
       elsif(           $ENV{'TERM'} =~ /^(8trm)$/ && defined($SKpf) && defined($SKpt) && @sb64 == 64){ # try to randomly throw 8trm f0nt codes in with others
         my $rndf=$sb64[int(rand(64))];$rndf= lc($rndf) if($rndf=~ /^[CGHIRT]$/);$rndf='d' if($rndf eq '.');$rndf='1' if($rndf eq '_'); # chng illegible f0nts
-        $rndf   ='m' if($rndf=~ /^[8WP]$/i); $rndf='r' if($rndf=~ /^[kY]$/);$Sl8f=$SKpf . $rndf . $SKpt;}} # 8 surely was causing errorz && probably some above
-    for(@lyrz){if(@sepc){ # Maybe deprec8 % && # shortcut to X since new DAL layerz are better
+        $rndf   ='m' if($rndf=~ /^[8WP]$/i); $rndf='F' if($rndf=~ /^[kY46]$/  );$Sl8f=$SKpf. $rndf . $SKpt;}} # 8 surely was causng erorz&&probably some abov
+    for(@lyrz){if(@sepc){ # Maybe deprec8 % && # shortcut to X since new DAL layerz are better  # kY were set to r abov && 46 fellthru so aded && set to F
         if   (/[FDALOH]/ && $sepc[0]=~ /^[%#]$/){  my $cndx='';       shift(@sepc); # have some support for old Xtended colr shortcut,even tho proly not needed
           if     (@sepc){if($sepc[0]=~ /^[0-9A-F]$/i){$cndx =$sepc[0];shift(@sepc);
               if (@sepc  && $sepc[0]=~ /^[0-9A-F]$/i){$cndx.=$sepc[0];shift(@sepc);} $cndx=  hex($cndx);}
@@ -1063,7 +1063,7 @@ sub sumb{  my $widt=0;$widt=1 if(exists($ENV{'COLUMNS'}) && $ENV{'COLUMNS'} >= 1
         $bfst{ $bfls[$bfle - $_]}=~ s/  (b(ase)?)(128 )(\s   )/$1$d$3$i$4/gx        ;$d=S($bftc{'base'}{ '256'  }); # du 128
         $bfst{ $bfls[$bfle - $_]}=~ s/  (b(ase)?)(256 )(\s   )/$1$d$3$i$4/gx        ;$s=S($bftc{'d8fz'}{'2006'  }); # du 256 hopefully both b256 && base256
         $bfst{ $bfls[$bfle - $_]}=~ s/   (xterm-)(256 )(color)/$1$d$2$i$3/gx        ;$d=S('Mb');
-        $bfst{ $bfls[$bfle - $_]}=~ s/   (\D    )(  4 )(\D   )/$1$d$2$i$3/gx        ;$d=S('Yg');
+        $bfst{ $bfls[$bfle - $_]}=~ s/   (\D    )(4 )([^0-9w])/$1$d$2$i$3/gx        ;$d=S('Yg');
         $bfst{ $bfls[$bfle - $_]}=~ s/   (\D    )(  6 )(\D   )/$1$d$2$i$3/gx        ;$d=S('ob'); # du some basic sumb page2 b8 sequence listz
         $bfst{ $bfls[$bfle - $_]}=~ s/   (\D    )( 47 )(\D   )/$1$d$2$i$3/gx        ;$d=S('Yb');
         $bfst{ $bfls[$bfle - $_]}=~ s/   (\s    )( 48 )(\s   )/$1$d$2$i$3/gx        ;$d=S('Gr');
