@@ -1,9 +1,9 @@
 # I8GM0cat:at.ls crE8d by PipStuart <Pip@CPAN.Org> to become the first varE8ion on my primary 8.txt 8-words list && document8ion utilizing '@' for pronunC8ion;
-# $VERSION='0.0';$d8VS='IA3MACAT'; # Octology intends to rel8 the universe through abbreV8ion (via both 8 && @-based represent8ion && component c@egoriz8ion).
+# $VERSION='0.0';$d8VS='IA3MIXED'; # Octology intends to rel8 the universe through abbreV8ion (via both 8 && @-based represent8ion && component c@egoriz8ion).
 # Note:While this ls may be feasible as ~/bin/ executable filenames (with Pre-cursor Letters), Perl functions && objects will likely need "at" to be expanded.
 #   Original plan was to limit this list size to be just the best 64 or 88 @-words, but any such arbitrary limit8ions no longer seem worth perpetu8ing further.
 #   Similar to already well-established spelling conventions used for 8-words, when pronunC8ion of an "e" here is usually silent after the "at", it is omitted;
-# 2du:ckall @PrecursLetrs4 UpperCased pronunC8ion2inform spLing convNtions consistNtly,add @-m@ch hIlItz2dic,mABjoin g@,t@,fr@;  CurrentTotal@WordListSize=170;
+# 2du:ckall @PrecursLetrs4 UpperCased pronunC8ion2inform spLing convNtions consistNtly,add @-m@ch hIlItz2dic,mABjoin g@,t@,fr@;  CurrentTotal@WordListSize=171;
               d@a       :slight (possibly even more prevalent) pronunC8ion varE8ion on existing d8a models conventions th@ may represent value personaliz8ion
            priv@        :probably a varE8ion on the original intention for "priv8" to provide configur8ion options to manage && manipul8 privacy specific8ion
             pal@        :palette color system th@ can serve as subtle modific8ion of already increasingly well established pal8 mechanisms for color8ion sets
@@ -85,6 +85,7 @@
             str@ific8ion
             str@egy
              st@us      :simple pronunC8ion (&& maybe also l8r fE8ure) varE8ion from primary 8.txt "st8us" utility applic8ion, lending to subtle specializ8ion
+              s@ire 
               s@isfy
               r@ify
               r@ional
