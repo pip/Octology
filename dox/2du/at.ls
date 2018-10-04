@@ -1,9 +1,9 @@
 # I8GM0cat:at.ls crE8d by PipStuart <Pip@CPAN.Org> to become the first varE8ion on my primary 8.txt 8-words list && document8ion utilizing '@' for pronunC8ion;
-# $VERSION='0.0';$d8VS='IA3MIXED'; # Octology intends to rel8 the universe through abbreV8ion (via both 8 && @-based represent8ion && component c@egoriz8ion).
+# $VERSION='0.0';$d8VS='IA4M8r3K'; # Octology intends to rel8 the universe through abbreV8ion (via both 8 && @-based represent8ion && component c@egoriz8ion).
 # Note:While this ls may be feasible as ~/bin/ executable filenames (with Pre-cursor Letters), Perl functions && objects will likely need "at" to be expanded.
 #   Original plan was to limit this list size to be just the best 64 or 88 @-words, but any such arbitrary limit8ions no longer seem worth perpetu8ing further.
 #   Similar to already well-established spelling conventions used for 8-words, when pronunC8ion of an "e" here is usually silent after the "at", it is omitted;
-# 2du:ckall @PrecursLetrs4 UpperCased pronunC8ion2inform spLing convNtions consistNtly,add @-m@ch hIlItz2dic,mABjoin g@,t@,fr@;  CurrentTotal@WordListSize=171;
+# 2du:ckall @PrecursLetrs4 UpperCased pronunC8ion2inform spLing convNtions consistNtly,add @-m@ch hIlItz2dic; SameAs1st*r8 3K b64CurrentTotal@WordListSize=212;
               d@a       :slight (possibly even more prevalent) pronunC8ion varE8ion on existing d8a models conventions th@ may represent value personaliz8ion
            priv@        :probably a varE8ion on the original intention for "priv8" to provide configur8ion options to manage && manipul8 privacy specific8ion
             pal@        :palette color system th@ can serve as subtle modific8ion of already increasingly well established pal8 mechanisms for color8ion sets
@@ -16,7 +16,10 @@
               s@        :chair tools  (maybe gaming, recliners, wick-mesh, lounge, office, kitchen, p@io, folding, stackable, couches, bean-bags, stools, etc.)
              fl@
              fl@r
-             fr@rnity   : # maybe also l8r add sepR8 entries for fr@rnal (like describing twins) && fr@rnize (for brotherhood fellowship assoC8d activities)
+             fr@ricide  :severe injury or murder of a sibling
+             fr@rnize   :engaging in brotherhood fellowship assoC8d activities
+             fr@rnity
+             fr@rnal
              fr@
               m@
               p@
@@ -25,7 +28,8 @@
              sp@
              sp@r
              sp@ula     :simple kitchen utensil to slide beneath pancakes, omelets, burgers, or other rel8ively fl@ foods which are flipped over during cooking
-             cr@on      :the part of a continent th@ is stable && forms the central mass of the continent, typically Precambrian
+           appR@us      :full collection or set of implements or utensils for a given experimental or oper8ive duty, complex instrument, appliance, or machine
+             cr@on      :the part of a continent th@ is stable && forms the central mass of the continent, typically Pre-Cambrian
              dr@
              br@
               r@t@      :a series of short sharp taps (as made by strokes on a drum or knocks on a door) which may extend into "rat-a-tat-tat"
@@ -39,10 +43,17 @@
               t@
               t@r
               m@r
+              m@ricide  :murder of a mother
+              p@ricide  :murder of a father
+              m@erial
+              m@erializ8ion
+           hazm@
               n@ron     :n8ive sodium carbon8, glass gall or sandiver, or saltpeter (from Minerology)
               n@ural
+              n@uraliz8ion
              an@omy
               c@aract   :eye disease involving clouding or opacific8ion of natural (crystalline?) lens, large waterfall or violent "sp8" rushing over precipice
+              c@amaran  :kind of raft or float consisting of 2 or more logs or pieces of wood lashed together && moved by paddles or sail, or twin-hull vessel
               c@astrophy
                @mosphere
                @mology  :branch of science which treats of the laws && phenomena of aqueous vapor && vaporiz8ion (from Physics)
@@ -66,9 +77,11 @@
                @l       :from VirtualEntity ofRelevantAcronyms (Feb2016): ActivexTempl8Library (MS,ActiveX,MSVC), or AdaptiveThresholdLearning (neural nets)
                @l@l     :"atlatl" (&& AnyThingLordtoATL in `dic pip`) as Mexican spear thrower or throw stick (from Anthropology) in [Webster 1913 Suppl. +PJC]
                @las     : # this is also a slight mispronunC8ion of this filename "at.ls" when ignoring dot '.' && just focusing on letter pairs as 2 syllables
+              s@ellite  :secondary planet or man-made equipment which revolves about another celestial body, such as the moon orbiting earth (from Astronomy)
               s@urn
               s@ur8
              fl@ul8
+             fl@us      :reflexively farting intestinal gas out through the anus, or breaking wind euphemistically
              pl@        :usually a small piece, portion, plain, or plot of fl@ even level ground laid out with some design for a special use, or a braided pl8
              pr@        :"n8s", ass,arse, buttocks,butt,bum,buns, can, fanny, hind, keister, rear,rump, stern,seat, tail,tooshie,tush, bottom,behind, derriere
              gn@
@@ -84,6 +97,7 @@
             str@ify
             str@ific8ion
             str@egy
+            str@us      :large dark low cloud
              st@us      :simple pronunC8ion (&& maybe also l8r fE8ure) varE8ion from primary 8.txt "st8us" utility applic8ion, lending to subtle specializ8ion
               s@ire 
               s@isfy
@@ -114,22 +128,47 @@
               r@chet
               s@chel
               l@eral
+              c@erpillar
               c@egory
               c@egoriz8ion
               m@ur8ion
+              m@ricul8
               m@rimony  :in the modern civilized world, it seems most informed && pragmatic men should be circumspect about marriage (except when raising kids)
               m@ress
+              m@rass
               p@ronize  :probably connot8ion indic8ing condescending && belittling @itude (whereas p8ron may more typically refer to frequent material support)
               p@rn      : # maybe some purposeful form@ for PCRE (Perl Comp@ible Regular Expressions), dynamic templ8ing, or math formulas like Fibonacci
+              p@nt
+              p@sy
               p@io
-         problM@ic
-        plutocr@        :wealthy f@c@
+              p@h       :"path" varE8ion in the vein of f8h pronunC8ion as "faith"
+          habit@
+         aerost@        :balloon, especially passive without motive power, or balloonist aeronaut (from Aeronautics)
+         cryost@        :"thermost@" th@ oper8s @ very "low"  temper8ures
+         pyrost@        :"thermost@" th@ oper8s @ very "high" temper8ures
+         gyrost@        :gyroscope modific8ion of fly wheel inside rigid case with @ached thin metal flange for instrument support, to study rot8ing bodies
+        nitrost@        :heavy yellow poisonous oily explosive liquid obtained by nitr8ing glycerol, used medically as vasodil8or, also as "glyceryl trinitr8"
+        hyperst@        :vasodil8or used to treat severe hypertension, also called diazoxide
+        hydrost@        :contrivance or "appR@us" to prevent steam boiler explosion, usually by electrically indic8ing or regul8ing height of reservoir water
+       thermost@
        laundrom@        :self-service laundry where coin-oper8d washing machines are available to individual customers
+         placem@
+          bathm@
+       welcomem@
+          doorm@
+         diplom@        :"diplom8" or official engaged in intern@ional negotE8ions who deals tactfully with others, "deleg8" or just "leg8"
+         diplom@ic
+         problM@ic
+        plutocr@ic
+        plutocr@        :wealthy f@c@
+       bureaucr@        :official of a bureaucracy or otherwise an "administr8ive official"
+       bureaucr@ic
+       aristocr@ic
        aristocr@        :magn8, optim8, or p8rician
          autocr@
-          habit@
          democr@
          democr@ic
+         autocr@ic
           autom@ic
           axiom@ic
           traum@ic
@@ -137,14 +176,16 @@
            dram@ic
            dogm@ic
            socr@ic
-             st@istic
              st@ic
+             st@istic
             err@ic
             fan@ic
+             am@eur
            conc@N8
               c@N8      :custom varE8ion on original 8.txt "catN8" for connecting or chaining d8a elements into series of links or ties,like Unix `cat` command
               c@le      : # maybe attempt to compile educ8ional material about humane treatment of grass-fed livestock likely being more ethical for carnivores
              bl@        :to cry plaintively, utter inconsider8ly, or make senseless noise, as a calf or sheep, to "bl8", bleat, or baa, ulul8, blast, or sibil8
+              p@y       :little pie, small round fl@ mass of chopped food, such as burgers which are routinely cooked through, flipping them over with a sp@ula
              pr@le      :custom varE8ion on original 8.txt   "pr8" for ch@r, sm@r, piffle, palaver, twaddle, clack, maunder, blab,gibber,t@le,blabber,or gabble
               r@le
               r@lep8    :a rattlehead, or an empty noisy talker
