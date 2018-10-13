@@ -29,7 +29,7 @@ unsetopt                \
 # auto_pushd            \# setng addz dirz 2 stack wN just normally chngng 2 thM (wich I du not normally lIk or want)
 # ksh_arrays            \# rEmMbr wNwrItng scrptz[or funcz]2include'setopt [localoptions] ksharrays'sO arAzR 0-bAsed(but!glOblBcuzmOst scrptzRstndrdly 1-bAsed)
 # re_____match_____pcre \# mA want2set for Z-SHell scripting RegularExpressions to utilize PerlCompatibility styles && mA insert 'zmodload zsh/(pc)?re(gex)?';
-export vers='0.0';export d8VS='IA4M8sat';export auth='PipStuart <Pip@CPAN.Org>'; # not Xportng $b sinc cOlIdz wi sort{$a <=> $b} /defhijlnqstuvx/i + AZ 4golf;
+export vers='0.0';export d8VS='IA8MFAlx';export auth='PipStuart <Pip@CPAN.Org>'; # not Xportng $b sinc cOlIdz wi sort{$a <=> $b} /defhijlnqstuvx/i + AZ 4golf;
 if     [[       "$SHELL"    == "" ]]; then       export SHELL=`  which zsh`;fi # 8sh should parse this && OverId it    # shud `man zshall` /OSTYP 2lern4BlO
 if     [[       "$HOSTNAME" == "" ]]; then       export HOSTNAME=`hostname`;fi #`hostname`retnz fsckd nwlInz\n4CygWinzRxvt... ||smthng els lame  =(
 if     [[       "$HOST"     == "" ]]; then       export HOST="$HOSTNAME"   ;fi;export VERBOSE='1'; # set flag to print debug && status info from system utilz
@@ -575,14 +575,15 @@ alias psag='ps  aux | grp     ';alias pingb='ping  192.168.8.255 -b'; #   ...or 
 alias idmg='identify          ';alias idmv=' idmg     -verbose     '; # ImageMagick IDentify IMaGe utl && verbose probably needs | $PAGER
 alias ckya='w3m Mail.Yahoo.Com';alias gnuya='gnuyahoo -u=piptigger '; # Ubu brwsrz not in Dflt repoz: Opera Vivaldi (mAB some othrz listed below);
 #lias cktm='w3m HTTP://Time.Gov'; # need to enable JavaScript in w3m for redirect to /HTML5/ to work so maybe just use FireFox or Chrome
+# 2du:ckot "QuteBrowser" non-plugin but minimal && fast Vim design, then Saka && WasaVi && Vimium for Chrom(e|ium) should offer small Vi emul8or in TextArea;
 # mAB Ubu brwsrz:FireFox Chrom(e|ium) Epiphany Arora Dillo WebBrowser-App (cudinstl) QupZilla Konqueror NetSurf Links2 (!in acs) Yandex PaleMoon Midori Brave;
 alias crmm='chromium-browser  ';alias crom=' google-chrome';alias crm='crom';alias epip='epiphany';alias aror='arora';alias dilo='dillo';alias lnx2='links2';
 alias brav='brave';alias brvb='brave';alias brav='brave';alias bb='brvb';alias tb='torb'; # prEfer prv8 tb&&bb&&ff mor than old (proly WebKit-based?) abovz now
 alias torb='pu ~/bin/.tst/tor-brwsr-linux64-8.0_en-US-I98MKtor;./start-tor-browser.desktop;po';alias tor='tb'; # new d8d locl v8.0 instal of sepR8 brwzr methd
 alias brwz='en "PipzBrwz: ff=FireFox, bb=Brave, tb=Tor, crom=Chrome, crmm=Chromium, epip=Epiphany, aror=Arora, dilo=Dillo, lnx2=Links2;"'; # echo reminderz
 alias 2lo=' perl -e "rename(\$_,lc) for @ARGV"'; # orig fIlnAm lOwrcAsng 1-lInr was ~/bin/tolo thN as 2lo but mAB zsh func can't stRt wi '2'? Alias workz tho!
-alias j2k=' joy2key $TTY -terminal -rcfile ~/.joy2keyrc -axis Left Right Up Down -buttons a b c d e f g h i j &';
-alias j2kx='joy2key      -X        -rcfile ~/.joy2keyrc                                                       &';
+alias j2k=' joy2key $TTY -terminal -rcfile ~/.joy2keyrc -axis Left Right Up Down -buttons a b c d e f g h i j &'; # IA6MAPJS:Reddit cmnt linkd map altrn8ive:
+alias j2kx='joy2key      -X        -rcfile ~/.joy2keyrc                                                       &'; # HTTPS://GitHub.Com/jgeumlek/MoltenGamepad
 alias glxg='glxgears -info -geometry 1920x1056+0+0'; # had to agi libssl-dev to configure opusfile, then below should be good to compress speech for Dad
 alias opuse='echo    "opusenc --bitrate 32 --vbr --artist GerryStuart,PipStuart --genre Radio --album FixTheRadio-0 --title FixTheRadio-0.0 --date `date +%Y-%m-%d` in.wav out.opus";
              echo -n "opusenc --bitrate 32 --vbr --artist GerryStuart,PipStuart --genre Radio --album FixTheRadio-0 --title FixTheRadio-0.0 --date `date +%Y-%m-%d` in.wav out.opus"|xclip -si -se p -l 1';
@@ -627,13 +628,27 @@ alias srut='pu  /etc    ;scrn -S rut -t rut sudo -E  zsh;po';alias sr='srut';ali
 alias sadm='pu  /root   ;scrn -S adm -t adm sudo    bash;po';alias sA='sadm'; #abovOb8 orig just listed: (Annihil|Deso|Domin|InitE|Obliter)8 B4XtNdng2alldirz
 alias sx='  scrn -x '; # would also be good to upd8 abov openingz of scrnz 2ck4 `scrn -ls $mtch` for already crE8d wich shud just B -x reattached 2 nstdofnew
 #lias sls=' scrn -ls'; # stuD screenie 2mkOwn version. wrapd `scrn -ls` BlObutl8r tAkthOs b8 && d8 rE4m@z as valid pRamz2reattach2. rEplAc scrn wi autO sx;
-alias sls=' pabd "\$v=q(screen -ls);\$v.=qq( @ARGV) if(@ARGV > 0);\$S=\`\$v\`;while(\$S=~ /\t((\d+)\.(\S+)\s+\((\d+)\/(\d+)\/(\d+)\s+(\d+:\d+:\d+)\s+([AP])
+alias SLS=' pabd "\$v=q(screen -ls);\$v.=qq( @ARGV) if(@ARGV > 0);\$S=\`\$v\`;while(\$S=~ /\t((\d+)\.(\S+)\s+\((\d+)\/(\d+)\/(\d+)\s+(\d+:\d+:\d+)\s+([AP])
   M\)\t\(([AD])[te]tached\)\n)/x){\$L=\$1;\$I=b8c(b64(\$2));\$H=\$3;\$N=\$4;\$D=\$5;\$E=\$6;\$T=\$7;\$n=\$8;\$t=\$9;\$x=S(q(Rr));\$t=\$x.\$t if(\$t=~ /D/);
   if(\$n=~ /P/ && \$T=~ /^(\d+):/){\$h=\$1+12;\$h%=24;\$T=~ s/^(\d+):/\$h:/;}   \$A= S   (q(Ab));\$x=q(XtracmNt:Repurposd RedOnRed detached in2filr text;);
   \$d=Octology::d8->new(q(expand)=>\$Mon[\$N-1].q( ).\$D.q( ).\$T.q( ).\$E);\$e=\$d->colr(q(a) );\$S=~ s/\Q\$L\E/\$I\$K.\$A\$H\$z\t\$e \$G\$t\$z\n/igixi;};
 \$S  =~ s/(There)( are| is a)( screens?)( on)(:)/\$B\$1\$p\$2\$G\$3\$o\$4\$W\$5/gig;\$x=q(XtracmNt:sinc -ls tAk m@chpRam,1st passin ARGV B4wrap ZshLfunc;);
 if(\$S=~ /(\d+)( Sockets?)( in )(.+)\..*/){\$s=b8c(b64(\$1));\$X=\$2;\$i=\$3;\$F=c8fn(\$4);\$x=q(XtracmNt:CmzlIk6.5solidsourclInz puttz mE undrpR4ashole;);
-  \$S=~ s/(\d+)( Sockets?)( in )(.+)\..*/\$s\$C\$X\$p\$i\$Y\$F\$W;\$z/;}print \$S;"'; # 2du:s/// tabz wi spAcpadz justifyng 4m@ng alInmNt; # /mE isA putzr?
+  \$S=~ s/(\d+)( Sockets?)( in )(.+)\..*/\$s\$C\$X\$p\$i\$Y\$F\$W;\$z/;} \$S=~ s/\\t/  /g;chomp \$S;print \$S;"'; # 2du:s/// tabz wi spcz 4m@ng alInmNt;
+alias sls='scls;SLS';alias lsl='sls'; alias LS='sls';alias SL='sls'; # just rEwrapd regUlR Screen LiSt Dflt n@ural abrEV8n wi top21 doQmNt8n map prnt BlOB4abov
+alias scls='en "IA8ME8LS:LiSt ofL8St SCrnShortCut aLiaSeS: (scls lssc lscr lscrn lscreen):
+2du:2du.txt s2=s2du; put:putr.txt sP=sput; (aLSoL8r aLiaSd:LS SL lsl sls):
+8xt:8.txt  s28=s28x; sfv: sfv.txt sf=ssfv; # 2du:l8r sx \`scrn -x\` shudBcom
+8lc:8plc*  s8l=s8lc; tab:tabz.ls  sT=stab; #   funcn from alias 2 stor ENV
+atl:  at.ls sa=satl; tip:tipz.ls  sI=stip; #   of l8st titl pRam 2 Dfault,
+b8a: b8a.ls sb=sb8a; irc:pl irssi si=sirc; #  upd8 this list text 4 colrz;
+bxl:boox.ls sB=sbxl; rut:sudo zsh sr=srut;
+cm8:ckm8*xt sc=scm8; adm:sudobash sA=sadm;
+kno:know.ls sk=skno; dvl:cd ~/dvl sd=sdvl; // pLuS my ob=obSidia pLaLiStS:
+mul: muz.ls Sm=smul; muz:cd ~/muz sm=smuz; //\`sm;3 U*/Ob*ob*\`pLafvr8Cobra;
+mvl: mvz.ls SM=smvl; mvz:cd ~/mvz sM=smvz; // oblig8d Obscure && Obliter8, obsequious, obtuse, && obstreperous observ8ion obviously?;
+// obcord8 obdur8 obequit8 obl8 oblong obluct8 obnoxious obscene obnubil8, obov8 obrog8 obfirm8 obfusc8 obimbric8 objectiv8 obsecr8?;"';
+alias lssc='scls';alias lscr='scls';alias lscrn='scls';alias lscreen='scls';
 #There are screens on: #	17836.b8a	(10/03/2018 04:09:10 AM)	(Detached)  # /defhijlnqstuvx/i + AZ are sOlOz avAl 4 golf abov (aftr a8 sOlO color Xportz);
 # cangiv m@chpRam now; #	 5604.irc	(10/02/2018 07:48:46 PM)	(Attached)\n#2 Sockets in /run/screen/S-pip.  # SCreenLiStcmnd=S,ScreenLINe=L,PRocessIDnt=I,
 #lias g3='   gst123 '; # replaced by Xpct XperimNt  # sux2havnOsyntxhIlIt  # ScreenTiTL(PID.TTY.Host)=H,moNth=N,Day=D,yEar=E,Time=T,afterNoon=n,deTached=t,
@@ -1078,7 +1093,7 @@ rsyn()     { # rsync -n --dry-run 2tst,try --(in|ex)clude=PATRN or .='-from=FILE
                                                                   pu ~;rsync -avrn --delete --files-from=dox/putr/RsynFull.ls . $1:   ;po;
                                                             echo "pu ~;rsync -avrn --delete --files-from=dox/putr/RsynFull.ls . $1:   ;po;";
                elif [[ "${(L)1}"    ==  chun* ]] || [[ "${(L)1}"    ==  taki*  ]]; then # should be m/.*w?$/i (mAB all should just be [arkct]* thru HHstAlESz)
-                                                                  pu ~;rsync -avrn --delete --files-from=dox/putr/RsynCore.ls . $1:   ;po; # !sure if2Xclud.swp
+                                                                  pu ~;rsync -avrn --delete --files-from=dox/putr/RsynCore.ls . $1:   ;po; # !sureif2Xclud.swp
                                                             echo "pu ~;rsync -avrn --delete --files-from=dox/putr/RsynCore.ls . $1:   ;po;";
                else                                    ldh;       pu ~;rsync -avrn --delete --files-from=dox/putr/RsynCore.ls --exclude='*.swp' . $DHst:;po;
                                                             echo "pu ~;rsync -avrn --delete --files-from=dox/putr/RsynCore.ls --exclude='*.swp' . $DHst:;po;";
@@ -1087,7 +1102,7 @@ rsyn()     { # rsync -n --dry-run 2tst,try --(in|ex)clude=PATRN or .='-from=FILE
                                                             echo "pu ~;rsync -avrn          --files-from=dox/putr/RsynCore.ls . $DHst:;po;";
              fi; } # if !Aku then just -n dry-run Core back to Aku to see what would upd8 for a typical reverse direction
                    # might want to add -z if someday start syncing with remote hostz && consider sharing sskeyz instead of requiring pswrdz
-uz() {   [[         $#  -lt  1    ]] && {
+uz() {   [[         $#  -lt  1    ]] && { # IA8MIJUZ:Reddit cmnt said `tar -xf $fIlnAm` autODtects compression algorithms && wouldn't need Xplicit varE8ions?;
     if   [[ "$VERBOSE"   ==  1    ]]; then echo "!*EROR*! Nothing to   UnTarB?X?Zip! $0 file: ??!";                                           fi; return 1; }
                file=$1; succ=0;
   if     [[   -f             "$1" ]] && [[   -r            "$1" ]];                                                              then

@@ -1,5 +1,5 @@
 # HBQLISTV:know.ls crE8d by PipStuart <Pip@CPAN.Org> to duplic8 Dr. Jordan B. Peterson's Quora.Com answer of "40 most valuable things everyone should know";
-# $VERSION='0.0';$d8VS='I9SMGoow'; # 2du:start chronicling Dr. Peterson's many topical videos with new section for post-title subject summaries or explor8ion;
+# $VERSION='0.0';$d8VS='IA5MINAI'; # 2du:start chronicling Dr. Peterson's many topical videos with new section for post-title subject summaries or explor8ion;
 0) Tell the truth.
 1) Do not do things that you h8.
 2) Act so that you can tell the truth about how you act.
@@ -479,3 +479,26 @@ HTTPS://YouTu.be/tUl7-SvntQ4 "Eric Weinstein: The Future of The Intellectual Dar
 # Deny their insistence that their members deserve ultim8 forgiveness while deserving complete policing of everyone else,#KillAllMen not even microaggression.
 # "Safe-Spaces" may not be about defending against traumatic triggers, but actually rather about protecting senseless narr8ives from capable critical figures.
 # Try hard to love even liars with empathy && compassion, to coax people out from the confused cult which can only feign empathy for trans but not white men;
+HTTPS://YouTu.be/gDqkCxYYDGk "AI && Logical Induction - Computerphile" # IA5MHEAL:27m47s of gr8 explan8ion of probability theory as future markets which may
+#  exhibit some varE8ions of desirable properties as consequences of recalibr8ing aggreg8d best estim8s from sources of isol8d platforms which result in some
+#  distinct limit8ions that are iter8ively compens8d for, like guessing a `die8 6` cube tumbling under a cup blind versus pre-trap video d8a, && simul8ions of
+#  sepR8 stages of replic8ion accuracy for anticip8ion, each needing custom dur8ions to converge estim8d determin8ions amidst templ8d configur8ions of actual
+#  hardware specific8ions in combin8ion with altern8ives for sources of observ8ion input d8a && software implement8ions lending their own levels of efficiency
+#  && abstraction which facilit8 logical predictions. So it may take long to decently comprehend, but reading the paper on such algorithms will be inform8ive;
+HTTPS://YouTu.be/dABU9ndg6ZA "Jordan Peterson's Tweets About Brett Kavanaugh" # IA7MM7AI:7m36s of DaveCullen st8ing legitim8 criticism for poor recommend8ion;
+HTTPS://YouTu.be/25WtLFtPWuY "Democrats Don't Care if They're Hypocrites (Ep 127)" # IA8M9XX7:6m55s of gr8 16m23s has OwenBenjamin spitballing the following:
+ 0.FreeSpeech 1.RightToBearArms 2.DueProcess 3.LimitedGovernment 4.IncreasedEconomy 5.EnergyIndependence "If the media doesn't cover it, it's good for earth!"
+# Ironic claim && examples given, considering well not so much hypocritical but maybe merely incorrect via neglecting recognition of critical counter-point of
+#   nuance, but if the media also does not cover the purported demonic activities that they are conducting, then logically it follows that it also adds good;
+Probably too pedantic, since any obvious steel-man would intuit intention to reject such pedophilia, actual rape, etc. from actual intended category of  # UC
+  "what the media covers". He's describing the lines of outward conflict, with of course deeper things indic8ing potentially much l8r battle situ8ions.  # 2?
+Cool && conspicuous that there's 64 comments posted under this YouTube video at the time when I started composing this text for Ep 127 && I just upd8d # bin8
+  HTTPS://GitHub.Com/Pip/Octology to commit 128... && all of this occurs today, on Oct. 8th, 2018. Profound demonstr8ion of harmoniz8ion in numer8ion! # blox
+May the demons be reined-in, through revL8ion as approprE8, && may the truly && ultim8ly good prevail! I appreC8 "Bear Pianist" ;) ... and all the gr8 # Big2
+  bears in battles && caves out there, hopefully taking care of each other. Eventually, let's find prime purpose in Peace!    8 <3 -Pip (AKA OctoBear) # Bear
+P.S. So gr8ful to you for all your tremendous work, Owen! You are an awesome inspir8ion to me, exemplifying heroic integrity. Thank you. =)  # chan@8.7Ksubz2
+  Off-handed curiosity, are you rel8d to Carl Benjamin (Sargon of Akkad) even distantly && what do you generally think of his manifest8ions? # 64miles4car2!$
+# IA8MADBe:The initial cryptic part above is encoded commentary under consider8ion for my compil8ion of know.ls now which I hope others someday appreC8 too;$
+HTTPS://YouTu.be/DQ6bUtq3yoQ "The First Tempt8ions of Christ: Stefan Molyneux Speaks at the Eagle Forum in St. Louis" # IA8MNfrE:43m of 40Days interpret8ion;
+HTTPS://YouTu.be/Q_NmWC8WYvY "Artificial Intelligence && Medicine || AI For Good" # IA9MEDIC:2m suggesting "Intelligence Augment8ion" IA is a better concept;
+HTTPS://YouTu.be/IocwJTY9fD0 "#MythCon V - The Good, the Bad, && the B0mb Threat" # IABMConV:55m28s of Armoured Skeptic with me peeking from middle at 2m13s;

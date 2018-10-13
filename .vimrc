@@ -3,12 +3,13 @@
 "   also stuD HTTPS://GitHub.Com/airblade/vim-gitgutter if I might want 2du some local diffs between changed code hunk lines instead of usual side-by-side
 "     (although that may throw many of my :se list! Ctrl-L past 160), reread && stuD useful 8-Year veteran HTTPS://TomJWatson.Com/blog/vim-tips && practice,
 "   stuD best plug-in managers && autom8 loading of best loc8d JSX inline syntax support (instead of persisting with antiqu8d manual plug-in configur8ions);
+" Note:HTTPS://Reddit.Com/r/vim/comments/9kpsvd/is_there_a_way_to_have_shortcuts_in_vim_to details using :mksession && UprCase marks 2 autom8 loading files;
 "set? || setl(ocal)? || let   " wN setting, trailing variable wi bang (!) || prepending 'inv' wil togl boolean flag's value; trail ? 2 query;  BlO so(urce)?
 se   nocp                     " nocompatible    - add  Vim NhancmNtz without strIving for vi compatibility (mustB1stBcuzit chngz othr optnz as side effect)
 se    enc=utf-8               "     encoding    - was already loading utf-8 from current $LANG locale, && might need termencoding also if they diverge
 "se  fenc=utf-8               " fileencoding    - might needed this if ever trying LightLine + ALE with special chars from HTTPS://StaticO.GitHub.IO/vim3.html
 let  g:VERSION='0.0'
-let     g:d8VS='I88M88U8'     " d8VersionString - l8st significant upd8 to whole file was then
+let     g:d8VS='IA6MDJJJ'     " d8VersionString - l8st significant upd8 to whole file was then
 let     g:vid8=system('d8')   " VimInit d8      - save d8 when this Vim session first stRtz up to use as dRk pRt at Nd of STatusLine just before bright upd8 d8
 let     g:cucf=1              " CUrsorColumFlag - flag to toggle whether :se cuc should be used (since dflt of it on gets slow whN lots of syntx hili on scrn)
 let     g:culb=1              " CUrsorLineBold  - flag to toggle whether :se cul below should use highlight with bold across whole line (dbl-mapd2Ctrl-L&&hls)
@@ -90,7 +91,11 @@ nn     <C-b> B
  map      B  :call SetStatusLineStyle()<CR>:w!<CR>:!bak %<CR><CR>
 "         U bakz && Upd8s  curNt EditFile in2 local ~/(lib|bin)/       " map ovrIdz Undo all changez to line since cursor moved into it (wich I don't use much)
  map      U  :call SetStatusLineStyle()<CR>:w!<CR>:!bak %<CR><CR>:!upd8 %<CR>
-"map      E  Jj
+" many Vim hackers map just 'jj' && 'kk' as quick convenient Escapes out of Insert mode && auto-write. Also Ctrl-[ && Alt-h or Alt-l (4jmpz2 scrn line H && L):
+inoremap  <C-l>    <Esc>:w<CR>:se list!<CR><C-l>
+inoremap     ;;    <Esc>:w<CR>
+inoremap     JJ    <Esc>
+ map      E  Jj
 "map      E  JJj   " old map to quickly single-space dbl-spcd linez    " If you f<char> then ; && , will repeat the find (or Til) fwd && bak on the currentline
 "map      E  A                   :<Esc>JJj                             " was briefly used to join up many distinct transl8ion descriptions with their quot8ions
 "         t insertz  `d8`  curNt date-time stamp (used 2 B PipTime)    " T below was orig like f<char> (find4wrd on curline) but srchng T<char> (unTil bakwrdz)
