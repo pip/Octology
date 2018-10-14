@@ -9,7 +9,7 @@ se   nocp                     " nocompatible    - add  Vim NhancmNtz without str
 se    enc=utf-8               "     encoding    - was already loading utf-8 from current $LANG locale, && might need termencoding also if they diverge
 "se  fenc=utf-8               " fileencoding    - might needed this if ever trying LightLine + ALE with special chars from HTTPS://StaticO.GitHub.IO/vim3.html
 let  g:VERSION='0.0'
-let     g:d8VS='IA6MDJJJ'     " d8VersionString - l8st significant upd8 to whole file was then
+let     g:d8VS='IAEMHesc'     " d8VersionString - l8st significant upd8 to whole file was then
 let     g:vid8=system('d8')   " VimInit d8      - save d8 when this Vim session first stRtz up to use as dRk pRt at Nd of STatusLine just before bright upd8 d8
 let     g:cucf=1              " CUrsorColumFlag - flag to toggle whether :se cuc should be used (since dflt of it on gets slow whN lots of syntx hili on scrn)
 let     g:culb=1              " CUrsorLineBold  - flag to toggle whether :se cul below should use highlight with bold across whole line (dbl-mapd2Ctrl-L&&hls)
@@ -93,8 +93,8 @@ nn     <C-b> B
  map      U  :call SetStatusLineStyle()<CR>:w!<CR>:!bak %<CR><CR>:!upd8 %<CR>
 " many Vim hackers map just 'jj' && 'kk' as quick convenient Escapes out of Insert mode && auto-write. Also Ctrl-[ && Alt-h or Alt-l (4jmpz2 scrn line H && L):
 inoremap  <C-l>    <Esc>:w<CR>:se list!<CR><C-l>
-inoremap     ;;    <Esc>:w<CR>
-inoremap     JJ    <Esc>
+inoremap     ;;    <Esc>
+"noremap     JJ    <Esc>
  map      E  Jj
 "map      E  JJj   " old map to quickly single-space dbl-spcd linez    " If you f<char> then ; && , will repeat the find (or Til) fwd && bak on the currentline
 "map      E  A                   :<Esc>JJj                             " was briefly used to join up many distinct transl8ion descriptions with their quot8ions

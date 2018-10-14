@@ -487,7 +487,7 @@ HTTPS://YouTu.be/gDqkCxYYDGk "AI && Logical Induction - Computerphile" # IA5MHEA
 #  && abstraction which facilit8 logical predictions. So it may take long to decently comprehend, but reading the paper on such algorithms will be inform8ive;
 HTTPS://YouTu.be/dABU9ndg6ZA "Jordan Peterson's Tweets About Brett Kavanaugh" # IA7MM7AI:7m36s of DaveCullen st8ing legitim8 criticism for poor recommend8ion;
 HTTPS://YouTu.be/25WtLFtPWuY "Democrats Don't Care if They're Hypocrites (Ep 127)" # IA8M9XX7:6m55s of gr8 16m23s has OwenBenjamin spitballing the following:
- 0.FreeSpeech 1.RightToBearArms 2.DueProcess 3.LimitedGovernment 4.IncreasedEconomy 5.EnergyIndependence "If the media doesn't cover it, it's good for earth!"
+ 0.FreeSpeech 1.RightToBearArms 2.DueProcess 3.LimitedGovernment 4.IncreasedEconomy 5.EnergyIndependence "If the media doesn't cover it, it's good for world!"
 # Ironic claim && examples given, considering well not so much hypocritical but maybe merely incorrect via neglecting recognition of critical counter-point of
 #   nuance, but if the media also does not cover the purported demonic activities that they are conducting, then logically it follows that it also adds good;
 Probably too pedantic, since any obvious steel-man would intuit intention to reject such pedophilia, actual rape, etc. from actual intended category of  # UC
