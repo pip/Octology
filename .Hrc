@@ -1,4 +1,4 @@
-# F1IL2Vhp:~/.Hrc crE8d by PipStuart <Pip@CPAN.Org> as 8sh"H"rEsourcz2configUr core fEld abbreV8ion,type colr8ion,&& aliasing; $VERSION='0.0';$d8VS='I88M0Hpr';
+# F1IL2Vhp:~/.Hrc crE8d by PipStuart <Pip@CPAN.Org> as 8sh"H"rEsourcz2configUr core fEld abbreV8ion,type colr8ion,&& aliasing; $VERSION='0.0';$d8VS='IAEMMCod';
 c           =>   C        => cOL  =>   cOL8 =>    cOLR =>   cOLM; # core c8 lAyrz;c:* sepR8lAyrzBlODterminprEfixz4allfolOing middle-map columnz th@ R!Dfalt F:;
 c:tFbSGRsgr =>   WGBZOMzom=> tXt  Fgc  bGC  Slc  Gfc  Rnd  sLC  gFC  rND ; # c8 objectz shudBgoverned by thEs lAyrz from hEr proly thru a8:new
 c:tFbSGRsgr               => tEXt Fclr bCLR Slct Grfc Rndt sLCT gRFC rNDT => tEXt, Forecolr, bACKCOLR, Select, Graphic, Rendition, sELECT, gRAPHIC, rENDITION;
@@ -139,10 +139,13 @@ Qf:DPBK     =>   YORP     => Dash,   Paren, Brace,  bracKet                     
 G           =>   G        => Goo => GuGl => GooGle_punctu8ion_and_oper8orz; # bAsic wAyz2alter Google search queriez B4 having2rEly on AdvancedSearch
 #G:"-.*+@$# =>   QXRGPSDH => literal_quotez, exclude, range, glob, Google+_or_blood_type, social_tagz, dollar_pricez, trending_hashtagz; # nEd dbldot3..7 4rAng
 #G:sOiclr   =>   SOICLR   => 'site:', 'OR', 'info:', 'cache:', 'link:', 'related:'; # Dfalt Hrc pRsing will dFinitely conflict wi thEs strngz&&Xset nAmz
-# 2du:stuD MorseCode 2Cif some 4m canBaded hEr,mkup good a8:gnr8 V8 rulez 4 abov && add Countriez,LMNtz,rsrch sportz typz&&Tmz,etc.,du!step comNtz bak2 158 2z,
+# 2du:upd8 a8 obj 2 dump sumRE of toplvl mapz,mkup good a8:gnr8 V8 rulez 4 abov && add Countriez,LMNtz,rsrch sportz typz&&Tmz,etc.,du!step comNtz bak2 158 2z,
 #   add W3.Org/TR/html5/single-page.html#the-input-element typz,DfIn new minimalist mapz2alInV8z2cnvXpnd2Perl biltinz,considr sepR8ng contXt|nAmspAc|dOmAn,
 #   mAB EvN2ally stuD XtNding4m@2DfIn contXtz:DSLz wiDomainSpecificMultimodeling 2solv (coordin|fragment)8ion problMz; # UsefulDSLzproly rEquIr dOmAnXpertzinpt
-#   NATO phonetic alphabet:Alfa,Bravo,Charlie,Delta,Echo,Foxtrot,Golf,Hotel,India,Juliett,Kilo,Lima,Mike,November,Oscar,Papa,Quebec,Romeo,Sierra,Tango,Uniform,
-#     Victor,Whiskey,X-ray,Yankee,Zulu;Military:Coca Metro Nectar Union Extra; Also aftr ading@lEstAlpha2CountryCodez,addAirport&&topStockXchngCodez2;
+# NATO phonetic alphabet:Alfa,Bravo,Charlie,Delta,Echo,Foxtrot,Golf,Hotel,India,Juliett,Kilo,Lima,Mike,November,Oscar,Papa,Quebec,Romeo,Sierra,Tango,Uniform,
+#   Victor,Whiskey,X-ray,Yankee,Zulu;Military:Coca Metro Nectar Union Extra; Also aftr ading@lEstAlpha2CountryCodez,addAirport&&topStockXchngCodez2;
+# Intern8ionalMorseCode:  0)Dot:1 unit.  1)Dash:3 units.  2)Space btwn parts of same letter:1 unit.  3)Space btwn letters:3 units.  4)Space btwn words:7 units.
+# A=.- B=-... C=-.-. D=-.. E=. F=..-. G=--. H=.... I=.. J=.--- K=-.- L=.-.. M=-- N=-. O=--- P=.--. Q=--.- R=.-. S=... T=- U=..- V=...- W=.-- X=-..-Y=-.--Z=--..
+#   0=----- 1=.---- 2=..--- 3=...-- 4=....- 5=..... 6=-.... 7=--... 8=---.. 9=----. # Morse codes here are all according to the En.WikiPedia page document8ion;
 # nOt:PerlFalsTrue:F:0, 000, 0.0, '0', '', (), undef, special fals4neg8d!true (trEtd as '' Evald as strng, 0 as numb); T:All Lse!  Ruby:F:false nil; T:All Lse!
 # Itz sorta confUsng th@mycommasyntax rEsMblz perlhash butRac2ly suprcomaz tryng2BclErlybOth arrAyz&&hashez wi intermED8 col8 lAyrz as anOt8dnew rash d8a objX?
