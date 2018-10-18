@@ -634,7 +634,10 @@ alias SLS=' pabd "\$v=q(screen -ls);\$v.=qq( @ARGV) if(@ARGV > 0);\$S=\`\$v\`;wh
   \$d=Octology::d8->new(q(expand)=>\$Mon[\$N-1].q( ).\$D.q( ).\$T.q( ).\$E);\$e=\$d->colr(q(a) );\$S=~ s/\Q\$L\E/\$I\$K.\$A\$H\$z\t\$e \$G\$t\$z\n/igixi;};
 \$S  =~ s/(There)( are| is a)( screens?)( on)(:)/\$B\$1\$p\$2\$G\$3\$o\$4\$W\$5/gig;\$x=q(XtracmNt:sinc -ls tAk m@chpRam,1st passin ARGV B4wrap ZshLfunc;);
 if(\$S=~ /(\d+)( Sockets?)( in )(.+)\..*/){\$s=b8c(b64(\$1));\$X=\$2;\$i=\$3;\$F=c8fn(\$4);\$x=q(XtracmNt:CmzlIk6.5solidsourclInz puttz mE undrpR4ashole;);
-  \$S=~ s/(\d+)( Sockets?)( in )(.+)\..*/\$s\$C\$X\$p\$i\$Y\$F\$W;\$z/;} \$S=~ s/\\t/  /g;chomp \$S;print \$S;"'; # 2du:s/// tabz wi spcz 4m@ng alInmNt;
+  \$S=~ s/(\d+)( Sockets?)( in )(.+)\..*/\$s\$C\$X\$p\$i\$Y\$F\$W;\$z/;} \$S=~ s/\\t/  /g;chomp \$S;print \$S;"'; # 2du:migr8 SLS 2 proly U8.pm 4nEded [abd]8,
+# proly chop-off "There * screen* on:" 1st unimportant line && join last 2 lines so counted socketz with path follows list's last detaild entry mor compactly,
+# prEpNd DtAlz list Ntryz wi b64 ndxz wich can Bcom altrn8 wA 2 pik session 2 scrn -x rEconect 2,add scls BlO 2 U8.pm also as sls -*h(elp)? duing bOth wi -*v,
+# Xplor posibl or bSt wAz 2 autO-rEstor pal8z aftr Dtachng or Xiting from scrn sessionz (proly by trigering XeQt of just orig pal8 fIl or re-sourcing .zshrc);
 alias sls='scls;SLS';alias lsl='scls;SLS'; alias LS='lsl';alias SL='SCLS;SLS'; # rEwrapd regUlR ScrnLiStDfltn@uralabrEV8nwitop21doQmNt8nmap prntBlOB4abov
 alias SCLS='en "IA8ME8LS:LiSt ofL8St SCrnShortCut aLiaSeS: (scls lssc lscr lscrn lscreen):
 2du:2du.txt s2=s2du; put:putr.txt sP=sput; (aLSoL8r aLiaSd:LS SL lsl sls):
@@ -648,8 +651,8 @@ kno:know.ls sk=skno; dvl:cd ~/dvl sd=sdvl; // oblig8d Obscure && Obliter8,
 mul: muz.ls Sm=smul; muz:cd ~/muz sm=smuz; // obsequious obtuse obviously,
 mvl: mvz.ls SM=smvl; mvz:cd ~/mvz sM=smvz; // obov8 obrog8 obdur8 obfirm8,
 // obfusc8 obimbric8 objectiv8 obsecr8 obcord8 obequit8 oblong observ8ion,
-// obl8obluct8 obnoxious obnubil8 obscene obstetric8;"';
-alias lssc='scls';alias lscr='scls';alias lscrn='scls';alias lscreen='scls';
+// obl8obluct8 obnoxious obnubil8 obscene obstetric8;"'; # 2du:mAB mv sa 2 sA && mk sa lIk ea 2 scrn OpN .zshrc && mk 1 4 .vimrc 2 && upd8 hLp tXtz,upd8 cmNtz;
+alias lssc='scls';alias lscr='scls';alias lscrn='scls';alias lscreen='scls'; # 2du:contMpl8 bSt wA 2 Unify 234-char scrn session cmdz && cOdz&&crE8 or sx bak2;
 alias scls='pabd "\$d=Octology::d8->new(q(IAGMLsls));\$S=              ## everything is looking pretty tight && nicely color-highlighted for distinctions now
 q[LiSt ofL8St SCrnShortCut aLiaSeS: (scls lssc lscr lscrn lscreen):    // also l8r 2du:Dtecting width alreD done; ## nowBcAm obvious solid 7blok;
 2du:2du.txt s2=s2du; put:putr.txt sP=sput; (aLSoL8r aLiaSd:LS SL lsl sls):    bxl:boox.ls sB=sbxl; rut:sudo zsh sr=srut; // pLuS my ob=obSidia pLaLiStS:

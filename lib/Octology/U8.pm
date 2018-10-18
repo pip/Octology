@@ -1,6 +1,7 @@
 # F4IMHtuH: Octology::U8.pm crE8d by PipStuart <Pip@CPAN.Org> to have effective Ultim8 Utiliz8ion of U "You" tUbe and Useful methodz and Octoformz of upd8ing;
 #   U2b8() Blongz hEre in nw U8.pm 4"Utiliz8ion" module wi Utlz4UniT of U thEm wi U2b && upd8 (as smRt nw port of Utl:updt Using upd8z 4 Octology 4 future),
-# 2du:add to upd8 that if HHst eq Aku && fromHome path is in dvl/t8/Octl/Octology/ to also copy there for next `git add..`,
+# 2du:add2 U2b8 Dtection4 -F bSt sepR8 aud&&vid avail && thN try2 dnld both && post-join wi `ffmpeg -i $1 -i $2 -acodec copy -vcodec copy out.mp4` B4 U2b4 nAm,
+#   mABadd U2b8 optn2auto rebild all mvz 2HD,add2 upd8 th@ if HHst eq Aku && fromHome path is in dvl/t8/Octl/Octology/ to also copy there for next `git add..`,
 #   bild U2bd autOm8dtStmOde4 U2b8 2CrEsult ofruning evry dnlOded fIle thru U2b4&&shO discrepanCz Btwn NE loc8abl fIl wi sAm IdNt fEld2knO wher cOd lackz,
 #   port Utl:bak e ?,gNralIzXpct,U2b8:rEplAc `yt-dl` wi Xpct2shOprogrS,rEwrIt die8 here2Dflt b64 wi many more optnz(as "Urol" or "dieU" or othr betr name?),
 #   Xtract the qregex keyz && reuse them in sn() for less redundancy && use ($xp->matchlist)[\d] 4better Unific8ion (altho staging simple B4 complex good2),
@@ -17,7 +18,7 @@ use             Expect  ;
 require         Exporter;
 use    base  qw(Exporter); # mainly exporting global Utility functions
 our @EXPORT= qw(upd8 U2b8 U2b2 U2b3 U2b4 UTF8); # autom8d code upd8 Utl, YouTube 8 4main dnldtool4moviez, 2 cnv2audio, 3 2audio mp3, 4 4name 4matting
-our $VERSION='0.0';my $d8VS='HB1MB1rD';my $Dbug=0; #  UTF-8 (or ASCII) tables;
+our $VERSION='0.0';my $d8VS='IAIMFFMP';my $Dbug=0; #  UTF-8 (or ASCII) tables;
 #ReadMode 3; # setup 4 raw mode or 3 cbreak mode where Ctrl-C workz since signalz are enabled
 #$ENV{'TERM'}='linux'; # this is needed for arrow cursor keyz to get interpreted properly (vt100 does not do it)
 my $cm='gst123';my $to= 2;my $so=0.4;my $tS=0;$tS=1 if(-t STDIN); # CoMand strng, TimeOutsecz, SelOutflsecz, ttySTDIN?
