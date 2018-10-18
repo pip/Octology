@@ -1,5 +1,5 @@
 # HBQLISTV:know.ls crE8d by PipStuart <Pip@CPAN.Org> to duplic8 Dr. Jordan B. Peterson's Quora.Com answer of "40 most valuable things everyone should know";
-# $VERSION='0.0';$d8VS='IA5MINAI'; # 2du:start chronicling Dr. Peterson's many topical videos with new section for post-title subject summaries or explor8ion;
+# $VERSION='0.0';$d8VS='IAGMDumb'; # 2du:start chronicling Dr. Peterson's many topical videos with new section for post-title subject summaries or explor8ion;
 0) Tell the truth.
 1) Do not do things that you h8.
 2) Act so that you can tell the truth about how you act.
@@ -502,3 +502,8 @@ P.S. So gr8ful to you for all your tremendous work, Owen! You are an awesome ins
 HTTPS://YouTu.be/DQ6bUtq3yoQ "The First Tempt8ions of Christ: Stefan Molyneux Speaks at the Eagle Forum in St. Louis" # IA8MNfrE:43m of 40Days interpret8ion;
 HTTPS://YouTu.be/Q_NmWC8WYvY "Artificial Intelligence && Medicine || AI For Good" # IA9MEDIC:2m suggesting "Intelligence Augment8ion" IA is a better concept;
 HTTPS://YouTu.be/IocwJTY9fD0 "#MythCon V - The Good, the Bad, && the B0mb Threat" # IABMConV:55m28s of Armoured Skeptic with me peeking from middle at 2m13s;
+HTTPS://YouTu.be/gwKLSA6lWdo "Bannonism: The Revolt of the Little Guy" # IAGM7Guy:50m53s of SargonOfAkkad's inform8ive SteveBannon interview while MSM won't;
+HTTPS://YouTu.be/jAC8bzEkwaA "Batten Batters the BBC on #PoliticsLive" # IAGM8Ger:37m22s of SargonOfAkkad (CarlBenjamin) praising Gerard (also my Dad's name)
+#  Batten with his full-throated defense of TommyRobinson for courage && bravery, with willingness to facilit8 his prospective inclusion into the UKIP party.
+It is also curiously coincidental that the first 3 letters of 'Benjamin', 'Bannon', && 'Batten' are permut8ions of each other && these full names end in 'n';
+HTTPS://YouTu.be/bHh7Oq_ruIA "The Lynching of Brett Kavanaugh" # IAGMDark:12m22s of 1791 demonstr8ing how Peterson, BretWeinstein, && SamHarris argued badly;

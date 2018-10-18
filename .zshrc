@@ -29,7 +29,7 @@ unsetopt                \
 # auto_pushd            \# setng addz dirz 2 stack wN just normally chngng 2 thM (wich I du not normally lIk or want)
 # ksh_arrays            \# rEmMbr wNwrItng scrptz[or funcz]2include'setopt [localoptions] ksharrays'sO arAzR 0-bAsed(but!glOblBcuzmOst scrptzRstndrdly 1-bAsed)
 # re_____match_____pcre \# mA want2set for Z-SHell scripting RegularExpressions to utilize PerlCompatibility styles && mA insert 'zmodload zsh/(pc)?re(gex)?';
-export vers='0.0';export d8VS='IA8MFAlx';export auth='PipStuart <Pip@CPAN.Org>'; # not Xportng $b sinc cOlIdz wi sort{$a <=> $b} /defhijlnqstuvx/i + AZ 4golf;
+export vers='0.0';export d8VS='IAGMMsls';export auth='PipStuart <Pip@CPAN.Org>'; # not Xportng $b sinc cOlIdz wi sort{$a <=> $b} /defhijlnqstuvx/i + AZ 4golf;
 if     [[       "$SHELL"    == "" ]]; then       export SHELL=`  which zsh`;fi # 8sh should parse this && OverId it    # shud `man zshall` /OSTYP 2lern4BlO
 if     [[       "$HOSTNAME" == "" ]]; then       export HOSTNAME=`hostname`;fi #`hostname`retnz fsckd nwlInz\n4CygWinzRxvt... ||smthng els lame  =(
 if     [[       "$HOST"     == "" ]]; then       export HOST="$HOSTNAME"   ;fi;export VERBOSE='1'; # set flag to print debug && status info from system utilz
@@ -635,20 +635,40 @@ alias SLS=' pabd "\$v=q(screen -ls);\$v.=qq( @ARGV) if(@ARGV > 0);\$S=\`\$v\`;wh
 \$S  =~ s/(There)( are| is a)( screens?)( on)(:)/\$B\$1\$p\$2\$G\$3\$o\$4\$W\$5/gig;\$x=q(XtracmNt:sinc -ls tAk m@chpRam,1st passin ARGV B4wrap ZshLfunc;);
 if(\$S=~ /(\d+)( Sockets?)( in )(.+)\..*/){\$s=b8c(b64(\$1));\$X=\$2;\$i=\$3;\$F=c8fn(\$4);\$x=q(XtracmNt:CmzlIk6.5solidsourclInz puttz mE undrpR4ashole;);
   \$S=~ s/(\d+)( Sockets?)( in )(.+)\..*/\$s\$C\$X\$p\$i\$Y\$F\$W;\$z/;} \$S=~ s/\\t/  /g;chomp \$S;print \$S;"'; # 2du:s/// tabz wi spcz 4m@ng alInmNt;
-alias sls='scls;SLS';alias lsl='sls'; alias LS='sls';alias SL='sls'; # just rEwrapd regUlR Screen LiSt Dflt n@ural abrEV8n wi top21 doQmNt8n map prnt BlOB4abov
-alias scls='en "IA8ME8LS:LiSt ofL8St SCrnShortCut aLiaSeS: (scls lssc lscr lscrn lscreen):
+alias sls='scls;SLS';alias lsl='scls;SLS'; alias LS='lsl';alias SL='SCLS;SLS'; # rEwrapd regUlR ScrnLiStDfltn@uralabrEV8nwitop21doQmNt8nmap prntBlOB4abov
+alias SCLS='en "IA8ME8LS:LiSt ofL8St SCrnShortCut aLiaSeS: (scls lssc lscr lscrn lscreen):
 2du:2du.txt s2=s2du; put:putr.txt sP=sput; (aLSoL8r aLiaSd:LS SL lsl sls):
-8xt:8.txt  s28=s28x; sfv: sfv.txt sf=ssfv; # 2du:l8r sx \`scrn -x\` shudBcom
-8lc:8plc*  s8l=s8lc; tab:tabz.ls  sT=stab; #   funcn from alias 2 stor ENV
-atl:  at.ls sa=satl; tip:tipz.ls  sI=stip; #   of l8st titl pRam 2 Dfault,
-b8a: b8a.ls sb=sb8a; irc:pl irssi si=sirc; #  upd8 this list text 4 colrz;
-bxl:boox.ls sB=sbxl; rut:sudo zsh sr=srut;
-cm8:ckm8*xt sc=scm8; adm:sudobash sA=sadm;
-kno:know.ls sk=skno; dvl:cd ~/dvl sd=sdvl; // pLuS my ob=obSidia pLaLiStS:
-mul: muz.ls Sm=smul; muz:cd ~/muz sm=smuz; //\`sm;3 U*/Ob*ob*\`pLafvr8Cobra;
-mvl: mvz.ls SM=smvl; mvz:cd ~/mvz sM=smvz; // oblig8d Obscure && Obliter8, obsequious, obtuse, && obstreperous observ8ion obviously?;
-// obcord8 obdur8 obequit8 obl8 oblong obluct8 obnoxious obscene obnubil8, obov8 obrog8 obfirm8 obfusc8 obimbric8 objectiv8 obsecr8?;"';
+8xt:8.txt  s28=s28x; sfv: sfv.txt sf=ssfv; # 2du:l8r sx \`scrn -x\` shudBcm
+8lc:8plc*  s8l=s8lc; tab:tabz.ls  sT=stab; #   funcn from alias 2 storENV
+atl:  at.ls sa=satl; tip:tipz.ls  sI=stip; #   of l8st titl pRam 2 Dfault;
+b8a: b8a.ls sb=sb8a; irc:pl irssi si=sirc; ## P.S.this old varE8n deprc8d;
+bxl:boox.ls sB=sbxl; rut:sudo zsh sr=srut; // pLuS my ob=obSidia pLaLiStS:
+cm8:ckm8*xt sc=scm8; adm:sudobash sA=sadm; //\`sm;3 U*/Ob*ob*\`pLafvr8Cobra;
+kno:know.ls sk=skno; dvl:cd ~/dvl sd=sdvl; // oblig8d Obscure && Obliter8,
+mul: muz.ls Sm=smul; muz:cd ~/muz sm=smuz; // obsequious obtuse obviously,
+mvl: mvz.ls SM=smvl; mvz:cd ~/mvz sM=smvz; // obov8 obrog8 obdur8 obfirm8,
+// obfusc8 obimbric8 objectiv8 obsecr8 obcord8 obequit8 oblong observ8ion,
+// obl8obluct8 obnoxious obnubil8 obscene obstetric8;"';
 alias lssc='scls';alias lscr='scls';alias lscrn='scls';alias lscreen='scls';
+alias scls='pabd "\$d=Octology::d8->new(q(IAGMLsls));\$S=              ## everything is looking pretty tight && nicely color-highlighted for distinctions now
+q[LiSt ofL8St SCrnShortCut aLiaSeS: (scls lssc lscr lscrn lscreen):    // also l8r 2du:Dtecting width alreD done; ## nowBcAm obvious solid 7blok;
+2du:2du.txt s2=s2du; put:putr.txt sP=sput; (aLSoL8r aLiaSd:LS SL lsl sls):    bxl:boox.ls sB=sbxl; rut:sudo zsh sr=srut; // pLuS my ob=obSidia pLaLiStS:
+8xt:8.txt  s28=s28x; sfv: sfv.txt sf=ssfv; # 2du:l8r sx \`scrn -x\` shudBcom    cm8:ckm8*xt sc=scm8; adm:sudobash sA=sadm; //\`sm;3 U*/Ob*ob*\`pLafvr8Cobra;
+8lc:8plc*  s8l=s8lc; tab:tabz.ls  sT=stab; #   funcn from alias 2 stor ENV    kno:know.ls sk=skno; dvl:cd ~/dvl sd=sdvl; // oblig8d Obscure && Obliter8,
+atl:  at.ls sa=satl; tip:tipz.ls  sI=stip; #   of l8st titl pRam 2 Dfault,    mul: muz.ls Sm=smul; muz:cd ~/muz sm=smuz; // obsequious obtuse obviously,
+b8a: b8a.ls sb=sb8a; irc:pl irssi si=sirc; #  upd8 this list colr 4 cstmz;    mvl: mvz.ls SM=smvl; mvz:cd ~/mvz sM=smvz; // obov8 obrog8 obdur8 obfirm8,
+// obfusc8 obimbric8 objectiv8 obsecr8 obcord8 obequit8 oblong observ8ion,    // obl8obluct8 obnoxious obnubil8 obscene obstetric8;];               \$e=S(Rc);
+\$S=~ s/(; )/\$M\$1/g;  \$S=~ s/(\\@)/\$B\$1\$Y/g;\$S=~ s/(&&*) /\$e\$1\$z\$Y /g;\$S=~ s/(\`)/\$R\$1\$G/g;\$S=~ s/(\\w{1,4}\\.)(txt)/\$W\$1\$W\$2/g;\$e=S(Gr);
+\$S=~ s/(;)(\\n)/\$e\$1\$z\$2/;\$e=S(Yb);\$S=~ s/(;)(    )/\$e\$1\$z\$2/;        \$e=S(Cb);\$S=~ s/(;)(\\n)/\$e\$1\$z\$2/; # custm cmNt termn8r semicolonz
+\$S=~ s/(\\w{4}\\*)(xt)/\$W\$1\$W\$2/;\$S=~ s/(pLa\\w+)/\$Y\$1\$R/g;\$e=S(Or);\$S=~ s/(aLSoL8r aLiaSd)(:)/\$g\$1\$B\$2\$R/;\$S=~ s/(;)( ##)/\$e\$1\$z\$2/;
+\$S=~ s/ (2du)(:)/ \$B\$1\$m\$2\$Y/g; \$e=S(Cb);  \$S=~ s/(##+) /\$e\$1\$z\$c /g;\$e=S(Rb);\$S=~ s/(;)\$/\$e\$1\$z/;\$e=S(Wb); # && final Nding semicolon
+\$S=~ s/(,)/\$B\$1\$G/g;\$S=~ s/(\\*)/\$w\$1\$G/g;\$S=~ s/ (#) / \$e\$1\$z\$C /g;\$e=S(ob);\$S=~ s/(\\w{1,4}\\.)(ls )/\$C\$1\$C\$2/g;
+\$S=~ s/(\\s)(\\w{3})(:)/\$1\$e\$2\$z\$R\$3\$Y/g; \$S=~ s/(8plc)/\$G\$1/;        \$e=S(Yb);\$S=~ s/(\\()/\$p\$1\$R/g;\$S=~ s/(\\/)(Ob)/\$Y\$1\$G\$2/;
+\$S=~ s/(\\s)(\\w+)(=)(\\w{4})/\$1\$e\$2\$z\$C\$3\$z\$4/g;                       \$e=S(yK);\$S=~ s/(\\))(:)/\$p\$1\$G\$2/g;\$S=~ s/(pl )/\$B\$1\$G/;
+\$S=~ s/(cd )(~)(\\/)(\\w+)/\$c\$1\$B\$2\$Y\$3\$B\$4\$G/g;\$S=~ s/(\\/{2})/\$e\$1\$z\$Y/g ;\$S=~ s/(sudo)/\$r\$1\$G/g; \$S=~ s/(aLiaSeS)(:)/\$1\$o\$2/;
+\$S=~ s/(l8r sx )/\$C\$1/;\$S=~ s/( shudBcom)/\$C\$1/;if(\$ENV{COLUMNS} < 160){\$S=~ s/ 7blok/14blok/;\$S=~ s/(\\s{4,})/\\n/g;@S= split(/\\n/,\$S);
+  \$S=\$S[0].qq(\\n).\$S[2].qq(\\n).\$S[4].qq(\\n).\$S[6].qq(\\n).\$S[8].qq(\\n).\$S[10].qq(\\n).\$S[3].qq(\\n).\$S[5].qq(\\n).\$S[7].qq(\\n).\$S[9].qq(\\n).
+      \$S[11].qq(\\n).\$S[ 1].qq(\\n).\$S[12].qq(\\n).\$S[13];} \$S=~ s/(-)/\$Y\$1\$G/g;\$S=~ s/(\\.)/\$M\$1\$G/g;print \$d->colr(q(a)),\$Y,q(:),\$C,\$S;"';
 #There are screens on: #	17836.b8a	(10/03/2018 04:09:10 AM)	(Detached)  # /defhijlnqstuvx/i + AZ are sOlOz avAl 4 golf abov (aftr a8 sOlO color Xportz);
 # cangiv m@chpRam now; #	 5604.irc	(10/02/2018 07:48:46 PM)	(Attached)\n#2 Sockets in /run/screen/S-pip.  # SCreenLiStcmnd=S,ScreenLINe=L,PRocessIDnt=I,
 #lias g3='   gst123 '; # replaced by Xpct XperimNt  # sux2havnOsyntxhIlIt  # ScreenTiTL(PID.TTY.Host)=H,moNth=N,Day=D,yEar=E,Time=T,afterNoon=n,deTached=t,

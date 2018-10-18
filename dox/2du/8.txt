@@ -4788,3 +4788,6 @@ IAEMK0rb:HTTPS://HardWare.SlashDot.Org/story/18/10/14/015241/slashdot-asks-can-a
    interesting details, but it reminds me to add MorseCode to .Hrc && to consider reviving ~/dvl/n8/k0rb as my old idea for an orb as a custom k0rded keyb0rd.
  A comment near the end mentioned HTTPS://Deskthority.Net/wiki/ErgoDox as a DIY keyboard project (inspired by Key64), which I should probably investig8 more.
  The project was started by user "Dox" (Dominic Beauchamp) with the PCB designed by "bpiphany" (Fredrik Atmer), both coinciding with my document8ion && name;
+IAHM2du8:HTTPS://Medium.Com/@jdxcode/12-factor-cli-apps-dd3c227a0e46 should probably l8r be carefully evalU8d as priority goals for most ultim8 Octology CLIs;
+IAHMANai:Stephen Hawking (who replied to a letter I wrote to the gr8 thinker when I was a child, && who passed away this past March) still offers more wisdom:
+ HTTPS://Science.SlashDot.Org/story/18/10/16/1725201/stephen-hawking-warns-that-ai-and-superhumans-could-wipe-humanity-says-theres-no-god-in-posthumous-book ;
