@@ -29,7 +29,7 @@ unsetopt                \
 # auto_pushd            \# setng addz dirz 2 stack wN just normally chngng 2 thM (wich I du not normally lIk or want)
 # ksh_arrays            \# rEmMbr wNwrItng scrptz[or funcz]2include'setopt [localoptions] ksharrays'sO arAzR 0-bAsed(but!glOblBcuzmOst scrptzRstndrdly 1-bAsed)
 # re_____match_____pcre \# mA want2set for Z-SHell scripting RegularExpressions to utilize PerlCompatibility styles && mA insert 'zmodload zsh/(pc)?re(gex)?';
-export vers='0.0';export d8VS='IAGMMsls';export auth='PipStuart <Pip@CPAN.Org>'; # not Xportng $b sinc cOlIdz wi sort{$a <=> $b} /defhijlnqstuvx/i + AZ 4golf;
+export vers='0.0';export d8VS='IB4LEtor';export auth='PipStuart <Pip@CPAN.Org>'; # not Xportng $b sinc cOlIdz wi sort{$a <=> $b} /defhijlnqstuvx/i + AZ 4golf;
 if     [[       "$SHELL"    == "" ]]; then       export SHELL=`  which zsh`;fi # 8sh should parse this && OverId it    # shud `man zshall` /OSTYP 2lern4BlO
 if     [[       "$HOSTNAME" == "" ]]; then       export HOSTNAME=`hostname`;fi #`hostname`retnz fsckd nwlInz\n4CygWinzRxvt... ||smthng els lame  =(
 if     [[       "$HOST"     == "" ]]; then       export HOST="$HOSTNAME"   ;fi;export VERBOSE='1'; # set flag to print debug && status info from system utilz
@@ -170,7 +170,8 @@ else                                   eval $($dircolors -b            ); fi #  
 #xport   LS_COLORS="abi-3.*-generic=01;31:config-3.*-generic=00;33:initrd.img-3.*-generic=01;33:System.map-3.*-generic=01;32:vmlinuz-3.*-generic=01;36:$LS_COLORS"; # /boot spec from both endz is unparsable && just front end duz!wrk; ECKL6HM1:below the Linux kernel version numbers as p@rnzR ROYG CBMP newest to oldest;
 #        LS_COLORS="*-3.16.0-29-generic=01;31:*-3.16.0-28-generic=00;33:*-3.16.0-25-generic=01;33:*-3.13.0-39-generic=01;32:$LS_COLORS";  # /boot altern8 versN
 #        LS_COLORS="*-3.11.0-19-generic=01;36:*-3.8.0-33-generic=01;34:*-3.5.0-36-generic=01;35:*-3.2.0-35-generic=00;35:$LS_COLORS";     #   && oldrfrom ChunW # F1ELGnuL:ROYG CBMP => 1;3[1o32 645p] thEse lInz should evN2LE get gNR8d from `ls /boot`; I98M89I9:rEsortd2XplicitNtrEzB4quStnz sinc wrkin lsd8 but!nrml `ls`;
-         LS_COLORS="$LS_COLORS*.png.=0;35;45:*.Hrc.=0;30:*.ls.=0;34;44:*.log.=0;32:*.kdb.=0;30;40:*.txt.=0;36:"; # somemainXtraz  # gNrl  # .?mkbgkc prvz m b k
+         LS_COLORS="$LS_COLORS*.png.=0;35;45:*.Hrc.=0;30:*.ls.=0;34;44:*.log.=0;32:*.kdb.=0;30;40:*.txt.=0;36:";  # somemAnXtraz  # gNrl  # .?mkbgkc prvz m b k
+         LS_COLORS="$LS_COLORS*.g.=0;35:*.gg.=0;30:*.g6.=0;34;44:*.6.=0;32:*.H.=0;30;40:*.8.=0;36:*.prv8.=0;34:"; # moremAnXtraz  # gNg8z # .?mkbgkc prvz +nw b
          LS_COLORS="$LS_COLORS*-interface-security=01;31:*-shim-state=01;36:*.?.=0;36:*.??.=0;34:*.???.=0;30:*.????.=0;32:";      # /run  # .?. cbkg prvz
 export   LS_COLORS="$LS_COLORS*.serverauth.???=00;32:*.serverauth.????=00;31:*.serverauth.?????=00;35:*.goutputstream-??????=00;31:"; #*.gout*-? duz!wrk4 `ls`;
 export GREP_COLORS="mt=01;34"; bindkey -v; #`bindkey -e`setzEmacs-stylCmdLynEdtng; -v hazBn betRsofR4mE,butdu!4getEmaxAtaxBax; #rEmMbr"^foo^bar"subst prEv cmd;
@@ -579,7 +580,7 @@ alias ckya='w3m Mail.Yahoo.Com';alias gnuya='gnuyahoo -u=piptigger '; # Ubu brws
 # mAB Ubu brwsrz:FireFox Chrom(e|ium) Epiphany Arora Dillo WebBrowser-App (cudinstl) QupZilla Konqueror NetSurf Links2 (!in acs) Yandex PaleMoon Midori Brave;
 alias crmm='chromium-browser  ';alias crom=' google-chrome';alias crm='crom';alias epip='epiphany';alias aror='arora';alias dilo='dillo';alias lnx2='links2';
 alias brav='brave';alias brvb='brave';alias brav='brave';alias bb='brvb';alias tb='torb'; # prEfer prv8 tb&&bb&&ff mor than old (proly WebKit-based?) abovz now
-alias torb='pu ~/bin/.tst/tor-brwsr-linux64-8.0_en-US-I98MKtor;./start-tor-browser.desktop;po';alias tor='tb'; # new d8d locl v8.0 instal of sepR8 brwzr methd
+alias torb='pu ~/bin/.tst/.tor-brwsr-linux64-8.0_en-US-I98MKtor;./start-tor-browser.desktop;po';alias tor='tb'; # new d8d locl v8.0 instal of sepR8 brwzr methd
 alias brwz='en "PipzBrwz: ff=FireFox, bb=Brave, tb=Tor, crom=Chrome, crmm=Chromium, epip=Epiphany, aror=Arora, dilo=Dillo, lnx2=Links2;"'; # echo reminderz
 alias 2lo=' perl -e "rename(\$_,lc) for @ARGV"'; # orig fIlnAm lOwrcAsng 1-lInr was ~/bin/tolo thN as 2lo but mAB zsh func can't stRt wi '2'? Alias workz tho!
 alias j2k=' joy2key $TTY -terminal -rcfile ~/.joy2keyrc -axis Left Right Up Down -buttons a b c d e f g h i j &'; # IA6MAPJS:Reddit cmnt linkd map altrn8ive:
@@ -722,6 +723,9 @@ m0() { # mplayer pr0n function
   else                                                                             cd ~/mvz/.pr0/         ;mpr0 mpg/*   wmv/*   avi/*;fi }
 alias m1='m0 1'; # could also try to add |g -v "_server /home/" or |g steam|g " Ssl " below to inVert match to try to not get child processes first
 alias m2='m0 2'; #   Screeps was below, but for some reason spawning server process was uniquely showing up with space for second 's' but no longer
+mjoin() { ffmpeg -i $1 -i $2 -acodec copy -vcodec copy $3; } # IB6LExci:was in ~/.tmp/ aftr trying;
+# IAIMFFMP:ffmpjoin.sh crE8d by PipStuart <Pip@CPAN.Org> to take 2 sepR8 file parameters of audio && video (probably from calls to U2b8) && join in2 cntAnr4m@;
+# 2du:upd8 U2b8 autom8ion to test -F output first && harvest out best audio && video available then gener8 joined container name; nOt:out.avi did!work,mp4 did;
 alias kscr='k $(psag "/screeps_server\$"|g " Ssl "|head -n 1|cut -c10-14)'; # try2 kill prv8 screeps_server process easier than typing k $PID aftr psag Sc
 alias kamp='ka -q -9 mplayer'; # -quiet (!warn if!mtch) && -9 kill force signal  ## du! actually kill any @all (if U can hLp it, plEz)!
 alias kasd='ka -q speech-dispatcher'; # resolve Aku's buggy loud HDMI audio clicking loop from "cicero" tXt2sPch4 mbrola wich surfaced aftr watching Twitch vid

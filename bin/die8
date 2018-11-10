@@ -9,7 +9,7 @@
 #   add /[rfms:]/i => ReRoll, successes minus Failurez, successes "plus" rolling Max resultz again, SucceSSeS with everything, : successes wi multi dice,
 #   add /[x]/i => maX possible die result countz as   2 successes, probably won't support gen gener8orz until standard dice support is thorough,
 #   add /(r(ep(eat)?)?|s(um)?)/ and attributez:/[rxmRXdc]/ => lc(rErOLL,Rx,RmAX,Round,eXplode,dIE,cOUNT), add rule && crit commandz for defining criticalz,
-#   add macroz && save && load, Obsidia-NeverSayDie8? so maybe rename die8 to rol8,
+#   add macroz && save && load, Obsidia-NeverSayDie8? so maybe rename die8 to rol8,stuD Roll20 && RPG.Net fRlFt sItz as politicly activ SKpist 4umz2suplant,
 #   redesign && rewrite entirely around b64 I/O && V8z 4all optionz wi new flagz to widen default number of b64 charz/input field2Binterpreted or autoDtect?,
 use strict;use warnings;my $d8VS='H4MMGG1W'; # Rolz: '4d10l2' retrnz&&skipz 0z (proly trEtd as 10z) but 4 die8: '4Al2' runs 1..10 taking actual lowest 2 throwz
 use utf8  ;use  v5.10  ;my $VERSION=  '0.0';

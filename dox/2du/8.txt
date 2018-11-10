@@ -4791,3 +4791,4 @@ IAEMK0rb:HTTPS://HardWare.SlashDot.Org/story/18/10/14/015241/slashdot-asks-can-a
 IAHM2du8:HTTPS://Medium.Com/@jdxcode/12-factor-cli-apps-dd3c227a0e46 should probably l8r be carefully evalU8d as priority goals for most ultim8 Octology CLIs;
 IAHMANai:Stephen Hawking (who replied to a letter I wrote to the gr8 thinker when I was a child, && who passed away this past March) still offers more wisdom:
  HTTPS://Science.SlashDot.Org/story/18/10/16/1725201/stephen-hawking-warns-that-ai-and-superhumans-could-wipe-humanity-says-theres-no-god-in-posthumous-book ;
+IB7LMake:HTTPS://YouTube.Com/channel/UCv1Kcz-CuGM6mxzL3B1_Eiw of TheLinuxGamer seems to exemplify frequent video content made in GNU/Linux KDEnLive to learn;

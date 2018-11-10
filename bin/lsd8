@@ -22,7 +22,7 @@
 use strict;use warnings;use utf8;use v5.10; # mAB tSt if just regUlR -t STDIN && -t STDOUT R Dtectng intractiviT corectly 1st,B4 fallng bak on IO::Interactive
 #se IO::Interactive qw(is_interactive); # employ if(is_interactive()){} around all colring to attempt to behave like `ls --color=auto` when piped away
 use Encode;use Octology::a8;#se Octology::c8;
-           use Octology::b8;use Octology::d8;use Time::PT;my $VERSION='0.0';my $d8VS='I9AM0NTH';my $sllw=0; # SymLink LargestWidth to track for alignment
+           use Octology::b8;use Octology::d8;use Time::PT;my $VERSION='0.0';my $d8VS='IB4LHmin';my $sllw=0; # SymLink LargestWidth to track for alignment
 open my $out8,'>&',STDOUT or die "Can't open  duplic8 STDOUT handle: $!"; binmode $out8,':encoding(UTF-8)'; # crE8 local duplic8 of global
 my $vsrt='-v'; my @b64d;my $t;my $sbdr;my $b64c;my($pwnw,$grpw,$grpx);$pwnw=$grpw=$grpx=0; # default -v Version SoRT,reversed b8 Colr List matchz Dfalt d8 ordr
 my $jfdz=join('|',@Day);my $jfmz=join('|',@Mon); # Joined Fieldz for DayZ and MonthZ to regex with  # BlO mAB some ARGVz shud!B sNt thru -d tSt so Dtect 1st?
@@ -79,8 +79,8 @@ for(@ldat){if(($prmz,$blsz,$pwnr,$grup,$fsiz,$d8tz,$fnam)= /^(\S{10})(\s+\d+)(\s
        $tnam=~ s/(^|\D)([12]\d{3})(\D)/$1$R$2$3/g; # basic detection of potential Year from previous or this millennium, wrapped by non-digitz
        my $jfnz=join('|',@Monz);$tnam=~s/($jfnz)/$o$1/gi;$jfnz=join('|',@Dayz);$tnam=~ s/($jfnz)/$Y$1/gi;$tnam=~ s/(Years?)/$R$1/gi; # cud du @Mon|Day too
                                 $tnam=~s/_(Sept(ember)?)_/_$o$1_/gi; # this is for Month of an 8-Bit Gaming Mix video && maybe should add other full names
-       $tnam=~ s/(Drumstep         )/$M$1/gix;$tnam=~s/((Day|Week)s?)/$Y$1/gix;$tnam=~ s/(hours?     )/$C$1/gix; # colr top8 genrez from .Hrc Monstercat map
-       $tnam=~ s/(Halo[^A-Z]       )/$W$1/gix;$tnam=~ s/(min(ute)?s?)/$B$1/gix;$tnam=~ s/(sec(ond)?s?)/$M$1/gix; # colr typical d8 fieldXpanded nAmz(&& /z$/?)
+       $tnam=~ s/(Drumstep         )/$M$1/gix;#$tnam=~s/((Day|Week)s?)/$Y$1/gix;$tnam=~ s/(hours?     )/$C$1/gix; # colr top8 genrez from .Hrc Monstercat map
+       $tnam=~ s/(Halo[^A-Z]       )/$W$1/gix;#$tnam=~ s/(min(ute)?s?)/$B$1/gix;$tnam=~ s/(sec(ond)?s?)/$M$1/gix; # colr typical d8 fieldXpanded nAmz(mvd BlO)
        $tnam=~ s/(Glitc[H_]+op     )/$K$1/gix;$tnam=~ s/((Re)?[fm]ix)/$o$1/gix;$tnam=~ s/(\d+[-_]?)(hrs?)/$o$1$C$2/gx; # mAB colr whole uldr colum sepR8ly?
        $tnam=~ s/(Dr?ubstyle?      )/$B$1/gix;$tnam=~ s/(100)(BPM)_/$Y$1_$R$2/gix;$tnam=~ s/(1080p?)/$R$1/gx; # shud tID this allup lIk %sqrm in spcs()
        $tnam=~ s/(Hardstyle?       )/$B$1/gix;$tnam=~ s/([-_])([Aa]nd)([A-Z])/"$1$c" . lc($2) .   "$z$3"/gex; # try to get PegNerdz&&Grabbitz2colr similR
@@ -181,6 +181,9 @@ for(@ldat){if(($prmz,$blsz,$pwnr,$grup,$fsiz,$d8tz,$fnam)= /^(\S{10})(\s+\d+)(\s
     $tnam=~ s/(Pink  |Skin )/$H$1$n/gix; # tSt 1st XtNded colr H 4 Hotpink wich shud Bcome visible as distinct from standRd 16 ANSI colrz within 8trm&&GnomTerm
     $tnam=~ s/(Inferno     )/$o$1$n/gix;$tnam=~ s/(Green  )/$G$1$n/gix;$tnam=~ s/(Love   )/$r$1$n/gix;
     #tnam=~ s/(Cerulean    )/$B$1$n/gix; # sO fR abov early field colr8ion Only done for U2b fIlez but thEse l8r 1z R dun for all (&& mAB thOse shudBdn hEre?)
+    $tnam=~ s/(HTTP      S?)/$B$1$n/gix; # try to catch&&colr at least start of URLs embedded within filenames
+    $tnam=~ s/((Day|Week)              [sz]?)  /$Y$1$n/gix;$tnam=~ s/(hour     [sz]?)/$C$1$n/gix; # colr typical d8 fieldXpanded nAmz (wich were orig abov ...
+    $tnam=~ s/([^;0-9]\d*)([Mm]in(ute)?[sz]?)/$1$B$2$n/g  ;$tnam=~ s/(sec(ond)?[sz]?)/$M$1$n/gix; #  ... B4 being mvd dn here 4 $n colr restor8ion aftr match)
     if(0&& exists($ENV{'TERM'}) && $ENV{'TERM'} !~ /^([Ex]|st)term/){ # only substitute custom f0nt code escapez 4 terminals that support or ignore such codez
       my($ft,$fc,$fr,$fm,$fa,$fE,$fq)= qw(t c r m a E q);#(S('f:t'),S('f:c'),S('f:r'),S('f:m'),S('f:a'),S('f:E'),S('f:q'));
           $_ = "$ft$cmpr$fc$b6bs$tS$fr$pwnr$z$gS$fm$grup$z $fa$b6fs $fE$ttim $fq$z$tnam$lspt{'no'}\n";  # add colrz && f0ntz to d8a && reset to NOrmal @EOL

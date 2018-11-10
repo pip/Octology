@@ -1,6 +1,7 @@
 # HBQLISTV:know.ls crE8d by PipStuart <Pip@CPAN.Org> to duplic8 Dr. Jordan B. Peterson's Quora.Com answer of "40 most valuable things everyone should know";
-# $VERSION='0.0';$d8VS='IAGMDumb'; # 2du:start chronicling Dr. Peterson's many topical videos with new section for post-title subject summaries or explor8ion;
-0) Tell the truth.
+# $VERSION='0.0';$d8VS='IB8LKnow'; # While this document origin8d around (&& still mainly intends to focus on) Dr. Peterson's knowledge, many others fE8ure;
+# 2du:start chronicling Dr. Peterson's many topical videos with new section for post-title subject summaries or explor8ion;
+0) Tell the truth.                 
 1) Do not do things that you h8.
 2) Act so that you can tell the truth about how you act.
 3) Pursue what is meaningful, not what is expedient.
@@ -507,3 +508,25 @@ HTTPS://YouTu.be/jAC8bzEkwaA "Batten Batters the BBC on #PoliticsLive" # IAGM8Ge
 #  Batten with his full-throated defense of TommyRobinson for courage && bravery, with willingness to facilit8 his prospective inclusion into the UKIP party.
 It is also curiously coincidental that the first 3 letters of 'Benjamin', 'Bannon', && 'Batten' are permut8ions of each other && these full names end in 'n';
 HTTPS://YouTu.be/bHh7Oq_ruIA "The Lynching of Brett Kavanaugh" # IAGMDark:12m22s of 1791 demonstr8ing how Peterson, BretWeinstein, && SamHarris argued badly;
+HTTPS://YouTu.be/MUPCHT6WTzo "Feminism's Duplicitous Damseling | HBR Talk 56" # IAJMHBad:16m33s of HannahWallen for HoneyBadgerRadio with gr8 refut8ion talk;
+HTTPS://YouTu.be/3MyXEoSivqM "Jordan Peterson Reflects on the Blowback to his Kavanaugh Twitter Post" # IAKMLIKE:11m26s of gr8 explan8ion2restore confidence;
+HTTPS://YouTu.be/epQxfSp-rdU "MIT AGI: AI in the Age of Reason (Steven Pinker)" # IALMAGIC:37m53s of Lex Fridman conducting remarkably valuable interview of
+#   Pinker addressing many crucial && interesting topics so thoughtfully && compellingly that it provides gr8 reassurance about safety && cause for optimism;
+HTTPS://YouTu.be/azOmzumh0vQ "MIT AGI: Deep Learning (Yoshua Bengio)" # IALMActi:42m18s of gr8 elabor8ion of longer terms && more active determin8ion systems
+#   which could be applied to vast comprehensive semantic understanding about oper8ional environments && increasing learning capability for gr8r applic8ions.
+# Essential topics explic8d like catastrophic forgetting around variable && rule disentanglement for rel8ions in generaliz8ions of high-level represent8ions;
+HTTPS://YouTu.be/UYAnkdhe9KE "Honest Trailers - Batman: The Anim8d Series" # IAVM0bat:7m14s of totally celebr8ory characteriz8ion of gr8 old "Batsy" cartoon;
+HTTPS://YouTu.be/MOqePMKzPio "Real Social Justice Means Calling Out Toxic Femininity Too" # IB1M3SJF:12m8s of TimPool discussing JamesDamore's summariz8ion
+   "Men systematize while women empathize." && equal rights && responsibilities ("&& authority and autonomy, ahead accountability?"); # maybe legal-layered?;
+HTTPS://YouTu.be/2OtEB28a8dA "The Democrats: Apology && Promise" # IB6LDemo:4m18s of Dr.Peterson (on UnitedSt8s MidTerm voting day) providing rather pecular
+#   (considering he is Canadian && usually not bl8antly politically partisan) defense, encouragement, endorsement && promises for a better Democratic Party;
+HTTPS://YouTube.Com/channel/UCjs0WTUUKk8tvsbG9so6Iag/videos "PoliDice" # IB6LDice:an obscure channel (400 subs) giving decent arguments against conserv8ives;
+HTTPS://YouTu.be/nQRzxEobWco "'Humanity's Phase Shift', Daniel Schmachtenberger" # IB8L8phs:30m18s of RebelWisdom's DavidFuller on civiliz8ion-level crises.
+# Evolution of consciousness, innov8ion in educ8ion, economies, && value-systems (Dunbar number for convers8ion && particip8ion in agreement on proposals).
+# Comprehensive sense-making. Inexorable polariz8ion. Valuing leaving whale in ocean more than harvesting it. Need synergistic satisfiers, government8ion,
+#   health-care, && individual basis for identity values interdependently integr8d with entire surrounding biosphere. Rivalrous multiplied by exponential
+#   technology gives rise to wars that inevitably self-termin8 civiliz8ion. Need psycho-spiritual process for sovereignty over being emotionally hijacked.
+# Must stop modeling ourselves as "Apex Pred8ors" since exponential tech causes self-termin8ion. Need self-organizing ordered complexity, not complic8ion.
+# Must design && develop a fundamentally new non-linear system for organizing civiliz8ion which obsoletes the antiqu8d self-termin8ing un-fixable systems.
+# Stop seeking strategic competitive advantage merely for power, but to develop strengths && sense-making to resist becoming deformed by rivalrous powers.
+# We need to become holistic, non-rivalrous, omni-collabor8ive, etc. both individually && collectively. We're rushing to annihil8ion of all life on earth;
