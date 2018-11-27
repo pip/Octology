@@ -3,38 +3,25 @@
 # Desc:ptcnv takes old original 5-character PipTimes or the newer 7-character format && returns the l8st 8-character d8 format with likely original time zone.
 # In Wisconsin during 2014, my CST/CDT -0600/-0500(DST) zones were E36L && E3BM so E9BL suggesting California PST/PDT -0800/-0700(DST) E36J && E3BK so E9BJ.
 # 37EKNEQ7:added '-fix' option to rename all files in current directory according to newest d8 && bak formats.
-use strict;use warnings;use utf8;use v5.10;my $VERSION='0.0';my $d8VS='E7SM4OaQ';my $oldt;my $newt;my $newn;my $mont;my $daay;my $year;my $zone = '-0700';
+use strict;use warnings;use utf8;use v5.10;my $VERSION='0.0';my $d8VS='IBKL0old';my $oldt;my $newt;my $newn;my $mont;my $daay;my $year;my $zone = '-0700';
 my %mlut =('Jan'=>1,'Feb'=>2,'Mar'=>3,'Apr'=>4,'May'=>5,'Jun'=>6,'Jul'=>7,'Aug'=>8,'Sep'=>9,'Oct'=>10,'Nov'=>11,'Dec'=>12);
-if(@ARGV && length($ARGV[0]) && $ARGV[0] =~ /^-+f/){
-  for(glob('./*')){
-    if    (/\w+[-.]([0-9A-Z][0-9A-Za-z]{2,4})$/){ # fix 3..5-char PTold suffix by expanding to 8-char d8
-      my $ptos = $1;
-      $newn = $_; # Mon Jun 10 23:15:10 2002
-      $oldt = `ptold $ptos`;
+if(@ARGV && length($ARGV[0]) && $ARGV[0] =~ /^-+f/){  for(glob('./*')){
+    if   (/\w+[-.]([0-9A-Z][0-9A-Za-z]{2,4})$/){ # fix 3..5-char PTold suffix by expanding to 8-char d8
+      my $ptos = $1;$newn = $_;$oldt = `pt    $ptos`; # this was ptold B4 it was retired so just switched to main pt instead  # Mon Jun 10 23:15:10 2002
       if($oldt =~ /^\w+\s(\w+)\s+(\d+).*?(\d+)$/){$mont = $mlut{$1};$daay = $2;$year = $3;
         if  ($year <   2010){if($mont < 3 || $mont > 9 || ($mont == 3 && $daay < 11) || ($mont == 9 && $daay > 11)){$zone = '-0800';}}
         else{$zone = '-0500';if($mont < 3 || $mont > 9 || ($mont == 3 && $daay < 11) || ($mont == 9 && $daay > 11)){$zone = '-0600';}}
-        $oldt =~ s/^(.*:\d\d)/$1:00 $zone/;
-      }
-      $newt = `d8    $oldt`;
-      $newn =~ s/[-.]$ptos/-$newt/;
-      print "ptold fix: renaming $_ to $newn\n";rename($_,$newn);
-    }elsif(/\w+(\.\w+)([-.])([0-9A-Z][0-9A-Za-z]{6})$/){ # fix 7-char suffix to precede detected filetype extension
-      $newn = $_;
-      $newt = "-$3$1";
-      $newn =~ s/$1$2$3/$newt/;
-      print "bak   fix: renaming $_ to $newn\n";rename($_,$newn);
-    }
-  }
-}else{
-  if     (length($ARGV[0]) <  5){$ARGV[0] .= '0' x (5 - length($ARGV[0]));}
-  if     (length($ARGV[0]) <= 5){$oldt = `ptold $ARGV[0]`;}
+        $oldt =~ s/^(.*:\d\d)/$1:00 $zone/;}
+      $newt = `d8    $oldt`     ;$newn =~ s/[-.]$ptos/-$newt/;print "ptold fix: renaming $_ to $newn\n";rename($_,$newn);}
+    elsif(/\w+(\.\w+)([-.])([0-9A-Z][0-9A-Za-z]{6})$/){ # fix 7-char suffix to precede detected filetype extension
+      $newn = $_;$newt = "-$3$1";$newn =~     s/$1$2$3/$newt/;print "bak   fix: renaming $_ to $newn\n";rename($_,$newn);}}}
+else{  if(length($ARGV[0]) <  5){$ARGV[0] .= '0' x (5 - length($ARGV[0]));}
+  if     (length($ARGV[0]) <= 5){$oldt = `pt    $ARGV[0]`;} # mAB leng le 5 shud Dflt to normal pt now (&& may need to integr8 ~/bin/.bak/ptold-H4* into .pm
   elsif  (length($ARGV[0]) <= 7){$oldt = `pt    $ARGV[0]`;}
   else                          {$oldt = `d8    $ARGV[0]`;}
   if($oldt =~ /^\w+\s(\w+)\s+(\d+).*?(\d+)$/){$mont = $mlut{$1};$daay = $2;$year = $3;
     if  ($year <   2010){if($mont < 3 || $mont > 9 || ($mont == 3 && $daay < 11) || ($mont == 9 && $daay > 11)){$zone = '-0800';}}
     else{$zone = '-0500';if($mont < 3 || $mont > 9 || ($mont == 3 && $daay < 11) || ($mont == 9 && $daay > 11)){$zone = '-0600';}}
     if   (length($ARGV[0]) <= 5){$oldt =~ s/^(.*:\d\d)/$1:00 $zone/;}
-    elsif(length($ARGV[0]) <= 7){$oldt =~ s/^(.*:\d\d)/$1 $zone/;}
-  } print `d8 $oldt`;
-}
+    elsif(length($ARGV[0]) <= 7){$oldt =~ s/^(.*:\d\d)/$1 $zone/   ;}
+  } print `d8 $oldt`;}

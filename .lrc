@@ -1,5 +1,5 @@
 # F1RLLK2K:~/.lrc  by PipStuart <Pip@CPAN.Org> as an altern8 format for .lsrc ideally having new ~/bin/lrc gNR8 either from the other;
-# $VERSION='0.0';$d8VS='IANMLstY'; 2du:mkUtl2gNr8 altrn8 versN of .lsrc th@purposfuly varEz colrz of comon typz,try addng bakgrnd colrz2all dFz&&tst,
+# $VERSION='0.0';$d8VS='IBJLAF39'; 2du:mkUtl2gNr8 altrn8 versN of .lsrc th@purposfuly varEz colrz of comon typz,try addng bakgrnd colrz2all dFz&&tst,
 #   add interaction2 lsd8 wN it Dtectz unrecognIzd XtNshNz offerng c@egOrEz with comon colr2autOm@ically insrt chOsN NtrEz,mAB add *-* NtrEz from .zshrc hEr &&
 #   mk lrc gNr8 either,confirm all accept f0nt cOdez wi dash accepting Dfalt foreground then redo NORMAL FILE LINK as no fi ln,mAB 8trm added2TERM ls someday;
 # 819J2Pip:~/.lsrc by PipStuart <Pip@CPAN.Org> izAheavily modifId`dircolors`cfgfIl(Orig ~/.DIR_COLORS)wich setz $ENV{'LS_COLORS'} 4GNU`ls --color`&&`lsd8`;
@@ -1309,16 +1309,17 @@ CHR                           Yk           #cd= 01;33;40    01;33;40  CHaRacter 
 .13.0-21-generic              ob
 .13.0-17-generic              Yb
 .13.0-16-generic              Gb           # BlO /boot Linux kernelz versionz  # F1ELGnuL:ROYG CBMP => 1;3[1o32 645p]; mAB EvN2LE gNR8 upd8z from `ls /boot`;
-.15.0-38-generic              R
-.15.0-36-generic              o
-.15.0-34-generic              Y
-.15.0-33-generic              G
-.15.0-32-generic              C
-.15.0-30-generic              B
-.15.0-29-generic              M
-.15.0-24-generic              p
-.15.0-23-generic              R
-.15.0-22-generic              o
+.15.0-39-generic              R
+.15.0-38-generic              o
+.15.0-36-generic              Y
+.15.0-34-generic              G
+.15.0-33-generic              C
+.15.0-32-generic              B
+.15.0-30-generic              M
+.15.0-29-generic              p
+.15.0-24-generic              R
+.15.0-23-generic              o
+.15.0-22-generic              Y
 #                                          # zsh wraps '%{' ANSI '%}' && vim User[1-9] colrz specify BlO ForeGroundz all on darkblue BakGrnd4statuslIn
 #     4NT    etfp   vim  c8  color              ANSI      HTML    Octology::d8::fldz (`d8`)
 #     0f     Fsy_   %*    W WhiteBright         \e[1;37m  FEFDFF            # vim %* resets statuslIn colr 2 Dfalt   White on darkblue so has max 10 colrz

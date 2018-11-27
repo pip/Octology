@@ -51,7 +51,7 @@ our @EXPORT= qw(bfr8c    b8c    d8c    dur8c       a8c   a8colr      h2rl   rl2h
     $z    $k    $r    $o    $y    $g     $c $SKpb    $m    $p    $w  tstc    $K    $R    $O    $Y    $G    $C    $B    $M    $P    $W    %p622 %p222
  $tnhf $ucdf  spff  spfd  spfX   shfl  reso $auth %cmsp %p8k2 @p82k  chp8     S2f4 c2f4 dm2u cdst %crgb %cbrt @snls @mrls %cdrd %cdrn    %nrgb         gnp8);
  # of 52 posibl sngl-letr var nmz,a8 Xportz 20,$b && $a unavail,so shudB thEs30 lFt4quik shortSt nAmz: 'def hij l n  q stuv x', 'A  DEF HIJ L N  Q STUV X Z';
-our $VERSION='0.0';my  $d8VS='IA3MALLo';our $auth='PipStuart <Pip@CPAN.Org>'; # above not exporting $b since collidez with sort{$a  <=> $b};unalloc'd sOlOz^;
+our $VERSION='0.0';my  $d8VS='IBRL0res';our $auth='PipStuart <Pip@CPAN.Org>'; # above not exporting $b since collidez with sort{$a  <=> $b};unalloc'd sOlOz^;
 our $ucdf= eval('use Color::Similarity::RGB qw(distance);1') || 0; # try2set UseColorDistanceFlag if optional module is available; /defhijlnqstuvx/i + /AZ/^;
 our @Monz=qw(January February March   April     May June July   August September October November December);our @Mon=();push(@Mon,substr($_,0,3)) for(@Monz);
 our @Dayz=qw(Sunday  Monday   Tuesday Wednesday Thursday Friday Saturday                                  );our @Day=();push(@Day,substr($_,0,3)) for(@Dayz);
@@ -1644,99 +1644,155 @@ sub reso{my $optz=join(' ',@_)||''; # 598KBvas:reso crE8d by PipStuart <Pip@CPAN
   my @hdmz=( 6400,4800,4320,4096,3072,2400,2304,2160,2048,1920,     1800,1600,1536,     1440,1392,1350,1344,1280,1200,1152,     1080,1024,1050, 960, 900, 864);
   push(@wdmz,960,854,            800,768,720,640,    512,        480,470,426,400,        320,240,        160,    120,80,40); # rvrs sortd pixl widthz2compUt on
   push(@hdmz,854,800,768,720,640,600,576,540,480,400,384,360,350,348,320,300,272,270,240,200,160,150,144,120,100, 75,50,25); # ""              heightz
-  my @aspz=( 18.5/9  , 17/9  , 16/9  ,  5/3  ,  8/5  ,  3/2  ,  4/3  ,  5/4  );map{$_=sprintf("%-4.2f",$_)*1.0}@aspz;
-  my @asps=("18.5/9w","17/9w","16/9w"," 5/3w"," 8/5w"," 3/2s"," 4/3s"," 5/4s");my %rslt=();
-  my %prcz=('7680x4800'=>[ 'WHUXGA ',   1.00,85,'spec:Wide Hexa Ultra   XGA                            '], # 2du:XtNd all descz by 3 charz
-            '7680x4320'=>[ '8K UHD ',64000.0,85,'spec:UltraHigh DefN 8K 4320p UHDTV2:Sharp    AKA:SHV  '], # SHV:SuperHighVision
-            '6400x4800'=>[  'HUXGA ',   1.00,30,'spec:Wide HexadecatuplSXGA                            '],
-            '6400x4096'=>[ 'WHSXGA ',   1.00,30,'spec:Wide HexadecatuplSXGA                            '],
-            '5120x4096'=>[  'HSXGA ',   1.00,30,'spec:HexadecatupleSuperXGA                            '],
-            '5120x3200'=>[  'WHXGA ',   1.00,30,'spec:Wide HexadecatupleXGA                            '],
-            '4096x3072'=>[   'HXGA ',   1.00,30,'spec:HexadecatupleXtendedGraphicsArray                '],
-            '4096x2160'=>[ '4K DCI ',32000.0,30,'spec:UltraHigh DefN 4K 2160p UHDTV1:LG                '],
-            '3840x2400'=>[ 'WQUXGA ',   1.00,32,'spec:Wide Quad UltraXGA                               '],
-            '3840x2160'=>[ '4K UHD ',3500.00,32,'spec:UltraHigh DefN 4K 2160p UHDTV1:Asus PQ321 10BPP  '], # IGZO LED bklt wiDisplayPort&&dual HDMI
-            '3200x2400'=>[  'QUXGA ',   1.00,30,'spec:Quad Ultra     XGA                               '],
-            '3280x2048'=>[ 'WQSXGA ',   1.00,30,'spec:Wide Quad SuperXGA:Barco Coronis Fusion 6MP DL   '],
-            '3200x2048'=>[ 'WQSXGA ',   1.00,30,'spec:Wide Quad SuperXGA                               '],
-            '3200x1800'=>[  'WQXGA+',   1.00,30,'spec:Wide Quad      XGA+  UbuLaptop:Dell XPS13 DvlEd  '], # with Intel KabyLake Corei5, 8GB RAM, 256GB SSD
-            '2960x1440'=>[   'WQHD+', 720.00, 6,'spec:Wide Quad High Def+   :Samsung GalaxyS8 highest  '],
-            '2560x2048'=>[  'QSXGA ',   1.00,30,'spec:Quad SuperXtendGA                                '],
-            '2560x1600'=>[  'WQXGA ',1444.15,30,'spec:Wide Quad XtendGA             :Dell 3007WFP      '],
-            '2560x1440'=>[    'QHD ',1449.00,13,'spec:Quad High Definition:AKA:WQHD :Fuji T904WideQHD  '],
-            '2220x1080'=>[    'FHD+', 720.00, 6,'spec:Full High Definition+ :Samsung GalaxyS8 mid(Dflt)'],
-            '2048x1536'=>[   'QXGA ',   1.00,21,'spec:Quad XtendGraphxA    Max4CRTanalog        24bpp  '],
-            '2048x1152'=>[  'QWXGA ',   1.00,27,'spec:Quad Wide XtendGA     :Samsung 2342BWX 23inch LCD'],
-            '2048x1080'=>[ '2K DCI ',   1.00,32,'spec:DLP CinemaTech2K 2048 DigitalFilmProjectnStndrd  '], # 48bpp at 24f/s
-            '1920x1200'=>[  'WUXGA ', 679.15,24,'spec:Wide UltraXtendGA    Max4DVI  :Dell 2407WFP      '],
-            '1920x1080'=>['HD 1080 ',   1.00,27,'spec:High Definition  1080p      AKA:FHD:FullHighDef  '], #  from WikiPDa Ntryz:CmputrDisplayStndrdSpecz
-            '1680x1050'=>[  'WSXGA+', 339.15,20,'spec:Wide SuperXtndGA+             :Dell 2007WFP      '], #VidAdaptrHardwar:  MDA ,   CGA,  OGA ,   HGC,
-            '1600x1200'=>[   'UXGA ', 359.20,20,'spec:UltraXtendGraphxA             :Dell 2007 FP      '], #    TGA ,  PGC ,   EGA ,  MCGA,  VGA ,  8514,
-            '1600x900' =>[     'HD+',   1.00,15,'spec:High Definition + 900p                           '], #   SVGA , TIGA ,   XGA
-            '1480x720' =>[     'HD+', 720.00, 6,'spec:High Definition +     :Samsung GalaxyS8 lowest   '], #DisplayResolutnz:QQVGA , HQVGA, QVGA ,  HVGA,
-            '1440x900' =>[   'WXGA+', 189.99,19,'spec:Wide XtendGrafxA+ AKA:WSXGA :SCEPTRE X9WG-NagaV  '], #    VGA ,FWVGA ,  SVGA ,   XGA,  XGA+,  SXGA,
-            '1400x1050'=>[   'SXGA+',   1.00,17,'spec:SuperXtendGrafxA+                                '], #   SXGA+, UXGA ,  QXGA , QSXGA,QUXGA ,  HXGA,
-            '1280x1024'=>[   'SXGA ', 247.20,19,'spec:SuperXtendGraphxA             :Dell 1907 FP      '], #  HSXGA ,HUXGA
-            '1280x800' =>[   'WXGA ',   1.00,15,'spec:Wide XtendGraphxA                                '], #WideScrnVariants:WQVGA ,  WVGA,WSVGA ,  WXGA,
-            '1280x768' =>['5:3WXGA ',   1.00,14,'spec:5Wyd3XtendGraphxA                                '], #  WSXGA , WXGA+, WSXGA+, WUXGA,WQXGA ,WQSXGA,
-            '1280x720' =>['HD  720 ',   1.00,23,'spec:High Definition 720p  also 1360x768 && 1366x768  '], # WQUXGA ,WHXGA ,WHSXGA ,WHUXGA
-            '1152x864' =>[    'XGA+',   1.00,17,'spec:eXtendedGraphicsArrayPlus     also x870 && x900  '],
-            '1024x768' =>[    'XGA ',   1.00,17,'spec:eXtendedGraphicsArray         also 8514 256colr  '],
-            '1024x600' =>[  'WSVGA ',   1.00,10,'spec:Wide SuperVideoGA                                '],
-            '1024x576' =>[  'WSVGA ',   1.00, 7,'spec:Wide SuperVideoGA                                '],
-             '960x720' =>[ 'xlarge ',   1.00, 8,'spec: genrlIzd size: Android 4.3 eXtra large min res  '], # genrlIzd size deprec8d for sw<N>dp SmalstWidth
-             '960x640' =>[   'DVGA ',   1.00, 4,'spec:Doubl-sizeVGA                                    '],
-             '960x540' =>[    'qHD ',   1.00, 4,'spec:quarter of full 1080p HD                         '],
-             '800x600' =>[   'SVGA ',   1.00,15,'spec:SuperVideoGraphxArray         orig 4bpp  16colr  '], # TIGA:TexasInstrumentsGraphixArchitecture competed
-             '768x576' =>[    'PAL ',   1.00,19,'spec:PhaseAltrn8gLine?                                '],
-             '854x480' =>[  'FWVGA ',   1.00,12,'spec:Full Wide VGA                                    '],
-             '800x480' =>['5:3WVGA ',   1.00,12,'spec:5Wyd3VideoGraphxA                                '],
-             '720x480' =>[   'NTSC ',   1.00,19,'spec:NatnlTelevStndrdCommittee                        '],
-             '720x350' =>[    'MDA ',   1.00, 8,'spec:MonochromeDisplay(andPrinter)?Adapter   AKA:MDP  '], # OGA:OrchidGraphixAdapter also had 720x350
-             '720x348' =>[    'HGC ',   1.00, 8,'spec:HerculesGraphixCard     1bpp  Aspectr8io 1:1.55  '], # height had to be multiple of 4 for tech reasonz
-             '640x480' =>[    'VGA ',   1.00, 6,'spec:VideoGraphixArray:alsoAndroid 4.3 large min res  '], # Android API Level18; res also4 PGC:ProGraphixCtrlr
-             '640x400' =>[   'QCGA ',   1.00, 6,'spec:QuadColorGraphixArray         :!rEl spec,mAd up  '], # most early Q speczR4 quarter but mAB this 1st Quad
-             '640x360' =>[    'nHD ',   1.00,14,'spec:ninth   of full 1080p HD                         '],
-             '640x350' =>[    'EGA ',   1.00, 8,'spec:EnhancedGraphixAdapter 16 colrz from 6-bit pal8  '],
-             '480x320' =>[   'HVGA ',   1.00,14,'spec:Half-size VGA                                    '],
-             '470x320' =>[ 'normal ',   1.00, 4,'spec: generalized size:    Android 4.3normal min res  '],
-             '426x320' =>[  'small ',   1.00, 2,'spec: generalized size:    Android 4.3 small min res  '], # Nintendo 3DS screen is   400x240 WQVGA like below
-             '400x240' =>[  'WQVGA ',   1.00, 4,'spec:Wide QuartVGA     with variantz up2 PSP 480x272  '], # TGA:TandyGraphxAdaptr also suportd CGA  16colr
-             '320x240' =>[   'QVGA ',   1.00, 4,'spec:QuartGraphixArray                                '], # Plantronics Colorplus also suportd CGA dblcolrdpth
-             '320x200' =>[    'CGA ',   1.00,13,'spec:ColorGraphixAdapter also had HiRes:640x200 mode  '], # Note:A==Adapter 4hRdware nstd of Array 4just resoz
-             '240x160' =>[  'HQVGA ',   1.00, 4,'spec:Half QuartVGA                                    '], # MCGA:MultiColrGraphixArray suportd CGA 256colr&&
-             '160x120' =>[  'QQVGA ',   1.00, 3,'spec:QuartQuartVGA                                    ']);#   640x480 monochrome @60Hz
-  my %mskz=('2560x1350'=>    "17/9w", # masks out unreal resolutions found amidst possible widths && heights with a potentially valid aspect-r8io
-            '1800x960' =>    "17/9w",
-            '1600x854' =>    "17/9w",
-            '1440x768' =>    "17/9w",
-             '720x384' =>    "17/9w", # 17/9 1.8889 - 0.1111 =
-             '512x272' =>    "17/9w", # 16/9 1.7778 - 0.1111 =
-            '3840x2304'=>    " 5/3w", #  5/3 1.6667 - 0.0667 =
-            '2560x1536'=>    " 5/3w", #  8/5 1.6    - 0.1    =
-            '1800x1080'=>    " 5/3w", #  3/2 1.5    - 0.1667 =
-            '1792x1080'=>    " 5/3w", #  4/3 1.3333 - 0.0833 =
-            '1600x960' =>    " 5/3w", #  5/4 1.25 ... so MinimumAspectR8ioVari8ion btwn stndRdz is ~0.06
-            '1440x864' =>    " 5/3w",
-            '1440x854' =>    " 5/3w", # with the prolifer8ion of resolution dimensions && adding 18.5/9 aspect, probably can't easily detect only the actual
-            '3072x2048'=>    " 3/2s", #   defined && maybe for purchase resolutions without autom8ing some Googling && parsing, or just let more be unreal?
-            '2304x1536'=>    " 3/2s", # would also want to identify if any here masked have popped up as a product to promote them up to a priced description
-            '1920x1280'=>    " 3/2s",
-            '1800x1200'=>    " 3/2s",
-            '1792x1200'=>    " 3/2s");
+  my @aspz=( 64/27   , 18.5/9  , 17/9  , 16/9  ,  5/3  ,  8/5  ,  3/2  ,  4/3  ,  5/4  );map{$_=sprintf("%-4.2f",$_)*1.0}@aspz;
+  my @asps=("64/27uw","18.5/9w","17/9w","16/9w"," 5/3w"," 8/5w"," 3/2s"," 4/3s"," 5/4s");my %rslt=();
+  my %prcz=( '7680x4800'=>[ 'WHUXGA ',   1.00,85,'spec:Wide Hexa Ultra   XGA                            '], # 2du:XtNd all descz by 3 charz
+             '7680x4320'=>[ '8K UHD ',64000.0,85,'spec:UltraHigh DefN 8K 4320p UHDTV2:Sharp    AKA:SHV  '], # SHV:SuperHighVision
+             '6400x4800'=>[  'HUXGA ',   1.00,30,'spec:Wide HexadecatuplSXGA                            '],
+             '6400x4096'=>[ 'WHSXGA ',   1.00,30,'spec:Wide HexadecatuplSXGA                            '],
+             '5120x4096'=>[  'HSXGA ',   1.00,30,'spec:HexadecatupleSuperXGA                            '],
+             '5120x3200'=>[  'WHXGA ',   1.00,30,'spec:Wide HexadecatupleXGA                            '],
+             '4096x3072'=>[   'HXGA ',   1.00,30,'spec:HexadecatupleXtendedGraphicsArray                '],
+             '4096x2160'=>[ '4K DCI ',32000.0,30,'spec:UltraHigh DefN 4K 2160p UHDTV1:LG                '],
+             '3840x2400'=>[ 'WQUXGA ',   1.00,32,'spec:Wide Quad UltraXGA                               '],
+             '3840x2160'=>[ '4K UHD ',3500.00,32,'spec:UltraHigh DefN 4K 2160p UHDTV1:Asus PQ321 10BPP  '], # IGZO LED bklt wiDisplayPort&&dual HDMI
+             '3200x2400'=>[  'QUXGA ',   1.00,30,'spec:Quad Ultra     XGA                               '],
+             '3280x2048'=>[ 'WQSXGA ',   1.00,30,'spec:Wide Quad SuperXGA :Barco Coronis Fusion 6MP DL  '],
+             '3200x2048'=>[ 'WQSXGA ',   1.00,30,'spec:Wide Quad SuperXGA                               '],
+             '3200x1800'=>[  'WQXGA+',   1.00,30,'spec:Wide Quad      XGA+  UbuLaptop:Dell XPS13 DvlEd  '], # with Intel KabyLake Corei5, 8GB RAM, 256GB SSD
+             '2960x1440'=>[   'WQHD+', 720.00, 6,'spec:Wide Quad High Def+   :Samsung GalaxyS8 highest  '],
+             '2560x2048'=>[  'QSXGA ',   1.00,30,'spec:Quad SuperXtendGA                                '],
+             '2560x1600'=>[  'WQXGA ',1444.15,30,'spec:Wide Quad XtendGA             :Dell 3007WFP      '],
+             '2560x1440'=>[    'QHD ',1449.00,13,'spec:Quad High Definition:AKA:WQHD :Fuji T904WideQHD  '],
+             '2220x1080'=>[    'FHD+', 720.00, 6,'spec:Full High Definition+ :Samsung GalaxyS8 mid(Dflt)'],
+             '2048x1536'=>[   'QXGA ',   1.00,21,'spec:Quad XtendGraphxA    Max4CRTanalog        24bpp  '],
+             '2048x1152'=>[  'QWXGA ',   1.00,27,'spec:Quad Wide XtendGA     :Samsung 2342BWX 23inch LCD'],
+             '2048x1080'=>[ '2K DCI ',   1.00,32,'spec:DLP CinemaTech2K 2048 DigitalFilmProjectnStndrd  '], # 48bpp at 24f/s
+             '1920x1200'=>[  'WUXGA ', 679.15,24,'spec:Wide UltraXtendGA    Max4DVI  :Dell 2407WFP      '],
+             '1920x1080'=>['HD 1080 ',   1.00,27,'spec:High Definition  1080p      AKA:FHD:FullHighDef  '], #  from WikiPDa Ntryz:CmputrDisplayStndrdSpecz
+             '1680x1050'=>[  'WSXGA+', 339.15,20,'spec:Wide SuperXtndGA+             :Dell 2007WFP      '], #VidAdaptrHardwar:  MDA ,   CGA,  OGA ,   HGC,
+             '1600x1200'=>[   'UXGA ', 359.20,20,'spec:UltraXtendGraphxA             :Dell 2007 FP      '], #    TGA ,  PGC ,   EGA ,  MCGA,  VGA ,  8514,
+             '1600x900' =>[     'HD+',   1.00,15,'spec:High Definition + 900p                           '], #   SVGA , TIGA ,   XGA
+             '1480x720' =>[     'HD+', 720.00, 6,'spec:High Definition +     :Samsung GalaxyS8 lowest   '], #DisplayResolutnz:QQVGA , HQVGA, QVGA ,  HVGA,
+             '1440x900' =>[   'WXGA+', 189.99,19,'spec:Wide XtendGrafxA+ AKA:WSXGA :SCEPTRE X9WG-NagaV  '], #    VGA ,FWVGA ,  SVGA ,   XGA,  XGA+,  SXGA,
+             '1400x1050'=>[   'SXGA+',   1.00,17,'spec:SuperXtendGrafxA+                                '], #   SXGA+, UXGA ,  QXGA , QSXGA,QUXGA ,  HXGA,
+             '1280x1024'=>[   'SXGA ', 247.20,19,'spec:SuperXtendGraphxA             :Dell 1907 FP      '], #  HSXGA ,HUXGA
+             '1280x800' =>[   'WXGA ',   1.00,15,'spec:Wide XtendGraphxA                                '], #WideScrnVariants:WQVGA ,  WVGA,WSVGA ,  WXGA,
+             '1280x768' =>['5:3WXGA ',   1.00,14,'spec:5Wyd3XtendGraphxA                                '], #  WSXGA , WXGA+, WSXGA+, WUXGA,WQXGA ,WQSXGA,
+             '1280x720' =>['HD  720 ',   1.00,23,'spec:High Definition 720p  also 1360x768 && 1366x768  '], # WQUXGA ,WHXGA ,WHSXGA ,WHUXGA
+             '1152x864' =>[    'XGA+',   1.00,17,'spec:eXtendedGraphicsArrayPlus     also x870 && x900  '],
+             '1024x768' =>[    'XGA ',   1.00,17,'spec:eXtendedGraphicsArray         also 8514 256colr  '],
+             '1024x600' =>[  'WSVGA ',   1.00,10,'spec:Wide SuperVideoGA                                '],
+             '1024x576' =>[  'WSVGA ',   1.00, 7,'spec:Wide SuperVideoGA                                '],
+              '960x720' =>[ 'xlarge ',   1.00, 8,'spec: genrlIzd size: Android 4.3 eXtra large min res  '], # genrlIzd size deprec8d for sw<N>dp SmalstWidth
+              '960x640' =>[   'DVGA ',   1.00, 4,'spec:Doubl-sizeVGA                                    '],
+              '960x540' =>[    'qHD ',   1.00, 4,'spec:quarter of full 1080p HD                         '],
+              '800x600' =>[   'SVGA ',   1.00,15,'spec:SuperVideoGraphxArray         orig 4bpp  16colr  '], # TIGA:TexasInstrumentsGraphixArchitecture competed
+              '768x576' =>[    'PAL ',   1.00,19,'spec:PhaseAltrn8gLine?                                '],
+              '854x480' =>[  'FWVGA ',   1.00,12,'spec:Full Wide VGA                                    '],
+              '800x480' =>['5:3WVGA ',   1.00,12,'spec:5Wyd3VideoGraphxA                                '],
+              '720x480' =>[   'NTSC ',   1.00,19,'spec:NatnlTelevStndrdCommittee                        '],
+              '720x350' =>[    'MDA ',   1.00, 8,'spec:MonochromeDisplay(andPrinter)?Adapter   AKA:MDP  '], # OGA:OrchidGraphixAdapter also had 720x350
+              '720x348' =>[    'HGC ',   1.00, 8,'spec:HerculesGraphixCard     1bpp  Aspectr8io 1:1.55  '], # height had to be multiple of 4 for tech reasonz
+              '640x480' =>[    'VGA ',   1.00, 6,'spec:VideoGraphixArray:alsoAndroid 4.3 large min res  '], # Android API Level18;res also4 PGC:ProGraphixCtrlr
+              '640x400' =>[   'QCGA ',   1.00, 6,'spec:QuadColorGraphixArray         :!rEl spec,mAd up  '], # most early Q speczR4 quarter but mAB this1st Quad
+              '640x360' =>[    'nHD ',   1.00,14,'spec:ninth   of full 1080p HD                         '],
+              '640x350' =>[    'EGA ',   1.00, 8,'spec:EnhancedGraphixAdapter 16 colrz from 6-bit pal8  '],
+              '480x320' =>[   'HVGA ',   1.00,14,'spec:Half -sizeVGA                                    '],
+              '470x320' =>[ 'normal ',   1.00, 4,'spec: generalized size:    Android 4.3 norml min res  '],
+              '426x320' =>[  'small ',   1.00, 2,'spec: generalized size:    Android 4.3 small min res  '], # Nintendo 3DS screen is   400x240 WQVGA like below
+              '400x240' =>[  'WQVGA ',   1.00, 4,'spec:Wide QuartVGA     with variantz up2 PSP 480x272  '], # TGA:TandyGraphxAdaptr also suportd CGA  16colr
+              '320x240' =>[   'QVGA ',   1.00, 4,'spec:QuartGraphixArray                                '], # Plantronics Colorplus also suportd CGAdblcolrdpth
+              '320x200' =>[    'CGA ',   1.00,13,'spec:ColorGraphixAdapter also had HiRes:640x200 mode  '], # Note:A==Adapter 4hRdware nstd of Array4just resoz
+              '240x160' =>[  'HQVGA ',   1.00, 4,'spec:Half QuartVGA                                    '], # MCGA:MultiColrGraphixArray suportd CGA 256colr&&
+              '160x120' =>[  'QQVGA ',   1.00, 3,'spec:QuartQuartVGA                                    ']);#   640x480 monochrome @60Hz
+  my %mskz=('10240x4320'=>    "64/27uw", # masks out unreal resolutions found amidst possible widths && heights with a potentially valid aspect-r8io
+             '5120x2160'=>    "64/27uw",  '3840x1600'=>    "64/27uw",
+             '3280x1350'=>    "64/27uw",  '3280x1392'=>    "64/27uw",
+             '3200x1350'=>    "64/27uw",  '3200x1344'=>    "64/27uw",
+             '3072x1280'=>    "64/27uw",   '768x320' =>    "64/27uw", # only real 64/27 I know of is 2560x1080 just after next, only left in 1920x800,1280x540
+             '2960x1280'=>    "64/27uw",  '1440x600' =>    "64/27uw",  '2560x1350'=>    "17/9w",
+             '2456x1050'=>    "64/27uw",  '1400x600' =>    "64/27uw",  '1800x960' =>    "17/9w",
+             '2456x1024'=>    "64/27uw",  '1366x576' =>    "64/27uw",  '1600x854' =>    "17/9w",
+             '2304x960' =>    "64/27uw",  '1152x480' =>    "64/27uw",  '1440x768' =>    "17/9w",
+             '2220x960' =>    "64/27uw",   '960x400' =>    "64/27uw",   '720x384' =>    "17/9w", # 17/9 1.8889 - 0.1111 =
+             '2048x864' =>    "64/27uw",   '854x360' =>    "64/27uw",   '512x272' =>    "17/9w", # 16/9 1.7778 - 0.1111 =
+             '2048x854' =>    "64/27uw",   '720x300' =>    "64/27uw",  '3840x2304'=>    " 5/3w", #  5/3 1.6667 - 0.0667 =
+             '1856x800' =>    "64/27uw",   '640x272' =>    "64/27uw",  '2560x1536'=>    " 5/3w", #  8/5 1.6    - 0.1    =
+             '1856x768' =>    "64/27uw",   '640x270' =>    "64/27uw",  '1800x1080'=>    " 5/3w", #  3/2 1.5    - 0.1667 =
+             '1800x768' =>    "64/27uw",   '480x200' =>    "64/27uw",  '1792x1080'=>    " 5/3w", #  4/3 1.3333 - 0.0833 =
+             '1792x768' =>    "64/27uw",   '470x200' =>    "64/27uw",  '1600x960' =>    " 5/3w", #  5/4 1.25 ... so ...
+             '1680x720' =>    "64/27uw",   '240x100' =>    "64/27uw",  '1440x864' =>    " 5/3w", # MinimumAspectR8ioVari8ion
+             '1480x640' =>    "64/27uw",   '120x50'  =>    "64/27uw",  '1440x854' =>    " 5/3w", #   btwn stndRdz is ~0.06  
+             '3072x2048'=>    " 3/2s", # with the prolifer8ion of resolution dimensions && adding 18.5/9 aspect, probably can't easily detect only the actual
+             '2304x1536'=>    " 3/2s", #   defined && maybe for purchase resolutions without autom8ing some Googling && parsing, or just let more be unreal?
+             '1920x1280'=>    " 3/2s", # would also want to identify if any here masked have popped up as a product to promote them up to a priced description
+             '1800x1200'=>    " 3/2s",
+             '1792x1200'=>    " 3/2s");
   for      my  $wdim (@wdmz){
     for    my  $hdim (@hdmz){ # belo: Widt X(times*multiply) Hite as Product(totlPixlz) && "WxH"Str; 2du:tune AspectScale belo2limit tolerance4resoz2accept
       for( my  $andx=0;$andx<@aspz;$andx++){my $wxhp = $wdim*$hdim;my $wxhs = $wdim . "x$hdim";next if(exists($mskz{$wxhs}));my $arat = $wdim*1.0 / $hdim;
         if(abs($arat-$aspz[$andx])<0.06){$rslt{$wxhp} .= sprintf("%10s%6sx%-4s%8s(%-04s[%-06s])%4d/%-3d", # had coma wich chngd2prnt&&!retn,nEd arat*1.0BlO?
                                          comma($wxhp),$wdim,$hdim,$asps[$andx],$aspz[$andx],substr(sprintf("%-8.6f",$arat),2,6),int($wdim/8),int($hdim/16));
                                          $rslt{$wxhp} .= sprintf("%7.1f%7.1f",$wdim/$whby,$hdim/$whby); # A1JLKRhc:nw ck4B64Nc0dng of6pxLz4txtChrz in2Wd vsHt
-          if(exists($prcz{$wxhs})      ){$rslt{$wxhp} .= sprintf(" %8s%8.2f%8.2f%7.2f %3s  %s", # 2du:compact 8x16Chrz,Wd/,Ht/ columnz&&mAB pad 1st colmz betr
-                    $prcz{$wxhs}[0],$prcz{$wxhs}[1],$prcz{$wxhs}[1]/($wxhp/1000000),$prcz{$wxhs}[1]/$prcz{$wxhs}[2],$prcz{$wxhs}[2],$prcz{$wxhs}[3]); }
+          if(exists($prcz{$wxhs})      ){$rslt{$wxhp} .= sprintf(" %8s%8.2f%8.2f %7.2f %3s  %s", # 2du:compact 8x16Chrz,Wd/,Ht/ columnz&&mAB pad 1st colmz betr
+                    $prcz{$wxhs}[0],$prcz{$wxhs}[1],$prcz{$wxhs}[1]/($wxhp/1_000_000),$prcz{$wxhs}[1]/$prcz{$wxhs}[2],$prcz{$wxhs}[2],$prcz{$wxhs}[3]); }
+  # IBRL4888:2du:trak for /$optz/ -b bkgr colm matchng colrz by rLevNc 2 stndRdz,new %cld8,bgcolrz shud cycl $[ckgb] !not[^wmyKrop] altrn8z,&&autO sepR8 REz;
                                          $rslt{$wxhp} .= "\n"; last;
         }#else{print "Fail: wdim:$wdim hdim:$hdim diff:" . ($wdim - ($hdim * $aspz[$andx])) . "\n";}
-      }}}      print "TotlPixelz Resolution  AspectRatio[actual] 8x16Chrz   Wd/$whby   Ht/$whby Standard   Price    \$/MiPx \$/In Inch Name\n";
-  for(reverse(sort { $a <=> $b } keys(%rslt))){ if(length($optz)){print $rslt{$_} if($rslt{$_} =~ /$optz/);} # should add some -help wi mAB Dflt'HD'&& optionz
-                                                else             {print $rslt{$_}                         ;}}}
+      }}}      print "TotlPixelz Resolution  AspectRatio[actual] 8x16Chrz   Wd/$whby   Ht/$whby Standard   Price    \$/MiPx  \$/In Inch Name\n";
+  for(reverse(sort { $a <=> $b } keys(%rslt))){my $A=''; # rudimentary colr8ion below, but kinda buggy already, needz attention to properly match rest
+    if(!length($optz) || $rslt{$_} =~ /$optz/){   $A=$rslt{$_};} # should add some -help wi mAB Dflt'HD'&& optionz
+                                                  $A=~ s/(\s*)([2458])([K:]|Wyd)([ ]|\d+) /$1$B$2$W$3$r$4$o/gix;
+                                                  $A=~ s/(\s )(D?)(E)(G)(A\s          ) /$z$1$o$2$O$3$B$4$c$5/gx;
+                                                  $A=~ s/(\s )(Q?)(C)(G)(A\s          ) /$z$1$G$2$C$3$B$4$c$5/gx;
+                                          $A=~ s/(Wide\s)(Quart)(V  )(G)(A\s          ) /$r$1$p$2$Y$3$B$4$o$5/gx;
+                                                  $A=~ s/(Quart)(V  )(G)(A\s          ) /$p$1$Y$2$B$3$o$4/gx;
+                                                  $A=~ s/(Quart[^V]                   ) /$p$1/gx;
+                                                  $A=~ s/(Half\s?|Hexa                )+/$B$1/gx;
+                                                  $A=~ s/(Quad\s?|deca                )+/$G$1/gx;
+                                                  $A=~ s/(Wide\s |tuple?              )+/$R$1/gx;
+                                                  $A=~ s/(    -?)(size                ) /$W$1$c$2$O/gx;
+                                                  $A=~ s/(High\s?                     )+/$o$1/gx;
+                                                  $A=~ s/(Ultra                       )+/$O$1/gx;
+                                                  $A=~ s/(Color  |Super               )+/$C$1/gx;
+                                                  $A=~ s/(Def \s?|Video               )+/$Y$1/gx;
+                                                  $A=~ s/(Galaxy   )(S)(8             ) /$R$1$W$2$B$3$C/gx;
+                                                  $A=~ s/(T)(ele)(v)(S                ) /$o$1$O$2$G$3$Y$4$o/gx;
+                                                  $A=~ s/(ninth                       )+/$g$1$y/gx;
+                                                  $A=~ s/(quarter|Dell                )+/$P$1$y/gx;
+                                                  $A=~ s/(Adapter|Asus                )+/$c$1$O/gx;
+                                                  $A=~ s/(Android    \s)(4)(\.)(3     ) /$W$1$B$2$Y$3$p$4$O/gx;
+                                                  $A=~ s/(\S*)(\s+\S+\s)(min\s)(res   ) /$R$1$C$2$m$3$G$4$z/gx;
+                                                  $A=~ s/(Plus\s?|Fuji                )+/$W$1$o/gx;
+                                                  $A=~ s/(N\s|inition\s?)(\+?|\s?)(\s?) /$O$1$W$2$C$3$o/gx;
+                                                  $A=~ s/(\sgene?ra?l[iI]ze?d      \s ) /$g$1$z/gix;
+                                                  $A=~ s/(e?Xte?nde?d?|Full        \s?) /$M$1$B/gix;
+                                                  $A=~ s/(Graf?p?h?i?x?c?s?           ) /$B$1$o/gx;
+                                                  # sinc thEs hav sO few rEquIrmNtz,not good2 /g(lobal) thM,sO was just runing Each 3X 4joind tOtl resOz B4 /g;
+                                                  $A=~ s/(\s?)(W?)(F?)(H?)(Q+    )(D?    )(        V G   A  \+?:?\s )  /$1$r$2$M$3$B$4$p$5$O$6$z$7/gx;
+                                                  $A=~ s/(\s?)(W?)(F?)(H?)(Q?)(W?)(U?)(S?)([A-Z]*?[VX]?G?A  \+?:?\s )  /$1$R$2$R$3$B$4$G$5$r$6$Y$7$C$8$z$9/gx;
+                                                  $A=~ s/(\s?)(q?)(n?)(W?)(Q?)(H?)(D      |[A-Z]*?[VX]?G?A)(\+?:?\s )  /$1$P$2$g$3$R$4$p$5$o$6$Y$7$8/gx; # $W$8
+                                                  $A=~ s/(     Q?)(F?)(H?)(X?)(    D?     |     V?)(G?)(A )(\+?:?\s )/$G$1$M$2$B$3$M$4$Y$5$B$6$o$7$W$8/gx;
+                                                  $A=~ s/(T)(V)(\d+)(                                          :|\s )/$o$1$G$2$r$3$Y$4/gx;
+                                                  $A=~ s/(H)(D)(\+?)(                                            \s )/$O$1$Y$2$W$3$K$4/gx;
+                                                  $A=~ s/(VGA?)(\+?)(                                            \s )/$R$1$W$2$G$3/gx;
+                                                  $A=~ s/(XGA?)(\+?)(                                            \s )/$M$1$W$2$K$3/gx;
+                                                  $A=~ s/(DCI?)(\s*)(                                            \d+)/$R$1$z$2$o$3/gx;
+                                                  $A=~ s/(\.)(\d\d+)(                                            \s )/$w$1$r$2$M$3/gx;
+                                                  $A=~ s/( [ 12Apy])(                                          :)(\S+) /$1$w$2$C$3$Y/gx;
+                                                  $A=~ s/(\s+)( \d+)(\s+)( spec )(                             :)      /$1$Y$2$z$3$B$4$W$5$O/gix;
+                                                  $A=~ s/(\s*\d*)(x?)(216|108|72)(0)(                          p|\s+)/$p$1$o$2$R$3$r$4$p$5$C/gix;
+                                                  $A=~ s/(\s*\d*)(x?)(    144|90)(0)(                          p|\s+)/$R$1$K$2$r$3$R$4$P$5$c/gix;
+                                                  $A=~ s/(\s*\d*)(x?)(2048   | 4320)(                          p?\s )/$O$1$R$2$G$3$p$4/gx; # spcl2048shudB4X!Y
+                                                  $A=~ s/(A)(\+)(                                                \s )/$R$1$W$2$G$3/gx;
+                                                  $A=~ s/([fn])(\+)(                                             \s )/$o$1$W$2$C$3/gx;
+                                                  $A=~ s/(\s+)(\d+)(\.)(\d+\s+)(\d+)(\.)(\d+)(.*)                    /$c$1$Y$2$w$3$g$4$G$5$w$6$c$7$C$8/gx;
+                                                  $A=~ s/(\()(\d+)(\.)(\d+\s*)(\[)(\d+)(\])(\))                      /$W$1$P$2$w$3$r$4$Y$5$R$6$Y$7$W$8/gx;
+                                                  $A=~ s/(\s*)(\d+)(\.?)(\d*\s*)(\/)(\d+)(u?)(w?)                      /$1$O$2$w$3$g$4$M$5$B$6$M$7$Y$8$C/gix;
+                                                  $A=~ s/(\s+|[:])(\d*)(x)(                                      \d+)  /$1$M$2$w$3$C$4/gix;
+                                                  $A=~ s/(^|[ ]+|\n[ ]*|\e\[(\d+|;)+m)(\d*)(,?)(\d*)(,?)(\d+)(,)(\d+)/$z$1$G$3$W$4$Y$5$W$6$o$7$W$8$R$9/gx;
+    print $A;}}
 sub spff{my $frmt='%12.12f';if(@_ && $_[0]=~ /%/){$frmt= shift(@_);} if(@_){return( sprintf("%16s",sprintf("$frmt",shift(@_))));}} # SPrintF float
 sub spfd{my $frmt='%03d';if(@_ && $_[0]=~ /%/){$frmt= shift(@_);} if(@_ && $_[0]=~ /^\d+$/){return(sprintf("$frmt",shift(@_)) );}} # SPrintF dec
 sub spfX{my $frmt='%02X';if(@_ && $_[0]=~ /%/){$frmt= shift(@_);} if(@_ && $_[0]=~ /^\d+$/){return(sprintf("$frmt",shift(@_)) );}} # SPrintF HX

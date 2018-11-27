@@ -265,10 +265,10 @@ sub e{my($auth,$vers,$d8vs,$name)=('Pip@CPAN.Org','2.0','E4IM2Qjq','e'); # consi
              'z'    => '~/.zshrc'            ,
              'v'    => '~/.vimrc'            ,
              'h'    => '~/.history'          ,
-             'p'    => '~/dox/phonbook.txt'  ,
-             't'    => '~/dox/2du/Taki.txt'  ,
-             '2'    => '~/dox/2du/2du.txt'   ,
-             '3'    => '~/dox/H3AR.Us/*.htm' ,
+#            'p'    => '~/dox/phonbook.txt'  ,
+#            't'    => '~/dox/2du/Taki.txt'  ,
+             '2'    => '~/dox/2du/2du.ls'    ,
+#            '3'    => '~/dox/H3AR.Us/*.htm' ,
              '8'    => '~/dox/2du/8.txt'    );
   if(-r "$home/.erc/.erc"){open(ERCF,'<',"$home/.erc/.erc");
     while(<ERCF>){my @eflz=split;

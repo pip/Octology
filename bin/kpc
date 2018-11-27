@@ -83,7 +83,7 @@ my  $FOUND_DIR       = '._f'; # The find (or "f") command's results used to go i
 my  $MAX_ATTACH_SIZE    = 2*1024**2; # Maximum size of entry file attachments   # /Backup/ && "/Recycle Bin/" were similarly renamed /._b/ && /._r/ now
 # Application name and version
 my  $APP_NAME           = basename($0);$APP_NAME =~ s/\.(pl|exe)$//;
-my  $VERSION            = "3.201";my $d8VS='I7FMKEEP'; # (VERSION was originally 3.0 B4 Pip modified source code into personal 3.2, then 3.1 => 3.201)
+my  $VERSION            = "3.201";my $d8VS='IBKL00SE'; # (VERSION was originally 3.0 B4 Pip modified source code into personal 3.2, then 3.1 => 3.201)
 our $HISTORY_FILE       = ""; # Gets set in the MyGetOpts() function
 my  $opts               = MyGetOpts(); # Will only return with options we think we can use
 my  $doc_passwd_gen     =
@@ -3046,42 +3046,34 @@ sub complete_groups {
   # Place the string (token) that the user is trying to complete into $path.
   my $path = $cmpl->{tokens}->[$cmpl->{tokno}];
   # If the cursor isn't at the end of the sting, chop $path to that length.
-  if (length($path) > $cmpl->{tokoff}) {
-    $path = substr($path, 0, $cmpl->{tokoff});
-  }
-
+  if(       length($path) >  $cmpl->{tokoff}){
+    $path = substr($path, 0, $cmpl->{tokoff}); }
   my $srch_path=normalize_path_string($path);
   my @possibles = ();
   # If the path ends in a "/" (a directory) then we are looking for subirs,
   # else we are just looking to tab-complete a partial dir-name at this level.
   # Used only for /<tab> (the root dir is a special case)
-  if ($srch_path =~ m/^$|^[.]$/) {
-    @possibles = grep(/^[^\0]+$/,
-        sort keys %{$state->{all_grp_paths_fwd}});
+  if($srch_path =~ m/^$|^[.]$/){
+    @possibles  = grep(/^[^\0]+$/, sort keys %{$state->{all_grp_paths_fwd}});
   # Used only for /..any/thing../<tab> (non-root directories)
-  } elsif (defined($state->{all_grp_paths_fwd}->{$srch_path})) {
+  } elsif(defined(  $state->{all_grp_paths_fwd}->{$srch_path})){
     # If the user is sitting on a dir without the trailing /, return that
     # now as the only option (/dir1/dir2<tab>). We do this because the
     # code later does not handle this case well at all. We do, however,
     # have to not do this for things like "ls <tab>" which is why we test
     # for length($path).
-    if (length($path) && $path !~ m/\/$/) {
+    if(length($path) && $path !~ m/\/$/){
       __my_suppress_completion_append_character($self);
-      return [ $cmpl->{str} . "/" ];
-    }
-    @possibles = grep(/^\Q$srch_path\E\0[^\0]+$/,
-        sort keys %{$state->{all_grp_paths_fwd}});
+      return [ $cmpl->{str} . "/" ]; }
   # Used for /../any/thing../foo<tab>
-  } else {
-    @possibles = grep(/^\Q$srch_path\E[^\0]*$/,
-        sort keys %{$state->{all_grp_paths_fwd}});
-  }
-
+    @possibles = grep(/^\Q$srch_path\E\0[^\0]+$/, sort keys %{$state->{all_grp_paths_fwd}}); }
+  else {
+    @possibles = grep(/^\Q$srch_path\E[^\0]*$/  , sort keys %{$state->{all_grp_paths_fwd}}); }
   # Loop over the possibilites doing required magic...
   my @results=();
-  foreach my $opt (@possibles) {
+  foreach my $opt (@possibles){
     $opt=humanize_path($opt);
-    if ($path =~ m/^(\/+)/) {  # Absolute path (easy case!)
+    if($path =~ m/^(\/+)/){  # Absolute path (easy case!)
       $opt=$1.$opt;
     } else {      # Path relative to pwd
       my $user_new_path=get_pwd() . "/" . $path;
@@ -3089,9 +3081,8 @@ sub complete_groups {
       # If the user's input does not resolve to a fully qualified
       # path then we need to pop off the last bit to get to that.
       if (! defined($state->{all_grp_paths_fwd}->{$new_dir})) {
-        my @path=split(/\0/, $new_dir); pop @path;
-        $new_dir = join("\0", @path);
-      }
+        my @path = split(/\0/, $new_dir); pop @path ;
+        $new_dir =  join("\0",                @path); }
       $new_dir = humanize_path($new_dir);
       # Dirname requires "../." (Trailing dot) to give ".." in those cases!
       my $dirname_path=$path;
@@ -3107,9 +3098,7 @@ sub complete_groups {
       # If the user did supply a leading "./" and we missed it, add it
       if ($path =~ m/^[.]\// && $opt !~ m/^[.]\//) { $opt = "./$opt"; }
     }
-    push @results, "$opt/";
-  }
-
+    push @results, "$opt/"; }
   # Foreach possibility, we have to strip off the parts that are already
   # completed and then prepend the part that is looking to be completed,
   # from $cmpl->{str}.
@@ -3121,36 +3110,26 @@ sub complete_groups {
       $possibility = $cmpl->{str} . humanize_path($possibility);
       if ($possibility !~ m/\/$/) { $possibility .= '/'; }
       push @completions, $possibility;
-    }
-  }
-
+    } }
   # If we are about to return only one completion result, we need to first
   # test to see if any other subdirs are below it and, if so, suppress the
   # completion append character so that the user can keep tab completing
   # into lower level directories.
-  if (scalar(@completions) == 1) {
-    my @all_subdirs = grep(/^\Q$srch_path\E[^\0]*(\0[^\0]+)?/,
-        sort keys %{$state->{all_grp_paths_fwd}});
-    if (scalar(@all_subdirs) > 0) {
+  if(scalar(@completions) == 1){
+    my @all_subdirs = grep(/^\Q$srch_path\E[^\0]*(\0[^\0]+)?/, sort keys %{$state->{all_grp_paths_fwd}});
+    if(scalar(@all_subdirs) > 0){
       __my_suppress_completion_append_character($self);
-    }
-  }
-
-  return \@completions;
-}
-
+    } }
+  return \@completions; }
 sub complete_entries {
   my $self = shift;
   my $cmpl = shift;
   our $state;
-
   # Place the string (token) that the user is trying to complete into $path.
   my $path = $cmpl->{tokens}->[$cmpl->{tokno}];
   # If the cursor isn't at the end of the sting, chop $path to that length.
-  if (length($path) > $cmpl->{tokoff}) {
-    $path = substr($path, 0, $cmpl->{tokoff});
-  }
-
+  if(       length($path) >  $cmpl->{tokoff}){
+    $path = substr($path, 0, $cmpl->{tokoff}); }
   my $srch_path=normalize_path_string($path);
   my @entries = grep(/^\Q$srch_path\E\0?[^\0]*$/,
         sort keys %{$state->{all_ent_paths_fwd}});
@@ -3161,10 +3140,8 @@ sub complete_entries {
   # We do, however, have to not do this for things like "show <tab>" which
   # is why we test for length($path).
   my $dir_level_sep = '';
-  if (defined($state->{all_grp_paths_fwd}->{$srch_path}) &&
-        length($path) && $path !~ m/\/$/) {
-    $dir_level_sep = '/';
-  }
+  if(defined($state->{all_grp_paths_fwd}->{$srch_path}) && length($path) && $path !~ m/\/$/){
+    $dir_level_sep = '/'; }
   # Foreach possibility, we have to strip off the parts that are already
   # completed and then prepend the part that is looking to be completed
   # by Term::ShellUI, from $cmpl->{str}.
@@ -3174,48 +3151,35 @@ sub complete_entries {
     if (length($possibility)) {
       $possibility = $cmpl->{str} .$dir_level_sep. humanize_path($possibility);
       push @completions, $possibility;
-    }
-  }
-
-  return \@completions;
-}
-
+    } }
+  return \@completions; }
 sub complete_groups_and_entries {
   my $self = shift;
   my $cmpl = shift;
-
-  my $groups = complete_groups($self,$cmpl);
+  my $groups  = complete_groups( $self,$cmpl);
   my $entries = complete_entries($self,$cmpl);
-
   # Merge and sort the groups and entries
   my @completions = sort (@{$groups}, @{$entries});
-  return \@completions;
-}
-
+  return \@completions; }
 # In Term::ReadLine::Gnu, suppress_completion_append_character() works,
 # but in Term::ReadLine::Perl and Term::ReadLine::Perl5 it does not, and
 # so we get to the outcome via $readline::rl_completer_terminator_character.
 sub __my_suppress_completion_append_character($) {
   my $self = shift;
-  if ($self->{term}->ReadLine eq 'Term::ReadLine::Gnu') {
+  if($self->{term}->ReadLine eq 'Term::ReadLine::Gnu'){
     $self->suppress_completion_append_character();
   } else {
     # For Term::ReadLine::Perl
     # From Term/ReadLine/readline.pm
     #  - package readline;
-    if (defined($readline::rl_completer_terminator_character)) {
-      $readline::rl_completer_terminator_character='';
-    }
+    if(defined($readline::rl_completer_terminator_character)){
+      $readline::rl_completer_terminator_character=''; }
     # For Term::ReadLine::Perl5
     # From Term/ReadLine/Perl5/readline.pm
     #  - package Term::ReadLine::Perl5::readline;"
-    if (defined(
-  $Term::ReadLine::Perl5::readline::rl_completer_terminator_character)) {
-      $Term::ReadLine::Perl5::readline::rl_completer_terminator_character='';
-    }
-  }
-}
-
+    if(defined($Term::ReadLine::Perl5::readline::rl_completer_terminator_character)){
+      $Term::ReadLine::Perl5::readline::rl_completer_terminator_character=''; }
+  } }
 ########################################################################
 # Rijndael encrypt/decrypt routines - borrowed from File::KeePass ######
 ########################################################################

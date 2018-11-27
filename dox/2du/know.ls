@@ -1,5 +1,5 @@
 # HBQLISTV:know.ls crE8d by PipStuart <Pip@CPAN.Org> to duplic8 Dr. Jordan B. Peterson's Quora.Com answer of "40 most valuable things everyone should know";
-# $VERSION='0.0';$d8VS='IB8LKnow'; # While this document origin8d around (&& still mainly intends to focus on) Dr. Peterson's knowledge, many others fE8ure;
+# $VERSION='0.0';$d8VS='IBCL8now'; # While this document origin8d around (&& still mainly intends to focus on) Dr. Peterson's knowledge, many others fE8ure;
 # 2du:start chronicling Dr. Peterson's many topical videos with new section for post-title subject summaries or explor8ion;
 0) Tell the truth.                 
 1) Do not do things that you h8.
@@ -518,7 +518,7 @@ HTTPS://YouTu.be/azOmzumh0vQ "MIT AGI: Deep Learning (Yoshua Bengio)" # IALMActi
 HTTPS://YouTu.be/UYAnkdhe9KE "Honest Trailers - Batman: The Anim8d Series" # IAVM0bat:7m14s of totally celebr8ory characteriz8ion of gr8 old "Batsy" cartoon;
 HTTPS://YouTu.be/MOqePMKzPio "Real Social Justice Means Calling Out Toxic Femininity Too" # IB1M3SJF:12m8s of TimPool discussing JamesDamore's summariz8ion
    "Men systematize while women empathize." && equal rights && responsibilities ("&& authority and autonomy, ahead accountability?"); # maybe legal-layered?;
-HTTPS://YouTu.be/2OtEB28a8dA "The Democrats: Apology && Promise" # IB6LDemo:4m18s of Dr.Peterson (on UnitedSt8s MidTerm voting day) providing rather pecular
+HTTPS://YouTu.be/2OtEB28a8dA "The Democrats: Apology && Promise" # IB6LDemo:4m18s of Dr.Peterson (on UnitedSt8s MidTerm voting day) providing rather peculiar
 #   (considering he is Canadian && usually not bl8antly politically partisan) defense, encouragement, endorsement && promises for a better Democratic Party;
 HTTPS://YouTube.Com/channel/UCjs0WTUUKk8tvsbG9so6Iag/videos "PoliDice" # IB6LDice:an obscure channel (400 subs) giving decent arguments against conserv8ives;
 HTTPS://YouTu.be/nQRzxEobWco "'Humanity's Phase Shift', Daniel Schmachtenberger" # IB8L8phs:30m18s of RebelWisdom's DavidFuller on civiliz8ion-level crises.
@@ -530,3 +530,8 @@ HTTPS://YouTu.be/nQRzxEobWco "'Humanity's Phase Shift', Daniel Schmachtenberger"
 # Must design && develop a fundamentally new non-linear system for organizing civiliz8ion which obsoletes the antiqu8d self-termin8ing un-fixable systems.
 # Stop seeking strategic competitive advantage merely for power, but to develop strengths && sense-making to resist becoming deformed by rivalrous powers.
 # We need to become holistic, non-rivalrous, omni-collabor8ive, etc. both individually && collectively. We're rushing to annihil8ion of all life on earth;
+HTTPS://YouTu.be/tmOwwIsyGY0 "A Day of Reckoning: 1 - Sam Harris, Eric Weinstein, Bret Weinstein, Maajid Nawaz, Douglas Murray" # IBBL8IDW:1h30m of totally
+#   gr8 discussion among the vanguard of the "IntellectualDarkWeb" organized && presented by "Pangburn Philosophy" on Aug. 12th, 2018 in Sydney, Australia.
+# They touch on many controversial topics in the context of restoring sanity && reason to the public's sense-making apparatus && civil discourse capacity;
+HTTPS://YouTu.be/EiwsBPnn4ps "A Day of Reckoning: 2 - The Path Forward" # d8:1h38m of discussion continU8ion which gets much deeper into immigr8ion issues;
+HTTPS://YouTu.be/15IWB9-r07M "Jordan Peterson Deb8s With Intelligent Student On h8 Speech" # IBCL8h8S:12m55s of TheConserv8iveSt8ion's Oxford talk on I6O;

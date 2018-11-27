@@ -4,9 +4,10 @@
 #   should setup all to handle UTF-8 filenames&&test,add optn to rip all .wav at once thN2 flac l8r,maybe parse track dur8ionz && add to names like P.M.Dawn,
 #   add verbose option to show rip && flacenc progress;
 use strict;use warnings;use utf8;use v5.10;use Octology::a8;use File::Temp;my($trfh,$trfn);my %edat =();my $cdat =`cdcd tracks`;my $numb;
-my $VERSION='0.0'; my $d8VS='G8FMMEwq';my %data =('albm'=> '','arti'=>'','trax'=>0,'leng'=>0,'tinf'=>[],'path'=>"$ENV{'HOME'}/muz/flac/");
+my $VERSION='0.0'; my $d8VS='IBJLFLAC';my %data =('albm'=> '','arti'=>'','trax'=>0,'leng'=>0,'tinf'=>[],'path'=>"$ENV{'HOME'}/muz/flac/");
 open my $out8,'>&',STDOUT or die "Can't open  duplic8 STDOUT handle: $!";binmode $out8,':encoding(UTF-8)'; # crE8 local duplic8 of global
-sub FixxName{my $name= shift;my $fpth=shift;$name=~s/\//-/g if(!$fpth);$name=~s/['"*\<\>?\[\]]//g;$name=~s/(__)_+/$1/g;# RgXSubzT2N4Charz&&P@rnz 2mk gud fylnmz
+sub FixxName{my $name= shift;my $fpth=shift;$name=~s/\//-/g if(!$fpth);$name=~s/['"*\<\>?\[\]]//g; # RgXSubzT2N4Charz&&P@rnz 2mk gud fylnmz
+              # $name=~s/(__)_+/$1/g; # no longer collapsing multiple spaces/underscores down to just 2, since they might be specified for purposeful alignment
                 $name=~s/^_?(\d\d?-_)/-$1/ ;$name=~s/ /_/g;$name=~s/:/-_/g;$name=~s/(^|[^\\])([!&=+()])/$1\\$2/g;$name=~s/_+\W?$//;return($name);}
 $data{'albm'}=FixxName($1)if($cdat=~ /^Album\s+name:\s+(.*)\n/);
 $data{'arti'}=FixxName($1)if($cdat=~/\nAlbum artist:\s+(.*)\n/);
