@@ -1,5 +1,5 @@
 # F1RLLK2K:~/.lrc  by PipStuart <Pip@CPAN.Org> as an altern8 format for .lsrc ideally having new ~/bin/lrc gNR8 either from the other;
-# $VERSION='0.0';$d8VS='IBJLAF39'; 2du:mkUtl2gNr8 altrn8 versN of .lsrc th@purposfuly varEz colrz of comon typz,try addng bakgrnd colrz2all dFz&&tst,
+# $VERSION='0.0';$d8VS='ICUL4lsh'; 2du:mkUtl2gNr8 altrn8 versN of .lsrc th@purposfuly varEz colrz of comon typz,try addng bakgrnd colrz2all dFz&&tst,
 #   add interaction2 lsd8 wN it Dtectz unrecognIzd XtNshNz offerng c@egOrEz with comon colr2autOm@ically insrt chOsN NtrEz,mAB add *-* NtrEz from .zshrc hEr &&
 #   mk lrc gNr8 either,confirm all accept f0nt cOdez wi dash accepting Dfalt foreground then redo NORMAL FILE LINK as no fi ln,mAB 8trm added2TERM ls someday;
 # 819J2Pip:~/.lsrc by PipStuart <Pip@CPAN.Org> izAheavily modifId`dircolors`cfgfIl(Orig ~/.DIR_COLORS)wich setz $ENV{'LS_COLORS'} 4GNU`ls --color`&&`lsd8`;
@@ -22,7 +22,7 @@
 #   Maybe design8 commentz for which extensions should start with which interpret8ion approachez along with following customiz8ion directivez or stRt nw .rc?;
 TERM Eterm
 TERM ansi
-TERM color-xterm                           # H4MM4MM4: `drc -p` now has just "*color*" here
+TERM color-xterm                           # H4MM4MM4:`drc -p` now has just "*color*" here;
 TERM con[0-9]*x[0-9]*                      # l8st`drc -p`uses char-classes&&globz so no need2sprawl so many old varE8ionz (butIstil want2know old Uniquez)
 #ERM con132x25
 #ERM con132x30
@@ -114,7 +114,7 @@ CHR                           Yk           #cd= 01;33;40    01;33;40  CHaRacter 
 .2dy                                       # .2dy (new ToDyn..amix?)
 .2do                          O            # .2do (old ToDo.ls fylz)
 .2de                                       # .2de (old 2 Dey -> 2dA)
-.4mtd                         o            # H9NMDKNO: ~/.irssi/ custom-aligned cfg && Dflt.theme filez (trying lower-case 'o' for non-2pal8 orange here)
+.4mtd                         o            # H9NMDKNO:~/.irssi/ custom-aligned cfg && Dflt.theme filez (trying lower-case 'o' for non-2pal8 orange here);
 .cfg
 .cnf
 .config
@@ -363,20 +363,22 @@ CHR                           Yk           #cd= 01;33;40    01;33;40  CHaRacter 
 .df
 .du
 .ls                           C            # try2difrNtE8 colrz of my growing number of LiSt filez as altern8ive to ubiquitous plain .txt filez
+.lsh                          c            # ICULHdWf:whIl mOst .ls fIlz abov wil stRt as just UTF8 [conf] 4m@z4 vim,l8r mA 4k off lIk this new `lshw` varE8n;
 .lst
+.1st
 .sym
 .tiny                                      # /etc/vim/ or /usr/bin/ or /usr/share/vim/ or /usr/share/doc/debhelper/examples/
 .out
-.1st
 .cat
 .canna
 .alias                                     # /etc/(X11/fonts/*/|dictd/)?
 .allow
 .fixed
 .font
-.utf8
+.utf
+.utf8                         Wb:I         # old .txt && ASCII should be part-safe to mut8 && migr8 into decent UTF-8 as better;  ## XprmNtng Italic SGRon2;##
 .UTF8
-.utf-8
+.utf-8                        Ab:i         # quA bLUE
 .UTF-8
 .iso8859
 .ISO8859
@@ -396,6 +398,7 @@ CHR                           Yk           #cd= 01;33;40    01;33;40  CHaRacter 
 .README
 .ME                                        # NumbFuck/curs/(form|menu)/READ.ME
 .BY                                        # ~/.cpan/sources/MIRRORED.BY
+.inst                                      # probably just UTF-8 or ASCII text-files containing any special install8ion instructions && notes
 .INSTALL
 .NEWS
 .TODO
@@ -550,6 +553,7 @@ CHR                           Yk           #cd= 01;33;40    01;33;40  CHaRacter 
 .nvidia-settings-rc
 .concalcvariables             P            # console calQl8or more like cl than orpie
 .captstate
+.CAP                          c            # IC4L6Her:added 4 AsusROG C6H BIOS upd8;
 #CC
 #CC
 .asm                                       # src-cod&&PAUSE(Perl Authors Upload SErver)cfg file for putting modules on CPAN && .fbrc && .themes
@@ -835,7 +839,7 @@ CHR                           Yk           #cd= 01;33;40    01;33;40  CHaRacter 
 .ZIP
 .zip
 .zoo
-.zst                                       # H4MM4MM4: new Zip format with Tar?
+.zst                                       # H4MM4MM4:new Zip format (maybe with Tar && something else?);
 .tzst
 .prt
 .pak
@@ -878,7 +882,7 @@ CHR                           Yk           #cd= 01;33;40    01;33;40  CHaRacter 
 .gl
 .ico
 .icns
-.mjpg                                      # H4MM4MM4: new Moving JPEG format
+.mjpg                                      # H4MM4MM4:new Moving JPEG format;
 .mjpeg
 .jpeg
 .JPG                          r
@@ -1113,7 +1117,7 @@ CHR                           Yk           #cd= 01;33;40    01;33;40  CHaRacter 
 #x                            G
 .y                            C
 #z                            B
-..                            M            # .. && ._ do work for plain ls but my lsd8 recolors final chars according to extra separ8or regexes
+#.                            M            # .. && ._ do work for plain ls but my lsd8 recolors final chars according to extra separ8or regexes
 ._                            P
 .00                           R            # \.[0-9A-F]    dotted versions
 .01                           O
@@ -1309,17 +1313,19 @@ CHR                           Yk           #cd= 01;33;40    01;33;40  CHaRacter 
 .13.0-21-generic              ob
 .13.0-17-generic              Yb
 .13.0-16-generic              Gb           # BlO /boot Linux kernelz versionz  # F1ELGnuL:ROYG CBMP => 1;3[1o32 645p]; mAB EvN2LE gNR8 upd8z from `ls /boot`;
-.15.0-39-generic              R
-.15.0-38-generic              o
-.15.0-36-generic              Y
-.15.0-34-generic              G
-.15.0-33-generic              C
-.15.0-32-generic              B
-.15.0-30-generic              M
-.15.0-29-generic              p
-.15.0-24-generic              R
-.15.0-23-generic              o
-.15.0-22-generic              Y
+.15.0-43-generic              R
+.15.0-42-generic              o
+.15.0-39-generic              Y
+.15.0-38-generic              G
+.15.0-36-generic              C
+.15.0-34-generic              B
+.15.0-33-generic              M
+.15.0-32-generic              p
+.15.0-30-generic              r
+.15.0-29-generic              O
+.15.0-24-generic              y
+.15.0-23-generic              g
+.15.0-22-generic              c
 #                                          # zsh wraps '%{' ANSI '%}' && vim User[1-9] colrz specify BlO ForeGroundz all on darkblue BakGrnd4statuslIn
 #     4NT    etfp   vim  c8  color              ANSI      HTML    Octology::d8::fldz (`d8`)
 #     0f     Fsy_   %*    W WhiteBright         \e[1;37m  FEFDFF            # vim %* resets statuslIn colr 2 Dfalt   White on darkblue so has max 10 colrz

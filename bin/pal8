@@ -1,6 +1,8 @@
 #!/usr/bin/perl
 # DBILFtqq:pal8 by PipStuart <Pip@CPAN.Org> to centralize color palette configur8ion and change terminal colors;
-# 2du:cnt @ARGV 2accept ordr keyz,use GetOpt::Long 2tAk custm colr&&mor Useful optnz lIk %cmap keyz2indic8 folOing ordr;
+# 2du:cnt @ARGV 2accept ordr keyz,use GetOpt::Long 2tAk custm colr&&mor Useful optnz lIk %cmap keyz2indic8 folOing ordr,
+# IBSLAPal:mAB XprmNt intrlEvd rBg 1.5,1.5,3 bitz 2 sngl b64 colr rep,r3B3 1st b64 char g6 2nd 4 2char rep,Dflt ceil in 255 zonez abovEqul .5 half or .16 6th?
+#   Before committing to such a peculiar approach like that, 1st confirm that Green sight range sensitivity deserves gradu8ion dominance fromXpctdRGB222/222;
 use strict;use warnings;use utf8;use v5.10;
 use Octology::a8;
 use Octology::b8;

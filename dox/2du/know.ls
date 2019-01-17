@@ -1,5 +1,5 @@
 # HBQLISTV:know.ls crE8d by PipStuart <Pip@CPAN.Org> to duplic8 Dr. Jordan B. Peterson's Quora.Com answer of "40 most valuable things everyone should know";
-# $VERSION='0.0';$d8VS='IBCL8now'; # While this document origin8d around (&& still mainly intends to focus on) Dr. Peterson's knowledge, many others fE8ure;
+# $VERSION='0.0';$d8VS='J19LDias'; # While this document origin8d around (&& still mainly intends to focus on) Dr. Peterson's knowledge, many others fE8ure;
 # 2du:start chronicling Dr. Peterson's many topical videos with new section for post-title subject summaries or explor8ion;
 0) Tell the truth.                 
 1) Do not do things that you h8.
@@ -535,3 +535,15 @@ HTTPS://YouTu.be/tmOwwIsyGY0 "A Day of Reckoning: 1 - Sam Harris, Eric Weinstein
 # They touch on many controversial topics in the context of restoring sanity && reason to the public's sense-making apparatus && civil discourse capacity;
 HTTPS://YouTu.be/EiwsBPnn4ps "A Day of Reckoning: 2 - The Path Forward" # d8:1h38m of discussion continU8ion which gets much deeper into immigr8ion issues;
 HTTPS://YouTu.be/15IWB9-r07M "Jordan Peterson Deb8s With Intelligent Student On h8 Speech" # IBCL8h8S:12m55s of TheConserv8iveSt8ion's Oxford talk on I6O;
+HTTPS://YouTu.be/10QsBmawqxg "Responsibility, Conscience, && Meaning" # J18LGlad:1h38m16s of my primary living heroic philosophy educ8or, Dr. Peterson, being
+#   interviewed admirably by Timon Dias back on J16 Jan. 6th. They explore the significance of figures in the GladE8or movie, elabor8ing Biblical archetypes.
+# They delve into the notion of Ya'akov becoming Yisrael (He who struggles successfully with G-d) && the beckoning ideal of wrestling && negotE8ing with G-d
+#   as the transcendent aspects of Christianity facilit8ing the cultiv8ion && preserv8ion of virtue && valor (via earnest pursuit of truth && excellence).
+# The essence of enduring our abundant earthly suffering && malevolence nobly, willingness to sacrifice the self metaphorically && physically as needed, &&
+#   ultim8ly redeeming our individu8d divine souls, through the fastidious && f8hful purific8ion of self through the culmin8ions of vigorous life && death;
+HTTPS://YouTu.be/xWhuQOVTFGw "Interview with the Grievance Studies Hoaxers" # J1DLC0J1:1h18m28s of gr8 DrP. but only 15m in, I can't help but wonder if like
+#   being a c@-person is part collective religious lens by which etc. or even being an IntellectualDarkWebber (member or follower) like Atheist Liberalist?;
+ "In some of my own commentary, it's a curious or maybe simple mnemonic coincidence that LindsayShepherd surname metaphorically like Savior && academia fail "
+   "then like Dr. JamesLindsay with Pluckrose && Dr. Boghossian is an interesting synchronicity amongst time && contempl8ion of G-d psychology zeitgeist."-PS;
+ "I wonder if the IDW might ever come to appreC8 Octology somehow in some non-trivial fashion of consider8ion, even if possible only posthumously?"-PipStuart;
+# Somewhat ironic of me to hyphN8 some self-centered presumption of regard for Orthodox Jewish (typically) fences around fences in reverent HaShem reference?;

@@ -33,7 +33,8 @@ if($argz=~ /(^|\s)-?-?[^h]*h/i){$Stxt.=" $0 - 8.txt Precursor Letter Counter d8V
 #   odd,Even,ooEEE,ooEEE, && low 6 of 12 counts 1,2,3,7,8,16 all match for some 2**n(-1)? while the big half 20,35,55,110,148,212 all away from 2xxN(-1)?;\n";
   if(20 < $clmz && $clmz < 160){my @htxt=split(/\n/,$Stxt);$Stxt='';my $lsiz;my $tokn;for(@htxt){$lsiz=0;while(s/^(\s*\S+)//){$tokn=$1; # smRt split Help tXt
         if($lsiz + length($tokn) > $clmz){$Stxt.="\n" . (' ' x 8);$lsiz=8;$tokn=~ s/^\s+//;} $Stxt.=$tokn;$lsiz+=length($tokn);} $Stxt.="\n";}}o8($Stxt);exit;}
-my $efyl ='8.txt';my @lcnt;$lcnt[$_]=0 for(0..b10('z'));my @acnt;$acnt[$_]=0 for(0..b10('z'));my $donw=0;my $t0tl=0;my $text;my $actx;my $sclc;my $gttl=0;
+my $efyl ='8.txt';my $ufyl=$efyl;$ufyl=~ s/txt$/utf/i;if(!-e $efyl && -e $ufyl){$efyl=$ufyl;} # setup transition to .utf as better format to migr8 .txt to;
+my @lcnt;$lcnt[$_]=0 for(0..b10('z'));my @acnt;$acnt[$_]=0 for(0..b10('z'));my $donw=0;my $t0tl=0;my $text;my $actx;my $sclc;my $gttl=0;
 unless(-r         "$efyl"){$efyl=$ENV{'HOME'} . "/dox/2du/$efyl" if(exists($ENV{'HOME'}));} # try2add likely path when file not in local dir
 open(my $eflh,'<',"$efyl") or die "!*EROR*! Couldn't open eight-file to read counts! $!";binmode $eflh,':encoding(UTF-8)';my %adw8;my %adpl;
 while( <$eflh>){my $ldat=$_;$donw=1 if(/^$/); # sets DONe-Words true when 1st blank line found (shud be 1-based line#:8-word cnt+1blnk+6cmnt-hedr,4now)
@@ -73,7 +74,7 @@ my $efsz = length($efyl);$Stxt  .=    sprintf("$O  efyl$C=%s".(' 'x abs(18-$efsz
 $Stxt.=                                       "${C}8${M}Pc${Y}Ltr$R Ct$C Full${W}Document${R}Counts$Y Sz${p}b10${M}Ct${G}Percent$W%\n";
 $Stxt.=                                       "$B------ -- ---$c-$B--$c-$B--$c-$B--$c-$B--$c-$B-- --$c-$B---$c-$B-------$W-\n";
 for(@scnt){for my $lndx (0..$#lcnt){ # just loop initially to Pre-compute the ToTaL for l8r gener8ing Percentz Per Pre-letter group as they get Processed2Prnt
-    if(defined($lcnt[$lndx]) && $lcnt[$lndx] == $_){                                     $pttl+=$_;}}}
+    if(defined($lcnt[$lndx]) && $lcnt[$lndx] == $_){                                     $pttl+=$_;}}}  my $F=0; #$scnt[0];
 for(@scnt){my @ascz=($R,$W,$C,$Y,$M,$o,$B,$G);                                                     $sclc=0;$actx ='';
   for          my $lndx (0..$#lcnt){ # for the Ansi eSCape ColorZ with the rot8ing PerCeNt iNdex below, skip over Cyan,Green,&& OldOrange for betr contrast
     if(defined($lcnt[$lndx]) && $lcnt[$lndx] == $_){$Stxt.=   $Y           . b64($lndx) ;$t0tl+=$_;$sclc++;$actx.=' '.b8c(sprintf("%2s",b64($acnt[$lndx])));
@@ -82,7 +83,8 @@ for(@scnt){my @ascz=($R,$W,$C,$Y,$M,$o,$B,$G);                                  
   $apcn++     if( $apcn =~ /^(2|4)$/        );$actx.= $sclc;   $actx.= $ascz[ ($sclc + 4) % 8] if(defined($ascz[($sclc + 4) % 8]));my $apcx=$apcS;my $prcs;
   $apcS = $ascz[ ($sclc + 0) % 8] if(defined($ascz[($sclc + 0) % 8])); # test matching percent numbz with group sizes && percent charz with 'x' multiplierz
   $apcx = $ascz[ ($sclc + 4) % 8] if(defined($ascz[($sclc + 4) % 8]));$prcs=sprintf("%8.3f",$t0tl*100.0/$pttl);$prcs=~ s/(\.)/$W$1$apcx/;#prcs=~s/(000)$/$K$1/;
-  $apcS=$G    if( $apcS eq $G);$actx.=sprintf("x$M%4d%s%s%s%%%%",$_,$apcx,$prcs,$apcS);$apcn-= 8 while($apcn > 7); # SKpng percNt4l8r sprintf BlO
+  $apcS=$G    if( $apcS eq $G);my $d="$W=$z ";if($F){$d=S('K'    ).sprintf("%2s",    int($_-$F) ).$z.$G if($_-$F);$d=~ s/ ([0-9A-Za-z._])/$w-$z$c$1/;} #?b64();
+  $F=$_;$prcs=~ s/ //;$actx.=sprintf("x$M%3d%s%s%s%s%%%%",$_,$d,$apcx,$prcs,$apcS);$apcn-= 8 while($apcn > 7); # SKpng percNt4l8r sprintf BlO#$apcx=~s/^  /$d/;
   my $blsz=int($rcnt/6.6);my $r8io=$blsz /64.0 ; # prEpadNdof acnt ndxzB4 sclc flipz4stRtngletrcolm  # top4grupz8+1joy directnz rcln Etzg+m covr ~80% wrdz
   # l8r when more *r8 words span too wide again, increase magic constant denomin8or (or better gener8 its comput8ion) to shrink the scaling down further
   $sclc   = 7 -   $sclc;$sclc=0 if($sclc < 0); # gener8ing bar-graphs of b8 Counts across remaining line widthz  # botm8grupz dpvb suCD LNRU VGfx B... last 21%

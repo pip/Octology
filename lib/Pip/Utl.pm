@@ -26,7 +26,7 @@ eval('use          XML::Tidy                  ;');
 eval('use          XML::Merge                 ;');
 our @EXPORT=qw(e bak updt tild qolm syncdate vollabel forfiles longlinz tiglet genbats left rght cfdd locd fpt lspt xprp rdhd
   foggsync timerun runbench domserch critarch); # port to U8?:e bak  f8:tiglet
-my $VERSION='0.0';my $d8VS='H5QM7xJd';our $Dbug=0; # Gl0balDbugFlag  # used to have @Dayz && @Monz here, but reloc8d to a8.pm instead
+my $VERSION='0.0';my $d8VS='ICBLNN8X';our $Dbug=0; # Gl0balDbugFlag  # used to have @Dayz && @Monz here, but reloc8d to a8.pm instead
 sub tild{ # translating fylnm tildes(~)(also fromPerlFAQ5) # use <> (glob()) wi shell that groks ~ or try Glob::KGlob||File::HomeDir nstd ofPurePerl belo:
   my $filn = shift; $filn =~ s/^~([^\/]*)/$1 ? (getpwnam($1))[7] : ( $ENV{'HOME'} || $ENV{'LOGDIR'} )/ex;  return($filn); } # Eval replacement && Xtra spaces
 sub left{my $coun = shift;my $strn = shift;if(defined($strn) && defined($coun) && $coun =~ /^\d+$/){ return(substr($strn,     0,$coun)); }else{ return(''); }}
@@ -265,11 +265,12 @@ sub e{my($auth,$vers,$d8vs,$name)=('Pip@CPAN.Org','2.0','E4IM2Qjq','e'); # consi
              'z'    => '~/.zshrc'            ,
              'v'    => '~/.vimrc'            ,
              'h'    => '~/.history'          ,
-#            'p'    => '~/dox/phonbook.txt'  ,
-#            't'    => '~/dox/2du/Taki.txt'  ,
+            #'p'    => '~/dox/phonbook.txt'  ,
+            #'t'    => '~/dox/2du/Taki.txt'  ,
              '2'    => '~/dox/2du/2du.ls'    ,
-#            '3'    => '~/dox/H3AR.Us/*.htm' ,
-             '8'    => '~/dox/2du/8.txt'    );
+            #'3'    => '~/dox/H3AR.Us/*.htm' ,
+            #'x'    => '~/dox/2du/8.txt'     , # was poor form 2 include a dash of UTF-8 chars while keeping just .txt (for ckm8 && sfv too);
+             '8'    => '~/dox/2du/8.utf'    );
   if(-r "$home/.erc/.erc"){open(ERCF,'<',"$home/.erc/.erc");
     while(<ERCF>){my @eflz=split;
       if(@eflz==2&& defined($eflz[0])&& length($eflz[0])&& $eflz[0]!~/^#/&&
