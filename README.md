@@ -1,5 +1,5 @@
 # Octology
-The ontology of 8. `$VERSION='0.0';$d8VS='IA3MHelp';`
+The ontology of 8. `$VERSION='0.0';$d8VS='J1OL7SHF';`
 
 This is basically a public preview of my early development files. I am not yet ready for serious collaboration, but welcome any sorts of feedback.
 
@@ -60,7 +60,7 @@ If you are willing to fund this development effort, please visit my [Patreon](ht
 Please also contact me if you are an open-minded thinker interested in any conversation or friendship (especially near Oshkosh, Wisconsin).
 
 To learn about the long-term goals, plans, thinking, and research behind this expansive project, please consult latest development notes at:
-  [8.txt](https://github.com/pip/Octology/blob/master/dox/2du/8.txt "dox/2du/8.txt")
+  [8.utf](https://github.com/pip/Octology/blob/master/dox/2du/8.utf "dox/2du/8.utf")
 
 Thank you for your consideration as well as any constructive criticism, recommendations, or whatever other feedback you may be able to offer.
 ```

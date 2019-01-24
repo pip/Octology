@@ -1,2 +1,4 @@
 #!/usr/bin/perl
-use strict;use warnings;use utf8;use Octology::a8;print shfl(@ARGV); # might need to print to duplic8 STDOUT for UTF-8 to go thru
+use strict;use warnings;use utf8;use Octology::a8; # need to print to duplic8 STDOUT for UTF-8 to go thru
+open my $out8,'>&',STDOUT or die "Can't open  duplic8 STDOUT handle: $!";binmode $out8,':encoding(UTF-8)';print $out8 shfl(@ARGV); # crE8 locl duplic8
+close   $out8             or die "Can't close duplic8 STDOUT handle: $!"; # this can allow intermeD8 prints when not needing to manipul8 aggreg8
