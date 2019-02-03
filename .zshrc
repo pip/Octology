@@ -29,7 +29,7 @@ unsetopt                \
 # auto_pushd            \# setng addz dirz 2 stack wN just normally chngng 2 thM (wich I du not normally lIk or want)
 # ksh_arrays            \# rEmMbr wNwrItng scrptz[or funcz]2include'setopt [localoptions] ksharrays'sO arAzR 0-bAsed(but!glOblBcuzmOst scrptzRstndrdly 1-bAsed)
 # re_____match_____pcre \# mA want2set for Z-SHell scripting RegularExpressions to utilize PerlCompatibility styles && mA insert 'zmodload zsh/(pc)?re(gex)?';
-export vers='0.0';export d8VS='J1NLDs8r';export auth='PipStuart <Pip@CPAN.Org>'; # not Xportng $b sinc cOlIdz wi sort{$a <=> $b} /defhijlnqstuvx/i + AZ 4golf;
+export vers='0.0';export d8VS='J22LAshf';export auth='PipStuart <Pip@CPAN.Org>'; # not Xportng $b sinc cOlIdz wi sort{$a <=> $b} /defhijlnqstuvx/i + AZ 4golf;
 if     [[       "$SHELL"    == "" ]]; then       export SHELL=`  which zsh`;fi # 8sh should parse this && OverId it    # shud `man zshall` /OSTYP 2lern4BlO
 if     [[       "$HOSTNAME" == "" ]]; then       export HOSTNAME=`hostname`;fi #`hostname`retnz fsckd nwlInz\n4CygWinzRxvt... ||smthng els lame  =(
 if     [[       "$HOST"     == "" ]]; then       export HOST="$HOSTNAME"   ;fi;export VERBOSE='1'; # set flag to print debug && status info from system utilz
@@ -452,7 +452,7 @@ alias      f8p='    ls       ~/lib/Octology/f8/pal8';alias lspal8='f8p';
 alias   fixfont=' etfp -s -f ~/lib/Octology/f8/f0nt/psf/rOMAN3.psf';  # these hopefully restore usable f0nts to full-screen console (or 8trm also eventually)
 alias resetfont=' etfp -s -f ~/lib/Octology/f8/f0nt/psf/france9.psf'; # these maybe should be `setfont` instead of `etfp` for more reliable compatibility
 alias      s8n='    s8 -n'; # "Prince of Darkness"  game eventually? or just simple Numeric Sorting alias until then
-alias      s8r='    s8 -r';alias rvrs='shfl -r'; # this is tMporary plAc-holdr 4 `reverse` sinc sort probly wil do more 2 still rearrange all, just high to low
+alias      s8r='    s8 -r';alias rvrs='shfl -r';alias lshf='$(ls|shfl)'; # tMporary plAc-holdr 4 `reverse` sinc sort rearranges all, just high to low; tryXpnd?
 alias      s8='   sort'; #  s8   :           sort (maybe eventually a collection of my own custom sortings for orders beyond the default `sort` offerings)
 #          d8   already ~/bin/
 #lias      d8='   date'; #  d8   :           date|time|pt
@@ -620,7 +620,7 @@ alias irc='irssi';
 #lias    ircpl='      irssi -c IRC.Perl.Org          -n Pip      '; #perl  #yapc (which might be renamed after 2016 to just ThePerlConference #tpc?)
 #lias    ircpl6='     irssi -c IRC.FreeNode.Org      -n PipStuart'; #perl6       # might need Chat.FreeNode.Net instead? Changing nick destroys config form@ing
 #lias    ircrt='      irssi -c IRC.RT.Ru             -n Pip      ';alias irc='ircpl'; # probably wrapping in scrn like `sirc` below is preferred 2 any of these
-#lias       sc='      irssi -c IRC.Prison.Net        -n PipStuart'; #soulcalibur # used to use -n Pipsurugi
+#lias       sc='      irssi -c IRC.Prison.Net        -n PipStuart'; #soulcalibur # Uzd2Uz -n Pipsurugi  ## `sx $AgN` "Attaching from inside of screen?\n" ##;
 #lias       srk='     irssi -c IRC.ServerCentral.Net -n PipStuart'; #srk         # can also do -w evl2003 to include pswd && might need -p to chng port BlO
 #lias       srk='     irssi -c IRC.INet.Tele.Dk:6667 -n PipStuart'; #srk         # altern8 IRC servers to try to connect to if otherz are down or net-split
 #  otherz:  EFNet.Demon.Co.UK  IRC.Nijenrode.Nl  HomeLien.No  QEast.Net          # for ScreenOctology*.pm editz BlO had2rEplAc e wi vim for multi-fIl OpNng
@@ -629,7 +629,8 @@ alias scrn='screen -h 9999'; # might not need to temporarily change TERM for irc
 alias s2du='pu ~/dox/2du;export TERM="xterm";scrn -S 2du -t 2du e 2;export TERM="xterm-256color";po';alias s2='s2du'; # Used2wrap2ovrId TERM=screen ,xterm betr
 alias sirc='ct "irssi"  ;scrn -S irc -t irc irssi       ;  ';alias si='sirc';  # don't need -c IRC.Perl.Org or -n Pip since specified in ~/.irssi/config now
 alias sbrs='ct "bars"   ;scrn -S brs -t brs       zsh   ;  '; # also screen in some barrier (Synrg+) server&&client 2detatch from standrd terminal debug output
-alias sbrc='ct "barc"   ;scrn -S brc -t brc barrierc    ;  ';alias ssig='pu;scrn -S sig -t sig signal-desktop;po';
+alias sbrc='ct "barc"   ;scrn -S brc -t brc barrierc    ;  ';alias ssig='pu;scrn -S sig -t sig signal-desktop;po'; # might want to tst -x for cnfrm8 Xit !DtA?;
+# since -x Screen refuses to attach from within itself, rejection can detect loop, but when cascading multiple screens,loopz R *NOT* auto-detected; take care!;
 #lias s2du='pu ~/dox/2du;scrn -S 2du -t 2du e     2     ;po';alias s2='s2du';  # reverted to exporting TERM=xterm around s2 2mk vim statusbar dRk AgN
 alias s28u='pu ~/dox/2du;scrn -S 8uf -t 8uf e     8     ;po';alias s28='s28u'; # leave legacy .txt below, from before proper switch to .utf since it holds afew
 alias s28x='pu ~/dox/2du;scrn -S 8xt -t 8xt e     8     ;po';alias s2x='s28x'; # s8 is already aliased to sort; weird that e 8 didn't have e 2 problM
@@ -646,6 +647,7 @@ alias scvi='pu ~/dox/2du;scrn -S cvi -t cvi e   scvi.ls ;po';alias sC='scvi';  #
 alias ssfv='pu ~/dox/2du;scrn -S sfv -t sfv e   sfv.utf8;po';alias sf='ssfv';alias sof='pu ~/dvl/f8;scrn -S of8 -t of8 e f8.pm;po'; # mABl8r vary4asOC8d binz2
 alias stab='pu ~/dox/2du;scrn -S tab -t tab e   tabz.ls ;po';alias sT='stab';alias sog='pu ~/dvl/g8;scrn -S og8 -t og8 e g8   ;po'; # not A sepR8 PlModule yet
 alias stip='pu ~/dox/2du;scrn -S tip -t tip e   tipz.ls ;po';alias sI='stip';alias soU='pu ~/dvl/U8;scrn -S ou8 -t ou8 e U8.pm;po';alias sou='soU'; # bOthKsez
+alias sud2='pu ~/dox/2du;scrn -S ud2 -t ud2 e    ud2.ls ;po';alias sU='sud2';  # mAB 2du hLpr wi rEorg && chng prspctv on donez Ovrcomng prIOriTz?;
 alias sdvl='pu ~/dvl    ;scrn -S dvl -t dvl             ;po';alias sd='sdvl';  # mAB some new sD can lOd Xtra Dvl lIk Utl Tk Time Math anythng else important
 alias smuz='pu ~/muz    ;scrn -S muz -t muz             ;po';alias sm='smuz';alias so=' ob ';alias mob='ob';alias obs='ob';alias Obs='ob';alias sobs='   ob';
 alias smvz='pu ~/mvz    ;scrn -S mvz -t mvz             ;po';alias sM='smvz';alias Ob=' ob ';alias ob=' pu ~/muz/U2b;scrn -S mob -t mob g3 **/*Obs*     ;po';
@@ -698,6 +700,7 @@ b8a: b8a.ls sb=sb8a; irc:pl irssi si=sirc; #  upd8 this list colr 4 cstmz;    mv
 \$S=~ s/(l8r sx )/\$C\$1/;\$S=~ s/( shudBcom)/\$C\$1/;if(\$ENV{COLUMNS} < 160){\$S=~ s/ 7blok/14blok/;\$S=~ s/(\\s{4,})/\\n/g;@S= split(/\\n/,\$S);
   \$S=\$S[0].qq(\\n).\$S[2].qq(\\n).\$S[4].qq(\\n).\$S[6].qq(\\n).\$S[8].qq(\\n).\$S[10].qq(\\n).\$S[3].qq(\\n).\$S[5].qq(\\n).\$S[7].qq(\\n).\$S[9].qq(\\n).
       \$S[11].qq(\\n).\$S[ 1].qq(\\n).\$S[12].qq(\\n).\$S[13];} \$S=~ s/(-)/\$Y\$1\$G/g;\$S=~ s/(\\.)/\$M\$1\$G/g;print \$d->colr(q(a)),\$Y,q(:),\$C,\$S;"';
+# 2du:upgrAd sls to buffer a quick DtachmNt LS rECv 2 C if last attached aftr mAB pull from wndO tItl aftr:colon 2 try wut 2 -x confirm if in rEcNt stil? ;
 #There are screens on: #	17836.b8a	(10/03/2018 04:09:10 AM)	(Detached)  # /defhijlnqstuvx/i + AZ are sOlOz avAl 4 golf abov (aftr a8 sOlO color Xportz);
 # cangiv m@chpRam now; #	 5604.irc	(10/02/2018 07:48:46 PM)	(Attached)\n#2 Sockets in /run/screen/S-pip.  # SCreenLiStcmnd=S,ScreenLINe=L,PRocessIDnt=I,
 #lias g3='   gst123 '; # replaced by Xpct XperimNt  # sux2havnOsyntxhIlIt  # ScreenTiTL(PID.TTY.Host)=H,moNth=N,Day=D,yEar=E,Time=T,afterNoon=n,deTached=t,
@@ -721,16 +724,7 @@ alias mplyr='mplayer'; # EBIL4AcZ:just upgraded all machines to mplayer2 so need
 alias mp='   mplayer -vo xv  -fixed-vo                              -cache 16384 -cache-min 99'; # should try different -vo (xv was default) for performance
 alias mpns='cd ~/mvz/U2b/nxt;mp $(ls B* Dr* *Tut* Ex* M* O*-Res* Var* *Trap* *Trap* *Boy*|shfl);cd ..'; # mk MPlyrNxtShfl 4 quik favor8 mvz Drub&&Trap vidzls
 alias mpx='  mp      -fs'; #-x 1920 -y 1080'; # originally quite a long time ago, I used to include -noborder optn abov but thN cud!mv wndw
-alias mply=' mplayer -vo xv  -fixed-vo -nosound -loop 0          -geometry 1916x1052+0+0    '; #-x 1916 -y 1052' # mplayer canOnly stRt wi1920maxBcuzXinerama?
-#lias mpr0=' mplayer                   -nosound --no-keepaspect  -geometry 1920x1052+0+0    '; # still needs vid file params like: ~/mvz/U2b/**/*Obsidia*.opus
-alias mpr0=' mplayer -vo xv  -fixed-vo -nosound -nokeepaspect    -geometry 1920x1052+0+0    -loop 0'; # this 4 MPlayer && above 4 MPlayer2 (wich I had4 awhIl)
-alias mpr1=' mplayer -vo xv  -fixed-vo -nosound -nokeepaspect    -geometry 1920x1052+888+88 -loop 0'; # this 4 same as mpr0 but on Aku's  middle   24" display
-alias mpr2=' mplayer -vo xv            -nosound -nokeepaspect    -geometry 1920x1052+1919+0 -loop 0'; # this 4 same as mpr0 but on Aku's far right 50" display
-alias mpr0t='mplayer -vo xv  -fixed-vo -nosound -msgcolor -noborder -cache 16384 -cache-min 99 -geometry 1916x1052+0+0 -msglevel all=0:identify=4 ~/mvz/.pr0/tst/Aut0pr0-9AS4gTn/pr0-*/*'; # test if messages can report desired details; # for some reason,above mpr1 won't take geom 2full midl display so just offset a bit?
-alias mpfb=' mplayer -vo fbdev -vf scale=640:400   -loop 0'; # ~/mvz/U2b/* for some old scaled FrameBuffer modes
-alias mpfbs='mplayer -vo fbdev -vf scale=1920:1200 -loop 0'; # ~/mvz/muV/*
-alias mpf8=' mplayer -vo fbdev        -nosound --no-keepaspect  -vf scale=1920:1080 '; # still needs vid file params to follow
-m0() { # mplayer pr0n function
+m0() { # mplayer pr0n function, but called aliases reloc8d to below host tests DfIning dimNshnz && mAB mk prv8 Xtractd Xtrnl mor? ;
   if       [[ "$#" -gt   0 ]]; then # print out some help text for -h (or l8r add --help) as first parameter && then return
     if     [[ "$1"  ==  *h ]]; then echo 'm0 crE8d by PipStuart <Pip@CPAN.Org> to wrap mpr0 for streamlining calls to mplayer on my pr0n;'
       echo                               ' h - print this Help text && exit;  No pRam runs mpr0 on mpg,wmv,avi * (left scrn,mpr1 right).'
@@ -799,7 +793,7 @@ export ETERM_THEME_ROOT="~/.Eterm/themes"; # wuz ~/.Eterm/themes/Eterm          
 alias gtt='gnome-tweaks'; # used to be gt-tool scaling all fontz to 1.5 && mkng CapsLock a Ctrl;XperimNt wi Caps2:Hyper,Menu,Win2see wut else can map too?
 alias gt=' gnome-terminal';alias wmc='wmctrl'; # mAB -x zsh (-c)? s2 & or wiout aliasz: pushd ~/dox/2du;screen -h 9999 -S 2du -t 2du e 2;popd;
 alias xrnr='xrandr'; # shud mk func tking [hdp]\d* 4 Hdmi, Dvi, disPlayPort thN wich ndx 2 cfg wi custm r8 setz (hopefully2 144) whN cRd,Kbl,&&displA suport
-alias xr='xrnr --output DVI-0 --mode 1920x1080 --rate 60';alias cx='ct "init";xr'; # nEd2set ViotekGN32C over DVI from Dflt 144 rEfresh down2cAbl suportd 60
+alias xr='xrnr --output DVI-1 --mode 1920x1080 --rate 60';alias cx='ct "init";xr'; # nEd2set ViotekGN32C over DVI from Dflt 144 rEfresh down2cAbl suportd 60
 if       [[ "${(L)HHst}" ==  aku    ]]; then  alias gtss='sleep 1'; # GnomeTerminal SleepSeconds 2 delay 4 gti init   # only Akuma was fast Enuf2kEp up with 1
 else                                          alias gtss='sleep 2'; fi            # ... second before && hopefully Ryu, Ken, && Chun can all handle just 2 now
 # below set 8sh "H" Viewport Width 1..3 | Height 1 defaults of all 3840x1080 then override as approprE8 for host-specific display resolution varE8ionz
@@ -809,6 +803,17 @@ if       [[ "${(L)HHst}" ==  aku    ]];                                  then   
 elif     [[ "${(L)HHst}" ==  ryu*   ]] || [[ "${(L)HHst}" ==  ken*   ]]; then export HVW1='1920';                    export HVW3='5760' ;                    fi
 if       [[ "${(L)HHst}" ==  ryu*   ]];                                  then                                                            export HVH1='1200'; fi
 if       [[ "${(L)HHst}" ==  chun*  ]] || [[ "${(L)HHst}" ==  taki*  ]]; then export HVW1='1280';export HVW2='2560';export gtss='sleep 3';export HVH1='800'; fi
+#alias mpx='  mp      -fs'; #-x 1920 -y 1080'; # originally quite a long time ago, I used to include -noborder optn abov but thN cud!mv wndw... rEdFIning rL8iv
+alias Mply='  en "er -vo xv  -fixed-vo -nosound -loop 0          -geometry  1916x$(calQ $HVH1 - 28)+0+0"   '; # try Mply echo dbl-quOtd ...?
+alias mply=' mplayer -vo xv  -fixed-vo -nosound -loop 0          -geometry "1916x$(calQ $HVH1 - 28)+0+0"    '; #-x 1916 -y 1052' # mplayer canOnly stRt wi1920maxBcuzXinerama?
+#lias mpr0=' mplayer                   -nosound --no-keepaspect  -geometry "1920x$(calQ $HVH1 - 28)+0+0"    '; # still needs vid file params like: ~/mvz/U2b/**/*Obsidia*.opus
+alias mpr0=' mplayer -vo xv  -fixed-vo -nosound -nokeepaspect    -geometry "1920x$(calQ $HVH1 - 28)+0+0"    -loop 0'; # this 4 MPlayer && above 4 MPlayer2 (wich I had4 awhIl)
+alias mpr1=' mplayer -vo xv  -fixed-vo -nosound -nokeepaspect    -geometry "1920x$(calQ $HVH1 - 28)+888+88" -loop 0'; # this 4 same as mpr0 but on Aku's  middle   24" display
+alias mpr2=' mplayer -vo xv            -nosound -nokeepaspect    -geometry "1920x$(calQ $HVH1 - 28)+1919+0" -loop 0'; # this 4 same as mpr0 but on Aku's far right 50" display
+alias mpr0t='mplayer -vo xv  -fixed-vo -nosound -msgcolor -noborder -cache 16384 -cache-min 99 -geometry "1916x$(calQ $HVH1 - 28)+0+0" -msglevel all=0:identify=4 ~/mvz/.pr0/tst/Aut0pr0-9AS4gTn/pr0-*/*'; # test if messages can report desired details; # for some reason,above mpr1 won't take geom 2full midl display so just offset a bit?
+alias mpfb=' mplayer -vo fbdev -vf scale=640:400   -loop 0'; # ~/mvz/U2b/* for some old scaled FrameBuffer modes
+alias mpfbs='mplayer -vo fbdev -vf scale=1920:1200 -loop 0'; # ~/mvz/muV/*
+alias mpf8=' mplayer -vo fbdev        -nosound --no-keepaspect  -vf scale=1920:1080 '; # still needs vid file params to follow
 chvp() { # CHange ViewPort ("virtual desktop") thru wmc -o ... based on host dimz && Compiz 8 viewportz in 4x2 grid
   if     [[ "$1"         ==     ""  ]] ||
          [[ "$1"         ==    "0"  ]]; then wmc -o     0,0;

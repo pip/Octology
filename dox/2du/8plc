@@ -9,7 +9,7 @@
 #   mk sepR8 tabul8ion of 8-words used in l8r document8ion wi not8ion 4thOs not yet included in top lists (thN optn2ignor easy conjug8ions && pre/suffixes),
 #   mk easy optn4 fulc 2use 1colm 4grep,add 4m@d percNtz,stuD wc && mk a8:cnt8/8c wi fulc -f? && 8plc as -l? optnz(rEdo hedrtXt),colr letrz,add f0ntz4 8trm;
 use strict;use warnings;use utf8;use v5.10;use Octology::a8;use Octology::b8;
-my $d8VS='I9MM2pl8';my $clrf=1;my $fulf=0;my $argz='';$argz= join(' ',@ARGV) if(@ARGV);my $Stxt='';my $Smap='';my $folf=0; # add 4-Or-Less-Flag
+my $d8VS='J23LFUCK';my $clrf=1;my $fulf=0;my $argz='';$argz= join(' ',@ARGV) if(@ARGV);my $Stxt='';my $Smap='';my $folf=0; # add 4-Or-Less-Flag
 my $edVS=        '';my $pg1f=0;   $pg1f=1 if($argz=~ /(^|\s)-?-?[^p]*p/i); # find -?p(age) flag2limit some extra long output to first 48-line page
 my $clmz=        80;my $lpsf=0;   $lpsf=1 if($argz=~ /(^|\s)-?-?[^l]*l/i); # find -?LetrPrecursShortsFlag  # if MaXWordSize evr grOz,wil nEd2incrEs|Dtct
 my $linz=        24;my $gm8f=0;   $gm8f=1 if($argz=~ /(^|\s)-?-?[^g]*g/i); # find -?g(m8r) flag2count&&adorn wi math 4mUl8ions stRting wi 2letr
@@ -131,9 +131,22 @@ if($lpsf){$Stxt.="\n${W}All${R}Counts${o}Not${M}Matching${C}Words${B}List$G -$K 
 $Stxt=sS($Stxt) unless($clrf);o8($Stxt);$Stxt ='';
 if($folf){$Stxt.="\n${Y}Word${R}Sort${C}By${B}Size$G -$K up to current maximum$M $mxws$K or one$p page$K if given$p -p$W:\n";my $maxs=$mxws;$maxs= 8 if($pg1f);
   for   my $wsiz (2..$maxs ){my @folk=sort(keys(%{$folc[$wsiz]}));$Stxt.= $B.sprintf("%${wsiz}d ",scalar(@folk));my $rtot=$wsiz+1;
-                                                                  $Stxt.="$R $wsiz"        unless(scalar(@folk));
-    for my $fndx (0..$#folk){my $foln=$folk[$fndx];if($rtot + length($foln) + 1 >  $clmz){$Stxt.="\n";$rtot=0  ;} $rtot+=length($foln)+1;
-                                $foln=~ s/(8)(ion)$/$1$C$2/;$foln=~ s/([$letz])(8)/$Y$1$G$2$z/g;$Stxt.="$z$foln ";} $Stxt=~ s/ $/\n/;}} # $Stxt.="$G @folk\n";
+                                                                  $Stxt.="$R $wsiz"        unless(scalar(@folk));my $tltx="$M %1${W}x${R}%2${w}+${p}%3";
+    for my $fndx (0..$#folk){my $foln=$folk[$fndx];my $blkw= int($clmz / ($wsiz + 1));#$blkw++ if($wsiz == 8); # adjust off-by-one eror on 16x10+10?;
+                             my $blwd=($fndx + 1) % $blkw;my $blht= int(($#folk + 1) / $blkw) + 1;             # ah, whatever... proly close Enuf 4 now;
+        my $blhd=$blht;      if($fndx ==   $#folk){my $blwb= int(($#folk + 1) / $blht) + 1;$tltx='' if($blht <= 1); # omit all tltx if alreD just 1 row;
+                                $tltx=~ s/(%1)/$blwb/;} # actually if it goes in evenly after head count, use blht nstd of blhd with if test? ;
+           $blhd--    ;         $tltx=~ s/(%2)/$blhd/;my $blfr = ($#folk + 1) % (int(($#folk + 1) / $blht) + 1); # for wsiz 8 16x10+10 shud fit just 17x10?;
+                                $tltx=~ s/(%3)/$blfr/; # shud B clOs now? #;  ## for how this section turnd out sO fR,nick-name shud B "Pelican-Gull" shAp? ##;
+      if( # upd8d this pRt 2 even-out multi-rowz trAld by DtAlz of blok wd && ht fit in wdht of proly 160x50 term && let tAl Ethr botm or down rIt sId;
+         !( ($fndx + 1) % (int(($#folk + 1) / $blht) + 1) ) # now EvNd rOwz;
+       # !($blwd)  # this is just an altern8 way2same 4mat of unalignd tAlz;
+       # $rtot + length($foln) + 1  + $fndx >  $clmz
+        ){$Stxt.="\n";$rtot=0;} $rtot+=length($foln)+1;
+                                $foln=~ s/(8)(ion)$/$1$C$2/;$foln=~ s/([$letz])(8)/$Y$1$G$2$z/g;$Stxt.="$z$foln ";}
+                                $tltx=~ s/\n+$//;$tltx.="\n" if($wsiz <= 16 || $wsiz == $maxs);
+                                $Stxt=~ s/ $/$tltx/; # mA nEd 2 trunc8 whN duz! fit rIt && tIt, sO lIk $rtot plus tail-text goes longer than columnz;
+                            }} # $Stxt.="$G @folk\n";
 $Stxt=sS($Stxt) unless($clrf);o8($Stxt);$Stxt ='';
 # I47M1b96:just l8st 2z 3z 4z,nEd2cut ? 2fit nXt `sumb 2` 96 pAg,b8 c8 d8 g8 w8 ckm8 pal8 upd8 alredy bin is 8,DlA sumb4 N8 DN8 NfN8 SSN8 as obtuse:
 #  9   f8   h8   k8   l8   m8   p8   r8   s8   y8  # 9+35=44,nEd 40 of 73 4z (isol8ing 33 worst for l8r) to accept l8st 12 over in bin to complete next 96

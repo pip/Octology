@@ -596,3 +596,4 @@ HTTPS://YouTu.be/r3X2mqpKNp0 "Blizzard Founder CUTS TIES Completely! Mike Morhai
    "even if Blizzard must become only a shadow of its former glory. Good Game! ;) Peace, -Pip" # Very nice tight <160 by x <50 almost solid page fitting! =) ;
 J1JLHARE:So yeah, like maybe Shoe0nHead June would want her bunnies to be the next expansion to like f8lc@b@l before PewDiePie && CountDankula'sGirl's dogz;
   # would probably be pretty dope to like focus on filming just a couple cats && building them into a basic fighting game designed to appeal as fun to them? ;
+J1PL1JPV:HTTPS://BitchUte.Com/video/mKUSsxRONtVa "Jordan Peterson && Contemporary Christianity | Discussion With Paul VanDerKlay" # 38m @about half-way good;
