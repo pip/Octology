@@ -21,7 +21,7 @@
 # tst:rEmMbr ls sortz:-Un Size Xten time ver reverse,-rStUvX all good2tst in /boot,shud genR8 tst dirz containing varE8ionz on pwnr,grup,fsiz widthz2ck alIn;
 use strict;use warnings;use utf8;use v5.10; # mAB tSt if just regUlR -t STDIN && -t STDOUT R Dtectng intractiviT corectly 1st,B4 fallng bak on IO::Interactive
 #se IO::Interactive qw(is_interactive); # employ if(is_interactive()){} around all colring to attempt to behave like `ls --color=auto` when piped away
-use Encode;use Octology::a8;#se Octology::c8;
+use Encode;use Octology::a8;#se Octology::c8;  ## 2;r;g;b m
            use Octology::b8;use Octology::d8;use Time::PT;my $VERSION='0.0';my $d8VS='ICBLNJid';my $sllw=0; # SymLink LargestWidth to track for alignment
 open my $out8,'>&',STDOUT or die "Can't open  duplic8 STDOUT handle: $!"; binmode $out8,':encoding(UTF-8)'; # crE8 local duplic8 of global
 my $vsrt='-v'; my @b64d;my $t;my $sbdr;my $b64c;my($pwnw,$grpw,$grpx);$pwnw=$grpw=$grpx=0; # default -v Version SoRT,reversed b8 Colr List matchz Dfalt d8 ordr
@@ -63,7 +63,8 @@ for(@ldat){if(($prmz,$blsz,$pwnr,$grup,$fsiz,$d8tz,$fnam)= /^(\S{10})(\s+\d+)(\s
  elsif($grpw > length($grup)){my $tgrx=$grpw-length($grup);$grup.=' 'x $tgrx;            $fsiz=~ s/^\s{$tgrx}//  ;} # pad  grup 2widest width so far
     $b6bs=b8colr(' 'x(b6wd(length($blsz)  )-length($b6bs)).$b6bs);my $tnam=$fnam;#tnam=decode('UTF-8',$tnam) if length($fnam) != length(decode('UTF-8',$tnam));
     $b6fs=b8colr(' 'x(b6wd(length($fsiz),1)-length($b6fs)).$b6fs);my($n,$s); # renAmd $k $kolumn_x 2 $n 4 Named colr 2!collide with a8's eScapd dark blacK colr
-    $cmpr=$prmz;$cmpr=~s/^(d)/$B$1/;my $d8im=Octology::d8->new('lsft'=>$d8tz);my $ttim=$d8im->colr('a').$k;
+    $cmpr=$prmz;$cmpr=~s/^(d)/$B$1/;my $d8im=Octology::d8->new('lsft'=>$d8tz);my $ttim="\e[48;2;" . ($d8im->Y()-2000) . ';' . ($d8im->M()*4) . ';' .
+     ($d8im->D()*2) . 'm' . $d8im->colr('a') . $k;
     $cmpr=~s/^(-)/$W$1/; $ttim.='0'x(8-int((length($ttim)-7)/8)) if(length($ttim)<(8*8 +7));
     $cmpr=~s/rwx/${R}7/g;$cmpr=~s/-wx/${SKpb}3/g;$cmpr=~s/rws/${Y}7/g;$cmpr=~s/rwt/${m}7/g;
     $cmpr=~s/rw-/${C}6/g;$cmpr=~s/-w-/${O}2/g; # stil wnt2Uz ~/.lsrc 2mABNcod prmz asumng PXX(400,644,755..[azB64?]) 2OvrId fIl colrz by .X10shn
@@ -71,7 +72,7 @@ for(@ldat){if(($prmz,$blsz,$pwnr,$grup,$fsiz,$d8tz,$fnam)= /^(\S{10})(\s+\d+)(\s
     $cmpr=~s/r--/${B}4/g;$cmpr=~s/---/${G}0/g; #?prmzRblszYpwnrCgrupPfsiz?dayt?tymeGtz0n?fnam..
     if($subd eq '.'&& @ARGV){my $andx=0;while(!-d "$ARGV[$andx]"&& $andx<$#ARGV){$andx++;}if(-d "$ARGV[$andx]"){$subd="$ARGV[$andx]";$subd=~s/\/+$//;}}
     if($tnam=~  /-([-0-9A-Z_]{11})-([0-9A-Z._]{6})-(NA_|[0-9A-Z._][1-9A-C][1-9A-V])\./i){my $epch=b8colr($2);my $uld8=d8colr($3);d8cs('U2b8');
-       $uld8="$M$3" if($3 eq 'NA_');                                                     my $idnt=b8colr($1);                    d8cs();
+       $uld8="$M$3" if($3 eq 'NA_');                                                                         my $idnt=b8colr($1);d8cs();
        # above override default d8 colr8ion when uldt was Not Available  # this hIlIting is specifically for U2b8 -> U2b4 name resultz
        # might want to try to strip out idnt && epch so l8r spcs won't recolr their /[-._]/, then after add back before uldt.xtn
        $tnam=~ s/-([-0-9A-Z_]{11})-([0-9A-Z._]{6})-(NA_|[0-9A-Z._][1-9A-C][1-9A-V])\./-$idnt-$epch-$uld8./i; # l8r colr uldr && mAB Artist columz sepR8ly2

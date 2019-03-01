@@ -29,7 +29,7 @@ unsetopt                \
 # auto_pushd            \# setng addz dirz 2 stack wN just normally chngng 2 thM (wich I du not normally lIk or want)
 # ksh_arrays            \# rEmMbr wNwrItng scrptz[or funcz]2include'setopt [localoptions] ksharrays'sO arAzR 0-bAsed(but!glOblBcuzmOst scrptzRstndrdly 1-bAsed)
 # re_____match_____pcre \# mA want2set for Z-SHell scripting RegularExpressions to utilize PerlCompatibility styles && mA insert 'zmodload zsh/(pc)?re(gex)?';
-export vers='0.0';export d8VS='J22LAshf';export auth='PipStuart <Pip@CPAN.Org>'; # not Xportng $b sinc cOlIdz wi sort{$a <=> $b} /defhijlnqstuvx/i + AZ 4golf;
+export vers='0.0';export d8VS='J2OLMPJo';export auth='PipStuart <Pip@CPAN.Org>'; # not Xportng $b sinc cOlIdz wi sort{$a <=> $b} /defhijlnqstuvx/i + AZ 4golf;
 if     [[       "$SHELL"    == "" ]]; then       export SHELL=`  which zsh`;fi # 8sh should parse this && OverId it    # shud `man zshall` /OSTYP 2lern4BlO
 if     [[       "$HOSTNAME" == "" ]]; then       export HOSTNAME=`hostname`;fi #`hostname`retnz fsckd nwlInz\n4CygWinzRxvt... ||smthng els lame  =(
 if     [[       "$HOST"     == "" ]]; then       export HOST="$HOSTNAME"   ;fi;export VERBOSE='1'; # set flag to print debug && status info from system utilz
@@ -245,11 +245,12 @@ if       [[ "$HUsr"     !=  "root"  ]];                                  then #e
 fi; # ls.*? -1:OnlE1FyLynz($_\n);clasiFy(dir/,symlnk@,exefyl*,etc);QuotRsltnzFylNmz(2sealSpcz&&othrDynabiliTBhynd lit txt);Long(shoXact byte fylsizes);
 alias lsQ=' ls -Q ';alias l1=' ls -1';alias  lQ1=' lQ -1 ';alias l1Q='  lQ1 ';alias lF1='lF -1';alias l1F='lF1';alias ls1='l1'; #Human readable approx fylsyz;
 alias  lsF='ls -vF';alias lL=' ls -l';alias   lFl=' lF -l';alias  llF='  lFl';alias lQl='lQ -l';alias llQ='lQl';alias ll='lFl'; #!?"proly adng 1A|StekSauc"?!;
-alias  lQF='  lsQF';alias  lFQ=' lQF';alias lsQF=' lQ  -F';alias lsFQ='lsQF ';alias lsgdf='ls --group-directories-first';alias lsv='ls -v';alias lv='lsv -l';
+alias  lQF='  lsQF';alias  lFQ=' lQF';alias lsQF=' lQ  -F';alias lsFQ='lsQF ';alias lsgdf='ls --group-directories-first';alias lsv='ls -v'; #ias lv='lsv -l';
 alias   lF='   lsF';alias lh=' ll -h';alias   lFh=' lh -F';alias lhF='   lFh';alias lfh='lFh';alias lhf='lhF'; #-v in base lsF natural sort of Version numbers
 alias  lQ='   lsQ ';alias lr=' ls -r';alias  lQh=' lh -Q ';alias  lhQ=' lQh ';alias lqh='lQh';alias lhq='lhQ'; # rm lsrc BlO&&mk lsrc Utl2gN .lsrc from nw.lrc
 alias ll='  ls -lF      ';alias lh='  ll -h       ';alias l='lsd8';alias lst='lft'; #clasiFy,Long(shoFylBytSyz),Human(rEdablSyz); l was =lh;
-  alias lsd='echo "trail globz wi *(/) 4just dirz";lf-d  ';alias L='ls  -F'; # -CF -w $HWid'; # prepare to make L basic c8fn wrapper of normal ls
+  alias lsd='echo "trail globz wi *(/) 4just dirz";lf-d  '; #ias L='ls  -F'; # -CF -w $HWid'; # prepare to make L basic c8fn wrapper of normal ls
+alias LFA=' L  -FA      ';alias LAV=' LA -v       ';alias LA=' L -A       ';alias Lfa=' LFA ';alias Lav=' LAV '; # special wrappers 4 non-long curt wide L;
 alias lFR=' lF -R       ';alias llR=' ll -R       ';alias lR=' l -R       ';alias lfR=' lFR ';alias lsR=' lfR '; #Recurs subdirz;Rmembr:zsh`**`auto-recursz
 alias lFa=' lF -A       ';alias lla=' ll -A       ';alias la=' l -A       ';alias lfa=' lFa ';alias lsa=' lfa '; #Almostall (.*;!./||../)
 alias lFb=' lF -B       ';alias llb=' ll -B       ';alias lb=' l -B       ';alias lfb=' lFb ';alias lsb=' lfb '; #omitBakupz(!*~)
@@ -331,11 +332,11 @@ alias        ........='cd ../../../../../../..               ';alias cd........=
 alias       .........='cd ../../../../../../../..            ';alias cd.........='.........        ';
 alias      ..........='cd ../../../../../../../../..         ';alias cd..........='..........      ';
 alias     ...........='cd ../../../../../../../../../..      ';alias cd...........='...........    ';
-alias    ............='cd ../../../../../../../../../../..   ';alias cd............='............  ';
-alias   .............='cd ../../../../../../../../../../../..';alias cd.............='.............';
-alias      mk='   make'; # following are my main super-terse aliases for performing almost every core GNU/Linux system utility (with some inherited from DOS)
-alias      sz='   sudo -E zsh';alias SS='sudo shutdown -h now'; # possible emergency Sudo Shutdown now!
-alias      pu='  pushd';alias  ua='un    '; # just add a couple basic abbreV8ions for sys-info
+alias    ............='cd ../../../../../../../../../../..   ';alias cd............='............  '; # folOng R my mAn supr-ters aliasz 4 per4mng almOst ...
+alias   .............='cd ../../../../../../../../../../../..';alias cd.............='.............'; #   ... evry core GNU/Linux sys Utl (&& some clasic DOS)
+alias      mk='   make';alias mki='mk install';alias mi='mkin';alias smi='sudo make install ';alias smki='smi';alias mkin='mki';alias mkinst='mi'; #as mnstl=mi
+alias      sz='   sudo -E zsh';alias SS='sudo shutdown -h now';alias SSR='sudo shutdown -r now';alias SR='SSR'; # emergency !Sudo Shutdown or Reboot *now*!
+alias      pu='  pushd';alias  ua='un    '; # just add a couple basic abbreV8ions for sys-info which call un() which is defined below goo() && abov src() 4now;
 alias      po='   popd';alias una='un -a ';
 alias      pe='   perl -MOctology::a8 -pe'; # setup Perl Eval filter easy to give a 's///' after
 alias      pa='   perl -MOctology::a8  -e'; # setup Perl eval        with Attribute Auto-export globals of A8
@@ -365,7 +366,7 @@ alias  attrib='   echo "Try chmod instead! ;) "'; # just print advice for this, 
 alias       0='echo 0 '; #       : # figure out good aliases for remaining numbers
 alias       1=' mpg321'; # m 321 :                audio-player
 alias       2=' mpg123'; # m 123 :                audio-player
-alias       3='   g3  '; #  g3   :         gst123 audio-player wrapped with Expect manipul8ion layer
+#lias       3='   g3  '; #  g3   :         gst123 audio-player wrapped with Expect manipul8ion layer (J29:3 now a 3rd sepR8 varE8ion off g3 2get abitrickier);
 alias       4='en   4 '; #       :
 alias       5='ec   5 '; #       :
 alias       6='en   6 '; #       :
@@ -377,7 +378,8 @@ alias    asci='   UTF8'; #       :                (renamed in U8 && bin)
 alias    utf8='   UTF8';
 alias      u8='   utf8';
 alias       B='   b   ';
-alias       b='   bk  '; #  b    :             bk
+#lias       b='   bk  '; #  b    :             bk
+            b() { bk   $@; }     # unalias   b && redefining as simple function wrapper resolves         param alias expansion problem (but still will glob)
 alias      bk='   bak '; # bk    :            bak            (orig Pip:Utl file backup command)  # for wc BlO,suport`dd --help`like printf style size formats
 alias     cls='  clear'; #  cls  :          clear (like DOS command for CLearScreen)
 alias       C='  cls  '; #  C    :B4 clear was wc (Count charz,words,&&lines&&eventually bits,bytes,[KMGTPEZY]i?bits|Bytes,code points,paragraphs,subs,etc.)
@@ -395,8 +397,8 @@ alias       g='   grp '; #  g    :          sarep|(e|f)?grep (sed|awk too?)
 alias      gi='   g -i'; #                              grep -i to      Ignore_case
 alias      gv='   g -v'; #                              grep -v to                     inVert_match_results
 alias     giv='  gi -v'; #                              grep    to both Ignore_case && inVert_match_results
-alias    gadd='  gi "^ *[a-z8]*8[a-z8]* *[:#].* add.*8" ~/dox/2du/8.txt'; # early varE8ion which didn't require pound after colon,like Blow expecting both l8r
-alias    gad8='  gi "^ *[a-z8]*8[a-z8]* *:.*#.* add.*8" ~/dox/2du/8.txt'; # utility alias to grep 8.txt for all comments describing potential words to add l8r
+alias    gadd='  gi "^ *[a-z8]*8[a-z8]* *[:#].* add.*8" ~/dox/2du/8.utf'; # early varE8ion which didn't require pound after colon,like Blow expecting both l8r
+alias    gad8='  gi "^ *[a-z8]*8[a-z8]* *:.*#.* add.*8" ~/dox/2du/8.utf'; # utility alias to grep 8.txt for all comments describing potential words to add l8r
 alias     gad='  gad8 '; # while the above 2 originally differed into more restricted result count, material text has been upd8d such that they match on I98
 alias      eg='  egrep'; # eg    :                 e    grep
 alias      zg='  zgrep'; # zg    :                     zgrep (like zcat for *.gz)      # below heX aliasing must get decimal input piped thru, can't du pRam
@@ -458,6 +460,7 @@ alias      s8='   sort'; #  s8   :           sort (maybe eventually a collection
 #lias      d8='   date'; #  d8   :           date|time|pt
 #          g8   already ~/bin/
 #lias      g8='    git'; #  g8   :            git (was my much earlier attempt at wrapping to handle abbreV8ions && gener8 commits from .bak && vice-versa)
+alias    g8c='     git clone    '; # another convenient quick common git command for when needing to clone a new repository probably needing lowercase URLs
 alias    g8st='    git status   '; # basic Octology-memorable combined rhyme 1-string altern8 way to call what should be effectively the same as: `g8 st`
 alias    gaa='     git  add .* *'; # handy alias to Add All (Asterisk) changes, Commit by Message string below, then Push Origin Master (likely to GitHub)
 alias    gcm='     git commit -m'; # tried to call each of these through g8 initially, but maybe -m flag wasn't passing on to git correctly so explicit now
@@ -482,18 +485,21 @@ alias       V='vim.tiny';
 alias    viii='vim    '; #  viii : v8 v 8     vim (lowercased Roman Numerals for 8 for my vim-style editor command name)
 #lias      v8='viii   '; #  v8  changing to Xport $Hv8f B4 calling vim on it, so that it can also be used by U8:upd8
 alias       8='viii   '; # might try quoting 8 or just synhilite makes it seem wrong when it will work, eventually a c8-based clone that might also perform e
-alias       v='v8     '; # v8 and v might become an experimental varE8ion branch of my hopefully eventually standardized ~vim-compatible viii and 8 editor
+#lias       v='v8     '; # v8 and v might become an experimental varE8ion branch of my hopefully eventually standardized ~vim-compatible viii and 8 editor
+            v() { v8   $@; }     # unalias   v && redefining as simple function wrapper resolves         param alias expansion problem (but still will glob)
 alias     dif='vimdiff'; #  dif  :            vimdiff|diff|cmp|comm
 #   (upd|loc)8  already above near e (which should eventually wrap v8?)
 #lias    loc8=' locate'; #  loc8 :             locate|find # f is already find above
 # F5QMGkI3:while trying2`pmei Moose`a tSt sugSted PAR::Dist having an `up` so maybe unalias this in case && ck. u && up used2alias Pip:Utl:updt B4 U8:upd8;
-alias       u=' upd8  '; #  upd8 :           upd8 (U8 tool to cp dvl code into bin && lib, upd8 may eventually wrap g8 git && collabor8 2ease general sync)
+#lias       u=' upd8  '; #  upd8 :           upd8 (U8 tool to cp dvl code into bin && lib, upd8 may eventually wrap g8 git && collabor8 2ease general sync)
+            u() { upd8 $@; }     # unalias   u && redefining as simple function wrapper resolves         param alias expansion problem (but still will glob)
 alias    updt='perl -MPip::Utl -e "updt @ARGV"'; # replace old tiny ~/bin/updt with alias in case newer upd8 fails
 alias    uptm=' uptime'; #  uptm :           uptime
 alias     uni='   uniq'; #  uni  :           uniq
 #         dic   already ~/bin/
 #lias     dic='   dict'; #  dic  :           dict     (reformatted for 160 or other columns, colored, with reviewable query history in ~/.log/dic.log file)
-alias       d='   dic ';
+#lias       d='   dic ';
+            d() { dic  $@; }     # unalias   d && redefining as simple function wrapper resolves         param alias expansion problem (but still will glob)
 alias       D='   dfc '; #                            ("D" Used2alsOBshort4 pronunC8ion of "define" too, before realloc8ion to administr8ion DiskFreeColor)
 alias       y='   yelp';
 alias       Y='   y   ';
@@ -528,11 +534,38 @@ alias     lsm='  lsmod'; #  lsm  :          lsmod                    # HTTPS://U
 alias     lsc='  lscpu'; #  lsc  :          lscpu
 alias     lsp='  lspci'; #  lsp  :          lspci
 alias     lsu='  lsusb'; #  lsu  :          lsusb
-alias     ren=' rename'; # might take just Perl quoted regex instead of $from $to before shell fileglob to alter
+alias     ren=' rename'; # might take just Perl quoted regex instead of $from $to before shell fileglob to alter;
+# [pip@AkuJ28LIPsh~]en `source-highlight --lang-list`|pe 's/(\S+) = \1\.lang */$G$1$w;/g;s/(\S+) = ([^.]+)\.lang */$C$1$o=$g$2$W;$z/g'|sS; # old B4 BlO...
+# asm,awk,bash,bib,c,changelog,conf,csh,css,d,dmd,errors,feature,fixed-fortran,free-fortran,glsl,go,groovy,islisp,java,javalog,json,  ## slItlyrE4m@d; ##;
+#  ksh,log,lsm,lua,opa,outlang,oz,properties,r,s,scala,spec,sql,style,syslog,tcsh,tml,upc,vala,xorg,zsh;   ## shls=48;solz:88; B4 solz:64; B4 cut dn2: ##;
+# ada:adb;applescript:scpt;bat:batch;clipper:prg;cobol:cbl;coffeescript:coffee;csharp:cs;desktop:ini;diff:patch;erlang:erl;haskell:hs;
+#  haskell_literate:lhs;haxe:hx;html:htm;javascript:js;langdef:lang;ldap:ldif;lilypond:ly;lisp:el;logtalk:lgt;manifest:mf;nohilite:txt;
+#  pascal:pas;pc:pkgconfig;perl:pm;po:pot;prolog:pl;proto:protobuf;python:py;ruby:rb;scheme:scm;sh:shell;sml:sig;tcl:tk;texinfo:texi;vbscript:vbs;
+# caml:ml,mli;m4:ac,autoconf;makefile:am,in;postscript:eps,ps;slang:sl,slsh;  bison:y,yacc,yy;flex:l,lex,ll; latex:cls,dtx,sty,tex;php:ctp,php3,php4,php5;
+# fortran:F77,F90,f,f77,f90; xml:docbook,kcfg,kdevelop,kidl,rc,ui,xhtml; cpp:C,H,cc,cxx,h,hh,hpp,hxx,moc;  ## multi-phase,multi-pass procSing 4 s8 ls; ##;
+alias shls='ShlS|sS|pe "@lngz=split(/;/,\$_);\$prev=0;\$_=q(); #\$.=q(shls:);\$_.=q( src-hilite ls s8;lmapz:);
+  for     my \$lang (@lngz){if(\$lang=~  /(\S+)=(\S+)/){\$lmsz{\$2}++;\$lmap{\$2}.=\$1.q(,);} #elsif(0&& !exists(\$lmsz{\$lang})){push(@solz,\$lang);}
+      else{\$solo{\$lang}++;}} #\$_.=scalar(keys(%lmap)).q(;);\$_.=q(solz:).\$#solz.q(;); # these are mainly commented out intro header d8a now;
+  for     my \$soln (sort(keys(%solo))){if(\$soln=~  /^(haskell_insmthng2reject)\$/){\$_=q(prepend:).\$soln.qq(\n).\$_;}
+                                     elsif(                 !exists(\$lmsz{\$soln})){\$_.=\$G.\$soln.\$Y.q(,);}}s/,\$/\$W;\$z\n/;
+  for     my \$fsiz (sort  {\$a <=> \$b} values(%lmsz)){if(\$prev!=\$fsiz){ # basic grouping && reformatting of language familiez by varE8ion size (160 colmz)
+      for my \$faml (sort(keys(%lmap))){if(\$lmsz{\$faml}==\$fsiz){\$lmap{\$faml}=~ s/,\$/\$W;/;\$lmap{\$faml}=~ s/,/\$w,\$g/g;
+          \$_.=\$G.\$faml.\$o.q(:).\$g.\$lmap{\$faml};\$_.=\$z.qq(\n) if(\$fsiz < 0);}} \$prev=\$fsiz; # basic spacing below to align;
+      if(\$fsiz=~ /^(1|4)\$/){\$_.=\$z.qq(\n);}else{\$_.=q( );}\$_.=q( ) if(\$fsiz=~ /^(2|7)\$/);\$_.=q(    ) if(\$fsiz==5);}}s/ \$//;
+  s/(java|haskell_literate|pascal)(\e)/\n \$1\$2/g;%smap=(perl=>\$P,xml=>\$M,json=>\$B,ini=>\$Y,js=>\$c,conf=>\$C,htm=>\$m,zsh=>\$R,py=>\$p,ly=>\$O);
+  for my \$skey (sort(keys(%smap))){s/(\$skey)\e/\$smap{\$skey}\$1\$z\e/;}"'; # want 2 special-colr othr favr8z 2 4 l8r? `s zsh ~/.zshrc` hangz why?;
+alias ShlS='en `shll`|pe "s/(\S+) = \1\.lang\s*/\$G\$1\$w;/g;s/(\S+) = ([^.]+)\.lang\s*/\$C\$1\$o=\$g\$2\$W;\$z/g;
+                s/(perl)/\$P\$1/g;s/(xml)/\$M\$1/g;s/(json)/\$B\$1/g;s/(ini)/\$Y\$1/g;s/(lily)/\$m\$1/;s/(conf)/\$c\$1/g;s/(zsh)/\$R\$1/g;"';
+alias    shll=' source-highlight --lang-list'; # just setup src-hili 4 Languages-List && l8r aut0-traverse thru all like ShlS abov but call s() belo on each
 alias   srchl=' source-highlight -f esc --style-file=~/.shl.style'; # hopefully EvN2ally c8 can supplant shl for file && cmd auto-reformatting && color8ion
-alias    shlp=' srchl -s perl -i'; # assume source code is Perl && expect next param 2B Input source-code filename
-alias     shl=' srchl         -i'; # above srchl changes from default HTML output format to ANSI escape codes && set component field color style
-alias       s='   shlp'; # assume Perl since an upd8 to source-highlight seems to no longer auto-detect when input files are such code
+alias    shlp=' srchl -s perl -i';alias shlc=' srchl -s conf   -i'; # assume source code is Perl or Conf && expect next param 2B Input source-code filename
+alias     shl=' s               '; # above srchl changes from default HTML output format to ANSI escape codes && set component field color style
+#lias       s=' shlp'; # assume Perl since an upd8 to source-highlight seems to no longer auto-detect when input files are such code
+s(){  ifil="$1";synl='perl';if [[ "$#" -gt 1 && "$2" != "" ]]; then synl="$1";ifil="$2"; elif [[ "$#" -lt 1 ]]; then ifil="$HOME/bin/8ct";
+  elif   [[ -e "$1" ]]; then # BlO 2 stRt adng elif tStz 4 XtNsion nAmz (mAB wi $(E) something too?) 4 autOpik lang; srchl --lang-list|g $XtNs;
+    if   [[ ${(L)1} =~ .sh$ ]]; then synl='bash'; elif [[ ${(L)1} =~ .html$ ]]; then synl='htm'; elif [[ ${(L)1} =~ .cfg$ ]]; then synl='conf';
+    elif [[ ${(L)1} =~ .py$ ]]; then synl='py'  ; elif [[ ${(L)1} =~  .xml$ ]]; then synl='xml'; elif [[ ${(L)1} =~ .cnf$ ]]; then synl='conf';
+    fi;    ec " source-highlight -f esc --style-file=~/.shl.style -s $synl -i $ifil;"; fi; srchl -s $synl -i $ifil; } # multi -i B4othr pRamls?
 alias      S8='   shl8'; # my primitive c8:SourceHighLight8 Utl to hopefully eventually approach functional parity with source-highlight before surpassing it
 alias     sho='cd ~/gfx/sho;shot -u'; # change to typical local Octology screenshot directory && take a shot of the focUsed window (no border) in 3 seconds
 alias    resp='   reso spec'; # joining like =~ /^respect/ shortcut to list resolution specific8ionz  # abovUsed2B S=shl,s=shl8 but S repurposed in a8 4 SKpz
@@ -543,7 +576,12 @@ alias    res8='reset;rest;w8 48;src8;rest'; # J12LFTst:wanting to test a bunch o
 alias   xical='xinput-calibrator';alias xic='xical';alias xbk='xbindkeys';alias xdt='xdotool';alias xd2='xdt'; # basic Chun touch-scrn&&X re-bind&&scrpt utlz
 alias    ctor='ctorrent -e 16 -z 64'; # abov: %eval $(xdotool getmouselocation --shell); %echo $X,$Y; will override Dflt $Y bright Yellow mapping with coordz
 alias     sig='signal-desktop'; # I7GMFSIG:installed HTTPS://Signal.Org on my Android phone && Aku here as likely better than Slack or Discord 4the future;
-alias     p47='parsec47';alias a7='a7xpg'; # some of my favorite Kenta Cho Shmups ("Bullet Hell") in /usr/games
+alias     lvt='lv-tool'; # J28L8888:LibVisual 0.5 ~2014 > ~2006 0.4 && mAB w8,chti,thN fix ~/dvl/n8/viz/*plug* 4 bass kick snAr rEsponsz in hIgh contrastz;
+alias     lvp='lv-tool    -i pulseaudio -s  888 -S  888'; # setup LibViz 4 -vrbOs? -inpuls -seedrand;  ## BlO blursk dblfrEmM coredumpz aftr 2nd unlOd! ##;
+export   lVSx=' -a lv_gltest -x lv_analyzer,lv_dump,madspin,nastyfft,nebulus,plazma,bumpscope,corona,gdkpixbuf,gforce,oinksie,blursk,goom2k4,jackdaw,lv_scope';
+alias     lvH='lvp -D 1280x800 ';alias lV="lvH $lVSx"; # upper-H 4 old HD720P, lower-h 4 dflt fullhd1080p, othrwIzkeptsAmsOfR; # only 6 lFt mAB nEd 4 2!segf?;
+alias     lvh='lvp -D 1920x1080';alias lv="lvh $lVSx"; # oinksie... lv-tool: malloc.c:4023 coredumpd mAB bAsd on pRam ordr? #; # proly not inflwrgltestjess! ;
+alias     p47='parsec47';alias a7='a7xpg'; # some of my favorite Kenta Cho Shmups ("Bullet-Hell") in /usr/games;  ## munmap_chunk(): invalid ptrstilcordumpdx;
 alias      rr='rrootage';alias tt='torus-trooper';alias tf='tumiki-fighters'; # would be gr8 to study BulletML && explor own similRly themed varE8ions someday
 alias      xb='xboard';alias xbsf='xb -fcp stockfish -fUCI'; # gr8 Chess program with shortcut to top StockFish engine as FirstChessPlayer
 alias    kpcl=' kpcli      --kdb=~/.kp/pswd.kdb --histfile=/dev/null --no-recycle'; # 2!stor any hist or entry changes in /Backup or "/Recycle Bin" old dfalts
@@ -557,6 +595,9 @@ k8(){        KDBF='pswd';if [[ "$#" -gt 0 && "$1" != "" ]]; then KDBF=".$1"; fi;
     if   [[ $KDBF =~  pswd  ]]; then b $KDBF; fi;     # ideally this should all behave quite similarly to just basic kp alias above && may replace it once same
   else   ec   "k8 failed to loc8 ~/.kp/$KDBF;";   fi; # should print out passed in or manipul8d file when it didn't exist where it was expected to be openable
   po;} # simply popd back to the original working directory before the default home d8abase directory was pushd added above the standard shell directory stack
+alias    Upd8='sudo curl -L https://yt-dl.org/downloads/latest/youtube-dl -o /usr/local/bin/youtube-dl;sudo chmod a+rx /usr/local/bin/youtube-dl';
+alias    Upw8='sudo wget    https://yt-dl.org/downloads/latest/youtube-dl -O /usr/local/bin/youtube-dl;sudo chmod a+rx /usr/local/bin/youtube-dl';
+alias    Upi8='sudo      -H  pip install      --upgrade        youtube-dl'; # see pypi document8ion for more inform8ion about popular Python `pip` package-tool
 alias    U='   U2b8';alias U2bk='Uk';alias u2bk='uk'; # shud l8r add 1-colm <98wId mOd&&some a8 autOcolrz 2furthr hIlIt mapngz
 alias    Ukey='echo -n "m c b : togl volMute Caption Bakgr colr [ U2b-hotKey ];  Dn Up : lowr 5%vol (arowkyz) rais 5%vol;
 p f n : Prevplayls toglFulsc Nextplayls (Escap=2exitf);  Lt Rt : bkwd 5secs (arowkyz) 4wrd 5secs;
@@ -647,7 +688,8 @@ alias scvi='pu ~/dox/2du;scrn -S cvi -t cvi e   scvi.ls ;po';alias sC='scvi';  #
 alias ssfv='pu ~/dox/2du;scrn -S sfv -t sfv e   sfv.utf8;po';alias sf='ssfv';alias sof='pu ~/dvl/f8;scrn -S of8 -t of8 e f8.pm;po'; # mABl8r vary4asOC8d binz2
 alias stab='pu ~/dox/2du;scrn -S tab -t tab e   tabz.ls ;po';alias sT='stab';alias sog='pu ~/dvl/g8;scrn -S og8 -t og8 e g8   ;po'; # not A sepR8 PlModule yet
 alias stip='pu ~/dox/2du;scrn -S tip -t tip e   tipz.ls ;po';alias sI='stip';alias soU='pu ~/dvl/U8;scrn -S ou8 -t ou8 e U8.pm;po';alias sou='soU'; # bOthKsez
-alias sud2='pu ~/dox/2du;scrn -S ud2 -t ud2 e    ud2.ls ;po';alias sU='sud2';  # mAB 2du hLpr wi rEorg && chng prspctv on donez Ovrcomng prIOriTz?;
+alias sud8='pu ~/dox/2du;scrn -S ud8 -t ud8 e    u.8.   ;po';alias sU='sud8';  # mAB 2du hLpr wi rEorg && chng prspctv upd8d wi paired 8trm prep code 2 preT;
+alias sud2='pu ~/dox/2du;scrn -S ud2 -t ud2 e    ud2.ls ;po'; #ias sU='sud2';  # mAB 2du hLpr wi rEorg && chng prspctv on donez Ovrcomng prIOriTz?;
 alias sdvl='pu ~/dvl    ;scrn -S dvl -t dvl             ;po';alias sd='sdvl';  # mAB some new sD can lOd Xtra Dvl lIk Utl Tk Time Math anythng else important
 alias smuz='pu ~/muz    ;scrn -S muz -t muz             ;po';alias sm='smuz';alias so=' ob ';alias mob='ob';alias obs='ob';alias Obs='ob';alias sobs='   ob';
 alias smvz='pu ~/mvz    ;scrn -S mvz -t mvz             ;po';alias sM='smvz';alias Ob=' ob ';alias ob=' pu ~/muz/U2b;scrn -S mob -t mob g3 **/*Obs*     ;po';
@@ -656,13 +698,16 @@ alias sadm='pu  /root   ;scrn -S adm -t adm sudo    bash;po';alias sA='sadm'; #a
 #lias sx='   scrn -x  ';   # would also B good 2 upd8 abov openingz of scrnz 2ck4 `scrn -ls $mtch` 4 already crE8d wich shud just B -x reattached 2 nstdofnew
       sx() { scrn -x $@; } # unalias sx && redefining as simple function wrapper resolves parameter alias expansion problem (but still will glob), like ct;
 #lias sls=' scrn -ls'; # stuD screenie 2mkOwn version. wrapd `scrn -ls` BlObutl8r tAkthOs b8 && d8 rE4m@z as valid pRamz2reattach2. rEplAc scrn wi autO sx;
-alias SLS=' pabd "\$v=q(screen -ls);\$v.=qq( @ARGV) if(@ARGV > 0);\$S=\`\$v\`;while(\$S=~ /\t((\d+)\.(\S+)\s+\((\d+)\/(\d+)\/(\d+)\s+(\d+:\d+:\d+)\s+([AP])
-  M\)\t\(([AD])[te]tached\)\n)/x){\$L=\$1;\$I=b8c(b64(\$2));\$H=\$3;\$N=\$4;\$D=\$5;\$E=\$6;\$T=\$7;\$n=\$8;\$t=\$9;\$x=S(q(Rr));\$t=\$x.\$t if(\$t=~ /D/);
-  if(\$n=~ /P/ && \$T=~ /^(\d+):/){\$h=\$1+12;\$h%=24;\$T=~ s/^(\d+):/\$h:/;}   \$A= S   (q(Ab));\$x=q(XtracmNt:Repurposd RedOnRed detached in2filr text;);
-  \$d=Octology::d8->new(q(expand)=>\$Mon[\$N-1].q( ).\$D.q( ).\$T.q( ).\$E);\$e=\$d->colr(q(a) );\$S=~ s/\Q\$L\E/\$I\$K.\$A\$H\$z\t\$e \$G\$t\$z\n/igixi;};
+alias SLS=' pabd "\$u=0;\$v=q(screen -ls);\$v.=qq( @ARGV) if(@ARGV > 0);\$S=\`\$v\`;while(\$S=~ /\t((\d+)\.(\S+)\s+\((\d+)\/(\d+)\/(\d+)\s+(\d+:\d+:\d+)\s+
+  ([AP])M\)\t\(([AD])[te]tached\)\n)/x){\$L=\$1;\$I=q();\$I.=q( ) if(\$2 < (64**2));\$I.=b8c(b64(\$2));\$H=\$3;\$N=\$4;\$D=\$5;\$E=\$6;\$T=\$7;\$n=\$8;\$t=
+  \$9;\$x=S(q(Rr));\$d=2;\$t=\$x.\$t if(\$t=~ /D/);\$h=int(\$u++ / \$d)+1;if(!(\$u % \$d)){\$e=abs(\$d- 1)*abs(\$h- 0);\$S=~
+  s/^(.*([^\\n]*\\n){\$e}[^\\n]*)\\n/\$1/;\$S.=qq(Logic4DivideNotBy2StillBuggy:e=\$e;) if(0);}
+  if(\$n=~ /P/ && \$T=~ /^(\d+):/){\$h=\$1+12;\$h%=24;\$T=~ s/^(\d+):/\$h:/;} \$A= S(     q(Ab));\$x=q(XtracmNt:Repurposd RedOnRed detached in2filr text;);
+  \$d=Octology::d8->new(q(expand)=>\$Mon[\$N-1].q( ).\$D.q( ).\$T.q( ).\$E);\$e=\$d->colr(q(a) );\$S=~ s/\Q\$L\E/\$I\$K:\$A\$H\$z\t\$e \$G\$t\$z\n/igixi;};
 \$S  =~ s/(There)( are| is a)( screens?)( on)(:)/\$B\$1\$p\$2\$G\$3\$o\$4\$W\$5/gig;\$x=q(XtracmNt:sinc -ls tAk m@chpRam,1st passin ARGV B4wrap ZshLfunc;);
 if(\$S=~ /(\d+)( Sockets?)( in )(.+)\..*/){\$s=b8c(b64(\$1));\$X=\$2;\$i=\$3;\$F=c8fn(\$4);\$x=q(XtracmNt:CmzlIk6.5solidsourclInz puttz mE undrpR4ashole;);
-  \$S=~ s/(\d+)( Sockets?)( in )(.+)\..*/\$s\$C\$X\$p\$i\$Y\$F\$W;\$z/;} \$S=~ s/\\t/  /g;chomp \$S;print \$S;"'; # 2du:migr8 SLS 2 proly U8.pm 4nEded [abd]8,
+  \$S=~ s/(\d+)( Sockets?)( in )(.+)\..*/\$s\$C\$X\$p\$i\$Y\$F\$W;\$z/;} \$S=~ s/\\t/  /g;#\$S=~ s/\\n//g;
+  chomp \$S;print \$S;"'; # 2du:migr8 SLS 2 proly U8.pm 4nEded [abd]8,
 # proly chop-off "There * screen* on:" 1st unimportant line && join last 2 lines so counted socketz with path follows list's last detaild entry mor compactly,
 # prEpNd DtAlz list Ntryz wi b64 ndxz wich can Bcom altrn8 wA 2 pik session 2 scrn -x rEconect 2,add scls BlO 2 U8.pm also as sls -*h(elp)? duing bOth wi -*v,
 # Xplor posibl or bSt wAz 2 autO-rEstor pal8z aftr Dtachng or Xiting from scrn sessionz (proly by trigering XeQt of just orig pal8 fIl or re-sourcing .zshrc);
@@ -693,7 +738,7 @@ b8a: b8a.ls sb=sb8a; irc:pl irssi si=sirc; #  upd8 this list colr 4 cstmz;    mv
 \$S=~ s/(;)(\\n)/\$e\$1\$z\$2/;\$e=S(Yb);\$S=~ s/(;)(    )/\$e\$1\$z\$2/;        \$e=S(Cb);\$S=~ s/(;)(\\n)/\$e\$1\$z\$2/; # custm cmNt termn8r semicolonz
 \$S=~ s/(\\w{4}\\*)(xt)/\$W\$1\$W\$2/;\$S=~ s/(pLa\\w+)/\$Y\$1\$R/g;\$e=S(Or);\$S=~ s/(aLSoL8r aLiaSd)(:)/\$g\$1\$B\$2\$R/;\$S=~ s/(;)( ##)/\$e\$1\$z\$2/;
 \$S=~ s/ (2du)(:)/ \$B\$1\$m\$2\$Y/g; \$e=S(Cb);  \$S=~ s/(##+) /\$e\$1\$z\$c /g;\$e=S(Rb);\$S=~ s/(;)\$/\$e\$1\$z/;\$e=S(Wb); # && final Nding semicolon
-\$S=~ s/(,)/\$B\$1\$G/g;\$S=~ s/(\\*)/\$w\$1\$G/g;\$S=~ s/ (#) / \$e\$1\$z\$C /g;\$e=S(ob);\$S=~ s/(\\w{1,4}\\.)(ls )/\$C\$1\$C\$2/g;
+\$S=~ s/(,)/\$B\$1\$G/g;\$S=~ s/(\\*)/\$w\$1\$G/g;\$S=~ s/ (#) / \$e\$1\$z\$C /g;\$e=S(ob);\$S=~ s/(\\w{1,4}\\.)(ls )/\$C\$1\$C\$2/g;   ## nOt:manynotyetincl;
 \$S=~ s/(\\s)(\\w{3})(:)/\$1\$e\$2\$z\$R\$3\$Y/g; \$S=~ s/(8plc)/\$G\$1/;        \$e=S(Yb);\$S=~ s/(\\()/\$p\$1\$R/g;\$S=~ s/(\\/)(Ob)/\$Y\$1\$G\$2/;
 \$S=~ s/(\\s)(\\w+)(=)(\\w{4})/\$1\$e\$2\$z\$C\$3\$z\$4/g;                       \$e=S(yK);\$S=~ s/(\\))(:)/\$p\$1\$G\$2/g;\$S=~ s/(pl )/\$B\$1\$G/;
 \$S=~ s/(cd )(~)(\\/)(\\w+)/\$c\$1\$B\$2\$Y\$3\$B\$4\$G/g;\$S=~ s/(\\/{2})/\$e\$1\$z\$Y/g ;\$S=~ s/(sudo)/\$r\$1\$G/g; \$S=~ s/(aLiaSeS)(:)/\$1\$o\$2/;
@@ -701,8 +746,8 @@ b8a: b8a.ls sb=sb8a; irc:pl irssi si=sirc; #  upd8 this list colr 4 cstmz;    mv
   \$S=\$S[0].qq(\\n).\$S[2].qq(\\n).\$S[4].qq(\\n).\$S[6].qq(\\n).\$S[8].qq(\\n).\$S[10].qq(\\n).\$S[3].qq(\\n).\$S[5].qq(\\n).\$S[7].qq(\\n).\$S[9].qq(\\n).
       \$S[11].qq(\\n).\$S[ 1].qq(\\n).\$S[12].qq(\\n).\$S[13];} \$S=~ s/(-)/\$Y\$1\$G/g;\$S=~ s/(\\.)/\$M\$1\$G/g;print \$d->colr(q(a)),\$Y,q(:),\$C,\$S;"';
 # 2du:upgrAd sls to buffer a quick DtachmNt LS rECv 2 C if last attached aftr mAB pull from wndO tItl aftr:colon 2 try wut 2 -x confirm if in rEcNt stil? ;
-#There are screens on: #	17836.b8a	(10/03/2018 04:09:10 AM)	(Detached)  # /defhijlnqstuvx/i + AZ are sOlOz avAl 4 golf abov (aftr a8 sOlO color Xportz);
-# cangiv m@chpRam now; #	 5604.irc	(10/02/2018 07:48:46 PM)	(Attached)\n#2 Sockets in /run/screen/S-pip.  # SCreenLiStcmnd=S,ScreenLINe=L,PRocessIDnt=I,
+#There are screens on: #        17836.b8a       (10/03/2018 04:09:10 AM)        (Detached)  # /defhijlnqstuvx/i + AZ are sOlOz avAl 4 golf abov (aftr a8 sOlO color Xportz);
+# cangiv m@chpRam now; #         5604.irc       (10/02/2018 07:48:46 PM)        (Attached)\n#2 Sockets in /run/screen/S-pip.  # SCreenLiStcmnd=S,ScreenLINe=L,PRocessIDnt=I,
 #lias g3='   gst123 '; # replaced by Xpct XperimNt  # sux2havnOsyntxhIlIt  # ScreenTiTL(PID.TTY.Host)=H,moNth=N,Day=D,yEar=E,Time=T,afterNoon=n,deTached=t,
 alias m3='   mpg123 '; # replace  wi Xpct l8r too   # butsumvrynIcalInmNt  # Hour=h,d8OBject=d,d8colrEskaped=e,Socketcount=s,soX=X,In=i,screenpathFilenm=F,
 #lias m1='   mpg321 '; # replace  wi Xpct l8r too   # guessngaboutARGVthO  # eXtra_detached_color_with_red_background=x (mOmNtary modific8ionB4cmNt filrz);
@@ -723,25 +768,7 @@ alias dvdb=' dvdbackup -M -p';alias dvdbak='dvdb';  # default DVD backups -Mirro
 alias mplyr='mplayer'; # EBIL4AcZ:just upgraded all machines to mplayer2 so need --no-keepaspect to allow scaling to full window dimensions
 alias mp='   mplayer -vo xv  -fixed-vo                              -cache 16384 -cache-min 99'; # should try different -vo (xv was default) for performance
 alias mpns='cd ~/mvz/U2b/nxt;mp $(ls B* Dr* *Tut* Ex* M* O*-Res* Var* *Trap* *Trap* *Boy*|shfl);cd ..'; # mk MPlyrNxtShfl 4 quik favor8 mvz Drub&&Trap vidzls
-alias mpx='  mp      -fs'; #-x 1920 -y 1080'; # originally quite a long time ago, I used to include -noborder optn abov but thN cud!mv wndw
-m0() { # mplayer pr0n function, but called aliases reloc8d to below host tests DfIning dimNshnz && mAB mk prv8 Xtractd Xtrnl mor? ;
-  if       [[ "$#" -gt   0 ]]; then # print out some help text for -h (or l8r add --help) as first parameter && then return
-    if     [[ "$1"  ==  *h ]]; then echo 'm0 crE8d by PipStuart <Pip@CPAN.Org> to wrap mpr0 for streamlining calls to mplayer on my pr0n;'
-      echo                               ' h - print this Help text && exit;  No pRam runs mpr0 on mpg,wmv,avi * (left scrn,mpr1 right).'
-      echo                               ' 1 - runs mpr1 on     wmv,avi,mpg ht*;    (this 1 && v below ignore any l8r pRameters so far)'
-      echo                               ' 2 - runs mpr2 on mpg,wmv,avi     ht*;'
-      echo                               ' s - runs mpr2 on mpg,wmv,avi shfl   ;'
-      echo                               ' v - runs  vp  in   .VelvetPound/    ;    Other pRams will just be passed on to mpr0 for now;';return 0;
-    elif   [[ "$1"  ==  *v ]]; then                                                cd ~/mvz/.pr0/.VP/     ;vp
-    elif   [[ "$1"  ==  *1 ]]; then                                                cd ~/mvz/.pr0/         ;mpr1 mpg/ht* wmv/ht* avi/ht*
-    elif   [[ "$1"  ==  *2 ]]; then                                                cd ~/mvz/.pr0/         ;mpr2         wmv/*   avi/*   mpg/*
-    elif   [[ "$1"  ==  *s ]]; then                                                cd ~/mvz/.pr0/         ;mpr2 $(ls    wmv/*   avi/*   mpg/* | shfl)
-      # & \ abov just bkgrndz 0 procS so nEd2du smthng lIk vp 2spawn 2sepR8 windOz && 4nO pRamz else BlO  ;mpr0 wmv/ht* avi/ht* mpg/ht*
-    else                                                                                                   mpr0 $@;fi # assume othr pRamz mEn alreD in fIn dir
-  elif     [[ `pwd` ==  *.pr0/mpg/  ]] || [[ `pwd` ==  *.pr0/wmv/  ]] || [[ `pwd` ==  *.pr0/avi/  ]]; then mpr0 *
-  else                                                                             cd ~/mvz/.pr0/         ;mpr0 mpg/*   wmv/*   avi/*;fi }
-alias m1='m0 1'; # could also try to add |g -v "_server /home/" or |g steam|g " Ssl " below to inVert match to try to not get child processes first
-alias m2='m0 2'; #   Screeps was below, but for some reason spawning server process was uniquely showing up with space for second 's' but no longer
+alias mpx='  mp      -fs';alias mpjoin='mjoin'; #-x 1920 -y 1080'; # originally quite a long time ago,I used 2 include -noborder optn abov but thN cud!mv wndw
 mjoin() { ffmpeg -i $1 -i $2 -acodec copy -vcodec copy $3; } # IB6LExci:was in ~/.tmp/ aftr trying;
 # IAIMFFMP:ffmpjoin.sh crE8d by PipStuart <Pip@CPAN.Org> to take 2 sepR8 file parameters of audio && video (probably from calls to U2b8) && join in2 cntAnr4m@;
 # 2du:upd8 U2b8 autom8ion to test -F output first && harvest out best audio && video available then gener8 joined container name; nOt:out.avi did!work,mp4 did;
@@ -814,6 +841,24 @@ alias mpr0t='mplayer -vo xv  -fixed-vo -nosound -msgcolor -noborder -cache 16384
 alias mpfb=' mplayer -vo fbdev -vf scale=640:400   -loop 0'; # ~/mvz/U2b/* for some old scaled FrameBuffer modes
 alias mpfbs='mplayer -vo fbdev -vf scale=1920:1200 -loop 0'; # ~/mvz/muV/*
 alias mpf8=' mplayer -vo fbdev        -nosound --no-keepaspect  -vf scale=1920:1080 '; # still needs vid file params to follow
+m0() { # mplayer pr0n function, but called aliases reloc8d to below host tests DfIning dimNshnz && mAB mk prv8 Xtractd Xtrnl mor? ;
+  if       [[ "$#" -gt   0 ]]; then # print out some help text for -h (or l8r add --help) as first parameter && then return
+    if     [[ "$1"  ==  *h ]]; then echo 'm0 crE8d by PipStuart <Pip@CPAN.Org> to wrap mpr0 for streamlining calls to mplayer on my pr0n;'
+      echo                               ' h - print this Help text && exit;  No pRam runs mpr0 on mpg,wmv,avi * (left scrn,mpr1 right).'
+      echo                               ' 1 - runs mpr1 on     wmv,avi,mpg ht*;    (this 1 && v below ignore any l8r pRameters so far)'
+      echo                               ' 2 - runs mpr2 on mpg,wmv,avi     ht*;'
+      echo                               ' s - runs mpr2 on mpg,wmv,avi shfl   ;'
+      echo                               ' v - runs  vp  in   .VelvetPound/    ;    Other pRams will just be passed on to mpr0 for now;';return 0;
+    elif   [[ "$1"  ==  *v ]]; then                                                cd ~/mvz/.pr0/.VP/     ;vp
+    elif   [[ "$1"  ==  *1 ]]; then                                                cd ~/mvz/.pr0/         ;mpr1 mpg/ht* wmv/ht* avi/ht*
+    elif   [[ "$1"  ==  *2 ]]; then                                                cd ~/mvz/.pr0/         ;mpr2         wmv/*   avi/*   mpg/*
+    elif   [[ "$1"  ==  *s ]]; then                                                cd ~/mvz/.pr0/         ;mpr2 $(ls    wmv/*   avi/*   mpg/* | shfl)
+      # & \ abov just bkgrndz 0 procS so nEd2du smthng lIk vp 2spawn 2sepR8 windOz && 4nO pRamz else BlO  ;mpr0 wmv/ht* avi/ht* mpg/ht*
+    else                                                                                                   mpr0 $@;fi # assume othr pRamz mEn alreD in fIn dir
+  elif     [[ `pwd` ==  *.pr0/mpg/  ]] || [[ `pwd` ==  *.pr0/wmv/  ]] || [[ `pwd` ==  *.pr0/avi/  ]]; then mpr0 *
+  else                                                                             cd ~/mvz/.pr0/         ;mpr0 mpg/*   wmv/*   avi/*;fi }
+alias m1='m0 1'; # could also try to add |g -v "_server /home/" or |g steam|g " Ssl " below to inVert match to try to not get child processes first
+alias m2='m0 2'; #   Screeps was below, but for some reason spawning server process was uniquely showing up with space for second 's' but no longer
 chvp() { # CHange ViewPort ("virtual desktop") thru wmc -o ... based on host dimz && Compiz 8 viewportz in 4x2 grid
   if     [[ "$1"         ==     ""  ]] ||
          [[ "$1"         ==    "0"  ]]; then wmc -o     0,0;
@@ -1044,7 +1089,7 @@ wh8()   {  LP_F='0'; # same as wh8ch BlO but wi 8rows flipd2 8columns,othrwIz ve
         if [[ $B64N =~ ^([a-zA-Z]w)                    ]]; then echo -n `S  K   `;fi;fi;fi; BNWH=`which $B64N`  ;BNWH=${BNWH:s/      e    / e };
     if     [[ $LP_F =~ ^[0]$        ]]; then BNWH="$BNWH ";BNWH=${BNWH:s/ Et /    Et   };BNWH=${BNWH:s/tiny /tiny}  ;BNWH=${BNWH:s/ whereis /whereis };
       if   [[ $B64N =~ ^[_]$        ]]; then LP_F='1';fi  ;BNWH=${BNWH:s/h       /   h    };BNWH=${BNWH:s/k9      /   k9   }; #n LoopPast_undrscorFlag4 64
-    fi;BNWH=${BNWH:s/ aliased to /alias2\'} ;BNWH="$BNWH'";BNWH=${BNWH:gs/	/  };BNWH=${BNWH:s/2\'apt                     /2\'apt}; # EndSpaceLoopCount
+    fi;BNWH=${BNWH:s/ aliased to /alias2\'} ;BNWH="$BNWH'";BNWH=${BNWH:gs/      /  };BNWH=${BNWH:s/2\'apt                     /2\'apt}; # EndSpaceLoopCount
     BNWH=${BNWH:s/\'lsd8 \'/\'   lsd8 \'}   ;BNWH=${BNWH:s/ls  -F \'/  ls -F \'};BNWH=${BNWH:s/\'ls      /\'ls}     ;BNWH=${BNWH:s/    q /q};BNWH=${BNWH:gs/
 /}; if     [[ $LP_F =~ ^[1]$        ]]; then BNWH=${BNWH:s/     /};BNWH=${BNWH:s/              \&/\&}               ;BNWH=${BNWH:s/--geom/ --geom};
       for ESLC in 0 1 2 3; do BNWH=${BNWH:s/2\' /2\'};BNWH=${BNWH:s/ \'/\'};done;BNWH=${BNWH:s/ \'/\'}          ;BNWH=${BNWH:s/    --geom/ --geom};
@@ -1074,15 +1119,15 @@ wh8ch() { # see which most basic 64 single-character commands are mapped to what
     if     [[ $B64N =~ ^[3BJRZhpx]$ ]] && [[ "$COLUMNS" -lt 160 ]] || # addXtra nwlnz 4orig 80colm mOd,fitz 64 mapz on 16lInz in 80x18 nIcely wrapd in prmptz
            [[ $B64N =~ ^[7FNVdlt_]$ ]]; then echo;fi;done} # !sureYsomtImz`wh`rEcursvlyXpndz alias pRamz whIl biltin`which`duznot
 goo() { w3m "HTTP://Google.Com/search?q=$1+$2+$3+$4+$5+$6+$7+$8"     ; } # should probably pass $@ =~ s/ /+/g; or something smarter than this
-mcp() { if [[ $# -gt 2 ]] && [[ ! -d ${$#} ]]; then    /bin/cp $@ .  ; return 0; fi; # adds a basic many-argument form of `cp` where all parameters are remote
-                                                       /bin/cp $@    ; }             #   files to be copied into the current directory
-src() {    [[ $# -lt 1 ]] && {                source         ~/.zshrc; return 0; }   # reload main shell resource file, or load parameter filename of script
-                                              source           $@    ; }
-xrc() {    [[ $# -lt 1 ]] && {                  xrdb  -merge ~/.Xrc  ; return 0; }   # merge  main X.Org resource file, or load parameter filename of altern8
-                                                xrdb  -merge   $@    ; } # tryd2auto-call xrc at startx in .xinit but doesn't work so calling here BlO instead
 un()  {    [[ $# -lt 1 ]] && {                 uname  -a             ; return 0; }   # should eventually c8 filter all uname output to add colrz && f0ntz
                                                uname           $@    ; }
-if         [[ "$DISPLAY" != ""  ]];                                     then xrc; fi; # since Ubu14.10UUX11!srcing   .xinit,just rElOd .Xrc 4evry nonconsol zsh
+src() {    [[ $# -lt 1 ]] && {                source         ~/.zshrc; return 0; }   # reload main shell resource file, or load parameter filename of script
+                                              source           $@    ; } # mA nEd 2 `src ~/.tmp/.src` nstd of MpT 2 try 2 unalias all old OveridN Usez 2 upd8
+xrc() {    [[ $# -lt 1 ]] && {                  xrdb  -merge ~/.Xrc  ; return 0; }   # merge  main X.Org resource file, or load parameter filename of altern8
+                                                xrdb  -merge   $@    ; } # tryd2auto-call xrc at startx in .xinit but doesn't work so calling here BlO instead
+if         [[ "$DISPLAY" != ""  ]];                                    then xrc; fi; # since Ubu14.10UUX11!srcing   .xinit,just rElOd .Xrc 4evry nonconsol zsh
+mcp() { if [[ $# -gt 2 ]] && [[ ! -d ${$#} ]];  then   /bin/cp $@ .  ; return 0; fi; # adds a basic many-argument form of `cp` where all parameters are remote
+                                                       /bin/cp $@    ; }             #   files to be copied into the current directory
 mc()  { # used to be mcd for Mk&&ChDir on $1 but just MakeChng, MkCh is nicer, && now also does MvFil $1 into && ChDir $2
   if       [[ $#        -eq  2  ]] && [[   -f "$1" ]] && [[ -d "$2" ]]; then
     if     [[           -d "$2" ]];                                     then mv $1 $2; cd $2;

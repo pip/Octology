@@ -754,7 +754,8 @@ sub bfr8c    {my $rtns = ''; # should build b8 fraction colors left-to-right lik
 sub   b8colr {return(  b8c(@_));}
 sub   b8c    {my $rtns = ''; # just do coloring stringwise for when sprintf zero-padding a specific width is needed   # mk b8clr 2Dtect commaz && % B4 coloring
   if(!@_ && !-t STDIN){     (@_=decode('UTF-8',join(''  ,<STDIN>)));}
-  for my $b8st (@_){my @b64d = split(//,reverse($b8st));my $b64c = '';for(0..$#b64d){$b64c  = $d8cl[          $_%@d8cl ] . $b64d[$_] . $b64c;} $rtns.="$b64c ";
+  for my $b8st (@_){my @b64d=();@b64d=split(//,reverse($b8st)) if(defined($b8st));my $b64c = '';
+  for(0..$#b64d){$b64c  = $d8cl[          $_%@d8cl ] . $b64d[$_] . $b64c;} $rtns.="$b64c ";
   }      $rtns =~ s/\s$//;return($rtns);}
 sub   b8clr  {my $rtns = ''; # Dtect commaz && % B4 coloring  # mAB base4 [bd][fu]?r?8c colrngz shud stA similar with simple uniform applic8ion
   if(!@_ && !-t STDIN){while(my $inln=<STDIN>){#$inln=~ s/\n?$/\n/; # ensure input ends wi newline, may reapNd if chomped, mIt nEd2Bdone aftr decode?
@@ -782,16 +783,16 @@ sub shfl{ # takes an arrayref or list of items to shuffle, or pipe thru by lines
   my $htxt=" shfl - SHuFfLe lines or string crE8d by $auth to provide my own code to behave like standard 'shuf' command does (but mixes single scalar too);
   2du:tidy up all Help text, option handling, && code formatting, consider slipping all this functionality into a new upd8d version of s8 to replace 'sort';
    h  - print this Help text && exit               ;  gO thru list&&add similR styl hLp tXt&&pRamz 2 evry Utl,wrkon upd8ng craPSt&&oldSt Utlz2Ball worthwIl,
-   r  - ReveRse the input d8a list (but no shuffle);    consistNt,EficiNt,doQmNted,&&hOpfuly dMonstr8ive in some wA;";
+   r  - ReveRse the input d8a list (but no shuffle);    consistNt,EficiNt,doQmNted,&&hOpfuly dMonstr8ive in some wA. Also du -r on solo scalar reversal too;";
   my $hflg = 0;my @data; # ReveRse FLaG, TTY FLaG, Solo Scalar String FLaG, Arrayref FLaG    # thN l8r add own basic -help output too
   my $rflg = 0;if(@_){for my $pndx (0..$#_){if($_[$#_-$pndx]=~ /^-+h/i){$hflg=1;return($htxt);} # probably no longer need sepR8 hflg since test str8 returnz
                                          elsif($_[$#_-$pndx]=~ /^-+r/i){$rflg=1;splice(@_,$#_-$pndx,1);}}} # must '-r' wi dash flag optn 2 force rEvrs,!shufl
-  my $tflg = 0;if(@_){@data = @_;}elsif(!-t STDIN){@data = split(/\n/,decode('UTF-8',join( '' ,<STDIN>)));$tflg = 1;}else{return('');}
+  my $tflg = 0;if(@_){@data=@_;}elsif(!-t STDIN){@data = split(/\n/,decode('UTF-8',join( '' ,<STDIN>)));$tflg = 1;}else{return('');}
   my $sflg = 0;my $size = 0; # 2du:add param to design8 decoding all @data as UTF-8 && add `shuf --help` optnz -echo -input-range -head-count -output -repeat..
   my $aflg = 0;my $aref;if(ref($data[0]) eq 'ARRAY'){$aflg=1 unless($rflg);}elsif(@data == 1){$sflg = 1;$_ = $data[0];@data = split(//,$_);}
   if($aflg){$aref = $data[0];}else{$aref = \@data;} $size = @{$aref}; if($size){if($rflg){@data=reverse(@data);}else{
     for(my $indx = ($size-1);$indx;$indx--){my $rand=int(rand($indx+1));($aref->[$indx],$aref->[$rand])=($aref->[$rand],$aref->[$indx]) if($rand != $indx);}}}
-  if($aflg){return($aref);}elsif($sflg){return(join("\n",@data));}else{return(join("\n",@data));}} # shud add optz lIk -help && @lEast `m shuf` manUal tXt
+  if($aflg){return($aref);}elsif($sflg && $#data){return(join('',@data));}else{return(join("\n",@data));}} # add optz lIk -help && @lEast `m shuf` manUal tXt
 sub sumb{  my $widt=0;$widt=1 if(exists($ENV{'COLUMNS'}) && $ENV{'COLUMNS'} >= 158); # suport norml or doubl wId outpt (wi just widthOK flag4now, nstd of valu)
   my $htxt='';for(@_){        if(/^-?-?h/){$htxt=" sumb - SUMmarizing Binaries crE8d by $auth to colorfully describe my top 96 (or so) executable ~/bin/ files;
    An asterisk '*' after the group name means the file returns at least some form of useful text for parameter -h for help.
@@ -927,6 +928,8 @@ sub sumb{  my $widt=0;$widt=1 if(exists($ENV{'COLUMNS'}) && $ENV{'COLUMNS'} >= 1
     'sloc'  => "c8  Beppu-san sent `SlowCat.pl` simul8ing default 9600 baud print speed   ",
 
     'pt'    => "Time::PT *for original PipTime module  (main precursor to Octology::d8)   ", # J1OL7CR8:DcIded2swpout Pg1 pt,bak,e 4 Pg2 tstn,supd,oupd ;
+
+  # 'U23c'  => "U8  download from U2b ClosedCaption transCript Copy UTF2to3-Column out8   ", # J24LLOLI:candid8Ibrk;
 
     'U2b2'  => "U8  download from U2b but just audio in high-quality ('2'=to auto-best)   ",
     'U2b3'  => "U8  `youtube-dl` also but just audio in mp3 format (usually transcoded)   ", # proly transcOded NEwA

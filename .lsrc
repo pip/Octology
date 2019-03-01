@@ -1,8 +1,8 @@
 # 819J2Pip:~/.lsrc by PipStuart <Pip@CPAN.Org> izAheavily modifId`dircolors`cfgfIl(Orig ~/.DIR_COLORS)wich setz $ENV{'LS_COLORS'} 4GNU`ls --color`&&`lsd8`;
-# $VERSION='0.0';$d8VS='ICUL4lsh'; 2du:mkUtl2gNr8 altrn8 versN of .lsrc th@purposfuly varEz colrz of comon typz,try addng bakgrnd colrz2all dFz&&tst,
+# $VERSION='0.0';$d8VS='J28LHHHH'; 2du:mkUtl2gNr8 altrn8 versN of .lsrc th@purposfuly varEz colrz of comon typz,try addng bakgrnd colrz2all dFz&&tst,
 #   add interaction2 lsd8 wN it Dtectz unrecognIzd XtNshNz offerng c@egOrEz with comon colr2autOm@ically insrt chOsN NtrEz,mAB add *-* NtrEz from .zshrc hEr &&
 #   mk lrc gNr8 either,confirm all accept f0nt cOdez wi dash accepting Dfalt foreground then redo NORMAL FILE LINK as no fi ln,mAB 8trm added2TERM ls someday;
-# This file was gNR8d by `lrc` Vers:0.0 d8VS:J1NLDshf on d8:J1VLIRpX. Please edit ~/.lrc and run `lrc` then `src` to see changes;
+# This file was gNR8d by `lrc` Vers:0.0 d8VS:J1NLDshf on d8:J28LHIBs. Please edit ~/.lrc and run `lrc` then `src` to see changes;
 # nOt:I'm pretty sure itz Chunz(!Takiz)`ls`&&`dircolors`th@cud!hndl (MULTI)?HARDLINK sO rEmMbr2kEp th@ lIn cmNtd out4her(&&kEptstng2cnfirm);
 # Keywords COLOR,OPTIONS,&& EIGHTBIT (honored by Slackware dircolors) are recognized but ignored; TERMz && XtNsionz syncd2 2016;
 # Copyright(C) 1996-2016 FreeSoftwareFound8ion,Inc. Copying and distribution of this file, with or without modific8ion, are permitted provided the
@@ -225,6 +225,7 @@ CHR                       01;38;5;011;48;5;000 #cd= 01;33;40    01;33;40  CHaRac
 .btree                    01;38;5;011
 .rules                    01;38;5;011
 .ini                      01;38;5;011
+.ini8                     01;38;5;184;48;5;000
 .btx                      01;38;5;011
 .emx                      01;38;5;011
 .fnt                      01;38;5;011      # old-skool txt-mode(DOS?)char-fontz kinda like 8x16.psfz wo the header(wich my`etfp -s -f -o`can load)

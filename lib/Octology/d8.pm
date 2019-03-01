@@ -19,7 +19,7 @@ my $hirs   = eval("use Time::HiRes; 8") || 0;
 my $locl   = eval("use Time::Local; 8") || 0;
 my $zown   = eval("use Time::Zone ; 8") || 0;
 #ur @EXPORT= qw(); # eventually export d8() here as new wrapper
-our $VERSION='0.0';my $d8VS='H99M9CUV';
+our $VERSION='0.0';my $d8VS='J2NLFlow';
 my @_tzofsetz=( # global storage for TimeZone Offsets matching /^[-+][01]\d(00|30|45)$/ shhmm (with non-integer offsets mapping in b64 between R(27)..g(42))
   '-1130',#NUT
   '-0930',
@@ -544,7 +544,7 @@ I've made up some silly sentences as mnemonic devices to help me remember every 
   Where?   32                   DayOfMonth  will be less     than    'W'.
 
   Cool    COW (Month hour Day thresholds)
-  Guys    Girls
+  Guys    Girls       ## and for just 8's 8 Gush Of W8r e m u l8ion flOWinGyO!
   Keep    Keep
   On      On                   Off
   Sayin'  Sayin'      Sippin'  Sea
