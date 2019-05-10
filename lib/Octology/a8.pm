@@ -760,7 +760,8 @@ sub bfr8c    {my $rtns = ''; # should build b8 fraction colors left-to-right lik
 sub   b8colr {return(  b8c(@_));}
 sub   b8c    {my $rtns = ''; # just do coloring stringwise for when sprintf zero-padding a specific width is needed   # mk b8clr 2Dtect commaz && % B4 coloring
   if(!@_ && !-t STDIN){     (@_=decode('UTF-8',join(''  ,<STDIN>)));}
-  for my $b8st (@_){my @b64d = split(//,reverse($b8st));my $b64c = '';for(0..$#b64d){$b64c  = $d8cl[          $_%@d8cl ] . $b64d[$_] . $b64c;} $rtns.="$b64c ";
+  for my $b8st (@_){my @b64d=();@b64d=split(//,reverse($b8st)) if(defined($b8st));my $b64c = '';
+  for(0..$#b64d){$b64c  = $d8cl[          $_%@d8cl ] . $b64d[$_] . $b64c;} $rtns.="$b64c ";
   }      $rtns =~ s/\s$//;return($rtns);}
 sub   b8clr  {my $rtns = ''; # Dtect commaz && % B4 coloring  # mAB base4 [bd][fu]?r?8c colrngz shud stA similar with simple uniform applic8ion
   if(!@_ && !-t STDIN){while(my $inln=<STDIN>){#$inln=~ s/\n?$/\n/; # ensure input ends wi newline, may reapNd if chomped, mIt nEd2Bdone aftr decode?
