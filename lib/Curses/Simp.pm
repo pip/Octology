@@ -5,7 +5,7 @@ use        Curses;use Tie::Array;
 my $curs=8; # used to set this to 0 for old 4NT rendering so now should remove all tests for it
 my $ptim=0;#eval('use Time::PT   ;8') || 0;
 my $fram=0;#eval('use Time::Frame;8') || 0;
-my $VERSION  =  '1.6';my $d8VS='H7IM7IM7'; # remember that 1.2 is really that float and not automatically 1.002 without 'v1.2' or '1.2.0'
+my $VERSION  =  '1.6';my $d8VS='J54MLRES'; # remember that 1.2 is really that float and not automatically 1.002 without 'v1.2' or '1.2.0'
 END{CScr();} # auto-execute CloseScreen() on exit()
 my %GLBL=( # GLOBAL CLASS VARIABLES  # maybe used to need to declare this before END would register a test for FLAGOPEN?
   'FLAGOPEN' => 0,   # flag for if a main curses screen has been opened yet
@@ -673,7 +673,7 @@ sub ShokScrn{ my $self = shift; my($ycrs, $xcrs); my $slvl = 0; my($keey, $valu)
 sub Cler{ my $self = shift;clear();refresh();if(defined($self)){$self->{'_text'}->[$_] = ' ' x $self->Widt() for(0..$self->Hite()-1);$self->Draw();}}
 sub KNum{ return %knum; } # I thought I might be able to just call clear() && @{$self->{'_text'}}=() abov2blank screen fastest but post Prntz aren't showing up
 sub CLet{ return %p622; } # now returning new Pal8 64 to 256 Color Letter map instead of original with just 16 plus the few altern8s
-sub OScr{ no strict 'subs'; # Open a new Curses Screen && setup all useful stuff
+sub OScr{ no strict 'subs'; # Open a new Curses Screen && setup useful options
   unless($GLBL{'FLAGOPEN'}){ $GLBL{'FLAGOPEN'} = 1;
     # raw() allows ^C,^S,^Z 2simply pass thru,unlike cbreak(),but raw requirz`reset`from the cmdline,if the app crashes; napms($ms) 2nap millisecs;
    #use_env(0);
@@ -705,7 +705,7 @@ sub OScr{ no strict 'subs'; # Open a new Curses Screen && setup all useful stuff
                      'tt' => '#', 'bt' => '#',
         'll' => 'X', 'hl' => '=', 'vl' => 'I', 'lr' => 'X',          },
     );
-    @kndx = (
+    @kndx = ( # J54MLRes:Oni's Curses::Simp died BUTTON[1..4]_RESERVED_EVENT ;
       ERR                    , OK                     , ACS_BLOCK             ,
       ACS_BOARD              , ACS_BTEE               , ACS_BULLET            ,
       ACS_CKBOARD            , ACS_DARROW             , ACS_DEGREE            ,
@@ -730,15 +730,16 @@ sub OScr{ no strict 'subs'; # Open a new Curses Screen && setup all useful stuff
       KEY_CREATE             , KEY_CTAB               , KEY_DC                ,
       KEY_DL                 , KEY_DOWN               , KEY_EIC               ,
       KEY_END                , KEY_ENTER              , KEY_EOL               ,
-      KEY_EOS                , KEY_EXIT               , KEY_F0                ,
-      KEY_FIND               , KEY_HELP               , KEY_HOME              ,
-      KEY_IC                 , KEY_IL                 , KEY_LEFT              ,
-      KEY_LL                 , KEY_MARK               , KEY_MAX               ,
-      KEY_MESSAGE            , KEY_MIN                , KEY_MOVE              ,
-      KEY_NEXT               , KEY_NPAGE              , KEY_OPEN              ,
-      KEY_OPTIONS            , KEY_PPAGE              , KEY_PREVIOUS          ,
-      KEY_PRINT              , KEY_REDO               , KEY_REFERENCE         ,
-      KEY_REFRESH            , KEY_REPLACE            , KEY_RESET             ,
+      KEY_EOS                , KEY_EVENT              , KEY_EXIT              ,
+      KEY_F0                 , KEY_FIND               , KEY_HELP              ,
+      KEY_HOME               , KEY_IC                 , KEY_IL                ,
+      KEY_LEFT               , KEY_LL                 , KEY_MARK              ,
+      KEY_MAX                , KEY_MESSAGE            , KEY_MOUSE             ,
+      KEY_MIN                , KEY_MOVE               , KEY_NEXT              ,
+      KEY_NPAGE              , KEY_OPEN               , KEY_OPTIONS           ,
+      KEY_PPAGE              , KEY_PREVIOUS           , KEY_PRINT             ,
+      KEY_REDO               , KEY_REFERENCE          , KEY_REFRESH           ,
+      KEY_REPLACE            , KEY_RESET              , KEY_RESIZE            ,
       KEY_RESTART            , KEY_RESUME             , KEY_RIGHT             ,
       KEY_SAVE               , KEY_SBEG               , KEY_SCANCEL           ,
       KEY_SCOMMAND           , KEY_SCOPY              , KEY_SCREATE           ,
@@ -752,153 +753,123 @@ sub OScr{ no strict 'subs'; # Open a new Curses Screen && setup all useful stuff
       KEY_SRESET             , KEY_SRIGHT             , KEY_SRSUME            ,
       KEY_SSAVE              , KEY_SSUSPEND           , KEY_STAB              ,
       KEY_SUNDO              , KEY_SUSPEND            , KEY_UNDO              ,
-      KEY_UP                 , KEY_MOUSE              , BUTTON1_RELEASED      , # B15BLZo: problem wi some vendor versions of Curses (Perl v5.8.9 on NetBSD) not including these butn constz (even tho Curses::Simp doesn't even use them yet);
-      BUTTON1_PRESSED        , BUTTON1_CLICKED        , BUTTON1_DOUBLE_CLICKED,
-      BUTTON1_TRIPLE_CLICKED , BUTTON1_RESERVED_EVENT , BUTTON2_RELEASED      ,
-      BUTTON2_PRESSED        , BUTTON2_CLICKED        , BUTTON2_DOUBLE_CLICKED,
-      BUTTON2_TRIPLE_CLICKED , BUTTON2_RESERVED_EVENT , BUTTON3_RELEASED      ,
-      BUTTON3_PRESSED        , BUTTON3_CLICKED        , BUTTON3_DOUBLE_CLICKED,
-      BUTTON3_TRIPLE_CLICKED , BUTTON3_RESERVED_EVENT , BUTTON4_RELEASED      ,
-      BUTTON4_PRESSED        , BUTTON4_CLICKED        , BUTTON4_DOUBLE_CLICKED,
-      BUTTON4_TRIPLE_CLICKED , BUTTON4_RESERVED_EVENT , BUTTON_CTRL           ,
-      BUTTON_SHIFT           , BUTTON_ALT             , ALL_MOUSE_EVENTS      ,
-      REPORT_MOUSE_POSITION  , NCURSES_MOUSE_VERSION );# , E_OK                  ,
-#     E_SYSTEM_ERROR         , E_BAD_ARGUMENT         , E_POSTED              ,
-#     E_CONNECTED            , E_BAD_STATE            , E_NO_ROOM             ,
-#     E_NOT_POSTED           , E_UNKNOWN_COMMAND      , E_NO_MATCH            ,
-#     E_NOT_SELECTABLE       , E_NOT_CONNECTED        , E_REQUEST_DENIED      ,
-#     E_INVALID_FIELD        , E_CURRENT              , REQ_LEFT_ITEM         ,
-#     REQ_RIGHT_ITEM         , REQ_UP_ITEM            , REQ_DOWN_ITEM         ,
-#     REQ_SCR_ULINE          , REQ_SCR_DLINE          , REQ_SCR_DPAGE         ,
-#     REQ_SCR_UPAGE          , REQ_FIRST_ITEM         , REQ_LAST_ITEM         ,
-#     REQ_NEXT_ITEM          , REQ_PREV_ITEM          , REQ_TOGGLE_ITEM       ,
-#     REQ_CLEAR_PATTERN      , REQ_BACK_PATTERN       , REQ_NEXT_MATCH        ,
-#     REQ_PREV_MATCH         , MIN_MENU_COMMAND       , MAX_MENU_COMMAND      ,
-#     O_ONEVALUE             , O_SHOWDESC             , O_ROWMAJOR            ,
-#     O_IGNORECASE           , O_SHOWMATCH            , O_NONCYCLIC           ,
-#     O_SELECTABLE           , REQ_NEXT_PAGE          , REQ_PREV_PAGE         ,
-#     REQ_FIRST_PAGE         , REQ_LAST_PAGE          , REQ_NEXT_FIELD        ,
-#     REQ_PREV_FIELD         , REQ_FIRST_FIELD        , REQ_LAST_FIELD        ,
-#     REQ_SNEXT_FIELD        , REQ_SPREV_FIELD        , REQ_SFIRST_FIELD      ,
-#     REQ_SLAST_FIELD        , REQ_LEFT_FIELD         , REQ_RIGHT_FIELD       ,
-#     REQ_UP_FIELD           , REQ_DOWN_FIELD         , REQ_NEXT_CHAR         ,
-#     REQ_PREV_CHAR          , REQ_NEXT_LINE          , REQ_PREV_LINE         ,
-#     REQ_NEXT_WORD          , REQ_PREV_WORD          , REQ_BEG_FIELD         ,
-#     REQ_END_FIELD          , REQ_BEG_LINE           , REQ_END_LINE          ,
-#     REQ_LEFT_CHAR          , REQ_RIGHT_CHAR         , REQ_UP_CHAR           ,
-#     REQ_DOWN_CHAR          , REQ_NEW_LINE           , REQ_INS_CHAR          ,
-#     REQ_INS_LINE           , REQ_DEL_CHAR           , REQ_DEL_PREV          ,
-#     REQ_DEL_LINE           , REQ_DEL_WORD           , REQ_CLR_EOL           ,
-#     REQ_CLR_EOF            , REQ_CLR_FIELD          , REQ_OVL_MODE          ,
-#     REQ_INS_MODE           , REQ_SCR_FLINE          , REQ_SCR_BLINE         ,
-#     REQ_SCR_FPAGE          , REQ_SCR_BPAGE          , REQ_SCR_FHPAGE        ,
-#     REQ_SCR_BHPAGE         , REQ_SCR_FCHAR          , REQ_SCR_BCHAR         ,
-#     REQ_SCR_HFLINE         , REQ_SCR_HBLINE         , REQ_SCR_HFHALF        ,
-#     REQ_SCR_HBHALF         , REQ_VALIDATION         , REQ_NEXT_CHOICE       ,
-#     REQ_PREV_CHOICE        , MIN_FORM_COMMAND       , MAX_FORM_COMMAND      ,
-#     NO_JUSTIFICATION       , JUSTIFY_LEFT           , JUSTIFY_CENTER        ,
-#     JUSTIFY_RIGHT          , O_VISIBLE              , O_ACTIVE              ,
-#     O_PUBLIC               , O_EDIT                 , O_WRAP                ,
-#     O_BLANK                , O_AUTOSKIP             , O_NULLOK              ,
-#     O_PASSOK               , O_STATIC               , O_NL_OVERLOAD         ,
-#     O_BS_OVERLOAD          );
+      KEY_UP                 , # J54MLRes:Oni's Simp bad BUTTON[1-4]_RESERVED*;
+      BUTTON1_RELEASED       , BUTTON1_PRESSED        , BUTTON1_CLICKED       ,
+      BUTTON1_DOUBLE_CLICKED , BUTTON1_TRIPLE_CLICKED , #UTTON1_RESERVED_EVENT,
+      BUTTON2_RELEASED       , BUTTON2_PRESSED        , BUTTON2_CLICKED       ,
+      BUTTON2_DOUBLE_CLICKED , BUTTON2_TRIPLE_CLICKED , #UTTON2_RESERVED_EVENT,
+      BUTTON3_RELEASED       , BUTTON3_PRESSED        , BUTTON3_CLICKED       ,
+      BUTTON3_DOUBLE_CLICKED , BUTTON3_TRIPLE_CLICKED , #UTTON3_RESERVED_EVENT,
+      BUTTON4_RELEASED       , BUTTON4_PRESSED        , BUTTON4_CLICKED       ,
+      BUTTON4_DOUBLE_CLICKED , BUTTON4_TRIPLE_CLICKED , #UTTON4_RESERVED_EVENT,
+      BUTTON_CTRL            , BUTTON_SHIFT           , BUTTON_ALT            ,
+      ALL_MOUSE_EVENTS       , REPORT_MOUSE_POSITION  , NCURSES_MOUSE_VERSION ,
+# B15BLZo: problem wi some vendor versions of Curses (Perl v5.8.9 on NetBSD) not including these butn constz (even tho Curses::Simp doesn't even use them yet);
+      E_OK                   , E_SYSTEM_ERROR         , E_BAD_ARGUMENT        ,
+      E_POSTED               , E_CONNECTED            , E_BAD_STATE           ,
+      E_NO_ROOM              , E_NOT_POSTED           , E_UNKNOWN_COMMAND     ,
+      E_NO_MATCH             , E_NOT_SELECTABLE       , E_NOT_CONNECTED       ,
+      E_REQUEST_DENIED       , E_INVALID_FIELD        , E_CURRENT             ,
+      REQ_LEFT_ITEM          , REQ_RIGHT_ITEM         , REQ_UP_ITEM           ,
+      REQ_DOWN_ITEM          , REQ_SCR_ULINE          , REQ_SCR_DLINE         ,
+      REQ_SCR_DPAGE          , REQ_SCR_UPAGE          , REQ_FIRST_ITEM        ,
+      REQ_LAST_ITEM          , REQ_NEXT_ITEM          , REQ_PREV_ITEM         ,
+      REQ_TOGGLE_ITEM        , REQ_CLEAR_PATTERN      , REQ_BACK_PATTERN      ,
+      REQ_NEXT_MATCH         , REQ_PREV_MATCH         ,
+      MIN_MENU_COMMAND       , MAX_MENU_COMMAND       , O_ONEVALUE            ,
+      O_SHOWDESC             , O_ROWMAJOR             , O_IGNORECASE          ,
+      O_SHOWMATCH            , O_NONCYCLIC            , O_SELECTABLE          ,
+      REQ_NEXT_PAGE          , REQ_PREV_PAGE          , REQ_FIRST_PAGE        ,
+      REQ_LAST_PAGE          , REQ_NEXT_FIELD         , REQ_PREV_FIELD        ,
+      REQ_FIRST_FIELD        , REQ_LAST_FIELD         , REQ_SNEXT_FIELD       ,
+      REQ_SPREV_FIELD        , REQ_SFIRST_FIELD       , REQ_SLAST_FIELD       ,
+      REQ_LEFT_FIELD         , REQ_RIGHT_FIELD        , REQ_UP_FIELD          ,
+      REQ_DOWN_FIELD         , REQ_NEXT_CHAR          , REQ_PREV_CHAR         ,
+      REQ_NEXT_LINE          , REQ_PREV_LINE          , REQ_NEXT_WORD         ,
+      REQ_PREV_WORD          , REQ_BEG_FIELD          , REQ_END_FIELD         ,
+      REQ_BEG_LINE           , REQ_END_LINE           , REQ_LEFT_CHAR         ,
+      REQ_RIGHT_CHAR         , REQ_UP_CHAR            , REQ_DOWN_CHAR         ,
+      REQ_NEW_LINE           , REQ_INS_CHAR           , REQ_INS_LINE          ,
+      REQ_DEL_CHAR           , REQ_DEL_PREV           , REQ_DEL_LINE          ,
+      REQ_DEL_WORD           , REQ_CLR_EOL            , REQ_CLR_EOF           ,
+      REQ_CLR_FIELD          , REQ_OVL_MODE           , REQ_INS_MODE          ,
+      REQ_SCR_FLINE          , REQ_SCR_BLINE          , REQ_SCR_FPAGE         ,
+      REQ_SCR_BPAGE          , REQ_SCR_FHPAGE         , REQ_SCR_BHPAGE        ,
+      REQ_SCR_FCHAR          , REQ_SCR_BCHAR          , REQ_SCR_HFLINE        ,
+      REQ_SCR_HBLINE         , REQ_SCR_HFHALF         , REQ_SCR_HBHALF        ,
+      REQ_VALIDATION         , REQ_NEXT_CHOICE        , REQ_PREV_CHOICE       ,
+      MIN_FORM_COMMAND       , MAX_FORM_COMMAND       , NO_JUSTIFICATION      ,
+      JUSTIFY_LEFT           , JUSTIFY_CENTER         , JUSTIFY_RIGHT         ,
+      O_VISIBLE              , O_ACTIVE               , O_PUBLIC              ,
+      O_EDIT                 , O_WRAP                 , O_BLANK               ,
+      O_AUTOSKIP             , O_NULLOK               , O_PASSOK              ,
+      O_STATIC               , O_NL_OVERLOAD          , O_BS_OVERLOAD        );
     my @knam = qw(
-      ERR                      OK                       ACS_BLOCK              
-      ACS_BOARD                ACS_BTEE                 ACS_BULLET             
-      ACS_CKBOARD              ACS_DARROW               ACS_DEGREE             
-      ACS_DIAMOND              ACS_HLINE                ACS_LANTERN            
-      ACS_LARROW               ACS_LLCORNER             ACS_LRCORNER           
-      ACS_LTEE                 ACS_PLMINUS              ACS_PLUS               
-      ACS_RARROW               ACS_RTEE                 ACS_S1                 
-      ACS_S9                   ACS_TTEE                 ACS_UARROW             
-      ACS_ULCORNER             ACS_URCORNER             ACS_VLINE              
-      A_ALTCHARSET             A_ATTRIBUTES             A_BLINK                
-      A_BOLD                   A_CHARTEXT               A_COLOR                
-      A_DIM                    A_INVIS                  A_NORMAL               
-      A_PROTECT                A_REVERSE                A_STANDOUT             
-      A_UNDERLINE              COLOR_BLACK              COLOR_BLUE             
-      COLOR_CYAN               COLOR_GREEN              COLOR_MAGENTA          
-      COLOR_RED                COLOR_WHITE              COLOR_YELLOW           
-      KEY_A1                   KEY_A3                   KEY_B2                 
-      KEY_BACKSPACE            KEY_BEG                  KEY_BREAK              
-      KEY_BTAB                 KEY_C1                   KEY_C3                 
-      KEY_CANCEL               KEY_CATAB                KEY_CLEAR              
-      KEY_CLOSE                KEY_COMMAND              KEY_COPY               
-      KEY_CREATE               KEY_CTAB                 KEY_DC                 
-      KEY_DL                   KEY_DOWN                 KEY_EIC                
-      KEY_END                  KEY_ENTER                KEY_EOL                
-      KEY_EOS                  KEY_EXIT                 KEY_F0                 
-      KEY_FIND                 KEY_HELP                 KEY_HOME               
-      KEY_IC                   KEY_IL                   KEY_LEFT               
-      KEY_LL                   KEY_MARK                 KEY_MAX                
-      KEY_MESSAGE              KEY_MIN                  KEY_MOVE               
-      KEY_NEXT                 KEY_NPAGE                KEY_OPEN               
-      KEY_OPTIONS              KEY_PPAGE                KEY_PREVIOUS           
-      KEY_PRINT                KEY_REDO                 KEY_REFERENCE          
-      KEY_REFRESH              KEY_REPLACE              KEY_RESET              
-      KEY_RESTART              KEY_RESUME               KEY_RIGHT              
-      KEY_SAVE                 KEY_SBEG                 KEY_SCANCEL            
-      KEY_SCOMMAND             KEY_SCOPY                KEY_SCREATE            
-      KEY_SDC                  KEY_SDL                  KEY_SELECT             
-      KEY_SEND                 KEY_SEOL                 KEY_SEXIT              
-      KEY_SF                   KEY_SFIND                KEY_SHELP              
-      KEY_SHOME                KEY_SIC                  KEY_SLEFT              
-      KEY_SMESSAGE             KEY_SMOVE                KEY_SNEXT              
-      KEY_SOPTIONS             KEY_SPREVIOUS            KEY_SPRINT             
-      KEY_SR                   KEY_SREDO                KEY_SREPLACE           
-      KEY_SRESET               KEY_SRIGHT               KEY_SRSUME             
-      KEY_SSAVE                KEY_SSUSPEND             KEY_STAB               
-      KEY_SUNDO                KEY_SUSPEND              KEY_UNDO               
-      KEY_UP                   KEY_MOUSE                BUTTON1_RELEASED       
-      BUTTON1_PRESSED          BUTTON1_CLICKED          BUTTON1_DOUBLE_CLICKED 
-      BUTTON1_TRIPLE_CLICKED   BUTTON1_RESERVED_EVENT   BUTTON2_RELEASED       
-      BUTTON2_PRESSED          BUTTON2_CLICKED          BUTTON2_DOUBLE_CLICKED 
-      BUTTON2_TRIPLE_CLICKED   BUTTON2_RESERVED_EVENT   BUTTON3_RELEASED       
-      BUTTON3_PRESSED          BUTTON3_CLICKED          BUTTON3_DOUBLE_CLICKED 
-      BUTTON3_TRIPLE_CLICKED   BUTTON3_RESERVED_EVENT   BUTTON4_RELEASED       
-      BUTTON4_PRESSED          BUTTON4_CLICKED          BUTTON4_DOUBLE_CLICKED 
-      BUTTON4_TRIPLE_CLICKED   BUTTON4_RESERVED_EVENT   BUTTON_CTRL            
-      BUTTON_SHIFT             BUTTON_ALT               ALL_MOUSE_EVENTS       
-      REPORT_MOUSE_POSITION    NCURSES_MOUSE_VERSION   );# E_OK                   
-#     E_SYSTEM_ERROR           E_BAD_ARGUMENT           E_POSTED               
-#     E_CONNECTED              E_BAD_STATE              E_NO_ROOM              
-#     E_NOT_POSTED             E_UNKNOWN_COMMAND        E_NO_MATCH             
-#     E_NOT_SELECTABLE         E_NOT_CONNECTED          E_REQUEST_DENIED       
-#     E_INVALID_FIELD          E_CURRENT                REQ_LEFT_ITEM          
-#     REQ_RIGHT_ITEM           REQ_UP_ITEM              REQ_DOWN_ITEM          
-#     REQ_SCR_ULINE            REQ_SCR_DLINE            REQ_SCR_DPAGE          
-#     REQ_SCR_UPAGE            REQ_FIRST_ITEM           REQ_LAST_ITEM          
-#     REQ_NEXT_ITEM            REQ_PREV_ITEM            REQ_TOGGLE_ITEM        
-#     REQ_CLEAR_PATTERN        REQ_BACK_PATTERN         REQ_NEXT_MATCH         
-#     REQ_PREV_MATCH           MIN_MENU_COMMAND         MAX_MENU_COMMAND       
-#     O_ONEVALUE               O_SHOWDESC               O_ROWMAJOR             
-#     O_IGNORECASE             O_SHOWMATCH              O_NONCYCLIC            
-#     O_SELECTABLE             REQ_NEXT_PAGE            REQ_PREV_PAGE          
-#     REQ_FIRST_PAGE           REQ_LAST_PAGE            REQ_NEXT_FIELD         
-#     REQ_PREV_FIELD           REQ_FIRST_FIELD          REQ_LAST_FIELD         
-#     REQ_SNEXT_FIELD          REQ_SPREV_FIELD          REQ_SFIRST_FIELD       
-#     REQ_SLAST_FIELD          REQ_LEFT_FIELD           REQ_RIGHT_FIELD        
-#     REQ_UP_FIELD             REQ_DOWN_FIELD           REQ_NEXT_CHAR          
-#     REQ_PREV_CHAR            REQ_NEXT_LINE            REQ_PREV_LINE          
-#     REQ_NEXT_WORD            REQ_PREV_WORD            REQ_BEG_FIELD          
-#     REQ_END_FIELD            REQ_BEG_LINE             REQ_END_LINE           
-#     REQ_LEFT_CHAR            REQ_RIGHT_CHAR           REQ_UP_CHAR            
-#     REQ_DOWN_CHAR            REQ_NEW_LINE             REQ_INS_CHAR           
-#     REQ_INS_LINE             REQ_DEL_CHAR             REQ_DEL_PREV           
-#     REQ_DEL_LINE             REQ_DEL_WORD             REQ_CLR_EOL            
-#     REQ_CLR_EOF              REQ_CLR_FIELD            REQ_OVL_MODE           
-#     REQ_INS_MODE             REQ_SCR_FLINE            REQ_SCR_BLINE          
-#     REQ_SCR_FPAGE            REQ_SCR_BPAGE            REQ_SCR_FHPAGE         
-#     REQ_SCR_BHPAGE           REQ_SCR_FCHAR            REQ_SCR_BCHAR          
-#     REQ_SCR_HFLINE           REQ_SCR_HBLINE           REQ_SCR_HFHALF         
-#     REQ_SCR_HBHALF           REQ_VALIDATION           REQ_NEXT_CHOICE        
-#     REQ_PREV_CHOICE          MIN_FORM_COMMAND         MAX_FORM_COMMAND       
-#     NO_JUSTIFICATION         JUSTIFY_LEFT             JUSTIFY_CENTER         
-#     JUSTIFY_RIGHT            O_VISIBLE                O_ACTIVE               
-#     O_PUBLIC                 O_EDIT                   O_WRAP                 
-#     O_BLANK                  O_AUTOSKIP               O_NULLOK               
-#     O_PASSOK                 O_STATIC                 O_NL_OVERLOAD          
-#     O_BS_OVERLOAD          );
+      ERR                      OK                       ACS_BLOCK
+      ACS_BOARD                ACS_BTEE                 ACS_BULLET
+      ACS_CKBOARD              ACS_DARROW               ACS_DEGREE
+      ACS_DIAMOND              ACS_HLINE                ACS_LANTERN
+      ACS_LARROW               ACS_LLCORNER             ACS_LRCORNER
+      ACS_LTEE                 ACS_PLMINUS              ACS_PLUS
+      ACS_RARROW               ACS_RTEE                 ACS_S1
+      ACS_S9                   ACS_TTEE                 ACS_UARROW
+      ACS_ULCORNER             ACS_URCORNER             ACS_VLINE
+      A_ALTCHARSET             A_ATTRIBUTES             A_BLINK
+      A_BOLD                   A_CHARTEXT               A_COLOR
+      A_DIM                    A_INVIS                  A_NORMAL
+      A_PROTECT                A_REVERSE                A_STANDOUT
+      A_UNDERLINE              COLOR_BLACK              COLOR_BLUE
+      COLOR_CYAN               COLOR_GREEN              COLOR_MAGENTA
+      COLOR_RED                COLOR_WHITE              COLOR_YELLOW
+
+      KEY_A1 KEY_A3 KEY_B2 KEY_BACKSPACE KEY_BEG KEY_BREAK KEY_BTAB KEY_C1
+      KEY_C3 KEY_CANCEL KEY_CATAB KEY_CLEAR KEY_CLOSE KEY_COMMAND KEY_COPY
+      KEY_CREATE KEY_CTAB KEY_DC KEY_DL KEY_DOWN KEY_EIC KEY_END KEY_ENTER
+      KEY_EOL KEY_EOS KEY_EVENT KEY_EXIT KEY_F0 KEY_FIND KEY_HELP KEY_HOME
+      KEY_IC KEY_IL KEY_LEFT KEY_LL KEY_MARK KEY_MAX KEY_MESSAGE KEY_MOUSE
+      KEY_MIN KEY_MOVE KEY_NEXT KEY_NPAGE KEY_OPEN KEY_OPTIONS KEY_PPAGE
+      KEY_PREVIOUS KEY_PRINT KEY_REDO KEY_REFERENCE KEY_REFRESH KEY_REPLACE
+      KEY_RESET KEY_RESIZE KEY_RESTART KEY_RESUME KEY_RIGHT KEY_SAVE
+      KEY_SBEG KEY_SCANCEL KEY_SCOMMAND KEY_SCOPY KEY_SCREATE KEY_SDC
+      KEY_SDL KEY_SELECT KEY_SEND KEY_SEOL KEY_SEXIT KEY_SF KEY_SFIND
+      KEY_SHELP KEY_SHOME KEY_SIC KEY_SLEFT KEY_SMESSAGE KEY_SMOVE
+      KEY_SNEXT KEY_SOPTIONS KEY_SPREVIOUS KEY_SPRINT KEY_SR KEY_SREDO
+      KEY_SREPLACE KEY_SRESET KEY_SRIGHT KEY_SRSUME KEY_SSAVE KEY_SSUSPEND
+      KEY_STAB KEY_SUNDO KEY_SUSPEND KEY_UNDO KEY_UP
+      BUTTON1_RELEASED        BUTTON2_RELEASED        BUTTON3_RELEASED
+      BUTTON1_PRESSED         BUTTON2_PRESSED         BUTTON3_PRESSED
+      BUTTON1_CLICKED         BUTTON2_CLICKED         BUTTON3_CLICKED
+      BUTTON1_DOUBLE_CLICKED  BUTTON2_DOUBLE_CLICKED  BUTTON3_DOUBLE_CLICKED
+      BUTTON1_TRIPLE_CLICKED  BUTTON2_TRIPLE_CLICKED  BUTTON3_TRIPLE_CLICKED
+      BUTTON1_RESERVED_EVENT  BUTTON2_RESERVED_EVENT  BUTTON3_RESERVED_EVENT
+      BUTTON4_RELEASED        BUTTON4_PRESSED         BUTTON4_CLICKED
+      BUTTON4_DOUBLE_CLICKED  BUTTON4_TRIPLE_CLICKED  BUTTON4_RESERVED_EVENT
+      BUTTON_CTRL BUTTON_SHIFT BUTTON_ALT ALL_MOUSE_EVENTS
+      REPORT_MOUSE_POSITION NCURSES_MOUSE_VERSION E_OK E_SYSTEM_ERROR
+      E_BAD_ARGUMENT E_POSTED E_CONNECTED E_BAD_STATE E_NO_ROOM E_NOT_POSTED
+      E_UNKNOWN_COMMAND E_NO_MATCH E_NOT_SELECTABLE E_NOT_CONNECTED
+      E_REQUEST_DENIED E_INVALID_FIELD E_CURRENT REQ_LEFT_ITEM
+      REQ_RIGHT_ITEM REQ_UP_ITEM REQ_DOWN_ITEM REQ_SCR_ULINE REQ_SCR_DLINE
+      REQ_SCR_DPAGE REQ_SCR_UPAGE REQ_FIRST_ITEM REQ_LAST_ITEM REQ_NEXT_ITEM
+      REQ_PREV_ITEM REQ_TOGGLE_ITEM REQ_CLEAR_PATTERN REQ_BACK_PATTERN
+      REQ_NEXT_MATCH REQ_PREV_MATCH MIN_MENU_COMMAND MAX_MENU_COMMAND
+      O_ONEVALUE O_SHOWDESC O_ROWMAJOR O_IGNORECASE O_SHOWMATCH O_NONCYCLIC
+      O_SELECTABLE REQ_NEXT_PAGE REQ_PREV_PAGE REQ_FIRST_PAGE REQ_LAST_PAGE
+      REQ_NEXT_FIELD REQ_PREV_FIELD REQ_FIRST_FIELD REQ_LAST_FIELD
+      REQ_SNEXT_FIELD REQ_SPREV_FIELD REQ_SFIRST_FIELD REQ_SLAST_FIELD
+      REQ_LEFT_FIELD REQ_RIGHT_FIELD REQ_UP_FIELD REQ_DOWN_FIELD
+      REQ_NEXT_CHAR REQ_PREV_CHAR REQ_NEXT_LINE REQ_PREV_LINE REQ_NEXT_WORD
+      REQ_PREV_WORD REQ_BEG_FIELD REQ_END_FIELD REQ_BEG_LINE REQ_END_LINE
+      REQ_LEFT_CHAR REQ_RIGHT_CHAR REQ_UP_CHAR REQ_DOWN_CHAR REQ_NEW_LINE
+      REQ_INS_CHAR REQ_INS_LINE REQ_DEL_CHAR REQ_DEL_PREV REQ_DEL_LINE
+      REQ_DEL_WORD REQ_CLR_EOL REQ_CLR_EOF REQ_CLR_FIELD REQ_OVL_MODE
+      REQ_INS_MODE REQ_SCR_FLINE REQ_SCR_BLINE REQ_SCR_FPAGE REQ_SCR_BPAGE
+      REQ_SCR_FHPAGE REQ_SCR_BHPAGE REQ_SCR_FCHAR REQ_SCR_BCHAR
+      REQ_SCR_HFLINE REQ_SCR_HBLINE REQ_SCR_HFHALF REQ_SCR_HBHALF
+      REQ_VALIDATION REQ_NEXT_CHOICE REQ_PREV_CHOICE MIN_FORM_COMMAND
+      MAX_FORM_COMMAND NO_JUSTIFICATION JUSTIFY_LEFT JUSTIFY_CENTER
+      JUSTIFY_RIGHT O_VISIBLE O_ACTIVE O_PUBLIC O_EDIT O_WRAP O_BLANK
+      O_AUTOSKIP O_NULLOK O_PASSOK O_STATIC O_NL_OVERLOAD O_BS_OVERLOAD);
     # load $knum{CONSTANT_KEY_NUMBER_VALUE} => "CONSTANT_KEY_NAME_STRING" # not mapping -1..9since'0'..'9'are normal chrz&&GetK retnz -1 when $tmot reached
     for($i=0;$i<@kndx;$i++){ if(defined($knam[$i]) && $kndx[$i] =~ /../ && $kndx[$i] ne '-1'){ $knum{"$kndx[$i]"} = "$knam[$i]"; } }
     for($i=265;$i<=279;$i++){ $knum{"$i"} = "KEY_F" . ($i-264); } # add my own new additional key<->num mappings (i.e., 265..279 => F1..F15)
@@ -945,7 +916,7 @@ sub Prnt{ # Simp object PrintString method
   ($yold, $xold)=($self->{'_ycrs'}, $self->{'_xcrs'});
   $parm{'ycrs'} = $parm{'ytmp'} if(exists($parm{'ytmp'}));
   $parm{'xcrs'} = $parm{'xtmp'} if(exists($parm{'xtmp'})); # below had Malformed UTF-8 character (unexpected continU8ion byt 0x9b && 9c,wi no prECdng stRt byt)
-  $parm{'text'} =~ s/[ 	]/ /g; # Prnt does not support escaped printf chars like Draw
+  $parm{'text'} =~ s/[  ]/ /g; # Prnt does not support escaped printf chars like Draw
   unless($curs){ system("attrib /q /e -rsh C:\\SimpDraw.bat") if(-e 'C:/SimpDraw.bat' && !-w 'C:/SimpDraw.bat');
                  system("del    /q /e      C:\\SimpDraw.bat") if(-e 'C:/SimpDraw.bat' && !-w 'C:/SimpDraw.bat'); open(SCRP,'>>','C:\SimpDraw.bat'); }
   if($parm{'prin'}){ if($self->{'_btyp'}){ if($parm{'ycrs'}){ $parm{'ycrs'}--; }else{ $parm{'zery'} = 1; }
@@ -1057,7 +1028,7 @@ sub Draw{ # Simp object self Drawing method
       $ltxt = substr($ltxt, 0,  $self->{'_widt'}     );
     }
     if((exists($self->{'_fclr'}) && $self->{'_fclr'} && @{$self->{'_fclr'}}) || # below had Malformed UTF-8 character (unexpected continuation byte 0x9b && 9c,
-       $ltxt =~ /[ 	]/){ # with no preceding start byte)
+       $ltxt =~ /[      ]/){ # with no preceding start byte)
       if($self->{'_fclr'} && defined($self->{'_fclr'}->[$lnum])){
         $clin = $self->{'_fclr'}->[$lnum];
       }
@@ -3304,6 +3275,7 @@ sub DESTROY{
   }
 }
 # VERBOSE METHOD NAME ALIASES
+no strict 'subs';
 *AttributeNames        = \&AttrNamz;
 *DefaultValues         = \&DfltValu;
 *MakeMethods           = \&MkMethdz;

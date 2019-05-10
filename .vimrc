@@ -9,7 +9,7 @@ se   nocp                     " nocompatible    - add  Vim NhancmNtz without str
 se    enc=utf-8               "     encoding    - was already loading utf-8 from current $LANG locale, && might need termencoding also if they diverge
 "se  fenc=utf-8               " fileencoding    - might needed this if ever trying LightLine + ALE with special chars from HTTPS://StaticO.GitHub.IO/vim3.html
 let  g:VERSION='0.0'
-let     g:d8VS='IAFMD0Ck'     " d8VersionString - l8st significant upd8 to whole file was then
+let     g:d8VS='J24LBCtk'     " d8VersionString - l8st significant upd8 to whole file was then
 let     g:vid8=system('d8')   " VimInit d8      - save d8 when this Vim session first stRtz up to use as dRk pRt at Nd of STatusLine just before bright upd8 d8
 let     g:cucf=1              " CUrsorColumFlag - flag to toggle whether :se cuc should be used (since dflt of it on gets slow whN lots of syntx hili on scrn)
 let     g:culb=1              " CUrsorLineBold  - flag to toggle whether :se cul below should use highlight with bold across whole line (dbl-mapd2Ctrl-L&&hls)
@@ -120,8 +120,8 @@ inoremap     ZZ    <Esc>:w<CR>
  map   <C-h>                               :       se   hls!<CR>
 nn     <C-l> :call ToglCursorLineBold()<CR>:       se  list!<CR><C-l>
 "imap  <C-k>                                <Esc>u:se spell!<CR> " origmapd insrtmOd Ctrl-k was autOundo4unintNded nrml insrt&&togl spLck butbetr consistNt now
-imap   <C-k>  HTTPS://YouTu.be/ "" # d8:18m;<Esc>12<Left>i
-nmap   <C-k> iHTTPS://YouTu.be/ "" # d8:18m;<Esc>12<Left>i
+imap   <C-k>            HTTPS://YouTu.be/ "" # d8:18m;<Esc>12<Left>i
+nmap   <C-k> iHTTPS://BitChute.Com/video/ "" # d8:18m;<Esc>12<Left>i
 " I71M6Ck8:just realized need Ctrl-w to jump Windows when doing vimdiff, so reapproprE8d C-k for spell-checKer toggle above && remapped to U2b with loop here;
 " I72M7Ck8:add Insert-mode map of 2nd Ctrl-k to undo back out (16<L>31x) of an unpopul8d Normal-mode inserting of U2b templ8, also toggling spell-checK flag;
 "let  g:U2bL='HTTPS://YouTu.be/ "" # d8:18m;'  " hopefully try to just insert U2b URL templ8 variable string below instead of leaving literal, not sure how2?

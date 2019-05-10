@@ -1,0 +1,20 @@
+#!/usr/bin/perl
+# J24LM5hR:L crE8d by PipStuart <Pip@CPAN.Org> 2 slightly manipul8 basic `ls`;
+# 2du:check @ARGV for non-default flags,multiple directories,&& shell glob
+#   parameters which should alter output in consistent && useful ways,
+#   piping to c8 nicely redoes columns && colors R pretty wL popUl8d ther2,
+#   but stil nEdng wA2 look back at `ls` parameters used here somehow;
+use strict;use warnings;use utf8;use v5.10; # DfltParm,T0tl,Lz,LineTxt,TxtLeng
+use Octology::b8;my $dp=' --color=always ';my $t0;my @lz;my $lt;my $tl;
+use Octology::d8;my $cw=160;$cw=$ENV{'COLUMNS'} if exists($ENV{'COLUMNS'});
+my  @ldat=`ls -Cv -w $cw $dp @ARGV`;my $az="@ARGV";my $pt=0; # PrevT0tl
+for(@ldat){if(/^total\s+(\d+)/){$t0=b64($1);s/^total\s+(\d+)K?/t0:${t0}K/ix;}
+  if($az!~ /(^|\s)-+(a)/i && /\s\s+/){@lz=split(/\s\s+/,$_);$lt='';
+    for my $le (@lz){$tl=0;
+      while($le=~ s/^(\e\[[0-9;]*m|.)//){$tl++ if(length($1)==1);$lt.=$1;}
+      $lt.='  ';$lt=~ s/\t/  /g;
+      $lt.=' ' x (5-$tl) if($tl < 5);}
+    $_=$lt if(length($lt));s/\s+$/\n/;}
+  if  (/^(\S+:)\s*$/){     s/\s+$//  ;$pt=1;}
+  else{$_= (' ' x 4) . $_  if(!$pt)  ;$pt=0;}
+  print if /\S/;}

@@ -1,5 +1,5 @@
 # HBQLISTV:know.ls crE8d by PipStuart <Pip@CPAN.Org> to duplic8 Dr. Jordan B. Peterson's Quora.Com answer of "40 most valuable things everyone should know";
-# $VERSION='0.0';$d8VS='J19LDias'; # While this document origin8d around (&& still mainly intends to focus on) Dr. Peterson's knowledge, many others fE8ure;
+# $VERSION='0.0';$d8VS='J24LHomE'; # While this document origin8d around (&& still mainly intends to focus on) Dr. Peterson's knowledge, many others fE8ure;
 # 2du:start chronicling Dr. Peterson's many topical videos with new section for post-title subject summaries or explor8ion;
 0) Tell the truth.                 
 1) Do not do things that you h8.
@@ -597,3 +597,9 @@ HTTPS://YouTu.be/r3X2mqpKNp0 "Blizzard Founder CUTS TIES Completely! Mike Morhai
 J1JLHARE:So yeah, like maybe Shoe0nHead June would want her bunnies to be the next expansion to like f8lc@b@l before PewDiePie && CountDankula'sGirl's dogz;
   # would probably be pretty dope to like focus on filming just a couple cats && building them into a basic fighting game designed to appeal as fun to them? ;
 J1PL1JPV:HTTPS://BitchUte.Com/video/mKUSsxRONtVa "Jordan Peterson && Contemporary Christianity | Discussion With Paul VanDerKlay" # 38m @about half-way good;
+J24LHowM:HTTPS://YouTu.be/HfNKFvHtA3g "TL;DR - What Was the Mouse Utopia?" # 18m42s of TealDeer breaking down a significant old hierarchical popul8ion study;
+J2CL8Red:HTTPS://YouTu.be/oZmMtM7LTqI "Red-Queen Problem - Jordan Peterson" # 14m lecturing how Mother-n8ure is Red-Queen tyrant in Alice's WonderLand story;
+J2CLC666:HTTPS://YouTu.be/IKwkX35bcdw "1010011010" # 7m44s of NumberPhile discussing Futurama's history of having obscure Roman-numeral && binary math jokes.
+  on C4C:HTTPS://YouTu.be/UkZqFtYtqaI # 11m of rel8d material from over 6 years ago dealing also with 616 and roulette assoC8ions. On `b8 1010011010 2 10` :
+# I've noticed the low 5 bits describe 26 && if you duplic8 the bits all flipped && reverse order before prepending to the high-bit values, you'll get 666.
+# Jonathan Pageau said he intends produce videos soon regarding rel8d biblical numerical symbolism too, which should be inform8ive && worth learning about;

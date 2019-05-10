@@ -45,16 +45,22 @@ package     Octology::a8;
 use strict; use warnings;use utf8;use v5.10;use Encode;
 require         Exporter;  # add new colr systM
 use base     qw(Exporter); # mainly exporting global utility functions && variables originally inherited from c8.pm as well as a few f8.pm d8a structures
-our @EXPORT= qw(bfr8c    b8c    d8c    dur8c       a8c   a8colr      h2rl   rl2h       drkh  o8
+our @EXPORT= qw(bfr8c    b8c    d8c    dur8c       a8c   a8colr      h2rl   rl2h       drkh  o8  @Kana
                 bfr8colr b8colr d8colr dur8colr    d8cs @d8cl  chti  c8fn     S2   c2  S c   sS    lodl @Monz @Mon     %mc2F %mc2b %mF2c %mb2c        %sb10
  $SKp8 $SKp0 $SKp1 $SKp2 b8clr  $SKpf $SKpt %pmap %cmap       %pl8n  ftst       %f8fm %f8pm %sgrm %sgrn @Dayz @Day  lrc      comma  curs  sumb @x256  @sb64
     $z    $k    $r    $o    $y    $g     $c $SKpb    $m    $p    $w  tstc    $K    $R    $O    $Y    $G    $C    $B    $M    $P    $W    %p622 %p222
  $tnhf $ucdf  spff  spfd  spfX   shfl  reso $auth %cmsp %p8k2 @p82k  chp8     S2f4 c2f4 dm2u cdst %crgb %cbrt @snls @mrls %cdrd %cdrn    %nrgb         gnp8);
  # of 52 posibl sngl-letr var nmz,a8 Xportz 20,$b && $a unavail,so shudB thEs30 lFt4quik shortSt nAmz: 'def hij l n  q stuv x', 'A  DEF HIJ L N  Q STUV X Z';
-our $VERSION='0.0';my  $d8VS='J1NLDshf';our $auth='PipStuart <Pip@CPAN.Org>'; # above not exporting $b since collidez with sort{$a  <=> $b};unalloc'd sOlOz^;
+our $VERSION='0.0';my  $d8VS='J55MKBox';our $auth='PipStuart <Pip@CPAN.Org>'; # above not exporting $b since collidez with sort{$a  <=> $b};unalloc'd sOlOz^;
 our $ucdf= eval('use Color::Similarity::RGB qw(distance);1') || 0; # try2set UseColorDistanceFlag if optional module is available; /defhijlnqstuvx/i + /AZ/^;
 our @Monz=qw(January February March   April     May June July   August September October November December);our @Mon=();push(@Mon,substr($_,0,3)) for(@Monz);
 our @Dayz=qw(Sunday  Monday   Tuesday Wednesday Thursday Friday Saturday                                  );our @Day=();push(@Day,substr($_,0,3)) for(@Dayz);
+our @Kana=qw(ぁあぃいぅうぇえぉおかがきぎくぐけげこごさざしじすずせぜそぞた
+だちぢっつづてでとどなにぬねのはばぱひびぴふぶぷへべぺほぼぽまみ
+むめもゃやゅゆょよらりるれろゎわゐゑをんゔゕゖ゗1゛゜ゝゞゟ
+゠ァアィイゥウェエォオカガキギクグケゲコゴサザシジスズセゼソゾタ
+ダチヂッツヅテデトドナニヌネノハバパヒビピフブプヘベペホボポマミ
+ムメモャヤュユョヨラリルレロヮワヰヱヲンヴヵヶヷヸヹヺ・ーヽヾ); # maybe whittle down to just characters then duplic8 to b8 top 46 of 64 for track-numbering?
 our $SKp8="\e[";our $SKp0=$SKp8.'00';our $SKp1=$SKp8.'01';our $SKp2=$SKp8.'22';our $tnhf=0; # ANSI "NC" eScApe "SKp" cOdez && TermCanHandleF0ntz flag
 our $SKpf="\e]50;"; # escape f0nt   prefix     # background codez in 40z have 2 letterz  && start with b  # $b comNted because of sort{$a cmp $b} collision
 our $SKpt="\e\\";   # escape string termin8or  # foreground codez in 30z have 1 letter  # 2 letter f0ntz  # $y may get masked by coordz ($y,$x)=$c8->Move()
@@ -782,16 +788,16 @@ sub shfl{ # takes an arrayref or list of items to shuffle, or pipe thru by lines
   my $htxt=" shfl - SHuFfLe lines or string crE8d by $auth to provide my own code to behave like standard 'shuf' command does (but mixes single scalar too);
   2du:tidy up all Help text, option handling, && code formatting, consider slipping all this functionality into a new upd8d version of s8 to replace 'sort';
    h  - print this Help text && exit               ;  gO thru list&&add similR styl hLp tXt&&pRamz 2 evry Utl,wrkon upd8ng craPSt&&oldSt Utlz2Ball worthwIl,
-   r  - ReveRse the input d8a list (but no shuffle);    consistNt,EficiNt,doQmNted,&&hOpfuly dMonstr8ive in some wA;";
+   r  - ReveRse the input d8a list (but no shuffle);    consistNt,EficiNt,doQmNted,&&hOpfuly dMonstr8ive in some wA. Also du -r on solo scalar reversal too;";
   my $hflg = 0;my @data; # ReveRse FLaG, TTY FLaG, Solo Scalar String FLaG, Arrayref FLaG    # thN l8r add own basic -help output too
   my $rflg = 0;if(@_){for my $pndx (0..$#_){if($_[$#_-$pndx]=~ /^-+h/i){$hflg=1;return($htxt);} # probably no longer need sepR8 hflg since test str8 returnz
                                          elsif($_[$#_-$pndx]=~ /^-+r/i){$rflg=1;splice(@_,$#_-$pndx,1);}}} # must '-r' wi dash flag optn 2 force rEvrs,!shufl
-  my $tflg = 0;if(@_){@data = @_;}elsif(!-t STDIN){@data = split(/\n/,decode('UTF-8',join( '' ,<STDIN>)));$tflg = 1;}else{return('');}
+  my $tflg = 0;if(@_){@data=@_;}elsif(!-t STDIN){@data = split(/\n/,decode('UTF-8',join( '' ,<STDIN>)));$tflg = 1;}else{return('');}
   my $sflg = 0;my $size = 0; # 2du:add param to design8 decoding all @data as UTF-8 && add `shuf --help` optnz -echo -input-range -head-count -output -repeat..
   my $aflg = 0;my $aref;if(ref($data[0]) eq 'ARRAY'){$aflg=1 unless($rflg);}elsif(@data == 1){$sflg = 1;$_ = $data[0];@data = split(//,$_);}
   if($aflg){$aref = $data[0];}else{$aref = \@data;} $size = @{$aref}; if($size){if($rflg){@data=reverse(@data);}else{
     for(my $indx = ($size-1);$indx;$indx--){my $rand=int(rand($indx+1));($aref->[$indx],$aref->[$rand])=($aref->[$rand],$aref->[$indx]) if($rand != $indx);}}}
-  if($aflg){return($aref);}elsif($sflg){return(join("\n",@data));}else{return(join("\n",@data));}} # shud add optz lIk -help && @lEast `m shuf` manUal tXt
+  if($aflg){return($aref);}elsif($sflg && $#data){return(join('',@data));}else{return(join("\n",@data));}} # add optz lIk -help && @lEast `m shuf` manUal tXt
 sub sumb{  my $widt=0;$widt=1 if(exists($ENV{'COLUMNS'}) && $ENV{'COLUMNS'} >= 158); # suport norml or doubl wId outpt (wi just widthOK flag4now, nstd of valu)
   my $htxt='';for(@_){        if(/^-?-?h/){$htxt=" sumb - SUMmarizing Binaries crE8d by $auth to colorfully describe my top 96 (or so) executable ~/bin/ files;
    An asterisk '*' after the group name means the file returns at least some form of useful text for parameter -h for help.
@@ -927,6 +933,8 @@ sub sumb{  my $widt=0;$widt=1 if(exists($ENV{'COLUMNS'}) && $ENV{'COLUMNS'} >= 1
     'sloc'  => "c8  Beppu-san sent `SlowCat.pl` simul8ing default 9600 baud print speed   ",
 
     'pt'    => "Time::PT *for original PipTime module  (main precursor to Octology::d8)   ", # J1OL7CR8:DcIded2swpout Pg1 pt,bak,e 4 Pg2 tstn,supd,oupd ;
+
+  # 'U23c'  => "U8  download from U2b ClosedCaption transCript Copy UTF2to3-Column out8   ", # J24LLOLI:candid8Ibrk;
 
     'U2b2'  => "U8  download from U2b but just audio in high-quality ('2'=to auto-best)   ",
     'U2b3'  => "U8  `youtube-dl` also but just audio in mp3 format (usually transcoded)   ", # proly transcOded NEwA
@@ -1535,9 +1543,9 @@ sub ftst{ # 37MK06SK:ftst Utl2run thruPerlzFileTeSTz on its parameter Filename
             't','tty                            . ','u','setuid bit    (can also /aa =>). ',
             'k','sticky bit                     . ','g','setgid bit                     . ',
             'T','Text          (wasMSWinB4 5.24). ','B','Binary        (opposite of: -T). ',
-            'M','part Days (@staRtup) since Modific8ion                               . ', # was 'M','age of file (at startup) in (fractional) days...
-            'A','part Days (@staRtup) since last Access                               . ', #   ...since Modification', before I distilled that down heavily
-            'C','part Days (@staRtup) since inodeChange                               . ',);
+            'M','partial Days (@staRtup) since Modific8ion                            . ', # was 'M','age of file (at startup) in (fractional) days...
+            'A','partial Days (@staRtup) since last Access                            . ', #   ...since Modification', before I distilled that down heavily
+            'C','partial Days (@staRtup) since inodeChange                            . ',);
   my @flag=('i','Ignore-case      (InsensItIveI). ', # roughly ordered by significance && rel8ive frequency of familiarity or my past applic8ions needing it
             'x','Xpanded comments (Xplicit spcs). ', # also attempted pronunC8ion of just flags as: "ick-jemms-clue-adorn-p" like "pick gems" if end p rot8d
             'g','Global Greedy (GobblingGrabber). ', # also somewhat organized for vertical alignment of parenthetical && description groupings, dashes, etc.
@@ -1559,12 +1567,15 @@ sub ftst{ # 37MK06SK:ftst Utl2run thruPerlzFileTeSTz on its parameter Filename
     $file="$ENV{'HOME'}" if(exists($ENV{'HOME'}));$file.="/.Hrc";}
   if($hlpf){say $out8 " ftst  - loop through Perl dash-Flag File TeSTs on parameter Filename  Vers:$VERSION  d8VS:$d8VS by Auth:$auth
          Note that -T in Perl 5.24 is a heuristic guess whether it is an ASCII or UTF-8 Text file, which is useful beyond MicroSoft Windows environments;
-   -h  - print this Help text; If no filename parameter is given, \$_ then the default Octology \$HOME/.Hrc d8a file is tested;
+  -h   - print this Help text; If no filename parameter is given, \$_ then the default Octology \$HOME/.Hrc d8a file is tested;
          Also prints Perl regex && string backslash eScape codes in one 160x48 page to keep similar reference maps together.
-         Added measured default ~/.Hrc to fit regular-expression flag descriptors up beside the default File TeSTs now too;";exit;}
+         Added measured default ~/.Hrc to fit regular-expression flag descriptors up beside the default File TeSTs now too;
+  2du:fix 160x50 glob error when printing probably some global hash or array (from where?),add regex flagz2 80-colm mode2?;";exit;}
   my $A=S('A');my $F=S('F');my $N=S('N');my $X=S('X');
-  for(my $i=0;$i<@oper;$i+=2){my $oprS=S(uc($oper[$i]));my $flgS=$F;my $sizl= 32 - 4;
-                              print  $out8 "$G($Y-$oprS$oper[$i] $file$G)$W==$G($C";my $etrv=0;
+  for(my $i=0;$i<@oper;$i+=2){my $oprS=S(uc($oper[$i]));my $flgS=$F;my $sizl= 28;my $etrv=0; # sizl was = 32 - 4;
+    if($oper[$i] =~ /^[RWXO]$/ && exists($ENV{'COLUMNS'}) && $ENV{'COLUMNS'} <= 80){
+      print      $out8 "$G($Y-$oprS$oper[$i]$G)$W==$G($C";
+    }else{print  $out8 "$G($Y-$oprS$oper[$i] $file$G)$W==$G($C";}
     if(0&& $oper[$i] =~ /[TB]/ && $^O !~ /^MSWin/){ # or $^O or $ENV{'OSTYPE'} used to test for what were MicroSoft only flags prior to Perl 5.24
                               print  $out8 "Can't test, except in MSWindows!";}
     else                     {$etrv=eval(    "(-" .                      "$oper[$i] \'$file\')"); $etrv=0 unless(defined($etrv) && $etrv);
@@ -1574,16 +1585,25 @@ sub ftst{ # 37MK06SK:ftst Utl2run thruPerlzFileTeSTz on its parameter Filename
                               print  $out8      comma($etrv) if($oper[$i] eq      's'  );
                               printf $out8 "%23.18f", $etrv  if($oper[$i] =~ /^[MAC]$/ ); # align age floats
                              }my     $dscs=$oper[$i+1];$dscs=~ s/(UID)/$C$1/gi;$dscs=~ s/(GID )/$G$1/gi;$dscs=~ s/( by )/$g$1/gi;$dscs=~ s/(size)/$o$1/gi;
-    $dscs  =~ s/(bit  )/$W$1/gix;$dscs=~ s/(part )(Days )(\()(\@)(staRtup)(\))( since)/$o$1$Y$2$B$3$R$4$z$5$B$6$c$7$p$oprS/gi;
+    $dscs  =~ s/(bit  )/$W$1/gix;$dscs=~ s/(partial )(Days )(\()(\@)(staRtup)(\))( since)/$o$1$Y$2$B$3$R$4$z$5$B$6$c$7$p$oprS/gi;
+    if  (exists($ENV{'COLUMNS'}) && $ENV{'COLUMNS'}  <=  80){
+      if($oper[$i] =~ /^[RWXO]$/){    $dscs=~ s/(\.)\s+/$1/g;
+                                      $dscs=~ s/\s(by)\s{4}/$1/gi;
+        $dscs=~ s/(\s?\s?(Read|Writ|eXecut)able|Owned|\s#)\s*//gi;
+        $dscs=~ s/([UG]ID|\||\s#)//gi;$dscs=~ s/(real)\s{2}/$1/gi;}
+      if($oper[$i] =~ /^[MACs]$/){    $dscs=~ s/(Days|\s?#)\s+/$1/gi; # $dscs=~ s/(part)/$1ial/i;
+        $dscs=~ s/(\(|\@|staRtup|\)|\s{14})//gi;}} # replaced 14 spaces with 11 to add partial above
     $dscs  =~ s/([|])/$o$1$G/g  ;$dscs=~ s/(real)/$r$1$R/g;$dscs=~ s/(effective)/$M$1$B/g;$dscs=~ s/(special)( file)/$c$1$G$2/g;
     $dscs  =~ s/(\()(can also )(\/)(a+)([^)]+)(\))/$B$1$W$2$Y$3$A$4$W$5$B$6/gi;
     $dscs  =~ s/(\()([^)]+)(\))/$B$1$W$2$B$3/gi;  my $sfsp='';
     if(length($file) < 14){$sfsp= ' ' x (14 - length($file));$sizl += (14 - length($file));} # default /home/pip/.Hrc shud B 14 long,so upd8 pad && size length
     $dscs  =~ s/(.*)(\.)/$1$w$sfsp$2$C #$A/; # try to sneak in the ShortFileSpacesPadding to hopefully preserve some of the intended alignment for non-defaults
+    if   (exists($ENV{'COLUMNS'}) && $ENV{'COLUMNS'}  <=  80 && $oper[$i] =~ /^[MAC]$/){$dscs=~ s/(#\S*)\s+/$1/g;} # elsif($oper[$i] ne 's'){$dscs.=' ';}
                               print  $out8 "$G)$W:$oprS$dscs";print $out8 ((' ' x $sizl) . "$w.$C # ") if($oper[$i] eq 's');
     # 2du:when file leng more than 14, like for ~/.lsrc or ~/.zshrc, either use more aggressive substitutions to preserve alignment, or just omit flag section;
     if                       (length($file) <= 15 &&   exists($ENV{'COLUMNS'}) && $ENV{'COLUMNS'} >= 160 &&($i % 4 || $i > ($#oper-6))){
       my $nthi=int($i/2)-1;$nthi=$#flag - ($#oper - $i ) if($i > ($#oper-6)); # try to shift pnr back over age stamps
+    # shift will have to jump past top 8 for 80-colm mode && special ANSI SKp-aware chop away tail until fits in middle?
       $flgS=S(uc($flag[$nthi])) if(defined($flag[$nthi]) && $flag[$nthi]=~ /^[ixgemscluadornp]$/i && defined($flag[$nthi+1]));$dscs='';
       $dscs= "$Y/$flgS$flag[$nthi] $z: $flgS$flag[$nthi+1]" if(defined($flag[$nthi]) && defined($flag[$nthi+1]));$dscs=~ s/(.*)(\.)/$1$w$2/;
       $dscs=~ s/(,)/$R$1$Y/g   ;$dscs=~ s/(comments  )/$c$1$Y/gx;$dscs=~ s/(b)(E )(r)(E)(p)(E)(at)(E)(d)/$Y$1$flgS$2$Y$3$flgS$4$Y$5$flgS$6$Y$7$flgS$8$Y$9/gi;
@@ -1592,7 +1612,8 @@ sub ftst{ # 37MK06SK:ftst Utl2run thruPerlzFileTeSTz on its parameter Filename
       $dscs=~ s/(G)(obbling)(G)(rabber)/$flgS$1$Y$2$flgS$3$Y$4/gi;$dscs=~ s/(M)(any )/$flgS$1$Y$2/gi;$dscs=~ s/(xx )/$X$1$Y/i;
       $dscs=~ s/(\()([^)]*)(\))/$M$1$Y$2$M$3/g;$dscs=~ s/(spa?ce?s?)/$N$1$A/gi;
                               print  $out8 "$dscs";}
-                              print  $out8    "\n" if(!exists($ENV{'COLUMNS'}) || $ENV{'COLUMNS'} <= 108 || $i % 4 || $i > ($#oper-8) );}
+    if(!exists($ENV{'COLUMNS'}) || $ENV{'COLUMNS'} <= 108 || $i % 4 || $i > ($#oper-8)){ # might have needed an xor in here, but just made sepR8 clauses nstd?
+                              print  $out8    "\n" if(!exists($ENV{'COLUMNS'}) ||($ENV{'COLUMNS'} <=80 && $oper[$i] !~ /^[rwxo]$/)|| $ENV{'COLUMNS'} >=160);}}
   my $bScs=" compact list of Perl backslash eScape codes for both regular-expressions and character-strings: (was AllAquA, now with option flag d8a above too)
   \\000              escape                             Octal sequence.    \\o{};(See also)  # /!in\\[\\];\$/ mEnz!usable in bracket char class (like [\\dA-Z])
   \\1, \\2, ..past 9?        absolute (can \${d+} in s///) backreference.   !in[];  # Character Escapes - Fixed characters: 7 chars have a dedicated escape.
@@ -1604,7 +1625,7 @@ sub ftst{ # 37MK06SK:ftst Utl2run thruPerlzFileTeSTz on its parameter Filename
   \\C                single    oCtet,   even     under UTF-8.  (deprec8ed)!in[];  #  \\b     8    08     BS    \\cH    BackSpace [1];KLM VTab,4mfeed,Carigretn;
   \\d                character class 4      Digits                             ;  #  \\e    27    1B    ESC    \\c[    Escape character;Ctrl-K toggles spell-
   \\D                character class 4  non-Digits                             ;  #  \\f    12    0C     FF    \\cL    Form Feed       ; checK in   ~/.vimrc ;
-  \\e                Escape                      character                     ;  #  \\n    10    0A     LF    \\cJ    Line Feed [2];00 NUL Ctrl-@,01 SOH C-A,
+  \\e                Escape                      character                     ;  #  \\n    10    0A     LF    \\cJ    Line Feed [2];00 NUL Ctrl-\@,01 SOH C-A,
   \\E                End mode: stop any \\Q, \\L, \\U, or \\F processing;     !in[];  #  \\r    13    0D     CR    \\cM    Carriage Return; 02 STX C-B,03 ETX C-C;
   \\f                Form feed                                                 ;  #  \\t     9    09 HT TAB    \\cI HrzTab (Indent);This reference mostly colrd;
   \\F                Foldcase                               until \\E.     !in[];  \\r                Return                      character                  ;
@@ -1626,7 +1647,9 @@ sub ftst{ # 37MK06SK:ftst Utl2run thruPerlzFileTeSTz on its parameter Filename
   \\cE 05 ENQuiry,\\cF 06 positiveACKnowlegment,\\cN 0E ShiftOut,\\cO 0F ShiftIn(XON resume output),\\cP 10 DataLinkEscape HTTP://DC.Org/files/asciitable.pdf
   \\cQ-T DeviceControlcharacter1-4,\\cU 15 NegativeAcKnowledgement,\\cV 16 SYNchronousidle,\\cW 17 EndofTransBlock,\\cX 18 CANcel,\\cY 19 EndofMedium,
   \\cZ 1A SUBstitute/endoffile,\\c[ 1B ESCape,\\c\\ 1C FileSeparator,\\c] 1D GroupSeparator ,\\c^ 1E RecordSeparator,\\c_ 1F UnitSeparator,20 SPace!" .
- "\"#\$%&'()*+,..."; # `pdoc perlvar` describes all the shortest variables && perlrun has runtime flags
+ "\"#\$\%&'()*+,..."; # `pdoc perlvar` describes all the shortest variables && perlrun has runtime flags
+  if(exists($ENV{'COLUMNS'})){
+    if     ($ENV{'COLUMNS'} <=  80){$bScs='';}}
   $X=S('1');my $H=S('H');#$bScs=~ s/(\\\\)/$M$1$A/g; # looking pretty good for most potential matches
   $bScs=~ s/(white      )/$W$1$A/gix;$bScs=~ s/(characters?)/$C$1$A/g  ;$bScs=~ s/(unicode)/$Y$1$A/gi;$bScs=~ s/(# )(.*)/$C$1$W$2/g;$bScs=~ s/(!)/$R$1$A/g;
   $bScs=~ s/(horizontal )/$O$1$A/gix;$bScs=~ s/(vertical   )/$M$1$A/gix;$bScs=~ s/(word )/$p$1$A/gix;$bScs=~ s/(, )/$Y$1$A/gx;$bScs=~ s/(\.)/$p$1$A/g ;
@@ -1638,7 +1661,8 @@ sub ftst{ # 37MK06SK:ftst Utl2run thruPerlzFileTeSTz on its parameter Filename
   $bScs=~ s/(heXadecimal)/$X$1$z/gix;$bScs=~ s/(slash      )/$H$1$A/gix;$bScs=~ s/(\()([^)]+)(\))/$C$1$R$2$C$3$A/gix;my $t=S('tk');my $U=S('5');
   $bScs=~ s/(tab)/$t$1$W/gix;$bScs=~ s/(next)/$U$1$z/gix;$bScs=~ s/(\/)(aa )/$Y$1$A$2$W/i;
   $bScs=~ s/(non)/$R$1$A/gix;$bScs=~ s/(class)( 4)/$c$1$M$2$A/g;$bScs=~ s/(in)(\[\])(;)/$z$1$o$2$W$3$z/g;$bScs=~ s/(;)(  \S|$)/$W$1$z$2/g;
-  say $out8 $A,$bScs;
+  print $out8 $A,$bScs;
+  say   $out8 if(length($bScs));
   # functions that use $_ as a default argument: abs, alarm, chomp, chop, chr, chroot, cos, defined, eval, evalbytes, exp, fc, glob, hex, int, lc, lcfirst,
   #   length, log, lstat, mkdir, oct, ord, pos, print, printf, quotemeta, readlink, readpipe, ref, require, reverse (in scalar context only), rmdir, say, sin,
   #   split (for its second argument), sqrt, stat, study, uc, ucfirst, unlink, && unpack.  all solo file tests use $_ except for -t , which defaults to STDIN.
@@ -1802,9 +1826,11 @@ sub reso{my $optz=join(' ',@_)||''; # 598KBvas:reso crE8d by PipStuart <Pip@CPAN
                                                   $A=~ s/(\s+|[:])(\d*)(x)(                                      \d+)  /$1$M$2$w$3$C$4/gix;
                                                   $A=~ s/(^|[ ]+|\n[ ]*|\e\[(\d+|;)+m)(\d*)(,?)(\d*)(,?)(\d+)(,)(\d+)/$z$1$G$3$W$4$Y$5$W$6$o$7$W$8$R$9/gx;
     print $A;}}
-sub spff{my $frmt='%12.12f';if(@_ && $_[0]=~ /%/){$frmt= shift(@_);} if(@_){return( sprintf("%16s",sprintf("$frmt",shift(@_))));}} # SPrintF float
-sub spfd{my $frmt='%03d';if(@_ && $_[0]=~ /%/){$frmt= shift(@_);} if(@_ && $_[0]=~ /^\d+$/){return(sprintf("$frmt",shift(@_)) );}} # SPrintF dec
-sub spfX{my $frmt='%02X';if(@_ && $_[0]=~ /%/){$frmt= shift(@_);} if(@_ && $_[0]=~ /^\d+$/){return(sprintf("$frmt",shift(@_)) );}} # SPrintF HX
+sub spff{my $frmt='%12.12f';if(@_ && defined($_[0]) && $_[0]=~ /%/){$frmt= shift(@_);} if(@_){return( sprintf("%16s",sprintf("$frmt",shift(@_))));}} # SPFfloat
+sub spfd{my $frmt='%03d'   ;if(@_ && defined($_[0]) && $_[0]=~ /%/){$frmt= shift(@_);} if(@_ && defined($_[0]) && $_[0]=~ /^\d+$/){
+  return(sprintf("$frmt",shift(@_)) );}} # SPrintF dec
+sub spfX{my $frmt='%02X'   ;if(@_ && defined($_[0]) && $_[0]=~ /%/){$frmt= shift(@_);} if(@_ && defined($_[0]) && $_[0]=~ /^\d+$/){
+  return(sprintf("$frmt",shift(@_)) );}} # SPrintF HX
 sub cdst{ # Color DiSTance (derived from pm2x);pre-init what's necSary as new Xportz,but thN try2only load up nEded structurez that wil really B used in here
   my $nonr=0;my $frmf=0;my $hexf=0;my $nocf=0;my $nodf=0;my $snrf=0;my $xhri=0; # hndl flgz lIk specify rsltz -sIz or -colors.txt name2add2 %crgb && %cbrt 1st
   while  (@_ && $_[0]=~ /^--?(\S+)$/){my $flag=$1;if($flag=~ /^h(elp)?$/i){return( # run through some basic directions on parameters && expected behavior
@@ -2443,42 +2469,53 @@ sub gnp8{my %p226= reverse(%p622);my %g8lm; # gener8 3 new 8pal8z based on vario
                                                                                                                  $sb64[int(hex(substr($hrgb,4,2))/4)])}}say '';
   }elsif($argz=~ /(^|\s)-?-?s/i){ # like `tstc s` for Squeeze
   for     my $plnk (qw(b d a l)){$g8po='krOgcbPw ehodtspi  .fuaznlj 02468xvq';$g8po=~ s/\s+//g; # now gener8 8pal8 blox to compare all sets
-    for   my $p8ky (split(//,$g8po)){printf("%s$plnk$p8ky %02X"      ,S($cpfx . spfX($g8lm{$plnk}{$p8ky})),$g8lm{$plnk}{$p8ky}                    );} say '';}
+    for   my $p8ky (split(//,$g8po)){if(defined($g8lm{$plnk}{$p8ky})){
+                                     printf("%s$plnk$p8ky %02X"      ,S($cpfx . spfX($g8lm{$plnk}{$p8ky})),$g8lm{$plnk}{$p8ky}                    );}} say '';}
   for     my $plnk (qw(b d a l)){$g8po='KRYGCBMW EHyDTSmI  _FUAZNLJ 13579XVQ';$g8po=~ s/\s+//g;
-    for   my $p8ky (split(//,$g8po)){printf("%s$plnk$p8ky %02X"      ,S($cpfx . spfX($g8lm{$plnk}{$p8ky})),$g8lm{$plnk}{$p8ky}                    );} say '';}
+    for   my $p8ky (split(//,$g8po)){if(defined($g8lm{$plnk}{$p8ky})){
+                                     printf("%s$plnk$p8ky %02X"      ,S($cpfx . spfX($g8lm{$plnk}{$p8ky})),$g8lm{$plnk}{$p8ky}                    );}} say '';}
   }else{
   for     my $plnk (qw(b d a l)){$g8po='krOgcbPw ehodtspi';$g8po=~ s/\s+//g; # now gener8 16 10-char-wide blox on double rows with 8pal8 colr names lookin nice
-    for   my $p8ky (split(//,$g8po)){printf("%s$plnk $p8ky %03d %02X",S($cpfx . spfX($g8lm{$plnk}{$p8ky})),$g8lm{$plnk}{$p8ky},$g8lm{$plnk}{$p8ky});} say '';
+    for   my $p8ky (split(//,$g8po)){if(defined($g8lm{$plnk}{$p8ky})){
+                                     printf("%s$plnk $p8ky %03d %02X",S($cpfx . spfX($g8lm{$plnk}{$p8ky})),$g8lm{$plnk}{$p8ky},$g8lm{$plnk}{$p8ky});}} say '';
     for   my $p8ky (split(//,$g8po)){my $p8V8= $pl8n{$p8ky};$p8V8=substr($p8V8, 0,10) if(length($p8V8) > 10);
-                                     printf("%s%-10s"                ,S($cpfx . spfX($g8lm{$plnk}{$p8ky})),$p8V8                                  );} say '';
-    for   my $p8ky (split(//,$g8po)){my $hrgb= $x256[$g8lm{$plnk}{$p8ky}];
+                                     if(defined($g8lm{$plnk}{$p8ky})){
+                                     printf("%s%-10s"                ,S($cpfx . spfX($g8lm{$plnk}{$p8ky})),$p8V8                                  );}} say '';
+    for   my $p8ky (split(//,$g8po)){if(defined($g8lm{$plnk}{$p8ky})){my $hrgb= $x256[$g8lm{$plnk}{$p8ky}];
                                      printf("%s%-6s %s%s%s"          ,S($cpfx . spfX($g8lm{$plnk}{$p8ky})),$hrgb,$sb64[int(hex(substr($hrgb,0,2))/4)],
                                                                                                                  $sb64[int(hex(substr($hrgb,2,2))/4)],
-                                                                                                                 $sb64[int(hex(substr($hrgb,4,2))/4)])}say ''}
+                                                                                                                 $sb64[int(hex(substr($hrgb,4,2))/4)])}}say ''}
   for     my $plnk (qw(b d a l)){$g8po='.fuaznlj 02468xvq';$g8po=~ s/\s+//g;
-    for   my $p8ky (split(//,$g8po)){printf("%s$plnk $p8ky %03d %02X",S($cpfx . spfX($g8lm{$plnk}{$p8ky})),$g8lm{$plnk}{$p8ky},$g8lm{$plnk}{$p8ky});} say '';
+    for   my $p8ky (split(//,$g8po)){if(defined($g8lm{$plnk}{$p8ky})){
+                                     printf("%s$plnk $p8ky %03d %02X",S($cpfx . spfX($g8lm{$plnk}{$p8ky})),$g8lm{$plnk}{$p8ky},$g8lm{$plnk}{$p8ky});}} say '';
     for   my $p8ky (split(//,$g8po)){my $p8V8= $pl8n{$p8ky};$p8V8=substr($p8V8, 0,10) if(length($p8V8) > 10);
-                                     printf("%s%-10s"                ,S($cpfx . spfX($g8lm{$plnk}{$p8ky})),$p8V8                                  );} say '';
-    for   my $p8ky (split(//,$g8po)){my $hrgb= $x256[$g8lm{$plnk}{$p8ky}];
+                                     if(defined($g8lm{$plnk}{$p8ky})){
+                                     printf("%s%-10s"                ,S($cpfx . spfX($g8lm{$plnk}{$p8ky})),$p8V8                                  );}} say '';
+    for   my $p8ky (split(//,$g8po)){if(defined($g8lm{$plnk}{$p8ky})){my $hrgb= $x256[$g8lm{$plnk}{$p8ky}];
                                      printf("%s%-6s %s%s%s"          ,S($cpfx . spfX($g8lm{$plnk}{$p8ky})),$hrgb,$sb64[int(hex(substr($hrgb,0,2))/4)],
                                                                                                                  $sb64[int(hex(substr($hrgb,2,2))/4)],
-                                                                                                                 $sb64[int(hex(substr($hrgb,4,2))/4)])}say ''}
+                                                                                                                 $sb64[int(hex(substr($hrgb,4,2))/4)])}}say ''}
   for     my $plnk (qw(b d a l)){$g8po='KRYGCBMW EHyDTSmI';$g8po=~ s/\s+//g;
-    for   my $p8ky (split(//,$g8po)){printf("%s$plnk $p8ky %03d %02X",S($cpfx . spfX($g8lm{$plnk}{$p8ky})),$g8lm{$plnk}{$p8ky},$g8lm{$plnk}{$p8ky});} say '';
+    for   my $p8ky (split(//,$g8po)){if(defined($g8lm{$plnk}{$p8ky})){
+                                     printf("%s$plnk $p8ky %03d %02X",S($cpfx . spfX($g8lm{$plnk}{$p8ky})),$g8lm{$plnk}{$p8ky},$g8lm{$plnk}{$p8ky});}} say '';
     for   my $p8ky (split(//,$g8po)){my $p8V8= $pl8n{$p8ky};$p8V8=substr($p8V8, 0,10) if(length($p8V8) > 10);
-                                     printf("%s%-10s"                ,S($cpfx . spfX($g8lm{$plnk}{$p8ky})),$p8V8                                  );} say '';
-    for   my $p8ky (split(//,$g8po)){my $hrgb= $x256[$g8lm{$plnk}{$p8ky}];
+                                     if(defined($g8lm{$plnk}{$p8ky})){
+                                     printf("%s%-10s"                ,S($cpfx . spfX($g8lm{$plnk}{$p8ky})),$p8V8                                  );}} say '';
+    for   my $p8ky (split(//,$g8po)){if(defined($g8lm{$plnk}{$p8ky})){my $hrgb= $x256[$g8lm{$plnk}{$p8ky}];
                                      printf("%s%-6s %s%s%s"          ,S($cpfx . spfX($g8lm{$plnk}{$p8ky})),$hrgb,$sb64[int(hex(substr($hrgb,0,2))/4)],
                                                                                                                  $sb64[int(hex(substr($hrgb,2,2))/4)],
-                                                                                                                 $sb64[int(hex(substr($hrgb,4,2))/4)])}say ''}
+                                                                                                                 $sb64[int(hex(substr($hrgb,4,2))/4)])}}say ''}
   for     my $plnk (qw(b d a l)){$g8po='_FUAZNLJ 13579XVQ';$g8po=~ s/\s+//g;
-    for   my $p8ky (split(//,$g8po)){printf("%s$plnk $p8ky %03d %02X",S($cpfx . spfX($g8lm{$plnk}{$p8ky})),$g8lm{$plnk}{$p8ky},$g8lm{$plnk}{$p8ky});} say '';
+    for   my $p8ky (split(//,$g8po)){if(defined($g8lm{$plnk}{$p8ky})){ # J5AM6GAG:in 80x25 mode gnp8 was using uninitd valz here && below
+                                     printf("%s$plnk $p8ky %03d %02X",S($cpfx . spfX($g8lm{$plnk}{$p8ky})),$g8lm{$plnk}{$p8ky},$g8lm{$plnk}{$p8ky});}} say '';
     for   my $p8ky (split(//,$g8po)){my $p8V8= $pl8n{$p8ky};$p8V8=substr($p8V8, 0,10) if(length($p8V8) > 10);
-                                     printf("%s%-10s"                ,S($cpfx . spfX($g8lm{$plnk}{$p8ky})),$p8V8                                  );} say '';
-    for   my $p8ky (split(//,$g8po)){my $hrgb= $x256[$g8lm{$plnk}{$p8ky}];
+                                     if(defined($g8lm{$plnk}{$p8ky})){ # J5AM6GAG:in 80x25 mode gnp8 was using uninitd valz here (mItnEd2ckDfIndz4allabovblox)
+                                     printf("%s%-10s"                ,S($cpfx . spfX($g8lm{$plnk}{$p8ky})),$p8V8                                  );}} say '';
+    for   my $p8ky (split(//,$g8po)){if(defined($g8lm{$plnk}{$p8ky})){ # J5AM6GAG:in 80x25 mode gnp8 was using uninitd valz here && in spfX near top
+                                                                      my $hrgb= $x256[$g8lm{$plnk}{$p8ky}];
                                      printf("%s%-6s %s%s%s"          ,S($cpfx . spfX($g8lm{$plnk}{$p8ky})),$hrgb,$sb64[int(hex(substr($hrgb,0,2))/4)],
                                                                                                                  $sb64[int(hex(substr($hrgb,2,2))/4)],
-                                                                                                                 $sb64[int(hex(substr($hrgb,4,2))/4)])}say ''}
+                                                                                                                 $sb64[int(hex(substr($hrgb,4,2))/4)])}}say ''}
   }}
 sub tstc{my $retn='';my $argz='';my $widt=80;$widt=$ENV{'COLUMNS'} if(exists($ENV{'COLUMNS'})); # kEp snglspcBtwn arg pRamz whN trEtng all2gethr as sngl strng?
   $argz= join(' ',@_) if(@_);if($argz =~ /(^|\s)-?-?h(elp)?(\s|$)/i){return(

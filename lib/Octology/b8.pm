@@ -22,9 +22,15 @@ use         Math::BigInt       ;
 use         Encode;
 use         Carp; # orig Math::BaseCnv BlO memoized sum8(as summ) hEr&&had nO fibo&&OnlyXportd cnv byDflt but now Octology Xportz almOst evrythng promiscuously
 use Memoize;memoize('fact');memoize('choo');memoize('fibo');memoize('prim');
-our @EXPORT= qw(b8 cnv ocT deC dec heX HEX b10 b64 b64sort b110 b128 b210 b256 dig diginit
+our @EXPORT= qw(b8 cnv ocT deC dec heX HEX b10 b64 b64sort b110 b128 b210 b256 dig diginit @kana
     cma coma  sum8 sumz   fact fctz  choo  fibo fibz  prim prmz  rotW rot1    calQ   $umbc);
 our $VERSION='0.0';my  $d8VS='HBRL6MBC';my $auth='PipStuart <Pip@CPAN.Org>';
+our @kana=qw(ぁあぃいぅうぇえぉおかがきぎくぐけげこごさざしじすずせぜそぞた
+だちぢっつづてでとどなにぬねのはばぱひびぴふぶぷへべぺほぼぽまみ
+むめもゃやゅゆょよらりるれろゎわゐゑをんゔゕゖ゗1゛゜ゝゞゟ
+゠ァアィイゥウェエォオカガキギクグケゲコゴサザシジスズセゼソゾタ
+ダチヂッツヅテデトドナニヌネノハバパヒビピフブプヘベペホボポマミ
+ムメモャヤュユョヨラリルレロヮワヰヱヲンヴヵヶヷヸヹヺ・ーヽヾ); # maybe whittle down to just characters then duplic8 to b8 top 46 of 64 for track-numbering?
 my $pkgn =        __PACKAGE__;
 my $pkgl = length __PACKAGE__;
 my $bssb = $pkgn . '::_bs::' ; # indentify 'base sub'

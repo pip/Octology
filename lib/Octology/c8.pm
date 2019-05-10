@@ -23,7 +23,7 @@ use SDLx::App;
 #se SDLx::Text; # also learn TTF && Pango, probably don't need SFont
 use SDLx::Sprite;} $sdlf = 0 if(exists($ENV{'TTY'}) && $ENV{'TTY'}=~ /^\/dev\/tty/); # disAbl SDL whN in fullscrn tXt-mOde acordng2 $TTY (or try `tty`?)
 #ur @EXPORT=  qw(); # mvd only orig Xportz sube && e2c8 over2 a8.pm (&& since renamed e to S for SKp consistency)
-our $VERSION='0.0';my $d8VS='HBBLAPv8';our $auth='PipStuart <Pip@CPAN.Org>';my $name='c8';
+our $VERSION='0.0';my $d8VS='J29LIGut';our $auth='PipStuart <Pip@CPAN.Org>';my $name='c8';
 my %GLBL=( # GLOBAL CLASS VARIABLES
   'FLAGOPEN'=> 0); # flag for if SDL window crE8d yet (in Simp was for if a main curses screen had been opened yet)
 #y @DISPSTAK=(); # global stack of crE8d c8 objects for display order
@@ -176,6 +176,10 @@ push(@_attrnamz, '_flaginsr'); $_attrdata{$_attrnamz[-1]} = 1; # InsertMode
                        $_verbose_attrnamz{$_attrnamz[-1]} = 'FlagInsertMode';
 push(@_attrnamz, '_flagterm'); $_attrdata{$_attrnamz[-1]} = 0; # TerminalMode && might also l8r try (scrn|H8sh|viii)Modes to nest distinct types of c8 objects
                        $_verbose_attrnamz{$_attrnamz[-1]} = 'FlagTerminalMode';
+push(@_attrnamz, '_flagd8rm'); $_attrdata{$_attrnamz[-1]} = 0; # DateTermMode unsure whether 8x1 orig or 4x2 must keep ahead new 3x1 chunkz
+                       $_verbose_attrnamz{$_attrnamz[-1]} = 'FlagDateTermMode';
+push(@_attrnamz, '_flagi8rm'); $_attrdata{$_attrnamz[-1]} = 0; # InpuTermMode probably 27x3 grid 4 joy && maybe inlaid doubles 4 54x6 2 covr kybd nIc 2gethr;
+                       $_verbose_attrnamz{$_attrnamz[-1]} = 'FlagInpuTermMode';
 push(@_attrnamz, '_flagfile'); $_attrdata{$_attrnamz[-1]} = 0; # FileMode to just popul8 a basic c8 object from disk file d8a then do oper8ionz wi transl8ionz
                        $_verbose_attrnamz{$_attrnamz[-1]} = 'FlagFileMode'; # this relies on a readable file             to be named in '_flnm'
 push(@_attrnamz, '_flagcmnd'); $_attrdata{$_attrnamz[-1]} = 0; # CommandMode to encapsul8 the output of executing commandz specified in '_cmds' then oper8 on
@@ -323,6 +327,10 @@ sub new{my( $nvkr,$ityp,   $idat)=@_;  my $nobj=ref($nvkr); # basically same as 
   if    ($self->{'_flagfile'}){$self->SAAD(0);$self->L8fd() if(length($self->{'_flnm'})); # start basic file    d8a          loading
   }elsif($self->{'_flagcmnd'}){$self->SAAD(0);$self->L8cd()                             ; # start basic shell command output loading (or pIpeSTDIN if!len_cmdz)
   }elsif($self->{'_flagterm'}){$self->SAAD(0);$self->L8rc();$self->CVis(1);$name= '8trm'; # start basic 8trm && 8sh with command prompt
+  }elsif($self->{'_flagd8rm'}){$self->SAAD(0);$self->L8rc();$self->CVis(0);$name= 'd8rm'; # start basic utrm for User d8a probably for d8ok && input renderz
+    my $sfac=8.0;$self->Rsiz(int($sfac / 4),int($sfac / 2));$self->XScl($sfac);$self->YScl($sfac); # resize ht,wd && set both scalez all by single s-factor
+  }elsif($self->{'_flagi8rm'}){$self->SAAD(0);$self->L8rc();$self->CVis(0);$name= 'i8rm'; # start basic utrm for User d8a probably for d8ok && input renderz
+    my $sfac=9.0;$self->Rsiz(int($sfac / 3),int($sfac    ));$self->XScl($sfac);$self->YScl($sfac); # resize ht,wd && set both scalez all by single s-factor
   }else {#self->SAAD(1);$self->{'_dndx'}=@DISPSTAK;push(@DISPSTAK,\$self); # orig pushd new objref to display order stack, tracking index but unused for now
          $self->TestDraw();} # old Curses newwin doesn't auto draw so if _text initd && flagaudr (&& obj not already just a file or cmnd from abov) ...
   return($self);}

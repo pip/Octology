@@ -7,6 +7,8 @@
 #   add d8VS &&mAB Xpnded&&colrd 4m 2 `vers` vv cmd,colrIz hLp&&vv tXtz,add bAsic scriptabiliT 4batch importng2newDBfrom simplPerl arAz|hashz|mAB JSON nstd,
 #   add auto-cd with "$path/?",test partial reconstruction then loading compatibility with original kpcli-3.0.pl,add longer descriptions wi better alignment,
 #   mAB add command-line option of entry name to immeD8ly auto-show after pswd entered (but proly don't auto-exit since still want xx to clear clipboard aftr);
+# J54MJCLI:For 'xx' to work, needed to `sz;pmei Capture::Tiny;pmei Clipboard` which in turn required `auu;ai xclip` for 'Can't exec "xclip": No such file or...
+#   directory at /home/pip/lib/perl5/lib/perl5/Clipboard/Xclip.pm line 27. Couldn't run `  |                   xclip -i -selection primary`: No such file or..;
 ##############################################################################################################################################################
 # kpcli - KeePass Command Line Interface; Author: Lester Hightower <hightowe at cpan dot org>; This program was inspired by  "kedpm -c" and resulted despite
 #   illness (or more likely because of it) over the USA Thanksgiving holiday in late November of 2010. As a long-time user of the Ked Password Manager I really

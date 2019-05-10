@@ -19,6 +19,7 @@
 # bug:misalInmNt of grup && b64 size widthz:`l /etc` just4 at.deny 1st wider grup 'daemon' pushz size1 2far,8trm is mising 0m rIt aftr grup&&kEpz bgclr1Xtra,
 #   `l /` has no spcBtwn prmz && blsz 4etc&&proc,                                    Note:from shell was ~/muz/mp3/PepeDeluxé$'\351' && ls showd as just '?';
 # tst:rEmMbr ls sortz:-Un Size Xten time ver reverse,-rStUvX all good2tst in /boot,shud genR8 tst dirz containing varE8ionz on pwnr,grup,fsiz widthz2ck alIn;
+# J55MLwlJ:try to put 46+1 Hiragana for lists of 47 plus t0tl fitting l 1pAg;
 use strict;use warnings;use utf8;use v5.10; # mAB tSt if just regUlR -t STDIN && -t STDOUT R Dtectng intractiviT corectly 1st,B4 fallng bak on IO::Interactive
 #se IO::Interactive qw(is_interactive); # employ if(is_interactive()){} around all colring to attempt to behave like `ls --color=auto` when piped away
 use Encode;use Octology::a8;#se Octology::c8;
