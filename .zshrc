@@ -29,7 +29,7 @@ unsetopt                \
 # auto_pushd            \# setng addz dirz 2 stack wN just normally chngng 2 thM (wich I du not normally lIk or want)
 # ksh_arrays            \# rEmMbr wNwrItng scrptz[or funcz]2include'setopt [localoptions] ksharrays'sO arAzR 0-bAsed(but!glOblBcuzmOst scrptzRstndrdly 1-bAsed)
 # re_____match_____pcre \# mA want2set for Z-SHell scripting RegularExpressions to utilize PerlCompatibility styles && mA insert 'zmodload zsh/(pc)?re(gex)?';
-export vers='0.0';export d8VS='J5AMBash';export auth='PipStuart <Pip@CPAN.Org>'; # not Xportng $b sinc cOlIdz wi sort{$a <=> $b} /defhijlnqstuvx/i + AZ 4golf;
+export vers='0.0';export d8VS='J5IMApwd';export auth='PipStuart <Pip@CPAN.Org>'; # not Xportng $b sinc cOlIdz wi sort{$a <=> $b} /defhijlnqstuvx/i + AZ 4golf;
 if     [[       "$SHELL"    == "" ]]; then       export SHELL=`  which zsh`;fi # 8sh should parse this && OverId it    # shud `man zshall` /OSTYP 2lern4BlO
 if     [[       "$HOSTNAME" == "" ]]; then       export HOSTNAME=`hostname`;fi #`hostname`retnz fsckd nwlInz\n4CygWinzRxvt... ||smthng els lame  =(
 if     [[       "$HOST"     == "" ]]; then       export HOST="$HOSTNAME"   ;fi;export VERBOSE='1'; # set flag to print debug && status info from system utilz
@@ -63,8 +63,12 @@ alias    clrz='echo -en "$z hk:$hk#$z; hr:$hr#$z; ho:$ho#$z; hy:$hy#$z; hg:$hg#$
 #   wNU`startx`,itwilrunthis astheloginsession.Ucan set this ina filein /etc/env.d 4NtIrsys,orsetit perUser in ~/.bash_profile (or similR4othr shLz). Xamplof
 #   setng4wholsys:`echo XSESSION="Gnome" > /etc/env.d/90xsession; env-update && source /etc/profile`; EBJLAkY8:AkuUbu14.10 nolongrhas thOsdirz sOprolyunUsed;
 export JAVA_HOME='/usr/lib/jvm/java-7-openjdk-amd64';     # D7PM1TjA:upd8d4Ubu13.04&&ant4Android dvl 2add2pathBlO
+export NODE_VERSION='v10.15.3'; # J5BMGHVf:NodeJS installed into /usr/local/lib/nodejs/node-v10.15.3-linux-x64/ according to:
+export NODE_DISTRO='linux-x64'; #   HTTPS://GitHub.Com/nodejs/help/wiki/installation instructions;
 ulimit  -c 65535; # 33,553,920-bytes # setz coredump size limit2 32MB (4Dbugng) wher #-param is *512-byte blox or 'unlimited' canBUsed
-typeset -U path ; path=($HOME/bin $HOME/.local/bin /usr/local/sbin /usr/sbin /sbin . /usr/local/bin /usr/bin /bin /opt/bin $HOME/lib/perl5/bin $HOME/lib/Octology/f8/pal8 $HOME/dvl/t8/dmd/linux/bin $JAVA_HOME/bin $HOME/dvl/t8/ndrd/adt/sdk/tools $HOME/dvl/t8/node $HOME/.nodebrew/current/bin $path); # atmptd2nstl DMDv2.052 on Java7OpenJDK && GoogleAndroid-18 (4.2)
+typeset -U path ;path=($HOME/bin $HOME/.local/bin /usr/local/sbin /usr/sbin /sbin . /usr/local/bin /usr/bin /bin /opt/bin $HOME/lib/perl5/bin $JAVA_HOME/bin
+  $HOME/lib/Octology/f8/pal8 $HOME/dvl/t8/dmd/linux/bin $HOME/dvl/t8/ndrd/adt/sdk/tools $HOME/dvl/t8/node/node-$NODE_VERSION-$NODE_DISTRO/bin $path);
+# old:atmptd2nstl DMDv2.052 on Java7OpenJDK && GoogleAndroid-18 (4.2), now J5BMGPOM:tryng2setup l8st NodeJS 4 React_n8ive Expo d8ok nstdof nodebrew hopefully;
 #          path=($path  $HOME/dvl/t8/node $HOME/.nodebrew/current/bin );export path; # I7CMBrew:got GitHub NodeBrew 4NodeJS; Not sure why src doesn't get this?
 #          path=($path  $HOME/dvl/jobz/InnovationProtocol/Android/Android-Google-Linux_x86-SDK-1.6_r1-99GFQiD/tools); # old2009GoogleAndroid dvlpmnt-toolz path
 #f   [[ -d             "$HOME/.rakudobrew/bin" ]]; then # examples prepended Rakudo's bin/ to $PATH but I'd rather append them for now (if bin/ dir is found)
@@ -85,7 +89,8 @@ export PKG_CONFIG_PATH="/usr/lib/pkgconfig";              # E2LLATsm:Added4SrcHi
                                                  export TZ='America/Chicago'; # .. which is the same as my /etc/timezone file && maybe CDT -5 at D8FCQgn;
 #xport DST='0'; watch=(notme);                  #export TZ='CST';     # DaylightSavingsTime?;                            | Coordinated Universal Time (UTC|GMT)
 #f   [[ "${(L)HOTy}" ==         cygwin* ]]; then export TZ='PST'; fi; # United States of America / Los Angeles (PST|PDT) | Coordinated Universal Time (UTC|GMT)
-#xport LANG='en_US.UTF-8';export LC_ALL="$LANG"; export LC_CTYPE="$LANG";export LANGUAGE="$LANG"; # orig mA hav nEded thEs lang setngz4 urxvt?
+# J5FMLoTH:HTTPS://AskUbuntu.Com/questions/359753/gtk-warning-locale-not-supported-by-c-library-when-starting-apps-from-th said case-sensitiv locale stuff BlO;
+export LANG='en_US.utf-8';export LC_ALL="$LANG"; export LC_CTYPE="$LANG";export LANGUAGE="$LANG"; # orig mA hav nEded thEs lang setngz4 urxvt?
 # 82DJ06ZE:instead of abov relying on exported ENV variablez it seemz betr2set /etc/(env.)?d(efault)?/(02)?locale or2use `localedef` probably4mostUsecases?;
 #xport TERM='linux'; # find out when explicit TERM assignment has seemed necessary (maybe for vim colors but fixed by .vimrc "set background=dark"?)
 export EDITOR="$HEdt" ;export PERL5LIB="$HOME/lib:$HOME/lib/perl5/lib/perl5/x86_64-linux-gnu-thread-multi:$HOME/lib/perl5/lib/perl5:./lib"; # `which vim `; #dflt(&&preferred)way2load my *.pm (butTaki shud nstd get i386 path)
@@ -185,14 +190,16 @@ alias  gpnt=' grp  -nubTH';alias gpnz='gpnt -Z';alias gca='grep --color=auto'; #
 # from`man grep`:".*Uzd wiCmdz lyk:`find -print0`,`perl -0`,`sort -z`,&&`xargs -0` 2procRbitrarEfylnamz,EvNthoz contNngNwLnz(azNulTrmN8dCstylStrzNstdOvNwLn).";
 if     [   -z  "${debian_chroot:-}" ] && [ -r /etc/debian_chroot ]; then   # set variable IdNtifyng the chroot U wrk in (Used in prmpt bElO)
   debian_chroot=$(cat                         /etc/debian_chroot) ;   fi
+alias xprt='export';
 # OldeBashStylPrmt:   PS1='%{[1;33m%}[%{[1;36m%}%n%{[1;37m%}@%{[1;36m%}%m%{[1;31m%}`pt`%{[1;34m%}%~%{[1;33m%}]%{[1;32m%}%(!.#.$) ';
 # NewZshStlPmt:export PS1='%{[1;33m%}%[%{[1;36m%}%n%{[1;37m%}@%{[1;36m%}%m%{[1;31m%}`pt`%{[1;34m%}%~%{[1;33m%}]%{[0;33m%}%(!.#.$)%{[1;32m%}';
 #xport PS1='%{[1;33m%}%(!.<.[)%{[1;36m%}%n%{[1;37m%}@%{[1;36m%}$HHst%{[1;31m%}`pt -cp`%{[1;34m%}%~%{[1;33m%}%(!.>.])%{[1;32m%}';
 #xport PS1='[1;37m%(!.<.[)[1;33m%n[1;34m@[1;35m$HHst`d8 -a`[1;34m`c8fn $PWD`[1;37m%(!.>.])[1;32m'; # aparNtly -z && all %{ %} nEded4CLIwidtcalQl8
 #xport PS1='%{[1;37m%}%(!.<.[)%{[1;33m%}%n%{[1;34m%}@%{[1;35m%}$HHst`d8 -z`%{[1;34m%}%~%{[1;37m%}%(!.>.])%{[1;32m%}'; # F1PLEswI:s/%~/c8fn/;
-export           PS1='%{[1;37m%}%(!.<.[)%{[1;32m%}%n%{[1;34m%}@%{[1;36m%}$HHst` d8 -z `%{[1;34m%}` c8fn -z $PWD `%{[1;37m%}%(!.>.])%{[1;32m%}' ;
-alias xp="export PS1='%{[1;33m%}%(!.<.[)%{[1;36m%}%n%{[1;37m%}@%{[1;36m%}$HHst\`d8 -f|sS z\`%{[1;34m%}%~%{[01;01;01;1;33m%}%(!.>.])%{[1;32m%}'";
-alias dp="export PS1='%{[1;37m%}%(!.<.[)%{[1;32m%}%n%{[1;34m%}@%{[1;36m%}$HHst\`d8 -z\`%{[1;34m%}\`c8fn -z $PWD\`%{[1;37m%}%(!.>.])%{[1;32m%}'";
+export         PS1='%{[1;37m%}%(!.<.[)%{[1;32m%}%n%{[1;34m%}@%{[1;36m%}$HHst` d8 -z `%{[1;34m%}` c8fn -z $PWD `%{[1;37m%}%(!.>.])%{[1;32m%}';
+alias xp="xprt PS1='%{[1;33m%}%(!.<.[)%{[1;36m%}%n%{[1;37m%}@%{[1;36m%}$HHst\`d8 -f|sS z\`%{[1;34m%}%~%{[01;01;01;1;33m%}%(!.>.])%{[1;32m%}'";
+alias dp="xprt PS1='%{[1;37m%}%(!.<.[)%{[1;32m%}%n%{[1;34m%}@%{[1;36m%}$HHst\`d8 -z\`%{[1;34m%}\`c8fn -z \$(pwd)\`%{[1;37m%}%(!.>.])%{[1;32m%}'";
+# J5IMApwd:Above DefaultPrompt $PWD was not getting upd8d properly like it would for just str8 PS1 assignment, so had to wrap in sub \$(pwd) command 2 work;
 #case "$TERM" in xterm*|rxvt*) # if this is an xterm set the title to user@host:dir; J5AMBPS1:shudBcool2mk ps1() set PS1 func wich tAkez dif d8,c8fn,4m@z,etc.;
 #      PS1="\[\e]0;${debian_chroot:+($debian_chroot)}\u@\h: \w\a\]$PS1";; # also setz windO tItl2 Uzr@hOst:dir; abov R4 Xpanded (-full) && Default Ps1 PromPtz;
 #  *) ;; esac  # similR wA2du BlO is `p h p$PPID o cmd` prntz '/bin/login --' on console&& '/usr/lib/gnome-terminal/gnome-terminal-server' in an X.Org GnomTerm
@@ -777,6 +784,7 @@ mjoin() { ffmpeg -i $1 -i $2 -acodec copy -vcodec copy $3; } # IB6LExci:was in ~
 alias kscr='k $(psag "/screeps_server\$"|g " Ssl "|head -n 1|cut -c10-14)'; # try2 kill prv8 screeps_server process easier than typing k $PID aftr psag Sc
 alias kamp='ka -q -9 mplayer'; # -quiet (!warn if!mtch) && -9 kill force signal  ## du! actually kill any @all (if U can hLp it, plEz)!
 alias kasd='ka -q speech-dispatcher'; # resolve Aku's buggy loud HDMI audio clicking loop from "cicero" tXt2sPch4 mbrola wich surfaced aftr watching Twitch vid
+alias kisp='kasd';alias kasp='kasd';alias ksp='kasp';alias kspd='kasp'; # make a bunch of other good guesses at what the alias was when forgotten J5CMGnwN;
 alias kafp='ka -q plugin-container'; #'kill `ps ax | grep firefox | grep flash | cut -d" " -f1`'; # Kill crashed adobe Flash plugin (altho bad if ever running additional firefox plugins && will have to restart those too). Could also use   | c8 0';#now instead.
 #/usr/lib/firefox/plugin-container /usr/lib/flashplugin-installer/libflashplayer.so -greomni /usr/lib/firefox/omni.ja 1881 true plugin
 alias kas=' kasd'; # KillAllStupidScratchySpeechSoundStaticShockSparkSpaz

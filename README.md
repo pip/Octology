@@ -9,18 +9,18 @@ Many `bin/` commands print useful Help text when given a `-h` parameter (white s
 
 If your paths and Perl environment are setup similarly, to gain a bearing on fundamental Octology utilities and organiz8ion, please try executing:
 
- * `ftst`  - run the gamut of Perl File TeSTs on the default .Hrc file
- * `tsgr`  - Test Select Graphic Rendition additional text attributes
-<!-- * `sumb` - SUMmarize most ~/bin/ executaBle files rather colorfully
- * `tstn` - TeST Navig8ion of A-Star algorithm in Screeps 50x50 maps
- * `tstc` - TeST c8 Col8 color8ion classic representation progression-->
+ * `ftst ` - run the gamut of Perl File TeSTs on the default .Hrc file
+ * `tsgr ` - Test Select Graphic Rendition additional text attributes
+<!-- * `sumb ` - SUMmarize most ~/bin/ executaBle files rather colorfully
+ * `tstn ` - TeST Navig8ion of A-Star algorithm in Screeps 50x50 maps
+ * `tstc ` - TeST c8 Col8 color8ion classic representation progression-->
 <!-- * `tsgr` - Test Select Graphic Rendition additional text attributes-->
 
  * `which` - show a basic colored list of very useful GNU/Linux aliases
- * `pal8`  - set first 16-color PALette ("8") for terminal or console
-<!-- * `gnp8` - GeNerate a complete Pal8 mapping of b64 into 256-colors
- * `calN` - display a CALeNdar of the colored d8-based recent Years-->
-<!-- * `lodH` - LOaD ~/.Hrc d8a-file to parse and print colorized fields-->
+ * `pal8 ` - set first 16-color PALette ("8") for terminal or console
+<!-- * `gnp8 ` - GeNerate a complete Pal8 mapping of b64 into 256-colors
+ * `calN ` - display a CALeNdar of the colored d8-based recent Years-->
+<!-- * `lodH ` - LOaD ~/.Hrc d8a-file to parse and print colorized fields-->
 
 <!-- even though of course originally above command && below screen shot lists were each Top8, they're now more focused on just most public Top6 or 4 -->
 ## Current Top Screen Shots
@@ -81,9 +81,9 @@ If I ever become unable to continue developing this project further, my hope is 
 
 #### Secondary Old Screen Shots
 ##### (*several decently upd8d examples*)
-![Octology-sumb-shot_1614x952-IA3MGSUM](https://github.com/pip/Octology/raw/master/gfx/sho/Octology-sumb-shot_1614x952-IA3MGSUM.png "Octology-sumb-IA3MGSUM")
 <!--![Octology-8trm-shot_1280x800-IA3MHsum](https://github.com/pip/Octology/raw/master/gfx/sho/Octology-8trm-shot_1280x800-IA3MHsum.png "Octology-8trm-IA3MHsum")
 ![Octology-8trm-shot_1280x800-HBBLK762](https://github.com/pip/Octology/raw/master/gfx/sho/Octology-8trm-shot_1280x800-HBBLK762.png "Octology-8trm-HBBLK762")-->
+![Octology-sumb-shot_1614x952-IA3MGSUM](https://github.com/pip/Octology/raw/master/gfx/sho/Octology-sumb-shot_1614x952-IA3MGSUM.png "Octology-sumb-IA3MGSUM")
 ![Octology-ftst-shot_1614x952-IA3MGato](https://github.com/pip/Octology/raw/master/gfx/sho/Octology-ftst-shot_1614x952-IA3MGato.png "Octology-ftst-IA3MGato")
 
 ![Octology-ckm8-shot_1536x960-HAOM9HKQ](https://github.com/pip/Octology/raw/master/gfx/sho/Octology-ckm8-shot_1536x960-HAOM9HKQ.png "Octology-ckm8-HAOM9HKQ")

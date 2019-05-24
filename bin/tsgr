@@ -2,7 +2,7 @@
 use strict;use warnings;use utf8;use v5.10; # F33L8iqa:testng installed terminals for SGR Select Graphic Rendition support to mimic in 8trm aftr c8 adds layrz,
 use Octology::a8; # might want to add codez to a8 d8a then ref here? My custom f0nt codes in here are making l8st xterm resize! Learn how.
 use Octology::b8; # just for b64
-use Octology::d8;my $d8VS='I4SMAhLp';my $term='';$term=$ENV{'TERM'} if(exists($ENV{'TERM'})); # `msgcat --color=test` haz intNsiv HSV color test to learn from.
+use Octology::d8;my $d8VS='J5JM5hSX';my $term='';$term=$ENV{'TERM'} if(exists($ENV{'TERM'})); # `msgcat --color=test` haz intNsiv HSV color test to learn from.
 open my $out8,'>&',STDOUT or die "Can't open  duplic8 STDOUT handle: $!";binmode $out8,':encoding(UTF-8)'; # crE8 local duplic8 of global
 # 2du:mk Blox mode text blacK in middle && White on sidez (like SVG),mk 80col-b; # argumentz: (dashez are optional)
 my @sd8a=([ 0     , 'N Normal / reset                                        '], #   -c omitz Color map, -B showz color gradient Blockz, -b Bkgr Blox
@@ -19,40 +19,40 @@ my @sd8a=([ 0     , 'N Normal / reset                                        '],
           [10     , '0?primary (default) f0nt in a new topA map?             '],
          #[11–19  , '9?n-th     altern8  f0ntz                               '],
           [20     , 'F Fraktur  : on                                  hRdlsup'],
-          [21     , 'D bold     : off or underline: Double            hRdlsup'],
+          [21     , 'D bold     : off or underline: Double (Gnom-Term:4W!)sup'],
           [22     , 'b Bold     : off, fAint  : off or Normal colr/intensity '],
          #           a => b or remap to fAint background color?
-          [23     , 'i Italic   : off, Fraktur: off                          '], # F34LK3dr:these fake .f0ntz support 5 tied wi xterm && urxvt, behind 7 of GT,
+          [23     , 'i Italic   : off, Fraktur: off       (:none)            '], # F34LK3dr:these fake .f0ntz support 5 tied wi xterm && urxvt, behind 7 of GT,
          #           f => i or remap to other F0nt?                              #   sak, && console; shoot for supporting almost all somehow
-          [24     , 'u Underline: none                                       '], # HTTP://Misc.FlogiSoft.Com/bash/tip_colors_and_formatting comp@ tbl4many trmz
+          [24     , 'u Underline:none                     (!none)            '], # HTTP://Misc.FlogiSoft.Com/bash/tip_colors_and_formatting comp@ tbl4many trmz
          #           d => u or remap to Double overline?                         #   aTerm,Eterm,gnome-terminal,Guake,Konsole,NautilusTerminal,rxvt,Terminator,
-          [25     , 'l bLink    : off                                        '], #   Tilda,xfce4-terminal,xterm,xvt,LinuxTTY,VTE
+          [25     , 'l bLink    : off                     (:none)            '], #   Tilda,xfce4-terminal,xterm,xvt,LinuxTTY,VTE
          #           l => k or remap to some new special blink pattern?          # Some otherz2tSt:stterm,stjerm,qterminal,terminal.app,mate-terminal,tmate,
           [26     , 'S reServed : remap?                                     '], #   tmux,evilvte,lxterminal,lxterm,sakura,pterm,mrxvt,urxvt,roxterm,vttest,
           [27     , 'r image    :  positive        (Reverse: off)            '], #   mlterm,aterm-ml,rxvt-ml,yeahconsole,lilyterm;
           [28     , 'v image    :   Visible (reVeal,conceal: off)            '],
-          [29     , 'c not Crossed-out                                       '], # G7LM4ccv:l8st xterm-256color now supports 9 [BAIULRVCD], still 7 [BAIURVC]
+          [29     , 'c not Crossed-out                    (:none)            '], # G7LM4ccv:l8st xterm-256color now supports 9 [BAIULRVCD], still 7 [BAIURVC]
          #[30–37  , '  set     text color       (foreground)                 '], #   of GT && sak, sortof 5 [BIULR] on console (A&&U appear same&&Lduz!bLink),
-          [38     , 'X eXtended              set foreground color            '], #   sortof 5 [BIULR] urxvt (L&&K bLinK@same r8,TERM='rxvt-unicode-256color',
-          [39     , 'Y default text colorY      (foreground)                 '], #   COLORTERM='rxvt-xpm',VTE_VERSION=4205);
+          [38     , 'X eXtended     colorX   set foreground:(clr)            '], #   sortof 5 [BIULR] urxvt (L&&K bLinK@same r8,TERM='rxvt-unicode-256color',
+          [39     , 'Y default text colorY      (foreground:colr)            '], #   COLORTERM='rxvt-xpm',VTE_VERSION=4205);
          #[40–47  , '  set     text color        background                  '], # G8SM00TH:aterm startz with many bakslashez&&prmpt but duz!accept input, Et
-          [48     , 'x eXtended              set background color            '], #   has 4 [BULR] (but Lduz!bLink), terminator has 6 [BAURVC] (with TERM just
-          [49     , 'y default text colorY      (background)                 '], #   'xterm'&&COLORTERM='gnome-terminal'&&no VTE_VERSION), tilda [BAIURVC],
-          [50     , 's reServed : remap?                                     '], #   xfce4-terminal [BAURVC] (wi TERM='xterm',COLORTERM=$0,&&VTE_VERSION=4205),
+          [48     , 'x eXtended     colorX   set background:color            '], #   has 4 [BULR] (but Lduz!bLink), terminator has 6 [BAURVC] (with TERM just
+          [49     , 'y default text colorY      (background:colr)            '], #   'xterm'&&COLORTERM='gnome-terminal'&&no VTE_VERSION), tilda [BAIURVC],
+          [50     , 's reServed : remap?                  (:none)            '], #   xfce4-terminal [BAURVC] (wi TERM='xterm',COLORTERM=$0,&&VTE_VERSION=4205),
           [51     , 'M fraMed   : on                                     ?sup'], #   xvt [BUR] (many bakslashez then no colrz,TERM='xterm-r6',COLORTERM='',
           [52     , 'E Encircled: on                                     ?sup'], #   VTE_VERSION=4205,slow), st [BIULKR] (L&&K same r8,TERM=stterm-256color,
-          [53     , 'O Overlined: on                                     ?sup'], #   COLORTERM='',VTE=4205), lilyterm [BAIURVC] (TERM=xterm-256color,COLORTERM=
+          [53     , 'O Overlined: on           (Gnome-Terminal:4DWin!)hRdlsup'], #   COLORTERM='',VTE=4205), lilyterm [BAIURVC] (TERM=xterm-256color,COLORTERM=
          #           d maybe   remap to Double overline?                         #   $0,VTE=4205);
-          [54     , 'm fraMed   : off, Encircled: off                        '],
+          [54     , 'm fraMed   : off, Encircled: off     (:none)            '],
          #           e => m or remap to double fraMEd?
-          [55     , 'o Overlined: off                                        '],
+          [55     , 'o Overlined: off                     (:none)            '],
          #[56–59  , '  reserved                                              '],
-          [60     , 'H ideogram        underline or        line rigHt hRdlsup'],
-          [61     , 'h ideogram double underline or double line rigHt hRdlsup'],
-          [62     , 'T ideogram         overline or        line lefT  hRdlsup'],
-          [63     , 't ideogram double  overline or double line lefT  hRdlsup'],
-          [64     , 'G ideoGram stress marking                        hRdlsup'],
-          [65     , 'g ideoGram attributes off                        hRdlsup'],
+          [60     , 'H ideogram forget underline so Hang figure eigHt !yetsup'], # J5JM5Yth:only aftr the double-stress-markings, other way if stress after;
+          [61     , 'h ideogram alreaD underline so doublHHline rigHt hRdlsup'],
+          [62     , 'T ideogram alreaD  overline or sTrike lineTlefT  hRdlsup'],
+          [63     , 't ideogram double  overline or doublTTline lefT  hRdlsup'], # In-N-Out, that's what a hamburga is all about!  ;)
+          [64     , 'G ideoGram stress markinG (could do other stuff!)hRdlsup'],
+          [65     , 'g ideoGram attributes off (maybe only 1st layer?)hRdlsup'],
          #[90–97  , '  set foreground text color, high intensity             '],
          #[100–107, '  set background      color, high intensity             '],
          ); # show above table then light && 256 colorz
@@ -77,12 +77,14 @@ if($argz !~ /s/i){
   for(0..$#sd8a){my $d8ca=Octology::d8->new()->colr('a');    printf($out8 "\e[m%3d ",$sd8a[$_]->[0]);  # new d8 obj Colored with Ansi, && locl code prntd, !S
     if($term !~ /^stterm/ || !exists($ster{$sd8a[$_]->[0]})){printf($out8 "\e[%dm"  ,$sd8a[$_]->[0]);} # say below got loop $_ before given explicit '' param
     my                                                              $dscs          = $sd8a[$_]->[1] ;          $dscs=~ s/(\W)(on )(\W)/$1$G$2$K$3/gx;
-    $dscs=~ s/(ideogram )/$P$1$z/gix;$dscs=~ s/(sup)$/$C$1/;$dscs=~ s/([!+])/$R$1/g;$dscs=~ s/([,\/])/$Y$1$K/g;$dscs=~ s/(\W)(off)(\W)/$1$R$2$K$3/g ;
+    $dscs=~ s/(ideogram )/$P$1$z/gix;$dscs=~ s/(sup)$/$C$1/;$dscs=~ s/([!+])/$R$1/g;$dscs=~ s/([,\/])/$Y$1$K/g;$dscs=~ s/(\W)(off)(\W)/$1$R$2$K$3/g ;$dscs=~ s/(\w*kin[gG]?)(\W)/$M$1$o$2/g ;
+    $dscs=~ s/(\W)(none)(\W)/$1$r$2$k$3/g ;
     $dscs=~ s/(intensity)/$M$1$K/g  ;$dscs=~ s/(min\s)/$B$1$K/g ;$dscs=~ s/(150)/$p$1$K/g;$dscs=~ s/(ground)/$o$1$K/g;$dscs=~ s/(lined?)/$C$1$K/g;
     $dscs=~ s/(normal   )/$z$1$K/gix;$dscs=~ s/(set\s)/$M$1$K/g ;$dscs=~ s/(Reverse)/$p$1$K/gi ;$dscs=~ s/(rigHt)/$r$1$K/gi;$dscs=~ s/(lefT)/$c$1$K/gi;
     $dscs=~ s/(default  )/$Y$1$K/gix;$dscs=~ s/(colo?r)/$C$1$K/g;$dscs=~ s/(reVeal )/$O$1$K/gix;$dscs=~ s/(conceal)/$c$1$K/gi;$dscs=~ s/(Fraktur)/$Y$1$K/gi;
     $dscs=~ s/(double   )/$w$1$K/gix;$dscs=~ s/(encircled)/$C$1$K/gi;$dscs=~ s/(hRdl)/$r$1$K/gix;$dscs=~ s/(wId)/$R$1$K/gi;$dscs=~ s/([-.])/$g$1$K/gi;
     $dscs=~ s/(de)(creased)/$R$1$c$2$K/gi;$dscs=~ s/(in)(creased)/$G$1$c$2$W/gi; # mA want2add fore back,under over,or,not,text,remap,framed,reserved,extended
+    $dscs=~ s/(re)(Served )/$W$1$c$2$w/gix;$dscs=~ s/(X)(ten\w*|\W)/$P$1$g$2$B/gi; # J5JMB8wq:try to insert new entries for next paired sub-words
     $dscs=~ s/([()])/$B$1$w/g;$dscs=~ s/([:?])/$W$1/g;       printf($out8 "%s$z%s"  ,$dscs,$d8ca   );say $out8 '' if(!$widt || $_ % 2);}}
 if($argz !~ /c/i){say $out8 $z if($widt);if($argz =~ /b/i){my $p88c=$cmap{'8pal8'};$p88c=~  s/\s+//g; my $q=38;$q=48 if($argz =~ /b/); # showing color tables
     if($widt){ # try to make Foreground text color blacK over bright blocks        # big blockz in lowercase b background mode, B for Fg both uppercase
