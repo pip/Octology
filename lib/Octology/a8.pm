@@ -1570,7 +1570,7 @@ sub ftst{ # 37MK06SK:ftst Utl2run thruPerlzFileTeSTz on its parameter Filename
   -h   - print this Help text; If no filename parameter is given, \$_ then the default Octology \$HOME/.Hrc d8a file is tested;
          Also prints Perl regex && string backslash eScape codes in one 160x48 page to keep similar reference maps together.
          Added measured default ~/.Hrc to fit regular-expression flag descriptors up beside the default File TeSTs now too;
-  2du:fix 160x50 glob error when printing probably some global hash or array (from where?),add regex flagz2 80-colm mode2?;";exit;}
+  2du:add regex flagz2 80-colm mode2?;";exit;}
   my $A=S('A');my $F=S('F');my $N=S('N');my $X=S('X');
   for(my $i=0;$i<@oper;$i+=2){my $oprS=S(uc($oper[$i]));my $flgS=$F;my $sizl= 28;my $etrv=0; # sizl was = 32 - 4;
     if($oper[$i] =~ /^[RWXO]$/ && exists($ENV{'COLUMNS'}) && $ENV{'COLUMNS'} <= 80){
@@ -1578,7 +1578,7 @@ sub ftst{ # 37MK06SK:ftst Utl2run thruPerlzFileTeSTz on its parameter Filename
     }else{print  $out8 "$G($Y-$oprS$oper[$i] $file$G)$W==$G($C";}
     if(0&& $oper[$i] =~ /[TB]/ && $^O !~ /^MSWin/){ # or $^O or $ENV{'OSTYPE'} used to test for what were MicroSoft only flags prior to Perl 5.24
                               print  $out8 "Can't test, except in MSWindows!";}
-    else                     {$etrv=eval(    "(-" .                      "$oper[$i] \'$file\')"); $etrv=0 unless(defined($etrv) && $etrv);
+    else                     {$etrv=eval(    "(-" .            "$oper[$i] \'$file\')"); $etrv=0 unless(defined($etrv) && $etrv);
                               print  $out8            $etrv  if($oper[$i] !~ /^[MACs]$/); # originally only checked if eval succeeded but did!retn actual value
       if                                                       ($oper[$i] eq      's'  ){
         $sizl-=                          length(comma($etrv));                          }
@@ -1610,10 +1610,11 @@ sub ftst{ # 37MK06SK:ftst Utl2run thruPerlzFileTeSTz on its parameter Filename
       $dscs=~ s/(-)/$F$1$flgS/g;$dscs=~ s/(X)(plicit )/$flgS$1$Y$2/g;$dscs=~ s/(br)(O)(kn )(O)(pti)(O)(n)/$Y$1$flgS$2$Y$3$flgS$4$Y$5$flgS$6$Y$7/gi;
       $dscs=~ s/(I)(nsens)(I)(t)(I)(ve)(I)/$flgS$1$Y$2$flgS$3$Y$4$flgS$5$Y$6$flgS$7/gi;$dscs=~ s/(get)(S)(newline)(S)/$Y$1$flgS$2$Y$3$flgS$4/gi;
       $dscs=~ s/(G)(obbling)(G)(rabber)/$flgS$1$Y$2$flgS$3$Y$4/gi;$dscs=~ s/(M)(any )/$flgS$1$Y$2/gi;$dscs=~ s/(xx )/$X$1$Y/i;
-      $dscs=~ s/(\()([^)]*)(\))/$M$1$Y$2$M$3/g;$dscs=~ s/(spa?ce?s?)/$N$1$A/gi;
+      $dscs=~ s/(\()([^\)]*)(\))/$M$1$Y$2$M$3/g;$dscs=~ s/(spa?ce?s?)/$N$1$A/gi;
                               print  $out8 "$dscs";}
     if(!exists($ENV{'COLUMNS'}) || $ENV{'COLUMNS'} <= 108 || $i % 4 || $i > ($#oper-8)){ # might have needed an xor in here, but just made sepR8 clauses nstd?
-                              print  $out8    "\n" if(!exists($ENV{'COLUMNS'}) ||($ENV{'COLUMNS'} <=80 && $oper[$i] !~ /^[rwxo]$/)|| $ENV{'COLUMNS'} >=160);}}
+                              print  $out8    "\n" if(!exists($ENV{'COLUMNS'}) || ($ENV{'COLUMNS'} <= 80 && $oper[$i] !~ /^[rwxo]$/)
+                                                          ||  $ENV{'COLUMNS'} >= 160);}}
   my $bScs=" compact list of Perl backslash eScape codes for both regular-expressions and character-strings: (was AllAquA, now with option flag d8a above too)
   \\000              escape                             Octal sequence.    \\o{};(See also)  # /!in\\[\\];\$/ mEnz!usable in bracket char class (like [\\dA-Z])
   \\1, \\2, ..past 9?        absolute (can \${d+} in s///) backreference.   !in[];  # Character Escapes - Fixed characters: 7 chars have a dedicated escape.
@@ -1633,7 +1634,7 @@ sub ftst{ # 37MK06SK:ftst Utl2run thruPerlzFileTeSTz on its parameter Filename
   \\G                pos                      assertion.                  !in[];  \\s                character class 4                  whiteSpace          ;
   \\h                character class 4      Horizontal whitespace              ;  \\S                character class 4  non-            whiteSpace          ;
   \\H                character class 4  non-Horizontal whitespace              ;  \\t                Tab                         character                  ;
-  \\k{}, \\k<>, \\k''  named                               bacKreference.   !in[];  \\u                titlecase (Uc) next         character.            !in[];
+  \\k{}, \\k\<\>, \\k''  named                               bacKreference.   !in[];  \\u                titlecase (Uc) next         character.            !in[];
   \\K                Keep the stuff left  of                      \\K.     !in[];  \\U                Uppercase                              until \\E.  !in[];
   \\l                Lowercase      next         character.               !in[];  \\v                character class 4         Vertical whitespace          ;
   \\L                Lowercase                              until \\E.     !in[];  \\V                character class 4  non-   Vertical whitespace          ;
@@ -1646,23 +1647,23 @@ sub ftst{ # 37MK06SK:ftst Utl2run thruPerlzFileTeSTz on its parameter Filename
   \\Q                Quote (disable) pattern metacharacters until \\E.     !in[];\\cA-D:01 StartOfHeading,02 StartofTeXt,03 breakEndofTXt,04 EndOfTransmission,
   \\cE 05 ENQuiry,\\cF 06 positiveACKnowlegment,\\cN 0E ShiftOut,\\cO 0F ShiftIn(XON resume output),\\cP 10 DataLinkEscape HTTP://DC.Org/files/asciitable.pdf
   \\cQ-T DeviceControlcharacter1-4,\\cU 15 NegativeAcKnowledgement,\\cV 16 SYNchronousidle,\\cW 17 EndofTransBlock,\\cX 18 CANcel,\\cY 19 EndofMedium,
-  \\cZ 1A SUBstitute/endoffile,\\c[ 1B ESCape,\\c\\ 1C FileSeparator,\\c] 1D GroupSeparator ,\\c^ 1E RecordSeparator,\\c_ 1F UnitSeparator,20 SPace!" .
- "\"#\$\%&'()*+,..."; # `pdoc perlvar` describes all the shortest variables && perlrun has runtime flags
+  \\cZ 1A SUBstitute/endoffile,\\c\[ 1B ESCape,\\c\\ 1C FileSeparator,\\c\] 1D GroupSeparator ,\\c^ 1E RecordSeparator,\\c_ 1F UnitSeparator,20 SPace!" .
+"\"#\$%&'()*+,..."; # `pdoc perlvar` describes all the shortest variables && perlrun has runtime flags
   if(exists($ENV{'COLUMNS'})){
     if     ($ENV{'COLUMNS'} <=  80){$bScs='';}}
   $X=S('1');my $H=S('H');#$bScs=~ s/(\\\\)/$M$1$A/g; # looking pretty good for most potential matches
-  $bScs=~ s/(white      )/$W$1$A/gix;$bScs=~ s/(characters?)/$C$1$A/g  ;$bScs=~ s/(unicode)/$Y$1$A/gi;$bScs=~ s/(# )(.*)/$C$1$W$2/g;$bScs=~ s/(!)/$R$1$A/g;
-  $bScs=~ s/(horizontal )/$O$1$A/gix;$bScs=~ s/(vertical   )/$M$1$A/gix;$bScs=~ s/(word )/$p$1$A/gix;$bScs=~ s/(, )/$Y$1$A/gx;$bScs=~ s/(\.)/$p$1$A/g ;
-  $bScs=~ s/(Property   )/$p$1$A/gix;$bScs=~ s/(sequence   )/$c$1$A/gix;$bScs=~ s/(given)/$g$1$A/gi ;$bScs=~ s/(\/)/$Y$1$A/g ;$bScs=~ s/(- )/$Y$1$A/gx;
-  $bScs=~ s/(Boundary   )/$B$1$A/gix;$bScs=~ s/(Newline    )/$o$1$A/gix;$bScs=~ s/(Digits)/$K$1$A/gi;$bScs=~ s/(' )/$C$1$A/gx;
-  $bScs=~ s/(Escapes?   )/$F$1$A/gix;$bScs=~ s/(Octal      )/$O$1$A/gix;$bScs=~ s/( of )/$K$1$A/gi;$bScs=~ s/( or )/$c$1$A/gi;$bScs=~ s/(case)/$B$1$A/gi;
-  $bScs=~ s/(Space      )/$N$1$A/gix;$bScs=~ s/(octet      )/$o$1$z/gix;$bScs=~ s/(back)/$K$1$z/gix;$bScs=~ s/(until)/$w$1$z/gi;$bScs=~ s/(Lower)/$H$1$z/gi;
+  $bScs=~ s/(white      )/$W$1$A/gix;$bScs=~ s/(characters?)/$C$1$A/g  ;$bScs=~ s/(unicode )/$Y$1$A/gix;$bScs=~ s/(# )(.*)/$C$1$W$2/g;$bScs=~ s/(!)/$R$1$A/g;
+  $bScs=~ s/(horizontal )/$O$1$A/gix;$bScs=~ s/(vertical   )/$M$1$A/gix;$bScs=~ s/(word    )/$p$1$A/gix;$bScs=~ s/(, )/$Y$1$A/gx;$bScs=~ s/(\.)/$p$1$A/g ;
+  $bScs=~ s/(Property   )/$p$1$A/gix;$bScs=~ s/(sequence   )/$c$1$A/gix;$bScs=~ s/(given   )/$g$1$A/gix;$bScs=~ s/(\/)/$Y$1$A/g ;$bScs=~ s/(- )/$Y$1$A/gx;
+  $bScs=~ s/(Boundary   )/$B$1$A/gix;$bScs=~ s/(Newline    )/$o$1$A/gix;$bScs=~ s/(Digits  )/$K$1$A/gix;$bScs=~ s/(' )/$C$1$A/gx;
+  $bScs=~ s/(Escapes?   )/$F$1$A/gix;$bScs=~ s/(Octal      )/$O$1$A/gix;$bScs=~ s/( of )/$K$1$A/gi;$bScs=~ s/( or )/$c$1$A/gi   ;$bScs=~ s/(case)/$B$1$A/gi;
+  $bScs=~ s/(Space      )/$N$1$A/gix;$bScs=~ s/(octet      )/$o$1$z/gix;$bScs=~ s/(back)/$K$1$z/gi;$bScs=~ s/(until)/$w$1$z/gi  ;$bScs=~ s/(Lower)/$H$1$z/gi;
   $bScs=~ s/(strings?   )/$r$1$z/gix;$bScs=~ s/(end        )/$H$1$z/gix;$bScs=~ s/(absolute)/$W$1$z/gix;$bScs=~ s/(Named)/$Y$1$A/gix;$X=S('Yr');$H=S('Wb');
   $bScs=~ s/(heXadecimal)/$X$1$z/gix;$bScs=~ s/(slash      )/$H$1$A/gix;$bScs=~ s/(\()([^)]+)(\))/$C$1$R$2$C$3$A/gix;my $t=S('tk');my $U=S('5');
   $bScs=~ s/(tab)/$t$1$W/gix;$bScs=~ s/(next)/$U$1$z/gix;$bScs=~ s/(\/)(aa )/$Y$1$A$2$W/i;
   $bScs=~ s/(non)/$R$1$A/gix;$bScs=~ s/(class)( 4)/$c$1$M$2$A/g;$bScs=~ s/(in)(\[\])(;)/$z$1$o$2$W$3$z/g;$bScs=~ s/(;)(  \S|$)/$W$1$z$2/g;
   print $out8 $A,$bScs;
-  say   $out8 if(length($bScs));
+  say   $out8 '' if(defined($bScs) && length($bScs)); # just say on $out8 here was giving just the STDERR GLOB(x55564654645) kinda bug until isol8d to empty;
   # functions that use $_ as a default argument: abs, alarm, chomp, chop, chr, chroot, cos, defined, eval, evalbytes, exp, fc, glob, hex, int, lc, lcfirst,
   #   length, log, lstat, mkdir, oct, ord, pos, print, printf, quotemeta, readlink, readpipe, ref, require, reverse (in scalar context only), rmdir, say, sin,
   #   split (for its second argument), sqrt, stat, study, uc, ucfirst, unlink, && unpack.  all solo file tests use $_ except for -t , which defaults to STDIN.
