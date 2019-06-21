@@ -29,13 +29,13 @@ unsetopt                \
 # auto_pushd            \# setng addz dirz 2 stack wN just normally chngng 2 thM (wich I du not normally lIk or want)
 # ksh_arrays            \# rEmMbr wNwrItng scrptz[or funcz]2include'setopt [localoptions] ksharrays'sO arAzR 0-bAsed(but!glOblBcuzmOst scrptzRstndrdly 1-bAsed)
 # re_____match_____pcre \# mA want2set for Z-SHell scripting RegularExpressions to utilize PerlCompatibility styles && mA insert 'zmodload zsh/(pc)?re(gex)?';
-export vers='0.0';export d8VS='J5UMGR8I';export auth='PipStuart <Pip@CPAN.Org>'; # not Xportng $b sinc cOlIdz wi sort{$a <=> $b} /defhijlnqstuvx/i + AZ 4golf;
+export vers='0.0';export d8VS='J6KMHahn';export auth='PipStuart <Pip@CPAN.Org>'; # not Xportng $b sinc cOlIdz wi sort{$a <=> $b} /defhijlnqstuvx/i + AZ 4golf;
 if     [[       "$SHELL"    == "" ]]; then       export SHELL=`  which zsh`;fi # 8sh should parse this && OverId it    # shud `man zshall` /OSTYP 2lern4BlO
 if     [[       "$HOSTNAME" == "" ]]; then       export HOSTNAME=`hostname`;fi #`hostname`retnz fsckd nwlInz\n4CygWinzRxvt... ||smthng els lame  =(
 if     [[       "$HOST"     == "" ]]; then       export HOST="$HOSTNAME"   ;fi;export VERBOSE='1'; # set flag to print debug && status info from system utilz
 export     HHst="$HOST";alias lc="tr 'A-Z' 'a-z'";alias uc="tr 'a-z' 'A-Z'"; # || mayb atMpt2dup $var thru: $(echo $var|tr 'A-Z' 'a-z') | "[:(upp|low)er:]"
 export     HUsr="$USER";export HEdt=`which vim` ;export HWid="$COLUMNS";export HOSy="$OS"; # zsh's lc() 4varz2 m//i "${(L)HOSTNAME}"acordng2:
-export     HShl='zsh'  ;export HPgr=`which most`;export HHit="$LINES";  export HOTy="$OSTYPE";export H3WF="1"; #HTTP://WWW.CS.Elte.Hu/zsh-manual/zsh_6.html
+export     HShl='zsh'  ;export HPgr=`which most`;export HHit="$LINES";  export HOTy="$OSTYPE";export H3WF="0"; #HTTP://WWW.CS.Elte.Hu/zsh-manual/zsh_6.html
 export  COLUMNS="$COLUMNS";export LINES="$LINES";export ROWS="$LINES"; # zsh setz thEse lOcally but must Xport thM 4 Perl scriptz 2 access
 # Used2 if [[ "${(L)HHst}" == ax9* ]]; then export HHst='Ax9'; elif ... 2abbreV8&&capitalIz myhOst&&UzrnAmz fromold dvl&&work machinz especially4CygWindoze;
 # XDG (Xorg baseDirzGuide)4:GTK2,Compiz,Uzbl,Arora,Audacious,TrollTech,etc. from: HTTP://Standards.FreeDesktop.Org/basedir-spec/basedir-spec-latest.html
@@ -63,8 +63,8 @@ alias    clrz='echo -en "$z hk:$hk#$z; hr:$hr#$z; ho:$ho#$z; hy:$hy#$z; hg:$hg#$
 #   wNU`startx`,itwilrunthis astheloginsession.Ucan set this ina filein /etc/env.d 4NtIrsys,orsetit perUser in ~/.bash_profile (or similR4othr shLz). Xamplof
 #   setng4wholsys:`echo XSESSION="Gnome" > /etc/env.d/90xsession; env-update && source /etc/profile`; EBJLAkY8:AkuUbu14.10 nolongrhas thOsdirz sOprolyunUsed;
 export JAVA_HOME='/usr/lib/jvm/java-7-openjdk-amd64';     # D7PM1TjA:upd8d4Ubu13.04&&ant4Android dvl 2add2pathBlO
-export NODE_VERSION='v10.15.3'; # J5BMGHVf:NodeJS installed into /usr/local/lib/nodejs/node-v10.15.3-linux-x64/ according to:
-export NODE_DISTRO='linux-x64'; #   HTTPS://GitHub.Com/nodejs/help/wiki/installation instructions;
+export NODE_VERSION='v10.16.0'; # J5BMGHVf:NodeJS installed into /usr/local/lib/nodejs/node-v10.15.3-linux-x64/ according to:  J6KM5W16:upd8d to LTS version;
+export NODE_DISTRO='linux-x64';alias xo='expo';alias xord='xo r d8s2'; #   HTTPS://GitHub.Com/nodejs/help/wiki/installation instructions;
 ulimit  -c 65535; # 33,553,920-bytes # setz coredump size limit2 32MB (4Dbugng) wher #-param is *512-byte blox or 'unlimited' canBUsed
 typeset -U path ;path=($HOME/bin $HOME/.local/bin /usr/local/sbin /usr/sbin /sbin . /usr/local/bin /usr/bin /bin /opt/bin $HOME/lib/perl5/bin $JAVA_HOME/bin
   $HOME/lib/Octology/f8/pal8 $HOME/dvl/t8/dmd/linux/bin $HOME/dvl/t8/ndrd/adt/sdk/tools $HOME/dvl/t8/node/node-$NODE_VERSION-$NODE_DISTRO/bin $path);
@@ -353,8 +353,9 @@ alias     plb='   perl -MOctology::b8  -e'; # setup PerL eval        with Base-t
 alias     pab='   perl -MOctology::a8 -MOctology::b8  -e'; # Perl eval with A8  &&  B8   exports together like `pab "b8colr(b64(calQ('4096xx2048')))"`
 alias    pabd='   perl -MOctology::a8 -MOctology::b8 -MOctology::d8  -e'; # Perl eval with A8 && B8 && D8 (although d8 mainly crE8s new objects, not exports)
 alias     pep='   perl -MOctology::a8 -MOctology::b8 -MOctology::d8 -pe'; # Perl Eval with A8 && B8 && D8 for Piping filtr8ion
-alias      gg='   perl ~/dvl/d8/bin/gg   '; # basic perl call to priv8 non-executable development utility to Gener8 G-mail stamps for Gerry (my Dad)
-alias    drkh='   pa  "print drkh(@ARGV)"'; # HEX to RgbL with 8th intensities
+           gg() { perl ~/dvl/d8/bin/gg $@ ; }; # basic perl call to priv8 non-executable development utility to Gener8 G-mail stamps for Gerry (my Dad)
+#lias      gg='   perl ~/dvl/d8/bin/gg   ';
+alias    drkh='   pa  "print drkh(@ARGV)"'; # HEX to RgbL with 8th intensities  # abov gg was alias but changed to shell function so 'p' pRam doesn't Xpand;
 #lias    h2rl='   pa  "print h2rl(@ARGV)"'; # HEX to RgbLowbitz    # actually trying to reform these alias wrappers to standalone usable new ~/bin page2 utlz
 #lias    rl2h='   pa  "print rl2h(@ARGV)"'; #        RgbLowbitz to HEX
 #lias    fctz='   plb "      fctz(@ARGV)"';
@@ -389,9 +390,9 @@ alias      bk='   bak '; # bk    :            bak            (orig Pip:Utl file 
             b() { bk   $@; }     # unalias   b && redefining as simple function wrapper resolves         param alias expansion problem (but still will glob)
 #lias       b='   bk  '; #  b    :             bk
 alias       B='   b   ';
-alias     cls='  clear'; #  cls  :          clear (like DOS command for CLearScreen)
-alias       C='  cls  '; #  C    :B4 clear was wc (Count charz,words,&&lines&&eventually bits,bytes,[KMGTPEZY]i?bits|Bytes,code points,paragraphs,subs,etc.)
-alias      CC='  cd;C '; #       :                (combines Change directory back2 home ~ && then Clear screen,pretty easy2type 1-handed but Enter is a reach)
+alias     cls='clear  '; #  cls  :          clear (like DOS command for CLearScreen)  # -x below tries to preserve scrollback && just blank $TERM in newlinez
+alias       C='cls -x '; #  C    :B4 clear was wc (Count charz,words,&&lines&&eventually bits,bytes,[KMGTPEZY]i?bits|Bytes,code points,paragraphs,subs,etc.)
+alias      CC='cd;C   '; #       :                (combines Change directory back2 home ~ && then Clear screen,pretty easy2type 1-handed but Enter is a reach)
 alias     CCC='CC;en -e "\e[3J"' ; # special super Clear of scrollback too (goodaftr `kp` along wi xx 2clear paste buffers);CSI n J - ED(Erase in Display)
 alias    dusb=' du -sb'; #  du   :             du|df|dfc     (Disk usage, free, etc.) with -sb to Summarize (only total4each arg) with block-size Bytes
 alias     dus=' dusb  '; #                        it's often pretty useful to pipe the raw decimal size Summary in Bytes in2 `cma` 4isol8ing Thou,Mill,Bill...z
@@ -674,8 +675,8 @@ alias irc='irssi';
 #lias       srk='     irssi -c IRC.ServerCentral.Net -n PipStuart'; #srk         # can also do -w evl2003 to include pswd && might need -p to chng port BlO
 #lias       srk='     irssi -c IRC.INet.Tele.Dk:6667 -n PipStuart'; #srk         # altern8 IRC servers to try to connect to if otherz are down or net-split
 #  otherz:  EFNet.Demon.Co.UK  IRC.Nijenrode.Nl  HomeLien.No  QEast.Net          # for ScreenOctology*.pm editz BlO had2rEplAc e wi vim for multi-fIl OpNng
-alias swip='screen -wipe  '; # learn how to restore block cursor within multiplexed vim from the $TERM=screen.linux console (sEmz scrn mustXitB4 `curs` resetz)
-alias scrn='screen -h 9999'; # might not need to temporarily change TERM for irc (or any of these if TERM becomes working screen.xterm-256color) below
+alias swip='screen -wipe   '; # learn how2 restore block cursor within multiplexed vim from the $TERM=screen.linux console (sEmz scrn mustXitB4 `curs` resetz)
+alias scrn='screen -h 65535'; # might not need to temporarily change TERM for irc (or any of these if TERM becomes working screen.xterm-256color) below
 alias s2du='pu ~/dox/2du;export TERM="xterm";scrn -S 2du -t 2du e 2;export TERM="xterm-256color";po';alias s2='s2du'; # Used2wrap2ovrId TERM=screen ,xterm betr
 alias sirc='ct "irssi"  ;scrn -S irc -t irc irssi       ;  ';alias si='sirc';  # don't need -c IRC.Perl.Org or -n Pip since specified in ~/.irssi/config now
 alias sbrs='ct "bars"   ;scrn -S brs -t brs       zsh   ;  '; # also screen in some barrier (Synrg+) server&&client 2detatch from standrd terminal debug output
@@ -704,8 +705,34 @@ alias smuz='pu ~/muz    ;scrn -S muz -t muz             ;po';alias sm='smuz';ali
 alias smvz='pu ~/mvz    ;scrn -S mvz -t mvz             ;po';alias sM='smvz';alias Ob=' ob ';alias ob=' pu ~/muz/U2b;scrn -S mob -t mob g3 **/*Obs*     ;po';
 alias srut='pu  /etc    ;scrn -S rut -t rut sudo -E  zsh;po';alias sr='srut';alias Ob8='lob';alias lob='pu          ;l              m[uv]z/**/*Obs*ate_*;po';
 alias sadm='pu  /root   ;scrn -S adm -t adm sudo    bash;po';alias sA='sadm'; #abovOb8 orig just listed: (Annihil|Deso|Domin|InitE|Obliter)8 B4XtNdng2alldirz
-#lias sx='   scrn -x  ';   # would also B good 2 upd8 abov openingz of scrnz 2ck4 `scrn -ls $mtch` 4 already crE8d wich shud just B -x reattached 2 nstdofnew
-      sx() { scrn -x $@; } # unalias sx && redefining as simple function wrapper resolves parameter alias expansion problem (but still will glob), like ct;
+#lias sx='    scrn -x  ';   # would also B good 2 upd8 abov openingz of scrnz 2ck4 `scrn -ls $mtch` 4 already crE8d wich shud just B -x reattached 2 nstdofnew
+      sx() {  scrn -x $@; } # unalias sx && redefining as simple function wrapper resolves parameter alias expansion problem (but still will glob), like ct;
+scx() { if [[ "$#" -gt     0    ]]; then # print out some help text for -h (or l8r add --help) as first parameter && then return
+    if     [[ "$1"  =~ /^-*h/i  ]]; then en 'sx crE8d by PipStuart <Pip@CPAN.Org> to wrap GNU screen -x multiplexing terminals;';return(0);
+    elif   [[ "$1"  ==    2du   ]]; then s2du;export HsxF="$1";export HxjF='1';
+    elif   [[ "$1"  ==    8uf   ]]; then s28u;export HsxF="$1";export HxjF='1';
+    elif   [[ "$1"  ==    8xt   ]]; then s28x;export HsxF="$1";export HxjF='1';
+    elif   [[ "$1"  ==    8lc   ]]; then s8lc;export HsxF="$1";export HxjF='1';
+#   elif   [[ "$1"  ==    atl   ]]; then satl;
+#   elif   [[ "$1"  ==    b8a   ]]; then sb8a;
+#   elif   [[ "$1"  ==    bxl   ]]; then sbxl;
+#   elif   [[ "$1"  ==    cm8   ]]; then scm8;
+#   elif   [[ "$1"  ==    kno   ]]; then skno;
+#   elif   [[ "$1"  ==    mul   ]]; then smul;
+#   elif   [[ "$1"  ==    mvl   ]]; then smvl;
+#   elif   [[ "$1"  ==    put   ]]; then sput;
+#   elif   [[ "$1"  ==    cvi   ]]; then scvi;
+#   elif   [[ "$1"  ==    sfv   ]]; then ssfv;
+#   elif   [[ "$1"  ==    tab   ]]; then stab;
+#   elif   [[ "$1"  ==    tip   ]]; then stip;
+#   elif   [[ "$1"  =~ /^(2du|8uf|8xt|8lc|atl|b8a|bxl|cm8|kno|mul|mvl|put|cvi|sfv|tab|tip|ud8|dvl|muz|mvz|rut|adm|o[abcdfgmptu]8)$/ ]]; then ec "ARGV[0]=$1;";
+    else                          eval("s$1");export HsxF="$1";export HxjF='1'    ; fi;
+    if     [[ "$HxjF" ==  ""    ]]; then scrn  -x   $@    ;ec "Scrn-x here:$@   ;"; fi
+  elif     [[ "$HsxF" !=  ""    ]]; then scrn  -x  "$HsxF";ec "Scrn-x HsxF:$HsxF;"; fi; }
+      # if    scrn -ls has no $1 in Screen Sessions List, then dispatch to the correct screen session crE8or above, so more -x multipleXed can connect l8r;
+#if      [[ "${(L)HHst}" ==  oni*   ]] || [[ "${(L)HHst}" ==  aku*   ]]; then                    export HVW2='7680' ;export HVW3='11520'; # new50"TV is 3wide
+# if     [[     "$H3WF"  ==  "1"    ]];                                  then export HVW1='5760';export HVW2='11520';export HVW3='17280';               fi
+#elif    [[ "${(L)HHst}" ==  ryu*   ]] || [[ "${(L)HHst}" ==  ken*   ]]; then export HVW1='1920';                    export HVW3='5760' ;                 fi
 #lias sls=' scrn -ls'; # stuD screenie 2mkOwn version. wrapd `scrn -ls` BlObutl8r tAkthOs b8 && d8 rE4m@z as valid pRamz2reattach2. rEplAc scrn wi autO sx;
 alias SLS=' pabd "\$u=0;\$v=q(screen -ls);\$v.=qq( @ARGV) if(@ARGV > 0);\$S=\`\$v\`;while(\$S=~ /\t((\d+)\.(\S+)\s+\((\d+)\/(\d+)\/(\d+)\s+(\d+:\d+:\d+)\s+
   ([AP])M\)\t\(([AD])[te]tached\)\n)/x){\$L=\$1;\$I=q();\$I.=q( ) if(\$2 < (64**2));\$I.=b8c(b64(\$2));\$H=\$3;\$N=\$4;\$D=\$5;\$E=\$6;\$T=\$7;\$n=\$8;\$t=

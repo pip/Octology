@@ -7,7 +7,7 @@
 #   disabling it with 0 just gets 80x24 from the terminal d8abase && it doesn't change from there. I can't OpN Simp obj B4 say since \n mkz thM pop on Curses;
 # 2du:useReadKey2get strt dimz nstdofENV,tSt4 1ht||smal wd,mk sure not2PrntEscBkspc etc,brk tImout apRt&&Prnt cntdn secs,trySimp wrapz4COLS&&LINES2ck4upd8,
 #   clEnout all faild atMptz&&comNtz,mAB shO pxl dimz2,add colrz,add pRamz wi -help;
-use strict;use warnings;use utf8;use Curses::Simp;use Term::ReadKey;my $d8VS='H4RMBis4';my($envw,$envh, $smpw,$smph)=(0,0, 0,0);my($wdht,$keyp);
+use strict;use warnings;use utf8;use Curses::Simp;use Term::ReadKey;my $d8VS='J67M1RSZ';my($envw,$envh, $smpw,$smph)=(0,0, 0,0);my($wdht,$keyp);
 $envw=$ENV{'COLUMNS'} if(exists($ENV{'COLUMNS'}));$envh=$ENV{'LINES'} if(exists($ENV{'LINES'}));#rint "  $envw",'x',$envh,' %ENV COLUMNSxLINES';
 my @text;        my $simp=tie(@text,'Curses::Simp');my($pxlw,$pxlh); #$simp->Move(2,8);$simp->Prnt('TestPrnt');sleep 2;
 #ub Upd8WdHt {$smpw=Curses::Simp->COLS();$smph=Curses::Simp->LINES();$wdht=$smpw.'x'.$smph;     print "$wdht "; # COLS&&LINES nstd of Widt&&Hite had no result
@@ -28,9 +28,10 @@ sub Upd8WdHt {($smpw,$smph, $pxlw,$pxlh)=GetTerminalSize();          $wdht=$smpw
   $simp->Move(    $smph-1 ,                          0 );$simp->Prnt($wdht); # it seems that COLSxLINS can't upd8 until full control is returned to the shell?
   $simp->Move(int($smph/2),int(($smpw-length($wdht))/2));$simp->Prnt($wdht);}# below wait up to 8seconds for any key press before final printing &&auto-exiting
     Upd8WdHt();  while(!defined($keyp) ||  $keyp ne 'x'){$keyp=$simp->GetK(8); # while keeps looping until 'x' is pressed 2 eXit, but chng2 if for 8second eXit
-  if   ($keyp eq '410'){$simp->Rsiz(-1,-1);#simp->endwin();$simp->refresh(); # resize event but CScr()&&endwin() stil fail2restore normal terminal oper8ion =(
+ #if   ($keyp eq '410'){$simp->Rsiz(-1,-1);#simp->endwin();$simp->refresh(); # resize event but CScr()&&endwin() stil fail2restore normal terminal oper8ion =(
+  if   ($keyp eq 'KEY_RESIZE'){$simp->Rsiz(-1,-1);#simp->endwin();$simp->refresh(); # rEsIz EvNt but CScr()&&endwin() stil fail2rEstor norml terminal oper8ion =(
     Upd8WdHt();} # maybe doupdate() can work instead of refresh()? use_tioctl(1) sounds like the way2go && I think I'm giving up on resize for now without it
-  elsif($keyp ne  '-1'){$simp->Move( 1, 1);$simp->Prnt($keyp);}else{$keyp='x';}} # hopefully also eXit @8secs. Term::ReadKey has ioctl(0,TIOCGWINSZ, &w) too
+  elsif($keyp ne         '-1'){$simp->Move( 1, 1);$simp->Prnt($keyp);}else{$keyp='x';}} # hOpfuly also eXit @8secs. Term::ReadKey has ioctl(0,TIOCGWINSZ, &w) too
 @text=();$simp->CScr(); # mAB CScr needz2undo some of the OScr optionz before endwin() can restore proper orig term settings && not need yet another `reset`?
 # I am really unsure why any explicitly called $simp->CScr() doesn't clean up && endwin() properly (which I'd prefer to happen before printing to the regular
 #   terminal again). It needs `reset` after every program exit unless I avoid explicit CScr() && let it presumably just run whenever END block is auto-called.

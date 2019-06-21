@@ -106,7 +106,7 @@ for(0..$#inps){
     if   ($inps[$_] =~ s/(^\S+)//){ push(@{$indt[$_][0]},$1); }
     elsif($inps[$_] =~ s/(^\s+)//){ push(@{$indt[$_][1]},$1); }}}
 for(0..$#inpt){ # $indt[$_][0][6] should get all following fields joined back with orig whitespace to handle filenames or symlinks with spaces split on above
-  if(defined($indt[$_][0][6]) && $inpt[$_] =~ /^.*($indt[$_][0][6].*)$/){
+  if(defined($indt[$_][0][6]) && 0 && $inpt[$_] =~ /^.*($indt[$_][0][6].*)$/){ # problem has definition with unmatched parens in it, maybe needing escaping?
              $indt[$_][0][6]=$1;if(@{$indt[$_][0]} > 7){for my $ndxv (7..(@{$indt[$_][0]}-1)){$indt[$_][0][$ndxv]='' if(defined($indt[$_][0][$ndxv]));}}}}
 for(0..$#inps){
   for my $ndxv (@ndxd){

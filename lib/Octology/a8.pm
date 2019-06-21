@@ -48,10 +48,10 @@ use base     qw(Exporter); # mainly exporting global utility functions && variab
 our @EXPORT= qw(bfr8c    b8c    d8c    dur8c       a8c   a8colr      h2rl   rl2h       drkh  o8  @Kana
                 bfr8colr b8colr d8colr dur8colr    d8cs @d8cl  chti  c8fn     S2   c2  S c   sS    lodl @Monz @Mon     %mc2F %mc2b %mF2c %mb2c        %sb10
  $SKp8 $SKp0 $SKp1 $SKp2 b8clr  $SKpf $SKpt %pmap %cmap       %pl8n  ftst       %f8fm %f8pm %sgrm %sgrn @Dayz @Day  lrc      comma  curs  sumb @x256  @sb64
-    $z    $k    $r    $o    $y    $g     $c $SKpb    $m    $p    $w  tstc    $K    $R    $O    $Y    $G    $C    $B    $M    $P    $W    %p622 %p222
+    $z    $k    $r    $o    $y    $g     $c $SKpb    $m    $p    $w  tstc    $K    $R    $O    $Y    $G    $C    $B    $M    $P    $W    %p622 %p222   upd8
  $tnhf $ucdf  spff  spfd  spfX   shfl  reso $auth %cmsp %p8k2 @p82k  chp8     S2f4 c2f4 dm2u cdst %crgb %cbrt @snls @mrls %cdrd %cdrn    %nrgb         gnp8);
  # of 52 posibl sngl-letr var nmz,a8 Xportz 20,$b && $a unavail,so shudB thEs30 lFt4quik shortSt nAmz: 'def hij l n  q stuv x', 'A  DEF HIJ L N  Q STUV X Z';
-our $VERSION='0.0';my  $d8VS='J55MKBox';our $auth='PipStuart <Pip@CPAN.Org>'; # above not exporting $b since collidez with sort{$a  <=> $b};unalloc'd sOlOz^;
+our $VERSION='0.0';my  $d8VS='J67M2UPD';our $auth='PipStuart <Pip@CPAN.Org>'; # above not exporting $b since collidez with sort{$a  <=> $b};unalloc'd sOlOz^;
 our $ucdf= eval('use Color::Similarity::RGB qw(distance);1') || 0; # try2set UseColorDistanceFlag if optional module is available; /defhijlnqstuvx/i + /AZ/^;
 our @Monz=qw(January February March   April     May June July   August September October November December);our @Mon=();push(@Mon,substr($_,0,3)) for(@Monz);
 our @Dayz=qw(Sunday  Monday   Tuesday Wednesday Thursday Friday Saturday                                  );our @Day=();push(@Day,substr($_,0,3)) for(@Dayz);
@@ -785,10 +785,11 @@ sub   d8cs   {my $dccs = ''; # d8 ColrSet (or ColrSequence), d8 ColrCodeString
   elsif        ($_[0] =~ /\e/      ){@d8cl =       @_ ;}    # assume othr pRamz are already Xpanded list of SKpd colrz 2 rEplAce Dflt (if 1st has SKp)
   $dccs='';     $dccs .= c($_)   for(@d8cl);return($dccs);} # reconstruct ColrCodeString from l8st ColrList (which still must contain SKpz for usage)
 sub shfl{ # takes an arrayref or list of items to shuffle, or pipe thru by lines unless either @data size just 1 then try to split scalar string, shfl, join
-  my $htxt=" shfl - SHuFfLe lines or string crE8d by $auth to provide my own code to behave like standard 'shuf' command does (but mixes single scalar too);
+  my $htxt=" shfl - SHuFfLe lines or string crE8d by $auth to provide my own code to behave like standard 'shuf' cmnd does (but on single scalar too);
   2du:tidy up all Help text, option handling, && code formatting, consider slipping all this functionality into a new upd8d version of s8 to replace 'sort';
    h  - print this Help text && exit               ;  gO thru list&&add similR styl hLp tXt&&pRamz 2 evry Utl,wrkon upd8ng craPSt&&oldSt Utlz2Ball worthwIl,
-   r  - ReveRse the input d8a list (but no shuffle);    consistNt,EficiNt,doQmNted,&&hOpfuly dMonstr8ive in some wA. Also du -r on solo scalar reversal too;";
+   r  - ReveRse the input d8a list (but no shuffle);    consistNt,EficiNt,doQmNted,&&hOpfuly dMonstr8ive in some wA. Also du -r on solo scalar reversal too;
+";
   my $hflg = 0;my @data; # ReveRse FLaG, TTY FLaG, Solo Scalar String FLaG, Arrayref FLaG    # thN l8r add own basic -help output too
   my $rflg = 0;if(@_){for my $pndx (0..$#_){if($_[$#_-$pndx]=~ /^-+h/i){$hflg=1;return($htxt);} # probably no longer need sepR8 hflg since test str8 returnz
                                          elsif($_[$#_-$pndx]=~ /^-+r/i){$rflg=1;splice(@_,$#_-$pndx,1);}}} # must '-r' wi dash flag optn 2 force rEvrs,!shufl
@@ -849,6 +850,7 @@ sub sumb{  my $widt=0;$widt=1 if(exists($ENV{'COLUMNS'}) && $ENV{'COLUMNS'} >= 1
     'sumb'  => "a8 *SUMmarize ~/bin/ described files by color category (displaying now)   ",
     'supd'  => "a8 *util to UPD8 HTTPS://Screeps.Com Scripts ~/.config/ for game client   ",
     'tstc'  => "a8 *TeST eScapes `S` of c8 `c` format for pal8 colors && SGR attributes   ", # mAB fold in2 tsgr && mv latr2 a8,or mk -blox in tstc?
+    'upd8'  => "a8  UPDate development files into ~/lib/ or ~/bin/ dirs after valid8ion   ", # originally was in U8.pm but 2many DpNdNCz there so mvd here2 a8
 
     'b10'   => "b8  converter from base-64 number-strings  to  [0-9] base-10 (decimal)    ",
     'b110'  => "b8  converter from base128 number-strings  to  [0-9] base-10 (decimal)    ", # rEnAmd from orig `bb10`
@@ -910,7 +912,6 @@ sub sumb{  my $widt=0;$widt=1 if(exists($ENV{'COLUMNS'}) && $ENV{'COLUMNS'} >= 1
 
     'tstn'  => "p8  TeST random Navig8ion of A* paths thru HTTPS://Screeps.Com maps d8a   ", # new PurPle colr p8 section here is re-comNted sinc just tst4now
 
-    'upd8'  => "U8  UPDate development files into ~/lib/ or ~/bin/ dirs after valid8ion   ",
     'UTF8'  => "U8 *wide printing of most UTF-8 (or ASCII) chars up to index (or range)   ", # mAB add more sets of logical blocks && colr b8 char-sets
 
     'frip'  => "    NotYetInModule,`flac` Free Lossless Audio Codec CD RIPper (extract)   ",
@@ -1827,6 +1828,33 @@ sub reso{my $optz=join(' ',@_)||''; # 598KBvas:reso crE8d by PipStuart <Pip@CPAN
                                                   $A=~ s/(\s+|[:])(\d*)(x)(                                      \d+)  /$1$M$2$w$3$C$4/gix;
                                                   $A=~ s/(^|[ ]+|\n[ ]*|\e\[(\d+|;)+m)(\d*)(,?)(\d*)(,?)(\d+)(,)(\d+)/$z$1$G$3$W$4$Y$5$W$6$o$7$W$8$R$9/gx;
     print $A;}}
+#   upd8 isa rEwrItof Utl:updt 2rEUseoracceptwichfIl,tSt typ2Dtrmin dStin8ion,ckifalredEtherwi nO dif,ckif pasez`perl -c`,prnt,cp,if bin{chmod if nw;mABXeQt?}
+sub upd8{my($upfl,$ubfl,$upxt)=('','',''); $upfl=shift(@_) if @_;$upfl=$ENV{'Hv8f'} if(exists($ENV{'Hv8f'}) && !-r "$upfl"); # 2du:loop @_ 4multipl fIlz2upd8
+  if  (-r  "$upfl"){my($Hpth,$Hsub); $ubfl=$upfl;$Hsub='bin';$Hpth='';$ubfl=~ s/(^.*\/)//;$upxt=$1 if($ubfl=~s/\.([^.]+)$//); my $udif='1';my $udfl;
+    if(     $upfl=~ /([^\/]+)\.pm$/){$ubfl=$1   ;$Hsub='lib';$Hpth=`grep -m 1 -a '^ *package ' $upfl`;chomp($Hpth); # -a like --text like --binary-files=text
+                                                             $Hpth=~ s/(^\s*package\s+)//;$Hpth=~ s/::$ubfl.*//;} # this will fail if same pm name used twice
+    # J67M0vit:as liter8 as it was to have upd8 back in U8.pm, it had dependencies of a8, b8, && d8 but upd8 needs only a8::c8fn && it's inconvenient to get
+    #   this blockd by any failure in them, so I mvd upd8 to a8 here; 2du:replace backtick greps with Path::Tiny slurp_utf8 && builtin grep,
+    #   fix mkdirz to use $ENV{'PERL5LIB'} if exists && give param to crE8 all of Octology/f8/pal8/ at once there,also replace `cp ...` at end wi Perl copy;
+    if(length($Hpth) && $Hpth=~/[^:\/]/){$Hpth=~s/::/\//g;$Hpth="/$Hpth" unless($Hpth=~/^\//);my @psbz= split(/\//,$Hpth); # need to crE8 destin8ion subdirz?
+      my $tpth="$ENV{'HOME'}/$Hsub";shift(@psbz);for my $oned (@psbz){$tpth .= "/$oned";if(!-d "$tpth"){mkdir("$tpth",0755);}}} # shud loop mkng Temp PaTH SuBZ
+    open my $out8, '>&', STDOUT or die "Can't duplic8 STDOUT: $!";binmode $out8,':encoding(UTF-8)'; # crE8 local dup of global to lexically alter output enc
+    $udfl=  "$ENV{'HOME'}/$Hsub$Hpth/$ubfl";$udfl.=".$upxt" if(length($upxt));my $updc='';
+    if  (-d "$ENV{'HOME'}/$Hsub$Hpth"){#print "upfl:$upfl: \nudfl:$udfl:\n";
+      if(-r  $udfl              ){$udif=`diff       $upfl   $udfl`;chomp($udif);} # try distilling output below
+      if   ($upxt=~  /^p[ml]$/i || `grep '^#!\\(/\\(usr/\\)\\?\\(local/\\)\\?bin/\\)\\?perl' $upfl`){ # ck syntax on modules or scripts starting hashbang perl
+                                  $updc=`perl -c    $upfl    2>&1`;chomp($updc);$updc=~s/\n\s*($upfl)/ $1/;$updc=~s/((a|of|in|at) )//g;} # mIt want else !perl
+      elsif(                       `grep '^#!\\(/\\(usr/\\)\\?\\(local/\\)\\?bin/\\)\\?sh'   $upfl`){$updc='syntax OK'; # !sure how2ck basic shL scrptz syntax
+        if ($upxt=~/^\d?pal8$/i || `grep '^ *pal8 ' $upfl`){$udfl=~ s/bin/lib\/Octology\/f8\/pal8/; # mAB wil catch shL scrptz that call`pal8`wiout Bing fIlz?
+          if(!-d "$ENV{'HOME'}/lib"                 ){mkdir("$ENV{'HOME'}/lib"                 ,0750);}
+          if(!-d "$ENV{'HOME'}/lib/Octology"        ){mkdir("$ENV{'HOME'}/lib/Octology"        ,0775);}
+          if(!-d "$ENV{'HOME'}/lib/Octology/f8"     ){mkdir("$ENV{'HOME'}/lib/Octology/f8"     ,0755);}
+          if(!-d "$ENV{'HOME'}/lib/Octology/f8/pal8"){mkdir("$ENV{'HOME'}/lib/Octology/f8/pal8",0755);}}} # mk sure proper lib pal8 dir exists
+      if(length($udif) &&  length($updc) && $updc=~ /syntax OK/){  `cp $upfl  $udfl`;print $out8 $G.'upd8 '.c8fn($upfl).' '.c8fn($udfl);}
+      else                                                      {die "!*ErOr*! upd8 cud not 'cp $upfl $udfl',no perl -c sntx ck:$updc:udif:$udif:\n";}
+      if(    $Hsub eq 'bin' || -x $upfl){      chmod(0755,"$udfl");}print $out8 `$udfl` if(-x $udfl &&0);} # mOst bin cOd nEdz pRamz2tSt sO autOcall proly!good
+    close $out8 or die "Can't close out8 duplic8d STDOUT handle: $!";}} # better to call known t/*.t to valid8 expected behavior more thoroughly
+  # maybe .Hrc can whitelist bin code filez && desired parameterz that should get auto-called at the end of upd8 to autom8 some basic testing also
 sub spff{my $frmt='%12.12f';if(@_ && defined($_[0]) && $_[0]=~ /%/){$frmt= shift(@_);} if(@_){return( sprintf("%16s",sprintf("$frmt",shift(@_))));}} # SPFfloat
 sub spfd{my $frmt='%03d'   ;if(@_ && defined($_[0]) && $_[0]=~ /%/){$frmt= shift(@_);} if(@_ && defined($_[0]) && $_[0]=~ /^\d+$/){
   return(sprintf("$frmt",shift(@_)) );}} # SPrintF dec
