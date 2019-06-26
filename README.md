@@ -1,16 +1,16 @@
 # Octology
-The ontology of 8. `$VERSION='0.0';$d8VS='J6PM0kd8';`
+The ontology of 8. `$VERSION='0.0';$d8VS='J6QMIGHT';`
 
 What is an ontology, you may ask?
 
 <ol><li>n (computer science) a rigorous and exhaustive organiz8ion of some knowledge domain that is usually hierarchical and contains all the relevant
   entities and their rel8ions.</li>
-    <li>the metaphysical study of the nature of being and existence</li>
+    <li>the metaphysical study of the nature of being and existence.</li>
 </ol>
 
-I expect that after some point (probably passed) anyone who would learn Octology thoroughly should have become capable of developing any new video games.
+I expect that after some point (probably passed) anyone who studies Octology thoroughly would become able to develop any new videogame and problem-solve.
 
-"A machine-shop for making software and gaming tools." -LarryWall-J6K
+"A machine-shop for making software and gaming tools." -LarryWall-J6K TPCiP interview, I forget the context, but it sounded good while I was writing this;
 
 <!-- even though of course originally above command && below screen shot lists were each Top8, they're now more focused on just most public Top6 or 4 -->
 ## Current Top Screen Shots
