@@ -1,9 +1,16 @@
 # Octology
-The ontology of 8. `$VERSION='0.0';$d8VS='J6KMIwin';`
+The ontology of 8. `$VERSION='0.0';$d8VS='J6PM0kd8';`
 
-ontology  n 1: (computer science) a rigorous and exhaustive organiz8ion of some knowledge domain that is usually hierarchical and contains all the relevant
-  entities and their relations
-            2: the metaphysical study of the nature of being and existence
+What is an ontology, you may ask?
+
+<ol><li>n (computer science) a rigorous and exhaustive organiz8ion of some knowledge domain that is usually hierarchical and contains all the relevant
+  entities and their rel8ions.</li>
+    <li>the metaphysical study of the nature of being and existence</li>
+</ol>
+
+I expect that after some point (probably passed) anyone who would learn Octology thoroughly should have become capable of developing any new video games.
+
+"A machine-shop for making software and gaming tools." -LarryWall-J6K
 
 <!-- even though of course originally above command && below screen shot lists were each Top8, they're now more focused on just most public Top6 or 4 -->
 ## Current Top Screen Shots
@@ -30,15 +37,15 @@ Many `bin/` commands print useful Help text when given a `-h` parameter (white s
 
 If your paths and Perl environment are setup similarly, to gain a bearing on fundamental Octology utilities and organiz8ion, please try executing:
 
- * `ftst  -` run the gamut of Perl File TeSTs on the default .Hrc file
- * `tsgr  -` Test Select Graphic Rendition additional text attributes
+ * `ftst -` run the gamut of Perl File TeSTs on the default .Hrc file
+ * `tsgr -` Test Select Graphic Rendition additional text attributes
 <!-- * `sumb ` - SUMmarize most ~/bin/ executaBle files rather colorfully
  * `tstn ` - TeST Navig8ion of A-Star algorithm in Screeps 50x50 maps
  * `tstc ` - TeST c8 Col8 color8ion classic representation progression-->
 <!-- * `tsgr` - Test Select Graphic Rendition additional text attributes-->
 
- * `which -` show a basic colored list of very useful GNU/Linux aliases
- * `pal8  -` set first 16-color PALette ("8") for terminal or console
+ * `which-` show a basic colored list of very useful GNU/Linux aliases
+ * `pal8 -` set first 16-color PALette ("8") for terminal or console
 <!-- * `gnp8 ` - GeNerate a complete Pal8 mapping of b64 into 256-colors
  * `calN ` - display a CALeNdar of the colored d8-based recent Years-->
 <!-- * `lodH ` - LOaD ~/.Hrc d8a-file to parse and print colorized fields-->

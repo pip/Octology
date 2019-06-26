@@ -1,5 +1,5 @@
 # F1RLLK2K:~/.lrc  by PipStuart <Pip@CPAN.Org> as an altern8 format for .lsrc ideally having new ~/bin/lrc gNR8 either from the other;
-# $VERSION='0.0';$d8VS='J6JMKONF'; 2du:mkUtl2gNr8 altrn8 versN of .lsrc th@purposfuly varEz colrz of comon typz,try addng bakgrnd colrz2all dFz&&tst,
+# $VERSION='0.0';$d8VS='J6OMM19k'; 2du:mkUtl2gNr8 altrn8 versN of .lsrc th@purposfuly varEz colrz of comon typz,try addng bakgrnd colrz2all dFz&&tst,
 #   add interaction2 lsd8 wN it Dtectz unrecognIzd XtNshNz offerng c@egOrEz with comon colr2autOm@ically insrt chOsN NtrEz,mAB add *-* NtrEz from .zshrc hEr &&
 #   mk lrc gNr8 either,confirm all accept f0nt cOdez wi dash accepting Dfalt foreground then redo NORMAL FILE LINK as no fi ln,mAB 8trm added2TERM ls someday;
 # 819J2Pip:~/.lsrc by PipStuart <Pip@CPAN.Org> izAheavily modifId`dircolors`cfgfIl(Orig ~/.DIR_COLORS)wich setz $ENV{'LS_COLORS'} 4GNU`ls --color`&&`lsd8`;
@@ -1334,10 +1334,11 @@ CHR                           Yk           #cd= 01;33;40    01;33;40  CHaRacter 
 .15.0-24-generic              cg
 .15.0-23-generic              bg
 .15.0-22-generic              mg           # BlO /boot Linux kernelz versionz 5.0.0 onward started with Ubuntu 19.04 Disco Dingo, so dark grn bkgr 4.15 abov
-.0.0-17-generic               R
-.0.0-16-generic               o
-.0.0-15-generic               Y
-.0.0-13-generic               G
+.0.0-19-generic               R
+.0.0-17-generic               o
+.0.0-16-generic               Y
+.0.0-15-generic               G
+.0.0-13-generic               C
 #                                          # zsh wraps '%{' ANSI '%}' && vim User[1-9] colrz specify BlO ForeGroundz all on darkblue BakGrnd4statuslIn
 #     4NT    etfp   vim  c8  color              ANSI      HTML    Octology::d8::fldz (`d8`)
 #     0f     Fsy_   %*    W WhiteBright         \e[1;37m  FEFDFF            # vim %* resets statuslIn colr 2 Dfalt   White on darkblue so has max 10 colrz
