@@ -64,7 +64,7 @@ alias    clrz='echo -en "$z hk:$hk#$z; hr:$hr#$z; ho:$ho#$z; hy:$hy#$z; hg:$hg#$
 #   setng4wholsys:`echo XSESSION="Gnome" > /etc/env.d/90xsession; env-update && source /etc/profile`; EBJLAkY8:AkuUbu14.10 nolongrhas thOsdirz sOprolyunUsed;
 export JAVA_HOME='/usr/lib/jvm/java-7-openjdk-amd64';     # D7PM1TjA:upd8d4Ubu13.04&&ant4Android dvl 2add2pathBlO
 export NODE_VERSION='v10.16.0'; # J5BMGHVf:NodeJS installed into /usr/local/lib/nodejs/node-v10.15.3-linux-x64/ according to:  J6KM5W16:upd8d to LTS version;
-export NODE_DISTRO='linux-x64';alias xo='expo';alias xord='xo r d8s2'; #   HTTPS://GitHub.Com/nodejs/help/wiki/installation instructions;
+export NODE_DISTRO='linux-x64';alias xo='expo';alias xord='xo r d8s2';alias xopd='xo p d8s2'; #   HTTPS://GitHub.Com/nodejs/help/wiki/installation instructz;
 ulimit  -c 65535; # 33,553,920-bytes # setz coredump size limit2 32MB (4Dbugng) wher #-param is *512-byte blox or 'unlimited' canBUsed
 typeset -U path ;path=($HOME/bin $HOME/.local/bin /usr/local/sbin /usr/sbin /sbin . $HOME/dvl/t8/node/node-$NODE_VERSION-$NODE_DISTRO/bin
   /usr/local/bin /usr/bin /bin /opt/bin $HOME/lib/perl5/bin $JAVA_HOME/bin $HOME/lib/Octology/f8/pal8 $HOME/dvl/t8/dmd/linux/bin $path);

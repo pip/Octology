@@ -1,16 +1,13 @@
-import React from 'react';
-import { Platform } from 'react-native';
+import React                                              from 'react';
+import Platform                                           from 'react-native';
 import { createStackNavigator, createBottomTabNavigator } from 'react-navigation';
-
-import TabBarIcon from '../components/TabBarIcon';
-import HomeScreen from '../screens/HomeScreen';
-import LinkScreen from '../screens/LinkScreen';
-import SetsScreen from '../screens/SetsScreen';
-
+import TabBarIcon                                         from '../components/TabBarIcon';
+import HomeScreen                                         from '../screens/HomeScreen';
+import LinkScreen                                         from '../screens/LinkScreen';
+import SetsScreen                                         from '../screens/SetsScreen';
 const HomeStack = createStackNavigator({
   Home: HomeScreen,
 });
-
 HomeStack.navigationOptions = {
   tabBarLabel: 'Home',
   tabBarIcon: ({ focused }) => (
@@ -24,11 +21,9 @@ HomeStack.navigationOptions = {
     />
   ),
 };
-
 const LinkStack = createStackNavigator({
   Links: LinkScreen,
 });
-
 LinkStack.navigationOptions = {
   tabBarLabel: 'Links',
   tabBarIcon: ({ focused }) => (
@@ -38,11 +33,9 @@ LinkStack.navigationOptions = {
     />
   ),
 };
-
 const SetsStack = createStackNavigator({
   Settings: SetsScreen,
 });
-
 SetsStack.navigationOptions = {
   tabBarLabel: 'Settings',
   tabBarIcon: ({ focused }) => (
@@ -52,7 +45,6 @@ SetsStack.navigationOptions = {
     />
   ),
 };
-
 export default createBottomTabNavigator({
   HomeStack,
   LinkStack,

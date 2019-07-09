@@ -8,7 +8,7 @@ import { Platform, StatusBar, StyleSheet, Dimensions, View, Text } from 'react-n
 import { AppLoading,   Asset,                         Font, Icon } from 'expo'
 import                                                    moment   from 'moment'
 import   AppNavigator                                              from './navigation/AppNavigator'
-const d8VS='J6KMHa0h'
+const d8VS='J6KMHa0h';
 /* This is what I (Beppu-san) would've done had you not said anything.
  *   class D8
  *     Its render would've contained a View with 8 Text components.
@@ -16,10 +16,12 @@ const d8VS='J6KMHa0h'
  * Usage of D8Fieldz
  *   <D8Fieldz time={this.state.now}></D8Fieldz> */
 /* */
+const fixed    = Platform.OS === 'ios' ? 'Courier' : 'monospace'
+const fontSize = parseInt(Dimensions.get('window').width / 8) + 'px'
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#eff',
+    backgroundColor: '#010', // was #eff
   }, }); /* */
 const sb64 = ['0','1','2','3','4','5','6','7', '8','9','A','B','C','D','E','F',  'G','H','I','J','K','L','M','N', 'O','P','Q','R','S','T','U','V',
               'W','X','Y','Z','a','b','c','d', 'e','f','g','h','i','j','k','l',  'm','n','o','p','q','r','s','t', 'u','v','w','x','y','z','.','_']
@@ -75,9 +77,9 @@ export default class App extends React.Component {
     if (!this.state.isLoadingComplete && !this.props.skipLoadingScreen) {
       return (
         <AppLoading
-          startAsync={this._loadResourcesAsync}
-          onError={this._handleLoadingError}
-          onFinish={this._handleFinishLoading}
+          startAsync={this._loadResourcesAsync }
+          onError   ={this._handleLoadingError }
+          onFinish  ={this._handleFinishLoading}
         />
       );
     } else {
@@ -91,7 +93,7 @@ export default class App extends React.Component {
   _loadResourcesAsync = async () => {
     return Promise.all([
       Asset.loadAsync([
-        require('./assets/images/iconocto.png'),
+        require('./assets/images/d80k-radial-1920x1080ppi888-J6PMH8jt.png'),
         require('./assets/images/d80k-radial-112x112-J6KMCups.png'),
       ]),
       Font.loadAsync({
@@ -111,7 +113,7 @@ export default class App extends React.Component {
   }; }
 
 {/*
-let orig='export default class App extends React.Component{';
+export default class App extends React.Component{
   render() {
     return (
       <View style={styles.container}>
@@ -121,14 +123,14 @@ let orig='export default class App extends React.Component{';
     );
   }
 }
-const fixed = Platform.OS === 'ios' ? 'Courier' : 'monospace'
+const fixed    = Platform.OS === 'ios' ? 'Courier' : 'monospace'
 const fontSize = parseInt(Dimensions.get('window').width / 8) + 'px'
-const styles = StyleSheet.create({
+const styles   = StyleSheet.create({
   container: {
-    flex: 1,
-    flexDirection: 'column',
-    backgroundColor: '#001',
-    alignItems: 'center',
+    flex:                  1,
+    flexDirection:  'column',
+    backgroundColor:  '#001',
+    alignItems:     'center',
     justifyContent: 'center',
   },
   normal: {
@@ -179,4 +181,4 @@ const styles = StyleSheet.create({
     color: '#c4c',
     fontFamily: 'monospace'
   },
-}) */}
+})*/}

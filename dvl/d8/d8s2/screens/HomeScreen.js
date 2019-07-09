@@ -1,8 +1,12 @@
-import   React        from 'react';
-import { Image, Platform, ScrollView, StyleSheet, Text, TouchableOpacity, View } from 'react-native';
+/* 2du:gener8 stylez bgcolrz from obtained d8-timez,scale fontz according to resoz,detect landscape rot8,detect phass touch toggle upd8 delayz,
+     mk canvas to start drawing radial clock armatures,add ckbox to toggle colrz invert,invert navig8ion tab button colrz at bottom;
+ */
+import   React                                                                               from 'react';
+import { Image, Platform, Dimensions, ScrollView, StyleSheet, Text, TouchableOpacity, View } from 'react-native';
 import   moment       from 'moment';
 import { WebBrowser } from 'expo';
 import { MonoText   } from '../components/StyledText';
+const VERSION='0.0';const d8VS='J79MBODY';
 const sb64 = ['0','1','2','3','4','5','6','7', '8','9','A','B','C','D','E','F',  'G','H','I','J','K','L','M','N', 'O','P','Q','R','S','T','U','V',
               'W','X','Y','Z','a','b','c','d', 'e','f','g','h','i','j','k','l',  'm','n','o','p','q','r','s','t', 'u','v','w','x','y','z','.','_']
 const smon = ['Jan','Feb','Mar', 'Apr','May','Jun', 'Jul','Aug','Sep', 'Oct','Nov','Dec']
@@ -22,15 +26,13 @@ function   z(n){
   else     {return      n}}
 export default class HomeScreen extends React.Component {
   constructor(props){
-    super(props)
-    this.state = {
-      now: moment()
-    }
+    super    (props)
+    this.state =    { now: moment() }
   }
   componentDidMount() {
     this.timer = setInterval(() => {
       this.setState({ now: moment() })
-    },  988)
+    },  987)
   }
   componenetWillUnmount() {
     clearInterval(this.timer)
@@ -39,20 +41,22 @@ export default class HomeScreen extends React.Component {
     header: null,
   };
   render() {var moment = require('moment');var zutc = moment().utcOffset() - 200;var tstr = ''; /* not sure why my phone is returning only -300 utcOffset */
-            var hstr = '';var mstr = '';var sstr = '';var pstr = '';if(zutc <= 0 && zutc >= -959){zutc = '-' + '0' + (-1 * zutc);}
+            var dstr = '';var hstr = '';var mstr = '';var sstr = '';var pstr = '';if(zutc <= 0 && zutc >= -959){zutc = '-' + '0' + (-1 * zutc);}
+            if(         moment().date()              <= 9){dstr=' '};dstr = dstr + b64(     moment().date() )                     ;
             if(         moment().hour()              <= 9){hstr='0'};hstr = hstr +          moment().hour()              + ':'
             if(         moment().minute()            <= 9){mstr='0'};mstr = mstr +          moment().minute()            + ':'
+            if(         moment().hour()              <=13){          mstr = mstr + 'A';}else{mstr = mstr + 'P';} mstr = mstr + 'M';
             if(         moment().second()            <= 9){sstr='0'};sstr = sstr +          moment().second()            + ':'
-            if(parseInt(moment().millisecond() / 60) <= 9){pstr='0'};pstr = pstr + parseInt(moment().millisecond() / 60) + ';'
+            if(parseInt(moment().millisecond() / 60) <= 9){pstr='0'};pstr = pstr + parseInt(moment().millisecond() / 60) + ';sp'
     return (
-      <View style={styles.container}>
+      <View         style={styles.container}>
         <ScrollView style={styles.container} contentContainerStyle={styles.contentContainer}>
-          <View style={styles.welcomeContainer}>
+          <View     style={styles.welcomeContainer}>
             <Image
               source={
                 __DEV__
                   ? require('../assets/images/d80k-radial-112x112-J6KMCups.png')
-                  : require('../assets/images/iconocto.png')
+                  : require('../assets/images/d80k-radial-1920x1080ppi888-J6PMH8jt.png')
               }
               style={styles.welcomeImage}
             />
@@ -68,11 +72,11 @@ export default class HomeScreen extends React.Component {
                         style={[styles.d8fText, styles.d8sText]}>{b64(           moment.second()              )}<MonoText
                         style={[styles.d8fText, styles.d8pText]}>{b64(  parseInt(moment.millisecond() /   60) )}</MonoText></MonoText></MonoText></MonoText></MonoText></MonoText></MonoText></MonoText>
             */}
-            <View style={[styles.codeHighlightContainer, styles.homeScreenFilename]}>
+            <View style={[styles.d8d8HighlightContainer, styles.homeScreenFilename]}>
               <MonoText style={[styles.d8fText,styles.d8YText]}>{moment().year()} <MonoText
                         style={[styles.d8fText,styles.d8MText]}>{smon[moment().month()]}</MonoText></MonoText>
-              <MonoText style={[styles.d8fText,styles.d8DText]}>{moment().date()} <MonoText
-                        style={[styles.d8fText,styles.d8zText]}>{zutc}</MonoText></MonoText>{/*(parseInt(moment().utcOffset() / 60))}</MonoText></MonoText>*/}
+              <MonoText style={[styles.d8fText,styles.d8DText]}>{dstr} <MonoText
+                        style={[styles.d8fText,styles.d8zText]}>{zutc}</MonoText></MonoText>
             </View>
             <View style={styles.d8HighlightContainer}>
               <MonoText style={[                               styles.d8Text, styles.d8YText]}>{b64(           moment().year()        - 2000  )}<MonoText
@@ -96,8 +100,8 @@ export default class HomeScreen extends React.Component {
           </View>
           <View style={styles.helpContainer}>
             <TouchableOpacity onPress={this._handleHelpPress} style={styles.helpLink}>
-              <Text style={styles.helpLinkText}>Help, didn’t auto-reload!</Text>
-              <MonoText style={styles.d8hText}>this.momentOrSt8.now.format() does not work yet!</MonoText>
+              <MonoText style={styles.d8sText}>{this.state.now.format()}</MonoText>
+              <Text     style={styles.helpLinkText}>Help, didn’t auto-reload!</Text>
             </TouchableOpacity>
           </View>
         </ScrollView>
@@ -144,79 +148,116 @@ export default class HomeScreen extends React.Component {
       filter: invert(100%);  HTTPS://Developer.Mozilla.Org/en-US/docs/Web/CSS/filter-function/invert && HTTPS://McDlr.Com/css-inject/ 2 bookmarklet it;
   },
  */}
-const styles = StyleSheet.create({
+const fixed       = Platform.OS === 'ios' ? 'Courier' : 'monospace'
+const fontSizeDim = parseInt(Dimensions.get('window').width / 4); // + 'px' just wants the number below
+const styles      = StyleSheet.create({
   container: {
-    flex: 1,
-    backgroundColor: '#001',
+    flex:                  1,
+    flexDirection:  'column',
+    backgroundColor:  '#001',
+    fontFamily:  'monospace',
+  },
+  normal:    { color: '#fff',
+  },
+  textColor: { color: '#afa',
+  },
+  fontSize:  { fontSize: 128, // fontSizeDim, // was 64
+  },
+  d8fieldz:  { flexDirection: 'row'
+  },
+  Y: { color: '#f44',
+  },
+  M: { color: '#f88',
+  },
+  D: { color: '#fcb',
+  },
+  z: { color: '#4f4',
+  },
+  h: { color: '#4ff',
+  },
+  m: { color: '#44f',
+  },
+  s: { color: '#f4f',
+  },
+  p: { color: '#c4c',
+  },
+  f: { color: '#c4c',
   },
   developmentModeText: {
-    marginBottom: 20,
     color: 'rgba(215,231,223,0.4)',
-    fontSize: 14,
-    lineHeight: 19,
-    textAlign: 'center',
+    fontSize:             14,
+    lineHeight:           16,
+    marginBottom:         20,
+    textAlign:      'center',
   },
   contentContainer: {
-    paddingTop: 30,
+    paddingTop:           16,
+    alignItems:     'center',
+    justifyContent: 'center',
   },
   welcomeContainer: {
-    alignItems: 'center',
-    marginTop: 4,
-    marginBottom: 8,
+    marginTop:             1,
+    marginBottom:          1,
+    alignItems:     'center',
   },
   welcomeImage: {
-    width: 112,
-    height: 112,
-    resizeMode: 'contain',
-    marginTop: 3,
-    marginLeft: -8,
+    width:               112,
+    height:              112,
+    marginTop:             1,
+    marginLeft:           -8,
+    resizeMode:    'contain',
   },
   getStartedContainer: {
-    alignItems: 'center',
-    marginHorizontal: 32,
+    marginHorizontal:     32,
+    alignItems:     'center',
   },
   homeScreenFilename: {
-    marginVertical: 4,
+    marginVertical:        0,
   },
   d8znHighlightContainer: {
     backgroundColor: 'rgba(127,15, 79,0.6)',
-    borderRadius: 1,
-    paddingHorizontal: 1,
+    borderRadius:          1,
+    paddingHorizontal:     1,
   },
   d8tmHighlightContainer: {
     backgroundColor: 'rgba(63,127,159,0.5)',
-    borderRadius: 2,
-    paddingHorizontal: 1,
+    borderRadius:          2,
+    paddingHorizontal:     1,
+  },
+  d8d8HighlightContainer: {
+    backgroundColor: 'rgba(64, 16,144,0.4)',
+    borderRadius:          1,
+    paddingHorizontal:     0,
   },
   d8HighlightContainer: {
     backgroundColor: 'rgba(76, 24, 80,0.4)',
-    borderRadius: 3,
-    paddingHorizontal: 1,
+    borderRadius:          3,
+    paddingHorizontal:     1,
   },
   codeHighlightText: {
-    color: 'rgba(96,100,109, 0.8)',
+    color:           'rgba(96,100,109, 0.8)',
   },
   codeHighlightContainer: {
     backgroundColor: 'rgba(0,0,0,0.05)',
-    borderRadius: 3,
-    paddingHorizontal: 4,
+    borderRadius:          3,
+    paddingHorizontal:     4,
   },
   getStartedText: {
-    fontSize: 17,
-    color: 'rgba(96,100,109, 1)',
-    lineHeight: 24,
-    textAlign: 'center',
+    fontSize:             17,
+    color:           'rgba(96,100,109, 1)',
+    lineHeight:           24,
+    textAlign:      'center',
   },
   d8fText: {
-    fontSize: 40,
-//  color: 'rgba(76, 24, 80, 1)',
-    lineHeight: 48,
-    textAlign: 'center',
+    fontSize:             40,
+//  color:           'rgba(76, 24, 80, 1)',
+    lineHeight:           48,
+    textAlign:      'center',
   },
   d8Text: {
-    fontSize: 80,
-    lineHeight: 112,
-    textAlign: 'center',
+    fontSize:             80,
+    lineHeight:          112,
+    textAlign:      'center',
   },
   d8YText: {
     color: 'rgba(255, 31,  7, 1)',
@@ -245,40 +286,40 @@ const styles = StyleSheet.create({
   tabBarInfoContainer: {
     position: 'absolute',
     bottom: 0,
-    left: 0,
-    right: 0,
+    left:   0,
+    right:  0,
     ...Platform.select({
       ios: {
         shadowColor: 'black',
         shadowOffset: { height: -3 },
-        shadowOpacity: 0.1,
-        shadowRadius: 3,
+        shadowOpacity:   0.1,
+        shadowRadius:      3,
       },
       android: {
-        elevation: 20,
+        elevation:        20,
       },
     }),
-    alignItems: 'center',
-    backgroundColor: '#010',
-    paddingVertical: 20,
+    alignItems:     'center',
+    backgroundColor:  '#010',
+    paddingVertical:      20,
   },
   tabBarInfoText: {
-    fontSize: 17,
+    fontSize:             17,
     color: 'rgba(196,200,209, 1)',
-    textAlign: 'center',
+    textAlign:      'center',
   },
   navigationFilename: {
-    marginTop: 5,
+    marginTop:             5,
   },
   helpContainer: {
-    marginTop: 15,
-    alignItems: 'center',
+    marginTop:            15,
+    alignItems:     'center',
   },
   helpLink: {
-    paddingVertical: 15,
+    paddingVertical:      15,
   },
   helpLinkText: {
-    fontSize: 14,
-    color: '#2e78b7',
+    fontSize:             14,
+    color:         '#2e78b7',
   },
 });

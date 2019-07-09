@@ -4851,3 +4851,6 @@ J61MI9bg:So on a Shalom Shabbat I thought of maybe returning to Los Angeles && s
  I also thought distilling down 240x75, 160x50, 80x25, 40x15, 16x10, 8x5 so that 20x10 little 8:5 blocks can be arranged within my standard sized terminal;
 J6PMCKPi:Since /. just had an article on RaspberryPi v4 being released, a commentor linked his clock / weather project at HTTPS://GitHub.Com/kdekorte/kwc ;
 J6PMDcat:popomari interest tracking similar cat && human babies HTTPS://YouTube.Com/watch?v=i2ZQ1OdfcHI&list=PLMFoDoF5WCjivNyZjSOWfzjD4TyFbvqhu&index=508 ;
+J73MKVM8:HTTPS://YouTube.Com/watch?v=Dl4tpStOKyg&list=PLA9_Hq3zhoFw2YKlCzOorEDMAzZwEgNgm&index=32 "JohnKarr" explains virtualiz8ion versus containeriz8ion.
+ Micro-services of Docker smoke LXC with isol8ion with custom load-balancing Apache or NginX. Containers solve deployment issues && permit elastic scaling.
+ VMs are fully isol8d from host (costing more resources) && can do full desktop && independent architectures. KVM + QEMU lacks expensive VMWare tooling;
