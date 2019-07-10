@@ -1,8 +1,8 @@
 # 819J2Pip:~/.lsrc by PipStuart <Pip@CPAN.Org> izAheavily modifId`dircolors`cfgfIl(Orig ~/.DIR_COLORS)wich setz $ENV{'LS_COLORS'} 4GNU`ls --color`&&`lsd8`;
-# $VERSION='0.0';$d8VS='J6OMM19k'; 2du:mkUtl2gNr8 altrn8 versN of .lsrc th@purposfuly varEz colrz of comon typz,try addng bakgrnd colrz2all dFz&&tst,
+# $VERSION='0.0';$d8VS='J79MFAPK'; 2du:mkUtl2gNr8 altrn8 versN of .lsrc th@purposfuly varEz colrz of comon typz,try addng bakgrnd colrz2all dFz&&tst,
 #   add interaction2 lsd8 wN it Dtectz unrecognIzd XtNshNz offerng c@egOrEz with comon colr2autOm@ically insrt chOsN NtrEz,mAB add *-* NtrEz from .zshrc hEr &&
 #   mk lrc gNr8 either,confirm all accept f0nt cOdez wi dash accepting Dfalt foreground then redo NORMAL FILE LINK as no fi ln,mAB 8trm added2TERM ls someday;
-# This file was gNR8d by `lrc` Vers:0.0 d8VS:J67M2UPD on d8:J6RMGNCE. Please edit ~/.lrc and run `lrc` then `src` to see changes;
+# This file was gNR8d by `lrc` Vers:0.0 d8VS:J67M2UPD on d8:J79MF3AK. Please edit ~/.lrc and run `lrc` then `src` to see changes;
 # nOt:I'm pretty sure itz Chunz(!Takiz)`ls`&&`dircolors`th@cud!hndl (MULTI)?HARDLINK sO rEmMbr2kEp th@ lIn cmNtd out4her(&&kEptstng2cnfirm);
 # Keywords COLOR,OPTIONS,&& EIGHTBIT (honored by Slackware dircolors) are recognized but ignored; TERMz && XtNsionz syncd2 2016;
 # Copyright(C) 1996-2016 FreeSoftwareFound8ion,Inc. Copying and distribution of this file, with or without modific8ion, are permitted provided the
@@ -682,6 +682,8 @@ CHR                       01;38;5;011;48;5;000 #cd= 01;33;40    01;33;40  CHaRac
 .ms                       01;38;5;006      # AutoDesk 3DStudio MaxScript
 .MS                       01;38;5;006
 .pfa                      01;38;5;006
+.ipa                      01;38;5;006      #  IPhone Applic8ion likely resulting from Expo && React_n8ive development for $99  AppStore license (Yearly)
+.apk                      01;38;5;014      # Android PacKages   likely resulting from Expo && React_n8ive development for $25 PlayStore license (!once!)
 .axa                      01;38;5;006      # HTTP://Wiki.Xiph.Org/index.php/MIME_Types_and_File_Extensions
 .oga                      01;38;5;006      # HTTP://Wiki.Xiph.Org/index.php/MIME_Types_and_File_Extensions
 .spx                      01;38;5;006      # HTTP://Wiki.Xiph.Org/index.php/MIME_Types_and_File_Extensions

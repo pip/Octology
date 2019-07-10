@@ -3,27 +3,26 @@
     "name": "d8s2",
     "slug": "d8s2",
     "privacy": "public",
-    "sdkVersion": "32.0.0",
-    "platforms": [
-      "ios",
-      "android"
-    ],
-    "version": "1.0.0",
-    "orientation": "portrait",
-    "icon": "./assets/images/icon.png",
-    "splash": {
+    "description": "d8s2 is the 2nd test attempt at getting Pip's Octology d8-clock to run as a mobile applic8ion through Expo (1st attempt was just 'd8st'). The d8 is gr8 because only 8 efficient base-64 characters are needed to coherently represent 60th-of-a-second precision over lifetimes. Every 3-character d8 of just Year, Month, Day also can be treated as Red, Green, && Blue components to give each d8 a slightly unique background color to encode values more synesthetically. Eventually this d8-clock (probably renamed 'd80k', like my Curses version but with Zero instead of lowercase 'o') will support a radial rendering of hands rot8ing around a canvas as large colorful altern8ive to the initial monospaced text-mode only. Hopefully other GNU/Linux geeks will someday find d8 as useful as I already do. It could represent a paradigm-shift in universal chronology if d8 could see somewhat widespread adoption. Just having 'Beer' && 'Dope' times every morning && afternoon would complement 'GK' GoodKind 4:20PM; Note:after upgraded to SDK v33, try getting --web version going again too;",
+    "githubUrl": "https://github.com/Pip/Octology",
+    "sdkVersion":      "32.0.0",
+    "version":          "0.0.0",
+    "platforms": [    "android",
+                          "ios" ],
+    "orientation":    "default",
+    "primaryColor":      "#1fb",
+    "icon"   : "./assets/images/icon.png",
+    "splash" : {
       "image": "./assets/images/splash.png",
-      "resizeMode": "contain",
-      "backgroundColor": "#001"
-    },
-    "updates": {
-      "fallbackToCacheTimeout": 0
-    },
-    "assetBundlePatterns": [
-      "**/*"
-    ],
-    "ios": {
-      "supportsTablet": true
-    }
+      "resizeMode":   "contain",
+      "backgroundColor": "#001" },
+    "androidStatusBar": {
+      "barStyle": "light-content",
+      "backgroundColor": "#010" },
+    "updates": { "enabled":     true ,
+      "checkAutomatically": "ON_LOAD",
+      "fallbackToCacheTimeout": 3000 },
+    "assetBundlePatterns": [ "**/*" ],
+    "ios": { "supportsTablet":  true }
   }
 }

@@ -1,16 +1,16 @@
 # Octology
-The ontology of 8. `$VERSION='0.0';$d8VS='J6QMIGHT';`
+The ontology of 8. `$VERSION='0.0';$d8VS='J7AM2MvP';`
 
 What is an ontology, you may ask?
 
-<ol><li>n (computer science) a rigorous and exhaustive organiz8ion of some knowledge domain that is usually hierarchical and contains all the relevant
+<ol><li>n. (computer science) a rigorous and exhaustive organiz8ion of some knowledge domain that is usually hierarchical and contains all the relevant
   entities and their rel8ions.</li>
     <li>the metaphysical study of the nature of being and existence.</li>
 </ol>
 
 I expect that after some point (probably passed) anyone who studies Octology thoroughly would become able to develop any new videogame and problem-solve.
 
-"A machine-shop for making software and gaming tools." -LarryWall-J6K paraphrased TPCiP interview, I forget context, but sounded good while writing this;
+"Perl 5 was a machine-shop for making other tools." -LarryWall on d8=J6K TPCiP interview. I'd like Octology to be regarded similarly for game tools.
 
 <!-- even though of course originally above command && below screen shot lists were each Top8, they're now more focused on just most public Top6 or 4 -->
 ## Current Top Screen Shots
@@ -37,15 +37,16 @@ Many `bin/` commands print useful Help text when given a `-h` parameter (white s
 
 If your paths and Perl environment are setup similarly, to gain a bearing on fundamental Octology utilities and organiz8ion, please try executing:
 
- * `ftst  -` run the gamut of Perl File TeSTs on the default .Hrc file
- * `tsgr  -` Test Select Graphic Rendition additional text attributes
-<!-- * `sumb ` - SUMmarize most ~/bin/ executaBle files rather colorfully
+ * `ftst` - run the gamut of Perl File TeSTs on the default .Hrc file
+ * `tsgr` - Test Select Graphic Rendition additional text attributes
+<!--
  * `tstn ` - TeST Navig8ion of A-Star algorithm in Screeps 50x50 maps
  * `tstc ` - TeST c8 Col8 color8ion classic representation progression-->
-<!-- * `tsgr` - Test Select Graphic Rendition additional text attributes-->
+<!-- * `tsgr` - Test Select Graphic Rendition additional text attributes
+ * `wh auu acs ai g grp psag pe` - show a basic colored list of very useful GNU/Linux aliases-->
 
- * `which -` show a basic colored list of very useful GNU/Linux aliases
- * `pal8  -` set first 16-color PALette ("8") for terminal or console
+ * `sumb` - SUMmarize most ~/bin/ executaBle files rather colorfully
+ * `pal8` - set first 16-color PALette ("8") for terminal or console
 <!-- * `gnp8 ` - GeNerate a complete Pal8 mapping of b64 into 256-colors
  * `calN ` - display a CALeNdar of the colored d8-based recent Years-->
 <!-- * `lodH ` - LOaD ~/.Hrc d8a-file to parse and print colorized fields-->

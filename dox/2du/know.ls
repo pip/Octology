@@ -1,5 +1,5 @@
 # HBQLISTV:know.ls crE8d by PipStuart <Pip@CPAN.Org> to duplic8 Dr. Jordan B. Peterson's Quora.Com answer of "40 most valuable things everyone should know";
-# $VERSION='0.0';$d8VS='J6LM6lm6'; # While this document origin8d around (&& still mainly intends to focus on) Dr. Peterson's knowledge, many others fE8ure;
+# $VERSION='0.0';$d8VS='J7AM4Cel'; # While this document origin8d around (&& still mainly intends to focus on) Dr. Peterson's knowledge, many others fE8ure;
 # 2du:start chronicling Dr. Peterson's many topical videos with new section for post-title subject summaries or explor8ion;
 0) Tell the truth.                 
 1) Do not do things that you h8.
@@ -604,3 +604,7 @@ J2CLC666:HTTPS://YouTu.be/IKwkX35bcdw "1010011010" # 7m44s of NumberPhile discus
 # I've noticed the low 5 bits describe 26 && if you duplic8 the bits all flipped && reverse order before prepending to the high-bit values, you'll get 666.
 # Jonathan Pageau said he intends produce videos soon regarding rel8d biblical numerical symbolism too, which should be inform8ive && worth learning about;
 J6LM6drp:HTTPS://YouTu.be/MnUfXYGtT5Q "Who Dares Say He Believes in God?" # 1h43m32s of gr8 speech by Dr. Peterson in Sydney probably about 2 weeks ago-ish;
+J7AM47J4:HTTPS://YouTu.be/_EWCN3CPhTI "Joe Rogan Experience #1320 - Eric Weinstein" # 3h28m11s of gr8 topics, especially the Sagrada Familia Church interior.
+# I'm definitely interested in Eric's new "Portal" podcast which should be starting up soon with interesting guests planning to delve into intriguing topics.
+# I should also study his "Octonions" concepts as abstractions away from Quaternions as invit8ions away from sensible realities which our typical math has.
+# I wish I could move back to Los Angeles somehow someway sometime next year && that I could learn more from && become closer to the Intellectual Dark Web;

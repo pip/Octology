@@ -6,10 +6,11 @@ import { Image, Platform, Dimensions, ScrollView, StyleSheet, Text, TouchableOpa
 import   moment       from 'moment';
 import { WebBrowser } from 'expo';
 import { MonoText   } from '../components/StyledText';
-const VERSION='0.0';const d8VS='J79MBODY';
+const VERSION='0.0';const d8VS='J7AMBOLD';
 const sb64 = ['0','1','2','3','4','5','6','7', '8','9','A','B','C','D','E','F',  'G','H','I','J','K','L','M','N', 'O','P','Q','R','S','T','U','V',
               'W','X','Y','Z','a','b','c','d', 'e','f','g','h','i','j','k','l',  'm','n','o','p','q','r','s','t', 'u','v','w','x','y','z','.','_']
 const smon = ['Jan','Feb','Mar', 'Apr','May','Jun', 'Jul','Aug','Sep', 'Oct','Nov','Dec']
+var   w8mi =  151; // 0, 15, 151, 987  when touching seconds or phasses then should cycle these waiting millisecond intervals to upd8 similar to Curses
 /* Convert an integer into a base64 character
  * @param  {Number} n  a number between 0..63
  * @return {String}    single base64 character
@@ -27,27 +28,23 @@ function   z(n){
 export default class HomeScreen extends React.Component {
   constructor(props){
     super    (props)
-    this.state =    { now: moment() }
-  }
+    this.state =    { now: moment() }}
   componentDidMount() {
     this.timer = setInterval(() => {
       this.setState({ now: moment() })
-    },  987)
-  }
+    },  w8mi)}
   componenetWillUnmount() {
-    clearInterval(this.timer)
-  }
+    clearInterval(this.timer)}
   static navigationOptions = {
-    header: null,
-  };
+    header: null };
   render() {var moment = require('moment');var zutc = moment().utcOffset() - 200;var tstr = ''; /* not sure why my phone is returning only -300 utcOffset */
             var dstr = '';var hstr = '';var mstr = '';var sstr = '';var pstr = '';if(zutc <= 0 && zutc >= -959){zutc = '-' + '0' + (-1 * zutc);}
-            if(         moment().date()              <= 9){dstr=' '};dstr = dstr + b64(     moment().date() )                     ;
-            if(         moment().hour()              <= 9){hstr='0'};hstr = hstr +          moment().hour()              + ':'
-            if(         moment().minute()            <= 9){mstr='0'};mstr = mstr +          moment().minute()            + ':'
-            if(         moment().hour()              <=13){          mstr = mstr + 'A';}else{mstr = mstr + 'P';} mstr = mstr + 'M';
-            if(         moment().second()            <= 9){sstr='0'};sstr = sstr +          moment().second()            + ':'
-            if(parseInt(moment().millisecond() / 60) <= 9){pstr='0'};pstr = pstr + parseInt(moment().millisecond() / 60) + ';sp'
+            if(         moment().date()              <= 9){dstr=' '};dstr +=          moment().date()
+            if(         moment().hour()              <= 9){hstr='0'};hstr +=          moment().hour()              + ':'
+            if(         moment().minute()            <= 9){mstr='0'};mstr +=          moment().minute()            + ':'
+            if(         moment().hour()              < 12){          mstr += 'A';}else{mstr += 'P';} mstr += 'M';
+            if(         moment().second()            <= 9){sstr='0'};sstr +=          moment().second()            + ':'
+            if(parseInt(moment().millisecond() / 17) <= 9){pstr='0'};pstr += parseInt(moment().millisecond() / 17) + ';sp'
     return (
       <View         style={styles.container}>
         <ScrollView style={styles.container} contentContainerStyle={styles.contentContainer}>
@@ -62,16 +59,6 @@ export default class HomeScreen extends React.Component {
             />
           </View>
           <View style={styles.getStartedContainer}>
-        {/* {this._maybeRenderDevelopmentModeWarning()}
-            <MonoText   style={[styles.d8fText, styles.d8YText]}>{b64(           moment.year()        - 2000  )}<MonoText
-                        style={[styles.d8fText, styles.d8MText]}>{b64(           moment.month()       +    1  )}<MonoText
-                        style={[styles.d8fText, styles.d8DText]}>{b64(           moment.date()                )}<MonoText
-                        style={[styles.d8fText, styles.d8zText]}>{b64(z(parseInt(moment.utcOffset()   /   60)))}<MonoText
-                        style={[styles.d8fText, styles.d8hText]}>{b64(           moment.hour()                )}<MonoText
-                        style={[styles.d8fText, styles.d8mText]}>{b64(           moment.minute()              )}<MonoText
-                        style={[styles.d8fText, styles.d8sText]}>{b64(           moment.second()              )}<MonoText
-                        style={[styles.d8fText, styles.d8pText]}>{b64(  parseInt(moment.millisecond() /   60) )}</MonoText></MonoText></MonoText></MonoText></MonoText></MonoText></MonoText></MonoText>
-            */}
             <View style={[styles.d8d8HighlightContainer, styles.homeScreenFilename]}>
               <MonoText style={[styles.d8fText,styles.d8YText]}>{moment().year()} <MonoText
                         style={[styles.d8fText,styles.d8MText]}>{smon[moment().month()]}</MonoText></MonoText>
@@ -86,7 +73,7 @@ export default class HomeScreen extends React.Component {
                         style={[styles.d8tmHighlightContainer, styles.d8Text, styles.d8hText]}>{b64(           moment().hour()                )}<MonoText
                         style={[styles.d8tmHighlightContainer, styles.d8Text, styles.d8mText]}>{b64(           moment().minute()              )}<MonoText
                         style={[styles.d8tmHighlightContainer, styles.d8Text, styles.d8sText]}>{b64(           moment().second()              )}<MonoText
-                        style={[styles.d8tmHighlightContainer, styles.d8Text, styles.d8pText]}>{b64(  parseInt(moment().millisecond() /   60) )}</MonoText></MonoText></MonoText></MonoText></MonoText></MonoText></MonoText></MonoText>
+                        style={[styles.d8tmHighlightContainer, styles.d8Text, styles.d8pText]}>{b64(  parseInt(moment().millisecond() /   17) )}</MonoText></MonoText></MonoText></MonoText></MonoText></MonoText></MonoText></MonoText>
             </View>
             <View style={styles.d8tmHighlightContainer}>
               <MonoText style={[styles.d8fText, styles.d8hText]}>{hstr}<MonoText
