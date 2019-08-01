@@ -87,7 +87,7 @@ use overload
   q(+)   => \&_add,
   q(-)   => \&_sub;
 sub _stringify{ # cat non-zero b64 d8 fields
-  my @fdat=$_[0]->YMDzhmsf();
+  my @fdat=$_[0]->YMDzhmsp();
   my @attz=$_[0]->_attribute_names();my $tstr='';my $toob=0; # flag design8ing field too big
   $fdat[0]-=2000; # Year adjustment
   for(@fdat){$toob=1 if($_>63);}
@@ -114,7 +114,7 @@ sub _cmp_num{my($larg,$rarg,$srvr)=@_;
         ($larg->h < $rarg->h) ||
         ($larg->m < $rarg->m) ||
         ($larg->s < $rarg->s) ||
-        ($larg->f < $rarg->f)){return(-1);}
+        ($larg->p < $rarg->p)){return(-1);}
   elsif(($larg->Y > $rarg->Y) ||
         ($larg->M > $rarg->M) ||
         ($larg->D > $rarg->D) ||
@@ -122,7 +122,7 @@ sub _cmp_num{my($larg,$rarg,$srvr)=@_;
         ($larg->h > $rarg->h) ||
         ($larg->m > $rarg->m) ||
         ($larg->s > $rarg->s) ||
-        ($larg->f > $rarg->f)){return(1);}
+        ($larg->p > $rarg->p)){return(1);}
   else                        {return(0);}}
 sub _cmp_str{my $c=_cmp_num(@_);($c<0) ? return('lt') : ($c) ? return('gt') : return('eq');}
 # d8 + dur8 = d8
@@ -131,7 +131,7 @@ sub _add{
   my($larg,$rarg,$srvr)=@_;my $rslt=Octology::d8->new('');
     ($larg,$rarg)=($rarg,Octology::d8::dur8->new($larg)) if($srvr);
            $rarg =       Octology::d8::dur8->new($rarg)  unless(ref($rarg) && $rarg->isa('Octology::d8::dur8'));
-  $rslt->{'f'}=$larg->f+$rarg->f;
+  $rslt->{'f'}=$larg->p+$rarg->p;
   $rslt->{'s'}=$larg->s+$rarg->s;
   $rslt->{'m'}=$larg->m+$rarg->m;
   $rslt->{'h'}=$larg->h+$rarg->h;
@@ -152,7 +152,7 @@ sub _sub{
   if(ref($rarg)&& $rarg->isa('Octology::d8')){$rslt=Octology::d8::dur8->new(     );
   }else                                      {$rarg=Octology::d8::dur8->new($rarg) unless(ref($rarg)&& $rarg->isa('Octology::d8::dur8'));
                                               $rslt=Octology::d8->new(''   );}
-  $rslt->{'f'}=$larg->f-$rarg->f;
+  $rslt->{'p'}=$larg->p-$rarg->p;
   $rslt->{'s'}=$larg->s-$rarg->s;
   $rslt->{'m'}=$larg->m-$rarg->m;
   $rslt->{'h'}=$larg->h-$rarg->h;
@@ -171,9 +171,9 @@ sub d8cc{my $frmt=shift(@_)||0;my($ptst,$ptsb); # Generic d8 c8 Color Code strin
     if  ($frmt=~ /-*k/i){$ptsb='           bbbbbbbbbbb wwwww     ';}
     else                {$ptsb='                                 ';}
   }else                 {$ptst='ROYGCBMP';
-    if  ($frmt=~ /-*k/i){$ptsb='   wbbbb';}# same as below but with white 'z' background && 'hmsf' backed in darkblue
+    if  ($frmt=~ /-*k/i){$ptsb='   wbbbb';}# same as below but with white 'z' background && 'hmsp' backed in darkblue
     else                {$ptsb='        ';}
-  } return($ptst,$ptsb);} # d8->YMDzhmsf
+  } return($ptst,$ptsb);} # d8->YMDzhmsp
 # Note:`d8` && `d8ok` utilz use 'f' for Full Format to invoke this original expand form (e was phased out since Octology almost always uses x for eXpand now);
 sub expand{ # returns a d8 object's expanded string form, although might need even more expanded form for when /^.../ is not unique in Mon or Dow
   my $self=shift(@_);my $xpop=shift(@_)||'';my @mnth;my $dofw='   ';my $mont='   ';
@@ -186,14 +186,14 @@ sub expand{ # returns a d8 object's expanded string form, although might need ev
     $mont=~ s/^(...).*/$1/;} # keep only 1st 3 chars
   if($xpop=~ /a/){my $W="\e\[1;37m"; # eXPand OPtion to enable Ansi color codes in returned string
     return(sprintf("%s%3s %s%3s %s%2d %s%02d$W:%s%02d$W:%s%02d$W:%s%02d %s%-5s %s%4d", $dfcl{'Y'},$dofw, $dfcl{'o'},$mont, $dfcl{'Y'},$self->D,
-      $dfcl{'C'},$self->h, $dfcl{'B'},$self->m, $dfcl{'M'},$self->s, $dfcl{'p'},$self->f, $dfcl{'G'},$self->zone_offset, $dfcl{'R'},$self->Y));
+      $dfcl{'C'},$self->h, $dfcl{'B'},$self->m, $dfcl{'M'},$self->s, $dfcl{'p'},$self->p, $dfcl{'G'},$self->zone_offset, $dfcl{'R'},$self->Y));
   }else{ # maybe eventually support additional coloring schemes for expanded d8 d8a here
-    return(sprintf("%3s %3s %2d %02d:%02d:%02d:%02d %-5s %4d", $dofw, $mont, $self->Dhmsf, $self->zone_offset, $self->Y));}}
+    return(sprintf("%3s %3s %2d %02d:%02d:%02d:%02d %-5s %4d", $dofw, $mont, $self->Dhmsp, $self->zone_offset, $self->Y));}}
 sub lsft{ # returns a d8 object's ls --full-time string form
   my $self=shift(@_);my $xpop=shift(@_)||'';
   my $cclz=  $self->_field_colors('c'); # load refs to anon color arrays
   my $aclz=  $self->_field_colors('a');my %dfcl=();for(0..@{$cclz}-1){$dfcl{$cclz->[$_]}=$aclz->[$_];} # load c8=>ansi from fields colors d8a
-  my $frcp=  $self->f / $self->{'_fps'};$frcp =~s/^0\.//;$frcp.='0' while(length($frcp) < 9);$frcp=substr($frcp,0,9) if(length($frcp) > 9);
+  my $frcp=  $self->p / $self->{'_pps'};$frcp =~s/^0\.//;$frcp.='0' while(length($frcp) < 9);$frcp=substr($frcp,0,9) if(length($frcp) > 9);
   if($xpop=~ /a/){my $W="\e\[1;37m"; # eXPand OPtion to enable Ansi color codes in returned string
     return(sprintf("%s%4d$W-%s%02d$W-%s%02d %s%02d$W:%s%02d$W:%s%02d$W.%s%9d %s%-5s", $dfcl{'R'},$self->Y, $dfcl{'o'},$self->M, $dfcl{'Y'},$self->D,
       $dfcl{'C'},$self->h, $dfcl{'B'},$self->m, $dfcl{'M'},$self->s, $dfcl{'P'},$frcp,$dfcl{'G'},$self->zone_offset));
@@ -219,7 +219,7 @@ sub iso{ # returns a d8 object's ISO 8601 complete string form
   my $self=shift(@_);my $xpop=shift(@_)||'';
   my $cclz=  $self->_field_colors('c'); # load refs to anon color arrays
   my $aclz=  $self->_field_colors('a');my %dfcl=();for(0..@{$cclz}-1){$dfcl{$cclz->[$_]}=$aclz->[$_];} # load c8=>ansi from fields colors d8a
-  my $frcp=  $self->f / $self->{'_fps'};$frcp =~s/^0\.//;$frcp.='0' while(length($frcp) < 2);$frcp=substr($frcp,0,2) if(length($frcp) > 2);
+  my $frcp=  $self->p / $self->{'_pps'};$frcp =~s/^0\.//;$frcp.='0' while(length($frcp) < 2);$frcp=substr($frcp,0,2) if(length($frcp) > 2);
   my $zowc=  $self->zone_offset();  $zowc =~s/^([-+]\d\d)(\d\d)$/$1:$2/;
   if($xpop=~ /a/){my $W="\e\[1;37m";my($zosn,$zohh,$zomm)=$zowc =~/^([-+])(\d\d):(\d\d)$/; # eXPand OPtion with Ansi color codes embedded
     return(sprintf("%s%4d$W-%s%02d$W-%s%02d${W}T%s%02d$W:%s%02d$W:%s%02d$W.%s%02d$W%s%s%02d$W:%s%02d", $dfcl{'R'},$self->Y, $dfcl{'o'},$self->M,
@@ -261,7 +261,7 @@ sub new{my($nvkr,$ityp,$idat)=@_;my $nobj=ref($nvkr);
     $self->{'h'}=$ltim[2]; #22; # 'M' CDT -0500 was my hard-coded zone before checking Time::Zone methods below
     $self->{'m'}=$ltim[1];
     $self->{'s'}=$ltim[0];
-    $self->{'f'}=int($subs*$self->{'_fps'});#$subs*=$self->{'_fps'};$subs-=int($subs); # this would prepare $subs to be used to calcul8 sub-frames l8r
+    $self->{'p'}=int($subs*$self->{'_pps'});#$subs*=$self->{'_pps'};$subs-=int($subs); # this would prepare $subs to be used to calcul8 sub-phasses l8r
     if(exists($ENV{'d8tzofst'})){ # let explicit d8 ENVironment variable directly set zone with expected offset format: /^[-+]?[01]?\d(00|30|45)?$/
       $lofs  =$ENV{'d8tzofst'};$lofs=~ s/^(\d)/+$1/;$lofs=~ s/^([-+])(\d)$/${1}0${2}00/;$lofs=~ s/^([-+]\d\d)$/${1}00/;
       if  (exists($_ofst2ndx{$lofs})){$self->{'z'}=$_ofst2ndx{$lofs};$zfou=1;}}
@@ -285,11 +285,11 @@ sub new{my($nvkr,$ityp,$idat)=@_;my $nobj=ref($nvkr);
         $self->{'h'}              =$4;
         $self->{'m'}              =$5;
         $self->{'s'}              =$6;
-        $self->{'f'}              =$7;
+        $self->{'p'}              =$7;
         $self->{'z'}              =$8;$self->{'z'}=~s/^(\d)/+$1/;$self->{'z'}=~s/^([-+])(\d)$/${1}0${2}00/;$self->{'z'}=~s/^([-+]\d\d)$/${1}00/;
         if(exists($_ofst2ndx{$self->{'z'}})){$self->{'z'}=$_ofst2ndx{$self->{'z'}};}else{$self->{'z'}=$bzsf;} # specified zone offset reset if not found
-        if($self->{'f'}=~ /^\./){$self->{'f'}='0'.$self->{'f'};$self->{'f'}=int($self->{'f'}*$self->{'_fps'});}
-        else                    {$self->{'f'}=~ s/^://;} # compute frames from float seconds or just strip colon
+        if($self->{'p'}=~ /^\./){$self->{'p'}='0'.$self->{'p'};$self->{'p'}=int($self->{'p'}*$self->{'_pps'});}
+        else                    {$self->{'p'}=~ s/^://;} # compute phasses from float seconds or just strip colon
       } else{croak "!*EROR*! d8::new 'lsft' initializ8ion type could not be matched with the expected format!\n";}
     }elsif($ityp=~ /^e/i){ # handle 'expand' string param as expanded            date &&/or time text
       $rgxs='^\\s*(('.join('|',@dayo).')\\S*)?\\s*('.
@@ -360,8 +360,8 @@ sub new{my($nvkr,$ityp,$idat)=@_;my $nobj=ref($nvkr);
         $self->{'h'}=$4;
         $self->{'m'}=$5;
         $self->{'s'}=$6;
-        $self->{'f'}=int($self->{'_fps'} * "0.$7");}
-    }elsif($ityp=~ /^d/i){my $ilen=length($idat); # handling main 'd8' format as growing right from Year field through YMDzhmsf
+        $self->{'p'}=int($self->{'_pps'} * "0.$7");}
+    }elsif($ityp=~ /^d/i){my $ilen=length($idat); # handling main 'd8' format as growing right from Year field through YMDzhmsp
       for(my $i=0;$i<$ilen;$i++){$self->{$attz[$i]}=b10($1) if($idat=~ s/^([0-9A-Za-z._])//);} # break down d8 str from left side && construct field attrz
       $self->{'z'}%=@_tzofsetz; # just modulo wrap zone values that are gr8r than the number of defined offsets
       $self->{'Y'}+=      2000;
@@ -381,18 +381,18 @@ sub new{my($nvkr,$ityp,$idat)=@_;my $nobj=ref($nvkr);
 # Handle Year shifts (but maybe this shouldn't always be done, like when init params intend to design8 a huge value in a single field)
   $self->{'Y'} -= 2000;
 #   0) Each 13 added to the Month adds  64 to the Year.  # `d8 _eX`   FriJan 1st1745 to `d8 _pV`   MonDec31st2255 (all Midnights)
-#   1)      24 added to the Hour  adds 256 to the Year.  # `d8 _eX0O` TueJan 1st1489 to `d8 _pV0O` ThuDec31st2511 (s/O$/lxxx/ for last frame of Year)
+#   1)      24 added to the Hour  adds 256 to the Year.  # `d8 _eX0O` TueJan 1st1489 to `d8 _pV0O` ThuDec31st2511 (s/O$/lxxx/ for last phass of Year)
 #   2)      32 added to the Day   makes the year negative just before adding 2k  # here Day:'W'..'_', above hour:'O'..'l' (up Oh to lo eL)
   # set values back to 0 of last block if off the known end
   $self->{       'M'}  = 39 if($self->{'M'} >            51); # 4 month blocks go 0..51  (0..12, 13..25, 26..38, 39..51)
   $self->{       'D'}  = 32 if($self->{'D'} >            63); #   day   blocks go 0..63  (0..31, 32..63)
   $self->{       'h'} %= 48;   $self->{'m'}%=            60 ; #   hour  blocks go 0..47  (0..23, 24..47)
-  $self->{       's'} %= 60;   $self->{'f'}%=$self->{'_fps'}; #   min,sec,frm all 0..59 normally
+  $self->{       's'} %= 60;   $self->{'p'}%= 60; #$self->{'_pps'}; #   min,sec,frm all 0..59 normally
   while ($self->{'M'}  > 12  ){$self->{'Y'}+= 64;$self->{'M'}-=13;}
   if    ($self->{'h'}  > 23  ){$self->{'Y'}+=256;$self->{'h'}-=24;}
   if    ($self->{'D'}  > 31  ){$self->{'Y'}*= -1;$self->{'D'}-=32;} $self->{'Y'}+=2000;
   return($self);}
-sub subsecond{  my $self=shift(@_);return(           $self->f(@_));}
+sub subsecond{  my $self=shift(@_);return(           $self->p(@_));}
 sub zone_offset{my $self=shift(@_);return($_tzofsetz[$self->z]   );}
 sub _mon{       my($self,$nwvl)=@_; # 0-based month
   $self->{'M'}=($nwvl+1) if(@_>1);
@@ -512,7 +512,7 @@ was adapted from... I said that already =) ).
 
 =item - flesh out constructor init data parsing && formats supported
 
-=item - consider epoch functions like _epoch([which epoch]) or individuals like _frames_epoch()
+=item - consider epoch functions like _epoch([which epoch]) or individuals like _phasses_epoch()
 
 =item - mk d8->new() able to crE8 from different 'epoch' init types
 
@@ -557,7 +557,7 @@ I've made up some silly sentences as mnemonic devices to help me remember every 
     56    utility     underground
     60    yards       yard
 
-  The real typical extents for Month,Day,hour MDh are CVN and for minute,second,frame msf are xxx.
+  The real typical extents for Month,Day,hour MDh are CVN and for minute,second,phass msp are xxx.
 
   "5AFKPUZejoty": 5 Away From Keyboard, is a PUZzle (Please Use Zipper) to e-jot down y, goes by 5.
 
@@ -615,7 +615,7 @@ Returns the Octology::c8 color code string approprE8 for d8 d8a.
 
   Format   Returned color code string
    'k'     the background will change along with the foreground for standard
-             time-of day elements (i.e., hmsf on a dark blue background)
+             time-of day elements (i.e., hmsp on a dark blue background)
    'f'     color codes for the expanded d8 format
              (e.g., colors corresponding to Sun Jan  4 12:41:48:13 -0500 2004)
 
@@ -629,7 +629,7 @@ Octology::d8 objects:
   $t->h  or  $t->hour
   $t->m  or  $t->minute
   $t->s  or  $t->second
-  $t->f  or  $t->frame
+  $t->p  or  $t->phass
 
 Please see L<Octology::d8::fldz> for further description of field
 accessor methods.
@@ -641,7 +641,7 @@ constructor instead. The following methods are available on
 Octology::d8 objects though && remain as similar to L<Time::Piece>
 functionality as made sense.
 
-  $t->frm                 # also as $t->frame && $t->subsecond
+  $t->phs                 # also as $t->phass && $t->subsecond
   $t->sec                 # also available as $t->second
   $t->min                 # also available as $t->minute
   $t->hour                # 24 hour
@@ -683,8 +683,8 @@ the corresponding named fields like:
 Following are some useful functions && comments of sample return values:
 
   $t->hms                 # [12, 34, 56]
-  $t->hmsf                # [12, 34, 56, 12]
-  $t->time                # same as $t->hmsf
+  $t->hmsp                # [12, 34, 56, 12]
+  $t->time                # same as $t->hmsp
 
   $t->ymd                 # [2000,  2, 29]
   $t->date                # same as $t->ymd
@@ -693,7 +693,7 @@ Following are some useful functions && comments of sample return values:
   $t->datetime            # 2000-02-29T12:34:56            (ISO 8601)
   $t->expand              # Tue Feb 29 12:34:56:12 -0500 2000
   $t->cdate               # same as $t->expand
-  $t->compress            # same as $t->YMDzhmsf
+  $t->compress            # same as $t->YMDzhmsp
   "$t"                    # same as $t->compress
 
   $t->is_leap_year        # true if it is
@@ -726,14 +726,14 @@ To update the global lists, use:
 
 d8 object strings (both in normal initializ8ion && printing) grow
 left-to-right starting from the Year to specify whatever precision
-you need while dur8 objects grow right-to-left from the frame field.
+you need while dur8 objects grow right-to-left from the phass field.
 
 It's possible to use simple addition and subtraction of objects:
 
   use Octology::d8;
   use Octology::d8::dur8;
 
-  my $cur_d8       = Octology::d8->new(); # YMDzhmsf
+  my $cur_d8       = Octology::d8->new(); # YMDzhmsp
   my $one_week     = Octology::d8::dur8->new('700000');
   my $one_week_ago = $cur_d8 - $one_week;
 
@@ -791,7 +791,7 @@ the following 8bow mapping should be employed whenever possible:
        t  hour   -> Cyan
        i  minute -> Blue
        m  second -> Magenta
-       e  frame  -> Purple
+       e  phass  -> Purple
 
 Please see the colr() member function in the USAGE section.
 

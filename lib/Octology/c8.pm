@@ -1,8 +1,8 @@
 # E7TMAYX4: Octology::c8.pm by PipStuart <Pip@CPAN.Org> to provide a compatibility applic8ion interface to Curses and a powerful new text-mode through SDL;
 package     Octology::c8;
 use strict; use warnings;use utf8;use v5.10;
-#equire     Exporter;
-#se base qw(Exporter);
+require     Exporter;
+use base qw(Exporter);
 use         Octology::a8;
 use         Octology::b8;
 use         Octology::d8;
@@ -22,8 +22,8 @@ use SDL::GFX::Rotozoom;
 use SDLx::App;
 #se SDLx::Text; # also learn TTF && Pango, probably don't need SFont
 use SDLx::Sprite;} $sdlf = 0 if(exists($ENV{'TTY'}) && $ENV{'TTY'}=~ /^\/dev\/tty/); # disAbl SDL whN in fullscrn tXt-mOde acordng2 $TTY (or try `tty`?)
-#ur @EXPORT=  qw(); # mvd only orig Xportz sube && e2c8 over2 a8.pm (&& since renamed e to S for SKp consistency)
-our $VERSION='0.0';my $d8VS='J29LIGut';our $auth='PipStuart <Pip@CPAN.Org>';my $name='c8';
+our @EXPORT=  qw(xx); # mvd only orig Xportz sube && e2c8 over2 a8.pm (&& since renamed e to S for SKp consistency)
+our $VERSION='0.0';my $d8VS='J81M9gm8';our $auth='PipStuart <Pip@CPAN.Org>';my $name='c8';
 my %GLBL=( # GLOBAL CLASS VARIABLES
   'FLAGOPEN'=> 0); # flag for if SDL window crE8d yet (in Simp was for if a main curses screen had been opened yet)
 #y @DISPSTAK=(); # global stack of crE8d c8 objects for display order
@@ -51,24 +51,24 @@ my   @_attrnamz=();         my %_attrdata=(); # ordered attribute names array, d
                     my %_verbose_attrnamz=(); # object field d8a
 #ush(@_attrnamz, '_wind'    ); $_attrdata{$_attrnamz[-1]} =  0; # CursesWindowHandle
 #                      $_verbose_attrnamz{$_attrnamz[-1]} = 'WindowHandle';
-#ush(@_attrnamz, '_sxap'    ); $_attrdata{$_attrnamz[-1]} =  0;        # SDL main objectz reloc8d from c8 object fldz here to %GLBL 4 sharing but maybe
-#                      $_verbose_attrnamz{$_attrnamz[-1]} = 'SDLxApp'; #   should return to allow multi-windowz?
-#ush(@_attrnamz, '_sfss'    ); $_attrdata{$_attrnamz[-1]} =  0;
-#                      $_verbose_attrnamz{$_attrnamz[-1]} = 'SDLFullScreenSurface';
-#ush(@_attrnamz, '_xfss'    ); $_attrdata{$_attrnamz[-1]} =  0;
-#                      $_verbose_attrnamz{$_attrnamz[-1]} = 'SDLxFullScreenSurface';
-#ush(@_attrnamz, '_evnt'    ); $_attrdata{$_attrnamz[-1]} =  0;
-#                      $_verbose_attrnamz{$_attrnamz[-1]} = 'SDLEvent';
-#ush(@_attrnamz, '_jstk'    ); $_attrdata{$_attrnamz[-1]} =  0;
-#                      $_verbose_attrnamz{$_attrnamz[-1]} = 'SDLJoystick';
-#ush(@_attrnamz, '_jnam'    ); $_attrdata{$_attrnamz[-1]} = '';
-#                      $_verbose_attrnamz{$_attrnamz[-1]} = 'SDLJoystickName';
-#ush(@_attrnamz, '_nbtz'    ); $_attrdata{$_attrnamz[-1]} =  0;
-#                      $_verbose_attrnamz{$_attrnamz[-1]} = 'SDLJoystickNumButtons'; # note:SDLFullScreenOptionFlag is also SDL down in _flag* section
-#ush(@_attrnamz, '_f8om'    ); $_attrdata{$_attrnamz[-1]} = {}; # f8  f0nt   Object Map hash  #y %f0nt;my %sprm =();    # f0ntz also reloc8d to %GLBL 4 sharing
+push(@_attrnamz, '_sxap'    ); $_attrdata{$_attrnamz[-1]} =  0;        # SDL main objectz reloc8d from c8 object fldz here to %GLBL 4 sharing but maybe
+                       $_verbose_attrnamz{$_attrnamz[-1]} = 'SDLxApp'; #   should return to allow multi-windowz?
+push(@_attrnamz, '_sfss'    ); $_attrdata{$_attrnamz[-1]} =  0;
+                       $_verbose_attrnamz{$_attrnamz[-1]} = 'SDLFullScreenSurface';
+push(@_attrnamz, '_xfss'    ); $_attrdata{$_attrnamz[-1]} =  0;
+                       $_verbose_attrnamz{$_attrnamz[-1]} = 'SDLxFullScreenSurface';
+push(@_attrnamz, '_evnt'    ); $_attrdata{$_attrnamz[-1]} =  0;
+                       $_verbose_attrnamz{$_attrnamz[-1]} = 'SDLEvent';
+push(@_attrnamz, '_jstk'    ); $_attrdata{$_attrnamz[-1]} =  0;
+                       $_verbose_attrnamz{$_attrnamz[-1]} = 'SDLJoystick';
+push(@_attrnamz, '_jnam'    ); $_attrdata{$_attrnamz[-1]} = '';
+                       $_verbose_attrnamz{$_attrnamz[-1]} = 'SDLJoystickName';
+push(@_attrnamz, '_nbtz'    ); $_attrdata{$_attrnamz[-1]} =  0;
+                       $_verbose_attrnamz{$_attrnamz[-1]} = 'SDLJoystickNumButtons'; # note:SDLFullScreenOptionFlag is also SDL down in _flag* section
+#push(@_attrnamz, '_f8om'    ); $_attrdata{$_attrnamz[-1]} = {}; # f8  f0nt   Object Map hash  #y %f0nt;my %sprm =();    # f0ntz also reloc8d to %GLBL 4 sharing
 #                      $_verbose_attrnamz{$_attrnamz[-1]} = 'f8f0ntObjectMap';
-#ush(@_attrnamz, '_sprm'    ); $_attrdata{$_attrnamz[-1]} = {}; # SDL SPRite object Map hash
-#                      $_verbose_attrnamz{$_attrnamz[-1]} = 'SpriteMap';
+push(@_attrnamz, '_sprm'    ); $_attrdata{$_attrnamz[-1]} = {}; # SDL SPRite object Map hash
+                       $_verbose_attrnamz{$_attrnamz[-1]} = 'SpriteMap';
 push(@_attrnamz, '_Stxt'    ); $_attrdata{$_attrnamz[-1]} = ''; # eScape TeXT     d8a   (did s/e/S/ hEr && in other c8 object filter scripts for consistency)
                        $_verbose_attrnamz{$_attrnamz[-1]} = 'EscapeTextD8a';
 push(@_attrnamz, '_text'    ); $_attrdata{$_attrnamz[-1]} = []; #        text     d8a
@@ -328,16 +328,16 @@ sub new{my( $nvkr,$ityp,   $idat)=@_;  my $nobj=ref($nvkr); # basically same as 
   }elsif($self->{'_flagcmnd'}){$self->SAAD(0);$self->L8cd()                             ; # start basic shell command output loading (or pIpeSTDIN if!len_cmdz)
   }elsif($self->{'_flagterm'}){$self->SAAD(0);$self->L8rc();$self->CVis(1);$name= '8trm'; # start basic 8trm && 8sh with command prompt
   }elsif($self->{'_flagd8rm'}){$self->SAAD(0);$self->L8rc();$self->CVis(0);$name= 'd8rm'; # start basic utrm for User d8a probably for d8ok && input renderz
-    my $sfac=8.0;$self->Rsiz(int($sfac / 4),int($sfac / 2));$self->XScl($sfac);$self->YScl($sfac); # resize ht,wd && set both scalez all by single s-factor
+    my $sfac=8.0;$self->Rsiz(int($sfac / 1),int($sfac / 1));$self->XScl($sfac);$self->YScl($sfac / 1.2); # resize ht,wd&&set both scalez all by s-factor
   }elsif($self->{'_flagi8rm'}){$self->SAAD(0);$self->L8rc();$self->CVis(0);$name= 'i8rm'; # start basic utrm for User d8a probably for d8ok && input renderz
-    my $sfac=9.0;$self->Rsiz(int($sfac / 3),int($sfac    ));$self->XScl($sfac);$self->YScl($sfac); # resize ht,wd && set both scalez all by single s-factor
+    my $sfac=9.0;$self->Rsiz(int($sfac / 3),int($sfac    ));$self->XScl($sfac);$self->YScl($sfac    ); # resize ht,wd && set both scalez all by single s-factor
   }else {#self->SAAD(1);$self->{'_dndx'}=@DISPSTAK;push(@DISPSTAK,\$self); # orig pushd new objref to display order stack, tracking index but unused for now
          $self->TestDraw();} # old Curses newwin doesn't auto draw so if _text initd && flagaudr (&& obj not already just a file or cmnd from abov) ...
   return($self);}
 sub TIEARRAY{my $clas=shift;my $self=bless({},$clas);
   for my    $attr ($self->AttrNamz()){
-    $self->{$attr}=               []      if($attr =~ /^_(text|[fb](clr|0nt))$/);
-    $self->{$attr}=$self->DfltValu($attr) if($attr !~ /^_(text|[fb](clr|0nt))$/);} # init defaultz (except main layer anon-arrayz which were persisting)
+    $self->{$attr}=               []      if($attr =~ /^_(text|[Ffb](clr|0nt))$/);
+    $self->{$attr}=$self->DfltValu($attr) if($attr !~ /^_(text|[Ffb](clr|0nt))$/);} # init defaultz (except main layer anon-arrayz which were persisting)
   for(@KMODNAMZ){  $self->{'_kmod'}{$_}=0;}
   while(@_){my $foun=0;my($keey,$valu)=(shift,shift);
     for my  $attr ($self->AttrNamz()){
@@ -382,24 +382,24 @@ sub SPLICE    {
   my $retn = splice(@{$self->{'_text'}}, $offs, $leng, @_);$self->TestDraw();return($retn);}
 sub EXTEND    { }
 sub OScr{my $self = shift; # in Simp OScr was global but trying in c8 as method
-  unless($GLBL{'FLAGOPEN'}){ # need Open main Screen for what was a new Curses::Simp obj but should now start initializing SDL here instead
+  unless($self->{'_flagopen'}){ # need Open main Screen for what was a new Curses::Simp obj but should now start initializing SDL here instead
     if($sdlf){
       for my  $fkey(keys(%f8fm)){ # load my top64 f0nts (attempting to loop with $_ messes up inside tied constructor here)
-        $GLBL{'_f8om'}{$fkey}=Octology::f8->new("$ENV{'HOME'}/lib/Octology/f8/f0nt/$f8fm{$fkey}.f0nt");}
-                       SDL::init_sub_system(SDL_INIT_JOYSTICK); # w(idth) h(eight) d(epth) f(lags) resizeable(just r does!work but SDL_RESIZABLE f does)
-      $GLBL{  '_sxap'}=SDLx::App    ->new(w =>$self->{'_widt'}* 8*$self->{'_xscl'},
-                                          h =>$self->{'_hite'}*16*$self->{'_yscl'},d =>32,t =>$name, # spelling diff SDL_RESIZABLE && resizeable
-                                          f => SDL_HWSURFACE | SDL_DOUBLEBUF | SDL_HWACCEL | SDL_RESIZABLE,eoq =>1); # EndOnQuit
-      $GLBL{  '_sfss'}=SDL::Surface ->new(     SDL_HWSURFACE | SDL_ASYNCBLIT, $self->{'_widt'}*8, $self->{'_hite'}*16, 32, 0, 0, 0, 0);
-      $GLBL{  '_xfss'}=SDLx::Surface->new(surface => $GLBL{'_sfss'});
-      $GLBL{  '_sxap'}->fullscreen() if($self->{'_flagfsof'} && $ENV{'HOSTNAME'} ne 'Aku');
-      $GLBL{  '_evnt'}=SDL::Event   ->new(  ); # below values from `man kbdrate` default 10.9CPS after 0.25secs
-                       SDL::Events::enable_key_repeat(250,92);#SDL_DEFAULT_REPEAT_DELAY,SDL_DEFAULT_REPEAT_INTERVAL); # for typematic
-      if(              SDL::Joystick::num_joysticks()){
-        $GLBL{'_jstk'}=SDL::Joystick->new( 0);
-        $GLBL{'_jnam'}=SDL::Joystick::name(0);
-        $GLBL{'_nbtz'}=SDL::Joystick::num_buttons($GLBL{'_jstk'});}
-      $GLBL{'FLAGOPEN'}=1;
+        $GLBL{  '_f8om'}{$fkey}=Octology::f8->new("$ENV{'HOME'}/lib/Octology/f8/f0nt/$f8fm{$fkey}.f0nt") if(!exists($GLBL{'_f8om'}{$fkey}));}
+                         SDL::init_sub_system(SDL_INIT_JOYSTICK); # w(idth) h(eight) d(epth) f(lags) resizeable(just r does!work but SDL_RESIZABLE f does)
+      $self->{  '_sxap'}=SDLx::App    ->new(w =>$self->{'_widt'}* 8*$self->{'_xscl'},
+                                            h =>$self->{'_hite'}*16*$self->{'_yscl'},d =>32,t =>$name, # spelling diff SDL_RESIZABLE && resizeable
+                                            f => SDL_HWSURFACE | SDL_DOUBLEBUF | SDL_HWACCEL | SDL_RESIZABLE,eoq =>1); # EndOnQuit
+      $self->{  '_sfss'}=SDL::Surface ->new(     SDL_HWSURFACE | SDL_ASYNCBLIT, $self->{'_widt'}*8, $self->{'_hite'}*16, 32, 0, 0, 0, 0);
+      $self->{  '_xfss'}=SDLx::Surface->new(surface => $self->{'_sfss'});
+      $self->{  '_sxap'}->fullscreen() if($self->{'_flagfsof'} && $ENV{'HOSTNAME'} ne 'Aku');
+      $self->{  '_evnt'}=SDL::Event   ->new(  ); # below values from `man kbdrate` default 10.9CPS after 0.25secs
+                         SDL::Events::enable_key_repeat(250,92);#SDL_DEFAULT_REPEAT_DELAY,SDL_DEFAULT_REPEAT_INTERVAL); # for typematic
+      if(                SDL::Joystick::num_joysticks()){
+        $self->{'_jstk'}=SDL::Joystick->new( 0);
+        $self->{'_jnam'}=SDL::Joystick::name(0);
+        $self->{'_nbtz'}=SDL::Joystick::num_buttons($self->{'_jstk'});}
+      $GLBL{'FLAGOPEN'}=$self->{'_flagopen'}=1;
     }elsif($ucsf){ # if Using Simp, set pal8 at start
       for(0..$#{$cmsp{'ANSI'}}){my @rgbd= split(//, $pmap{$cmsp{'ANSI'}[$_]});for(@rgbd){$_=b10($_)*4;} # silently prnt colr changes (or sys pal8?) B4 new Simp
        #printf("%2d:%s:%s:%3d:%3d:%3d:%s\n"  ,$_,$$cmsp{'ANSI'}[$_],$pmap{$$cmsp{'ANSI'}[$_]},@rgbd,    $ENV{'TERM'});
@@ -407,7 +407,7 @@ sub OScr{my $self = shift; # in Simp OScr was global but trying in c8 as method
         printf("\e]4;%d;#%2.2x%2.2x%2.2x\e\\",$_,                                             @rgbd) if($ENV{'TERM'} eq 'xterm'); # maybe if TERM ne 'linux'?
       } # maybe should also set bkgr && frgr 0 && 7 like etfp did?
       # do old Simp OScr stuf
-      $GLBL{'FLAGOPEN'}=1;
+      $GLBL{'FLAGOPEN'}=$self->{'_flagopen'}=1;
     }}}
 sub YCrs{my $self=shift;my    $ycrs=shift; # maybe these should handle -1 && Move should just wrap these similar to Rsiz
   if(defined($ycrs) && $self->{'_ycrs'} ne $ycrs){
@@ -522,154 +522,154 @@ sub Cmnd{my $self=shift;my    $cmnd=shift;
 sub Wait{my $self=shift;my $wait=shift;
   if(defined($wait) && $wait > 0){
     $wait=int($wait*1000) if(!$self->{'_flagmili'}); # allow basic float seconds if default milliseconds flag toggled off
-    if($sdlf){$self->OScr() unless($GLBL{'FLAGOPEN'});
-      $GLBL{'_sxap'}->delay($wait);}}}
+    if($sdlf){$self->OScr() unless($self->{'FLAGOPEN'});
+      $self->{'_sxap'}->delay($wait);}}}
 sub GetK{my $self=shift;my $tmot=shift||0;my $tkey='-1';my $stix;my $ctix;
-  if($sdlf){$self->OScr() unless($GLBL{'FLAGOPEN'});
-    $stix=$GLBL{'_sxap'}->ticks();
+  if($sdlf){$self->OScr() unless($self->{'FLAGOPEN'});
+    $stix=$self->{'_sxap'}->ticks();
     if(defined($tmot) && $tmot > 0){
       $tmot=int($tmot*1000) if(!$self->{'_flagmili'});} # allow basic float seconds if default milliseconds flag toggled off
     while(defined($tkey) && $tkey eq '-1' && ($tmot eq '-1' || !defined($ctix) || ($ctix-$stix) < $tmot)){
           SDL::Events::pump_events();
-      if( SDL::Events::poll_event($GLBL{'_evnt'})){
-        if     ($GLBL{'_evnt'}->type    == SDL_VIDEORESIZE){ # first handle resize events, then more typical input events
-          my($evrw,$evrh)=($GLBL{'_evnt'}->resize_w    ,$GLBL{'_evnt'}->resize_h     );$GLBL{'_sxap'}->resize($evrw,$evrh);
+      if( SDL::Events::poll_event($self->{'_evnt'})){
+        if     ($self->{'_evnt'}->type    == SDL_VIDEORESIZE){ # first handle resize events, then more typical input events
+          my($evrw,$evrh)=($self->{'_evnt'}->resize_w    ,$self->{'_evnt'}->resize_h     );$self->{'_sxap'}->resize($evrw,$evrh);
           $self->{'_xscl'}=$evrw / ($self->{'_widt'}* 8.0);
           $self->{'_yscl'}=$evrh / ($self->{'_hite'}*16.0);$self->Draw();
-        } elsif($GLBL{'_evnt'}->type    == SDL_KEYDOWN      ){
-          if   ($GLBL{'_evnt'}->key_sym == SDLK_0           ){$tkey=  '0';$tkey=')'       if($GLBL{'_evnt'}->key_mod & KMOD_SHIFT);} # seems shifted #s
-          elsif($GLBL{'_evnt'}->key_sym == SDLK_1           ){$tkey=  '1';$tkey='!'       if($GLBL{'_evnt'}->key_mod & KMOD_SHIFT);} #   aren't getting
-          elsif($GLBL{'_evnt'}->key_sym == SDLK_2           ){$tkey=  '2';$tkey='@'       if($GLBL{'_evnt'}->key_mod & KMOD_SHIFT);} #   own key_sym
-          elsif($GLBL{'_evnt'}->key_sym == SDLK_3           ){$tkey=  '3';$tkey='#'       if($GLBL{'_evnt'}->key_mod & KMOD_SHIFT);}
-          elsif($GLBL{'_evnt'}->key_sym == SDLK_4           ){$tkey=  '4';$tkey='$'       if($GLBL{'_evnt'}->key_mod & KMOD_SHIFT);}
-          elsif($GLBL{'_evnt'}->key_sym == SDLK_5           ){$tkey=  '5';$tkey='%'       if($GLBL{'_evnt'}->key_mod & KMOD_SHIFT);}
-          elsif($GLBL{'_evnt'}->key_sym == SDLK_6           ){$tkey=  '6';$tkey='^'       if($GLBL{'_evnt'}->key_mod & KMOD_SHIFT);}
-          elsif($GLBL{'_evnt'}->key_sym == SDLK_7           ){$tkey=  '7';$tkey='&'       if($GLBL{'_evnt'}->key_mod & KMOD_SHIFT);}
-          elsif($GLBL{'_evnt'}->key_sym == SDLK_8           ){$tkey=  '8';$tkey='*'       if($GLBL{'_evnt'}->key_mod & KMOD_SHIFT);}
-          elsif($GLBL{'_evnt'}->key_sym == SDLK_9           ){$tkey=  '9';$tkey='('       if($GLBL{'_evnt'}->key_mod & KMOD_SHIFT);}
-          elsif($GLBL{'_evnt'}->key_sym == SDLK_a           ){$tkey=  'a';$tkey=uc($tkey) if($GLBL{'_evnt'}->key_mod & KMOD_SHIFT);
-                                                              $tkey="Ct$tkey"             if($GLBL{'_evnt'}->key_mod & KMOD_CTRL );} # Ctrl-a or A
-          elsif($GLBL{'_evnt'}->key_sym == SDLK_b           ){$tkey=  'b';$tkey=uc($tkey) if($GLBL{'_evnt'}->key_mod & KMOD_SHIFT);
-                                                              $tkey="Ct$tkey"             if($GLBL{'_evnt'}->key_mod & KMOD_CTRL );} # Ctrl-b or B
-          elsif($GLBL{'_evnt'}->key_sym == SDLK_c           ){$tkey=  'c';$tkey=uc($tkey) if($GLBL{'_evnt'}->key_mod & KMOD_SHIFT);
-                                                              $tkey="Ct$tkey"             if($GLBL{'_evnt'}->key_mod & KMOD_CTRL );} # Ctrl-c or C ..
-          elsif($GLBL{'_evnt'}->key_sym == SDLK_d           ){$tkey=  'd';$tkey=uc($tkey) if($GLBL{'_evnt'}->key_mod & KMOD_SHIFT);
-                                                              $tkey="Ct$tkey"             if($GLBL{'_evnt'}->key_mod & KMOD_CTRL );}
-          elsif($GLBL{'_evnt'}->key_sym == SDLK_e           ){$tkey=  'e';$tkey=uc($tkey) if($GLBL{'_evnt'}->key_mod & KMOD_SHIFT);
-                                                              $tkey="Ct$tkey"             if($GLBL{'_evnt'}->key_mod & KMOD_CTRL );}
-          elsif($GLBL{'_evnt'}->key_sym == SDLK_f           ){$tkey=  'f';$tkey=uc($tkey) if($GLBL{'_evnt'}->key_mod & KMOD_SHIFT);
-                                                              $tkey="Ct$tkey"             if($GLBL{'_evnt'}->key_mod & KMOD_CTRL );}
-          elsif($GLBL{'_evnt'}->key_sym == SDLK_g           ){$tkey=  'g';$tkey=uc($tkey) if($GLBL{'_evnt'}->key_mod & KMOD_SHIFT);
-                                                              $tkey="Ct$tkey"             if($GLBL{'_evnt'}->key_mod & KMOD_CTRL );}
-          elsif($GLBL{'_evnt'}->key_sym == SDLK_h           ){$tkey=  'h';$tkey=uc($tkey) if($GLBL{'_evnt'}->key_mod & KMOD_SHIFT);
-                                                              $tkey="Ct$tkey"             if($GLBL{'_evnt'}->key_mod & KMOD_CTRL );}
-          elsif($GLBL{'_evnt'}->key_sym == SDLK_i           ){$tkey=  'i';$tkey=uc($tkey) if($GLBL{'_evnt'}->key_mod & KMOD_SHIFT);
-                                                              $tkey="Ct$tkey"             if($GLBL{'_evnt'}->key_mod & KMOD_CTRL );}
-          elsif($GLBL{'_evnt'}->key_sym == SDLK_j           ){$tkey=  'j';$tkey=uc($tkey) if($GLBL{'_evnt'}->key_mod & KMOD_SHIFT);
-                                                              $tkey="Ct$tkey"             if($GLBL{'_evnt'}->key_mod & KMOD_CTRL );}
-          elsif($GLBL{'_evnt'}->key_sym == SDLK_k           ){$tkey=  'k';$tkey=uc($tkey) if($GLBL{'_evnt'}->key_mod & KMOD_SHIFT);
-                                                              $tkey="Ct$tkey"             if($GLBL{'_evnt'}->key_mod & KMOD_CTRL );}
-          elsif($GLBL{'_evnt'}->key_sym == SDLK_l           ){$tkey=  'l';$tkey=uc($tkey) if($GLBL{'_evnt'}->key_mod & KMOD_SHIFT);
-                                                              $tkey="Ct$tkey"             if($GLBL{'_evnt'}->key_mod & KMOD_CTRL );}
-          elsif($GLBL{'_evnt'}->key_sym == SDLK_m           ){$tkey=  'm';$tkey=uc($tkey) if($GLBL{'_evnt'}->key_mod & KMOD_SHIFT);
-                                                              $tkey="Ct$tkey"             if($GLBL{'_evnt'}->key_mod & KMOD_CTRL );}
-          elsif($GLBL{'_evnt'}->key_sym == SDLK_n           ){$tkey=  'n';$tkey=uc($tkey) if($GLBL{'_evnt'}->key_mod & KMOD_SHIFT);
-                                                              $tkey="Ct$tkey"             if($GLBL{'_evnt'}->key_mod & KMOD_CTRL );}
-          elsif($GLBL{'_evnt'}->key_sym == SDLK_o           ){$tkey=  'o';$tkey=uc($tkey) if($GLBL{'_evnt'}->key_mod & KMOD_SHIFT);
-                                                              $tkey="Ct$tkey"             if($GLBL{'_evnt'}->key_mod & KMOD_CTRL );}
-          elsif($GLBL{'_evnt'}->key_sym == SDLK_p           ){$tkey=  'p';$tkey=uc($tkey) if($GLBL{'_evnt'}->key_mod & KMOD_SHIFT);
-                                                              $tkey="Ct$tkey"             if($GLBL{'_evnt'}->key_mod & KMOD_CTRL );}
-          elsif($GLBL{'_evnt'}->key_sym == SDLK_q           ){$tkey=  'q';$tkey=uc($tkey) if($GLBL{'_evnt'}->key_mod & KMOD_SHIFT);
-                                                              $tkey="Ct$tkey"             if($GLBL{'_evnt'}->key_mod & KMOD_CTRL );}
-          elsif($GLBL{'_evnt'}->key_sym == SDLK_r           ){$tkey=  'r';$tkey=uc($tkey) if($GLBL{'_evnt'}->key_mod & KMOD_SHIFT);
-                                                              $tkey="Ct$tkey"             if($GLBL{'_evnt'}->key_mod & KMOD_CTRL );}
-          elsif($GLBL{'_evnt'}->key_sym == SDLK_s           ){$tkey=  's';$tkey=uc($tkey) if($GLBL{'_evnt'}->key_mod & KMOD_SHIFT);
-                                                              $tkey="Ct$tkey"             if($GLBL{'_evnt'}->key_mod & KMOD_CTRL );}
-          elsif($GLBL{'_evnt'}->key_sym == SDLK_t           ){$tkey=  't';$tkey=uc($tkey) if($GLBL{'_evnt'}->key_mod & KMOD_SHIFT);
-                                                              $tkey="Ct$tkey"             if($GLBL{'_evnt'}->key_mod & KMOD_CTRL );}
-          elsif($GLBL{'_evnt'}->key_sym == SDLK_u           ){$tkey=  'u';$tkey=uc($tkey) if($GLBL{'_evnt'}->key_mod & KMOD_SHIFT);
-                                                              $tkey="Ct$tkey"             if($GLBL{'_evnt'}->key_mod & KMOD_CTRL );}
-          elsif($GLBL{'_evnt'}->key_sym == SDLK_v           ){$tkey=  'v';$tkey=uc($tkey) if($GLBL{'_evnt'}->key_mod & KMOD_SHIFT);
-                                                              $tkey="Ct$tkey"             if($GLBL{'_evnt'}->key_mod & KMOD_CTRL );}
-          elsif($GLBL{'_evnt'}->key_sym == SDLK_w           ){$tkey=  'w';$tkey=uc($tkey) if($GLBL{'_evnt'}->key_mod & KMOD_SHIFT);
-                                                              $tkey="Ct$tkey"             if($GLBL{'_evnt'}->key_mod & KMOD_CTRL );}
-          elsif($GLBL{'_evnt'}->key_sym == SDLK_x           ){$tkey=  'x';$tkey=uc($tkey) if($GLBL{'_evnt'}->key_mod & KMOD_SHIFT);
-                                                              $tkey="Ct$tkey"             if($GLBL{'_evnt'}->key_mod & KMOD_CTRL );}
-          elsif($GLBL{'_evnt'}->key_sym == SDLK_y           ){$tkey=  'y';$tkey=uc($tkey) if($GLBL{'_evnt'}->key_mod & KMOD_SHIFT);
-                                                              $tkey="Ct$tkey"             if($GLBL{'_evnt'}->key_mod & KMOD_CTRL );}
-          elsif($GLBL{'_evnt'}->key_sym == SDLK_z           ){$tkey=  'z';$tkey=uc($tkey) if($GLBL{'_evnt'}->key_mod & KMOD_SHIFT);
-                                                              $tkey="Ct$tkey"             if($GLBL{'_evnt'}->key_mod & KMOD_CTRL );}
-          elsif($GLBL{'_evnt'}->key_sym == SDLK_PERIOD      ){$tkey=  '.';$tkey='>'       if($GLBL{'_evnt'}->key_mod & KMOD_SHIFT);}
-          elsif($GLBL{'_evnt'}->key_sym == SDLK_UNDERSCORE  ){$tkey=  '_';}
-          elsif($GLBL{'_evnt'}->key_sym == SDLK_SPACE       ){$tkey=  ' ';}
-          elsif($GLBL{'_evnt'}->key_sym == SDLK_RETURN      ){$tkey= "\r";} # maybe should be \n newline more like Enter?
-          elsif($GLBL{'_evnt'}->key_sym == SDLK_TAB         ){$tkey= "\t";} # might want to check for Shift-Tab && Ctrl-Tab here too
-          elsif($GLBL{'_evnt'}->key_sym == SDLK_BACKSPACE   ){$tkey= "\b";}
-          elsif($GLBL{'_evnt'}->key_sym == SDLK_ESCAPE      ){$tkey= "\e";} # ^[
-          elsif($GLBL{'_evnt'}->key_sym == SDLK_DELETE   ){$tkey=chr(127);} # ^? or maybe chr(127)?
-          elsif($GLBL{'_evnt'}->key_sym == SDLK_MINUS       ){$tkey=  '-';$tkey='_'       if($GLBL{'_evnt'}->key_mod & KMOD_SHIFT);}
-          elsif($GLBL{'_evnt'}->key_sym == SDLK_PLUS        ){$tkey=  '+';}
-          elsif($GLBL{'_evnt'}->key_sym == SDLK_QUESTION    ){$tkey=  '?';}
-          elsif($GLBL{'_evnt'}->key_sym == SDLK_QUOTE       ){$tkey=  "'";$tkey='"'       if($GLBL{'_evnt'}->key_mod & KMOD_SHIFT);}
-          elsif($GLBL{'_evnt'}->key_sym == SDLK_QUOTEDBL    ){$tkey=  '"';}
-          elsif($GLBL{'_evnt'}->key_sym == SDLK_BACKQUOTE   ){$tkey=  '`';$tkey='~'       if($GLBL{'_evnt'}->key_mod & KMOD_SHIFT);}
-          elsif($GLBL{'_evnt'}->key_sym == SDLK_COMMA       ){$tkey=  ',';$tkey='<'       if($GLBL{'_evnt'}->key_mod & KMOD_SHIFT);}
-          elsif($GLBL{'_evnt'}->key_sym == SDLK_COLON       ){$tkey=  ':';}
-          elsif($GLBL{'_evnt'}->key_sym == SDLK_SEMICOLON   ){$tkey=  ';';$tkey=':'       if($GLBL{'_evnt'}->key_mod & KMOD_SHIFT);}
-          elsif($GLBL{'_evnt'}->key_sym == SDLK_EXCLAIM     ){$tkey=  '!';}
-          elsif($GLBL{'_evnt'}->key_sym == SDLK_AT          ){$tkey=  '@';}
-          elsif($GLBL{'_evnt'}->key_sym == SDLK_HASH        ){$tkey=  '#';}
-          elsif($GLBL{'_evnt'}->key_sym == SDLK_DOLLAR      ){$tkey=  '$';}
-         #elsif($GLBL{'_evnt'}->key_sym == SDLK_PERCENT     ){$tkey=  '%';}
-          elsif($GLBL{'_evnt'}->key_sym == SDLK_CARET       ){$tkey=  '^';}
-          elsif($GLBL{'_evnt'}->key_sym == SDLK_AMPERSAND   ){$tkey=  '&';}
-          elsif($GLBL{'_evnt'}->key_sym == SDLK_ASTERISK    ){$tkey=  '*';}
-          elsif($GLBL{'_evnt'}->key_sym == SDLK_LEFTPAREN   ){$tkey=  '(';}
-          elsif($GLBL{'_evnt'}->key_sym == SDLK_SLASH       ){$tkey=  '/';$tkey='?'       if($GLBL{'_evnt'}->key_mod & KMOD_SHIFT);}
-          elsif($GLBL{'_evnt'}->key_sym == SDLK_RIGHTPAREN  ){$tkey=  ')';}
-          elsif($GLBL{'_evnt'}->key_sym == SDLK_LESS        ){$tkey=  '<';}
-          elsif($GLBL{'_evnt'}->key_sym == SDLK_EQUALS      ){$tkey=  '=';$tkey='+'       if($GLBL{'_evnt'}->key_mod & KMOD_SHIFT);}
-          elsif($GLBL{'_evnt'}->key_sym == SDLK_GREATER     ){$tkey=  '>';}
-          elsif($GLBL{'_evnt'}->key_sym == SDLK_LEFTBRACKET ){$tkey=  '[';$tkey='{'       if($GLBL{'_evnt'}->key_mod & KMOD_SHIFT);}
-          elsif($GLBL{'_evnt'}->key_sym == SDLK_BACKSLASH   ){$tkey= '\\';$tkey='|'       if($GLBL{'_evnt'}->key_mod & KMOD_SHIFT);}
-          elsif($GLBL{'_evnt'}->key_sym == SDLK_RIGHTBRACKET){$tkey=  ']';$tkey='}'       if($GLBL{'_evnt'}->key_mod & KMOD_SHIFT);}
-         #elsif($GLBL{'_evnt'}->key_sym == SDLK_LEFTBRACE   ){$tkey=  '{';} # apparently SDL is missing %{|}~ && sometimes gets defined (SDLK_LAST+12345)
-         #elsif($GLBL{'_evnt'}->key_sym == SDLK_BAR         ){$tkey=  '|';} # might be better as VERTICALBAR
-         #elsif($GLBL{'_evnt'}->key_sym == SDLK_RIGHTBRACE  ){$tkey=  '}';}
-         #elsif($GLBL{'_evnt'}->key_sym == SDLK_TILDE       ){$tkey=  '~';}
-          elsif($GLBL{'_evnt'}->key_sym == SDLK_F1          ){$tkey='F1' ;}
-          elsif($GLBL{'_evnt'}->key_sym == SDLK_F2          ){$tkey='F2' ;}
-          elsif($GLBL{'_evnt'}->key_sym == SDLK_F3          ){$tkey='F3' ;}
-          elsif($GLBL{'_evnt'}->key_sym == SDLK_F4          ){$tkey='F4' ;}
-          elsif($GLBL{'_evnt'}->key_sym == SDLK_F5          ){$tkey='F5' ;}
-          elsif($GLBL{'_evnt'}->key_sym == SDLK_F6          ){$tkey='F6' ;}
-          elsif($GLBL{'_evnt'}->key_sym == SDLK_F7          ){$tkey='F7' ;}
-          elsif($GLBL{'_evnt'}->key_sym == SDLK_F8          ){$tkey='F8' ;}
-          elsif($GLBL{'_evnt'}->key_sym == SDLK_F9          ){$tkey='F9' ;}
-          elsif($GLBL{'_evnt'}->key_sym == SDLK_F10         ){$tkey='F10';}
-          elsif($GLBL{'_evnt'}->key_sym == SDLK_F11         ){$tkey='F11';}
-          elsif($GLBL{'_evnt'}->key_sym == SDLK_F12         ){$tkey='F12';}
-          elsif($GLBL{'_evnt'}->key_sym == SDLK_F13         ){$tkey='F13';}
-          elsif($GLBL{'_evnt'}->key_sym == SDLK_F14         ){$tkey='F14';}
-          elsif($GLBL{'_evnt'}->key_sym == SDLK_F15         ){$tkey='F15';}
-          elsif($GLBL{'_evnt'}->key_sym == SDLK_INSERT      ){$tkey='Ins';}#$self->{'_flaginsr'} ^= 1;}
-          elsif($GLBL{'_evnt'}->key_sym == SDLK_LEFT        ){$tkey= 'Lt';}
-          elsif($GLBL{'_evnt'}->key_sym == SDLK_RIGHT       ){$tkey= 'Rt';}
-          elsif($GLBL{'_evnt'}->key_sym == SDLK_UP          ){$tkey= 'Up';}
-          elsif($GLBL{'_evnt'}->key_sym == SDLK_DOWN        ){$tkey= 'Dn';}
-          elsif($GLBL{'_evnt'}->key_sym == SDLK_PAGEUP      ){$tkey='PUp';}
-          elsif($GLBL{'_evnt'}->key_sym == SDLK_PAGEDOWN    ){$tkey='PDn';}
-          elsif($GLBL{'_evnt'}->key_sym == SDLK_HOME        ){$tkey='Hom';}
-          elsif($GLBL{'_evnt'}->key_sym == SDLK_END         ){$tkey='End';}
+        } elsif($self->{'_evnt'}->type    == SDL_KEYDOWN      ){
+          if   ($self->{'_evnt'}->key_sym == SDLK_0           ){$tkey=  '0';$tkey=')'       if($self->{'_evnt'}->key_mod & KMOD_SHIFT);} # seems shifted #s
+          elsif($self->{'_evnt'}->key_sym == SDLK_1           ){$tkey=  '1';$tkey='!'       if($self->{'_evnt'}->key_mod & KMOD_SHIFT);} #   aren't getting
+          elsif($self->{'_evnt'}->key_sym == SDLK_2           ){$tkey=  '2';$tkey='@'       if($self->{'_evnt'}->key_mod & KMOD_SHIFT);} #   own key_sym
+          elsif($self->{'_evnt'}->key_sym == SDLK_3           ){$tkey=  '3';$tkey='#'       if($self->{'_evnt'}->key_mod & KMOD_SHIFT);}
+          elsif($self->{'_evnt'}->key_sym == SDLK_4           ){$tkey=  '4';$tkey='$'       if($self->{'_evnt'}->key_mod & KMOD_SHIFT);}
+          elsif($self->{'_evnt'}->key_sym == SDLK_5           ){$tkey=  '5';$tkey='%'       if($self->{'_evnt'}->key_mod & KMOD_SHIFT);}
+          elsif($self->{'_evnt'}->key_sym == SDLK_6           ){$tkey=  '6';$tkey='^'       if($self->{'_evnt'}->key_mod & KMOD_SHIFT);}
+          elsif($self->{'_evnt'}->key_sym == SDLK_7           ){$tkey=  '7';$tkey='&'       if($self->{'_evnt'}->key_mod & KMOD_SHIFT);}
+          elsif($self->{'_evnt'}->key_sym == SDLK_8           ){$tkey=  '8';$tkey='*'       if($self->{'_evnt'}->key_mod & KMOD_SHIFT);}
+          elsif($self->{'_evnt'}->key_sym == SDLK_9           ){$tkey=  '9';$tkey='('       if($self->{'_evnt'}->key_mod & KMOD_SHIFT);}
+          elsif($self->{'_evnt'}->key_sym == SDLK_a           ){$tkey=  'a';$tkey=uc($tkey) if($self->{'_evnt'}->key_mod & KMOD_SHIFT);
+                                                              $tkey="Ct$tkey"             if($self->{'_evnt'}->key_mod & KMOD_CTRL );} # Ctrl-a or A
+          elsif($self->{'_evnt'}->key_sym == SDLK_b           ){$tkey=  'b';$tkey=uc($tkey) if($self->{'_evnt'}->key_mod & KMOD_SHIFT);
+                                                              $tkey="Ct$tkey"             if($self->{'_evnt'}->key_mod & KMOD_CTRL );} # Ctrl-b or B
+          elsif($self->{'_evnt'}->key_sym == SDLK_c           ){$tkey=  'c';$tkey=uc($tkey) if($self->{'_evnt'}->key_mod & KMOD_SHIFT);
+                                                              $tkey="Ct$tkey"             if($self->{'_evnt'}->key_mod & KMOD_CTRL );} # Ctrl-c or C ..
+          elsif($self->{'_evnt'}->key_sym == SDLK_d           ){$tkey=  'd';$tkey=uc($tkey) if($self->{'_evnt'}->key_mod & KMOD_SHIFT);
+                                                              $tkey="Ct$tkey"             if($self->{'_evnt'}->key_mod & KMOD_CTRL );}
+          elsif($self->{'_evnt'}->key_sym == SDLK_e           ){$tkey=  'e';$tkey=uc($tkey) if($self->{'_evnt'}->key_mod & KMOD_SHIFT);
+                                                              $tkey="Ct$tkey"             if($self->{'_evnt'}->key_mod & KMOD_CTRL );}
+          elsif($self->{'_evnt'}->key_sym == SDLK_f           ){$tkey=  'f';$tkey=uc($tkey) if($self->{'_evnt'}->key_mod & KMOD_SHIFT);
+                                                              $tkey="Ct$tkey"             if($self->{'_evnt'}->key_mod & KMOD_CTRL );}
+          elsif($self->{'_evnt'}->key_sym == SDLK_g           ){$tkey=  'g';$tkey=uc($tkey) if($self->{'_evnt'}->key_mod & KMOD_SHIFT);
+                                                              $tkey="Ct$tkey"             if($self->{'_evnt'}->key_mod & KMOD_CTRL );}
+          elsif($self->{'_evnt'}->key_sym == SDLK_h           ){$tkey=  'h';$tkey=uc($tkey) if($self->{'_evnt'}->key_mod & KMOD_SHIFT);
+                                                              $tkey="Ct$tkey"             if($self->{'_evnt'}->key_mod & KMOD_CTRL );}
+          elsif($self->{'_evnt'}->key_sym == SDLK_i           ){$tkey=  'i';$tkey=uc($tkey) if($self->{'_evnt'}->key_mod & KMOD_SHIFT);
+                                                              $tkey="Ct$tkey"             if($self->{'_evnt'}->key_mod & KMOD_CTRL );}
+          elsif($self->{'_evnt'}->key_sym == SDLK_j           ){$tkey=  'j';$tkey=uc($tkey) if($self->{'_evnt'}->key_mod & KMOD_SHIFT);
+                                                              $tkey="Ct$tkey"             if($self->{'_evnt'}->key_mod & KMOD_CTRL );}
+          elsif($self->{'_evnt'}->key_sym == SDLK_k           ){$tkey=  'k';$tkey=uc($tkey) if($self->{'_evnt'}->key_mod & KMOD_SHIFT);
+                                                              $tkey="Ct$tkey"             if($self->{'_evnt'}->key_mod & KMOD_CTRL );}
+          elsif($self->{'_evnt'}->key_sym == SDLK_l           ){$tkey=  'l';$tkey=uc($tkey) if($self->{'_evnt'}->key_mod & KMOD_SHIFT);
+                                                              $tkey="Ct$tkey"             if($self->{'_evnt'}->key_mod & KMOD_CTRL );}
+          elsif($self->{'_evnt'}->key_sym == SDLK_m           ){$tkey=  'm';$tkey=uc($tkey) if($self->{'_evnt'}->key_mod & KMOD_SHIFT);
+                                                              $tkey="Ct$tkey"             if($self->{'_evnt'}->key_mod & KMOD_CTRL );}
+          elsif($self->{'_evnt'}->key_sym == SDLK_n           ){$tkey=  'n';$tkey=uc($tkey) if($self->{'_evnt'}->key_mod & KMOD_SHIFT);
+                                                              $tkey="Ct$tkey"             if($self->{'_evnt'}->key_mod & KMOD_CTRL );}
+          elsif($self->{'_evnt'}->key_sym == SDLK_o           ){$tkey=  'o';$tkey=uc($tkey) if($self->{'_evnt'}->key_mod & KMOD_SHIFT);
+                                                              $tkey="Ct$tkey"             if($self->{'_evnt'}->key_mod & KMOD_CTRL );}
+          elsif($self->{'_evnt'}->key_sym == SDLK_p           ){$tkey=  'p';$tkey=uc($tkey) if($self->{'_evnt'}->key_mod & KMOD_SHIFT);
+                                                              $tkey="Ct$tkey"             if($self->{'_evnt'}->key_mod & KMOD_CTRL );}
+          elsif($self->{'_evnt'}->key_sym == SDLK_q           ){$tkey=  'q';$tkey=uc($tkey) if($self->{'_evnt'}->key_mod & KMOD_SHIFT);
+                                                              $tkey="Ct$tkey"             if($self->{'_evnt'}->key_mod & KMOD_CTRL );}
+          elsif($self->{'_evnt'}->key_sym == SDLK_r           ){$tkey=  'r';$tkey=uc($tkey) if($self->{'_evnt'}->key_mod & KMOD_SHIFT);
+                                                              $tkey="Ct$tkey"             if($self->{'_evnt'}->key_mod & KMOD_CTRL );}
+          elsif($self->{'_evnt'}->key_sym == SDLK_s           ){$tkey=  's';$tkey=uc($tkey) if($self->{'_evnt'}->key_mod & KMOD_SHIFT);
+                                                              $tkey="Ct$tkey"             if($self->{'_evnt'}->key_mod & KMOD_CTRL );}
+          elsif($self->{'_evnt'}->key_sym == SDLK_t           ){$tkey=  't';$tkey=uc($tkey) if($self->{'_evnt'}->key_mod & KMOD_SHIFT);
+                                                              $tkey="Ct$tkey"             if($self->{'_evnt'}->key_mod & KMOD_CTRL );}
+          elsif($self->{'_evnt'}->key_sym == SDLK_u           ){$tkey=  'u';$tkey=uc($tkey) if($self->{'_evnt'}->key_mod & KMOD_SHIFT);
+                                                              $tkey="Ct$tkey"             if($self->{'_evnt'}->key_mod & KMOD_CTRL );}
+          elsif($self->{'_evnt'}->key_sym == SDLK_v           ){$tkey=  'v';$tkey=uc($tkey) if($self->{'_evnt'}->key_mod & KMOD_SHIFT);
+                                                              $tkey="Ct$tkey"             if($self->{'_evnt'}->key_mod & KMOD_CTRL );}
+          elsif($self->{'_evnt'}->key_sym == SDLK_w           ){$tkey=  'w';$tkey=uc($tkey) if($self->{'_evnt'}->key_mod & KMOD_SHIFT);
+                                                              $tkey="Ct$tkey"             if($self->{'_evnt'}->key_mod & KMOD_CTRL );}
+          elsif($self->{'_evnt'}->key_sym == SDLK_x           ){$tkey=  'x';$tkey=uc($tkey) if($self->{'_evnt'}->key_mod & KMOD_SHIFT);
+                                                              $tkey="Ct$tkey"             if($self->{'_evnt'}->key_mod & KMOD_CTRL );}
+          elsif($self->{'_evnt'}->key_sym == SDLK_y           ){$tkey=  'y';$tkey=uc($tkey) if($self->{'_evnt'}->key_mod & KMOD_SHIFT);
+                                                              $tkey="Ct$tkey"             if($self->{'_evnt'}->key_mod & KMOD_CTRL );}
+          elsif($self->{'_evnt'}->key_sym == SDLK_z           ){$tkey=  'z';$tkey=uc($tkey) if($self->{'_evnt'}->key_mod & KMOD_SHIFT);
+                                                              $tkey="Ct$tkey"             if($self->{'_evnt'}->key_mod & KMOD_CTRL );}
+          elsif($self->{'_evnt'}->key_sym == SDLK_PERIOD      ){$tkey=  '.';$tkey='>'       if($self->{'_evnt'}->key_mod & KMOD_SHIFT);}
+          elsif($self->{'_evnt'}->key_sym == SDLK_UNDERSCORE  ){$tkey=  '_';}
+          elsif($self->{'_evnt'}->key_sym == SDLK_SPACE       ){$tkey=  ' ';}
+          elsif($self->{'_evnt'}->key_sym == SDLK_RETURN      ){$tkey= "\r";} # maybe should be \n newline more like Enter?
+          elsif($self->{'_evnt'}->key_sym == SDLK_TAB         ){$tkey= "\t";} # might want to check for Shift-Tab && Ctrl-Tab here too
+          elsif($self->{'_evnt'}->key_sym == SDLK_BACKSPACE   ){$tkey= "\b";}
+          elsif($self->{'_evnt'}->key_sym == SDLK_ESCAPE      ){$tkey= "\e";} # ^[
+          elsif($self->{'_evnt'}->key_sym == SDLK_DELETE   ){$tkey=chr(127);} # ^? or maybe chr(127)?
+          elsif($self->{'_evnt'}->key_sym == SDLK_MINUS       ){$tkey=  '-';$tkey='_'       if($self->{'_evnt'}->key_mod & KMOD_SHIFT);}
+          elsif($self->{'_evnt'}->key_sym == SDLK_PLUS        ){$tkey=  '+';}
+          elsif($self->{'_evnt'}->key_sym == SDLK_QUESTION    ){$tkey=  '?';}
+          elsif($self->{'_evnt'}->key_sym == SDLK_QUOTE       ){$tkey=  "'";$tkey='"'       if($self->{'_evnt'}->key_mod & KMOD_SHIFT);}
+          elsif($self->{'_evnt'}->key_sym == SDLK_QUOTEDBL    ){$tkey=  '"';}
+          elsif($self->{'_evnt'}->key_sym == SDLK_BACKQUOTE   ){$tkey=  '`';$tkey='~'       if($self->{'_evnt'}->key_mod & KMOD_SHIFT);}
+          elsif($self->{'_evnt'}->key_sym == SDLK_COMMA       ){$tkey=  ',';$tkey='<'       if($self->{'_evnt'}->key_mod & KMOD_SHIFT);}
+          elsif($self->{'_evnt'}->key_sym == SDLK_COLON       ){$tkey=  ':';}
+          elsif($self->{'_evnt'}->key_sym == SDLK_SEMICOLON   ){$tkey=  ';';$tkey=':'       if($self->{'_evnt'}->key_mod & KMOD_SHIFT);}
+          elsif($self->{'_evnt'}->key_sym == SDLK_EXCLAIM     ){$tkey=  '!';}
+          elsif($self->{'_evnt'}->key_sym == SDLK_AT          ){$tkey=  '@';}
+          elsif($self->{'_evnt'}->key_sym == SDLK_HASH        ){$tkey=  '#';}
+          elsif($self->{'_evnt'}->key_sym == SDLK_DOLLAR      ){$tkey=  '$';}
+         #elsif($self->{'_evnt'}->key_sym == SDLK_PERCENT     ){$tkey=  '%';}
+          elsif($self->{'_evnt'}->key_sym == SDLK_CARET       ){$tkey=  '^';}
+          elsif($self->{'_evnt'}->key_sym == SDLK_AMPERSAND   ){$tkey=  '&';}
+          elsif($self->{'_evnt'}->key_sym == SDLK_ASTERISK    ){$tkey=  '*';}
+          elsif($self->{'_evnt'}->key_sym == SDLK_LEFTPAREN   ){$tkey=  '(';}
+          elsif($self->{'_evnt'}->key_sym == SDLK_SLASH       ){$tkey=  '/';$tkey='?'       if($self->{'_evnt'}->key_mod & KMOD_SHIFT);}
+          elsif($self->{'_evnt'}->key_sym == SDLK_RIGHTPAREN  ){$tkey=  ')';}
+          elsif($self->{'_evnt'}->key_sym == SDLK_LESS        ){$tkey=  '<';}
+          elsif($self->{'_evnt'}->key_sym == SDLK_EQUALS      ){$tkey=  '=';$tkey='+'       if($self->{'_evnt'}->key_mod & KMOD_SHIFT);}
+          elsif($self->{'_evnt'}->key_sym == SDLK_GREATER     ){$tkey=  '>';}
+          elsif($self->{'_evnt'}->key_sym == SDLK_LEFTBRACKET ){$tkey=  '[';$tkey='{'       if($self->{'_evnt'}->key_mod & KMOD_SHIFT);}
+          elsif($self->{'_evnt'}->key_sym == SDLK_BACKSLASH   ){$tkey= '\\';$tkey='|'       if($self->{'_evnt'}->key_mod & KMOD_SHIFT);}
+          elsif($self->{'_evnt'}->key_sym == SDLK_RIGHTBRACKET){$tkey=  ']';$tkey='}'       if($self->{'_evnt'}->key_mod & KMOD_SHIFT);}
+         #elsif($self->{'_evnt'}->key_sym == SDLK_LEFTBRACE   ){$tkey=  '{';} # apparently SDL is missing %{|}~ && sometimes gets defined (SDLK_LAST+12345)
+         #elsif($self->{'_evnt'}->key_sym == SDLK_BAR         ){$tkey=  '|';} # might be better as VERTICALBAR
+         #elsif($self->{'_evnt'}->key_sym == SDLK_RIGHTBRACE  ){$tkey=  '}';}
+         #elsif($self->{'_evnt'}->key_sym == SDLK_TILDE       ){$tkey=  '~';}
+          elsif($self->{'_evnt'}->key_sym == SDLK_F1          ){$tkey='F1' ;}
+          elsif($self->{'_evnt'}->key_sym == SDLK_F2          ){$tkey='F2' ;}
+          elsif($self->{'_evnt'}->key_sym == SDLK_F3          ){$tkey='F3' ;}
+          elsif($self->{'_evnt'}->key_sym == SDLK_F4          ){$tkey='F4' ;}
+          elsif($self->{'_evnt'}->key_sym == SDLK_F5          ){$tkey='F5' ;}
+          elsif($self->{'_evnt'}->key_sym == SDLK_F6          ){$tkey='F6' ;}
+          elsif($self->{'_evnt'}->key_sym == SDLK_F7          ){$tkey='F7' ;}
+          elsif($self->{'_evnt'}->key_sym == SDLK_F8          ){$tkey='F8' ;}
+          elsif($self->{'_evnt'}->key_sym == SDLK_F9          ){$tkey='F9' ;}
+          elsif($self->{'_evnt'}->key_sym == SDLK_F10         ){$tkey='F10';}
+          elsif($self->{'_evnt'}->key_sym == SDLK_F11         ){$tkey='F11';}
+          elsif($self->{'_evnt'}->key_sym == SDLK_F12         ){$tkey='F12';}
+          elsif($self->{'_evnt'}->key_sym == SDLK_F13         ){$tkey='F13';}
+          elsif($self->{'_evnt'}->key_sym == SDLK_F14         ){$tkey='F14';}
+          elsif($self->{'_evnt'}->key_sym == SDLK_F15         ){$tkey='F15';}
+          elsif($self->{'_evnt'}->key_sym == SDLK_INSERT      ){$tkey='Ins';}#$self->{'_flaginsr'} ^= 1;}
+          elsif($self->{'_evnt'}->key_sym == SDLK_LEFT        ){$tkey= 'Lt';}
+          elsif($self->{'_evnt'}->key_sym == SDLK_RIGHT       ){$tkey= 'Rt';}
+          elsif($self->{'_evnt'}->key_sym == SDLK_UP          ){$tkey= 'Up';}
+          elsif($self->{'_evnt'}->key_sym == SDLK_DOWN        ){$tkey= 'Dn';}
+          elsif($self->{'_evnt'}->key_sym == SDLK_PAGEUP      ){$tkey='PUp';}
+          elsif($self->{'_evnt'}->key_sym == SDLK_PAGEDOWN    ){$tkey='PDn';}
+          elsif($self->{'_evnt'}->key_sym == SDLK_HOME        ){$tkey='Hom';}
+          elsif($self->{'_evnt'}->key_sym == SDLK_END         ){$tkey='End';}
           # should push tkey to kque && flagz to mque for mapping to key-comboz
         }
-      }   $ctix=$GLBL{'_sxap'}->ticks();
+      }   $ctix=$self->{'_sxap'}->ticks();
     }} return($tkey);}
 sub PrcS{my $self=shift;my $pt2p=shift; # PText2Process (handling most common escapez 4 pseudo-printing with Prnt)
   while($pt2p =~ s/^(.*?)(\e\[([\d;]*)[A-MPSTXZ]|\n)//){my $pret=$1;my $esco=$2;
 #   if(defined($pret) && length($pret)){$self->Prnt(S2f4($pret));
-#     if($pret =~ /\e]4;\d+;#[0-9a-f]{6}\e\\/){#%{$GLBL{'_sprm'}}=(); # test attempt to invalid8 all Spritez if any escape to upd8 term color value
-#       for(keys(%{$GLBL{'_sprm'}})){delete($GLBL{'_sprm'}{$_});}
+#     if($pret =~ /\e]4;\d+;#[0-9a-f]{6}\e\\/){#%{$self->{'_sprm'}}=(); # test attempt to invalid8 all Spritez if any escape to upd8 term color value
+#       for(keys(%{$self->{'_sprm'}})){delete($self->{'_sprm'}{$_});}
 #       $self->Draw();} # && full-screen redraw
 #   }
     if     ($esco eq "\n"){$self->{'_xcrs'}=0; # mv cursor to start of next line
@@ -719,8 +719,8 @@ sub PrcS{my $self=shift;my $pt2p=shift; # PText2Process (handling most common es
       }
     }
   }$self->Prnt(S2f4($pt2p));
-# if($pt2p =~ /\e]4;\d+;#[0-9a-f]{6}\e\\/){#%{$GLBL{'_sprm'}}=();
-#   for(keys(%{$GLBL{'_sprm'}})){delete($GLBL{'_sprm'}{$_});}
+# if($pt2p =~ /\e]4;\d+;#[0-9a-f]{6}\e\\/){#%{$self->{'_sprm'}}=();
+#   for(keys(%{$self->{'_sprm'}})){delete($self->{'_sprm'}{$_});}
 #   $self->Draw();}
 } # finish printing the remainder with no further PrcS
 sub Prnt{my $self=shift;my $ptxt=shift;my $pfcl=shift;my $pbcl=shift;my $pf0n=shift;
@@ -764,7 +764,7 @@ sub Prnt{my $self=shift;my $ptxt=shift;my $pfcl=shift;my $pbcl=shift;my $pf0n=sh
     }else{$self->PrcS($ptxt);}}} # <4 layers && probably just ptxt param so Process it for embedded escapes && gener8 layers to send back into Prnt here
 
 #   if($self->{'_flagterm'}){ # start detecting Terminal mode Prnt of all supportable ANSI codes
-#     if   ($ptxt =~ s/\e]0;([^\e\a]+)(\e\\|\a)//){$GLBL{'_sxap'}->title($1);} # accept window title change code && upd8 SDL window title
+#     if   ($ptxt =~ s/\e]0;([^\e\a]+)(\e\\|\a)//){$self->{'_sxap'}->title($1);} # accept window title change code && upd8 SDL window title
 #     elsif($ptxt =~ s/\e\[(\d*)A//){my $coun=1;$coun=$1 if(defined($1) && length($1));                           # accept CUU - Cursor Up
 #       for(0..($coun-1)){                                                         $self->{'_ycrs'}-- if($self->{'_ycrs'}                     );}}
 #     elsif($ptxt =~ s/\e\[(\d*)B//){my $coun=1;$coun=$1 if(defined($1) && length($1));                           # accept CUD - Cursor Down
@@ -925,9 +925,9 @@ sub Prnt{my $self=shift;my $ptxt=shift;my $pfcl=shift;my $pbcl=shift;my $pf0n=sh
       # Just "c" in my probably rel8ively stock XTerm (since I don't have any ~/.Xdefaults on Aku right now) => "^[[?64;1;2;6;9;15;18;21;22c" design8s VT420
       #   with support for 1:132-columns,2:printer,6:selective erase,9:NatnlReplcChr setz,15:technical characters,18:user windows,21:horizontal scrolling,
       #   22:ANSI color maybe like VT525. ">c" => "^[[>41;297;0c" also meaning VT420 with 297 firmware version.
-sub MkSp{my $spid=shift;$spid=' ' unless(defined($spid) && length($spid)); # Make global character Sprites if they don't yet exist
+sub MkSp{my $self=shift;my $spid=shift;$spid=' ' unless(defined($spid) && length($spid)); # Make global character Sprites if they don't yet exist
   $spid.='W' if(length($spid)==1);$spid.='k' if(length($spid)==2);$spid.='t' if(length($spid)==3); #' Wkt'
-  unless(exists($GLBL{'_sprm'}{$spid})){ # could eventually also add scales, pal8s, etc.
+  unless(exists($self->{'_sprm'}{$spid})){ # could eventually also add scales, pal8s, etc.
     my @frgb=('_','_','_');$spid=~ s/^(.):/$1W/;$spid=~ s/:(.)$/k$1/;$spid=~ s/:$/t/;
     my @brgb=('_','_','_');#say "spid=$spid=";
     my @spis=split(//,      $spid    ); #"$ltxd[$cndx]$lfcd[$cndx]$lbcd[$cndx]$lfvd[$cndx]" # MaKe a SPrite for the joined col8 layers
@@ -943,25 +943,25 @@ sub MkSp{my $spid=shift;$spid=' ' unless(defined($spid) && length($spid)); # Mak
       $brgb[1]=hex(substr($x256[$p8k2{'F'}{$spis[2]}],2,2));
       $brgb[2]=hex(substr($x256[$p8k2{'F'}{$spis[2]}],4,2)); }
     $spis[3]='t'                   unless($#spis >= 3 && defined($spis[3]) && exists($GLBL{'_f8om'}{$spis[3]}));
-    $GLBL{'_sprm'}{$spid}=  SDLx::Sprite->new(width => 8,height => 16);
-    $GLBL{'_sprm'}{$spid}->surface->draw_rect([ 0, 0,  8,          16],[@brgb,255]);
+    $self->{'_sprm'}{$spid}=  SDLx::Sprite->new(width => 8,height => 16);
+    $self->{'_sprm'}{$spid}->surface->draw_rect([ 0, 0,  8,          16],[@brgb,255]);
     my $fhit=   @{$GLBL{'_f8om'}{$spis[3]}->{'f0nt'}[ord($spis[0])]}; # array of rows should be f0nt hite (&&should also be same in 'f0nthedr')
     for   my $rndx (0..$fhit){ # Row   iNDeX
       for my $pndx (0..    7){ # Pixel iNDeX
         if(     @{$GLBL{'_f8om'}{$spis[3]}->{'f0nt'}[ord($spis[0])]} > $rndx &&
           substr ($GLBL{'_f8om'}{$spis[3]}->{'f0nt'}[ord($spis[0])][$rndx],$pndx,1) eq '#'){my $prwd=1;my $prht=1;
-          $GLBL{  '_sprm'}{$spid}->surface->draw_rect([$pndx,$rndx,$prwd,$prht],[@frgb,255]);}}}}}
+          $self->{  '_sprm'}{$spid}->surface->draw_rect([$pndx,$rndx,$prwd,$prht],[@frgb,255]);}}}}}
 sub Zoom{my $self=shift;
-  my $zmsf=SDL::GFX::Rotozoom::zoom_surface($GLBL{'_xfss'}->surface(),$self->{'_xscl'},$self->{'_yscl'},SMOOTHING_ON ); # ZooMSurFace&&SPrite2scale
+  my $zmsf=SDL::GFX::Rotozoom::zoom_surface($self->{'_xfss'}->surface(),$self->{'_xscl'},$self->{'_yscl'},SMOOTHING_ON ); # ZooMSurFace&&SPrite2scale
   my $zmsp=SDLx::Sprite->new(width => $self->{'_widt'}*8*$self->{'_xscl'},height => $self->{'_hite'}*16*$self->{'_yscl'},surface => $zmsf);
-     $zmsp->draw_xy($GLBL{'_sxap'},0,0);
+     $zmsp->draw_xy($self->{'_sxap'},0,0);
  #my $sttf=SDLx::Text  ->new(font => '/usr/share/fonts/truetype/liberation/LiberationMono-Regular.ttf',color => [255,255,255,255]);
                             #size => 16, x => 0, y => 0, h_align => 'left', shadow => 1, bold => 1, text => 'Test',  # other Text->new atrbutz
     #$sttf->write_xy($sxap,288,288,'More Test Text!');
-  $GLBL{'_sxap'}->update();} # note that Draw's default used to be ' Gk0' belo with diff f0nt from Prnt's ' Gkt', but now are same
+  $self->{'_sxap'}->update();} # note that Draw's default used to be ' Gk0' belo with diff f0nt from Prnt's ' Gkt', but now are same
 sub Draw{my $self=shift;my $ln2d=shift;my @lrng; # allow passing in LiNe2Draw parameter # below declares VisibleCursorDrawnFlag
-  if($sdlf){$self->OScr() unless($GLBL{'FLAGOPEN'});my $vcdf=0; # need Open main Screen for what was a new Simp obj but now initializes SDL here instead
-    if(!defined($ln2d)){$GLBL{'_xfss'}->draw_rect([0,0,$self->{'_widt'}*8,$self->{'_hite'}*16],[0,0,0,255]);@lrng=(0..@{$self->{'_text'}}-1);}
+  if($sdlf){$self->OScr() unless($self->{'FLAGOPEN'});my $vcdf=0; # need Open main Screen for what was a new Simp obj but now initializes SDL here instead
+    if(!defined($ln2d)){$self->{'_xfss'}->draw_rect([0,0,$self->{'_widt'}*8,$self->{'_hite'}*16],[0,0,0,255]);@lrng=(0..@{$self->{'_text'}}-1);}
     else               {@lrng=($ln2d);} # start blank FullScreenSurface (!app) bkgr if no LiNe2Draw param so looping all of text
     for my $lndx(@lrng){  $self->{'_text'}[$lndx]  = ' '                                   unless(defined($self->{'_text'}[$lndx])); # init undef txt lines2spc
                           $self->{'_Fclr'}[$lndx]  = 'G'x  length($self->{'_text'}[$lndx]) unless(defined($self->{'_Fclr'}[$lndx])); # init empty colrz||f0ntz
@@ -991,20 +991,20 @@ sub Draw{my $self=shift;my $ln2d=shift;my @lrng; # allow passing in LiNe2Draw pa
         $lfcd[$cndx]=~ s/:/G/; # Fgcl, bgcl, && f0nt layrz coming thru as colonz ':' don't work for building sprite to display, so convert them to defaultz
         $lbcd[$cndx]=~ s/:/k/;
         $lfvd[$cndx]=~ s/:/t/;
-        MkSp(                    "$ltxd[$cndx]$lfcd[$cndx]$lbcd[$cndx]$lfvd[$cndx]");
-        if(exists($GLBL{'_sprm'}{"$ltxd[$cndx]$lfcd[$cndx]$lbcd[$cndx]$lfvd[$cndx]"})){
-          $GLBL{        '_sprm'}{"$ltxd[$cndx]$lfcd[$cndx]$lbcd[$cndx]$lfvd[$cndx]"}->draw_xy(
-                                                  $GLBL{'_xfss'}->surface(),         $cndx  *8,         $lndx  *16);}}}
+        $self->MkSp(               "$ltxd[$cndx]$lfcd[$cndx]$lbcd[$cndx]$lfvd[$cndx]");
+        if(exists($self->{'_sprm'}{"$ltxd[$cndx]$lfcd[$cndx]$lbcd[$cndx]$lfvd[$cndx]"})){
+          $self->{        '_sprm'}{"$ltxd[$cndx]$lfcd[$cndx]$lbcd[$cndx]$lfvd[$cndx]"}->draw_xy(
+                                                  $self->{'_xfss'}->surface(),         $cndx  *8,         $lndx  *16);}}}
     $self->OverDraw() if($self->{'_flagovdr'} && !$ln2d); # try over drawing if enabled && already normally drawing whole window rather than just 1 line
 #   $self->MiniScbr() if($self->{'_flagmnsb'}          ); # try over drawing if enabled, a new mini scrollbar (probably only want for _flagterm?)
     if(!$vcdf && $self->{'_flagcvis'}){MkSp(); # build general bright sprite && draw_xy for visible cursor moved beyond above drawn @text dimensions
-      if  (exists($GLBL{'_sprm'}{' Wkt'})){
-        $GLBL{          '_sprm'}{' Wkt'}->draw_xy($GLBL{'_xfss'}->surface(),$self->{'_xcrs'}*8,$self->{'_ycrs'}*16);}}
+      if  (exists($self->{'_sprm'}{' Wkt'})){
+        $self->{          '_sprm'}{' Wkt'}->draw_xy($self->{'_xfss'}->surface(),$self->{'_xcrs'}*8,$self->{'_ycrs'}*16);}}
     $self->Zoom();}}
 sub MiniScbr{my $self=shift;my $shit=$self->{'_hite'}*16; # drawing miniature scrollbar sprite, Self2ScrollbarHITe (height)
   # 2du:forget this and crE8 mini during regular draw, build by mini linez to avoid regen, precompute colr conversions if avoids redoing any l8r
   my $brsp               =  SDLx::Sprite->new(width => $self->{'_widt'},height => $shit); # might need to init BaRSPrite draw_rect black (or alpha) like below
-  # if(!defined($ln2d)){$GLBL{'_xfss'}->draw_rect([0,0,$self->{'_widt'}*8,$self->{'_hite'}*16],[0,0,0,255]);@lrng=(0..@{$self->{'_text'}}-1);}
+  # if(!defined($ln2d)){$self->{'_xfss'}->draw_rect([0,0,$self->{'_widt'}*8,$self->{'_hite'}*16],[0,0,0,255]);@lrng=(0..@{$self->{'_text'}}-1);}
 #ush(@_attrnamz, '_flagmnsb'); $_attrdata{$_attrnamz[-1]} = 1; # MiNiScrollBar
 #ush(@_attrnamz, '_flagmsxw'); $_attrdata{$_attrnamz[-1]} = 0; # MiniScrollbar eXtendsWide  # 0 should be inlaid, actually needs to ch init SDL window dimNshnz
   for(0..$shit-1){my $undx=$shit-1-$_;my $prwd=1;my $prht=1; # invert row number to Upward iNDeX,start in scrollforward,w background for screen,then scrollback
@@ -1025,22 +1025,39 @@ sub MiniScbr{my $self=shift;my $shit=$self->{'_hite'}*16; # drawing miniature sc
 # for my $coun(1..$nm2s){
 #   if(exists($self->{'_tsfd'}{'_text'})&& @{$self->{'_tsfd'}{'_text'}}){$self->S2SB();
 #     for(@tFbf){push   (@{$self->{"_$_"}},shift(@{$self->{'_tsfd'}{"_$_"}}));}$self->Draw();}}}
-  } $brsp->draw_xy($GLBL{'_xfss'}->surface(),$self->{'_widt'}*7,0); # msxw will need new xw xtended width to subtract from for this
+  } $brsp->draw_xy($self->{'_xfss'}->surface(),$self->{'_widt'}*7,0); # msxw will need new xw xtended width to subtract from for this
   if(0){
   my   $spid=' WW0';
   my   @spis=split(//, $spid); #"$ltxd[$cndx]$lfcd[$cndx]$lbcd[$cndx]$lfvd[$cndx]" # MaKe a SPrite for the joined col8 layers
-  unless(exists($GLBL{'_sprm'}{$spid})){ # could eventually also add scales, pal8s, etc.
+  unless(exists($self->{'_sprm'}{$spid})){ # could eventually also add scales, pal8s, etc.
     my @frgb=split(//,$pmap{$spis[1]});for(@frgb){$_=b10($_)*4;}
     my @brgb=split(//,$pmap{$spis[2]});for(@brgb){$_=b10($_)*4;}
-    $GLBL{'_sprm'}{$spid}=  SDLx::Sprite->new(width => 8,height => 16);
-    $GLBL{'_sprm'}{$spid}->surface->draw_rect([ 0, 0,  8,          16],[@brgb,255]);
+    $self->{'_sprm'}{$spid}=  SDLx::Sprite->new(width => 8,height => 16);
+    $self->{'_sprm'}{$spid}->surface->draw_rect([ 0, 0,  8,          16],[@brgb,255]);
     my $fhit=   @{$GLBL{'_f8om'}{$spis[3]}->{'f0nt'}[ord($spis[0])]}; # array of rows should be f0nt hite (&&should also be same in 'f0nthedr')
     for   my $rndx (0..$fhit){ # Row   iNDeX
       for my $pndx (0..    7){ # Pixel iNDeX
         if(     @{$GLBL{'_f8om'}{$spis[3]}->{'f0nt'}[ord($spis[0])]} > $rndx &&
           substr ($GLBL{'_f8om'}{$spis[3]}->{'f0nt'}[ord($spis[0])][$rndx],$pndx,1) eq '#'){my $prwd=1;my $prht=1;
-          $GLBL{  '_sprm'}{$spid}->surface->draw_rect([$pndx,$rndx,$prwd,$prht],[@frgb,255]);}}}}}
+          $self->{  '_sprm'}{$spid}->surface->draw_rect([$pndx,$rndx,$prwd,$prht],[@frgb,255]);}}}}}
 }
+sub xx{ # purpose is2scAl all tXt up2 "XxX" (orig nAm B4 mvd2 just 'xx') sIzd squarz (Dfaltng2 2x2,but acepting integer pRamEter 4 lRger scAling)
+# 2du:add compress option to reverse behavior,add maximize option to scale up to widest width multiple within $HWid or hIt up2 $HHit,mA nEd2DcOdUTF8&&out8;
+  my($cc,$sz,$sb,$sm,$ss,$ln,$St);
+  $cc=Octology::c8->new(  'cmnd' =>  1);$sz=2;$sz=shift(@_) if(@_ && $_[0]=~ /^\d+$/);$sb=$sm=$ss=0; # hopefully the regex will limit param to digit sizes
+  if ( -t   STDIN || @_){$cc->{'_Stxt'}=          shift(@_);} # hopefully the assumption of piping through STDIN can accept a string parameter here instead
+  for(0 ..  length($cc->{'_Stxt'})  -1){ # nEd2bypas yet prEsrv anyMbeded SKpz && just duplic8 Ech nrml tXt character x $sz thN split /\n/ 2 duplic8 $sz lInez
+    if     (       $sm                         ){$ln .= substr($cc->{'_Stxt'},$_,1);
+      if   (substr($cc->{'_Stxt'},$_,1) eq  'm'){              $sm  =   0;}}
+    elsif  (       $ss                         ){$ln .= substr($cc->{'_Stxt'},$_,1);
+      if   (substr($cc->{'_Stxt'},$_,1) eq "\\"){              $ss  =   0;}}
+    elsif  (       $sb                         ){$ln .= substr($cc->{'_Stxt'},$_,1);
+      if   (substr($cc->{'_Stxt'},$_,1) eq  '['){$sb  =     0 ;$sm  =   1;}
+      elsif(substr($cc->{'_Stxt'},$_,1) eq  ']'){$sb  =     0 ;$ss  =   1;}} # need to check ]50;_\ for lsd8 f8 f0ntz
+    elsif  (substr($cc->{'_Stxt'},$_,1) eq "\e"){$ln .=   "\e";$sb  =   1; } # start skipping until following bracket
+    elsif  (substr($cc->{'_Stxt'},$_,1) eq "\n"){$St .=       "$ln\n"               x $sz;$ln='';}  # skip over somehow
+    else                                        {$ln .= substr($cc->{'_Stxt'},$_,1) x $sz;       }} #$cc->{'_Stxt'}=~ s/(\e\[([\d;]*)m)+(.)/$1$3$3/g;
+  $ln='' unless(defined($ln));$St = "$ln\n" x $sz unless(defined($St));return($St);}
 sub OverDraw{my $self=shift; # drawing multiple sized char spritez over 4 or 16 (for BinaryAligned), or any square integer of the same base charz
   if($self->{'_flagodba'}){  # this is for BinaryAligned, but any square still has some bugz with at least big underscorez overlapping too far sometimez
     for   my $lndx(0..int(     (@{$self->{'_text'}}         -1)/2)){ # start with half the linez
@@ -1058,10 +1075,10 @@ sub OverDraw{my $self=shift; # drawing multiple sized char spritez over 4 or 16 
           my   $cfsk=substr($self->{'_text'}[$lndx*2],$cndx*2,1).substr($self->{'_Fclr'}[$lndx*2  ],   $cndx*2,1) . # col8 fieldz sprite key
                      substr($self->{'_bclr'}[$lndx*2],$cndx*2,1).substr($self->{'_f0nt'}[$lndx*2  ],   $cndx*2,1);
           MkSp($cfsk); # need to 2.0 scale sprite
-          unless(exists($GLBL{'_sprm'}{$cfsk.'2'})){
-            my $szsf=SDL::GFX::Rotozoom::zoom_surface($GLBL{'_sprm'}{$cfsk}->surface(),2.0,2.0,SMOOTHING_ON); # SpriteZooMSurFace
-            $GLBL{'_sprm'}{$cfsk.'2'}=SDLx::Sprite->new(              width => 16,height => 32,surface => $szsf);}
-          $GLBL{  '_sprm'}{$cfsk.'2'}->draw_xy($GLBL{'_xfss'}->surface(),$cndx*16,    $lndx*32);}}}
+          unless(exists($self->{'_sprm'}{$cfsk.'2'})){
+            my $szsf=SDL::GFX::Rotozoom::zoom_surface($self->{'_sprm'}{$cfsk}->surface(),2.0,2.0,SMOOTHING_ON); # SpriteZooMSurFace
+            $self->{'_sprm'}{$cfsk.'2'}=SDLx::Sprite->new(              width => 16,height => 32,surface => $szsf);}
+          $self->{  '_sprm'}{$cfsk.'2'}->draw_xy($self->{'_xfss'}->surface(),$cndx*16,    $lndx*32);}}}
     for   my $lndx(0..int(     (@{$self->{'_text'}}         -1)/4)){ # start with a quarter of the linez
       for my $cndx(0..int((length($self->{'_text'}[$lndx*4])-1)/4)){ #  then loop a quarter of the columnz
         if(defined($self->{'_text'}[$lndx*4  ]          )     && length($self->{'_text'}[$lndx*4  ])>= $cndx*4+3  &&
@@ -1086,11 +1103,11 @@ sub OverDraw{my $self=shift; # drawing multiple sized char spritez over 4 or 16 
             substr($self->{'_f0nt'}[$lndx*4  ],$cndx*4,1) x 4 eq substr($self->{'_f0nt'}[$lndx*4+3],   $cndx*4,4)){
           my   $cfsk=substr($self->{'_text'}[$lndx*4],$cndx*4,1).substr($self->{'_Fclr'}[$lndx*4  ],   $cndx*4,1) . # col8 fieldz sprite key
                      substr($self->{'_bclr'}[$lndx*4],$cndx*4,1).substr($self->{'_f0nt'}[$lndx*4  ],   $cndx*4,1);
-          MkSp($cfsk); # this sprite should already exist
-          unless(exists($GLBL{'_sprm'}{$cfsk.'4'})){
-            my $szsf=SDL::GFX::Rotozoom::zoom_surface($GLBL{'_sprm'}{$cfsk}->surface(),4.0,4.0,SMOOTHING_ON); # SpriteZooMSurFace
-            $GLBL{'_sprm'}{$cfsk.'4'}=SDLx::Sprite->new(              width => 32,height => 64,surface => $szsf);}
-          $GLBL{  '_sprm'}{$cfsk.'4'}->draw_xy($GLBL{'_xfss'}->surface(),$cndx*32,    $lndx*64);}}}}
+          $self->MkSp($cfsk); # this sprite should already exist
+          unless(exists($self->{'_sprm'}{$cfsk.'4'})){
+            my $szsf=SDL::GFX::Rotozoom::zoom_surface($self->{'_sprm'}{$cfsk}->surface(),4.0,4.0,SMOOTHING_ON); # SpriteZooMSurFace
+            $self->{'_sprm'}{$cfsk.'4'}=SDLx::Sprite->new(              width => 32,height => 64,surface => $szsf);}
+          $self->{  '_sprm'}{$cfsk.'4'}->draw_xy($self->{'_xfss'}->surface(),$cndx*32,    $lndx*64);}}}}
   else{   my @omsk;my $bksz; # try to find any big same blockz without restricting to binary alignment like above
     for   my $lndx(0..     @{$self->{'_text'}}       -1){
       $omsk[ $lndx]= '-' x length($self->{'_text'}[$lndx]);} # init empty Over MaSK
@@ -1119,12 +1136,12 @@ sub OverDraw{my $self=shift; # drawing multiple sized char spritez over 4 or 16 
                      substr($self->{'_bclr'}[$lndx],$cndx,1).substr($self->{'_f0nt'}[$lndx  ],   $cndx,1);
                $cfsk=~ s/^(.):/$1G/;$cfsk=~ s/^:/ /;
                $cfsk=~ s/:(.)$/k$1/;$cfsk=~ s/:$/t/;
-          MkSp($cfsk); # need to scale sprite
-          if(exists($GLBL{'_sprm'}{$cfsk})){ # make sure regular sprite was made before trying to scale it
-            unless(exists($GLBL{'_sprm'}{"$cfsk$bksz"})){
-              my $szsf=SDL::GFX::Rotozoom::zoom_surface($GLBL{'_sprm'}{$cfsk}->surface(),$bksz,$bksz,SMOOTHING_ON); # SpriteZooMSurFace
-              $GLBL{'_sprm'}{"$cfsk$bksz"}=SDLx::Sprite->new(              width =>  8*$bksz,height => 16*$bksz,surface => $szsf);}
-            $GLBL{  '_sprm'}{"$cfsk$bksz"}->draw_xy($GLBL{'_xfss'}->surface(),$cndx* 8,          $lndx*16);}}}}}}
+          $self->MkSp($cfsk); # need to scale sprite
+          if(exists($self->{'_sprm'}{$cfsk})){ # make sure regular sprite was made before trying to scale it
+            unless(exists($self->{'_sprm'}{"$cfsk$bksz"})){
+              my $szsf=SDL::GFX::Rotozoom::zoom_surface($self->{'_sprm'}{$cfsk}->surface(),$bksz,$bksz,SMOOTHING_ON); # SpriteZooMSurFace
+              $self->{'_sprm'}{"$cfsk$bksz"}=SDLx::Sprite->new(              width =>  8*$bksz,height => 16*$bksz,surface => $szsf);}
+            $self->{  '_sprm'}{"$cfsk$bksz"}->draw_xy($self->{'_xfss'}->surface(),$cndx* 8,          $lndx*16);}}}}}}
 sub TestDraw{ # Test whether an auto-Draw() should be called
   $_[0]->Draw() if($_[0]->{'_text'} && @{$_[0]->{'_text'}} && $_[0]->{'_flagaudr'});}
 sub S2SB{my $self=shift;my $nm2s=shift||1; # Shift top lines to Scroll Back

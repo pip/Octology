@@ -1,6 +1,6 @@
 # H7PMBZUM: Octology::p8::psps.pm crE8d by PipStuart <Pip@CPAN.Org> as "PiP'S httpS://ScreePS.com Play Simul8or" in my new p8:"Play simul8ion" namespace;
-# 2du: .pm names:cnst gmap pthf mrkt room rpln etc.,add cnst cdif() check for all exports,
-#   mk gmap class&&imp all xbrd.pl stuf,strt bilding&&loading all terrain d8a&&tst,mk p8::nvg8 for general path-finding A* && all common l8r varE8ions,
+# .pm: gmap ../(m8rx|nvg8) pthf room rpln mrkt etc.;
+# 2du:mk gmap class&&imp all xbrd.pl stuf,strt bilding&&loading all terrain d8a&&tst,mk p8::nvg8 for general path-finding A* && all common l8r varE8ions,
 #   autom8 much of JS export && gmap import of all prv8 room terrain as basic db files && plan for sepR8 real server(s)? shards? && PublicTestRealm dbs which
 #     new room.pm Room d8a objects can append to once visibility is gained,mAB mk rpos RoomPosition package also inside room.pm since so rel8d&&likely small,
 #   then crE8 tst new pthf.pm PathFinder with AStar to gener8 paths in any room map,first with full sort of openlist && tst,then use tabh from:
@@ -30,9 +30,9 @@
 #     add anim8ing between all useful path possibilities for comparison && maybe tweaking before selection for critical layout like roads plan for each room;
 package     Octology::p8::psps; # originally derived from d8.pm to attempt a Perl port of the public Screeps API for offline analysis && online code gener8ion
 use strict; use warnings;use utf8;use v5.10;
-#equire      Exporter;
-#se base qw( Exporter );
-#se vars qw( @EXPORT  ); #$AUTOLOAD
+#equire       Exporter  ;
+#se base qw(  Exporter );
+#se vars qw( @EXPORT   ); #$AUTOLOAD
 
 #equire     Octology::d8::fldz; # maybe l8r sub-packagez will similarly require && use base psps (which is planned to be akin to Screeps' global Game object)
 #equire                        Exporter;
@@ -52,7 +52,7 @@ my  $VERSION='0.0';my $d8VS='H83MGQUC';
 # q(+)   => \&_add,
 # q(-)   => \&_sub;
 #sub _stringify{ # cat non-zero b64 d8 fields
-# my @fdat=$_[0]->YMDzhmsf();
+# my @fdat=$_[0]->YMDzhmsp();
 # my @attz=$_[0]->_attribute_names();my $tstr='';my $toob=0; # flag design8ing field too big
 # $fdat[0]-=2000; # Year adjustment
 # for(@fdat){$toob=1 if($_>63);}
@@ -81,9 +81,9 @@ my  $VERSION='0.0';my $d8VS='H83MGQUC';
 #   $mont=~ s/^(...).*/$1/;} # keep only 1st 3 chars
 # if($xpop=~ /a/){my $W="\e\[1;37m"; # eXPand OPtion to enable Ansi color codes in returned string
 #   return(sprintf("%s%3s %s%3s %s%2d %s%02d$W:%s%02d$W:%s%02d$W:%s%02d %s%-5s %s%4d", $dfcl{'Y'},$dofw, $dfcl{'O'},$mont, $dfcl{'Y'},$self->D,
-#     $dfcl{'C'},$self->h, $dfcl{'B'},$self->m, $dfcl{'M'},$self->s, $dfcl{'P'},$self->f, $dfcl{'G'},$self->zone_offset, $dfcl{'R'},$self->Y));
+#     $dfcl{'C'},$self->h, $dfcl{'B'},$self->m, $dfcl{'M'},$self->s, $dfcl{'P'},$self->p, $dfcl{'G'},$self->zone_offset, $dfcl{'R'},$self->Y));
 # }else{ # maybe eventually support additional coloring schemes for expanded d8 d8a here
-#   return(sprintf("%3s %3s %2d %02d:%02d:%02d:%02d %-5s %4d", $dofw, $mont, $self->Dhmsf, $self->zone_offset, $self->Y));}}
+#   return(sprintf("%3s %3s %2d %02d:%02d:%02d:%02d %-5s %4d", $dofw, $mont, $self->Dhmsp, $self->zone_offset, $self->Y));}}
 ## d8 object constructor as class method or copy as object method.
 #sub new{my($nvkr,$ityp,$idat)=@_;my $nobj=ref($nvkr);
 # my $clas=$ityp;$clas=$nobj|| $nvkr if(!defined($ityp)|| $ityp!~ /::/);
@@ -102,7 +102,7 @@ my  $VERSION='0.0';my $d8VS='H83MGQUC';
 #   $self->{'h'}=$ltim[2]; #22; # 'M' CDT -0500 was my hard-coded zone before checking Time::Zone methods below
 #   $self->{'m'}=$ltim[1];
 #   $self->{'s'}=$ltim[0];
-#   $self->{'f'}=int($subs*$self->{'_fps'});#$subs*=$self->{'_fps'};$subs-=int($subs); # this would prepare $subs to be used to calcul8 sub-frames l8r
+#   $self->{'p'}=int($subs*$self->{'_fps'});#$subs*=$self->{'_fps'};$subs-=int($subs); # this would prepare $subs to be used to calcul8 sub-frames l8r
 #   if(exists($ENV{'d8tzofst'})){ # let explicit d8 ENVironment variable directly set zone with expected offset format: /^[-+]?[01]?\d(00|30|45)?$/
 #     $lofs  =$ENV{'d8tzofst'};$lofs=~ s/^(\d)/+$1/;$lofs=~ s/^([-+])(\d)$/${1}0${2}00/;$lofs=~ s/^([-+]\d\d)$/${1}00/;
 #     if  (exists($_ofst2ndx{$lofs})){$self->{'z'}=$_ofst2ndx{$lofs};$zfou=1;}}
@@ -129,7 +129,7 @@ my  $VERSION='0.0';my $d8VS='H83MGQUC';
 # $self->{       'M'}  = 39 if($self->{'M'} >            51); # 4 month blocks go 0..51  (0..12, 13..25, 26..38, 39..51)
 # $self->{       'D'}  = 32 if($self->{'D'} >            63); #   day   blocks go 0..63  (0..31, 32..63)
 # $self->{       'h'} %= 48;   $self->{'m'}%=            60 ; #   hour  blocks go 0..47  (0..23, 24..47)
-# $self->{       's'} %= 60;   $self->{'f'}%=$self->{'_fps'}; #   min,sec,frm all 0..59 normally
+# $self->{       's'} %= 60;   $self->{'p'}%= 60; #$self->{'_pps'}; #   min,sec,frm all 0..59 normally
 # while ($self->{'M'}  > 12  ){$self->{'Y'}+= 64;$self->{'M'}-=13;}
 # if    ($self->{'h'}  > 23  ){$self->{'Y'}+=256;$self->{'h'}-=24;}
 # if    ($self->{'D'}  > 31  ){$self->{'Y'}*= -1;$self->{'D'}-=32;} $self->{'Y'}+=2000;

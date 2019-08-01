@@ -4,11 +4,11 @@
 #   let flags combine any coloring type with whatever format,need to detect option to expand('a')nsi colors within the string;
 # Description: d8 is a simple tool created to encode && decode dates && times using typically eight (8) base64 ([0-9A-Za-z._]) characters for normal encoding.
 #   These 8 base64 characters usually represent ordered values with the largest fields starting on the left && progressively smaller fields appending to the
-#     right end of the encoded string. The fields are normally: YMDzhmsf which stand for: Year-2000,Month,Day,zone,hour,minute,second,frame(60th-of-a-second)
+#     right end of the encoded string. The fields are normally: YMDzhmsp which stand for: Year-2000,Month,Day,zone,hour,minute,second,phass(60th-of-a-second)
 #   Alphabetic listings of encoded d8 strings often order according to date && time ascension but a special sort that handles base64 characters && is aware of
 #     d8 field conventions is needed for thoroughly consistent orderings. d8 encodings also support selective field arithmetic for intuitive manipul8ions.
 #   0) Each 13 added to the Month adds  64 to the Year.  # `d8 _eX`   FriJan 1st1745 to `d8 _pV`   MonDec31st2255 (all Midnights)
-#   1)      24 added to the Hour  adds 256 to the Year.  # `d8 _eX0O` TueJan 1st1489 to `d8 _pV0O` ThuDec31st2511 (s/O$/lxxx/ for last frame of Year)
+#   1)      24 added to the Hour  adds 256 to the Year.  # `d8 _eX0O` TueJan 1st1489 to `d8 _pV0O` ThuDec31st2511 (s/O$/lxxx/ for last phass of Year)
 #   2)      32 added to the Day   makes the year negative just before adding 2k  # here Day:'W'..'_', above hour:'O'..'l' (up Oh to lo eL)
 #   Please see `perldoc Octology::d8` for more detailed inform8ion.  # 1024-Year range in 8-characters, extends non-minuteMonth rename Millennium (Thousand?);
 # License: Most source code should be Free! Code I have lawful authority over is and shall be!
@@ -19,7 +19,7 @@
 #     are free to change and redistribute it. There is NO WARRANTY, to the
 #     extent permitted by law.  Please see  HTTP://FSF.Org for more inform8ion.
 use strict;use warnings;use utf8;use v5.10;
-use      Octology::d8;my $VERSION='0.0';my $d8VS='I8QMBQT8';my $auth='PipStuart <Pip@CPAN.Org>';my $parm=join(' ',@ARGV);my @id8a;
+use      Octology::d8;my $VERSION='0.0';my $d8VS='J7VML888';my $auth='PipStuart <Pip@CPAN.Org>';my $parm=join(' ',@ARGV);my @id8a;
 my $d8im=Octology::d8->new();
 open my $out8,'>&',STDOUT or die "Can't open  duplic8 STDOUT handle: $!";binmode $out8,':encoding(UTF-8)'; # crE8 local duplic8 of global
 if(!@ARGV && !-t STDIN){chomp(@id8a=<STDIN>);$parm=join(' ',@id8a);} # should eventually handle piping in d8 d8a while giving optionz too
@@ -43,7 +43,7 @@ if($parm=~ /(^|\s)-+h/i){ # should probably upd8 to use GetOpts or something mor
   -f    Full with ansi   # Fuzzy            ##  h hOUR       0 -   23
   -l    Lsft with ansi   # LittLe           ##  m mINUTE    00 -   59
   -c    Cpan with ansi   # CrE8ures         ##  s sECOND    00 -   59
-  -i    Iso  wIth ansI   # Imper8Ive        ##  f?fRAME?    00 -   59
+  -i    Iso  wIth ansI   # Imper8Ive        ##  p pHASS     00 -   59
  uncolored expansion shortcuts: (no dash)
    f|d8 Full now's d8
    l    show now's d8 in `ls  --full-time` format
@@ -61,7 +61,7 @@ if($parm=~ /(^|\s)-+h/i){ # should probably upd8 to use GetOpts or something mor
   -f    Full with ansi   # Fuzzy  / Furry   ##  h hOUR       0 -   23     [= N + + P =]          ||
   -l    Lsft with ansi   # LittLe  / Lover  ##  m mINUTE    00 -   59   (n8ural parenths)          == Never Perfect!  # Neither Phase orSixtiethSofSecS,butp?
   -c    Cpan with ansi   # CrE8ures / C\@s   ##  s sECOND    00 -   59     [= N + + P =]          || # Not Persuaded by SubSecS,Hertz,or zz,mABfITEfAZEfREQZ?
-  -i    Iso  wIth ansI   # Imper8Ive! ;[I]  ##  f?fRAMEblp? 00 -   59   (needs renamings)      // alInd p\@rns group dimNsions evolving modific8ion withDscNt
+  -i    Iso  wIth ansI   # Imper8Ive! ;[I]  ##  p pHASSblp? 00 -   59   (needs renamings)      // alInd p\@rns group dimNsions evolving modific8ion withDscNt
  uncolored expansion shortcuts: (no dash)   #  Usually Elev8 Synergies: (Neg8 Devast8ion)      // hopefully not2 jarring && uncouth4 colloquial contXt8voices
    f|d8 Full now's d8    # Note: Each of these shortcuts str8 clobber access to these few also valid d8 values, so trail empty 0 Months to altern8ly specify.
    l    show now's d8 in `ls  --full-time` 4m@ format  # Rather curiously, original implement8ion design8d that dashy -h was best way for Help to avoid h d8;

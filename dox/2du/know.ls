@@ -1,5 +1,5 @@
 # HBQLISTV:know.ls crE8d by PipStuart <Pip@CPAN.Org> to duplic8 Dr. Jordan B. Peterson's Quora.Com answer of "40 most valuable things everyone should know";
-# $VERSION='0.0';$d8VS='J7AM4Cel'; # While this document origin8d around (&& still mainly intends to focus on) Dr. Peterson's knowledge, many others fE8ure;
+# $VERSION='0.0';$d8VS='J7CM5non'; # While this document origin8d around (&& still mainly intends to focus on) Dr. Peterson's knowledge, many others fE8ure;
 # 2du:start chronicling Dr. Peterson's many topical videos with new section for post-title subject summaries or explor8ion;
 0) Tell the truth.                 
 1) Do not do things that you h8.
@@ -608,3 +608,4 @@ J7AM47J4:HTTPS://YouTu.be/_EWCN3CPhTI "Joe Rogan Experience #1320 - Eric Weinste
 # I'm definitely interested in Eric's new "Portal" podcast which should be starting up soon with interesting guests planning to delve into intriguing topics.
 # I should also study his "Octonions" concepts as abstractions away from Quaternions as invit8ions away from sensible realities which our typical math has.
 # I wish I could move back to Los Angeles somehow someway sometime next year && that I could learn more from && become closer to the Intellectual Dark Web;
+J7CM5new:HTTPS://YouTu.be/dLfBWM0L3Vo "Sean Plunket: Full Interview: New Zealand" # 42m46s of (non-Messiah) Dr.P. on call-in show offering reasoned advice;

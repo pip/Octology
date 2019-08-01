@@ -622,10 +622,10 @@ sub c{my $Sstr=shift;if(!defined($Sstr) && !-t STDIN){chomp($Sstr= join('',<STDI
       elsif($digz=~  /^10[0-7]   $/x &&                               exists($mb2c{ $digz    })){$codb = $mb2c{  $digz    };}
       elsif($digz=~  /^(0[01]|22)$/x && $numz=~  /^(38;5;\d+);? /x && exists($mF2c{"$digz;$1"})){$codF = $mF2c{ "$digz;$1"};  # catch new Bold XtNdedz
                                         $numz=~ s/^(38;5;\d+);?//x;                                                         }
-      elsif($digz=~  /^ 38       $/x && $numz=~  /^(5;   \d+);? /x && exists($mF2c{"$digz;$1"})){$codF = $mF2c{ "$digz;$1"};
-                                        $numz=~ s/^(5;   \d+);?//x;                                                         }
-      elsif($digz=~  /^ 48       $/x && $numz=~  /^(5;   \d+);? /x && exists($mb2c{"$digz;$1"})){$codb = $mb2c{ "$digz;$1"};  # nEd2!strip hi numzB4ckng4
-                                        $numz=~ s/^(5;   \d+);?//x;                                                         } #   8pal8 XistNce
+      elsif($digz=~  /^ 38       $/x && $numz=~  /^(   5;\d+);? /x && exists($mF2c{"$digz;$1"})){$codF = $mF2c{ "$digz;$1"};
+                                        $numz=~ s/^(   5;\d+);?//x;                                                         }
+      elsif($digz=~  /^ 48       $/x && $numz=~  /^(   5;\d+);? /x && exists($mb2c{"$digz;$1"})){$codb = $mb2c{ "$digz;$1"};  # nEd2!strip hi numzB4ckng4
+                                        $numz=~ s/^(   5;\d+);?//x;                                                         } #   8pal8 XistNce
       elsif(exists($sgrn{$digz})){                                                               $codz.= $sgrn{  $digz    };
         if ($sgrn{$digz}=~ /^[Xx]$/  && $numz=~ s/^ 5;0*(\d+);?//x                             ){$codz.=sprintf("%02X",$1 );}}
       elsif($digz=~  /^(0+      )$/x &&                               exists($mF2c{'00'      })){$codF = $mF2c{  '00'     }; }}} # special check for ^ caret 0
@@ -662,9 +662,12 @@ sub S2f4{my($text,$Fclr,$bclr,$f0nt  );my $dFbf=':::';my($nxtF,$nxtb,$nxtf)=(spl
     if   ($esco eq "\n"               ){$text.=$esco;$Fclr.=$esco                ;$bclr.=$esco;                $f0nt.=$esco;}
     elsif($esco =~ /^\e\[   0  *  m$/x){($nxtF,$nxtb,$nxtf)=(split(//,$dFbf));} # atMpt2recognIze shL outputting empty m (or just zeroez) 2reset2 Normal green
     elsif($esco =~ /^\e\[ [\d;]*  m$/x){my $cofe=c($esco);
+      #   38      Reserved for extended set foreground color      typical supported next arguments are 5;x where x is color index (0..255) or 2;r;g;b where
+      #     need special layer codes for @x256 index or RGB       r,g,b are red, green and blue color channels (out of 255) e.g., \e[38;5;196m is a bright red
       $cofe=~ s/^([FDALOH])?([bdaloh])?:([0-9A-Za-z._]+)/$3/; # hopefully just ignore any non-Fclr or bclr 8pal8 planes for now, until c8 gets new plane layers
                                                           if(length($cofe) >= 1 && substr($cofe,0,1) ne ':'){$nxtF=substr($cofe,0,1);}
-                                                          if(length($cofe) >= 2 && substr($cofe,1,1) ne ':'){$nxtb=substr($cofe,1,1);}}
+                                                          if(length($cofe) >= 2 && substr($cofe,1,1) ne ':'){$nxtb=substr($cofe,1,1);}
+    } #   38 X heX heX may need to convert to inverse map of FDAL to render in color when squeezing through f4 layers && supporting 2;R;G;Bm would be nice too;
     elsif($esco =~ /^\e\[([012]?) K$/x){my $ecp0=0;$ecp0=$1 if(defined($1)); # specially handle ls output having [K to Xplicitly blank past line end
       ($nxtF,$nxtb,$nxtf)=(split(//,$dFbf)) unless($ecp0);} # CSI n K : EL - Erase in Line (0=cursor to EOL,1=cursor to BOL,2=clear entire line)
     elsif($esco =~ /^\e\]4;(\d+);#([0-9a-f]{2})([0-9a-f]{2})([0-9a-f]{2})(\a|\e\\)$/){my $acdn=$1; # upd8 pal8 map with new colors

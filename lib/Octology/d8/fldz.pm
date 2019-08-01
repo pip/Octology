@@ -2,10 +2,10 @@
 package    Octology::d8::fldz;
 use strict;use warnings;use utf8;use v5.10;
 use vars qw( $AUTOLOAD );
-my $VERSION='0.0';my $d8VS='H99MAHH9';
+my $VERSION='0.0';my $d8VS='J7VMKgMD';
 use overload
   q("") => sub{ # anonymous verbose fldz stringify()
-             my @fdat=$_[0]->YMDzhmsf();
+             my @fdat=$_[0]->YMDzhmsp();
              my @attz=$_[0]->_attribute_names();my $tstr='';my $vrbf=1;
              for(my $i=0;$i<@fdat;$i++){
                $fdat[$i]=0 unless(defined($fdat[$i]));
@@ -17,8 +17,8 @@ use Octology::b8;
 use Carp;
 my $locl=eval("use Time::Local           ; 1") || 0;
 my $hirs=eval("use Time::HiRes qw(usleep); 1") || 0; # hopefully usleep or nanosleep can be loaded like this
-my   @_attrnamz=split(//,'YMDzhmsf');my %_attrdflt=();$_attrdflt{$_    }=  0 for(@_attrnamz); # ordered attribute names array && default value (0) hash
-push(@_attrnamz,'_fps'             );   $_attrdflt{'_fps'              }= 60; # r8io of frames-per-second
+my   @_attrnamz=split(//,'YMDzhmsp');my %_attrdflt=();$_attrdflt{$_    }=  0 for(@_attrnamz); # ordered attribute names array && default value (0) hash
+push(@_attrnamz,'_pps'             );   $_attrdflt{'_pps'              }= 60; # r8io of phasses-per-second
 push(@_attrnamz,'_time_separator'  );   $_attrdflt{'_time_separator'   }=':'; # might utilize these fields for more configurable printing l8r
 push(@_attrnamz,'_date_separator'  );   $_attrdflt{'_date_separator'   }='-'; # might utilize these fields for more configurable printing l8r
 my %_fielclrz=( # global field color codes in a hash of arrays
@@ -29,7 +29,7 @@ my %_fielclrz=( # global field color codes in a hash of arrays
                    'C',         # Cyan        hour
                    'B',         # Blue        minute
                    'M',         # Magenta     second
-                   'p'],        # purple      frame
+                   'p'],        # purple      phass
   '4' => [        '0c',         # Red        Year    4NT
                   '06',         # Orange     Month
                   '0e',         # Yellow     Day
@@ -37,7 +37,7 @@ my %_fielclrz=( # global field color codes in a hash of arrays
                   '0b',         # Cyan        hour
                   '09',         # Blue        minute
                   '0d',         # Magenta     second
-                  '05'],        # Purple      frame
+                  '05'],        # Purple      phass
   'h' => [      '_6A_',         # Red        Year    web (Html) dRk h (2du: fil in l8r wi a8:drkh() mAB as RGBl form nstd of HEX
                 '_UA_',         # Orange     Month
                 '__6_',         # Yellow     Day
@@ -45,7 +45,7 @@ my %_fielclrz=( # global field color codes in a hash of arrays
                 '6___',         # Cyan        hour
                 '6U__',         # Blue        minute
                 'k6__',         # Magenta     second
-                'U2l_'],        # Purple      frame
+                'U2l_'],        # Purple      phass
   'w' => [    'FF1B2B',  #'_6A_'# Red        Year    web (HTML)
               'FF7B2B',  #'_UA_'# Orange     Month
               'FFFF1B',  #'__6_'# Yellow     Day
@@ -53,7 +53,7 @@ my %_fielclrz=( # global field color codes in a hash of arrays
               '1BFFFF',  #'6___'# Cyan        hour
               '1B7BFF',  #'6U__'# Blue        minute
               'BB1BFF',  #'k6__'# Magenta     second
-              '7B0BBF'], #'U2l_'# Purple      frame
+              '7B0BBF'], #'U2l_'# Purple      phass
   'a' => [     S('O:R'),        # Red        Year    ANSI (calling a8:S to gener8 SKp codez)
                S('O:O'),        # orange     Month
                S('O:Y'),        # Yellow     Day
@@ -61,7 +61,7 @@ my %_fielclrz=( # global field color codes in a hash of arrays
                S('O:C'),        # Cyan        hour
                S('O:B'),        # Blue        minute
                S('O:M'),        # Magenta     second
-               S('O:P')],       # purple      frame
+               S('O:P')],       # purple      phass
   'z' => ["%{".S('O:R')."%}",   # Red        Year    zsh (wrapping ANSI)
           "%{".S('O:O')."%}",   # orange     Month
           "%{".S('O:Y')."%}",   # Yellow     Day
@@ -69,7 +69,7 @@ my %_fielclrz=( # global field color codes in a hash of arrays
           "%{".S('O:C')."%}",   # Cyan        hour
           "%{".S('O:B')."%}",   # Blue        minute
           "%{".S('O:M')."%}",   # Magenta     second
-          "%{".S('O:P')."%}"],);# purple      frame  # below try2only use new exclusively dflt Bold colrs from 256 palette where they are supported
+          "%{".S('O:P')."%}"],);# purple      phass  # below try2only use new exclusively dflt Bold colrs from 256 palette where they are supported
 if(exists($ENV{'DISPLAY'}) || (exists($ENV{'TERM'}) && $ENV{'TERM'}=~ /^(sakura|u?rxvt|(st|u?x)term)/ && $ENV{'TERM'} ne 'linux')){$_fielclrz{'a'} = [
   # maybe there are yet better ways to detect when most likely wanting colors from the full-screen text console(in.zshrc?) or betr thngz mising?
                S(  'R'),        # Red        Year    ANSI (calling a8:S to gener8 SKp codez)
@@ -79,7 +79,7 @@ if(exists($ENV{'DISPLAY'}) || (exists($ENV{'TERM'}) && $ENV{'TERM'}=~ /^(sakura|
                S(  'C'),        # Cyan        hour
                S(  'B'),        # Blue        minute
                S(  'M'),        # Magenta     second
-               S(  'p')];       # purple      frame
+               S(  'p')];       # purple      phass
   $_fielclrz{'z'} = [
           "%{".S(  'R')."%}",   # Red        Year    zsh (wrapping ANSI)
           "%{".S(  'o')."%}",   # orange     Month
@@ -88,7 +88,7 @@ if(exists($ENV{'DISPLAY'}) || (exists($ENV{'TERM'}) && $ENV{'TERM'}=~ /^(sakura|
           "%{".S(  'C')."%}",   # Cyan        hour
           "%{".S(  'B')."%}",   # Blue        minute
           "%{".S(  'M')."%}",   # Magenta     second
-          "%{".S(  'p')."%}"]; }# purple      frame
+          "%{".S(  'p')."%}"]; }# purple      phass
 sub _default_value{my($self,$attr)=@_;$_attrdflt{$attr}} # methods
 sub _attribute_names{@_attrnamz}
 sub _Time_Local{$locl} # can Time::Local be used?
@@ -96,10 +96,10 @@ sub _Time_HiRes{$hirs} # can Time::HiRes be used?
 sub _sift{ # settles fields into standard ranges (for overflow from add/sub)
   my $self=shift;my $mdon=shift||0;my $dinf=0;
   unless($mdon){
-    while($self->{'f'}< 0                                   ){
-      $self->{    'f'}+=    $self->{'_fps'};$self->{'s'}--;  }
-    while(                  $self->{'f'}  >=$self->{'_fps'} ){
-      $self->{    'f'}-=    $self->{'_fps'};$self->{'s'}++;  }
+    while($self->{'p'}< 0                                   ){
+      $self->{    'p'}+=    $self->{'_pps'};$self->{'s'}--;  }
+    while(                  $self->{'p'}  >=$self->{'_pps'} ){
+      $self->{    'p'}-=    $self->{'_pps'};$self->{'s'}++;  }
     while($self->{'s'}< 0                                   ){
       $self->{    's'}+=                 60;$self->{'m'}--;  }
     while(                  $self->{'s'}  >=              60){
@@ -132,7 +132,7 @@ sub w8{my $self=shift(@_);my $dur8;my $durs; # crE8 a new 'wait' method which sh
   if  ( $self->isa('Octology::d8::dur8')){$dur8=$self;} # from HTTPS://PerlDoc.Perl.Org/functions/ref.html && ../perlobj.html betr2 UNIVERSAL->isa($class)
   else{   $dur8=shift(@_) || '0';
     if(!$dur8->isa('Octology::d8::dur8')){$dur8=~ s/[^0-9A-Za-z._]+//g; # strip non-b64 characters before trying to crE8 a new dur8 object from string param
-          $dur8=  Octology::d8::dur8->new($dur8);}} # 2du:allow float b64 frames ('F%W') above or in dur8 new to enable more precise HiRes w8ing here
+          $dur8=  Octology::d8::dur8->new($dur8);}} # 2du:allow float b64 phasses ('F%W') above or in dur8 new to enable more precise HiRes w8ing here
   $durs= "$dur8"; # get a valid dur8ion object stringified to valid8 field values against
   if(length($durs) && $durs=~ /[1-9A-Za-z._]/){my $dsec=0 ; # valid dur8ion string should contain a non-zero b64 char (probably actually only up to 'x' 59)
     $dsec+= $dur8->{'s'}              if($dur8->{'s'} > 0);
@@ -141,9 +141,9 @@ sub w8{my $self=shift(@_);my $dur8;my $durs; # crE8 a new 'wait' method which sh
     $dsec+= $dur8->{'D'}*60*60*24     if($dur8->{'D'} > 0);
     $dsec+= $dur8->{'M'}*60*60*24*30  if($dur8->{'M'} > 0); # maybe Month shouldn't always be exactly 30 days,but any w8 that long should be by cronjob anyway
     $dsec+= $dur8->{'Y'}*60*60*24*365 if($dur8->{'Y'} > 0);
-    if     ($dur8->{'f'}                              > 0){ # could also Time::HiRes::sleep(dsec+frmz/60) instead of trying microsecs below
-      if($hirs){usleep($dsec*1000000 + int((1000000.0/60.0)*$dur8->{'f'}     ));}  # get the floor of the dur8ion's frames in microseconds to wait for
-      else     {select(undef, undef, undef,($dsec*1.0 +     $dur8->{'f'}/60.0));}} # try select built-in with sub-sec precision as hopefully capable fallback
+    if     ($dur8->{'p'}                              > 0){ # could also Time::HiRes::sleep(dsec+frmz/60) instead of trying microsecs below
+      if($hirs){usleep($dsec*1000000 + int((1000000.0/60.0)*$dur8->{'p'}     ));}  # get the floor of the dur8ion's phasses in microseconds to wait for
+      else     {select(undef, undef, undef,($dsec*1.0 +     $dur8->{'p'}/60.0));}} # try select built-in with sub-sec precision as hopefully capable fallback
     else       { sleep($dsec);}}} # or just regular sleep whatever whole seconds are in the dur8ion object
 # Octology::d8::fldz object constructor as class method or copy as object method.
 # First param can be ref to copy. Not including optional ref from
@@ -214,12 +214,12 @@ sub _color_fields{ # return a color string for a fldz object
     $rstr  .=                                       '%}' if($ctyp=~ /^z/i);           #   which concludez gNr8d colrd output sEquNcez for ANSI or ZSH ctypz
   }return($rstr);}
 sub colr{my $self=shift;my $fstr="$self";return($self->_color_fields($fstr,@_));} # generic self colr method to call overloaded subclass colorfields
-sub     time{my $self=shift;return($self->hmsf(    @_));}
-sub  alltime{my $self=shift;return($self->zhmsf(   @_));}
+sub     time{my $self=shift;return($self->hmsp(    @_));}
+sub  alltime{my $self=shift;return($self->zhmsp(   @_));}
 sub     date{my $self=shift;return($self->YMD(     @_));}
 sub  alldate{my $self=shift;return($self->YMD(     @_));}
-sub  all    {my $self=shift;return($self->YMDzhmsf(@_));}
-sub     dt  {my $self=shift;return($self->YMDzhmsf(@_));}
+sub  all    {my $self=shift;return($self->YMDzhmsp(@_));}
+sub     dt  {my $self=shift;return($self->YMDzhmsp(@_));}
 sub datetime{return(sprintf("%04d-%02d-%02dT%02d:%02d:%02d",$_[0]->YMDhms()));} # 2000-02-29T12:34:56 (ISO 8601)
 sub time_separator{$_[0]->{'_time_separator'}=$_[1] if(@_>1); # set the default separator (default ":")
   return($_[0]->{'_time_separator'});}
@@ -232,7 +232,7 @@ sub mon_list{my $self=shift; # set the default months
 sub AUTOLOAD{ # methods (created as necessary)
   no strict 'refs';
   my($self,$nwvl)=@_;
-  if    ($AUTOLOAD=~ /.*::([YMDzhmsf][YMDzhmsf]+)$/i){ # all joint field methods (eg. YMD, mdy, hms(), etc.)
+  if    ($AUTOLOAD=~ /.*::([YMDzhmsp][YMDzhmsp]+)$/i){ # all joint field methods (eg. YMD, mdy, hms(), etc.)
     my @fldl=split(//,$1);
     my($self,@nval)=@_;my @rval=();my $atnm='';my $rgex;
     for(my $i=0;$i<$#fldl;$i++){ # handle Month / minute exceptions
@@ -250,7 +250,7 @@ sub AUTOLOAD{ # methods (created as necessary)
         if(lc($attr)eq 'm'){if($fldl[$i]=~ /^$attr/ ){$self->{$attr}=$nval[$i] if($i<@nval);push(@rval,$self->{$attr});}}
         else               {if($fldl[$i]=~ /^$attr/i){$self->{$attr}=$nval[$i] if($i<@nval);push(@rval,$self->{$attr});}}}
     }return(@rval);
-  }elsif($AUTOLOAD=~ /.*::_?([YMDzhmsf])(.)?/){ # sweeping matches to handle partial keys, should probably be case-insensitive again l8r
+  }elsif($AUTOLOAD=~ /.*::_?([YMDzhmsp])(.)?/){ # sweeping matches to handle partial keys, should probably be case-insensitive again l8r
     my($atl1,$atl2)=($1,$2);my $atnm;
     $atl1='M' if($atl1 eq 'm'&& defined($atl2)&& lc($atl2)eq 'o');
     $atl1='m' if($atl1 eq 'M'&& defined($atl2)&& lc($atl2)eq 'i');
@@ -271,13 +271,13 @@ sub DESTROY{ } # do nothing but define in case && to calm warning in test.pl
 #   PT   epoch 1361-2631
 #   potential smaller fields:
 #       kink as 60th-of-a-jink? tink as 60th-of-a-kink? ... X as 60th-of-a-Y
-#     frame 0.0166666666666667        CYMDhmsfjktbpaz
+#     phass 0.0166666666666667        CYMDhmspjktbfaz
 #     jink  0.000277777777777778               0.3 milliseconds (thousanths)
 #     kink  0.00000462962962962963             5   microseconds (millionths)
 #     tink  0.0000000771604938271605          77   nano seconds (billionths)
 #     blip  0.00000000128600823045267          1   nano second
 #       RealTimeOperatingSystems may need micro or nano second precision
-#     pip   0.0000000000214334705075446       21   pico seconds (trillionths)
+#     flip  0.0000000000214334705075446       21   pico seconds (trillionths)
 #     ax    0.000000000000357224508459076      0.4 pico seconds
 #           0.00000000000000595374180765127    6   femtoseconds (10e-15)
 #           0.0000000000000000992290301275212 99   atto seconds (10e-18)
@@ -311,9 +311,9 @@ This documentation refers to version pAKGvERS of Octology::d8::fldz, which was r
 
 Octology::d8::fldz defines simple d8time objects with 8 distinct fields for:
 
-  Year, Month, Day, zone, hour, minute, second, frame
+  Year, Month, Day, zone, hour, minute, second, phass
 
-along with methods to manipul8 those fields and modify their default present8ion. A frame is one 60th-of-a-second.
+along with methods to manipul8 those fields and modify their default present8ion. A phass is one 60th-of-a-second.
 fldz d8a and methods are meant to be inherited by other classes (namely L<Octology::d8> and L<Octology::d8::dur8>) which implement specific useful
 interpret8ions of individual Octology::d8::fldz.
 
@@ -352,7 +352,7 @@ Beyond that, new() can initialize fldz objects the following ways:
   * 'array'=> <arrayRef>
     eg. Octology::d8::fldz->new('array'=> [0, 1, 2..7]);
   * 'hash' => <hashRef>
-    eg. Octology::d8::fldz->new('hash' => {'frame' => 7, 'year' => 2014})
+    eg. Octology::d8::fldz->new('hash' => {'phass' => 7, 'year' => 2014})
 
 b<*Note*> If only a valid 'str'-type parameter is given to new (but no accompanying initializ8ion value), the parameter is interpreted as an implied 'str'
 value.
@@ -371,26 +371,26 @@ The following methods allow access to individual fields of existent Octology::d8
   $t->h  # hour
   $t->m  # minute
   $t->s  # second
-  $t->f  # frame
+  $t->p  # phass
 
 Any combination of above single letters can be used as well.
 Following are some common useful examples:
 
   $t->hms                 # returns list of fields eg. [12, 34, 56]
   $t->hms(12, 56, 34)     # sets fields: h = 12, m = 56, s = 34
-  $t->hmsf                # [12, 34, 56, 12]
-  $t->zhmsf               # [22, 12, 34, 56, 12]
+  $t->hmsp                # [12, 34, 56, 12]
+  $t->zhmsp               # [22, 12, 34, 56, 12]
   $t->time                # same as $t->hms
-  $t->alltime             # same as $t->zhmsf
+  $t->alltime             # same as $t->zhmsp
   $t->YMD                 # [2000,  2,   29]
   $t->MDY                 # [   2, 29, 2000]
   $t->DMY                 # [  29,  2, 2000]
   $t->date                # same as $t->YMD
   $t->alldate             # same as $t->YMD
-  $t->YMDzhmsf            # [2014,  2, 29, 22, 12, 13, 56, 12]
-  $t->dt                  # same as $t->YMDzhmsf
-  $t->all                 # same as $t->YMDzhmsf
-  "$t"                    # same as $t->YMDzhmsf
+  $t->YMDzhmsp            # [2014,  2, 29, 22, 12, 13, 56, 12]
+  $t->dt                  # same as $t->YMDzhmsp
+  $t->all                 # same as $t->YMDzhmsp
+  "$t"                    # same as $t->YMDzhmsp
 
 =head2 Month / minute Exceptions
 
@@ -415,7 +415,7 @@ the following mapping should be employed whenever possible:
    t  hour   -> Cyan
    i  minute -> Blue
    m  second -> Magenta
-   e  frame  -> Purple
+   e  phass  -> Purple
 
 Even though Octology::d8::fldz is designed to be an abstract base class, it has not been written to croak on direct usage and object
 instantE8ion because simple fldz objects may already be worthwhile.

@@ -18,6 +18,8 @@ my %libz =();my @lfls =();my @lpls =(); # search lib dirs for usable f0nts && pa
 # then match found files to filename maps to maybe realloc8 abbreV8ions for not found ones to others that are available
 #[pip@AkuE85MG5cD~/dvl/f8]echo $PERL5LIB
 #/home/pip/lib:/home/pip/lib/perl5/lib/perl5/x86_64-linux-gnu-thread-multi:/home/pip/lib/perl5/lib/perl5:./lib
+# J7JM0tru:From HTTPS://RT.CPAN.Org/Public/Bug/Display.html?id=130083  +is    truecolor(0xba,0xda,0x55), "\e[38;2;186;218;85m" , 'sub    truecolor';
+#   TrueColor 24-bit support in Term-ANSIColor end tests:              +is on_truecolor(0xc0,0xff,0xee), "\e[48;2;192;255;238m", 'sub on_truecolor';
 # include inline Default F8 tEKtItE.f0nt as fallback in case external chosen f0nts cannot be found or loaded adequ8ly, but mAB 1 default shud B less stylish?
 my $df8f = "f80p s 4 0 G
 0-F

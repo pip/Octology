@@ -28,8 +28,8 @@ use overload
   q(cmp) => \&_cmp_str,
   q(+)   => \&_add,
   q(-)   => \&_sub;
-sub _stringify{ # cat non-zero b64 fields down to frame or should just be used fields
-  my @fdat=$_[0]->YMDzhmsf();
+sub _stringify{ # cat non-zero b64 fields down to phass or should just be used fields
+  my @fdat=$_[0]->YMDzhmsp();
   my @attz=$_[0]->_attribute_names();my $tstr='';my $toob=0; # flag design8ing field too big
   for(@fdat){$toob=1 if($_>63);}
   if($toob){
@@ -47,7 +47,7 @@ sub _stringify{ # cat non-zero b64 fields down to frame or should just be used f
 sub _cmp_num{
   my($larg,$rarg,$srvr)=@_;
   ($larg,$rarg)=($rarg,Octology::d8::dur8->new($larg)) if($srvr); # mk both args dur8 objects
-  # maybe compare _total_frames() or something?
+  # maybe compare _total_phasses() or something?
   return(0);}
 sub _cmp_str{my $r= _cmp_num(@_); ($r<0) ? return('lt') : ($r) ? return('gt') : return('eq');}
 # dur8 + dur8  = dur8
@@ -63,7 +63,7 @@ sub _add{
     $rslt=$larg+$rarg; # pass off calculation to d8.pm
   }else{
     $rslt=Octology::d8::dur8->new();
-    $rslt->{'f'}=$larg->f+$rarg->f;
+    $rslt->{'p'}=$larg->p+$rarg->p;
     $rslt->{'s'}=$larg->s+$rarg->s;
     $rslt->{'m'}=$larg->m+$rarg->m;
     $rslt->{'h'}=$larg->h+$rarg->h;
@@ -84,7 +84,7 @@ sub _sub{
   }else{
     $rarg=Octology::d8::dur8->new($rarg) unless(ref($rarg)&& $rarg->isa('Octology::d8::dur8'));
     $rslt=Octology::d8::dur8->new();
-    $rslt->{'f'}=$larg->f-$rarg->f;
+    $rslt->{'p'}=$larg->p-$rarg->p;
     $rslt->{'s'}=$larg->s-$rarg->s;
     $rslt->{'m'}=$larg->m-$rarg->m;
     $rslt->{'h'}=$larg->h-$rarg->h;
@@ -116,17 +116,17 @@ sub new{my($nvkr,$ityp,$idat)=@_;my $nobj=ref($nvkr);my $clas=$ityp;
   if(defined($ityp)&& $ityp!~ /::/){ # there were initialization params
     ($ityp,$idat)=('str',$ityp) unless(defined($idat));
     if($ityp=~ /^verbose$/i){ # dur8's verbose string param has field names followed by colon then decimal numbers, like 'Y:2013 M:8 D:...'
-      while($idat=~ s/([YMDwzhmsf]):(\d+)//){my($fnam,$fval)=($1,$2); # this is pointlessly no different from a hash with s/=>/:/g && strip commas
+      while($idat=~ s/([YMDwzhmsp]):(\d+)//){my($fnam,$fval)=($1,$2); # this is pointlessly no different from a hash with s/=>/:/g && strip commas
         if($fnam=~ /^w/){$self->{'D'}  +=(7*$fval);} # adding weeks field option to auto-gener8 7 times as many Days
         else            {$self->{$fnam}+=   $fval; }}
-    }elsif($ityp=~ /^s/i){ # handle 'str' param growing left from frame field
+    }elsif($ityp=~ /^s/i){ # handle 'str' param growing left from phass field
       my $ilen=length($idat);
       for(my $i=(8-$ilen);$i<8;$i++){
         if($idat=~ s/^(.)//){$self->{$attz[$i]}=b10($1);}} # break down str
     }elsif($ityp=~ /^g/i){ # 'g3'  might want to l8r add more flexible parsing for optional fldz && fractional partz
-      if($idat=~ /(\d+):(\d+):(\d+)\.(\d+)/){$self->{'h'}=$1;$self->{'m'}=$2;$self->{'s'}=$3;$self->{'f'}=int($4/100.0*64);}
+      if($idat=~ /(\d+):(\d+):(\d+)\.(\d+)/){$self->{'h'}=$1;$self->{'m'}=$2;$self->{'s'}=$3;$self->{'p'}=int($4/100.0*64);}
     }elsif($ityp=~ /^m/i){ # 'mp'
-      if($idat=~ /(\d+)\.(\d+)/){                                            $self->{'s'}=$1;$self->{'f'}=int($2/ 10.0*64);
+      if($idat=~ /(\d+)\.(\d+)/){                                            $self->{'s'}=$1;$self->{'p'}=int($2/ 10.0*64);
         while($self->{'s'} >= 60){
           $self->{    's'} -= 60;$self->{'m'}=0 unless(exists($self->{'m'}) && defined($self->{'m'}) && $self->{'m'}=~ /^\d+$/);$self->{'m'}++;}
         while($self->{'m'} >= 60){ # assuming there won't be Dayz long secondz
@@ -143,12 +143,12 @@ sub new{my($nvkr,$ityp,$idat)=@_;my $nobj=ref($nvkr);my $clas=$ityp;
               delete(                       $idat->{$_});}}
         }else{croak "!*EROR*! Octology::d8::dur8::new initialization type: $ityp did not match 'str','array','hash','g3', or 'mp'!\n";}}} # unDtectd init type
   }return($self);}
-sub total_frames{ # return the integer number of frames in a Octology::d8::dur8 obj
+sub total_phasses{ # return the integer number of phasses in a Octology::d8::dur8 obj
   my $self=shift;my $totl=0;
-  $totl+= $self->f();
+  $totl+= $self->p();
   $totl+=($self->s() * 60);
   $totl+=($self->m() * 60 * 60);
-  $totl+=($self->h() * 60 * 60 * 60); # should zone count for any frames?
+  $totl+=($self->h() * 60 * 60 * 60); # should zone count for any phasses?
   $totl+=($self->D() * 60 * 60 * 60 * 24);
   $totl+=($self->M() * 60 * 60 * 60 * 24 * 30.4368537808642);
   $totl+=($self->Y() * 60 * 60 * 60 * 24 * 365.24225);
@@ -181,7 +181,7 @@ dur8 was written to simplify storage and calcul8ion of encoded, yet distinct and
 
 =over 2
 
-=item - copy total_frames into AUTOLOAD for (in|as|total)_(YMDzhmsf) functions which convert to any field
+=item - copy total_phasses into AUTOLOAD for (in|as|total)_(YMDzhmsp) functions which convert to any field
 
 =item - better ways to specify common verbose sizes
 
@@ -216,15 +216,15 @@ Beyond that, new() can initialize dur8 objects in the following ways:
   * 'array'=> <arrayRef>
     eg. Octology::d8::dur8->new('array'=> [0, 1, 2..7]);
   * 'hash' => <hashRef>
-    eg. Octology::d8::dur8->new('hash' => {'frame' => 7, 'year' => 2014})
+    eg. Octology::d8::dur8->new('hash' => {'phass' => 7, 'year' => 2014})
   * 'g3'   => <gst123TimeString>
     eg. Octology::d8::dur8->new('g3'   => '0:03:47.88')
   * 'mp'   => <mplayerFloatSecondz>
     eg. Octology::d8::dur8->new('mp'   =>  254.1)
 
-=head2 total_frames()
+=head2 total_phasses()
 
-total_frames simply returns the total number of frames an Octology::d8::dur8 object specifies.
+total_phasses simply returns the total number of phasses an Octology::d8::dur8 object specifies.
 
 =head2 colr(<DestinationColorTypeFormat>)
 
@@ -245,7 +245,7 @@ The following methods allow access to individual fields of Octology::d8::dur8 ob
   $t->h  # hour
   $t->m  # minute
   $t->s  # second
-  $t->f  # frame
+  $t->p  # phass
 
 Please see L<Octology::d8::fldz> for a more thorough description of field accessor methods.
 
@@ -261,7 +261,7 @@ the following mapping should be employed whenever possible:
    t  hour   -> Cyan
    i  minute -> Blue
    m  second -> Magenta
-   e  frame  -> Purple
+   e  phass  -> Purple
 
 Please see the colr() member function in the USAGE section.
 

@@ -732,9 +732,9 @@ sub DrawBord{$scal=int(($hite-2)/8) if($scal*8+2 > $hite); # don't scale beyond 
     for(1..$#plyz){                                                           my $cpd8 = Octology::d8->new($plyz[$_][0]); # Prev&&CurPlyD8z
       if($_ % 2){$kstd += $cpd8 - $ppd8;}
       else      {$wstd += $cpd8 - $ppd8;} $ppd8 = $cpd8;}
-    substr($text[ 0],-19,17,sprintf('White %02d:%02d:%02d:%02d',$wstd->hmsf()));
+    substr($text[ 0],-19,17,sprintf('White %02d:%02d:%02d:%02d',$wstd->hmsp()));
     substr($Fclr[ 0],-19,17,        'WWWWWkCCWBBWMMWpp'                       );
-    substr($text[-1],-19,17,sprintf('blacK %02d:%02d:%02d:%02d',$kstd->hmsf()));
+    substr($text[-1],-19,17,sprintf('blacK %02d:%02d:%02d:%02d',$kstd->hmsp()));
     substr($Fclr[-1],-19,17,        'KKKKKkCCWBBWMMWpp'                       );}else{substr($text[ 0],-19,17,' ' x 17);} # re-blank tItlbR tIm area aftr '0'kE
   if(0&& $sdlf && defined($evnt)&& $evnt->type == SDL_MOUSEBUTTONDOWN){my($evbx,$evby)=($evnt->button_x    ,$evnt->button_y     );
                                                                        my($evbw,$evbb)=($evnt->button_which,$evnt->button_button);
