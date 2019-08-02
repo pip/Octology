@@ -51,7 +51,7 @@ our @EXPORT= qw(bfr8c    b8c    d8c    dur8c       a8c   a8colr      h2rl   rl2h
     $z    $k    $r    $o    $y    $g     $c $SKpb    $m    $p    $w  tstc    $K    $R    $O    $Y    $G    $C    $B    $M    $P    $W    %p622 %p222   upd8
  $tnhf $ucdf  spff  spfd  spfX   shfl  reso $auth %cmsp %p8k2 @p82k  chp8     S2f4 c2f4 dm2u cdst %crgb %cbrt @snls @mrls %cdrd %cdrn    %nrgb         gnp8);
  # of 52 posibl sngl-letr var nmz,a8 Xportz 20,$b && $a unavail,so shudB thEs30 lFt4quik shortSt nAmz: 'def hij l n  q stuv x', 'A  DEF HIJ L N  Q STUV X Z';
-our $VERSION='0.0';my  $d8VS='J67M2UPD';our $auth='PipStuart <Pip@CPAN.Org>'; # above not exporting $b since collidez with sort{$a  <=> $b};unalloc'd sOlOz^;
+our $VERSION='0.0';my  $d8VS='J82M5C88';our $auth='PipStuart <Pip@CPAN.Org>'; # above not exporting $b since collidez with sort{$a  <=> $b};unalloc'd sOlOz^;
 our $ucdf= eval('use Color::Similarity::RGB qw(distance);1') || 0; # try2set UseColorDistanceFlag if optional module is available; /defhijlnqstuvx/i + /AZ/^;
 our @Monz=qw(January February March   April     May June July   August September October November December);our @Mon=();push(@Mon,substr($_,0,3)) for(@Monz);
 our @Dayz=qw(Sunday  Monday   Tuesday Wednesday Thursday Friday Saturday                                  );our @Day=();push(@Day,substr($_,0,3)) for(@Dayz);
@@ -638,19 +638,105 @@ sub c{my $Sstr=shift;if(!defined($Sstr) && !-t STDIN){chomp($Sstr= join('',<STDI
 # 2du:add -help to S2 && c2,mk new Dflt minimum output,mAB optn 2gNr8 Xpanded hedr&&SGR sectnz,DsIning IDeal wAyz2consistNtly Xchng d8a btwn fUtureS2&&c2Bgood,
 #   l8r mk new hedr section for qr// to list of layr stringz to apply as stRt of syntax-hilitng nstd of fully line-oriented alignment,add flgz 4 b64 && b256,
 #   add flag 4 all sectionz && layrz to be delimited somehow instead of pre-sized in maybe lengthy header,pigybak flgz or cfg Dtailz or cmNtz in hidN SKpzB4 0;
+#   goal 2 mnemonically specify every possible SGR setting with alignment to text lines being modified efficiently without becoming overwhelmingly obtuse;
+#   definitely want to support both blinks, double underline && overline, eXtended colors 2;R;G;Bm in decimal for non-indexed true-color support && extensible;
+#   need to re-discover what I meant to abbreV8 with xclu:catr:catu but possibly eXtendedCodeListUsed:CodeATtRibutes:CodeATtribzUsed where but at what point
+#   does a complex whole new wrapper format && system just cause more tied layers than can be managed intuitively compared with just serialized SKp codez?
+# I'm thinking starting kinda fresh with CDALOHXZ && cdalohxz && re-alloc8ing F from Foregrndclr to TTFonts leaving f for old .f0nt files && the C would be
+#   Core Color, then Dark, Avrg, Lite, Orig, High, Xtnd, Zxtn where Xtnd would slurp 2 HEX digitz after the colon sepR8or && Z would get 4 b64 chars 4 24bitz;
+#   SGR would mainly be for turning attr flagz on but sgr could be used for that too, plus whatever else isn't yet alloc8d as a useful distinct sepR8d layer;
+# CDALOHXZ would be exclusive or last-in-winz but rest of SGR etc should be able to combine almost arbitrarily as attribute flagz to toggle for the rendering;
+# If wanting to rot8 the base 16 colorz up into 64 first, there can be Klen, Neon, Wash, Melo but they'd be able to combine with CDAL to just cycle the 16;
+# Actually Bold, Normal, fAint, && inVisible are exclusive && so are Italic && Fraktur (plus probably 10-19 altern8 Fonts) with the rest probably free-mixing;
+# Also the two speed bLinKs are probably best exclusive && BEPU could be used as layerz to store 4 b64 chars from 24-bit h2rl valuez per each text char vs. Z;
+# Layerz IJ could be used for extra SGR exclusive Intensity && bLinK && maybe Q or V could be the Font Italics or Fraktur or other special 10-19 codez too;
+# For further discussion of rel8d text layer && S2 header ideas (but not extra sgrSGR exclusive layer name maps yet), check out 8.utf around line 3888 && on;
+# Started with forced gener8ion of BEPU RGBLowbitz && fed into c2 to gener8 one Green gradient of output text, then add the U Lowbitz to get up to 255,
+#   then added bepu for bkgr row of reverse Red gradient, then gener8d multiple lines to gradient across 2 axes each, then added sgr resetz then SGR setz;
+# plan:fix c2 to loop until each t: line before constructing SKpd,add support for XU for 38;5 ndxd wi shared Lowbitz && accept spaces in BEP,then CDALOH,
+#   add help text to both && give S2 param to dump gener8d test && start reversing process for all permut8ions in some canonical fashion to roundtrip them;
 sub S2{ # convert almost any eScaped text string into new col8 format   (totally in-progress); will need locl singl b256 to support big ndxz wiot DpNdNC on b8;
   my     $Stxt= join(' ',@_) || ''; # non -help parameter can get d8a piped in
-  if    ($Stxt !~  /(^|\s)-?-?h(elp|\s|$)/i && !-t STDIN){$Stxt=decode('UTF-8',join('',<STDIN>));chomp($Stxt);}
-  else  {$Stxt .= "\n S2 - convert eScaped string into col8 format  d8VS:$d8VS Auth:$auth;";}
+  if    ($Stxt !~  /(^|\s)-?-?h(elp|\s|$)/i && !-t STDIN){$Stxt=decode('UTF-8',join('',<STDIN>));}#chomp($Stxt);}
+# else  {$Stxt .= " S2 - convert eScaped string into col8 format  d8VS:$d8VS Auth:$auth;\n";}
   my     $ctxt=$Stxt;
-         $ctxt=~ s/^/a8:S2:d8VS:$d8VS:hedr:flgz:lyrz:size:lnls:xclu:catr:catu;\n/; # mAB also custom 8pal8 layr dFinition, what else?
+         $ctxt=~ s/^/a8:S2:d8VS:$d8VS:hedr:flgz:lyrz:size:lnls:xclu:catr:catu; This is just an example header definition to grow from;\n/;
+  for my $line(0..47){
+         $ctxt.=  "t:0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz._0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz._\n";
+         $ctxt.=  "B:00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000\n";
+         $ctxt.=  "E:";#00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000\n";
+    for(0..127){$ctxt.= $sb64[int(       $_   /  2      ) ]      ;} $ctxt.="\n";
+         $ctxt.=  "P:";#00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000\n";
+         $ctxt.=        $sb64[int( 64 / 48 *       $line) ] x 128;  $ctxt.="\n";
+         $ctxt.=  "U:";#00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000\n";
+    for(0..127){$ctxt.= $sb64[int(       $_   /  2      ) ]      ;} $ctxt.="\n"; # int(rand(64))];}
+         $ctxt.=  "b:";#00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000\n";
+    for(0..127){$ctxt.= $sb64[int((127 - $_)  /  8      ) ]      ;} $ctxt.="\n";
+         $ctxt.=  "e:00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000\n";
+         $ctxt.=  "p:";#00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000\n";
+         $ctxt.=        $sb64[int( 32 / 48 * (47 - $line))] x 128;  $ctxt.="\n";
+         $ctxt.=  "u:";#00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000\n";
+    for(0..127){$ctxt.= $sb64[int((127 - $_)  /  2      ) ]      ;} $ctxt.="\n";
+         $ctxt.=  "s:bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb\n";
+         $ctxt.=  "g:iiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiii\n";
+         $ctxt.=  "r:uuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuu\n";
+         $ctxt.=  "q:llllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllll\n";
+         $ctxt.=  "v:rrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrr\n";
+         $ctxt.=  "z:vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv\n";
+         $ctxt.=  "S:cccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccc\n";
+         $ctxt.=  "G:mmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmm\n";
+         $ctxt.=  "R:oooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooo\n";
+         $ctxt.=  "Q:gggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggg\n";
+    my @atrz=(qw( B A I U  R C D O )); # attribz array actually does not include N Normal or V inVisible, bLinKs or Fraktur, but other 8 seem worth testing
+         $ctxt.=  "V:";#BBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBB\n";
+    for(0..127){$ctxt.= $atrz[int(rand(@atrz)           ) ]      ;} $ctxt.="\n";
+         $ctxt.=  "Z:";#BBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBB\n";
+    for(0..127){$ctxt.= $atrz[int(rand(@atrz)           ) ]      ;} $ctxt.="\n";
+  }
   return($ctxt);} # mAB nstd of catu section listing y,x of each Use, betr to just auto-use further sgrSGR... layrz as ndxz of catr exceed 64z &&
                   #   similRly nstd of xclu just have 3 new dflt 8pal8 layrz 4 each of F && b or gNer8 custom layrz by frequency of use;
 sub c2{ # convert col8 format into escaped text
-  my     $ctxt= join(' ',@_) || '';
-  if    ($ctxt !~  /(^|\s)-?-?h(elp|\s|$)/i && !-t STDIN){$ctxt=decode('UTF-8',join('',<STDIN>));chomp($ctxt);}
-  my     $Stxt=$ctxt;
-         $Stxt=~ s/^[^\n]*\n//;
+  my     $ctxt= join(' ',@_) || '';my $txln;my $brcl;my $egcl;my $pbcl;my $ulcl; # these shud all just use tmp1 && below shud B hash of split arrays
+                                   my @txcz;my @Brcc;my @Egcc;my @Pbcc;my @Ulcc;my @satc;my @gatc;my @ratc;my @qatc;my @vatc;my @zatc;
+                                   my $tmp1;my @brcc;my @egcc;my @pbcc;my @ulcc;my @Satc;my @Gatc;my @Ratc;my @Qatc;my @Vatc;my @Zatc;
+  if    ($ctxt !~  /(^|\s)-?-?h(elp|\s|$)/i && !-t STDIN){$ctxt=decode('UTF-8',join('',<STDIN>));}#chomp($ctxt);}
+  my     $Stxt;#=$ctxt;
+         $ctxt=~ s/^  ([^\n]*)\n//x; # strip pointless header for now
+  while( $ctxt=~  /^\w:[^\n]* \n /x){
+         $ctxt=~ s/^t:([^\n]*)\n//;$txln=$1;@txcz=split(//,$txln); # hedr shud have said if Foregrnd Colr would be first aftr text then shud ck 4 BEPU
+         $ctxt=~ s/^B:([^\n]*)\n//;$brcl=$1;@Brcc=split(//,$brcl); # B Red Color Line && Charz
+         $ctxt=~ s/^E:([^\n]*)\n//;$egcl=$1;@Egcc=split(//,$egcl); # E Grn Color Line && Charz
+         $ctxt=~ s/^P:([^\n]*)\n//;$pbcl=$1;@Pbcc=split(//,$pbcl); # P Blu Color Line && Charz
+         $ctxt=~ s/^U:([^\n]*)\n//;$ulcl=$1;@Ulcc=split(//,$ulcl); # U Low Color Line && Charz
+         $ctxt=~ s/^b:([^\n]*)\n//;$brcl=$1;@brcc=split(//,$brcl); # b red Color Line && Charz
+         $ctxt=~ s/^e:([^\n]*)\n//;$egcl=$1;@egcc=split(//,$egcl); # e grn Color Line && Charz
+         $ctxt=~ s/^p:([^\n]*)\n//;$pbcl=$1;@pbcc=split(//,$pbcl); # p blu Color Line && Charz
+         $ctxt=~ s/^u:([^\n]*)\n//;$ulcl=$1;@ulcc=split(//,$ulcl); # u low Color Line && Charz
+         $ctxt=~ s/^s:([^\n]*)\n//;$tmp1=$1;@satc=split(//,$tmp1); # s attribute line && Charz
+         $ctxt=~ s/^g:([^\n]*)\n//;$tmp1=$1;@gatc=split(//,$tmp1); # g attribute line && Charz
+         $ctxt=~ s/^r:([^\n]*)\n//;$tmp1=$1;@ratc=split(//,$tmp1); # r attribute line && Charz
+         $ctxt=~ s/^q:([^\n]*)\n//;$tmp1=$1;@qatc=split(//,$tmp1); # q attribute line && Charz
+         $ctxt=~ s/^v:([^\n]*)\n//;$tmp1=$1;@vatc=split(//,$tmp1); # v attribute line && Charz
+         $ctxt=~ s/^z:([^\n]*)\n//;$tmp1=$1;@zatc=split(//,$tmp1); # z attribute line && Charz
+         $ctxt=~ s/^S:([^\n]*)\n//;$tmp1=$1;@Satc=split(//,$tmp1); # S attribute line && Charz
+         $ctxt=~ s/^G:([^\n]*)\n//;$tmp1=$1;@Gatc=split(//,$tmp1); # G attribute line && Charz
+         $ctxt=~ s/^R:([^\n]*)\n//;$tmp1=$1;@Ratc=split(//,$tmp1); # R attribute line && Charz
+         $ctxt=~ s/^Q:([^\n]*)\n//;$tmp1=$1;@Qatc=split(//,$tmp1); # Q attribute line && Charz
+         $ctxt=~ s/^V:([^\n]*)\n//;$tmp1=$1;@Vatc=split(//,$tmp1); # V attribute line && Charz
+         $ctxt=~ s/^Z:([^\n]*)\n//;$tmp1=$1;@Zatc=split(//,$tmp1); # Z attribute line && Charz
+    for(0..$#txcz){#print "$Brcc[$_]$Egcc[$_]$Pbcc[$_]$Ulcc[$_]";my $hexc=rl2h("$Brcc[$_]$Egcc[$_]$Pbcc[$_]$Ulcc[$_]");print "hexc:$hexc;";
+      my @Rgbd=($sb10{$Brcc[$_]}*4,$sb10{$Egcc[$_]}*4,$sb10{$Pbcc[$_]}*4);#hex(substr($hexc,0,2)),hex(substr($hexc,2,2)),hex(substr($hexc,4,2)));
+      my @rgbd=($sb10{$brcc[$_]}*4,$sb10{$egcc[$_]}*4,$sb10{$pbcc[$_]}*4);#hex(substr($hexc,0,2)),hex(substr($hexc,2,2)),hex(substr($hexc,4,2)));
+      # rl2h not working maybe because too many zeroes or something? just roll with b64 RGB for now && add in U Low bitz manually here (might be backwards?)
+      my $tulc=$sb10{$Ulcc[$_]};$Rgbd[2]+=$tulc & 3;$tulc=int($tulc/4);
+                                $Rgbd[1]+=$tulc & 3;$tulc=int($tulc/4);
+                                $Rgbd[0]+=$tulc    ;
+         $tulc=$sb10{$ulcc[$_]};$rgbd[2]+=$tulc & 3;$tulc=int($tulc/4);
+                                $rgbd[1]+=$tulc & 3;$tulc=int($tulc/4);
+                                $rgbd[0]+=$tulc    ;
+      $Stxt.="\e[1;38;2;$Rgbd[0];$Rgbd[1];$Rgbd[2];48;2;$rgbd[0];$rgbd[1];$rgbd[2]m" . S(":$satc[$_]$gatc[$_]$ratc[$_]$qatc[$_]$vatc[$_]$zatc[$_]") .
+                                                                                       S(":$Satc[$_]$Gatc[$_]$Ratc[$_]$Qatc[$_]$Vatc[$_]$Zatc[$_]") .$txcz[$_];
+    } $Stxt.="\n"; }
   return($Stxt);}
 sub S2f4{my($text,$Fclr,$bclr,$f0nt  );my $dFbf=':::';my($nxtF,$nxtb,$nxtf)=(split(//,$dFbf)); # Dflt && NeXT Fg && bg colrz && f0nt (try dFbf '^::' ?)
             $text=$Fclr=$bclr=$f0nt='';my $Stxt; # SGR layer should enable non-8pal8 eXtended colors

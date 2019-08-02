@@ -1,14 +1,15 @@
 # Octology
-The ontology of 8. `$VERSION='0.0';$d8VS='J7AM2MvP';`
+The ontology of 8. `$VERSION='0.0';$d8VS='J82MDeep';`
 
 What is an ontology, you may ask?
 
-<ol><li>n. (computer science) a rigorous and exhaustive organiz8ion of some knowledge domain that is usually hierarchical and contains all the relevant
+<ol><li>n. (Computer Science) a rigorous and exhaustive organiz8ion of some knowledge domain that is usually hierarchical and contains all the relevant
   entities and their rel8ions.</li>
-    <li>the metaphysical study of the nature of being and existence.</li>
+    <li>n. (Philosophy) the metaphysical study of the nature of being and existence.</li>
+    <li>n. (Logic) the set of entities presupposed by a theory.</li>
 </ol>
 
-I expect that after some point (probably passed) anyone who studies Octology thoroughly would become able to develop any new videogame and problem-solve.
+I expect after some point (probably passed) anyone who studies Octology thoroughly would become able to develop any new videogame and problem-solve.
 
 "Perl 5 was a machine-shop for making other tools." -LarryWall on d8=J6K TPCiP interview. I'd like Octology to be regarded similarly for game tools.
 

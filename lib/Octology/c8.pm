@@ -548,57 +548,57 @@ sub GetK{my $self=shift;my $tmot=shift||0;my $tkey='-1';my $stix;my $ctix;
           elsif($self->{'_evnt'}->key_sym == SDLK_8           ){$tkey=  '8';$tkey='*'       if($self->{'_evnt'}->key_mod & KMOD_SHIFT);}
           elsif($self->{'_evnt'}->key_sym == SDLK_9           ){$tkey=  '9';$tkey='('       if($self->{'_evnt'}->key_mod & KMOD_SHIFT);}
           elsif($self->{'_evnt'}->key_sym == SDLK_a           ){$tkey=  'a';$tkey=uc($tkey) if($self->{'_evnt'}->key_mod & KMOD_SHIFT);
-                                                              $tkey="Ct$tkey"             if($self->{'_evnt'}->key_mod & KMOD_CTRL );} # Ctrl-a or A
+                                                                $tkey="Ct$tkey"             if($self->{'_evnt'}->key_mod & KMOD_CTRL );} # Ctrl-a or A
           elsif($self->{'_evnt'}->key_sym == SDLK_b           ){$tkey=  'b';$tkey=uc($tkey) if($self->{'_evnt'}->key_mod & KMOD_SHIFT);
-                                                              $tkey="Ct$tkey"             if($self->{'_evnt'}->key_mod & KMOD_CTRL );} # Ctrl-b or B
+                                                                $tkey="Ct$tkey"             if($self->{'_evnt'}->key_mod & KMOD_CTRL );} # Ctrl-b or B
           elsif($self->{'_evnt'}->key_sym == SDLK_c           ){$tkey=  'c';$tkey=uc($tkey) if($self->{'_evnt'}->key_mod & KMOD_SHIFT);
-                                                              $tkey="Ct$tkey"             if($self->{'_evnt'}->key_mod & KMOD_CTRL );} # Ctrl-c or C ..
+                                                                $tkey="Ct$tkey"             if($self->{'_evnt'}->key_mod & KMOD_CTRL );} # Ctrl-c or C ..
           elsif($self->{'_evnt'}->key_sym == SDLK_d           ){$tkey=  'd';$tkey=uc($tkey) if($self->{'_evnt'}->key_mod & KMOD_SHIFT);
-                                                              $tkey="Ct$tkey"             if($self->{'_evnt'}->key_mod & KMOD_CTRL );}
+                                                                $tkey="Ct$tkey"             if($self->{'_evnt'}->key_mod & KMOD_CTRL );}
           elsif($self->{'_evnt'}->key_sym == SDLK_e           ){$tkey=  'e';$tkey=uc($tkey) if($self->{'_evnt'}->key_mod & KMOD_SHIFT);
-                                                              $tkey="Ct$tkey"             if($self->{'_evnt'}->key_mod & KMOD_CTRL );}
+                                                                $tkey="Ct$tkey"             if($self->{'_evnt'}->key_mod & KMOD_CTRL );}
           elsif($self->{'_evnt'}->key_sym == SDLK_f           ){$tkey=  'f';$tkey=uc($tkey) if($self->{'_evnt'}->key_mod & KMOD_SHIFT);
-                                                              $tkey="Ct$tkey"             if($self->{'_evnt'}->key_mod & KMOD_CTRL );}
+                                                                $tkey="Ct$tkey"             if($self->{'_evnt'}->key_mod & KMOD_CTRL );}
           elsif($self->{'_evnt'}->key_sym == SDLK_g           ){$tkey=  'g';$tkey=uc($tkey) if($self->{'_evnt'}->key_mod & KMOD_SHIFT);
-                                                              $tkey="Ct$tkey"             if($self->{'_evnt'}->key_mod & KMOD_CTRL );}
+                                                                $tkey="Ct$tkey"             if($self->{'_evnt'}->key_mod & KMOD_CTRL );}
           elsif($self->{'_evnt'}->key_sym == SDLK_h           ){$tkey=  'h';$tkey=uc($tkey) if($self->{'_evnt'}->key_mod & KMOD_SHIFT);
-                                                              $tkey="Ct$tkey"             if($self->{'_evnt'}->key_mod & KMOD_CTRL );}
+                                                                $tkey="Ct$tkey"             if($self->{'_evnt'}->key_mod & KMOD_CTRL );}
           elsif($self->{'_evnt'}->key_sym == SDLK_i           ){$tkey=  'i';$tkey=uc($tkey) if($self->{'_evnt'}->key_mod & KMOD_SHIFT);
-                                                              $tkey="Ct$tkey"             if($self->{'_evnt'}->key_mod & KMOD_CTRL );}
+                                                                $tkey="Ct$tkey"             if($self->{'_evnt'}->key_mod & KMOD_CTRL );}
           elsif($self->{'_evnt'}->key_sym == SDLK_j           ){$tkey=  'j';$tkey=uc($tkey) if($self->{'_evnt'}->key_mod & KMOD_SHIFT);
-                                                              $tkey="Ct$tkey"             if($self->{'_evnt'}->key_mod & KMOD_CTRL );}
+                                                                $tkey="Ct$tkey"             if($self->{'_evnt'}->key_mod & KMOD_CTRL );}
           elsif($self->{'_evnt'}->key_sym == SDLK_k           ){$tkey=  'k';$tkey=uc($tkey) if($self->{'_evnt'}->key_mod & KMOD_SHIFT);
-                                                              $tkey="Ct$tkey"             if($self->{'_evnt'}->key_mod & KMOD_CTRL );}
+                                                                $tkey="Ct$tkey"             if($self->{'_evnt'}->key_mod & KMOD_CTRL );}
           elsif($self->{'_evnt'}->key_sym == SDLK_l           ){$tkey=  'l';$tkey=uc($tkey) if($self->{'_evnt'}->key_mod & KMOD_SHIFT);
-                                                              $tkey="Ct$tkey"             if($self->{'_evnt'}->key_mod & KMOD_CTRL );}
+                                                                $tkey="Ct$tkey"             if($self->{'_evnt'}->key_mod & KMOD_CTRL );}
           elsif($self->{'_evnt'}->key_sym == SDLK_m           ){$tkey=  'm';$tkey=uc($tkey) if($self->{'_evnt'}->key_mod & KMOD_SHIFT);
-                                                              $tkey="Ct$tkey"             if($self->{'_evnt'}->key_mod & KMOD_CTRL );}
+                                                                $tkey="Ct$tkey"             if($self->{'_evnt'}->key_mod & KMOD_CTRL );}
           elsif($self->{'_evnt'}->key_sym == SDLK_n           ){$tkey=  'n';$tkey=uc($tkey) if($self->{'_evnt'}->key_mod & KMOD_SHIFT);
-                                                              $tkey="Ct$tkey"             if($self->{'_evnt'}->key_mod & KMOD_CTRL );}
+                                                                $tkey="Ct$tkey"             if($self->{'_evnt'}->key_mod & KMOD_CTRL );}
           elsif($self->{'_evnt'}->key_sym == SDLK_o           ){$tkey=  'o';$tkey=uc($tkey) if($self->{'_evnt'}->key_mod & KMOD_SHIFT);
-                                                              $tkey="Ct$tkey"             if($self->{'_evnt'}->key_mod & KMOD_CTRL );}
+                                                                $tkey="Ct$tkey"             if($self->{'_evnt'}->key_mod & KMOD_CTRL );}
           elsif($self->{'_evnt'}->key_sym == SDLK_p           ){$tkey=  'p';$tkey=uc($tkey) if($self->{'_evnt'}->key_mod & KMOD_SHIFT);
-                                                              $tkey="Ct$tkey"             if($self->{'_evnt'}->key_mod & KMOD_CTRL );}
+                                                                $tkey="Ct$tkey"             if($self->{'_evnt'}->key_mod & KMOD_CTRL );}
           elsif($self->{'_evnt'}->key_sym == SDLK_q           ){$tkey=  'q';$tkey=uc($tkey) if($self->{'_evnt'}->key_mod & KMOD_SHIFT);
-                                                              $tkey="Ct$tkey"             if($self->{'_evnt'}->key_mod & KMOD_CTRL );}
+                                                                $tkey="Ct$tkey"             if($self->{'_evnt'}->key_mod & KMOD_CTRL );}
           elsif($self->{'_evnt'}->key_sym == SDLK_r           ){$tkey=  'r';$tkey=uc($tkey) if($self->{'_evnt'}->key_mod & KMOD_SHIFT);
-                                                              $tkey="Ct$tkey"             if($self->{'_evnt'}->key_mod & KMOD_CTRL );}
+                                                                $tkey="Ct$tkey"             if($self->{'_evnt'}->key_mod & KMOD_CTRL );}
           elsif($self->{'_evnt'}->key_sym == SDLK_s           ){$tkey=  's';$tkey=uc($tkey) if($self->{'_evnt'}->key_mod & KMOD_SHIFT);
-                                                              $tkey="Ct$tkey"             if($self->{'_evnt'}->key_mod & KMOD_CTRL );}
+                                                                $tkey="Ct$tkey"             if($self->{'_evnt'}->key_mod & KMOD_CTRL );}
           elsif($self->{'_evnt'}->key_sym == SDLK_t           ){$tkey=  't';$tkey=uc($tkey) if($self->{'_evnt'}->key_mod & KMOD_SHIFT);
-                                                              $tkey="Ct$tkey"             if($self->{'_evnt'}->key_mod & KMOD_CTRL );}
+                                                                $tkey="Ct$tkey"             if($self->{'_evnt'}->key_mod & KMOD_CTRL );}
           elsif($self->{'_evnt'}->key_sym == SDLK_u           ){$tkey=  'u';$tkey=uc($tkey) if($self->{'_evnt'}->key_mod & KMOD_SHIFT);
-                                                              $tkey="Ct$tkey"             if($self->{'_evnt'}->key_mod & KMOD_CTRL );}
+                                                                $tkey="Ct$tkey"             if($self->{'_evnt'}->key_mod & KMOD_CTRL );}
           elsif($self->{'_evnt'}->key_sym == SDLK_v           ){$tkey=  'v';$tkey=uc($tkey) if($self->{'_evnt'}->key_mod & KMOD_SHIFT);
-                                                              $tkey="Ct$tkey"             if($self->{'_evnt'}->key_mod & KMOD_CTRL );}
+                                                                $tkey="Ct$tkey"             if($self->{'_evnt'}->key_mod & KMOD_CTRL );}
           elsif($self->{'_evnt'}->key_sym == SDLK_w           ){$tkey=  'w';$tkey=uc($tkey) if($self->{'_evnt'}->key_mod & KMOD_SHIFT);
-                                                              $tkey="Ct$tkey"             if($self->{'_evnt'}->key_mod & KMOD_CTRL );}
+                                                                $tkey="Ct$tkey"             if($self->{'_evnt'}->key_mod & KMOD_CTRL );}
           elsif($self->{'_evnt'}->key_sym == SDLK_x           ){$tkey=  'x';$tkey=uc($tkey) if($self->{'_evnt'}->key_mod & KMOD_SHIFT);
-                                                              $tkey="Ct$tkey"             if($self->{'_evnt'}->key_mod & KMOD_CTRL );}
+                                                                $tkey="Ct$tkey"             if($self->{'_evnt'}->key_mod & KMOD_CTRL );}
           elsif($self->{'_evnt'}->key_sym == SDLK_y           ){$tkey=  'y';$tkey=uc($tkey) if($self->{'_evnt'}->key_mod & KMOD_SHIFT);
-                                                              $tkey="Ct$tkey"             if($self->{'_evnt'}->key_mod & KMOD_CTRL );}
+                                                                $tkey="Ct$tkey"             if($self->{'_evnt'}->key_mod & KMOD_CTRL );}
           elsif($self->{'_evnt'}->key_sym == SDLK_z           ){$tkey=  'z';$tkey=uc($tkey) if($self->{'_evnt'}->key_mod & KMOD_SHIFT);
-                                                              $tkey="Ct$tkey"             if($self->{'_evnt'}->key_mod & KMOD_CTRL );}
+                                                                $tkey="Ct$tkey"             if($self->{'_evnt'}->key_mod & KMOD_CTRL );}
           elsif($self->{'_evnt'}->key_sym == SDLK_PERIOD      ){$tkey=  '.';$tkey='>'       if($self->{'_evnt'}->key_mod & KMOD_SHIFT);}
           elsif($self->{'_evnt'}->key_sym == SDLK_UNDERSCORE  ){$tkey=  '_';}
           elsif($self->{'_evnt'}->key_sym == SDLK_SPACE       ){$tkey=  ' ';}
