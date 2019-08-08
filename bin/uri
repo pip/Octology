@@ -1,0 +1,50 @@
+#!/usr/bin/perl
+# J7JMJAPN:uri-as-pip.pl originally crE8d by Beppu-san while procrastin8ing from doing annoying contract work;
+package URI::_generic;
+use     URI;
+my %camels = (
+  'youtube'  => 'youTube' ,
+  'slashdot' => 'slashDot',);
+sub capitalize_host {
+  my @parts = split(/\./, $_[0]);
+  return join('.', map { ucfirst $_ } map { exists $camels{$_} ? $camels{$_} : $_ } @parts);}
+sub as_pip{
+  my $self = shift;
+  sprintf('%s://%s%s%s%s%s%s%s',
+    uc $self->scheme,
+    (  $self->userinfo ? $self->userinfo . '@' : ''),
+    capitalize_host(     $self->host),
+    (  $self->port !=    $self->default_port ? ':' . $self->port : ''),
+       $self->path,
+    (  $self->query    ? '?' . $self->query    : ''),
+    (  $self->fragment ? '#' . $self->fragment : ''));}
+package main;
+if   (@ARGV){
+  for(@ARGV){
+    my $uri = URI->new($_);
+    print $uri->as_pip, "\n";}}
+else{
+  while(<STDIN>){chomp;
+    my $uri = URI->new($_);
+    print $uri->as_pip, "\n";}}
+8;
+
+=head1 NAME
+
+uri - The result of procrastination
+
+=head1 USAGE
+
+  uri <URI>...
+
+Passing URIs on the command line:
+
+  uri http://blogs.perl.org/users/damian_conway/2019/07/vigenere-vs-vigenere.html
+
+      HTTP://Blogs.Perl.Org/users/damian_conway/2019/07/vigenere-vs-vigenere.html
+
+Passing URLs through STDIN:
+
+  uri < urls.txt
+
+=cut
