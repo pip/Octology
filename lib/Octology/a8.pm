@@ -600,7 +600,7 @@ if((!defined($codz) || !length($codz)) && !-t STDIN){chomp($codz= join('',<STDIN
         if   ($sepc[$sndx+1] eq 'o'  ||  $sepc[$sndx+2] eq 'o'){                              $Sstr.=   '48;5;015';}
         else                                                   {                              $Sstr.=   '48;5;'. hex($sepc[$sndx+1].$sepc[$sndx+2]);}$sndx+=2;}
       elsif  (exists(        $sgrm{$sepc[   $sndx]})){ # mk Bold codez overide Xisting st8 of Fclr,or prepend new,&& append all othrz (until grup ordrz)
-        if   ($sepc[$sndx] eq 'b'){if($Sstr=~ /(^|;) 0? 1  (;|$)/x){$Sstr=~ s/(^|;) 0? 1  (;|$)/${1}22$2/x;}else{$Sstr=~ s/^(\d)/22;$1/;}}
+        if   ($sepc[$sndx] eq 'b'){if($Sstr=~ /(^|;) 0? 1  (;|$)/x){$Sstr=~ s/(^|;) 0? 1  (;|$)/${1}22$2/x;}else{$Sstr=~ s/^/22/;}} # had \d ;$1 but no m@ch
         elsif($sepc[$sndx] eq 'B'){if($Sstr=~ /(^|;)(0*|22)(;|$)/ ){$Sstr=~ s/(^|;)(0*|22)(;|$)/${1}01$3/ ;}else{$Sstr=~ s/^(\d)/01;$1/;}} # uprcase Bold on
         else                                                   {$Sstr.= ';' if(length($Sstr));$Sstr.= $sgrm{$sepc[$sndx]};}} $sndx++;}
     if    (length($Sstr)                                      ){$Sstr = $SKp8 . $Sstr    .   'm';  # wrap all digitz && semicolonz as single escape code
@@ -655,6 +655,12 @@ sub c{my $Sstr=shift;if(!defined($Sstr) && !-t STDIN){chomp($Sstr= join('',<STDI
 #   then added bepu for bkgr row of reverse Red gradient, then gener8d multiple lines to gradient across 2 axes each, then added sgr resetz then SGR setz;
 # plan:fix c2 to loop until each t: line before constructing SKpd,add support for XU for 38;5 ndxd wi shared Lowbitz && accept spaces in BEP,then CDALOH,
 #   add help text to both && give S2 param to dump gener8d test && start reversing process for all permut8ions in some canonical fashion to roundtrip them;
+my %aclc=(); # Attribute or Color Line && Characters used in c2 below && S2 here (which passes it on to sgrl() to find whatever next unalloc8d SGR Layer);
+my @sgrz=(qw( s g r S G R  q v z Q V Z )); # need to load layerz in order probably sgrSGRqvzQVZ unless some l8r order seemz better, but random sucked so
+sub sgrl{my $colm=shift(@_);my $sgrc=shift(@_); #   making %aclc global for this sepR8 subroutine to check each for loading all up hopefully in good order
+  for(@sgrz){if(!exists ($aclc{$_}       )){$aclc{$_}       =[];}
+             if(!defined($aclc{$_}[$colm]) ||
+                !length ($aclc{$_}[$colm])){$aclc{$_}[$colm]=$sgrc;last;}}}
 sub S2{ # convert almost any eScaped text string into new col8 format   (totally in-progress); will need locl singl b256 to support big ndxz wiot DpNdNC on b8;
   my     $prmz= join(' ',@_) || '';my $Stxt='';my $ctxt='';my $tstn=-1; # non -help parameter can get d8a piped in
   if    ($prmz=~ s/(^|\s)-?-?h(elp|\s|$)//i ){return(qq( S2 - convert eScaped string into col8 format  d8VS:$d8VS Auth:$auth;
@@ -690,54 +696,56 @@ sub S2{ # convert almost any eScaped text string into new col8 format   (totally
          $ctxt.=  "v:mmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmm\n";
          $ctxt.=  "z:oooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooo\n";
          $ctxt.=  "Q:gggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggg\n";
-      my @atrz=(qw( B A I U  R C D O )); # attribz array actually does not include N Normal or V inVisible, bLinKs or Fraktur, but other 8 seem worth testing
-         $ctxt.=  "V:";
+      my @atrz=(qw( B A I U  R C D )); # attribz array actually does not include N Normal or V inVisible, bLinKs or Fraktur, but other 8 seem worth testing
+         $ctxt.=  "V:"; # including O for Overlined in above quoted-words causes some anomolous re-ordering with A && R so removed offending O for now
       for(0..127){$ctxt.= $atrz[int(rand(@atrz)           ) ]      ;} $ctxt.="\n";
          $ctxt.=  "Z:";
       for(0..127){$ctxt.= $atrz[int(rand(@atrz)           ) ]      ;} $ctxt.="\n";
     }
-  }else{my  %calc=(); # start doing basic decoding of SKpz into Xpanded ctXt form@ like tStz
-    for my  $line(split(/\n/,$Stxt)){$ctxt.="t:";my $colm=0;my $span=0;my $spnx=0;my @rgbl;
-      for my $clmn(0..(length(sS($line))-1)){$calc{'B'}[$clmn]=$calc{'E'}[$clmn]=$calc{'P'}[$clmn]=$calc{'U'}[$clmn]=
-                                             $calc{'b'}[$clmn]=$calc{'e'}[$clmn]=$calc{'p'}[$clmn]=$calc{'u'}[$clmn]='0';}
+  }else{ # start doing basic decoding of SKpz into Xpanded ctXt form@ like tStz
+    for   my $line(split(/\n/,$Stxt)){%aclc=();$ctxt.="t:";my $colm=0;my $span=0;my $spnx=0;my @rgbl;
+      for my $clmn(0..(length(sS($line))-1)){$aclc{'B'}[$clmn]=$aclc{'E'}[$clmn]=$aclc{'P'}[$clmn]=$aclc{'U'}[$clmn]=
+                                             $aclc{'b'}[$clmn]=$aclc{'e'}[$clmn]=$aclc{'p'}[$clmn]=$aclc{'u'}[$clmn]='0';}
       while($line=~ s/^([^\e]*)\e\[([0-9;]*)m([^\e]*)/$3/){my $preS=$1;my $digz=$2;my $pstS=$3;$span=length($preS);$spnx=length($pstS);$colm+=$span;
         if(defined($digz) && $digz=~ /\d/){
           if    ($digz=~ s/^(0*1?;)?38;2;(\d+);(\d+);(\d+)//){ # convert back to RGBLowbitz && pack into proper positions in BEPU
             @rgbl=($2,$3,$4);push(@rgbl,$rgbl[0] & 3);$rgbl[3]*=4;$rgbl[3]+=$rgbl[1] & 3;$rgbl[3]*=4;$rgbl[3]+=$rgbl[2] & 3;$rgbl[3]=$sb64[$rgbl[3]];
             for(0..2){$rgbl[$_]=$sb64[int($rgbl[$_] / 4)];}
-            for($colm..($colm+$spnx)){$calc{'B'}[$_]=$rgbl[0];$calc{'E'}[$_]=$rgbl[1];$calc{'P'}[$_]=$rgbl[2];$calc{'U'}[$_]=$rgbl[3];}
+            for($colm..($colm+$spnx)){$aclc{'B'}[$_]=$rgbl[0];$aclc{'E'}[$_]=$rgbl[1];$aclc{'P'}[$_]=$rgbl[2];$aclc{'U'}[$_]=$rgbl[3];}
           }elsif($digz=~ s/^(0*1?;)?48;2;(\d+);(\d+);(\d+)//){
             @rgbl=($2,$3,$4);push(@rgbl,$rgbl[0] & 3);$rgbl[3]*=4;$rgbl[3]+=$rgbl[1] & 3;$rgbl[3]*=4;$rgbl[3]+=$rgbl[2] & 3;$rgbl[3]=$sb64[$rgbl[3]];
             for(0..2){$rgbl[$_]=$sb64[int($rgbl[$_] / 4)];}
-            for($colm..($colm+$spnx)){$calc{'b'}[$_]=$rgbl[0];$calc{'e'}[$_]=$rgbl[1];$calc{'p'}[$_]=$rgbl[2];$calc{'u'}[$_]=$rgbl[3];}
-          }elsif($digz=~ s/^(0* )$//x){$calc{'S'}[$colm+$spnx]='N';
-          }elsif($digz=~ s/^(0*1)$// ){$calc{'S'}[$colm+$spnx]='B';
-          }elsif($digz=~ s/^(0*2)$// ){$calc{'S'}[$colm+$spnx]='A';
-          }elsif($digz=~ s/^(0*3)$// ){$calc{'S'}[$colm+$spnx]='I';
-          }elsif($digz=~ s/^(0*4)$// ){$calc{'S'}[$colm+$spnx]='U';
-          }elsif($digz=~ s/^(0*5)$// ){$calc{'S'}[$colm+$spnx]='L';
-          }elsif($digz=~ s/^(0*6)$// ){$calc{'S'}[$colm+$spnx]='K';
-          }elsif($digz=~ s/^(0*7)$// ){$calc{'S'}[$colm+$spnx]='R';
-          }elsif($digz=~ s/^(0*8)$// ){$calc{'S'}[$colm+$spnx]='V';
-          }elsif($digz=~ s/^(0*9)$// ){$calc{'S'}[$colm+$spnx]='C';
-          }elsif($digz=~ s/^(0*20)$//){$calc{'S'}[$colm+$spnx]='F';
-          }elsif($digz=~ s/^(0*21)$//){$calc{'S'}[$colm+$spnx]='D';
-          }elsif($digz=~ s/^(0*22)$//){$calc{'S'}[$colm+$spnx]='b';
-          }elsif($digz=~ s/^(0*23)$//){$calc{'S'}[$colm+$spnx]='i';
-          }elsif($digz=~ s/^(0*24)$//){$calc{'S'}[$colm+$spnx]='u';
-          }elsif($digz=~ s/^(0*25)$//){$calc{'S'}[$colm+$spnx]='l';
-          }elsif($digz=~ s/^(0*27)$//){$calc{'S'}[$colm+$spnx]='r';
-          }elsif($digz=~ s/^(0*28)$//){$calc{'S'}[$colm+$spnx]='v';
-          }elsif($digz=~ s/^(0*29)$//){$calc{'S'}[$colm+$spnx]='c';
-          }elsif($digz=~ s/^(0*54)$//){$calc{'S'}[$colm+$spnx]='m';
-          }elsif($digz=~ s/^(0*55)$//){$calc{'S'}[$colm+$spnx]='o';
-          }elsif($digz=~ s/^(0*65)$//){$calc{'S'}[$colm+$spnx]='g';
-          }
-        }
+            for($colm..($colm+$spnx)){$aclc{'b'}[$_]=$rgbl[0];$aclc{'e'}[$_]=$rgbl[1];$aclc{'p'}[$_]=$rgbl[2];$aclc{'u'}[$_]=$rgbl[3];}
+          }elsif($digz=~ s/(^|;)(0+  )(;|$)//x){sgrl($colm,'N');
+          }elsif($digz=~ s/(^|;)(0* 1)(;|$)//x){sgrl($colm,'B');
+          }elsif($digz=~ s/(^|;)(0* 2)(;|$)//x){sgrl($colm,'A');
+          }elsif($digz=~ s/(^|;)(0* 3)(;|$)//x){sgrl($colm,'I');
+          }elsif($digz=~ s/(^|;)(0* 4)(;|$)//x){sgrl($colm,'U');
+          }elsif($digz=~ s/(^|;)(0* 5)(;|$)//x){sgrl($colm,'L');
+          }elsif($digz=~ s/(^|;)(0* 6)(;|$)//x){sgrl($colm,'K');
+          }elsif($digz=~ s/(^|;)(0* 7)(;|$)//x){sgrl($colm,'R');
+          }elsif($digz=~ s/(^|;)(0* 8)(;|$)//x){sgrl($colm,'V');
+          }elsif($digz=~ s/(^|;)(0* 9)(;|$)//x){sgrl($colm,'C');
+          }elsif($digz=~ s/(^|;)(0*20)(;|$)// ){sgrl($colm,'F');
+          }elsif($digz=~ s/(^|;)(0*21)(;|$)// ){sgrl($colm,'D'); # could loop thru %sgrm or %sgrn instead?
+          }elsif($digz=~ s/(^|;)(0*22)(;|$)// ){sgrl($colm,'b');
+          }elsif($digz=~ s/(^|;)(0*23)(;|$)// ){sgrl($colm,'i');
+          }elsif($digz=~ s/(^|;)(0*24)(;|$)// ){sgrl($colm,'u');
+          }elsif($digz=~ s/(^|;)(0*25)(;|$)// ){sgrl($colm,'l');
+          }elsif($digz=~ s/(^|;)(0*27)(;|$)// ){sgrl($colm,'r');
+          }elsif($digz=~ s/(^|;)(0*28)(;|$)// ){sgrl($colm,'v');
+          }elsif($digz=~ s/(^|;)(0*29)(;|$)// ){sgrl($colm,'c');
+          }elsif($digz=~ s/(^|;)(0*54)(;|$)// ){sgrl($colm,'m');
+          }elsif($digz=~ s/(^|;)(0*55)(;|$)// ){sgrl($colm,'o');
+          }elsif($digz=~ s/(^|;)(0*65)(;|$)// ){sgrl($colm,'g');
+          } }
         $ctxt.=$preS;
-      } $ctxt.="$line\nB:".join('',@{$calc{'B'}})."\nE:".join('',@{$calc{'E'}})."\nP:".join('',@{$calc{'P'}})."\nU:".join('',@{$calc{'U'}})."\nb:"
-                          .join('',@{$calc{'b'}})."\ne:".join('',@{$calc{'e'}})."\np:".join('',@{$calc{'p'}})."\nu:".join('',@{$calc{'u'}})."\n";}
-  }               # mAB nstd of catu section listing y,x of each Use, betr to just auto-use further sgrSGR... layrz as ndxz of catr exceed 64z &&
+      } $ctxt.="$line\n";
+      for my $layr(split(//,'BEPUbepusgrSGRqvzQVZ')){
+        if(exists($aclc{$layr})  && defined($aclc{$layr}[0])){
+          for my $cndx(0..$#{$aclc{$layr}}){$aclc{$layr}[$cndx]='' unless(defined($aclc{$layr}[$cndx]));}
+          $ctxt.="$layr:".join('',@{$aclc{$layr}})."\n";} } } }
+                  # mAB nstd of catu section listing y,x of each Use, betr to just auto-use further sgrSGR... layrz as ndxz of catr exceed 64z &&
   return($ctxt);} #   similRly nstd of xclu just have 3 new dflt 8pal8 layrz 4 each of F && b or gNer8 custom layrz by frequency of use;
 sub c2{ # convert col8 format into escaped text
   my     $prmz= join(' ',@_) || '';my $Stxt='';my $ctxt='';my $tstn=-1; # non -help parameter can get d8a piped in
@@ -746,25 +754,25 @@ sub c2{ # convert col8 format into escaped text
  t# - dump test text according to gener8ion templ8 number;));
   }elsif($prmz=~ s/(^|\s)-?-?t(    \d* )//ix){$tstn=$2;$tstn=0 unless(defined($tstn) && $tstn=~ /^-?\d+$/);
   }elsif(!-t STDIN){$ctxt=decode('UTF-8',join('',<STDIN>));}#chomp($Stxt);
-  if($tstn >= 0){
-  }else{my $txln;my %calc; # TeXtLiNe for temp $1 saving before splitting into hash of Color or Attribute Line && Charz
+  if($tstn >= 0){ # add some c2 gener8d testing d8a here with SKpz embedded in tricky wayz to test for handling or detect for special casez
+  }else{my $txln;my %aclc=(); # TeXtLiNe for temp $1 saving before splitting into hash of Attribute or Color Line && Charz
           # $ctxt=~ s/^     ([^\n]*)\n//x; # strip pointless header for now
-    while  ($ctxt=~ s/^  t :([^\n]*)\n//x){           $txln=$1;%calc=('t'  =>[split(//,$txln)]);
+    while  ($ctxt=~ s/^  t :([^\n]*)\n//x){           $txln=$1;%aclc=('t'  =>[split(//,$txln)]);
       while($ctxt!~  /^  t :([^\n]*)\n /x && # orig: tBEPUbepusgrqvzSGRQVZ
-            $ctxt=~ s/^(\w):([^\n]*)\n//){my $lnky=$1;$txln=$2;$calc{$lnky}= [split(//,$txln)];}
-      for(0 .. $#{$calc{'t'}}){
-        if(exists($calc{'B'}) && exists($calc{'E'}) && exists($calc{'P'}) && exists($calc{'U'})){
-          my @Rgbd=($sb10{$calc{'B'}[$_]}*4,$sb10{$calc{'E'}[$_]}*4,$sb10{$calc{'P'}[$_]}*4);
-          my $tulc= $sb10{$calc{'U'}[$_]};$Rgbd[2]+=$tulc & 3;$tulc=int($tulc/4);
+            $ctxt=~ s/^(\w):([^\n]*)\n//){my $lnky=$1;$txln=$2;$aclc{$lnky}= [split(//,$txln)];}
+      for(0 .. $#{$aclc{'t'}}){
+        if(exists($aclc{'B'}) && exists($aclc{'E'}) && exists($aclc{'P'}) && exists($aclc{'U'})){
+          my @Rgbd=($sb10{$aclc{'B'}[$_]}*4,$sb10{$aclc{'E'}[$_]}*4,$sb10{$aclc{'P'}[$_]}*4);
+          my $tulc= $sb10{$aclc{'U'}[$_]};$Rgbd[2]+=$tulc & 3;$tulc=int($tulc/4);
                                           $Rgbd[1]+=$tulc & 3;$tulc=int($tulc/4);
                                           $Rgbd[0]+=$tulc    ;$Stxt.="\e[38;2;$Rgbd[0];$Rgbd[1];$Rgbd[2]m";}
-        if(exists($calc{'b'}) && exists($calc{'e'}) && exists($calc{'p'}) && exists($calc{'u'})){
-          my @rgbd=($sb10{$calc{'b'}[$_]}*4,$sb10{$calc{'e'}[$_]}*4,$sb10{$calc{'p'}[$_]}*4);
-          my $tulc= $sb10{$calc{'u'}[$_]};$rgbd[2]+=$tulc & 3;$tulc=int($tulc/4);
+        if(exists($aclc{'b'}) && exists($aclc{'e'}) && exists($aclc{'p'}) && exists($aclc{'u'})){
+          my @rgbd=($sb10{$aclc{'b'}[$_]}*4,$sb10{$aclc{'e'}[$_]}*4,$sb10{$aclc{'p'}[$_]}*4);
+          my $tulc= $sb10{$aclc{'u'}[$_]};$rgbd[2]+=$tulc & 3;$tulc=int($tulc/4);
                                           $rgbd[1]+=$tulc & 3;$tulc=int($tulc/4);
                                           $rgbd[0]+=$tulc    ;$Stxt.="\e[48;2;$rgbd[0];$rgbd[1];$rgbd[2]m";}
-        for my $sgrl(split(//,'sgrSGRqvzQVZ')){$Stxt.=S(":$calc{$sgrl}[$_]") if(exists($calc{$sgrl}));}
-        $Stxt  .=$calc{'t'}[$_];
+        for my $sgrl(split(//,'sgrSGRqvzQVZ')){$Stxt.=S(":$aclc{$sgrl}[$_]") if(exists($aclc{$sgrl}) && defined($aclc{$sgrl}[$_]));}
+        $Stxt  .=$aclc{'t'}[$_];
       } $Stxt  .="\n"; }
   } return($Stxt);}
 sub S2f4{my($text,$Fclr,$bclr,$f0nt  );my $dFbf=':::';my($nxtF,$nxtb,$nxtf)=(split(//,$dFbf)); # Dflt && NeXT Fg && bg colrz && f0nt (try dFbf '^::' ?)
