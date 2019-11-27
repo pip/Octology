@@ -1,5 +1,5 @@
 # Octology
-The ontology of 8. `$VERSION='0.0';$d8VS='J82MDeep';`
+The ontology of 8. `$VERSION='0.0';$d8VS='JBRL6URL';`
 
 What is an ontology, you may ask?
 
@@ -55,20 +55,19 @@ If your paths and Perl environment are setup similarly, to gain a bearing on fun
 ### Great Thanks, AppreC8ion, and Gratitude
 I'd first like to thank every p8ient Chess player who endured me logging personal matches in ckm8, then thank you to all developers who ever contributed to:
 
-  * YouTube, youtube-dl, kpcli, SlowCat.pl, Screeps,
+  * [YouTube](https://youtu.be), [youtube-dl](https://youtube-dl.org), [kpcli](https://kpcli.sourceforge.net), [slowcat.pl](http://artscene.textfiles.com/viewers/linux/slowcat.pl), [Screeps](https://screeps.com),
 
-  * git, gst123, figlet, zinf, Vim, FLAC, cdparanoia,
+  * [git](https://git-scm.com), [gst123](https://github.com/swesterfeld/gst123), [FIGlet](http://www.figlet.org), [zinf](http://zinf.org), [Vim](https://www.vim.org), [FLAC](https://xiph.org/flac), [cdparanoia](https://xiph.org/paranoia),
 
-  * original makers of MS-DOS .com files before .f0nt,
-<!-- 2du:add best URLs around all thanked projects-->
+  * anonymous makers of MS-DOS .com files before .f0nt,
 
-  * Perl, Curses, SDL, GNU, Linux, Ubuntu, Compiz,
+  * [Perl](https://www.perl.org), [Curses](https://metacpan.org/pod/Curses), [SDL](https://libsdl.org), [GNU](https://gnu.org), [Linux](https://www.kernel.org), [Ubuntu](https://ubuntu.com), [Compiz](http://www.compiz.org),
 
-  * Irssi, FireFox, Krita, Zsh, GMail, DuckDuckGo,
+  * [Irssi](https://irssi.org), [FireFox](https://www.mozilla.org/en-US/firefox), [Krita](https://krita.org/en), [Zsh](https://www.zsh.org), [GMail](https://gmail.com), [DuckDuckGo](https://duckduckgo.com),
 
-  * Gnome-Terminal, PulseAudio, ErnöRubik, AMD, etc.
+  * [Gnome-Terminal](https://wiki.gnome.org/Apps/Terminal), [PulseAudio](https://www.freedesktop.org/wiki/Software/PulseAudio), [Rubik's Cube](https://www.rubiks.com), [AMD](https://www.amd.com/en), etc.
 
-  * Obsidia, MonsterCat, UKF, TrapNation, TrapCity...
+  * [Obsidia](https://www.youtube.com/user/ObsidiaMedia), [MonsterCat](https://www.youtube.com/user/MonstercatMedia), [UKF](https://www.youtube.com/user/UKFDubstep), [TrapNation](https://www.youtube.com/user/AllTrapNation), [TrapCity](https://www.youtube.com/user/OfficialTrapCity)...
 
 More thanks go out to all of the competitive, cooper8ive, casual, etc. game players who have ever particip8d in versions of Go, Chess, Screeps, or Rubik's Cube
   descriptions, demonstr8ions, discussions, groups, or gatherings.

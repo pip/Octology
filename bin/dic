@@ -124,11 +124,12 @@ if(   $Stxt=~  /(\n +?)(\d+) Moby Thesaurus words/ ){my $MTct=$2;my $MTin=$1;cho
       $Stxt=~ s/(U\.)(S\.)( Gazetteer)( Places)/$Y$1$B$2$C$3$M$4/g;
       $Stxt=~ s/ (\()(20\d+)(\) )(\[)(gaz)(2k)(-)(places)(\])/ $G$1$R$2$G$3$B$4$C$5$R$6$O$7$M$8$B$9$G/g;
       $Stxt=~ s/ (\()((19|20)\d\d)(\))/ $c$1$R$2$c$4$G/g;                                           #     try to get mainly all Gazetteer paren Yearz
-      $Stxt=~ s/ (\()(\w+ +)((19|20)\d\d)(\))/ $c$1$O$2$R$3$c$5$G/g;                                # thN try to get (Month Year) of   some FOLDoC
-      $Stxt=~ s/ (\()((19|20)\d\d)(-)([01]?\d)(-)([0123]?\d)(\))/ $c$1$R$2$C$4$O$5$C$6$Y$7$c$8$G/g; # thN try to get (Year-Mo-Da) of end of FOLDoC
+      $Stxt=~ s/ (\()(\w+ +)((19|20)\d\d)(\))/ $c$1$O$2$R$3$c$5$G/g;                                # thN try to get (Month Year) of   some FOlDoC
+      $Stxt=~ s/ (\()((19|20)\d\d)(-)([01]?\d)(-)([0123]?\d)(\))/ $c$1$R$2$C$4$O$5$C$6$Y$7$c$8$G/g; # thN try to get (Year-Mo-Da) of end of FOlDoC
+      $Stxt=~ s/(\()(\d+ )(December )((19|20)\d\d)(\))/$M$1$Y$2$O$3$R$4$M$6$G/g;   # apparently newest FOlDoC d8 seen in `d syllogism` if not all now
       $Stxt=~ s/(\[)(Webster )(1913 )(Suppl\.)(\])(\n|$)/$Y$1$B$2$R$3$M$4$Y$5$G/g; # from `d manic `
       $Stxt=~ s/(\[)(1913)( Webster \+)(PJC)(\])(\n|$)/$Y$1$R$2$B$3$C$4$Y$5$G/g;   # from `d epigee`
-      $Stxt=~ s/(\[)(1913)( Webster)(\])(\n|$)/$Y$1$R$2$B$3$Y$4$G/g;
+      $Stxt=~ s/(\[)(1913)( Webster)(\])(\s|$)/$Y$1$R$2$B$3$Y$4$5$G/g;
       $Stxt=~ s/(\[)(PJC)(\])(\n|$)/$Y$1$C$2$Y$3$G/g;
       $Stxt=~ s/(\[)(cant)(\] ?)/$Y$1$M$2$Y$3$G/g; # so far only seen preceding PJC so not testing \n|$ yet
       $Stxt=~ s/\s*\n(From (The)?)/\n$K$1/g;

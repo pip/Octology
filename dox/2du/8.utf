@@ -4854,3 +4854,7 @@ J6PMDcat:popomari interest tracking similar cat && human babies HTTPS://YouTube.
 J73MKVM8:HTTPS://YouTube.Com/watch?v=Dl4tpStOKyg&list=PLA9_Hq3zhoFw2YKlCzOorEDMAzZwEgNgm&index=32 "JohnKarr" explains virtualiz8ion versus containeriz8ion.
  Micro-services of Docker smoke LXC with isol8ion with custom load-balancing Apache or NginX. Containers solve deployment issues && permit elastic scaling.
  VMs are fully isol8d from host (costing more resources) && can do full desktop && independent architectures. KVM + QEMU lacks the expensive VMWare tooling;
+JA4MNext:Next ThePerlConference is likely to be in Houston, Texas from Wednesday, June 24th through Friday, June 26th && I'd sure like to attend if possible.
+ Hopefully I can put together an hour-long present8ion on Octology to see if fellow Perl hackers like my work. Check HTTPS://PerlConference.US/tpc-2020-hou ;
+JA5M3Doc:HTTPS://YouTube.Com/watch?v=O0XJ1n6wnuI&list=PLA9_Hq3zhoFw2YKlCzOorEDMAzZwEgNgm&index=58 is a TPC lightning talk on docker-compose by M. Scott Ford;
+JBKL5Doc:HTTPS://Medium.Com/@skaji/perl-meets-github-actions-3893ae100205 describes defining Linux workflows to use docker to test various versions of Perl;

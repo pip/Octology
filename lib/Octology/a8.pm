@@ -656,51 +656,55 @@ sub c{my $Sstr=shift;if(!defined($Sstr) && !-t STDIN){chomp($Sstr= join('',<STDI
 # plan:fix c2 to loop until each t: line before constructing SKpd,add support for XU for 38;5 ndxd wi shared Lowbitz && accept spaces in BEP,then CDALOH,
 #   add help text to both && give S2 param to dump gener8d test && start reversing process for all permut8ions in some canonical fashion to roundtrip them;
 my %aclc=(); # Attribute or Color Line && Characters used in c2 below && S2 here (which passes it on to sgrl() to find whatever next unalloc8d SGR Layer);
-my @sgrz=(qw( s g r S G R  q v z Q V Z )); # need to load layerz in order probably sgrSGRqvzQVZ unless some l8r order seemz better, but random sucked so
+my @sgrz=(qw( s g r  q v z  S G R  Q V Z )); # need to load layerz in order probably sgrSGRqvzQVZ unless some l8r order seemz better, but random sucked so
 sub sgrl{my $colm=shift(@_);my $sgrc=shift(@_); #   making %aclc global for this sepR8 subroutine to check each for loading all up hopefully in good order
   for(@sgrz){if(!exists ($aclc{$_}       )){$aclc{$_}       =[];}
              if(!defined($aclc{$_}[$colm]) ||
                 !length ($aclc{$_}[$colm])){$aclc{$_}[$colm]=$sgrc;last;}}}
 sub S2{ # convert almost any eScaped text string into new col8 format   (totally in-progress); will need locl singl b256 to support big ndxz wiot DpNdNC on b8;
   my     $prmz= join(' ',@_) || '';my $Stxt='';my $ctxt='';my $tstn=-1; # non -help parameter can get d8a piped in
-  if    ($prmz=~ s/(^|\s)-?-?h(elp|\s|$)//i ){return(qq( S2 - convert eScaped string into col8 format  d8VS:$d8VS Auth:$auth;
+  if    ($prmz=~ s/(^|\s)-?-?h(elp|\s|$)//i ){return(qq[ S2 - convert eScaped string into col8 format  d8VS:$d8VS Auth:$auth;
  h  - print this Help text and exit
- t# - dump test text according to gener8ion templ8 number;));
+ t# - dump test text according to gener8ion templ8 number (or zero if none given);]);
   }elsif($prmz=~ s/(^|\s)-?-?t(    \d* )//ix){$tstn=$2;$tstn=0 unless(defined($tstn) && $tstn=~ /^-?\d+$/);
   }elsif(!-t STDIN){$Stxt=decode('UTF-8',join('',<STDIN>));}#chomp($Stxt);
   if($tstn >= 0){
        # $ctxt=~ s/^/a8:S2:d8VS:$d8VS:hedr:flgz:lyrz:size:lnls:xclu:catr:catu; This is just an example header definition to grow from;\n/;
-    for my $line(0..47){
+    for my $line (0..47){ # fix tSt pAgz 2 hv -t0 stRt in upr-lFt corner going clockwise through blacK, Green, Cyan, Blue text, then -t1 CMRG, -t2 YeloWhitez
          $ctxt.=  "t:0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz._0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz._\n";
-         $ctxt.=  "B:00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000\n";
-         $ctxt.=  "E:";
-      for(0..127){$ctxt.= $sb64[int(       $_   /  2      ) ]      ;} $ctxt.="\n";
-         $ctxt.=  "P:";
-           $ctxt.=        $sb64[int( 64 / 48 *       $line) ] x 128;  $ctxt.="\n";
-         $ctxt.=  "U:";
-      for(0..127){$ctxt.= $sb64[int(       $_   /  2      ) ]      ;} $ctxt.="\n"; # int(rand(64))];
-         $ctxt.=  "b:";
-      for(0..127){$ctxt.= $sb64[int((127 - $_)  /  8      ) ]      ;} $ctxt.="\n";
-         $ctxt.=  "e:00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000\n";
-         $ctxt.=  "p:";
-           $ctxt.=        $sb64[int( 32 / 48 * (47 - $line))] x 128;  $ctxt.="\n";
-         $ctxt.=  "u:";
-      for(0..127){$ctxt.= $sb64[int((127 - $_)  /  2      ) ]      ;} $ctxt.="\n";
          $ctxt.=  "s:bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb\n";
          $ctxt.=  "g:iiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiii\n";
          $ctxt.=  "r:uuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuu\n";
-         $ctxt.=  "S:llllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllll\n";
-         $ctxt.=  "G:rrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrr\n";
-         $ctxt.=  "R:vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv\n";
-         $ctxt.=  "q:cccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccc\n";
-         $ctxt.=  "v:mmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmm\n";
-         $ctxt.=  "z:oooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooo\n";
+         $ctxt.=  "q:llllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllll\n";
+         $ctxt.=  "v:rrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrr\n";
+         $ctxt.=  "z:vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv\n";
+         $ctxt.=  "B:";if(!$tstn || $tstn >= 4){$ctxt.='_'  x 128  . "\n";}else{
+                                                $ctxt.='0'  x 128  . "\n";}
+         $ctxt.=  "E:";if( $tstn && $tstn >= 1){if($tstn >= 2){ #$ctxt.='0' x 128  . "\n";} else{
+      for(0..127){$ctxt.= $sb64[int(       $_   /  2      )  % 64]       ;} $ctxt.="\n";} else{
+      for(0..127){$ctxt.= $sb64[int((127 - $_)  /  2      )  % 64]       ;} $ctxt.="\n";}}else{
+      for(0..127){$ctxt.= $sb64[int(       $_   /  2      )  % 64]       ;} $ctxt.="\n"; }
+         $ctxt.=  "P:";if( $tstn && $tstn >= 1){if($tstn >= 2){ #$ctxt.='0' x 128  . "\n";} else{
+           $ctxt.=        $sb64[int( 64 / 48 *       $line ) % 64] x  128;  $ctxt.="\n";} else{
+      for(0..127){$ctxt.= $sb64[int((127 - $_)  /  2      )  % 64]       ;} $ctxt.="\n";}}else{
+           $ctxt.=        $sb64[int( 64 / 48 * (47 - $line)) % 64] x  128;  $ctxt.="\n"; }
+         $ctxt.=  "U:";if( $tstn && $tstn >= 2){$ctxt.=('0'  x 64). ('_' x  64)  . "\n"; }else{
+      for(0..127){$ctxt.= $sb64[int(       $_   /  2      )  % 64]       ;} $ctxt.="\n"; }
+         $ctxt.=  "b:";
+      for(0..127){$ctxt.= $sb64[int((127 - $_)  /  8      )  % 64]       ;} $ctxt.="\n";
+         $ctxt.=  "e:".('0' x 128). "\n";
+         $ctxt.=  "p:";
+           $ctxt.=        $sb64[int( 32 / 48 * (47 - $line)) % 64] x  128;  $ctxt.="\n";
+         $ctxt.=  "u:";
+      for(0..127){$ctxt.= $sb64[int((127 - $_)  /  2      )  % 64]       ;} $ctxt.="\n";
+         $ctxt.=  "S:cccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccc\n";
+         $ctxt.=  "G:mmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmm\n";
+         $ctxt.=  "R:oooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooo\n";
          $ctxt.=  "Q:gggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggg\n";
-      my @atrz=(qw( B A I U  R C D )); # attribz array actually does not include N Normal or V inVisible, bLinKs or Fraktur, but other 8 seem worth testing
-         $ctxt.=  "V:"; # including O for Overlined in above quoted-words causes some anomolous re-ordering with A && R so removed offending O for now
-      for(0..127){$ctxt.= $atrz[int(rand(@atrz)           ) ]      ;} $ctxt.="\n";
-         $ctxt.=  "Z:";
-      for(0..127){$ctxt.= $atrz[int(rand(@atrz)           ) ]      ;} $ctxt.="\n";
+      my @atrz=(split(//,'BI')); # attribz array actually does not include N Normal or V inVisible, bLinKs or Fraktur, but other 6 were worth testing a while
+         $ctxt.=  "V:"; # BAILKVRFUOCD; includng O for Overlined in abov quoted-words causes anomolous re-ordering with A && R so removed offending O for now
+      for(0..127){$ctxt.= $atrz[int(rand(@atrz)           )      ]       ;} $ctxt.="\n";
+         $ctxt.=  "Z:" . 'g' x 128 . "\n";
     }
   }else{ # start doing basic decoding of SKpz into Xpanded ctXt form@ like tStz
     for   my $line(split(/\n/,$Stxt)){%aclc=();$ctxt.="t:";my $colm=0;my $span=0;my $spnx=0;my @rgbl;
@@ -741,7 +745,7 @@ sub S2{ # convert almost any eScaped text string into new col8 format   (totally
           } }
         $ctxt.=$preS;
       } $ctxt.="$line\n";
-      for my $layr(split(//,'BEPUbepusgrSGRqvzQVZ')){
+      for my $layr(split(//,'sgrqvzBEPUbepuSGRQVZ')){
         if(exists($aclc{$layr})  && defined($aclc{$layr}[0])){
           for my $cndx(0..$#{$aclc{$layr}}){$aclc{$layr}[$cndx]='' unless(defined($aclc{$layr}[$cndx]));}
           $ctxt.="$layr:".join('',@{$aclc{$layr}})."\n";} } } }
@@ -761,17 +765,20 @@ sub c2{ # convert col8 format into escaped text
       while($ctxt!~  /^  t :([^\n]*)\n /x && # orig: tBEPUbepusgrqvzSGRQVZ
             $ctxt=~ s/^(\w):([^\n]*)\n//){my $lnky=$1;$txln=$2;$aclc{$lnky}= [split(//,$txln)];}
       for(0 .. $#{$aclc{'t'}}){
-        if(exists($aclc{'B'}) && exists($aclc{'E'}) && exists($aclc{'P'}) && exists($aclc{'U'})){
-          my @Rgbd=($sb10{$aclc{'B'}[$_]}*4,$sb10{$aclc{'E'}[$_]}*4,$sb10{$aclc{'P'}[$_]}*4);
-          my $tulc= $sb10{$aclc{'U'}[$_]};$Rgbd[2]+=$tulc & 3;$tulc=int($tulc/4);
-                                          $Rgbd[1]+=$tulc & 3;$tulc=int($tulc/4);
-                                          $Rgbd[0]+=$tulc    ;$Stxt.="\e[38;2;$Rgbd[0];$Rgbd[1];$Rgbd[2]m";}
-        if(exists($aclc{'b'}) && exists($aclc{'e'}) && exists($aclc{'p'}) && exists($aclc{'u'})){
-          my @rgbd=($sb10{$aclc{'b'}[$_]}*4,$sb10{$aclc{'e'}[$_]}*4,$sb10{$aclc{'p'}[$_]}*4);
-          my $tulc= $sb10{$aclc{'u'}[$_]};$rgbd[2]+=$tulc & 3;$tulc=int($tulc/4);
-                                          $rgbd[1]+=$tulc & 3;$tulc=int($tulc/4);
-                                          $rgbd[0]+=$tulc    ;$Stxt.="\e[48;2;$rgbd[0];$rgbd[1];$rgbd[2]m";}
-        for my $sgrl(split(//,'sgrSGRqvzQVZ')){$Stxt.=S(":$aclc{$sgrl}[$_]") if(exists($aclc{$sgrl}) && defined($aclc{$sgrl}[$_]));}
+        if(          exists($aclc{'B'}    ) &&  exists($aclc{'E'}    ) &&  exists($aclc{'P'}    ) &&
+                    defined($aclc{'B'}[$_]) && defined($aclc{'E'}[$_]) && defined($aclc{'P'}[$_])){
+          my @Rgbd=(  $sb10{$aclc{'B'}[$_]}*4,   $sb10{$aclc{'E'}[$_]}*4,   $sb10{$aclc{'P'}[$_]}*4);
+          if(        exists($aclc{'U'}    ) && defined($aclc{'U'}[$_])){
+            my $tulc= $sb10{$aclc{'U'}[$_]};$Rgbd[2]+=$tulc & 3;$tulc=int($tulc/4);
+                                            $Rgbd[1]+=$tulc & 3;$tulc=int($tulc/4);
+                                            $Rgbd[0]+=$tulc    ;} $Stxt.="\e[38;2;$Rgbd[0];$Rgbd[1];$Rgbd[2]m";}
+        if  (        exists($aclc{'b'}    ) &&  exists($aclc{'e'}    ) &&  exists($aclc{'p'})   ){
+          my @rgbd=(  $sb10{$aclc{'b'}[$_]}*4,   $sb10{$aclc{'e'}[$_]}*4,   $sb10{$aclc{'p'}[$_]}*4);
+          if(        exists($aclc{'u'}    )){
+            my $tulc= $sb10{$aclc{'u'}[$_]};$rgbd[2]+=$tulc & 3;$tulc=int($tulc/4);
+                                            $rgbd[1]+=$tulc & 3;$tulc=int($tulc/4);
+                                            $rgbd[0]+=$tulc    ;} $Stxt.="\e[48;2;$rgbd[0];$rgbd[1];$rgbd[2]m";}
+        for my $sgrl(split(//,'sgrqvzSGRQVZ')){$Stxt.=S(":$aclc{$sgrl}[$_]") if(exists($aclc{$sgrl}) && defined($aclc{$sgrl}[$_]));}
         $Stxt  .=$aclc{'t'}[$_];
       } $Stxt  .="\n"; }
   } return($Stxt);}

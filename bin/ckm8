@@ -50,7 +50,7 @@
 use strict;use warnings;use utf8;use v5.10;use Encode;
 use Octology::a8;
 use Octology::b8;
-use Octology::d8;my $VERSION='0.0';my $d8VS='I99MLwrn';my $name=$0;$name =~ s/^.*\///;my $Dbug=0; # version,program name
+use Octology::d8;my $VERSION='0.0';my $d8VS='J9MMMMMM';my $name=$0;$name =~ s/^.*\///;my $Dbug=0; # version,program name
 open my $out8,'>&',STDOUT or die "Can't open  duplic8 STDOUT handle: $!";binmode $out8,':encoding(UTF-8)';select($out8);$|=1; # crE8 locl autoflush dup of glbl
 if(           @ARGV && $ARGV[0]=~ /^-*h/i){say $out8 " ckm8  - experimental   Curses and SDL Chess program  Vers:$VERSION  d8VS:$d8VS by Auth:$auth
   <pW>v<pK>  sets roster tags for Players White and BlacK and for output filename where pW and pK are single-letter keys in the player registry hash (v optnal)
@@ -139,8 +139,8 @@ if(      2 <= @ARGV && $ARGV[0]=~ /^-*b/i){my $xcbd=decode('UTF-8',$ARGV[1]);if(
 #     Bishop ♗ Brenda  Brave         paWn   ♙ William Water              pawn   ♟ wayne  waste          bishop ♝ barbara blood
 #     King   ♔ Kyle    Kind         pawN    ♙ Natalie Nature            pawn    ♟ norma  noose          king   ♚ kilgore kraven
 #     Queen  ♕ Quill   Quest      pawn C    ♙ Curtis  Carver          pawn c    ♟ clint  caustic        queen  ♛ quartz  quasher
-#   biShop   ♗ Steven  Smith      pawn D    ♙ Dottie  Divine          pawn d    ♟ donna  decay        bishop   ♝ shawn   slayer
-#knighT      ♘ Theresa Trotter    pawn E    ♙ Evan    EvergrEn        pawn e    ♟ exon   evil      knight      ♞ trina   trample
+#   biShop   ♗ Steven  Smith      pawn D    ♙ Darjee  Darling         pawn d    ♟ donna  decay        bishop   ♝ shawn   slayer
+#knighT      ♘ Timmy   Trotter    pawn E    ♙ Evan    EvergrEn        pawn e    ♟ exon   evil      knight      ♞ trina   trample
 #    rOok    ♖ Orville Olive      pawn F    ♙ Fran    Fire            pawn f    ♟ fiona  frost         rook    ♜ oden    operose
 my %pnam =('R'=>['     Rook  ','Rosie  ','Roost   '],
            'I'=>['   knIght  ','Igor   ','Isle    '],
@@ -148,14 +148,14 @@ my %pnam =('R'=>['     Rook  ','Rosie  ','Roost   '],
            'K'=>['     King  ','Kyle   ','Kind    '],
            'Q'=>['     Queen ','Quill  ','Quest   '],
            'S'=>['   biShop  ','Steven ','Smith   '],
-           'T'=>['knighT     ','Theresa','Trotter '],
+           'T'=>['knighT     ','Timmy  ','Trotter '], # Tim promoted as sole exception to gendered start square color && side;
            'O'=>['   roOk    ','Orville','Olive   '],
            'P'=>['     Pawn  ','Philip ','Phalanx '],
            'A'=>['    pAwn   ','Angie  ','Anvil   '],
            'W'=>['   paWn    ','William','Water   '],
            'N'=>['  pawN     ','Natalie','Nature  '],
            'C'=>['pawn C     ','Curtis ','Carver  '],
-           'D'=>['pawn D     ','Dottie ','Divine  '],
+           'D'=>['pawn D     ','Darjee ','Darling '], # Dottie Divine demoted, Darjeeling promoted, Tim now tipping more male again;
            'E'=>['pawn E     ','Evan   ','EvergrEn'],
            'F'=>['pawn F     ','Fran   ','Fire    '],
            'p'=>['     pawn  ','porter ','poison  '],

@@ -1,8 +1,8 @@
 # 819J2Pip:~/.lsrc by PipStuart <Pip@CPAN.Org> izAheavily modifId`dircolors`cfgfIl(Orig ~/.DIR_COLORS)wich setz $ENV{'LS_COLORS'} 4GNU`ls --color`&&`lsd8`;
-# $VERSION='0.0';$d8VS='J79MFAPK'; 2du:mkUtl2gNr8 altrn8 versN of .lsrc th@purposfuly varEz colrz of comon typz,try addng bakgrnd colrz2all dFz&&tst,
+# $VERSION='0.0';$d8VS='JBRLEBLK'; 2du:mkUtl2gNr8 altrn8 versN of .lsrc th@purposfuly varEz colrz of comon typz,try addng bakgrnd colrz2all dFz&&tst,
 #   add interaction2 lsd8 wN it Dtectz unrecognIzd XtNshNz offerng c@egOrEz with comon colr2autOm@ically insrt chOsN NtrEz,mAB add *-* NtrEz from .zshrc hEr &&
 #   mk lrc gNr8 either,confirm all accept f0nt cOdez wi dash accepting Dfalt foreground then redo NORMAL FILE LINK as no fi ln,mAB 8trm added2TERM ls someday;
-# This file was gNR8d by `lrc` Vers:0.0 d8VS:J67M2UPD on d8:J81MF3N1. Please edit ~/.lrc and run `lrc` then `src` to see changes;
+# This file was gNR8d by `lrc` Vers:0.0 d8VS:J88M8888 on d8:JBRLEDh7. Please edit ~/.lrc and run `lrc` then `src` to see changes;
 # nOt:I'm pretty sure itz Chunz(!Takiz)`ls`&&`dircolors`th@cud!hndl (MULTI)?HARDLINK sO rEmMbr2kEp th@ lIn cmNtd out4her(&&kEptstng2cnfirm);
 # Keywords COLOR,OPTIONS,&& EIGHTBIT (honored by Slackware dircolors) are recognized but ignored; TERMz && XtNsionz syncd2 2016;
 # Copyright(C) 1996-2016 FreeSoftwareFound8ion,Inc. Copying and distribution of this file, with or without modific8ion, are permitted provided the
@@ -121,6 +121,7 @@ CHR                       01;38;5;011;48;5;000 #cd= 01;33;40    01;33;40  CHaRac
 .conf-sample              01;38;5;011
 .ckm8                     01;38;5;011      # my own SDL && Curses Chess program's game-recording output file-format
 .dox                      01;38;5;011      # my personal doQmNt8ion files (first used for logging my HTTPS://Screeps.Com 2torials progress)
+.sgf                      01;38;5;011      # HTTPS://En.WikiPedia.Org/wiki/Smart_Game_Format                which is used by HTTPS://Online-Go.Com
 .pgn                      01;38;5;003      # HTTPS://En.WikiPedia.Org/wiki/Portable_Game_Notation           hopefully to be l8r loaded by ckm8
 .fen                      01;38;5;014      # HTTPS://En.WikiPedia.Org/wiki/Forsyth%E2%80%93Edwards_Notation hopefully to be l8r loaded by ckm8
 .hax                      01;38;5;011
@@ -342,14 +343,15 @@ CHR                       01;38;5;011;48;5;000 #cd= 01;33;40    01;33;40  CHaRac
 .hqx                      01;38;5;005      # Mac FontFile||CmprsdArcZip? (mAB.hqx iz cmprSd arc of bin.sit Mac fnt thN?)
 .sit                      01;38;5;003      # Mac FontFile||CmprsdArcZip?
 .sfv                      01;38;5;003      # SimpleFileVerific8ion storing CRC32 cksumz from muz/mp3/sndtrx/KatamariDamacy-Fortissimo/
+.swf                      01;38;5;003      # Adobe ShockWave Flash
 .ja                       01;38;5;003      # probably Japanese file from /etc/java-*-openjdk/ or /usr/(lib/(firefox|thunderbird)|share/aptitude)/
 .bbl                      01;38;5;003
 .vrs                      01;38;5;003      # likely UTF-8 text file containing Bible VeRSes (possibly including some Hebrew transl8ions)
 .rdf                      01;38;5;003
 .gws                      01;38;5;003      # NetGearRoutr GateWaySettings
 .lrx                      01;38;5;003      # ~/muz/lrx    MusicLyricSings
-.swf                      01;38;5;003
-.sub                      01;38;5;003
+.subs                     01;38;5;003      # ~/muz/U2ba   Music-Subtitles
+.sub                      01;38;5;003      # configur8ion valid8ion Subroutine script, probably from the Free Software Foundation, Inc.
 .webloc                   01;38;5;003
 .urlview                  01;38;5;003
 .url                      01;38;5;003      # text filz containing web URLs
@@ -429,6 +431,7 @@ CHR                       01;38;5;011;48;5;000 #cd= 01;33;40    01;33;40  CHaRac
 .DS_Store                 01;38;5;008
 .a                        01;38;5;008
 .so                       01;38;5;008
+.id                       01;38;5;008
 .in                       01;38;5;008
 .cps                      01;38;5;008
 .rnd                      01;38;5;008
@@ -456,6 +459,8 @@ CHR                       01;38;5;011;48;5;000 #cd= 01;33;40    01;33;40  CHaRac
 .HTM                      01;38;5;013
 .html                     01;38;5;013
 .HTML                     01;38;5;013
+.TOML                     01;38;5;013      # apparently some other Tcl Object Markup Language or something with rustup for cargo build inside nushell release
+.toml                     01;38;5;013
 .yml                      01;38;5;013
 .YML                      01;38;5;013
 .yaml                     01;38;5;013
@@ -588,6 +593,7 @@ CHR                       01;38;5;011;48;5;000 #cd= 01;33;40    01;33;40  CHaRac
 .pyc                      01;38;5;014
 .php                      01;38;5;014
 .pas                      01;38;5;014
+.pro                      01;38;5;014      # according to HTTPS://File.Org/extension/pro generic cross-platform project files (found in cool-retro-term)
 .pt                       01;38;5;014      # PipTyme||PerlTst
 .p                        01;38;5;014
 .t                        01;38;5;014
@@ -620,11 +626,12 @@ CHR                       01;38;5;011;48;5;000 #cd= 01;33;40    01;33;40  CHaRac
 .build                    01;38;5;014
 .pause                    01;38;5;014
 .fbrc                     01;38;5;014
-.prf                      01;38;5;014
+.prf                      01;38;5;014      # Kenta Cho Sh'mups preferences && high-score d8a like for Parsec47 and R-Rootage
 .rc                       01;38;5;014
 .mrbrc                    01;38;5;014
 .captrc                   01;38;5;014
 .deityrc                  01;38;5;014
+.cgobanrc                 01;38;5;014
 .kobodlrc                 01;38;5;014
 .glaxiumrc                01;38;5;014
 .placeholder              01;38;5;014      # /etc/cron.*/
@@ -915,6 +922,7 @@ CHR                       01;38;5;011;48;5;000 #cd= 01;33;40    01;33;40  CHaRac
 .pcx                      01;38;5;164
 .pgm                      01;38;5;164
 .png                      01;38;5;164      # Portable Network Graphics
+.png~                     01;38;5;164      # Krita AutoSave BackUp File like it does for .kra files when loaded
 .ppm                      01;38;5;164
 .qt                       01;38;5;164      # QuickTime
 .rm                       01;38;5;164      # Real Media
@@ -1336,14 +1344,21 @@ CHR                       01;38;5;011;48;5;000 #cd= 01;33;40    01;33;40  CHaRac
 .15.0-24-generic          01;38;5;006;48;5;002
 .15.0-23-generic          01;38;5;004;48;5;002
 .15.0-22-generic          01;38;5;164;48;5;002 # BlO /boot Linux kernelz versionz 5.0.0 onward started with Ubuntu 19.04 Disco Dingo, so dark grn bkgr 4.15 abov
-.0.0-23-generic           01;38;5;009
-.0.0-21-generic           01;38;5;172
-.0.0-20-generic           01;38;5;011
-.0.0-19-generic           01;38;5;010
-.0.0-17-generic           01;38;5;014
-.0.0-16-generic           01;38;5;012
-.0.0-15-generic           01;38;5;013
-.0.0-13-generic           01;38;5;092
+.3.0-23-generic           01;38;5;009
+.0.0-36-generic           01;38;5;172
+.0.0-32-generic           01;38;5;011
+.0.0-31-generic           01;38;5;010
+.0.0-29-generic           01;38;5;014
+.0.0-27-generic           01;38;5;012
+.0.0-25-generic           01;38;5;013
+.0.0-23-generic           01;38;5;092
+.0.0-21-generic           01;38;5;009
+.0.0-20-generic           01;38;5;172
+.0.0-19-generic           01;38;5;011
+.0.0-17-generic           01;38;5;010
+.0.0-16-generic           01;38;5;014
+.0.0-15-generic           01;38;5;012
+.0.0-13-generic           01;38;5;013
 #                                          # zsh wraps '%{' ANSI '%}' && vim User[1-9] colrz specify BlO ForeGroundz all on darkblue BakGrnd4statuslIn
 #     4NT    etfp   vim  c8  color              ANSI      HTML    Octology::d8::fldz (`d8`)
 #     0f     Fsy_   %*    W WhiteBright         \e[1;37m  FEFDFF            # vim %* resets statuslIn colr 2 Dfalt   White on darkblue so has max 10 colrz

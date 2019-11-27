@@ -5,7 +5,8 @@ use strict; use warnings;use utf8;use v5.10;
 #   maybe find some new hosting && upd8 the web HTML color hrefs&&upd8 CGI,test all documented methods like mday month _mon etc. && upd8 test scripts,
 #   crE8 and export d8sort sub,figure out roundtrip for `d8 ANSI` where M:23 is not getting properly shifted into Y && over-extending M expected range,
 #   tStz should include a lot of attemptz to roundtrip most value edge-cases primarily surrounding Year shifts,cNtralIz _separ8or valUz 4 stringz && matchez,
-#   research how to implement d8's own extensible epoch,tzoffset,julian_day,mjd,week,&&is_leap_year,then add them to POD,dvl XtNded d8 4m@ 4atlEst10e-9 4NTP;
+#   research how to implement d8's own extensible epoch,tzoffset,julian_day,mjd,week,&&is_leap_year,then add them to POD,dvl XtNded d8 4m@ 4atlEst10e-9 4NTP,
+#   stuD HTTPS://Cr.yp.to/daemontools/tai64n.html which puts a precise 12-byte lowercase hex timestamp on each line from stdin in external TAI64N format;
 require     Octology::d8::fldz;
 #equire                        Exporter;
 use base qw(Octology::d8::fldz);#porter);

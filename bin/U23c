@@ -1,9 +1,12 @@
 #!/usr/bin/perl
 # IC8L823c:U23c crE8d by PipStuart <Pip@CPAN.Org> 2 turn U2b Xl8d ClosedCaption transcripts in2 3 aligned columns (53x3=159-characters of maximum line-width);
-use strict;use warnings;use utf8;use v5.10;use Path::Tiny;my $d8VS='ICCLJOIN'; # might be better 2 just take parameter options for text transcript filenames?;
-for my $sfnm (<"xscr*.*">){my $sfil=path($sfnm)->slurp_utf8(); my $sfno=$sfnm; # buildup ScriptIn3Columns as composited text below;  # name filez 'xscrpt...';
-  if($sfno=~ s/(xscr)i?p?t?(-.*)\.(utf|txt|log|x?scr?p?t?|sub|cc)$/3c$1$2-$d8VS.$3/i){my $si3c='';say "Gener8inG $sfnm 2 $sfno...";  # withXpectd tXt XtNsion;
-    my @slnz=split(/\n/,$sfil);for(0..$#slnz){$slnz[$_]=sprintf("%-53s",$slnz[$_]);}  my $thrd=int($#slnz /3 ); # should loop 2end;  # finish after last 3rd?
-    for(0..$thrd ){$si3c.=$slnz[$_].$slnz[$thrd+$_+1];$si3c.=$slnz[2*$thrd+$_ +2] if((2*$thrd+$_+2) <= $#slnz);  $si3c=~s/\s*$/\n/;} #chomp($si3c);$si3c.=';';
-    open my $outs,'>',$sfno or die "Can't open  Output Script handle: $!";binmode $outs,    ':encoding(UTF-8)';  print $outs $si3c;  # mAB add this to ~/bin/
-    close   $outs           or die "Can't close Output Script handle: $!";}}   # ... && that should probably about do it?! =) -Pip;  #  && a8.pm:sumb -2ndPg?;
+use strict;use warnings;use utf8;use v5.10;use Path::Tiny;my $d8VS='JAQMDSub';my $fpat="*.subs"; # take parameter glob options for text transcript filenames
+if(!@ARGV || -e $ARGV[0]){$fpat=shift(@ARGV) if(@ARGV && -r $ARGV[0]); # mAB add this to a8.pm:sumb -2ndPg && add -help text?;
+  for my $sfnm (<"$fpat">){my $sfil=path($sfnm)->slurp_utf8();my $sfno=$sfnm;
+    if($sfno=~ s/^(.+)\.(utf|txt|log|x?scr?p?t?|subs?|cc)$/$1-$d8VS.$2/i){my $sijt='';my $si3c='';say "Gener8inG $sfnm\n       to $sfno...";
+      # first buildup sijt to join time-stamps with following subtitles, then buildup ScriptIn3Columns as composited text below;
+      my @tlnz=split(/\n/,$sfil);                       for(0..$#tlnz){if($tlnz[$_]=~ /^\d\d+(:\d\d)+$/){$sijt.=$tlnz[$_].' '.$tlnz[$_+1]."\n";$_++;}}
+      my @slnz=split(/\n/,$sijt);my $thrd=int($#slnz/3);for(0..$#slnz){$slnz[$_]=sprintf("%-53s",$slnz[$_]);}
+      for(0..$thrd ){$si3c.=$slnz[$_].$slnz[$thrd+$_+1];$si3c.=$slnz[2*$thrd+$_ +2] if((2*$thrd+$_+2) <= $#slnz);$si3c=~s/\s*$/\n/;} #chomp($si3c);$si3c.=';';
+      open my $outs,'>',$sfno or die "Can't open  Output Script handle: $!";binmode $outs,    ':encoding(UTF-8)';print $outs $si3c;
+      close   $outs           or die "Can't close Output Script handle: $!";}}}

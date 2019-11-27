@@ -2,9 +2,15 @@
 # J7JMJAPN:uri-as-pip.pl originally crE8d by Beppu-san while procrastin8ing from doing annoying contract work;
 package URI::_generic;
 use     URI;
-my %camels = (
-  'youtube'  => 'youTube' ,
-  'slashdot' => 'slashDot',);
+my %camels = ( # I could probably get a little crazy going through CamelCasing the almost unlimited number of URI's with multiple uppercased letters;
+    'github'    =>   'gitHub',
+   'youtube'    =>  'youTube',
+  'peertube'    => 'peerTube',
+  'bitchute'    => 'bitChute',
+  'slashdot'    => 'slashDot',
+  'coinbase'    => 'coinBase',
+  'duckduckgo'  => 'duckDuckGo',
+  'tradingview' => 'tradingView',);
 sub capitalize_host {
   my @parts = split(/\./, $_[0]);
   return join('.', map { ucfirst $_ } map { exists $camels{$_} ? $camels{$_} : $_ } @parts);}

@@ -596,7 +596,7 @@ HTTPS://YouTu.be/r3X2mqpKNp0 "Blizzard Founder CUTS TIES Completely! Mike Morhai
    "even if Blizzard must become only a shadow of its former glory. Good Game! ;) Peace, -Pip" # Very nice tight <160 by x <50 almost solid page fitting! =) ;
 J1JLHARE:So yeah, like maybe Shoe0nHead June would want her bunnies to be the next expansion to like f8lc@b@l before PewDiePie && CountDankula'sGirl's dogz;
   # would probably be pretty dope to like focus on filming just a couple cats && building them into a basic fighting game designed to appeal as fun to them? ;
-J1PL1JPV:HTTPS://BitchUte.Com/video/mKUSsxRONtVa "Jordan Peterson && Contemporary Christianity | Discussion With Paul VanDerKlay" # 38m @about half-way good;
+J1PL1JPV:HTTPS://BitChute.Com/video/mKUSsxRONtVa "Jordan Peterson && Contemporary Christianity | Discussion With Paul VanDerKlay" # 38m @about half-way good;
 J24LHowM:HTTPS://YouTu.be/HfNKFvHtA3g "TL;DR - What Was the Mouse Utopia?" # 18m42s of TealDeer breaking down a significant old hierarchical popul8ion study;
 J2CL8Red:HTTPS://YouTu.be/oZmMtM7LTqI "Red-Queen Problem - Jordan Peterson" # 14m lecturing how Mother-n8ure is Red-Queen tyrant in Alice's WonderLand story;
 J2CLC666:HTTPS://YouTu.be/IKwkX35bcdw "1010011010" # 7m44s of NumberPhile discussing Futurama's history of having obscure Roman-numeral && binary math jokes.
@@ -609,3 +609,6 @@ J7AM47J4:HTTPS://YouTu.be/_EWCN3CPhTI "Joe Rogan Experience #1320 - Eric Weinste
 # I should also study his "Octonions" concepts as abstractions away from Quaternions as invit8ions away from sensible realities which our typical math has.
 # I wish I could move back to Los Angeles somehow someway sometime next year && that I could learn more from && become closer to the Intellectual Dark Web;
 J7CM5new:HTTPS://YouTu.be/dLfBWM0L3Vo "Sean Plunket: Full Interview: New Zealand" # 42m46s of (non-Messiah) Dr.P. on call-in show offering reasoned advice;
+J9FMDanS:HTTPS://YouTu.be/7LqaotiGWjQ "The War on Sensemaking, Daniel Schmachtenberger" # 1h48m49s of David from RebelWisdom with good interview of DanielS.;
+J9JMMJ9J:HTTPS://YouTu.be/_SmGMJzWHK4 "The Paradox of the Times, with Jordan Greenhall" # 1h33m27s of David from RebelWisdom interview of almost a Year ago;
+JAIMCRWD:HTTPS://YouTu.be/Knmy7RttHx4 "Douglas Murray - Bret Weinstein's DarkHorse PodCast #5" # 1h33m13s discussing Murray's new book, The Madness of Crowds;

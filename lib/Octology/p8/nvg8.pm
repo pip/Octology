@@ -5,7 +5,7 @@ package     Octology::p8::nvg8;
 use strict;use warnings;use utf8;use v5.10;
 use         Octology::a8;
 use         Octology::p8::m8rx;
-use         Octology::p8::tabh;
+use         Octology::p8::tabh; # Tied-Array Binary Heap (as opposed to any other priority queue)
 use         Octology::p8::psps::cnst;
 use         Curses::Simp;
 my  $VERSION ='0.0';my $d8VS='HBCL4vg8';
@@ -205,12 +205,12 @@ L<Octology::p8::taqs for TiedArrayQuickSorted or l8r similar classes?>
 =head1 LICENSE
 
 Most source code should be Free! Code I have lawful authority over is and shall be!
-Copyright: (c) 2017, Pip Stuart.
+Copyright: (c) 2019, Pip Stuart.
 Copyleft :  This software is licensed under the GNU General Public License
-  (version 3 or later). Please consult L<HTTP://GNU.Org/licenses/gpl-3.0.txt>
+  (version 3 or later). Please consult L<HTTPS://GNU.Org/licenses/gpl-3.0.txt>
   for important information about your freedom. This is Free Software: you
   are free to change and redistribute it. There is NO WARRANTY, to the
-  extent permitted by law. See L<HTTP://FSF.Org> for further information.
+  extent permitted by law. See L<HTTPS://FSF.Org> for further information.
 
 =head1 AUTHOR
 

@@ -29,7 +29,7 @@ unsetopt                \
 # auto_pushd            \# setng addz dirz 2 stack wN just normally chngng 2 thM (wich I du not normally lIk or want)
 # ksh_arrays            \# rEmMbr wNwrItng scrptz[or funcz]2include'setopt [localoptions] ksharrays'sO arAzR 0-bAsed(but!glOblBcuzmOst scrptzRstndrdly 1-bAsed)
 # re_____match_____pcre \# mA want2set for Z-SHell scripting RegularExpressions to utilize PerlCompatibility styles && mA insert 'zmodload zsh/(pc)?re(gex)?';
-export vers='0.0';export d8VS='J7KM1tab';export auth='PipStuart <Pip@CPAN.Org>'; # not Xportng $b sinc cOlIdz wi sort{$a <=> $b} /defhijlnqstuvx/i + AZ 4golf;
+export vers='0.0';export d8VS='J94MKw94';export auth='PipStuart <Pip@CPAN.Org>'; # not Xportng $b sinc cOlIdz wi sort{$a <=> $b} /defhijlnqstuvx/i + AZ 4golf;
 if     [[       "$SHELL"    == "" ]]; then       export SHELL=`  which zsh`;fi # 8sh should parse this && OverId it    # shud `man zshall` /OSTYP 2lern4BlO
 if     [[       "$HOSTNAME" == "" ]]; then       export HOSTNAME=`hostname`;fi #`hostname`retnz fsckd nwlInz\n4CygWinzRxvt... ||smthng els lame  =(
 if     [[       "$HOST"     == "" ]]; then       export HOST="$HOSTNAME"   ;fi;export VERBOSE='1'; # set flag to print debug && status info from system utilz
@@ -290,7 +290,7 @@ alias bak='    bak  $TTY';alias   ept='  echo `pt`';alias upd8-mdb=' md8       '
 alias ud='     updb     ';alias    loc8='   locate';alias mdb-upd8=' md8       ';alias md8b-upd8='md8';alias mime-db-update='md8';alias mdb8='  mdb-upd8';
 alias updb='   upd8db   ';alias upd8d8ab='  upd8db';alias   updtdb='updb       ';alias md8b='mdb-upd8';alias md8='update-mime-database -V';alias xi='xinput';
 alias rc8=' rc-upd8     ';alias rc-upd8='rc-update';alias etc-upd8='etc-update ';alias etc8='etc-upd8';alias env8='env-upd8';alias  env-upd8='env-update';
-alias pl8=' pl-upd8     ';alias pl-upd8='plcl     ';alias plcl='pl-clnr     all';alias pl8c='pl8     ';alias pl8l='pl8     ';alias tab="$HOME/gfx/dvl/art/tab";
+alias pl8=' pl-upd8     ';alias pl-upd8='plcl     ';alias plcl='pl-clnr     all';alias pl8c='pl8     ';alias pl8l='pl8     '; #ias tab="$HOME/gfx/dvl/art/tab";
 alias lp8=' lp-upd8     ';alias lp-upd8='lpcl     ';alias lpcl='pl-clnr libperl';alias lp8c='lp8     ';alias lp8l='lp8     '; # too specialized to go str8 in2
 alias pl8a='pl-clnr  all';alias pl-clnr='pl-clean ';alias pl-clean='pl-cleaner ';alias pl-cleaner='  perl-cleaner  ask     '; #   Octl ~/bin but mAB s/sloc//?
 alias py8=' py-upd8     ';alias py-upd8='py-upd8r ';alias py-upd8r='py-updater ';alias py-updater='python-updater -p -v -v '; # -pretend -VeryVerbose
@@ -832,7 +832,7 @@ alias uxtrm='uxterm      -geometry 160x50   &';alias uxt='uxtrm';alias st='stter
 alias lxtrm='lxterminal --geometry=160x50   &';alias lxt='lxtrm'; # =lxterm is a separ8 sh script wich testz locale && wrapz plain uxterm for UTF-8
 alias satrm='sakura      -c 160     -r 50   &';alias sak='satrm'; # thEse termz are each made pretty similar to my Dfalt GT dimensionz
 alias  tn8r='terminator --geometry=1608x932 &'; # geom here is strangely pixLz nstd of charz with char dimensionz about 10x18 pixLz plus border && tabbar
-alias  xf4t=' x4t       --geometry=160x50   &';alias x4t='xfce4-terminal'; # need to config terminalrc to use smaller font
+alias  xf4t=' x4t       --geometry=160x50   &';alias x4t='xfce4-terminal';alias crt='cd ~/dvl/c8/trm8;CRT'; # CoolRetroTerm; nEd2 cnfg termrc 2use smalr font
 alias  rox='  rxt       --geometry=160x50   &';alias rxt='roxterm'; # anothr VTE-bAsd xterm (-z $ZoomFrom1.0 [want 0.8333] spits CRITICAL assertion pango)
 alias  Etrm=' Eterm     --geometry 160x50 --scrollbar-width 15 --cmod 227 -L 65536 &';alias Et='Etrm';alias E='Et'; # used to be 'Eterm -t E &' but it...
 export ETERM_THEME_ROOT="~/.Eterm/themes"; # wuz ~/.Eterm/themes/Eterm                       # ...looks like I don't even need that plain old  E theme anymore
