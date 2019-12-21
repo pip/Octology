@@ -1,5 +1,5 @@
 # F1RLLK2K:~/.lrc  by PipStuart <Pip@CPAN.Org> as an altern8 format for .lsrc ideally having new ~/bin/lrc gNR8 either from the other;
-# $VERSION='0.0';$d8VS='JBRLEBLK'; 2du:mkUtl2gNr8 altrn8 versN of .lsrc th@purposfuly varEz colrz of comon typz,try addng bakgrnd colrz2all dFz&&tst,
+# $VERSION='0.0';$d8VS='JCKLEdrp'; 2du:mkUtl2gNr8 altrn8 versN of .lsrc th@purposfuly varEz colrz of comon typz,try addng bakgrnd colrz2all dFz&&tst,
 #   add interaction2 lsd8 wN it Dtectz unrecognIzd XtNshNz offerng c@egOrEz with comon colr2autOm@ically insrt chOsN NtrEz,mAB add *-* NtrEz from .zshrc hEr &&
 #   mk lrc gNr8 either,confirm all accept f0nt cOdez wi dash accepting Dfalt foreground then redo NORMAL FILE LINK as no fi ln,mAB 8trm added2TERM ls someday;
 # 819J2Pip:~/.lsrc by PipStuart <Pip@CPAN.Org> izAheavily modifId`dircolors`cfgfIl(Orig ~/.DIR_COLORS)wich setz $ENV{'LS_COLORS'} 4GNU`ls --color`&&`lsd8`;
@@ -124,11 +124,14 @@ CHR                           Yk           #cd= 01;33;40    01;33;40  CHaRacter 
 .sgf                                       # HTTPS://En.WikiPedia.Org/wiki/Smart_Game_Format                which is used by HTTPS://Online-Go.Com
 .pgn                          O            # HTTPS://En.WikiPedia.Org/wiki/Portable_Game_Notation           hopefully to be l8r loaded by ckm8
 .fen                          C            # HTTPS://En.WikiPedia.Org/wiki/Forsyth%E2%80%93Edwards_Notation hopefully to be l8r loaded by ckm8
+.gnu                                       # `jack_test` frame*-1024. but probably some GNU standard for config file formats
+.git
 .hax
 .emacs                        O
 .vimrc
 .Hrc                          G            #  8sh ~ fyl
 .lrc                          G            #  lsd8 lsrc
+.qrc                                       # Qt5 && QMake ResourCe files that seem kinda similar to .sh or .ini variable-setting files
 .bxrc
 .shrc
 .zshrc
@@ -143,14 +146,21 @@ CHR                           Yk           #cd= 01;33;40    01;33;40  CHaRacter 
 .ttreerc
 .gtkrc-2.0
 .properties
+.renamecategories             M            # /etc/xdg        files
+.categories                                # /etc/xdg        files
+.codes                        C            # /etc/xdg        files
+.areas                        R            # /etc/xdg        files
 .recommended                               # /etc/zsh/newuser.zshrc.recommended
 .minicpanrc
 .message
 .mesg                                      # MEsSaGe az(ch@EmlInstantTxtMedia*) messagez
+.mount                                     # /etc/systemd/system files
 .ch3tm                        M            # /**/*.ch3tm(chEtmz)azCheatSheet.htm HTML fylz
 .ch3t                                      # /**/*.ch3t (chEtz)prImrLE4 ~pip/dox/dvl/ref/(Vim|XML|Zsh|Perl|.*)(Cheat(Sheet)?)?.txt fylz2trnzitN2
 .chat                                      # GTalk|JabR|IRC|ICQ|Y!IM|AIM|XMPP|SMS|MMS|*IM.chat, mAB ~pip/dox/dvl/ref/*Cheat* canB .ch3t?
 .cht                                       # PyQt.cht  (chRtz), ATIRadeonMSLose98Doze32BitDrvrz.CompressedHelpText?
+.real                                      # /etc/apparmor.d files
+.man                                       # /etc/apparmor.d files
 .mSj
 .msg
 .gml
@@ -177,16 +187,21 @@ CHR                           Yk           #cd= 01;33;40    01;33;40  CHaRacter 
 .1m                           R            # NumbFuck/curs/man/
 .3x                           c            # NumbFuck/curs/man/
 .xsm                                       # X.orgSessionManager (/etc/X11/xsm/*) or eXtraSimpleMusic or LEXIS-NEXIS Tracker
+.ovpn                                      # /etc/windscribe files
 .ogg
 .flac
 .flf                                       # FigLet Font
 .plf
 .pal8                                      # f80p pal8
+.prl                                       # like .ini or .sh variable files that seem to accompany /usr/lib/ .so SharedObject library files
 .tqd                          c            # TorqDJ song in4m8ion fIl (by AvidTechnologyInc.) (from muz/mp3/unsorted/)
 .spc                                       # Super Nintendo PCM? muz
 .rsn                                       # RAR compressed archives of abov .spc fIl
 .aac
 .au
+.ecs                                       # ECASound ChainSetup  files. Syntax is more or less the same as with the comparable command-line arguments.
+.ecp                                       # ECASound ChainPreset files. Used for storing effect and chain oper8or presets. See user’s guide for more docs.
+.ews                                       # ECASound Wave Stats. These files are used to cache waveform d8a && allow skipping to precise dur8ion points.
 .mid
 .midi
 .mka
@@ -211,6 +226,10 @@ CHR                           Yk           #cd= 01;33;40    01;33;40  CHaRacter 
 .xm
 .it
 .trx                          O
+.xib                          W            # Qt5/qtbase/mkspecs     files
+.xcscheme                     Y            # Qt5/qtbase/mkspecs     files
+.xcsettings                   o            # Qt5/qtbase/mkspecs     files
+.plist                        p            # Qt5/qtbase/mkspecs     files
 .soundlist
 .modules
 .torrent
@@ -226,6 +245,9 @@ CHR                           Yk           #cd= 01;33;40    01;33;40  CHaRacter 
 .apt                          O            # such apt && Perl -MCPAN -e "install ..." && Force are likely lists of commands needed for those package systems
 .pmei                         C
 .pmfi                         M
+.qdocconf                     o            # Qt5/qtbase/qmake/doc   files
+.qdoc                                      # Qt5/qtbase/src/testlib files
+.mm                           R            # Qt5/qtbase/src/testlib files
 .btree
 .rules
 .ini
@@ -242,6 +264,7 @@ CHR                           Yk           #cd= 01;33;40    01;33;40  CHaRacter 
 .letter
 .version
 .symvers
+.sysctl                                    # /etc/sysctl.d          files
 .unmask
 .ebuild
 .2emrg
@@ -270,17 +293,20 @@ CHR                           Yk           #cd= 01;33;40    01;33;40  CHaRacter 
 #OO
 #OO
 .locale
-.conf                                      # config filz,(basic) play-list filz,shell-scripts,bookmarks,&& DOS-style executablz
+.dconf-defaults               R            # /etc/gdm3 files
 .dconf                                     # J6JMKNID:probably something like the output of `dconf dump /org/gnome/terminal/legacy/` to "load" l8r;
+.conf                                      # config filz,(basic) play-list filz,shell-scripts,bookmarks,&& DOS-style executablz
 .dmrc                                      # Dsktp Menu|Mngr? on Chun
 .gtkrc
 .toprc                                     # nstd of htop, can input "zxcVm1t0" then g[2-4] to go2 sepR8 wndoz&&du similR inputz then W writez cnfg
 .mmixrc
 .alsarc                       R
 .aumixrc
+.jack3rc
+.jackdrc                      P
 .default_mixer
-.mikmodrc
 .mikmod_playlist              P
+.mikmodrc
 .dvdriprc
 .bitchxrc
 .bxp4prc
@@ -288,6 +314,7 @@ CHR                           Yk           #cd= 01;33;40    01;33;40  CHaRacter 
 .inputrc
 .joy2keyrc
 .blackboxrc
+.pc
 .Xrc                          Y
 .Xresources
 .xtermcontrol
@@ -296,6 +323,7 @@ CHR                           Yk           #cd= 01;33;40    01;33;40  CHaRacter 
 .fbhighscores
 .linux_logo
 .netrwhist                                 # ~/.vim/
+.opt                                       # configure script parameter options file (with each option on a sepR8 line)
 .options
 .cvspass
 .dynamic                                   # /run/
@@ -344,6 +372,7 @@ CHR                           Yk           #cd= 01;33;40    01;33;40  CHaRacter 
 .sit                                       # Mac FontFile||CmprsdArcZip?
 .sfv                                       # SimpleFileVerific8ion storing CRC32 cksumz from muz/mp3/sndtrx/KatamariDamacy-Fortissimo/
 .swf                                       # Adobe ShockWave Flash
+.jfc                                       # /etc/java-11-openjdk/jfr files
 .ja                                        # probably Japanese file from /etc/java-*-openjdk/ or /usr/(lib/(firefox|thunderbird)|share/aptitude)/
 .bbl
 .vrs                                       # likely UTF-8 text file containing Bible VeRSes (possibly including some Hebrew transl8ions)
@@ -357,7 +386,8 @@ CHR                           Yk           #cd= 01;33;40    01;33;40  CHaRacter 
 .url                                       # text filz containing web URLs
 .URL
 .use
-.xl8                                       # ~/dvl/t8/**/xl8/ gener8d d8a files from attempt to autom8 complex transl8ion evalU8ions with xdotool .xd2 scripts
+.xl8                                       # ~/dvl/t8/**/xl8/ gener8d  d8a-files from attempt to autom8 complex transl8ion evalU8ions with xdotool .xd2 scripts
+.certs                                     # /etc/java-11-openjdk/security files
 .MANIFEST
 .bookmarks
 .gtk-bookmarks                c            # ~ file that I'd rather vary the color of seen commonly there than match other *.bookmarks elsewhere
@@ -465,6 +495,7 @@ CHR                           Yk           #cd= 01;33;40    01;33;40  CHaRacter 
 .YML
 .yaml
 .json
+.xml~                         p
 .xml
 .XML
 .xhtml
@@ -489,6 +520,9 @@ CHR                           Yk           #cd= 01;33;40    01;33;40  CHaRacter 
 .desc                                      # /usr/share/tasksel/ or ~/.mplayer/font/
 .vars
 .order
+.BUILDINFO                                 # cadence 0.9.1-1 lists all my system's installed libraries with versions neatly after the variable section;
+.MTREE                        K            # cad && qjc qJackCtl seem to be the 2 awkward ways to setup JACK but I can't seem to get audio out of either;
+.PKGINFO                      c            # cadence output for makepkg && fakeroot with various bridges to JACK that don't seem to work for playback yet;
 .info
 .inf
 .img                                       # putr-NetRtrG8Wz FirmWare IMaGe
@@ -506,6 +540,7 @@ CHR                           Yk           #cd= 01;33;40    01;33;40  CHaRacter 
 .diz
 .heavy                        P            # /usr/share/cups/charsets/
 .simple                                    # /usr/share/cups/charsets/ or /usr/share/misc/ or ~/.subversion/auth/
+.summary                                   # configure script result summary output files
 .subst-rule                                # /etc/defoma/
 .settings
 .terminfo
@@ -514,12 +549,14 @@ CHR                           Yk           #cd= 01;33;40    01;33;40  CHaRacter 
 .markers
 .mailmap
 .mmixer
+.menus                                     # /etc/ardour5 files
 .menu
 .m4
 .md                                        # MarkDown file like ~/.inst/youtube-dl/README.
 .mk
 .mak
 .make
+.cmake
 .makefile
 .Makefile
 .MakeFile
@@ -529,6 +566,7 @@ CHR                           Yk           #cd= 01;33;40    01;33;40  CHaRacter 
 .bitmap                                    # MSWindows QuickTime/QTSystem/ or Safari/CoreFoundation.resources/CharacterSets/
 .qtx                          P            # MSWindows QuickTime/QTSystem/ or Safari/CoreFoundation.resources/CharacterSets/
 .qts                          c            # MSWindows QuickTime/QTSystem/ or Safari/CoreFoundation.resources/CharacterSets/
+.ui                                        # Qt5 UserInterface files which go to bin/uic (seem to be XML without header d8a)
 .S
 .cf                                        # /(etc|usr/share)/spamassassin/
 .cgm                                       # image format
@@ -576,9 +614,10 @@ CHR                           Yk           #cd= 01;33;40    01;33;40  CHaRacter 
 .nb                                        # Mathematica   SrcCod(!IDa wer"NB"iz from,but myn iz:maze-gen4img-Hernan.Moraldo.Com.Ar_mazegen_code...)
 .n                                         # NetwydAzMblur NAsm.Us
 .m
-.h
+.h                            o            # C/C++ Header files were Cyan like main source files but plain ls was getting some kind of orange, so setting it
 .c
 .cc
+.app                                       # Qt5/qtbase/mkspecs/macx-* files
 .cpp
 .cgi
 .inc
@@ -593,7 +632,7 @@ CHR                           Yk           #cd= 01;33;40    01;33;40  CHaRacter 
 .pyc
 .php
 .pas
-.pro                                       # according to HTTPS://File.Org/extension/pro generic cross-platform project files (found in cool-retro-term)
+.pro                          R            # according to HTTPS://File.Org/extension/pro generic cross-platform project files (found in cool-retro-term && Qt5)
 .pt                                        # PipTyme||PerlTst
 .p
 .t
@@ -601,6 +640,7 @@ CHR                           Yk           #cd= 01;33;40    01;33;40  CHaRacter 
 .tt                                        # Template::Toolkit`ttree`
 .tst
 .test
+.load                         c            # /etc/apache2/mods-available files
 .save                                      # /usr/share/doc/xfix/html/ or /usr/share/unity/icons/ or old SaveGamz
 .sed                                       # NumbFuck/curs/man/
 .scm
@@ -608,6 +648,7 @@ CHR                           Yk           #cd= 01;33;40    01;33;40  CHaRacter 
 .lua                                       # /etc/wireshark/init.lua
 .awk
 .bdf
+.dia                                       # ~/.dia default files
 .el                                        # EmacsLisp
 .js
 .gen
@@ -620,6 +661,7 @@ CHR                           Yk           #cd= 01;33;40    01;33;40  CHaRacter 
 .xsd                                       # W3C      XML Schema Definition                   file
 .xslt                                      # eXtensible   Style  Language for Transformations file
 .shtml
+.senddoc                                   # /etc/apparmor.d files
 .schemas
 .aliases
 .globals
@@ -627,6 +669,7 @@ CHR                           Yk           #cd= 01;33;40    01;33;40  CHaRacter 
 .pause
 .fbrc
 .prf                                       # Kenta Cho Sh'mups preferences && high-score d8a like for Parsec47 and R-Rootage
+.pri                          c            # maybe Qt configure.pri as PRoject or PRofile Init or Include (&& also altern8 .prf files in similar loc8ions)
 .rc
 .mrbrc
 .captrc
@@ -755,6 +798,7 @@ CHR                           Yk           #cd= 01;33;40    01;33;40  CHaRacter 
 .orig
 .done
 .lnk
+.fh                                        # /etc/alternatives/mpi-x86_64-linux-gnu FileHandlers?
 .mkf                                       # putr-Rose-802.11g-BlakBeryCurv-sys-info
 .tmp
 .tmp~
@@ -795,6 +839,7 @@ CHR                           Yk           #cd= 01;33;40    01;33;40  CHaRacter 
 .default
 .exclude
 .esd_auth
+.oosplash                                  # /etc/apparmor.d files
 .etcbackup
 .OLDdefault
 .pulse-cookie
@@ -816,6 +861,10 @@ CHR                           Yk           #cd= 01;33;40    01;33;40  CHaRacter 
 .cab
 .ctb                                       # brltty Country's character TaBle               for daemon driving refreshable console Braille display
 .cpio
+.crash                                     # /var/crash/ files
+.upload                       p            # /var/crash/ files
+.uploaded                     g            # /var/crash/ files (possibly containing the IPv6 address to which a crash-log has finished uploading to?)
+.driver                                    # /etc/libibverbs.d files
 .d
 .dz
 .deb
@@ -864,6 +913,8 @@ CHR                           Yk           #cd= 01;33;40    01;33;40  CHaRacter 
 .fla
 .3rc                                       # /etc/qt3/ or ~/.qt/
 .esd                                       # I73M73MI:upd8ng 4 l8st krnl identified these 4 new aliases as newest candid8z 4 incorpor8ion here;
+.kbx                                       # ~/.gnupg pubring files
+.kbx~                         r            # ~/.gnupg pubring files
 .dwm
 .swm
 .wim
@@ -956,6 +1007,7 @@ CHR                           Yk           #cd= 01;33;40    01;33;40  CHaRacter 
 .tex                          C            # DonKnuth LaTeX  DVI,etc. (Dopeish), HTTP://Web.CVS.Savannah.NonGNU.Org/viewvc/bool2/bool2/theory/goodaut.tex
 .aux                                       # DonKnuth LaTeX  AUXiliary file (along with .log as extra output from `pdflatex *.tex`) for cross-referencing
 .djvu                                      # DjVu              image          4m@
+.xpdfimport                                # /etc/apparmor.d files
 .pdf                          M            # AdObE           P0rtable DocUmNt 4m@
 .ps                           M            # AdObE           P0st Scrpt
 .ppt                                       # P0wRlS PtlS M$  PrEzNtAshN4m@ =(
@@ -970,8 +1022,9 @@ CHR                           Yk           #cd= 01;33;40    01;33;40  CHaRacter 
 .mfasl
 .proxy                                     # /etc/decnet.proxy
 .qmail
-.immodules
 .viminfo                                   # ~/.viminfo && .zcompdump below were both originally dark red && mistakenly thought to be binaries
+.asoundrc
+.immodules
 .zcompdump
 .screen_exchange
 # general /etc && 8bow listz BlO (but any !~/\..*$/&&=~/[-_]?.*$/ nd2post-modify the $ENV{'LS_COLORS'} result of`dircolors`within .zshrc Bcuz they du!wrk hEr)
@@ -986,6 +1039,7 @@ CHR                           Yk           #cd= 01;33;40    01;33;40  CHaRacter 
 .net                          M            # /etc
 .fuselock                     P            # /etc
 .logout                       C            # /etc
+.colors                       c            # /etc/xdg/colors
 .icc                          C            # /etc/alternatives/ghostscript-current/iccprofiles
 .upp                          Y            # /etc/alternatives/ghostscript-current/lib
 .rpd                          R            # /etc/alternatives/ghostscript-current/lib
@@ -1018,6 +1072,7 @@ CHR                           Yk           #cd= 01;33;40    01;33;40  CHaRacter 
 .service                      C            # /etc/avahi/services
 .upgrade                      M            # /etc/compizconfig/upgrades
 .seat                         c            # /etc/ConsoleKit/seats.d
+.acm                          M            # /etc/console-setup
 .vga                          Y            # /etc/console-setup
 .dbus                         R            # /etc/dbus-1/system.d
 .ucf-dist                     O            # /etc/default
@@ -1236,6 +1291,7 @@ CHR                           Yk           #cd= 01;33;40    01;33;40  CHaRacter 
 .machten                      O
 .macos                        Y
 .macosx                       c
+.mingw                        R
 .mint                         C
 .mpeix                        M
 .netware                      P
@@ -1247,6 +1303,7 @@ CHR                           Yk           #cd= 01;33;40    01;33;40  CHaRacter 
 .solaris                      C
 .tru64                        M
 .tw                           P
+.unix                         W
 .uts                          r
 .vmesa                        R
 .vms                          O
@@ -1258,6 +1315,75 @@ CHR                           Yk           #cd= 01;33;40    01;33;40  CHaRacter 
 .act                          P            # ~/.inst/perl*5.10*/perly.
 .chk                          K            # ~/.inst/firefox/lib(freebl|softokn)3.
 .autoreg                      R            # ~/.inst/firefox/
+.tracepoints                  o            # Qt5/qtbase/src/widgets       files
+.dynlist                      Y            # Qt5/qtbase/src/widgets       files
+.header                       g            # Qt5/qtbase/util/glgen        files
+.footer                       r            # Qt5/qtbase/util/glgen        files
+.lexgen                       Y            # Qt5/qtbase/util/lexgen       files
+.BSD                          c            # Qt5/qtbase/header && LICENSE files
+.MIT                          M
+.COMM                         K
+.FDL                          w
+.GPL                          o
+.GPL2                         Y
+.GPL3                         W
+.LGPL                         o
+.LGPL3                        W
+.LGPLv3                       W
+.LGPLv21                      Y
+.LGPL3-COMM                   K
+.LGPL-ONLY                    r
+.LGPL-NOGPL2                  R
+.GPL3-EXCEPT                  C
+.GPL-EXCEPT                   C
+.2CEping                      R            # Qt5/qtbase/dist/changes-*    files
+.3CEconan                     o
+.3CEkicker                    Y
+.3CEsweetandsour              G
+.3CE-tp1                      C
+.4-temple                     R
+.0-garden                     g
+.2-tower                      w
+.0-rc0                        R            # Qt5/qtbase/dist/changes-*    files
+.0-rc1                        O
+.0-rc2                        Y
+.0-rc3                        G
+.0-tp0                        c
+.0-tp1                        C
+.0-tp2                        B
+.0-tp3                        M
+.92                           R            # Qt5/qtbase/dist/changes-*    files
+.93                           O
+.94                           Y
+.95                           G
+.96                           C
+.97                           B
+.98                           M
+.99                           P
+.00beta0                      R            # Qt5/qtbase/dist/changes-*    files
+.00beta1                      O
+.00beta2                      Y
+.00beta3                      G
+.00beta4                      C
+.00beta5                      B
+.00beta6                      M
+.00beta7                      P
+.0-beta0                      R            # Qt5/qtbase/dist/changes-*    files
+.0-beta1                      O
+.0-beta2                      Y
+.0-beta3                      G
+.0-beta4                      C
+.0-beta5                      B
+.0-beta6                      M
+.0-beta7                      P
+.0-b0                         R            # Qt5/qtbase/dist/changes-*    files
+.0-b1                         O
+.0-b2                         Y
+.0-b3                         G
+.0-b4                         C
+.0-b5                         B
+.0-b6                         M
+.0-b7                         P
 .0.0                          w            # \.[0-9A-F]\.0 dotted versions
 .1.0                          r
 .2.0                          R
@@ -1344,21 +1470,22 @@ CHR                           Yk           #cd= 01;33;40    01;33;40  CHaRacter 
 .15.0-24-generic              cg
 .15.0-23-generic              bg
 .15.0-22-generic              mg           # BlO /boot Linux kernelz versionz 5.0.0 onward started with Ubuntu 19.04 Disco Dingo, so dark grn bkgr 4.15 abov
-.3.0-23-generic               R
-.0.0-36-generic               o
-.0.0-32-generic               Y
-.0.0-31-generic               G
-.0.0-29-generic               C
-.0.0-27-generic               B
-.0.0-25-generic               M
-.0.0-23-generic               p
-.0.0-21-generic               R
-.0.0-20-generic               o
-.0.0-19-generic               Y
-.0.0-17-generic               G
-.0.0-16-generic               C
-.0.0-15-generic               B
-.0.0-13-generic               M
+.0.0-36-generic               oc
+.0.0-32-generic               Yc
+.0.0-31-generic               Gc
+.0.0-29-generic               Cc
+.0.0-27-generic               Bc
+.0.0-25-generic               Mc
+.0.0-23-generic               pc
+.0.0-21-generic               Rc
+.0.0-20-generic               oc
+.0.0-19-generic               Yc
+.0.0-17-generic               Gc
+.0.0-16-generic               Cc
+.0.0-15-generic               Bc
+.0.0-13-generic               Mc
+.3.0-24-generic               R            # BlO /boot Linux kernelz versionz 5.3.0 onward started with Ubuntu 19.10 Eoan Ermine, so dark cyan bkgr 5.0 abov
+.3.0-23-generic               o
 #                                          # zsh wraps '%{' ANSI '%}' && vim User[1-9] colrz specify BlO ForeGroundz all on darkblue BakGrnd4statuslIn
 #     4NT    etfp   vim  c8  color              ANSI      HTML    Octology::d8::fldz (`d8`)
 #     0f     Fsy_   %*    W WhiteBright         \e[1;37m  FEFDFF            # vim %* resets statuslIn colr 2 Dfalt   White on darkblue so has max 10 colrz
@@ -1369,7 +1496,7 @@ CHR                           Yk           #cd= 01;33;40    01;33;40  CHaRacter 
 #     0b <-> EL__   %5*   C Cyan                \e[1;36m  1BFFFF   hour
 #     09 <-> C7V_   %6*   B Blue                \e[1;34m  1B7BFF   minute
 #     0d     DfX_   %7*   M Magenta             \e[1;35m  BB1BFF   second
-#     05     5O0F   %8*   P magentadark(Purple) \e[0;35m  7F0B87   frame
+#     05     5O0F   %8*   P magentadark(Purple) \e[0;35m  7F0B87   phass
 #     01 <-> 406A    ?    b blue   dark         \e[0;34m  03071B
 #     03 <-> 60SX    ?    c cyan   dark         \e[0;36m  077778
 #     02     20F9    ?    g green  dark         \e[0;32m  031B07

@@ -4858,3 +4858,10 @@ JA4MNext:Next ThePerlConference is likely to be in Houston, Texas from Wednesday
  Hopefully I can put together an hour-long present8ion on Octology to see if fellow Perl hackers like my work. Check HTTPS://PerlConference.US/tpc-2020-hou ;
 JA5M3Doc:HTTPS://YouTube.Com/watch?v=O0XJ1n6wnuI&list=PLA9_Hq3zhoFw2YKlCzOorEDMAzZwEgNgm&index=58 is a TPC lightning talk on docker-compose by M. Scott Ford;
 JBKL5Doc:HTTPS://Medium.Com/@skaji/perl-meets-github-actions-3893ae100205 describes defining Linux workflows to use docker to test various versions of Perl;
+JC7LLoop:HTTPS://Amazon.Com/dp/B0052B9LGQ/?tag=ricmen-20 is a $300 Zoom R8 Multi-Track SD Recorder, Controller, && Interface found researching bad Audacity
+   lag from high-latency overdubs, buffer-underruns, variable processing for all USB recording devices, && unpredictable speed with SSD's fluctu8ing as well;
+ HTTPS://LedgerNote.Com/columns/studio-recording/audio-latency describes sensible estim8s for how many milliseconds delay in different audio production areas
+   should be acceptable for monitoring sounds synchronized to multi-track dubs. That site also seems to have good articles on microphones && acoustic foams;
+JCFLHicu:International Components for Unicode versus /opt/Qt5.14/bin/uic User-Interface Compiler are some eyes-see-you && U.C.I. I'd like to note remember.
+ `mv /opt/Qt5.14/bin/moc /tmp/x` <root@OniJCFLI6YM/home/pip/dvl/g8/jack/Qt5.14/qtbase/examples/widgets/tools/plugandpaint>wh moc /usr/bin/moc # MetaObjCmpIlr
+ <root@OniJCFLI6fQ~/Qt5.14/qtbase/examples/wid*/tools/plugandpaint>moc --help Usage: /usr/lib/qt5/bin/moc [options] [header-file] [@option-file] v67 Qt5.12.4;
