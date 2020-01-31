@@ -1,5 +1,5 @@
 # F1RLLK2K:~/.lrc  by PipStuart <Pip@CPAN.Org> as an altern8 format for .lsrc ideally having new ~/bin/lrc gNR8 either from the other;
-# $VERSION='0.0';$d8VS='JCKLEdrp'; 2du:mkUtl2gNr8 altrn8 versN of .lsrc th@purposfuly varEz colrz of comon typz,try addng bakgrnd colrz2all dFz&&tst,
+# $VERSION='0.0';$d8VS='K1ULJEST'; 2du:mkUtl2gNr8 altrn8 versN of .lsrc th@purposfuly varEz colrz of comon typz,try addng bakgrnd colrz2all dFz&&tst,
 #   add interaction2 lsd8 wN it Dtectz unrecognIzd XtNshNz offerng c@egOrEz with comon colr2autOm@ically insrt chOsN NtrEz,mAB add *-* NtrEz from .zshrc hEr &&
 #   mk lrc gNr8 either,confirm all accept f0nt cOdez wi dash accepting Dfalt foreground then redo NORMAL FILE LINK as no fi ln,mAB 8trm added2TERM ls someday;
 # 819J2Pip:~/.lsrc by PipStuart <Pip@CPAN.Org> izAheavily modifId`dircolors`cfgfIl(Orig ~/.DIR_COLORS)wich setz $ENV{'LS_COLORS'} 4GNU`ls --color`&&`lsd8`;
@@ -115,12 +115,15 @@ CHR                           Yk           #cd= 01;33;40    01;33;40  CHaRacter 
 .2do                          O            # .2do (old ToDo.ls fylz)
 .2de                                       # .2de (old 2 Dey -> 2dA)
 .4mtd                         o            # H9NMDKNO:~/.irssi/ custom-aligned cfg && Dflt.theme filez (trying lower-case 'o' for non-2pal8 orange here);
+.am                                        # AutoMake script (like my git cloned source repo for xdg-desktop-portal-gtk, wich stil didn't rid syslog erorz)
+.ac                           o            # AutoConf script (or maybe an AnonymousCoward on SlashDot or something)
 .cfg
 .cnf
 .config
 .conf-sample
 .ckm8                                      # my own SDL && Curses Chess program's game-recording output file-format
 .dox                                       # my personal doQmNt8ion files (first used for logging my HTTPS://Screeps.Com 2torials progress)
+.dd                                        # my personal ~/dox/dvl/GTrm/GnomTerm-dconf-dump file but could also be for DiskDriveD8aDuplic8ion files
 .sgf                                       # HTTPS://En.WikiPedia.Org/wiki/Smart_Game_Format                which is used by HTTPS://Online-Go.Com
 .pgn                          O            # HTTPS://En.WikiPedia.Org/wiki/Portable_Game_Notation           hopefully to be l8r loaded by ckm8
 .fen                          C            # HTTPS://En.WikiPedia.Org/wiki/Forsyth%E2%80%93Edwards_Notation hopefully to be l8r loaded by ckm8
@@ -146,21 +149,23 @@ CHR                           Yk           #cd= 01;33;40    01;33;40  CHaRacter 
 .ttreerc
 .gtkrc-2.0
 .properties
-.renamecategories             M            # /etc/xdg        files
-.categories                                # /etc/xdg        files
-.codes                        C            # /etc/xdg        files
-.areas                        R            # /etc/xdg        files
+.renamecategories             M            # /etc/xdg/            filz
+.categories                                # /etc/xdg/            filz
+.codes                        C            # /etc/xdg/            filz
+.areas                        R            # /etc/xdg/            filz
 .recommended                               # /etc/zsh/newuser.zshrc.recommended
 .minicpanrc
+.slice                        M            # /lib/systemd/system/ filz `man systemd.special` documents User&&Session or VirtualMachine&&Container Slices
+.automount                    O            # /lib/systemd/system/ filz
+.mount                                     # /etc/systemd/system/ filz
 .message
 .mesg                                      # MEsSaGe az(ch@EmlInstantTxtMedia*) messagez
-.mount                                     # /etc/systemd/system files
 .ch3tm                        M            # /**/*.ch3tm(chEtmz)azCheatSheet.htm HTML fylz
 .ch3t                                      # /**/*.ch3t (chEtz)prImrLE4 ~pip/dox/dvl/ref/(Vim|XML|Zsh|Perl|.*)(Cheat(Sheet)?)?.txt fylz2trnzitN2
 .chat                                      # GTalk|JabR|IRC|ICQ|Y!IM|AIM|XMPP|SMS|MMS|*IM.chat, mAB ~pip/dox/dvl/ref/*Cheat* canB .ch3t?
 .cht                                       # PyQt.cht  (chRtz), ATIRadeonMSLose98Doze32BitDrvrz.CompressedHelpText?
-.real                                      # /etc/apparmor.d files
-.man                                       # /etc/apparmor.d files
+.real                                      # /etc/apparmor.d/     filz
+.man                                       # /etc/apparmor.d/     filz
 .mSj
 .msg
 .gml
@@ -170,6 +175,8 @@ CHR                           Yk           #cd= 01;33;40    01;33;40  CHaRacter 
 .dL0g
 .L0g
 .dlg                                       # ~/mvz/lnf8 MooVeeZ linez script dialog fated
+.pot                          p            # ~/dvl/g8/jack/xdp/po/xdg-desktop-portal.pot maybe Portal or Project Object Texts with MIME-Type && msgid strings
+.Po                                        # ~/dvl/g8/jack/xdp/src/.deps/xdg_desktop_portal-xdg-desktop-portal.Po maybe Pre-configured Object component lists
 .IZ                                        # NumbFuck/curs/ncurses/README.IZ
 .key
 .keys                                      # NumbFuck/curs/include/
@@ -318,10 +325,13 @@ CHR                           Yk           #cd= 01;33;40    01;33;40  CHaRacter 
 .Xrc                          Y
 .Xresources
 .xtermcontrol
-.gitconfig
+.doxy                                      #         file in Qt5 qtdeclarative/ project sub-directory
+.Chromium                                  # LICENSE file in Qt5 qtwebengine/   project sub-directory
+.QT-LICENSE-AGREEMENT                      # LICENSE file in Qt5 qtbase/        project sub-directory && in `git clone git://code.qt.io/qt/qt5.git` qt5/
 .milkytracker_config
 .fbhighscores
 .linux_logo
+.gitconfig
 .netrwhist                                 # ~/.vim/
 .opt                                       # configure script parameter options file (with each option on a sepR8 line)
 .options
@@ -431,6 +441,7 @@ CHR                           Yk           #cd= 01;33;40    01;33;40  CHaRacter 
 .example
 .sample
 .xmpl                         C
+.trs                                       # ~/dvl/g8/jack/xdp/ xdg-desktop-portal Test ReSults filz
 .readme
 .README
 .ME                                        # NumbFuck/curs/(form|menu)/READ.ME
@@ -463,6 +474,7 @@ CHR                           Yk           #cd= 01;33;40    01;33;40  CHaRacter 
 .so
 .id
 .in
+.in~                          r            # ~/dvl/g8/jack/xdp/ xdg-desktop-portal presumably .h.in backup file from previous ./configure run
 .cps
 .rnd
 .devfs
@@ -491,17 +503,21 @@ CHR                           Yk           #cd= 01;33;40    01;33;40  CHaRacter 
 .HTML
 .TOML                                      # apparently some other Tcl Object Markup Language or something with rustup for cargo build inside nushell release
 .toml
-.yml
-.YML
-.yaml
+.qml                                       # Qt Mark-up Language            filz
+.qmlc                         p            # Qt Mark-up Language Cache      filz (from ~/.cache/krita/qmlcache/)
+.jsc                          o            # Qt JavaScript?      Cache      filz (from ~/.cache/krita/qmlcache/)
 .json
 .xml~                         p
 .xml
 .XML
 .xhtml
 .XHTML
-.dae                                       # COLLADA Digital Asset Exchange filz
+.YAML
+.yaml
+.yml
+.YML
 .DAE
+.dae                                       # COLLADA Digital Asset Exchange filz
 .hkx                                       # HavoK  (physics data)  Xml     filz
 .HKX
 .hko                                       # HavoK  (physics data)  Xml     filz
@@ -520,6 +536,7 @@ CHR                           Yk           #cd= 01;33;40    01;33;40  CHaRacter 
 .desc                                      # /usr/share/tasksel/ or ~/.mplayer/font/
 .vars
 .order
+.portal                                    # /usr/(local/)?share/xdg-desktop-portal/portals probably just for gnome-shell, gtk, && kde
 .BUILDINFO                                 # cadence 0.9.1-1 lists all my system's installed libraries with versions neatly after the variable section;
 .MTREE                        K            # cad && qjc qJackCtl seem to be the 2 awkward ways to setup JACK but I can't seem to get audio out of either;
 .PKGINFO                      c            # cadence output for makepkg && fakeroot with various bridges to JACK that don't seem to work for playback yet;
@@ -527,8 +544,11 @@ CHR                           Yk           #cd= 01;33;40    01;33;40  CHaRacter 
 .inf
 .img                                       # putr-NetRtrG8Wz FirmWare IMaGe
 .vti                                       # VTK Image d8a from ParaView by KitwareInc. to visualize large d8a sets
+.ass                          o            # Audio Sub-title System for like video overlay text for closed-captioning    (from ~/.config/smplayer/*)
+.m3u8                                      # basic   playlist muz filz in a .txt simpleformat (presumably a UTF-8 variant from ~/.config/smplayer/*)
 .m3u                          P            # basic   playlist muz filz in a .txt simpleformat (proly just listing filepath&&name/line,wi no metad8a)
 .pls                                       #         PlayLiSt muz filz in a .ini style format
+.tox                                       # ~/.xine PlayList muz filz in a .json or MakeFile style format (also for mvz videos too)
 .wpl                                       # Windows PlayList muz filz in a  XML       format for Microsoft WindowsMediaPlayer
 .spi
 .itl                          P            # iTunes Library
@@ -617,11 +637,13 @@ CHR                           Yk           #cd= 01;33;40    01;33;40  CHaRacter 
 .h                            o            # C/C++ Header files were Cyan like main source files but plain ls was getting some kind of orange, so setting it
 .c
 .cc
-.app                                       # Qt5/qtbase/mkspecs/macx-* files
+.cli                                       # ~/dox/putr/Oni/Oni-systemd-services file logging root commands used to manage running services
+.app                                       # Qt5/qtbase/mkspecs/macx-* filz
 .cpp
 .cgi
 .inc
 .src
+.vlt                                       # ~/.local/share/vlc/skins2/*  VLC VideoLAN.Org Theme / skin2 filz
 .vsc                                       # VimScrptClipbord(eg:ptg2clip.vsc)
 .vim
 .PL
@@ -665,7 +687,9 @@ CHR                           Yk           #cd= 01;33;40    01;33;40  CHaRacter 
 .schemas
 .aliases
 .globals
+.preset                                    # ~/.qmmp/eq .ini style file for storing the Equalizer settings between program invoc8ionz
 .build
+.ninja                                     # meson advanced build filz used for GitHub flatpak's libportal to upd8 xdg-desktop-portal(-gtk)? there too
 .pause
 .fbrc
 .prf                                       # Kenta Cho Sh'mups preferences && high-score d8a like for Parsec47 and R-Rootage
@@ -834,12 +858,13 @@ CHR                           Yk           #cd= 01;33;40    01;33;40  CHaRacter 
 .cache-3                      M            # ~/.cache/fontconfig/[0-9a-f]{32}-le64.
 .cache-4                      R            # ~/.cache/fontconfig/[0-9a-f]{32}-le64.
 .xftcache
+.journal                                   # ~/.local/share/tracker/data/ filz (could do .ontology.journal distinctly)
 .dist
 .distmap
 .default
 .exclude
 .esd_auth
-.oosplash                                  # /etc/apparmor.d files
+.oosplash                                  # /etc/apparmor.d filz
 .etcbackup
 .OLDdefault
 .pulse-cookie
@@ -925,6 +950,7 @@ CHR                           Yk           #cd= 01;33;40    01;33;40  CHaRacter 
 .cdcdrc
 .cdserverrc
 .defaults                                  # /etc/(xdg|texmf/texdoctk)/
+.md5sums                                   # /var/lib/dpkg/info/ filz
 .reboot                                    # /run/
 .handmap
 .failsafe
@@ -959,6 +985,7 @@ CHR                           Yk           #cd= 01;33;40    01;33;40  CHaRacter 
 .mkv                                       # Matroska.Org
 .m2v                                       # MPEG-2 Video    only
 .m4v                                       # MPEG-4 Video    only
+.mo                                        # /usr/(local/)?share/locale/*/LC_MESSAGES/xdg-desktop-portal(-gtk|-kde)? probably binary MIME-Object filz
 .mov                          M            # MPNS-?\VD0gIna?coctaineR?  hUnterScumFal0PN werEgamEt0cIt amystREplacNta&&hmbLcLc||dCthruCapaCT NQb8R 0m
 .MOV                          M
 .dot                          M            # graphvizfyl
@@ -983,6 +1010,7 @@ CHR                           Yk           #cd= 01;33;40    01;33;40  CHaRacter 
 .tga
 .tif
 .tiff
+.vid                                       # generic video file or just a touched file in my ~/dox/dvl/dokr/ directory for a 2017 YouTube video ID URL
 .vob                                       # MPEG-2 DVD
 .wmv                                       # Windows Media Video
 .xbm
@@ -1069,7 +1097,11 @@ CHR                           Yk           #cd= 01;33;40    01;33;40  CHaRacter 
 .webbrowser-app               C            # /etc/apparmor.d
 .lxd-bridge-proxy             M            # /etc/apparmor.d
 .features                     W            # /etc/apparmor.d/cache
-.service                      C            # /etc/avahi/services
+.service                      C            # /etc/avahi/services && /(etc|lib)/systemd/system/
+.socket                       R            #                        /(etc|lib)/systemd/system/
+.target                       o            #                        /(etc|lib)/systemd/system/
+.timer                        Y            #                        /(etc|lib)/systemd/system/
+.path                         p            #                        /(etc|lib)/systemd/system/
 .upgrade                      M            # /etc/compizconfig/upgrades
 .seat                         c            # /etc/ConsoleKit/seats.d
 .acm                          M            # /etc/console-setup
@@ -1326,7 +1358,9 @@ CHR                           Yk           #cd= 01;33;40    01;33;40  CHaRacter 
 .FDL                          w
 .GPL                          o
 .GPL2                         Y
+.GPLv2                        Y
 .GPL3                         W
+.GPLv3                        W
 .LGPL                         o
 .LGPL3                        W
 .LGPLv3                       W
@@ -1470,6 +1504,7 @@ CHR                           Yk           #cd= 01;33;40    01;33;40  CHaRacter 
 .15.0-24-generic              cg
 .15.0-23-generic              bg
 .15.0-22-generic              mg           # BlO /boot Linux kernelz versionz 5.0.0 onward started with Ubuntu 19.04 Disco Dingo, so dark grn bkgr 4.15 abov
+.0.0-38-generic               Rc
 .0.0-36-generic               oc
 .0.0-32-generic               Yc
 .0.0-31-generic               Gc
@@ -1483,9 +1518,10 @@ CHR                           Yk           #cd= 01;33;40    01;33;40  CHaRacter 
 .0.0-17-generic               Gc
 .0.0-16-generic               Cc
 .0.0-15-generic               Bc
-.0.0-13-generic               Mc
-.3.0-24-generic               R            # BlO /boot Linux kernelz versionz 5.3.0 onward started with Ubuntu 19.10 Eoan Ermine, so dark cyan bkgr 5.0 abov
-.3.0-23-generic               o
+.0.0-13-generic               Mc           # BlO /boot Linux kernelz versionz 5.3.0 onward started with Ubuntu 19.10 Eoan Ermine, so dark cyan bkgr 5.0 abov
+.3.0-26-generic               R
+.3.0-24-generic               o
+.3.0-23-generic               Y
 #                                          # zsh wraps '%{' ANSI '%}' && vim User[1-9] colrz specify BlO ForeGroundz all on darkblue BakGrnd4statuslIn
 #     4NT    etfp   vim  c8  color              ANSI      HTML    Octology::d8::fldz (`d8`)
 #     0f     Fsy_   %*    W WhiteBright         \e[1;37m  FEFDFF            # vim %* resets statuslIn colr 2 Dfalt   White on darkblue so has max 10 colrz

@@ -1,9 +1,8 @@
 ! E8KM2Ocw:~/.Xrc by PipStuart <Pip@CPAN.Org> to start having some additional xterm && maybe urxvt or aterm settings on Aku. According to this 2014 site:
-! $VERSION='0.0';$d8VS='G8RMLfbL'; HTTPS://Wiki.ArchLinux.Org/index.php/x_resources .Xdefaults is deprec8d for .Xresources (or my .Xrc) wich requires xorg-xrdb
+! $VERSION='0.0';$d8VS='K1VLFont'; HTTPS://Wiki.ArchLinux.Org/index.php/x_resources .Xdefaults is deprec8d for .Xresources (or my .Xrc) wich requires xorg-xrdb
 !   be installed 2run:`xrdb ~/.Xrc`; If I someday return to using `startx`, I will probably need to add2 my ~/.xinitrc "[[ -f ~/.Xrc ]] && xrdb -merge ~/.Xrc".
-!   See default settings for installed X11 apps in /usr/share/X11/app-defaults (if it exists) && see currently loaded resources with `xrdb -query -all`.
-!   Comment must start bang !, not hash #. Maybe `xrdb -remove .Xrc` will remove these values from server while -n -merge will Not actually merge but will show
-!   what would happen if it did.
+!   See default settings for installed X11 apps in /usr/share/X11/app-defaults (if exists) && see curNtly loaded resources with `xrdb -query -all`. Just `xrc`.
+!   Comment must start bang !, not hash #. Maybe `xrdb -remove .Xrc` will rm these vals from server while -n -merge will Not merge but shows what would happen.
 ! `for T in `find /usr/share/terminfo -type f -printf '%f '`;do echo "$T `tput -T $T colors`";done|sort -nk2` shows a ton of supported terms to maybe try:
 !     Eterm-88color    Eterm-256color      mlterm-256color    putty-256color           screen-256color-s    Probably test:Eterm,aterm,urxvt,konsole,vte,
 !     rxvt-88color     gnome-256color      mrxvt-256color     rxvt-256color            terminator             terminator,nsterm,mrxvt,mlterm,putty,iTerm
@@ -46,12 +45,20 @@ XTerm*VT100.allowFontOps:       true
 XTerm*VT100.allowTcapOps:       true
 ! Specifies whether or not escape sequences to change colors assigned to different attributes are recognized (default might be false?):
 XTerm*dynamicColors:            true
-XTerm*faceName:                 Terminus:style=Regular:size=8
-!XTerm*font:                     -*-dina-medium-r-*-*-16-*-*-*-*-*-*-*  ! Default font:fixed && faceSize:14 && faceName eg. had size=10 (7 or 8 fit well)
+!XTerm*faceName:                 Terminus:style=Regular:size=8
+!XTerm*VT100.font:               -*-dina-medium-r-*-*-16-*-*-*-*-*-*-*  ! Default font:fixed && faceSize:14 && faceName eg. had size=10 (7 or 8 fit well)
+! maybe below can set class Font5 corresponding to "Large" in the standard menu (Control-RightClick [Button3])
+!XTerm.VT100.UTF8Fonts.font:     font5
 !XTerm*faceSize:                 8
-! Changing Size above does not seem to change anything. Might want to try below l8r instead (with 8x16?):
-!XTerm*faceName:                 Liberation Mono:size=8:antialias=true
-!XTerm*font:                     7x13
+! Changing Size above does not seem to alter anything. Might want to try below l8r instead (with 8x16 instead of 7x13 that I had for a while before?):
+XTerm*faceName:                 x:fixed,Liberation Mono:size=8:antialias=true,Hack:size=8:antialias=true,Courier 10 Pitch:size=10:antialias=true
+!XTerm*VT100.font:               8x16
+!      faceName (class FaceName) specifies pattern 4 scalable fonts selected from FreeType lib if support compiled in. No default val. multi fonts comma-sep.
+! Prefix “x:” or “x11:” applies to XLFD font resource. "xft:" or missing prefix means TrueType. example: XTerm*faceName: x:fixed,xft:Bitstream Vera Sans Mono
+! Ifno faceName resource specified, or if no match for both TrueType normal && bold fonts, xterm uses the XLFD (bitmap) font && rel8d resources.
+! May find bitmap fonts using: #!/bin/sh\nFONT=`xfontsel -print`;test -n "$FONT" && xfd -fn "$FONT"; # or try `fc-list :scalable=true:spacing=mono: family`;
+!   Bitstream Vera Sans Mono  !  Courier 10 Pitch  !  DejaVu Sans Mono  !  Fira Code,Fira Code Light,Fira Code Medium,Fira Code Retina  !  FreeMono
+!   Hack  !  Inconsolata  !  Liberation Mono  !  Mitra Mono  !  Nimbus Mono L  !  Noto Mono,Noto Color Emoji  !  Tlwg Mono,Tlwg Typo  !  Ubuntu Mono
 ! If locale settings are correct for UTF-8, the following makes xterm interpret all incoming data as UTF-8 encoded: (should learn more about u8 && utf8)
 !XTerm*locale:                   true
 XTerm*utf8:                     2
@@ -65,10 +72,10 @@ XTerm*scrollKey:                true
 XTerm*scrollTtyOutput:          false
 XTerm*jumpScroll:               true
 XTerm*multiScroll:              true
-! Default cursorBlink 0, On 600, Off 300
+! Default cursorBlink false, On 600, Off 300 milliseconds (with command-line parameters -bc -bcn 512 -bcf 256)
 XTerm*cursorBlink:              true
-XTerm*cursorOnTime:             640
-XTerm*cursorOffTime:            320
+XTerm*cursorOnTime:             512
+XTerm*cursorOffTime:            256
 XTerm*appcursorDefault:         true
 XTerm*appkeypadDefault:         true
 XTerm*toolBar:                  true

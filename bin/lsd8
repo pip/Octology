@@ -1,6 +1,7 @@
 #!/usr/bin/perl
 # D94MHThP:lsd8 crE8d by PipStuart <Pip@CPAN.Org> 2XtNsively manipUl8 typical `ls -l` output2convey octal permz,Base64 sizez,d8 stampz,&& many colrz&&f0ntz!
-# 2du:fix `l /dev` to handl "crw-rw-rw-  1 root root      1,   5 2018-09-20 13:14:16.717590724 -0500 zero",
+# 2du:fix sym-link color8ion to flash when the target does not exist like ls already does for file-system entries such as /etc/printcap with $lspt{'or'},
+#   fix `l /dev` to handl "crw-rw-rw-  1 root root      1,   5 2018-09-20 13:14:16.717590724 -0500 zero",
 #   full-screen console on Chun after bkgrnd owner colr && after directory classiFic8ion slashes in `l ~` so Dtect && fix,
 #   would be cool to detect && accept piping in && use that to temporarily re-map all a8 export colors && map `S` uses to then `lsd8|subS|lsd8` 2 revamp,
 #   add colr 4 drwxrwxr-t ~/muz/flac/mix like ls with probably just st STICKY,figUr out wich muz subdirz hav prolyUTFchrz th@ caus failUr&&hndl thM,
@@ -23,18 +24,18 @@
 use strict;use warnings;use utf8;use v5.10; # mAB tSt if just regUlR -t STDIN && -t STDOUT R Dtectng intractiviT corectly 1st,B4 fallng bak on IO::Interactive
 #se IO::Interactive qw(is_interactive); # employ if(is_interactive()){} around all colring to attempt to behave like `ls --color=auto` when piped away
 use Encode;use Octology::a8;#se Octology::c8;
-           use Octology::b8;use Octology::d8;use Time::PT;my $VERSION='0.0';my $d8VS='JB8LDoGo';my $sllw=0; # SymLink LargestWidth to track for alignment
+           use Octology::b8;use Octology::d8;use Time::PT;my $VERSION='0.0';my $d8VS='K1BLLETS';my $sllw=0; # SymLink LargestWidth to track for alignment
 open my $out8,'>&',STDOUT or die "Can't open  duplic8 STDOUT handle: $!"; binmode $out8,':encoding(UTF-8)'; # crE8 local duplic8 of global
 my $vsrt='-v'; my @b64d;my $t;my $sbdr;my $b64c;my($pwnw,$grpw,$grpx);$pwnw=$grpw=$grpx=0; # default -v Version SoRT,reversed b8 Colr List matchz Dfalt d8 ordr
 my $jfdz=join('|',@Day);my $jfmz=join('|',@Mon); # Joined Fieldz for DayZ and MonthZ to regex with  # BlO mAB some ARGVz shud!B sNt thru -d tSt so Dtect 1st?
 my $tpwd= 4;# set just the b64 T0talPaddingWiDth (3 of the subdirz in my ~/muz/ reach a width of 4, but the vast majority of dirz are only 1or2 b64 charz wId)
 my $hwid=64;#$hwid=$ENV{'HWid'} if(exists($ENV{'HWid'}) && length($ENV{'HWid'})); # lOd terminal 8sh"H"WIDth2rIt-justify dir t0tlz AgNst (if uncomNtd aftrDflt)
 for(@ARGV){if   (-d  "$_" ){s/([()&!'])/\\$1/g;}  # atMpt2alow`l *`2work bySKpng pRNz&&othr spcl chrz in dir||fIlnAm pRamz&&DcOd4wId
-  elsif         (-e  "$_" ){s/^(.+   )$/"$1"/x;}
+  elsif         (-e  "$_" ){s/^(.+   )$/"$1"/x;}  # need 2 save existing dir && file paramz 2 test sym-linkz existence against l8r without failing to find all
   elsif         (/^-?-?V$/){    $vsrt  = $_='';}} # try2alow invalid -V to actually not do default -v passed on to ls,shud Dtect -help like this also
 my @ldat=`ls -lF $vsrt --full-time --color=never @ARGV`;my $t0tl='0';my $subd='.';my($list,$prmz,$blsz,$pwnr,$grup,$fsiz,$d8tz,$fnam,$cmpr,$b6bs,$b6fs);
 my %lsp8;my %sqrm;my %sqra;my $cqrk;my $psdl=0; # Separ8or QuotedRegex Main&&Altern8 mapz, Current QuotedRegex Key, Previous SubDirectory Length
-my %lspt=('re'=>$z,'no'=>  $z   ,'fi'=>  $z   ,'ln'=>  $W   ,'or'=>S('RcK'),'mi'=>S('WrK'),'ex'=>$G,'su'=>S('Wg'),'sg'=>S('ky'),  # mk sureDcNtDfaltzXist
+my %lspt=('re'=>$z,'no'=>  $z   ,'fi'=>  $z   ,'ln'=>  $W   ,'or'=>S('RcL'),'mi'=>S('WrL'),'ex'=>$G,'su'=>S('Wg'),'sg'=>S('ky'),  # mk sureDcNtDfaltzXist
           'di'=>$B,'st'=>S('Wb'),'ow'=>S('Bg'),'tw'=>S('km'),'pi'=>S('yk' ),'so'=>  $M    ,'do'=>$M,'bd'=>S('Yk'),'cd'=>S('Yk')); #   wich shudB sAm as .lrc
    $cqrk= qr/(\.+)/  ;$sqrm{$cqrk}=$W;$sqra{$cqrk}=$C;$cqrk= qr/([&]+)/ ;$sqrm{$cqrk}=$M;$sqra{$cqrk}=$R;
    $cqrk= qr/(_+)/   ;$sqrm{$cqrk}=$C;$sqra{$cqrk}=$M;$cqrk= qr/([!]+)/ ;$sqrm{$cqrk}=$R;$sqra{$cqrk}=$B;
@@ -112,7 +113,9 @@ for(@ldat){if(($prmz,$blsz,$pwnr,$grup,$fsiz,$d8tz,$fnam)= /^(\S{10})(\s+\d+)(\s
     if    (($bgin,$fsnm)= $fnam=~/^(.+?)\s->\s(.+)$/    ){if($sllw <= length($bgin)){$sllw=length($bgin);}else{$bgin.=' 'x ($sllw - length($bgin));}
                                                           $n=$lspt{'di' };if($bgin=~ s/^(.*\/)//){$bpth=spcs("$n$1",$subd,$n);} # split off pathz
                                                                           if($fsnm=~ s/^(.*\/)//){$fpth=spcs("$n$1",$subd,$n);}
-                                                          $n=$lspt{'ln' };$bgin=spcs("$n$bgin",$subd,$n); # sepR8ly colr pRtz
+                                                          $n=$lspt{'ln' };my $fssn=$fsnm;$fssn=~ s/(^\s+|\s+$)//g;  # setup next color 4 ORPHAN if no sl tRget
+                                                         #$n=$lspt{'or' } if(      !-e  $fssn); # need 2 strip surrounding spacez && test -e against param dir
+                                                                          $bgin=spcs("$n$bgin",$subd,$n); # sepR8ly colr pRtz
       if    ($fsnm=~  /\*$/){                             $n=$lspt{'ex' };$fsnm=spcs("$n$fsnm",$subd,$n);$fsnm=~ s/(\*)$/$W$1/;
       }elsif($fsnm=~  /\/$/){                             $n=$lspt{'di' };$fsnm=spcs("$n$fsnm",$subd,$n);
       }elsif($fsnm=~  /\=$/){                             $n=$lspt{'so' };$fsnm=spcs("$n$fsnm",$subd,$n);$fsnm=~ s/(\=)$/$R$1/; # some SOCKETz 2tSt in /run
@@ -208,7 +211,11 @@ for(@ldat){if(($prmz,$blsz,$pwnr,$grup,$fsiz,$d8tz,$fnam)= /^(\S{10})(\s+\d+)(\s
     my @uscz=split(//,$_   );            # UndecodedSplitCharZ
     my @dscz=split(//,$dcul);my $dgap=0; #   DecodedSplitCharZ, DecodingGAP between these arrayz
     for my $cndx (0..$#dscz){ # try to split && step charz together (but will need offsetz for diff countz) && backslash digitz might ascend octal nstd of dec?
-      if(192  <= ord($dscz[$cndx]) && ord($dscz[$cndx]) <=1144){print $out8 $dscz[$cndx];$dgap++;}  # 192-385 +120 312-505 `l ~/muz/mp3/Fa* ~/muz/mp3/Pe*`
-      elsif( defined($uscz[$cndx +$dgap ])                    ){print $out8 $uscz[$cndx +$dgap ];}} # ck DfInd just2B sure
+      if(192  <= ord($dscz[$cndx]) && ord($dscz[$cndx]) <=1144){ # 192-385 +120 312-505 `l ~/muz/mp3/Fa* ~/muz/mp3/Pe*`
+        if(!-t $out8 &&0){print $out8 sS($dscz[$cndx]);$dgap++  ;}  # hopefully detect when not outputting 2 TTY && strip ANSI color codes just B4 printing
+        else             {print $out8    $dscz[$cndx] ;$dgap++  ;}} # maybe need to upd8 a8.pm:sS() to require dash ahead of option parameters 2 not B confused
+      elsif( defined($uscz[$cndx +$dgap ])                    ){ # ck DfInd just2B sure
+        if(!-t $out8 &&0){print $out8 sS($uscz[$cndx  +$dgap  ]);}  # trying !-t STDOUT not Tty or will try -p named Pipe instead as output not 2 color for
+        else             {print $out8    $uscz[$cndx  +$dgap  ] ;}}}
   }} close $out8 or die "Can't close duplic8 STDOUT handle: $!"; # if lIn contAins bOth types of hI-bit chars,try2 Dcode just those that most likely need it
 # for(split(//,"БОЛЬШОИ ДЫМ")){print $out8 "char:$_:ordn:" . ord($_) . ";\n";} JB8LDoGo:`l ~/gmz/go` had plyrname wi ordz much bigger than 385 so upped 2 1144;

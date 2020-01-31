@@ -29,7 +29,7 @@ unsetopt                \
 # auto_pushd            \# setng addz dirz 2 stack wN just normally chngng 2 thM (wich I du not normally lIk or want)
 # ksh_arrays            \# rEmMbr wNwrItng scrptz[or funcz]2include'setopt [localoptions] ksharrays'sO arAzR 0-bAsed(but!glOblBcuzmOst scrptzRstndrdly 1-bAsed)
 # re_____match_____pcre \# mA want2set for Z-SHell scripting RegularExpressions to utilize PerlCompatibility styles && mA insert 'zmodload zsh/(pc)?re(gex)?';
-export vers='0.0';export d8VS='JCKLEQTk';export auth='PipStuart <Pip@CPAN.Org>'; # not Xportng $b sinc cOlIdz wi sort{$a <=> $b} /defhijlnqstuvx/i + AZ 4golf;
+export vers='0.0';export d8VS='K1ULKOPY';export auth='PipStuart <Pip@CPAN.Org>'; # not Xportng $b sinc cOlIdz wi sort{$a <=> $b} /defhijlnqstuvx/i + AZ 4golf;
 if     [[       "$SHELL"    == "" ]]; then       export SHELL=`  which zsh`;fi # 8sh should parse this && OverId it    # shud `man zshall` /OSTYP 2lern4BlO
 if     [[       "$HOSTNAME" == "" ]]; then       export HOSTNAME=`hostname`;fi #`hostname`retnz fsckd nwlInz\n4CygWinzRxvt... ||smthng els lame  =(
 if     [[       "$HOST"     == "" ]]; then       export HOST="$HOSTNAME"   ;fi;export VERBOSE='1'; # set flag to print debug && status info from system utilz
@@ -62,13 +62,13 @@ alias    clrz='echo -en "$z hk:$hk#$z; hr:$hr#$z; ho:$ho#$z; hy:$hy#$z; hg:$hg#$
 # 99RJGN8g:from old gN2 root@Ryu`em xinit`:IfUUse`startx`nstd ofa login mngr like gdm/kdm,Ucan set XSESSION 2anythng in /etc/X11/Sessions/ or any executable.
 #   wNU`startx`,itwilrunthis astheloginsession.Ucan set this ina filein /etc/env.d 4NtIrsys,orsetit perUser in ~/.bash_profile (or similR4othr shLz). Xamplof
 #   setng4wholsys:`echo XSESSION="Gnome" > /etc/env.d/90xsession; env-update && source /etc/profile`; EBJLAkY8:AkuUbu14.10 nolongrhas thOsdirz sOprolyunUsed;
-export JAVA_HOME='/usr/lib/jvm/java-7-openjdk-amd64';export LLVM_INSTALL_DIR='/usr/include/llvm';     # D7PM1TjA:upd8d4Ubu13.04&&ant4Android dvl 2add2pathBlO
+export JAVA_HOME='/usr/lib/jvm/default-java';export LLVM_INSTALL_DIR='/usr/include/llvm';     # D7PM1TjA:upd8d4Ubu13.04&&ant4Android dvl 2add2pathBlO
 export NODE_VERSION='v10.16.0'; # J5BMGHVf:NodeJS installed into /usr/local/lib/nodejs/node-v10.15.3-linux-x64/ according to:  J6KM5W16:upd8d to LTS version;
 export NODE_DISTRO='linux-x64';alias  erd='expo r d80k';alias epd='expo p d80k'; #   HTTPS://GitHub.Com/nodejs/help/wiki/installation instructionz; r=start
                                alias xord='erd';  alias xopd='epd';alias xo='expo';  # used to prefer xo => expo, but 4-char is already short enuf; p=publish
-ulimit  -c 65535; # 33,553,920-bytes # setz coredump size limit2 32MB (4Dbugng) wher #-param is *512-byte blox or 'unlimited' canBUsed
-typeset -U path ;path=($HOME/bin $HOME/.local/bin /usr/local/sbin /usr/sbin /sbin . $HOME/dvl/t8/node/node-$NODE_VERSION-$NODE_DISTRO/bin /opt/Qt5.13.1-pnp/bin
-  /usr/local/bin /usr/bin /bin /opt/bin $HOME/lib/perl5/bin $JAVA_HOME/bin $HOME/lib/Octology/f8/pal8 $HOME/dvl/t8/dmd/linux/bin $path);
+ulimit  -c 65535; # 33,553,920-bytes # setz coredump size limit2 32MB (4Dbugng) wher #-param is *512-byte blox or 'unlimited' canBUsed  # /opt/Qt5.13.1-pnp/bin
+typeset -U path ;path=($HOME/bin $HOME/.local/bin /usr/local/sbin /usr/sbin /sbin . $HOME/dvl/t8/node/node-$NODE_VERSION-$NODE_DISTRO/bin
+  /usr/local/bin /usr/bin /bin /opt/bin $HOME/lib/perl5/bin $HOME/lib/Octology/f8/pal8 $HOME/dvl/t8/dmd/linux/bin $JAVA_HOME/bin $path);
 # old:atmptd2nstl DMDv2.052 on Java7OpenJDK && GoogleAndroid-18 (4.2), now J5BMGPOM:tryng2setup l8st NodeJS 4 React_n8ive Expo d8ok nstdof nodebrew hopefully;
 #          path=($path  $HOME/dvl/t8/node $HOME/.nodebrew/current/bin );export path; # I7CMBrew:got GitHub NodeBrew 4NodeJS; Not sure why src doesn't get this?
 #          path=($path  $HOME/dvl/jobz/InnovationProtocol/Android/Android-Google-Linux_x86-SDK-1.6_r1-99GFQiD/tools); # old2009GoogleAndroid dvlpmnt-toolz path
@@ -81,9 +81,20 @@ export PERL_LOCAL_LIB_ROOT="       $HOME/lib/perl5";export QT_XCB_DEBUG_XINPUT_D
 export PERL_MB_OPT="--install_base $HOME/lib/perl5";alias pnp='/opt/Qt5.13.1-pnp/examples/widgets/tools/plugandpaint/plugandpaint &'; # JCKLFIXR:Works well!;
 export PERL_MM_OPT="  INSTALL_BASE=$HOME/lib/perl5";      # I know these && path below were slightly different on Ryu, && Aku hasn't even needed lib/perl5;
 export CHROME_USER_DATA_DIR="$HOME/.chrome";              # G1NL5XYZ:Used2hv2vim /opt/google/chrome/google-chrome &&nsrt cd /tmp B4 last blok aftrEch upd8;
-export LD_LIBRARY_PATH="$LD_LIBRARY_PATH:/usr/local/lib:/opt/Qt5.13.1-pnp/lib"; # B52MDt4l:Added4Box2D; JCJLM4LD:Added opt2Cif biltQt run kritaAgN;
-#xport LD_LIBRARY_PATH="$HOME/dvl/g8/jack/Qt5.13.1/lib:/usr/local/lib";   # JCKL2WPa:Try removing opt lib path && adding built 5.13.1 for krita;
-export PKG_CONFIG_PATH="/usr/lib/pkgconfig";export QML_IMPORT_TRACE='1';  # E2LLATsm:Added4SrcHiLite
+export LD_LIBRARY_PATH="$LD_LIBRARY_PATH:/usr/local/lib"; #:/opt/Qt5.13.1-pnp/lib"; # B52MDt4l:Added4Box2D; JCJLM4LD:Added opt2Cif biltQt could run kritaAgN;
+export PKG_CONFIG_PATH="/usr/lib/pkgconfig"; #xport QML_IMPORT_TRACE='1';  # E2LLATsm:PkgCnfgPth Added4SrcHiLite; ## belo aliases may no longer work aftr mvd;
+alias vpnp="cd $HOME/.mk/qt5/qt5.13.1/qtbase/examples/widgets/tools/plugandpaint;g8f;cd app;vim *.*;gas"; #thN `gcm $MSG` g8co -b 5.13.1-pnp origin/5.13.1;
+alias mpnp="cd $HOME/.mk/qt5/Qt5.13.1-pnp;./config.status -recheck-all;cd qtbase/examples/widgets/tools/plugandpaint;mkcl;mkj;smi;pnp "; # v ed,m mk&&instl
+alias vtab="cd $HOME/.mk/qt5/qt5.13.1/qtbase/examples/widgets/widgets/tablet    ;g8f;       vim *.*;gas";alias tab='qtx'; #thN run ( gcm "`d8`:$CkInMsg" )
+alias mtab="cd $HOME/.mk/qt5/Qt5.13.1-pnp;./config.status -recheck-all;cd qtbase/examples/widgets/widgets/tablet    ;mkcl;mkj;smi;qtab"; # v ed,m mk&&instl
+alias qtab='/opt/Qt5.13.1-pnp/examples/widgets/widgets/tablet/qttablet &'; # ~/dvl/g8/jack/qt5.13.1/qtbase/examples/widgets/widgets/tablet as better 4 pressure
+alias  qtx="   $HOME/dvl/m8/qtx/qtx &"; # my extracted Qt Tablet eXample executable in the same directory as the source, project, resources, && Makefile
+alias sdab='sda  blame';alias sda='systemd-analyze';alias slsa='syc list-units --type service --all'; # not SCSI-Disk-A (like in /dev/);
+alias sctl='syc';alias jctl='journalctl';alias actl='alsactl';alias cctl='cdc';alias jc='jctl';alias jcb='jc -b';alias jcp1='jc _PID=1'; # not (JesusChrist ;)
+alias slts='syc list-unit-files --type=service'; # readd about this from `d8 G5I` article: HTTPS://Linux.Com/tutorials/cleaning-your-linux-startup-process/ ;
+alias sysc='  systemctl';alias syc='sysc  '; # systemd control:`syc list-unit-files --type=service|gi (en|dis)able|mask|static`,`syc stop|disable|mask|status`
+alias  cdc='coredumpctl';alias cdr='cdc -r'; # seg-fault core-dumps, with useful params -r Reverse, -S $DATE Since YYYY-MM-DD date, --no-pager 4 just STDOUT;
+alias  cds='cdc -S';alias cdS='cds';alias cdsK='cds 2020-01-01'; # shortcuts for doing --since=$DATE && cdsK does since `d8 K11` for everything Year 2020 on;
 # consider replacing below with exportz like a8 fully escaped color variablez so that shell scriptz can echo them similarly (and add $f[0-9A-Za-z._] f0ntz too)
 #echo -e "$k   k $r   r $o   o $y   y $g   g $c   c $b   b $m   m $p   p $w   w"  # used to have c8[fb]g.2ae map here but unnecessary
 #echo -e "$bk bk $br br $bo bo $by by $bg bg $bc bc $bb bb $bm bm $bp bp $bw bw"
@@ -95,14 +106,15 @@ export PKG_CONFIG_PATH="/usr/lib/pkgconfig";export QML_IMPORT_TRACE='1';  # E2LL
 export LANG='en_US.utf-8';export LC_ALL="$LANG"; export LC_CTYPE="$LANG";export LANGUAGE="$LANG"; # orig mA hav nEded thEs lang setngz4 urxvt?
 # 82DJ06ZE:instead of abov relying on exported ENV variablez it seemz betr2set /etc/(env.)?d(efault)?/(02)?locale or2use `localedef` probably4mostUsecases?;
 #xport TERM='linux'; # find out when explicit TERM assignment has seemed necessary (maybe for vim colors but fixed by .vimrc "set background=dark"?)
-#                      export PYTHONPATH="/usr/lib/x86_64-linux-gnu/krita-python-libs/krita"; # nothing set this before, but krita wants it, so guess 4m@
+                       export PYTHONPATH='/usr/lib/x86_64-linux-gnu/krita-python-libs/krita'; # nothing set this B4 && krita wantd it,but Xprt here is!enuf;
 #       `which vim`; #dflt(&&preferred)way2load my *.pm (butTaki shud nstd get i386 path)  ## above tried exporting otherwise unused but krita still warnd;
 export QT_LINUX_ACCESSIBILITY_ALWAYS_ON='1';export QT_ACCESSIBILITY='1'; # not yet sure what these impact, but making a note intending to find out more l8r;
-export      QT_QPA_PLATFORM_PLUGIN_PATH='/opt/Qt5.13.1-pnp/plugins'; #/usr/lib/x86_64-linux-gnu/qt5/plugins'; # JC9LIke9:fix libqxcb.so to 0x50D01 somehow;
-alias krav='QT_QPA_PLATFORM=xcb QT_QPA_VERBOSE=1   QT_DEBUG_PLUGINS=1 krita &'; # /usr/bin/platforms/ -> /usr/lib/x86_64-linux-gnu/qt5/plugins/platforms/
+#xport      QT_QPA_PLATFORM_PLUGIN_PATH='/opt/Qt5.13.1-pnp/plugins'; #/usr/lib/x86_64-linux-gnu/qt5/plugins'; # JC9LIke9:fix libqxcb.so to 0x50D01 somehow;
+alias krav='QT_QPA_PLATFORM=xcb   QT_QPA_VERBOSE=1 QT_SCALE_FACTOR=0.8 krita &'; # /usr/bin/platforms/ -> /usr/lib/x86_64-linux-gnu/qt5/plugins/platforms/;
 # wayland-org.kde.kwin.qpa , dxcb,eglfs,linuxfb, minimal,minimalegl,offscreen,vnc, wayland,wayland-egl,wayland-xcomposite-egl,wayland-xcomposite-glx,xcb
-alias kraw='QT_QPA_PLATFORM=wayland-xcomposite-glx QT_DEBUG_PLUGINS=1 krita &'; # test wayland
-alias lddk='ldd -r =krita|cut -d ' ' -f 1'; # try2 rescue && restore ` QT_DEBUG_PLUGINS=1 krita & `;
+alias kraw='QT_QPA_PLATFORM=wayland-xcomposite-glx QT_SCALE_FACTOR=0.8 krita &'; # test wayland; Below from HTTPS://Forum.KDE.Org/viewtopic.php?t=151602 ;
+alias krit='QT_QPA_PLATFORM=xcb   QT_QPA_VERBOSE=1 QT_SCALE_FACTOR=0.8 krita &'; # scales whole Krita interface down a bit to fit my display much more nicely;
+alias lddk='ldd -r =krita|cut -d " " -f 1'; # try `QT_DEBUG_PLUGINS=1  krita &` if plugins mAB core-dumping. Also QML_IMPORT_TRACE && QT_QML_DEBUG_NO_WARNING;
 export EDITOR="$HEdt" ;export PERL5LIB="$HOME/lib:$HOME/lib/perl5/lib/perl5/x86_64-linux-gnu-thread-multi:$HOME/lib/perl5/lib/perl5:./lib";
 export  PAGER="$HPgr" ;export PERL_TEST_POD='1'   ; #`which most`||PAGER=`which less`||PAGER=`which more`;export PAGER; #a good practice for Perl Kwalitee
                        export PERL_TEST_CRITIC='1';export PMARSHOME='/usr/share/games/pmars/macros'; #fyn,letz get crit! ;) && pmars-sdl needz its macroz;
@@ -126,7 +138,7 @@ else                                   eval $($dircolors -b            ); fi #  
          LS_COLORS="$LS_COLORS*-MediItal=01;31:*-ReguItal=00;33:*-BoldCond=01;33:*-BoldCondItal=00;36:*-ReguCond=01;36:*-ReguCondItal=01;35:*-DemiBold=00;35:";
          LS_COLORS="$LS_COLORS*-DemiBoldItal=00;31:*-Ligh=01;31:*-LighItal=00;33:*-Book=01;33:*-BookObli=00;36:*-Demi=01;36:*-DemiObli=01;35:";
          LS_COLORS="$LS_COLORS*-PCLPS2=01;33:"; #</etc/alternati*/ghostscript-current/Resource/Init #^/etc/alternatives/ghostscript-current/Resource/Font
-         LS_COLORS="$LS_COLORS*-WMode=01;31:";                                                       #/etc/alternatives/ghostscript-current/Resource/SubstCID
+         LS_COLORS="$LS_COLORS*-WMode=01;31:*copyright=01;37:*null=00;31:"; # xdpg&&/dev/null symlnx #/etc/alternatives/ghostscript-current/Resource/SubstCID
          LS_COLORS="$LS_COLORS*-account=01;31:*-auth=00;33:*-password=01;33:*-session=01;36:*-noninteractive=01;35:*-daemon=01;31:*-screensaver=01;35:";
          LS_COLORS="$LS_COLORS*-autologin=00;35:*-greeter=01;36:*-freerdp=00;33:*-containers=01;36:";# (~8bow cycl) /etc/(apparmor|pam).d
          LS_COLORS="$LS_COLORS*-uccsconfigure=01;33:*-1=00;35:*-user=00;36:*-l=01;31:";              #   more       /etc/          pam .d
@@ -150,14 +162,14 @@ else                                   eval $($dircolors -b            ); fi #  
          LS_COLORS="$LS_COLORS*-routes=01;35:";                                                                                   #*/dhcp/dhclient-exit-hooks.d
          LS_COLORS="$LS_COLORS*-default=00;31:*-english=01;33:";                                                                  #/etc/dictionaries-common
          LS_COLORS="$LS_COLORS*-whitelist=01;37:";                                                                                #/etc/gnome-app-install
-         LS_COLORS="$LS_COLORS*skeleton=01;31:";                                                                                  #/etc/init.d
+         LS_COLORS="$LS_COLORS*skeleton=01;31:*_clang-format=00;33:";                                                             #/etc/init.d && Qt5configfile
          LS_COLORS="$LS_COLORS*_map=01;31:*_dsfield=00;33:*_protos=01;33:*_realms=01;36:*_scopes=01;35:*_tables=00;35:";          #/etc/iproute2   (~8bow cycl)
          LS_COLORS="$LS_COLORS*-runtime=01;31:";                                                                                  #*/logcheck/ignore.d.paranoid
          LS_COLORS="$LS_COLORS*-service=01;35:*-paniclog=00;33:*-utils=01;36:*-syslog=01;31:";                                    #/etc/logrotate.d
          LS_COLORS="$LS_COLORS*-usernet=01;36:*_menus=01;31:";                                                                    #/etc/lxc &&/etc/menu-methods
          LS_COLORS="$LS_COLORS*-palette=01;35:*_pinning=01;30:";                                                                  #/etc/newt&&/etc/iproute2
          LS_COLORS="$LS_COLORS*-secrets=01;31:*_probes=01;31:";                                                                   #/etc/ppp &&/etc/GNUstep
-         LS_COLORS="$LS_COLORS*debian_config=01;33:";                                                                             #/etc/python*
+         LS_COLORS="$LS_COLORS*debian_config=01;33:*_builtin_shaders64=00;33:"                                                    #/etc/python*&&~/.cache/radv*
          LS_COLORS="$LS_COLORS*README=01;37:";                                                                                    #/etc/(rc*|sysctl).d|terminfo
          LS_COLORS="$LS_COLORS*-order=01;35:";                                                                                    #/etc/resolvconf
          LS_COLORS="$LS_COLORS*ssh_config=01;33:*sshd_config=00;33:*sa_key=01;36:*_import_id=01;35:";                             #/etc/ssh
@@ -173,16 +185,17 @@ else                                   eval $($dircolors -b            ); fi #  
          LS_COLORS="$LS_COLORS*_localhost=00;35:*_path=00;31:*-update=01;31:*_launch=00;33:*-launch=01;33:*-gtk3=00;36:*-scrollbar=01;36:";
          LS_COLORS="$LS_COLORS*-xim=01;35:*-gtk=01;33:";                                                                          #/etc/X11/xinit/xinput.d
          LS_COLORS="$LS_COLORS*-a11y=01;35:*-agent=00;35:*_start=01;31:*_stop=00;31:*-va-gl=01;35:*-adaptor=01;31:*-env=00;33:";  #/etc/X11/Xsession.d
-         LS_COLORS="$LS_COLORS*-addresses=00;35:";                                                                                #/etc/email-addresses (exim)
-         LS_COLORS="$LS_COLORS*machine-id=01;30:";                                                                                #/etc
+         LS_COLORS="$LS_COLORS*-addresses=00;35:*drkonqirc=01;36:*patchagerc=01;31:";                                             #/etc/email-addresses (exim)
+         LS_COLORS="$LS_COLORS*machine-id=01;30:*karboncalligraphyrc=01;31:*kritadisplayrc=00;36:*kritarc=01;36:";                #/etc && ~/.config
          LS_COLORS="$LS_COLORS*-repository-8_xml=01;35:*-addons_list-2_xml=00;35:*-sys-img_xml=01;31:*-addon_xml=01;36:";         #~/.android/cache
          LS_COLORS="$LS_COLORS*meta-release-lts=01;35:"; # E95M5MJR:done adding Aku:/etc && ~/.*/* but stil nd2recurse furthr l8r #~/.cache/update-manager-core
          LS_COLORS="*done_upgrades=01;31:$LS_COLORS";                                                                             #~/.co*/compiz-1/compizconfig
          LS_COLORS="*bookmarks=00;33:$LS_COLORS";                                                                                 #~/.config/gtk-3.0
-         LS_COLORS="$LS_COLORS*desktop-metadata=01;31:";                                                                          #~/.config/nautilus
+         LS_COLORS="$LS_COLORS*desktop-metadata=01;31:*search-metadata=01;33:";                                                   #~/.config/nautilus
          LS_COLORS="$LS_COLORS*hooks_seen=01;35:";                                                                                #~/.config/update-notifier
-         LS_COLORS="$LS_COLORS*.converted-launchers=01;33:*-data-convert=01;36:*_migration-ubuntu=01;35:";                        #~/.local/share
-         LS_COLORS="$LS_COLORS*-default-sink=01;33:*-default-source=01;36:";                                                      #~/.pulse
+         LS_COLORS="$LS_COLORS*_migration-ubuntu=01;35:*.converted-launchers=01;33:*-data-convert=00;33:";                        #~/.local/share
+         LS_COLORS="$LS_COLORS*_migration-ubuntu-wayland=01;31:*_migration-unity=01;36:";                                         #~/.local/share
+         LS_COLORS="$LS_COLORS*-default-sink=01;33:*-default-source=01;36:*-initial-setup-done=00;31:";                           #~/.pulse && ~/.config/gnom*
          LS_COLORS="*config=01;33:*config~=00;31:*known_hosts=01;31:*history=01;35:$LS_COLORS"; # prEpNdng thEse2!clobr l8r .XtNz #~/.(mplayer|schism|ssh|w3m)
          LS_COLORS="*Metadata=00;31:$LS_COLORS";                                                                                  #~/.cpan (binary file?)
          LS_COLORS="*Makefile=01;32:*INSTALL=01;36:*MANIFEST=01;33:*AUTHORS=01;36:*CHANGELOG=01;33:*LICENSE=01;37:$LS_COLORS";    #~/.inst/(youtube-dl|perl*)
@@ -301,7 +314,7 @@ alias bak='    bak  $TTY';alias   ept='  echo `pt`';alias upd8-mdb=' md8       '
 alias ud='     updb     ';alias    loc8='   locate';alias mdb-upd8=' md8       ';alias md8b-upd8='md8';alias mime-db-update='md8';alias mdb8='  mdb-upd8';
 alias updb='   upd8db   ';alias upd8d8ab='  upd8db';alias   updtdb='updb       ';alias md8b='mdb-upd8';alias md8='update-mime-database -V';alias xi='xinput';
 alias rc8=' rc-upd8     ';alias rc-upd8='rc-update';alias etc-upd8='etc-update ';alias etc8='etc-upd8';alias env8='env-upd8';alias  env-upd8='env-update';
-alias pl8=' pl-upd8     ';alias pl-upd8='plcl     ';alias plcl='pl-clnr     all';alias pl8c='pl8     ';alias pl8l='pl8     '; #ias tab="$HOME/gfx/dvl/art/tab";
+alias pl8=' pl-upd8     ';alias pl-upd8='plcl     ';alias plcl='pl-clnr     all';alias pl8c='pl8     ';alias pl8l='pl8     '; #had tib="$HOME/gfx/dvl/art/tib";
 alias lp8=' lp-upd8     ';alias lp-upd8='lpcl     ';alias lpcl='pl-clnr libperl';alias lp8c='lp8     ';alias lp8l='lp8     '; # too specialized to go str8 in2
 alias pl8a='pl-clnr  all';alias pl-clnr='pl-clean ';alias pl-clean='pl-cleaner ';alias pl-cleaner='  perl-cleaner  ask     '; #   Octl ~/bin but mAB s/sloc//?
 alias py8=' py-upd8     ';alias py-upd8='py-upd8r ';alias py-upd8r='py-updater ';alias py-updater='python-updater -p -v -v '; # -pretend -VeryVerbose
@@ -350,13 +363,13 @@ alias            ....='cd ../../..                           ';alias cd....='...
 alias           .....='cd ../../../..                        ';alias cd.....='.....                ';
 alias          ......='cd ../../../../..                     ';alias cd......='......              ';
 alias         .......='cd ../../../../../..                  ';alias cd.......='.......            ';
-alias        ........='cd ../../../../../../..               ';alias cd........='........          ';
-alias       .........='cd ../../../../../../../..            ';alias cd.........='.........        ';
-alias      ..........='cd ../../../../../../../../..         ';alias cd..........='..........      ';
-alias     ...........='cd ../../../../../../../../../..      ';alias cd...........='...........    '; # folOng R my mAn supr-ters aliasz 4 per4mng almOst ...
-alias    ............='cd ../../../../../../../../../../..   ';alias cd............='............  '; #   ... evry core GNU/Linux sys Utl (&& some clasic DOS)
-alias   .............='cd ../../../../../../../../../../../..';alias cd.............='.............';                           alias mkj8='mk -j8';
-alias      mk='   make';alias mki='mk install';alias mi='mkin';alias smi='sudo make install ';alias smki='smi';alias mkin='mki';alias mkj4='mk -j4';
+alias        ........='cd ../../../../../../..               ';alias cd........='........          '; # folOng R my mAn supr-ters aliasz 4 per4mng almOst ...
+alias       .........='cd ../../../../../../../..            ';alias cd.........='.........        '; #   ... evry core GNU/Linux sys Utl (&& some clasic DOS)
+alias      ..........='cd ../../../../../../../../..         ';alias cd..........='..........      ';     alias mktst='   mtst';alias mkj=' mkjG   ';
+alias     ...........='cd ../../../../../../../../../..      ';alias cd...........='...........    ';     alias mtst='mk  test';alias mkjg='mkjG   ';
+alias    ............='cd ../../../../../../../../../../..   ';alias cd............='............  ';     alias mkck='mk check';alias mkjG='mk -j16';
+alias   .............='cd ../../../../../../../../../../../..';alias cd.............='.............';     alias mkcl='mk clean';alias mkj8='mk -j8 ';
+alias      mk='   make';alias mki='mk install';alias mi='mkin';alias smi='sudo make install ';alias smki='smi';alias mkin='mki';alias mkj4='mk -j4 ';
 alias      sz='   sudo -E zsh';alias SS='sudo shutdown -h now';alias SSR='sudo shutdown -r now';alias SR='SSR'; # emergency !Sudo Shutdown or Reboot *now*!
 alias      pu='  pushd';alias  ua='un    '; # just add a couple basic abbreV8ions for sys-info which call un() which is defined below goo() && abov src() 4now;
 alias      po='   popd';alias una='un -a ';
@@ -421,6 +434,9 @@ alias       g='   grp '; #  g    :          sarep|(e|f)?grep (sed|awk too?)
 alias      gi='   g -i'; #                              grep -i to      Ignore_case
 alias      gv='   g -v'; #                              grep -v to                     inVert_match_results
 alias     giv='  gi -v'; #                              grep    to both Ignore_case && inVert_match_results
+alias     gis='  gi -s'; #                              grep -s to both Ignore_case && --no-messages suppress messages like glob * getting directories
+alias     gvs='  gv -s'; #                              grep -s to both                inVert_match_results && --no-messages  # gs already taken by GhostScript
+alias    givs=' giv -s'; #                              grep -s to      Ignore_case && inVert_match_results && --no-messages  #   which is proly like evince
 alias    gadd='  gi "^ *[a-z8]*8[a-z8]* *[:#].* add.*8" ~/dox/2du/8.utf'; # early varE8ion which didn't require pound after colon,like Blow expecting both l8r
 alias    gad8='  gi "^ *[a-z8]*8[a-z8]* *:.*#.* add.*8" ~/dox/2du/8.utf'; # utility alias to grep 8.txt for all comments describing potential words to add l8r
 alias     gad='  gad8 '; # while the above 2 originally differed into more restricted result count, material text has been upd8d such that they match on I98
@@ -486,6 +502,7 @@ alias      s8='   sort'; #  s8   :           sort (maybe eventually a collection
 #          g8   already ~/bin/
 #lias      g8='    git'; #  g8   :            git (was my much earlier attempt at wrapping to handle abbreV8ions && gener8 commits from .bak && vice-versa)
 alias    g8c='     git clone    '; # another convenient quick common git command for when needing to clone a new repository probably needing lowercase URLs
+alias    g8co='    git checkout ';alias gas='git add *';      alias g8f='g8 f';alias g8b='g8 br'; # short for git fetch && branch (just b does bisect first)
 alias    g8st='    git status   '; # basic Octology-memorable combined rhyme 1-string altern8 way to call what should be effectively the same as: `g8 st`
 alias    gaa='     git  add .* *'; # handy alias to Add All (Asterisk) changes, Commit by Message string below, then Push Origin Master (likely to GitHub)
 alias    gcm='     git commit -m'; # tried to call each of these through g8 initially, but maybe -m flag wasn't passing on to git correctly so explicit now
@@ -497,6 +514,7 @@ alias       N='  calN '; #  N    :            calN (use `rsn` ReSize4calN 171x57
 alias    caln='  calN ';
 alias      l8='  calN '; #  l8   :            cal|cron|at|batch
 alias      sl='  ln -s'; #  sl   :             ln (maybe on this, since ln usually makes SymbolicLinks?)
+alias      slf=' sl -f'; # force upd8 of already existing symbolic link which normally balks
 alias       O='  o    ';
 alias       o='  orpie';
 alias       Q='  calQ '; #  cl   :            calQl8|bc|dc like my old calc && symlnk cln (maybe swapping so n reverses meaning to non-default append Newline?)
@@ -541,6 +559,7 @@ alias    cncl=' cancel'; #  cncl :         cancel
 alias   comma=' cma   '; #  comma:            cma (like coma inserts by 4, these insert after 3)
 #lias      hd='   head'; #  hd   :           head (hd is already HexDump, which maybe should be combined (&& hd is more crucial HardDisk LVM util too?)) 
 alias      tl='   tail'; #  tl   :           tail
+alias     tlf=' tl  -f'; #                   tail with --follow (&& can be =file or =descriptor, the latter being the default)
 alias      tp='    top'; #  tp   :            top|htop
 alias     htp='   htop'; # htp   :                (ht is already HyperText? in /usr/bin which appears to gener8 HTML from TeX input files, but H also is htop)
 #          ss() already function below
@@ -601,13 +620,15 @@ alias    res8='reset;rest;w8 48;src8;rest'; # J12LFTst:wanting to test a bunch o
 alias   xical='xinput-calibrator';alias xic='xical';alias xbk='xbindkeys';alias xdt='xdotool';alias xd2='xdt'; # basic Chun touch-scrn&&X re-bind&&scrpt utlz
 alias    ctor='ctorrent -e 16 -z 64'; # abov: %eval $(xdotool getmouselocation --shell); %echo $X,$Y; will override Dflt $Y bright Yellow mapping with coordz
 alias     sig='signal-desktop '; # I7GMFSIG:installed HTTPS://Signal.Org on my Android phone && Aku here as likely better than Slack or Discord 4the future;
+alias    st4w='speaker-test -l4 -c2 -twav'; # K1VL3PCM:loop 4 times on -Ddefault ~/.asoundrc device with 2-channel stereo test /usr/share/sounds/alsa/ .wavs;
 alias      es='ecasound';alias eplay='es -o alsa -i';alias erec='es -i alsa'; # wrap ECASound similarly to `aplay` && `arecord` ALSA equivalent utilities;
+alias     pak='pulseaudio -k';alias pavl='pulseaudio -v --log-time';alias pavv='pavl -v'; # --kill running PA daemon && Verbose print with log-times 4Dbuging;
 export  PULSE_LATENCY_MSEC='64'; # JC7LNice:HTTPS://AskUbuntu.Com/questions/392911/wine-sound-is-played-way-too-fast-and-crackles-horribly to avoid underruns;
 #xport OpenGL_GL_PREFERENCE='GLVND'; # or 'LEGACY'; See `cmake --help-policy CMP0072` for FindOpenGL policy details which prefer GLVND when it's available;
 alias     lvt='lv-tool'; # J28L8888:LibVisual 0.5 ~2014 > ~2006 0.4 && mAB w8,chti,thN fix ~/dvl/n8/viz/*plug* 4 bass kick snAr rEsponsz in hIgh contrastz;
 alias     lvp='lv-tool    -i pulseaudio -s  888 -S  888'; # setup LibViz 4 -vrbOs? -inpuls -seedrand;  ## BlO blursk dblfrEmM coredumpz aftr 2nd unlOd! ##;
 export   lVSx=' -a lv_gltest -x lv_analyzer,lv_dump,madspin,nastyfft,nebulus,plazma,bumpscope,corona,gdkpixbuf,gforce,oinksie,blursk,goom2k4,jackdaw,lv_scope';
-alias     cad='cadence &';alias qjc='qjackctl &';
+alias     cad='cadence &';alias qjc='qjackctl &';alias past='pasystray &';alias pav='pavucontrol &'; # old @Mptz2get JACK 2working&&PulseAudioSysTray indic8or;
 alias     lvH='lvp -D 1280x800 ';alias lV="lvH $lVSx"; # upper-H 4 old HD720P, lower-h 4 dflt fullhd1080p, othrwIzkeptsAmsOfR; # only 6 lFt mAB nEd 4 2!segf?;
 alias     lvh='lvp -D 1920x1080';alias lv="lvh $lVSx"; # oinksie... lv-tool: malloc.c:4023 coredumpd mAB bAsd on pRam ordr? #; # proly not inflwrgltestjess! ;
 alias     p47='parsec47';alias a7='a7xpg'; # some of my favorite Kenta Cho Shmups ("Bullet-Hell") in /usr/games;  ## munmap_chunk(): invalid ptrstilcordumpdx;
@@ -659,6 +680,7 @@ alias    U2bm='U2b  -o "%(title)s-tItL-%(uploader)s-uldr-%(extractor)s-Xtrc-%(id
   #[       $? -eq 0    ]              && echo     "192.168.8.$ip UP" || : ; # pb could probably `w8 4U` after each for a bit of welcome but forgot -c seconds?;
 #done # instead of doing pingb below (or just pb), could run this for loop without needing to open systemz to DDoS thru configur8ion for broadcast response
 alias psag='ps  aux | grp     ';alias pingb='ping  192.168.8.255 -b'; #   ...or lern2Use`nmap -sP 192.168.8.1/24`nstd? or`arp-scan -l --interface=(eth|wlan)0`
+alias psgi='psag          -i  ';alias psagi='psgi                  '; # add another pair of aliases for Ignoring-case with the Grep on Process-Snapshots aux;
 alias idmg='identify          ';alias idmv=' idmg     -verbose     '; # ImageMagick IDentify IMaGe utl && verbose probably needs | $PAGER
 alias ckya='w3m Mail.Yahoo.Com';alias gnuya='gnuyahoo -u=piptigger '; # Ubu brwsrz not in Dflt repoz: Opera Vivaldi (mAB some othrz listed below);
 #lias cktm='w3m HTTP://Time.Gov'; # need to enable JavaScript in w3m for redirect to /HTML5/ to work so maybe just use FireFox or Chrome
@@ -808,7 +830,7 @@ alias m3='   mpg123 '; # replace  wi Xpct l8r too   # butsumvrynIcalInmNt  # Hou
 #lias m1='   mpg321 '; # replace  wi Xpct l8r too   # guessngaboutARGVthO  # eXtra_detached_color_with_red_background=x (mOmNtary modific8ionB4cmNt filrz);
 #lias m0='   mpr0   '; # replace  wi Xpct l8r too;  already replaced by function below for now!   # OMG! Such consistNtly blockedout p@rnz of alInmNt abov;
 alias dvdb=' dvdbackup -M -p';alias dvdbak='dvdb';  # default DVD backups -Mirroring full disc into current working directory && upd8ing d8a copy -progress
-# H7IM3Qvo:mp -vo help; MPlayer 1.3.0 (Debian), built with gcc-6.3.0 (C) 2000-2016 MPlayer Team; Available video output drivers: # pretty old optnz now
+# H7IM3Qvo:mplyr -vo help; MPlayer 1.3.0 (Debian), built with gcc-6.3.0 (C) 2000-2016 MPlayer Team; Available video output drivers:  # pretty old optnz now
 # vdpau      X11 VDPAU                                           fbdev    Framebuffer Device                        xvmc     XVideo Motion Compensation
 # xv         X11/Xv                                              fbdev2   Framebuffer Device                        mpegpes  MPEG-PES to DVB card
 # X11        X11 ( XImage/Shm )                                  aa       AAlib                                     yuv4mpeg yuv4mpeg output for mjpegtools
@@ -820,14 +842,26 @@ alias dvdb=' dvdbackup -M -p';alias dvdbak='dvdb';  # default DVD backups -Mirro
 # matrixview     (OpenGL) MatrixView                             cvidix   console VIDIX                             md5sum   md5sum of each frame
 # dga        DGA (Direct Graphic Access V2.0)                    null     Null video output   # drvrz listed in likely most useful ordr(&&bak2 xv fixd stutr)
 #    -fixed-vo only with xv, x11, xvidix, gl, gl_tiled, && svga (ignoring irrelevant Matrox); # swapping mp && mplyr alias dFinitionz due2frEquNC of use&&mM
-alias mplyr='mplayer'; # EBIL4AcZ:just upgraded all machines to mplayer2 so need --no-keepaspect to allow scaling to full window dimensions
-alias mp='   mplayer -vo xv  -fixed-vo                              -cache 16384 -cache-min 99'; # should try different -vo (xv was default) for performance
+# K1DLDSDL:upd8d mp to use -ao sdl or openal since they don't seem to stutter, but alsa under-runs && stops right away && pulse skips quite annoyingly 4 now;
+alias mplyr='mplayer';alias mplr='mplyr'; # EBIL4AcZ:upgraded all putrs2 mplayer2 sOnEd --no-keepaspect 2alow sKlng2ful wndw dimNsions;`mplyr -ao help` 4list;
+alias mpp='  mplr -vo xv    -fixed-vo -ao pulse                      -cache 16384 -cache-min 64'; # should try different -vo (xv was default) for performance
+alias mpa='  mplr -vo xv    -fixed-vo -ao alsa                       -cache 16384 -cache-min 64'; # should try different -vo (xv was default) for performance
+alias mp='   mplr -vo xv    -fixed-vo -ao sdl                        -cache 16384 -cache-min 64'; # should try different -vo (xv was default) for performance
 alias mpns='cd ~/mvz/U2b/nxt;mp $(ls B* Dr* *Tut* Ex* M* O*-Res* Var* *Trap* *Trap* *Boy*|shfl);cd ..'; # mk MPlyrNxtShfl 4 quik favor8 mvz Drub&&Trap vidzls
-alias mpx='  mp      -fs'; #-x 1920 -y 1080'; # originally quite a long time ago, I used to include -noborder optn abov but thN cud!mv wndw
-alias mplo=' mplayer -vo xv  -fixed-vo -ao sdl -framedrop -delay -4 -cache 16384 -cache-min 99 -autosync 30 -demuxer +lavfpref -vfm ffmpeg -lavdopts lowres=1:fast:skiploopfilter=all -v ~/mvz/U2b/nxt/O*-One_*'; # try to play Obsidia One_Winged_Angel thru SDL audio since Pulse stutters && ALSA totally freezes up;
+alias mpx='  mp   -fs'; #-x 1920 -y 1080'; # originally long ago, I used to include -noborder optn abov but thN cud!mv wndw
+alias mplo=' mplr -vo xv    -fixed-vo -ao sdl   -framedrop -delay -4 -cache 16384 -cache-min 88 -autosync 30 -demuxer +lavfpref -vfm ffmpeg -lavdopts lowres=1:fast:skiploopfilter=all -v ~/mvz/U2b/nxt/O*On*'; # try to play Obsidia One_Winged_Angel thru SDL audio since Pulse stutters && ALSA totally freezes up;
 mjoin() { ffmpeg -i $1 -i $2 -acodec copy -vcodec copy $3; } # IB6LExci:was in ~/.tmp/ aftr trying;
 # IAIMFFMP:ffmpjoin.sh crE8d by PipStuart <Pip@CPAN.Org> to take 2 sepR8 file parameters of audio && video (probably from calls to U2b8) && join in2 cntAnr4m@;
 # 2du:upd8 U2b8 autom8ion to test -F output first && harvest out best audio && video available then gener8 joined container name; nOt:out.avi did!work,mp4 did;
+alias smp=' smplayer';alias aply='aplay';alias aplr='alsaplayer';
+# in addition to mplayer, gst123, xine, qmmp, && xmms2, smplayer, vlc, mpv, aplay, alsaplayer, mikmod I've already been using, Oni did following apt install:
+# ai gir1.2-rb-3.0 totem totem-plugins adplay ario-common ario audacious bplay clementine cmus-plugin-ffmpeg cmus cplay draai easyh10 faad gbemol glurp       \
+#   gmerlin-data gmerlin libgrooveplayer-dev libgrooveplayer4 libgroove4 libsmpeg-dev libsmpeg0 smpeg-gtv smpeg-plaympeg libjs-mediaelement                   \
+#   libjs-soundmanager2 libwildmidi-config libwildmidi-dev libwildmidi2 madplay melt moc moc-ffmpeg-plugin mpc123 mpd mpg123 mpg321 ncmpc ncmpc-lyrics        \
+#   node-react-audio-player opencubicplayer openmpt123 parlatype quodlibet scrobbler showq silverjuke splay stretchplayer timidity yatm speex xmp icecast2    \
+#   ices2 libadplug-dev libadplug-2.2.1-0v5 adplug-utils goattracker protracker modplug-tools bino libdmr-dev libdmr0.1 deepin-movie dragonplayer gmerlin     \
+#   kaffeine kylin-video parole-dev parole ser-player termrec
+# 2du:run `acs media|gi player` to find others without audio or video in their descriptions, then go thru list && rank && alias them;
 alias kscr='k $(psag "/screeps_server\$"|g " Ssl "|head -n 1|cut -c10-14)'; # try2 kill prv8 screeps_server process easier than typing k $PID aftr psag Sc
 alias kamp='ka -q -9 mplayer'; # -quiet (!warn if!mtch) && -9 kill force signal  ## du! actually kill any @all (if U can hLp it, plEz)!
 alias kasd='ka -q speech-dispatcher'; # resolve Aku's buggy loud HDMI audio clicking loop from "cicero" tXt2sPch4 mbrola wich surfaced aftr watching Twitch vid
@@ -845,12 +879,15 @@ alias fstat='  perl -MTime::PT     -e "@s=split(/ /,scalar(localtime((stat(shift
 #lias fstatpt='perl -MTime::PT     -e "@s=split(/ /,scalar(localtime((stat(shift))[9])));print `pt @s`,\"\n\";"'; #pt(@s) not exported,so try shell,leav Nwln?
 alias fstd8='  perl -MOctology::d8 -e "@s=split(/ /,scalar(localtime((stat(shift))[9])));print Octology::d8->new(\"expand\"=>\"@s\");"'; 
 alias    xt=' xterm      -geometry 160x50   &'; #     xt used2B a symlink2 ~/bin/xmltidy but more consistent with gt,Et,st to have it as xterm now instead
-alias uxtrm='uxterm      -geometry 160x50   &';alias uxt='uxtrm';alias st='stterm -g 160x50 -T st &'; # also SimpleTerminal st
+alias uxtrm='uxterm      -geometry 160x50 -bc -bcn 512 -bcf 256 &'; # setup nice BlinkingCursor oN && oFF msecs && tryd TrueType Mono FoNt wi -fn but faild
+alias Uxtrm='uxterm      -geometry 160x50   &';alias uxt='uxtrm';alias st='stterm -g 160x50 -T st &'; # also SimpleTerminal st is pretty quick && clean too
 alias lxtrm='lxterminal --geometry=160x50   &';alias lxt='lxtrm'; # =lxterm is a separ8 sh script wich testz locale && wrapz plain uxterm for UTF-8
-alias satrm='sakura      -c 160     -r 50   &';alias sak='satrm'; # thEse termz are each made pretty similar to my Dfalt GT dimensionz
-alias  tn8r='terminator --geometry=1608x932 &'; # geom here is strangely pixLz nstd of charz with char dimensionz about 10x18 pixLz plus border && tabbar
+alias satrm='sakura      -c 160     -r 50   &';alias sak='satrm'; # thEse termz are each made pretty similar to my preferred Dfalt Gnome-Terminal dimensionz
+alias  tn8r='terminator --geometry=1608x932 &';alias t8r='terminator'; # geom is pixLz nstd of charz wi char dimNsionz about 10x18 pixLz plus bordr && tab-bar
+alias  tit=' termit                         &';alias tmg='terminology';alias s3t='s3dvt'; # setup consistently 3-character aliases for almost all terminals;
 alias  xf4t=' x4t       --geometry=160x50   &';alias x4t='xfce4-terminal';alias crt='cd ~/dvl/c8/trm8;CRT'; # CoolRetroTerm; nEd2 cnfg termrc 2use smalr font
-alias  rox='  rxt       --geometry=160x50   &';alias rxt='roxterm'; # anothr VTE-bAsd xterm (-z $ZoomFrom1.0 [want 0.8333] spits CRITICAL assertion pango)
+alias  rox='  rxt       --geometry=160x50   &';alias rxt='roxterm'; # anothr VTE-bAsd xterm (-z $ZoomFrom1.0 [want 0.8333] spits CRITICAL assertion pango);
+# no more roxterm in my Ubu19.10 Eoan package repos but I did just agi tio termit terminology s3dvt (probably each LibVTE based,like most othr terms here);
 alias  Etrm=' Eterm     --geometry 160x50 --scrollbar-width 15 --cmod 227 -L 65536 &';alias Et='Etrm';alias E='Et'; # used to be 'Eterm -t E &' but it...
 export ETERM_THEME_ROOT="~/.Eterm/themes"; # wuz ~/.Eterm/themes/Eterm                       # ...looks like I don't even need that plain old  E theme anymore
 #lias E=' Eterm -t E --scrollbar-type motif --scrollbar-width 15 &'; # --cmod 227 &';
@@ -967,12 +1004,15 @@ if       [[ "${(L)HHst}" ==  oni    ]] ||
   # q 1306/34=38.41176470588235294117647058823529411765
   # 1306-1292=14 mAB scrlbR widt; 4x38=152; 512,4352,2432; mIt nEd2scAl 1306 wIdr2 1458; try even shorter 1268, wi each of 34 char widz 38px or 33 wo padspc?
   # q 1458/34=42.882352941176470; 4x42=166; 496,4336,2416; othr was +306+0 up2 466;
-  alias gtI='gt --geometry=+664-0     --hide-menubar --window-with-profile=d8ok                               --role=d8ok                                   &;
+  # K1BLEgti:For Ubu19.10 I've resized d8ok term font from 48 to 46 so am adjusting wmc -e 10,664,1006,1268,74 to 10,704,1006,1228 as 1st guess 2 re-align.
+  # Also removing && commenting out the 2nd d8ok term I was originally spawning way over on the 3rd monitor, since Oni is only running with 2 VG248's now.
+  # As this 1st stab at re-alignment, I'm shaving off 40 pixels in both width directions but might also need to shrink the heights to fit the bottom l8r too;
+#            gt --geometry=-0-0       --hide-menubar --window-with-profile=d8ok                               --role=d8ok                                   &;
+#       gtss;wmc -r :ACTIVE: -T d8ok                ;wmc -r :ACTIVE: -b add,skip_pager,sticky;
+#            wmc -r :ACTIVE: -e 10,4504,1006,1268,74;wmc -r :ACTIVE: -b add,skip_taskbar,below;
+  alias gtI='gt --geometry=+704-0     --hide-menubar --window-with-profile=d8ok                               --role=d8ok                                   &;
         gtss;wmc -r :ACTIVE: -T d8ok                ;wmc -r :ACTIVE: -b add,skip_pager,sticky;
-             wmc -r :ACTIVE: -e  10,664,1006,1268,74;wmc -r :ACTIVE: -b add,skip_taskbar,below;
-             gt --geometry=-0-0       --hide-menubar --window-with-profile=d8ok                               --role=d8ok                                   &;
-        gtss;wmc -r :ACTIVE: -T d8ok                ;wmc -r :ACTIVE: -b add,skip_pager,sticky;
-             wmc -r :ACTIVE: -e 10,4504,1006,1268,74;wmc -r :ACTIVE: -b add,skip_taskbar,below;
+             wmc -r :ACTIVE: -e  10,704,1006,1228,74;wmc -r :ACTIVE: -b add,skip_taskbar,below;
              gt --geometry=-0-0       --hide-menubar --window-with-profile=d8fd                               --role=d8fd                                   &;
         gtss;wmc -r :ACTIVE: -T d8fd                ;wmc -r :ACTIVE: -b add,skip_pager,sticky;
              wmc -r :ACTIVE: -e 10,2416,1006,1458,74;wmc -r :ACTIVE: -b add,skip_taskbar,below;
