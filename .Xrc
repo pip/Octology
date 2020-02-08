@@ -1,5 +1,5 @@
 ! E8KM2Ocw:~/.Xrc by PipStuart <Pip@CPAN.Org> to start having some additional xterm && maybe urxvt or aterm settings on Aku. According to this 2014 site:
-! $VERSION='0.0';$d8VS='K1VLFont'; HTTPS://Wiki.ArchLinux.Org/index.php/x_resources .Xdefaults is deprec8d for .Xresources (or my .Xrc) wich requires xorg-xrdb
+! $VERSION='0.0';$d8VS='K27L7URx'; HTTPS://Wiki.ArchLinux.Org/index.php/x_resources .Xdefaults is deprec8d for .Xresources (or my .Xrc) wich requires xorg-xrdb
 !   be installed 2run:`xrdb ~/.Xrc`; If I someday return to using `startx`, I will probably need to add2 my ~/.xinitrc "[[ -f ~/.Xrc ]] && xrdb -merge ~/.Xrc".
 !   See default settings for installed X11 apps in /usr/share/X11/app-defaults (if exists) && see curNtly loaded resources with `xrdb -query -all`. Just `xrc`.
 !   Comment must start bang !, not hash #. Maybe `xrdb -remove .Xrc` will rm these vals from server while -n -merge will Not merge but shows what would happen.
@@ -1688,7 +1688,7 @@ PTerm.TermHeight:                   50
 !PTerm.LoginShell
 !        This  option should be set to either 0 or 1; the default is 1. When set to 1, pterm will execute your shell as a login shell. This resource is
 !        equivalent to the -ls command-line option.
-! u?rxvt here originally from Pat^s Puppy QuirkyTahr Wary 5.5.1 rel8ively minimal machine, so probably hardly applicable to Aku yet
+! u?rxvt here originally from Pat^s Puppy QuirkyTahr Wary 5.5.1 rel8ively minimal machine, so probably hardly applicable to Aku yet, but upd8d for Oni:
 !Rxvt*keysym.0xFF50:             \001
 !Rxvt*keysym.0xFF57:             \005
 ! but urxvt in quirky etc needs these...
@@ -1719,9 +1719,9 @@ URxvt.cursorUnderline:          0
 URxvt.cursorBlink:              1
 URxvt.borderLess:               0
 URxvt.transparent:              0
-URxvt.shading:                  85
+URxvt.shading:                  96
 !urxvt -h
-!rxvt-unicode (urxvt) v9.21 - released: 2014-12-31
+!rxvt-unicode (urxvt) v9.22 - released: 2016-01-23
 !options: perl,xft,styles,combining,blink,iso14755,unicode3,encodings=eu+vn+jp+jp-ext+kr+zh+zh-ext,fade,transparent,tint,pixbuf,XIM,frills,selectionscrolling,wheel,slipwheel,smart-resize,cursorBlink,pointerBlank,scrollbars=plain+rxvt+NeXT+xterm
 !Usage: urxvt [-help] [--help]
 ! [-display string] [-tn string] [-geometry geometry] [-C] [-iconic]
@@ -1738,10 +1738,7 @@ URxvt.shading:                  85
 ! [-/+bl] [-lsp number] [-letsp number] [-/+sbg] [-mod modifier] [-/+ssc]
 ! [-/+ssr] [-pe string] [-e command arg ...]
 !urxvt --help
-!rxvt-unicode (urxvt) v9.21 - released: 2014-12-31
-!options: perl,xft,styles,combining,blink,iso14755,unicode3,encodings=eu+vn+jp+jp-ext+kr+zh+zh-ext,fade,transparent,tint,pixbuf,XIM,frills,selectionscrolling,wheel,slipwheel,smart-resize,cursorBlink,pointerBlank,scrollbars=plain+rxvt+NeXT+xterm
-!Usage: urxvt [options] [-e command args]
-!where resources (long-options) include:
+!Usage: urxvt [options] [-e command args] where resources (long-options) include:
 !  termName:                       string
 !  geometry:                       geometry
 !  chdir:                          string
@@ -1858,6 +1855,7 @@ URxvt.shading:                  85
 !  background.expr:                string
 !  background.interval:            seconds
 !  bell-command:                   string
+!  font-size.step:                 interger
 !  kuake.hotkey:                   string
 !  matcher.button:                 string
 !  matcher.launcher:               string

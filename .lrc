@@ -1,5 +1,5 @@
 # F1RLLK2K:~/.lrc  by PipStuart <Pip@CPAN.Org> as an altern8 format for .lsrc ideally having new ~/bin/lrc gNR8 either from the other;
-# $VERSION='0.0';$d8VS='K1ULJEST'; 2du:mkUtl2gNr8 altrn8 versN of .lsrc th@purposfuly varEz colrz of comon typz,try addng bakgrnd colrz2all dFz&&tst,
+# $VERSION='0.0';$d8VS='K27LAppT'; 2du:mkUtl2gNr8 altrn8 versN of .lsrc th@purposfuly varEz colrz of comon typz,try addng bakgrnd colrz2all dFz&&tst,
 #   add interaction2 lsd8 wN it Dtectz unrecognIzd XtNshNz offerng c@egOrEz with comon colr2autOm@ically insrt chOsN NtrEz,mAB add *-* NtrEz from .zshrc hEr &&
 #   mk lrc gNr8 either,confirm all accept f0nt cOdez wi dash accepting Dfalt foreground then redo NORMAL FILE LINK as no fi ln,mAB 8trm added2TERM ls someday;
 # 819J2Pip:~/.lsrc by PipStuart <Pip@CPAN.Org> izAheavily modifId`dircolors`cfgfIl(Orig ~/.DIR_COLORS)wich setz $ENV{'LS_COLORS'} 4GNU`ls --color`&&`lsd8`;
@@ -265,6 +265,8 @@ CHR                           Yk           #cd= 01;33;40    01;33;40  CHaRacter 
 .Fnt
 .FNT
 .sfd                                       # SourceFontforge type Data? FontForge.SF.Net TypeData in *.sfd similR2 *.[ot]tf
+.sf2                                       # /usr/share/sounds/sf2/MuseScore_General_Full.sf2 SoundFont v2 filz
+.sf3                          O            #     /etc/alternatives/MuseScore_General.sf3      SoundFont v3 filz (on Oni this sf3 sym-links to the sf2 above)
 .slut                         O            # LookUpTbl(EquBpu)azinSndFX,Sprite,Save,Secure,Stuff,Str,Sex,SmRt,sMpL,Scrot,Shot,SystM,Sum1,St8z,St@z..
 .lut                                       # LookUpTbl(EquBpu)
 .hlut                         O            # LookUpTbl(EquBpu)azinH3AR.Uslut || HelpLkUpTable(eg, ~pip/dox/dvl/ref/vim.hlut)
@@ -303,6 +305,7 @@ CHR                           Yk           #cd= 01;33;40    01;33;40  CHaRacter 
 .dconf-defaults               R            # /etc/gdm3 files
 .dconf                                     # J6JMKNID:probably something like the output of `dconf dump /org/gnome/terminal/legacy/` to "load" l8r;
 .conf                                      # config filz,(basic) play-list filz,shell-scripts,bookmarks,&& DOS-style executablz
+.conffiles                                 # /var/lib/dpkg/info/rxvt-unicode.conffiles
 .dmrc                                      # Dsktp Menu|Mngr? on Chun
 .gtkrc
 .toprc                                     # nstd of htop, can input "zxcVm1t0" then g[2-4] to go2 sepR8 wndoz&&du similR inputz then W writez cnfg
@@ -318,6 +321,7 @@ CHR                           Yk           #cd= 01;33;40    01;33;40  CHaRacter 
 .bitchxrc
 .bxp4prc
 .fterc                                     # FoldingTextEditor (for programmers)
+.knsrc                                     # /etc/xdg/konsole KoNSole ResourCe file
 .inputrc
 .joy2keyrc
 .blackboxrc
@@ -634,26 +638,27 @@ CHR                           Yk           #cd= 01;33;40    01;33;40  CHaRacter 
 .nb                                        # Mathematica   SrcCod(!IDa wer"NB"iz from,but myn iz:maze-gen4img-Hernan.Moraldo.Com.Ar_mazegen_code...)
 .n                                         # NetwydAzMblur NAsm.Us
 .m
-.h                            o            # C/C++ Header files were Cyan like main source files but plain ls was getting some kind of orange, so setting it
-.c
+.h                            o            # C/C++  Header filz were Cyan like main source files but plain ls was getting some kind of orange, so setting it
+.c                                         # C      source filz
 .cc
 .cli                                       # ~/dox/putr/Oni/Oni-systemd-services file logging root commands used to manage running services
-.app                                       # Qt5/qtbase/mkspecs/macx-* filz
-.cpp
-.cgi
+.app                                       # Qt5/qtbase/mkspecs/macx-* filz (as well as GNUstep terminal.app binary,which will be green for XeQtable thO)
+.cpp                                       #   C++  source filz
+.cgi                                       # probably Common-G8way-Interface  or  Computer-Gener8d-Image filz
 .inc
 .src
 .vlt                                       # ~/.local/share/vlc/skins2/*  VLC VideoLAN.Org Theme / skin2 filz
 .vsc                                       # VimScrptClipbord(eg:ptg2clip.vsc)
 .vim
+.pd                                        # /etc/alternatives/gemdefaultwindow.pd -> sym-link to -> /usr/lib/pd/extra/Gem/gemdefaultwindow-glx.pd (PointD8a?)
 .PL
-.pl
-.pm
+.pl                                        # PerL   script filz
+.pm                                        # Perl   Module filz
 .pm~                          r            # ~/.cpan/CPAN/MyConfig.
-.py
+.py                                        # PYthon script filz
 .pyc
 .php
-.pas
+.pas                                       # PAScal source filz
 .pro                          R            # according to HTTPS://File.Org/extension/pro generic cross-platform project files (found in cool-retro-term && Qt5)
 .pt                                        # PipTyme||PerlTst
 .p
@@ -683,6 +688,7 @@ CHR                           Yk           #cd= 01;33;40    01;33;40  CHaRacter 
 .xsd                                       # W3C      XML Schema Definition                   file
 .xslt                                      # eXtensible   Style  Language for Transformations file
 .shtml
+.source                                    # /usr/share/doc/rxvt-unicode/README.source describing git command to obtain code repository
 .senddoc                                   # /etc/apparmor.d files
 .schemas
 .aliases
@@ -801,7 +807,7 @@ CHR                           Yk           #cd= 01;33;40    01;33;40  CHaRacter 
 .pjt                                       # Perl J? Tmpl8 #2du:pj1? && kdelnk
 .sln
 .sudo
-.state
+.state                                     # /run/zed      file
 .client                       Y            # /etc/exim4
 .template                                  # /etc/exim4
 .textmaze
@@ -809,6 +815,7 @@ CHR                           Yk           #cd= 01;33;40    01;33;40  CHaRacter 
 .sversionrc
 .weatherspect
 .recently-used
+.reload                                    # /run/agetty   file
 .post
 #rr
 #rr
@@ -946,6 +953,8 @@ CHR                           Yk           #cd= 01;33;40    01;33;40  CHaRacter 
 .deny
 .SKIP                                      # MANIFEST.SKIP from Perl packages
 .lock
+.rxvt                                      # /usr/share/terminfo/s/screen(-bce)?.rxvt
+.mrxvt                        M            # /usr/share/terminfo/s/screen(-bce)?.mrxvt
 .xlockrc
 .cdcdrc
 .cdserverrc
@@ -1347,12 +1356,19 @@ CHR                           Yk           #cd= 01;33;40    01;33;40  CHaRacter 
 .act                          P            # ~/.inst/perl*5.10*/perly.
 .chk                          K            # ~/.inst/firefox/lib(freebl|softokn)3.
 .autoreg                      R            # ~/.inst/firefox/
-.tracepoints                  o            # Qt5/qtbase/src/widgets       files
-.dynlist                      Y            # Qt5/qtbase/src/widgets       files
-.header                       g            # Qt5/qtbase/util/glgen        files
-.footer                       r            # Qt5/qtbase/util/glgen        files
-.lexgen                       Y            # Qt5/qtbase/util/lexgen       files
-.BSD                          c            # Qt5/qtbase/header && LICENSE files
+.translations                 Y            # ~/dvl/c8/trm8/roxterm/README l10n file (from HTTP://ROXTerm.SF.Net custom instl sinc not pkgd 4 Ubu NEmor)
+.install                      R            # ~/dvl/c8/trm8/roxterm/debian/roxterm(-data)? filz
+.postinst                     M            #               roxterm debian
+.prerm                        p            #               roxterm debian
+.lintian-overrides            r            #               roxterm debian source          file
+.po                           p            #               roxterm/po(4a)?/           POT filz
+.its                          M            #               roxterm/poxml/appdata          file
+.tracepoints                  o            # Qt5/qtbase/src/widgets       filz
+.dynlist                      Y            # Qt5/qtbase/src/widgets       filz
+.header                       g            # Qt5/qtbase/util/glgen        filz
+.footer                       r            # Qt5/qtbase/util/glgen        filz
+.lexgen                       Y            # Qt5/qtbase/util/lexgen       filz
+.BSD                          c            # Qt5/qtbase/header && LICENSE filz
 .MIT                          M
 .COMM                         K
 .FDL                          w

@@ -29,7 +29,7 @@ unsetopt                \
 # auto_pushd            \# setng addz dirz 2 stack wN just normally chngng 2 thM (wich I du not normally lIk or want)
 # ksh_arrays            \# rEmMbr wNwrItng scrptz[or funcz]2include'setopt [localoptions] ksharrays'sO arAzR 0-bAsed(but!glOblBcuzmOst scrptzRstndrdly 1-bAsed)
 # re_____match_____pcre \# mA want2set for Z-SHell scripting RegularExpressions to utilize PerlCompatibility styles && mA insert 'zmodload zsh/(pc)?re(gex)?';
-export vers='0.0';export d8VS='K1ULKOPY';export auth='PipStuart <Pip@CPAN.Org>'; # not Xportng $b sinc cOlIdz wi sort{$a <=> $b} /defhijlnqstuvx/i + AZ 4golf;
+export vers='0.0';export d8VS='K28LAvis';export auth='PipStuart <Pip@CPAN.Org>'; # not Xportng $b sinc cOlIdz wi sort{$a <=> $b} /defhijlnqstuvx/i + AZ 4golf;
 if     [[       "$SHELL"    == "" ]]; then       export SHELL=`  which zsh`;fi # 8sh should parse this && OverId it    # shud `man zshall` /OSTYP 2lern4BlO
 if     [[       "$HOSTNAME" == "" ]]; then       export HOSTNAME=`hostname`;fi #`hostname`retnz fsckd nwlInz\n4CygWinzRxvt... ||smthng els lame  =(
 if     [[       "$HOST"     == "" ]]; then       export HOST="$HOSTNAME"   ;fi;export VERBOSE='1'; # set flag to print debug && status info from system utilz
@@ -89,7 +89,7 @@ alias vtab="cd $HOME/.mk/qt5/qt5.13.1/qtbase/examples/widgets/widgets/tablet    
 alias mtab="cd $HOME/.mk/qt5/Qt5.13.1-pnp;./config.status -recheck-all;cd qtbase/examples/widgets/widgets/tablet    ;mkcl;mkj;smi;qtab"; # v ed,m mk&&instl
 alias qtab='/opt/Qt5.13.1-pnp/examples/widgets/widgets/tablet/qttablet &'; # ~/dvl/g8/jack/qt5.13.1/qtbase/examples/widgets/widgets/tablet as better 4 pressure
 alias  qtx="   $HOME/dvl/m8/qtx/qtx &"; # my extracted Qt Tablet eXample executable in the same directory as the source, project, resources, && Makefile
-alias sdab='sda  blame';alias sda='systemd-analyze';alias slsa='syc list-units --type service --all'; # not SCSI-Disk-A (like in /dev/);
+alias sdab='sda  blame';alias sda='systemd-analyze';alias slsa='syc list-units --type service --all';alias jcf='jc -f'; # not SCSI-Disk-A (like in /dev/);
 alias sctl='syc';alias jctl='journalctl';alias actl='alsactl';alias cctl='cdc';alias jc='jctl';alias jcb='jc -b';alias jcp1='jc _PID=1'; # not (JesusChrist ;)
 alias slts='syc list-unit-files --type=service'; # readd about this from `d8 G5I` article: HTTPS://Linux.Com/tutorials/cleaning-your-linux-startup-process/ ;
 alias sysc='  systemctl';alias syc='sysc  '; # systemd control:`syc list-unit-files --type=service|gi (en|dis)able|mask|static`,`syc stop|disable|mask|status`
@@ -141,7 +141,7 @@ else                                   eval $($dircolors -b            ); fi #  
          LS_COLORS="$LS_COLORS*-WMode=01;31:*copyright=01;37:*null=00;31:"; # xdpg&&/dev/null symlnx #/etc/alternatives/ghostscript-current/Resource/SubstCID
          LS_COLORS="$LS_COLORS*-account=01;31:*-auth=00;33:*-password=01;33:*-session=01;36:*-noninteractive=01;35:*-daemon=01;31:*-screensaver=01;35:";
          LS_COLORS="$LS_COLORS*-autologin=00;35:*-greeter=01;36:*-freerdp=00;33:*-containers=01;36:";# (~8bow cycl) /etc/(apparmor|pam).d
-         LS_COLORS="$LS_COLORS*-uccsconfigure=01;33:*-1=00;35:*-user=00;36:*-l=01;31:";              #   more       /etc/          pam .d
+         LS_COLORS="$LS_COLORS*-uccsconfigure=01;33:*-1=00;35:*-user=00;36:*-l=01;31:*utmp=00;31:";  #   more       /etc/          pam .d && /run/ fIl dRk-red
          LS_COLORS="$LS_COLORS*-common=01;31:*-client=00;33:*-accessibility=01;33:*-strict=00;36:*-integration=01;36:*-browser=01;35:*-kit=00;35:";
          LS_COLORS="$LS_COLORS*-files=00;31:*_certs=01;31:*_keys=00;33:*-repositories=01;33:*-clients=00;36:*-browsers=01;36:*-email=01;35:*-readers=00;35:";
          LS_COLORS="$LS_COLORS*-terminal=01;33:*-helpers=00;31:*-konsole=01;31:*-players=00;33:*-base=01;33:*-launcher=00;36:*-messaging=01;36:*-xterm=01;35:";
@@ -169,7 +169,8 @@ else                                   eval $($dircolors -b            ); fi #  
          LS_COLORS="$LS_COLORS*-usernet=01;36:*_menus=01;31:";                                                                    #/etc/lxc &&/etc/menu-methods
          LS_COLORS="$LS_COLORS*-palette=01;35:*_pinning=01;30:";                                                                  #/etc/newt&&/etc/iproute2
          LS_COLORS="$LS_COLORS*-secrets=01;31:*_probes=01;31:";                                                                   #/etc/ppp &&/etc/GNUstep
-         LS_COLORS="$LS_COLORS*debian_config=01;33:*_builtin_shaders64=00;33:"                                                    #/etc/python*&&~/.cache/radv*
+         LS_COLORS="$LS_COLORS*debian_config=01;33:*_builtin_shaders64=00;33:";                                                   #/etc/python*&&~/.cache/radv*
+         LS_COLORS="$LS_COLORS*COPYING=01;33:*-LGPL=00;33:*NEWS=00;37:*TODO=00;37:*changelog=01;36:";                             #~/dvl/c8/trm8/roxterm/
          LS_COLORS="$LS_COLORS*README=01;37:";                                                                                    #/etc/(rc*|sysctl).d|terminfo
          LS_COLORS="$LS_COLORS*-order=01;35:";                                                                                    #/etc/resolvconf
          LS_COLORS="$LS_COLORS*ssh_config=01;33:*sshd_config=00;33:*sa_key=01;36:*_import_id=01;35:";                             #/etc/ssh
@@ -370,9 +371,9 @@ alias     ...........='cd ../../../../../../../../../..      ';alias cd.........
 alias    ............='cd ../../../../../../../../../../..   ';alias cd............='............  ';     alias mkck='mk check';alias mkjG='mk -j16';
 alias   .............='cd ../../../../../../../../../../../..';alias cd.............='.............';     alias mkcl='mk clean';alias mkj8='mk -j8 ';
 alias      mk='   make';alias mki='mk install';alias mi='mkin';alias smi='sudo make install ';alias smki='smi';alias mkin='mki';alias mkj4='mk -j4 ';
-alias      sz='   sudo -E zsh';alias SS='sudo shutdown -h now';alias SSR='sudo shutdown -r now';alias SR='SSR'; # emergency !Sudo Shutdown or Reboot *now*!
-alias      pu='  pushd';alias  ua='un    '; # just add a couple basic abbreV8ions for sys-info which call un() which is defined below goo() && abov src() 4now;
-alias      po='   popd';alias una='un -a ';
+alias      sz='   sudo -E zsh';alias SS='sudo shutdown -h now';alias SSR='sudo shutdown -r now';alias SN='SSR'; # emergency !Sudo Shutdown or Reboot *now*!
+alias      pu='  pushd';alias  ua='un    ';alias SH='shutdown -h';alias SR='   shutdown -r'; # these aliases are for after `sz` when I can w8 1 minute 4 shutdn
+alias      po='   popd';alias una='un -a '; # just add a couple basic abbreV8ions for sys-info which call un() which is defined below goo() && abov src() 4now;
 alias      pe='   perl -MOctology::a8 -pe'; # setup Perl Eval filter easy to give a 's///' after
 alias      pa='   perl -MOctology::a8  -e'; # setup Perl eval        with Attribute Auto-export globals of A8
 alias     pla='   pa  '; # pb is already taken by pingb
@@ -554,6 +555,8 @@ alias      ec='  echo '; #  ec   :           echo
 alias      ee='  ec -e';
 alias     en='   ec -n';
 alias     ene='  en -e';
+alias     een='  ene  ';
+alias     ece='  ee   ';
 alias      ev=' evince'; #  ev   :           evince (decent PDF document reader)
 alias    cncl=' cancel'; #  cncl :         cancel
 alias   comma=' cma   '; #  comma:            cma (like coma inserts by 4, these insert after 3)
@@ -706,7 +709,7 @@ alias fb8=' fbset  800x600-100'; #              37
 alias fb10='fbset 1024x768-100'; #              48
 alias fb12='fbset 1280x1024-75'; #              64
 alias fb16='fbset 1600x1200-76'; #              75
-alias moz='/usr/local/mozilla/mozilla -P Pip 2>&1 >/dev/null &'; # from way back when I used Pip Profile (likely before FireFox) with Mozilla spewing warningz
+alias moz='/usr/local/mozilla/mozilla -P Pip >/dev/null 2>&1 &'; # from way back when I used Pip Profile (likely before FireFox) with Mozilla spewing warningz
 alias irc='irssi';
 #lias    ircsdl='     irssi -c IRC.Perl.Org          -n Pip      '; #sdl         # no longer using any b(itch)?x, switched completely to Perl-based Irssi.Org
 #lias    ircpl='      irssi -c IRC.Perl.Org          -n Pip      '; #perl  #yapc (which might be renamed after 2016 to just ThePerlConference #tpc?)
@@ -878,17 +881,31 @@ alias eqx='/home/pip/dvl/m8/clda/eqx/eqx-0.9.4.26/equinox3d-0.9.4.26-Linux64bit/
 alias fstat='  perl -MTime::PT     -e "@s=split(/ /,scalar(localtime((stat(shift))[9])));print   \"@s\"      ;"';
 #lias fstatpt='perl -MTime::PT     -e "@s=split(/ /,scalar(localtime((stat(shift))[9])));print `pt @s`,\"\n\";"'; #pt(@s) not exported,so try shell,leav Nwln?
 alias fstd8='  perl -MOctology::d8 -e "@s=split(/ /,scalar(localtime((stat(shift))[9])));print Octology::d8->new(\"expand\"=>\"@s\");"'; 
-alias    xt=' xterm      -geometry 160x50   &'; #     xt used2B a symlink2 ~/bin/xmltidy but more consistent with gt,Et,st to have it as xterm now instead
-alias uxtrm='uxterm      -geometry 160x50 -bc -bcn 512 -bcf 256 &'; # setup nice BlinkingCursor oN && oFF msecs && tryd TrueType Mono FoNt wi -fn but faild
-alias Uxtrm='uxterm      -geometry 160x50   &';alias uxt='uxtrm';alias st='stterm -g 160x50 -T st &'; # also SimpleTerminal st is pretty quick && clean too
-alias lxtrm='lxterminal --geometry=160x50   &';alias lxt='lxtrm'; # =lxterm is a separ8 sh script wich testz locale && wrapz plain uxterm for UTF-8
-alias satrm='sakura      -c 160     -r 50   &';alias sak='satrm'; # thEse termz are each made pretty similar to my preferred Dfalt Gnome-Terminal dimensionz
-alias  tn8r='terminator --geometry=1608x932 &';alias t8r='terminator'; # geom is pixLz nstd of charz wi char dimNsionz about 10x18 pixLz plus bordr && tab-bar
-alias  tit=' termit                         &';alias tmg='terminology';alias s3t='s3dvt'; # setup consistently 3-character aliases for almost all terminals;
-alias  xf4t=' x4t       --geometry=160x50   &';alias x4t='xfce4-terminal';alias crt='cd ~/dvl/c8/trm8;CRT'; # CoolRetroTerm; nEd2 cnfg termrc 2use smalr font
-alias  rox='  rxt       --geometry=160x50   &';alias rxt='roxterm'; # anothr VTE-bAsd xterm (-z $ZoomFrom1.0 [want 0.8333] spits CRITICAL assertion pango);
-# no more roxterm in my Ubu19.10 Eoan package repos but I did just agi tio termit terminology s3dvt (probably each LibVTE based,like most othr terms here);
-alias  Etrm=' Eterm     --geometry 160x50 --scrollbar-width 15 --cmod 227 -L 65536 &';alias Et='Etrm';alias E='Et'; # used to be 'Eterm -t E &' but it...
+#        xt used2B a sym-link2 ~/bin/xmltidy but mor consistNt with st,gt,Et 2 have it as xterm now instead
+alias    xt=' xterm          -geometry 160x50               &';alias st='stterm -g 160x50 -T st             &'; # also SimpleTerminal st preT quik && clEn 2
+alias uxtrm='uxterm          -geometry 160x50 -bc -bcn 512 -bcf 256 &'; # setup nice BlinkingCursor oN && oFF msecs && tryd TrueType Mono FoNt wi -fn but faild
+alias Uxtrm='uxterm          -geometry 160x50               &';alias uxt='uxtrm'; # setup consistNtly 2 or 3-char aliases for almost all usable termz
+alias lxtrm='lxterminal     --geometry=160x50               &';alias lxt='lxtrm'; # =lxterminal LXDE lItw8 GTK+ term MUl8r wi dox from `d8 86S`; `d8 4CJ` BlO;
+alias Lxtrm='lxterm         --geometry=160x50               &';alias lxm='Lxtrm'; # =lxterm is separ8 sh script wich tStz locale && wrapz plain uxterm 4 UTF-8
+alias sakra='sakura          -c 160     -r 50   2>/dev/null &';alias sak='sakra'; # thEs termz R Ech mAd preT similR 2 my prEferd Dfalt Gnome-Term dimNsionz
+alias roxtm='roxterm        --geometry=160x50               &';alias rox='roxtm'; # anothr VTE-bAsd xterm (-z $ZoomFrom1.0 [want 0.8333] CRIT assert pango);
+alias tmn8r='terminator     --geometry=1608x932             &';alias t8r='tmn8r'; # geom pixLz nstd of charz wi dimNsionz about 10x18 pixLz + bordr && tab-bar
+alias xf4tm='xfce4-terminal --geometry=160x50               &';alias x4t='xf4tm'; # thEs BlO wil proly Ech nEd custom cfg && pRamz lIk hEr && abov 4 160x50
+alias m8trm='mate-terminal                                  &';alias m8t='m8trm';
+alias tm.ap='terminal.app                                   &';alias t.a='tm.ap';
+alias tmnlg='terminology                                    &';alias tmg='tmnlg';
+alias qterm='qterminal                                      &';alias qtm='qterm';
+alias liltm='lilyterm                                       &';alias ltm='liltm';
+alias konsl='konsole                                        &';alias kon='konsl';
+alias p31lx='psk31lx                                        &';alias p3t='p31lx';
+alias trmit='termit                                         &';alias tit='trmit';
+alias  ptm=' pterm                                          &';alias crt='pu ~/dvl/c8/trm8;CRT'; # CoolRetroTerm nEdz2 config termrc 2use smalr font ...
+alias  s3t=' s3dvt                                          &';alias  to='tio                &'; #   ... for 160x50 2fit
+alias  urx=' urxvt                                          &'; # Unicode Rxvt configured near bottom of ~/.Xrc with `xrc` to load xrdb d8a beforehand;
+alias vtst='vttest'; # `vtst` might be good to run all termz thru 2 see which have what fE8urez; BlO echo compact term alias mapingz;
+alias trmz='ee  "${R}xt${w},${o}st${w},${Y}gt${w},${G}to${w},${C}Et${W}=> ${R}xterm${w},${o}s[uckless]tterm${w},${Y}gnome-terminal${w},${G}tio${w},${C}E[nlightenment]term${W}; ${R}uxt${w},${o}lxt${w},${Y}lxm${w},${G}sak${w},${C}t8r${w},${B}tit${w},${M}tmg${w},${p}crt${w},${R}urx${w},${o}rox${w},${Y}p3t${w},${G}s3t${w},${C}x4t${w},${B}m8t${w},${M}t.a${w},${p}kon${w},${R}atm${w},${o}ltm${w},${Y}ptm${w},${G}qtm${W}=>";
+            een "${R}uxterm${w},${o}lxterminal${w},${Y}lxterm${w},${G}sakura${w},${C}terminator${w},${B}termit${w},${M}terminology${w},${p}CoolRetroTerm${w},${R}urxvt${w},${o}roxterm${w},${Y}psk31lx${w},${G}s3dvt${w},${C}xfce4-terminal${w},${B}mate-terminal${w},${M}terminal.app${w},${p}konsole${w},${R}aterm${w},${o}lilyterm${w},${Y}pterm${w},${G}qterminal${W};$z"'; # echo -e SKpd colr coded terminal emul8orz mapping list of 2 && 3-character aliasez
+alias  Etrm=' Eterm        --geometry 160x50 --scrollbar-width 15 --cmod 227 -L 65536 &';alias Et='Etrm';alias E='Et'; # used to be 'Eterm -t E &' but it...
 export ETERM_THEME_ROOT="~/.Eterm/themes"; # wuz ~/.Eterm/themes/Eterm                       # ...looks like I don't even need that plain old  E theme anymore
 #lias E=' Eterm -t E --scrollbar-type motif --scrollbar-width 15 &'; # --cmod 227 &';
 #lias Et='Eterm --background-pixmap mits1024.jpg -c orange -T PipzEtrm --scrollbar-type motif --scrollbar-color blue --scrollbar-width 15 --scrollbar-right --path /home/pip/.Eterm/ --default-font-index 4 &'
@@ -914,14 +931,14 @@ export ETERM_THEME_ROOT="~/.Eterm/themes"; # wuz ~/.Eterm/themes/Eterm          
 alias gtt='gnome-tweaks'; # used to be gt-tool scaling all fontz to 1.5 && mkng CapsLock a Ctrl;XperimNt wi Caps2:Hyper,Menu,Win2see wut else can map too?
 alias gt=' gnome-terminal';alias wmc='wmctrl'; # mAB -x zsh (-c)? s2 & or wiout aliasz: pushd ~/dox/2du;screen -h 9999 -S 2du -t 2du e 2;popd;
 alias xrnr='xrandr'; # shud mk func tking [hdp]\d* 4 Hdmi, Dvi, disPlayPort thN wich ndx 2 cfg wi custm r8 setz (hopefully2 144) whN cRd,Kbl,&&displA suport
-alias xr='xrnr --output DVI-1 --mode 1920x1080 --rate 60';alias cx='ct "init";xr'; # nEd2set ViotekGN32C over DVI from Dflt 144 rEfresh down2cAbl suportd 60
-if       [[ "${(L)HHst}" ==  oni    ]] ||
+alias xr='xrnr --output DVI-D-0                  --rate 60';alias cx='ct "init";xr'; # nEd2set ViotekGN32C over DVI from Dflt 144 rEfresh down2cAbl suportd 60
+if       [[ "${(L)HHst}" ==  oni    ]] || # `xr` abov was DVI-1 thN DVI-D-1 thN DVI-D-0 && had --mode 1920x1080 B4 just --rate 60; # new50"TV was H3WideFormat
          [[ "${(L)HHst}" ==  aku    ]]; then  alias gtss='sleep 1'; # GnomeTerminal SleepSeconds 2 delay 4 gti init   # only Akuma was fast Enuf2kEp up with 1
 else                                          alias gtss='sleep 2'; fi            # ... second before && hopefully Ryu, Ken, && Chun can all handle just 2 now
 # below set 8sh "H" Viewport Width 1..3 | Height 1 defaults of all 3840x1080 then override as approprE8 for host-specific display resolution varE8ionz
                                                                               export HVW1='3840';export HVW2='3840' ;export HVW3='3840' ;export HVH1='1080';
-if       [[ "${(L)HHst}" ==  oni*   ]] || [[ "${(L)HHst}" ==  aku*   ]]; then                    export HVW2='7680' ;export HVW3='11520'; # new50"TV is 3wide
-  if     [[     "$H3WF"  ==  "1"    ]];                                  then export HVW1='5760';export HVW2='11520';export HVW3='17280';                fi
+if       [[ "${(L)HHst}" ==  oni*   ]] || [[ "${(L)HHst}" ==  aku*   ]]; then                    export HVW2='7680' ;export HVW3='11520';export HVH1='2160';
+  if     [[     "$H3WF"  ==  "1"    ]];                                  then export HVW1='5760';export HVW2='11520';export HVW3='17280';                  fi
 elif     [[ "${(L)HHst}" ==  ryu*   ]] || [[ "${(L)HHst}" ==  ken*   ]]; then export HVW1='1920';                    export HVW3='5760' ;                    fi
 if       [[ "${(L)HHst}" ==  ryu*   ]];                                  then                                                            export HVH1='1200'; fi
 if       [[ "${(L)HHst}" ==  chun*  ]] || [[ "${(L)HHst}" ==  taki*  ]]; then export HVW1='1280';export HVW2='2560';export gtss='sleep 3';export HVH1='800'; fi
@@ -1007,12 +1024,14 @@ if       [[ "${(L)HHst}" ==  oni    ]] ||
   # K1BLEgti:For Ubu19.10 I've resized d8ok term font from 48 to 46 so am adjusting wmc -e 10,664,1006,1268,74 to 10,704,1006,1228 as 1st guess 2 re-align.
   # Also removing && commenting out the 2nd d8ok term I was originally spawning way over on the 3rd monitor, since Oni is only running with 2 VG248's now.
   # As this 1st stab at re-alignment, I'm shaving off 40 pixels in both width directions but might also need to shrink the heights to fit the bottom l8r too;
+  # As this 2nd stab at re-alignment, I'm shaving off 40 pixels in both width directions again;
+  # As this 3rd stab at re-alignment, I'm shaving off 80 pixels in both width directions again;
 #            gt --geometry=-0-0       --hide-menubar --window-with-profile=d8ok                               --role=d8ok                                   &;
 #       gtss;wmc -r :ACTIVE: -T d8ok                ;wmc -r :ACTIVE: -b add,skip_pager,sticky;
 #            wmc -r :ACTIVE: -e 10,4504,1006,1268,74;wmc -r :ACTIVE: -b add,skip_taskbar,below;
-  alias gtI='gt --geometry=+704-0     --hide-menubar --window-with-profile=d8ok                               --role=d8ok                                   &;
+  alias gtI='gt --geometry=+784-0     --hide-menubar --window-with-profile=d8ok                               --role=d8ok                                   &;
         gtss;wmc -r :ACTIVE: -T d8ok                ;wmc -r :ACTIVE: -b add,skip_pager,sticky;
-             wmc -r :ACTIVE: -e  10,704,1006,1228,74;wmc -r :ACTIVE: -b add,skip_taskbar,below;
+             wmc -r :ACTIVE: -e  10,824,1006,1108,74;wmc -r :ACTIVE: -b add,skip_taskbar,below;
              gt --geometry=-0-0       --hide-menubar --window-with-profile=d8fd                               --role=d8fd                                   &;
         gtss;wmc -r :ACTIVE: -T d8fd                ;wmc -r :ACTIVE: -b add,skip_pager,sticky;
              wmc -r :ACTIVE: -e 10,2416,1006,1458,74;wmc -r :ACTIVE: -b add,skip_taskbar,below;
@@ -1099,9 +1118,9 @@ fi
 #    aterm -bg #03071B -fg #88F8B0 --cursorColor #30D0F0 --cursorColor2 #204080 -color3 #FF9911 -color13 #AA22BB -pr #D8D870 -tr -trsb -sh 31 -fade 63 -sb -sr -sl 2047 -vb -fn                "-*-*-*-*-*-*-15-*-*-*-*-*-*-*" -fb                "-*-*-*-*-*-*-19-*-*-*-*-*-*-*"
 # ptokterm -bg #03071B -fg #88F8B0 --cursorColor #30D0F0 --cursorColor2 #204080 -color3 #FF9911 -color13 #AA22BB -pr #D8D870 -tr -trsb -sh 31 -fade 63 -sb -sr -sl 2047 -vb -fn "-ttf-lucida console-*-*-*-*-47-*-*-*-*-*-*-*" -fb "-ttf-lucida console-*-*-*-*-48-*-*-*-*-*-*-*" -geometry 27x1+492+972
 At() { echo At params without residue: 11,12,17,18,20,22,23,28,31,32,40,41,49 \n mixr bar Gen: At 17, 44x3+0+950 Eiji: 105x3; # no border, always top
- #if [[ "$1" == "" ]]; then aterm -geometry 80x30 -color3 "#FFAA33" -color13 "#9933BB" -bg "#03071B" -fg "#88F8B0" --cursorColor "#30D0F0" --cursorColor2 "#204080" -pr "#D8D870" -vb -fn "-ttf-DejaVu Sans-*-*-*-*-18-*-*-*-*-*-*-*" -fb "-ttf-DejaVu Sans-*-*-*-*-18-*-*-*-*-*-*-*" -tr -trsb -sh 31 -fade 63 -sb -sr -sl 2047 &; #2>&1 >/dev/null &;
-  if [[ "$1" == "" ]]; then aterm -geometry 80x30 -color3 "#FFAA33" -color13 "#9933BB" -bg "#03071B" -fg "#88F8B0" --cursorColor "#30D0F0" --cursorColor2 "#204080" -pr "#D8D870" -vb -fn "-*-*-*-*-*-*-18-*-*-*-*-*-*-*" -fb "-*-*-*-*-*-*-18-*-*-*-*-*-*-*" -tr -trsb -sh 31 -fade 63 -sb -sr -sl 2047 &; #2>&1 >/dev/null &;
-  else                      aterm -geometry 80x30 -color3 "#FFAA33" -color13 "#9933BB" -bg "#03071B" -fg "#88F8B0" --cursorColor "#30D0F0" --cursorColor2 "#204080" -pr "#D8D870" -vb -fn "-*-*-*-*-*-*-$1-*-*-*-*-*-*-*" -fb "-*-*-*-*-*-*-$1-*-*-*-*-*-*-*" -tr -trsb -sh 31 -fade 63 -sb -sr -sl 2047 2>&1 >/dev/null &;
+ #if [[ "$1" == "" ]]; then aterm -geometry 80x30 -color3 "#FFAA33" -color13 "#9933BB" -bg "#03071B" -fg "#88F8B0" --cursorColor "#30D0F0" --cursorColor2 "#204080" -pr "#D8D870" -vb -fn "-ttf-DejaVu Sans-*-*-*-*-18-*-*-*-*-*-*-*" -fb "-ttf-DejaVu Sans-*-*-*-*-18-*-*-*-*-*-*-*" -tr -trsb -sh 31 -fade 63 -sb -sr -sl 2047 &; #>/dev/null 2>&1 &;
+  if [[ "$1" == "" ]]; then aterm -geometry 80x30 -color3 "#FFAA33" -color13 "#9933BB" -bg "#03071B" -fg "#88F8B0" --cursorColor "#30D0F0" --cursorColor2 "#204080" -pr "#D8D870" -vb -fn "-*-*-*-*-*-*-18-*-*-*-*-*-*-*" -fb "-*-*-*-*-*-*-18-*-*-*-*-*-*-*" -tr -trsb -sh 31 -fade 63 -sb -sr -sl 2047 &; #>/dev/null 2>&1 &;
+  else                      aterm -geometry 80x30 -color3 "#FFAA33" -color13 "#9933BB" -bg "#03071B" -fg "#88F8B0" --cursorColor "#30D0F0" --cursorColor2 "#204080" -pr "#D8D870" -vb -fn "-*-*-*-*-*-*-$1-*-*-*-*-*-*-*" -fb "-*-*-*-*-*-*-$1-*-*-*-*-*-*-*" -tr -trsb -sh 31 -fade 63 -sb -sr -sl 2047 >/dev/null 2>&1 &;
   fi}
 alias tStl='tStc R;ec;tStc R d;ec;tStc R a;ec;tStc R l'; # loop all 4 colr layrz, leaving Lite last, calling just Reverse to pretend lower L indic8s bkgrounds
 alias tStL='tStc F;ec;tStc F D;ec;tStc F A;ec;tStc F L'; # loop all 4 colr layrz, leaving Lite last, calling just Fraktur which probably rarely does anything
@@ -1250,11 +1269,11 @@ m423(){ # convert m4a filez to mp3 using ffmpeg, was originally bash script in ~
 #lias sslbox=' ssLBox' ; alias ssLBox='                ssh LBox.Org'; #216.158.99.146; #old 9PNet.Com download:screwyou;
 alias sstaki=' ssTaki' ; alias ssTaki='                ssh Taki' ; # SShortcuts to my main machines based on /etc/hosts entries to map names to IP addresses
 alias sstakiw='ssTakiW'; alias ssTakiW='               ssh TakiW'; # might be better to unify these to ping Taki then TakiW 2DcId wich IP&&IF 2auto ssh in2
-alias sschunw='ssChunW'; alias ssChunW='               ssh ChunW';
-alias sschun=' ssChun' ; alias ssChun='                ssh Chun' ;
-alias ssryu0=' ssRyu0' ; alias ssRyu0='                ssh Ryu0' ;
-alias ssken0=' ssKen0' ; alias ssKen0='                ssh Ken0' ;
-alias ssken='  ssKen'  ; alias ssKen='                 ssh Ken'  ;
+alias sschunw='ssChunW'; alias ssChunW='               ssh ChunW'; # K23LBavL:today Beppu-san kindly enabled a public_html/ dir for HTTP://Pip.BavL.Org Yay!
+alias sschun=' ssChun' ; alias ssChun='                ssh Chun' ;alias ssb='ssh BavL.Org     ';alias ssbavl='ssb';alias ssBavL='ssb';
+alias ssryu0=' ssRyu0' ; alias ssRyu0='                ssh Ryu0' ;alias ssm='ssh MetaNotes.Com';alias ssmeta='ssm';alias ssMeta='ssm';
+alias ssken0=' ssKen0' ; alias ssKen0='                ssh Ken0' ; # hopefully someday Beppu-san can grant me HTTP://MetaNotes.Com/~pip as ~/pub/ 4 HTML?
+alias ssken='  ssKen'  ; alias ssKen='                 ssh Ken'  ; # I'd like to link my HTTPS://Baduk.Club profile to any good picture hosted there someday;
 alias ssryu='  ssRyu'  ; alias ssRyu='                 ssh Ryu'  ;
 alias ssaku='  ssAku'  ; alias ssAku='                 ssh Aku'  ;
 ldh()      { DHst='Aku'; # LoadDestin8ionHost cking if AkuChunRyuKenTaki are!current host&&are on net to select ss && rsyn targetz  # BlO PingDestin8ion4Errorz
@@ -1275,11 +1294,11 @@ pmfi()     { if     [[ "$HUsr"      != "root" ]]; then sudo perl -MCPAN -e "forc
              else                                           perl -MCPAN -e "force('install','$@')"; fi } #   lyk"Pai"."MeFsckngForcei"
 pmverck()  { cpan -D $1; } # used to check with perl -MExtUtils::MakeMaker -le 'print MM->parse_version(shift)' $1; but that old method no longer seems to work
 alias  pdoc='perldoc'; # used to have problem with most needing -t for text-only version (not pod2man | nroff -man | $PAGER) or to just pipe thru less instead
-alias prsyn='rsyncmd'; # PRint RSYN
-rsyncmd()  {                                                echo      "rsync -avr  --files-from=dox/putr/RsynCore.ls . DstH:"; # common rsyn cmd
-                                                            echo      "  add    -n 4dryruN 2tst, add --delete usually when SrcH is Aku 2propag8,";
-                                                            echo      "  s/Core/Full/ between AkuRyuKen, might want SrcH: not just s/^/cd;/ then . ;";
-                                                            echo   -n "rsync -avr  --delete --files-from=dox/putr/RsynCore.ls "|xclip -si -se p -l 1;}
+alias prsyn='rsyncmd'; # PRint RSYN; K1VLIVES:upd8d rsyncmd below to now default to Full.ls since Chun && Taki are both dead, so Core is no longer significant
+rsyncmd()  {                                                echo      "rsync -avr  --files-from=dox/putr/RsynFull.ls . DstH:"; # common rsyn cmd
+                                                            echo      "  add    -n 4dryruN2tSt,add --delete usualy whN SrcH is Oni 2propag8,"; # just2Ryu now
+                                                            echo      "  s/Full/Core/ btwn Oni && laptop,&& might want SrcH: not just s/^/cd;/ thN . ;";
+                                                            echo   -n "rsync -avr  --delete --files-from=dox/putr/RsynFull.ls . Ryu:"|xclip -si -se p -l 1;}
 rsyn()     { # rsync -n --dry-run 2tst,try --(in|ex)clude=PATRN or .='-from=FILE' also for  --files-from listng source filenmz,-t rEdundnt but -tavrn EZ2rEmMbr
              #sEF="--exclude='*.swp' --files-from=dox/putr"; # Rsyn Exclude && FilesFrom parameter (tries to start getting all of ~?)
              #sEF="                  --files-from=dox/putr"; # Rsyn Exclude && FilesFrom parameter (any $RsEF Xpansion BlO echoz good but hOsez rsync)
@@ -1327,7 +1346,7 @@ rsyncz() { # As root,rsync current boot drive (/dev/sda) over to secondary (/dev
                                     rm                       /tmp/sfdisk.sdb
     fi
     if [[           ! -e                                    "/tmp/sfdisk.sdb" ]]; then # mk sure potentially   old         data-file was `rm`d 1st
-      echo           "Attempting to sfdisk -l /dev/sdb 2>&1 >/tmp/sfdisk.sdb"
+      echo           "Attempting to sfdisk -l /dev/sdb 2>&1 >/tmp/sfdisk.sdb"   ;      # orig STDERR redirectz 2 STDOUT && orig STDOUT goez 2 .sdb file
                                     sfdisk -l /dev/sdb 2>&1 >/tmp/sfdisk.sdb
       if [[           -r                                    "/tmp/sfdisk.sdb" ]]; then # mk sure prev `sfdisk` cmd created data-file successfully
         echo         "Attempting to grep -v LongDiskDataRgEx /tmp/sfdisk.sdb >/dev/null"
@@ -1471,7 +1490,37 @@ rsyncznw() { # As root,prep new 2nd drv. Old manual steps: fdisk /dev/sdb;p (2ck
   else
     echo       "!*EROR*! $0 must be run as root!"
   fi }
-if    [[ "${(L)HOTy}" ==        cygwin* ]]; then # upd8db optz # /proc/registry/HKEY_CLASSES_ROOT/Installer/Assemblies &&         (these should also be pruned)
+upd8db() { # as root, run GNU locate's updatedb from findutils. the env vars stuff modified from /etc/cron.daily/locate script;
+  FINDOPTIONS='-ignore_readdir_race'; # global options for invocations of find(1); # below FileSystems && paths which are pruned from updatedb database:
+  PRUNEFS="NFS nfs nfs4 afs binfmt_misc proc smbfs autofs iso9660 ncpfs coda devpts ftpfs devfs mfs shfs sysfs cifs lustre_lite tmpfs usbfs udf ocfs2 fuse";
+  PRUNEPATHS="/tmp /usr/tmp /var/tmp /afs /amd /alex /var/spool /sfs /media /var/lib/schroot/mount /run/user/1000/doc /run/user/1000/gvfs"; #fuse.gvfsd-fuse";
+  LOCALUSER="root"         ; # run find as this user (was "nobody"); # NETPATHS=""; # no netpaths added for now;
+  local   NICE=10          ; # cron.daily/find: run at this priority -- highr numb means lowr priority (this is rL8ive 2 Dfalt which cron sets,usually +5);
+  local IONICE_CLASS=3     ; # I/O priority: 1 for real time, 2 for best-effort, 3 for idle ("3" only allowed for root);
+  local IONICE_PRIORITY=7  ; # 0-7 (only valid for IONICE_CLASS 1 and 2), 0=highest, 7=lowest;
+  export FINDOPTIONS PRUNEFS PRUNEPATHS LOCALUSER;                   # NETPATHS   ; # set task to run with desired I/O priority if possible;
+  if [ -x /usr/bin/ionice ] && [ "${UPDATDB_NO_IONICE}" = "" ]; then # Linux suportz I/O schedulng prioriTz && classez sinc 2.6.13 wi the CFQ IO scheduler;
+    local  KVER=$(uname -r); #       don't run ionice               if kernel                                     version < 2.6.13;
+    case "$KVER" in          # I'm not sure why, but seems updatedb && locate are not oper8ing normally anymore,remaining unable to find filez all over fs;
+      2.[012345]*) ;;        # <root@OniK28L4gPX/home/pip>upd8db \n /usr/bin/find: '/opt/containerd': Permission denied '/home/pip/.pki' '/home/pip/.tmp'
+      2.6.[0-9]  ) ;;        #   '/home/pip/bin' '/home/pip/.local' '/home/pip/.bak' '/home/pip/.vim/autoload'
+      2.6.[0-9].*) ;;        #   '/home/pip/.mk/qt5/Qt5.14.0/qtwebengine/src/core/debug/host gen obj' && almost all of my home && .cpan && /snap/* etc.;
+      2.6.1[012]*) ;;        # Yay! it looks like changing LOCALUSER to root (from orig nobody) has enabled rel8ively normal oper8ion && results again;
+                *)
+      case     "$IONICE_CLASS" in
+        1|2) priority="-n ${IONICE_PRIORITY:-7}" ;; # avoid providing "-n" when IONICE_CLASS isn't 1 or 2;
+        *  ) priority=""                         ;;
+      esac # HTTP://Zsh.SF.Net/Doc/Release/Redirection.html indic8z order matterz, so 2>&1 >/dev/null sendz STDERR 2 orig STDOUT && orig STDOUT 2 null;
+      ionice -c $IONICE_CLASS     $priority -p   $$   > /dev/null 2>&1 || true
+      ;;
+    esac; fi
+  if getent passwd $LOCALUSER   > /dev/null   ; then cd /;
+    if   [[     "$HUsr"  ==        "root"   ]]; then  # I stripped out the cron script's /bin/sh test for root user && put my basic one in here instead;
+              nice -n ${NICE:-10} updatedb.findutils; # /dev/null;     # don't redirect STDERR to null AgN until the db is actually returning good results AgN;
+    else sudo nice -n ${NICE:-10} updatedb.findutils 2> /dev/null; fi; # HTTPS://StackOverFlow.Com/questions/25020444/how-to-unset-variables-after-use-in-zshrc
+  else  echo "User $LOCALUSER does not exist."; unset FINDOPTIONS PRUNEFS PRUNEPATHS LOCALUSER; exit 1; fi; # clears out earlier exports at end ...
+                                                unset FINDOPTIONS PRUNEFS PRUNEPATHS LOCALUSER; cd }        #   ... whether LOCALUSER existed or not;
+# if     [[ "${(L)HOTy}" ==        cygwin* ]]; then #     optz # /proc/registry/HKEY_CLASSES_ROOT/Installer/Assemblies &&         (these should also be pruned)
 #  export PRUNEPATHS="/c/System\\ Volume\\ Information";       # /proc/registry/HKEY_CURRENT_USER/Software/Microsoft/Windows/CurrentVersion/Explorer/UserAssist
 #  export PRUNEPATHS="/c/System\\ Volume\\ Information           /proc/registry/HKEY_CLASSES_ROOT/Installer/Assemblies /proc/registry/HKEY_CURRENT_USER/Software/Microsoft/Windows/CurrentVersion/Explorer/UserAssist";
 #  export   NETPATHS="/c";
@@ -1479,8 +1528,11 @@ if    [[ "${(L)HOTy}" ==        cygwin* ]]; then # upd8db optz # /proc/registry/
 #--localpaths='    path1    path2...' - Non-network directories to put in the db.                                         Default:/
 #--netpaths='      path1    path2...' - Network(NFS,AFS,RFS,etc.) dirz2put in db. $ENV{NETPATHS   } also sets this value. Default:none
 #--prunepaths='    path1    path2...' - Dirz wich would but should! be put in db. $ENV{PRUNEPATHS } also sets this value. Default:/(((us|va)r/)?tmp|afs)
-     alias upd8db='updatedb --localpaths="/c" --prunepaths="/c/System\\ Volume\\ Information /proc/registry/HKEY_CLASSES_ROOT/Installer/Assemblies /proc/registry/HKEY_CURRENT_USER/Software/Microsoft/Windows/CurrentVersion/Explorer/UserAssist"';
-else alias upd8db='updatedb'; fi # note: s|/$||g (rm trailing slashes from pathz2omit) or upd8db will treat as RegExes.
+#   if   [[     "$HUsr"  ==        "root"  ]]; then
+#             updatedb --localpaths="/c" --prunepaths="/c/System\\ Volume\\ Information /proc/registry/HKEY_CLASSES_ROOT/Installer/Assemblies /proc/registry/HKEY_CURRENT_USER/Software/Microsoft/Windows/CurrentVersion/Explorer/UserAssist"
+#   else sudo updatedb --localpaths="/c" --prunepaths="/c/System\\ Volume\\ Information /proc/registry/HKEY_CLASSES_ROOT/Installer/Assemblies /proc/registry/HKEY_CURRENT_USER/Software/Microsoft/Windows/CurrentVersion/Explorer/UserAssist"; fi # doubting I'll ever return to any old MSWindows system && CygWin again;
+# elif   [[     "$HUsr"  ==        "root"  ]]; then updatedb; # K22L8ZZ9:originally I had upd8db as just aliases before turning those into this function;
+# else                                         sudo updatedb; fi } # note: s|/$||g (rm trailing slashes from pathz2omit) or upd8db will treat as RegExes;
 # 47GKM3BY tmp pokr env varz (NO Slashes on end!) wher 1st 'pokr' is local path to data dir
 #export     pokr=~/dvl/pokr/c
 #export ldvlpokr=piptigger@lbox.org:dvl/pokr/c
