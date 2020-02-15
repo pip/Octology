@@ -4,7 +4,8 @@
 # 2du:add perVC autostRt nwlOcl`scrn`if!alredy in1,lern`autoload -z`&&sepR8hist,get any othrUseful modulz lIk pcre,mAB mk xrhd 4 xr&&r 2 EZr8pik144Hz 2HDpMvI?
 #   bakon gN2:`em  scummvm`:2use nw"modern"theme4scummvm,add2[scummvm]sect of~/.scummvmrc(aftr runing scummvm once):themepath=/usr/share/games/scummvm/engines
 #   nowon ubu:`agi scummvm`&&mAB -d8a shud wrk2plA around wi2D advN2rz AgN; If cmd cursr is by an alias Ctrl-x,a will _expand_alias&&mABcan disAblit4 wh pRam?
-# nOt:`sz`in/etc/init.d c@chz lOcl sudo* bin daemon nstd of /usr/bin versN,prmpt similRly chOkz tryng`d8`within~/.inst/perl-5.8.8 sO mAB rEordr path2!hv probz?
+# nOt:HTTPS://Joel.Porquet.Org/wiki/hacking/vim_konsole has a pretty good little article about mapping good Vim && Zsh keyz from within KDE's konsole terminal.
+#   `sz` in /etc/init.d c@chz lOcl sudo* bin daemon nstd of /usr/bin versN,prmpt similRly chOkz tryng`d8`within~/.inst/perl-5.8.8 sO mAB rEordr path2!hv probz?
 #[[   -e /sw/bin/init.sh ]] && source /sw/bin/init.sh; # fink:FreeBSD special shL stufInEded2src4zsh on oldLBoxB4Keith rEvertd bak2 gN2; "${(L)OSTYPE}"== *bsd?
 zmodload       zsh/pcre
   setopt                \
@@ -29,7 +30,7 @@ unsetopt                \
 # auto_pushd            \# setng addz dirz 2 stack wN just normally chngng 2 thM (wich I du not normally lIk or want)
 # ksh_arrays            \# rEmMbr wNwrItng scrptz[or funcz]2include'setopt [localoptions] ksharrays'sO arAzR 0-bAsed(but!glOblBcuzmOst scrptzRstndrdly 1-bAsed)
 # re_____match_____pcre \# mA want2set for Z-SHell scripting RegularExpressions to utilize PerlCompatibility styles && mA insert 'zmodload zsh/(pc)?re(gex)?';
-export vers='0.0';export d8VS='K28LAvis';export auth='PipStuart <Pip@CPAN.Org>'; # not Xportng $b sinc cOlIdz wi sort{$a <=> $b} /defhijlnqstuvx/i + AZ 4golf;
+export vers='0.0';export d8VS='K2FL7kon';export auth='PipStuart <Pip@CPAN.Org>'; # not Xportng $b sinc cOlIdz wi sort{$a <=> $b} /defhijlnqstuvx/i + AZ 4golf;
 if     [[       "$SHELL"    == "" ]]; then       export SHELL=`  which zsh`;fi # 8sh should parse this && OverId it    # shud `man zshall` /OSTYP 2lern4BlO
 if     [[       "$HOSTNAME" == "" ]]; then       export HOSTNAME=`hostname`;fi #`hostname`retnz fsckd nwlInz\n4CygWinzRxvt... ||smthng els lame  =(
 if     [[       "$HOST"     == "" ]]; then       export HOST="$HOSTNAME"   ;fi;export VERBOSE='1'; # set flag to print debug && status info from system utilz
@@ -66,7 +67,7 @@ export JAVA_HOME='/usr/lib/jvm/default-java';export LLVM_INSTALL_DIR='/usr/inclu
 export NODE_VERSION='v10.16.0'; # J5BMGHVf:NodeJS installed into /usr/local/lib/nodejs/node-v10.15.3-linux-x64/ according to:  J6KM5W16:upd8d to LTS version;
 export NODE_DISTRO='linux-x64';alias  erd='expo r d80k';alias epd='expo p d80k'; #   HTTPS://GitHub.Com/nodejs/help/wiki/installation instructionz; r=start
                                alias xord='erd';  alias xopd='epd';alias xo='expo';  # used to prefer xo => expo, but 4-char is already short enuf; p=publish
-ulimit  -c 65535; # 33,553,920-bytes # setz coredump size limit2 32MB (4Dbugng) wher #-param is *512-byte blox or 'unlimited' canBUsed  # /opt/Qt5.13.1-pnp/bin
+ulimit  -c 65536; # 33,553,920-bytes # setz coredump size limit2 32MB (4Dbugng) wher #-param is *512-byte blox or 'unlimited' canBUsed  # /opt/Qt5.13.1-pnp/bin
 typeset -U path ;path=($HOME/bin $HOME/.local/bin /usr/local/sbin /usr/sbin /sbin . $HOME/dvl/t8/node/node-$NODE_VERSION-$NODE_DISTRO/bin
   /usr/local/bin /usr/bin /bin /opt/bin $HOME/lib/perl5/bin $HOME/lib/Octology/f8/pal8 $HOME/dvl/t8/dmd/linux/bin $JAVA_HOME/bin $path);
 # old:atmptd2nstl DMDv2.052 on Java7OpenJDK && GoogleAndroid-18 (4.2), now J5BMGPOM:tryng2setup l8st NodeJS 4 React_n8ive Expo d8ok nstdof nodebrew hopefully;
@@ -186,8 +187,8 @@ else                                   eval $($dircolors -b            ); fi #  
          LS_COLORS="$LS_COLORS*_localhost=00;35:*_path=00;31:*-update=01;31:*_launch=00;33:*-launch=01;33:*-gtk3=00;36:*-scrollbar=01;36:";
          LS_COLORS="$LS_COLORS*-xim=01;35:*-gtk=01;33:";                                                                          #/etc/X11/xinit/xinput.d
          LS_COLORS="$LS_COLORS*-a11y=01;35:*-agent=00;35:*_start=01;31:*_stop=00;31:*-va-gl=01;35:*-adaptor=01;31:*-env=00;33:";  #/etc/X11/Xsession.d
-         LS_COLORS="$LS_COLORS*-addresses=00;35:*drkonqirc=01;36:*patchagerc=01;31:";                                             #/etc/email-addresses (exim)
-         LS_COLORS="$LS_COLORS*machine-id=01;30:*karboncalligraphyrc=01;31:*kritadisplayrc=00;36:*kritarc=01;36:";                #/etc && ~/.config
+         LS_COLORS="$LS_COLORS*-addresses=00;35:*drkonqirc=01;36:*patchagerc=01;31:*konsolerc=01;33:";                            #/etc/email-addresses (exim)
+         LS_COLORS="$LS_COLORS*machine-id=01;30:*karboncalligraphyrc=01;31:*kritadisplayrc=00;36:*kritarc=01;36:";                #/etc && ~/.config (abov too)
          LS_COLORS="$LS_COLORS*-repository-8_xml=01;35:*-addons_list-2_xml=00;35:*-sys-img_xml=01;31:*-addon_xml=01;36:";         #~/.android/cache
          LS_COLORS="$LS_COLORS*meta-release-lts=01;35:"; # E95M5MJR:done adding Aku:/etc && ~/.*/* but stil nd2recurse furthr l8r #~/.cache/update-manager-core
          LS_COLORS="*done_upgrades=01;31:$LS_COLORS";                                                                             #~/.co*/compiz-1/compizconfig
@@ -224,7 +225,13 @@ alias xprt='export';
 #xport PS1='%{[1;33m%}%(!.<.[)%{[1;36m%}%n%{[1;37m%}@%{[1;36m%}$HHst%{[1;31m%}`pt -cp`%{[1;34m%}%~%{[1;33m%}%(!.>.])%{[1;32m%}';
 #xport PS1='[1;37m%(!.<.[)[1;33m%n[1;34m@[1;35m$HHst`d8 -a`[1;34m`c8fn $PWD`[1;37m%(!.>.])[1;32m'; # aparNtly -z && all %{ %} nEded4CLIwidtcalQl8
 #xport PS1='%{[1;37m%}%(!.<.[)%{[1;33m%}%n%{[1;34m%}@%{[1;35m%}$HHst`d8 -z`%{[1;34m%}%~%{[1;37m%}%(!.>.])%{[1;32m%}'; # F1PLEswI:s/%~/c8fn/;
-export         PS1='%{[1;37m%}%(!.<.[)%{[1;32m%}%n%{[1;34m%}@%{[1;36m%}$HHst` d8 -z `%{[1;34m%}` c8fn -z $PWD `%{[1;37m%}%(!.>.])%{[1;32m%}';
+#xport  K="\e[01;30m";export  R="\e[01;31m";export  O="\e[22;33m";export  Y="\e[01;33m";export  G="\e[01;32m";export    z="\e[00m"; # like a8 $SKp0 . 'm'
+#xport  C="\e[01;36m";export  B="\e[01;34m";export  M="\e[01;35m";export  P="\e[22;35m";export  W="\e[01;37m"; # these then should become able to use in Uk etc
+export  K="[01;38;5;247m";export  R="[01;38;5;009m";export  O="[22;38;5;172m";export  Y="[01;38;5;011m";export  G="[01;38;5;010m";export z="[00m";
+export  C="[01;38;5;014m";export  B="[01;38;5;012m";export  M="[22;38;5;013m";export  P="[01;38;5;092m";export  W="[01;38;5;015m";export Z="[01m";
+export         PS1='%{$W%}%(!.<.[)%{$G%}%n%{$B%}@%{$C%}$HHst` d8 -z `%{$B%}` c8fn -z $PWD `%{$W%}%(!.>.])%{$G%}'; # see if sakura can accept colr varz in prmpt
+# it seems that sakura won't bright bold 01;30..37 like other termz but setting prompt with xterm-256color SKp cOdz will work 4 her like it does elsewhere;
+#xport         PS1='%{[1;37m%}%(!.<.[)%{[1;32m%}%n%{[1;34m%}@%{[1;36m%}$HHst` d8 -z `%{[1;34m%}` c8fn -z $PWD `%{[1;37m%}%(!.>.])%{[1;32m%}';
 alias xp="xprt PS1='%{[1;33m%}%(!.<.[)%{[1;36m%}%n%{[1;37m%}@%{[1;36m%}$HHst\`d8 -f|sS z\`%{[1;34m%}%~%{[01;01;01;1;33m%}%(!.>.])%{[1;32m%}'";
 alias dp="xprt PS1='%{[1;37m%}%(!.<.[)%{[1;32m%}%n%{[1;34m%}@%{[1;36m%}$HHst\`d8 -z\`%{[1;34m%}\`c8fn -z \$(pwd)\`%{[1;37m%}%(!.>.])%{[1;32m%}'";
 # J5IMApwd:Above DefaultPrompt $PWD was not getting upd8d properly like it would for just str8 PS1 assignment, so had to wrap in sub \$(pwd) command 2 work;
@@ -257,6 +264,7 @@ if       [[ "$HUsr"     !=  "root"  ]];                                  then #e
   elif   [[  $TTY  =~ ^/dev/(tty|pts/)(7|15|23|31|39|47|55|63)$ ]] && [[ -x "$Hpal8dir/$Hpal8ts7.pal8" ]]; then export Hpl8="$Hpal8dir/$Hpal8ts7.pal8";
   elif   [[  $TTY  =~ ^/dev/(tty|pts/)(8|16|24|32|40|48|56|64)$ ]] && [[ -x "$Hpal8dir/$Hpal8ts8.pal8" ]]; then export Hpl8="$Hpal8dir/$Hpal8ts8.pal8"; fi;
   # 8unUsed pal8 fIlz aftr abov: cORRI DARKpRIM dARKZ deepRed Flipped r Tigzfavz t  ## !sure how2alias just call? note Dflt GnomTerm 0 orig got none;
+  # K2FL7WHY:for some reason only konsole was spewing 16 backslashes when running `src` getting to XeQt $Hpal (the f8.pm pal8 file on nXt lIn below);
   if     [[  $TTY  =~ ^/dev/(tty|pts/) ]] && [[ -x "$Hpl8" ]]; then export Hpal="$Hpl8";alias src8="$Hpal";Pal8Qiet='1' $Hpal; fi; # goodEnuf wo SKpd bktx?
   # J12LEAP8:trying to Xtract pal8 call so mAB new `$Hpal` or alias src8 could just reset proper 8-category term pal8 without src full .zshrc?
   if     [[ "$DISPLAY" ==           "" ]] && [[ "$TERM" == "linux" ]]; then # orig had PipzGlobalf8Flag 2!redo but!DISPLAY also4ssh so $TERM"linux"4console
@@ -621,8 +629,12 @@ alias    resh='   re   HD  ';alias resa='re Andr';re16='re 16/9';alias re64='re 
 alias    reph='re Pi|gi pi;re HD|gi hd'; # Xmpl alias IsOl8ng m@chz cAse-sNsitivly4 reso && grep,but not gi,so just Pixelz in tItl thN HighDef # RESoTesTz abov
 alias    res8='reset;rest;w8 48;src8;rest'; # J12LFTst:wanting to test a bunch of resting && waiting instead of sleep within resetting the f8 pal8 col8 colr8n;
 alias   xical='xinput-calibrator';alias xic='xical';alias xbk='xbindkeys';alias xdt='xdotool';alias xd2='xdt'; # basic Chun touch-scrn&&X re-bind&&scrpt utlz
+alias     xwi='xwininfo';alias xwid='xwi -id';alias xgaw='xdt getactivewindow';alias xiaw="xwid $(xgaw)"; # from Unix.StackExchange.Com q 14159 find wndwdimz?
+alias     xfs='xfontsel';alias ares='appres ';alias lsmo='fls|cut -f2 -d:|sort -u|gi Mono';alias fls='fc-list'; # mIt l8r Bcome Able 2 s/cut/c8/ && s/sort/s8/;
+alias      rx='ares  XTerm|gi UTF8Fonts|sort'; # HTTPS://AskUbuntu.Com/questions/161652/how-to-change-the-default-font-size-of-xterm 2get Xterm font Resources;
+alias    xfds='xfd -fn "`xfs -print`"       ';alias lsmf='fls :scalable=true:spacing=mono: family'; # XFontDisplaySelectd && LiStMonospcd Fontz 4l8r terminalz;
 alias    ctor='ctorrent -e 16 -z 64'; # abov: %eval $(xdotool getmouselocation --shell); %echo $X,$Y; will override Dflt $Y bright Yellow mapping with coordz
-alias     sig='signal-desktop '; # I7GMFSIG:installed HTTPS://Signal.Org on my Android phone && Aku here as likely better than Slack or Discord 4the future;
+alias     sig='signal-desktop'; # I7GMFSIG:installed HTTPS://Signal.Org on my Android phone && Aku/Oni here as likely better than Slack or Discord 4the future;
 alias    st4w='speaker-test -l4 -c2 -twav'; # K1VL3PCM:loop 4 times on -Ddefault ~/.asoundrc device with 2-channel stereo test /usr/share/sounds/alsa/ .wavs;
 alias      es='ecasound';alias eplay='es -o alsa -i';alias erec='es -i alsa'; # wrap ECASound similarly to `aplay` && `arecord` ALSA equivalent utilities;
 alias     pak='pulseaudio -k';alias pavl='pulseaudio -v --log-time';alias pavv='pavl -v'; # --kill running PA daemon && Verbose print with log-times 4Dbuging;
@@ -652,29 +664,29 @@ alias    Upd8='sudo curl -L https://yt-dl.org/downloads/latest/youtube-dl -o /us
 alias    Upw8='sudo wget    https://yt-dl.org/downloads/latest/youtube-dl -O /usr/local/bin/youtube-dl;sudo chmod a+rx /usr/local/bin/youtube-dl';
 alias    Upi8='sudo      -H  pip install      --upgrade        youtube-dl'; # see pypi document8ion for more inform8ion about popular Python `pip` package-tool
 alias    U='   U2b8';alias U2bk='Uk';alias u2bk='uk'; # shud l8r add 1-colm <98wId mOd&&some a8 autOcolrz 2furthr hIlIt mapngz
-alias    Ukey='echo -n "m c b : togl volMute Caption Bakgr colr [ U2b-hotKey ];  Dn Up : lowr 5%vol (arowkyz) rais 5%vol;
+alias    Ukey='en  "m c b : togl volMute Caption Bakgr colr [ U2b-hotKey ];  Dn Up : lowr 5%vol (arowkyz) rais 5%vol;
 p f n : Prevplayls toglFulsc Nextplayls (Escap=2exitf);  Lt Rt : bkwd 5secs (arowkyz) 4wrd 5secs;
 j k l : bkwd10secs toglpause 4wrd10secs (Space=2pause);   , .  : bkwd 1fram (ifpausd) 4wrd 1fram;
  0-9  : jump to N *10% playbak position (Home/End=0/9);   < >  : slow down< playbkspd >up> fastr;"';
-alias    ukey='echo -n  "m c b:volu Muted toglCaptn Bakgr cycl;(Home/End= 0/9 2)> 0-9 :jmp% \$n*10 plabakpos =r8io %abs; < > :slow down< plabakspd >upup fast;
+alias    ukey='en  "m c b:volu Muted toglCaptn Bakgr cycl;(Home/End= 0/9 2)> 0-9 :jmp% \$n*10 plabakpos =r8io %abs; < > :slow down< plabakspd >upup fast;
 j k l:bkwd 10sec toglpausd 10sec 4wrd<(Spacebar=pause2);Lt Rt:bkwd -5sec arrowkeys +5sec 4wrd; , . :bkwd -1frm whenpausd +1frm 4wrd;
 p f n:Prev plals toglFulsc plals Next<(Escapkey=exitf2);Dn Up:dec% -5vol arrowkeys +5vol %inc;"';
-alias    uky=' echo     "j k l:bkwd 10sec toglpausd 10sec 4wrd<(Spc=pausHmEnd0-9); 0-9 :jmp% \$n*10 plabakpos =r8io %abs;Lt Rt:bkwd -5sec +5sec 4wrd; < > :slow down< >upup fast;
+alias    uky=' ec  "j k l:bkwd 10sec toglpausd 10sec 4wrd<(Spc=pausHmEnd0-9); 0-9 :jmp% \$n*10 plabakpos =r8io %abs;Lt Rt:bkwd -5sec +5sec 4wrd; < > :slow down< >upup fast;
 p f n:Prev plals toglFulsc plals Next<(Escapekey=exitf2);m c b:volu Muted toglCaptn Bakgr cycl;Dn Up:dec% -5vol +5vol %inc; , . :bkwd -1frm +1frm 4wrd;"';
-alias    Uk='  echo -en "${R}m$G c$K b${W}:${B}togl${M}vol${R}Mute${G}Caption${K}Bakgr${C}colr${Y}[${G}U2b$C-${R}hot${r}Key${Y}]${W}${M}Dn$G Up${W}:${M}lowr${C}5${Y}%${w}vol${Y}(${O}arow${r}kyz${Y})${G}rais${C}5${Y}%${w}vol
+alias    Uk='  een "${R}m$G c$K b${W}:${B}togl${M}vol${R}Mute${G}Caption${K}Bakgr${C}colr${Y}[${G}U2b$C-${R}hot${r}Key${Y}]${W}${M}Dn$G Up${W}:${M}lowr${C}5${Y}%${w}vol${Y}(${O}arow${r}kyz${Y})${G}rais${C}5${Y}%${w}vol
 ${M}p$C f$B n${W}:${M}Prev${P}pla${c}ls${B}togl${C}Fulsc${B}Next${P}pla${c}ls${Y}(${O}Esc${W}=${g}2${R}exit${C}f${Y})${W}${Y}Lt$R Rt${W}:${B}bkwd${C}5${M}secs${Y}(${O}arow${r}kyz$Y)${R}4wrd${C}5${M}secs
 ${B}j$M k$R l${W}:${B}bkwd${G}10${M}sec${B}togl${M}pause${R}4wrd${G}10${M}sec${Y}(${M}Spc${W}=${g}2${M}pause${Y})${W}$B ,$M .$W :${B}bkwd${O}1${c}fram${Y}(if${M}pausd${Y})${R}4wrd${O}1${c}fram
 $C 0$O-${R}9$W :${Y}jump${w}to$r N${C}*${G}10${Y}%${O}play${B}bak${P}position${Y}(${C}Hm${Y}/${R}End${W}=${C}0${Y}/${R}9${Y})${W}$M <$G >$W :${r}slow${M}down<${O}play${B}bk${c}spd${G}>up${K}fastr${W};"'; # squEzdout most spaces so whole keymap now fitz 80x4 term dimNsions,c turns Captions off but!togl on,no b bkgrnd
-alias    Uk2=' echo -e  "${R}m$G c$K b${W}:${R}Mute${G}Caption${K}Bkgr${Y}[${G}U2b$C-${R}hot${r}Key${Y}]$W;${M}Dn$G Up${W}:${M}lowr${C}5${Y}%${w}vol${G}rais$W;${B}j$M k$R l${W}:${B}bkwd${G}10${M}secs${R}4wrd${Y}(${M}Spc${W}=${M}K${g}2${M}paus${Y})$W;$B ,$M .$W :${B}bkwd${O}1${c}frm${Y}(${M}pausd${Y})${R}4wrd$W;
+alias    Uk2=' ee  "${R}m$G c$K b${W}:${R}Mute${G}Caption${K}Bkgr${Y}[${G}U2b$C-${R}hot${r}Key${Y}]$W;${M}Dn$G Up${W}:${M}lowr${C}5${Y}%${w}vol${G}rais$W;${B}j$M k$R l${W}:${B}bkwd${G}10${M}secs${R}4wrd${Y}(${M}Spc${W}=${M}K${g}2${M}paus${Y})$W;$B ,$M .$W :${B}bkwd${O}1${c}frm${Y}(${M}pausd${Y})${R}4wrd$W;
 ${M}p$C f$B n${W}:${M}Prv${z}ls${C}Fulsc${B}Nxt${z}ls${Y}(${O}Esc${W}=${g}2${R}exit${C}f${Y})$W;${Y}Lt$R Rt${W}:${B}bkwd${C}5${M}secs${R}4wrd$W;$C 0$O-${R}9$W :${Y}jmp${R}N${C}*${G}10${Y}%${O}pla${P}pos${Y}(${C}Hm${Y}/${R}End${W}=${C}0${Y}/${R}9${Y})$W;$M <$G >$W :${r}slo${M}<down<${O}pla${c}spd${G}>up>$W;"';
 # abov try2cram Uk in2 lt 160x2 (or 113x2 4now) wi just colrz 4 mAn Keyz
-alias    uk2=' echo -e  "${R}m$G c$K b${W}:${B}togl${M}vol${R}Mute${G}Caption${K}Bakgr${C}colr${Y}[${G}U2b$C-${R}hot${r}Key${Y}]$W;${M}Dn$G Up${W}:${M}lowr${C}5${Y}%${w}vol${Y}(${O}arow${r}kyz${Y})${G}rais${C}5${Y}%${w}vol$W;${B}j$M k$R l${W}:${B}bkwd${G}10${M}sec${B}togl${M}pause${R}4wrd${G}10${M}sec${Y}(${M}Spc${W}=${g}2${M}pause${Y})$W;$B ,$M .$W :${B}bkwd${O}1${c}fram${Y}(if${M}pausd${Y})${R}4wrd${O}1${c}fram$W;
+alias    uk2=' ee  "${R}m$G c$K b${W}:${B}togl${M}vol${R}Mute${G}Caption${K}Bakgr${C}colr${Y}[${G}U2b$C-${R}hot${r}Key${Y}]$W;${M}Dn$G Up${W}:${M}lowr${C}5${Y}%${w}vol${Y}(${O}arow${r}kyz${Y})${G}rais${C}5${Y}%${w}vol$W;${B}j$M k$R l${W}:${B}bkwd${G}10${M}sec${B}togl${M}pause${R}4wrd${G}10${M}sec${Y}(${M}Spc${W}=${g}2${M}pause${Y})$W;$B ,$M .$W :${B}bkwd${O}1${c}fram${Y}(if${M}pausd${Y})${R}4wrd${O}1${c}fram$W;
 ${M}p$C f$B n${W}:${M}Prev${P}pla${c}ls${B}togl${C}Fulsc${B}Next${P}pla${c}ls${Y}(${O}Esc${W}=${g}2${R}exit${C}f${Y})$W;${Y}Lt$R Rt${W}:${B}bkwd${C}5${M}secs${Y}(${O}arow${r}kyz$Y)${R}4wrd${C}5${M}secs$W;$C 0$O-${R}9$W :${Y}jump${w}to$r N${C}*${G}10${Y}%${O}play${B}bak${P}position${Y}(${C}Hm${Y}/${R}End${W}=${C}0${Y}/${R}9${Y})$W;$M <$G >$W :${r}slow${M}down<${O}play${B}bk${c}spd${G}>up>${K}fastr${W};"'; # try"2"cram Uk 80x4 in2 just 160x2 nstd (mAB 178+wId 2fit prmpt2wi -n)
-alias    uk='echo -en "${R}m$G c$K b$W:${M}volu$R Muted$B togl${G}Captn$K Bakgr$C cycl$W;$Y(${C}Home$Y/${R}End$W=$C 0$Y/${R}9$g 2$Y)$W>$C 0$O-${R}9$W :${O}jmp$Y%$G \$${r}n$C*${G}10$O pla${B}bak${P}pos$W =${R}r8io$Y %${P}abs$W;$M <$G >$W :${r}slow$M down<$O pla${B}bak${c}spd$G >upup$K fast$W;
+alias    uk='een "${R}m$G c$K b$W:${M}volu$R Muted$B togl${G}Captn$K Bakgr$C cycl$W;$Y(${C}Home$Y/${R}End$W=$C 0$Y/${R}9$g 2$Y)$W>$C 0$O-${R}9$W :${O}jmp$Y%$G \$${r}n$C*${G}10$O pla${B}bak${P}pos$W =${R}r8io$Y %${P}abs$W;$M <$G >$W :${r}slow$M down<$O pla${B}bak${c}spd$G >upup$K fast$W;
 ${B}j$M k$R l$W:${B}bkwd$G 10${M}sec$B togl${M}pausd$G 10${M}sec$R 4wrd$W<$Y(${M}Spacebar$W=${M}pause${g}2$Y)$W;${Y}Lt$R Rt$W:${B}bkwd$g -${C}5${M}sec$O arrow${r}keys$G +${C}5${M}sec$R 4wrd$W;$B ,$M .$W :${B}bkwd$g -${O}1${c}frm$w when${M}pausd$G +${O}1${c}frm$R 4wrd$W;
 ${M}p$C f$B n$W:${M}Prev$O pla${c}ls$B togl${C}Fulsc$O pla${c}ls$B Next$W<$Y(${O}Escap${r}key$W=${R}exit${C}f${g}2$Y)$W;${M}Dn$G Up$W:${M}dec$Y%$g -${C}5${M}vol$O arrow${r}keys$G +${C}5${M}vol$Y %${G}inc$W;"'; # should consider making new 1-column Uk varE8ion which auto-resizes term @start && only needs rescaling2Bbig
-alias    ukz='Uk;echo;uk'; # for clearest biggest, open Default 80x24 purple GnomTerm, resize to 97x5, scale up a couple times, then run just `Uk`
-alias    U2b=' echo "U2b=youtube-dl 2save file2probably runthru U2b4 aftr orbetr2Use U2b8..."; youtube-dl'; # precede dl with some of my help text
+alias    ukz='Uk;ec;uk'; # for clearest biggest, open Default 80x24 purple GnomTerm, resize to 97x5, scale up a couple times, then run just `Uk`
+alias    U2b=' ec "U2b=youtube-dl 2save file2probably runthru U2b4 aftr orbetr2Use U2b8..."; youtube-dl'; # precede dl with some of my help text
 alias    U2bm='U2b  -o "%(title)s-tItL-%(uploader)s-uldr-%(extractor)s-Xtrc-%(id)s-IdNt-%(epoch)s-epch-%(upload_date)s-uldt-%(autonumber)s-otnm.%(ext)s" --restrict-filenames';
 #lias    U2b3='U2bm -x --audio-format=mp3  --audio-quality=0'; # just having --audio-format=mp3 was converting to just 32K quality =( hopefully 0 will improve
 #lias    U2ba='U2bm -x --audio-format=best --audio-quality=0'; # gst123 works admirably on most formats, but `mpg123 -Cv` is much nicer interface-wise
@@ -875,36 +887,41 @@ alias kas=' kasd'; # KillAllStupidScratchySpeechSoundStaticShockSparkSpaz
 alias  klok='dclock -date "%A %B %d, %Y" -geometry 256x88-1920-0 -miltime -bg "#03071B" -led_off "#031B0B" -fn Fixed &';
 alias xklok='xclock -digital -fg yellow -bg black -rv -geometry 512x64 -update 1 &'; # stuD fdclock gworldclock osd_?clock twclock tzwatch 2add more good here
 alias echoe='echo -e'; #  enable interpret8ion of backslashed escapes (default is -E to disable)
-alias echon='echo -n'; # disable trailing Newline
-alias echos='echon  ';
+alias echon='echo -n'; # disable trailing NewliNe
+alias echos='echon  ';alias ewh="ene '${C}$COLUMNS${w}x$O$LINES'"; # echo (with -NoNewliNe) colrd curNt term NvIronmNt varz 4 Width x Height (like `wdht`);
 alias eqx='/home/pip/dvl/m8/clda/eqx/eqx-0.9.4.26/equinox3d-0.9.4.26-Linux64bit/eqx &'; # Gabor Nagy's awesome EQuinoX3D
 alias fstat='  perl -MTime::PT     -e "@s=split(/ /,scalar(localtime((stat(shift))[9])));print   \"@s\"      ;"';
 #lias fstatpt='perl -MTime::PT     -e "@s=split(/ /,scalar(localtime((stat(shift))[9])));print `pt @s`,\"\n\";"'; #pt(@s) not exported,so try shell,leav Nwln?
 alias fstd8='  perl -MOctology::d8 -e "@s=split(/ /,scalar(localtime((stat(shift))[9])));print Octology::d8->new(\"expand\"=>\"@s\");"'; 
-#        xt used2B a sym-link2 ~/bin/xmltidy but mor consistNt with st,gt,Et 2 have it as xterm now instead
-alias    xt=' xterm          -geometry 160x50               &';alias st='stterm -g 160x50 -T st             &'; # also SimpleTerminal st preT quik && clEn 2
-alias uxtrm='uxterm          -geometry 160x50 -bc -bcn 512 -bcf 256 &'; # setup nice BlinkingCursor oN && oFF msecs && tryd TrueType Mono FoNt wi -fn but faild
-alias Uxtrm='uxterm          -geometry 160x50               &';alias uxt='uxtrm'; # setup consistNtly 2 or 3-char aliases for almost all usable termz
-alias lxtrm='lxterminal     --geometry=160x50               &';alias lxt='lxtrm'; # =lxterminal LXDE lItw8 GTK+ term MUl8r wi dox from `d8 86S`; `d8 4CJ` BlO;
-alias Lxtrm='lxterm         --geometry=160x50               &';alias lxm='Lxtrm'; # =lxterm is separ8 sh script wich tStz locale && wrapz plain uxterm 4 UTF-8
-alias sakra='sakura          -c 160     -r 50   2>/dev/null &';alias sak='sakra'; # thEs termz R Ech mAd preT similR 2 my prEferd Dfalt Gnome-Term dimNsionz
-alias roxtm='roxterm        --geometry=160x50               &';alias rox='roxtm'; # anothr VTE-bAsd xterm (-z $ZoomFrom1.0 [want 0.8333] CRIT assert pango);
-alias tmn8r='terminator     --geometry=1608x932             &';alias t8r='tmn8r'; # geom pixLz nstd of charz wi dimNsionz about 10x18 pixLz + bordr && tab-bar
-alias xf4tm='xfce4-terminal --geometry=160x50               &';alias x4t='xf4tm'; # thEs BlO wil proly Ech nEd custom cfg && pRamz lIk hEr && abov 4 160x50
-alias m8trm='mate-terminal                                  &';alias m8t='m8trm';
-alias tm.ap='terminal.app                                   &';alias t.a='tm.ap';
-alias tmnlg='terminology                                    &';alias tmg='tmnlg';
-alias qterm='qterminal                                      &';alias qtm='qterm';
-alias liltm='lilyterm                                       &';alias ltm='liltm';
-alias konsl='konsole                                        &';alias kon='konsl';
-alias p31lx='psk31lx                                        &';alias p3t='p31lx';
-alias trmit='termit                                         &';alias tit='trmit';
-alias  ptm=' pterm                                          &';alias crt='pu ~/dvl/c8/trm8;CRT'; # CoolRetroTerm nEdz2 config termrc 2use smalr font ...
-alias  s3t=' s3dvt                                          &';alias  to='tio                &'; #   ... for 160x50 2fit
-alias  urx=' urxvt                                          &'; # Unicode Rxvt configured near bottom of ~/.Xrc with `xrc` to load xrdb d8a beforehand;
+#      xt used2B a sym-link2 ~/bin/xmltidy (or l8r just xtidy) but mor consistNt with gt,st,Et 2 have it as xterm now instead;
+alias  xt='                     xterm          -geometry 160x50               &'; # BlO uxtrm setup nice BlinkingCursor oN && oFF msecs && faild -fn TrueType;
+alias x80='                     xterm          -geometry 80x25  -fa        "Monospace" -fs 16              &'; # atMpt 2 mk big dbl-sIz xt with FontSize pRam;
+alias g80='                    gnome-terminal --geometry=80x25 --window-with-profile=Pips8025GnomTerm-NiceFont-K2FL8025 2>/dev/null &'; # mk dbl-sIzd gt also;
+alias uxt='uxtrm';alias uxtrm='uxterm          -geometry 160x50 -bc -bcn 512 -bcf 256                      &'; # `appres XTerm|gi utf8font` showz menu fontz;
+alias Uxt='Uxtrm';alias Uxtrm='uxterm          -geometry 160x50               &'; # setup consistNtly 2 or 3-char aliases for almost all usable termz
+alias lxt='lxtrm';alias lxtrm='lxterminal     --geometry=160x50               &'; # =lxterminal LXDE lItw8 GTK+ term MUl8r wi dox from `d8 86S`; `d8 4CJ` BlO;
+alias lxm='Lxtrm';alias Lxtrm='lxterm          -geometry 160x50               &'; # =lxterm is separ8 sh script wich tStz locale && wrapz plain uxterm 4 UTF-8
+alias sak='sakra';alias sakra='sakura          -c     160 -r 50 -f  "Ubuntu Mono,monospace 13" 2>/dev/null &'; # mk Ech preT similR 2my prEferd Dfalt dimNsionz
+alias s80='sak80';alias sak80='sakura          -c      80 -r 25 -f  "Ubuntu Mono,monospace 28" 2>/dev/null &'; # mk sepR8 160x50 && >gt dbl-sIz 80x25 Sak alias
+alias rox='roxtm';alias roxtm='roxterm        --geometry=160x50               &'; # anothr VTE-bAsd xterm (-z $ZoomFrom1.0 [want 0.8333] CRIT assert pango);
+alias t8r='tmn8r';alias tmn8r='terminator     --geometry=1458x920 -T t8r -b 2>/dev/null &'; # geom pixLz,!charz wi dmNsnz 10x18 1608x932pixLz+bordr&&tab-bR
+alias x4t='xf4tm';alias xf4tm='xfce4-terminal --geometry=160x50   -T x4t      &'; # like rox, x4t && m8t accept --zoom=$ZOOM level varyng from -7 to 7 with ...
+alias m8t='m8trm';alias m8trm='mate-terminal  --geometry=160x50   -t m8t      &'; #   ... 0 as norml sIz or $ZOOM factor with 1.0 as norml sIz as float scale;
+alias tmg='tmnlg';alias tmnlg='terminology    --geometry=160x50   -T tmg   -2 &'; # -c=$BOOL can set CursorBlink && -G=$BOOL VisualBell && -B Borderless
+alias qtm='qterm';alias qterm='qterminal                     1>/dev/null 2>&1 &'; # DsIgnd 4 LXQt dsktp NvIrnmNt Cmz 2 hv almOst nO cmd-lIn optnz 2 adjust
+alias Trm='Trmnl';alias Trmnl='Terminal                      2>/dev/null      &'; # looks lIk Terminal app is so old that it can hardly render prmpt or colrz;
+alias ltm='liltm';alias liltm='lilyterm        -g        160x50   -T ltm                       2>/dev/null &'; # lily && termit spew lots of GTK warnz2 STDERR
+alias kon='konsl';alias konsl='konsole        --profile  PipProfile0-K2ELGANT                              &'; # qterminal && konsole cfgz in ~/.config/ &&
+alias tit='trmit';alias trmit='termit                                                          2>/dev/null &'; #    ~/.local/share/;cud -T tit but thN no`ct`
+alias ptm='pterm                               -geometry 160x50 -fn             "Monospace 12"             &'; # pterm has lotz of .Xrc resources && optz2add
+alias urx='urxvt                               -geometry=160x50               &'; # Unicode-Rxvt cnfigd nEr botm of ~/.Xrc wi `xrc` 2lOd xrdb d8a beforehand;
+alias st='stterm                               -g        160x50   -T st       &'; # also SimpleTerminal (or SucklessTerminal?) st is pretty quik && clEn too;
+alias s3t='s3dvt                                                              &'; # s3dvt proly rEquIrz S3D env or URL 2conect2 (wich I don't knO about yet);
+alias to='   tio                                                              &'; # tio is just a simple TTY terminal I/O app && not a ful terminal by itsLf;
+alias crt='pu ~/dvl/c8/trm8;CRT'; # CoolRetroTerm nEdz2cfg termrc 2Uz smalr font; # Terminal cfg in ~/.GNUstep/ (aftr chgz mAd2 /etc/ .conf 2mk dir dot-fIl);
 alias vtst='vttest'; # `vtst` might be good to run all termz thru 2 see which have what fE8urez; BlO echo compact term alias mapingz;
-alias trmz='ee  "${R}xt${w},${o}st${w},${Y}gt${w},${G}to${w},${C}Et${W}=> ${R}xterm${w},${o}s[uckless]tterm${w},${Y}gnome-terminal${w},${G}tio${w},${C}E[nlightenment]term${W}; ${R}uxt${w},${o}lxt${w},${Y}lxm${w},${G}sak${w},${C}t8r${w},${B}tit${w},${M}tmg${w},${p}crt${w},${R}urx${w},${o}rox${w},${Y}p3t${w},${G}s3t${w},${C}x4t${w},${B}m8t${w},${M}t.a${w},${p}kon${w},${R}atm${w},${o}ltm${w},${Y}ptm${w},${G}qtm${W}=>";
-            een "${R}uxterm${w},${o}lxterminal${w},${Y}lxterm${w},${G}sakura${w},${C}terminator${w},${B}termit${w},${M}terminology${w},${p}CoolRetroTerm${w},${R}urxvt${w},${o}roxterm${w},${Y}psk31lx${w},${G}s3dvt${w},${C}xfce4-terminal${w},${B}mate-terminal${w},${M}terminal.app${w},${p}konsole${w},${R}aterm${w},${o}lilyterm${w},${Y}pterm${w},${G}qterminal${W};$z"'; # echo -e SKpd colr coded terminal emul8orz mapping list of 2 && 3-character aliasez
+alias trmz='ee "${R}xt${w},${o}st${w},${Y}gt${w},${G}to${w},${C}Et${W} => ${R}xterm${w},${o}s[uckless]tterm${w},${Y}gnome-terminal${w},${G}tio${w},${C}E[nlightenment]term${W}; ${R}uxt${w},${o}lxt${w},${Y}lxm${w},${G}sak${w},${C}t8r${w},${B}tit${w},${M}tmg${w},${p}crt${w},${R}urx${w},${o}rox${w},${Y}s3t${w},${G}x4t${w},${C}m8t${w},${B}Trm${w},${M}kon${w},${p}atm${w},${R}ltm${w},${o}ptm${w},${Y}qtm${W} =>";
+            ee "${R}uxterm${w},${o}lxterminal${w},${Y}lxterm${w},${G}sakura${w},${C}terminator${w},${B}termit${w},${M}terminology${w},${p}CoolRetroTerm${w},${R}urxvt${w},${o}roxterm${w},${Y}s3dvt${w},${G}xfce4-terminal${w},${C}mate-terminal${w},${B}Terminal${w},${M}konsole${w},${p}a${w},${R}lily${w},${o}p${w},${Y}qinal${W};$z"'; # echo -e SKpd colr-coded terminal emul8orz mapping list of nicely aligned 2 && 3-character aliasez fit in 160x2 char linez; also x80,g80,s80 work;
 alias  Etrm=' Eterm        --geometry 160x50 --scrollbar-width 15 --cmod 227 -L 65536 &';alias Et='Etrm';alias E='Et'; # used to be 'Eterm -t E &' but it...
 export ETERM_THEME_ROOT="~/.Eterm/themes"; # wuz ~/.Eterm/themes/Eterm                       # ...looks like I don't even need that plain old  E theme anymore
 #lias E=' Eterm -t E --scrollbar-type motif --scrollbar-width 15 &'; # --cmod 227 &';

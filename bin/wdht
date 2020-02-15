@@ -1,13 +1,13 @@
 #!/usr/bin/perl
 # 5BHJEQ4j:wdht by PipStuart <Pip@CPAN.Org> as a tiny Curses::Simp applic8ion 2 just read the current WiDth && HeighT of the console && print them in the
-#   corners of the screen as they change (since my KDE terminalz stopped showing normal tooltipz of resized console text dimensions). 'x' or w8 8secs eXitz;
+#   corners of the screen as they change (since my KDE terminalz stopped showing normal tooltipz of resized console text dimensions). 'x' or w8 16secs eXitz;
 # Currently setting a sleep after printing the %ENV dimensions && resizing before the Simp object takes over doesn't upd8 either %ENV or Simp correctly.
 # It looks like resize events show up as KEY_RESIZE 410 && trigger an upd8 but without support for the use_tioctl(1) in my Curses, I don't think it will
 #   work as desired relying solely on use_env() since default was already 1 && could resize somewhat but not upd8 %ENV or internal dimensions either &&
 #   disabling it with 0 just gets 80x24 from the terminal d8abase && it doesn't change from there. I can't OpN Simp obj B4 say since \n mkz thM pop on Curses;
 # 2du:useReadKey2get strt dimz nstdofENV,tSt4 1ht||smal wd,mk sure not2PrntEscBkspc etc,brk tImout apRt&&Prnt cntdn secs,trySimp wrapz4COLS&&LINES2ck4upd8,
-#   clEnout all faild atMptz&&comNtz,mAB shO pxl dimz2,add colrz,add pRamz wi -help;
-use strict;use warnings;use utf8;use Curses::Simp;use Term::ReadKey;my $d8VS='J7VMNxwh';my($envw,$envh, $smpw,$smph)=(0,0, 0,0);my($wdht,$keyp);
+#   clEnout all faild atMptz&&comNtz,mAB shO pxl dimz2,add colrz,add pRamz wi -help && mk F1 or ? keyz inside Curses InterFace show centered Help wndw also;
+use strict;use warnings;use utf8;use Curses::Simp;use Term::ReadKey;my $d8VS='K2ELGK16';my($envw,$envh, $smpw,$smph)=(0,0, 0,0);my($wdht,$keyp);
 $envw=$ENV{'COLUMNS'} if(exists($ENV{'COLUMNS'}));$envh=$ENV{'LINES'} if(exists($ENV{'LINES'}));#rint "  $envw",'x',$envh,' %ENV COLUMNSxLINES';
 my @text;        my $simp=tie(@text,'Curses::Simp');my($pxlw,$pxlh); #$simp->Move(2,8);$simp->Prnt('TestPrnt');sleep 2;
 #ub Upd8WdHt {$smpw=Curses::Simp->COLS();$smph=Curses::Simp->LINES();$wdht=$smpw.'x'.$smph;     print "$wdht "; # COLS&&LINES nstd of Widt&&Hite had no result
@@ -26,8 +26,9 @@ sub Upd8WdHt {($smpw,$smph, $pxlw,$pxlh)=GetTerminalSize();          $wdht=$smpw
   $simp->Move(          0 ,     $smpw-length($wdht)    );$simp->Prnt($wdht); # place dimensions in all corners starting up-left going clockwise, then in center
   $simp->Move(    $smph-1 ,     $smpw-length($wdht)    );$simp->Prnt($wdht); # it seems like printing any newlines before the END show up in Simp nsted of aftr
   $simp->Move(    $smph-1 ,                          0 );$simp->Prnt($wdht); # it seems that COLSxLINS can't upd8 until full control is returned to the shell?
-  $simp->Move(int($smph/2),int(($smpw-length($wdht))/2));$simp->Prnt($wdht);}# below wait up to 8seconds for any key press before final printing &&auto-exiting
-    Upd8WdHt();  while(!defined($keyp) ||  $keyp ne 'x'){$keyp=$simp->GetK(8); # while keeps looping until 'x' is pressed 2 eXit, but chng2 if for 8second eXit
+  $simp->Move(int($smph/2),int(($smpw-length($wdht))/2));$simp->Prnt($wdht);}# below w8 up to 16seconds for any key press before final printing &&auto-exiting
+    Upd8WdHt();  while(!defined($keyp) || (lc($keyp) ne 'x' && lc($keyp) ne 'q') # upd8d while test to allow case-insensitive x eXit or q Quit (add Esc too?)
+                                                       ){$keyp=$simp->GetK(16);  # while keeps looping until 'x' or 'q' is pressed,but chng2 if 4 16second eXit
  #if   ($keyp eq '410'){$simp->Rsiz(-1,-1);#simp->endwin();$simp->refresh(); # resize event but CScr()&&endwin() stil fail2restore normal terminal oper8ion =(
   if   ($keyp eq 'KEY_RESIZE'){$simp->Rsiz(-1,-1);#simp->endwin();$simp->refresh(); # rEsIz EvNt but CScr()&&endwin() stil fail2rEstor normal term oper8ion =(
     Upd8WdHt();} # maybe doupdate() can work instead of refresh()? use_tioctl(1) sounds like the way2go && I think I'm giving up on resize for now without it

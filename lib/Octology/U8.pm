@@ -18,7 +18,7 @@ use             Term::ReadKey ; # rEmMbr2 ReadMode 0 to rEstor TTY setingz aftr 
 require         Exporter;
 use    base  qw(Exporter); # mainly exporting global Utility functions
 our @EXPORT= qw(U2b8 U2b2 U2b3 U2b4 UTF8); # autom8d code upd8 Utl, YouTube 8 4main dnldtool4moviez, 2 cnv2audio, 3 2audio mp3, 4 4name 4matting
-our $VERSION='0.0';my $d8VS='J67M2MVU';my $Dbug=0; #  UTF-8 (or ASCII) tables;
+our $VERSION='0.0';my $d8VS='K2ELDERS';my $Dbug=0; #  UTF-8 (or ASCII) tables;
 my $U2ff=' -o "%(title)s-tItL-%(uploader)s-uldr-%(extractor)s-Xtrc-%(id)s-IdNt-%(epoch)s-epch-%(upload_date)s-uldt-%(autonumber)s-otnm.%(ext)s"'; # FullFieldz
 my $U224=' -x --audio-format=best';my $U2rf='  --restrict-filenames';my $U2mf=' --merge-output-format=mp4 '; # Dfalt merged .mkv (MatrosKaVid?) 4m@ lackz audio
 my $U234=' -x --audio-format=mp3 ';my $U2aq='  --audio-quality=0   ';my $U2fo=' --format=22 '; # should be hd720 mp4 as FormatOption (pass -F 2C altern8 optz)
@@ -79,12 +79,12 @@ sub U2b4{my   $ogfn=shift(@_);my($psfn,$ocfn,$pcfn); # U2b4m@r (youtube-dl forma
                                                            $tpad= '_' x ($awid-length($1)) if(($awid-length($1)) > 0);
                                    $tItL=~ s/^(.*?)_*-_?/$1$tpad-/;}  # try to 1st pad likely Artist name lazy up to 1st dash, then pad whole tItL
         $tItL.='_' x ($twid-length($tItL));} # 4 consistNC mAB reordr Track-Artist for 'First_of_*-_Skrillex*'?
-      $tItL=~ s/^(.*)([-_])Dubstep_(_+)$/$1$2Drubstep$3/i ;$tItL=~ s/^(.*)(Dubstyle )(_+)$/$1Drubstyl$3/ix;$tItL=~ s/^(.*)(Hardstyl)e(_+)$/$1_$2$3/ix;
-      $tItL=~ s/^(.*)(Drum_Bass   )(_+)$/$1DrumBass_$3/ix ;$tItL=~ s/^(.*)(Chillstep)(_+)$/$1Chilstep_$3/i;
+      $tItL=~ s/^(.*)([-_])Dubstep_(_+)$/$1$2DrubStep$3/i ;$tItL=~ s/^(.*)(Dubstyle )(_+)$/$1DrubStyl$3/ix;$tItL=~ s/^(.*)(Hard)style(_+)$/$1_$2Styl$3/ix;
+      $tItL=~ s/^(.*)(Drum_Bass   )(_+)$/$1DrumBass_$3/ix ;$tItL=~ s/^(.*)(Chillstep)(_+)$/$1ChilStep_$3/i;
       $tItL=~ s/^(.*)(Glitch_Hop  )(_+)$/$1GlitcHop__$3/ix;$tItL=~ s/^(.*)(Electro_ )(_+)$/$1ElectroH$3/ix;
                                                            $tItL=~ s/^(.*)(Electro_House)(_+)$/$1ElectroH_____$3/i; # also all8 4 Vital *House
       $tItL=~ s/^(.*)(Trap____    )(_+)$/$1TrapBass$3/ix  ;$tItL=~ s/^(.*)(Trance__ )(_+)$/$1Trannnce$3/ix; # mAB LYRICS shud alIn wi Remix,not genre?
-      $tItL=~ s/^(.*)(Dubstep_Remix_)(_+)$/$1$3Remix_Drubstep/i; # reordr $genre_Remix like from 'Meg_Dia_-_Monster_DotEXE_Dubstep_Remix*'
+      $tItL=~ s/^(.*)(Dubstep_Remix_)(_+)$/$1$3Remix_DrubStep/i; # reordr $genre_Remix like from 'Meg_Dia_-_Monster_DotEXE_Dubstep_Remix*'
       $tItL=~ s/^(.*)(Remix_HQ______)(_+)$/$1$3$2/i;             # alIn HQ with genrez like from 'Nacked_-_First_Date*'  # BlOflag genre @Nd
       $tItL=~ s/^(.*)((Chil|Dru[bm]|Tra[pn]|Hard)(nnce|st(ep|yl)|Bass)|GlitcHop|(Electro|Progrsv)H|StdHouse|LYRICS__)(_+)$/$1$7$2/i;
                                                                                 my $gflg='';$gflg=$2 if(defined($2)); # probably shud B $2 && $2, not 2 && 7
@@ -92,14 +92,14 @@ sub U2b4{my   $ogfn=shift(@_);my($psfn,$ocfn,$pcfn); # U2b4m@r (youtube-dl forma
       # abov try to stick Artist over with Remix  # BlO shft Remix B4 no genre  # not sure why abov *mix also appended duplic8 uldr (maybe within gflg?)
       $tItL=~ s/^(.*)(_{8})(.*$rflg)/$1$3$2/i if($rflg && !$gflg); # alIn any /([^_]*step_Mega_|Vocal_)?(Re-?)?[fm]ix/i B4posibl tail 8wId genre
       $tItL=~ s/((EP_|FREE_|VIP_)?Monstercat_Release_)(_*)/$3$1/i; # slide to Nd of underscore padding to hopefully just B4 genre
-     #$tItL=~ s/UKF_Dubstep/Drubstep/; # for some reason, uldr UKF is getting appended to Remix titles without genre with wrong padding length,shud B fixd now?
+     #$tItL=~ s/UKF_Dubstep/DrubStep/; # for some reason,uldr UKF is getting appended to Remix titles without genre with wrong padding length,shud B fixd now?
       # uldr just paded,skip Xtrc unless!U2b,dash IdNt,b64 epch,cnv uldt 2 uld8 [0-9A-Za-z._]{3},skip uniform 00001 otnm, && last append .XtNs
       if(length($uldr) < $uwid){$uldr.='_' x ($uwid-length($uldr));} $epch=b64($epch); # b64 epch probably will not need any further padng to remain aligned
       if($uldt=~  /^20(\d\d)(\d\d)(\d\d)$/){$uldt=b64($1).b64($2).b64($3);}elsif($uldt eq 'NA'){$uldt.='_';} # pad NA to 3 charz like most known d8 YMD
       if($tItL!~  /((Dru[bm]|Tra[pn]|Hard)(nnce|st(ep|yl)|Bass)|GlitcHop|(Electro|Progrsv)H|StdHouse|LYRICS__)$/){
-        if   ($uldr=~ /UKF   /ix){$tItL=~ s/_{1,8}$/Drubstep/;} # could add other default genres expected for common uploaders here
+        if   ($uldr=~ /UKF   /ix){$tItL=~ s/_{1,8}$/DrubStep/;} # could add other default genres expected for common uploaders here
         elsif($uldr=~ /Trap  /ix){$tItL=~ s/_{1,8}$/TrapBass/;} # might also need to alter these to slurp 8 underscores from before whatever remix stuff nstd
-        elsif($uldr=~ /Pulse8/i ){$tItL=~ s/_{1,8}$/Chilstep/;}}
+        elsif($uldr=~ /Pulse8/i ){$tItL=~ s/_{1,8}$/ChilStep/;}}
       $psfn="$tItL-$uldr";$psfn.="-Xtrc$Xtrc" if($Xtrc ne 'youtube');$psfn.="-$IdNt-$epch-$uldt.$XtNs"; # ck4 webm as ogg or opus container to shed BlO
       if($XtNs eq 'webm'){my $tofn=$ogfn;$tofn=~ s/$XtNs$/ogg/;if  (-e $tofn){$ogfn=$tofn;$psfn=~ s/$XtNs$/ogg/ ;}else{$tofn=~ s/ogg$/opus/;
                                                                  if(-e $tofn){$ogfn=$tofn;$psfn=~ s/$XtNs$/opus/;}}}   $ocfn=c8fn($ogfn);$pcfn=c8fn($psfn);

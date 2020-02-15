@@ -925,6 +925,14 @@ sub Prnt{my $self=shift;my $ptxt=shift;my $pfcl=shift;my $pbcl=shift;my $pf0n=sh
       # Just "c" in my probably rel8ively stock XTerm (since I don't have any ~/.Xdefaults on Aku right now) => "^[[?64;1;2;6;9;15;18;21;22c" design8s VT420
       #   with support for 1:132-columns,2:printer,6:selective erase,9:NatnlReplcChr setz,15:technical characters,18:user windows,21:horizontal scrolling,
       #   22:ANSI color maybe like VT525. ">c" => "^[[>41;297;0c" also meaning VT420 with 297 firmware version.
+      # From: HTTP://Man7.Org/linux/man-pages/man4/console_codes.4.html
+      # OSC  0  ;       txt ST   : set icon name && window title to  txt.  ## In addition to the ECMA-48 StringTermin8or (ST),
+      # OSC  1  ;       txt ST   : set icon name                 to  txt.  ##   xterm accepts a BEL to termin8 an OSC string.
+      # OSC  2  ;       txt ST   : set              window title to  txt.  ## ASCII BEL is 7 dec or hX, "\a" in Perl, && "\cG" for Ctrl-Alarm;
+      # OSC  4  ; num ; txt ST   : set ANSI         color  num   to  txt.  ## Apparently konsole doesn't like my pal8-fIl ST, echoing the backslashez, so
+      # OSC 10  ;       txt ST   : set dynamic text color        to  txt.  ##   maybe try termin8ing with BEL instead && see how well supported that is?
+      # OSC 4 6 ;      name ST   : change  log file              to name (normally disabled by a compile-time option).
+      # OSC 5 0 ;        fn ST   : set font                      to   fn.  ## Well switching to BEL fixd konsole's Xtra bkslshz but pal8 !chngng colrz ther;
 sub MkSp{my $self=shift;my $spid=shift;$spid=' ' unless(defined($spid) && length($spid)); # Make global character Sprites if they don't yet exist
   $spid.='W' if(length($spid)==1);$spid.='k' if(length($spid)==2);$spid.='t' if(length($spid)==3); #' Wkt'
   unless(exists($self->{'_sprm'}{$spid})){ # could eventually also add scales, pal8s, etc.

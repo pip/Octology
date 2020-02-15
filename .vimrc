@@ -4,6 +4,7 @@
 "     (although that may throw many of my :se list! Ctrl-L past 160), reread && stuD useful 8-Year veteran HTTPS://TomJWatson.Com/blog/vim-tips && practice,
 "   stuD best plug-in managers && autom8 loading of best loc8d JSX inline syntax support (instead of persisting with antiqu8d manual plug-in configur8ions);
 " Note:HTTPS://Reddit.Com/r/vim/comments/9kpsvd/is_there_a_way_to_have_shortcuts_in_vim_to details using :mksession && UprCase marks 2 autom8 loading files;
+"      HTTPS://Joel.Porquet.Org/wiki/hacking/vim_konsole has a pretty good little article about mapping Vim && Zsh keyz from within KDE's konsole terminal;
 "set? || setl(ocal)? || let   " wN setting, trailing variable wi bang (!) || prepending 'inv' wil togl boolean flag's value; trail ? 2 query;  BlO so(urce)?
 se   nocp                     " nocompatible    - add  Vim NhancmNtz without strIving for vi compatibility (mustB1stBcuzit chngz othr optnz as side effect)
 se    enc=utf-8               "     encoding    - was already loading utf-8 from current $LANG locale, && might need termencoding also if they diverge

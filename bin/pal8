@@ -6,7 +6,7 @@
 use strict;use warnings;use utf8;use v5.10;
 use Octology::a8;
 use Octology::b8;
-my $VERSION='0.0';my $d8VS='H6FM999Q';
+my $VERSION='0.0';my $d8VS='K2FL8BEL';
 my $term='';$term = $ENV{'TERM'    } if(exists($ENV{'TERM'    }) && $ENV{'TERM'    }); # Terminal type
 my $pqef= 0;$pqef = $ENV{'Pal8Qiet'} if(exists($ENV{'Pal8Qiet'}) && $ENV{'Pal8Qiet'}); # Pal8QietEnvFlag
 my $dfpl= "000 g00 gL0 0g0 0gg 00g g0g ggg  LLL _LL __L L_L L__ LL_ _L_ ___"; # DeFault kernel PaL8 colors after booting (in 2pal8 order) but =~ s/P/L/g;
@@ -60,11 +60,13 @@ for(0..$#{$cmsp{'ANSI'}}){my @rgbd = split(//,$pmap{$cmsp{'ANSI'}[$_]});for my $
  #print  $SKp8, ($_ < 8) ? '47m' : '40m'; # background w or k color
   printf("%2d:%s:%s:#%2.2X%2.2X%2.2X:%3d:%3d:%3d:%s\n",$_,$cmsp{'ANSI'}[$_],$pmap{$cmsp{'ANSI'}[$_]},@rgbd,@rgbd,$term) if(!$pqef);
  #printf("\e]P%1.1X%2.2X%2.2X%2.2X"                   ,$_,                           @rgbd)   if($term =~ /^xterm/); # GNU/Lin Console? m// 4 -256color also;
-  printf("\e]4;%d;#%2.2x%2.2x%2.2x\e\\"               ,$_,                           @rgbd)   if($term =~ /^xterm/); # works in GnomTerm AgN (try4screen too?)
+# printf("\e]4;%d;#%2.2x%2.2x%2.2x\e\\"               ,$_,                           @rgbd)   if($term =~ /^xterm/); # works in GnomTerm AgN (try4screen too?)
+  printf("\e]4;%d;#%2.2x%2.2x%2.2x\a"                 ,$_,                           @rgbd)   if($term =~ /^xterm/); # chngd ST to BEL Alarm to fix konsole;
+  # switching from ST to BEL 4 OSC termin8or workz fine for xt, gt, && sak which I've tested so far, but konsole colors aren't changing either way it's ended;
   $rgbd[0] *= 256;$rgbd[1] *= 256;$rgbd[2] *= 256; # scale 8-bit RGB d8a up to 16-bit                                # GnomTerm window focus chng did reset B4
   $gtpl .= sprintf("#%4.4X%4.4X%4.4X:"                ,                              @rgbd);
 } $gtpl =~ s/:$//;say "$G$gtpl" if(!$pqef); # maybe above should also set bkgr && frgr 0 && 7 like etfp did?
-system  ("etfp $jpms"                                                                     )   if($term eq 'linux');
+my $wefp=`which etfp`;system( "etfp $jpms"                                                )   if($term eq  'linux' && -x "$wefp"); # only try if in path
 #void RsetPale(){int pndx,fndx; // reset palette through appropriate method
 #  if(LOCL && strcmp(term,"xterm")){ // just reset local virtual terminal
 #    if(escr){printf("\e]R");} // escape reset (doesn't work on xterm) ... or GNU/Linux anymore either? =(
