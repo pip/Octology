@@ -2,7 +2,7 @@
 package    Octology::d8::fldz;
 use strict;use warnings;use utf8;use v5.10;
 use vars qw( $AUTOLOAD );
-my $VERSION='0.0';my $d8VS='J7VMKgMD';
+my $VERSION='0.0';my $d8VS='K2FLDst2';
 use overload
   q("") => sub{ # anonymous verbose fldz stringify()
              my @fdat=$_[0]->YMDzhmsp();
@@ -70,7 +70,7 @@ my %_fielclrz=( # global field color codes in a hash of arrays
           "%{".S('O:B')."%}",   # Blue        minute
           "%{".S('O:M')."%}",   # Magenta     second
           "%{".S('O:P')."%}"],);# purple      phass  # below try2only use new exclusively dflt Bold colrs from 256 palette where they are supported
-if(exists($ENV{'DISPLAY'}) || (exists($ENV{'TERM'}) && $ENV{'TERM'}=~ /^(sakura|u?rxvt|(st|u?x)term)/ && $ENV{'TERM'} ne 'linux')){$_fielclrz{'a'} = [
+if(exists($ENV{'DISPLAY'}) || (exists($ENV{'TERM'}) && $ENV{'TERM'}=~ /^(sakura|u?rxvt|st|u?xterm)/ && $ENV{'TERM'} ne 'linux')){$_fielclrz{'a'} = [
   # maybe there are yet better ways to detect when most likely wanting colors from the full-screen text console(in.zshrc?) or betr thngz mising?
                S(  'R'),        # Red        Year    ANSI (calling a8:S to gener8 SKp codez)
                S(  'o'),        # orange     Month

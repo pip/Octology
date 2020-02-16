@@ -91,8 +91,8 @@ alias mtab="cd $HOME/.mk/qt5/Qt5.13.1-pnp;./config.status -recheck-all;cd qtbase
 alias qtab='/opt/Qt5.13.1-pnp/examples/widgets/widgets/tablet/qttablet &'; # ~/dvl/g8/jack/qt5.13.1/qtbase/examples/widgets/widgets/tablet as better 4 pressure
 alias  qtx="   $HOME/dvl/m8/qtx/qtx &"; # my extracted Qt Tablet eXample executable in the same directory as the source, project, resources, && Makefile
 alias sdab='sda  blame';alias sda='systemd-analyze';alias slsa='syc list-units --type service --all';alias jcf='jc -f'; # not SCSI-Disk-A (like in /dev/);
-alias sctl='syc';alias jctl='journalctl';alias actl='alsactl';alias cctl='cdc';alias jc='jctl';alias jcb='jc -b';alias jcp1='jc _PID=1'; # not (JesusChrist ;)
-alias slts='syc list-unit-files --type=service'; # readd about this from `d8 G5I` article: HTTPS://Linux.Com/tutorials/cleaning-your-linux-startup-process/ ;
+alias sctl='syc';alias pctl='pavucontrol';alias jctl='journalctl';alias actl='alsactl';alias cctl='cdc';alias jcb='jc -b';alias jcp1='jc _PID=1'; #!JesusChrist
+alias slts='syc list-unit-files --type=service';alias jc='jctl'; # readd from `d8 G5I` Rticl HTTPS://Linux.Com/tutorials/cleaning-your-linux-startup-process ;
 alias sysc='  systemctl';alias syc='sysc  '; # systemd control:`syc list-unit-files --type=service|gi (en|dis)able|mask|static`,`syc stop|disable|mask|status`
 alias  cdc='coredumpctl';alias cdr='cdc -r'; # seg-fault core-dumps, with useful params -r Reverse, -S $DATE Since YYYY-MM-DD date, --no-pager 4 just STDOUT;
 alias  cds='cdc -S';alias cdS='cds';alias cdsK='cds 2020-01-01'; # shortcuts for doing --since=$DATE && cdsK does since `d8 K11` for everything Year 2020 on;
@@ -264,7 +264,7 @@ if       [[ "$HUsr"     !=  "root"  ]];                                  then #e
   elif   [[  $TTY  =~ ^/dev/(tty|pts/)(7|15|23|31|39|47|55|63)$ ]] && [[ -x "$Hpal8dir/$Hpal8ts7.pal8" ]]; then export Hpl8="$Hpal8dir/$Hpal8ts7.pal8";
   elif   [[  $TTY  =~ ^/dev/(tty|pts/)(8|16|24|32|40|48|56|64)$ ]] && [[ -x "$Hpal8dir/$Hpal8ts8.pal8" ]]; then export Hpl8="$Hpal8dir/$Hpal8ts8.pal8"; fi;
   # 8unUsed pal8 fIlz aftr abov: cORRI DARKpRIM dARKZ deepRed Flipped r Tigzfavz t  ## !sure how2alias just call? note Dflt GnomTerm 0 orig got none;
-  # K2FL7WHY:for some reason only konsole was spewing 16 backslashes when running `src` getting to XeQt $Hpal (the f8.pm pal8 file on nXt lIn below);
+  # K2FL7WHY:only konsole was spewing 16 backslashes when `src` ran to XeQt $Hpal (the f8.pm pal8 file on nXt lIn below) Bcuz it sepR8d charz of OSC ST;
   if     [[  $TTY  =~ ^/dev/(tty|pts/) ]] && [[ -x "$Hpl8" ]]; then export Hpal="$Hpl8";alias src8="$Hpal";Pal8Qiet='1' $Hpal; fi; # goodEnuf wo SKpd bktx?
   # J12LEAP8:trying to Xtract pal8 call so mAB new `$Hpal` or alias src8 could just reset proper 8-category term pal8 without src full .zshrc?
   if     [[ "$DISPLAY" ==           "" ]] && [[ "$TERM" == "linux" ]]; then # orig had PipzGlobalf8Flag 2!redo but!DISPLAY also4ssh so $TERM"linux"4console
@@ -629,12 +629,13 @@ alias    resh='   re   HD  ';alias resa='re Andr';re16='re 16/9';alias re64='re 
 alias    reph='re Pi|gi pi;re HD|gi hd'; # Xmpl alias IsOl8ng m@chz cAse-sNsitivly4 reso && grep,but not gi,so just Pixelz in tItl thN HighDef # RESoTesTz abov
 alias    res8='reset;rest;w8 48;src8;rest'; # J12LFTst:wanting to test a bunch of resting && waiting instead of sleep within resetting the f8 pal8 col8 colr8n;
 alias   xical='xinput-calibrator';alias xic='xical';alias xbk='xbindkeys';alias xdt='xdotool';alias xd2='xdt'; # basic Chun touch-scrn&&X re-bind&&scrpt utlz
-alias     xwi='xwininfo';alias xwid='xwi -id';alias xgaw='xdt getactivewindow';alias xiaw="xwid $(xgaw)"; # from Unix.StackExchange.Com q 14159 find wndwdimz?
+alias     xwi='xwininfo';alias xwid='xwi -id';alias xgaw='xdt getactivewindow';alias xiaw='xwid `xgaw`'; # from Unix.StackExchange.Com q 14159 find wndwdimz?
 alias     xfs='xfontsel';alias ares='appres ';alias lsmo='fls|cut -f2 -d:|sort -u|gi Mono';alias fls='fc-list'; # mIt l8r Bcome Able 2 s/cut/c8/ && s/sort/s8/;
 alias      rx='ares  XTerm|gi UTF8Fonts|sort'; # HTTPS://AskUbuntu.Com/questions/161652/how-to-change-the-default-font-size-of-xterm 2get Xterm font Resources;
 alias    xfds='xfd -fn "`xfs -print`"       ';alias lsmf='fls :scalable=true:spacing=mono: family'; # XFontDisplaySelectd && LiStMonospcd Fontz 4l8r terminalz;
 alias    ctor='ctorrent -e 16 -z 64'; # abov: %eval $(xdotool getmouselocation --shell); %echo $X,$Y; will override Dflt $Y bright Yellow mapping with coordz
 alias     sig='signal-desktop'; # I7GMFSIG:installed HTTPS://Signal.Org on my Android phone && Aku/Oni here as likely better than Slack or Discord 4the future;
+alias    stdb='stdbuf -oL';alias sbam='stdb alsactl monitor'; # HTTPS://AskUbuntu.Com/questions/630564/cant-redirect-stdout-of-alsactl-monitor setz lIn-bufrd;
 alias    st4w='speaker-test -l4 -c2 -twav'; # K1VL3PCM:loop 4 times on -Ddefault ~/.asoundrc device with 2-channel stereo test /usr/share/sounds/alsa/ .wavs;
 alias      es='ecasound';alias eplay='es -o alsa -i';alias erec='es -i alsa'; # wrap ECASound similarly to `aplay` && `arecord` ALSA equivalent utilities;
 alias     pak='pulseaudio -k';alias pavl='pulseaudio -v --log-time';alias pavv='pavl -v'; # --kill running PA daemon && Verbose print with log-times 4Dbuging;
@@ -893,35 +894,67 @@ alias eqx='/home/pip/dvl/m8/clda/eqx/eqx-0.9.4.26/equinox3d-0.9.4.26-Linux64bit/
 alias fstat='  perl -MTime::PT     -e "@s=split(/ /,scalar(localtime((stat(shift))[9])));print   \"@s\"      ;"';
 #lias fstatpt='perl -MTime::PT     -e "@s=split(/ /,scalar(localtime((stat(shift))[9])));print `pt @s`,\"\n\";"'; #pt(@s) not exported,so try shell,leav Nwln?
 alias fstd8='  perl -MOctology::d8 -e "@s=split(/ /,scalar(localtime((stat(shift))[9])));print Octology::d8->new(\"expand\"=>\"@s\");"'; 
-#      xt used2B a sym-link2 ~/bin/xmltidy (or l8r just xtidy) but mor consistNt with gt,st,Et 2 have it as xterm now instead;
-alias  xt='                     xterm          -geometry 160x50               &'; # BlO uxtrm setup nice BlinkingCursor oN && oFF msecs && faild -fn TrueType;
-alias x80='                     xterm          -geometry 80x25  -fa        "Monospace" -fs 16              &'; # atMpt 2 mk big dbl-sIz xt with FontSize pRam;
-alias g80='                    gnome-terminal --geometry=80x25 --window-with-profile=Pips8025GnomTerm-NiceFont-K2FL8025 2>/dev/null &'; # mk dbl-sIzd gt also;
-alias uxt='uxtrm';alias uxtrm='uxterm          -geometry 160x50 -bc -bcn 512 -bcf 256                      &'; # `appres XTerm|gi utf8font` showz menu fontz;
-alias Uxt='Uxtrm';alias Uxtrm='uxterm          -geometry 160x50               &'; # setup consistNtly 2 or 3-char aliases for almost all usable termz
-alias lxt='lxtrm';alias lxtrm='lxterminal     --geometry=160x50               &'; # =lxterminal LXDE lItw8 GTK+ term MUl8r wi dox from `d8 86S`; `d8 4CJ` BlO;
-alias lxm='Lxtrm';alias Lxtrm='lxterm          -geometry 160x50               &'; # =lxterm is separ8 sh script wich tStz locale && wrapz plain uxterm 4 UTF-8
-alias sak='sakra';alias sakra='sakura          -c     160 -r 50 -f  "Ubuntu Mono,monospace 13" 2>/dev/null &'; # mk Ech preT similR 2my prEferd Dfalt dimNsionz
-alias s80='sak80';alias sak80='sakura          -c      80 -r 25 -f  "Ubuntu Mono,monospace 28" 2>/dev/null &'; # mk sepR8 160x50 && >gt dbl-sIz 80x25 Sak alias
-alias rox='roxtm';alias roxtm='roxterm        --geometry=160x50               &'; # anothr VTE-bAsd xterm (-z $ZoomFrom1.0 [want 0.8333] CRIT assert pango);
-alias t8r='tmn8r';alias tmn8r='terminator     --geometry=1458x920 -T t8r -b 2>/dev/null &'; # geom pixLz,!charz wi dmNsnz 10x18 1608x932pixLz+bordr&&tab-bR
-alias x4t='xf4tm';alias xf4tm='xfce4-terminal --geometry=160x50   -T x4t      &'; # like rox, x4t && m8t accept --zoom=$ZOOM level varyng from -7 to 7 with ...
-alias m8t='m8trm';alias m8trm='mate-terminal  --geometry=160x50   -t m8t      &'; #   ... 0 as norml sIz or $ZOOM factor with 1.0 as norml sIz as float scale;
-alias tmg='tmnlg';alias tmnlg='terminology    --geometry=160x50   -T tmg   -2 &'; # -c=$BOOL can set CursorBlink && -G=$BOOL VisualBell && -B Borderless
-alias qtm='qterm';alias qterm='qterminal                     1>/dev/null 2>&1 &'; # DsIgnd 4 LXQt dsktp NvIrnmNt Cmz 2 hv almOst nO cmd-lIn optnz 2 adjust
-alias Trm='Trmnl';alias Trmnl='Terminal                      2>/dev/null      &'; # looks lIk Terminal app is so old that it can hardly render prmpt or colrz;
-alias ltm='liltm';alias liltm='lilyterm        -g        160x50   -T ltm                       2>/dev/null &'; # lily && termit spew lots of GTK warnz2 STDERR
-alias kon='konsl';alias konsl='konsole        --profile  PipProfile0-K2ELGANT                              &'; # qterminal && konsole cfgz in ~/.config/ &&
-alias tit='trmit';alias trmit='termit                                                          2>/dev/null &'; #    ~/.local/share/;cud -T tit but thN no`ct`
-alias ptm='pterm                               -geometry 160x50 -fn             "Monospace 12"             &'; # pterm has lotz of .Xrc resources && optz2add
-alias urx='urxvt                               -geometry=160x50               &'; # Unicode-Rxvt cnfigd nEr botm of ~/.Xrc wi `xrc` 2lOd xrdb d8a beforehand;
-alias st='stterm                               -g        160x50   -T st       &'; # also SimpleTerminal (or SucklessTerminal?) st is pretty quik && clEn too;
-alias s3t='s3dvt                                                              &'; # s3dvt proly rEquIrz S3D env or URL 2conect2 (wich I don't knO about yet);
-alias to='   tio                                                              &'; # tio is just a simple TTY terminal I/O app && not a ful terminal by itsLf;
+alias wmc='  wmctrl ';alias gtt=' gnome-tweaks  '; # Uzd2B gt-tool scAling all fontz2 1.5&&mkCapsLock Ctrl;XperimNt wiCaps2:Hyper,Menu,orWin 2CwutLsIcan map2;
+alias gt='   env TERM_PROGRAM=gt  gnome-terminal'; # wrap GnomTerm wi ENV var to be l8r capable of determining the actual term apart from just xterm-256color;
+alias xrnr='xrandr'; # shud mk func tking [hdp]\d* 4 Hdmi, Dvi, disPlayPort thN wich ndx 2 cfg wi custm r8 setz (hopefully2 144) whN cRd,Kbl,&&displA suportz
+alias xr='xrnr --output DVI-D-0 --mode 1920x1080 --rate 60';alias cx='ct "init";xr'; # nEd2set ViotekGN32C over DVI from Dflt 144 rEfresh down2cAbl suportd 60
+#    `xr` abov was DVI-1 thN DVI-D-1 thN DVI-D-0 && had --mode 1920x1080 B4 just --rate 60; # new50"TV was H3WideFormat set above as $H3WF to booleon flag it;
+#    `xt` used to be a sym-link to ~/bin/xmltidy (or l8r just xtidy) but is more consistent with st, at, gt, et, etc. to have it alias for XTerm now instead;
+alias xt='   env TERM_PROGRAM=xt   xterm          -geometry 160x50 -fa        "Monospace" -fs 12              &';
+alias xtm80='env TERM_PROGRAM=x80  xterm          -geometry 80x25  -fa        "Monospace" -fs 24              &'; # atMpt2mk big dbl-sIz xt wi FontSize pRam;
+alias gtm80='env TERM_PROGRAM=g80 gnome-terminal --geometry=80x25 --window-with-profile=Pips8025GnomTerm-NiceFont-K2FL8025 2>/dev/null &'; # mk dbl-sIzd gt;
+alias uxtrm='env TERM_PROGRAM=uxt uxterm          -geometry 160x50 -bc -bcn 512 -bcf 256                      &'; #`appres XTerm|gi utf8font`shOwz mNU fontz;
+alias utm80='env TERM_PROGRAM=u80 uxterm          -geometry  80x25 -bc           &'; # setup consistNtly 2 or 3-char aliases for almost all usable termz;
+alias lxtmn='env TERM_PROGRAM=lxt lxterminal     --geometry=160x50               &'; # =lxterminal LXDE lItw8 GTK+ term MUl8r wi dox frm`d8 86S`;`d8 4CJ`BlO;
+alias lxt80='env TERM_PROGRAM=l80 lxterminal     --geometry=80x25                &';
+alias lxtrm='env TERM_PROGRAM=lxm lxterm          -geometry 160x50               &'; # =lxterm is sepR8 sh scrpt wich tStz locale&&wrapz plain uxterm 4 UTF-8;
+alias lxm80='env TERM_PROGRAM=L80 lxterm          -geometry  80x25               &';
+alias sakra='env TERM_PROGRAM=sak sakura          -c     160 -r 50 -f  "Ubuntu Mono,monospace 13" 2>/dev/null &'; # mk Ech similR 2my prEferd Dfalt dimNsionz;
+alias sak80='env TERM_PROGRAM=s80 sakura          -c      80 -r 25 -f  "Ubuntu Mono,monospace 28" 2>/dev/null &'; # mk sepR8 160x50 &&dbl-sIz 80x25 Sak alias;
+alias roxtm='env TERM_PROGRAM=rox roxterm        --geometry=160x50               &'; # anothr VTE-bAsd xterm (-z $ZoomFrom1.0 [want 0.8333] CRIT assert pango);
+alias rox80='env TERM_PROGRAM=r80 roxterm        --geometry=80x25                &'; # had 2 add-apt-repository for ppa:h-realh 2 get roxterm installed again;
+alias tmn8r='env TERM_PROGRAM=t8r terminator     --geometry=1458x920 -T t8r -b 2>/dev/null &'; # geom pixLz,!charz wi dmNsnz 10x18 1608x932pixLz+bordr&&tab-bR;
+alias xf4tm='env TERM_PROGRAM=x4t xfce4-terminal --geometry=160x50   -T x4t      &'; # like rox, x4t && m8t accept --zoom=$ZOOM level varyng from -7 to 7 wi...
+alias m8trm='env TERM_PROGRAM=m8t mate-terminal  --geometry=160x50   -t m8t      &'; #   ... 0 as norml sIz or $ZOOM factor wi 1.0 as norml sIz as float scAl;
+alias tmnlg='env TERM_PROGRAM=tmg terminology    --geometry=160x50   -T tmg   -2 &'; # -c=$BOOL can set CursorBlink && -G=$BOOL VisualBell && -B Borderless;
+alias qterm='env TERM_PROGRAM=qtm qterminal                     1>/dev/null 2>&1 &'; # DsIgnd 4 LXQt dsktp NvIrnmNt Cmz 2 hv almOst nO cmd-lIn optnz 2 adjust;
+alias Trmnl='env TERM_PROGRAM=Trm Terminal                      2>/dev/null      &'; # looks lIk Terminal app so old that it can hardly render prmpt or colrz;
+alias liltm='env TERM_PROGRAM=ltm lilyterm        -g        160x50   -T ltm    2>/dev/null &'; # lily&&termit spew lots ofGTK warnz2STDERR;
+alias konsl='env TERM_PROGRAM=kon konsole        --profile  PipProfile0-K2ELGANT &'; # qterminal && konsole cfgz in ~/.config/ &&
+alias trmit='env TERM_PROGRAM=tit termit                                       2>/dev/null &'; #    ~/.local/share/;cud -T tit but thN!`ct`;
+alias Pterm='env TERM_PROGRAM=ptm pterm           -geometry 160x50 -fn             "Monospace 12"             &'; # pterm has lotz of .Xrc && CLI optz 2 add;
+alias Urxvt='env TERM_PROGRAM=urx urxvt           -geometry=160x50               &'; # Unicode-Rxvt cnfigd nEr botm of ~/.Xrc wi `xrc` 2lOd xrdb d8a B4hand;
+alias st='  stterm -f "Ubuntu Mono:size=14"    -g        160x50   -T st       &'; # also SimpleTerminal (or SucklessTerminal?) st is pretty quik && clEn too;
+alias st80='stterm -f "Ubuntu Mono:size=28"    -g         80x25   -T st80     &'; # added dbl-sIz varE8ion2 but nEd2 fix prmpt && lsd8 colrz 2work nIcly 1st;
+alias to='   tio';alias et='Et';alias atm='At';alias s3t='s3dvt               &'; # tio is just simple TTY term I/O app,!a ful term by itsLf; s3dvt nEdz S3D;
+alias at='   atm';alias lt='ltm';alias Pt='ptm';alias qt='qtm';alias rt='rox'; # `pt` stil ~/bin/ Time::PT.pm PipTime but othrz can shrnk 3 to 2-char aliasz;
 alias crt='pu ~/dvl/c8/trm8;CRT'; # CoolRetroTerm nEdz2cfg termrc 2Uz smalr font; # Terminal cfg in ~/.GNUstep/ (aftr chgz mAd2 /etc/ .conf 2mk dir dot-fIl);
 alias vtst='vttest'; # `vtst` might be good to run all termz thru 2 see which have what fE8urez; BlO echo compact term alias mapingz;
-alias trmz='ee "${R}xt${w},${o}st${w},${Y}gt${w},${G}to${w},${C}Et${W} => ${R}xterm${w},${o}s[uckless]tterm${w},${Y}gnome-terminal${w},${G}tio${w},${C}E[nlightenment]term${W}; ${R}uxt${w},${o}lxt${w},${Y}lxm${w},${G}sak${w},${C}t8r${w},${B}tit${w},${M}tmg${w},${p}crt${w},${R}urx${w},${o}rox${w},${Y}s3t${w},${G}x4t${w},${C}m8t${w},${B}Trm${w},${M}kon${w},${p}atm${w},${R}ltm${w},${o}ptm${w},${Y}qtm${W} =>";
-            ee "${R}uxterm${w},${o}lxterminal${w},${Y}lxterm${w},${G}sakura${w},${C}terminator${w},${B}termit${w},${M}terminology${w},${p}CoolRetroTerm${w},${R}urxvt${w},${o}roxterm${w},${Y}s3dvt${w},${G}xfce4-terminal${w},${C}mate-terminal${w},${B}Terminal${w},${M}konsole${w},${p}a${w},${R}lily${w},${o}p${w},${Y}qinal${W};$z"'; # echo -e SKpd colr-coded terminal emul8orz mapping list of nicely aligned 2 && 3-character aliasez fit in 160x2 char linez; also x80,g80,s80 work;
+alias x80='xtm80'; # tSt setng all my 3-char && smaller aliasez 2 prefix larger 5-char aliasez with ENV var lIk GNUstep_Terminal.app has;
+alias g80='gtm80';
+alias uxt='uxtrm';
+alias u80='utm80';
+alias lxt='lxtmn';
+alias l80='lxt80';
+alias lxm='lxtrm';
+alias L80='lxm80';
+alias sak='sakra';
+alias s80='sak80';
+alias rox='roxtm';
+alias r80='rox80';
+alias t8r='tmn8r';
+alias x4t='xf4tm';
+alias m8t='m8trm';
+alias tmg='tmnlg';
+alias qtm='qterm';
+alias Trm='Trmnl'; # mAB this 1 will get overridden by GNUstep so shud vary,or mAB all varz shud just B shrunk 2 only TERM_(PROG|ALIAS)?
+alias ltm='liltm'; # it might also be betr 2 rEwrIt all thEz az shL functionz wich can pass argz in2 term programz B4 & thM 2 bkgr jobz?
+alias kon='konsl';
+alias tit='trmit';
+alias ptm='Pterm';
+alias urx='Urxvt';
+alias trmz='ee "${R}xt${w},${o}st${w},${Y}at${w},${G}gt${w},${C}et${W} => ${R}xterm${w},${o}s[imple]tterm${w},${Y}aterm${w},${G}gnome-terminal${w},${C}E[nlightenment]term${W}; ${R}uxt${w},${o}lxt${w},${Y}lxm${w},${G}sak${w},${C}t8r${w},${B}tit${w},${M}tmg${w},${p}crt${w},${R}urx${w},${o}rox${w},${Y}s3t${w},${G}x4t${w},${C}m8t${w},${B}Trm${w},${M}kon${w},${p} to${w},${R}ltm${w},${o}ptm${w},${Y}qtm${W} =>";
+            ee "${R}uxterm${w},${o}lxterminal${w},${Y}lxterm${w},${G}sakura${w},${C}terminator${w},${B}termit${w},${M}terminology${w},${p}CoolRetroTerm${w},${R}urxvt${w},${o}roxterm${w},${Y}s3dvt${w},${G}xfce4-terminal${w},${C}mate-terminal${w},${B}Terminal${w},${M}konsole${w},${p}tio${w},${R}lily${w},${o}p${w},${Y}qinal${W};$z"'; # echo -e SKpd colr-coded terminal MUl8orz mapng lst of aligned 2 && 3-char aliasez in 160x2 char linez; alsO x80,s80,g80 && lt,Pt,qt,rt work2;
 alias  Etrm=' Eterm        --geometry 160x50 --scrollbar-width 15 --cmod 227 -L 65536 &';alias Et='Etrm';alias E='Et'; # used to be 'Eterm -t E &' but it...
 export ETERM_THEME_ROOT="~/.Eterm/themes"; # wuz ~/.Eterm/themes/Eterm                       # ...looks like I don't even need that plain old  E theme anymore
 #lias E=' Eterm -t E --scrollbar-type motif --scrollbar-width 15 &'; # --cmod 227 &';
@@ -945,11 +978,7 @@ export ETERM_THEME_ROOT="~/.Eterm/themes"; # wuz ~/.Eterm/themes/Eterm          
 #lias gtpt='    gtd0 --class=ptok     --geometry  27x1-0-0       --hide-menubar --window-with-profile=GT27x1AndaleMonoBold40-ptok --title=ptok -e ptok &';
 #lias gtpto='   gtd0 --class=ptok     --geometry  27x1+3002+1141 --hide-menubar --window-with-profile=GT27x1AndaleMono40-ptok     --title=ptok -e ptok &';
 #lias gtpm='    gtd0 --class=pmix     --geometry 160x3+1921+1141 --hide-menubar --window-with-profile=GT67x3Lincoln12-pmix --title=pmix -e pmix&';#160,180,282
-alias gtt='gnome-tweaks'; # used to be gt-tool scaling all fontz to 1.5 && mkng CapsLock a Ctrl;XperimNt wi Caps2:Hyper,Menu,Win2see wut else can map too?
-alias gt=' gnome-terminal';alias wmc='wmctrl'; # mAB -x zsh (-c)? s2 & or wiout aliasz: pushd ~/dox/2du;screen -h 9999 -S 2du -t 2du e 2;popd;
-alias xrnr='xrandr'; # shud mk func tking [hdp]\d* 4 Hdmi, Dvi, disPlayPort thN wich ndx 2 cfg wi custm r8 setz (hopefully2 144) whN cRd,Kbl,&&displA suport
-alias xr='xrnr --output DVI-D-0                  --rate 60';alias cx='ct "init";xr'; # nEd2set ViotekGN32C over DVI from Dflt 144 rEfresh down2cAbl suportd 60
-if       [[ "${(L)HHst}" ==  oni    ]] || # `xr` abov was DVI-1 thN DVI-D-1 thN DVI-D-0 && had --mode 1920x1080 B4 just --rate 60; # new50"TV was H3WideFormat
+if       [[ "${(L)HHst}" ==  oni    ]] ||
          [[ "${(L)HHst}" ==  aku    ]]; then  alias gtss='sleep 1'; # GnomeTerminal SleepSeconds 2 delay 4 gti init   # only Akuma was fast Enuf2kEp up with 1
 else                                          alias gtss='sleep 2'; fi            # ... second before && hopefully Ryu, Ken, && Chun can all handle just 2 now
 # below set 8sh "H" Viewport Width 1..3 | Height 1 defaults of all 3840x1080 then override as approprE8 for host-specific display resolution varE8ionz
@@ -1122,23 +1151,19 @@ else # following settings will hopefully work well for single-screen Ryu, Ken, &
         gtss;wmc -r :ACTIVE: -T muz                 ;
              gt --geometry=+0-0       --show-menubar --window-with-profile=PipsCkm8GnomTerm-NiceFont-DC9LDaPt --role=mvz    --working-directory=mvz/U2b     &;
         gtss;wmc -r :ACTIVE: -T mvz                ';
-  alias gti='gtI;gtss;chv1;gtss;gtm;gtss;chv2;gtss;gt3;gtss;chv3;gtss;gt3;gtss;chv0';
-fi
+  alias gti='gtI;gtss;chv1;gtss;gtm;gtss;chv2;gtss;gt3;gtss;chv3;gtss;gt3;gtss;chv0'; fi
 #lias gti='gtI;sleep 3;wmctrl -o 1280,0;sleep 3;gt3;sleep 3;wmctrl -o 2560,0;sleep 3;gt3;sleep 3;wmctrl -o 3840,0;sleep 3;gt3;sleep 3;wmctrl -o 0,0';
 # abov are new Ubu14.10 GT aliasz tstd on Chun; mA nEd geom chgz 4 Akuz 2 monitorz; tryd 2 ch d8ok profile 2 autorun d8ok nstd of zsh but can't figure out yet;
 #   mIt also want 2 try 2 figure out how 2 autom8 dangling d8ok over edge && Dflt visible on all wrkspcz && hide wndw bordr tItlbar;
 # according 2 HTTP://AskUbuntu.Com/questions/41093/is-there-a-command-to-go-a-specific-workspace I can send Ckm8+Othr GTz 2> wrkspcz wi wmctrl or xdotool:
 #   Chun:`wmctrl -d`:0  * DG:  5120x800   VP: 0,0  WA: 73,24 1207x776   N/A; thN wmctrl -o 0,0 or 1280,0 or 2560,0 or 3840,0 for 4Compiz ViewPorts in1 DsktpGrp
 #    Aku:`wmctrl -d`:0  * DG: 15360x2160  VP: 0,0  WA:  0,24 3840x1056  N/A; thN_1920, 3840, _5760, 7680, _9600, 11520, _13440, 15360; rEspAcd2alIn both dimz
-#     add`wmctrl -b add,sticky,below` after -r IdNtify d8ok window or just :ACTIVE: after spawnd; d8ok wmctrl -e -1,664,1004 [geom +664(-0|+1004)] &&-e +2586-0
-# old WindowMaker wharf ATerm buttons (the latter being specialized for my PTok clock)
-#    aterm -bg #03071B -fg #88F8B0 --cursorColor #30D0F0 --cursorColor2 #204080 -color3 #FF9911 -color13 #AA22BB -pr #D8D870 -tr -trsb -sh 31 -fade 63 -sb -sr -sl 2047 -vb -fn                "-*-*-*-*-*-*-15-*-*-*-*-*-*-*" -fb                "-*-*-*-*-*-*-19-*-*-*-*-*-*-*"
-# ptokterm -bg #03071B -fg #88F8B0 --cursorColor #30D0F0 --cursorColor2 #204080 -color3 #FF9911 -color13 #AA22BB -pr #D8D870 -tr -trsb -sh 31 -fade 63 -sb -sr -sl 2047 -vb -fn "-ttf-lucida console-*-*-*-*-47-*-*-*-*-*-*-*" -fb "-ttf-lucida console-*-*-*-*-48-*-*-*-*-*-*-*" -geometry 27x1+492+972
-At() { echo At params without residue: 11,12,17,18,20,22,23,28,31,32,40,41,49 \n mixr bar Gen: At 17, 44x3+0+950 Eiji: 105x3; # no border, always top
- #if [[ "$1" == "" ]]; then aterm -geometry 80x30 -color3 "#FFAA33" -color13 "#9933BB" -bg "#03071B" -fg "#88F8B0" --cursorColor "#30D0F0" --cursorColor2 "#204080" -pr "#D8D870" -vb -fn "-ttf-DejaVu Sans-*-*-*-*-18-*-*-*-*-*-*-*" -fb "-ttf-DejaVu Sans-*-*-*-*-18-*-*-*-*-*-*-*" -tr -trsb -sh 31 -fade 63 -sb -sr -sl 2047 &; #>/dev/null 2>&1 &;
-  if [[ "$1" == "" ]]; then aterm -geometry 80x30 -color3 "#FFAA33" -color13 "#9933BB" -bg "#03071B" -fg "#88F8B0" --cursorColor "#30D0F0" --cursorColor2 "#204080" -pr "#D8D870" -vb -fn "-*-*-*-*-*-*-18-*-*-*-*-*-*-*" -fb "-*-*-*-*-*-*-18-*-*-*-*-*-*-*" -tr -trsb -sh 31 -fade 63 -sb -sr -sl 2047 &; #>/dev/null 2>&1 &;
-  else                      aterm -geometry 80x30 -color3 "#FFAA33" -color13 "#9933BB" -bg "#03071B" -fg "#88F8B0" --cursorColor "#30D0F0" --cursorColor2 "#204080" -pr "#D8D870" -vb -fn "-*-*-*-*-*-*-$1-*-*-*-*-*-*-*" -fb "-*-*-*-*-*-*-$1-*-*-*-*-*-*-*" -tr -trsb -sh 31 -fade 63 -sb -sr -sl 2047 >/dev/null 2>&1 &;
-  fi}
+#     add`wmctrl -b add,sticky,below` after -r IdNtify d8ok window or just :ACTIVE: after spawnd;d8ok wmctrl -e -1,664,1004 [geom +664(-0|+1004)] &&-e +2586-0;
+At() { ec "At params without residue: 11,12,17,18,20,22,23,28,31,32,40,41,49 \n mixr bar Gen: At 17, 44x3+0+950 Eiji: 105x3;";  # no border, always top
+  # aterm just wraps rxvt-unicode-256color   # -fn "-ttf-DejaVu Sans-*-*-*-*-18-*-*-*-*-*-*-*" -fb "-ttf-..."   # had old WindowMaker wharf ATerm buttons
+  if   [[ "$1" ==   "" ]]; then env TERM_PROGRAM=at aterm -geometry 160x50 -color3 "#FFAA33" -color13 "#9933BB" -bg "#03071B" -fg "#88F8B0" --cursorColor "#30D0F0" --cursorColor2 "#204080" -pr "#D8D870" -vb -fn "-*-*-*-*-*-*-18-*-*-*-*-*-*-*" -fb "-*-*-*-*-*-*-20-*-*-*-*-*-*-*" -tr -sh 31 -fade 63 -sb -sr -sl 65536 &;
+  elif [[ "$1" == "80" ]]; then env TERM_PROGRAM=at aterm -geometry  80x25 -color3 "#FFAA33" -color13 "#9933BB" -bg "#03071B" -fg "#88F8B0" --cursorColor "#30D0F0" --cursorColor2 "#204080" -pr "#D8D870" -vb -fn "-*-*-*-*-*-*-36-*-*-*-*-*-*-*" -fb "-*-*-*-*-*-*-40-*-*-*-*-*-*-*" -tr -sh 31 -fade 63 -sb -sr -sl 65536 &;
+  else                          env TERM_PROGRAM=at aterm -geometry 160x50 -color3 "#FFAA33" -color13 "#9933BB" -bg "#03071B" -fg "#88F8B0" --cursorColor "#30D0F0" --cursorColor2 "#204080" -pr "#D8D870" -vb -fn "-*-*-*-*-*-*-$1-*-*-*-*-*-*-*" -fb "-*-*-*-*-*-*-$1-*-*-*-*-*-*-*" -tr -sh 31 -fade 63 -sb -sr -sl 65536 >/dev/null 2>&1 &; fi}
 alias tStl='tStc R;ec;tStc R d;ec;tStc R a;ec;tStc R l'; # loop all 4 colr layrz, leaving Lite last, calling just Reverse to pretend lower L indic8s bkgrounds
 alias tStL='tStc F;ec;tStc F D;ec;tStc F A;ec;tStc F L'; # loop all 4 colr layrz, leaving Lite last, calling just Fraktur which probably rarely does anything
 tStc() { # tSt 8pal8 colrz (this is a very slow precursor to ~/bin/tstc since many sub-processes need to load zsh,perl,&&a8 d8a just to manipUl8 eScApe valUez)

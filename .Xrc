@@ -1,5 +1,5 @@
 ! E8KM2Ocw:~/.Xrc by PipStuart <Pip@CPAN.Org> to start having some additional xterm && maybe urxvt or aterm settings on Aku. According to this 2014 site:
-! $VERSION='0.0';$d8VS='K2FL5crl'; HTTPS://Wiki.ArchLinux.Org/index.php/x_resources .Xdefaults is deprec8d for .Xresources (or my .Xrc) wich requires xorg-xrdb
+! $VERSION='0.0';$d8VS='K2FLCrE8'; HTTPS://Wiki.ArchLinux.Org/index.php/x_resources .Xdefaults is deprec8d for .Xresources (or my .Xrc) wich requires xorg-xrdb
 !   be installed 2run:`xrdb ~/.Xrc`; If I someday return to using `startx`, I will probably need to add2 my ~/.xinitrc "[[ -f ~/.Xrc ]] && xrdb -merge ~/.Xrc".
 !   See default settings for installed X11 apps in /usr/share/X11/app-defaults (if exists) && see curNtly loaded resources with `xrdb -query -all`. Just `xrc`.
 !   Comment must start bang !, not hash #. Maybe `xrdb -remove .Xrc` will rm these vals from server while -n -merge will Not merge but shows what would happen.
@@ -30,14 +30,14 @@
 !   x-terminal-emulator has no $VTE_VERSION but most of my terminalz now print it as '4205'. `m x-terminal-emulator` showed a 2008 man page for terminator but
 !   it looks like it has seen some active LaunchPad development since then. Ckot mlterm,roxterm,aterm-ml,mrxvt,rxvt-ml,yeahconsole,st[jt]erm,xfce4-terminal;
 ! G8RMHBpu:Installed mate-terminal, qterminal, && GNUstep terminal.app as well as vttest&&tmate 2also tSt AgNst alongside stterm && stjerm,&&instld lilyterm;
-*foreground:                    grey90
 *background:                    black
+*foreground:                    grey90
 ! Many of these settings were originally gleaned from: HTTP://X.Org/archive/X11R6.8.1/doc/xterm.1.html but `man xterm` describes all available resources;
-XTerm*Foreground:               green
 XTerm*Background:               black
-XTerm*Scrollbar.Foreground:     dark blue
+XTerm*Foreground:               green
 XTerm*Scrollbar.Background:     black
-XTerm*Border:                   dark blue
+XTerm*Scrollbar.Foreground:     dark blue
+XTerm*Border:                   navy blue
 XTerm*VT100.geometry:           160x50
 ! Honor the VT102 DECCOLM code to switch 80 to 132 columns (might need to be in class C132 also?):
 XTerm*VT100.c132:               true
@@ -87,8 +87,8 @@ XTerm*multiScroll:              true
 XTerm*cursorBlink:              true
 XTerm*cursorOnTime:             512
 XTerm*cursorOffTime:            256
-XTerm*appcursorDefault:         true
-XTerm*appkeypadDefault:         true
+XTerm*appCursorDefault:         true
+XTerm*appKeyPadDefault:         true
 XTerm*toolBar:                  true
 XTerm*titleBar:                 true
 XTerm*textUnderIcon:            true
@@ -1606,7 +1606,6 @@ ATerm*cursorColor:              white
 !        defaults is 24.
 PTerm.TermWidth:                160
 PTerm.TermHeight:                   50
-!XTerm*VT100.geometry:          160x50
 PTerm.Font:                     client:Hack 12
 !PTerm*Font:                     Hack:size=8:antialias=true
 !PTerm.Font            # tried: x:fixed,Hack:size=8:antialias=true but seems to have only got fixed, so trying to rmv "x:fixed," to just have Hack?
@@ -1702,31 +1701,31 @@ PTerm.BoldFont:                 client:Hack Bold 12
 !PTerm.LoginShell
 !        This  option should be set to either 0 or 1; the default is 1. When set to 1, pterm will execute your shell as a login shell. This resource is
 !        equivalent to the -ls command-line option.
-! u?rxvt here originally from Pat^s Puppy QuirkyTahr Wary 5.5.1 rel8ively minimal machine, so probably hardly applicable to Aku yet, but upd8d for Oni:
-!Rxvt*keysym.0xFF50:             \001
-!Rxvt*keysym.0xFF57:             \005
-! but urxvt in quirky etc needs these...
-!Rxvt.keysym.Home:               \033[1~
-!Rxvt.keysym.End:                \033[4~
-! broomdodger reports this works in both 431 and quirky (rxvt and urxvt)...
-!Rxvt.keysym.0xFF50:             \033[1~
-!Rxvt.keysym.0xFF57:             \033[4~ 
+! U?Rxvt here originally from Pat^s Puppy QuirkyTahr Wary 5.5.1 rel8ively minimal machine, so probably hardly applicable to Aku yet, but upd8d for Oni:
+!Rxvt*keySym.0xFF50:             \001
+!Rxvt*keySym.0xFF57:             \005
+! but URxvt in quirky etc needs these...
+!Rxvt.keySym.Home:               \033[1~
+!Rxvt.keySym.End:                \033[4~
+! broomdodger reports this works in both 431 and quirky (Rxvt and URxvt)...
+!Rxvt.keySym.0xFF50:             \033[1~
+!Rxvt.keySym.0xFF57:             \033[4~ 
 !Rxvt*menu:                      ~/.rxvt.menu
 !Rxvt*saveLines:                 65536
 
 !URxvt.reverseVideo:             1
-!URxvt.foreground:               #000000000000
 !URxvt.background:               #f8f8f8f8f8f8
-URxvt.foreground:               #1000f8f83000
+!URxvt.foreground:               #000000000000
 URxvt.background:               #000000000000
+URxvt.foreground:               #1000f8f83000
 URxvt.underlineColor:           #ffff00000000
-! fonts: run `fc-list` for a list of available fonts, below was:pixelsize=14
+! fonts:run `lsmf`or`lsmo` 4 list of available fonts. below was:pixelsize=14
 URxvt.font:                     xft:Nimbus Mono L:style=Regular:pixelsize=12
 URxvt.geometry:                 160x50
 URxvt.scrollBar:                1
-URxvt.scrollBar_right:          1
+URxvt.scrollBar_Right:          1
 URxvt.scrollTtyOutput:          0
-URxvt.scrollTtyKeypress:        1
+URxvt.scrollTtyKeyPress:        1
 URxvt.secondaryScroll:          1
 URxvt.saveLines:                65536
 URxvt.cursorUnderline:          0
@@ -1990,32 +1989,27 @@ URxvt.shading:                  96
 
 ! =lxterm is sh script ckng locale thN wrapping uxterm, but =lxterminal is a separ8 binary XeQtabl && uxterm does!sEm2 accept a geometry resource here(VT100)?
 ! tried UXTerm*VT100.geometry, UXTerm.textWidth, && UXTerm.termWidth (&& Height) && had "x:fixed," B4 Hack but got too many fonts for fNorm warning, so rmvd;
-UXTerm*faceName:                Hack:size=8:antialias=true
 !UXTerm*VT100.geometry:          160x50
 UXTerm.termWidth:               160
 UXTerm.termHeight:                  50
+UXTerm*faceName:                Hack:size=8:antialias=true
 
 XClock*Foreground:              black
 XClock*Background:              light grey
-XClock*Border:	navy blue
+XClock*Border:                  navy blue
 XClock*Highlight:               cornflower blue
-XClock*Hands:	slate blue
+XClock*Hands:                   slate blue
 XClock*Mode:                    analog
 !XClock*analog:                  1
 XClock*update:                  1
+
+XCursor.size:                   24
+XCursor.theme:                  DMZ-Black
+
 ! Maybe these originally came from some fonts.conf but attempting`xrdb -remove .Xrc`to just pull xterm entries out again removed everything so this to restore:
 *customization:                 -color
-Xft.antialias:                  1
-Xft.dpi:                        144
-Xft.hinting:                    1
-Xft.hintstyle:                  hintslight
-Xft.rgba:                       rgb
-Xcursor.size:	24
-Xcursor.theme:	DMZ-Black
-xclock*Background:	light grey
-xclock*Border:	navy blue
-xclock*Foreground:	black
-xclock*Hands:	slate blue
-xclock*Highlight:	cornflower blue
-xclock*Mode:	analog
-xclock*update:	1
+XFt.antiAlias:                  1
+XFt.dpi:                        144
+XFt.hinting:                    1
+XFt.hintStyle:                  hintslight
+XFt.rgba:                       rgb
