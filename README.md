@@ -1,5 +1,5 @@
 # Octology
-The ontology of 8. `$VERSION='0.0';$d8VS='JBRL6URL';`
+The ontology of 8. `$VERSION='0.0';$d8VS='K2GLEAMY';`
 
 What is an ontology, you may ask?
 
@@ -88,7 +88,7 @@ Please also contact me if you are an open-minded thinker interested in any conve
 To learn about the long-term goals, plans, thinking, and research behind this expansive project, please consult latest development notes at:
   [8.utf](https://github.com/pip/Octology/blob/master/dox/2du/8.utf "dox/2du/8.utf")
 
-Thank you for your consideration as well as any constructive criticism, recommendations, or whatever other feedback you may be able to offer.
+Thank you for your consider8ion as well as any constructive criticism, recommend8ions, or whatever other feedback you may be able to offer.
 ```
 Sincerely,
   -PipStuart  8<3  NfN8L0v3  8pI  Ate Pie  =)  Eight-Π
@@ -112,4 +112,4 @@ If I ever become unable to continue developing this project further, my hope is 
 ##### (*here's my 3 screens, almost to 4K HD*)
 ![Octology-3Obs-shot_5760x1080-I9HMG3Ob](https://github.com/pip/Octology/raw/master/gfx/sho/Octology-3Obs-shot_5760x1080-I9HMG3Ob.png "Octology-3Obs-I9HMG3Ob")
 
-P.S. I also hope someday aspects of above shots might be seen as logical utility UTF-8 or ASCII art, or at least inspire bits of it. I'd like more elabor8ions;
+P.S. I also hope someday aspects of above shots might be seen as logical utility UTF-8 or ASCII art, or at least inspire bits of art. I'd like elabor8ions;

@@ -30,7 +30,7 @@ unsetopt                \
 # auto_pushd            \# setng addz dirz 2 stack wN just normally chngng 2 thM (wich I du not normally lIk or want)
 # ksh_arrays            \# rEmMbr wNwrItng scrptz[or funcz]2include'setopt [localoptions] ksharrays'sO arAzR 0-bAsed(but!glOblBcuzmOst scrptzRstndrdly 1-bAsed)
 # re_____match_____pcre \# mA want2set for Z-SHell scripting RegularExpressions to utilize PerlCompatibility styles && mA insert 'zmodload zsh/(pc)?re(gex)?';
-export vers='0.0';export d8VS='K2FL7kon';export auth='PipStuart <Pip@CPAN.Org>'; # not Xportng $b sinc cOlIdz wi sort{$a <=> $b} /defhijlnqstuvx/i + AZ 4golf;
+export vers='0.0';export d8VS='K2HL7MkU';export auth='PipStuart <Pip@CPAN.Org>'; # not Xportng $b sinc cOlIdz wi sort{$a <=> $b} /defhijlnqstuvx/i + AZ 4golf;
 if     [[       "$SHELL"    == "" ]]; then       export SHELL=`  which zsh`;fi # 8sh should parse this && OverId it    # shud `man zshall` /OSTYP 2lern4BlO
 if     [[       "$HOSTNAME" == "" ]]; then       export HOSTNAME=`hostname`;fi #`hostname`retnz fsckd nwlInz\n4CygWinzRxvt... ||smthng els lame  =(
 if     [[       "$HOST"     == "" ]]; then       export HOST="$HOSTNAME"   ;fi;export VERBOSE='1'; # set flag to print debug && status info from system utilz
@@ -338,6 +338,12 @@ alias ag='apt-get  ';alias agi='ag install';alias agu='ag update';alias aguu='ag
 alias ac='apt-cache';alias acs='ac  search';alias agr='ag remove';alias agrm='agr';alias agar='ag autoremove';alias agdu='ag dist-upgrade'; # thN aguu B4hand
 alias ai='apt                      install';alias au='apt update';alias  auu='au;apt upgrade';alias acsp=' ac showpkg';alias agri='ag reinstall'; # shOpkgDtlz
 alias apts='apt search';alias asrch='apts';alias aar='apt autoremove'; # alreD /usr/bin/as GNU ASsembler,shud rEd wut Ls apt(itude)? do betr than ag 2add here
+alias ali=' apt list             --installed';alias dli='dpkg -l'; # super basic commandz to use Apt or Dpkg(-query)? to List Installed packagez on Ubuntu or
+alias alim="aptitude search      '~i!~M' "; # should just List packagez which were Installed Manually (not just as DpNdNCz); /var/lib/apt/extended_states too?
+alias calg="(zc \$(ls -tr /var/log/apt/history.log*.gz);cat /var/log/apt/history.log) 2>/dev/null|eg '^(Start-Date:|Commandline:)'|gv aptdaemon|
+             eg -B1 '^Commandline:'";alias amsm='apt-mark showmanual';alias almi='apt list --manual-installed'; # CatAptLogz in2Grepz shOz instl d8z reversed;
+alias dgsc="dpkg -l|g ^ii|sed 's_  _\t_g'|cut -f 2 > ~/.tmp/InstalledPkgz-\`d8\`.ls";alias agip='agi -y $(< ~/.tmp/InstalledPkgz-*.ls)'; # mIt nEdSKpd bkslsh;
+# HTTPS://AskUbuntu.Com/questions/17823/how-to-list-all-installed-packages forum thread has 23 extensive answers with varying ways to go about logging instlz;
 alias emrg='     echo "emrg justAbrvz: emerge Try em 4shrtDfltOptz"; emerge';alias em='   emu   '; # fav emrg dfaltz:--colmz -va --kp-go -Du (+-N 4sys|wrld)
 alias emcol='emerge --columns -v';alias eM='em     -v' # --columns vert-alinz pkg-name,vers,use-flagz       (-v == --verbose      )
 alias emrga='    emcol  -a';alias emrge='   emrga  -e' # --ask                                              (-e == --emptytree    ) (eg,wrld4UsrModeLnux)
@@ -368,19 +374,19 @@ alias vimUz=' vimuse                                                            
 #lias scp='noglob scp'; # still want to glob locally so just intentionally escape remote globs wi \* etc; #Rot13perLyn:`vim $fyl`Vg?
 alias              ..='cd ..                 ';alias cdup='..';alias cd..='..                      ';
 alias             ...='cd ../..                              ';alias cd...='...                    ';
-alias            ....='cd ../../..                           ';alias cd....='....                  ';
-alias           .....='cd ../../../..                        ';alias cd.....='.....                ';
-alias          ......='cd ../../../../..                     ';alias cd......='......              ';
-alias         .......='cd ../../../../../..                  ';alias cd.......='.......            ';
+alias            ....='cd ../../..                           ';alias cd....='....                  '; # 4 `sz` BlO fIl is Only rEmovd aftr `x` logz mE out thO;
+alias           .....='cd ../../../..                        ';alias cd.....='.....                '; # so ReMove.SudoSuccessful fIl aftr most callz2 sudo BlO;
+alias          ......='cd ../../../../..                     ';alias cd......='......              '; # aftr tryng2cmpIl new ~/dvl/m8/sudo tryng this now nstd:
+alias         .......='cd ../../../../../..                  ';alias cd.......='.......            ';alias rmSS="rm -f  $HOME/.sudo_as_admin_successful";
 alias        ........='cd ../../../../../../..               ';alias cd........='........          '; # folOng R my mAn supr-ters aliasz 4 per4mng almOst ...
 alias       .........='cd ../../../../../../../..            ';alias cd.........='.........        '; #   ... evry core GNU/Linux sys Utl (&& some clasic DOS)
-alias      ..........='cd ../../../../../../../../..         ';alias cd..........='..........      ';     alias mktst='   mtst';alias mkj=' mkjG   ';
-alias     ...........='cd ../../../../../../../../../..      ';alias cd...........='...........    ';     alias mtst='mk  test';alias mkjg='mkjG   ';
-alias    ............='cd ../../../../../../../../../../..   ';alias cd............='............  ';     alias mkck='mk check';alias mkjG='mk -j16';
-alias   .............='cd ../../../../../../../../../../../..';alias cd.............='.............';     alias mkcl='mk clean';alias mkj8='mk -j8 ';
-alias      mk='   make';alias mki='mk install';alias mi='mkin';alias smi='sudo make install ';alias smki='smi';alias mkin='mki';alias mkj4='mk -j4 ';
-alias      sz='   sudo -E zsh';alias SS='sudo shutdown -h now';alias SSR='sudo shutdown -r now';alias SN='SSR'; # emergency !Sudo Shutdown or Reboot *now*!
-alias      pu='  pushd';alias  ua='un    ';alias SH='shutdown -h';alias SR='   shutdown -r'; # these aliases are for after `sz` when I can w8 1 minute 4 shutdn
+alias      ..........='cd ../../../../../../../../..         ';alias cd..........='..........      ';         alias mktst='   mtst';alias mkj=' mkjG   ';
+alias     ...........='cd ../../../../../../../../../..      ';alias cd...........='...........    ';         alias mtst='mk  test';alias mkjg='mkjG   ';
+alias    ............='cd ../../../../../../../../../../..   ';alias cd............='............  ';         alias mkck='mk check';alias mkjG='mk -j16';
+alias   .............='cd ../../../../../../../../../../../..';alias cd.............='.............';         alias mkcl='mk clean';alias mkj8='mk -j8 ';
+alias      mk='   make';alias mki='mk install';alias mi='mkin';alias smi='sudo make install;rmSS';alias smki='smi';alias mkin='mki';alias mkj4='mk -j4 ';
+alias   sz='sudo -E zsh;rmSS ';alias SS='sudo shutdown -h now';alias SSR='sudo shutdown -r now;rmSS';alias SN='SSR'; # EmergNC !Sudo Shutdown or Reboot *now*!
+alias      pu='  pushd';alias  ua='un    ';alias SH='shutdown -h';alias SR='   shutdown -r ;rmSS'; # thEz aliaszR4aftr`sz`whNIcan w8 1minute4shutdn||rEboot;
 alias      po='   popd';alias una='un -a '; # just add a couple basic abbreV8ions for sys-info which call un() which is defined below goo() && abov src() 4now;
 alias      pe='   perl -MOctology::a8 -pe'; # setup Perl Eval filter easy to give a 's///' after
 alias      pa='   perl -MOctology::a8  -e'; # setup Perl eval        with Attribute Auto-export globals of A8
@@ -482,9 +488,10 @@ alias      rd='  rmdir'; #  rd   :          rmdir
 alias      dm='  dmesg'; #  dm   :          dmesg
 alias     mnt='  mount'; #  mnt  :          mount
 alias    umnt=' umount'; # umnt  :         umount
-alias     chm=' chmod '; #  chm  :          chmod
+alias scu='sudo chown $USER:$USER *;rmSS'; #cho all unhidden filz && dirz in current directory to the normal user from any required super-user permissions
 alias     cho=' chown '; #  cho  :          chown
 alias     chg=' chgrp '; #  chg  :          chgrp
+alias     chm=' chmod '; #  chm  :          chmod
 alias     chr=' chroot'; #  chr  :          chroot
 alias     chs=' chsh  '; #  chs  :          chsh  (follow with -s SHELL to autom8, or get interactive prompting without)
 alias     chf=' chfn  '; #  chf  :          chfn  (changes user FullName, office room number, office phone number, && home phone number)
@@ -661,9 +668,9 @@ k8(){        KDBF='pswd';if [[ "$#" -gt 0 && "$1" != "" ]]; then KDBF=".$1"; fi;
     if   [[ $KDBF =~  pswd  ]]; then b $KDBF; fi;     # ideally this should all behave quite similarly to just basic kp alias above && may replace it once same
   else   ec   "k8 failed to loc8 ~/.kp/$KDBF;";   fi; # should print out passed in or manipul8d file when it didn't exist where it was expected to be openable
   po;} # simply popd back to the original working directory before the default home d8abase directory was pushd added above the standard shell directory stack
-alias    Upd8='sudo curl -L https://yt-dl.org/downloads/latest/youtube-dl -o /usr/local/bin/youtube-dl;sudo chmod a+rx /usr/local/bin/youtube-dl';
-alias    Upw8='sudo wget    https://yt-dl.org/downloads/latest/youtube-dl -O /usr/local/bin/youtube-dl;sudo chmod a+rx /usr/local/bin/youtube-dl';
-alias    Upi8='sudo      -H  pip install      --upgrade        youtube-dl'; # see pypi document8ion for more inform8ion about popular Python `pip` package-tool
+alias    Upd8='sudo curl -L https://yt-dl.org/downloads/latest/youtube-dl -o /usr/local/bin/youtube-dl;sudo chmod a+rx /usr/local/bin/youtube-dl;rmSS';
+alias    Upw8='sudo wget    https://yt-dl.org/downloads/latest/youtube-dl -O /usr/local/bin/youtube-dl;sudo chmod a+rx /usr/local/bin/youtube-dl;rmSS';
+alias    Upi8='sudo      -H  pip install      --upgrade        youtube-dl;rmSS'; # see pypi docUmNt8ion4more in4m8ion about popular Python `pip` package-tool
 alias    U='   U2b8';alias U2bk='Uk';alias u2bk='uk'; # shud l8r add 1-colm <98wId mOd&&some a8 autOcolrz 2furthr hIlIt mapngz
 alias    Ukey='en  "m c b : togl volMute Caption Bakgr colr [ U2b-hotKey ];  Dn Up : lowr 5%vol (arowkyz) rais 5%vol;
 p f n : Prevplayls toglFulsc Nextplayls (Escap=2exitf);  Lt Rt : bkwd 5secs (arowkyz) 4wrd 5secs;
@@ -884,6 +891,8 @@ alias kasd='ka -q speech-dispatcher'; # resolve Aku's buggy loud HDMI audio clic
 alias kisp='kasd';alias kasp='kasd';alias ksp='kasp';alias kspd='kasp'; # make a bunch of other good guesses at what the alias was when forgotten J5CMGnwN;
 alias kafp='ka -q plugin-container'; #'kill `ps ax | grep firefox | grep flash | cut -d" " -f1`'; # Kill crashed adobe Flash plugin (altho bad if ever running additional firefox plugins && will have to restart those too). Could also use   | c8 0';#now instead.
 #/usr/lib/firefox/plugin-container /usr/lib/flashplugin-installer/libflashplayer.so -greomni /usr/lib/firefox/omni.ja 1881 true plugin
+# sudo modprobe pcspkr;say 'you have a speaker voice'; # ALSA lib pcm_dmix.c:1108:(snd_pcm_dmix_open) unable to open slave; espeak 'you have a speaker voice';
+# zsh: command not found: espeak [pip@OniK2HL78q9~]acs espeak;acs beep;  HTTPS://YouTu.be/M0eEwqUpKDc "How to Haunt a Computer Using SSH" # K2HL7Lr0:19m09s;
 alias kas=' kasd'; # KillAllStupidScratchySpeechSoundStaticShockSparkSpaz
 alias  klok='dclock -date "%A %B %d, %Y" -geometry 256x88-1920-0 -miltime -bg "#03071B" -led_off "#031B0B" -fn Fixed &';
 alias xklok='xclock -digital -fg yellow -bg black -rv -geometry 512x64 -update 1 &'; # stuD fdclock gworldclock osd_?clock twclock tzwatch 2add more good here
@@ -896,7 +905,7 @@ alias fstat='  perl -MTime::PT     -e "@s=split(/ /,scalar(localtime((stat(shift
 alias fstd8='  perl -MOctology::d8 -e "@s=split(/ /,scalar(localtime((stat(shift))[9])));print Octology::d8->new(\"expand\"=>\"@s\");"'; 
 alias wmc='  wmctrl ';alias gtt=' gnome-tweaks  '; # Uzd2B gt-tool scAling all fontz2 1.5&&mkCapsLock Ctrl;XperimNt wiCaps2:Hyper,Menu,orWin 2CwutLsIcan map2;
 alias gt='   env TERM_PROGRAM=gt  gnome-terminal'; # wrap GnomTerm wi ENV var to be l8r capable of determining the actual term apart from just xterm-256color;
-alias xrnr='xrandr'; # shud mk func tking [hdp]\d* 4 Hdmi, Dvi, disPlayPort thN wich ndx 2 cfg wi custm r8 setz (hopefully2 144) whN cRd,Kbl,&&displA suportz
+alias xrnr='xrandr';alias xrg="xrnr|g '^[DH][^ ]*'"; # shud mk func tkng [hdp]\d* 4Hdmi,Dvi,disPlayPort thNwich ndx2cfg r8z whN cRd,Kbl,&&displA suportz 144?;
 alias xr='xrnr --output DVI-D-0 --mode 1920x1080 --rate 60';alias cx='ct "init";xr'; # nEd2set ViotekGN32C over DVI from Dflt 144 rEfresh down2cAbl suportd 60
 #    `xr` abov was DVI-1 thN DVI-D-1 thN DVI-D-0 && had --mode 1920x1080 B4 just --rate 60; # new50"TV was H3WideFormat set above as $H3WF to booleon flag it;
 #    `xt` used to be a sym-link to ~/bin/xmltidy (or l8r just xtidy) but is more consistent with st, at, gt, et, etc. to have it alias for XTerm now instead;
@@ -905,58 +914,78 @@ alias xtm80='env TERM_PROGRAM=x80  xterm          -geometry 80x25  -fa        "M
 alias gtm80='env TERM_PROGRAM=g80 gnome-terminal --geometry=80x25 --window-with-profile=Pips8025GnomTerm-NiceFont-K2FL8025 2>/dev/null &'; # mk dbl-sIzd gt;
 alias uxtrm='env TERM_PROGRAM=uxt uxterm          -geometry 160x50 -bc -bcn 512 -bcf 256                      &'; #`appres XTerm|gi utf8font`shOwz mNU fontz;
 alias utm80='env TERM_PROGRAM=u80 uxterm          -geometry  80x25 -bc           &'; # setup consistNtly 2 or 3-char aliases for almost all usable termz;
-alias lxtmn='env TERM_PROGRAM=lxt lxterminal     --geometry=160x50               &'; # =lxterminal LXDE lItw8 GTK+ term MUl8r wi dox frm`d8 86S`;`d8 4CJ`BlO;
-alias lxt80='env TERM_PROGRAM=l80 lxterminal     --geometry=80x25                &';
-alias lxtrm='env TERM_PROGRAM=lxm lxterm          -geometry 160x50               &'; # =lxterm is sepR8 sh scrpt wich tStz locale&&wrapz plain uxterm 4 UTF-8;
-alias lxm80='env TERM_PROGRAM=L80 lxterm          -geometry  80x25               &';
+alias lxtrm='env TERM_PROGRAM=lxt lxterm          -geometry 160x50               &'; # =lxterm is sepR8 sh scrpt wich tStz locale&&wrapz plain uxterm 4 UTF-8;
+alias lxt80='env TERM_PROGRAM=l80 lxterm          -geometry  80x25               &';
+alias lxtmn='env TERM_PROGRAM=lxm lxterminal     --geometry=160x50               &'; # =lxterminal LXDE lItw8 GTK+ term MUl8r wi dox frm`d8 86S`;`d8 4CJ`BlO;
+alias lxm80='env TERM_PROGRAM=L80 lxterminal     --geometry=80x25                &';
 alias sakra='env TERM_PROGRAM=sak sakura          -c     160 -r 50 -f  "Ubuntu Mono,monospace 13" 2>/dev/null &'; # mk Ech similR 2my prEferd Dfalt dimNsionz;
-alias sak80='env TERM_PROGRAM=s80 sakura          -c      80 -r 25 -f  "Ubuntu Mono,monospace 28" 2>/dev/null &'; # mk sepR8 160x50 &&dbl-sIz 80x25 Sak alias;
-alias roxtm='env TERM_PROGRAM=rox roxterm        --geometry=160x50               &'; # anothr VTE-bAsd xterm (-z $ZoomFrom1.0 [want 0.8333] CRIT assert pango);
-alias rox80='env TERM_PROGRAM=r80 roxterm        --geometry=80x25                &'; # had 2 add-apt-repository for ppa:h-realh 2 get roxterm installed again;
+alias sak80='env TERM_PROGRAM=S80 sakura          -c      80 -r 25 -f  "Ubuntu Mono,monospace 28" 2>/dev/null &'; # mk sepR8 160x50 &&dbl-sIz 80x25 Sak alias;
+alias roxtm='env TERM_PROGRAM=rox roxterm        --geometry=160x50 -c  "Default" &'; # anothr VTE-bAsd xterm (-z $ZoomFrom1.0 [want 0.8333] CRIT assert pango);
+alias rox80='env TERM_PROGRAM=r80 roxterm        --geometry=80x25  -c  "Default" &'; # had 2 add-apt-repository for ppa:h-realh 2 get roxterm installed again;
 alias tmn8r='env TERM_PROGRAM=t8r terminator     --geometry=1458x920 -T t8r -b 2>/dev/null &'; # geom pixLz,!charz wi dmNsnz 10x18 1608x932pixLz+bordr&&tab-bR;
-alias xf4tm='env TERM_PROGRAM=x4t xfce4-terminal --geometry=160x50   -T x4t      &'; # like rox, x4t && m8t accept --zoom=$ZOOM level varyng from -7 to 7 wi...
-alias m8trm='env TERM_PROGRAM=m8t mate-terminal  --geometry=160x50   -t m8t      &'; #   ... 0 as norml sIz or $ZOOM factor wi 1.0 as norml sIz as float scAl;
-alias tmnlg='env TERM_PROGRAM=tmg terminology    --geometry=160x50   -T tmg   -2 &'; # -c=$BOOL can set CursorBlink && -G=$BOOL VisualBell && -B Borderless;
+alias xf4tm='env TERM_PROGRAM=x4t xfce4-terminal --geometry=160x50   -T x4t    2>/dev/null &'; # like rox, x4t && m8t accept --zoom=$ZOOM level varyng from ...
+alias x4t80='env TERM_PROGRAM=X80 xfce4-terminal --geometry=80x25    -T X80    2>/dev/null &'; #   -7 to 7 with 0 as norml sIz or   $ZOOM factor with ...
+alias m8trm='env TERM_PROGRAM=m8t mate-terminal  --geometry=160x50   -t m8t      &';           #      1.0         as norml sIz as float scAle;
+alias m80tm='env TERM_PROGRAM=m80 mate-terminal  --geometry=80x25    -t m80      &';
+alias tmnlg='env TERM_PROGRAM=tmg terminology    --geometry=160x50   -T tmg -2 2>/dev/null &'; # -c=$BOOL CursorBlink && -G=$BOOL VisualBell && -B Borderless;
+alias tmg80='env TERM_PROGRAM=T80 terminology    --geometry=80x25    -T t80 -2 2>/dev/null &';
 alias qterm='env TERM_PROGRAM=qtm qterminal                     1>/dev/null 2>&1 &'; # DsIgnd 4 LXQt dsktp NvIrnmNt Cmz 2 hv almOst nO cmd-lIn optnz 2 adjust;
 alias Trmnl='env TERM_PROGRAM=Trm Terminal                      2>/dev/null      &'; # looks lIk Terminal app so old that it can hardly render prmpt or colrz;
 alias liltm='env TERM_PROGRAM=ltm lilyterm        -g        160x50   -T ltm    2>/dev/null &'; # lily&&termit spew lots ofGTK warnz2STDERR;
+alias lil80='env TERM_PROGRAM=i80 lilyterm        -g         80x25   -T i80    2>/dev/null &'; # lily in 80-column mode getz 'i80' Title since l80 && L80 tAkN;
 alias konsl='env TERM_PROGRAM=kon konsole        --profile  PipProfile0-K2ELGANT &'; # qterminal && konsole cfgz in ~/.config/ &&
 alias trmit='env TERM_PROGRAM=tit termit                                       2>/dev/null &'; #    ~/.local/share/;cud -T tit but thN!`ct`;
 alias Pterm='env TERM_PROGRAM=ptm pterm           -geometry 160x50 -fn             "Monospace 12"             &'; # pterm has lotz of .Xrc && CLI optz 2 add;
-alias Urxvt='env TERM_PROGRAM=urx urxvt           -geometry=160x50               &'; # Unicode-Rxvt cnfigd nEr botm of ~/.Xrc wi `xrc` 2lOd xrdb d8a B4hand;
-alias st='  stterm -f "Ubuntu Mono:size=14"    -g        160x50   -T st       &'; # also SimpleTerminal (or SucklessTerminal?) st is pretty quik && clEn too;
-alias st80='stterm -f "Ubuntu Mono:size=28"    -g         80x25   -T st80     &'; # added dbl-sIz varE8ion2 but nEd2 fix prmpt && lsd8 colrz 2work nIcly 1st;
-alias to='   tio';alias et='Et';alias atm='At';alias s3t='s3dvt               &'; # tio is just simple TTY term I/O app,!a ful term by itsLf; s3dvt nEdz S3D;
-alias at='   atm';alias lt='ltm';alias Pt='ptm';alias qt='qtm';alias rt='rox'; # `pt` stil ~/bin/ Time::PT.pm PipTime but othrz can shrnk 3 to 2-char aliasz;
-alias crt='pu ~/dvl/c8/trm8;CRT'; # CoolRetroTerm nEdz2cfg termrc 2Uz smalr font; # Terminal cfg in ~/.GNUstep/ (aftr chgz mAd2 /etc/ .conf 2mk dir dot-fIl);
+alias ptm80='env TERM_PROGRAM=p80 pterm           -geometry  80x25 -fn             "Monospace 24"             &';
+alias Urxvt='env TERM_PROGRAM=urx urxvt           -geometry 160x50               &'; # Unicode-Rxvt cnfigd nEr botm of ~/.Xrc wi `xrc` 2lOd xrdb d8a B4hand;
+alias urx80='env TERM_PROGRAM=U80 urxvt           -geometry  80x25               &';
+alias rxvtu='env TERM_PROGRAM=rxu rxvt-unicode    -geometry 160x50               &';
+alias rxu80='env TERM_PROGRAM=R80 rxvt-unicode    -geometry  80x25               &';
+alias st='   env TERM_PROGRAM=st  stterm          -g        160x50   -T st  -f "Ubuntu Mono:size=14"          &'; # also SimpleTerminal (or SucklessTerminal);
+alias s80='  env TERM_PROGRAM=s80 stterm          -g         80x25   -T s80 -f "Ubuntu Mono:size=28"          &'; # dbl-sIz varE8ion but nEd2 fix lsd8 colrz2;
+alias to='   tio';alias et=' Et';alias s3t='s3dvt  &'; # tio is just simple TTY term I/O app,not a ful term by itsLf; s3dvt nEdz S3D && a TCP servr2connect2?;
+alias at='   atm';alias atm='At'; # `pt` stil ~/bin/ Time::PT.pm PipTime but othrz can shrnk 3 to 2-char aliasz;
+alias crt='cd ~/dvl/c8/trm8;CRT'; # CoolRetroTerm nEdz2cfg termrc 2Uz smalr font; # Terminal cfg in ~/.GNUstep/ (aftr chgz mAd2 /etc/ .conf 2mk dir dot-fIl);
+alias stp='cd ~/dvl/c8/trm8/st;patch -Np1 -i'; # SucklessTermPatch with No attempt to reverse 1st failed hunk && stripping 1st slash from Path B4 Input fIl;
+alias smci='sudo make clean install;rmSS'; # HTTPS://BrianBuccola.Com/how-to-build-and-install-st-suckless-simple-terminal-from-source-on-arch-linux `d8 H3J`;
 alias vtst='vttest'; # `vtst` might be good to run all termz thru 2 see which have what fE8urez; BlO echo compact term alias mapingz;
 alias x80='xtm80'; # tSt setng all my 3-char && smaller aliasez 2 prefix larger 5-char aliasez with ENV var lIk GNUstep_Terminal.app has;
-alias g80='gtm80';
-alias uxt='uxtrm';
-alias u80='utm80';
-alias lxt='lxtmn';
-alias l80='lxt80';
-alias lxm='lxtrm';
-alias L80='lxm80';
-alias sak='sakra';
-alias s80='sak80';
-alias rox='roxtm';
+alias g80='gtm80';                       # I'm not sure yet if each of these are detected as different behaviorz bAsd on $0;
+alias uxt='uxtrm';alias ut='uxt';        #lrwxrwxrwx 1 root root       5 Sep  5 06:08 /usr/bin/rxvt         -> urxvt
+alias u80='utm80';                       #lrwxrwxrwx 1 root root       5 Sep  5 06:08 /usr/bin/rxvt-unicode -> urxvt
+alias lxt='lxtrm';alias lt='lxt';        #lrwxrwxrwx 1 root root       5 Sep  5 06:08 /usr/bin/rxvt-xpm     -> urxvt
+alias l80='lxt80';                       #lrwxrwxrwx 1 root root       5 Sep  5 06:08 /usr/bin/rxvt-xterm   -> urxvt
+alias lxm='lxtmn';alias Lt='lxm';        #-rwxr-sr-x 1 root utmp 1423512 Sep  5 06:08 /usr/bin/urxvt
+alias L80='lxm80';                       #-rwxr-xr-x 1 root root   97056 Sep  5 06:08 /usr/bin/urxvtc
+alias sak='sakra';                       #-rwxr-xr-x 1 root root      86 Jun  9  2016 /usr/bin/urxvtcd
+alias S80='sak80';                       #-rwxr-sr-x 1 root utmp 1431704 Sep  5 06:08 /usr/bin/urxvtd
+alias rox='roxtm';alias rt='rox';
 alias r80='rox80';
 alias t8r='tmn8r';
-alias x4t='xf4tm';
-alias m8t='m8trm';
-alias tmg='tmnlg';
-alias qtm='qterm';
-alias Trm='Trmnl'; # mAB this 1 will get overridden by GNUstep so shud vary,or mAB all varz shud just B shrunk 2 only TERM_(PROG|ALIAS)?
-alias ltm='liltm'; # it might also be betr 2 rEwrIt all thEz az shL functionz wich can pass argz in2 term programz B4 & thM 2 bkgr jobz?
+alias x4t='xf4tm';alias Xt='x4t';
+alias X80='x4t80';
+alias m8t='m8trm';alias Mt='m8t';
+alias m80='m80tm';
+alias tmg='tmnlg';alias Tt='tmg'; # `tt` is already mapped to the gr8 KentaCho of BulletML fame's ported DMD game: Torus-Troopers so can't remap that;
+alias T80='tmg80';                # I am unabashedly heels-over-head reeling in love with the puls8ing glittery cursor of terminology && its esthetics;
+alias qtm='qterm';alias qt='qtm'; # Damn! ~/.GNUstep/ Terminal.app is so horribly broken with all the settings I could try to saddle it wi sOfR.4getit?
+alias Trm='Trmnl';alias TT='Trm'; # mAB this 1 will get overridden by GNUstep so shud vary,or mAB all varz shud just B shrunk 2 only TERM_(PROG|ALIAS)?
+alias ltm='liltm';alias it='ltm'; # it might also be betr 2 rEwrIt all thEz az shL functionz wich can pass argz in2 term programz B4 & thM 2 bkgr jobz?
+alias i80='lil80';
 alias kon='konsl';
 alias tit='trmit';
-alias ptm='Pterm';
-alias urx='Urxvt';
-alias trmz='ee "${R}xt${w},${o}st${w},${Y}at${w},${G}gt${w},${C}et${W} => ${R}xterm${w},${o}s[imple]tterm${w},${Y}aterm${w},${G}gnome-terminal${w},${C}E[nlightenment]term${W}; ${R}uxt${w},${o}lxt${w},${Y}lxm${w},${G}sak${w},${C}t8r${w},${B}tit${w},${M}tmg${w},${p}crt${w},${R}urx${w},${o}rox${w},${Y}s3t${w},${G}x4t${w},${C}m8t${w},${B}Trm${w},${M}kon${w},${p} to${w},${R}ltm${w},${o}ptm${w},${Y}qtm${W} =>";
-            ee "${R}uxterm${w},${o}lxterminal${w},${Y}lxterm${w},${G}sakura${w},${C}terminator${w},${B}termit${w},${M}terminology${w},${p}CoolRetroTerm${w},${R}urxvt${w},${o}roxterm${w},${Y}s3dvt${w},${G}xfce4-terminal${w},${C}mate-terminal${w},${B}Terminal${w},${M}konsole${w},${p}tio${w},${R}lily${w},${o}p${w},${Y}qinal${W};$z"'; # echo -e SKpd colr-coded terminal MUl8orz mapng lst of aligned 2 && 3-char aliasez in 160x2 char linez; alsO x80,s80,g80 && lt,Pt,qt,rt work2;
-alias  Etrm=' Eterm        --geometry 160x50 --scrollbar-width 15 --cmod 227 -L 65536 &';alias Et='Etrm';alias E='Et'; # used to be 'Eterm -t E &' but it...
-export ETERM_THEME_ROOT="~/.Eterm/themes"; # wuz ~/.Eterm/themes/Eterm                       # ...looks like I don't even need that plain old  E theme anymore
+alias ptm='Pterm';alias Pt='ptm';
+alias p80='ptm80';
+alias urx='Urxvt';alias Ut='urx';
+alias U80='urx80';
+alias rxu='rxvtu';alias Rt='rxu';
+alias R80='rxu80'; # BlO trmz usez echo -e on SKpd colr-coded terminal MUl8orz mapng lstz of alIgnd 2 && 3-char aliasz fitng in 160x3-char lInz;
+alias trmz='ee "${R}xt$w,${o}st$w,${Y}gt$w,${G}at$w,${C}Et$W => ${R}xterm$w,${o}s[imple]tterm$w,${Y}gnome-terminal$w,${G}aterm$w,${C}E[nlightenment]term$W; ${R}uxt$w,${o}lxt$w,${Y}lxm$w,${G}sak$w,${C}t8r$w,${B}tit$w,${M}tmg$w,${p}crt$w,${R}urx$w,${o}rox$w,${Y}s3t$w,${G}x4t$w,${C}m8t$w,${B}Trm$w,${M}kon$w,${p} to$w,${R}ltm$w,${o}ptm$w,${Y}qtm$W =>";
+            ee "${R}uxterm$w,${o}lxterminal$w,${Y}lxterm$w,${G}sakura$w,${C}terminator$w,${B}termit$w,${M}terminology$w,${p}CoolRetroT*$w,${R}urxvt$w,${o}roxterm$w,${Y}s3dvt$w,${G}xfce4-terminal$w,${C}mate-terminal$w${B}Terminal$w${M}konsole$w${p}tio$w${R}lilyt*$w${o}pt*$w${Y}qterminal$W;";
+            ee "${R}Lt$w,${o}Pt$w,${Y}qt$w,${G}At$w,${C}Rt$W => ${R}lxterminal$w,${o}pterm$w,${Y}qterminal$w,${G}aterm$w,${C}rxvt-unicode$W;${B}it$W =>$B lilyterm$W;$C 80${K}x${o}25$G varE8ionz$W:$R x80$w,${o}g80$w,${Y}u80$w,${G}l80$w,${C}L80$w,${B}r80$w,${M}R80$w,${p}s80$w,${R}S80$w,${o}i80$w,${Y}p80$w,${G}q80$w,${C}U80$w,${B}X80$w,${M}m80${K}...";
+            ee "${G}      l8r  alsO$W:$w t80$w,T80$w,G80$w,M80$w,k80$w,I80 && Xt, Mt, Tt, Ut, ut, ko, lt, rt, et$W;$z"'; # also study tio 4 anythng useful?
+alias  Etrm='env TERM_PROGRAM=et Eterm --geometry 160x50 --scrollbar-width 15 --cmod 227 -L 65536 &';alias Et='Etrm';alias E='Et'; # Used 2B 'Eterm -t E &' ...
+#xport ETERM_THEME_ROOT="~/.Eterm/themes"; # wuz ~/.Eterm/themes/Eterm                # ... but it looks like I don't even need that plain old  E theme anymore
 #lias E=' Eterm -t E --scrollbar-type motif --scrollbar-width 15 &'; # --cmod 227 &';
 #lias Et='Eterm --background-pixmap mits1024.jpg -c orange -T PipzEtrm --scrollbar-type motif --scrollbar-color blue --scrollbar-width 15 --scrollbar-right --path /home/pip/.Eterm/ --default-font-index 4 &'
 #lias Et='Eterm -c #FFA404 -T PipzEtrm --scrollbar-type motif --scrollbar-color blue    --scrollbar-width 15 --scrollbar-right --default-font-index 4 &'
@@ -1159,7 +1188,7 @@ else # following settings will hopefully work well for single-screen Ryu, Ken, &
 #   Chun:`wmctrl -d`:0  * DG:  5120x800   VP: 0,0  WA: 73,24 1207x776   N/A; thN wmctrl -o 0,0 or 1280,0 or 2560,0 or 3840,0 for 4Compiz ViewPorts in1 DsktpGrp
 #    Aku:`wmctrl -d`:0  * DG: 15360x2160  VP: 0,0  WA:  0,24 3840x1056  N/A; thN_1920, 3840, _5760, 7680, _9600, 11520, _13440, 15360; rEspAcd2alIn both dimz
 #     add`wmctrl -b add,sticky,below` after -r IdNtify d8ok window or just :ACTIVE: after spawnd;d8ok wmctrl -e -1,664,1004 [geom +664(-0|+1004)] &&-e +2586-0;
-At() { ec "At params without residue: 11,12,17,18,20,22,23,28,31,32,40,41,49 \n mixr bar Gen: At 17, 44x3+0+950 Eiji: 105x3;";  # no border, always top
+At() { # ec "At params without residue: 11,12,17,18,20,22,23,28,31,32,40,41,49 \n mixr bar Gen: At 17, 44x3+0+950 Eiji: 105x3;"; # no border, always top;
   # aterm just wraps rxvt-unicode-256color   # -fn "-ttf-DejaVu Sans-*-*-*-*-18-*-*-*-*-*-*-*" -fb "-ttf-..."   # had old WindowMaker wharf ATerm buttons
   if   [[ "$1" ==   "" ]]; then env TERM_PROGRAM=at aterm -geometry 160x50 -color3 "#FFAA33" -color13 "#9933BB" -bg "#03071B" -fg "#88F8B0" --cursorColor "#30D0F0" --cursorColor2 "#204080" -pr "#D8D870" -vb -fn "-*-*-*-*-*-*-18-*-*-*-*-*-*-*" -fb "-*-*-*-*-*-*-20-*-*-*-*-*-*-*" -tr -sh 31 -fade 63 -sb -sr -sl 65536 &;
   elif [[ "$1" == "80" ]]; then env TERM_PROGRAM=at aterm -geometry  80x25 -color3 "#FFAA33" -color13 "#9933BB" -bg "#03071B" -fg "#88F8B0" --cursorColor "#30D0F0" --cursorColor2 "#204080" -pr "#D8D870" -vb -fn "-*-*-*-*-*-*-36-*-*-*-*-*-*-*" -fb "-*-*-*-*-*-*-40-*-*-*-*-*-*-*" -tr -sh 31 -fade 63 -sb -sr -sl 65536 &;
@@ -1330,9 +1359,9 @@ ss()       { # SShortcut where empty goes to DHst ('Aku' 4all hostz!Aku, && best
              if     [[ "$1"         == ""     ]]; then ldh;
                if   [[ "$DHst"      != ""     ]]; then ssh $DHst; fi;
              else                                      ssh $@   ; fi; } # sudo belo may now req -E 2 prEsrv calling Environment since upd8 2`sudo zsh`did;
-pmei()     { if     [[ "$HUsr"      != "root" ]]; then sudo perl -MCPAN -e        "install  '$@' ";      # pronounced:"Perl"  .  "Mei"
+pmei()     { if     [[ "$HUsr"      != "root" ]]; then sudo perl -MCPAN -e        "install  '$@' ";rmSS; # pronounced:"Perl"  .  "Mei"
              else                                           perl -MCPAN -e        "install  '$@' "; fi } #   lyk"Pai"."Mei" inKillBill
-pmfi()     { if     [[ "$HUsr"      != "root" ]]; then sudo perl -MCPAN -e "force('install','$@')";      # pronounced:"Perl"  .  "MFfFi"
+pmfi()     { if     [[ "$HUsr"      != "root" ]]; then sudo perl -MCPAN -e "force('install','$@')";rmSS; # pronounced:"Perl"  .  "MFfFi"
              else                                           perl -MCPAN -e "force('install','$@')"; fi } #   lyk"Pai"."MeFsckngForcei"
 pmverck()  { cpan -D $1; } # used to check with perl -MExtUtils::MakeMaker -le 'print MM->parse_version(shift)' $1; but that old method no longer seems to work
 alias  pdoc='perldoc'; # used to have problem with most needing -t for text-only version (not pod2man | nroff -man | $PAGER) or to just pipe thru less instead

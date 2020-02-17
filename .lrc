@@ -1,5 +1,5 @@
 # F1RLLK2K:~/.lrc  by PipStuart <Pip@CPAN.Org> as an altern8 format for .lsrc ideally having new ~/bin/lrc gNR8 either from the other;
-# $VERSION='0.0';$d8VS='K2ELEVEN'; 2du:mkUtl2gNr8 altrn8 versN of .lsrc th@purposfuly varEz colrz of comon typz,try addng bakgrnd colrz2all dFz&&tst,
+# $VERSION='0.0';$d8VS='K2GLITCH'; 2du:mkUtl2gNr8 altrn8 versN of .lsrc th@purposfuly varEz colrz of comon typz,try addng bakgrnd colrz2all dFz&&tst,
 #   add interaction2 lsd8 wN it Dtectz unrecognIzd XtNshNz offerng c@egOrEz with comon colr2autOm@ically insrt chOsN NtrEz,mAB add *-* NtrEz from .zshrc hEr &&
 #   mk lrc gNr8 either,confirm all accept f0nt cOdez wi dash accepting Dfalt foreground then redo NORMAL FILE LINK as no fi ln,mAB 8trm added2TERM ls someday;
 # 819J2Pip:~/.lsrc by PipStuart <Pip@CPAN.Org> izAheavily modifId`dircolors`cfgfIl(Orig ~/.DIR_COLORS)wich setz $ENV{'LS_COLORS'} 4GNU`ls --color`&&`lsd8`;
@@ -480,6 +480,7 @@ CHR                           Yk           #cd= 01;33;40    01;33;40  CHaRacter 
 .in
 .in~                          r            # ~/dvl/g8/jack/xdp/ xdg-desktop-portal presumably .h.in backup file from previous ./configure run
 .cps
+.rej                                       # ~/dvl/c8/trm8/st/  REJected filz from attempted patching of source treez with .diff filz
 .rnd
 .devfs
 .mcoprc
@@ -605,6 +606,7 @@ CHR                           Yk           #cd= 01;33;40    01;33;40  CHaRacter 
 .kti                          C            # /etc/brltty/
 .ktb                          c            # /etc/brltty/
 .atb                          Y            # /etc/brltty/
+.la                                        # ~/dvl/m8/sudo/plugins/sudoers/ filz which are GNU Libtool Librariez
 .lss                                       # Lynx Style Settings file like /etc/lynx.lss
 .logo                                      # ASCII art file maybe containing ANSI escaped colors && figlet-gend text (eg,/etc/issue.logo w/"Gentoo")
 .login
@@ -797,7 +799,9 @@ CHR                           Yk           #cd= 01;33;40    01;33;40  CHaRacter 
 .atm                                       # only /etc/hosts.atm cfg file?
 .dsp
 .dsw
+.exp                                       # ~/dvl/m8/sudo/plugins/sudoers/ file which probably is not just for Expect (as Vim detected it to be)
 .aspx
+.guess                                     # ~/dvl/m8/sudo/config  file which attempts to guess a canonical system name
 .vcproj
 .csproj
 .ccaldb
@@ -893,6 +897,7 @@ CHR                           Yk           #cd= 01;33;40    01;33;40  CHaRacter 
 .cab
 .ctb                                       # brltty Country's character TaBle               for daemon driving refreshable console Braille display
 .cpio
+.crate                                     # ~/.cargo/registry/cache/github.com-*/ filz which contain managed packagez for the Rust language
 .crash                                     # /var/crash/ files
 .upload                       p            # /var/crash/ files
 .uploaded                     g            # /var/crash/ files (possibly containing the IPv6 address to which a crash-log has finished uploading to?)
@@ -951,6 +956,7 @@ CHR                           Yk           #cd= 01;33;40    01;33;40  CHaRacter 
 .swm
 .wim
 .deny
+.LDAP                                      # ~/dvl/m8/sudo/README  file which describes configuring && building functionality that's optional for sudo
 .SKIP                                      # MANIFEST.SKIP from Perl packages
 .lock
 .rxvt                                      # /usr/share/terminfo/s/screen(-bce)?.rxvt
@@ -1047,6 +1053,7 @@ CHR                           Yk           #cd= 01;33;40    01;33;40  CHaRacter 
 .xpdfimport                                # /etc/apparmor.d files
 .pdf                          M            # AdObE           P0rtable DocUmNt 4m@
 .ps                           M            # AdObE           P0st Scrpt
+.pp                           p            # ~/dvl/m8/sudo/sudo    file which is probably rel8d to Providing Privileges, but might stand for Packages etc.
 .ppt                                       # P0wRlS PtlS M$  PrEzNtAshN4m@ =(
 .pptx                         M
 .xls
@@ -1061,6 +1068,7 @@ CHR                           Yk           #cd= 01;33;40    01;33;40  CHaRacter 
 .qmail
 .viminfo                                   # ~/.viminfo && .zcompdump below were both originally dark red && mistakenly thought to be binaries
 .asoundrc
+.configure                                 # ~/dvl/m8/sudo/INSTALL file which describes prepR8ion for make compiling source-code repositories
 .immodules
 .zcompdump
 .screen_exchange
