@@ -33,6 +33,7 @@ my $hwid=64;#$hwid=$ENV{'HWid'} if(exists($ENV{'HWid'}) && length($ENV{'HWid'}))
 for(@ARGV){if   (-d  "$_" ){s/([()&!'])/\\$1/g;}  # atMpt2alow`l *`2work bySKpng pRNz&&othr spcl chrz in dir||fIlnAm pRamz&&DcOd4wId
   elsif         (-e  "$_" ){s/^(.+   )$/"$1"/x;}  # need 2 save existing dir && file paramz 2 test sym-linkz existence against l8r without failing to find all
   elsif         (/^-?-?V$/){    $vsrt  = $_='';}} # try2alow invalid -V to actually not do default -v passed on to ls,shud Dtect -help like this also
+# K2LLAIgn:had added "-Isnap " to ls command below before just now installing a new l8st signal-desktop && removing ~/snap/ (aftr mvng sig 2 .local/.snap/);
 my @ldat=`ls -lF $vsrt --full-time --color=never @ARGV`;my $t0tl='0';my $subd='.';my($list,$prmz,$blsz,$pwnr,$grup,$fsiz,$d8tz,$fnam,$cmpr,$b6bs,$b6fs);
 my %lsp8;my %sqrm;my %sqra;my $cqrk;my $psdl=0; # Separ8or QuotedRegex Main&&Altern8 mapz, Current QuotedRegex Key, Previous SubDirectory Length
 my %lspt=('re'=>$z,'no'=>  $z   ,'fi'=>  $z   ,'ln'=>  $W   ,'or'=>S('RcL'),'mi'=>S('WrL'),'ex'=>$G,'su'=>S('Wg'),'sg'=>S('ky'),  # mk sureDcNtDfaltzXist

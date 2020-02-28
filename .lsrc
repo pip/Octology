@@ -1,8 +1,8 @@
 # 819J2Pip:~/.lsrc by PipStuart <Pip@CPAN.Org> izAheavily modifId`dircolors`cfgfIl(Orig ~/.DIR_COLORS)wich setz $ENV{'LS_COLORS'} 4GNU`ls --color`&&`lsd8`;
-# $VERSION='0.0';$d8VS='K2GLITCH'; 2du:mkUtl2gNr8 altrn8 versN of .lsrc th@purposfuly varEz colrz of comon typz,try addng bakgrnd colrz2all dFz&&tst,
+# $VERSION='0.0';$d8VS='K2JL8BRC'; 2du:mkUtl2gNr8 altrn8 versN of .lsrc th@purposfuly varEz colrz of comon typz,try addng bakgrnd colrz2all dFz&&tst,
 #   add interaction2 lsd8 wN it Dtectz unrecognIzd XtNshNz offerng c@egOrEz with comon colr2autOm@ically insrt chOsN NtrEz,mAB add *-* NtrEz from .zshrc hEr &&
 #   mk lrc gNr8 either,confirm all accept f0nt cOdez wi dash accepting Dfalt foreground then redo NORMAL FILE LINK as no fi ln,mAB 8trm added2TERM ls someday;
-# This file was gNR8d by `lrc` Vers:0.0 d8VS:J88M8888 on d8:K2GLJGAu. Please edit ~/.lrc and run `lrc` then `src` to see changes;
+# This file was gNR8d by `lrc` Vers:0.0 d8VS:K2GLNght on d8:K2JL8Iug. Please edit ~/.lrc and run `lrc` then `src` to see changes;
 # nOt:I'm pretty sure itz Chunz(!Takiz)`ls`&&`dircolors`th@cud!hndl (MULTI)?HARDLINK sO rEmMbr2kEp th@ lIn cmNtd out4her(&&kEptstng2cnfirm);
 # Keywords COLOR,OPTIONS,&& EIGHTBIT (honored by Slackware dircolors) are recognized but ignored; TERMz && XtNsionz syncd2 2016;
 # Copyright(C) 1996-2016 FreeSoftwareFound8ion,Inc. Copying and distribution of this file, with or without modific8ion, are permitted provided the
@@ -133,7 +133,9 @@ CHR                       01;38;5;011;48;5;000 #cd= 01;33;40    01;33;40  CHaRac
 .emacs                    01;38;5;003
 .vimrc                    01;38;5;011
 .Hrc                      01;38;5;010      #  8sh ~ fyl
-.lrc                      01;38;5;010      #  lsd8 lsrc
+.brc                      01;38;5;010      #      ~ bashrc
+.lrc                      01;38;5;010      #  lsd8    lsrc
+.zrc                      01;38;5;010      #      ~  zshrc
 .qrc                      01;38;5;011      # Qt5 && QMake ResourCe files that seem kinda similar to .sh or .ini variable-setting files
 .bxrc                     01;38;5;011
 .shrc                     01;38;5;011
@@ -197,7 +199,8 @@ CHR                       01;38;5;011;48;5;000 #cd= 01;33;40    01;33;40  CHaRac
 .ovpn                     01;38;5;011      # /etc/windscribe files
 .ogg                      01;38;5;011
 .flac                     01;38;5;011
-.flf                      01;38;5;011      # FigLet Font
+.flf                      01;38;5;011      # FigLet Font (with fonts mainly being stored in /usr/share/figlet/ or my ~/dvl/f8/flet/*fonts*/ directories)
+.tlf                      01;38;5;172      # ToiLet Font (with fonts mainly being stored in /usr/share/figlet/ or my ~/dvl/f8/flet/*fonts*/ directories)
 .plf                      01;38;5;011
 .pal8                     01;38;5;011      # f80p pal8
 .prl                      01;38;5;011      # like .ini or .sh variable files that seem to accompany /usr/lib/ .so SharedObject library files
@@ -314,6 +317,7 @@ CHR                       01;38;5;011;48;5;000 #cd= 01;33;40    01;33;40  CHaRac
 .aumixrc                  01;38;5;003
 .jack3rc                  01;38;5;003
 .jackdrc                  01;38;5;005
+.runescape                01;38;5;003      # Jagex game Kyle (UserName:"I Am TRK") wanted to play together, but has horribly tiny unscalable UI on 24" 1080p
 .default_mixer            01;38;5;003
 .mikmod_playlist          01;38;5;005
 .mikmodrc                 01;38;5;003
@@ -499,7 +503,9 @@ CHR                       01;38;5;011;48;5;000 #cd= 01;33;40    01;33;40  CHaRac
 .hidden                   01;38;5;008      # in HTTPS://AskUbuntu.Com/questions/882562/how-can-i-change-or-hide-the-snap-directory as Nautilus dir hide list
 #kk
 #kk
-.prv8                     01;38;5;000;48;5;000;8 # immeD8 overide of just Foregrndcolr to
+.pw                       01;38;5;000
+.pswd                     01;38;5;000;48;5;004;6
+.prv8                     01;38;5;000;48;5;000;8 # immeD8 overidez of Foregrnd && backgrnd colrz plus inVisible SGR flag (so shud B dbl-clikabl but rarely seen)
 #MM
 #MM
 .htm                      01;38;5;013      # HTML && YA?ML && XML && (detailed) play-list filz && .profile && .history filz
@@ -589,6 +595,8 @@ CHR                       01;38;5;011;48;5;000 #cd= 01;33;40    01;33;40  CHaRac
 .vspscc                   01;38;5;013
 .yafray                   01;38;5;013
 .bitmap                   01;38;5;013      # MSWindows QuickTime/QTSystem/ or Safari/CoreFoundation.resources/CharacterSets/
+.bhs                      01;38;5;013      # ~ bash_history
+.zhs                      01;38;5;013      # ~  zsh_history
 .qtx                      01;38;5;005      # MSWindows QuickTime/QTSystem/ or Safari/CoreFoundation.resources/CharacterSets/
 .qts                      01;38;5;006      # MSWindows QuickTime/QTSystem/ or Safari/CoreFoundation.resources/CharacterSets/
 .ui                       01;38;5;013      # Qt5 UserInterface files which go to bin/uic (seem to be XML without header d8a)
@@ -608,7 +616,7 @@ CHR                       01;38;5;011;48;5;000 #cd= 01;33;40    01;33;40  CHaRac
 .atb                      01;38;5;011      # /etc/brltty/
 .la                       01;38;5;013      # ~/dvl/m8/sudo/plugins/sudoers/ filz which are GNU Libtool Librariez
 .lss                      01;38;5;013      # Lynx Style Settings file like /etc/lynx.lss
-.logo                     01;38;5;013      # ASCII art file maybe containing ANSI escaped colors && figlet-gend text (eg,/etc/issue.logo w/"Gentoo")
+.logo                     01;38;5;013      # ASCII art file maybe containing ANSI escaped colors && figlet-gend text (e.g., /etc/issue.logo wi "Gentoo")
 .login                    01;38;5;013
 .lesshst                  01;38;5;013
 .wget-hsts                01;38;5;013
@@ -869,6 +877,7 @@ CHR                       01;38;5;011;48;5;000 #cd= 01;33;40    01;33;40  CHaRac
 .cache-3                  01;38;5;013      # ~/.cache/fontconfig/[0-9a-f]{32}-le64.
 .cache-4                  01;38;5;009      # ~/.cache/fontconfig/[0-9a-f]{32}-le64.
 .xftcache                 01;38;5;001
+.jcache                   01;38;5;001      # ~/gmz/Rune/Jagex/RuneScape/  filz (RS crE8d Jagex/ in ~ but wi .zshrc alias I mv 2 gmz 4 less $HOME clutter)
 .journal                  01;38;5;001      # ~/.local/share/tracker/data/ filz (could do .ontology.journal distinctly)
 .dist                     01;38;5;001
 .distmap                  01;38;5;001
@@ -949,6 +958,7 @@ CHR                       01;38;5;011;48;5;000 #cd= 01;33;40    01;33;40  CHaRac
 .err                      01;38;5;009
 .fla                      01;38;5;009
 .3rc                      01;38;5;009      # /etc/qt3/ or ~/.qt/
+.blo                      01;38;5;009      # ~ bash_logout
 .esd                      01;38;5;009      # I73M73MI:upd8ng 4 l8st krnl identified these 4 new aliases as newest candid8z 4 incorpor8ion here;
 .kbx                      01;38;5;009      # ~/.gnupg pubring files
 .kbx~                     01;38;5;001      # ~/.gnupg pubring files
@@ -983,7 +993,7 @@ CHR                       01;38;5;011;48;5;000 #cd= 01;33;40    01;33;40  CHaRac
 .bmp                      01;38;5;164
 .dl                       01;38;5;164
 .flv                      01;38;5;164      # Adobe    FL(ash|ex) Video
-.flc                      01;38;5;164      # AutoDesk Animator
+.flc                      01;38;5;164      # AutoDesk Anim8or (or FigLet-Control filz ... or Fuzzy-Little-CrE8urez like my precious lil Darjee)
 .fli                      01;38;5;164
 .gif                      01;38;5;164
 .gl                       01;38;5;164

@@ -120,15 +120,17 @@ sub U2b4{my   $ogfn=shift(@_);my($psfn,$ocfn,$pcfn); # U2b4m@r (youtube-dl forma
 sub UTF8{my $optz=join(' ',@_);my $strt=0;my $uprb= 256; # 2BNJCDfo:asci utility to colorfully print most ASCII characterz (G7KMJqLF: ... now2 UTF8 < 256)
   open my $out8,'>&',STDOUT or die "Can't open  duplic8 STDOUT handle: $!"; # crE8 local duplic8 of global
   my $widf=           0 ;$widf=         1   if(exists($ENV{'COLUMNS'}) && $ENV{'COLUMNS'} >= 153);my $outp; # fitz nicely in either 80 or 160 column termz
-  my $trmt=      'xterm';$trmt=$ENV{'TERM'} if(exists($ENV{'TERM'   }));my $tsxf=0;$tsxf=1 if($trmt =~ /^(screen|xterm)/);
-  my $lang='en_US.UTF-8';$lang=$ENV{'LANG'} if(exists($ENV{'LANG'   }));
+  my $trmt=      'xterm';$trmt=$ENV{'TERM'} if(exists($ENV{'TERM'   }));my $tsxf=0;$tsxf=1 if($trmt =~ /^(screen|xterm|st-)/); # Eterm badly nEdz betr fontz1st
+  my $trmp='gtm';$trmp=$ENV{'TERM_PROGRAM'} if(exists($ENV{'TERM_PROGRAM'})); # might need to test for special-cases on per-term-prog + font basis l8r
+  my $lang='en_US.UTF-8';$lang=$ENV{'LANG'} if(exists($ENV{'LANG'   })); # abov try2test wich term typez shud group in with screen && xterm 4 BlO handling
   if($tsxf && $lang =~ /UTF-?8/i){binmode $out8,':encoding(UTF-8)';} # need to encode output if acceptable terminal && language environment settingz
   if  ($optz =~  /(^|\s)(-*h(elp)?)(\s|$)/){ # -h parameter design8z to just print help text as output && exit
     $outp = " UTF8  - print out 256 colorful UTF-8 or ASCII characters in order  Vers:$VERSION  d8VS:$d8VS  by Auth:$auth
    -p    skips over first 32 to start from the predominantly Printable characters  (since most of the 1st 32 are control chars)
    -c    disable printing of escape sequences which are used to Color the default output in 8bow and index columns
+   -C    set start and end around Cards and Chess 127136-127199 and 9812-9823
    -k    set start and end around Kana      (Nipponese Hiragana and Katakana need some special handling to restore alignment.) 12352-12543=192
-   -r    set start and end around Radicals  (CJK Supplement     and Kangxi)                                                    11904-12255=352
+   -r    set start and end around Radicals  (CJK Supplement     and Kangxi) (note terminals need to stretch to 225 chars wId.) 11904-12255=352
    -h    display this Help text and exit                            (See HTTP://Unicode.Org/charts for more character blocks.)
   Note : If you pass a single parameter  of just digits, it will be treated as the new upper-bounds for UTF-8 instead of 256.
     If you pass in two separ8 parameters of just digits, they will be treated as the decimal values to use for start and end.
@@ -143,35 +145,52 @@ sub UTF8{my $optz=join(' ',@_);my $strt=0;my $uprb= 256; # 2BNJCDfo:asci utility
   }else{                                my $clrf= 1;
     if($optz =~ s/(^|\s)(-*c)(\s|$)/$1$3/){$clrf= 0;} # -c parameter design8z Colorless output (disabling the CoLoRFlag)
     if($optz =~ s/(^|\s)(-*p)(\s|$)/$1$3/){$strt=32;} # -p parameter design8z skipping to mainly Printable characterz
-    if($optz =~ s/(^|\s)(-*k)(\s|$)/$1$3/){$strt=dec('3040');$uprb=dec('30FF');  # -k parameter design8z Kana (1st Hiragana then Katakana)
+    if($optz =~ s/(^|\s)(-*C)(\s|$)/$1$3/){$strt=  127_136  ;$uprb=  127_200  ;} # -C parameter tries Cards 1st thN should reset uprb && indx 2loop Chess aftr
+    if($optz =~ s/(^|\s)(-*k)(\s|$)/$1$3/){$strt=dec('3040');$uprb=dec('3100');  # -k parameter design8z Kana (1st Hiragana then Katakana); did uprb++ 4-k&&-r;
       if($optz=~s/(^|\s)(-*r)(\s|$)/$1$3/){$strt=dec('2E80');}                 } #   specially allow k && r rangez to be combined
-    if($optz =~ s/(^|\s)(-*r)(\s|$)/$1$3/){$strt=dec('2E80');$uprb=dec('2FDF');} # -r parameter design8z Radicals (CJK Supplement && Kangxi)
+    if($optz =~ s/(^|\s)(-*r)(\s|$)/$1$3/){$strt=dec('2E80');$uprb=dec('2FE0');} # -r parameter design8z Radicals (CJK Supplement && Kangxi)
     if($optz =~ s/(^|\s)(\d+)(\s|$)/$1$3/){$uprb=$2;} # allow single digit parameter to specify UPpeRBound && second digit param to design8 STaRT
     if($optz =~ s/(^|\s)(\d+)(\s|$)/$1$3/){$strt=$2;} ($uprb,$strt)=($strt,$uprb) if($strt > $uprb); # keep start && upperbound in increasng order
     $outp .= ' ' x (19*4) if($strt==  32 && $widf); # space align if skipping 1st unprintablez block
     for(my $indx = $strt;$indx < $uprb;$indx++){my $ib6c=b8colr(b64($indx)); # added colrz using a8::b8colr && b8::b64
       $ib6c= " $ib6c" if($indx <   64);         my $hexi=       HEX($indx) ; # pad top-row b64 indicez with a space to the left if they're just one char
-      if($widf){$outp .= "$W:\n" if($indx &&  !($indx % 64) && defined($outp)                );} # hopefully adding defined tst here will stop empty : line
-      else     {$outp .= "$W:\n" if($indx &&  !($indx % 32) && ($indx >   32 || $optz !~ /p/));}
-      unless   ($indx % 8){
+      if  ($indx    <= 9999 || $indx != $strt){ # when starting on super-huge indices, don't need to preface with White colon && NewLine
+        if($indx    < 11_904){
+          if($widf){$outp .= "$W:\n" if($indx &&  !($indx % 64) && defined($outp)                );} # hopefully adding defined tst here will stop empty : line
+          else     {$outp .= "$W:\n" if($indx &&  !($indx % 32) && ($indx >   32 || $optz !~ /p/));}
+        } else     {
+          if($widf){$outp .= "$W:\n" if($indx &&  !($indx % 32)                                  );} # try2 insert newlinez for wide-charz in high loopz too
+          else     {$outp .= "$W:\n" if($indx &&  !($indx % 16)                                  );}}}
+      unless ($indx %     8){
         if   ($indx <=  255){$outp .= sprintf("$W:$G%3d$W:$B%02s$W:%s$W:",$indx,$hexi,$ib6c);}
         elsif($indx <=  999){$outp .= sprintf("$W:$G%3d$B%03s$W:%s$W:"   ,$indx,$hexi,$ib6c);}
         elsif($indx <= 4095){$outp .= sprintf(   "$G%4d$B%03s$W:%s$W:"   ,$indx,$hexi,$ib6c);}
         else                {$outp .= sprintf(   "$G%4d$B%04s%s"         ,$indx,$hexi,$ib6c);}}
       if($tsxf){ # check Terminal Screen or Xterm Flag for which charz print acceptably
-        if     ($indx ==   0 || $indx ==   5 || $indx ==   7 || $indx ==   8 || # maybe simpler to maintain just 7 <= $indx <= 15 (even tho 9 printz blank ok)
-               ($indx >=  10 &&                 $indx <=  15)){ $outp .=  $Y  . b64($indx);} # regular xterm duz!prnt any <32 or 127<$indx<160 (but how2Dtect)
-        elsif  ($indx ==   9 || $indx == 127 || $indx == 132 || $indx == 133 || $indx == 136 || $indx == 141 || $indx == 150 ||
-                $indx == 151 || $indx == 154 || $indx == 156 ){ $outp .= "$o!"            ;} # try2stop erasing && cursor moving characterz
+        if     ($indx >=   0 &&                 $indx <=  31 ){ $outp .=  $K  . b64($indx    );} # used2have many special cases, but now just trying big blox
+        elsif  ($indx == 127                                 ){ $outp .= "$o$bb!$z"           ;} # still with special bang override
+        elsif  ($indx >= 128 &&                 $indx <= 159 ){ $outp .=  $w  . b64($indx-128);}
+        elsif  ($indx >= 888 &&                 $indx <= 889 && $trmp =~ /^[xgs](tm?|80|T)$/){$outp.="$M$bb!$z" ;} # special bang override just 4some TermProgz
+        elsif  ($indx >= 896 &&                 $indx <= 899 && $trmp =~ /^[xgs](tm?|80|T)$/){$outp.="$p$bb!$z" ;} # had2add $bb bkgrnd-blue 2 a8.pm 4this2work
+        elsif (($indx == 907 || $indx == 909 || $indx == 930)&& $trmp =~ /^[xgs](tm?|80|T)$/){$outp.="$R$bb!$z" ;} # wi this my gt,xt,st,sa alIn up2 1024 fIn
+        elsif  ($indx ==12441|| $indx ==12442                                               ){$outp.="$M$bb!$z" ;} # try to put something for missing in -kana
         else   {$outp .= S(substr($cmap{'8bow'},$indx % 8, 1 )) . chr($indx);}}
       else     { # 8trm can directly handle all characterz (Xcept chr(10) x0A \n) because it has no standard Ctrl-code interpret8ion yet
-        if     ($indx ==  10                                 ){ $outp .= "$R!"            ;}
-        else   {$outp .= S(substr($cmap{'8bow'},$indx % 8, 1 )) . chr($indx);}}
-      if      (($indx >=   768 && $indx <   880) ||
-               ($indx >=  1155 && $indx <  1162) ||
-               ($indx >=  1425 && $indx <  1477)){ # also here add more spaces && some newlines for -radicals && -kana to also align
-        $outp .= ' ';}} # try to space out what are presumably something like combin8ion code-points without whole grapheme clusterz
-    $outp .= "$W:";$outp = sS($outp) unless($clrf);
+        if     ($indx !=     10 && $indx <    256){$outp .= S(substr($cmap{'8bow'},$indx % 8, 1 )) . chr($indx);}
+        else   {$outp .= "$R!$z";}} # shud B ckng Xplicitly 4 8trm in $trmp (once it sets it) so thN not trying to go abov 255 wher old .psf (&& .f0nt) stop
+      if       ($indx ==127_151                                                             ){$outp.="$R$bb!$z" ;} # try to keep Cards aligned
+      if       ($indx ==127_167 || $indx ==127_199                                          ){$outp.="$R$bb $z" ;} # try to align end white colons
+      if      (($indx >=    768 && $indx <    880) || $indx == 12_352 ||
+               ($indx >=  1_155 && $indx <  1_162) || $indx == 11_930 ||
+               ($indx >=  1_425 && $indx <  1_477) ||
+               ($indx >= 12_020 && $indx < 12_032) ||
+               ($indx >= 12_246 && $indx < 12_256) ||
+               ($indx >= 12_439 && $indx < 12_443) ||
+               ($indx >=127_136 && $indx <127_200)){ # also here add more spaces && some newlines for -radicals && -kana to also align
+        $outp .= ' ';} # try to space out what are presumably something like combin8ion code-points without whole grapheme clusterz
+      if($indx == 127_199 && $strt == 127_136){$outp.="$W:\n";$uprb= 9_824;$indx= 9_811;$strt= 9_812; # atMpt2autO-jump from end of Cards dn2 Chess: 9812-9824
+        $ib6c  =  b8colr(b64($strt));$hexi= HEX($strt);$outp.= sprintf(   "$G%4d$B%04s%s"         ,$strt,$hexi,$ib6c);}
+    }   $outp .= "$W:";$outp = sS($outp) unless($clrf);
   } say $out8 $outp;close $out8 or die "Can't close duplic8 STDOUT handle: $!";}
 # : 64:40:10:@ABCDEFG: 72:48:18:HIJKLMNO: 80:50:1G:PQRSTUVW: 88:58:1O:XYZ[\]^_: 96:60:1W:`abcdefg:104:68:1e:hijklmno:112:70:1m:pqrstuvw:120:78:1u:xyz{|}~!:
   # !*NOTE*! Windows trEtzASCII26(CtrlZ)asEOF! Ctrl lynz BlO just vim tXtvershere2avoid th@prob
@@ -191,7 +210,7 @@ sub UTF8{my $optz=join(' ',@_);my $strt=0;my $uprb= 256; # 2BNJCDfo:asci utility
 
 =head1 NAME
 
-Octology::U8 - Octology Utiliz8ion and Upd8 functionality
+Octology::U8 - Octology Utiliz8ion, Upd8, and UTF-8 functionality
 
 =head1 VERSION
 

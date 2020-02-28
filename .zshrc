@@ -30,7 +30,7 @@ unsetopt                \
 # auto_pushd            \# setng addz dirz 2 stack wN just normally chngng 2 thM (wich I du not normally lIk or want)
 # ksh_arrays            \# rEmMbr wNwrItng scrptz[or funcz]2include'setopt [localoptions] ksharrays'sO arAzR 0-bAsed(but!glOblBcuzmOst scrptzRstndrdly 1-bAsed)
 # re_____match_____pcre \# mA want2set for Z-SHell scripting RegularExpressions to utilize PerlCompatibility styles && mA insert 'zmodload zsh/(pc)?re(gex)?';
-export vers='0.0';export d8VS='K2HL7MkU';export auth='PipStuart <Pip@CPAN.Org>'; # not Xportng $b sinc cOlIdz wi sort{$a <=> $b} /defhijlnqstuvx/i + AZ 4golf;
+export vers='0.0';export d8VS='K2NL1wax';export auth='PipStuart <Pip@CPAN.Org>'; # not Xportng $b sinc cOlIdz wi sort{$a <=> $b} /defhijlnqstuvx/i + AZ 4golf;
 if     [[       "$SHELL"    == "" ]]; then       export SHELL=`  which zsh`;fi # 8sh should parse this && OverId it    # shud `man zshall` /OSTYP 2lern4BlO
 if     [[       "$HOSTNAME" == "" ]]; then       export HOSTNAME=`hostname`;fi #`hostname`retnz fsckd nwlInz\n4CygWinzRxvt... ||smthng els lame  =(
 if     [[       "$HOST"     == "" ]]; then       export HOST="$HOSTNAME"   ;fi;export VERBOSE='1'; # set flag to print debug && status info from system utilz
@@ -129,6 +129,8 @@ if   [[ "${(L)HOTy}" == *bsd ]]; then alias    ls='gls $LS_OPTIONS'     ;       
 else                                  alias    ls=' ls $LS_OPTIONS'     ; fi # load ls/dir color resources...
 if   [[ -r   "$HOME/.lsrc"   ]]; then  eval $($dircolors -b $HOME/.lsrc);    # orig also ck'd 4 m/^~\/\.(ls|dir)_colors$/i beyond .lsrc but I don't think
 else                                   eval $($dircolors -b            ); fi #   I'll need to further support any of those; just init sysdefaults if!.lsrc
+# K R 0oO Y G C B M W  # a8,c8,f8::pal8 `S` colrz mapd to ANSI SGR wi CSI then 1; then 30+$BlOn;
+# 0 1 0;3 3 2 6 4 5 7  # KRoYG CBMW => 01-32 6457 ;
 # `ls` can h&l all kIndz of globz >than `dircolors` mkz but! [chrz]||dbl*, .lsrc can!hv[-_?], && Uz ~/.lrc && `lrc` 2help sync nw .XtNz with `dircolors -p`;
 # nOt:ther hv been afew problMz wi thEse l8r apNded dFinitNz clobrng earlier .XtN defz sO I've mAde nOticd 1z mor specific but mAB should just Only prEpNd all?
          LS_COLORS="$LS_COLORS*-ignore=01;31:*-conf=01;33:*-magic=01;31:*-release=01;36:*-xsessions=01;35:*-=00;31:*_COLORS=01;33:*_vimrc=00;33:";
@@ -174,7 +176,7 @@ else                                   eval $($dircolors -b            ); fi #  
          LS_COLORS="$LS_COLORS*COPYING=01;33:*-LGPL=00;33:*NEWS=00;37:*TODO=00;37:*changelog=01;36:";                             #~/dvl/c8/trm8/roxterm/
          LS_COLORS="$LS_COLORS*README=01;37:";                                                                                    #/etc/(rc*|sysctl).d|terminfo
          LS_COLORS="$LS_COLORS*-order=01;35:";                                                                                    #/etc/resolvconf
-         LS_COLORS="$LS_COLORS*ssh_config=01;33:*sshd_config=00;33:*sa_key=01;36:*_import_id=01;35:";                             #/etc/ssh
+         LS_COLORS="$LS_COLORS*ssh_config=01;33:*sshd_config=00;33:*sa_key=01;36:*_import_id=01;35:*baloofilerc=01;31:";          #/etc/ssh && ~/.config KDEf5
          LS_COLORS="$LS_COLORS*-paths=01;33:";                                                                                    #/etc/system-image
          LS_COLORS="$LS_COLORS*-server=01;36:";                                                                                   #/etc/ufw/applications.d
          LS_COLORS="$LS_COLORS*-upgrades=01;35:";                                                                                 #/etc/update-manager
@@ -204,19 +206,42 @@ else                                   eval $($dircolors -b            ); fi #  
          LS_COLORS="*makefile=01;35:*installhtml=01;35:*Artistic=01;37:*Changes=00;33:*Copying=01;37:$LS_COLORS"; #`lsd8`duz gout #~/.inst/perl-5.8.8
 #xport   LS_COLORS="abi-3.*-generic=01;31:config-3.*-generic=00;33:initrd.img-3.*-generic=01;33:System.map-3.*-generic=01;32:vmlinuz-3.*-generic=01;36:$LS_COLORS"; # /boot spec from both endz is unparsable && just front end duz!wrk; ECKL6HM1:below the Linux kernel version numbers as p@rnzR ROYG CBMP newest to oldest;
 #        LS_COLORS="*-3.16.0-29-generic=01;31:*-3.16.0-28-generic=00;33:*-3.16.0-25-generic=01;33:*-3.13.0-39-generic=01;32:$LS_COLORS";  # /boot altern8 versN
-#        LS_COLORS="*-3.11.0-19-generic=01;36:*-3.8.0-33-generic=01;34:*-3.5.0-36-generic=01;35:*-3.2.0-35-generic=00;35:$LS_COLORS";     #   && oldrfrom ChunW # F1ELGnuL:ROYG CBMP => 1;3[1o32 645p] thEse lInz should evN2LE get gNR8d from `ls /boot`; I98M89I9:rEsortd2XplicitNtrEzB4quStnz sinc wrkin lsd8 but!nrml `ls`;
+#        LS_COLORS="*-3.11.0-19-generic=01;36:*-3.8.0-33-generic=01;34:*-3.5.0-36-generic=01;35:*-3.2.0-35-generic=00;35:$LS_COLORS";     #   && oldrfrom ChunW
+# F1ELGnuL:RoYG CBMp => 1;3[1o32 645p] thEse lInz should evN2LE get gNR8d from `ls /boot`; I98M89I9:rEsortd2XplicitNtrEzB4quStnz sinc wrkin lsd8 but!nrml `ls`;
          LS_COLORS="$LS_COLORS*.3.=0;34:*.33.=0;30:*.66.=0;34;40:*.0.=0;30:*.O.=0;33;43:*.=00;34:*.96.=0;34;42:"; # 3nd0tn6Xtraz  # gN96z # .?upd8?
          LS_COLORS="$LS_COLORS*.G.=0;44:*.GG.=0;34:*.G9.=0;30;40:*.9.=0;34:*...=0;30;44:*..=0;30:*.9G.=0;32;44:"; # endotnGXtraz  # gN9Gz # .?bbkbkk prv? +nw g
          LS_COLORS="$LS_COLORS*.png.=0;35;45:*.Hrc.=0;30:*.ls.=0;34;44:*.log.=0;32:*.kdb.=0;30;40:*.txt.=0;36:";  # somemAnXtraz  # gNrl  # .?mkbgkc prvz m b k
          LS_COLORS="$LS_COLORS*.g.=0;35:*.gg.=0;30:*.g6.=0;34;44:*.6.=0;32:*.H.=0;30;40:*.8.=0;36:*.prv8.=0;34:"; # moremAnXtraz  # gNg8z # .?mkbgkc prvz +nw b
          LS_COLORS="$LS_COLORS*-interface-security=01;31:*-shim-state=01;36:*.?.=0;36:*.??.=0;34:*.???.=0;30:*.????.=0;32:";      # /run  # .?. cbkg prvz
 export   LS_COLORS="$LS_COLORS*.serverauth.???=00;32:*.serverauth.????=00;31:*.serverauth.?????=00;35:*.goutputstream-??????=00;31:"; #*.gout*-? duz!wrk4 `ls`;
-export GREP_COLORS="mt=01;34"; bindkey -v; #`bindkey -e`setzEmacs-stylCmdLynEdtng; -v hazBn betRsofR4mE,butdu!4getEmaxAtaxBax; #rEmMbr"^foo^bar"subst prEv cmd;
+#xport GREP_COLORS="mt=01;34"; bindkey -v; #`bindkey -e`setzEmacs-stylCmdLynEdtng; -v hazBn betRsofR4mE,butdu!4getEmaxAtaxBax; #rEmMbr"^foo^bar"subst prEv cmd;
+export GREP_COLORS="ms=01;04;94:mc=01;02;33:sl=:cx=:fn=01;03;95:ln=01;92:bn=00;33:se=01;96";bindkey -v; #RoYG CBMp=>1o32 645p;RGY BMC;`gis -Hnb`shOFlNmLNumBytN
 alias  grp='  grep --color=auto'; # want grep --color=auto all za tym2(&&mayB`dircolrz ~/.gprc`?)&&2hv -nubTHZ?fulnSwi:Hedrfylnmz,lyNumZeroUnixTabalyndBytofstz
 alias fgrep='fgrep --color=auto'; #   ...also fgrep ndz auto2,wud B cool 2 mk perl grep from grepp&&sarep 2 auto colr multiple m@chz difrNtly;
 alias egrep='egrep --color=auto'; #   ...also egrep  # UbuTip:"Edit the command line with cut and paste: ctrl-k for cut, and ctrl-y for paste." prolyOnly4Emacs
 alias  gpnt=' grp  -nubTH';alias gpnz='gpnt -Z';alias gca='grep --color=auto'; # nd2tst4nmspc cOlIdz of`gpn?`&&stuD`(perl|xargs) -0`,`(sort|grep) -z`;
 # from`man grep`:".*Uzd wiCmdz lyk:`find -print0`,`perl -0`,`sort -z`,&&`xargs -0` 2procRbitrarEfylnamz,EvNthoz contNngNwLnz(azNulTrmN8dCstylStrzNstdOvNwLn).";
+#      GREP_COLORS="ms=01;31:mc=01;31:sl=:cx=:fn=35:ln=32:bn=32:se=36" wi booleans rv && ne omitted (false). Supported capabilities are as follows:
+# sl=      SGR  substring for whole selected lines (i.e., matching lines when the -v command-line option is omitted,or non-matching lines whN -v is specified).
+#   If however boolean rv && -v optn R both specified,it applies2 context matching lines instead. The default is empty (i.e., terminal's default color pair).
+# cx=      SGR  substring  for whole context lines (i.e., non-matching lines when the -v command-line option is omitted,or matching lines whN -v is specified).
+#   If however boolean rv && -v optn R both specified,applIz2selected non-matching lines instead. The default is empty (i.e., terminal's default color pair).
+# rv       Boolean that reverses (swaps) meaning of sl= and cx= when -v optn specified. Default is false (i.e., capability  is   omitted).
+# mt=01;31 SGR substring for matching non-empty text in any matching line (i.e., a selected line when the -v command-line option is omitted, or a context line
+#   when -v is specified). Setting this is equivalent to setting both ms= and mc= at once to same value. Dflt bold Red text F4grnd over current line bkgrnd.
+# ms=01;31 SGR substring for matching non-empty text in a selected line. (This is only used when the -v command-line option is   omitted.) The effect of the
+#   sl=  (or  cx= if rv) capability remains active when this kicks in.  The default is a bold red text foreground over the current line background.
+# mc=01;31 SGR substring for matching non-empty text in a context  line. (This is only used when the -v command-line option is specified.) The effect of the
+#   cx=  (or  sl= if rv) capability remains active when this kicks in.The default is a bold red text foreground over the current line       background.
+# fn=35    SGR substring for file names   prefixing any content line. The default is a magenta  text foreground over the terminal's default background.
+# ln=32    SGR substring for line numbers prefixing any content line. The default is a green    text foreground over the terminal's default background.
+# bn=32    SGR substring for byte offsets prefixing any content line. The default is a green    text foreground over the terminal's default background.
+# se=36    SGR substring for sepR8ors that are inserted between selected line fields (:), between context line fields, (-), and between groups of adjacent
+#   lines when nonzero context is specified (--).   The  default  is  a  cyan  text  foreground  over  the  terminal's  default background.
+# ne       Boolean  value  that  prevents  clearing  to the end of line using Erase in Line (EL) to Right (\33[K) each time a colorized item ends. This is
+#   needed on terminals on which EL is not supported.  It is otherwise useful on terminals for  which  the  back_color_erase (bce) boolean terminfo capability
+#   does not apply, when the chosen highlight colors do not affect the background, or when EL is too slow or causes too much flicker. The default is false
+#   (i.e., the capability is omitted). nOt:bool capabilities have no "=..." part. They are omitted (false) by default && become true when specified;
 if     [   -z  "${debian_chroot:-}" ] && [ -r /etc/debian_chroot ]; then   # set variable IdNtifyng the chroot U wrk in (Used in prmpt bElO)
   debian_chroot=$(cat                         /etc/debian_chroot) ;   fi
 alias xprt='export';
@@ -339,12 +364,20 @@ alias ac='apt-cache';alias acs='ac  search';alias agr='ag remove';alias agrm='ag
 alias ai='apt                      install';alias au='apt update';alias  auu='au;apt upgrade';alias acsp=' ac showpkg';alias agri='ag reinstall'; # shOpkgDtlz
 alias apts='apt search';alias asrch='apts';alias aar='apt autoremove'; # alreD /usr/bin/as GNU ASsembler,shud rEd wut Ls apt(itude)? do betr than ag 2add here
 alias ali=' apt list             --installed';alias dli='dpkg -l'; # super basic commandz to use Apt or Dpkg(-query)? to List Installed packagez on Ubuntu or
-alias alim="aptitude search      '~i!~M' "; # should just List packagez which were Installed Manually (not just as DpNdNCz); /var/lib/apt/extended_states too?
+alias alim="aptitude search      '~i!~M' ";alias agiy='agi -y'; # shud just List pkgz wich were Instld Manually (!as DpNdNCz); /var/lib/apt/extended_states 2?
 alias calg="(zc \$(ls -tr /var/log/apt/history.log*.gz);cat /var/log/apt/history.log) 2>/dev/null|eg '^(Start-Date:|Commandline:)'|gv aptdaemon|
              eg -B1 '^Commandline:'";alias amsm='apt-mark showmanual';alias almi='apt list --manual-installed'; # CatAptLogz in2Grepz shOz instl d8z reversed;
-alias dgsc="dpkg -l|g ^ii|sed 's_  _\t_g'|cut -f 2 > ~/.tmp/InstalledPkgz-\`d8\`.ls";alias agip='agi -y $(< ~/.tmp/InstalledPkgz-*.ls)'; # mIt nEdSKpd bkslsh;
+alias dgsc="dpkg -l|g ^ii|sed 's_  _\t_g'|cut -f 2 > ~/.tmp/InstalledPkgz-\`d8\`.ls";alias agip='agiy $(< ~/.tmp/InstalledPkgz-*.ls)'; # mIt nEd SKpd bkslsh?;
 # HTTPS://AskUbuntu.Com/questions/17823/how-to-list-all-installed-packages forum thread has 23 extensive answers with varying ways to go about logging instlz;
-alias emrg='     echo "emrg justAbrvz: emerge Try em 4shrtDfltOptz"; emerge';alias em='   emu   '; # fav emrg dfaltz:--colmz -va --kp-go -Du (+-N 4sys|wrld)
+alias gse='gsettings';alias gsg='gse get';alias gsls='gse list-schemas    ';alias gslk='gse list-keys    ';alias gslrs='gse list-relocatable-schemas   ';
+alias gseh='gse help';alias gss='gse set';alias gslr='gse list-recursively';alias gslc='gse list-children';alias gsr='  gse reset';alias gsR='gse range';
+alias gsm=' gse monitor                 ';alias gsw=' gse writable        ';alias gsd=' gse describe     ';alias gsrr=' gse reset-recursively          ';
+alias gsgL='                gsg  com.canonical.Unity.Launcher  favorites  '; # from HTTPS://Help.Ubuntu.Com/community/UnityLaunchersAndDesktopFiles outputs on:
+# K2LLCLau: ['unity://running-apps', 'application://org.gnome.Terminal.desktop', 'application://sakura.desktop', 'application://brave-browser.desktop',
+#   'application://firefox.desktop', 'application://krita.desktop', 'application://gimp.desktop', 'application://inkscape.desktop',
+#   'application://fontforge.desktop', 'application://audacity.desktop', 'application://update-manager.desktop', 'application://ccsm.desktop',
+#            'unity://expo-icon', 'unity://devices', 'application://org.gnome.Nautilus.desktop']; # where .desktop files could be in (/usr|~/.local)/share/ap*;
+alias emrg='     echo "emrg justAbrvz: emerge Try em 4shrtDfltOptz"; emerge';alias em='emu'; # fav emrg dfaltz:    --colmz -va --kp-go -Du (+-N 4sys|wrld)
 alias emcol='emerge --columns -v';alias eM='em     -v' # --columns vert-alinz pkg-name,vers,use-flagz       (-v == --verbose      )
 alias emrga='    emcol  -a';alias emrge='   emrga  -e' # --ask                                              (-e == --emptytree    ) (eg,wrld4UsrModeLnux)
 alias emrgk='emrga  --keep-going';alias eN='em     -N' # --ask --keep-going was my preferred emrg dflt optz (-i == --info         )
@@ -373,7 +406,7 @@ alias vimuse='vim /usr/portage/profiles/use.desc /etc/make.conf /usr/portage/pro
 alias vimUz=' vimuse                                                                                 /etc/portage/package.*mask /etc/portage/color.map';
 #lias scp='noglob scp'; # still want to glob locally so just intentionally escape remote globs wi \* etc; #Rot13perLyn:`vim $fyl`Vg?
 alias              ..='cd ..                 ';alias cdup='..';alias cd..='..                      ';
-alias             ...='cd ../..                              ';alias cd...='...                    ';
+alias             ...='cd ../..                              ';alias cd...='...                    '; # mItBAbl2Uz -c wi && aftr sz zsh 2run rmSS as sngl cmd?;
 alias            ....='cd ../../..                           ';alias cd....='....                  '; # 4 `sz` BlO fIl is Only rEmovd aftr `x` logz mE out thO;
 alias           .....='cd ../../../..                        ';alias cd.....='.....                '; # so ReMove.SudoSuccessful fIl aftr most callz2 sudo BlO;
 alias          ......='cd ../../../../..                     ';alias cd......='......              '; # aftr tryng2cmpIl new ~/dvl/m8/sudo tryng this now nstd:
@@ -387,8 +420,8 @@ alias   .............='cd ../../../../../../../../../../../..';alias cd.........
 alias      mk='   make';alias mki='mk install';alias mi='mkin';alias smi='sudo make install;rmSS';alias smki='smi';alias mkin='mki';alias mkj4='mk -j4 ';
 alias   sz='sudo -E zsh;rmSS ';alias SS='sudo shutdown -h now';alias SSR='sudo shutdown -r now;rmSS';alias SN='SSR'; # EmergNC !Sudo Shutdown or Reboot *now*!
 alias      pu='  pushd';alias  ua='un    ';alias SH='shutdown -h';alias SR='   shutdown -r ;rmSS'; # thEz aliaszR4aftr`sz`whNIcan w8 1minute4shutdn||rEboot;
-alias      po='   popd';alias una='un -a '; # just add a couple basic abbreV8ions for sys-info which call un() which is defined below goo() && abov src() 4now;
-alias      pe='   perl -MOctology::a8 -pe'; # setup Perl Eval filter easy to give a 's///' after
+alias      po='   popd';alias una='un -a ';alias sus='sudo -E -s zsh'; # -c "rm $HOME/.sudo_as_admin_successful"'; # abrEV8nz 4 sys-info which call un();
+alias      pe='   perl -MOctology::a8 -pe'; # setup Perl Eval filter easy to give a 's///' after;  # sudo abov cannot run both -Intractiv && -Shell optz;
 alias      pa='   perl -MOctology::a8  -e'; # setup Perl eval        with Attribute Auto-export globals of A8
 alias     pla='   pa  '; # pb is already taken by pingb
 alias     plb='   perl -MOctology::b8  -e'; # setup PerL eval        with Base-transl8   export globals of B8
@@ -405,33 +438,34 @@ alias    drkh='   pa  "print drkh(@ARGV)"'; # HEX to RgbL with 8th intensities  
 #lias    prmz='   plb "      prmz(@ARGV)"';
 #lias    sumz='   plb "      sumz(@ARGV)"'; # printing these was just yielding an extra 1 at each end, after they printed output themselves instead of returnd
 alias      dv='   dirs -v';
-alias    dirz='   dirs -p|perl -pe "\$_ = \$. - 1 . q. . . \$_"'; # sho lynz
+alias    dirp='   dirs -p|perl -pe "\$_ = \$. - 1 . q. . . \$_"'; # sho lynz
 alias     d2u='   dm2u   ';
 alias     u2d='   dm2u  d';
 alias     del='     rm';
 alias    copy='     cp';
 alias    move='     mv';
-alias  attrib='   echo "Try chmod instead! ;) "'; # just print advice for this, since calling semantics are so different
+alias  attrib='     en "Forget MicroSoft-DOS. Please use \`man chmod\` instead! ;) "'; # just print advice for this, since calling semantics are so different
 #lias    mutt='   mutt; ~/lib/Octology/f8/pal8/TIGSfAVS.pal8'; # mutt clears pal8 colors so at least restore favor8s afterward
 # Many of these Octology aliases should become special V8 via c8 coloriz8ion command wrappers or otherwise enhanced (&& simplified?) && unified funcs or cmdz:
-alias       0='echo 0 '; #       : # figure out good aliases for remaining numbers
-alias       1=' mpg321'; # m 321 :                audio-player
-alias       2=' mpg123'; # m 123 :                audio-player
-#lias       3='   g3  '; #  g3   :         gst123 audio-player wrapped with Expect manipul8ion layer (J29:3 now a 3rd sepR8 varE8ion off g3 2get abitrickier);
-alias    HacU='g3 ~/muz/U2b/nxt/Hac* -k 3420'; # Universe awesome end-part to --SkIP to (57 mins == `q 57x60` seconds;
-alias       4='en   4 '; #       :
-alias       5='ec   5 '; #       :
-alias       6='en   6 '; #       :
-alias       7='ec   7 '; #       :
-alias       9='en   9 '; #       :
-alias       A='   a   ';
-alias       a='   asci'; #  a    :           asci
-alias    asci='   UTF8'; #       :                (renamed in U8 && bin)
-alias    utf8='   UTF8';
-alias      u8='   utf8';
-alias      bk='   bak '; # bk    :            bak            (orig Pip:Utl file backup command)  # for wc BlO,suport`dd --help`like printf style size formats
-            b() { bk   $@; }     # unalias   b && redefining as simple function wrapper resolves         param alias expansion problem (but still will glob)
-#lias       b='   bk  '; #  b    :             bk
+alias       0=' ogg123'; # o 123 : zer0 lIke lc o audio-player # maybe l8r try to figure out better aliases 4 numbers here since they could be good shortcutz;
+alias       1=' mpg321'; # m 321 :                audio-player # simple && light-w8 command-line MP3 player based on mad decoding library (drop-in 4: mpg123);
+alias       2=' mpg123'; # m 123 :                audio-player which plays audio MPEG 1.0/2.0/2.5 streams (layrz 1, 2, && 3),was non-free unlike abov`mpg321`;
+#lias       3='   g3  '; #  g3   :         gst123 audio-player wrapped with Expect manipul8ion layer (J29:3 now 3rd sepR8 varE8ion off g3 2get abit trickier);
+alias    HacU='g3 ~/muz/U2b/chl/Hack*Univ* -k 3420'; # Fil_Far's HackerCodingMusic Universe awesome end-part to -k --sKip to (57 minutes == `q 57x60`seconds);
+alias       4='   x4t '; #  4    : xfce4-terminal xf4tm terminal emul8or where `x4t` is defined more elabor8ly to start with my preferred defaults elsewhere;
+alias       5='perl   '; #  5    :          perl  (5.28.1 l8st perl5 in /usr/bin/ on Pip's $HOST Oni as of`d8 K2MLAUGH`=>"Sat Feb 22 10:30:16:17 -0600 2020")
+alias       6='perl6  '; #  6    :          perl6 (which presumably should be renamed at some near future point to: "raku" for disambigU8ion && clarific8ion)
+alias       7='    7z '; #  7    :              7z 7-Zip - file-archiver with high compression r8io format that implements LZMA algorithm && handlz many 4m@z
+#lias       8='  viii '; #  8    : lc RomanNm viii vim alias (defined elsewhere in this file) which might eventually branch off into Octology editor varE8ion
+alias       9='  c99  '; #  9    :            c99 (ANSI [1999] C compiler,where status of fE8urz in GCC described@: HTTP://GCC.GNU.Org/gcc-9/c99status.html )
+alias    a='asciiview '; #  a    :           asciiview (An Ascii-Art imAge/Anim8ion browser depends on `aview --help` 4list of options thN filename.p[ngbp]m)
+alias    A='asci      '; #  A    :           asci (Another AliAs2Auto-Aligned Ascii And Accentu8d ApprAisAl of Artistic Attributes of AvAilAble Acters[chAr])
+alias    asci='   ASCI'; #       :                (default call U8.pm UTF8 to print just most of the first 256 characters, or take other params as UTF8 can)
+alias    ASCI='   utf8'; #       :           UTF8 (default already 256 internally wi no $1) # BlO setup function to default $1 end indX 4 how many UTF8 chars
+         utf8() { if [[ $# -gt 0 ]]; then UTF8 $@; else UTF8 4096; fi; } # hopefully GnomTerm, XTerm, STTerm, && Sakura can each stay mostly aligned up2 4096
+alias      u8='   utf8'; #       :                (renamed asci to UTF8 in U8.pm && ~/bin/, then made utf8 here a function 2take parameters or default hIghr)
+alias      bk='   b   '; #  bk   :            b   (originally Pip::Utl file BAcKup command) # this str8forwardly crE8z a .bak/ subdir&&copiez d8d fIlez in2it
+            b() { bak   $@; }    # unalias    b   (redefining as simple function wrapper resolves parameter alias expansion problem [but still will glob ok])
 alias       B='   b   ';
 alias     cls='clear  '; #  cls  :          clear (like DOS command for CLearScreen)  # -x below tries to preserve scrollback && just blank $TERM in newlinez
 alias       C='cls -x '; #  C    :B4 clear was wc (Count charz,words,&&lines&&eventually bits,bytes,[KMGTPEZY]i?bits|Bytes,code points,paragraphs,subs,etc.)
@@ -447,13 +481,22 @@ alias       F='   f   ';
 alias       f='   find'; #  f    :           find            (with combined interface to loc8?)
 alias       g='   grp '; #  g    :          sarep|(e|f)?grep (sed|awk too?)
 alias      gi='   g -i'; #                              grep -i to      Ignore_case
-alias      gv='   g -v'; #                              grep -v to                     inVert_match_results
-alias     giv='  gi -v'; #                              grep    to both Ignore_case && inVert_match_results
-alias     gis='  gi -s'; #                              grep -s to both Ignore_case && --no-messages suppress messages like glob * getting directories
-alias     gvs='  gv -s'; #                              grep -s to both                inVert_match_results && --no-messages  # gs already taken by GhostScript
+alias      gv='   g -v'; #                              grep -v to                     inVert_match_results (gs is already GhostScript so not aliased to g -s)
+alias      gS='   g -s'; #                              grep -s to SupreSS warningS
+alias      gH='   g -H'; #                              grep -H to sHow Header_file_name
+alias      gT='   g -T'; #                              grep -T to make sure -n liNeNumber && -b Byteoffset && matchingtextline start on initial-Tab stopz2alIn
+alias      gn='   g -n'; #                              grep -n to show liNe_Number
+alias      gb='   g -b'; #                              grep -b to show Byte_offset && also want -u to Use-Unix-byte-offsets for MS-DOS or MS-Windows OpSystMz
+alias     gbu=' gb  -u';
+alias     giv=' gi  -v'; #                              grep    to both Ignore_case && inVert_match_results
+alias     gis=' gi  -s'; #                              grep -s to both Ignore_case && --no-messages suppress messages like glob * getting directories
+alias     gvs=' gv  -s'; #                              grep -s to both                inVert_match_results && --no-messages  # gs already taken by GhostScript
 alias    givs=' giv -s'; #                              grep -s to      Ignore_case && inVert_match_results && --no-messages  #   which is proly like evince
-alias    gadd='  gi "^ *[a-z8]*8[a-z8]* *[:#].* add.*8" ~/dox/2du/8.utf'; # early varE8ion which didn't require pound after colon,like Blow expecting both l8r
-alias    gad8='  gi "^ *[a-z8]*8[a-z8]* *:.*#.* add.*8" ~/dox/2du/8.utf'; # utility alias to grep 8.txt for all comments describing potential words to add l8r
+alias     gvH='  gv -H'; #                              grep -H permut8ionz... but all these should probably be re-grouped tightly near `ls` permut8ionz above
+alias     gHs='  gH -s';alias    givH=' giv -H';alias    gvsH=' gvs -H';
+alias     gsH='  gH -s';alias    gisH=' gis -H';alias   givsH='givs -H';
+alias    gadd='  gi "^ *[a-z8]*8[a-z8]* *[:#].* add.*8" ~/dox/2du/8.utf'; # early varE8ion which didn't require pound after colon,like BlOw expecting both l8r
+alias    gad8='  gi "^ *[a-z8]*8[a-z8]* *:.*#.* add.*8" ~/dox/2du/8.utf'; # utility alias to grep 8.utf for all comments describing potential words to add l8r
 alias     gad='  gad8 '; # while the above 2 originally differed into more restricted result count, material text has been upd8d such that they match on I98
 alias      eg='  egrep'; # eg    :                 e    grep
 alias      zg='  zgrep'; # zg    :                     zgrep (like zcat for *.gz)      # below heX aliasing must get decimal input piped thru, can't du pRam
@@ -490,7 +533,7 @@ alias     mnt='  mount'; #  mnt  :          mount
 alias    umnt=' umount'; # umnt  :         umount
 alias scu='sudo chown $USER:$USER *;rmSS'; #cho all unhidden filz && dirz in current directory to the normal user from any required super-user permissions
 alias     cho=' chown '; #  cho  :          chown
-alias     chg=' chgrp '; #  chg  :          chgrp
+alias     chg=' chgrp '; #  chg  :          chgrp (a little confusing that I've aliased grp='grep --color=auto' so it could mean grep or group depending)
 alias     chm=' chmod '; #  chm  :          chmod
 alias     chr=' chroot'; #  chr  :          chroot
 alias     chs=' chsh  '; #  chs  :          chsh  (follow with -s SHELL to autom8, or get interactive prompting without)
@@ -539,7 +582,6 @@ alias    calQ='     q '; # now q is just replacing old calQ
 #lias       q='  cl   '; #     q was symlinkB4g8 - simple command-line calculator in Octology::b8 with BigFloat (orig:'perl -e "print eval join q( ),@ARGV"')
 alias      cl='  cln  ';
 alias     cln='  calQ ';
-alias       R='  r    ';
 alias       V='vim.tiny';
 alias    viii='vim    '; #  viii : v8 v 8     vim (lowercased Roman Numerals for 8 for my vim-style editor command name)
 #lias      v8='viii   '; #  v8  changing to Xport $Hv8f B4 calling vim on it, so that it can also be used by U8:upd8
@@ -623,11 +665,14 @@ alias   srchl=' source-highlight -f esc --style-file=~/.shl.style'; # hopefully 
 alias    shlp=' srchl -s perl -i';alias shlc=' srchl -s conf   -i'; # assume source code is Perl or Conf && expect next param 2B Input source-code filename
 alias     shl=' s               '; # above srchl changes from default HTML output format to ANSI escape codes && set component field color style
 #lias       s=' shlp'; # assume Perl since an upd8 to source-highlight seems to no longer auto-detect when input files are such code
-s(){  ifil="$1";synl='perl';if [[ "$#" -gt 1 && "$2" != "" ]]; then synl="$1";ifil="$2"; elif [[ "$#" -lt 1 ]]; then ifil="$HOME/bin/8ct";
+s(){  ifil="$1";synl='';if [[ "$#" -gt 1 && "$2" != "" && -e "$2" ]]; then synl="$1";ifil="$2" ; elif [[ "$#" -lt 1 ]]; then ifil="$HOME/bin/8ct";
   elif   [[ -e "$1" ]]; then # BlO 2 stRt adng elif tStz 4 XtNsion nAmz (mAB wi $(E) something too?) 4 autOpik lang; srchl --lang-list|g $XtNs;
-    if   [[ ${(L)1} =~ .sh$ ]]; then synl='bash'; elif [[ ${(L)1} =~ .html$ ]]; then synl='htm'; elif [[ ${(L)1} =~ .cfg$ ]]; then synl='conf';
-    elif [[ ${(L)1} =~ .py$ ]]; then synl='py'  ; elif [[ ${(L)1} =~  .xml$ ]]; then synl='xml'; elif [[ ${(L)1} =~ .cnf$ ]]; then synl='conf';
-    fi;    ec " source-highlight -f esc --style-file=~/.shl.style -s $synl -i $ifil;"; fi; srchl -s $synl -i $ifil; } # multi -i B4othr pRamls?
+    if   [[ ${(L)1} =~ \.sh$ ]]; then synl='bash'; elif [[ ${(L)1} =~ \.html$ ]]; then synl='htm'; elif [[ ${(L)1} =~ \.cfg$ ]]; then synl='conf';
+    elif [[ ${(L)1} =~ \.py$ ]]; then synl='py'  ; elif [[ ${(L)1} =~  \.xml$ ]]; then synl='xml'; elif [[ ${(L)1} =~ \.cnf$ ]]; then synl='conf';
+    elif [[ `cat "$1"|head -n 1|grep -l '^#!.*zsh' ` != "" ]]; then synl='bash'; # tryd2Dtect Zsh script #! line to set syntax language,but zsh.lang hangz
+    elif [[ `cat "$1"|head -n 1|grep -l '^#!.*perl'` != "" ]]; then synl='perl'; fi; fi;  # multi -i B4 othr pRam ls? used2question that at very end;
+  if     [[ "$synl" !=    "" ]]; then ec " source-highlight -f esc --style-file=~/.shl.style -s $synl -i $ifil;"; srchl -s $synl -i $ifil;
+  else                                ec " source-highlight -f esc --style-file=~/.shl.style          -i $ifil;"; srchl          -i $ifil; fi; }
 alias      S8='   shl8'; # my primitive c8:SourceHighLight8 Utl to hopefully eventually approach functional parity with source-highlight before surpassing it
 alias     sho='cd ~/gfx/sho;shot -u'; # change to typical local Octology screenshot directory && take a shot of the focUsed window (no border) in 3 seconds
 alias    resp='   reso spec'; # joining like =~ /^respect/ shortcut to list resolution specific8ionz  # abovUsed2B S=shl,s=shl8 but S repurposed in a8 4 SKpz
@@ -656,7 +701,8 @@ alias     lvH='lvp -D 1280x800 ';alias lV="lvH $lVSx"; # upper-H 4 old HD720P, l
 alias     lvh='lvp -D 1920x1080';alias lv="lvh $lVSx"; # oinksie... lv-tool: malloc.c:4023 coredumpd mAB bAsd on pRam ordr? #; # proly not inflwrgltestjess! ;
 alias     p47='parsec47';alias a7='a7xpg'; # some of my favorite Kenta Cho Shmups ("Bullet-Hell") in /usr/games;  ## munmap_chunk(): invalid ptrstilcordumpdx;
 alias      rr='rrootage';alias tt='torus-trooper';alias tf='tumiki-fighters'; # would be gr8 to study BulletML && explor own similRly themed varE8ions someday
-alias      xb='xboard';alias xbsf='xb -fcp stockfish -fUCI'; # gr8 Chess program with shortcut to top StockFish engine as FirstChessPlayer
+alias      xb='xboard';alias xbsf='xb -fcp stockfish -fUCI'; # gr8 Chess program wi shortcut to top StockFish engine as FirstChessProgram (&& -scp 2ndChesProg)
+alias    rune='mv ~/gmz/Rune/Jagex ~;S Kb;cat ~/gmz/Rune/RS.pw;ee "$z";runescape-launcher;mv ~/Jagex ~/gmz/Rune/';alias RS='rune'; # K2HLIMMO:signedup4frEacct;
 alias    kpcl=' kpcli      --kdb=~/.kp/pswd.kdb --histfile=/dev/null --no-recycle'; # 2!stor any hist or entry changes in /Backup or "/Recycle Bin" old dfalts
 alias    kp='  pu  ~/.kp;    kpc --kdb=pswd.kdb --histfile=/dev/null --no-recycle;chm 600 pswd.kdb;b pswd.kdb;po';  # alias2 kpcli-3.0 modwimor aliasz&&alInmNt
 k8(){        KDBF='pswd';if [[ "$#" -gt 0 && "$1" != "" ]]; then KDBF=".$1"; fi; # if [[ $B64N =~ ^([a-zA-Z]w) ]]; then BNWH=${BNWH:s/  e    / e }; fi; # Xmpl
@@ -671,7 +717,7 @@ k8(){        KDBF='pswd';if [[ "$#" -gt 0 && "$1" != "" ]]; then KDBF=".$1"; fi;
 alias    Upd8='sudo curl -L https://yt-dl.org/downloads/latest/youtube-dl -o /usr/local/bin/youtube-dl;sudo chmod a+rx /usr/local/bin/youtube-dl;rmSS';
 alias    Upw8='sudo wget    https://yt-dl.org/downloads/latest/youtube-dl -O /usr/local/bin/youtube-dl;sudo chmod a+rx /usr/local/bin/youtube-dl;rmSS';
 alias    Upi8='sudo      -H  pip install      --upgrade        youtube-dl;rmSS'; # see pypi docUmNt8ion4more in4m8ion about popular Python `pip` package-tool
-alias    U='   U2b8';alias U2bk='Uk';alias u2bk='uk'; # shud l8r add 1-colm <98wId mOd&&some a8 autOcolrz 2furthr hIlIt mapngz
+alias    U8='  U2b8';alias U2bk='Uk';alias u2bk='uk'; # shud l8r add 1-colm <98wId mOd&&some a8 autOcolrz 2furthr hIlIt mapngz
 alias    Ukey='en  "m c b : togl volMute Caption Bakgr colr [ U2b-hotKey ];  Dn Up : lowr 5%vol (arowkyz) rais 5%vol;
 p f n : Prevplayls toglFulsc Nextplayls (Escap=2exitf);  Lt Rt : bkwd 5secs (arowkyz) 4wrd 5secs;
 j k l : bkwd10secs toglpause 4wrd10secs (Space=2pause);   , .  : bkwd 1fram (ifpausd) 4wrd 1fram;
@@ -750,7 +796,7 @@ alias sbrc='ct "barc"   ;scrn -S brc -t brc barrierc    ;  ';alias ssig='pu;scrn
 alias s28u='pu ~/dox/2du;scrn -S 8uf -t 8uf e     8     ;po';alias s28='s28u'; # leave legacy .txt below, from before proper switch to .utf since it holds afew
 alias s28x='pu ~/dox/2du;scrn -S 8xt -t 8xt e     8     ;po';alias s2x='s28x'; # s8 is already aliased to sort; weird that e 8 didn't have e 2 problM
 alias s8lc='pu ~/dox/2du;scrn -S 8lc -t 8lc e     8plc  ;po';alias s8l='s8lc'; # elabor8ing out2 tRget all sepR8 doQmNtz stil mAntAnd as 2du EvN2ally
-alias satl='pu ~/dox/2du;scrn -S atl -t atl e     at.ls ;po';alias sa='satl';alias soa='pu ~/dvl/a8;scrn -S oa8 -t oa8 e a8.pm;po'; # OpenOctology *8.PlModulez
+alias satl='pu ~/dox/2du;scrn -S atl -t atl e     at.ls ;po';alias SA='satl';alias soa='pu ~/dvl/a8;scrn -S oa8 -t oa8 e a8.pm;po'; # OpenOctology *8.PlModulez
 alias sb8a='pu ~/dox/2du;scrn -S b8a -t b8a e    b8a.ls ;po';alias sb='sb8a';alias sob='pu ~/dvl/b8;scrn -S ob8 -t ob8 e b8.pm;po'; # Screen_lib/Octology/\w.pm
 alias sbxl='pu ~/dox/2du;scrn -S bxl -t bxl e   boox.ls ;po';alias sB='sbxl';alias scS='            scrn -S';alias sat=' sa      '; # kinda similR2old e fIl.ls
 alias scm8='pu ~/dox/2du;scrn -S cm8 -t cm8 e   ckm8.utf;po';alias sc='scm8';alias soc='pu ~/dvl/c8;scrn -S oc8 -t oc8 e c8.pm;po'; #   ..2Elabor8Uni4m abrEV8z
@@ -768,7 +814,7 @@ alias sdvl='pu ~/dvl    ;scrn -S dvl -t dvl             ;po';alias sd='sdvl';  #
 alias smuz='pu ~/muz    ;scrn -S muz -t muz             ;po';alias sm='smuz';alias so=' ob ';alias mob='ob';alias obs='ob';alias Obs='ob';alias sobs='   ob';
 alias smvz='pu ~/mvz    ;scrn -S mvz -t mvz             ;po';alias sM='smvz';alias Ob=' ob ';alias ob=' pu ~/muz/U2b;scrn -S mob -t mob g3 **/*Obs*     ;po';
 alias srut='pu  /etc    ;scrn -S rut -t rut sudo -E  zsh;po';alias sr='srut';alias Ob8='lob';alias lob='pu          ;l              m[uv]z/**/*Obs*ate_*;po';
-alias sadm='pu  /root   ;scrn -S adm -t adm sudo    bash;po';alias sA='sadm'; #abovOb8 orig just listed: (Annihil|Deso|Domin|InitE|Obliter)8 B4XtNdng2alldirz
+alias sadm='pu  /root   ;scrn -S adm -t adm sudo -E bash;po';alias sA='sadm'; #abovOb8 orig just listed: (Annihil|Deso|Domin|InitE|Obliter)8 B4XtNdng2alldirz
 #lias sx='    scrn -x  ';   # would also B good 2 upd8 abov openingz of scrnz 2ck4 `scrn -ls $mtch` 4 already crE8d wich shud just B -x reattached 2 nstdofnew
       sx() {  scrn -x $@; } # unalias sx && redefining as simple function wrapper resolves parameter alias expansion problem (but still will glob), like ct;
 scx() { if [[ "$#" -gt     0    ]]; then # print out some help text for -h (or l8r add --help) as first parameter && then return
@@ -926,15 +972,19 @@ alias tmn8r='env TERM_PROGRAM=t8r terminator     --geometry=1458x920 -T t8r -b 2
 alias xf4tm='env TERM_PROGRAM=x4t xfce4-terminal --geometry=160x50   -T x4t    2>/dev/null &'; # like rox, x4t && m8t accept --zoom=$ZOOM level varyng from ...
 alias x4t80='env TERM_PROGRAM=X80 xfce4-terminal --geometry=80x25    -T X80    2>/dev/null &'; #   -7 to 7 with 0 as norml sIz or   $ZOOM factor with ...
 alias m8trm='env TERM_PROGRAM=m8t mate-terminal  --geometry=160x50   -t m8t      &';           #      1.0         as norml sIz as float scAle;
-alias m80tm='env TERM_PROGRAM=m80 mate-terminal  --geometry=80x25    -t m80      &';
-alias tmnlg='env TERM_PROGRAM=tmg terminology    --geometry=160x50   -T tmg -2 2>/dev/null &'; # -c=$BOOL CursorBlink && -G=$BOOL VisualBell && -B Borderless;
-alias tmg80='env TERM_PROGRAM=T80 terminology    --geometry=80x25    -T t80 -2 2>/dev/null &';
+alias m80tm='env TERM_PROGRAM=m80 mate-terminal  --geometry=80x25    -t m80      &'; # tmg BlOhas -c=$BOOL CursorBlink && -G=$BOOL VisualBell && -B Borderless;
+alias tmnlg='env TERM_PROGRAM=tmg terminology    --geometry=160x50   -T tmg -2    ';alias R='pu ~;rd -p .elementary/config/standard;po 2>/dev/null'; # no & so
+alias tmg80='env TERM_PROGRAM=T80 terminology    --geometry=80x25    -T t80 -2 2>/dev/null  ;pu ~;rd -p .elementary/config/standard;po 2>/dev/null'; # rd aftr
 alias qterm='env TERM_PROGRAM=qtm qterminal                     1>/dev/null 2>&1 &'; # DsIgnd 4 LXQt dsktp NvIrnmNt Cmz 2 hv almOst nO cmd-lIn optnz 2 adjust;
+alias qt240='env TERM_PROGRAM=q24 qterminal       -p qt240x67   1>/dev/null 2>&1 &'; # HTTPS://GitHub.Com/lxqt/qterminal/issues/488 says must be in ~/.config/
+alias qt160='env TERM_PROGRAM=q16 qterminal       -p qt160x50   1>/dev/null 2>&1 &'; #   as .conf files that are manually configurd but thN sAv st8 whN editd;
+alias qtm80='env TERM_PROGRAM=q80 qterminal       -p qt_80x25   1>/dev/null 2>&1 &'; # can I customize an 80x25 qterminal somehow? proly hv2mk -p profilez4it;
 alias Trmnl='env TERM_PROGRAM=Trm Terminal                      2>/dev/null      &'; # looks lIk Terminal app so old that it can hardly render prmpt or colrz;
 alias liltm='env TERM_PROGRAM=ltm lilyterm        -g        160x50   -T ltm    2>/dev/null &'; # lily&&termit spew lots ofGTK warnz2STDERR;
 alias lil80='env TERM_PROGRAM=i80 lilyterm        -g         80x25   -T i80    2>/dev/null &'; # lily in 80-column mode getz 'i80' Title since l80 && L80 tAkN;
-alias konsl='env TERM_PROGRAM=kon konsole        --profile  PipProfile0-K2ELGANT &'; # qterminal && konsole cfgz in ~/.config/ &&
-alias trmit='env TERM_PROGRAM=tit termit                                       2>/dev/null &'; #    ~/.local/share/;cud -T tit but thN!`ct`;
+alias konsl='env TERM_PROGRAM=kon konsole        --profile  PipProfile0-K2ELGANT &'; # qterminal && konsole cfgz in ~/.config/ && ~/.local/share/;
+alias trmit='env TERM_PROGRAM=tit termit    -i "$HOME/.config/termit/rc.lua"   2>/dev/null &'; # cud -T tit 2set TITle of TermIT, but thN can!`ct` in it l8r;
+alias tit80='env TERM_PROGRAM=T80 termit    -i "$HOME/.config/termit/rc80.lua" 2>/dev/null &'; # try 2 mk termit with 80x25 config
 alias Pterm='env TERM_PROGRAM=ptm pterm           -geometry 160x50 -fn             "Monospace 12"             &'; # pterm has lotz of .Xrc && CLI optz 2 add;
 alias ptm80='env TERM_PROGRAM=p80 pterm           -geometry  80x25 -fn             "Monospace 24"             &';
 alias Urxvt='env TERM_PROGRAM=urx urxvt           -geometry 160x50               &'; # Unicode-Rxvt cnfigd nEr botm of ~/.Xrc wi `xrc` 2lOd xrdb d8a B4hand;
@@ -949,41 +999,45 @@ alias crt='cd ~/dvl/c8/trm8;CRT'; # CoolRetroTerm nEdz2cfg termrc 2Uz smalr font
 alias stp='cd ~/dvl/c8/trm8/st;patch -Np1 -i'; # SucklessTermPatch with No attempt to reverse 1st failed hunk && stripping 1st slash from Path B4 Input fIl;
 alias smci='sudo make clean install;rmSS'; # HTTPS://BrianBuccola.Com/how-to-build-and-install-st-suckless-simple-terminal-from-source-on-arch-linux `d8 H3J`;
 alias vtst='vttest'; # `vtst` might be good to run all termz thru 2 see which have what fE8urez; BlO echo compact term alias mapingz;
-alias x80='xtm80'; # tSt setng all my 3-char && smaller aliasez 2 prefix larger 5-char aliasez with ENV var lIk GNUstep_Terminal.app has;
-alias g80='gtm80';                       # I'm not sure yet if each of these are detected as different behaviorz bAsd on $0;
-alias uxt='uxtrm';alias ut='uxt';        #lrwxrwxrwx 1 root root       5 Sep  5 06:08 /usr/bin/rxvt         -> urxvt
-alias u80='utm80';                       #lrwxrwxrwx 1 root root       5 Sep  5 06:08 /usr/bin/rxvt-unicode -> urxvt
-alias lxt='lxtrm';alias lt='lxt';        #lrwxrwxrwx 1 root root       5 Sep  5 06:08 /usr/bin/rxvt-xpm     -> urxvt
-alias l80='lxt80';                       #lrwxrwxrwx 1 root root       5 Sep  5 06:08 /usr/bin/rxvt-xterm   -> urxvt
-alias lxm='lxtmn';alias Lt='lxm';        #-rwxr-sr-x 1 root utmp 1423512 Sep  5 06:08 /usr/bin/urxvt
-alias L80='lxm80';                       #-rwxr-xr-x 1 root root   97056 Sep  5 06:08 /usr/bin/urxvtc
-alias sak='sakra';                       #-rwxr-xr-x 1 root root      86 Jun  9  2016 /usr/bin/urxvtcd
-alias S80='sak80';                       #-rwxr-sr-x 1 root utmp 1431704 Sep  5 06:08 /usr/bin/urxvtd
-alias rox='roxtm';alias rt='rox';
-alias r80='rox80';
-alias t8r='tmn8r';
-alias x4t='xf4tm';alias Xt='x4t';
-alias X80='x4t80';
-alias m8t='m8trm';alias Mt='m8t';
-alias m80='m80tm';
-alias tmg='tmnlg';alias Tt='tmg'; # `tt` is already mapped to the gr8 KentaCho of BulletML fame's ported DMD game: Torus-Troopers so can't remap that;
-alias T80='tmg80';                # I am unabashedly heels-over-head reeling in love with the puls8ing glittery cursor of terminology && its esthetics;
-alias qtm='qterm';alias qt='qtm'; # Damn! ~/.GNUstep/ Terminal.app is so horribly broken with all the settings I could try to saddle it wi sOfR.4getit?
-alias Trm='Trmnl';alias TT='Trm'; # mAB this 1 will get overridden by GNUstep so shud vary,or mAB all varz shud just B shrunk 2 only TERM_(PROG|ALIAS)?
-alias ltm='liltm';alias it='ltm'; # it might also be betr 2 rEwrIt all thEz az shL functionz wich can pass argz in2 term programz B4 & thM 2 bkgr jobz?
-alias i80='lil80';
-alias kon='konsl';
-alias tit='trmit';
-alias ptm='Pterm';alias Pt='ptm';
-alias p80='ptm80';
-alias urx='Urxvt';alias Ut='urx';
-alias U80='urx80';
-alias rxu='rxvtu';alias Rt='rxu';
-alias R80='rxu80'; # BlO trmz usez echo -e on SKpd colr-coded terminal MUl8orz mapng lstz of alIgnd 2 && 3-char aliasz fitng in 160x3-char lInz;
-alias trmz='ee "${R}xt$w,${o}st$w,${Y}gt$w,${G}at$w,${C}Et$W => ${R}xterm$w,${o}s[imple]tterm$w,${Y}gnome-terminal$w,${G}aterm$w,${C}E[nlightenment]term$W; ${R}uxt$w,${o}lxt$w,${Y}lxm$w,${G}sak$w,${C}t8r$w,${B}tit$w,${M}tmg$w,${p}crt$w,${R}urx$w,${o}rox$w,${Y}s3t$w,${G}x4t$w,${C}m8t$w,${B}Trm$w,${M}kon$w,${p} to$w,${R}ltm$w,${o}ptm$w,${Y}qtm$W =>";
-            ee "${R}uxterm$w,${o}lxterminal$w,${Y}lxterm$w,${G}sakura$w,${C}terminator$w,${B}termit$w,${M}terminology$w,${p}CoolRetroT*$w,${R}urxvt$w,${o}roxterm$w,${Y}s3dvt$w,${G}xfce4-terminal$w,${C}mate-terminal$w${B}Terminal$w${M}konsole$w${p}tio$w${R}lilyt*$w${o}pt*$w${Y}qterminal$W;";
-            ee "${R}Lt$w,${o}Pt$w,${Y}qt$w,${G}At$w,${C}Rt$W => ${R}lxterminal$w,${o}pterm$w,${Y}qterminal$w,${G}aterm$w,${C}rxvt-unicode$W;${B}it$W =>$B lilyterm$W;$C 80${K}x${o}25$G varE8ionz$W:$R x80$w,${o}g80$w,${Y}u80$w,${G}l80$w,${C}L80$w,${B}r80$w,${M}R80$w,${p}s80$w,${R}S80$w,${o}i80$w,${Y}p80$w,${G}q80$w,${C}U80$w,${B}X80$w,${M}m80${K}...";
-            ee "${G}      l8r  alsO$W:$w t80$w,T80$w,G80$w,M80$w,k80$w,I80 && Xt, Mt, Tt, Ut, ut, ko, lt, rt, et$W;$z"'; # also study tio 4 anythng useful?
+alias xT='x80';alias x80='xtm80'; # tSt setng all my 3-char && smaller aliasez 2 prefix larger 5-char aliasez with ENV var lIk GNUstep_Terminal.app has;
+alias GT='g80';alias g80='gtm80';   # I'm not sure yet if each of these are detected as different behaviorz bAsd on $0;
+alias ut='uxt';alias uxt='uxtrm';   #lrwxrwxrwx 1 root root       5 Sep  5 06:08 /usr/bin/rxvt         -> urxvt
+alias uT='u80';alias u80='utm80';   #lrwxrwxrwx 1 root root       5 Sep  5 06:08 /usr/bin/rxvt-unicode -> urxvt
+alias lt='lxt';alias lxt='lxtrm';   #lrwxrwxrwx 1 root root       5 Sep  5 06:08 /usr/bin/rxvt-xpm     -> urxvt
+alias lT='l80';alias l80='lxt80';   #lrwxrwxrwx 1 root root       5 Sep  5 06:08 /usr/bin/rxvt-xterm   -> urxvt
+alias Lt='lxm';alias lxm='lxtmn';   #-rwxr-sr-x 1 root utmp 1423512 Sep  5 06:08 /usr/bin/urxvt
+alias LT='L80';alias L80='lxm80';   #-rwxr-xr-x 1 root root   97056 Sep  5 06:08 /usr/bin/urxvtc
+alias sa='sak';alias sak='sakra';   #-rwxr-xr-x 1 root root      86 Jun  9  2016 /usr/bin/urxvtcd
+alias SA='S80';alias S80='sak80';   #-rwxr-sr-x 1 root utmp 1431704 Sep  5 06:08 /usr/bin/urxvtd
+alias rt='rox';alias rox='roxtm';
+alias rT='r80';alias r80='rox80';
+alias T8='t8r';alias t8r='tmn8r';
+alias Xt='x4t';alias x4t='xf4tm';
+alias XT='X80';alias X80='x4t80';
+alias Mt='m8t';alias m8t='m8trm';
+alias mT='m80';alias m80='m80tm'; # OMG! EFL terminology BlO is so fscking awesome with the beautiful VisualBell alarm alert in the lower-right corner;
+alias Tt='tmg';alias tmg='tmnlg'; # `tt` is already mapped to the gr8 KentaCho of BulletML fame's ported DMD game: Torus-Troopers so can't remap that!;
+alias tT='t80';alias t80='tmg80'; # I am unabashedly heels-over-head reeling in love with the puls8ing glittery cursor of terminology && its esthetics;
+alias qt='qtm';alias qtm='qterm'; # qt should be almost identical to qt160 (with -p profile ~/.config/qt160x50.conf that's not in qterminal.org/ path);
+alias q2='q24';alias q24='qt240';
+alias q1='q16';alias q16='qt160';
+alias qT='q80';alias q80='qtm80'; # Damn! ~/.GNUstep/ Terminal.app is so horribly broken with all the settings I could try to saddle it wi sOfR.4getit?
+alias TT='Trm';alias Trm='Trmnl'; # mAB this 1 will get overridden by GNUstep so shud vary,or mAB all varz shud just B shrunk 2 only TERM_(PROG|ALIAS)?
+alias it='ltm';alias ltm='liltm'; # it might also be betr 2 rEwrIt all thEz az shL functionz wich can pass argz in2 term programz B4 & thM 2 bkgr jobz?
+alias iT='i80';alias i80='lil80';
+alias ko='kon';alias kon='konsl';
+alias It='tit';alias tit='trmit';
+alias IT='T80';alias T80='tit80';
+alias Pt='ptm';alias ptm='Pterm';
+alias pT='p80';alias p80='ptm80';
+alias Ut='urx';alias urx='Urxvt';
+alias UT='U80';alias U80='urx80'; # also study tio 4 anythng useful?
+alias Rt='rxu';alias rxu='rxvtu'; # should l8r go through `trmz` list below && re-order the major groupz to prioritize displaying the best onez first
+alias RT='R80';alias R80='rxu80'; # BlO trmz usez echo -e on SKpd colr-coded terminal MUl8orz mapng lstz of alIgnd 2 && 3-char aliasz fitng in 160-char lInz;
+alias trmz='ee "${R}xt$w,${o}st$w,${Y}gt$w,${G}at$w,${C}et$W => ${R}xterm$w,${o}s${w}[${O}imple${w}]${o}tterm$w,${Y}gnome-terminal$w,${G}aterm$w,${C}E${w}[${c}nlightenment${w}]${C}term$W; ${R}uxt$w,${o}lxt$w,${Y}lxm$w,${G}sak$w,${C}tmg$w,${B}t8r$w,${M}tit$w,${p}s3t$w,${R}urx$w,${o}rox$w,${Y}crt$w,${G}x4t$w,${C}m8t$w,${B}Trm$w,${M}kon$w,${p} to$w,${R}ltm$w,${o}ptm$w,${Y}qtm$W =>";
+            ee "${R}uxterm$w,${o}lxterminal$w,${Y}lxterm$w,${G}sakura$w,${C}terminology$w,${B}terminator$w,${M}termit$w${p}s3dvt$w${R}urxvt$w${o}roxterm$w, ${Y}CoolRetroT*$w,${G}xfce4-terminal$w,${C}mate-terminal$w,${B}Terminal$w,${M}konsole$w${p}tio$w${R}lilyt*$w${o}pt*$w${Y}qterminal$W;";
+            ee "${R}it$w,${o}Pt$w,${Y}qt$w,${G}At$w,${C}Rt$W => ${R}lilyterm$w,${o}pterm$w,${Y}qterminal$w,${G}aterm$w,${C}rxvt-unicode$W;${B}Lt$W =>$B lxterminal$W;$C 80${K}x${o}25$G varE8ionz$W:$R x80$w,${o}X80$w,${Y}l80$w,${G}L80$w,${C}r80$w,${B}R80$w,${M}s80$w,${p}S80$w,${R}i80$w,${o}p80$w,${Y}q80$w,${G}u80$w,${C}U80$w,${B}g80$w,${M}m80${K}...";
+            ee "${G}      l8r  alsO$W:$w t80$w,T80$w,G80$w,M80$w,k80$w,I80 && sa, Tt, Xt, Mt, Ut, ut, ko, lt, rt$W;$z also note most first letters followed by \"T\" do 80x25 varE8ionz of lowercase-t;"';
 alias  Etrm='env TERM_PROGRAM=et Eterm --geometry 160x50 --scrollbar-width 15 --cmod 227 -L 65536 &';alias Et='Etrm';alias E='Et'; # Used 2B 'Eterm -t E &' ...
 #xport ETERM_THEME_ROOT="~/.Eterm/themes"; # wuz ~/.Eterm/themes/Eterm                # ... but it looks like I don't even need that plain old  E theme anymore
 #lias E=' Eterm -t E --scrollbar-type motif --scrollbar-width 15 &'; # --cmod 227 &';

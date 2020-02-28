@@ -12,14 +12,15 @@
 #   2)      32 added to the Day   makes the year negative just before adding 2k  # here Day:'W'..'_', above hour:'O'..'l' (up Oh to lo eL)
 #   Please see `perldoc Octology::d8` for more detailed inform8ion.  # 1024-Year range in 8-characters, extends non-minuteMonth rename Millennium (Thousand?);
 # License: Most source code should be Free! Code I have lawful authority over is and shall be!
-#   Copyright: (c) 2013-2017, Pip Stuart.
-#   Copyleft : This software is licensed under the GNU General Public License
-#     (version 3 or later). Please consult  HTTP://GNU.Org/licenses/gpl-3.0.txt
-#     for important inform8ion about your freedom. This is Free Software: you
-#     are free to change and redistribute it. There is NO WARRANTY, to the
-#     extent permitted by law.  Please see  HTTP://FSF.Org for more inform8ion.
-use strict;use warnings;use utf8;use v5.10;
-use      Octology::d8;my $VERSION='0.0';my $d8VS='J7VML888';my $auth='PipStuart <Pip@CPAN.Org>';my $parm=join(' ',@ARGV);my @id8a;
+# Copyright: (c) 2013-2020, Pip Stuart.
+# Copyleft : This software is licensed under the GNU General Public License
+#   (version 3 or later). Please consult HTTPS://GNU.Org/licenses/gpl-3.0.txt
+#   for important inform8ion about your freedom. This is Free Software: you
+#   are free to change and redistribute it. There is NO WARRANTY, to the
+#   extent permitted by law.  Please see HTTPS://FSF.Org for more inform8ion.
+use strict;use warnings;                    # tryd sorta rElEs version with no
+                        use utf8;use v5.10; #   strict or warns4 cd ~/../sig but then it just tried to load utf8.pm && failed again so mAB $PERL5LIB is prob? ;
+use      Octology::d8;my $VERSION='0.0';my $d8VS='K2LL9agn';my $auth='PipStuart <Pip@CPAN.Org>';my $parm=join(' ',@ARGV);my @id8a;
 my $d8im=Octology::d8->new();
 open my $out8,'>&',STDOUT or die "Can't open  duplic8 STDOUT handle: $!";binmode $out8,':encoding(UTF-8)'; # crE8 local duplic8 of global
 if(!@ARGV && !-t STDIN){chomp(@id8a=<STDIN>);$parm=join(' ',@id8a);} # should eventually handle piping in d8 d8a while giving optionz too

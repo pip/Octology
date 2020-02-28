@@ -41,7 +41,7 @@ my %digsetz=(
 # 'udt' => [], # User Defined To   for sepR8 setz, but these can just be per object
   'bin' => ['0', '1'],
   'dna' => ['a', 'c', 'g', 't'],
-  'DNA' => ['A', 'C', 'G', 'T'],
+  'DNA' => ['A', 'C', 'G', 'T'], # maybe extend these to 8-char altern8 for ocT if 'P', 'Z', '?', '?' turn out to be correct new discoveries
   'ocT' => ['0'..'7'],
   'dec' => ['0'..'9'],
   'doz' => ['0'..'9', 'ẋ', 'έ'], # DOZenal with Doe-1..ᵪᶓẋέƸ last 'dek' && 'ell' curvy && clean smart for monetary from HTTPS://YouTube.Com/watch?v=U6xJfP7-HCc

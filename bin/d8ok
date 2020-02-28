@@ -1,7 +1,8 @@
 #!/usr/bin/perl
 # D8JMEWHO:d8ok crE8d by PipStuart <Pip@CPAN.Org> to be a text-mode Curses clock, adapted from original `ptok` to now use Octology::d8 instead of old Time::PT;
 # 2du:tSt wdht2mk sure barz|help|info fit term,add optionz4othr colrd d8 outputz CPAN && ISO,add XtNded colrset togl esp4betr barz unfilled portionz in8pal8,
-#   add bkgrnd colrz optionz,mk big radial display option,mAB mk big colored figlet option,abstract logic to l8r also serve SDL|Tk|Gtk|Android|GearVR versionz;
+#   add bkgrnd colrz optionz,mk big radial display option,mAB mk big colored figlet option,abstract logic to l8r also serve SDL|Tk|Gtk|Android|GearVR versionz,
+#   add new full-terminal mode for 80x25,160x50,&&240x67 wich usez figlet to show huge letterz of 8-char centered && surrounded by expanded format d8ok textz;
 # Keyz: 'f'     togglez display of Full format.    'c' Clearz screen after every draw.     's' rot8z upd8 Speed.                           'i' Info.
 #       'B'     togglez visual spectrum Barz.      'b' togglez Bold fontz when possible.   'r' togglez Random colorz on each draw upd8.    'h' Help.
 #       'C'     rot8z Barz-mode fill Character.    'd' togglez Bold fontz when possible...                        ...on each draw upd8.
@@ -9,7 +10,7 @@
 use strict;use warnings;use utf8;use v5.10;use Octology::b8;
                                            use Octology::d8;
                                            use Curses::Simp;
-my $VERSION='0.0';my $d8VS='H7IMA0IM';my $auth='PipStuart <Pip@CPAN.Org>';my $name=$0;$name =~ s/.*\///;my $d8im;my @fldz;my @lasf;my @text;my @fclr;
+my $VERSION='0.0';my $d8VS='K2HLCode';my $auth='PipStuart <Pip@CPAN.Org>';my $name=$0;$name =~ s/.*\///;my $d8im;my @fldz;my @lasf;my @text;my @fclr;
 my $barz=0;my $bilt=0;my $bold=0;my $bchr='#';my $parm='';my $clea=0;my $keey= -1;my $sped= 0.987;
 my $sbld=1;my $argz='';$argz= join(' ',@ARGV) if(@ARGV);
 if($argz=~ /h/i){print " $name v$VERSION $d8VS - by $auth

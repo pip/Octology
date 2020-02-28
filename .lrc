@@ -1,5 +1,5 @@
 # F1RLLK2K:~/.lrc  by PipStuart <Pip@CPAN.Org> as an altern8 format for .lsrc ideally having new ~/bin/lrc gNR8 either from the other;
-# $VERSION='0.0';$d8VS='K2GLITCH'; 2du:mkUtl2gNr8 altrn8 versN of .lsrc th@purposfuly varEz colrz of comon typz,try addng bakgrnd colrz2all dFz&&tst,
+# $VERSION='0.0';$d8VS='K2JL8BRC'; 2du:mkUtl2gNr8 altrn8 versN of .lsrc th@purposfuly varEz colrz of comon typz,try addng bakgrnd colrz2all dFz&&tst,
 #   add interaction2 lsd8 wN it Dtectz unrecognIzd XtNshNz offerng c@egOrEz with comon colr2autOm@ically insrt chOsN NtrEz,mAB add *-* NtrEz from .zshrc hEr &&
 #   mk lrc gNr8 either,confirm all accept f0nt cOdez wi dash accepting Dfalt foreground then redo NORMAL FILE LINK as no fi ln,mAB 8trm added2TERM ls someday;
 # 819J2Pip:~/.lsrc by PipStuart <Pip@CPAN.Org> izAheavily modifId`dircolors`cfgfIl(Orig ~/.DIR_COLORS)wich setz $ENV{'LS_COLORS'} 4GNU`ls --color`&&`lsd8`;
@@ -133,7 +133,9 @@ CHR                           Yk           #cd= 01;33;40    01;33;40  CHaRacter 
 .emacs                        O
 .vimrc
 .Hrc                          G            #  8sh ~ fyl
-.lrc                          G            #  lsd8 lsrc
+.brc                          G            #      ~ bashrc
+.lrc                          G            #  lsd8    lsrc
+.zrc                          G            #      ~  zshrc
 .qrc                                       # Qt5 && QMake ResourCe files that seem kinda similar to .sh or .ini variable-setting files
 .bxrc
 .shrc
@@ -197,7 +199,8 @@ CHR                           Yk           #cd= 01;33;40    01;33;40  CHaRacter 
 .ovpn                                      # /etc/windscribe files
 .ogg
 .flac
-.flf                                       # FigLet Font
+.flf                                       # FigLet Font (with fonts mainly being stored in /usr/share/figlet/ or my ~/dvl/f8/flet/*fonts*/ directories)
+.tlf                          o            # ToiLet Font (with fonts mainly being stored in /usr/share/figlet/ or my ~/dvl/f8/flet/*fonts*/ directories)
 .plf
 .pal8                                      # f80p pal8
 .prl                                       # like .ini or .sh variable files that seem to accompany /usr/lib/ .so SharedObject library files
@@ -314,6 +317,7 @@ CHR                           Yk           #cd= 01;33;40    01;33;40  CHaRacter 
 .aumixrc
 .jack3rc
 .jackdrc                      P
+.runescape                                 # Jagex game Kyle (UserName:"I Am TRK") wanted to play together, but has horribly tiny unscalable UI on 24" 1080p
 .default_mixer
 .mikmod_playlist              P
 .mikmodrc
@@ -499,7 +503,9 @@ CHR                           Yk           #cd= 01;33;40    01;33;40  CHaRacter 
 .hidden                                    # in HTTPS://AskUbuntu.Com/questions/882562/how-can-i-change-or-hide-the-snap-directory as Nautilus dir hide list
 #kk
 #kk
-.prv8                         kkV          # immeD8 overide of just Foregrndcolr to 
+.pw
+.pswd                         kbK
+.prv8                         kkV          # immeD8 overidez of Foregrnd && backgrnd colrz plus inVisible SGR flag (so shud B dbl-clikabl but rarely seen)
 #MM
 #MM
 .htm                                       # HTML && YA?ML && XML && (detailed) play-list filz && .profile && .history filz
@@ -589,6 +595,8 @@ CHR                           Yk           #cd= 01;33;40    01;33;40  CHaRacter 
 .vspscc
 .yafray
 .bitmap                                    # MSWindows QuickTime/QTSystem/ or Safari/CoreFoundation.resources/CharacterSets/
+.bhs                                       # ~ bash_history
+.zhs                                       # ~  zsh_history
 .qtx                          P            # MSWindows QuickTime/QTSystem/ or Safari/CoreFoundation.resources/CharacterSets/
 .qts                          c            # MSWindows QuickTime/QTSystem/ or Safari/CoreFoundation.resources/CharacterSets/
 .ui                                        # Qt5 UserInterface files which go to bin/uic (seem to be XML without header d8a)
@@ -608,7 +616,7 @@ CHR                           Yk           #cd= 01;33;40    01;33;40  CHaRacter 
 .atb                          Y            # /etc/brltty/
 .la                                        # ~/dvl/m8/sudo/plugins/sudoers/ filz which are GNU Libtool Librariez
 .lss                                       # Lynx Style Settings file like /etc/lynx.lss
-.logo                                      # ASCII art file maybe containing ANSI escaped colors && figlet-gend text (eg,/etc/issue.logo w/"Gentoo")
+.logo                                      # ASCII art file maybe containing ANSI escaped colors && figlet-gend text (e.g., /etc/issue.logo wi "Gentoo")
 .login
 .lesshst
 .wget-hsts
@@ -869,6 +877,7 @@ CHR                           Yk           #cd= 01;33;40    01;33;40  CHaRacter 
 .cache-3                      M            # ~/.cache/fontconfig/[0-9a-f]{32}-le64.
 .cache-4                      R            # ~/.cache/fontconfig/[0-9a-f]{32}-le64.
 .xftcache
+.jcache                                    # ~/gmz/Rune/Jagex/RuneScape/  filz (RS crE8d Jagex/ in ~ but wi .zshrc alias I mv 2 gmz 4 less $HOME clutter)
 .journal                                   # ~/.local/share/tracker/data/ filz (could do .ontology.journal distinctly)
 .dist
 .distmap
@@ -949,6 +958,7 @@ CHR                           Yk           #cd= 01;33;40    01;33;40  CHaRacter 
 .err
 .fla
 .3rc                                       # /etc/qt3/ or ~/.qt/
+.blo                                       # ~ bash_logout
 .esd                                       # I73M73MI:upd8ng 4 l8st krnl identified these 4 new aliases as newest candid8z 4 incorpor8ion here;
 .kbx                                       # ~/.gnupg pubring files
 .kbx~                         r            # ~/.gnupg pubring files
@@ -983,7 +993,7 @@ CHR                           Yk           #cd= 01;33;40    01;33;40  CHaRacter 
 .bmp
 .dl
 .flv                                       # Adobe    FL(ash|ex) Video
-.flc                                       # AutoDesk Animator
+.flc                                       # AutoDesk Anim8or (or FigLet-Control filz ... or Fuzzy-Little-CrE8urez like my precious lil Darjee)
 .fli
 .gif
 .gl

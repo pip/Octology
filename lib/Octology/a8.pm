@@ -49,6 +49,7 @@ our @EXPORT= qw(bfr8c    b8c    d8c    dur8c       a8c   a8colr      h2rl   rl2h
                 bfr8colr b8colr d8colr dur8colr    d8cs @d8cl  chti  c8fn     S2   c2  S c   sS    lodl @Monz @Mon     %mc2F %mc2b %mF2c %mb2c        %sb10
  $SKp8 $SKp0 $SKp1 $SKp2 b8clr  $SKpf $SKpt %pmap %cmap       %pl8n  ftst       %f8fm %f8pm %sgrm %sgrn @Dayz @Day  lrc      comma  curs  sumb @x256  @sb64
     $z    $k    $r    $o    $y    $g     $c $SKpb    $m    $p    $w  tstc    $K    $R    $O    $Y    $G    $C    $B    $M    $P    $W    %p622 %p222   upd8
+         $bk   $br   $bo   $by   $bg    $bc   $bb   $bm   $bp   $bw         $bK   $bR   $bO   $bY   $bG   $bC   $bB   $bM   $bP   $bW
  $tnhf $ucdf  spff  spfd  spfX   shfl  reso $auth %cmsp %p8k2 @p82k  chp8     S2f4 c2f4 dm2u cdst %crgb %cbrt @snls @mrls %cdrd %cdrn    %nrgb         gnp8);
  # of 52 posibl sngl-letr var nmz,a8 Xportz 20,$b && $a unavail,so shudB thEs30 lFt4quik shortSt nAmz: 'def hij l n  q stuv x', 'A  DEF HIJ L N  Q STUV X Z';
 our $VERSION='0.0';my  $d8VS='K2GLNght';our $auth='PipStuart <Pip@CPAN.Org>'; # above not exporting $b since collidez with sort{$a  <=> $b};unalloc'd sOlOz^;
@@ -64,6 +65,7 @@ our @Kana=qw(ぁあぃいぅうぇえぉおかがきぎくぐけげこごさざ�
 our $SKp8="\e[";our $SKp0=$SKp8.'00';our $SKp1=$SKp8.'01';our $SKp2=$SKp8.'22';our $tnhf=0; # ANSI "NC" eScApe "SKp" cOdez && TermCanHandleF0ntz flag
 our $SKpf="\e]50;"; # escape f0nt   prefix     # background codez in 40z have 2 letterz  && start with b  # $b comNted because of sort{$a cmp $b} collision
 our $SKpt="\e\\";   # escape string termin8or  # foreground codez in 30z have 1 letter  # 2 letter f0ntz  # $y may get masked by coordz ($y,$x)=$c8->Move()
+#ur $SKpt="\a"  ;   # escape altrn8 termin8or  Alarm Ctrl-G ASCII BEL which might be necessary to keep konsole from printing extra backslashes from ST abov
 our $z   = $SKp0.'m' ; # special z Zero SKp code to reset all attributez    # Orig enumer8d all SKpz here, but now use S() below instead
 our %cmap=('VGA' =>'kbgcrPOw KBGCRMYW', # supported Colr MAP sequencez of index orderingz
            'ANSI'=>'krgObPcw KRGYBMCW', # might want to lc(keyz)
@@ -137,6 +139,8 @@ our %mc2F;our %mc2b;our %mF2c;our %mb2c; # MapC8Col8ColrCodz2ForeBackgrnd && rEv
 if(exists($ENV{'TERM'}) && $ENV{'TERM'} !~ /^(([Ex]|st)(term)?|screen|rxvt|linux|8trm)/){$tnhf=1;} # TermNoHandleFlag (nEd linux hEr 2 4 console colrz)
 our $k;our $K;our $r   ;our $R;our $o;our $O;our $y;our $Y;our $g;our $G; # Fclr shrtcutz to get set, reset, shifted, or randomized in CHangePal8 function
 our $c;our $C;our $SKpb;our $B;our $m;our $M;our $p;our $P;our $w;our $W; # avoid sort $b
+our $bk;our $br;our $bo;our $by;our $bg;our $bc;our $bb;our $bm;our $bp;our $bw;
+our $bK;our $bR;our $bO;our $bY;our $bG;our $bC;our $bB;our $bM;our $bP;our $bW;
 sub chp8{ # should do similar stuff but all may need to use joined layer keyz with 8pal8 key, && accept parameter optionz
   for(0..$#{$cmsp{'8ANSI'}}){my $mlet=$cmsp{'8ANSI'}[$_]; # also now doing H && h very similarly here (had to add 90/100+ map in %Sdsr above)
                              my $modc=$_ % 16;      $mc2F{'O'.$mlet} =$Sdsr{       $cmsp{'8ANSI'}[$modc]};
@@ -156,6 +160,10 @@ sub chp8{ # should do similar stuff but all may need to use joined layer keyz wi
                    $mc2b{$p8ky    }=   '48;5;' . spfd($_);$mb2c{$mc2b{$p8ky    }}=$p8ky    ;}}
   $k=S('k');$K=S('K');$r   =S('r');$R=S('R');$o=S('o');$O=S('O');$y=S('y');$Y=S('Y');$g=S('g');$G=S('G'); #Fclr shrtcutz
   $c=S('c');$C=S('C');$SKpb=S('b');$B=S('B');$m=S('m');$M=S('M');$p=S('p');$P=S('P');$w=S('w');$W=S('W'); #avoid sort $b
+  $bk=$SKp8.$Sdsr{'bk'}.'m';$br=$SKp8.$Sdsr{'br'}.'m';$bo=$SKp8.$Sdsr{'bo'}.'m';$by=$SKp8.$Sdsr{'by'}.'m';$bg=$SKp8.$Sdsr{'bg'}.'m';
+  $bc=$SKp8.$Sdsr{'bc'}.'m';$bb=$SKp8.$Sdsr{'bb'}.'m';$bm=$SKp8.$Sdsr{'bm'}.'m';$bp=$SKp8.$Sdsr{'bp'}.'m';$bw=$SKp8.$Sdsr{'bw'}.'m';
+  $bK=$SKp8.$Sdsr{'hk'}.'m';$bR=$SKp8.$Sdsr{'hr'}.'m';$bO=$SKp8.$Sdsr{'ho'}.'m';$bY=$SKp8.$Sdsr{'hy'}.'m';$bG=$SKp8.$Sdsr{'hg'}.'m';
+  $bC=$SKp8.$Sdsr{'hc'}.'m';$bB=$SKp8.$Sdsr{'hb'}.'m';$bM=$SKp8.$Sdsr{'hm'}.'m';$bP=$SKp8.$Sdsr{'hp'}.'m';$bW=$SKp8.$Sdsr{'hw'}.'m';
 } # since these all may now have layer prefixes, maybe the hashes can be combined?
 chp8(); # gotta call it to init d8a!
 sub o8{my $Uflg=1;my $Stxt='';$Stxt.=join(' ',@_) if(@_);

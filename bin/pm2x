@@ -8,7 +8,7 @@
 #   add optn to prnt out raD8ing blox of closest matchez going Up 1st clockwise R D L then UL UR DR DL && beyond top8 maybe further ringz start UL str8 around,
 #   consider renaming to better reflect purpose && capabilitiez,add new list sorting RGB channel dominance to complement distance listz,
 #   figure out why -size keeps shrinking for multiple -cH;
-use strict;use warnings;use utf8;use v5.10;use Octology::a8;use Color::Similarity::RGB qw(distance);my $d8vs='H5PMCZfs';
+use strict;use warnings;use utf8;use v5.10;use Octology::a8;use Color::Similarity::RGB qw(distance);my $VERSION='0.0';my $d8VS='K2ILBRGB';
 my $tmsz=1;my $cndx= undef;my %pb10;my %pcdm;my %mb10;my @brit;my %rcdm; # Pal8Base10 && Pal8ColrDistMap && MapdBase10 && colrBRIghTness && ResultColrDistMapz
 my $pkyz=$cmap{'8pal8'};$pkyz=~ s/\s+//g;for my $pkey  (split(//,$pkyz)){my $pb6r=$pmap{$pkey};
   my($pred,$pgrn,$pblu)= map { $sb10{$_} * 4 } split(//,$pb6r)  ;$pb10{"o$pkey"}=[$pred,$pgrn,$pblu];} # rEmMbr thEs Orig b64 RGBz wer handmade from clrz.txt
@@ -25,7 +25,7 @@ sub ccd2{my $kndx= shift(@_);my $mlsz= shift(@_) || $tmsz;my @snls=(16..255);my 
                                                         for(0..$mlsz-1){   for my $wndx (@{$rcdm{$kndx}{$dsks[$_]}}){push(@mrls,$wndx);}} return(@mrls);}
 sub pm2x{my $flgz= join(' ',@_) || '';my $ddcf=0; # Did Do Closest Flag for when to prepend newline
   if($flgz=~  /(^|\s)-?-?h(elp)?      (\s|$)/ix){print
-" pm2x  - Pal8 Map 2 eXpanded color gener8ion utility  d8vs:$d8vs Auth:$auth
+" pm2x  - Pal8 Map 2 eXpanded color gener8ion utility  Vers:$VERSION d8VS:$d8VS Auth:$auth
   h    - print this Help text and exit;  pm2x is based on sorted Color::Similarity::RGB->distance() results among xterm 256 colors
   d    - Design8 Decimal results listed for any -cHX call (maybe should also l8r change parse from HX input to dec)
   t    - check Tops among original 8pal8 mapping (ignoring .pal8 file actions) into remaining 192 to gener8 3 new layers from
@@ -75,6 +75,5 @@ sub pm2x{my $flgz= join(' ',@_) || '';my $ddcf=0; # Did Do Closest Flag for when
           if($brit[$fnrl[$nndx]] < $brit[$pcxn]){push(@{$dnrl[$_]},$fnrl[$nndx]);}else{push(@{$bnrl[$_]},$fnrl[$nndx]);}}
        #for my $nndx (@dnrl[0..$tmsz]){if(defined($nndx)){ printf(     "%s%03d ", S('::BX'.sprintf("%02X",$nndx)),$nndx);}} say '' if($_==31||$_==47);
       } # get scorz wi rsltz,sort in2brItz&&dRkz,shO 3dRk clOse thN 10-char 8pal8 nAmz thN brItz,setup4new mapz wi bgcolr&&remvng NtrEz from othr listz;
-    }
-  }}
+    }}}
 pm2x(@ARGV);
