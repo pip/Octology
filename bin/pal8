@@ -6,7 +6,7 @@
 use strict;use warnings;use utf8;use v5.10;
 use Octology::a8;
 use Octology::b8;
-my $VERSION='0.0';my $d8VS='K2FLFPal';
+my $VERSION='0.0';my $d8VS='K38M8PAL';
 my $term='';$term = $ENV{'TERM'    } if(exists($ENV{'TERM'    }) && $ENV{'TERM'    }); # Terminal type
 my $pqef= 0;$pqef = $ENV{'Pal8Qiet'} if(exists($ENV{'Pal8Qiet'}) && $ENV{'Pal8Qiet'}); # Pal8QietEnvFlag
 my $dfpl= "000 g00 gL0 0g0 0gg 00g g0g ggg  LLL _LL __L L_L L__ LL_ _L_ ___"; # DeFault kernel PaL8 colors after booting (in 2pal8 order) but =~ s/P/L/g;
@@ -36,7 +36,7 @@ elsif($bkof eq 'D'                 ){$fvpl[0] = $dxpl       ;}
 elsif($bkof eq 'c'                 ){$fvpl[0] = $cmpl       ;}
 elsif($bkof =~ /^[123]$/           ){$fvpl[0] = $fvpl[$bkof];}
 elsif($bkof =~ /^[0-9A-Za-z._]{3}$/){$fvpl[0] = "$bkof " . join(' ',@ARGV);} # allow just passing in 16 3-char b64 argz as the custom 2pal8 order to load
-elsif($bkof =~ /^-*h(elp)?$/ && !$pqef){print "pal8 v$VERSION d8VS:$d8VS auth:$auth usage:
+elsif($bkof =~ /^-*h(elp)?$/ && !$pqef){print "pal8 v$VERSION d8VS:$d8VS Auth:$Auth usage:
   q  sets Quiet mode to not print  default 2pal8 d8a
   0  loads    primary 2pal8 within default 8pal8
   1  loads  secondary 2pal8 within default 8pal8

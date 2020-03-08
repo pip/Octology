@@ -10,18 +10,20 @@
 use strict;use warnings;use utf8;use v5.10;use Octology::b8;
                                            use Octology::d8;
                                            use Curses::Simp;
-my $VERSION='0.0';my $d8VS='K2HLCode';my $auth='PipStuart <Pip@CPAN.Org>';my $name=$0;$name =~ s/.*\///;my $d8im;my @fldz;my @lasf;my @text;my @fclr;
-my $barz=0;my $bilt=0;my $bold=0;my $bchr='#';my $parm='';my $clea=0;my $keey= -1;my $sped= 0.987;
+my $VERSION='0.0';my $d8VS='K38M9D48';my $auth='PipStuart <Pip@CPAN.Org>';my $name=$0;$name =~ s/.*\///;my $d8im;my @fldz;my @lasf;my @text;my @fclr;
+my $barz=0;my $bilt=0;my $bold=0;my $bchr='#';my $parm='';my $clea=0;my $keey= -1;my $sped= 0.987;my $wd48=0;my $w4mb=1;
 my $sbld=1;my $argz='';$argz= join(' ',@ARGV) if(@ARGV);
 if($argz=~ /h/i){print " $name v$VERSION $d8VS - by $auth
  $name is a basic interactive Curses::Simp d8 clOcK for Octology.
  $name command-line parameters are very similar to the keys that
        are available in normal interactive mode.
    h - displays this Help text and exits
+   4 - toggles compressed + full Format  [printd wider together]
    f - toggles compressed / full Format  [default is compressed]
    B - toggles Bars mode (show field spectrums) [default is off]
    b - toggles Bold mode (font w8, if possible) [default is off]
    d - toggles bolD mode (with SpeeD reDraw r8) [default is ON ]
+   D - toggles bolD mode (with SpeeD only in 4) [default is ON ]
    r - toggles Rand mode (mix-up bright colors) [default is off]
    c - Clear screen before each draw upd8       [default is off]";say '' unless(exists($ENV{'COLUMNS'}) && $ENV{'COLUMNS'} > 80);exit();}
 # would be nicer to capture current title first somehow, to then be able to restore it at exit, but it seemz like I'll just have to follow with manUal chti
@@ -35,10 +37,12 @@ my @limz=(63,12,31,42,23);my @bclz= qw(R o Y G  C B M p);my $rand=0;my @spdz=(0,
 #                            @bclz= qw(F o 5 7  Z N V p); # altern8 base colrz
 # now all default base colrz @bclz above start Bold being above index 7, downside being that custom .pal8 filez won't be able to change o or p like RYGCBM
           tie(@fclr,'Curses::Simp::FClr',$simp);@fclr=(' ' x 25  . join('',@bclz) . ' ');
-if($argz=~ /f/i){$parm  = 'f';$fclr[0] = 'YYY ooo YY CCWBBWMMWpp GGGGG RRRR ';} # do some very basic parameter flag handling
+if($argz=~ /f/i){$parm  = 'f';$fclr[0] =                'YYY ooo YY CCWBBWMMWpp GGGGG RRRR ';} # do some very basic parameter flag handling
 if($argz=~ /r/i){$rand ^=  1 ;RandClrz();$simp->Draw();} # this rand is pretty poor. will be better to use a8:2&&8pal8 rot8z. 'f' twice resets in interactive.
+if($argz=~ /4/ ){$wd48 ^=  1 ;$fclr[0] = 'RoYGCBMp   w   YYY ooo YY CCWBBWMMWpp GGGGG RRRR ';}
 if($argz=~ /b/ ){$bold ^=  1 ;}
-if($argz=~ /d/i){$sbld ^=  1 ;}
+if($argz=~ /d/ ){$sbld ^=  1 ;}
+if($argz=~ /D/ ){$w4mb ^=  1 ;} # toggle Wide48ModeBold flag
 if($argz=~ /c/i){$clea ^=  1 ;}
 if($argz=~ /B/ ){$barz ^=  1 ;}
 $simp->FlagABA7('asin' => $bold);
@@ -99,14 +103,17 @@ while  (lc($keey) ne 'x' && lc($keey) ne 'q' && ord($keey) != 27){
   elsif(   $keey  eq 'C'){ if($bchr eq  '#'){ $bchr        = '%';}                                            # rotate Bars  char
                         elsif($bchr eq  '%'){ $bchr        = '@';}
                         elsif($bchr eq  '@'){ $bchr        = '#';} $barz = 1;$bilt = 0;@text = ($text[0]);BildBarz();}
-  elsif(lc($keey) eq 'd'){    $sbld ^=   1 ;                                       }                          # toggle Speed  Bold   flag
+  elsif(   $keey  eq 'd'){    $sbld ^=   1 ;                                       }                          # toggle Speed  Bold   flag
+  elsif(   $keey  eq 'D'){    $w4mb ^=   1 ;                                       }                          # toggle W48ModeBold   flag
   elsif(   $keey  eq 'b'){    $bold ^=   1 ;  $simp->FlagABA7(    'asin' => $bold);}                          # toggle AllBoldAbove7 flag
   elsif(   $keey  eq 'B'){    @text  = ($text[0]);if($simp->Hite() <= 16){$bold ^= 1;$simp->FlagABA7('asin' => $bold);} # toggle Bars or Bold  flag
                            if($barz ^=   1 ){ $bilt = 0; BildBarz(); $simp->FlagMaxi(1); } $simp->ShokScrn(2);$simp->Draw();}
   elsif(lc($keey) eq 's'){ for(0..$#spdz){ if($sped == $spdz[$_]){ if($_ == $#spdz){ $sped = $spdz[0];      } # cycle speed
                                                                    else            { $sped = $spdz[$_ + 1]; } last; } }     }
   elsif(lc($keey) eq 'f'){ if(length($parm)){ $parm =  ''; $fclr[0] = ' ' x 25 .     join('',@bclz) .  ' '; }
-                           else             { $parm = 'f'; $fclr[0] = 'YYY ooo YY CCWBBWMMWpp GGGGG RRRR '; }               }
+                           else             { $parm = 'f'; $fclr[0] =                'YYY ooo YY CCWBBWMMWpp GGGGG RRRR '; }}
+  elsif(   $keey  eq '4'){ if(length($parm)){ $parm =  ''; $fclr[0] = ' ' x 25 .     join('',@bclz) .  ' '; }
+                           else             { $parm = '4'; $fclr[0] = 'RoYGCBMp   w   YYY ooo YY CCWBBWMMWpp GGGGG RRRR '; }}
   elsif(lc($keey) eq 'r'){    $rand ^=   1 ;             RandClrz();                       $simp->Draw()  ; } # toggle Randomized Colorz
   elsif(lc($keey) eq 'i'){
     if($simp->Widt() >= 53 && $simp->Hite() >= 17){ # only if the whole dialog with borders will fit in the terminal...
@@ -132,10 +139,12 @@ while  (lc($keey) ne 'x' && lc($keey) ne 'q' && ord($keey) != 27){
  
                     Global Keys:                   
    h - displays this Help screen                   
+   4 - toggles compressed + Full format            
    f - toggles compressed / Full format            
    B - toggles Bars mode                           
    b - toggles Bold mode  (font w8, if possible)   
    d - toggles bolD mode  (with SpeeD reDraw r8)   
+   D - toggles bolD mode  (with SpeeD in 4 mode)   
    r - toggles Rand mode  (mix-up bright colors)   
    s - rot8s   upd8 Speed                          
    C - rot8s   bars Character ('#', '%', or '\@')   
@@ -144,7 +153,8 @@ while  (lc($keey) ne 'x' && lc($keey) ne 'q' && ord($keey) != 27){
                    System Stuff:
    ?/H/F1 - Help  :  i - Info  :  x/q/Esc - eXit   ");}else{$simp->Move(0,0);$simp->Prnt("$name - press 'x' to eXit,fBbdrsCc"  );$simp->GetK(4);}}
   RandClrz() if($rand);$d8im = Octology::d8->new();@fldz = split(//, $d8im);@lasf = @fldz unless(@lasf);
-  if($parm eq 'f'){$text[0] = $d8im->expand( ) . ' ';} # used to do `pt $parm` here before there was a d8 object with methodz
-  else            {$text[0] = ' ' x 25 . $d8im . ' ';}
-  if($sbld       ){$bold   ^=  1;$simp->FlagABA7('asin' => $bold);} # SpeedBold flipper
+  if   ($parm eq 'f'){$text[0] =                  $d8im->expand( ) . ' ';} # used to do `pt $parm` here before there was a d8 object with methodz
+  elsif($parm eq '4'){$text[0] = "$d8im   -   " . $d8im->expand( ) . ' ';} # maybe betr l8r 2 nest 4 test in f test so else 4 can stRt wi d8im!spcz
+  else               {$text[0] = ' ' x 25       . $d8im            . ' ';}
+  if   ($sbld       ){$bold   ^=  1;$simp->FlagABA7('asin' => $bold    );} # SpeedBold flipper; 2du:stil need 2 try 2 add test 4 w4mb && way 2 limt
   $simp->ShokScrn(3) if($clea); if($barz){BildBarz();}else{$simp->Draw();} $keey=$simp->GetK($sped);}
