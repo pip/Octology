@@ -49,10 +49,11 @@ our @EXPORT= qw(bfr8c    b8c    d8c    dur8c       a8c   a8colr      h2rl   rl2h
                 bfr8colr b8colr d8colr dur8colr    d8cs @d8cl  chti  c8fn     S2   c2  S c   sS    lodl @Monz @Mon     %mc2F %mc2b %mF2c %mb2c        %sb10
  $SKp8 $SKp0 $SKp1 $SKp2 b8clr  $SKpf $SKpt %pmap %cmap       %pl8n  ftst       %f8fm %f8pm %sgrm %sgrn @Dayz @Day  lrc      comma  curs  sumb @x256  @sb64
     $z    $k    $r    $o    $y    $g     $c $SKpb    $m    $p    $w  tstc    $K    $R    $O    $Y    $G    $C    $B    $M    $P    $W    %p622 %p222   upd8
-         $bk   $br   $bo   $by   $bg    $bc   $bb   $bm   $bp   $bw         $bK   $bR   $bO   $bY   $bG   $bC   $bB   $bM   $bP   $bW
- $tnhf $ucdf  spff  spfd  spfX   shfl  reso $auth %cmsp %p8k2 @p82k  chp8     S2f4 c2f4 dm2u cdst %crgb %cbrt @snls @mrls %cdrd %cdrn    %nrgb         gnp8);
+         $bk   $br   $bo   $by   $bg    $bc   $bb   $bm   $bp   $bw         $hK   $hR   $hO   $hY   $hG   $hC   $hB   $hM   $hP   $hW
+                                                                            $HK   $HR   $HO   $HY   $HG   $HC   $HB   $HM   $HP   $HW
+ $tnhf $ucdf  spff  spfd  spfX   shfl  reso $Auth %cmsp %p8k2 @p82k  chp8     S2f4 c2f4 dm2u cdst %crgb %cbrt @snls @mrls %cdrd %cdrn    %nrgb         gnp8);
  # of 52 posibl sngl-letr var nmz,a8 Xportz 20,$b && $a unavail,so shudB thEs30 lFt4quik shortSt nAmz: 'def hij l n  q stuv x', 'A  DEF HIJ L N  Q STUV X Z';
-our $VERSION='0.0';my  $d8VS='K2GLNght';our $auth='PipStuart <Pip@CPAN.Org>'; # above not exporting $b since collidez with sort{$a  <=> $b};unalloc'd sOlOz^;
+our $VERSION='0.0';my  $d8VS='K35LNice';our $Auth='PipStuart <Pip@CPAN.Org>'; # above not exporting $b since collidez with sort{$a  <=> $b};unalloc'd sOlOz^;
 our $ucdf= eval('use Color::Similarity::RGB qw(distance);1') || 0; # try2set UseColorDistanceFlag if optional module is available; /defhijlnqstuvx/i + /AZ/^;
 our @Monz=qw(January February March   April     May June July   August September October November December);our @Mon=();push(@Mon,substr($_,0,3)) for(@Monz);
 our @Dayz=qw(Sunday  Monday   Tuesday Wednesday Thursday Friday Saturday                                  );our @Day=();push(@Day,substr($_,0,3)) for(@Dayz);
@@ -123,47 +124,50 @@ my @fpsp= split(/\s+/, join(' ',@fvpl));our %pmap=();#FavPalSePar8d||SPlit && Pa
 for(0..63){$pmap{$cmsp{'8pal8'}[$_]} = $fpsp[$_];}
 my $jpms=''; # Joined Pal8 Mapd Strngs
 my %Sdsr=('_' =>'01;30', '^'  => '00', '.' => '22;30', 'H_' =>'90','h.' => '100', # ScapeDigitSequenceReverse lookup
-          'K' =>'01;30', 'bk' => '40', 'k' => '22;30', 'HK' =>'90','hk' => '100',
-          'R' =>'01;31', 'br' => '41', 'r' => '22;31', 'HR' =>'91','hr' => '101',
-          'O' =>'22;33', 'bo' => '43', 'o' => '22;33', 'HO' =>'93','ho' => '103',  'bO' => '43', # extra uppercase Orange background && 22 for Foreground
-          'Y' =>'01;33', 'by' => '43', 'y' => '22;33', 'HY' =>'93','hy' => '103',  'hO' =>'103',
-          'G' =>'01;32', 'bg' => '42', 'g' => '22;32', 'HG' =>'92','hg' => '102',
-          'C' =>'01;36', 'bc' => '46', 'c' => '22;36', 'HC' =>'96','hc' => '106',
-          'B' =>'01;34', 'bb' => '44', 'b' => '22;34', 'HB' =>'94','hb' => '104',
-          'M' =>'01;35', 'bm' => '45', 'm' => '22;35', 'HM' =>'95','hm' => '105',  'hP' =>'105',
-          'P' =>'22;35', 'bp' => '45', 'p' => '22;35', 'HP' =>'95','hp' => '105',  'bP' => '45', # extra upcase Purples
-          'W' =>'01;37', 'bw' => '47', 'w' => '22;37', 'HW' =>'97','hw' => '107');
+          'K' =>'01;30', 'bk' => '40', 'k' => '22;30', 'HK' =>'90','hK' => '100', # sinc rEnAmd /^h[kroygcbmp]$/ 2UprCaseColrXports,thot no longr nEded ...
+          'R' =>'01;31', 'br' => '41', 'r' => '22;31', 'HR' =>'91','hR' => '101', #   ... /^[bh][OP]$/ either but mAB %mc2b warnz Km from /^[ho].$/ !uc()?
+          'O' =>'22;33', 'bo' => '43', 'o' => '22;33', 'HO' =>'93','hO' => '103', #'bO' => '43', # extra uppercase Orange background && 22 for Foreground
+          'Y' =>'01;33', 'by' => '43', 'y' => '22;33', 'HY' =>'93','hY' => '103',
+          'G' =>'01;32', 'bg' => '42', 'g' => '22;32', 'HG' =>'92','hG' => '102',
+          'C' =>'01;36', 'bc' => '46', 'c' => '22;36', 'HC' =>'96','hC' => '106',
+          'B' =>'01;34', 'bb' => '44', 'b' => '22;34', 'HB' =>'94','hB' => '104',
+          'M' =>'01;35', 'bm' => '45', 'm' => '22;35', 'HM' =>'95','hM' => '105',
+          'P' =>'22;35', 'bp' => '45', 'p' => '22;35', 'HP' =>'95','hP' => '105', #'bP' => '45', # extra uppercase Purples
+          'W' =>'01;37', 'bw' => '47', 'w' => '22;37', 'HW' =>'97','hW' => '107'); # try 2 rEmMber map where KW easily => 07 but RoYG CBMp => 1o32 645p
           # remember that SKp2 not handled by c8 && 8trm yet so b8colr && die8 are only printing   boldz
           # should setup 0 to really reset attributez, f0ntz, && everything && prefer just 22     4bold off;
 our %mc2F;our %mc2b;our %mF2c;our %mb2c; # MapC8Col8ColrCodz2ForeBackgrnd && rEverse  # also adding 8trm below restored main lsd8 colors
 if(exists($ENV{'TERM'}) && $ENV{'TERM'} !~ /^(([Ex]|st)(term)?|screen|rxvt|linux|8trm)/){$tnhf=1;} # TermNoHandleFlag (nEd linux hEr 2 4 console colrz)
-our $k;our $K;our $r   ;our $R;our $o;our $O;our $y;our $Y;our $g;our $G; # Fclr shrtcutz to get set, reset, shifted, or randomized in CHangePal8 function
-our $c;our $C;our $SKpb;our $B;our $m;our $M;our $p;our $P;our $w;our $W; # avoid sort $b
-our $bk;our $br;our $bo;our $by;our $bg;our $bc;our $bb;our $bm;our $bp;our $bw;
-our $bK;our $bR;our $bO;our $bY;our $bG;our $bC;our $bB;our $bM;our $bP;our $bW;
+our $k ;our $r ;our $o ;our $y ;our $g ;our $c;our $SKpb;our $m;our $p ;our $w ; # avoid sort's global $b variable with special $SKpb 4 4grnd dRk-blue instead
+our $K ;our $R ;our $O ;our $Y ;our $G ;our $C;our    $B;our $M;our $P ;our $W ; # Fclr shrtcutz to get set,reset,shifted,or randomized in CHangePal8 function
+our $bk;our $br;our $bo;our $by;our $bg;our $bc;our $bb;our $bm;our $bp;our $bw; # bclr shrtcutz (may want 2B careful th@ none of thEse cOlId wi Xistng Usagz)
+our $hK;our $hR;our $hO;our $hY;our $hG;our $hC;our $hB;our $hM;our $hP;our $hW; # now these Xported variablez should perfectly coincide with .zshrc ENV varz
+our $HK;our $HR;our $HO;our $HY;our $HG;our $HC;our $HB;our $HM;our $HP;our $HW; # HigH-intensity shortcutz
 sub chp8{ # should do similar stuff but all may need to use joined layer keyz with 8pal8 key, && accept parameter optionz
   for(0..$#{$cmsp{'8ANSI'}}){my $mlet=$cmsp{'8ANSI'}[$_]; # also now doing H && h very similarly here (had to add 90/100+ map in %Sdsr above)
-                             my $modc=$_ % 16;      $mc2F{'O'.$mlet} =$Sdsr{       $cmsp{'8ANSI'}[$modc]};
-                                              $mF2c{$mc2F{'O'.$mlet}}=      'O'.   $cmsp{'8ANSI'}[$modc] ;
+                             my $modc=$_ % 16;      $mc2F{'O'.$mlet} =$Sdsr{       $cmsp{'8ANSI'}[$modc] };
+                                              $mF2c{$mc2F{'O'.$mlet}}=      'O'.   $cmsp{'8ANSI'}[$modc]  ;
                              my $s220=              $mc2F{'O'.$mlet}; $s220=~ s/22/00/;
-                                              $mF2c{          $s220 }=      'O'.   $cmsp{'8ANSI'}[$modc] ;
-                                $modc=$_ %  8;      $mc2b{'o'.$mlet} =$Sdsr{'b'.   $cmsp{'8ANSI'}[$modc]};
-                                              $mb2c{$mc2b{'o'.$mlet}}=      'o'.   $cmsp{'8ANSI'}[$modc] ;
-                                                    $mc2b{'h'.$mlet} =$Sdsr{'h'.   $cmsp{'8ANSI'}[$modc]};
-                                              $mb2c{$mc2b{'h'.$mlet}}=      'h'.   $cmsp{'8ANSI'}[$modc] ;
+                                              $mF2c{          $s220 }=      'O'.   $cmsp{'8ANSI'}[$modc]  ;
+                                $modc=$_ %  8;      $mc2b{'o'.$mlet} =$Sdsr{'b'.lc($cmsp{'8ANSI'}[$modc])};
+                                              $mb2c{$mc2b{'o'.$mlet}}=      'o'.   $cmsp{'8ANSI'}[$modc]  ;
+                                                    $mc2b{'h'.$mlet} =$Sdsr{'h'.uc($cmsp{'8ANSI'}[$modc])};
+                                              $mb2c{$mc2b{'h'.$mlet}}=      'h'.   $cmsp{'8ANSI'}[$modc]  ;
                                                     $mc2F{'H'.$mlet} =$Sdsr{'H'.uc($cmsp{'8ANSI'}[$modc])}; # since mod 8, need to uppercase for right key
-                                              $mF2c{$mc2F{'H'.$mlet}}=      'H'.   $cmsp{'8ANSI'}[$modc] ;}
+                                              $mF2c{$mc2F{'H'.$mlet}}=      'H'.   $cmsp{'8ANSI'}[$modc]  ;}
   $mc2F{'F^'}=$mc2b{'b^'}='00';$mF2c{'00'}='F^';$mb2c{'00'}='b^'; # add special case caret to access reset 00 like $z or S(':N') but with 2 zeroez
   unless($tnhf){ # check TermCannotHandleFlag  # also adding default Bold F colrz which should have a cfg option l8r
     for(0..$#p82k){$mc2F{$p82k[$_]}='01;38;5;' . spfd($_);$mF2c{$mc2F{$p82k[$_]}}=$p82k[$_];
       my $p8ky=$p82k[$_]; $p8ky=~ s/^([FDAL])//;if($1 eq 'F'){$p8ky= 'b'.$p8ky;}else{$p8ky= lc($1).$p8ky;} # should learn how to use \l in regex to lc() too
                    $mc2b{$p8ky    }=   '48;5;' . spfd($_);$mb2c{$mc2b{$p8ky    }}=$p8ky    ;}}
-  $k=S('k');$K=S('K');$r   =S('r');$R=S('R');$o=S('o');$O=S('O');$y=S('y');$Y=S('Y');$g=S('g');$G=S('G'); #Fclr shrtcutz
-  $c=S('c');$C=S('C');$SKpb=S('b');$B=S('B');$m=S('m');$M=S('M');$p=S('p');$P=S('P');$w=S('w');$W=S('W'); #avoid sort $b
+  $k=S('k');$r=S('r');$o=S('o');$y=S('y');$g=S('g'); $c=S('c');$SKpb=S('b');$m=S('m');$p=S('p');$w=S('w'); # avoid sort $b
+  $K=S('K');$R=S('R');$O=S('O');$Y=S('Y');$G=S('G'); $C=S('C');   $B=S('B');$M=S('M');$P=S('P');$W=S('W'); # Fclr shrtcutz
   $bk=$SKp8.$Sdsr{'bk'}.'m';$br=$SKp8.$Sdsr{'br'}.'m';$bo=$SKp8.$Sdsr{'bo'}.'m';$by=$SKp8.$Sdsr{'by'}.'m';$bg=$SKp8.$Sdsr{'bg'}.'m';
   $bc=$SKp8.$Sdsr{'bc'}.'m';$bb=$SKp8.$Sdsr{'bb'}.'m';$bm=$SKp8.$Sdsr{'bm'}.'m';$bp=$SKp8.$Sdsr{'bp'}.'m';$bw=$SKp8.$Sdsr{'bw'}.'m';
-  $bK=$SKp8.$Sdsr{'hk'}.'m';$bR=$SKp8.$Sdsr{'hr'}.'m';$bO=$SKp8.$Sdsr{'ho'}.'m';$bY=$SKp8.$Sdsr{'hy'}.'m';$bG=$SKp8.$Sdsr{'hg'}.'m';
-  $bC=$SKp8.$Sdsr{'hc'}.'m';$bB=$SKp8.$Sdsr{'hb'}.'m';$bM=$SKp8.$Sdsr{'hm'}.'m';$bP=$SKp8.$Sdsr{'hp'}.'m';$bW=$SKp8.$Sdsr{'hw'}.'m';
+  $hK=$SKp8.$Sdsr{'hK'}.'m';$hR=$SKp8.$Sdsr{'hR'}.'m';$hO=$SKp8.$Sdsr{'hO'}.'m';$hY=$SKp8.$Sdsr{'hY'}.'m';$hG=$SKp8.$Sdsr{'hG'}.'m';
+  $hC=$SKp8.$Sdsr{'hC'}.'m';$hB=$SKp8.$Sdsr{'hB'}.'m';$hM=$SKp8.$Sdsr{'hM'}.'m';$hP=$SKp8.$Sdsr{'hP'}.'m';$hW=$SKp8.$Sdsr{'hW'}.'m';
+  $HK=$SKp8.$Sdsr{'HK'}.'m';$HR=$SKp8.$Sdsr{'HR'}.'m';$HO=$SKp8.$Sdsr{'HO'}.'m';$HY=$SKp8.$Sdsr{'HY'}.'m';$HG=$SKp8.$Sdsr{'HG'}.'m';
+  $HC=$SKp8.$Sdsr{'HC'}.'m';$HB=$SKp8.$Sdsr{'HB'}.'m';$HM=$SKp8.$Sdsr{'HM'}.'m';$HP=$SKp8.$Sdsr{'HP'}.'m';$HW=$SKp8.$Sdsr{'HW'}.'m';
 } # since these all may now have layer prefixes, maybe the hashes can be combined?
 chp8(); # gotta call it to init d8a!
 sub o8{my $Uflg=1;my $Stxt='';$Stxt.=join(' ',@_) if(@_);
@@ -575,7 +579,7 @@ sub S{my $Sstr='';my $codz='';if(@_ && defined($_[0])){$codz= join('',@_);} # mi
 if((!defined($codz) || !length($codz)) && !-t STDIN){chomp($codz= join('',<STDIN>));}
   if(defined($codz) &&  length($codz)){ # problM mAB doing !-t ck twice from bin/S to S()?
     if($codz=~  /^--?h/i){print # need to fix lodH usage of old S && gnp8
-"   S  - produce eScape codes from c8 Fbs     Vers:$VERSION  d8VS:$d8VS  Auth:$auth
+"   S  - produce eScape codes from c8 Fbs     Vers:$VERSION  d8VS:$d8VS  Auth:$Auth
         No more passing ':' colon as placeholder for F or b but instead now colon can be prefixed with desired
         FDALOH bdaloh (&& eventually f f0nt again too) layers, so a single colon with nothing before it should skip expected layers && go str8 to SGR
         attributes like `S :IUC`. If you pass just a '^' caret for Fclr, the reset Normal zero is returned (like ':N', just with two zeroes instead of one).
@@ -602,11 +606,16 @@ if((!defined($codz) || !length($codz)) && !-t STDIN){chomp($codz= join('',<STDIN
        #elsif(/[bdaloh]/ && $sepc[0] !~ /^[-+]$/){say "!*EROR*! No match for layer:$_ with sepc:$sepc[0]! Skipping...";} # detect bg skipz like F: prefix
         elsif(/[f]/      && $sepc[0]=~ /^[0-9A-Z._]$/i  ){$Sl8f = $SKpf . $sepc[0] . $SKpt;} # hopefully don't need to add a -f flag just 2 design8 f0nt layer
         shift(@sepc);}} # should only be 1 or 2 of these since not checking f0nt for now  # might want to save dash skip above for bg -1 versus real 0 blacK
-    my $sndx=0;while($sndx <= $#sepc){
-      if     ($sepc[$sndx] eq 'X' && $#sepc >= $sndx+2        ){$Sstr.= ';' if(length($Sstr));$Sstr.='01;38;5;'. hex($sepc[$sndx+1].$sepc[$sndx+2]); $sndx+=2;}
-      elsif  ($sepc[$sndx] eq 'x' && $#sepc >= $sndx+2        ){$Sstr.= ';' if(length($Sstr));
-        if   ($sepc[$sndx+1] eq 'o'  ||  $sepc[$sndx+2] eq 'o'){                              $Sstr.=   '48;5;015';}
-        else                                                   {                              $Sstr.=   '48;5;'. hex($sepc[$sndx+1].$sepc[$sndx+2]);}$sndx+=2;}
+    my $sndx=0;while($sndx <= $#sepc){ # should have documented why special-case bkgrnd x followed by low-o was coded 2 mk bright-White,so look4it elsewhere!
+      if     ($sepc[$sndx] eq 'X' && $#sepc >= $sndx+2        ){$Sstr.= ';' if(length($Sstr)); # need to check to make sure 2 charz following X or x are HEX?
+        if   ($sepc[$sndx+1] =~ /^[0-9A-F]$/i && $sepc[$sndx+2] =~ /^[0-9A-F]$/i            ){$Sstr.='01;38;5;'.hex($sepc[$sndx+1].$sepc[$sndx+2]);$sndx+=2;}
+        elsif($sepc[$sndx+1] =~ /^[0-9A-F]$/i                                               ){$Sstr.='01;38;5;'.hex($sepc[$sndx+1]               );$sndx+=1;}}
+      elsif  ($sepc[$sndx] eq 'x' && $#sepc >= $sndx+2        ){$Sstr.= ';' if(length($Sstr)); # not sure why special-case 4 low-o aftr bg x set bright-White?
+        if   ($sepc[$sndx+1]                                    =~ /^o$/i                   ){$Sstr.=   '48;5;015';                                $sndx+=1;}
+        elsif(                                   $sepc[$sndx+2] =~ /^o$/i                   ){$Sstr.=   '48;5;015';                                $sndx+=2;}
+        elsif($sepc[$sndx+1] =~ /^[0-9A-F]$/i && $sepc[$sndx+2] =~ /^[0-9A-F]$/i            ){$Sstr.=   '48;5;'.hex($sepc[$sndx+1].$sepc[$sndx+2]);$sndx+=2;}
+        elsif($sepc[$sndx+1] =~ /^[0-9A-F]$/i                                               ){$Sstr.=   '48;5;'.hex($sepc[$sndx+1]               );$sndx+=1;}}
+       #else ## from .zshrc wh8() func calling `S roxtm` warned Illegal hex digit t,cud warn?{$Sstr.="$z!" .$sepc[$sndx+1].$sepc[$sndx+2] . "!hX!";         }
       elsif  (exists(        $sgrm{$sepc[   $sndx]})){ # mk Bold codez overide Xisting st8 of Fclr,or prepend new,&& append all othrz (until grup ordrz)
         if   ($sepc[$sndx] eq 'b'){if($Sstr=~ /(^|;) 0? 1  (;|$)/x){$Sstr=~ s/(^|;) 0? 1  (;|$)/${1}22$2/x;}else{$Sstr=~ s/^/22/;}} # had \d ;$1 but no m@ch
         elsif($sepc[$sndx] eq 'B'){if($Sstr=~ /(^|;)(0*|22)(;|$)/ ){$Sstr=~ s/(^|;)(0*|22)(;|$)/${1}01$3/ ;}else{$Sstr=~ s/^(\d)/01;$1/;}} # uprcase Bold on
@@ -617,7 +626,7 @@ if((!defined($codz) || !length($codz)) && !-t STDIN){chomp($codz= join('',<STDIN
   } return($Sstr);}
 sub c{my $Sstr=shift;if(!defined($Sstr) && !-t STDIN){chomp($Sstr= join('',<STDIN>));} my $codz='';my $codF='';my $codb='';my $lyrz='';
   if(defined($Sstr) && $Sstr=~  /^--?h/i){print # need to bild SGR grupz so that Dflt retn is ordrd consistently with max 1 (last) field per grup 4both S&&c
-"   c  - produce c8 Fbs codes from escapes    Vers:$VERSION  d8VS:$d8VS  Auth:$auth
+"   c  - produce c8 Fbs codes from escapes    Vers:$VERSION  d8VS:$d8VS  Auth:$Auth
         You can pass in most standard escaped color or attribute SelectGraphicRendition codes and this will transl8 it into Fbs format.
         `S` should be the inverse function. Please see `S -h` for details on the few special case c8 characters ':' colon && '^' carat.
   -h  - print this Help text and exit;";return('');}
@@ -671,7 +680,7 @@ sub sgrl{my $colm=shift(@_);my $sgrc=shift(@_); #   making %aclc global for this
                 !length ($aclc{$_}[$colm])){$aclc{$_}[$colm]=$sgrc;last;}}}
 sub S2{ # convert almost any eScaped text string into new col8 format   (totally in-progress); will need locl singl b256 to support big ndxz wiot DpNdNC on b8;
   my     $prmz= join(' ',@_) || '';my $Stxt='';my $ctxt='';my $tstn=-1; # non -help parameter can get d8a piped in
-  if    ($prmz=~ s/(^|\s)-?-?h(elp|\s|$)//i ){return(qq[ S2 - convert eScaped string into col8 format  d8VS:$d8VS Auth:$auth;
+  if    ($prmz=~ s/(^|\s)-?-?h(elp|\s|$)//i ){return(qq[ S2 - convert eScaped string into col8 format  d8VS:$d8VS Auth:$Auth;
  h  - print this Help text and exit
  t# - dump test text according to gener8ion templ8 number (or zero if none given);]);
   }elsif($prmz=~ s/(^|\s)-?-?t(    \d* )//ix){$tstn=$2;$tstn=0 unless(defined($tstn) && $tstn=~ /^-?\d+$/);
@@ -761,7 +770,7 @@ sub S2{ # convert almost any eScaped text string into new col8 format   (totally
   return($ctxt);} #   similRly nstd of xclu just have 3 new dflt 8pal8 layrz 4 each of F && b or gNer8 custom layrz by frequency of use;
 sub c2{ # convert col8 format into escaped text
   my     $prmz= join(' ',@_) || '';my $Stxt='';my $ctxt='';my $tstn=-1; # non -help parameter can get d8a piped in
-  if    ($prmz=~ s/(^|\s)-?-?h(elp|\s|$)//i ){return(qq( c2 - convert col8 format into eScaped string  d8VS:$d8VS Auth:$auth;
+  if    ($prmz=~ s/(^|\s)-?-?h(elp|\s|$)//i ){return(qq( c2 - convert col8 format into eScaped string  d8VS:$d8VS Auth:$Auth;
  h  - print this Help text and exit
  t# - dump test text according to gener8ion templ8 number;));
   }elsif($prmz=~ s/(^|\s)-?-?t(    \d* )//ix){$tstn=$2;$tstn=0 unless(defined($tstn) && $tstn=~ /^-?\d+$/);
@@ -836,13 +845,14 @@ sub c2f4{my $text=shift;my $Fclr=shift;my $bclr=shift;my $f0nt=shift;my $Stxt; #
         $Stxt.=c2Sl(      $text ,$Fclr,$bclr,$f0nt);}}} # break down multi-line blockz into sepR8d linez && hand-off to Col82eScapedLine() helper for the work
   else{ $Stxt =c2Sl(chomp($text),$Fclr,$bclr,$f0nt);} return($Stxt);} # hndl pRamz without trailng nwln,unlIk mor typical pIpng thru (why dif thO?)
 sub sS{      my $Stxt=shift;my $sefz=shift; # eScape TeXT, SubstituteEscapeFlagZ  # 2du:sepR8 out lAyrz && mAB add categoriez of CSI cOdez that Dserv IsOl8ion
-  if  ( defined($Stxt) && $Stxt=~ /^-*[hCFbsXxfpEedzc]+$/){ # I forget what c8 layerz of SKpz n && m were eventually supposed to be for IsOl8ing?
-    if( defined($sefz) && $sefz=~  /[^-hCFbsXxfpEedzc]/  ){($Stxt,$sefz)=($sefz,$Stxt);} # subroutine was originally named subS() for SUBstitute eScapes
-    elsif(                !-t STDIN                      ){ $sefz=$Stxt;  $Stxt= undef;}}
-  if  (!defined($Stxt) && !-t STDIN                      ){decode('UTF-8',$Stxt= join('',<STDIN>));}
+  if  ( defined($Stxt) && $Stxt=~ /^[-hCFbsXxfpEedzc]+$/){ # I forget what c8 layerz of SKpz n && m were eventually supposed to be for IsOl8ing?
+    if( defined($sefz) &&  length($sefz)                ){($Stxt,$sefz)=($sefz,$Stxt);} # subroutine was originally named subS() for SUBstitute eScapes
+    elsif(                !-t STDIN                     ){ $sefz=$Stxt;  $Stxt= undef;}}
+  if  (!defined($Stxt) && !-t STDIN                     ){               $Stxt= join('',<STDIN>);}
+  if  ( defined($Stxt) &&  length($Stxt)                ){decode('UTF-8',$Stxt);}
   if( (!defined($sefz) && defined($Stxt) && $Stxt=~  /^-?-?h(elp)?/i) || (defined($sefz) && $sefz=~  /h/i)){my $htxt=
 "  sS   - Substitute eScape codes (or commas)   Vers:$VERSION  d8VS:$d8VS
-   Auth: $auth  Xmpl:`ls --color=always -A ~| sS`; should add -S SGR Selection
+   Auth: $Auth  Xmpl:`ls --color=always -A ~| sS`; should add -S SGR Selection
   ...Strip 4 combined attributes like -SIiUu 4 any Italic/Underline on/off out;
     C  - strip all codes beginning with CSI            (like 'FbsXx')
   [Fbs]- strip Foreground, Background, Select graphic rendition codes
@@ -855,9 +865,11 @@ sub sS{      my $Stxt=shift;my $sefz=shift; # eScape TeXT, SubstituteEscapeFlagZ
     d  - strip surrounding code, leaving just Digits and semicolons
     z  - wrap codes in Zshell prompt delimiters         '%{' and '%}'
     c  - strip Commas   (unrel8d to eScapes but here for convenience)
-    h  - print this Help text and exit.            Default is 'Cfp'.";$htxt.="\n" if(exists($ENV{'COLUMNS'}) && $ENV{'COLUMNS'} <= 80);
+    h  - print this Help text and exit.            Default is 'Cfp'.
+   Note: if you pass in double-dash '--' as 1st param, 2nd is Stext;";$htxt.="\n" if(exists($ENV{'COLUMNS'}) && $ENV{'COLUMNS'} <= 80);
     $Stxt=~ s/^-?-?h(elp)?\s*/$htxt/i;}
-  elsif(defined($Stxt) && length($Stxt)){my $Sein=0;$Sein=1 if($Stxt=~ /\n$/);$sefz='Cfp' unless(defined($sefz));$sefz=~ s/[^hCFbsXxfpEedzc]//g; #SEndzInNwln?
+  elsif(defined($Stxt) && length($Stxt)){my $Sein=0;$Sein=1 if($Stxt=~ /\n$/);$sefz=undef if($sefz eq '--'); # detect double-dash param same as no paramz
+    $sefz='Cfp' unless(defined($sefz));$sefz=~ s/[^hCFbsXxfpEedzc]//g; #SEndzInNwln?
     if($sefz=~  /C/  ){$Stxt=~ s/ \e \[ [\d;]*         [A-MPSTXZm]//gx  ;} # CSI codes should all fit this pattern && get stripped
     if($sefz=~ /[FbsXx]/){my @Sttd= split(/\n/,$Stxt);for my $lndx(0..$#Sttd){my $tlin=$Sttd[$lndx];my $blin='';
         while($tlin=~ s/^(.*?)\e\[([\d;]+)m//){$blin.=$1 if(defined($1));my $digz=$2;
@@ -926,7 +938,7 @@ sub   d8cs   {my $dccs = ''; # d8 ColrSet (or ColrSequence), d8 ColrCodeString
   elsif        ($_[0] =~ /\e/      ){@d8cl =       @_ ;}    # assume othr pRamz are already Xpanded list of SKpd colrz 2 rEplAce Dflt (if 1st has SKp)
   $dccs='';     $dccs .= c($_)   for(@d8cl);return($dccs);} # reconstruct ColrCodeString from l8st ColrList (which still must contain SKpz for usage)
 sub shfl{ # takes an arrayref or list of items to shuffle, or pipe thru by lines unless either @data size just 1 then try to split scalar string, shfl, join
-  my $htxt=" shfl - SHuFfLe lines or string crE8d by $auth to provide my own code to behave like standard 'shuf' cmnd does (but on single scalar too);
+  my $htxt=" shfl - SHuFfLe lines or string crE8d by $Auth to provide my own code to behave like standard 'shuf' cmnd does (but on single scalar too);
   2du:tidy up all Help text, option handling, && code formatting, consider slipping all this functionality into a new upd8d version of s8 to replace 'sort';
    h  - print this Help text && exit               ;  gO thru list&&add similR styl hLp tXt&&pRamz 2 evry Utl,wrkon upd8ng craPSt&&oldSt Utlz2Ball worthwIl,
    r  - ReveRse the input d8a list (but no shuffle);    consistNt,EficiNt,doQmNted,&&hOpfuly dMonstr8ive in some wA. Also du -r on solo scalar reversal too;
@@ -941,7 +953,7 @@ sub shfl{ # takes an arrayref or list of items to shuffle, or pipe thru by lines
     for(my $indx = ($size-1);$indx;$indx--){my $rand=int(rand($indx+1));($aref->[$indx],$aref->[$rand])=($aref->[$rand],$aref->[$indx]) if($rand != $indx);}}}
   if($aflg){return($aref);}elsif($sflg && $#data){return(join('',@data));}else{return(join("\n",@data));}} # add optz lIk -help && @lEast `m shuf` manUal tXt
 sub sumb{  my $widt=0;$widt=1 if(exists($ENV{'COLUMNS'}) && $ENV{'COLUMNS'} >= 158); # suport norml or doubl wId outpt (wi just widthOK flag4now, nstd of valu)
-  my $htxt='';for(@_){        if(/^-?-?h/){$htxt=" sumb - SUMmarizing Binaries crE8d by $auth to colorfully describe my top 96 (or so) executable ~/bin/ files;
+  my $htxt='';for(@_){        if(/^-?-?h/){$htxt=" sumb - SUMmarizing Binaries crE8d by $Auth to colorfully describe my top 96 (or so) executable ~/bin/ files;
    An asterisk '*' after the group name means the file returns at least some form of useful text for parameter -h for help.
   2du:add typz&&cOdz2 .Hrc 4l8r rEcfg,fix widt2BconsistNtly colmz nstd of flag,split this hLp tXt2fit if 80 widt,mk nw optz4anyothrUsefl grupz,sortz,or hIlItz,
    h  - print this Help text && exit               ;  gO thru list&&add similR styl hLp tXt&&pRamz 2 evry Utl,wrkon upd8ng craPSt&&oldSt Utlz2Ball worthwIl,
@@ -1427,6 +1439,7 @@ sub a8c    {my $self=shift;return unless(defined($self) && exists($self->{'Hftd'
 # bd= 01;33;01;40 : BLK                     BLocK     device driver
 # cd= 01;33;01;40 : CHR                     CHaRacter device driver         #*.2du=01;33:*..#add0thRlsfyLtypz,symlnx..
 sub lrc{ # G8SM73VD:lrc crE8d by PipStuart <Pip@CPAN.Org> to gener8 ~/.lsrc from .lrc as well as notify user of any upd8z from recent`dircolors -p`;
+  # 2du:add reading of /etc/mime.types && /usr/share/mime/types to gNr8ion && take new -v Verbose to print out d8a for unfound && colliding extension;
   my $srcf="$ENV{'HOME'}/.lrc" ;my $sxxc;my $sxxp;my $ckpf=1; # Section xx (c8 OverDraw) Color && Previous, ChecK dircolors -P Flag
                                                      $ckpf=0 if(@_ && $_[0]=~ /^[-sprh]+$/ && $_[0]=~ /p/); # also accept paramz  for`dircolors -p`&&help tXt2
   my $dstf="$ENV{'HOME'}/.lsrc";($srcf,$dstf)=($dstf,$srcf)  if(@_ && $_[0]=~ /^[-sprh]+$/ && $_[0]=~ /s/); #   && Swap default .lrc=>.lsrc for .lsrc=>.lrc
@@ -1439,7 +1452,7 @@ sub lrc{ # G8SM73VD:lrc crE8d by PipStuart <Pip@CPAN.Org> to gener8 ~/.lsrc from
   if(@_ && $_[0]=~ /^[-sprh]+$/ && $_[0]=~ /h/){
     print $out8 # in case any Unicode added l8r
 "  lrc - gener8 ~/.lsrc from ~/.lrc       Vers:$VERSION  d8VS:$d8VS
-  Auth: $auth
+  Auth: $Auth
    p  - do *not* check temporary dircolors -p output for recent upd8s
    r  - gener8 Random bright colors for every file type and extension
    s  - Swap order of gener8ion  (.lsrc=>.lrc *not* implemented yet!)
@@ -1468,7 +1481,7 @@ sub lrc{ # G8SM73VD:lrc crE8d by PipStuart <Pip@CPAN.Org> to gener8 ~/.lsrc from
                                substr($srcd[$srcl],26,16,sprintf("%-16s",$ccod));}}
     $srcd[$srcl]=~ s/\s+$/\n/;print $dsth $srcd[$srcl];} close $dsth || die $!;
   if($ckpf){ # default is to check if drc -p has been upd8d with new extension entries (but this doesn't yet match against TERM or file type lines)
-    system('dircolors -p > /tmp/dc-p.lrc'); # these should all maybe use $ENV{'TMP'} ||TEMP||TMPPREFIX for which directory to write to (if any of them exist)
+    system('dircolors -p > /tmp/dc-p.lrc'); # these should all maybe use $ENV{'TMP'} ||TEMP||TMPDIR||TMPPREFIX 4 which dir to write to (if any of them exist)
     if    (           -r  '/tmp/dc-p.lrc'){ # try just basic hashz2match respectiv NtrEz AgNst Blow
       open my $dcph,  '<','/tmp/dc-p.lrc' || die $!;binmode $dcph,':encoding(UTF-8)';my @dcpd=<$dcph>;close $dcph || die $!;my %sdee;my %ddee;
       unlink(             '/tmp/dc-p.lrc'); # tidy up /tmp
@@ -1556,7 +1569,7 @@ sub c8fn{  my $fnam;my $aflg=0;$aflg=1 if(@_);my $zflg=0;if($aflg && $_[0] =~ /^
                                                       $rtxt =~ s/(\e\]4;\d+;#[0-9A-Fa-f]{6}(\a|\e\\))/%{$1%}/g;}
   close $sin8 or die "Can't close duplic8 STDIN  handle: $!";return($rtxt);} # should probably enable c8fn to loop on multiple parameters to process together?
 sub chti{ my $ptxt=shift;my $whti=0;my $ttxt;my %wlut=('b'=>0,'i'=>1,'w'=>2); # CHangeTItle;  ParameterTeXT, WHichTItle, TitleTeXT, WhichLookUpTable;
-  if(defined($ptxt) && $ptxt=~ /^-+h(elp)?$/){say " chti  - CHange TItle of terminal window       Vers:$VERSION  d8VS:$d8VS by Auth:$auth
+  if(defined($ptxt) && $ptxt=~ /^-+h(elp)?$/){say " chti  - CHange TItle of terminal window       Vers:$VERSION  d8VS:$d8VS by Auth:$Auth
   Usage: chti <NewTitleText> [TargetOption]     (this utility should generally be equivalent to calling 'wmctrl -r :ACTIVE: -T NewTitleText')
   Changes the current title to NewTitleText. If all title text parameters are followed by a single TargetOption, they are handled as:
     -i  changes title  of just Icon
@@ -1588,7 +1601,7 @@ sub curs{ # console cursor changing utility learned from HTTP://TLDP.Org (seems 
   my   $csiz = shift || 0; my $ctms = shift || 0; my $csms = shift || 0; my $name='curs';
   if(  $csiz){ # 2du:ch IF to resemble pal8 colr spec
     if($csiz =~ /^-*h/i){ # help
-      say " $name  - modify the console CURSor  Vers:$VERSION  d8VS:$d8VS by Auth:$auth
+      say " $name  - modify the console CURSor  Vers:$VERSION  d8VS:$d8VS by Auth:$Auth
   Usage: $name <NewCursorValue1Shape> <NewValue2Toggle> <Value3Set>
   Change the console cursor by providing one to three decimal bytes for size, set-mask, and change-mask respectively. They could also be joined bitwise
     in reverse order and provided as a single b64 number. Negative sizes select pre-defined sets. *Note* Highlights are ignored for the last two flags.
@@ -1644,7 +1657,7 @@ sub dm2u{my $flnm=shift||'h';my $rslt=shift||'u';my $oopt=shift||'';my $coun=1;m
   ($flnm,$oopt)=($oopt,$flnm) if(-e $oopt); #   Empty or 'u' 2nd param does default Unix format.
   if($rslt=~/^-*s$/i){$coun=2;$rslt=$oopt}  # Note: No intermediate file is used so you need enough RAM to store the whole file in a scalar.
   if($oopt=~/^-*s$/i){$coun=2            }  #   Expect problems if your file doesn't fit in RAM easily.
-  if($flnm=~/^-*h(elp)?$/i||$rslt=~/^-*h(elp)?$/i){say " dm2u  - convert Dos and Mac newlines to Unix  Vers:$VERSION  d8VS:$d8VS by Auth:$auth
+  if($flnm=~/^-*h(elp)?$/i||$rslt=~/^-*h(elp)?$/i){say " dm2u  - convert Dos and Mac newlines to Unix  Vers:$VERSION  d8VS:$d8VS by Auth:$Auth
   Usage: dm2u [LineOptions] <FileName>
   Convert newlines to       different  formats: ASCII   HEX b16  dec b10   ocT b8    with LineOptions:
     -u    newlines in FileName to UNIX format  (   LF)   (  A)   (   10)   (   12)  LineFeed (default)
@@ -1707,7 +1720,7 @@ sub ftst{ # 37MK06SK:ftst Utl2run thruPerlzFileTeSTz on its parameter Filename
   if($file =~  /^-?-?h(elp)?$/ && !-e $file){$hlpf=1;$file='';}
   unless(length($file)){$file='.';
     $file="$ENV{'HOME'}" if(exists($ENV{'HOME'}));$file.="/.Hrc";}
-  if($hlpf){say $out8 " ftst  - loop through Perl dash-Flag File TeSTs on parameter Filename  Vers:$VERSION  d8VS:$d8VS by Auth:$auth
+  if($hlpf){say $out8 " ftst  - loop through Perl dash-Flag File TeSTs on parameter Filename  Vers:$VERSION  d8VS:$d8VS by Auth:$Auth
          Note that -T in Perl 5.24 is a heuristic guess whether it is an ASCII or UTF-8 Text file, which is useful beyond MicroSoft Windows environments;
   -h   - print this Help text; If no filename parameter is given, \$_ then the default Octology \$HOME/.Hrc d8a file is tested;
          Also prints Perl regex && string backslash eScape codes in one 160x48 page to keep similar reference maps together.
@@ -2004,7 +2017,7 @@ sub spfX{my $frmt='%02X'   ;if(@_ && defined($_[0]) && $_[0]=~ /%/){$frmt= shift
 sub cdst{ # Color DiSTance (derived from pm2x);pre-init what's necSary as new Xportz,but thN try2only load up nEded structurez that wil really B used in here
   my $nonr=0;my $frmf=0;my $hexf=0;my $nocf=0;my $nodf=0;my $snrf=0;my $xhri=0; # hndl flgz lIk specify rsltz -sIz or -colors.txt name2add2 %crgb && %cbrt 1st
   while  (@_ && $_[0]=~ /^--?(\S+)$/){my $flag=$1;if($flag=~ /^h(elp)?$/i){return( # run through some basic directions on parameters && expected behavior
-" cdst - ColorDiSTance d8a gener8or  d8VS:$d8VS  Auth:$auth;
+" cdst - ColorDiSTance d8a gener8or  d8VS:$d8VS  Auth:$Auth;
         after any flags, pass in an integer parameter between 0..255 for just within x256 for now or use -X to give any 24-bit HEXadecimal rgb code instead;
   -h  - print this Help text and return; should add ways to moder8 toward increasingly useful results; actually without -N \@snls resets indices to 0..255;
   -N  - NoNR  No iNdexes Reset (to leave for external management of limiting range to test against and removing new best selections);
@@ -2858,15 +2871,15 @@ or uncompress the package and run the standard:
 =head1 LICENSE
 
 Most source code should be Free! Code I have lawful authority over is and shall be!
-Copyright: (c) 2014-2016, Pip Stuart.
-Copyleft :  This software is licensed under the GNU General Public License
-  (version 3 or later). Please consult L<HTTP://GNU.Org/licenses/gpl-3.0.txt>
-  for important information about your freedom. This is Free Software: you
+CopyRight: (c) 2014-2020, Pip Stuart.
+CopyLeft : This software is licensed under the GNU General Public License
+  (version 3 or l8r). Please consult L<HTTPS://GNU.Org/licenses/gpl-3.0.txt>
+  for important inform8ion about your freedom. This is Free Software: you
   are free to change and redistribute it. There is NO WARRANTY, to the
-  extent permitted by law. See L<HTTP://FSF.Org> for further information.
+  extent permitted by law. See L<HTTPS://FSF.Org> for further inform8ion.
 
 =head1 AUTHOR
 
-Pip Stuart <Pip@CPAN.Org>
+PipStuart <Pip@CPAN.Org>
 
 =cut

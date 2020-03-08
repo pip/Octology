@@ -30,36 +30,44 @@ unsetopt                \
 # auto_pushd            \# setng addz dirz 2 stack wN just normally chngng 2 thM (wich I du not normally lIk or want)
 # ksh_arrays            \# rEmMbr wNwrItng scrptz[or funcz]2include'setopt [localoptions] ksharrays'sO arAzR 0-bAsed(but!glOblBcuzmOst scrptzRstndrdly 1-bAsed)
 # re_____match_____pcre \# mA want2set for Z-SHell scripting RegularExpressions to utilize PerlCompatibility styles && mA insert 'zmodload zsh/(pc)?re(gex)?';
-export vers='0.0';export d8VS='K2NL1wax';export auth='PipStuart <Pip@CPAN.Org>'; # not Xportng $b sinc cOlIdz wi sort{$a <=> $b} /defhijlnqstuvx/i + AZ 4golf;
+export Vers='0.0';export d8VS='K37L3TMP';export Auth='PipStuart <Pip@CPAN.Org>'; # not Xportng $b sinc cOlIdz wi sort{$a <=> $b} /defhijlnqstuvx/i + AZ 4golf;
 if     [[       "$SHELL"    == "" ]]; then       export SHELL=`  which zsh`;fi # 8sh should parse this && OverId it    # shud `man zshall` /OSTYP 2lern4BlO
 if     [[       "$HOSTNAME" == "" ]]; then       export HOSTNAME=`hostname`;fi #`hostname`retnz fsckd nwlInz\n4CygWinzRxvt... ||smthng els lame  =(
-if     [[       "$HOST"     == "" ]]; then       export HOST="$HOSTNAME"   ;fi;export VERBOSE='1'; # set flag to print debug && status info from system utilz
+if     [[       "$HOST"     == "" ]]; then       export HOST   ="$HOSTNAME";fi;export VERBOSE='1'; # set flag to print debug && status info from system utilz
 export     HHst="$HOST";alias lc="tr 'A-Z' 'a-z'";alias uc="tr 'a-z' 'A-Z'"; # || mayb atMpt2dup $var thru: $(echo $var|tr 'A-Z' 'a-z') | "[:(upp|low)er:]"
-export     HUsr="$USER";export HEdt=`which vim` ;export HWid="$COLUMNS";export HOSy="$OS"; # zsh's lc() 4varz2 m//i "${(L)HOSTNAME}"acordng2:
-export     HShl='zsh'  ;export HPgr=`which most`;export HHit="$LINES";  export HOTy="$OSTYPE";export H3WF="0"; #HTTP://WWW.CS.Elte.Hu/zsh-manual/zsh_6.html
+export     HUsr="$USER";export HPgr=`which most`;export HWid="$COLUMNS";export HOSy="$OS"; # zsh's lc() 4varz2 m//i "${(L)HOSTNAME}"acordng2:
+export     HShl="$SHELL";export HEdt=`which vim`;export HHit="$LINES";  export HOTy="$OSTYPE";export H3WF="0"; #HTTP://WWW.CS.Elte.Hu/zsh-manual/zsh_6.html
 export  COLUMNS="$COLUMNS";export LINES="$LINES";export ROWS="$LINES"; # zsh setz thEse lOcally but must Xport thM 4 Perl scriptz 2 access
-# Used2 if [[ "${(L)HHst}" == ax9* ]]; then export HHst='Ax9'; elif ... 2abbreV8&&capitalIz myhOst&&UzrnAmz fromold dvl&&work machinz especially4CygWindoze;
+# Used2 if [[ "${(L)HHst}" == ax9*]]; then export HHst='Ax9'; elif ... 2abbreV8&&capitalIz myhOst&&UzrnAmz fromold dvl&&work machinz especially4CygWindoze;
 # XDG (Xorg baseDirzGuide)4:GTK2,Compiz,Uzbl,Arora,Audacious,TrollTech,etc. from: HTTP://Standards.FreeDesktop.Org/basedir-spec/basedir-spec-latest.html
-export XConfHom="$HOME/.config";     export XConfDrz="/etc/xdg";                   export XDG_CONFIG_HOME="$XConfHom";export XDG_CONFIG_DIRS="$XConfDrz";
+export XConfHom="$HOME/.config";     export XConfDrz="/etc/xdg";alias mkt='mktemp';export XDG_CONFIG_HOME="$XConfHom";export XDG_CONFIG_DIRS="$XConfDrz";
 export XDataHom="$HOME/.local/share";export XDataDrz="/usr/local/share:/usr/share";export   XDG_DATA_HOME="$XDataHom";export   XDG_DATA_DIRS="$XDataDrz";
-export XCachHom="$HOME/.cache";      export XSESSION='Gnome';                      export  XDG_CACHE_HOME="$XCachHom";export XDG_MENU_PREFIX='gnome-';
+export XCachHom="$HOME/.cache";      export XSESSION='Gnome'   ;                   export  XDG_CACHE_HOME="$XCachHom";export XDG_MENU_PREFIX='gnome-';
 export SNAP_USER_DATA="$XDG_DATA_HOME/snap"; # J54MISNA:HTTPS://Bugs.LaunchPad.Net/ubuntu/+source/snapd/+bug/1575053 HTTPS://AskUbuntu.Com/questions/882562 ;
+# BlO  TMP from HTTPS://StackOverFlow.Com/questions/2435062/what-happened-to-the-tmp-environment-variable (mAB add -d -t 2 mktemp call aftr rEding man pgz?);
+export TMP="${TMP:-$(dirname  $(mkt -u))}/"; # OvrIdDflt /tmp wi ~/.tmp if the latter Xistz, thN Xport othr 3 common ENV varz which mIt B Used 2 design8 TMP;
+if     [[  -d   "$HOME/.tmp"      ]]; then       export TMP="$HOME/.tmp/"  ;fi;export TEMP="$TMP";export TMPDIR="$TMP";export TMPPREFIX="$TMP";
 export bk="\e[40m"   ;export br="\e[41m"   ;export bo="\e[43m"   ;export by="\e[43m"   ;export bg="\e[42m"   ; # set shell col8 colr escape codez akin to a8.pm
 export bc="\e[46m"   ;export bb="\e[44m"   ;export bm="\e[45m"   ;export bp="\e[45m"   ;export bw="\e[47m"   ; # first add bkgr colrz, then shorter fgrndclrz
 export  k="\e[22;30m";export  r="\e[22;31m";export  o="\e[22;33m";export  y="\e[22;33m";export  g="\e[22;32m"; # set shell col8 colr escape codez akin to a8.pm
 export  c="\e[22;36m";export  b="\e[22;34m";export  m="\e[22;35m";export  p="\e[22;35m";export  w="\e[22;37m";export SKpb="$b"; # like a8.pm altern8 cmp $b
 export  K="\e[01;30m";export  R="\e[01;31m";export  O="\e[22;33m";export  Y="\e[01;33m";export  G="\e[01;32m";export    z="\e[00m"; # like a8 $SKp0 . 'm'
 export  C="\e[01;36m";export  B="\e[01;34m";export  M="\e[01;35m";export  P="\e[22;35m";export  W="\e[01;37m"; # these then should become able to use in Uk etc
-export hk="\e[100m"  ;export hr="\e[101m"  ;export ho="\e[103m"  ;export hy="\e[103m"  ;export hg="\e[102m"  ; # also setup High-intensity varE8ionz, which
-export hc="\e[106m"  ;export hb="\e[104m"  ;export hm="\e[105m"  ;export hp="\e[105m"  ;export hw="\e[107m"  ; #   a8.pm doesn't even include to export yet
+export hK="\e[100m"  ;export hR="\e[101m"  ;export hO="\e[103m"  ;export hY="\e[103m"  ;export hG="\e[102m"  ; # also setup High-intensity varE8ionz, which
+export hC="\e[106m"  ;export hB="\e[104m"  ;export hM="\e[105m"  ;export hP="\e[105m"  ;export hW="\e[107m"  ; #   a8.pm doesn't even include to export yet
 export HK="\e[90m"   ;export HR="\e[91m"   ;export HO="\e[93m"   ;export HY="\e[93m"   ;export HG="\e[92m"   ; # '_'=>'01;30'  '^'=>'00'
-export HC="\e[96m"   ;export HB="\e[94m"   ;export HM="\e[95m"   ;export HP="\e[95m"   ;export HW="\e[97m"   ; # '.'=>'22;30'
-# HCSL8BCz:note that all these new minimal variable names for color-codes have a good chance of colliding in minimal shell-script usages defined l8r below;
-alias    clrz='echo -en "$z hk:$hk#$z; hr:$hr#$z; ho:$ho#$z; hy:$hy#$z; hg:$hg#$z; hc:$hc#$z; hb:$hb#$z; hm:$hm#$z; hp:$hp#$z; hw:$hw#$z; z:#; z lIk a8 ^;
+export HC="\e[96m"   ;export HB="\e[94m"   ;export HM="\e[95m"   ;export HP="\e[95m"   ;export HW="\e[97m"   ; # '.'=>'22;30' cnsidr adng $f[0-9A-Za-z._] f0ntz
+# HCSL8BCz:nOte th@ all thEse new minimal var nAmz 4 color-codes have a good chance of collIding in minimal shL-script Usagez DfInd l8r BlO, sO B careful;
+if     [[ "$HWid"         -lt 160 ]]; then # print tSt set 4 bSt mAjor colr-cOdz 2 suport && try 2 fit at least pretty well within 80 or 160-wId termz 2 stRt;
+     alias clrz='ee  "${z}nOt:b alsO DfInd2B SKpb 2m@ch glObal sort perl var in a8.pm;
+ hK:$hK#$z; hR:$hR#$z; hO:$hO#$z; hY:$hY#$z; hG:$hG#$z; hC:$hC#$z; hB:$hB#$z; hM:$hM#$z; hP:$hP#$z; hW:$hW#$z;
  bk:$bk#$z; br:$br#$z; bo:$bo#$z; by:$by#$z; bg:$bg#$z; bc:$bc#$z; bb:$bb#$z; bm:$bm#$z; bp:$bp#$z; bw:$bw#$z;
   k:$k#$z;  r:$r#$z;  o:$o#$z;  y:$y#$z;  g:$g#$z;  c:$c#$z;  b:$b#$z;  m:$m#$z;  p:$p#$z;  w:$w#$z;
   K:$K#$z;  R:$R#$z;  O:$O#$z;  Y:$Y#$z;  G:$G#$z;  C:$C#$z;  B:$B#$z;  M:$M#$z;  P:$P#$z;  W:$W#$z;
- HK:$HK#$z; HR:$HR#$z; HO:$HO#$z; HY:$HY#$z; HG:$HG#$z; HC:$HC#$z; HB:$HB#$z; HM:$HM#$z; HP:$HP#$z; HW:$HW#$z;"'; # prnt tStset4 bSt mAjr colrcOdz2suport
+ HK:$HK#$z; HR:$HR#$z; HO:$HO#$z; HY:$HY#$z; HG:$HG#$z; HC:$HC#$z; HB:$HB#$z; HM:$HM#$z; HP:$HP#$z; HW:$HW#$z;"';
+else alias clrz='een "${z}nOt:b alsO DfInd2B SKpb 2m@ch glObal sort perl var in a8.pm;    k:$k#$z;  r:$r#$z;  o:$o#$z;  y:$y#$z;  g:$g#$z;  c:$c#$z;  b:$b#$z;  m:$m#$z;  p:$p#$z;  w:$w#$z;
+ bk:$bk#$z; br:$br#$z; bo:$bo#$z; by:$by#$z; bg:$bg#$z; bc:$bc#$z; bb:$bb#$z; bm:$bm#$z; bp:$bp#$z; bw:$bw#$z;    K:$K#$z;  R:$R#$z;  O:$O#$z;  Y:$Y#$z;  G:$G#$z;  C:$C#$z;  B:$B#$z;  M:$M#$z;  P:$P#$z;  W:$W#$z;
+ hK:$hK#$z; hR:$hR#$z; hO:$hO#$z; hY:$hY#$z; hG:$hG#$z; hC:$hC#$z; hB:$hB#$z; hM:$hM#$z; hP:$hP#$z; hW:$hW#$z;   HK:$HK#$z; HR:$HR#$z; HO:$HO#$z; HY:$HY#$z; HG:$HG#$z; HC:$HC#$z; HB:$HB#$z; HM:$HM#$z; HP:$HP#$z; HW:$HW#$z;"'; fi;
 # 99RJGN8g:from old gN2 root@Ryu`em xinit`:IfUUse`startx`nstd ofa login mngr like gdm/kdm,Ucan set XSESSION 2anythng in /etc/X11/Sessions/ or any executable.
 #   wNU`startx`,itwilrunthis astheloginsession.Ucan set this ina filein /etc/env.d 4NtIrsys,orsetit perUser in ~/.bash_profile (or similR4othr shLz). Xamplof
 #   setng4wholsys:`echo XSESSION="Gnome" > /etc/env.d/90xsession; env-update && source /etc/profile`; EBJLAkY8:AkuUbu14.10 nolongrhas thOsdirz sOprolyunUsed;
@@ -96,10 +104,7 @@ alias slts='syc list-unit-files --type=service';alias jc='jctl'; # readd from `d
 alias sysc='  systemctl';alias syc='sysc  '; # systemd control:`syc list-unit-files --type=service|gi (en|dis)able|mask|static`,`syc stop|disable|mask|status`
 alias  cdc='coredumpctl';alias cdr='cdc -r'; # seg-fault core-dumps, with useful params -r Reverse, -S $DATE Since YYYY-MM-DD date, --no-pager 4 just STDOUT;
 alias  cds='cdc -S';alias cdS='cds';alias cdsK='cds 2020-01-01'; # shortcuts for doing --since=$DATE && cdsK does since `d8 K11` for everything Year 2020 on;
-# consider replacing below with exportz like a8 fully escaped color variablez so that shell scriptz can echo them similarly (and add $f[0-9A-Za-z._] f0ntz too)
-#echo -e "$k   k $r   r $o   o $y   y $g   g $c   c $b   b $m   m $p   p $w   w"  # used to have c8[fb]g.2ae map here but unnecessary
-#echo -e "$bk bk $br br $bo bo $by by $bg bg $bc bc $bb bb $bm bm $bp bp $bw bw"
-#echo -e "$K   K $R   R $O   O $Y   Y $G   G $C   C $B   B $M   M $P   P $W   W"  # when wanting to view %ENV in zsh, $IFS NUL requires `set | grep -a`
+alias   dn='drnm  ';alias drnm='dirname   '; # to view %ENV in zsh, $IFS NUL requires `set | grep -a` 2 procS bInary as-if --text or `printenv | grep TMP`?;
                                                  export TZ='America/Chicago'; # .. which is the same as my /etc/timezone file && maybe CDT -5 at D8FCQgn;
 #xport DST='0'; watch=(notme);                  #export TZ='CST';     # DaylightSavingsTime?;                            | Coordinated Universal Time (UTC|GMT)
 #f   [[ "${(L)HOTy}" ==         cygwin* ]]; then export TZ='PST'; fi; # United States of America / Los Angeles (PST|PDT) | Coordinated Universal Time (UTC|GMT)
@@ -198,7 +203,7 @@ else                                   eval $($dircolors -b            ); fi #  
          LS_COLORS="$LS_COLORS*desktop-metadata=01;31:*search-metadata=01;33:";                                                   #~/.config/nautilus
          LS_COLORS="$LS_COLORS*hooks_seen=01;35:";                                                                                #~/.config/update-notifier
          LS_COLORS="$LS_COLORS*_migration-ubuntu=01;35:*.converted-launchers=01;33:*-data-convert=00;33:";                        #~/.local/share
-         LS_COLORS="$LS_COLORS*_migration-ubuntu-wayland=01;31:*_migration-unity=01;36:";                                         #~/.local/share
+         LS_COLORS="$LS_COLORS*_migration-ubuntu-wayland=01;31:*_migration-unity=01;36:*-lock=00;33:";                            #~/.local/share&&/tmp gdm fIl
          LS_COLORS="$LS_COLORS*-default-sink=01;33:*-default-source=01;36:*-initial-setup-done=00;31:";                           #~/.pulse && ~/.config/gnom*
          LS_COLORS="*config=01;33:*config~=00;31:*known_hosts=01;31:*history=01;35:$LS_COLORS"; # prEpNdng thEse2!clobr l8r .XtNz #~/.(mplayer|schism|ssh|w3m)
          LS_COLORS="*Metadata=00;31:$LS_COLORS";                                                                                  #~/.cpan (binary file?)
@@ -340,12 +345,12 @@ alias lads='la -d  .*|sS';alias lad='lads';alias ls8='ec "Stuv, rXU.: Size time 
 # Note: While it may fit nicely for now to setup ls8 as a Sort-set echo print before calling my standard: lsd8, might prefer l8r to make ls8 normal widezetc.;
 # for some reason, old ea='e a' could shell out2`bak` from ~/dvl/Utl/.bak/ but can't create .bak/ EROR from ~/.arc/Aku_-arc-full-Ubu10.04-D1KD1KD/var/log/apt/
 # mAB stRting ./ as root owned  (even if not that restrictive 755 permissions) can't find way to ~/ from there? Wrap p[uo] makes sense 2rElEtRgetfromNEwher
-ea(){ if [[ `dirs` != '~' ]]; then pushd ~; fi;e a; # try to quell warning "popd: directory stack empty" && not found pu or po
-      if [[ `dirs` != '~' ]]; then popd   ; fi}     # Orig: alias ea='pu ~;e a;po';
+ea(){ if [[ `dirs` != '~' ]]; then pushd ~; fi;e a; # try to quell warning "popd: directory stack empty" && not found pu or po;  # loc8r BlO calls wi --Regex
+      if [[ `dirs` != '~' ]]; then popd   ; fi}     # Orig: alias ea='pu ~;e a;po';  # loc8r is in findutils-default 4m@ th@ is lIk emacs but . m@chz newline
 alias e='      e    $TTY';alias up='        upd8  ';alias e2='pu ~/dox/2du;e 2;po';alias e3='e 3     ';alias upd8-mime-d8bs='md8';alias larv='laff; ripv';
 alias e4='     e    4   ';alias e5='     e 5      ';alias e6='             e 6   ';alias e7='e 7     ';alias   e8='pu ~/dox/2du;e 8;po';alias e9='e 9';
-alias bak='    bak  $TTY';alias   ept='  echo `pt`';alias upd8-mdb=' md8       ';alias upd8-md8b='md8';alias update-mime-db='md8';alias lar8='larv; updb';
-alias ud='     updb     ';alias    loc8='   locate';alias mdb-upd8=' md8       ';alias md8b-upd8='md8';alias mime-db-update='md8';alias mdb8='  mdb-upd8';
+alias bak='    bak  $TTY';alias loc8r='loc8 -r    ';alias upd8-mdb=' md8       ';alias upd8-md8b='md8';alias update-mime-db='md8';alias lar8='larv; updb';
+alias ud='     updb     ';alias loc8='      locate';alias mdb-upd8=' md8       ';alias md8b-upd8='md8';alias mime-db-update='md8';alias mdb8='  mdb-upd8';
 alias updb='   upd8db   ';alias upd8d8ab='  upd8db';alias   updtdb='updb       ';alias md8b='mdb-upd8';alias md8='update-mime-database -V';alias xi='xinput';
 alias rc8=' rc-upd8     ';alias rc-upd8='rc-update';alias etc-upd8='etc-update ';alias etc8='etc-upd8';alias env8='env-upd8';alias  env-upd8='env-update';
 alias pl8=' pl-upd8     ';alias pl-upd8='plcl     ';alias plcl='pl-clnr     all';alias pl8c='pl8     ';alias pl8l='pl8     '; #had tib="$HOME/gfx/dvl/art/tib";
@@ -664,14 +669,16 @@ alias    shll=' source-highlight --lang-list'; # just setup src-hili 4 Languages
 alias   srchl=' source-highlight -f esc --style-file=~/.shl.style'; # hopefully EvN2ally c8 can supplant shl for file && cmd auto-reformatting && color8ion
 alias    shlp=' srchl -s perl -i';alias shlc=' srchl -s conf   -i'; # assume source code is Perl or Conf && expect next param 2B Input source-code filename
 alias     shl=' s               '; # above srchl changes from default HTML output format to ANSI escape codes && set component field color style
-#lias       s=' shlp'; # assume Perl since an upd8 to source-highlight seems to no longer auto-detect when input files are such code
+#lias       s=' shlp'; # assume Perl since an upd8 to source-highlight seems to no longer correctly auto-detect when input files are such code
+# Sun 02 Jun 2019 02:50:13 PM UTC, comment #6: Fixed. Tom Tromey <tromey> Project Administrator; K37L1shl:edited from HTTPS://Savannah.GNU.Org/bugs/?45299
+# Tue 22 Aug 2017 04:47:33 PM UTC, comment #5: Problem in zsh.lang. The keyword clause ends with trailing vertical bar. Remove && it will work. Anonymous;
 s(){  ifil="$1";synl='';if [[ "$#" -gt 1 && "$2" != "" && -e "$2" ]]; then synl="$1";ifil="$2" ; elif [[ "$#" -lt 1 ]]; then ifil="$HOME/bin/8ct";
   elif   [[ -e "$1" ]]; then # BlO 2 stRt adng elif tStz 4 XtNsion nAmz (mAB wi $(E) something too?) 4 autOpik lang; srchl --lang-list|g $XtNs;
     if   [[ ${(L)1} =~ \.sh$ ]]; then synl='bash'; elif [[ ${(L)1} =~ \.html$ ]]; then synl='htm'; elif [[ ${(L)1} =~ \.cfg$ ]]; then synl='conf';
     elif [[ ${(L)1} =~ \.py$ ]]; then synl='py'  ; elif [[ ${(L)1} =~  \.xml$ ]]; then synl='xml'; elif [[ ${(L)1} =~ \.cnf$ ]]; then synl='conf';
-    elif [[ `cat "$1"|head -n 1|grep -l '^#!.*zsh' ` != "" ]]; then synl='bash'; # tryd2Dtect Zsh script #! line to set syntax language,but zsh.lang hangz
+    elif [[ `cat "$1"|head -n 1|grep -l '^#!.*zsh' ` != "" ]]; then synl='bash'; # tryd2Dtect Zsh script #! line to set syntax language,but zsh.lang hangz =(
     elif [[ `cat "$1"|head -n 1|grep -l '^#!.*perl'` != "" ]]; then synl='perl'; fi; fi;  # multi -i B4 othr pRam ls? used2question that at very end;
-  if     [[ "$synl" !=    "" ]]; then ec " source-highlight -f esc --style-file=~/.shl.style -s $synl -i $ifil;"; srchl -s $synl -i $ifil;
+  if     [[ "$synl" !=    "" ]]; then ec " source-highlight -f esc --style-file=~/.shl.style -s $synl -i $ifil;"; srchl -s $synl -i $ifil; # 2du:tStallsynlz;
   else                                ec " source-highlight -f esc --style-file=~/.shl.style          -i $ifil;"; srchl          -i $ifil; fi; }
 alias      S8='   shl8'; # my primitive c8:SourceHighLight8 Utl to hopefully eventually approach functional parity with source-highlight before surpassing it
 alias     sho='cd ~/gfx/sho;shot -u'; # change to typical local Octology screenshot directory && take a shot of the focUsed window (no border) in 3 seconds
@@ -702,7 +709,8 @@ alias     lvh='lvp -D 1920x1080';alias lv="lvh $lVSx"; # oinksie... lv-tool: mal
 alias     p47='parsec47';alias a7='a7xpg'; # some of my favorite Kenta Cho Shmups ("Bullet-Hell") in /usr/games;  ## munmap_chunk(): invalid ptrstilcordumpdx;
 alias      rr='rrootage';alias tt='torus-trooper';alias tf='tumiki-fighters'; # would be gr8 to study BulletML && explor own similRly themed varE8ions someday
 alias      xb='xboard';alias xbsf='xb -fcp stockfish -fUCI'; # gr8 Chess program wi shortcut to top StockFish engine as FirstChessProgram (&& -scp 2ndChesProg)
-alias    rune='mv ~/gmz/Rune/Jagex ~;S Kb;cat ~/gmz/Rune/RS.pw;ee "$z";runescape-launcher;mv ~/Jagex ~/gmz/Rune/';alias RS='rune'; # K2HLIMMO:signedup4frEacct;
+alias    rune='pu ~/gmz/Rune;mv Jagex ~;S Kb;cat RS.pw;S ^;rs3-launcher/rs3-launcher;mv ~/Jagex .;po';alias RS='rune'; # K2HLIMMO:signdup4frE acct2plARSwiKyle;
+alias    Rune=' rune ';alias RuneScape='rune'; # hopefully setting up the RuneScape.Com aliasez I'm most likely to remember && want to use l8r 2 call launcher;
 alias    kpcl=' kpcli      --kdb=~/.kp/pswd.kdb --histfile=/dev/null --no-recycle'; # 2!stor any hist or entry changes in /Backup or "/Recycle Bin" old dfalts
 alias    kp='  pu  ~/.kp;    kpc --kdb=pswd.kdb --histfile=/dev/null --no-recycle;chm 600 pswd.kdb;b pswd.kdb;po';  # alias2 kpcli-3.0 modwimor aliasz&&alInmNt
 k8(){        KDBF='pswd';if [[ "$#" -gt 0 && "$1" != "" ]]; then KDBF=".$1"; fi; # if [[ $B64N =~ ^([a-zA-Z]w) ]]; then BNWH=${BNWH:s/  e    / e }; fi; # Xmpl
@@ -750,8 +758,9 @@ alias    U2bm='U2b  -o "%(title)s-tItL-%(uploader)s-uldr-%(extractor)s-Xtrc-%(id
 #done # instead of doing pingb below (or just pb), could run this for loop without needing to open systemz to DDoS thru configur8ion for broadcast response
 alias psag='ps  aux | grp     ';alias pingb='ping  192.168.8.255 -b'; #   ...or lern2Use`nmap -sP 192.168.8.1/24`nstd? or`arp-scan -l --interface=(eth|wlan)0`
 alias psgi='psag          -i  ';alias psagi='psgi                  '; # add another pair of aliases for Ignoring-case with the Grep on Process-Snapshots aux;
+# 2du:maybe redefine psag as function instead of just alias since secondary expansion on parameter which is also an alias is annoying && potential disaster;
 alias idmg='identify          ';alias idmv=' idmg     -verbose     '; # ImageMagick IDentify IMaGe utl && verbose probably needs | $PAGER
-alias ckya='w3m Mail.Yahoo.Com';alias gnuya='gnuyahoo -u=piptigger '; # Ubu brwsrz not in Dflt repoz: Opera Vivaldi (mAB some othrz listed below);
+#lias ckya='w3m Mail.Yahoo.Com';alias gnuya='gnuyahoo -u=piptigger '; # !UsngYahoo!NEmor; Ubu brwsrz !inDflt rEpOz:Opera Vivaldi (mAB some othrz listed BlO);
 #lias cktm='w3m HTTP://Time.Gov'; # need to enable JavaScript in w3m for redirect to /HTML5/ to work so maybe just use FireFox or Chrome
 # 2du:ckot "QuteBrowser" non-plugin but minimal && fast Vim design, then Saka && WasaVi && Vimium for Chrom(e|ium) should offer small Vi emul8or in TextArea;
 alias cu='  curl              ';alias cus='  cu       -s           ';alias cs='  cus'; # setup Silent Collectn ofURLz wich mItBpIpd2 STDIN Lswer or rEdIrctd;
@@ -1127,7 +1136,7 @@ alias   gt5='gt4;
         gtss;wmc -r :ACTIVE: -T othr               '; # so far, it's too bad that Othr background dark green looks just black with l8st Sony TV settingz
 alias rs=' resize'; # also able to pass '-s $rowz $colz' to set term dimNsionz,sO mAB cnvrt this alias in2 function wi pRam optnz l8r Dtectng ${W}x$H 4m@z too
 alias rsN='noglob eval `resize -s 57 171`';alias rsn='  rsN'; # N for 171-wide (for calN to show 19-Years slightly lRgr than Dflt 160x50 standRd Used Lswhere)
-alias rsZ='noglob eval `resize -s 75 240`';alias rs240='rsZ'; # zdflt 160-wide (not sure how necessary noglob, eval, or backtix are, but they make cmnd quiet)
+alias rsZ='noglob eval `resize -s 67 240`';alias rs240='rsZ'; # Zdflt 240-wide (wich is what full-screen 1080p consoles fit && some small font term sizes too)
 alias rsz='noglob eval `resize -s 50 160`';alias rs160='rsz'; # zdflt 160-wide (not sure how necessary noglob, eval, or backtix are, but they make cmnd quiet)
 alias rs8='noglob eval `resize -s 25  80`';alias rs80=' rs8'; # 8 for  80-wide (might want to make these only 24 high, like Default Gnome-Terminal profile)
 alias rs4='noglob eval `resize -s 12  40`';alias rs40=' rs4'; # 4 for  40 && also 2 for 20 as good halvingz 2l8r suport4low-reso nEdz (thO int(25/2)= just 12)
@@ -1320,9 +1329,9 @@ tStc() { # tSt 8pal8 colrz (this is a very slow precursor to ~/bin/tstc since ma
   # 2du:contMpl8 adng au, agr, && ee ene around en;
 wh8()   {  LP_F='0'; # same as wh8ch BlO but wi 8rows flipd2 8columns,othrwIz very similR (mAwant2add pRamz2du mor than just disabl colr,sinc sS duzfIn)
   # 2du:contMpl8 adng au, agr, && ee ene around en;
-  if       [[ "$#" -gt   0 && "${(L)1}" =~  h  ]]; then echo -n " wh8 - show WHich primary single b64 && other valued commands by:$auth vers:$vers d8VS:$d8VS;
+  if       [[ "$#" -gt   0 && "${(L)1}" =~  h  ]]; then echo -n " wh8 - show WHich primary single b64 && other valued commands by:$Auth Vers:$Vers d8VS:$d8VS;
   h  - print out this basic Help text message then return; Any parameter other than h right now just strips colors && SGR attributes out;";return 0;fi
-  for B64N in 0 8 G O W e m u   1 9 H P X f n v   2 A I Q Y g o w   3 B J R Z h p x   4 C K S a i q y   5 D L T b j r z   6 E M U c k s '.'   7 F N V d l t '_'   mk sz pu po pdoc ka pe  pa pla plb pab ag  drkh gg dv ac acs apts  auu aar ai dirz ic  s8 d2u u2d del copy move attrib  s8n grp asci utf8 u8 CC CCC cls  eg zg hX k9 pp lS mo md rd  dm ct chm cho chg chr chs chf cht  mnt umnt bk c8 zc d8 fp  fixfont g8 gaa gcm gac  gacm gpom caln l8 sl calq calQ cln  cl comma hd dif loc8 dic zp ud  updb upd8db up updt uptm ec en  uni cncl tl tp wd pw pn pb msg  ren wh lsm lsc lsp lsu xical S8  srchl shlp shl sho  p47 a7 rr tt tf gtt viii  lc chv0  uc chv7  ss  wmc resp ctor scrn sx gt  xt st uxtrm uxt lxt  lxtrm satrm sak tn8r  xf4t rox Etrm  x4t rxt Et un ev pl  xbk xb xbsf  kp   xdt s2 s28 sb sd si  au agr; do
+  for B64N in 0 8 G O W e m u   1 9 H P X f n v   2 A I Q Y g o w   3 B J R Z h p x   4 C K S a i q y   5 D L T b j r z   6 E M U c k s '.'   7 F N V d l t '_'   mk sz pu po pdoc ka pe  pa pla plb pab ag  drkh gg dv ac acs apts  auu aar ai dirz ic  s8 d2u u2d del copy move attrib  s8n grp asci utf8 u8 CC CCC cls  eg zg hX k9 pp lS mo md rd  dm ct chm cho chg chr chs chf cht  mnt umnt bk c8 zc d8 fp  fixfont g8 gaa gcm gac  gacm gpom caln l8 sl calq calQ cln  cl comma hd dif loc8 dic zp ud  updb up updt uptm ec en  uni cncl tl tp wd pw pn pb msg  ren wh lsm lsc lsp lsu xical S8  srchl shlp shl sho  p47 a7 rr tt tf gtt viii  lc chv0  uc chv7 ss wmc resp ctor scrn sx gt xt st uxtrm uxt lxt lxtrm sakra sak tmn8r xf4tm rox Etrm x4t roxtm Et un ev pl xbk xb xbsf kp xdt s2 s28 sb sd si au agr;do
  # crmm='chromium-browser  ';alias crom=' google-chrome         ';alias epip='epiphany';alias aror='arora';alias dilo='dillo';alias lnx2='links2';
  # brav='brave';brvb='brave';alias brv='brave';alias bb='brvb';alias irc='irssi'; # prEferprv8bb&&ffmornow
  # 2lo=' perl -e "rename(\$_,lc) for @ARGV"'; # orig fIlnAm lOwrcAsng 1-lInr was ~/bin/tolo thN as 2lo but mAB zsh func can't stRt wi '2'? Alias workz tho!
@@ -1340,17 +1349,24 @@ wh8()   {  LP_F='0'; # same as wh8ch BlO but wi 8rows flipd2 8columns,othrwIz ve
     BNWH=${BNWH:s/ shell built-in command \'/ shel biltin cmd}    ;BNWH=${BNWH:s/ not found\'/: !not found! cmd};BNWH=${BNWH:s/srchl    -i/srchl -i};
     BNWH=${BNWH:s/\'ls      /\'ls} ;BNWH=${BNWH:s/  --geometry=160x50   \&/ --geometry=160x50 \&};
     BNWH=${BNWH:s/uxterm     -geometry 160x50   \&/uxterm -geometry 160x50 \&}  ;BNWH=${BNWH:s/git  ad/git ad}  ;BNWH=${BNWH:s/gaa; gcm/gaa;gcm};
-    if     [[ "$COLUMNS" -lt 160    ]]; then  # brkngdn nwlnz from funcz mA lose nEded';'semiz,so leave actual nwlnz insIdof var asInmNt regX subst optnz&&alIn
-      if   [[ $B64N =~ ^v8$         ]]; then BNWH=${BNWH:  s/elif/elif
-};    elif [[ $B64N =~ ^ss$         ]]; then BNWH=${BNWH:  s/    then/ then
-};    fi;fi # below left-to-right order of or 80-column limits then and with not wide then back to or for main dflt 160-colm limits
-    if     [[ $B64N =~ ^([SXqwc]|[cdfg]8|hd|dic|mutt)$ ]]; then BNWH=${BNWH:gs/ /};BNWH="$B64N= ${BNWH:gs/\'/}";fi # subst to just chop end space?
+    if     [[ $B64N == "A"          ]]; then BNWH="A:alias2'asci    '"; elif   [[ $B64N == "b"          ]]; then BNWH='b () {bak $TTY $@}';
+    elif   [[ $B64N == "R"          ]]; then BNWH="R:als2'rd ~/.ele*'"; elif   [[ $B64N == "d"          ]]; then BNWH='d () {dic      $@}';
+    elif   [[ $B64N == "a"          ]]; then BNWH="a:als2' asciiview'"; elif   [[ $B64N == "m"          ]]; then BNWH='m () {man      $@}';
+    elif   [[ $B64N == "s"          ]]; then BNWH='s ()*{src-hili $@}'; # asterisks signify that actually more is going on under the hood for these funcz
+    elif   [[ $B64N == "u"          ]]; then BNWH='u () {upd8     $@}'; elif   [[ $B64N == "ct"         ]]; then BNWH='ct() {chti     $@}';
+    elif   [[ $B64N == "v"          ]]; then BNWH='v () {  v8     $@}'; elif   [[ $B64N == "ss"         ]]; then BNWH='ss()*{ssh      $@}';
+    elif   [[ $B64N == "sx"         ]]; then BNWH='sx()*{scrn  -x $@}'; elif   [[ $B64N == "wh"         ]]; then BNWH='wh() {which    $@}';
+    elif   [[ $B64N == "un"         ]]; then BNWH='un()*{uname -a $@}'; elif   [[ $B64N == "utf8"       ]]; then BNWH='utf8 () {UTF8  $@}';
+    elif   [[ $B64N == "gg"         ]]; then BNWH='gg() {perl ~/dvl/d8/bin/gg $@}';
+    elif   [[ $B64N == "attrib"     ]]; then BNWH="attrib:alias2'en \"4Get MS-DOS. Use chmod!\"'"; fi;
+    # below left-to-right order of or 80-column limits then and with not wide then back to or for main dflt 160-colm limits
+    if     [[ $B64N =~ ^([3LSXqwc]|[cdfg]8|hd|dic|mutt)$ ]]; then BNWH=${BNWH:gs/ /};BNWH="$B64N= ${BNWH:gs/\'/}";fi # subst to just chop end space?
     if     [[ $LP_F =~ ^[0]$        ]]; then printf "%-18s" $BNWH; else echo -n $BNWH;fi # mAB try2!pad up past top64
     echo -n `S W`';'; # tried2add /bin/ matchz wi $ end but syntax && escaping must be somewhat unconventional, probably nEd2rEd&&stuD mor PCRE dox
-    if     [[ $B64N =~                                ^(pb|zg|wd|lsm|lsu|srchl|shl|resp|ctor|tt|lc|uc|wmc)$ ]] ||
-           [[ $B64N =~ ^[OPQRSTUV]$ ]] || [[ $B64N =~ ^(pu|pla|plb|drkh|auu|del|mo|chm|chg|ct|caln|dif|loc8)$ ]] &&
-           [[ "$COLUMNS" -lt 160    ]] || [[ $B64N =~ ^(pe|apts|ag|ic|attrib|cls|rd|cht|fp|gac|cln|ud|en|msg|sho|viii|[Sv]8|ss)$ ]] ||
-           [[ $B64N =~ ^[uvwxyz._]$ ]] || [[ $B64N =~ ^(gt|lxt|tn8r|Etrm|pl|kp|agr|chv7|xbsf)$ ]]; then echo $z;fi;done}
+    if     [[ $B64N =~ ^(pb|zg|wd|lsm|lsu|srchl|shl|resp|ctor|tt|lc|uc|wmc|pp|c8|fixfont|gaa|up|uptm|rr|sx|xbk|sb)$ ]] ||
+           [[ $B64N =~ ^[OPQRSTUV]$ ]] || [[ $B64N =~ ^(pu|ka|dv|ai|asci|CC|pla|plb|drkh|auu|del|mo|chm|chg|ct|caln|dif|loc8)$ ]] &&
+           [[ "$COLUMNS" -lt 160    ]] || [[ $B64N =~ ^(pe|apts|ag|ic|attrib|cls|rd|cht|fp|gac|cln|ud|uni|ren|sho|viii|[Sv]8)$ ]] ||
+           [[ $B64N =~ ^[uvwxyz._]$ ]] || [[ $B64N =~ ^(gt|xt|st|lxt|lxtrm|rox|sak|tmn8r|Etrm|ev|kp|agr|xbsf|resp)$ ]]; then echo $z;fi;done}
 wh8ch() { # see which most basic 64 single-character commands are mapped to what (majority being aliases, then just a few built-in or not yet found commands)
   for B64N in 0 1 2 3 4 5 6 7  8 9 A B C D E F  G H I J K L M N  O P Q R S T U V  W X Y Z a b c d  e f g h i j k l  m n o p q r s t  u v w x y z '.' '_'; do
     if     [[ "$#" -eq   0          ]]; then echo -n `S $B64N`; # BlO set to dark wHITE for invisibly dark BLACk b64 number to color (leave bLUE 4now)
@@ -1358,7 +1374,12 @@ wh8ch() { # see which most basic 64 single-character commands are mapped to what
     BNWH=${BNWH:s/ aliased to /alias2\'} ;BNWH=${BNWH:s/      e   / e} ;BNWH=${BNWH:s/ whereis/whereis}; # cud :gs// 4glbl or ${BNWH//litrl/subst} 4nonwIldcRd
     BNWH=${BNWH:s/\'lsd8 \'/\' lsd8   \'};BNWH=${BNWH:s/tiny \'/tiny\'};BNWH=${BNWH:s/ls  -F \'/  ls -F \'};BNWH=${BNWH:s/\'Et \'/\'   Et   \'}; # alIn quOtz
     BNWH=${BNWH:s/ shell built-in command \'/shel biltin cmd}          ;BNWH=${BNWH:s/ not found \'/ cmd not found}; # mA want2add Xtra colrz4thEs?
-    if     [[ $B64N =~   ^[SXcqw_]$ ]]; then BNWH="$B64N= ${BNWH:gs/ \'/}";fi;printf "%-18s" $BNWH;echo -n `S W`';'; # biltin printf
+    if     [[ $B64N == "A"          ]]; then BNWH="A:alias2'asci    '"; elif   [[ $B64N == "b"          ]]; then BNWH='b () {bak $TTY $@}';
+    elif   [[ $B64N == "R"          ]]; then BNWH="R:als2'rd ~/.ele*'"; elif   [[ $B64N == "d"          ]]; then BNWH='d () {dic      $@}';
+    elif   [[ $B64N == "a"          ]]; then BNWH="a:als2' asciiview'"; elif   [[ $B64N == "m"          ]]; then BNWH='m () {man      $@}';
+    elif   [[ $B64N == "s"          ]]; then BNWH='s ()*{src-hili $@}'; # asterisk means there's a lot more to it than just this little sample string here
+    elif   [[ $B64N == "u"          ]]; then BNWH='u () {upd8     $@}'; elif   [[ $B64N == "v"          ]]; then BNWH='v () {  v8     $@}'; fi;
+    if     [[ $B64N =~ ^[3LSXcqw_]$ ]]; then BNWH="$B64N= ${BNWH:gs/ \'/}";fi;printf "%-18s" $BNWH;echo -n `S W`';'; # biltin printf
     if     [[ $B64N =~ ^[3BJRZhpx]$ ]] && [[ "$COLUMNS" -lt 160 ]] || # addXtra nwlnz 4orig 80colm mOd,fitz 64 mapz on 16lInz in 80x18 nIcely wrapd in prmptz
            [[ $B64N =~ ^[7FNVdlt_]$ ]]; then echo;fi;done} # !sureYsomtImz`wh`rEcursvlyXpndz alias pRamz whIl biltin`which`duznot
 goo() { w3m "HTTP://Google.Com/search?q=$1+$2+$3+$4+$5+$6+$7+$8"     ; } # should probably pass $@ =~ s/ /+/g; or something smarter than this
@@ -1671,7 +1692,7 @@ zstyle ':completion:*'                     group-name        ''
 zstyle ':completion:*'                           menu        select=4 # mIt want 2?
 zstyle ':completion:*'                   squeeze-slashes     true
 zstyle ':completion:*'                       max-errors      1 numeric
-#eval  "$(dircolors -b)" # this haz alredE Bn handld abov
+#eval  "$(dircolors -b)" # this has already been handled above near to top of file for loading ~/.lsrc then customizing $LS_COLORS gr8ly for non-dot XtNsionz;
 zstyle ':completion:*:default'              list-colors      ${(s.:.)LS_COLORS}
 zstyle ':completion:*'                      list-colors      ''
 zstyle ':completion:*'                      list-prompt      %SAt %p: Hit TAB for more, or the character to insert%s
@@ -1688,3 +1709,4 @@ zstyle ':compinstall'                            filename    '/home/pip/.zshrc'
 autoload -U                                      promptinit; promptinit;
 autoload -U                                        compinit;   compinit;
                                                    compdef  _man w3mman;
+# K37L1Zsh:research installing HTTPS://GitHub.Com/zsh-users/zsh-syntax-highlighting which seems to have been a pkg B4 (in `acs`) but is no longer in Ubu19.10;

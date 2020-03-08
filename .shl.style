@@ -1,5 +1,7 @@
-// E89M3pQc:~/.shl.style crE8d by PipStuart <Pip@CPAN.Org> as a source-highlight shl style file meant to mimic my familiar vim syntax highlighting colors;
-// This file is adapted mainly from /usr/share/source-highlight/(default|esc).style files && gets close to vim except for sub names, regexes, && filehandles;
+// E89M3pQc:~/.shl.style crE8d by:  PipStuart <Pip@CPAN.Org> as a source-highlight shl style file meant to mimic my familiar vim syntax highlighting colors;
+// This file is adapted mainly from /usr/share/source-highlight/(default|esc).style files && gets close to vim except for sub names, regexes,&& filehandles;
+// 2du:run `loc8r 'source-highlight/.*\.style$'` && autom8 inclusion of all fields defined in those that aren't yet in here && format terse output of diffz;
+// Vers='0.0';d8VS='K37L3HiL';Auth='PipStuart <Pip@CPAN.Org>'; // also should popul8 ~/.Hrc shl section with any upd8s made here 1st so new a8::sgN rEgNr8z;
 //color         "white"         ; // the background color for documents
 bgcolor          black          ; // the background color for documents
 context          gray           ; // the color for context lines (when specified with line ranges)

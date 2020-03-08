@@ -3,23 +3,26 @@
 # 2du:check @ARGV for non-default flags,multiple directories,&& shell glob
 #   parameters which should alter output in consistent && useful ways,
 #   piping to c8 nicely redoes columns && colors R pretty wL popUl8d ther2,
-#   but stil nEdng wA2 look back at `ls` parameters used here somehow;
+#   but stil nEdng wA2 look back at `ls` parameters used here somehow,
+#   mAB wrap $t0 in b8c 2 colr t0tlz mor lIk lsd8 doez,doQmNt -a(djust)better;
 use strict;use warnings;use utf8;use v5.10; # DfltParm,T0tl,Lz,LineTxt,TxtLeng
 use Octology::b8;my $dp=' --color=always ';my $t0;my @lz;my $lt;my $tl;
 use Octology::d8;my $cw=160;$cw=$ENV{'COLUMNS'} if exists($ENV{'COLUMNS'});
-open my $out8,'>&',STDOUT or die "Can't open  duplic8 STDOUT handle: $!";
-binmode $out8,':encoding(UTF-8)'; # crE8 local duplic8 of global
-my  @ldat=`ls -Cv -w $cw $dp @ARGV`;my $az="@ARGV";my $pt=0; # PrevT0tl
-if($az=~ /(^|\s)-+(h)/i){$_='p';print $out8
-  " $0 - help text only -h(elp) && -a(djust?nsi?ll?4gotN);";exit();}
-for(@ldat){if(/^total\s+(\d+)/){$t0=b64($1);s/^total\s+(\d+)K?/t0:${t0}K/ix;}
-  if($az!~ /(^|\s)-+(a)/i && /\s\s+/){@lz=split(/\s\s+/,$_);$lt='';
-    for my $le (@lz){$tl=0;
-      while($le=~ s/^(\e\[[0-9;]*m|.)//){$tl++ if(length($1)==1);$lt.=$1;}
-      $lt.=' ' ;$lt=~ s/\t/ /g; # both were 2 \s spaces $lt.= && s/\t/  /g;
-      $lt.=' ' x (5-$tl) if($tl < 5);}
-    $_=$lt if(length($lt));s/\s+$/\n/;}
-  if  (/^(\S+:)\s*$/){     s/\s+$//  ;$pt=1;}
-  else{$_= (' ' x 4) . $_  if(!$pt)  ;$pt=0;}
-  print $out8 $_ if /\S/;}
-close   $out8             or die "Can't close duplic8 STDOUT handle: $!";
+my $VERSION='0.0';my $d8VS='K35LJUST';my $auth='PipStuart <Pip@CPAN.Org>';
+open my   $out8,'>&',STDOUT or die "Can't open  duplic8 STDOUT handle: $!";
+binmode   $out8,':encoding(UTF-8)'; # crE8 local duplic8 of global handle
+my   @ldat=`ls -Cv -w $cw $dp @ARGV`;my $az="@ARGV";my $pt=0; # PrevT0tl
+if    ($az=~ /(^|\s)-+(h)/i){print $out8
+  "  $0 - sLightLy manipuL8d Ls coLumnar Listing Vers:$VERSION d8VS:$d8VS Auth:$auth
+ -h - help text only -h(elp) && -a(djust?nsi?ll?4gotN);";}else{
+  for(@ldat){if(/^total\s+(\d+)/){$t0=b64($1);s/^total\s+(\d+)K?/t0:${t0}K/i;}
+    if($az!~ /(^|\s)-+(a)/i && /\s\s+/){@lz=split(/\s\s+/,$_);$lt='';
+      for  my $le (@lz){$tl=0;
+        while($le=~ s/^(\e\[[0-9;]*m|.)//){$tl++ if(length($1)==1);$lt.=$1;}
+        $lt.=' ' ;$lt=~ s/\t/ /g; # both wer2 \s spAczB4 $lt.= && s/\t/  /g;
+        $lt.=' ' x (5-$tl) if($tl <  5);}
+      $_=$lt if(length($lt));s/\s+$/\n/;}
+    if  (/^(\S+:)\s*$/){     s/\s+$//  ;$pt=1;}
+    else{$_= (' ' x 4) . $_  if(!$pt)  ;$pt=0;}
+    print $out8 $_ if /\S/;}}
+close     $out8             or die "Can't close duplic8 STDOUT handle: $!";

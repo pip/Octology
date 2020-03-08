@@ -1,4 +1,4 @@
-# F1IL2Vhp:~/.Hrc crE8d by PipStuart <Pip@CPAN.Org> as 8sh"H"rEsourcz2configUr core fEld abbreV8ion,type colr8ion,&& aliasing; $VERSION='0.0';$d8VS='IAEMMCod';
+# F1IL2Vhp:~/.Hrc crE8d by PipStuart <Pip@CPAN.Org> as 8sh"H"rEsourcz2configUr core fEld abbreV8ion,type colr8ion,&& aliasing; $VERSION='0.0';$d8VS='K36L1Als';
 c           =>   C        => cOL  =>   cOL8 =>    cOLR =>   cOLM; # core c8 lAyrz;c:* sepR8lAyrzBlODterminprEfixz4allfolOing middle-map columnz th@ R!Dfalt F:;
 c:tFbSGRsgr =>   WGBZOMzom=> tXt  Fgc  bGC  Slc  Gfc  Rnd  sLC  gFC  rND ; # c8 objectz shudBgoverned by thEs lAyrz from hEr proly thru a8:new
 c:tFbSGRsgr               => tEXt Fclr bCLR Slct Grfc Rndt sLCT gRFC rNDT => tEXt, Forecolr, bACKCOLR, Select, Graphic, Rendition, sELECT, gRAPHIC, rENDITION;
@@ -79,14 +79,21 @@ T           =>   B        =>  Trp:TTy; # TTY loop  # a8:f8fm && pm per tty (EvNt
 T:01234567  =>   WCOGBRYM => f:M0tmrcaq => p:yfsgnDBb ; # this has Fgcolr cOdez,f0nt filename mapz,&& then pal8 filename mapz
 T:89        =>   Ac       => f:fd      ; # proly will kEp tty loop just 0..7 as above,but thEse added2alsO complEte dFinition of SGR 10-19 similRly
 A           =>   Y        =>  Trp:Als => Alias; # wh8 aliasez as of F3BMLn6r wi just Ovr half of b64 mapd sOfR;  need2add Xtra map for ~/bin XeQtz4up2autOrun
-A:8ABCDEFG  =>   VABWD5FG =>       viii,          a,       b,    clear,           d,         Et,        f,        g;
+A:01234567  =>   01234567 =>   ogg123,     mpg321,     mpg123, ~/bin/3,       x4t,     perl,    perl6,       7z; # these R basicly just cp/pAstd from .zshrc's
+A:89ABCDEF  =>   89ABCDEF =>     viii,        c99,       asci,       b,    cls -x,      dfc,       Et,        f; #   wh8ch() output that calls which on each &&
+A:GHIJKLMN  =>   GHIJKLMN =>       zg,       htop,          i,       j,        k9,  ~/bin/L,        m,     calN; #   wh8() is similar but runs thru many more
+A:OPQRSTUV  =>   OPQRSTUV =>        o,       pal8,       calQ, rd*~/.e,   ~/bin/S,      tee,     U2b8, vim.tiny; #   useful aliasez && set shell functionz;
+A:WXYZabcd  =>   WXYZabcd =>  whereis, /usr/bin/X,          y,      zc, asciiview,    bak(),  ~/bin/c,    dic();
+A:efghijkl  =>   efghijkl =>   e $TTY,       find,        grp, history,      info,     jobs,     kill,     lsd8;
+A:mnopqrst  =>   mnopqrst =>    man(),       ncal,      orpie,     CCC,   ~/bin/q, shLbltin, *srchl(),     tmux;
+A:uvwxyz._  =>   uvwxyz._ =>   upd8(),       v8(), /usr/bin/w,    exit,      yelp,       zp, shLbltin, undFIned;
 S           =>   c        =>  Trp:Shl => Source-highlight; # .shl.style fieldz Fg foregrnd (lEving Octology core d8a dFz abov4Xtrnl prog shl,St8z&&gmz BlO)
 S:bcktusrS  =>   WKBCcMRR => bGCOLOR  , cONTEXT, kEYWORD, tYPE     , uSERTYPE, sTRING  , rEGEXP          , Specialchar; # mAB mk S: Dflt&&have / rEsume root?
 S:CnpyfBvF  =>   CMbGCGbB => Comment  , nUMBER , pREpROC, SyMBOL   , fUNCTION, cBracket, PREDEF_vAR      , predeF_Func; # uc V8 charz hEr but nd2 lc B4.style
-S:alUdTiIN  =>   CKbBBBgg => CLaSSNaME, lINENUM, Url    , dATE     , Time    , FiLE    , Ip              , Name       ;
-S:VAoDxROm  =>   CgGgGgPO => Variable , itAlics, BoLD   , unDerline, FIxED   , aRgument, OptiOnalargument, mATH       ; # 17 left2fill b64,alias 2 most used?
-S:XLweEP0M  =>   bOgbPbgO => bibteX   , oLdfiLe, NEwFILE, DIFFLINeS, sElEctor, ProPerty, value           , atoM       ; # complEt V8 failz:just 0-5 with all
-S:h12345W   =>   OKGCCPg  => PATh     , meta   , todo   , label    , code    , error   , Warning                      ; #   lc expanded namez altho 2 => todo
+S:alUdTiIN  =>   CKbBBBgg => CLaSSNaME, lINENUM, Url    , dATE     , Time    , FiLE    , Ip              , Name       ; # 17 left2fill b64,alias 2 most used?
+S:VAoDxROm  =>   CgGgGgPO => Variable , itAlics, BoLD   , unDerline, FIxED   , aRgument, OptiOnalargument, mATH       ; # complEt V8 failz:just 0-5 with all
+S:XLweEP0M  =>   bOgbPbgO => bibteX   , oLdfiLe, NEwFILE, DIFFLINeS, sElEctor, ProPerty, value-0         , atoM       ; #   lc expanded namez altho 2 => todo
+S:h12345W   =>   OKGCCPg  => PATh     , meta-1 , todo-2 , label-3  , code-4  , error-5 , Warning                      ; # also strip dash-numz wi s/-[0-5]$//
 S:b24       => b:kcg      ; # S:bg BackGround  # evNtually thEs shud B Useful 2 auto-gener8 every shl permut8ion 2 approach compatibility with
 S:UD        => s:UU       ; # S:ul UnderLine (like reverse and p:pal8 filez) w8 4 additional new SGR c8:col8 layerz 2 XtNd tFbf
 U           =>   B        =>  Trp:Ust => Ust8 => Unitedst8z; # shudmABreordr by key or popUl8ion? mAB Q canB Cuba (like "Qba")&& q canB WesternSamoa 2fill A-z?
