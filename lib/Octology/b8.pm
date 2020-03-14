@@ -13,7 +13,8 @@ use strict; use warnings;use utf8;use v5.10;
 #   add (xp|fr|pr|ac|fm|to)b8() (fraction nstdof mantissa, precision, accuracy) && ftb8|rdx() 2set both from&&tobs radix2gethr,
 #   considr cma() ',' && spf() sprintf && dolr() '$'.00 centz && colr() optionz for "b8" tobs output configur8ion,
 #   add cache limitz && new thorO alt2prEsrv&&indX evry NtIr cnv contXt sO objX canBgrOwn in2 setz of at lEst cnv hist stringz,
-#   add valid8ion&&tStz&&Carp problMz,mAB add benchmRkz,Xplor specialIzng Use as reso pairz or c8 IDa of rAng spanz or IPaddrz or fOn numz etc;
+#   add valid8ion&&tStz&&Carp problMz,mAB add benchmRkz,Xplor specialIzng Use as reso pairz or c8 IDa of rAng spanz or IPaddrz or fOn numz etc.,
+#   from F4SMBLMx version of c8 considr b8 objX that can *= b10('11') or multiply by anothr obj that Ech stringifIz configurably(wi Dfalt b64 unpaded);
 require     Exporter ;
 use base qw(Exporter);our $umbc=0; # Use Math::Base::Convert flag (doesn't work if eval'd), but commented out the only-for-efficiency dependency for now...
 #se         Math::Base::Convert;   #   although maybe eventually preparing efficient dependencies in docker container can ease any such distribution burdens
@@ -24,7 +25,7 @@ use         Carp; # orig Math::BaseCnv BlO memoized sum8(as summ) hEr&&had nO fi
 use Memoize;memoize('fact');memoize('choo');memoize('fibo');memoize('prim');
 our @EXPORT= qw(b8 cnv ocT deC dec heX HEX b10 b64 b64sort b110 b128 b210 b256 dig diginit @kana
     cma coma  sum8 sumz   fact fctz  choo  fibo fibz  prim prmz  rotW rot1    calQ   $umbc);
-our $VERSION='0.0';my  $d8VS='HBRL6MBC';my $auth='PipStuart <Pip@CPAN.Org>';
+our $VERSION='0.0';my  $d8VS='K3EM9INT';my $Auth='PipStuart <Pip@CPAN.Org>';
 our @kana=qw(ぁあぃいぅうぇえぉおかがきぎくぐけげこごさざしじすずせぜそぞた
 だちぢっつづてでとどなにぬねのはばぱひびぴふぶぷへべぺほぼぽまみ
 むめもゃやゅゆょよらりるれろゎわゐゑをんゔゕゖ゗1゛゜ゝゞゟ
@@ -34,6 +35,7 @@ our @kana=qw(ぁあぃいぅうぇえぉおかがきぎくぐけげこごさざ�
 my $pkgn =        __PACKAGE__;
 my $pkgl = length __PACKAGE__;
 my $bssb = $pkgn . '::_bs::' ; # indentify 'base sub'
+my $bfca = 4096; # set BigFloat Config Accuracy && mAB l8r grOw to 64xx4 == 16_777_216 or 64xx3 == 262_144 if 4096 ever becomes too small (bigr gO slO thO!);
 my $d2bs='';my %bs2d=(); # Digitz to BaseSet, BaseSet to Digitz
 my %digsetz=(
   'usr' => [], # this will be assigned if a dig(\@newd) call is made
@@ -90,14 +92,15 @@ sub dig{            return( @{$digsetz{$d2bs}}) unless(@_); # assign a new digit
   else         {my $setn = shift();return(-1) unless(exists $digsetz{$setn});$d2bs = $setn;}
   if(@{$digsetz{$d2bs}}){bs2init();}else{diginit();}}
 sub cnv__10{my  $t = shift || '0';my $s = shift || 64;my $n = Math::BigFloat->new(0); # convert from some number base to decimal
-  my $nega = '';$nega = '-' if($t =~ s/^-//);my $frds=0;if($s > 64){$n->accuracy($s);$n->precision(0);} # FRactionDigitSize, needed incrEsd accU 4ckm8 big b128
+  my $nega = '';$nega = '-' if($t =~ s/^-//);my $frds=0;$n->accuracy($bfca); #if($s >=64){$n->accuracy($s);
+                                                        $n->precision(   0); #} FRactionDigitSize, needed incrEsd accU 4ckm8 big b128
   for(my $tndx=length($t)-1;$tndx>=0;$tndx--){substr($t,$tndx,1,'') unless(exists $bs2d{substr($t,$tndx,1)} || # strip out chars not in the digit set
                                                                                         substr($t,$tndx,1) =~ /[\%]/);} # and not fraction sepR8or
   while(length  ($t)){my $thed=substr($t,0,1,'');if($thed eq '%'){$frds=1;}else{$frds++ if($frds);$n += $bs2d{$thed};$n *= $s;}}
 # orig:rds){$n /= $s**$frds;}else{$n /= $s;} $n->bneg() if($nega eq '-');
   if($frds){my $bs = Math::BigFloat->new($s);$bs->bpow($frds);$n /= $bs;}
   else     {$n /= $s;} $n->bneg() if($nega eq '-');return($n);} # was retn nega . int($n/$s)
-sub cnv10__{my  $n = Math::BigFloat->new(shift || '0');my $s = shift || 64;my $t = '';$n->accuracy($s) if($s > 64); # convert from decimal to some numb base
+sub cnv10__{my  $n = Math::BigFloat->new(shift || '0');my $s = shift || 64;my $t = '';$n->accuracy($bfca); #$s) if($s >=64); # cnv from dec 2 some numb base
   diginit() if ($s > @{$digsetz{$d2bs}});my $nega = '';$nega = '-' if($n->is_neg());my $frds=0;$n->babs(); # $n neg8ive zero '-0' failed is_zero() so ABS val
   my($nlen,$nfrl)= $n->length();my $nge1=1;$nge1=0 if($n  < 1);#say "nlen:$nlen:nfrl:$nfrl:"; 12.5 => 3,1 NumLENgth,NumFRactionLength NumGr8rorEqualto1
   if($nfrl){while(!$n->is_int() && length($t) <  64){          $n *= $s;$frds++;     # handle fraction part
@@ -152,16 +155,17 @@ sub b10     {my $rtns = '';my $tucf; # TemporaryUseConvertFlag to detect if a b6
         else     {$rtns .=                         cnv__10(   $ilss ,  64       ) . ' ';}} $rtns =~ s/\s$/\n/;}$rtns =~ s/\n$//;}return($rtns);}
 sub b64     {my $rtns = '';my $tucf;
   if   (@_       ){while(@_          ){my $narg=shift(@_);if(defined($narg)){ # somehow $narg was spewing undefined warningz for substitution so testing now
-      $narg = Math::BigInt->new($narg);                    $narg =~ s/^\s*\+?//;$narg =~ s/[^0-9.-]//g;$tucf=$umbc;$tucf=0 if($narg =~ /[-.]/);
+                                                          $narg =~ s/^\s*\+?//;$narg =~ s/[^0-9.-]     //gx;$tucf=$umbc;$tucf=0 if($narg =~ /[-.]/);
       if  ($tucf){$rtns .=    Math::Base::Convert::cnv(       $narg ,'dec','b64') . ' ';}
       else       {$rtns .=                         cnv10__(   $narg ,        64 ) . ' ';}}}$rtns =~ s/\s$//  ;} # short4 decimal     -> base64
   elsif(!-t STDIN){my @id8a;chomp(@id8a=<STDIN>);for my $id8l(@id8a){ # Input d8a Line && Input Line Split on Spacez below
-      for my $ilss(split(/\s+/,$id8l)){                   $ilss =~ s/^\s*\+?//;$ilss =~ s/[^0-9.-]//g;$tucf=$umbc;$tucf=0 if($ilss =~ /[-.]/);
+      for my $ilss(split(/\s+/,$id8l)){                   $ilss =~ s/^\s*\+?//;$ilss =~ s/[^0-9.-]     //gx;$tucf=$umbc;$tucf=0 if($ilss =~ /[-.]/);
         if($tucf){$rtns .=    Math::Base::Convert::cnv(       $ilss ,'dec','b64') . ' ';}
         else     {$rtns .=                         cnv10__(   $ilss ,        64 ) . ' ';}} $rtns =~ s/\s$/\n/;}$rtns =~ s/\n$//;}return($rtns);}
 sub b64sort {return( map { b64($_) } sort { $a <=> $b } map { b10($_) } @_ );}
 sub b110    {my $rtns = ''; # M:B:C doesn't have my b128 set so skip $umbc
-  if   (@_       ){while(@_          ){my $narg=decode('UTF-8',shift(@_));$narg =~ s/^\s*\+?//;
+# if   (@_       ){while(@_          ){my $narg=decode('UTF-8',shift(@_));$narg =~ s/^\s*\+?//;
+  if   (@_       ){while(@_          ){my $narg=               shift(@_) ;$narg =~ s/^\s*\+?//;
                   $rtns .=                         cnv__10(   $narg ,       128 ) . ' '; } $rtns =~ s/\s$//  ;} # short4 base128     -> base10
   elsif(!-t STDIN){my @id8a;chomp(@id8a=decode('UTF-8',<STDIN>));for my $id8l(@id8a){ # Input d8a Line && Input Line Split on Spacez below
       for my $ilss(split(/\s+/,$id8l)){                   $ilss =~ s/^\s*\+?//;
@@ -173,7 +177,9 @@ sub b128    {my $rtns = ''; # may want b128sort also
       for my $ilss(split(/\s+/,$id8l)){                   $ilss =~ s/^\s*\+?//;$ilss =~ s/[^0-9-]//g;
                   $rtns .=                         cnv10__(   $ilss ,       128 ) . ' '; } $rtns =~ s/\s$/\n/;}$rtns =~ s/\n$//;}return($rtns);}
 sub b210    {my $rtns = ''; # M:B:C doesn't have my b256 set so skip $umbc
-  if   (@_       ){while(@_          ){my $narg=decode('UTF-8',shift(@_));$narg =~ s/^\s*\+?//;
+# cmnt BlO fixng `pab "print b210(b256(calQ('15xx63')))"` 2nOlongr prnt "Wide char at /usr/lib/x86_64-linux-gnu/perl/5.28/Encode.pm line 228." butBlIk *|b210;
+# if   (@_       ){while(@_          ){my $narg=decode('UTF-8',shift(@_));$narg =~ s/^\s*\+?//; # mAB just decode UTF-8 from STDIN but not function pRamz?
+  if   (@_       ){while(@_          ){my $narg=               shift(@_) ;$narg =~ s/^\s*\+?//;
                   $rtns .=                         cnv__10(   $narg ,       256 ) . ' '; } $rtns =~ s/\s$//  ;} # short4 base256     -> base10
   elsif(!-t STDIN){my @id8a;chomp(@id8a=decode('UTF-8',<STDIN>));for my $id8l(@id8a){ # Input d8a Line && Input Line Split on Spacez below
       for my $ilss(split(/\s+/,$id8l)){                   $ilss =~ s/^\s*\+?//;
@@ -383,7 +389,7 @@ sub rot1{my @strz=();push(@strz, decode('UTF-8', join(' ',@_)))  if(@_);  # this
   for(0..127){$b2f1.=$digsetz{'256'}[$_];$b2s1.=$digsetz{'256'}[128+$_];} # not using rangez below since accented standard letterz might match in wrong order
   for(@strz){eval("y/$b2f1$b2s1/$b2s1$b2f1/");$rslt.=$_;} return($rslt);} # normal y/// transl8 does not interpol8 scalar halves so string needs to be evalU8d
 sub calQ{my $ajps='';if(@_){$ajps=join('',@_);}elsif(!-t STDIN){$ajps=join('',<STDIN>);}$ajps=~ s/(\s|_|,)+//g;my $bgfl=''; # AllJoinedParamStringz && BiGFLoat
-  if ($ajps=~ /h/i){$ajps='';$bgfl=" calQ v$VERSION d8VS:$d8VS crE8d by $auth to CALcul8 most standard math oper8ions using high-precision BigFloat objects;
+  if ($ajps=~ /h/i){$ajps='';$bgfl=" calQ v$VERSION d8VS:$d8VS crE8d by $Auth to CALcul8 most standard math oper8ions using high-precision BigFloat objects;
    h - print this Help text and exit
        all spaces, underscores, and commas are stripped from input, so feel free to include them for clarity when entering particularly large numbers.
        all altern8s below are case-insensitive except 'x' times and 'X' Xor. two adjacent times characters like 'xx' can be used for exponentE8ion.
@@ -466,7 +472,7 @@ sub calQ{my $ajps='';if(@_){$ajps=join('',@_);}elsif(!-t STDIN){$ajps=join('',<S
 #           64  =>  5,  # 2^6
 #          128  =>  4,  # 2^7
 #          256  =>  4); # 2^8
-#sub cnvpre{my $bc = &_cnv;return $bc unless ref $bc;
+#sub cnvpre{my $bc = &_cnv;return $bc unless ref $bc; # nOt:$bc is now an exported background-cyan color from Octology::a8.pm so be careful with reuse;
 # my($from,$fbase,$to,$tbase,$sign,$prefix,$nstr)=@{$bc}{qw(from fbase to tbase sign prefix nstr)};#$nstr =~ s/\s+//g;
 # my $slen = length($nstr);
 # my $tref =    ref($to  );
@@ -803,12 +809,12 @@ L<Carp>                  to allow errors  to croak() from calling sub
 =head1 LICENSE
 
 Most source code should be Free! Code I have lawful authority over is and shall be!
-Copyright: (c) 2003-2016, Pip Stuart.
-Copyleft :  This software is licensed under the GNU General Public License
-  (version 3 or later). Please consult L<HTTP://GNU.Org/licenses/gpl-3.0.txt>
-  for important information about your freedom. This is Free Software: you
+CopyRight:(c) 2003-2020, Pip Stuart.
+CopyLeft : This software is licensed under the GNU General Public License
+  (version 3 or l8r). Please consult L<HTTPS://GNU.Org/licenses/gpl-3.0.txt>
+  for important inform8ion about your freedom. This is Free Software: you
   are free to change and redistribute it. There is NO WARRANTY, to the
-  extent permitted by law. See L<HTTP://FSF.Org> for further information.
+  extent permitted by law. See L<HTTPS://FSF.Org> for further inform8ion.
 
 =head1 AUTHOR
 

@@ -30,7 +30,7 @@ unsetopt                \
 # auto_pushd            \# setng addz dirz 2 stack wN just normally chngng 2 thM (wich I du not normally lIk or want)
 # ksh_arrays            \# rEmMbr wNwrItng scrptz[or funcz]2include'setopt [localoptions] ksharrays'sO arAzR 0-bAsed(but!glOblBcuzmOst scrptzRstndrdly 1-bAsed)
 # re_____match_____pcre \# mA want2set for Z-SHell scripting RegularExpressions to utilize PerlCompatibility styles && mA insert 'zmodload zsh/(pc)?re(gex)?';
-export Vers='0.0';export d8VS='K37L3TMP';export Auth='PipStuart <Pip@CPAN.Org>'; # not Xportng $b sinc cOlIdz wi sort{$a <=> $b} /defhijlnqstuvx/i + AZ 4golf;
+export Vers='0.0';export d8VS='K3EM42x2';export Auth='PipStuart <Pip@CPAN.Org>'; # not Xportng $b sinc cOlIdz wi sort{$a <=> $b} /defhijlnqstuvx/i + AZ 4golf;
 if     [[       "$SHELL"    == "" ]]; then       export SHELL=`  which zsh`;fi # 8sh should parse this && OverId it    # shud `man zshall` /OSTYP 2lern4BlO
 if     [[       "$HOSTNAME" == "" ]]; then       export HOSTNAME=`hostname`;fi #`hostname`retnz fsckd nwlInz\n4CygWinzRxvt... ||smthng els lame  =(
 if     [[       "$HOST"     == "" ]]; then       export HOST   ="$HOSTNAME";fi;export VERBOSE='1'; # set flag to print debug && status info from system utilz
@@ -426,13 +426,20 @@ alias      mk='   make';alias mki='mk install';alias mi='mkin';alias smi='sudo m
 alias   sz='sudo -E zsh;rmSS ';alias SS='sudo shutdown -h now';alias SSR='sudo shutdown -r now;rmSS';alias SN='SSR'; # EmergNC !Sudo Shutdown or Reboot *now*!
 alias      pu='  pushd';alias  ua='un    ';alias SH='shutdown -h';alias SR='   shutdown -r ;rmSS'; # thEz aliaszR4aftr`sz`whNIcan w8 1minute4shutdn||rEboot;
 alias      po='   popd';alias una='un -a ';alias sus='sudo -E -s zsh'; # -c "rm $HOME/.sudo_as_admin_successful"'; # abrEV8nz 4 sys-info which call un();
-alias      pe='   perl -MOctology::a8 -pe'; # setup Perl Eval filter easy to give a 's///' after;  # sudo abov cannot run both -Intractiv && -Shell optz;
-alias      pa='   perl -MOctology::a8  -e'; # setup Perl eval        with Attribute Auto-export globals of A8
-alias     pla='   pa  '; # pb is already taken by pingb
-alias     plb='   perl -MOctology::b8  -e'; # setup PerL eval        with Base-transl8   export globals of B8
-alias     pab='   perl -MOctology::a8 -MOctology::b8  -e'; # Perl eval with A8  &&  B8   exports together like `pab "b8colr(b64(calQ('4096xx2048')))"`
-alias    pabd='   perl -MOctology::a8 -MOctology::b8 -MOctology::d8  -e'; # Perl eval with A8 && B8 && D8 (although d8 mainly crE8s new objects, not exports)
-alias     pep='   perl -MOctology::a8 -MOctology::b8 -MOctology::d8 -pe'; # Perl Eval with A8 && B8 && D8 for Piping filtr8ion
+#lias      pe='   perl -MOctology::a8 -pe'; # setup Perl Eval filter easy to give a 's///' after;  # sudo abov cannot run both -Intractiv && -Shell optz;
+#lias      pa='   perl -MOctology::a8  -e'; # setup Perl eval        with Attribute Auto-export globals of A8 # the below printz wer nEded&&b64 imprecise?;
+#lias     pla='   pa  '; # pb is already taken by pingb                                                       #`pab "print b8colr(coma(b64(calQ('15xx63'))))"
+#lias     plb='   perl -MOctology::b8  -e'; # setup PerL eval        with Base-transl8   export globals of B8  `pab "print b8colr(comma(calQ('4095xx1023')))"`
+#lias     pab='   perl -MOctology::a8 -MOctology::b8  -e'; # Perl eval with A8  &&  B8   exports together like `pab       "b8colr(  b64(calQ('4095xx2047')))"`
+#lias    pabd='   perl -MOctology::a8 -MOctology::b8 -MOctology::d8  -e'; # Perl eval with A8 && B8 && D8 (although d8 mainly crE8s new objects, not exports)
+#lias     pep='   perl -MOctology::a8 -MOctology::b8 -MOctology::d8 -pe'; # Perl Eval with A8 && B8 && D8 for Piping filtr8ion
+alias      pe='   perl -MOctology::a8                               -CS   -pe'; # tried to add -Mutf8 to aliases but may need some more specific flag?
+alias      pa='   perl -MOctology::a8                               -CS    -e'; # would like to just alias to -e so that double-quoted code can follow, ...
+alias     pla='   pa  '; # pb is already taken by pingb                         #   ... but may need function to include "binmode STDOUT,':utf8'" somehow?
+alias     plb='   perl                -MOctology::b8                -CS    -e'; # `m perlrun` described -CS as indic8ing UTF-8 for all 3 of STD(IN|OUT|ERR)
+alias     pab='   perl -MOctology::a8 -MOctology::b8                -CS    -e'; # `pab "binmode STDOUT,':utf8';print b256(calQ('15xx63'))"` gets rid of ...
+alias    pabd='   perl -MOctology::a8 -MOctology::b8 -MOctology::d8 -CS    -e'; #   ... the warning about "Wide character in print at -e line 1."
+alias     pep='   perl -MOctology::a8 -MOctology::b8 -MOctology::d8 -CS   -pe'; # -CSDL is the same as just -C && gets all the STDz && i/o && @ARGV
            gg() { perl ~/dvl/d8/bin/gg $@ ; }; # basic perl call to priv8 non-executable development utility to Gener8 G-mail stamps for Gerry (my Dad)
 #lias      gg='   perl ~/dvl/d8/bin/gg   ';
 alias    drkh='   pa  "print drkh(@ARGV)"'; # HEX to RgbL with 8th intensities  # abov gg was alias but changed to shell function so 'p' pRam doesn't Xpand;
@@ -768,6 +775,7 @@ alias lsbr='lsb_release       ';alias lsbc=' lsbr     -sc          ';alias lsba=
 alias barr='barrier           ';alias barc=' barrierc              ';alias brc=' barc    '; #ias brs='bars'; # GitHub debauchee/barrier 4koffSymlesSynergy1.9;
 alias bars='barriers          ';alias bar='  barr';alias br='bar   ';alias bs='  bars    '; # bc taken others tapered almost consistently
 # mAB Ubu brwsrz:FireFox Chrom(e|ium) Epiphany Arora Dillo WebBrowser-App (cudinstl) QupZilla Konqueror NetSurf Links2 (!in acs) Yandex PaleMoon Midori Brave;
+# nOt:crmm= chromium-browser requires snapd as of d8:K3DMIGHT so `apt-get remove`d both && will just rely on other web-browsers for now until no snapd DpNdNC;
 alias crmm='chromium-browser  ';alias crom=' google-chrome';alias crm='crom';alias epip='epiphany';alias aror='arora';alias dilo='dillo';alias lnx2='links2';
 alias brav='   brave-browser  ';alias brvb='brav';alias bb='brvb';alias tb='torb'; # prEfer prv8 tb&&bb&&ff mor than old (proly WebKit-based?) abovz now
 alias torb='pu ~/bin/.tst/.tor-brwsr-linux64-8.0_en-US-I98MKtor;./start-tor-browser.desktop;po';alias tor='tb'; # new d8d locl v8.0 instal of sepR8 brwzr methd
@@ -1070,24 +1078,25 @@ alias  Etrm='env TERM_PROGRAM=et Eterm --geometry 160x50 --scrollbar-width 15 --
 #lias gtpt='    gtd0 --class=ptok     --geometry  27x1-0-0       --hide-menubar --window-with-profile=GT27x1AndaleMonoBold40-ptok --title=ptok -e ptok &';
 #lias gtpto='   gtd0 --class=ptok     --geometry  27x1+3002+1141 --hide-menubar --window-with-profile=GT27x1AndaleMono40-ptok     --title=ptok -e ptok &';
 #lias gtpm='    gtd0 --class=pmix     --geometry 160x3+1921+1141 --hide-menubar --window-with-profile=GT67x3Lincoln12-pmix --title=pmix -e pmix&';#160,180,282
-if       [[ "${(L)HHst}" ==  oni    ]] ||
+if       [[ "${(L)HHst}" ==  oni    ]] || # nOt:looks lIk sleep from GNU CoreUtils v8.30 of September 2019 accepts floating-point numbers or dhms suffixes;
          [[ "${(L)HHst}" ==  aku    ]]; then  alias gtss='sleep 1'; # GnomeTerminal SleepSeconds 2 delay 4 gti init   # only Akuma was fast Enuf2kEp up with 1
 else                                          alias gtss='sleep 2'; fi            # ... second before && hopefully Ryu, Ken, && Chun can all handle just 2 now
 # below set 8sh "H" Viewport Width 1..3 | Height 1 defaults of all 3840x1080 then override as approprE8 for host-specific display resolution varE8ionz
-                                                                              export HVW1='3840';export HVW2='3840' ;export HVW3='3840' ;export HVH1='1080';
+# maybe l8r try to load HWd0 && HHt0 below in some autom8d way from `xrg|g -? '\d+x\d+'` that only returnz the integer digitz for resolution dimensionz;
+export HWd0='1920';export HHt0='1080';                                        export HVW1='3840';export HVW2='3840' ;export HVW3='3840' ;export HVH1='1080';
 if       [[ "${(L)HHst}" ==  oni*   ]] || [[ "${(L)HHst}" ==  aku*   ]]; then                    export HVW2='7680' ;export HVW3='11520';export HVH1='2160';
   if     [[     "$H3WF"  ==  "1"    ]];                                  then export HVW1='5760';export HVW2='11520';export HVW3='17280';                  fi
 elif     [[ "${(L)HHst}" ==  ryu*   ]] || [[ "${(L)HHst}" ==  ken*   ]]; then export HVW1='1920';                    export HVW3='5760' ;                    fi
 if       [[ "${(L)HHst}" ==  ryu*   ]];                                  then                                                            export HVH1='1200'; fi
 if       [[ "${(L)HHst}" ==  chun*  ]] || [[ "${(L)HHst}" ==  taki*  ]]; then export HVW1='1280';export HVW2='2560';export gtss='sleep 3';export HVH1='800'; fi
 #alias mpx='  mp      -fs'; #-x 1920 -y 1080'; # originally quite a long time ago, I used to include -noborder optn abov but thN cud!mv wndw... rEdFIning rL8iv
-alias Mply='  en "er -vo xv  -fixed-vo -nosound -loop 0          -geometry  1916x$(calQ $HVH1 - 28)+0+0"   '; # try Mply echo dbl-quOtd ...?
-alias mply=' mplayer -vo xv  -fixed-vo -nosound -loop 0          -geometry "1916x$(calQ $HVH1 - 28)+0+0"    '; #-x 1916 -y 1052' # mplayer canOnly stRt wi1920maxBcuzXinerama?
-#lias mpr0=' mplayer                   -nosound --no-keepaspect  -geometry "1920x$(calQ $HVH1 - 28)+0+0"    '; # still needs vid file params like: ~/mvz/U2b/**/*Obsidia*.opus
-alias mpr0=' mplayer -vo xv  -fixed-vo -nosound -nokeepaspect    -geometry "1920x$(calQ $HVH1 - 28)+0+0"    -loop 0'; # this 4 MPlayer && above 4 MPlayer2 (wich I had4 awhIl)
-alias mpr1=' mplayer -vo xv  -fixed-vo -nosound -nokeepaspect    -geometry "1920x$(calQ $HVH1 - 28)+888+88" -loop 0'; # this 4 same as mpr0 but on Aku's  middle   24" display
-alias mpr2=' mplayer -vo xv            -nosound -nokeepaspect    -geometry "1920x$(calQ $HVH1 - 28)+1919+0" -loop 0'; # this 4 same as mpr0 but on Aku's far right 50" display
-alias mpr0t='mplayer -vo xv  -fixed-vo -nosound -msgcolor -noborder -cache 16384 -cache-min 99 -geometry "1916x$(calQ $HVH1 - 28)+0+0" -msglevel all=0:identify=4 ~/mvz/.pr0/tst/Aut0pr0-9AS4gTn/pr0-*/*'; # test if messages can report desired details; # for some reason,above mpr1 won't take geom 2full midl display so just offset a bit?
+alias Mply='  en "er -vo xv  -fixed-vo -nosound -loop 0          -geometry  1916x$(q $HVH1 - 28)+0+0"   '; # try Mply echo dbl-quOtd ...?
+alias mply=' mplayer -vo xv  -fixed-vo -nosound -loop 0          -geometry "1916x$(q $HVH1 - 28)+0+0"    '; #-x 1916 -y 1052' # mplayer canOnly stRt wi1920maxBcuzXinerama?
+#lias mpr0=' mplayer                   -nosound --no-keepaspect  -geometry "1920x$(q $HVH1 - 28)+0+0"    '; # still needs vid file params like: ~/mvz/U2b/**/*Obsidia*.opus
+alias mpr0=' mplayer -vo xv  -fixed-vo -nosound -nokeepaspect    -geometry "1920x$(q $HVH1 - 28)+0+0"    -loop 0'; # this 4 MPlayer && above 4 MPlayer2 (wich I had4 awhIl)
+alias mpr1=' mplayer -vo xv  -fixed-vo -nosound -nokeepaspect    -geometry "1920x$(q $HVH1 - 28)+888+88" -loop 0'; # this 4 same as mpr0 but on Aku's  middle   24" display
+alias mpr2=' mplayer -vo xv            -nosound -nokeepaspect    -geometry "1920x$(q $HVH1 - 28)+1919+0" -loop 0'; # this 4 same as mpr0 but on Aku's far right 50" display
+alias mpr0t='mplayer -vo xv  -fixed-vo -nosound -msgcolor -noborder -cache 16384 -cache-min 99 -geometry "1916x$(q $HVH1 - 28)+0+0" -msglevel all=0:identify=4 ~/mvz/.pr0/tst/Aut0pr0-9AS4gTn/pr0-*/*'; # test if messages can report desired details; # for some reason,above mpr1 won't take geom 2full midl display so just offset a bit?
 alias mpfb=' mplayer -vo fbdev -vf scale=640:400   -loop 0'; # ~/mvz/U2b/* for some old scaled FrameBuffer modes
 alias mpfbs='mplayer -vo fbdev -vf scale=1920:1200 -loop 0'; # ~/mvz/muV/*
 alias mpf8=' mplayer -vo fbdev        -nosound --no-keepaspect  -vf scale=1920:1080 '; # still needs vid file params to follow
@@ -1122,18 +1131,33 @@ chvp() { # CHange ViewPort ("virtual desktop") thru wmc -o ... based on host dim
     elif [[ "$1"         ==    "7"  ]]; then wmc -o $HVW3,$HVH1; fi; fi }
 alias chv0='chvp 0';alias chv1='chvp 1';alias chv2='chvp 2';alias chv3='chvp 3';
 alias chv4='chvp 4';alias chv5='chvp 5';alias chv6='chvp 6';alias chv7='chvp 7';
-alias   gt3='gt --geometry=+0+0       --show-menubar --window-with-profile=PipsTestGnomTerm-DiffFont-D1NBxCf                                                &;
+alias   gt3='gt --geometry=+0+0         --show-menubar --window-with-profile=PipsTestGnomTerm-DiffFont-D1NBxCf  --role=test                                 &;
         gtss;wmc -r :ACTIVE: -T test                ;
-             gt --geometry=-0+0       --show-menubar --window-with-profile=PipsOthrGnomTerm-TestFont-CCIHPS8                                                &;
+             gt --geometry=-0+0         --show-menubar --window-with-profile=PipsOthrGnomTerm-TestFont-CCIHPS8  --role=othr                                 &;
         gtss;wmc -r :ACTIVE: -T othr                ;
-             gt --geometry=+0-0       --show-menubar --window-with-profile=PipsCkm8GnomTerm-NiceFont-DC9LDaPt                                               &;
+             gt --geometry=+0-0         --show-menubar --window-with-profile=PipsCkm8GnomTerm-NiceFont-DC9LDaPt --role=ckm8                                 &;
         gtss;wmc -r :ACTIVE: -T ckm8               '; # slower now calling sleep between every spawn to give wmctrl time to grab active && set title
 alias   gt4='gt3;
-             gt --geometry=-1920+0    --show-menubar --window-with-profile=PipsOthrGnomTerm-TestFont-CCIHPS8                                                &;
+             gt --geometry=-$HWd0+0     --show-menubar --window-with-profile=PipsOthrGnomTerm-TestFont-CCIHPS8  --role=Othr                                 &;
         gtss;wmc -r :ACTIVE: -T Othr               '; # so far, only Aku has multiple displayz in default configur8ion, with room for these 2 xtra terminalz
 alias   gt5='gt4;
-             gt --geometry=-3840+0    --show-menubar --window-with-profile=PipsOthrGnomTerm-TestFont-CCIHPS8                                                &;
+             gt --geometry=-$HVW1+0     --show-menubar --window-with-profile=PipsOthrGnomTerm-TestFont-CCIHPS8  --role=othr                                 &;
         gtss;wmc -r :ACTIVE: -T othr               '; # so far, it's too bad that Othr background dark green looks just black with l8st Sony TV settingz
+alias   gt8='gt4;
+             gt --geometry=+0+$HHt0     --show-menubar --window-with-profile=PipsTestGnomTerm-DiffFont-D1NBxCf  --role=test                                 &;
+        gtss;wmc -r :ACTIVE: -T test                ;
+             gt --geometry=+$HWd0+0     --show-menubar --window-with-profile=PipsTestGnomTerm-DiffFont-D1NBxCf  --role=test                                 &;
+        gtss;wmc -r :ACTIVE: -T test                ;
+             gt --geometry=+0-$HHt0     --show-menubar --window-with-profile=PipsCkm8GnomTerm-NiceFont-DC9LDaPt --role=ckm8                                 &;
+        gtss;wmc -r :ACTIVE: -T ckm8                ;
+             gt --geometry=-$HWd0+$HHt0 --show-menubar --window-with-profile=PipsOthrGnomTerm-TestFont-CCIHPS8  --role=othr                                 &;
+        gtss;wmc -r :ACTIVE: -T othr                ;
+             gt --geometry=-0+$HHt0     --show-menubar --window-with-profile=PipsOthrGnomTerm-TestFont-CCIHPS8  --role=othr                                 &;
+        gtss;wmc -r :ACTIVE: -T othr                ;
+             gt --geometry=+$HWd0+$HHt0 --show-menubar --window-with-profile=PipsTestGnomTerm-DiffFont-D1NBxCf  --role=test                                 &;
+        gtss;wmc -r :ACTIVE: -T test                ;
+             gt --geometry=+$HWd0-0     --show-menubar --window-with-profile=PipsCkm8GnomTerm-NiceFont-DC9LDaPt --role=ckm8                                 &;
+        gtss;wmc -r :ACTIVE: -T ckm8               '; # had gt5 for temporary 3-Wide setup for Aku, but now moving to gt8 for Oni with quad 2x2 setup instead;
 alias rs=' resize'; # also able to pass '-s $rowz $colz' to set term dimNsionz,sO mAB cnvrt this alias in2 function wi pRam optnz l8r Dtectng ${W}x$H 4m@z too
 alias rsN='noglob eval `resize -s 57 171`';alias rsn='  rsN'; # N for 171-wide (for calN to show 19-Years slightly lRgr than Dflt 160x50 standRd Used Lswhere)
 alias rsZ='noglob eval `resize -s 67 240`';alias rs240='rsZ'; # Zdflt 240-wide (wich is what full-screen 1080p consoles fit && some small font term sizes too)
@@ -1142,7 +1166,7 @@ alias rs8='noglob eval `resize -s 25  80`';alias rs80=' rs8'; # 8 for  80-wide (
 alias rs4='noglob eval `resize -s 12  40`';alias rs40=' rs4'; # 4 for  40 && also 2 for 20 as good halvingz 2l8r suport4low-reso nEdz (thO int(25/2)= just 12)
 alias rs2='noglob eval `resize -s  6  20`';alias rs20=' rs2'; # if ever capable of displaying on large 4K HD monitorz, may want to try out a huge 320x100 too
 alias rs1='noglob eval `resize -s  3  10`';alias rs10=' rs1'; # continue halving standards to obtain dimensions all the way down to just 30 characters total
-alias rs3='noglob eval `resize -s  1  34`';alias rsd8=' rs3'; # 3 for  34-wide d8ok termz (somewhat more straightforward && brief 2 use char dimz versus pixlz)
+alias rs3='noglob eval `resize -s  1  33`';alias rsd8=' rs3'; # 3 for  33-wide d8ok termz (somewhat more straightforward && brief 2 use char dimz versus pixlz)
 alias rsd8ok='  rs3';alias rs16='   rsz  ';alias rsd='  rs3'; #   && a few more for d8ok  (even though wmctrl -e below is making these rel8ively unnecessary)
 alias rs160x50='rsz';alias rs80x25='rs8 ';alias rs34x1='rs3'; # HB1MBPrr:just removing Ubu17.10 deprec8d -e && -x + pRams to popul8 in GT d8ok profls && this;
 # HC3L0DNV:noglob eval around backticks may try to reach out to propag8 exported upd8 dimensions to invoking parent environment && variables, workz without?;
@@ -1153,23 +1177,71 @@ if       [[ "${(L)HHst}" ==  oni    ]] ||
   #     gtss;wmc -r :ACTIVE: -b add,sticky,below; # this was all linez aftr any d8ok (B4Itried2set -Titlez,add skip_(pager|taskbar) && upd8 geom wi -e rEsize)
   # Apparently 1st resize field is gravity:0-WinMngr shud use grav specified in WM_SIZE_HINTS.win_gravity,1-NW,2-N,3-NE,4-W,5-cNtr,6-E,7-SW,8-S,9-SE,10-static.
   # Same page: HTTPS://SuperUser.Com/questions/576057/bash-resize-terminal-xterm has `echo -e "\e[8;1;34t"` which also workz nicely 2 resize my d8ok terminalz.
- if      [[     "$H3WF"  ==  "1"    ]]; then # H78M19EK:insertd new H variable test for whether using Sony50"1080iTV or 32"Viotek display as 3-Wide-Flag 4Aku;
-                                             #   Below used to just have "-e ~/bin/d8ok" before appending the -d parameter so needing the -x instead.
+ if      [[ `xrg|g -c ' connected '` == "4" ]]; then # K3EM2x2H:crE8d new condition for grid monitor layout that tries2auto-detect connected count from `xrg`;
+  alias gtI='gt --geometry=+1620-$HHt0  --hide-menubar --window-with-profile=d8k8                               --role=d8k8                                 &;
+        gtss;wmc -r :ACTIVE: -T d8k8                ;wmc -r :ACTIVE: -b add,skip_pager,sticky;
+             wmc -r :ACTIVE: -e  10,1620,1008,300,72;wmc -r :ACTIVE: -b add,skip_taskbar,below;
+             gt --geometry=+1620-0      --hide-menubar --window-with-profile=d8k8                               --role=d8k8                                 &;
+        gtss;wmc -r :ACTIVE: -T d8k8                ;wmc -r :ACTIVE: -b add,skip_pager,sticky;
+             wmc -r :ACTIVE: -e  10,1620,2088,300,72;wmc -r :ACTIVE: -b add,skip_taskbar,below;
+             gt --geometry=-0-$HHt0     --hide-menubar --window-with-profile=d8k4                               --role=d8k4                                 &;
+        gtss;wmc -r :ACTIVE: -T d8k4                ;wmc -r :ACTIVE: -b add,skip_pager,sticky;
+             wmc -r :ACTIVE: -e 10,1921,1006,1919,74;wmc -r :ACTIVE: -b add,skip_taskbar,below;
+             gt --geometry=+0+$HHt0     --show-menubar --window-with-profile=PipsTestGnomTerm-DiffFont-D1NBxCf  --role=test                                 &;
+        gtss;wmc -r :ACTIVE: -T test                ;
+             gt --geometry=+$HWd0+$HHt0 --show-menubar --window-with-profile=PipsTestGnomTerm-DiffFont-D1NBxCf  --role=Test                                 &;
+        gtss;wmc -r :ACTIVE: -T Test                ;
+             gt --geometry=+$HWd0+0     --show-menubar --window-with-profile=PipsTestGnomTerm-DiffFont-D1NBxCf  --role=test                                 &;
+        gtss;wmc -r :ACTIVE: -T test                ;
+             gt --geometry=+0-$HHt0     --show-menubar --window-with-profile=PipsCkm8GnomTerm-NiceFont-DC9LDaPt --role=ckm8                                 &;
+        gtss;wmc -r :ACTIVE: -T ckm8                ;
+             gt --geometry=+$HWd0-0     --show-menubar --window-with-profile=PipsCkm8GnomTerm-NiceFont-DC9LDaPt --role=Ckm8                                 &;
+        gtss;wmc -r :ACTIVE: -T Ckm8                ;
+             gt --geometry=-$HWd0+0     --show-menubar --window-with-profile=PipsOthrGnomTerm-TestFont-CCIHPS8  --role=othr                                 &;
+        gtss;wmc -r :ACTIVE: -T othr                ;
+             gt --geometry=-0+$HHt0     --show-menubar --window-with-profile=PipsOthrGnomTerm-TestFont-CCIHPS8  --role=Othr                                 &;
+        gtss;wmc -r :ACTIVE: -T Othr                ;
+             gt --geometry=-$HWd0+$HHt0 --show-menubar --window-with-profile=PipsOthrGnomTerm-TestFont-CCIHPS8  --role=8xt                                  &;
+        gtss;wmc -r :ACTIVE: -T 8xt                
+             gt --geometry=+0-0         --show-menubar --window-with-profile=PipsCkm8GnomTerm-NiceFont-DC9LDaPt --role=2du                                  &;
+        gtss;wmc -r :ACTIVE: -T 2du                 ;
+             gt --geometry=-0+0         --show-menubar --window-with-profile=PipsOthrGnomTerm-TestFont-CCIHPS8  --role=sys                                  &;
+        gtss;wmc -r :ACTIVE: -T sys                '; # might want to experiment with 5-centered or 10-static gravity to see if they're any better than S && SE
+  alias gtm='gt --geometry=+0+$HHt0     --show-menubar --window-with-profile=PipsTestGnomTerm-DiffFont-D1NBxCf  --role=test                                 &;
+        gtss;wmc -r :ACTIVE: -T test                ;
+             gt --geometry=+0-0         --show-menubar --window-with-profile=PipsCkm8GnomTerm-NiceFont-DC9LDaPt --role=ckm8                                 &;
+        gtss;wmc -r :ACTIVE: -T ckm8                ;
+             gt --geometry=-$HWd0+$HHt0 --show-menubar --window-with-profile=PipsOthrGnomTerm-TestFont-CCIHPS8  --role=othr                                 &;
+        gtss;wmc -r :ACTIVE: -T othr                ;
+             gt --geometry=+0+0         --show-menubar --window-with-profile=PipsTestGnomTerm-DiffFont-D1NBxCf  --role=test                                 &;
+        gtss;wmc -r :ACTIVE: -T test                ;
+             gt --geometry=+$HWd0+0     --show-menubar --window-with-profile=PipsTestGnomTerm-DiffFont-D1NBxCf  --role=test                                 &;
+        gtss;wmc -r :ACTIVE: -T test                ;
+             gt --geometry=+$HWd0+$HHt0 --show-menubar --window-with-profile=PipsTestGnomTerm-DiffFont-D1NBxCf  --role=test                                 &;
+        gtss;wmc -r :ACTIVE: -T test                ;
+             gt --geometry=+$HWd0-0     --show-menubar --window-with-profile=PipsCkm8GnomTerm-NiceFont-DC9LDaPt --role=ckm8                                 &;
+        gtss;wmc -r :ACTIVE: -T ckm8                ;
+             gt --geometry=-0+$HHt0     --show-menubar --window-with-profile=PipsOthrGnomTerm-TestFont-CCIHPS8  --role=othr                                 &;
+        gtss;wmc -r :ACTIVE: -T othr                ;
+             gt --geometry=-0+0         --show-menubar --window-with-profile=PipsOthrGnomTerm-TestFont-CCIHPS8  --role=Othr                                 &;
+        gtss;wmc -r :ACTIVE: -T Othr                ;
+             gt --geometry=-$HWd0+0     --show-menubar --window-with-profile=PipsOthrGnomTerm-TestFont-CCIHPS8  --role=muz    --working-directory=muz/U2b   &;
+        gtss;wmc -r :ACTIVE: -T muz                 ;
+             gt --geometry=+0-$HHt0     --show-menubar --window-with-profile=PipsCkm8GnomTerm-NiceFont-DC9LDaPt --role=mvz    --working-directory=mvz/U2b   &;
+        gtss;wmc -r :ACTIVE: -T mvz                '; # Aku gti below fully loadz GTz in all 8 ViewPortz
+  alias gti='gtI;gtss;chv1;gtss;gtm;gtss;chv2;gtss;gt8;gtss;chv4;gtss;gt8;gtss;chv5;gtss;gt8;gtss;chv6;gtss;gt8;gtss;chv7;gtss;gt8;gtss;chv3;gtss;gt8;chv0';
+ elif    [[ `xrg|g -c ' connected '` == "3" ]] && [[ "$H3WF" == "1" ]]; then # H78M19EK:insertd new H variable test for whether using Sony50"1080iTV or ...
+  #   ... 32"Viotek display as 3-Wide-Flag 4Aku; # Below used to just have "-e ~/bin/d8ok" before appending the -d parameter so needing the -x instead.
   # I71M8wxh:Maybe Ubu18.04 upd8d GnomTerm or GnomTwekTool gone dropd scaling so old d8ok32->36 && main8->7.9 nEdz x664,4504,2584 chopd 4 4mor char widthz;
   # q 1306/34=38.41176470588235294117647058823529411765
   # 1306-1292=14 mAB scrlbR widt; 4x38=152; 512,4352,2432; mIt nEd2scAl 1306 wIdr2 1458; try even shorter 1268, wi each of 34 char widz 38px or 33 wo padspc?
   # q 1458/34=42.882352941176470; 4x42=166; 496,4336,2416; othr was +306+0 up2 466;
-  # K1BLEgti:For Ubu19.10 I've resized d8ok term font from 48 to 46 so am adjusting wmc -e 10,664,1006,1268,74 to 10,704,1006,1228 as 1st guess 2 re-align.
-  # Also removing && commenting out the 2nd d8ok term I was originally spawning way over on the 3rd monitor, since Oni is only running with 2 VG248's now.
-  # As this 1st stab at re-alignment, I'm shaving off 40 pixels in both width directions but might also need to shrink the heights to fit the bottom l8r too;
-  # As this 2nd stab at re-alignment, I'm shaving off 40 pixels in both width directions again;
-  # As this 3rd stab at re-alignment, I'm shaving off 80 pixels in both width directions again;
-#            gt --geometry=-0-0       --hide-menubar --window-with-profile=d8ok                               --role=d8ok                                   &;
-#       gtss;wmc -r :ACTIVE: -T d8ok                ;wmc -r :ACTIVE: -b add,skip_pager,sticky;
-#            wmc -r :ACTIVE: -e 10,4504,1006,1268,74;wmc -r :ACTIVE: -b add,skip_taskbar,below;
   alias gtI='gt --geometry=+784-0     --hide-menubar --window-with-profile=d8ok                               --role=d8ok                                   &;
         gtss;wmc -r :ACTIVE: -T d8ok                ;wmc -r :ACTIVE: -b add,skip_pager,sticky;
              wmc -r :ACTIVE: -e  10,824,1006,1108,74;wmc -r :ACTIVE: -b add,skip_taskbar,below;
+             gt --geometry=-0-0       --hide-menubar --window-with-profile=d8ok                               --role=d8ok                                   &;
+        gtss;wmc -r :ACTIVE: -T d8ok                ;wmc -r :ACTIVE: -b add,skip_pager,sticky;
+             wmc -r :ACTIVE: -e 10,4504,1006,1268,74;wmc -r :ACTIVE: -b add,skip_taskbar,below;
              gt --geometry=-0-0       --hide-menubar --window-with-profile=d8fd                               --role=d8fd                                   &;
         gtss;wmc -r :ACTIVE: -T d8fd                ;wmc -r :ACTIVE: -b add,skip_pager,sticky;
              wmc -r :ACTIVE: -e 10,2416,1006,1458,74;wmc -r :ACTIVE: -b add,skip_taskbar,below;
@@ -1244,6 +1316,8 @@ else # following settings will hopefully work well for single-screen Ryu, Ken, &
              gt --geometry=+0-0       --show-menubar --window-with-profile=PipsCkm8GnomTerm-NiceFont-DC9LDaPt --role=mvz    --working-directory=mvz/U2b     &;
         gtss;wmc -r :ACTIVE: -T mvz                ';
   alias gti='gtI;gtss;chv1;gtss;gtm;gtss;chv2;gtss;gt3;gtss;chv3;gtss;gt3;gtss;chv0'; fi
+alias cti='ct init'; # ChangeTitle 2 Init as quick simple similar command B4 gti or ti to call right after booting up && starting my first default GnomTerm;
+alias  ti='cti;gti'; # maybe l8r mk a custom TermInit alias here wich spawnz more than just GTz but mAB some alpha'd Sakuraz|LilyTermz|QTerminalz etc. too;
 #lias gti='gtI;sleep 3;wmctrl -o 1280,0;sleep 3;gt3;sleep 3;wmctrl -o 2560,0;sleep 3;gt3;sleep 3;wmctrl -o 3840,0;sleep 3;gt3;sleep 3;wmctrl -o 0,0';
 # abov are new Ubu14.10 GT aliasz tstd on Chun; mA nEd geom chgz 4 Akuz 2 monitorz; tryd 2 ch d8ok profile 2 autorun d8ok nstd of zsh but can't figure out yet;
 #   mIt also want 2 try 2 figure out how 2 autom8 dangling d8ok over edge && Dflt visible on all wrkspcz && hide wndw bordr tItlbar;
@@ -1256,8 +1330,8 @@ At() { # ec "At params without residue: 11,12,17,18,20,22,23,28,31,32,40,41,49 \
   if   [[ "$1" ==   "" ]]; then env TERM_PROGRAM=at aterm -geometry 160x50 -color3 "#FFAA33" -color13 "#9933BB" -bg "#03071B" -fg "#88F8B0" --cursorColor "#30D0F0" --cursorColor2 "#204080" -pr "#D8D870" -vb -fn "-*-*-*-*-*-*-18-*-*-*-*-*-*-*" -fb "-*-*-*-*-*-*-20-*-*-*-*-*-*-*" -tr -sh 31 -fade 63 -sb -sr -sl 65536 &;
   elif [[ "$1" == "80" ]]; then env TERM_PROGRAM=at aterm -geometry  80x25 -color3 "#FFAA33" -color13 "#9933BB" -bg "#03071B" -fg "#88F8B0" --cursorColor "#30D0F0" --cursorColor2 "#204080" -pr "#D8D870" -vb -fn "-*-*-*-*-*-*-36-*-*-*-*-*-*-*" -fb "-*-*-*-*-*-*-40-*-*-*-*-*-*-*" -tr -sh 31 -fade 63 -sb -sr -sl 65536 &;
   else                          env TERM_PROGRAM=at aterm -geometry 160x50 -color3 "#FFAA33" -color13 "#9933BB" -bg "#03071B" -fg "#88F8B0" --cursorColor "#30D0F0" --cursorColor2 "#204080" -pr "#D8D870" -vb -fn "-*-*-*-*-*-*-$1-*-*-*-*-*-*-*" -fb "-*-*-*-*-*-*-$1-*-*-*-*-*-*-*" -tr -sh 31 -fade 63 -sb -sr -sl 65536 >/dev/null 2>&1 &; fi}
-alias tStl='tStc R;ec;tStc R d;ec;tStc R a;ec;tStc R l'; # loop all 4 colr layrz, leaving Lite last, calling just Reverse to pretend lower L indic8s bkgrounds
-alias tStL='tStc F;ec;tStc F D;ec;tStc F A;ec;tStc F L'; # loop all 4 colr layrz, leaving Lite last, calling just Fraktur which probably rarely does anything
+alias tStl='tStc R;ec;tStc R d;ec;tStc R a;ec;tStc R l'; # loop all 4 colr layrz,leaving Lite last,calling just Reverse to pretend lower L indic8s bkgrounds
+alias tStL='tStc F;ec;tStc F D;ec;tStc F A;ec;tStc F L'; # loop all 4 colr layrz,leaving Lite last,calling just Fraktur wich rarely duz anythng,Xcept in 8trm
 tStc() { # tSt 8pal8 colrz (this is a very slow precursor to ~/bin/tstc since many sub-processes need to load zsh,perl,&&a8 d8a just to manipUl8 eScApe valUez)
   if       [[ "$#" -gt 0 ]]; then # print out some help text for just h or -h or --help as first parameter && then return
     if     [[ "$1" == *h ]] || [[ "${(L)1}" == *help ]]; then # this function was originally named 'tS8()' but has been renamed to reflect similarity to `tstc`
