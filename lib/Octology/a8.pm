@@ -45,15 +45,14 @@ package     Octology::a8;
 use strict; use warnings;use utf8;use v5.10;use Encode;
 require         Exporter;  # add new colr systM
 use base     qw(Exporter); # mainly exporting global utility functions && variables originally inherited from c8.pm as well as a few f8.pm d8a structures
-our @EXPORT= qw(bfr8c    b8c    d8c    dur8c       a8c   a8colr      h2rl   rl2h       drkh  o8  @Kana
-                bfr8colr b8colr d8colr dur8colr    d8cs @d8cl  chti  c8fn     S2   c2  S c   sS    lodl @Monz @Mon     %mc2F %mc2b %mF2c %mb2c        %sb10
- $SKp8 $SKp0 $SKp1 $SKp2 b8clr  $SKpf $SKpt %pmap %cmap       %pl8n  ftst       %f8fm %f8pm %sgrm %sgrn @Dayz @Day  lrc      comma  curs  sumb @x256  @sb64
+our @EXPORT= qw(bfr8c    b8c    d8c   dur8c @d8cl  d8cs  a8c   chti  c8fn  o8 S2   c2  S c   sS    lodl @Monz @Mon     %mc2F %mc2b %mF2c %mb2c @Kana  %sb10
+ $SKp8 $SKp0 $SKp1 $SKp2 b8clr  $SKpf $SKpt %pmap %cmap       %pl8n  ftst acS   %f8fm %f8pm %sgrm %sgrn @Dayz @Day  lrc      comma  curs  sumb @x256  @sb64
     $z    $k    $r    $o    $y    $g     $c $SKpb    $m    $p    $w  tstc    $K    $R    $O    $Y    $G    $C    $B    $M    $P    $W    %p622 %p222   upd8
-         $bk   $br   $bo   $by   $bg    $bc   $bb   $bm   $bp   $bw         $hK   $hR   $hO   $hY   $hG   $hC   $hB   $hM   $hP   $hW
+         $bk   $br   $bo   $by   $bg    $bc   $bb   $bm   $bp   $bw         $hK   $hR   $hO   $hY   $hG   $hC   $hB   $hM   $hP   $hW     h2rl  rl2h   drkh
                                                                             $HK   $HR   $HO   $HY   $HG   $HC   $HB   $HM   $HP   $HW
  $tnhf $ucdf  spff  spfd  spfX   shfl  reso $Auth %cmsp %p8k2 @p82k  chp8     S2f4 c2f4 dm2u cdst %crgb %cbrt @snls @mrls %cdrd %cdrn    %nrgb         gnp8);
  # of 52 posibl sngl-letr var nmz,a8 Xportz 20,$b && $a unavail,so shudB thEs30 lFt4quik shortSt nAmz: 'def hij l n  q stuv x', 'A  DEF HIJ L N  Q STUV X Z';
-our $VERSION='0.0';my  $d8VS='K35LNice';our $Auth='PipStuart <Pip@CPAN.Org>'; # above not exporting $b since collidez with sort{$a  <=> $b};unalloc'd sOlOz^;
+our $VERSION='0.0';my  $d8VS='K3MM0mgb';our $Auth='PipStuart <Pip@CPAN.Org>'; # above not exporting $b since collidez with sort{$a  <=> $b};unalloc'd sOlOz^;
 our $ucdf= eval('use Color::Similarity::RGB qw(distance);1') || 0; # try2set UseColorDistanceFlag if optional module is available; /defhijlnqstuvx/i + /AZ/^;
 our @Monz=qw(January February March   April     May June July   August September October November December);our @Mon=();push(@Mon,substr($_,0,3)) for(@Monz);
 our @Dayz=qw(Sunday  Monday   Tuesday Wednesday Thursday Friday Saturday                                  );our @Day=();push(@Day,substr($_,0,3)) for(@Dayz);
@@ -134,7 +133,7 @@ my %Sdsr=('_' =>'01;30', '^'  => '00', '.' => '22;30', 'H_' =>'90','h.' => '100'
           'M' =>'01;35', 'bm' => '45', 'm' => '22;35', 'HM' =>'95','hM' => '105',
           'P' =>'22;35', 'bp' => '45', 'p' => '22;35', 'HP' =>'95','hP' => '105', #'bP' => '45', # extra uppercase Purples
           'W' =>'01;37', 'bw' => '47', 'w' => '22;37', 'HW' =>'97','hW' => '107'); # try 2 rEmMber map where KW easily => 07 but RoYG CBMp => 1o32 645p
-          # remember that SKp2 not handled by c8 && 8trm yet so b8colr && die8 are only printing   boldz
+          # remember that SKp2 not handled by c8 && 8trm yet so b8c    && die8 are only printing   boldz
           # should setup 0 to really reset attributez, f0ntz, && everything && prefer just 22     4bold off;
 our %mc2F;our %mc2b;our %mF2c;our %mb2c; # MapC8Col8ColrCodz2ForeBackgrnd && rEverse  # also adding 8trm below restored main lsd8 colors
 if(exists($ENV{'TERM'}) && $ENV{'TERM'} !~ /^(([Ex]|st)(term)?|screen|rxvt|linux|8trm)/){$tnhf=1;} # TermNoHandleFlag (nEd linux hEr 2 4 console colrz)
@@ -817,7 +816,7 @@ sub S2f4{my($text,$Fclr,$bclr,$f0nt  );my $dFbf=':::';my($nxtF,$nxtb,$nxtf)=(spl
     } #   38 X heX heX may need to convert to inverse map of FDAL to render in color when squeezing through f4 layers && supporting 2;R;G;Bm would be nice too;
     elsif($esco =~ /^\e\[([012]?) K$/x){my $ecp0=0;$ecp0=$1 if(defined($1)); # specially handle ls output having [K to Xplicitly blank past line end
       ($nxtF,$nxtb,$nxtf)=(split(//,$dFbf)) unless($ecp0);} # CSI n K : EL - Erase in Line (0=cursor to EOL,1=cursor to BOL,2=clear entire line)
-    elsif($esco =~ /^\e\]4;(\d+);#([0-9a-f]{2})([0-9a-f]{2})([0-9a-f]{2})(\a|\e\\)$/){my $acdn=$1; # upd8 pal8 map with new colors
+    elsif($esco =~ /^\e\]4;(\d+);#([0-9A-Fa-f]{2})([0-9A-Fa-f]{2})([0-9A-Fa-f]{2})(\a|\e\\)$/){my $acdn=$1; # upd8 pal8 map with new colors
       my $acdr=int(hex($2)/4);my $acdg=int(hex($3)/4);my $acdb=int(hex($4)/4); # may need to error check each param value
       $pmap{$cmsp{'ANSI'}[$acdn]}= $sb64[$acdr] . $sb64[$acdg] . $sb64[$acdb];}
     elsif($esco =~ /^\e\]50;([^\a\e]*)(\a|\e\\)$/){$nxtf=$1 if(defined($1) && length($1));} # hndl f0nt chngz thN apNd fInal tail BlO wN nO SKpz||nwlInz rEmAn
@@ -868,7 +867,7 @@ sub sS{      my $Stxt=shift;my $sefz=shift; # eScape TeXT, SubstituteEscapeFlagZ
     h  - print this Help text and exit.            Default is 'Cfp'.
    Note: if you pass in double-dash '--' as 1st param, 2nd is Stext;";$htxt.="\n" if(exists($ENV{'COLUMNS'}) && $ENV{'COLUMNS'} <= 80);
     $Stxt=~ s/^-?-?h(elp)?\s*/$htxt/i;}
-  elsif(defined($Stxt) && length($Stxt)){my $Sein=0;$Sein=1 if($Stxt=~ /\n$/);$sefz=undef if($sefz eq '--'); # detect double-dash param same as no paramz
+  elsif(defined($Stxt) && length($Stxt)){my $Sein=0;$Sein=1 if($Stxt=~ /\n$/);$sefz=undef if(defined($sefz) && $sefz eq '--'); # Dtect dbl-dash param
     $sefz='Cfp' unless(defined($sefz));$sefz=~ s/[^hCFbsXxfpEedzc]//g; #SEndzInNwln?
     if($sefz=~  /C/  ){$Stxt=~ s/ \e \[ [\d;]*         [A-MPSTXZm]//gx  ;} # CSI codes should all fit this pattern && get stripped
     if($sefz=~ /[FbsXx]/){my @Sttd= split(/\n/,$Stxt);for my $lndx(0..$#Sttd){my $tlin=$Sttd[$lndx];my $blin='';
@@ -895,37 +894,33 @@ sub sS{      my $Stxt=shift;my $sefz=shift; # eScape TeXT, SubstituteEscapeFlagZ
     if($sefz=~  /c/  ){$Stxt=~ s/  ,//gx;} # also strip commas for convenience (even though they have basically nothing to do with escapez)
   }else{     $Stxt='';} return($Stxt);}
 our @d8cl=();for(split(//,$cmap{'d8bo'})){push(@d8cl,S($_));} # the default d8ColrList is loaded with eScaped formz described by ColrMap's d8bo sequence
-sub   d8colr {return(  d8c(@_));}
 sub   d8c    {my $rtns = ''; # maybe these should eventually accept flags to select among most useful coloring options
   if(!@_ && !-t STDIN){     (@_=decode('UTF-8',join(''  ,<STDIN>)));}
   for my $d8st (@_){my @d8di = split(//,        $d8st );my $d8dc = '';for(0..$#d8di){$d8dc .= $d8cl[          $_%@d8cl ] . $d8di[$_]        ;} $rtns.="$d8dc ";
   }      $rtns =~ s/\s$//;return($rtns);}
-sub dur8colr {return(dur8c(@_));}
-sub dur8c    {my $rtns = ''; # should build     dur8ion colors right-to-left like b8colr but reversing the d8bo color order
+sub dur8c    {my $rtns = ''; # should build     dur8ion colors right-to-left like b8c but reversing the d8bo color order
   if(!@_ && !-t STDIN){     (@_=decode('UTF-8',join(''  ,<STDIN>)));}
   for my $d8st (@_){my @d8di = split(//,reverse($d8st));my $d8dc = '';for(0..$#d8di){$d8dc  = $d8cl[$#d8cl - ($_%@d8cl)] . $d8di[$_] . $d8dc;} $rtns.="$d8dc ";
   }      $rtns =~ s/\s$//;return($rtns);}
-sub bfr8colr {return(bfr8c(@_));}
-sub bfr8c    {my $rtns = ''; # should build b8 fraction colors left-to-right like d8colr but reversing the d8bo color order
+sub bfr8c    {my $rtns = ''; # should build b8 fraction colors left-to-right like d8c but reversing the d8bo color order
   if(!@_ && !-t STDIN){     (@_=decode('UTF-8',join(''  ,<STDIN>)));} # turnOnly pIpngthruin2chompd pRamz sinc skipng Ovr \n (&&what Ls?)wNrot8ng colrz is hRdr
   for my $b8st (@_){my @b64d = split(//,        $b8st );my $b64c = '';for(0..$#b64d){$b64c .= $d8cl[$#d8cl - ($_%@d8cl)] . $b64d[$_]        ;} $rtns.="$b64c ";
   }      $rtns =~ s/\s$//;return($rtns);}
-sub   b8colr {return(  b8c(@_));}
 sub   b8c    {my $rtns = ''; # just do coloring stringwise for when sprintf zero-padding a specific width is needed   # mk b8clr 2Dtect commaz && % B4 coloring
   if(!@_ && !-t STDIN){     (@_=decode('UTF-8',join(''  ,<STDIN>)));}
   for my $b8st (@_){my @b64d = split(//,reverse($b8st));my $b64c = '';for(0..$#b64d){$b64c  = $d8cl[          $_%@d8cl ] . $b64d[$_] . $b64c;} $rtns.="$b64c ";
   }      $rtns =~ s/\s$//;return($rtns);}
 sub   b8clr  {my $rtns = ''; # Dtect commaz && % B4 coloring  # mAB base4 [bd][fu]?r?8c colrngz shud stA similar with simple uniform applic8ion
   if(!@_ && !-t STDIN){while(my $inln=<STDIN>){#$inln=~ s/\n?$/\n/; # ensure input ends wi newline, may reapNd if chomped, mIt nEd2Bdone aftr decode?
-    push(@_,split(/ /,decode('UTF-8',$inln)));}} # for some reason backtickz like "b8clr `prmz 47 1`" aren't including the typical nwlInz,mAB tix get noColmz?
+    push(@_,split(/ /,decode('UTF-8',$inln)));}} # for some reason backtickz like "b8clr `Prmz 47 1`" aren't including the typical nwlInz,mAB tix get noColmz?
   for my $b8st (@_){my $tdst;my $iprt=0;my $fprt=0;my $comw=0;my $nwlf=0; # shud also tune b8clr 2 hndl b256 as well as b64
     if  ($b8st=~ /^(.+?)[%](.+)$/){$iprt=$1;$fprt=$2;}else{$iprt=$b8st;}
     if  ($iprt=~ /,([^,]+)$/){$comw= length($1);} d8cs('RoYGWCBMpW') if($comw); # assume coma 4 b64 char blox
     $nwlf=1 if($iprt=~ s/\n$//);
-    $tdst   =            b8colr($iprt);
+    $tdst   =            b8c($iprt);
     if  ($fprt){$comw=0; # used to $rtns =~ s/\s$//; before d8cs('d8bo'); was restored, but seems to join d8a lines unnecessarily so match just tail real space
       if($fprt=~ /^([^,]+),/){$comw= length($1);} d8cs('WRoYGWCBMp') if($comw); # assume coma 4 b64 char blox reversed
-      $tdst.= "$W\%" . bfr8colr($fprt) . $z;} $rtns.= "$tdst ";$rtns=~ s/ $/\n/ if($nwlf);}
+      $tdst.= "$W\%" . bfr8c($fprt) . $z;} $rtns.= "$tdst ";$rtns=~ s/ $/\n/ if($nwlf);}
   $rtns=~ s/ $//;d8cs('d8bo');return($rtns);} # try2rEstOr Dflt ColrSequ B4 rEturning
 sub   d8cs   {my $dccs = ''; # d8 ColrSet (or ColrSequence), d8 ColrCodeString
   if(!@_ && !-t STDIN){chomp(@_=<STDIN>);} # turn only piping thru into paramz
@@ -961,18 +956,21 @@ sub sumb{  my $widt=0;$widt=1 if(exists($ENV{'COLUMNS'}) && $ENV{'COLUMNS'} >= 1
    u  - Undescribed files should be listed too     ; (this was broken for new ~/bin/ dirs, also auto-wide doesn't color tst/ dir properly like -1 mode)
    1  - force each name && description onto 1 line ; (within the current text of sumb, the character [or single-char string] '8' appears precisely 90 times)
    2  - just start listing 2nd page of descriptions;
+   j  - Join original main page with 2nd page long ;
    s  - Shuffle list                               ;";}} # H7BM1pTe:sumb word popularity show quite the startling symmetries, patterns, && trends with halves:
-#   'to' => 56, 'from' => 28, 'convert' => 22, 'utility' => 22,  'base' => 13, 'decimal' => 6, 'XML' => 6, 'NotYetInModule' => 6; # these R probably top8 4now
-  my $gbym= 1;for(@_){$gbym=0 if(/^-?-?[su12]*l/i);} # -l List in ls order (used to be -g GroupByModule 2NAbl the now default)    # tfcu bdXN top8 abbreV8ions
-  my $shuf= 0;for(@_){$shuf=1 if(/^-?-?[lu12]*s/i);} # -s Shuffle list  # totally forgot 'color'abov 19,'number'=>10,'string'=>8; # && Wow! '10'=>10, '64'=> 7
-  my $sunf= 0;for(@_){$sunf=1 if(/^-?-?[ls12]*u/i);} # -u show Undescribed files                                                  # '*'=>19 (butonly18R4 -help)
-  my @ufls=();for(@_){$widt=0 if(/^-?-?[lsu2]*1/i);} # -1 force each description to 1 line (so reset width flag)                  # '!'=> 5 (also much in choo)
-  my $s2pf= 0;for(@_){$s2pf=1 if(/^-?-?[lsu1]*2/i);} # -2 just start listing 2nd page                                             # 'char'=>6,'rot'=>5,
+#   'to' => 56, 'from' => 28, 'convert' => 22, 'utility' => 22,  'base' => 13, 'decimal' => 6, 'XML' => 6, 'NotYetInModule' => 6;  # these R probably top8 4now
+  my $jpgz= 0;for(@_){$jpgz=1 if(/^-?-?[lsu12]*j/i);} # -j Join PaGeZ 1 && 2 in output (which will make combin8ion with -u Undescribed more accur8 && useful;
+  my $gbym= 1;for(@_){$gbym=0 if(/^-?-?[jsu12]*l/i);} # -l List in ls order (used to be -g GroupByModule 2NAbl the now default)    # tfcu bdXN top8 abbreV8ions
+  my $shuf= 0;for(@_){$shuf=1 if(/^-?-?[jlu12]*s/i);} # -s Shuffle list  # totally forgot 'color'abov 19,'number'=>10,'string'=>8; # && Wow! '10'=>10, '64'=> 7
+  my $sunf= 0;for(@_){$sunf=1 if(/^-?-?[jls12]*u/i);} # -u show Undescribed files                                                  # '*'=>19 (butOnly18R4-help)
+  my @ufls=();for(@_){$widt=0 if(/^-?-?[jlsu2]*1/i);} # -1 force each description to 1 line (so reset width flag)                  # '!'=> 5 (alsOmuch in choo)
+  my $s2pf= 0;for(@_){$s2pf=1 if(/^-?-?[jlsu1]*2/i);} # -2 just start listing 2nd page                                             # 'char'=>6,'rot'=>5,
   my @bfls= split(/\n/,`ls $ENV{'HOME'}/bin`) if( exists($ENV{'HOME'}) && -d "$ENV{'HOME'}/bin"); # make BinFileLiSt
      @bfls= split(/\n/,`ls   /usr/local/bin`) if(!exists($ENV{'HOME'}) && -d   "/usr/local/bin"); # make BinFileLiSt fallback if no ~/bin to /usr/local instead
   my %bfst=( # BinFileSummaryText (originally was listed in default ls order, but now is reorganized into colored module group sections like default output)
     '8ct'   => "a8 *ColrTest of all four b8 and d8 orient8ions for sequence comparison    ",
     'a8'    => "a8  new d8a object representing ~/.Hrc  (with printing out like `lodH`)   ", # fix 2 fully load obj && output same as lodH
+    'acS'   => "a8  apt-cache Search wrapper which coll8z dpkg -l resultz into together   ", # hLp shO nstl8n st8us of DscrIbd packages of searched interest;
     'b8c'   => "a8  colorizer for  b8  b64 number-strings   (>Right>-to-<Left<< >4wrd>)   ",
     'b8clr' => "a8  colorizer for  b8  b64 which  handles bfr8 (%fractions) and commas    ",
     'bfr8c' => "a8  colorizer for  b8 bfr8 fractions as b64 (<Left<<-to->Right> <Bkwd<)   ",
@@ -1012,29 +1010,31 @@ sub sumb{  my $widt=0;$widt=1 if(exists($ENV{'COLUMNS'}) && $ENV{'COLUMNS'} >= 1
     'b256'  => "b8  converter from base-10 to base-256 b256  (128 plus common in UTF-8)   ",
     'b64'   => "b8  converter from base-10  digit-strings  to base-64   number-strings    ",
     'b8'    => "b8  converter that tries to auto-detect intended from && to number base   ",
-    'choo'  => "b8  n CHOOse m with factorials from combin8orics as  n! / (m! * (n-m)!)   ",
+    'Chus'  => "b8  n CHooSe m with Factorials from combin8orics as  n! / (m! * (n-m)!)   ",
     'cma'   => 'b8  CoMmA insert utility for every 3 digit characters (\d or /[0-9]+/ )   ',
     'cnv'   => "b8  Math::BaseCnv CoNVerter, tries to detect intended base  (like `b8`)   ", # mAB rEtIr orig cnv once b8 is thoroughly reliable instead
     'coma'  => "b8  COMmA insert utility for every 4  b64  characters ( /[A-Z._0-9]+/i)   ",
     'dec'   => "b8  converter from HEXadecimal (base-16)   to  [0-9] decimal (base-10)    ",
     'deC'   => "b8  converter from ocTal [0-7] (base- 8)   to  [0-9] deCimal (base-10)    ",
-    'fact'  => "b8  FACTorial calcul8or multiplying a number down to 1  (was in `choo`)   ",
-    'fibo'  => "b8  FIBOnacci sequence element calcul8or which takes the decimal index    ",
+    'Fact'  => "b8  FACTorial calcul8or multiplying a number down to 1  (was in `Chus`)   ",
+    'Fibo'  => "b8  FIBOnacci sequence element calcul8or which takes the decimal index    ",
     'HEX'   => "b8  converter from decimal (base-10)  to UpperCase HEXadecimal   (b16)    ",
     'ocT'   => "b8  converter from deCimal 0-9 (base-10)   to ocTal   [0-7]  (base- 8)    ",
-    'prim'  => "b8  PRIMe num sequence element calcul8or which takes the decimal index    ",
+    'Prim'  => "b8  PRIMe num sequence element calcul8or which takes the decimal index    ",
     'q'     => "b8 *calQl8or of command-line Math::BigFloat  (in vim :r!q 63xx31 | cma)   ", # fix to use oper8or precedence && parens (prolly nEd2B quOtd)
     'rot1'  => "b8  utility to ROT8 each char of passed in b256 number-strings (by 128)   ", # lIk vim Visual sele thN 'g?' 2rot13
     'rotW'  => "b8  utility to ROT8 each char of passed in b64  number-strings (by  32)   ",
-    'sum8'  => "b8  SUM8ion function adding number down to 1 (actually just multiplies)   ",
+    'Sum8'  => "b8  SUM8ion function adding number down to 1 (actually just multiplies)   ",
 
+    '8mix'  => "c8  NoW___InModule,LukeSmith inspired new PulseAudio bash  script mixer   ", # K3MM0WFY:added simple shL script around `pulsemixer` techncly
+    'mix8'  => "c8  Now___InModule,`pmix`  deriv8ive  for PulseAudio Curses::Simp mixer   ", # flesh out commandz && CLI before bilding new Curses interface
     '8trm'  => "c8  TeRMinal-like applic8ion (a slow experimental SDL backtick wrapper)   ", # mAB add 8trm features to GnomTerm source instead of SDL App
-    'c8'    => "c8  `lsd8` deriv8ive with some cut and hoping to also do cat eventually   ", # flesh out interface for cut part at least (&& mAB cat too)
+    'c8'    => "c8 *`cat` && `cut` replacement taking fields list ranges of b64 indexes   ", # fleshd out interface for both pretty well now
     'ckm8'  => "c8  ChecKMate custom text Chess SDL applic8ion  (or in Curses::Simp -c)   ", # still need to fix Simp to not core-dump on exit
     'd8ok'  => "c8  Curses::Simp text-mode clOcK with varying speed,form,and meter bars   ",
     'die8'  => "c8  terse random dice-rolling  utility  (as similar to HTTP://Rolz.Org)   ",
     'pmix'  => "c8  Curses::Simp /dev/mixer manipul8ion utility (not used byPulseAudio)   ", # mAB rEtIr aftr mix8 good sinc Pulse proly fUtur
-    'prym'  => "c8  Curses::Simp prime-number gener8ion screensaver (currently broken!)   ", # port to prim as new CLI && Curses IF
+    'prym'  => "c8  Curses::Simp prime-number gener8ion screensaver (currently broken!)   ", # port to Prim as new CLI && Curses IF
     'qbix'  => "c8  Curses::Simp Rubik's Cube as spoonerism 'QbixRube' text applic8ion    ", # port to qbx3 wi CLI, Curses, && GL IFz
     'shl8'  => "c8  Source-HighLight8 utility colors detectable syntax within Octology    ", # flesh out c8 hIlItng systM && incrEs suported formatz
     'tsgr'  => "c8 *Test Select Graphic Rendition escapes && xterm-256color Blocks (-b)   ", # mAB shud mv2 a8 lIk tstc?
@@ -1052,7 +1052,7 @@ sub sumb{  my $widt=0;$widt=1 if(exists($ENV{'COLUMNS'}) && $ENV{'COLUMNS'} >= 1
 
     '2psf'  => "f8  converter from .f0nt plain-text encoding to the .psf binary format    ",
     'etfp'  => "f8 *actual binary executable to gET or sET console Fonts (psf) && Pal8s   ",
-    'flet'  => "f8  basic interactive utility to pick desired Font LETters for `figlet`   ", # proly rEwrIt with Curses IF as 8let with d8colr ability
+    'flet'  => "f8  basic interactive utility to pick desired Font LETters for `figlet`   ", # proly rEwrIt with Curses IF as 8let with d8c ability
     'pal8'  => "f8 *utility to modify 16-color palettes in either  terminal or console    ", # ad suport4 b256 24bit colrz,8pal8z,&&remapngz
     'psf2'  => "f8  converter from the .psf binary format to .f0nt plain-text encoding    ",
 
@@ -1071,33 +1071,44 @@ sub sumb{  my $widt=0;$widt=1 if(exists($ENV{'COLUMNS'}) && $ENV{'COLUMNS'} >= 1
     'g3'    => "    NotYetInModule,`gst123` Expect wrapper,heavily reformats and colors   ",
     'g8'    => "    NotYetInModule,`git` wrapper,match long commands && .bak/ converter   ",
     'kpc'   => "   *NotYetInModule,`kpcli` deriv8ive for text KeePass (pswd management)   ",
-    'mix8'  => "    NotYetInModule,`pmix`  deriv8ive for PulseAudio Curses::Simp mixer    ", # flesh out commandz && CLI before bilding new Curses interface
     'pakr'  => "    NotYetInModule,`qbix` PAcKRube Rubik's Cube format converter  (b64)   ", # add standRd Singmaster not8ion conversion && mAB put in b8.pm
     'pimp'  => "    NotYetInModule,`zinf`  wrapper PipsInteractiveMusicPlaylister audio   ", # mAB rEtIr sinc g3 is alreD gr8 (but consider rand playlistz)
     'shot'  => "   *NotYetInModule,`scrot` wrapper utility to autom8 basic screen SHOTs   ",
     ); # mAB add reverse oper8ion with scaling back down4neg8iv option
-  if($s2pf){%bfst=( # BinFileSummaryText (getting set to just 2nd page d8a)
+  if($s2pf){%bfst=();} # empty BinFileSummaryText hash (so it gets set to just 2nd page d8a)
+  my %b2st=( # Bin2ndSummaryText
    #'drkh'  => "a8  converter from 6-char HEX to b64 RgbLow with 8th of intensities on    ", # mIt want2add a8:drkh with 8ths of colr chanLz from input too
+    'uri'   => "a8  URI capitaliz8ion Utility resulting from Beppu-san's procrastin8ion   ",
 
-    'fctz'  => "b8  FaCTorlZ listed (takes (lines-1) 47 and 1 b64 or 2 b256 parameters)   ", # `fctz 47 1` is like `fctz | b64` just with different nwln wrapz
-    'fibz'  => "b8  FIBonacZ listed up to filling in 48 lines with normally 160 columns   ",
-    'prmz'  => "b8  PRiMe..Z listed up to filling in 48 lines with normally 160 columns   ",
-    'sumz'  => "b8  SUM8ionZ listed up to filling in 48 lines with normally 160 columns   ",
+    'Fctz'  => "b8  FaCTorlZ listed (takes (lines-1) 47 and 1 b64 or 2 b256 parameters)   ", # `fctz 47 1` is like `fctz | b64` just with different nwln wrapz
+    'Fibz'  => "b8  FIBonacZ listed up to filling in 48 lines with normally 160 columns   ",
+    'Prmz'  => "b8  PRiMe..Z listed up to filling in 48 lines with normally 160 columns   ",
+    'Sumz'  => "b8  SUM8ionZ listed up to filling in 48 lines with normally 160 columns   ",
 
     'sloc'  => "c8  Beppu-san sent `SlowCat.pl` simul8ing default 9600 baud print speed   ",
 
+    'L'     => "d8 *barely reformatted `ls -vF` (which packs && pads && aligns densely)   ",
+
     'pt'    => "Time::PT *for original PipTime module  (main precursor to Octology::d8)   ", # J1OL7CR8:DcIded2swpout Pg1 pt,bak,e 4 Pg2 tstn,supd,oupd ;
 
-  # 'U23c'  => "U8  download from U2b ClosedCaption transCript Copy UTF2to3-Column out8   ", # J24LLOLI:candid8Ibrk;
-
+    'U23c'  => "U8  download from U2b ClosedCaption transCript Copy UTF2to3-Column out8   ", # J24LLOLI:candid8Ibrk;
     'U2b2'  => "U8  download from U2b but just audio in high-quality ('2'=to auto-best)   ",
     'U2b3'  => "U8  `youtube-dl` also but just audio in mp3 format (usually transcoded)   ", # proly transcOded NEwA
     'U2b4'  => "U8  reformat 're4mat' the name of a downloaded U2b file to align fields   ",
     'U2b8'  => "U8  HTTPS://YouTube-DL.Org dl normal video file (default 1280x720 reso)   ",
+    'U2bdl' => "U8  HTTPS://YouTube-DL.Org actual `youtube-dl` executable, just renamed   ",
+    'Udl8'  => "U8  attempted`U2b8`reimplement8ion using Expect 2show DownLoad progress   ",
+    'Upd8'  => "U8  simple `wget`wrapper like`Upw8`&&`Upc8`but for ~/bin,not /usr/local   ",
 
     'bak'   => "Utl  auto-save now d8-stamp in the end-name of a .bak/ backup file copy   ",
     'e'     => "Utl  EDITOR wrapper which includes a fragile old package templ8 system    ", # mAB rEwrIt mOst Useful BhAVor as nw clEnr U8:e or let dokr:e
-    );} # might want to add a8:g for new grep varE8ion && a8:s8 for standard && custom sorts && shuffles
+
+    '3'     => "    NotYetInModule,`gst123` Expect wrapper,starting like `g3` but dur8s   ",
+    'tib'   => "    NotYetInModule,TabletInitButtons calling `xsetwacom` for Intuos Pad   ",
+  ); # might want to add a8:g for new grep varE8ion && a8:s8 for standard && custom sorts && shuffles
+  if($s2pf || $jpgz){for my $bink (keys(%b2st)){$bfst{$bink}=$b2st{$bink};}} # load Bin2ndSummaryText key=>value pairz over into main BinFileSummaryText hash
+# K3KMEnot:removed sym-link since just renamed `U2bdl` seems to be working just fine, leaving older /usr/local/bin/youtube-dl still accessible in addition;
+#youtube-dl'=>" U8  HTTPS://YouTube-DL.Org but just symbolic-link to l8st `U2bdl`   ", # nEd2shrink Dscriptn2fit lIn sinc SymLinkXeQtabl nAm2wId2fit4m@
 # HBPL7end:reordered by module sections,moved dic from wrong b8 to d8 section,retired ptold sinc shudBeasy2rEmk in d8 if evr nEdedAgN,mAd nw d8ow 2 calc dow;
 #   'dow'   => "Time::DayOfWeek *utility taking Year, Month, and Day parameters or now    ",
 #   'ptold' => "Time::PT  original 5-character PipTime utility from before  March 2006    ", # mAB rEtIr or fold code in2ptcnv?
@@ -1169,30 +1180,30 @@ sub sumb{  my $widt=0;$widt=1 if(exists($ENV{'COLUMNS'}) && $ENV{'COLUMNS'} >= 1
        #$l=S($bftc{'file'}{ '\[' });$bfst{$bfls[$bfle-$_]}=~ s/([\[]+)/$l$1$i/gx; # Xplicitly do brak Left  # nEd2!do Left bracket this smpl wA sinc ruinz SKpz
        #$l=S($bftc{'file'}{ '\]' });$bfst{$bfls[$bfle-$_]}=~ s/([\]]+)/$l$1$i/gx; # Xplicitly do brak Rite
         $h=S($bftc{'file'}{ '!'  });$bfst{ $bfls[$bfle - $_]}=~ s/(\W| [nmr])(!)/$1$h$2$i/gx;d8cs('oCRoMoGY' ); # tryng some non-d8bo colrsequ for Octology too
-        $h=d8colr('Octology'      );$bfst{ $bfls[$bfle - $_]}=~ s/Octology      /$h$i/gx    ;d8cs('CoMoR'    ); # colr bangz 1st thng,thN all"color",cnv,&& utl
-        $h=d8colr('color'         );$bfst{ $bfls[$bfle - $_]}=~ s/([^`])color   /$1$h$i/gx  ;                   # alsObAsic2pal8regXzBlO du!Use $h or $l 2lFt
-        $h=d8colr('Color'         );$bfst{ $bfls[$bfle - $_]}=~ s/([^`])Color   /$1$h$i/gx  ;d8cs('IIIIJQQ'  ); # && new cdst descriptn has capitalIzd "Color"
-        $h=d8colr('wrapper'       );$bfst{ $bfls[$bfle - $_]}=~ s/wrapper       /$h$i/gx    ;d8cs('XXXNNN111'); # && new White "wrapper" varE8ionz
-        $h=d8colr('converter'     );$bfst{ $bfls[$bfle - $_]}=~ s/converter     /$h$i/gx    ;                   # && get old BaseCnv cnv capitalized
-        $h=d8colr('CoNVerter'     );$bfst{ $bfls[$bfle - $_]}=~ s/CoNVerter     /$h$i/gx    ;d8cs('GBZOM'    ); # && try to get S && c col8 post-text layrz
-        $h=d8colr('FbSGR'         );$bfst{ $bfls[$bfle - $_]}=~ s/FbSGR         /$h$i/gx    ;d8cs('11XXN'    ); # shud upd8 these 2use more Blue shAdz,!Cyanz
-        $h=d8colr('lines'         );$bfst{ $bfls[$bfle - $_]}=~ s/lines         /$h$i/gx    ;d8cs('11NXXX'   );
-        $h=d8colr('listed'        );$bfst{ $bfls[$bfle - $_]}=~ s/listed        /$h$i/gx    ;d8cs('X1111NN'  );
-        $h=d8colr('filling'       );$bfst{ $bfls[$bfle - $_]}=~ s/filling       /$h$i/gx    ;d8cs('ZC9TVmM'  ); # rEmMbr2rEset2 d8bo whN done BlO
-        $h=d8colr('utility'       );$bfst{ $bfls[$bfle - $_]}=~ s/utility       /$h$i/gx    ;
-        $h=d8colr('util'          );$bfst{ $bfls[$bfle - $_]}=~ s/util          /$h$i/gx    ;d8cs('d8bo'     ); # should be same as 'RoY' or close
-        $h=d8colr('YMD'           );$bfst{ $bfls[$bfle - $_]}=~ s/YMD           /$h$i/gx    ;d8cs('mmmMMMppVVVVVV'); # NYIM was orig S('mkB') at very end
-        $h=d8colr('NotYetInModule');$bfst{ $bfls[$bfle - $_]}=~ s/NotYetInModule/$h$i/gx    ;d8cs('d8bo'     ); # du!Uz $i $j 2map 8pal8z in2 fldz BlO
+        $h=d8c('Octology'         );$bfst{ $bfls[$bfle - $_]}=~ s/Octology      /$h$i/gx    ;d8cs('CoMoR'    ); # colr bangz 1st thng,thN all"color",cnv,&& utl
+        $h=d8c('color'            );$bfst{ $bfls[$bfle - $_]}=~ s/([^`])color   /$1$h$i/gx  ;                   # alsObAsic2pal8regXzBlO du!Use $h or $l 2lFt
+        $h=d8c('Color'            );$bfst{ $bfls[$bfle - $_]}=~ s/([^`])Color   /$1$h$i/gx  ;d8cs('IIIIJQQ'  ); # && new cdst descriptn has capitalIzd "Color"
+        $h=d8c('wrapper'          );$bfst{ $bfls[$bfle - $_]}=~ s/wrapper       /$h$i/gx    ;d8cs('XXXNNN111'); # && new White "wrapper" varE8ionz
+        $h=d8c('converter'        );$bfst{ $bfls[$bfle - $_]}=~ s/converter     /$h$i/gx    ;                   # && get old BaseCnv cnv capitalized
+        $h=d8c('CoNVerter'        );$bfst{ $bfls[$bfle - $_]}=~ s/CoNVerter     /$h$i/gx    ;d8cs('GBZOM'    ); # && try to get S && c col8 post-text layrz
+        $h=d8c('FbSGR'            );$bfst{ $bfls[$bfle - $_]}=~ s/FbSGR         /$h$i/gx    ;d8cs('11XXN'    ); # shud upd8 these 2use more Blue shAdz,!Cyanz
+        $h=d8c('lines'            );$bfst{ $bfls[$bfle - $_]}=~ s/lines         /$h$i/gx    ;d8cs('11NXXX'   );
+        $h=d8c('listed'           );$bfst{ $bfls[$bfle - $_]}=~ s/listed        /$h$i/gx    ;d8cs('X1111NN'  );
+        $h=d8c('filling'          );$bfst{ $bfls[$bfle - $_]}=~ s/filling       /$h$i/gx    ;d8cs('ZC9TVmM'  ); # rEmMbr2rEset2 d8bo whN done BlO
+        $h=d8c('utility'          );$bfst{ $bfls[$bfle - $_]}=~ s/utility       /$h$i/gx    ;
+        $h=d8c('util'             );$bfst{ $bfls[$bfle - $_]}=~ s/util          /$h$i/gx    ;d8cs('d8bo'     ); # should be same as 'RoY' or close
+        $h=d8c('YMD'              );$bfst{ $bfls[$bfle - $_]}=~ s/YMD           /$h$i/gx    ;d8cs('mmmMMMppVVVVVV'); # NYIM was orig S('mkB') at very end
+        $h=d8c('NotYetInModule'   );$bfst{ $bfls[$bfle - $_]}=~ s/NotYetInModule/$h$i/gx    ;d8cs('d8bo'     ); # du!Uz $i $j 2map 8pal8z in2 fldz BlO
         $h=S('Z');$bfst{$bfls[$bfle-$_]}=~ s/(Select\s*)(Graphic\s*)(Rendition)/$h$1$O$2$M$3$i/;    # get SGR ZOM 4 tsgr
                   $bfst{$bfls[$bfle-$_]}=~ s/      (\s+)(S)(G)(R)(\s+)       /$1$h$2$O$3$M$4$i$5/x; # get SGR ZOM 4 tstc (spc-sepR8d)
         if($grup eq 'd8' && $bfls[$bfle - $_] eq 'w8'){ # should properly color quoted example dur8ions in whatever w8 description
-          while($bfst{$bfls[$bfle - $_]}=~  /(\s)(['"])([0-9A-Za-x]+)\2/){$s=$1;$q=$2;$d=$3;$e=dur8colr($d);
+          while($bfst{$bfls[$bfle - $_]}=~  /(\s)(['"])([0-9A-Za-x]+)\2/){$s=$1;$q=$2;$d=$3;$e=dur8c($d);
             $bfst{    $bfls[$bfle - $_]}=~ s/($s)(['"])([0-9A-Za-x]+)\2/$1$G$2$e$G$2$i/;}
           $bfst{      $bfls[$bfle - $_]}=~ s/(fra?me?  s?)/$p$1$i/gx;
           $bfst{      $bfls[$bfle - $_]}=~ s/(sec(ond)?s?)/$M$1$i/g ;
           $bfst{      $bfls[$bfle - $_]}=~ s/(min(ute)?s?)/$B$1$i/g ;
           $bfst{      $bfls[$bfle - $_]}=~ s/(ho?u?r   s?)/$C$1$i/gx;}
-        # mAB mk d8colr 4 NotYetInModule 2,&& rm from Nd of %bftc
+        # mAB mk d8c 4 NotYetInModule 2,&& rm from Nd of %bftc
         $d=S($bftc{'modu'}{'Games::Cards::Poker->Shuffle'});$bfst{$bfls[$bfle-$_]}=~ s/(Games::Cards)(::Poker->Shuffle)/$d$1$d$2$i/gx; # set colrz around Cards
         $d=S($bftc{'b64r'}{'\['});
         $e=S($bftc{'b64r'}{ '-'});
@@ -1242,7 +1253,7 @@ sub sumb{  my $widt=0;$widt=1 if(exists($ENV{'COLUMNS'}) && $ENV{'COLUMNS'} >= 1
         $bfst{ $bfls[$bfle - $_]}=~ s/   (\s    )(9600)(\s   )/$1$d$2$i$3/gx        ;$d=S($bftc{'d8fz'}{'March' }); # du 256 more
         $bfst{ $bfls[$bfle - $_]}=~ s/   (\s)   (March)(2006 )/$1$d$2$s$3$i/gx      ;$d=S($bftc{'file'}{ 'cRdz' }); # du d8 fldz M && Y from ptold
         $bfst{ $bfls[$bfle - $_]}=~ s/   (\s|:) (Cards)(\s|:|\e)/$1$d$2$i$3/gx      ;$d=S($bftc{'file'}{ 'SKpz' }); # just get b128 Cards, not Gmz:Cards:Pokr
-        $bfst{ $bfls[$bfle - $_]}=~ s/   (\s)(e[Ss]capes?)(\s)/$1$d$2$i$3/gx        ;$d=S($bftc{'file'}{ 'down' }); # mAB want to d8colr for SKpz too?
+        $bfst{ $bfls[$bfle - $_]}=~ s/   (\s)(e[Ss]capes?)(\s)/$1$d$2$i$3/gx        ;$d=S($bftc{'file'}{ 'down' }); # mAB want to d8c for SKpz too?
                                                                                      $l=S($bftc{'file'}{ 'load' }); # du downloadz in half
         $bfst{ $bfls[$bfle - $_]}=~ s/   (\s)   (down)(load(ed)?)/$1$d$2$l$3$i/gx   ;$d=S($bftc{'file'}{ 'time' }); # du all time && Time
         $bfst{ $bfls[$bfle - $_]}=~ s/  (full-)(   time)(  \W)/$G$1$G$2$i$3/gx      ; # pre-colr ls flag's "-time" B4 next match would make Reddish
@@ -1384,6 +1395,8 @@ sub new{my($clas,$Hfil,$wrnf)=@_;$wrnf=0 unless(defined($wrnf)); # add WaRNingFl
         elsif($sst8 eq 'B'){ # handle char in Bgn section
           if   ($char eq '=' && $line =~ /^>/){$line =~ s/^>//;$sst8='m';@ktnz=();$patn=scalar(@{$self->{'Hftd'}});$mcsf=0; # upd8 section 2 mDL
             push(     @{$self->{'Hftd'}},['laro',  '=>'  ]);}  # assume LeftARrOw
+          elsif($char eq '-' && $line =~ /^>/){$line =~ s/^>//;$sst8='m';@ktnz=();$patn=scalar(@{$self->{'Hftd'}});$mcsf=0; # upd8 section 2 mDL
+            push(     @{$self->{'Hftd'}},['lard',  '->'  ]);}  # assume LeftARrowDash (instead of equal)
           elsif($char eq ':'){for my $ktns(@ktnz){$self->{'Hftd'}[$ktns][0]='cntx';} # loop to s/ajvk/cntx/g
             push(     @{$self->{'Hftd'}},['coln',  $char ]);$cntx.=$ajvk;$ajvk='';} # shift keyz to context
           else{push(@ktnz,scalar(@{$self->{'Hftd'}})); # track KeyToken iNdiceZ in case they need to change to context l8r
@@ -1404,20 +1417,19 @@ sub new{my($clas,$Hfil,$wrnf)=@_;$wrnf=0 unless(defined($wrnf)); # add WaRNingFl
           push(       @{$self->{'Hftd'}},['xpnd',  $char ]);}}} # append key
   }elsif($wrnf){say "!*Warn*! Default .Hrc file not found in current directory or user HOME && no path parameter given to a8->new()!";}
   return($self);}
-sub a8colr {return(  a8c(@_));}
-sub a8c    {my $self=shift;return unless(defined($self) && exists($self->{'Hftd'}));
-  open my $out8,'>&',STDOUT or die "Can't open  duplic8 STDOUT handle: $!";binmode $out8,':encoding(UTF-8)'; # crE8 local duplic8 of global
-  for  my $tndx(0..$#{$self->{'Hftd'}}){
-    print $out8 $W if($self->{'Hftd'}[$tndx][0] =~ /^(coma|coln|scln)$/);
-    print $out8 $G if($self->{'Hftd'}[$tndx][0] eq 'cntx');
-    print $out8 $Y if($self->{'Hftd'}[$tndx][0] eq 'ajvk');
-    print $out8 $B if($self->{'Hftd'}[$tndx][0] eq 'laro');
-    print $out8 $R if($self->{'Hftd'}[$tndx][0] eq 'raro');
-    print $out8 $C if($self->{'Hftd'}[$tndx][0] eq 'cmnt');
-    if               ($self->{'Hftd'}[$tndx][0] eq 'ajmk'){
-      print $out8   S($self->{'Hftd'}[$tndx][1]) . $self->{'Hftd'}[$tndx][1];} # try to just color map keyz to start
-    else{print $out8  $self->{'Hftd'}[$tndx][1];}}
-  close       $out8         or die "Can't close duplic8 STDOUT handle: $!";}
+#   a8c() now just returnz string form && $out8 opening to duplic8 STDOUT is done around prntng a8c in `a8`; Dflt stringify shud prolyBtXt wo colrz;
+sub a8c {my $self=shift;return unless(defined($self) && exists($self->{'Hftd'}));my $a8xt='';
+  for  my $tndx(0 .. $#{$self->{'Hftd'}}){
+    $a8xt      .= $W if($self->{'Hftd'}[$tndx][0] =~ /^(coma|coln|scln)$/);
+    $a8xt      .= $G if($self->{'Hftd'}[$tndx][0] eq   'cntx');
+    $a8xt      .= $Y if($self->{'Hftd'}[$tndx][0] eq   'ajvk');
+    $a8xt      .= $B if($self->{'Hftd'}[$tndx][0] =~ /^(lar[od])$/); # accept either LeftARrOw (with equal like RightARrOw) or LeftARrowDash
+    $a8xt      .= $R if($self->{'Hftd'}[$tndx][0] eq   'raro');
+    $a8xt      .= $C if($self->{'Hftd'}[$tndx][0] eq   'cmnt');
+    if                 ($self->{'Hftd'}[$tndx][0] eq   'ajmk'){
+      $a8xt    .=     S($self->{'Hftd'}[$tndx][1]) . $self->{'Hftd'}[$tndx][1];} # try to just color map keyz to start
+    else{$a8xt .=       $self->{'Hftd'}[$tndx][1];}}
+  return($a8xt);}
 # rs= 00          : RESET                   global dflt
 # no= 00          : NORMAL                  NOrmal dflt
 # fi= 00          : FILE                    normal FIle (altho idealy evrythng shud Bcome smthng distinct in contextz)
@@ -1522,8 +1534,8 @@ sub c8fn{  my $fnam;my $aflg=0;$aflg=1 if(@_);my $zflg=0;if($aflg && $_[0] =~ /^
       my $tnam=$fnam;my($n,$s); # process filename colr  # single-letter variables holding primary escaped colors
   #   if($subd eq '.'&& @ARGV){my $andx=0;while(!-d "$ARGV[$andx]"&& $andx<$#ARGV){$andx++;}if(-d "$ARGV[$andx]"){$subd="$ARGV[$andx]";$subd=~s/\/+$//;}}
   #   above was for when ls output enabled tracking the traversed subdirectory, but such context is likely to remain unknowable from here within c8fn()
-      if($tnam=~  /-([-0-9A-Z_]{11})-([0-9A-Z._]{6})-(NA_|[0-9A-Z._][1-9A-C][1-9A-V])\./i){my $epch=b8colr($2);my $uld8=d8colr($3);d8cs('U2b8');
-         $uld8="$M$3" if($3 eq 'NA_');                                                     my $idnt=b8colr($1);                    d8cs();
+      if($tnam=~  /-([-0-9A-Z_]{11})-([0-9A-Z._]{6})-(NA_|[0-9A-Z._][1-9A-C][1-9A-V])\./i){my $epch=b8c($2);my $uld8=d8c($3);d8cs('U2b8');
+         $uld8="$M$3" if($3 eq 'NA_');                                                     my $idnt=b8c($1);                 d8cs();
         # above override default d8 colr8ion when uldt was Not Available  # this hIlIting is specifically for U2b8 -> U2b4 name resultz
         # might want to try to strip out idnt && epch so l8r spcs won't recolr their /[-._]/, then after add back before uldt.xtn
          $tnam=~ s/-([-0-9A-Z_]{11})-([0-9A-Z._]{6})-(NA_|[0-9A-Z._][1-9A-C][1-9A-V])\./-$idnt-$epch-$uld8./i; # l8r colr uldr && mAB Artist columz sepR8ly2
@@ -1548,8 +1560,8 @@ sub c8fn{  my $fnam;my $aflg=0;$aflg=1 if(@_);my $zflg=0;if($aflg && $_[0] =~ /^
           $tnam=~s/$ptvr/$stim/ if(length($stim)==(length($ptvr)  *12  ));}}
    while($tnam=~/^.*-(\e\[([\d;]*)m)*([0-9A-Za-z._][1-9A-C][1-9A-V][0-9A-Za-g][0-9A-Za-x]{4})(\e\[([\d;]*)m)*([-.*\/]|$)/x){my $d8vr=$3;#y $dtim=undef; # newd8
         if($fnam=~/-$d8vr([-.*\/]|$)/){#dtim=Octology::d8->new($d8vr);my $etim=$dtim->color('a'   );#etim.=$P.'0' if($d8vr=~/0$/); # try2wrk around!using d8.pm
-#         my @d8fl= split(//,$d8vr);my $etim="$R$d8fl[0]$O$d8fl[1]$Y$d8fl[2]$G$d8fl[3]$C$d8fl[4]$B$d8fl[5]$M$d8fl[6]$P$d8fl[7]"  ; # but rEmMbrUcan use d8colr
-          my $etim=d8colr($d8vr);                                                                                                      $tnam=~s/$d8vr/$etim/;}}
+#         my @d8fl= split(//,$d8vr);my $etim="$R$d8fl[0]$O$d8fl[1]$Y$d8fl[2]$G$d8fl[3]$C$d8fl[4]$B$d8fl[5]$M$d8fl[6]$P$d8fl[7]"  ; # but rEmMbrUcan use d8c
+          my $etim=d8c($d8vr);                                                                                                         $tnam=~s/$d8vr/$etim/;}}
       $tnam  =~s/   -                (n)(o)(w)                                                  ([-.*\/]|$)/-$M$1$M$2$M$3$4/x;     # Dtect now dif from YMD BlO
    while($tnam=~/^.*-(\e\[([\d;]*)m)*([0-9A-Za-z._])([0-9A-Za-q])([0-9A-Za-z._])(\e\[([\d;]*)m)*([-.*\/]|$)/x){my($d8vY,$d8vM,$d8vD)=($3,$4,$5);  # && -YMD- d8
           my $etim="$R$d8vY$O$d8vM$Y$d8vD";if($d8vY ne 'n' || $d8vM ne 'o' || $d8vD ne 'w'){                                 $tnam=~s/$d8vY$d8vM$d8vD/$etim/;}}
@@ -2785,7 +2797,7 @@ sub tstc{my $retn='';my $argz='';my $widt=80;$widt=$ENV{'COLUMNS'} if(exists($EN
  $retn.="${G}Even after much use, I still consider long digit codes like \"\\e[01;33;44m\" or \"\\x1B[01;38;5;085;48;5;017m\" too unwieldy. So I sorted and searched
   rgb.txt and colors.txt to represent colors as just 1 or 2 descriptive characters. There are also High intensity Foregrnd 90..97 and backgrnd 100..107.
 I call a \"pal8\" a generic term for 8 (or any multiple) of such remapped color-codes. A \"2pal8\" is meant to describe the old standard first 16 colors
-  renamed (or l8r extended sets of 16 that correspond back to the original 16). In order to attain my default \"8bow\" of " . d8colr($cmap{'8bow'}) . "$G, I needed to promote
+  renamed (or l8r extended sets of 16 that correspond back to the original 16). In order to attain my default \"8bow\" of " . d8c($cmap{'8bow'}) . "$G, I needed to promote
  $O dark$Y yellow$G to$O bright Orange$G and$P dark$M magenta$G to$P bright PurPle$G. I'm still not sure if$P PurPle$G should order before$M Magenta$G, being closer to$B Blue$G?
 So the original ANSI in 2pal8 form is '"  ;for(@{$cmsp{ 'ANSI'}}){$retn.= S($_) . $_;$retn.=' ' if(/^w$/);} # krgObPcw KRGYBMCW  shud colr neon wash melo BlO2
   $retn.="$G' and my reordering '"        ;for(@{$cmsp{'2pal8'}}){$retn.= S($_) . $_;$retn.=' ' if(/^w$/);} # krOgcbPw KRYGCBMW  shud colr dark avrg lite BlO2
@@ -2807,13 +2819,27 @@ They were all named closely too as in '"  ;for(        16..63   ){$retn.= S($cms
     $retn    =~ s/m([FDALOH]):    /m$blyr:/x;} # post-process F2b flip-flop Foreground uc default 8pal8 layer prefixes into usage as bkgrnd lc versions
   $retn      =~ s/^\s+//; # not sure why blank newline snuck in top
   return($retn);}
+sub acS{ # apt-cache Search wrapper which coll8z dpkg -l resultz in together to help show install8ion st8us of described packages of searched interest;
+  my $gflg=0;my $gstr=''; # added g flag to auto-grep on resultz so only actual present m@chz shO;
+  if(@_){for(my $pndx=0;$pndx<$#_;$pndx++){if($_[$pndx]=~ /^-?-?g(rep)?$/i){$gflg=1;$gstr=$_[$pndx+1];$_[$pndx]=$_[$pndx+1]='';last;}}}
+  my $acsr=`apt-cache search @_`;my @pkgz=split(/\n/,$acsr);my $rslt='';my $mxnl=1;my $mxvl=1;my $mxal=1;my %fd8a;  # MaX-Name|Vers|Arch-Lengthz && Fieldz
+  for(@pkgz){if((!$gflg || /$gstr/) && /^(\S+)\s+-\s+(.+)$/){my($pkgn,$pkgd)=($1,$2); $mxnl=length($pkgn) if(length($pkgn) > $mxnl); # track max-length sOfR
+      my $dprs=`dpkg --simulate -l $pkgn 2>/dev/null`;$dprs=~ s/^Desired=Unkn.+\n\| Status=Not.+\n\|\/ Err.+\n\|\|\/ Name.+\n\+{3}-={3}.+\n//; # strip header
+      my @dptz=split(/\s+/,$dprs); # hopefully just get dpkg status, pkg-name (again), mAB version installed, && mAB architecture (omitting 2nd description)
+      $mxvl=length($dptz[2]) if(defined($dptz[2]) && length($dptz[2]) > $mxvl);$fd8a{$pkgn}[0]=$dptz[0];$fd8a{$pkgn}[1]=$dptz[2];
+      $mxal=length($dptz[3]) if(defined($dptz[3]) && length($dptz[3]) > $mxal);$fd8a{$pkgn}[2]=$dptz[3];$fd8a{$pkgn}[3]=$pkgd   ;}}
+  for(@pkgz){if((!$gflg || /$gstr/) && /^(\S+)/){my $pkgn=$1; # loop again after all max-lengthz are known && Field-d8a storez resultz
+      for my $fndx(0..3){$fd8a{$pkgn}[$fndx]='' unless(defined($fd8a{$pkgn}[$fndx]));} # not sure why some fieldz were coming off uninitialized
+      $rslt.=sprintf("$G%-${mxnl}s  $M%2s  $Y%-${mxvl}s  $R%-${mxal}s  $C%s$z\n",$pkgn,@{$fd8a{$pkgn}});}}
+  if ($gflg){my $Wb=S('Wb');$rslt=~ s/($gstr)/$Wb$1$z$C/g;} # if gflg shud alsO hIlIt gstr Xplicit m@chz (but assuming folO wi Cyan in desc,!Green name)
+  return($rslt);} # l8r mAB du -s st8us nstd of -l? mIt B much fastr 2du dpkg -l in bulk rathr than sO many baktix && hedr stripz;
 8;
 
 =encoding utf8
 
 =head1 NAME
 
-Octology::a8 - Autom8 exports of base Octology functionality
+Octology::a8 - Autom8 exports of fundamental Octology functionality
 
 =head1 VERSION
 
@@ -2834,7 +2860,21 @@ objects which represent the .Hrc file format as a data-structure in memory which
 
 =head2 new()
 
-The standard a8 object constructor, which does rudimentary parsing and coloring of the ~/.Hrc d8a file.
+The standard a8 object constructor, which does rudimentary parsing of the ~/.Hrc d8a file. Call the a8c() object method to re-gener8 the original file-format
+with embedded ANSI escape color codes.
+
+=head2 a8c()
+
+a8 object method which traverses back through the components to reconstruct the identical original ~/.Hrc d8a file, but introduces ANSI escape color codes.
+
+=head2 bfr8c()
+
+                bfr8c    b8c    d8c   dur8c @d8cl  d8cs  a8c   chti  c8fn  o8 S2   c2  S c   sS    lodl @Monz @Mon     %mc2F %mc2b %mF2c %mb2c @Kana  %sb10
+ $SKp8 $SKp0 $SKp1 $SKp2 b8clr  $SKpf $SKpt %pmap %cmap       %pl8n  ftst acS   %f8fm %f8pm %sgrm %sgrn @Dayz @Day  lrc      comma  curs  sumb @x256  @sb64
+    $z    $k    $r    $o    $y    $g     $c $SKpb    $m    $p    $w  tstc    $K    $R    $O    $Y    $G    $C    $B    $M    $P    $W    %p622 %p222   upd8
+         $bk   $br   $bo   $by   $bg    $bc   $bb   $bm   $bp   $bw         $hK   $hR   $hO   $hY   $hG   $hC   $hB   $hM   $hP   $hW     h2rl  rl2h   drkh
+                                                                            $HK   $HR   $HO   $HY   $HG   $HC   $HB   $HM   $HP   $HW
+ $tnhf $ucdf  spff  spfd  spfX   shfl  reso $Auth %cmsp %p8k2 @p82k  chp8     S2f4 c2f4 dm2u cdst %crgb %cbrt @snls @mrls %cdrd %cdrn    %nrgb         gnp8
 
 =head1 CHANGES
 
@@ -2862,7 +2902,7 @@ Revision history for Perl extension Octology::a8:
 
 From the command shell, please run:
 
-  `perl -MCPAN -e "install Octology"`
+  `perl -MCPAN -e "install Octology"` # Note: This command won't work yet since Octology is only released on GitHub so far, but should be on CPAN eventually.
 
 or uncompress the package and run the standard:
 

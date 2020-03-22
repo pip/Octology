@@ -37,15 +37,17 @@ sub   lodH{ # LOaD .Hrc file as test on top (then automatically instead) of abov
     my   $ffcc='' ;my $dfcc='c'  ; # init Found&&Dfalt First  Col8 Context key which is Xpectd2Bthe 1stNcountrd non-comNted character reached within any file
     my   $ffcl='' ;my $dfcl='t'  ; # init Found&&Dfalt First  Col8 Layer   key
     my   $fscl='' ;my $dscl='F'  ; # init Found&&Dfalt Second Col8 Layer   key which shudget aplId2evry folOng midl-map that neglectz2include any layer key
-    my   $Dlup=  0;
+    my   $Dlup=  0;my $mmdf= 0   ; # special handling of loop for Dominos? && Middle-Map-Dash-Flag (nstd of same equalz lIk Perl fat-comma B4 Xpandz)
     for my $lndx(0..$#{$Hrcd->{'Hfld'}}){my $ajvk=''; # Active Joined abbreV8ion Keyz 2 l8r map2 or Xpand  # I ac2lywant2BAbl2custmcolrcomNtzcontNtz inoutput2
       my $line=$Hrcd->{'Hfld'}[$lndx]; # don't want2modify orig butshudBd8a lIn (nonblank noncomNt), so try2stRtpRsng Bgn contXtz:VkEyz
       my $pllc='' ;my $cllc=$drlc;my $fbgn=0;my $fbgp=0; # init Potntl&&Curnt LineLevel Context wi abov Dflt2'-'dash as cOde4root,flag4wethrFinshdBGiNsectn4lIn
       my $pmmv='' ;my $pmcl='';   my $fmxo=0;my $fmxb=0;my $pnxs=''; # PotntlMidlMapValz, PottlMidlC8Layer, FlagMidlmapz2XpansionzOnly(:X), Potntl eNd XpandStr
+      my $lmmc=  0; # LineMiddleMapCount for spacing out l8r 2ndary middle-mapz when using MMDashFlag instead of original old equalz
       while($line=~ s/^(\s*(\S))//){my $psbc=$1;my $nsbc=$2; # stRt procSng any lIn bystripping any PossiblySpacedBeginningCharacter && isol8 NonSpaceBginChr
         if    ( $nsbc=~ /[#]/){chomp($line);$Hrcd->{'Hdpz'}[$lndx]{'Cmn'}="$psbc$line";$line=~s/(Pip)/$Y$1$C/g;$line=~s/(Stuart)/$G$1$C/g;print "$C$psbc$line";
           $line=''; # MpT rSt of comNt lIn  # mAB custmcolrcomNtlIncontNtzin2'Hflc'&&autODtect d8z,c8fnz,Pplznamz,Emlz,&& whatever else wudBgood
-        }elsif(($nsbc=~ /[=]/ && $line=~ s/^[>]//) || $nsbc=~ /[;]/){ # sectn finshd,strip arrow fromBgin of lIn&&prEsrv anyBgin contXt orVkEyz,or tIDup
+        }elsif(($nsbc=~ /[-=]/ && $line=~ s/^[>]//) || $nsbc=~ /[;]/){ # sectn finshd,strip arrow fromBgin of lIn&&prEsrv anyBgin contXt orVkEyz,or tIDup
+          if  ( $nsbc=~ /[-]/ ){$mmdf= 1;} # set Middle-Map-Dash-Flag if any sepR8orz had dash nstd of equalz 4 comma, but shud stor Ech sepR8ly && allow Eithr
           if(!$fbgn){$fbgn=1;my $dbks='';$dbks="$cllc:" if(length($cllc) && $cllc ne $drlc);$dbks.=$ajvk;$Hrcd->{'Hdpz'}[$lndx]{'Bgn'}=$dbks;
             } # distilled spAcelS Bgn but nEd2prEsrv fullorigspAcez2  # nEd2valid8contXt Xistz or crE8 it&&ck kEyz4new or old  # Dfer prntuntilmABcanUsemidlmap
           elsif(length($pmmv) == length($ajvk)){my $dmms=' ';if(length($pmcl)){$dmms.="$pmcl:";} if($fmxb){$dmms.="X:";}elsif(!$fmxo){$dmms.='  ';}
@@ -70,7 +72,14 @@ sub   lodH{ # LOaD .Hrc file as test on top (then automatically instead) of abov
             if($cllc ne 'C' || $ajvk=~ /[^._]/){
               $dmmc.="$W:$M".'X' if($fmxo);$dmmc.=' 'x (12-$dmml) if((12-$dmml) > 0);$dmmc.=' ' if(length($ajvk) == 16);
               if($pmcl=~ /^[bfpsN]$/){$dmmc.=' ';$dmmc.=' ' if($cllc ne 'T' && $pmcl ne 'N');$dmmc.=' ' if($pmcl=~ /^N$/ && length($ajvk) == 6);}}
-            print("$B=>$dmmc"); # thEse shudalsOlookup c8lAyrcolrz
+            if($mmdf){ # check LineMiddleMapCount && CurrentLineLevelContext && ActiveJoinedV8Keyz to fix spacing in a very fragile way?
+              if($lmmc++){print  ' ' if(($cllc eq  '-' && $ajvk eq     'pbdf') || # dash for the default root context
+                                        ($cllc eq 'Qf' && $ajvk eq '.upabqcs'));
+                          print '  ' if(($cllc eq '__' && $ajvk eq     'Test') ||
+                                        ($cllc eq 'cS' && $ajvk eq   'nafdke'));
+                      print ' ' x 25 if( $cllc eq 'Qf' && $ajvk eq     'DPBK' );}
+                      print "$B-";
+            }else    {print "$B=";} print(">$dmmc"); # thEse shudalsOlookup c8lAyrcolrz
             my $c8lr=$drlc;$c8lr=$pmcl if(length($pmcl));if(!$fmxo && !$fmxb){$Hrcd->{'Hrsh'}{$cllc}{$ajvk}{$c8lr}=$pmmv;
               for(0..length($pmmv)-1){$Hrcd->{'Hrsh'}{$cllc}{substr($ajvk,$_,1)}{$c8lr}=substr($pmmv,$_,1);}}
             $pmmv=$pmcl=$pnxs='';$fmxo=$fmxb=0; # shud also lOd valz in2 d8a struct B4 rEsetng  # nEd2prEsrv wethr any prEfix: or :suffix is Used

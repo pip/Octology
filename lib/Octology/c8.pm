@@ -259,7 +259,7 @@ sub L8fd{my $self=shift;  my $flnm=$self->{'_flnm'}; # Load8shFileD8a; maybe loa
     for(0..($self->{'_hite'}-1)){  $self->{'_widt'}=length($self->{'_text'}[$_]) if($self->{'_widt'} < length($self->{'_text'}[$_]));
       if    ($flnm =~ /\.xinitrc$/){ # start basic parsing && tokeniz8ion to interleave other col8 layer's escapez for initial formatz
         $self->{'_text'}[$_] =~ s/^(\s*)(#!.*)$/$1$B$2/; # on #! header, eventually good to colr path && dir-separ8orz like lsd8 (&& c8fn should)
-        if($self->{'_text'}[$_] =~  /^(\s*)(#\s*)([0-9A-Za-z._]{8})(\s*:\s*)(\S+)(\s*by\s*)(Pip\s*)(Stuart\s*)/){my $d8c3=d8colr($3);
+        if($self->{'_text'}[$_] =~  /^(\s*)(#\s*)([0-9A-Za-z._]{8})(\s*:\s*)(\S+)(\s*by\s*)(Pip\s*)(Stuart\s*)/){my $d8c3=d8c($3);
           $self->{ '_text'}[$_] =~ s/^(\s*)(#\s*)([0-9A-Za-z._]{8})(\s*:\s*)(\S+)(\s*by\s*)(Pip\s*)(Stuart\s*)/$1$C$2$d8c3$W$4$C$5$W$6$C$7$G$8$C/;}
         $self->{'_text'}[$_] =~ s/(<)([^@]+)(\@)([^.]+)(\.)(Com|Net|Org)(>)/$W$1$C$2$W$3$Y$4$W$5$M$6$W$7$C/i; # need to track beginning colr to restore @end
         $self->{'_text'}[$_] =~ s/^(\s*)(#.*)$/$1$C$2/;
@@ -699,7 +699,7 @@ sub PrcS{my $self=shift;my $pt2p=shift; # PText2Process (handling most common es
         }elsif($ecp0 == 2){
           for my $c8la(@tFbf){for my $lnum(0..@{$self->{"_$c8la"}}-1){$self->{"_$c8la"}[$lnum]='';}}}
       }elsif($ectl eq  'K'  ){ # Erase Line    ecp0 0 erase  right, 1 erase  left, 2 erase whole line (Rt trunc8,Lt fill spcz up2cursor2prEsrvRt,Ln='')
-        if    ($ecp0 == 0){
+        if    ($ecp0 == 0){ # YouTube-DL Usez ^M^[[K ahed of dnld progrS upd8z 4 Dflt 0 ErAse rIght (caretz R actual cntrl charz CR \r 13 && ESC \e 27)
           for my $c8la(@tFbf){$self->{"_$c8la"}[$self->{'_ycrs'}]=substr($self->{"_$c8la"}[$self->{'_ycrs'}],0,$self->{'_xcrs'});}
         }elsif($ecp0 == 1){substr($self->{'_text'}[$self->{'_ycrs'}],0,$self->{'_xcrs'}+1,' ' x $self->{'_xcrs'}+1);
         }elsif($ecp0 == 2){

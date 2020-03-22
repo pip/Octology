@@ -1,2 +1,4 @@
 #!/usr/bin/perl
-use strict;use warnings;use utf8;use Octology::a8;my $a8ob=Octology::a8->new(@ARGV);$a8ob->a8colr();
+use strict;use warnings;use utf8;use Octology::a8;my $a8ob=Octology::a8->new(@ARGV); # default new a8 object loadz ~/.Hrc but can take param 4 different
+open my $out8,'>&',STDOUT or die "Can't open  duplic8 STDOUT handle: $!";binmode $out8,':encoding(UTF-8)';print $out8 $a8ob->a8c(); # crE8 local duplic8
+close   $out8             or die "Can't close duplic8 STDOUT handle: $!";

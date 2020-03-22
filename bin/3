@@ -1,6 +1,10 @@
 #!/usr/bin/perl
-# F4LMJ3HJ:Xpct crE8d by PipStuart <Pip@CPAN.Org> 2fIndbetr altrn8ivz2baktix4mED8d unbufrd subcmndXeQtion,thN was specialIzd as g3 2 wrap `gst123` mEDa plAyer;
-# 2du:figure out why high-load misses titl or strt time && drops out after 8 secondz && get it to catch up in that time && proceed normally if possible,
+# J29LAGS3:3 crE8d by PipStuart <Pip@CPAN.Org> 2 further specialIz g3 Xpct wrap of `gst123` mEDa plAyer;
+# 2du:             s/Time:/d8m:/ wib64z,adjust lOw-rIt2ad8ok,put dur8 around8ok,bild various mEterd progrS fEdbak horiz or vert,loc8 non-rEPt vol chg up-rIt,
+#   prEserv prEv vol lvl 2 cmp AgNst B4 upd8ng scrn wi chngz AgN,
+#   XperimNt wi difrNt mOdz havng axS2mouscrlEvNtz lIk mp or mAB multi-plXd scrn comandng scrlbak within B4 GnomTerm 2 smtImz ctrl mor stuf (inconsistNthO?),
+#   sinc confUsng 2 hv mp() && xx() wich R not MPlayer && XxX betr 2 Xpand hEr 4 AwhIl B4 rEconsidrng rEnAmng wi dif compact V8z 4 purpos && Use disambigU8d,
+#  figure out why high-load misses titl or strt time && drops out after 8 secondz && get it to catch up in that time && proceed normally if possible,
 #   fix not to have duplic8 Title...Artist or Album...Genre linez like Codec,try2Dtect SKp kE as othr Xit,mAB Enter helpz unfreeze Time?,
 #   colr URLz 4strEmz,add sepR8 colrz in Bitrate (\d+)(\.)(\d+) like Volume: chng,NAbl @PlayList prEVous Ntry with sEmlS rEstRt if such can work,
 #   pre-pad Album && Codec linez that don't follow Time to align with Title,redo Time: rowz as dur8 for new Dflt,add 80-column mode,
@@ -11,29 +15,29 @@
 #     tryout && r8 all :colorscheme /usr/share/cmus/*.theme with typical 8 main pal8 settingz && mAB genR8 .Hrc style dense pal8 mapz of each theme's d8a,
 #     stuD gapless playback && format options, ckout cmus-remote,find&&stuD cmus-tutorial, stuD Libre.FM GNU scrobbling like cmusfm && zomg does,
 #   revive all good old pimp rand rang, r8ng, && mAB volume scaling cmus:"replaygain" && any othr ancient worthwhile stuf from my now ancient zinf fsui dayz;
-use strict;use warnings;use utf8;use Octology::a8;my $VERSION='0.0';my $d8VS='K3KMBAKE';
+use strict;use warnings;use utf8;use Octology::a8;my $VERSION='0.0';my $d8VS='J29LAt93';
 use Term::ReadKey;
 END{      ReadMode 0;} # good practice to auto-restore orig TTY read settingz at END
           ReadMode 3;  # setup 4 raw mode or 3 cbreak mode where Ctrl-C workz since signalz are enabled
 $ENV{'TERM'}='linux';  # this is needed for arrow cursor keyz to get interpreted properly (vt100 does not do it)
 use    Encode;open my $out8,'>&',STDOUT or die "Can't open  duplic8 STDOUT handle: $!";binmode $out8,':encoding(UTF-8)'; # crE8 local duplic8 of global
-use    Expect;my $cm='gst123';my $to= 2;my $so=0.3;my $tS=0;$tS=1 if(-t STDIN);my @pl; # CoMand strng, TimeOutsecz, SelectOutflsecz, ttySTDIN?, @PlayList
+use    Expect;my $cm='gst123';my $to= 2;my $so=0.13;my $tS=0;$tS=1 if(-t STDIN);my @pl; # CoMand strng, TimeOutsecz, SelectOutflsecz, ttySTDIN?, @PlayList
 my %kr=('u'=>"\e[A" ,'d'=>"\e[B" ,'r'=>"\e[C",'l'=>"\e[D", # arOkEz working,Yay! `man 5 terminfo`UDRL=>cuu1,cud1,cuf1,cub1`v=$(tput cuu1)` `printf '%q\n' "$v"`
         'z'=>"\e[6~",'a'=>"\e[5~",'w'=>'+','s'=>'-','>'=>'n','h'=>'?','p'=>' ',chr(127)=>'m',"\n"=>'n',';'=>'f','v'=>'1','x'=>'q'); # KeyzRemap
-        # BlO shift paramz4cmd
+my $ov=100; # init OrigVolume; BlO shift paramz4cmd
 my $xp=Expect->new();my @pr;my $si='';my $cs ='';my $lt ='';if(@ARGV){@pr=@ARGV;@ARGV=();} #eXPectobj,PaRamz,StndrdIn,CodecStrng 2ck4dupz,LastTime 2padCodecz
                                       my $ts ='';my $as =''; # Title..artistString,Album..genreString
 #push(@pr,';echo','8_eNNd_8');$cm.=' '.join(' ',@pr); # Expect seemz2B %20%3B like URL escaping my @pr with spacez && semiz so joining 4just sclr
-my $ht ="==================== gst123 keyboard commands =========================== => =================== g3 kybd cmdz ===========================
+my $ht ="==================== gst123 keyboard commands =========================== => ===================  3 kybd cmdz ===========================
     l / r or cursor left/right  -  seek 10 seconds  backwards/forwards    ;    p or     space  -  toggle pause
     d / u or cursor down/up     -  seek 1  minute   backwards/forwards    ;    m or backspace  -  toggle mute/unmute
     z / a or page   down/up     -  seek 10 minutes  backwards/forwards    ;    f or semicolon  -  toggle fullscreen (only for videos)
     w / s or + / -              -  increase/decrease     volume by 10%    ;    1 or v          -  normal video size (only for videos)
     n     or >   or      enter  -  play next file                         ;  # should try to add prev file by tracking params && restart?
-    h     or ?                  -  this help                              ;    q or x          -  quit (exit) g3
+    h     or ?                  -  this help                              ;    q or x          -  quit (exit)  3
 =========================================================================================================================================";   # HelpText wIde
 if(exists($ENV{'COLUMNS'}) && $ENV{'COLUMNS'} < 138){$ht ="==================== gst123 keyboard commands =>
-                  =>   g3     kybd     cmdz   ========================
+                  =>    3     kybd     cmdz   ========================
     l / r or cursor left/right  -  seek 10 seconds  backwards/forwards
     d / u or cursor down/up     -  seek 1  minute   backwards/forwards
     z / a or page   down/up     -  seek 10 minutes  backwards/forwards
@@ -44,13 +48,13 @@ if(exists($ENV{'COLUMNS'}) && $ENV{'COLUMNS'} < 138){$ht ="==================== 
     1     or        v           -  normal video size (only for videos)
     n     or        > or enter  -  play next file
     h     or        ?           -  this help
-    q     or        x           -  quit (exit) g3
+    q     or        x           -  quit (exit)  3
 ======================================================================";} # HelpText normal narrow 80-column (actually < 138 && hopefully >= 70 for now)
 $ht=~ s/(;)/$Y$1/g;$ht=~ s/\/ -/\/ $R-/;$ht=~ s/ (-)/ $Y$1/g;$ht=~ s/ (10)/ $G$1/g;$ht=~ s/ (1) / $o$1 /g;$ht=~ s/(\%)/$Y$1/;$ht=~ s/\+/$G+/; #   thorOcolrz
 $ht=~s/(l )\/( r)/$Y$1\/$R$2/;$ht=~s/(d )\/( u)/$M$1\/$G$2/;$ht=~s/(z )\/( a)/$P$1\/$g$2/;$ht=~s/(w )\/( s)/$G$1\/$R$2/;$ht=~s/(enter)/$M$1/g;
 $ht=~ s/(==+            )/$r$1/gx;$ht=~ s/(up        )/$G$1/gx;$ht=~ s/(page  )/$P$1/gx;$ht=~ s/(toggle    )/$B$1/gx;$ht=~ s/ (n) / $M$1 /;
 $ht=~ s/(=>             )/$Y$1/gx;$ht=~ s/(seek      )/$z$1/gx;$ht=~ s/(volume)/$M$1/gx;$ht=~ s/(pause     )/$M$1/gx;$ht=~ s/ (m) / $R$1 /;
-$ht=~ s/(g(st12)?3      )/$G$1/gx;$ht=~ s/(seconds?  )/$M$1/gx;$ht=~ s/(by    )/$r$1/gx;$ht=~ s/(unmute    )/$B$1/gx;$ht=~ s/ (f) / $C$1 /;
+$ht=~ s/((gst12)?3      )/$G$1/gx;$ht=~ s/(seconds?  )/$M$1/gx;$ht=~ s/(by    )/$r$1/gx;$ht=~ s/(unmute    )/$B$1/gx;$ht=~ s/ (f) / $C$1 /;
 $ht=~ s/(ke?yb(oar)?d   )/$B$1/gx;$ht=~ s/(minutes?  )/$B$1/gx;$ht=~ s/(play  )/$o$1/gx;$ht=~ s/(  mute    )/$R$1/gx;$ht=~ s/ (q) / $W$1 /;
 $ht=~ s/(co?m(man)?d[sz])/$C$1/gx;$ht=~ s/(wards     )/$c$1/gx;$ht=~ s/(next  )/$M$1/gx;$ht=~ s/(fullscreen)/$C$1/gx;$ht=~ s/(\?)/$B$1/g;$ht=~ s/(#)/$C$1/g;
 $ht=~ s/(cursor         )/$C$1/gx;$ht=~ s/(back      )/$o$1/gx;$ht=~ s/(file  )/$G$1/gx;$ht=~ s/(only      )/$r$1/gx;$ht=~ s/\//$W\//g;$ht=~ s/(track)/$C$1/g;
@@ -61,7 +65,7 @@ $ht=~ s/ (>) / $M$1 /;$ht=~ s/ (h) / $B$1 /;$ht=~ s/ (v) / $o$1 / ;$ht=~   s/ (s
 $xp->debug(       0);$xp->raw_pty(     1); # raw_pty doez need 2B B4 spawn along wi proly mOst optnz
 $xp->exp_internal(0);$xp->log_stdout(  0); # setup object BhAvior  # setng notrns(1) BlO wil!DlEt matchzfrom aQmUl8or,Dflt:0; 1 gOzwi (set|clear)_accum()
 #xp->notransfer(  0);$xp->restart_timeout_upon_receive(1); # NAblng rEstRt_tImout_upon_rECv shudlet g3 plyr liveon aslong astImr upd8z continU2prnt
-$xp->spawn($cm, @pr) or die "Cannot spawn $cm: $!\n";sleep(1);#xp->slave->stty(qw(sane));#raw -echo));#sane)); # mIt nEd2add custom Stty setngz4DsIrdBhAvior
+$xp->spawn($cm, @pr) or die "Cannot spawn $cm: $!\n";#xp->slave->stty(qw(sane));#raw -echo));#sane)); # mIt nEd2add custom Stty setngz4DsIrdBhAvior
 sub sn{my $ns=shift||'';$ns=decode('UTF-8',$ns);$ns=~ s/\n+/\n/g; # StripNewlinez (&& had altrn8 |\r 4retrnz&&othr spacez && majorly rE4m@stuff)
   $ns=~ s/(Opus)/$M$1                            /g; # for some reason, altern8ion above between same newlinez causes Time upd8 probz when single,Idu!knO Y!
   $ns=~ s/(Free)( Lossless)( Audio)( Codec)/$Y$1$G$2$P$3$B$4/g;               $ns=~ s/(\()(F)(L)(A)(C)(\))/$o$1$Y$2$G$3$P$4$B$5$o$6/g;
@@ -82,8 +86,10 @@ sub sn{my $ns=shift||'';$ns=decode('UTF-8',$ns);$ns=~ s/\n+/\n/g; # StripNewline
                                                             $as= ' ' x (45 - length($1)) if(length($1) < 45);
                                                             $ts=~ s/(Genre   )(:)(.*?)(\s*)$/$as$C$1$W$2$R$3/gi;} # split apart 2nd meta-d8a field on line
           $ns=~ s/.*?(\s*)(Album)(\s*:)([^\n]+)(\n|$)/ $M$2$W$3$B$ts\n/gi;}
-  elsif ( $ns=~  /.*?(\s*)(Volume)(:\s*)(\d+)(\.)(\d+)(\%)[^\n]*(\n|$)/i){ # pad colon to align with all other 8-char-wide field namez
-          $ns=~ s/.*?(\s*)(Volume)(:\s*)(\d+)(\.)(\d+)(\%)[^\n]*(\n|$)/ $M$2$W  $3$G$4$R$5$C$6$Y$7\n/gi;}
+  elsif ( $ns=~  /.*?(\s*)(Volume)(:\s*)(\d+)(\.)(\d+)(\%)[^\n]*(\n|$)/i){if("$4$5$6"*1.0 < $ov){ # pad colon to align with all other 8-char-wide field namez
+          $ns=~ s/.*?(\s*)(Volume)(:\s*)(\d+)(\.)(\d+)(\%)[^\n]*(\n|$)/ $M$2$W  $3$R$4$G$5$O$6$Y$7\n/gi;$ov="$4$5$6"*1.0;
+                                                                      }elsif("$4$5$6"*1.0 > $ov){
+          $ns=~ s/.*?(\s*)(Volume)(:\s*)(\d+)(\.)(\d+)(\%)[^\n]*(\n|$)/ $M$2$W  $3$G$4$R$5$C$6$Y$7\n/gi;$ov="$4$5$6"*1.0;}}
   elsif ( $ns=~  /.*?(\n*)(Codec)(\s*:)([^\n]+)(\n|$)/i){my $tb=$4;$tb=~ s/\s*(Bit)(rate )(:)(.*?)( \w)(bit)(\/)(s).*/    $o$1$R$2$W$3$M$4$C$5$B$6$Y$7$M$8/gi;
     my $tc;#f($cs && $cs eq "$2$3$4$5"){$tc=$B."\nCodec$R"."Dup\n";}else{$cs="$2$3$4$5";$cs=~ s/\s*$/\n/;$cs=~ s/\s*Bitrate :.*/$tb/i;}
     if(defined($tc)){
@@ -94,9 +100,9 @@ sub sn{my $ns=shift||'';$ns=decode('UTF-8',$ns);$ns=~ s/\n+/\n/g; # StripNewline
   elsif ( $ns=~  /.*?(\n?)(Time)(:.*Time:\s*)(\d+:\d+:\d+\.\d+).*( of )(\d+:\d+:\d+\.\d+)\s*?(\n|$)/i){my $tn=$4;my $tt=$6; # break d8 fieldz
           $tn=~        s/(\d+)(:)(\d+)(:)(\d+)(\.)(\d+)/$C$1$W$2$B$3$W$4$M$5$Y$6$P$7/g;         my $Sc="\e[16G"; # mv2colm16,erase cursor2BoL&&mv2 1stcolumn
           $tt=~        s/(\d+)(:)(\d+)(:)(\d+)(\.)(\d+)/$C$1$W$2$B$3$W$4$M$5$Y$6$P$7/g;            $Sc="\e[?25l\e[1G"; # try2hide cursor
-                                                                                                 # $Sc.="\e[1K\e[1G"; # try2not erase,justHome?
+        # nstd bild dur8c strz wrapdin bgcolr of RGB 4 hms 2 stak d8ok,Elapsd,tOtl;              # $Sc.="\e[1K\e[1G"; # try2not erase,justHome?
           $ns=~ s/(^|\s*)(Time)(:.*Time:\s*)(\d+:\d+:\d+\.\d+).*( of )(\d+:\d+:\d+\.\d+)\s*?(\n|$)/$Sc$o$2$W: $tn$c$5$tt/gi; #\e[31G\e[?25h/gi;
-                                                                                              $lt="$Sc$o$2$W: $tn$c$5$tt";}
+                                                                                              $lt="$Sc$o$2$W: $tn$c$5$tt";$ns=~ s/Time/d8m:/g;}
           # tryd2mv cursor2Nd 31 2kEpdrwn butstil flashd blankz til no erase, now trying to hide B4 && unhide cursor at Nd
   elsif ( $ns=~  /.*(Time)(:\s*)(\d+:\d+:\d+\.\d+)/i){my $tn=$3; # break d8 fieldz
           $tn=~        s/(\d+)(:)(\d+)(:)(\d+)(\.)(\d+)/$C$1$W$2$B$3$W$4$M$5$Y$6$P$7/g;         my $Sc="\e[16G"; # mv2colm16,erase cursor2BoL&&mv2 1stcolumn
@@ -104,7 +110,7 @@ sub sn{my $ns=shift||'';$ns=decode('UTF-8',$ns);$ns=~ s/\n+/\n/g; # StripNewline
           $ns=~ s/.*(Time)(:\s*)(\d+:\d+:\d+\.\d+)\s*/$Sc$o$1$W: $tn/gi;} # make Time: without 'of' end for HTTP MP3 streams
           $ns.="\e[0K" if($mf || $pf);$ns.="$Y [$R". "MUTED$Y]" if($mf);$ns.="$G [$M"."PAUSED$G]" if($pf);
   return( $ns);} # StripNewlinez($NewlinezStripped) && alsO doez a bunch of rE4m@ing && colr8ion now2
-sub mp{my $cx=shift;my $cb=$cx->before();my $ct=$cx->match();my $ca=$cx->after();$cb=~ s/^\s+//;$ct=~ s/^\s+//; # MatchPrint (or Patternz)
+sub mp{my $cx=shift;my $cb=$cx->before();my $ct=$cx->match();my $ca=$cx->after();$cb=~ s/^\s+//;$ct=~ s/^\s+//;
   if($ct=~ s/((^|\n*)Codec[^\n]*)\n+/$1\n/i){if($cs && $cs eq $1){$ct="";#$lt$W:$c"."af$W:".":$B"."b4$W:".":$M"."mt$W:$B"."Codec$R"."Dup\n";
   }else{$cs=$1;}}
   if($ct=~ s/((^|\n*)Title[^\n]*)\n+/$1\n/i){if($ts && $ts eq $1){$ct="";}else{$ts=$1;}} # try to stifle other dupz as well
@@ -123,7 +129,7 @@ sub mp{my $cx=shift;my $cb=$cx->before();my $ct=$cx->match();my $ca=$cx->after()
                                                      $ct= sn($ct);$ct=~ s/^\n// if($ct=~ /(plA )?(\e\[[\d;]*m)*(file|http)(\e\[[\d;]*m)*:/ && @pl < 2);
   print $out8        "$C$ct"        if(defined($ct));                                                       $ca=~ s/(^\s|\n|\r)+//g; $ca='';
   print $out8     $R.sn($ca)        if(defined($ca)); } # MatchPrint
-sub cb{my $cx=shift;$si=''; # CallBack for non-stream Time A of B
+sub cb{my $cx=shift;$si='';
   if(-t STDIN){$si=ReadKey($so);if(defined($si) && $si eq "\e"){$si.=ReadKey(-1);if($si eq "\e["){$si.=ReadKey(-1);if($si=~  /\e\[[56]/){$si.=ReadKey(-1);}}}}
                                            $si='' unless(defined($si));mp($cx);my $zi=$si;$zi=~ s/\e/SKp/g; # should also send Ctrl-C break SIGINT thru
        if   (length($si) && $si=~ /^([-+q m?f1n]|\e\[[ABCDFH56]~?)$/i){         #rint $G."Dflt$K"."Keyz$W:$Y$zi$W;\n" if($zi=~  /SKp/);

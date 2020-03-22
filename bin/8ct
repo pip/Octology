@@ -1,12 +1,12 @@
 #!/usr/bin/perl
-use strict;use warnings;use utf8;use v5.10;use Encode;use Octology::a8;my $VERSION='0.0';my $d8VS='HBOLNm3H';my $hflg=0 ; # set Versions && clear HelpFLaG
+use strict;use warnings;use utf8;use v5.10;use Encode;use Octology::a8;my $VERSION='0.0';my $d8VS='K3KMEaut';my $hflg=0 ; # set Versions && clear HelpFLaG
 open my $out8, '>&', STDOUT or die "Can't open  duplic8 STDOUT handle: $!";binmode $out8, ':encoding(UTF-8)';my $widt=80; # crE8 local duplic8 of global
 if(exists($ENV{'COLUMNS'}) && $ENV{'COLUMNS'} > 0){$widt=$ENV{'COLUMNS'};}
 if(@ARGV){my $lndx=$#ARGV; # preserve orig LastiNDeX of argz before any splicing out changez size, then loop backwardz so splice doesn't disrupt lower order
   for my $andx (0..$lndx){
     if   ($ARGV[$lndx-$andx] =~ /^--?s=?(.+)$/i){d8cs($1);splice(@ARGV,$lndx-$andx,1);} # take -sNCS param to set custom color sequence
     elsif($ARGV[$lndx-$andx] =~ /^--?h(elp)?$/i){print $out8 " 8ct - 8ColrTest utility  Vers:$VERSION  d8VS:$d8VS";say $out8 '' if($widt < 83);
-print $out8 "  by Auth:$auth
+print $out8 "  by Auth:$Auth
   -h                 - print this very brief Help text out and then exit
   -sNewColrSequence  - replace default d8 colr sequence ('RoYGCBMp') with"    ;print $out8 "\n   " if($widt <  143); # betr2lOd whol str thNautOsplit?
 print $out8 " NewColrSequence to apply to the test string (e.g., '-sRRRGGB')

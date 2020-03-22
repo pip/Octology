@@ -1,12 +1,12 @@
 #!/usr/bin/perl
 # H78MKnBJ:supd crE8d by PipStuart <Pip@CPAN.Org> to UPD8 Screeps working-directory JavaScript code into the proper scripts directories;
-# 2du:add srvr DB.JSON bkup && restore optnz,xport a8:aucolr(auto $auth) && mk empty d8colr() auto now-d8,then back here colr rest of help more,mv2 a8;
-use strict;use warnings;use utf8;use v5.10;use Octology::a8;my $d8VS='H8SM0gdc'; # my priv8servr dir is:~/.steam/steam/steamapps/common/Screeps/server/
+# 2du:add srvr DB.JSON bkup && restore optnz,xport a8:aucolr(auto $auth) && mk empty d8c() auto now-d8,then back here colr rest of help more,mv2 a8;
+use strict;use warnings;use utf8;use v5.10;use Octology::a8;my $d8VS='K3KM65JA'; # my priv8servr dir is:~/.steam/steam/steamapps/common/Screeps/server/
 open my $out8,'>&',STDOUT or die "Can't open  duplic8 STDOUT handle: $!";binmode $out8,':encoding(UTF-8)'; # crE8 local duplic8 of global
 my $argz='';$argz= join(' ',@ARGV) if( @ARGV);$argz='l' unless(length($argz)  && $argz=~ /[hslarpj]/i); # may want2 Dcode UTF-8 from ARGV l8r 4diverse input
 my $sonm='';$argz= $ENV{'supd'}    if(!@ARGV && exists($ENV{'supd'}));
 my $sdir=''; # above Server Oper8or (or host) 3-letter NickNaMe, && here Scripts DIRectory
-if   ($argz=~ /h/i){$sdir='localhost___21025';  say $out8 "$G supd d8VS$W:",d8colr($d8VS),"$G crE8d by $auth to
+if   ($argz=~ /h/i){$sdir='localhost___21025';  say $out8 "$G supd d8VS$W:",d8c($d8VS),"$G crE8d by $Auth to
   UPD8 Screeps dvl Scripts into any local directory;
 $O note: export 'supd' with any option here to bypass argz;$G
    h - print out this Help text and exit

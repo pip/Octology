@@ -147,10 +147,8 @@
 #Another really good simple introduction to git usage is HTTP://TutorialZine.Com/2016/06/learn-git-in-30-minutes ;
 # H87MGx8q:Yet another good way to understand git is by the graph structure described at HTTPS://MaryRosecook.Com/blog/post/git-from-the-inside-out ;
 use strict;use warnings;use utf8;use v5.10;
-use Octology::a8;
-use Octology::b8;
-#se Octology::c8;
-use Octology::d8;my $VERSION='0.0';my $d8VS='G64MHNOW';
+use Octology::a8;#se Octology::c8;
+use Octology::b8;use Octology::d8;my $VERSION='0.0';my $d8VS='K3KM678c';
 my @gmcc=(qw(add bisect branch checkout clone commit diff fetch grep help init log merge mv pull push rebase reset rm show status tag));# GitMostCommonCmdz
 my @gacl=(qw(add                   config                    get-tar-commit-id     merge-recursive       remote                stage
              add--interactive      count-objects             grep                  merge-resolve         remote-ext            stash
@@ -199,13 +197,13 @@ if(@ARGV){ # do some basic matching && argument expansion for known command abbr
           if($glno[$_+2] =~ s/^\s+(.*)$//){my $comm=$1;my $fcou=0;my @fyll;
             while($#glno >= ($_+3+$fcou) && $glno[$_+3+$fcou] !~ /^(commit)\s+([0-9a-f]{40})$/){ # loop to load the whole list of committed files
               $glno[$_+3+$fcou++] =~ s/^(.*)$//;push(@fyll,$1);
-            }#$comm = d8colr($comm); # do! need 2 just d8colr commit message of lone d8 from original bak filename since c8fn can now work on whole made name
+            }#$comm = d8c($comm); # do! need 2 just d8c commit message of lone d8 from original bak filename since c8fn can now work on whole made name
             for my $fyln (@fyll){my $fyld=$fyln;
-              my $fyls=`git cat-file -s $chsh:$fyln`;chomp($fyls);$fyls=b64(    $fyls );$fyls=b8colr(sprintf("%5s"  ,$fyls));
+              my $fyls=`git cat-file -s $chsh:$fyln`;chomp($fyls);$fyls=b64(    $fyls );$fyls=b8c(sprintf("%5s"  ,$fyls));
              #if($fyld =~ /^(\w*)(\.\w{1,5})$/){$fyld =~ s/^(\w*)(\.)(\w{1,5})$/$G$1$Y-$comm$W$2$G$3/;}else{$fyld="$G$fyld$Y-$comm";} # reinsert d8 stamp
               if($fyld =~ /^(\w*)(\.\w{1,5})$/){$fyld =~ s/^(\w*)(\.)(\w{1,5})$/$1-$comm$2$3/;}else{$fyld.="-$comm";} $fyld = c8fn($fyld); # reinsert d8 stamp
               $glno[$_].= " $fyls $fyld"; # keep appending multiple filesizes with reconstructed names onto original commit line
-            }                                                     $chsh=b64(dec($chsh));$chsh=b8colr(sprintf("%027s",$chsh));
+            }                                                     $chsh=b64(dec($chsh));$chsh=b8c(sprintf("%027s",$chsh));
                                                                   $glno[$_] =~ s/^(commit)(: )([0-9a-f]{40})/$C$1$W$2$chsh/;
           }
         }
@@ -221,12 +219,12 @@ if(@ARGV){ # do some basic matching && argument expansion for known command abbr
       } print join("\n",@glno),"\n";
     }else{
       my $glco = `git @ARGV`;                                   $glco =~ s/\n?(\n?commit)\s+([0-9a-f]{40})/$1: $2/g; # GitLogCommandOutput
-      while($glco =~ /commit: ([0-9a-f]{40})/){my $chsh = $1;my $b64c = b8colr(sprintf("%027s",b64(dec($chsh))));   # using b8.pm 2colr with 27 b64 char padng
+      while($glco =~ /commit: ([0-9a-f]{40})/){my $chsh = $1;my $b64c = b8c(sprintf("%027s",b64(dec($chsh))));   # using b8.pm 2colr with 27 b64 char padng
                                                                 $glco =~ s/(commit)(: )$chsh\n/$C$1$W$2$b64c /g;}
         # 40 4-bit hex chars are 160 bits and fit in under 27 6-bit b64 chars and around 50 3.25-bit b10 chars, if my calcul8ions are correct
       while($glco =~ /(Author:\s+[^\n]*)\nDate:\s+\w+\s+(\w+\s+\d+\s+\d+:\d+:\d+)\s+(\d+)\s+([-+]?\d+)\n\n\s+(\w+)/){
         my $auth = $1;my $mdtm = $2;my $year = $3;my $zone = $4;my $mesg = $5;my $d8im=Octology::d8->new('expand'=>"$mdtm:00 $zone $year");my $saut = $auth;
-        my $cd8s = $d8im->colr('a').$G; if($mesg =~ /^[0-9A-Za-z._][1-9A-C][1-9A-V][0-9A-Za-g][0-9A-Za-x]{4}$/){$mesg = d8colr($mesg) . $G;}
+        my $cd8s = $d8im->colr('a').$G; if($mesg =~ /^[0-9A-Za-z._][1-9A-C][1-9A-V][0-9A-Za-g][0-9A-Za-x]{4}$/){$mesg = d8c($mesg) . $G;}
         $saut=~s/^(Author)(: )/$Y$1$W$2/;$saut=~s/(Pip)/$C$1/g;$saut=~s/(Stuart)/$G$1/;$saut=~s/(CPAN)/$Y$1/;$saut=~s/(Org)/$M$1/;$saut=~s/([<@.>])/$W$1/g;
         if($#ARGV > 0 && $ARGV[1] eq '--name-only' && $glco =~  /$auth\nDate:[^\n]*\n\n\s+\w+\n\n(\S+)/){my $glfn = c8fn($1);
                                                       $glco =~ s/$auth\nDate:[^\n]*\n\n\s+\w+\n\n(\S+)/$saut ${R}d${O}8$W: $cd8s $mesg $glfn/;}

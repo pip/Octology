@@ -5,26 +5,104 @@
 #   bild U2bd autOm8dtStmOde4 U2b8 2CrEsult ofruning evry dnlOded fIle thru U2b4&&shO discrepanCz Btwn NE loc8abl fIl wi sAm IdNt fEld2knO wher cOd lackz,
 #   port Utl:bak e ?,gNralIzXpct,U2b8:rEplAc `yt-dl` wi Xpct2shOprogrS,rEwrIt die8 here2Dflt b64 wi many more optnz(as "Urol" or "dieU" or othr betr name?),
 #   Xtract the qregex keyz && reuse them in sn() for less redundancy && use ($xp->matchlist)[\d] 4better Unific8ion (altho staging simple B4 complex good2),
-#   stRt generalizing all code for wrapping more commandz && maybe alias all the interfacez to ReadKey && Expect to maybe subclass them as new U8 cmd stuff;
-package     Octology::U8;
-use strict; use warnings;use utf8;use v5.10;
-use         Octology::a8;
-use         Octology::b8;
-use         Octology::d8;
-#se          Unicode::UCD 'charprop'; # needz v5.24 to install
-use             Math::BigFloat;
-use             Term::ReadKey ; # rEmMbr2 ReadMode 0 to rEstor TTY setingz aftr Ech Xpct obj finishz (since can't just do Only once@ END{})
-#se             Expect  ;
-require         Exporter;
-use    base  qw(Exporter); # mainly exporting global Utility functions
-our @EXPORT= qw(U2b8 U2b2 U2b3 U2b4 UTF8); # autom8d code upd8 Utl, YouTube 8 4main dnldtool4moviez, 2 cnv2audio, 3 2audio mp3, 4 4name 4matting
-our $VERSION='0.0';my $d8VS='K2ELDERS';my $Dbug=0; #  UTF-8 (or ASCII) tables;
-my $U2ff=' -o "%(title)s-tItL-%(uploader)s-uldr-%(extractor)s-Xtrc-%(id)s-IdNt-%(epoch)s-epch-%(upload_date)s-uldt-%(autonumber)s-otnm.%(ext)s"'; # FullFieldz
-my $U224=' -x --audio-format=best';my $U2rf='  --restrict-filenames';my $U2mf=' --merge-output-format=mp4 '; # Dfalt merged .mkv (MatrosKaVid?) 4m@ lackz audio
-my $U234=' -x --audio-format=mp3 ';my $U2aq='  --audio-quality=0   ';my $U2fo=' --format=22 '; # should be hd720 mp4 as FormatOption (pass -F 2C altern8 optz)
+#   stRt generalizing all code for wrapping more commandz && maybe alias all the interfacez to ReadKey && Expect to maybe subclass them as new U8 cmd stuff,
+#   4m@ && colr Uupd8 wget && maybe wrap with testz 4 -d && -w /tmp or $TE?MP(DIR|PREFIX)? or ~/.dl or $XDG_CONFIG_HOME/user-dirs.dirs 4 XDG_DOWNLOAD_DIR;
+package    Octology::U8;
+use strict;use warnings;use utf8;use v5.10;
+use        Octology::a8;#se Octology::c8;
+use        Octology::b8;use Octology::d8;#se Unicode::UCD 'charprop'; # K3KM9999:most recent version "0.72" is part of perl-5.30.2 distribution so nEdz pmfi;
+use            Expect  ;use     Math::BigFloat;
+require        Exporter;use     Term::ReadKey ; # rEmMbr2 ReadMode 0 to rEstor TTY setingz aftr Ech Xpct obj finishz (since can't just do Only once@ END{})
+use    base qw(Exporter); # mainly exporting global Utility functions
+our @EXPORT=qw(Upd8 U2b8 U2b2 U2b3 U2b4 UTF8 Udl8); # autom8d U2bdl-upd8 Utl, YouTube 8 4main dnldtool4moviez, 2 cnv2audio, 3 2audio mp3,
+#END{      ReadMode 0;} # good practice to auto-restore orig TTY read settingz at END
+#          ReadMode 3;  # setup 4 raw mode or 3 cbreak mode where Ctrl-C workz since signalz are enabled
+#$ENV{'TERM'}='linux';  # this is needed for arrow cursor keyz to get interpreted properly (vt100 does not do it)
+our $VERSION='0.0';my $d8VS='K3KMFULL';my $Dbug= 0; #   4 4name 4matting, UTF-8 (or ASCII) tables, U2b-DownLoad altern8 Xpect version;
+sub Upd8{my $Ud='youtube-dl';my $home='/home/pip';$home='/home/' . $ENV{'USER'} if(exists($ENV{'USER'}));$home=$ENV{'HOME'} if(exists($ENV{'HOME'}));
+  $_=`cd /tmp;wget https://$Ud.org/downloads/latest/$Ud;mv $Ud $home/bin/U2bdl;cd $home/bin;chmod 755 U2bdl;bak U2bdl`;return($_);} # bAsic YouTube-DL upd8r
+  # Upd8 very similar to .zshrc aliasez but oper8z on my own local ~pip/bin/ version instead of my system-wide /usr/local/bin/ version with alias:
+  # Upc8='sudo curl -L https://yt-dl.org/downloads/latest/youtube-dl -o /usr/local/bin/youtube-dl;sudo chmod a+rx /usr/local/bin/youtube-dl;rmSS'; # also Upi8
+  # Upw8='sudo wget    https://yt-dl.org/downloads/latest/youtube-dl -O /usr/local/bin/youtube-dl;sudo chmod a+rx /usr/local/bin/youtube-dl;rmSS'; # with pip;
+#y $U2ff=' -o "%(title)s-tItL-%(uploader)s-uldr-%(extractor)s-Xtrc-%(id)s-IdNt-%(epoch)s-epch-%(upload_date)s-uldt-%(autonumber)s-otnm.%(ext)s" '; # FullFieldz
+#y $U224=' -x --audio-format=best ';my $U2rf=' --restrict-filenames ';my $U2mf=' --merge-output-format=mp4 '; # Dfalt merged .mkv (MatrosKaVid?)4m@ lackz audio
+#y $U234=' -x --audio-format=mp3  ';my $U2aq=' --audio-quality=0    ';my $U2fd=' --format=18 '; # was 22 hd720p mp4 Form@Dfltnow 18 360p (pass -F 2Caltrn8optz)
+my $U2ff='--output="%(title)s-tItL-%(uploader)s-uldr-%(extractor)s-Xtrc-%(id)s-IdNt-%(epoch)s-epch-%(upload_date)s-uldt-%(autonumber)s-otnm.%(ext)s"';
+my $U2aq='--audio-quality=0'  ;my $U2xa='--extract-audio'; # apparently pRameter optionz for Xpect can't have any surrounding white-space! weird!  =(
+my $U224='--audio-format=best';my $U2rf='--restrict-filenames';my $U2mf='--merge-output-format=mp4'; # Dfalt mergd .mkv 4m@ lackz audio
+my $U234='--audio-format=mp3' ;my $U2fd='--format="bestvideo[ext=mp4][height<=?720]+bestaudio[ext=m4a]/best[ext=mp4]/best"'; # was 22 hd720p mp4 Form@ B4 bestz
+sub Udmp{open my $out8,'>&',STDOUT or die "Can't open  duplic8 STDOUT handle: $!";binmode $out8,':encoding(UTF-8)'; # crE8 duplic8 handle for U2bDnldMatchPrnt
+  my $cxpc=shift;my $cb4m=$cxpc->before();my $cmtc=$cxpc->match();my $caft=$cxpc->after();my($U2id,$U2ic)=('','');my $resl=0;my $pads='';
+  if($cmtc=~  /(^|\s*)(\[)( you)(tube)(\] \s+)         ([^:]{11})(:)/ix){$U2id=$6;d8cs('U2b8');$U2ic=b8c($U2id);d8cs();}
+  $cmtc   =~ s/(^|\s*)(\[)( you)(tube)(\] \s+)         ([^:]{11})(:)/$1$Y$2$B $3$R$4$Y$5$U2ic$W$7$z/ix;
+  $cmtc   =~ s/  (\s+)    (Down)(load)(ing\s+)         (  web)(page)/$1$O$2$C$3$B$4     $O$5$G$6$z/ix;
+  $cmtc   =~ s/  (\s+)    (Down)(load)(ing\s+)(MPD \s+)( mani)(fest)/$1$O$2$C$3$B$4$R$5$z$6$M$7$z/ix;
+  if($cmtc=~  /(^|\s*)(\[)(info)      (\] \s+)(Avail    able )(\s+for  mats)(\s+for\s+)([^:]{11})(:)/ix){$U2id=$8;d8cs('U2b8');$U2ic=b8c($U2id);d8cs();}
+  $cmtc   =~ s/(^|\s*)(\[)(info)      (\] \s+)(Avail  )(able )(\s+for)(mats)/$1$Y$2$B$3${c}rm8n$Y$4$g$5$p$6$r$7$M$8/ix;
+  $cmtc   =~ s/(^|\s*)(.*                                              mats)(\s+for\s+)([^:]{11})(:)/$1$2$R$3$U2ic$W$5$z/ix;
+  $cmtc   =~ s/(^|\s*)    ( for)(mat )(   \s+)(code\s+)(exten)(sion)/$1$r$2$M$3$4$C$5$G$6$B$7/ix;
+  $cmtc   =~ s/(^|\s*)(.*             sion\s+)(reso   )( lu  )(tion)/$1$2$o$3$G$4$c$5/ix;
+  $cmtc   =~ s/(^|\s*)(.*             tion\s+)(note   )             /$1$2$m$3$z/ix;
+  $cmtc   =~ s/(^|\s*)(\d+                \s+)                      /$1$R$2$z/x;
+  $cmtc   =~ s/(, \s+)(   mp?4a?_dash     \s+)                      /$1 $2/x;                   # align with webm
+  $cmtc   =~ s/(, \s+)(   opus            \s+)(\@     )             /$1$2    $3/x;              # align with mp4a.40.5@
+  $cmtc   =~ s/(, \s+)(   vp9  )( ,       \s+)                      /$1 $2       $3/x;          # align with avc1.4d400b
+  if($cmtc=~  /(  \d+)(\s+)(\1p)(\d* )(   \s+)(\d+k\s,)             /x){$resl=length("$3$4");} if($resl > 4){$pads=' ' x (4 - ($resl - 4));}else{$pads=' 'x 4;}
+  $cmtc   =~ s/(  \d+)(\s+)(\1p)(\d*      \s+)(\d+k\s,)             /$1$2$3$4$pads$5        /x; # align with DASH && then k column
+  $cmtc   =~ s/       (   DASH )                                    /$g$1/gx; # thN colr: DASH && _dash, m4a && mp4, webm, opus, only, container, audio&&video,
+  $cmtc   =~ s/(_    )(   dash )                                    /$B$1$G$2/gx; #   \d+k, \d+Hz, \d+fps, \d+x\d+ resoz, all () pRNz, dotz, commaz, && at-sIn;
+  $cmtc   =~ s/       (   m4a  )                                    /$y$1/gx;
+  $cmtc   =~ s/       (   mp4  )                                    /$M$1/gx;
+  $cmtc   =~ s/       (   vp9  )                                    /$P$1/gx;
+  $cmtc   =~ s/       (   avc1 )                                    /$p$1/gx;
+  $cmtc   =~ s/       (   webm )                                    /$w$1/gx;
+  $cmtc   =~ s/       (   opus )                                    /$o$1/gx;
+  $cmtc   =~ s/       (   only )                                    /$O$1/gx;
+  $cmtc   =~ s/       (   tiny )                                    /$c$1    /gx;
+  $cmtc   =~ s/       (   best )                                    /$W$1/gx;
+  $cmtc   =~ s/       (   cont )(ainer)                             /$c$1$K$2/gx;
+  $cmtc   =~ s/       (   audio)                                    /$Y$1/gx;
+  $cmtc   =~ s/       (   video)                                    /$M$1/gx;
+  $cmtc   =~ s/(  \d+)(       k)                                    /$R$1$K$2/gx;
+  $cmtc   =~ s/(  \d+)(      Hz)                                    /$o$1$r$2/gx;
+  $cmtc   =~ s/(  \d+)(     fps)                                    /$y$1$R$2/gx;
+  $cmtc   =~ s/(  \d+)(       x)(\d+ )                              /$M$1$B$2$C$3/gx;
+  $cmtc   =~ s/       (\( |  \))                                    /$c$1/gx;
+  $cmtc   =~ s/                 (\.  )                              /$G$1/gx;
+  $cmtc   =~ s/                 ( ,  )                              /$W$1/gx;
+  $cmtc   =~ s/                 (\@  )                              /$w$1/gx;
+  print $out8 $cb4m,$cmtc;
+  close          $out8             or die "Can't close duplic8 STDOUT handle: $!";} # MatchPrint
+sub Udl8{open my $out8,'>&',STDOUT or die "Can't open  duplic8 STDOUT handle: $!";binmode $out8,':encoding(UTF-8)'; # crE8 duplic8 handle
+  print $out8 $B."Udl8$O down$C"."load$G  URL2$M file$Y"."name$R  U2b4$K refo$W"."rmat\n"; # precede dl with slightly helpful text that needz colrz
+  my($U2to,$U2fn,$U2an,$U2id)=( '','','',''); # Tick? Optionz, resulting output FileName, Avconv output fileName, either video IDentity or URL containing ID
+  my($U2co,$U2fc,$U2ac,$U2ic)=( '','','','');my $U2fo=$U2fd; # Command Output, Colrd versionz; init local FormatOption with global FormatDefault
+  if(@_){for(my $pndx=@_-1;$pndx>=0;$pndx--){#rint $B."U2b8$Y ckng$G"."pRam$W:$R$pndx$W:$C$_[$pndx]$W:\n";
+                                             if   ($_[$pndx]=~ /^-+2$/){$U2fo=' ';$U2to="$U2xa $U224 $U2aq";splice(@_,$pndx,1);}  # accept Xtra 2audio paramz
+                                             elsif($_[$pndx]=~ /^-+3$/){$U2fo=' ';$U2to="$U2xa $U234 $U2aq";splice(@_,$pndx,1);}  #   && get rid of thMB4spawn
+                                             elsif($_[$pndx]=~ /^-+F$/){$U2fo='-F';                        }  #   && try2Dtect available  noFormatOptionz Flag
+                                             elsif($_[$pndx]=~ /^-+fo/){$U2fo=$_[$pndx];splice(@_,$pndx,1);}} #   && try2Dtect overridden   FormatOption
+  $U2to.=join(' ',@_) if(@_);if($U2to=~s/((https:\/\/)?(www\.)?youtu\.?be(\.com)?\/(watch\?v=)?)?([-0-9A-Z_]{11})($|\s|\S+)/$7/i){$U2id=$6;}} # srch4URL2X
+  if  (length($U2id) && $U2id=~ /[-0-9A-Z_]{11}/i){ # only spawn if some param lookz like ID
+    d8cs('U2b8');$U2ic=b8c($U2id);d8cs(); # ch ColrSequ 4U2bId Colr, then restore default 8bow aftr
+    $U2to=~ s/(^|\s)-+F(\s|$)/$1/g if($U2fo=~ /^\s*-+F\s*$/);
+    print $out8 "$B  you$R"."tube$W-$O"."d$C"."l$G -o \"%(title)s-tItL-%(uploader)s-uldrXtrc-IdNtepch-uldtotnm.%(ext)s\" $R$U2rf $B$U2fo $Y$U2to$U2ic$W;\n";
+    my $Udpn='U2bdl'; #youtube-dl'; # proly STDERR putng out: 'WARNING: unable to extract uploader nickname' && UpLoadDaTes all coming back 'NA' l8ly too =(
+    my @pRmz=($U2ff,$U2rf,$U2fo,$U2id);my $tmot=8; # probably can't splice @_ or join with spAcz in2 $U2to, sO mA nEd2just transfer pRamz2nwArA&&pass whol in;
+    print $out8 "$Udpn @pRmz\n"; # Xtra prnt 2 figur out why `Udl8 MAPYcJ68_fU -F` ERORd with -o FileForm@ as invalid URL
+    my $Xpct=Expect->new();
+    $Xpct->debug(       0);$Xpct->raw_pty(     0);#Xpct->slave->stty(qw(raw)); # raw_pty doez need 2B B4 spawn along wi proly mOst optnz
+    $Xpct->exp_internal(0);$Xpct->log_stdout(  0); # setup object BhAvior  # setng notrns(1) BlO wil!DlEt m@chzfrm aQmUl8or,Dflt:0; 1 gOzwi (set|clear)_accum()
+    #Xpct->notransfer(  0);$Xpct->restart_timeout_upon_receive(1); # NAblng rEstRt_tImout_upon_rECv shudlet g3 plyr liveon aslong astImr upd8z continU2prnt
+    $Xpct->spawn($Udpn,@pRmz)      or die "Can't spawn $Udpn: $!";#if($U2co=~/\n\[download\] Destination: (.+)/){$U2fn=$U2an=$1;} # sAv&&pRsFlNm
+    $Xpct->expect($tmot, [qr/(^|\s*)\[youtube\]\s+[^:]{11}:\s+Down[^\n]+\n/     => sub {my $cxpc=shift;Udmp($cxpc);exp_continue;}],
+                         [qr/(^|\s*)\[info\]\s+Available\s+formats[^\n]+\n/     => sub {my $cxpc=shift;Udmp($cxpc);exp_continue;}],
+                         [qr/(^|\s*)[^\n]*\n/                                   => sub {my $cxpc=shift;Udmp($cxpc);exp_continue;}],
+    ); # ($matchd_ptrn_positn,$eror,$match_strng,$be4_match,$aftr_match) is returned in array-context (wi positn 1-based)
+  } close        $out8             or die "Can't close duplic8 STDOUT handle: $!";} # proly wil nEd2stuD g3 && callbakz2figure out how2bSt implMNt hEr
 sub U2b8{print $B."U2b8$O down$C"."load$G  URL2$M file$Y"."name$R  U2b4$K refo$W"."rmat\n"; # precede dl with slightly helpful text that needz colrz
   my($U2to,$U2fn,$U2an,$U2id)=('','','',''); # Tick? Optionz, resulting output FileName, Avconv output fileName, either video IDentity or URL containing ID
-  my($U2co,$U2fc,$U2ac,$U2ic)=('','','',''); # Command Output, Colrd versionz
+  my($U2co,$U2fc,$U2ac,$U2ic)=('','','','');my $U2fo=$U2fd; # Command Output, Colrd versionz; init local FormatOption with global FormatDefault
   if(@_){for(my $pndx=@_-1;$pndx>=0;$pndx--){#rint $B."U2b8$Y ckng$G"."pRam$W:$R$pndx$W:$C$_[$pndx]$W:\n";
                                              if   ($_[$pndx]=~ /^-+2$/){$U2fo='';$U2to=$U224.$U2aq;splice(@_,$pndx,1);}  # accept Xtra 2audio paramz
                                              elsif($_[$pndx]=~ /^-+3$/){$U2fo='';$U2to=$U234.$U2aq;splice(@_,$pndx,1);}  #   && get rid of them B4 bktix
@@ -32,14 +110,17 @@ sub U2b8{print $B."U2b8$O down$C"."load$G  URL2$M file$Y"."name$R  U2b4$K refo$W
                                              elsif($_[$pndx]=~ /^-+fo/){$U2fo=$_[$pndx];splice(@_,$pndx,1);}} #   && try2Dtect overridden   FormatOption
   $U2to.=join(' ',@_) if(@_);if($U2to=~s/(https:\/\/www\.youtube\.com\/watch\?v=)([-0-9A-Z_]{11})($|\s|\S+)/ /i){ $U2id=$2;}} # srch4URL2X
   if  ((length($U2to)&& $U2to=~/([-0-9A-Z_]{11})/i) || (length($U2id)&& $U2id=~ /([-0-9A-Z_]{11})/i)){ # only baktick if some param lookz like ID
-    if( length($U2id)){d8cs('U2b8');$U2ic=b8colr($U2id);d8cs();} # ch ColrSequ 4U2bId Colr, then restore default 8bow aftr
+    if( length($U2id)){d8cs('U2b8');$U2ic=b8c($U2id);d8cs();} # ch ColrSequ 4U2bId Colr, then restore default 8bow aftr
     print "$B  you$R"."tube$W-$O"."d$C"."l$G -o \"%(title)s-tItL-%(uploader)s-uldrXtrc-IdNtepch-uldtotnm.%(ext)s\"$R$U2rf$B$U2fo$Y$U2to$U2ic$W;\n";
-    # probably STDERR putting out: 'WARNING: unable to extract uploader nickname' && UpLoadDaTes all coming back 'NA' l8ly too =(
-    $U2co=`youtube-dl$U2ff $U2rf $U2fo $U2to $U2id`;if($U2co=~       /\n\[download\] Destination: (.+)/){$U2fn=$U2an=$1;} # save&&pRs FlNm from&&prnt CmdOutput
-                                                    if($U2co=~/\n\[(avconv|ffmpeg)\] Destination: (.+)/){      $U2an=$2;} # save&&pRs Avconv|ffmpeg Nm sepR8ly
-                                                       $U2co=~ s/(Downloading) (webpage)/$1            $2/; # mAB .webm Bcoming .opus 4 U2b2 can B Dtected?
-    $U2fc=c8fn($U2fn) if(length($U2fn));               $U2co=~ s/(      Dest)(inat)(ion)(:)\s*($U2fn) /$G$1$B$2$R$3$W$4 $U2fc/ix if(length($U2fn));
-    $U2ac=c8fn($U2an) if(length($U2an));               $U2co=~ s/(      Dest)(inat)(ion)(:)\s*($U2an) /$G$1$B$2$R$3$W$4 $U2ac/ix if(length($U2an));
+    my $Udpn='U2bdl'; #youtube-dl'; # proly STDERR putng out: 'WARNING: unable to extract uploader nickname' && UpLoadDaTes all coming back 'NA' l8ly too =(
+    print "$Udpn $U2ff $U2rf $U2fo $U2to $U2id\n";
+    $U2co=`$Udpn $U2ff $U2rf $U2fo $U2to $U2id`;if($U2co=~       /\n\[download\] Destination: (.+)/){$U2fn=$U2an=$1;} # save&&pRs FlNm from&&prnt CmdOutput
+#   my $Ufd8=Octology::d8->new();open my $Uofl,'>',"/tmp/Uofl-$Ufd8" or die "Can't open  /tmp/Uofl: $!";binmode $Uofl,':encoding(UTF-8)';print $Uofl $U2co;
+#                                close   $Uofl                       or die "Can't close /tmp/Uofl-$Ufd8! $!"; # logz indic8 ^M^[[K prECdz progrS upd8 lInz
+                                                if($U2co=~/\n\[(avconv|ffmpeg)\] Destination: (.+)/){      $U2an=$2;} # save&&pRs Avconv|ffmpeg Nm sepR8ly
+                                                   $U2co=~ s/(Downloading) (webpage)/$1            $2/; # mAB .webm Bcoming .opus 4 U2b2 can B Dtected?
+    $U2fc=c8fn($U2fn) if(length($U2fn));           $U2co=~ s/(      Dest)(inat)(ion)(:)\s*($U2fn) /$G$1$B$2$R$3$W$4 $U2fc/ix if(length($U2fn));
+    $U2ac=c8fn($U2an) if(length($U2an));           $U2co=~ s/(      Dest)(inat)(ion)(:)\s*($U2an) /$G$1$B$2$R$3$W$4 $U2ac/ix if(length($U2an));
     $U2co=~s/(Cor)(rect)(ing )(cont)(ainer )(in).*/$R$1$Y$2$B$3$M$4$O$5$c$6$G U2fn/gi;
     $U2co=~s/(Post)(-)(process )(file).*/$C$1$R$2$Y$3$M$4$G       U2fn$R exists$W,$Y skipping$W/gi;
     $U2co=~s/(\[)(down)(load)     (\]) /$B$1$O$2$C$3$B$4/gix;
@@ -53,7 +134,7 @@ sub U2b8{print $B."U2b8$O down$C"."load$G  URL2$M file$Y"."name$R  U2b4$K refo$W
     $U2co=~s/(     Ext)(ract)(ing)     /$M$1 $G$2$B$3/gix; # note /\d+\% of \d.*/ upd8ing progress in output with SKp cursor cOdez so Xamin 4m@
     $U2co=~s/(    Down)(load)(ing)     /$O$1$C$2$B$3/gix;      $U2co=~s/ (in) (\d+)(:)(\d+)/    $w$1 $B$2$W$3$M$4/;
     chomp($U2co);$U2co.="$W...$G"."call$Y"."ing$R U2b4\n" if(-e "$U2an"); # 2du:add f0ntz2outputz&&convert2 Xpect nstd of baktix so dnload progress can B seen
-    print $U2co;if(-e "$U2an"){U2b4($U2an);}else{print $B."U2b8$R !*warn*!$G  did$R not$Y call$R U2b4$M since$B U2an$W:$C $U2an$R not$O found$R!\n";}}
+    print $U2co;if(-e "$U2an"){U2b4($U2an);}else{print $B."\nU2b8$R !*warn*!$G  did$R not$Y call$R U2b4$M since$B U2an$W:$C $U2an$R not$O found$R!\n";}}
   else                                          {print $B."U2b8$R !*warn*!$G  did$R not$Y call$c a$M shell$g with$r no$G ID"   .    "$O found$R!\n";}}
 sub U2b2{U2b8('-2',@_);} #as U2ba='U2bm -x --audio-format=best --audio-quality=0'; # https://www.youtube.com/watch?v=  00vVP_TrU2M
 sub U2b3{U2b8('-3',@_);} #as U2b3='U2bm -x --audio-format=mp3  --audio-quality=0'; #   00vVP_TrU2M  &index=173&list=PLA11538113C16891A
@@ -113,9 +194,9 @@ sub U2b4{my   $ogfn=shift(@_);my($psfn,$ocfn,$pcfn); # U2b4m@r (youtube-dl forma
           else{ # also if U2b8 filenamez l8r become unrestricted, all of these filehandlez && printz will need to set binmode UTF-8
             open(my $lgfh,'>>',$logf)                                                  || die "Could not append to log file: $logf! $!";
             print   $lgfh  $nwd8 .  ": $ogfn\n" . ' ' x 8 .   ": $psfn\n";close($lgfh) || die "Could not close     log file! $!";                    }}
-        print       d8colr($nwd8)."$W: $ocfn\n" . ' ' x 8 . "$W: $pcfn\n"; # if U2b8 filenamez l8r become unrestricted, might have to quote or SKp namez B4 mv
+        print          d8c($nwd8)."$W: $ocfn\n" . ' ' x 8 . "$W: $pcfn\n"; # if U2b8 filenamez l8r become unrestricted, might have to quote or SKp namez B4 mv
         system( "mv                    $ogfn                     $psfn") if(-r "$ogfn");} # resultz sEm good so attempt 2 mv
-      else{print    d8colr($nwd8)."$W: $ocfn\n  $R..above original filename did not match expected U2b8 output format, so no rename (mv) performed;\n";}}}}
+      else{print       d8c($nwd8)."$W: $ocfn\n  $R..above original filename did not match expected U2b8 output format, so no rename (mv) performed;\n";}}}}
 #ub U2bd{} # eventually tSt all log4differencez between U2b4 name output && manual movez matching U2b ID to learn what else might be useful to autom8 above
 sub UTF8{my $optz=join(' ',@_);my $strt=0;my $uprb= 256; # 2BNJCDfo:asci utility to colorfully print most ASCII characterz (G7KMJqLF: ... now2 UTF8 < 256)
   open my $out8,'>&',STDOUT or die "Can't open  duplic8 STDOUT handle: $!"; # crE8 local duplic8 of global
@@ -125,7 +206,7 @@ sub UTF8{my $optz=join(' ',@_);my $strt=0;my $uprb= 256; # 2BNJCDfo:asci utility
   my $lang='en_US.UTF-8';$lang=$ENV{'LANG'} if(exists($ENV{'LANG'   })); # abov try2test wich term typez shud group in with screen && xterm 4 BlO handling
   if($tsxf && $lang =~ /UTF-?8/i){binmode $out8,':encoding(UTF-8)';} # need to encode output if acceptable terminal && language environment settingz
   if  ($optz =~  /(^|\s)(-*h(elp)?)(\s|$)/){ # -h parameter design8z to just print help text as output && exit
-    $outp = " UTF8  - print out 256 colorful UTF-8 or ASCII characters in order  Vers:$VERSION  d8VS:$d8VS  by Auth:$auth
+    $outp = " UTF8  - print out 256 colorful UTF-8 or ASCII characters in order  Vers:$VERSION  d8VS:$d8VS  by Auth:$Auth
    -p    skips over first 32 to start from the predominantly Printable characters  (since most of the 1st 32 are control chars)
    -c    disable printing of escape sequences which are used to Color the default output in 8bow and index columns
    -C    set start and end around Cards and Chess 127136-127199 and 9812-9823
@@ -152,8 +233,8 @@ sub UTF8{my $optz=join(' ',@_);my $strt=0;my $uprb= 256; # 2BNJCDfo:asci utility
     if($optz =~ s/(^|\s)(\d+)(\s|$)/$1$3/){$uprb=$2;} # allow single digit parameter to specify UPpeRBound && second digit param to design8 STaRT
     if($optz =~ s/(^|\s)(\d+)(\s|$)/$1$3/){$strt=$2;} ($uprb,$strt)=($strt,$uprb) if($strt > $uprb); # keep start && upperbound in increasng order
     $outp .= ' ' x (19*4) if($strt==  32 && $widf); # space align if skipping 1st unprintablez block
-    for(my $indx = $strt;$indx < $uprb;$indx++){my $ib6c=b8colr(b64($indx)); # added colrz using a8::b8colr && b8::b64
-      $ib6c= " $ib6c" if($indx <   64);         my $hexi=       HEX($indx) ; # pad top-row b64 indicez with a space to the left if they're just one char
+    for(my $indx = $strt;$indx < $uprb;$indx++){my $ib6c=b8c(b64($indx)); # added colrz using a8::b8c && b8::b64
+      $ib6c= " $ib6c" if($indx <   64);         my $hexi=    HEX($indx) ; # pad top-row b64 indicez with a space to the left if they're just one char
       if  ($indx    <= 9999 || $indx != $strt){ # when starting on super-huge indices, don't need to preface with White colon && NewLine
         if($indx    < 11_904){
           if($widf){$outp .= "$W:\n" if($indx &&  !($indx % 64) && defined($outp)                );} # hopefully adding defined tst here will stop empty : line
@@ -189,7 +270,7 @@ sub UTF8{my $optz=join(' ',@_);my $strt=0;my $uprb= 256; # 2BNJCDfo:asci utility
                ($indx >=127_136 && $indx <127_200)){ # also here add more spaces && some newlines for -radicals && -kana to also align
         $outp .= ' ';} # try to space out what are presumably something like combin8ion code-points without whole grapheme clusterz
       if($indx == 127_199 && $strt == 127_136){$outp.="$W:\n";$uprb= 9_824;$indx= 9_811;$strt= 9_812; # atMpt2autO-jump from end of Cards dn2 Chess: 9812-9824
-        $ib6c  =  b8colr(b64($strt));$hexi= HEX($strt);$outp.= sprintf(   "$G%4d$B%04s%s"         ,$strt,$hexi,$ib6c);}
+        $ib6c  =     b8c(b64($strt));$hexi= HEX($strt);$outp.= sprintf(   "$G%4d$B%04s%s"         ,$strt,$hexi,$ib6c);}
     }   $outp .= "$W:";$outp = sS($outp) unless($clrf);
   } say $out8 $outp;close $out8 or die "Can't close duplic8 STDOUT handle: $!";}
 # : 64:40:10:@ABCDEFG: 72:48:18:HIJKLMNO: 80:50:1G:PQRSTUVW: 88:58:1O:XYZ[\]^_: 96:60:1W:`abcdefg:104:68:1e:hijklmno:112:70:1m:pqrstuvw:120:78:1u:xyz{|}~!:
@@ -267,12 +348,12 @@ or uncompress the package and run the standard:
 =head1 LICENSE
 
 Most source code should be Free! Code I have lawful authority over is and shall be!
-Copyright: (c) 2014-2016, Pip Stuart.
-Copyleft :  This software is licensed under the GNU General Public License
-  (version 3 or later). Please consult L<HTTP://GNU.Org/licenses/gpl-3.0.txt>
-  for important information about your freedom. This is Free Software: you
+CopyRight: (c) 2014-2020, Pip Stuart.
+CopyLeft : This software is licensed under the GNU General Public License
+  (version 3 or l8r). Please consult L<HTTPS://GNU.Org/licenses/gpl-3.0.txt>
+  for important inform8ion about your freedom. This is Free Software: you
   are free to change and redistribute it. There is NO WARRANTY, to the
-  extent permitted by law. See L<HTTP://FSF.Org> for further information.
+  extent permitted by law. See L<HTTPS://FSF.Org> for further inform8ion.
 
 =head1 AUTHOR
 

@@ -13,7 +13,7 @@
 #   try arranging according to top-list order, add manual guidance of relevance groups, see if queries can yield correct results from interrog8ion, try to
 #   represent values as multi-float vector formats in 3D or n-ary spaces, build sepR8 side caches of results && trials to preserve && learn to grow from;
 use strict;use warnings;use utf8;use v5.10;use Octology::a8;use Octology::b8;
-my $d8VS='J81M7YAY';my $clrf=1;my $fulf=0;my $argz='';$argz= join(' ',@ARGV) if(@ARGV);my $Stxt='';my $Smap='';my $folf=0; # add 4-Or-Less-Flag
+my $d8VS='K3FMFULL';my $clrf=1;my $fulf=0;my $argz='';$argz= join(' ',@ARGV) if(@ARGV);my $Stxt='';my $Smap='';my $folf=0; # add 4-Or-Less-Flag
 my $edVS=        '';my $pg1f=0;   $pg1f=1 if($argz=~ /(^|\s)-?-?[^p]*p/i); # find -?p(age) flag2limit some extra long output to first 48-line page
 my $clmz=        80;my $lpsf=0;   $lpsf=1 if($argz=~ /(^|\s)-?-?[^l]*l/i); # find -?LetrPrecursShortsFlag  # if MaXWordSize evr grOz,wil nEd2incrEs|Dtct
 my $linz=        24;my $gm8f=0;   $gm8f=1 if($argz=~ /(^|\s)-?-?[^g]*g/i); # find -?g(m8r) flag2count&&adorn wi math 4mUl8ions stRting wi 2letr
@@ -24,7 +24,7 @@ my $linz=        24;my $gm8f=0;   $gm8f=1 if($argz=~ /(^|\s)-?-?[^g]*g/i); # fin
 $clmz=$ENV{'COLUMNS'} if(exists($ENV{'COLUMNS'})); # mAB also Dtect H varE8ionz   # now MaXimumWordSize && CoLuMnof8 && Pre-letrz R Dtectd dynamicly(!hRdcOded)
 $linz=$ENV{'LINES'  } if(exists($ENV{'LINES'  }));my $lnmx=$linz - 2;my @jd8a;my $mxws=8;my $clm8= 8;my $clmp=$clm8-1;my $rcnt=0;
 if($argz=~ /(^|\s)-?-?[^a]*a/i){   $lpsf=$gm8f=$fulf=$folf=1;} # set All optional section flags at once for any -a parameter
-if($argz=~ /(^|\s)-?-?[^h]*h/i){$Stxt.=" $0 - 8.utf Precursor Letter Counter d8VS:$d8VS by: $auth to gener8 Octology applic8ion 8-words d8a analysis;
+if($argz=~ /(^|\s)-?-?[^h]*h/i){$Stxt.=" $0 - 8.utf Precursor Letter Counter d8VS:$d8VS by: $Auth to gener8 Octology applic8ion 8-words d8a analysis;
   h   - print this Help text and exit; below options are flags which can be combined in any order, but l8r sections print in comput8ion order;
   s   - print below options as just plain text (Strip default eScape color codes,like running `$0 | sS` strip eScape post-process);
   p   - print below options as limited to just first $lnmx-line Page instead of default everything (fixed 160x50 single Pages work for -l -w -g);
@@ -110,7 +110,7 @@ $Stxt.=                                            sprintf   "$B------ -- ---$r 
                                                                                    my $cttl=$B . cma($gttl);$cttl=~ s/(,)/$Y$1$B/g; # pre-colr comma'd total
 $Stxt.=                                            sprintf("${C}t${M}0${C}tlz  %s %s $z(${r}b64$z)$W  :  $z(${p}b10$z) %s   %s$W;$z",
                                                     b8colr(sprintf("%2s",b64($t0tl))),b8colr(sprintf("%2s",b64($gttl))),$ct0t,$cttl);
-$Stxt=sS($Stxt) unless($clrf);o8($Stxt);$Stxt ='';  print  "$R!*EROR*! pttl:$pttl != t0tl:$t0tl;$z\n" if($pttl != $t0tl); # error check expecting t0tal match
+$Stxt=sS('--',$Stxt) unless($clrf);o8($Stxt);$Stxt ='';  print  "$R!*EROR*! pttl:$pttl != t0tl:$t0tl;$z\n" if($pttl != $t0tl); # eror ck Xpectng t0tal match
 if($lpsf){$Stxt.="\n${W}All${R}Counts${o}Not${M}Matching${C}Words${B}List$G -$K likely from just d8-stamps, pal8 codes, or other non-word strings with 8";
   my $ptot=0;my @acor;my $slin= '';$Stxt.=" (ordered by freq then letr)$W:\n"; # PrevrowTOTalwidth, AllCountsORdered, SortedLINe
   for(0..63){if(defined($acnt[$_]) && $acnt[$_] && !exists($lpsd{b64($_)})){$slin.="$C ".b64($_)."$W:";$slin.=$r;$slin.=$R if($acnt[$_]>2);$slin.=$acnt[$_];
@@ -132,7 +132,7 @@ if($lpsf){$Stxt.="\n${W}All${R}Counts${o}Not${M}Matching${C}Words${B}List$G -$K 
         if        ($rtot + length($ltot                     ) + 1 >  $clmz){$ptot =$rtot;$Stxt.="\n";$rtot=0;}
         $rtot            +=length($ltot                     ) + 1 ;                      $Stxt.=  "$M$ltot ";
         if($ptot + $rtot <= $clmz){$Stxt=~ s/(.*)\n/$1/s;$ptot+=$rtot;}else{$ptot=$rtot;}$Stxt.="\n";$rtot=0;}}}} $Stxt=~ s/\n$//;
-$Stxt=sS($Stxt) unless($clrf);o8($Stxt);$Stxt ='';
+$Stxt=sS('--',$Stxt) unless($clrf);o8($Stxt);$Stxt ='';
 if($folf){$Stxt.="\n${Y}Word${R}Sort${C}By${B}Size$G -$K up to current maximum$M $mxws$K or one$p page$K if given$p -p$W:\n";my $maxs=$mxws;$maxs= 8 if($pg1f);
   for   my $wsiz (2..$maxs ){my @folk=sort(keys(%{$folc[$wsiz]}));$Stxt.= $B.sprintf("%${wsiz}d ",scalar(@folk));my $rtot=$wsiz+1;
                                                                   $Stxt.="$R $wsiz"        unless(scalar(@folk));my $tltx="$M %1${W}x${R}%2${w}+${p}%3";
@@ -151,7 +151,7 @@ if($folf){$Stxt.="\n${Y}Word${R}Sort${C}By${B}Size$G -$K up to current maximum$M
                                 $tltx=~ s/\n+$//;$tltx.="\n" if($wsiz <= 16 || $wsiz == $maxs);
                                 $Stxt=~ s/ $/$tltx/; # mA nEd 2 trunc8 whN duz! fit rIt && tIt, sO lIk $rtot plus tail-text goes longer than columnz;
                             }} # $Stxt.="$G @folk\n";
-$Stxt=sS($Stxt) unless($clrf);o8($Stxt);$Stxt ='';
+$Stxt=sS('--',$Stxt) unless($clrf);o8($Stxt);$Stxt ='';
 # I47M1b96:just l8st 2z 3z 4z,nEd2cut ? 2fit nXt `sumb 2` 96 pAg,b8 c8 d8 g8 w8 ckm8 pal8 upd8 alredy bin is 8,DlA sumb4 N8 DN8 NfN8 SSN8 as obtuse:
 #  9   f8   h8   k8   l8   m8   p8   r8   s8   y8  # 9+35=44,nEd 40 of 73 4z (isol8ing 33 worst for l8r) to accept l8st 12 over in bin to complete next 96
 # 35  aV8  ab8  ag8  al8  aw8  b8a  bl8  cS8  cr8  el8  f8h  f8l  fL8  fr8  gM8 gr8 iD8 ir8 mL8 n8l oP8 or8 pN8 pl8 pr8 rN8 sN8 sk8 sl8 sp8 st8 sw8 tr8 ur8 vL8
@@ -183,7 +183,7 @@ if($gm8f){$Stxt.="${W}Gener8 gM8ria primes for names by$B 3$W segments (${Y}PreL
       $s8ls.=S(substr('YCMGRBop',b10(substr($ssvl,0,1)) % 8,1)) . "$ssvl ";} $s8ls=~ s/ $//;
     $Stxt.=sprintf("${C}prct$W:%s$M%4d$C prez$W:$z%s\n"   ,b8c(sprintf("%3s",b64($kvct))),$kvct,$s8ls);
     for my $sprt (sort(@{$kvs8{$kvct}})){$w2pm{$sprt}=prim($mxpa++) unless(exists($w2pm{$sprt}));}}                # try to keep reusing earlier segments
-  $Stxt=sS($Stxt) unless($clrf);o8($Stxt);$Stxt ='';
+  $Stxt=sS('--',$Stxt) unless($clrf);o8($Stxt);$Stxt ='';
   $Stxt  .="${W}gM8ria primes with$B 3$W sepR8 sections:$Y PL$W,$G suffixes$W,$C prefixes$W but with special case 1st$G suffixes$W:$z _$W &&$B ion$W for ";
   $Stxt  .="smaller highest nums...\n";
   %pl8s=();%sufs=();%pres=();%w2pm=();%wh2p=();%kvs8=();@wpls=();%allc=();%allp=();$bbct=$colc=0;$mxpa=1;
@@ -200,7 +200,7 @@ if($gm8f){$Stxt.="${W}Gener8 gM8ria primes for names by$B 3$W segments (${Y}PreL
  #for   my $pdig (4..7                         ){                                              $allp{prim($mxpa++)}="$pdig";} # digz wil nEd2ch if evrin spLng
   for   my $pltr (      @plrl                  ){for my $sprt  (      @{$ppbs{$pltr}}        ){unless(           exists($pres{$sprt})){ # rvrs much worse 270M
                                                                                                $allp{prim($mxpa)}=$sprt;$pres{$sprt}=prim($mxpa++);}}}
-  $Stxt=sS($Stxt) unless($clrf);o8($Stxt);$Stxt ='';
+  $Stxt=sS('--',$Stxt) unless($clrf);o8($Stxt);$Stxt ='';
   $Stxt  .="${z}pres${C}By${B}Size$W:$z";my $rtot=11;for my $sprt (sort {length($a) <=> length($b)} sort(keys(%pres))){
     if($rtot + length($sprt) + 1 >= $clmz){ $Stxt.="\n";$rtot=0;}
     $rtot    +=length($sprt) + 1;           $Stxt.= S(substr('YCMGRBop', length($sprt) % 8,1)) . "$sprt ";} # colr sequ by size
@@ -228,7 +228,7 @@ if($gm8f){$Stxt.="${W}Gener8 gM8ria primes for names by$B 3$W segments (${Y}PreL
                              if(++$colc == 6){$colc=0;$Stxt.="\n";}}else{
                              if(++$colc == 4){$colc=0;$Stxt.="\n";}     }}
   } $eqfz=~ s/, $//;  $Stxt=~ s/\n?$/$W\n/;$colc=0;#Stxt.="eqct:$eqct totl:" . scalar(keys(%wh2p)) . " eqfz:$eqfz"; # rebild Cmz2alreDB fIn4 100% of cur8wrdz
-  $Stxt=sS($Stxt) unless($clrf);o8($Stxt);$Stxt ='';
+  $Stxt=sS('--',$Stxt) unless($clrf);o8($Stxt);$Stxt ='';
   open my $log8,'>',"$ENV{'HOME'}/.log/8pc.ls" or die "Can't open  log 8PrimesComponents.LiSt file handle: $!";binmode $log8,':encoding(UTF-8)';
   print   $log8 "# $d8VS:~/.log/8pc.ls gener8d by 8plc with 8.utf edVS:$edVS to save sepR8 reference to 8-word prime maps by PipStuart <Pip\@CPAN.Org>;\n";
   for  my $prmk (sort {$a <=> $b} keys(%allp)){print $log8 sprintf(" %3s %-14s",b64($prmk),$allp{$prmk});if(++$colc == 8){$colc=0;print $log8 "\n";}}
@@ -277,20 +277,20 @@ if($gm8f){$Stxt.="${W}Gener8 gM8ria primes for names by$B 3$W segments (${Y}PreL
        #$sfix   =   'n'      if($sfix eq 'ion'); # try to cram more 8-words into blox shrinking "io" out from common suffixes
        #if($pltr=~ /^[mdpvbsuCDLNRfxMGkwVBIhUP]$/){$sepm{$pltr}[0] ="$Y$pltr${G}8$W:$z " unless(exists($sepm{$pltr}) && length($sepm{$pltr}[0]));} # lOd sepR8
         if($pltr=~ /^[mdpvRfxMuLVBI]$/){$sepm{$pltr}[0] ="$clrm{$pltr}$pltr${W}8$z:$clrm{$pltr} " unless(exists($sepm{$pltr}) && length($sepm{$pltr}[0]));
-          if($shsf){push(@{$sepm{$pltr}},'') if(length( "$pfix$sfix " . sS($sepm{$pltr}[-1])) > $bwid); # abov lOd sepR8 d8a
+          if($shsf){push(@{$sepm{$pltr}},'') if(length( "$pfix$sfix " . sS('--',$sepm{$pltr}[-1])) > $bwid); # abov lOd sepR8 d8a
             $sepm{$pltr}[-1].="$clrm{$pltr}$pfix$sfcl$sfix " if($#{$sepm{$pltr}} < 16 && length("$pfix$sfix") &&
-                                                                                         length("$pfix$sfix " . sS($sepm{$pltr}[-1]))<= $bwid);}
-          else     {push(@{$sepm{$pltr}},'') if(length( "$pfix "      . sS($sepm{$pltr}[-1])) > $bwid); # quik altrn8iv ckng how many prEfxz fit8blox if!sfxz
-            $sepm{$pltr}[-1].="$clrm{$pltr}$pfix " if($#{$sepm{$pltr}} < 16 && length("$pfix"     ) && length("$pfix "      . sS($sepm{$pltr}[-1]))<= $bwid);}}
+                                                                                         length("$pfix$sfix " . sS('--',$sepm{$pltr}[-1]))<= $bwid);}
+          else     {push(@{$sepm{$pltr}},'') if(length( "$pfix "      . sS('--',$sepm{$pltr}[-1])) > $bwid); # quik alt ckng how many prEfxz fit8blox if!sfxz
+            $sepm{$pltr}[-1].="$clrm{$pltr}$pfix " if($#{$sepm{$pltr}} < 16 && length("$pfix"     ) && length("$pfix " . sS('--',$sepm{$pltr}[-1]))<= $bwid);}}
         if(exists($jmap{$pltr})){$jd8a[$jmap{$pltr}]=["$Y$pltr${G}8$W:$clrm{$pltr} "] unless(defined($jd8a[$jmap{$pltr}]));
           if($#{$jd8a[$jmap{$pltr}]} <  16){my $jrnd=$#{$jd8a[$jmap{$pltr}]};         $jd8a[$jmap{$pltr}][$jrnd] ='' if(!defined($jd8a[$jmap{$pltr}][$jrnd]));
             if($shsf){ # bild 8-char blox of $bwid proly 53 wide or a bit less colmz by 16 rowz high each belo
-              $jd8a[$jmap{$pltr}][++$jrnd] ='' if(length("$pfix$sfix " . sS($jd8a[$jmap{$pltr}][$jrnd])) > $bwid && @{$jd8a[$jmap{$pltr}]} <  16);
+              $jd8a[$jmap{$pltr}][++$jrnd] ='' if(length("$pfix$sfix " . sS('--',$jd8a[$jmap{$pltr}][$jrnd])) > $bwid && @{$jd8a[$jmap{$pltr}]} <  16);
               $jd8a[$jmap{$pltr}][$jrnd].="$clrm{$pltr}$pfix$sfcl$sfix " if($jrnd <  16 && length("$pfix$sfix") && # hopefully won't spc ahed4 l8,r8,g8,etc.
-                                                                                 length("$pfix$sfix " . sS($jd8a[$jmap{$pltr}][$jrnd])) <= $bwid);}
-            else     {$jd8a[$jmap{$pltr}][++$jrnd] ='' if(length("$pfix "      . sS($jd8a[$jmap{$pltr}][$jrnd])) > $bwid && @{$jd8a[$jmap{$pltr}]} <  16);
+                                                                                 length("$pfix$sfix " . sS('--',$jd8a[$jmap{$pltr}][$jrnd])) <= $bwid);}
+            else     {$jd8a[$jmap{$pltr}][++$jrnd] ='' if(length("$pfix "      . sS('--',$jd8a[$jmap{$pltr}][$jrnd])) > $bwid && @{$jd8a[$jmap{$pltr}]} <  16);
               $jd8a[$jmap{$pltr}][$jrnd].="$clrm{$pltr}$pfix " if($jrnd <  16 && length("$pfix") && # hopefully won't space ahead for l8, r8, g8, etc.
-                                                                                 length("$pfix " . sS($jd8a[$jmap{$pltr}][$jrnd])) <= $bwid);}}}}}}
+                                                                                 length("$pfix " . sS('--',$jd8a[$jmap{$pltr}][$jrnd])) <= $bwid);}}}}}}
   # while I will want to tabUl8 countz for each blok PL section thN subtract from sIz grup2stRt apNdng lFtOvrz in $M,mIt try cmpUtng && squEzng in2midmap 1st?
   if      ($clmz >= 240){ # want to just extend each secondary 8 lines
   }elsif  ($clmz <  160){
@@ -337,23 +337,25 @@ if($gm8f){$Stxt.="${W}Gener8 gM8ria primes for names by$B 3$W segments (${Y}PreL
         if         ($prlt eq 'C' &&   $rndx >=  13){$prlt=  'N';$boff= 13;} # seems that N countz of 5 lFt is wrong since adding lIn only mkz 1 new, so why?
         if         ($prlt eq 'N' &&   $rndx >=  14){$prlt=  'U';$boff= 14;}                     # special substitute 31 P8 onto end of 26 h8
         if         ($prlt eq 'U' &&   $rndx >=  15){$prlt=  'h';$boff= 15;}                     # uprt ECNUhP => 5,15,18,20,26,31
-        if         ($#{$jd8a[$jmap{ $prlt}]} >= abs($rndx-$boff)){     $rosl=$bwid-length( sS($jd8a[$jmap{$prlt}][abs($rndx-$boff)]));$rosl=0 if($rosl < 0);
+        if         ($#{$jd8a[$jmap{ $prlt}]} >= abs($rndx-$boff)){     $rosl=$bwid-length( sS('--',$jd8a[$jmap{$prlt}][abs($rndx-$boff)]));$rosl=0 if($rosl<0);
           $Stxt     .= $jd8a[$jmap{ $prlt}][    abs($rndx-$boff)]   .  ' ' x $rosl;my $jltl=$bwid - $bhwd - 1; # set JoinedLineTailLength to pad blok end
-          $pwsf{$prlt}+=(scalar(split(/\s+/,sS($jd8a[$jmap{$prlt}][abs($rndx-$boff)])))+0);
+          $pwsf{$prlt}+=(scalar(split(/\s+/,sS('--',$jd8a[$jmap{$prlt}][abs($rndx-$boff)])))+0);
           if       ($rndx ==  15){if     ($prlt eq 'B' || $prlt eq 'h'){ # could regex chars together then LUT hash $1 into shared line PLz
               if   ($prlt eq 'B'){$prlt='I';}
               elsif($prlt eq 'h'){$prlt='P';}
-              $jltl= abs($jltl -     length(sS($jd8a[$jmap{$prlt}][0])));my $jlts= ' ' x $jltl;$pwsf{$prlt}+=scalar(split(/\s+/,sS($jd8a[$jmap{$prlt}][0])));
+              $jltl= abs($jltl -     length(sS('--',$jd8a[$jmap{$prlt}][0])));my $jlts= ' ' x $jltl;$pwsf{$prlt}+=scalar(split(/\s+/,
+                                            sS('--',$jd8a[$jmap{$prlt}][0])));
               $Stxt =~            s/\s{$bhwd}$/$jd8a[$jmap{$prlt}][0]$jlts/;}}}
         elsif      ($rndx >= $boff &&  defined($jd8a[$jmap{$prlt}][abs($rndx-$boff)])){$Stxt.=$jd8a[$jmap{$prlt}][abs($rndx-$boff)];
-          $pwsf{$prlt}+=(scalar(split(/\s+/,sS($jd8a[$jmap{$prlt}][abs($rndx-$boff)])))+0);}
+          $pwsf{$prlt}+=(scalar(split(/\s+/,sS('--',$jd8a[$jmap{$prlt}][abs($rndx-$boff)])))+0);}
         else       {$Stxt .= ' ' x  $bwid;}} $Stxt  .= "\n";}
     for   my $rndx (0..15){for my $prll (qw(l m r)){$prlt=$prll;$boff=  0; # ...mIt try cmpUtng && squEzng in2midmap 1st?
         if         ($prlt eq 'l' &&   $rndx >=  14){$prlt=  'b';$boff= 14;}                     #   lt lb     => 2,12  # sepR8 hash per PL word rNdered countrs
         if         ($prlt eq 'r' &&   $rndx >=  12){$prlt=  'p';$boff= 12;}                     #   rt rp     => 6,10  # try givng p8 4rowz && r8 12 4hI prcnt%
-        if         ($#{$jd8a[$jmap{$prlt}]}>=abs($rndx-$boff) && $prlt ne 'm'){$rosl=$bwid-length(sS($jd8a[$jmap{$prlt}][abs($rndx-$boff)]));
+        if         ($#{$jd8a[$jmap{$prlt}]}>=abs($rndx-$boff) && $prlt ne 'm'){$rosl=$bwid-length(sS('--',$jd8a[$jmap{$prlt}][abs($rndx-$boff)]));
                                                                                $rosl=0 if($rosl<0);
-          $Stxt     .= $jd8a[$jmap{$prlt}][  abs($rndx-$boff)]  .  ' ' x $rosl;$pwsf{$prlt}+=scalar(split(/\s+/,sS($jd8a[$jmap{$prlt}][abs($rndx-$boff)])))+0;}
+          $Stxt     .= $jd8a[$jmap{$prlt}][  abs($rndx-$boff)]  .  ' ' x $rosl;$pwsf{$prlt}+=scalar(split(/\s+/,
+                                                                                                  sS('--',$jd8a[$jmap{$prlt}][abs($rndx-$boff)])))+0;}
         else{$Stxt  .= ' ' x $bwid;}
         if         ($gmcf){ # -g Gematria Gener8d - Middle Map Maker - Center Color Code - Flag Flip Flop, or try to cram most of left in altern8 middle block
           if       ($prll eq 'm'){$hbwd=int($bwid/2)+6     ;$stal= ' ' x  abs($hbwd- 7);$prlt='r';$boff=14;
@@ -405,19 +407,20 @@ if($gm8f){$Stxt.="${W}Gener8 gM8ria primes for names by$B 3$W segments (${Y}PreL
         if         ($prlt eq 'D' &&   $rndx >= 14 ){$prlt=  'G';$boff= 14;}                     # special substitute 28 w8 onto end of 27 k8
         if         ($prlt eq 'G' &&   $rndx >= 15 ){$prlt=  'k';$boff= 15;}                     # dnlt zsDGkw => 1,13,16,22,27,28
         if         ($prlt eq 'd' &&   $rndx >= 15 ){$Stxt=~ s/$/${Y}d${G}8${B}ion /;} # special sneak in for final d8 word split on block boundary
-        if         ($#{$jd8a[$jmap{ $prlt}]} >= abs($rndx-$boff)){     $rosl=$bwid-length( sS($jd8a[$jmap{$prlt}][abs($rndx-$boff)]));
+        if         ($#{$jd8a[$jmap{ $prlt}]} >= abs($rndx-$boff)){     $rosl=$bwid-length( sS('--',$jd8a[$jmap{$prlt}][abs($rndx-$boff)]));
           $rosl-= 6 if($prlt eq 'd' && $rndx >= 15);$rosl=0 if($rosl < 0); # shift last row of dOWN d8 over by block overlapping part
           $Stxt     .= $jd8a[$jmap{ $prlt}][    abs($rndx-$boff)]   .  ' ' x $rosl;my $jltl=$bwid - $bhwd - 1; # set JoinedLineTailLength to pad blok end
-          $pwsf{$prlt}+=(scalar(split(/\s+/,sS($jd8a[$jmap{$prlt}][abs($rndx-$boff)])))+0);$Stxt=~ s/\s{12}$/${R}intercolle  / if($rndx eq 13);
+          $pwsf{$prlt}+=(scalar(split(/\s+/,sS('--',$jd8a[$jmap{$prlt}][abs($rndx-$boff)])))+0);$Stxt=~ s/\s{12}$/${R}intercolle  / if($rndx eq 13);
           if       ($rndx ==  15){if     ($prlt eq 'f' || $prlt eq 'k'){ # could regex chars together then LUT hash $1 into shared line PLz
               if   ($prlt eq 'f'){$prlt='M';$bhwd-=4;$jltl-=4;} # try2sneak final G8 word in aligned after done with D8 on row 13 (2linzup)
               elsif($prlt eq 'k'){$prlt='w';$bhwd+=4;$jltl+=4;} # squish w8 over toward k8 in lowrleft corner to mk room for last 2 d8 words
-              $jltl= abs($jltl -     length(sS($jd8a[$jmap{$prlt}][0])));my $jlts=' '  x $jltl;$pwsf{$prlt}+=scalar(split(/\s+/,sS($jd8a[$jmap{$prlt}][0])));
+              $jltl= abs($jltl -     length(sS('--',$jd8a[$jmap{$prlt}][0])));my $jlts=' '  x $jltl;$pwsf{$prlt}+=scalar(split(/\s+/,
+                                            sS('--',$jd8a[$jmap{$prlt}][0])));
               $Stxt =~            s/\s{$bhwd}$/$jd8a[$jmap{$prlt}][0]$jlts/;
               if   ($prlt eq 'w'){          $bhwd-=4;$jltl-=4;              $jlts=' ';#x $jltl;
                 $Stxt=~ s/ {8}$/${M}recommen/;}}}} # maybe only final 1, so insert literal at w8 end, double decrement d8 below out...
         elsif      ($rndx >= $boff &&  defined($jd8a[$jmap{$prlt}][abs($rndx-$boff)])){$Stxt.=$jd8a[$jmap{$prlt}][abs($rndx-$boff)];
-          $pwsf{$prlt}+=(scalar(split(/\s+/,sS($jd8a[$jmap{$prlt}][abs($rndx-$boff)])))+0);} # 'm' off by 2 so maybe hackfix 2 just add xtraz below2compNs8?
+          $pwsf{$prlt}+=(scalar(split(/\s+/,sS('--',$jd8a[$jmap{$prlt}][abs($rndx-$boff)])))+0);} # 'm' off by 2 sOmABhackfix 2 just add xtraz below2compNs8?
         else       {$Stxt .= ' ' x  $bwid;}} $Stxt  .= "\n";} my $ltot=0;
     for   my $splz (split(//,'bcdfghklmprswmmGbdd')){$pwsf{$splz}++;} # shOw leFt word cntz aftr map 4now
     $Stxt.="${C}Remaining$B Left${o}Over$M Pre${Y}Letter$R Counts$z:". ' ' x 2;my %lowc; # setup reverse hash2prEsrv LeftOver WordCountz of pdifz2sort by l8r
@@ -428,7 +431,7 @@ if($gm8f){$Stxt.="${W}Gener8 gM8ria primes for names by$B 3$W segments (${Y}PreL
                                                   $Stxt.=' ' x 1;}}        $ltot+= 4; # estim8 special cases to adjust LTotal by (was -15 B4 +  7)
     $Stxt.=$R.' ' x 2 .cma($t0tl)." $Y- $o".cma($ltot)." $G= $B".cma($t0tl-$ltot)   ; # I6OMGtot:pasting `8plc gc` map quoted into echo | wc -w 1025/1369 now;
     $Stxt.=sprintf("$M%8.3f$C%%$K shown$W;\n$z",(($t0tl-$ltot)*100.0/$t0tl)); # try to wrap up total map printing with percentage shown in single page
-  } $Stxt=sS($Stxt) unless($clrf || $Stxt eq 'h');$Smap=$Stxt;$Stxt=''; # 1pAg map curNtly listz about 1035/1369 = ~75.603% of tOtl 8-wordz now shOwn @once;
+  } $Stxt=sS('--',$Stxt) unless($clrf || $Stxt eq 'h');$Smap=$Stxt;$Stxt=''; # 1pAg map curNtly listz about 1035/1369=~75.603% of tOtl 8wordz now shOwn @once;
           o8($Smap)     if($pg1f); # slightly repurpose the -p single Page option flag to show the -g 1-page map when gener8d rathr than Dflt @end,sinc focal;
   # maybe since most prefixes are longer also altern8 inward from both ends preferring more total chars culled for wider from top 8 solos or some thresh?
   # ..or actually resummarize all above thoughts to 1st prime 2 given to suffix outside-in R2L for ion then 2nd 3 given to permanently termin8 any further
@@ -483,8 +486,8 @@ if($gm8f){$Stxt.="${W}Gener8 gM8ria primes for names by$B 3$W segments (${Y}PreL
   $folc[5]{'m8rix'}=$folc[5]{'coll8'}=1; # need to try to put cuts back in so PL counts can match again
 }   # maybe multiplying && factoring primes as essentially bit-flags requiring escal8ing order to build words to according to growing wsiz ordr is inefficient
     #   && still indirect, but mAB less useful than srchng whole word-set entirely to build all at once deliber8ly right-to-left wi prioritized substringz?
-$Stxt=sS($Stxt) unless($clrf);o8($Stxt);$Stxt ="\n";my $tals=''; # TempAddLineString  # %adpl has PrecursLetr keyz to array of add-word-string matched2ordr l8r
-#for(    (keys(%adw8))){if(exists($ENV{'COLUMNS'}) && length(sS("$tals$_ ; ")) > $ENV{'COLUMNS'}){$Stxt.="$tals\n";$tals='';}
+$Stxt=sS('--',$Stxt) unless($clrf);o8($Stxt);$Stxt ="\n";my $tals=''; # TempAddLineString  # %adpl has PrecursLetr keyz to array of add-word-str m@chd2ordr l8r
+#for(    (keys(%adw8))){if(exists($ENV{'COLUMNS'}) && length(sS('--',"$tals$_ ; ")) > $ENV{'COLUMNS'}){$Stxt.="$tals\n";$tals='';}
 #  $tals.="$z$_ $W;$z ";} $Stxt.=$tals if(length($tals));
 #$Stxt=~ s/((^|\s)?[^ ;]*)([^ 8])(8)([^0-9m;])/$1$Y$3$B$4$z$5/g; # $Stxt=~ s/(\s+)(\S)/$1$z$2/g; # $Stxt=~ s/(( +\S+){12}) +/$1\n/g;
 #$Stxt.= "$R 2${O}Add${C}Count$W:$M " . scalar(keys(%adw8)) . "$W;"; # I97MKOUN:`gad` gets 65 linez && this Perl varE8ion gets 62,so some mismatch;
@@ -493,7 +496,7 @@ my $lbac=0;for(@scnt){for my $lndx (0..$#lcnt){ # init new LetrBasedAddCount
       $Stxt  .="$Y" . b64($lndx) . "$W:$z";my $lasz=scalar(@{$adpl{b64($lndx)}}); # LetrAddSiZe
       for my $addl (@{$adpl{b64($lndx)}}){$addl=~ s/([a-z])(8)/$Y$1${G}8$z/gi;$Stxt.="$addl ";$lbac++;} $Stxt=~ s/ $/$W;$M$lasz\n/;}}
 }     $Stxt=~ s/\n*$/$R Add${C}T${M}o${C}TL$W:$B $lbac/;
-$Stxt=sS($Stxt) unless($clrf);o8($Stxt) if($fulf);$Stxt =''; # mAB l8r upd8 %adw8 to key PreCurs letrz then val sorted array of matched wordz in group ordr
+$Stxt=sS('--',$Stxt) unless($clrf);o8($Stxt) if($fulf);$Stxt =''; # mAB l8r upd8 %adw8 to key PreCurs letrz then val sorted array of matched wordz in grup ordr
 if($fulf){$Stxt=~ s/\n?$/\n/;my %cvlz=reverse(%fulc);my @ccnt= sort { $a <=> $b } keys(%cvlz);my $jus8=0;my $sumn=0; # 2colmzof fulcntz fitznIc undr50lInz sOfR
   for     my $cndx (0..$#ccnt){my $coun=$ccnt[$cndx];my $pcnt=0;my $w82o=''; # FullFile CharCounts abov as Values (or values(%fulc) nEdzUniq)
     for   my $char (sort(keys(%fulc))){ # this now is intended to be just a single linear column which duplic8z the content of the orig 2-columnz below
@@ -516,7 +519,7 @@ if($fulf){$Stxt=~ s/\n?$/\n/;my %cvlz=reverse(%fulc);my @ccnt= sort { $a <=> $b 
           $w82o    .= ($char eq "\n") ? '\n' : $char;$pcnt++;} # belo was once trying some random colrz with: ,S(substr($cmap{'d8bo'},b64(int(rand(8))),1)));
       } $Stxt.=sprintf((' ' x ( 8-$pcnt))."$C$w82o$B:$M".sprintf("%7s$B: %s$W,\n",cma($coun),b8colr(sprintf("%4s",b64($coun)))));
     } } $Stxt.=sprintf("$C  Sum of$B: ${G}0$W..${G}7$W,${G}9$B: $M%s$o      dif$Y:$B%7s$W;$z",cma($sumn),cma($jus8-$sumn));}
-$Stxt=sS($Stxt) unless($clrf);o8($Stxt);o8("\n$Smap") if($gm8f && defined($Smap) && length($Smap) && !$pg1f);
+$Stxt=sS('--',$Stxt) unless($clrf);o8($Stxt);o8("\n$Smap") if($gm8f && defined($Smap) && length($Smap) && !$pg1f);
 
 # 2du:gener8 all entries below into new d8a-struct && sepR8 ones for *t8(ion)? && *E8 as *iat(e|ion) ends, to then compare against loc8d 8-words 4 diffz 2add;
 #   rel8ively few results just for *z8 end... then maybe all these should load into hashes to match against l8st presently defined 8.txt 8-words 2sync or add;

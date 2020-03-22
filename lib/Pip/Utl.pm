@@ -26,7 +26,7 @@ eval('use          XML::Tidy                  ;');
 eval('use          XML::Merge                 ;');
 our @EXPORT=qw(e bak updt tild qolm syncdate vollabel forfiles longlinz tiglet genbats left rght cfdd locd fpt lspt xprp rdhd
   foggsync timerun runbench domserch critarch); # port to U8?:e bak  f8:tiglet
-my $VERSION='0.0';my $d8VS='ICBLNN8X';our $Dbug=0; # Gl0balDbugFlag  # used to have @Dayz && @Monz here, but reloc8d to a8.pm instead
+my $VERSION='0.0';my $d8VS='K3KM6Pl8';our $Dbug=0; # Gl0balDbugFlag  # used to have @Dayz && @Monz here, but reloc8d to a8.pm instead
 sub tild{ # translating fylnm tildes(~)(also fromPerlFAQ5) # use <> (glob()) wi shell that groks ~ or try Glob::KGlob||File::HomeDir nstd ofPurePerl belo:
   my $filn = shift; $filn =~ s/^~([^\/]*)/$1 ? (getpwnam($1))[7] : ( $ENV{'HOME'} || $ENV{'LOGDIR'} )/ex;  return($filn); } # Eval replacement && Xtra spaces
 sub left{my $coun = shift;my $strn = shift;if(defined($strn) && defined($coun) && $coun =~ /^\d+$/){ return(substr($strn,     0,$coun)); }else{ return(''); }}
@@ -75,8 +75,8 @@ sub bak{#H5JM2bMF:`bak`l8st major upd8; 267KBPZA:auto-backup a file into './.bak
           for(@tsts) { 
             if($osty eq 'good') { $pass =  `diff --brief $_ $srcf`;
               unless($pass)     { $_    =~ s/^$cwdr[\\\/]//;$srcf =~ s/^$cwdr[\\\/]//;
-#                  s/(.*)-(.)(.)(.)(.)(.)(.)(.)(.)/$1-$R$2$O$3$Y$4$G$5$C$6$B$7$M$8$P$9$G/; # better to pass to a8::d8colr
-#               if( /(.*)-(.{8})/){my $clrd=d8colr($2);
+#                  s/(.*)-(.)(.)(.)(.)(.)(.)(.)(.)/$1-$R$2$O$3$Y$4$G$5$C$6$B$7$M$8$P$9$G/; # better to pass to a8::d8c
+#               if( /(.*)-(.{8})/){my $clrd=d8c($2);
 #                  s/(.*)-(.{8})/$1-$clrd$z/;} # actually better to just c8fn whole name, but not so easy to do for srcf yet
                 $_ = c8fn($_);
                 printf("!*EROR*! File: '%-16s already bak'd up as '%s'!\n", $srcf . "'", $_); last;

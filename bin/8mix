@@ -1,0 +1,24 @@
+#!/bin/sh
+# K3KMMIXR:8mix crE8d by PipStuart <Pip@CPAN.Org> from LukeSmith's HTTPS://YouTu.be/zrUW14L_uqE on shell-scripting with case-st8mentz;
+d8VS="K3LMEput";
+Volu="${2:-5}"; # might not want the dash neg8ive in here?
+#Puls=false; # below could be just: if "$Puls"; then
+if pgrep -x pulseaudio >/dev/null; then # pgrep might be kinda slow
+  togl() {  pulsemixer --toggle-mute           ; }
+  mute() {  pulsemixer --mute                  ; }
+  uppp() {  pulsemixer --change-volume +"$Volu"; pulsemixer --get-volume; }
+  down() {  pulsemixer --change-volume -"$Volu"; pulsemixer --get-volume; }
+else
+  togl() {      amixer   sset   Master   toggle; }
+  mute() {      amixer   sset   Master   mute  ; }
+  uppp() {      amixer   sset   Master +"$Volu"; }
+  down() {      amixer   sset   Master -"$Volu"; }
+fi
+case "$1" in # not yet sure if single pipe is like 'or' in these?
+  togl | t) togl ;;
+  mute | m) mute ;;
+  uppp | u) uppp ;;
+  down | d) down ;;
+esac
+#>/dev/null; # this could be joined with esac abov to silence the set cmndz;
+#pkill -RTMIN+10 dwmblocks; # this was needed to upd8 Luke's sys-tray volume;

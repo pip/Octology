@@ -1,151 +1,151 @@
 # F1IL2Vhp:~/.Hrc crE8d by PipStuart <Pip@CPAN.Org> as 8sh"H"rEsourcz2configUr core fEld abbreV8ion,type colr8ion,&& aliasing; $VERSION='0.0';$d8VS='K36L1Als';
-c           =>   C        => cOL  =>   cOL8 =>    cOLR =>   cOLM; # core c8 lAyrz;c:* sepR8lAyrzBlODterminprEfixz4allfolOing middle-map columnz th@ R!Dfalt F:;
-c:tFbSGRsgr =>   WGBZOMzom=> tXt  Fgc  bGC  Slc  Gfc  Rnd  sLC  gFC  rND ; # c8 objectz shudBgoverned by thEs lAyrz from hEr proly thru a8:new
+c           ->   C        => cOL  =>   cOL8 =>    cOLR =>   cOLM; # core c8 lAyrz;c:* sepR8lAyrzBlODterminprEfixz4allfolOing middle-map columnz th@ R!Dfalt F:;
+c:tFbSGRsgr ->   WGBZOMzom=> tXt  Fgc  bGC  Slc  Gfc  Rnd  sLC  gFC  rND ; # c8 objectz shudBgoverned by thEs lAyrz from hEr proly thru a8:new
 c:tFbSGRsgr               => tEXt Fclr bCLR Slct Grfc Rndt sLCT gRFC rNDT => tEXt, Forecolr, bACKCOLR, Select, Graphic, Rendition, sELECT, gRAPHIC, rENDITION;
-c:DALdalfpN =>   DALdalYRN=> Drk  Avg  Lit  dRK  aVG  lIT  f0N  pAL  Nsx ; # implied c:X is Xplicit:Xpansion XnAmOvrIdz
+c:DALdalfpN ->   DALdalYRN=> Drk  Avg  Lit  dRK  aVG  lIT  f0N  pAL  Nsx ; # implied c:X is Xplicit:Xpansion XnAmOvrIdz
 c:DALdalfpN               => Dark Avrg Lite dARK aVRG lITE f0NT pAL8 aNsx => Drkcolr, Avgcolr, LitcoLr, dRKCOLR, aVGCOLR, lITCOlR, f0NTfILE,pAL8FILE,aNsiNdex;
 # new c8layr N 4aNsi SGRcOd iNtb64iNdexbut b10 of u&&v shudcorect2actual 64&&65(proly du!nEd YyH=>cmy); also could add 2pal8 layers: Clen NeoN Wash Melo;
 # consider c:tFbs grpf SGRn N(speclKsjust4 cs:) X(prEorpOst flag2apply any othr lAr4wRd2Xpansionz) mAB m(sepR8Mousele nEg8) 2ordr c8 top4Curses1stB4 SDL 8trm;
-ugahMm.x    =>   GMBCMYWR => uSR  gRP  aHT  hST   sdM  DOm  dt.  xTN ; # set autOnAmflagXpansion setzXpnd&&Trp4only3z||Quad4only4z&&also/Max|All|[3489]/
+ugahMm.x    ->   GMBCMYWR => uSR  gRP  aHT  hST   sdM  DOm  dt.  xTN ; # set autOnAmflagXpansion setzXpnd&&Trp4only3z||Quad4only4z&&also/Max|All|[3489]/
 ugahMm.x                  => uSER gRUP aaHT hOST  sbdM DOmN dot. xTNS => uSER,    gROUP,       aT, hOSTNAME,  subdoMain, DOmAIN, periodot., ExTENSION; # a='@'
-O           =>   Y        => Oct  =>   OctO     =>     OctOlOgy; # /(.)8/ map of main code modulez && objectz  # bumped g8 out for r8 below
-O:abcdfmrU  =>   ABCFoMRU => aUTOM8XPORT, bASETRANSL8, cOL8cOLR8ION, d8IME,  f0NTPAL8, m8REL8, r8VALU8, Utiliz8ion; # f80p => f8FUL0PER8I0N  # sepR8dclascolrz
-pbdf        =>   BRYG     => pRM  b8N  d8S  fLN => YMOB:X     =>  pERMISSIONZ, b8_NUMbER, d8_STRING, C8fN_fILENAME; # b8 numbr normlyrNderdas strng lIk d8
-p:01234567  =>   GcOPBMCR ; # basic octal map here and special bitz below  # rEgRdngUsrz,Only my3palindrome tripzREvN crE8don Aku sOfR,Only p@rkct
-p:wWst      =>   YROG     => rws  rwt  r-s  r-t; # maybe a8:new should load this file d8a with Dbug output4wich b8 keyz taken && free from each (sub)?nmspc
-#p:dlu      =>   BWO      => dIR  lNK  STu      => RGY:X      =>  dIRECTORY, SYMBOLIC lINK, SETuID; # shudBinherited from .ls?rc but mAB OvrrIdable from here?
+O           ->   Y        => Oct  =>   OctO     =>     OctOlOgy; # /(.)8/ map of main code modulez && objectz  # bumped g8 out for r8 below
+O:abcdfmrU  ->   ABCFoMRU => aUTOM8XPORT, bASETRANSL8, cOL8cOLR8ION, d8IME,  f0NTPAL8, m8REL8, r8VALU8, Utiliz8ion; # f80p => f8FUL0PER8I0N  # sepR8dclascolrz
+pbdf        ->   BRYG     => pRM  b8N  d8S  fLN -> YMOB:X     =>  pERMISSIONZ, b8_NUMbER, d8_STRING, C8fN_fILENAME; # b8 numbr normlyrNderdas strng lIk d8
+p:01234567  ->   GcOPBMCR ; # basic octal map here and special bitz below  # rEgRdngUsrz,Only my3palindrome tripzREvN crE8don Aku sOfR,Only p@rkct
+p:wWst      ->   YROG     => rws  rwt  r-s  r-t; # maybe a8:new should load this file d8a with Dbug output4wich b8 keyz taken && free from each (sub)?nmspc
+#p:dlu      ->   BWO      => dIR  lNK  STu      => RGY:X      =>  dIRECTORY, SYMBOLIC lINK, SETuID; # shudBinherited from .ls?rc but mAB OvrrIdable from here?
 # might add ftst flag ls meaningz && $_,$?,$@,$|,$\,$/ perl refz && /\\.*/ regex&&string escape meanings from HTTP://PerlDoc.Perl.Org/perlrebackslash.html
 #b:r might make new composite b8 object of couplet for reso like 1280x800 => K0-CW && 3840x2160 => y0-Xm and another for Range span maskz or some better 8-name
-#b:c        =>   ROYGCBMP => RVc; # maybe base b64 map here could propag8 2all else?  # b8 reverse Colr loop        # SGR map below cud pOtNtially
-d:YMDzhmsf  =>   ROYGCBMP => Year, Month, Day, zONE,   hOUR, mINUTE, sECOND, fRAME;   # d8 forward colr fieldz      #   DfIn g: && r: 2Ballnew
+#b:c        ->   ROYGCBMP => RVc; # maybe base b64 map here could propag8 2all else?  # b8 reverse Colr loop        # SGR map below cud pOtNtially
+d:YMDzhmsf  ->   ROYGCBMP => Year, Month, Day, zONE,   hOUR, mINUTE, sECOND, fRAME;   # d8 forward colr fieldz      #   DfIn g: && r: 2Ballnew
 # contXtAKAnAmspAc: frAmez Ech Xpansion implicitly,thN nAming anXpansion set can furthr IdNtify && can autOrecognIz consistNt&&max lengthz && other Useful tr8z
-_           =>   G        => _tu  =>   _transl8ion_and_utlz; # thEsRglObal col8lAyrtransl8ionz wher8trm 1z shud alwAyzBdone&& x 1z shudB Xtra4 xterm (GnomTerm)
-_:8x        =>   YM       => 8trm, xterm; # these are basically transl8ion type categoriez or profilez for specialized alter8ion within Dtectabl NvIronmNtz
-_8:k        =>   K        ; # these intNd2rEstrict EvN every dRk Fgcolr 2all Bing visible above typical k bg && f0ntz 2Bing mostly legible
-_x:0bensx.  =>   5BHNSXQ  ; # the default or specified c8 layer key prefix in the middle-map also design8z which layer the V is transl8d from
-_8:CGHIRTW._=>   CGHIRTWD7=> f:cghirtwd1  ; # autO transl8ing f0ntz2Bvisibl shudproly have no impact on the majority of terminalz which don't support f0ntz yet
-_:L         =>   O        => Lyt  =>   Lyot => Layout; # prEfrdloclfIlsyztM,prEVOuslyprImarily acceSed thruZsh inGnome-Terminal sOassoC8d (_:Utlz!just Xl8ionz)
-_L:bdDgGlmM =>   RWCG3OYM => bIN  dOX  Dvl  gFX   Gmz  lIB  mUZ  Mvz ; # my top syztM hOm tilde"~" public subdirectorEz wich nEd lc onXpanded nAmez2match -d
-_Lm:mgdctbTe=>   MKPEKRCY => DmS  gLH  Dbs  cLS   tRP  DNb  Trn  eLH ; # try2autO insertng 4 mUZIC Trp Max3 All3 Xpansion
+_           ->   G        => _tu  =>   _transl8ion_and_utlz; # thEsRglObal col8lAyrtransl8ionz wher8trm 1z shud alwAyzBdone&& x 1z shudB Xtra4 xterm (GnomTerm)
+_:8x        ->   YM       => 8trm, xterm; # these are basically transl8ion type categoriez or profilez for specialized alter8ion within Dtectabl NvIronmNtz
+_8:k        ->   K        ; # these intNd2rEstrict EvN every dRk Fgcolr 2all Bing visible above typical k bg && f0ntz 2Bing mostly legible
+_x:0bensx.  ->   5BHNSXQ  ; # the default or specified c8 layer key prefix in the middle-map also design8z which layer the V is transl8d from
+_8:CGHIRTW._->   CGHIRTWD7-> f:cghirtwd1  ; # autO transl8ing f0ntz2Bvisibl shudproly have no impact on the majority of terminalz which don't support f0ntz yet
+_:L         ->   O        => Lyt  =>   Lyot => Layout; # prEfrdloclfIlsyztM,prEVOuslyprImarily acceSed thruZsh inGnome-Terminal sOassoC8d (_:Utlz!just Xl8ionz)
+_L:bdDgGlmM ->   RWCG3OYM => bIN  dOX  Dvl  gFX   Gmz  lIB  mUZ  Mvz ; # my top syztM hOm tilde"~" public subdirectorEz wich nEd lc onXpanded nAmez2match -d
+_Lm:mgdctbTe->   MKPEKRCY => DmS  gLH  Dbs  cLS   tRP  DNb  Trn  eLH ; # try2autO insertng 4 mUZIC Trp Max3 All3 Xpansion
 _L:bdDgGlmM               => bINARIEZ,  dOCUMENTZ, Development, gRAPHICZ,  Gamez, lIBRARIEZ, mUZIC,         Moviez; # furthr Xpanded full wordz but s/s/z/g 4mE
-_Lm:mgdctbTe=> X:GRB93P_C => DRUmSTEP,   gLITCHOP, dRUBSTEP, cHILSTEP,  tRAPBASS,  DRUMbASS, Trannnce,    eLeCTROH; # aprxU2bMnstrCatgenrenAmz&&colrz gt:KK=>G3
-_Lm:mgdctbTe=> X:GPRBOC1O => Drumstep, Glitch_Hop, Dubstep, Chillstep,  Trap,   Drum_&_Bass, Trance, Electro_House:standRd; # aftr All8 thiswudB comon Xpansion
-_Lm:phn     =>   OGK      => pRH  hRD  nUD  =>     pROGRSVH, hARDANCE,  nUUDISCO => Progressive_House,  Hard_Dance, Nu_Disco:standRd; # addafew more muz genrez
-_Lm:DC      =>   rB       => Dph  Cho       =>     Deephous, Chillout            =>        Deep_House,     Ambient:standRd;
-_:X         =>   B        => Xpt  =>   Xpty => Xpantype => Xpansion_type; # 4abovshudl8r atMpt2addfurthr muz genrez4Mnstrc@ wi altrn8 colrmapz4Vital&&DubSt8ion
-_X:AMTQOR   =>   AMTQOR   => All, Max, Trp, Quad, OctOleng, standRd; # autoDtectable Xpansion set typez (wi AM folOwed byb64numb of size&&TQO 348 4mz of All)
-_:S         =>   C        => Sct  =>   Sect => Sectionz; # sepR8 columnzRpRsd lucidly in this gr8 4m@;
-_S:BmN      =>   GYR      => Bgn  mDL  eNd  => Bgin mIDL ehNd => Beginning, mIDDLE, eNd; # B setzupV8keyz,m mapz2c8lAyrkeyz,N mapz2Xpansionz(EvNthoanyNmNmordr)
-__:Test     => X:RYCM     => Try, eVeRY, sCENARIO, tWICE  => PBGO:X     => This, eXTRA, sUFFIX, tIEZ; # tSt multiXpansion wi l8rordrimplId Fclr OvrIdvarE8ion
-cf:01234567 =>   7c93O537 => standrd0, roman-1 , futura-2, lat4-163 ,  lat4-16+, finnish5, gr.f16  , thin7   ; # c8:f0nt:Dfalt b64 ordr filename map
-cf:89ABCDEF =>   59ABCDEF => tallg88d, france9 , Alt-8x16, Bold     ,  CyrilliC, moDern-1, EurotypE, Fraktur ; # almOst alwAys oppOsing cAse rEin4cez  V8z
-cf:GHIJKLMN =>   GHIJKLMN => Greek   , Hebrew  , Inverted, scottJ   ,  blocK   , Lcd     , Modern-2, Norway  ; # mv all filenamez 2     cAse rEin4ce more?
-cf:OPQRSTUV =>   OPQRSTUV => crOstall, suPer   , teQton  , ReveRse  ,  Surreal , Thai    , coUrier , silVer  ;
-cf:WXYZabcd =>   WXYZABCD => backWard, bigXerif, stretchY, ZanZurf  ,  FUTURa-1, bROADWAY, cALLIGRA, dECO    ;
-cf:efghijkl =>   EFGHIJKL => eMPTY   , fAT     , gRFIXED , hEARST   ,  iTALiCS , CRAKRjAK, kIDS-1  , lEDFONT ; # V8 failz:035789JQ XYZxz._ pre rename && mv
-cf:mnopqrst =>   MNOPQRST => mED     , nICEFnT , FRESNo  , SLOppY   ,  ANTIqUE , rOMAN3  , sCRIPT  , tEKtItE ; # swapd fRAKTUR && Fat to match cs:Fraktur on
-cf:uvwxyz._ =>   UVWXYZ__ => COMPuTER, MEDIEvAL, wEIRD   , xANxERIF ,  HyLAS   , zWIzz-1 , bnc.drop, bnc_blok; # max4th level rash sOfR _Lm:*
-cp:BbcpdDRF =>   PBCPdDRF => Bepspurp, bLUES   , cORRI   , DARKpRIM ,  dARKZ   , Decent  , deepRed , Flipped ; # c8:pal8:initial 16  filenamez like cf:
-cp:gnrsfTty =>   GNrSfTtY => gOOFY   , nICE    , r       , sILLY    ,  TIGSfAVS, Tigzfavz, t       , yEL     ; # V8 failz: none yet, shud grow 2 top64
-cS:NBAIULKR =>   KWwGCORY => N:01234567 => Normal      , Bold        , fAint       , ItalIc      ,  Underline   , bLink       , blinK       , ReveRse     ;
-cS:VC012345 =>   BRROYGCB => N:89ABCDEF => inVisible   , Crossedout  , 0defaultf0nt, 1altern8f0nt,  2altern8f0nt, 3altern8f0nt, 4altern8f0nt, 5altern8f0nt;
-cS:6789FDbi =>   MPRORWwg => N:GHIJKLMN => 6altern8f0nt, 7altern8f0nt, 8altern8f0nt, 9altern8f0nt,  Fraktur     , DblunDerline, bOLD        , iTALiC      ;
-cS:ulSrvcXY =>   coByOrGY => N:OPQRSTcd => uNDERLINE   , BlINK       , reServed    , rEVErSE     ,  vISIBLE     , cROSSEDOUT  , eXtendedcolr, dfltextYcolr;
-cS:xysMEOmo =>   gybMCGmg => N:mnopqrst => ExTENDEDCOLR, DFLTEXTyCOLR, REsERVED    , fraMed      ,  EncirclEd   , Overlined   , FRAmED      , oVERLINED   ;#u-x
-cS:HhTtGg   =>   CMRYGg   => N:yz._uv   => igulorlrigHt, IGDUORLRIGhT, igolorllefT , IGDOORLLEFt ,  iGstress    , IgOFF       ; # IdeoGram(Dbl)?UndROvLnz#rsrvd
-cS:nafdke   => S:Nbiulm   => N:0MNOPs   => nORMAL      , FaINT       , fRAKTUR     , dBLUNdERLINE,  BLINk       , eNCIRCLeD   ; # Xtraz2remap2aliasz4now#<=y-11
+_Lm:mgdctbTe-> X:GRB93P_C => DRUmSTEP,   gLITCHOP, dRUBSTEP, cHILSTEP,  tRAPBASS,  DRUMbASS, Trannnce,    eLeCTROH; # aprxU2bMnstrCatgenrenAmz&&colrz gt:KK=>G3
+_Lm:mgdctbTe-> X:GPRBOC1O => Drumstep, Glitch_Hop, Dubstep, Chillstep,  Trap,   Drum_&_Bass, Trance, Electro_House:standRd; # aftr All8 thiswudB comon Xpansion
+_Lm:phn     ->   OGK      => pRH  hRD  nUD  =>     pROGRSVH, hARDANCE,  nUUDISCO => Progressive_House,  Hard_Dance, Nu_Disco:standRd; # addafew more muz genrez
+_Lm:DC      ->   rB       => Dph  Cho       =>     Deephous, Chillout            =>        Deep_House,     Ambient:standRd;
+_:X         ->   B        => Xpt  =>   Xpty => Xpantype => Xpansion_type; # 4abovshudl8r atMpt2addfurthr muz genrez4Mnstrc@ wi altrn8 colrmapz4Vital&&DubSt8ion
+_X:AMTQOR   ->   AMTQOR   => All, Max, Trp, Quad, OctOleng, standRd; # autoDtectable Xpansion set typez (wi AM folOwed byb64numb of size&&TQO 348 4mz of All)
+_:S         ->   C        => Sct  =>   Sect => Sectionz; # sepR8 columnzRpRsd lucidly in this gr8 4m@;
+_S:BmN      ->   GYR      => Bgn  mDL  eNd  => Bgin mIDL ehNd => Beginning, mIDDLE, eNd; # B setzupV8keyz,m mapz2c8lAyrkeyz,N mapz2Xpansionz(EvNthoanyNmNmordr)
+__:Test     -> X:RYCM     => Try, eVeRY, sCENARIO, tWICE  -> PBGO:X     => This, eXTRA, sUFFIX, tIEZ; # tSt multiXpansion wi l8rordrimplId Fclr OvrIdvarE8ion
+cf:01234567 ->   7c93O537 => standrd0, roman-1 , futura-2, lat4-163 ,  lat4-16+, finnish5, gr.f16  , thin7   ; # c8:f0nt:Dfalt b64 ordr filename map
+cf:89ABCDEF ->   59ABCDEF => tallg88d, france9 , Alt-8x16, Bold     ,  CyrilliC, moDern-1, EurotypE, Fraktur ; # almOst alwAys oppOsing cAse rEin4cez  V8z
+cf:GHIJKLMN ->   GHIJKLMN => Greek   , Hebrew  , Inverted, scottJ   ,  blocK   , Lcd     , Modern-2, Norway  ; # mv all filenamez 2     cAse rEin4ce more?
+cf:OPQRSTUV ->   OPQRSTUV => crOstall, suPer   , teQton  , ReveRse  ,  Surreal , Thai    , coUrier , silVer  ;
+cf:WXYZabcd ->   WXYZABCD => backWard, bigXerif, stretchY, ZanZurf  ,  FUTURa-1, bROADWAY, cALLIGRA, dECO    ;
+cf:efghijkl ->   EFGHIJKL => eMPTY   , fAT     , gRFIXED , hEARST   ,  iTALiCS , CRAKRjAK, kIDS-1  , lEDFONT ; # V8 failz:035789JQ XYZxz._ pre rename && mv
+cf:mnopqrst ->   MNOPQRST => mED     , nICEFnT , FRESNo  , SLOppY   ,  ANTIqUE , rOMAN3  , sCRIPT  , tEKtItE ; # swapd fRAKTUR && Fat to match cs:Fraktur on
+cf:uvwxyz._ ->   UVWXYZ__ => COMPuTER, MEDIEvAL, wEIRD   , xANxERIF ,  HyLAS   , zWIzz-1 , bnc.drop, bnc_blok; # max4th level rash sOfR _Lm:*
+cp:BbcpdDRF ->   PBCPdDRF => Bepspurp, bLUES   , cORRI   , DARKpRIM ,  dARKZ   , Decent  , deepRed , Flipped ; # c8:pal8:initial 16  filenamez like cf:
+cp:gnrsfTty ->   GNrSfTtY => gOOFY   , nICE    , r       , sILLY    ,  TIGSfAVS, Tigzfavz, t       , yEL     ; # V8 failz: none yet, shud grow 2 top64
+cS:NBAIULKR ->   KWwGCORY -> N:01234567 => Normal      , Bold        , fAint       , ItalIc      ,  Underline   , bLink       , blinK       , ReveRse     ;
+cS:VC012345 ->   BRROYGCB -> N:89ABCDEF => inVisible   , Crossedout  , 0defaultf0nt, 1altern8f0nt,  2altern8f0nt, 3altern8f0nt, 4altern8f0nt, 5altern8f0nt;
+cS:6789FDbi ->   MPRORWwg -> N:GHIJKLMN => 6altern8f0nt, 7altern8f0nt, 8altern8f0nt, 9altern8f0nt,  Fraktur     , DblunDerline, bOLD        , iTALiC      ;
+cS:ulSrvcXY ->   coByOrGY -> N:OPQRSTcd => uNDERLINE   , BlINK       , reServed    , rEVErSE     ,  vISIBLE     , cROSSEDOUT  , eXtendedcolr, dfltextYcolr;
+cS:xysMEOmo ->   gybMCGmg -> N:mnopqrst => ExTENDEDCOLR, DFLTEXTyCOLR, REsERVED    , fraMed      ,  EncirclEd   , Overlined   , FRAmED      , oVERLINED   ;#u-x
+cS:HhTtGg   ->   CMRYGg   -> N:yz._uv   => igulorlrigHt, IGDUORLRIGhT, igolorllefT , IGDOORLLEFt ,  iGstress    , IgOFF       ; # IdeoGram(Dbl)?UndROvLnz#rsrvd
+cS:nafdke   -> S:Nbiulm   -> N:0MNOPs   => nORMAL      , FaINT       , fRAKTUR     , dBLUNdERLINE,  BLINk       , eNCIRCLeD   ; # Xtraz2remap2aliasz4now#<=y-11
 #cS_:YyH                  => c, m, y; # an altern8map4N: wi b64 ofstandRd SGR cOdz nEd2ovrId DfltdFinition ordrincrMNtng indiCz #   but l8r mAB rEdF aznw funcz
 # SGR col8 layerz are special because the interpret8ionz are not mutually exclusive like colrz && f0ntz, so Ech atribUt has cOXistNt On && oFF formz instead
-L           =>   W        => cLr  =>   coLr;  # colr b64 RGB mapz and namez (put in top-level to avoid col8 layer confusion)    # atMpting sLfrFz of s: above
-L:krOgcbPw KRYGCBMW  =>   krOgcbPw KRYGCBMW => 000 g00 _SI 0g0 0gg DPf g0g CCC  ggg z99 __L L_L L__ Sdp kOr ___; # Dflt 8pal8 wihand-gNdRkz((round Bright/4)*2)
-L:ehodtspi EHyDTSmI  =>   ehodtspi EHyDTSmI => EEE WEM pX0 EI4 8SQ GQU V9p WWU  QQQ _Qj pp0 QZ8 Guq Xpw p0p __y; #   othr than op althOlookngup dRk version3 of
-L:.fuaznlj _FUAZNLJ  =>   .fuaznlj _FUAZNLJ => KKK M44 WSO GWQ UWW 00G SSW WSM  eee i88 _vn V_r y__ 00W vv. _th; #   Ech mItBan improvemNt
-L:02468xvq 13579XVQ  =>   02468xvq 13579XVQ => 00I M6C WQ0 6Q6 8GM 4IW UGU WUQ  00Y iCO _r0 CpC 7a_ HWj xWx .wr; # all uc colrzRANSIeScapedbold01XceptOP(vs ym)
-L:krOgcbPw  =>   krOgcbPw => BLACk     , rED      , Orange,     gREEN  ,  cYAN        ,      bLUE, PurPle  ,        wHITE; # c8:colr:Dflt dRk bg
-L:ehodtspi  =>   ehodtspi => DIMGReY   , hOTPINK  , oRANGE, OLIVEdRAB  ,  tURQUOISE   ,   sKYBLUE, pURpLE  ,        iVORY; #   lc,EvN,&& .
-L:.fuaznlj  =>   .fuaznlj => GRAY.63   , fIREBRICK, BISQuE, aQUaMaRINE ,  AzURE       ,      nAVY, lAVENDER,  NAVAjOWHITE; #   dRkhalfshudBgNR8d
-L:02468xvq  =>   02468xvq => DARKBLUE-0, MAROON-2 , GOLD-4, LIMEGREEN-6,  DODGERBLUE-8, xTEELBLUE, vIOLET  , ANTIqUEWHITE; #   2toglallXcAs
-L:KRYGCBMW  =>   KRYGCBMW => blacK     , Red      , Yellow,     Green  ,  Cyan        ,      Blue, Magenta ,        White; # c8:colr:Dflt brItFg
-L:EHyDTSmI  =>   EHyDTSmI => dimgrEy   , Hotpink  , yELLOW, oliveDrab  ,  Turquoise   ,   Skyblue, mAGENTA ,        Ivory; #   uc,odd,&& _
-L:_FUAZNLJ  =>   _FUAZNLJ => gray_63   , Firebrick, bisqUe, AquAmArine ,  aZure       ,      Navy, Lavender,  navaJowhite; # Abov b64 RGB out-of-d8,mAB mk 4-
-L:13579XVQ  =>   13579XVQ => darkblue-1, maroon-3 , gold-5, limegreen-7,  dodgerblue-9, Xteelblue, Violet  , antiQuewhite; #   char 24-bit nstd of just 18;
-sB          =>   YW       =>  Trp:sEP, Bkt; # dirSepar8or "/", Bracketz "<>" (or "[]" for zsh or 8sh promptz, mAB should be defined sepR8ly?)
-rH          =>   RO       =>  Trp:rUT, Hom; #   solo Root "/", Home "~"  # these should probably just B varE8ionz on s=>Sep && lsrc di=>dir mABin s:rtoh
-Ro          =>   GC       =>  Trp:oRt, oHM; #   Othr Root "/", Home "~"  #   for Root,Tilde,Othroot,Home rathr than wasting Ech on own newtop namespacez
-l:pbugbdf   => f:tcrmaEq  =>  Trp:lSD; # lsd8 columnz ndX in2 main fieldz wi f0ntz4now,l8rmABfolO wi OvrIdz2abov Fg or add bg colrz hEr&&incorpor8in2 lsd8
+L           ->   W        => cLr  =>   coLr;  # colr b64 RGB mapz and namez (put in top-level to avoid col8 layer confusion)    # atMpting sLfrFz of s: above
+L:krOgcbPw KRYGCBMW  ->   krOgcbPw KRYGCBMW => 000 g00 _SI 0g0 0gg DPf g0g CCC  ggg z99 __L L_L L__ Sdp kOr ___; # Dflt 8pal8 wihand-gNdRkz((round Bright/4)*2)
+L:ehodtspi EHyDTSmI  ->   ehodtspi EHyDTSmI => EEE WEM pX0 EI4 8SQ GQU V9p WWU  QQQ _Qj pp0 QZ8 Guq Xpw p0p __y; #   othr than op althOlookngup dRk version3 of
+L:.fuaznlj _FUAZNLJ  ->   .fuaznlj _FUAZNLJ => KKK M44 WSO GWQ UWW 00G SSW WSM  eee i88 _vn V_r y__ 00W vv. _th; #   Ech mItBan improvemNt
+L:02468xvq 13579XVQ  ->   02468xvq 13579XVQ => 00I M6C WQ0 6Q6 8GM 4IW UGU WUQ  00Y iCO _r0 CpC 7a_ HWj xWx .wr; # all uc colrzRANSIeScapedbold01XceptOP(vs ym)
+L:krOgcbPw  ->   krOgcbPw => BLACk     , rED      , Orange,     gREEN  ,  cYAN        ,      bLUE, PurPle  ,        wHITE; # c8:colr:Dflt dRk bg
+L:ehodtspi  ->   ehodtspi => DIMGReY   , hOTPINK  , oRANGE, OLIVEdRAB  ,  tURQUOISE   ,   sKYBLUE, pURpLE  ,        iVORY; #   lc,EvN,&& .
+L:.fuaznlj  ->   .fuaznlj => GRAY.63   , fIREBRICK, BISQuE, aQUaMaRINE ,  AzURE       ,      nAVY, lAVENDER,  NAVAjOWHITE; #   dRkhalfshudBgNR8d
+L:02468xvq  ->   02468xvq => DARKBLUE-0, MAROON-2 , GOLD-4, LIMEGREEN-6,  DODGERBLUE-8, xTEELBLUE, vIOLET  , ANTIqUEWHITE; #   2toglallXcAs
+L:KRYGCBMW  ->   KRYGCBMW => blacK     , Red      , Yellow,     Green  ,  Cyan        ,      Blue, Magenta ,        White; # c8:colr:Dflt brItFg
+L:EHyDTSmI  ->   EHyDTSmI => dimgrEy   , Hotpink  , yELLOW, oliveDrab  ,  Turquoise   ,   Skyblue, mAGENTA ,        Ivory; #   uc,odd,&& _
+L:_FUAZNLJ  ->   _FUAZNLJ => gray_63   , Firebrick, bisqUe, AquAmArine ,  aZure       ,      Navy, Lavender,  navaJowhite; # Abov b64 RGB out-of-d8,mAB mk 4-
+L:13579XVQ  ->   13579XVQ => darkblue-1, maroon-3 , gold-5, limegreen-7,  dodgerblue-9, Xteelblue, Violet  , antiQuewhite; #   char 24-bit nstd of just 18;
+sB          ->   YW       =>  Trp:sEP, Bkt; # dirSepar8or "/", Bracketz "<>" (or "[]" for zsh or 8sh promptz, mAB should be defined sepR8ly?)
+rH          ->   RO       =>  Trp:rUT, Hom; #   solo Root "/", Home "~"  # these should probably just B varE8ionz on s=>Sep && lsrc di=>dir mABin s:rtoh
+Ro          ->   GC       =>  Trp:oRt, oHM; #   Othr Root "/", Home "~"  #   for Root,Tilde,Othroot,Home rathr than wasting Ech on own newtop namespacez
+l:pbugbdf   -> f:tcrmaEq  =>  Trp:lSD; # lsd8 columnz ndX in2 main fieldz wi f0ntz4now,l8rmABfolO wi OvrIdz2abov Fg or add bg colrz hEr&&incorpor8in2 lsd8
 e:BuaMm.x                 =>  Trp:eML; # c8em E-mail addrS of main fieldz  # these top-level dFinitionz R compositez so forego defining base F:colr 4wholefield
-#x:cnoegbuU =>   ROYGCBMY =>  Trp:Com, Net, Org, Edu, Gov, Biz, Us , Uk ;  # could start custom and better handling of multiple domain eXtensionz like .Co.Jp
-T           =>   B        =>  Trp:TTy; # TTY loop  # a8:f8fm && pm per tty (EvNthO fAke 0 tty just mapz2multiplz of8) shudBcomAbl2gNR8 8sh f80p cnfgUr8ionz
-T:01234567  =>   WCOGBRYM => f:M0tmrcaq => p:yfsgnDBb ; # this has Fgcolr cOdez,f0nt filename mapz,&& then pal8 filename mapz
-T:89        =>   Ac       => f:fd      ; # proly will kEp tty loop just 0..7 as above,but thEse added2alsO complEte dFinition of SGR 10-19 similRly
-A           =>   Y        =>  Trp:Als => Alias; # wh8 aliasez as of F3BMLn6r wi just Ovr half of b64 mapd sOfR;  need2add Xtra map for ~/bin XeQtz4up2autOrun
-A:01234567  =>   01234567 =>   ogg123,     mpg321,     mpg123, ~/bin/3,       x4t,     perl,    perl6,       7z; # these R basicly just cp/pAstd from .zshrc's
-A:89ABCDEF  =>   89ABCDEF =>     viii,        c99,       asci,       b,    cls -x,      dfc,       Et,        f; #   wh8ch() output that calls which on each &&
-A:GHIJKLMN  =>   GHIJKLMN =>       zg,       htop,          i,       j,        k9,  ~/bin/L,        m,     calN; #   wh8() is similar but runs thru many more
-A:OPQRSTUV  =>   OPQRSTUV =>        o,       pal8,       calQ, rd*~/.e,   ~/bin/S,      tee,     U2b8, vim.tiny; #   useful aliasez && set shell functionz;
-A:WXYZabcd  =>   WXYZabcd =>  whereis, /usr/bin/X,          y,      zc, asciiview,    bak(),  ~/bin/c,    dic();
-A:efghijkl  =>   efghijkl =>   e $TTY,       find,        grp, history,      info,     jobs,     kill,     lsd8;
-A:mnopqrst  =>   mnopqrst =>    man(),       ncal,      orpie,     CCC,   ~/bin/q, shLbltin, *srchl(),     tmux;
-A:uvwxyz._  =>   uvwxyz._ =>   upd8(),       v8(), /usr/bin/w,    exit,      yelp,       zp, shLbltin, undFIned;
-S           =>   c        =>  Trp:Shl => Source-highlight; # .shl.style fieldz Fg foregrnd (lEving Octology core d8a dFz abov4Xtrnl prog shl,St8z&&gmz BlO)
-S:bcktusrS  =>   WKBCcMRR => bGCOLOR  , cONTEXT, kEYWORD, tYPE     , uSERTYPE, sTRING  , rEGEXP          , Specialchar; # mAB mk S: Dflt&&have / rEsume root?
-S:CnpyfBvF  =>   CMbGCGbB => Comment  , nUMBER , pREpROC, SyMBOL   , fUNCTION, cBracket, PREDEF_vAR      , predeF_Func; # uc V8 charz hEr but nd2 lc B4.style
-S:alUdTiIN  =>   CKbBBBgg => CLaSSNaME, lINENUM, Url    , dATE     , Time    , FiLE    , Ip              , Name       ; # 17 left2fill b64,alias 2 most used?
-S:VAoDxROm  =>   CgGgGgPO => Variable , itAlics, BoLD   , unDerline, FIxED   , aRgument, OptiOnalargument, mATH       ; # complEt V8 failz:just 0-5 with all
-S:XLweEP0M  =>   bOgbPbgO => bibteX   , oLdfiLe, NEwFILE, DIFFLINeS, sElEctor, ProPerty, value-0         , atoM       ; #   lc expanded namez altho 2 => todo
-S:h12345W   =>   OKGCCPg  => PATh     , meta-1 , todo-2 , label-3  , code-4  , error-5 , Warning                      ; # also strip dash-numz wi s/-[0-5]$//
-S:b24       => b:kcg      ; # S:bg BackGround  # evNtually thEs shud B Useful 2 auto-gener8 every shl permut8ion 2 approach compatibility with
-S:UD        => s:UU       ; # S:ul UnderLine (like reverse and p:pal8 filez) w8 4 additional new SGR c8:col8 layerz 2 XtNd tFbf
-U           =>   B        =>  Trp:Ust => Ust8 => Unitedst8z; # shudmABreordr by key or popUl8ion? mAB Q canB Cuba (like "Qba")&& q canB WesternSamoa 2fill A-z?
+#x:cnoegbuU ->   ROYGCBMY =>  Trp:Com, Net, Org, Edu, Gov, Biz, Us , Uk ;  # could start custom and better handling of multiple domain eXtensionz like .Co.Jp
+T           ->   B        =>  Trp:TTy; # TTY loop  # a8:f8fm && pm per tty (EvNthO fAke 0 tty just mapz2multiplz of8) shudBcomAbl2gNR8 8sh f80p cnfgUr8ionz
+T:01234567  ->   WCOGBRYM -> f:M0tmrcaq -> p:yfsgnDBb ; # this has Fgcolr cOdez,f0nt filename mapz,&& then pal8 filename mapz
+T:89        ->   Ac       -> f:fd      ; # proly will kEp tty loop just 0..7 as above,but thEse added2alsO complEte dFinition of SGR 10-19 similRly
+A           ->   Y        =>  Trp:Als => Alias; # wh8 aliasez as of F3BMLn6r wi just Ovr half of b64 mapd sOfR;  need2add Xtra map for ~/bin XeQtz4up2autOrun
+A:01234567  ->   01234567 =>   ogg123,     mpg321,     mpg123, ~/bin/3,       x4t,     perl,    perl6,       7z; # these R basicly just cp/pAstd from .zshrc's
+A:89ABCDEF  ->   89ABCDEF =>     viii,        c99,       asci,       b,    cls -x,      dfc,       Et,        f; #   wh8ch() output that calls which on each &&
+A:GHIJKLMN  ->   GHIJKLMN =>       zg,       htop,          i,       j,        k9,  ~/bin/L,        m,     calN; #   wh8() is similar but runs thru many more
+A:OPQRSTUV  ->   OPQRSTUV =>        o,       pal8,       calQ, rd*~/.e,   ~/bin/S,      tee,     U2b8, vim.tiny; #   useful aliasez && set shell functionz;
+A:WXYZabcd  ->   WXYZabcd =>  whereis, /usr/bin/X,          y,      zc, asciiview,    bak(),  ~/bin/c,    dic();
+A:efghijkl  ->   efghijkl =>   e $TTY,       find,        grp, history,      info,     jobs,     kill,     lsd8;
+A:mnopqrst  ->   mnopqrst =>    man(),       ncal,      orpie,     CCC,   ~/bin/q, shLbltin, *srchl(),     tmux;
+A:uvwxyz._  ->   uvwxyz._ =>   upd8(),       v8(), /usr/bin/w,    exit,      yelp,       zp, shLbltin, undFIned;
+S           ->   c        =>  Trp:Shl => Source-highlight; # .shl.style fieldz Fg foregrnd (lEving Octology core d8a dFz abov4Xtrnl prog shl,St8z&&gmz BlO)
+S:bcktusrS  ->   WKBCcMRR => bGCOLOR  , cONTEXT, kEYWORD, tYPE     , uSERTYPE, sTRING  , rEGEXP          , Specialchar; # mAB mk S: Dflt&&have / rEsume root?
+S:CnpyfBvF  ->   CMbGCGbB => Comment  , nUMBER , pREpROC, SyMBOL   , fUNCTION, cBracket, PREDEF_vAR      , predeF_Func; # uc V8 charz hEr but nd2 lc B4.style
+S:alUdTiIN  ->   CKbBBBgg => CLaSSNaME, lINENUM, Url    , dATE     , Time    , FiLE    , Ip              , Name       ; # 17 left2fill b64,alias 2 most used?
+S:VAoDxROm  ->   CgGgGgPO => Variable , itAlics, BoLD   , unDerline, FIxED   , aRgument, OptiOnalargument, mATH       ; # complEt V8 failz:just 0-5 with all
+S:XLweEP0M  ->   bOgbPbgO => bibteX   , oLdfiLe, NEwFILE, DIFFLINeS, sElEctor, ProPerty, value-0         , atoM       ; #   lc expanded namez altho 2 => todo
+S:h12345W   ->   OKGCCPg  => PATh     , meta-1 , todo-2 , label-3  , code-4  , error-5 , Warning                      ; # also strip dash-numz wi s/-[0-5]$//
+S:b24       -> b:kcg      ; # S:bg BackGround  # evNtually thEs shud B Useful 2 auto-gener8 every shl permut8ion 2 approach compatibility with
+S:UD        -> s:UU       ; # S:ul UnderLine (like reverse and p:pal8 filez) w8 4 additional new SGR c8:col8 layerz 2 XtNd tFbf
+U           ->   B        =>  Trp:Ust => Ust8 => Unitedst8z; # shudmABreordr by key or popUl8ion? mAB Q canB Cuba (like "Qba")&& q canB WesternSamoa 2fill A-z?
 U:baZAfCcD  FGHildIK      => Al , Ak , Az , Ar , Ca , Co , Ct , De ,  Fl , Ga , Hi , Id , Il , In , Ia , Ks ; # For (Carolina|Dakota) North => Nn, South => Ss,
 U:kLEyeMmp  utBzhJxr      => Ky , La , Me , Md , Ma , Mi , Mn , Ms ,  Mo , Mt , Ne , Nv , NH , NJ , NM , NY ; #                  only West  => W ;fillb64 with?
 U:NnOojPRS  sTXUvVgW  wY  => NC , ND , Oh , Ok , Or , Pa , RI , SC ,  SD , Tn , Tx , Ut , Vt , Va , Wa , WV ,  Wi , Wy ; # complete V8 nAmfailz:jz OregonNevada
-U:baZAfCcD  =>   baZAfCcD => ALAbAMA      , aLASKA     , ariZona , Arkansas,  CALIfORNIA   , Colorado    , cONNEcTIcUT, Delaware     ; # reUse sAme kEyz 4
-U:FGHildIK  =>   FGHildIK => Florida      , Georgia    , Hawaii  , iDAHO   ,  IllINOIS     , INdIANA     , Iowa       , Kansas       ; #    Xpanded USt8 nAmez
-U:kLEyeMmp  =>   yLEyeMmp => kENTUCKY     , Louisiana  , mainE   , MARyLAND,  MASSACHUSeTTS, Michigan    , mINNESOTA  , MISSISSIppI  ;
-U:utBzhJxr  =>   utBzhJxr => MISSOuRI     , MONtANA    , neBraska, NEVADAz ,  NEWhAMPShIRE , newJersey   , NEWMExICO  , NEWYOrK      ;
-U:NnOojPRS  =>   NnOojPRS => NorthcaroliNa, nORTHDAKOTA, OhiO    , oKLAHoMA,  OREGONj      , Pennsylvania, Rhodeisland, Southcarolina;
-U:sTXUvVgWwY=>   sTXUvVgW3Y=>sOUTHDAKOTA  , Tennessee  , teXas   , Utah    ,  vERMONT      , Virginia    , WASHINgTON , Westvirginia ,  wISCONSIN, wYoming;
+U:baZAfCcD  ->   baZAfCcD => ALAbAMA      , aLASKA     , ariZona , Arkansas,  CALIfORNIA   , Colorado    , cONNEcTIcUT, Delaware     ; # reUse sAme kEyz 4
+U:FGHildIK  ->   FGHildIK => Florida      , Georgia    , Hawaii  , iDAHO   ,  IllINOIS     , INdIANA     , Iowa       , Kansas       ; #    Xpanded USt8 nAmez
+U:kLEyeMmp  ->   yLEyeMmp => kENTUCKY     , Louisiana  , mainE   , MARyLAND,  MASSACHUSeTTS, Michigan    , mINNESOTA  , MISSISSIppI  ;
+U:utBzhJxr  ->   utBzhJxr => MISSOuRI     , MONtANA    , neBraska, NEVADAz ,  NEWhAMPShIRE , newJersey   , NEWMExICO  , NEWYOrK      ;
+U:NnOojPRS  ->   NnOojPRS => NorthcaroliNa, nORTHDAKOTA, OhiO    , oKLAHoMA,  OREGONj      , Pennsylvania, Rhodeisland, Southcarolina;
+U:sTXUvVgWwY->   sTXUvVgW3Y=>sOUTHDAKOTA  , Tennessee  , teXas   , Utah    ,  vERMONT      , Virginia    , WASHINgTON , Westvirginia ,  wISCONSIN, wYoming;
 U_:AL,AK,AZ,AR,CA,CO,CT,DE=>standRd:Alabama     , Alaska     , Arizona , Arkansas,  California   , Colorado    , Connecticut , Delaware      ; # altern8
 U_:FL,GA,HI,ID,IL,IN,IA,KS=>standRd:Florida     , Georgia    , Hawaii  , Idaho   ,  Illinois     , Indiana     , Iowa        , Kansas        ; # wi,keyz
 U_:KY,LA,ME,MD,MA,MI,MN,MS=>standRd:Kentucky    , Louisiana  , Maine   , Maryland,  Massachusetts, Michigan    , Minnesota   , Mississippi   ; # standard
 U_:MO,MT,NE,NV,NH,NJ,NM,NY=>standRd:Missouri    , Montana    , Nebraska, Nevada  ,  New_Hampshire, New_Jersey  , New_Mexico  , New_York      ; # sp[Lc]&&
 U_:NC,ND,OH,OK,OR,PA,RI,SC=>standRd:North_Carolina,North_Dakota, Ohio  , Oklahoma,  Oregon       , Pennsylvania, Rhode_Island, South_Carolina; # K?cAsing
 U_:SD,TN,TX,UT,VT,VA,WA,WV,WI,WY=>standRd:South_Dakota,Tennessee,Texas , Utah    ,  Vermont      , Virginia,Washington,West_Virginia,  Wisconsin,Wyoming;
-k           =>   Y        => CkM => CkM8 => CHECkM8; # mItDsrv toplvl C morthanCardz?  gmz gamez rEl8d d8a folOz:ckm8 SNtial 8x8, crd8 && dmn8 bOth have pipz
-k:RIBKQSTO PAWNCDEF  =>   RGBYCBGR MMMMMMMM => Rook,knIght,Bishop,King, Queen,biShop,knighT,rOOk,  Pawn,pAwn,paWn,pawN, pawnC,pawnD,pawnE,pawnF;
-k:ribkqsto pawncdef  =>   rgbOcbgr pppppppp => rOOK,KNiGHT,bISHOP,kING, qUEEN,BIsHOP,KNIGHt,RooK,  pAWN,PaWN,PAwN,PAWn, PAWNc,PAWNd,PAWNe,PAWNf;
-k:01234GHJ LMUVXYZ.  =>   RGBYCBGR MMMMMMMM => R-0 ,  I-1 ,B-2   ,K-3 , Q-4  ,  S-G ,  T-H , O-J,  P-L , A-M,W-U ,N-V , C-X,  D-Y,  E-Z,  F-.  ; # dbl mapd 2
-k:56789ghj lmuvxyz_  =>   rgbOcbgr pppppppp => r-5 ,  i-6 ,b-7   ,k-8 , q-9  ,  s-g ,  t-h , o-j,  p-l , a-m,w-u ,n-v , c-x,  d-y,  e-z,  f-_  ; #   !justhalf
-C           =>   G        => Crd => Crd8 => playingCardz8; # all suitz Usd2B lc,but more consistNt with othr convNtionz 2have just blacK lc && brIt Red uc
-C:501       =>   YKR      => 5ut,   j0Kr , j1kR ; # Use 5 lIk S 4 5uitz,stRt wi blacK && Red jOkerz  # cud vary blacK && Red suitz apRt BlO if DsIrd
-C5:sHDc     =>   KRRK     =>        sPADE, Heart, Diamond, cLUB; # maybe reserve 234 789 for some magic new blacK and Red Rook, knIght, and Bishop cardz
-C:.=>K=> mycrgobp  luzfa  => aCE  , kING , qUEEN, jACK , tEN  , NiNE , EIGhT, sEVEN,  SIx  ,  FIvE, fOUR , THrEE, TwO  ; # use last 2 b64 charz 2 list rank V8z
-C:_=>R=> MYCRGOBP  LUZFA  => acE  , kinG , qUeen, jaCk , teN  , nineB, eighD, seLen,  sixM , Pfive, fOur , threY, Zwo  ; # all abbreV8 Xcept last 8 lc digitz-4
+k           ->   Y        => CkM => CkM8 => CHECkM8; # mItDsrv toplvl C morthanCardz?  gmz gamez rEl8d d8a folOz:ckm8 SNtial 8x8, crd8 && dmn8 bOth have pipz
+k:RIBKQSTO PAWNCDEF  ->   RGBYCBGR MMMMMMMM => Rook,knIght,Bishop,King, Queen,biShop,knighT,rOOk,  Pawn,pAwn,paWn,pawN, pawnC,pawnD,pawnE,pawnF;
+k:ribkqsto pawncdef  ->   rgbOcbgr pppppppp => rOOK,KNiGHT,bISHOP,kING, qUEEN,BIsHOP,KNIGHt,RooK,  pAWN,PaWN,PAwN,PAWn, PAWNc,PAWNd,PAWNe,PAWNf;
+k:01234GHJ LMUVXYZ.  ->   RGBYCBGR MMMMMMMM => R-0 ,  I-1 ,B-2   ,K-3 , Q-4  ,  S-G ,  T-H , O-J,  P-L , A-M,W-U ,N-V , C-X,  D-Y,  E-Z,  F-.  ; # dbl mapd 2
+k:56789ghj lmuvxyz_  ->   rgbOcbgr pppppppp => r-5 ,  i-6 ,b-7   ,k-8 , q-9  ,  s-g ,  t-h , o-j,  p-l , a-m,w-u ,n-v , c-x,  d-y,  e-z,  f-_  ; #   !justhalf
+C           ->   G        => Crd => Crd8 => playingCardz8; # all suitz Usd2B lc,but more consistNt with othr convNtionz 2have just blacK lc && brIt Red uc
+C:501       ->   YKR      => 5ut,   j0Kr , j1kR ; # Use 5 lIk S 4 5uitz,stRt wi blacK && Red jOkerz  # cud vary blacK && Red suitz apRt BlO if DsIrd
+C5:sHDc     ->   KRRK     =>        sPADE, Heart, Diamond, cLUB; # maybe reserve 234 789 for some magic new blacK and Red Rook, knIght, and Bishop cardz
+C:.->K=> mycrgobp  luzfa  => aCE  , kING , qUEEN, jACK , tEN  , NiNE , EIGhT, sEVEN,  SIx  ,  FIvE, fOUR , THrEE, TwO  ; # use last 2 b64 charz 2 list rank V8z
+C:_->R=> MYCRGOBP  LUZFA  => acE  , kinG , qUeen, jaCk , teN  , nineB, eighD, seLen,  sixM , Pfive, fOur , threY, Zwo  ; # all abbreV8 Xcept last 8 lc digitz-4
 C:akqjtihs         xvfrw  => As   , Ks   , Qs   , Js   , Ts   , 9s   , 8s   , 7s   ,  6s   , 5s   , 4s   , 3s   , 2s   ; # spadez    #4mor b64pipz!hEr see die8
 C:AKQJTIHS         XVFRW  => AH   , KH   , QH   , JH   , TH   , 9H   , 8H   , 7H   ,  6H   , 5H   , 4H   , 3H   , 2H   ; # Heartz    #sepR8 rank colr8ion above
 C:EGUCNBDL         MPOYZ  => AD   , KD   , QD   , JD   , TD   , 9D   , 8D   , 7D   ,  6D   , 5D   , 4D   , 3D   , 2D   ; # Diamondz  #  shud   bind .=>sc _=>HD
 C:egucnbdl         mpoyz  => Ac   , Kc   , Qc   , Jc   , Tc   , 9c   , 8c   , 7c   ,  6c   , 5c   , 4c   , 3c   , 2c   ; # clubz     #  nstd ofnAmz .=>sH _=>Dc
-D           =>   O        => Dmn => Dmn8 => Dominoz8; # runb10 0..54 2handle any 0/0..6/6 or ..9/9 tileset within single b64 && 1st 2 setz 0-I map total valz,
+D           ->   O        => Dmn => Dmn8 => Dominoz8; # runb10 0..54 2handle any 0/0..6/6 or ..9/9 tileset within single b64 && 1st 2 setz 0-I map total valz,
 D:0123456789  s           => 0/0, 0/1, 0/2, 0/3, 0/4, 0/5, 0/6, 0/7, 0/8, 0/9,      1/1                    ; #   J-Q 8 of /8 -10 to valz,R-X 7 of /7 -19 2valz,
 D:ABCDEFGHI   qr          => 1/9, 2/9, 3/9, 4/9, 5/9, 6/9, 7/9, 8/9, 9/9,           1/2, 2/2               ; #   Y-d 6 -27,e-i 5 -34,j-m -40,n-p -45,qr-49,s-52
 D:JKLMNOPQ    nop         => 1/8, 2/8, 3/8, 4/8, 5/8, 6/8, 7/8, 8/8,                1/3, 2/3, 3/3          ; # mAB map t-_ to 9 specialnew dominoez2cover b64
 D:RSTUVWX     jklm        => 1/7, 2/7, 3/7, 4/7, 5/7, 6/7, 7/7,                     1/4, 2/4, 3/4, 4/4     ; # mAB dmn8.f0nt can grow to bisect && show brdrz
 D:YZabcd      efghi       => 1/6, 2/6, 3/6, 4/6, 5/6, 6/6,                          1/5, 2/5, 3/5, 4/5, 5/5; # mAB just map 0..9 => F:colrz 2 be 4 half-tilez
-N           =>   B        => Nam => Namz => pplzNamz; # Pplz nAmz Byond u:Usrz or wi rFz2u:&&u:,h:,clOsStnAmz2mEcanDliber8lyBcome priv8&&swp samplz B4 rElEase
-N:_         =>   W        => _nl => _nls => _namlist;
-N_:NFML     =>   CYBG     => Nick, Frst,  Midl, Last; # EvN thO!nAmz mAB add 'Brd8' birthd8 && b64 'fONM' 4tele#z&&'Emla' 4e-mail addrz shud nEd wIdr spAcng
-N:MG        =>   MG       => Nick:Mar     , Gar     ; # recent Chess ckm8, Go gom8, or other partners or personal contacts to describe && reference
+N           ->   B        => Nam => Namz => pplzNamz; # Pplz nAmz Byond u:Usrz or wi rFz2u:&&u:,h:,clOsStnAmz2mEcanDliber8lyBcome priv8&&swp samplz B4 rElEase
+N:_         ->   W        => _nl => _nls => _namlist;
+N_:NFML     ->   CYBG     => Nick, Frst,  Midl, Last; # EvN thO!nAmz mAB add 'Brd8' birthd8 && b64 'fONM' 4tele#z&&'Emla' 4e-mail addrz shud nEd wIdr spAcng
+N:MG        ->   MG       => Nick:Mar     , Gar     ; # recent Chess ckm8, Go gom8, or other partners or personal contacts to describe && reference
 N:MG                      => Frst:Mary    , Gary    ;
 N:MG                      => Midl:        ,         ;
 N:MG                      => Last:Sue     , Stu     ;
-Q           =>   c        => Qrx => Qrxz => Quoted_regexez; # stRt qr// p@rnz2 ndXormap4c8fn2lsd8 Xpct g3 src-hIlI
-Q:f         =>   G        => fLN; # Ech Ntry BlO has prImary&&altrn8colr map2contrast wi Dflt bAsecolr  # special -dash(nonsymlink)&& []squarebracketz(nonSKp)
-Qf:.upabqcs =>   WCRMRGOY => dot.,uNDERSCORE,pLUS,aMPERSaND, bANG,qUOTE,cOMMA,sLAsH => CMBRBOBR:X => (\.+),(_+),(\++),(\&+), (!+),"([']+)",'(\054+)',(\/+);
-Qf:DPBK     =>   YORP     => Dash,   Paren, Brace,  bracKet                         => GYGR:X     => (-+)([^>]),([()]+),([{}]+),(^|[^\e])([\[\]]+);
-G           =>   G        => Goo => GuGl => GooGle_punctu8ion_and_oper8orz; # bAsic wAyz2alter Google search queriez B4 having2rEly on AdvancedSearch
-#G:"-.*+@$# =>   QXRGPSDH => literal_quotez, exclude, range, glob, Google+_or_blood_type, social_tagz, dollar_pricez, trending_hashtagz; # nEd dbldot3..7 4rAng
-#G:sOiclr   =>   SOICLR   => 'site:', 'OR', 'info:', 'cache:', 'link:', 'related:'; # Dfalt Hrc pRsing will dFinitely conflict wi thEs strngz&&Xset nAmz
+Q           ->   c        => Qrx => Qrxz => Quoted_regexez; # stRt qr// p@rnz2 ndXormap4c8fn2lsd8 Xpct g3 src-hIlI
+Q:f         ->   G        => fLN; # Ech Ntry BlO has prImary&&altrn8colr map2contrast wi Dflt bAsecolr  # special -dash(nonsymlink)&& []squarebracketz(nonSKp)
+Qf:.upabqcs ->   WCRMRGOY => dot.,uNDERSCORE,pLUS,aMPERSaND, bANG,qUOTE,cOMMA,sLAsH -> CMBRBOBR:X => (\.+),(_+),(\++),(\&+), (!+),"([']+)",'(\054+)',(\/+);
+Qf:DPBK     ->   YORP     => Dash,   Paren, Brace,  bracKet                         -> GYGR:X     => (-+)([^>]),([()]+),([{}]+),(^|[^\e])([\[\]]+);
+G           ->   G        => Goo => GuGl => GooGle_punctu8ion_and_oper8orz; # bAsic wAyz2alter Google search queriez B4 having2rEly on AdvancedSearch
+#G:"-.*+@$# ->   QXRGPSDH => literal_quotez, exclude, range, glob, Google+_or_blood_type, social_tagz, dollar_pricez, trending_hashtagz; # nEd dbldot3..7 4rAng
+#G:sOiclr   ->   SOICLR   => 'site:', 'OR', 'info:', 'cache:', 'link:', 'related:'; # Dfalt Hrc pRsing will dFinitely conflict wi thEs strngz&&Xset nAmz
 # 2du:upd8 a8 obj 2 dump sumRE of toplvl mapz,mkup good a8:gnr8 V8 rulez 4 abov && add Countriez,LMNtz,rsrch sportz typz&&Tmz,etc.,du!step comNtz bak2 158 2z,
 #   add W3.Org/TR/html5/single-page.html#the-input-element typz,DfIn new minimalist mapz2alInV8z2cnvXpnd2Perl biltinz,considr sepR8ng contXt|nAmspAc|dOmAn,
 #   mAB EvN2ally stuD XtNding4m@2DfIn contXtz:DSLz wiDomainSpecificMultimodeling 2solv (coordin|fragment)8ion problMz; # UsefulDSLzproly rEquIr dOmAnXpertzinpt

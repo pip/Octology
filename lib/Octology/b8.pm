@@ -1,31 +1,36 @@
 # 315J9mLT: Octology::b8.pm crE8d by PipStuart <Pip@CPAN.Org> to construct custom precision Big numbers && perform arbitrary Base-transl8ions. I love Bass!
 package     Octology::b8;
 use strict; use warnings;use utf8;use v5.10;
-# 2du:rewrite fibo wo recursion,mk new calQ parser for closer to real oper8or && paren precedence handling,
-#   mk pfcz to hash up a loop to list all Prime FaCtorZ (with powerz) of any BigInt param,bNchmRk memoized fact vs bfac && prim vs not && fibo iter8ive vs not,
+# 2du:rewrite Fibo wo recursion,mk new calQ parser for closer to real oper8or && paren precedence handling,
+#   mk pfcz to hash up a loop to list all Prime FaCtorZ (with powerz) of any BigInt param,bNchmRk memoized Fact vs bfac && prim vs not && Fibo iter8ive vs not,
 #   stuD Math::Base::Convert && bNchmRk2lern how2Use just scalar or 32-bit reg when it fitz4sPd && Xpand2othr objz B4 BigFloat && rmv all M:B:C if sPd close,
 #   get rid of old Moose attempt,stOr sepR8 usrFromTo digsetz,add cache cfg,add from() && tobs() && all mUt8orz,retool intrfAc4allfuncz2alsOB obj methodz,
-#   stuD U2b Numberphile vidz && HTTP://OEIS.Org for best math d8a to add beyond fibo to bild locl useful approxim8 constantz, sequencez, && functionz,
-#   think of infoviz colr8ionz to convey any rel8ionshipz or patternz in b64 digitz of Pi, e, primez, fiboz, etc.,
-#   consider generalized square pixel windingz from corner in odds, edge adding 4 per layer, && centered by 8,
-#   gNralIz sort as Xportd b8:s8() if nEded,add fanC colr() that applIez2 b10 with the valU correspondence of Ech b64 digit,
-#   stRt hndling b8%bfr8^XpOnNt8 from bsstr(),fix isol8ing exponent() mantissa() thru parts() if nEded,
-#   add (xp|fr|pr|ac|fm|to)b8() (fraction nstdof mantissa, precision, accuracy) && ftb8|rdx() 2set both from&&tobs radix2gethr,
-#   considr cma() ',' && spf() sprintf && dolr() '$'.00 centz && colr() optionz for "b8" tobs output configur8ion,
+#   stuD U2b Numberphile vidz && HTTP://OEIS.Org for best math d8a to add beyond Fibo to bild locl useful approxim8 constantz, sequencez, && functionz,
+#   think of infoviz colr8ionz to convey any rel8ionshipz or patternz in b64 digitz of Pi, e, Primez, Fiboz, etc.,  OnlineEncyclopedia_of_IntegerSequences,
+#   consider generalized square pixel windingz from corner in odds, edge adding 4 per layer, && centered by 8,      OEIS A066408-Eisenstein,A002964-RomanChisL,
+#   gNralIz sort as Xportd b8:s8() if nEded,add fanC colr() that applIez2 b10 with the valU correspondence of Ech b64 digit,  A000567-OctagonalStarNumberz,
+#   stRt hndling b8%bfr8^XpOnNt8 from bsstr(),fix isol8ing exponent() mantissa() thru parts() if nEded,                  A004999-SumsOf2NonNeg8iveCubes,
+#   add (xp|fr|pr|ac|fm|to)b8() (fraction nstdof mantissa, precision, accuracy) && ftb8|rdx() 2set both from&&tobs radix2gethr,  A001597-PerfectPowers,
+#   considr cma() ',' && spf() sprintf && dolr() '$'.00 centz && colr() optionz for "b8" tobs output configur8ion,       A000914-StirlingNumsOf1stKind,
 #   add cache limitz && new thorO alt2prEsrv&&indX evry NtIr cnv contXt sO objX canBgrOwn in2 setz of at lEst cnv hist stringz,
 #   add valid8ion&&tStz&&Carp problMz,mAB add benchmRkz,Xplor specialIzng Use as reso pairz or c8 IDa of rAng spanz or IPaddrz or fOn numz etc.,
-#   from F4SMBLMx version of c8 considr b8 objX that can *= b10('11') or multiply by anothr obj that Ech stringifIz configurably(wi Dfalt b64 unpaded);
-require     Exporter ;
+#   from F4SMBLMx version of c8 considr b8 objX that can *= b10('11') or multiply by anothr obj that Ech stringifIz configurably(wi Dfalt b64 unpaded),
+#   fix dynamic BigFloat accuracy setting 2 stay ahead of b256 Fact 2 not lose d8a Byond Dfalt fixed accuracy 4096 wich mustBinadequ8 4 ~/.log/fctz4096*.utf,
+#   stuD BestSequences of HTTPS://OEIS.Org/webcam lIk HTTPS://OEIS.Org/A002964 && VanEck && piknXt4ascNdng worth implementing alongside Sum8 Fact Fibo Prim,
+#   mAB HTTPS://OEIS.Org/A249572 4havng 8 88 888 fitz Octology nIcly (althO mAB2simpl&&grOz in digitz2rapidly?),A057683 A003325 A000108-Catalan A046790 good,
+#   mk new sqnz function wich tkz top8 ascNdng CquNcez && mkz a colrd scrnsAvr lIk my old 4Dos prmz && prOgrSz thM al2gethr in grOing d8afIl 2pikupwherlFtoff;
+# OEIS:A051227-BernoulliNumWiDenomin8or42&&Perl:my @p=(2,3,5,7);my @c=(4);my $p=7;for(my $n=6;$n<=3126;$n+=6){while($p<$n+1){$p+=2;next if grep $p%$_==0,@p;
+require     Exporter ;                                                   #  push(@p,$p);push(@c,$p-1);} print $n/2, ", " if(!grep $n%$_==0,@c);} print "\n";
 use base qw(Exporter);our $umbc=0; # Use Math::Base::Convert flag (doesn't work if eval'd), but commented out the only-for-efficiency dependency for now...
 #se         Math::Base::Convert;   #   although maybe eventually preparing efficient dependencies in docker container can ease any such distribution burdens
-use         Math::BigFloat     ;
-use         Math::BigInt       ;
-use         Encode;
-use         Carp; # orig Math::BaseCnv BlO memoized sum8(as summ) hEr&&had nO fibo&&OnlyXportd cnv byDflt but now Octology Xportz almOst evrythng promiscuously
-use Memoize;memoize('fact');memoize('choo');memoize('fibo');memoize('prim');
+use         Math::BigFloat     ;Math::BigFloat->accuracy( 16_384); # compromise on number of digits of accuracy for conversion functions, for speed sake
+use         Math::BigInt       ;Math::BigInt  ->accuracy(262_144); # use much higher accuracy 4 integers especially needed for Fact to handle the biggest numz
+use         Encode; # mAB l8r grOw accuracy to 64xx4 == 16_777_216 or 64xx3 == 262_144 if 4096 ever becomes too small (bigr gOz slO thO!);
+use         Carp; # orig Math::BaseCnv BlO memoized Sum8(as summ) hEr&&had nO Fibo&&OnlyXportd cnv byDflt but now Octology Xportz almOst evrythng promiscuously
+use Memoize;memoize('Fact');memoize('Chus');memoize('Fibo');memoize('Prim');
 our @EXPORT= qw(b8 cnv ocT deC dec heX HEX b10 b64 b64sort b110 b128 b210 b256 dig diginit @kana
-    cma coma  sum8 sumz   fact fctz  choo  fibo fibz  prim prmz  rotW rot1    calQ   $umbc);
-our $VERSION='0.0';my  $d8VS='K3EM9INT';my $Auth='PipStuart <Pip@CPAN.Org>';
+    cma coma  Sum8 Sumz   Fact Fctz  Chus  Fibo Fibz  Prim Prmz  rotW rot1    calQ   $umbc);
+our $VERSION='0.0';my  $d8VS='K3FM6add';my $Auth='PipStuart <Pip@CPAN.Org>';
 our @kana=qw(ぁあぃいぅうぇえぉおかがきぎくぐけげこごさざしじすずせぜそぞた
 だちぢっつづてでとどなにぬねのはばぱひびぴふぶぷへべぺほぼぽまみ
 むめもゃやゅゆょよらりるれろゎわゐゑをんゔゕゖ゗1゛゜ゝゞゟ
@@ -35,7 +40,6 @@ our @kana=qw(ぁあぃいぅうぇえぉおかがきぎくぐけげこごさざ�
 my $pkgn =        __PACKAGE__;
 my $pkgl = length __PACKAGE__;
 my $bssb = $pkgn . '::_bs::' ; # indentify 'base sub'
-my $bfca = 4096; # set BigFloat Config Accuracy && mAB l8r grOw to 64xx4 == 16_777_216 or 64xx3 == 262_144 if 4096 ever becomes too small (bigr gO slO thO!);
 my $d2bs='';my %bs2d=(); # Digitz to BaseSet, BaseSet to Digitz
 my %digsetz=(
   'usr' => [], # this will be assigned if a dig(\@newd) call is made
@@ -92,15 +96,15 @@ sub dig{            return( @{$digsetz{$d2bs}}) unless(@_); # assign a new digit
   else         {my $setn = shift();return(-1) unless(exists $digsetz{$setn});$d2bs = $setn;}
   if(@{$digsetz{$d2bs}}){bs2init();}else{diginit();}}
 sub cnv__10{my  $t = shift || '0';my $s = shift || 64;my $n = Math::BigFloat->new(0); # convert from some number base to decimal
-  my $nega = '';$nega = '-' if($t =~ s/^-//);my $frds=0;$n->accuracy($bfca); #if($s >=64){$n->accuracy($s);
-                                                        $n->precision(   0); #} FRactionDigitSize, needed incrEsd accU 4ckm8 big b128
+  my $nega = '';$nega = '-' if($t =~ s/^-//);my $frds=0;#$n->accuracy( 4096); #if($s >=64){$n->accuracy($s);
+                                                        #$n->precision(   0); #} FRactionDigitSize, needed incrEsd accU 4ckm8 big b128
   for(my $tndx=length($t)-1;$tndx>=0;$tndx--){substr($t,$tndx,1,'') unless(exists $bs2d{substr($t,$tndx,1)} || # strip out chars not in the digit set
                                                                                         substr($t,$tndx,1) =~ /[\%]/);} # and not fraction sepR8or
   while(length  ($t)){my $thed=substr($t,0,1,'');if($thed eq '%'){$frds=1;}else{$frds++ if($frds);$n += $bs2d{$thed};$n *= $s;}}
 # orig:rds){$n /= $s**$frds;}else{$n /= $s;} $n->bneg() if($nega eq '-');
   if($frds){my $bs = Math::BigFloat->new($s);$bs->bpow($frds);$n /= $bs;}
   else     {$n /= $s;} $n->bneg() if($nega eq '-');return($n);} # was retn nega . int($n/$s)
-sub cnv10__{my  $n = Math::BigFloat->new(shift || '0');my $s = shift || 64;my $t = '';$n->accuracy($bfca); #$s) if($s >=64); # cnv from dec 2 some numb base
+sub cnv10__{my  $n = Math::BigFloat->new(shift || '0');my $s = shift || 64;my $t = '';#$n->accuracy(4096); #$s) if($s >=64); # cnv from dec 2 some numb base
   diginit() if ($s > @{$digsetz{$d2bs}});my $nega = '';$nega = '-' if($n->is_neg());my $frds=0;$n->babs(); # $n neg8ive zero '-0' failed is_zero() so ABS val
   my($nlen,$nfrl)= $n->length();my $nge1=1;$nge1=0 if($n  < 1);#say "nlen:$nlen:nfrl:$nfrl:"; 12.5 => 3,1 NumLENgth,NumFRactionLength NumGr8rorEqualto1
   if($nfrl){while(!$n->is_int() && length($t) <  64){          $n *= $s;$frds++;     # handle fraction part
@@ -252,8 +256,8 @@ sub cnv     {my $rtns = '';my $nega = '';my($numb,$fbas,$tbas)  = (decode('UTF-8
 # }
 # # $self->{'strz'}{      $tdst                   }=  $self->fstr();  # popUl8 cache of new from source fsrc abov && hEr mAB cud map tdst bak2 M:BF
 ##  if ($self->{'tobs'}== 64){ # du some bAsic colr8ion, or betr to let be sepR8
-##    if($tdst=~ /^(.*?)([%])(.*)$/){$tdst= b8colr($1) . "$W$2" . bfr8colr($3) . $z;} # not yet custom colr() method, but moving that way
-##    else                          {$tdst= b8colr($tdst)                      . $z;}}
+##    if($tdst=~ /^(.*?)([%])(.*)$/){$tdst= b8c($1) . "$W$2" . bfr8c($3) . $z;} # not yet custom colr() method, but moving that way
+##    else                          {$tdst= b8c($tdst)                   . $z;}}
 ##      $self->{'strz'}{   $self->fstr()           }=  $tdst;  # cache any M:BF mapping2 colrd tobs dStin8ion tdst
 # return($tdst);} # From digit-set to BigFloat below
 #sub f2bf {my $self= shift;my $fdsk= $self->{'dset'};$fdsk= $self->{'frds'} if(exists(         $self->{'frds'}) &&
@@ -325,45 +329,45 @@ sub coma{my $strn=shift;my $comc=shift||',';my $blok=shift||4; # ...like above b
       if(length($rwrd)){$fwrd=~s/^/%/;$rwrd=~s/^/%/;}
       s/$word$fwrd/$cwrd$rwrd/;}}
       $strn = join("\n",@strz);return($strn);} # orig!enuf cuz must insrt coma,then recalc pos&&from:
-sub sum8{ # simple function to calcul8 summ8ion down to 1; # F1OL0L88:I just realized sum8 is actually a basic multiply near mid instead of while(--){+=}
+sub Sum8{ # simple function to calcul8 summ8ion down to 1; # F1OL0L88:I just realized Sum8 is actually a basic multiply near mid instead of while(--){+=}
   my $sum8= shift;return(0) unless(defined($sum8) && $sum8 && ($sum8 > 0));my $answ= Math::BigFloat->new($sum8);$answ *= (($answ/2.0) + 0.5); return($answ);}
-sub sumz{my $llnn=shift(@_);my $lnsz=80;my $lcou=0;$lnsz=$ENV{'COLUMNS'}   if(exists($ENV{'COLUMNS'}));$llnn='-' if(!defined($llnn)); # LiNeSiZe, LastLiNeiNdex
-  if       ($llnn=~ /-/){if(exists($ENV{'LINES'})){$llnn=$ENV{'LINES'  }-3;}else{$llnn=0;}}   my $scou=1;my $lbuf= sum8($scou);       #         , LineCOUnt
+sub Sumz{my $llnn=shift(@_);my $lnsz=80;my $lcou=0;$lnsz=$ENV{'COLUMNS'}   if(exists($ENV{'COLUMNS'}));$llnn='-' if(!defined($llnn)); # LiNeSiZe, LastLiNeiNdex
+  if       ($llnn=~ /-/){if(exists($ENV{'LINES'})){$llnn=$ENV{'LINES'  }-3;}else{$llnn=0;}}   my $scou=1;my $lbuf= Sum8($scou);       #         , LineCOUnt
   my $b8l8= shift(@_) || 0;                                                     if($b8l8 == 1){$lbuf= b64($lbuf);}elsif($b8l8 == 2){$lbuf= b256($lbuf);}
   open   my $out8,'>&',STDOUT or die "Can't open  duplic8 STDOUT handle: $!";binmode $out8,':encoding(UTF-8)'; # crE8 local duplic8 of global
-  while    ($lcou++ <= $llnn){                          my $nxts= sum8(++$scou);if($b8l8 == 1){$nxts= b64($nxts);}elsif($b8l8 == 2){$nxts= b256($nxts);}
-    while  (length("$lbuf $nxts") < $lnsz){$lbuf.=" $nxts";$nxts= sum8(++$scou);if($b8l8 == 1){$nxts= b64($nxts);}elsif($b8l8 == 2){$nxts= b256($nxts);}}
+  while    ($lcou++ <= $llnn){                          my $nxts= Sum8(++$scou);if($b8l8 == 1){$nxts= b64($nxts);}elsif($b8l8 == 2){$nxts= b256($nxts);}
+    while  (length("$lbuf $nxts") < $lnsz){$lbuf.=" $nxts";$nxts= Sum8(++$scou);if($b8l8 == 1){$nxts= b64($nxts);}elsif($b8l8 == 2){$nxts= b256($nxts);}}
     say     $out8   $lbuf;                 $lbuf =  $nxts ;}
   close     $out8             or die "Can't close duplic8 STDOUT handle: $!";}
-sub fact{ # simple function to calcul8 factorials                                  # should be able to just use M:BI->bfac() but ck if this memoize is faster
+sub Fact{ # simple function to calcul8 factorials                                  # should be able to just use M:BI->bfac() but ck if this memoize is faster
   my $fact= shift;return(0) unless(defined($fact) && $fact && ($fact > 0));my $answ= Math::BigInt->new(  $fact);while(--$fact){$answ *=$fact;}return($answ);}
-sub fctz{my $llnn=shift(@_);my $lnsz=80;my $lcou=0;$lnsz=$ENV{'COLUMNS'}   if(exists($ENV{'COLUMNS'}));$llnn='-' if(!defined($llnn)); # LiNeSiZe, LastLiNeiNdex
-  if       ($llnn=~ /-/){if(exists($ENV{'LINES'})){$llnn=$ENV{'LINES'  }-3;}else{$llnn=0;}}   my $fcou=1;my $lbuf= fact($fcou);       #         , LineCOUnt
+sub Fctz{my $llnn=shift(@_);my $lnsz=80;my $lcou=0;$lnsz=$ENV{'COLUMNS'}   if(exists($ENV{'COLUMNS'}));$llnn='-' if(!defined($llnn)); # LiNeSiZe, LastLiNeiNdex
+  if       ($llnn=~ /-/){if(exists($ENV{'LINES'})){$llnn=$ENV{'LINES'  }-3;}else{$llnn=0;}}   my $fcou=1;my $lbuf= Fact($fcou);       #         , LineCOUnt
   my $b8l8= shift(@_) || 0;                                                     if($b8l8 == 1){$lbuf= b64($lbuf);}elsif($b8l8 == 2){$lbuf= b256($lbuf);}
   open   my $out8,'>&',STDOUT or die "Can't open  duplic8 STDOUT handle: $!";binmode $out8,':encoding(UTF-8)'; # crE8 local duplic8 of global
-  while    ($lcou++ <= $llnn){                          my $nxtf= fact(++$fcou);if($b8l8 == 1){$nxtf= b64($nxtf);}elsif($b8l8 == 2){$nxtf= b256($nxtf);}
-    while  (length("$lbuf $nxtf") < $lnsz){$lbuf.=" $nxtf";$nxtf= fact(++$fcou);if($b8l8 == 1){$nxtf= b64($nxtf);}elsif($b8l8 == 2){$nxtf= b256($nxtf);}}
+  while    ($lcou++ <= $llnn){                          my $nxtf= Fact(++$fcou);if($b8l8 == 1){$nxtf= b64($nxtf);}elsif($b8l8 == 2){$nxtf= b256($nxtf);}
+    while  (length("$lbuf $nxtf") < $lnsz){$lbuf.=" $nxtf";$nxtf= Fact(++$fcou);if($b8l8 == 1){$nxtf= b64($nxtf);}elsif($b8l8 == 2){$nxtf= b256($nxtf);}}
     say     $out8   $lbuf;                 $lbuf =  $nxtf ;}
   close     $out8             or die "Can't close duplic8 STDOUT handle: $!";}
-sub choo{ # simple function to calcul8 n choose m  (i.e., (n! / (m! * (n - m)!)))  # should be able to just use M:BI->bnok() && ck bpi() 4my l8r CLI U8:pi
+sub Chus{ # simple function to calcul8 n choose m  (i.e., (n! / (m! * (n - m)!)))  # should be able to just use M:BI->bnok() && ck bpi() 4my l8r CLI U8:pi
   my $nstr= shift(@_);my $mstr= shift(@_);return('') unless(defined($nstr) && defined($mstr));
   my $ennn= Math::BigInt->new($nstr);my $emmm= Math::BigInt->new($mstr);return(0) unless(defined($ennn) && defined($emmm) && $ennn&& $emmm&& ($ennn!=$emmm));
   ($ennn,$emmm)=($emmm,$ennn) if($ennn < $emmm); # orig (n->bcmp(m) < 0) but just testing lessthan could be slightly more direct if obj method can be loc8d
   my $diff= $ennn->copy()->bsub($emmm);my $answ= $ennn->copy()->bfac();my $mfct= $emmm->copy()->bfac();my $dfct= $diff->copy()->bfac();$mfct->bmul($dfct);
   return(0) if($mfct->is_zero());$answ->bdiv($mfct);return($answ->bstr());}
-sub fibo{ # simple function to calcul8 Fibonacci numbers with memoized recursive BigInt comput8ion (now iter8ing up instead of deep-recursing down)
+sub Fibo{ # simple function to calcul8 Fibonacci numbers with memoized recursive BigInt comput8ion (now iter8ing up instead of deep-recursing down)
   my $nthf= shift;return(0) unless(defined($nthf));$nthf= int($nthf);return(0) unless(  $nthf > 0);return(1) if(  $nthf <  3) ;
-  my $answ= Math::BigInt->new('1');for(3..$nthf){$answ += Math::BigInt->new(fibo($_-1));$answ -= Math::BigInt->new(fibo($_-3));};return($answ);}
-sub fibz{my $llnn=shift(@_);my $lnsz=80;my $lcou=0;$lnsz=$ENV{'COLUMNS'}   if(exists($ENV{'COLUMNS'}));$llnn='-' if(!defined($llnn)); # LiNeSiZe, LastLiNeiNdex
-  if       ($llnn=~ /-/){if(exists($ENV{'LINES'})){$llnn=$ENV{'LINES'  }-3;}else{$llnn=0;}}   my $fcou=1;my $lbuf= fibo($fcou);       #         , LineCOUnt
+  my $answ= Math::BigInt->new('1');for(3..$nthf){$answ += Math::BigInt->new(Fibo($_-1));$answ -= Math::BigInt->new(Fibo($_-3));};return($answ);}
+sub Fibz{my $llnn=shift(@_);my $lnsz=80;my $lcou=0;$lnsz=$ENV{'COLUMNS'}   if(exists($ENV{'COLUMNS'}));$llnn='-' if(!defined($llnn)); # LiNeSiZe, LastLiNeiNdex
+  if       ($llnn=~ /-/){if(exists($ENV{'LINES'})){$llnn=$ENV{'LINES'  }-3;}else{$llnn=0;}}   my $fcou=1;my $lbuf= Fibo($fcou);       #         , LineCOUnt
   my $b8l8= shift(@_) || 0;                                                     if($b8l8 == 1){$lbuf= b64($lbuf);}elsif($b8l8 == 2){$lbuf= b256($lbuf);}
   open   my $out8,'>&',STDOUT or die "Can't open  duplic8 STDOUT handle: $!";binmode $out8,':encoding(UTF-8)'; # crE8 local duplic8 of global
-  while    ($lcou++ <= $llnn){                          my $nxtf= fibo(++$fcou);if($b8l8 == 1){$nxtf= b64($nxtf);}elsif($b8l8 == 2){$nxtf= b256($nxtf);}
-    while  (length("$lbuf $nxtf") < $lnsz){$lbuf.=" $nxtf";$nxtf= fibo(++$fcou);if($b8l8 == 1){$nxtf= b64($nxtf);}elsif($b8l8 == 2){$nxtf= b256($nxtf);}}
+  while    ($lcou++ <= $llnn){                          my $nxtf= Fibo(++$fcou);if($b8l8 == 1){$nxtf= b64($nxtf);}elsif($b8l8 == 2){$nxtf= b256($nxtf);}
+    while  (length("$lbuf $nxtf") < $lnsz){$lbuf.=" $nxtf";$nxtf= Fibo(++$fcou);if($b8l8 == 1){$nxtf= b64($nxtf);}elsif($b8l8 == 2){$nxtf= b256($nxtf);}}
     say     $out8   $lbuf;                 $lbuf =  $nxtf ;}
   close     $out8             or die "Can't close duplic8 STDOUT handle: $!";}
 my @prls=(2);my $mcnd=$#prls;my $mcsq=$prls[-1]**2; # PRimeLiSt, MaxCheckiNDex && MaxCheckSQuared all stored globally within module
-sub prim{ # simple function to calcul8 prime     numbers with memoized && local     int comput8ion (redo wi BigInt?)
+sub Prim{ # simple function to calcul8 prime     numbers with memoized && local     int comput8ion (redo wi BigInt?)
   my $nthp= shift(@_);return('') unless(defined($nthp));return($prls[$nthp - 1]) if(@prls >= $nthp);my $npnc=$prls[-1]; # simply return desired already found
   while     (@prls  <  $nthp){my $fail=0;$npnc += 2;$npnc-- if($npnc == 4);
     while   ($npnc  >= $mcsq){$mcnd++;$mcsq=$prls[$mcnd] ** 2;} # upd8 MaxCheck until at least NewCandid8 SQuared
@@ -371,12 +375,12 @@ sub prim{ # simple function to calcul8 prime     numbers with memoized && local 
       unless($npnc  %  $prls[$cndx]){$fail=1;last;}} # testing for no remainder from dividing all primes up to square-root
     push    (@prls,    $npnc) unless($fail);} # keep appending next newest prime values until reaching the desired nth one to return
   return    ($prls[-1]);}
-sub prmz{my $llnn=shift(@_);my $lnsz=80;my $lcou=0;$lnsz=$ENV{'COLUMNS'}   if(exists($ENV{'COLUMNS'}));$llnn='-' if(!defined($llnn)); # LiNeSiZe, LastLiNeiNdex
-  if       ($llnn=~ /-/){if(exists($ENV{'LINES'})){$llnn=$ENV{'LINES'  }-3;}else{$llnn=0;}}   my $pcou=1;my $lbuf= prim($pcou);       #         , LineCOUnt
+sub Prmz{my $llnn=shift(@_);my $lnsz=80;my $lcou=0;$lnsz=$ENV{'COLUMNS'}   if(exists($ENV{'COLUMNS'}));$llnn='-' if(!defined($llnn)); # LiNeSiZe, LastLiNeiNdex
+  if       ($llnn=~ /-/){if(exists($ENV{'LINES'})){$llnn=$ENV{'LINES'  }-3;}else{$llnn=0;}}   my $pcou=1;my $lbuf= Prim($pcou);       #         , LineCOUnt
   my $b8l8= shift(@_) || 0;                                                     if($b8l8 == 1){$lbuf= b64($lbuf);}elsif($b8l8 == 2){$lbuf= b256($lbuf);}
   open   my $out8,'>&',STDOUT or die "Can't open  duplic8 STDOUT handle: $!";binmode $out8,':encoding(UTF-8)'; # crE8 local duplic8 of global
-  while    ($lcou++ <= $llnn){                          my $nxtp= prim(++$pcou);if($b8l8 == 1){$nxtp= b64($nxtp);}elsif($b8l8 == 2){$nxtp= b256($nxtp);}
-    while  (length("$lbuf $nxtp") < $lnsz){$lbuf.=" $nxtp";$nxtp= prim(++$pcou);if($b8l8 == 1){$nxtp= b64($nxtp);}elsif($b8l8 == 2){$nxtp= b256($nxtp);}}
+  while    ($lcou++ <= $llnn){                          my $nxtp= Prim(++$pcou);if($b8l8 == 1){$nxtp= b64($nxtp);}elsif($b8l8 == 2){$nxtp= b256($nxtp);}
+    while  (length("$lbuf $nxtp") < $lnsz){$lbuf.=" $nxtp";$nxtp= Prim(++$pcou);if($b8l8 == 1){$nxtp= b64($nxtp);}elsif($b8l8 == 2){$nxtp= b256($nxtp);}}
     say     $out8   $lbuf;                 $lbuf =  $nxtp ;}
   close     $out8             or die "Can't close duplic8 STDOUT handle: $!";}
 # might want to also add nth piii && eeee digitz here too (or maybe add b8 b64 or b256 input options) && would be pretty cool to build a new Simp app that
@@ -686,21 +690,25 @@ An example of a \@newd parameter for a specified alternate digit set for base 9 
 Resets the used digit list to the initial default order of the predefined digit set: '256'. This is simply a shortcut for calling dig('256') for
 reinitializ8ion purposes.
 
-=head2 sum8($numb)
+=head2 Sum8($numb)
 
-A simple function to calcul8 a          BigFloat summ8ion  of $numb down to 1. This used to loop down like fact, but was replaced with a basic multiply.
+A simple function to calcul8 a          BigFloat summ8ion  of $numb down to 1. This used to loop down like Fact, but was replaced with a basic multiply.
 
-=head2 fact($numb)
+=head2 Fibo($numb)
+
+A simple function to calcul8 a memoized BigInt   Fibonacci    $numb.
+
+=head2 Fact($numb)
 
 A simple function to calcul8 a memoized BigInt   factorial of $numb.
 
-=head2 choo($ennn, $emmm)
+=head2 Chus($ennn, $emmm)
 
 A simple function to calcul8 a memoized BigInt   function  of $ennn choose $emmm.
 
-=head2 fibo($numb)
+=head2 Prim($numb)
 
-A simple function to calcul8 a memoized BigInt   Fibonacci    $numb.
+A simple function to calcul8 a memoized BigInt   Prime        $numb.
 
 =head2 rotW($b64s)
 
@@ -762,7 +770,7 @@ Revision history for Perl extension Octology::b8:
 
 * upd8d available dig lists (adding b36 && asc)
 
-* added b64colr just for basic ANSI Escape coloring to start with, then generalized to b8color && moved it over to a8::b8colr
+* added b64colr just for basic ANSI Escape coloring to start with, then generalized to b8color && moved it over to a8::b8colr then a8::b8c
 
 * migr8d Math::BaseCnv over to Octology::b8
 
@@ -798,11 +806,11 @@ Octology::b8 requires:
 
 L<Math::Base::Convert>   to sub-class fast number objects from
 
-L<Math::BigFloat>        to allow Big         sum8()            results
+L<Math::BigFloat>        to allow Big         sum8()                    results
 
-L<Math::BigInt>          to allow Big fact(), choo(), && fibo() results
+L<Math::BigInt>          to allow Big fact(), choo(), fibo(), && prim() results
 
-L<Memoize>               to cache     fact(), choo(), && fibo() results
+L<Memoize>               to cache     fact(), choo(), fibo(), && prim() results
 
 L<Carp>                  to allow errors  to croak() from calling sub
 

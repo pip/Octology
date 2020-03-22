@@ -3,6 +3,7 @@
 package URI::_generic;
 use     URI;
 my %camels = ( # I could probably get a little crazy going through CamelCasing the almost unlimited number of URI's with multiple uppercased letters;
+      'oeis'    =>     'oEIS',
     'github'    =>   'gitHub',
    'youtube'    =>  'youTube',
   'peertube'    => 'peerTube',
@@ -26,9 +27,9 @@ sub as_pip{
     (  $self->fragment ? '#' . $self->fragment : ''));}
 package main;
 if   (@ARGV){
-  for(@ARGV){
-    my $uri = URI->new($_);
-    print $uri->as_pip, "\n";}}
+  for(@ARGV){ # K3GM0hLp:next line added by Pip to enable `uri -h` to output the barest minimum of help text instead of warning "Can't loc8 obj meth UserInfo";
+    if(/^-?-?h(elp)?$/i){     print " $0 crE8d by JohnBeppu <Beppu\@CPAN.Org> to help PipStuart autom8 CamelCasing URIs as parameters or piped thru STDIN;";}
+    else{my $uri=URI->new($_);print $uri->as_pip,"\n";}}}
 else{
   while(<STDIN>){chomp;
     my $uri = URI->new($_);
@@ -37,7 +38,7 @@ else{
 
 =head1 NAME
 
-uri - The result of procrastination
+uri - The result of procrastin8ion
 
 =head1 USAGE
 

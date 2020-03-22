@@ -48,11 +48,10 @@
 # old:could fixSimp wi wantarray2alow $simp->Text('non-ary'),mk bullet blastz,mk game srvr,plyr matchr,abiliT2anOt8 or plA ahed on both sIdz whil w8ng4oppo2mv;
 #   Octo is 8base d8a applic8ions:V8 abbreV8ions,b8 nums,d8 stamps,f8 RU(Red)E4||2lern8bow?pal8NtrE RGB && f0nt -##-,c8 col8 scrn,r8 valU8,m8 rel8,l8 skedul8r?
 use strict;use warnings;use utf8;use v5.10;use Encode;
-use Octology::a8;
-use Octology::b8;
-use Octology::d8;my $VERSION='0.0';my $d8VS='J9MMMMMM';my $name=$0;$name =~ s/^.*\///;my $Dbug=0; # version,program name
+use Octology::a8;#se Octology::c8;
+use Octology::b8;use Octology::d8;my $VERSION='0.0';my $d8VS='K3KM6ATE';my $name=$0;$name =~ s/^.*\///;my $Dbug=0; # version,program name
 open my $out8,'>&',STDOUT or die "Can't open  duplic8 STDOUT handle: $!";binmode $out8,':encoding(UTF-8)';select($out8);$|=1; # crE8 locl autoflush dup of glbl
-if(           @ARGV && $ARGV[0]=~ /^-*h/i){say $out8 " ckm8  - experimental   Curses and SDL Chess program  Vers:$VERSION  d8VS:$d8VS by Auth:$auth
+if(           @ARGV && $ARGV[0]=~ /^-*h/i){say $out8 " ckm8  - experimental   Curses and SDL Chess program  Vers:$VERSION  d8VS:$d8VS by Auth:$Auth
   <pW>v<pK>  sets roster tags for Players White and BlacK and for output filename where pW and pK are single-letter keys in the player registry hash (v optnal)
    -c    render to both Curses and SDL simultaneously; normally ckm8 runs mainly as an SDL window so press 'h' for interactive help there
    -cS   render to only Curses                      (disable default SDL graphic window)
@@ -216,7 +215,7 @@ my %pdat =('R'=>['      ',
                  '  \\_/ ',
                  '  /P\\ ',
                  ' ====='],); # Simp Mesg Dialog Text
-my %smdt =('info' => " $name v$VERSION $d8VS by $auth
+my %smdt =('info' => " $name v$VERSION $d8VS by $Auth
  
  $name is a basic Chess program written to experiment with several
  ideas I've had about the game. I have a penchant for Base64 d8a-models 
@@ -237,7 +236,7 @@ my %smdt =('info' => " $name v$VERSION $d8VS by $auth
  Thanks for running my software. L8r dudes and chickies! =)
  
                                                        -Pip
- ",        'help' => " $name v$VERSION $d8VS by $auth
+ ",        'help' => " $name v$VERSION $d8VS by $Auth
  
                           Global Keys:                               
   h         - displays this Help screen                              
@@ -287,7 +286,7 @@ my $simp;if($ucsf){
            tie(@Fclr,'Curses::Simp::FClr',$simp);$hite=$simp->Hite();
            tie(@bclr,'Curses::Simp::BClr',$simp);$simp->{'_flagaudr'}=$simp->{'_flagadtf'}=$simp->{'_flagadtb'}=0;}
 my @bdls =();my @bcls =();my @plyz =();
-@text =(' ' .             $name  . " v$VERSION $d8VS by $auth");my %bcou =();my %prom =();my $bwid = ' ' x $widt;
+@text =(' ' .             $name  . " v$VERSION $d8VS by $Auth");my %bcou =();my %prom =();my $bwid = ' ' x $widt;
 @Fclr =(' ' . 'G'x length($name) . ' WYWC' . " $bow8 WW CCCGGGGGG WCCCWYYYYWMMMW"); # VERSION color codes will need to stretch if ever =~ /\d\d+/;
 if($widt >= 66){$text[0] .= ' ' x 55 . 'hist:GoRest'; #          GoRest          GoRest          GoR'; # only add colored GoRest to title line for big scale
                 $Fclr[0] .= ' ' x 55 . 'YYYYWGGRRRR';}#          GGRRRR          GGRRRR          GGR';
@@ -464,13 +463,13 @@ if($sdlf){  SDL::init_sub_system(SDL_INIT_JOYSTICK); # below w(idth) h(eight) d(
     elsif(/^([0123]?[0-9A-Za-z._])-([0123]?[0-9A-Za-z._])$/){($bgin,$ennd,$rndx)=(b10($1),b10($2),0);}                # handle index set lines
     else{my @roww = split(/\s/,$_);for my $fndx ($bgin..$ennd){$f0nt[$fndx][$rndx] = $roww[$fndx-$bgin];} $rndx++;}}} # handle  f0nt d8a lines
 sub CBd1Colr{my $cbrd=shift || return('');my $cpat='OY';my $bpsp=0;$bpsp=length($1) if($cbrd=~ s/^(\s+)//);if(length($cbrd) == 24){
-    $cpat.='CrRRwBBgGGPMMPMMPMMPMM';d8cs($cpat);$cbrd=d8colr($cbrd);} #'RRrrCCCCccccMMMMMMMM'; # standRd fixd comprS is Cmp1
-  else{$cpat.=$qr2f. 'MBCGYOR';d8cs($cpat);$cbrd=b8colr($cbrd);} # varying compact is Cmp0 for l8 game
+    $cpat.='CrRRwBBgGGPMMPMMPMMPMM';d8cs($cpat);$cbrd=d8c($cbrd);} #'RRrrCCCCccccMMMMMMMM'; # standRd fixd comprS is Cmp1
+  else{$cpat.=$qr2f. 'MBCGYOR';d8cs($cpat);$cbrd=b8c($cbrd);} # varying compact is Cmp0 for l8 game
   d8cs(uc($bow8));return(' ' x $bpsp . $cbrd);} # more dynamic cmprSd bord colr p@rn
 # to do proper colr8ion for each cmprSd reprEsNt8ion,wil nEd2trak variable fldz of just prOmOtionz or all rEmAning from qr2f wi mAB special King capz on Nd
 #   thN maybe BG colr least significant 2 wi lc mvng Pc thN 2 of pOtNtial capture thN block bandz2alIn or contrast wi FG colrz or just stripe 6 quadz of 24
 sub CBd0Colr{my $cbrd=shift || return('');d8cs('MPPMGggGBwwBRrrRCccCYOOY');#'YYYYMMMMGGGGBBBBRRRRCCCC');
-  $cbrd=b8colr($cbrd);d8cs(uc($bow8));return($cbrd);} # simple cmprSd bord colr p@rn
+  $cbrd=b8c($cbrd);d8cs(uc($bow8));return($cbrd);} # simple cmprSd bord colr p@rn
 sub BordXpn0{my $cbrd=shift || return('');my %ploc;my $fbrd=$bbrd;$fbrd=~s/k/./g;$fbrd=~s/w/_/g; # BOaRDeXPaNd1(),CmprsdBoRD,PieceLOC8ionz,FullBoRD
   $cbrd=b64(b210(encode('UTF-8',$cbrd)));if($cbrd=~s/([0-9A-Z._])([0-9A-Z._])$//ix){substr($fbrd,b10($1),1,'k');substr($fbrd,b10($2),1,'K');}
   substr($fbrd,b10($2),1,$1)          while($cbrd=~s/^([$ri2f]  )([0-9A-Z._]) //ix);return($fbrd);} # might want 2 loop 2 fill borc also?
@@ -963,8 +962,8 @@ sub Pr4mPcMv{ # default mv pikd 2 sele in bord
   }else{return($pbrd);}}#,$pbrc); # probably won't be necessary to return colors when just wanting to explore potential piece movements within bord
 sub PrntMove{unless($ucsf){my $pndx=b64($#plyz);$pndx="0$pndx" if(length($pndx)==1);unless(!$#plyz||$#plyz % 10||$Dbug){say $out8 '';}
     if($nocf){print $out8 $pndx,@{$plyz[-1]};}else{print $out8
-      b8colr(       $pndx         ),
-      d8colr(       $plyz[-1][0]  ),
+      b8c(          $pndx         ),
+      d8c(          $plyz[-1][0]  ),
       S($t2cm{$n2tm{$plyz[-1][1]}}),$plyz[-1][1],
       S(                     'G'  ),$plyz[-1][2],
       S($t2cm{$n2tm{$plyz[-1][3]}}),$plyz[-1][3],
@@ -1300,9 +1299,9 @@ if(@plyz){my $td8o=Octology::d8->new($plyz[0][0]); # load first ply's d8 string 
     if($nocf){print $out8 $pndx,@{$plyz[$_]};if(defined($pmcz[$_+1]) && length($pmcz[$_+1])){print $out8 ' '.$pmcz[$_+1].' ';}}
     else     {my $p1cS='';$p1cS=S($t2cm{$n2tm{$plyz[$_][1]}}) if(exists($n2tm{$plyz[$_][1]}));
               my $p3cS='';$p3cS=S($t2cm{$n2tm{$plyz[$_][3]}}) if(exists($n2tm{$plyz[$_][3]}));
-      my $pbdx = b8colr($pndx);$pbdx = S(':w') . $pbdx . $z unless($_ % 2); # just wrap bndx with White bkgr
+      my $pbdx = b8c(   $pndx);$pbdx = S(':w') . $pbdx . $z unless($_ % 2); # just wrap bndx with White bkgr
       print $out8       $pbdx,
-                 d8colr(      $plyz[$_][0]),
+                 d8c(         $plyz[$_][0]),
                         $p1cS,$plyz[$_][1] ,
         S(               'G'),$plyz[$_][2] ,
                         $p3cS,$plyz[$_][3] ,
@@ -1364,12 +1363,12 @@ if(@plyz){my $td8o=Octology::d8->new($plyz[0][0]); # load first ply's d8 string 
                                  $rslt=~ s/^([01])(-)([10])$/$W$1$R$2$K$3/ unless($nocf);say $out8 " $rslt";}else{print $out8 $W unless($nocf);say $out8 ' *'}
   # maybe only after loading PGN,ubds drawz last fake 4# forfeit ply (as dup bord of -1?)
   say $out8 '';if($#ubds < 32){  for(0..$#ubds){my $bndx=b64($_);$bndx="0$bndx" if(length($bndx) == 1);my $cbrd=sprintf("% 24s",BordCmps($ubds[$_]));
-    unless($nocf){$bndx=b8colr($bndx) . $W;$cbrd=CBd1Colr($cbrd);}say $out8 "$bndx: $cbrd    ";} # for rel8ively few plyz,just print bordz in single column
+    unless($nocf){$bndx=b8c(   $bndx) . $W;$cbrd=CBd1Colr($cbrd);}say $out8 "$bndx: $cbrd    ";} # for rel8ively few plyz,just print bordz in single column
                                                                   say $out8 '  : ',CBd1Colr(sprintf("% 24s",BordCmps($bord))),'    '; # cmprS fInal non-undo
   }else{my $iiu5=int($#ubds/5)+1;for(0..$iiu5){for my $cndx (0..4){my $undx= $cndx*($iiu5+1)+$_;
         if($undx <= $#ubds && ($undx < $#ubds || $plyz[$undx][6] ne '%' || $plyz[$undx][6] ne '#' || $plyz[$undx][5] ne '4')){ # try2ck4 4fit||%Draw2!fake mv
           my $bndx=b64($undx);$bndx="0$bndx" if(length($bndx) == 1); # last list plyz by comprSd UTF8 undobordz (shud mAB add 80-column mode?)
-          my $cbrd=sprintf("% 24s",BordCmps($ubds[$undx]));unless($nocf){$bndx=b8colr($bndx) . $W;if($cndx == 1){$cbrd=CBd0Colr($cbrd);}
+          my $cbrd=sprintf("% 24s",BordCmps($ubds[$undx]));unless($nocf){$bndx=b8c(   $bndx) . $W;if($cndx == 1){$cbrd=CBd0Colr($cbrd);}
                                                                                                   else          {$cbrd=CBd1Colr($cbrd);}
             if($undx % 2){$bndx=    $z   . $bndx     ;}
             else         {$bndx= S(':w') . $bndx . $z;}} # maybe just wrap bndx instead of just backgrounding White's compressed boardz as too distracting
