@@ -24,7 +24,7 @@
 use strict;use warnings;use utf8;use v5.10; # mAB tSt if just regUlR -t STDIN && -t STDOUT R Dtectng intractiviT corectly 1st,B4 fallng bak on IO::Interactive
 #se IO::Interactive qw(is_interactive); # employ if(is_interactive()){} around all colring to attempt to behave like `ls --color=auto` when piped away
 use Encode;use Octology::a8;#se Octology::c8;
-           use Octology::b8;use Octology::d8;use Time::PT;my $VERSION='0.0';my $d8VS='K3LM0FAL';my $sllw=0; # SymLink LargestWidth to track for alignment
+           use Octology::b8;use Octology::d8;use Time::PT;my $VERSION='0.0';my $d8VS='K3SMCmis';my $sllw=0; # SymLink LargestWidth to track for alignment
 open my $out8,'>&',STDOUT or die "Can't open  duplic8 STDOUT handle: $!"; binmode $out8,':encoding(UTF-8)';my $cauf=1;my $cnvf=0; # crE8 local duplic8 of globl
 my $vsrt='-v'; my @b64d;my $t;my $sbdr;my $b64c;my($pwnw,$grpw,$grpx);$pwnw=$grpw=$grpx=0; # default -v Version SoRT,reversed b8 Colr List matchz Dfalt d8 ordr
 my $jfdz=join('|',@Day);my $jfmz=join('|',@Mon); # Joined Fieldz for DayZ and MonthZ to regex with  # BlO mAB some ARGVz shud!B sNt thru -d tSt so Dtect 1st?
@@ -118,17 +118,18 @@ for(@ldat){if(($prmz,$blsz,$pwnr,$grup,$fsiz,$d8tz,$fnam)= /^(\S{10})(\s+\d+)(\s
                                                           my $fstn  = $fsnm; # sepR8 FileSystemTargetName before substituting pathz out
                                                           $n=$lspt{'di' };if($bgin=~ s/^(.*\/)//){$bpth=spcs("$n$1",$subd,$n);} # split off pathz
                                                                           if($fsnm=~ s/^(.*\/)//){$fpth=spcs("$n$1",$subd,$n);}
-                                                          $n=$lspt{'ln' };my $fssn=$fstn;$fssn=~ s/(^\s+|\*$|\s+$)//g; # setup nXt colr4 ORPHAN if no sl tRget
-      if   ( $fssn=~  /^\//){$fnxf=1 if(-e $fssn);} # nEd2 strip surrounding spacez && test -e against param dir, so just flag Xistz if any ARGV is -d &&fIl -e
-      elsif( @ARGV         ){for my $argu(@ARGV){my $targ=$argu;if(-d $targ){$targ=~ s/\/+$//;#print $out8 "Testing:$targ/$fssn:...\n";
-        if(-e "$targ/$fssn"){$fnxf=1;last;}}}} # had to be careful above not to modify actual argument when stripping trailing slash /;
-      elsif(-e       $fssn ){$fnxf=1;} # also just test plain Xistence if rel8ive sym-link (not absolute started with slash /) && no ARGVz, but Xistz locally
-      if   (!$fnxf         ){                             $n=$lspt{'or' };$bgin=spcs("$n$bgin",$subd,$n);$bgin.=$z; # sepR8ly colr pRtz
+                                                          $n=$lspt{'ln' };my $fssn=$fstn;$fssn=~ s/(^\s+|[* \/]+$)//g; # setup nXt colr4 ORPHAN if no sl tRget
+      if   ( $fssn =~  /^\//){$fnxf=1 if(-e "$fssn");} # nEd2 strip suroundng spAcz && tSt -e against param dir, so just flag Xistz if any ARGV is -d &&fIl -e
+      elsif( @ARGV          ){for my $argu(@ARGV){my $targ=$argu;if(-d "$targ"){$targ=~ s/\/+$//;#print $out8 "Testing:$targ/$fssn:...\n";
+         if(-e "$targ/$fssn" || $targ eq  $fssn ){$fnxf=1;last;}}               $targ=~ s|[^/]+/?$||; # special ck 4 sym-link to directory pRameter not ORphan
+         if(-d "$targ"       && -d "$targ/$fssn"){$fnxf=1;last;}}} # had to be careful above not to modify actual argument when stripping trailing slash /;
+      elsif(-e       "$fssn"){$fnxf=1;} # also just test plain Xistence if rel8ive sym-link (not absolute started with slash /) && no ARGVz, but Xistz locally
+      if   (!$fnxf          ){                            $n=$lspt{'or' };$bgin=spcs("$n$bgin",$subd,$n);$bgin.=$z; # sepR8ly colr pRtz
                                                           $n=$lspt{'mi' };$fsnm=spcs("$n$fsnm",$subd,$n); # bgin of sym-linx shudB'ln'thN Ls clausBlO||'or'phn
-      }elsif($fsnm=~  /\*$/){                             $n=$lspt{'ex' };$fsnm=spcs("$n$fsnm",$subd,$n);$fsnm=~ s/(\*)$/$W$1/;
-      }elsif($fsnm=~  /\/$/){                             $n=$lspt{'di' };$fsnm=spcs("$n$fsnm",$subd,$n);
-      }elsif($fsnm=~  /\=$/){                             $n=$lspt{'so' };$fsnm=spcs("$n$fsnm",$subd,$n);$fsnm=~ s/(\=)$/$R$1/; # some SOCKETz 2tSt in /run
-      }else                 {                                             $bgin=spcs("$n$bgin",$subd,$n); # cud alsO m@chup socketz abov wi permz =~ /^s/ too
+      }elsif($fsnm =~  /\*$/){                            $n=$lspt{'ex' };$fsnm=spcs("$n$fsnm",$subd,$n);$fsnm=~ s/(\*)$/$W$1/;
+      }elsif($fsnm =~  /\/$/){                            $n=$lspt{'di' };$fsnm=spcs("$n$fsnm",$subd,$n); # `l -ca /etc|g '\->'` shOz OR && MI printcap,!othrz
+      }elsif($fsnm =~  /\=$/){                            $n=$lspt{'so' };$fsnm=spcs("$n$fsnm",$subd,$n);$fsnm=~ s/(\=)$/$R$1/; # some SOCKETz 2tSt in /run
+      }else                  {                                            $bgin=spcs("$n$bgin",$subd,$n); # cud alsO m@chup socketz abov wi permz =~ /^s/ too
         for my $shgl(sort keys(%lsp8)){if($fsnm=~/$shgl/){$s=$lsp8{$shgl};$fsnm=spcs("$s$fsnm",$subd,$s);last;}}} # colr just symlink's tRgetby1stmtch XtNsion
       $tnam=~ s/^.+?(\s->\s).+$/$bpth$bgin$M$1$B$fpth$z$fsnm/;$hflg=1;                                            # colr all segmNtz (mAB du -> dif wN $s sAm?)
     }elsif((      $fsnm)= $fnam=~/^(.+)\*$/             ){$n=$lspt{'di' };if($fsnm=~ s/^(.*\/)//){$fpth=spcs("$n$1",$subd,$n);}                            #-x?

@@ -15,7 +15,7 @@
 #     tryout && r8 all :colorscheme /usr/share/cmus/*.theme with typical 8 main pal8 settingz && mAB genR8 .Hrc style dense pal8 mapz of each theme's d8a,
 #     stuD gapless playback && format options, ckout cmus-remote,find&&stuD cmus-tutorial, stuD Libre.FM GNU scrobbling like cmusfm && zomg does,
 #   revive all good old pimp rand rang, r8ng, && mAB volume scaling cmus:"replaygain" && any othr ancient worthwhile stuf from my now ancient zinf fsui dayz;
-use strict;use warnings;use utf8;use Octology::a8;my $VERSION='0.0';my $d8VS='J29LAt93';
+use strict;use warnings;use utf8;use Octology::a8;my $VERSION='0.0';my $d8VS='K3SMILES';
 use Term::ReadKey;
 END{      ReadMode 0;} # good practice to auto-restore orig TTY read settingz at END
           ReadMode 3;  # setup 4 raw mode or 3 cbreak mode where Ctrl-C workz since signalz are enabled
@@ -102,12 +102,12 @@ sub sn{my $ns=shift||'';$ns=decode('UTF-8',$ns);$ns=~ s/\n+/\n/g; # StripNewline
           $tt=~        s/(\d+)(:)(\d+)(:)(\d+)(\.)(\d+)/$C$1$W$2$B$3$W$4$M$5$Y$6$P$7/g;            $Sc="\e[?25l\e[1G"; # try2hide cursor
         # nstd bild dur8c strz wrapdin bgcolr of RGB 4 hms 2 stak d8ok,Elapsd,tOtl;              # $Sc.="\e[1K\e[1G"; # try2not erase,justHome?
           $ns=~ s/(^|\s*)(Time)(:.*Time:\s*)(\d+:\d+:\d+\.\d+).*( of )(\d+:\d+:\d+\.\d+)\s*?(\n|$)/$Sc$o$2$W: $tn$c$5$tt/gi; #\e[31G\e[?25h/gi;
-                                                                                              $lt="$Sc$o$2$W: $tn$c$5$tt";$ns=~ s/Time/d8m:/g;}
+                                                                                              $lt="$Sc$o$2$W: $tn$c$5$tt";$ns=~ s/Time/dur8/g;}
           # tryd2mv cursor2Nd 31 2kEpdrwn butstil flashd blankz til no erase, now trying to hide B4 && unhide cursor at Nd
-  elsif ( $ns=~  /.*(Time)(:\s*)(\d+:\d+:\d+\.\d+)/i){my $tn=$3; # break d8 fieldz
+  elsif ( $ns=~  /.*(Time)(:\s*)(\d+:\d+:\d+\.\d+)/i){my $tn=$3; # break d8 fieldz  # nEd2pRs fEldz && mk new dur8 obj 2 substitute in for hh:mm:ss.pp;
           $tn=~        s/(\d+)(:)(\d+)(:)(\d+)(\.)(\d+)/$C$1$W$2$B$3$W$4$M$5$Y$6$P$7/g;         my $Sc="\e[16G"; # mv2colm16,erase cursor2BoL&&mv2 1stcolumn
                                                                                                    $Sc="\e[1G" ; # .="\e[1K\e[1G"; no more erase2Bgin-of-Line
-          $ns=~ s/.*(Time)(:\s*)(\d+:\d+:\d+\.\d+)\s*/$Sc$o$1$W: $tn/gi;} # make Time: without 'of' end for HTTP MP3 streams
+          $ns=~ s/.*(Time)(:\s*)(\d+:\d+:\d+\.\d+)\s*/$Sc$o$1$W: $tn/gi;$ns=~ s/Time/dur8/g;} # make Time: without 'of' end for HTTP MP3 streams
           $ns.="\e[0K" if($mf || $pf);$ns.="$Y [$R". "MUTED$Y]" if($mf);$ns.="$G [$M"."PAUSED$G]" if($pf);
   return( $ns);} # StripNewlinez($NewlinezStripped) && alsO doez a bunch of rE4m@ing && colr8ion now2
 sub mp{my $cx=shift;my $cb=$cx->before();my $ct=$cx->match();my $ca=$cx->after();$cb=~ s/^\s+//;$ct=~ s/^\s+//;
@@ -118,7 +118,8 @@ sub mp{my $cx=shift;my $cb=$cx->before();my $ct=$cx->match();my $ca=$cx->after()
   if(defined($cb)){if($cb=~ /(==+\s+gst123\s+keyboard\s+commands\s+==+|.*?(before|cursor|seek|toggle|volume|normal|next|quit)[^\n]*|==+)\n/i){$cb='';}
                    if($ct=~ /(==+\s+gst123\s+keyboard\s+commands\s+==+|Title\s+:[^\n]*                                                )\n/ix){$cb='';}
     if($ct=~  /^(Title)/i){$cb=~s/(^\s*?\n|\s+$)//g;}
-    if($ct=~ s/^\s*(Ti(m|tl)e:?|Playing|Codec)/$1/i){$cb='' if($ct=~ /^Playing/i);}else{print $out8 $G;}}else{$ct=~s/^\s*(Time:)/$1/i;}$ca=~s/^\s*(Time:)/$1/i;
+    if($ct=~ s/^\s*(Ti(m|tl)e:?|Playing|Codec)/$1/i){$cb='' if($ct=~ /^Playing/i);}else{print $out8 $G;}}else{$ct=~s/^\s*(Time:)/dur8:/i;}
+      $ca=~  s/^\s*(Time:)/dur8:/i;
     $cb=sn($cb);$cb=~ s/(\n|\r)+//g;$cb='' if($ct=~  /Codec/i);
   #rint($B."b4$W:$G".   $cb ."$W:") if(defined($cb));$ct=~ s/^(\s*(Time:[^\n]+?)\n.*Time:[^\n]+?\n)/$2\n/gi;$ca=~ s/\s*(Codec)/\n$1/gi;$ct=~ s/^\s+//;
   print $out8 "\e[0K" if($cb!~  /(PAUS|MUT)ED/);
