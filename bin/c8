@@ -39,11 +39,11 @@
 #  mimic --version, study m4 && colorit to maybe utilize or extend ~/.coloritrc && /etc/dictd/colorit.conf format, make cmd coloring profile for di(ct|ff),
 #  extend cut's (&& cat's?) --help for c8, filesize b64 columns should start Red on right && grow OYGCBMP to left, opposing d8::dur8ion objects d8 reflection,
 #  detect different formats or #s of fields to allow auto or explicit skipping of headers, footers, && recognizing distinct contained alignment && color sets,
-#  study `ls /usr/bin | pr -T4 -W72` to provide new columniz8ion;
+#  study `ls /usr/bin | pr -T4 -W72` to provide new columniz8ion,mIt want2mk orig `lFt;rIt;Hd;Tl` tAkng b64 pRam of -1 2du easy left,right,head,tail wrapperz;
 use strict;use warnings;use utf8;use v5.10;use Encode;
 use Octology::a8;#se Octology::c8;
 use Octology::b8;#se Octology::d8;use Time::PT;
-my $VERSION='0.0';my $d8VS='K3EMHEAL';my $name=$0;$name=~ s|^.*/||; # just accept $Auth as auto-imported from a8.pm && strip path off 2 get down to basename;
+my $VERSION='0.0';my $d8VS='K3NMJmfg';my $name=$0;$name=~ s|^.*/||; # just accept $Auth as auto-imported from a8.pm && strip path off 2 get down to basename;
 open my $out8,'>&',STDOUT or die "Can't open  duplic8 STDOUT handle: $!"; binmode $out8,':encoding(UTF-8)'; # crE8 local duplic8 of global
 my $mcn6='__'; # MaxColumn iNdex b64; # considr b8 objX that can *= b10('11') or better another obj that each stringifies configurably,Dfalt b64 unpaded;
 my @ndxz=();my @ndxd=(); # b8 is where expand_spans should stringify to CSV b10 && compress_spans mIt prove useful,staying b10 optn;
@@ -70,9 +70,11 @@ for (@ARGV){$_=decode('UTF-8',$_); # assume pRamz R utf8 in nEd of Dcoding
           }elsif($norr=~ /^([0-9A-Z._]+)$/i ){                           push(@ndxz, b10($norr)); }}
          #}elsif($norr=~ /^([-:^=]+    )$/ix){ # mAB l8r handl some special Ksez 4 non-b64 charz lIk neg8ive ndxz in rangez && mAB othr conveniencez?
         # nEd 2 tSt if $cmpl flag wantz 2 invert all indiCz, but nEd 2 C how orig cut BhAvz on rAngez
-        if    (lc($bcof) eq 'b'){ # to actually split on Byte valuez, will probably need to go back to $line prior to utf8 decoding since it has multi-bytez
-        }elsif(lc($bcof) eq 'c'){my  @ld8a =split(     //, $dlin);
-          for my $ndxv (@ndxz  ){if($#ld8a>=$ndxv && defined($ld8a[$ndxv])){print $out8 $ld8a[$ndxv], $outd;}}
+        if    (lc($bcof) eq 'c' || $dlin!~ /\s/){my  @ld8a =split(//, $dlin); # if there's no default space sepR8orz like actual space or tabz, assume per-char
+        # to actually split on Byte valuez, will probably need to go back to $line prior to utf8 decoding since it has multi-bytez
+          for my $ndxv (@ndxz  ){if($#ld8a>=$ndxv && defined($ld8a[$ndxv])){print $out8 $ld8a[$ndxv];}}
+        }elsif(lc($bcof) eq 'b'){my  @ld8a =split(     //, $dlin);
+          for my $ndxv (@ndxz  ){if($#ld8a>=$ndxv && defined($ld8a[$ndxv])){print $out8 $ld8a[$ndxv];}}
         }elsif(lc($bcof) eq 'f'){my  @ld8a =split(/$dlim/, $dlin);
           for my $ndxv (@ndxz  ){if($#ld8a>=$ndxv && defined($ld8a[$ndxv])){print $out8 $ld8a[$ndxv], $outd;}}}
         if($ztrm){print $out8 "\000";}else{print $out8 "\n";}
@@ -93,9 +95,11 @@ for (@ARGV){$_=decode('UTF-8',$_); # assume pRamz R utf8 in nEd of Dcoding
             if  ($strt<= $ennd){for my $ndxv($strt ..     $ennd        ){push(@ndxz,     $ndxv) ;}}
             else               {for(my $ndxv=$strt;$ndxv>=$ennd;$ndxv--){push(@ndxz,     $ndxv) ;}}
           }elsif($norr=~ /^([0-9A-Z._]+)$/i ){                           push(@ndxz, b10($norr)); }}
-        if    (lc($bcof) eq 'b'){ # to actually split on Byte valuez, will probably need to go back to $line prior to utf8 decoding since it has multi-bytez
-        }elsif(lc($bcof) eq 'c'){my  @ld8a =split(     //, $dlin);
-          for my $ndxv (@ndxz  ){if($#ld8a>=$ndxv && defined($ld8a[$ndxv])){print $out8 $ld8a[$ndxv], $outd;}}
+        if    (lc($bcof) eq 'c' || $dlin!~ /\s/){my  @ld8a =split(//, $dlin); # if there's no default space sepR8orz like actual space or tabz, assume per-char
+        # to actually split on Byte valuez, will probably need to go back to $line prior to utf8 decoding since it has multi-bytez
+          for my $ndxv (@ndxz  ){if($#ld8a>=$ndxv && defined($ld8a[$ndxv])){print $out8 $ld8a[$ndxv];}}
+        }elsif(lc($bcof) eq 'b'){my  @ld8a =split(     //, $dlin);
+          for my $ndxv (@ndxz  ){if($#ld8a>=$ndxv && defined($ld8a[$ndxv])){print $out8 $ld8a[$ndxv];}}
         }elsif(lc($bcof) eq 'f'){my  @ld8a =split(/$dlim/, $dlin);
           for my $ndxv (@ndxz  ){if($#ld8a>=$ndxv && defined($ld8a[$ndxv])){print $out8 $ld8a[$ndxv], $outd;}}}
         if($ztrm){print $out8 "\000";}else{print $out8 "\n";}

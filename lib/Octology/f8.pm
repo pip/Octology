@@ -9,7 +9,7 @@ use         Octology::b8;
 use         Octology::d8;
 use         Carp;
 #ur        @EXPORT= qw();
-my $VERSION='0.0';my $d8VS='H9NM7CU2';my $auth='PipStuart <Pip@CPAN.Org>';
+our $VERSION='0.0';my $d8VS='K3RMNNAu';our $Auth='PipStuart <Pip@CPAN.Org>';
 my %libz =();my @lfls =();my @lpls =(); # search lib dirs for usable f0nts && pal8s && load LibF0ntLiSt && LibPal8LiSt
 #if(exists($ENV{'PERL5LIB'})){for(split(/:/,$ENV{'PERL5LIB'})){$libz{$_}=1 if(-d "$_");}}
 #if(exists($ENV{'HOME'}) && -d "$ENV{'HOME'}/lib"){$libz{"$ENV{'HOME'}/lib"}=1;}

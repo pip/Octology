@@ -2,7 +2,7 @@
 use strict;use warnings;use utf8;use v5.10; # F33L8iqa:testng installed terminals for SGR Select Graphic Rendition support to mimic in 8trm aftr c8 adds layrz,
 use Octology::a8; # might want to add codez to a8 d8a then ref here? My custom f0nt codes in here are making l8st xterm resize! Learn how.
 use Octology::b8; # just for b64
-use Octology::d8;my $d8VS='J5JM5hSX';my $term='';$term=$ENV{'TERM'} if(exists($ENV{'TERM'})); # `msgcat --color=test` haz intNsiv HSV color test to learn from.
+use Octology::d8;my $d8VS='K3RMNAut';my $term='';$term=$ENV{'TERM'} if(exists($ENV{'TERM'})); # `msgcat --color=test` haz intNsiv HSV color test to learn from.
 open my $out8,'>&',STDOUT or die "Can't open  duplic8 STDOUT handle: $!";binmode $out8,':encoding(UTF-8)'; # crE8 local duplic8 of global
 # 2du:mk Blox mode text blacK in middle && White on sidez (like SVG),mk 80col-b; # argumentz: (dashez are optional)
 my @sd8a=([ 0     , 'N Normal / reset                                        '], #   -c omitz Color map, -B showz color gradient Blockz, -b Bkgr Blox
@@ -67,7 +67,7 @@ my @sd8a=([ 0     , 'N Normal / reset                                        '],
 my %ster=(2=>1,8=>1,9=>1,10=>1,20=>1,21=>1,26=>1,28=>1,29=>1,38=>1,48=>1,50=>1,51=>1,52=>1,53=>1,54=>1,55=>1,60=>1,61=>1,62=>1,63=>1,64=>1,65=>1); # STerm ERor
 my $widt=0;$widt=1 if(exists($ENV{'COLUMNS'}) && $ENV{'COLUMNS'} >= 144);my $cwid=16;$cwid=32 if($widt); # support normal or double wide output
 my $argz='';$argz= join(' ',@ARGV) if(@ARGV);
-if($argz =~ /h/i){print $out8 " -h - Help text for tsgr a TeSting Script which loops through Select Graphic Rendition attributes by auth:$auth at d8VS:$d8VS;
+if($argz =~ /h/i){print $out8 " -h - Help text for tsgr a TeSting Script which loops through Select Graphic Rendition attributes by Auth:$Auth at d8VS:$d8VS;
  -s - something special for saying when not in stterm, maybe resetting SKp codes to Zero \$z too;
  -c - cull out the color chart ; #  dashes are optional, option letters can be combined; Usually custom behavior between 160 and 80 column modes;
  -b - build the blocks of  pal8; # -B colors  just those Foreground;

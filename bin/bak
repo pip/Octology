@@ -1,2 +1,4 @@
-#!/usr/bin/perl -w
-use Pip::Utl; bak(@ARGV);
+#!/usr/bin/perl
+use strict;use warnings;use utf8;use Octology::d8;my $d8nw=Octology::d8->new();
+open my $out8,'>&',STDOUT or die "Can't open  duplic8 STDOUT handle: $!";binmode $out8,':encoding(UTF-8)';print $out8 $d8nw->bak(@ARGV);
+close   $out8             or die "Can't close duplic8 STDOUT handle: $!";

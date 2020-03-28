@@ -23,7 +23,7 @@ use SDLx::App;
 #se SDLx::Text; # also learn TTF && Pango, probably don't need SFont
 use SDLx::Sprite;} $sdlf = 0 if(exists($ENV{'TTY'}) && $ENV{'TTY'}=~ /^\/dev\/tty/); # disAbl SDL whN in fullscrn tXt-mOde acordng2 $TTY (or try `tty`?)
 our @EXPORT=  qw(xx); # mvd only orig Xportz sube && e2c8 over2 a8.pm (&& since renamed e to S for SKp consistency)
-our $VERSION='0.0';my $d8VS='J81M9gm8';our $auth='PipStuart <Pip@CPAN.Org>';my $name='c8';
+our $VERSION='0.0';my $d8VS='K3RMNMAu';our $Auth='PipStuart <Pip@CPAN.Org>';my $name='c8';
 my %GLBL=( # GLOBAL CLASS VARIABLES
   'FLAGOPEN'=> 0); # flag for if SDL window crE8d yet (in Simp was for if a main curses screen had been opened yet)
 #y @DISPSTAK=(); # global stack of crE8d c8 objects for display order
@@ -1442,12 +1442,12 @@ or uncompress the package and run:
 
 Most source code should be Free!
   Code I have lawful authority over is and shall be!
-Copyright: (c) 2014-2016, Pip Stuart.
-Copyleft :  This software is licensed under the GNU General Public License
-  (version 3 or later). Please consult L<HTTP://GNU.Org/licenses/gpl-3.0.txt>
-  for important information about your freedom. This is Free Software: you
+CopyRight: (c) 2014-2020, Pip Stuart.
+CopyLeft : This software is licensed under the GNU General Public License
+  (version 3 or l8r). Please consult L<HTTPS://GNU.Org/licenses/gpl-3.0.txt>
+  for important inform8ion about your freedom. This is Free Software: you
   are free to change and redistribute it. There is NO WARRANTY, to the
-  extent permitted by law. See L<HTTP://FSF.Org> for further information.
+  extent permitted by law. See L<HTTPS://FSF.Org> for further inform8ion.
 
 =head1 AUTHOR
 

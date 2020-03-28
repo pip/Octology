@@ -47,8 +47,8 @@ use Octology::d8;
 use Time::PT;
 use Time::HiRes;
 use Curses::Simp;
-my $mjvr = 1; my $mnvr = 0; my $d8vr = 'E7SMKsfI';
-my $auth = 'Pip Stuart <Pip@CPAN.Org>';
+my $mjvr = 1; my $mnvr = 0; my $d8VS = 'E7SMKsfI';
+my $Auth = 'Pip Stuart <Pip@CPAN.Org>';
 my $name = $0; $name =~ s/.*\///;
 my $draw = shift; $draw = 1 unless(defined $draw);
 # set draw to 0 for much faster calculation (it won't draw all the
@@ -83,7 +83,7 @@ my @fdvl = (); my @flvl = ();
 
 sub ShowInfo { # Display an Info dialog window
   $simp->Mesg('type' => 'info',
-" $name v$mjvr.$mnvr.$d8vr - by $auth
+" $name v$mjvr.$mnvr $d8VS - by $Auth
  
 $name was written for fun as a nerdy screen saver
  
@@ -100,7 +100,7 @@ suggestions.  Please support FSF.Org && EFF.Org.  Thanks.  TTFN.
 
 sub ShowHelp { # HELP!
   $simp->Mesg('type' => 'help',
-" $name v$mjvr.$mnvr.$d8vr - by $auth
+" $name v$mjvr.$mnvr $d8VS - by $Auth
 
                         Global Keys:                                
   h         - displays this Help screen                             

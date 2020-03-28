@@ -11,7 +11,7 @@
 #   handle term resize events  (using Simp once supported),
 #   handle mouse events        (using Simp once supported),
 use strict; use warnings; use Curses::Simp; my $mixr = eval("use Audio::Mixer; 1") || 0; # Audio::Mixer is not full-featured so`ximp`tends2Bbetter
-my $mjvr = 1; my $mnvr = 0; my $ptvr = 'A82IP82'; my $name = $0; $name =~ s/.*\///; my $auth = 'Pip Stuart <Pip@CPAN.Org>';
+my $mjvr = 1; my $mnvr = 0; my $d8VS='K3RMNEAt'; my $name = $0; $name =~ s/.*\///; my $Auth = 'Pip Stuart <Pip@CPAN.Org>';
 my @dopt =('vol', 'cd', 'pcm' ); my @optz = @dopt; my %omap; my %limz; # Dfalt mode && initial device options
 my %slut =(   '!'=>1,    '@'=>2,    '#'=>3,    '$'=>4,    '%'=>5,    '^'=>6,    '&'=>7,    '*'=>8,    '('=>9,    ')'=>0); # ShftLkUpTabl (4NumbKeyz,shudBin k8)
 my %valz =('wich'=>0, 'mode'=>0, 'mute'=>0, 'dig1'=>1, 'alll'=>0, 'only'=>0, 'ster'=>0, 'ltrt'=>0, 'recf'=>1, 'titl'=>0, 'info'=>0, 'cnin'=>1); # pmix valz
@@ -113,7 +113,7 @@ sub GeneBase{ # Generate Base bars && colors from templates
   } }
 sub DrawBarz{ # Draw the latest mixer slider Bars
   my $sndx; my $ltxt;my $lfcl; @text = (); @fclr = (); @bclr = (); my $tmp0; my $tmp1; my $lbcl; my $widt = $simp->Widt(); my $sopt; my $isst; # clear all
-  if($valz{'titl'}){ push(@text, " $name v$mjvr.$mnvr.$ptvr - by $auth"); push(@bclr, ' ');
+  if($valz{'titl'}){ push(@text, " $name v$mjvr.$mnvr $d8VS - by $Auth"); push(@bclr, ' ');
                      push(@fclr, ' ' . 'G'x length($name) . ' W' . 'Y'x length($mjvr) . 'W' . 'C'x length($mnvr) . 'WROYGCBP B WW CCC CCCCCC WGGGWYYYYWCCCW');}
   if($valz{'info'}){ my $info = ''; $info = `$chgr :iv` if($cnam eq 'ximp'); $info =~ s/(^Device:|\n.*$)//g; my $hlfw = int($widt/2); my $blnx;
     #f($cnam eq 'almx'){$info = `lspci | grep "audio controller"`; $info =~ s/^.*audio controller: //; } # ALSA utils don't seem to output good CardInfo! =(
@@ -272,7 +272,7 @@ sub AsinChan{ my $chan = shift || return; # Assign a particular channel as the s
   for($valz{'wich'} = 0; $valz{'wich'} < @optz; $valz{'wich'}++){ last if($optz[$valz{'wich'}] eq $chan); } }
 sub ShowInfo{ # Display an Info dialog window
   $simp->Mesg('type' => 'info',
-" $name v$mjvr.$mnvr.$ptvr - by $auth
+" $name v$mjvr.$mnvr $d8VS - by $Auth
  
 $name was inspired by alsamixer, aumix, mmix, && mmixer
  
@@ -287,7 +287,7 @@ suggestions. Please support FSF.Org && EFF.Org. Thanks. TTFN.
 "); }
 sub ShowHelp{ # uhh
   $simp->Mesg('type' => 'help',
-" $name v$mjvr.$mnvr.$ptvr - by $auth
+" $name v$mjvr.$mnvr $d8VS - by $Auth
 
                         Global Keys:                                
   h         - displays this Help screen                             

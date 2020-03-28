@@ -30,7 +30,7 @@ use         Carp; # orig Math::BaseCnv BlO memoized Sum8(as summ) hEr&&had nO Fi
 use Memoize;memoize('Fact');memoize('Chus');memoize('Fibo');memoize('Prim');
 our @EXPORT= qw(b8 cnv ocT deC dec heX HEX b10 b64 b64sort b110 b128 b210 b256 dig diginit @kana
     cma coma  Sum8 Sumz   Fact Fctz  Chus  Fibo Fibz  Prim Prmz  rotW rot1    calQ   $umbc);
-our $VERSION='0.0';my  $d8VS='K3FM6add';my $Auth='PipStuart <Pip@CPAN.Org>';
+our $VERSION='0.0';my  $d8VS='K3NMIBIG';my $Auth='PipStuart <Pip@CPAN.Org>';
 our @kana=qw(ぁあぃいぅうぇえぉおかがきぎくぐけげこごさざしじすずせぜそぞた
 だちぢっつづてでとどなにぬねのはばぱひびぴふぶぷへべぺほぼぽまみ
 むめもゃやゅゆょよらりるれろゎわゐゑをんゔゕゖ゗1゛゜ゝゞゟ
@@ -397,14 +397,14 @@ sub calQ{my $ajps='';if(@_){$ajps=join('',@_);}elsif(!-t STDIN){$ajps=join('',<S
    h - print this Help text and exit
        all spaces, underscores, and commas are stripped from input, so feel free to include them for clarity when entering particularly large numbers.
        all altern8s below are case-insensitive except 'x' times and 'X' Xor. two adjacent times characters like 'xx' can be used for exponentE8ion.
-   l - altern8 for Left     ( parenthesis
+   l - altern8 for Left     ( parenthesis  # note a nice approxim8ion for Pi to demonstr8 is `q 355/113|c8 0-1_` to just trunc8 to show 1 line of precision;
    r - altern8 for Right    ) parenthesis
    b - altern8 for Bang     ! exclam8ion  (unary logical  neg8ion not implemented yet!)
    n - altern8 for Neg8     ~ tilde       (unary bit-wise neg8ion not implemented yet!)
    x - altern8 for multiply * asterisk    (this option is particularly useful for avoiding normal shell file-globbing behavior when asterisk is unescaped)
    d - altern8 for Divide   / slash
    m - altern8 for Modulo   % percent
-   p - altern8 for add      + Plus
+   p - altern8 for add      + Plus        (also P should be Pi approxim8d from the Math::BigFloat->bpi() function)
    s - altern8 for Subtract - minus
    a - altern8 for And      & AmpersAnd
    o - altern8 for Or       | pipe
@@ -416,8 +416,9 @@ sub calQ{my $ajps='';if(@_){$ajps=join('',@_);}elsif(!-t STDIN){$ajps=join('',<S
          `cd ~/bin/; ln -s calQ q` which will enable entering expressions like `q '64-(128/7)+15'` from the shell and ':r!q 4096xx2048-1' from within vim.
        2du:rewrite parsing to handle arbitrary expressions in parens, expand sub-expressions in real precedence order, handle unary oper8ors, add ++ and --;
 ";} # clear all other parameters && assign return value BiGFLoat to hold Help text instead
-  $ajps=~ s/s/-/gi;$ajps=~ s/p/+/gi;$ajps=~ s/d/\//gi;$ajps=~ s/o/|/gi;$ajps=~ s/a/&/gi;$ajps=~ s/x/*/g;$ajps=~ s/X/^/g;$ajps=~ s/n/~/gi;$ajps=~ s/m/%/gi;
+  $ajps=~ s/s/-/gi;$ajps=~ s/p/+/g ;$ajps=~ s/d/\//gi;$ajps=~ s/o/|/gi;$ajps=~ s/a/&/gi;$ajps=~ s/x/*/g;$ajps=~ s/X/^/g;$ajps=~ s/n/~/gi;$ajps=~ s/m/%/gi;
   $ajps=~ s/l/(/gi;$ajps=~ s/r/)/gi;$ajps=~ s/b/!/gi; # strips spaces,underscores,commas, then allows 'x' times to altern8 for multiply asterisk && also takes:
+  if($ajps=~ /P/){my $bfpi= Math::BigFloat->bpi();my $bpis="$bfpi";$ajps=~ s/P/$bpis/g;} # something like this should work for calQl8ing with Pi,but hangz4now;
   # Left&&Right parens,Bang,Neg8,Divide,Modulo,Plus,Subtract,And,Or,Xor, all are case-insensitive except x times && Xor; # HTTPS://PerlDoc.Perl.Org/perlop.html
   while  ($ajps=~  / (\(                 (-?\.?\d+(\.\d+)?([Ee][-+]?\d+)?)
                      (\*\*|[-+*\/&|^!~%])(-?\.?\d+(\.\d+)?([Ee][-+]?\d+)?)\))/x){my $grup=$1;$bgfl=Math::BigFloat->new("$2"   );
@@ -442,7 +443,7 @@ sub calQ{my $ajps='';if(@_){$ajps=join('',@_);}elsif(!-t STDIN){$ajps=join('',<S
       elsif($oper eq  '%'){$bgfl %= Math::BigFloat->new("$nxtn");}
       elsif($oper eq  '+'){$bgfl += Math::BigFloat->new("$nxtn");}elsif($oper    eq  '-'){$bgfl -= Math::BigFloat->new("$nxtn");}
       elsif($oper eq  '&'){$bgfl &= Math::BigFloat->new("$nxtn");}
-      elsif($oper eq  '|'){$bgfl |= Math::BigFloat->new("$nxtn");}elsif($oper    eq  '^'){$bgfl ^= Math::BigFloat->new("$nxtn");}}}
+      elsif($oper eq  '|'){$bgfl |= Math::BigFloat->new("$nxtn");}elsif($oper    eq  '^'){$bgfl ^= Math::BigFloat->new("$nxtn");}}} $bgfl=~s/\.0+$//;
   return   ($bgfl);}
 # used to prefer benchmarked fast module when possible, but needed clunky overrides below for interface compatibility, now commented probably l8r to be rmvd
 #package Math::Base::Convert;no warnings;    # redefine vet subroutine to have b64 defaults (&& disable the redef warnings)

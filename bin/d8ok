@@ -10,10 +10,10 @@
 use strict;use warnings;use utf8;use v5.10;use Octology::b8;
                                            use Octology::d8;
                                            use Curses::Simp;
-my $VERSION='0.0';my $d8VS='K3DMINK8';my $auth='PipStuart <Pip@CPAN.Org>';my $name=$0;$name =~ s/.*\///;my $d8im;my @fldz;my @lasf;my @text;my @fclr;
+my $VERSION='0.0';my $d8VS='K3RMNAut';my $Auth='PipStuart <Pip@CPAN.Org>';my $name=$0;$name =~ s/.*\///;my $d8im;my @fldz;my @lasf;my @text;my @fclr;
 my $barz=0;my $bilt=0;my $bold=0;my $bchr='#';my $parm='';my $clea=0;my $keey= -1;my $sped= 0.987;
 my $sbld=1;my $argz='';$argz= join(' ',@ARGV) if(@ARGV);
-if($argz=~ /h/i){print " $name v$VERSION $d8VS - by $auth
+if($argz=~ /h/i){print " $name v$VERSION $d8VS - by $Auth
  $name is a basic interactive Curses::Simp d8 clOcK for Octology.
  $name command-line parameters are very similar to the keys that
        are available in normal interactive mode.
@@ -121,7 +121,7 @@ while  (lc($keey) ne 'x' && lc($keey) ne 'q' && ord($keey) != 27){
   elsif(lc($keey) eq 'i'){
     if($simp->Widt() >= 53 && $simp->Hite() >= 17){ # only if the whole dialog with borders will fit in the terminal...
        $simp->Mesg('type' => 'info', # display an Info dialog window
-" $name v$VERSION $d8VS - by $auth 
+" $name v$VERSION $d8VS - by $Auth 
  
  $name was written to be my primary clock in a
    single-row terminal configured to display in a
@@ -138,7 +138,7 @@ while  (lc($keey) ne 'x' && lc($keey) ne 'q' && ord($keey) != 27){
   elsif(lc($keey) eq 'h' || $keey eq '?' || $keey eq 'KEY_F1'){
     if($simp->Widt() >= 53 && $simp->Hite() >= 17){ # only if the whole dialog with borders will fit in the terminal...
        $simp->Mesg('type' => 'help', # display a  Help dialog window
-" $name v$VERSION $d8VS - by $auth 
+" $name v$VERSION $d8VS - by $Auth 
  
                     Global Keys:                   
    h - displays this Help screen                   

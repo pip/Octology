@@ -1,0 +1,21 @@
+#!/usr/bin/perl
+# K3SM5cvd:CJ crE8d by PipStuart <Pip@CPAN.Org> to parse out Comma-SepR8d-Values from COVID-19 (J) d8a-files from the GitHub CSSEGISAndData/COVID-19 repo;
+use strict;use warnings;use utf8;use Encode;use Octology::a8;use Octology::d8;my $VERSION='0.0';my $d8VS='K3SM6Kut';my %cd8a;my %sd8a;
+my $csvf=$ENV{'HOME'} . "/.cache/Corona/CSSEGISAndData_COVID-19_03-27-2020-K3SM4dOr.csv";my %flcm=('C'=>$G,'D'=>$W,'R'=>$Y,'A'=>$R);
+open my     $csfh,'<' , $csvf or die "Can't open  CSV-d8a  File  Handle: $!";my @hedr=split(/,/,<$csfh>);
+open my     $out8,'>&',STDOUT or die "Can't open  duplic8 STDOUT handle: $!";binmode $out8,':encoding(UTF-8)';
+while(<$csfh>){my $ckey='';$ckey=$1 if(s/"(.*)"$//);my @fldz=split(/,/,$_);
+  if ( $#fldz<11){chomp;#print $out8 "!*Warn*! Line:$_: has too few CSValuez!\n";
+  }else{$fldz[2]=~ s/ /_/g;my $lkey="$fldz[5],$fldz[6]";
+    for(my  $hndx=0;$hndx< $#hedr;$hndx++){$cd8a{$lkey}{$hedr[$hndx]}=$fldz[$hndx];} # since FIPS are not unique, try joining Lat && Long_ nstd
+    $cd8a{  $lkey   }{$hedr[$#hedr]} =$ckey; # might want to track 'Last_Update' field && average timez or crE8 d8 objX or something
+    for my  $heds(qw(Confirmed Deaths Recovered Active)){
+      $sd8a{$fldz[2]}{$heds        } =0 unless(exists($sd8a{ $fldz[2]}{$heds})); # initialize St8-d8a to zero before adding countz
+      $sd8a{$fldz[2]}{$heds        }+=$cd8a{$lkey}{$heds};}}}
+close       $csfh             or die "Can't close CSV-d8a  File  Handle: $!";
+for   my    $ust8(qw(Minnesota Wisconsin Pennsylvania Illinois Michigan California New_York)){
+  printf    $out8 "${z}USt8:%-12s  ",$ust8;
+  for my    $heds(qw(Confirmed Deaths Recovered Active)){my $frst=substr($heds,0,1);
+    printf  $out8 "$frst:%s%9s$z  ",$flcm{$frst},comma($sd8a{$ust8}{$heds});
+  } print   $out8 "\n";} # hopefully print out the sums of the main d8a header fieldz for the few St8z I've selected to track
+close       $out8             or die "Can't close duplic8 STDOUT handle: $!";

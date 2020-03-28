@@ -2,12 +2,12 @@
 # HBPL7DOW:d8ow crE8d by PipStuart <Pip@CPAN.Org> as a utility script for just calling Time::DayOfWeek functionality through Octology::d8 objects;
 # 2du:fix -f Full day name output option,slurp all of this into d8.pm so this can become just another basic stub;
 use strict;use warnings;use utf8;use v5.10;
-use      Octology::d8;my $VERSION='0.0';my $d8VS='HBPL7DOW';my $auth='PipStuart <Pip@CPAN.Org>';my $parm=join(' ',@ARGV);my @id8a;
+use      Octology::d8;my $VERSION='0.0';my $d8VS='K3RMNAut';my $Auth='PipStuart <Pip@CPAN.Org>';my $parm=join(' ',@ARGV);my @id8a;
 my $d8im=Octology::d8->new();
 open my $out8,'>&',STDOUT or die "Can't open  duplic8 STDOUT handle: $!";binmode $out8,':encoding(UTF-8)'; # crE8 local duplic8 of global
 if(!@ARGV && !-t STDIN){chomp(@id8a=<STDIN>);$parm=join(' ',@id8a);}
 if($parm=~ /(^|\s)-+h/i){ # should probably upd8 to use GetOpts or something more robust for parameter parsing
-  say $out8 " d8ow - Date of the Week utility  Vers:$VERSION  d8VS:$d8VS  by Auth:$auth
+  say $out8 " d8ow - Date of the Week utility  Vers:$VERSION  d8VS:$d8VS  by Auth:$Auth
    You can provide a specific d8 as 3 b64 chars: YMD to get the DayOfWeek for.
    If you only provide Y or YM, the remainder may be filled in as 0 but then
      is calculated against as if it were 1. It's best to provide 3 explicitly.

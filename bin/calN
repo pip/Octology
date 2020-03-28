@@ -4,7 +4,7 @@
 #   upd8 -help mesg,add special -d d8 hndlng4B4 2000&&fR fUtur,add 2|3|4|6|12 colm wId mOdz,add wId 8wEk zoom wi c8 bclr Year && Month or good figlet optz,
 #   mkup betr wkdy colr progrSion than just RoYGCBM mAB wi bg k BhInd wkNdz,add paded YYYYJan wNfitz wEk0 line,apNd wkdy map2botm wi YYYY+1,Xpnd rsn 2 58 lInz,
 #   optimIz loop gNer8ion prntout sPd,wudB Useful2hav intractiv c8 mOd l8r 4 d8 selectz too;  # `rsn` ReSize4calN 171x57 shOz past 19-Yearz from 2000-2018;
-use strict;use warnings;use utf8;use v5.10;my $VERSION='0.0';my $d8VS='I45MCalN';
+use strict;use warnings;use utf8;use v5.10;my $VERSION='0.0';my $d8VS='K3RMMvcN';
 use      Octology::a8; # mAB Use @Mon  # mABUse just Time::DaysInMonth && DayOfWeek without nEdng d8.pm BlO? (lIkUsng a8:@sb64 nstd of b8.pm:b64())
 use      Octology::d8;use Time::DaysInMonth;my $d8nw;my $d8fY;my $hlpf=0;my $Stxt='';my $optn='';$optn=join(' ',@ARGV) if(@ARGV); # l8r support other formatz
 $d8nw   =Octology::d8->new();my $wndx=1;my $Yrmx=16;if(exists($ENV{'COLUMNS'})){$Yrmx=int($ENV{'COLUMNS'} / 9) - 1;} # sIzbak Yearz by term widt (!<2K yet)
@@ -13,7 +13,7 @@ if($optn=~s/(^| )(-?-?y)( |$)//i      ){$Yrmx=0;} # strip single Year flag as sO
 if($optn=~ /(^| )(-?-?d? ?)([0-9A-Z._]{1,8})/i){my $d8ps=$3;if(length($d8ps) < 3){$d8ps.='1' x (3-length($d8ps));} # lOd custom -dYMD optz
   $d8nw =Octology::d8->new($d8ps);} # unfortun8ly trying just `N y` in my zsh is expanding both aliases to `calN yelp`,trEtng latter as d8 yel8 for normd zone
 $d8fY   =Octology::d8->new($sb64[$d8nw->Y()-2000].'11'); # make new now && first of this Year d8 objectz
-if   ($hlpf){my $name=$0;$name=~ s/^.*\///;$Stxt.=" $name   - d8 caleNdar gener8ion utility for Octology by $auth
+if   ($hlpf){my $name=$0;$name=~ s/^.*\///;$Stxt.=" $name   - d8 caleNdar gener8ion utility for Octology by $Auth
   -h    - print out this Help text and exit;  # default output shows the past many years as columns from left-to-right up to the currently focused d8 Year;
   -y    - print just the fast single-column mode for the current Year (akin to \`cal -y\`);  # l8r add similar -1 and -3 options as well as others for n?cal;
   -dYMD - print out results using specified d8-encoded Year, Month, and Day as focus instead of default today;  # plans to add holiday/birthday highlights;

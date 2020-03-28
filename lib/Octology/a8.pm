@@ -46,13 +46,13 @@ use strict; use warnings;use utf8;use v5.10;use Encode;
 require         Exporter;  # add new colr systM
 use base     qw(Exporter); # mainly exporting global utility functions && variables originally inherited from c8.pm as well as a few f8.pm d8a structures
 our @EXPORT= qw(bfr8c    b8c    d8c   dur8c @d8cl  d8cs  a8c   chti  c8fn  o8 S2   c2  S c   sS    lodl @Monz @Mon     %mc2F %mc2b %mF2c %mb2c @Kana  %sb10
- $SKp8 $SKp0 $SKp1 $SKp2 b8clr  $SKpf $SKpt %pmap %cmap       %pl8n  ftst acS   %f8fm %f8pm %sgrm %sgrn @Dayz @Day  lrc      comma  curs  sumb @x256  @sb64
+ $SKp8 $SKp0 $SKp1 $SKp2 b8clr  $SKpf $SKpt %pmap %cmap       %pl8n  ftst acS e %f8fm %f8pm %sgrm %sgrn @Dayz @Day  lrc      comma  curs  sumb @x256  @sb64
     $z    $k    $r    $o    $y    $g     $c $SKpb    $m    $p    $w  tstc    $K    $R    $O    $Y    $G    $C    $B    $M    $P    $W    %p622 %p222   upd8
          $bk   $br   $bo   $by   $bg    $bc   $bb   $bm   $bp   $bw         $hK   $hR   $hO   $hY   $hG   $hC   $hB   $hM   $hP   $hW     h2rl  rl2h   drkh
                                                                             $HK   $HR   $HO   $HY   $HG   $HC   $HB   $HM   $HP   $HW
  $tnhf $ucdf  spff  spfd  spfX   shfl  reso $Auth %cmsp %p8k2 @p82k  chp8     S2f4 c2f4 dm2u cdst %crgb %cbrt @snls @mrls %cdrd %cdrn    %nrgb         gnp8);
  # of 52 posibl sngl-letr var nmz,a8 Xportz 20,$b && $a unavail,so shudB thEs30 lFt4quik shortSt nAmz: 'def hij l n  q stuv x', 'A  DEF HIJ L N  Q STUV X Z';
-our $VERSION='0.0';my  $d8VS='K3MM0mgb';our $Auth='PipStuart <Pip@CPAN.Org>'; # above not exporting $b since collidez with sort{$a  <=> $b};unalloc'd sOlOz^;
+our $VERSION='0.0';my  $d8VS='K3SM7son';our $Auth='PipStuart <Pip@CPAN.Org>'; # above not exporting $b since collidez with sort{$a  <=> $b};unalloc'd sOlOz^;
 our $ucdf= eval('use Color::Similarity::RGB qw(distance);1') || 0; # try2set UseColorDistanceFlag if optional module is available; /defhijlnqstuvx/i + /AZ/^;
 our @Monz=qw(January February March   April     May June July   August September October November December);our @Mon=();push(@Mon,substr($_,0,3)) for(@Monz);
 our @Dayz=qw(Sunday  Monday   Tuesday Wednesday Thursday Friday Saturday                                  );our @Day=();push(@Day,substr($_,0,3)) for(@Dayz);
@@ -970,7 +970,6 @@ sub sumb{  my $widt=0;$widt=1 if(exists($ENV{'COLUMNS'}) && $ENV{'COLUMNS'} >= 1
   my %bfst=( # BinFileSummaryText (originally was listed in default ls order, but now is reorganized into colored module group sections like default output)
     '8ct'   => "a8 *ColrTest of all four b8 and d8 orient8ions for sequence comparison    ",
     'a8'    => "a8  new d8a object representing ~/.Hrc  (with printing out like `lodH`)   ", # fix 2 fully load obj && output same as lodH
-    'acS'   => "a8  apt-cache Search wrapper which coll8z dpkg -l resultz into together   ", # hLp shO nstl8n st8us of DscrIbd packages of searched interest;
     'b8c'   => "a8  colorizer for  b8  b64 number-strings   (>Right>-to-<Left<< >4wrd>)   ",
     'b8clr' => "a8  colorizer for  b8  b64 which  handles bfr8 (%fractions) and commas    ",
     'bfr8c' => "a8  colorizer for  b8 bfr8 fractions as b64 (<Left<<-to->Right> <Bkwd<)   ",
@@ -1026,15 +1025,14 @@ sub sumb{  my $widt=0;$widt=1 if(exists($ENV{'COLUMNS'}) && $ENV{'COLUMNS'} >= 1
     'rotW'  => "b8  utility to ROT8 each char of passed in b64  number-strings (by  32)   ",
     'Sum8'  => "b8  SUM8ion function adding number down to 1 (actually just multiplies)   ",
 
-    '8mix'  => "c8  NoW___InModule,LukeSmith inspired new PulseAudio bash  script mixer   ", # K3MM0WFY:added simple shL script around `pulsemixer` techncly
-    'mix8'  => "c8  Now___InModule,`pmix`  deriv8ive  for PulseAudio Curses::Simp mixer   ", # flesh out commandz && CLI before bilding new Curses interface
+    '8mix'  => "c8  NowmixInModule,LukeSmith inspired new PulseAudio bash  script mixer   ", # K3MM0WFY:added simple shL script around `pulsemixer` techncly
+    'mix8'  => "c8  NowmixInModule,`pmix`  deriv8ive  for PulseAudio Curses::Simp mixer   ", # flesh out commandz && CLI before bilding new Curses interface
     '8trm'  => "c8  TeRMinal-like applic8ion (a slow experimental SDL backtick wrapper)   ", # mAB add 8trm features to GnomTerm source instead of SDL App
-    'c8'    => "c8 *`cat` && `cut` replacement taking fields list ranges of b64 indexes   ", # fleshd out interface for both pretty well now
+    'c8'    => "c8 *`cat` && `cut` replacement taking fields list ranges of b64 indices   ", # fleshd out interface for both pretty well now
     'ckm8'  => "c8  ChecKMate custom text Chess SDL applic8ion  (or in Curses::Simp -c)   ", # still need to fix Simp to not core-dump on exit
     'd8ok'  => "c8  Curses::Simp text-mode clOcK with varying speed,form,and meter bars   ",
     'die8'  => "c8  terse random dice-rolling  utility  (as similar to HTTP://Rolz.Org)   ",
     'pmix'  => "c8  Curses::Simp /dev/mixer manipul8ion utility (not used byPulseAudio)   ", # mAB rEtIr aftr mix8 good sinc Pulse proly fUtur
-    'prym'  => "c8  Curses::Simp prime-number gener8ion screensaver (currently broken!)   ", # port to Prim as new CLI && Curses IF
     'qbix'  => "c8  Curses::Simp Rubik's Cube as spoonerism 'QbixRube' text applic8ion    ", # port to qbx3 wi CLI, Curses, && GL IFz
     'shl8'  => "c8  Source-HighLight8 utility colors detectable syntax within Octology    ", # flesh out c8 hIlItng systM && incrEs suported formatz
     'tsgr'  => "c8 *Test Select Graphic Rendition escapes && xterm-256color Blocks (-b)   ", # mAB shud mv2 a8 lIk tstc?
@@ -1077,7 +1075,11 @@ sub sumb{  my $widt=0;$widt=1 if(exists($ENV{'COLUMNS'}) && $ENV{'COLUMNS'} >= 1
     ); # mAB add reverse oper8ion with scaling back down4neg8iv option
   if($s2pf){%bfst=();} # empty BinFileSummaryText hash (so it gets set to just 2nd page d8a)
   my %b2st=( # Bin2ndSummaryText
-   #'drkh'  => "a8  converter from 6-char HEX to b64 RgbLow with 8th of intensities on    ", # mIt want2add a8:drkh with 8ths of colr chanLz from input too
+    'acS'   => "a8  apt-cache Search wrapper which coll8z`dpkg -l`resultz into together   ", # hLp shO nstl8n st8us of DscrIbd packages of searched interest;
+    'CJ'    => "a8  Covid-19 (`b64 19`) script to parse Comma-SepR8d-Values && compute    ", # mAB belongs with a different module than a8.pm?
+    'cvdJ'  => "a8  CoViD-19 (`b10  J`) script to get d8a-files && parse key fields out   ", # mAB belongs with a different module than a8.pm?
+    'drkh'  => "a8  converter from 6-char HEX to b64 RgbLow with 8th of intensities on    ", # mIt want2add a8:drkh with 8ths of colr chanLz from input too
+    'e'     => "a8  EDITOR wrapper which includes fragile old package templ8ing system    ", # mAB rEwrIt mOst Useful BhAVor as nw clEnr a8:e or let dokr:e
     'uri'   => "a8  URI capitaliz8ion Utility resulting from Beppu-san's procrastin8ion   ",
 
     'Fctz'  => "b8  FaCTorlZ listed (takes (lines-1) 47 and 1 b64 or 2 b256 parameters)   ", # `fctz 47 1` is like `fctz | b64` just with different nwln wrapz
@@ -1085,9 +1087,11 @@ sub sumb{  my $widt=0;$widt=1 if(exists($ENV{'COLUMNS'}) && $ENV{'COLUMNS'} >= 1
     'Prmz'  => "b8  PRiMe..Z listed up to filling in 48 lines with normally 160 columns   ",
     'Sumz'  => "b8  SUM8ionZ listed up to filling in 48 lines with normally 160 columns   ",
 
+    'prym'  => "c8  Curses::Simp prime-number gener8ion screensaver (currently broken!)   ", # port to Prim as new CLI && Curses IF
     'sloc'  => "c8  Beppu-san sent `SlowCat.pl` simul8ing default 9600 baud print speed   ",
 
-    'L'     => "d8 *barely reformatted `ls -vF` (which packs && pads && aligns densely)   ",
+    'bak'   => "d8  auto-save now d8-stamp in the end-name of a .bak/ BAcK-up file copy   ", # used to be called Pip::Utl.pm->bak() B4 migr8d 2 d8.pm method
+    'L'     => "d8 *barely reformatted `ls -Cv` (which packs&&pads&&aligns up2 5 dense)   ", # mAB shud ren 2 LsCv && mv from d8 2 a8 since duz!Uz --fulltime
 
     'pt'    => "Time::PT *for original PipTime module  (main precursor to Octology::d8)   ", # J1OL7CR8:DcIded2swpout Pg1 pt,bak,e 4 Pg2 tstn,supd,oupd ;
 
@@ -1098,15 +1102,15 @@ sub sumb{  my $widt=0;$widt=1 if(exists($ENV{'COLUMNS'}) && $ENV{'COLUMNS'} >= 1
     'U2b8'  => "U8  HTTPS://YouTube-DL.Org dl normal video file (default 1280x720 reso)   ",
     'U2bdl' => "U8  HTTPS://YouTube-DL.Org actual `youtube-dl` executable, just renamed   ",
     'Udl8'  => "U8  attempted`U2b8`reimplement8ion using Expect 2show DownLoad progress   ",
-    'Upd8'  => "U8  simple `wget`wrapper like`Upw8`&&`Upc8`but for ~/bin,not /usr/local   ",
-
-    'bak'   => "Utl  auto-save now d8-stamp in the end-name of a .bak/ backup file copy   ",
-    'e'     => "Utl  EDITOR wrapper which includes a fragile old package templ8 system    ", # mAB rEwrIt mOst Useful BhAVor as nw clEnr U8:e or let dokr:e
+    'Upd8'  => "U8  simple `wget`wrapper like`Upw8`&&`Upc8`but 4 ~/bin/,not /usr/local/   ",
 
     '3'     => "    NotYetInModule,`gst123` Expect wrapper,starting like `g3` but dur8s   ",
-    'tib'   => "    NotYetInModule,TabletInitButtons calling `xsetwacom` for Intuos Pad   ",
+    'tib'   => "    NotYetInModule,`xsetwacom` wrapper for Intuos Pad TabletInitButtons   ",
   ); # might want to add a8:g for new grep varE8ion && a8:s8 for standard && custom sorts && shuffles
   if($s2pf || $jpgz){for my $bink (keys(%b2st)){$bfst{$bink}=$b2st{$bink};}} # load Bin2ndSummaryText key=>value pairz over into main BinFileSummaryText hash
+# K3SM3JbM:these are no longer in Pip::Utl (old in there were renamed 'oldb' && 'olde'), but they have migr8d to d8.pm && a8.pm respectively;
+#   'bak'   => "Utl  auto-save now d8-stamp in the end-name of a .bak/ backup file copy   ",
+#   'e'     => "Utl  EDITOR wrapper which includes a fragile old package templ8 system    ", # mAB rEwrIt mOst Useful BhAVor as nw clEnr U8:e or let dokr:e
 # K3KMEnot:removed sym-link since just renamed `U2bdl` seems to be working just fine, leaving older /usr/local/bin/youtube-dl still accessible in addition;
 #youtube-dl'=>" U8  HTTPS://YouTube-DL.Org but just symbolic-link to l8st `U2bdl`   ", # nEd2shrink Dscriptn2fit lIn sinc SymLinkXeQtabl nAm2wId2fit4m@
 # HBPL7end:reordered by module sections,moved dic from wrong b8 to d8 section,retired ptold sinc shudBeasy2rEmk in d8 if evr nEdedAgN,mAd nw d8ow 2 calc dow;
@@ -2032,7 +2036,7 @@ sub cdst{ # Color DiSTance (derived from pm2x);pre-init what's necSary as new Xp
 " cdst - ColorDiSTance d8a gener8or  d8VS:$d8VS  Auth:$Auth;
         after any flags, pass in an integer parameter between 0..255 for just within x256 for now or use -X to give any 24-bit HEXadecimal rgb code instead;
   -h  - print this Help text and return; should add ways to moder8 toward increasingly useful results; actually without -N \@snls resets indices to 0..255;
-  -N  - NoNR  No iNdexes Reset (to leave for external management of limiting range to test against and removing new best selections);
+  -N  - NoNR  No iNdices Reset (to leave for external management of limiting range to test against and removing new best selections);
   -n  - SNRF  Search Named Rgb  Flag (nstd of default 0..255 of x256, use Named d8a as a set to test which was gener8d from colors.txt && various rgb.txt);
   -d  - NoDF  No Distances      Flag (also applies to -f Disabling Default Distances from Full); Named colors can't be properly colored just in terminal;
   -f  - FRMF  Full Result Match Flag (which will include distance scores before closest matching colors that all shared that score);
@@ -2833,6 +2837,556 @@ sub acS{ # apt-cache Search wrapper which coll8z dpkg -l resultz in together to 
       $rslt.=sprintf("$G%-${mxnl}s  $M%2s  $Y%-${mxvl}s  $R%-${mxal}s  $C%s$z\n",$pkgn,@{$fd8a{$pkgn}});}}
   if ($gflg){my $Wb=S('Wb');$rslt=~ s/($gstr)/$Wb$1$z$C/g;} # if gflg shud alsO hIlIt gstr Xplicit m@chz (but assuming folO wi Cyan in desc,!Green name)
   return($rslt);} # l8r mAB du -s st8us nstd of -l? mIt B much fastr 2du dpkg -l in bulk rathr than sO many baktix && hedr stripz;
+sub e{my($d8vs,$name)=('E4IM2Qjq','e'); # considering whether 8 alias && e shud B distinct for now to offer different options?
+  # 398GX2X: e crE8d by Pip@CPAN.Org to manage file Editing  # can't create merely sub 8{} in Perl here, but alias should wrap eventual vim clone
+  # 2du:refactor ~/.erc/ searching code from e,bak,updt,cfdd with ~/.erc/* into ~/.e/ instead (/rc$/ being ResourceConfig text files rather than subdir names)
+  #   mv .e/.erc .. && experiment with allowing perl with quotable d8a string hash maps when detected not mere sparsest split (which should also take comments)
+  #   mv .e/ex* ex.b64(Xpan)
+  #   add kwalitee:
+  #    - has_proper_version: remove letters? yep, time to
+  #    + has_changelog: need 'CHANGES' file to dup CHANGES section
+  #    + has_test_pod: needs test using Test::Pod to ck correctness
+  #    + has_test_pod_coverage: needs test using Test::Pod::Coverage
+  #    + no_pod_errors: fix them
+  #    + has_meta_yml: need 'META.yml' (auto through buildtool?) mk conform to latest spec: HTTP://Module-Build.SF.Net/META-spec-current.html
+  #    + has_example: file|dir e[gx]|demo w/ use cases (warn if !-e)
+  #    + dump SYNOPSIS to ex/synopsis.pl if !-e xmpl
+  #    + gen t/00podc.t w/ "use Test::Pod::Coverage 'tests' => '1'; pod_coverage_ok('fULnAME', 'POD Covered');"
+  #   ck if test.pl (&&!t/*.t) && mv to t/01test.t
+  #   study Module::Build && use it instead of e (or at least learn from it)
+  #   add gen of cmd-line wrappers
+  #   add dvl shortcuts (or path searching with globs?)
+  #   once new Simp works, mk `e dvl` bring up proj selector
+  # Notz:
+  #   OOP (Conway) p.96 minimum class documentation:
+  #   * name && purpose
+  #   * version of class documentation documents
+  #   * synopsis of how to use class
+  #   * more extensive description of class usage including:
+  #     - creation details
+  #     - (both object && class) methods available
+  #     - special features
+  #     - limitations
+  #   * diagnostics list with descriptions && known error conditions
+  #       which cannot be diagnosed
+  #   * environment variables that can (or must) be used
+  #   * other modules needed && how to get them if not via CPAN
+  #   * bugs && suggested workarounds
+  #   * cross-references to any other relevant documentation
+  #   * copyright notice
+  #   * name && contact details of author(s)
+#  =head1 NAME
+#    Full::Class::Name - one line summary of purpose of class
+#  =head1 VERSION
+#    This document refers to version N.NN of Full::Class::Name,
+#      released MMMM DD, YYYY.
+#  =head1 SYNOPSIS
+#    # Short examples of Perl code that illustrate the use of the class
+#  =head1 DESCRIPTION
+#  =head2 Overview
+#  =head2 Constructor && initialization
+#  =head2 Class && object methods
+#  =head2 Any other important information
+#  =head1 ENVIRONMENT
+#    List of environment variables && other O/S related information
+#      on which the class relies
+#  =head1 DIAGNOSTICS
+#  =over 4
+#  =item "eror message that may appear"
+#    Explanation of message
+#  =item "another eror message that may appear"
+#    Explanation of another message
+#  ...
+#  =back
+#  =head1 BUGS
+#    Description of known bugs (&& any work-arounds).
+#    Usually also includes an invitation to send the author bug reports.
+#  =head1 FILES
+#    List of any files or other Perl modules needed by the class && a
+#      brief explanation why.
+#  =head1 SEE ALSO
+#    Cross-references to any other relevant documentation.
+#  =head1 AUTHOR(S)
+#    Name(s) <e-mail address(es)>
+#  =head1 COPYRIGHT
+#    Copyright (c) YYYY(s), Author(s).  All Rights Reserved.
+#    This module is Free Software.  It may be used under the terms of the
+#    GNU GPL version 2.
+#  =cut
+  my $verb = 1; # verbose  flag
+  my $dbug = 0; # debug    flag
+  my $skip = 0; # skip     flag
+  my $mkfl = 1; # makefile flag
+  my $bdfl = 1; # Build.PL flag
+  my $bdfn = 'Build.PL'; # Build.PL filename (removing the dot will stop make from picking it up)
+  my $edit = $ENV{'EDITOR'};
+  my $home = $ENV{'HOME'};
+  my $ttyn = $ENV{'TTY'} || ''; 
+     $ttyn =     shift() || '' unless(length $ttyn);
+  my $file =     shift() || ''; my $optn;
+  if(length($ttyn)) {
+    if   ($ttyn =~ /^(\/dev\/(tty|vc\/))/) { $ttyn =~ s/^$1//;  }
+    elsif($ttyn =~ /^(\/dev\/pts\/)/     ) { $ttyn =~ s/^$1/x/; }
+    elsif(!length($file))                  { $file = $ttyn;     }
+  }
+  my $ercl = $home . '/.erc/e' . $ttyn; # Local  .erc/e$TTYN filelist
+  my $ercg = $home . '/.erc/eall';      # Global .erc/eall   filelist
+  my $cwdr = `pwd`; chomp($cwdr);
+  my %pref =('gl'   => $ercg, # Global file List (eall  )
+             'll'   => $ercl, #  Local file List (e$ttyn)
+             'rc'   => '~/.erc/.erc'         ,
+             'a'    => '~/.zshrc'            ,
+             'z'    => '~/.zshrc'            ,
+             'v'    => '~/.vimrc'            ,
+             'h'    => '~/.history'          ,
+            #'p'    => '~/dox/phonbook.txt'  ,
+            #'t'    => '~/dox/2du/Taki.txt'  ,
+             '2'    => '~/dox/2du/2du.ls'    ,
+            #'3'    => '~/dox/H3AR.Us/*.htm' ,
+            #'x'    => '~/dox/2du/8.txt'     , # was poor form 2 include a dash of UTF-8 chars while keeping just .txt (for ckm8 && sfv too);
+             '8'    => '~/dox/2du/8.utf'    );
+  if(-r "$home/.erc/.erc"){open(ERCF,'<',"$home/.erc/.erc");
+    while(<ERCF>){my @eflz=split;
+      if(@eflz==2&& defined($eflz[0])&& length($eflz[0])&& $eflz[0]!~/^#/&&
+                    defined($eflz[1])&& length($eflz[1])){ $pref{$eflz[0]}=$eflz[1]}}close(ERCF)}
+  my $escf = $file; $escf =~ s/([\.\(\)\s])/\\$1/g;
+  my @srch =(qr/^.*\/$escf/,
+             qr/^.*\/.*$escf/,
+             qr/$escf/,
+             qr/dvl\/.*$escf/);
+  my %podr =('name' => qr/NAME/, 
+             'vers' => qr/VERSION/, 
+             'syno' => qr/SYNOPSIS/, 
+             'desc' => qr/DESCRIPTION/, 
+             'lice' => qr/(LICENSE|COPYRIGHT)/, 
+             'auth' => qr/AUTHOR.?/ );
+  my %pkgd = (); my @ldat = (); my @gdat = (); my @pkgz = ();
+  if(-r $ercl && open(ERCL, '<', $ercl)) { chomp(@ldat = <ERCL>); close(ERCL); }
+  if(-r $ercg && open(ERCG, '<', $ercg)) { chomp(@gdat = <ERCG>); close(ERCG); }
+  my $line = '';
+  mkdir("$home/.erc", 0700) unless(-d "$home/.erc"); # mk sure ~/.erc/
+  if(!length($file) || $file =~ /^(l+|g+)$/){
+    if(@gdat && (!@ldat || $file =~ /^g+$/)){
+      if   (        !length($file)) { $file = $gdat[ 0]}
+      elsif(@gdat <= length($file)) { $file = $gdat[-1]}
+      else { $file = splice(@gdat, length($file),    1)}
+    } elsif(      @ldat                    ){
+      if   (        !length($file)) { $file = $ldat[ 0]}
+      elsif(@ldat <= length($file)) { $file = $ldat[-1]}
+      else { $file = splice(@ldat, length($file),    1)}}}
+  if(exists $pref{$file}) { $file = $pref{$file}; $file =~ s/~/$home/; }
+  if     ($file eq 'dvl') { system('cd ~/dvl; ls'); # 'dvl' file case
+  } elsif($file eq 'up' ) { updt();                 # 'up'  file case to update ~lib|bin
+  } elsif($file eq 'pkg') {                         # 'pkg' file case
+  # Possible to ck Perl's $^O for OS info.
+  #So generation (through `e pkg`) should:
+    $pkgd{'fail'} = 1;
+  # read optional specified pt version
+    $optn         = shift() || undef;
+  #  0) read shift().pm or last edited local for path holding .pm && MANIFEST
+    $pkgd{'wich'} = shift() || '';
+  # set abstract string to initially empty
+    $pkgd{'abst'} =            '';
+  #  1) obtain pIPtIME from $optn parameter or current system `pt`;
+    $pkgd{'ptim'} = Time::PT->new();                         # get current  pt()
+    $pkgd{'ptim'} = Time::PT->new('str' => $optn) if($optn); # get optional pt()
+    $pkgd{'ptpt'} = $pkgd{'ptim'}->expand(); # get expanded current pt()
+    # do special checks on wich to qualify valid packages or match wich first
+    unless(length($pkgd{'wich'}) && -r $pkgd{'wich'}) {
+      unless(-r $pkgd{'wich'}) { for(@ldat) { if(/\.pm$/)  { $pkgd{'wich'} = $_; last; } } } # search for LOCAL  .pm matches # should these ignore case?
+      unless(-r $pkgd{'wich'}) { for(@gdat) { if(/\.pm$/)  { $pkgd{'wich'} = $_; last; } } } # search for GLOBAL .pm matches
+    } # find a file that exists
+    if(-r $pkgd{'wich'}) {
+      $pkgd{'wpth'} = $pkgd{'wich'};
+      $pkgd{'wpth'} =~ s/^(.*)\/[^\/]*$/$1/; # isolate path
+      $pkgd{'wpth'} =~ s/\/lib\/.*$//; # get MANIFEST below lib/ if .pm there
+      $pkgd{'wman'} = $pkgd{'wpth'} . '/MANIFEST';
+      $pkgd{'wmsk'} = $pkgd{'wman'} . '.SKIP';
+      if(-r $pkgd{'wman'} && open(WMAN, '<', $pkgd{'wman'})) {
+        chomp(@{$pkgd{'mdat'}} = <WMAN>); close(WMAN); # save MANIFEST data
+        for(@{$pkgd{'mdat'}}) {
+          if   (!exists($pkgd{'wipm'}) && /\.pm$/              ) { $pkgd{'wipm'} = $pkgd{'wpth'} . '/' . $_; }
+          elsif( exists($pkgd{'wipm'}) && /\.pm$/              ) { push(@{$pkgd{'wopm'}}, $pkgd{'wpth'} . '/' . $_); } # more .pms than just 1st in MANIFEST
+          elsif(!exists($pkgd{'rdme'}) && /^README$/           ) { $pkgd{'rdme'} = 1; }
+          elsif(!exists($pkgd{'chgz'}) && /^CHANGES$/          ) { $pkgd{'chgz'} = 1; }
+          elsif(!exists($pkgd{'meta'}) && /^META\.ya?ml$/i     ) { $pkgd{'meta'} = 1; }
+          elsif(!exists($pkgd{'mkfl'}) && /^Makefile\.PL$/     ) { $pkgd{'mkfl'} = 1; }
+          elsif(!exists($pkgd{'bdfl'}) && /^Build\.PL$/        ) { $pkgd{'bdfl'} = 1; }
+          elsif(!exists($pkgd{'test'}) && /^t(est.pl|\/.+\.t)$/) { $pkgd{'test'} = 1;
+             if(!exists($pkgd{'podc'}) && /^t\/\d*podc\.t$/    ) { $pkgd{'podc'} = 1; } }
+          elsif(!exists($pkgd{'xmpl'}) && /^((examples?|samples?|demos?)\.p(m|od)|((ex|eg|examples?|samples?|demos?)\/.+))$/i) { $pkgd{'xmpl'} = 1; }
+          elsif(                          /^bin\//             ) { push(@{$pkgd{'binz'}}, $_); }
+        }
+        print ":*WARN*: No ex/*        found.  Auto-adding ex/synopsis.pl.\n" unless(exists($pkgd{'xmpl'}));
+        if(exists($pkgd{'wipm'}) && open(WIPM, '<', $pkgd{'wipm'})) {
+          chomp(@{$pkgd{'pdat'}} = <WIPM>); close(WIPM); # save .PM data
+          $pkgd{'flag'}->{'namesect'} = 0; 
+          $pkgd{'flag'}->{'chngsect'} = 0;
+          $pkgd{'flag'}->{'chngtext'} = 0;
+          for(@{$pkgd{'pdat'}}) { # find Full Pkg Name, VERSION, && all POD headings in .pm file
+            if($pkgd{'flag'}->{'namesect'}) {
+              if(/^\s*$/) {
+                $pkgd{'flag'}->{'namesect'} = 0 if($pkgd{'abst'});
+              } else {
+                $pkgd{'abst'} .= ' ' if($pkgd{'abst'});
+                $pkgd{'abst'} .= qq($_);
+              }
+            } elsif($pkgd{'flag'}->{'chngsect'}) {
+              if(/^\s*\*\s*/) {
+                $pkgd{'flag'}->{'chngsect'} = 0;
+                $pkgd{'flag'}->{'chngtext'} = 1 if(/^\s*\*\s*\S/);
+              }
+            } elsif(/^package\s+([^;]+);/ && !exists($pkgd{'fnam'})) { 
+              $pkgd{'pnam'} = $pkgd{'fnam'} = $1; 
+              $pkgd{'pnam'} =~ s/^.*:://; # should be same as wipm less /\.pm$/
+              if($pkgd{'wipm'} !~ /$pkgd{'pnam'}\.pm$/) {
+                print ":*WARN*: MANIFEST .pm file: $pkgd{'wipm'} differs from\n";
+                print "  first found package name: $pkgd{'pnam'}.pm!\n";
+                print "  Assuming MANIFEST is correct && ignoring found name.\n";
+                $pkgd{'pnam'} = $pkgd{'wipm'};
+                $pkgd{'pnam'} =~ s/(^.*\/|\.pm$)//g;
+                delete($pkgd{'fnam'});
+              }
+            # CPAN: /([\$*])(([\w\:\']*)\bVERSION)\b.*\=/
+            } elsif(/^\s*(my|our)\s+\$VERSION\s*=\s*['"]([^'"]+)['"]\s*;/) {
+  #  2) update .pm $VERSION line with pIPtIME in new sub copy
+              $pkgd{'pver'} = $2; $pkgd{'pver'} =~ s/pIPtIME/$pkgd{'ptim'}/;
+            } elsif(/^\s*(require|use)\s+([^ ;]+)/) { # find reqs
+              $pkgd{'reqs'}->{$2} = 0;
+            } elsif(/^\s*(my|our)\s+\$\w+\s*=\s*eval\(\s*\"\s*use\s+([^ ;]+)/) { # find optional uses (maybe should not require eval assignment)
+              $pkgd{'reqs'}->{$2} = 0;
+            } elsif(/^=head1\s+/) { 
+              for my $reky (keys(%podr)) {
+                if(/$podr{$reky}/) { 
+                  $pkgd{'flag'}->{$reky}      = 1; 
+                  $pkgd{'flag'}->{'namesect'} = 1 if($reky eq 'name');
+                }
+              }
+            } elsif(/^=item(\s+.*?)pKGvERS  ptptIME/) { 
+              $pkgd{'flag'}->{'chngsect'} = 1;
+            }
+          }
+          $pkgd{'abst'} =~ s/^\s*(fULnAME|$pkgd{'fnam'})\s*-\s*//;
+          $pkgd{'abst'} =~ s/'/\\'/g;
+          if(exists $pkgd{'pver'} && $pkgd{'pver'} =~ /^\d+\.\d+\.[0-9A-Za-z._]{7}$/) {
+            $pkgd{'fnem'} = $pkgd{'fnam'}; $pkgd{'fnem'} =~ s/::/-/g;  # build Package PaTH
+            $pkgd{'fnim'} = $pkgd{'fnam'}; $pkgd{'fnim'} =~ s/::/\//g; # build Package PaTH w/ slashes
+            $pkgd{'fnym'} = $pkgd{'fnim'}; $pkgd{'fnym'} =~ s/^.*\///; # isolate file name
+            $pkgd{'ppth'} = $pkgd{'wpth'} . '/' . $pkgd{'fnem'} . '-' . $pkgd{'pver'};
+            # update template module CHANGES section only! && only if chngdtext
+            if($pkgd{'flag'}->{'chngtext'} && open(WIPM, '>', $pkgd{'wipm'})) {
+              for(@{$pkgd{'pdat'}}) {
+                s/^((my|our)\s+\$DBUG\s*=\s*)1;/${1}0;/i; # turn off DBUG for pkg
+                print WIPM "$_\n";
+                if(/^=item(\s+.*?)pKGvERS  ptptIME/) { # get dynamic CHANGES line
+                  print WIPM "\n* \n\n=item$1$pkgd{'pver'}  $pkgd{'ptpt'}\n";
+                }
+              } close(WIPM);
+            } else { die "!*ER0R*! Please update the CHANGES text for: $pkgd{'wipm'}!\n"; }
+            for(@{$pkgd{'pdat'}}) { # loop through .pm data again to perform all template substitutions
+              s/pIPtIME/$pkgd{'ptim'}/g; s/fULnAME/$pkgd{'fnam'}/g; s/pKGnAME/$pkgd{'pnam'}/g;
+              s/ptptIME/$pkgd{'ptpt'}/g; s/fULnEME/$pkgd{'fnem'}/g; s/pKGvERS/$pkgd{'pver'}/g;
+            }
+            if(exists($pkgd{'wopm'})) {
+              for my $wopm (@{$pkgd{'wopm'}}) {
+                open(WOPM, '<', $wopm); chomp(@{$pkgd{'wdat'}->{$wopm}} = <WOPM>); close(WOPM); # save 2ndary .PM data
+                for(@{$pkgd{'wdat'}->{$wopm}}) { # scan for reqs && do substs
+                  if     ($pkgd{'flag'}->{'chngsect'}) {
+                    if(/^\s*\*\s*/) { $pkgd{'flag'}->{'chngsect'} = 0; delete($pkgd{'flag'}->{'chngsect'}) if(/^\s*\*\s*\S/); }
+                          #  2) update .pm $VERSION line with pIPtIME in new sub copy of 2ndary
+                  } elsif(/^\s*(my|our)\s+\$VERSION\s*=\s*['"]([^'"]+)['"]\s*;/    ) { $pkgd{'pver'} = $2; $pkgd{'pver'} =~ s/pIPtIME/$pkgd{'ptim'}/;
+                  } elsif(/^\s*(require|use)\s+([^ ;]+)/                           ) { $pkgd{'reqs'}->{$2} = 0; # find reqs in 2ndary
+                  } elsif(/^\s*(my|our)\s+\$\w+\s*=\s*eval\(\s*\"\s*use\s+([^ ;]+)/) { $pkgd{'reqs'}->{$2} = 0; # find optional uses in 2ndary
+                  } elsif(/^=item(\s+.*?)pKGvERS  ptptIME/                         ) { $pkgd{'flag'}->{'chngsect'} = 1; }
+                }
+                if(exists $pkgd{'flag'}->{'chngsect'}) { die "!*ER0R*! Please update the CHANGES text for: $wopm!\n"; }
+                for(@{$pkgd{'wdat'}->{$wopm}}) { # loop through .pm data again to perform all template substitutions
+                  s/pIPtIME/$pkgd{'ptim'}/g; s/fULnAME/$pkgd{'fnam'}/g; s/pKGnAME/$pkgd{'pnam'}/g;
+                  s/ptptIME/$pkgd{'ptpt'}/g; s/fULnEME/$pkgd{'fnem'}/g; s/pKGvERS/$pkgd{'pver'}/g;
+                }
+              }
+            }
+            chdir($pkgd{'wpth'});
+  #  3) create a subdir with $pKGnAME-$VERSION
+            mkdir($pkgd{'ppth'}, 0755) unless(-d $pkgd{'ppth'});
+            if(-d $pkgd{'ppth'}) {
+  #  4) copy everything in MANIFEST (except in .SKIP) into new sub
+              for(@{$pkgd{'mdat'}}) { # copy MANIFEST files (handle .SKIP?)
+                mkdir("$pkgd{'ppth'}/lib", 0755) unless(-d "$pkgd{'ppth'}/lib" || $_ !~ /^lib\//);
+                mkdir("$pkgd{'ppth'}/bin", 0755) unless(-d "$pkgd{'ppth'}/bin" || $_ !~ /^bin\//);
+                my $fpth = $pkgd{'ppth'} . '/' . $_;
+                $fpth =~ s/^(.*)\/[^\/]*$/$1/; # isolate path
+                mkdir($fpth, 0755) unless(-d $fpth);
+                open(DSTF, ">$pkgd{'fnem'}-$pkgd{'pver'}/$_") or die "!*ER0R*! Couldn't open(DSTF, $pkgd{'fnem'}-$pkgd{'pver'}/$_)!\n";
+                if     ($pkgd{'wipm'} =~ /$_$/) { # handle .pm file from template
+                  for my $line (@{$pkgd{'pdat'}}                            ) { print DSTF "$line\n"; }
+                } elsif(exists($pkgd{'wdat'}) && exists($pkgd{'wdat'}->{$pkgd{'wpth'} . '/' . $_}) && @{$pkgd{'wdat'}->{$pkgd{'wpth'} . '/' . $_}}) {
+                  for my $line (@{$pkgd{'wdat'}->{$pkgd{'wpth'} . '/' . $_}}) { print DSTF "$line\n"; }
+                } elsif(open(SRCF, '<', $_)) {                                  print DSTF  $line while($line = <SRCF>);
+                  if(/MANIFEST$/) {
+                    print DSTF "t/00pod.t\n"; # always add simple Test::Pod test && expect ::Coverage to exist manually
+                    print DSTF "t/00podc.t\n"     unless(exists($pkgd{'podc'}));
+                    print DSTF "ex/synopsis.pl\n" unless(exists($pkgd{'xmpl'}));
+                    print DSTF "MANIFEST.SKIP\n"  unless(-r     $pkgd{'wmsk'} );
+                    print DSTF "README\n"         unless(exists($pkgd{'rdme'}));
+                    print DSTF "CHANGES\n"        unless(exists($pkgd{'chgz'}));
+                    print DSTF "META.yml\n"       unless(exists($pkgd{'meta'}));
+                    print DSTF "Makefile.PL\n"    unless(exists($pkgd{'mkfl'}) || !$mkfl);
+                    print DSTF "$bdfn\n"          unless(exists($pkgd{'bdfl'}) || !$bdfl);
+                    if($pkgd{'fnam'} eq 'Pip::Utl') { # add Utl bin wrappers
+                      for my $func (@EXPORT) { print DSTF "bin/$func\n"; }
+                    }
+                  }
+                  close(SRCF);
+                } else { print "!*ER0R*! Couldn't open SourceFile: $_ for reading!\n"; }
+                close(DSTF);
+                if(-x $_){chmod(0755,"$pkgd{'fnem'}-$pkgd{'pver'}/$_")}
+                else     {chmod(0644,"$pkgd{'fnem'}-$pkgd{'pver'}/$_")}
+              }
+              if($pkgd{'fnam'} eq 'Pip::Utl'){ # generate Utl bin wrappers
+                mkdir(           "$pkgd{'fnem'}-$pkgd{'pver'}/bin", 0755) unless(-d "$pkgd{'fnem'}-$pkgd{'pver'}/bin");
+                for(@EXPORT){
+                  open( GENU,'>',"$pkgd{'fnem'}-$pkgd{'pver'}/bin/$_");
+                  print GENU "#!/usr/bin/perl -MPip::Utl -e $_(\@ARGV);\n";
+                  close(GENU);
+                 #cp(.zshrc,"$pkgd{'fnem'}-$pkgd{'pver'}/bin/");
+                 #cp(.vimrc,"$pkgd{'fnem'}-$pkgd{'pver'}/bin/");
+                }
+              }
+  #  5) warn if no test.pl script exists
+              if(exists $pkgd{'test'}){
+  #  6) warn if pod doesn't exist, doesn't have NAME, VERSION, SYNOPSIS, 
+  #    DESCRIPTION, LICENSE|COPYRIGHT, or AUTHOR.? headings
+                for(@{$pkgd{'pdat'}}){if(/^=(head1|cut)/){$pkgd{'pode'}=1;last;}} # verify POD exists in PM
+                if(exists $pkgd{'pode'}){ # ck for POD head1s
+                  for my $reky (keys(%podr)){print "!*ER0R*! Expected POD heading: $reky missing!\n" unless(exists $pkgd{'flag'}->{$reky});}
+                  mkdir("$pkgd{'fnem'}-$pkgd{'pver'}/t", 0755) unless(-d "$pkgd{'fnem'}-$pkgd{'pver'}/t");
+                  open(   PTFL,'>', "$pkgd{'fnem'}-$pkgd{'pver'}/t/00pod.t" );print PTFL 'use Test::Pod; all_pod_files_ok();';close(PTFL);
+                  unless(exists $pkgd{'podc'}){ print ":*WARN*: No t/\\d*podc.t found.  Auto-adding t/00podc.t.\n"; # generate t/00podc.t
+                    open( PCFL,'>', "$pkgd{'fnem'}-$pkgd{'pver'}/t/00podc.t" );
+                    print PCFL "use Test::Pod::Coverage 'tests' => '1'; pod_coverage_ok('$pkgd{'fnam'}', 'POD Covered');"   ;close(PCFL); }
+  #  7a) generate MANIFEST.SKIP if it doesn't exist
+                  unless(-r     $pkgd{'wmsk'}){
+                    open( WMSK,'>', "$pkgd{'fnem'}-$pkgd{'pver'}/MANIFEST.SKIP");
+                    print WMSK "\\bCVS\\b\n";
+                    print WMSK "^Makefile\$\n";
+                    print WMSK "^MANIFEST\\.bak\$\n";
+                    print WMSK "^updt.*\$\n";
+                    print WMSK "\\.bak\$\n";
+                    print WMSK "\\.swp\$\n";
+                    print WMSK "\\..*\\.swp\$\n";
+                    print WMSK "\\b\\.xvpics\\b\n";
+                    print WMSK "~\$\n";
+                    close(WMSK);}
+  #  7b) generate README  from pod with pIPtIME && pKGnAME if necessary
+                  unless(exists $pkgd{'rdme'}){  # generate README  from pod
+                    my $podt = Pod::Text->new(); # Read POD from A && write B
+                    if($pkgd{'wich'} =~ /\/lib\/$pkgd{'fnim'}/){
+                      $podt->parse_from_file("$pkgd{'fnem'}-$pkgd{'pver'}/lib/$pkgd{'fnim'}.pm", "$pkgd{'fnem'}-$pkgd{'pver'}/README");}
+                    else                                       {
+                      $podt->parse_from_file("$pkgd{'fnem'}-$pkgd{'pver'}/$pkgd{'fnym'}.pm"    , "$pkgd{'fnem'}-$pkgd{'pver'}/README");}}
+                  mkdir("$pkgd{'fnem'}-$pkgd{'pver'}/ex", 0755) unless(-d "$pkgd{'fnem'}-$pkgd{'pver'}/ex");
+                  unless(exists($pkgd{'xmpl'})){my $done = 0; # generate ex/synopsis.pl from README
+                    open(RMFL, '<', "$pkgd{'fnem'}-$pkgd{'pver'}/README");
+                    open(EXFL, '>', "$pkgd{'fnem'}-$pkgd{'pver'}/ex/synopsis.pl");
+                    while(    !$done && ($line = <RMFL>)){ if(uc($line) eq "SYNOPSIS\n"){
+                        while(!$done && ($line = <RMFL>)){
+                          if($line =~ /^\w+/) { $done = 1;                        } else { $line =~ s/^ {6}//; print EXFL $line; } }
+                    } } close(EXFL); close(RMFL);
+                  }
+  #  7c) generate CHANGES from README                      if necessary
+                  unless(exists $pkgd{'chgz'}) { my $done = 0; # generate CHANGES from README
+                    open(RMFL, '<',             "$pkgd{'fnem'}-$pkgd{'pver'}/README");
+                    open(CHFL, '>',             "$pkgd{'fnem'}-$pkgd{'pver'}/CHANGES");
+                    while(    !$done && ($line = <RMFL>)) { if(uc($line) eq "CHANGES\n") { print CHFL $line;
+                        while(!$done && ($line = <RMFL>)) {
+                          if($line =~ /^\w+/) { $done = 1;                        } else { print CHFL $line; } }
+                    } } close(CHFL); close(RMFL);
+                  }
+  #  7d) gen META.yml if it doesn't exist
+                  unless(exists($pkgd{'meta'})) {
+                    open(MYFL, '>', "$pkgd{'fnem'}-$pkgd{'pver'}/META.yml");
+                    print MYFL
+"--- #YAML:1.0
+name: $pkgd{'fnem'}
+abstract: $pkgd{'abst'}
+version: $pkgd{'pver'}
+author:
+  - PipStuart <Pip\@CPAN.Org>
+license: gpl
+distribution_type: module
+requires:"; # should probably also add provides: section && dynamic_config: 0 (except for Tk::AbstractCanvas?)
+                    if(exists($pkgd{'reqs'})) {
+                      for(sort {$a cmp $b} keys(%{$pkgd{'reqs'}})) {
+                        unless(/^(strict|warnings|base|vars|constant|overload|Carp|Exporter|objs|fULnAME|.*pKGnAME)$/) {
+                          my $wtpm = $_; my $inwo = 0; # flag for found in @wopm
+                          $wtpm =~ s/::/\//g; $wtpm .= '.pm';
+                          $inwo = 1 if($pkgd{'wipm'} =~ /$wtpm$/);
+                          if(exists($pkgd{'wopm'}) && @{$pkgd{'wopm'}}) {
+                            for my $tswo (@{$pkgd{'wopm'}}) {
+                              $inwo = 1 if($tswo =~ /$wtpm$/);
+                            }
+                          }
+                          printf MYFL "\n  $_: 0" unless($inwo);
+                        }
+                      }
+                    }
+                    print MYFL "
+recommends:
+build_requires:
+  Test: 0
+  Test::Pod: 0
+  Test::Pod::Coverage: 0
+urls:
+  license: HTTP://FSF.Org/licensing/licenses/gpl.txt
+meta-spec:
+  version: 1.3
+  url: HTTP://Module-Build.SourceForge.Net/META-spec-v1.3.html
+generated_by: $name pkg v$VERSION\n"; # YAML files need last line to end in a newline!
+                    close(MYFL);
+                  }
+  #  8) gen Makefile.PL && Build.PL if they don't exist
+                  unless(exists($pkgd{'mkfl'}) || !$mkfl) {
+                    open(MKFL, '>', "$pkgd{'fnem'}-$pkgd{'pver'}/Makefile.PL");
+                    print MKFL
+"use ExtUtils::MakeMaker;
+# See lib/ExtUtils/MakeMaker.pm for details of how to influence
+#   the contents of the Makefile that is written.
+WriteMakefile(
+  'NAME'         => '$pkgd{'fnam'}',
+  'VERSION'      => '$pkgd{'pver'}',
+  'ABSTRACT'     => '$pkgd{'abst'}',
+  'AUTHOR'       => 'PipStuart <Pip\@CPAN.Org>',
+  'EXE_FILES'    => [ \n";
+                    for(@{$pkgd{'binz'}}) { 
+                      if(-f "$pkgd{'fnem'}-$pkgd{'pver'}/$_" &&
+                         -x "$pkgd{'fnem'}-$pkgd{'pver'}/$_") {
+                        print MKFL (' ' x 22) . "'$_',\n";
+                      }
+                    }
+                    print MKFL (' ' x 20) . "],
+  'PREREQ_PM'    => {";
+                    if(exists($pkgd{'reqs'})) {
+                      $pkgd{'reqs'}{'Test'               } = 0 unless(exists($pkgd{'reqs'}{'Test'               }));
+                      $pkgd{'reqs'}{'Test::Pod'          } = 0 unless(exists($pkgd{'reqs'}{'Test::Pod'          }));
+                      $pkgd{'reqs'}{'Test::Pod::Coverage'} = 0 unless(exists($pkgd{'reqs'}{'Test::Pod::Coverage'}));
+                      for(sort {$a cmp $b} keys(%{$pkgd{'reqs'}})) {
+                        unless(/^(strict|warnings|base|vars|constant|overload|fULnAME|Carp|Exporter|objs|.*pKGnAME)$/) {
+                          my $wtpm = $_; my $inwo = 0; # flag for found in @wopm
+                          $wtpm =~ s/::/\//g; $wtpm .= '.pm';
+                          $inwo = 1 if($pkgd{'wipm'} =~ /$wtpm$/);
+                          if(exists($pkgd{'wopm'}) && @{$pkgd{'wopm'}}) {
+                            for my $tswo (@{$pkgd{'wopm'}}) {
+                              $inwo = 1 if($tswo =~ /$wtpm$/);
+                            }
+                          }
+                          printf MKFL "\n    %-32s => 0,", "'" . $_ . "'" unless($inwo);
+                        }
+                      }
+                    }
+                    print MKFL "
+  }, # Module::Name => 1.1,
+  'dist'         => { 'COMPRESS' => 'gzip', 'SUFFIX' => 'tgz' },
+);";
+                    close(MKFL);
+                  }
+                  unless(exists($pkgd{'bdfl'}) || !$bdfl) { # maybe instead, just /^require 'Makefile.PL';$/ to smooth start
+                    open(BDFL, '>', "$pkgd{'fnem'}-$pkgd{'pver'}/$bdfn");
+                    print BDFL
+"#!/usr/bin/perl
+use Module::Build;
+my \$mbld = Module::Build->new(
+# 'module_name'                   => '$pkgd{'fnam'}',
+  'dist_name'                     => '$pkgd{'fnem'}',
+# 'dist_version_from'             => '$pkgd{'fnym'}.pm',
+  'dist_version'                  => '$pkgd{'pver'}',
+  'dist_abstract'                 => '$pkgd{'abst'}',
+  'dist_author'                   => 'PipStuart <Pip\@CPAN.Org>',
+# 'create_readme'                 => '1',
+# 'create_makefile_pl'            => '1', # 'traditional',
+  'license'                       => 'gpl',
+  'script_files'                  => {\n";
+                    for(@{$pkgd{'binz'}}) { 
+                      if(-f "$pkgd{'fnem'}-$pkgd{'pver'}/$_" &&
+                         -x "$pkgd{'fnem'}-$pkgd{'pver'}/$_") {
+                        printf BDFL "    %-31s => '1',\n", "'$_'";
+                      }
+                    }
+                    print BDFL "  },\n";
+                    if(!-d 'lib') {
+                      print BDFL
+"  'pm_files'                      => {\n";
+                      printf BDFL "    %-31s => 'lib/$pkgd{'fnim'}.pm',\n  },\n", "'$pkgd{'fnym'}.pm'";
+                    }
+                    print BDFL
+"  'requires'                      => {\n";
+                    if(exists($pkgd{'reqs'})) {
+                      for(sort {$a cmp $b} keys(%{$pkgd{'reqs'}})) {
+                        unless(/^(strict|warnings|base|vars|constant|overload|fULnAME|Carp|Exporter|objs)$/) {
+                          my $wtpm = $_; my $inwo = 0; # flag for found in @wopm
+                          $wtpm =~ s/::/\//g; $wtpm .= '.pm';
+                          $inwo = 1 if($pkgd{'wipm'} =~ /$wtpm$/);
+                          if(exists($pkgd{'wopm'}) && @{$pkgd{'wopm'}}) {
+                            for my $tswo (@{$pkgd{'wopm'}}) {
+                              $inwo = 1 if($tswo =~ /$wtpm$/);
+                            }
+                          }
+                          printf BDFL "    %-31s => '0',\n", "'$_'" unless($inwo);
+                        }
+                      }
+                    }
+                    print BDFL "  },\n);\n\$mbld->create_build_script();";
+                    close(BDFL);
+                  }
+                  mkdir('.bak', 0755) unless(-d '.bak'); # zp new dir into .bak/
+  #  9) zp new dir into .bak/NAME.tgz then remove dir
+                  system("tar czfp .bak/$pkgd{'fnem'}-$pkgd{'pver'}.tgz $pkgd{'fnem'}-$pkgd{'pver'}");
+                  if(-r ".bak/$pkgd{'fnem'}-$pkgd{'pver'}.tgz") { 
+                    # success so go ahead && recursively remove all old data
+                    system("rm -rf $pkgd{'fnem'}-$pkgd{'pver'}/"); # rm all
+                    $pkgd{'pver'} =~ s/\.(.)(.)(.)(.)(.)(.)(.)$/.\e[1;31m$1\e[0;33m$2\e[1;33m$3\e[1;32m$4\e[1;36m$5\e[1;34m$6\e[1;35m$7\e[1;32m/;
+                    $pkgd{'pver'} =~ s/^(\d+)\.(\d+)\./\e[1;33m$1\e[1;37m.\e[1;36m$2\e[1;37m./;
+                    print "Successfully Packaged: .bak/$pkgd{'fnem'}-$pkgd{'pver'}.tgz!\n"; 
+                    $pkgd{'fail'} = 0; 
+                  }
+                }else{print "!*ER0R*! No POD found within package: $pkgd{'wipm'}!\n";
+                      print "  Please define some Perl Documentation in your module.\n"}
+              }  else{print "!*ER0R*! No test file detected in MANIFEST!  Please define either\n";
+                      print "  a test.pl file or t/TESTNAME.t && add it to MANIFEST.\n"}}
+          }      else{$pkgd{'pver'}='' unless(exists $pkgd{'pver'});
+                      print "!*ER0R*! Detected VERSION: $pkgd{'pver'} doesn't match expected\n";
+                      print "  format of \$MAJOR.\$MINOR.\$PIPTIME! (eg. 1.0.37SLNGN)\n"}}}}
+    if($pkgd{'fail'}){print "!*ER0R*! \`e pkg\` couldn't locate a suitable MANIFEST file!\n";
+                      print "  Please run it again as \`e pkg /path/to/pkg/MANIFEST\`.\n";
+      if($dbug      ){print "\nPackage Hash:\n"; print "$_:$pkgd{$_}\n" for(keys(%pkgd))}}
+  }elsif($file eq'ul'){ # special 'ul' file case for completed pkgs; # first ck if cwd is 2..4 deep from a /lib/
+    if   (-d       '../../lib' && -d       '../../.bak' && !-d       '../../../../home'){chdir(         '../..')}
+    elsif(-d    '../../../lib' && -d    '../../../.bak' && !-d    '../../../../../home'){chdir(      '../../..')}
+    elsif(-d '../../../../lib' && -d '../../../../.bak' && !-d '../../../../../../home'){chdir(   '../../../..')}
+    unless(-d '.bak'){die "!*ER0R*! Couldn't find '.bak' directory with .tgz file to cpan-upload-http!\n"}
+    chdir(    '.bak'); # then abov look in .bak for the  newest x-pt.tgz file && run cpan-upload-http on it
+    @pkgz=reverse(sort(glob("*.???????.tgz")));
+    unless(@pkgz    ){die "!*ER0R*! Couldn't find .tgz file!\n"}
+    $_   = $pkgz[0];s/\.(.)(.)(.)(.)(.)(.)(.)\.tgz$/.\e[1;31m$1\e[0;33m$2\e[1;33m$3\e[1;32m$4\e[1;36m$5\e[1;34m$6\e[1;35m$7\e[1;32m.tgz/;
+                    s/-(\d+)\.(\d+)\./-\e[1;33m$1\e[1;37m.\e[1;36m$2\e[1;37m./;
+    print  "cpan-upload-http -verbose : $_...\n"; # `echo -n "Testing cpan-upload-http - please ignore this file." >please-ignore`;
+    system("cpan-upload-http -verbose $pkgz[0]");chdir('..');
+  }else{ # regular file case
+    for my $qrex (@srch){unless(-r $file){for(@ldat){if(/$qrex/){$file=$_;last}}}} # search for progressively easier LOCAL  matches; # should it ignore case?
+    for my $qrex (@srch){unless(-r $file){for(@gdat){if(/$qrex/){$file=$_;last}}}} # search for progressively easier GLOBAL matches; # should it ignore case?
+    if($verb){die "!*ER0R*! Can't edit directory: $file!" if(-d $file)}
+    $file =~ s/^\.\//$cwdr\//;
+    $file =~ s/^\~\//$home\//;
+    $file =$cwdr . '/' . $file unless($file =~ /^\//);
+    for(my $i=0;$i<@ldat;$i++){splice(@ldat, $i--, 1) if($file eq $ldat[$i])}
+    for(my $i=0;$i<@gdat;$i++){splice(@gdat, $i--, 1) if($file eq $gdat[$i])}
+    unshift(@ldat, $file);
+    unshift(@gdat, $file);
+    if(open(ERCL, ">$ercl")){print ERCL "$_\n" for(@ldat);close(ERCL)}
+    else                    {print("!*ER0R*! Couldn't update Local  erc file: $ercl!\n")}
+    if(open(ERCG, ">$ercg")){print ERCG "$_\n" for(@gdat);close(ERCG)}
+    else                    {print("!*ER0R*! Couldn't update Global erc file: $ercg!\n")}
+    system(qq($edit +\\'\\" $file))}}
 8;
 
 =encoding utf8
@@ -2870,7 +3424,7 @@ a8 object method which traverses back through the components to reconstruct the 
 =head2 bfr8c()
 
                 bfr8c    b8c    d8c   dur8c @d8cl  d8cs  a8c   chti  c8fn  o8 S2   c2  S c   sS    lodl @Monz @Mon     %mc2F %mc2b %mF2c %mb2c @Kana  %sb10
- $SKp8 $SKp0 $SKp1 $SKp2 b8clr  $SKpf $SKpt %pmap %cmap       %pl8n  ftst acS   %f8fm %f8pm %sgrm %sgrn @Dayz @Day  lrc      comma  curs  sumb @x256  @sb64
+ $SKp8 $SKp0 $SKp1 $SKp2 b8clr  $SKpf $SKpt %pmap %cmap       %pl8n  ftst acS e %f8fm %f8pm %sgrm %sgrn @Dayz @Day  lrc      comma  curs  sumb @x256  @sb64
     $z    $k    $r    $o    $y    $g     $c $SKpb    $m    $p    $w  tstc    $K    $R    $O    $Y    $G    $C    $B    $M    $P    $W    %p622 %p222   upd8
          $bk   $br   $bo   $by   $bg    $bc   $bb   $bm   $bp   $bw         $hK   $hR   $hO   $hY   $hG   $hC   $hB   $hM   $hP   $hW     h2rl  rl2h   drkh
                                                                             $HK   $HR   $HO   $HY   $HG   $HC   $HB   $HM   $HP   $HW

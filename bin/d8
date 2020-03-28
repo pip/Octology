@@ -20,7 +20,7 @@
 #   extent permitted by law.  Please see HTTPS://FSF.Org for more inform8ion.
 use strict;use warnings;                    # tryd sorta rElEs version with no
                         use utf8;use v5.10; #   strict or warns4 cd ~/../sig but then it just tried to load utf8.pm && failed again so mAB $PERL5LIB is prob? ;
-use      Octology::d8;my $VERSION='0.0';my $d8VS='K2LL9agn';my $auth='PipStuart <Pip@CPAN.Org>';my $parm=join(' ',@ARGV);my @id8a;
+use      Octology::d8;my $VERSION='0.0';my $d8VS='K3RMNAut';my $Auth='PipStuart <Pip@CPAN.Org>';my $parm=join(' ',@ARGV);my @id8a;
 my $d8im=Octology::d8->new();
 open my $out8,'>&',STDOUT or die "Can't open  duplic8 STDOUT handle: $!";binmode $out8,':encoding(UTF-8)'; # crE8 local duplic8 of global
 if(!@ARGV && !-t STDIN){chomp(@id8a=<STDIN>);$parm=join(' ',@id8a);} # should eventually handle piping in d8 d8a while giving optionz too
@@ -31,7 +31,7 @@ if(!@ARGV && !-t STDIN){chomp(@id8a=<STDIN>);$parm=join(' ',@id8a);} # should ev
 if($parm=~ /(^|\s)-+h/i){ # should probably upd8 to use GetOpts or something more robust for parameter parsing
   if(!exists($ENV{'COLUMNS'}) || $ENV{'COLUMNS'} < 160){
     say $out8 " d8 - Date && Time utility  Vers:$VERSION  d8VS:$d8VS
-    by Auth:$auth
+    by Auth:$Auth
       Please run `perldoc Octology::d8` for additional inform8ion. First try:
 `d8 _eX` to `d8 _pV` && `d8 _eX0O` to `d8 _pV0l`,  &&  append 'xxx' for last;
   -h    this Help
@@ -50,7 +50,7 @@ if($parm=~ /(^|\s)-+h/i){ # should probably upd8 to use GetOpts or something mor
    l    show now's d8 in `ls  --full-time` format
    c    show now's d8 in CPAN  (&& PAuSe)  format
    i    show now's d8 in complete ISO 8601 format;"; exit(); } # should research reminders && mk notes about default && recommended Perl && shell exit codes
-  say $out8 " d8 - Date && Time utility  Vers:$VERSION  d8VS:$d8VS  by Auth:$auth
+  say $out8 " d8 - Date && Time utility  Vers:$VERSION  d8VS:$d8VS  by Auth:$Auth
       Please run `perldoc Octology::d8` for additional inform8ion. Initially try: `d8 _eX` to `d8 _pV0N` && `d8 _eX0O` to `d8 _pV0lxxx` (for reaching 2last);
   -h    this Help  # Humor-Held~HiddenHind, Healthy-Habit~HonoredHearts... I mean Hashy pound sign comment columns contain corresponding Happen Hardly Heard;
  coloring options: (preceded with a dash)   # ^_^ '4aditnl in4m\@n' && `cat =d8` ( >~..^< 4ever *purr~meow* darlings 8<3 && happyDjays 2djust *yawn~woof*!)  ;)

@@ -14,13 +14,14 @@ use         Octology::d8::dur8;
 use         Octology::a8;
 use         Octology::b8;
 use         Carp;
+use         File::Copy   qw(mv cp);
 use         Time::DayOfWeek;
 use         Time::DaysInMonth;
 my $hirs   = eval("use Time::HiRes; 8") || 0;
 my $locl   = eval("use Time::Local; 8") || 0;
 my $zown   = eval("use Time::Zone ; 8") || 0;
 #ur @EXPORT= qw(); # eventually export d8() here as new wrapper
-our $VERSION='0.0';my $d8VS='H99M9CUV';
+our $VERSION='0.0';my $d8VS='K3SM2nBb';
 my @_tzofsetz=( # global storage for TimeZone Offsets matching /^[-+][01]\d(00|30|45)$/ shhmm (with non-integer offsets mapping in b64 between R(27)..g(42))
   '-1130',#NUT
   '-0930',
@@ -227,6 +228,63 @@ sub iso{ # returns a d8 object's ISO 8601 complete string form
       $dfcl{'Y'},$self->D, $dfcl{'C'},$self->h, $dfcl{'B'},$self->m, $dfcl{'M'},$self->s, $dfcl{'p'},$frcp, $zosn, $dfcl{'G'},$zohh, $dfcl{'G'},$zomm));
   }else{ #            '1997-07-16T19:20:30.45+01:00'      # YYYY-MM-DDThh:mm:ss.sTZD
     return(sprintf("%4d-%02d-%02dT%02d:%02d:%02d.%02d%-6s", $self->YMDhms, $frcp, $zowc));}}
+sub bak{#H5JM2bMF:`bak`l8st major upd8; 267KBPZA:auto-backup a file into './.bak/' with a -`d8` appended before the extension, or at the end if none
+  my $self=shift(@_);my $bcou=0; # K3SM2cwP:migr8ing Pip::Utl.pm->bak() here as d8.pm object method (instead of str8 exported function);
+  # 2du:aftr doing `ea` from ~/dvl/c8/simp/ I edited again with just `e` but vim 'B' key for calling `bak` made ~/.bak/-$d8.zshrc instead of normal .zshrc-$d8
+  #     ... so I had to  `cd ~/.bak;rename 's/^(-........)(\..*)$/$2$1/' *` to fix those && several others that were much older so fix that in here,
+  #   refactor ~/.erc searching code from bak&&e,add -optz lsb LiStBakz,bkd parm2tst isBkDup?,dif w/prev,re[sv] RE(Store|Vert2) prev,ifc 2onlyBakIfSrcCmpilz
+  #   forget about $^O OS Type&&`fc.exe`4 MSWin,hndl flnmz =~ /\s/,mk ifc Dflt2not let bak cp unles`perl -c`,tst;
+  my $osty = 'good'; $osty = 'kaka' if($^O eq 'MSWin32'); # at least assume 4NT shell
+  my $ttyn = $ENV{'TTY'} || $ENV{'_SHELL'} || '';#$ttyn = shift || '' unless(length($ttyn));
+  my $mulf=0;$mulf=1 if(@_ && $#_); # bakng multiple filez flag?
+  my $srcf = shift ||  $ENV{'EDTF'} || $ENV{'EDITFILE'} || ''; my $dstf;my $home = $ENV{'HOME'} || '/home/pip';$home =~ s|/+$||;my $cwdr;
+  if(length($ttyn)) {
+    if   ($ttyn =~ /^(\/dev\/(tty|vc\/))/) { $ttyn =~ s/^$1//;  }
+    elsif($ttyn =~ /^(\/dev\/pts\/)/     ) { $ttyn =~ s/^$1/x/; }
+    elsif(!length($srcf))                  { $srcf = $ttyn;     } }
+  unless(-d $home . '/.erc') {
+    mkdir(  $home . '/.erc', 0700); }
+  if(-d $home . '/.erc') {
+    my $ercg = $home . '/.erc/eall';      # Global .erc/eall  filelist
+    my $ercl = $home . '/.erc/e' . $ttyn; # Local  .erc/e$TTY filelist
+    if($osty eq 'good') { $cwdr = `pwd`; }
+    else                { $cwdr =  `cd`;
+      if($srcf eq  '*') { unshift(@ARGV, $_) for(glob("*.*")); $srcf = shift; } }
+    chomp($cwdr);
+    my $extn; my @tsts; my $pass; my $pktm = "$self"; #`d8`;#Time::PT->new(); # hopefully just stringifies object instead of needing bak-tik shL 2 d8 or new();
+    if(!-r $srcf && -r $ercl && open(ERCL, '<', $ercl)) { chomp($srcf = <ERCL>); close(ERCL); }
+    if(!-r $srcf && -r $ercg && open(ERCG, '<', $ercg)) { chomp($srcf = <ERCG>); close(ERCG); }
+    die "!*EROR*! Please pass bak a filename to backup!\n" unless(-r $srcf);
+    unless(-d '.bak') { mkdir('.bak') || die  "!*EROR*! Couldn't create '.bak' directory!\n"; }
+    unless(-w '.bak') {                  die  "!*EROR*! Cannot write to '.bak' directory!\n"; }
+    while ( $srcf   ) {
+      if(-f $srcf && -r $srcf) { $dstf = $srcf; $extn = '';
+        if($dstf =~ s/^(.+)(\..{1,5})$/$1/) { $extn  = $2;   # strip file extension !*Note*! Are there any extensions >5 chars worth supporting? Not so far.
+          $extn  = ".tar" . $extn if($dstf =~ s/^\.tar$//);} # special-case to put -d8 before .tar.(gz|bz2|.*) also
+        if($dstf =~ /\//) { $dstf =~ s/(.*)\//$1\/.bak\//; } else { $dstf =~ s/^/.bak\//; }
+        unless($osty eq 'good') { $srcf =~ s/\//\\/g; $dstf =~ s/\//\\/g; } # kaka dir-separators?
+        @tsts = reverse(sort(glob($dstf . "-????????" . $extn))); $pass = 1; # probably eventually better to employ d8-specific sorting
+        if(@tsts) { @tsts = @tsts[0..7] if(@tsts > 8); # test last 8 backups for differences before proceeding (originally was just 3)
+          for(@tsts) { 
+            if($osty eq 'good') { $pass =  `diff --brief $_ $srcf`;
+              unless($pass)     { $_    =~ s/^$cwdr[\\\/]//;$srcf =~ s/^$cwdr[\\\/]//;
+#                  s/(.*)-(.)(.)(.)(.)(.)(.)(.)(.)/$1-$R$2$O$3$Y$4$G$5$C$6$B$7$M$8$P$9$G/; # better to pass to a8::d8c
+#               if( /(.*)-(.{8})/){my $clrd=d8c($2);
+#                  s/(.*)-(.{8})/$1-$clrd$z/;} # actually better to just c8fn whole name, but not so easy to do for srcf yet
+                $_ = c8fn($_);
+                printf("!*EROR*! File: '%-16s already bak'd up as '%s'!\n", $srcf . "'", $_); last;
+              }}}}
+        if($pass) { $dstf .= "-$pktm" . $extn;    cp($srcf,$dstf);
+          if($osty eq 'good'){ $pass = `diff --brief $srcf $dstf`; if(length($pass)){$pass=0;}else{$pass=1;}}
+          $srcf =~ s/^$cwdr[\\\/]//;$dstf =~ s/^$cwdr[\\\/]//;
+          if(-e $dstf) {
+            if( $pass) { $dstf = c8fn($dstf);$bcou++; # SUCCESS! # mAB longstanding quotez around filez below were mainly only there 4 rare spaced out namez
+                     printf("${B}bakd$C %-16s$M as %s$z"                , $srcf      , $dstf); print "\n" if($mulf); # trying to add a bit betr color8ion
+            } else { printf("!*EROR*! File: '%-16s differs from '%s'!\n", $srcf . "'", $dstf); } # FAILED `diff`
+          } else   { printf("!*EROR*! Couldn't bak up: '%-16s as '%s'\n", $srcf . "'", $dstf); } # FAILED output-file-creation or something else
+        }
+      } $srcf = shift; }
+  } else           { print( "!*EROR*! Couldn't find ~/.erc/ at: '$home/.erc/'\n"); } return(''); } # probably just want 2 retn '' or SUCCESS printf nstd?
 # d8 object constructor as class method or copy as object method.
 # First param can be ref to copy. Not including optional ref from copy, default is no params to crE8 a new d8 object auto-popul8d with now d8a.
 # If parameters are supplied, they must either be a lone single detectable string represent8ion or a single key => value pair signifying a supported format.

@@ -144,7 +144,7 @@
 #       initial front/up but not necessarily for the whole rube. I'd guess that avg. lookups would be 1,344 for any solution &&
 #       2,688 for optimal since most depths will be about 14 && most possible neighbor testing will only need 8... but I could be way off.
 use strict;use warnings;use Octology::b8;use Curses::Simp;
-my $mjvr = 0;my $mnvr = 0;my $d8VS='HBCL6160';my $auth = 'PipStuart <Pip@CPAN.Org>';my $name = $0;$name =~ s/.*\///;
+my $mjvr = 0;my $mnvr = 0;my $d8VS='HBCL6160';my $Auth = 'PipStuart <Pip@CPAN.Org>';my $name = $0;$name =~ s/.*\///;
 my $prmp = 'C';my $nstk = 'w';my $filc = 0;my $fchr = '@';#$fchr = chr(219);
 my @colr = qw( W R Y B O G );
 my @corn = ( 0,0, 1,0, 2,0, 3,0,  4,0, 5,0, 6,0, 7,0 );
@@ -239,7 +239,7 @@ if($simp->Widt() >= 160){$tmpl=
 ^ Turns:  Clockwise = wrybog    CounterClockwise = WRYBOG    Twice = 012345 @
 ^  AltColrSet = a  Fill = f  Mix = m  Init = i  Exit = x  Please Press A Key:$';}
 sub ShowInfo{$simp->Mesg('type' => 'info',
-" $name v$mjvr.$mnvr.$d8VS- by $auth
+" $name v$mjvr.$mnvr $d8VS- by $Auth
  
 $name was written to play with but it's difficult when you can't hold it
  
@@ -251,7 +251,7 @@ suggestions. Please support FSF.Org && EFF.Org. Thanks. TTFN.
  
                                                        -Pip\n\n");}
 sub ShowHelp {$simp->Mesg('type' => 'help',
-" $name v$mjvr.$mnvr.$d8VS- by $auth
+" $name v$mjvr.$mnvr $d8VS- by $Auth
 
                         Global Keys:                                
   h         - displays this Help screen                             
@@ -345,7 +345,7 @@ sub DrawRube{
         $scrn[$l] .= $i;
         $attz[$l] .= $last;}}}
   unless(length($scrn[0]) && $scrn[0] =~ /^ $name/){
-    $scrn[0] = " $name v$mjvr.$mnvr.$d8VS- by $auth   keys: wrybog WRYBOG 012345 a f m i x=eXit";
+    $scrn[0] = " $name v$mjvr.$mnvr $d8VS- by $Auth   keys: wrybog WRYBOG 012345 a f m i x=eXit";
     $attz[0] = ' ' . 'G' x length($name) . 'KWYWCW' . 'ROYGCBMP' .
                                         'B WW GGGCCCCCC WGGGWYYYYWCCCW' .
                                                   '   GGGGP WRYBOG WRYBOG WRYBOG R C P G WcWRWW';}
