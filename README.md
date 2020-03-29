@@ -1,12 +1,12 @@
 # Octology
-The ontology of 8. `$VERSION='0.0';$d8VS='K3MM1rPi';`
+The ontology of 8. Ocho foolio cholo. Aucht! `$VERSION='0.0';$d8VS='K3TM670R';`
 
-What is an ontology, you may ask?
+What is an ontology, you may ask (behind your mask)? Essentially quarantined from deadly spread of SARS CoV-2 CoronaVirus see new `cvdJ` && `CJ` 4 d8a;
 
 <ol><li>n. (Computer Science) a rigorous and exhaustive organiz8ion of some knowledge domain that is usually hierarchical and contains all the relevant
   entities and their rel8ions.</li>
     <li>n. (Philosophy) the metaphysical study of the nature of being and existence.</li>
-    <li>n. (Logic) the set of entities presupposed by a theory.</li>
+    <li>n. (Logic) the set of entities presupposed by a theory.</li>;
 </ol>
 
 I expect after some point (probably passed) anyone who studies Octology thoroughly would become able to develop any new videogame and problem-solve.
@@ -52,6 +52,16 @@ If your paths and Perl environment are setup similarly, to gain a bearing on fun
  * `calN ` - display a CALeNdar of the colored d8-based recent Years-->
 <!-- * `lodH ` - LOaD ~/.Hrc d8a-file to parse and print colorized fields-->
 
+To get close to similar setup near mine, you'll probably want to execute the following sequences of commands first:
+
+  `git clone https://GitHub.Com/Pip/Octology` which should crE8 the Octology/ sub-directory within the Current-Working-Directory (or`pwd`),
+
+  then `cd Octology;cp -a lib bin dox dvl gfx .Hrc .Xrc .bashrc .lrc .lsrc .shl.style .vimrc .zshrc ~;chsh $(which zsh);cd ~;source .zshrc`
+
+  && you'll want to `cpan ...` or `pmei Time::DaysInMonth;` since I (thru Octology) depend on that module, but am not the maintainer of it;
+
+  There might also be the Color::Similarity::RGB module in `pm2x` or something like that, maybe `gnp8`, I forget where I put that out ther?
+
 ### Great Thanks, AppreC8ion, and Gratitude
 I'd first like to thank every p8ient Chess player who endured me logging personal matches in ckm8, then thank you to all developers who ever contributed to:
 
@@ -81,11 +91,11 @@ If I have failed or in any way improperly identified any other entity who is des
 ### Forgive Some Self-Promotion
 If you are willing to fund this development effort, please visit my [SubscribeStar](https://SubscribeStar.Com/Pip "Pip's Octology SubscribeStar Page")
   or                                                                      [Patreon](https://patreon.com/PipStuart "Pip's Octology Patreon       Page")
-  and feel free to send me the **Top8** new fixes and features you would want most.
+  and feel free to send me the **Top8** new fixes and fE8ures you would want most.
 
-Please also contact me if you are an open-minded thinker interested in any conversation or friendship (especially near Oshkosh, Wisconsin).
+Please also contact me if you are an open-minded thinker interested in any convers8ion or friendship (especially near Oshkosh, Wisconsin).
 
-To learn about the long-term goals, plans, thinking, and research behind this expansive project, please consult latest development notes at:
+To learn about the long-term goals, plans, thinking, and research behind this expansive project, please consult l8St development notes at:
   [8.utf](https://github.com/pip/Octology/blob/master/dox/2du/8.utf "dox/2du/8.utf")
 
 Thank you for your consider8ion as well as any constructive criticism, recommend8ions, or whatever other feedback you may be able to offer.

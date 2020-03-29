@@ -30,7 +30,7 @@ unsetopt                \
 # auto_pushd            \# setng addz dirz 2 stack wN just normally chngng 2 thM (wich I du not normally lIk or want)
 # ksh_arrays            \# rEmMbr wNwrItng scrptz[or funcz]2include'setopt [localoptions] ksharrays'sO arAzR 0-bAsed(but!glOblBcuzmOst scrptzRstndrdly 1-bAsed)
 # re_____match_____pcre \# mA want2set for Z-SHell scripting RegularExpressions to utilize PerlCompatibility styles && mA insert 'zmodload zsh/(pc)?re(gex)?';
-export Vers='0.0';export d8VS='K3SMMKeg';export Auth='PipStuart <Pip@CPAN.Org>'; # not Xportng $b sinc cOlIdz wi sort{$a <=> $b} /defhijlnqstuvx/i + AZ 4golf;
+export Vers='0.0';export d8VS='K3TM4P6G';export Auth='PipStuart <Pip@CPAN.Org>'; # not Xportng $b sinc cOlIdz wi sort{$a <=> $b} /defhijlnqstuvx/i + AZ 4golf;
 if     [[       "$SHELL"    == "" ]]; then       export SHELL=`  which zsh`;fi # 8sh should parse this && OverId it    # shud `man zshall` /OSTYP 2lern4BlO
 if     [[       "$HOSTNAME" == "" ]]; then       export HOSTNAME=`hostname`;fi #`hostname`retnz fsckd nwlInz\n4CygWinzRxvt... ||smthng els lame  =(
 if     [[       "$HOST"     == "" ]]; then       export HOST   ="$HOSTNAME";fi;export VERBOSE='1'; # set flag to print debug && status info from system utilz
@@ -492,7 +492,8 @@ alias      db=' dub   ';                        # maybe EvN2ally `db`  shudB rea
 # no longer just d aliasing du above since better to apply to ~/bin/dic (my colorful enhanced `dict` wrapper, like piping thru `colorit`) since I Use it fR mor
 alias       F='   f   ';
 alias       f='   find'; #  f    :           find            (with combined interface to loc8?)
-alias       g='   grp '; #  g    :          sarep|(e|f)?grep (sed|awk too?)
+#lias       g='   grp '; #  g    :          sarep|(e|f)?grep (sed|awk too?)
+            g() { grp   $@; }    # unalias    g   (redefining as simple function wrapper resolves parameter alias expansion problem [but still will glob ok])
 alias      gi='   g -i'; #                              grep -i to      Ignore_case
 alias      gv='   g -v'; #                              grep -v to                     inVert_match_results (gs is already GhostScript so not aliased to g -s)
 alias      gS='   g -s'; #                              grep -s to SupreSS warningS
@@ -1503,8 +1504,8 @@ alias sschun=' ssChun' ; alias ssChun='                ssh Chun' ;alias ssb='ssh
 alias ssryu0=' ssRyu0' ; alias ssRyu0='                ssh Ryu0' ;alias ssm='ssh MetaNotes.Com';alias ssmeta='ssm';alias ssMeta='ssm';
 alias ssken0=' ssKen0' ; alias ssKen0='                ssh Ken0' ; # hopefully someday Beppu-san can grant me HTTP://MetaNotes.Com/~pip as ~/pub/ 4 HTML?
 alias ssken='  ssKen'  ; alias ssKen='                 ssh Ken'  ; # I'd like to link my HTTPS://Baduk.Club profile to any good picture hosted there someday;
-alias ssryu='  ssRyu'  ; alias ssRyu='                 ssh Ryu'  ;
-alias ssaku='  ssAku'  ; alias ssAku='                 ssh Aku'  ;
+alias ssryu='  ssRyu'  ; alias ssRyu='                 ssh Ryu'  ;alias asbo='autossh -o ServerAliveInterval=30 -R 2222:localhost:22 bavl.org'; # allowRtunL;
+alias ssaku='  ssAku'  ; alias ssAku='                 ssh Aku'  ;alias abvl='asbo';alias ab.o='asbo';alias asb='asbo';alias abo='asbo';alias aB='asbo';
 ldh()      { DHst='Aku'; # LoadDestin8ionHost cking if AkuChunRyuKenTaki are!current host&&are on net to select ss && rsyn targetz  # BlO PingDestin8ion4Errorz
              if     [[ "${(L)HHst}" ==  aku   ]]; then echo "LoadDestin8ionHost() checking net..." ;DHst='ChunW';PD4E=`pn -c 1 -q $DHst|g error`;
                if   [[ "$PD4E"      != ""     ]]; then printf "DHst:%-5s had PD4E:%s\n" $DHst $PD4E;DHst='Chun' ;PD4E=`pn -c 1 -q $DHst|g error`; fi;
