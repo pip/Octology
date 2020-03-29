@@ -1054,9 +1054,10 @@ sub xx{ # purpose is2scAl all tXt up2 "XxX" (orig nAm B4 mvd2 just 'xx') sIzd sq
   my($cc,$sz,$sb,$sm,$ss,$ln,$St);
   $cc=Octology::c8->new(  'cmnd' =>  1);$sz=2;$sz=shift(@_) if(@_ && $_[0]=~ /^\d+$/);$sb=$sm=$ss=0; # hopefully the regex will limit param to digit sizes
   if ( -t   STDIN || @_){$cc->{'_Stxt'}=          shift(@_);} # hopefully the assumption of piping through STDIN can accept a string parameter here instead
+  $cc->{'_Stxt'} = '' unless(defined($cc->{'_Stxt'}));
   for(0 ..  length($cc->{'_Stxt'})  -1){ # nEd2bypas yet prEsrv anyMbeded SKpz && just duplic8 Ech nrml tXt character x $sz thN split /\n/ 2 duplic8 $sz lInez
-    if     (       $sm                         ){$ln .= substr($cc->{'_Stxt'},$_,1);
-      if   (substr($cc->{'_Stxt'},$_,1) eq  'm'){              $sm  =   0;}}
+    if     (       $sm                         ){$ln .= substr($cc->{'_Stxt'},$_,1); # [pip@OniK3TM0bOH~]xx # Use of uninitialized value in subtraction (-) at
+      if   (substr($cc->{'_Stxt'},$_,1) eq  'm'){              $sm  =   0;}}         #   /home/pip/lib/Octology/c8.pm line 1057. ## would be on 1058 now;
     elsif  (       $ss                         ){$ln .= substr($cc->{'_Stxt'},$_,1);
       if   (substr($cc->{'_Stxt'},$_,1) eq "\\"){              $ss  =   0;}}
     elsif  (       $sb                         ){$ln .= substr($cc->{'_Stxt'},$_,1);

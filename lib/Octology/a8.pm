@@ -52,7 +52,7 @@ our @EXPORT= qw(bfr8c    b8c    d8c   dur8c @d8cl  d8cs  a8c   chti  c8fn  o8 S2
                                                                             $HK   $HR   $HO   $HY   $HG   $HC   $HB   $HM   $HP   $HW
  $tnhf $ucdf  spff  spfd  spfX   shfl  reso $Auth %cmsp %p8k2 @p82k  chp8     S2f4 c2f4 dm2u cdst %crgb %cbrt @snls @mrls %cdrd %cdrn    %nrgb         gnp8);
  # of 52 posibl sngl-letr var nmz,a8 Xportz 20,$b && $a unavail,so shudB thEs30 lFt4quik shortSt nAmz: 'def hij l n  q stuv x', 'A  DEF HIJ L N  Q STUV X Z';
-our $VERSION='0.0';my  $d8VS='K3SMDAYS';our $Auth='PipStuart <Pip@CPAN.Org>'; # above not exporting $b since collidez with sort{$a  <=> $b};unalloc'd sOlOz^;
+our $VERSION='0.0';my  $d8VS='K3SMLsnc';our $Auth='PipStuart <Pip@CPAN.Org>'; # above not exporting $b since collidez with sort{$a  <=> $b};unalloc'd sOlOz^;
 our $ucdf= eval('use Color::Similarity::RGB qw(distance);1') || 0; # try2set UseColorDistanceFlag if optional module is available; /defhijlnqstuvx/i + /AZ/^;
 our @Monz=qw(January February March   April     May June July   August September October November December);our @Mon=();push(@Mon,substr($_,0,3)) for(@Monz);
 our @Dayz=qw(Sunday  Monday   Tuesday Wednesday Thursday Friday Saturday                                  );our @Day=();push(@Day,substr($_,0,3)) for(@Dayz);
@@ -2824,15 +2824,16 @@ They were all named closely too as in '"  ;for(        16..63   ){$retn.= S($cms
   $retn      =~ s/^\s+//; # not sure why blank newline snuck in top
   return($retn);}
 sub acS{ # apt-cache Search wrapper which coll8z dpkg -l resultz in together to help show install8ion st8us of described packages of searched interest;
-  my $gflg=0;my $gstr=''; # added g flag to auto-grep on resultz so only actual present m@chz shO;
-  if(@_){for(my $pndx=0;$pndx<$#_;$pndx++){if($_[$pndx]=~ /^-?-?g(rep)?$/i){$gflg=1;$gstr=$_[$pndx+1];$_[$pndx]=$_[$pndx+1]='';last;}}}
+  my $gflg=0;my $gstr='';my $ksig=0; # added g flag to auto-grep on resultz so only actual present m@chz shO;
+  if(@_){for(my $pndx=0;$pndx<$#_;$pndx++){if($_[$pndx]=~ /^-?-?g(rep)?(i)?$/i){$gflg=1;$gstr=$_[$pndx+1];$_[$pndx]=$_[$pndx+1]='';
+        $ksig=1 if(defined($2));last;}}} # case-IGnore turned true
   my $acsr=`apt-cache search @_`;my @pkgz=split(/\n/,$acsr);my $rslt='';my $mxnl=1;my $mxvl=1;my $mxal=1;my %fd8a;  # MaX-Name|Vers|Arch-Lengthz && Fieldz
   for(@pkgz){if((!$gflg || /$gstr/) && /^(\S+)\s+-\s+(.+)$/){my($pkgn,$pkgd)=($1,$2); $mxnl=length($pkgn) if(length($pkgn) > $mxnl); # track max-length sOfR
       my $dprs=`dpkg --simulate -l $pkgn 2>/dev/null`;$dprs=~ s/^Desired=Unkn.+\n\| Status=Not.+\n\|\/ Err.+\n\|\|\/ Name.+\n\+{3}-={3}.+\n//; # strip header
       my @dptz=split(/\s+/,$dprs); # hopefully just get dpkg status, pkg-name (again), mAB version installed, && mAB architecture (omitting 2nd description)
       $mxvl=length($dptz[2]) if(defined($dptz[2]) && length($dptz[2]) > $mxvl);$fd8a{$pkgn}[0]=$dptz[0];$fd8a{$pkgn}[1]=$dptz[2];
       $mxal=length($dptz[3]) if(defined($dptz[3]) && length($dptz[3]) > $mxal);$fd8a{$pkgn}[2]=$dptz[3];$fd8a{$pkgn}[3]=$pkgd   ;}}
-  for(@pkgz){if((!$gflg || /$gstr/) && /^(\S+)/){my $pkgn=$1; # loop again after all max-lengthz are known && Field-d8a storez resultz
+  for(@pkgz){if((!$gflg || /$gstr/ || (/$gstr/i && $ksig)) && /^(\S+)/){my $pkgn=$1; # loop again after all max-lengthz are known && Field-d8a storez resultz
       for my $fndx(0..3){$fd8a{$pkgn}[$fndx]='' unless(defined($fd8a{$pkgn}[$fndx]));} # not sure why some fieldz were coming off uninitialized
       $rslt.=sprintf("$G%-${mxnl}s  $M%2s  $Y%-${mxvl}s  $R%-${mxal}s  $C%s$z\n",$pkgn,@{$fd8a{$pkgn}});}}
   if ($gflg){my $Wb=S('Wb');$rslt=~ s/($gstr)/$Wb$1$z$C/g;} # if gflg shud alsO hIlIt gstr Xplicit m@chz (but assuming folO wi Cyan in desc,!Green name)
