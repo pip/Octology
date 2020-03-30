@@ -1,97 +1,21 @@
 #!/usr/bin/perl
-# K2HLF0NT:flet crE8d by PipStuart <Pip@CPAN.Org> to select among myriad FigLet-Fonts usually from /usr/share/figlet/ (or staged in ~/dvl/f8/flet/*fonts*/);
-# 2du:1st mk font merging Utl wich prEsrvz evry varE8ion among gathrd font collectionz,thN stRt rEimplMNtng old TigLet functionality BlO as new imprvd flet;
-# nOt:`cd ~/dvl/f8/flet/;ls **/*.flf **/*.flc **/*.tlf|wc -l|cma`; 1,869; `dus **/*.flf **/*.flc **/*.tlf|s8n|cma|mo` showz by sIz 4 fIndng rEPted 1z2 cull;
-my $VERSION='0.0';my $d8VS='K2HLF0NT'; # will probably want 2Uz@lEst a8.pm if not Simp.pm or c8.pm && mAB b8.pm && d8.pm && migr8 BhAvior in2 my f8.pm azwL;
-my $fntd = `figlet -I2`;           #this is 4linux
-#y $fntd = "/pip/4dos/fig/fonts";  #this is 4dos
-   chomp ($fntd);
-   $fntd .= "/*.flf";
-my $text = "@ARGV";
-my $outf = "dfaltout.txt";
-my @fntz = glob("$fntd");
-my $coun = 0;
-my $fcou = 0;
-my $lall = 0;
-#my $favs = '19 20 24 32 36 37 64 67 69 70 75 76 77 78 80 84 85 90 93 100 102 ';
-#my $favs = '14 15 19 22 24 25 32 36 37 64 65 67 70 76 78 81 84 85 87 88 90 94 100 102 ';
-my $favs = join(' ', (0..$#fntz));#''; #Above are my 4dos&&Linux favs but I have more fonts than most.
-my $optn = ''; # Your mileage and font numbers may vary.
-my $inpt = '';
-my @favz = split /\s+/, $favs;
-
-if ($text =~ m/^\s*-a/i) { $text =~ s/^\s*-a//i; $lall = 1; }
-
-print "         Tigger's Figlet Chooser v0.2
-  (which was renamed from 'tiglet' to 'flet' on d8:HBCL7flt)
-USAGE:  me\@myserver:\% flet \"KakA NachoZ\"
-flet lets you interactively select the perfect figlet font
-  for your .sig or msg or title or... =) smiley!
-Specify -a on the command line to rotate through all available
-  fonts or just run normally to rotate only favorites
-Please e-mail suggestions or constructive criticisms to <Pip\@CPAN.Org>
-n or Enter - checks next font, p - checks previous font
-  Any specific number jumps directly to that font
-t - prompts for text change, e - prompts for filename to export to
-Y - SAVES selected text to specified exportfile and quits
-Q - QUITS without saving, ... the parameters are not case-sensitive
-Toggles: s=squish, k=kern, o=overlap, c=center, l=left, r=right, f=favorite\n";
-
-if ($text eq "") {
-    $text = "KakA NachoZ";
-    print "Please enter text to display [$text]: ";
-    chomp ($poop = <STDIN>); if ($poop ne "") { $text = $poop; }
-    print "Please enter a file to write selected text to [$outf]: ";
-    chomp ($poop = <STDIN>); if ($poop ne "") { $outf = $poop; }
-}
-while ($inpt !~ /q|x|y|d/i && (($lall && $coun < @fntz) || (!$lall && $fcou < @favz))) {
-    @favz = split /\s+/, $favs;
-    if ($lall) {
-        $fntz[$coun] =~ s!.*/!!;
-        $kaka = `figlet -f $fntz[$coun] $optn $text`;
-        print "${kaka}Font\#$coun:$fntz[$coun],Text:$text,Optn:$optn,Favs:$favs,cmd[npYteskocq]: ";    
-    } else {
-        $fntz[$favz[$fcou]] =~ s!.*/!!;
-        $kaka = `figlet -f $fntz[$favz[$fcou]] $optn $text`;
-        print "${kaka}Font\#$favz[$fcou]:$fntz[$favz[$fcou]],Text:$text,Optn:$optn,Favs:$favs,cmd[npYteskocq]: ";
-    }
-    chomp ($inpt = <STDIN>); $inpt =~ tr/A-Z/a-z/;
-    if ($inpt =~ /f/) { 
-        if ($favs =~ /$coun /) { 
-            if ($lall) { $favs =~ s/$coun //; } 
-            else { $favs =~ s/$favz[$fcou] //; }
-	} else { 
-	    if ($lall) { $favs .= "$coun "; }
-	    else { $favs .= "$favz[$fcou] "; }
-	} 
-    }
-    if ($inpt eq "" || $inpt =~ /n/) { $coun++; $fcou++;
-        if (($lall && $coun == @fntz) || (!$lall && $fcou == @favz)) { 
-            print "Last Font Displayed!  Loop back to beginning? (y/n) ";
-            $poop = <STDIN>; if ($poop =~ /y/i) { $coun = 0; $fcou = 0; }
-        }
-    }
-    if ($inpt =~ /p/) { $coun--; $fcou--; }
-    if ($inpt =~ /\d+/) { $coun = $inpt;
-        if ($coun < 0) { $coun = 0; }
-        if ($coun > @fntz) { $coun = $#fntz; }
-    }
-    if ($inpt =~ /y/ || $inpt =~ /d/) {
-        print "Saving to $outf and Quitting!\n";
-        open OUTF, ">$outf"; print OUTF $kaka; close OUTF;
-    }
-    if ($inpt =~ /t/) { 
-        print "New Text [$text]: "; chomp ($poop = <STDIN>);
-        if ($poop ne "") { $text = $poop; }
-    }
-    if ($inpt =~ /e/) { 
-        print "Export File [$outf]: "; chomp ($poop = <STDIN>);
-        if ($poop ne "") { $outf = $poop; }
-    }
-    if ($inpt =~ /s/ || $inpt =~ /k/ || $inpt =~ /o/ ||
-        $inpt =~ /c/ || $inpt =~ /l/ || $inpt =~ /r/) {
-        if ($optn =~ /-$inpt /i) { $optn =~ s/(-$inpt |$inpt)//gi; }
-        else { $optn .= "-$inpt "; }
-    }
-    if ($inpt =~ /q/ || $inpt =~ /x/) { print "Quitting Without Saving!\n"; }
-}
+# K3TMFvLt:flet crE8d by PipStuart <Pip@CPAN.Org> to try d8c colring the FigLet OutPut && re-squishing sepR8 letters;
+use strict;use warnings;use utf8;use v5.10;use Encode;my $d8VS='K3UM0ZsN';
+use Octology::a8;my $ccou=0;my $bow8='RoYGCBMp';my $argz=join(' ',@ARGV);my $dflf=$argz; # maybe -t is better than -w$ENV{'COLUMNS'}?
+use Octology::d8;my @lrjo;$dflf='cosmic' unless(length($dflf));my $nXtf=1;
+my $fdir=$ENV{'HOME'} . '/lib/Octology/f8/f0nt/flet';my @flst=<"$fdir/*">;for(@flst){s{(^.*/|\.[ft]l[fc]$)}{}gi;s/^.+-[0-9A-Z._]{8}(\..*|$)//i;
+  s/(^.*banner.*$)//;s/\s+/  /g;} # cosmic Colossal Fraktur
+for my $FntF(reverse(@flst)){my $d8Nw=Octology::d8->new();$dflf=$FntF if($nXtf && length($FntF));
+  open     my $out8,'>&',STDOUT or die "Can't open  duplic8 STDOUT handle: $!";binmode $out8,':encoding(UTF-8)';
+  print       $out8 "FntF:$FntF:Nter cmnd-strng:";my $sinl=<STDIN>;last if(defined($sinl) && $sinl=~ /^-?-?[qx]$/i);
+  close       $out8             or die "Can't close duplic8 STDOUT handle: $!";last if(/^-*[qx]$/i);if(/\w/){$dflf=$_;$dflf=~ s/(^\s+|\s+$)//g;} @lrjo=();
+  for(split(//,"$d8Nw")){my @figc=split(/\n/,`figlet -d $fdir -f $dflf -tm0 $_`);my $Scod=S(substr($bow8,$ccou++,1));$ccou=0 if($ccou==8);
+    if   ($argz=~ /(^|\s)-?-?d(\s|$)/i){ # take -d as not just f0ntDir but printing the f0nt listing from there;
+      open my $out8,'>&',STDOUT or die "Can't open  duplic8 STDOUT handle: $!";binmode $out8,':encoding(UTF-8)';say $out8 "@flst";
+      close   $out8             or die "Can't close duplic8 STDOUT handle: $!";}
+    elsif($argz=~ /(^|\s)-?-?r(\s|$)/i){$nXtf^=1;}
+    for my $fndx(0..$#figc){$lrjo[$fndx] ='' unless(defined(  $lrjo[$fndx]));
+                            $lrjo[$fndx].=sprintf("$Scod%-8s",$figc[$fndx] );}}
+  open        $out8,'>&',STDOUT or die "Can't open  duplic8 STDOUT handle: $!";binmode $out8,':encoding(UTF-8)';say $out8 "$_" for(@lrjo); # don't nEd my AgN
+  print       $out8 "FntF:$FntF:Nter cmnd-strng:";
+  close       $out8             or die "Can't close duplic8 STDOUT handle: $!";last if(/^-*[qx]$/i);if(/\w/){$dflf=$_;$dflf=~ s/(^\s+|\s+$)//g;} @lrjo=();}

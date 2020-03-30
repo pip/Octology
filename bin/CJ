@@ -1,7 +1,9 @@
 #!/usr/bin/perl
 # K3SM5cvd:CJ crE8d by PipStuart <Pip@CPAN.Org> to parse out Comma-SepR8d-Values from COVID-19 (J) d8a-files from the GitHub CSSEGISAndData/COVID-19 repo;
 use strict;use warnings;use utf8;use Encode;use Octology::a8;use Octology::d8;my $VERSION='0.0';my $d8VS='K3SM6Kut';my %cd8a;my %sd8a;
-my $csvf=$ENV{'HOME'} . "/.cache/Corona/CSSEGISAndData_COVID-19_03-27-2020-K3SM4dOr.csv";my %flcm=('C'=>$G,'D'=>$W,'R'=>$Y,'A'=>$R);
+my $csvf=$ENV{'HOME'} . "/.cache/Corona/CSSEGISAndData_COVID-19_03-28-2020-K3TM96MT.csv";
+#                        /.cache/Corona/CSSEGISAndData_COVID-19_03-27-2020-K3SM4dOr.csv
+my %flcm=('C'=>$G,'D'=>$W,'R'=>$Y,'A'=>$R);
 open my     $csfh,'<' , $csvf or die "Can't open  CSV-d8a  File  Handle: $!";my @hedr=split(/,/,<$csfh>);
 open my     $out8,'>&',STDOUT or die "Can't open  duplic8 STDOUT handle: $!";binmode $out8,':encoding(UTF-8)';
 while(<$csfh>){my $ckey='';$ckey=$1 if(s/"(.*)"$//);my @fldz=split(/,/,$_);

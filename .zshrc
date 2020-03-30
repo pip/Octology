@@ -570,7 +570,7 @@ alias resetfont=' etfp -s -f ~/lib/Octology/f8/f0nt/psf/france9.psf'; # these ma
 alias      s8n='    s8 -n'; # "Prince of Darkness"  game eventually? or just simple Numeric Sorting alias until then
 alias      s8r='    s8 -r';alias rvrs='shfl -r';alias lshf='$(ls|shfl)'; # tMporary plAc-holdr 4 `reverse` sinc sort rearranges all, just high to low; tryXpnd?
 alias      s8='   sort'; #  s8   :           sort (maybe eventually a collection of my own custom sortings for orders beyond the default `sort` offerings)
-#          d8   already ~/bin/
+#          d8   already ~/bin/               # apparently Zsh (like Bash) has inherent support for 2xx15 0..32767 $RANDOM on the range $((RANDOM % 8)) modulo;
 #lias      d8='   date'; #  d8   :           date|time|pt
 #          g8   already ~/bin/
 #lias      g8='    git'; #  g8   :            git (was my much earlier attempt at wrapping to handle abbreV8ions && gener8 commits from .bak && vice-versa)
