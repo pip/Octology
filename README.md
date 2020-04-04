@@ -1,5 +1,5 @@
 # Octology
-The ontology of 8. Ocho foolio cholo. Aucht! `$VERSION='0.0';$d8VS='K3TM670R';`
+The ontology of 8. Ocho dude. Aucht! `$VERSION='0.0';$d8VS='K44MIMov';`
 
 What is an ontology, you may ask (behind your mask)? Essentially quarantined from deadly spread of SARS CoV-2 CoronaVirus see new `cvdJ` && `CJ` 4 d8a;
 
@@ -52,7 +52,7 @@ If your paths and Perl environment are setup similarly, to gain a bearing on fun
  * `calN ` - display a CALeNdar of the colored d8-based recent Years-->
 <!-- * `lodH ` - LOaD ~/.Hrc d8a-file to parse and print colorized fields-->
 
-To get close to similar setup near mine, you'll probably want to execute the following sequences of commands first:
+To get something close to a similar setup to mine, you'll probably want to execute the following sequences of commands to get going first:
 
   `git clone https://GitHub.Com/Pip/Octology` which should crE8 the Octology/ sub-directory within the Current-Working-Directory (or`pwd`),
 
@@ -60,7 +60,7 @@ To get close to similar setup near mine, you'll probably want to execute the fol
 
   && you'll want to `cpan ...` or `pmei Time::DaysInMonth;` since I (thru Octology) depend on that module, but am not the maintainer of it;
 
-  There might also be the Color::Similarity::RGB module in `pm2x` or something like that, maybe `gnp8`, I forget where I put that out ther?
+  Also the Color::Similarity::RGB module is used in `pm2x` to gener8 an expanded pal8 map from the rel8ive proximity of such nearby colors;
 
 ### Great Thanks, AppreC8ion, and Gratitude
 I'd first like to thank every p8ient Chess player who endured me logging personal matches in ckm8, then thank you to all developers who ever contributed to:
@@ -68,6 +68,8 @@ I'd first like to thank every p8ient Chess player who endured me logging persona
   * [YouTube](https://youtu.be), [youtube-dl](https://youtube-dl.org), [kpcli](https://kpcli.sourceforge.net), [slowcat.pl](http://artscene.textfiles.com/viewers/linux/slowcat.pl), [Screeps](https://screeps.com),
 
   * [git](https://git-scm.com), [gst123](https://github.com/swesterfeld/gst123), [FIGlet](http://www.figlet.org), [zinf](http://zinf.org), [Vim](https://www.vim.org), [FLAC](https://xiph.org/flac), [cdparanoia](https://xiph.org/paranoia),
+
+  * [TheFreeDictionary](https://thefreedictionary.com) as well as dictd && all d8a-base entries,
 
   * anonymous makers of MS-DOS .com files before .f0nt,
 
@@ -119,7 +121,10 @@ If I ever become unable to continue developing this project further, my hope is 
 ![Octology-tstc-shot_1614x952-IA3MGr8C](https://github.com/pip/Octology/raw/master/gfx/sho/Octology-tstc-shot_1614x952-IA3MGr8C.png "Octology-tstc-IA3MGr8C")
 <!--![Octology-dic8-shot_1614x902-HAOM900M](https://github.com/pip/Octology/raw/master/gfx/sho/Octology-dic8-shot_1614x902-HAOM900M.png "Octology-dic8-HAOM900M")-->
 
-##### (*here's my 3 screens, almost to 4K HD*)
+<!-- (*here's my 3 screens, almost to 4K HD*)
 ![Octology-3Obs-shot_5760x1080-I9HMG3Ob](https://github.com/pip/Octology/raw/master/gfx/sho/Octology-3Obs-shot_5760x1080-I9HMG3Ob.png "Octology-3Obs-I9HMG3Ob")
+  -->
+##### (*here's my 3 crosses, making 4K HD together*)
+![Octology-cros-shot_3840x2160-K44MHuBF](https://github.com/pip/Octology/raw/master/gfx/sho/Octology-cros-shot_3840x2160-K44MHuBF.png "Octology-cros-K44MHuBF")
 
 P.S. I also hope someday aspects of above shots might be seen as logical utility UTF-8 or ASCII art, or at least inspire bits of art. I'd like elabor8ions;
