@@ -13,7 +13,7 @@
 #   try arranging according to top-list order, add manual guidance of relevance groups, see if queries can yield correct results from interrog8ion, try to
 #   represent values as multi-float vector formats in 3D or n-ary spaces, build sepR8 side caches of results && trials to preserve && learn to grow from;
 use strict;use warnings;use utf8;use v5.10;use Octology::a8;use Octology::b8;
-my $d8VS='K3TM1KcK';my $clrf=1;my $fulf=0;my $argz='';$argz= join(' ',@ARGV) if(@ARGV);my $Stxt='';my $Smap='';my $folf=0; # add 4-Or-Less-Flag
+my $d8VS='K44MGwRO';my $clrf=1;my $fulf=0;my $argz='';$argz= join(' ',@ARGV) if(@ARGV);my $Stxt='';my $Smap='';my $folf=0; # add 4-Or-Less-Flag
 my $edVS=        '';my $pg1f=0;   $pg1f=1 if($argz=~ /(^|\s)-?-?[^p]*p/i); # find -?p(age) flag2limit some extra long output to first 48-line page
 my $clmz=        80;my $lpsf=0;   $lpsf=1 if($argz=~ /(^|\s)-?-?[^l]*l/i); # find -?LetrPrecursShortsFlag  # if MaXWordSize evr grOz,wil nEd2incrEs|Dtct
 my $linz=        24;my $gm8f=0;   $gm8f=1 if($argz=~ /(^|\s)-?-?[^g]*g/i); # find -?g(m8r) flag2count&&adorn wi math 4mUl8ions stRting wi 2letr
@@ -22,13 +22,14 @@ my $linz=        24;my $gm8f=0;   $gm8f=1 if($argz=~ /(^|\s)-?-?[^g]*g/i); # fin
                     my @folc=();  $folf=1 if($argz=~ /(^|\s)-?-?[^w]*w/i); # find -?w(ord) flag to count && sort all maximum char-words at end
                     my %lpsd=();  $clrf=0 if($argz=~ /(^|\s)-?-?[^s]*s/i); # find -?s(SKp) flag arg4vim ':r!8plc s' 2B lIk ':r!8plc|sS'
 $clmz=$ENV{'COLUMNS'} if(exists($ENV{'COLUMNS'})); # mAB also Dtect H varE8ionz   # now MaXimumWordSize && CoLuMnof8 && Pre-letrz R Dtectd dynamicly(!hRdcOded)
-$linz=$ENV{'LINES'  } if(exists($ENV{'LINES'  }));my $lnmx=$linz - 2;my @jd8a;my $mxws=8;my $clm8= 8;my $clmp=$clm8-1;my $rcnt=0;
+$linz=$ENV{'LINES'  } if(exists($ENV{'LINES'  }));my $lnmx=$linz - 2;my @jd8a;my $mxws=8;my $clm8= 8;my $clmp=$clm8-1;my $rcnt=0;my $home='';
+$home=$ENV{'HOME'   } if(exists($ENV{'HOME'   }));my $name=$0;$home="/home/" . $ENV{'USER'} unless(-d $home);$name=~ s|^$home/|~/|;
 if($argz=~ /(^|\s)-?-?[^a]*a/i){   $lpsf=$gm8f=$fulf=$folf=1;} # set All optional section flags at once for any -a parameter
-if($argz=~ /(^|\s)-?-?[^h]*h/i){$Stxt.=" $0 - 8.utf Precursor Letter Counter d8VS:$d8VS by: $Auth to gener8 Octology applic8ion 8-words d8a analysis;
+if($argz=~ /(^|\s)-?-?[^h]*h/i){$Stxt.=" $name - 8.utf Precursor Letter Counter d8VS:$d8VS by: $Auth to gener8 Octology applic8ion 8-words d8a analysis;
   h   - print this Help text and exit; below options are flags which can be combined in any order, but l8r sections print in comput8ion order;
-  s   - print below options as just plain text (Strip default eScape color codes,like running `$0 | sS` strip eScape post-process);
+  s   - print below options as just plain text (Strip default eScape color codes,like running `$name | sS` strip eScape post-process);
   p   - print below options as limited to just first $lnmx-line Page instead of default everything (fixed 160x50 single Pages work for -l -w -g);
-  a   - print All extra options below (like calling `$0 lwgf`)   (with -p limiting most sections to  160x50 just 1 Page of output for each);
+  a   - print All extra options below (like calling `$name lwgf`)   (with -p limiting most sections to  160x50 just 1 Page of output for each);
   l   - print Letters of precursors sorted by size with colors     (with -p only printing up to z 110 and cutting off before c 148 as 1 Page);
   w   - print Words sorted by size up to current maximum of 19     (with -p only printing from  2 to  8 for just showing first  $lnmx-line Page);
   g   - print gM8ria 'Gematria' word valU8ions in aligned sections as preliminary trial of a few short approaches to some numerology; # just early explor8ion
@@ -39,7 +40,8 @@ if($argz=~ /(^|\s)-?-?[^h]*h/i){$Stxt.=" $0 - 8.utf Precursor Letter Counter d8V
         if($lsiz + length($tokn) > $clmz){$Stxt.="\n" . (' ' x 8);$lsiz=8;$tokn=~ s/^\s+//;} $Stxt.=$tokn;$lsiz+=length($tokn);} $Stxt.="\n";}}o8($Stxt);exit;}
 my $efyl ='8.txt';my $ufyl=$efyl;$ufyl=~ s/txt$/utf/i;if(!-e $efyl && -e $ufyl){$efyl=$ufyl;} # setup transition to .utf as better format to migr8 .txt to;
 my @lcnt;$lcnt[$_]=0 for(0..b10('z'));my @acnt;$acnt[$_]=0 for(0..b10('z'));my $donw=0;my $t0tl=0;my $text;my $actx;my $sclc;my $gttl=0;
-unless(-r         "$efyl"){$efyl=$ENV{'HOME'} . "/dox/2du/$efyl" if(exists($ENV{'HOME'}));} # try2add likely path when file not in local dir
+unless(-r         "$efyl"){$efyl="$ENV{'HOME'}/dox/2du/$efyl" if(exists($ENV{'HOME'})  );} # try2add likely path when file not in local dir
+unless(-r         "$efyl"){$efyl="$ENV{'HOME'}/dox/2du/8.utf" if(  -r  "$ENV{'HOME'}/dox/2du/8.utf");} # try2add likely path with Xplicit XtNsion from home
 open(my $eflh,'<',"$efyl") or die "!*EROR*! Couldn't open eight-file to read counts! $!";binmode $eflh,':encoding(UTF-8)';my %adw8;my %adpl;
 while( <$eflh>){my $ldat=$_;$donw=1 if(/^$/); # sets DONe-Words true when 1st blank line found (shud be 1-based line#:8-word cnt+1blnk+6cmnt-hedr,4now)
   if(/^#.*?\$d8VS\s*=\s*(['"])([0-9A-Za-z._]{8})\1\s*;/){$edVS=$2;} # this match regex seems to still need \1 && presumably ${1} would work in s/// replacement
@@ -181,6 +183,7 @@ if($gm8f){$Stxt.="${W}Gener8 gM8ria Primes for names by$B 3$W segments (${Y}PreL
   for   my $kvct (sort {$b <=> $a} keys(%kvs8)){my $s8ls='';my $rtot=18; # bild up an rtot to pump newlinez into s8ls before appending wider than clmz
     for my $ssvl (sort(@{$kvs8{$kvct}})){if($rtot + length($ssvl) + 1 >= $clmz){$s8ls.="\n";$rtot=0;} $rtot+=length($ssvl) + 1;
       $s8ls.=S(substr('YCMGRBop',b10(substr($ssvl,0,1)) % 8,1)) . "$ssvl ";} $s8ls=~ s/ $//;
+     #$s8ls.=S(substr('wCcwWKky',b10(substr($ssvl,0,1)) % 8,1)) . "$ssvl ";} $s8ls=~ s/ $//; # swap in less bl8ant varE8ion && actual ambigUiT,betr256grscl;
     $Stxt.=sprintf("${C}prct$W:%s$M%4d$C prez$W:$z%s\n"   ,b8c(sprintf("%3s",b64($kvct))),$kvct,$s8ls);
     for my $sprt (sort(@{$kvs8{$kvct}})){$w2pm{$sprt}=Prim($mxpa++) unless(exists($w2pm{$sprt}));}}                # try to keep reusing earlier segments
   $Stxt=sS('--',$Stxt) unless($clrf);o8($Stxt);$Stxt ='';
@@ -204,6 +207,7 @@ if($gm8f){$Stxt.="${W}Gener8 gM8ria Primes for names by$B 3$W segments (${Y}PreL
   $Stxt  .="${z}pres${C}By${B}Size$W:$z";my $rtot=11;for my $sprt (sort {length($a) <=> length($b)} sort(keys(%pres))){
     if($rtot + length($sprt) + 1 >= $clmz){ $Stxt.="\n";$rtot=0;}
     $rtot    +=length($sprt) + 1;           $Stxt.= S(substr('YCMGRBop', length($sprt) % 8,1)) . "$sprt ";} # colr sequ by size
+   #$rtot    +=length($sprt) + 1;           $Stxt.= S(substr('wCcwWKky', length($sprt) % 8,1)) . "$sprt ";} # colr sequ by size
   for   my $wsiz (2..$mxws ){my @folk=sort(keys(%{$folc[$wsiz]}));
     for my $fndx (0..$#folk){my $curw=$folk[$fndx];
       if($curw=~ /^(\w*?)([A-Z])8(\w*)$/i){my $pltr=$2;my $sfix='_';$sfix=$3 if(defined($3) && length($3));my $pfix='';$pfix=$1 if(defined($1) && length($1));
@@ -264,8 +268,9 @@ if($gm8f){$Stxt.="${W}Gener8 gM8ria Primes for names by$B 3$W segments (${Y}PreL
   my %jmap=('c'=> 0,'z'=> 1,'l'=> 2,'t'=> 3,'n'=> 4,'E'=> 5,'r'=> 6,'g'=> 7,'m'=> 8,'d'=> 9,'p'=>10,'v'=>11,'b'=>12,'s'=>13,'u'=>14,'C'=>15,'D'=>16,'L'=>17,
             'N'=>18,'R'=>19,'U'=>20,'V'=>21,'G'=>22,'f'=>23,'x'=>24,'B'=>25,'h'=>26,'k'=>27,'w'=>28,'I'=>29,'M'=>30,'P'=>31,'O'=>32,'S'=>33,'y'=>34);my %clrm;
   my @jmls=(split(//,'czltnErgmdpvbsuCDLNRUVGfxBhkwIMPOSy'));%jmap=();my $A=S('A');my $D=S('D'); # cycljoystkdirzfrm dn clkwIs aroun,mAnEd2rEordrl8rloopz4wIndz
-  my @jmcl=(split(//,'YoYoYoYoGMMMMGGGCCCCRRRRBBBBzzzzKKr'));%clrm=(); # JoystickMapColorsList
-  my %sepm=();my $bwid=53;$bwid=80 if($clmz >= 240);
+  my @jmcl=(split(//,'YWYWYWygGMMMoooCCCCRRRGppBBBBzzzKKb'));%clrm=(); # JoystickMapColorsList (new not all quads but stikng 2 letr grupz much more)
+ #my @jmcl=(split(//,'YoYoYoYoGMMMMGGGCCCCRRRRBBBBzzzzKKr'));%clrm=(); # JoystickMapColorsList (orig)
+  my %sepm=();my $bwid=53;$bwid=80 if($clmz >= 240);         $clrm{Z}=$z; # lowr z already a PreLetr
   my $shsf= 1;my $boff;my $jbnx;my $prlt;my $rosl;my $hbwd;my $stal;my $s=5;my $t=' ' x $s;my $bhwd=int($bwid/2);my %pwsf; #PrntdWzSoFar
 # maybe here should branch off detecting $ENV{'COLUMNS'} being less than 160 to try to just expand the middle-map to be illustr8ive for target 80x25 standard
   for   my $pndx (0..$#jmls){$jmap{$jmls[$pndx]}=$pndx;$clrm{$jmls[$pndx]} =S($jmcl[$pndx]);} #'z' try2gNr8 rvrs lookup of pre-letters to indices && CoLoRMap
@@ -318,9 +323,9 @@ if($gm8f){$Stxt.="${W}Gener8 gM8ria Primes for names by$B 3$W segments (${Y}PreL
         if         ($#{$jd8a[$jmap{ $prlt}]} >= abs($rndx-$boff)){     $rosl=$bwid-length( sS('--',$jd8a[$jmap{$prlt}][abs($rndx-$boff)]));$rosl=0 if($rosl<0);
           $Stxt     .= $jd8a[$jmap{ $prlt}][    abs($rndx-$boff)]   .  ' ' x $rosl;my $jltl=$bwid - $bhwd - 1; # set JoinedLineTailLength to pad blok end
           $pwsf{$prlt}+=(scalar(split(/\s+/,sS('--',$jd8a[$jmap{$prlt}][abs($rndx-$boff)])))+0);
-          if       ($rndx ==  16){if     ($prlt eq 'B' || $prlt eq 'h'){ # was rndx==15 # could regex chars together then LUT hash $1 into shared line PLz
-              if   ($prlt eq 'B'){$prlt='I';}
-              elsif($prlt eq 'h'){$prlt='P';} # mAB betr 2 pak h8 && P8 in2 last lIn of $Green C8 on Nd of 13, or 1 of Ech aftr N8 && U8 could werk too?
+          if       ($rndx >=  15){if     ($prlt eq 'B' || $prlt eq 'h'){ # was rndx==15 # could regex chars together then LUT hash $1 into shared line PLz
+              if   ($rndx ==  15 && $prlt eq 'B'){$prlt='I';} # figure out why I8 is not following B8 but P8 is following h8
+              elsif($rndx ==  16 && $prlt eq 'h'){$prlt='P';} # mAB betr 2 pak h8 && P8 in2 last lIn of $Green C8 on Nd of 13, or 1 of Ech aftr N8 && U8?
               $jltl= abs($jltl + 1 - length(sS('--',$jd8a[$jmap{$prlt}][0])));my $jlts= ' ' x $jltl;$pwsf{$prlt}+=scalar(split(/\s+/,
                                             sS('--',$jd8a[$jmap{$prlt}][0])));
               $Stxt =~            s/\s{$bhwd}$/$jd8a[$jmap{$prlt}][0]$jlts/;}}}
@@ -339,36 +344,36 @@ if($gm8f){$Stxt.="${W}Gener8 gM8ria Primes for names by$B 3$W segments (${Y}PreL
           if       ($prll eq 'm'){$hbwd=int($bwid/2)+6     ;$stal= ' ' x  abs($hbwd- 7);$prlt='r';$boff=14;
                                   $hbwd=int($bwid   -4) -$s;$stal= ' ' x (abs($hbwd-(($s*($s+1))-0))-8); # lots Xtra parNz
                                                             $stal= ' ' x 6; # don't nEd 2 gO by bwid Bcuz hUgSt r8 blok folOz && can B clOse;
-            if     ($rndx ==  0 ){$Stxt=~ s/\s{9}(\s{$hbwd})$/${M}Precursor${Y}Letters${c}in${G}8${D}DirectnsDown${C}CloCkwise$W:${Y}clnr${o}ztEg${G}m$z   /;}
-            if     ($rndx ==  1 ){$Stxt=~ s/\s{8}(\s{$hbwd})$/${z}I${R}V${C}L${M}v${C}N${R}U${z}P $1/;} # IVLvNUP zRCMCRz : PLz => colrz
-            elsif  ($rndx ==  2 ){$Stxt=~ s/\s{8}(\s{$hbwd})$/${B}B${G}u${o}t${Y}n${o}E${G}C${B}h $1/;} # ButnECh BGoYoGB
-            elsif  ($rndx ==  3 ){$Stxt=~ s/\s{8}(\s{$hbwd})$/${M}b${Y}l${K}O${r}y${K}S${Y}r${M}p $1/;} # blOySrp MYKrKYM
-            elsif  ($rndx ==  4 ){$Stxt=~ s/\s{8}(\s{$hbwd})$/${B}k${G}s${o}z${Y}c${o}g${G}m${B}x $1/;} # kszcgmx BGoYoGB
-            elsif  ($rndx ==  5 ){$Stxt=~ s/\s{8}(\s{$hbwd})$/${z}w${R}G${C}D${M}d${C}R${R}f${z}M $1/;} # wGDdRfM zRCMCRz
-            elsif  ($rndx ==  6 ){$Stxt=~ s/\s{9}(\s{$hbwd})$/${z} ${z} ${z} ${K}O${r}y${K}S${z} ${z}  $z$1/;}
-            elsif  ($rndx ==  7 ){$Stxt=~ s/\s{9}(\s{$hbwd})$/${Y}c${o}z${Y}l${o}t${Y}n${o}E${Y}r${o}g $z$1/;}
-            elsif  ($rndx ==  8 ){$Stxt=~ s/\s{9}(\s{$hbwd})$/${M}d${C}D${M}b${C}L${M}v${C}N${M}p${G}m $z$1/;}
-            elsif  ($rndx ==  9 ){$Stxt=~ s/\s{9}(\s{$hbwd})$/${R}G${G}s${R}V${G}u${R}U${G}C${R}f${C}R $z$1/;}
-            elsif  ($rndx == 10 ){$Stxt=~ s/\s{9}(\s{$hbwd})$/${B}k${z}w${B}B${z}I${B}h${z}P${B}x${z}M $z$1/;}
-            elsif  ($rndx == 11 ){$Stxt=~ s/\s{9}(\s{$hbwd})$/${K}O${Y} ${r}y${Y} ${M} ${r}y${M} ${K}S $z$1/;}
-            elsif  ($rndx == 12 ){$Stxt=~ s/\s{9}(\s{$hbwd})$/${C}L${o}t${Y}n${o}E${G}u${M}v${G}C${C}N $z$1/;} # addjust2mAin dIamondz:y clnr dbvp:on botm3lInz
-            elsif  ($rndx == 13 ){$Stxt=~ s/\s{9}(\s{$hbwd})$/${R}G${Y}l${R}V${Y}r${M}b${R}U${M}p${R}f $z$1/;}
-            elsif  ($rndx == 14 ){$Stxt=~ s/\s{9}(\s{$hbwd})$/${C}D${o}z${Y}c${o}g${G}s${M}d${G}m${C}R $z$1/;}
-            if     ($rndx ==  1 ){$Stxt=~ s/\s{$hbwd}$/$z ImpulsIveub ${C}LeftLeap NxtNorth ${z}ParryuPfliP  /  ;}
-            elsif  ($rndx ==  2 ){$Stxt=~ s/\s{$hbwd}$/$z I$t${R}V$t${C}L$t${M}v$t${C}N$t${R}U$t${z}P$stal/     ;}
-            elsif  ($rndx ==  3 ){$Stxt=~ s/\s{$hbwd}$/$z$R VitValVectr$M vERSUSvERTvAPORIZ$R Upf4wdjUmp  $z /  ;}
-            elsif  ($rndx ==  4 ){$Stxt=~ s/\s{$hbwd}$/$z$B BackBegin$o REtREAtOP EastEnd ${B}hEALThIGhOPhAh$z /;}
-            elsif  ($rndx ==  5 ){$Stxt=~ s/\s{$hbwd}$/$z$B B$t${G}u$t${o}t$t${Y}n$t${o}E$t${G}C$t${B}h$stal/   ;}
-            elsif  ($rndx ==  6 ){$Stxt=~ s/\s{$hbwd}$/$z$G uPBAKJuMPuSuRP$Y nOOnORTH $G CrashCeilingClimb$z /  ;}
-            elsif  ($rndx ==  7 ){$Stxt=~ s/\s{$hbwd}$/$z$M bACKbE4$K inchO8Orig Str8cS8Step$M pARRYpOKE$z   /  ;}
-            elsif  ($rndx ==  8 ){$Stxt=~ s/\s{$hbwd}$/$z$M b$t${Y}l$t${K}O$t${r}y$t${K}S$t${Y}r$t${M}p$stal/   ;}
-            elsif  ($rndx ==  9 ){$Stxt=~ s/\s{$hbwd}$/$z$Y lEANlUlEFT$r NEUTRALyMy_y8$Y rIGHTrEACHFOrWrD$z  /  ;}
-            elsif  ($rndx == 10 ){$Stxt=~ s/\s{$hbwd}$/$z$G sHIELDsITsOUTHsAs$Y cROUcH$G mOUNTmIXmINImUm$z   /  ;}
-            elsif  ($rndx == 11 ){$Stxt=~ s/\s{$hbwd}$/$z$B k$t${G}s$t${o}z$t${Y}c$t${o}g$t${G}m$t${B}x$stal/   ;}
-            elsif  ($rndx == 12 ){$Stxt=~ s/\s{$hbwd}$/$z$B kEEPkNEELOk$o zWESTzONE gOgROUND ${B}AxCRUxOLxML$z /;}
-            elsif  ($rndx == 13 ){$Stxt=~ s/\s{$hbwd}$/$z$R GroundGuard$M dIRECTdOWN$R fORWARDfRONTfALfLAT$z /  ;}
-            elsif  ($rndx == 14 ){$Stxt=~ s/\s{$hbwd}$/$z w$t${R}G$t${C}D$t${M}d$t${C}R$t${R}f$t${z}M$stal/     ;}
-            elsif  ($rndx == 15 ){$Stxt=~ s/\s{$hbwd}$/$z wESTw8 $C DownDefenDrop$C RoRight $z MountMovMnt$z /  ;}
+            if     ($rndx ==  0 ){$Stxt=~ s/\s{9}(\s{$hbwd})$/${M}Precursor${Y}Letters${c}in${G}8${D}DirectnsDown${C}CloCkwise$W:$clrm{c}cln$clrm{r}r$clrm{z}ztE$clrm{g}g$clrm{m}m$z   /;}
+            if     ($rndx ==  1 ){$Stxt=~ s/\s{8}(\s{$hbwd})$/$clrm{I}I$clrm{V}V$clrm{L}L$clrm{v}v$clrm{N}N$clrm{U}U$clrm{P}P $1/;}
+            elsif  ($rndx ==  2 ){$Stxt=~ s/\s{8}(\s{$hbwd})$/$clrm{B}B$clrm{u}u$clrm{t}t$clrm{n}n$clrm{E}E$clrm{C}C$clrm{h}h $1/;}
+            elsif  ($rndx ==  3 ){$Stxt=~ s/\s{8}(\s{$hbwd})$/$clrm{O}O$clrm{b}b$clrm{l}l$clrm{y}y$clrm{r}r$clrm{p}p$clrm{S}S $1/;}
+            elsif  ($rndx ==  4 ){$Stxt=~ s/\s{8}(\s{$hbwd})$/$clrm{k}k$clrm{s}s$clrm{z}z$clrm{c}c$clrm{g}g$clrm{m}m$clrm{x}x $1/;}
+            elsif  ($rndx ==  5 ){$Stxt=~ s/\s{8}(\s{$hbwd})$/$clrm{w}w$clrm{G}G$clrm{D}D$clrm{d}d$clrm{R}R$clrm{f}f$clrm{M}M $1/;}
+            elsif  ($rndx ==  6 ){$Stxt=~ s/\s{9}(\s{$hbwd})$/$clrm{Z} $clrm{O}O$clrm{Z} $clrm{y} $clrm{y}y$clrm{r} $clrm{Z} $clrm{S}S $z$1/;}
+            elsif  ($rndx ==  7 ){$Stxt=~ s/\s{9}(\s{$hbwd})$/$clrm{c}c$clrm{z}z$clrm{l}l$clrm{t}t$clrm{n}n$clrm{E}E$clrm{r}r$clrm{g}g $z$1/;}
+            elsif  ($rndx ==  8 ){$Stxt=~ s/\s{9}(\s{$hbwd})$/$clrm{G}G$clrm{u}u$clrm{v}v$clrm{b}b$clrm{p}p$clrm{s}s$clrm{d}d$clrm{m}m $z$1/;}
+            elsif  ($rndx ==  9 ){$Stxt=~ s/\s{9}(\s{$hbwd})$/$clrm{C}C$clrm{R}R$clrm{D}D$clrm{U}U$clrm{L}L$clrm{V}V$clrm{N}N$clrm{f}f $z$1/;}
+            elsif  ($rndx == 10 ){$Stxt=~ s/\s{9}(\s{$hbwd})$/$clrm{w}w$clrm{P}P$clrm{k}k$clrm{M}M$clrm{h}h$clrm{I}I$clrm{B}B$clrm{x}x $z$1/;}
+            elsif  ($rndx == 11 ){$Stxt=~ s/\s{9}(\s{$hbwd})$/$clrm{O}O$clrm{Z} $clrm{y}y$clrm{Z} $clrm{y} $clrm{y}y$clrm{Z} $clrm{S}S $z$1/;}
+            elsif  ($rndx == 12 ){$Stxt=~ s/\s{9}(\s{$hbwd})$/$clrm{L}L$clrm{t}t$clrm{n}n$clrm{E}E$clrm{u}u$clrm{v}v$clrm{N}N$clrm{C}C $z$1/;}
+            elsif  ($rndx == 13 ){$Stxt=~ s/\s{9}(\s{$hbwd})$/$clrm{G}G$clrm{l}l$clrm{g}g$clrm{r}r$clrm{b}b$clrm{m}m$clrm{p}p$clrm{f}f $z$1/;}
+            elsif  ($rndx == 14 ){$Stxt=~ s/\s{9}(\s{$hbwd})$/$clrm{D}D$clrm{z}z$clrm{c}c$clrm{R}R$clrm{s}s$clrm{d}d$clrm{U}U$clrm{V}V $z$1/;}
+            if     ($rndx ==  1 ){$Stxt=~ s/\s{$hbwd}$/$z$clrm{I} ImpulsIveub $clrm{L}LeftLeap $clrm{N}NxtNorth $clrm{P}ParryuPfliP  /  ;}
+            elsif  ($rndx ==  2 ){$Stxt=~ s/\s{$hbwd}$/$z$clrm{I} I$t$clrm{V}V$t$clrm{L}L$t$clrm{v}v$t$clrm{N}N$t$clrm{U}U$t$clrm{P}P$stal/     ;}
+            elsif  ($rndx ==  3 ){$Stxt=~ s/\s{$hbwd}$/$z$clrm{V} VitValVectr$clrm{v} vERSUSvERTvAPORIZ$clrm{U} Upf4wdjUmp  $z /  ;}
+            elsif  ($rndx ==  4 ){$Stxt=~ s/\s{$hbwd}$/$z$clrm{B} BackBegin$clrm{t} REtREAtOP $clrm{E}EastEnd $clrm{h}hEALThIGhOPhAh$z /;}
+            elsif  ($rndx ==  5 ){$Stxt=~ s/\s{$hbwd}$/$z$clrm{B} B$t$clrm{u}u$t$clrm{t}t$t$clrm{n}n$t$clrm{E}E$t$clrm{C}C$t$clrm{h}h$stal/   ;}
+            elsif  ($rndx ==  6 ){$Stxt=~ s/\s{$hbwd}$/$z$clrm{u} uPBAKJuMPuSuRP$clrm{n} nOOnORTH $clrm{C} CrashCeilingClimb$z /  ;}
+            elsif  ($rndx ==  7 ){$Stxt=~ s/\s{$hbwd}$/$z$clrm{O} inchO8$clrm{b} bACKbEFORE $clrm{p} pARRYpOKE$clrm{S} Str8cS8Step$z   /  ;}
+            elsif  ($rndx ==  8 ){$Stxt=~ s/\s{$hbwd}$/$z$clrm{O} O$t$clrm{b}b$t$clrm{l}l$t$clrm{y}y$t$clrm{r}r$t$clrm{p}p$t$clrm{S}S$stal/   ;}
+            elsif  ($rndx ==  9 ){$Stxt=~ s/\s{$hbwd}$/$z$clrm{l}   lEANlUlEFTl$clrm{y} NEUTRALy8$clrm{r} rIGHTrEACHFOrWrD$z   /  ;}
+            elsif  ($rndx == 10 ){$Stxt=~ s/\s{$hbwd}$/$z$clrm{s} sHIELDsITsOUTHsAs$clrm{c} cROUcH$clrm{m} mOUNTmIXmINImUm$z   /  ;}
+            elsif  ($rndx == 11 ){$Stxt=~ s/\s{$hbwd}$/$z$clrm{k} k$t$clrm{s}s$t$clrm{z}z$t$clrm{c}c$t$clrm{g}g$t$clrm{m}m$t$clrm{x}x$stal/   ;}
+            elsif  ($rndx == 12 ){$Stxt=~ s/\s{$hbwd}$/$z$clrm{k} kEEPkNEELOk$clrm{z} zWESTzONE $clrm{g}gOgROUND $clrm{x}AxCRUxOLxML$z /;}
+            elsif  ($rndx == 13 ){$Stxt=~ s/\s{$hbwd}$/$z$clrm{G} GroundGuard$clrm{d} dIRECTdOWN$clrm{f} fORWARDfRONTfALfLAT$z /  ;}
+            elsif  ($rndx == 14 ){$Stxt=~ s/\s{$hbwd}$/$z$clrm{w} w$t$clrm{G}G$t$clrm{D}D$t$clrm{d}d$t$clrm{R}R$t$clrm{f}f$t$clrm{M}M$stal/     ;}
+            elsif  ($rndx == 15 ){$Stxt=~ s/\s{$hbwd}$/$z$clrm{w} wESTw8 $clrm{D} DownDefenDrop$clrm{R} RoRight $clrm{M} MountMovMnt$z /  ;}
           }}elsif  ($rndx == 15 && $prll eq 'm'){$hbwd=int($bwid/2)+6     ;$stal= ' ' x  abs($hbwd- 7);$prlt='r';$boff=14; # alsoinsrt last b8 wordin -c noCntr
                                                  $hbwd=int($bwid   -4) -$s;$stal= ' ' x (abs($hbwd-(($s*($s+1))-0))-8);
                                                 }}  $Stxt.="\n";}
@@ -412,37 +417,37 @@ if($gm8f){$Stxt.="${W}Gener8 gM8ria Primes for names by$B 3$W segments (${Y}PreL
     $Stxt.=$R.' ' x 2 .cma($t0tl)." $Y- $o".cma($ltot)." $G= $B".cma($t0tl-$ltot)   ; # I6OMGtot:pasting `8plc gc` map quoted into echo | wc -w 1025/1369 now;
     $Stxt.=sprintf("$M%8.3f$C%%$K shown$W;\n$z",(($t0tl-$ltot)*100.0/$t0tl)); # try to wrap up total map printing with percentage shown in single page
   }elsif  ($clmz <  160){
-    $Stxt.="${M}Precursor${Y}Letters${c}in${G}8${D}DirectnsDown${C}CloCkwise$W:${Y}clnr${o}ztEg${G}m$z   \n";                 #   0
-    $Stxt.="$z I${R}V${C}L${M}v${C}N${R}U${z}P "; # IVLvNUP zRCMCRz : PLz => colrz                                           #   1  # were old $1 capturz4smthn
-    $Stxt.="$z ImpulsIveub ${C}LeftLeap NxtNorth ${z}ParryuPfliP  \n";                                                        #   1
-    $Stxt.="$B B${G}u${o}t${Y}n${o}E${G}C${B}h "; # ButnECh BGoYoGB                                                          #   2
-    $Stxt.="$z I$t${R}V$t${C}L$t${M}v$t${C}N$t${R}U$t${z}P    \n";                                                            #   2
-    $Stxt.="$M b${Y}l${K}O${r}y${K}S${Y}r${M}p "; # blOySrp MYKrKYM                                                          #   3
-    $Stxt.="$z$R VitValVectr$M vERSUSvERTvAPORIZ$R Upf4wdjUmp  $z \n";                                                        #   3
-    $Stxt.="$B k${G}s${o}z${Y}c${o}g${G}m${B}x "; # kszcgmx BGoYoGB                                                          #   4
-    $Stxt.="$z$B BackBegin$o REtREAtOP EastEnd ${B}hEALThIGhOPhAh$z \n";                                                      #   4
-    $Stxt.="$z w${R}G${C}D${M}d${C}R${R}f${z}M "; # wGDdRfM zRCMCRz                                                          #   5
-    $Stxt.="$z$B B$t${G}u$t${o}t$t${Y}n$t${o}E$t${G}C$t${B}h    \n";                                                          #   5
-    $Stxt.="${z} ${z} ${z} ${K}O${r}y${K}S${z} ${z}  $z";                                                                    #   6
-    $Stxt.="$z$G uPBAKJuMPuSuRP$Y nOOnORTH $G CrashCeilingClimb$z \n";                                                        #   6
-    $Stxt.="${Y}c${o}z${Y}l${o}t${Y}n${o}E${Y}r${o}g $z";                                                                    #   7
-    $Stxt.="$z$M bACKbE4$K inchO8Orig Str8cS8Step$M pARRYpOKE$z   \n";                                                        #   7
-    $Stxt.="${M}d${C}D${M}b${C}L${M}v${C}N${M}p${G}m $z";                                                                    #   8
-    $Stxt.="$z$M b$t${Y}l$t${K}O$t${r}y$t${K}S$t${Y}r$t${M}p    \n";                                                          #   8
-    $Stxt.="${R}G${G}s${R}V${G}u${R}U${G}C${R}f${C}R $z";                                                                    #   9
-    $Stxt.="$z$Y lEANlUlEFT$r NEUTRALyMy_y8$Y rIGHTrEACHFOrWrD$z  \n";                                                        #   9
-    $Stxt.="${B}k${z}w${B}B${z}I${B}h${z}P${B}x${z}M $z";                                                                    #  10
-    $Stxt.="$z$G sHIELDsITsOUTHsAs$Y cROUcH$G mOUNTmIXmINImUm$z   \n";                                                        #  10
-    $Stxt.="${K}O${Y} ${r}y${Y} ${M} ${r}y${M} ${K}S $z";                                                                    #  11
-    $Stxt.="$z$B k$t${G}s$t${o}z$t${Y}c$t${o}g$t${G}m$t${B}x    \n";                                                          #  11
-    $Stxt.="${C}L${o}t${Y}n${o}E${G}u${M}v${G}C${C}N $z"; # addjust2mAin dIamondz:y clnr dbvp:on botm3lInz                   #  12
-    $Stxt.="$z$B kEEPkNEELOk$o zWESTzONE gOgROUND ${B}AxCRUxOLxML$z \n";                                                      #  12
-    $Stxt.="${R}G${Y}l${R}V${Y}r${M}b${R}U${M}p${R}f $z";                                                                    #  13
-    $Stxt.="$z$R GroundGuard$M dIRECTdOWN$R fORWARDfRONTfALfLAT$z \n";                                                        #  13
-    $Stxt.="${C}D${o}z${Y}c${o}g${G}s${M}d${G}m${C}R $z";                                                                    #  14
-    $Stxt.="$z w$t${R}G$t${C}D$t${M}d$t${C}R$t${R}f$t${z}M    \n";                                                            #  14
-    $Stxt.=" " x  9; #${M}disappro${Y}b${G}8${B}ion$z"; # try2sneak last b8 word undr colrd PL blok mapz,was zYGBz           #  15
-    $Stxt.="$z wESTw8 $C DownDefenDrop$C RoRight $z MountMovMnt$z \n";                                                        #  15
+    $Stxt.="${M}Precursor${Y}Letters${c}in${G}8${D}DirectnsDown${C}CloCkwise$W:$clrm{c}cln$clrm{r}r$clrm{z}ztE$clrm{g}g$clrm{m}m$z   \n";         #   0
+    $Stxt.="$clrm{Z}$clrm{I} I$clrm{V}V$clrm{L}L$clrm{v}v$clrm{N}N$clrm{U}U$clrm{P}P "  ;
+    $Stxt.="$clrm{Z}$clrm{I} ImpulsIveub $clrm{L}LeftLeap$clrm{N} NxtNorth $clrm{P}ParryuPfliP  \n";
+    $Stxt.="$clrm{Z}$clrm{B} B$clrm{u}u$clrm{t}t$clrm{n}n$clrm{E}E$clrm{C}C$clrm{h}h ";
+    $Stxt.="$clrm{Z}$clrm{I} I$t$clrm{V}V$t$clrm{L}L$t$clrm{v}v$t$clrm{N}N$t$clrm{U}U$t$clrm{P}P    \n";
+    $Stxt.="$clrm{Z}$clrm{O} O$clrm{b}b$clrm{l}l$clrm{y}y$clrm{r}r$clrm{p}p$clrm{S}S ";
+    $Stxt.="$clrm{Z}$clrm{V} VitValVectr$clrm{v} vERSUSvERTvAPORIZ$clrm{U} Upf4wdjUmp  $clrm{Z} \n";
+    $Stxt.="$clrm{Z}$clrm{k} k$clrm{s}s$clrm{z}z$clrm{c}c$clrm{g}g$clrm{m}m$clrm{x}x ";
+    $Stxt.="$clrm{Z}$clrm{B} BackBegin$clrm{t} REtREAtOP$clrm{E} EastEnd $clrm{h}hEALThIGhOPhAh$clrm{Z} \n";
+    $Stxt.="$clrm{Z}$clrm{w} w$clrm{G}G$clrm{D}D$clrm{d}d$clrm{R}R$clrm{f}f$clrm{M}M ";
+    $Stxt.="$clrm{Z}$clrm{B} B$t$clrm{u}u$t$clrm{t}t$t$clrm{n}n$t$clrm{E}E$t$clrm{C}C$t$clrm{h}h    \n";
+    $Stxt.="$clrm{Z}$clrm{O} O$clrm{Z} $clrm{Z} $clrm{y}y$clrm{Z} $clrm{Z} $clrm{S}S ";
+    $Stxt.="$clrm{Z}$clrm{u} uPBAKJuMPuSuRP$clrm{n} nOOnORTH $clrm{C}C CrashCeilingClimb$clrm{Z} \n";
+    $Stxt.="$clrm{c}c$clrm{z}z$clrm{l}l$clrm{t}t$clrm{n}n$clrm{E}E$clrm{r}r$clrm{g}g $clrm{Z}";
+    $Stxt.="$clrm{Z}$clrm{O} inchO8$clrm{b} bACKbEFORE$clrm{p}  pARRYpOKE$clrm{S} Str8cS8Step$clrm{Z}   \n";
+    $Stxt.="$clrm{G}G$clrm{u}u$clrm{v}v$clrm{b}b$clrm{p}p$clrm{s}s$clrm{d}d$clrm{m}m $clrm{Z}";
+    $Stxt.="$clrm{Z}$clrm{O} O$t$clrm{b}b$t$clrm{l}l$t$clrm{y}y$t$clrm{r}r$t$clrm{p}p$t$clrm{S}S    \n";
+    $Stxt.="$clrm{C}C$clrm{R}R$clrm{D}D$clrm{U}U$clrm{L}L$clrm{V}V$clrm{N}N$clrm{f}f $clrm{Z}";
+    $Stxt.="$clrm{Z}$clrm{l}  lEANlOWlEFTl$clrm{y} NEUTRALy8$clrm{r} rIGHTrEACHFOrWrD$clrm{Z}   \n";
+    $Stxt.="$clrm{w}w$clrm{P}P$clrm{k}k$clrm{M}M$clrm{h}h$clrm{I}I$clrm{B}B$clrm{x}x $clrm{Z}";
+    $Stxt.="$clrm{Z}$clrm{s} sHIELDsITsOUTHsAs$clrm{c} cROUcH$clrm{m} mOUNTmIXmINImUm$clrm{Z}   \n";
+    $Stxt.="$clrm{O}O$clrm{Z} $clrm{y}y$clrm{Z} $clrm{Z} $clrm{y}y$clrm{Z} $clrm{S}S $clrm{Z}";
+    $Stxt.="$clrm{Z}$clrm{k} k$t$clrm{s}s$t$clrm{z}z$t$clrm{c}c$t$clrm{g}g$t$clrm{m}m$t$clrm{x}x    \n";
+    $Stxt.="$clrm{L}L$clrm{t}t$clrm{n}n$clrm{E}E$clrm{u}u$clrm{v}v$clrm{N}N$clrm{C}C $clrm{Z}";
+    $Stxt.="$clrm{Z}$clrm{k} kEEPkNEELOk$clrm{z} zWESTzONE$clrm{g} gOgROUND $clrm{x}AxCRUxOLxML$clrm{Z} \n";
+    $Stxt.="$clrm{G}G$clrm{l}l$clrm{g}g$clrm{r}r$clrm{b}b$clrm{m}m$clrm{p}p$clrm{f}f $clrm{Z}";
+    $Stxt.="$clrm{Z}$clrm{G} GroundGuard$clrm{d} dIRECTdOWN$clrm{f} fORWARDfRONTfALfLAT$clrm{Z} \n";
+    $Stxt.="$clrm{D}D$clrm{z}z$clrm{c}c$clrm{R}R$clrm{s}s$clrm{d}d$clrm{U}U$clrm{V}V $clrm{Z}";
+    $Stxt.="$clrm{Z}$clrm{w} w$t$clrm{G}G$t$clrm{D}D$t$clrm{d}d$t$clrm{R}R$t$clrm{f}f$t$clrm{M}M$z    \n";
+    $Stxt.=" " x  9; #$clrm{b}disappro${Y}b${G}8${B}ion$clrm{Z}";
+    $Stxt.="$clrm{Z}$clrm{w} wESTw8 $clrm{D} DownDefenDrop$clrm{R} RoRight $clrm{M} MountMovMnt$clrm{Z} \n";
   }else{
   # I9NM60ft:started thinking about :se syntax=off to enable vim navig8ion without horrid scrolling lag to elabor8 240x67 or 75?;
     for   my $rndx (0..15){for my $prll (qw(t n E)){$prlt=$prll;$boff=  0; # cud frthr pRamEtrIz propag8d prOgrSn&&zOnsIzs,rthr than such manual
@@ -478,37 +483,37 @@ if($gm8f){$Stxt.="${W}Gener8 gM8ria Primes for names by$B 3$W segments (${Y}PreL
         if         ($gmcf){ # -g Gematria Gener8d - Middle Map Maker - Center Color Code - Flag Flip Flop, or try to cram most of left in altern8 middle block
           if       ($prll eq 'm'){$hbwd=int($bwid/2)+6     ;$stal= ' ' x  abs($hbwd- 7);$prlt='r';$boff=14;
                                   $hbwd=int($bwid   -4) -$s;$stal= ' ' x (abs($hbwd-(($s*($s+1))-0))-8); # lots Xtra parNz
-            if     ($rndx ==  0 ){$Stxt=~ s/\s{9}(\s{$hbwd})$/${M}Precursor${Y}Letters${c}in${G}8${D}DirectnsDown${C}CloCkwise$W:${Y}clnr${o}ztEg${G}m$z   /;}
-            if     ($rndx ==  1 ){$Stxt=~ s/\s{8}(\s{$hbwd})$/${z}I${R}V${C}L${M}v${C}N${R}U${z}P $1/;} # IVLvNUP zRCMCRz : PLz => colrz
-            elsif  ($rndx ==  2 ){$Stxt=~ s/\s{8}(\s{$hbwd})$/${B}B${G}u${o}t${Y}n${o}E${G}C${B}h $1/;} # ButnECh BGoYoGB
-            elsif  ($rndx ==  3 ){$Stxt=~ s/\s{8}(\s{$hbwd})$/${M}b${Y}l${K}O${r}y${K}S${Y}r${M}p $1/;} # blOySrp MYKrKYM
-            elsif  ($rndx ==  4 ){$Stxt=~ s/\s{8}(\s{$hbwd})$/${B}k${G}s${o}z${Y}c${o}g${G}m${B}x $1/;} # kszcgmx BGoYoGB
-            elsif  ($rndx ==  5 ){$Stxt=~ s/\s{8}(\s{$hbwd})$/${z}w${R}G${C}D${M}d${C}R${R}f${z}M $1/;} # wGDdRfM zRCMCRz
-            elsif  ($rndx ==  6 ){$Stxt=~ s/\s{9}(\s{$hbwd})$/${z} ${z} ${z} ${K}O${r}y${K}S${z} ${z}  $z$1/;}
-            elsif  ($rndx ==  7 ){$Stxt=~ s/\s{9}(\s{$hbwd})$/${Y}c${o}z${Y}l${o}t${Y}n${o}E${Y}r${o}g $z$1/;}
-            elsif  ($rndx ==  8 ){$Stxt=~ s/\s{9}(\s{$hbwd})$/${M}d${C}D${M}b${C}L${M}v${C}N${M}p${G}m $z$1/;}
-            elsif  ($rndx ==  9 ){$Stxt=~ s/\s{9}(\s{$hbwd})$/${R}G${G}s${R}V${G}u${R}U${G}C${R}f${C}R $z$1/;}
-            elsif  ($rndx == 10 ){$Stxt=~ s/\s{9}(\s{$hbwd})$/${B}k${z}w${B}B${z}I${B}h${z}P${B}x${z}M $z$1/;}
-            elsif  ($rndx == 11 ){$Stxt=~ s/\s{9}(\s{$hbwd})$/${K}O${Y} ${r}y${Y} ${M} ${r}y${M} ${K}S $z$1/;}
-            elsif  ($rndx == 12 ){$Stxt=~ s/\s{9}(\s{$hbwd})$/${C}L${o}t${Y}n${o}E${G}u${M}v${G}C${C}N $z$1/;} # addjust2mAin dIamondz:y clnr dbvp:on botm3lInz
-            elsif  ($rndx == 13 ){$Stxt=~ s/\s{9}(\s{$hbwd})$/${R}G${Y}l${R}V${Y}r${M}b${R}U${M}p${R}f $z$1/;}
-            elsif  ($rndx == 14 ){$Stxt=~ s/\s{9}(\s{$hbwd})$/${C}D${o}z${Y}c${o}g${G}s${M}d${G}m${C}R $z$1/;}
-            elsif  ($rndx == 15 ){$Stxt=~s/\s{13}(\s{$hbwd})$/${M}disappro${Y}b${G}8${B}ion$z$1/;} # try2sneak last b8 word undr colrd PL blok mapz,was zYGBz
-            if     ($rndx ==  1 ){$Stxt=~ s/\s{$hbwd}$/$z ImpulsIveub ${C}LeftLeap NxtNorth ${z}ParryuPfliP  /  ;}
-            elsif  ($rndx ==  2 ){$Stxt=~ s/\s{$hbwd}$/$z I$t${R}V$t${C}L$t${M}v$t${C}N$t${R}U$t${z}P$stal/     ;}
-            elsif  ($rndx ==  3 ){$Stxt=~ s/\s{$hbwd}$/$z$R VitValVectr$M vERSUSvERTvAPORIZ$R Upf4wdjUmp  $z /  ;}
-            elsif  ($rndx ==  4 ){$Stxt=~ s/\s{$hbwd}$/$z$B BackBegin$o REtREAtOP EastEnd ${B}hEALThIGhOPhAh$z /;}
-            elsif  ($rndx ==  5 ){$Stxt=~ s/\s{$hbwd}$/$z$B B$t${G}u$t${o}t$t${Y}n$t${o}E$t${G}C$t${B}h$stal/   ;}
-            elsif  ($rndx ==  6 ){$Stxt=~ s/\s{$hbwd}$/$z$G uPBAKJuMPuSuRP$Y nOOnORTH $G CrashCeilingClimb$z /  ;}
-            elsif  ($rndx ==  7 ){$Stxt=~ s/\s{$hbwd}$/$z$M bACKbE4$K inchO8Orig Str8cS8Step$M pARRYpOKE$z   /  ;}
-            elsif  ($rndx ==  8 ){$Stxt=~ s/\s{$hbwd}$/$z$M b$t${Y}l$t${K}O$t${r}y$t${K}S$t${Y}r$t${M}p$stal/   ;}
-            elsif  ($rndx ==  9 ){$Stxt=~ s/\s{$hbwd}$/$z$Y lEANlUlEFT$r NEUTRALyMy_y8$Y rIGHTrEACHFOrWrD$z  /  ;}
-            elsif  ($rndx == 10 ){$Stxt=~ s/\s{$hbwd}$/$z$G sHIELDsITsOUTHsAs$Y cROUcH$G mOUNTmIXmINImUm$z   /  ;}
-            elsif  ($rndx == 11 ){$Stxt=~ s/\s{$hbwd}$/$z$B k$t${G}s$t${o}z$t${Y}c$t${o}g$t${G}m$t${B}x$stal/   ;}
-            elsif  ($rndx == 12 ){$Stxt=~ s/\s{$hbwd}$/$z$B kEEPkNEELOk$o zWESTzONE gOgROUND ${B}AxCRUxOLxML$z /;}
-            elsif  ($rndx == 13 ){$Stxt=~ s/\s{$hbwd}$/$z$R GroundGuard$M dIRECTdOWN$R fORWARDfRONTfALfLAT$z /  ;}
-            elsif  ($rndx == 14 ){$Stxt=~ s/\s{$hbwd}$/$z w$t${R}G$t${C}D$t${M}d$t${C}R$t${R}f$t${z}M$stal/     ;}
-            elsif  ($rndx == 15 ){$Stxt=~ s/\s{$hbwd}$/$z wESTw8 $C DownDefenDrop$C RoRight $z MountMovMnt$z /  ;}
+            if     ($rndx ==  0 ){$Stxt=~ s/\s{9}(\s{$hbwd})$/${M}Precursor${Y}Letters${c}in${G}8${D}DirectnsDown${C}CloCkwise$W:$clrm{c}cln$clrm{r}r$clrm{z}ztE$clrm{g}g$clrm{m}m$z   /;}
+            if     ($rndx ==  1 ){$Stxt=~ s/\s{8}(\s{$hbwd})$/$clrm{I}I$clrm{V}V$clrm{L}L$clrm{v}v$clrm{N}N$clrm{U}U$clrm{P}P $1/;}
+            elsif  ($rndx ==  2 ){$Stxt=~ s/\s{8}(\s{$hbwd})$/$clrm{B}B$clrm{u}u$clrm{t}t$clrm{n}n$clrm{E}E$clrm{C}C$clrm{h}h $1/;}
+            elsif  ($rndx ==  3 ){$Stxt=~ s/\s{8}(\s{$hbwd})$/$clrm{O}O$clrm{b}b$clrm{l}l$clrm{y}y$clrm{r}r$clrm{p}p$clrm{S}S $1/;}
+            elsif  ($rndx ==  4 ){$Stxt=~ s/\s{8}(\s{$hbwd})$/$clrm{k}k$clrm{s}s$clrm{z}z$clrm{c}c$clrm{g}g$clrm{m}m$clrm{x}x $1/;}
+            elsif  ($rndx ==  5 ){$Stxt=~ s/\s{8}(\s{$hbwd})$/$clrm{w}w$clrm{G}G$clrm{D}D$clrm{d}d$clrm{R}R$clrm{f}f$clrm{M}M $1/;}
+            elsif  ($rndx ==  6 ){$Stxt=~ s/\s{9}(\s{$hbwd})$/$clrm{Z} $clrm{O}O$clrm{Z} $clrm{y} $clrm{y}y$clrm{r} $clrm{Z} $clrm{S}S $z$1/;}
+            elsif  ($rndx ==  7 ){$Stxt=~ s/\s{9}(\s{$hbwd})$/$clrm{c}c$clrm{z}z$clrm{l}l$clrm{t}t$clrm{n}n$clrm{E}E$clrm{r}r$clrm{g}g $z$1/;}
+            elsif  ($rndx ==  8 ){$Stxt=~ s/\s{9}(\s{$hbwd})$/$clrm{G}G$clrm{u}u$clrm{v}v$clrm{b}b$clrm{p}p$clrm{s}s$clrm{d}d$clrm{m}m $z$1/;}
+            elsif  ($rndx ==  9 ){$Stxt=~ s/\s{9}(\s{$hbwd})$/$clrm{C}C$clrm{R}R$clrm{D}D$clrm{U}U$clrm{L}L$clrm{V}V$clrm{N}N$clrm{f}f $z$1/;}
+            elsif  ($rndx == 10 ){$Stxt=~ s/\s{9}(\s{$hbwd})$/$clrm{w}w$clrm{P}P$clrm{k}k$clrm{M}M$clrm{h}h$clrm{I}I$clrm{B}B$clrm{x}x $z$1/;}
+            elsif  ($rndx == 11 ){$Stxt=~ s/\s{9}(\s{$hbwd})$/$clrm{O}O$clrm{Z} $clrm{y}y$clrm{Z} $clrm{y} $clrm{y}y$clrm{Z} $clrm{S}S $z$1/;}
+            elsif  ($rndx == 12 ){$Stxt=~ s/\s{9}(\s{$hbwd})$/$clrm{L}L$clrm{t}t$clrm{n}n$clrm{E}E$clrm{u}u$clrm{v}v$clrm{N}N$clrm{C}C $z$1/;}
+            elsif  ($rndx == 13 ){$Stxt=~ s/\s{9}(\s{$hbwd})$/$clrm{G}G$clrm{l}l$clrm{g}g$clrm{r}r$clrm{b}b$clrm{m}m$clrm{p}p$clrm{f}f $z$1/;}
+            elsif  ($rndx == 14 ){$Stxt=~ s/\s{9}(\s{$hbwd})$/$clrm{D}D$clrm{z}z$clrm{c}c$clrm{R}R$clrm{s}s$clrm{d}d$clrm{U}U$clrm{V}V $z$1/;}
+            elsif  ($rndx == 15 ){$Stxt=~s/\s{13}(\s{$hbwd})$/$clrm{b}disappro${Y}b${G}8${B}ion$z$1/;} # sneak last b8 word undr colrd PL blok mapz,was zYGBz
+            if     ($rndx ==  1 ){$Stxt=~ s/\s{$hbwd}$/$z$clrm{I} ImpulsIveub $clrm{L}LeftLeap $clrm{N}NxtNorth $clrm{P}ParryuPfliP  /  ;}
+            elsif  ($rndx ==  2 ){$Stxt=~ s/\s{$hbwd}$/$z$clrm{I} I$t$clrm{V}V$t$clrm{L}L$t$clrm{v}v$t$clrm{N}N$t$clrm{U}U$t$clrm{P}P$stal/     ;}
+            elsif  ($rndx ==  3 ){$Stxt=~ s/\s{$hbwd}$/$z$clrm{V} VitValVectr$clrm{v} vERSUSvERTvAPORIZ$clrm{U} Upf4wdjUmp  $z /  ;}
+            elsif  ($rndx ==  4 ){$Stxt=~ s/\s{$hbwd}$/$z$clrm{B} BackBegin$clrm{t} REtREAtOP $clrm{E}EastEnd $clrm{h}hEALThIGhOPhAh$z /;}
+            elsif  ($rndx ==  5 ){$Stxt=~ s/\s{$hbwd}$/$z$clrm{B} B$t$clrm{u}u$t$clrm{t}t$t$clrm{n}n$t$clrm{E}E$t$clrm{C}C$t$clrm{h}h$stal/   ;}
+            elsif  ($rndx ==  6 ){$Stxt=~ s/\s{$hbwd}$/$z$clrm{u} uPBAKJuMPuSuRP$clrm{n} nOOnORTH $clrm{C} CrashCeilingClimb$z /  ;}
+            elsif  ($rndx ==  7 ){$Stxt=~ s/\s{$hbwd}$/$z$clrm{O} inchO8$clrm{b} bACKbEFORE $clrm{p} pARRYpOKE$clrm{S} Str8cS8Step$z   /  ;}
+            elsif  ($rndx ==  8 ){$Stxt=~ s/\s{$hbwd}$/$z$clrm{O} O$t$clrm{b}b$t$clrm{l}l$t$clrm{y}y$t$clrm{r}r$t$clrm{p}p$t$clrm{S}S$stal/   ;}
+            elsif  ($rndx ==  9 ){$Stxt=~ s/\s{$hbwd}$/$z$clrm{l}   lEANlUlEFTl$clrm{y} NEUTRALy8$clrm{r} rIGHTrEACHFOrWrD$z   /  ;}
+            elsif  ($rndx == 10 ){$Stxt=~ s/\s{$hbwd}$/$z$clrm{s} sHIELDsITsOUTHsAs$clrm{c} cROUcH$clrm{m} mOUNTmIXmINImUm$z   /  ;}
+            elsif  ($rndx == 11 ){$Stxt=~ s/\s{$hbwd}$/$z$clrm{k} k$t$clrm{s}s$t$clrm{z}z$t$clrm{c}c$t$clrm{g}g$t$clrm{m}m$t$clrm{x}x$stal/   ;}
+            elsif  ($rndx == 12 ){$Stxt=~ s/\s{$hbwd}$/$z$clrm{k} kEEPkNEELOk$clrm{z} zWESTzONE $clrm{g}gOgROUND $clrm{x}AxCRUxOLxML$z /;}
+            elsif  ($rndx == 13 ){$Stxt=~ s/\s{$hbwd}$/$z$clrm{G} GroundGuard$clrm{d} dIRECTdOWN$clrm{f} fORWARDfRONTfALfLAT$z /  ;}
+            elsif  ($rndx == 14 ){$Stxt=~ s/\s{$hbwd}$/$z$clrm{w} w$t$clrm{G}G$t$clrm{D}D$t$clrm{d}d$t$clrm{R}R$t$clrm{f}f$t$clrm{M}M$stal/     ;}
+            elsif  ($rndx == 15 ){$Stxt=~ s/\s{$hbwd}$/$z$clrm{w} wESTw8 $clrm{D} DownDefenDrop$clrm{R} RoRight $clrm{M} MountMovMnt$z /  ;}
           }}elsif  ($rndx == 15 && $prll eq 'm'){$hbwd=int($bwid/2)+6     ;$stal= ' ' x  abs($hbwd- 7);$prlt='r';$boff=14; # alsoinsrt last b8 wordin -c noCntr
                                                  $hbwd=int($bwid   -4) -$s;$stal= ' ' x (abs($hbwd-(($s*($s+1))-0))-8);
   # was going to try to cram most remainders into center instead of colored PL maps, but stalled on figuring out best way to manage it,mABtSt&&upd8 BlO cntz1st
@@ -528,7 +533,7 @@ if($gm8f){$Stxt.="${W}Gener8 gM8ria Primes for names by$B 3$W segments (${Y}PreL
         if         ($#{$jd8a[$jmap{ $prlt}]} >= abs($rndx-$boff)){     $rosl=$bwid-length( sS('--',$jd8a[$jmap{$prlt}][abs($rndx-$boff)]));
           $rosl-= 6 if($prlt eq 'd' && $rndx >= 15);$rosl=0 if($rosl < 0); # shift last row of dOWN d8 over by block overlapping part
           $Stxt     .= $jd8a[$jmap{ $prlt}][    abs($rndx-$boff)]   .  ' ' x $rosl;my $jltl=$bwid - $bhwd - 1; # set JoinedLineTailLength to pad blok end
-          $pwsf{$prlt}+=(scalar(split(/\s+/,sS('--',$jd8a[$jmap{$prlt}][abs($rndx-$boff)])))+0);$Stxt=~ s/\s{12}$/${R}intercolle  / if($rndx eq 13);
+          $pwsf{$prlt}+=(scalar(split(/\s+/,sS('--',$jd8a[$jmap{$prlt}][abs($rndx-$boff)])))+0);$Stxt=~ s/\s{12}$/$clrm{G}intercolle  / if($rndx == 13);
           if       ($rndx ==  15){if     ($prlt eq 'f' || $prlt eq 'k'){ # could regex chars together then LUT hash $1 into shared line PLz
               if   ($prlt eq 'f'){$prlt='M';$bhwd-=4;$jltl-=4;} # try2sneak final G8 word in aligned after done with D8 on row 13 (2linzup)
               elsif($prlt eq 'k'){$prlt='w';$bhwd+=4;$jltl+=4;} # squish w8 over toward k8 in lowrleft corner to mk room for last 2 d8 words
@@ -637,8 +642,11 @@ if($fulf){$Stxt=~ s/\n?$/\n/;my %cvlz=reverse(%fulc);my @ccnt= sort { $a <=> $b 
           $w82o    .= ($char eq "\n") ? '\n' : $char;$pcnt++;} # belo was once trying some random colrz with: ,S(substr($cmap{'d8bo'},b64(int(rand(8))),1)));
       } $Stxt.=sprintf((' ' x ( 8-$pcnt))."$C$w82o$B:$M".sprintf("%7s$B: %s$W,\n",cma($coun),b8c(sprintf("%4s",b64($coun)))));
     } } $Stxt.=sprintf("$C  Sum of$B: ${G}0$W..${G}7$W,${G}9$B: $M%s$o      dif$Y:$B%7s$W;$z",cma($sumn),cma($jus8-$sumn));}
-$Stxt=sS('--',$Stxt) unless($clrf);o8($Stxt);o8("\n$Smap") if($gm8f && defined($Smap) && length($Smap) && !$pg1f);
+$Stxt=sS('--',$Stxt) unless($clrf);o8(   $Stxt );
+$Smap=sS('--',$Smap) unless($clrf);o8("\n$Smap") if($gm8f && defined($Smap) && length($Smap) && !$pg1f);
 
+# Smap seems like a magic cross in 3x3 blocks with crux flux keys to sector placements where you start viewing 160x50 then examine the crux B4 240x67 2C cros;
+# Special thanks go out to everyone who has worked on dicts or dictd && HTTPS://TheFreeDictionary.Com for assisting massively in building 8.utf from dFinitnz;
 # 2du:gener8 all entries below into new d8a-struct && sepR8 ones for *t8(ion)? && *E8 as *iat(e|ion) ends, to then compare against loc8d 8-words 4 diffz 2add;
 #   rel8ively few results just for *z8 end... then maybe all these should load into hashes to match against l8st presently defined 8.txt 8-words 2sync or add;
 my   @dz8_=(sort(qw(Albizz8 Baranz8 Costa_di_Mezz8 Istituto_Europeo_Studi_Tecnologie_Avanz8 Ouarzaz8_Morocco_-_Ouarzaz8 Solemniz8 Valdez8 Alkaliz8 Cadrezz8

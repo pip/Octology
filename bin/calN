@@ -4,7 +4,7 @@
 #   upd8 -help mesg,add special -d d8 hndlng4B4 2000&&fR fUtur,add 2|3|4|6|12 colm wId mOdz,add wId 8wEk zoom wi c8 bclr Year && Month or good figlet optz,
 #   mkup betr wkdy colr progrSion than just RoYGCBM mAB wi bg k BhInd wkNdz,add paded YYYYJan wNfitz wEk0 line,apNd wkdy map2botm wi YYYY+1,Xpnd rsn 2 58 lInz,
 #   optimIz loop gNer8ion prntout sPd,wudB Useful2hav intractiv c8 mOd l8r 4 d8 selectz too;  # `rsn` ReSize4calN 171x57 shOz past 19-Yearz from 2000-2018;
-use strict;use warnings;use utf8;use v5.10;my $VERSION='0.0';my $d8VS='K3RMMvcN';
+use strict;use warnings;use utf8;use v5.10;my $VERSION='0.0';my $d8VS='K43M1Nca'; # whN runing `q2` 240x67 term N (probably btwn _ && 0) getz uninit on lIn 39;
 use      Octology::a8; # mAB Use @Mon  # mABUse just Time::DaysInMonth && DayOfWeek without nEdng d8.pm BlO? (lIkUsng a8:@sb64 nstd of b8.pm:b64())
 use      Octology::d8;use Time::DaysInMonth;my $d8nw;my $d8fY;my $hlpf=0;my $Stxt='';my $optn='';$optn=join(' ',@ARGV) if(@ARGV); # l8r support other formatz
 $d8nw   =Octology::d8->new();my $wndx=1;my $Yrmx=16;if(exists($ENV{'COLUMNS'})){$Yrmx=int($ENV{'COLUMNS'} / 9) - 1;} # sIzbak Yearz by term widt (!<2K yet)

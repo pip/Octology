@@ -1,37 +1,43 @@
 #!/bin/sh
-# cvdJ Pip crE8d COVID-19 CoronaVirus script initially in ~/.local/bin/ before just ~/bin/, but can't seem 2 get commands 2 all behave together as expected;
+# cvdJ Pip crE8d COVID-19 CoronaVirus script initially in ~/.local/bin/ before just ~/bin/, but had trouble getting commands 2all BhAv together as expected;
 # HTTPS://GitHub.Com/CSSEGISandData/COVID-19/tree/master/csse_covid_19_data/csse_covid_19_daily_reports has JohnsHopkinsUniversity CSV d8a-fIlz upd8d daily;
-D8VS='K3SM6lsd';Vers='0.0';Auth='PipStuart <Pip@CPAN.Org>'; # unfortun8ly it seems that both source 1 && 2 for USA now have only to total but no sepR8 St8s;
+D8VS='K44MDw8r';Vers='0.0';Auth='PipStuart <Pip@CPAN.Org>'; # unfortun8ly it seems that both source 1 && 2 for USA now have only to total but no sepR8 St8s;
 D8Nw=`d8`;D82D=`echo -n $D8Nw|c8 0-2`; # nEd2get d8a2Day wi just left 3 chars 2 m@ch B4 *.pipe below; # used to use `...|cut -c1-3` B4 c8 workd well enough;
 if ! [ -d           ~/.cache        ]; then mkdir ~/.cache;        fi;
 if ! [ -d           ~/.cache/Corona ]; then mkdir ~/.cache/Corona; fi; # try 2 make sure destin8ion d8a-file directory exists B4 listing or crE8ing newfIlz;
-D8aF=`ls            ~/.cache/Corona/Stats.OnLine-USt8s-$D82D*.pipe 2>/dev/null|tail -n 1`; # c8 above assumes cut interface if no filename pRam&&in wo spcz;
-#f [ "$( stat -c %y ~/.cache/Corona/Stats.OnLine-USt8s-$D82D*.pipe|cut -d' ' -f1)" != "$(date '+%Y-%m-%d')" ]; then # curl of new file for 2day's d8 needed;
+D8aS=`ls            ~/.cache/Corona/Stats.OnLine-USt8s-$D82D*.pipe 2>/dev/null|tail -n 1`; # get sepR8 S for St8s && let d8a-File below be for St8z as whol;
+D8aF=`ls            ~/.cache/Corona/Stats.OnLine-USt8z-$D82D*.pipe 2>/dev/null|tail -n 1`; # c8 above assumes cut interface if no filename pRam&&in wo spcz;
+#f [ "$( stat -c %y ~/.cache/Corona/Stats.OnLine-USt8z-$D82D*.pipe|cut -d' ' -f1)" != "$(date '+%Y-%m-%d')" ]; then # curl of new file for 2day's d8 needed;
 #cho -n "D8VS:$D8VS:D8Nw:$D8Nw:D82D:$D82D:D8aF:$D8aF:Cmnd:curl HTTPS://Corona-Stats.OnLine >~/.cache/Corona/Stats.OnLine-World-$D8Nw.pipe:";
 # OMG! curl rEquIrz all URLz 2B lOwrKsd or SSL erorz out! # curl (35) error:14094438:SSL routines:ssl3_read_bytes:tlsv1 alert internal error
 if [ "$1" = "g" ] || [ "$D8aF" = "" ]; then # get upd8 d8a fIlz, but only want 2 get once per day;
   curl https://corona-stats.online\?format=json  >~/.cache/Corona/Stats.OnLine-World-$D8Nw.json;
   curl https://corona-stats.online               >~/.cache/Corona/Stats.OnLine-World-$D8Nw.pipe;
-  curl https://corona-stats.online/US            >~/.cache/Corona/Stats.OnLine-USt8s-$D8Nw.pipe; # oops! I forgot 2upd8 d8a-file variable 4l8r grep command;
-                                    D8aF="/home/pip/.cache/Corona/Stats.OnLine-USt8s-$D8Nw.pipe";
+  curl https://corona-stats.online/states/us     >~/.cache/Corona/Stats.OnLine-USt8s-$D8Nw.pipe;
+                                    D8aS="/home/pip/.cache/Corona/Stats.OnLine-USt8s-$D8Nw.pipe";
+                                    D8aF="/home/pip/.cache/Corona/Stats.OnLine-USt8z-$D8Nw.pipe";
+  curl https://corona-stats.online/US            >~/.cache/Corona/Stats.OnLine-USt8z-$D8Nw.pipe; # oops! I forgot 2upd8 d8a-file variable 4l8r grep command;
   curl https://corona-stats.online/UK            >~/.cache/Corona/Stats.OnLine-UKing-$D8Nw.pipe;
-  curl https://corona-stats.online/Italy         >~/.cache/Corona/Stats.OnLine-Italy-$D8Nw.pipe;
   curl https://corona-stats.online/China         >~/.cache/Corona/Stats.OnLine-China-$D8Nw.pipe;
+  curl https://corona-stats.online/Italy         >~/.cache/Corona/Stats.OnLine-Italy-$D8Nw.pipe;
+  curl https://corona-stats.online/Spain         >~/.cache/Corona/Stats.OnLine-Spain-$D8Nw.pipe;
   curl https://corona-stats.online/updates       >~/.cache/Corona/Stats.OnLine-Upd8s-$D8Nw.pipe;
   curl https://corona-stats.online\?minimal=true >~/.cache/Corona/Stats.OnLine-Minml-$D8Nw.pipe; # proly minimal would B much easier 2 parse l8r than paded;
   curl https://corona-stats.online\?top=64       >~/.cache/Corona/Stats.OnLine-Top64-$D8Nw.pipe; # apparently ?emoji=true is also now an option 2 ckout l8r;
-  curl https://corona-stats.online\?source=2     >~/.cache/Corona/Stats.OnLine-Src_2-$D8Nw.pipe; # now that src2 is Dflt, USt8s no longer containz all St8s;
+ #curl https://corona-stats.online\?source=1     >~/.cache/Corona/Stats.OnLine-Src_1-$D8Nw.pipe; # old daily JHU source from B4 WorldOMeters.Info BKm Dfalt;
+ #curl https://corona-stats.online\?source=2     >~/.cache/Corona/Stats.OnLine-Src_2-$D8Nw.pipe; # now that src2 is Dflt, USt8s no longer containz all St8s;
 fi # HTTPS://GitHub.Com/NovelCOVID/API has JavaScript && JSON && Node && NPM interfaces 4 obtaining && manipul8ing COVID rel8d d8a-filez with Discord chanL:
 #    HTTPS://DiscordApp.Com/channels/689535536934813823/689536062045159659               && other good links are:        HTTPS://CovidStats.App    && # ▲  ;
 #    HTTPS://ArcGIS.Com/apps/opsdashboard/index.html#/bda7594740fd40299423467b48e9ecf6 ; # instead of changing ORS in awk cmnd BlO,cud alsO Uz printf wo \n;
-grep 'USA\|World'       $D8aF     |          sed "s/\s*//g ; s/║//g ; s/│/ /g"|
+grep 'USA\|World'               $D8aF     |          sed "s/\s*//g ; s/║//g ; s/│/ /g"|
   awk -F' ' 'BEGIN {ORS=";\n"} {print "cnfrmd😭"$3" (dA"$4") dethz💀"$5" (dA"$6") rcvrd"$7" actv"$8" crit"$9" "$2}'; # new src2fldz,mortaliT nEdz cmpUt8ion;
-#rep 'Wis'              $D8aF     |          sed "s/\s*//g ; s/║//g ; s/│/ /g"|          # new Dflt src2 doesn't have each individual St8 sepR8d in d8afIlz;
+grep 'To\|Wi\|Pe\|uri\|Cal\|Yo' $D8aS; # just show the few St8s I'm most interested in for now;
+#rep 'Wis'                      $D8aF     |          sed "s/\s*//g ; s/║//g ; s/│/ /g"|
 # awk -F' ' 'BEGIN {ORS=";"} {print "cnfrmd😭"$3" (dA"$9") dethz💀"$5" (mortaliT"$7"%)"}'; # OutputRecordSepR8or chngd from newlIn2MpT string lIk `echo -n`;
-#rep 'USA\|World'       $D8aF     |          sed "s/\s*//g ; s/║//g ; s/│/ /g"|
+#rep 'USA\|World'               $D8aF     |          sed "s/\s*//g ; s/║//g ; s/│/ /g"|
 # awk -F' ' 'BEGIN {ORS=";"} {print      " 😭"$3  " ("$9") "   "💀"$5" ("        $7"%)"}'; # also tack on all of U.St8s without field text, then World also;
-#                        D8aF=`ls ~/.cache/Corona/Stats.OnLine-World-$D82D*.pipe 2>/dev/null|tail -n 1`;      # nO "w" pRameter 2shO World wo newlIn anywAy;
-#rep 'World'            $D8aF     |tail -n 1|sed "s/\s*//g ; s/║//g ; s/│/ /g"|
+#                                D8aF=`ls ~/.cache/Corona/Stats.OnLine-World-$D82D*.pipe 2>/dev/null|tail -n 1`;
+#rep 'World'                    $D8aF     |tail -n 1|sed "s/\s*//g ; s/║//g ; s/│/ /g"|
 # awk -F' ' 'BEGIN {ORS=";"} {print      " 😭"$3  " ("$9") "   "💀"$5" ("        $7"%)"}'; # since World @both Bgin && Nd, nEded 2 Uz tail AgN 2 just get 1;
  # the above commands finally work without trying to substitute original pipes as semicolons but as only spaces instead;c8 && cut below didn't make the cut;
 # c8 -u                -f=2-6
