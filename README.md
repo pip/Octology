@@ -1,12 +1,12 @@
 # Octology
-The ontology of 8. Ocho dude. Aucht! `$VERSION='0.0';$d8VS='K44MIMov';`
+The ontology of 8. Ocho dude. Aucht! `$VERSION='0.0';$d8VS='K48MHILT';`
 
 What is an ontology, you may ask (behind your mask)? Essentially quarantined from deadly spread of SARS CoV-2 CoronaVirus see new `cvdJ` && `CJ` 4 d8a;
 
 <ol><li>n. (Computer Science) a rigorous and exhaustive organiz8ion of some knowledge domain that is usually hierarchical and contains all the relevant
   entities and their rel8ions.</li>
     <li>n. (Philosophy) the metaphysical study of the nature of being and existence.</li>
-    <li>n. (Logic) the set of entities presupposed by a theory.</li>;
+    <li>n. (Logic) the set of entities presupposed by a theory.</li>
 </ol>
 
 I expect after some point (probably passed) anyone who studies Octology thoroughly would become able to develop any new videogame and problem-solve.
@@ -54,13 +54,13 @@ If your paths and Perl environment are setup similarly, to gain a bearing on fun
 
 To get something close to a similar setup to mine, you'll probably want to execute the following sequences of commands to get going first:
 
-  `git clone https://GitHub.Com/Pip/Octology` which should crE8 the Octology/ sub-directory within the Current-Working-Directory (or`pwd`),
+  `git clone https://GitHub.Com/Pip/Octology` which should crE8 the Octology/ sub-directory in your Current-Working-Directory (or: `pwd` ),
 
-  then `cd Octology;cp -a lib bin dox dvl gfx .Hrc .Xrc .bashrc .lrc .lsrc .shl.style .vimrc .zshrc ~;chsh $(which zsh);cd ~;source .zshrc`
+  then: `cd Octology;cp -a lib bin dox dvl gfx .Hrc .Xrc .bashrc .lrc .lsrc .shl.style .vimrc .zshrc ~;chsh $(which zsh);cd;source .zshrc;`
 
-  && you'll want to `cpan ...` or `pmei Time::DaysInMonth;` since I (thru Octology) depend on that module, but am not the maintainer of it;
+  && you'll want to: `cpan ...` or `pmei Time::DaysInMonth;` since I (through Octology) depend on that module, but am not maintainer of it;
 
-  Also the Color::Similarity::RGB module is used in `pm2x` to gener8 an expanded pal8 map from the rel8ive proximity of such nearby colors;
+  Also the `Color::Similarity::RGB` module is used in my `pm2x` to gener8 an expanded pal8 map from the rel8ive proximity of nearby colors;
 
 ### Great Thanks, AppreC8ion, and Gratitude
 I'd first like to thank every p8ient Chess player who endured me logging personal matches in ckm8, then thank you to all developers who ever contributed to:
@@ -69,7 +69,7 @@ I'd first like to thank every p8ient Chess player who endured me logging persona
 
   * [git](https://git-scm.com), [gst123](https://github.com/swesterfeld/gst123), [FIGlet](http://www.figlet.org), [zinf](http://zinf.org), [Vim](https://www.vim.org), [FLAC](https://xiph.org/flac), [cdparanoia](https://xiph.org/paranoia),
 
-  * [TheFreeDictionary](https://thefreedictionary.com) as well as dictd && all d8a-base entries,
+  * [TheFreeDictionary](https://thefreedictionary.com) as well as [dictd](https://en.wikipedia.org/wiki/DICT) && all dictionaries,
 
   * anonymous makers of MS-DOS .com files before .f0nt,
 

@@ -30,7 +30,7 @@ use         Carp; # orig Math::BaseCnv BlO memoized Sum8(as summ) hEr&&had nO Fi
 use Memoize;memoize('Fact');memoize('Chus');memoize('Fibo');memoize('Prim');
 our @EXPORT= qw(b8 cnv ocT deC dec heX HEX b10 b64 b64sort b110 b128 b210 b256 dig diginit @kana
     cma coma  Sum8 Sumz   Fact Fctz  Chus  Fibo Fibz  Prim Prmz  rotW rot1    calQ   $umbc);
-our $VERSION='0.0';my  $d8VS='K3NMIBIG';my $Auth='PipStuart <Pip@CPAN.Org>';
+our $VERSION='0.0';my  $d8VS='K48M8xdC';my $Auth='PipStuart <Pip@CPAN.Org>';
 our @kana=qw(ぁあぃいぅうぇえぉおかがきぎくぐけげこごさざしじすずせぜそぞた
 だちぢっつづてでとどなにぬねのはばぱひびぴふぶぷへべぺほぼぽまみ
 むめもゃやゅゆょよらりるれろゎわゐゑをんゔゕゖ゗1゛゜ゝゞゟ
@@ -122,7 +122,7 @@ sub deC     {my $rtns = '';
   elsif(!-t STDIN){my @id8a;chomp(@id8a=<STDIN>);for my $id8l(@id8a){ # Input d8a Line && Input Line Split on Spacez below
       for my $ilss(split(/\s+/,$id8l)){                   $ilss =~ s/^\s*\+?//;$ilss =~ s/[^0-7-]//g;
         if($umbc){$rtns .=    Math::Base::Convert::cnv(       $ilss ,'ocT','dec') . ' ';}
-        else     {$rtns .=                         cnv__10(uc($ilss),   8       ) . ' ';}} $rtns =~ s/\s$/\n/;}$rtns =~ s/\n$//;}return($rtns);}
+        else     {$rtns .=                         cnv__10(uc($ilss),   8       ) . ' ';}} $rtns =~ s/\s$/\n/;}$rtns =~ s/\n$//;}$rtns=~s/\.0+$//;return($rtns);}
 sub ocT     {my $rtns = '';
   if   (@_       ){while(@_          ){my $narg=shift(@_);$narg =~ s/^\s*\+?//;$narg =~ s/[^0-9-]//g;
       if  ($umbc){$rtns .= lc(Math::Base::Convert::cnv(       $narg ,'dec','ocT')). ' ';}
@@ -130,7 +130,7 @@ sub ocT     {my $rtns = '';
   elsif(!-t STDIN){my @id8a;chomp(@id8a=<STDIN>);for my $id8l(@id8a){ # Input d8a Line && Input Line Split on Spacez below
       for my $ilss(split(/\s+/,$id8l)){                   $ilss =~ s/^\s*\+?//;$ilss =~ s/[^0-9-]//g;
         if($umbc){$rtns .= lc(Math::Base::Convert::cnv(       $ilss ,'dec','ocT')). ' ';}
-        else     {$rtns .= lc(                     cnv10__(   $ilss ,         8 )). ' ';}} $rtns =~ s/\s$/\n/;}$rtns =~ s/\n$//;}return($rtns);}
+        else     {$rtns .= lc(                     cnv10__(   $ilss ,         8 )). ' ';}} $rtns =~ s/\s$/\n/;}$rtns =~ s/\n$//;}$rtns=~s/\.0+$//;return($rtns);}
 sub dec     {my $rtns = '';
   if   (@_       ){while(@_          ){my $narg=shift(@_);$narg =~ s/^\s*\+?//;$narg =~ s/[^0-9A-F-]//gi;
       if  ($umbc){$rtns .=    Math::Base::Convert::cnv(       $narg ,'heX','dec') . ' ';}
@@ -138,7 +138,7 @@ sub dec     {my $rtns = '';
   elsif(!-t STDIN){my @id8a;chomp(@id8a=<STDIN>);for my $id8l(@id8a){ # Input d8a Line && Input Line Split on Spacez below
       for my $ilss(split(/\s+/,$id8l)){                   $ilss =~ s/^\s*\+?//;$ilss =~ s/[^0-9A-F-]//gi;
         if($umbc){$rtns .=    Math::Base::Convert::cnv(       $ilss ,'heX','dec') . ' ';}
-        else     {$rtns .=                         cnv__10(uc($ilss),  16       ) . ' ';}} $rtns =~ s/\s$/\n/;}$rtns =~ s/\n$//;}return($rtns);}
+        else     {$rtns .=                         cnv__10(uc($ilss),  16       ) . ' ';}} $rtns =~ s/\s$/\n/;}$rtns =~ s/\n$//;}$rtns=~s/\.0+$//;return($rtns);}
 sub heX     {my $rtns = '';
   if   (@_       ){while(@_          ){my $narg=shift(@_);$narg =~ s/^\s*\+?//;$narg =~ s/[^0-9-]//g;
       if  ($umbc){$rtns .= lc(Math::Base::Convert::cnv(       $narg ,'dec','heX')). ' ';}
@@ -146,7 +146,7 @@ sub heX     {my $rtns = '';
   elsif(!-t STDIN){my @id8a;chomp(@id8a=<STDIN>);for my $id8l(@id8a){ # Input d8a Line && Input Line Split on Spacez below
       for my $ilss(split(/\s+/,$id8l)){                   $ilss =~ s/^\s*\+?//;$ilss =~ s/[^0-9-]//g;
         if($umbc){$rtns .= lc(Math::Base::Convert::cnv(       $ilss ,'dec','heX')). ' ';}
-        else     {$rtns .= lc(                     cnv10__(   $ilss ,        16 )). ' ';}} $rtns =~ s/\s$/\n/;}$rtns =~ s/\n$//;}return($rtns);}
+        else     {$rtns .= lc(                     cnv10__(   $ilss ,        16 )). ' ';}} $rtns =~ s/\s$/\n/;}$rtns =~ s/\n$//;}$rtns=~s/\.0+$//;return($rtns);}
 sub HEX     {      return( uc(                     heX(       @_               )))     ;}
 sub b10     {my $rtns = '';my $tucf; # TemporaryUseConvertFlag to detect if a b64 float needs to be handled
   if   (@_       ){while(@_          ){my $narg=shift(@_);if(defined($narg)){
@@ -156,7 +156,7 @@ sub b10     {my $rtns = '';my $tucf; # TemporaryUseConvertFlag to detect if a b6
   elsif(!-t STDIN){my @id8a;chomp(@id8a=<STDIN>);for my $id8l(@id8a){ # Input d8a Line && Input Line Split on Spacez below
       for my $ilss(split(/\s+/,$id8l)){                   $ilss =~ s/^\s*\+?//;$ilss =~ s/[^0-9A-Z._%-]//gi;$tucf=$umbc;$tucf=0 if($ilss =~ /[-%]/);
         if($tucf){$rtns .=    Math::Base::Convert::cnv(       $ilss ,'b64','dec') . ' ';}
-        else     {$rtns .=                         cnv__10(   $ilss ,  64       ) . ' ';}} $rtns =~ s/\s$/\n/;}$rtns =~ s/\n$//;}return($rtns);}
+        else     {$rtns .=                         cnv__10(   $ilss ,  64       ) . ' ';}} $rtns =~ s/\s$/\n/;}$rtns =~ s/\n$//;}$rtns=~s/\.0+$//;return($rtns);}
 sub b64     {my $rtns = '';my $tucf;
   if   (@_       ){while(@_          ){my $narg=shift(@_);if(defined($narg)){ # somehow $narg was spewing undefined warningz for substitution so testing now
                                                           $narg =~ s/^\s*\+?//;$narg =~ s/[^0-9.-]     //gx;$tucf=$umbc;$tucf=0 if($narg =~ /[-.]/);
@@ -173,7 +173,7 @@ sub b110    {my $rtns = ''; # M:B:C doesn't have my b128 set so skip $umbc
                   $rtns .=                         cnv__10(   $narg ,       128 ) . ' '; } $rtns =~ s/\s$//  ;} # short4 base128     -> base10
   elsif(!-t STDIN){my @id8a;chomp(@id8a=decode('UTF-8',<STDIN>));for my $id8l(@id8a){ # Input d8a Line && Input Line Split on Spacez below
       for my $ilss(split(/\s+/,$id8l)){                   $ilss =~ s/^\s*\+?//;
-                  $rtns .=                         cnv__10(   $ilss ,       128 ) . ' '; } $rtns =~ s/\s$/\n/;}$rtns =~ s/\n$//;}return($rtns);}
+                  $rtns .=                         cnv__10(   $ilss ,       128 ) . ' '; } $rtns =~ s/\s$/\n/;}$rtns =~ s/\n$//;}$rtns=~s/\.0+$//;return($rtns);}
 sub b128    {my $rtns = ''; # may want b128sort also
   if   (@_       ){while(@_          ){my $narg=shift(@_);$narg =~ s/^\s*\+?//;$narg =~ s/[^0-9-]//g;
                   $rtns .=                         cnv10__(   $narg ,       128 ) . ' '; } $rtns =~ s/\s$//  ;} # short4 base10      -> base128
@@ -187,7 +187,7 @@ sub b210    {my $rtns = ''; # M:B:C doesn't have my b256 set so skip $umbc
                   $rtns .=                         cnv__10(   $narg ,       256 ) . ' '; } $rtns =~ s/\s$//  ;} # short4 base256     -> base10
   elsif(!-t STDIN){my @id8a;chomp(@id8a=decode('UTF-8',<STDIN>));for my $id8l(@id8a){ # Input d8a Line && Input Line Split on Spacez below
       for my $ilss(split(/\s+/,$id8l)){                   $ilss =~ s/^\s*\+?//;
-                  $rtns .=                         cnv__10(   $ilss ,       256 ) . ' '; } $rtns =~ s/\s$/\n/;}$rtns =~ s/\n$//;}return($rtns);}
+                  $rtns .=                         cnv__10(   $ilss ,       256 ) . ' '; } $rtns =~ s/\s$/\n/;}$rtns =~ s/\n$//;}$rtns=~s/\.0+$//;return($rtns);}
 sub b256    {my $rtns = '';
   if   (@_       ){while(@_          ){my $narg=shift(@_);$narg =~ s/^\s*\+?//;$narg =~ s/[^0-9-]//g;
                   $rtns .=                         cnv10__(   $narg ,       256 ) . ' '; } $rtns =~ s/\s$//  ;} # short4 base10      -> base256

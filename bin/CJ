@@ -1,23 +1,45 @@
 #!/usr/bin/perl
 # K3SM5cvd:CJ crE8d by PipStuart <Pip@CPAN.Org> to parse out Comma-SepR8d-Values from COVID-19 (J) d8a-files from the GitHub CSSEGISAndData/COVID-19 repo;
-use strict;use warnings;use utf8;use Encode;use Octology::a8;use Octology::d8;my $VERSION='0.0';my $d8VS='K3SM6Kut';my %cd8a;my %sd8a;
-my $csvf=$ENV{'HOME'} . "/.cache/Corona/CSSEGISAndData_COVID-19_03-28-2020-K3TM96MT.csv";
-#                        /.cache/Corona/CSSEGISAndData_COVID-19_03-27-2020-K3SM4dOr.csv
-my %flcm=('C'=>$G,'D'=>$W,'R'=>$Y,'A'=>$R);
-open my     $csfh,'<' , $csvf or die "Can't open  CSV-d8a  File  Handle: $!";my @hedr=split(/,/,<$csfh>);
-open my     $out8,'>&',STDOUT or die "Can't open  duplic8 STDOUT handle: $!";binmode $out8,':encoding(UTF-8)';
-while(<$csfh>){my $ckey='';$ckey=$1 if(s/"(.*)"$//);my @fldz=split(/,/,$_);
-  if ( $#fldz<11){chomp;#print $out8 "!*Warn*! Line:$_: has too few CSValuez!\n";
-  }else{$fldz[2]=~ s/ /_/g;my $lkey="$fldz[5],$fldz[6]";
-    for(my  $hndx=0;$hndx< $#hedr;$hndx++){$cd8a{$lkey}{$hedr[$hndx]}=$fldz[$hndx];} # since FIPS are not unique, try joining Lat && Long_ nstd
-    $cd8a{  $lkey   }{$hedr[$#hedr]} =$ckey; # might want to track 'Last_Update' field && average timez or crE8 d8 objX or something
-    for my  $heds(qw(Confirmed Deaths Recovered Active)){
-      $sd8a{$fldz[2]}{$heds        } =0 unless(exists($sd8a{ $fldz[2]}{$heds})); # initialize St8-d8a to zero before adding countz
-      $sd8a{$fldz[2]}{$heds        }+=$cd8a{$lkey}{$heds};}}}
-close       $csfh             or die "Can't close CSV-d8a  File  Handle: $!";
-for   my    $ust8(qw(Minnesota Wisconsin Pennsylvania Illinois Michigan California New_York)){
-  printf    $out8 "${z}USt8:%-12s  ",$ust8;
-  for my    $heds(qw(Confirmed Deaths Recovered Active)){my $frst=substr($heds,0,1);
-    printf  $out8 "$frst:%s%9s$z  ",$flcm{$frst},comma($sd8a{$ust8}{$heds});
-  } print   $out8 "\n";} # hopefully print out the sums of the main d8a header fieldz for the few St8z I've selected to track
-close       $out8             or die "Can't close duplic8 STDOUT handle: $!";
+# First:you will want to run: `git clone https://github.com/CSSEGISandData/COVID-19` then upd8 the $csvp path variable below to reflect that repo loc8ion;
+# fldz: 0:FIPS, 1:Admin2, 2:Province_State, 3:Country_Region, 4:Last_Update, 5:Lat, 6:Long_, 7:Confirmed, 8:Deaths, 9:Recovered, A:Active, B:Combined_Key;
+# 2du:upd8 growth r8z,incorpor8 popUl8ion d8a,project whN zOn mIt B s@ur8d,offer 4mz of projection,tk pRamz,add hLp;
+use strict;use warnings;use utf8;use v5.10;use Octology::a8;use Octology::d8;use Text::CSV;
+my $VERSION='0.0';my $d8VS='K48MLHit';my %sd8a;my %flcb=('C'=> 3,'D'=> 4,'R'=> 5,'A'=>-1);my %flcm=('C'=>$Y,'D'=>$K,'R'=>$G,'A'=>$R);
+my @flck=qw(Confirmed Deaths Recovered Active);my %flcn=('C'=> 7,'D'=> 8,'R'=> 9,'A'=>10); # USt8 AbbreV8ionz below R not even used anymore,sO scrap l8r;
+my %st8a=(#'California'=>'Ca','Missouri'=>'Mo','Pennsylvania'=>'Pa','Wisconsin'=>'Wi'); # originally only tracked 4 USt8s B4 trying to incorpor8 thM all;
+ 'Alabama'      =>'Al','Alaska'    =>'Ak','Arizona'     =>'Az','Arkansas'    =>'Ar','California'    =>'Ca','Colorado'     =>'Co','Connecticut'  =>'Ct',
+ 'Delaware'     =>'De','Florida'   =>'Fl','Georgia'     =>'Ga','Hawaii'      =>'Hi','Idaho'         =>'Id','Illinois'     =>'Il','Indiana'      =>'In',
+ 'Iowa'         =>'Ia','Kansas'    =>'Ks','Kentucky'    =>'Ky','Louisiana'   =>'La','Maine'         =>'Me','Maryland'     =>'Md','Massachusetts'=>'Ma',
+ 'Michigan'     =>'Mi','Minnesota' =>'Mn','Mississippi' =>'Ms','Missouri'    =>'Mo','Montana'       =>'Mt','Nebraska'     =>'Ne','Nevada'       =>'Nv',
+ 'New Hampshire'=>'NH','New Jersey'=>'NJ','New Mexico'  =>'NM','New York'    =>'NY','North Carolina'=>'NC','North Dakota' =>'ND','Ohio'         =>'Oh',
+ 'Oklahoma'     =>'Ok','Oregon'    =>'Or','Pennsylvania'=>'Pa','Rhode Island'=>'RI','South Carolina'=>'SC','South Dakota' =>'SD','Tennessee'    =>'Tn',
+ 'Texas'        =>'Tx','Utah'      =>'Ut','Vermont'     =>'Vt','Virginia'=>'Va','Washington'=>'Wa','West Virginia'=>'WV','Wisconsin'=>'Wi','Wyoming'=>'Wy');
+open my        $out8,'>&',STDOUT or die "Can't open  duplic8 STDOUT handle: $!";binmode $out8,':encoding(UTF-8)';
+my      $csvp=$ENV{'HOME'};$csvp.="/dvl/t8/node/COVID-19/csse_covid_19_data/csse_covid_19_daily_reports";
+for  my $dfil (<"$csvp/*.csv">){my $d8nw=Octology::d8->new();my $ndfl=$dfil;$ndfl=~ s/^(.+)\.(\w+)$/$1-$d8nw.$2/;
+                                                             my $dfd8=$dfil;$dfd8=~ s/^(.+)\/([^.]+)\.(\w+)$/$2/; # isol8 *MM-DD-YYYY* 2 say l8r
+  my    $csvo=                              Text::CSV->new({'binary' => 1}); #, auto_diag => 1 });
+  open    ( my $fhnd, "<:encoding(UTF-8)", $dfil) or die "$dfil: $!";my $got1=0;my $janf=0;my $marL=0;my $aftm=0; #
+  while   ( my $rowd= $csvo->getline($fhnd)){
+    if    ($dfd8=~ /^0[12]-/               ){$got1=$janf=1;} #Province/State,Country/Region,Last Update,Confirmed,Deaths,Recovered
+    elsif ($dfd8=~ /^03-(\d\d)-/ && $1<= 21){$got1=$marL=1;} #Province/State,Country/Region,Last Update,Confirmed,Deaths,Recovered,Latitude,Longitude
+    elsif (exists($st8a{$rowd->[2]}       )){$got1=$aftm=1;} #FIPS,Admin2,Province_St8,Country_Region,Last_Upd8,Lat,Long_,Confirmed,Deaths,Recovered,Active,
+    next unless($got1); #=~ /(^Wis|uri$|^(Cal|Pen).+nia$)/ or next;$got1=1;     #  ... Combined_Key
+    for   my $fldk (  @flck){my $frst= substr($fldk,0,1);
+      if    ($janf || $marL){my $pscr="$rowd->[0],$rowd->[1]"; # set ProvinceSt8,CountryRegion as 1st 2 fieldz joined by comma
+        $sd8a{ $dfd8}{ $pscr    }{$frst} =0 unless(exists($sd8a{$dfd8}) && exists($sd8a{$dfd8}{$pscr     }) && exists($sd8a{$dfd8}{$pscr     }{$frst}));
+        $sd8a{ $dfd8}{ $pscr    }{$frst}+=$rowd->[$flcb{$frst}] if($rowd->[$flcb{$frst}]=~ /^\d+$/);}  # could also save Lat && Long_ for $marL
+      elsif ($aftm){
+        $sd8a{ $dfd8}{$rowd->[2]}{$frst} =0 unless(exists($sd8a{$dfd8}) && exists($sd8a{$dfd8}{$rowd->[2]}) && exists($sd8a{$dfd8}{$rowd->[2]}{$frst}));
+        $sd8a{ $dfd8}{$rowd->[2]}{$frst}+=$rowd->[$flcn{$frst}] if($rowd->[$flcn{$frst}]=~ /^\d+$/);}} # might want 2 just ck for non-zero nstd of \d+ ?
+  } if($got1){my $dfcd=$dfd8;$dfcd=~ s/(\d\d)-(\d\d)-(\d\d\d\d)/$o$1$W-$Y$2$W-$R$3$z/; # D8a-File-Colored-D8
+    for     my $st8n (sort {$sd8a{$dfd8}{$a}{'C'} <=> $sd8a{$dfd8}{$b}{'C'}} keys(%{$sd8a{$dfd8}})){
+      printf   $out8 "$z  %s$B  %-34s$z  " ,$dfcd,$st8n; # mAB custom-colr St8z && countriez here l8r too? orig had $st8a{$st8n} just4USt8z but nEd mor;
+      for   my $fldk (@flck){my $frst=substr($fldk,0,1); # below skip Recovered && Active if blank fieldz or only added zeroez && still empty, sinc !in d8a
+        if($sd8a{$dfd8}{$st8n}{$frst}){printf $out8 "%s$frst$W:$z%s%9s$z  ",$flcm{$frst},$flcm{$frst},comma($sd8a{$dfd8}{$st8n}{$frst});}
+        else                          {printf $out8 "$k$frst$SKpb:$k%9s$z  ",0;}}
+      say      $out8 "$W;$z";}}
+  close   (    $fhnd                            ) or die "$dfil: $!";}
+  # here should be able to loop through MM-DD-YYYY keyz of %sd8a to then build delta changez by Day then describe or graph growth r8z,
+  # then start projecting when place might be satur8d by measuring against HTTPS://WorldOMeters.Info/world-population/population-by-country ;
+close          $out8             or die "Can't close duplic8 STDOUT handle: $!";
