@@ -1,0 +1,767 @@
+#!/usr/bin/perl -w
+# E3AM13oA:cmc8 by PipStuart <Pip@CPAN.Org> as an adapt8ion of a Chess program to CheckMate Concentr8 into an odd 80x12 or 40x12 text mode 2 describe Octology;
+# This code is released under version 3 of the GNU General Public License;
+# 2du:colr 80wId mOd lIk40,cnv2Uz c8,mk intractiv2sele mAn txtsectNz&&add DtAlz about pRtz ofOctology;
+use strict;
+use Math::BaseCnv qw(:all);
+use Octology::d8;
+my $ucsf = eval('use Curses::Simp;8');
+my $sdlf = 8; # set to 0 to ignore SDL but for now will need at least one of Simp or SDL to render through
+if($sdlf){    # if neither ucsf or sdlf are set, should eventually just dump ANSI text to console && maybe get input from <STDIN> or ReadLine or just quit out?
+use SDL;      # originally tried to eval all use SDL lines here hoping to just fallback on Simp if any needed SDL module could not be loaded..
+use SDL::Video; #  ..but critical constants wouldn't export properly into the local namespc when eval'd so it seems SDL is mostly required now rather than opt
+use SDL::Event;
+use SDL::Events;
+use SDL::Joystick;
+use SDL::GFX::Rotozoom;
+use SDLx::App;
+#se SDLx::Text;
+use SDLx::Sprite;} $sdlf = 0 if(exists($ENV{'TERM'}) && $ENV{'TERM'} eq 'linux'); # disable SDL when in fullscrn txt-mode acordng2 $TERM or betr way2ck?
+my $VERSION='0.0';my $d8VS='K49M18c8';my $name=$0;$name =~ s/^.*\///;         my $spnf = 1;my $sele = 11;my $keey;my @text;my @fclr;my @bclr;#Show Pc NamesFlag
+my $auth = 'PipStuart <Pip@CPAN.Org>';my $G   = "\e[01;32m"; # AUTHor inform8ion && single bright Green ANSI escape code for printing at end
+my $xscl = 1.0;my $widt =160;if(exists($ENV{'COLUMNS'})){$widt = $ENV{'COLUMNS'};} # SDL X && Y SCaLes rel8ive to inherited text dimensions * 8x16
+my $yscl = 1.0;my $hite = 50;if(exists($ENV{'LINES'}  )){$hite = $ENV{'LINES'}  ;} # default 160x50 => 1280x800
+#($ucsf,$widt,$hite,$xscl,$yscl)=(0,80,25,3,3);       # quick way to   triple pixel scale for 80x25 => 1920x1200  This similar to SVGA && below Mode13
+#($ucsf,$widt,$hite,$xscl,$yscl)=(0,40,12,5,5);       # quick way to hextuple pixel scale for 40x12 => 1920x1152 nd to allow 12.5 chars for last 48 pixel lines
+ ($ucsf,$widt,$hite,$xscl,$yscl)=(0,80,12,2.5,5);     #                       pixel scale for 80x12 => 1600x960 for maybe weird double Mode13h min Octo text?
+#($ucsf,$widt,$hite,$xscl,$yscl)=(0,40,12,5,5); # 40x12 barfs lots && should be fixed here && in ckm8 as actual LowestComnD text reso intentionally supported
+#$xscl = $yscl = 1.0;                                 # try rel8ively simple scale from default        1280x800 => 1920x1200, some scales show gaps
+my $bbrd = 'wkwkwkwkkwkwkwkwwkwkwkwkkwkwkwkwwkwkwkwkkwkwkwkwwkwkwkwkkwkwkwkw';my $cpbf = 1; # Blank BoaRD with just background square colors, ColorPczBoardFlag
+my $inpb = 'RIBKQSTOPAWNCDEF_._._._.._._._.__._._._.._._._._pawncdefribkqsto'; # Initial Named   Pieces Board in standard default starting positions
+my $itpb = 'RIBKQBIRPPPPPPPP_._._._.._._._.__._._._.._._._._ppppppppribkqbir'; # Initial Typed   Pieces Board design8ion same as FEN except knIghts Ii vs. Nn
+my $iupb = '♖♘♗♔♕♗♘♖♙♙♙♙♙♙♙♙_._._._.._._._.__._._._.._._._._♟♟♟♟♟♟♟♟♜♞♝♚♛♝♞♜'; # Initial Unicode Pieces Board (which don't draw thru Curses correctly yet)
+my $icpb = 'RGBYCBGRPPPPPPPPwkwkwkwkkwkwkwkwwkwkwkwkkwkwkwkwpppppppprgbycbgr'; # Initial Colored Pieces Board for fg of pieces and empty squares (PurplPwnz)
+   $icpb.= 'RRrrPCOR';my $mv50 = 0;my $fsof = 0; # apnd colrz4 CCCCEDMM(RH)?&&othr presnt8ion flgz like scal,name togl,colr set,etc.,50-mv cnt,FulScrnOptnFlag
+my $acpb = 'WWWWWWWWWWWWWWWWwkwkwkwkkwkwkwkwwkwkwkwkkwkwkwkwKKKKKKKKKKKKKKKK'; # Altern8 Colored Pieces Board for fg of pieces and empty squares (clasicWvsK)
+my @brnm =('0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz._', # Board Rot8ion iNdex Map with [0] being standard default b64 values
+           '7FNVdlt_6EMUcks.5DLTbjrz4CKSaiqy3BJRZhpx2AIQYgow19HPXfnv08GOWemu');$brnm[2]=reverse($brnm[0]);$brnm[3]=reverse($brnm[1]);my $bcpb = $icpb;#BkupCPB
+my $dfpl = '000 g00 gL0 0g0 0gg 00g g0g ggg  LLL _LL __L L_L L__ LL_ _L_ ___'; # DeFault kernel PaL8 colors after booting (in 2pal8 order) but =~ s/P/L/g;
+my $cmpl = "000 g00 _lI 0g0 0gg DPf g0g CCC  ggg z99 __L L_L L__ Sdp kOr ___"; # CnvGTP28($cmsv); # CheckMate ckm8 PaL8 colors (from GnomTerm) 2pal8 order
+my @fvpl =($cmpl,
+           #215 T34 _WI 0F9 0SX 06A xK_ GUZ  6DJ _JU __C B_b L__ 7V_ xX_ sy_', # krOgcbPw KRYGCBMW orig TigsFavs converted to 2pal8 order  but modified
+           'EEE WEM pX0 EI4 8SQ GQU V9p WWU  QQQ _Qj pp0 QZ8 Guq Xpw p0p __y', # ehodtspi EHyDTSmI with hand gener8d darks ((round Bright/4)*2) other than op
+           'KKK M44 WSO GWQ UWW 00G SSW WSM  eee i88 _vn V_r y__ 00W vv. _th', # .fuaznlj _FUAZNLJ  although looking up dark version3 of each might improve
+           '00I M6C WQ0 6Q6 8GM 4IW UGU WUQ  00Y iCO _r0 CpC HWj 7a_ xWx .wr');# 02468xvq 13579XVQ
+my %cmap =('ANSI' => 'krgObPcw KRGYBMCW', # supported Color MAP index orderings
+           'VGA'  => 'kbgcrPOw KBGCRMYW',
+           'pal8' =>          'ROYGCBMP', # maybe *pal8 should be the same extension?
+          '2pal8' => 'krOgcbPw KRYGCBMW', # basically compacted same eightbow order as pal8 bracketed by blacK && White squeezing Orange && Purple over darks
+          '8pal8' => 'krOgcbPw KRYGCBMW  ehodtspi EHyDTSmI   .fuaznlj _FUAZNLJ  02468xvq 13579XVQ');
+#                favs KRYGCBMW growing into initial 8pal8 adding dark versions of specially rel8d brightish darks OP && their brighter counterparts YM.
+#                     ehodtspi QQQ dimgrEy      under K, _Qj Hotpink      under R, pX0 orange3  lower o  , QZ8 oliveDrab    under G, pp0 yellow3  lower y
+#                neon EHyDTSmI Guq Turquoise    under C, Xpw Skyblue      under B, V9p purple3  lower p  , __y Ivory        under W. p0p magenta3 lower m
+#                     .fuaznlj eee ._ gray63    under K, i88 Firebrick    under R, _vn bisqUe   under O/Y, V_r Aquamarine   under G, Mk gener8 2 strt all othr
+#                wash _FUAZNLJ y__ aZure        under C, 00W Navy         under B, vv. Lavender under P/M, _th navaJowhite  under W.  lowrs wi drkr version3 of
+#                     02468xvq 00Y 01 darkblue  under K, iCO 23 maroon    under R, _r0 45 gold  under O/Y, CpC 67 limegreen under G,  each Bright color already
+#                melo 13579XVQ HWj 89 steelblue under C, 7a_ X dodgerblue under B, xWx Violet   under P/M, .wr antiQuewhite under W.  listed.
+my %n2tm =('0'=>'0','1'=>'1');for(0..63){$n2tm{substr($inpb,$_,1)} = substr($itpb,$_,1);} # piece Name 2 Type    Map
+my %t2um =('0'=>'0','1'=>'1');for(0..63){$t2um{substr($itpb,$_,1)} = substr($iupb,$_,1);} # piece Type 2 Unicode Map
+my %t2cm =('0'=>'W','1'=>'K');for(0..63){$t2cm{substr($itpb,$_,1)} = substr($icpb,$_,1);} # piece Type 2 Color   Map, should _. => WK instead of wk?
+#DAUMGepL: Unicode piece icon: Name   Symbol Codepoint HTML
+#                             WRook   ♖      U+2656    &#9814;
+#                             WknIght ♘      U+2658    &#9816;
+#                             WBishop ♗      U+2657    &#9815;
+#                             WKing   ♔      U+2654    &#9812;
+#                             WQueen  ♕      U+2655    &#9813;
+#                             WPawn   ♙      U+2659    &#9817;
+#                             krook   ♜      U+265C    &#9820;
+#                             kknight ♞      U+265E    &#9822;
+#                             kbishop ♝      U+265D    &#9821;
+#                             kking   ♚      U+265A    &#9818;
+#                             kqueen  ♛      U+265B    &#9819; # ♔ ♕ ♖ ♗ ♘ ♙ 
+#                             kpawn   ♟      U+265F    &#9823; # ♚ ♛ ♜ ♝ ♞ ♟ 
+#32 characters:RIBKQSTO                PAWNCDEF      <White         black> pawncdef                     ribkqsto
+#     Rook   ♖ Rosie   Roost           Pawn ♙ Philip  Phalanx              pawn ♟ porter poison         rook   ♜ rachel  ruins
+#   knIght   ♘ Igor    Isle           pAwn  ♙ Angie   Anvil               pawn  ♟ audry  arid         knight   ♞ ivan    injure
+#     Bishop ♗ Brenda  Brave         paWn   ♙ William Water              pawn   ♟ wayne  waste          bishop ♝ barbara blood
+#     King   ♔ Kyle    Kind         pawN    ♙ Natalie Nature            pawn    ♟ norma  noose          king   ♚ kilgore kraven
+#     Queen  ♕ Quill   Quest      pawn C    ♙ Curtis  Carver          pawn c    ♟ clint  caustic        queen  ♛ quartz  quasher
+#   biShop   ♗ Steven  Smith      pawn D    ♙ Dottie  Divine          pawn d    ♟ donna  decay        bishop   ♝ shawn   slayer
+#knighT      ♘ Theresa Trotter    pawn E    ♙ Evan    EvergrEn        pawn e    ♟ exon   evil      knight      ♞ trina   trample
+#    rOok    ♖ Orville Olive      pawn F    ♙ Fran    Fire            pawn f    ♟ fiona  frost         rook    ♜ oden    operose
+my %pnam =('R'=>['     Rook  ','Rosie  ','Roost   '],
+           'I'=>['   knIght  ','Igor   ','Isle    '],
+           'B'=>['     Bishop','Brenda ','Brave   '],
+           'K'=>['     King  ','Kyle   ','Kind    '],
+           'Q'=>['     Queen ','Quill  ','Quest   '],
+           'S'=>['   biShop  ','Steven ','Smith   '],
+           'T'=>['knighT     ','Theresa','Trotter '],
+           'O'=>['   roOk    ','Orville','Olive   '],
+           'P'=>['     Pawn  ','Philip ','Phalanx '],
+           'A'=>['    pAwn   ','Angie  ','Anvil   '],
+           'W'=>['   paWn    ','William','Water   '],
+           'N'=>['  pawN     ','Natalie','Nature  '],
+           'C'=>['pawn C     ','Curtis ','Carver  '],
+           'D'=>['pawn D     ','Dottie ','Divine  '],
+           'E'=>['pawn E     ','Evan   ','EvergrEn'],
+           'F'=>['pawn F     ','Fran   ','Fire    '],
+           'p'=>['     pawn  ','porter ','poison  '],
+           'a'=>['    pawn   ','audry  ','arid    '],
+           'w'=>['   pawn    ','wayne  ','waste   '],
+           'n'=>['  pawn     ','norma  ','noose   '],
+           'c'=>['pawn c     ','clint  ','caustic '],
+           'd'=>['pawn d     ','donna  ','decay   '],
+           'e'=>['pawn e     ','exon   ','evil    '],
+           'f'=>['pawn f     ','fiona  ','frost   '],
+           'r'=>['     rook  ','rachel ','ruins   '],
+           'i'=>['   knight  ','ivan   ','injure  '],
+           'b'=>['     bishop','barbara','blood   '],
+           'k'=>['     king  ','kilgore','kraven  '],
+           'q'=>['     queen ','quartz ','quasher '],
+           's'=>['   bishop  ','shawn  ','slayer  '],
+           't'=>['knight     ','trina  ','trample '],
+           'o'=>['   rook    ','oden   ','operose '],
+           'M'=>['     Master','Maggie ','Magnet  '],  # add othr custom charz wi maybe mapping of new types to existing to inherit icon && color maps
+           'm'=>['     master','mabel  ','malice  '],  #  ... or design8 new unique values in appropriate hashes
+           'H'=>['    cHancel','Henry  ','Honor   '],  # chancellor (R+I) from Capablanca on 10x8 && other variants
+           'h'=>['  archbisho','ham    ','hater   ']); # archbishop (B+I)  ... but need better name letrz && more room 2 fit
+   $n2tm{  'M'} ='B'; # for now add Master as alias to Bishop, even though it sounds like a cool name for a new Pc type that combines aspects of RIB by
+   $n2tm{  'm'} ='b'; #  ... mvng str8 like Rook jumping only to same colored squares (but can only jump one Pc in a direction or needs more nerfing somehow)
+my %pdat =('R'=>['      ',
+                 ' HHHHH',
+                 '  IRI ',
+                 '  HRH ',
+                 '  IRI ',
+                 ' ====='],
+           'I'=>['      ',
+                 '  Y--\\',
+                 ' /oII|',
+                 ' E~/I|',
+                 '  /II|',
+                 ' ====='],
+           'B'=>['   o  ',
+                 '  /-< ',
+                 ' |B+B|',
+                 '  \\B/ ',
+                 '  /B\\ ',
+                 ' ====='],
+           'K'=>['  +   ',
+                 ' \\--/ ',
+                 '(K||K)',
+                 ' \\KK/ ',
+                 ' /KK\\ ',
+                 '======'],
+           'Q'=>['\\\\\\///',
+                 ' \\~~/ ',
+                 ' (QQ) ',
+                 ' |QQ| ',
+                 ' /QQ\\ ',
+                 '======'],
+           'P'=>['      ',
+                 '  /^\\ ',
+                 ' (PPP)',
+                 '  \\_/ ',
+                 '  /P\\ ',
+                 ' ====='],); # Simp Mesg Dialog Text
+my %smdt =('info' => " $name v$VERSION $d8VS by $auth
+ 
+ $name is a basic Chess program written to experiment with several
+ ideas I've had about the game. I have a penchant for Base64 d8a-models
+ which has led me to forsake the ubiquitous algebraic not8ion in favor 
+ of my own more compact represent8ion.
+ 
+ I hope you find $name useful (or at least interesting).
+ 
+ $name is under version 3 of the GNU General Public License (GPLv3).
+ 
+ Please support HTTP://FSF.Org && HTTP://EFF.Org. Thanks. TTFN.
+ 
+                                                       -Pip
+ ",        'help' => " $name v$VERSION $d8VS by $auth
+ 
+                          Global Keys:                              
+  h         - displays this Help screen                             
+  r         - Rot8 board clockwise 90 degrees (uppeRcase backwards) 
+  s         - cycle through board Scale sizes (square    rows 1..6) 
+  u         - Undo most recent move           (Uppercase redo     ) 
+  f         - toggle Fullscreen video mode    (only affects SDL   ) 
+  n         - toggle piece Name visibility    (only affects scale6) 
+  c         - toggle piece Color set          (default versus W&&K) 
+ Arrow keys - select board square containing piece to move          
+ Space or   - pick selected piece to be moved to another board      
+ Enter          square or attempt to move piece to selected         
+                square if a piece has already been picked           
+ Mouse or Joystick events in SDL window should be mostly working    
+ 
+                          System Keys:
+         ?/H/F1 - Help  :  i - Info  :  x/q/Esc - eXit");my $smif = 0;my $smhf = 0; # Show Mesg (Info||Help) Flgz
+my $bord = $inpb;my $borc = $icpb;my $rotn = 0;my $scal = 6;my $pikd;my $lasp;my @crmf =();#'0','7','u','_'); # CastleRookMovedFlagz
+my @ubds =();my @ubcs =();my @rbds =();my @rbcs =();my @ucrs =();my @rcrs =();my @rpzs =();# Un&&RedoBorD orBordColorStax, UnRedoCastlRookStak, RedoPlyZStack
+my $awkl;my $akkl; # Actual White&&blacK King Loc8ions  # below looping thru bord to find Kings && Rooks escaping possible '.' loc8ion for literal regex
+for my $tndx (0..63){if(         substr($bord,$tndx,1)   eq 'K'){   $awkl = b64($tndx);$awkl = "\\." if($awkl eq '.');}
+                     if(         substr($bord,$tndx,1)   eq 'k'){   $akkl = b64($tndx);$akkl = "\\." if($akkl eq '.');}
+                     if(uc($n2tm{substr($bord,$tndx,1)}) eq 'R'){push(@crmf,b64($tndx));                              }} # may nd2Esc Rook '.' also?
+my @fpsp = split(/\s+/,join(' ',@fvpl)); $_= $cmap{'8pal8'};s/\s+//g;my @pvsp=split(//,$_);my %lmap=();#FavPalSePar8d||SPlit && Pal8 abrV8ion letters SePar8d
+for(0..63){$lmap{$pvsp[$_]} = $fpsp[$_];}$_= $cmap{'ANSI' };s/\s+//g;my @avlo=split(//,$_);            # Ansi abbreV8ion Letter Order
+my $bkof = 0;#shift || 0; # BlocK OFfset shifting 2pal8 set within 8pal8
+if($bkof){ $bkof *= 16 if($bkof =~ /^[123]$/);
+for(0..15){$lmap{$pvsp[$_]} = $fpsp[$_+$bkof];}}
+for(0..$#avlo){my @rgbd = split(//,  $lmap{$avlo[$_]});for(@rgbd){$_=b10($_)*4;} # silently print color changes (or sys pal8?) B4 new Simp
+ #printf("%2d:%s:%s:%3d:%3d:%3d:%s\n"  ,$_,$avlo[$_],$lmap{$avlo[$_]},@rgbd,    $ENV{'TERM'});
+ #printf("\e]P%1.1X%2.2X%2.2X%2.2X"    ,$_,                           @rgbd) if($ENV{'TERM'} eq 'xterm'); #GNU/Lin Console?
+# printf("\e]4;%d;#%2.2x%2.2x%2.2x\e\\",$_,                           @rgbd) if($ENV{'TERM'} eq 'xterm'); # chz GT 4 mOmNtz B4 any windw focus change resets =(
+} # maybe should also set bkgr && frgr 0 && 7 like etfp did?
+my $simp;
+if($ucsf){
+   $simp = tie(@text, 'Curses::Simp'             );
+           tie(@fclr, 'Curses::Simp::FClr', $simp);
+           tie(@bclr, 'Curses::Simp::BClr', $simp);$simp->{'_flagaudr'}=$simp->{'_flagadtf'}=$simp->{'_flagadtb'}=0;
+  $widt = $simp->Widt(); # these should already be the same
+  $hite = $simp->Hite();}
+my @bdls =();my @bcls =();my @plyz =();
+@text =(' ' .             $name  . " v$VERSION $d8VS"." by $auth");my %bcou =();my %prom =();my $bwid = ' ' x $widt;
+@fclr =(' ' . 'G'x length($name) . ' WYWC ROYGCBMp' . ' WW CCCGGGGGG WCCCWYYYYWMMMW'); # VERSION color codes will need to stretch if ever =~ /\d\d+/;
+if($widt >= 66){$text[0] .= ' ' x 55 . 'hist:GoRest'; #          GoRest          GoRest          GoR'; # only add colored GoRest to title line for big scale
+                $fclr[0] .= ' ' x 55 . 'YYYYWGGRRRR';}#          GGRRRR          GGRRRR          GGR';
+@bclr =(' ' x length($text[0]));#for(0..$hite-2){push(@text,$bwid);push(@fclr,$bwid);push(@bclr,$bwid);} # strt title bar with all blacK (spc alias) bg
+my @f0nt =(); my($bgin,$ennd,$rndx);my %sprm =();my $f8fn = 'med.f0nt';#$f8fn = 'tektite.f0nt';# should eventually mk f8 module with objX2ld/sv .f0nt && .psf
+my $sxap;my $evnt;my $jstk;my $jnam;my $nbtz;my $sfss;my $stir;my $stof; # SdlX APplic8ion&&EVeNT objects, JoySTicK, JoyNAMe, joyNumBuTnZ, SdlFullScreenSurface
+my %bstt;my @bnmz =(qw(Tr Ci Ex Sq L1 R1 L2 R2 Se St L3 R3 Up Rt Dn Lt)); #if($jnam eq 'ZEROPLUS PS(R) Gamepad Adaptor')
+if($sdlf){  SDL::init_sub_system(SDL_INIT_JOYSTICK); # below w(idth) h(eight) d(epth) f(lags) resizeable(just r does!work but SDL_RESIZABLE f does) EndOnQuit
+   $sxap  = SDLx::App->new(w => $widt*8*$xscl,h => $hite*16*$yscl,d => 32,t => $name,f => SDL_HWSURFACE | SDL_DOUBLEBUF | SDL_HWACCEL | SDL_RESIZABLE,eoq =>1);
+   $sfss  = SDL::Surface->new(SDL_HWSURFACE | SDL_ASYNCBLIT, $widt*8, $hite*16, 32, 0, 0, 0, 0); # above spelling diff SDL_RESIZABLE && resizeable 
+   $sxap->fullscreen() if($fsof);#exists($ENV{'HOSTNAME'}) && $ENV{'HOSTNAME'} eq 'Chun'); # hardcode Chun FullScreen for now?
+   $evnt  = SDL::Event   ->new(  );
+  if(       SDL::Joystick::num_joysticks()){
+    $jstk = SDL::Joystick->new( 0);
+    $jnam = SDL::Joystick::name(0);
+    $nbtz = SDL::Joystick::num_buttons($jstk);}
+  open(F8FN,'<',$f8fn); while(<F8FN>){ # load simple single global @f0nt to start
+    if    (/^f8/){ # header
+    }elsif(/^([0123]?[0-9A-Za-z._])-([0123]?[0-9A-Za-z._])$/){($bgin,$ennd,$rndx)=(b10($1),b10($2),0);
+    }else{my @roww = split(/\s/,$_);
+      for my $fndx ($bgin..$ennd){$f0nt[$fndx][$rndx] = $roww[$fndx-$bgin];} $rndx++;
+    }} close(F8FN);}
+# may still need to store any other game st8 which needs to be properly preserved && reconstructed like EnPsnt availability, 3fold, 50mv count, etc.
+sub UndoMove{return() unless(@plyz);$pikd = undef if(defined($pikd));push(@rpzs,pop(@plyz));push(@rbds,$bord);$bord = pop(@ubds);
+  push(@rcrs,join('',@crmf));@crmf =  split(//,pop(@ucrs));                                 push(@rbcs,$borc);$borc = pop(@ubcs);}
+sub RedoMove{return() unless(@rpzs);$pikd = undef if(defined($pikd));push(@plyz,pop(@rpzs));push(@ubds,$bord);$bord = pop(@rbds);
+  push(@ucrs,join('',@crmf));@crmf =  split(//,pop(@rcrs));                                 push(@ubcs,$borc);$borc = pop(@rbcs);}
+sub TestPcMv{my $b64s = b64($sele);$b64s = "\\." if($b64s eq '.'); # escape the dot for regex literal matching
+  return(1) if(defined($pikd) && substr($bord,$pikd,1) !~ /^[_.]$/ && join('',PcCanMv2($pikd)) =~ /$b64s/);
+  return(0);}
+sub PcCanMv2{my $pikn = shift;$pikn = $pikd unless(defined($pikn));my @cm2l =();my $stop = 0;my $ugbf = 1;$ugbf = 0 if(@_); # UsingGlobalBoardFlag
+             my $bdcp = shift;$bdcp = $bord unless(defined($bdcp));$bdcp =~ s/[.]/_/g;my @bdat = split(//,$bdcp);my $piec = $bdat[$pikn];
+  if($piec ne '_'){my $ptyp = $n2tm{$piec};my $psyd = 'W';$psyd = 'k' if($ptyp eq lc($ptyp));$ptyp = uc($ptyp) unless($ptyp eq 'p');
+    my $xfyl =     $pikn % 8 ; # describe all uppercase piece types except pawns as moving commonly above
+    my $yrnk = int($pikn / 8);
+    if    ($ptyp eq 'P' && $yrnk <  7){ # handle White Pawn opening or moving dnwards
+      if  (                          $bdat[$pikn+   8      ] eq '_'                    ){push(@cm2l,b64($pikn+ 8));   #  moving     dn one square  wo obstrctn
+        if($yrnk == 1             && $bdat[$pikn+  16      ] eq '_'                    ){push(@cm2l,b64($pikn+16));}} # opening     dn two squares wo obstrctn
+      if  ($xfyl >  0             && $bdat[$pikn+   7      ] =~ /^[ribkqstopawncdef]$/ ){push(@cm2l,b64($pikn+ 7));}  # diag attack dn-left  from positv xfyl
+      if  ($xfyl <  7             && $bdat[$pikn+   9      ] =~ /^[ribkqstopawncdef]$/ ){push(@cm2l,b64($pikn+ 9));}  # diag attack dn-right from lesser xfyl
+      if  ($xfyl >0 && $yrnk == 4 && $bdat[$pikn+   7      ] eq '_' && $bdat[$pikn-1] =~ /^[pawncde]$/ #&& hist has pawnopening     up two squares
+                    && $plyz[-1][1] eq $bdat[$pikn-1] && $plyz[-1][2] eq b64($pikn+15) ){push(@cm2l,b64($pikn+ 7));}  # diag EnPsnt dn-left  from positv xfyl
+      if  ($xfyl <7 && $yrnk == 4 && $bdat[$pikn+   9      ] eq '_' && $bdat[$pikn+1] =~ /^[awncdef]$/ #&& hist has awncopening     up two squares
+                    && $plyz[-1][1] eq $bdat[$pikn+1] && $plyz[-1][2] eq b64($pikn+17) ){push(@cm2l,b64($pikn+ 9));}  # diag EnPsnt dn-right from lesser xfyl
+      # thorough EnPsnt availability detection (for when !ugbf) will need bord xtra fieldz rather than plyz ck here
+    }elsif($ptyp eq 'p' && $yrnk >  0){ # handle black Pawn opening or moving upwards
+      if  (                          $bdat[$pikn-   8      ] eq '_'                    ){push(@cm2l,b64($pikn- 8));   #  moving     up one square  wo obstrctn
+        if($yrnk == 6             && $bdat[$pikn-  16      ] eq '_'                    ){push(@cm2l,b64($pikn-16));}} # opening     up two squares wo obstrctn
+      if  ($xfyl >  0             && $bdat[$pikn-   9      ] =~ /^[RIBKQSTOPAWNCDEF]$/ ){push(@cm2l,b64($pikn- 9));}  # diag attack up-left  from pos xfyl
+      if  ($xfyl <  7             && $bdat[$pikn-   7      ] =~ /^[RIBKQSTOPAWNCDEF]$/ ){push(@cm2l,b64($pikn- 7));}  # diag attack up-right from low xfyl
+      if  ($xfyl >0 && $yrnk == 3 && $bdat[$pikn-   9      ] eq '_' && $bdat[$pikn-1] =~ /^[PAWNCDE]$/ #&& hist has PAWNopening     dn two squares
+                    && $plyz[-1][1] eq $bdat[$pikn-1] && $plyz[-1][2] eq b64($pikn-17) ){push(@cm2l,b64($pikn- 9));}  # diag EnPsnt up-left  from positv xfyl
+      if  ($xfyl <7 && $yrnk == 3 && $bdat[$pikn-   7      ] eq '_' && $bdat[$pikn+1] =~ /^[AWNCDEF]$/ #&& hist has AWNCopening     dn two squares
+                    && $plyz[-1][1] eq $bdat[$pikn+1] && $plyz[-1][2] eq b64($pikn-15) ){push(@cm2l,b64($pikn- 7));}  # diag EnPsnt up-right from lesser xfyl
+    }
+    if    ($ptyp =~ /^[RQ]$/){ # handle Rook   movements (&& apply to Queens too)
+      for(0..6){if(!$stop && $yrnk >     $_ ){ # loop moving up
+          if    (($psyd eq 'W'    && $bdat[$pikn-(($_+1)*8)] =~ /^[ribkqstopawncdef]$/) ||
+                 ($psyd eq 'k'    && $bdat[$pikn-(($_+1)*8)] =~ /^[RIBKQSTOPAWNCDEF]$/)){push(@cm2l,b64($pikn-(($_+1)*8)));$stop = 1;
+          }elsif(                    $bdat[$pikn-(($_+1)*8)] eq '_'                    ){push(@cm2l,b64($pikn-(($_+1)*8)));
+          }else                                                                         {                                  $stop = 1;}}} $stop = 0;
+      for(0..6){if(!$stop && $xfyl <  (7-$_)){ # loop moving right
+          if    (($psyd eq 'W'    && $bdat[$pikn+ ($_+1)   ] =~ /^[ribkqstopawncdef]$/) ||
+                 ($psyd eq 'k'    && $bdat[$pikn+ ($_+1)   ] =~ /^[RIBKQSTOPAWNCDEF]$/)){push(@cm2l,b64($pikn+ ($_+1)   ));$stop = 1;
+          }elsif(                    $bdat[$pikn+ ($_+1)   ] eq '_'                    ){push(@cm2l,b64($pikn+ ($_+1)   ));
+          }else                                                                         {                                  $stop = 1;}}} $stop = 0;
+      for(0..6){if(!$stop && $yrnk <  (7-$_)){ # loop moving down
+          if    (($psyd eq 'W'    && $bdat[$pikn+(($_+1)*8)] =~ /^[ribkqstopawncdef]$/) ||
+                 ($psyd eq 'k'    && $bdat[$pikn+(($_+1)*8)] =~ /^[RIBKQSTOPAWNCDEF]$/)){push(@cm2l,b64($pikn+(($_+1)*8)));$stop = 1;
+          }elsif(                    $bdat[$pikn+(($_+1)*8)] eq '_'                    ){push(@cm2l,b64($pikn+(($_+1)*8)));
+          }else                                                                         {                                  $stop = 1;}}} $stop = 0;
+      for(0..6){if(!$stop && $xfyl >     $_ ){ # loop moving left
+          if    (($psyd eq 'W'    && $bdat[$pikn- ($_+1)   ] =~ /^[ribkqstopawncdef]$/) ||
+                 ($psyd eq 'k'    && $bdat[$pikn- ($_+1)   ] =~ /^[RIBKQSTOPAWNCDEF]$/)){push(@cm2l,b64($pikn- ($_+1)   ));$stop = 1;
+          }elsif(                    $bdat[$pikn- ($_+1)   ] eq '_'                    ){push(@cm2l,b64($pikn- ($_+1)   ));
+          }else                                                                         {                                  $stop = 1;}}} $stop = 0;
+    }
+    if    ($ptyp =~ /^[BQ]$/){ # handle Bishop movements (&& apply to Queens too)
+      for(0..6){if(!$stop && $xfyl <  (7-$_) && $yrnk >     $_ ){ # loop moving up  -right
+          if    (($psyd eq 'W'    && $bdat[$pikn-(($_+1)*7)] =~ /^[ribkqstopawncdef]$/) ||
+                 ($psyd eq 'k'    && $bdat[$pikn-(($_+1)*7)] =~ /^[RIBKQSTOPAWNCDEF]$/)){push(@cm2l,b64($pikn-(($_+1)*7)));$stop = 1;
+          }elsif(                    $bdat[$pikn-(($_+1)*7)] eq '_'                    ){push(@cm2l,b64($pikn-(($_+1)*7)));
+          }else                                                                         {                                  $stop = 1;}}} $stop = 0;
+      for(0..6){if(!$stop && $xfyl <  (7-$_) && $yrnk <  (7-$_)){ # loop moving down-right
+          if    (($psyd eq 'W'    && $bdat[$pikn+(($_+1)*9)] =~ /^[ribkqstopawncdef]$/) ||
+                 ($psyd eq 'k'    && $bdat[$pikn+(($_+1)*9)] =~ /^[RIBKQSTOPAWNCDEF]$/)){push(@cm2l,b64($pikn+(($_+1)*9)));$stop = 1;
+          }elsif(                    $bdat[$pikn+(($_+1)*9)] eq '_'                    ){push(@cm2l,b64($pikn+(($_+1)*9)));
+          }else                                                                         {                                  $stop = 1;}}} $stop = 0;
+      for(0..6){if(!$stop && $xfyl >     $_  && $yrnk <  (7-$_)){ # loop moving down-left
+          if    (($psyd eq 'W'    && $bdat[$pikn+(($_+1)*7)] =~ /^[ribkqstopawncdef]$/) ||
+                 ($psyd eq 'k'    && $bdat[$pikn+(($_+1)*7)] =~ /^[RIBKQSTOPAWNCDEF]$/)){push(@cm2l,b64($pikn+(($_+1)*7)));$stop = 1;
+          }elsif(                    $bdat[$pikn+(($_+1)*7)] eq '_'                    ){push(@cm2l,b64($pikn+(($_+1)*7)));
+          }else                                                                         {                                  $stop = 1;}}} $stop = 0;
+      for(0..6){if(!$stop && $xfyl >     $_  && $yrnk >     $_ ){ # loop moving up  -left
+          if    (($psyd eq 'W'    && $bdat[$pikn-(($_+1)*9)] =~ /^[ribkqstopawncdef]$/) ||
+                 ($psyd eq 'k'    && $bdat[$pikn-(($_+1)*9)] =~ /^[RIBKQSTOPAWNCDEF]$/)){push(@cm2l,b64($pikn-(($_+1)*9)));$stop = 1;
+          }elsif(                    $bdat[$pikn-(($_+1)*9)] eq '_'                    ){push(@cm2l,b64($pikn-(($_+1)*9)));
+          }else                                                                         {                                  $stop = 1;}}}#$stop = 0;
+    }
+    if    ($ptyp eq 'I'){ # handle knIght movements
+      if($psyd eq 'W'){
+        if($xfyl < 7 && $yrnk > 1 && $bdat[$pikn-  15      ] =~ /^[ribkqstopawncdef_]$/){push(@cm2l,b64($pikn-  15      ));} # upuprt
+        if($xfyl < 6 && $yrnk > 0 && $bdat[$pikn-   6      ] =~ /^[ribkqstopawncdef_]$/){push(@cm2l,b64($pikn-   6      ));} # rtrtup
+        if($xfyl < 6 && $yrnk < 7 && $bdat[$pikn+  10      ] =~ /^[ribkqstopawncdef_]$/){push(@cm2l,b64($pikn+  10      ));} # rtrtdn
+        if($xfyl < 7 && $yrnk < 6 && $bdat[$pikn+  17      ] =~ /^[ribkqstopawncdef_]$/){push(@cm2l,b64($pikn+  17      ));} # dndnrt
+        if($xfyl > 0 && $yrnk < 6 && $bdat[$pikn+  15      ] =~ /^[ribkqstopawncdef_]$/){push(@cm2l,b64($pikn+  15      ));} # dndnlt
+        if($xfyl > 1 && $yrnk < 7 && $bdat[$pikn+   6      ] =~ /^[ribkqstopawncdef_]$/){push(@cm2l,b64($pikn+   6      ));} # ltltdn
+        if($xfyl > 1 && $yrnk > 0 && $bdat[$pikn-  10      ] =~ /^[ribkqstopawncdef_]$/){push(@cm2l,b64($pikn-  10      ));} # ltltup
+        if($xfyl > 0 && $yrnk > 1 && $bdat[$pikn-  17      ] =~ /^[ribkqstopawncdef_]$/){push(@cm2l,b64($pikn-  17      ));} # upuplt
+      }else           {
+        if($xfyl < 7 && $yrnk > 1 && $bdat[$pikn-  15      ] =~ /^[RIBKQSTOPAWNCDEF_]$/){push(@cm2l,b64($pikn-  15      ));} # upuprt
+        if($xfyl < 6 && $yrnk > 0 && $bdat[$pikn-   6      ] =~ /^[RIBKQSTOPAWNCDEF_]$/){push(@cm2l,b64($pikn-   6      ));} # rtrtup
+        if($xfyl < 6 && $yrnk < 7 && $bdat[$pikn+  10      ] =~ /^[RIBKQSTOPAWNCDEF_]$/){push(@cm2l,b64($pikn+  10      ));} # rtrtdn
+        if($xfyl < 7 && $yrnk < 6 && $bdat[$pikn+  17      ] =~ /^[RIBKQSTOPAWNCDEF_]$/){push(@cm2l,b64($pikn+  17      ));} # dndnrt
+        if($xfyl > 0 && $yrnk < 6 && $bdat[$pikn+  15      ] =~ /^[RIBKQSTOPAWNCDEF_]$/){push(@cm2l,b64($pikn+  15      ));} # dndnlt
+        if($xfyl > 1 && $yrnk < 7 && $bdat[$pikn+   6      ] =~ /^[RIBKQSTOPAWNCDEF_]$/){push(@cm2l,b64($pikn+   6      ));} # ltltdn
+        if($xfyl > 1 && $yrnk > 0 && $bdat[$pikn-  10      ] =~ /^[RIBKQSTOPAWNCDEF_]$/){push(@cm2l,b64($pikn-  10      ));} # ltltup
+        if($xfyl > 0 && $yrnk > 1 && $bdat[$pikn-  17      ] =~ /^[RIBKQSTOPAWNCDEF_]$/){push(@cm2l,b64($pikn-  17      ));} # upuplt
+      }
+    }elsif($ptyp eq 'K'){ # handle King   movements
+      if($psyd eq 'W'){
+        if(             $yrnk > 0 && $bdat[$pikn-   8      ] =~ /^[ribkqstopawncdef_]$/){push(@cm2l,b64($pikn-   8      ));} # up
+        if($xfyl < 7              && $bdat[$pikn+   1      ] =~ /^[ribkqstopawncdef_]$/){push(@cm2l,b64($pikn+   1      ));} # rt
+        if(             $yrnk < 7 && $bdat[$pikn+   8      ] =~ /^[ribkqstopawncdef_]$/){push(@cm2l,b64($pikn+   8      ));} # dn
+        if($xfyl > 0              && $bdat[$pikn-   1      ] =~ /^[ribkqstopawncdef_]$/){push(@cm2l,b64($pikn-   1      ));} # lt
+        if($xfyl < 7 && $yrnk > 0 && $bdat[$pikn-   7      ] =~ /^[ribkqstopawncdef_]$/){push(@cm2l,b64($pikn-   7      ));} # uprt
+        if($xfyl < 7 && $yrnk < 7 && $bdat[$pikn+   9      ] =~ /^[ribkqstopawncdef_]$/){push(@cm2l,b64($pikn+   9      ));} # dnrt
+        if($xfyl > 0 && $yrnk < 7 && $bdat[$pikn+   7      ] =~ /^[ribkqstopawncdef_]$/){push(@cm2l,b64($pikn+   7      ));} # dnlt
+        if($xfyl > 0 && $yrnk > 0 && $bdat[$pikn-   9      ] =~ /^[ribkqstopawncdef_]$/){push(@cm2l,b64($pikn-   9      ));} # uplt
+        # need to conduct own ck && adjascent atax tstz here irrespective of ugbf rather than looking up xmdf in plyz
+        if($crmf[0] ne '-'        && $bdat[$pikn-   1      ] eq '_' && @plyz && $plyz[-1][5] ne '+' &&  $ugbf # don't castle from ck,but stil nd2predict4!ugbf
+                                  && $bdat[$pikn-   2      ] eq '_'                    ){push(@cm2l,b64($pikn-   2      ));} # ltlt W castle King  side
+        if($crmf[1] ne '-'        && $bdat[$pikn+   1      ] eq '_' && @plyz && $plyz[-1][5] ne '+' &&  $ugbf # also nd2loop between crmf for Chess960 castlng
+                                  && $bdat[$pikn+   2      ] eq '_'
+                                  && $bdat[$pikn+   3      ] eq '_'                    ){push(@cm2l,b64($pikn+   2      ));} # rtrt W castle Queen side
+      }else           {
+        if(             $yrnk > 0 && $bdat[$pikn-   8      ] =~ /^[RIBKQSTOPAWNCDEF_]$/){push(@cm2l,b64($pikn-   8      ));} # up
+        if($xfyl < 7              && $bdat[$pikn+   1      ] =~ /^[RIBKQSTOPAWNCDEF_]$/){push(@cm2l,b64($pikn+   1      ));} # rt
+        if(             $yrnk < 7 && $bdat[$pikn+   8      ] =~ /^[RIBKQSTOPAWNCDEF_]$/){push(@cm2l,b64($pikn+   8      ));} # dn
+        if($xfyl > 0              && $bdat[$pikn-   1      ] =~ /^[RIBKQSTOPAWNCDEF_]$/){push(@cm2l,b64($pikn-   1      ));} # lt
+        if($xfyl < 7 && $yrnk > 0 && $bdat[$pikn-   7      ] =~ /^[RIBKQSTOPAWNCDEF_]$/){push(@cm2l,b64($pikn-   7      ));} # uprt
+        if($xfyl < 7 && $yrnk < 7 && $bdat[$pikn+   9      ] =~ /^[RIBKQSTOPAWNCDEF_]$/){push(@cm2l,b64($pikn+   9      ));} # dnrt
+        if($xfyl > 0 && $yrnk < 7 && $bdat[$pikn+   7      ] =~ /^[RIBKQSTOPAWNCDEF_]$/){push(@cm2l,b64($pikn+   7      ));} # dnlt
+        if($xfyl > 0 && $yrnk > 0 && $bdat[$pikn-   9      ] =~ /^[RIBKQSTOPAWNCDEF_]$/){push(@cm2l,b64($pikn-   9      ));} # uplt
+        if($crmf[2] ne '-'        && $bdat[$pikn-   1      ] eq '_' && @plyz && $plyz[-1][5] ne '+' &&  $ugbf
+                                  && $bdat[$pikn-   2      ] eq '_'                    ){push(@cm2l,b64($pikn-   2      ));} # ltlt k castle king  side
+        if($crmf[3] ne '-'        && $bdat[$pikn+   1      ] eq '_' && @plyz && $plyz[-1][5] ne '+' &&  $ugbf
+                                  && $bdat[$pikn+   2      ] eq '_'
+                                  && $bdat[$pikn+   3      ] eq '_'                    ){push(@cm2l,b64($pikn+   2      ));} # rtrt k castle queen side
+      }}}
+  if($ugbf && @cm2l){my $cm2n = $#cm2l;for(0..$cm2n){ # UsingGloblBordFlag so loop bkwrdz thru @cm2l&&Pr4mPcMv in2 potential bord && recurse back here
+    my $ptyp = $n2tm{$piec};my $psyd = 'W';$psyd = 'k' if($ptyp eq lc($ptyp));my $tpik = $pikn;my $tsel = b10($cm2l[$cm2n-$_]);my $pccf = 0;
+    my $tbrd = Pr4mPcMv($tpik,$tsel,$bord,$borc); # TempBoRD && above:PcTYPe,PcSyde, TempPIcK,SELect, PcCanCkFlag
+    my $twkl;#= $awkl;
+    my $tkkl; # TempWhite&&black King Loc8ions
+    for my $tndx (0..63){ # loop thru TempBoRD to first find Kings
+      if(substr($tbrd,$tndx,1) eq 'K'){$twkl = b64($tndx);$twkl = "\\." if($twkl eq '.');}  # escape possible '.' loc8ion for literal regex
+      if(substr($tbrd,$tndx,1) eq 'k'){$tkkl = b64($tndx);$tkkl = "\\." if($tkkl eq '.');}} # somehow twkl can be undef here?!
+#if(!defined($twkl) && $ucsf){$text[-1] = "$tbrd PresKeey";$simp->Draw();$simp->GetK(-1);}# need new common GetK to keep Curses && SDL in sync
+    for my $tndx (0..63){ # loop thru TempBoRD again looking for opposing pieces that can ck
+      unless($pccf){
+        if($psyd eq 'W'){ # White is the side potentially moving so test if any black pieces can ck King
+          if(substr($tbrd,$tndx,1) =~ /^[ribkqstopawncdef]$/){my $jpcm = join('',PcCanMv2($tndx,$tbrd));
+            if($jpcm =~ /$twkl/){$pccf = 1;splice(@cm2l,$cm2n-$_,1);}}#$text[-1]="$tbrd twkl:".b64($twkl).' tpik:'.b64($tpik).' tndx:'.b64($tndx)." pcm:$jpcm";
+        }else           { # black        side                         #$fclr[-1]='W'x length($text[-1]);if($ucsf){$simp->Draw();$simp->GetK(-1);}
+          if(substr($tbrd,$tndx,1) =~ /^[RIBKQSTOPAWNCDEF]$/){my $jpcm = join('',PcCanMv2($tndx,$tbrd));
+            if($jpcm =~ /$tkkl/){$pccf = 1;splice(@cm2l,$cm2n-$_,1);}}}}}}}        return(@cm2l);}
+sub DrawBord{$scal = int(($hite-2)/8) if($scal*8+2 > $hite); # don't scale beyond screen size
+  my $bscl = shift || $scal;$bscl = int($bscl);my $ofsx = shift || $bscl-1;$ofsx++ if($ofsx<2);my $ofsy=shift || int($ofsx/2);
+  my $pcm2 = shift;if(!defined($pcm2) && defined($pikd)){        $pcm2 = join('',PcCanMv2($pikd      ));}
+  for(0..($hite-2)){$text[1+$_] = $fclr[1+$_] = $bclr[1+$_] = ' ' x $widt;} # clear rest of screen (below title bar)
+# for(2..($hite-2)){              $fclr[  $_] =               'G' x $widt;} # actually Green the central text colors
+  if($widt == 40){$text[0] =~ s/ PipStuart//;
+                  $fclr[0] =~ s/ CCCGGGGGG//;
+    $text[1  ] = '   Octology in a 40x12 Text Nutshell:';
+    $fclr[1  ] = '   ROYGCBMp GG C RRWBB GGGG RRROOOOOW';
+    $text[2+0] = ' V8 abbreV8s everything, sometimes';
+    $fclr[2+0] = ' YC OOOOOYCO RRRRRRRRRRW GGGGGGGGG';
+    $text[2+1] = ' manipul8ing while doing it. b8 numbers';
+    $fclr[2+1] = ' OOOOOOYCOOO WWWWW MMMMM YYW OR CCCCCCC';
+    $text[2+2] = ' grow left through the 8bow (ROYGCBMP)';
+    $fclr[2+2] = ' GGGG YYYY BBBBBBB GGG RYCM WROYGCBMpW';
+    $text[2+3] = ' while d8 stamps grow right (YMDzhmsp).';
+    $fclr[2+3] = ' WWWWW RO CCCCCC GGGG RRRRR WROYGCBMpWW';
+    $text[2+4] = ' c8 col8s custom columnized cut/cat';
+    $fclr[2+4] = ' YC OOYCO BBBBBB pppppppppp CCCYCCC';
+    $text[2+5] = ' commands. m8 and r8 are to rel8 any';
+    $fclr[2+5] = ' YYYYYYYYW YC GGG YC GGG MM OOYC GGG';
+    $text[2+6] = ' st8 abbreV8ions with tr8s of d8a.';
+    $fclr[2+6] = ' OYC OOOOOYCOOOO BBBB OYCO RR YCOW';
+    $text[2+7] = ' Octology is meant to be playable;';
+    $fclr[2+7] = ' ROYGCBMp MM CCCCC YY BB pMBCGYORW';
+   #$text[2+8] = '   navig8 thru st8ments to elabor8:';
+   #$fclr[2+8] = '   OOOOYC GGGG OYCOOOOO YY OOOOOYCW';
+  }else{
+    $text[1  ] = '       Octology Introduction Concentr8d Down To 8 80-character lines:';
+    $fclr[1  ] = '       ROYGCBMp GGGGGGGGGGGG OOOOOOOYCO GGGG GG C BBWGGGGGGGGG GGGGGW';
+    $text[2+0] = ' V8 is the prime abbreV8ion, which instructs us that uppercase letters are a';
+    $fclr[2+0] = ' YC GG GGG ppppp OOOOOYCOOOW GGGGG GGGGGGGGG GG GGGG GGGGGGGGG GGGGGGG GGG G';
+    $text[2+1] = ' separ8 syllable in pronunC8ion and that anything ripe for abbreV8ion should';
+    $fclr[2+1] = ' OOOOYC GGGGGGGG GG OOOOOOYCOOO GGG GGGG GGGGGGGG RRRR GGG OOOOOYCOOO GGGGGG';
+    $text[2+2] = ' also benefit from diverse manipul8ion altern8ives. b8 numbers are merely';
+    $fclr[2+2] = ' GGGG BBBBBBB GGGG GGGGGGG OOOOOOYCOOO OOOOOYCOOOOW OR GGGGGGG GGG GGGGGG';
+    $text[2+3] = ' letters and punctu8ion V8ing familiar decimal values, which grow left into the';
+    $fclr[2+3] = ' GGGGGGG GGG OOOOOYCOOO YCOOO GGGGGGGG GGGGGGG GGGGGGW GGGGG GGGG YYYY GGGG GGG';
+    $text[2+4] = ' 8bow (V8s for ROYGCBMP color names). d8 stamps grow right through the 8bow';
+    $fclr[2+4] = ' RYCM WYCO GGG ROYGCBMp CCCCC GGGGGWW RO GGGGGG GGGG RRRRR GGGGGGG GGG RYCM';
+    $text[2+5] = ' into YMDzhmsp time fields. c8 col8s custom columnized cut/cat commands. m8 and';
+    $fclr[2+5] = ' GGGG ROYGCBMp GGGG GGGGGGW YC OOYCO BBBBBB pppppppppp CCCYCCC YYYYYYYYW YC GGG';
+    $text[2+6] = ' r8 are used to rel8 any st8 abbreV8ions with tr8s of d8a. Uppercase letters';
+    $fclr[2+6] = ' YC GGG GGGG GG OOYC GGG OYC OOOOOYCOOOO GGGG OYCO RR YCOW GGGGGGGGG GGGGGGG';
+    $text[2+7] = ' indic8 Red playing cards and White ckm8 pieces for when Octology is playable;';
+    $fclr[2+7] = ' OOOOYC RRR ppppppp CCCCC GGG WWWWW RGBC pppppp GGG GGGG ROYGCBMp GG pMBCGYORW';
+    $text[2+8] = '           navig8 through st8ment sections to explore elabor8ions: 2BimplMNted';
+    $fclr[2+8] = '           OOOOYC GGGGGGG OYCOOOO GGGGGGGG GG GGGGGGG OOOOOYCOOOOW RRBBBBBBBBB';
+  }
+# for(0..63){DrawSqur($_,$bscl,$ofsx,$ofsy,$pcm2);}
+# for(0..$#plyz){my $pndx = b64($_);$pndx = "0$pndx" if(length($pndx) == 1);my $hhit = $hite-2;my $hcol = int($_ / $hhit);my $xdfc = 'K';#XtraD8aFldClr
+#   my $cpcl = $t2cm{$n2tm{$plyz[$_][3]}};$cpcl = uc($cpcl) if($plyz[$_][3] =~ /^[01_.]$/);my $ckfc = 'K'; # Captured Piece CoLor (or castling)  #CheK   FldClr
+#   if   ($plyz[$_][5] =~ /^[07]$/            ){$xdfc = $t2cm{$n2tm{         'R'}};} # default White color for eventual ckm8 # char
+#   elsif($plyz[$_][5] =~ /^[u_]$/            ){$xdfc = $t2cm{$n2tm{         'r'}};} #  ... replaced with Rook color for castling
+#   elsif($plyz[$_][5] =~ /^[PAWNCDEF]$/i     ){$xdfc = $t2cm{$n2tm{$plyz[$_][5]}};} #  ... or Pawn  color for EnPsnt
+#   elsif($plyz[$_][5] =~ /^[RIBQSTO]$/i      ){$xdfc = $t2cm{$n2tm{$plyz[$_][5]}};} #  ... or piece color for promotion (auto-Queen initially)
+#   if   ($plyz[$_][6] =~ /^[+#]$/ &&  $_   %2){$ckfc = $t2cm{$n2tm{         'K'}};} #  ... or King  color for checkm8 or just check
+#   elsif($plyz[$_][6] =~ /^[+#]$/ && ($_+1)%2){$ckfc = $t2cm{$n2tm{         'k'}};} #  ... or king  color for checkm8 or just check
+#   elsif($plyz[$_][6] =~ /^[%]$/             ){$ckfc =                      'W'  ;} #  ... or       White for stalem8 draw
+#   substr($text[1+$_-($hhit*$hcol)],(16*$bscl)+(16*$hcol),16,$pndx . join('',@{$plyz[$_]}));
+#   substr($fclr[1+$_-($hhit*$hcol)],(16*$bscl)+(16*$hcol),16,'ORROYGCBMp' . $t2cm{$n2tm{$plyz[$_][1]}} . 'G' . $cpcl . 'R' . $xdfc . $ckfc);
+#   substr($bclr[1+$_-($hhit*$hcol)],(16*$bscl)+(16*$hcol),16,'w' x 16) if(($_+1) % 2); # dark white background whole ply line
+#  #substr($bclr[1+$_-($hhit*$hcol)],(16*$bscl)+(16*$hcol), 2,'ww'    ) if(($_+1) % 2); # dark white background just  ply index
+# }
+  $fclr[-1] = 'W' x $widt;substr($fclr[-1],0,length($borc),$borc);$fclr[-1] =~ s/w/W/g;$fclr[-1] =~ s/k/K/g; # atmpt2mk blanks in borc visible
+  my $epal = '-';my $pndx = @plyz;$pndx = b64($pndx);$pndx = "0$pndx" if(length($pndx) == 1); # EnPsnt Avail Loc8ion, Plyz iNDeX
+  $text[  -1] = $bord . join('',@crmf) . $epal . b64($mv50) . $pndx;#$text[-1].= ' pikd:' . b64($pikd) . " pcm2:$pcm2" if(defined($pikd)); # status line
+  if($widt == 40){$text[10] = substr($text[11],0,$widt,'');
+                  $fclr[10] = substr($fclr[11],0,$widt,'');}
+  if(0&& $sdlf && defined($evnt)&& $evnt->type == SDL_MOUSEBUTTONDOWN){my($evbx,$evby)=($evnt->button_x    ,$evnt->button_y     );
+                                                                       my($evbw,$evbb)=($evnt->button_which,$evnt->button_button);
+    $text[-1].= " evbx:$evbx evby:$evby evbw:$evbw evbb:$evbb";}
+  if(1&& $sdlf && defined($evnt)&& $evnt->type == SDL_JOYBUTTONDOWN  ){my($ejbw,$ejbb,$ejbs)=($evnt->jbutton_which,$evnt->jbutton_button,$evnt->jbutton_state);
+    $text[-1].= " ejbw:$ejbw ejbb:$ejbb ejbs:$ejbs";}
+  # if IMsg||HMsg load Info||Help d8a in2 global main Simp arrays && then below draw add special GetK(0) && evnt poll for key press in either 2 dismiss both
+  if($smif || $smhf){my $smtd = $smdt{'info'};$smtd = $smdt{'help'} if($smhf);
+    my    @sptd = split(/\n/,$smtd);my $spht;       my $spwd = length($sptd[0]);
+    for  (@sptd){$spwd =                length($_)  if($spwd < length($_));} $spwd = $widt if($spwd > $widt);
+    for  (@sptd){$_   .= ' ' x ($spwd - length($_)) if($spwd > length($_));}
+    push (@sptd, ' ' x int(($spwd - 14)/2) . 'Press A Key...');$sptd[-1] .= ' ' x ($spwd -  length($sptd[-1])) if($spwd > length($sptd[-1]));
+    while(@sptd > $hite){splice(@sptd,-1,1);}                                     $spht = $#sptd;
+    for(0..$spht){substr($text[int(($hite-$spht)/2)+$_],int(($widt-$spwd)/2),$spwd,$sptd[$_]);
+                  substr($fclr[int(($hite-$spht)/2)+$_],int(($widt-$spwd)/2),$spwd,'C' x $spwd);
+                  substr($fclr[int(($hite-$spht)/2)+$_],int(($widt-$spwd)/2),$spwd,' ' . 'G'x length($name) . ' WYWC ROYGCBMp WW CCCGGGGGG WCCCWYYYYWMMMW' . ' ' x ($spwd - 47)) unless($_); # dup title-bar colors into top Mesg line
+                  substr($bclr[int(($hite-$spht)/2)+$_],int(($widt-$spwd)/2),$spwd,'b' x $spwd);
+                  substr($fclr[int(($hite-$spht)/2)+$_],int(($widt-$spwd)/2),$spwd,'Y' x $spwd) if($_ == $spht);
+                  substr($bclr[int(($hite-$spht)/2)+$_],int(($widt-$spwd)/2),$spwd,'r' x $spwd) if($_ == $spht);}
+  }                                                                                    $simp->Draw() if($ucsf && !$fsof);
+  if($sdlf){ $sxap->draw_rect([ 0,  0,$widt*8*$xscl,$hite*16*$yscl],[0,0,0,0]); # start blank full app bkgr (wish alpha'd bg thru2dsktp like GnomTerm)
+    for   my $lndx (0..$#text){my @ltxd = split(//,$text[$lndx]); # start looping Line iNDeX through text rows, load Line TeXt             D8a
+                               my @lfcd = split(//,$fclr[$lndx]); # start looping Line iNDeX through text rows, load Line Foreground Color D8a
+                               my @lbcd = split(//,$bclr[$lndx]); # start looping Line iNDeX through text rows, load Line Background Color D8a
+     #for(@lfcd){$_ = b64(int(rand(64)));} # SLOW! maybe pre-gen? tst rand colrz, could de-spc $cmap{8pal8} but map ends up same as dflt b64
+     #for(@lbcd){$_ = b64(int(rand(64)));} # renders unintelligible
+      for my $cndx (0..$#ltxd){ if($cndx < $widt){                # start looping Colm iNDeX through current         Line TeXt             D8a
+        $lfcd[$cndx] = 'k' if($lfcd[$cndx] eq ' '); # Simp supporting space black fg for SDL
+        $lbcd[$cndx] = 'k' if($lbcd[$cndx] eq ' '); # Simp supporting space black bg for SDL
+        $lfcd[$cndx] = 'M' if($lfcd[$cndx] eq 'P'); # remap P=>M,p=>P,y=>O
+        $lfcd[$cndx] = 'P' if($lfcd[$cndx] eq 'p'); # remap P=>M,p=>P,y=>O
+        $lfcd[$cndx] = 'O' if($lfcd[$cndx] eq 'y'); # remap P=>M,p=>P,y=>O
+        unless(exists($sprm{$ltxd[$cndx] . $lfcd[$cndx] . $lbcd[$cndx]})){ # could eventually add f0nt V8 field, scales, pal8s, etc.
+          my @frgb = split(//,$lmap{$lfcd[$cndx]}); for(@frgb){$_ = b10($_)*4;}
+          my @brgb = split(//,$lmap{$lbcd[$cndx]}); for(@brgb){$_ = b10($_)*4;}
+          $sprm{      $ltxd[$cndx] . $lfcd[$cndx] . $lbcd[$cndx]} = SDLx::Sprite->new(width => 8,height => 16 );
+          $sprm{      $ltxd[$cndx] . $lfcd[$cndx] . $lbcd[$cndx]}->surface->draw_rect([    0,    0,      8,16 ],[@brgb,255]);
+          for   my $rndx (0..15){ # Row   iNDeX
+            for my $pndx (0.. 7){ # Pixel iNDeX
+              if(substr($f0nt[ord($ltxd[$cndx])][$rndx],$pndx,1) eq '#'){my $prwd = 1;my $prht = 1;my $opnd = $pndx;my $ornd = $rndx;
+                $sprm{$ltxd[$cndx] . $lfcd[$cndx] . $lbcd[$cndx]}->surface->draw_rect([$opnd,$ornd,$prwd,$prht],[@frgb,255]);}}}
+        } $sprm{      $ltxd[$cndx] . $lfcd[$cndx] . $lbcd[$cndx]}->         draw_xy  ( $sfss,$cndx*8,$lndx*16);
+      }}}my $zmsf = SDL::GFX::Rotozoom::zoom_surface($sfss,$xscl,$yscl,SMOOTHING_ON ); # use ZooMSurFace && SPrite to scale SdlFullScreenSurface at end
+    my      $zmsp = SDLx::Sprite->new(width =>  $widt*8*$xscl,height => $hite*16*$yscl,surface => $zmsf); $zmsp->draw_xy ($sxap,  0,  0);
+   #my      $sttf = SDLx::Text  ->new( font => '/usr/share/fonts/truetype/liberation/LiberationMono-Regular.ttf', color => [255,255,255,255]);
+                                      #size => 16, x => 0, y => 0, h_align => 'left', shadow => 1, bold => 1, text => 'Test',  # other Text->new atrbutz
+                                                                                                         #$sttf->write_xy($sxap,288,288, 'More Test Text!');
+    $sxap->update();}
+  if($smif || $smhf){                   my $tkey = '-1'; # do special key testing for Info||Help
+    while(defined($tkey) && $tkey eq '-1'){$tkey = '-1';$tkey = $simp->GetK(0) if($ucsf);
+      if( defined($tkey) && $tkey eq '-1' && $sdlf){ # only potentially load keey from SDL events if!already set, trying evnt pollng 4 altern8 any key
+            SDL::Events::pump_events();
+        if( SDL::Events::poll_event($evnt)){
+          if($evnt->type    == SDL_KEYDOWN){$tkey = ' '; # will prolly eventually want2tst4othrEvnt typz here2also dismis dialog
+          }}}
+    } $smif = $smhf = 0;
+  }}
+sub DrawSqur{my $bndx = shift || 0;my $bscl = shift || $scal;$bscl = int($bscl);my $ofsx = shift || $bscl-1;$ofsx++ if($ofsx<1);my $ofsy=shift || int($ofsx/2);
+  my $pcm2 = shift;if(!defined($pcm2) && defined($pikd)){$pcm2 = join('',PcCanMv2($pikd));};
+  my $brnd = b10(substr($brnm[$rotn],$bndx,1));my $cfil =$brnd % 8;my $crnk=($brnd-$cfil)/8;my $b64s;     # ($bscl*2)x$bscl char squares
+  if(defined($pikd)){$b64s = b64($bndx);$b64s = "\\." if($b64s eq '.');} # escape dot for regex literal matching
+  for my $lndx (0..($bscl-1)){                                                                                    # start filling square with bg color
+    substr(    $bclr[1+($crnk*$bscl)+$lndx  ],($cfil*$bscl*2)        ,$bscl*2,      substr($bbrd,$bndx,1) x ($bscl*2));
+    if(defined($pikd)){
+      if    (                  $bndx == $pikd  ){
+        substr($text[1+($crnk*$bscl)+$lndx  ],($cfil*$bscl*2)        ,$bscl*2,                   '%'      x ($bscl*2));
+        substr($fclr[1+($crnk*$bscl)+$lndx  ],($cfil*$bscl*2)        ,$bscl*2,                   'G'      x ($bscl*2));
+        substr($bclr[1+($crnk*$bscl)+$lndx  ],($cfil*$bscl*2)        ,$bscl*2,                   'g'      x ($bscl*2));
+      }elsif(defined($pcm2) && $pcm2 =~ /$b64s/){
+        substr($text[1+($crnk*$bscl)+$lndx  ],($cfil*$bscl*2)        ,$bscl*2,                   '~'      x ($bscl*2)); # '@'
+        substr($fclr[1+($crnk*$bscl)+$lndx  ],($cfil*$bscl*2)        ,$bscl*2,                   'B'      x ($bscl*2)); # 'C'
+        substr($bclr[1+($crnk*$bscl)+$lndx  ],($cfil*$bscl*2)        ,$bscl*2,                   'b'      x ($bscl*2));
+      }}
+    if($bndx == $sele){
+      substr(  $text[1+($crnk*$bscl)+$lndx  ],($cfil*$bscl*2)        ,$bscl*2,                   '#'      x ($bscl*2));
+      substr(  $fclr[1+($crnk*$bscl)+$lndx  ],($cfil*$bscl*2)        ,$bscl*2,                   'R'      x ($bscl*2));
+      substr(  $bclr[1+($crnk*$bscl)+$lndx  ],($cfil*$bscl*2)        ,$bscl*2,                   'r'      x ($bscl*2));
+    }}
+  substr(      $text[1+($crnk*$bscl)        ],($cfil*$bscl*2)        ,      1,               b64($bndx)              ); # put square index in top left corner
+  substr(      $fclr[1+($crnk*$bscl)        ],($cfil*$bscl*2)        ,      1,   uc(substr($bbrd,$bndx,1))           ); # color index as bright bg /[WK]/
+  if(substr($bord,$bndx,1) !~ /^[_.]$/){ # don't clutter empty squares
+    substr(    $text[1+($crnk*$bscl)+$ofsy  ],($cfil*$bscl*2)+$ofsx  ,      1,      substr($bord,$bndx,1)            ); # put   piece char in square at offset
+    substr(    $fclr[1+($crnk*$bscl)+$ofsy  ],($cfil*$bscl*2)+$ofsx  ,      1,      substr($borc,$bndx,1)            );}# color piece by type
+  if(0&& substr($itpb,$bndx,1) =~ /^[RIBKQP]$/i &&               exists($t2um{substr($itpb,$bndx,1)})){ # attempt putting Unicode pieces next to above char
+    substr(    $text[1+($crnk*$bscl)+$ofsy  ],($cfil*$bscl*2)+$ofsx+1,      1,$t2um{substr($itpb,$bndx,1)}           ); # Unicode piece icons mess up Simp =(
+    substr(    $fclr[1+($crnk*$bscl)+$ofsy  ],($cfil*$bscl*2)+$ofsx+1,      1,                   'W'                 );}
+  if(substr($bbrd,$bndx,1) eq 'k'   && substr($bord,$bndx,1) eq 'b'){ # special-case dark white background for dark blue    on already dark blacK
+    substr(    $bclr[1+($crnk*$bscl)+$ofsy  ],($cfil*$bscl*2)+$ofsx  ,      1,                   'w'                 );}
+  if(defined($pikd)&& $bndx== $pikd && substr($borc,$bndx,1) eq 'g'){ # special-case dark white background for dark green   on already dark green   picked
+    substr(    $bclr[1+($crnk*$bscl)+$ofsy  ],($cfil*$bscl*2)+$ofsx  ,      1,                   'w'                 );}
+  if(defined($pikd)                 && substr($borc,$bndx,1) eq 'm'){ # special-case dark white background for dark magenta on already dark magenta PcCanMv2
+    substr(    $bclr[1+($crnk*$bscl)+$ofsy  ],($cfil*$bscl*2)+$ofsx  ,      1,                   'w'                 );}
+  if(defined($pikd)                 && substr($borc,$bndx,1) eq 'p'){ # special-case dark white background for dark purple  on already dark purple  PcCanMv2
+    substr(    $bclr[1+($crnk*$bscl)+$ofsy  ],($cfil*$bscl*2)+$ofsx  ,      1,                   'w'                 );}
+  if(             $bndx    == $sele && substr($borc,$bndx,1) eq 'r'){ # special-case dark white background for dark red     on already dark red     selected
+    substr(    $bclr[1+($crnk*$bscl)+$ofsy  ],($cfil*$bscl*2)+$ofsx  ,      1,                   'w'                 );}
+  if($spnf){
+    for my $lndx (0..($bscl-1)){if($bscl == 6 && substr($bord,$bndx,1) =~ /^[RIBKQSTOPAWNCDEF]$/i){ # setup text piece icons within largest scale
+      my $psln = substr($bord,$bndx,1);my $pdut = uc($n2tm{$psln}); # PcSingleLetterName, PcD8aUppercaseType
+      my $pdrt = $pdat{$pdut}[$lndx];$pdrt =~ s/$pdut/$psln/g;      # PcD8aRowText
+      substr(  $text[1+($crnk*$bscl)+$lndx  ],($cfil*$bscl*2)+$bscl  ,$bscl  , $pdrt                                            );
+      substr(  $fclr[1+($crnk*$bscl)+$lndx  ],($cfil*$bscl*2)+$bscl  ,$bscl  ,       $t2cm{$n2tm{substr($bord,$bndx,1)}} x $bscl);}}
+    for my $lndx (0..       2 ){if($bscl == 6 && substr($bord,$bndx,1) =~ /^[RIBKQSTOPAWNCDEF]$/i){ # setup text Pc names within largest scale (blank spaces)
+      my   $lnsn = length(        $pnam{substr($bord,$bndx,1)}[$lndx]); # LeNgth of String Name
+      my   @pnsc = split(//,      $pnam{substr($bord,$bndx,1)}[$lndx]); # Piece Name Split Chars
+      for(0..$#pnsc){if($pnsc[$_] ne ' '){
+        substr($text[1+($crnk*$bscl)+$lndx+3],($cfil*$bscl*2)+$_     ,      1,$pnsc[$_]                                         );}}
+      substr(  $fclr[1+($crnk*$bscl)+$lndx+3],($cfil*$bscl*2)        ,$lnsn  ,       $t2cm{$n2tm{substr($bord,$bndx,1)}} x $lnsn);}
+    }
+  }else{ # ShowPieceNameFlag false so just show icon shifted to center
+    for my $lndx (0..($bscl-1)){if($bscl == 6 && substr($bord,$bndx,1) =~ /^[RIBKQSTOPAWNCDEF]$/i){ # setup text piece icons within largest scale
+      my $psln = substr($bord,$bndx,1);my $pdut = uc($n2tm{$psln}); # PcSingleLetterName, PcD8aUppercaseType
+      my $pdrt = $pdat{$pdut}[$lndx];$pdrt =~ s/$pdut/$psln/g;      # PcD8aRowText
+      substr(  $text[1+($crnk*$bscl)+$lndx  ],($cfil*$bscl*2)+$bscl/2,$bscl  , $pdrt                                            );
+      substr(  $fclr[1+($crnk*$bscl)+$lndx  ],($cfil*$bscl*2)+$bscl/2,$bscl  ,       $t2cm{$n2tm{substr($bord,$bndx,1)}} x $bscl);}}
+  }}
+sub Pr4mPcMv{ # default mv pikd 2 sele in bord
+  my $ppik = shift;$ppik = $pikd unless(defined($ppik));my $psel = shift;$psel = $sele unless(defined($psel));my $ugbf = 1;$ugbf = 0 if(@_);
+  my $pbrd = shift;$pbrd = $bord unless(defined($pbrd));my $pbrc = shift;$pbrc = $borc unless(defined($pbrc));my $m50f = 1;
+  if($ugbf){@rpzs = @rbds = @rbcs =();push(@ubds,$bord);push(@ubcs,$borc);push(@ucrs,join('',@crmf));} # mvng GloblBordPc so MT Redo stax&&add UndoBord&&Colors
+  my $scpc = substr($pbrd,$psel,1); # Selected Capture PieCe or empty (MT) square _ or .
+  my $xmdf = '-'; # eXtra Move D8a Field
+  my $cmdf = ' '; # Check Move D8a Field
+  if(      $scpc      =~ /^[_.]$/ && substr($pbrd,$ppik,1) =~ /^[PAWNCDEF]$/i){ # any Pawn moving to empty space to check further for EnPsnt
+    if(int($ppik / 8) ==  4       && substr($pbrd,$ppik,1) =~ /^[PAWNCDEF]$/ && # if EnPsnt, set $xmdf to proper pawn && blank over it in $bor[dc]
+                                              $plyz[-1][1] =~ /^[pawncdef]$/ &&
+                                              $plyz[-1][2] eq b64($psel+8)   &&
+                                              $plyz[-1][4] eq b64($psel-8)  ){$xmdf = $plyz[-1][1];
+                                     substr($pbrd,$psel-8,1,'_');
+                                     substr($pbrd,$psel-8,1,'.') if(substr($bbrd,$psel-8,1) eq 'k');
+                                     substr($pbrc,$psel-8,1,        substr($bbrd,$psel-8,1)       );}
+    if(int($ppik / 8) ==  3       && substr($pbrd,$ppik,1) =~ /^[pawncdef]$/ &&
+                                              $plyz[-1][1] =~ /^[PAWNCDEF]$/ &&
+                                              $plyz[-1][2] eq b64($psel-8)   &&
+                                              $plyz[-1][4] eq b64($psel+8)  ){$xmdf = $plyz[-1][1];
+                                     substr($pbrd,$psel+8,1,'_');
+                                     substr($pbrd,$psel+8,1,'.') if(substr($bbrd,$psel+8,1) eq 'k');
+                                     substr($pbrc,$psel+8,1,        substr($bbrd,$psel+8,1)       );}
+  }
+  if(  int($psel / 8) ==  7       && substr($pbrd,$ppik,1) =~ /^[PAWNCDEF]$/){$xmdf =    'Q';}  # auto-promote PAWNs to Queen for now
+  if(  int($psel / 8) ==  0       && substr($pbrd,$ppik,1) =~ /^[pawncdef]$/){$xmdf =    'q';}
+  if    (substr($pbrd,$ppik,1) eq 'K'){if($ugbf){$awkl = b64($psel);$awkl = "\\." if($awkl eq '.');}
+    if    ($psel == $ppik-2){$xmdf = $crmf[0];} #$scpc = 0; if castling, set $xmdf = Rook strt pos && don't set $scpc = 0 for King side anymore
+    elsif ($psel == $ppik+2){$xmdf = $crmf[1];} #$scpc = 1;
+  }elsif(substr($pbrd,$ppik,1) eq 'k'){if($ugbf){$akkl = b64($psel);$akkl = "\\." if($akkl eq '.');}
+    if    ($psel == $ppik-2){$xmdf = $crmf[2];} #$scpc = 0;
+    elsif ($psel == $ppik+2){$xmdf = $crmf[3];} #$scpc = 1;
+  }
+  if($ugbf &&                       (substr($pbrd,$ppik,1) =~         /^[PAWNCDEF]$/i ||
+                                     $scpc                 =~ /^[RIBKQSTOPAWNCDEF]$/i)){$m50f = $mv50 = 0;} # advancing Pawn or capture so reset 50-mv count
+  if($ugbf){ # only add official new ply && 3fold increment if UsingGlobalBordFlag
+    push(@plyz,[Octology::d8->new() ,substr($pbrd,$ppik,1) , b64($ppik) , $scpc , b64($psel) , $xmdf , $cmdf]);
+    if(!exists($bcou{$bord})){  $bcou{$bord} =  1;}
+    else                     {  $bcou{$bord}++;   }
+    if( exists($bcou{$bord}) && $bcou{$bord} == 3){
+     #unshift(@{$bdso[64]->{'_text'}},"Threefold Repetition of Board Position (may end game):$bord");
+     #unshift(@{$bdso[64]->{'_fclr'}},"RRRRRBBBB YYYYYYYYYY WW PPPPP CCCCCCCC WGGG RRR CCCCWW$borc");
+    } # 3fold repetition
+  }
+  if((substr($pbrd,$ppik,1)                           =~ /^[PAWNCDEF]$/ && $xmdf eq 'Q') ||
+     (substr($pbrd,$ppik,1)                           =~ /^[pawncdef]$/ && $xmdf eq 'q')){ # auto-promote PAWNs to Queen for now
+    substr(  $pbrd,$psel,1,            $xmdf  );
+    substr(  $pbrc,$psel,1,$t2cm{$n2tm{$xmdf}});
+  }else{
+    substr(  $pbrd,$psel,1,substr($pbrd,$ppik,1));
+    substr(  $pbrc,$psel,1,substr($pbrc,$ppik,1));
+  }
+  if    (substr($pbrd,$psel,1) eq 'K'){ #if castling,mv Rook also
+    if   ($xmdf eq $crmf[0]){substr($pbrd,$psel+1,1,substr($pbrd,b10($crmf[0]),1));substr($pbrd,b10($crmf[0]),1,'_');
+      if(substr($bbrd,b10($crmf[0]),1) eq 'k'){                                    substr($pbrd,b10($crmf[0]),1,'.');}
+                             substr($pbrc,$psel+1,1,substr($pbrc,b10($crmf[0]),1));substr($pbrc,b10($crmf[0]),1,substr($bbrd,b10($crmf[0]),1));}
+    elsif($xmdf eq $crmf[1]){substr($pbrd,$psel-1,1,substr($pbrd,b10($crmf[1]),1));substr($pbrd,b10($crmf[1]),1,'_');
+      if(substr($bbrd,b10($crmf[1]),1) eq 'k'){                                    substr($pbrd,b10($crmf[1]),1,'.');}
+                             substr($pbrc,$psel-1,1,substr($pbrc,b10($crmf[1]),1));substr($pbrc,b10($crmf[1]),1,substr($bbrd,b10($crmf[1]),1));}
+                                       $crmf[0] = $crmf[1] = '-' if($ugbf);
+  }elsif(substr($pbrd,$psel,1) eq 'k'){
+    if   ($xmdf eq $crmf[2]){substr($pbrd,$psel+1,1,substr($pbrd,b10($crmf[2]),1));substr($pbrd,b10($crmf[2]),1,'_');
+      if(substr($bbrd,b10($crmf[2]),1) eq 'k'){                                    substr($pbrd,b10($crmf[2]),1,'.');}
+                             substr($pbrc,$psel+1,1,substr($pbrc,b10($crmf[2]),1));substr($pbrc,b10($crmf[2]),1,substr($bbrd,b10($crmf[2]),1));}
+    elsif($xmdf eq $crmf[3]){substr($pbrd,$psel-1,1,substr($pbrd,b10($crmf[3]),1));substr($pbrd,b10($crmf[3]),1,'_');
+      if(substr($bbrd,b10($crmf[3]),1) eq 'k'){                                    substr($pbrd,b10($crmf[3]),1,'.');}
+                             substr($pbrc,$psel-1,1,substr($pbrc,b10($crmf[3]),1));substr($pbrc,b10($crmf[3]),1,substr($bbrd,b10($crmf[3]),1));}
+                                       $crmf[2] = $crmf[3] = '-' if($ugbf); #if mvd King or Rook,clear CastleRookMovedFlagz
+  }elsif(substr($pbrd,$psel,1) eq 'R'){$crmf[0] =            '-' if($ugbf);
+  }elsif(substr($pbrd,$psel,1) eq 'O'){           $crmf[1] = '-' if($ugbf);
+  }elsif(substr($pbrd,$psel,1) eq 'r'){$crmf[2] =            '-' if($ugbf);
+  }elsif(substr($pbrd,$psel,1) eq 'o'){           $crmf[3] = '-' if($ugbf);
+  }
+  substr(       $pbrd,$ppik,1,'_');
+  substr(       $pbrd,$ppik,1,'.') if(substr($bbrd,$ppik,1) eq 'k');
+  substr(       $pbrc,$ppik,1,        substr($bbrd,$ppik,1)       );
+  if($ugbf){$bord = $pbrd;$borc = $pbrc; # try to tst 4 ck on oppo King at $awkl or king at $akkl now after mv done
+    my $ptyp = $n2tm{substr($bord,$sele,1)};my $psyd = 'W';$psyd = 'k' if($ptyp eq lc($ptyp));my $pccf = 0;my $ocmf = 0; # PcCanCkFlag && OpponentCanMvFlag
+    for(0..63){unless($pccf){ # loop thru bord looking for any same psyd pieces that can ck oppo king
+      if($psyd eq 'W'){ # White moved so test for ck on black king
+        if(substr($bord,$_,1) =~ /^[RIBKQSTOPAWNCDEF]$/){my $jpcm = join('',PcCanMv2($_));if($jpcm =~ /$akkl/){$pccf = 1;$plyz[-1][6] = '+';}}
+      }else           { # black moved so test for ck on White King
+        if(substr($bord,$_,1) =~ /^[ribkqstopawncdef]$/){my $jpcm = join('',PcCanMv2($_));if($jpcm =~ /$awkl/){$pccf = 1;$plyz[-1][6] = '+';}}
+      } #$text[-1]="$bord awkl:".b64($awkl).' tndx:'.b64($_)." PCM2:$jpcm";if($ucsf){$simp->Draw();$simp->GetK(-1);}
+    }} # next test if oppo can mv out of ck to determine stalem8 or ckm8
+    for(0..63){unless($ocmf){ # loop thru bord again looking for any oppo pieces that can mv out of ck
+      if($psyd eq 'W'){ # White moved so test if        black has any moves available
+        if(substr($bord,$_,1) =~ /^[ribkqstopawncdef]$/){my $jpcm = join('',PcCanMv2($_));if($jpcm =~ /./    ){$ocmf = 1;                   }}
+      }else           { # black moved so test if        White has any moves available
+        if(substr($bord,$_,1) =~ /^[RIBKQSTOPAWNCDEF]$/){my $jpcm = join('',PcCanMv2($_));if($jpcm =~ /./    ){$ocmf = 1;                   }}
+      }
+    }}         unless($ocmf){if($plyz[-1][6] eq '+'){$plyz[-1][6] = '#';}  # oppo can!mv so if already ck, then retro set cmdf for ckm8
+                             else                   {$plyz[-1][6] = '%';}} #                               else retro set cmdf 4stalem8
+    $mv50++ if($m50f && $mv50 < 63);
+  }else{return($pbrd);}#,$pbrc); # probably won't be necessary to return colors when just wanting to explore potential piece movements within bord
+} DrawBord(); # call initial draw B4 entering main input loop below
+while(!defined($keey) || ($keey !~ /^[xq]$/i && ord($keey) != 27)){$keey = '-1';$keey = $simp->GetK(0) if($ucsf);
+  if(  defined($keey) &&  $keey eq '-1' && $sdlf){ # only potentially load keey from SDL events if!already set
+            SDL::Events::pump_events();
+    if(     SDL::Events::poll_event($evnt)){
+      if     ($evnt->type    == SDL_VIDEORESIZE){ # first handle resize events, then more typical input events
+        my($evrw,$evrh)=($evnt->resize_w    ,$evnt->resize_h     ); $sxap->resize($evrw,$evrh);
+        $xscl = $evrw / ($widt* 8.0);
+        $yscl = $evrh / ($hite*16.0); DrawBord();
+      }elsif ($evnt->type    == SDL_MOUSEBUTTONDOWN){
+        my($evbx,$evby)=($evnt->button_x    ,$evnt->button_y     );
+        my($evbw,$evbb)=($evnt->button_which,$evnt->button_button);
+        if($evbx < ($scal*2*8*8*$xscl) && 16*$yscl <= $evby && $evby < (($scal*16*8*$yscl)+16*$yscl)){ # based on scale,if click in bord,
+          my $cndx = int(($evby-(16*$yscl))/($scal*16*$yscl))*8 + int($evbx/($scal*2*$xscl*8)); # then based on rot8n find xy squr loc8n && set sele && keey
+          my %rotm =('0'=>0,'1'=>3,'2'=>2,'3'=>1); # ROT8ion Map happens oddly && needs to swap 1 && 3 in @brnm 2get correct event indices
+          $sele = b10(substr($brnm[$rotm{$rotn}],$cndx,1));$keey = ' '; # below allow clik to re-pik diff Pc
+          if(defined($pikd) && $pikd != $sele){my $tsts = b64($sele);$tsts = "\\." if($tsts eq '.');my $jpcm = join('',PcCanMv2($pikd));
+            if($jpcm !~ /$tsts/ && length(join('',PcCanMv2($sele)))){ # but only undef pikd when sele!CanMv2 squr && pikng nw valid Pc that can mv
+              $pikd = undef;}} # below is a hack to quickly allow clicks to Un/Redo && rot8 board but should eventually get mouse menu or icons wi feedback
+        }elsif($evbx >= ($scal*2*8*$xscl*8) && 16*$yscl <= $evby && $evby < (($scal*16*$yscl*4)+16*$yscl)){$keey = 'u'; # top lt quad clik undo
+            if($evbx >= ($scal*2*8*$xscl*8)+(($widt - ($scal*2*8))/2)*$xscl*8                            ){$keey = 'r';}# top rt quad clik rot8
+        }else                                                                                             {$keey = 'U'; # bot lt quad clik redo
+            if($evbx >= ($scal*2*8*$xscl*8)+(($widt - ($scal*2*8))/2)*$xscl*8                            ){$keey = 'R';}# bot rt quad clik Rot8 CCW
+        } # else click off-board can call up un/redo, rot8, scal menu
+      }elsif ($evnt->type    == SDL_MOUSEBUTTONUP  ){ # see if special case of dragging piece
+        my($evbx,$evby)=($evnt->button_x    ,$evnt->button_y     );
+        my($evbw,$evbb)=($evnt->button_which,$evnt->button_button);
+        if($evbx < ($scal*2*8*8*$xscl) && 16*$yscl <= $evby && $evby < (($scal*16*8*$yscl)+16*$yscl)){ # based on scale,if click in bord,
+          my $cndx = int(($evby-(16*$yscl))/($scal*16*$yscl))*8 + int($evbx/($scal*2*$xscl*8)); # then based on rot8n find xy squr loc8n && set sele && keey
+          my %rotm =('0'=>0,'1'=>3,'2'=>2,'3'=>1); # ROT8ion Map happens oddly && needs to swap 1 && 3 in @brnm 2get correct event indices
+          my $rcnd = b10(substr($brnm[$rotm{$rotn}],$cndx,1)); # Rot8d Cell iNDex
+          if(defined($pikd) && $pikd != $rcnd){$sele = $rcnd;$keey = ' ';} # should only call if dragged to diff cell, might have sync issue if Dn already pikd
+        }
+     #}elsif ($evnt->type    == SDL_JOYAXISMOTION){my($ejaw,$ejaa,$ejav)=($evnt->jaxis_which  ,$evnt->jaxis_axis    ,$evnt->jaxis_value  ); # val:-32768..32767
+     #}elsif ($evnt->type    == SDL_JOYHATMOTION ){my($ejhw,$ejhh,$ejhv)=($evnt->jhat_which   ,$evnt->jhat_hat      ,$evnt->jhat_value   ); # val bitwise OR'd:
+# SDL_HAT_CENTERED  # could use these hat mvmntz 4 directnz but just tstng butnz 4 now should suffice
+# SDL_HAT_UP
+# SDL_HAT_RIGHT
+# SDL_HAT_DOWN
+# SDL_HAT_LEFT      # The following defines are also provided:
+# SDL_HAT_RIGHTUP
+# SDL_HAT_RIGHTDOWN
+# SDL_HAT_LEFTUP
+# SDL_HAT_LEFTDOWN                                                   # below st8 is either "jbutton_SDL_PRESSED" or "jbutton_SDL_RELEASED"?
+      }elsif ($evnt->type    == SDL_JOYBUTTONDOWN){my($ejbw,$ejbb,$ejbs)=($evnt->jbutton_which,$evnt->jbutton_button,$evnt->jbutton_state);
+        if   ($ejbb          == 12            ){$keey = 'KEY_UP'   ;}
+        elsif($ejbb          == 13            ){$keey = 'KEY_RIGHT';}
+        elsif($ejbb          == 14            ){$keey = 'KEY_DOWN' ;}
+        elsif($ejbb          == 15            ){$keey = 'KEY_LEFT' ;}
+        else                                   {$keey = ' '        ;} # only set keey2spc 4 normal butnz && set arowz 4 stick directn butnz (hat duplic8z) abov
+      }elsif ($evnt->type    == SDL_KEYDOWN){
+        if   ($evnt->key_sym == SDLK_i        ){$keey = 'i';} # Simp Mesg dialogz wi GetK(-1) originally caused SDL sync issuez
+        elsif($evnt->key_sym == SDLK_h        ||
+              $evnt->key_sym == SDLK_QUESTION ||
+              $evnt->key_sym == SDLK_F1       ){$keey = 'h';}
+        elsif($evnt->key_sym == SDLK_n        ){$keey = 'n';}
+        elsif($evnt->key_sym == SDLK_f        ){$keey = 'f';}
+        elsif($evnt->key_sym == SDLK_r        ){$keey = 'r';$keey = uc($keey) if($evnt->key_mod & KMOD_SHIFT);} # ck key_mod shft st8 4 Rvrs Rot8
+        elsif($evnt->key_sym == SDLK_s        ){$keey = 's';$keey = uc($keey) if($evnt->key_mod & KMOD_SHIFT);} # ck key_mod shft st8 4 rvrs Scal
+        elsif($evnt->key_sym == SDLK_u        ){$keey = 'u';$keey = uc($keey) if($evnt->key_mod & KMOD_SHIFT);} # ck key_mod shft st8 4 rvrs Undo (redo)
+        elsif($evnt->key_sym == SDLK_c        ){$keey = 'c';}
+        elsif($evnt->key_sym == SDLK_RIGHT    ){$keey = 'KEY_RIGHT';}
+        elsif($evnt->key_sym == SDLK_LEFT     ){$keey = 'KEY_LEFT' ;}
+        elsif($evnt->key_sym == SDLK_DOWN     ){$keey = 'KEY_DOWN' ;}
+        elsif($evnt->key_sym == SDLK_UP       ){$keey = 'KEY_UP'   ;}
+        elsif($evnt->key_sym == SDLK_SPACE    ||
+              $evnt->key_sym == SDLK_RETURN   ){$keey = ' ';}
+        elsif($evnt->key_sym == SDLK_x        ||
+              $evnt->key_sym == SDLK_q        ||
+              $evnt->key_sym == SDLK_ESCAPE   ){$keey = 'x';}
+      }elsif ($evnt->type    == SDL_QUIT      ){$keey = 'x';
+      }}} # add tstz 4 un/redo,rot8,scal,namz,colr click zones && JS menus, hist jmpz, bord txt drag select or dbl-clik, WM chgz
+  if(  defined($keey) && $keey ne '-1'){
+    if    ( lc($keey) eq 'i'                                           ){$smif  = 1;           DrawBord();DrawBord(); # 1st draw InfoMesg  in  Bord
+    }elsif( lc($keey) eq 'h'    || lc($keey) eq '?'|| $keey eq 'KEY_F1'){$smhf  = 1;           DrawBord();DrawBord(); #  && GetK then draw justBord
+    }elsif( lc($keey) eq 'n'                                           ){$spnf ^= 1;                      DrawBord();
+    }elsif( lc($keey) eq 'f'    &&    $sdlf                            ){$fsof ^= 1;  $sxap->fullscreen();# if(exists($ENV{'HOSTNAME'}) && $ENV{'HOSTNAME'} ne 'Aku'); # disable FulScrn on Aku since doesn't restore properly
+    }elsif(    $keey  eq 'r'                                           ){$rotn++;$rotn = 0 if($rotn == 4);DrawBord();
+    }elsif(    $keey  eq 'R'                                           ){$rotn--;$rotn = 3 if($rotn ==-1);DrawBord();
+    }elsif(    $keey  eq 's'                                           ){$scal++;$scal = 1 if($scal == 7);DrawBord();
+    }elsif(    $keey  eq 'S'                                           ){$scal--;$scal = 6 if($scal == 0);DrawBord();
+    }elsif(    $keey  eq 'u'                                           ){                      UndoMove();DrawBord();
+    }elsif(    $keey  eq 'U'                                           ){                      RedoMove();DrawBord();
+    }elsif( lc($keey) eq 'c'                                           ){$icpb = ($cpbf ^= 1) ? $bcpb : $acpb;        # toggle Color set,nd2upd8 @borc also?
+      for(0..63){$t2cm{substr($itpb,$_,1)} = substr($icpb,$_,1);}                                         DrawBord(); # reset piece Type 2 Color   Map
+    }elsif(    $keey  eq 'KEY_RIGHT'                                   ){ # mayb shd mk all arowz consistent by keepng2 rank||file rathr than incr around edge?
+      if($rotn == 0){$sele += 1;}elsif($rotn == 1){$sele -= 8;}elsif($rotn == 2){$sele -= 1;}else{$sele += 8;} # upd8 selected squr ndx,normliz2bord,then draw
+      $sele -= 64 if($sele >= 64);  $sele += 64 if($sele <=-1);                                           DrawBord();
+    }elsif(    $keey  eq 'KEY_LEFT'                                    ){
+      if($rotn == 0){$sele -= 1;}elsif($rotn == 1){$sele += 8;}elsif($rotn == 2){$sele += 1;}else{$sele -= 8;}
+      $sele -= 64 if($sele >= 64);  $sele += 64 if($sele <=-1);                                           DrawBord();
+    }elsif(    $keey  eq 'KEY_DOWN'                                    ){
+      if($rotn == 0){$sele += 8;}elsif($rotn == 1){$sele += 1;}elsif($rotn == 2){$sele -= 8;}else{$sele -= 1;}
+      $sele -= 64 if($sele >= 64);  $sele += 64 if($sele <=-1);                                           DrawBord();
+    }elsif(    $keey  eq 'KEY_UP'                                      ){
+      if($rotn == 0){$sele -= 8;}elsif($rotn == 1){$sele -= 1;}elsif($rotn == 2){$sele += 8;}else{$sele += 1;}
+      $sele -= 64 if($sele >= 64);  $sele += 64 if($sele <=-1);                                           DrawBord();
+    }elsif(    $keey  eq ' ' || ord($keey) == 13                       ){ # space or Return/Enter picks or moves a Pc
+      if(defined($pikd)){
+        if   (     TestPcMv()){                         Pr4mPcMv();DrawBord();$pikd = undef;                         } # can pikd     Pc mv 2 sele?
+        elsif($pikd == $sele ){                                               $pikd = undef;              DrawBord();} #  un-pick     Pc
+        elsif(PcCanMv2($sele)){                                               $pikd = $sele;              DrawBord();} #  re-pick new Pc
+      }elsif(((@plyz+1) % 2 && substr($bord,$sele,1) =~ /^[RIBKQSTOPAWNCDEF]$/) || # picking a Pc from the correct side that can move?
+             ( @plyz    % 2 && substr($bord,$sele,1) =~ /^[ribkqstopawncdef]$/)){my $jpcm = join('',PcCanMv2($sele));
+        if(  length($jpcm)     ){$pikd =    $sele;
+          if(length($jpcm) == 1){$sele = b10($jpcm);    Pr4mPcMv();DrawBord();$pikd = undef; } # if only one possible place picked piece can mv2, autom8 it
+          else                  {DrawBord($scal,$scal-1,int(($scal-1)/2),$jpcm);} # minimize PCM2 calls by passing in bscl,ofsx,ofsy,pcm2
+        }}}}
+}  $simp->CScr() if($ucsf);print $G;for(@text){s/\s+$/ /;print "$_\n";}#print $bord,join('',@crmf)."\n$brnm[0]\n"; # CloseCursesScrn(retn2console)&&prnt text,
+for(0..$#plyz){my $pndx = b64($_);$pndx = "0$pndx" if(length($pndx) == 1);print "\n" unless($_ % 10);print $pndx,@{$plyz[$_]};}  # bord,flgz,&& plyz again

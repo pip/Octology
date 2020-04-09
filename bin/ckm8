@@ -49,7 +49,7 @@
 #   Octo is 8base d8a applic8ions:V8 abbreV8ions,b8 nums,d8 stamps,f8 RU(Red)E4||2lern8bow?pal8NtrE RGB && f0nt -##-,c8 col8 scrn,r8 valU8,m8 rel8,l8 skedul8r?
 use strict;use warnings;use utf8;use v5.10;use Encode;
 use Octology::a8;#se Octology::c8;
-use Octology::b8;use Octology::d8;my $VERSION='0.0';my $d8VS='K3KM6ATE';my $name=$0;$name =~ s/^.*\///;my $Dbug=0; # version,program name
+use Octology::b8;use Octology::d8;my $VERSION='0.0';my $d8VS='K49M121F';my $name=$0;$name =~ s/^.*\///;my $Dbug=0; # version,program name
 open my $out8,'>&',STDOUT or die "Can't open  duplic8 STDOUT handle: $!";binmode $out8,':encoding(UTF-8)';select($out8);$|=1; # crE8 locl autoflush dup of glbl
 if(           @ARGV && $ARGV[0]=~ /^-*h/i){say $out8 " ckm8  - experimental   Curses and SDL Chess program  Vers:$VERSION  d8VS:$d8VS by Auth:$Auth
   <pW>v<pK>  sets roster tags for Players White and BlacK and for output filename where pW and pK are single-letter keys in the player registry hash (v optnal)
@@ -138,7 +138,7 @@ if(      2 <= @ARGV && $ARGV[0]=~ /^-*b/i){my $xcbd=decode('UTF-8',$ARGV[1]);if(
 #     Bishop ♗ Brenda  Brave         paWn   ♙ William Water              pawn   ♟ wayne  waste          bishop ♝ barbara blood
 #     King   ♔ Kyle    Kind         pawN    ♙ Natalie Nature            pawn    ♟ norma  noose          king   ♚ kilgore kraven
 #     Queen  ♕ Quill   Quest      pawn C    ♙ Curtis  Carver          pawn c    ♟ clint  caustic        queen  ♛ quartz  quasher
-#   biShop   ♗ Steven  Smith      pawn D    ♙ Darjee  Darling         pawn d    ♟ donna  decay        bishop   ♝ shawn   slayer
+#   biShop   ♗ Steven  Smith      pawn D    ♙ Dottie  Daring          pawn d    ♟ donna  decay        bishop   ♝ shawn   slayer
 #knighT      ♘ Timmy   Trotter    pawn E    ♙ Evan    EvergrEn        pawn e    ♟ exon   evil      knight      ♞ trina   trample
 #    rOok    ♖ Orville Olive      pawn F    ♙ Fran    Fire            pawn f    ♟ fiona  frost         rook    ♜ oden    operose
 my %pnam =('R'=>['     Rook  ','Rosie  ','Roost   '],
@@ -152,9 +152,9 @@ my %pnam =('R'=>['     Rook  ','Rosie  ','Roost   '],
            'P'=>['     Pawn  ','Philip ','Phalanx '],
            'A'=>['    pAwn   ','Angie  ','Anvil   '],
            'W'=>['   paWn    ','William','Water   '],
-           'N'=>['  pawN     ','Natalie','Nature  '],
-           'C'=>['pawn C     ','Curtis ','Carver  '],
-           'D'=>['pawn D     ','Darjee ','Darling '], # Dottie Divine demoted, Darjeeling promoted, Tim now tipping more male again;
+           'N'=>['  pawN     ','Natalie','N8ure   '],
+           'C'=>['pawn C     ','Curtis ','Carver  '], # Dottie Divine demoted, Darjeeling (Darjee Darling) promoted, Tim now tipping more male again;
+           'D'=>['pawn D     ','Dottie ','Dream   '], # Dottie Dream promoted, Darjeeling (Darjee Darling)  demoted, but will stay as D in altern8Pc;
            'E'=>['pawn E     ','Evan   ','EvergrEn'],
            'F'=>['pawn F     ','Fran   ','Fire    '],
            'p'=>['     pawn  ','porter ','poison  '],
