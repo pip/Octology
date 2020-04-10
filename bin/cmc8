@@ -484,7 +484,8 @@ sub DrawBord{$scal = int(($hite-2)/8) if($scal*8+2 > $hite); # don't scale beyon
           $sprm{      $ltxd[$cndx] . $lfcd[$cndx] . $lbcd[$cndx]}->surface->draw_rect([    0,    0,      8,16 ],[@brgb,255]);
           for   my $rndx (0..15){ # Row   iNDeX
             for my $pndx (0.. 7){ # Pixel iNDeX
-              if(substr($f0nt[ord($ltxd[$cndx])][$rndx],$pndx,1) eq '#'){my $prwd = 1;my $prht = 1;my $opnd = $pndx;my $ornd = $rndx;
+              if(defined($ltxd[$cndx]) && defined($f0nt[ord($ltxd[$cndx])]) && defined($f0nt[ord($ltxd[$cndx])][$rndx]) &&
+                substr($f0nt[ord($ltxd[$cndx])][$rndx],$pndx,1) eq '#'){my $prwd = 1;my $prht = 1;my $opnd = $pndx;my $ornd = $rndx;
                 $sprm{$ltxd[$cndx] . $lfcd[$cndx] . $lbcd[$cndx]}->surface->draw_rect([$opnd,$ornd,$prwd,$prht],[@frgb,255]);}}}
         } $sprm{      $ltxd[$cndx] . $lfcd[$cndx] . $lbcd[$cndx]}->         draw_xy  ( $sfss,$cndx*8,$lndx*16);
       }}}my $zmsf = SDL::GFX::Rotozoom::zoom_surface($sfss,$xscl,$yscl,SMOOTHING_ON ); # use ZooMSurFace && SPrite to scale SdlFullScreenSurface at end
