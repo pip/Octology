@@ -214,7 +214,8 @@ my @bdls =();my @bcls =();my @plyz =();
 if($widt >= 66){$text[0] .= ' ' x 55 . 'hist:GoRest'; #          GoRest          GoRest          GoR'; # only add colored GoRest to title line for big scale
                 $fclr[0] .= ' ' x 55 . 'YYYYWGGRRRR';}#          GGRRRR          GGRRRR          GGR';
 @bclr =(' ' x length($text[0]));#for(0..$hite-2){push(@text,$bwid);push(@fclr,$bwid);push(@bclr,$bwid);} # strt title bar with all blacK (spc alias) bg
-my @f0nt =(); my($bgin,$ennd,$rndx);my %sprm =();my $f8fn = 'med.f0nt';#$f8fn = 'tektite.f0nt';# should eventually mk f8 module with objX2ld/sv .f0nt && .psf
+my @f0nt =(); my($bgin,$ennd,$rndx);my %sprm =();my $f8fn = $ENV{'HOME'} . "/lib/Octology/f8/f0nt/mED.f0nt";#$f8fn = 'tEKtItE.f0nt';
+# should eventually use f8 module with objX2ld/sv .f0nt && .psf
 my $sxap;my $evnt;my $jstk;my $jnam;my $nbtz;my $sfss;my $stir;my $stof; # SdlX APplic8ion&&EVeNT objects, JoySTicK, JoyNAMe, joyNumBuTnZ, SdlFullScreenSurface
 my %bstt;my @bnmz =(qw(Tr Ci Ex Sq L1 R1 L2 R2 Se St L3 R3 Up Rt Dn Lt)); #if($jnam eq 'ZEROPLUS PS(R) Gamepad Adaptor')
 if($sdlf){  SDL::init_sub_system(SDL_INIT_JOYSTICK); # below w(idth) h(eight) d(epth) f(lags) resizeable(just r does!work but SDL_RESIZABLE f does) EndOnQuit
