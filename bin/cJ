@@ -1,0 +1,68 @@
+#!/usr/bin/perl
+# cJ Pip crE8d COVID-19 CoronaVirus script initially in ~/.local/bin/ before just ~/bin/, but had trouble getting commands 2all BhAv together as expected;
+# HTTPS://GitHub.Com/CSSEGISandData/COVID-19/tree/master/csse_covid_19_data/csse_covid_19_daily_reports has JohnsHopkinsUniversity CSV d8a-fIlz upd8d daily;
+# 2du:l8r add percentages of recoveries to deaths;
+use strict;use warnings;use utf8;use v5.10;use Octology::a8;use Octology::b8;use Octology::d8;
+my $d8VS='K4AMDamn';my $Vers='0.0'; # unfortun8ly it seems that both source 1 && 2 for USA now have only to total but no sepR8 St8s;
+my $d8nw=Octology::d8->new();my $d82D=substr("$d8nw",0,3); # nEd2get d8a2Day wi just lFt3 charz2m@chB4 *.pipe BlO; # Used2Use`...|cut -c1-3`B4 c8 workd wLEnuf;
+unless(-d $ENV{'HOME'} . "/.cache"       ){mkdir($ENV{'HOME'} . "/.cache"       , 0755);}
+unless(-d $ENV{'HOME'} . "/.cache/Corona"){mkdir($ENV{'HOME'} . "/.cache/Corona", 0755);}
+my $d8aS=`ls ~/.cache/Corona/Stats.OnLine-USt8s-$d82D*.pipe 2>/dev/null|tail -n 1`;chomp($d8aS); # get sepR8 S for St8s && let d8a-File BlO B 4 St8z as whol;
+my $d8aF=`ls ~/.cache/Corona/Stats.OnLine-USt8z-$d82D*.pipe 2>/dev/null|tail -n 1`;chomp($d8aF);
+if((@ARGV && $ARGV[0] eq 'g') || $d8aF eq ''){
+  `curl https://corona-stats.online\?format=json  >~/.cache/Corona/Stats.OnLine-World-$d8nw.json`;
+  `curl https://corona-stats.online               >~/.cache/Corona/Stats.OnLine-World-$d8nw.pipe`;
+  `curl https://corona-stats.online/states/us     >~/.cache/Corona/Stats.OnLine-USt8s-$d8nw.pipe`;
+                              $d8aS=$ENV{'HOME'} . "/.cache/Corona/Stats.OnLine-USt8s-$d8nw.pipe";
+                              $d8aF=$ENV{'HOME'} . "/.cache/Corona/Stats.OnLine-USt8z-$d8nw.pipe";
+  `curl https://corona-stats.online/US            >~/.cache/Corona/Stats.OnLine-USt8z-$d8nw.pipe`; # oops! I forgot 2upd8 d8a-file variable 4l8r grep command;
+  `curl https://corona-stats.online/UK            >~/.cache/Corona/Stats.OnLine-UKing-$d8nw.pipe`;
+  `curl https://corona-stats.online/China         >~/.cache/Corona/Stats.OnLine-China-$d8nw.pipe`;
+  `curl https://corona-stats.online/Italy         >~/.cache/Corona/Stats.OnLine-Italy-$d8nw.pipe`;
+  `curl https://corona-stats.online/Spain         >~/.cache/Corona/Stats.OnLine-Spain-$d8nw.pipe`;
+  `curl https://corona-stats.online/updates       >~/.cache/Corona/Stats.OnLine-Upd8s-$d8nw.pipe`;
+  `curl https://corona-stats.online\?minimal=true >~/.cache/Corona/Stats.OnLine-Minml-$d8nw.pipe`; # proly minimal would B much easier 2 parse l8r than paded;
+  `curl https://corona-stats.online\?top=64       >~/.cache/Corona/Stats.OnLine-Top64-$d8nw.pipe`; # apparently ?emoji=true is also now an option 2 ckout l8r;
+ #curl https://corona-stats.online\?source=1     >~/.cache/Corona/Stats.OnLine-Src_1-$D8Nw.pipe; # old daily JHU source from B4 WorldOMeters.Info BKm Dfalt;
+ #curl https://corona-stats.online\?source=2     >~/.cache/Corona/Stats.OnLine-Src_2-$D8Nw.pipe; # now that src2 is Dflt, USt8s no longer containz all St8s;
+} #fi # HTTPS://GitHub.Com/NovelCOVID/API has JavaScript && JSON && Node && NPM interfaces 4 obtaining && manipul8ing COVID rel8d d8a-filez with Discord chanL:
+#    HTTPS://DiscordApp.Com/channels/689535536934813823/689536062045159659               && other good links are:        HTTPS://CovidStats.App    && # ▲  ;
+#    HTTPS://ArcGIS.Com/apps/opsdashboard/index.html#/bda7594740fd40299423467b48e9ecf6 ; # instead of changing ORS in awk cmnd BlO,cud alsO Uz printf wo \n;
+#grep 'USA\|World'               $d8aF     |          sed "s/\s*//g ; s/║//g ; s/│/ /g"|
+# awk -F' ' 'BEGIN {ORS=";\n"} {print "cnfrmd😭"$3" (dA"$4") dethz💀"$5" (dA"$6") rcvrd"$7" actv"$8" crit"$9" "$2}'; # new src2fldz,mortaliT nEdz cmpUt8ion;
+#grep 'To\|Wi\|Pe\|uri\|Cal\|Yo' $d8aS;
+# HTTPS://YouTu.be/cQ03v4d3QEo "Watching the World End from the Linux Command Line!" # K3MM2a0J:17m16s video by LukeSmith which I mostly followed along for;
+open  my $out8,'>&',STDOUT  or die "Can't open  duplic8 STDOUT handle: $!";binmode $out8,':encoding(UTF-8)';
+#rint    $out8  "d8aF:$d8aF;";
+open (my $dFho,'<' , $d8aF) or die $!;binmode $dFho,':encoding(UTF-8)';my $usln;
+while(  <$dFho>){
+  my $cfmd=  1;my $dlbf=0;$dlbf=1 if(/│/); # set D8a-Line-Bar-Flag && remember these chars are UTF-8 line-drawing bar chars && not usual pipe,but look same;
+  my $dthz=  0;chomp unless(/To/);s/(try  | \(US\)|d    )/$1    /;
+  my $pcnt=0.0;my $rcvd=0;my $rpct=0.0;
+  if($dlbf){
+    if(/USA/){ $usln=$_;}
+    else{print $out8 $_;}}
+  if(/(USA|World)/){s/\s+//g;s/║//g;s/│/ /g;my @fldz=split(/\s/,$_); #print $out8 "fldz:@fldz;\n";
+    # proly best 2 just sS out colr SKpz from all fldz thN 4m@ 2 alIn && add colrz bak in l8r print;
+   #print $out8 "$fldz[1] cnfrmd😭$fldz[2] (dA$fldz[3]) dethz💀$fldz[4] (dA$fldz[5]) rcvrd$fldz[6] actv$fldz[7] crit$fldz[8];" if(@fldz >= 9);
+    $cfmd=sS('--',$fldz[2]);$cfmd=~ s/(^--|,)//g;
+    $dthz=sS('--',$fldz[4]);$dthz=~ s/(^--|,)//g;
+    $rcvd=sS('--',$fldz[6]);$rcvd=~ s/(^--|,)//g;
+  } $pcnt=100.0 * $dthz / $cfmd if($cfmd);$pcnt=substr("$pcnt",0,4);
+  $rpct  =100.0 * $rcvd / $cfmd if($cfmd);$rpct=substr("$rpct",0,5);$rpct=~ s/^(\d\.\d\d)\d$/ $1/; # shift fractional digitz && pad space for lessthan 10%z;
+  if($dlbf && $pcnt ne '0'){
+    if(/USA/){ $usln.="$r deth$w:$R$pcnt$M%$r rcvd$w:$G$rpct$M%$W;\n";}  # mAB also compare dethz 2 recoverdz apart from each as percentz of confirmdz;
+    else{print $out8  "$r deth$w:$R$pcnt$M%$r rcvd$w:$G$rpct$M%$W;\n";}} # unfortun8ly the current individual USt8 d8a filez don't track recoverdz yet;
+} close ($dFho )            or die $!;print $out8 $usln;
+open (my $dSho, '<', $d8aS) or die $!;binmode $dSho,':encoding(UTF-8)';
+while(  <$dSho>){
+  my $cfmd=  1;my $dlbf=0;$dlbf=1 if(/(To|Wis|Pe|uri|Cal|Yo)/);
+  my $dthz=  0;chomp;s/                //;s/(.*│)/$1              /;s/(║.*)(║)/$1                            $2/;s/^(.+)(  )(.+?Active)/$1$3$2/;
+  my $pcnt=0.0;print $out8 $_ if($dlbf);
+  if($dlbf){s/\s+//g;s/║//g;s/│/ /g;my @fldz=split(/\s/,$_); #print $out8 "fldz:@fldz;\n";
+    $cfmd=sS('--',$fldz[2]);$cfmd=~ s/(^--|,)//g;
+    $dthz=sS('--',$fldz[4]);$dthz=~ s/(^--|,)//g;
+    $pcnt=100.0 * $dthz / $cfmd if($cfmd && $cfmd=~ /^\d+$/ && $dthz=~ /^\d+$/);$pcnt=substr("$pcnt",0,4);
+    print $out8 "$r deth$w:$R$pcnt$M%$W;" if($pcnt ne '0');say $out8 '';
+}} close($dSho )            or die $!;
+close   ($out8 )            or die "Can't close duplic8 STDOUT handle: $!";
