@@ -5,7 +5,7 @@
 # 2du:upd8 growth r8z,incorpor8 popUl8ion d8a,project whN zOn mIt B s@ur8d,offer 4mz of projection,tk pRamz,add hLp;
 # IDl:giv L@&&Long coordin8z 2 loc8 nSted County,St8,Province,DpNdNC 2 anim8 up 2 prezNt B4 ofering methodz of XtrapOl8n 2 considr as further trajectorEz;
 use strict;use warnings;use utf8;use v5.10;use Octology::a8;use Octology::d8;use Text::CSV;
-my $VERSION='0.0';my $d8VS='K4AMHEAL';my %sd8a;my %flcb=('C'=> 3,'D'=> 4,'R'=> 5,'A'=>-1);my %flcm=('C'=>$Y,'D'=>$K,'R'=>$G,'A'=>$R);
+my $VERSION='0.0';my $d8VS='K4KMJBPa';my %sd8a;my %flcb=('C'=> 3,'D'=> 4,'R'=> 5,'A'=>-1);my %flcm=('C'=>$Y,'D'=>$K,'R'=>$G,'A'=>$R);
 my @flck=qw(Confirmed Deaths Recovered Active);my %flcn=('C'=> 7,'D'=> 8,'R'=> 9,'A'=>10); # USt8 AbbreV8ionz below R not even used anymore,sO scrap l8r;
 my %st8a=(#'California'=>'Ca','Missouri'=>'Mo','Pennsylvania'=>'Pa','Wisconsin'=>'Wi'); # originally only tracked 4 USt8s B4 trying to incorpor8 thM all;
   'Alabama'      =>'Al','Alaska'    =>'Ak','Arizona'     =>'Az','Arkansas'    =>'Ar','California'    =>'Ca','Colorado'     =>'Co','Connecticut'  =>'Ct',
@@ -315,5 +315,9 @@ for(sort {$a cmp $b} keys(%sd8a)){ # thN stRt prOjectng whNplAc mItB s@ur8d by m
       my $rcvd=$sd8a{$_}{$st8n}{'R'};
       my $rpct=0.0;$rpct=100.0 * $rcvd / $cfmd if($cfmd);$rpct=substr("$rpct",0,5);$rpct=" 0.00" if($rpct eq '0');$rpct=~ s/^(\d\.\d\d)\d$/ $1/;
       my $pcnt=0.0;$pcnt=100.0 * $dthz / $cfmd if($cfmd);$pcnt=substr("$pcnt",0,4);$pcnt= "0.00" if($pcnt eq '0');$rpct=~ s/^(\d\d\.\d)$/${1}0/;
-      printf   $out8 "${B}st8n$w:$C%-24s$w:${r}cfmd$w:$c%10s$w:${r}deth$w:$R$pcnt$M%%$w:${r}rcvd$w:$G$rpct$M%%$W;\n",$st8n,comma($cfmd);}}
+      my $ppct=0.0;my $snou=$st8n;$snou=~ s/,US.*//;for my $popa (@cnsp){if($popa->[0] eq $snou){$ppct=100.0 * $cfmd / $popa->[1];
+          if($ppct=~ /^(\d+)\.(\d+)e-0*(\d+)$/){$ppct=('0' x $3) . $1 . '.' . $2;my $expl=$3;$ppct=~ s/(\d)(\d{$expl})\./$1.$2/;}$ppct=substr($ppct,0,10);
+          $ppct=~ s/^(\d\.\d+)$/ $1/;last;}}
+      printf   $out8 "${B}st8n$w:$C%-24s$w:${r}ppct$w:$o%-11s$M%%$w:${r}cfmd$w:$c%10s$w:${r}deth$w:$R$pcnt$M%%$w:${r}rcvd$w:$G$rpct$M%%$W;\n",
+        $st8n,$ppct,comma($cfmd);}}
 } close        $out8             or die "Can't close duplic8 STDOUT handle: $!";
