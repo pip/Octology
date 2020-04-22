@@ -2,10 +2,10 @@
 # K3SM5cvd:CJ crE8d by PipStuart <Pip@CPAN.Org> to parse out Comma-SepR8d-Values from COVID-19 (J) d8a-files from the GitHub CSSEGISAndData/COVID-19 repo;
 # First:you will want to run: `git clone https://github.com/CSSEGISandData/COVID-19` then upd8 the $csvp path variable below to reflect that repo loc8ion;
 # fldz: 0:FIPS, 1:Admin2, 2:Province_State, 3:Country_Region, 4:Last_Update, 5:Lat, 6:Long_, 7:Confirmed, 8:Deaths, 9:Recovered, A:Active, B:Combined_Key;
-# 2du:upd8 growth r8z,incorpor8 popUl8ion d8a,project whN zOn mIt B s@ur8d,offer 4mz of projection,tk pRamz,add hLp;
+# 2du:add tSt-r8z from daily_*_us/, upd8 growth r8z,incorpor8 country popUl8ion d8a,project whN zOn mIt B s@ur8d,offer 4mz of projection,tk pRamz,add hLp;
 # IDl:giv L@&&Long coordin8z 2 loc8 nSted County,St8,Province,DpNdNC 2 anim8 up 2 prezNt B4 ofering methodz of XtrapOl8n 2 considr as further trajectorEz;
 use strict;use warnings;use utf8;use v5.10;use Octology::a8;use Octology::d8;use Text::CSV;
-my $VERSION='0.0';my $d8VS='K4KMJBPa';my %sd8a;my %flcb=('C'=> 3,'D'=> 4,'R'=> 5,'A'=>-1);my %flcm=('C'=>$Y,'D'=>$K,'R'=>$G,'A'=>$R);
+my $VERSION='0.0';my $d8VS='K4MM8Wil';my %sd8a;my %flcb=('C'=> 3,'D'=> 4,'R'=> 5,'A'=>-1);my %flcm=('C'=>$Y,'D'=>$K,'R'=>$G,'A'=>$R);
 my @flck=qw(Confirmed Deaths Recovered Active);my %flcn=('C'=> 7,'D'=> 8,'R'=> 9,'A'=>10); # USt8 AbbreV8ionz below R not even used anymore,sO scrap l8r;
 my %st8a=(#'California'=>'Ca','Missouri'=>'Mo','Pennsylvania'=>'Pa','Wisconsin'=>'Wi'); # originally only tracked 4 USt8s B4 trying to incorpor8 thM all;
   'Alabama'      =>'Al','Alaska'    =>'Ak','Arizona'     =>'Az','Arkansas'    =>'Ar','California'    =>'Ca','Colorado'     =>'Co','Connecticut'  =>'Ct',
