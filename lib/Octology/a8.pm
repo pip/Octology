@@ -52,7 +52,7 @@ our @EXPORT= qw(bfr8c    b8c    d8c   dur8c @d8cl  d8cs  a8c   chti  c8fn  o8 S2
                                                                             $HK   $HR   $HO   $HY   $HG   $HC   $HB   $HM   $HP   $HW
  $tnhf $ucdf  spff  spfd  spfX   shfl  reso $Auth %cmsp %p8k2 @p82k  chp8     S2f4 c2f4 dm2u cdst %crgb %cbrt @snls @mrls %cdrd %cdrn    %nrgb         gnp8);
  # of 52 posibl sngl-letr var nmz,a8 Xportz 20,$b && $a unavail,so shudB thEs30 lFt4quik shortSt nAmz: 'def hij l n  q stuv x', 'A  DEF HIJ L N  Q STUV X Z';
-our $VERSION='0.0';my  $d8VS='K3SMLsnc';our $Auth='PipStuart <Pip@CPAN.Org>'; # above not exporting $b since collidez with sort{$a  <=> $b};unalloc'd sOlOz^;
+our $VERSION='0.0';my  $d8VS='K51MDSup';our $Auth='PipStuart <Pip@CPAN.Org>'; # above not exporting $b since collidez with sort{$a  <=> $b};unalloc'd sOlOz^;
 our $ucdf= eval('use Color::Similarity::RGB qw(distance);1') || 0; # try2set UseColorDistanceFlag if optional module is available; /defhijlnqstuvx/i + /AZ/^;
 our @Monz=qw(January February March   April     May June July   August September October November December);our @Mon=();push(@Mon,substr($_,0,3)) for(@Monz);
 our @Dayz=qw(Sunday  Monday   Tuesday Wednesday Thursday Friday Saturday                                  );our @Day=();push(@Day,substr($_,0,3)) for(@Dayz);
@@ -1076,17 +1076,20 @@ sub sumb{  my $widt=0;$widt=1 if(exists($ENV{'COLUMNS'}) && $ENV{'COLUMNS'} >= 1
   if($s2pf){%bfst=();} # empty BinFileSummaryText hash (so it gets set to just 2nd page d8a)
   my %b2st=( # Bin2ndSummaryText
     'acS'   => "a8  apt-cache Search wrapper which coll8z`dpkg -l`resultz into together   ", # hLp shO nstl8n st8us of DscrIbd packages of searched interest;
-    'CJ'    => "a8  Covid-19 (`b64 19`) script to parse Comma-SepR8d-Values && compute    ", # mAB belongs with a different module than a8.pm?
-    'cvdJ'  => "a8  CoViD-19 (`b10  J`) script to get d8a-files && parse key fields out   ", # mAB belongs with a different module than a8.pm?
+    'CJ'    => "a8  CoViD-19 (`b64 19`) script to parse Comma-SepR8d-Values && compute    ", # mAB belongs with a different module than a8.pm?
+    'cJ'    => "a8  CoViD-19 (`b10  J`) script to get d8a-files && parse key fields out   ", # mAB belongs with a different module than a8.pm?
     'drkh'  => "a8  converter from 6-char HEX to b64 RgbLow with 8th of intensities on    ", # mIt want2add a8:drkh with 8ths of colr chanLz from input too
     'e'     => "a8  EDITOR wrapper which includes fragile old package templ8ing system    ", # mAB rEwrIt mOst Useful BhAVor as nw clEnr a8:e or let dokr:e
     'uri'   => "a8  URI capitaliz8ion Utility resulting from Beppu-san's procrastin8ion   ",
 
+    '8plc'  => "b8  Octology ~/dox/2du/8.utf Pre-cursorLetter-Counter && gM8ria gNer8or   ",
     'Fctz'  => "b8  FaCTorlZ listed (takes (lines-1) 47 and 1 b64 or 2 b256 parameters)   ", # `fctz 47 1` is like `fctz | b64` just with different nwln wrapz
     'Fibz'  => "b8  FIBonacZ listed up to filling in 48 lines with normally 160 columns   ",
     'Prmz'  => "b8  PRiMe..Z listed up to filling in 48 lines with normally 160 columns   ",
     'Sumz'  => "b8  SUM8ionZ listed up to filling in 48 lines with normally 160 columns   ",
 
+    'cmc8'  => "c8  SDL graphical 8x5-character-wide summary of Octology in dense color   ",
+    'cmc80' => "c8  SDL graphical 80 -character-wide summary of Octology in dense color   ",
     'prym'  => "c8  Curses::Simp prime-number gener8ion screensaver (currently broken!)   ", # port to Prim as new CLI && Curses IF
     'sloc'  => "c8  Beppu-san sent `SlowCat.pl` simul8ing default 9600 baud print speed   ",
 

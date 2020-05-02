@@ -30,7 +30,7 @@ unsetopt                \
 # auto_pushd            \# setng addz dirz 2 stack wN just normally chngng 2 thM (wich I du not normally lIk or want)
 # ksh_arrays            \# rEmMbr wNwrItng scrptz[or funcz]2include'setopt [localoptions] ksharrays'sO arAzR 0-bAsed(but!glOblBcuzmOst scrptzRstndrdly 1-bAsed)
 # re_____match_____pcre \# mA want2set for Z-SHell scripting RegularExpressions to utilize PerlCompatibility styles && mA insert 'zmodload zsh/(pc)?re(gex)?';
-export Vers='0.0';export d8VS='K3TM4P6G';export Auth='PipStuart <Pip@CPAN.Org>'; # not Xportng $b sinc cOlIdz wi sort{$a <=> $b} /defhijlnqstuvx/i + AZ 4golf;
+export Vers='0.0';export d8VS='K51M6Man';export Auth='PipStuart <Pip@CPAN.Org>'; # not Xportng $b sinc cOlIdz wi sort{$a <=> $b} /defhijlnqstuvx/i + AZ 4golf;
 if     [[       "$SHELL"    == "" ]]; then       export SHELL=`  which zsh`;fi # 8sh should parse this && OverId it    # shud `man zshall` /OSTYP 2lern4BlO
 if     [[       "$HOSTNAME" == "" ]]; then       export HOSTNAME=`hostname`;fi #`hostname`retnz fsckd nwlInz\n4CygWinzRxvt... ||smthng els lame  =(
 if     [[       "$HOST"     == "" ]]; then       export HOST   ="$HOSTNAME";fi;export VERBOSE='1'; # set flag to print debug && status info from system utilz
@@ -77,7 +77,7 @@ export NODE_DISTRO='linux-x64';alias  erd='expo r d80k';alias epd='expo p d80k';
                                alias xord='erd';  alias xopd='epd';alias xo='expo';  # used to prefer xo => expo, but 4-char is already short enuf; p=publish
 ulimit  -c 65536; # 33,553,920-bytes # setz coredump size limit2 32MB (4Dbugng) wher #-param is *512-byte blox or 'unlimited' canBUsed  # /opt/Qt5.13.1-pnp/bin
 typeset -U path ;path=($HOME/bin $HOME/.local/bin /usr/local/sbin /usr/sbin /sbin . $HOME/dvl/t8/node/node-$NODE_VERSION-$NODE_DISTRO/bin
-  /usr/local/bin /usr/bin /bin /opt/bin $HOME/lib/perl5/bin $HOME/lib/Octology/f8/pal8 $HOME/dvl/t8/dmd/linux/bin $JAVA_HOME/bin $path);
+  /usr/local/bin /usr/bin /bin /opt/bin $HOME/lib/perl5/bin $HOME/lib/Octology/f8/pal8 $HOME/dvl/t8/dmd/linux/bin $JAVA_HOME/bin $HOME/.vim/bundle/vim-superman/bin $path);
 # old:atmptd2nstl DMDv2.052 on Java7OpenJDK && GoogleAndroid-18 (4.2), now J5BMGPOM:tryng2setup l8st NodeJS 4 React_n8ive Expo d8ok nstdof nodebrew hopefully;
 #          path=($path  $HOME/dvl/t8/node $HOME/.nodebrew/current/bin );export path; # I7CMBrew:got GitHub NodeBrew 4NodeJS; Not sure why src doesn't get this?
 #          path=($path  $HOME/dvl/jobz/InnovationProtocol/Android/Android-Google-Linux_x86-SDK-1.6_r1-99GFQiD/tools); # old2009GoogleAndroid dvlpmnt-toolz path
@@ -527,6 +527,7 @@ alias       k='kill   '; #  k    :           kill (maybe kill is too risky to ab
 alias      ka='killall'; #  ka   :           killall
 alias      k9='k -9   '; #  k -9 :           kill with -9 force
 alias       K='k9     ';
+           vm() { $HOME/.vim/bundle/vim-superman/bin/vman $@; } # cd ~/.vim;mc bundle;g8c https://github.com/jez/vim-superman.git vim-superman; 4betr-than-most
 alias       M='   m   ';
 #lias       m='   mn  '; #  m    :            man (mn() already zsh function below, but may soon extract to preserve parameter history like d8:dic)
             m() { mn   $@; }     # unalias   m && redefining as simple function wrapper resolves manpage param alias expansion problem (but still will glob)
@@ -1793,4 +1794,6 @@ zstyle ':compinstall'                            filename    '/home/pip/.zshrc'
 autoload -U                                      promptinit; promptinit;
 autoload -U                                        compinit;   compinit;
                                                    compdef  _man w3mman;
+                                                   compdef  vman="man"; # probably just need a plugin manager for vim to get Vim-SuperMan to work l8r
+                                                   compdef   dic="dict";compdef d="dict";
 # K37L1Zsh:research installing HTTPS://GitHub.Com/zsh-users/zsh-syntax-highlighting which seems to have been a pkg B4 (in `acs`) but is no longer in Ubu19.10;
