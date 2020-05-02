@@ -1,7 +1,7 @@
 # Octology
-The ontology of 8. Ocho dude. Aucht! `$VERSION='0.0';$d8VS='K48MHILT';`
+The ontology of 8. Ocho dude. Aucht! `$VERSION='0.0';$d8VS='K52MGG8U';`
 
-What is an ontology, you may ask (behind your mask)? Essentially quarantined from deadly spread of SARS CoV-2 CoronaVirus see new `cvdJ` && `CJ` 4 d8a;
+What is an ontology, you may ask (behind your mask)? Essentially quarantined from deadly spread of SARS CoV-2 CoronaVirus? See l8st `cJ` && `CJ` 4 d8a;
 
 <ol><li>n. (Computer Science) a rigorous and exhaustive organiz8ion of some knowledge domain that is usually hierarchical and contains all the relevant
   entities and their rel8ions.</li>
@@ -56,7 +56,7 @@ To get something close to a similar setup to mine, you'll probably want to execu
 
   `git clone https://GitHub.Com/Pip/Octology` which should crE8 the Octology/ sub-directory in your Current-Working-Directory (or: `pwd` ),
 
-  then: `cd Octology;cp -a lib bin dox dvl gfx .Hrc .Xrc .bashrc .lrc .lsrc .shl.style .vimrc .zshrc ~;chsh $(which zsh);cd;source .zshrc;`
+  then: `cd Octology; cp -a lib bin dox dvl gfx muz .Hrc .Xrc .bashrc .lrc .lsrc .shl.style .vimrc .zshrc ~; chsh $(which zsh); cd ~; zsh;`
 
   && you'll want to: `cpan ...` or `pmei Time::DaysInMonth;` since I (through Octology) depend on that module, but am not maintainer of it;
 

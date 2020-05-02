@@ -1105,7 +1105,7 @@ alias mply=' mplayer -vo xv  -fixed-vo -nosound -loop 0          -geometry "1916
 alias mpr0=' mplayer -vo xv  -fixed-vo -nosound -nokeepaspect    -geometry "1920x$(q $HVH1 - 28)+0+0"    -loop 0'; # this 4 MPlayer && above 4 MPlayer2 (wich I had4 awhIl)
 alias mpr1=' mplayer -vo xv  -fixed-vo -nosound -nokeepaspect    -geometry "1920x$(q $HVH1 - 28)+888+88" -loop 0'; # this 4 same as mpr0 but on Aku's  middle   24" display
 alias mpr2=' mplayer -vo xv            -nosound -nokeepaspect    -geometry "1920x$(q $HVH1 - 28)+1919+0" -loop 0'; # this 4 same as mpr0 but on Aku's far right 50" display
-alias mpr0t='mplayer -vo xv  -fixed-vo -nosound -msgcolor -noborder -cache 16384 -cache-min 99 -geometry "1916x$(q $HVH1 - 28)+0+0" -msglevel all=0:identify=4 ~/mvz/.pr0/tst/Aut0pr0-9AS4gTn/pr0-*/*'; # test if messages can report desired details; # for some reason,above mpr1 won't take geom 2full midl display so just offset a bit?
+alias mpr0t='mplayer -vo xv  -fixed-vo -nosound -msgcolor -noborder -cache 16384 -cache-min 99 -geometry "1916x$(q $HVH1 - 28)+0+0" -msglevel all=0:identify=4 ~/mvz/pr0/tst/Aut0pr0-9AS4gTn/pr0-*/*'; # test if messages can report desired details; # for some reason,above mpr1 won't take geom 2full midl display so just offset a bit?
 alias mpfb=' mplayer -vo fbdev -vf scale=640:400   -loop 0'; # ~/mvz/U2b/* for some old scaled FrameBuffer modes
 alias mpfbs='mplayer -vo fbdev -vf scale=1920:1200 -loop 0'; # ~/mvz/muV/*
 alias mpf8=' mplayer -vo fbdev        -nosound --no-keepaspect  -vf scale=1920:1080 '; # still needs vid file params to follow
@@ -1117,14 +1117,14 @@ m0() { # mplayer pr0n function, but called aliases reloc8d to below host tests D
       echo                               ' 2 - runs mpr2 on mpg,wmv,avi     ht*;'
       echo                               ' s - runs mpr2 on mpg,wmv,avi shfl   ;'
       echo                               ' v - runs  vp  in   .VelvetPound/    ;    Other pRams will just be passed on to mpr0 for now;';return 0;
-    elif   [[ "$1"  ==  *v ]]; then                                                cd ~/mvz/.pr0/.VP/     ;vp
-    elif   [[ "$1"  ==  *1 ]]; then                                                cd ~/mvz/.pr0/         ;mpr1 mpg/ht* wmv/ht* avi/ht*
-    elif   [[ "$1"  ==  *2 ]]; then                                                cd ~/mvz/.pr0/         ;mpr2         wmv/*   avi/*   mpg/*
-    elif   [[ "$1"  ==  *s ]]; then                                                cd ~/mvz/.pr0/         ;mpr2 $(ls    wmv/*   avi/*   mpg/* | shfl)
+    elif   [[ "$1"  ==  *v ]]; then                                                cd ~/mvz/pr0/.VP/      ;vp
+    elif   [[ "$1"  ==  *1 ]]; then                                                cd ~/mvz/pr0/          ;mpr1 mpg/ht* wmv/ht* avi/ht*
+    elif   [[ "$1"  ==  *2 ]]; then                                                cd ~/mvz/pr0/          ;mpr2         wmv/*   avi/*   mpg/*
+    elif   [[ "$1"  ==  *s ]]; then                                                cd ~/mvz/pr0/          ;mpr2 $(ls    wmv/*   avi/*   mpg/* | shfl)
       # & \ abov just bkgrndz 0 procS so nEd2du smthng lIk vp 2spawn 2sepR8 windOz && 4nO pRamz else BlO  ;mpr0 wmv/ht* avi/ht* mpg/ht*
     else                                                                                                   mpr0 $@;fi # assume othr pRamz mEn alreD in fIn dir
-  elif     [[ `pwd` ==  *.pr0/mpg/  ]] || [[ `pwd` ==  *.pr0/wmv/  ]] || [[ `pwd` ==  *.pr0/avi/  ]]; then mpr0 *
-  else                                                                             cd ~/mvz/.pr0/         ;mpr0 mpg/*   wmv/*   avi/*;fi }
+  elif     [[ `pwd` ==  *pr0/mpg/   ]] || [[ `pwd` ==  *pr0/wmv/   ]] || [[ `pwd` ==  *pr0/avi/   ]]; then mpr0 *
+  else                                                                             cd ~/mvz/pr0/          ;mpr0 mpg/*   wmv/*   avi/*;fi }
 alias m1='m0 1'; # could also try to add |g -v "_server /home/" or |g steam|g " Ssl " below to inVert match to try to not get child processes first
 alias m2='m0 2'; #   Screeps was below, but for some reason spawning server process was uniquely showing up with space for second 's' but no longer
 chvp() { # CHange ViewPort ("virtual desktop") thru wmc -o ... based on host dimz && Compiz 8 viewportz in 4x2 grid
