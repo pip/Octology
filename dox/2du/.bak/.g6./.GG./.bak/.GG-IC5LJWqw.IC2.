@@ -1,0 +1,51 @@
+#!/usr/bin/perl
+# IC1:GG by GG;2du:fix -e && -v wi -1 || -2 stopng Dflt hIlI,fix pQC:MzC ordr;
+use strict ;use v5.10;use Octology::a8;my $VERSION='0.000'; #GuyGoowaysProMaYO
+use warnings;use utf8;use Octology::d8;my $d8VS='IC2LICK2'; #upd8YourOwnBoyggz
+use      Path::Tiny  ; my $IC2f='.IC2.GG.'    ;my @jclz=(); #J CodedColorListz
+my $ic2f=path($IC2f)->slurp_utf8();my %czcn=();my %ic4c=(); #basic2019formatCz
+open my $out8,'>&',STDOUT or die "Can't open  duplic8 STDOUT handle: $!"; #IC2
+binmode $out8,':encoding(UTF-8)'  ;my $N=$0;$N=~ s/^.*\///; #setupUTF8outpName
+my $jcpo='';my $hflg=0;my $dflg= 0;my $eflg=1; #-optn FLaGz #J ColorParseOptnz
+my $fflg= 0;my $sflg=0;my $vflg= 1;my $xflg=1;if(@ARGV){$jcpo=join(' ',@ARGV);
+   $dflg^=1 if($jcpo=~ s/-+d//i);$fflg^=1 if($jcpo=~s/-+[f1]//i); #-Digit;f1st
+   $eflg^=1 if($jcpo=~ s/-+e//i);$sflg^=1 if($jcpo=~s/-+[s2]//i); #-Endl$;s2nd
+   $vflg^=1 if($jcpo=~ s/-+v//i);$xflg^=1 if($jcpo=~s/-+x//i); #-Vers;Xtrasend
+   $hflg^=1 if($jcpo=~ s/-+h//i);} my $edol= S('Bb') .'$'. $z; #-HelpFLaG;$end
+my($A,$D,$J,$S);if(!defined($jcpo)||!length($jcpo)){$jcpo='GG' if($dflg     );
+   $jcpo='pQC:CMz' if($jcpo!~/\S/);}     if($hflg ){      print   $out8 "$z ".
+"-h - print this Helptext,  -v - Version at end,  -1 -f - print Fir1st column;
+ -e - Endline blue dollar,  -x - Xtra vline end,  -2 -s - print Sec2nd column;
+ -d - Digitspecial colors;  ";$jcpo='';$xflg=0;} # skip file outp&&jmpdn2-Vers
+while($jcpo=~s/^([^;]+)(;|$)//){my $ic4m=$1;     ##my @jpto=(split(//,'pQC'));
+  my %jptm = ('p'=>'pLAINZ','Q'=>'Quotem','C'=>'CommentC'); #J ParseTypemapngz
+  if($ic4m =~ /^(([^:]+?):)?([^;]+)(;|$)/){my $typz=$2;my $clrz=$3;  #parse4m@
+    $clrz='' if (!defined($clrz));            $typz='' if(!defined($typz)); ##
+    for my $colr(split(//,$clrz)){unshift(@jclz,$colr);}#loop unsh nstdof push
+    for my $colr(@jclz){$czcn{$colr}=S($colr) if($colr=~ /[A-Z]/ );} #loadclrz
+    for my $type(split(//,$typz)){if($type=~/[pQC]/){push(@jclz,'r')if !@jclz;
+        push(@jclz,shift(@jclz));$ic4c{$type}=$jclz[-1];}}  # brokencyclez4now
+    $eflg^=1 if($fflg || $sflg);$eflg^=1 if($clrz=~ /GG/);  # toglEndflagvaluz
+    for my $line(split(/\n/,$ic2f)){     if(defined($line)  && length($line)){
+      if(length($line) > 79){if($fflg){$line=substr($line,0,79);}elsif($sflg){
+         substr($line,0, 79,'');$line=~ s/^\s//;}} #mABOnlychop80spc if -eflg?
+        if($clrz=~/G/){$J=S($ic4c{'p'}='d');if($clrz=~/GG/){                 #
+             my $j= $J;$j=S($ic4c{'p'}='K'); # setup nested dupd jJ 4 GG optnz
+        $line=~s/([I-J])([369C]|Sep[^0-9.]*)(\d?[0-9A-V])/$R$1$o$2$Y$3$J/g;  #
+           $line=~ s/(20?)(\??)(1[89])/$R$1$o$2$R$3$J/g; # use two2outrJjz4d8z
+         for my $icky(split(//,'zMC')){$j=$S=S($ic4c{'p'}) if($icky=~ /z/);  #
+           $line=~ s/^([^\e])/$j$1/;if($icky=~ /^[zMC]/){$S=S($icky      );  #
+           $line=~ s/($icky [a-y]*)/$S$1$j/gx;}}} #origChrCls[a-yABD-FH-LNP-X]
+         for my $icky(sort(keys(%czcn)),split(//,'GYOB')){$J=$z;$S=S('Rr');  #
+           if(exists($ic4c{'p'}) && $ic4c{'p'}=~ /[^z]/){$J=S($ic4c{ 'p'});} #
+           $S=$czcn{$icky} if exists($czcn{$icky});$line=~s/^([^\e])/$J$1/;  #
+           if($icky=~ /([CMGYOB])/){$S=S($1);$S=S('o') if($icky=~/O/)     ;} #
+           $line=~ s/($icky [a-z]*)/$S$1$J/gx;}} # above: crit6, no redefinez!
+        else{if(exists($ic4c{p})){$J=S($ic4c{p});$J=$z if($ic4c{p}=~  /z/);  #
+           $line=~ s/(^[^\#])/$J$1/;} #$line=~ s/(^|\s)([^'"\#\e\t ])/$1$J$2/;
+  if(exists($ic4c{Q})){$S=S($ic4c{Q});$line=~ s/('[^']*'|"[^"]*")/$S$1$J/g;} #
+  if(exists($ic4c{C})){$S=S($ic4c{C});$line=~ s/((^|\s) \#(.*)  )/$S$1$J/x;  #
+  if(defined($3)){$A=$D=$3;$D=~s/\e\[[0-9;]*m//g;$line=~s/(\#)\Q$A\E/$1$D/;}}}
+      $line.=$edol if $eflg;say $out8 $line;}}}} $J=$z;$J.="\n"      if $xflg;
+print $out8 "$z$G$N $Y-$B v$C$VERSION ".d8c($d8VS)."$W;$J"           if $vflg;
+close $out8 or die "Can't close duplic8 STDOUT handle: $!"; #"GoodGameGents!";

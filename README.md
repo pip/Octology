@@ -1,5 +1,5 @@
 # Octology
-The ontology of 8. Ocho dude. Aucht! `$VERSION='0.0';$d8VS='K52MGG8U';`
+The ontology of 8. Ocho dude. Aucht! `$VERSION='0.0';$d8VS='K5EMKWIK';`
 
 What is an ontology, you may ask (behind your mask)? Essentially quarantined from deadly spread of SARS CoV-2 CoronaVirus? See l8st `cJ` && `CJ` 4 d8a;
 
@@ -77,7 +77,7 @@ I'd first like to thank every p8ient Chess player who endured me logging persona
 
   * [Irssi](https://irssi.org), [FireFox](https://www.mozilla.org/en-US/firefox), [Krita](https://krita.org/en), [Zsh](https://www.zsh.org), [GMail](https://gmail.com), [DuckDuckGo](https://duckduckgo.com),
 
-  * [Gnome-Terminal](https://wiki.gnome.org/Apps/Terminal), [PulseAudio](https://www.freedesktop.org/wiki/Software/PulseAudio), [Rubik's Cube](https://www.rubiks.com), [AMD](https://www.amd.com/en), etc.
+  * [Gnome-Terminal](https://wiki.gnome.org/Apps/Terminal), [PulseAudio](https://www.freedesktop.org/wiki/Software/PulseAudio), [Rubik's Cube](https://www.rubiks.com), [AMD](https://www.amd.com/en), MGTOWs, etc.
 
   * [Obsidia](https://www.youtube.com/user/ObsidiaMedia), [MonsterCat](https://www.youtube.com/user/MonstercatMedia), [UKF](https://www.youtube.com/user/UKFDubstep), [TrapNation](https://www.youtube.com/user/AllTrapNation), [TrapCity](https://www.youtube.com/user/OfficialTrapCity)...
 

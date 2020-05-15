@@ -612,3 +612,8 @@ J7CM5new:HTTPS://YouTu.be/dLfBWM0L3Vo "Sean Plunket: Full Interview: New Zealand
 J9FMDanS:HTTPS://YouTu.be/7LqaotiGWjQ "The War on Sensemaking, Daniel Schmachtenberger" # 1h48m49s of David from RebelWisdom with good interview of DanielS.;
 J9JMMJ9J:HTTPS://YouTu.be/_SmGMJzWHK4 "The Paradox of the Times, with Jordan Greenhall" # 1h33m27s of David from RebelWisdom interview of almost a Year ago;
 JAIMCRWD:HTTPS://YouTu.be/Knmy7RttHx4 "Douglas Murray - Bret Weinstein's DarkHorse PodCast #5" # 1h33m13s discussing Murray's new book, The Madness of Crowds;
+K5EM3cmd:HTTPS://YouTu.be/AtkeTtgbqW4 "Is Christian Nationalism Un-American?" # 51m11s of DarkMatter2525 interviewing "TheFoundingMyth" author AndrewL.Seidel
+  which mentioned HTTPS://VanityFair.Com/news/2010/04/hitchens-201004 reimagining the 10Commandments on `d8 A34` by ChristopherHitchens && JacquesDelConte &&
+  could be contrasted against HTTPS://En.WikiPedia.Org/wiki/Seven_Laws_of_Noah 0.Don't worship idols 1.Don't curse God 2.Establish just courts 3.Don't murder
+  4.Don't commit adultery, bestiality, or fornic8ion 5.Don't steal 6.Don't eat flesh from a living animal && the 10Commandments might be decently interpreted
+  at HTTPS://Dummies.Com/religion/christianity/catholicism/catholicism-and-the-ten-commandments for topical reference purposes, to compare with other ethics;

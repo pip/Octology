@@ -1,0 +1,9 @@
+#!/usr/bin/perl
+# IC8L823c:U23c by GG 2turnU2bXl8d CC transcripts in2 3columns(53x3=159chars);
+use strict;use warnings;use utf8;use v5.10;use Path::Tiny;my $d8VS='ICCLJOIN';
+for my $sfnm (<"xscr*.*">){my $sfil=path($sfnm)->slurp_utf8(); my $sfno=$sfnm; # buildup ScriptIn3Columns as composited text below;
+  if($sfno=~ s/(xscr)i?p?t?(-.*)\.(utf|txt|log|x?scr?p?t?|sub|cc)$/3c$1$2-$d8VS.$3/i){my $si3c='';say "Gener8inG $sfnm 2 $sfno...";
+    my @slnz=split(/\n/,$sfil);for(0..$#slnz){$slnz[$_]=sprintf("%-53s",$slnz[$_]);}  my $thrd=int($#slnz /3 ); # should loop 2end;  # finish after last 3rd?
+    for(0..$thrd ){$si3c.=$slnz[$_].$slnz[$thrd+$_+1];$si3c.=$slnz[2*$thrd+$_ +2] if((2*$thrd+$_+2) <= $#slnz);  $si3c=~s/\s*$/\n/;} #homp($si3c);$si3c.=';';
+    open my $outs,'>',$sfno or die "Can't open  Output Script handle: $!";binmode $outs,    ':encoding(UTF-8)';  print $outs $si3c;
+    close   $outs           or die "Can't close Output Script handle: $!";}}   # ... && that should probably about do it?! =) -GG ;

@@ -3,13 +3,16 @@
 # HTTPS://GitHub.Com/CSSEGISandData/COVID-19/tree/master/csse_covid_19_data/csse_covid_19_daily_reports has JohnsHopkinsUniversity CSV d8a-fIlz upd8d daily;
 # 2du:l8r add percentages of recoveries to deaths,start sepR8ing each new day's d8a files into a d8 subdir instead of dumping so many all2gether in Corona/;
 use strict;use warnings;use utf8;use v5.10;use Octology::a8;use Octology::b8;use Octology::d8;
-my $d8VS='K51MCUd8';my $Vers='0.0'; # unfortun8ly it seems that both source 1 && 2 for USA now have only to total but no sepR8 St8s;
+my $d8VS='K5EM7EvN';my $Vers='0.0'; # unfortun8ly it seems that both source 1 && 2 for USA now have only to total but no sepR8 St8s;
 my $d8nw=Octology::d8->new();my $d82D=substr("$d8nw",0,3); # nEd2get d8a2Day wi just lFt3 charz2m@chB4 *.pipe BlO; # Used2Use`...|cut -c1-3`B4 c8 workd wLEnuf;
 unless(-d $ENV{'HOME'} . "/.cache"       ){mkdir($ENV{'HOME'} . "/.cache"       , 0755);}
 unless(-d $ENV{'HOME'} . "/.cache/Corona"){mkdir($ENV{'HOME'} . "/.cache/Corona", 0755);}
 my $d8aS=`ls ~/.cache/Corona/Stats.OnLine-USt8s-$d82D*.pipe 2>/dev/null|tail -n 1`;chomp($d8aS); # get sepR8 S for St8s && let d8a-File BlO B 4 St8z as whol;
 my $d8aF=`ls ~/.cache/Corona/Stats.OnLine-USt8z-$d82D*.pipe 2>/dev/null|tail -n 1`;chomp($d8aF);
-if((@ARGV && $ARGV[0] eq 'g') || $d8aF eq ''){
+open  my $out8,'>&',STDOUT  or die "Can't open  duplic8 STDOUT handle: $!";binmode $out8,':encoding(UTF-8)';
+if( @ARGV && $ARGV[0] =~ /^-*h(elp)?$/ix){print $out8 " cJ - covid-19 (`b10 J`) d8a present8ion utility by $Auth Vers:$Vers d8VS:$d8VS\n -h - print this Help
+ -g - Get l8st stats into ~/.cache/Corona/ directory (even if files were already downloaded to there earlier today)\n -a - print All UnitedSt8s d8a;";exit;}
+if((@ARGV && $ARGV[0] =~ /^-*g(et )?$/ix) || $d8aF eq ''){
   `curl https://corona-stats.online\?format=json  >~/.cache/Corona/Stats.OnLine-World-$d8nw.json`;
   `curl https://corona-stats.online               >~/.cache/Corona/Stats.OnLine-World-$d8nw.pipe`;
   `curl https://corona-stats.online/states/us     >~/.cache/Corona/Stats.OnLine-USt8s-$d8nw.pipe`;
@@ -33,7 +36,6 @@ if((@ARGV && $ARGV[0] eq 'g') || $d8aF eq ''){
 # awk -F' ' 'BEGIN {ORS=";\n"} {print "cnfrmd😭"$3" (dA"$4") dethz💀"$5" (dA"$6") rcvrd"$7" actv"$8" crit"$9" "$2}'; # new src2fldz,mortaliT nEdz cmpUt8ion;
 #grep 'To\|Wi\|Pe\|uri\|Cal\|Yo' $d8aS;
 # HTTPS://YouTu.be/cQ03v4d3QEo "Watching the World End from the Linux Command Line!" # K3MM2a0J:17m16s video by LukeSmith which I mostly followed along for;
-open  my $out8,'>&',STDOUT  or die "Can't open  duplic8 STDOUT handle: $!";binmode $out8,':encoding(UTF-8)';
 #rint    $out8  "d8aF:$d8aF;";
 open (my $dFho,'<' , $d8aF) or die $!;binmode $dFho,':encoding(UTF-8)';my $usln;
 while(  <$dFho>){
@@ -57,7 +59,8 @@ while(  <$dFho>){
 } close ($dFho )            or die $!;print $out8 $usln;
 open (my $dSho, '<', $d8aS) or die $!;binmode $dSho,':encoding(UTF-8)';
 while(  <$dSho>){
-  my $cfmd=  1;my $dlbf=0;if(/(To|Wis|Pe|uri|Cal|Yo)/){$dlbf=1;s/\e\[32m/$c/;s/\e\[92m/$g/;s/\e\[91m/$r/;}
+  my $cfmd=  1;my $dlbf=0;if((@ARGV && $ARGV[0] =~ /^-*a(ll)?$/i && /^\e\[\d+m║\e\[\d+m ([1-9] |[1-4]\d|5[01]) /) || /(To|Wis|Pe|uri|Cal|Yo|Mich)/){
+    $dlbf =  1;s/\e\[32m/$c/;s/\e\[92m/$g/;s/\e\[91m/$r/;s/([NS])(o[ru]th )(Carolina\e\[\d+m) */$1.$3   /;s/District Of Columbia\e\[\d+m */WashingtonDC /;}
   my $dthz=  0;chomp;s/                //;s/(.*│)/$1              /;s/(║.*)(║)/$1                            $2/;s/^(.+)(  )(.+?Active)/$1$3$2/;
   my $pcnt=0.0;print $out8 $_ if($dlbf);
   if($dlbf){s/\s+//g;s/║//g;s/│/ /g;my @fldz=split(/\s/,$_); #print $out8 "fldz:@fldz;\n";

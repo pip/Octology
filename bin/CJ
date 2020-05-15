@@ -6,8 +6,31 @@
 #   also add tracking && aggreg8ion of any entries localized to Winnebago && Outagamie counties (hopefully also with ability to give params 4 any others),
 #   add PinellasCounty,Florida && send Nate upd8z whenever checking from csse_covid_19_daily_reports && WinnebagoCounty too,correl8 GIS d8a popul8nz&&BlO;
 # IDl:giv L@&&Long coordin8z 2 loc8 nSted County,St8,Province,DpNdNC 2 anim8 up 2 prezNt B4 ofering methodz of XtrapOl8n 2 considr as further trajectorEz;
-use strict;use warnings;use utf8;use v5.10;use Octology::a8;use Octology::d8;use Text::CSV;
-my $VERSION='0.0';my $d8VS='K51MCGit';my %sd8a;my %flcb=('C'=> 3,'D'=> 4,'R'=> 5,'A'=>-1);my %flcm=('C'=>$c,'D'=>$R,'R'=>$g,'A'=>$K);
+# Virus 101: (from HTTPS://CobaltStages.Com/2020/shooting-safely-coronavirus-fast-facts-and-tools which N8 Meyer directed to me as an inform8ive source)
+# Viruses are not alive, so we can’t use antibiotics to kill them. Instead, we can inactiveate the viruses, so our cells are no longer susceptible to
+#   infection. We can also boost our immune systems with lifestyle and supplements.
+# Immunity Boosters:
+# Ascorbate based vitamin C (for higher doses), zinc (if you think you’ve been exposed), elderberry (as a preventative), and reishi and agarikon mushrooms
+#   are all-natural immune boosters (and then some!). It also helps to get enough sleep and exercise, as well as eating plenty of fruits and vegetables.
+# Why is this coronavirus so contagious?
+# The 2019 novel coronavirus (COVID-19) has protein spikes that stick out on all sides, making it very effective at bonding to our human cells. Reishi
+#   supplements can deter bonding between our cells and the virus.
+# How is it transmitted?
+# Coronavirus is spread primarily through physical contact like a handshake or in the form of airborne droplets from a cough, sneeze, or shared air.
+#   That’s why handwashing and physical distance are key.
+# How long is the virus ‘active’?
+# Studies suggest that it can remain viable in the air for 2-3 hours, on cardboard for 24 hours, and on plastic and stainless steel for up to 3 days.
+# How can we destroy it?
+# First – soap and water, folks. Also, used correctly, ozone air purification and 3% hydrogen peroxide are effective in destroying the coronavirus.
+#   Other easy, but effective, home disinfectants also include 10% malt vinegar and distilled white vinegar in combination with 3% hydrogen peroxide.
+# Ozone Air Purification
+# We run an ozone machine between shoots to purify the air. Ozone, otherwise known as O3, is very effective in destroying bacteria, viruses, and fungi.
+#   Routinely used in Europe, ozone air purification destroys viruses by diffusing through the protein coat into the nucleic acid core, damaging the viral RNA.
+# K5EM8NEW:It's rather infurE8ing that so few sources of d8a are reporting recoveries. In my not-so-humble-opinion, everyone involved throughout the entire
+#   d8a-aggreg8ion process ought to be pushing for additional demographics to become tracked also, like age-range of deaths, whether smokers, ethnicities,
+#   rural / suburban / inner-city dwellers, multi-gener8ional homes, household incomes, heights, w8s, BMI's, asthmatics, allergies, apneas, etc. to account 4;
+use strict;use warnings;use utf8;use v5.10;use Octology::a8;use Octology::d8;use Text::CSV; # should also track how many tSts done&&ventil8ors Ech county has;
+my $Vers='0.0';my $d8VS='K5EM8WhN';   my %sd8a;my %flcb=('C'=> 3,'D'=> 4,'R'=> 5,'A'=>-1);my %flcm=('C'=>$c,'D'=>$R,'R'=>$g,'A'=>$K);
 my @flck=qw(Confirmed Deaths Recovered Active);my %flcn=('C'=> 7,'D'=> 8,'R'=> 9,'A'=>10); # USt8 AbbreV8ionz below R not even used anymore,sO scrap l8r;
 my      $covp=$ENV{'HOME'};$covp.="/dvl/c8/CJ";my $whg8=`which git`;`mkdir -p $covp` unless(-d $covp     );      chdir($covp     ); # mk sure CSV d8a gotN
 if(!-d "$covp/COVID-19" && length($whg8)){system("  git clone https://github.com/CSSEGISandData/COVID-19");}else{chdir("COVID-19");system("  git pull");}
@@ -280,7 +303,9 @@ my @cnsp=( # St8           2020 Pop.  % of US  Density(p/mi²)  (d8a scraped fro
   ['Holy See'                   ,           801,               0,     2_003,            0       ],
 );
 open my        $out8,'>&',STDOUT or die "Can't open  duplic8 STDOUT handle: $!";binmode $out8,':encoding(UTF-8)';
-my      $csvp=$ENV{'HOME'};$csvp.="/dvl/c8/CJ/COVID-19/csse_covid_19_data/csse_covid_19_daily_reports";my %clrd;
+if(@ARGV && $ARGV[0]=~ /^-*h(elp)?$/i){print $out8 " CJ - CoronavirusJ (19) d8a aggreg8ion utility by $Auth Vers:$Vers d8VS:$d8VS\n -h - print this Help
+    - Any UnitedSt8 name can also be given as a parameter to override the default output for the author's current home St8 of Wisconsin;\n";exit;}
+my      $csvp=   $covp . "/COVID-19/csse_covid_19_data/csse_covid_19_daily_reports";my %clrd;
 for  my $dfil (<"$csvp/*.csv">){my $d8nw=Octology::d8->new();my $ndfl=$dfil;$ndfl=~ s/^(.+)\.(\w+)$/$1-$d8nw.$2/;
                                                              my $dfd8=$dfil;$dfd8=~ s/^(.+)\/([^.]+)\.(\w+)$/$2/; # isol8 *MM-DD-YYYY* 2 say l8r
   my    $csvo=                              Text::CSV->new({'binary' => 1}); #, auto_diag => 1 });
