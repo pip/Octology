@@ -49,10 +49,10 @@ our @EXPORT= qw(bfr8c    b8c    d8c   dur8c @d8cl  d8cs  a8c   chti  c8fn  o8 S2
  $SKp8 $SKp0 $SKp1 $SKp2 b8clr  $SKpf $SKpt %pmap %cmap       %pl8n  ftst acS e %f8fm %f8pm %sgrm %sgrn @Dayz @Day  lrc      comma  curs  sumb @x256  @sb64
     $z    $k    $r    $o    $y    $g     $c $SKpb    $m    $p    $w  tstc    $K    $R    $O    $Y    $G    $C    $B    $M    $P    $W    %p622 %p222   upd8
          $bk   $br   $bo   $by   $bg    $bc   $bb   $bm   $bp   $bw         $hK   $hR   $hO   $hY   $hG   $hC   $hB   $hM   $hP   $hW     h2rl  rl2h   drkh
-                                                                            $HK   $HR   $HO   $HY   $HG   $HC   $HB   $HM   $HP   $HW
+    $t    $u    $d    $s    $n          $T     $U    $D    $S    $N         $HK   $HR   $HO   $HY   $HG   $HC   $HB   $HM   $HP   $HW
  $tnhf $ucdf  spff  spfd  spfX   shfl  reso $Auth %cmsp %p8k2 @p82k  chp8     S2f4 c2f4 dm2u cdst %crgb %cbrt @snls @mrls %cdrd %cdrn    %nrgb         gnp8);
  # of 52 posibl sngl-letr var nmz,a8 Xportz 20,$b && $a unavail,so shudB thEs30 lFt4quik shortSt nAmz: 'def hij l n  q stuv x', 'A  DEF HIJ L N  Q STUV X Z';
-our $VERSION='0.0';my  $d8VS='K51MDSup';our $Auth='PipStuart <Pip@CPAN.Org>'; # above not exporting $b since collidez with sort{$a  <=> $b};unalloc'd sOlOz^;
+our $VERSION='0.0';my  $d8VS='K5JMI88P';our $Auth='PipStuart <Pip@CPAN.Org>'; # above not exporting $b since collidez with sort{$a  <=> $b};unalloc'd sOlOz^;
 our $ucdf= eval('use Color::Similarity::RGB qw(distance);1') || 0; # try2set UseColorDistanceFlag if optional module is available; /defhijlnqstuvx/i + /AZ/^;
 our @Monz=qw(January February March   April     May June July   August September October November December);our @Mon=();push(@Mon,substr($_,0,3)) for(@Monz);
 our @Dayz=qw(Sunday  Monday   Tuesday Wednesday Thursday Friday Saturday                                  );our @Day=();push(@Day,substr($_,0,3)) for(@Dayz);
@@ -72,10 +72,10 @@ our %cmap=('VGA' =>'kbgcrPOw KBGCRMYW', # supported Colr MAP sequencez of index 
           '8ANSI'=>'krgObPcw KRGYBMCW  ehdospti EHDySmTI   .faunlzj _FAUNLZJ  0264xv8q 1375XV9Q', # 8pal8 columnz realigned for ANSI SKp number code mapping
           '8pal8'=>'krOgcbPw KRYGCBMW  ehodtspi EHyDTSmI   .fuaznlj _FUAZNLJ  02468xvq 13579XVQ', # each 2pal8 within labeled qw(clen neon wash melo)
           '2pal8'=>'krOgcbPw KRYGCBMW', # basically compacted same eightbow order as pal8 bracketed by blacK && White squeezing Orange && Purple over darks
-           'pal8'=>         'ROYGCBMP', # maybe  *pal8 d8a should all be stored and detected from within filez having the same .pal8 extension?
-          '8bow' =>         'ROYGCBMP', # altern8 pal8 (a single palette of just 8 colrz with an alias of 8bow, but mAB pal8 should be KRYGCBMW instead?)
-         'd8bo'  =>         'RoYGCBMp', # altern8 pal8 but meant to be used to allow all 8 to be able to display in Bold together
-           'U2b8'=>         'CRGMY'  ); # altern8 colr sequence for 64-bitz in 11-digit b64 b8 numberz probably using 'url' URLSafe charset for YouTube IDz
+           'pal8'=>         'YGTBUDSN', # maybe  *pal8 d8a should all be stored and detected from within filez having the same .pal8 extension?
+          '8bow' =>         'YGTBUDSN', # altern8 pal8 (a single palette of just 8 colrz with an alias of 8bow, but mAB pal8 should be KRYGCBMW instead?)
+         'd8bo'  =>         'YGTBUDSN', # altern8 pal8 but meant to be used to allow all 8 to be able to display in Bold together
+           'U2b8'=>         'CSGUY'  ); # altern8 colr sequence for 64-bitz in 11-digit b64 b8 numberz probably using 'url' URLSafe charset for YouTube IDz
 our %cmsp;for(keys %cmap){my $mstr=$cmap{$_};$mstr=~ s/\s+//g;$cmsp{$_}= [split(//,$mstr)];} # should load all Color Mapz already SPlit apart
 our %pl8n=('K'=>'blacK'     ,'R'=>'Red'      ,'Y'=>'Yellow','G'=>    'Green'  ,  'C'=>'Cyan'        ,'B'=>     'Blue','M'=>'Magenta' ,'W'=>       'White',
            'E'=>'dimgrEy'   ,'H'=>'Hotpink'  ,'O'=>'Orange','D'=>  'oliveDrab',  'T'=>'Turquoise'   ,'S'=>  'Skyblue','P'=>'PurPle'  ,'I'=>       'Ivory',
@@ -137,6 +137,8 @@ my %Sdsr=('_' =>'01;30', '^'  => '00', '.' => '22;30', 'H_' =>'90','h.' => '100'
           # should setup 0 to really reset attributez, f0ntz, && everything && prefer just 22     4bold off;
 our %mc2F;our %mc2b;our %mF2c;our %mb2c; # MapC8Col8ColrCodz2ForeBackgrnd && rEverse  # also adding 8trm below restored main lsd8 colors
 if(exists($ENV{'TERM'}) && $ENV{'TERM'} !~ /^(([Ex]|st)(term)?|screen|rxvt|linux|8trm)/){$tnhf=1;} # TermNoHandleFlag (nEd linux hEr 2 4 console colrz)
+our $t ;our $u ;our $d ;our $s ;our $n ;
+our $T ;our $U ;our $D ;our $S ;our $N ;
 our $k ;our $r ;our $o ;our $y ;our $g ;our $c;our $SKpb;our $m;our $p ;our $w ; # avoid sort's global $b variable with special $SKpb 4 4grnd dRk-blue instead
 our $K ;our $R ;our $O ;our $Y ;our $G ;our $C;our    $B;our $M;our $P ;our $W ; # Fclr shrtcutz to get set,reset,shifted,or randomized in CHangePal8 function
 our $bk;our $br;our $bo;our $by;our $bg;our $bc;our $bb;our $bm;our $bp;our $bw; # bclr shrtcutz (may want 2B careful th@ none of thEse cOlId wi Xistng Usagz)
@@ -159,6 +161,8 @@ sub chp8{ # should do similar stuff but all may need to use joined layer keyz wi
     for(0..$#p82k){$mc2F{$p82k[$_]}='01;38;5;' . spfd($_);$mF2c{$mc2F{$p82k[$_]}}=$p82k[$_];
       my $p8ky=$p82k[$_]; $p8ky=~ s/^([FDAL])//;if($1 eq 'F'){$p8ky= 'b'.$p8ky;}else{$p8ky= lc($1).$p8ky;} # should learn how to use \l in regex to lc() too
                    $mc2b{$p8ky    }=   '48;5;' . spfd($_);$mb2c{$mc2b{$p8ky    }}=$p8ky    ;}}
+  $t=S('t');$u=S('u');$d=S('d');$s=S('s');$n=S('n');
+  $T=S('T');$U=S('U');$D=S('D');$S=S('S');$N=S('N');
   $k=S('k');$r=S('r');$o=S('o');$y=S('y');$g=S('g'); $c=S('c');$SKpb=S('b');$m=S('m');$p=S('p');$w=S('w'); # avoid sort $b
   $K=S('K');$R=S('R');$O=S('O');$Y=S('Y');$G=S('G'); $C=S('C');   $B=S('B');$M=S('M');$P=S('P');$W=S('W'); # Fclr shrtcutz
   $bk=$SKp8.$Sdsr{'bk'}.'m';$br=$SKp8.$Sdsr{'br'}.'m';$bo=$SKp8.$Sdsr{'bo'}.'m';$by=$SKp8.$Sdsr{'by'}.'m';$bg=$SKp8.$Sdsr{'bg'}.'m';
@@ -1174,8 +1178,8 @@ sub sumb{  my $widt=0;$widt=1 if(exists($ENV{'COLUMNS'}) && $ENV{'COLUMNS'} >= 1
                             'xmlt'=>{'Text'=>'F:R','Binary'=>'F:B','Compress'=>'F:C','eXpand'=>'F:Y','whitespace'=>'F:W',        },
                             'd8fz'=>{'Year'=>'Fb','Month'=>'ob','Day'=>'Yb','week'=>'ok','zone'=>'Gb','displaying'=>'HARL','now'=>'HIRK',},);
   my $i;my $j="$z$SKp1".'m'; # Jump_bak2zero_bold
-  my $d;my $e;my $f;my $h; # additional SKp code holder variablez; $i reInit && $j Jumpbak are the locl onez 2 prEserv
-  my $l;my $n;my $q;my $s; # have 'defh lnqs' 8 2Uz4 b64r especially, but then can be used for plenty else, forgot $a is for sort, still avail: $t $u $v $x
+  my $t;my $e;my $f;my $h; # additional SKp code holder variablez; $i reInit && $j Jumpbak are the locl onez 2 prEserv
+  my $l;my $v;my $q;my $x; # have 'defh lnqs' 8 2Uz4 b64r especially, but then can be used for plenty else, forgot $a is for sort, none still available!
   for (0..$bfle){my $grup='';#$grup='dirz' if(-d "$ENV{'HOME'}/bin/$bfls[$bfle - $_]"); # commenting out subdirectory check, because trying to hide priv8 tst/
     if( exists($bfst{$bfls[$bfle - $_]})){
       if($bfst{$bfls[$bfle - $_]}=~  /^\s*(\S+)/){$grup=$1 unless($grup eq 'dirz');$i=$j; # look for group to match Xpected as always 1st non-space string
@@ -1204,67 +1208,67 @@ sub sumb{  my $widt=0;$widt=1 if(exists($ENV{'COLUMNS'}) && $ENV{'COLUMNS'} >= 1
         $h=S('Z');$bfst{$bfls[$bfle-$_]}=~ s/(Select\s*)(Graphic\s*)(Rendition)/$h$1$O$2$M$3$i/;    # get SGR ZOM 4 tsgr
                   $bfst{$bfls[$bfle-$_]}=~ s/      (\s+)(S)(G)(R)(\s+)       /$1$h$2$O$3$M$4$i$5/x; # get SGR ZOM 4 tstc (spc-sepR8d)
         if($grup eq 'd8' && $bfls[$bfle - $_] eq 'w8'){ # should properly color quoted example dur8ions in whatever w8 description
-          while($bfst{$bfls[$bfle - $_]}=~  /(\s)(['"])([0-9A-Za-x]+)\2/){$s=$1;$q=$2;$d=$3;$e=dur8c($d);
-            $bfst{    $bfls[$bfle - $_]}=~ s/($s)(['"])([0-9A-Za-x]+)\2/$1$G$2$e$G$2$i/;}
+          while($bfst{$bfls[$bfle - $_]}=~  /(\s)(['"])([0-9A-Za-x]+)\2/){$x=$1;$q=$2;$t=$3;$e=dur8c($t);
+            $bfst{    $bfls[$bfle - $_]}=~ s/($x)(['"])([0-9A-Za-x]+)\2/$1$G$2$e$G$2$i/;}
           $bfst{      $bfls[$bfle - $_]}=~ s/(fra?me?  s?)/$p$1$i/gx;
           $bfst{      $bfls[$bfle - $_]}=~ s/(sec(ond)?s?)/$M$1$i/g ;
           $bfst{      $bfls[$bfle - $_]}=~ s/(min(ute)?s?)/$B$1$i/g ;
           $bfst{      $bfls[$bfle - $_]}=~ s/(ho?u?r   s?)/$C$1$i/gx;}
         # mAB mk d8c 4 NotYetInModule 2,&& rm from Nd of %bftc
-        $d=S($bftc{'modu'}{'Games::Cards::Poker->Shuffle'});$bfst{$bfls[$bfle-$_]}=~ s/(Games::Cards)(::Poker->Shuffle)/$d$1$d$2$i/gx; # set colrz around Cards
-        $d=S($bftc{'b64r'}{'\['});
+        $t=S($bftc{'modu'}{'Games::Cards::Poker->Shuffle'});$bfst{$bfls[$bfle-$_]}=~ s/(Games::Cards)(::Poker->Shuffle)/$t$1$t$2$i/gx; # set colrz around Cards
+        $t=S($bftc{'b64r'}{'\['});
         $e=S($bftc{'b64r'}{ '-'});
         $f=S($bftc{'b64r'}{ '0'});
         $h=S($bftc{'b64r'}{ '9'});
         $l=S($bftc{'b64r'}{ 'A'});
-        $n=S($bftc{'b64r'}{ 'Z'});
+        $v=S($bftc{'b64r'}{ 'Z'});
         $q=S($bftc{'b64r'}{'\.'});
-        $s=S($bftc{'b64r'}{ '_'});
-        $bfst{ $bfls[$bfle - $_]}=~ s/(\/)(\[)(0)(-)(9)(\])(\+\/)/$1$d$2$f$3$e$4$h$5$d$6$i$7/x; # just co?ma regXz stRtd as basic 2pal8, mAB nEd pRam shft BlO?
-        $bfst{ $bfls[$bfle - $_]}=~ s/ \/ (\[)(A)(-)(Z)(\.)(_)(0)(-)(9)\]\+\//\/$d$1$l$2$e$3$n$4$q$5$s$6$f$7$e$8$h$9$d\]$i+\//x; # 1st9duz!capture clos braket
-        $bfst{ $bfls[$bfle - $_]}=~ s/(\s)(\[)(0)(-)(9)(\])(\s)  /$1$d$2$f$3$e$4$h$5$d$6$i$7/x; # just get non-regex     bracketed decimal rangez too
+        $x=S($bftc{'b64r'}{ '_'});
+        $bfst{ $bfls[$bfle - $_]}=~ s/(\/)(\[)(0)(-)(9)(\])(\+\/)/$1$t$2$f$3$e$4$h$5$t$6$i$7/x; # just co?ma regXz stRtd as basic 2pal8, mAB nEd pRam shft BlO?
+        $bfst{ $bfls[$bfle - $_]}=~ s/ \/ (\[)(A)(-)(Z)(\.)(_)(0)(-)(9)\]\+\//\/$t$1$l$2$e$3$v$4$q$5$x$6$f$7$e$8$h$9$t\]$i+\//x; # 1st9duz!capture clos braket
+        $bfst{ $bfls[$bfle - $_]}=~ s/(\s)(\[)(0)(-)(9)(\])(\s)  /$1$t$2$f$3$e$4$h$5$t$6$i$7/x; # just get non-regex     bracketed decimal rangez too
         $bfst{ $bfls[$bfle - $_]}=~ s/(\s)    (0)(-)(9)    (\s)  /$1$f$2$e$3$h$4$i$5/x;         # just get non-regex non-bracketed decimal rangez too
         $h=S($bftc{'b64r'}{ '7'});
-        $bfst{ $bfls[$bfle - $_]}=~ s/(\s)(\[)(0)(-)(7)(\])(\s  )/$1$d$2$f$3$e$4$h$5$d$6$i$7/x; # then [0-7] ocT rangez enclosed
+        $bfst{ $bfls[$bfle - $_]}=~ s/(\s)(\[)(0)(-)(7)(\])(\s  )/$1$t$2$f$3$e$4$h$5$t$6$i$7/x; # then [0-7] ocT rangez enclosed
         $h=S($bftc{'file'}{'cf'});
         $l=S($bftc{'file'}{'`' });
         $bfst{ $bfls[$bfle - $_]}=~ s/(`)([^`]+)(`)/$l$1$h$2$l$3$i/g; # Xplicitly do baktikd CommandFile 2gether 1st (Cmz2wrk wL)
-        $h=S($bftc{'file'}{'~' });$s=S($bftc{'file'}{'bin'});
-        $l=S($bftc{'file'}{'\/'});$d=S($bftc{'file'}{'\.' });
-        $bfst{ $bfls[$bfle - $_]}=~ s/(~)(\/)(dvl)(\/)(t8)(\/)(Octl)(\/)/$h$1$l$2$s$3$l$4$s$5$l$6$s$7$l$8$i/gx;
-        $bfst{ $bfls[$bfle - $_]}=~ s/(~)(\/)(\.)(config )(\/)/$h$1$l$2$d$3$h$4$l$5$i/gx;
-        $bfst{ $bfls[$bfle - $_]}=~ s/(~)(\/)(bin|lib    )(\/)/$h$1$l$2$s$3$l$4$i/gx;
-        $bfst{ $bfls[$bfle - $_]}=~ s/(~)(\/)(\s)             /$h$1$l$2$3$i/gx      ;$s=S($bftc{'file'}{ 'mixer'}); # get  /dev/mixer dir
-        $bfst{ $bfls[$bfle - $_]}=~ s/   (\/)(dev)(\/)(mixer )/$l$1$h$2$l$3$s$4$i/gx;$s=S($bftc{'file'}{'\.bak' }); # get ~/ *  / dirz
-        $bfst{ $bfls[$bfle - $_]}=~ s/   (\s)(\.)(bak    )(\/)/$1$d$2$s$3$l$4$i/gx  ;$s=S($bftc{'file'}{'\.Hrc' }); # get   .bak/ dirz
-        $bfst{ $bfls[$bfle - $_]}=~ s/(~)(\/)(\.)([Hl]s?rc   )/$h$1$l$2$d$3$s$4$i/gx;$s=S($bftc{'file'}{'\.psf' }); # get ~/.*rc  filz
-        $bfst{ $bfls[$bfle - $_]}=~ s/   (\s)(\()(psf )(\s|\))/$1$2$s$3$i$4/gx      ;                               # get   (psf)
-        $bfst{ $bfls[$bfle - $_]}=~ s/   (\s)(\.)(psf )(\s   )/$1$d$2$s$3$i$4/gx    ;$s=S($bftc{'file'}{'\.f0nt'}); # get   .psf  filz
-        $bfst{ $bfls[$bfle - $_]}=~ s/   (\s)(\.)(f0nt)(\s   )/$1$d$2$s$3$i$4/gx    ;$s=S($bftc{'file'}{'\.xml' }); # get   .f0nt filz
-        $bfst{ $bfls[$bfle - $_]}=~ s/(er|\s)(\.)(xml )(\s|\))/$1$d$2$s$3$i$4/gx    ;$s=S($bftc{'file'}{'\.xtb' }); # get   .xml  filz (1rItaftr'smaller'nospc)
-        $bfst{ $bfls[$bfle - $_]}=~ s/   (\s)(\.)(xtb )(\s|\))/$1$d$2$s$3$i$4/gx    ;$d=S($bftc{'base'}{  '64'  }); # get   .xtb  filz
-        $bfst{ $bfls[$bfle - $_]}=~ s/   (\(b)   ( 64 )       /(${B}b$d$2$i/gx      ;                               # get    b64
-        $bfst{ $bfls[$bfle - $_]}=~ s/   (\sb)   ( 64 )       /$1$d$2$i/gx          ;$d=S($bftc{'base'}{  '16'  }); # get    b16
-        $bfst{ $bfls[$bfle - $_]}=~ s/   (\(b)   ( 16 )       /$1$d$2$i/gx          ;                               # du b16
-        $bfst{ $bfls[$bfle - $_]}=~ s/   (\s)    (HEX )(adeci)/$1$d$2$i$3/gx        ;$d=S($bftc{'base'}{ 'ocT'  }); # du HEX
-        $bfst{ $bfls[$bfle - $_]}=~ s/   (\s)    (ocT )(al   )/$1$d$2$i$3/gx        ;$d=S($bftc{'base'}{  '10'  }); # du ocT
-        $bfst{ $bfls[$bfle - $_]}=~ s/   (\s|\() (de[cC])(ima)/$1$d$2$i$3/gx        ;$d=S($bftc{'base'}{ '128'  }); # du deC or dec
-        $bfst{ $bfls[$bfle - $_]}=~ s/  (b(ase)?)(128 )(\s   )/$1$d$3$i$4/gx        ;$d=S($bftc{'base'}{ '256'  }); # du 128
-        $bfst{ $bfls[$bfle - $_]}=~ s/  (b(ase)?)(256 )(\s   )/$1$d$3$i$4/gx        ;$s=S($bftc{'d8fz'}{'2006'  }); # du 256 hopefully both b256 && base256
-        $bfst{ $bfls[$bfle - $_]}=~ s/   (xterm-)(256 )(color)/$1$d$2$i$3/gx        ;$d=S('Mb');
-        $bfst{ $bfls[$bfle - $_]}=~ s/   (\D    )(4 )([^0-9w])/$1$d$2$i$3/gx        ;$d=S('Yg');
-        $bfst{ $bfls[$bfle - $_]}=~ s/   (\D    )(  6 )(\D   )/$1$d$2$i$3/gx        ;$d=S('ob'); # du some basic sumb page2 b8 sequence listz
-        $bfst{ $bfls[$bfle - $_]}=~ s/   (\D    )( 47 )(\D   )/$1$d$2$i$3/gx        ;$d=S('Yb');
-        $bfst{ $bfls[$bfle - $_]}=~ s/   (\s    )( 48 )(\s   )/$1$d$2$i$3/gx        ;$d=S('Gr');
-        $bfst{ $bfls[$bfle - $_]}=~ s/   (\s    )(160 )(\s   )/$1$d$2$i$3/gx        ;$d=S('Rk');
-        $bfst{ $bfls[$bfle - $_]}=~ s/   (\s    )(9600)(\s   )/$1$d$2$i$3/gx        ;$d=S($bftc{'d8fz'}{'March' }); # du 256 more
-        $bfst{ $bfls[$bfle - $_]}=~ s/   (\s)   (March)(2006 )/$1$d$2$s$3$i/gx      ;$d=S($bftc{'file'}{ 'cRdz' }); # du d8 fldz M && Y from ptold
-        $bfst{ $bfls[$bfle - $_]}=~ s/   (\s|:) (Cards)(\s|:|\e)/$1$d$2$i$3/gx      ;$d=S($bftc{'file'}{ 'SKpz' }); # just get b128 Cards, not Gmz:Cards:Pokr
-        $bfst{ $bfls[$bfle - $_]}=~ s/   (\s)(e[Ss]capes?)(\s)/$1$d$2$i$3/gx        ;$d=S($bftc{'file'}{ 'down' }); # mAB want to d8c for SKpz too?
+        $h=S($bftc{'file'}{'~' });$x=S($bftc{'file'}{'bin'});
+        $l=S($bftc{'file'}{'\/'});$t=S($bftc{'file'}{'\.' });
+        $bfst{ $bfls[$bfle - $_]}=~ s/(~)(\/)(dvl)(\/)(t8)(\/)(Octl)(\/)/$h$1$l$2$x$3$l$4$x$5$l$6$x$7$l$8$i/gx;
+        $bfst{ $bfls[$bfle - $_]}=~ s/(~)(\/)(\.)(config )(\/)/$h$1$l$2$t$3$h$4$l$5$i/gx;
+        $bfst{ $bfls[$bfle - $_]}=~ s/(~)(\/)(bin|lib    )(\/)/$h$1$l$2$x$3$l$4$i/gx;
+        $bfst{ $bfls[$bfle - $_]}=~ s/(~)(\/)(\s)             /$h$1$l$2$3$i/gx      ;$x=S($bftc{'file'}{ 'mixer'}); # get  /dev/mixer dir
+        $bfst{ $bfls[$bfle - $_]}=~ s/   (\/)(dev)(\/)(mixer )/$l$1$h$2$l$3$x$4$i/gx;$x=S($bftc{'file'}{'\.bak' }); # get ~/ *  / dirz
+        $bfst{ $bfls[$bfle - $_]}=~ s/   (\s)(\.)(bak    )(\/)/$1$t$2$x$3$l$4$i/gx  ;$x=S($bftc{'file'}{'\.Hrc' }); # get   .bak/ dirz
+        $bfst{ $bfls[$bfle - $_]}=~ s/(~)(\/)(\.)([Hl]s?rc   )/$h$1$l$2$t$3$x$4$i/gx;$x=S($bftc{'file'}{'\.psf' }); # get ~/.*rc  filz
+        $bfst{ $bfls[$bfle - $_]}=~ s/   (\s)(\()(psf )(\s|\))/$1$2$x$3$i$4/gx      ;                               # get   (psf)
+        $bfst{ $bfls[$bfle - $_]}=~ s/   (\s)(\.)(psf )(\s   )/$1$t$2$x$3$i$4/gx    ;$x=S($bftc{'file'}{'\.f0nt'}); # get   .psf  filz
+        $bfst{ $bfls[$bfle - $_]}=~ s/   (\s)(\.)(f0nt)(\s   )/$1$t$2$x$3$i$4/gx    ;$x=S($bftc{'file'}{'\.xml' }); # get   .f0nt filz
+        $bfst{ $bfls[$bfle - $_]}=~ s/(er|\s)(\.)(xml )(\s|\))/$1$t$2$x$3$i$4/gx    ;$x=S($bftc{'file'}{'\.xtb' }); # get   .xml  filz (1rItaftr'smaller'nospc)
+        $bfst{ $bfls[$bfle - $_]}=~ s/   (\s)(\.)(xtb )(\s|\))/$1$t$2$x$3$i$4/gx    ;$t=S($bftc{'base'}{  '64'  }); # get   .xtb  filz
+        $bfst{ $bfls[$bfle - $_]}=~ s/   (\(b)   ( 64 )       /(${B}b$t$2$i/gx      ;                               # get    b64
+        $bfst{ $bfls[$bfle - $_]}=~ s/   (\sb)   ( 64 )       /$1$t$2$i/gx          ;$t=S($bftc{'base'}{  '16'  }); # get    b16
+        $bfst{ $bfls[$bfle - $_]}=~ s/   (\(b)   ( 16 )       /$1$t$2$i/gx          ;                               # du b16
+        $bfst{ $bfls[$bfle - $_]}=~ s/   (\s)    (HEX )(adeci)/$1$t$2$i$3/gx        ;$t=S($bftc{'base'}{ 'ocT'  }); # du HEX
+        $bfst{ $bfls[$bfle - $_]}=~ s/   (\s)    (ocT )(al   )/$1$t$2$i$3/gx        ;$t=S($bftc{'base'}{  '10'  }); # du ocT
+        $bfst{ $bfls[$bfle - $_]}=~ s/   (\s|\() (de[cC])(ima)/$1$t$2$i$3/gx        ;$t=S($bftc{'base'}{ '128'  }); # du deC or dec
+        $bfst{ $bfls[$bfle - $_]}=~ s/  (b(ase)?)(128 )(\s   )/$1$t$3$i$4/gx        ;$t=S($bftc{'base'}{ '256'  }); # du 128
+        $bfst{ $bfls[$bfle - $_]}=~ s/  (b(ase)?)(256 )(\s   )/$1$t$3$i$4/gx        ;$x=S($bftc{'d8fz'}{'2006'  }); # du 256 hopefully both b256 && base256
+        $bfst{ $bfls[$bfle - $_]}=~ s/   (xterm-)(256 )(color)/$1$t$2$i$3/gx        ;$t=S('Mb');
+        $bfst{ $bfls[$bfle - $_]}=~ s/   (\D    )(4 )([^0-9w])/$1$t$2$i$3/gx        ;$t=S('Yg');
+        $bfst{ $bfls[$bfle - $_]}=~ s/   (\D    )(  6 )(\D   )/$1$t$2$i$3/gx        ;$t=S('ob'); # du some basic sumb page2 b8 sequence listz
+        $bfst{ $bfls[$bfle - $_]}=~ s/   (\D    )( 47 )(\D   )/$1$t$2$i$3/gx        ;$t=S('Yb');
+        $bfst{ $bfls[$bfle - $_]}=~ s/   (\s    )( 48 )(\s   )/$1$t$2$i$3/gx        ;$t=S('Gr');
+        $bfst{ $bfls[$bfle - $_]}=~ s/   (\s    )(160 )(\s   )/$1$t$2$i$3/gx        ;$t=S('Rk');
+        $bfst{ $bfls[$bfle - $_]}=~ s/   (\s    )(9600)(\s   )/$1$t$2$i$3/gx        ;$t=S($bftc{'d8fz'}{'March' }); # du 256 more
+        $bfst{ $bfls[$bfle - $_]}=~ s/   (\s)   (March)(2006 )/$1$t$2$x$3$i/gx      ;$t=S($bftc{'file'}{ 'cRdz' }); # du d8 fldz M && Y from ptold
+        $bfst{ $bfls[$bfle - $_]}=~ s/   (\s|:) (Cards)(\s|:|\e)/$1$t$2$i$3/gx      ;$t=S($bftc{'file'}{ 'SKpz' }); # just get b128 Cards, not Gmz:Cards:Pokr
+        $bfst{ $bfls[$bfle - $_]}=~ s/   (\s)(e[Ss]capes?)(\s)/$1$t$2$i$3/gx        ;$t=S($bftc{'file'}{ 'down' }); # mAB want to d8c for SKpz too?
                                                                                      $l=S($bftc{'file'}{ 'load' }); # du downloadz in half
-        $bfst{ $bfls[$bfle - $_]}=~ s/   (\s)   (down)(load(ed)?)/$1$d$2$l$3$i/gx   ;$d=S($bftc{'file'}{ 'time' }); # du all time && Time
+        $bfst{ $bfls[$bfle - $_]}=~ s/   (\s)   (down)(load(ed)?)/$1$t$2$l$3$i/gx   ;$t=S($bftc{'file'}{ 'time' }); # du all time && Time
         $bfst{ $bfls[$bfle - $_]}=~ s/  (full-)(   time)(  \W)/$G$1$G$2$i$3/gx      ; # pre-colr ls flag's "-time" B4 next match would make Reddish
-        $bfst{ $bfls[$bfle - $_]}=~ s/   (\s|e)([Tt]ime)(  \W)/$1$d$2$i$3/gx        ; # mAB shud add Date
+        $bfst{ $bfls[$bfle - $_]}=~ s/   (\s|e)([Tt]ime)(  \W)/$1$t$2$i$3/gx        ; # mAB shud add Date
         for   my $tkey (sort(keys(  %bftc        ))){ # these orderz probably matter too
           for my $ckey (sort(keys(%{$bftc{$tkey}}))){$h=S($bftc{$tkey}{$ckey}); # load Hilite, then start doing some key transl8ion before searching on it
               my $srch=$ckey;$srch='<Left<<' if($srch eq 'L');$srch='<Bkwd<' if($srch eq 'B');
@@ -1279,7 +1283,7 @@ sub sumb{  my $widt=0;$widt=1 if(exists($ENV{'COLUMNS'}) && $ENV{'COLUMNS'} >= 1
         $l=S($bftc{'file'}{'\('});$bfst{$bfls[$bfle-$_]}=~ s/( [(]+)/$l$1$i/gx;  # Xplicitly do pRNz Left
         $l=S($bftc{'file'}{'\)'});$bfst{$bfls[$bfle-$_]}=~ s/( [)]+)/$l$1$i/gx;  # Xplicitly do pRNz Rite
         $h=S($bftc{'colr'}{ '2'});$bfst{$bfls[$bfle-$_]}=~ s/(-to- )/$h$1$i/gx;  # Xplicitly do colr btwn Lz && Rz
-       #$d=S($bftc{'d8fz'}{'NotYetInModule'     });$bfst{$bfls[$bfle-$_]}=~ s/(NotYetInModule     )/$d$1$i/gx; # try2fInaly do !YetInMod
+       #$t=S($bftc{'d8fz'}{'NotYetInModule'     });$bfst{$bfls[$bfle-$_]}=~ s/(NotYetInModule     )/$t$1$i/gx; # try2fInaly do !YetInMod
       }
     }else{
           if($sunf){                                                            push(@ufls,$bfls[$bfle - $_]);} # ShowUNdescribedFiles saved for l8r
@@ -1535,10 +1539,10 @@ sub spcs{my($ssfn,$q)=@_; # subroutine handling SPeCial separ8or character Subst
 sub c8fn{  my $fnam;my $aflg=0;$aflg=1 if(@_);my $zflg=0;if($aflg && $_[0] =~ /^-*z$/){$zflg=1; shift(@_);$aflg=0 unless(@_);}my $sflg=0;my $rtxt='';
   open my $sin8,'<&','STDIN'  or die "Can't open  duplic8 STDIN  handle: $!";binmode $sin8,':encoding(UTF-8)'; # crE8 local duplic8 of global
   lodl() unless(%lsp8 && %lspt); # make sure global LS_COLORS d8a regexes are loaded
-  if(!$aflg && !-t $sin8){     $sflg=1;   @_=<$sin8>;} # BlO renamed $k $kolumn_x to $n for Named color && String 2!colide with
+  if(!$aflg && !-t $sin8){     $sflg=1;   @_=<$sin8>;} # BlO renamed $k $kolumn_x to $v for Named color && String 2!colide with
   while($fnam=decode('UTF-8',shift(@_))){ # fix pIping for GT:ls|c8fn to work on multi-line && -w 160 to go proper wide
     if(defined($fnam) && length($fnam)){#chomp($fnam);
-      my $tnam=$fnam;my($n,$s); # process filename colr  # single-letter variables holding primary escaped colors
+      my $tnam=$fnam;my($v,$s); # process filename colr  # single-letter variables holding primary escaped colors
   #   if($subd eq '.'&& @ARGV){my $andx=0;while(!-d "$ARGV[$andx]"&& $andx<$#ARGV){$andx++;}if(-d "$ARGV[$andx]"){$subd="$ARGV[$andx]";$subd=~s/\/+$//;}}
   #   above was for when ls output enabled tracking the traversed subdirectory, but such context is likely to remain unknowable from here within c8fn()
       if($tnam=~  /-([-0-9A-Z_]{11})-([0-9A-Z._]{6})-(NA_|[0-9A-Z._][1-9A-C][1-9A-V])\./i){my $epch=b8c($2);my $uld8=d8c($3);d8cs('U2b8');
@@ -1548,18 +1552,18 @@ sub c8fn{  my $fnam;my $aflg=0;$aflg=1 if(@_);my $zflg=0;if($aflg && $_[0] =~ /^
          $tnam=~ s/-([-0-9A-Z_]{11})-([0-9A-Z._]{6})-(NA_|[0-9A-Z._][1-9A-C][1-9A-V])\./-$idnt-$epch-$uld8./i; # l8r colr uldr && mAB Artist columz sepR8ly2
         # since most of my typical audio filez are colrd $Y by .ls?rc && vidz are $P, subfield colrz here mostly avoid those unless they're mainly in the othr
          $tnam=~ s/(^|\D)([12]\d{3})(\D)/$1$R$2$3/g;} # basic detection of potential Year from previous or this millennium, wrapped by non-digitz (2du:@Monz)
-      for  my $svgl(keys(%lspt)){                      $n=$lspt{$svgl};my($bgin,$fsnm);                      #Typz
+      for  my $svgl(keys(%lspt)){                      $v=$lspt{$svgl};my($bgin,$fsnm);                      #Typz
         if   ($svgl eq'ex'&& (($bgin,$fsnm)= $fnam=~/^(.*?)(.+?)\*+  $/x)&& -x "$fsnm"){
-              $tnam=~s/^($bgin)($fsnm)(\*+)   $/$1$n$2$W$3/x;               $tnam=spcs(   $tnam ,$n);     }    # escape special /lost+found/ globs below
+              $tnam=~s/^($bgin)($fsnm)(\*+)   $/$1$v$2$W$3/x;               $tnam=spcs(   $tnam ,$v);     }    # escape special /lost+found/ globs below
         elsif($svgl eq'di'&& (($bgin,$fsnm)= $fnam=~/^(.*?)(.+?)\/+  $/x)             ){  $fsnm =~ s/\+/\\+/g; # allow ending slash to design8 dirz even if!-d
-              $tnam=~s/^($bgin)($fsnm)(\/+)   $/$1$n$2$Y$3/x;               $tnam=spcs(   $tnam ,$n);     }  # !sure how2mk paths up to files color dirs right
+              $tnam=~s/^($bgin)($fsnm)(\/+)   $/$1$v$2$Y$3/x;               $tnam=spcs(   $tnam ,$v);     }  # !sure how2mk paths up to files color dirs right
         elsif($svgl eq'di'&&                 $fnam=~/^          \/+  $/x && -d "$fnam"){                     # testing solo root / Red, might want solo ~
-              $tnam=~s/^              (\/+)   $/$R$1/x;                     $tnam=spcs(   $tnam ,$n);     }  #   or  always root / or home ~
+              $tnam=~s/^              (\/+)   $/$R$1/x;                     $tnam=spcs(   $tnam ,$v);     }  #   or  always root / or home ~
         elsif($svgl eq'ln'&& (($bgin,$fsnm)= $fnam=~/^(.+?)\s->\s(.+)$/x)&& -l "$bgin"){my $fanm=$fsnm;
           for my $shgl(sort keys(%lsp8)){if($fsnm=~/$shgl/){$s=$lsp8{$shgl};$fanm=spcs("$s$fsnm",$s);last;}} # color symlink's target by extension
-              $tnam=~s/^($bgin)(\s->\s)($fsnm)$/$W$1$Y$2$g$fanm/x;          $tnam=spcs(   $tnam ,$n);     }}
-      for     my $shgl(sort keys(%lsp8)){if($tnam=~/$shgl/){$n=$lsp8{$shgl};$tnam=spcs("$n$tnam",$n);last;}} #Gl0b
-      # matching against both names below to hopefully avoid splitting escapes as though they were valid PT or d8 characters (&& can't s/// d8 1st without $n)
+              $tnam=~s/^($bgin)(\s->\s)($fsnm)$/$W$1$Y$2$g$fanm/x;          $tnam=spcs(   $tnam ,$v);     }}
+      for     my $shgl(sort keys(%lsp8)){if($tnam=~/$shgl/){$v=$lsp8{$shgl};$tnam=spcs("$v$tnam",$v);last;}} #Gl0b
+      # matching against both names below to hopefully avoid splitting escapes as though they were valid PT or d8 characters (&& can't s/// d8 1st without $v)
       # setup matching PT range below to be somewhat tightly constrained to just the most expected values && trying to detect dash already with escape prefix
       if($tnam=~/^.*-(\e\[([\d;]*)m)*([0-9A-D][1-9A-C][1-9A-V][0-9A-Za-x]{4})                (\e\[([\d;]*)m)*([-.*\/]|$)/x){my $ptvr=$3;#y $ptim=undef; # oldPT
         if($fnam=~/-$ptvr([-.*\/]|$)/){#ptim=    Time::PT->new($ptvr);my $stim=$ptim->color('ansi');$stim.=$M.'0' if($ptvr=~/0$/);
@@ -1745,7 +1749,7 @@ sub ftst{ # 37MK06SK:ftst Utl2run thruPerlzFileTeSTz on its parameter Filename
          Also prints Perl regex && string backslash eScape codes in one 160x48 page to keep similar reference maps together.
          Added measured default ~/.Hrc to fit regular-expression flag descriptors up beside the default File TeSTs now too;
   2du:add regex flagz2 80-colm mode2?;";exit;}
-  my $A=S('A');my $F=S('F');my $N=S('N');my $X=S('X');
+  my $A=S('A');my $F=S('F');my $V=S('N');my $X=S('X');
   for(my $i=0;$i<@oper;$i+=2){my $oprS=S(uc($oper[$i]));my $flgS=$F;my $sizl= 28;my $etrv=0; # sizl was = 32 - 4;
     if($oper[$i] =~ /^[RWXO]$/ && exists($ENV{'COLUMNS'}) && $ENV{'COLUMNS'} <= 80){
       print      $out8 "$G($Y-$oprS$oper[$i]$G)$W==$G($C";
@@ -1784,7 +1788,7 @@ sub ftst{ # 37MK06SK:ftst Utl2run thruPerlzFileTeSTz on its parameter Filename
       $dscs=~ s/(-)/$F$1$flgS/g;$dscs=~ s/(X)(plicit )/$flgS$1$Y$2/g;$dscs=~ s/(br)(O)(kn )(O)(pti)(O)(n)/$Y$1$flgS$2$Y$3$flgS$4$Y$5$flgS$6$Y$7/gi;
       $dscs=~ s/(I)(nsens)(I)(t)(I)(ve)(I)/$flgS$1$Y$2$flgS$3$Y$4$flgS$5$Y$6$flgS$7/gi;$dscs=~ s/(get)(S)(newline)(S)/$Y$1$flgS$2$Y$3$flgS$4/gi;
       $dscs=~ s/(G)(obbling)(G)(rabber)/$flgS$1$Y$2$flgS$3$Y$4/gi;$dscs=~ s/(M)(any )/$flgS$1$Y$2/gi;$dscs=~ s/(xx )/$X$1$Y/i;
-      $dscs=~ s/(\()([^\)]*)(\))/$M$1$Y$2$M$3/g;$dscs=~ s/(spa?ce?s?)/$N$1$A/gi;
+      $dscs=~ s/(\()([^\)]*)(\))/$M$1$Y$2$M$3/g;$dscs=~ s/(spa?ce?s?)/$V$1$A/gi;
                               print  $out8 "$dscs";}
     if(!exists($ENV{'COLUMNS'}) || $ENV{'COLUMNS'} <= 108 || $i % 4 || $i > ($#oper-8)){ # might have needed an xor in here, but just made sepR8 clauses nstd?
                               print  $out8    "\n" if(!exists($ENV{'COLUMNS'}) || ($ENV{'COLUMNS'} <= 80 && $oper[$i] !~ /^[rwxo]$/)
@@ -1831,7 +1835,7 @@ sub ftst{ # 37MK06SK:ftst Utl2run thruPerlzFileTeSTz on its parameter Filename
   $bScs=~ s/(Property   )/$p$1$A/gix;$bScs=~ s/(sequence   )/$c$1$A/gix;$bScs=~ s/(given   )/$g$1$A/gix;$bScs=~ s/(\/)/$Y$1$A/g ;$bScs=~ s/(- )/$Y$1$A/gx;
   $bScs=~ s/(Boundary   )/$B$1$A/gix;$bScs=~ s/(Newline    )/$o$1$A/gix;$bScs=~ s/(Digits  )/$K$1$A/gix;$bScs=~ s/(' )/$C$1$A/gx;
   $bScs=~ s/(Escapes?   )/$F$1$A/gix;$bScs=~ s/(Octal      )/$O$1$A/gix;$bScs=~ s/( of )/$K$1$A/gi;$bScs=~ s/( or )/$c$1$A/gi   ;$bScs=~ s/(case)/$B$1$A/gi;
-  $bScs=~ s/(Space      )/$N$1$A/gix;$bScs=~ s/(octet      )/$o$1$z/gix;$bScs=~ s/(back)/$K$1$z/gi;$bScs=~ s/(until)/$w$1$z/gi  ;$bScs=~ s/(Lower)/$H$1$z/gi;
+  $bScs=~ s/(Space      )/$V$1$A/gix;$bScs=~ s/(octet      )/$o$1$z/gix;$bScs=~ s/(back)/$K$1$z/gi;$bScs=~ s/(until)/$w$1$z/gi  ;$bScs=~ s/(Lower)/$H$1$z/gi;
   $bScs=~ s/(strings?   )/$r$1$z/gix;$bScs=~ s/(end        )/$H$1$z/gix;$bScs=~ s/(absolute)/$W$1$z/gix;$bScs=~ s/(Named)/$Y$1$A/gix;$X=S('Yr');$H=S('Wb');
   $bScs=~ s/(heXadecimal)/$X$1$z/gix;$bScs=~ s/(slash      )/$H$1$A/gix;$bScs=~ s/(\()([^)]+)(\))/$C$1$R$2$C$3$A/gix;my $t=S('tk');my $U=S('5');
   $bScs=~ s/(tab)/$t$1$W/gix;$bScs=~ s/(next)/$U$1$z/gix;$bScs=~ s/(\/)(aa )/$Y$1$A$2$W/i;
@@ -2048,7 +2052,7 @@ sub cdst{ # Color DiSTance (derived from pm2x);pre-init what's necSary as new Xp
   -c  - NoCF  No   Colors       Flag;");} $nonr=1 if($flag=~ /N/);$hexf=1 if($flag=~ /x/);$nocf=1 if($flag=~ /c/i);$frmf=1 if($flag=~ /f/i);
                                           $snrf=1 if($flag=~ /n/);$xhri=1 if($flag=~ /X/);$nodf=1 if($flag=~ /d/i); shift(@_);}
   my $ndx0=shift(@_);return("!*EROR*! Bad index for distance check!") if(!defined($ndx0));
-  if($ucdf){my $s;@mrls=();@snls=(0..255) unless($nonr); # DfIn lIk old ccd2 CalQl8ClosestColrDistnc2() # nEd2!kEp pushng sames all over so ck ALRedyFlag
+  if($ucdf){my $x;@mrls=();@snls=(0..255) unless($nonr); # DfIn lIk old ccd2 CalQl8ClosestColrDistnc2() # nEd2!kEp pushng sames all over so ck ALRedyFlag
     if($snrf){ # also allow ndx0 to be a colr name nstd of just an x256 index, && mAB nstd of alwyz full nrgb put sorted key indicez in snls for l8r -N mngmNt
       for my $cnam (keys %nrgb){my $alrf=0;if(exists($cdrd{$ndx0})){for my $odst (keys %{$cdrd{$ndx0}}){if(exists($cdrn{$ndx0}{$odst}{$cnam})){$alrf=1;last;}}}
         unless($alrf){my $rdst= spff(distance($crgb{spfd($ndx0)},$crgb{$cnam}));push(@{$cdrd{$ndx0}{$rdst}},$cnam);$cdrn{$ndx0}{$rdst}{$cnam}=1;}}}
@@ -2063,8 +2067,8 @@ sub cdst{ # Color DiSTance (derived from pm2x);pre-init what's necSary as new Xp
     for my $rndx (0..$#mrls){if($mrls[$rndx]=~ /^(\s*\d+\.\d+)$/){my $fltd= spff($mrls[$rndx]);
                                 $mrls[$rndx]=~s/^(\s*\d+\.\d+)$/\n$z$fltd/;
                                 $mrls[$rndx]=~s/^\n// unless($rndx);}elsif($mrls[$rndx]=~ /^(\d+)$/){my $frmd= spfd($mrls[$rndx]);
-                $s= S('#' .spfX($mrls[$rndx]));                                                         $frmd= spfX($mrls[$rndx]) if($hexf);
-                $s='' if($nocf);$mrls[$rndx]=~s/^.*$/$s$frmd/      ;}elsif($snrf && exists($nrgb{$mrls[$rndx]})){
+                $x= S('#' .spfX($mrls[$rndx]));                                                         $frmd= spfX($mrls[$rndx]) if($hexf);
+                $x='' if($nocf);$mrls[$rndx]=~s/^.*$/$x$frmd/      ;}elsif($snrf && exists($nrgb{$mrls[$rndx]})){
    my $rrgb=$nrgb{$mrls[$rndx]};$mrls[$rndx] = "\e[38;2;".hex(substr($rrgb,0,2)).';'.hex(substr($rrgb,2,2)).';'.hex(substr($rrgb,4,2)).'m'.$mrls[$rndx];
                                 }} return(@mrls);} # Xplicit b10 decimal 2;R;G;Bm abov insted of old %nr2x named RGB to closest of 256 hex map
   else{return("!*EROR*! No distance function available without needed module or custom altern8ive to be written.\n");} # but betr stil2real colr in 8trm or Tk

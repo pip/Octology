@@ -10,7 +10,7 @@
 use strict;use warnings;use utf8;use v5.10;use Octology::b8;
                                            use Octology::d8;
                                            use Curses::Simp;
-my $VERSION='0.0';my $d8VS='K3RMNAut';my $Auth='PipStuart <Pip@CPAN.Org>';my $name=$0;$name =~ s/.*\///;my $d8im;my @fldz;my @lasf;my @text;my @fclr;
+my $VERSION='0.0';my $d8VS='K5IMN4bQ';my $Auth='PipStuart <Pip@CPAN.Org>';my $name=$0;$name =~ s/.*\///;my $d8im;my @fldz;my @lasf;my @text;my @fclr;
 my $barz=0;my $bilt=0;my $bold=0;my $bchr='#';my $parm='';my $clea=0;my $keey= -1;my $sped= 0.987;
 my $sbld=1;my $argz='';$argz= join(' ',@ARGV) if(@ARGV);
 if($argz=~ /h/i){print " $name v$VERSION $d8VS - by $Auth
@@ -33,13 +33,13 @@ if($argz=~ /h/i){print " $name v$VERSION $d8VS - by $Auth
 #   or `xprop -id $(xprop -root 32x '\t$0' _NET_ACTIVE_WINDOW | cut -f 2) _NET_WM_NAME` might be able to do it without the added dependency on xdotool?
 # other viable mechanismz for resolving this same issue are described at HTTPS://SuperUser.Com/questions/382616/detecting-currently-active-window
 my $simp= tie(@text,'Curses::Simp','flagaudr'=>0,'flagcntr'=>0);my $barh= int(($simp->Hite()-9)/8)-1; # not using a8 here for chti, so chngng titl manUly abov
-my @limz=(63,12,31,42,23);my @bclz= qw(R o Y G  C B M p);my $rand=0;my @spdz=(0, 0.015, 0.151, $sped); # old speed progression: 0.016, 0.064, 0.256
+my @limz=(63,12,31,42,23);my @bclz= qw(Y G T B  U D S N);my $rand=0;my @spdz=(0, 0.015, 0.151, $sped); # old speed progression: 0.016, 0.064, 0.256
 #                            @bclz= qw(F o 5 7  Z N V p); # altern8 base colrz
 # now all default base colrz @bclz above start Bold being above index 7, downside being that custom .pal8 filez won't be able to change o or p like RYGCBM
           tie(@fclr,'Curses::Simp::FClr',$simp);@fclr=(' ' x 25  . join('',@bclz) . ' ');
-if($argz=~ /f/i){$parm  = 'f';$fclr[0] =                'YYY ooo YY CCWBBWMMWpp GGGGG RRRR ';} # do some very basic parameter flag handling
-if($argz=~ /4/ ){$parm  = '4';$fclr[0] ='RoYGCBMp  wKKw  YYY ooo YY CCWBBWMMWpp GGGGG RRRR ';} # proly 48pt TrueTypeFont && 49 or 50 charz wId
-if($argz=~ /8/ ){$parm  = '8';$fclr[0] ='RoYGCBMp '                                         ;}
+if($argz=~ /f/i){$parm  = 'f';$fclr[0] =                'TTT GGG TT UUWDDWSSWNN BBBBB YYYY ';} # do some very basic parameter flag handling
+if($argz=~ /4/ ){$parm  = '4';$fclr[0] ='YGTBUDSN  wKKw  TTT GGG TT UUWDDWSSWNN BBBBB YYYY ';} # proly 48pt TrueTypeFont && 49 or 50 charz wId
+if($argz=~ /8/ ){$parm  = '8';$fclr[0] ='YGTBUDSN '                                         ;}
 if($argz=~ /r/i){$rand ^=  1 ;RandClrz();$simp->Draw();} # this rand is pretty poor. will be better to use a8:2&&8pal8 rot8z. 'f' twice resets in interactive.
 if($argz=~ /b/ ){$bold ^=  1 ;}
 if($argz=~ /d/i){$sbld ^=  1 ;}
@@ -51,7 +51,7 @@ sub RandClrz{my @orig;for(0..7){$orig[$_] = $bclz[$_];} my $orij= join('',@orig)
   if($rand){          for(0..7){$bclz[$_] = b64(int(rand(64))) while($bclz[    $_   ]  =~ /^[a-z02468.]$/ || # only accept bright colorz
                                                                      $orij             =~ /$bclz[$_]/     || #   that weren't in there originally
                                                   ($_ > 0 && join('',@bclz[0..($_-1)]) =~ /$bclz[$_]/));}}   #   && that aren't already chosen
-  else     {                    @bclz     = split(//,'RoYGCBMp');} # restore simple defaultz
+  else     {                    @bclz     = split(//,'YGTBUDSN');} # restore simple defaultz
   for(0..7){$fclr[0] =~ s/$orig[$_]/$bclz[$_]/g;}} # just substitute first line's colorz with the upd8z from above
 sub BildBarz{
   if($bilt){ my $blin = $bchr x $simp->Widt();
@@ -112,11 +112,11 @@ while  (lc($keey) ne 'x' && lc($keey) ne 'q' && ord($keey) != 27){
   elsif(lc($keey) eq 's'){ for(0..$#spdz){ if($sped == $spdz[$_]){ if($_ == $#spdz){ $sped = $spdz[0];      } # cycle speed
                                                                    else            { $sped = $spdz[$_ + 1]; } last; } }     }
   elsif(lc($keey) eq 'f'){ if(length($parm)){ $parm =  ''; $fclr[0] = ' ' x 25 .     join('',@bclz) .  ' '; }
-                           else             { $parm = 'f'; $fclr[0] =                'YYY ooo YY CCWBBWMMWpp GGGGG RRRR '; }}
+                           else             { $parm = 'f'; $fclr[0] =                'TTT GGG TT UUWDDWSSWNN BBBBB YYYY '; }}
   elsif(   $keey  eq '4'){ if(length($parm)){ $parm =  ''; $fclr[0] = ' ' x 25 .     join('',@bclz) .  ' '; }
-                           else             { $parm = '4'; $fclr[0] ='RoYGCBMp  wKKw  YYY ooo YY CCWBBWMMWpp GGGGG RRRR '; }}
+                           else             { $parm = '4'; $fclr[0] ='YGTBUDSN  wKKw  YYY ooo YY CCWBBWMMWpp GGGGG RRRR '; }}
   elsif(   $keey  eq '8'){ if(length($parm)){ $parm =  ''; $fclr[0] = ' ' x 25 .     join('',@bclz) .  ' '; }
-                           else             { $parm = '8'; $fclr[0] ='RoYGCBMp '                                         ; }}
+                           else             { $parm = '8'; $fclr[0] ='YGTBUDSN '                                         ; }}
   elsif(lc($keey) eq 'r'){    $rand ^=   1 ;             RandClrz();                       $simp->Draw()  ; } # toggle Randomized Colorz
   elsif(lc($keey) eq 'i'){
     if($simp->Widt() >= 53 && $simp->Hite() >= 17){ # only if the whole dialog with borders will fit in the terminal...

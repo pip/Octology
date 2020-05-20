@@ -24,7 +24,7 @@
 use strict;use warnings;use utf8;use v5.10; # mAB tSt if just regUlR -t STDIN && -t STDOUT R Dtectng intractiviT corectly 1st,B4 fallng bak on IO::Interactive
 #se IO::Interactive qw(is_interactive); # employ if(is_interactive()){} around all colring to attempt to behave like `ls --color=auto` when piped away
 use Encode;use Octology::a8;#se Octology::c8;
-           use Octology::b8;use Octology::d8;use Time::PT;my $VERSION='0.0';my $d8VS='K3SMCmis';my $sllw=0; # SymLink LargestWidth to track for alignment
+           use Octology::b8;use Octology::d8;use Time::PT;my $VERSION='0.0';my $d8VS='K5JMNotR';my $sllw=0; # SymLink LargestWidth to track for alignment
 open my $out8,'>&',STDOUT or die "Can't open  duplic8 STDOUT handle: $!"; binmode $out8,':encoding(UTF-8)';my $cauf=1;my $cnvf=0; # crE8 local duplic8 of globl
 my $vsrt='-v'; my @b64d;my $t;my $sbdr;my $b64c;my($pwnw,$grpw,$grpx);$pwnw=$grpw=$grpx=0; # default -v Version SoRT,reversed b8 Colr List matchz Dfalt d8 ordr
 my $jfdz=join('|',@Day);my $jfmz=join('|',@Mon); # Joined Fieldz for DayZ and MonthZ to regex with  # BlO mAB some ARGVz shud!B sNt thru -d tSt so Dtect 1st?
@@ -41,11 +41,11 @@ my @ldat=`ls -lF $vsrt --full-time --color=never @ARGV`;my $t0tl='0';my $subd='.
 my %lsp8;my %sqrm;my %sqra;my $cqrk;my $psdl=0; # Separ8or QuotedRegex Main&&Altern8 mapz, Current QuotedRegex Key, Previous SubDirectory Length
 my %lspt=('re'=>$z,'no'=>  $z   ,'fi'=>  $z   ,'ln'=>  $W   ,'or'=>S('RcL'),'mi'=>S('WrL'),'ex'=>$G,'su'=>S('Wg'),'sg'=>S('ky'),  # mk sureDcNtDfaltzXist
           'di'=>$B,'st'=>S('Wb'),'ow'=>S('Bg'),'tw'=>S('km'),'pi'=>S('yk' ),'so'=>  $M    ,'do'=>$M,'bd'=>S('Yk'),'cd'=>S('Yk')); #   wich shudB sAm as .lrc
-   $cqrk= qr/(\.+)/  ;$sqrm{$cqrk}=$W;$sqra{$cqrk}=$C;$cqrk= qr/([&]+)/ ;$sqrm{$cqrk}=$M;$sqra{$cqrk}=$R;
-   $cqrk= qr/(_+)/   ;$sqrm{$cqrk}=$C;$sqra{$cqrk}=$M;$cqrk= qr/([!]+)/ ;$sqrm{$cqrk}=$R;$sqra{$cqrk}=$B;
-   $cqrk= qr/(\++)/  ;$sqrm{$cqrk}=$R;$sqra{$cqrk}=$B;$cqrk= qr/([']+)/ ;$sqrm{$cqrk}=$G;$sqra{$cqrk}=$o;
+   $cqrk= qr/(\.+)/  ;$sqrm{$cqrk}=$W;$sqra{$cqrk}=$C;$cqrk= qr/([&]+)/ ;$sqrm{$cqrk}=$M;$sqra{$cqrk}=$S;
+   $cqrk= qr/(_+)/   ;$sqrm{$cqrk}=$C;$sqra{$cqrk}=$M;$cqrk= qr/([!]+)/ ;$sqrm{$cqrk}=$U;$sqra{$cqrk}=$B;
+   $cqrk= qr/(\++)/  ;$sqrm{$cqrk}=$S;$sqra{$cqrk}=$B;$cqrk= qr/([']+)/ ;$sqrm{$cqrk}=$G;$sqra{$cqrk}=$o;
    $cqrk= qr/([()]+)/;$sqrm{$cqrk}=$o;$sqra{$cqrk}=$Y;$cqrk= qr/([,]+)/ ;$sqrm{$cqrk}=$o;$sqra{$cqrk}=$B;
-   $cqrk= qr/([{}]+)/;$sqrm{$cqrk}=$R;$sqra{$cqrk}=$G;$cqrk= qr/([\/]+)/;$sqrm{$cqrk}=$Y;$sqra{$cqrk}=$R;
+   $cqrk= qr/([{}]+)/;$sqrm{$cqrk}=$U;$sqra{$cqrk}=$G;$cqrk= qr/([\/]+)/;$sqrm{$cqrk}=$Y;$sqra{$cqrk}=$S;
 # b64 WiDth basedon OriginalLengthOfSize calQl8ion BlO (filesize length needz Xtra checkz4preceding 'pip' vs. 'root' diff width groupz skewing alignment)
 sub b6wd{#y($olos)=@_;return($olos);} # doing nothing here would just leave b64 width wastefully same as orig b10 until c8 makez it easier to recolumnize
          my $olos=shift(@_);my $wchc=0;$wchc=shift(@_) if(@_);$olos-- if($olos);$olos*=3.25;$olos/=6.0;#$olos+=$grpx if($wchc);
@@ -54,7 +54,7 @@ sub b6wd{#y($olos)=@_;return($olos);} # doing nothing here would just leave b64 
 sub spcs{my($ssfn,$sbdr,$q)=@_; # hndl SPeCial sepR8or char Substitutnz,SpecialSubsts on FileNames,SuBDiRectory,&& IdNtifId Qolr paramz
   for(keys(%sqrm)){             if($q ne $sqrm{$_}){$ssfn=~ s/$_/$sqrm{$_}$1$q/g;}else{$ssfn=~ s/$_/$sqra{$_}$1$q/g;}} # all bAsic sepR8orz shud s//$colr$1$q/g
   $cqrk= qr/(-+)([^>])/        ;if($q ne $Y       ){$ssfn=~ s/$cqrk/$Y$1$q$2/g  ;}else{$ssfn=~ s/$cqrk/$G$1$q$2/g  ;}  #   Xcept - dash (non-symlink) &&
-  $cqrk= qr/(^|[^\e])([\[\]]+)/;if($q ne $P       ){$ssfn=~ s/$cqrk/$1$P$2$q/g  ;}else{$ssfn=~ s/$cqrk/$1$R$2$q/g  ;} return($ssfn);} #   [] square bracketz
+  $cqrk= qr/(^|[^\e])([\[\]]+)/;if($q ne $P       ){$ssfn=~ s/$cqrk/$1$P$2$q/g  ;}else{$ssfn=~ s/$cqrk/$1$S$2$q/g  ;} return($ssfn);} #   [] square bracketz
 if   (exists(    $ENV{'LS_COLORS'}) && length($ENV{'LS_COLORS'})){ # does the NvIronmNt EvN have NEthing2match fIle typez or XtNsionz against?
   for( split(':',$ENV{'LS_COLORS'})){ my  ($g2re,$fx2e);
     if   (/^([^=]*[\*\+\?]+[^=]+)=(.+)$/){($g2re,$fx2e)=($1,"$SKp8$2m");$g2re=~s/([.])/\\$1/g;$g2re=~s/\?/./g;$g2re=~s/(\*|\+)/.$1/g;
@@ -71,7 +71,7 @@ for(@ldat){if(($prmz,$blsz,$pwnr,$grup,$fsiz,$d8tz,$fnam)= /^(\S{10})(\s+\d+)(\s
     $b6fs=b8c(   ' 'x(b6wd(length($fsiz),1)-length($b6fs)).$b6fs);my($n,$s); # renAmd $k $kolumn_x 2 $n 4 Named colr 2!collide with a8's eScapd dark blacK colr
     $cmpr=$prmz;$cmpr=~s/^(d)/$B$1/;my $d8im=Octology::d8->new('lsft'=>$d8tz);my $ttim=$d8im->colr('a').$k;
     $cmpr=~s/^(-)/$W$1/; $ttim.='0'x(8-int((length($ttim)-7)/8)) if(length($ttim)<(8*8 +7));
-    $cmpr=~s/rwx/${R}7/g;$cmpr=~s/-wx/${SKpb}3/g;$cmpr=~s/rws/${Y}7/g;$cmpr=~s/rwt/${m}7/g;
+    $cmpr=~s/rwx/${S}7/g;$cmpr=~s/-wx/${SKpb}3/g;$cmpr=~s/rws/${Y}7/g;$cmpr=~s/rwt/${m}7/g;
     $cmpr=~s/rw-/${C}6/g;$cmpr=~s/-w-/${O}2/g; # stil wnt2Uz ~/.lsrc 2mABNcod prmz asumng PXX(400,644,755..[azB64?]) 2OvrId fIl colrz by .X10shn
     $cmpr=~s/r-x/${M}5/g;$cmpr=~s/--x/${g}1/g;$cmpr=~s/r-s/${O}5/g;$cmpr=~s/r-t/${m}5/g; #Uzr&&Grp?
     $cmpr=~s/r--/${B}4/g;$cmpr=~s/---/${G}0/g; #?prmzRblszYpwnrCgrupPfsiz?dayt?tymeGtz0n?fnam..
@@ -82,37 +82,37 @@ for(@ldat){if(($prmz,$blsz,$pwnr,$grup,$fsiz,$d8tz,$fnam)= /^(\S{10})(\s+\d+)(\s
        # might want to try to strip out idnt && epch so l8r spcs won't recolr their /[-._]/, then after add back before uldt.xtn
        $tnam=~ s/-([-0-9A-Z_]{11})-([0-9A-Z._]{6})-(NA_|[0-9A-Z._][1-9A-C][1-9A-V])\./-$idnt-$epch-$uld8./i; # l8r colr uldr && mAB Artist columz sepR8ly2
        # since most of my typical audio filez are colrd $Y by .ls?rc && vidz are $P, subfield colrz here mostly avoid those unless they're mainly in the othr
-       $tnam=~ s/(^|\D)([12]\d{3})(\D)/$1$R$2$3/g; # basic detection of potential Year from previous or this millennium, wrapped by non-digitz
-       my $jfnz=join('|',@Monz);$tnam=~s/($jfnz)/$o$1/gi;$jfnz=join('|',@Dayz);$tnam=~ s/($jfnz)/$Y$1/gi;$tnam=~ s/(Years?)/$R$1/gi; # cud du @Mon|Day too
+       $tnam=~ s/(^|\D)([12]\d{3})(\D)/$1$Y$2$3/g; # basic detection of potential Year from previous or this millennium, wrapped by non-digitz
+       my $jfnz=join('|',@Monz);$tnam=~s/($jfnz)/$o$1/gi;$jfnz=join('|',@Dayz);$tnam=~ s/($jfnz)/$Y$1/gi;$tnam=~ s/(Years?)/$Y$1/gi; # cud du @Mon|Day too
                                 $tnam=~s/_(Sept(ember)?)_/_$o$1_/gi; # this is for Month of an 8-Bit Gaming Mix video && maybe should add other full names
        $tnam=~ s/(Drumstep         )/$M$1/gix;#$tnam=~s/((Day|Week)s?)/$Y$1/gix;$tnam=~ s/(hours?     )/$C$1/gix; # colr top8 genrez from .Hrc Monstercat map
        $tnam=~ s/(Halo[^A-Z]       )/$W$1/gix;#$tnam=~ s/(min(ute)?s?)/$B$1/gix;$tnam=~ s/(sec(ond)?s?)/$M$1/gix; # colr typical d8 fieldXpanded nAmz(mvd BlO)
        $tnam=~ s/(Glitc[H_]+op     )/$K$1/gix;$tnam=~ s/((Re)?[fm]ix)/$o$1/gix;$tnam=~ s/(\d+[-_]?)(hrs?)/$o$1$C$2/gx; # mAB colr whole uldr colum sepR8ly?
-       $tnam=~ s/(Dr?ubstyle?      )/$B$1/gix;$tnam=~ s/(100)(BPM)_/$Y$1_$R$2/gix;$tnam=~ s/(1080p?)/$R$1/gx; # shud tID this allup lIk %sqrm in spcs()
+       $tnam=~ s/(Dr?ubstyle?      )/$B$1/gix;$tnam=~ s/(100)(BPM)_/$Y$1_$S$2/gix;$tnam=~ s/(1080p?)/$U$1/gx; # shud tID this allup lIk %sqrm in spcs()
        $tnam=~ s/(Hardstyle?       )/$B$1/gix;$tnam=~ s/([-_])([Aa]nd)([A-Z])/"$1$c" . lc($2) .   "$z$3"/gex; # try to get PegNerdz&&Grabbitz2colr similR
       #$tnam=~ s/(Dr?ubstep        )/$P$1/gix; # mAB do all this aftr XtNshn Dtectd2rEstor aftr Ech&&alsO prOvId altern8z 4wN bAse colr sAme as Dfalt map
-       $tnam=~ s/(Dr?ubstep        )/$C$1/gix;$tnam=~ s/(Liquid     )/$B$1/gix;$tnam=~ s/(F(ea)?t\.)/$B$1/gix;$tnam=~s/(Mr)(Suicide)/$C$1$r$2/gix;
+       $tnam=~ s/(Dr?ubstep        )/$C$1/gix;$tnam=~ s/(Liquid     )/$B$1/gix;$tnam=~ s/(F(ea)?t\.)/$B$1/gix;$tnam=~s/(Mr)(Suicide)/$C$1$N$2/gix;
        $tnam=~ s/(Chillout         )/$B$1/gix;$tnam=~ s/(Deep_*House?)/$c$1/gi;$tnam=~ s/(Ambient  )/$g$1/gix;$tnam=~s/(Dope(st)?|Ganja)(  [^A-Z])/$z$1$3/gix;
        $tnam=~ s/(Chil+step        )/$w$1/gix;$tnam=~ s/(Vocal      )/$z$1/gix;$tnam=~ s/(Free     )/$B$1/gix;$tnam=~s/(Drop|Blue|Water)(s?[^A-Z])/$B$1$2/gix;
-       $tnam=~ s/(Unbelievable     )/$c$1/gix;$tnam=~ s/(PlayList   )/$B$1/gix;$tnam=~ s/(New      )/$C$1/gix;$tnam=~s/(Sun |Burn|Fire )(  [^A-Z])/$R$1$2/gix;
-       $tnam=~ s/(Download         )/$g$1/gix;$tnam=~ s/(Mega       )/$R$1/gix;$tnam=~ s/([^m])(Bass   )/$1$R$2/gix;$tnam=~ s/(Vol(ume)?)/$M$1/gix;
-       $tnam=~ s/(Kisses           )/$r$1/gix;$tnam=~ s/(Nova       )/$o$1/gix;$tnam=~ s/(Explode      )/$r$1/gix  ;$tnam=~ s/(  _(N)_)/_$z$2_/gix;
-       $tnam=~ s/(Fonik            )/$G$1/gix;$tnam=~ s/(Best       )/$B$1/gix;$tnam=~ s/(Obsidia)([-_]|Media)/$G$1$R$2/gix; $tnam=~ s/(CoMa)/$M$1/gx;
-       $tnam=~ s/(Knife   [-_]?)(Party[^A-Z])/$o$1$o$2/gix;$tnam=~ s/(Aero[-_]?)(Chord[^A-Z])/$R$1$R$2/gix;$tnam=~ s/(DotEXE)/$Y$1/gix; # Dtect more Rtistz
-       $tnam=~ s/(Rich  [-_]?)(Edwards[^A-Z])/$r$1$r$2/gix;$tnam=~ s/(Tut [-_]?)(Tut[-_]?)(Child[^A-Z])/$B$1$B$2$B$3/gix;$tnam=~ s/(StdHouse)/$o$1/gi;
+       $tnam=~ s/(Unbelievable     )/$c$1/gix;$tnam=~ s/(PlayList   )/$B$1/gix;$tnam=~ s/(New      )/$C$1/gix;$tnam=~s/(Sun |Burn|Fire )(  [^A-Z])/$o$1$2/gix;
+       $tnam=~ s/(Download         )/$g$1/gix;$tnam=~ s/(Mega       )/$O$1/gix;$tnam=~ s/([^m])(Bass   )/$1$S$2/gix;$tnam=~ s/(Vol(ume)?)/$M$1/gix;
+       $tnam=~ s/(Kisses           )/$G$1/gix;$tnam=~ s/(Nova       )/$o$1/gix;$tnam=~ s/(Explode      )/$o$1/gix  ;$tnam=~ s/(  _(N)_)/_$z$2_/gix;
+       $tnam=~ s/(Fonik            )/$G$1/gix;$tnam=~ s/(Best       )/$B$1/gix;$tnam=~ s/(Obsidia)([-_]|Media)/$G$1$N$2/gix; $tnam=~ s/(CoMa)/$M$1/gx;
+       $tnam=~ s/(Knife   [-_]?)(Party[^A-Z])/$o$1$o$2/gix;$tnam=~ s/(Aero[-_]?)(Chord[^A-Z])/$U$1$U$2/gix;$tnam=~ s/(DotEXE)/$Y$1/gix; # Dtect more Rtistz
+       $tnam=~ s/(Rich  [-_]?)(Edwards[^A-Z])/$s$1$s$2/gix;$tnam=~ s/(Tut [-_]?)(Tut[-_]?)(Child[^A-Z])/$B$1$B$2$B$3/gix;$tnam=~ s/(StdHouse)/$o$1/gi;
        $tnam=~ s/(Pegboard[-_]?)(Nerds[^A-Z])/$G$1$G$2/gix;$tnam=~ s/((Re)?uploads)/$g$1/gix;$tnam=~ s/(Red)/$R$1/g;$tnam=~ s/(^|[-_.])(to [-_.])/$1$g$2/gix;
        $tnam=~ s/(Tristam          )/$C$1/gix;$tnam=~ s/(Muzzy      )/$R$1/gix;$tnam=~ s/(Nero)/$M$1/gix;           $tnam=~ s/(^|[-_.])(in [-_.])/$1$g$2/gix;
        $tnam=~ s/(Vexare           )/$C$1/gix;$tnam=~ s/(Vital      )/$z$1/gix;$tnam=~ s/([-_])(and[-_])/$1$c$2/gix;$tnam=~ s/(^|[-_.])(of [-_.])/$1$c$2/gix;
        $tnam=~ s/(SirensCeol       )/$B$1/gix;$tnam=~ s/(Skrillex )/$C$1/gix;$tnam=~ s/(^|[-_])(the[-_])/$1$w$2/gix;$tnam=~ s/(^|[-_.])(by [-_.])/$1$w$2/gix;
-       $tnam=~ s/(Tucsky           )/$o$1/gix;$tnam=~ s/(Phantom    )/$R$1/gix;$tnam=~ s/(Reality      )/$B$1/gix  ;$tnam=~ s/(UKF)/$G$1/gx;
+       $tnam=~ s/(Tucsky           )/$o$1/gix;$tnam=~ s/(Phantom    )/$S$1/gix;$tnam=~ s/(Reality      )/$B$1/gix  ;$tnam=~ s/(UKF)/$G$1/gx;
        $tnam=~ s/(Trap    (Bass)?  )/$K$1/gix;$tnam=~ s/(Monstercat )/$B$1/gix;$tnam=~ s/(Release      )/$w$1/gix  ;$tnam=~ s/(VIP)/$M$1/gx;
        $tnam=~ s/(Drum[-_]?Bass|DnB)/$R$1/gix;$tnam=~ s/(Official   )/$Y$1/gix;$tnam=~ s/([-_])( EP[-_])/$1$K$2/gx ;$tnam=~ s/(^|[-_.])( 1 [-_.])/$1$o$2/gix;
-       $tnam=~ s/(Tran+ce          )/$C$1/gix;$tnam=~ s/(Lyrics     )/$R$1/gix;$tnam=~ s/([-_])( HQ[-_])/$1$R$2/gx ;$tnam=~ s/(^|[-_.])( 2 [-_.])/$1$R$2/gix;
+       $tnam=~ s/(Tran+ce          )/$C$1/gix;$tnam=~ s/(Lyrics     )/$U$1/gix;$tnam=~ s/([-_])( HQ[-_])/$1$S$2/gx ;$tnam=~ s/(^|[-_.])( 2 [-_.])/$1$y$2/gix;
        $tnam=~ s/(Electro_?H(ouse)?)/$Y$1/gix;$tnam=~ s/(EDM        )/$c$1/gx ;$tnam=~ s/([-_])( HD[-_])/$1$W$2/gx ;$tnam=~ s/(^|[-_.])( 3 [-_.])/$1$B$2/gix;
        $tnam=~ s/(Progr(es)?si?ve?_?H(ouse)?)/$o$1/gix;                        $tnam=~ s/([-_])( DJ[-_])/$1$G$2/gx ;$tnam=~ s/(^|[-_.])(One[-_.])/$1$o$2/gix;
-       $tnam=~ s/(^|[-_.])((Moon)?Lights?)([-_.])/$1$Y$2$4/gi;      $tnam=~ s/(^|[-_.])(Three[-_.])/$1$B$2/gi ;$tnam=~ s/(^|[-_.])((Tw|Du)o[-_.])/$1$R$2/gi;
-       $tnam=~ s/(Aphenda          )/$G$1/gix;$tnam=~s/(Pulse)(8)(Music)/$M$1$G$2$r$3/gix;$tnam=~ s/(Music)(HD)(TV)/$O$1$W$2$c$3/gix;
-       $tnam=~ s/(Rachael)(Lust)/$Y$1$r$2/gix;$tnam=~s/(Pulse)(8)/$B$1$G$2/gix;}
+       $tnam=~ s/(^|[-_.])((Moon)?Lights?)([-_.])/$1$Y$2$4/gi;      $tnam=~ s/(^|[-_.])(Three[-_.])/$1$B$2/gi ;$tnam=~ s/(^|[-_.])((Tw|Du)o[-_.])/$1$y$2/gi;
+       $tnam=~ s/(Aphenda          )/$G$1/gix;$tnam=~s/(Pulse)(8)(Music)/$M$1$G$2$U$3/gix;$tnam=~ s/(Music)(HD)(TV)/$O$1$W$2$c$3/gix;
+       $tnam=~ s/(Rachael)(Lust)/$Y$1$S$2/gix;$tnam=~s/(Pulse)(8)/$B$1$G$2/gix;}
     my     ($bgin,$fsnm);my($bpth,$fpth)=('','');my $fnxf=0; # ck common typz                    # abov IsOl8z sepR8 first few digitz  # FileNameXistsFlag
     if    (($bgin,$fsnm)= $fnam=~/^(.+?)\s->\s(.+)$/    ){if($sllw <= length($bgin)){$sllw=length($bgin);}else{$bgin.=' 'x ($sllw - length($bgin));}
                                                           my $fstn  = $fsnm; # sepR8 FileSystemTargetName before substituting pathz out
@@ -146,7 +146,7 @@ for(@ldat){if(($prmz,$blsz,$pwnr,$grup,$fsiz,$d8tz,$fnam)= /^(\S{10})(\s+\d+)(\s
     my $tryc=0;my $trym=8; # Try Count && Max since need some additional fall-through mechanism so all these while loops below don't hang
     while($tnam=~/^.*-(\e\[([\d;]*)m)*(((19|20)\d\d)([01]\d)([0123]\d))               (\e\[([\d;]*)m)*([-.*\/]|\d|$)/x                      && # YYYYMMDD
       $tryc++ < $trym){my($dYMD,$dd8Y,$dd8M,$dd8D)=($3,$4,$6,$7); # this one needs to go before d8 since these match both
-      if($fnam=~/-$dYMD([-._*\/]|\d|$)/){                    my $etim="$R$dd8Y$o$dd8M$Y$dd8D";$tnam=~s/$dYMD/$etim/;}}               $tryc=0;
+      if($fnam=~/-$dYMD([-._*\/]|\d|$)/){                    my $etim="$Y$dd8Y$G$dd8M$T$dd8D";$tnam=~s/$dYMD/$etim/;}}               $tryc=0;
     while($tnam=~/^.*-(\e\[([\d;]*)m)*([0-9A-D][1-9A-C][1-9A-V][0-9A-N][0-9A-Za-x]{3})                        (\e\[([\d;]*)m)*([-.*\/]|$)/x &&
       $tryc++ < $trym){my $ptvr=$3;my $ptim=undef;
       if($fnam=~/-$ptvr([-._*\/]|$)/){$ptim=    Time::PT->new($ptvr);my $stim=$ptim->color('ansi');$stim.=$M.'0' if($ptvr=~/0$/);
@@ -162,17 +162,17 @@ for(@ldat){if(($prmz,$blsz,$pwnr,$grup,$fsiz,$d8tz,$fnam)= /^(\S{10})(\s+\d+)(\s
       $tnam =~s/  -((?:\e\[[\d;]*m)*)(n)(o)(w)((?:\e\[[\d;]*m)*)([-.*\/]|$)/-$M$2$M$3$M$4$secz$eecz$ettc/x;} # match 'now' diff from just YMD
     while($tnam=~/^.*-(   \e\[([\d;]*)m)*([0-9A-Za-z._])([0-9A-Za-q])([0-9A-Za-z._])(\e\[([\d;]*)m)*([-.*\/]|$)/x                           && # d8-4m@ YMD
       $tryc++ < $trym){my(      $d8vY,$d8vM,$d8vD)=($3,$4,$5   ); # rmvd d8-obj crE8ion&&leng valid8n4quik d8-4m@ -YMD-
-      $tnam =~s/  -((?:\e\[ [\d;]* m)*)($d8vY)($d8vM)($d8vD)/-$R$2$o$3$Y$4$1/x;}                                                     $tryc=0;
+      $tnam =~s/  -((?:\e\[ [\d;]* m)*)($d8vY)($d8vM)($d8vD)/-$Y$2$G$3$T$4$1/x;}                                                     $tryc=0;
     while($tnam=~/^.*-(\e\[([\d;]*)m)*(($jfdz)?($jfmz)([0123]?\d)(st|nd|rd|th)?((19|20)\d\d))(\e\[([\d;]*)m)*([-.*\/]|$)/                   && # DowMonDthYear
       $tryc++ < $trym){my($dMDY,$dd8Y,$dd8M,$dd8D)=($3,$8,$5,$6);my($dd8w,$dd8s)=('','');$dd8w=$4 if(defined($4));$dd8s=$7 if(defined($7));
-      if($fnam=~/-$dMDY([-._*\/]|$)/){                        my $etim="$Y$dd8w$o$dd8M$Y$dd8D$B$dd8s$R$dd8Y";$tnam=~s/$dMDY/$etim/;}} $tryc=0;
+      if($fnam=~/-$dMDY([-._*\/]|$)/){                        my $etim="$T$dd8w$G$dd8M$T$dd8D$B$dd8s$Y$dd8Y";$tnam=~s/$dMDY/$etim/;}} $tryc=0;
     while($tnam=~/^.*-(\e\[([\d;]*)m)*(        ($jfmz|___(\e\[[\d;]*m)*      ) ((19|20)\d\d))(\e\[([\d;]*)m)*([-.*\/]|$)/x                  && #    -MonYear-
       $tryc++ < $trym){my($dM_Y,$dd8Y,$dd8M      )=($3,$6,$4   );my $d_MY=sS($dM_Y);$dM_Y=~s/\e\[([\d;]+)/\e\\[$1/g; # no Day V8z needed            -MMMYYYY-
-      if($fnam=~/-$d_MY([-._*\/]|$)/){                        my $etim=       "$o$dd8M" .          "$R$dd8Y";$tnam=~s/$dM_Y/$etim/;}} $tryc=0; # or -___YYYY-
+      if($fnam=~/-$d_MY([-._*\/]|$)/){                        my $etim=       "$G$dd8M" .          "$Y$dd8Y";$tnam=~s/$dM_Y/$etim/;}} $tryc=0; # or -___YYYY-
     while($tnam=~/^.*-(\e\[(?:[\d;]*)m)*(([01]?\d)(\e\[(?:[\d;]*)m)*-(\e\[(?:[\d;]*)m)*([0123]?\d)(\e\[(?:[\d;]*)m)*
                      -(\e\[(?:[\d;]*)m)*((19|20)\d\d))(\e\[(?:[\d;]*)m)*([-._*\/]|\d|$)/x                                                   && #  MM-DD-YYYY
       $tryc++ < $trym){my($dMDY,$dd8Y,$dd8M,$dd8D)=($2,$9,$3,$6);$dMDY=~s/(\[)/\\$1/g;
-      if($tnam=~ /   -(\e\[(  [\d;]*)m)*$dMDY         (\e\[(  [\d;]*)m)*([-._*\/]|\d|$)/x){my $etim="$o$dd8M$B-$Y$dd8D$B-$R$dd8Y";$tnam=~s/$dMDY/$etim/;}}
+      if($tnam=~ /   -(\e\[(  [\d;]*)m)*$dMDY         (\e\[(  [\d;]*)m)*([-._*\/]|\d|$)/x){my $etim="$G$dd8M$B-$T$dd8D$B-$Y$dd8Y";$tnam=~s/$dMDY/$etim/;}}
     my $fnmz= 'Pip   |Heather    |Danny  |Maga   |Bill   |John  |Tom  |Pat     |DanNGin|Marty |Mike    '; # capitalIzd proper First && Last names 2 hIlIt
     my $lnmz= 'Stuart|Gozdzialski|Wyckoff|Mathews|Carlson|Womble|Jadin|Steffens|Lennon |Arnold|Lopresti'; # mABBlOshudBcAsinsNsitiv&&match no prECdngSKp cOdez?
     if($tnam=~ /(\e\[[\d;]*m)+(([0-9A-Za-z._,]+|\e\[[\d;]*m)+)(Vs)(([0-9A-Za-z._,]+|\e\[[\d;]*m)+)/x){ # try2m@ch any Wht_Vs_blK wo Xplicit nmz
@@ -187,13 +187,13 @@ for(@ldat){if(($prmz,$blsz,$pwnr,$grup,$fsiz,$d8tz,$fnam)= /^(\S{10})(\s+\d+)(\s
     $tnam=~ s/(B(lood|omb) )/$r$1$n/gix;$tnam=~ s/(Veela  )/$z$1$n/gx ;$tnam=~ s/(B)(u)(l)(l)(s)(e)(y)(e)   /$W$1$R$2$W$3$R$4$W$5$R$6$W$7$R$8$n/gix;
     $tnam=~ s/(Black |Night)/$K$1$n/gix;$tnam=~ s/(Snakes?)/$Y$1$n/gix;$tnam=~ s/(M)(u)(s)(h)(r)(o)(o)(m)   /$R$1$o$2$Y$3$G$4$C$5$B$6$M$7$P$8$n/gix;
     $tnam=~ s/(Blast |White)/$W$1$n/gix;$tnam=~ s/(First  )/$G$1$n/gix;#tnam=~ s/(C)(o)(l)(o)(r)            /$R$1$Y$2$G$3$B$4$M$5$n/gix; # alIn $[1-9] columnz
-                                                                       $tnam=~ s/(C)(o)(l)(o)(r)            /$C$1$o$2$M$3$o$4$R$5$n/gix; # new CoMoR order
+                                                                       $tnam=~ s/(C)(o)(l)(o)(r)            /$C$1$o$2$M$3$o$4$S$5$n/gix; # new CoMoS order
     $tnam=~ s/(Bone  |Death)/$w$1$n/gix;$tnam=~ s/(Album  )/$o$1$n/gix;$tnam=~ s/(N)(u)(c)(l)(e)(a)(r)   /$SKpb$1$K$2$w$3$r$4$R$5$o$6$Y$7$n/gix;
     $tnam=~ s/(Snow  |Sheep)/$W$1$n/gix;$tnam=~ s/(Ravens?)/$K$1$n/gix;$tnam=~ s/(C)(h)(r)(i)(s)(t)(m)(a)(s)/$R$1$G$2$R$3$G$4$R$5$G$6$R$7$G$8$R$9$n/gix;
     $tnam=~ s/(Gold        )/$o$1$n/gix;$tnam=~ s/(Gecko  )/$G$1$n/gix;$tnam=~ s/(DanykaNadeau)/$G$1$n/gix ;$tnam=~ s/(Au5)/$o$1$n/gx;
     my $H=S('H');                       $tnam=~ s/(Money  )/$z$1$n/gix;$tnam=~ s/(Stars?)([^t])/$Y$1$n$2/gi; # rEdu yLO stRz *<^>* but!amidst comon "Start"
     $tnam=~ s/(Pink  |Skin )/$H$1$n/gix; # tSt 1st XtNded colr H 4 Hotpink wich shud Bcome visible as distinct from standRd 16 ANSI colrz within 8trm&&GnomTerm
-    $tnam=~ s/(Inferno     )/$o$1$n/gix;$tnam=~ s/(Green  )/$G$1$n/gix;$tnam=~ s/(Love   )/$r$1$n/gix;
+    $tnam=~ s/(Inferno     )/$o$1$n/gix;$tnam=~ s/(Green  )/$G$1$n/gix;$tnam=~ s/(Love   )/$S$1$n/gix;
     #tnam=~ s/(Cerulean    )/$B$1$n/gix; # sO fR abov early field colr8ion Only done for U2b fIlez but thEse l8r 1z R dun for all (&& mAB thOse shudBdn hEre?)
     $tnam=~ s/(HTTP      S?)/$B$1$n/gix; # try to catch&&colr at least start of URLs embedded within filenames
     $tnam=~ s/((Day|Week)[sz]?)/$Y$1$n/gix;$tnam=~ s/(hour[sz]?)/$C$1$n/gix; # colr typical d8 fieldXpanded nAmz (wich were orig abov ...

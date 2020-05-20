@@ -1,4 +1,4 @@
-# F1IL2Vhp:~/.Hrc crE8d by PipStuart <Pip@CPAN.Org> as 8sh"H"rEsourcz2configUr core fEld abbreV8ion,type colr8ion,&& aliasing; $VERSION='0.0';$d8VS='K36L1Als';
+# F1IL2Vhp:~/.Hrc crE8d by PipStuart <Pip@CPAN.Org> as 8sh"H"rEsourcz2configUr core fEld abbreV8ion,type colr8ion,&& aliasing; $VERSION='0.0';$d8VS='K5IMMUOl';
 c           ->   C        => cOL  =>   cOL8 =>    cOLR =>   cOLM; # core c8 lAyrz;c:* sepR8lAyrzBlODterminprEfixz4allfolOing middle-map columnz th@ R!Dfalt F:;
 c:tFbSGRsgr ->   WGBZOMzom=> tXt  Fgc  bGC  Slc  Gfc  Rnd  sLC  gFC  rND ; # c8 objectz shudBgoverned by thEs lAyrz from hEr proly thru a8:new
 c:tFbSGRsgr               => tEXt Fclr bCLR Slct Grfc Rndt sLCT gRFC rNDT => tEXt, Forecolr, bACKCOLR, Select, Graphic, Rendition, sELECT, gRAPHIC, rENDITION;
@@ -17,7 +17,7 @@ p:wWst      ->   YROG     => rws  rwt  r-s  r-t; # maybe a8:new should load this
 # might add ftst flag ls meaningz && $_,$?,$@,$|,$\,$/ perl refz && /\\.*/ regex&&string escape meanings from HTTP://PerlDoc.Perl.Org/perlrebackslash.html
 #b:r might make new composite b8 object of couplet for reso like 1280x800 => K0-CW && 3840x2160 => y0-Xm and another for Range span maskz or some better 8-name
 #b:c        ->   ROYGCBMP => RVc; # maybe base b64 map here could propag8 2all else?  # b8 reverse Colr loop        # SGR map below cud pOtNtially
-d:YMDzhmsf  ->   ROYGCBMP => Year, Month, Day, zONE,   hOUR, mINUTE, sECOND, fRAME;   # d8 forward colr fieldz      #   DfIn g: && r: 2Ballnew
+d:YMDzhmsf  ->   YGTBUDSN => Year, Month, Day, zONE,   hOUR, mINUTE, sECOND, fRAME;   # d8 forward colr fieldz      #   DfIn g: && r: 2Ballnew  #YoGoTBUDSNow?;
 # contXtAKAnAmspAc: frAmez Ech Xpansion implicitly,thN nAming anXpansion set can furthr IdNtify && can autOrecognIz consistNt&&max lengthz && other Useful tr8z
 _           ->   G        => _tu  =>   _transl8ion_and_utlz; # thEsRglObal col8lAyrtransl8ionz wher8trm 1z shud alwAyzBdone&& x 1z shudB Xtra4 xterm (GnomTerm)
 _:8x        ->   YM       => 8trm, xterm; # these are basically transl8ion type categoriez or profilez for specialized alter8ion within Dtectabl NvIronmNtz

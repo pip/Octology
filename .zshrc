@@ -692,6 +692,7 @@ s(){  ifil="$1";synl='';if [[ "$#" -gt 1 && "$2" != "" && -e "$2" ]]; then synl=
   else                                ec " source-highlight -f esc --style-file=~/.shl.style          -i $ifil;"; srchl          -i $ifil; fi; }
 alias      S8='   shl8'; # my primitive c8:SourceHighLight8 Utl to hopefully eventually approach functional parity with source-highlight before surpassing it
 alias     sho='cd ~/gfx/sho;shot -u'; # change to typical local Octology screenshot directory && take a shot of the focUsed window (no border) in 3 seconds
+alias     br0='byzanz-record -a -c -d 122 -w 1920 -h 1080 Octl-ScrnCap-1080p-`d8`.webm &'; # Byz-Rec up-left monitor 0 zer0 for 2mins2secs to non-ogg .ogv 4m@;
 alias    resp='   reso spec'; # joining like =~ /^respect/ shortcut to list resolution specific8ionz  # abovUsed2B S=shl,s=shl8 but S repurposed in a8 4 SKpz
 alias    resg='   res  GA  ';alias res=' reso';alias re='res'; # basic a8.pm resolution HD limit8ion (not to get confused with resoLVE or resoURCE varE8ionz)
 alias    resh='   re   HD  ';alias resa='re Andr';re16='re 16/9';alias re64='re 64/27';alias res9='re /9';alias rest='reso;res9;resp;re16;resg;resh;resa;re64';
@@ -1189,7 +1190,7 @@ if       [[ "${(L)HHst}" ==  oni    ]] ||
  if      [[ "$DISPLAY"               !=  "" ]] &&    # K3EMJoke:nEded 2 tSt for X.Org DISPLAY so that full-screen console linux TERM doesn't print warnings;
          [[ `xrg|g -c ' connected '` == "4" ]]; then # K3EM2x2H:crE8d new condition for grid monitor layout that tries2auto-detect connected count from `xrg`;
   alias gtI='gt --geometry=+1620-$HHt0  --hide-menubar --window-with-profile=d8k8                               --role=d8k8                                 &;
-        gtss;wmc -r :ACTIVE: -T d8k8                ;wmc -r :ACTIVE: -b add,skip_pager,sticky;
+   gtss;gtss;wmc -r :ACTIVE: -T d8k8                ;wmc -r :ACTIVE: -b add,skip_pager,sticky;
              wmc -r :ACTIVE: -e  10,1620,1008,300,72;wmc -r :ACTIVE: -b add,skip_taskbar,below;
              gt --geometry=+1620-0      --hide-menubar --window-with-profile=d8k8                               --role=d8k8                                 &;
         gtss;wmc -r :ACTIVE: -T d8k8                ;wmc -r :ACTIVE: -b add,skip_pager,sticky;

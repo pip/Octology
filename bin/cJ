@@ -57,16 +57,22 @@ while(  <$dFho>){
     if(/USA/){ $usln.="$r deth$w:$R$pcnt$M%$r rcvd$w:$G$rpct$M%$W;\n";}  # mAB also compare dethz 2 recoverdz apart from each as percentz of confirmdz;
     else{print $out8  "$r deth$w:$R$pcnt$M%$r rcvd$w:$G$rpct$M%$W;\n";}} # unfortun8ly the current individual USt8 d8a filez don't track recoverdz yet;
 } close ($dFho )            or die $!;print $out8 $usln;
-open (my $dSho, '<', $d8aS) or die $!;binmode $dSho,':encoding(UTF-8)';
-while(  <$dSho>){
+open (my $dSho, '<', $d8aS) or die $!;binmode $dSho,':encoding(UTF-8)';my $dayc;my $dayd;my $actv;
+while(  <$dSho>){my $rcvd=$dayc=$dayd=$actv=0;my $rpct=0.0;my $spcl='';
   my $cfmd=  1;my $dlbf=0;if((@ARGV && $ARGV[0] =~ /^-*a(ll)?$/i && /^\e\[\d+m║\e\[\d+m ([1-9] |[1-4]\d|5[01]) /) || /(To|Wis|Pe|uri|Cal|Yo|Mich)/){
     $dlbf =  1;s/\e\[32m/$c/;s/\e\[92m/$g/;s/\e\[91m/$r/;s/([NS])(o[ru]th )(Carolina\e\[\d+m) */$1.$3   /;s/District Of Columbia\e\[\d+m */WashingtonDC /;}
-  my $dthz=  0;chomp;s/                //;s/(.*│)/$1              /;s/(║.*)(║)/$1                            $2/;s/^(.+)(  )(.+?Active)/$1$3$2/;
-  my $pcnt=0.0;print $out8 $_ if($dlbf);
-  if($dlbf){s/\s+//g;s/║//g;s/│/ /g;my @fldz=split(/\s/,$_); #print $out8 "fldz:@fldz;\n";
-    $cfmd=sS('--',$fldz[2]);$cfmd=~ s/(^--|,)//g;
-    $dthz=sS('--',$fldz[4]);$dthz=~ s/(^--|,)//g;
-    $pcnt=100.0 * $dthz / $cfmd if($cfmd && $cfmd=~ /^\d+$/ && $dthz=~ /^\d+$/);$pcnt=substr("$pcnt",0,4);
-    print $out8 "$r deth$w:$R$pcnt$M%$W;" if($pcnt ne '0');say $out8 '';
+  my $dthz=  0;chomp;s/                //;s/(.*│)/$1              /;s/(║.*)(║)/$1                            $2/;
+  my $pcnt=0.0;      s/^(.+)(  )(.+?Active)/$1$3$2/;
+                     s/             (.+?Active  )/ Recovered │ $1/;
+  if($dlbf){$spcl=$_;s/\s+//g;s/║//g;s/│/ /g;my @fldz=split(/\s/,$_); #print $out8 "fldz:@fldz;\n";
+    $cfmd=sS('--',$fldz[2]);$cfmd=~ s/(^--|,)//g;if(length($fldz[3])){$dayc=$fldz[3];}else{$dayc="$B~$W?";} # nEd2lOd yStrdA 4 difng dAzcnfrmd&&dAzdethz
+    $dthz=sS('--',$fldz[4]);$dthz=~ s/(^--|,)//g;if(length($fldz[5])){$dayd=$fldz[5];}else{$dayd="$B~$W?";}$actv=$fldz[6] if(length($fldz[6]));
+    if                              ($cfmd && $cfmd=~ /^\d+$/){
+      if                            (         $dthz=~ /^\d+$/){
+        $pcnt=sprintf("%4.2f",100.0 * $dthz / $cfmd);$pcnt=substr("$pcnt",0,4);
+        if($actv=~ /^[0-9,]$/){$actv=~ s/,//g;$rcvd=$cfmd-$dthz-$actv ;$spcl=~ s/          (.*?$actv)/$rcvd │ $1/;}}
+      if                            (         $rcvd=~ /^\d+$/){
+        $rpct=sprintf("%5.2f",100.0 * $rcvd / $cfmd);$rpct=substr("$rpct",0,5);}}
+    print $out8 $spcl;print $out8 "$r deth$w:$R$pcnt$M%$r rcvd$w:$G$rpct$M%$W;" if($pcnt);say $out8 '';
 }} close($dSho )            or die $!;
 close   ($out8 )            or die "Can't close duplic8 STDOUT handle: $!";
