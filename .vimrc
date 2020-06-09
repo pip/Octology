@@ -10,7 +10,7 @@ se   nocp                     " nocompatible    - add  Vim NhancmNtz without str
 se    enc=utf-8               "     encoding    - was already loading utf-8 from current $LANG locale, && might need termencoding also if they diverge
 "se  fenc=utf-8               " fileencoding    - might needed this if ever trying LightLine + ALE with special chars from HTTPS://StaticO.GitHub.IO/vim3.html
 let  g:VERSION='0.0'
-let     g:d8VS='K5KM2Get'     " d8VersionString - l8st significant upd8 to whole file was then
+let     g:d8VS='K5QMMo2Y'     " d8VersionString - l8st significant upd8 to whole file was then
 let     g:vid8=system('d8')   " VimInit d8      - save d8 when this Vim session first stRtz up to use as dRk pRt at Nd of STatusLine just before bright upd8 d8
 let     g:cucf=1              " CUrsorColumFlag - flag to toggle whether :se cuc should be used (since dflt of it on gets slow whN lots of syntx hili on scrn)
 let     g:culb=1              " CUrsorLineBold  - flag to toggle whether :se cul below should use highlight with bold across whole line (dbl-mapd2Ctrl-L&&hls)
@@ -183,11 +183,11 @@ hi        CursorColumn term=bold cterm=bold ctermbg=DarkBlue
 if   has('statusline')        " custom statusline display detail: (tweakd colrz 2 look betr without rEverse); 2du:stuD vim 256colr spex for hopfuly boldng all
   hi      StatusLine   term=bold cterm=bold ctermbg=DarkBlue ctermfg=White
   hi      StatusLineNC term=bold cterm=NONE ctermbg=Black    ctermfg=DarkGrey
-  hi      User1                  cterm=NONE ctermbg=DarkBlue ctermfg=DarkYellow
+  hi      User1                  cterm=NONE ctermbg=DarkBlue ctermfg=Yellow
   hi      User2                  cterm=NONE ctermbg=DarkBlue ctermfg=Green
   hi      User3                  cterm=NONE ctermbg=DarkBlue ctermfg=Cyan
   hi      User4                  cterm=NONE ctermbg=DarkBlue ctermfg=Blue
-  hi      User5                  cterm=NONE ctermbg=DarkBlue ctermfg=Yellow
+  hi      User5                  cterm=NONE ctermbg=DarkBlue ctermfg=White
   hi      User6                  cterm=NONE ctermbg=DarkBlue ctermfg=DarkGreen
   hi      User7                  cterm=NONE ctermbg=DarkBlue ctermfg=DarkCyan
   hi      User8                  cterm=NONE ctermbg=DarkBlue ctermfg=Blue

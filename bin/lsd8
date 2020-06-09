@@ -99,7 +99,7 @@ for(@ldat){if(($prmz,$blsz,$pwnr,$grup,$fsiz,$d8tz,$fnam)= /^(\S{10})(\s+\d+)(\s
        $tnam=~ s/(Kisses           )/$G$1/gix;$tnam=~ s/(Nova       )/$o$1/gix;$tnam=~ s/(Explode      )/$o$1/gix  ;$tnam=~ s/(  _(N)_)/_$z$2_/gix;
        $tnam=~ s/(Fonik            )/$G$1/gix;$tnam=~ s/(Best       )/$B$1/gix;$tnam=~ s/(Obsidia)([-_]|Media)/$G$1$N$2/gix; $tnam=~ s/(CoMa)/$M$1/gx;
        $tnam=~ s/(Knife   [-_]?)(Party[^A-Z])/$o$1$o$2/gix;$tnam=~ s/(Aero[-_]?)(Chord[^A-Z])/$U$1$U$2/gix;$tnam=~ s/(DotEXE)/$Y$1/gix; # Dtect more Rtistz
-       $tnam=~ s/(Rich  [-_]?)(Edwards[^A-Z])/$s$1$s$2/gix;$tnam=~ s/(Tut [-_]?)(Tut[-_]?)(Child[^A-Z])/$B$1$B$2$B$3/gix;$tnam=~ s/(StdHouse)/$o$1/gi;
+       $tnam=~ s/(Rich  [-_]?)(Edwards[^A-Z])/$S$1$S$2/gix;$tnam=~ s/(Tut [-_]?)(Tut[-_]?)(Child[^A-Z])/$B$1$B$2$B$3/gix;$tnam=~ s/(StdHouse)/$o$1/gi;
        $tnam=~ s/(Pegboard[-_]?)(Nerds[^A-Z])/$G$1$G$2/gix;$tnam=~ s/((Re)?uploads)/$g$1/gix;$tnam=~ s/(Red)/$R$1/g;$tnam=~ s/(^|[-_.])(to [-_.])/$1$g$2/gix;
        $tnam=~ s/(Tristam          )/$C$1/gix;$tnam=~ s/(Muzzy      )/$R$1/gix;$tnam=~ s/(Nero)/$M$1/gix;           $tnam=~ s/(^|[-_.])(in [-_.])/$1$g$2/gix;
        $tnam=~ s/(Vexare           )/$C$1/gix;$tnam=~ s/(Vital      )/$z$1/gix;$tnam=~ s/([-_])(and[-_])/$1$c$2/gix;$tnam=~ s/(^|[-_.])(of [-_.])/$1$c$2/gix;

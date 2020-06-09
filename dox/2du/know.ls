@@ -1,5 +1,5 @@
 # HBQLISTV:know.ls crE8d by PipStuart <Pip@CPAN.Org> to duplic8 Dr. Jordan B. Peterson's Quora.Com answer of "40 most valuable things everyone should know";
-# $VERSION='0.0';$d8VS='J7CM5non'; # While this document origin8d around (&& still mainly intends to focus on) Dr. Peterson's knowledge, many others fE8ure;
+# $VERSION='0.0';$d8VS='K5RMCUTE'; # While this document origin8d around (&& still mainly intends to focus on) Dr. Peterson's knowledge, many others fE8ure;
 # 2du:start chronicling Dr. Peterson's many topical videos with new section for post-title subject summaries or explor8ion;
 0) Tell the truth.                 
 1) Do not do things that you h8.
@@ -617,3 +617,5 @@ K5EM3cmd:HTTPS://YouTu.be/AtkeTtgbqW4 "Is Christian Nationalism Un-American?" # 
   could be contrasted against HTTPS://En.WikiPedia.Org/wiki/Seven_Laws_of_Noah 0.Don't worship idols 1.Don't curse God 2.Establish just courts 3.Don't murder
   4.Don't commit adultery, bestiality, or fornic8ion 5.Don't steal 6.Don't eat flesh from a living animal && the 10Commandments might be decently interpreted
   at HTTPS://Dummies.Com/religion/christianity/catholicism/catholicism-and-the-ten-commandments for topical reference purposes, to compare with other ethics;
+K5RMCUTE:HTTPS://YouTu.be/6nQvVpLnZCw "Mythic Patterns in Mario Games Pt. 1: The Arcade Origins" # K5J:18m33s of Jonathan Pageau's gr8 Donkey Kong symbolism;
+K62M5hot:HTTPS://YouTu.be/A_a6RjR_AHY "If Man Obeyed God" # CCL:6m45s of DarkMatter2525 anim8ing a most hilarious, ridiculous, hot crE8ion-account criticism;

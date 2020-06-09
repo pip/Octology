@@ -31,7 +31,7 @@
 #   rural / suburban / inner-city dwellers, multi-gener8ional homes, household incomes, heights, w8s, BMI's, asthmatics, allergies, apneas, etc. to account 4;
 # K5GMHELP:It just occured to me that death percentage would be potentially much more in4m8ive if it included how many nEded unavailable ventil8ors 2 survive;
 use strict;use warnings;use utf8;use v5.10;use Octology::a8;use Octology::d8;use Text::CSV; # should also track how many tSts done&&ventil8ors Ech county has;
-my $Vers='0.0';my $d8VS='K5EM8WhN';   my %sd8a;my %flcb=('C'=> 3,'D'=> 4,'R'=> 5,'A'=>-1);my %flcm=('C'=>$c,'D'=>$R,'R'=>$g,'A'=>$K);
+my $Vers='0.0';my $d8VS='K5MM8Eat';   my %sd8a;my %flcb=('C'=> 3,'D'=> 4,'R'=> 5,'A'=>-1);my %flcm=('C'=>$c,'D'=>$Y,'R'=>$g,'A'=>$K);
 my @flck=qw(Confirmed Deaths Recovered Active);my %flcn=('C'=> 7,'D'=> 8,'R'=> 9,'A'=>10); # USt8 AbbreV8ionz below R not even used anymore,sO scrap l8r;
 my      $covp=$ENV{'HOME'};$covp.="/dvl/c8/CJ";my $whg8=`which git`;`mkdir -p $covp` unless(-d $covp     );      chdir($covp     ); # mk sure CSV d8a gotN
 if(!-d "$covp/COVID-19" && length($whg8)){system("  git clone https://github.com/CSSEGISandData/COVID-19");}else{chdir("COVID-19");system("  git pull");}
@@ -323,7 +323,7 @@ for  my $dfil (<"$csvp/*.csv">){my $d8nw=Octology::d8->new();my $ndfl=$dfil;$ndf
       elsif ($aftm){
         $sd8a{ $dfd8}{$rowd->[2]}{$frst} =0 unless(exists($sd8a{$dfd8}) && exists($sd8a{$dfd8}{$rowd->[2]}) && exists($sd8a{$dfd8}{$rowd->[2]}{$frst}));
         $sd8a{ $dfd8}{$rowd->[2]}{$frst}+=$rowd->[$flcn{$frst}] if($rowd->[$flcn{$frst}]=~ /^\d+$/);}} # might want 2 just ck for non-zero nstd of \d+ ?
-  } if($got1){my $dfcd=$dfd8;$dfcd=~ s/(\d\d)-(\d\d)-(\d\d\d\d)/$o$1$W-$Y$2$W-$R$3$z/;$clrd{$dfd8}=$dfcd; # D8a-File-Colored-D8
+  } if($got1){my $dfcd=$dfd8;$dfcd=~ s/(\d\d)-(\d\d)-(\d\d\d\d)/$G$1$W-$T$2$W-$Y$3$z/;$clrd{$dfd8}=$dfcd; # D8a-File-Colored-D8; K5MM8Eat:fixd d8 colrz 2;
     for     my $st8n (sort {$sd8a{$dfd8}{$a}{'C'} <=> $sd8a{$dfd8}{$b}{'C'}} keys(%{$sd8a{$dfd8}})){
       printf   $out8 "$z %s$B %-49s$z " ,$dfcd,$st8n; # mAB custom-colr St8z && countriez here l8r too? orig had $st8a{$st8n} just4USt8z but nEd mor;
       for   my $fldk (@flck){my $frst=substr($fldk,0,1); # below skip Recovered && Active if blank fieldz or only added zeroez && still empty, sinc !in d8a
