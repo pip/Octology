@@ -1,8 +1,8 @@
 # 819J2Pip:~/.lsrc by PipStuart <Pip@CPAN.Org> izAheavily modifId`dircolors`cfgfIl(Orig ~/.DIR_COLORS)wich setz $ENV{'LS_COLORS'} 4GNU`ls --color`&&`lsd8`;
-# $VERSION='0.0';$d8VS='K5JMNEXT'; 2du:mkUtl2gNr8 altrn8 versN of .lsrc th@purposfuly varEz colrz of comon typz,try addng bakgrnd colrz2all dFz&&tst,
+# $VERSION='0.0';$d8VS='K69MJk59'; 2du:mkUtl2gNr8 altrn8 versN of .lsrc th@purposfuly varEz colrz of comon typz,try addng bakgrnd colrz2all dFz&&tst,
 #   add interaction2 lsd8 wN it Dtectz unrecognIzd XtNshNz offerng c@egOrEz with comon colr2autOm@ically insrt chOsN NtrEz,mAB add *-* NtrEz from .zshrc hEr &&
 #   mk lrc gNr8 either,confirm all accept f0nt cOdez wi dash accepting Dfalt foreground then redo NORMAL FILE LINK as no fi ln,mAB 8trm added2TERM ls someday;
-# This file was gNR8d by `lrc` Vers:0.0 d8VS:K5JMI88P on d8:K5JMNFRZ. Please edit ~/.lrc and run `lrc` then `src` to see changes;
+# This file was gNR8d by `lrc` Vers:0.0 d8VS:K5JMI88P on d8:K69MJeOS. Please edit ~/.lrc and run `lrc` then `src` to see changes;
 # nOt:I'm pretty sure itz Chunz(!Takiz)`ls`&&`dircolors`th@cud!hndl (MULTI)?HARDLINK sO rEmMbr2kEp th@ lIn cmNtd out4her(&&kEptstng2cnfirm);
 # Keywords COLOR,OPTIONS,&& EIGHTBIT (honored by Slackware dircolors) are recognized but ignored; TERMz && XtNsionz syncd2 2016;
 # Copyright(C) 1996-2016 FreeSoftwareFound8ion,Inc. Copying and distribution of this file, with or without modific8ion, are permitted provided the
@@ -114,9 +114,9 @@ CHR                       01;38;5;011;48;5;000 #cd= 01;33;40    01;33;40  CHaRac
 .2dy                      01;38;5;011      # .2dy (new ToDyn..amix?)
 .2do                      01;38;5;003      # .2do (old ToDo.ls fylz)
 .2de                      01;38;5;011      # .2de (old 2 Dey -> 2dA)
-.4mtd                     01;38;5;003      # H9NMDKNO:~/.irssi/ custom-aligned cfg && Dflt.theme filez (trying lower-case 'o' for non-2pal8 orange here);
+.4mtd                     01;38;5;172      # H9NMDKNO:~/.irssi/ custom-aligned cfg && Dflt.theme filez (trying lower-case 'o' for non-2pal8 orange here);
 .am                       01;38;5;011      # AutoMake script (like my git cloned source repo for xdg-desktop-portal-gtk, wich stil didn't rid syslog erorz)
-.ac                       01;38;5;003      # AutoConf script (or maybe an AnonymousCoward on SlashDot or something)
+.ac                       01;38;5;172      # AutoConf script (or maybe an AnonymousCoward on SlashDot or something)
 .cfg                      01;38;5;011
 .cnf                      01;38;5;011
 .config                   01;38;5;011
@@ -178,7 +178,7 @@ CHR                       01;38;5;011;48;5;000 #cd= 01;33;40    01;33;40  CHaRac
 .dL0g                     01;38;5;011
 .L0g                      01;38;5;011
 .dlg                      01;38;5;011      # ~/mvz/lnf8 MooVeeZ linez script dialog fated
-.pot                      01;38;5;005      # ~/dvl/g8/jack/xdp/po/xdg-desktop-portal.pot maybe Portal or Project Object Texts with MIME-Type && msgid strings
+.pot                      01;38;5;092      # ~/dvl/g8/jack/xdp/po/xdg-desktop-portal.pot maybe Portal or Project Object Texts with MIME-Type && msgid strings
 .Po                       01;38;5;011      # ~/dvl/g8/jack/xdp/src/.deps/xdg_desktop_portal-xdg-desktop-portal.Po maybe Pre-configured Object component lists
 .IZ                       01;38;5;011      # NumbFuck/curs/ncurses/README.IZ
 .key                      01;38;5;011
@@ -201,7 +201,7 @@ CHR                       01;38;5;011;48;5;000 #cd= 01;33;40    01;33;40  CHaRac
 .ogg                      01;38;5;011
 .flac                     01;38;5;011
 .flf                      01;38;5;011      # FigLet Font (with fonts mainly being stored in /usr/share/figlet/ or my ~/dvl/f8/flet/*fonts*/ directories)
-.tlf                      01;38;5;003      # ToiLet Font (with fonts mainly being stored in /usr/share/figlet/ or my ~/dvl/f8/flet/*fonts*/ directories)
+.tlf                      01;38;5;172      # ToiLet Font (with fonts mainly being stored in /usr/share/figlet/ or my ~/dvl/f8/flet/*fonts*/ directories)
 .plf                      01;38;5;011
 .pal8                     01;38;5;011      # f80p pal8
 .pipe                     01;38;5;011      # ~/.cache/corona/ fIlz th@ wer sAvd by rEdIrectng STDOUT from`curl https://corona-stats.online`wi subdirz||?pRamz
@@ -240,8 +240,8 @@ CHR                       01;38;5;011;48;5;000 #cd= 01;33;40    01;33;40  CHaRac
 .trx                      01;38;5;003
 .xib                      01;38;5;015      # Qt5/qtbase/mkspecs     files
 .xcscheme                 01;38;5;011      # Qt5/qtbase/mkspecs     files
-.xcsettings               01;38;5;003      # Qt5/qtbase/mkspecs     files
-.plist                    01;38;5;005      # Qt5/qtbase/mkspecs     files
+.xcsettings               01;38;5;172      # Qt5/qtbase/mkspecs     files
+.plist                    01;38;5;092      # Qt5/qtbase/mkspecs     files
 .soundlist                01;38;5;011
 .modules                  01;38;5;011
 .torrent                  01;38;5;011
@@ -257,7 +257,7 @@ CHR                       01;38;5;011;48;5;000 #cd= 01;33;40    01;33;40  CHaRac
 .apt                      01;38;5;003      # such apt && Perl -MCPAN -e "install ..." && Force are likely lists of commands needed for those package systems
 .pmei                     01;38;5;014
 .pmfi                     01;38;5;013
-.qdocconf                 01;38;5;003      # Qt5/qtbase/qmake/doc   files
+.qdocconf                 01;38;5;172      # Qt5/qtbase/qmake/doc   files
 .qdoc                     01;38;5;011      # Qt5/qtbase/src/testlib files
 .mm                       01;38;5;009      # Qt5/qtbase/src/testlib files
 .btree                    01;38;5;011
@@ -517,10 +517,10 @@ CHR                       01;38;5;011;48;5;000 #cd= 01;33;40    01;33;40  CHaRac
 .TOML                     01;38;5;013      # apparently some other Tcl Object Markup Language or something with rustup for cargo build inside nushell release
 .toml                     01;38;5;013
 .qml                      01;38;5;013      # Qt Mark-up Language            filz
-.qmlc                     01;38;5;005      # Qt Mark-up Language Cache      filz (from ~/.cache/krita/qmlcache/)
-.jsc                      01;38;5;003      # Qt JavaScript?      Cache      filz (from ~/.cache/krita/qmlcache/)
+.qmlc                     01;38;5;092      # Qt Mark-up Language Cache      filz (from ~/.cache/krita/qmlcache/)
+.jsc                      01;38;5;172      # Qt JavaScript?      Cache      filz (from ~/.cache/krita/qmlcache/)
 .json                     01;38;5;013
-.xml~                     01;38;5;005
+.xml~                     01;38;5;092
 .xml                      01;38;5;013
 .XML                      01;38;5;013
 .xhtml                    01;38;5;013
@@ -557,7 +557,7 @@ CHR                       01;38;5;011;48;5;000 #cd= 01;33;40    01;33;40  CHaRac
 .inf                      01;38;5;013
 .img                      01;38;5;013      # putr-NetRtrG8Wz FirmWare IMaGe
 .vti                      01;38;5;013      # VTK Image d8a from ParaView by KitwareInc. to visualize large d8a sets
-.ass                      01;38;5;003      # Audio Sub-title System for like video overlay text for closed-captioning    (from ~/.config/smplayer/*)
+.ass                      01;38;5;172      # Audio Sub-title System for like video overlay text for closed-captioning    (from ~/.config/smplayer/*)
 .m3u8                     01;38;5;013      # basic   playlist muz filz in a .txt simpleformat (presumably a UTF-8 variant from ~/.config/smplayer/*)
 .m3u                      01;38;5;005      # basic   playlist muz filz in a .txt simpleformat (proly just listing filepath&&name/line,wi no metad8a)
 .pls                      01;38;5;013      #         PlayLiSt muz filz in a .ini style format
@@ -650,7 +650,7 @@ CHR                       01;38;5;011;48;5;000 #cd= 01;33;40    01;33;40  CHaRac
 .nb                       01;38;5;014      # Mathematica   SrcCod(!IDa wer"NB"iz from,but myn iz:maze-gen4img-Hernan.Moraldo.Com.Ar_mazegen_code...)
 .n                        01;38;5;014      # NetwydAzMblur NAsm.Us
 .m                        01;38;5;014
-.h                        01;38;5;003      # C/C++  Header filz were Cyan like main source files but plain ls was getting some kind of orange, so setting it
+.h                        01;38;5;172      # C/C++  Header filz were Cyan like main source files but plain ls was getting some kind of orange, so setting it
 .c                        01;38;5;014      # C      source filz
 .cc                       01;38;5;014
 .cli                      01;38;5;014      # ~/dox/putr/Oni/Oni-systemd-services file logging root commands used to manage running services
@@ -910,7 +910,7 @@ CHR                       01;38;5;011;48;5;000 #cd= 01;33;40    01;33;40  CHaRac
 .cpio                     01;38;5;009
 .crate                    01;38;5;009      # ~/.cargo/registry/cache/github.com-*/ filz which contain managed packagez for the Rust language
 .crash                    01;38;5;009      # /var/crash/ files
-.upload                   01;38;5;005      # /var/crash/ files
+.upload                   01;38;5;092      # /var/crash/ files
 .uploaded                 01;38;5;002      # /var/crash/ files (possibly containing the IPv6 address to which a crash-log has finished uploading to?)
 .driver                   01;38;5;009      # /etc/libibverbs.d files
 .d                        01;38;5;009
@@ -1065,7 +1065,7 @@ CHR                       01;38;5;011;48;5;000 #cd= 01;33;40    01;33;40  CHaRac
 .xpdfimport               01;38;5;164      # /etc/apparmor.d files
 .pdf                      01;38;5;013      # AdObE           P0rtable DocUmNt 4m@
 .ps                       01;38;5;013      # AdObE           P0st Scrpt
-.pp                       01;38;5;005      # ~/dvl/m8/sudo/sudo    file which is probably rel8d to Providing Privileges, but might stand for Packages etc.
+.pp                       01;38;5;092      # ~/dvl/m8/sudo/sudo    file which is probably rel8d to Providing Privileges, but might stand for Packages etc.
 .ppt                      01;38;5;164      # P0wRlS PtlS M$  PrEzNtAshN4m@ =(
 .pptx                     01;38;5;013
 .xls                      01;38;5;164
@@ -1128,9 +1128,9 @@ CHR                       01;38;5;011;48;5;000 #cd= 01;33;40    01;33;40  CHaRac
 .features                 01;38;5;015      # /etc/apparmor.d/cache
 .service                  01;38;5;014      # /etc/avahi/services && /(etc|lib)/systemd/system/
 .socket                   01;38;5;009      #                        /(etc|lib)/systemd/system/
-.target                   01;38;5;003      #                        /(etc|lib)/systemd/system/
+.target                   01;38;5;172      #                        /(etc|lib)/systemd/system/
 .timer                    01;38;5;011      #                        /(etc|lib)/systemd/system/
-.path                     01;38;5;005      #                        /(etc|lib)/systemd/system/
+.path                     01;38;5;092      #                        /(etc|lib)/systemd/system/
 .upgrade                  01;38;5;013      # /etc/compizconfig/upgrades
 .seat                     01;38;5;006      # /etc/ConsoleKit/seats.d
 .acm                      01;38;5;013      # /etc/console-setup
@@ -1379,11 +1379,11 @@ CHR                       01;38;5;011;48;5;000 #cd= 01;33;40    01;33;40  CHaRac
 .translations             01;38;5;011      # ~/dvl/c8/trm8/roxterm/README l10n file (from HTTP://ROXTerm.SF.Net custom instl sinc not pkgd 4 Ubu NEmor)
 .install                  01;38;5;009      # ~/dvl/c8/trm8/roxterm/debian/roxterm(-data)? filz
 .postinst                 01;38;5;013      #               roxterm debian
-.prerm                    01;38;5;005      #               roxterm debian
+.prerm                    01;38;5;092      #               roxterm debian
 .lintian-overrides        01;38;5;001      #               roxterm debian source          file
-.po                       01;38;5;005      #               roxterm/po(4a)?/           POT filz
+.po                       01;38;5;092      #               roxterm/po(4a)?/           POT filz
 .its                      01;38;5;013      #               roxterm/poxml/appdata          file
-.tracepoints              01;38;5;003      # Qt5/qtbase/src/widgets       filz
+.tracepoints              01;38;5;172      # Qt5/qtbase/src/widgets       filz
 .dynlist                  01;38;5;011      # Qt5/qtbase/src/widgets       filz
 .header                   01;38;5;002      # Qt5/qtbase/util/glgen        filz
 .footer                   01;38;5;001      # Qt5/qtbase/util/glgen        filz
@@ -1392,12 +1392,12 @@ CHR                       01;38;5;011;48;5;000 #cd= 01;33;40    01;33;40  CHaRac
 .MIT                      01;38;5;013
 .COMM                     01;38;5;008
 .FDL                      01;38;5;007
-.GPL                      01;38;5;003
+.GPL                      01;38;5;172
 .GPL2                     01;38;5;011
 .GPLv2                    01;38;5;011
 .GPL3                     01;38;5;015
 .GPLv3                    01;38;5;015
-.LGPL                     01;38;5;003
+.LGPL                     01;38;5;172
 .LGPL3                    01;38;5;015
 .LGPLv3                   01;38;5;015
 .LGPLv21                  01;38;5;011
@@ -1407,7 +1407,7 @@ CHR                       01;38;5;011;48;5;000 #cd= 01;33;40    01;33;40  CHaRac
 .GPL3-EXCEPT              01;38;5;014
 .GPL-EXCEPT               01;38;5;014
 .2CEping                  01;38;5;009      # Qt5/qtbase/dist/changes-*    files
-.3CEconan                 01;38;5;003
+.3CEconan                 01;38;5;172
 .3CEkicker                01;38;5;011
 .3CEsweetandsour          01;38;5;010
 .3CE-tp1                  01;38;5;014
@@ -1470,7 +1470,7 @@ CHR                       01;38;5;011;48;5;000 #cd= 01;33;40    01;33;40  CHaRac
 .D.0                      01;38;5;002
 .E.0                      01;38;5;004
 .F.0                      01;38;5;000
-.asc                      01;38;5;003      # I74M2ASC:added entries for PGP-signed 7776 pswd list from Diceware && stored in ~/dox/dvl/ref/ plain ASCII text;
+.asc                      01;38;5;172      # I74M2ASC:added entries for PGP-signed 7776 pswd list from Diceware && stored in ~/dox/dvl/ref/ plain ASCII text;
 .ascii                    01;38;5;003
 .ansi                     01;38;5;011
 .ANSI.00.30               01;38;5;000      # \.ANSI\.[01]\.3[0-7] dotted color-code extensions
@@ -1514,25 +1514,25 @@ CHR                       01;38;5;011;48;5;000 #cd= 01;33;40    01;33;40  CHaRac
 .10.0-20-generic          01;38;5;002
 .10.0-19-generic          01;38;5;006
 .13.0-45-generic          01;38;5;009;48;5;004 # for slightly old 4.13.* kernelz before upgrading to Ubuntu 18.04 on Chun 1st, then maybe sync R2K, then upgr KRA
-.13.0-43-generic          01;38;5;003;48;5;004
+.13.0-43-generic          01;38;5;172;48;5;004
 .13.0-41-generic          01;38;5;011;48;5;004
 .13.0-39-generic          01;38;5;010;48;5;004
 .13.0-37-generic          01;38;5;014;48;5;004
 .13.0-36-generic          01;38;5;012;48;5;004
 .13.0-32-generic          01;38;5;013;48;5;004
-.13.0-31-generic          01;38;5;005;48;5;004
+.13.0-31-generic          01;38;5;092;48;5;004
 .13.0-25-generic          01;38;5;009;48;5;004
-.13.0-21-generic          01;38;5;003;48;5;004
+.13.0-21-generic          01;38;5;172;48;5;004
 .13.0-17-generic          01;38;5;011;48;5;004
 .13.0-16-generic          01;38;5;010;48;5;004 # BlO /boot Linux kernelz versionz  # F1ELGnuL:ROYG CBMP => 1;3[1o32 645p]; mAB EvN2LE gNR8 upd8z from `ls /boot`;
 .15.0-45-generic          01;38;5;009;48;5;002
-.15.0-44-generic          01;38;5;003;48;5;002
+.15.0-44-generic          01;38;5;172;48;5;002
 .15.0-43-generic          01;38;5;011;48;5;002
 .15.0-42-generic          01;38;5;010;48;5;002
 .15.0-39-generic          01;38;5;014;48;5;002
 .15.0-38-generic          01;38;5;012;48;5;002
 .15.0-36-generic          01;38;5;013;48;5;002
-.15.0-34-generic          01;38;5;005;48;5;002
+.15.0-34-generic          01;38;5;092;48;5;002
 .15.0-33-generic          01;38;5;001;48;5;002
 .15.0-32-generic          01;38;5;003;48;5;002
 .15.0-30-generic          01;38;5;184;48;5;002
@@ -1541,29 +1541,31 @@ CHR                       01;38;5;011;48;5;000 #cd= 01;33;40    01;33;40  CHaRac
 .15.0-23-generic          01;38;5;004;48;5;002
 .15.0-22-generic          01;38;5;164;48;5;002 # BlO /boot Linux kernelz versionz 5.0.0 onward started with Ubuntu 19.04 Disco Dingo, so dark grn bkgr 4.15 abov
 .0.0-38-generic           01;38;5;009;48;5;006
-.0.0-36-generic           01;38;5;003;48;5;006
+.0.0-36-generic           01;38;5;172;48;5;006
 .0.0-32-generic           01;38;5;011;48;5;006
 .0.0-31-generic           01;38;5;010;48;5;006
 .0.0-29-generic           01;38;5;014;48;5;006
 .0.0-27-generic           01;38;5;012;48;5;006
 .0.0-25-generic           01;38;5;013;48;5;006
-.0.0-23-generic           01;38;5;005;48;5;006
+.0.0-23-generic           01;38;5;092;48;5;006
 .0.0-21-generic           01;38;5;009;48;5;006
-.0.0-20-generic           01;38;5;003;48;5;006
+.0.0-20-generic           01;38;5;172;48;5;006
 .0.0-19-generic           01;38;5;011;48;5;006
 .0.0-17-generic           01;38;5;010;48;5;006
 .0.0-16-generic           01;38;5;014;48;5;006
 .0.0-15-generic           01;38;5;012;48;5;006
 .0.0-13-generic           01;38;5;013;48;5;006 # BlO /boot Linux kernelz versionz 5.3.0 onward started with Ubuntu 19.10 Eoan Ermine, so dark cyan bkgr 5.0 abov
-.3.0-53-generic           01;38;5;003      # now omitting Red && purple 2 loop just middle 6 of the 8bow, since reddish may be a no-no in Heaven && sO Earth
-.3.0-51-generic           01;38;5;011
-.3.0-46-generic           01;38;5;010
-.3.0-45-generic           01;38;5;014
-.3.0-42-generic           01;38;5;012
-.3.0-40-generic           01;38;5;013
-.3.0-26-generic           01;38;5;003
-.3.0-24-generic           01;38;5;011
-.3.0-23-generic           01;38;5;010
+.3.0-59-generic           01;38;5;172      # now omitting Red && purple 2 loop just middle 6 of the 8bow, since reddish may be a no-no in Heaven && sO Earth
+.3.0-55-generic           01;38;5;011
+.3.0-53-generic           01;38;5;010
+.3.0-51-generic           01;38;5;014
+.3.0-46-generic           01;38;5;012
+.3.0-45-generic           01;38;5;013
+.3.0-42-generic           01;38;5;172
+.3.0-40-generic           01;38;5;011
+.3.0-26-generic           01;38;5;010
+.3.0-24-generic           01;38;5;014
+.3.0-23-generic           01;38;5;012
 #                                          # zsh wraps '%{' ANSI '%}' && vim User[1-9] colrz specify BlO ForeGroundz all on darkblue BakGrnd4statuslIn
 #     4NT    etfp   vim  c8  color              ANSI      HTML    Octology::d8::fldz (`d8`)
 #     0f     Fsy_   %*    W WhiteBright         \e[1;37m  FEFDFF            # vim %* resets statuslIn colr 2 Dfalt   White on darkblue so has max 10 colrz

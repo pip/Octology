@@ -43,7 +43,7 @@
 use strict;use warnings;use utf8;use v5.10;use Encode;
 use Octology::a8;#se Octology::c8;
 use Octology::b8;#se Octology::d8;use Time::PT;
-my $VERSION='0.0';my $d8VS='K3NMJmfg';my $name=$0;$name=~ s|^.*/||; # just accept $Auth as auto-imported from a8.pm && strip path off 2 get down to basename;
+my $VERSION='0.0';my $d8VS='K6AMGULL';my $name=$0;$name=~ s|^.*/||; # just accept $Auth as auto-imported from a8.pm && strip path off 2 get down to basename;
 open my $out8,'>&',STDOUT or die "Can't open  duplic8 STDOUT handle: $!"; binmode $out8,':encoding(UTF-8)'; # crE8 local duplic8 of global
 my $mcn6='__'; # MaxColumn iNdex b64; # considr b8 objX that can *= b10('11') or better another obj that each stringifies configurably,Dfalt b64 unpaded;
 my @ndxz=();my @ndxd=(); # b8 is where expand_spans should stringify to CSV b10 && compress_spans mIt prove useful,staying b10 optn;
@@ -80,7 +80,7 @@ for (@ARGV){$_=decode('UTF-8',$_); # assume pRamz R utf8 in nEd of Dcoding
         if($ztrm){print $out8 "\000";}else{print $out8 "\n";}
       } $plwb=$clib; }        close   $pfil        or die "Can't close parameter file:$_: $!";
   # proly alsO want 2 rEad STDIN whN $_ matches nO pRamz BlO or just -[bcf]=LS && is the last ARGV entry
-  }elsif($_ eq '-'|| !-t STDIN || (/^(-+[bcf]=?|[0-9A-Z._]+-[0-9A-Z._]+|[0-9A-Z._],)+$/i && $_ eq $ARGV[-1])){$plwb=0; # rEad STDIN aftr rEset PrevLineWasBlank
+  }elsif($_ eq '-'|| !-t STDIN || (/^(-+[bcf]=?|[0-9A-Z._]+-[0-9A-Z._:]+|[0-9A-Z._],)+$/i && $_ eq $ARGV[-1])){$plwb=0; # rEad STDIN aftr rEset PrevLnWasBlank
     for my $line (<STDIN>){my $dlin=decode('UTF-8',$line);$clib=1;$clib=0 if($dlin=~ /\S/);
       if  (!$cuto && ($dlin=~ /\S/  ||  !$squz || !$plwb) && $_ eq '-'){
         if(($nunb &&  $dlin=~ /\S/) || (!$nunb &&  $numb)){printf $out8 "%6d  ",++$lnum;}
@@ -88,10 +88,11 @@ for (@ARGV){$_=decode('UTF-8',$_); # assume pRamz R utf8 in nEd of Dcoding
         if( $shen ){  $dlin=~ s/\n/\$\n/gx;}
         if( $shnp ){  $dlin=~ s/\?\?Non-Printing\?\?/^_and_M-_not8ion/g;}
         print $out8   $dlin;
-      }elsif(!$cato && (!$slwd || $dlin=~ /$dlim/)){@ndxz=@ndxd=();$list=$_ if($_ ne '-' && /([0-9A-Z._]+-[0-9A-Z._]+|[0-9A-Z._],)/i && $_ eq $ARGV[-1]);
+      }elsif(!$cato && (!$slwd || $dlin=~ /$dlim/)){@ndxz=@ndxd=();$list=$_ if($_ ne '-' && /([0-9A-Z._]+-[0-9A-Z._:]+|[0-9A-Z._],)/i && $_ eq $ARGV[-1]);
         my $tlst=$list;@ndxd= split(/,/, $tlst); # expand $list by stripping off b64digitz+ -dash- b64digitz+,Xpanding rangez,stripping comma,rEPt
         for   my $norr(@ndxd){ # iNdexORRange
-          if    ($norr=~ /^([0-9A-Z._]+)-([0-9A-Z._]+)$/i){my $strt=b10($1);my $ennd=b10($2   ) ;
+          if    ($norr=~ /^([0-9A-Z._]+)-([0-9A-Z._:]+)$/i){my $strt=b10($1);my $dtwo=$2;my $ennd; # let colon for ennd fit a full term less top&&botm promptz
+            if  ($dtwo=~ /:/ && exists($ENV{'COLUMNS'}) && exists($ENV{'LINES'})){$ennd=$ENV{'COLUMNS'}*($ENV{'LINES'}-2)-1;}else{$ennd=b10($dtwo)-1;}
             if  ($strt<= $ennd){for my $ndxv($strt ..     $ennd        ){push(@ndxz,     $ndxv) ;}}
             else               {for(my $ndxv=$strt;$ndxv>=$ennd;$ndxv--){push(@ndxz,     $ndxv) ;}}
           }elsif($norr=~ /^([0-9A-Z._]+)$/i ){                           push(@ndxz, b10($norr)); }}

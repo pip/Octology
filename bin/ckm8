@@ -49,7 +49,7 @@
 #   Octo is 8base d8a applic8ions:V8 abbreV8ions,b8 nums,d8 stamps,f8 RU(Red)E4||2lern8bow?pal8NtrE RGB && f0nt -##-,c8 col8 scrn,r8 valU8,m8 rel8,l8 skedul8r?
 use strict;use warnings;use utf8;use v5.10;use Encode;
 use Octology::a8;#se Octology::c8;
-use Octology::b8;use Octology::d8;my $VERSION='0.0';my $d8VS='K49M121F';my $name=$0;$name =~ s/^.*\///;my $Dbug=0; # version,program name
+use Octology::b8;use Octology::d8;my $VERSION='0.0';my $d8VS='K6AMJOLT';my $name=$0;$name =~ s/^.*\///;my $Dbug=0; # version,program name
 open my $out8,'>&',STDOUT or die "Can't open  duplic8 STDOUT handle: $!";binmode $out8,':encoding(UTF-8)';select($out8);$|=1; # crE8 locl autoflush dup of glbl
 if(           @ARGV && $ARGV[0]=~ /^-*h/i){say $out8 " ckm8  - experimental   Curses and SDL Chess program  Vers:$VERSION  d8VS:$d8VS by Auth:$Auth
   <pW>v<pK>  sets roster tags for Players White and BlacK and for output filename where pW and pK are single-letter keys in the player registry hash (v optnal)
@@ -91,7 +91,7 @@ my $yscl = 1.0;my $hite = 50;if(exists($ENV{'LINES'}  )){$hite = $ENV{'LINES'}  
 # ($ucsf,$widt,$hite,$xscl,$yscl)=(0, 80, 25,  2,  2); # uncomment to    double pixel scale for  80x25 => 1280x800 similar to SVGA && below Mode13
 # ($ucsf,$widt,$hite,$xscl,$yscl)=(0, 40, 12,  4,  4); # uncomment to quadruple pixel scale for  40x12 => 1280x768 nd2allow 12.5 chars for last 32 pixel rows
 # ($ucsf,$widt,$hite,$xscl,$yscl)=(0,320,100,0.6,0.6); # uncomment to quadruple tXt dimNsnz for 320x100=> 1280x800 for super tiny text, BlO LoadedLogFileName
-my $qr2f ='qrobsit'.'ncwdaepf';my $bow8 =  'ROYGCBMp'; # reverse rel8ive Pc value order for l8r board compression, standard d8 8bow colrz with small p
+my $qr2f ='qrobsit'.'ncwdaepf';my $bow8 =  'YGTBUDSN'; # reverse rel8ive Pc value order for l8r board compression, standard d8 8bow colrz with small p
 my $pa2f =          'pawncdef';my $PA2F = uc($pa2f);my $sanf = 0;my $llfn; # init pawn&&othrPc lists4Ech plyr (shortcutz 4l8r Pc matching regexes),SqurAlgNFlag
 my $ri2f = "ribkqsto$pa2f"    ;my $RI2F = uc($ri2f);my $dttf = 1;my $gmof = 0;my $cbbf = 1; # DisplayTotlTimeFlag,   GaMe OverFlag,   ColorBackgroundzBoardFlag
 my $bbrd = 'wkwkwkwkkwkwkwkwwkwkwkwkkwkwkwkwwkwkwkwkkwkwkwkwwkwkwkwkkwkwkwkw';my $cpbf = 1; # Blank BoaRD with just background square colors, ColorPczBoardFlag
@@ -141,9 +141,9 @@ if(      2 <= @ARGV && $ARGV[0]=~ /^-*b/i){my $xcbd=decode('UTF-8',$ARGV[1]);if(
 #   biShop   ♗ Steven  Smith      pawn D    ♙ Dottie  Daring          pawn d    ♟ donna  decay        bishop   ♝ shawn   slayer
 #knighT      ♘ Timmy   Trotter    pawn E    ♙ Evan    EvergrEn        pawn e    ♟ exon   evil      knight      ♞ trina   trample
 #    rOok    ♖ Orville Olive      pawn F    ♙ Fran    Fire            pawn f    ♟ fiona  frost         rook    ♜ oden    operose
-my %pnam =('R'=>['     Rook  ','Rosie  ','Roost   '],
+my %pnam =('R'=>['     Rook  ','Rachel ','Roost   '],
            'I'=>['   knIght  ','Igor   ','Isle    '],
-           'B'=>['     Bishop','Brenda ','Brave   '],
+           'B'=>['     Bishop','BowBeau','Brave   '],
            'K'=>['     King  ','Kyle   ','Kind    '],
            'Q'=>['     Queen ','Quill  ','Quest   '],
            'S'=>['   biShop  ','Steven ','Smith   '],
@@ -153,8 +153,8 @@ my %pnam =('R'=>['     Rook  ','Rosie  ','Roost   '],
            'A'=>['    pAwn   ','Angie  ','Anvil   '],
            'W'=>['   paWn    ','William','Water   '],
            'N'=>['  pawN     ','Natalie','N8ure   '],
-           'C'=>['pawn C     ','Curtis ','Carver  '], # Dottie Divine demoted, Darjeeling (Darjee Darling) promoted, Tim now tipping more male again;
-           'D'=>['pawn D     ','Dottie ','Dream   '], # Dottie Dream promoted, Darjeeling (Darjee Darling)  demoted, but will stay as D in altern8Pc;
+           'C'=>['pawn C     ','Crew   ','Carver  '], # Dottie Divine demoted, Darjeeling (Darjee Darling) promoted, Tim now tipping more male again;
+           'D'=>['pawn D     ','Darjee ','Divine  '], # Dottie Dream  demoted, Darjeeling (Darjee Divine ) promoted, after staying as D in altern8Pc;
            'E'=>['pawn E     ','Evan   ','EvergrEn'],
            'F'=>['pawn F     ','Fran   ','Fire    '],
            'p'=>['     pawn  ','porter ','poison  '],
@@ -162,10 +162,10 @@ my %pnam =('R'=>['     Rook  ','Rosie  ','Roost   '],
            'w'=>['   pawn    ','wayne  ','waste   '],
            'n'=>['  pawn     ','norma  ','noose   '],
            'c'=>['pawn c     ','clint  ','caustic '],
-           'd'=>['pawn d     ','donna  ','decay   '],
+           'd'=>['pawn d     ','dottie ','drunk   '],
            'e'=>['pawn e     ','exon   ','evil    '],
            'f'=>['pawn f     ','fiona  ','frost   '],
-           'r'=>['     rook  ','rachel ','ruins   '],
+           'r'=>['     rook  ','rosann ','rosary  '],  # demoted Rosie to dark-side along with Maga Dot
            'i'=>['   knight  ','ivan   ','injure  '],
            'b'=>['     bishop','barbara','blood   '],
            'k'=>['     king  ','kilgore','kraven  '],
@@ -173,8 +173,11 @@ my %pnam =('R'=>['     Rook  ','Rosie  ','Roost   '],
            's'=>['   bishop  ','shawn  ','slayer  '],
            't'=>['knight     ','trina  ','trample '],
            'o'=>['   rook    ','oden   ','operose '],
-           'M'=>['     Master','Maggie ','Magnet  '],  # add othr custom charz wi maybe mapping of new types to existing to inherit icon && color maps
-           'm'=>['     master','mabel  ','malice  '],  #  ... or design8 new unique values in appropriate hashes
+           'h'=>['     host  ','Happy  ','Homeboy '],  # added my Dad && Angie's dog, along with my old sweetest cat
+           'H'=>['     Host  ','Hiro   ','Honor   '],
+           'G'=>['Grandmaster','Gerry  ','Gentle  '],  # add othr custom charz wi maybe mapping of new types to existing to inherit icon && color maps
+           'M'=>['     Master','Maggie ','Magnet  '],  #  ... or design8 new unique values in appropriate hashes
+           'm'=>['     master','mabel  ','malice  '],
            'H'=>['    cHancel','Henry  ','Honor   '],  # chancellor (R+I) from Capablanca on 10x8 && other variants
            'h'=>['  archbisho','ham    ','hater   ']); # archbishop (B+I)  ... but need better name letrz && more room 2 fit
    $n2tm{  'M'} ='B'; # for now add Master as alias to Bishop, even though it sounds like a cool name for a new Pc type that combines aspects of RIB by

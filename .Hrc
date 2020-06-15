@@ -1,4 +1,4 @@
-# F1IL2Vhp:~/.Hrc crE8d by PipStuart <Pip@CPAN.Org> as 8sh"H"rEsourcz2configUr core fEld abbreV8ion,type colr8ion,&& aliasing; $VERSION='0.0';$d8VS='K5IMMUOl';
+# F1IL2Vhp:~/.Hrc crE8d by PipStuart <Pip@CPAN.Org> as 8sh"H"rEsourcz2configUr core fEld abbreV8ion,type colr8ion,&& aliasing; $VERSION='0.0';$d8VS='K69MAgrp';
 c           ->   C        => cOL  =>   cOL8 =>    cOLR =>   cOLM; # core c8 lAyrz;c:* sepR8lAyrzBlODterminprEfixz4allfolOing middle-map columnz th@ R!Dfalt F:;
 c:tFbSGRsgr ->   WGBZOMzom=> tXt  Fgc  bGC  Slc  Gfc  Rnd  sLC  gFC  rND ; # c8 objectz shudBgoverned by thEs lAyrz from hEr proly thru a8:new
 c:tFbSGRsgr               => tEXt Fclr bCLR Slct Grfc Rndt sLCT gRFC rNDT => tEXt, Forecolr, bACKCOLR, Select, Graphic, Rendition, sELECT, gRAPHIC, rENDITION;
@@ -83,10 +83,10 @@ A:01234567  ->   01234567 =>   ogg123,     mpg321,     mpg123, ~/bin/3,       x4
 A:89ABCDEF  ->   89ABCDEF =>     viii,        c99,       asci,       b,    cls -x,      dfc,       Et,        f; #   wh8ch() output that calls which on each &&
 A:GHIJKLMN  ->   GHIJKLMN =>       zg,       htop,          i,       j,        k9,  ~/bin/L,        m,     calN; #   wh8() is similar but runs thru many more
 A:OPQRSTUV  ->   OPQRSTUV =>        o,       pal8,       calQ, rd*~/.e,   ~/bin/S,      tee,     U2b8, vim.tiny; #   useful aliasez && set shell functionz;
-A:WXYZabcd  ->   WXYZabcd =>  whereis, /usr/bin/X,          y,      zc, asciiview,    bak(),  ~/bin/c,    dic();
-A:efghijkl  ->   efghijkl =>   e $TTY,       find,        grp, history,      info,     jobs,     kill,     lsd8;
-A:mnopqrst  ->   mnopqrst =>    man(),       ncal,      orpie,     CCC,   ~/bin/q, shLbltin, *srchl(),     tmux;
-A:uvwxyz._  ->   uvwxyz._ =>   upd8(),       v8(), /usr/bin/w,    exit,      yelp,       zp, shLbltin, undFIned;
+A:WXYZabcd  ->   WXYZabcd =>  whereis, /usr/bin/X,          y,      zc, asciiview,    bak(),  ~/bin/c,    dic(); # note that several single-character commands
+A:efghijkl  ->   efghijkl =>   e $TTY,       find,     grep(), history,      info,     jobs,     kill,     lsd8; #   are now defined as shell functions rather
+A:mnopqrst  ->   mnopqrst =>    man(),       ncal,      orpie,     CCC,   ~/bin/q, shLbltin, *srchl(),     tmux; #   than mere aliases (design8d with standard
+A:uvwxyz._  ->   uvwxyz._ =>   upd8(),       v8(), /usr/bin/w,    exit,      yelp,       zp, shLbltin, undFIned; #   curved-bracket parentheses as trailings);
 S           ->   c        =>  Trp:Shl => Source-highlight; # .shl.style fieldz Fg foregrnd (lEving Octology core d8a dFz abov4Xtrnl prog shl,St8z&&gmz BlO)
 S:bcktusrS  ->   WKBCcMRR => bGCOLOR  , cONTEXT, kEYWORD, tYPE     , uSERTYPE, sTRING  , rEGEXP          , Specialchar; # mAB mk S: Dflt&&have / rEsume root?
 S:CnpyfBvF  ->   CMbGCGbB => Comment  , nUMBER , pREpROC, SyMBOL   , fUNCTION, cBracket, PREDEF_vAR      , predeF_Func; # uc V8 charz hEr but nd2 lc B4.style

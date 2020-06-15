@@ -49,10 +49,10 @@ our @EXPORT= qw(bfr8c    b8c    d8c   dur8c @d8cl  d8cs  a8c   chti  c8fn  o8 S2
  $SKp8 $SKp0 $SKp1 $SKp2 b8clr  $SKpf $SKpt %pmap %cmap       %pl8n  ftst acS e %f8fm %f8pm %sgrm %sgrn @Dayz @Day  lrc      comma  curs  sumb @x256  @sb64
     $z    $k    $r    $o    $y    $g     $c $SKpb    $m    $p    $w  tstc    $K    $R    $O    $Y    $G    $C    $B    $M    $P    $W    %p622 %p222   upd8
          $bk   $br   $bo   $by   $bg    $bc   $bb   $bm   $bp   $bw         $hK   $hR   $hO   $hY   $hG   $hC   $hB   $hM   $hP   $hW     h2rl  rl2h   drkh
-    $t    $u    $d    $s    $n          $T     $U    $D    $S    $N         $HK   $HR   $HO   $HY   $HG   $HC   $HB   $HM   $HP   $HW
+    $t    $u    $d    $s    $n          $T     $U    $D    $S    $N         $HK   $HR   $HO   $HY   $HG   $HC   $HB   $HM   $HP   $HW      hl
  $tnhf $ucdf  spff  spfd  spfX   shfl  reso $Auth %cmsp %p8k2 @p82k  chp8     S2f4 c2f4 dm2u cdst %crgb %cbrt @snls @mrls %cdrd %cdrn    %nrgb         gnp8);
  # of 52 posibl sngl-letr var nmz,a8 Xportz 20,$b && $a unavail,so shudB thEs30 lFt4quik shortSt nAmz: 'def hij l n  q stuv x', 'A  DEF HIJ L N  Q STUV X Z';
-our $VERSION='0.0';my  $d8VS='K5JMI88P';our $Auth='PipStuart <Pip@CPAN.Org>'; # above not exporting $b since collidez with sort{$a  <=> $b};unalloc'd sOlOz^;
+our $VERSION='0.0';my  $d8VS='K6AMHell';our $Auth='PipStuart <Pip@CPAN.Org>'; # above not exporting $b since collidez with sort{$a  <=> $b};unalloc'd sOlOz^;
 our $ucdf= eval('use Color::Similarity::RGB qw(distance);1') || 0; # try2set UseColorDistanceFlag if optional module is available; /defhijlnqstuvx/i + /AZ/^;
 our @Monz=qw(January February March   April     May June July   August September October November December);our @Mon=();push(@Mon,substr($_,0,3)) for(@Monz);
 our @Dayz=qw(Sunday  Monday   Tuesday Wednesday Thursday Friday Saturday                                  );our @Day=();push(@Day,substr($_,0,3)) for(@Dayz);
@@ -578,6 +578,11 @@ sub h2rl{ # convert any typical HEX RRGGBB into RGBL b64 with Last Low bits Laye
       $valu  = hex($rgbd[0]);$valu+=16 if(hex($rgbd[1]) &  1);$valu+=32 if(hex($rgbd[1]) &  2);$rgbr.=$sb64[$valu];
       $valu  = hex($rgbd[2]);$valu+=16 if(hex($rgbd[1]) &  4);$valu+=32 if(hex($rgbd[1]) &  8);$rgbr.=$sb64[$valu]; # shud add -twelvebit 2rvrs
       $rgbp      =~ s/(^|\s)([0-9A-F]{3}  )(\s|$)/$1$rgbr$3/ix;} $rgbs.="$rgbp ";} $rgbs=~ s/ $//;return($rgbs);}
+sub hl{my $head=48;my $tail=48;if(@_){$head=0;my $bndx=0;for(reverse(split(//,shift(@_)))){$head+=(64**$bndx++)*$sb10{$_};}
+                               if(@_){$tail=0;   $bndx=0;for(reverse(split(//,shift(@_)))){$tail+=(64**$bndx++)*$sb10{$_};}}else{$tail=$head;}}
+  if(!-t STDIN){my @id8a=<STDIN>;my @hd8a;my @td8a; # this subroutine is a very basic combin8ion of head && tail taking b64 sizes as params to oper8 on STDIN;
+    for(0..$head-1){   push(@hd8a,decode('UTF-8',$id8a[$_]));}
+    for(0..$tail-1){unshift(@td8a,pop(@hd8a));}return(@td8a);}}
 sub S{my $Sstr='';my $codz='';if(@_ && defined($_[0])){$codz= join('',@_);} # might want l8r flag optionz as sepR8d by spacez for these joinz though
 if((!defined($codz) || !length($codz)) && !-t STDIN){chomp($codz= join('',<STDIN>));}
   if(defined($codz) &&  length($codz)){ # problM mAB doing !-t ck twice from bin/S to S()?
@@ -1084,6 +1089,7 @@ sub sumb{  my $widt=0;$widt=1 if(exists($ENV{'COLUMNS'}) && $ENV{'COLUMNS'} >= 1
     'cJ'    => "a8  CoViD-19 (`b10  J`) script to get d8a-files && parse key fields out   ", # mAB belongs with a different module than a8.pm?
     'drkh'  => "a8  converter from 6-char HEX to b64 RgbLow with 8th of intensities on    ", # mIt want2add a8:drkh with 8ths of colr chanLz from input too
     'e'     => "a8  EDITOR wrapper which includes fragile old package templ8ing system    ", # mAB rEwrIt mOst Useful BhAVor as nw clEnr a8:e or let dokr:e
+    'hl'    => "a8  utility combining head && tail oper8ions over STDIN using b64 sizes   ",
     'uri'   => "a8  URI capitaliz8ion Utility resulting from Beppu-san's procrastin8ion   ",
 
     '8plc'  => "b8  Octology ~/dox/2du/8.utf Pre-cursorLetter-Counter && gM8ria gNer8or   ",
@@ -1096,6 +1102,7 @@ sub sumb{  my $widt=0;$widt=1 if(exists($ENV{'COLUMNS'}) && $ENV{'COLUMNS'} >= 1
     'cmc80' => "c8  SDL graphical 80 -character-wide summary of Octology in dense color   ",
     'prym'  => "c8  Curses::Simp prime-number gener8ion screensaver (currently broken!)   ", # port to Prim as new CLI && Curses IF
     'sloc'  => "c8  Beppu-san sent `SlowCat.pl` simul8ing default 9600 baud print speed   ",
+    'ximp'  => "c8  compiled from C utility which manipul8s /dev/mixer like old `aumix`   ",
 
     'bak'   => "d8  auto-save now d8-stamp in the end-name of a .bak/ BAcK-up file copy   ", # used to be called Pip::Utl.pm->bak() B4 migr8d 2 d8.pm method
     'L'     => "d8 *barely reformatted `ls -Cv` (which packs&&pads&&aligns up2 5 dense)   ", # mAB shud ren 2 LsCv && mv from d8 2 a8 since duz!Uz --fulltime

@@ -7,7 +7,7 @@
 #     maybe for this part, just prefixes && pre-letters could be matched within ~/.log/8pc.ls instead of trying to load all of 8.txt similar either way,
 #   (if possible) it would be nice to eventually figure out how to enable zsh Tab-completion for dict to also work the same for both dic && just d alias too;
 #  `d card` has WordNet && FOLDoC,Jargon,VERA with 8 dFinitNz && '[Obs.]' before Webster in GCIDE
-#  `d flip` has FOLDoC
+#  `d flip` has FOLDoC    # `d pip` fits a single 160x50 terminal screen page very nicely on K6F;
 #  `d cube` has Jargon    # Example backticks here assume .zshrc, .bashrc, or some shell sets "alias d='dic';" for extra brief definition display && also that
 #  `d dice` has V.E.R.A.  #   each major dict d8a-base is installed via dict-(wn|foldoc|jargon|gcide|vera|devil|bouvier|gazetteer2k|elements|moby-thesaurus);
 #  `d hope` has Devil's   # Not sure if dict-((free|x)dict|stardic) are useful to me yet for probably language transl8ion for Free && residual-config other 2?
@@ -18,7 +18,7 @@
 #web1913 gcide wn foldoc jargon vera devil elements easton hitchcock bouvier gazetteer gaz2k-zips gaz2k-places gaz2k-counties moby-thesaurus
 # HC2LNewD:fixd `d BLT` to properly Decode UTF-8 double-quotes from dict && noted also qw(server reverse reserve severer)=~ s/e//g; # srvr rvrs rsrv svrr;
 # Currently, the only special pRameter that `dic` swallows 4 itself is lone '-w' which design8s any dFinitions should be formatted as *NOT* default Wide mode.
-use strict;use warnings;use utf8;use v5.10;use Encode;my $VERSION='0.0';my $d8VS='I9BMLadj'; # orig from TeST Substitute Input,now XtNded d8 util,l8r c8 IF?
+use strict;use warnings;use utf8;use v5.10;use Encode;my $VERSION='0.0';my $d8VS='K6FMCmon'; # orig from TeST Substitute Input,now XtNded d8 util,l8r c8 IF?
 use Octology::a8;my $word='';my $wclr=S('Wr');my $logd="$ENV{'HOME'}/.log";my %dlog; # setup global word colr SKp && LogDirectory && DicLog hash
 use Octology::d8;my $Stxt   ;my $eclr=S('Yf');my $widf=1  ; # BlO hopefully strips -w param 2flag disabling dflt wide-mode or load $word 4l8r colr8ion if!flag
 my $cw=160;$cw=$ENV{'COLUMNS'} if(exists($ENV{'COLUMNS'})); # try to setup potentially wider ColumnWidth for when attempting to join shorter linez
@@ -46,7 +46,7 @@ elsif(!-t STDIN){$Stxt= join('',           <STDIN>);  # enable piping through li
       my $nwd8=Octology::d8->new();say $dlfh "$nwd8:$word";
       close   $dlfh            or die "!*EROR*! Couldn't close dic log file:$dlfn! $!\n";}}}
 exit unless(length($Stxt)); # probably "No definitions found..." already output on STDERR so just exit having nothing to color
-      $Stxt=~ s/\s*(\[1913 Webster\])/ $1/g; # these need to strip leading spaces in order to attempt desired right alignment next
+      $Stxt=~ s/\s*(\[1913 Webster\]\n)\n*/ $1/g; # these need to strip leading spaces in order to attempt desired right alignment next
       $Stxt=~ s/\s*(\[PJC\])/ $1/g;
 my @St=split(/\n/,$Stxt);$Stxt='';
 for(0..$#St-1){my $bp; # BlockPad
@@ -104,15 +104,15 @@ if(   $Stxt=~  /(\n +?)(\d+) Moby Thesaurus words/ ){my $MTct=$2;my $MTin=$1;cho
       $Stxt=~ s/( v)(.)(\d+)(.)(\d+)/$P$1$W$2$B$3$W$4$R$5/g;
       $Stxt=~ s/(\[)(g)(c)(i)(d)(e)(\])/$B$1$O$2$C$3$M$4$W$5$Y$6$B$7$G/g;        # broke  CIDE  apart like above
       $Stxt=~ s/(Word)(Net )(\()(r)(\))( 3)(.)(0)/$O$1$M$2$w$3$Y$4$w$5$B$6$W$7$M$8/;
-      $Stxt=~ s/ (\()(2006)(\))/ $c$1$R$2$c$3/;
+      $Stxt=~ s/ (\()(2006)(\))/ $c$1$Y$2$c$3/;
       $Stxt=~ s/(\[)(w)(n)(\])/$B$1$O$2$M$3$B$4$G/;
       $Stxt=~ s/(Free)( On)(-)(line)( Dictionary)( of)( Computing)/$Y$1$B$2$C$3$M$4$W$5$w$6$O$7/g;
-      $Stxt=~ s/ (\()(\d+)( January| March)( 20\d+)(\))/ $c$1$Y$2$O$3$R$4$c$5/g; # might want to just join all reasonable Month names here l8r
+      $Stxt=~ s/ (\()(\d+)( January| March)( 20\d+)(\))/ $c$1$Y$2$G$3$Y$4$c$5/g; # might want to just join all reasonable Month names here l8r
       $Stxt=~ s/(\[)(f)(o)(l)(d)(o)(c)(\])/$B$1$Y$2$B$3$M$4$W$5$w$6$O$7$B$8$G/g; # broke FOLDoC apart like above
-      $Stxt=~ s/(Jargon)( File )(\()(version)( \d+)(\.)(\d+)(\.)(\d+)/$C$1$R$2$G$3$P$4$B$5$W$6$M$7$W$8$R$9/g;
-      $Stxt=~ s/,( \d+)( \w+)( 20\d+)(\) )(\[)(jargon)(\])/,$Y$1$O$2$R$3$G$4$B$5$C$6$B$7/g;
+      $Stxt=~ s/(Jargon)( File )(\()(version)( \d+)(\.)(\d+)(\.)(\d+)/$C$1$R$2$G$3$P$4$B$5$W$6$M$7$W$8$Y$9/g;
+      $Stxt=~ s/,( \d+)( \w+)( 20\d+)(\) )(\[)(jargon)(\])/,$Y$1$O$2$Y$3$G$4$B$5$C$6$B$7/g;
       $Stxt=~ s/(V\.)(E\.)(R\.)(A\.)/$M$1$Y$2$R$3$C$4/g;
-      $Stxt=~ s/(Virtual)( Entity)( of)( Relevant)( Acronyms )(\()(\w+)( 20\d+)(\))/$M$1$Y$2$c$3$R$4$C$5$G$6$O$7$R$8$G$9/g;
+      $Stxt=~ s/(Virtual)( Entity)( of)( Relevant)( Acronyms )(\()(\w+)( 20\d+)(\))/$M$1$Y$2$c$3$R$4$C$5$G$6$O$7$Y$8$G$9/g;
       $Stxt=~ s/(\[)(v)(e)(r)(a)(\])/$B$1$M$2$Y$3$R$4$C$5$B$6$G/g;
       $Stxt=~ s/(The)( Devil')(s)( Dictionary )(\()(\d+)(-)(\d+)(\))/$z$1$R$2$R$3$W$4$M$5$R$6$Y$7$R$8$M$9/g;
       $Stxt=~ s/(\[)(devil)(\])/$B$1$R$2$B$3$G/;
@@ -120,16 +120,16 @@ if(   $Stxt=~  /(\n +?)(\d+) Moby Thesaurus words/ ){my $MTct=$2;my $MTin=$1;cho
       $Stxt=~ s/(Moby)( Thesaurus)/$M$1$R$2$G/g;
       $Stxt=~ s/( II)( by)( Grady)( Ward,)( 1)(.)(0)/$C$1$w$2$O$3$C$4$B$5$W$6$M$7/;
       $Stxt=~ s/(Bouvier')(s)( Law)( Dictionary,)( Revised)( 6th)( Ed)/$O$1$O$2$C$3$W$4$R$5$M$6$Y$7/g;
-      $Stxt=~ s/ (\()(1856)(\) )(\[)(bouvier)(\])/ $G$1$R$2$G$3$B$4$O$5$B$6$G/g;
+      $Stxt=~ s/ (\()(1856)(\) )(\[)(bouvier)(\])/ $G$1$Y$2$G$3$B$4$O$5$B$6$G/g;
       $Stxt=~ s/(U\.)(S\.)( Gazetteer)( Places)/$Y$1$B$2$C$3$M$4/g;
-      $Stxt=~ s/ (\()(20\d+)(\) )(\[)(gaz)(2k)(-)(places)(\])/ $G$1$R$2$G$3$B$4$C$5$R$6$O$7$M$8$B$9$G/g;
-      $Stxt=~ s/ (\()((19|20)\d\d)(\))/ $c$1$R$2$c$4$G/g;                                           #     try to get mainly all Gazetteer paren Yearz
-      $Stxt=~ s/ (\()(\w+ +)((19|20)\d\d)(\))/ $c$1$O$2$R$3$c$5$G/g;                                # thN try to get (Month Year) of   some FOlDoC
-      $Stxt=~ s/ (\()((19|20)\d\d)(-)([01]?\d)(-)([0123]?\d)(\))/ $c$1$R$2$C$4$O$5$C$6$Y$7$c$8$G/g; # thN try to get (Year-Mo-Da) of end of FOlDoC
-      $Stxt=~ s/(\()(\d+ )(December )((19|20)\d\d)(\))/$M$1$Y$2$O$3$R$4$M$6$G/g;   # apparently newest FOlDoC d8 seen in `d syllogism` if not all now
-      $Stxt=~ s/(\[)(Webster )(1913 )(Suppl\.)(\])(\n|$)/$Y$1$B$2$R$3$M$4$Y$5$G/g; # from `d manic `
-      $Stxt=~ s/(\[)(1913)( Webster \+)(PJC)(\])(\n|$)/$Y$1$R$2$B$3$C$4$Y$5$G/g;   # from `d epigee`
-      $Stxt=~ s/(\[)(1913)( Webster)(\])(\s|$)/$Y$1$R$2$B$3$Y$4$5$G/g;
+      $Stxt=~ s/ (\()(20\d+)(\) )(\[)(gaz)(2k)(-)(places)(\])/ $G$1$Y$2$G$3$B$4$C$5$R$6$O$7$M$8$B$9$G/g;
+      $Stxt=~ s/ (\()((19|20)\d\d)(\))/ $c$1$Y$2$c$4$G/g;                                           #     try to get mainly all Gazetteer paren Yearz
+      $Stxt=~ s/ (\()(\w+ +)((19|20)\d\d)(\))/ $c$1$G$2$Y$3$c$5$G/g;                                # thN try to get (Month Year) of   some FOlDoC
+      $Stxt=~ s/ (\()((19|20)\d\d)(-)([01]?\d)(-)([0123]?\d)(\))/ $c$1$Y$2$C$4$G$5$C$6$T$7$c$8$G/g; # thN try to get (Year-Mo-Da) of end of FOlDoC
+      $Stxt=~ s/(\()(\d+ )(December )((19|20)\d\d)(\))/$M$1$T$2$G$3$Y$4$M$6$G/g;   # apparently newest FOlDoC d8 seen in `d syllogism` if not all now
+      $Stxt=~ s/(\[)(Webster )(1913 )(Suppl\.)(\])(\n|$)/$Y$1$B$2$Y$3$M$4$Y$5$G/g; # from `d manic `
+      $Stxt=~ s/(\[)(1913)( Webster \+)(PJC)(\])(\n|$)/$Y$1$Y$2$B$3$C$4$Y$5$G/g;   # from `d epigee`
+      $Stxt=~ s/(\[)(1913)( Webster)(\])(\s|$)/$Y$1$Y$2$B$3$Y$4$5$G/g;
       $Stxt=~ s/(\[)(PJC)(\])(\n|$)/$Y$1$C$2$Y$3$G/g;
       $Stxt=~ s/(\[)(cant)(\] ?)/$Y$1$M$2$Y$3$G/g; # so far only seen preceding PJC so not testing \n|$ yet
       $Stxt=~ s/\s*\n(From (The)?)/\n$K$1/g;

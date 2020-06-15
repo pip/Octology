@@ -30,7 +30,7 @@ use         Carp; # orig Math::BaseCnv BlO memoized Sum8(as summ) hEr&&had nO Fi
 use Memoize;memoize('Fact');memoize('Chus');memoize('Fibo');memoize('Prim');
 our @EXPORT= qw(b8 cnv ocT deC dec heX HEX b10 b64 b64sort b110 b128 b210 b256 dig diginit @kana
     cma coma  Sum8 Sumz   Fact Fctz  Chus  Fibo Fibz  Prim Prmz  rotW rot1    calQ   $umbc);
-our $VERSION='0.0';my  $d8VS='K48M8xdC';my $Auth='PipStuart <Pip@CPAN.Org>';
+our $VERSION='0.0';my  $d8VS='K69MJBIG';my $Auth='PipStuart <Pip@CPAN.Org>';
 our @kana=qw(ぁあぃいぅうぇえぉおかがきぎくぐけげこごさざしじすずせぜそぞた
 だちぢっつづてでとどなにぬねのはばぱひびぴふぶぷへべぺほぼぽまみ
 むめもゃやゅゆょよらりるれろゎわゐゑをんゔゕゖ゗1゛゜ゝゞゟ
@@ -330,7 +330,8 @@ sub coma{my $strn=shift;my $comc=shift||',';my $blok=shift||4; # ...like above b
       s/$word$fwrd/$cwrd$rwrd/;}}
       $strn = join("\n",@strz);return($strn);} # orig!enuf cuz must insrt coma,then recalc pos&&from:
 sub Sum8{ # simple function to calcul8 summ8ion down to 1; # F1OL0L88:I just realized Sum8 is actually a basic multiply near mid instead of while(--){+=}
-  my $sum8= shift;return(0) unless(defined($sum8) && $sum8 && ($sum8 > 0));my $answ= Math::BigFloat->new($sum8);$answ *= (($answ/2.0) + 0.5); return($answ);}
+  my $sum8= shift;return(0) unless(defined($sum8) && $sum8 && ($sum8 > 0));my $answ= Math::BigFloat->new($sum8);$answ *= (($answ/2.0) + 0.5);
+  $answ=~ s/\.0+$//;return($answ);}
 sub Sumz{my $llnn=shift(@_);my $lnsz=80;my $lcou=0;$lnsz=$ENV{'COLUMNS'}   if(exists($ENV{'COLUMNS'}));$llnn='-' if(!defined($llnn)); # LiNeSiZe, LastLiNeiNdex
   if       ($llnn=~ /-/){if(exists($ENV{'LINES'})){$llnn=$ENV{'LINES'  }-3;}else{$llnn=0;}}   my $scou=1;my $lbuf= Sum8($scou);       #         , LineCOUnt
   my $b8l8= shift(@_) || 0;                                                     if($b8l8 == 1){$lbuf= b64($lbuf);}elsif($b8l8 == 2){$lbuf= b256($lbuf);}

@@ -30,7 +30,7 @@ unsetopt                \
 # auto_pushd            \# setng addz dirz 2 stack wN just normally chngng 2 thM (wich I du not normally lIk or want)
 # ksh_arrays            \# rEmMbr wNwrItng scrptz[or funcz]2include'setopt [localoptions] ksharrays'sO arAzR 0-bAsed(but!glOblBcuzmOst scrptzRstndrdly 1-bAsed)
 # re_____match_____pcre \# mA want2set for Z-SHell scripting RegularExpressions to utilize PerlCompatibility styles && mA insert 'zmodload zsh/(pc)?re(gex)?';
-export Vers='0.0';export d8VS='K51M6Man';export Auth='PipStuart <Pip@CPAN.Org>'; # not Xportng $b sinc cOlIdz wi sort{$a <=> $b} /defhijlnqstuvx/i + AZ 4golf;
+export Vers='0.0';export d8VS='K6EMGdam';export Auth='PipStuart <Pip@CPAN.Org>'; # not Xportng $b sinc cOlIdz wi sort{$a <=> $b} /defhijlnqstuvx/i + AZ 4golf;
 if     [[       "$SHELL"    == "" ]]; then       export SHELL=`  which zsh`;fi # 8sh should parse this && OverId it    # shud `man zshall` /OSTYP 2lern4BlO
 if     [[       "$HOSTNAME" == "" ]]; then       export HOSTNAME=`hostname`;fi #`hostname`retnz fsckd nwlInz\n4CygWinzRxvt... ||smthng els lame  =(
 if     [[       "$HOST"     == "" ]]; then       export HOST   ="$HOSTNAME";fi;export VERBOSE='1'; # set flag to print debug && status info from system utilz
@@ -273,8 +273,8 @@ alias dp="xprt PS1='%{[1;37m%}%(!.<.[)%{[1;32m%}%n%{[1;34m%}@%{[1;36m%}$HHst
 #if [[ $parent == login* ]]; then ... else ... fi to detect a full-screen console login rather than cking for graphical $TERM, although $TTY might be easier?
 # I71M8PS1:2du mAB rewrite sp,np,dp 2B ps1 varE8ionz && basicz wi no Perl DpNdNCz to calm warnz,mAB try2zsh regX colr pwd&&gNr8 aprox colrd d8stampz2 4comp@;
 export HISTFILE=~/.zsh_history;alias sp="export PS1='%(!.<.[)%n@$HHst:\`d8\`:%~%(!.>.])'"; #Prmptz:SimplPrmt||NormlPrmt Uzd2hvBigPrmt2but ch eq2Norm soIrmd;
-export HISTSIZE=4096;export BdOn="tput smso";export Bond='BdOn';alias setfp='etfp -s'; #from`man tput`:BoldOn&&Off TermSeQNcz4:`echo "${BdOn}NtrNm:${BdOf}\c"`
-export SAVEHIST=4096;export BdOf="tput rmso";export Bofd='BdOf';alias setf='setfp -f';alias setf0='setf -o';alias setp='setfp -p'; # mk .?ttyrc 2gN folOing
+export HISTSIZE=65536;export BdOn="tput smso";export Bond='BdOn';alias setfp='etfp -s'; #from`man tput`:BoldOn&&Off TermSeQNcz4:`echo "${BdOn}NtrNm:${BdOf}\c"`
+export SAVEHIST=65536;export BdOf="tput rmso";export Bofd='BdOf';alias setf='setfp -f';alias setf0='setf -o';alias setp='setfp -p'; # mk .?ttyrc 2gN folOing
 if       [[ "$HUsr"     !=  "root"  ]];                                  then #export PipzTmpC='~/lib/Octology/f8/f0nt/psf'; #fpal -x -l ~/dvl/f8/*/*/font';
   # hopefully just these 8 regexes will work the same instead of the tons of old if or from before; TIGS dRkz(red|cyn|mag) RbrItr than Tigz (4 vim st@usln?)
   # check for files being executable or existing before invoking; don't want normal pal8 details printed out at shell init so ENV flag 2B Quiet
@@ -464,7 +464,9 @@ alias       0=' ogg123'; # o 123 : zer0 lIke lc o audio-player # maybe l8r try t
 alias       1=' mpg321'; # m 321 :                audio-player # simple && light-w8 command-line MP3 player based on mad decoding library (drop-in 4: mpg123);
 alias       2=' mpg123'; # m 123 :                audio-player which plays audio MPEG 1.0/2.0/2.5 streams (layrz 1, 2, && 3),was non-free unlike abov`mpg321`;
 #lias       3='   g3  '; #  g3   :         gst123 audio-player wrapped with Expect manipul8ion layer (J29:3 now 3rd sepR8 varE8ion off g3 2get abit trickier);
-alias    HacU='g3 ~/muz/U2b/chl/Hack*Univ* -k 3420'; # Fil_Far's HackerCodingMusic Universe awesome end-part to -k --sKip to (57 minutes == `q 57x60`seconds);
+alias    g3lt='cd    ~/muz/U2b;gst123 -k 212 Oi*;g3 63 38 63 63 u*/El* ../f*/Bo*/T*/B* *br* c*/Gi* -v monoscope;ec;HUlt'; # g3 K6O-Q PerlCitCloud LitningTalk;
+alias    HUlt='g3 48 ~/muz/U2b/chl/Hack*Univ* -k 3420'; # add just first seconds of gr8 part to push above 4mins12secs right up against 5mins total 4 LitTalk;
+alias    HacU='g3 99 ~/muz/U2b/chl/Hack*Univ* -k 3420 -v goom2k1'; # Fil_Far's HackerCodingMusic Universe awesome Nd-pRt2 -k --sKip 2 (57mins==`q 57x60`secs);
 alias       4='   x4t '; #  4    : xfce4-terminal xf4tm terminal emul8or where `x4t` is defined more elabor8ly to start with my preferred defaults elsewhere;
 alias       5='perl   '; #  5    :          perl  (5.28.1 l8st perl5 in /usr/bin/ on Pip's $HOST Oni as of`d8 K2MLAUGH`=>"Sat Feb 22 10:30:16:17 -0600 2020")
 alias       6='perl6  '; #  6    :          perl6 (which presumably should be renamed at some near future point to: "raku" for disambigU8ion && clarific8ion)
@@ -582,6 +584,7 @@ alias    gaa='     git  add .* *'; # handy alias to Add All (Asterisk) changes, 
 alias    gcm='     git commit -m'; # tried to call each of these through g8 initially, but maybe -m flag wasn't passing on to git correctly so explicit now
 alias    gac='     gaa; gcm     '; # should setup gcm to auto-commit basic gener8d d8-stamp message && maybe list biggest few file changes, if no mesg given
 alias    gacm='    gac          '; # should maybe make as function which takes parameter or gener8d commit message then gpom with auto user Pip pRam or cnfg?
+         gap()  {  gac $1; gpom; } # this needs testing to confirm whether more quoting or parameters will be required or otherwise useful beyond just the 1st
 alias    gpom='    git push origin master';alias g8st8='g8st';alias g8s='g8 s';alias g8h='g8 h';alias g8l='g8 l';alias g8d='g8 d';alias g8p='g8 p';
 alias       n=' ncal  ';           # above shortcuts are: status,           show,            help,            log,             diff,            pull
 alias       N='  calN '; #  N    :            calN (use `rsn` ReSize4calN 171x57 to show 19-Years, 2000-2018 solidly in slightly lRgr than Dflt 160x50 size)
@@ -648,12 +651,15 @@ alias     msg='   mesg'; #  msg  :           mesg|write
 alias      W=' whereis'; #  W    :                      whereis      # below replaced wh which alias with function nstd 2 avoid early pRam Xpansion
 #lias      wh='which  '; #  wh   :     type|who|w|which|where|whence (like wi uptm prefix line ls of loggedin userz)  (tried whence -w for single word typez)
 wh(){          which $@; } # maybe the original wh alias abov was expanding to an old Csh binary nstd of DsIrd Zsh biltin && thN alsO Xpandng pRam2or nahLswr2?
+wr(){          where $@; } # might just be the same as `which` in most or all cases?
+alias     whr='wr     '; #  wr   :                      where        # note that `what` remains free to be l8r alloc8d to some similar purpose as well
 alias     lsh='  lshw '; #  lsh  :          lshw                     # useful when trying to get Ken setup with nVidia bin GeForce7 NV49 G71 driver, !nouveau
 alias     lsm='  lsmod'; #  lsm  :          lsmod                    # HTTPS://Unix.StackExchange.Com/questions/85249/why-not-use-which-what-to-use-then DtAlz
 alias     lsc='  lscpu'; #  lsc  :          lscpu
 alias     lsp='  lspci'; #  lsp  :          lspci
 alias     lsu='  lsusb'; #  lsu  :          lsusb
 alias     ren=' rename'; # might take just Perl quoted regex instead of $from $to before shell fileglob to alter;
+alias     rens="ren 's/ /_/g' *"; # simply REName all Spaces to proper underscores within any non-hidden files && sub-directories in the current-working-dir;
 # [pip@AkuJ28LIPsh~]en `source-highlight --lang-list`|pe 's/(\S+) = \1\.lang */$G$1$w;/g;s/(\S+) = ([^.]+)\.lang */$C$1$o=$g$2$W;$z/g'|sS; # old B4 BlO...
 # asm,awk,bash,bib,c,changelog,conf,csh,css,d,dmd,errors,feature,fixed-fortran,free-fortran,glsl,go,groovy,islisp,java,javalog,json,  ## slItlyrE4m@d; ##;
 #  ksh,log,lsm,lua,opa,outlang,oz,properties,r,s,scala,spec,sql,style,syslog,tcsh,tml,upc,vala,xorg,zsh;   ## shls=48;solz:88; B4 solz:64; B4 cut dn2: ##;
@@ -693,6 +699,7 @@ s(){  ifil="$1";synl='';if [[ "$#" -gt 1 && "$2" != "" && -e "$2" ]]; then synl=
 alias      S8='   shl8'; # my primitive c8:SourceHighLight8 Utl to hopefully eventually approach functional parity with source-highlight before surpassing it
 alias     sho='cd ~/gfx/sho;shot -u'; # change to typical local Octology screenshot directory && take a shot of the focUsed window (no border) in 3 seconds
 alias     br0='byzanz-record -a -c -d 122 -w 1920 -h 1080 Octl-ScrnCap-1080p-`d8`.webm &'; # Byz-Rec up-left monitor 0 zer0 for 2mins2secs to non-ogg .ogv 4m@;
+alias     kaz='kazam';alias ssr='simplescreenrecorder'; # K6EMFMIC: HTTPS://ItsFOSS.Com/best-linux-screen-recorders with `obs` OpenBroadcasterSoftwareStudio;
 alias    resp='   reso spec'; # joining like =~ /^respect/ shortcut to list resolution specific8ionz  # abovUsed2B S=shl,s=shl8 but S repurposed in a8 4 SKpz
 alias    resg='   res  GA  ';alias res=' reso';alias re='res'; # basic a8.pm resolution HD limit8ion (not to get confused with resoLVE or resoURCE varE8ionz)
 alias    resh='   re   HD  ';alias resa='re Andr';re16='re 16/9';alias re64='re 64/27';alias res9='re /9';alias rest='reso;res9;resp;re16;resg;resh;resa;re64';
@@ -712,11 +719,15 @@ alias     pak='pulseaudio -k';alias pavl='pulseaudio -v --log-time';alias pavv='
 export  PULSE_LATENCY_MSEC='64'; # JC7LNice:HTTPS://AskUbuntu.Com/questions/392911/wine-sound-is-played-way-too-fast-and-crackles-horribly to avoid underruns;
 #xport OpenGL_GL_PREFERENCE='GLVND'; # or 'LEGACY'; See `cmake --help-policy CMP0072` for FindOpenGL policy details which prefer GLVND when it's available;
 alias     lvt='lv-tool'; # J28L8888:LibVisual 0.5 ~2014 > ~2006 0.4 && mAB w8,chti,thN fix ~/dvl/n8/viz/*plug* 4 bass kick snAr rEsponsz in hIgh contrastz;
-alias     lvp='lv-tool    -i pulseaudio -s  888 -S  888'; # setup LibViz 4 -vrbOs? -inpuls -seedrand;  ## BlO blursk dblfrEmM coredumpz aftr 2nd unlOd! ##;
+alias     lvp='lv-tool    -i pulseaudio -s  888 -S  930'; # setup LibViz 4 -vrbOs? -inpuls -seedrand;  ## BlO blursk dblfrEmM coredumpz aftr 2nd unlOd! ##;
 export   lVSx=' -a lv_gltest -x lv_analyzer,lv_dump,madspin,nastyfft,nebulus,plazma,bumpscope,corona,gdkpixbuf,gforce,oinksie,blursk,goom2k4,jackdaw,lv_scope';
 alias     cad='cadence &';alias qjc='qjackctl &';alias past='pasystray &';alias pav='pavucontrol &'; # old @Mptz2get JACK 2working&&PulseAudioSysTray indic8or;
+alias     LVH='lVH -a lv_gltest -x lv_gltest,lcdcontrol,gdkpixbuf,nastyfft,bumpscope,goom2k4,blursk,madspin,gforce,lv_dump,nebulus,plazma,corona,flower';
+alias     lVH='lvp -D  640x400 '; # above from madspin on can keep being cycled thru without leaking mem && core-dumping, but are Xcluded Bcuz barely visual;
 alias     lvH='lvp -D 1280x800 ';alias lV="lvH $lVSx"; # upper-H 4 old HD720P, lower-h 4 dflt fullhd1080p, othrwIzkeptsAmsOfR; # only 6 lFt mAB nEd 4 2!segf?;
 alias     lvh='lvp -D 1920x1080';alias lv="lvh $lVSx"; # oinksie... lv-tool: malloc.c:4023 coredumpd mAB bAsd on pRam ordr? #; # proly not inflwrgltestjess! ;
+alias     LV='lvh -x lcdcontrol';alias sv='sonic-visualiser'; # K6BMGVis:just installed a new audio spectrum-analysis which is hopefully superior to libvis;
+alias     Lv='lvh -a lv_gltest -x lv_gltest,lcdcontrol,gdkpixbuf,nastyfft,bumpscope,goom2k4,blursk'; # Xclude inactive plugins or mMlEkz causing core-dumpz;
 alias     p47='parsec47';alias a7='a7xpg'; # some of my favorite Kenta Cho Shmups ("Bullet-Hell") in /usr/games;  ## munmap_chunk(): invalid ptrstilcordumpdx;
 alias      rr='rrootage';alias tt='torus-trooper';alias tf='tumiki-fighters'; # would be gr8 to study BulletML && explor own similRly themed varE8ions someday
 alias      xb='xboard';alias xbsf='xb -fcp stockfish -fUCI'; # gr8 Chess program wi shortcut to top StockFish engine as FirstChessProgram (&& -scp 2ndChesProg)
@@ -737,7 +748,7 @@ alias    Upc8='sudo curl -L https://yt-dl.org/downloads/latest/youtube-dl -o /us
 alias    Upw8='sudo wget    https://yt-dl.org/downloads/latest/youtube-dl -O /usr/local/bin/youtube-dl;sudo chmod a+rx /usr/local/bin/youtube-dl;rmSS;hash -r';
 alias    Upi8='sudo      -H  pip install      --upgrade        youtube-dl   ;rmSS;hash -r'; # see pypi docUmNt8n4morin4m8n about popUlRPython`pip`package-tool
 alias    UpU8='sudo                                            youtube-dl -U;rmSS;hash -r'; # Octology::U8::Upd8 && ~/bin/Upd8 are similR but for ~/bin versn;
-alias    U8='  U2b8';alias U2bk='Uk';alias u2bk='uk'; # shud l8r add 1-colm <98wId mOd&&some a8 autOcolrz 2furthr hIlIt mapngz
+alias    U8='  U2b8';alias U='U2b8   ';alias U2bk='Uk';alias u2bk='uk'; # shud l8r add 1-colm <98wId mOd&&some a8 autOcolrz 2furthr hIlIt mapngz
 alias    Ukey='en  "m c b : togl volMute Caption Bakgr colr [ U2b-hotKey ];  Dn Up : lowr 5%vol (arowkyz) rais 5%vol;
 p f n : Prevplayls toglFulsc Nextplayls (Escap=2exitf);  Lt Rt : bkwd 5secs (arowkyz) 4wrd 5secs;
 j k l : bkwd10secs toglpause 4wrd10secs (Space=2pause);   , .  : bkwd 1fram (ifpausd) 4wrd 1fram;
@@ -838,7 +849,7 @@ alias stip='pu ~/dox/2du;scrn -S tip -t tip e   tipz.ls ;po';alias sI='stip';ali
 alias sud8='pu ~/dox/2du;scrn -S ud8 -t ud8 e    u.8.   ;po';alias sU='sud8';  # mAB 2du hLpr wi rEorg && chng prspctv upd8d wi paired 8trm prep code 2 preT;
 alias sud2='pu ~/dox/2du;scrn -S ud2 -t ud2 e    ud2.ls ;po'; #ias sU='sud2';  # mAB 2du hLpr wi rEorg && chng prspctv on donez Ovrcomng prIOriTz?;
 alias sdvl='pu ~/dvl    ;scrn -S dvl -t dvl             ;po';alias sd='sdvl';  # mAB some new sD can lOd Xtra Dvl lIk Utl Tk Time Math anythng else important
-alias smuz='pu ~/muz    ;scrn -S muz -t muz             ;po';alias sm='smuz';alias so=' ob ';alias mob='ob';alias obs='ob';alias Obs='ob';alias sobs='   ob';
+alias smuz='pu ~/muz    ;scrn -S muz -t muz             ;po';alias sm='smuz';alias so=' ob ';alias mob='ob';alias Obs='ob';alias OBS='ob';alias sobs='   ob';
 alias smvz='pu ~/mvz    ;scrn -S mvz -t mvz             ;po';alias sM='smvz';alias Ob=' ob ';alias ob=' pu ~/muz/U2b;scrn -S mob -t mob g3 **/*Obs*     ;po';
 alias srut='pu  /etc    ;scrn -S rut -t rut sudo -E  zsh;po';alias sr='srut';alias Ob8='lob';alias lob='pu          ;l              m[uv]z/**/*Obs*ate_*;po';
 alias sadm='pu  /root   ;scrn -S adm -t adm sudo -E bash;po';alias sA='sadm'; #abovOb8 orig just listed: (Annihil|Deso|Domin|InitE|Obliter)8 B4XtNdng2alldirz
@@ -1433,12 +1444,13 @@ wh8()   {  LP_F='0'; # same as wh8ch BlO but wi 8rows flipd2 8columns,othrwIz ve
       for ESLC in 0 1 2 3; do BNWH=${BNWH:s/2\' /2\'};BNWH=${BNWH:s/ \'/\'};done;BNWH=${BNWH:s/ \'/\'}          ;BNWH=${BNWH:s/    --geom/ --geom};
       BNWH=${BNWH:gs/  uname/uname};BNWH=${BNWH:s/  uname -a    return 0  /uname -a;return 0};fi                ;BNWH=${BNWH:s/160     -r 50  /160 -r 50};
     BNWH=${BNWH:s/ shell built-in command \'/ shel biltin cmd}    ;BNWH=${BNWH:s/ not found\'/: !not found! cmd};BNWH=${BNWH:s/srchl    -i/srchl -i};
-    BNWH=${BNWH:s/\'ls      /\'ls} ;BNWH=${BNWH:s/  --geometry=160x50   \&/ --geometry=160x50 \&};
+    BNWH=${BNWH:s/\'ls      /\'ls} ;BNWH=${BNWH:s/  --geometry=160x50   \&/ --geometry=160x50 \&};BNWH=${BNWH:s/    -CS   / -CS };BNWH=${BNWH:s/  -CS  / -CS };
     BNWH=${BNWH:s/uxterm     -geometry 160x50   \&/uxterm -geometry 160x50 \&}  ;BNWH=${BNWH:s/git  ad/git ad}  ;BNWH=${BNWH:s/gaa; gcm/gaa;gcm};
     if     [[ $B64N == "A"          ]]; then BNWH="A:alias2'asci    '"; elif   [[ $B64N == "b"          ]]; then BNWH='b () {bak $TTY $@}';
-    elif   [[ $B64N == "R"          ]]; then BNWH="R:als2'rd ~/.ele*'"; elif   [[ $B64N == "d"          ]]; then BNWH='d () {dic      $@}';
+    elif   [[ $B64N == "R"          ]]; then BNWH="R:a2'rd ~/.eleme*'"; elif   [[ $B64N == "d"          ]]; then BNWH='d () {dic      $@}';
     elif   [[ $B64N == "a"          ]]; then BNWH="a:als2' asciiview'"; elif   [[ $B64N == "m"          ]]; then BNWH='m () {man      $@}';
-    elif   [[ $B64N == "s"          ]]; then BNWH='s ()*{src-hili $@}'; # asterisks signify that actually more is going on under the hood for these funcz
+    elif   [[ $B64N == "g"          ]]; then BNWH='g ()*{grep     $@}'; # asterisks signify that actually more is going on under the hood for these funcz
+    elif   [[ $B64N == "s"          ]]; then BNWH='s ()*{src-hili $@}';
     elif   [[ $B64N == "u"          ]]; then BNWH='u () {upd8     $@}'; elif   [[ $B64N == "ct"         ]]; then BNWH='ct() {chti     $@}';
     elif   [[ $B64N == "v"          ]]; then BNWH='v () {  v8     $@}'; elif   [[ $B64N == "ss"         ]]; then BNWH='ss()*{ssh      $@}';
     elif   [[ $B64N == "sx"         ]]; then BNWH='sx()*{scrn  -x $@}'; elif   [[ $B64N == "wh"         ]]; then BNWH='wh() {which    $@}';
@@ -1449,21 +1461,24 @@ wh8()   {  LP_F='0'; # same as wh8ch BlO but wi 8rows flipd2 8columns,othrwIz ve
     if     [[ $B64N =~ ^([3LSXqwc]|[cdfg]8|hd|dic|mutt)$ ]]; then BNWH=${BNWH:gs/ /};BNWH="$B64N= ${BNWH:gs/\'/}";fi # subst to just chop end space?
     if     [[ $LP_F =~ ^[0]$        ]]; then printf "%-18s" $BNWH; else echo -n $BNWH;fi # mAB try2!pad up past top64
     echo -n `S W`';'; # tried2add /bin/ matchz wi $ end but syntax && escaping must be somewhat unconventional, probably nEd2rEd&&stuD mor PCRE dox
-    if     [[ $B64N =~ ^(pb|zg|wd|lsm|lsu|srchl|shl|resp|ctor|tt|lc|uc|wmc|pp|c8|fixfont|gaa|up|uptm|rr|sx|xbk|sb)$ ]] ||
-           [[ $B64N =~ ^[OPQRSTUV]$ ]] || [[ $B64N =~ ^(pu|ka|dv|ai|asci|CC|pla|plb|drkh|auu|del|mo|chm|chg|ct|caln|dif|loc8)$ ]] &&
-           [[ "$COLUMNS" -lt 160    ]] || [[ $B64N =~ ^(pe|apts|ag|ic|attrib|cls|rd|cht|fp|gac|cln|ud|uni|ren|sho|viii|[Sv]8)$ ]] ||
+    if     [[ $B64N =~ ^(pb|zg|wd|lsm|lsu|srchl|shl|resp|ctor|tt|lc|uc|wmc|pp|c8|fixfont|gaa|up|uptm|rr|sx|xbk|sb)$ ]]                ||
+           [[ $B64N =~ ^[OPQRSTUV]$ ]] || [[ $B64N =~ ^(pu|ka|dv|ai|asci|CC|pla|drkh|auu|del|mo|chm|chg|ct|caln|dif|loc8)$ ]]         &&
+           [[ "$COLUMNS" -lt 160    ]] || [[ $B64N =~ ^(pe|apts|ag|ic|attrib|plb|cls|rd|cht|fp|gac|cln|ud|uni|ren|sho|viii|[Sv]8)$ ]] ||
            [[ $B64N =~ ^[uvwxyz._]$ ]] || [[ $B64N =~ ^(gt|xt|st|lxt|lxtrm|rox|sak|tmn8r|Etrm|ev|kp|agr|xbsf|resp)$ ]]; then echo $z;fi;done}
 wh8ch() { # see which most basic 64 single-character commands are mapped to what (majority being aliases, then just a few built-in or not yet found commands)
   for B64N in 0 1 2 3 4 5 6 7  8 9 A B C D E F  G H I J K L M N  O P Q R S T U V  W X Y Z a b c d  e f g h i j k l  m n o p q r s t  u v w x y z '.' '_'; do
     if     [[ "$#" -eq   0          ]]; then echo -n `S $B64N`; # BlO set to dark wHITE for invisibly dark BLACk b64 number to color (leave bLUE 4now)
-      if   [[ $B64N =~ ^[k]$        ]]; then echo -n `S  w   `;fi;fi   ;BNWH=`which $B64N`" '"; # 4 b64,on sepR8lInzUsed2:export A=`S A`;echo -n "$A A:";wh A;
+      if   [[ $B64N =~ ^[k]$        ]]; then echo -n `S  w   `;fi;
+    elif   [[ $B64N =~ ^[56fghijk]$ ]]; then echo -n `S $B64N`; # attempt to take any parameter to indic8 that only the top8 should be brightly colored
+    else                                     echo -n $SKpb    ;   fi   ;BNWH=`which $B64N`" '"; # 4 b64,on sepR8lInzUsed2:export A=`S A`;echo -n "$A A:";wh A;
     BNWH=${BNWH:s/ aliased to /alias2\'} ;BNWH=${BNWH:s/      e   / e} ;BNWH=${BNWH:s/ whereis/whereis}; # cud :gs// 4glbl or ${BNWH//litrl/subst} 4nonwIldcRd
     BNWH=${BNWH:s/\'lsd8 \'/\' lsd8   \'};BNWH=${BNWH:s/tiny \'/tiny\'};BNWH=${BNWH:s/ls  -F \'/  ls -F \'};BNWH=${BNWH:s/\'Et \'/\'   Et   \'}; # alIn quOtz
     BNWH=${BNWH:s/ shell built-in command \'/shel biltin cmd}          ;BNWH=${BNWH:s/ not found \'/ cmd not found}; # mA want2add Xtra colrz4thEs?
     if     [[ $B64N == "A"          ]]; then BNWH="A:alias2'asci    '"; elif   [[ $B64N == "b"          ]]; then BNWH='b () {bak $TTY $@}';
-    elif   [[ $B64N == "R"          ]]; then BNWH="R:als2'rd ~/.ele*'"; elif   [[ $B64N == "d"          ]]; then BNWH='d () {dic      $@}';
+    elif   [[ $B64N == "R"          ]]; then BNWH="R:a2'rd ~/.eleme*'"; elif   [[ $B64N == "d"          ]]; then BNWH='d () {dic      $@}';
     elif   [[ $B64N == "a"          ]]; then BNWH="a:als2' asciiview'"; elif   [[ $B64N == "m"          ]]; then BNWH='m () {man      $@}';
-    elif   [[ $B64N == "s"          ]]; then BNWH='s ()*{src-hili $@}'; # asterisk means there's a lot more to it than just this little sample string here
+    elif   [[ $B64N == "g"          ]]; then BNWH='g ()*{grep     $@}'; # asterisk means there's a lot more to it than just this little sample string here
+    elif   [[ $B64N == "s"          ]]; then BNWH='s ()*{src-hili $@}';
     elif   [[ $B64N == "u"          ]]; then BNWH='u () {upd8     $@}'; elif   [[ $B64N == "v"          ]]; then BNWH='v () {  v8     $@}'; fi;
     if     [[ $B64N =~ ^[3LSXcqw_]$ ]]; then BNWH="$B64N= ${BNWH:gs/ \'/}";fi;printf "%-18s" $BNWH;echo -n `S W`';'; # biltin printf
     if     [[ $B64N =~ ^[3BJRZhpx]$ ]] && [[ "$COLUMNS" -lt 160 ]] || # addXtra nwlnz 4orig 80colm mOd,fitz 64 mapz on 16lInz in 80x18 nIcely wrapd in prmptz

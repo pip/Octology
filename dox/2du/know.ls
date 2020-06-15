@@ -1,5 +1,5 @@
 # HBQLISTV:know.ls crE8d by PipStuart <Pip@CPAN.Org> to duplic8 Dr. Jordan B. Peterson's Quora.Com answer of "40 most valuable things everyone should know";
-# $VERSION='0.0';$d8VS='K5RMCUTE'; # While this document origin8d around (&& still mainly intends to focus on) Dr. Peterson's knowledge, many others fE8ure;
+# $VERSION='0.0';$d8VS='K6BM10HS'; # While this document origin8d around (&& still mainly intends to focus on) Dr. Peterson's knowledge, many others fE8ure;
 # 2du:start chronicling Dr. Peterson's many topical videos with new section for post-title subject summaries or explor8ion;
 0) Tell the truth.                 
 1) Do not do things that you h8.
@@ -619,3 +619,5 @@ K5EM3cmd:HTTPS://YouTu.be/AtkeTtgbqW4 "Is Christian Nationalism Un-American?" # 
   at HTTPS://Dummies.Com/religion/christianity/catholicism/catholicism-and-the-ten-commandments for topical reference purposes, to compare with other ethics;
 K5RMCUTE:HTTPS://YouTu.be/6nQvVpLnZCw "Mythic Patterns in Mario Games Pt. 1: The Arcade Origins" # K5J:18m33s of Jonathan Pageau's gr8 Donkey Kong symbolism;
 K62M5hot:HTTPS://YouTu.be/A_a6RjR_AHY "If Man Obeyed God" # CCL:6m45s of DarkMatter2525 anim8ing a most hilarious, ridiculous, hot crE8ion-account criticism;
+K6AMGodP:HTTPS://YouTu.be/RNfhvw1KE3A "25 Bad Reasons to Believe in God" # K65:26m46s of the FriendlyAtheist laying out Ech of many simple inadequ8 argUmNts;
+K6BM0LYP:HTTPS://YouTu.be/RoyFdWYgz5I "Philosophical Failures of Christian Apologetics, Part 11: The Holy Spirit" # K66:24m46s of AntiCitizenX gr8 Xplan8ion;
