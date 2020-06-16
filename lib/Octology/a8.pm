@@ -52,7 +52,7 @@ our @EXPORT= qw(bfr8c    b8c    d8c   dur8c @d8cl  d8cs  a8c   chti  c8fn  o8 S2
     $t    $u    $d    $s    $n          $T     $U    $D    $S    $N         $HK   $HR   $HO   $HY   $HG   $HC   $HB   $HM   $HP   $HW      hl
  $tnhf $ucdf  spff  spfd  spfX   shfl  reso $Auth %cmsp %p8k2 @p82k  chp8     S2f4 c2f4 dm2u cdst %crgb %cbrt @snls @mrls %cdrd %cdrn    %nrgb         gnp8);
  # of 52 posibl sngl-letr var nmz,a8 Xportz 20,$b && $a unavail,so shudB thEs30 lFt4quik shortSt nAmz: 'def hij l n  q stuv x', 'A  DEF HIJ L N  Q STUV X Z';
-our $VERSION='0.0';my  $d8VS='K6AMHell';our $Auth='PipStuart <Pip@CPAN.Org>'; # above not exporting $b since collidez with sort{$a  <=> $b};unalloc'd sOlOz^;
+our $VERSION='0.0';my  $d8VS='K6GM8sum';our $Auth='PipStuart <Pip@CPAN.Org>'; # above not exporting $b since collidez with sort{$a  <=> $b};unalloc'd sOlOz^;
 our $ucdf= eval('use Color::Similarity::RGB qw(distance);1') || 0; # try2set UseColorDistanceFlag if optional module is available; /defhijlnqstuvx/i + /AZ/^;
 our @Monz=qw(January February March   April     May June July   August September October November December);our @Mon=();push(@Mon,substr($_,0,3)) for(@Monz);
 our @Dayz=qw(Sunday  Monday   Tuesday Wednesday Thursday Friday Saturday                                  );our @Day=();push(@Day,substr($_,0,3)) for(@Dayz);
@@ -1168,7 +1168,7 @@ sub sumb{  my $widt=0;$widt=1 if(exists($ENV{'COLUMNS'}) && $ENV{'COLUMNS'} >= 1
   # 'ZdifTriq' => $W."    old Gentoo hard-drive /z to /Z comparison utility                  ",
   # 'zpmt'     => $G."a8  format escaped text for Zsh ProMpT command-line width detection    ", # now replaced with `sS z`
  # H4NM4NM4:keeping to exactly 1 160x50 page contains barely worthwhile:c8,curs,mix8,pimp,pmix,prym,readhead,shl8 so try2upd8 them to be useful or retire them;
-  my $bfle=$#bfls;my %bftc=('grup'=>{'a8'=>'F:A','b8'=>'F:B','c8'=>'F:C','d8'=>'F:R','f8'=>'F:o','m8'=>'F:M','U8' =>'F:Y', # BinFilzListEnd && TypeCodez
+  my $bfle=$#bfls;my %bftc=('grup'=>{'a8'=>'F:A','b8'=>'F:B','c8'=>'F:C','d8'=>'F:Y','f8'=>'F:o','m8'=>'F:M','U8' =>'F:r', # BinFilzListEnd && TypeCodez
                        'dirz'=>'F:N','no'=>'F:W',     'Time::DayOfWeek'=>'F:F','Time::PT'=>'F:F','p8'=>'F:p','Utl'=>'F:5',       }, # mABkeyz shudB qr// nstd?
                             'modu'=>{ 'Math::BaseCnv'=>'D:B',       'Similarity::RGB->distance'=>'F:C','Games::Cards::Poker->Shuffle'=>'F:p','XML::Tidy'=>'pb',
              'Math::BigFloat'=>'F:C', 'C::S'=>'Zb','Curses::Simp'=>'Zb', 'C::Simp'=>'Zb','DiSTance'=>'F:C','Octology::d8'=>'F:R',},
@@ -1183,7 +1183,7 @@ sub sumb{  my $widt=0;$widt=1 if(exists($ENV{'COLUMNS'}) && $ENV{'COLUMNS'} >= 1
                             'colr'=>{'L' =>'Xg','R' =>'Rw', '4'=>'Aq', 'B'=>'M0', '2'=>'F:V',                                    },
                             'b64r'=>{'\['=>'Xw','-'=>'pk','0'=>'Gb','9'=>'pb','A'=>'gb','Z'=>'Fb','\.'=>'Wb','_'=>'Ub','7'=>'Ub',}, # rEmMbr2ignorthiswhol tkey
                             'xmlt'=>{'Text'=>'F:R','Binary'=>'F:B','Compress'=>'F:C','eXpand'=>'F:Y','whitespace'=>'F:W',        },
-                            'd8fz'=>{'Year'=>'Fb','Month'=>'ob','Day'=>'Yb','week'=>'ok','zone'=>'Gb','displaying'=>'HARL','now'=>'HIRK',},);
+                            'd8fz'=>{'Year'=>'Yb','Month'=>'Gb','Day'=>'Tb','week'=>'Gk','zone'=>'Bb','displaying'=>'HARL','now'=>'HIRK',},);
   my $i;my $j="$z$SKp1".'m'; # Jump_bak2zero_bold
   my $t;my $e;my $f;my $h; # additional SKp code holder variablez; $i reInit && $j Jumpbak are the locl onez 2 prEserv
   my $l;my $v;my $q;my $x; # have 'defh lnqs' 8 2Uz4 b64r especially, but then can be used for plenty else, forgot $a is for sort, none still available!
@@ -1316,28 +1316,23 @@ sub sumb{  my $widt=0;$widt=1 if(exists($ENV{'COLUMNS'}) && $ENV{'COLUMNS'} >= 1
       for (0 ..         $blih  ){ # after [bd]([fu]r)?8colr shrunk to just .*8c, replaced 8 orig '9s' values with '6s' instead
         if(-d "$ENV{'HOME'}/bin/$bfls[$_]"){$dirn= sprintf("%-6s",$bfls[$_].'/');$dirn=~ s/(\/)/$f$1$d/g; # 4m@ && colr dir key
                                    printf($out8 "$d%s"  ,$dirn            );print $out8 $bfst{$bfls[$_        ]} if(exists($bfst{$bfls[$_        ]}));
-        }else{                     printf($out8 "$h%-6s",$bfls[$_        ]);print $out8 $bfst{$bfls[$_        ]} if(exists($bfst{$bfls[$_        ]}));
-        }
+        }else{                     printf($out8 "$h%-6s",$bfls[$_        ]);print $out8 $bfst{$bfls[$_        ]} if(exists($bfst{$bfls[$_        ]}));}
         if(-d "$ENV{'HOME'}/bin/$bfls[$_]"){$dirn= sprintf("%-6s",$bfls[$_].'/');$dirn=~ s/(\/)/$f$1$d/g; # 4m@ && colr dir key
           if(@bfls > $_+$blih+1){  printf($out8 "$d%s"  ,$dirn            );print $out8 $bfst{$bfls[$_+$blih+1]} if(exists($bfst{$bfls[$_+$blih+1]}));
                                    say    $out8  $z;}
         }else{
           if(@bfls > $_+$blih+1){  printf($out8 "$h%-6s",$bfls[$_+$blih+1]);print $out8 $bfst{$bfls[$_+$blih+1]} if(exists($bfst{$bfls[$_+$blih+1]}));
-                                   say    $out8  $z;}
-        }
-      }
+                                   say    $out8  $z;}}}
     }else{ # HB1MFcat:presumably just 48 even no modulo is ordering lower right corner double rot8d only when `sumb u` trying to append undescribeds;
       for (0 ..         $blih-1){  printf($out8 "$h%-6s",$bfls[$_        ]);print $out8 $bfst{$bfls[$_        ]} if(exists($bfst{$bfls[$_        ]}));
         if  (@bfls > $_+$blih  ){  printf($out8 "$h%-6s",$bfls[$_+$blih  ]);print $out8 $bfst{$bfls[$_+$blih  ]} if(exists($bfst{$bfls[$_+$blih  ]}));
-                                   say    $out8  $z;}}
-    }
+                                   say    $out8  $z;}}}
   }else{
     for  (0 ..         $#bfls  ){ # setting dirn only seemz to work when not in widt mode so far
       if (-d "$ENV{'HOME'}/bin/$bfls[$_]"){my $dirn= sprintf("%-6s",$bfls[$_].'/');$dirn=~ s/(\/)/$f$1$d/g; # 4m@ && colr dir key
                                    printf($out8 "$d%s"  ,$dirn            );print $out8 $bfst{$bfls[$_        ]} if(exists($bfst{$bfls[$_        ]}));
       }else{
-                                   printf($out8 "$h%-6s",$bfls[$_        ]);print $out8 $bfst{$bfls[$_        ]} if(exists($bfst{$bfls[$_        ]}));
-      }
+                                   printf($out8 "$h%-6s",$bfls[$_        ]);print $out8 $bfst{$bfls[$_        ]} if(exists($bfst{$bfls[$_        ]}));}
                                    say    $out8  $z;}}
   if($sunf){                       print  $out8  $z,join(' ',reverse(@ufls));} # Show UNdescribed File LiSt at end (mAB reorg into 2nd bkgr desc sumb page?)
   close   $out8             or die "Can't close duplic8 STDOUT handle: $!";}

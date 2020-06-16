@@ -1,8 +1,8 @@
 #!/usr/bin/perl
 use strict;use warnings;use utf8;use v5.10; # F33L8iqa:testng installed terminals for SGR Select Graphic Rendition support to mimic in 8trm aftr c8 adds layrz,
 use Octology::a8; # might want to add codez to a8 d8a then ref here? My custom f0nt codes in here are making l8st xterm resize! Learn how.
-use Octology::b8; # just for b64
-use Octology::d8;my $d8VS='K3RMNAut';my $term='';$term=$ENV{'TERM'} if(exists($ENV{'TERM'})); # `msgcat --color=test` haz intNsiv HSV color test to learn from.
+use Octology::b8; # just for b64, but could also use a8's @sb64 && manually handle multiplic8ion together as needed, to maintain fewer dependencies on .pm's.
+use Octology::d8;my $d8VS='K6FMHAD2';my $term='';$term=$ENV{'TERM'} if(exists($ENV{'TERM'})); # `msgcat --color=test` haz intNsiv HSV color test to learn from.
 open my $out8,'>&',STDOUT or die "Can't open  duplic8 STDOUT handle: $!";binmode $out8,':encoding(UTF-8)'; # crE8 local duplic8 of global
 # 2du:mk Blox mode text blacK in middle && White on sidez (like SVG),mk 80col-b; # argumentz: (dashez are optional)
 my @sd8a=([ 0     , 'N Normal / reset                                        '], #   -c omitz Color map, -B showz color gradient Blockz, -b Bkgr Blox
@@ -97,22 +97,22 @@ if($argz !~ /c/i){say $out8 $z if($widt);if($argz =~ /b/i){my $p88c=$cmap{'8pal8
         for(  0.. 15){printf($out8 "\e[$q;5;%dm   %02X   "    ,    $_,          $_ );print $out8 $z . ' ' x 5 if(!(($_+1) % 4)&& $_<15);
                       print  $out8 ' ' if($_ == 7);}say $out8 $z;
         for(  0.. 15){printf($out8 "\e[$q;5;%dm %6s "         ,    $_,$x256[    $_]);print $out8 $z . ' ' x 5 if(!(($_+1) % 4)&& $_<15);
-                      print  $out8 ' ' if($_ == 7);}say $out8 $z;say $out8 '';
+                      print  $out8 ' ' if($_ == 7);}say $out8 $z;#say $out8 '';
         for  (my $n=    16;$n<    22;$n++  ){ # maybe adding to all %02X linez to contain a parallel %2s b64 && have %3d in between
           for(my $i= $n   ;$i< $n+31;$i+= 6){printf($out8 "$k\e[$q;5;%dm %2s  %03d %02X ",$i, b64(      $i ),$i,   $i );}
           for(my $i= $n+66;$i> $n+35;$i-= 6){printf($out8 "$k\e[$q;5;%dm %2s  %03d %02X ",$i, b64(      $i ),$i,   $i );} say $out8 $z;
           for(my $i= $n   ;$i< $n+31;$i+= 6){printf($out8 "$k\e[$q;5;%dm %4s %6s"        ,$i,h2rl($x256[$i]),$x256[$i]);}
-          for(my $i= $n+66;$i> $n+35;$i-= 6){printf($out8 "$k\e[$q;5;%dm %4s %6s"        ,$i,h2rl($x256[$i]),$x256[$i]);} say $out8 $z;} say $out8 '';
+          for(my $i= $n+66;$i> $n+35;$i-= 6){printf($out8 "$k\e[$q;5;%dm %4s %6s"        ,$i,h2rl($x256[$i]),$x256[$i]);} say $out8 $z;}#say $out8 '';
         for  (my $n=    93;$n>    87;$n--  ){
           for(my $i= $n   ;$i< $n+31;$i+= 6){printf($out8 "$k\e[$q;5;%dm %2s  %03d %02X ",$i, b64(      $i ),$i,   $i );}
           for(my $i= $n+66;$i> $n+35;$i-= 6){printf($out8 "$k\e[$q;5;%dm %2s  %03d %02X ",$i, b64(      $i ),$i,   $i );} say $out8 $z;
           for(my $i= $n   ;$i< $n+31;$i+= 6){printf($out8 "$k\e[$q;5;%dm %4s %6s"        ,$i,h2rl($x256[$i]),$x256[$i]);}
-          for(my $i= $n+66;$i> $n+35;$i-= 6){printf($out8 "$k\e[$q;5;%dm %4s %6s"        ,$i,h2rl($x256[$i]),$x256[$i]);} say $out8 $z;} say $out8 '';
+          for(my $i= $n+66;$i> $n+35;$i-= 6){printf($out8 "$k\e[$q;5;%dm %4s %6s"        ,$i,h2rl($x256[$i]),$x256[$i]);} say $out8 $z;}#say $out8 '';
         for  (my $n=   160;$n<   166;$n++  ){
           for(my $i= $n   ;$i< $n+31;$i+= 6){printf($out8 "$k\e[$q;5;%dm %2s  %03d %02X ",$i, b64(      $i ),$i,   $i );}
           for(my $i= $n+66;$i> $n+35;$i-= 6){printf($out8 "$k\e[$q;5;%dm %2s  %03d %02X ",$i, b64(      $i ),$i,   $i );} say $out8 $z;
           for(my $i= $n   ;$i< $n+31;$i+= 6){printf($out8 "$k\e[$q;5;%dm %4s %6s"        ,$i,h2rl($x256[$i]),$x256[$i]);}
-          for(my $i= $n+66;$i> $n+35;$i-= 6){printf($out8 "$k\e[$q;5;%dm %4s %6s"        ,$i,h2rl($x256[$i]),$x256[$i]);} say $out8 $z;} say $out8 '';
+          for(my $i= $n+66;$i> $n+35;$i-= 6){printf($out8 "$k\e[$q;5;%dm %4s %6s"        ,$i,h2rl($x256[$i]),$x256[$i]);} say $out8 $z;}#say $out8 '';
        #for  (my $n=   160;$n<   166;$n++  ){
        #  for(my $i= $n   ;$i< $n+31;$i+= 6){printf($out8 "$k\e[$q;5;%dm         %02X ",$i,      $i );}
        #  for(my $i= $n+66;$i> $n+35;$i-= 6){printf($out8 "$k\e[$q;5;%dm         %02X ",$i,      $i );} say $out8 $z;
@@ -121,7 +121,8 @@ if($argz !~ /c/i){say $out8 $z if($widt);if($argz =~ /b/i){my $p88c=$cmap{'8pal8
         for(232..243){printf($out8 "$k\e[$q;5;%dm %2s  %03d %02X ",    $_, b64(          $_ ),          $_ ,     $_ );} say $out8 $z;
         for(232..243){printf($out8 "$k\e[$q;5;%dm %4s %6s"        ,    $_,h2rl($x256[    $_]),$x256[    $_]         );} say $out8 $z;
         for(  0.. 11){printf($out8 "$k\e[$q;5;%dm %2s  %03d %02X ",255-$_, b64(      255-$_ ),      255-$_ , 255-$_ );} say $out8 $z;
-        for(  0.. 11){printf($out8 "$k\e[$q;5;%dm %4s %6s"        ,255-$_,h2rl($x256[255-$_]),$x256[255-$_]         );} say $out8 $z;}}
+        for(  0.. 11){printf($out8 "$k\e[$q;5;%dm %4s %6s"        ,255-$_,h2rl($x256[255-$_]),$x256[255-$_]         );} say $out8 $z;
+      }}
     else{ # don't even handle 80-column gradient Blox yet, just make big 8pal8 Blox instead (since rest are good4now)
       if  ($argz=~ /p/i){my $oF='K';$oF='' if($argz=~ /P/); # show locl 8pal8?
         if($argz=~ /l/i){

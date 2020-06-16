@@ -30,7 +30,7 @@ unsetopt                \
 # auto_pushd            \# setng addz dirz 2 stack wN just normally chngng 2 thM (wich I du not normally lIk or want)
 # ksh_arrays            \# rEmMbr wNwrItng scrptz[or funcz]2include'setopt [localoptions] ksharrays'sO arAzR 0-bAsed(but!glOblBcuzmOst scrptzRstndrdly 1-bAsed)
 # re_____match_____pcre \# mA want2set for Z-SHell scripting RegularExpressions to utilize PerlCompatibility styles && mA insert 'zmodload zsh/(pc)?re(gex)?';
-export Vers='0.0';export d8VS='K6EMGdam';export Auth='PipStuart <Pip@CPAN.Org>'; # not Xportng $b sinc cOlIdz wi sort{$a <=> $b} /defhijlnqstuvx/i + AZ 4golf;
+export Vers='0.0';export d8VS='K6GMBuds';export Auth='PipStuart <Pip@CPAN.Org>'; # not Xportng $b sinc cOlIdz wi sort{$a <=> $b} /defhijlnqstuvx/i + AZ 4golf;
 if     [[       "$SHELL"    == "" ]]; then       export SHELL=`  which zsh`;fi # 8sh should parse this && OverId it    # shud `man zshall` /OSTYP 2lern4BlO
 if     [[       "$HOSTNAME" == "" ]]; then       export HOSTNAME=`hostname`;fi #`hostname`retnz fsckd nwlInz\n4CygWinzRxvt... ||smthng els lame  =(
 if     [[       "$HOST"     == "" ]]; then       export HOST   ="$HOSTNAME";fi;export VERBOSE='1'; # set flag to print debug && status info from system utilz
@@ -441,8 +441,7 @@ alias     plb='   perl                -MOctology::b8                -CS    -e'; 
 alias     pab='   perl -MOctology::a8 -MOctology::b8                -CS    -e'; # `pab "binmode STDOUT,':utf8';print b256(calQ('15xx63'))"` gets rid of ...
 alias    pabd='   perl -MOctology::a8 -MOctology::b8 -MOctology::d8 -CS    -e'; #   ... the warning about "Wide character in print at -e line 1."
 alias     pep='   perl -MOctology::a8 -MOctology::b8 -MOctology::d8 -CS   -pe'; # -CSDL is the same as just -C && gets all the STDz && i/o && @ARGV
-           gg() { perl ~/dvl/d8/bin/gg $@ ; }; # basic perl call to priv8 non-executable development utility to Gener8 G-mail stamps for Gerry (my Dad)
-#lias      gg='   perl ~/dvl/d8/bin/gg   ';
+#lias      gg='   perl ~/dvl/d8/bin/gg   '; # basic perl call to priv8 non-executable development utility to Gener8 G-mail stamps for Gerry (my Dad)
 alias    drkh='   pa  "print drkh(@ARGV)"'; # HEX to RgbL with 8th intensities  # abov gg was alias but changed to shell function so 'p' pRam doesn't Xpand;
 #lias    h2rl='   pa  "print h2rl(@ARGV)"'; # HEX to RgbLowbitz    # actually trying to reform these alias wrappers to standalone usable new ~/bin page2 utlz
 #lias    rl2h='   pa  "print rl2h(@ARGV)"'; #        RgbLowbitz to HEX
@@ -464,9 +463,17 @@ alias       0=' ogg123'; # o 123 : zer0 lIke lc o audio-player # maybe l8r try t
 alias       1=' mpg321'; # m 321 :                audio-player # simple && light-w8 command-line MP3 player based on mad decoding library (drop-in 4: mpg123);
 alias       2=' mpg123'; # m 123 :                audio-player which plays audio MPEG 1.0/2.0/2.5 streams (layrz 1, 2, && 3),was non-free unlike abov`mpg321`;
 #lias       3='   g3  '; #  g3   :         gst123 audio-player wrapped with Expect manipul8ion layer (J29:3 now 3rd sepR8 varE8ion off g3 2get abit trickier);
-alias    g3lt='cd    ~/muz/U2b;gst123 -k 212 Oi*;g3 63 38 63 63 u*/El* ../f*/Bo*/T*/B* *br* c*/Gi* -v monoscope;ec;HUlt'; # g3 K6O-Q PerlCitCloud LitningTalk;
-alias    HUlt='g3 48 ~/muz/U2b/chl/Hack*Univ* -k 3420'; # add just first seconds of gr8 part to push above 4mins12secs right up against 5mins total 4 LitTalk;
-alias    HacU='g3 99 ~/muz/U2b/chl/Hack*Univ* -k 3420 -v goom2k1'; # Fil_Far's HackerCodingMusic Universe awesome Nd-pRt2 -k --sKip 2 (57mins==`q 57x60`secs);
+export     d2="$HOME/dox/2du";
+export     gs="$HOME/gfx/sho";
+alias      GL='g3lt   '; # GoodLuck GodsLove GameLife GoneLong GrabLunch GetLadies GutLosers GiveLicense GoLast GraphicsLibrary Gr8Laser GroupLeaders GetLoud;
+alias    g3lt='pu     ~/muz/U2b;wh g3lt;gst123 -k  212 Oi*;g3 63 36 63 63 u*/El* ../f*/Bo*/T*/B* *br* c*/Gi* -v monoscope;ec;g3 ../wa*/Bo*/B*;ec;Hlt;po;ls;l';
+alias     Hlt='g3  48 ~/muz/U2b/chl/Hack*Univ* -k 3420'; # add just 1st seconds of gr8 part 2 push above 4mins12secs right up against 5mins total 4 LightTalk;
+alias      HU='g3 188 ~/muz/U2b/chl/Hack*Univ* -k 3420 -v goom2k1'; # Fil_Far's HackrCodingMusic Universe awesome Nd-pRt2 -k --sKip 2 (57mins==`q 57x60`secs);
+           SC8() { d8=`d8`;lodH                 >/tmp/S.H-$d8.ansi;sloc -b 262144 /tmp/S.H-$d8.ansi  $gs/8plc-160x50-K6GMANeg.ansi $gs/calN-160x50-K6*.ansi;
+                           shlc $d2/8.utf|hl M0 >/tmp/S8u-$d8.ansi;sloc -b 262144 /tmp/S8u-$d8.ansi;la;       rm /tmp/S??-K6*.ansi; }
+           SC()  { d8=`d8`;shlc $d2/cred.utf    >/tmp/SCu-$d8.ansi;sloc -b   1146 /tmp/SCu-$d8.ansi;          rm /tmp/S??-K6*.ansi; }
+           GG()  { pu $d2/.bak/.g6./.GG.;if [[ $# -gt 0 ]]; then ./GG $@; else ./GG -a; fi; po; } # GuyGooway's: GoodGames GoneGrooving GropingGirlies;
+alias    PSFF="Prmz;ee;Sumz;ee;Fibz;ee;Fctz 22 2;u8 736;w8 1U;qbix;lsa";
 alias       4='   x4t '; #  4    : xfce4-terminal xf4tm terminal emul8or where `x4t` is defined more elabor8ly to start with my preferred defaults elsewhere;
 alias       5='perl   '; #  5    :          perl  (5.28.1 l8st perl5 in /usr/bin/ on Pip's $HOST Oni as of`d8 K2MLAUGH`=>"Sat Feb 22 10:30:16:17 -0600 2020")
 alias       6='perl6  '; #  6    :          perl6 (which presumably should be renamed at some near future point to: "raku" for disambigU8ion && clarific8ion)
@@ -584,9 +591,9 @@ alias    gaa='     git  add .* *'; # handy alias to Add All (Asterisk) changes, 
 alias    gcm='     git commit -m'; # tried to call each of these through g8 initially, but maybe -m flag wasn't passing on to git correctly so explicit now
 alias    gac='     gaa; gcm     '; # should setup gcm to auto-commit basic gener8d d8-stamp message && maybe list biggest few file changes, if no mesg given
 alias    gacm='    gac          '; # should maybe make as function which takes parameter or gener8d commit message then gpom with auto user Pip pRam or cnfg?
-         gap()  {  gac $1; gpom; } # this needs testing to confirm whether more quoting or parameters will be required or otherwise useful beyond just the 1st
 alias    gpom='    git push origin master';alias g8st8='g8st';alias g8s='g8 s';alias g8h='g8 h';alias g8l='g8 l';alias g8d='g8 d';alias g8p='g8 p';
-alias       n=' ncal  ';           # above shortcuts are: status,           show,            help,            log,             diff,            pull
+         gap()  {  gac $1;gpom   } # above shortcuts are: status,           show,            help,            log,             diff,            pull
+alias       n=' ncal  ';
 alias       N='  calN '; #  N    :            calN (use `rsn` ReSize4calN 171x57 to show 19-Years, 2000-2018 solidly in slightly lRgr than Dflt 160x50 size)
 alias    caln='  calN ';
 alias      l8='  calN '; #  l8   :            cal|cron|at|batch

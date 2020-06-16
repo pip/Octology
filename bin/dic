@@ -112,7 +112,7 @@ if(   $Stxt=~  /(\n +?)(\d+) Moby Thesaurus words/ ){my $MTct=$2;my $MTin=$1;cho
       $Stxt=~ s/(Jargon)( File )(\()(version)( \d+)(\.)(\d+)(\.)(\d+)/$C$1$R$2$G$3$P$4$B$5$W$6$M$7$W$8$Y$9/g;
       $Stxt=~ s/,( \d+)( \w+)( 20\d+)(\) )(\[)(jargon)(\])/,$Y$1$O$2$Y$3$G$4$B$5$C$6$B$7/g;
       $Stxt=~ s/(V\.)(E\.)(R\.)(A\.)/$M$1$Y$2$R$3$C$4/g;
-      $Stxt=~ s/(Virtual)( Entity)( of)( Relevant)( Acronyms )(\()(\w+)( 20\d+)(\))/$M$1$Y$2$c$3$R$4$C$5$G$6$O$7$Y$8$G$9/g;
+      $Stxt=~ s/(Virtual)( Entity)( of)( Relevant)( Acronyms )(\()(\w+)( 20\d+)(\))/$M$1$Y$2$c$3$R$4$C$5$g$6$G$7$Y$8$g$9/g;
       $Stxt=~ s/(\[)(v)(e)(r)(a)(\])/$B$1$M$2$Y$3$R$4$C$5$B$6$G/g;
       $Stxt=~ s/(The)( Devil')(s)( Dictionary )(\()(\d+)(-)(\d+)(\))/$z$1$R$2$R$3$W$4$M$5$R$6$Y$7$R$8$M$9/g;
       $Stxt=~ s/(\[)(devil)(\])/$B$1$R$2$B$3$G/;

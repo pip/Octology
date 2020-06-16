@@ -11,7 +11,7 @@
 #     tryout && r8 all :colorscheme /usr/share/cmus/*.theme with typical 8 main pal8 settingz && mAB genR8 .Hrc style dense pal8 mapz of each theme's d8a,
 #     stuD gapless playback && format options, ckout cmus-remote,find&&stuD cmus-tutorial, stuD Libre.FM GNU scrobbling like cmusfm && zomg does,
 #   revive all good old pimp rand rang, r8ng, && mAB volume scaling cmus:"replaygain" && any othr ancient worthwhile stuf from my now ancient zinf fsui dayz;
-use strict;use warnings;use utf8;use Octology::a8;my $VERSION='0.0';my $d8VS='K6FM7LIB'; # consider detecting && adding custom Xtra --help basic tXt output2;
+use strict;use warnings;use utf8;use Octology::a8;my $VERSION='0.0';my $d8VS='K6FMKEEP'; # consider detecting && adding custom Xtra --help basic tXt output2;
 use Term::ReadKey;     # note that you can pass in as many -d=\d+ DelayDur8ionInSeconds (like MPlayer -endpos) for as many file-name params follow 2 B plAyd;
 END{      ReadMode 0;} # good practice to auto-restore orig TTY read settingz at END
           ReadMode 3;  # setup 4 raw mode or 3 cbreak mode where Ctrl-C workz since signalz are enabled
@@ -20,7 +20,7 @@ use    Encode;open my $out8,'>&',STDOUT or die "Can't open  duplic8 STDOUT handl
 use    Expect;my $cm='gst123';my $to= 2;my $so=0.3;my $tS=0;$tS=1 if(-t STDIN);my @pl; # CoMand strng, TimeOutsecz, SelectOutflsecz, ttySTDIN?, @PlayList
 my %kr=('u'=>"\e[A" ,'d'=>"\e[B" ,'r'=>"\e[C",'l'=>"\e[D", # arOkEz working,Yay! `man 5 terminfo`UDRL=>cuu1,cud1,cuf1,cub1`v=$(tput cuu1)` `printf '%q\n' "$v"`
         'z'=>"\e[6~",'a'=>"\e[5~",'w'=>'+','s'=>'-','>'=>'n','h'=>'?','p'=>' ',chr(127)=>'m',"\n"=>'n',';'=>'f','v'=>'1','x'=>'q');my @dscz; # KeyzRemap
-my $ksst=0;while(@ARGV && $ARGV[0]=~ /^-*d?[=:]?(\d+)/i){ push(@dscz,$1 );shift(@ARGV  );} # -sKipSecondsStartTime, Dur8ionSeCZ, && BlO shift paramz4cmd
+my $ksst=0;while(@ARGV && $ARGV[0]=~ /^-*d?[=:]?(\d+)$/i){push(@dscz,$1 );shift(@ARGV  );} # -sKipSecondsStartTime, Dur8ionSeCZ, && BlO shift paramz4cmd
 my $xp=Expect->new();my @pr;my $si='';my $cs ='';my $lt ='';if(@ARGV){@pr=@ARGV;@ARGV=();} #eXPectobj,PaRamz,StndrdIn,CodecStrng 2ck4dupz,LastTime 2padCodecz
 my $nnxt=0;my $gorl='';               my $ts ='';my $as =''; # Next-NeXTflag, GoomOriginalReloc8Line, Title..artistString,Album..genreString
 #push(@pr,';echo','8_eNNd_8');$cm.=' '.join(' ',@pr); # Expect seemz2B %20%3B like URL escaping my @pr with spacez && semiz so joining 4just sclr

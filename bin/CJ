@@ -31,7 +31,7 @@
 #   rural / suburban / inner-city dwellers, multi-gener8ional homes, household incomes, heights, w8s, BMI's, asthmatics, allergies, apneas, etc. to account 4;
 # K5GMHELP:It just occured to me that death percentage would be potentially much more in4m8ive if it included how many nEded unavailable ventil8ors 2 survive;
 use strict;use warnings;use utf8;use v5.10;use Octology::a8;use Octology::d8;use Text::CSV; # should also track how many tSts done&&ventil8ors Ech county has;
-my $Vers='0.0';my $d8VS='K5MM8Eat';   my %sd8a;my %flcb=('C'=> 3,'D'=> 4,'R'=> 5,'A'=>-1);my %flcm=('C'=>$c,'D'=>$Y,'R'=>$g,'A'=>$K);
+my $Vers='0.0';my $d8VS='K5MM8Eat';   my %sd8a;my %flcb=('C'=> 3,'D'=> 4,'R'=> 5,'A'=>-1);my %flcm=('C'=>$c,'D'=>$Y,'R'=>$g,'A'=>$K);my $lupc=0;
 my @flck=qw(Confirmed Deaths Recovered Active);my %flcn=('C'=> 7,'D'=> 8,'R'=> 9,'A'=>10); # USt8 AbbreV8ionz below R not even used anymore,sO scrap l8r;
 my      $covp=$ENV{'HOME'};$covp.="/dvl/c8/CJ";my $whg8=`which git`;`mkdir -p $covp` unless(-d $covp     );      chdir($covp     ); # mk sure CSV d8a gotN
 if(!-d "$covp/COVID-19" && length($whg8)){system("  git clone https://github.com/CSSEGISandData/COVID-19");}else{chdir("COVID-19");system("  git pull");}
@@ -309,28 +309,30 @@ if(@ARGV && $ARGV[0]=~ /^-*h(elp)?$/i){print $out8 " CJ - CoronavirusJ (19) d8a 
 my      $csvp=   $covp . "/COVID-19/csse_covid_19_data/csse_covid_19_daily_reports";my %clrd;
 for  my $dfil (<"$csvp/*.csv">){my $d8nw=Octology::d8->new();my $ndfl=$dfil;$ndfl=~ s/^(.+)\.(\w+)$/$1-$d8nw.$2/;
                                                              my $dfd8=$dfil;$dfd8=~ s/^(.+)\/([^.]+)\.(\w+)$/$2/; # isol8 *MM-DD-YYYY* 2 say l8r
-  my    $csvo=                              Text::CSV->new({'binary' => 1}); #, auto_diag => 1 });
-  open    ( my $fhnd, "<:encoding(UTF-8)", $dfil) or die "$dfil: $!";my $got1=0;my $janf=0;my $marL=0;my $aftm=0; #
-  while   ( my $rowd= $csvo->getline($fhnd)){next if($rowd->[0] =~ /(Province\/State|Recovered)/ || $rowd->[2] =~ /(Province\/State|Recovered)/);
-    if    ($dfd8=~ /^0[12]-/               ){$got1=$janf=1;} #Province/State,Country/Region,Last Update,Confirmed,Deaths,Recovered
-    elsif ($dfd8=~ /^03-(\d\d)-/ && $1<= 21){$got1=$marL=1;} #Province/State,Country/Region,Last Update,Confirmed,Deaths,Recovered,Latitude,Longitude
-    elsif (exists($st8a{$rowd->[2]}       )){$got1=$aftm=1;} #FIPS,Admin2,Province_St8,Country_Region,Last_Upd8,Lat,Long_,Confirmed,Deaths,Recovered,Active,
-    next unless($got1); #=~ /(^Wis|uri$|^(Cal|Pen).+nia$)/ or next;$got1=1;     #  ... Combined_Key
-    for   my $fldk (  @flck){my $frst= substr($fldk,0,1);
-      if    ($janf || $marL){my $pscr="$rowd->[0],$rowd->[1]"; # set ProvinceSt8,CountryRegion as 1st 2 fieldz joined by comma
-        $sd8a{ $dfd8}{ $pscr    }{$frst} =0 unless(exists($sd8a{$dfd8}) && exists($sd8a{$dfd8}{$pscr     }) && exists($sd8a{$dfd8}{$pscr     }{$frst}));
-        $sd8a{ $dfd8}{ $pscr    }{$frst}+=$rowd->[$flcb{$frst}] if($rowd->[$flcb{$frst}]=~ /^\d+$/);}  # could also save Lat && Long_ for $marL
-      elsif ($aftm){
-        $sd8a{ $dfd8}{$rowd->[2]}{$frst} =0 unless(exists($sd8a{$dfd8}) && exists($sd8a{$dfd8}{$rowd->[2]}) && exists($sd8a{$dfd8}{$rowd->[2]}{$frst}));
-        $sd8a{ $dfd8}{$rowd->[2]}{$frst}+=$rowd->[$flcn{$frst}] if($rowd->[$flcn{$frst}]=~ /^\d+$/);}} # might want 2 just ck for non-zero nstd of \d+ ?
-  } if($got1){my $dfcd=$dfd8;$dfcd=~ s/(\d\d)-(\d\d)-(\d\d\d\d)/$G$1$W-$T$2$W-$Y$3$z/;$clrd{$dfd8}=$dfcd; # D8a-File-Colored-D8; K5MM8Eat:fixd d8 colrz 2;
-    for     my $st8n (sort {$sd8a{$dfd8}{$a}{'C'} <=> $sd8a{$dfd8}{$b}{'C'}} keys(%{$sd8a{$dfd8}})){
-      printf   $out8 "$z %s$B %-49s$z " ,$dfcd,$st8n; # mAB custom-colr St8z && countriez here l8r too? orig had $st8a{$st8n} just4USt8z but nEd mor;
-      for   my $fldk (@flck){my $frst=substr($fldk,0,1); # below skip Recovered && Active if blank fieldz or only added zeroez && still empty, sinc !in d8a
-        if($sd8a{$dfd8}{$st8n}{$frst}){ printf $out8 "%s$frst$W:$z%s%10s$z  ",$flcm{$frst},$flcm{$frst},comma($sd8a{$dfd8}{$st8n}{$frst});
-        }else                         { printf $out8 "$k$frst$SKpb:$k%10s$z  ",0;
-        }} say $out8 "$W;$z";
-    }} close(  $fhnd                            ) or die "$dfil: $!";} # loop thru MM-DD-YYYY %sd8a kEz2thN bild dLta chgz byDay thN DscrIb or grafgrOth r8z;
+  if        ($dfd8=~ /^0[6-9]/){ # try only June2Sept Dfalt instead of trying to incr $lupc for loop-count limit8ion
+    my       $csvo=                         Text::CSV->new({'binary' => 1}); #, auto_diag => 1 });
+    open  ( my $fhnd, "<:encoding(UTF-8)", $dfil) or die "$dfil: $!";my $got1=0;my $janf=0;my $marL=0;my $aftm=0; #
+    while ( my $rowd= $csvo->getline($fhnd)){next if($rowd->[0] =~ /(Province\/State|Recovered)/ || $rowd->[2] =~ /(Province\/State|Recovered)/);
+      if    ($dfd8=~ /^0[12]-/               ){$got1=$janf=1;} #Province/State,Country/Region,Last Update,Confirmed,Deaths,Recovered
+      elsif ($dfd8=~ /^03-(\d\d)-/ && $1<= 21){$got1=$marL=1;} #Province/State,Country/Region,Last Update,Confirmed,Deaths,Recovered,Latitude,Longitude
+      elsif (exists($st8a{$rowd->[2]}       )){$got1=$aftm=1;} #FIPS,Admin2,Province_St8,Country_Region,Last_Upd8,Lat,Long_,Confirmed,Deaths,Recovered,Active,
+      next unless($got1); #=~ /(^Wis|uri$|^(Cal|Pen).+nia$)/ or next;$got1=1;     #  ... Combined_Key
+      for   my $fldk (  @flck){my $frst= substr($fldk,0,1);
+        if    ($janf || $marL){my $pscr="$rowd->[0],$rowd->[1]"; # set ProvinceSt8,CountryRegion as 1st 2 fieldz joined by comma
+          $sd8a{ $dfd8}{ $pscr    }{$frst} =0 unless(exists($sd8a{$dfd8}) && exists($sd8a{$dfd8}{$pscr     }) && exists($sd8a{$dfd8}{$pscr     }{$frst}));
+          $sd8a{ $dfd8}{ $pscr    }{$frst}+=$rowd->[$flcb{$frst}] if($rowd->[$flcb{$frst}]=~ /^\d+$/);}  # could also save Lat && Long_ for $marL
+        elsif ($aftm){
+          $sd8a{ $dfd8}{$rowd->[2]}{$frst} =0 unless(exists($sd8a{$dfd8}) && exists($sd8a{$dfd8}{$rowd->[2]}) && exists($sd8a{$dfd8}{$rowd->[2]}{$frst}));
+          $sd8a{ $dfd8}{$rowd->[2]}{$frst}+=$rowd->[$flcn{$frst}] if($rowd->[$flcn{$frst}]=~ /^\d+$/);}}  # might want 2 just ck for non-zero nstd of \d+ ?
+    } if($got1){my $dfcd=$dfd8;$dfcd=~ s/(\d\d)-(\d\d)-(\d\d\d\d)/$G$1$W-$T$2$W-$Y$3$z/;$clrd{$dfd8}=$dfcd; # D8a-File-Colored-D8; K5MM8Eat:fixd d8 colrz 2;
+      for       my $st8n (sort {$sd8a{$dfd8}{$a}{'C'} <=> $sd8a{$dfd8}{$b}{'C'}} keys(%{$sd8a{$dfd8}})){
+        printf $out8 "$z %s$B %-49s$z " ,$dfcd,$st8n; # mAB custom-colr St8z && countriez here l8r too? orig had $st8a{$st8n} just4USt8z but nEd mor;
+        for my $fldk (@flck){
+          my $frst=substr($fldk,0,1); # below skip Recovered && Active if blank fieldz or only added zeroez && still empty, sinc !in d8a
+          if($sd8a{$dfd8}{$st8n}{$frst}){ printf $out8 "%s$frst$W:$z%s%10s$z  ",$flcm{$frst},$flcm{$frst},comma($sd8a{$dfd8}{$st8n}{$frst});
+          }else                         { printf $out8 "$k$frst$SKpb:$k%10s$z  ",0;
+          }} say $out8 "$W;$z";
+      }} close(  $fhnd                            ) or die "$dfil: $!";}} # loop thru MM-DD-YYYY %sd8a kEz2thN bild dLta chgz byDay thNDscrIb or grafgrOth r8z;
 my $msas='Wisc';#|Penn|ouri|Cali|York
 if(@ARGV && $ARGV[0]=~ /^(\w| |\|)+$/){$msas=shift(@ARGV);}
 for(sort {$a cmp $b} keys(%sd8a)){ # thN stRt prOjectng whNplAc mItB s@ur8d by measurngAgNst HTTPS://WorldOMeters.Info/world-population/population-by-country
