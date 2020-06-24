@@ -1,0 +1,4 @@
+#!/usr/bin/perl
+use strict;use warnings;use utf8;use Octology::a8;
+open my $out8,'>&',STDOUT or die "Can't open  duplic8 STDOUT handle: $!";binmode $out8,':encoding(UTF-8)';print $out8 xe(@ARGV);
+close   $out8             or die "Can't close duplic8 STDOUT handle: $!";

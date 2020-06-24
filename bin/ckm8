@@ -49,7 +49,7 @@
 #   Octo is 8base d8a applic8ions:V8 abbreV8ions,b8 nums,d8 stamps,f8 RU(Red)E4||2lern8bow?pal8NtrE RGB && f0nt -##-,c8 col8 scrn,r8 valU8,m8 rel8,l8 skedul8r?
 use strict;use warnings;use utf8;use v5.10;use Encode;
 use Octology::a8;#se Octology::c8;
-use Octology::b8;use Octology::d8;my $VERSION='0.0';my $d8VS='K6AMJOLT';my $name=$0;$name =~ s/^.*\///;my $Dbug=0; # version,program name
+use Octology::b8;use Octology::d8;my $VERSION='0.0';my $d8VS='K6OM5XxY';my $name=$0;$name =~ s/^.*\///;my $Dbug=0; # version,program name
 open my $out8,'>&',STDOUT or die "Can't open  duplic8 STDOUT handle: $!";binmode $out8,':encoding(UTF-8)';select($out8);$|=1; # crE8 locl autoflush dup of glbl
 if(           @ARGV && $ARGV[0]=~ /^-*h/i){say $out8 " ckm8  - experimental   Curses and SDL Chess program  Vers:$VERSION  d8VS:$d8VS by Auth:$Auth
   <pW>v<pK>  sets roster tags for Players White and BlacK and for output filename where pW and pK are single-letter keys in the player registry hash (v optnal)
@@ -88,6 +88,7 @@ my $yscl = 1.0;my $hite = 50;if(exists($ENV{'LINES'}  )){$hite = $ENV{'LINES'}  
    $xscl =         0.93; # was scaling both by 1.2 below, before reverted to normal just 1.0
    $xscl = $yscl = 1.0       if(exists($ENV{'HOSTNAME'}) && length($ENV{'HOSTNAME'}) == 3); # scale Dflt down a little for laptopz && up a little for desktopz
                          #   if(exists($ENV{'HOSTNAME'}) &&     lc($ENV{'HOSTNAME'}) eq 'aku'){$xscl=1.2609375;$yscl=1.1275;} # 1280x800 2 1614x902 lIkGnomTrmz
+                             if(exists($ENV{'HOSTNAME'}) &&     lc($ENV{'HOSTNAME'}) eq 'oni'){$xscl=1.26     ;$yscl=1.126 ;} # hopefully nice && big on 1080p
 # ($ucsf,$widt,$hite,$xscl,$yscl)=(0, 80, 25,  2,  2); # uncomment to    double pixel scale for  80x25 => 1280x800 similar to SVGA && below Mode13
 # ($ucsf,$widt,$hite,$xscl,$yscl)=(0, 40, 12,  4,  4); # uncomment to quadruple pixel scale for  40x12 => 1280x768 nd2allow 12.5 chars for last 32 pixel rows
 # ($ucsf,$widt,$hite,$xscl,$yscl)=(0,320,100,0.6,0.6); # uncomment to quadruple tXt dimNsnz for 320x100=> 1280x800 for super tiny text, BlO LoadedLogFileName
@@ -452,9 +453,12 @@ m-_
 #-------- ---##--- --####-- -------- -------- ---##--- --####-- --####-- ---##--- -------- ---##--- ######## ######## ####---- ----#### --------";
 my $sxap;my $evnt;my $jstk;my $jnam;my $nbtz;my $sfss; # SdlX APplic8ion&&EVeNT objects, JoySTicK, JoyNAMe, joyNumBuTnZ, SdlFullScreenSurface
 #y %bstt;my @bnmz =(qw(Tr Ci Ex Sq L1 R1 L2 R2 Se St L3 R3 Up Rt Dn Lt)); #if($jnam eq 'ZEROPLUS PS(R) Gamepad Adaptor')
-if($sdlf){  SDL::init_sub_system(SDL_INIT_JOYSTICK); # below w(idth) h(eight) d(epth) f(lags) resizeable(just r does!work but SDL_RESIZABLE f does) EndOnQuit
-   $sxap  = SDLx::App->new(w => $widt*8*$xscl,h => $hite*16*$yscl,d => 32,t => $name,f => SDL_HWSURFACE | SDL_DOUBLEBUF | SDL_HWACCEL | SDL_RESIZABLE,eoq =>1);
-   $sfss  = SDL::Surface->new(SDL_HWSURFACE | SDL_ASYNCBLIT, $widt*8, $hite*16, 32, 0, 0, 0, 0); # above spelling diff SDL_RESIZABLE && resizeable 
+if($sdlf){  SDL::init_sub_system(SDL_INIT_JOYSTICK);   # below w(idth) h(eight) d(epth) f(lags) resizeable(just r does!work but SDL_RESIZABLE f does) EndOnQuit
+   $sxap  = SDLx::App->new(w => int($widt* 8*$xscl),   h => int($hite*16*$yscl), d => 32, t => "$name-v$VERSION",
+                           f => SDL_HWSURFACE | SDL_DOUBLEBUF | SDL_HWACCEL | SDL_RESIZABLE, eoq => 1);
+   $sfss  = SDL::Surface->new(  SDL_HWSURFACE | SDL_ASYNCBLIT,  $widt* 8,$hite*16,    32, 0, 0, 0, 0); # above spelling diff SDL_RESIZABLE && resizeable 
+  #$sfss->geometry(             int($widt* 8*$xscl) . 'x' . int($hite*16*$yscl) . '+16+16'); # failed trying to set x && y offset geom 4 sxap or sfss! =(
+  # also tried using `wmctrl -R ckm8-v0.0 -e 0,36,52,-1,-1` as well as `wmc -r ckm8-v0.0 -b add,above` but neither correctly raised && focused the window! =(
    $sxap->fullscreen() if($fsof);# && exists($ENV{'HOSTNAME'}) && length($ENV{'HOSTNAME'}) != 3); # Aku FulScrn brkz scrnzbut kinda good4 ChunTaki (&&RyuKen?)
    $evnt  = SDL::Event   ->new(  );
   if(       SDL::Joystick::num_joysticks()){

@@ -49,10 +49,10 @@ our @EXPORT= qw(bfr8c    b8c    d8c   dur8c @d8cl  d8cs  a8c   chti  c8fn  o8 S2
  $SKp8 $SKp0 $SKp1 $SKp2 b8clr  $SKpf $SKpt %pmap %cmap       %pl8n  ftst acS e %f8fm %f8pm %sgrm %sgrn @Dayz @Day  lrc      comma  curs  sumb @x256  @sb64
     $z    $k    $r    $o    $y    $g     $c $SKpb    $m    $p    $w  tstc    $K    $R    $O    $Y    $G    $C    $B    $M    $P    $W    %p622 %p222   upd8
          $bk   $br   $bo   $by   $bg    $bc   $bb   $bm   $bp   $bw         $hK   $hR   $hO   $hY   $hG   $hC   $hB   $hM   $hP   $hW     h2rl  rl2h   drkh
-    $t    $u    $d    $s    $n          $T     $U    $D    $S    $N         $HK   $HR   $HO   $HY   $HG   $HC   $HB   $HM   $HP   $HW      hl
+    $t    $u    $d    $s    $n          $T     $U    $D    $S    $N         $HK   $HR   $HO   $HY   $HG   $HC   $HB   $HM   $HP   $HW      hl           xe
  $tnhf $ucdf  spff  spfd  spfX   shfl  reso $Auth %cmsp %p8k2 @p82k  chp8     S2f4 c2f4 dm2u cdst %crgb %cbrt @snls @mrls %cdrd %cdrn    %nrgb         gnp8);
  # of 52 posibl sngl-letr var nmz,a8 Xportz 20,$b && $a unavail,so shudB thEs30 lFt4quik shortSt nAmz: 'def hij l n  q stuv x', 'A  DEF HIJ L N  Q STUV X Z';
-our $VERSION='0.0';my  $d8VS='K6GM8sum';our $Auth='PipStuart <Pip@CPAN.Org>'; # above not exporting $b since collidez with sort{$a  <=> $b};unalloc'd sOlOz^;
+our $VERSION='0.0';my  $d8VS='K6OM5Pxe';our $Auth='PipStuart <Pip@CPAN.Org>'; # above not exporting $b since collidez with sort{$a  <=> $b};unalloc'd sOlOz^;
 our $ucdf= eval('use Color::Similarity::RGB qw(distance);1') || 0; # try2set UseColorDistanceFlag if optional module is available; /defhijlnqstuvx/i + /AZ/^;
 our @Monz=qw(January February March   April     May June July   August September October November December);our @Mon=();push(@Mon,substr($_,0,3)) for(@Monz);
 our @Dayz=qw(Sunday  Monday   Tuesday Wednesday Thursday Friday Saturday                                  );our @Day=();push(@Day,substr($_,0,3)) for(@Dayz);
@@ -924,11 +924,11 @@ sub   b8clr  {my $rtns = ''; # Dtect commaz && % B4 coloring  # mAB base4 [bd][f
     push(@_,split(/ /,decode('UTF-8',$inln)));}} # for some reason backtickz like "b8clr `Prmz 47 1`" aren't including the typical nwlInz,mAB tix get noColmz?
   for my $b8st (@_){my $tdst;my $iprt=0;my $fprt=0;my $comw=0;my $nwlf=0; # shud also tune b8clr 2 hndl b256 as well as b64
     if  ($b8st=~ /^(.+?)[%](.+)$/){$iprt=$1;$fprt=$2;}else{$iprt=$b8st;}
-    if  ($iprt=~ /,([^,]+)$/){$comw= length($1);} d8cs('RoYGWCBMpW') if($comw); # assume coma 4 b64 char blox
+    if  ($iprt=~ /,([^,]+)$/){$comw= length($1);} d8cs('YGTBWUDSNW') if($comw); # assume coma 4 b64 char blox
     $nwlf=1 if($iprt=~ s/\n$//);
     $tdst   =            b8c($iprt);
     if  ($fprt){$comw=0; # used to $rtns =~ s/\s$//; before d8cs('d8bo'); was restored, but seems to join d8a lines unnecessarily so match just tail real space
-      if($fprt=~ /^([^,]+),/){$comw= length($1);} d8cs('WRoYGWCBMp') if($comw); # assume coma 4 b64 char blox reversed
+      if($fprt=~ /^([^,]+),/){$comw= length($1);} d8cs('WYGTBWUDSN') if($comw); # assume coma 4 b64 char blox reversed
       $tdst.= "$W\%" . bfr8c($fprt) . $z;} $rtns.= "$tdst ";$rtns=~ s/ $/\n/ if($nwlf);}
   $rtns=~ s/ $//;d8cs('d8bo');return($rtns);} # try2rEstOr Dflt ColrSequ B4 rEturning
 sub   d8cs   {my $dccs = ''; # d8 ColrSet (or ColrSequence), d8 ColrCodeString
@@ -1091,6 +1091,7 @@ sub sumb{  my $widt=0;$widt=1 if(exists($ENV{'COLUMNS'}) && $ENV{'COLUMNS'} >= 1
     'e'     => "a8  EDITOR wrapper which includes fragile old package templ8ing system    ", # mAB rEwrIt mOst Useful BhAVor as nw clEnr a8:e or let dokr:e
     'hl'    => "a8  utility combining head && tail oper8ions over STDIN using b64 sizes   ",
     'uri'   => "a8  URI capitaliz8ion Utility resulting from Beppu-san's procrastin8ion   ",
+    'xe'    => "a8  X-windows Event autom8ion (as abbreV8d `xte` test wrapping utility)   ",
 
     '8plc'  => "b8  Octology ~/dox/2du/8.utf Pre-cursorLetter-Counter && gM8ria gNer8or   ",
     'Fctz'  => "b8  FaCTorlZ listed (takes (lines-1) 47 and 1 b64 or 2 b256 parameters)   ", # `fctz 47 1` is like `fctz | b64` just with different nwln wrapz
@@ -3397,6 +3398,37 @@ my \$mbld = Module::Build->new(
     if(open(ERCG, ">$ercg")){print ERCG "$_\n" for(@gdat);close(ERCG)}
     else                    {print("!*ER0R*! Couldn't update Global erc file: $ercg!\n")}
     system(qq($edit +\\'\\" $file))} return('');}
+sub xe{ # `xte` X-windows Test Event autom8ion; Command-LookUpTable mapz most basic 1 && 2-char abbreV8ionz;
+  # 2du:detect 2-char cmndz to double-hash into singlez then full command-namez properly, add ability to call any cmnd empty 2 rEPt prEVious paramz 4 it;
+  my %clut=('y' => 'key'     , 'c' => 'mouseclick', 's' => 'sleep'   , 'ky'=>'y','mc'=>'c','ss'=>'s',  # Press&&Release key k, mc b  , ss x,
+            'k' => 'keydown' , 'm' => 'mousedown' , 'u' => 'usleep'  , 'kd'=>'k','md'=>'m','us'=>'u',  # lowKsPressDown key k, md b  , us x,
+            'K' => 'keyup'   , 'M' => 'mouseup'   ,                    'ku'=>'K','mu'=>'M',            # UppKsReleaseUp Key K, mu B
+                               'v' => 'mousemove' , 'w' => 'w8dur8'  ,           'mm'=>'v','w8'=>'w',  #                       mm x y, w8 d,
+            't' => 'str'     , 'r' => 'mousermove',                    'st'=>'t','mr'=>'r');           # prinTouTsTring sTr t, mr x y
+  my %klut=('Hm'=>'Home'     , 'AL'=>'Alt_L'      , 'CL'=>'Control_L', 'Re'=>'Return'   , '-'=>'minux'      , # case-sensitive key namez; run xev 4more namez
+            'Nd'=>'End'      , 'AR'=>'Alt_R'      , 'CR'=>'Control_R', 'BS'=>'BackSpace', ' '=>'space'      , ':'=>    'colon' , # colon may need shift too?
+            'Lt'=>'Left'     , 'SL'=>'Shift_L'    , 'sL'=>'Super_L'  , 'Tb'=>'Tab'      , '?'=>'question'   , ';'=>'semicolon' , '"'=>'quotedbl',
+            'Rt'=>'Right'    , 'SR'=>'Shift_R'    , 'sR'=>'Super_R'  , 'SK'=>'Escape'   , '^'=>'asciicircum', '.'=>'period'    , "'"=>'quote'   ,
+            'Up'=>'Up'       , 'PU'=>'Page_Up'    , 'ML'=>'Meta_L'   , 'Dl'=>'Delete'   , '|'=>'bar'        , '_'=>'underscore', # also shift?
+            'Dn'=>'Down'     , 'PD'=>'Page_Down'  , 'MR'=>'Meta_R'   , 'MK'=>'Multi_key'); # note each phass(60th-of-second) is ~16,667usecs(micro,millionth)
+  my $cmds='';my $cfil=$ENV{'HOME'} . '/gfx/sho/LT-K6O-dMO-K6M.xe';if(@ARGV && -e $ARGV[0]){$cfil=shift(@ARGV);} # maybe eventually treat filename as UTF-8
+  if  (defined($cfil) && -r $cfil){open my $cflh,'<',$cfil or die "!*EROR*! Couldn't open  cfil:$cfil for reading! $!\n";binmode $cflh,':encoding(UTF-8)';
+    my  @cd8a=<$cflh>;             close   $cflh           or die "!*EROR*! Couldn't close cflh"              . "! $!\n"; # open Command-FILe wi binmode UTF-8
+    for(@cd8a){s/(^|;)\s*#.*/$1/; chomp;my @cmdz=split(/;/,$_);for my $scmd   (@cmdz){my $dfuz=266_672; # strip pound cmntz, parse semi-sepR8d cmndz, ...
+        if($scmd=~ /^\s*(\S+)\s+(.+)$/ &&  exists($clut{$1})){my($cmdn,$cmdp)=($1,$2);my $p6uz=100_002; #   ... gener8 xte system call Xpandng LUTz
+          if($cmdn=~ /^w/ ){$cmdn='u';my @dr8z=split(//,$cmdp); my $uscz=0;my $digc=0;my $p2uz= 16_667;for my $digt (reverse(@dr8z)){
+              $uscz+= (60**$digc++)*$sb10{$digt}*$p2uz;}$cmdp=$uscz;} # special loop handling new 'w8 dur8ion' command which needs conversion to usecs(micro);
+          if($cmdn eq  't'){     for my $tchr (split(//,$cmdp)){ my $kchr=$tchr;
+              if(                       exists($klut{$tchr})){$kchr=$klut{$tchr};} # try to properly name keys when split off strings that may handle diff?! =(
+              if($tchr=~ /^[A-Z?^|:_"]$/){$cmds.=" 'keydown Shift_L' 'usleep $p6uz'";}
+              $cmds                            .=" 'key $kchr'       'usleep $dfuz'"; # will probably need some str override l8r 2!usleep every time
+              if($tchr=~ /^[A-Z?^|:_"]$/){$cmds.=" 'keyup Shift_L'   'usleep $p6uz'";}}}
+          else{                                   my $tchr=$cmdp;my $kchr=$tchr;
+            if  ($cmdn=~ /^[ykK]$/   && exists($klut{$tchr})){$kchr=$klut{$tchr};}
+            if  ($tchr=~ /^[A-Z?^|:_"]$/){$cmds.=" 'keydown Shift_L' 'usleep $p6uz'";}
+            $cmds                              .=" '$clut{$cmdn} $kchr'";$cmds.=" 'usleep $p6uz'" if($cmdn ne 'u');
+            if  ($tchr=~ /^[A-Z?^|:_"]$/){$cmds.=" 'keyup Shift_L'   'usleep $p6uz'";}}} # doesn't yet handle trickier special cases of semis inside!
+    }} if($cmds){system("xte $cmds");return();}}} # mIt l8r want2 backtick && furthr process B4 returning (2 probably B printed out by wrapr)
 8;
 
 =encoding utf8

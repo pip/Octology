@@ -138,7 +138,9 @@ sub mp{my $cx=shift;my $cb=$cx->before();my $ct=$cx->match();my $ca=$cx->after()
   print $out8        "$C$ct"        if(defined($ct));                                                       $ca=~ s/(^\s|\n|\r)+//g; $ca='';
   print $out8     $R.sn($ca)        if(defined($ca)); } # MatchPrint
 sub cb{my $cx=shift;$si=''; # CallBack for non-stream Time A of B
-  if(-t STDIN){$si=ReadKey($so);if(defined($si) && $si eq "\e"){$si.=ReadKey(-1);if($si eq "\e["){$si.=ReadKey(-1);if($si=~  /\e\[[56]/){$si.=ReadKey(-1);}}}}
+  if(-t STDIN){$si=ReadKey($so);if(defined($si) && $si eq "\e"      ){$_=ReadKey(-1);$si.=$_ if(defined($_));
+      if                                          ($si eq "\e["     ){$_=ReadKey(-1);$si.=$_ if(defined($_));
+        if                                        ($si =~ /\e\[[56]/){$_=ReadKey(-1);$si.=$_ if(defined($_));}}}}
                                            $si='' unless(defined($si));mp($cx);my $zi=$si;$zi=~ s/\e/SKp/g; # should also send Ctrl-C break SIGINT thru
        if($nnxt){$nnxt=0;$cx->send('n');} # initE8 Quit out key passd as input if sKip SStrtTm+Dur8nSeCz was surpassed so nXt-NeXT was flagd
        if   (length($si) && $si=~ /^([-+q m?f1n]|\e\[[ABCDFH56]~?)$/i){         #rint $G."Dflt$K"."Keyz$W:$Y$zi$W;\n" if($zi=~  /SKp/);

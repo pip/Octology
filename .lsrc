@@ -1,8 +1,8 @@
 # 819J2Pip:~/.lsrc by PipStuart <Pip@CPAN.Org> izAheavily modifId`dircolors`cfgfIl(Orig ~/.DIR_COLORS)wich setz $ENV{'LS_COLORS'} 4GNU`ls --color`&&`lsd8`;
-# $VERSION='0.0';$d8VS='K69MJk59'; 2du:mkUtl2gNr8 altrn8 versN of .lsrc th@purposfuly varEz colrz of comon typz,try addng bakgrnd colrz2all dFz&&tst,
+# $VERSION='0.0';$d8VS='K6MMGhxe'; 2du:mkUtl2gNr8 altrn8 versN of .lsrc th@purposfuly varEz colrz of comon typz,try addng bakgrnd colrz2all dFz&&tst,
 #   add interaction2 lsd8 wN it Dtectz unrecognIzd XtNshNz offerng c@egOrEz with comon colr2autOm@ically insrt chOsN NtrEz,mAB add *-* NtrEz from .zshrc hEr &&
 #   mk lrc gNr8 either,confirm all accept f0nt cOdez wi dash accepting Dfalt foreground then redo NORMAL FILE LINK as no fi ln,mAB 8trm added2TERM ls someday;
-# This file was gNR8d by `lrc` Vers:0.0 d8VS:K5JMI88P on d8:K69MJeOS. Please edit ~/.lrc and run `lrc` then `src` to see changes;
+# This file was gNR8d by `lrc` Vers:0.0 d8VS:K6GM8sum on d8:K6MMGht9. Please edit ~/.lrc and run `lrc` then `src` to see changes;
 # nOt:I'm pretty sure itz Chunz(!Takiz)`ls`&&`dircolors`th@cud!hndl (MULTI)?HARDLINK sO rEmMbr2kEp th@ lIn cmNtd out4her(&&kEptstng2cnfirm);
 # Keywords COLOR,OPTIONS,&& EIGHTBIT (honored by Slackware dircolors) are recognized but ignored; TERMz && XtNsionz syncd2 2016;
 # Copyright(C) 1996-2016 FreeSoftwareFound8ion,Inc. Copying and distribution of this file, with or without modific8ion, are permitted provided the
@@ -709,10 +709,10 @@ CHR                       01;38;5;011;48;5;000 #cd= 01;33;40    01;33;40  CHaRac
 .build                    01;38;5;014
 .ninja                    01;38;5;014      # meson advanced build filz used for GitHub flatpak's libportal to upd8 xdg-desktop-portal(-gtk)? there too
 .pause                    01;38;5;014
-.fbrc                     01;38;5;014
 .prf                      01;38;5;014      # Kenta Cho Sh'mups preferences && high-score d8a like for Parsec47 and R-Rootage
 .pri                      01;38;5;006      # maybe Qt configure.pri as PRoject or PRofile Init or Include (&& also altern8 .prf files in similar loc8ions)
 .rc                       01;38;5;014
+.fbrc                     01;38;5;014
 .mrbrc                    01;38;5;014
 .captrc                   01;38;5;014
 .deityrc                  01;38;5;014
@@ -739,6 +739,7 @@ CHR                       01;38;5;011;48;5;000 #cd= 01;33;40    01;33;40  CHaRac
 .gpg~                     01;38;5;006
 .pgp                      01;38;5;014
 .sxp                      01;38;5;014
+.xe                       01;38;5;014      # Octology a8.pm X-windows Event (`xte`) autom8ion wrapper script (stRted2dMonstr8 functionaliT of manual cmndz)
 .xd2                      01;38;5;014      # xdotool command script to gener8 ~/dvl/t8/**/xl8/ d8a files in attempt to autom8 complex transl8ion evalU8ions
 .xinitrc                  01;38;5;014      # ch2brItCyan from drkGrn .x* dflt4xinitz
 .xinitrc-compiz           01;38;5;014

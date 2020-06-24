@@ -309,10 +309,12 @@ if(@ARGV && $ARGV[0]=~ /^-*h(elp)?$/i){print $out8 " CJ - CoronavirusJ (19) d8a 
 my      $csvp=   $covp . "/COVID-19/csse_covid_19_data/csse_covid_19_daily_reports";my %clrd;
 for  my $dfil (<"$csvp/*.csv">){my $d8nw=Octology::d8->new();my $ndfl=$dfil;$ndfl=~ s/^(.+)\.(\w+)$/$1-$d8nw.$2/;
                                                              my $dfd8=$dfil;$dfd8=~ s/^(.+)\/([^.]+)\.(\w+)$/$2/; # isol8 *MM-DD-YYYY* 2 say l8r
-  if        ($dfd8=~ /^0[6-9]/){ # try only June2Sept Dfalt instead of trying to incr $lupc for loop-count limit8ion
+  if        ($dfd8=~ /^06-2/){ # only June 20-somethingthDay of 2020 Year Dfalt comput8ion hard-coded for PerlConferenceInTheCloud, instead of trying to ...
+                               #   ... incr $lupc for loop-count limit8ion, so probably just replace this with if(1){ instead of this to handle other d8z;
     my       $csvo=                         Text::CSV->new({'binary' => 1}); #, auto_diag => 1 });
     open  ( my $fhnd, "<:encoding(UTF-8)", $dfil) or die "$dfil: $!";my $got1=0;my $janf=0;my $marL=0;my $aftm=0; #
     while ( my $rowd= $csvo->getline($fhnd)){next if($rowd->[0] =~ /(Province\/State|Recovered)/ || $rowd->[2] =~ /(Province\/State|Recovered)/);
+      next unless(exists($st8a{$rowd->[2]})); # also hard-coded for June 20-something of 2020 PerlConfInTheCloud to limit d8a-analysis to just UnitedSt8s;
       if    ($dfd8=~ /^0[12]-/               ){$got1=$janf=1;} #Province/State,Country/Region,Last Update,Confirmed,Deaths,Recovered
       elsif ($dfd8=~ /^03-(\d\d)-/ && $1<= 21){$got1=$marL=1;} #Province/State,Country/Region,Last Update,Confirmed,Deaths,Recovered,Latitude,Longitude
       elsif (exists($st8a{$rowd->[2]}       )){$got1=$aftm=1;} #FIPS,Admin2,Province_St8,Country_Region,Last_Upd8,Lat,Long_,Confirmed,Deaths,Recovered,Active,

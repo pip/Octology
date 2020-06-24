@@ -458,22 +458,62 @@ alias    copy='     cp';
 alias    move='     mv';
 alias  attrib='     en "Forget MicroSoft-DOS. Please use \`man chmod\` instead! ;) "'; # just print advice for this, since calling semantics are so different
 #lias    mutt='   mutt; ~/lib/Octology/f8/pal8/TIGSfAVS.pal8'; # mutt clears pal8 colors so at least restore favor8s afterward
+# [pip@AkuJ28LIPsh~]en `source-highlight --lang-list`|pe 's/(\S+) = \1\.lang */$G$1$w;/g;s/(\S+) = ([^.]+)\.lang */$C$1$o=$g$2$W;$z/g'|sS; # old B4 BlO...
+# asm,awk,bash,bib,c,changelog,conf,csh,css,d,dmd,errors,feature,fixed-fortran,free-fortran,glsl,go,groovy,islisp,java,javalog,json,  ## slItlyrE4m@d; ##;
+#  ksh,log,lsm,lua,opa,outlang,oz,properties,r,s,scala,spec,sql,style,syslog,tcsh,tml,upc,vala,xorg,zsh;   ## shls=48;solz:88; B4 solz:64; B4 cut dn2: ##;
+# ada:adb;applescript:scpt;bat:batch;clipper:prg;cobol:cbl;coffeescript:coffee;csharp:cs;desktop:ini;diff:patch;erlang:erl;haskell:hs;
+#  haskell_literate:lhs;haxe:hx;html:htm;javascript:js;langdef:lang;ldap:ldif;lilypond:ly;lisp:el;logtalk:lgt;manifest:mf;nohilite:txt;
+#  pascal:pas;pc:pkgconfig;perl:pm;po:pot;prolog:pl;proto:protobuf;python:py;ruby:rb;scheme:scm;sh:shell;sml:sig;tcl:tk;texinfo:texi;vbscript:vbs;
+# caml:ml,mli;m4:ac,autoconf;makefile:am,in;postscript:eps,ps;slang:sl,slsh;  bison:y,yacc,yy;flex:l,lex,ll; latex:cls,dtx,sty,tex;php:ctp,php3,php4,php5;
+# fortran:F77,F90,f,f77,f90; xml:docbook,kcfg,kdevelop,kidl,rc,ui,xhtml; cpp:C,H,cc,cxx,h,hh,hpp,hxx,moc;  ## multi-phase,multi-pass procSing 4 s8 ls; ##;
+alias shls='ShlS|sS|pe "@lngz=split(/;/,\$_);\$prev=0;\$_=q(); #\$.=q(shls:);\$_.=q( src-hilite ls s8;lmapz:);
+  for     my \$lang (@lngz){if(\$lang=~  /(\S+)=(\S+)/){\$lmsz{\$2}++;\$lmap{\$2}.=\$1.q(,);} #elsif(0&& !exists(\$lmsz{\$lang})){push(@solz,\$lang);}
+      else{\$solo{\$lang}++;}} #\$_.=scalar(keys(%lmap)).q(;);\$_.=q(solz:).\$#solz.q(;); # these are mainly commented out intro header d8a now;
+  for     my \$soln (sort(keys(%solo))){if(\$soln=~  /^(haskell_insmthng2reject)\$/){\$_=q(prepend:).\$soln.qq(\n).\$_;}
+                                     elsif(                 !exists(\$lmsz{\$soln})){\$_.=\$G.\$soln.\$Y.q(,);}}s/,\$/\$W;\$z\n/;
+  for     my \$fsiz (sort  {\$a <=> \$b} values(%lmsz)){if(\$prev!=\$fsiz){ # basic grouping && reformatting of language familiez by varE8ion size (160 colmz)
+      for my \$faml (sort(keys(%lmap))){if(\$lmsz{\$faml}==\$fsiz){\$lmap{\$faml}=~ s/,\$/\$W;/;\$lmap{\$faml}=~ s/,/\$w,\$g/g;
+          \$_.=\$G.\$faml.\$o.q(:).\$g.\$lmap{\$faml};\$_.=\$z.qq(\n) if(\$fsiz < 0);}} \$prev=\$fsiz; # basic spacing below to align;
+      if(\$fsiz=~ /^(1|4)\$/){\$_.=\$z.qq(\n);}else{\$_.=q( );}\$_.=q( ) if(\$fsiz=~ /^(2|7)\$/);\$_.=q(    ) if(\$fsiz==5);}}s/ \$//;
+  s/(java|haskell_literate|pascal)(\e)/\n \$1\$2/g;%smap=(perl=>\$P,xml=>\$M,json=>\$B,ini=>\$Y,js=>\$c,conf=>\$C,htm=>\$m,zsh=>\$R,py=>\$p,ly=>\$O);
+  for my \$skey (sort(keys(%smap))){s/(\$skey)\e/\$smap{\$skey}\$1\$z\e/;}"'; # want 2 special-colr othr favr8z 2 4 l8r? `s zsh ~/.zshrc` hangz why?;
+alias ShlS='en `shll`|pe "s/(\S+) = \1\.lang\s*/\$G\$1\$w;/g;s/(\S+) = ([^.]+)\.lang\s*/\$C\$1\$o=\$g\$2\$W;\$z/g;
+                s/(perl)/\$P\$1/g;s/(xml)/\$M\$1/g;s/(json)/\$B\$1/g;s/(ini)/\$Y\$1/g;s/(lily)/\$m\$1/;s/(conf)/\$c\$1/g;s/(zsh)/\$R\$1/g;"';
+alias    shll=' source-highlight --lang-list'; # just setup src-hili 4 Languages-List && l8r aut0-traverse thru all like ShlS abov but call s() belo on each
+alias   srchl=' source-highlight -f esc --style-file=~/.shl.style'; # hopefully EvN2ally c8 can supplant shl for file && cmd auto-reformatting && color8ion
+alias    shlp=' srchl -s perl -i';alias shlc=' srchl -s conf   -i'; # assume source code is Perl or Conf && expect next param 2B Input source-code filename
+alias     shl=' s               '; # above srchl changes from default HTML output format to ANSI escape codes && set component field color style
+#lias       s=' shlp'; # assume Perl since an upd8 to source-highlight seems to no longer correctly auto-detect when input files are such code
+# Sun 02 Jun 2019 02:50:13 PM UTC, comment #6: Fixed. Tom Tromey <tromey> Project Administrator; K37L1shl:edited from HTTPS://Savannah.GNU.Org/bugs/?45299
+# Tue 22 Aug 2017 04:47:33 PM UTC, comment #5: Problem in zsh.lang. The keyword clause ends with trailing vertical bar. Remove && it will work. Anonymous;
+s(){  ifil="$1";synl='';if [[ "$#" -gt 1 && "$2" != "" && -e "$2" ]]; then synl="$1";ifil="$2" ; elif [[ "$#" -lt 1 ]]; then ifil="$HOME/bin/8ct";
+  elif   [[ -e "$1" ]]; then # BlO 2 stRt adng elif tStz 4 XtNsion nAmz (mAB wi $(E) something too?) 4 autOpik lang; srchl --lang-list|g $XtNs;
+    if   [[ ${(L)1} =~ \.sh$ ]]; then synl='bash'; elif [[ ${(L)1} =~ \.html$ ]]; then synl='htm'; elif [[ ${(L)1} =~ \.cfg$ ]]; then synl='conf';
+    elif [[ ${(L)1} =~ \.py$ ]]; then synl='py'  ; elif [[ ${(L)1} =~  \.xml$ ]]; then synl='xml'; elif [[ ${(L)1} =~ \.cnf$ ]]; then synl='conf';
+    elif [[ `cat "$1"|head -n 1|grep -l '^#!.*zsh' ` != "" ]]; then synl='bash'; # tryd2Dtect Zsh script #! line to set syntax language,but zsh.lang hangz =(
+    elif [[ `cat "$1"|head -n 1|grep -l '^#!.*perl'` != "" ]]; then synl='perl'; fi; fi;  # multi -i B4 othr pRam ls? used2question that at very end;
+  if     [[ "$synl" !=    "" ]]; then ec " source-highlight -f esc --style-file=~/.shl.style -s $synl -i $ifil;"; srchl -s $synl -i $ifil; # 2du:tStallsynlz;
+  else                                ec " source-highlight -f esc --style-file=~/.shl.style          -i $ifil;"; srchl          -i $ifil; fi; }
+alias      S8='   shl8'; # my primitive c8:SourceHighLight8 Utl to hopefully eventually approach functional parity with source-highlight before surpassing it
+export     d2="$HOME/dox/2du"; # K6LMLhot: `ai libgtkhotkey-dev libgtkhotkey1 sxhkd triggerhappy khotkeys-data khotkeys-dev khotkeys` to hotkey Octology demo;
+export     gs="$HOME/gfx/sho"; # K6MMGFix: actually adding xe() to a8.pm to wrap `xte` for Octl dMO autom8ion seems better than above hotkey options (so far);
+export     mu="$HOME/muz/U2b"; # K6NMD3AF: add my main MUzicz directory as another shortcut ENV variable;
+#lias      ML="mplyr -nosound -ss 11 -endpos 299 -fs -geometry 1920x1080+0+0 $HOME/mvz/dvl/rec/PS-Octology-PerlConfer*-Take0-K6G*.mp4"; #run audio-less video;
+alias      ML="mplyr          -ss  4 -endpos 310 ~/mvz/dvl/rec/PipStuart-Octology-PerlConferenceInTheCloud-LightningTalk-June24-26th_2020-Take2-K6OM84Me.mp4";
+alias      GL='g3lt   '; # GoodLuck GodsLove GameLife GoneLong GrabLunch GetLadies GutLosers GiveLicense GoLast GraphicsLibrary Gr8Laser GroupLeaders GetLoud;
+#lias    g3lt='cd; pu $mu;wh g3lt;gst123 -k  212 Oi*;g3 63 36 63 63 u*/El* ../f*/Bo*/T*/B* *br* c*/Gi* -v monoscope;ec;g3 ../wa*/Bo*/B*;ec;Hlt;ec;po';
+alias    g3lt='cd; pu $mu;wh g3lt;gst123 -k  212 Oi*;g3 63 36 63 63 u*/El* ../f*/Bo*/T*/B* *br* c*/Gi*             ;ec;g3 ../wa*/Bo*/B*;ec;Hlt;ec;po';
+alias     Hlt='g3  48 $mu/chl/Hack*Univ* -k 3420'; # add just 1st seconds of gr8 part 2 push above 4mins12secs right up against 5mins total 4 LightTalk;
+alias      HU='g3 188 $mu/chl/Hack*Univ* -k 3420 -v goom2k1'; # Fil_Far's HackrCodingMusic Universe awesome Nd-pRt2 -k --sKip 2 (57mins==`q 57x60`secs);
+           SC8() { d8=`d8`;lodH              >/tmp/S.H-$d8.ansi;sloc -b 262144 /tmp/S.H-$d8.ansi $gs/calN-160x50-K6GM*.ansi $gs/8plc-160x50-K6NMAPag.ansi;
+                                                                                                 rm /tmp/S.H-$d8.ansi; }
+           SC()  { d8=`d8`;shlc $d2/cred.utf >/tmp/SCu-$d8.ansi;sloc -b   1146 /tmp/SCu-$d8.ansi;rm /tmp/SCu-$d8.ansi; }
+           GG()  { pu $d2/.bak/.g6./.GG.;if [[ $# -gt 0 ]]; then ./GG $@; else ./GG -a; fi; po; } # GuyGooway's: GoodGames GoneGrooving GropingGirlies;
 # Many of these Octology aliases should become special V8 via c8 coloriz8ion command wrappers or otherwise enhanced (&& simplified?) && unified funcs or cmdz:
 alias       0=' ogg123'; # o 123 : zer0 lIke lc o audio-player # maybe l8r try to figure out better aliases 4 numbers here since they could be good shortcutz;
 alias       1=' mpg321'; # m 321 :                audio-player # simple && light-w8 command-line MP3 player based on mad decoding library (drop-in 4: mpg123);
 alias       2=' mpg123'; # m 123 :                audio-player which plays audio MPEG 1.0/2.0/2.5 streams (layrz 1, 2, && 3),was non-free unlike abov`mpg321`;
 #lias       3='   g3  '; #  g3   :         gst123 audio-player wrapped with Expect manipul8ion layer (J29:3 now 3rd sepR8 varE8ion off g3 2get abit trickier);
-export     d2="$HOME/dox/2du";
-export     gs="$HOME/gfx/sho";
-alias      GL='g3lt   '; # GoodLuck GodsLove GameLife GoneLong GrabLunch GetLadies GutLosers GiveLicense GoLast GraphicsLibrary Gr8Laser GroupLeaders GetLoud;
-alias    g3lt='pu     ~/muz/U2b;wh g3lt;gst123 -k  212 Oi*;g3 63 36 63 63 u*/El* ../f*/Bo*/T*/B* *br* c*/Gi* -v monoscope;ec;g3 ../wa*/Bo*/B*;ec;Hlt;po;ls;l';
-alias     Hlt='g3  48 ~/muz/U2b/chl/Hack*Univ* -k 3420'; # add just 1st seconds of gr8 part 2 push above 4mins12secs right up against 5mins total 4 LightTalk;
-alias      HU='g3 188 ~/muz/U2b/chl/Hack*Univ* -k 3420 -v goom2k1'; # Fil_Far's HackrCodingMusic Universe awesome Nd-pRt2 -k --sKip 2 (57mins==`q 57x60`secs);
-           SC8() { d8=`d8`;lodH                 >/tmp/S.H-$d8.ansi;sloc -b 262144 /tmp/S.H-$d8.ansi  $gs/8plc-160x50-K6GMANeg.ansi $gs/calN-160x50-K6*.ansi;
-                           shlc $d2/8.utf|hl M0 >/tmp/S8u-$d8.ansi;sloc -b 262144 /tmp/S8u-$d8.ansi;la;       rm /tmp/S??-K6*.ansi; }
-           SC()  { d8=`d8`;shlc $d2/cred.utf    >/tmp/SCu-$d8.ansi;sloc -b   1146 /tmp/SCu-$d8.ansi;          rm /tmp/S??-K6*.ansi; }
-           GG()  { pu $d2/.bak/.g6./.GG.;if [[ $# -gt 0 ]]; then ./GG $@; else ./GG -a; fi; po; } # GuyGooway's: GoodGames GoneGrooving GropingGirlies;
-alias    PSFF="Prmz;ee;Sumz;ee;Fibz;ee;Fctz 22 2;u8 736;w8 1U;qbix;lsa";
 alias       4='   x4t '; #  4    : xfce4-terminal xf4tm terminal emul8or where `x4t` is defined more elabor8ly to start with my preferred defaults elsewhere;
 alias       5='perl   '; #  5    :          perl  (5.28.1 l8st perl5 in /usr/bin/ on Pip's $HOST Oni as of`d8 K2MLAUGH`=>"Sat Feb 22 10:30:16:17 -0600 2020")
 alias       6='perl6  '; #  6    :          perl6 (which presumably should be renamed at some near future point to: "raku" for disambigU8ion && clarific8ion)
@@ -667,43 +707,6 @@ alias     lsp='  lspci'; #  lsp  :          lspci
 alias     lsu='  lsusb'; #  lsu  :          lsusb
 alias     ren=' rename'; # might take just Perl quoted regex instead of $from $to before shell fileglob to alter;
 alias     rens="ren 's/ /_/g' *"; # simply REName all Spaces to proper underscores within any non-hidden files && sub-directories in the current-working-dir;
-# [pip@AkuJ28LIPsh~]en `source-highlight --lang-list`|pe 's/(\S+) = \1\.lang */$G$1$w;/g;s/(\S+) = ([^.]+)\.lang */$C$1$o=$g$2$W;$z/g'|sS; # old B4 BlO...
-# asm,awk,bash,bib,c,changelog,conf,csh,css,d,dmd,errors,feature,fixed-fortran,free-fortran,glsl,go,groovy,islisp,java,javalog,json,  ## slItlyrE4m@d; ##;
-#  ksh,log,lsm,lua,opa,outlang,oz,properties,r,s,scala,spec,sql,style,syslog,tcsh,tml,upc,vala,xorg,zsh;   ## shls=48;solz:88; B4 solz:64; B4 cut dn2: ##;
-# ada:adb;applescript:scpt;bat:batch;clipper:prg;cobol:cbl;coffeescript:coffee;csharp:cs;desktop:ini;diff:patch;erlang:erl;haskell:hs;
-#  haskell_literate:lhs;haxe:hx;html:htm;javascript:js;langdef:lang;ldap:ldif;lilypond:ly;lisp:el;logtalk:lgt;manifest:mf;nohilite:txt;
-#  pascal:pas;pc:pkgconfig;perl:pm;po:pot;prolog:pl;proto:protobuf;python:py;ruby:rb;scheme:scm;sh:shell;sml:sig;tcl:tk;texinfo:texi;vbscript:vbs;
-# caml:ml,mli;m4:ac,autoconf;makefile:am,in;postscript:eps,ps;slang:sl,slsh;  bison:y,yacc,yy;flex:l,lex,ll; latex:cls,dtx,sty,tex;php:ctp,php3,php4,php5;
-# fortran:F77,F90,f,f77,f90; xml:docbook,kcfg,kdevelop,kidl,rc,ui,xhtml; cpp:C,H,cc,cxx,h,hh,hpp,hxx,moc;  ## multi-phase,multi-pass procSing 4 s8 ls; ##;
-alias shls='ShlS|sS|pe "@lngz=split(/;/,\$_);\$prev=0;\$_=q(); #\$.=q(shls:);\$_.=q( src-hilite ls s8;lmapz:);
-  for     my \$lang (@lngz){if(\$lang=~  /(\S+)=(\S+)/){\$lmsz{\$2}++;\$lmap{\$2}.=\$1.q(,);} #elsif(0&& !exists(\$lmsz{\$lang})){push(@solz,\$lang);}
-      else{\$solo{\$lang}++;}} #\$_.=scalar(keys(%lmap)).q(;);\$_.=q(solz:).\$#solz.q(;); # these are mainly commented out intro header d8a now;
-  for     my \$soln (sort(keys(%solo))){if(\$soln=~  /^(haskell_insmthng2reject)\$/){\$_=q(prepend:).\$soln.qq(\n).\$_;}
-                                     elsif(                 !exists(\$lmsz{\$soln})){\$_.=\$G.\$soln.\$Y.q(,);}}s/,\$/\$W;\$z\n/;
-  for     my \$fsiz (sort  {\$a <=> \$b} values(%lmsz)){if(\$prev!=\$fsiz){ # basic grouping && reformatting of language familiez by varE8ion size (160 colmz)
-      for my \$faml (sort(keys(%lmap))){if(\$lmsz{\$faml}==\$fsiz){\$lmap{\$faml}=~ s/,\$/\$W;/;\$lmap{\$faml}=~ s/,/\$w,\$g/g;
-          \$_.=\$G.\$faml.\$o.q(:).\$g.\$lmap{\$faml};\$_.=\$z.qq(\n) if(\$fsiz < 0);}} \$prev=\$fsiz; # basic spacing below to align;
-      if(\$fsiz=~ /^(1|4)\$/){\$_.=\$z.qq(\n);}else{\$_.=q( );}\$_.=q( ) if(\$fsiz=~ /^(2|7)\$/);\$_.=q(    ) if(\$fsiz==5);}}s/ \$//;
-  s/(java|haskell_literate|pascal)(\e)/\n \$1\$2/g;%smap=(perl=>\$P,xml=>\$M,json=>\$B,ini=>\$Y,js=>\$c,conf=>\$C,htm=>\$m,zsh=>\$R,py=>\$p,ly=>\$O);
-  for my \$skey (sort(keys(%smap))){s/(\$skey)\e/\$smap{\$skey}\$1\$z\e/;}"'; # want 2 special-colr othr favr8z 2 4 l8r? `s zsh ~/.zshrc` hangz why?;
-alias ShlS='en `shll`|pe "s/(\S+) = \1\.lang\s*/\$G\$1\$w;/g;s/(\S+) = ([^.]+)\.lang\s*/\$C\$1\$o=\$g\$2\$W;\$z/g;
-                s/(perl)/\$P\$1/g;s/(xml)/\$M\$1/g;s/(json)/\$B\$1/g;s/(ini)/\$Y\$1/g;s/(lily)/\$m\$1/;s/(conf)/\$c\$1/g;s/(zsh)/\$R\$1/g;"';
-alias    shll=' source-highlight --lang-list'; # just setup src-hili 4 Languages-List && l8r aut0-traverse thru all like ShlS abov but call s() belo on each
-alias   srchl=' source-highlight -f esc --style-file=~/.shl.style'; # hopefully EvN2ally c8 can supplant shl for file && cmd auto-reformatting && color8ion
-alias    shlp=' srchl -s perl -i';alias shlc=' srchl -s conf   -i'; # assume source code is Perl or Conf && expect next param 2B Input source-code filename
-alias     shl=' s               '; # above srchl changes from default HTML output format to ANSI escape codes && set component field color style
-#lias       s=' shlp'; # assume Perl since an upd8 to source-highlight seems to no longer correctly auto-detect when input files are such code
-# Sun 02 Jun 2019 02:50:13 PM UTC, comment #6: Fixed. Tom Tromey <tromey> Project Administrator; K37L1shl:edited from HTTPS://Savannah.GNU.Org/bugs/?45299
-# Tue 22 Aug 2017 04:47:33 PM UTC, comment #5: Problem in zsh.lang. The keyword clause ends with trailing vertical bar. Remove && it will work. Anonymous;
-s(){  ifil="$1";synl='';if [[ "$#" -gt 1 && "$2" != "" && -e "$2" ]]; then synl="$1";ifil="$2" ; elif [[ "$#" -lt 1 ]]; then ifil="$HOME/bin/8ct";
-  elif   [[ -e "$1" ]]; then # BlO 2 stRt adng elif tStz 4 XtNsion nAmz (mAB wi $(E) something too?) 4 autOpik lang; srchl --lang-list|g $XtNs;
-    if   [[ ${(L)1} =~ \.sh$ ]]; then synl='bash'; elif [[ ${(L)1} =~ \.html$ ]]; then synl='htm'; elif [[ ${(L)1} =~ \.cfg$ ]]; then synl='conf';
-    elif [[ ${(L)1} =~ \.py$ ]]; then synl='py'  ; elif [[ ${(L)1} =~  \.xml$ ]]; then synl='xml'; elif [[ ${(L)1} =~ \.cnf$ ]]; then synl='conf';
-    elif [[ `cat "$1"|head -n 1|grep -l '^#!.*zsh' ` != "" ]]; then synl='bash'; # tryd2Dtect Zsh script #! line to set syntax language,but zsh.lang hangz =(
-    elif [[ `cat "$1"|head -n 1|grep -l '^#!.*perl'` != "" ]]; then synl='perl'; fi; fi;  # multi -i B4 othr pRam ls? used2question that at very end;
-  if     [[ "$synl" !=    "" ]]; then ec " source-highlight -f esc --style-file=~/.shl.style -s $synl -i $ifil;"; srchl -s $synl -i $ifil; # 2du:tStallsynlz;
-  else                                ec " source-highlight -f esc --style-file=~/.shl.style          -i $ifil;"; srchl          -i $ifil; fi; }
-alias      S8='   shl8'; # my primitive c8:SourceHighLight8 Utl to hopefully eventually approach functional parity with source-highlight before surpassing it
 alias     sho='cd ~/gfx/sho;shot -u'; # change to typical local Octology screenshot directory && take a shot of the focUsed window (no border) in 3 seconds
 alias     br0='byzanz-record -a -c -d 122 -w 1920 -h 1080 Octl-ScrnCap-1080p-`d8`.webm &'; # Byz-Rec up-left monitor 0 zer0 for 2mins2secs to non-ogg .ogv 4m@;
 alias     kaz='kazam';alias ssr='simplescreenrecorder'; # K6EMFMIC: HTTPS://ItsFOSS.Com/best-linux-screen-recorders with `obs` OpenBroadcasterSoftwareStudio;
@@ -1431,7 +1434,7 @@ tStc() { # tSt 8pal8 colrz (this is a very slow precursor to ~/bin/tstc since ma
       if   [[      $B64N   !=  Q  ]]; then echo -n '  ';fi       # only dblspace them out if term is wide enough
     elif   [[      $B64N   ==  Q  ]]; then echo        ;fi;done} # && finish with newline if term is narrow (although wrapping at likely 80 should look same)
   # 2du:contMpl8 adng au, agr, && ee ene around en;
-wh8()   {  LP_F='0'; # same as wh8ch BlO but wi 8rows flipd2 8columns,othrwIz very similR (mAwant2add pRamz2du mor than just disabl colr,sinc sS duzfIn)
+wh8()   {  LP_F='0'; # same as wh64  BlO but wi 8rows flipd2 8columns,othrwIz very similR (mAwant2add pRamz2du mor than just disabl colr,sinc sS duzfIn)
   # 2du:contMpl8 adng au, agr, && ee ene around en;
   if       [[ "$#" -gt   0 && "${(L)1}" =~  h  ]]; then echo -n " wh8 - show WHich primary single b64 && other valued commands by:$Auth Vers:$Vers d8VS:$d8VS;
   h  - print out this basic Help text message then return; Any parameter other than h right now just strips colors && SGR attributes out;";return 0;fi
@@ -1472,7 +1475,7 @@ wh8()   {  LP_F='0'; # same as wh8ch BlO but wi 8rows flipd2 8columns,othrwIz ve
            [[ $B64N =~ ^[OPQRSTUV]$ ]] || [[ $B64N =~ ^(pu|ka|dv|ai|asci|CC|pla|drkh|auu|del|mo|chm|chg|ct|caln|dif|loc8)$ ]]         &&
            [[ "$COLUMNS" -lt 160    ]] || [[ $B64N =~ ^(pe|apts|ag|ic|attrib|plb|cls|rd|cht|fp|gac|cln|ud|uni|ren|sho|viii|[Sv]8)$ ]] ||
            [[ $B64N =~ ^[uvwxyz._]$ ]] || [[ $B64N =~ ^(gt|xt|st|lxt|lxtrm|rox|sak|tmn8r|Etrm|ev|kp|agr|xbsf|resp)$ ]]; then echo $z;fi;done}
-wh8ch() { # see which most basic 64 single-character commands are mapped to what (majority being aliases, then just a few built-in or not yet found commands)
+wh64() { # see which most basic 64 single-character commands are mapped to what (majority being aliases, then just a few built-in or not yet found commands)
   for B64N in 0 1 2 3 4 5 6 7  8 9 A B C D E F  G H I J K L M N  O P Q R S T U V  W X Y Z a b c d  e f g h i j k l  m n o p q r s t  u v w x y z '.' '_'; do
     if     [[ "$#" -eq   0          ]]; then echo -n `S $B64N`; # BlO set to dark wHITE for invisibly dark BLACk b64 number to color (leave bLUE 4now)
       if   [[ $B64N =~ ^[k]$        ]]; then echo -n `S  w   `;fi;
@@ -1490,6 +1493,7 @@ wh8ch() { # see which most basic 64 single-character commands are mapped to what
     if     [[ $B64N =~ ^[3LSXcqw_]$ ]]; then BNWH="$B64N= ${BNWH:gs/ \'/}";fi;printf "%-18s" $BNWH;echo -n `S W`';'; # biltin printf
     if     [[ $B64N =~ ^[3BJRZhpx]$ ]] && [[ "$COLUMNS" -lt 160 ]] || # addXtra nwlnz 4orig 80colm mOd,fitz 64 mapz on 16lInz in 80x18 nIcely wrapd in prmptz
            [[ $B64N =~ ^[7FNVdlt_]$ ]]; then echo;fi;done} # !sureYsomtImz`wh`rEcursvlyXpndz alias pRamz whIl biltin`which`duznot
+alias wh8ch='wh64'; # leave the old original name around, which is somewhat less descriptive of the resulting output than the newer name should be
 goo() { w3m "HTTP://Google.Com/search?q=$1+$2+$3+$4+$5+$6+$7+$8"     ; } # should probably pass $@ =~ s/ /+/g; or something smarter than this
 un()  {    [[ $# -lt 1 ]] && {                 uname  -a             ; return 0; }   # should eventually c8 filter all uname output to add colrz && f0ntz
                                                uname           $@    ; }
