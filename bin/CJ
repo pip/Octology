@@ -309,8 +309,8 @@ if(@ARGV && $ARGV[0]=~ /^-*h(elp)?$/i){print $out8 " CJ - CoronavirusJ (19) d8a 
 my      $csvp=   $covp . "/COVID-19/csse_covid_19_data/csse_covid_19_daily_reports";my %clrd;
 for  my $dfil (<"$csvp/*.csv">){my $d8nw=Octology::d8->new();my $ndfl=$dfil;$ndfl=~ s/^(.+)\.(\w+)$/$1-$d8nw.$2/;
                                                              my $dfd8=$dfil;$dfd8=~ s/^(.+)\/([^.]+)\.(\w+)$/$2/; # isol8 *MM-DD-YYYY* 2 say l8r
-  if        ($dfd8=~ /^06-2/){ # only June 20-somethingthDay of 2020 Year Dfalt comput8ion hard-coded for PerlConferenceInTheCloud, instead of trying to ...
-                               #   ... incr $lupc for loop-count limit8ion, so probably just replace this with if(1){ instead of this to handle other d8z;
+  if        (1){#$dfd8=~ /^06-2/){ # only June 20-somethingthDay of 2020 Year Dfalt comput8ion hard-coded for PerlConferenceInTheCloud, instead of trying 2 ...
+  # above if was added 4 PerlConf; #   ... incr $lupc for loop-count limit8ion, so probably just replace this with if(1){ instead of this to handle other d8z;
     my       $csvo=                         Text::CSV->new({'binary' => 1}); #, auto_diag => 1 });
     open  ( my $fhnd, "<:encoding(UTF-8)", $dfil) or die "$dfil: $!";my $got1=0;my $janf=0;my $marL=0;my $aftm=0; #
     while ( my $rowd= $csvo->getline($fhnd)){next if($rowd->[0] =~ /(Province\/State|Recovered)/ || $rowd->[2] =~ /(Province\/State|Recovered)/);

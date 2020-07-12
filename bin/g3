@@ -11,7 +11,7 @@
 #     tryout && r8 all :colorscheme /usr/share/cmus/*.theme with typical 8 main pal8 settingz && mAB genR8 .Hrc style dense pal8 mapz of each theme's d8a,
 #     stuD gapless playback && format options, ckout cmus-remote,find&&stuD cmus-tutorial, stuD Libre.FM GNU scrobbling like cmusfm && zomg does,
 #   revive all good old pimp rand rang, r8ng, && mAB volume scaling cmus:"replaygain" && any othr ancient worthwhile stuf from my now ancient zinf fsui dayz;
-use strict;use warnings;use utf8;use Octology::a8;my $VERSION='0.0';my $d8VS='K6FMKEEP'; # consider detecting && adding custom Xtra --help basic tXt output2;
+use strict;use warnings;use utf8;use Octology::a8;my $VERSION='0.0';my $d8VS='K7BM9Vnm'; # consider detecting && adding custom Xtra --help basic tXt output2;
 use Term::ReadKey;     # note that you can pass in as many -d=\d+ DelayDur8ionInSeconds (like MPlayer -endpos) for as many file-name params follow 2 B plAyd;
 END{      ReadMode 0;} # good practice to auto-restore orig TTY read settingz at END
           ReadMode 3;  # setup 4 raw mode or 3 cbreak mode where Ctrl-C workz since signalz are enabled
@@ -22,16 +22,24 @@ my %kr=('u'=>"\e[A" ,'d'=>"\e[B" ,'r'=>"\e[C",'l'=>"\e[D", # arOkEz working,Yay!
         'z'=>"\e[6~",'a'=>"\e[5~",'w'=>'+','s'=>'-','>'=>'n','h'=>'?','p'=>' ',chr(127)=>'m',"\n"=>'n',';'=>'f','v'=>'1','x'=>'q');my @dscz; # KeyzRemap
 my $ksst=0;while(@ARGV && $ARGV[0]=~ /^-*d?[=:]?(\d+)$/i){push(@dscz,$1 );shift(@ARGV  );} # -sKipSecondsStartTime, Dur8ionSeCZ, && BlO shift paramz4cmd
 my $xp=Expect->new();my @pr;my $si='';my $cs ='';my $lt ='';if(@ARGV){@pr=@ARGV;@ARGV=();} #eXPectobj,PaRamz,StndrdIn,CodecStrng 2ck4dupz,LastTime 2padCodecz
-my $nnxt=0;my $gorl='';               my $ts ='';my $as =''; # Next-NeXTflag, GoomOriginalReloc8Line, Title..artistString,Album..genreString
+my $nnxt=0;my $gorl='';my $auvz=0    ;my $ts ='';my $as =''; # Next-NeXTflag, GoomOriginalReloc8Line,AUtom8dViZualiZ8ion Title..artistString,Album..genreString
+for(1..$#pr){if($pr[$_-1]=~ /^-*v(isualiz8?a?t?ion)?\s*$/i && # default try to auto-spawn good lib-visual actor plug-in or Xpand solo NdX pRamz;
+                $pr[$_  ]=~ /^([0-9A-Z]|\s*(mono|space|spectra|synae|wave)scope|goom(2k1)?|(libvisual_)?(lv_(analyzer|scope))?
+                  (jess|bumpscope|corona|infinite|jakdaw|lv_analyzer|lv_scope|oinksie))$/ix){my $vprm=$1; # would be slick to mk -v syntax like -d but bad p@rn
+    if(length($vprm) ==1){my @Vz=split(/\n/,`gst123 -V|cut -d' ' -f1`);($Vz[1],$Vz[2],$Vz[3],$Vz[4])=($Vz[2],$Vz[3],$Vz[4],$Vz[5]); # rot8 goom down past scOpz
+      $pr[$_]=$Vz[$sb10{$vprm}];} # try to replace indicez of lib-viz actor plug-inz to map longnamz
+    $auvz=1;}} # below should insert the indexed viz name when option to hopefully just need to provide b64 indices instead of full namez
+  # since each new track restores the default geometry of whatever the lib-viz window is stealing focus from elsewhere (intolerable), so don't dfault Lv izual;
+#nless($auvz){push(@pr,'-v','libvisual_infinite');}#goom2k1');} # change the default actor plug-in name here if another becomez more desired;
 #push(@pr,';echo','8_eNNd_8');$cm.=' '.join(' ',@pr); # Expect seemz2B %20%3B like URL escaping my @pr with spacez && semiz so joining 4just sclr
 my $ht ="==================== gst123 keyboard commands =========================== => =================== g3 kybd cmdz ===========================
-    l / r or cursor left/right  -  seek 10 seconds  backwards/forwards    ;    p or     space  -  toggle pause
+    l / r or cursor left/right  -  seek 10 seconds  backwards/forwards    ;    p or     space  -  toggle pause  # XtraXpect kyz du!wrk4vizwndOz
     d / u or cursor down/up     -  seek 1  minute   backwards/forwards    ;    m or backspace  -  toggle mute/unmute
     z / a or page   down/up     -  seek 10 minutes  backwards/forwards    ;    f or semicolon  -  toggle fullscreen (only for videos)
     w / s or + / -              -  increase/decrease     volume by 10%    ;    1 or v          -  normal video size (only for videos)
     n     or >   or      enter  -  play next file                         ;  # should try to add prev file by tracking params && restart?
     h     or ?                  -  this help                              ;    q or x          -  quit (exit) g3
-=========================================================================================================================================";   # HelpText wIde
+========= -V == Vizualiz8ionz == == can be provided merely by single ... === b64 index below == == txt .help. reordrng actors list ======";   # HelpText wIde
 if(exists($ENV{'COLUMNS'}) && $ENV{'COLUMNS'} < 138){$ht ="==================== gst123 keyboard commands =>
                   =>   g3     kybd     cmdz   ========================
     l / r or cursor left/right  -  seek 10 seconds  backwards/forwards
@@ -55,7 +63,7 @@ $ht=~ s/(ke?yb(oar)?d   )/$B$1/gx;$ht=~ s/(minutes?  )/$B$1/gx;$ht=~ s/(play  )/
 $ht=~ s/(co?m(man)?d[sz])/$C$1/gx;$ht=~ s/(wards     )/$c$1/gx;$ht=~ s/(next  )/$M$1/gx;$ht=~ s/(fullscreen)/$C$1/gx;$ht=~ s/(\?)/$B$1/g;$ht=~ s/(#)/$C$1/g;
 $ht=~ s/(cursor         )/$C$1/gx;$ht=~ s/(back      )/$o$1/gx;$ht=~ s/(file  )/$G$1/gx;$ht=~ s/(only      )/$r$1/gx;$ht=~ s/\//$W\//g;$ht=~ s/(track)/$C$1/g;
 $ht=~ s/(left           )/$Y$1/gx;$ht=~ s/(for       )/$G$1/gx;$ht=~ s/(this  )/$c$1/gx;$ht=~ s/(normal    )/$o$1/gx;$ht=~ s/([()])/$Y$1/g;$ht=~s/(semi)/$C$1/;
-$ht=~ s/(right          )/$R$1/gx;$ht=~ s/(in)(crease)/$G$1$c$2/gx;$ht=~s/(help     )/$B$1/gx ;$ht=~s/(videos?)/$z$1/gx;$ht=~ s/(size)/$c$1/;
+$ht=~ s/(right          )/$R$1/gx;$ht=~ s/(in)(crease)/$G$1$c$2/gx;$ht=~s/(help   )/$B$1$r/gx ;$ht=~s/(videos?)/$z$1/gx;$ht=~ s/(size)/$c$1/;
 $ht=~ s/(down           )/$M$1/gx;$ht=~ s/(de)(crease)/$R$1$c$2/gx;$ht=~s/(backspace)/$R$1/gx ;$ht=~s/(quit   )/$W$1/gx;$ht=~s/ (or) / $w$1 /g;
 $ht=~ s/ (>) / $M$1 /;$ht=~ s/ (h) / $B$1 /;$ht=~ s/ (v) / $o$1 / ;$ht=~   s/ (space) / $M$1 /;$ht=~s/ (p) / $M$1 /;$ht=~s/(exit)/$W$1/gx;$ht=~s/ (x) / $W$1 /;
 $xp->debug(       0);$xp->raw_pty(     1); # raw_pty doez need 2B B4 spawn along wi proly mOst optnz
@@ -91,9 +99,10 @@ sub sn{my $ns=shift||'';$ns=decode('UTF-8',$ns);$ns=~ s/\n+/\n/g; # StripNewline
     else {$ns=~ s/.*?(\n*)(Codec)(\s*:)([^\n]+)(\n|$).*/ $B$2$W$3$tb$5/gi;}} # For Vonikk-HardAttack.mp3 Codec follows Title instead of Time =(
   elsif ( $ns=~  /(.*?)(scope|goom|libvisual)(.*)(\n)/i){ # detect -V Visualiz8ion plugins Bing listed (shouldn't matter if they dump on STDERR,not STDOUT)
           if($ns=~  /^(goom   \s+GOOM[^\n]+\n)$/x){$gorl=$1;$ns=~ s/^(goom   \s+GOOM[^\n]+\n)$       //x;}
-          if($ns=~  /^(goom2k1\s+GOOM[^\n]+\n)$/ ){         $ns=~ s/^(goom2k1\s+GOOM[^\n]+\n)$/$gorl$1/ ;}
-          $ns=~ s/(\.?)(0)(\.|$)/$C$1$o$2$S$3/g;$ns=~ s/(libvisual )libvisual /$1/g ;$ns=~ s/(bump)/$B$1/gi;
-          $ns=~ s/(\.?)(1)(\.|$)/$W$1$B$2$D$3/g;$ns=~ s/(plugin \s )plugin \s /$1/gx;$ns=~ s/(_)(analyzer)/$1$G$2/;
+          if($ns=~  /^(goom2k1\s+GOOM[^\n]+\n)$/ ){         $ns=~ s/^(goom2k1\s+GOOM[^\n]+\n)$/$gorl$1/ ; # do some re-ordring B4 catching 'what a' ! && 2k1;
+                                                            $ns=~ s/(2)(k)(\d)/$U$1$D$2$S$3/gix;} $ns=~ s/(edition)/$g$1/g;
+          $ns=~ s/(\.?)(0)(\.|$)/$C$1$o$2$S$3/g;$ns=~ s/(libvisual )libvisual /$1/g ;$ns=~ s/(bump)/$B$1/gi;$ns=~ s/(:.*)(what)\s(a)/$c$1$w$2 $o$3/gi;
+          $ns=~ s/(\.?)(1)(\.|$)/$W$1$B$2$D$3/g;$ns=~ s/(plugin \s )plugin \s /$1/gx;$ns=~ s/(_)(analyzer)/$1$G$2/;$ns=~ s/([!])/$O$1/g;$ns=~ s/([:])/$c$1/g;
           $ns=~ s/ (monoscope)(\s\s\s)/$2$1/x;$ns=~ s/(\s{15})(   Monoscope)    /$1$1$2/x;$ns=~ s/(\sjess    \s)/$d$1     /x;$ns=~ s/(\sv)(\.?)/$r$1$Y$2/g ;
           $ns=~ s/(spacescope)(  \s\s)/$2$1/x;$ns=~ s/(\s    )(oscilloscope)/$1$1$1$1$2/x;$ns=~ s/(\scorona  \s)/$r$1   /x  ;$ns=~ s/(\sJakdaw\s)/$N$1   /x;
           $ns=~ s/(synaescope)(  \s\s)/$2$1/x;$ns=~ s/(\s{14})(  Synaescope)    /$1$1$2/x;$ns=~ s/(\sinfinite\s)/$W$1 /x    ;$ns=~ s/(  jakdaw\s)/$N$1/x   ;
@@ -101,8 +110,9 @@ sub sn{my $ns=shift||'';$ns=decode('UTF-8',$ns);$ns=~ s/\n+/\n/g; # StripNewline
           $ns=~ s/(.*?)(scope               )/$Y$1$S$2$C/gix;$ns=~ s/(isual)(_)/$1$R$2$c/g ;$ns=~ s/(lv)(_)/$O$1$U$2/g;
           $ns=~ s/(.*?)(      goom          )/$Y$1$g$2$C/gix;$ns=~ s/(\splugin)    /$p$1/gx;$ns=~ s/( analyzer)/$G$1 /;
           $ns=~ s/(.*?)(           libvisual)/$Y$1$M$2$C/gix;$ns=~ s/(corona   )/$r$1/;$ns=~ s/(infinite  )/$W$1/g;$ns=~ s/(jess  )/$d$1/;$ns=~ s/(\n)/$z$1/g;}
-  elsif ( $ns=~  /==+\s+gst123\s+keyboard\s+commands\s+==+(\n)/i){ # detect help output
-          $ns=~ s/==+\s+gst123\s+keyboard\s+commands\s+==+(\n)/\n$ht\n/i;}
+  elsif ( $ns=~  /==+\s+gst123\s+keyboard\s+commands\s+==+(\n)/i){ # detect help output   # mIt need to decode below output if any UTF-8 gets used l8r
+          $ns=~ s/==+\s+gst123\s+keyboard\s+commands\s+==+(\n)/\n$ht\n/i;my $gV=`g3 -V`;  # try calling out a sub-shell to another self just for trailing help;
+    my @Vz=split(/\n/,$gV);for my $Vn(0..$#Vz-1){$ns.="$U$sb64[$Vn]$B $Vz[$Vn]$z\n" if(defined($Vz[$Vn]) && length($Vz[$Vn]) && $Vz[$Vn]=~ /\S+/);}}
   elsif ( $ns=~  /.*?(\n?)(Time)(:.*Time:\s*)(\d+:\d+:\d+\.\d+).*( of )(\d+:\d+:\d+\.\d+)\s*?(\n|$)/i){my $tn=$4;my $tt=$6; # break d8 fieldz
           $tn=~        s/(\d+)(:)(\d+)(:)(\d+)(\.)(\d+)/$U$1$W$2$D$3$W$4$S$5$Y$6$N$7/g;         my $Sc="\e[16G"; # mv2colm16,erase cursor2BoL&&mv2 1stcolumn
     unless($ksst){$ksst=3600*$1+60*$3+$5;} # atMpt2set whatevr init stRt tIm cudB Dtectd first aftr audio playing has begun

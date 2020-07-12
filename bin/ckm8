@@ -45,11 +45,12 @@
 # GC6L7kLX:mor AI thinkng about bildng gNral "already known" fulgAm CquNTally grOing registry4l8r rFrNc&&2avoid stOrng manyIdNtical gAmz. mABdvl compact stOrag
 #   4m@ wi cmprSd bord lookupz aftr evry8plyz2jump2&&apply mvz from l8r&&Ech ply justPc,Go,&&Rest wich lNd thMsLvz2max32x64x27dir&&fIl hIerRchy2bild d8abAs2ndX
 #   wich registry gmzRsimilR2rEfer2whNDcIdng on bStnXtmv. sepR8 bord reg4any early or midgAmNcountrdEnuftImz&&anothr4allknOwnNdgmzEvNiftheyOnlyapErd once sOfR;
+# K7AMERIC:HTTPS://WikiHow.Com/Read-Algebraic-Chess-Notation indic8s it was a Philipp Stamma who first introduced Algebraic Chess Not8ion. Quite coincident! ;)
 # old:could fixSimp wi wantarray2alow $simp->Text('non-ary'),mk bullet blastz,mk game srvr,plyr matchr,abiliT2anOt8 or plA ahed on both sIdz whil w8ng4oppo2mv;
 #   Octo is 8base d8a applic8ions:V8 abbreV8ions,b8 nums,d8 stamps,f8 RU(Red)E4||2lern8bow?pal8NtrE RGB && f0nt -##-,c8 col8 scrn,r8 valU8,m8 rel8,l8 skedul8r?
 use strict;use warnings;use utf8;use v5.10;use Encode;
 use Octology::a8;#se Octology::c8;
-use Octology::b8;use Octology::d8;my $VERSION='0.0';my $d8VS='K6OM5XxY';my $name=$0;$name =~ s/^.*\///;my $Dbug=0; # version,program name
+use Octology::b8;use Octology::d8;my $VERSION='0.0';my $d8VS='K7BM4SnG';my $name=$0;$name =~ s/^.*\///;my $Dbug=0; # version,program name
 open my $out8,'>&',STDOUT or die "Can't open  duplic8 STDOUT handle: $!";binmode $out8,':encoding(UTF-8)';select($out8);$|=1; # crE8 locl autoflush dup of glbl
 if(           @ARGV && $ARGV[0]=~ /^-*h/i){say $out8 " ckm8  - experimental   Curses and SDL Chess program  Vers:$VERSION  d8VS:$d8VS by Auth:$Auth
   <pW>v<pK>  sets roster tags for Players White and BlacK and for output filename where pW and pK are single-letter keys in the player registry hash (v optnal)
@@ -139,50 +140,66 @@ if(      2 <= @ARGV && $ARGV[0]=~ /^-*b/i){my $xcbd=decode('UTF-8',$ARGV[1]);if(
 #     Bishop ♗ Brenda  Brave         paWn   ♙ William Water              pawn   ♟ wayne  waste          bishop ♝ barbara blood
 #     King   ♔ Kyle    Kind         pawN    ♙ Natalie Nature            pawn    ♟ norma  noose          king   ♚ kilgore kraven
 #     Queen  ♕ Quill   Quest      pawn C    ♙ Curtis  Carver          pawn c    ♟ clint  caustic        queen  ♛ quartz  quasher
-#   biShop   ♗ Steven  Smith      pawn D    ♙ Dottie  Daring          pawn d    ♟ donna  decay        bishop   ♝ shawn   slayer
+#   biShop   ♗ Steven  Smith      pawn D    ♙ Dottie  Driver          pawn d    ♟ donna  decay        bishop   ♝ shawn   slayer
 #knighT      ♘ Timmy   Trotter    pawn E    ♙ Evan    EvergrEn        pawn e    ♟ exon   evil      knight      ♞ trina   trample
 #    rOok    ♖ Orville Olive      pawn F    ♙ Fran    Fire            pawn f    ♟ fiona  frost         rook    ♜ oden    operose
-my %pnam =('R'=>['     Rook  ','Rachel ','Roost   '],
-           'I'=>['   knIght  ','Igor   ','Isle    '],
+my %Pnmz =('P'=>['     Pawn  ','Philip ','Phalanx '],  # could pick random 8th of: 'PYROpyro' keyz to produce constant Pip promotions along with plyz;
+           'p'=>['     Phawn ','Phil   ','Phoenix '],
+           'Y'=>['Pyro-maniac','Pip    ','Piper   '],  # Phlame && phire phrom phuel pressing powdered product to produce plumes of amPhetamine vaPor;
+           'y'=>['Pyro-techno','Pippi  ','Peerless'],
+           'R'=>['Presidente ','Phelipe','Primero '],  # Phallic Pito, Penocha Puss, y Puta ... con todos del Phuego!  ;)  L8r add Phil Pants or Pi8?;
+           'r'=>['President  ','Pepper ','Pickle  '],
+           'O'=>['Pour-king  ','Pepe   ','Porter  '],  # these actually indic8 that I'm being promoted 2 essentially primary King,but playin it priv8;
+           'o'=>['Purr-king  ','Papa   ','Petting '],);
+my %pnam =('R'=>['     Rook  ','Rachel ','Roost   '],  # now lots of names from more extended family: uncles, aunts, cousins, nephews, nieces, pets...
+           'I'=>['   knIght  ','Isaac  ','Isle    '],  #   ...leaving only a handful of first names now unoccuppied by rel8ives in some 4m or another;
            'B'=>['     Bishop','BowBeau','Brave   '],
            'K'=>['     King  ','Kyle   ','Kind    '],
            'Q'=>['     Queen ','Quill  ','Quest   '],
-           'S'=>['   biShop  ','Steven ','Smith   '],
-           'T'=>['knighT     ','Timmy  ','Trotter '], # Tim promoted as sole exception to gendered start square color && side;
+           'S'=>['   biShop  ','Stuart ','Smith   '],
+           'T'=>['knighT     ','Timmy  ','Trotter '],  # Tim promoted as sole exception to gendered start square color && side (Bfore Emerson joined);
            'O'=>['   roOk    ','Orville','Olive   '],
-           'P'=>['     Pawn  ','Philip ','Phalanx '],
+           'P'=>['     Pawn  ','Philip ','Phalanx '],  # consider re-gener8ing any or all of my 3 P-names promoting me (with every ply made anywhere);
            'A'=>['    pAwn   ','Angie  ','Anvil   '],
-           'W'=>['   paWn    ','William','Water   '],
-           'N'=>['  pawN     ','Natalie','N8ure   '],
-           'C'=>['pawn C     ','Crew   ','Carver  '], # Dottie Divine demoted, Darjeeling (Darjee Darling) promoted, Tim now tipping more male again;
-           'D'=>['pawn D     ','Darjee ','Divine  '], # Dottie Dream  demoted, Darjeeling (Darjee Divine ) promoted, after staying as D in altern8Pc;
-           'E'=>['pawn E     ','Evan   ','EvergrEn'],
-           'F'=>['pawn F     ','Fran   ','Fire    '],
-           'p'=>['     pawn  ','porter ','poison  '],
-           'a'=>['    pawn   ','audry  ','arid    '],
-           'w'=>['   pawn    ','wayne  ','waste   '],
-           'n'=>['  pawn     ','norma  ','noose   '],
-           'c'=>['pawn c     ','clint  ','caustic '],
-           'd'=>['pawn d     ','dottie ','drunk   '],
-           'e'=>['pawn e     ','exon   ','evil    '],
+           'W'=>['   paWn    ','William','Water   '],  # Chris' && our childhood cat Walter (White/Grey TuxedoBoy) also nearly mentioned with "Water";
+           'N'=>['  pawN     ','Natalie','N8ure   '],  # may add gender ambiguous name "Chris" for Stearns && Nitzschke over Tim && amanda's son Crew;
+           'C'=>['pawn C     ','Crew   ','Courage '],  # Dottie Divine demoted, Darjeeling (Darjee Darling) promoted, Tim now tipping more male again;
+           'D'=>['pawn D     ','Duke   ','Daring  '],  # Dottie Dream  demoted, Darjeeling (Darjee Divine ) promoted, after staying as D in altern8Pc;
+           'E'=>['pawn E     ','Emerson','EvergrEn'],  # added more of Tim&&amanda's kids' names onto the White side of P&&A neice&&nephew pawns2gthr;
+           'F'=>['pawn F     ','Finley ','Fire    '],  # sorry if I got any names or spelling wrong, not sorry though since family has ostracized me!;
+           'p'=>['     pawn  ','piper  ','poison  '],
+           'a'=>['    pawn   ','amanda ','arid    '],  # could add Tim's wife amanda here on White-side by displacing Angie to blacK-side withDot&&Ro;
+           'w'=>['   pawn    ','walter ','waste   '],
+           'n'=>['  pawn     ','nina   ','noachite'],
+           'c'=>['pawn c     ','chris  ','caustic '],
+           'd'=>['pawn d     ','darjee ','darkdot '],  # dottie drunk  demoted again to not matter in my ranking of close family compared with my cat;
+           'e'=>['pawn e     ','emma   ','erosion '],  # interesting that "pawn d" or "pd" are rot8ions of each other with 4mer far mor vers8ile than;
            'f'=>['pawn f     ','fiona  ','frost   '],
-           'r'=>['     rook  ','rosann ','rosary  '],  # demoted Rosie to dark-side along with Maga Dot
+           'r'=>['     rook  ','rosann ','rosary  '],  # demoted Rosie to the dark-side along with Maga as now just a DarkDot punctu8ing pd last-name;
            'i'=>['   knight  ','ivan   ','injure  '],
-           'b'=>['     bishop','barbara','blood   '],
+           'b'=>['     bishop','bruce  ','blood   '],
            'k'=>['     king  ','kilgore','kraven  '],
            'q'=>['     queen ','quartz ','quasher '],
-           's'=>['   bishop  ','shawn  ','slayer  '],
-           't'=>['knight     ','trina  ','trample '],
+           's'=>['   bishop  ','s8n    ','slayer  '],  # sounds like: "Satan's Lair" or Slayer of s8n but actually just this bloody biShop's 1st && last;
+           't'=>['knight     ','tony   ','trample '],
            'o'=>['   rook    ','oden   ','operose '],
-           'h'=>['     host  ','Happy  ','Homeboy '],  # added my Dad && Angie's dog, along with my old sweetest cat
-           'H'=>['     Host  ','Hiro   ','Honor   '],
-           'G'=>['Grandmaster','Gerry  ','Gentle  '],  # add othr custom charz wi maybe mapping of new types to existing to inherit icon && color maps
+           'j'=>['     joker ','josh   ','junkyard'],  # decided hiding White:Jesus Versus. blacK:s8n could work out better for maybe l8r meta-battle dynamix;
+           'J'=>['     Joker ','Jesus  ','Jouster '],  # had goYim && Yid 4 Y'shua instead of Jesus or Josh (hiding from s8n on White-side in back-up roster);
+           'G'=>['Grandmaster','Gerry  ','Gentle  '],  # could add ginny && dan altern8s after emma && noah (sort of made into non-dark last name for nina)
+           'g'=>['grandmaster','gina   ','glutton '],  # add othr custom charz wi maybe mapping of new types to existing to inherit icon && color maps
            'M'=>['     Master','Maggie ','Magnet  '],  #  ... or design8 new unique values in appropriate hashes
-           'm'=>['     master','mabel  ','malice  '],
-           'H'=>['    cHancel','Henry  ','Honor   '],  # chancellor (R+I) from Capablanca on 10x8 && other variants
-           'h'=>['  archbisho','ham    ','hater   ']); # archbishop (B+I)  ... but need better name letrz && more room 2 fit
+           'm'=>['     master','mary   ','malice  '],  # could add connor && montana Gill for more Mathews cousins to be fE8ured
+          #'H'=>['     Host  ','Happy  ','Homeboy '],  # added my Dad as "G" above && Angie's dog here, along with my old sweetest cat below
+           'H'=>['  cHancelor','Hiro   ','Honor   '],  # chancellor (R+I) from Capablanca on 10x8 && other variants
+           'h'=>['archbishop ','hamhand','h8rhamer']); # archbishop (B+I)  ... but need better name letrz && more room 2 fit
    $n2tm{  'M'} ='B'; # for now add Master as alias to Bishop, even though it sounds like a cool name for a new Pc type that combines aspects of RIB by
    $n2tm{  'm'} ='b'; #  ... mvng str8 like Rook jumping only to same colored squares (but can only jump one Pc in a direction or needs more nerfing somehow)
+   $n2tm{  'H'} ='R'; # make some basic type re-mapping for eventual custom varE8ion piece types (Grandmasters=>knIghts,Masters=>Bishops,cHancellors=>Rooks);
+   $n2tm{  'h'} ='r';
+   $n2tm{  'G'} ='I';
+   $n2tm{  'g'} ='i';
+   $n2tm{  'J'} ='Q';
+   $n2tm{  'j'} ='q';
 my %pdat =('R'=>['      ',
                  ' HHHHH',
                  '  IRI ',
@@ -968,6 +985,9 @@ sub Pr4mPcMv{ # default mv pikd 2 sele in bord
     $mv50 += 0.5 if($m50f && $mv50 < 63);$crmf[5]=int($mv50); # hndl 50-move draw-game stalem8 counting if flagged as valid move (i.e., not a pawn or capture)
   }else{return($pbrd);}}#,$pbrc); # probably won't be necessary to return colors when just wanting to explore potential piece movements within bord
 sub PrntMove{unless($ucsf){my $pndx=b64($#plyz);$pndx="0$pndx" if(length($pndx)==1);unless(!$#plyz||$#plyz % 10||$Dbug){say $out8 '';}
+    my $pyro=int(rand(8));$pnam{'P'}[0]=$Pnmz{substr('PYROpyro',$pyro,1)}[0]; # along with every printed move, upd8 main name d8a for Pawn Pip 2 Promotionamz;
+       $pyro=int(rand(8));$pnam{'P'}[1]=$Pnmz{substr('PYROpyro',$pyro,1)}[1];
+       $pyro=int(rand(8));$pnam{'P'}[2]=$Pnmz{substr('PYROpyro',$pyro,1)}[2];
     if($nocf){print $out8 $pndx,@{$plyz[-1]};}else{print $out8
       b8c(          $pndx         ),
       d8c(          $plyz[-1][0]  ),
@@ -1123,8 +1143,7 @@ while(!defined($keey) || ($keey !~ /^[xq]$/i && ord($keey) != 27)){$keey = '-1';
           my $cndx = int(($evby-(16*$yscl))/($scal*16*$yscl))*8 + int($evbx/($scal*2*$xscl*8)); # then based on rot8n find xy squr loc8n && set sele && keey
           my %rotm =('0'=>0,'1'=>3,'2'=>2,'3'=>1); # ROT8ion Map happens oddly && needs to swap 1 && 3 in @brnm 2get correct event indices
           my $rcnd = b10(substr($brnm[$rotm{$rotn}],$cndx,1)); # Rot8d Cell iNDex
-          if(defined($pikd) && $pikd != $rcnd){$sele = $rcnd;$keey = ' ';} # should only call if dragged to diff cell, might have sync issue if Dn already pikd
-        }
+          if(defined($pikd) && $pikd != $rcnd){$sele = $rcnd;$keey = ' ';} DrawBord();} # shud only call if dragd2diff cell,mIt hav sync issue if Dn alreD pikd
      #}elsif ($evnt->type    == SDL_JOYAXISMOTION){my($ejaw,$ejaa,$ejav)=($evnt->jaxis_which  ,$evnt->jaxis_axis    ,$evnt->jaxis_value  ); # val:-32768..32767
      #}elsif ($evnt->type    == SDL_JOYHATMOTION ){my($ejhw,$ejhh,$ejhv)=($evnt->jhat_which   ,$evnt->jhat_hat      ,$evnt->jhat_value   ); # val bitwise OR'd:
 # SDL_HAT_CENTERED  # could use these hat mvmntz 4 directnz but just tstng butnz 4 now should suffice
@@ -1224,9 +1243,13 @@ while(!defined($keey) || ($keey !~ /^[xq]$/i && ord($keey) != 27)){$keey = '-1';
               elsif($evnt->key_sym == SDLK_d        ){$tkey = 'd';$tkey = uc($tkey) if($evnt->key_mod & KMOD_SHIFT);}
               elsif($evnt->key_sym == SDLK_e        ){$tkey = 'e';$tkey = uc($tkey) if($evnt->key_mod & KMOD_SHIFT);}
               elsif($evnt->key_sym == SDLK_f        ){$tkey = 'f';$tkey = uc($tkey) if($evnt->key_mod & KMOD_SHIFT);}
+              elsif($evnt->key_sym == SDLK_g        ){$tkey = 'g';$tkey = uc($tkey) if($evnt->key_mod & KMOD_SHIFT);}
+              elsif($evnt->key_sym == SDLK_h        ){$tkey = 'h';$tkey = uc($tkey) if($evnt->key_mod & KMOD_SHIFT);}
+              elsif($evnt->key_sym == SDLK_m        ){$tkey = 'm';$tkey = uc($tkey) if($evnt->key_mod & KMOD_SHIFT);}
               elsif($evnt->key_sym == SDLK_x        ||
                     $evnt->key_sym == SDLK_ESCAPE   ){$tkey = 'x';}}}}} # allow x or Escape to cancel Make-piece oper8ion
-      if($tkey =~ /[$ri2f]/i){  substr($bord,$sele,1, $tkey);                                             DrawBord();}
+     #if($tkey =~ /[$ri2f]/i){  substr($bord,$sele,1, $tkey);                                             DrawBord();} # betr 2 ck NameToTypeMap 4 key Xistz;
+      if(exists($n2tm{$tkey})){ substr($bord,$sele,1, $tkey);                                             DrawBord();}
     }elsif(    $keey  eq 'KEY_RIGHT'                                   ){ # mayb shd mk all arowz consistent by keepng2 rank||file rathr than incr around edge?
       if($rotn == 0){$sele += 1;}elsif($rotn == 1){$sele -= 8;}elsif($rotn == 2){$sele -= 1;}else{$sele += 8;} # upd8 selected squr ndx,normliz2bord,then draw
       $sele -= 64 if($sele >= 64);  $sele += 64 if($sele <=-1);                                           DrawBord(); # faild2just upd8 squarez rathr than full

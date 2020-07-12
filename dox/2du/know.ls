@@ -621,3 +621,4 @@ K5RMCUTE:HTTPS://YouTu.be/6nQvVpLnZCw "Mythic Patterns in Mario Games Pt. 1: The
 K62M5hot:HTTPS://YouTu.be/A_a6RjR_AHY "If Man Obeyed God" # CCL:6m45s of DarkMatter2525 anim8ing a most hilarious, ridiculous, hot crE8ion-account criticism;
 K6AMGodP:HTTPS://YouTu.be/RNfhvw1KE3A "25 Bad Reasons to Believe in God" # K65:26m46s of the FriendlyAtheist laying out Ech of many simple inadequ8 argUmNts;
 K6BM0LYP:HTTPS://YouTu.be/RoyFdWYgz5I "Philosophical Failures of Christian Apologetics, Part 11: The Holy Spirit" # K66:24m46s of AntiCitizenX gr8 Xplan8ion;
+K7AMCour:HTTPS://YouTu.be/UFcOnpijnJs "Guide to Stoicism: Philosophy For Uncertain Times" # K72:12m of Sisyphus_55 0.Justice 1.Courage 2.Temperance 3.Wisdom;

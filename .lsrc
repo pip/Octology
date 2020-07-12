@@ -1,8 +1,8 @@
 # 819J2Pip:~/.lsrc by PipStuart <Pip@CPAN.Org> izAheavily modifId`dircolors`cfgfIl(Orig ~/.DIR_COLORS)wich setz $ENV{'LS_COLORS'} 4GNU`ls --color`&&`lsd8`;
-# $VERSION='0.0';$d8VS='K6MMGhxe'; 2du:mkUtl2gNr8 altrn8 versN of .lsrc th@purposfuly varEz colrz of comon typz,try addng bakgrnd colrz2all dFz&&tst,
+# $VERSION='0.0';$d8VS='K7BMDewT'; 2du:mkUtl2gNr8 altrn8 versN of .lsrc th@purposfuly varEz colrz of comon typz,try addng bakgrnd colrz2all dFz&&tst,
 #   add interaction2 lsd8 wN it Dtectz unrecognIzd XtNshNz offerng c@egOrEz with comon colr2autOm@ically insrt chOsN NtrEz,mAB add *-* NtrEz from .zshrc hEr &&
 #   mk lrc gNr8 either,confirm all accept f0nt cOdez wi dash accepting Dfalt foreground then redo NORMAL FILE LINK as no fi ln,mAB 8trm added2TERM ls someday;
-# This file was gNR8d by `lrc` Vers:0.0 d8VS:K6GM8sum on d8:K6MMGht9. Please edit ~/.lrc and run `lrc` then `src` to see changes;
+# This file was gNR8d by `lrc` Vers:0.0 d8VS:K6OM5Pxe on d8:K7BMDkBD. Please edit ~/.lrc and run `lrc` then `src` to see changes;
 # nOt:I'm pretty sure itz Chunz(!Takiz)`ls`&&`dircolors`th@cud!hndl (MULTI)?HARDLINK sO rEmMbr2kEp th@ lIn cmNtd out4her(&&kEptstng2cnfirm);
 # Keywords COLOR,OPTIONS,&& EIGHTBIT (honored by Slackware dircolors) are recognized but ignored; TERMz && XtNsionz syncd2 2016;
 # Copyright(C) 1996-2016 FreeSoftwareFound8ion,Inc. Copying and distribution of this file, with or without modific8ion, are permitted provided the
@@ -306,6 +306,7 @@ CHR                       01;38;5;011;48;5;000 #cd= 01;33;40    01;33;40  CHaRac
 .dirs                     01;38;5;011
 #OO
 #OO
+.G-Force                  01;38;5;003      # Lib-Vizualiz8ion GForce actor plug-in file that showed up in ~;
 .locale                   01;38;5;003
 .dconf-defaults           01;38;5;009      # /etc/gdm3 files
 .dconf                    01;38;5;003      # J6JMKNID:probably something like the output of `dconf dump /org/gnome/terminal/legacy/` to "load" l8r;
@@ -894,6 +895,7 @@ CHR                       01;38;5;011;48;5;000 #cd= 01;33;40    01;33;40  CHaRac
 .candybarbackup           01;38;5;001
 #RR
 #RR
+.WTF                      01;38;5;009;48;5;011;4;5;3 # WhatTheFsck ?! Ryu smashes thru ChunLi !?
 .start                    01;38;5;010      # .start filz (/etc/conf.d/local.start)
 .stop                     01;38;5;009      # compressed archives && zips && cd rc filz
 .swo                      01;38;5;009      # vim.swp++
@@ -1556,17 +1558,19 @@ CHR                       01;38;5;011;48;5;000 #cd= 01;33;40    01;33;40  CHaRac
 .0.0-16-generic           01;38;5;014;48;5;006
 .0.0-15-generic           01;38;5;012;48;5;006
 .0.0-13-generic           01;38;5;013;48;5;006 # BlO /boot Linux kernelz versionz 5.3.0 onward started with Ubuntu 19.10 Eoan Ermine, so dark cyan bkgr 5.0 abov
-.3.0-59-generic           01;38;5;172      # now omitting Red && purple 2 loop just middle 6 of the 8bow, since reddish may be a no-no in Heaven && sO Earth
-.3.0-55-generic           01;38;5;011
-.3.0-53-generic           01;38;5;010
-.3.0-51-generic           01;38;5;014
-.3.0-46-generic           01;38;5;012
-.3.0-45-generic           01;38;5;013
-.3.0-42-generic           01;38;5;172
-.3.0-40-generic           01;38;5;011
-.3.0-26-generic           01;38;5;010
-.3.0-24-generic           01;38;5;014
-.3.0-23-generic           01;38;5;012
+.3.0-62-generic           01;38;5;172      # now omitting Red && purple 2 loop just middle 6 of the 8bow, since reddish may be a no-no in Heaven && sO Earth
+.3.0-61-generic           01;38;5;011
+.3.0-59-generic           01;38;5;010
+.3.0-55-generic           01;38;5;014
+.3.0-53-generic           01;38;5;012
+.3.0-51-generic           01;38;5;013
+.3.0-46-generic           01;38;5;172
+.3.0-45-generic           01;38;5;011
+.3.0-42-generic           01;38;5;010
+.3.0-40-generic           01;38;5;014
+.3.0-26-generic           01;38;5;012
+.3.0-24-generic           01;38;5;013
+.3.0-23-generic           01;38;5;172
 #                                          # zsh wraps '%{' ANSI '%}' && vim User[1-9] colrz specify BlO ForeGroundz all on darkblue BakGrnd4statuslIn
 #     4NT    etfp   vim  c8  color              ANSI      HTML    Octology::d8::fldz (`d8`)
 #     0f     Fsy_   %*    W WhiteBright         \e[1;37m  FEFDFF            # vim %* resets statuslIn colr 2 Dfalt   White on darkblue so has max 10 colrz
