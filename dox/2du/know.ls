@@ -1,5 +1,5 @@
 # HBQLISTV:know.ls crE8d by PipStuart <Pip@CPAN.Org> to duplic8 Dr. Jordan B. Peterson's Quora.Com answer of "40 most valuable things everyone should know";
-# $VERSION='0.0';$d8VS='K6BM10HS'; # While this document origin8d around (&& still mainly intends to focus on) Dr. Peterson's knowledge, many others fE8ure;
+# $VERSION='0.0';$d8VS='K7IMAnth'; # While this document origin8d around (&& still mainly intends to focus on) Dr. Peterson's knowledge, many others fE8ure;
 # 2du:start chronicling Dr. Peterson's many topical videos with new section for post-title subject summaries or explor8ion;
 0) Tell the truth.                 
 1) Do not do things that you h8.
@@ -622,3 +622,8 @@ K62M5hot:HTTPS://YouTu.be/A_a6RjR_AHY "If Man Obeyed God" # CCL:6m45s of DarkMat
 K6AMGodP:HTTPS://YouTu.be/RNfhvw1KE3A "25 Bad Reasons to Believe in God" # K65:26m46s of the FriendlyAtheist laying out Ech of many simple inadequ8 argUmNts;
 K6BM0LYP:HTTPS://YouTu.be/RoyFdWYgz5I "Philosophical Failures of Christian Apologetics, Part 11: The Holy Spirit" # K66:24m46s of AntiCitizenX gr8 Xplan8ion;
 K7AMCour:HTTPS://YouTu.be/UFcOnpijnJs "Guide to Stoicism: Philosophy For Uncertain Times" # K72:12m of Sisyphus_55 0.Justice 1.Courage 2.Temperance 3.Wisdom;
+K7DM5OLD:HTTPS://YouTu.be/AZQrw3caM3w "What Happened to the Men Who Made a Deal With the Devil?" # K4M:18m17s of Thoughty2 on Fokke-boat,Dylan&&Paganini-muz;
+K7IMAtom:HTTPS://YouTu.be/eF2v9oSy70I "The Anthropic Principle - How Your Existence Could Lead to a Multiverse" # JAG:15m8s of Jade from Up_and_Atom channel.
+# She delves into the Weak && Strong Principles nicely but what drew my attention most was anim8ion of 'The Standard Model of Elementary Particles' at 5m16s;
+K7JMDojo:HTTPS://YouTu.be/UMmLRJYdQlQ "Samurai Sword Master Rates 10 Japanese Sword Scenes in Movies and TV | How Real is it?" # K77:21m25s of Insider dope!;
+K7OMCuts:HTTPS://YouTu.be/j682_H84P9w "Meet a Real Samurai (Cuts 240 MPH BB Gun Pellet) | EveryDay Bosses #15" # J6N:15m55s of AsianBoss with amazing skill!;

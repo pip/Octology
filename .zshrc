@@ -737,7 +737,7 @@ alias     lVH='lvp -D  640x400 '; # above from madspin on can keep being cycled 
 alias     lvH='lvp -D 1280x800 ';alias lV="lvH $lVSx"; # upper-H 4 old HD720P, lower-h 4 dflt fullhd1080p, othrwIzkeptsAmsOfR; # only 6 lFt mAB nEd 4 2!segf?;
 alias     lvh='lvp -D 1920x1080';alias lv="lvh $lVSx"; # oinksie... lv-tool: malloc.c:4023 coredumpd mAB bAsd on pRam ordr? #; # proly not inflwrgltestjess! ;
 alias     LV='lvh -x lcdcontrol';alias sv='sonic-visualiser'; # K6BMGVis:just installed a new audio spectrum-analysis which is hopefully superior to libvis;
-alias     Lv='lvh -a lv_gltest -x lv_analyzer,lv_dump,lv_scope,lcdcontrol,gdkpixbuf,nastyfft,nebulus,bumpscope,flower,goom2k4,blursk,oinksie,plazma'; # Xcludz;
+alias     Lv='lvh -a lv_gltest -x lv_analyzer,lv_dump,lv_scope,lcdcontrol,gdkpixbuf,gforce,nastyfft,nebulus,bumpscope,flower,goom2k4,blursk,oinksie,plazma';
 #lias     Lv='lvh -a lv_gltest -x lv_gltest,lcdcontrol,gdkpixbuf,nastyfft,bumpscope,goom2k4,blursk'; # Xclude inactive plugins or mMlEkz causing core-dumpz;
 alias     p47='parsec47';alias a7='a7xpg'; # some of my favorite Kenta Cho Shmups ("Bullet-Hell") in /usr/games;  ## munmap_chunk(): invalid ptrstilcordumpdx;
 alias      rr='rrootage';alias tt='torus-trooper';alias tf='tumiki-fighters'; # would be gr8 to study BulletML && explor own similRly themed varE8ions someday
@@ -1124,6 +1124,7 @@ if       [[ "${(L)HHst}" ==  chun*  ]] || [[ "${(L)HHst}" ==  taki*  ]]; then ex
 #alias mpx='  mp      -fs'; #-x 1920 -y 1080'; # originally quite a long time ago, I used to include -noborder optn abov but thN cud!mv wndw... rEdFIning rL8iv
 alias Mply='  en "er -vo xv  -fixed-vo -nosound -loop 0          -geometry  1916x$(q $HVH1 - 28)+0+0"   '; # try Mply echo dbl-quOtd ...?
 alias mply=' mplayer -vo xv  -fixed-vo -nosound -loop 0          -geometry "1916x$(q $HVH1 - 28)+0+0"    '; #-x 1916 -y 1052' # mplayer canOnly stRt wi1920maxBcuzXinerama?
+alias mpb='  mpr0    -speed 0.025                 -keepaspect    -geometry   640x1024+1928+8  ~/mvz/pr0/mp4/Bl*';
 #lias mpr0=' mplayer                   -nosound --no-keepaspect  -geometry "1920x$(q $HVH1 - 28)+0+0"    '; # still needs vid file params like: ~/mvz/U2b/**/*Obsidia*.opus
 alias mpr0=' mplayer -vo xv  -fixed-vo -nosound -nokeepaspect    -geometry "1920x$(q $HVH1 - 28)+0+0"    -loop 0'; # this 4 MPlayer && above 4 MPlayer2 (wich I had4 awhIl)
 alias mpr1=' mplayer -vo xv  -fixed-vo -nosound -nokeepaspect    -geometry "1920x$(q $HVH1 - 28)+888+88" -loop 0'; # this 4 same as mpr0 but on Aku's  middle   24" display

@@ -143,7 +143,7 @@ if(      2 <= @ARGV && $ARGV[0]=~ /^-*b/i){my $xcbd=decode('UTF-8',$ARGV[1]);if(
 #   biShop   ♗ Steven  Smith      pawn D    ♙ Dottie  Driver          pawn d    ♟ donna  decay        bishop   ♝ shawn   slayer
 #knighT      ♘ Timmy   Trotter    pawn E    ♙ Evan    EvergrEn        pawn e    ♟ exon   evil      knight      ♞ trina   trample
 #    rOok    ♖ Orville Olive      pawn F    ♙ Fran    Fire            pawn f    ♟ fiona  frost         rook    ♜ oden    operose
-my %Pnmz =('P'=>['     Pawn  ','Philip ','Phalanx '],  # could pick random 8th of: 'PYROpyro' keyz to produce constant Pip promotions along with plyz;
+my %Pnmz =('P'=>['     PimP  ','Poploly','Phatty  '],  # could pick random 8th of: 'PYROpyro' keyz to produce constant Pip promotions along with plyz;
            'p'=>['     Phawn ','Phil   ','Phoenix '],
            'Y'=>['Pyro-maniac','Pip    ','Piper   '],  # Phlame && phire phrom phuel pressing powdered product to produce plumes of amPhetamine vaPor;
            'y'=>['Pyro-techno','Pippi  ','Peerless'],
@@ -169,7 +169,7 @@ my %pnam =('R'=>['     Rook  ','Rachel ','Roost   '],  # now lots of names from 
            'F'=>['pawn F     ','Finley ','Fire    '],  # sorry if I got any names or spelling wrong, not sorry though since family has ostracized me!;
            'p'=>['     pawn  ','piper  ','poison  '],
            'a'=>['    pawn   ','amanda ','arid    '],  # could add Tim's wife amanda here on White-side by displacing Angie to blacK-side withDot&&Ro;
-           'w'=>['   pawn    ','walter ','waste   '],
+           'w'=>['   pawn    ','walter ','w8r-tux '],
            'n'=>['  pawn     ','nina   ','noachite'],
            'c'=>['pawn c     ','chris  ','caustic '],
            'd'=>['pawn d     ','darjee ','darkdot '],  # dottie drunk  demoted again to not matter in my ranking of close family compared with my cat;
@@ -177,10 +177,10 @@ my %pnam =('R'=>['     Rook  ','Rachel ','Roost   '],  # now lots of names from 
            'f'=>['pawn f     ','fiona  ','frost   '],
            'r'=>['     rook  ','rosann ','rosary  '],  # demoted Rosie to the dark-side along with Maga as now just a DarkDot punctu8ing pd last-name;
            'i'=>['   knight  ','ivan   ','injure  '],
-           'b'=>['     bishop','bruce  ','blood   '],
-           'k'=>['     king  ','kilgore','kraven  '],
+           'b'=>['brutlbishop','breakin','boxstein'],  # David, Edith, && DaughterChoker should go broke paying me back 4all they stole in Jan.2009! ;
+           'k'=>['     king  ','kilgore','kraven  '],  ##  4 above, I've wanted pay-back && property-restor8ion,B4 chopd right thumbs && crucifiX3ion;
            'q'=>['     queen ','quartz ','quasher '],
-           's'=>['   bishop  ','s8n    ','slayer  '],  # sounds like: "Satan's Lair" or Slayer of s8n but actually just this bloody biShop's 1st && last;
+           's'=>['   bishop  ','s8n    ','slayer  '],  # sounds lIk: "Satan's Lair" or Slayer of s8n but actually just this bloodbiShop's 1st && last;
            't'=>['knight     ','tony   ','trample '],
            'o'=>['   rook    ','oden   ','operose '],
            'j'=>['     joker ','josh   ','junkyard'],  # decided hiding White:Jesus Versus. blacK:s8n could work out better for maybe l8r meta-battle dynamix;

@@ -1,11 +1,11 @@
 # Octology
-The ontology of 8. Ocho dude. Aucht! `$VERSION='0.0';$d8VS='K5KMAker';`
+The ontology of 8. Ocho dude. Aucht! `$VERSION='0.0';$d8VS='K7PM7KM8';`
 
 What is an ontology, you may ask (behind your mask)? Essentially quarantined from deadly spread of SARS CoV-2 CoronaVirus? See l8st `cJ` && `CJ` 4 d8a;
 
 <ol><li>n. (Computer Science) a rigorous and exhaustive organiz8ion of some knowledge domain that is usually hierarchical and contains all the relevant
   entities and their rel8ions.</li>
-    <li>n. (Philosophy) the metaphysical study of the nature of being and existence.</li>
+    <li>n. (Philosophy) the metaphysical study of the n8ure of being and existence.</li>
     <li>n. (Logic) the set of entities presupposed by a theory.</li>
 </ol>
 
@@ -108,7 +108,7 @@ Sincerely,
 ---
 ### Public Purpose
 If I ever become unable to continue developing this project further, my hope is that at least this repository provides others the ability to
-  utilize any of my beneficial work and ideas (hopefully to further FreeLibreSoftware with derivatives also seeing release under the GPLv3+).
+  utilize any of my beneficial work and ideas (hopefully to further FreeLibreSoftware with deriv8ives also seeing release under the GPLv3+).
 
 #### Secondary Old Screen Shots
 ##### (*several decently upd8d examples*)
@@ -117,7 +117,7 @@ If I ever become unable to continue developing this project further, my hope is 
 ![Octology-sumb-shot_1614x952-IA3MGSUM](https://github.com/pip/Octology/raw/master/gfx/sho/Octology-sumb-shot_1614x952-IA3MGSUM.png "Octology-sumb-IA3MGSUM")
 ![Octology-ftst-shot_1614x952-IA3MGato](https://github.com/pip/Octology/raw/master/gfx/sho/Octology-ftst-shot_1614x952-IA3MGato.png "Octology-ftst-IA3MGato")
 
-![Octology-ckm8-shot_1536x960-HAOM9HKQ](https://github.com/pip/Octology/raw/master/gfx/sho/Octology-ckm8-shot_1536x960-HAOM9HKQ.png "Octology-ckm8-HAOM9HKQ")
+![Octology-ckm8-shot_1918x1027-K7PM2New](https://github.com/pip/Octology/raw/master/gfx/sho/Octology-ckm8-shot_1918x1027-K7PM2New.png "Octology-ckm8-K7PM2New")
 ![Octology-tstc-shot_1614x952-IA3MGr8C](https://github.com/pip/Octology/raw/master/gfx/sho/Octology-tstc-shot_1614x952-IA3MGr8C.png "Octology-tstc-IA3MGr8C")
 <!--![Octology-dic8-shot_1614x902-HAOM900M](https://github.com/pip/Octology/raw/master/gfx/sho/Octology-dic8-shot_1614x902-HAOM900M.png "Octology-dic8-HAOM900M")-->
 
