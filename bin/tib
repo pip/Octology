@@ -5,7 +5,7 @@
 # DisplayPort-2    connected         1920x1080+0+1080    (normal left inverted right x axis y axis) 531mm x 299mm
 #      HDMI-A-0    connected         1920x1080+1920+1080 (normal left inverted right x axis y axis) 531mm x 299mm
 #       DVI-D-0    connected         1920x1080+0+0       (normal left inverted right x axis y axis) 698mm x 393mm
-  VERSION='0.0';d8VS='K35LItib'; # HTTPS://UbuntuForums.Org/showthread.php?t=1515562 describes setting up /etc/X11/xorg.conf && other somewhat old stuff;
+  VERSION='0.0';d8VS='K7PMEPip'; # HTTPS://UbuntuForums.Org/showthread.php?t=1515562 describes setting up /etc/X11/xorg.conf && other somewhat old stuff;
  HDisplUR='DisplayPort-0';               #                                      (my UpRight  screen)  ## mAB 2du l8r is Dtect && add -h --help tXt message;
  HDisplDL='DisplayPort-2';               # desired display device from `xrandr` (my DnLeft   screen)  ## executable name "tib" short for TabletInitButtons,
  HDisplDR='HDMI-A-0';                    # desired display device from `xrandr` (my DnRight  screen)  ##   but also maps display input && disables touch;
@@ -31,12 +31,20 @@ if     [[ "$1" !=   "" ]]; then # test command-line params for anything resembli
   if   [[ "$1" == "UL" || "$1" == "ul" || "$1" == "D0" || "$1" == "d0" || "$1" == "DV" || "$1" == "dv" ]]; then HStylsDi="$HDisplUL";
   elif [[ "$1" == "UR" || "$1" == "ur" || "$1" == "P0" || "$1" == "p0" || "$1" == "DP" || "$1" == "dp" ]]; then HStylsDi="$HDisplUR";
   elif [[ "$1" == "DL" || "$1" == "dl" || "$1" == "P2" || "$1" == "p2" || "$1" == "2P" || "$1" == "2p" ]]; then HStylsDi="$HDisplDL";
-  elif [[ "$1" == "DR" || "$1" == "dr" || "$1" == "H0" || "$1" == "h0" || "$1" == "HD" || "$1" == "hd" ]]; then HStylsDi="$HDisplDR"; fi; fi
+  elif [[ "$1" == "DR" || "$1" == "dr" || "$1" == "H0" || "$1" == "h0" || "$1" == "HD" || "$1" == "hd" ]]; then HStylsDi="$HDisplDR";
+  elif [[ "$1" == "TL" || "$1" == "tl"                                                                 ]]; then HStylsDi="$HDisplUL"; # also add TopLeft &&
+  elif [[ "$1" == "TR" || "$1" == "tr"                                                                 ]]; then HStylsDi="$HDisplUR"; #          BotRite ;
+  elif [[ "$1" == "BL" || "$1" == "bl"                                                                 ]]; then HStylsDi="$HDisplDL";
+  elif [[ "$1" == "BR" || "$1" == "br"                                                                 ]]; then HStylsDi="$HDisplDR"; fi; fi
 if     [[ "$2" !=   "" ]]; then # && allow for a second parameter in the same format as the first for specifying a display for just touch instead of stylus;
   if   [[ "$2" == "UL" || "$2" == "ul" || "$2" == "D0" || "$2" == "d0" || "$2" == "DV" || "$2" == "dv" ]]; then HTouchDi="$HDisplUL";
   elif [[ "$2" == "UR" || "$2" == "ur" || "$2" == "P0" || "$2" == "p0" || "$2" == "DP" || "$2" == "dp" ]]; then HTouchDi="$HDisplUR";
   elif [[ "$2" == "DL" || "$2" == "dl" || "$2" == "P2" || "$2" == "p2" || "$2" == "2P" || "$2" == "2p" ]]; then HTouchDi="$HDisplDL";
-  elif [[ "$2" == "DR" || "$2" == "dr" || "$2" == "H0" || "$2" == "h0" || "$2" == "HD" || "$2" == "hd" ]]; then HTouchDi="$HDisplDR"; fi; fi
+  elif [[ "$2" == "DR" || "$2" == "dr" || "$2" == "H0" || "$2" == "h0" || "$2" == "HD" || "$2" == "hd" ]]; then HTouchDi="$HDisplDR";
+  elif [[ "$2" == "TL" || "$2" == "tl"                                                                 ]]; then HTouchDi="$HDisplUL";
+  elif [[ "$2" == "TR" || "$2" == "tr"                                                                 ]]; then HTouchDi="$HDisplUR";
+  elif [[ "$2" == "BL" || "$2" == "bl"                                                                 ]]; then HTouchDi="$HDisplDL";
+  elif [[ "$2" == "BR" || "$2" == "br"                                                                 ]]; then HTouchDi="$HDisplDR"; fi; fi
 xinput map-to-output $HStylsId $HStylsDi; echo -e "Stylus mapped to: $W$HStylsDi$Y &&$w $HTouchDi$G :is where Touch is mapped (but Touch disabled by Dflt);";
 xinput map-to-output $HTouchId $HTouchDi; # uncommented to limit touch to Left screen && right with stylus (but maybe better to set Touch off)
 xinput --set-prop 'Wacom Intuos PT M 2 Finger touch' 'Device Enabled' 0; # attempt another way to go about disabling touch to hopefully focus stylus;

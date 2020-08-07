@@ -627,3 +627,4 @@ K7IMAtom:HTTPS://YouTu.be/eF2v9oSy70I "The Anthropic Principle - How Your Existe
 # She delves into the Weak && Strong Principles nicely but what drew my attention most was anim8ion of 'The Standard Model of Elementary Particles' at 5m16s;
 K7JMDojo:HTTPS://YouTu.be/UMmLRJYdQlQ "Samurai Sword Master Rates 10 Japanese Sword Scenes in Movies and TV | How Real is it?" # K77:21m25s of Insider dope!;
 K7OMCuts:HTTPS://YouTu.be/j682_H84P9w "Meet a Real Samurai (Cuts 240 MPH BB Gun Pellet) | EveryDay Bosses #15" # J6N:15m55s of AsianBoss with amazing skill!;
+K87M1737:HTTPS://ChessGames.Com/perl/chessplayer?pid=114666 "Philip Stamma" Vs. "Francois Andre Philidor" # introduced "EndGame" && AlgebraicNot8ion in 1737;

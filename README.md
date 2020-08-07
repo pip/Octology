@@ -1,5 +1,5 @@
 # Octology
-The ontology of 8. Ocho dude. Aucht! `$VERSION='0.0';$d8VS='K7PM7KM8';`
+The ontology of 8. Ocho dude. Aucht! `$VERSION='0.0';$d8VS='K87MDemo';`
 
 What is an ontology, you may ask (behind your mask)? Essentially quarantined from deadly spread of SARS CoV-2 CoronaVirus? See l8st `cJ` && `CJ` 4 d8a;
 
@@ -12,6 +12,9 @@ What is an ontology, you may ask (behind your mask)? Essentially quarantined fro
 I expect after some point (probably passed) anyone who studies Octology thoroughly would become able to develop any new videogame and problem-solve.
 
 "Perl 5 was a machine-shop for making other tools." -LarryWall on d8=J6K TPCiP interview. I'd like Octology to be regarded similarly for game tools.
+
+Please watch the [5-and-a-half minute video](https://YouTu.be/Oul8KrS7TQk) which is what I presented as a Lightning-Talk during
+  the-Perl-Conference-in-the-Cloud on June 24th, 2020.
 
 <!-- even though of course originally above command && below screen shot lists were each Top8, they're now more focused on just most public Top6 or 4 -->
 ## Current Top Screen Shots

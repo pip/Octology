@@ -30,7 +30,7 @@ unsetopt                \
 # auto_pushd            \# setng addz dirz 2 stack wN just normally chngng 2 thM (wich I du not normally lIk or want)
 # ksh_arrays            \# rEmMbr wNwrItng scrptz[or funcz]2include'setopt [localoptions] ksharrays'sO arAzR 0-bAsed(but!glOblBcuzmOst scrptzRstndrdly 1-bAsed)
 # re_____match_____pcre \# mA want2set for Z-SHell scripting RegularExpressions to utilize PerlCompatibility styles && mA insert 'zmodload zsh/(pc)?re(gex)?';
-export Vers='0.0';export d8VS='K6GMBuds';export Auth='PipStuart <Pip@CPAN.Org>'; # not Xportng $b sinc cOlIdz wi sort{$a <=> $b} /defhijlnqstuvx/i + AZ 4golf;
+export Vers='0.0';export d8VS='K82MHecO';export Auth='PipStuart <Pip@CPAN.Org>'; # not Xportng $b sinc cOlIdz wi sort{$a <=> $b} /defhijlnqstuvx/i + AZ 4golf;
 if     [[       "$SHELL"    == "" ]]; then       export SHELL=`  which zsh`;fi # 8sh should parse this && OverId it    # shud `man zshall` /OSTYP 2lern4BlO
 if     [[       "$HOSTNAME" == "" ]]; then       export HOSTNAME=`hostname`;fi #`hostname`retnz fsckd nwlInz\n4CygWinzRxvt... ||smthng els lame  =(
 if     [[       "$HOST"     == "" ]]; then       export HOST   ="$HOSTNAME";fi;export VERBOSE='1'; # set flag to print debug && status info from system utilz
@@ -492,8 +492,8 @@ s(){  ifil="$1";synl='';if [[ "$#" -gt 1 && "$2" != "" && -e "$2" ]]; then synl=
     elif [[ ${(L)1} =~ \.py$ ]]; then synl='py'  ; elif [[ ${(L)1} =~  \.xml$ ]]; then synl='xml'; elif [[ ${(L)1} =~ \.cnf$ ]]; then synl='conf';
     elif [[ `cat "$1"|head -n 1|grep -l '^#!.*zsh' ` != "" ]]; then synl='bash'; # tryd2Dtect Zsh script #! line to set syntax language,but zsh.lang hangz =(
     elif [[ `cat "$1"|head -n 1|grep -l '^#!.*perl'` != "" ]]; then synl='perl'; fi; fi;  # multi -i B4 othr pRam ls? used2question that at very end;
-  if     [[ "$synl" !=    "" ]]; then ec " source-highlight -f esc --style-file=~/.shl.style -s $synl -i $ifil;"; srchl -s $synl -i $ifil; # 2du:tStallsynlz;
-  else                                ec " source-highlight -f esc --style-file=~/.shl.style          -i $ifil;"; srchl          -i $ifil; fi; }
+  if     [[ "$synl" !=    "" ]]; then echo " source-highlight -f esc --style-file=~/.shl.style -s $synl -i $ifil;"; srchl -s $synl -i $ifil; # 2du:tStallsynlz;
+  else                                echo " source-highlight -f esc --style-file=~/.shl.style          -i $ifil;"; srchl          -i $ifil; fi; }
 alias      S8='   shl8'; # my primitive c8:SourceHighLight8 Utl to hopefully eventually approach functional parity with source-highlight before surpassing it
 export     d2="$HOME/dox/2du"; # K6LMLhot: `ai libgtkhotkey-dev libgtkhotkey1 sxhkd triggerhappy khotkeys-data khotkeys-dev khotkeys` to hotkey Octology demo;
 export     gs="$HOME/gfx/sho"; # K6MMGFix: actually adding xe() to a8.pm to wrap `xte` for Octl dMO autom8ion seems better than above hotkey options (so far);
@@ -739,6 +739,7 @@ alias     lvh='lvp -D 1920x1080';alias lv="lvh $lVSx"; # oinksie... lv-tool: mal
 alias     LV='lvh -x lcdcontrol';alias sv='sonic-visualiser'; # K6BMGVis:just installed a new audio spectrum-analysis which is hopefully superior to libvis;
 alias     Lv='lvh -a lv_gltest -x lv_analyzer,lv_dump,lv_scope,lcdcontrol,gdkpixbuf,gforce,nastyfft,nebulus,bumpscope,flower,goom2k4,blursk,oinksie,plazma';
 #lias     Lv='lvh -a lv_gltest -x lv_gltest,lcdcontrol,gdkpixbuf,nastyfft,bumpscope,goom2k4,blursk'; # Xclude inactive plugins or mMlEkz causing core-dumpz;
+alias     Lv8='lv-tool -i pulseaudio -f 60 -s 8 -S 8888 -D 1918x1040 -a jess -x lv_analyzer,lv_dump,lv_scope,lcdcontrol,gdkpixbuf,gforce,nastyfft,nebulus,bumpscope,flower,goom2k4,blursk,oinksie,plazma,madspin,jakdaw'; # K87M1Lv8:just loop jess,lv_gltest,corona,infinite each 4 pretty long but usually stealfocus still;
 alias     p47='parsec47';alias a7='a7xpg'; # some of my favorite Kenta Cho Shmups ("Bullet-Hell") in /usr/games;  ## munmap_chunk(): invalid ptrstilcordumpdx;
 alias      rr='rrootage';alias tt='torus-trooper';alias tf='tumiki-fighters'; # would be gr8 to study BulletML && explor own similRly themed varE8ions someday
 alias      xb='xboard';alias xbsf='xb -fcp stockfish -fUCI'; # gr8 Chess program wi shortcut to top StockFish engine as FirstChessProgram (&& -scp 2ndChesProg)
@@ -753,7 +754,7 @@ k8(){        KDBF='pswd';if [[ "$#" -gt 0 && "$1" != "" ]]; then KDBF=".$1"; fi;
   if     [[       -e $KDBF  ]]; then # try to only load up whatever the default or priv8 specified file if it exists (&& should be read/writable to user alreD)
                              kpc --kdb=$KDBF    --histfile=/dev/null --no-recycle;chm 600 $KDBF   ; # might also want to chm 600 the file above before kpc too?
     if   [[ $KDBF =~  pswd  ]]; then b $KDBF; fi;     # ideally this should all behave quite similarly to just basic kp alias above && may replace it once same
-  else   ec   "k8 failed to loc8 ~/.kp/$KDBF;";   fi; # should print out passed in or manipul8d file when it didn't exist where it was expected to be openable
+  else   echo "k8 failed to loc8 ~/.kp/$KDBF;";   fi; # should print out passed in or manipul8d file when it didn't exist where it was expected to be openable
   po;} # simply popd back to the original working directory before the default home d8abase directory was pushd added above the standard shell directory stack
 alias    Upc8='sudo curl -L https://yt-dl.org/downloads/latest/youtube-dl -o /usr/local/bin/youtube-dl;sudo chmod a+rx /usr/local/bin/youtube-dl;rmSS;hash -r';
 alias    Upw8='sudo wget    https://yt-dl.org/downloads/latest/youtube-dl -O /usr/local/bin/youtube-dl;sudo chmod a+rx /usr/local/bin/youtube-dl;rmSS;hash -r';
@@ -886,8 +887,8 @@ scx() { if [[ "$#" -gt     0    ]]; then # print out some help text for -h (or l
 #   elif   [[ "$1"  ==    tip   ]]; then stip;
 #   elif   [[ "$1"  =~ /^(2du|8uf|8xt|8lc|atl|b8a|bxl|cm8|kno|mul|mvl|put|cvi|sfv|tab|tip|ud8|dvl|muz|mvz|rut|adm|o[abcdfgmptu]8)$/ ]]; then ec "ARGV[0]=$1;";
     else                          eval("s$1");export HsxF="$1";export HxjF='1'    ; fi;
-    if     [[ "$HxjF" ==  ""    ]]; then scrn  -x   $@    ;ec "Scrn-x here:$@   ;"; fi
-  elif     [[ "$HsxF" !=  ""    ]]; then scrn  -x  "$HsxF";ec "Scrn-x HsxF:$HsxF;"; fi; }
+    if     [[ "$HxjF" ==  ""    ]]; then scrn  -x   $@    ;echo "Scrn-x here:$@   ;"; fi
+  elif     [[ "$HsxF" !=  ""    ]]; then scrn  -x  "$HsxF";echo "Scrn-x HsxF:$HsxF;"; fi; }
       # if    scrn -ls has no $1 in Screen Sessions List, then dispatch to the correct screen session crE8or above, so more -x multipleXed can connect l8r;
 #if      [[ "${(L)HHst}" ==  oni*   ]] || [[ "${(L)HHst}" ==  aku*   ]]; then                    export HVW2='7680' ;export HVW3='11520'; # new50"TV is 3wide
 # if     [[     "$H3WF"  ==  "1"    ]];                                  then export HVW1='5760';export HVW2='11520';export HVW3='17280';               fi
@@ -1437,7 +1438,7 @@ tStc() { # tSt 8pal8 colrz (this is a very slow precursor to ~/bin/tstc since ma
     elif   [[      $B64N   ==  Q  ]]; then echo        ;fi;done} # && finish with newline if term is narrow (although wrapping at likely 80 should look same)
   # 2du:contMpl8 adng au, agr, && ee ene around en;
 wh8()   {  LP_F='0'; # same as wh64  BlO but wi 8rows flipd2 8columns,othrwIz very similR (mAwant2add pRamz2du mor than just disabl colr,sinc sS duzfIn)
-  # 2du:contMpl8 adng au, agr, && ee ene around en;
+  # 2du:contMpl8 adng au, agr, && ee ene around en;  ## note that execution is really rather slow for all the sub-shells, taking around 40-seconds to run;
   if       [[ "$#" -gt   0 && "${(L)1}" =~  h  ]]; then echo -n " wh8 - show WHich primary single b64 && other valued commands by:$Auth Vers:$Vers d8VS:$d8VS;
   h  - print out this basic Help text message then return; Any parameter other than h right now just strips colors && SGR attributes out;";return 0;fi
   for B64N in 0 8 G O W e m u   1 9 H P X f n v   2 A I Q Y g o w   3 B J R Z h p x   4 C K S a i q y   5 D L T b j r z   6 E M U c k s '.'   7 F N V d l t '_'   mk sz pu po pdoc ka pe  pa pla plb pab  drkh gg dv ac acs apts  ag auu aar ai ic  s8 d2u u2d del copy move attrib  s8n grp asci utf8 u8 CC CCC cls  eg zg hX k9 pp lS mo md rd  dm ct chm cho chg chr chs chf cht  mnt umnt bk c8 zc d8 fp  fixfont g8 gaa gcm gac  gacm gpom caln l8 sl calq calQ cln  cl comma hd dif loc8 dic zp ud  updb up updt uptm ec en  uni cncl tl tp wd pw pn pb msg  ren wh lsm lsc lsp lsu xical shlc  srchl shlp shl sho S8  p47 a7 rr tt tf gtt viii  lc chv0  uc chv7 ss wmc resp ctor scrn sx gt xt st uxtrm uxt lxt lxtrm tmn8r  sakra sak xf4tm rox Etrm x4t roxtm Et un ev pl xbk dirp  xb xbsf kp xdt s2 s28 sb sd si au agr  .. ......... mkjg mtst rmSS  ... ........ mkjG mkck SS SN  .... ....... mkj8 mkcl SSR  ..... ...... mkj4 mki mi SH  pabd m80 SR  pep  L80 r80 S80 q80  T80 X80 p80 R80 u80 g80 i80 l80  s80 t80 U80 x80  Hlt GL shll  HU;do
