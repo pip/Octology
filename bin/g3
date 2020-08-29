@@ -11,7 +11,15 @@
 #     tryout && r8 all :colorscheme /usr/share/cmus/*.theme with typical 8 main pal8 settingz && mAB genR8 .Hrc style dense pal8 mapz of each theme's d8a,
 #     stuD gapless playback && format options, ckout cmus-remote,find&&stuD cmus-tutorial, stuD Libre.FM GNU scrobbling like cmusfm && zomg does,
 #   revive all good old pimp rand rang, r8ng, && mAB volume scaling cmus:"replaygain" && any othr ancient worthwhile stuf from my now ancient zinf fsui dayz;
-use strict;use warnings;use utf8;use Octology::a8;my $VERSION='0.0';my $d8VS='K87M8vis'; # consider detecting && adding custom Xtra --help basic tXt output2;
+# K8RMBALD:After getting S(tefan)Westerfeld's GitHub repo for gst123 (which seems to be closer to official than forked v1cont (Victor Ananjevsky's)) && running
+#   autogen.sh to call autoreconf which crE8s && runs ./configure which then crE8s a pretty massive Makefile, trying to `mk` errors with:  CXXLD    gst123
+#     /usr/bin/ld: /usr/lib/gcc/x86_64-linux-gnu/9/../../../x86_64-linux-gnu/libcairo.a(cairo-xlib-render-compositor.o): undefined reference to symbol 'XRCGS'
+#     /usr/bin/ld: /usr/lib/x86_64-linux-gnu/libXrender.so.1: error adding symbols: DSO missing from command line         'XRenderCreateGlyphSet' # <-goes abov
+#   so searching around for similar issues yielded HTTPS://StackOverFlow.Com/questions/24989432/linking-error-dso-missing-from-command-line with:
+#     `pkg-config --libs $(pkg-config --print-requires --print-requires-private cairo)` which produced:
+#     "-lgobject-2.0 -lglib-2.0 -lpixman-1 -lfontconfig -lfreetype -lpng16 -lz -lxcb-shm -lxcb -lxcb-render -lXrender -lX11 -lXext" so trying to add those...
+#   but had to add them to both the project's main root Makefile as well as the very similar one which was within the src/ sub-directory before `mk` worked!;
+use strict;use warnings;use utf8;use Octology::a8;my $VERSION='0.0';my $d8VS='K8SMASHD'; # consider detecting && adding custom Xtra --help basic tXt output2;
 use Term::ReadKey;     # note that you can pass in as many -d=\d+ DelayDur8ionInSeconds (like MPlayer -endpos) for as many file-name params follow 2 B plAyd;
 END{      ReadMode 0;} # good practice to auto-restore orig TTY read settingz at END
           ReadMode 3;  # setup 4 raw mode or 3 cbreak mode where Ctrl-C workz since signalz are enabled
@@ -20,21 +28,48 @@ use    Encode;open my $out8,'>&',STDOUT or die "Can't open  duplic8 STDOUT handl
 use    Expect;my $cm='gst123';my $to= 2;my $so=0.3;my $tS=0;$tS=1 if(-t STDIN);my @pl; # CoMand strng, TimeOutsecz, SelectOutflsecz, ttySTDIN?, @PlayList
 my %kr=('u'=>"\e[A" ,'d'=>"\e[B" ,'r'=>"\e[C",'l'=>"\e[D", # arOkEz working,Yay! `man 5 terminfo`UDRL=>cuu1,cud1,cuf1,cub1`v=$(tput cuu1)` `printf '%q\n' "$v"`
         'z'=>"\e[6~",'a'=>"\e[5~",'w'=>'+','s'=>'-','>'=>'n','h'=>'?','p'=>' ',chr(127)=>'m',"\n"=>'n',';'=>'f','v'=>'1','x'=>'q');my @dscz; # KeyzRemap
-my $ksst=0;while(@ARGV && $ARGV[0]=~ /^-*d?[=:]?(\d+)$/i){push(@dscz,$1 );shift(@ARGV  );} # -sKipSecondsStartTime, Dur8ionSeCZ, && BlO shift paramz4cmd
-my $xp=Expect->new();my @pr;my $si='';my $cs ='';my $lt ='';if(@ARGV){@pr=@ARGV;@ARGV=();} #eXPectobj,PaRamz,StndrdIn,CodecStrng 2ck4dupz,LastTime 2padCodecz
-my $nnxt=0;my $gorl='';my $auvz=0    ;my $ts ='';my $as =''; # Next-NeXTflag, GoomOriginalReloc8Line,AUtom8dViZualiZ8ion Title..artistString,Album..genreString
-my $Vnam=''; # Visualiz8ion plugin NAMe string as key into l8r namez hash for re-ordering && accepting optional indicez for Vis plug-inz in addition to namez;
-for(1..$#pr){if($pr[$_-1]=~ /^-*v(isualiz8?a?t?ion)?\s*$/i && # default try to auto-spawn good lib-visual actor plug-in or Xpand solo NdX pRamz;
-                $pr[$_  ]=~ /^([0-9A-Z]|\s*(mono|space|spectra|synae|wave)scope|goom(2k1)?|(libvisual_)?(lv_(analyzer|scope))?
-                  (jess|bumpscope|corona|infinite|jakdaw|lv_analyzer|lv_scope|oinksie))$/ix){my $vprm=$1; # would be slick to mk -v syntax like -d but bad p@rn
-    if(length($vprm) ==1){my @Vz=split(/\n/,`gst123 -V|cut -d' ' -f1`);($Vz[1],$Vz[2],$Vz[3],$Vz[ 4],$Vz[ 5])=($Vz[2],$Vz[3],$Vz[ 4],$Vz[ 5],$Vz[1]); # goom dn
-                                                                       ($Vz[7],$Vz[8],$Vz[9],$Vz[10],$Vz[11])=($Vz[8],$Vz[9],$Vz[10],$Vz[11],$Vz[7]); # jess dn
-      $pr[$_]=$Vz[$sb10{$vprm}];} # try to replace indicez of lib-viz actor plug-inz to map longnamz
-    $auvz=1;}} # below should insert the indexed viz name when option to hopefully just need to provide b64 indices instead of full namez
-  # since each new track restores the default geometry of whatever the lib-viz window is stealing focus from elsewhere (intolerable), so don't dfault Lv izual;
-#nless($auvz){push(@pr,'-v','libvisual_infinite');}#goom2k1');} # change the default actor plug-in name here if another becomez more desired;
+my @vpnd=([          'monoscope'  , 'm'], [         'spacescope'  , 'P'], [       'spectrascope'  , 'S'], [         'synaescope'  , 'y'], # VisPluginNameD8a
+          [          'wavescope'  , 'w'], [   'goom'              , 'g'], [   'goom2k1'           , 'k'], ['libvisual_bumpscope'  , 'b'],
+          ['libvisual_corona'     , 'c'], ['libvisual_infinite'   , 'i'], ['libvisual_jakdaw'     , 'j'], ['libvisual_jess'       , 'J'],
+          ['libvisual_lv_analyzer', 'a'], ['libvisual_lv_scope'   , 's'], ['libvisual_oinksie'    , 'o'],); my $ksst=0;my @pr; # -sKipSecondsStartTime,PaRamz
+if(@ARGV){for(0..$#ARGV){ # maybe below it would be good to at least add an entry to help-text for my custom -v viz && -d delay handling additions && color?;
+    if   ($ARGV[$_]=~ /^-(h|-help)/){print $out8 decode('UTF-8',`$cm $ARGV[$_]`);                                                             exit();}
+    elsif($ARGV[$_]=~ /^-(V|-vi[sz]ualiz(8|at)ion-list)$/){my @Vout=split(/\n/,`$cm -V`);my %Vfnd=();my %Vchl=();
+      for my $Vlin(@Vout){if($Vlin=~ /^(\S+)(\s+.+)$/){
+          my $Vnam=$1;my $Vdtl=$2;$Vfnd{$Vnam}=-1;for my $pndx(0..$#vpnd){if($Vnam eq $vpnd[$pndx][0]){$Vfnd{$Vnam}=$pndx;last;}}
+          if  ($Vfnd{$Vnam} == -1){ # handle appending unknown new viz plugin entriez to end of @vpnd along with hopefully any non-colliding mnemonic char ...
+            my $keyz='';for my $vpar(@vpnd){$keyz.=$vpar->[1];} # ... or just like b64 backwardz from z for any non-collidez would be betr than just 4 by hand;
+            for my $Vkey(split(//,$Vnam)){if($sb10{$Vkey} < @vpnd && $Vkey !~ /^[$keyz]$/){push(@vpnd,[$Vnam,$Vkey]);$Vfnd{$Vnam}=$#vpnd;last;}}
+            if($Vfnd{$Vnam} == -1){                                                        push(@vpnd,[$Vnam,'z'  ]);$Vfnd{$Vnam}=$#vpnd;
+              if($keyz=~ /z/){$vpnd[-1][1]='x';} if($keyz=~ /x/){$vpnd[-1][1]='v';} if($keyz=~ /v/){$vpnd[-1][1]='u';} if($keyz=~ /u/){$vpnd[-1][1]='t';}}
+          }else{my $ns=$Vlin; # here throw all the old regexez at $Vlin in local $ns before loading fully regex CHanged-Line into $Vchl{$Vnam} at end
+            $ns=~ s/  (2)(k)(\d)/$U$1$D$2$S$3/gix;$ns=~ s/(edition)/$g$1/g;$ns=~ s/(\s)j(es)(s    \s)/$d$1J$2${D}u$d$3    /x;$ns=~ s/(jess  )/$d$1/;
+            $ns=~ s/(\.?)(0)(\.|$)/$C$1$o$2$S$3/g;$ns=~ s/(libvisual )libvisual /$1/g ;$ns=~ s/(bump)/$B$1/gi;$ns=~ s/(:.*)(what)\s(a)/$c$1$w$2 $o$3/gi;
+            $ns=~ s/(\.?)(1)(\.|$)/$W$1$B$2$D$3/g;$ns=~ s/(plugin \s )plugin \s /$1/gx;$ns=~ s/(_)(analyzer)/$1$G$2/;$ns=~ s/([!])/$O$1/g;$ns=~s/([:])/$c$1/g;
+            $ns=~ s/ (monoscope)(\s\s\s)/$2$1/x;$ns=~ s/(\s{15})(   Monoscope)    /$1$1$2/x;$ns=~ s/(\sv)(\.?)/$r$1$Y$2/g;$ns=~ s/(\s)J(akdaw\s)/$N$1j$2   /x;
+            $ns=~ s/(spacescope)(  \s\s)/$2$1/x;$ns=~ s/(\s    )(oscilloscope)/$1$1$1$1$2/x;$ns=~ s/(\scorona  \s)/$r$1   /x;$ns=~ s/(  jakdaw\s)/$N$1/x     ;
+            $ns=~ s/(synaescope)(  \s\s)/$2$1/x;$ns=~ s/(\s{14})(  Synaescope)    /$1$1$2/x;$ns=~ s/(\sinfinite\s)/$W$1 /x  ;
+            $ns=~ s/ (wavescope)(\s\s\s)/$2$1/x;$ns=~ s/(\sscope)(\splugin   )/    $1$2/x  ;$ns=~ s/(\soinksie \s)/$o$1  /x ;$ns=~ s/(  oinksie \s)/$o$1/x   ;
+            $ns=~ s/(.*?)(scope               )/$Y$1$S$2$C/gix;$ns=~ s/(isual)(_)/$1$R$2$c/g ;$ns=~ s/(lv)(_)/$O$1$U$2/g; # next loop thru @vpnd to say each
+            $ns=~ s/(.*?)(      goom          )/$Y$1$g$2$C/gix;$ns=~ s/(\splugin)    /$p$1/gx;$ns=~ s/( analyzer)/$G$1 /; # say what?in order that was found
+            $ns=~ s/(.*?)(           libvisual)/$Y$1$M$2$C/gix;$ns=~ s/(corona   )/$r$1/;$ns=~ s/(infinite  )/$W$1/g;$ns=~s/(\n)/$z$1/g; $Vchl{$Vnam}=$ns;}}}
+      for my $pndx(0..$#vpnd){if(exists($Vfnd{$vpnd[$pndx][0]})){say $out8 $U . $sb64[$pndx] . "$B $vpnd[$pndx][1] $Vchl{$vpnd[$pndx][0]}";}} exit();}
+    elsif($ARGV[$_]=~ /^-(v|-vi[sz]ualiz(8|at)ion)[:=]?(.+)$/){my $pnnm=$3;if(length($pnnm) == 1){
+        if($pnnm=~ /^[0-9A-Z]$/ && $sb10{$pnnm} <= $#vpnd         ){push(@pr, '-v', $vpnd[$sb10{$pnnm}][0]);       }
+        else{for my $pndx(0..$#vpnd){ if($pnnm  eq $vpnd[$pndx][1]){push(@pr, '-v', $vpnd[      $pndx ][0]);last;}}}
+      } else                                                       {push(@pr, '-v',             $pnnm     );        }}
+    elsif($ARGV[$_]=~ /^-(v|-vi[sz]ualiz(8|at)ion)$/ && $_ < $#ARGV && $ARGV[$_+1]=~ /^([0-9A-Za-z]|.*?(scope|goom|libvisual).*)$/){my $pnnm=$1;
+      if(length($pnnm) == 1){
+        if($pnnm=~ /^[0-9A-Z]$/ && $sb10{$pnnm} <= $#vpnd         ){push(@pr, '-v', $vpnd[$sb10{$pnnm}][0]);       }
+        else{for my $pndx(0..$#vpnd){ if($pnnm  eq $vpnd[$pndx][1]){push(@pr, '-v', $vpnd[      $pndx ][0]);last;}}}
+      } else                                                       {push(@pr, '-v',             $pnnm     );        }}
+    elsif((!$_ || $ARGV[$_-1] !~ /^-(k|-(skip|volume))$/) && $ARGV[$_]=~ /^-?-?d?[:=]?                (\d+)$/x){push(@dscz,$1);}
+    elsif(  $_ < $#ARGV                                   && $ARGV[$_]=~ /^-?-?d$/ && $ARGV[$_+1]=~ /^(\d+)$/ ){push(@dscz,$1);}
+    else{push(@pr,$ARGV[$_  ]);}}} # should probably just be fine parameters left here to just pass through to the new Expect process without custom handling;
+my $xp=Expect->new() ;my $si='' ;my $cs ='';my $lt =''; # eXPectobj,StndrdIn,CodecStrng 2ck4dupz,LastTime 2padCodecz
+my $nnxt=0;my $ts ='';my $as=''; # Next-NeXTflag, Title..artistString,Album..genreString
 #push(@pr,';echo','8_eNNd_8');$cm.=' '.join(' ',@pr); # Expect seemz2B %20%3B like URL escaping my @pr with spacez && semiz so joining 4just sclr
-my $ht ="==================== gst123 keyboard commands =========================== => =================== g3 kybd cmdz ===========================
+my $ht ="==================== gst123 keyboard commands =========================== => =================== g3 kybd cmdz == v$VERSION == d8VS:$d8VS ==
     l / r or cursor left/right  -  seek 10 seconds  backwards/forwards    ;    p or     space  -  toggle pause  # XtraXpect kyz du!wrk4vizwndOz
     d / u or cursor down/up     -  seek 1  minute   backwards/forwards    ;    m or backspace  -  toggle mute/unmute
     z / a or page   down/up     -  seek 10 minutes  backwards/forwards    ;    f or semicolon  -  toggle fullscreen (only for videos)
@@ -99,33 +134,8 @@ sub sn{my $ns=shift||'';$ns=decode('UTF-8',$ns);$ns=~ s/\n+/\n/g; # StripNewline
     if(defined($tc)){
           $ns=~ s/.*?(\n*)(Codec)(\s*:)([^\n]+)(\n|$).*/\n$tc/gi;} # try to skip out any surrounding Time: linez
     else {$ns=~ s/.*?(\n*)(Codec)(\s*:)([^\n]+)(\n|$).*/ $B$2$W$3$tb$5/gi;}} # For Vonikk-HardAttack.mp3 Codec follows Title instead of Time =(
-  elsif ( $ns=~  /(.*?)(scope|goom|libvisual)(.*)(\n)/i){ # detect -V Visualiz8ion plugins Bing listed (shouldn't matter if they dump on STDERR,not STDOUT)
-       my %nz=(    'monoscope' => 0, 'goom'                => 5, 'libvisual_jakdaw'      => 10,
-                  'spacescope' => 1, 'goom2k1'             => 6, 'libvisual_jess'        => 11,
-                'spectrascope' => 2, 'libvisual_bumpscope' => 7, 'libvisual_lv_analyzer' => 12,
-                  'synaescope' => 3, 'libvisual_corona'    => 8, 'libvisual_lv_scope'    => 13,
-                   'wavescope' => 4, 'libvisual_infinite'  => 9, 'libvisual_oinksie'     => 14,);
-          if($ns=~  /^\s*(\S+)/){$Vnam=$1;}
-          if($ns=~  /^(goom   \s+GOOM[^\n]+\n)$/x){$gorl=$1;$ns=~ s/^(goom   \s+GOOM[^\n]+\n)$//;$gorl =$U . $sb64[$nz{'goom'          }] . "$B $gorl" .
-                                                                                                        $U . $sb64[$nz{'goom2k1'       }] . "$B "     ;}
-          if($ns=~  /^(goom2k1\s+GOOM[^\n]+\n)$/ ){         $ns=~ s/^(goom2k1\s+GOOM[^\n]+\n)$/$gorl$1/;  # do some re-ordring B4 catching 'what a' ! && 2k1;
-                                                            $ns=~ s/ (2)(k)(\d)/$U$1$D$2$S$3/gix;} $ns=~ s/(edition)/$g$1/g;
-          if($ns=~  /^(libvisual_jess[^\n]+\n)$/x){$gorl=$1;$ns=~ s/^(libvisual_jess[^\n]*\n)$//;$gorl =$U . $sb64[$nz{'libvisual_jess'}] . "$B $gorl";}
-          if($ns=~  /^(libvisual_jakd[^\n]+\n)$/ ){         $ns=~ s/^(libvisual_jakd[^\n]+\n)$/$1$gorl/;} # do some re-ordring of jess to follow jakdaw also;
-          $ns=~ s/(\.?)(0)(\.|$)/$C$1$o$2$S$3/g;$ns=~ s/(libvisual )libvisual /$1/g ;$ns=~ s/(bump)/$B$1/gi;$ns=~ s/(:.*)(what)\s(a)/$c$1$w$2 $o$3/gi;
-          $ns=~ s/(\.?)(1)(\.|$)/$W$1$B$2$D$3/g;$ns=~ s/(plugin \s )plugin \s /$1/gx;$ns=~ s/(_)(analyzer)/$1$G$2/;$ns=~ s/([!])/$O$1/g;$ns=~ s/([:])/$c$1/g;
-          $ns=~ s/ (monoscope)(\s\s\s)/$2$1/x;$ns=~ s/(\s{15})(   Monoscope)    /$1$1$2/x;$ns=~ s/(\sjess    \s)/$d$1     /x;$ns=~ s/(\sv)(\.?)/$r$1$Y$2/g ;
-          $ns=~ s/(spacescope)(  \s\s)/$2$1/x;$ns=~ s/(\s    )(oscilloscope)/$1$1$1$1$2/x;$ns=~ s/(\scorona  \s)/$r$1   /x  ;$ns=~ s/(\sJakdaw\s)/$N$1   /x;
-          $ns=~ s/(synaescope)(  \s\s)/$2$1/x;$ns=~ s/(\s{14})(  Synaescope)    /$1$1$2/x;$ns=~ s/(\sinfinite\s)/$W$1 /x    ;$ns=~ s/(  jakdaw\s)/$N$1/x   ;
-          $ns=~ s/ (wavescope)(\s\s\s)/$2$1/x;$ns=~ s/(\sscope)(\splugin   )/    $1$2/x  ;$ns=~ s/(\soinksie \s)/$o$1  /x   ;$ns=~ s/(  oinksie \s)/$o$1/x ;
-          $ns=~ s/(.*?)(scope               )/$Y$1$S$2$C/gix;$ns=~ s/(isual)(_)/$1$R$2$c/g ;$ns=~ s/(lv)(_)/$O$1$U$2/g;
-          $ns=~ s/(.*?)(      goom          )/$Y$1$g$2$C/gix;$ns=~ s/(\splugin)    /$p$1/gx;$ns=~ s/( analyzer)/$G$1 /;
-          $ns=~ s/(.*?)(           libvisual)/$Y$1$M$2$C/gix;$ns=~ s/(corona   )/$r$1/;$ns=~ s/(infinite  )/$W$1/g;$ns=~ s/(jess  )/$d$1/;$ns=~ s/(\n)/$z$1/g;
-          $ns=  $U . $sb64[$nz{$Vnam}] . $B . ' ' . $ns if(exists($nz{$Vnam}) && $Vnam!~ /(goom|jess)/);} # try2force prEpNd proper Vis aftr rot8z;
   elsif ( $ns=~  /==+\s+gst123\s+keyboard\s+commands\s+==+(\n)/i){ # detect help output   # mIt need to decode below output if any UTF-8 gets used l8r
-          $ns=~ s/==+\s+gst123\s+keyboard\s+commands\s+==+(\n)/\n$ht\n/i;my $gV=`g3 -V`;  # try calling out a sub-shell to another self just for trailing help;
-#   my @Vz=split(/\n/,$gV);for my $Vn(0..$#Vz-1){$ns.="$U$sb64[$Vn]$B $Vz[$Vn]$z\n" if(defined($Vz[$Vn]) && length($Vz[$Vn]) && $Vz[$Vn]=~ /\S+/);}
-    $ns.=$gV;}
+          $ns=~ s/==+\s+gst123\s+keyboard\s+commands\s+==+(\n)/\n$ht\n/xi;}
   elsif ( $ns=~  /.*?(\n?)(Time)(:.*Time:\s*)(\d+:\d+:\d+\.\d+).*( of )(\d+:\d+:\d+\.\d+)\s*?(\n|$)/i){my $tn=$4;my $tt=$6; # break d8 fieldz
           $tn=~        s/(\d+)(:)(\d+)(:)(\d+)(\.)(\d+)/$U$1$W$2$D$3$W$4$S$5$Y$6$N$7/g;         my $Sc="\e[16G"; # mv2colm16,erase cursor2BoL&&mv2 1stcolumn
     unless($ksst){$ksst=3600*$1+60*$3+$5;} # atMpt2set whatevr init stRt tIm cudB Dtectd first aftr audio playing has begun
@@ -179,7 +189,6 @@ sub xx{ $xp->expect($to, [qr/(^|\s*)Playing\s+(file|http):\/\/[^\n]+\n/i        
                          [qr/(^|\s*)Album\s*:[^\n]+\n/i                             => sub {my $cx=shift;mp($cx);exp_continue;}],
                          [qr/(^|\n*)Codec\s*:[^\n]+\n/i                             => sub {my $cx=shift;mp($cx);exp_continue;}],
                          [qr/(^|\s*)Volume:[^\n]+\n/i                               => sub {my $cx=shift;mp($cx);exp_continue;}],
-                         [qr/(^|\s*)(.*?(scope|goom|libvis).*[^\n]+)\n/i            => sub {my $cx=shift;mp($cx);exp_continue;}],
                          [qr/==+\s+gst123\s+keyboard\s+commands\s+==+\n/i           => sub {my $cx=shift;mp($cx);exp_continue;}],
                          [qr/(^|\s*)Time:.*Time:\s*[:0-9.]+ of [:0-9.]+\s*/i        => \&cb],         # ref2 CallBack() for non-stream Time A of B
                          [qr/(^|.*)Time:\s*[:0-9.]+\s*/i                            => \&cb]);} xx(); # ref2 CallBack()  ,@cp @CbParamz (old)

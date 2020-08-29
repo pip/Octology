@@ -8,9 +8,9 @@
 #       'C'     rot8z Barz-mode fill Character.    'd' togglez Bold fontz when possible...                        ...on each draw upd8.
 #     'x|q|Esc' eXitz.    -f -B -b -d -c -r -h (with the same meaningz as above) can be given on the command-line.
 use strict;use warnings;use utf8;use v5.10;use Octology::b8;
-                                           use Octology::d8;
+                        use Encode;        use Octology::d8;
                                            use Curses::Simp;
-my $VERSION='0.0';my $d8VS='K6FMDun4';my $Auth='PipStuart <Pip@CPAN.Org>';my $name=$0;$name =~ s/.*\///;my $d8im;my @fldz;my @lasf;my @text;my @fclr;
+my $VERSION='0.0';my $d8VS='K89MI128';my $Auth='PipStuart <Pip@CPAN.Org>';my $name=$0;$name =~ s/.*\///;my $d8im;my @fldz;my @lasf;my @text;my @fclr;
 my $barz=0;my $bilt=0;my $bold=0;my $bchr='#';my $parm='';my $clea=0;my $keey= -1;my $sped= 0.987;my $demo=0;
 my $sbld=1;my $argz='';$argz= join(' ',@ARGV) if(@ARGV);
 if($argz=~ /h/i){print " $name v$VERSION $d8VS - by $Auth
@@ -20,6 +20,7 @@ if($argz=~ /h/i){print " $name v$VERSION $d8VS - by $Auth
    h - displays this Help text and exits
    8 - toggles compressed   only Format  [printd left-justified]
    4 - toggles compressed + full Format  [printd wider together]
+   1 - toggles comprSd+card+full Format  [printd wideall2gether]
    f - toggles compressed / full Format  [default is compressed]
    B - toggles Bars mode (show field spectrums) [default is off]
    b - toggles Bold mode (font w8, if possible) [default is off]
@@ -33,12 +34,19 @@ if($argz=~ /h/i){print " $name v$VERSION $d8VS - by $Auth
 # lookz like `xdotool getwindowfocus getwindowname` will let me get the :ACTIVE: window title to save if I ever need to chng it temporarily for Simp appz,
 #   or `xprop -id $(xprop -root 32x '\t$0' _NET_ACTIVE_WINDOW | cut -f 2) _NET_WM_NAME` might be able to do it without the added dependency on xdotool?
 # other viable mechanismz for resolving this same issue are described at HTTPS://SuperUser.Com/questions/382616/detecting-currently-active-window
+$d8im = Octology::d8->new();@fldz = split(//, $d8im);@lasf = @fldz unless(@lasf);
+my $d128=b128(b10($fldz[4])+64) . ' ' . b128(b10($fldz[5])+64) . ' ' . b128(b10($fldz[6])+64) . ' ' . b128(b10($fldz[7])+64) . ' ' ;
+if($argz=~ /1/ && $lasf[6] eq $fldz[6] && $lasf[7] eq $fldz[7]){ # abov crE8 simple UTF-8 base-128 varE8ion of hmsp time as Chess pieces&&playing Cards;
+  open my $out8,'>&',STDOUT or die "Can't open  duplic8 STDOUT handle: $!";binmode $out8,':encoding(UTF-8)'; # crE8 local duplic8 of global
+  say     $out8 "d8im:$d8im; d128:$d128;\nPlease Press Enter...";<STDIN>; # test just saying b128 before Curses has been started;
+  close   $out8             or die "Can't close duplic8 STDOUT handle: $!";}
 my $simp= tie(@text,'Curses::Simp','flagaudr'=>0,'flagcntr'=>0);my $barh= int(($simp->Hite()-9)/8)-1; # not using a8 here for chti, so chngng titl manUly abov
 my @limz=(63,12,31,42,23);my @bclz= qw(Y G T B  U D S N);my $rand=0;my @spdz=(0, 0.015, 0.151, $sped); # old speed progression: 0.016, 0.064, 0.256
 #                            @bclz= qw(F o 5 7  Z N V p); # altern8 base colrz
 # now all default base colrz @bclz above start Bold being above index 7, downside being that custom .pal8 filez won't be able to change o or p like RYGCBM
           tie(@fclr,'Curses::Simp::FClr',$simp);@fclr=(' ' x 25  . join('',@bclz) . ' ');
 if($argz=~ /f/i){$parm  = 'f';$fclr[0] =                'TTT GGG TT UUWDDWSSWNN BBBBB YYYY ';} # do some very basic parameter flag handling
+if($argz=~ /1/ ){$parm  = '1';$fclr[0] ='YGTBUDSN  UDSN  TTT GGG TT UUWDDWSSWNN BBBBB YYYY ';} # proly 48pt TrueTypeFont && 49 or 50 charz wId
 if($argz=~ /4/ ){$parm  = '4';$fclr[0] ='YGTBUDSN  wKKw  TTT GGG TT UUWDDWSSWNN BBBBB YYYY ';} # proly 48pt TrueTypeFont && 49 or 50 charz wId
 if($argz=~ /8/ ){$parm  = '8';$fclr[0] ='YGTBUDSN '                                         ;}
 if($argz=~ /r/i){$rand ^=  1 ;RandClrz();$simp->Draw();} # this rand is pretty poor. will be better to use a8:2&&8pal8 rot8z. 'f' twice resets in interactive.
@@ -116,6 +124,8 @@ while  (lc($keey) ne 'x' && lc($keey) ne 'q' && ord($keey) != 27){
                                                                    else            { $sped = $spdz[$_ + 1]; } last; } }     }
   elsif(lc($keey) eq 'f'){ if(length($parm)){ $parm =  ''; $fclr[0] = ' ' x 25 .     join('',@bclz) .  ' '; }
                            else             { $parm = 'f'; $fclr[0] =                'TTT GGG TT UUWDDWSSWNN BBBBB YYYY '; }}
+  elsif(   $keey  eq '1'){ if(length($parm)){ $parm =  ''; $fclr[0] = ' ' x 25 .     join('',@bclz) .  ' '; }
+                           else             { $parm = '1'; $fclr[0] ='YGTBUDSN  UDSN  TTT GGG TT UUWDDWSSWNN BBBBB YYYY '; }}
   elsif(   $keey  eq '4'){ if(length($parm)){ $parm =  ''; $fclr[0] = ' ' x 25 .     join('',@bclz) .  ' '; }
                            else             { $parm = '4'; $fclr[0] ='YGTBUDSN  wKKw  TTT GGG TT UUWDDWSSWNN BBBBB YYYY '; }}
   elsif(   $keey  eq '8'){ if(length($parm)){ $parm =  ''; $fclr[0] = ' ' x 25 .     join('',@bclz) .  ' '; }
@@ -147,6 +157,7 @@ while  (lc($keey) ne 'x' && lc($keey) ne 'q' && ord($keey) != 27){
    h - displays this Help screen                   
    8 - toggles compressed   only format            
    4 - toggles compressed + Full format            
+   1 - toggles comprSd+card+Full format            
    f - toggles compressed / Full format            
    B - toggles Bars mode                           
    b - toggles Bold mode  (font w8, if possible)   
@@ -158,7 +169,7 @@ while  (lc($keey) ne 'x' && lc($keey) ne 'q' && ord($keey) != 27){
    D - toggles Demo mode  (with autom8d run&&w8)   
  
                    System Stuff:
-   ?/H/F1 - Help  :  i - Info  :  x/q/Esc - eXit   ");}else{$simp->Move(0,0);$simp->Prnt("$name - press 'x' to eXit,fBbdrsCc"  );$simp->GetK(4);}}
+   ?/H/F1 - Help  :  i - Info  :  x/q/Esc - eXit   ");}else{$simp->Move(0,0);$simp->Prnt("$name - press 'x' to eXit,841fBbdrsCc"  );$simp->GetK(4);}}
   if   ($demo       ){$sped= 0 ;
     if ($demo ==  1 ){$parm='f';$fclr[0] =                'TTT GGG TT UUWDDWSSWNN BBBBB YYYY ';}
     if ($demo == 48 ){$parm='4';$fclr[0] ='YGTBUDSN  wKKw  TTT GGG TT UUWDDWSSWNN BBBBB YYYY ';}
@@ -168,7 +179,10 @@ while  (lc($keey) ne 'x' && lc($keey) ne 'q' && ord($keey) != 27){
     if ($demo ==208 ){$barz^=1 ;}
         $demo++;}
   RandClrz() if($rand);$d8im = Octology::d8->new();@fldz = split(//, $d8im);@lasf = @fldz unless(@lasf);
+  $d128= b128(b10($fldz[4])+64) . ' ' . b128(b10($fldz[5])+64) . ' ' .
+         b128(b10($fldz[6])+64) . ' ' . b128(b10($fldz[7])+64) . ' ' ;      # reload spaced out Chess && Cards represent8ionz of time hmsp fieldz;
   if   ($parm eq 'f'){$text[0] =                   $d8im->expand( ) . ' ';} # used to do `pt $parm` here before there was a d8 object with methodz
+  elsif($parm eq '1'){$text[0] = "$d8im$d128"    . $d8im->expand( ) . ' ';}
   elsif($parm eq '4'){$text[0] = "$d8im  -==-  " . $d8im->expand( ) . ' ';} # maybe betr l8r 2 nest 4 test in f test so else 4 can stRt wi d8im!spcz
   elsif($parm eq '8'){$text[0] =  $d8im                             . ' ';}
   else               {$text[0] = ' ' x 25        . $d8im            . ' ';}

@@ -30,7 +30,7 @@ unsetopt                \
 # auto_pushd            \# setng addz dirz 2 stack wN just normally chngng 2 thM (wich I du not normally lIk or want)
 # ksh_arrays            \# rEmMbr wNwrItng scrptz[or funcz]2include'setopt [localoptions] ksharrays'sO arAzR 0-bAsed(but!glOblBcuzmOst scrptzRstndrdly 1-bAsed)
 # re_____match_____pcre \# mA want2set for Z-SHell scripting RegularExpressions to utilize PerlCompatibility styles && mA insert 'zmodload zsh/(pc)?re(gex)?';
-export Vers='0.0';export d8VS='K82MHecO';export Auth='PipStuart <Pip@CPAN.Org>'; # not Xportng $b sinc cOlIdz wi sort{$a <=> $b} /defhijlnqstuvx/i + AZ 4golf;
+export Vers='0.0';export d8VS='K89MIST4';export Auth='PipStuart <Pip@CPAN.Org>'; # not Xportng $b sinc cOlIdz wi sort{$a <=> $b} /defhijlnqstuvx/i + AZ 4golf;
 if     [[       "$SHELL"    == "" ]]; then       export SHELL=`  which zsh`;fi # 8sh should parse this && OverId it    # shud `man zshall` /OSTYP 2lern4BlO
 if     [[       "$HOSTNAME" == "" ]]; then       export HOSTNAME=`hostname`;fi #`hostname`retnz fsckd nwlInz\n4CygWinzRxvt... ||smthng els lame  =(
 if     [[       "$HOST"     == "" ]]; then       export HOST   ="$HOSTNAME";fi;export VERBOSE='1'; # set flag to print debug && status info from system utilz
@@ -1016,6 +1016,7 @@ alias lxtmn='env TERM_PROGRAM=lxm lxterminal     --geometry=160x50              
 alias lxm80='env TERM_PROGRAM=L80 lxterminal     --geometry=80x25                &';
 alias sakra='env TERM_PROGRAM=sak sakura          -c     160 -r 50 -f  "Ubuntu Mono,monospace 13" 2>/dev/null &'; # mk Ech similR 2my prEferd Dfalt dimNsionz;
 alias sak80='env TERM_PROGRAM=S80 sakura          -c      80 -r 25 -f  "Ubuntu Mono,monospace 28" 2>/dev/null &'; # mk sepR8 160x50 &&dbl-sIz 80x25 Sak alias;
+alias sak40='env TERM_PROGRAM=S40 sakura          -c      40 -r 12 -f  "Ubuntu Mono,monospace 48" 2>/dev/null &'; # mk sepR8         quad-sIz 40x12 Sak alias;
 alias roxtm='env TERM_PROGRAM=rox roxterm        --geometry=160x50 -c  "Default" &'; # anothr VTE-bAsd xterm (-z $ZoomFrom1.0 [want 0.8333] CRIT assert pango);
 alias rox80='env TERM_PROGRAM=r80 roxterm        --geometry=80x25  -c  "Default" &'; # had 2 add-apt-repository for ppa:h-realh 2 get roxterm installed again;
 alias tmn8r='env TERM_PROGRAM=t8r terminator     --geometry=1458x920 -T t8r -b 2>/dev/null &'; # geom pixLz,!charz wi dmNsnz 10x18 1608x932pixLz+bordr&&tab-bR;
@@ -1043,6 +1044,7 @@ alias rxvtu='env TERM_PROGRAM=rxu rxvt-unicode    -geometry 160x50              
 alias rxu80='env TERM_PROGRAM=R80 rxvt-unicode    -geometry  80x25               &';
 alias st='   env TERM_PROGRAM=st  stterm          -g        160x50   -T st  -f "Ubuntu Mono:size=14"          &'; # also SimpleTerminal (or SucklessTerminal);
 alias s80='  env TERM_PROGRAM=s80 stterm          -g         80x25   -T s80 -f "Ubuntu Mono:size=28"          &'; # dbl-sIz varE8ion but nEd2 fix lsd8 colrz2;
+alias s40='  env TERM_PROGRAM=s40 stterm          -g         40x12   -T s40 -f "Ubuntu Mono:size=48"          &'; #quad-sIz varE8ion but nEd2 fix lsd8 colrz2;
 alias to='   tio';alias et=' Et';alias s3t='s3dvt  &'; # tio is just simple TTY term I/O app,not a ful term by itsLf; s3dvt nEdz S3D && a TCP servr2connect2?;
 alias at='   atm';alias atm='At'; # `pt` stil ~/bin/ Time::PT.pm PipTime but othrz can shrnk 3 to 2-char aliasz;
 alias crt='cd ~/dvl/c8/trm8;CRT'; # CoolRetroTerm nEdz2cfg termrc 2Uz smalr font; # Terminal cfg in ~/.GNUstep/ (aftr chgz mAd2 /etc/ .conf 2mk dir dot-fIl);
@@ -1059,6 +1061,7 @@ alias Lt='lxm';alias lxm='lxtmn';   #-rwxr-sr-x 1 root utmp 1423512 Sep  5 06:08
 alias LT='L80';alias L80='lxm80';   #-rwxr-xr-x 1 root root   97056 Sep  5 06:08 /usr/bin/urxvtc
 alias sa='sak';alias sak='sakra';   #-rwxr-xr-x 1 root root      86 Jun  9  2016 /usr/bin/urxvtcd
 alias SA='S80';alias S80='sak80';   #-rwxr-sr-x 1 root utmp 1431704 Sep  5 06:08 /usr/bin/urxvtd
+alias S4='S40';alias S40='sak40';alias s4='s40'; # basic Sakura && stterm 40x12 floor of quarter-quarter of my main 160x50 term dimensions for quad-sIz EZ2rEd;
 alias rt='rox';alias rox='roxtm';
 alias rT='r80';alias r80='rox80';
 alias T8='t8r';alias t8r='tmn8r';

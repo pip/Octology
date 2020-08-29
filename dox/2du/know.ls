@@ -1,5 +1,5 @@
 # HBQLISTV:know.ls crE8d by PipStuart <Pip@CPAN.Org> to duplic8 Dr. Jordan B. Peterson's Quora.Com answer of "40 most valuable things everyone should know";
-# $VERSION='0.0';$d8VS='K7IMAnth'; # While this document origin8d around (&& still mainly intends to focus on) Dr. Peterson's knowledge, many others fE8ure;
+# $VERSION='0.0';$d8VS='K8SMITED'; # While this document origin8d around (&& still mainly intends to focus on) Dr. Peterson's knowledge, many others fE8ure;
 # 2du:start chronicling Dr. Peterson's many topical videos with new section for post-title subject summaries or explor8ion;
 0) Tell the truth.                 
 1) Do not do things that you h8.
@@ -628,3 +628,48 @@ K7IMAtom:HTTPS://YouTu.be/eF2v9oSy70I "The Anthropic Principle - How Your Existe
 K7JMDojo:HTTPS://YouTu.be/UMmLRJYdQlQ "Samurai Sword Master Rates 10 Japanese Sword Scenes in Movies and TV | How Real is it?" # K77:21m25s of Insider dope!;
 K7OMCuts:HTTPS://YouTu.be/j682_H84P9w "Meet a Real Samurai (Cuts 240 MPH BB Gun Pellet) | EveryDay Bosses #15" # J6N:15m55s of AsianBoss with amazing skill!;
 K87M1737:HTTPS://ChessGames.Com/perl/chessplayer?pid=114666 "Philip Stamma" Vs. "Francois Andre Philidor" # introduced "EndGame" && AlgebraicNot8ion in 1737;
+K8NMIYAM:HTTPS://YouTu.be/9UQrGQTf_q4 "Miyamoto Musashi. Dokkodo. The Way of Walking Alone. 21 Life Principles" # F5R:3m43s from Rules_of_the_Mind's channel:
+  0.Accept everything just the way it is.  1.Do not seek pleasure for its own sake.  2.Do not, under any circumstances, depend on a partial feeling.
+  3.Think lightly of yourself and deeply of the world.  4.Be detached from desire your whole life long.  5.Do not regret what you have done.  6.Never be
+    jealous.  7.Never let yourself be saddened by a sepR8ion.  8.Resentment and complaint are approprE8 neither for oneself or others.  9.Do not let yourself
+    be guided by the feeling of lust or love.  A.In all things have no preferences.  B.Be indifferent to where you live.  C.Do not pursue the taste of good
+    food.  D.Do not hold on to possessions you no longer need.  E.Do not act following customary beliefs.  F.Do not collect weapons or practice with weapons
+    beyond what is useful.  G.Do not fear death.  H.Do not seek to possess either goods or fiefs for your old age.  I.Respect Buddha and the gods without
+    counting on their help.  J.You may abandon your own body but you must preserve your honor.  K.Never stray from the way.  # Seems hard at 1st, as all is;
+K8NMInsi:HTTPS://YouTu.be/pCoPykw8xug "All the Planets from Inside" # K8E:10m38s of BrightSide explaining and showing much in all 8 planets, beyond our Sun;
+K8SMNfN8:HTTPS://YouTu.be/qWFScmtiC44 "Talk: VideoGames && the Future of Educ8ion" # K7K:2h44m27s of JBlow888 inspiring me to mk all VideoGames in Octology.
+  HTTPS://YouTube.Com/watch?v=qWFScmtiC44&lc=Ugwt_6gO5RDQIsxGGj94AaABAg "We don't stop playing because we grow old; we grow old because we stop playing."
+    -GeorgeBernardShaw (1856-1950) # quote comment posted by: 1TTTUBE 1MonthAgo which I found to be insightful && quite worth duplic8ing here 4 preserv8ion.
+  HTTPS://Google.Com/books/edition/The_Video_Game_Explosion/XiM0ntMybNwC?hl=en&gbpv=1&dq=isbn:9780313338687&printsec=frontcover with preview && Page xvii:
+  A Brief TimeLine of VideoGame History  -  1958: WilliamHiginbotham's Tennis-for-Two experiment shown at Brookhaven Labor8ory. The  experiment demonstr8s
+    interactive control of on-screen game play, though many today do not consider this to have been a real video-game.  1962: The finished version of  the
+    mainframe computer game Spacewar! is written at MIT. It will l8r inspire NolanBushnell 2crE8 ComputerSpace (1971).  1966: RalphBaer writes a four-page
+    paper describing his ideas for playing interactive games on ordinary television sets.  1971: The first coin-oper8d arcade video game,  NolanBushnell's
+    ComputerSpace, appears.   1972: RalphBaer's MagnavoxOdyssey, the first home video-game system, is released. NolanBushnell's Pong appears in the arcade
+    becoming the first hit game.   1973: The arcade video-game industry takes off,  as many companies begin producing video-games,  including ChicagoCoin,
+    Midway, Ramtek, Taito, AlliedLeisure, && KeeGames, which was secretly owned by Atari.  1974: KeeGames' Tank is the first game to store graphics d8a on
+    a ROM chip. Midway's TVBasketBall is the first arcade game to use human figures as avatars, instead of blocks or vehicles.  1975: Midway's GunFight is
+    the first game to use a microprocessor. Atari's SteepleChase is the first six-player arcade video-game, && KeeGames' Indy800 is the first eight-player
+    game, complete with a steering-wheel && foot-pedals for each of eight players (it also used a color CRT).      Page xviii:  1976: GeneralInstruments's
+    AY-3-8500 chip is released, which had all the circuitry necessary for a video-game on a single chip. The FairChild/Zircon ChannelF, the 1st cartridge-
+    based home game system, is released. Atari's NightDriver is the 1st game to simul8 a 1st-person perspective, though it did not have true 3-D graphics.
+    Atari's BreakOut is released.  1977: The home video-game industry suffers its 1st crash, && many companies quit the industry. Atari's VCS home console
+    system (l8r renamed 2600) is released. In Nippon, Nintendo releases its first home video-game, ColorTVGame6. KeeGames' arcade game SuperBug introduces
+    4-directional scrolling.  1978: Taito's SpaceInvaders appears && becomes the inspir8ion for many vertical shooting games 2 follow. Atari's arcade game
+    FootBall introduces 2-directional scrolling.  1979: VectorBeam releases Warrior, the first one-on-one fighting game. Atari's Asteroids && LunarLander,
+    both vector graphics games, are released. Namco's Galaxian is the 1st game to have 100-percent of its graphics in RGB color (a standard used for color
+    video using red, green, && blue signals). Namco's Puck-Man (l8r renamed Pac-Man) is released in Nippon.  1980: Pac-Man is released in NorthAmerica, &&
+    other influential games BattleZone, Defender also appear. Atari's BattleZone is the first arcade game to fE8ure a true 3-D environment. Ultima becomes
+    the first home computer game with 4-directional scrolling. StarFire is the 1st cockpit game, && the 1st arcade game to fE8ure a high-score table using
+    players' initials (PAS).  1981: Nintendo's DonkeyKong && Atari's Tempest are released. The UnitedSt8s arcade game industry reaches $5 billion.   1982:
+    Gottlieb's Q*bert is released. Sega's arcade game Zaxxon becomes the 1st arcade game 2 be advertised on television. L8 in the year, arcade game income
+    drops, && it appears that another video-game industry crash is coming, one that is larger than the 1977 crash.     1983: The video-game industry crash
+    affects the home video-game industry. Nintendo's FamiCom system released in Nippon. Atari's I,Robot is the first raster video-game with filled-polygon
+    3-D graphics.  Atari's vector game StarWars is released.   1984: The video-game industry crash continues.  RDI releases the Halcyon, a laserdisc-based
+    home video-game system.  1985: Nintendo releases a new version of its FamiCom, renamed the Nintendo-Entertainment-System (NES), in the UnitedSt8s. Its
+    popularity helps to bring an end to the industry crash. Nintendo also releases SuperMarioBros., which becomes 1 of the best-selling games of all time.
+    AlexPajitnov designs Tetris.    1986: TheLegendOfZelda appears (for the Nintendo FamiCom), the first in a long series of Zelda games. Taito's Arkanoid
+    && BubbleBobble appear in arcades. Sega releases the Sega-Master-System (SMS).  1987: Cyan's TheManHole becomes the 1st (pornographic?!) computer game
+    to be released on CD-ROM. YokaiDouchuuki, the first 16-bit arcade game, is released in Nippon. LucasArts' ManiacMansion is the 1st adventure game with
+    a point-&&-click interface. IncentiveSoftWare releases Driller (also porno?), a home computer game with breakthrough 3-D graphics. Taito's arcade game
+    DoubleDragon is released.  1988: Namco's Assault is released. Williams' NARC is 1st game 2 use a 32-bit processor. Nintendo releases SuperMarioBros.2;
