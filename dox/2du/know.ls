@@ -1,5 +1,5 @@
 # HBQLISTV:know.ls crE8d by PipStuart <Pip@CPAN.Org> to duplic8 Dr. Jordan B. Peterson's Quora.Com answer of "40 most valuable things everyone should know";
-# $VERSION='0.0';$d8VS='K8SMITED'; # While this document origin8d around (&& still mainly intends to focus on) Dr. Peterson's knowledge, many others fE8ure;
+# $VERSION='0.0';$d8VS='K93M6dec'; # While this document origin8d around (&& still mainly intends to focus on) Dr. Peterson's knowledge, many others fE8ure;
 # 2du:start chronicling Dr. Peterson's many topical videos with new section for post-title subject summaries or explor8ion;
 0) Tell the truth.                 
 1) Do not do things that you h8.
@@ -673,3 +673,84 @@ K8SMNfN8:HTTPS://YouTu.be/qWFScmtiC44 "Talk: VideoGames && the Future of Educ8io
     to be released on CD-ROM. YokaiDouchuuki, the first 16-bit arcade game, is released in Nippon. LucasArts' ManiacMansion is the 1st adventure game with
     a point-&&-click interface. IncentiveSoftWare releases Driller (also porno?), a home computer game with breakthrough 3-D graphics. Taito's arcade game
     DoubleDragon is released.  1988: Namco's Assault is released. Williams' NARC is 1st game 2 use a 32-bit processor. Nintendo releases SuperMarioBros.2;
+K8TMM8Sq:HTTPS://YouTu.be/mH0oCDa74tE "Group Theory && Why I Love 808,017,424,794,512,875,886,459,904,961,710,757,005,754,368,000,000,000" # K8J:21m57s of
+  # 3Blue1Brown explaining all sorts of gr8 symmetries && permut8ions && many excellent anim8ions too, but gr8St 4 me is at 8m31s with ckm8 64 of squares;
+K8VM8min:HTTPS://YouTu.be/QXQloYUV6wc "Every Particle in the Universe in 8 minutes" # K8S:8m35s of SciencePhileTheAI presenting atoms && sub-atomic parts;
+K8VMATER:HTTPS://YouTu.be/f9ZHP6bb0kU "The 15 St8s of Matter Explained" # K8O:9m9s of SciencePhileTheAI's Text2SpeechVoice being both inform8ive && funny;
+K93M6CBD:HTTPS://YouTu.be/JBhSjz_R10o "Christian Blessing Debunked" # K8K:10m34s of HolyKoolaid talking about whether mostly Christian countries are shit:
+  # Around 5m17s had: 0.UtterlyDestitute 1.Hopeless 2.Depressed 3.Suffering 4.Struggling 5.Coping 6.JustOK 7.DoingWell 8.Blooming 9.Thriving A.Prospering;
+K9CMEvol:HTTPS://YouTu.be/3kGuN8WIGNc "Evolution of the AlphaBet | Earliest Forms to Modern Latin Script" # K8S:16m12s of UsefulCharts.Com on historicity;
+K9QMHIAI:HTTPS://YouTu.be/fxiHM11w-rk "10 Differences Between Artificial Intelligence && HumanIntel" # J87:6m46s of SabineHossenfelder giving awesome d8a;
+K9RM2db7:HTTPS://YouTu.be/W2Z7fbCLSTw "7 D8aBase Paradigms" # K93:9m52s of FireShip explaining progression of various categories of many d8a-base engines;
+K9RM4APM:HTTPS://YouTu.be/1MqukDzhlqA "Max Tegmark Lecture on Life 3.0 - Being Human in the Age of A.I." # IBN:2h1m15s with AlexPhilipMeia @dur8ion:0I3N!;
+K9RMANIC:HTTPS://YouTu.be/PQkhXLgLnOs "You Spend Life Trying Not to Have Your Right Hemisphere Turn On -JordanPeterson" # I58:8m @2me:LeftOrderRightChaos;
+KA1MCPip:HTTP://ILoveThis.Org/06ilt.htm from my Dad, "Gerry Stuart" && son:# Well the dense sort of formatted elabor8ion && harsh+cruel critiquez RmIn;
+Here are the 29 Pieces of Light:                                           # Unfortun8ly, these seem to at best be "29 Pieces of" *Dim* "Light" to Pip;
+  1. Say "thank you" for every thing. (I Thes 5:18)                        # Does "fuck you" work fine for "every thing" hostile? It might for me. ;) ;
+  2. Pray on paper.                                                        # Piss on paper. Computers are almost comprehensively superior to parchment;
+  3. Teach your 1-year old to read.                                        # I don't have one, and may never, but I guess um, thanks anyway... sort of;
+  4. Embrace the 4 Biggies:        # I think I might agree that these are decently "Big" questions worth asking, but would be better in order: c,a,d,b;
+     a. Where did I come from ?  # The womb of your mother, after having her ovum fertilized by your father's sperm. The evolution process for species;
+     b. Where  am I going     ?  # Usually toward the general direction that you're most aiming at, but sometimes essentially nowhere. Also the future;
+     c. Who    am I           ?  # Probably a Homo-Sapien bi-pedal mammalian animal with opposable thumbs and a mind capable of many sorts of thoughts;
+     d. Why    am I here      ?  # To live a life that at least you can try hard to find meaningful somehow and maybe to promote more life to flourish;
+  5. Do your mirror work:          # K77 Big HTTPS://YouTu.be/TixgIOsb5UU ;# No, thanks. Coaching && coaxing myself in mirrors is no past-time of mine;
+     a. I like myself.                                                     # Most of the time I already should && do, and when I don't, dumb to say so;
+     b. There are no accidents in my universe. (Rom 8:28)                  # Yes, there are. Accidents happen almost anywhere. Not all is by God'sPlan;
+     c. Anger is not an emotion. It is always an act — and always by my own choosery.  # It might be. You've given no proof anger is always chosen act;
+  6. Farfar's 27 Axioms                                                    # Punctu8 consistently, then ignore all father's "Father's" Axioms, save 8!;
+  7. Experimental breathing is your key to an enriched life.               # It might be *a* key to a life enriched somehow. Experimental how exactly?;
+  8. A mind expanded to a new dimension, can never re-turn.                # Wrong! There's too many dimensions && minds && re-turn definitions 4never;
+  9. Taik noats.                                                           # Spel stoopid sumthymez, Bcuz wE allkinBdumEz now&&AgN. Notes 4 sum things;
+ 10. Re-read, re-write, and ruminate on your notes.                        # Probably easier electronically, on computing machinery, rather than paper;
+ 11. Ask a zillion questions.                                              # He just means "a lot"! ;) This one is probably actually a pretty good one;
+ 12. Do all your assignments.                                              # Hell, no! Depends on who assigns, && how. Do assignments well worth doing;
+ 13. Learn to be still — and quiet. And wait.                              # I guess these are each rather good things to learn 2du, but rarely though;
+ 14. Drink water.                                                          # 100% Juice is probably better generally. V8 Fusion && OceanSpray are good;
+ 15. Go for a walk.                                                        # Pretty good to take periodic walks, here && there, to && fro, far && wide;
+ 16. This is not life. Life is what comes after.                           # Oh no! This is such utter bullshit insanity. Fuck a redefinition of Life!;
+     This is Heaven-School. Learn your lines, without attribution.         #   Nobody knows about Heaven so real life cannot be good "School" 4 after!;
+ 17. You are not your skin-suit. You are the spirit within it. Savor that. # No. I *am* mostly my skin-suit (&& contents). Spirit, how? Nothing2Savor!;
+ 18. Do your PML                                     (Paper, Mouth, Life)  # "PML" could be useful but mostly seems pretty retarded... esp. unenumer8d;
+ 19. Do your 57  (Take notes. Front:What went right? Back:What could be better? [from 5 && 7 words, to just my "34"]) #WDidIDoRight? WCanIDoBetrNxTim?;
+ 20. Guilt is like garbage. It is an agent for growth.                     # I rarely find garbage to be an agent for growth. What is guilt more like?;
+     But not something we want to tuck under our arm, and walk around with # Maybe guilt shouldn't be discarded at all like trash, but "shame" should?;
+     for the whole day, or year, or life.                                  # I agree guilt can be quite a growth agent, but might best remain with us?;
+ 21. BeSsiE                                       (Breathe, Smile, Enjoy)  # Pronouncing this one sounds like a fat cow's name or similar, though fine;
+ 22. Your skin-suit (body) is your Father's Message-Center.                # I have an earthly father, but no known "Father". My body's my mesg-center;
+ 23. Bad habits cannot merely be cast aside.                               # I disagree on this. At least some "bad" habits *can* be simply cast aside,
+     They must be replaced — with new, better, good habits.                #   without requiring replacement with "good" 1s. Some may need replacement;
+ 24. My Dictionary                                                         # I don't yet know what this refers to, but hopefully it's good definitions;
+ 25. All is fore-given.                                                    # I'm pretty sure far less than "all" is given ahead of time or forgivable!;
+ 26. I don't know what I need. Actually, my needs are none of my business. # I disagree here again. My needs, in addition to my wants, are both clearly
+     But, my wants are. And therein shall I mull.                          #   my business and things I can discover (if I don't yet know). Mull that?;
+ 27. You have your Father's mouth.                                         # How could I attempt to evalU8 the veracity of this claim for mute Father?;
+ 28. Focus.                                                                # I like this simple shortest one, but it could append "... on priorities!";
+ 29. Everything is a gift.                                                 # I highly doubt it. "Everything" is far too broad. Many things are trivial;
+Axiom# 1 I shall do my Father's will -- not mine.                          # I shall use "thou shalt" more often!;# I don't know your "Father" so no2 His will!
+Axiom# 2                                                                                                          # 8 are left, in this 2,5,9,A, C,D,K,L 4wut?;
+Axiom# 3"* shall ... I shall ... U shall ... ZimZedZer shall ... we all shall ... 4 ye shall sLCshLzdnbythCshor!";# What do I do with these blankz? ISayMyBro!;
+Axiom# 4"* shall ... err ahem: Whenever thou shalt call upon my name, better recognize it be fuckinglorious, OK?";# Just make up whatever bogushit? WhatzUpYo?;
+Axiom# 5                                                                                                          # Play a game by filling in all the gaps UC!;
+Axiom# 6 I shall fight with myself   -- and be miserable. Is that what I want?  # I shall fight you -- and enjoy?;# Yes, when I should. Misery not fighting 2?;
+Axiom# 7"I shall sit somehow, with my feet wherever, back whatever, hands mAB folded some, && mouth mostly open!";# Hands on HappyHackingKeyBoardLite2USB good;
+Axiom# 8 The Beginning of Communication is Definition. (B.C.D.)            # Binary-Coded-Decimal is proly bogus!;# Yay! I'm totally on-board with 8 being gr8!
+Axiom# 9                                                                                                          #
+Axiom#10                                                                                                          #
+Axiom#11"* Attempting to convey wisdom to the world while reserving more than half your "Axioms" to stay hidden?";# Lame! =( Never video for FixTheRadio bad2!;
+Axiom#12                                                                                                          #
+Axiom#13                                                                                                          #
+Axiom#14 The two most powerful words in the English Language:  Thank you.  # Also "Crucifixion Post-p0wnxxx0red?";# Maybe "Eat shit!" && "Fuck yourself!" beat?
+Axiom#15 I own but one thing: this moment in time with God, and therein lies my soul.  # What/Who is God? WitHow?;# Utter clusterfuck of inanity with this one!
+Axiom#16 Save my soul, I own nothing, but am only temporary custodian of that which I am touching at the moment.  # Where "save" means "with the exception of";
+Axiom#17 Some things in life are fair; the others special.                 # Fair things are better than merciful;# Unfair life things are worse than special!;
+Axiom#18 I must  do what      I will.                                      # I must also do what I don't will too;# No! I will too do plenty I may or must not;
+Axiom#19 When receiving any thing,               I shall say:  Thank you.  # When saying words, say words! ;) duh;# Nope. Only for the most significant things;
+Axiom#20                                                                                                          #
+Axiom#21                                                                                                          #
+Axiom#22 Never having done something before, doesn't mean I can't.         # Never before doesn't mean eventually;# Sometimes does mean can't, usually not tho;
+Axiom#23 Not  knowing how  to do  something, doesn't mean I can't.         # Not knowing is acceptable Dfault st8;# Might too, so I disagree on such absolutes;
+Axiom#24"* `b64 $(q 8x3)` Axe: Pip needs domain names again someday, along with another Fujitsu LifeBook, badly!";# Juri! 8o So maybe `reso 1080` or 'HD' 2C? ;
+Axiom#25"* `b10 P` Anti-Axiom: Learn to pose fingers such that 24-bit binary math works just on philange digits!";# Anch? =) Who likes Pip anyway? Nobody! ;) ;
+Axiom#26 Eye dew. Knots top. Pat the edge of mice kin.                     # I know my eyes see far, mouth speaks;# I probably do, in most ways. How not 4 U? ;
+Axiom#27 ... Don't ...  ...  ...  ...  ... hurry. ...                      # If you never hurry, U may always Bl8;# I already did! ;) I sure should, sometimes;

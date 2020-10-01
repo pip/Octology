@@ -52,7 +52,7 @@ our @EXPORT= qw(bfr8c    b8c    d8c   dur8c @d8cl  d8cs  a8c   chti  c8fn  o8 S2
     $t    $u    $d    $s    $n          $T     $U    $D    $S    $N         $HK   $HR   $HO   $HY   $HG   $HC   $HB   $HM   $HP   $HW      hl           xe
  $tnhf $ucdf  spff  spfd  spfX   shfl  reso $Auth %cmsp %p8k2 @p82k  chp8     S2f4 c2f4 dm2u cdst %crgb %cbrt @snls @mrls %cdrd %cdrn    %nrgb         gnp8);
  # of 52 posibl sngl-letr var nmz,a8 Xportz 20,$b && $a unavail,so shudB thEs30 lFt4quik shortSt nAmz: 'def hij l n  q stuv x', 'A  DEF HIJ L N  Q STUV X Z';
-our $VERSION='0.0';my  $d8VS='K6OM5Pxe';our $Auth='PipStuart <Pip@CPAN.Org>'; # above not exporting $b since collidez with sort{$a  <=> $b};unalloc'd sOlOz^;
+our $VERSION='0.0';my  $d8VS='KA1MC8Pi';our $Auth='PipStuart <Pip@CPAN.Org>'; # above not exporting $b since collidez with sort{$a  <=> $b};unalloc'd sOlOz^;
 our $ucdf= eval('use Color::Similarity::RGB qw(distance);1') || 0; # try2set UseColorDistanceFlag if optional module is available; /defhijlnqstuvx/i + /AZ/^;
 our @Monz=qw(January February March   April     May June July   August September October November December);our @Mon=();push(@Mon,substr($_,0,3)) for(@Monz);
 our @Dayz=qw(Sunday  Monday   Tuesday Wednesday Thursday Friday Saturday                                  );our @Day=();push(@Day,substr($_,0,3)) for(@Dayz);
@@ -1870,7 +1870,7 @@ sub reso{my $optz=join(' ',@_)||''; # 598KBvas:reso crE8d by PipStuart <Pip@CPAN
              '4096x3072'=>[   'HXGA ',   1.00,30,'spec:HexadecatupleXtendedGraphicsArray                '],
              '4096x2160'=>[ '4K DCI ',32000.0,30,'spec:UltraHigh DefN 4K 2160p UHDTV1:LG                '],
              '3840x2400'=>[ 'WQUXGA ',   1.00,32,'spec:Wide Quad UltraXGA                               '],
-             '3840x2160'=>[ '4K UHD ',3500.00,32,'spec:UltraHigh DefN 4K 2160p UHDTV1:Asus PQ321 10BPP  '], # IGZO LED bklt wiDisplayPort&&dual HDMI
+             '3840x2160'=>[ '4K UHD ',1500.00,43,'spec:UltraHigh DefN 4K 2160p UHDTV1:AsusROGSwiftPG43UQ'], # IGZO LED bklt wiDisplayPort&&dual HDMI
              '3200x2400'=>[  'QUXGA ',   1.00,30,'spec:Quad Ultra     XGA                               '],
              '3280x2048'=>[ 'WQSXGA ',   1.00,30,'spec:Wide Quad SuperXGA :Barco Coronis Fusion 6MP DL  '],
              '3200x2048'=>[ 'WQSXGA ',   1.00,30,'spec:Wide Quad SuperXGA                               '],

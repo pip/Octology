@@ -1,5 +1,5 @@
 # F1RLLK2K:~/.lrc  by PipStuart <Pip@CPAN.Org> as an altern8 format for .lsrc ideally having new ~/bin/lrc gNR8 either from the other;
-# $VERSION='0.0';$d8VS='K7BMDewT'; 2du:mkUtl2gNr8 altrn8 versN of .lsrc th@purposfuly varEz colrz of comon typz,try addng bakgrnd colrz2all dFz&&tst,
+# $VERSION='0.0';$d8VS='KA1M6job'; 2du:mkUtl2gNr8 altrn8 versN of .lsrc th@purposfuly varEz colrz of comon typz,try addng bakgrnd colrz2all dFz&&tst,
 #   add interaction2 lsd8 wN it Dtectz unrecognIzd XtNshNz offerng c@egOrEz with comon colr2autOm@ically insrt chOsN NtrEz,mAB add *-* NtrEz from .zshrc hEr &&
 #   mk lrc gNr8 either,confirm all accept f0nt cOdez wi dash accepting Dfalt foreground then redo NORMAL FILE LINK as no fi ln,mAB 8trm added2TERM ls someday;
 # 819J2Pip:~/.lsrc by PipStuart <Pip@CPAN.Org> izAheavily modifId`dircolors`cfgfIl(Orig ~/.DIR_COLORS)wich setz $ENV{'LS_COLORS'} 4GNU`ls --color`&&`lsd8`;
@@ -399,9 +399,10 @@ CHR                           Yk           #cd= 01;33;40    01;33;40  CHaRacter 
 .vrs                                       # likely UTF-8 text file containing Bible VeRSes (possibly including some Hebrew transl8ions)
 .rdf
 .gws                                       # NetGearRoutr GateWaySettings
-.lrx                                       # ~/muz/lrx    MusicLyricSings
-.subs                                      # ~/muz/U2ba   Music-Subtitles
 .sub                                       # configur8ion valid8ion Subroutine script, probably from the Free Software Foundation, Inc.
+.subs                                      # ~/muz/U2ba   Music-Subtitles
+.lrx                                       # ~/muz/lrx    MusicLyricSings
+.lnx                                       #      LiNX like tabz && linkz && URL'z
 .webloc
 .urlview
 .url                                       # text filz containing web URLs
@@ -1558,19 +1559,20 @@ CHR                           Yk           #cd= 01;33;40    01;33;40  CHaRacter 
 .0.0-16-generic               Cc
 .0.0-15-generic               Bc
 .0.0-13-generic               Mc           # BlO /boot Linux kernelz versionz 5.3.0 onward started with Ubuntu 19.10 Eoan Ermine, so dark cyan bkgr 5.0 abov
-.3.0-62-generic               o            # now omitting Red && purple 2 loop just middle 6 of the 8bow, since reddish may be a no-no in Heaven && sO Earth
-.3.0-61-generic               Y
-.3.0-59-generic               G
-.3.0-55-generic               C
-.3.0-53-generic               B
-.3.0-51-generic               M
-.3.0-46-generic               o
-.3.0-45-generic               Y
-.3.0-42-generic               G
-.3.0-40-generic               C
-.3.0-26-generic               B
-.3.0-24-generic               M
-.3.0-23-generic               o
+.3.0-64-generic               o            # now omitting Red && purple 2 loop just middle 6 of the 8bow, since reddish may be a no-no in Heaven && sO Earth
+.3.0-62-generic               Y
+.3.0-61-generic               G
+.3.0-59-generic               C
+.3.0-55-generic               B
+.3.0-53-generic               M
+.3.0-51-generic               o
+.3.0-46-generic               Y
+.3.0-45-generic               G
+.3.0-42-generic               C
+.3.0-40-generic               B
+.3.0-26-generic               M
+.3.0-24-generic               o
+.3.0-23-generic               Y
 #                                          # zsh wraps '%{' ANSI '%}' && vim User[1-9] colrz specify BlO ForeGroundz all on darkblue BakGrnd4statuslIn
 #     4NT    etfp   vim  c8  color              ANSI      HTML    Octology::d8::fldz (`d8`)
 #     0f     Fsy_   %*    W WhiteBright         \e[1;37m  FEFDFF            # vim %* resets statuslIn colr 2 Dfalt   White on darkblue so has max 10 colrz

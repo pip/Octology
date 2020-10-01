@@ -30,7 +30,7 @@ unsetopt                \
 # auto_pushd            \# setng addz dirz 2 stack wN just normally chngng 2 thM (wich I du not normally lIk or want)
 # ksh_arrays            \# rEmMbr wNwrItng scrptz[or funcz]2include'setopt [localoptions] ksharrays'sO arAzR 0-bAsed(but!glOblBcuzmOst scrptzRstndrdly 1-bAsed)
 # re_____match_____pcre \# mA want2set for Z-SHell scripting RegularExpressions to utilize PerlCompatibility styles && mA insert 'zmodload zsh/(pc)?re(gex)?';
-export Vers='0.0';export d8VS='K89MIST4';export Auth='PipStuart <Pip@CPAN.Org>'; # not Xportng $b sinc cOlIdz wi sort{$a <=> $b} /defhijlnqstuvx/i + AZ 4golf;
+export Vers='0.0';export d8VS='K9OMMMMM';export Auth='PipStuart <Pip@CPAN.Org>'; # not Xportng $b sinc cOlIdz wi sort{$a <=> $b} /defhijlnqstuvx/i + AZ 4golf;
 if     [[       "$SHELL"    == "" ]]; then       export SHELL=`  which zsh`;fi # 8sh should parse this && OverId it    # shud `man zshall` /OSTYP 2lern4BlO
 if     [[       "$HOSTNAME" == "" ]]; then       export HOSTNAME=`hostname`;fi #`hostname`retnz fsckd nwlInz\n4CygWinzRxvt... ||smthng els lame  =(
 if     [[       "$HOST"     == "" ]]; then       export HOST   ="$HOSTNAME";fi;export VERBOSE='1'; # set flag to print debug && status info from system utilz
@@ -509,6 +509,7 @@ alias      HU='g3 188 $mu/chl/Hack*Univ* -k 3420 -v goom2k1'; # Fil_Far's HackrC
                                                                                                  rm /tmp/S.H-$d8.ansi; }
            SC()  { d8=`d8`;shlc $d2/cred.utf >/tmp/SCu-$d8.ansi;sloc -b   1146 /tmp/SCu-$d8.ansi;rm /tmp/SCu-$d8.ansi; }
            GG()  { pu $d2/.bak/.g6./.GG.;if [[ $# -gt 0 ]]; then ./GG $@; else ./GG -a; fi; po; } # GuyGooway's: GoodGames GoneGrooving GropingGirlies;
+alias    g3BRO="cd ~/muz/U2b/nxt;ec 'g3 -vi -Z BtieBoys RammRage Obsidia8';g3 -vi -Z \$(ls ~/muz/flac/Rage*/*/*.flac ~/muz/flac/B*Boys/**/*.flac ~/muz/mp3/BadR*/*/*.mp3 ~/muz/mp3/RonD*/*/*.mp3 ~/muz/mp3/Rammstein/[12][90][90][5714]*/*.mp3 A* Bee* E*-[NRT][eaoh]* G* O* O* Ra* S[eh]* V* ../O* ../O* ../obs/*Nig* ../obs/*Nig* ../obs/*Meta* ../obs/*Dead* ../obs/*Dead* ../obs/*Die* | gv jpg | g '.mp3$\\|.ogg$\\|.flac\\|.m4a$\\|.opus$' | gv 'Meister\\|Riechst\\|Sehnsucht\\|Tier\\|Spiel\\|Klavier\\|Alter\\|Eifersucht\\|English\\|Spieluhr\\|Zwitter\\|Rein_Raus\\|Adios\|Nebel\\|Morgenstern\\|Amour\\|Modell\\|Unit\\|80-85')";
 # Many of these Octology aliases should become special V8 via c8 coloriz8ion command wrappers or otherwise enhanced (&& simplified?) && unified funcs or cmdz:
 alias       0=' ogg123'; # o 123 : zer0 lIke lc o audio-player # maybe l8r try to figure out better aliases 4 numbers here since they could be good shortcutz;
 alias       1=' mpg321'; # m 321 :                audio-player # simple && light-w8 command-line MP3 player based on mad decoding library (drop-in 4: mpg123);
