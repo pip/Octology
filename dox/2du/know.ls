@@ -700,8 +700,8 @@ Here are the 29 Pieces of Light:                                           # Unf
      c. Anger is not an emotion. It is always an act — and always by my own choosery.  # It might be. You've given no proof anger is always chosen act;
   6. Farfar's 27 Axioms                                                    # Punctu8 consistently, then ignore all father's "Father's" Axioms, save 8!;
   7. Experimental breathing is your key to an enriched life.               # It might be *a* key to a life enriched somehow. Experimental how exactly?;
-  8. A mind expanded to a new dimension, can never re-turn.                # Wrong! There's too many dimensions && minds && re-turn definitions 4never;
-  9. Taik noats.                                                           # Spel stoopid sumthymez, Bcuz wE allkinBdumEz now&&AgN. Notes 4 sum things;
+  8. A mind expanded to a new dimension, can never re-turn.  # O.W.Holmes: # Wrong! There's too many dimensions && minds && re-turn definitions 4never;
+  9. Taik noats.  # HTTPS://YouTu.be/vj-91dMvQQo "100%-Rule" J81:HN0 @6b0; # Spel stoopid sumthymez, Bcuz wE allkinBdumEz now&&AgN. Notes 4 sum things;
  10. Re-read, re-write, and ruminate on your notes.                        # Probably easier electronically, on computing machinery, rather than paper;
  11. Ask a zillion questions.                                              # He just means "a lot"! ;) This one is probably actually a pretty good one;
  12. Do all your assignments.                                              # Hell, no! Depends on who assigns, && how. Do assignments well worth doing;
@@ -727,8 +727,8 @@ Here are the 29 Pieces of Light:                                           # Unf
  27. You have your Father's mouth.                                         # How could I attempt to evalU8 the veracity of this claim for mute Father?;
  28. Focus.                                                                # I like this simple shortest one, but it could append "... on priorities!";
  29. Everything is a gift.                                                 # I highly doubt it. "Everything" is far too broad. Many things are trivial;
-Axiom# 1 I shall do my Father's will -- not mine.                          # I shall use "thou shalt" more often!;# I don't know your "Father" so no2 His will!
-Axiom# 2                                                                                                          # 8 are left, in this 2,5,9,A, C,D,K,L 4wut?;
+Axiom# 1 I shall do my Father's will -- not mine.  # U2b/_HF9npeC3uc @8L0 ;# I shall use "Thou shalt" more often!;# I don't know your "Father" so no2 His will!
+Axiom# 2"I shall quote Nietzsche with: 'Thou shalt' is the name of the Gr8-Dragon, name: 'Thou shalt'. 'I will.'";# 7 are left, pasthis 2: 5,9,A,C,D,K,L 4wut?;
 Axiom# 3"* shall ... I shall ... U shall ... ZimZedZer shall ... we all shall ... 4 ye shall sLCshLzdnbythCshor!";# What do I do with these blankz? ISayMyBro!;
 Axiom# 4"* shall ... err ahem: Whenever thou shalt call upon my name, better recognize it be fuckinglorious, OK?";# Just make up whatever bogushit? WhatzUpYo?;
 Axiom# 5                                                                                                          # Play a game by filling in all the gaps UC!;
