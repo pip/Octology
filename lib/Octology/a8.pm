@@ -52,7 +52,7 @@ our @EXPORT= qw(bfr8c    b8c    d8c   dur8c @d8cl  d8cs  a8c   chti  c8fn  o8 S2
     $t    $u    $d    $s    $n          $T     $U    $D    $S    $N         $HK   $HR   $HO   $HY   $HG   $HC   $HB   $HM   $HP   $HW      hl           xe
  $tnhf $ucdf  spff  spfd  spfX   shfl  reso $Auth %cmsp %p8k2 @p82k  chp8     S2f4 c2f4 dm2u cdst %crgb %cbrt @snls @mrls %cdrd %cdrn    %nrgb         gnp8);
  # of 52 posibl sngl-letr var nmz,a8 Xportz 20,$b && $a unavail,so shudB thEs30 lFt4quik shortSt nAmz: 'def hij l n  q stuv x', 'A  DEF HIJ L N  Q STUV X Z';
-our $VERSION='0.0';my  $d8VS='KA1MC8Pi';our $Auth='PipStuart <Pip@CPAN.Org>'; # above not exporting $b since collidez with sort{$a  <=> $b};unalloc'd sOlOz^;
+our $VERSION='0.0';my  $d8VS='KA4MIsle';our $Auth='PipStuart <Pip@CPAN.Org>'; # above not exporting $b since collidez with sort{$a  <=> $b};unalloc'd sOlOz^;
 our $ucdf= eval('use Color::Similarity::RGB qw(distance);1') || 0; # try2set UseColorDistanceFlag if optional module is available; /defhijlnqstuvx/i + /AZ/^;
 our @Monz=qw(January February March   April     May June July   August September October November December);our @Mon=();push(@Mon,substr($_,0,3)) for(@Monz);
 our @Dayz=qw(Sunday  Monday   Tuesday Wednesday Thursday Friday Saturday                                  );our @Day=();push(@Day,substr($_,0,3)) for(@Dayz);
@@ -3405,9 +3405,9 @@ sub xe{ # `xte` X-windows Test Event autom8ion; Command-LookUpTable mapz most ba
             'K' => 'keyup'   , 'M' => 'mouseup'   ,                    'ku'=>'K','mu'=>'M',            # UppKsReleaseUp Key K, mu B
                                'v' => 'mousemove' , 'w' => 'w8dur8'  ,           'mm'=>'v','w8'=>'w',  #                       mm x y, w8 d,
             't' => 'str'     , 'r' => 'mousermove',                    'st'=>'t','mr'=>'r');           # prinTouTsTring sTr t, mr x y
-  my %klut=('Hm'=>'Home'     , 'AL'=>'Alt_L'      , 'CL'=>'Control_L', 'Re'=>'Return'   , '-'=>'minux'      , # case-sensitive key namez; run xev 4more namez
+  my %klut=('Hm'=>'Home'     , 'AL'=>'Alt_L'      , 'CL'=>'Control_L', 'Re'=>'Return'   , '-'=>'minus'      , # case-sensitive key namez; run xev 4more namez
             'Nd'=>'End'      , 'AR'=>'Alt_R'      , 'CR'=>'Control_R', 'BS'=>'BackSpace', ' '=>'space'      , ':'=>    'colon' , # colon may need shift too?
-            'Lt'=>'Left'     , 'SL'=>'Shift_L'    , 'sL'=>'Super_L'  , 'Tb'=>'Tab'      , '?'=>'question'   , ';'=>'semicolon' , '"'=>'quotedbl',
+            'Lt'=>'Left'     , 'SL'=>'Shift_L'    , 'sL'=>'Super_L'  , 'Tb'=>'Tab'      , '?'=>'question'   , ';'=>'semicolon' , '"'=>'quotedbl','Sp'=>'space',
             'Rt'=>'Right'    , 'SR'=>'Shift_R'    , 'sR'=>'Super_R'  , 'SK'=>'Escape'   , '^'=>'asciicircum', '.'=>'period'    , "'"=>'quote'   ,
             'Up'=>'Up'       , 'PU'=>'Page_Up'    , 'ML'=>'Meta_L'   , 'Dl'=>'Delete'   , '|'=>'bar'        , '_'=>'underscore', # also shift?
             'Dn'=>'Down'     , 'PD'=>'Page_Down'  , 'MR'=>'Meta_R'   , 'MK'=>'Multi_key'); # note each phass(60th-of-second) is ~16,667usecs(micro,millionth)

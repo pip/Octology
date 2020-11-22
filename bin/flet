@@ -1,21 +1,33 @@
 #!/usr/bin/perl
 # K3TMFvLt:flet crE8d by PipStuart <Pip@CPAN.Org> to try d8c colring the FigLet OutPut && re-squishing sepR8 letters;
-use strict;use warnings;use utf8;use v5.10;use Encode;my $d8VS='K3UM0ZsN';
-use Octology::a8;my $ccou=0;my $bow8='RoYGCBMp';my $argz=join(' ',@ARGV);my $dflf=$argz; # maybe -t is better than -w$ENV{'COLUMNS'}?
-use Octology::d8;my @lrjo;$dflf='cosmic' unless(length($dflf));my $nXtf=1;
-my $fdir=$ENV{'HOME'} . '/lib/Octology/f8/f0nt/flet';my @flst=<"$fdir/*">;for(@flst){s{(^.*/|\.[ft]l[fc]$)}{}gi;s/^.+-[0-9A-Z._]{8}(\..*|$)//i;
-  s/(^.*banner.*$)//;s/\s+/  /g;} # cosmic Colossal Fraktur
-for my $FntF(reverse(@flst)){my $d8Nw=Octology::d8->new();$dflf=$FntF if($nXtf && length($FntF));
-  open     my $out8,'>&',STDOUT or die "Can't open  duplic8 STDOUT handle: $!";binmode $out8,':encoding(UTF-8)';
-  print       $out8 "FntF:$FntF:Nter cmnd-strng:";my $sinl=<STDIN>;last if(defined($sinl) && $sinl=~ /^-?-?[qx]$/i);
-  close       $out8             or die "Can't close duplic8 STDOUT handle: $!";last if(/^-*[qx]$/i);if(/\w/){$dflf=$_;$dflf=~ s/(^\s+|\s+$)//g;} @lrjo=();
-  for(split(//,"$d8Nw")){my @figc=split(/\n/,`figlet -d $fdir -f $dflf -tm0 $_`);my $Scod=S(substr($bow8,$ccou++,1));$ccou=0 if($ccou==8);
-    if   ($argz=~ /(^|\s)-?-?d(\s|$)/i){ # take -d as not just f0ntDir but printing the f0nt listing from there;
-      open my $out8,'>&',STDOUT or die "Can't open  duplic8 STDOUT handle: $!";binmode $out8,':encoding(UTF-8)';say $out8 "@flst";
-      close   $out8             or die "Can't close duplic8 STDOUT handle: $!";}
-    elsif($argz=~ /(^|\s)-?-?r(\s|$)/i){$nXtf^=1;}
-    for my $fndx(0..$#figc){$lrjo[$fndx] ='' unless(defined(  $lrjo[$fndx]));
-                            $lrjo[$fndx].=sprintf("$Scod%-8s",$figc[$fndx] );}}
-  open        $out8,'>&',STDOUT or die "Can't open  duplic8 STDOUT handle: $!";binmode $out8,':encoding(UTF-8)';say $out8 "$_" for(@lrjo); # don't nEd my AgN
-  print       $out8 "FntF:$FntF:Nter cmnd-strng:";
-  close       $out8             or die "Can't close duplic8 STDOUT handle: $!";last if(/^-*[qx]$/i);if(/\w/){$dflf=$_;$dflf=~ s/(^\s+|\s+$)//g;} @lrjo=();}
+use strict;use warnings;use utf8;use v5.10;use Encode;my $d8VS='KAFMBEAT';
+use Octology::a8;my $ccou=0;my $bow8='YGTBUDSN';my $argz=join(' ',@ARGV );my $dflf=$argz; # maybe -t is better than -w$ENV{'COLUMNS'}?
+use Octology::d8;my @lrjo;$dflf='cosmic' unless(length($dflf));my $nXtf=1;my $dur8;my $Xcld= # QuotedRegX of Unable fonts 2filter out,q err btwn swap && null;
+  qr/^((646|8859)-.+|upper|lower|unshift|utf8|uskata|ushebrew|swap|null|koi8r|jis0201|iso2022|ilhebrew|hz|frango|big5|Patorjk's_Cheese)$/;
+use Octology::d8::dur8; # needed 4 new obj wi w8 BtwEn figlet back-tix sub-shell ways to new a dur8 to call class method de-referencing obj 2 get 2 w8() func;
+my $fdir=$ENV{'HOME'} . '/lib/Octology/f8/f0nt/flet';my @flst=<"$fdir/*">;for(@flst){if(defined($_) && $_ !~ /$Xcld/){
+  s{(^.*/|\.[ft]l[fc]$)}{}gi;s/^.+-[0-9A-Z._]{8}(\..*|$)//i;s/(^.*banner.*$)//;s/\s+/  /g;}} # cosmic Colossal Fraktur
+while(1){ # keep looping all of the accepted found figlet fonts, with an 8-second w8 at the end of each complete set run-through;
+  for my $FntF(reverse(@flst)){my $out8;my $d8Nw=Octology::d8->new();$dflf=$FntF if($nXtf && length($FntF));
+    if  (length($FntF) && $FntF !~ /$Xcld/){ # try gregex out before prob blox?;
+      open      $out8,'>&',STDOUT or die "Can't open  duplic8 STDOUT handle: $!";binmode $out8,':encoding(UTF-8)';
+      say       $out8 "FntF:$FntF:Nter cmnd-strng:" if(length($FntF) && $FntF !~ /$Xcld/);my $sinl=<STDIN>;
+                                                                      last if(defined($sinl) &&  $sinl=~ /^-?-?[qx]$/i);
+      close     $out8             or die "Can't close duplic8 STDOUT handle: $!";last if(defined($_) &&  /^-?-?[qx]$/i);} if(defined($_) && /\w/){$dflf=$_;
+      $dflf=~ s/(^\s+|\s+$)//g;} @lrjo=(); # KAFM41am:try2 slow down max figlet flip sPd BlOwithw8; try few in baktixB4 Bcoming hopfuly just method w8 nstd;
+    for(split(//,"$d8Nw")){my @figc=();my $fgop="";$fgop=`figlet -d $fdir -f $dflf -tm0 $_` if($dflf !~ /$Xcld/);
+      if   (length($fgop)           &&    $fgop !~ /Unable/){ # '... to open font file', proly need to conditional running for fig-fault-fontz;
+          @figc=();@figc=split(/\n/,$fgop);#$dur8=Octology::d8::dur8->new('8');$dur8->w8('8');
+      }            my $Scod=S(substr($bow8,$ccou++,1));$ccou=0 if(               $ccou==    8 );
+      if   ($argz=~ /(^|\s)-?-?d(\s|$)/i){ # take -d as not just f0ntDir but printing the f0nt listing from there;
+        open my $out8,'>&',STDOUT or die "Can't open  duplic8 STDOUT handle: $!";binmode $out8,':encoding(UTF-8)';say $out8 "@flst";
+        close   $out8             or die "Can't close duplic8 STDOUT handle: $!";}
+      elsif($argz=~ /(^|\s)-?-?r(\s|$)/i){$nXtf^=1;}
+      if   (@figc){
+        for  my $fndx(0..$#figc){$lrjo[$fndx] ='' unless(defined(  $lrjo[$fndx]));
+                                 $lrjo[$fndx].=sprintf("$Scod%-8s",$figc[$fndx] );}}}
+    open        $out8,'>&',STDOUT or die "Can't open  duplic8 STDOUT handle: $!";binmode $out8,':encoding(UTF-8)';say $out8 "$_" for(@lrjo); # don't nEd my AgN
+    say         $out8 "FntF:$FntF:Nter cmnd-strng:" if(length($FntF) && $FntF !~ /$Xcld/);
+    close       $out8             or die "Can't close duplic8 STDOUT handle: $!";last if(defined($_) && /^-*[qx]$/i);
+    if(defined($_) && /\w/){$dflf=$_;$dflf=~ s/(^\s+|\s+$)//g;} @lrjo=();}       last; # this is for single-run testing to quit the main while loop B4 w8ing;
+  $dur8=Octology::d8::dur8->new('88');$dur8->w8('88');}

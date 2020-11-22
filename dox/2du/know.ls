@@ -685,3 +685,11 @@ K9RM2db7:HTTPS://YouTu.be/W2Z7fbCLSTw "7 D8aBase Paradigms" # K93:9m52s of FireS
 K9RM4APM:HTTPS://YouTu.be/1MqukDzhlqA "Max Tegmark Lecture on Life 3.0 - Being Human in the Age of A.I." # IBN:2h1m15s with AlexPhilipMeia @dur8ion:0I3N!;
 K9RMANIC:HTTPS://YouTu.be/PQkhXLgLnOs "You Spend Life Trying Not to Have Your Right Hemisphere Turn On -JordanPeterson" # I58:8m @2me:LeftOrderRightChaos;
 KA2MFlow:HTTPS://YouTu.be/Pl-Ojmrs-ic "Your Brain Has a Secret Mode, Flow-St8. This is How to Unlock It" # KA2:IT0 of Thoughty2's Arran lists hormones && st8z;
+KA4MGull:HTTPS://YouTu.be/Pt_uKPUQ3ao "You Don't Know There Is a god: Point 2 - MisDefining Atheism" # KA2:VG0 by AronRa && @5t0 "Gullibility for Redemption!";
+KA5MChao:HTTPS://YouTu.be/fDek6cYijxI "The Science Behind the ButterFly Effect" # IC6:Co0 by Veritasium talking about: "non-overlapping infinite chaos cords!";
+KA5MGEMS:HTTPS://YouTu.be/48sCx-wBs34 "The Infinite Pattern That Never Repeats" # K9U:LB0 by Veritasium again,  about: non && periodic Penrose tiling crystals;
+KADMInfi:HTTPS://YouTu.be/jHKIaFjxGPY "This Old Clip Explains How Jordan Peterson Actually Got Religious" # H5M:6f0 of PhilosophyInsights showing Dr.P's views;
+KBHLEARN:Tweet from 'Jordan Peterson Quotes': "To be fully self-conscious means that you're perfectly aware of your limit8ions and how you might be hurt..."
+  "... and then to make the decision to move forward into the land of the unknown..anyway". I disagree with this for several reasons and intend to reply with
+  my own tweet which says something to the effect of: "To be beneficially self-conscious, strive to be predominantly aware of your own limit8ions and how..."
+  "... you might be hurt. Then attempt to proceed and move forward into the uncertainty that potential futures represent, in spite of the risks assoC8d!" -PS;

@@ -24,7 +24,7 @@
 use strict;use warnings;use utf8;use v5.10; # mAB tSt if just regUlR -t STDIN && -t STDOUT R Dtectng intractiviT corectly 1st,B4 fallng bak on IO::Interactive
 #se IO::Interactive qw(is_interactive); # employ if(is_interactive()){} around all colring to attempt to behave like `ls --color=auto` when piped away
 use Encode;use Octology::a8;#se Octology::c8;
-           use Octology::b8;use Octology::d8;use Time::PT;my $VERSION='0.0';my $d8VS='K5JMNotR';my $sllw=0; # SymLink LargestWidth to track for alignment
+           use Octology::b8;use Octology::d8;use Time::PT;my $VERSION='0.0';my $d8VS='KA6MEthr';my $sllw=0; # SymLink LargestWidth to track for alignment
 open my $out8,'>&',STDOUT or die "Can't open  duplic8 STDOUT handle: $!"; binmode $out8,':encoding(UTF-8)';my $cauf=1;my $cnvf=0; # crE8 local duplic8 of globl
 my $vsrt='-v'; my @b64d;my $t;my $sbdr;my $b64c;my($pwnw,$grpw,$grpx);$pwnw=$grpw=$grpx=0; # default -v Version SoRT,reversed b8 Colr List matchz Dfalt d8 ordr
 my $jfdz=join('|',@Day);my $jfmz=join('|',@Mon); # Joined Fieldz for DayZ and MonthZ to regex with  # BlO mAB some ARGVz shud!B sNt thru -d tSt so Dtect 1st?
@@ -198,7 +198,7 @@ for(@ldat){if(($prmz,$blsz,$pwnr,$grup,$fsiz,$d8tz,$fnam)= /^(\S{10})(\s+\d+)(\s
     $tnam=~ s/(HTTP      S?)/$B$1$n/gix; # try to catch&&colr at least start of URLs embedded within filenames
     $tnam=~ s/((Day|Week)[sz]?)/$Y$1$n/gix;$tnam=~ s/(hour[sz]?)/$C$1$n/gix; # colr typical d8 fieldXpanded nAmz (wich were orig abov ...
     $tnam=~ s/( sec(ond)?[sz]?)/$M$1$n/gix; #  ... B4 being mvd dn here 4 $n colr restor8ion aftr match)
-    $tnam=~ s/([^;0-9]\d*)([Mm]in(ute)?[sz]?)([-._0-9])/$1$B$2$n$3/g; # need betr look-behind && aftr for 'min' to not get SKpd colr cOdz B4 /boot/initrd etc.
+    $tnam=~ s/([^;0-9]\d*)([Mm]in(ute)?[sz]?)([-._0-9])/$1$B$2$n$4/g; # need betr look-behind && aftr for 'min' to not get SKpd colr cOdz B4 /boot/initrd etc.
     if(0&& exists($ENV{'TERM'}) && $ENV{'TERM'} !~ /^([Ex]|st)term/){ # only substitute custom f0nt code escapez 4 terminals that support or ignore such codez
       my($ft,$fc,$fr,$fm,$fa,$fE,$fq)= qw(t c r m a E q);#(S('f:t'),S('f:c'),S('f:r'),S('f:m'),S('f:a'),S('f:E'),S('f:q'));
           $_ = "$ft$cmpr$fc$b6bs$tS$fr$pwnr$z$gS$fm$grup$z $fa$b6fs $fE$ttim $fq$z$tnam$lspt{'no'}\n";  # add colrz && f0ntz to d8a && reset to NOrmal @EOL
