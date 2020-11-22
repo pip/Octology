@@ -1,0 +1,101 @@
+Language & UI Package Choice for Desktop Development Tools
+[David Gregory . 15 May 2007]
+Introduction
+Emergent.s tools are our most important future development project.  They are our customers. main touch points as they work day-to-day, rapidly iterating and developing content for their games.  They should be the things that attract new customers to our company.
+Specifically, we are trying to choose a language (or languages) that most of our desktop development tools will be shipped in.  We are also standardizing our UI package, so that tool UI.s have a similar look and feel, and that they work together.
+This decision does not preclude using other languages and tools more familiar to an engineer for rapid prototyping.  Prototyping should be encouraged.  However, product requirements need to be formed around what is being shipped, and the impact on us and our customers.
+This decision needs to be based on business realities.  This document identifies those business realities, and includes product requirements, market estimates and educated guesses from an engineering perspective.  A more exhaustive research project could be undertaken, but the opportunity cost for such an endeavor would be prohibitive.
+Scope
+Emergent.s tools encompass two major areas at the highest level: development tools and ops tools.  All tools, in both major areas, will run in one of three places . on a desktop, in a web browser, and from the command-line.  This document will specific limit itself to a discussion of development tools that run on the desktop.  It will not discuss ops tools.  It will not discuss web browser or command-line tools.
+There are specific instances where certain classes of tools apply in both a development and ops context.  Those classes of tools will be discussed.
+Decision
+For shipping products within the scope identified, we.re using C#, Managed C++, C++, and Windows Forms (not Windows Presentation Foundation).  Windows Forms is available in .NET Framework 2.0 and 3.0.
+Background
+a)      The reader of this document should also read Sean Zehnder.s two related documents.  They are entitled Hero Engine Competitive Analysis:  Tools and UI and UI Analysis: In-Game vs. External Editing.
+b)      When striving for .rapid iteration., there is a constant push and pull between having your tools look as close to the game as possible, and having your game be the test/development environment.  Shaders, lights, effects, composite animations, composite textures, simulation-driven look, and other areas are the hardest to make equivalent between these two environments.  Also, cross-platform development leads to differences . PC will not look the same as Xbox360 or PS3.  Typically, experience has shown that it.s better to focus on quickly transporting data changes or commands to the game engine itself, and seeing your updates as quickly as possible (live update or hot loading), rather than paying the cost of maintaining a viewer that closely simulates what you.d see in the game engine.  The latter is usually not achievable.  To be clear, we WILL have quick preview and editing views on the PC, integrated into the ToolBench environment, because there will be times when those are the best way to get quick feedback, and the actual look of the pixels isn.t critical.  However, very little attempt will be made to make sure these are pixel perfect.
+c)      Generally, cross-platform UI packages will under-perform native UI packages, or will lag in the look and feel.
+d)      Time to re-engineer existing SceneDesigner functionality in any other language and/or UI package: 37 person-months.  Example: for argument.s sake, port to Eclipse, java-based UI.  Given above assumption, not a viable option, but it would mean we wouldn.t have to build ToolBench.  If we decide to take on AnimationTool re-engineering also, that would cost an additional 26 person-months.  Total time is 63 person-months.
+e)      Time to create basic (1.0) ToolBench (refactor existing SceneDesigner plugin API) is 3 person-months.  Time to re-factor existing SceneDesigner functionality into ToolBench is 3.5 person-months.  Time to re-factor AnimationTool functionality into ToolBench is 6 person-months.  Total time is 12.5 person-months.
+Requirements
+1.      Target the core of the Market in one year.s time.  We cannot afford to look out further than that right now.  Anecdotal evidence and experience indicates that windows developers (artists, game designers, level designers, scripters, producers, engineers, etc) far outweigh developers on other platforms (Linux, Mac, etc).  We should go for the 98% case.
+2.      Our central pillar for tools is Rapid Iteration.
+3.      We are building a unified pipeline, and all tools are part of it.  That does not mean that all tools run in one environment.  It means that we have taken a unified look at the tools, and we have designed them to work well together, and have optimized the workflow for specific jobs.
+4.      ToolBench.  We are standardizing on one .plug-in architecture. and one development .desktop..  Architecturally, we will mirror the concepts in Eclipse.  UI-wise, we will likely go a different direction.  Tools living inside ToolBench will include all Content Tools that we build.
+5.      Workspace Mgmt tools (management of a development environment) are one class of tools that need to exist.  These tools should be in a unified place for both client and server.  It is preferred that they are as close as possible to the developer (desktop), but they could be in a browser if there are server requirements that dictate it.  There are elements of the Task Executive that lay inside these tools.
+6.      Whatever desktop tools we are running need good integration with the host OS . clipboard cut and paste, shell extensions, etc.  People are very used to these niceties.
+7.      Customers have to be able to modify our plug-ins, and develop their own.  Customers have to be able to hire people with skills to do this.  This means no esoteric language choices.
+8.      Do we need to ever ship these tools to end users?  (our customer.s customers).  Yes, possibly, some of them will be turned into custom-content tools by our customers.  Likely that their customers will not receive source code for these tools.
+Options
+(most of this copied verbatim from Shaun Kime.s email of 24 April 2007 that detailed out all the options nicely)
+
+1.      C#/Windows Forms
+
+Pros:
+-       Large, well structured and maintained API that makes development faster 
+-       Cross platform (see http://www.mono-project.com/Main_Page ) 
+-       Many built-in common/standard UI.s familiar to artists
+-       Widely used throughout the industry for UI development. Too much is at stake in several industries for this API to just .go away..
+-       Good documentation
+-       Strong developer community. See http://www.codeproject.com/ for an example. We.ve used this site fairly often, as we.re not UI control writers.
+-       C#.s scripting language-like capabilities make it very easy to work in. I.ve personally found my productivity improved by about 50% in writing simple code.
+-       We have several team members in CH already familiar with this package and have built several tools on top of this package. 
+-       We have several customers that have praised us for use of .NET as it has improved their ability to extend and use our tools. Call this one customer mindshare. Switching would not make them happy.
+-       Free for commercial use
+
+Cons:
+-       Managed C++ wrappers around our C++ API.s to make visible to C#. However, with DevStudio you can completely hop between languages (C#/Managed C++/C++/Visual Basic/etc) in the debugger. This helps mitigate some of the problems with debugging scripting language integrations in the tools.
+
+2.      C++/Qt
+
+Pros:
+-       Native C++
+-       Large, well structured and maintained API that makes development faster 
+-       Cross-platform (PC, Mac, Linux)
+-       Many built-in common/standard UI.s familiar to artists
+-       Good documentation
+-       Perceived to have good performance.
+-       Strong developer community (http://www.trolltech.com/developer/community)
+
+Cons:
+-       Look and feel of controls is one generation back from current.
+-       Qt MOC, a preprocess script that has to be run to generate your code. 
+-       Cost. Qt would cost us $3300 per developer (http://www.trolltech.com/products/qt/licenses/pricing ). More to the point, any customer wishing to build or extend our tools would be required to purchase licenses for their developers/build machines/etc. This is the biggest negative IMHO.
+-       Time to ramp up dev staff on usage of new system/API.s etc.
+-       Loss of all SceneDesigner / AnimationTool code and experience
+-       Loss of customer goodwill
+
+3.      C#/Windows Presentation Foundation (WPF)
+
+Pros:
+-       All the pros of C#/Windows Forms.
+-       WPF is the future of native Windows GUI development.
+
+Cons:
+-       All the cons of C#/Windows Forms.
+-       WPF is the future of native Windows GUI development . not all controls that we want to use are available (yet).
+
+4.      Java/Swing
+
+Pros:
+-       Cross-platform
+
+Cons:
+-       Controls look extremely dated and under-functional.
+-       Controls respond very slowly.
+-       Perceived to have poor performance, in general.
+-       Java is not appreciated in the game industry.
+
+5.      C++/In-Game UI.s achieved by using UI Middleware (Scaleform) on top of GB
+
+Pros:
+-       Native C++--ish. Might have some flash built-in if using Scaleform.
+-       WYSYWYG right inside the game
+
+Cons:
+-       Many common UI.s would have to be re-written by us.
+-       Many custom UI.s would have to be written by us with no community around it.
+-       Reliance on a middleware package that may not make it in the marketplace. If the business relationship goes south, we.re in trouble. Not good from a long-term tools perspective.
+-       Cost of the third party middleware for anyone to build and use our tools. Alternatively, we.d have to pay royalties on every license or some other business arrangement.
+-       Time to ramp up dev staff on usage of new system/API.s etc.
+-       Loss of all SceneDesigner/AnimationTool code and experience
+-       Loss of customer goodwill

@@ -1,0 +1,244 @@
+<html>
+<head>
+	<title>Voronoi art</title>
+	<link rel="stylesheet" href="http://www.cgl.uwaterloo.ca/~csk/basic.css" type="text/css">
+</head>
+<body>
+<h1>Voronoi art</h1>
+
+Voronoi diagrams are commonly thought of in terms of a set of points.  Given
+a set of points {P<sub>i</sub>}, you cover the plane with disjoint convex
+tiles {T<sub>i</sub>} such that T<sub>k</sub> contains all the points in the
+plane which are closer to p<sub>k</sub> than any other p<sub>i</sub>.  This
+has many practical applications, and there are well-known algorithms for 
+finding the Voronoi diagram of a set of points.
+</p>
+
+<p>
+My interest is in applying and extending this concept to produce attractive
+ornamental designs.  It turns out that taking the Voronoi diagram of an
+interesting set of points tends to yield an interesting tiling of the plane!
+I've written a program that renders Voronoi diagrams of sets of points
+to show you what I mean.  For each pair of illustrations below, the
+diagram on the left is a schematic showing the set of points used to 
+generate the rendered tiling on the right.  Note that in each case, the
+tilings were produced using only overlapping square lattices.
+</p>
+
+<div align=center>
+<table border=0 cellpadding=5>
+	<tr>
+		<td><img
+			src="grid1_schematic.gif"
+			border=1 width=200 height=200 align=middle>
+		</td>
+		<td><img
+			src="grid1.gif"
+			border=1 width=200 height=200 align=middle>
+		</td>
+	</tr>
+
+	<tr>
+		<td><img
+			src="grid3_schematic.gif"
+			border=1 width=200 height=200 align=middle>
+		</td>
+		<td><img
+			src="grid3.gif"
+			border=1 width=200 height=200 align=middle>
+		</td>
+	</tr>
+
+	<tr>
+		<td><img
+			src="grid2_schematic.gif"
+			border=1 width=200 height=200 align=middle>
+		</td>
+		<td><img
+			src="grid2.gif"
+			border=1 width=200 height=200 align=middle>
+		</td>
+	</tr>
+</table>
+</div>
+
+<p>
+But this concept can be made more general.  In particular, the p<sub>i</sub>
+don't have to be points.  They can be arbitrary subsets of the plane.  The
+mathematical construction is the same: T<sub>k</sub> still contains all the
+points closer to p<sub>k</sub> than any other p<sub>i</sub>.  You just need
+to be more intelligent about computing distances from objects.  As a 
+canonical example, consider the Voronoi diagram induced by a point and a line:
+</p>
+
+<div align=center>
+	<img 
+		src="parabola_schematic.gif" 
+		border=1 width=100 height=100 align=middle>
+</div>
+
+<p>
+This will induce two disjoint regions in the plane.  If you remember the
+construction of conic sections, a parabola can be defined as the locus of
+points equidistant from a focus and a line.  Sure enough, we get the following
+Voronoi diagram:
+</p>
+
+<div align=center>
+	<img 
+		src="parabola.gif" 
+		border=1 width=256 height=256 align=middle>
+</div>
+
+<p>
+I've extended the basic renderer mentioned above to implement this more general 
+Voronoi diagram drawing concept.  It can create some beautiful, varied 
+and often unexpected pictures.  Here's my favorite:
+</p>
+
+<div align=center>
+	<img 
+		src="bighex.gif" 
+		width=600 height=600 border=1 align=middle>
+</div>
+
+<p>
+It was created by taking the Voronoi diagram of coloured rings, interlocked in
+a hexagonal pattern.  Here's a schematic, showing the elements {p<sub>i</sub>}
+that induced the above picture.  
+</p>
+
+<div align=center>
+	<img 
+		src="hexquilt_schematic.gif" 
+		width=400 height=400 border=1 align=middle>
+</div>
+
+<h2>Gallery</h2>
+<p>
+
+		<center>
+		<table cellpadding=4 border=0>
+		<tr>
+
+		<td>
+		<a href="bighex.gif"><img 
+			src="thumbnails/bighex.gif"
+			width=120 height=120 border=1 align=middle></a>
+		</td>
+
+		<td>
+		<a href="diminish.gif"><img 
+			src="thumbnails/diminish.gif"
+			width=120 height=120 border=1 align=middle></a>
+		</td>
+
+		<td>
+		<a href="stained.gif"><img 
+			src="thumbnails/stained.gif"
+			width=120 height=120 border=1 align=middle></a>
+		</td>
+
+		<td>
+		<a href="festival.gif"><img 
+			src="thumbnails/festival.gif"
+			width=120 height=120 border=1 align=middle></a>
+		</td>
+
+		</tr>
+		
+		<tr>
+
+		<td>
+		<a href="fancygrid1.gif"><img 
+			src="thumbnails/fancygrid1.gif"
+			width=120 height=120 border=1 align=middle></a>
+		</td>
+
+		<td>
+		<a href="fancygrid2.gif"><img 
+			src="thumbnails/fancygrid2.gif"
+			width=120 height=120 border=1 align=middle></a>
+		</td>
+
+		<td>
+		<a href="fancygrid3.gif"><img 
+			src="thumbnails/fancygrid3.gif"
+			width=120 height=120 border=1 align=middle></a>
+		</td>
+
+		<td>
+		<a href="fancygrid4.gif"><img 
+			src="thumbnails/fancygrid4.gif"
+			width=120 height=120 border=1 align=middle></a>
+		</td>
+
+		</tr>
+
+		<tr>
+
+		<td>
+		<a href="weight.gif"><img 
+			src="thumbnails/weight.gif"
+			width=120 height=120 border=1 align=middle></a>
+		</td>
+
+		<td>
+		<a href="frac.gif"><img 
+			src="thumbnails/frac.gif"
+			width=120 height=120 border=1 align=middle></a>
+		</td>
+
+		<td>
+		<a href="diffraction.gif"><img 
+			src="thumbnails/diffraction.gif"
+			width=120 height=120 border=1 align=middle></a>
+		</td>
+
+		<td>
+		<a href="diffraction2.gif"><img 
+			src="thumbnails/diffraction2.gif"
+			width=120 height=120 border=1 align=middle></a>
+		</td>
+
+		<td></td>
+		<td></td>
+
+		</tr>
+		</table>
+		</center>
+
+<p>
+All images are copyright 2000 by Craig S. Kaplan.  You are
+free to use them for <b>personal</b> and <b>non-commercial</b> purposes.
+Please check with me about any other uses.
+<p>
+
+<h2>Papers</h2>
+
+<ul>	
+	<li><a href="http://www.cgl.uwaterloo.ca/~csk/papers/isama1999.html">
+		Voronoi Diagrams and Ornamental Design</a>, ISAMA 1999.
+	</li>
+</ul>
+
+<h2>Other resources</h2>
+
+<ul>
+	<li><a href="http://www.josleys.com/">Jos Leys</a> has adapted the 
+		ideas presented here, creating a Voronoi diagram renderer in 
+		Ultrafractal.  I invite you to visit 
+		<a href="http://www.josleys.com/creatures35.htm">his gallery</a>
+		for many more examples like the ones given here.
+	</li>
+</ul>
+
+<hr>
+	<table width="100%" border=0 cellpadding=0 cellspacing=0><tr>
+		<td align=left><a href="http://www.cgl.uwaterloo.ca/~csk/">
+			Craig S. Kaplan</a></td>
+	<td align=right><em>Last updated: Sunday, 06-Feb-2005 16:34:21 EST</em>
+	</td></tr></table>
+
+</body>
+</HTML>

@@ -1,0 +1,139 @@
+<html>
+<head>
+	<title>Aliasing Artifacts</title>
+	<link rel="stylesheet" href="http://www.cgl.uwaterloo.ca/~csk/basic.css" type="text/css">
+</head>
+<body>
+<h1>Aliasing Artifacts</h1>
+
+<center>
+	<img src="alias_sample.png" width="342" height="342" border="0"/>
+</center>
+<p>
+One day, while playing with a program to render <a href="../voronoi/">
+Voronoi diagrams</a>, I accidentally requested the Voronoi diagram of
+a black point and a white point, both at the origin.  Imagine my surprise
+when my program produced the image above.  Eventually I realized what
+was happening.  For every point in the plane, my program was computing
+the distance from that point to one of the generators at the origin.  This
+number was computed inside the FPU as an 80-bit floating point number,
+and then rounded to a 64-bit double precision
+number in order to store it in main memory.  This value was then 
+transfered back into the FPU for comparison
+against the distance to the second generator, also stored as an 80-bit
+float.  In other words, the choice of black or white in the image above
+is made based on the rounding behaviour of the low-order bits of the
+squared Euclidean magnitude of pixel centres.  The result is a strange,
+brittle view of the internal logic of the X86 FPU.
+<p>
+These pictures turn out to be closely related to aliasing patterns.
+The image above is made up of concentric rings, each containing an
+approximate view of the function 
+sin(<em>x</em><sup>2</sup>+<em>y</em><sup>2</sup>), sampled
+at different rates.  That function, sometimes called the <em>zone plate
+function</em>, is a standard test function for sampling and reconstruction
+algorithms, and has arisen many times in graphics and vision.
+<p>
+I first saw this behaviour on x86 machines around 2000.  It's very
+unpredictable, depending for example on GCC's optimization settings.
+There is a long-standing debate on whether this is a bug in GCC or
+merely an aspect of floating-point computation that programmers ought
+to be aware of.  The controversy tends to flow back to 
+<a href="http://gcc.gnu.org/bugzilla/show_bug.cgi?id=323">GCC bug 323</a>.
+I dimly recall filing that bug, but perhaps my memory is faulty.  I'm not
+listed as the reporter, so either I'm wrong or someone else filed it on
+my behalf.
+<p>
+Images from the paper are presented here.
+They are not offered in thumbnail form, since the
+process of resampling them to create thumbnails would destroy all the
+information in the images.
+For more details, please the paper.
+
+<h2>Aliasing patters from the function 
+	sin(<em>x</em><sup>2</sup>+<em>y</em><sup>2</sup>)</h2>
+
+These pictures are fairly well known in computer graphics.  They arise
+simply by sampling the zone plate function at different rates.  What's
+amazing is the wide variety of attractive patterns that arise in the
+process.
+
+<ul>
+	<li><a href="sin_1.png">sin_1.png</a></li>
+	<li><a href="sin_2.png">sin_2.png</a></li>
+	<li><a href="sin_3.png">sin_3.png</a></li>
+	<li><a href="sin_4.png">sin_4.png</a></li>
+	<li><a href="sin_5.png">sin_5.png</a></li>
+	<li><a href="sin_8.png">sin_8.png</a></li>
+	<li><a href="sin_9.png">sin_9.png</a></li>
+</ul>
+
+Tom Beddard has created a lovely <a href="http://www.subblue.com/blog/2008/9/20/aliasing_patterns">Flash demo</a> of this function, which allows you
+to zoom in and out of the zone plate function interactively.  Try it out!
+
+<h2>Hexagonal aliasing patterns using the same function</h2>
+
+What would these patterns look like on a hexagonal pixel grid?
+Some information would be lost by resampling such images into a
+square grid, so here I offer fairly coarse PDFs, each containing
+many small hexagonal cells.  
+
+<ul>
+	<li><a href="hex_1.pdf">hex_1.pdf</a></li>
+	<li><a href="hex_2.pdf">hex_2.pdf</a></li>
+	<li><a href="hex_3.pdf">hex_3.pdf</a></li>
+	<li><a href="hex_4.pdf">hex_4.pdf</a></li>
+	<li><a href="hex_5.pdf">hex_5.pdf</a></li>
+	<li><a href="hex_6.pdf">hex_6.pdf</a></li>
+</ul>
+
+<h2>Aliasing patterns from floating-point roundoff</h2>
+
+These are the images that originally inspired this exploration.
+
+<ul>
+	<li><a href="surprise600.png">surprise600.png</a></li>
+	<li><a href="surprise601.png">surprise601.png</a></li>
+	<li><a href="voronoi_1.png">voronoi_1.png</a></li>
+	<li><a href="voronoi_2.png">voronoi_2.png</a></li>
+	<li><a href="voronoi_3.png">voronoi_3.png</a></li>
+	<li><a href="voronoi_4.png">voronoi_4.png</a></li>
+</ul>
+
+<h2>Aliasing patterns computed explicitly from floating-point roundoff,
+	using the <font face="monospace">frexp</font> function</h2>
+
+In the paper, I demonstrate the correctness of my analysis of these
+patterns by generating them explicitly with manipulation of floating
+point numbers.
+
+<ul>
+	<li><a href="frexp_1.png">frexp_1.png</a></li>
+	<li><a href="frexp_2.png">frexp_2.png</a></li>
+</ul>
+
+<h2>Papers</h2>
+
+<ul>
+	<li><a href="http://www.cgl.uwaterloo.ca/~csk/papers/bridges2005a.html">
+		Aliasing Artifacts and Accidental Algorithmic Art</a>.  Bridges 2005.
+	</li>
+</ul>
+
+<!-- <h2>Other resources</h2> -->
+
+<font size=-1>
+All images are copyright 2005 by Craig S. Kaplan.  You are
+free to use them for <b>personal</b> and <b>non-commercial</b> purposes.
+Please check with me about any other uses.
+</font>
+
+<hr>
+	<table width="100%" border=0 cellpadding=0 cellspacing=0><tr>
+		<td align=left><a href="http://www.cgl.uwaterloo.ca/~csk/">
+			Craig S. Kaplan</a></td>
+	<td align=right><em>Last updated: Friday, 10-Oct-2008 22:19:43 EDT</em>
+	</td></tr></table>
+
+</body>
+</HTML>

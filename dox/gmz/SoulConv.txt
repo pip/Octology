@@ -1,0 +1,107 @@
+  This document describes GuardImpact.com's SoulCalibur conventions:
+ Buttons:      Directions:      Grounded Positions:
+A-Horiz       7 8 9-ub u uf    PLD-PlayDead (FaceUpFeetAway)
+B-Vert        4 5 6-b  n  f    KND-KnockDown (FaceUpFeetTowards)
+K-Kick        1 2 3-db d df    SLD-Slide (FaceDownFeetAway)
+G-Guard                        FCD-FaceDown (FaceDownFeetTowrads)
+any-Above
+
+ Notations:
+FC -FullCrouch
+WS -WhileRising
+8WR-8WayRun
+SS -SideStep
+SoC-SoulCharge
+SpC-SpiritCharge
+1FC-1FrameShift
+WpS-WeaponStrip
+GI -GuardImpact
+GC -GuardCancel
+GB -GuardBuffer
+RC -RecoverCrouching
+RCC-RCCancel
+iFC-instantFullCrouch
+( )-optional
+[X]-hold X
+ , -followed by
+ ~ -immediately after
+ + -at the same time
+ - -or
+ < -optional delayed input
+ = -next in sequence
+{ }-grouping of options
+xY -short for "X~Y"
+
+ Hit Properties:
+BT -BackTowards opponent
+OB -forces Opponent'sBack to face you
+OS -forces Opponent'sSide to face you
+OSB-forces OS when Blocked
+JG -JuGgle starter
+RO -move has RingOut potential
+CH -requires a CounterHit
+AT -AttackThrow (blockable)
+GI -GuardImpact is possible
+GIh-GuardImpact against Horiz
+GIv-GuardImpact against Vert
+rGI-ReverseGuardImpact (CounterParry)
+ # -see footnote
+c  -CH modifier (BNc=Bounce on CH)
+co -CrouchingOpponent modifier (BNco)
+cco-CH on CrouchingOpponent modifier
+
+ Stuns:
+BN -BouNce stun
+DOS-DoubleOverStun
+FS -FallbackStun
+LS -LiftStun
+HS -HunchoverStun
+CS -CrumpleStun
+CFS-CrumpleFallStun
+TS -ThrustStun
+BS -BlockStagger
+GB -GuardBreak
+
+ Hit Ranges:
+l  -Low
+m  -Mid
+h  -High
+L  -Low && grounded opponents
+M  -Mid && grounded opponents
+H  -High && grounded opponents
+Sm -SpecialMid (can block m or l)
+ ! -unblockable
+<!>-duckable unblockable
+{!}-ub on grounded opponents
+
+ Character Specific Notations:
+VolCR  -CalistoRush
+   BS  -BlindStance
+   MC  -MantisCrawl
+   RC  -RatChaser
+   BSFG-BSForceGI
+IvyWP  -WhiPstance
+   SW  -SWordstance
+   SS  -SummonSuffering
+MitMT  -MisTstance
+   RL  -ReLicstance
+KilMO  -MOnumentstance
+   MOTB-MOnumentThrustBlock
+MaxRO  -RightOuter
+   RC  -RightCross
+   BL  -BehindLower
+   LO  -LeftOuter
+   LI  -LeftInner
+NigNBS -NightBackStance
+   NLS -NightLowerStance
+   NSS -NightSideStance
+YosPG  -PoGostance
+   ST  -SiTstance
+SieSHS -SideHoldStance
+   BHS -BaseHoldStance
+   CHS -ChiefHoldStance
+TakPO  -POssessionstance
+   PORC-PORushCancel
+   iPO -instantPOssession
+SopLiz iGT-instantGaeaTremor
+CerGDR -Geo-Da-Ray

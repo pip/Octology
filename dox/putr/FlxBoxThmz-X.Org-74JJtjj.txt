@@ -1,0 +1,28 @@
+74K2sjc - FluxboxThemeFavorites.txt
+init: session.styleFile:	/usr/share/combobox/styles/...
+Fury-NG
+GoldOrb
+Pek-Posthuman
+Rancor
+Rumpa
+Sid-Combination
+UnderDarkGreen
+init: session.styleFile:	/usr/share/fluxbox/styles/...
+BlueNight
+Cthulain
+Nyz
+Twice
+init: session.styleFile:	/usr/share/fluxbox/fluxmod/styles/...
+BlueLazer
+BlueishBlack
+Chocolate
+Graphite-Integration
+Nuevat3k-Bluenight
+Nuevat3k-Glacier
+Verde
+bunker-one
+init: session.styleFile:	/home/pip/.fluxbox/styles/...
+EvolutionTech
+Matrix
+Necromantic_Blue
+blackbx.night

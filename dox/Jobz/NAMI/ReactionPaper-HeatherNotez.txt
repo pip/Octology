@@ -1,0 +1,30 @@
+Be more descriptive about what is being lost in 1st paragraph.
+
+s/Probably most forget (at least somewhat)/Most probably forget/;
+
+Join "prior to episodes to Then there are medications ..."  For these symptoms, there are medications and other treatments...
+
+space "where in"
+
+s/needed or valuable/needed, valuable, /;
+
+s/her bags of items/bags of her items/;
+
+maybe rephrase "Years of this practice has enabled...that ahead of purging more stuff." See if it can flow more nicely.
+
+s/(several of my own )sometimes/$1/;
+
+Pg.3
+
+Use largely or contrary but not both.
+
+Pg.6
+
+s/(may not have perceived )of/$1/;
+
+maybe rephrase "I identified with awkwardly trying to explain..."
+
+s/somewhat//;
+
+Add a sentence about why I want to work at Warming Shelter. Elaborate on it. Why is it important to me.
+s/$/ because I want to help the homeless who are often mentally ill./;

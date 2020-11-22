@@ -1,0 +1,16 @@
+58UCM9A - OperaReg.txt given to Pip Stuart <Pip@CPAN.Org> in celebration
+  of Opera Browser's 10-year Online Anniversary Party.
+To register the Opera browser and remove the ad bar, follow these steps:
+   1. Copy the appropriate registration code given below
+   2. Go to Help > Register Opera
+   3. Enter your name and organization
+   4. Paste the registration code and press OK
+
+     OS                     Reg. Code
+   Windows        w-nHiNc-czkct-hRmPw-5icuu-dkvDN
+   Linux Intel    u-Bs47a-ecHbs-cafav-jKeaw-n4WDP
+   Linux PowerPC  p-Nr8ic-HXHmt-Hzckw-AJzCu-D3jaN
+   Linux Sparc    k-Fwcuc-uXLwt-hepvw-5UaNu-8eTjN
+   FreeBSD        f-WLTBa-PW4ks-yv7Cu-KNDjw-JpQaP
+   Solaris        s-4vuib-KfwEr-CdEjv-E66Cv-N7pPP
+   Mac            m-bbfCa-3mpms-5jjDu-eXtjw-dzDaP

@@ -1,0 +1,9 @@
+  mobo: Biostar TForce4 SLI ver1.0
+  CPU: AMD Athlon 64 X2 (Socket 939)
+ADA4200DAA5CD
+LCB9E 0719WPMW
+Z383864F70456
+Diffused in Germany
+Made in Malaysia
+  RAM: OCZ Platinum Edition PC 3200 1024MB EL Dual CH 2-3-2-5 PN:OCZ4002048ELDCPE-K (X4)
+note:black dots have been placed in different corners (counting clockwise from up-left) of four modules' stickers according to initial mobo DIMM slot

@@ -1,0 +1,44 @@
+#!/usr/bin/perl -w
+# 2CN4sip - pt (PakTime) created by Pip@CPAN.Org (Mon Dec 23 04:54:44:51 2002)
+# Desc: pt is a simple tool created to en/decode the date && time using 
+#     typically seven (7) bass64 characters.  They are in decending order such
+#     that alphabetic listings will (almost always) show time ascension &&
+#     field arithmetic can be easily performed.
+#   Each character is (usually) a single field in the order:
+#     Year - 2000, Month, Day, hour, minute, second, frame (60th-of-a-Second)
+#   Please see `perldoc Time::PT` for more info.
+# Lice: Most source code should be Free!
+#     Code I have lawful authority over is && shall be!
+#   Copyright: (c) 2003-2007, Pip Stuart.  All rights reserved.
+#   Copyleft :  I license this software under the GNU General Public
+#     License (version 2).  Please consult the Free Software Foundation
+#     (HTTP://FSF.Org) for important information about your freedom.
+use strict; use warnings; use Math::BaseCnv qw(:all); use Time::DaysInMonth;
+use Time::PT; my $parm = join(' ', @ARGV); my $ptim = Time::PT->new();
+if(exists(    $ENV{'TZ' }) && $ENV{'TZ'} eq 'UTC'){
+  my $DST   = 0; # Daylight Savings Time module or tst here?
+     $DST   = $ENV{'DST'} if(exists($ENV{'DST'}));
+     $ptim -=     '8000'; $ptim += '1000' if($DST);
+    #$ptim -=   '110000' if($ptim->D() eq '0'); # subtract a day && month if day became zero around DST
+  if(  $ptim->D() eq '0'){ $ptim->M(b64(b10($ptim->M() - 1)));
+    if($ptim->M() eq '0'){ $ptim->Y(b64(b10($ptim->Y() - 1))); $ptim->M(12); }
+       $ptim->D(days_in(2000 + $ptim->Y(),  $ptim->M()     ));                }
+}
+if($parm =~ /(^|\s)-+h/i){ print "pt help: please run \`perldoc Time::PT\`\n";}
+else {
+  if     ($parm eq '-cp'    ){
+    print $ptim->color('zsh'); exit;
+  } elsif($parm =~ /-v(.*)$/){
+    print $ptim->color('vim'); exit;
+  } elsif($parm =~ /-4(.*)$/){
+    print $ptim->color('4NT'); exit;
+  } elsif($parm =~ /-c(.*)$/){
+    $ptim = Time::PT->new('verbose' => $1) if(defined($1));
+    print $ptim->color('ansi');exit;
+  } elsif($parm =~ /^(e|pt)$/){
+    print $ptim->expand(     );exit;
+  } elsif($parm){
+    if(@ARGV >  1){ $ptim = Time::PT->new('verbose' => $parm)          ; }
+    if(@ARGV == 1){ $ptim = Time::PT->new('str'     => $parm)->expand(); }
+  } print $ptim;
+}

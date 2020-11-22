@@ -1,0 +1,9 @@
+Name   : Pip Stuart <Pip@CPAN.Org>
+Billing: hourly
+Service: IntoText code analysis / refactor
+Date   : Thu Aug 16 2007
+Time   : 14:25:38:11
+Rate   : $  63 / hour
+Hours  :  x 31
+Total  : $1953
+Details: Please see IntoText-v2_24a-werk-78GEPcB.txt for detailed notes on progress.

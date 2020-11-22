@@ -1,0 +1,16 @@
+
+
+Hi Ben,
+
+Thanks for the appreciation && recommendation for useful new features. I
+have intention of updating my CPAN modules within the next month or two,
+after I can get moved into a new place && have my development machine
+setup... so I'll see if I can add what you seem to be asking for... &&
+I'll try to notify you. Please feel free to send me your 287-lines of
+code which compute the flop && I'll be glad to learn from it or
+incorporate it into the next release I can prepare.
+
+Thanks again for the kind feedback. =)
+
+Sincerely,
+-Pip@CPAN.Org

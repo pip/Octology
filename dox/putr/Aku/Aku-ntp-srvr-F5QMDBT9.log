@@ -1,0 +1,12 @@
+F5QMD6uN:attempting to follow HTTPS://Calvin.Me/create-ntp-server-using-ubuntu-14-04
+<root@AkuF5QMD3vg/etc>init.d/ntp restart
+[....] Restarting ntp (via systemctl): ntp.serviceJob for ntp.service failed. See "systemctl status ntp.service" and "journalctl -xe" for details.  failed!
+<root@AkuF5QMD4Qw/home/pip>tail -f /var/log/syslog
+ May 26 13:04:47 Aku systemd[1]: Starting LSB: Start NTP daemon...
+ May 26 13:04:47 Aku systemd[1]: ntp.service: control process exited, code=exited status=5
+ May 26 13:04:47 Aku systemd[1]: Failed to start LSB: Start NTP daemon.
+ May 26 13:04:47 Aku systemd[1]: Unit ntp.service entered failed state.
+ May 26 13:04:47 Aku systemd[1]: ntp.service failed.
+
+According to HTTP://ZeroSet.Mnim.Org/2015/04/27/ubuntu-15-04-vivid-vervet-failed-to-start-lsb-start-ntp-daemon just needed to `agi ntp` then restart worked.
+With ntp running && `ntpq -p` showing resultz, I ran `adjtimex -a=24` to better synchronize && upd8d TICK && FREQ in .conf;

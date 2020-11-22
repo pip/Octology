@@ -1,0 +1,59 @@
+7489Ym5 - In searching for fast XOrg terminals that looked good, I messed with [axE]term and each are fast but look poopy so I tried to balance gnome-terminal
+  to have good looking fonts that were fast enough not to annoy.  Maybe optimized nvidia drivers or a faster font server would help expand this list but
+  stars are beside my favorites and plusses indicate ones that at least have one or two levels of resizeability:
+           *Antique
+            Artist
+           *Artist Serif
+            Artsie
+            Asimov
+            Bloks
+            Bright
+           *Cantor
+            Cntdown
+            Computer Alt
+          +*Courier
+            Escher
+           *Eurotype
+            Feynman
+          + Fixed
+            Gagarin
+           *Gamow
+          + Julie
+            Kandinsky
+            Kandinsky Alt
+          + Lomonosov
+            LucidaTerminal
+          + Matto
+            Nexus
+            Noxis
+            OCR
+            Shine
+            Smooth
+            Terminal
+          +*Terminus
+            Test
+            Test Alt
+            Thin
+            Tixus
+           *Trachtenberg
+            Uniread
+            Vizing
+            Zin
+  I'd like to automate the generation of more good fonts from console utilities (`fpal` && FontForge?) when I find time.
+81RF29q - I've installed a bunch of new fonts which hosed a lot of my previous `gnome-terminal` font settings in ~/.gconf/apps/gnome-terminal/profiles/
+  so I poked around looking for good fonts for my 160x64 && 80x?? terms && discovered that almost all fonts render fast now.
+160x64-good:FixedBold14
+            GeorgiaBold11
+            HelveticaBold13
+            HunkySansBold11
+            LiberationMonoBold12
+            LucidaTypewriterSansBold13
+160x64-poor:ArtistSerif11
+            CooperHeavy11
+            CourierBold12
+            CourierNewBold12
+            DejaVuSansMonoBook11
+            Eras-BlackSemiBold12
+            EurotypeBold11
+            CantorReg11
+160x64-slow:BitstreamVeraSansMono11

@@ -1,0 +1,59 @@
+File to exist in directory as well as "fivekey.exe" is "fivekey.bud" which
+contains data only which is used to configure the executable.
+
+The tentative format for "fivekey.bud" is...
+
+the first five bytes contain (in order) the scan codes of the five keys to be
+used in the program
+
+the sixth byte acts as a boolean which holds a value to tell the program which
+mode it was in when it was last executed.  0 for Mode one, 1 for Mode two
+
+the seventh and eighth bytes act as a word together to tell the main program
+how many bytes to jump ahead in "fivekey.bud" to skip all data pertaining to
+Mode one since the sixth byte contains a non-zero.
+
+                            mode one stuff
+
+the ninth byte will contain an integer between 0 and 30 which tells the program
+how many Mode one sequences represent shifting to a different set of characters
+instead of just representing a character that can be typed.
+(note: the set/character ratio with the most possible usable characters
+in Mode one is 15/16.  all sets above 15 are not very useful since
+swapping the number-of-sets and the characters-per-set yields the same number
+of total possible distinct characters.  if num-of-sets is greater than
+chars-per-set then more key strokes are required to enter the same amount of
+info.  I decided, however, to allow num-of-sets to be greater than chars-per-set
+if the user chooses that just in case someone who would find use in extra
+key strokes and wishes to have it set up that way is able to configure it to
+their liking.  the user may not select 31 as the number-of-sets because there
+are only 31 possible sequences in Mode one and if all of them represented
+different character-sets, then there would be no characters so loading a new
+character set wouldn't change anything and no character entries could be made.)
+(p.s.note: sorry the above note is so long but it's kinda important)
+
+if the ninth byte contains 0 then the 31 bytes following the ninth contain the
+characters to be displayed when the corresponding Mode one sequence is entered.
+if the ninth byte is between 0 and 31 then it is stored in a variable
+(integer numofsets) to let the program know how many times to allocate enough
+space for a set of characters.  the tenth byte through the 10+numofsets byte
+will contain an integer up to 31 which represents the sequence that will
+activate the corresponding character set.  All of those values will be stored
+in an array of integers of size numofsets and once all values are loaded into
+the array, it will be sorted numerically.  Then a for loop from 1 to numofsets
+will allocate space to store the characters contained in numofsets sets.  For
+each set, the loop will begin another for loop from 1 to 31 and the inner loop
+number will be searched for in the ordered array of integers that correspond
+to the sequence numbers of a different character set.  if the inner loop number
+is found in the array then nothing is performed on that loop however if the
+number is not found in the array then that means it is a character and so a
+byte is allocated to store the ascii value of the character to be entered when
+inner loop number sequence is encountered in that particular character set.
+
+                            mode two stuff
+
+mode two data begins at 8+[7,8] byte in the file.  Mode two elements will be
+stored in the format:
+byte 1: high nibble =
+
+

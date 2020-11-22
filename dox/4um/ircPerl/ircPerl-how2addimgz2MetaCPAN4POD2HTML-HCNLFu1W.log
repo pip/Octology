@@ -1,0 +1,17 @@
+20171222 23:11:52 <Leffe> Hi
+20171222 23:11:52 <purl> bonjour, Leffe.
+20171222 23:12:05 <Leffe> Hi purl, always there
+20171222 23:13:10 <Leffe> How can I generate good documentation from perl files?
+20171222 23:13:35 <pink_mist> by writing it?
+20171222 23:13:41 <Leffe> :D
+20171222 23:14:52 <Leffe> I already know pod, but I don't know if there is any special tool to format it to html
+20171222 23:15:25 <Leffe> I also would like to include some images, some uml diagrams.
+20171222 23:16:25 <Leffe> For example I like mojolicious documentation a lot, I don't know if there is any tool that can help with this matter. 
+20171222 23:18:55 <Grinnz> yes, there are many tools to format pod to html
+20171222 23:19:03 <Grinnz> metacpan does it automatically
+20171222 23:20:29 <Grinnz> for images make an <img> tag in a =for html or =begin html block, like these:
+20171222 23:20:30 <Grinnz> https://metacpan.org/source/ZOFFIX/Dist-Zilla-Plugin-Pod-Spiffy-1.001007/lib/Dist/Zilla/Plugin/Pod/Spiffy.pm#L276
+20171222 23:20:34 <Grinnz> https://metacpan.org/source/SRI/Minion-8.08/lib/Minion.pm#L170-178
+20171222 23:20:49 <Grinnz> and you can test it in metacpan's new tool https://metacpan.org/pod2html
+20171222 23:25:17 <Leffe> Thanks!
+Day changed to 23 Dec 2017

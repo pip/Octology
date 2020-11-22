@@ -1,0 +1,605 @@
+:Base 4nt.hlp
+:Title 4NT v3.02 Help
+1 Copyright and Version=COPYRIGHT
+;
+1 The Command Line
+2 Overview=COMMANDLINE
+2 Command-Line Editing=EDITING
+2 Command History and Recall=CMDHIST
+2 Command History Window=HISTWIN
+2 Command Names and Parameters=CMDNAMES
+;
+2 Filename Completion
+3 Using Filename Completion=FILECOMP
+3 Appending Backslashes to Directory Names=APPBACKSLASH
+3 Customizing Filename Completion=FILECOMPCUST
+3 Filename Completion Window=FILECOMPWIN
+;
+;following line is decremented one level extra due to WINHELP bug
+1 Automatic Directory Changes=AUTODIR
+2 Directory History Window=DIRHIST
+2 Multiple Commands=MULTCMDS
+2 Expanding and Disabling Aliases=ALIASEXPAND
+2 Command-Line Length Limits=CMDLENGTH
+;
+1 File Selection
+2 Overview=FILESEL
+2 Extended Parent Directory Names=PARDIR
+2 Wildcards=WILDCARDS
+;
+2 Ranges
+3 Using Ranges=RANGES
+3 Date Ranges=DATERANGES
+3 Time Ranges=TIMERANGES
+3 Size Ranges=SIZERANGES
+3 File Exclusion Ranges=FILEXRANGES
+;
+;following line is decremented one level extra due to WINHELP bug
+1 Multiple Filenames=MULTFILES
+2 Include Lists=INCLLIST
+2 LFN File Searches=LFNSEARCH
+2 Executable Extensions=EXEEXT
+2 Using Windows File Associations=USINGWINASSOC
+2 Using Internet URLs=USINGURLS
+2 Waiting for Applications to Finish=WAITFORAPPS
+;
+1 Directory Navigation
+2 Overview=DIRNAV
+2 Extended Directory Searches=EXTDIRSEARCH
+2 CDPATH=CDPATH
+;
+1 Other Features
+2 Page and File Prompts=PROMPTS
+;
+2 Redirection and Piping
+3 Overview=REDIRPIPE
+3 Redirection=REDIRECTION
+3 Piping=PIPING
+;
+;following line is decremented one level extra due to WINHELP bug
+1 Critical Errors=CRITERR
+2 Conditional Commands=CONDITIONAL
+2 Command Grouping=GROUPING
+2 Escape Character=ESCAPE
+;
+1 Commands
+2 Commands by Category=COMMANDS
+;
+2 Commands by Name
+3 ?=QMARK
+3 ACTIVATE=ACTIVATE
+3 ALIAS=ALIAS
+3 ASSOC=ASSOC
+3 ATTRIB=ATTRIB
+3 BEEP=BEEP
+3 CALL=CALL
+3 CANCEL=CANCEL
+3 CD / CHDIR=CD
+3 CDD=CDD
+3 CLS=CLS
+3 COLOR=COLOR
+3 COPY=COPY
+3 DATE=DATE
+3 DEL / ERASE=DEL
+3 DELAY=DELAY
+3 DESCRIBE=DESCRIBE
+3 DETACH=DETACH
+3 DIR=DIR
+3 DIRHISTORY=DIRHISTORY
+3 DIRS=DIRS
+3 DO=DO
+3 DRAWBOX=DRAWBOX
+3 DRAWHLINE=DRAWHLINE
+3 DRAWVLINE=DRAWVLINE
+3 ECHO and ECHOERR=ECHO
+3 ECHOS and ECHOSERR=ECHOS
+3 ENDLOCAL=ENDLOCAL
+3 ESET=ESET
+3 EXCEPT=EXCEPT
+3 EXIT=EXIT
+3 FFIND=FFIND
+3 FOR=FOR
+3 FREE=FREE
+3 FTYPE=FTYPE
+3 GLOBAL=GLOBAL
+3 GOSUB=GOSUB
+3 GOTO=GOTO
+3 HELP=HELP
+3 HISTORY=HISTORY
+3 IF=IF
+3 IFF=IFF
+3 INKEY=INKEY
+3 INPUT=INPUT
+3 KEYBD=KEYBD
+3 KEYS=KEYS
+3 LIST=LIST
+3 LOADBTM=LOADBTM
+3 LOG=LOG
+3 MD / MKDIR=MD
+3 MEMORY=MEMORY
+3 MOVE=MOVE
+3 MSGBOX=MSGBOX
+3 ON=ON
+3 OPTION=OPTION
+3 PATH=PATH
+3 PAUSE=PAUSE
+3 POPD=POPD
+3 PROMPT=PROMPT
+3 PUSHD=PUSHD
+3 QUIT=QUIT
+3 RD / RMDIR=RD
+3 REBOOT=REBOOT
+3 REM=REM
+3 REN / RENAME=REN
+3 RETURN=RETURN
+3 SCREEN=SCREEN
+3 SCRPUT=SCRPUT
+3 SELECT=SELECT
+3 SET=SET
+3 SETDOS=SETDOS
+3 SETLOCAL=SETLOCAL
+3 SHIFT=SHIFT
+3 SHRALIAS=SHRALIAS
+3 START=START
+3 SWITCH=SWITCH
+3 TEE=TEE
+3 TEXT=TEXT
+3 TIME=TIME
+3 TIMER=TIMER
+3 TITLE=TITLE
+3 TOUCH=TOUCH
+3 TREE=TREE
+3 TYPE=TYPE
+3 UNALIAS=UNALIAS
+3 UNSET=UNSET
+3 VER=VER
+3 VERIFY=VERIFY
+3 VOL=VOL
+3 VSCRPUT=VSCRPUT
+3 WINDOW=WINDOW
+3 Y=Y
+;
+1 Aliases and Batch Files
+2 Aliases=ALIASES
+;
+2 Batch Files
+3 Batch File Overview=BATCH
+3 .BAT, .CMD, and .BTM Files=BATCHTYPE
+3 Echoing in Batch Files=BATCHECHO
+3 Batch File Parameters=BATCHPARMS
+3 Using Environment Variables=BATCHENV
+3 Batch File Commands=BATCHCMDS
+3 Interrupting a Batch File=BATCHINT
+3 Automatic Batch Files=AUTOBATCH
+3 Detecting 4NT=BATCHDETECT
+3 Using Aliases in Batch Files=BATCHALIAS
+3 Debugging Batch Files=BATCHDEBUG
+3 Batch File String Processing=BATCHSTRING
+3 Batch File Line Continuation=BATCHLINECONT
+3 Batch File Compression=BATCHCOMP
+3 Special Character Compatibility=COMPAT
+3 Command Parsing=PARSING
+3 Argument Quoting=QUOTING
+3 REXX Support=REXX
+3 EXTPROC Support=EXTPROC
+;
+1 The Environment
+2 Overview=ENVIRONMENT
+2 CDPATH=CDPATH
+2 CMDLINE=CMDLINE
+2 COLORDIR=COLORDIR_VAR
+2 COMSPEC=COMSPEC
+2 FILECOMPLETION=FILECOMP_VAR
+2 PATH=PATH_VAR
+2 PATHEXT=PATHEXT
+2 PROMPT=PROMPT_VAR
+;
+2 Internal Variables
+3 Overview=INTVARS
+3 ?  (exit code, last external program)=_QMARK
+3 _?  (exit code, last internal command)=__QMARK
+3 \=  (substitutes escape character)=EQUALS
+3 +  (substitutes command separator)=PLUS
+3 _4VER  (4NT version)=_4VER
+3 _ANSI  (ANSI status)=_ANSI
+3 _BATCH  (batch nesting level)=_BATCH
+3 _BATCHLINE  (line number in current batch file)=_BATCHLINE
+3 _BATCHNAME  (full name of current batch file)=_BATCHNAME
+3 _BG  (background color at cursor position)=_BG
+3 _BOOT  (boot drive letter)=_BOOT
+3 _CI  (insert mode cursor shape)=_CI
+3 _CMDPROC  (command processor name)=_CMDPROC
+3 _CO  (overstrike mode cursor shape)=_CO
+3 _CODEPAGE  (code page number)=_CODEPAGE
+3 _COLUMN  (cursor column)=_COLUMN
+3 _COLUMNS  (virtual screen width)=_COLUMNS
+3 _COUNTRY  (country code)=_COUNTRY
+3 _CPU  (CPU type)=_CPU
+3 _CWD  (current drive and directory)=_CWD
+3 _CWDS  (current drive and directory with trailing \)=_CWDS
+3 _CWP  (current directory)=_CWP
+3 _CWPS  (current directory with trailing \)=_CWPS
+3 _DATE  (current date)=_DATE
+3 _DAY  (day of current month)=_DAY
+3 _DISK  (current drive)=_DISK
+3 _DNAME  (description file name)=_DNAME
+3 _DOS  (operating system type)=_DOS
+3 _DOSVER  (operating system version)=_DOSVER
+3 _DOW  (alpha day of the week)=_DOW
+3 _DOWI  (numeric day of the week)= Sunday, 2 = Monday, etc.).=_DOWI
+3 _DOY  (numeric day of the year)=_DOY
+3 ERRORLEVEL  (exit code, last external program)=ERRORLEVEL
+3 _FG  (foreground color at cursor position)=_FG
+3 _HLOGFILE  (history log file name)=_HLOGFILE
+3 _HOUR  (hours in current time)=_HOUR
+3 _KBHIT  (test for keyboard input)=_KBHIT
+3 _LASTDISK  (last valid drive)=_LASTDISK
+3 _LOGFILE  (log file name)=_LOGFILE
+3 _MINUTE  (minutes in current time)=_MINUTE
+3 _MONTH  (month of current year)=_MONTH
+3 _MOUSE  (mouse driver flag)=_MOUSE
+3 _NDP  (coprocessor type)=_NDP
+3 _PID  (4NT process ID)=_PID
+3 _PIPE  (test for piped input)=_PIPE
+3 _ROW  (cursor row)=_ROW
+3 _ROWS  (screen height)=_ROWS
+3 _SECOND  (seconds in current time)=_SECOND
+3 _SHELL  (4NT shell level)=_SHELL
+3 _SYSERR  (last Windows error code)=_SYSERR
+3 _TIME  (current time)=_TIME
+3 _TRANSIENT  (transient shell flag)=_TRANSIENT
+3 _WINDIR  (Windows NT directory)=_WINDIR
+3 _WINSYSDIR  (Windows NT system directory)=_WINSYSDIR
+3 _WINTITLE  (current window title)=_WINTITLE
+3 _WINVER  (Windows version)=_WINVER
+3 _YEAR  (current 4-digit year)=_YEAR
+;
+2 Variable Functions
+3 Overview=VARFUNCS
+3 @ALIAS  (value of an alias)=F_ALIAS
+3 @ALTNAME  (short name for a file)=F_ALTNAME
+3 @ASCII  (numeric ASCII value for a character)=F_ASCII
+3 @ATTRIB  (file attributes)=F_ATTRIB
+3 @CDROM  (CD-ROM drive detection)=F_CDROM
+3 @CHAR  (character value for numeric ASCII)=F_CHAR
+3 @CLIP  (lines from the clipboard)=F_CLIP
+3 @COMMA  (insert commas)=F_COMMA
+3 @CONVERT  (convert between numeric bases)=F_CONVERT
+3 @DATE  (date to number of days)=F_DAY
+3 @DAY  (day of month for a date)=F_DATE
+3 @DEC  (decremented value of a variable)=F_DEC
+3 @DESCRIPT  (file description)=F_DESCRIPT
+3 @DEVICE  (character device detection)=F_DEVICE
+3 @DISKFREE  (free disk space)=F_DISKFREE
+3 @DISKTOTAL  (total disk space)=F_DISKTOTAL
+3 @DISKUSED  (used disk space)=F_DISKUSED
+3 @DOSMEM  (size of largest free memory block)=F_DOSMEM
+3 @DOW  (day of week for a date)=F_DOW
+3 @DOWI  (day of week as integer)==F_DOWI
+3 @DOY  (day of year for a date)=F_DOY
+3 @EVAL  (arithmetic calculations)=F_EVAL
+3 @EXEC  (execute a command)=F_EXEC
+3 @EXECSTR  (execute a command and return output)=F_EXECSTR
+3 @EXPAND  (wildcard filename matching)=F_EXPAND
+3 @EXT  (file extension)=F_EXT
+3 @FILEAGE  (file age -- date and time)=F_FILEAGE
+3 @FILECLOSE  (close a file)=F_FILECLOSE
+3 @FILEDATE  (file date)=F_FILEDATE
+3 @FILENAME  (file name and extension)=F_FILENAME
+3 @FILEOPEN  (open a file)=F_FILEOPEN
+3 @FILEREAD  (read a line from a file)=F_FILEREAD
+3 @FILES  (count files matching a wildcard)=F_FILES
+3 @FILESEEK  (move a file pointer)=F_FILESEEK
+3 @FILESEEKL  (move a file pointer to a line)=F_FILESEEKL
+3 @FILESIZE  (size of files matching a wildcard)=F_FILESIZE
+3 @FILETIME  (file time)=F_FILETIME
+3 @FILEWRITE  (write text to a file)=F_FILEWRITE
+3 @FILEWRITEB  (write data to a file)=F_FILEWRITEB
+3 @FINDCLOSE  (close a search handle)=F_FINDCLOSE
+3 @FINDFIRST  (find first matching file)=F_FINDFIRST
+3 @FINDNEXT  (find next matching file)=F_FINDNEXT
+3 @FORMAT  (reformat a string)=F_FORMAT
+3 @FSTYPE  (file system type)=F_FSTYPE
+3 @FULL  (file name with path)=F_FULL
+3 @IF  (evaluate an expression)=F_IF
+3 @INC  (incremented value of a variable)=F_INC
+3 @INDEX  (position of one string in another)=F_INDEX
+3 @INIREAD  (read from an .INI file)=F_INIREAD
+3 @INIWRITE  (write to an .INI file)=F_INIWRITE
+3 @INSERT  (insert string1 into string2)=F_INSERT
+3 @INSTR  (substring)=F_INSTR
+3 @INT  (integer part of a number)=F_INT
+3 @LABEL  (volume label)=F_LABEL
+3 @LEFT  (leftmost characters of string)=F_LEFT
+3 @LEN  (length of a string)=F_LEN
+3 @LFN  (long name for a short filename)=F_LFN
+3 @LINE  (read a line from a file)=F_LINE
+3 @LINES  (count lines in a file)=F_LINES
+3 @LOWER  (convert string to lower case)=F_LOWER
+3 @MAKEAGE  (date to file timestamp)=F_MAKEAGE
+3 @MAKEDATE  (date to number of days)=F_MAKEDATE
+3 @MAKETIME  (time to number of seconds)=F_MAKETIME
+3 @MONTH  (month for a date)=F_MONTH
+3 @NAME  (file name only)=F_NAME
+3 @NUMERIC  (test if string is numeric)=F_NUMERIC
+3 @PATH  (file path without name)=F_PATH
+3 @RANDOM  (random integer)=F_RANDOM
+3 @READSCR  (characters from the screen)=F_READSCR
+3 @READY  (drive ready status)=F_READY
+3 @REMOTE  (network drive detection)=F_REMOTE
+3 @REMOVABLE  (removable drive detection)=F_REMOVABLE
+3 @REPEAT  (repeated character)=F_REPEAT
+3 @REPLACE  (replace one string within another)=F_REPLACE
+3 @REXX  (execute REXX expression)=F_REXX
+3 @RIGHT  (rightmost characters of string)=F_RIGHT
+3 @SEARCH  (path search)=F_SEARCH
+3 @SELECT  (menu selection)=F_SELECT
+3 @SFN  (short name for a long filename)=F_SFN
+3 @STRIP  (strips characters from a string)=F_STRIP
+3 @SUBSTR  (substring)=F_SUBSTR
+3 @TIME  (time to number of seconds)=F_TIME
+3 @TIMER  (split time from timer)=F_TIMER
+3 @TRIM  (remove blanks from a string)=F_TRIM
+3 @UNIQUE  (create file with unique name)=F_UNIQUE
+3 @UPPER  (convert string to upper case)=F_UPPER
+3 @WILD  (compare strings using wildcards)=F_WILD
+3 @WORD  (extract a word from a string)=F_WORD
+3 @WORDS  (count words in a string)=F_WORDS
+3 @YEAR  (return year for date)=F_YEAR
+;
+1 Configuring 4NT
+;
+2 .INI File Overview=INIFILE
+2 Using the .INI File
+3 Modifying the .INI File=INIMODIFY
+3 Using the .INI File=INIUSING
+3 .INI File Sections=INISECTIONS
+3 .INI File Examples=INIEXAMPLES
+;
+2 .INI File Directives
+3 Directives Overview=INIDIRECTIVES
+;
+3 Initialization
+4 Initialization Directives=INIINIT
+4 4StartPath  (path for 4START and 4EXIT)=INI_4STARTPATH
+4 DirHistory  (size of directory history)=INI_DIRHISTORY
+4 DuplicateBugs  (emulate CMD.EXE bugs)=INI_DUPLICATEBUGS
+4 History  (size of history list)=INI_HISTORY
+4 INIQuery  (query each line in 4NT.INI)=INI_INIQUERY
+4 LocalAliases  (local vs. global aliases)=INI_LOCALALIASES
+4 LocalDirHistory  (local vs. global directory history)=INI_LOCALDIRHISTORY
+4 LocalHistory  (local vs. global history)=INI_LOCALHISTORY
+4 PauseOnError  (pause on errors in 4NT.INI)=INI_PAUSEONERROR
+4 TreePath  (path for directory search database)=INI_TREEPATH
+4 WindowState  (initial state of 4NT window)=INI_WINDOWSTATE
+4 WindowX  (position of 4NT window)=INI_WINDOWX
+4 WindowY  (position of 4NT window)=INI_WINDOWX
+4 WindowWidth  (size of 4NT window)=INI_WINDOWX
+4 WindowHeight  (size of 4NT window)=INI_WINDOWX
+;
+3 Configuration
+4 Configuration Directives=INICONFIG
+4 AmPm  (time display format)=INI_AMPM
+4 AppendToDir  ("\" on directories in filename completion)=INI_APPENDTODIR
+4 BatchEcho  (default batch echo state)=INI_BATCHECHO
+4 BeepFreq  (default beep frequency)=INI_BEEPFREQ
+4 BeepLength  (default beep length)=INI_BEEPLENGTH
+4 CDDWinLeft  (position of directory search window)=INI_CDDWIN
+4 CDDWinTop  (position of directory search window)=INI_CDDWIN
+4 CDDWinWidth  (size of directory search window)=INI_CDDWIN
+4 CDDWinHeight  (size of directory search window)=INI_CDDWIN
+4 CommandSep  (command separator)=INI_COMMANDSEP
+4 CursorIns  (insert mode cursor width)=INI_CURSORINS
+4 CursorOver  (overstrike mode cursor width)=INI_CURSOROVER
+4 DecimalChar  (decimal separator)=INI_DECIMALCHAR
+4 DescriptionMax  (max length of file descriptions)=INI_DESCRIPTIONMAX
+4 DescriptionName  (description file name)=INI_DESCRIPTIONNAME
+4 Descriptions  (enable description processing)=INI_DESCRIPTIONS
+4 EditMode  (insert / overstrike mode)=INI_EDITMODE
+4 EscapeChar  (escape character)=INI_ESCAPECHAR
+4 EvalMax  (@EVAL max precision)=INI_EVALMAX
+4 EvalMin  (@EVAL min precision)=INI_EVALMIN
+4 ExecWait  (wait for external programs)=INI_EXECWAIT
+4 FileCompletion  (files selected for file completion)=INI_FILECOMPLETION
+4 FuzzyCD  (extended directory search mode)=INI_FUZZYCD
+4 HistCopy  (copy commands to end of history)=INI_HISTCOPY
+4 HistLogName  (history log file name)=INI_HISTLOGNAME
+4 HistMin  (min command length to save)=INI_HISTMIN
+4 HistMove  (move commands to end of history)=INI_HISTMOVE
+4 HistWrap  (wrap command history)=INI_HISTWRAP
+4 ListRowStart  (starting row number for LIST and FFIND)=INI_LISTROWSTART
+4 LogName  (log file name)=INI_LOGNAME
+4 NoClobber  (protect redirected output files)=INI_NOCLOBBER
+4 ParameterChar  (parameter character)=INI_PARAMETERCHAR
+4 PathExt  (enable or disable the PATHEXT variable)=INI_PATHEXT
+4 PopupWinLeft  (position of popup windows)=INI_POPUPWIN
+4 PopupWinTop  (position of popup windows)=INI_POPUPWIN
+4 PopupWinWidth  (size of popup windows)=INI_POPUPWIN
+4 PopupWinHeight  (size of popup windows)=INI_POPUPWIN
+4 Printer  (LIST print device)=INI_PRINTER
+4 ScreenRows  (screen height)=INI_SCREENROWS
+4 TabStops  (output tab positions)=INI_TABSTOPS
+4 ThousandsChar  (thousands separator)=INI_THOUSANDSCHAR
+4 UnixPaths  (enable or disable forward slash in command paths)=INI_UNIXPATHS
+4 UpperCase  (force file names to upper case)=INI_UPPERCASE
+;
+3 Color
+4 Color Directives=INICOLOR
+4 CDDWinColors  (directory change window colors)=INI_CDDWINCOLORS
+4 ColorDir  (directory colors)=INI_COLORDIR
+4 InputColors  (input colors)=INI_INPUTCOLORS
+4 ListboxBarColors  (light bar color in list boxes)=INI_LISTBOXBARCOLORS
+4 ListColors  (LIST colors)=INI_LISTCOLORS
+4 ListStatBarColors  (LIST status bar colors)=INI_LISTSTATBARCOLORS
+4 PopupWinColors  (popup window colors)=INI_POPUPWINCOLORS
+4 SelectColors  (SELECT colors)=INI_SELECTCOLORS
+4 SelectStatBarColors  (SELECT status bar colors)=INI_SELECTSTATBARCOLORS
+4 StdColors  (standard colors)=INI_STDCOLORS
+;
+3 Key Mapping
+4 Key Mapping Directives=INIKEYMAP
+;
+4 General Input Keys
+5 Overview=INIGENKEYS
+5 Backspace  (deletes character to left of cursor)=INI_BACKSPACE
+5 BeginLine  (move cursor to start of line)=INI_BEGINLINE
+5 Del  (delete character at cursor)=INI_DEL
+5 DelToBeginning  (delete to start of line)=INI_DELTOBEGINNING
+5 DelToEnd  (delete to end of line)=INI_DELTOEND
+5 DelWordLeft  (delete word to left)=INI_DELWORDLEFT
+5 DelWordRight  (delete word to right )=INI_DELWORDRIGHT
+5 Down  (move cursor or scroll down)=INI_DOWN
+5 EndLine  (move cursor to end of line)=INI_ENDLINE
+5 EraseLine  (delete entire line)=INI_ERASELINE
+5 ExecLine  (execute or accept line)=INI_EXECLINE
+5 Ins  (toggle insert / overstrike)=INI_INS
+5 Left  (move cursor or scroll left)=INI_LEFT
+5 NormalKey  (deassign a key)=INI_NORMALKEY
+5 Right  (move cursor or scroll right)=INI_RIGHT
+5 Up  (move cursor or scroll up)=INI_UP
+5 WordLeft  (move left one word)=INI_WORDLEFT
+5 WordRight  (move right one word)=INI_WORDRIGHT
+;
+4 Command-Line Editing Keys
+5 Overview=INIEDITKEYS
+5 AddFile  (keep filename and add another)=INI_ADDFILE
+5 AliasExpand  (expand an alias)=INI_ALIASEXPAND
+5 CommandEscape  (direct entry of a keystroke)=INI_COMMANDESCAPE
+5 DelHistory  (delete history list entry)=INI_DELHISTORY
+5 EndHistory  (last entry in history list)=INI_ENDHISTORY
+5 Help  (invokes help system)=INI_HELP
+5 LFNToggle  (toggle between long and short filenames)=INI_LFNTOGGLE
+5 NextFile  (get next matching filename)=INI_NEXTFILE
+5 NextHistory  (recall next command)=INI_NEXTHISTORY
+5 NormalEditKey  (deassign command-line editing key)=INI_NORMALEDITKEY
+5 PopFile  (open filename completion window)=INI_POPFILE
+5 PrevFile  (get previous matching filename)=INI_PREVFILE
+5 PrevHistory  (recall previous command)=INI_PREVHISTORY
+5 SaveHistory  (save command line)=INI_SAVEHISTORY
+;
+4 Popup Window Keys
+5 Overview=INIPOPUPWINKEYS
+;
+5 DirWinOpen  (open directory history )=INI_DIRWINOPEN
+5 HistWinOpen  (open command history)=INI_HISTWINOPEN
+5 NormalHWinKey  (deassign popup window key)=INI_NORMALHWINKEY
+5 PopupWinBegin  (first line of popup window)=INI_POPUPWINBEGIN
+5 PopupWinDel  (delete line in popup window)=INI_POPUPWINDEL
+5 PopupWinEdit  (move line from popup window to prompt)=INI_POPUPWINEDIT
+5 PopupWinEnd  (move to end of popup window)=INI_POPUPWINEND
+5 PopupWinExec  (select current item in popup window)=INI_POPUPWINEXEC
+;
+4 LIST Keys
+5 Overview=INILISTKEYS
+5 ListExit  (exit current file)=INI_LISTEXIT
+5 ListFind  (search for a string)=INI_LISTFIND
+5 ListFindReverse  (search backwards)=INI_LISTFINDREVERSE
+5 ListHex  (toggle hex display mode)=INI_LISTHEX
+5 ListHighBit  (toggle "strip high bit" option)=INI_LISTHIGHBIT
+5 ListInfo  (information about current file)=INI_LISTINFO
+5 ListNext  (find next matching string)=INI_LISTNEXT
+5 ListPrevious  (find previous matching string=INI_LISTPREVIOUS
+5 ListPrint  (print file)=INI_LISTPRINT
+5 ListWrap  (toggle wrap option)=INI_LISTWRAP
+5 NormalListKey  (deassign LIST key)=INI_NORMALLISTKEY
+;
+3 Advanced Directives
+4 Overview=INIADV
+4 ClearKeyMap  (clear default key mappings)=INI_CLEARKEYMAP
+4 Include  (include text in .INI file)=INI_INCLUDE
+4 NextINIFile  (Set secondary shell .INI file name)=INI_NEXTINIFILE
+;
+1 Setup and Troubleshooting
+;
+;2 Starting 4NT
+2 Startup=STARTUP
+;3 Startup=STARTUP
+;3 Command Line Options=CMDLINEOPTS
+;
+;following line is decremented one level extra due to WINHELP bug
+1 The 4NT Help System=HELPSYS
+;
+2 Error Messages
+3 A=ERR_A
+3 B=ERR_B
+3 C=ERR_C
+3 D=ERR_D
+3 E=ERR_E
+3 F=ERR_F
+3 G=ERR_G
+3 I=ERR_I
+3 K=ERR_K
+3 L=ERR_L
+3 M=ERR_M
+3 N=ERR_N
+3 O=ERR_O
+3 P=ERR_P
+3 Q=ERR_Q
+3 R=ERR_R
+3 S=ERR_S
+3 T=ERR_T
+3 U=ERR_U
+3 V=ERR_V
+3 W=ERR_W
+;
+2 Troubleshooting, Service, and Support
+3 Troubleshooting and Service Overview=SUPPORT
+3 Technical Support=TECHSUP
+3 Contacting JP Software=CONTACTJPS
+;
+1 What's New?
+2 Overview and Major New Features=WHATSNEW
+2 General Features and Enhancements=NEWGEN
+2 Command Line Editing=NEWCMDLINE
+2 Command Changes=NEWCOMMANDS
+2 Startup and Configuration=NEWSTARTUP
+2 Variables and Functions=NEWVARS
+2 Technical and Compatibility Enhancements=NEWCOMPAT
+2 Bugs Fixed=NEWBUGS
+;
+1 Reference Information
+;
+2 File Systems and File Name Conventions
+3 Overview of File Systems and File Names=FILESYSREF
+3 Drives and Volumes=DRIVEVOL
+3 File Systems=FILESYS
+3 Directories and Subdirectories=DIRECTORIES
+3 File Names=FILENAMES
+3 File Attributes and Time Stamps=FILEATTR
+;
+2 Miscellaneous Reference Information
+3 Colors and Color Names=COLORS
+3 Keys and Key Names=KEYNAMES
+3 Popup Windows=POPUPWINDOWS
+3 Executable Files and File Searches=EXESEARCH
+;
+2 Reference Tables
+3 ASCII and Key Codes Overview=CODESREF
+3 ASCII Tables=ASCII
+3 Key Codes and Scan Codes Table=KEYSCAN
+3 Key Codes and Scan Codes Explanation=KEYSCANEXPL
+;
+2 Glossary
+3 4=GLOSS_4
+3 A=GLOSS_A
+3 B=GLOSS_B
+3 C=GLOSS_C
+3 D=GLOSS_D
+3 E=GLOSS_E
+3 F=GLOSS_F
+3 G=GLOSS_G
+3 H=GLOSS_H
+3 I=GLOSS_I
+3 K=GLOSS_K
+3 L=GLOSS_L
+3 M=GLOSS_M
+3 N=GLOSS_N
+3 O=GLOSS_O
+3 P=GLOSS_P
+3 R=GLOSS_R
+3 S=GLOSS_S
+3 T=GLOSS_T
+3 U=GLOSS_U
+3 V=GLOSS_V
+3 W=GLOSS_W
+3 X=GLOSS_X

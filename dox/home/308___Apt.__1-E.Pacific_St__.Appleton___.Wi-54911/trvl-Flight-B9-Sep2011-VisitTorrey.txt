@@ -1,0 +1,19 @@
+[pip@AkuB8IMNmi~]$ cal -3
+                            2011
+        July                 August              September      
+Su Mo Tu We Th Fr Sa  Su Mo Tu We Th Fr Sa  Su Mo Tu We Th Fr Sa
+                1  2      1  2  3  4  5  6               1  2  3
+ 3  4  5  6  7  8  9   7  8  9 10 11 12 13   4  5  6  7  8  9 10
+10 11 12 13 14 15 16  14 15 16 17 18 19 20  11 12 13 14 15 16 17
+17 18 19 20 21 22 23  21 22 23 24 25 26 27  18 19 20 21 22 23 24
+24 25 26 27 28 29 30  28 29 30 31           25 26 27 28 29 30   
+31
+
+Torrey just called && we've planned to maybe have me fly out to PalmSprings
+on a Saturday evening arriving after 8:30pm && then get dropped off at the
+airport the following Wednesday before 10am to fit around his work schedule.
+Under consideration are: Sat. September 17th through Wed. the 21st &&
+                         Sat. September 24th through Wed. the 28th.
+
+Should probably look for available flights && text or e-mail to coordinate
+soon.

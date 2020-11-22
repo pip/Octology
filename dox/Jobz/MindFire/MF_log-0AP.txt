@@ -1,0 +1,55 @@
+Stuff done:
+    Went over more PnGC stuff
+
+    Julia explained some of the procedure to create new PnGC sites like
+     the database fields and common Dfalt values for certain potentially
+     cryptic fields.  She gave a vague description of differing
+     API_version(s) like MerchantTrust (MT), LinkPoint (LP), && PayReady
+     (PR) which each need different fields.  Apparently LinkPoint is the
+     most difficult or most valuable for instruction because Julia
+     ignored the other version types.
+    *NOTE* it seems verSion is spelled verGion in the table.
+        -Each new merchant gets their own database.
+        -Important table for the scripts in each db is order_process.
+        -Code in /var/www/cgi-bin/PnGC/plugin/Cart/ on quark
+        -Each merchant gets a .pem file in $path/LinkPointAPI/certs/
+        -All changes must be done to live database
+        -No data staging && testing can be done on helium (Why not?)
+
+    Julia wanted me to make seiko.pem according to the above stuff.  She
+     didn't mention that she needed it immediately because it was
+     supposed to be done by the end of the day (which was less than an
+     hour from our meeting).  She ended up doing it since I was unaware
+     of the time sensitivity and unable to complete it before 5pm.
+
+    Julia emailed me the tab-delimited file for Expanets && a
+     description of the manual method for creating new PnGS sites.
+
+    I tried to grok her mail && find a script to pattern my database
+     manipulations after.
+
+    I got a key and lerned the security code today. =)
+
+ToDo:
+    Get right database info && procedures for Expanets site making
+     (mk_sites.pl).
+
+    Lern and code the site maker right... && test
+
+    Keep logging this journal && try to come in by noon every day...
+    I thinq I can, I thinq I can... =)
+
+Thots:
+    I'm not sure if Julia is just too stressed to be very helpful but
+     she seems to answer a lot of my questions with "you can't do that"
+     or "you must lern that on your own" and nothing more.  Since she is
+     the main person whom I've been in contact with so far and probably
+     the main person I should be trying to relieve stress and
+     responsibility from, these answers make it significantly more
+     difficult for me since there doesn't seem to be much help elsewhere.
+
+    I hope I can design and code something big soon.  This is where I
+     feel I'm most capable && experienced.  I could probably oversee
+     projects to an extent but I've never been responsible for such a
+     situation so I'm not sure how easily I'd be able to handle it.
+

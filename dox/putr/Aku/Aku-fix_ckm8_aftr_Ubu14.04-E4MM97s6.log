@@ -1,0 +1,9 @@
+# new ncurses after Ubuntu 14.04 dist-upgrade required:
+pmei CPAN
+pmei Curses
+# and for SDL
+cpan
+force install Alien::SDL
+force install        SDL
+quit
+# which re-enabled d8ok && ckm8 to run normally again

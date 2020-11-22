@@ -1,0 +1,213 @@
+HTTP 200 Document follows
+Date: Wed, 14 Feb 2001 12:46:44 GMT
+Server: NCSA/1.5.1
+Last-modified: Sat, 29 Aug 1998 09:05:08 GMT
+Content-type: text/html
+Content-length: 7116
+
+<HTML>
+  <HEAD><TITLE>has_colors.3</TITLE></HEAD>
+
+  <BODY>
+    <PRE>
+
+
+
+<A HREF=/manpages/c/curs_color.3.html>curs_color(3)</A>							<A HREF=/manpages/c/curs_color.3.html>curs_color(3)</A>
+
+
+
+NAME
+
+  curs_color, start_color, init_pair, init_color, has_colors,
+  can_change_color, color_content, pair_content, COLOR_PAIR, COLOR_PAIRS,
+  COLORS, PAIR_NUMBER -	Curses color-manipulation routines and variables
+
+LIBRARY
+
+  Curses Library (libcurses.a, libcurses.so)
+
+SYNOPSIS
+
+  # include <curses.h>
+
+  int start_color(void);
+  int init_pair(short pair, short f,
+	  short	b);
+  int init_color(short color, short r,
+	  short	g, short b);
+  bool has_colors(void);
+  bool can_change_color(void);
+  int color_content(short color, short *r,
+	  short	*g, short *b);
+  int pair_content(short pair, short *f,
+	  short	*b);
+  int COLOR_PAIR(int n);
+  int PAIR_NUMBER(int value);
+
+STANDARDS
+
+  Interfaces documented	on this	reference page conform to industry standards
+  as follows:
+
+  start_color, init_pair, init_color, has_colors, can_change_color,
+  color_content, pair_content, COLOR_PAIR, PAIR_NUMBER:	  XPG4-UNIX
+
+  Refer	to the <A HREF=/manpages/s/standards.5.html>standards(5)</A> reference page for more information	about indus-
+  try standards	and associated tags.
+
+DESCRIPTION
+
+  The Curses library includes routines that manipulate color-on-color
+  alphanumeric terminals.  To use these	routines, applications must call
+  start_color, usually right after initscr.  Colors are	always used in pairs
+  (referred to as color-pairs).	 A color-pair consists of a foreground color
+  (for characters) and a background color (for the field on which the charac-
+  ters are displayed).	An application calls init_pair to initialize a
+  color-pair.  After the color-pair is initialized, applications can call
+  COLOR_PAIR(n)	to use color attributes.
+
+  If a terminal	is capable of redefining colors, applications can use the
+  routine init_color to	change the definition of a color.  The routines
+  has_colors and can_change_color return TRUE or FALSE,	depending on whether
+  the terminal has color capabilities and whether the application can change
+  the colors.  The routine color_content allows	an application to identify
+  the amounts of red, green, and blue components in an initialized color.
+  The routine pair_content allows the application to find out how a given
+  color-pair is	currently defined.
+
+  Routine Descriptions
+
+
+  The start_color routine requires no arguments.  It must be called if the
+  application uses colors, and before the application calls any	other color
+  manipulation routine.	 It is good practice to	call this routine right	after
+  initscr.  The	start_color routine initializes	eight basic colors (black,
+  red, green, yellow, blue, magenta, cyan, and white) and two global vari-
+  ables	(COLORS	and COLOR_PAIRS, which respectively define the maximum number
+  of colors and	color-pairs the	terminal can support).	The start_color	rou-
+  tine also restores the colors	on the terminal	to the values they had when
+  the terminal was turned on.
+
+  The init_pair	routine	changes	the definition of a color-pair.	 This routine
+  takes	three arguments	that are identification	numbers	for the	following:
+
+    o  The color-pair to be changed
+
+    o  The foreground color
+
+    o  The background color
+
+  The value of the first argument must be between 1 and	the smaller of either
+  63 or	COLOR_PAIRS-1.	The values of the second and third arguments must be
+  between 0 and	COLORS.	 If the	color-pair was previously initialized, the
+  screen is refreshed and all occurrences of that color-pair are changed to
+  the new definition.
+
+  The init_color routine changes the definition	of a color.  This routine
+  takes	four arguments:	the number of the color	to be changed followed by
+  three	RGB values (for	the amounts of red, green, and blue components,
+  respectively).  The value of the first argument must be between 0 and
+  COLORS.  (See	the subsection Colors for the default color index.) Each of
+  the last three arguments must	be a value between 0 and 1000.	When
+  init_color is	used, all occurrences of that color on the screen immediately
+  change to the	new definition.
+
+  The has_colors routine requires no arguments.	 It returns TRUE if the	ter-
+  minal	can manipulate colors; otherwise, the routine returns FALSE.  This
+  routine facilitates writing terminal-independent programs.  For example, a
+  programmer can use it	to decide whether to use color or some other video
+  attribute.
+
+  The can_change_color routine requires	no arguments.  It returns TRUE if the
+  terminal supports colors and can change their	definitions; otherwise,	the
+  routine returns FALSE.  This routine facilitates writing terminal-
+  independent programs.
+
+  The color_content routine gives users	a way to find the intensity of the
+  red, green, and blue (RGB) components	in a color.  This routine requires
+  four arguments: the color number, and	three addresses	(of short data type)
+  for storing the information about the	amounts	of red,	green, and blue	com-
+  ponents in the given color.  The value of the	first argument must be
+  between 0 and	COLORS.	 The values that are stored at the addresses pointed
+  to by	the last three arguments are between 0 (no component) and 1000 (max-
+  imum amount of component).
+
+  The pair_content routine allows users	to find	out which colors a given
+  color-pair consists of.  This	routine	requires three arguments: the color-
+  pair number, and two addresses (of short data	type) for storing the numbers
+  for the foreground and background colors.  The value of the first argument
+  must be between 1 and	the smaller of 63 or COLOR_PAIRS-1.  The values	that
+  are stored at	the addresses pointed to by the	second and third arguments
+  are between 0	and COLORS.
+
+
+  The COLOR_PAIR(n) macro returns the value of the color-pair whose number is
+  n.  This value is the	color attribute	as it would be extracted from a
+  chtype variable.  Conversely,	the macro PAIR_NUMBER(value) returns the
+  number of the	color-pair associated with the color attribute value.
+
+  Colors
+
+
+  In curses.h, the following macros are	defined.  These	are the	default
+  colors.  Curses also assumes that COLOR_BLACK	is the default background
+  color	for all	terminals.
+
+       COLOR_BLACK
+       COLOR_RED
+       COLOR_GREEN
+       COLOR_YELLOW
+       COLOR_BLUE
+       COLOR_MAGENTA
+       COLOR_CYAN
+       COLOR_WHITE
+
+NOTES
+
+  The header file curses.h automatically includes the header file stdio.h.
+
+  Note that COLOR_PAIR and PAIR_NUMBER may be macros.
+
+RETURN VALUES
+
+  The COLOR_PAIR, PAIR_NUMBER, can_change_color, and has_colors	routines
+  return values	as indicated in	the DESCRIPTION.
+
+  All other routines return ERR	upon failure and OK upon successful comple-
+  tion.
+
+RELATED	INFORMATION
+
+  Functions: <A HREF=/manpages/c/curses.3.html>curses(3)</A>,	<A HREF=/manpages/c/curs_attr_get.3.html>curs_attr_get(3)</A>, <A HREF=/manpages/c/curs_initscr.3.html>curs_initscr(3)</A>
+
+  Others: <A HREF=/manpages/s/standards.5.html>standards(5)</A>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   </PRE>
+  </BODY>
+</HTML>

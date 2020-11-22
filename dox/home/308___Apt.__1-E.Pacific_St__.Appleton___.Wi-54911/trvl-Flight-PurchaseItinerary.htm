@@ -1,0 +1,1180 @@
+
+<html>
+<head>
+	<title>Flight Purchase Confirmation</title>
+	<script type="text/javascript" language="JavaScript" src="/include/browser_detect.js"></script>
+<script type="text/javascript" language="JavaScript">
+<!--
+// popup for help section
+function popUp(page) {		
+	if (navigator.appName == 'Netscape') {			 	
+	window.open('/help/'+page+'.jsp','popup','width=420,height=400,resizable=yes,menubar=no,status=no,scrollbars=yes,toolbar=no,directories=no,location=no,screenX=0,screenY=0');
+	}	
+	
+    else if (navigator.appName == 'Microsoft Internet Explorer') {
+	window.open('/help/'+page+'.jsp','popup','width=420,height=400,resizable=yes,menubar=no,status=no,scrollbars=yes,toolbar=no,directories=no,location=no,top=0,left=0');
+	}
+ 	
+	else {
+	window.open('/help/'+page+'.jsp','popup','width=420,height=400,resizable=yes,menubar=no,status=no,scrollbars=yes,toolbar=no,directories=no,location=no,top=0,left=0');
+	}
+    return false;
+}
+
+
+function popUpCal() {		
+	if (navigator.appName == 'Netscape') {			 	
+	window.open('http://res.nwa.com/App/ViewHome?view=calendar&cache=1078130022080&requestId=384','calendar','width=200,height=330,resizable=yes,menubar=no,status=no,scrollbars=no,toolbar=no,directories=no,location=no,screenX=0,screenY=0');
+	}	
+	
+    else if (navigator.appName == 'Microsoft Internet Explorer') {
+	window.open('http://res.nwa.com/App/ViewHome?view=calendar&cache=1078130022081&requestId=385','calendar','width=200,height=330,resizable=yes,menubar=no,status=no,scrollbars=no,toolbar=no,directories=no,location=no,top=0,left=0');
+	}
+ 	
+	else {
+	window.open('http://res.nwa.com/App/ViewHome?view=calendar&cache=1078130022082&requestId=386','calendar','width=200,height=330,resizable=yes,menubar=no,status=no,scrollbars=no,toolbar=no,directories=no,location=no,top=0,left=0');
+	}
+    return false;
+}
+
+function popUpAirCode(page) {		
+	if (navigator.appName == 'Netscape') {			 	
+	window.open('/flight/'+page+'.jsp','airportcode','width=600,height=725,resizable=yes,menubar=no,status=no,scrollbars=yes,toolbar=no,directories=no,location=no,screenX=0,screenY=0');
+	}	
+	
+    else if (navigator.appName == 'Microsoft Internet Explorer') {
+	window.open('/flight/'+page+'.jsp','airportcode','width=600,height=725,resizable=yes,menubar=no,status=no,scrollbars=yes,toolbar=no,directories=no,location=no,top=0,left=0');
+	}
+ 	
+	else {
+	window.open('/flight/'+page+'.jsp','airportcode','width=600,height=725,resizable=yes,menubar=no,status=no,scrollbars=yes,toolbar=no,directories=no,location=no,top=0,left=0');
+	}
+    return false;
+}
+function popUpHotel() {		
+	if (navigator.appName == 'Netscape') {			 	
+	window.open('http://res.nwa.com/App/ViewHotelAmenitiesKey?cache=1078130022083&requestId=387','hotel','width=420,height=510,resizable=yes,menubar=no,status=no,scrollbars=yes,toolbar=no,directories=no,location=no,screenX=0,screenY=0');
+	}	
+	
+    else if (navigator.appName == 'Microsoft Internet Explorer') {
+	window.open('http://res.nwa.com/App/ViewHotelAmenitiesKey?cache=1078130022084&requestId=388','hotel','width=420,height=510,resizable=yes,menubar=no,status=no,scrollbars=no,toolbar=no,directories=no,location=no,top=0,left=0');
+	}
+ 	
+	else {
+	window.open('http://res.nwa.com/App/ViewHotelAmenitiesKey?cache=1078130022085&requestId=389','hotel','width=420,height=510,resizable=yes,menubar=no,status=no,scrollbars=no,toolbar=no,directories=no,location=no,top=0,left=0');
+	}
+    return false;
+}
+
+function popUpReg(page) {		
+	if (navigator.appName == 'Netscape') {			 	
+	window.open('/App/registration/'+page+'.jsp','popup','width=550,height=500,resizable=yes,menubar=no,status=no,scrollbars=yes,toolbar=no,directories=no,location=no,screenX=0,screenY=0');
+	}	
+	
+    else if (navigator.appName == 'Microsoft Internet Explorer') {
+	window.open('/App/registration/'+page+'.jsp','popup','width=550,height=500,resizable=yes,menubar=no,status=no,scrollbars=yes,toolbar=no,directories=no,location=no,top=0,left=0');
+	}
+ 	
+	else {
+	window.open('/App/registration/'+page+'.jsp','popup','width=550,height=500,resizable=yes,menubar=no,status=no,scrollbars=yes,toolbar=no,directories=no,location=no,top=0,left=0');
+	}
+    return false;
+}
+function popUpRegAnchor(page) {		
+	if (navigator.appName == 'Netscape') {			 	
+	window.open('/registration/'+page,'popup','width=550,height=500,resizable=yes,menubar=no,status=no,scrollbars=yes,toolbar=no,directories=no,location=no,screenX=0,screenY=0');
+	}	
+	
+    else if (navigator.appName == 'Microsoft Internet Explorer') {
+	window.open('/registration/'+page,'popup','width=550,height=500,resizable=yes,menubar=no,status=no,scrollbars=yes,toolbar=no,directories=no,location=no,top=0,left=0');
+	}
+ 	
+	else {
+	window.open('/registration/'+page,'popup','width=550,height=500,resizable=yes,menubar=no,status=no,scrollbars=yes,toolbar=no,directories=no,location=no,top=0,left=0');
+	}
+    return false;
+}
+
+
+function popUpPrintItinerary(page) {		
+	if (navigator.appName == 'Netscape') {			 	
+	window.open(page,'popup','width=575,height=700,resizable=yes,menubar=yes,status=no,scrollbars=yes,toolbar=no,directories=no,location=no,screenX=0,screenY=0');
+	}	
+    else if (navigator.appName == 'Microsoft Internet Explorer') {
+	window.open(page,'popup','width=575,height=700,resizable=yes,menubar=yes,status=no,scrollbars=yes,toolbar=no,directories=no,location=no,top=0,left=0');
+	}
+	else {
+	window.open(page,'popup','width=575,height=700,resizable=yes,menubar=yes,status=no,scrollbars=yes,toolbar=no,directories=no,location=no,top=0,left=0');
+	}
+    return false;
+}
+
+function popUpSeatMap(page) {
+	if (navigator.appName == 'Netscape') {			 	
+	window.open(page,'popup','width=550,height=650,resizable=yes,menubar=no,status=no,scrollbars=yes,toolbar=no,directories=no,location=no,screenX=0,screenY=0');
+	}	
+	
+    else if (navigator.appName == 'Microsoft Internet Explorer') {
+	window.open(page,'popup','width=550,height=650,resizable=yes,menubar=no,status=no,scrollbars=yes,toolbar=no,directories=no,location=no,top=0,left=0');
+	}
+ 	
+	else {
+	window.open(page,'popup','width=550,height=650,resizable=yes,menubar=no,status=no,scrollbars=yes,toolbar=no,directories=no,location=no,top=0,left=0');
+	}
+    return false;
+}
+
+function popUpFareRules(page) {
+    if (navigator.appName == 'Netscape') {                   
+    window.open(page,'popup','width=720,height=550,resizable=yes,menubar=no,status=no,scrollbars=yes,toolbar=no,directories=no,location=no,screenX=0,screenY=0');
+    }
+
+    else if (navigator.appName == 'Microsoft Internet Explorer') {
+    window.open(page,'popup','width=720,height=550,resizable=yes,menubar=no,status=no,scrollbars=yes,toolbar=no,directories=no,location=no,top=0,left=0');
+    }
+ 
+    else {
+    window.open(page,'popup','width=720,height=550,resizable=yes,menubar=no,status=no,scrollbars=yes,toolbar=no,directories=no,location=no,top=0,left=0');
+	}
+    return false;
+}
+
+function popUpHelp(page) {
+	if (navigator.appName == 'Netscape') {			 	
+	window.open(page,'popup','width=750,height=600,resizable=yes,menubar=yes,status=no,scrollbars=yes,toolbar=yes,directories=yes,location=yes,screenX=0,screenY=0');
+	}	
+	
+    else if (navigator.appName == 'Microsoft Internet Explorer') {
+	window.open(page,'popup','width=750,height=600,resizable=yes,menubar=yes,status=no,scrollbars=yes,toolbar=yes,directories=yes,location=yes,top=0,left=0');
+	}
+ 	
+	else {
+	window.open(page,'popup','width=750,height=600,resizable=yes,menubar=yes,status=no,scrollbars=yes,toolbar=yes,directories=yes,location=yes,top=0,left=0');
+	}
+    return false;
+}
+
+function popUpViewNewMemberReg(page) {
+    if (navigator.appName == 'Netscape') {
+    window.open(page,'popup','width=720 ,height=800,resizable=yes,menubar=yes,status=no,scrollbars=yes,toolbar=no,directories=no,location=no,screenX=0,screenY=0');
+    }
+
+    else if (navigator.appName == 'Microsoft Internet Explorer') {
+    window.open(page,'popup','width=720,height=800,resizable=yes,menubar=yes,status=no,scrollbars=yes,toolbar=no,directories=no,location=no,top=0,left=0');
+    }
+
+    else {
+    window.open(page,'popup','width=720,height=800,resizable=yes,menubar=yes,status=no,scrollbars=yes,toolbar=no,directories=no,location=no,top=0,left=0');
+    }
+    return false;
+}
+                                        
+function closeWindow(){
+    window.close();
+    return true;
+}
+// -->
+
+</script>
+	<script type="text/javascript" language="JavaScript">
+	<!--
+	function windowOpener(winURL,winName,winFeat) {
+		window.open(winURL,winName,winFeat);
+	}
+	function go() {
+	window.open(document.tools.links.options[document.tools.links.selectedIndex].value);
+	}
+	//-->
+	</script>
+</head>
+
+<body topmargin="0" leftmargin="0" marginheight="0" marginwidth="0" bgcolor="#ffffff" link="#336699" vlink="#336699" alink="#336699">
+
+
+<center>
+
+<map name="topnav_main_map">
+	<area target="_top" shape="rect" alt="WorldPerks" coords="376,7,464,31" href="http://www.nwa.com/freqfly/"></area>
+	<area target="_top" shape="rect" alt="Promotions and Products" coords="228,7,376,31" href="http://www.nwa.com/deals/"></area>
+	<area target="_top" shape="rect" alt="Travel Tools" coords="136,7,227,31" href="http://www.nwa.com/travel/"></area>
+	<area target="_top" shape="rect" alt="Reservations Center" coords="2,7,135,31" href="http://www.nwa.com/travel/reser/main.html"></area>
+</map>
+
+
+<map name="topnav_sub_map">
+	<area target="_top" shape="rect" alt="Home" coords="280,0,322,30" href="http://www.nwa.com/home.html"></area>
+	<area target="_top" shape="rect" alt="Worldwide Sites" coords="323,0,408,30" href="http://www.nwa.com/alliance/"></area>
+	<area shape="rect" alt="KLM" coords="409,0,464,30" href="http://www.klm.com/" target="_blank"></area>
+</map>
+
+<map name="subnav_top_map">
+	<area target="_top" shape="rect" alt="Welcome" coords="0,0,70,33" href="http://www.nwa.com/travel/reser/index.html" alt="Welcome"</area>
+	<area target="_top" shape="rect" alt="Flights" coords="70,0,125,33" href="http://res.nwa.com/App/ViewLeisureTravel?cache=1078130022086&requestId=390" alt="Flights"></area>
+
+	
+		
+			
+				
+				
+					<area target="_top" shape="rect" coords="126,0,205,33" href="http://res.nwa.com/App/ViewAwardTravel?cache=1078130022087&requestId=391" alt="Award Travel"></area>
+				
+			
+		
+		
+	
+
+	
+		
+		
+			<area target="_top" shape="rect" coords="206,0,255,33" href="http://travel.wwte1.com/pubspec/scripts/eap.asp?goto=hotlaunch&eapid=11445-30001&rfrr=-6462" alt="Hotels"></area>
+			<area target="_top" shape="rect" coords="256,0,301,33" href="http://travel.wwte1.com/pubspec/scripts/eap.asp?goto=carlaunch&eapid=11445-30001&rfrr=-6461" alt="Cars"></area>
+		
+	
+	<area shape="rect" alt="Vacation Packages" coords="302,0,407,33" href="http://www.nwa.com/travel/vacationswv.html"></area>
+	
+		
+		
+			<area target="_top" shape="rect" coords="408,0,464,33" href="http://res.nwa.com/App/ViewMyStuff?cache=1078130022088&requestId=392" alt="My Info"></area>
+		
+	
+</map>
+
+<map name="nav_sub_bottom_map">
+	<area shape="rect" alt="Destination Guide" coords="0,0,87,19" href="http://www.nwa.com/travel/world/" target="_blank">
+	<area shape="rect" alt="Maps" coords="88,0,124,19" href="http://www.nwa.com/travel/trave/" target="_blank">
+	<area shape="rect" alt="Reservations Help" coords="125,0,214,19" href="http://www.nwa.com/help/" target="_blank" onClick="return popUpHelp('http://www.nwa.com/help/')">
+	<area shape="rect" alt="Talk to Us" coords="215,0,278,19" href="http://www.nwa.com/talk/ttu.html" target="_blank" alt="Talk To Us" onClick="return popUpHelp('http://www.nwa.com/talk/ttu.html')">
+</map>
+
+<table border="0" width="700" cellpadding="0" cellspacing="0">
+	<tr>
+		<td rowspan="2"><a target="_top" href="http://www.nwa.com/home.html"><img src="/images/shared/header/topnav_logo.gif" border="0" width="235" height="61" alt="Northwest Airlines Home"></a></td>		
+		<td valign=top><img src="/images/shared/header/topnav_sub.gif" border="0" width="465" height="30" usemap="#topnav_sub_map" alt=""></td>
+	</tr>
+	<tr>
+		<td>
+			<img src="/images/shared/header/topnav_main.gif" border="0" width="465" height="31" usemap="#topnav_main_map" alt=""></td>
+	</tr>
+</table>	
+<!-- end common header -->
+
+
+
+<!-- begin page specific header -->
+<table border="0" width="700" cellpadding="0" cellspacing="0">
+	<tr>
+		<td background="/images/shared/subnav_top_back.gif" width="235">
+			
+				
+				
+					<img src="/images/shared/locator_purchase.gif" border="0" width="235" height="34" alt="Search - Select - Review - Purchase"><br>
+				
+			
+		</td>
+		<td background="/images/shared/subnav_top_back.gif" align="right">
+			<img src="/images/shared/subnav_top_nav.gif" border="0" width="465" height="34" alt="" usemap="#subnav_top_map"><br>
+		</td>
+	</tr>
+	<tr>
+		<td colspan="2"><img src="/images/shared/spacer.gif" border="0" width="1" height="5" alt=""></td>
+	</tr>	
+	<tr>
+		<td colspan="2" align="right">
+			
+			    
+			
+
+			
+				
+			
+		</td>
+	</tr>	
+</table>
+<!-- end page specific header -->
+
+<!-- begin page formatting table -->
+<table border="0" width="700" cellspacing="0" cellpadding="0">	
+	<tr>
+		<td width="150" valign="top" align="center">		
+			 
+
+	<!-- begin flight search summary formatting table -->
+	<!-- begin flight summary -->
+	<table border="0" width="150" cellpadding="3" cellspacing="0" class="formHeader">
+		<tr>
+			<td valign="middle" class="formHeader">Summary</td>
+		</tr>
+	</table>	
+	<table border="0" width="150" cellpadding="4" cellspacing="0" class="formTable">				
+		<tr>
+			<td>
+			
+				
+					<b>March 19, 2004</b><br>								
+					
+						<b>Depart: </b>
+						San Jose(SJC)<br>
+						<b>Arrive: </b>
+						Minneapolis/St. Paul (MSP)<br>
+																	
+					<img src="/images/shared/spacer.gif" border="0" width="1" height="5" alt=""><br>
+				
+					<b>March 19, 2004</b><br>								
+					
+						<b>Depart: </b>
+						Minneapolis/St. Paul(MSP)<br>
+						<b>Arrive: </b>
+						Appleton (ATW)<br>
+																	
+					<img src="/images/shared/spacer.gif" border="0" width="1" height="5" alt=""><br>
+				
+				<img src="/images/shared/spacer.gif" border="0" width="1" height="1" vspace="6" alt=""><br>
+			
+				
+					<b>March 21, 2004</b><br>								
+					
+						<b>Depart: </b>
+						Appleton(ATW)<br>
+						<b>Arrive: </b>
+						Minneapolis/St. Paul (MSP)<br>
+																	
+					<img src="/images/shared/spacer.gif" border="0" width="1" height="5" alt=""><br>
+				
+					<b>March 21, 2004</b><br>								
+					
+						<b>Depart: </b>
+						Minneapolis/St. Paul(MSP)<br>
+						<b>Arrive: </b>
+						San Jose (SJC)<br>
+																	
+					<img src="/images/shared/spacer.gif" border="0" width="1" height="5" alt=""><br>
+				
+				<img src="/images/shared/spacer.gif" border="0" width="1" height="1" vspace="6" alt=""><br>
+			
+			</td>
+		</tr>
+		<tr>
+			<td>
+				
+						
+						
+							<b>1 Adult: </b>
+							$242.78
+							<img src="/images/shared/spacer.gif" border="0" width="1" height="2" alt=""><br>
+						
+					
+					
+				
+			</td>
+		</tr>
+		<tr>
+			<td>
+				
+					
+				
+				
+					
+						<b>Taxes/Fees: </b>
+						$57.12<br>
+					
+					
+				
+				<img src="/images/shared/spacer.gif" border="0" width="1" height="5" alt=""><br>
+				<b>Total Cost: </b>
+				<b>$299.90</b>
+				<br>
+				
+					
+				
+				
+					
+				
+				
+					
+				
+				
+					
+				
+				
+					
+				
+				
+					
+				
+			</td>
+		</tr>
+	</table>
+	<!-- end flight search summary formatting table -->
+
+			
+				
+				<form method="POST" action="https://res.nwa.com/Secure/ValidateFareRulesAgreement?cache=1078130022089&requestId=393">
+			
+		</td>
+		<td width="10"><img src="/images/shared/spacer.gif" border="0" width="10" height="1" alt=""></td>
+		<td width="540" valign="top" align="left">
+			<!-- begin subnav -->
+			<table border="0" width="540" cellpadding="0" cellspacing="0">
+				<tr>
+					<td width="216" align="left" valign="bottom">
+						
+							
+							
+								<h1>Purchase Confirmation</h1>
+							
+						
+					</td>
+ 											<td width="45" align="right" valign="bottom">
+							
+								<a target="_top" href="http://res.nwa.com/Secure/SignOut?cache=1078130022090&requestId=394"><img src="/images/shared/subnav_bottom_signout.gif" border="0" width="45" height="19" alt="Logout"></a>
+								
+							
+						</td>
+						<td width="279" align="right" valign="bottom"><nobr>
+							<img src="/images/shared/subnav_bottom.gif" border="0" width="279" height="19" usemap="#nav_sub_bottom_map" alt="">
+						</nobr></td>
+					</tr>
+					<tr>
+						<td colspan="3" class="resultDisplayBorder"><img src="/images/shared/spacer.gif" border="0" width="540" height="1" alt=""></td>
+					</tr>
+					<tr>
+						<td width="216"><img src="/images/shared/spacer.gif" border="0" width="216" height="5" alt=""></td>
+						<td colspan="2"><img src="/images/shared/spacer.gif" border="0" height="5" alt=""></td>
+					</tr>
+
+			</table>
+			<!-- end subnav -->
+
+			<!-- begin signin / tips / corporate logo -->
+			<table border="0" width="540" cellpadding="0" cellspacing="0">
+				<tr>
+				
+					
+
+					
+						
+							
+
+							
+								
+									
+
+									
+										<td width="540" valign="top" class="wplogin">
+											
+
+
+    
+
+
+	
+		
+			
+                  
+                  
+                  
+
+					<b>Philip Stuart </b><br>
+					
+						
+						
+						
+						WorldPerks Member
+					
+
+					
+						&nbsp;
+						
+					
+                  
+				  
+			
+			
+		
+    
+
+
+<!--img src="/images/shared/hr_formborder.gif" border="0" width="540" height="1" alt=""-->
+<br>
+										</td>
+									
+								
+							
+						
+					
+				
+			</tr>
+
+			<tr><td colspan="3"><img src="/images/shared/spacer.gif" border="0" width="540" height="5" alt=""></td></tr>
+			<tr><td colspan="3" class="resultDisplayBorder"><img src="/images/shared/spacer.gif" border="0" width="540" height="1" alt=""></td></tr>
+			</table>
+            <!-- end signin / tips / corporate logo -->
+
+			<img src="/images/shared/spacer.gif" border="0" width="1" height="5" alt=""><br>
+			<!--- BEGIN FLIGHT BRT --->
+			
+				
+				
+			
+
+			
+				
+				
+			
+
+			
+				
+				
+			
+
+			
+				
+				
+			
+
+			
+				
+				
+			
+			<!--- END FLIGHT BRT --->
+
+			<table border="0" width="540" cellpadding="0" cellspacing="0">
+				<tr>
+					<td colspan=2 valign="top">
+						Thank you! Your reservation is confirmed.<br><br>
+						Print a copy of this page for your records. For your convenience, a purchase confirmation will automatically be emailed to you.<br>
+                        <!-- start seat maps selection available check -->
+						
+                            
+                                <!-- start pre-purchase seat existence check -->
+                                
+                                
+                                    <!-- start seatmap error check -->
+                                    
+                                    
+                                    
+                                    
+                                        
+                                        
+                                            <br>Pre-purchase seating selections were successful.  To view or change your seating selections, <a href="https://res.nwa.com/Secure/SeatMapRequest?recordLocator=LYBXRG&requestOrigin=booking&cache=1078130022091&requestId=395" target="_blank" onClick="return popUpSeatMap('https://res.nwa.com/Secure/SeatMapRequest?recordLocator=LYBXRG&requestOrigin=booking&cache=1078130022092&requestId=396')" ><b>click here</a></b>.<br>
+                                        
+                                    
+
+                                    
+                                    
+                                    <!-- end seatmap error check -->
+                                
+                                
+                                
+                                <!-- end pre-purchase seat existence check -->
+                            
+                            
+                            
+                            <!-- end seat maps selection available check -->
+						<br>
+					</td>
+				</tr>
+			</table>
+			<table border="0" width="540" cellpadding="4" cellspacing="0">
+				<tr>
+					<td width="300">
+						<b>Appleton 3/19/04</b><br>
+					</td>
+					<td align="right" width="205">
+						<a href="https://res.nwa.com/Secure/ViewPrintableItinerary?cache=1078130022093&requestId=397" target="_blank" onClick="return popUpPrintItinerary('https://res.nwa.com/Secure/ViewPrintableItinerary?cache=1078130022094&requestId=398')"><img src="/images/shared/button_print.gif" border="0" width="97" height="15"></a>
+					</td>
+				</tr>
+				<tr>
+					<td colspan=2 valign="top">
+						<b>Northwest Airlines Confirmation Number:</b>
+						LYBXRG<br>
+						<b>Itinerary number: </b>51587112<br>
+					</td>
+				</tr>
+			</table>
+
+			 
+
+
+
+<table border="0" width="540" cellpadding="4" cellspacing="0" class="formTable">
+	<tr>
+		<td width="100"><b>Total Trip Cost: </b></td>
+		<td><b>$299.90</b></td>
+	</tr>
+	<tr>
+		<td>Total Airfare: </td>
+		<td>$299.90</td>
+	</tr>
+
+    
+        
+    
+	
+	    
+    
+    
+        
+    
+    
+		
+    
+    
+	    
+    
+	
+		
+    
+
+	<!-- paper tickets -->
+	
+		
+	
+</table>
+
+
+
+
+
+			 
+<table border="0" width="540" cellpadding="4" cellspacing="0" class="formTable">
+	<tr>
+		<td width="100" nowrap><b>Traveler(s):</b></td>
+		<td nowrap><b>Frequent Flyer Details:</b></td>
+	</tr>
+
+	
+	<tr>
+		<td nowrap> Philip A Stuart </td>
+		<td>
+			
+				
+				
+			
+	
+			
+				
+					
+					Northwest WorldPerks&nbsp;&nbsp;&nbsp;100700193565
+				
+			
+		</td>
+	</tr>
+	
+</table>
+<br>
+
+			 
+
+<table border="0" width="540" cellpadding="0" cellspacing="0">
+
+	<tr>
+		<td colspan="7"><img src="/images/shared/spacer.gif" border="0" width="1" height="10" alt=""></td>
+	</tr>
+	<tr>
+		<td colspan="7" align="left">
+			<h3>
+				
+					
+						
+							Departing Flight(s)
+							
+							
+						
+					
+					
+					
+					
+				
+			</h3>
+		</td>
+	</tr>
+	<tr>
+		<td>
+			<table border="0" width="540" cellpadding="4" cellspacing="0" class="formTable">
+				
+				
+				<tr>
+					<td valign="top" nowrap>
+						
+	   						
+								<b>Friday, March 19, 2004</b><br>
+							
+						
+						
+							
+								Northwest Airlines Flight #200<br>
+							
+						
+					</td>
+					<td><img src="/images/shared/spacer.gif" border="0" width="6" height="1" alt=""></td>	
+					<td align="center" valign="top"><strong>depart</strong></td>
+					<td><img src="/images/shared/spacer.gif" border="0" width="6" height="1" alt=""></td>				
+					<td align="middle" valign="top">
+						<strong>6:40am</strong><br>
+						morning
+					</td>
+					<td><img src="/images/shared/spacer.gif" border="0" width="6" height="1" alt=""></td>				
+					<td valign="top">
+						<strong>San Jose International (SJC)</strong><br>
+						San Jose
+					</td>
+				</tr>			
+				<tr>
+					<td colspan="7"><img src="/images/shared/spacer.gif" border="0" width="1" height="4" alt=""></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap>
+						
+							<br>
+						
+						
+							
+											
+						&nbsp;
+					</td>
+					<td><img src="/images/shared/spacer.gif" border="0" width="6" height="1" alt=""></td>	
+					<td align="center" valign="top"><b>arrive</b></td>
+					<td><img src="/images/shared/spacer.gif" border="0" width="6" height="1" alt=""></td>				
+					<td align="middle" valign="top">
+						<b>12:15pm</b><br>
+						afternoon
+					</td>
+					<td><img src="/images/shared/spacer.gif" border="0" width="6" height="1" alt=""></td>				
+					<td valign="top">
+						<b>Minneapolis/St. Paul International Airport (MSP)</b><br>
+						Minneapolis/St. Paul<br><br>
+						<!-- start seat assignments -->
+						
+							
+								Seat(s): <a href="https://res.nwa.com/Secure/SeatMapRequest?recordLocator=LYBXRG&newSegment=1&cache=1078130022095&requestId=399" target="_blank" onClick="return popUpSeatMap('https://res.nwa.com/Secure/SeatMapRequest?recordLocator=LYBXRG&newSegment=1&cache=1078130022096&requestId=400')" >15F</a><br>
+							
+							
+						
+						<!-- end seat assignments -->
+	
+						Meal: Breakfast<br>
+						On Time: 80%<br>
+						Cabin: Economy<br>
+						Equipment: <a href="http://www.nwa.com/travel/trave/seatm/" target="_blank">Airbus Industrie A319 (319)</a><br>
+						Duration: 3hr 35min<br>
+						Approximate Distance: 1573 miles
+					</td>
+				</tr>
+			
+				
+					
+				
+				
+	
+				
+					
+						<tr>
+							<td colspan="6">&nbsp;</td>			
+							<td valign="top" align="left">
+							<img src="/images/shared/spacer.gif" border="0" width="1" height="6" alt=""><br>
+							<b>Plane Change</b><br>
+							(0hr 50min - ground time)<br>
+							<img src="/images/shared/spacer.gif" border="0" width="1" height="6" alt=""><br>					
+							</td>
+						</tr>
+					
+				
+				<tr>
+					<td colspan="7"><img src="/images/shared/spacer.gif" border="0" width="1" height="5" alt=""></td>
+				</tr>				
+				
+				
+				<tr>
+					<td valign="top" nowrap>
+						
+	   						
+						
+						
+							
+								Northwest Airlines Flight #5655<br>
+							
+						
+					</td>
+					<td><img src="/images/shared/spacer.gif" border="0" width="6" height="1" alt=""></td>	
+					<td align="center" valign="top"><strong>depart</strong></td>
+					<td><img src="/images/shared/spacer.gif" border="0" width="6" height="1" alt=""></td>				
+					<td align="middle" valign="top">
+						<strong>1:05pm</strong><br>
+						afternoon
+					</td>
+					<td><img src="/images/shared/spacer.gif" border="0" width="6" height="1" alt=""></td>				
+					<td valign="top">
+						<strong>Minneapolis/St. Paul International Airport (MSP)</strong><br>
+						Minneapolis/St. Paul
+					</td>
+				</tr>			
+				<tr>
+					<td colspan="7"><img src="/images/shared/spacer.gif" border="0" width="1" height="4" alt=""></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap>
+						
+							<br>
+						
+						
+							
+								operated by<br> PINNACLE AIRLINES JET/NW AIRLINK
+							
+											
+						&nbsp;
+					</td>
+					<td><img src="/images/shared/spacer.gif" border="0" width="6" height="1" alt=""></td>	
+					<td align="center" valign="top"><b>arrive</b></td>
+					<td><img src="/images/shared/spacer.gif" border="0" width="6" height="1" alt=""></td>				
+					<td align="middle" valign="top">
+						<b>2:16pm</b><br>
+						afternoon
+					</td>
+					<td><img src="/images/shared/spacer.gif" border="0" width="6" height="1" alt=""></td>				
+					<td valign="top">
+						<b>Appleton Outagamie County (ATW)</b><br>
+						Appleton<br><br>
+						<!-- start seat assignments -->
+						
+							
+								Seat(s): <a href="https://res.nwa.com/Secure/SeatMapRequest?recordLocator=LYBXRG&newSegment=2&cache=1078130022097&requestId=401" target="_blank" onClick="return popUpSeatMap('https://res.nwa.com/Secure/SeatMapRequest?recordLocator=LYBXRG&newSegment=2&cache=1078130022098&requestId=402')" >9D</a><br>
+							
+							
+						
+						<!-- end seat assignments -->
+	
+						Meal: none<br>
+						On Time: N/A<br>
+						Cabin: Economy<br>
+						Equipment: <a href="http://www.nwa.com/travel/trave/seatm/" target="_blank">Canadair Regional Jet (CRJ)</a><br>
+						Duration: 1hr 11min<br>
+						Approximate Distance: 236 miles
+					</td>
+				</tr>
+			
+				
+					
+				
+				
+	
+				
+					
+				
+				<tr>
+					<td colspan="7"><img src="/images/shared/spacer.gif" border="0" width="1" height="5" alt=""></td>
+				</tr>				
+				
+				<tr>
+					<td colspan="7"><img src="/images/shared/spacer.gif" border="0" width="1" height="2" alt=""></td>
+				</tr>
+				<tr>
+					<td colspan="6">&nbsp;</td>
+					<td align="left" valign="top">
+						<img src="/images/shared/spacer.gif" border="0" width="135" height="3" alt=""><br>
+						Total Duration: 5hr 36min<br>
+						Total Distance: 1809 miles
+					</td>
+				</tr>
+			</table>
+		</td>
+	</tr>
+
+	<tr>
+		<td colspan="7"><img src="/images/shared/spacer.gif" border="0" width="1" height="10" alt=""></td>
+	</tr>
+	<tr>
+		<td colspan="7" align="left">
+			<h3>
+				
+					
+						
+							
+							Returning Flight(s)
+							
+						
+					
+					
+					
+					
+				
+			</h3>
+		</td>
+	</tr>
+	<tr>
+		<td>
+			<table border="0" width="540" cellpadding="4" cellspacing="0" class="formTable">
+				
+				
+				<tr>
+					<td valign="top" nowrap>
+						
+	   						
+								<b>Sunday, March 21, 2004</b><br>
+							
+						
+						
+							
+								Northwest Airlines Flight #5684<br>
+							
+						
+					</td>
+					<td><img src="/images/shared/spacer.gif" border="0" width="6" height="1" alt=""></td>	
+					<td align="center" valign="top"><strong>depart</strong></td>
+					<td><img src="/images/shared/spacer.gif" border="0" width="6" height="1" alt=""></td>				
+					<td align="middle" valign="top">
+						<strong>6:35pm</strong><br>
+						evening
+					</td>
+					<td><img src="/images/shared/spacer.gif" border="0" width="6" height="1" alt=""></td>				
+					<td valign="top">
+						<strong>Appleton Outagamie County (ATW)</strong><br>
+						Appleton
+					</td>
+				</tr>			
+				<tr>
+					<td colspan="7"><img src="/images/shared/spacer.gif" border="0" width="1" height="4" alt=""></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap>
+						
+							<br>
+						
+						
+							
+								operated by<br> PINNACLE AIRLINES JET/NW AIRLINK
+							
+											
+						&nbsp;
+					</td>
+					<td><img src="/images/shared/spacer.gif" border="0" width="6" height="1" alt=""></td>	
+					<td align="center" valign="top"><b>arrive</b></td>
+					<td><img src="/images/shared/spacer.gif" border="0" width="6" height="1" alt=""></td>				
+					<td align="middle" valign="top">
+						<b>8:01pm</b><br>
+						evening
+					</td>
+					<td><img src="/images/shared/spacer.gif" border="0" width="6" height="1" alt=""></td>				
+					<td valign="top">
+						<b>Minneapolis/St. Paul International Airport (MSP)</b><br>
+						Minneapolis/St. Paul<br><br>
+						<!-- start seat assignments -->
+						
+							
+								Seat(s): <a href="https://res.nwa.com/Secure/SeatMapRequest?recordLocator=LYBXRG&newSegment=3&cache=1078130022099&requestId=403" target="_blank" onClick="return popUpSeatMap('https://res.nwa.com/Secure/SeatMapRequest?recordLocator=LYBXRG&newSegment=3&cache=1078130022100&requestId=404')" >6A</a><br>
+							
+							
+						
+						<!-- end seat assignments -->
+	
+						Meal: none<br>
+						On Time: N/A<br>
+						Cabin: Economy<br>
+						Equipment: <a href="http://www.nwa.com/travel/trave/seatm/" target="_blank">Canadair Regional Jet (CRJ)</a><br>
+						Duration: 1hr 26min<br>
+						Approximate Distance: 236 miles
+					</td>
+				</tr>
+			
+				
+					
+				
+				
+	
+				
+					
+						<tr>
+							<td colspan="6">&nbsp;</td>			
+							<td valign="top" align="left">
+							<img src="/images/shared/spacer.gif" border="0" width="1" height="6" alt=""><br>
+							<b>Plane Change</b><br>
+							(0hr 59min - ground time)<br>
+							<img src="/images/shared/spacer.gif" border="0" width="1" height="6" alt=""><br>					
+							</td>
+						</tr>
+					
+				
+				<tr>
+					<td colspan="7"><img src="/images/shared/spacer.gif" border="0" width="1" height="5" alt=""></td>
+				</tr>				
+				
+				
+				<tr>
+					<td valign="top" nowrap>
+						
+	   						
+						
+						
+							
+								Northwest Airlines Flight #193<br>
+							
+						
+					</td>
+					<td><img src="/images/shared/spacer.gif" border="0" width="6" height="1" alt=""></td>	
+					<td align="center" valign="top"><strong>depart</strong></td>
+					<td><img src="/images/shared/spacer.gif" border="0" width="6" height="1" alt=""></td>				
+					<td align="middle" valign="top">
+						<strong>9:00pm</strong><br>
+						evening
+					</td>
+					<td><img src="/images/shared/spacer.gif" border="0" width="6" height="1" alt=""></td>				
+					<td valign="top">
+						<strong>Minneapolis/St. Paul International Airport (MSP)</strong><br>
+						Minneapolis/St. Paul
+					</td>
+				</tr>			
+				<tr>
+					<td colspan="7"><img src="/images/shared/spacer.gif" border="0" width="1" height="4" alt=""></td>
+				</tr>
+				<tr>
+					<td valign="top" nowrap>
+						
+							<br>
+						
+						
+							
+											
+						&nbsp;
+					</td>
+					<td><img src="/images/shared/spacer.gif" border="0" width="6" height="1" alt=""></td>	
+					<td align="center" valign="top"><b>arrive</b></td>
+					<td><img src="/images/shared/spacer.gif" border="0" width="6" height="1" alt=""></td>				
+					<td align="middle" valign="top">
+						<b>10:59pm</b><br>
+						evening
+					</td>
+					<td><img src="/images/shared/spacer.gif" border="0" width="6" height="1" alt=""></td>				
+					<td valign="top">
+						<b>San Jose International (SJC)</b><br>
+						San Jose<br><br>
+						<!-- start seat assignments -->
+						
+							
+								Seat(s): <a href="https://res.nwa.com/Secure/SeatMapRequest?recordLocator=LYBXRG&newSegment=4&cache=1078130022101&requestId=405" target="_blank" onClick="return popUpSeatMap('https://res.nwa.com/Secure/SeatMapRequest?recordLocator=LYBXRG&newSegment=4&cache=1078130022102&requestId=406')" >15F</a><br>
+							
+							
+						
+						<!-- end seat assignments -->
+	
+						Meal: none<br>
+						On Time: N/A<br>
+						Cabin: Economy<br>
+						Equipment: <a href="http://www.nwa.com/travel/trave/seatm/" target="_blank">Airbus Industrie A319 (319)</a><br>
+						Duration: 3hr 59min<br>
+						Approximate Distance: 1573 miles
+					</td>
+				</tr>
+			
+				
+					
+				
+				
+	
+				
+					
+				
+				<tr>
+					<td colspan="7"><img src="/images/shared/spacer.gif" border="0" width="1" height="5" alt=""></td>
+				</tr>				
+				
+				<tr>
+					<td colspan="7"><img src="/images/shared/spacer.gif" border="0" width="1" height="2" alt=""></td>
+				</tr>
+				<tr>
+					<td colspan="6">&nbsp;</td>
+					<td align="left" valign="top">
+						<img src="/images/shared/spacer.gif" border="0" width="135" height="3" alt=""><br>
+						Total Duration: 6hr 24min<br>
+						Total Distance: 1809 miles
+					</td>
+				</tr>
+			</table>
+		</td>
+	</tr>
+
+</table>
+
+
+			
+
+<!-- begin flight ticket details -->
+<h3>Ticket Information</h3>
+<table border="0" width="540" cellpadding="4" cellspacing="0" class="formTable">
+	<!-- ++++ E-Tickets +++++ -->
+	
+		
+		<tr>
+			<td colspan="2">
+				<b>Ticket type: </b> electronic (E-Tickets)
+				<ul class="flush">
+					<li class="form">Check-in and print your boarding pass online at <a href="http://www.nwa.com/Checkin" target="checkin">nwa.com Check-In</a>, <a href="http://www.nwa.com/services/electrav/esc.html" target="esc">E-Service Centers</a> (located at most airports in the U.S.), Airline ticket counters, or Curbside at most airports.<br><br>
+					<li class="form">Check-in Advice: <b>Northwest recommends that passengers arrive at the airport at least 75 minutes prior to departure for domestic flights and 2 hours prior to departure for international flights.</b><br><br>
+					Customers traveling within the United States (including Hawaii), must <b>check in at least 30 minutes prior to departure and board the aircraft at least 15 minutes prior to departure.</b> Customers traveling from Atlanta, Denver or Las Vegas must <b>check in at least 45 minutes prior to departure.</b> <br><br>
+					Customers traveling internationally (including Canada, Mexico and the Caribbean) must <b>check in at least 60 minutes prior to departure and board the aircraft at least 30 minutes prior to departure.</b>
+				</ul>
+			</td>
+		</tr>
+		
+
+		<!-- ++++ paper tickets +++++ -->
+		
+	
+</table>
+<!-- end flight ticket details -->
+<br>
+
+			<table border="0" width="540" cellpadding="0" cellspacing="0">
+				<tr>
+					<td>
+                        
+                        
+                          <b></b>
+                          
+                          Northwest has negotiated special rates on hotels in Appleton Outagamie County. Go to <a href="http://www.nwa.com/hotels" class="copylink">http://www.nwa.com/hotels</a> to search and book today!<br \> <br \>
+                          
+                        
+                        
+					</td>
+				</tr>
+			</table>
+		</td>
+	</tr>
+</table>
+
+<!-- end page formatting table -->
+
+<!-- **** begin footer **** --->
+<form method="post" action="http://www.nwa.com/cgi-bin/htsearch">
+<input type="hidden" name="config" value="htdig"><input type="hidden" name="restrict" value=""><input type="hidden" name="exclude" value=""><input type="hidden" name="sp" value="sp"><input type="hidden" name="method" value="and"><input type="hidden" name="format" value="builtin-long">
+
+<map name="footerMap">
+	<area shape="rect" alt="About Northwest" coords="0,-4,92,26" href="http://www.nwa.com/corpinfo/" target="new"></area>
+	<area shape="rect" alt="Talk to Us" coords="93,-4,162,26" href="http://www.nwa.com/talk/" target="new"></area>
+	<area shape="rect" alt="Security and Privacy" coords="163,-4,265,26" href="http://www.nwa.com/security/" target="new"></area>
+	<area shape="rect" alt="Customers First" coords="266,-4,356,26" href="http://www.nwa.com/plan/guide.html" target="new"></area>
+	<area shape="rect" alt="Site Map" coords="357,-4,418,26" href="http://www.nwa.com/index/index.html" target="new"></area>
+	<area shape="rect" alt="Travel Agents" coords="419,-4,494,26" href="http://www.nwa.com/cgi-bin/pass_agents.pl?path=http://www.worldagentdirect.com" target="new"></area>
+</map>
+
+<table border="0" width="700" cellpadding="0" cellspacing="0">
+	<tr>
+		<td colspan="4"><img src="/images/shared/spacer.gif" border="0" width="1" height="5" alt=""></td>
+	</tr>
+	<tr bgcolor="#F2F2F7">
+		<td width="46" height="28" align="right" background="/images/shared/footer/footer_background.gif"><img src="/images/shared/footer/footer_search_trans.gif" border="0" width="36" height="16" hspace="3" alt="Search"></td>
+		<td width="72" align="left" valign="middle" height="28" background="/images/shared/footer/footer_background.gif"><input type="text" size="4" name="words" value="" class="inputText-mid"></td>
+		<td width="24" align="left" valign="middle" height="28" background="/images/shared/footer/footer_background.gif"><input type="image" src="/images/shared/footer/footer_go.gif" width="25" height="15" border="0" alt="Go"></td>
+		<td width="558" valign="middle" align="right" height="28" background="/images/shared/footer/footer_background.gif"><img src="/images/shared/footer/footer_links_trans.gif" border="0" width="495" height="28" valign="middle" hspace="5" alt="" usemap="#footerMap"></td>
+	</tr>
+	<tr>
+		<td colspan="3" align="left"><img src="/images/shared/orbitz_logo.gif" border="0" width="111" height="15" alt="Powered by Orbitz"></td>
+		<td align="right"><small class="copyright"><!-- COPYRIGHT -->&copy; Northwest Airlines 2004</small><!-- COPYRIGHT --></td>
+	</tr>
+</table>
+</form>
+<!-- **** end footer **** --->
+
+</center>
+</body>
+</html>
+

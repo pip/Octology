@@ -1,0 +1,16 @@
+setpal 00000000
+setpal 01040618
+setpal 02082304
+setpal 03061f1d
+setpal 04250e0f
+setpal 05190c25
+setpal 142a1500
+setpal 07242929
+setpal 38151515
+setpal 3915153f
+setpal 3a153f15
+setpal 3b153f3f
+setpal 3c3f1515
+setpal 3d3f153f
+setpal 3e3f3f15
+setpal 3f3f3f3f

@@ -1,0 +1,52 @@
+Done:
+    I've werked with Ray on considering our server configuration.
+   Apparently, a new server has not yet been ordered so, we should try
+   to get one as shortly as possible.  Ray and I recognized that the
+   current hardware being used as quark is ideal as a developmental
+   server so we should get something better to handle our live hosting
+   more capably and then replace the current quark with that new machine
+   and then fold the current machine over into exclusive internal
+   development.  We spec'd a machine from VALinux && emailed them to
+   Nick.
+
+    I werked on installing two different web crawlers for about an hour.
+   The first one (webbase) seems like the ideal tool for our purposes
+   (ie. A: crawl to automagically verify that our customer's sites are
+   up and smoothly functioning regularly && B: try to cache an entire
+   dynamic site with regularity to index for a speedier [&& less
+   database intensive] full site search function).  Webbase installed a
+   MySQL database onto my server (BinQ.org) but then couldn't complete
+   the testing process correctly (make check) so I haven't yet been able
+   to install it thoroughly or test it.  The other option I examined was
+   a script called spindexer but it seems to be in an early state of
+   development and not yet functioning well enough to suit our needs.
+   Julia recommended I don't spend too much time trying since we should
+   pretty easily be able to consider the problem more objectively later.
+   I'm thinking that it would be simple to perform an hourly http get on
+   each site.  We'd be able to verify that apache is functioning
+   correctly for each site (at least their homepages) ... and we could
+   craft it to compare results to verify the correctness of any returned
+   content.  This could be configured to explicitly or automagically
+   examine nested links to some depth.  The trick seems to be
+   maintaining the checking data as well.  Any comparison to database
+   values needs to be kept current... I guess if emails or immediate
+   notification is made when a descrepancy arises, it'll be a good
+   indication that we changed something on production and the
+   remote verification script needs to reflect that change.  I'll
+   consider this more.  I imagine that it would be rather simple to
+   start this out small... and once semi-deployed, we'd all see how it
+   can werk and have ideas on what it would be nice to have it do for
+   us.  I'll try to sketch it and prototype a functional version today
+   or by tomorrow.
+
+    I've been werking on Expanets sites and trying to get the merchant
+   accounts constructed.  Apparently I cannot yet benefit from the DBI
+   interface to MySQL while developing on Helium so I'm trying to write
+   a script to generate all the straight SQL source necessary for the
+   correct data population.
+
+ToDo:
+     More werk!
+
+Thots:
+    Tired...

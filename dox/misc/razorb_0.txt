@@ -1,0 +1,165 @@
+** Original idea in 1996 ... revived near the end of 99
+
+                        RazOrb Notes
+
+Ok, I'm trying to develop a method to utilize only five keys of the keyboard but
+still have the ability to type any letter.  Hopefully if done well, typing
+efficiency should improve drastically with practice since your five fingers
+never need to move to other keys... in essence they can remain in the home row
+during an entire typing session.
+
+ok let's say we have five keys...
+    0   1   2   3   4
+   " " "j" "k" "l" ";"
+
+one decimal integer may represent any of the five keys being pressed or
+released.   I'll refer to one of these integers from now on as an
+Action Marker.   ie...
+    0   =   " " pressed         5   =   " " released
+    1   =   "j" pressed         6   =   "j" released
+    2   =   "k" pressed         7   =   "k" released
+    3   =   "l" pressed         8   =   "l" released
+    4   =   ";" pressed         9   =   ";" released
+
+I am hoping to have two modes of operation.  Mode one should be able to tally
+which of the five keys has been pressed before all have been released.  Mode
+two should be more complex but allow for infinite combinations among only the
+five keys.  Mode one will only denote keys PRESSED during a single character
+entry because it will set a bit whenever the corresponding key is pressed.
+Thus mode one has 31 possible key combinations.  There would be 32
+combinations (2^5) but I'm not including all 0's because that's when no key is
+being pressed.  Their bit representations would look like this...
+
+key: 01234   01234   01234   01234   01234   01234   01234   01234
+    {10000} {00001} {10001} {00110} {11010} {10011} {00111} {10111}
+    {01000} {11000} {01100} {00101} {11001} {01110} {11110} {01111}
+    {00100} {10100} {01010} {00011} {10110} {01101} {11101} {11111}
+    {00010} {10010} {01001} {11100} {10101} {01011} {11011}
+
+Mode two will consider when each key is pressed and released and is strict
+about the order.  A single character entry may be comprised of an infinite
+(only limited by computer memory) number of key presses and releases.  The
+entry is complete when all keys have been released.  The entered sequence may
+be represented by a list containing the Action Markers in the order in which
+they occurred.  These lists will be referred to as Marker Lists from now on.
+A sample Marker List may look like any of these...
+
+    {013865}
+    {05}
+    {12349876}
+    {01616165}
+
+Let me illustrate the main difference between Mode one and Mode two.
+Let's take the first Mode one bit string that contains two set bits...
+
+    {11000}
+
+    Now this 6th element of the Mode one set can be represented by an infinite
+    number of Mode two Marker Lists.  ie...
+
+    {0165}
+    {0156}
+    {1056}
+    {1065}
+    {01616165}
+    {016156}
+        *NOTE:  all mode 1 strings are 5 bits in size & all mode 2 strings
+                contain an even # of action markers since every key pressed
+                must later be released
+
+    The above 6 Mode two Marker Lists are entirely distinct and may each
+    represent different characters or actions in Mode two but each one would
+    yield the bit string {11000} if implemented in Mode one.  Hopefully it is
+    clear now how potentially powerful Mode two is and how much relatively
+    simpler Mode one is to use and you'd only have to remember 31 key sequences
+    enough to represent the alphabet with 5 sequences left to enable you to
+    choose 5 additional characters (you'd probably want one to be delete or
+    backspace) to reside in those sequences.  A potential way to greatly
+    improve the availiable characters in Mode one would be to have some or all
+    of the remaining 5 sequences act as sort of shift toggles which when
+    entered, shift the values contained in each of the standard 26 alphabet
+    sequences.  Not unsimilar to CAPS-LOCK.
+
+If I am able to put enough time into this project as I would like to (which is
+pretty unlikely) then I aim to implement a five key chooser so that the user
+may use any five keys on the keyboard to input their entries.  I also hope to
+build into it an efficient method of representing the most frequently occurring
+characters by the least possible key combinations.  This method will hopefully
+be used to obtain an acceptable default character set but all sequences may be
+reassigned by the user to entirely new characters so that the program can be
+customizable enough to cater to particular user needs.  If I am able to
+complete the above then I would be greatly interested in adapting the program
+to operate on a five or more button peripheral such as a 5-button mouse (if one
+exists).  If you like this program and practice enough then hopefully you will
+be able to type an entire text document with one hand leaving the other hand
+free to manipulate a mouse, hold a cigarette, or scratch your balls.  I have
+dreams that one day a five-button ergonomic hand grip may be used in place of
+having a user pick 5 keys on a 101+ keyboard that they'd like to use.  A tennis
+ball type object or a pistol handle with buttons placed appropriately close to
+where the fingertips lay sound like they'd be well suited to support this
+program.
+
+I hope you are able to exploit this program to its potential.
+Happy typing. =)
+
+
+                                            Nitemare
+File to exist in directory as well as "fivekey.exe" is "fivekey.bud" which
+contains data only which is used to configure the executable.
+
+The tentative format for "fivekey.bud" is...
+
+the first five bytes contain (in order) the scan codes of the five keys to be
+used in the program
+
+the sixth byte acts as a boolean which holds a value to tell the program which
+mode it was in when it was last executed.  0 for Mode one, 1 for Mode two
+
+the seventh and eighth bytes act as a word together to tell the main program
+how many bytes to jump ahead in "fivekey.bud" to skip all data pertaining to
+Mode one since the sixth byte contains a non-zero.
+
+                            mode one stuff
+
+the ninth byte will contain an integer between 0 and 30 which tells the program
+how many Mode one sequences represent shifting to a different set of characters
+instead of just representing a character that can be typed.
+(note: the set/character ratio with the most possible usable characters
+in Mode one is 15/16.  all sets above 15 are not very useful since
+swapping the number-of-sets and the characters-per-set yields the same number
+of total possible distinct characters.  if num-of-sets is greater than
+chars-per-set then more key strokes are required to enter the same amount of
+info.  I decided, however, to allow num-of-sets to be greater than chars-per-set
+if the user chooses that just in case someone who would find use in extra
+key strokes and wishes to have it set up that way is able to configure it to
+their liking.  the user may not select 31 as the number-of-sets because there
+are only 31 possible sequences in Mode one and if all of them represented
+different character-sets, then there would be no characters so loading a new
+character set wouldn't change anything and no character entries could be made.)
+(p.s.note: sorry the above note is so long but it's kinda important)
+
+if the ninth byte contains 0 then the 31 bytes following the ninth contain the
+characters to be displayed when the corresponding Mode one sequence is entered.
+if the ninth byte is between 0 and 31 then it is stored in a variable
+(integer numofsets) to let the program know how many times to allocate enough
+space for a set of characters.  the tenth byte through the 10+numofsets byte
+will contain an integer up to 31 which represents the sequence that will
+activate the corresponding character set.  All of those values will be stored
+in an array of integers of size numofsets and once all values are loaded into
+the array, it will be sorted numerically.  Then a for loop from 1 to numofsets
+will allocate space to store the characters contained in numofsets sets.  For
+each set, the loop will begin another for loop from 1 to 31 and the inner loop
+number will be searched for in the ordered array of integers that correspond
+to the sequence numbers of a different character set.  if the inner loop number
+is found in the array then nothing is performed on that loop however if the
+number is not found in the array then that means it is a character and so a
+byte is allocated to store the ascii value of the character to be entered when
+inner loop number sequence is encountered in that particular character set.
+
+                            mode two stuff
+
+mode two data begins at 8+[7,8] byte in the file.  Mode two elements will be
+stored in the format:
+byte 1: high nibble =
+
+

@@ -1,0 +1,215 @@
+ Emmy:daytimz2call:8U|BU|F|LU 8:30a|11:30a|3p|9:30p,10565MalagaWy.RanchoCordova,Ca95670,if running out of money:ask4PG&&E,SMUD,&&TWCable2be swtchd over2her,
+  cmpil kern:MISC_DEVn,NETCONSOLEn,INPUT_(MOUSEDEV_PSAUX|EVBUG)n,JOYSTICK_(GRIP*|SIDEWINDER|STINGER)n,AGP*n,DRMy,I2C_NFORCE2m,SENSORS_K8TEMPy_SMSC*?,
+    VIDEO_DEVy,USB_DABUSBy,USB_DEBUGn,RTC_DEBUGn,KVMy,NTFS_DEBUGn,DEBUG_(FS|KERNEL)n,DETECT_SOFTLOCKUPn,DBUG_STACKOVERFLOn,CRYPTO_SHA*y,
+  emrg hal,glsa-ck -[pf] all,emrg qt,-uD system,stuVimSyHiLi,genMxScrp.vim,bilz,try2findComCastAcct#4Em,P4P:renewLPmemb,prep,
+  Ryu:rsrch&&updt bothBIOS&&getX2corz up,emrgIRQBal,`uname -p`,`lspci -vvv`,`cat /(proc/(cpuinfo|driver/nvidia/cards/*)|sys/devices/system/cpu/cpu./cpufreq)`,
+   synUTC&&/\.(LS|DIR)_COLORS/i=>.lsrc,tidyFFwindz&&tabz again?,setup snd,rsyncz&&tst othr drv4bootable,pl5.10,revdep-rebld,
+   FFw/VimpNoSquintFlashPDFetc,mplyr,-uD system,world,xtnd (loc|cfd)d as utl2srch4dupz&&difz2sync&&org:(m[uv]z|d(vl|ox))wich1st mtchz same nmz,<=> -s then dif,
+     2nd mtchz simlr nmz (same xtn then othrwise simlr),also should find xtnz that aren't in .lsrc,mk .pl4nwPTok,whenNwEg ordr arivz:fixAku,setup BIOSUSB&&snd,
+  rsrchOVS.Org further4Em,org&&arc all mobl dat2XML&&rm*,find bike titl4Dunc,callChuck(JT'sGamerCoWerkr)(818)597-2346,
+ 81P   FriJan25 mayb ordr a bunch of3Castlz fromLilBrown.Com|RYO,regRazorStorm.Org,1TB HDD,Samsng275T,getPokr&&$4LBox2Keith,
+  setup bkcasez,cubz,booxlib,sync2doz&&dox&&dvl btwnTakiLBoxRyu ontoRy2&&push bak&&onto ext drv,bilpay,org paprz,dup keyz4car2!get lokdout,
+  Taki:fix all $(TZ|DST)4bak-filz pt,4NTvim:mkBcall`bak %`same as Cyg,port PuTY.bat2pl&&run w/wperl,cfg 4NT8 ahead of old,try2arcCyg&&inst new,
+  P4P:add linx2MySpc|Face|LnkdIn|Frndstr?,tidy up whole site,fix vid rec&&strt new vid outln,add anti-spam measures(RBL,SpamAssassin,captchas)&&reenable cmntz,
+  P4P:sep CSS layouts&&colrs,write new Declaration of In(ter?)dependence,ckUTub,HTMLify journals for FreeData,VioLove,TruStory,Masturba,w/easy to mk new,
+  rsrch incumbentz vs LP,ordr ZipitWirelessZ2&&3X OLPC,co ThnkpadT61 766417U 2/160GBw/DuDVD&&Quadro,2XKensingtonUltimateTrackBall64325,
+  Yomi:setup MinGW as dflt for4NTahead ofCyg&&ck that all depends are in site/,get to releaseable state,send Sir&&Lion pkg,studyLionJScode,study serv/conn_tst,
+  pay dnMC,ordrNoLo.Com:CaLandlord'sLawBook(Rights&&Responsibilities)(Prod4Dl)&&othr emld boox4Em,ordr@BikeAttack|SageCycles|DansComp.Com Stolen(Riot|Brat),
+  use"TTteGeGUYa"4MyFavouriteMagazines(DigitalCameras?)subscrptn,ordrKlipschProMedia2.1 4Em&&Ultra5.1||THXUltra2 4me,SennHD280Pro||600,sv$1k4Vaio4Courtney,
+  try2pay CFS UCI,ch addr2 90291?,poke floors,ordr 2X Ergotronz&&strt on4more2407|Samsung275T|LN-T4661F|ToshibaRegza46RF350U|ShrpAquLC-42D64U&2X8800GT,
+  recNat&&Ali&&eml linx,dsinSuperPipVsEmRowkz game w/all comm && impz of all pop vote sys4audience participation,demonstrate rsltz thruDiag,etc.,ask7 4GDClas,
+  ordrFett actnfigz4Kyle&&Ryan,Synrg overSSH,burn.iso&&instXPPerf&&InDsin onRyu empty drv,renew Edge,uninstAP817,reinst822@/Perl,try2instImgr&&Psh w/MinGW,
+  phon:rsrchOpenMoko Neo,RAZR2Z8(wait until late Dec.2get3Gvers2werk on newTMobl net),&&any othrGNULin phonz(&&maybe still NokiaE70?),
+ 82I-M MonFeb18-Fri22 GDConf.Com(getClassicPassASAP!),$945w/code:GDCGIFTby81G,$1495if late?,planPHRSmtg inVnic,brngPopTart2Q&&eml,o$4k2Maga&&o$1.5k2Bep,
+ 85M-R WedMay22-Sun26 2008LPNationalConvention inDenverCo(ask to be delegate4Ca?),
+  FF:plgn:WizzAtom,DLStatBar,AdBlok+,BlogRovr,StumbleUpon,JetEye(vsMetaNotz),ProntoShopMsgr,CoolirisPreviews,GreaseMonkey,LinkedInCompanion,GmailSpace,
+  strtYellDay,watch OSCON vidz,rsrch Developer.ValveSoftware.Com/wiki/Source_Multiplayer_Networking,get more lid-ashtryz,tst Perl5.10w/Diag|Yomi,
+  mkTk histogram utl tking 256x$ht skyline img&&othr arbitrary 8bit b&&w img2approx as new,HTTP://IronicSans.Com/2007/09/idea_the_histogram_as_the_imag.html,
+  GGPO:boostUSBspd,ckGGPOw/ adaptrz,setup router(admin:ps4p),open UDP&&GGPO,cfg FinalBurn w/RadioShackPS2USBadapter,ordrSennHMD280Pro,
+  BaseCnv:ch2useSub::Exporter4cnv variants,watch Rabiha's videos,read Danny's story&&Nat'sWaterVsJello,inst Ubu on Gen,
+  PT:refactor anything psbl into Fields,fix overloadable ops to time stuff w/ PT && Frame objz fully,imp zones or study all DateTime::* && adapt PT IF to DT,
+  PT:add now() member,export_ok pt() again,add Dad ptg fmt w/ auto-clipboard optn,fix LBox bak to use the ENV|~/.erc/* like cmdln,
+  PT:setup pt.cgi && fpt to handle TZ,realtime JavaScript dfalt pt.cgi optn,study limits && mk better study tbl,
+  Utl::e tst ul cpan-upload-http on BaseCnv && PT,co `ack`&&`ssed`4CLI PCRE,
+  XML::Tidy fix encoding s/ISO-8859-1/utf-8/ from FrankGoss&&JoernClausen2Gmail&&ck4unwritable filz noted by ChrisCanipe2Gmail&&export tidy() w/ auto-new(),
+  XML::Tidy mk dfalt optn2!xpnd<!DOCTYPE ...dtd">,add KenTown's _tostring() additions,add optn2regex post-tidy attz&&etc.4vert align by XPath group rules,
+  XML::Merge fix 'xsi:noNamespace' duplicate attribute bug from Yuri2Gmail,imp Dharani's cmnt_join(),&& pkg up Tk::AC w/ fix to not PREREQ self,closebugz,
+  cerv:serv=~s/^s/c/g;,rsrchTree::Trie&&maybe mk own tied2%hash 2get@obj's%hash|@aray|$GraphObj|$BTree? &&autoFrzMrkr&&alow /./,studyHATrie,Burst,3way,
+  cerv:studyMercury|CAN|Chord|Kademlia|Pastry|P-Grid|Tapestry&&consider maybe256bit-kyz in own new [DP]HT|trie4TOAD too,study Colyseus&&proto own in Perl,
+  TOAD:s/^T/Soft/g,try2bootstrap(1st w/reso,acronym,&& HPBP data,Simp IFs),updt HackersPerlBestPractices.xml (thru SOAD) 2 further describe/justify divrgnces,
+  finish,prioritize,&&applyHPBP&&kwalitee,pkg&&ulBaseCnv,DOW,Pokr&&prepSimp(ch allColrCodz Blue=>B,blacK=>K 4RGB,CMYK)&&accept s/^(SDLK|KMOD)_//i like Parrot,
+  Simp:study Curses(::(UI|Widgets).*::GPM)?&&mice(in C apps?)&&integrate or mimic,add SixteenColors.Net stuf,eml Jason.Mayoros@MorganStanley.Com about release,
+  rework .fp[fp]? formats to use XML,revamp fp && etfp (w/ data ck's before -s -f on .tgz or something else that is likely to look broken) && rw .com
+  `fpal    -[rR]` to call etfp's reset of both f && p,consider mode where each regular 8x16 char map pixel is 3X wd && 2X hi for 160x64 term in 3840x2048 reso,
+  add fpal option to only change local (/-l/) pal && chng -l(oad) to -s(et) (to have same param convention as etfp)
+  fix fp to read char hite from .psf's && add to/from .fpf's && properly handle changing charmap hites (1..32) on load or from IF && re-init scrn
+  mk Nihongo fonts (hirag|katak) for studying Pimsleur && other texts && for Matrixy PT mode (consider putting both in high-bit ascii too)
+   A  B  C  D  E  F  G  H  I  J  K  L  M  N  O  P  Q  R  S  T  U  V  W  X  Y  Z  a  b  c  d  e  f  g  h  i  j  k  l  m  n  o  p  q  r  s  t  u  v  w  x  y  z
+   a  i  u  e  o  ka ki ku ke ko sa shisu se so ta chitsute to na ni nu ne no ha hi hu he ho ma mi mu me mo ya yi yo ra ri ru re ro wa wo (maybe hi-bit nstd?)
+  Simp:finish fp loader (w/ Simp::Brws(),filters,.rc favs?),pmix:add drk thm on key or after idle,imp pmix undo/redo stack,add auto "TI" @strt cmdln optn
+  fpal:if fbset ever works,add quick fbset size selector to fpal (`cat /etc/fb.modes|grep'^mode'`&&useSOADreso data)
+  finalize fp formats && cnv all old good fonts/pals into ~/lib/fp/*.fp[fpx],finish help,perldoc,&&man pg,updt 2do,setup final console fpals && auto scrn
+  Simp:fix Prnt() to write into @fclr && @bclr too,separate fclr && bclr in bin/*,pkg,ul,mk Simp objs behave like $fhnd to printf() to if psbl
+  SOAD:bld fnt meta-dat4favz,grupz,etc.of ea typ(.(fon|psf|ttf)etc.),mkUbuLUT(Breezy|Dapper|Edgy|Feisty|Hoary)=>[\d\.\d+,RelNotz,etc],mkAbrv|Brif(sy>ntx,syn>c)
+  Simp:prym:verify that prym N is correct,updt to use pt math rather than HiRes,SL:fix trng RecuDpth,start xmle,consider best new unifiedSimp4Tk|Zinc|SDL|etc.,
+  Simp:study screenie&&mk scrn to take or make srk/perl/2do/...,auto-wipe if always unrecoverable,m/subname/ 4reattach,studyBulletML,dsinSrawMoeg,
+  Simp figz:tiglet port which can load figlet files and save out new .fig XML which can be edited interactively && viewer can jmp right to any font #,
+  Tk::Diagram frmwrk4vis-editing Graph(::Easy)? objz w/XML save|load&&Simp|Tk|Zinc|GTK|QT|Wx|SDL IF's,mayb mk own clean Graph::Simp.pm?,updt Diag to use,
+  Diag:studyVisual-Literacy.Org/periodic_table/periodic_table.html,&&GoogTalkz on15Views of a NodeLinkGraph,read some of Mapping Scientific Frontiers,
+ putr:`rsync -av --delete /[A-ort-v]* z` ~4hours@3Gb/s 2bare SATA,run separate rsyncs for /sbin && /portage*.bz2 && md /z/(proc|sys|z) if !-e
+  init:syncTaki,tst new w/old dat,mk GeTTYs spawn zsh in scrnz w/bigCurs,try chsh screen in /etc/pswd&&~/.screenrc shell=~s/-$SHELL/zsh/,flsh oldBIOS 4 4GB?
+    trying new RAM in DFI:use orng slots w/dualchan-mode,one DIMM in far    new:DDR400(PC3200)4x1024 2-3-2-5 184-pin DIMMS    BIOS flash parmz:/? /f /f/qi
+    slot 1st w/DRAM drv strngth7&&volt2.8 then close slot then add othrz    old:DDR500(PC4000)2x 512 2-3-3-8 184-pin DIMMS    look into /etc/prelink.conf
+  inpt:tst othr adapter,ordr EMS USB2 DualShooter,SmartJoyPLUS USB,Super(Dual|Joy)Box[35]?Pro,SmartJoyPad2,co PelicanPS3/PS2 ControllerAdapter&&RadioShack,
+  plan:emrg.txt *diff|krell,mk.lscolors wi bgz drawing from 4NT,LBox,etc.,study SVK/Unison/Harmony,
+    plan future RCS+sync+burn proc incl MSDuos,trk dn all key files && sync(cell+phonbook&&puters),burn CritArc DVD/MSDuo&&mail to Moms,ordr Ergotrons&&2407s,
+    bak Ryu crit2ext.drvz,MSDuos,Eiji,LBox,SyncML or BitPI?M(manu on MicroSD?),strip old putrz,inst&&study FontForge&&all(console)?font stuff for fpal purps
+    tryWarsow,Tremulous WorldOfPadman,Nexuiz,AlienArena6.10+,OpenArena,Sauerbraten,HL2OrngBox,Portal,Minerva, &&coXAutomation,
+    rsrch MythTV,2pcHDTV HD3000+HaupPVR350,Ath64X2 65nm2MB L2,dtermine ideal servAx9/cliKen cfg,8GB OCZ,2TB XFS RAID0+1,GigE+802.11g+,LUFS/NFS,X-fi or betr snd
+    if XPPerf is sweet,maybe inst on ext drv4Taki&&clean slate setup /home/pip (!\uPip),AP5.8.8.822+ as /Perl,full MinGW,Cyg,dmake,PAR,FFplugz,Synrg,Unison,etc
+  Perl:mk static Compress::Zlib from src outside of CPAN shell 4 PAR,Perl-x86_64-MultThrd.Com/pub/a/2002/09/04/threads.html,*GHC 6.6+,pmei Perl6::Pugs,Parrot
+  disk:wrk DiskReg,plan&&sync all old machines over,superwipe old drives or strip newers as bkup rotz,port rsyncz2pl&&rsrch grub(-install)? --batch&&GHC,
+  Flux:fix .fb/keys Alt-v 2zsh2vim2exit2paste ptg from clipbrd,find menu && s/aterm/GT/,  net:maybe port-fwd ssh thru router&&setup DynDNS
+  XOrg:maybe mk xmms from src4ProjM,find all X11-crashing TTFz && rm bad from all puters,zp newest best FontArc,mk USB kybd always work in GRUB(BIOSsetz?)
+  vimp:inc stl&&cml fnt siz if psbl,mk vimpcheat.txt,:h(elp)?,:o(pen)?,:set guioptions=mT(menuToolbar),:addons2rm/disable,re:map keyz,mk`screen`cheatsheet,
+  vidz:try emrg latest nvid,Phoronix.Com nv 1.0-8174 SLI w/ 2.6.20-rc6||8 kern?&&latest nouveau,rsyncz2frsh drv,umask&&emrg svgalib,
+  bkup:on dd syncd drv:`mount -t xfs -o nouuid /dev/sdb3 /z` or `xfs_db -x -c "uuid generate"|xfs_admin -U generate /dev/sdb[13],sync Gen2Ryu,prep bkupHD4Maga
+  kern:mk `kern` auto-emrg gentoo-srcz,ln -sf /usr/src/linux,setup .config where possible,mk,mod-rebld rebld,mk mods_inst,cp/boot,&&GRUB,tstUSB PSpads Laing?,
+  notz:to restore base Gentoo:put arc stuff in place,updt make.conf:USE,emrg sync&&emrg -uD system,`cat /arc/of/backup/world | xargs -n1 emrg -uv`
+    Disk/dev/sda:320.0 GB,320072933376bytes 255heads,63sectors/track,38913cylinders Units=cylinders of 16065*512=8225280bytes,dd if=/dev/sda of=/dev/sdb bs=512
+    Device,Boot(*),Start-End,Blocks,MountPt,FS (all Id:83,System:Linux) /dev/sda1*,1-32,257008+,/boot,XFS 2,33-291,2080417+,,swap 3,292-33713,268462215,/,XFS
+    mkng new dup ST7200.10 manually (since dd tkz 12+hrz):fdisk /dev/sdb;p (2ck!already part'd),n,p,1,,32,a,1,n,p,2,,291,t,2,82,n,p,3,,33713,p (final ck),w;
+      mkfs.xfs /dev/sdb[13];mkswap /dev/sdb2;rsyncz (tkz ~6hrz 2put150GB on new drv&&~45mins for later syncz);grub;root (hd1,0),setup (hd1),quit;
+      to erase boot portion of MBR b4 clean grub:`dd if=/dev/zero of=/dev/sdb bs=446 count=1`,
+  read Blog.PMarca.Com about startups&&VCs,
+  blog:EGT (fix typo /cricy/,s/on grnd 1+ week/as long as fight w\/o safe zones or secret svc entourage/,add2Plan undeclWar retn(@stolen) sorry2Wo,new Trilogy,
+  blog:panic:HTTP://WellingtonGrey.Net/miscellanea/archive/2007-05-27--the-truth-about-wireless-devices.html,eventually INO hypocrisy
+  SDS/GCS:(6[BC]|71)A$523,42mos$454 (877)491-0386 Acct#LSWF9Krf4,foloup eml Priscilla&&Mark Demon secured,Nitemare prolly too,try again2get Demon stolen report
+ job?renew IGDA&&LP&&EFF,tk$2k4G27,CCholstz&&hicaps,mk appt2rm wizdz&&get nw retainz,maybe retn2Aikido,watch PBS.Org ElegantUniverse&&study strTheory,
+    :study C++|p(ublic|rotected|rivate)|STL|vector|matrix|quat|BSP|sortz&&add2cheat,
+  prep clothes4bulk wash,setup new file boxes,diagnose PS2 hd,org blu boxes,parts,&&cables,scrap&&pack shit,rsrch FIC OpenMoko Neo phon,tk Integra title to DMV
+  bavl:study MVC,Catalyst,DBIx::Class(::Relationship)?,study unobtrusive JS&&behav lib,(find elements using CSS selectors && setup actions after page loads)
+  vote:study voting mechanisms && eml Beppu-san 2 code site,rip all C/DVDs && maybe figure out how to burn backup cp,study mocp
+  Game::Element::Board w/ default 8x8 for chess/ckrz but can handle 4-player chess (4ess|che4)?,1D Alak,or 3D..nD board games (even hex)
+  Game::Element::Piece (Chess/Ckrz/Rvrsi/Mncla/Monopoly tophat/Clue wrench/etc.) ... also study Chess/Checkers notations (ply notation?)
+  Game::Element::Card && Deck w/ default  52 for Poker/BlackJack but can handle any other set of cards or game (SolitaireCentral.Com for gmz)
+  Game::Element::Die          w/ default  d6 for craps           but can handle any other like d20 (maybe informed by SOAD data of physical dice&lie)
+  Game::Template::Puzzle::Basin (at least for Tetris,Columns,Lumines,PuzzleFighter,&& MagicRainbowBattle) using Game::Element::(Board|Piece)
+  Game::Template::Puzzle::Cube::Rubiks && others,SFCG:consider coding some of Sirlin's StreetFighterCardGame rules && ask if dsin updtd
+  Simp:mk dich w/ ability to mk diff dbs for new entries (rejuvenative),Dad (goood,stone,etc.),flesh something out searching dict using XML to store dich hist
+  Simp:think about diph && rsrch best interactive diff utlz,flesh something out as a colorful Simp frontend to `diff`,mk `best` as more|less|most replacement
+  Simp:add scrlbrz,tris,lumi,colm,pfit,rbow,ches,ckrz,srvr,mncl,balo,4ess,pcal (pt-based `cal` replacement),pcrd (pt-based time card),svim,$mnvr++,pkg,tst,ul
+  Math::ArrowCalc:extract logic from PerlSDL Diag code which determined where arrow head bars should back off to from the intercept point
+  Math::GradCalc: extract Tk::Axis && Graph::TimeLine etc. into M::GC as configurable graduation calculator (unless existing modules suffice)
+  mk G::T::Scale kid of AbstractCanvas using M::GC && maybe being optionally standalone or drop-in replacement for Tk scale widgets
+  mk unified /home/pip/ layout && WinXPArc:4NT,Vim,Perl installer && modules,P47,etc.,on WinXP:inst iRMM && rm prob songs from iFP,study PerlBal&&Colyseus
+  pokr:VerboseHandName POD should have eg"0,2k,7k" mtch "A's/K's,T's-Jkikr,Qhi-Tkikr" like HandName does,
+  pokr:s/IPC::Open2/Inline::C/,study&&imp multi-threading,mk internal data fmt,write both fmtz to SQL,new layout?,mk SA::cmdq() or own OddsQuery.pm
+  pokr:updt Simp && web IF,bugfix xplr @hodd&&@todd,add rand||xplr optn,mk multi-player cat curves (&& refine perpetually with rand data?),eml Lynn
+  pokr:fix pokr.c old comp eror noted by Jean-Hugues to my Gmail where hAK is missing 2,140,380 hands && HTTP://PokerPronto.Com/#holes could help
+  start 4Pla (Pip's Perfect Poker Program) as maybe shareware $20 xplr.exe w/ Tk frontend or $40 disc w/ data pre-burned (DVD or maybe .7z all XML to a CD?)
+  flesh out Game::Input (co VControl && inc. mouse,a-stick,Wii,etc. mvmntz)
+  study irssi && cfg LBox (scp bak to Ryu)
+  start VGDP (VideoGameDataProject within SOAD) for all games,chars w/ G::I abbrevs,release dates,developers,etc.
+  Simp:mk xmlu utl to take cmdln XPath to updt or edit,if Beppu-san's Text::FrameBuffer or Term::Kaka can do it,support as Simp render option
+  SOAD:(after SDS paid off) start CreditCardOffersDatabase FreeCreditCompanyReports,input offers,prioritize criteria and sort by best avail now/ever && apply
+  mk common G::T::Primitive to abstract prims from SDL,Tk::Zinc,Gtk,Qt,Win32::GUI (&& others?) to all behave as much like probably Tk as possible
+  dsin IGLU (Interactive Game Layout Utility) to ask q's about playable chars,enemies,levels,props (anim or stationary),weapons/power-ups,etc. to
+    gen XML which can be used to gen dir struct && .pl && .c conversion funcs,study colorblindness and other accessibility issues to design accommodation for
+  fix kicks on MvC2 && P360 on A3 (&& install ST in 4th cab if avail) && post cabs w/ pix on eBay (through Kris?)
+  add dich auto-srch facilities,synonym only mode,.rc annotation,letter permutation,ck Linguana.Net for inclusions,help,&& pkg
+  qbix:add smpl rotation options && dynamic fullscrn qbix draw modes as different cube flattenings 0) flat hex 3d view,1) persp 3d view,2) + view,3) H view
+  qbix:add miker &&/or speed url qbix solver,add smpl qbix input mode which works in any draw mode && write qbix help,mk bin && b64 rep key => move dpth val
+  qbix:study && get freenet or use SOAD,MySQL,orSQLite for qbix exhaust,write qbix srch space exhauster && optimal solution client,pkg qbix w/ Simp && ul
+  save $35k in surety bond for self-insurance
+  ck out latest Ubuntu Studio,Equinox,Blender3D,Gimp,CinePaint,&& Eclipse (non-IDE?)
+  PT:wrap `ls` with a Perly color filter (or find Ls.pm) to show `pt -c` for file times && names
+  PT:add pt colr hiliting to all vim syntax files possible for ptz near start of line in comments or in data as strings with nearby indicator cmntz of pt || !
+  consider security implications of public unified .zshrc,maybe mk priv section (on MSDuo) but public can export && sync anywhere,hosted on P.Ax9.O/dvl,etc.
+  replace as much .zshrc aliases && functions as is reasonable w/ Utl.pm && subdiv as appropriate
+  mk Database of Simple XML (DSix) (with some pt+diff trnsactz),arbitrary field addition,Simp/Tk/SDL IF to updt struct,slect/updt rows,... use XPath && XQuery?
+  Diag:portTelsG::*vis.pm,mk GraphTheory asLesson0 4Lern,imp locl ver of HTTP://OSteele.Com/tools/reanimator,
+  study mocp && read about IPC for C && Perl (also for zinf s/fsui/ipci/ in future zinf/pimp)
+  mk new Simp version of bitchx/irssi called icom (w/ moci.c) to print colored pt,info,toggle expanded format,easily hide pass,more && expanded status,
+    share status/prompt lines... if icom is too tough:write screen/irssi logfile parser to:isolate fields,strip escapes,part by chan/spkr/time for arc
+  Simp:study IOCTLs for a scan code handling utl for Simp mk/brk instd of typematic,add scrn (term window) resize ability to Simp (SIGWINCH?)
+  mk general SDL color selector (use .pm for RGB <-> SaturationHue stuff)
+  SEED:revive || rewrite considering tvs etc.
+  mk peop "peep" as Simp + DSix repl for contax/phonbook,b64 phon#z as 2-char area,4-char num:ErGYAZ w/ codes for Cell,Home,Work,Pager,Apt,Office,Mobile
+    (lower-case is 2ndary),E-mail && Street Addresses are obvious,dflt cmprsd Eml view has @:G(mail),H(otmail),Y(ahoo),A(OL),(EMail.)M(SN),Ax9,LBox,CPAN...
+    && Addr has b64 street# && OQV-2SF zip w/ colored (St/Av/Pl/Ct/Dr/Bl/Wy/...),study SyncML for data
+  start 2dew,caln,&& muny as open Simp/Game apps to accompany peop where:*note* each should auto-store divergence since last sync on multi-clients
+    2dew is smpl cklist s/// for this flat 2do.txt file but w/ cats,degrees complete,etc.
+    caln is the equiv of a daily/monthly planner but with tite pt integration
+    muny is a smpl budget,finance app (unless GNUCash is already great)
+  add Perl-generated pronunciation .wav generation to dich (or Bavl query)
+  zp/uz:study 7z&&imp unified Perl u?zp? to detect param for dir or glob etc.&&handle differently w/ uz able to tk 2nd parm as dir2uz2
+  dsin Game.pm engine input state machine maybe w/ POE,Coro,etc. which understands printf,pf+ANSI,Simp,Tk,GL,SDL,GTK,Qt,Wx,etc. rendering
+  mk MENT,mk little dialog menu (with MENT) sequence chooser to bind to linx in DIAG w/ bottom option to spawn TISE for defining a new sequence to be bound
+  start Game.pm to have core engine state management
+  mk DIAG dfalt write hidden -`pt`.gtd after every structural change && mk Game load .gtd @start && any new hidden -`pt`.gtd updates while running
+  Game:updt to incorporate latest SDL improvements (&& GL),flesh out enough to imp mrb
+  MOCP:get latest,add mikmod support,e-mail diff to maintainer (fork if !reply in a few months)
+  PIMP:fix pimp to use BaseCnv && PT.pm... use new Simp changes,support edits,inc. seamless cdparanoia -> flac ability (+ ogg/mp3 etc.)
+  PIMP:get multi-pimps to control one process smoothly (maybe just via shared screen is best),research icecast or ways to stream .ogg
+  get alsa to work && inst dvd play/rip utils,rip all DVDs,get audio recording to work on Ryu/Ken line-in
+  get nice cassette deck && vcr (ArsTechnica has a good VHS->VCD cap guide),flacify && theoraify all old muz/vid tapes,verify && mirror rsltz b4 discard orig
+  dsin orb(hw) using playdough to shape button positions in palm,maybe get short-depth buttons from Happ or Nippon,werk orb(hw && sw)
+  mk meer (or wget mirror) for GameGen.Com/fightgen && falcoon art
+  dsin GESS (GreatEncryptedShareSter) as Napster+Friendster+Mplayer w/unified abstrct hd,db,cmntz,strming,... over crypted trust nets(ssh tunnels)... co exstng
+  write app which queries proper pages (in case of updates since last version) for fighting game study sheet in order of priority... auto-categorized.
+    Would need to fill in additional data like direction certain throws must be initiated from in order to RO but sheets could be made per char or in game-wide
+    / tourney-wide move sets too... plug in to demo box to have input sequences to dup.  Then practice against.
+  work on general IF design rules (guidelines? suggestions?) && dsin GIFT (GameInterFaceTool) for all frontends,main/in-game menus/dialogs
+                                                             && dsin FIGT (FightingInteractiveGameTool) tie all tools to make any fighter (pronounced "fight")
+  SL:start S.S.Trisgo,SL PrimFonts,QbixRube
+  pcom:get latest gnuyahoo or gaim,add Y! && AIM support to pcom && mocp.c w/ colr,fixd prmpt&&whtspc,grup mgmnt,shw buds,auto-alias,cmndz as /.* ! ?.*
+  Ax9:work Ax9 ndx (symlinks && putting all muz,gfx,etc. in it) 
+  FFDB:start FreeFileDataBase which can track filz,fmtz,size,desc,cksumz,...  helps audit P2P file validity by shwing discrepancies && storing user-contribed
+    quality valuations (eg. 328FbQo:Pip:skip:3m15s:Foo.ogg).  include existent MAME/other emu game data as initial FFDB data.
+  PipStick:Gimp up some PipStick logos or ask ThomasG,Russ,KevinJ,KelleD,get aquamarine spray paint or airbrush,good stencil board/plastic,
+    cut best logo as template && get airbrush to apply,get rubber edging && decent wood router,mk new fitestix masters from hard cardboard (2 SF-style,
+    1 NG-style),measure,cut,&& paint four PipSticks at a time with all quick-disconnects
+  play:mk play (on play box w/ sweet TVout) as a utl to wrap xmpk,pimp,mplay,xvid,... plyz all muz,emuz,gmz,mvz,chz vol... recs,can save arb attz in FFDB
+    (alongside pre-defined standard fields) which can be easily searched for,sorted by,etc. w/ interface features:
+      treat everything as a channel (including devices,hw/sw game sys,etc.)
+      expandable to incorporate any new devices as additional channels
+      play button does appropriate thing for special (dev,gamesys) channels
+      single radio remote (instead of infrared,so no need for line-of-sight) && multiple radio controllers / PipSticks / orbs / pc terminals
+      find/page remote button on display triggers main remote to flash && beep loudly to broadcast location (like Manson's backyard ;))
+      all settings (&& entire changes history) are saved
+      per-user profiles to store favorites,settings,&& histories
+      tutorials && help
+      UPS to minimize power-outage problems (&& XFS on all puters)
+      Freevo or MythTV... LoFi(LowDef)"LDTV"devs:iPhone(320×480),iPod(320×240),PSP(480×272)
+  ptok:add dynamic delays to keep frames constant on seconds updt,figz display option w/ under / overlay,interactive demo / instruction mode
+  Simp:rsrch diff box/line char mapz && mk some logical sets in fpal according to detected data (maybe CScr() to reset Curses idea of box/line chrz too)
+  re-dsin PipzColorz (pc) or use Privoxy to be interactively configable w/ JavaScript && prepd to hndl lognz && cookies for sites like /.,PerlMonx,Y!,etc.&&
+    consider spider ability (work with wget or meer to crawl on cron to ~/.meerrc or ~/.filtrc settable thresh for link depth && export static filtered local
+    filez for later perusal (ck perldoc LWP)),work w/ meer for automagic scheduled filtered site mirroring =),study GreaseMonkey for JS color overrides
+  rewrite pc (rename `filt`?)
+  nput... new orb that is a glove w/ shallow PS2-like pressure-sensitive buttons in fingers that can get tiny clicky resistance on any surface (like desk,leg,
+    rock,steering wheel,handle bars,hilt,piece,helmet,etc.) && eventually know surface to provide context-sensitive nput too
+  disp... new shades w/ configable opacity display
+  svim:setup bg code-coloring like from:HTTP://DrinkBroken.TypePad.Com/drink_broken/2007/11/syntax-highligh.html w/ maybe spectrum or gradient modez:
+    * 4Perl6Lerner:colrz4new Perl6 vs old Perl5 features (&& maybe Perl4,Perl5.005,5.6,5.8,5.10,etc.)
+    * 4Maintainer :colrz4code-age during bug-trakng newly found bugz (maybe4totl#of chngz made2buggy sectn too nstd of just age,also dtect cp/pastng)
+    * 4CodeReviewr:colrz4unit-tst covrg (maybe diff colrz designate which tsts or which tst-grp covrz)
+    * 4Optimizer  :colrz4profiling exec freq2see hot-spotz
+    * 4TeamMemberz:colrz4rep of contrib hackr ... && like code-folding to hi(lite|de):cmntz,parmz,basic arith,built-inz,loopz,etc. && man colrng...
+    * othrz frm HTTP://MindProd.Com/project/scid.html
+   && @7CT3I A.B.Leal on SublimeText.Com/blog/articles/anatomy-of-a-next-generation-text-editor cmnted: mk1px/chr fileview2show:
+    * code/text structure     * bounding (shaded) regionz open in other edit-panez   * blink mtchng parenz|bracez
+    * hilite all srch mtchz   * px Use color syntax-hiliting from       edit-panez    "Free idea. I just hope it takes and is widely imitated ;-)"
+  svim:merge BinQ && DrForr's Perly vim-clone (w/ syntax file converter) for orb (since regular vim falls flat without qwerty)
+  mk nw perl && svim sntx wher all bilt ins are 4 lcas ltrs (or less) wher key wrds incl:use strc(strict) pkg if lsif else sub retn shft unsh push pop next
+    last cont brk exit int whil sclr srvr splt join defd xist leng my our for each frch sstr .... hmmm mayb reqr alll keys tooo beee xcly four ltrs ????
+    prolly use Conway's Filter::Simple to mk filt.pm IsntRealLife,EatsRealFast,DoneWithFour,HoleInnnFour,FourUndrParr,OwnzNerdGolf,InnnPipsEyes,UndrPipsImpl,
+  Game.pm should consist of:
+    SUCC "suck" = Simple Utility for Choosing Colors        aka ColorChooser  (enables uniform creation, configuration, && choosing of colors for any purpose )
+    SUDS "suds" = Simple Utility for Drawing Scales         aka Scaler        (enables the calculation && drawing of graduated scales && spectrums of any type)
+    TISE "tice" = Tool for Input Sequence Editing           aka Sequencer     (enables creation && editing of sequences of anything, especially input patterns)
+    DIAG "diag" = DIAGramming tool                          aka Diagrammer    (enables general graph editing for DAGs,HFSMs,DFAs,NFAs,trees,tries,UML,XML,etc.)
+    SMRT "dumb" = Simple Mechanism for Reasonable Thinking  aka Smarter       (enables AIs via HFSMs,BehaviorTrees,sequences,selectors,decorators,STRIPS ,etc.)
+    MENT "ment" = MENuing     Tool                          aka Menuer        (enables complex menuing system construction to bind game actions to any events )
+    GAME "game" = General Acronym Manufacturing Engine      aka mage mega gaem gema geam meag egam eamg... SMRT:See AIGameDev.Com on parallels,sched.observers.

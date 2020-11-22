@@ -1,0 +1,6 @@
+67ODng0 - 2chNetGear-100BaseTX-802.11abg-2GT624v3 setngs:
+  HTTP://RouterLogin.Net as admin:nsrt lft(1,surnam)n2 lc(routrnam)
+WAP pw:"PipForPresident"
+
+89U1wK2 - *Note*:Old wiredNetGearRouTr314 has unknown othr spex&&pw,
+  8&&5portFastEthSwitchz also?

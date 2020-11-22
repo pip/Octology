@@ -1,0 +1,250 @@
+
+               __________      ___________            .__
+               \______   \_____\__    ___/__________  |  |
+                |    |  _/\__  \ |    |  \____ \__  \ |  |
+                |    |   \ / __ \|    |  |  |_> > __ \|  |__
+                |______  /(____  /____|  |   __(____  /____/
+                       \/      \/        |__|       \/
+                 Beppu's and Tigger's palette configurator
+
+
+
+BaTpal is a utility to map any of the 18-bit VGA colors to the 16 colors
+in 4DOS.  Of course you need a PC and 4DOS to use this.  It can take up
+to two command-line-parameters in any order.  An "l" will allow the
+scrolling of the indices and values to wrap around.  The default is to
+stop at the boundaries (ie.0 & 3f).  A "p" parameter (for PickPalPlease)
+turns BaTpal into a palette chooser.  The numbers select from available
+palettes and zero (0) quits.  The palettes are stored at the very end of
+BaTpal.bat itself so if you delete (or move from your path) one or more
+of the palettes it is expecting to find, errors will occur.  It doesn't
+detect when one is deleted so you must remove the line with the name of
+the palette from the end of BaTpal.bat manually.  You do not, however,
+need to add new ones to the end yourself.  Simply save any palette from
+within BaTpal and if it doesn't know about it yet, it will append it to
+itself.  Neeto huh?  A "?" parameter should provide some simple help.
+The other possible parameter is a filename with no extension to
+automatically save your palette editing session into whenever you exit
+the program.  You can also save different files from within the program
+but this command line functionality is primarily useful if you just want
+to tweak something and go.  This file (BaTpal.txt) and those
+accompanying it (BaTpal.bat, GeTpal.com, GeTpal.asm, SeTpal.com,
+SeTpal.asm, and example palette batch files) should ideally be placed in
+a directory that resides in your path environment variable.  This will
+allow it to be executed from anywhere and it automatically saves new
+files to the directory that it is in so your palettes will be executable
+through the same path.  If you don't have much environment memory free,
+instead of storing the whole palette in an environment variable (which
+uses around 100 bytes) BaTpal informs you that you do not have enough
+free environment memory and after you press 'Enter', it tries to store
+it to a file in it's directory.  This slows the program down greatly,
+particularly on 486's or slower, because it has to hit the hard drive
+everytime you press a key because of the semi-dumb way I designed the
+core loop.  If you do have enough memory, it is quite fast (esp. on a
+Pentium =P ). We tried to make the on screen help thorough enough to be
+simple but get the job done quickly.  I hope we succeeded. The up and
+down arrows change which of 4DOS' 16 colors can be modified. The 'r',
+'g', and 'b' keys will select each of those elements of the comprised
+color.  I'm sorry if I'm talking down to you. I don't try to and I know
+most people who have 4DOS and would get a hold of this somehow, would
+probably be easily savvy enough to figure it out with no help but I
+thought that I might include this just in case. The left and right
+arrows will change the value of the selected component color (r, g, or
+b) down or up respectively.  The 'l' key restores the palette settings
+that were active when you started the program (our version of an undo
+feature) and the 's' key brings up a prompt to ask for a file to write
+your palette to so that you can easily call it up later.  Have fun
+making everything a little more colorful and please feel free to send us
+a palette that you made as well as any source you've written to similar
+stuff.  Our info is below.  Sayonara.
+
+
+                     SOME BABBLINGS ABOUT US (BaT)
+
+
+Hello.  I'm Tigger and this is Beppu... umm... he's sleeping but we are
+currently roommates and friends who've liked the PC demoscene for years.
+We get silly ideas sometimes and code on them.  We both love 4DOS and PC
+Asm much better than any MSVC action.  I need to note that the SemWare
+Editor Jr. (formerly known as QEdit and still Q.EXE) is the greatest in
+the world hands down.  Guess what I'm typing this text in?  Anyway, I
+just registered both this and 4DOS and am totally stoked to be able to
+whip up wacky utilities that just make Computers more Personal. =) John,
+aka. Beppu aka. Nip, wrote the asm to obtain and submit palette values.
+That's when I slept.  Now I'm a wierdo and have a directory in my path
+called batch which is filled with little utilities and shortcuts and
+simplifications and assorted silly stuff (ie.pkuZNip.bat because I
+misstyped it so many times that I made a work around =) ).  So I love to
+get crazy in batch when the task doesn't require the optimization of asm
+like a Rubik's Cube solver or something of that magnitude would need.
+Beppu and Tigger (BaT) is us and we designed this cheezy interface and
+provided essentially a simple command-processor VGA rgb palette
+configurator which can export batch files containing dialed values for
+easy palette recall. Sorry that this is exclusively for PC's running
+4DOS but if you have both, then you're special like us and might like
+something like this.  Of course I'm biased but I really like it and
+wonder why I've never seen one back in Dos' heyday.  Maybe 'cuz 4DOS
+didn't rock as much as it does now.  Too bad MS is gonna put a hit out
+on us but sometimes we even have to stand up for Linux and all the other
+things that keep the power of computers in the hands of those who really
+want to use it and are willing to take the risk of (oh no) actually
+rebooting a hung system (like we don't already do that in Windows =) ).
+Well enough gabbing about stuff.  I hope John edits this so that it
+doesn't sound like I'm totally a moron.
+
+If you have anything akin to this type of utility or other cool asm or
+4DOS stuff, John and I would love to see it.  Any suggestions or
+comments would also be appreciated. I'm Nitemare@UCI.edu and John is
+JBeppu or just Beppu (I forget since I don't email him anymore)
+@UCI.edu.  You could call us if you're in Costa Mesa at (949)515-4243
+but we're usually not home (Jiu-Jitsu, UCI, Aikido, GolfLand, Blizzard
+Entertainment, Coldwell Banker/Prudential, Yaohan, home home, out,
+etc.etc.)  Peace Out homies!  SEND US YOUR PALETTES, TOO!
+
+
+                             -PipTigger
+
+p.s.  Title made using Figlet.exe and Tiglet.bat ( good stuff =) )
+
+[ note from beppu ]
+
+    It should now be clear to you that Tigger has problems.  That's OK,
+    though.  It makes him interesting to be around.  I had no idea he
+    would make such a comprehensive wrapper around the setpal & getpal
+    things that I wrote.  I don't even use his stuff (since I don't use
+    DOS anymore (viva Linux!@#)), but nevertheless, I find it cool.
+
+    I regret that this package of utilities was not written back when
+    DOS was in widespread use.  I imagine people would have found it
+    nice to be able to customize the bland defaults of DOS.  Although
+    DOS-users are rare nowadays, maybe there are a few of you out there
+    who would find this package useful.  I hope that this reaches as
+    many of you as possible.
+
+[ PS ]
+
+    + I need employment--so does Tigger.  Hook us up!
+      Please?
+
+    -Guided by the Unix philosophy, and a deep respect for freedom,
+    Beppu == Beppu
+
+ver1.1  Palettes now simultaneously support Lose9x and NT ... simple
+        change but worth making a new version since it expands
+        usefulness well... barely at all =)
+        
+
+
+
+/*
+	for (world_index = 0; world_index < kWORLD_COUNT; world_index ++) {
+		// load the world
+		Shadowmap_LoadWorld(world_names[world_index], &pWorld);
+		shadowmap_populateWorld( pWorld );
+		placement_startup();
+		camera_startup( 0, 0, 0 );
+		player_startup();
+		if ( !pWorld ) {
+			printf("Couldn't load world <%s>. Exiting.\n", world_names[world_index]);
+			return 1;
+		}
+
+		// make sure to prime the object graph
+		objectMessage.messageId = OM_INITIALIZE;
+		objectMessage.pData = NULL;
+		objectMessage.pSource = objectMessage.pTarget = NULL;
+
+		object_broadcastMessage( NULL, &objectMessage );
+
+		// init view
+		initView(pWorld, &gView);
+
+		perfReset( 250 );
+
+		gCurTime = 1.0f;
+
+		// main loop
+		do {
+			// compute the time taken last frame
+			gDeltaTime = glGetFrametime();
+			
+            if (gDeltaTime > 0.2f) { gDeltaTime = 0.2f; }
+			gCurTime += gDeltaTime;
+
+            dp_drawRectangle(  0,  0, 60000, 15,  8, 63,195,127,128);
+            dp_drawRectangle(624,  0, 60000, 15,  8,195, 63,127,128);
+            dp_drawRectangle(624,214, 60000, 15,  8, 63,127,195,128); // 625, 216
+            dp_drawRectangle(  0,214, 60000, 15,  8,127, 63,195,128); // 625, 216
+            dp_setFontId(1);
+            if ((int)(gCurTime) % 1 == 0) {
+                if ((int)(gCurTime) % 2 == 0) {
+                    if (kaka[0] < 4) {
+                        dp_drawRectangle(rand()%300, rand()%100, 60000, rand()%340, rand()%124,  
+                                   rand()%256, rand()%256, rand()%256, 127);
+                    }
+//                    dp_setFontId(!dp_inqFontId());
+                }
+//                dp_printf("curTime:%4f,fade:%d,fontID:%d,bufferID:%d\n", gCurTime, 
+//                             dp_inqFade(), dp_inqFontId(), dp_inqBufferId());
+if (0 < kaka[0] && kaka[0] < 7 && (int)(gCurTime) % 4 == 0) {
+//    printf("kaka:%d,%d,%d,%d,%d,%d,%d\n",kaka[0],kaka[1],kaka[2],kaka[3],kaka[4],kaka[5],kaka[6]);
+    fx_delete(kaka[kaka[0]]);
+    kaka[0]++;
+    gCurTime+=1.0f;
+}
+                    rnge.fBar[2] = gCurTime;
+                    sprintf(someText, "@Z00Ha! @0Z0CurTime:@00Z%4f @ZZZGrows from %4f to %4f", 
+                            rnge.fBar[2], rnge.fBar[0], rnge.fBar[1]);
+                    if (kaka[0] > 3) {
+                        fx_delete(kaka[2]);
+                        fx_delete(kaka[7]);
+                        fx_delete(kaka[8]);
+                        fx_delete(kaka[9]);
+                        fx_delete(kaka[10]);
+                        kaka[2] = fx_print(31, 16, someText, 0x7fffffff);
+                        tbar.y = 31;
+                        kaka[7] = fx_bar( tbar, 0, rnge, FX_BAR_GROW_RIGHT, 0 );
+                        tbar.y = 63;
+                        kaka[8] = fx_bar( tbar, 0, rnge, FX_BAR_GROW_DOWN , 0 );
+                        tbar.y = 95;
+                        kaka[9] = fx_bar( tbar, 0, rnge, FX_BAR_GROW_LEFT , 0 );
+                        tbar.y = 127;
+                        kaka[10]= fx_bar( tbar, 0, rnge, FX_BAR_GROW_UP   , 0 );
+                    }
+if (!kaka[0]) {
+    tbar.x =  63;
+    tbar.y =  31;
+    tbar.w = 511;
+    tbar.h =  23;
+    tbar.r =  63;
+    tbar.g =  15;
+    tbar.b =  31;
+    tbar.a = 128;
+    rnge.fBar[0] = 16.0f;
+    rnge.fBar[1] = 64.0f;
+    rnge.fBar[2] = gCurTime;
+kaka[0]++;
+                kaka[1] = fx_rectangle(115,  8,175,26,128,128,32,128, 0);
+//                fx_printCentered(128, 64, someText, 0);
+//                kaka[2] = fx_print(128, 74, someText, 0x7fffffff);
+                kaka[2] = fx_print(31, 16, someText, 0x7fffffff);
+                kaka[3] = fx_rectangle( 15,  8,15,8, 63,127,195,128, 0);
+                kaka[4] = fx_rectangle(609,  8,15,8,127, 63,195,128, 0);
+                kaka[5] = fx_rectangle(609,206,15,8, 63,195,127,128, 0);
+                kaka[6] = fx_rectangle( 15,206,15,8,195, 63,127,128, 0);
+                tbar.y = 31;
+                kaka[7] = fx_bar( tbar, 0, rnge, FX_BAR_GROW_RIGHT, 0 );
+                tbar.y = 63;
+                kaka[8] = fx_bar( tbar, 0, rnge, FX_BAR_GROW_DOWN , 0 );
+                tbar.y = 95;
+                kaka[9] = fx_bar( tbar, 0, rnge, FX_BAR_GROW_LEFT , 0 );
+                tbar.y = 127;
+                kaka[10]= fx_bar( tbar, 0, rnge, FX_BAR_GROW_UP   , 0 );
+}
+            }
+            fx_update(gDeltaTime);
+
+
+
+
+*/

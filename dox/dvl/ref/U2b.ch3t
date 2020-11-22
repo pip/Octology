@@ -1,0 +1,23 @@
+HBFL8U2b:U2b.ch3t - YouTube video player default HotKey Ch3atSh33t (may only work in MicroSoft Windows) from a webpage on UMich.Edu reformatted by PipStuart;
+  Action:                                        HotKey:           (already condensed into zsh 'uk' alias, but should l8r add special color8ion after-phase)
+toggle playbacK/pause                          k or Spacebar
+decrease  5% volume                            Down  arrow
+increase  5% volume                               Up arrow
+backward  5 seconds                            Left  arrow
+ forward  5 seconds                            Right arrow
+backward 10 seconds                            j
+ forward 10 seconds                            l
+jump to  10 * $n % position                    0-9 (not keypad numbers)
+go to Full screen mode                         f
+exit  full screen mode                         Escape
+jump to beginning  position of video           Home
+jump to       End  position of video            End
+skip to Previous   playlist    video     Shift+P
+skip to      Next  playlist    video     Shift+N
+decrease           playback    speed     Shift+, (comma ) or Shift+< (may not work in all browsers)
+increase           playback    speed     Shift+. (period) or Shift+> (may not work in all browsers)
+move backward 1    paused      frame           , (comma )
+move  forward 1    paused      frame           . (period)
+toggle Mute/unMute                             m
+toggle Captions on/off                         c
+cycle  caption Background color                b

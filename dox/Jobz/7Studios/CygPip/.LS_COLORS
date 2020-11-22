@@ -1,0 +1,139 @@
+# Configuration file for dircolors, a utility to help you set the
+# LS_COLORS environment variable used by GNU ls with the --color option.
+
+# The keywords COLOR, OPTIONS, and EIGHTBIT (honored by the
+# slackware version of dircolors) are recognized but ignored.
+
+# Below, there should be one TERM entry for each termtype that is colorizable
+TERM linux
+TERM linux-c
+TERM mach-color
+TERM console
+TERM con132x25
+TERM con132x30
+TERM con132x43
+TERM con132x60
+TERM con80x25
+TERM con80x28
+TERM con80x30
+TERM con80x43
+TERM con80x50
+TERM con80x60
+TERM xterm
+TERM xterm-debian
+TERM rxvt
+TERM screen
+TERM screen-w
+TERM vt100
+
+# Below are the color init strings for the basic file types. A color init
+# string consists of one or more of the following numeric codes:
+# Attribute codes:
+# 00=none 01=bold 04=underscore 05=blink 07=reverse 08=concealed
+# Text color codes:
+# 30=black 31=red 32=green 33=yellow 34=blue 35=magenta 36=cyan 37=white
+# Background color codes:
+# 40=black 41=red 42=green 43=yellow 44=blue 45=magenta 46=cyan 47=white
+NORMAL 00        # global default, although everything should be something.
+FILE   00        # normal file
+DIR    01;34     # directory
+LINK   01;37     # symbolic link
+FIFO   00;33;40  # pipe
+SOCK   01;35     # socket
+#DOOR   01;35     # door
+BLK    01;33;40  # block device driver
+CHR    01;33;40  # character device driver
+ORPHAN 01;31;40  # symlink to nonexistent file
+
+# This is for files with execute permission:
+EXEC   01;32
+
+# List any file extensions like '.gz' or '.tar' that you would like ls
+# to colorize below. Put the extension, a space, and the color init string.
+# (and any comments you want to add after a '#')
+
+# If you use DOS-style suffixes, you may want to uncomment the following:
+.cmd  00;33 # dark   yellow   executables (Orange)
+.exe  00;33
+.com  00;33
+.btm  00;33
+.bat  00;33
+.vbs  00;33
+.bak  00;35 # dark   magenta  binq / qedit backup files
+.o    00;31 # dark   red      objs
+.dif  00;31
+.diff 00;31
+.instc 00;31
+.asm  01;36 # bright cyan     source files
+.n    01;36
+.c    01;36
+.cpp  01;36
+.m    01;36
+.h    01;36
+.scm  01;36
+.mel  01;36
+.pl   01;36
+.PL   01;36
+.t    01;36
+.pm   01;36
+.py   01;36
+.cgi  01;36
+.htm  01;36
+.html 01;36
+.tar  01;31 # bright red      archives or compressed   orig dark green 0;32
+.tgz  01;31
+.tbz  01;31
+.tbz2 01;31
+.arj  01;31
+.taz  01;31
+.lzh  01;31
+.zip  01;31
+.ZIP  01;31
+.7z   01;31
+.7Z   01;31
+.z    01;31
+.Z    01;31
+.gz   01;31
+.bz   01;31
+.bz2  01;31
+.deb  01;31
+.rpm  01;31
+.jpg  00;35 # dark   magenta  image / video formats
+.jpeg 00;35
+.gif  00;35
+.bmp  00;35
+.ppm  00;35
+.tga  00;35
+.xbm  00;35
+.xpm  00;35
+.tif  00;35
+.png  00;35
+.mpg  00;35
+.mp4  00;35
+.mpeg 00;35
+.avi  00;35
+.mov  00;35
+.gl   01;35
+.dl   01;35
+.txt  01;37 # bright white    text   files
+.rtf  01;37
+.lnk  01;37 #                                symbolic link
+.xml  01;35 # bright magenta  XML    files
+.XML  01;35
+.fpx  01;35 #                 FPal (Font && Palette) XML files
+.cfg  00;33 # dark   yellow   config files (Orange)
+.conf 00;33
+.ini  00;33
+.log  00;33
+.ogg  01;33 # bright yellow   music  files
+.flac 01;33 
+.plf  01;33 
+.spc  01;33 #                 Super Nintendo PCM? Music files
+.rsn  01;33 #                 RAR compressed archives of .spc files
+.mp3  01;33 
+.s3m  01;33 
+.mod  01;33 
+.wav  01;33 
+.xm   01;33 
+.it   01;33 
+

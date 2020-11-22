@@ -1,0 +1,539 @@
+<html>
+<head>
+	<title>Symmetrohedra</title>
+	<link rel="stylesheet" href="http://www.cgl.uwaterloo.ca/~csk/basic.css" type="text/css">
+</head>
+<body>
+
+<h1>Symmetrohedra</h1>
+
+<p>
+What makes a polyhedron interesting or attractive?  This is obviously
+an open-ended question with many possible answers.  One way to approach
+the problem of designing interesting polyhedra is to note our natural
+affinity for symmetry and regularity in art and design.  We may then
+describe a family of polyhedra by choosing some set of symmetry and 
+regularity properties we think might be interesting and seeing what 
+polyhedra have those properties.  The properties we choose determine
+who gets invited to the party.  The trick is to find a set of properties
+that open the door just wide enough to let in a bunch of cool, interesting
+polyhedra, without opening it so wide that all the boring, annoying
+polyhedra show up too.
+</p>
+<p>
+The problem with working this way is that most
+the obvious choices of properties are already spoken for.  Lots
+of people have worked on this problem before, and they've figured out
+some well-known families of polyhedra.  Here's a table summarizing 
+some of those families.  Click on the names for more information.
+</p>
+
+<p>
+<center>
+<table border=0 cellspacing=10>
+<tr>
+	<td>&nbsp;</td>
+	<td align=center>All faces regular</td>
+	<td align=center>High symmetry</td>
+	<td align=center>Convex</td>
+	<td align=center>Congruent faces</td>
+	<td align=center>Transitive vertices</td>
+</tr>
+<tr>
+	<td align=right>
+	<a href="http://www.georgehart.com/virtual-polyhedra/platonic-info.html">
+	Platonic</a></td>
+	<td align=center>X</td>
+	<td align=center>X</td>
+	<td align=center>X</td>
+	<td align=center>X</td>
+	<td align=center>X</td>
+</tr>
+<tr>
+	<td align=right>
+	<a href="http://www.georgehart.com/virtual-polyhedra/kepler-poinsot-info.html">
+		Kepler-Poinsot</a></td>
+	<td align=center>X</td>
+	<td align=center>X</td>
+	<td align=center>&nbsp;</td>
+	<td align=center>X</td>
+	<td align=center>X</td>
+</tr>
+<tr>
+	<td align=right>
+	<a href="http://www.georgehart.com/virtual-polyhedra/archimedean-info.html">
+		Archimedean</a></td>
+	<td align=center>X</td>
+	<td align=center>X</td>
+	<td align=center>X</td>
+	<td align=center>&nbsp;</td>
+	<td align=center>X</td>
+</tr>
+<tr>
+	<td align=right>
+	<a href="http://www.georgehart.com/virtual-polyhedra/uniform-info.html">
+		Uniform</a></td>
+	<td align=center>X</td>
+	<td align=center>X</td>
+	<td align=center>&nbsp;</td>
+	<td align=center>&nbsp;</td>
+	<td align=center>X</td>
+</tr>
+<tr>
+	<td align=right>
+	<a href="http://www.georgehart.com/virtual-polyhedra/johnson-info.html">
+		Johnson</a></td>
+	<td align=center>X</td>
+	<td align=center>&nbsp;</td>
+	<td align=center>X</td>
+	<td align=center>&nbsp;</td>
+	<td align=center>&nbsp;</td>
+</tr>
+<tr>
+	<td align=right>
+	<a href="http://www.georgehart.com/virtual-polyhedra/deltahedra-info.html">
+		Deltahedra</a></td>
+	<td align=center>X</td>
+	<td align=center>&nbsp;</td>
+	<td align=center>(X)</td>
+	<td align=center>X</td>
+	<td align=center>&nbsp;</td>
+</tr>
+</table>
+</center>
+</p>
+
+<p>
+Because all of these families are so well-known, we have to start
+looking further afield to come up with interesting new polyhedra.
+We knew that we liked regular faces and convexity, but as you can see
+above that combination is captured by the 
+<a href="http://www.georgehart.com/virtual-polyhedra/johnson-info.html">
+Johnson solids</a>.  So we decided to loosen up on "all faces regular", and
+asked only that <em>many</em> faces be regular.  Obviously, this property
+is a bit fuzzy, so there's no right way to enumerate all such polyhedra.
+Instead, we devise an explicit notation and construction technique that
+yields polyhedra in this family.  Because our construction builds polyhedra
+by starting with a symmetry group, we call them <b>Symmetrohedra</b>:
+</p>
+
+<p>
+<center>
+<table border=0 cellspacing=10>
+<tr>
+	<td>&nbsp;</td>
+	<td align=center>All faces regular</td>
+	<td align=center>High symmetry</td>
+	<td align=center>Convex</td>
+	<td align=center>Congruent faces</td>
+	<td align=center>Transitive vertices</td>
+</tr>
+<tr>
+	<td align=right><b>Symmetrohedra</b></td>
+	<td align=center>&nbsp;</td>
+	<td align=center><b>X</b></td>
+	<td align=center><b>X</b></td>
+	<td align=center>&nbsp;</td>
+	<td align=center>&nbsp;</td>
+</tr>
+</table>
+</center>
+</p>
+
+<p>
+What follows is a gallery of symmetrohedra, both well-known and new.
+All images were produced using a modified version of a polyhedron viewer 
+written by Doug Zongker.  I added code to produce semi-transparent SVG 
+renderings that were then turned into images using 
+<a href="http://xml.apache.org/batik/index.html">Batik</a>.
+</p>
+<p>
+Each solid is given with a symbol.  The symbols use a notation explained
+in the <a href="http://www.cgl.uwaterloo.ca/~csk/papers/bridges2001.html">Bridges 2001 paper</a>.  This notation has since been superseded
+by a more general one that I developed for a <a href="http://www.cgl.uwaterloo.ca/~csk/papers/tog2004.html">later paper</a> 
+about Islamic star patterns &ndash; indeed, Symmetrohedra were inspired
+by an attempt to express a rich class of template tilings for drawing
+star patterns.
+</p>
+
+<h2>Platonic and Archimedean Solids</h2>
+
+Note that Symmetrohedra can't be used to represent all 18 Platonic
+and Archimedean solids.  The way we defined them, the resulting polyhedra
+will have all the symmetries of one of the polyhedral groups generated
+by reflections, and so we can't represent the two snub Archimedeans
+(though we could with a suitable extension to our notation).
+The other 16 are all possible.
+
+<p>
+<center>
+<table cellspacing=20 border=0 cellpadding=10>
+
+<tr>
+	<td align=right valign=center>
+		<img src="thumbnails/tetra.png" 
+			width=102 height=100 border=0 align=middle>
+	</td>
+	<td bgcolor="#f8f8f8" align=left valign=top>
+		[<a href="png/tetra.png">full-size PNG</a>]
+		[<a href="svg/tetra.svg">SVG</a>]<br>
+		Symbol: <em>T(1,*,*,e)</em><br>
+		Name: <em>Tetrahedron</em>
+	</td>
+
+	<td align=right valign=center>
+		<img src="thumbnails/cube.png" 
+			width=105 height=100 border=0 align=middle>
+	</td>
+	<td bgcolor="#f8f8f8" align=left valign=top>
+		[<a href="png/cube.png">full-size PNG</a>]
+		[<a href="svg/cube.svg">SVG</a>]<br>
+		Symbol: <em>O(1,*,*,e)</em><br>
+		Name: <em>Cube</em>
+	</td>
+</tr>
+<tr>
+	<td align=right valign=center>
+		<img src="thumbnails/octo.png" 
+			width=95 height=100 border=0 align=middle>
+	</td>
+	<td bgcolor="#e8e8e8" align=left valign=top>
+		[<a href="png/octo.png">full-size PNG</a>]
+		[<a href="svg/octo.svg">SVG</a>]<br>
+		Symbol: <em>O(*,1,*,e)</em><br>
+		Name: <em>Octahedron</em>
+	</td>
+
+	<td align=right valign=center>
+		Photo not available
+	</td>
+	<td bgcolor="#e8e8e8" align=left valign=top>
+		Symbol: <em>I(1,*,*,e)</em><br>
+		Name: <em>Dodecahedron</em>
+	</td>
+</tr>
+
+<tr>
+	<td align=right valign=center>
+		Photo not available
+	</td>
+	<td bgcolor="#f8f8f8" align=left valign=top>
+		Symbol: <em>I(*,1,*,e)</em><br>
+		Name: <em>Icosahedron</em>
+	</td>
+
+	<td align=right valign=center>
+		<img src="thumbnails/3434.png" 
+			width=90 height=100 border=0 align=middle>
+	</td>
+	<td bgcolor="#f8f8f8" align=left valign=top>
+		[<a href="png/3434.png">full-size PNG</a>]
+		[<a href="svg/3434.svg">SVG</a>]<br>
+		Symbol: <em>O(1,1,*,e)</em><br>
+		Name: <em>Cuboctahedron</em>
+	</td>
+</tr>
+<tr>
+	<td align=right valign=center>
+		<img src="thumbnails/3535.png" 
+			width=103 height=100 border=0 align=middle>
+	</td>
+	<td bgcolor="#e8e8e8" align=left valign=top>
+		[<a href="png/3535.png">full-size PNG</a>]
+		[<a href="svg/3535.svg">SVG</a>]<br>
+		Symbol: <em>I(1,1,*,e)</em><br>
+		Name: <em>Icosidodecahedron</em>
+	</td>
+
+	<td align=right valign=center>
+		<img src="thumbnails/366.png" 
+			width=103 height=100 border=0 align=middle>
+	</td>
+	<td bgcolor="#e8e8e8" align=left valign=top>
+		[<a href="png/366.png">full-size PNG</a>]<br>
+		Symbol: <em>T(2,1,*,e)</em><br>
+		Name: <em>Truncated Tetrahedron</em>
+	</td>
+</tr>
+
+<tr>
+	<td align=right valign=center>
+		<img src="thumbnails/388.png" 
+			width=100 height=100 border=0 align=middle>
+	</td>
+	<td bgcolor="#f8f8f8" align=left valign=top>
+		[<a href="png/388.png">full-size PNG</a>]<br>
+		Symbol: <em>O(2,1,*,e)</em><br>
+		Name: <em>Truncated Cube</em>
+	</td>
+
+	<td align=right valign=center>
+		<img src="thumbnails/466.png" 
+			width=100 height=100 border=0 align=middle>
+	</td>
+	<td bgcolor="#f8f8f8" align=left valign=top>
+		[<a href="png/466.png">full-size PNG</a>]<br>
+		Symbol: <em>O(1,2,*,e)</em><br>
+		Name: <em>Truncated Octahedron</em>
+	</td>
+</tr>
+<tr>
+	<td align=right valign=center>
+		<img src="thumbnails/31010.png" 
+			width=105 height=100 border=0 align=middle>
+	</td>
+	<td bgcolor="#e8e8e8" align=left valign=top>
+		[<a href="png/31010.png">full-size PNG</a>]
+		[<a href="svg/31010.svg">SVG</a>]<br>
+		Symbol: <em>I(2,1,*,e)</em><br>
+		Name: <em>Truncated Dodecahedron</em>
+	</td>
+
+	<td align=right valign=center>
+		<img src="thumbnails/566.png" 
+			width=98 height=100 border=0 align=middle>
+	</td>
+	<td bgcolor="#e8e8e8" align=left valign=top>
+		[<a href="png/566.png">full-size PNG</a>]
+		[<a href="svg/566.svg">SVG</a>]<br>
+		Symbol: <em>I(1,2,*,e)</em><br>
+		Name: <em>Truncated Icosahedron</em><br>
+		Notes: <em>Also known as the 'Buckyball'</em>
+	</td>
+</tr>
+
+<tr>
+	<td align=right valign=center>
+		<img src="thumbnails/3444.png" 
+			width=107 height=100 border=0 align=middle>
+	</td>
+	<td bgcolor="#f8f8f8" align=left valign=top>
+		[<a href="png/3444.png">full-size PNG</a>]<br>
+		Symbol: <em>O(1,1,*,1)</em><br>
+		Name: <em>Rhombicuboctahedron</em>
+	</td>
+
+	<td align=right valign=center>
+		<img src="thumbnails/3454.png" 
+			width=101 height=100 border=0 align=middle>
+	</td>
+	<td bgcolor="#f8f8f8" align=left valign=top>
+		[<a href="png/3454.png">full-size PNG</a>]
+		[<a href="svg/3454.svg">SVG</a>]<br>
+		Symbol: <em>I(1,1,*,e)</em><br>
+		Name: <em>Rhombicosidodecahedron</em>
+	</td>
+</tr>
+<tr>
+	<td align=right valign=center>
+		<img src="thumbnails/468.png" 
+			width=98 height=100 border=0 align=middle>
+	</td>
+	<td bgcolor="#e8e8e8" align=left valign=top>
+		[<a href="png/468.png">full-size PNG</a>]
+		[<a href="svg/468.svg">SVG</a>]<br>
+		Symbol: <em>O(2,2,*,e)</em><br>
+		Name: <em>Truncated Cuboctahedron</em>
+	</td>
+
+	<td align=right valign=center>
+		<img src="thumbnails/4610.png" 
+			width=100 height=100 border=0 align=middle>
+	</td>
+	<td bgcolor="#e8e8e8" align=left valign=top>
+		[<a href="png/4610.png">full-size PNG</a>]
+		[<a href="svg/4610.svg">SVG</a>]<br>
+		Symbol: <em>I(2,2,*,e)</em><br>
+		Name: <em>Truncated Icosidodecahedron</em>
+	</td>
+</tr>
+
+</table>
+</center>
+</p>
+
+
+<h2>Interesting and New Polyhedra</h2>
+
+<p>
+The following list of polyhedra is not intended to be
+definitive or complete in some way.  It's merely a sampling
+of interesting polyhedra we encountered that can be expressed
+as Symmetrohedra.  Many of these polyhedra have never been
+documented before to our knowledge.
+</p>
+<p>
+<font color=#800000>
+I have dozens more examples on file for this section.  I'll add
+them in as time permits.</font>
+</p>
+
+
+<p>
+<center>
+<table cellspacing=20 border=0 cellpadding=10>
+
+<tr>
+	<td align=right valign=center>
+		<img src="thumbnails/T23e.png" 
+			width=100 height=100 border=0 align=middle>
+	</td>
+	<td bgcolor="#f8f8f8" align=left valign=top>
+		[<a href="png/T23e.png">full-size PNG</a>]
+		[<a href="svg/T23e.svg">SVG</a>]<br>
+		Symbol: <em>T(2,3,*,e)</em><br>
+		Name: <em>Bowtie Tetrahedron</em>
+	</td>
+
+	<td align=right valign=center>
+		<img src="thumbnails/T12veq.png" 
+			width=100 height=100 border=0 align=middle>
+	</td>
+	<td bgcolor="#f8f8f8" align=left valign=top>
+		[<a href="png/T12veq.png">full-size PNG</a>]
+		[<a href="svg/T12veq.svg">SVG</a>]<br>
+		Symbol: <em>T(1,2,*,1)</em><br>
+		Name: <em>Alternate Bowtie Tetrahedron</em>
+	</td>
+</tr>
+
+<tr>
+	<td align=right valign=center>
+		<img src="thumbnails/C23e.png" 
+			width=100 height=100 border=0 align=middle>
+	</td>
+	<td bgcolor="#e8e8e8" align=left valign=top>
+		[<a href="png/C23e.png">full-size PNG</a>]
+		[<a href="svg/C23e.svg">SVG</a>]<br>
+		Symbol: <em>O(2,3,*,e)</em><br>
+		Name: <em>Bowtie Octahedron</em>
+	</td>
+
+	<td align=right valign=center>
+		<img src="thumbnails/C12veq.png" 
+			width=101 height=100 border=0 align=middle>
+	</td>
+	<td bgcolor="#e8e8e8" align=left valign=top>
+		[<a href="png/C12veq.png">full-size PNG</a>]
+		[<a href="svg/C12veq.svg">SVG</a>]<br>
+		Symbol: <em>O(1,2,*,1)</em><br>
+		Name: <em>Alternate Bowtie Octahedron</em>
+	</td>
+</tr>
+
+<tr>
+	<td align=right valign=center>
+		<img src="thumbnails/C32e.png" 
+			width=100 height=100 border=0 align=middle>
+	</td>
+	<td bgcolor="#f8f8f8" align=left valign=top>
+		[<a href="png/C32e.png">full-size PNG</a>]
+		[<a href="svg/C32e.svg">SVG</a>]<br>
+		Symbol: <em>O(3,2,*,e)</em><br>
+		Name: <em>Bowtie Cube</em>
+	</td>
+
+	<td align=right valign=center>
+		<img src="thumbnails/C21veq.png" 
+			width=101 height=100 border=0 align=middle>
+	</td>
+	<td bgcolor="#f8f8f8" align=left valign=top>
+		[<a href="png/C21veq.png">full-size PNG</a>]
+		[<a href="svg/C21veq.svg">SVG</a>]<br>
+		Symbol: <em>O(2,1,*,1)</em><br>
+		Name: <em>Alternate Bowtie Cube</em>
+	</td>
+
+</tr>
+
+<tr>
+	<td align=right valign=center>
+		<img src="thumbnails/I23e.png" 
+			width=100 height=100 border=0 align=middle>
+	</td>
+	<td bgcolor="#e8e8e8" align=left valign=top>
+		[<a href="png/I23e.png">full-size PNG</a>]
+		[<a href="svg/I23e.svg">SVG</a>]<br>
+		Symbol: <em>I(2,3,*,e)</em><br>
+		Name: <em>Bowtie Icosahedron</em><br>
+		Notes: <br>
+			<ul>
+			<li><em>It was a vision of this polyhedron that was the
+		 	original inspiration for Symmetrohedra.</em>
+			<li><em>The Bowtie Icosahedron has been built as a stainless steel 
+			<a href="http://www.tacma.com/wire-sculptures/bowtie.html">
+			wire sculpture</a> by Leigh Boileau.</em>
+			<li><em>I have also created a separate PDF 
+				<a href="bowtie_icosa_net.pdf">folding net</a>
+				for this solid.</em>
+			</ul>
+	</td>
+
+	<td align=right valign=center>
+		<img src="thumbnails/I12veq.png" 
+			width=100 height=100 border=0 align=middle>
+	</td>
+	<td bgcolor="#e8e8e8" align=left valign=top>
+		[<a href="png/I12veq.png">full-size PNG</a>]
+		[<a href="svg/I12veq.svg">SVG</a>]<br>
+		Symbol: <em>I(1,2,*,1)</em><br>
+		Name: <em>Alternate Bowtie Icosahedron</em>
+		Notes: 
+			<em>This solid is a "near miss" in the sense that 
+			it's almost a Johnson solid, except that some of the faces
+			are not quite regular.  It's close enough that you can 
+			construct it out of paper using regular faces.
+			<p>
+			<a href="../nearmisses/">More information about near misses</a>
+			</em>
+	</td>
+
+</tr>
+
+<tr>
+	<td align=right valign=center>
+		<img src="thumbnails/I32e.png" 
+			width=100 height=100 border=0 align=middle>
+	</td>
+	<td bgcolor="#f8f8f8" align=left valign=top>
+		[<a href="png/I32e.png">full-size PNG</a>]
+		[<a href="svg/I32e.svg">SVG</a>]<br>
+		Symbol: <em>I(3,2,*,e)</em><br>
+		Name: <em>Bowtie Dodecahedron</em>
+	</td>
+
+	<td align=right valign=center>
+		<img src="thumbnails/I21veq.png" 
+			width=99 height=100 border=0 align=middle>
+	</td>
+	<td bgcolor="#f8f8f8" align=left valign=top>
+		[<a href="png/I21veq.png">full-size PNG</a>]
+		[<a href="svg/I21veq.svg">SVG</a>]<br>
+		Symbol: <em>I(2,1,*,1)</em><br>
+		Name: <em>Alternate Bowtie Dodecahedron</em>
+	</td>
+</tr>
+
+
+</table>
+</center>
+
+<h2>Papers</h2>
+
+<ul>	
+	<li><a href="http://www.cgl.uwaterloo.ca/~csk/papers/bridges2001.html">
+		Symmetrohedra: Polyhedra from Symmetric Placement of Regular 
+		Polygons</a>, Bridges 2001.
+	</li>
+</ul>
+
+
+<hr>
+	<table width="100%" border=0 cellpadding=0 cellspacing=0><tr>
+		<td align=left><a href="http://www.cgl.uwaterloo.ca/~csk/">
+			Craig S. Kaplan</a></td>
+	<td align=right><em>Last updated: Sunday, 06-Feb-2005 20:57:21 EST</em>
+	</td></tr></table>
+
+</body>
+</HTML>

@@ -1,0 +1,9 @@
+; image file
+image=symbols2
+
+; "character"=x,y,width,height
+
+
+"n"=185,0,9,8 ; no sound symbol
+"m"=150,0,9,8 ; mono symbol
+"t"=160,0,15,8 ; stereo symbol

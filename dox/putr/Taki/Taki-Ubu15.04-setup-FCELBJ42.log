@@ -1,0 +1,156 @@
+# FCELBJ42: Earlier this year, I installed a fresh i386 Ubuntu 15.04 to Taki (my Sony Vaio VGN-SZ240P) in preparation to gift her to Angie. I basically just
+#   created user accounts for immediate family and made minimal changes to my own account. The changes I can discern are:
+#     0. changed desktop background to solid blue
+#     1. removed OpenOffice icons from left bar
+#     2. added GnomeTerminal and arranged other left bar icons similar to Chun (my Fujitsu LifeBook T1010)
+# Today (Mon Dec 14 2015) I began the dist-upgrade to 15.10 Wily Werewolf. I don't think I installed any additional packages before, so everything should still
+#   remain pretty standard defaults. This document should be used to log all significant changes I make to customize the system to resemble Chun thoroughly.
+# Basically any `agi`,`pmei`,vim (/etc|~)/*,rsync,etc. should append with a d8 stamp here to enable me to exhaust everything needed for a complete rebuild.
+#plan:0. make TstTester user to reconstruct exact changes I already made before (&& reset Angie's first login help dialog)
+#     1. reformat top bar clock
+#     2. apt-get install indicator-multiload (&& config palette for preferred colors)
+#     3. mv $HOME directories && vi ~/.config/user-dirs.dirs
+#     4. apt-get install ccsm zsh vim w3m most less                ... (core environment)
+#     5. setup Compiz && workspaces 4x2
+#     6. RsynCore
+#     7. agi gnome-tweak-tool or whatever to make CapsLock altern8 Control key like Chun (&& Ken?)
+#     8. agi scrot xclip gpm                                       ... (main interaction utils)
+#     9. agi aumix gst123 mpg123 mpg321 flac vorbis cdparanoia vlc ... (audio|video stuff)
+#     A. agi dict* p47 rrootage                                    ... (reference && games)
+# FCELIKE8:What I'm actually doing: (`sudo bash` is assumed before almost any of this)
+      0. deluser (ang|ann|dot|ros|tim) since they aren't computing like I do anytime soon
+      1. login to ang on Chun to compare && see what exactly I changed already, so I right-clicked to choose "Unlock from Launcher" on LibreOffice
+         (Writer|Calc|Impress) && Amazon, moved Files from top below Search to bottom below "System Settings", added Terminal at top where Files was, && added
+         "Software Updater" just beneath FireFox && above "Ubuntu Software Center". In Appearance click upper-right drop-down from Wallpapers down to third
+         option "Colors & Gradients", then first left-most icon is Solid. For some reason, I can't query what Aku's actual RGB hex color is but dark blue.
+         For Aku "Launcher icon size" slider over to 64. Hopefully that is all I changed from the default 15.04 install8ion for Taki.
+# Note:Some stuff won't be applicable2both Chun&&Taki like only Chun has tablet functionality so also has Onboard && "Calibrate Touchscreen" in Launcher.
+      2. Now back to just basic Taki reconfigur8ion, in Appearance > Behavior checking "Enable workspaces" like Chun has. This brought up new
+         "Workspace Switcher" Launcher icon below Files but I'm swapping those to put it just above && below "System Settings". Chun is different in that her
+         tablet needz the switcher more so it's beneath Onboard && above "Software Updater" to stay more prominent.
+      3. "Text Entry" unchecking bottom-left "Show current input source in the menu bar"
+      4. "Time & Date" > Clock checking to show Weekday, "Date and month", Year, "24-hour time", Seconds, && "Time in auto-detected location" && in
+         "Universal Access" > Seeing > "Large Text" switched to On for Aku.
+      5. Then add Terminal at top of Launcher just below Search
+# Note:I might also need to configure Search to not include online results normally since I don't want the ads.
+      6. `apt-get update`, `apt-get install indicator-multiload` then Search for "System Load Indicator" to start it up in the menu bar. Then right-click it
+         && Preferences to check all on except "Swap Space" with "System monitor width" changed from 40 to 65 && "Built-in schemes" drop-down to Traditional.
+         For Aku width 127 pixelz && upd8 interval 255ms.
+      7. `apt-get install gnome-tweak-tool` then Search 'Tweak Tool', pick Typing > "Caps Lock key behavior" from top-most drop-down option of Disabled down 3
+         to "Make Caps Lock an additional Ctrl". Aku doesn't need this 4 HHKB, but Ken does. Try to front-load all graphical configur8ion && lern2autom8 l8r.
+      8. `apt-get install compiz-plugins
+                        # compiz-plugins-default # this one was already current
+                          compiz-plugins-main
+                          compiz-plugins-main-default
+                          compiz-plugins-extra`
+         `apt-get install compizconfig-settings-manager` thN `ccsm` then General > "General Options" > "Desktop Size" > 4x2 to setup workspacez graphically.
+           Also Search   "CompizConfig Settings Manager" to drag icon just beneath "System Settings".
+         This change didn't work on Taki right away. Maybe she has such poor acceler8ion that Compiz is hardly in control versus 2D Unity?
+           Taki might also need to toggle her hardware Stamina versus Speed switch before boot to change between Intel && nVidia graphicz for driver support?
+           It did not work right away on Ryu setting up Aku's new drive either.
+         There might be other good Compiz stuff to adjust for Aku to have better rendering than Taki, so include notez here to keep up with modific8ionz.
+      9. `apt-get install openssh-server` then rsync /etc/hosts && `vi /etc/hosts`4local so further configur8ion can be done remotely (&& autom8d better?)
+# Note: Aku's new drive is being setup in Ryu so use Ryu's 8.7 IP for now, then remember to upd8 to .15 before enclosure (since it can collide with either).
+#   This is tedious because I want to temporarily supplant ~/.ssh/known_hosts:6 for ryu with new fingerprint && restore original after drive is no longer
+#     docked, but this issue will arise ongoingly with Aku while sometimez booting off this Xternal drive too unless I can set their keyz to the originalz.
+#     Taki's is actually changing permanently for her with the new install so `ssh-keygen -f "/home/pip/.ssh/known_hosts" -R takiw` is good to remove old.
+#   Maybe just syncing Aku's original ~/.ssh/id_rsa(.pub)? over new drive's versionz will let them stay matched up with MAC IP alloc8ion && hosts?
+#     Or syncing some combin8ion of /etc/ssh/ sshd entries (as a final step before installing in enclosure?) will make the new drive ready to be a new Aku?
+#   Just remembered I might have changed PermitRootLogin to yes in /etc/ssh/sshd_config also. Not sure how that differs from without-password on new drive.
+#   Probably best to just keep using keygen to delete after every switch. Conceptually weird to think of new Aku drive needing to refer to original with
+#     common hostname so rsync just via IP (or hosts entry "AkuOrig" then polluting known after revert) but then to take over that IP with its MAC bound to
+#     earlier remote IP && known entries then identifying self. Be really careful if U `ssRyu` while his host is new Aku (as it will resemble local shellz);
+      A. `echo "net.ipv4.icmp_echo_ignore_broadcasts=0" >> /etc/sysctl.conf` && `sysctl net.ipv4.icmp_echo_ignore_broadcasts=0` to enable pingb right away
+      B. `mv Desktop .dsktp`,`rmdir Templates`,`mv Public .pub`,`mv Downloads .dl`,`mv Documents dox`,`mv Pictures gfx`,`mv Music muz`,`mv Videos mvz`,
+         `rm examples.desktop`,`vi .config/user-dirs.dirs` && edit to reflect changez (with Templates just in ~ as "$HOME/") or just rsync the dirs file over
+# maybe go thru .bashrc && .zshrc && /(usr/(local/)?)?bin/ for Aku's core && peripheral exeQtablez to agi on new installz B4 RsynCore or chsh are ready2run
+# core: vim zsh w3m gpm git most xclip scrot wmctrl screen tmux Eterm aterm rxvt-unicode-256color xvt evilvte lxterminal sakura pterm source-highlight
+#   RsynCore.ls then `chsh /bin/zsh`? Above should also try `agi rxvt terminology terminology-data` for more terminal altern8ives.
+# inSNTal: dictd dict-foldoc dict-gcide dict-jargon dict-moby-thesaurus dict-vera dict-bouvier dict-devil dict-elements dict-wn dictfmt dict
+#   gst123 mpg123 mpg321 mikmod mplayer youtube-dl ctorrent irssi joy2key parsec47 rrootage fbset dclock mysql-server mysql-client mesa-utils (4 glxgears)
+#   cdparanoia lame ImageMagick (4 `identify` && `convert` Utilz)
+#     then a lot of `pmei` will probably be needed to bring PerlModulez up to be able to run g3 or just d8 (which should maybe happen before RsynCore)
+      C. `apt-get install vim zsh w3m gpm git most xclip scrot screen tmux Eterm aterm rxvt-unicode-256color xvt evilvte lxterminal sakura pterm source-hi...`
+#        also Taki had mutt but that had dialogz about e-mail transport && host domain I'd rather avoid until genuinely needed, so I've removed it
+# maybe better to just include lib/Time in Rsyn(Core|Full).ls so stepz D, E, && F can be skipped below so I've added that to those ~/dox/putr/ filez
+      D. `perl -MCPAN -e "install Time::DayOfWeek"` then accepting auto-configur8ion to handle setting up ~/.cpan/ && installing correctly
+      E. `perl -MCPAN -e "install Time::DaysInMonth"` which should be enough to allow `d8` in the .bashrc PS1 prompt to execute
+      F. `perl -MCPAN -e "install Time::PT"` so `lsd8` && `l` alias can wrap ls beautifully  # rsync BlO took afew hourz so mAB rm mvz && some dox from Core.ls
+      G. rsyncd RsynCore.ls (orig new terminal with bash login after complained of lacking Time/Day(OfWeek|sInMonth).pm so hopefully full pMei those first)
+      H. `zsh` seemz to start without errorz so try `chs -s /bin/zsh` to upd8 login shell but still probably need to change in GnomTerm config also to work?
+# might need or want to `cho pip:pip ~/.(bash_history|viminfo|dbus|cpan)` then presumably rsync ~/.gconf/apps/gnome-terminal can setup GT similarly... but it
+#   doesn't work && new term windowz still are starting with bash instead of zsh && checking menu Edit > Preferences > Profiles doesn't show them so...
+#   try to change /etc/ssh/sshd_config to PermitRootLogin yes then `passwd root` for recovery option into .bashrc resembling /etc/skel hopefully.
+      I. `v /etc/ssh/sshd_config` then setting passwd root to same as pip. Then testing ssh in to pip@Taki from Aku started fine with zsh but root@ was denied.
+# Now might be a slightly safe time to try a reboot && see if GT profilez or local zsh default login have upd8d.
+      J. reboot && both sshd && presumably GConf have restarted so now Aku can `ssh root@TakiW` && new local GT stRtz zsh but the only Profile is still Unnamed
+# I don't know where else all the GT config d8a could be stored if not ~/.gconf/apps/ && I've looked thru ~/.* so it might be /etc or /var or something?
+      K. `rm ~/.profile` just to tidy up since bash should have taken a backseat to zsh then `agi gconf-editor` to see if that enablez copied profilez
+# gconf-editor can now see the Profiles but GT can't so I'm going to try to rm Unnamed && crE8 Default d8ok && the othr namz I use then try rsync over again.
+#   It must be getting stored elsewhere because now there's the directories && editor seeing unused d8a while GT has its own same named versionz.
+# gconftool-2 --set /apps/gnome-terminal/profiles... --type=float 0.50 can be used to upd8 from CLI. Ok, another reboot restored GT's hollow copied profilez
+#   which still have the same names but none of the remaining file contentz. Duplic8z are being stored somewhere I can't find yet! Probably found it...
+#   with OMG `gsettings get org.gnome.Terminal.ProfilesList list` && s/list$/default/ &&
+#   gsettings set org.gnome.Terminal.Legacy.Profile:/org/gnome/terminal/legacy/profiles:/:UUID/ KEY VALUE  # s/set/list-keys/ or s/-keys/-recursively/
+# list is currently (wi 1st as default): a76aa166-8853-4ca1-b162-04146d3344c8 f2f0e5cd-a2ab-4f46-acbd-4bc1a6a607b8 23dd35a3-f6d0-4ba6-a073-26e08db2e30a
+#   7d27056f-9792-4515-8221-87736cb4b1b4 1b727bcb-b074-47a2-8561-88c6fd4fa081  # this is worrisome, actually using dconf && gsettings instead of gconf why?
+# It seemz dconf mainly uses '-' dash in keys instead of gconf '_' underscores && doesn't have XML bloat with nested misalignment. How to stop using legacy?
+# Maybe I could make my own compact .gtrc which can gener8 set commandz for [dg](conf|settings) but I'd rather just switch to using gconf && cp existing.
+# gconftool-2 -a "/apps/gnome-terminal/profiles/(Default|Profile[1-4])" dumpz similar to list-recursively after above UUID/ so just sort, match, regex keyz
+#   && call commandz with appropriate quoting for valuez. Apparently gconf support has been phasing out since last year or before, even if dconf is "legacy".
+# Forget autom8ing all that right now.
+      L. Manually configure GnomTerm profilez to resemble either Akuma or Taki as approprE8 && just expect future config with gsettings instead of gconf.
+# agi dictz && muz stuff,pmei Curses(::Simp)? for d8ok,catch new Aku up with Taki(wi him stuck on step 9 above w8ing 4 /etc/hosts Bcuz I'm wary of keygen).
+# InstFyrFoxAdBlokPlus,SeshMngr&&rEsIzbutnz+%stepz from origAku2all. mAB RsynFull origAku2Ken thN rsynKen2newAku (from newA) wudBbSt2avoid mistAkz4keygen?
+      M. `agi wmctrl` or just do it with vim zsh etc list above
+# newAku is now caught up (omitting agi gconf-editor Xcursion) but sometimez has trouble rebooting && fallzbak on Ryu's internal drv. Might also want to
+#   relearn how to scale up all font sizes AgN. `lsd8` needz Time::PT which needz `pmei Math::BaseCnv`.
+      N. `agi libncurses5-dev libncursesw5-dev` && `pmei Curses` && `pmei Curses::Simp`
+      O. `agi dict dict-bouvier dict-devil dict-elements dict-foldoc dict-gcide dict-jargon dict-moby-thesaurus dict-vera dict-wn dictd dictfmt dictzip`
+      P. `agi gst123 mpg123 mpg321 mikmod irssi mplayer youtube-dl ctorrent joy2key parsec47 rrootage fbset dclock mysql-server mysql-client mesa-utils`
+      Q. `agi cdparanoia lame imagemagick irssi-scripts imagemagick-doc` # should figure out all additional useful packages I should get here with these
+# mk sure IO::Tty (&& Expect) enable g3, setup ccsm zoom hotkeyz, do all SDL stuff for 8trm then Tk for diag
+      R. G19LEuxS redid Taki's ccsm General Desktop size to 4x2 after hardware switched to speed and enabled Accessibility Negative plugin. Added to
+         "Enhanced Zoom Desktop" "Zoom In/Out" mappings ZIButn <Super>Button5, ZIKeey <Super>Up, ZOButn <Super>Button4, ZOKeey <Super>Down. Tried to
+         enable "Desktop Cube" && disable "Desktop Wall" but it errored out && removed ccsm from Launcher && sent Canonical bug report. Re-enabling Wall
+         removed most Launcher icons so I'm going to try to reboot && reconstruct them. Actually rebooting after just enabling Cube, reconstructing icons,
+         then enabling "Rotate Cube" while disabling "Rotate to Face 1 with Window" binding of <Shift><Super>Home which maybe somehow collided with
+         "Viewport Switcher" (even though I don't see a matching binding there) seems to have enabled Cube for Taki now too. # need2redo Zoom?
+      S. `v /etc/default/grub` to comment out HIDDEN_TIMEOUT lines, change normal TIMEOUT from 10 to 8, && change CMDLINE_LINUX_DEFAULT="" no "quiet splash"
+          && ran `update-grub` && rebooted;
+# want to agi chromium-browser to have altern8 browser like Chun but wants to install libsdl-image1.2 along with so I'd rather just get all SDL first 2gether;
+      T. `pmei IO::Tty` said needs YAML for persistent st8 && could get CPAN 2.10 also so I'm going to pmei those too before Expect. CPAN likes to use
+         Expect itself for its own shell tests so better to do Expect first next time. Those enable g3 to run (if load isn't too high?);
+      U. `agi libsdl1.2debian libsdl1.2-dev libsdl1.2-dbg libsdl-console libsdl-console-dev libsdl-gfx1.2-5 libsdl-gfx1.2-dev libsdl-gfx1.2-doc
+              libsdl-image1.2 libsdl-image1.2-dev libsdl-image1.2-dbg libsdl-mixer1.2 libsdl-mixer1.2-dev   libsdl-mixer1.2-dbg
+              libsdl-net1.2   libsdl-net1.2-dev   libsdl-net1.2-dbg   libsdl-pango1   libsdl-pango-dev      libsdl-sound1.2     libsdl-sound1.2-dev
+              libsdl-ttf2.0-0 libsdl-ttf2.0-dev   libsdl-stretch-0-3  libsdl-stretch-dev                    libsdl-sge          libsdl-sge-dev
+              libsdl-gst      libsdl-ttf-gst      libsdl-image-gst    libsdl-mixer-gst    dh-make gnu-smalltalk-doc libasound2-doc libcairo2-doc libglib2.0-doc
+              libice-doc javascript-common liblzma-doc libpango1.0-doc libsm-doc libxcb-doc libxext-doc gimp gimp-help-en gimp-data-extras inkscape
+              graphviz graphviz-doc`
+# maybe above are just old SDL v1.2 stuff (including recommended pkgz) but should prefer (or only need) v2 stuff below?
+         `agi libsdl2-2.0-0       libsdl2-dev       libsdl2-dbg       libsdl2-gfx-1.0-0 libsdl2-gfx-dev libsdl2-gfx-dbg libsdl2-gfx-doc
+              libsdl2-image-2.0-0 libsdl2-image-dev libsdl2-image-dbg libsdl2-net-2.0-0 libsdl2-net-dev libsdl2-net-dbg
+              libsdl2-mixer-2.0-0 libsdl2-mixer-dev libsdl2-mixer-dbg libsdl2-ttf-2.0-0 libsdl2-ttf-dev libsdl2-ttf-dbg libxt-doc`
+         `pmei Alien::SDL` failed =( so trying agi libalien-sdl-(dev-)?perl instead then `pmei SDL` enabled 8trm Yay! =) ;
+      V. `agi chromium-browser tklib libtk8.5 tk8.5 tk8.5-dev           togl-demos tcl-tclreadline tcl8.6-doc # no need for tk8.4?
+                               tkpng libtk8.6 tk8.6 tk8.6-dev tk8.6-doc tk8.6-blt2.5 blt blt-dev blt-demo bwidget` then pmei Tk or agi perl-tk?
+# then Tk::AC tests are in dvl/m8/diag && dvl/Tk/EMT with latter advanced EMT which was designed for 1920x1200 && doesn't fit 1280x800 well at all.
+#   pmei Tk failed 2 tests (1 in listbox.t line 757 getting 0 when expecting 1 && another in wm-tcl.t line 1226 setting toplevel values) so try agi instead thN
+         `pmei AbstractCanvas` has bug of requiring module 'Tk::pKGnAME' in CPAN version. Oops! Also attempting `pmei XML::Tidy` in t/00pod.t line 187
+         Non-ASCII character seen before =encoding in '?'. Assuming ISO8859-1. I should probably upd8 those for the CPAN. Copying into ~/lib enables old
+         m8/diag versions but need to pmei Graph::Easy && Math::Geometry::Planar for advanced DiagEMT.pl to run;
+# unity-tweak-tool might enable resizing system-wide fonts but needs Unity webapps first so `agi unity-webapps-common unity-chromium-extension`
+      W. installed AdBlock Plus && Session Manager to Chun && Taki && arranged resize icons on address bar but still need to add resize steps in about:config
+         toolkit.zoomManager.zoomValues ".3,.4,.5,.58,.67,.73,.8,.85,.9,.95,1,1.1,1.2,1.33,1.5,1.7,2,2.4,3" inserting just shrinks .4,.58,.73,.85,.95
+      X. `agi rxvt terminology terminology-data` for more terminals. terminology seems to be derived from Eterm (but reports $TERM='xterm') && both spew lots
+         of errors in the calling terminal when running my lsd8 with unhandled f0nt escape codes; It looks like gnome-tweak-tool under Fonts > Scaling Factor
+         increased from 1.25 (maybe already boosted from "System Settings" > "Universal Access" > Seeing > "Large Text" switched on) to 1.50 is what originally
+         enabled Aku, Ryu, && Ken to have larger text system-wide, but maybe unity-tweak-tool > Appearance > Fonts > "Text scaling factor" is an altern8 way;
+# Remember F2 should bring up Taki's BIOS instead of Delete. BIOS seems to randomly just power-down when navig8ing menus. Saving changes to sparse options
+#   seems to fail as often as succeed. Now I can't get her to boot off DVD ahead of HDD to run `e2fsck -c /dev/sda1` with it unmounted. Maybe external USBkey?
+# After booting from the internal HDD, it's most common to see that ata1.00 (/dev/sda1 with ext2 for /boot or it could be the other LVM root partition?) seems
+#   to be dying with all sorts of dmesg DRDY ERR && device errors. Taki is so old && runs hot with heavy load. She's on her last leg. I want her to live more;
+# Ctrl-Alt-Esc at boot picks among bootable devices but selecting 'Internal Optical Drive' still fails to boot 15.04 DVD. Bleh. F8 might go to Advanced Mode;
+# Remember that setting up another fresh install similar to above but for one of my 2TB desktop drives should manually setup at least a 1GB sda1 /boot ext2
+#   partition before allowing the remainder of the drive to be LVM root && swap (since old default 228MB /boot barely has space for any fallback kernels);

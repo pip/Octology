@@ -1,0 +1,221 @@
+788FkpA - started digesting IntoText v2_24a code in depth
+Wed Aug  8 15:46:51:10 2007
+  plan:
+    Audit intermediate data files
+      current is suboptimal:  text formats, customized layouts
+      std technology would be better:
+        well vetted parsers, DOMs, etc.; language agnostic
+      migrate into database
+    Audit the process:
+      what flows where and why?  What interactions?
+      streamline; refactor common code, decouple from interface
+      error logging
+    Embellish interface--Tk & web
+      Alternatives:
+        fully functional though cluttered
+        bare bones, multiple clicks (hide the complexity)
+      CSS loading
+        to enable similar style across Tk & web
+    Code repository (Subversion/SVN) for code
+      revisions, release management
+    Automated tests
+    Construction Mgt System APIs--interaction
+  Acronyms:
+    IT    IntoText                   - company name
+    ASR   AutomaticSpeechRecognition - technology to parse speech into text
+    DNS   DragonNaturallySpeaking    - NuanceCommunicationsInc's ASR engine
+    VV    ViaVoice                   -                     IBM's ASR engine
+    DD    DirectiveDictate           - core IT product to wrap ASRs
+    BW    BuilderWerks                      - Construction    (vertical)
+    CW    ChronoWrite                       - Law Enforcement (vertical)
+    RM?   RobertMatthews|RecordtaryMedical? - Medical         (vertical)
+    SCC   StandardCustomCommand      - mk sep .exe to interface w/ cc stuff
+      into Gmail,Access,Outlook,Excel,etc.
+    WKT   WeKnowThis (medical)       - old IT product being renamed Recordtary
+    HS    HomeSafenet                - Florida's child-safety sys4investigators
+    OC    OneChart   (medical)       - lets doctors talk about symptoms w/
+      patientID,visitID,problemType,etc. for medical reports
+  AdditionalAbbreviations (BrigIsms):
+    cc    CustomizedCommand?
+    ct    CustomTk
+    ccs ::Custom(ized)?Command Subs    -   custc.pl
+    cts ::CustomTk             Subs    -   custTk.pl
+    ds  ::Directivedictate     Subs    -  dd_subs.pl
+    gs  ::Generated?           Subs    - gen_subs.pl
+    xlss::XLS                  Subs    - xls_subs.pl
+    es  ::E?                   Subs    - log_subs.pl?
+    esdw  E?Subs?DoWrite?     - es::do_write( es::pgm_log_file( ),@_ )
+    esdp  E?Subs?DoProgram?   - es::do_write( es::pgm_out_file( ),@_ )
+    esfw  E?Subs?FormWrite?   - es::do_write( es::form_out_file(),@_ )
+    esfp  E?Subs?FormProgram? - es::do_write( es::form_out_file(),@_ )
+    _ar   ArrayRef
+    _hr    HashRef
+    _idx  InDeX
+    _rc   ReturnCode
+    _itc  IntoText Corp.
+    ig    IntoText company abbreviation in code w/ arbitrary g
+    delm  delimite[dr]
+    rhk   RawHashKeys
+    sc    ShortCut
+    sn    SerialNumber
+    fn    FileName
+    fm    FroM?
+    [AH]o[AH] Array|Hash of Array|Hash - xlss::build_HoH_fm_xls_B
+    ud    ?                             custc::build_HoH_fm_txt
+    mn    ?
+    cv    CheckValue?
+    stg   ST(rinG|aGe)?
+    con   constant(s)
+    fld   FieLD(s)
+    fin   final
+    pgm   program
+    bcp    BeginCommentPhrase
+    fcp   FinishCommentPhrase
+    bqi   BuilderQualityInspection
+    bwi   BuilderWalkthroughInspection
+    soap  SubjectiveObjectiveAssessmentPlan
+  7 hours
+789BS9k - reading through more of the src && doc filz
+Thu Aug  9 11:28:09:46 2007
+  2do:
+    clearly segment customer-facing dox && pod from internal dvloprz ones
+  werk:
+    Conducted a detailed analysis of available templating mechanisms:
+      SSI;
+      Petal;
+      Text::Template;
+      HTML::Template;
+      HTML::Mason;
+      HTML_Tree;
+      HTML::Embperl;
+      ePerl;
+      Apache::AxKit;
+      Apache::ASP;
+      CGI::FastTemplate;
+      Template Toolkit;
+        Conclusion:Template Toolkit (TT) is the best available for IT purposes.
+  notz:
+    Documentation/Source(_Orig)/ dirz show Brig's modified .pmz
+    *_form/ dirz contain nearly identical goofy form template filz:
+      dd_config_form(_defaults).txt                              (should be TT)
+      dd_config_INFO.txt filz showing ASCII table comparison of values
+      commands_to_do.txt calls (std_cust_cmd|BuilderWerks).pl w/ params
+        to specify actions like generating .(doc|xls),faxing or e-mailing, etc.
+      dictation_shortcuts(_esc_words).txt aliases stuff          (should be TT)
+      form_directives.txt define general form terms              (should be TT)
+      sr_out.txt are SpeechRec output transcriptions w/ macro data entries
+      setup_files/ dirz may contain initial (form_directives|sr_out).txt filz
+    BW_Access/  contains ideas.txt to describe interacting w/ MSAccess servers
+    BW_details/ contains BW_(config|prior)_settings(_blended|_defaults).txt
+      which all contain additional config settings for BW        (should be TT)
+      Dir also contains RelayFax_cover_parameters.txt to define field values
+        for RelayFax cover-pages for punch-item faxes            (should be?TT)
+      Dir also contains details_about_.*.xls spreadsheets I haven't looked into
+    BW_setup/ dir contains its own BW_details/ dir similar to above.  It also
+      has a bunch of BW_[^_]+_form_setup/ dirz which each only contain a single
+      setup_files/ subdir that has any number of commands_to_do|dd_config_form|
+      dictation_shortcuts|form_directives .txt filz.  BW_punchlist_form_setup/
+      setup_files/ also contains its own basic punch_item.dtd for DD records.
+      Zero_files/ subdir doesn't seem to contain anything useful.
+      There are configure_BuilderWerks(_exe).bat files which just call
+        ../DirectiveDictate.(pl|exe) -f BW_punchlist_form config_cmd
+      There is an add_BW_forms_to_form_names_txt.bat && form_names.txt which
+        define form names && folders with the .bat initializing a different
+        ../form_names.txt file w/ the BW_(Word|emailOut|punchlist|bqi)_form
+        entries that the local one already exhibits && appends a
+        form_processor_screen_name_prefix BW title entry to ../dd_config.txt
+      There are bw_punch_items_(by_location|master_list).xls files, two
+        demo_files dirz && a setup_BuilderWerks.iss file for InstallScript.
+    BW_setup_addl/ dir contains demonstration data && a Documentation/ dir
+      containing BW_Readme && demo_setup.pl as well as a bunch of .pod filz
+      likely used together to generate the .(htm|pdf) dox released elsewhere.
+      The Readme already uses a bit of TT but it all may benefit from more.
+  C hours
+78ABmRM - more reading && question compilation for what to ask Brig
+Fri Aug 10 11:48:27:22 2007
+  werk: studied PAR in great depth && delved further into file details (the
+    findings of which have been added to the notz section above)
+78AJLbF - call w/ Brig: following are the results of our 3.5hour phone talk:
+Fri Aug 10 19:21:37:15 2007
+  ~/orig/resellers_rs_sub/*/rs_sub.pl contains allocated serial-numbers for
+    customer validation purposes && each older version before new numbs gen'd.
+  ~/orig/resellers_rs_sub/pop_sn.pl genz new SNz in other rs_sub.pl filz
+  ~/orig/1Resellers/1IntoText/ig_2_23a/
+    DD _itc.pl file is all code cat'd together, obfu'd in _capped && tidied in
+    DD .pl w/ h2c_DD.pl for reversing the obfu for tech-support /
+    trouble-shooting.
+  null_form/ is for when no form has been specified but dictation is received
+  Brig's development progression:
+    DD                                                         '02Feb-Apr
+    SCC (was originally called WordRender.exe before refactor) '02summer
+    soap_form                                                  '02summer
+    emailOut_form (Outlook && Gmail interaction)               '02summer
+    intermediate_office_visit_form                             '02ish?
+    HS                                                         '02-'03ish?
+    OC                                                         '03spring-summer
+    BW                                                         '03Aug
+    CW                                                         '04ish?
+    RAP_sheet_form (not worth studying)                        '05?
+    realtor_form                                           '05summer-'06spring?
+    WKT ("wikkit") (no logic, just field names)                '05fall
+    RM  (recent renaming of WKT)                               '06ish?
+  DirDictate/DirDictate/ is an artifact of old testing && can be ignored.
+  Making a new version:
+    md v2_24a/DirDictate/ thru TortoiseSVN as cp of new head file set
+    Documentation/help_pod.pl ch comments of which 'help(_main(_dd_settings))
+      line && runs which calls ~/orig/Perl/lib/podtools.pl 2 gen .(htm|txt|pdf)
+    use DirDictate/setup_itdd.iss line 64 shows dox updating for install proc
+      line  76 is for DirDictate_Intro_Readme.txt
+      line 110 is for setup_files/* to not clobber existing
+    InnoSetup Script is free installer program that loads .iss files
+    Documentation/batch_file/ has Win32OpenSSL .exe for installing a bunch of
+      .dll filz to aid interaction w/ Gmail or Word dox or something
+    DirDictate/merge_packages.pl to mk (SCC|BW|CW|DD) on line 44 w/ cmntz
+      && w/ some vendor line uncommented from line  58
+      then prepares files used like for DD on line 174
+      gen's giant _itc.pl filz
+    then in stunnix/bin/* (which wasn't given in my code-drop) does
+      pre-processing before obfuscation like stripping comments && performs
+      some substitutions
+    then stun_build.pl needs some configuration before running to gen
+      obfu .pl file before assempling ActiveState .exe assembly
+    then manual step of moving built .exe filz to DirDictate/ dir to be used
+      by users && to be picked up by ISS installer routine
+    DirDictate/rs_sub.pl is installed to perform serial-number validation
+  C hours
+  2do:
+    send invoice for 31 hours completed x $63/hr. ($1,953)
+    suspend any more werk until further notice...
+    study MVC,Catalyst
+    automate whatever possible for generation of .exe releases to mk sure any
+      later code modifications can still produce packaged up builds
+    write test suite to automate evaluation of correctness of any consistently
+      behaving original code routines (which can then be compared against any
+      future refactoring, after accounting for desirable API updates)
+    scrutinize all Source(_Orig)/ modified CPAN Perl Modules:
+      determine how necessary Brig's changes are
+      evaluate fitness of most recent releases of same modules
+        (or superior alternatives)
+      tidy && better document (POD) any remaining modifications needed
+    diagram tree of process flow touching all source files
+    begin drawing *_subs.pl scripts into modules w/ classes && objects when
+      more appropriate than exporting myriad subs into local namespaces
+    tidy all new module code && add dvlpr-centric POD
+    refactor any commonalities among modules into more base-level ones others
+      can easily inherit from
+    start tracing execution through data-file slurping && intermediate
+      template or comparison file generation
+    apply TT best-practices aggressively to every data-file that is being
+      parsed for regex substitutions or being populated through other means
+    restructure file hierarchy to clearly isolate separate obsolete or
+      antiquated artifacts from current projects, libraries of cleaned
+      modules, initial && intermediate data-file directories, customer-facing
+      documentation, etc.
+    generalize UI display elements to werk well with CSS for future web
+      interfaces && hopefully adaptations of current Tk ones too
+    experiment with potentially better Tk UIs
+    stand-up rudimentary web framework (Catalyst) to prove success of UI
+      abstraction layer
+    simplify (automate where possible) domain-specific && client-specific
+      variations on base systems
+    solicit detailed feedback && feature requests... && service them in a loop

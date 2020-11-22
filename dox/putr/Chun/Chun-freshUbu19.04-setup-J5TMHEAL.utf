@@ -1,0 +1,10 @@
+# J5TMHEAL:Chun-freshUbu19.04-setup crE8d by PipStuart <Pip@CPAN.Org> to log the things it seems Chun will need after clean-sl8ing a new Ubu19.04;
+zsh
+vim
+git
+openssh-server
+xclip
+X-Input-Calibrator
+Brave-Browser
+Audacity
+OnBoard

@@ -1,0 +1,131 @@
+From MAILER-DAEMON Sun Apr 22 07:28:38 2001
+Date: 22 Apr 2001 07:28:38 -0700
+From: Mail System Internal Data <MAILER-DAEMON@BinQ.org>
+Subject: DON'T DELETE THIS MESSAGE -- FOLDER INTERNAL DATA
+X-IMAP: 0987949718 0000000000
+Status: RO
+
+This text is part of the internal format of your mail folder, and is not
+a real message.  It is created automatically by the mail system software.
+If deleted, important folder data will be lost, and it will be re-created
+with the data reset to initial values.
+
+From pip@BinQ.org Sun Apr 22 07:28:38 2001 -0700
+Status: 
+X-Status: 
+X-Keywords:
+Newsgroups: 
+Date: Sun, 22 Apr 2001 07:28:38 -0700 (PDT)
+From: PipTigger <pip@BinQ.org>
+To: DMathews@BCIGroup.com
+Subject: Freedom?
+Fcc: sm
+Message-ID: <Pine.LNX.4.21.0104220559050.5874@BinQ.org>
+X-Cursor-Pos: : 6177
+MIME-Version: 1.0
+Content-Type: TEXT/PLAIN; charset=US-ASCII
+
+Hey Maga,
+  I know I may have gotten a little dogmatic a week ago with the
+Linux-rant but I was trying to inform you... I hope it didn't seem like I
+was too snooty, like patronizing or "but-of-course" about it all.  I want
+to be capable of clearly presenting the beneficial facets of open-source
+software in most arenas.  I would like to be eloquent && convincing
+regarding issues that clearly will have a massive impact on the future of
+human-machine interaction.  Along those lines && on a more hotly debated
+issue, I was hoping you && I could calmly (at our convenience) discuss
+firearms && personal freedoms.  I know I haven't really confronted you
+about it with respect or regard for your opinion before (which
+probably was scary for both of us)... even it may have initially been a
+sort of rebellious "I make my own choices now" sort of move on my behalf
+in the first place (&& the video games too?  We can talk about that
+one later) && ... well I would rather not place or leave myself at odds
+with you if possible.  Maybe I won't change my stance on 2nd-Amendment
+rights (&& maybe you won't either) but I think it would be healthy for the
+two of us to discuss our positions && come to terms with why the other
+has such opinions.  Now I don't want you to think I'm trying to face
+off with you either (or manipulate you selfishly like Dad) ... I'd rather
+you understand that I am respecting you && your opinion more... I care
+enormously about you && what you think of me.  I want you to understand
+who I am, what I do, what I want to do, even what I think.  I'm not in a
+terrible hurry... I just would like to develop a closer && more mature
+relationship with you, my wonderful mother, whom I adore.
+  Now, in preparation, this discussion might become heated at some points
+&& even a bit ugly (as seen from an observer if there were one) but I'd
+like us to basically shake hands that this is an okay && fine thing for us
+to do (sorta like the full-nelson wrestling of old).  We might be so busy
+that we won't get to write too much to each other (possibly even for
+weeks) or the discussion might change course to any other issues or topics
+(moral, political, technical, whatever...) but I am just longing to engage
+you intellectually && to reassure you that I am me && I'm not trying to go
+anywhere without your love.  This might be all sentimental && stuff
+too... even the increasing pressure from Dad is forcing me to recognize
+how precious my time with my beloved family is... that we are here for
+each other... that we do love each other so dearly... that we're far apart
+&& rarely near enough.  It was wonderful hearing Aunt Ginny && Uncle Dan's
+voices this week... && Emmash prolly 6-feet tall =).  I'm sorry if this is
+a huge cry for help... please don't be too scared... I'm trying to be calm
+about it all too... feel free to talk even to Ginny or whoever you
+trust... I trust them wholly too... Dad is getting crazier && he's
+... well it's very dangerous for me that I'm am the only thing left in his
+insane mind.  All of his efforts && expressions && creativity && reprimand
+&& instruction && violence && coaxing && gentleness && patience &&
+stringence are welling up.  I'm just being very long winded in trying to
+say "I LOVE you Mom!"... more than I can say.  I love Angie so much
+too... I've hurt her && Tim && I've been an asshole in so many ways.  Even
+when I've been forgiven && I try to forgive myself, I hate the damage &&
+pain that I have brought... the things I never should have done or
+said.  You two are so far away.  I miss you both terribly.  I don't know
+Rosie as well as I'd like.  I had really hoped that she would feel
+comfortable enough to open up to us kids more over the winter... time ran
+short (largely my fault)... I don't know what I could've expected
+but... even that made me feel like a jerk.  I've been so self-absorbed
+that I couldn't abridge my life story enough to let everyone else
+share.  Time pressures suck.  Well anyway, I trust && immediately accept
+your choices so I love Rosie too but I would like to know you all
+more.  I tried to get Tim to come down && go snowboarding with me today
+but I didn't hear back.  It sounded like he had a few papers to do this
+week.  I hope he did well.  My roommies are trudging through midterms &&
+stuff now too =).  Oh... I haven't heard back from the bankruptcy
+attorney (Roy Berry)  but I left him a message saying that "my Mom" would
+like to be included in any further discussions of a bankruptcy
+filing.  I'm sorry I may have blown it so badly with Fish.  I didn't
+imagine how costly it could be && even that he could lie so cruelly just
+to take money from me.  The most damning (yet unsubstantiated) accusation
+was that I held his server, passwords, && code hostage until he could
+be convinced to pay me some exorbitant ransom.  It was completely imagined
+&& I was given no opportunity to retort.  The arbitration is particularly 
+binding (unless I can demonstrate fraud, collusion, etc.) && my attorney
+said that it would cost more to try to overturn it in a real lawsuit than 
+to just pay the 15k.  I am so thankful that you are willing to rescue
+me... I'm trying to grow && mature but sometimes it's berry harb.  I was
+scared by the possibilities of Y2K && lost faith in credit && people.  I
+had no credit card to repair my own Jeep with on my way to Wisconsin.  How
+foolish?  Since then, I've had 3 real credit cards && a Chevron card && I
+have been very diligent about balances... I've built excellent
+credit... my limits are probably about half of 15k... I've never maxed any
+&& always pay them all off immediately so I'm not even sure what my total
+limit is but I do get offered new platinum cards several times each
+week.  I know we'll work it out... Thank you for saving my skin here if
+you can... I feel like I'm coming home again && telling you "I broke your
+car" && you're replying   "Yep.  You sure did.  You'll have to pay me
+back."  "I will."  Thank you for being there for me Mom.  I hope that I'm
+there for you whenever you need me (once I can stop getting into my own
+troubles).  You are so strong.  I love you.  Please give big hugs &&
+kisses to Angie && Rosie && tell them that I think of my 3 Wis-Women often
+&& miss each of you.
+  So... how do you feel about the 2nd-Amendment && why?  Talk amongst
+yaselves... I'm a little vahclempt. =)
+
+With Unconditional Love,
+-Philip
+
+ps. In hindsight, it seems I should write this letter on paper as that
+experience, on both ends, is naturally more personal && meaningful... but
+I feel some urgency (hopefully misplaced).  Email is not private either
+but it is fast.  I guess I'll do both.
+Please take && give my love. =)
+
+
+
+

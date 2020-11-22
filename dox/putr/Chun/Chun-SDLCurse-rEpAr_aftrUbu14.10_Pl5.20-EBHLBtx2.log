@@ -1,0 +1,48 @@
+# EBHLBvku: On Chun after successful do-release-upgrade to Ubu14.10 UtopicUnicorn, my perl d8ok Curses app && ckm8 SDL app both core dumped. Actually neither
+#   Chun nor Ryu used the above upgrade command. Both were run from the Software Upd8r release upgrade dialog button. On Ryu: I first tried:
+pmei Alien::SDL; # .. and got options:
+# [1] Already installed SDL ver=1.2.15 path=/usr SDL(v2.0.2 ) SDL_image(v2.0.0 ) SDL_mixer(v2.0.0 ) SDL_ttf(v2.0.12) SDL_gfx(v2.0.25) SDL_Pango(v1.3)
+# [2] Source code build                          SDL(v1.2.15) SDL_image(v1.2.11) SDL_mixer(v1.2.12) SDL_ttf(v2.0.11) SDL_gfx(v2.0.25) SDL_Pango(v1.2)
+#   && tried 1 first (even though 2 was default) which seemed to succeed. On Chun:
+<root@ChunEBHLFScU~>pmei Alien::SDL
+Reading '/home/pip/.cpan/Metadata'
+  Database was generated on Mon, 17 Nov 2014 17:17:02 GMT
+Running install for module 'Alien::SDL'
+Checksum for /home/pip/.cpan/sources/authors/id/F/FR/FROGGS/Alien-SDL-1.444.tar.gz ok
+Configuring F/FR/FROGGS/Alien-SDL-1.444.tar.gz with Build.PL
+Unknown option: installdirs
+Welcome to Alien::SDL module installation
+-----------------------------------------
+checking operating system... linux
+checking for cc... yes
+checking build system type... x86_64-linux-gnu-thread-multi
+checking platform specific module... using 'My::Builder::Unix'
+Too early to specify a build action 'site'.  Do 'Build site' instead.
+Warning: No success on command[/usr/bin/perl Build.PL --installdirs site]
+  FROGGS/Alien-SDL-1.444.tar.gz
+  /usr/bin/perl Build.PL --installdirs site -- NOT OK
+<root@ChunEBHLFStC~>
+# Both Aku && Taki failed similarly to above && neither could upd8 to CPAN.pm 2.05 either.
+pmei SDL; # This succeeded and fixed ckm8 on both Ryu && Chun (even though her Alien:: failed quick && still does because can't Build site).
+# Taki failed on above because she has prerequisite Alien::SDL 1.438 installed but needs at least 1.444; Aku succeeded.
+# Taki needed to `agi libalien-sdl-perl libalien-sdl-dev-perl libsdl-perl` && `rm -rf ~/lib/perl5/lib/perl5/i686-linux-gnu-thread-multi-64int` 4 ckm8 2 work.
+# Curses-1.32 couldn't make at all due to:"make: *** No rule to make target '/usr/lib/x86_64-linux-gnu/perl/5.20/CORE/fakethr.h', needed by 'Curses.o'.  Stop."
+# According to HTTP://Forums.Gentoo.Org/viewtopic-p-7640196.html similar Perl 5.20 problems may be fixed by:
+touch /usr/lib/x86_64-linux-gnu/perl/5.20/CORE/fakethr.h
+#   then failed on same path perlsfio.h
+touch /usr/lib/x86_64-linux-gnu/perl/5.20/CORE/perlsfio.h
+# On Taki:Above paths s/x86_64/i386/ since she is my only old 32-bit single-core non-AMD64 machine.
+# On Ryu:Trying `agi libcurses-perl` (1.31-1build1) instead still dumped core from `d8ok`. Ryu seems not to have /usr/include/ncurses.h so needed:
+agi libncurses5-dev libncursesw5-dev
+pmei Curses; # This then succeeded.
+# Also indicator-multiload SysMon changed to a new grayscale Ambiance pal8 && needed to change back to Traditional but maybe should l8r be Custom 8bow.
+#   Proc:Usr:#0072B3,Sys:92E6,Nic:A3FF,IOW8:2F3D,Idl:0mAB.25alpha; Mem:Usr:B35B,Shr:E675,Buf:FF82,Cch:AAF5D0,FrE:0alphsAmasIdl;
+#    Net:In:FCE94F,Out:EDD400,Lcl:C4A000,Bkg:Idl; Swp:Usd:8B00C3,FrE:Idl;LOd:Avg:D50000,Bkg:Idl; Dsk:REd:C65000,WrIt:FF6700,Bkg:Idl;
+#   On Ryu:made width 100pixels. On both Chun&&Ryu reordered menu for 8bow Load,Disk,Net,Mem,CPU but indic8or items:blank,CPU $(percent(cpu.inuse)),Mem $(size(
+#     mem.user)),Net $(speed(net.down))/$(speed(net.up)),Swap $(size(swap.used)),Load $(decimals(load.avg,2)),Disk $(speed(disk.read))/$(speed(disk.write))
+#     reordering does not work so maybe custom recolor l8r instead.
+# Also 14.10 removed mplayer(-doc)? so:
+agi mplayer2 mpv smplayer smplayer-themes
+# For eventual 8mix ckot l8st aumix, gom, && rexima; Also for audio playing ckot cmus, moc, && ncmpc; Might also learn from other console apps in:
+acs ncurses|eg -v mix|eg -v play|eg ncurses
+# On Ryu during upgrade to 14.10 UtopicUnicorn, zsh tab command completion failed but now seems fine && improved on both Ryu && Chun.

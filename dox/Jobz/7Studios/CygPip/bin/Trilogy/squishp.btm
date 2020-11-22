@@ -1,0 +1,85 @@
+if "%1" == "" .or. not exist %1 goto errorQuit
+set outf=c:\squishdP.txt
+if "%2" != "" set outf=%2
+del %outf /q /e
+timer on
+set linz=%@lines[%1]
+set fhnd=%@fileopen[%1, read]
+set last=%@fileread[%fhnd]
+set line=%@fileread[%fhnd]
+if %last NE 1 .or. %line NE 2 goto errorQuit
+set last=%@fileread[%fhnd]
+if %last NE 3 goto errorQuit
+set coun=3
+:loopie
+set line=%@fileread[%fhnd]
+set coun=%@inc[%coun]
+if "%line" == "**EOF**" goto end
+if %coun EQ %@int[%@eval[%linz/20]] echos 5%%
+if %coun EQ %@int[%@eval[%linz/10]] echos 10%%
+if %coun EQ %@int[%@eval[%linz*.15]] echos 15%%
+if %coun EQ %@int[%@eval[%linz/5]] echos 20%%
+if %coun EQ %@int[%@eval[%linz/4]] echos 25%%
+if %coun EQ %@int[%@eval[%linz*.30]] echos 30%%
+if %coun EQ %@int[%@eval[%linz*.35]] echos 35%%
+if %coun EQ %@int[%@eval[%linz*.40]] echos 40%%
+if %coun EQ %@int[%@eval[%linz*.45]] echos 45%%
+if %coun EQ %@int[%@eval[%linz*.50]] echos 50%%
+if %coun EQ %@int[%@eval[%linz*.55]] echos 55%%
+if %coun EQ %@int[%@eval[%linz*.60]] echos 60%%
+if %coun EQ %@int[%@eval[%linz*.65]] echos 65%%
+if %coun EQ %@int[%@eval[%linz*.70]] echos 70%%
+if %coun EQ %@int[%@eval[%linz*.75]] echos 75%%
+if %coun EQ %@int[%@eval[%linz*.80]] echos 80%%
+if %coun EQ %@int[%@eval[%linz*.85]] echos 85%%
+if %coun EQ %@int[%@eval[%linz*.90]] echos 90%%
+if %coun EQ %@int[%@eval[%linz*.95]] echos 95%%
+set diff=%@int[%@eval[(%line-%last)/2]]
+set last=%line
+:againDiff
+if %diff LE 10 echos %@char[%@eval[%diff+47]] >> %outf
+if %diff LE 10 goto loopie
+if %diff LE 36 echos %@char[%@eval[%diff+54]] >> %outf
+if %diff LE 36 goto loopie
+if %diff LE 62 echos %@char[%@eval[%diff+60]] >> %outf
+if %diff LE 62 goto loopie
+if %diff LE 180 echos %@char[%@eval[%diff+65]] >> %outf
+if %diff LE 180 goto loopie
+echos !
+echos %@char[246] >> %outf
+set poop=%diff
+set diff=%@int[%@eval[%diff/180]]
+if %diff LE 10 echos %@char[%@eval[%diff+47]] >> %outf
+if %diff LE 10 goto doneRange
+if %diff LE 36 echos %@char[%@eval[%diff+54]] >> %outf
+if %diff LE 36 goto doneRange
+if %diff LE 62 echos %@char[%@eval[%diff+60]] >> %outf
+if %diff LE 62 goto doneRange
+if %diff LE 180 echos %@char[%@eval[%diff+65]] >> %outf
+:doneRange
+set diff=%@eval[%poop-(%diff*180)]
+goto againDiff
+:errorQuit
+echo "Need a file of good Primes please!"
+:end
+echo 100%%
+echo Total Squished Primes: %@dec[%coun]
+timer
+set poop=%@fileclose[%fhnd]
+set outf= ^ set fhnd= ^ set line= ^ set last= ^ set diff= ^ set coun=
+set linz= ^ set poop=
+goto kaka
+basically I have 0-9,A-Z,a-z + highbit 128
+I'd like to use up to 245 and then 246 means read next 2 chars
+0-9 A-Z a-z 128-10=118
+10 + 26 + 26 + 118 = 180 base2 is cleaner oh well... breakdown is...
+0   9  10  35 36  61  62  179
+0 - 9  A - Z  a - z   hi -
+48  57 65  90 97  122 128 245
+0 + 48 + 10 + 8 + 26 + 7 + 26 + 6 + 118
+so to ascii  if < 10 += 48 if < 36 += 55 if < 62 += 61 if < 180 += 66
+             else kaka=ip(#/180) echo 180, kaka, #-(kaka*180) last thru ifs
+back to val  if < 58 -= 48 if < 91 -= 55 if < 123 -= 61 if < 246 -= 66
+             else read next 2 and put through ifs (1st*180+2nd)
+idea... take ((x-last)/2-1)+48
+:kaka

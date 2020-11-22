@@ -1,0 +1,11 @@
+Part-Time GNU/Linux Perl Programmer (Oshkosh, Wisconsin)
+
+Do you know someone near Oshkosh or Appleton who runs Ubuntu or another popular GNU/Linux distribution and would like any sort of Perl software to be prototyped, modified, or maintained?
+
+I am offering such programming services for $16 per hour and am willing to work up to 10 hours per week on any suitably worthwhile projects (Open-Source and videogame related would be preferred).
+
+You can evaluate some of my latest capabilities at HTTPS://GitHub.Com/Pip/Octology and then let me know if you have any small projects or system administration tasks in mind to have developed.
+
+Thank you for your consideration.
+
+-Pip 

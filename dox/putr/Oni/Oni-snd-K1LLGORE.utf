@@ -1,0 +1,74 @@
+# K1LLGORE:Oni-snd.utf crE8d by PipStuart <Pip@CPAN.Org> to keep notes about trying to get Media Volume hot-keys to work promptly with notific8ions again;
+# Also intending to explore, diagnose, && resolve MPlayer .mp4 playback stuttering with -ao pulse && halting completely with -ao alsa for unknown reasons;
+# According to HTTPS://AskUbuntu.Com/questions/965382/how-do-i-revert-to-alsa from Oct. 16th, 2017 (`d8 HAG`):
+sudo apt-get             install                  alsa-oss
+#   didn't work for a RealTek AC290. Uninstalling it && trying to reinstall alsa with:
+sudo aptitude --purge  reinstall linux-sound-base alsa-base alsa-utils linux-image-`uname -r` linux-ubuntu-modules-`uname -r` libasound2
+#   also didn't fix anything, still giving no sound. `alsamixer` in terminal produced:
+"cannot open mixer: No such file or directory"
+#   but apparently:
+sudo apt-get install --reinstall linux-image-extra-$(uname -r)
+#   installed all the missing drivers && fixed the problem. Solution described at HTTPS://AskUbuntu.Com/questions/940091/ubuntu-16-04-reinstall-all-drivers ;
+alsa<Tab> Completing external commands to ck-out l8r 4 problM srcz:
+alsa           alsabat-test   alsa_delay     alsa-info      alsa_loopback  alsamixergui   alsaplayer     alsaucm
+alsabat        alsactl        alsa_in        alsaloop       alsamixer      alsa_out       alsatplg
+# packages in /etc/init.d/ which seem sound-rel8d && are probably not needed && could be causing problems (&& should be easy to re-install l8r, if desired):
+aumix icecast2 mpd osspd rotter rtirq sndiod spice-vdagent vdr vdradmin-am
+<root@OniK1LLIbx0/etc>ag purge aumix mpd osspd-pulseaudio osspd rotter sndiod spice-vdagent vdradmin-am vdr;en leaving icecast2 and rtirq as hopefully harmlS;
+# Shoot! That command wanted to autoremove a bunch of packages && install even more i386 ones to replace removing ubuntu-unity-desktop etc. so do 1-@-a-time;
+ag purge aumix-common aumix; # succeeded easily
+ag purge vdradmin-am vdr; # The following packages were automatically installed and are no longer required: libcxxtools9v5 libextractor3 libftp4 librpm8
+#   librpmio8 libsmf0 libtemplate-plugin-javascript-perl libtidy5deb1 libtntnet12v5 rpm-common sendemail tntnet-runtime; use `aar` to autoremove them;
+# The following packages will be REMOVED:
+# libxineliboutput-sxfe* vdr* vdr-plugin-dvbhddevice* vdr-plugin-dvbsddevice* vdr-plugin-dvd* vdr-plugin-epgsearch* vdr-plugin-epgsync* vdr-plugin-examples*
+# vdr-plugin-femon* vdr-plugin-games* vdr-plugin-live* vdr-plugin-mp3* vdr-plugin-mplayer* vdr-plugin-osdserver* vdr-plugin-osdteletext* vdr-plugin-remote*
+# vdr-plugin-satip* vdr-plugin-skinenigmang* vdr-plugin-streamdev-client* vdr-plugin-streamdev-server* vdr-plugin-svdrposd* vdr-plugin-svdrpservice*
+# vdr-plugin-vcd* vdr-plugin-weather* vdr-plugin-xine* vdr-plugin-xineliboutput* vdradmin-am*; # looks like all vdr stuff so should be fine to go ahead with;
+# dpkg: warning: while removing vdr, directory '/var/lib/vdr' not empty so not removed (has .cache/fontconfig/ subdir, so maybe clean out l8r) &&
+# dpkg: warning: while removing vdr-plugin-osdteletext, directory '/usr/share/fonts/truetype/vdr-plugin-osdteletex' not empty so not removed;
+aar; # The following packages will be REMOVED: libcxxtools9v5 libextractor3 libftp4 librpm8 librpmio8 libsmf0 libtemplate-plugin-javascript-perl libtidy5deb1
+     # libtntnet12v5 rpm-common sendemail tntnet-runtime; # looks fine to proceed with;
+ag purge spice-vdagent; # wants to also REMOVE ubuntu-desktop* ubuntu-desktop-minimal* ubuntu-unity-desktop* ... so cancel that one;
+ag purge rotter; # solo so go ahead;
+ag purge osspd-pulseaudio osspd; # wants to install a bunch of critical libs as i386 instead so maybe try remove instead of purge?
+agr tuxguitar-oss splay libsnack-oss osspd-pulseaudio osspd; # would work much more cleanly, so proceeding;
+ag purge sndiod; # solo so go ahead;
+ag purge mpd   ; # solo so go ahead; dpkg: warning: while removing mpd, directory '/var/lib/mpd' not empty so not removed; # so /etc/init.d/ cleanedup abit;
+ai indicator-sound;gsettings set com.canonical.indicator.sound visible true;ai unity-control-center; # logout && backin,maybe from Sep. 14th, 2015 (`d8 F9E`):
+# HTTPS://AskUbuntu.Com/questions/483397/missing-sound-volume-icon-on-screen-top-14-04 ; # had to run above gsettings command as regular pip user. maybe:
+ai linux-sound-base indicator-sound libcanberra-pulse osspd osspd-pulseaudio pulseaudio pulseaudio-module-bluetooth unity-control-center \
+  unity-control-center-dev pulseaudio-module-gsettings pulseaudio-module-lirc pulseaudio-module-zeroconf # could all be needed,aftr rm or SKp the asterisks
+# pulseaudio-module-raop might stand for RouteAlsaOverPulse or something else that could be part of my problems, so trying to purge it; # might also try:
+gsettings set org.gnome.desktop.sound event-sounds false; # then back on again after reboot?
+# HTTPS://AskUbuntu.Com/questions/983676/media-keys-no-longer-work-in-ubuntu-17-10 says disabling Commands plugin in ccsm fixes media keys compiz messed up;
+# HTTPS://Unix.StackExchange.Com/questions/382601/how-to-prevent-sound-mute-when-switching-user has interesting answers about using PA server-instance 4all;
+gnome-control-center -v keyboard; # runs verbose editing of shortcuts which seem to either get stored in dconf:
+  "/org/gnome/desktop/wm/keybindings/" or "/org/gnome/settings-daemon/plugins/media-keys/volume-down" && 'volume-up' while Unity has "System Settings" >
+  'Keyboard' > 'Shortcuts' > 'Sound and Media' with independent "Volume down" && "Volume up" entries that still take ~25 seconds when they're only ones set;
+unity-control-center seems to be missing a .desktop file that Pulse pavv looks 4 from some "Sys Sets";Altern8KeyShortcuts ShftF9&&10 mix8 may not run as me;
+K22LLNxt:`sz;auu;ai xdotool` was worth a shot from HTTPS://AskUbuntu.Com/questions/1037489/simulate-media-keys-on-a-keyboard-that-doesnt-have-them?rq=1 then
+  in SystemSettings CustomShortcuts try to set Shift+F11 && F12 to commands: `xdotool keyup --clearmodifiers Shift+F11 && xdotool key XF86VolumeDown && Up`;
+K28L9ARV:`dconf-editor` in /org/gnome/settings-daemon/plugins/media-keys/ the bottom has volume-down-static XF86AudioLowerVolume && vol-up-stat XF86ARaiseV.
+  HTTPS://Unix.StackExchange.Com/questions/261371/how-do-i-find-out-what-program-owns-a-hotkey describes `jcf` thN `xdt keydown XF86AudioRaiseVolume;xdt key
+    XF86LogGrabInfo;xdt keyup XF86AudioRaiseVolume` thN prSing Shft-F12 yieldz: dbus-daemon[2707]: [session uid=1000 pid=2707] Activating service name=
+    'org.freedesktop.Notifications' requested by ':1.45' (uid=1000 pid=3313 comm="/usr/lib/unity-settings-daemon/unity-settings-daem" label="unconfined").
+  Then unity-settings-[3313]: Failed to connect to proxy # look into what proxy unity-settings-daemon would need to connect to && what priv8 stream ports...
+       unity-settings-[3313]: gvc_mixer_stream_get_port: assertion 'stream->priv->ports != NULL' failed # ... are asserting failure with gvc_mixer_stream;
+       org.freedesktop.Notifications[2707]: org.kde.knotifications: WaitForName: Service was not registered within timeout \n dbus-daemon[2707]: [session
+    uid=1000 pid=2707] Activated service 'org.freedesktop.Notifications' failed: Process org.freedesktop.Notifications exited with status 1;
+K28LAKDE:HTTPS://AskUbuntu.Com/questions/1124765/xfce4-notifyd-service-is-not-starting-how-to-troubleshoot suggests that `agr plasma-workspace` will restore
+  my notific8ionz without timing out DBus. cmd rmvd kinfocenter plasma-desktop plasma-workspace plasma-workspace-wayland && said to agar no longer required:
+    apt-config-icons-large apt-config-icons-large-hidpi bluedevil breeze breeze-cursor-theme breeze-gtk-theme catdoc fonts-noto-hinted frameworkintegration
+    kde-cli-tools kde-cli-tools-data kde-config-sddm kde-style-breeze kde-style-oxygen-qt5 kded5 kgamma5 khotkeys khotkeys-data kio-extras kio-extras-data
+    kmenuedit kscreen ksysguard ksysguard-data ksysguardd ktexteditor-data ktexteditor-katepart kwin-style-breeze kwrited libappstreamqt2 libcolorcorrect5
+    libeditorconfig0 libepub0 libkf5activitiesstats1 libkf5baloo5 libkf5balooengine5 libkf5filemetadata-bin libkf5filemetadata-data libkf5filemetadata3
+    libkf5holidays-data libkf5holidays5 libkf5jsembed-data libkf5jsembed5 libkf5networkmanagerqt6 libkf5people-data libkf5people5 libkf5peoplebackend5
+    libkf5peoplewidgets5 libkf5runner5 libkf5screen-bin libkf5screen7 libkf5sysguard-bin libkf5sysguard-data libkf5texteditor-bin libkf5texteditor5
+    libkf5texteditor5-libjs-underscore libkfontinst5 libkfontinstui5 libksgrd7 libksignalplotter7 libkworkspace5-5 libnotificationmanager1 liboxygenstyle5-5
+    liboxygenstyleconfig5-5 libpackagekitqt5-1 libpam-kwallet-common libpam-kwallet5 libplasma-geolocation-interface5 libpowerdevilcore2 libpowerdevilui5
+    libprocesscore7 libprocessui7 libqalculate20 libqalculate20-data libsnapd-qt1 libtaskmanager6 libweather-ion7 libzip5 milou oxygen-sounds
+    plasma-browser-integration plasma-desktop-data plasma-discover plasma-discover-backend-snap plasma-discover-common plasma-integration plasma-pa powerdevil
+    powerdevil-data qdbus-qt5 qml-module-org-kde-activities qml-module-org-kde-draganddrop qml-module-org-kde-kcm qml-module-org-kde-kcoreaddons
+    qml-module-org-kde-kholidays qml-module-org-kde-kio qml-module-org-kde-kwindowsystem qml-module-org-kde-qqc2desktopstyle qml-module-org-kde-runnermodel
+    qml-module-org-kde-solid qml-module-qt-labs-settings qml-module-qtquick-controls-styles-breeze software-properties-qt systemsettings
+    ubuntu-release-upgrader-qt user-manager; # so trying that now then reboot might actually fix volume controlz && notific8ionz, I hope!

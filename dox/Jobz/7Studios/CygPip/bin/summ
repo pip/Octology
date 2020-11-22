@@ -1,0 +1,5 @@
+#!/usr/bin/perl -w
+# 446KXxq - summ created by Pip Stuart <Pip@CPAN.Org>
+#   to calculate summations down to one iteratively
+use strict; use Math::BaseCnv qw(:all);
+print summ(shift) || die "USAGE: `summ <NumToComputeSummDownToOneOf>`\n";

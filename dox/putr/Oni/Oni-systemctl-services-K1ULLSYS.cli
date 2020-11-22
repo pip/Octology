@@ -1,0 +1,34 @@
+# K1ULLSYS:Oni-systemctl-services.cli changed from `d8 G5I` advice article: HTTPS://Linux.Com/tutorials/cleaning-your-linux-startup-process/ by CarlaShroder;
+<root@OniK1ULLX45/etc>syc stop                          accounts-daemon.service;en "I've re-aligned the output to keep the key service elements together"
+<root@OniK1ULLXnx/etc>syc disable                       accounts-daemon.service;en "I've also cut these duplic8d `echo -n ...` outputs since once is enough"
+Removed      /etc/systemd/system/graphical.target.wants/accounts-daemon.service.
+<root@OniK1ULLXvO/etc>syc mask                          accounts-daemon.service
+Created symlink                     /etc/systemd/system/accounts-daemon.service → /dev/null.
+<root@OniK1ULLYVT/etc>syc stop                             ModemManager.service;en 'DBus-activ8d daemon controlling mobile broadband (2G/3G/4G) interfaces'
+<root@OniK1ULLZKi/etc>syc disable                          ModemManager.service
+Removed          /etc/systemd/system/dbus-org.freedesktop.ModemManager1.service.
+Removed        /etc/systemd/system/multi-user.target.wants/ModemManager.service.
+<root@OniK1ULLZQo/etc>syc stop                                 pppd-dns.service;en 'ancient dial-up phone-modem service which I hope to never need again'
+<root@OniK1ULLZrw/etc>syc disable                              pppd-dns.service
+Synchronizing state of                                         pppd-dns.service with SysV service script with /lib/systemd/systemd-sysv-install.
+Executing:         /lib/systemd/systemd-sysv-install disable   pppd-dns
+Removed            /etc/systemd/system/multi-user.target.wants/pppd-dns.service.
+<root@OniK1ULLa13/etc>syc stop                           wpa_supplicant.service;en "only needed if I'm going to be using WiFi wireless networking with Oni"
+<root@OniK1ULLbFx/etc>syc disable                        wpa_supplicant.service
+Removed                  /etc/systemd/system/dbus-fi.w1.wpa_supplicant1.service.
+Removed      /etc/systemd/system/multi-user.target.wants/wpa_supplicant.service.
+<root@OniK1ULLdtc/etc>syc enable                           rtkit-daemon.service;en 'Real-Time Kernel scheduler is actually needed, not sure why was disabled'
+Created symlink /etc/systemd/system/graphical.target.wants/rtkit-daemon.service → /lib/systemd/system/rtkit-daemon.service.
+<root@OniK1ULLe5F/etc>syc start                            rtkit-daemon.service
+<root@OniK1ULLeEI/etc>syc edit                                apt-daily.timer
+<root@OniK1ULLdon/etc>en 'from: HTTPS://AskUbuntu.Com/questions/1038923/do-i-really-need-apt-daily-service-and-apt-daily-upgrade-service to speed-up booting'
+<root@OniK1VLEIJr/etc>syc enable                         wpa_supplicant.service;en 'since my whole wired net just failed, re-enabling Wireless as backup'
+Created symlink          /etc/systemd/system/dbus-fi.w1.wpa_supplicant1.service → /lib/systemd/system/wpa_supplicant.service.
+CrE8d symlnk /etc/systemd/system/multi-user.target.wants/wpa_supplicant.service → /lib/systemd/system/wpa_supplicant.service.
+<root@OniK1VLEIeF/etc>syc start                          wpa_supplicant.service
+<root@OniK21LAbSP/etc>syc enable                        accounts-daemon.service;en "I've re-enabled && started accounts as maybe needed for logind && gdm3"
+<root@OniK21LAcGc/etc>syc start                         accounts-daemon.service
+[pip@OniK22LBfvX/var/log]tlf syslog                                            ;en "P.S. It looks like Software-Updater is popping up && working fine again"
+Feb  2 11:40:07 Oni systemd-resolved[1217]: Server returned error NXDOMAIN,mitig8ing potNtial DNS viol8ion DVE-2018-0001,rtryng trans wi reducd fE8ure lvl UDP.
+# ... led me to: HTTPS://AskUbuntu.Com/questions/1058750/new-alert-keeps-showing-up-server-returned-error-nxdomain-mitigating-potential where hopefully:
+<root@OniK22LBn4W/etc>   slf ../run/systemd/resolve/resolv.conf resolv.conf    ;en " ... should get rid of those repeating error messages as it has 4 others"

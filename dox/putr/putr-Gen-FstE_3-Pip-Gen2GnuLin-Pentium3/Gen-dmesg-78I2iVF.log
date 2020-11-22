@@ -1,0 +1,135 @@
+Linux version 2.4.18 (root@Genjuro) (gcc version 2.95.4 20011002 (Debian prerelease)) #2 Sun Mar 31 13:05:01 PST 2002
+BIOS-provided physical RAM map:
+ BIOS-e820: 0000000000000000 - 00000000000a0000 (usable)
+ BIOS-e820: 00000000000f0000 - 0000000000100000 (reserved)
+ BIOS-e820: 0000000000100000 - 0000000030000000 (usable)
+ BIOS-e820: 00000000ffff0000 - 0000000100000000 (reserved)
+On node 0 totalpages: 196352
+zone(0): 4096 pages.
+zone(1): 192256 pages.
+zone(2): 0 pages.
+Kernel command line: auto BOOT_IMAGE=GnuLin ro root=303 BOOT_FILE=/vmlinuz mem=767M
+Initializing CPU#0
+Detected 751.735 MHz processor.
+Console: colour VGA+ 80x43
+Calibrating delay loop... 1500.77 BogoMIPS
+Memory: 769896k/785408k available (1779k kernel code, 15124k reserved, 565k data, 224k init, 0k highmem)
+Dentry-cache hash table entries: 131072 (order: 8, 1048576 bytes)
+Inode-cache hash table entries: 65536 (order: 7, 524288 bytes)
+Mount-cache hash table entries: 16384 (order: 5, 131072 bytes)
+Buffer-cache hash table entries: 65536 (order: 6, 262144 bytes)
+Page-cache hash table entries: 262144 (order: 8, 1048576 bytes)
+CPU: Before vendor init, caps: 0383f9ff 00000000 00000000, vendor = 0
+CPU: L1 I cache: 16K, L1 D cache: 16K
+CPU: L2 cache: 256K
+CPU: After vendor init, caps: 0383f9ff 00000000 00000000 00000000
+Intel machine check architecture supported.
+Intel machine check reporting enabled on CPU#0.
+CPU:     After generic, caps: 0383f9ff 00000000 00000000 00000000
+CPU:             Common caps: 0383f9ff 00000000 00000000 00000000
+CPU: Intel Pentium III (Coppermine) stepping 03
+Enabling fast FPU save and restore... done.
+Enabling unmasked SIMD FPU exception support... done.
+Checking 'hlt' instruction... OK.
+POSIX conformance testing by UNIFIX
+mtrr: v1.40 (20010327) Richard Gooch (rgooch@atnf.csiro.au)
+mtrr: detected mtrr type: Intel
+PCI: PCI BIOS revision 2.10 entry at 0xfb3a0, last bus=1
+PCI: Using configuration type 1
+PCI: Probing PCI hardware
+Limiting direct PCI/PCI transfers.
+isapnp: Scanning for PnP cards...
+isapnp: No Plug & Play device found
+Linux NET4.0 for Linux 2.4
+Based upon Swansea University Computer Society NET3.039
+Initializing RT netlink socket
+IA-32 Microcode Update Driver: v1.09 <tigran@veritas.com>
+apm: BIOS version 1.2 Flags 0x07 (Driver version 1.16)
+Starting kswapd
+Journalled Block Device driver loaded
+NTFS driver v1.1.22 [Flags: R/W]
+radeonfb: ref_clk=2700, ref_div=60, xclk=16600 from BIOS
+Console: switching to colour frame buffer device 80x30
+radeonfb: ATI Radeon QD  DDR SGRAM 32 MB
+radeonfb: CRT port CRT monitor connected
+Detected PS/2 Mouse Port.
+pty: 256 Unix98 ptys configured
+Serial driver version 5.05c (2001-07-08) with MANY_PORTS SHARE_IRQ SERIAL_PCI ISAPNP enabled
+ttyS00 at 0x03f8 (irq = 4) is a 16550A
+ttyS01 at 0x02f8 (irq = 3) is a 16550A
+request_module[parport_lowlevel]: Root fs not mounted
+lp: driver loaded but no devices found
+gameport0: Emu10k1 Gameport at 0xdc00 size 8 speed 1217 kHz
+Real Time Clock Driver v1.10e
+block: 128 slots per queue, batch=32
+RAMDISK driver initialized: 16 RAM disks of 4096K size 1024 blocksize
+Uniform Multi-Platform E-IDE driver Revision: 6.31
+ide: Assuming 33MHz system bus speed for PIO modes; override with idebus=xx
+PIIX4: IDE controller on PCI bus 00 dev 39
+PIIX4: chipset revision 1
+PIIX4: not 100% native mode: will probe irqs later
+    ide0: BM-DMA at 0xf000-0xf007, BIOS settings: hda:DMA, hdb:pio
+    ide1: BM-DMA at 0xf008-0xf00f, BIOS settings: hdc:pio, hdd:pio
+hda: Maxtor 7Y250P0, ATA DISK drive
+ide0 at 0x1f0-0x1f7,0x3f6 on irq 14
+hda: 268435455 sectors (137439 MB) w/7936KiB Cache, CHS=16709/255/63, UDMA(33)
+Partition check:
+ hda: hda1 hda2 hda3 hda4
+Floppy drive(s): fd0 is 1.44M
+FDC 0 is a post-1991 82077
+SLIP: version 0.8.4-NET3.019-NEWTTY (dynamic channels, max=256) (6 bit encapsulation enabled).
+CSLIP: code copyright 1989 Regents of the University of California.
+SLIP linefill/keepalive option.
+loop: loaded (max 8 devices)
+Linux Tulip driver version 0.9.15-pre9 (Nov 6, 2001)
+tulip0:  MII transceiver #1 config 3000 status 7829 advertising 01e1.
+eth0: Lite-On 82c168 PNIC rev 32 at 0xd400, 00:A0:CC:61:8A:86, IRQ 11.
+PPP generic driver version 2.4.1
+Linux agpgart interface v0.99 (c) Jeff Hartmann
+agpgart: Maximum main memory to use for agp memory: 690M
+agpgart: Detected Intel 440BX chipset
+agpgart: AGP aperture is 32M @ 0xe2000000
+[drm] AGP 0.99 on Intel 440BX @ 0xe2000000 32MB
+[drm] Initialized radeon 1.1.1 20010405 on minor 0
+SCSI subsystem driver Revision: 1.00
+scsi0 : Adaptec AIC7XXX EISA/VLB/PCI SCSI HBA DRIVER, Rev 6.2.4
+        <Adaptec 29160 Ultra160 SCSI adapter>
+        aic7892: Ultra160 Wide Channel A, SCSI Id=7, 32/253 SCBs
+
+  Vendor: PIONEER   Model: DVD-ROM DVD-305   Rev: 1.00
+  Type:   CD-ROM                             ANSI SCSI revision: 02
+(scsi0:A:6): 20.000MB/s transfers (20.000MHz, offset 16)
+Attached scsi CD-ROM sr0 at scsi0, channel 0, id 6, lun 0
+sr0: scsi3-mmc drive: 16x/40x cd/rw xa/form2 cdda tray
+Uniform CD-ROM driver Revision: 3.12
+Creative EMU10K1 PCI Audio Driver, version 0.18, 13:05:19 Mar 31 2002
+emu10k1: EMU10K1 rev 7 model 0x8061 found, IO at 0xd800-0xd81f, IRQ 10
+ac97_codec: AC97 Audio codec, id: 0x8384:0x7608 (SigmaTel STAC9708)
+emu10k1: SBLive! 5.1 card detected
+Linux Kernel Card Services 3.1.22
+  options:  [pci] [cardbus] [pm]
+usb.c: registered new driver hub
+uhci.c: USB Universal Host Controller Interface driver v1.1
+uhci.c: USB UHCI at I/O 0xd000, IRQ 10
+usb.c: new USB bus registered, assigned bus number 1
+hub.c: USB hub found
+hub.c: 2 ports detected
+usb.c: registered new driver hid
+hid-core.c: v1.8 Andreas Gal, Vojtech Pavlik <vojtech@suse.cz>
+hid-core.c: USB HID support drivers
+Initializing USB Mass Storage driver...
+usb.c: registered new driver usb-storage
+USB Mass Storage support registered.
+mice: PS/2 mouse device common for all mice
+NET4: Linux TCP/IP 1.0 for NET4.0
+IP Protocols: ICMP, UDP, TCP, IGMP
+IP: routing cache hash table of 8192 buckets, 64Kbytes
+TCP: Hash tables configured (established 262144 bind 65536)
+NET4: Unix domain sockets 1.0/SMP for Linux NET4.0.
+ds: no socket drivers loaded!
+VFS: Mounted root (ext2 filesystem) readonly.
+Freeing unused kernel memory: 224k freed
+hub.c: USB new device connect on bus1/2, assigned device number 2
+input0: USB HID v1.10 Mouse [Kensington      Kensington Expert Mouse] on usb1:2.0
+Adding Swap: 522104k swap-space (priority -1)
+eth0: Setting full-duplex based on MII#1 link partner capability of 41e1.

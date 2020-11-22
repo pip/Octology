@@ -1,0 +1,113 @@
+# 7A648JY - .Xdefaults created by Pip Stuart <Pip@CPAN.Org> for RXVT on CygWin
+## 2do:fix other colors too!
+#scrollColor:       #310703
+## Use the specified color for the scrollbar               (default #B2B2B2)
+#troughColor:       #033107
+## Use the specified color for the scrollbar´s trough area (default #969696)
+#scrollstyle:        rxvt
+## Set scrollbar style to rxvt, next, or xterm
+#scrollBar_right:    true
+#scrollBar_floating: false
+loginShell:         true
+#saveLines:          16383
+# 7BGDqPT - above was orig on Taki && below was from Trilogy WSI01 machine
+Rxvt*background:         Black
+!Rxvt*backspacekey:       ^H
+!Rxvt*backspacekey:       ^?
+!Rxvt*backspacekey:       \177
+Rxvt*boldFont:           Fixedsys
+!Rxvt*colorBD:            Red2
+!Rxvt*colorRV:            RoyalBlue
+!Rxvt*colorUL:            ForestGreen
+!Rxvt*cursorColor:        Cyan3
+!Rxvt*cursorColor:        RoyalBlue
+!Rxvt*cursorColor2:       Gold
+Rxvt*font:               Fixedsys
+Rxvt*foreground:         LightGrey
+Rxvt*geometry:           160x64+0+15
+!krgO
+Rxvt*color0:             #000301
+Rxvt*color1:             #7F0F1F
+Rxvt*color2:             #003F0F
+Rxvt*color3:             #FFCF6F
+!bpcw
+Rxvt*color4:             #03071F
+Rxvt*color5:             #800080
+Rxvt*color6:             #008080
+Rxvt*color7:             #C0C0B0
+!KRGY
+Rxvt*color8:             #807080
+Rxvt*color9:             #FF3F5F
+Rxvt*color10:            #6FFF9F
+Rxvt*color11:            #EFF70F
+!BPCW
+Rxvt*color12:            #3F5FFF
+Rxvt*color13:            #AF7FFF
+Rxvt*color14:            #00DFF7
+Rxvt*color15:            #FFFFEF
+Rxvt*iconName:           $title
+Rxvt*inheritPixmap:      False
+Rxvt*jumpScroll:         False
+Rxvt*loginShell:         True
+Rxvt*meta8:              False
+!Rxvt*pointerColor:       LightGrey
+Rxvt*reverseVideo:       False
+Rxvt*saveLines:          65535
+Rxvt*scrollBar:          False
+Rxvt*scrollBar_align:    centre
+Rxvt*scrollBar_floating: False
+Rxvt*scrollBar_right:    True
+Rxvt*scrollColor:        #03071B
+!Rxvt*scrollColor:        Grey58
+Rxvt*scrollstyle:        next
+Rxvt*scrollTtyKeypress:  True
+Rxvt*scrollTtyOutput:    False
+Rxvt*scrollWithBuffer:   True
+Rxvt*title:              Rxvt-zsh
+Rxvt*troughColor:        Black
+Rxvt*utmpInhibit:        False
+Rxvt*visualBell:         False
+!set title from: HTTP://LinuxJournal.Com/comment/reply/8005
+!#!/bin/bash
+!set -u
+!main() {
+!  window_id=$1
+!  title=`xwininfo -id "$window_id" | perl -ne 'print $1 if /"(.*)"\s*$/'`
+!  if ! tempfile=`mktemp` 
+!  then
+!    echo "Cannot create temporary file" 1>&2
+!    exit 1
+!  fi
+!  echo "$title" > "$tempfile"
+!  popup_window_title="Choose new title in editor, then save and exit..."
+!  rxvt -T "$popup_window_title" -n "$popup_window_title" \
+!    -e "${EDITOR:-vi}" "$tempfile"
+!  newtitle=`head -c 1000 "$tempfile"`
+!  xwit -id "$window_id" -name "$newtitle"
+!}
+!main "$@"
+! answerbackString:   string
+! backgroundPixmap:   file[;geom]
+! borderColor:        color
+! color[0-15]:        color
+! cutchars:           string
+! deletekey:          string
+! font[1-6]:          fontname
+! inheritPixmapforce: boolean
+! keysym.sym:         keysym
+! mapAlert:           boolean
+! menu:               name[;tag]
+! mfont:              fontname
+! mfont[1-6]:         fontname
+! modifier:           modifier
+! multibyte_cursor:   boolean
+! multichar_encoding: mode
+! path:               search path
+! print-pipe:         string
+! selectstyle:        string
+! termName:           string
+! thickness:          number
+*VT100.Translations: #override  \
+  <Key>BackSpace: string(0x7f)\n\
+  <Key>Delete:    string("\033[3~")
+!*ttyModes: erase ^?

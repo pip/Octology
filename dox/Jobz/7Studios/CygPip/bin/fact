@@ -1,0 +1,5 @@
+#!/usr/bin/perl -w
+# 43SBKZC - fact created by Pip Stuart <Pip@CPAN.Org>
+#   to calculate factorials iteratively
+use strict; use Math::BaseCnv qw(:all);
+print fact(shift) || die "USAGE: `fact <NumToComputeFactorialOf>`\n";

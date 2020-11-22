@@ -1,0 +1,25 @@
+Beppu's install method (instead of `make install`) from source:
+ `make prefix=/opt/PACKAGE_NAME install`
+ `lncp /opt/PACKAGE_NAME /usr/local`
+C++ compiler cannot create executables (configure error)
+ `CXX="gcc -O3" ./configure` ... export CXX="gcc -O3"?
+Gen FBSets: `640x480-100, 800x600-100, 1024x768-100, 1280x1024-74`
+Accurate Time URL: http://www.time.gov/timezone.cgi?Pacific/d/-8
+Detaching commands: `nice nohup COMMAND PARAMETERS >& COMMAND.log &`
+ which volunteers low priority, ignores hangup, logs output, detaches
+ ... actually just use `screen`! =)
+some PHP code to make transparent .png files show up right in dIE
+ <? if ($is_ie) { ?>
+  <img src="blank.gif" style="filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='imagewithalpha.png', sizingMethod='image')">
+ <? } else { ?>
+  <img src="imagewithalpha.png">
+ <? } ?> 
+runaway process forking (use with caution!)
+ ps aux | grep 'KAKAPROG' | awk '{print $2}' | xargs kill -9
+sleeping in perl for less than a whole number of seconds:
+ select(undef,undef,undef, 0.31 );
+setting keywords in Moz:
+ go2 bookmark properties, let %s be keyword parameter in URL
+mplayer -vo sdl 'Urda Episode 01 [HQA].avi'
+cat5 4-inner layout (looking at flat opposite prong side):
+  blue, blue/white, orange, -, -, orange/white

@@ -1,0 +1,41 @@
+99NDTTO: IP-Contractor-ConfidentialityAndNonDisclosureAgreement-99GIIeR.txt tidied by PipStuart<Pip@CPAN.Org> after running`pdftotext`on same base filename.pdf
+Innovation Protocol - Contractor - Confidentiality and Non-Disclosure Agreement
+
+This Confidentiality and Non-Disclosure Agreement (this "Agreement") is entered into by Innovation Protocol   ("the Company") and _____________
+("Contractor"), concerning the Contractor's obligation to protect certain Confidential Information belonging to the Company   and agreeing not to
+disclose such information outside the Company. Accordingly, the parties to this Agreement agree as follows:
+
+1. Confidentiality - Definition of "Confidential Information". As used in this Agreement, "Confidential Information" means any information which relates to
+   Innovation Protocol, or its clients, independent contractors and suppliers, which is learned as a result of your relationship with the Company and which
+   is of the following type:
+  a. Discoveries, ideas and concepts
+  b. Processes, designs and specifications
+  c. Techniques, models, data and documentation
+  d. Research and development
+  e. Procedures and "know-how"
+  f. Marketing techniques and materials; marketing and development plans
+  g. Client, independent contractor and supplier names; and all other information relating to clients and suppliers
+  h. Price lists, quotes and pricing policies
+  i. Individual compensation for Company employees or independent contractors - including information regarding compensation negotiations, benefits, etc.
+  j. Financial information
+   The term "Confidential Information" does not include information which is or becomes generally known within the industry (other than as a result of
+   your breach of confidentiality obligations).
+2. Return of Confidential Information - You are required to return to Innovation Protocol all Confidential Information in your possession immediately upon
+   the termination of your relationship with the Company.
+3. No Disclosure of Confidential Information - You should not reveal or disclose any Confidential Information to any person outside of the Company for any
+   reason. Individual compensation information (See Section 1.i. above) should not be discussed with anyone other than the Managing Director. This
+   Non-Disclosure requirement remains in effect indefinitely, as long as the information remains confidential.
+4. Indemnification - You will indemnify Innovation Protocol against any and all actions, claims, liability, costs, damages, charges and expenses suffered
+   or incurred in connection with or arising out of your breach of any of the provisions of this Agreement. You acknowledge that a breach of your
+   obligations hereunder may not be compensated adequately by an award of damages but that the Company shall also be entitled in the event of any such
+   breach to the remedies of injunction, specific performance or other equitable relief in respect of any such breach.
+
+INNOVATION PROTOCOL CONFIDENTIAL Page 1 of 2 | 02.2008 (c)Innovation Protocol
+
+We appreciate your cooperation and diligence to protect Innovation Protocol during your relationship with our Company.
+
+Signature: ______________________________________________________________        Signature: ______________________________________________________________
+
+Date     : ______________________________________________________________        Date     : ______________________________________________________________
+
+INNOVATION PROTOCOL CONFIDENTIAL Page 2 of 2 | 02.2008 (c)Innovation Protocol

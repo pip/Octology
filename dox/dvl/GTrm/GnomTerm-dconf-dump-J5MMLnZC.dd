@@ -1,0 +1,24 @@
+[legacy/profiles:/:14880507-33c4-4dba-aad2-3150676e3a7f]
+foreground-color='rgb(158,187,129)'
+visible-name='Oni-160x50-J34LDWit'
+palette=['rgb(46,52,54)', 'rgb(89,19,19)', 'rgb(64,105,25)', 'rgb(226,151,63)', 'rgb(14,18,22)', 'rgb(92,28,103)', 'rgb(6,152,154)', 'rgb(211,215,207)', 'rgb(85,87,83)', 'rgb(239,41,41)', 'rgb(138,226,52)', 'rgb(252,233,79)', 'rgb(114,159,207)', 'rgb(246,88,228)', 'rgb(52,226,226)', 'rgb(238,238,236)']
+cell-width-scale=1.0
+default-size-columns=160
+default-size-rows=50
+use-system-font=false
+cursor-colors-set=false
+highlight-colors-set=false
+cell-height-scale=1.0
+use-transparent-background=true
+use-theme-colors=false
+font='Monospace 12'
+use-theme-transparency=false
+bold-color-same-as-fg=true
+bold-color='rgb(173,102,102)'
+background-color='rgb(5,10,13)'
+background-transparency-percent=3
+scrollback-lines=1009000
+
+[legacy/profiles:]
+list=['b1dcc9dd-5262-4d8d-a863-c897e6d979b9', '14880507-33c4-4dba-aad2-3150676e3a7f']
+default='14880507-33c4-4dba-aad2-3150676e3a7f'

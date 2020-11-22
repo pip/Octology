@@ -1,0 +1,349 @@
+a.menu:active|a.menu:visited|a.menu
+
+	.pw_text{font-family: Arial; font-size: 13px; color: #000000;text-decoration: none; font-weight: bold}
+	.pw_note{font-family: Arial; font-size: 12px; color: #000000;text-decoration: none; font-weight: normal}
+	.pw_f {width: 300px;}
+	.pw_f_tlc {background-image: url("../vision/pw_f_tlc.gif"); background-position: center; background-repeat: no-repeat;}
+	.pw_f_tlc_1 {background-image: url("../vision/pw_f_tlc_1.gif"); background-position: center; background-repeat: no-repeat;}
+	.pw_f_tlc_s {width: 10px; height:10px}
+	.pw_f_trc {background-image: url("../vision/pw_f_trc.gif"); background-position: center; background-repeat: no-repeat;}
+	.pw_f_trc_1 {background-image: url("../vision/pw_f_trc_1.gif"); background-position: center; background-repeat: no-repeat;}
+	.pw_f_trc_s {width: 10px; height:20px}
+	.pw_f_blc {background-image: url("../vision/pw_f_blc.gif"); background-position: center; background-repeat: no-repeat;}
+	.pw_f_blc_s {width: 10px; height:10px}
+	.pw_f_brc {background-image: url("../vision/pw_f_brc.gif"); background-position: center; background-repeat: no-repeat;}
+	.pw_f_brc_s {width: 10px; height:10px}
+	.pw_f_l {background-image: url("../vision/pw_f_l.gif"); background-position: top; background-repeat: repeat-y;}
+	.pw_f_l_s {width: 10px; height:10px}
+	.pw_f_r {background-image: url("../vision/pw_f_r.gif"); background-position: top; background-repeat: repeat-y;}
+	.pw_f_r_s {width: 10px; height:10px}
+	.pw_f_t {background-image: url("../vision/pw_f_t.gif"); background-position: center; background-repeat: repeat-x; font-size: 12px; font-family: Arial; color: #FFFFFF; font-weight:bold;}
+	.pw_f_t_s {width: 0px; height:0px}
+	.pw_f_b {background-image: url("../vision/pw_f_b.gif"); background-position: center; background-repeat: repeat-x;}
+	.pw_f_b_s {width: 0px; height:0px}
+	.pw_f_image { background-color: #FFEA5C; background-image: url("../vision/pw_f_image.jpg"); background-position: right top; background-repeat: no-repeat;}
+	.pw_f_bullet {background-image: url("../vision/pw_f_bullet.gif"); background-position: center; background-repeat: no-repeat;}
+	.pw_f_bullet_s{width: 15px; height: 15px;}
+	.pw_f_li {background-image: url("../vision/pw_f_li.jpg"); background-position: center; background-repeat: no-repeat;}
+	.pw_f_li_s {width: 120px; height:120px}
+
+
+
+	.pu_price{font-family: Arial; font-size: 14px; color: #Fe0000;text-decoration: none; font-weight: bold}
+	.pu_text{font-family: Arial; font-size: 12px; color: #000000;text-decoration: none; font-weight: normal}
+	.pu_f {width: 180px;}
+	.pu_f_tlc {background-image: url("../vision/pu_f_tlc.gif"); background-position: center; background-repeat: no-repeat;}
+	.pu_f_tlc_1 {background-image: url("../vision/pu_f_tlc_1.gif"); background-position: center; background-repeat: no-repeat;}
+	.pu_f_tlc_s {width: 8px; height:8px}
+	.pu_f_trc {background-image: url("../vision/pu_f_trc.gif"); background-position: center; background-repeat: no-repeat;}
+	.pu_f_trc_1 {background-image: url("../vision/pu_f_trc_1.gif"); background-position: center; background-repeat: no-repeat;}
+	.pu_f_trc_s {width: 8px; height:8px}
+	.pu_f_blc {background-image: url("../vision/pu_f_blc.gif"); background-position: center; background-repeat: no-repeat;}
+	.pu_f_blc_s {width: 8px; height:8px}
+	.pu_f_brc {background-image: url("../vision/pu_f_brc.gif"); background-position: center; background-repeat: no-repeat;}
+	.pu_f_brc_s {width: 8px; height:8px}
+	.pu_f_l {background-image: url("../vision/pu_f_l.gif"); background-position: top; background-repeat: repeat-y;}
+	.pu_f_l_s {width: 8px; height:8px}
+	.pu_f_r {background-image: url("../vision/pu_f_r.gif"); background-position: top; background-repeat: repeat-y;}
+	.pu_f_r_s {width: 8px; height:8px}
+	.pu_f_t {background-image: url("../vision/pu_f_t.gif"); background-position: center; background-repeat: repeat-x; font-size: 13px; font-family: Arial; color: #749F1E; font-weight:bold;}
+	.pu_f_t_s {width: 0px; height:0px}
+	.pu_f_b {background-image: url("../vision/pu_f_b.gif"); background-position: center; background-repeat: repeat-x;}
+	.pu_f_b_s {width: 0px; height:0px}
+	.pu_f_image { background-color: #FFEA5C; background-image: url("../vision/pu_f_image.jpg"); background-position: right top; background-repeat: no-repeat;}
+	.pickup {background-image: url("../vision/pickup.jpg"); background-position: right top; background-repeat: no-repeat;}
+	.pickup_s {width: 57px; height: 34px}
+
+	.pua_f_image { background-color: #FFEA5C;}
+	.pua_f {width: 150px;}
+	.pickup_available {background-image: url("../vision/pickup_available.gif"); background-position: center; background-repeat: no-repeat;}
+	.pickup_available_s {width: 128px; height: 37px}
+
+
+
+
+
+	.fr_price{font-family: Arial; font-size: 14px; color: #Fe0000;text-decoration: none; font-weight: bold}
+	.fr_text{font-family: Arial; font-size: 12px; color: #000000;text-decoration: none; font-weight: normal}
+	.fr_f {width: 180px;}
+	.fr_f_tlc {background-image: url("../vision/fr_f_tlc.gif"); background-position: center; background-repeat: no-repeat;}
+	.fr_f_tlc_1 {background-image: url("../vision/fr_f_tlc_1.gif"); background-position: center; background-repeat: no-repeat;}
+	.fr_f_tlc_s {width: 7px; height:7px}
+	.fr_f_trc {background-image: url("../vision/fr_f_trc.gif"); background-position: center; background-repeat: no-repeat;}
+	.fr_f_trc_1 {background-image: url("../vision/fr_f_trc_1.gif"); background-position: center; background-repeat: no-repeat;}
+	.fr_f_trc_s {width: 7px; height:7px}
+	.fr_f_blc {background-image: url("../vision/fr_f_blc.gif"); background-position: center; background-repeat: no-repeat;}
+	.fr_f_blc_s {width: 7px; height:7px}
+	.fr_f_brc {background-image: url("../vision/fr_f_brc.gif"); background-position: center; background-repeat: no-repeat;}
+	.fr_f_brc_s {width: 7px; height:7px}
+	.fr_f_l {background-image: url("../vision/fr_f_l.gif"); background-position: top; background-repeat: repeat-y;}
+	.fr_f_l_s {width: 7px; height:7px}
+	.fr_f_r {background-image: url("../vision/fr_f_r.gif"); background-position: top; background-repeat: repeat-y;}
+	.fr_f_r_s {width: 7px; height:7px}
+	.fr_f_t {background-image: url("../vision/fr_f_t.gif"); background-position: center; background-repeat: repeat-x; font-size: 13px; font-family: Arial; color: #749F1E; font-weight:bold;}
+	.fr_f_t_s {width: 0px; height:0px}
+	.fr_f_b {background-image: url("../vision/fr_f_b.gif"); background-position: center; background-repeat: repeat-x;}
+	.fr_f_b_s {width: 0px; height:0px}
+	.fr_f_image { background-color: #FEFEFE; background-image: url("../vision/fr_f_image.jpg"); background-position: right top; background-repeat: no-repeat;}
+	.fr_f_hr {height: 1px; color: #cccccc}
+	.fixed_rate_shipping{background-image: url("../vision/fixed_rate_shipping.jpg"); background-position: center; background-repeat: no-repeat;}
+	.fixed_rate_shipping_s{width: 10px; height: 20px}
+	.fr_bullet {background-image: url("../vision/fr_f_bullet.jpg"); background-position: top; background-repeat: no-repeat;}
+	.fr_bullet_s{width: 15px; height: 12px;}
+
+.ebay_calc_color_bg {background-color: #F4F8FF;}
+/* Calculators  padding*/
+.ebay_calc_code, .ebay_calc_1_btn, .ebay_calc_2_btn, .ebay_calc_table, .ebay_calc_1_text, .ebay_calc_2_text, .ebay_calc_1_adv, .ebay_calc_1_adv_1, .ebay_calc_2_adv, .ebay_calc_2_adv_1{
+	padding: 5px 5px 5px 5px;
+}
+/*Background of calculator page*/
+.ebay_calc_body{background-color: #FFFFFF;}
+
+/*calculator 1 image*/
+.ebay_calc_li{
+	background-image: url("../vision/calc_1_li.gif");
+	background-position: center;
+	background-repeat: no-repeat;*
+}
+.ebay_calc_ri{
+/*	background-image: url("../vision/calc_1_ri.gif");
+	background-position: center;
+	background-repeat: no-repeat;*/
+}
+.ebay_calc_ri_s{
+/*	width:80px;
+	height:90px;*/
+}
+.ebay_calc_li_s{
+	width:80px;
+	height:90px;
+}
+.ebay_calc_image_a{
+	text-align: left;
+	vertical-align: top;		
+}		
+}
+/*Caclulator input*/
+.ebay_calc_i{
+	width:150px;
+   font-family: Verdana;
+	font-weight: normal;
+	letter-spacing: -1px;
+	word-spacing: -1px;
+	color: #000000;
+	font-size: 11px;
+	text-decoration: none;
+	border: 1px solid #8D9AAD;
+}
+/* Calculator  input align*/
+.ebay_calc_input{
+	text-align:center;
+}
+/* Calculator 1 button align*/
+.ebay_calc_1_btn{
+	text-align: center;
+}
+/* Calculator 2 button align*/
+.ebay_calc_2_btn{
+	text-align: center;
+}
+/*Calculator 2 close button*/
+.ebay_calc_close_btn{
+	background-image: url("../vision/buttons/calc_close_btn.gif");
+	background-position: center;
+	background-repeat: no-repeat;
+}
+/*Calculator 2 close button size*/
+.ebay_calc_close_btn_s{
+	width:59px;
+	height:20px;
+	border:0;
+}	
+/*Calculator 1 get rate button*/
+.ebay_calc_get_rate_btn{
+	background-image: url("../vision/buttons/calc_get_rate_btn.gif");
+	background-position: center;
+	background-repeat: no-repeat;
+}
+/*Calculator 1 get rate button size*/
+.ebay_calc_get_rate_btn_s{
+	width:59px;
+	height:20px;
+	border:0;
+}
+/*background of  inside calculator body*/
+.ebay_calc_1, .ebay_calc_2{
+	width:200px;
+	background-image: url("../vision/calc_back.jpg");
+	background-position: top left;
+	background-repeat: no-repeat;
+}
+/*  outside calculator body*/
+.ebay_calc_2{
+	width: 100%;
+}
+/*calc_left top coner image*/
+.ebay_calc_ltc{
+	background-image: url("../vision/calc_ltc.gif");
+	background-position: center;
+	background-repeat: no-repeat;
+}
+/* calculator right top corner image*/
+.ebay_calc_rtc{
+	background-image: url("../vision/calc_rtc.gif");
+	background-position: center;
+	background-repeat: no-repeat;
+}
+/* calculator left bottom corner image*/
+.ebay_calc_lbc{
+	background-image: url("../vision/calc_lbc.gif");
+	background-position: center;
+	background-repeat: no-repeat;
+}
+/*calculator right bottom coner image*/
+.ebay_calc_rbc{
+	background-image: url("../vision/calc_rbc.gif");
+	background-position: center;
+	background-repeat: no-repeat;
+}
+/*calculator top line_image*/
+.ebay_calc_tl{
+	background-image: url("../vision/calc_tl.gif");
+	background-position: left;
+	background-repeat: repeat-x;
+}
+/*calculator bottom line image*/
+.ebay_calc_bl{
+	background-image: url("../vision/calc_bl.gif");
+	background-position: center;
+	background-repeat: repeat-x;
+}
+/*calculator left line image*/
+.ebay_calc_ll{
+	background-image: url("../vision/calc_ll.gif");
+	background-position: top;
+	background-repeat: repeat-y;
+}
+/*calculator right line image*/
+.ebay_calc_rl{
+	background-image: url("../vision/calc_rl.gif");
+	background-position: top;
+	background-repeat: repeat-y;
+}
+/*Size of calc coners */
+.ebay_calc_s{
+	width: 10px;
+	height: 10px;
+}
+
+/*calculator 1 background image*/
+.ebay_calc_1_bi{
+}
+/*calculator 2 background image*/
+.ebay_calc_2_bi{
+	background-image: url("../vision/calc_2_bi.gif");
+	background-position: bottom right;
+	background-repeat: no-repeat;	
+}
+
+.ebay_calc_1_header, .ebay_calc_2_header, .ebay_calc_1_text, .ebay_calc_2_text, .ebay_calc_code, .ebay_calc_1_adv, .ebay_calc_1_adv_1, .ebay_calc_2_adv, .ebay_calc_2_adv_1, a.ebay_calc_1_mail, a.ebay_calc_2_mail{
+	font-size: 12px;
+	font-family: Verdana;
+	font-weight: bold;
+	letter-spacing: -1px;
+	word-spacing: 0px;
+	color: #000000;
+	text-decoration: none;
+}
+/* Header calculator 1*/
+.ebay_calc_1_header{
+	text-align:center;
+}
+/* Header calculator 2*/
+.ebay_calc_2_header{
+	text-align:center;
+}
+/* Text calculator 1*/
+.ebay_calc_1_text{
+	text-align: center;
+	font-size: 11px;
+	font-weight: normal;
+	color: #5E5E5E;
+}
+/* Text calculator 2*/
+.ebay_calc_2_text{
+	font-size: 11px;
+	font-weight: normal;
+	color: #5E5E5E;
+}
+/* Calculator 2 code*/
+.ebay_calc_code{
+	text-align: center;
+	font-size: 14px;
+	font-weight: bold;
+	color: #FF0000;
+}
+/* Calculator 2 table*/
+.ebay_calc_t, .ebay_calc_td_1, .ebay_calc_td_2, .ebay_calc_t_h{
+	font-size: 11px;
+	font-family: Verdana;
+	font-weight: normal;
+	letter-spacing: -1px;
+	word-spacing: 0px;
+	color: #000000;
+	text-align: center;
+	text-decoration: none;
+	padding: 5px 5px 5px 5px;
+	border: 1px solid #ffffff;
+}		
+/* Calculator 2 header table*/
+.ebay_calc_t_h{
+	color: #FFFFFF;
+	font-weight: bold;
+	background-color: #346D94;
+}
+/* Calculator 2 table*/
+.ebay_calc_t{
+	border-collapse: collapse;
+}
+/* Calculator 2 column 1*/
+.ebay_calc_td_1{
+	background-color: #C3D9E8;
+}
+/* Calculator 2 column 2*/
+.ebay_calc_td_2{
+	background-color: #D1E6EF;
+}
+/* Calculator 1 advertisment_text*/
+.ebay_calc_1_adv, .ebay_calc_2_adv{
+	font-size: 10px;
+	font-weight: normal;
+	text-align: center;
+	color: #445F86;
+}
+/* Calculator 2 advertisment_text*/
+.ebay_calc_2_adv{
+	font-size: 11px;
+}
+/* Calculator 1 advertisment_text 1*/
+.ebay_calc_1_adv_1, .ebay_calc_2_adv_1{
+	font-size: 10px;
+	font-weight: normal;
+	text-align:center;
+	color: #000000;
+}
+.ebay_calc_2_adv_1{
+	font-size: 11px;
+}
+/* Calculator mail text*/
+a.ebay_calc_1_mail, a.ebay_calc_2_mail{
+	font-size: 10px;
+	font-weight: normal;
+	color: #FF0000;
+}
+ a.ebay_calc_2_mail{
+ 	font-size: 11px;
+}
+a.ebay_calc_1_mail:hover, a.ebay_calc_2_mail:hover{
+	text-decoration: underline;
+}

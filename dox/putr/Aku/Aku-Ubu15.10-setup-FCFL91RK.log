@@ -1,0 +1,7 @@
+# FCFL91RK:Akuma's Ubuntu 15.10 setup by PipStuart <Pip@CPAN.Org> to log all details of a fresh install8ion onto my 4th SeaGate 2TB SSHD drive;
+  0.burned Desktop AMD64 iso from Chun (since Aku's lone DVD drive seemz incapable)
+  1.put fresh drive in Ryu's dock && unplugged his internal drive (so boot wouldn't fallback on it) then booted off DVD
+  2.Chose "Install Ubuntu" then checked "Download updates during installation" and "Use third-party software" to get l8st pkgz && AdobeFlash etc.
+  3.left Radio-button on "Erase disk" && checked "Use LVM"  4.Chicago 5.English(US) 6.user info ... then install8ion to disk happenz
+  7.adjust Launcher iconz && "System Settings" like Taki (but also auto-hide Launcher && Lock > "Turn screen off when inactive for":Never)
+Then just follow what I did on Taki to standup in prepR8ion for RsynCore before returning here to log KDE && Steam specific stuff Taki won't get.

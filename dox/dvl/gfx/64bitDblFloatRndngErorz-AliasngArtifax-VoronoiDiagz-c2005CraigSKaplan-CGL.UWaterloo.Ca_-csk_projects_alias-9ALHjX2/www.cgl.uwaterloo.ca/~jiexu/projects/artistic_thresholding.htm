@@ -1,0 +1,330 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html>
+<head>
+  <title>Artistic Thresholding</title>
+  <link rel="stylesheet"
+ href="http://www.cgl.uwaterloo.ca/%7Ecsk/basic.css" type="text/css">
+</head>
+<body>
+<h1>Artistic Thresholding</h1>
+<center><br>
+<a href="artistic_thresholding_files/wuzhen2.pdf"><img alt="1"
+ src="artistic_thresholding_files/wuzhen2.png"
+ style="border: 0px solid ; width: 500px; height: 375px;"></a><br>
+</center>
+<p style="text-align: justify;"><span
+ style="font-family: &quot;times new roman&quot;,&quot;serif&quot;;">&nbsp;</span>
+We consider the problem of depicting continuous-tone images using only
+black and white. Traditional solutions to this problem include
+halftoning, which approximates tones, and line drawing, which
+approximates edges. We introduce ¡°artistic thresholding¡± as a technique
+that attempts to depict forms in an image. We apply segmentation to a
+source image and construct a planar subdivision that captures segment
+connectivity. Our artistic thresholding algorithm is a combinatorial
+optimization over this graph. The optimization is controlled by
+parameters that can be tuned to achieve different artistic styles.<br>
+</p>
+<h2>Motivation</h2>
+<div style="text-align: justify;">&nbsp; Based on our previous work
+about two-tone image synthesis (maze illustration, papercutting,
+calligraphic packing etc.), we want to develope a general framework to
+convert a color picture to a two-tone image. We are especially inspired
+by the following comics and graphic designs.<br>
+<div style="text-align: center;"><img alt="2"
+ src="artistic_thresholding_files/che_guevara.png"
+ style="width: 245px; height: 300px;"> <img alt="3"
+ src="artistic_thresholding_files/graffiti.png"
+ style="width: 228px; height: 300px;"> <img alt="3"
+ src="artistic_thresholding_files/sincity.png"
+ style="width: 210px; height: 297px;"><br>
+</div>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<br>
+</div>
+<p style="text-align: justify;"></p>
+<h2>Gallery</h2>
+<center>
+<table style="width: 747px; height: 229px;" border="0" cellpadding="10">
+  <tbody>
+    <tr>
+      <td align="center" valign="bottom"><img alt="4"
+ src="artistic_thresholding_files/jonas_src.png"
+ style="width: 147px; height: 197px;"><br>
+      </td>
+      <td align="center" valign="bottom"><a
+ href="artistic_thresholding_files/jonas_col1_area50_2.24_bdy_same1.27_diff1.26.pdf"><img
+ alt="5"
+ src="artistic_thresholding_files/jonas_col1_area50_2.24_bdy_same1.27_diff1.png"
+ style="border: 0px solid ; width: 150px; height: 201px;"></a><br>
+      </td>
+      <td style="vertical-align: top;"><a
+ href="artistic_thresholding_files/jonas_col1_area90_2.24_bdy_same1.27_diff2.24.pdf"><img
+ alt="7"
+ src="artistic_thresholding_files/jonas_col1_area90_2.24_bdy_same1.27_diff2.png"
+ style="border: 0px solid ; width: 150px; height: 201px;"></a><br>
+      </td>
+      <td style="vertical-align: top;"><a
+ href="artistic_thresholding_files/jonas_col1_bdy_same1.35_diff1.54_comp.51.pdf"><img
+ alt="8"
+ src="artistic_thresholding_files/jonas_col1_bdy_same1.35_diff1.54_comp.png"
+ style="border: 0px solid ; width: 150px; height: 201px;"></a><br>
+      </td>
+      <td style="vertical-align: top;"><a
+ href="artistic_thresholding_files/jonas_col1_bdy_same1.35_diff1.54_comp1.54_group5.83.pdf"><img
+ alt="8"
+ src="artistic_thresholding_files/jonas_col1_bdy_same1.35_diff1.54_comp1.54_group5.png"
+ style="border: 0px solid ; width: 150px; height: 201px;"></a><br>
+      </td>
+    </tr>
+    <tr>
+      <td style="vertical-align: top;"><a
+ href="artistic_thresholding_files/jonas_col1_area10_2dot24_bdy_same1dot27_diff0dot91.pdf"><img
+ alt="14"
+ src="artistic_thresholding_files/jonas_col1_area10_2dot24_bdy_same1dot27_diff0dot91.png"
+ style="border: 0px solid ; width: 150px; height: 201px;"></a><br>
+      </td>
+      <td style="vertical-align: top;"><a
+ href="artistic_thresholding_files/jonas_col1_bdy_same1dot11_diff_0dot91.pdf"><img
+ alt="10"
+ src="artistic_thresholding_files/jonas_col1_bdy_same1dot11_diff_0dot91.png"
+ style="border: 0px solid ; width: 150px; height: 201px;"></a><br>
+      </td>
+      <td style="vertical-align: top;"><a
+ href="artistic_thresholding_files/jonas_col1_bdy_same2.38_diff_4.34_no_edge.pdf"><img
+ alt="11"
+ src="artistic_thresholding_files/jonas_col1_bdy_same2.38_diff_4.png"
+ style="border: 0px solid ; width: 150px; height: 201px;"></a><br>
+      </td>
+      <td style="vertical-align: top;"><a
+ href="artistic_thresholding_files/jonas_col_bdy_same4.92_diff3.71_comp1.99.pdf"><img
+ alt="12"
+ src="artistic_thresholding_files/jonas_col_bdy_same4.92_diff3.71_comp1.png"
+ style="border: 0px solid ; width: 150px; height: 201px;"></a></td>
+      <td style="vertical-align: top;"><a
+ href="artistic_thresholding_files/jonas_color_edge_region.pdf"><img
+ alt="13" src="artistic_thresholding_files/jonas_color_edge_region.png"
+ style="border: 0px solid ; width: 150px; height: 201px;"></a><br>
+      </td>
+    </tr>
+  </tbody>
+</table>
+<p>
+<table border="0" cellpadding="10">
+  <tbody>
+    <tr valign="center">
+      <td align="center" valign="center"><img alt="15"
+ src="artistic_thresholding_files/red_square_src.jpg"
+ style="width: 228px; height: 264px;"><br>
+      </td>
+      <td align="center" valign="center"><a
+ href="artistic_thresholding_files/red_square_1.pdf"><img alt="16"
+ src="artistic_thresholding_files/red_square_1.png"
+ style="border: 0px solid ; width: 248px; height: 266px;"><br>
+      </td>
+      <td style="vertical-align: top;"><a
+ href="artistic_thresholding_files/red_square_2.pdf"><img alt="17"
+ src="artistic_thresholding_files/red_square_2.png"
+ style="border: 0px solid ; width: 248px; height: 266px;"></a><br>
+      </td>
+      <td style="vertical-align: top;"><a
+ href="artistic_thresholding_files/red_square_3.pdf"><img alt="18"
+ src="artistic_thresholding_files/red_square_3.png"
+ style="border: 0px solid ; width: 248px; height: 266px;"></a><br>
+      </td>
+    </tr>
+  </tbody>
+</table>
+</p>
+<p>
+<table border="0" cellpadding="10">
+  <tbody>
+    <tr valign="center">
+      <td align="center" valign="center"><img alt="19"
+ src="artistic_thresholding_files/man_src.png"
+ style="border: 0px solid ; width: 481px; height: 321px;"><br>
+      </td>
+      <td style="vertical-align: top;"><a
+ href="artistic_thresholding_files/man_2.pdf"><img alt="20"
+ src="artistic_thresholding_files/man_2.png"
+ style="border: 0px solid ; width: 481px; height: 321px;"></a><br>
+      </td>
+    </tr>
+    <tr>
+      <td style="vertical-align: top;"><a
+ href="artistic_thresholding_files/man_3.pdf"><img alt="22"
+ src="artistic_thresholding_files/man_3.png"
+ style="border: 0px solid ; width: 481px; height: 322px;"></a><br>
+      </td>
+      <td style="vertical-align: top;"><a
+ href="artistic_thresholding_files/man_1.pdf"><img alt="23"
+ src="artistic_thresholding_files/man_1.png"
+ style="border: 0px solid ; width: 481px; height: 322px;"></a><br>
+      </td>
+    </tr>
+  </tbody>
+</table>
+</p>
+<p> </p>
+</center>
+<center>
+<p>
+<table border="0" cellpadding="10">
+  <tbody>
+    <tr valign="center">
+      <td align="center" valign="center"><span
+ style="text-decoration: underline;"><img alt="23"
+ src="artistic_thresholding_files/woman_src.png"
+ style="border: 0px solid ; width: 481px; height: 321px;"><br>
+      </td>
+      <td align="center" valign="center"><span
+ style="text-decoration: underline;"><a
+ href="artistic_thresholding_files/woman_col_bdy_foreground_abstract.pdf"><img
+ alt="24"
+ src="artistic_thresholding_files/woman_col_bdy_foreground_abstract.png"
+ style="border: 0px solid ; width: 481px; height: 321px;"></a><br>
+      </span> </td>
+    </tr>
+  </tbody>
+</table>
+</p>
+<p>
+</p>
+<p>
+<table border="0" cellpadding="10">
+  <tbody>
+    <tr valign="center">
+      <td align="center" valign="center"><span
+ style="text-decoration: underline;"><img alt="25"
+ src="artistic_thresholding_files/zebra_src.png"
+ style="width: 481px; height: 321px;"><br>
+      </span> </td>
+      <td align="center" valign="center"><span
+ style="text-decoration: underline;"><a
+ href="artistic_thresholding_files/zebra_result.pdf"><img alt="26"
+ src="artistic_thresholding_files/zebra_result.png"
+ style="border: 0px solid ; width: 481px; height: 235px;"></a><br>
+      </span></td>
+    </tr>
+  </tbody>
+</table>
+</p>
+<table border="0" cellpadding="10">
+  <tbody>
+    <tr valign="center">
+      <td align="center" valign="center"><span
+ style="text-decoration: underline;"><img alt="27"
+ src="artistic_thresholding_files/tree_src.jpg"
+ style="width: 481px; height: 361px;"><br>
+      </span> </td>
+      <td align="center" valign="center"><span
+ style="text-decoration: underline;"><a
+ href="artistic_thresholding_files/tree_col_bdy3_highlevel_fix.pdf"><img
+ alt="28"
+ src="artistic_thresholding_files/tree_col_bdy3_highlevel_fix.png"
+ style="border: 0px solid ; width: 481px; height: 352px;"></a><br>
+      </span></td>
+    </tr>
+  </tbody>
+</table>
+<br>
+<table style="width: 1049px; height: 454px;" border="0" cellpadding="10">
+  <tbody>
+    <tr valign="center">
+      <td align="center" valign="center"><span
+ style="text-decoration: underline;"><a
+ href="artistic_thresholding_files/cn_tower.pdf"><img alt="29"
+ src="artistic_thresholding_files/cn_tower.png"
+ style="border: 0px solid ; width: 284px; height: 425px;"></a><br>
+      </span> </td>
+      <td align="center" valign="center"><span
+ style="text-decoration: underline;"><a
+ href="artistic_thresholding_files/eiffel_tower.pdf"><img alt="30"
+ src="artistic_thresholding_files/eiffel_tower.png"
+ style="border: 0px solid ; width: 300px; height: 425px;"></a><br>
+      </span></td>
+      <td style="vertical-align: top;"><a
+ href="artistic_thresholding_files/temple_of_heaven_col_bdy_same_diff1.47.pdf"><img
+ alt="31"
+ src="artistic_thresholding_files/temple_of_heaven_col_bdy_same_diff1.png"
+ style="border: 0px solid ; width: 389px; height: 425px;"></a><br>
+      </td>
+    </tr>
+  </tbody>
+</table>
+<br>
+<table style="width: 1028px; height: 339px;" border="0" cellpadding="10">
+  <tbody>
+    <tr valign="center">
+      <td align="center" valign="center"><span
+ style="text-decoration: underline;"><a
+ href="artistic_thresholding_files/craig_col2_bdy.24_group10.pdf"><img
+ alt="33" src="artistic_thresholding_files/craig_col2_bdy.png"
+ style="border: 0px solid ; width: 445px; height: 311px;"></a><br>
+      </span> </td>
+      <td align="center" valign="center"><span
+ style="text-decoration: underline;"><a
+ href="artistic_thresholding_files/dc.pdf"><img alt="34"
+ src="artistic_thresholding_files/dc.png"
+ style="border: 0px solid ; width: 531px; height: 311px;"></a><br>
+      </span></td>
+    </tr>
+  </tbody>
+</table>
+<p></p>
+</center>
+<h2>Black-and-white animation</h2>
+Our algorithm can be extended to create animation.<br>
+<table width="350" border="0">
+<tr>
+<td></td>
+<td>
+      <script type="text/javascript" src="swfobject.js"></script>
+<div id="player1"></div>
+	<script type="text/javascript">
+	var s1 = new SWFObject("player.swf", "player1", "320", "240", "9");
+	s1.addParam("allowfullscreen", "true");
+	s1.addParam("allowscriptaccess", "always");
+	s1.addParam("flashvars", "file=video.flv&autostart=false&image=artistic_thresholding_files/a0275.jpg");
+	s1.write("player1");
+	</script>
+</td>
+<td></td>
+<td>
+	<script type="text/javascript" src="swfobject.js"></script>
+<div id="player2"></div>
+	<script type="text/javascript">
+	var s2 = new SWFObject("player.swf", "player2", "320", "240", "9");
+	s2.addParam("allowfullscreen", "true");
+	s2.addParam("allowscriptaccess", "always");
+	s2.addParam("flashvars", "file=cat.flv&autostart=false&image=artistic_thresholding_files/cats_0001.jpg");
+	s2.write("player2");
+	</script>
+</td>
+</tr>
+</table>
+<br>
+<h2>Papers</h2>
+<ul>
+  <li><a href="../paper/xu_NPAR08.pdf">Artistic Thresholding</a>. NPAR
+2008. </li>
+</ul>
+<br>
+<font size="-1">All images are copyright 2008 by Jie Xu and Craig S.
+Kaplan. You are free to use them for <b>personal</b> and <b>non-commercial</b>
+purposes. Please check with me about any other uses. </font>
+<p></p>
+<hr>
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+  <tbody>
+    <tr>
+      <td align="left"><a href="http://www.cgl.uwaterloo.ca/%7Ejiexu">Jie
+Xu<br>
+      </a></td>
+      <td align="right"><em>Last updated: Thursday, 18-September-2008
+11:31
+EDT</em> </td>
+    </tr>
+  </tbody>
+</table>
+</body>
+</html>

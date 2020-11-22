@@ -1,0 +1,278 @@
+#!/usr/bin/perl -w
+# 26GK6RK - mixr created by Pip@CPAN.org
+# Desc: A wrapper for ximp which together replace aumix
+#   ... it should have two main modes, one which only has meters for 
+#   PCM, Vol, && CD && the other with stereo meters for all detected
+# 2do: 
+#   find out why dig1 keeps disappearing
+#   make fully aumix compatible? (wrap ximp similarly)
+#   handle term resize events
+#   handle mouse events
+#   add stereo toggle
+#   add interactive recoloring which saves to .rc
+
+use strict;
+use Curses::Simp;
+
+my $majv = 1; my $minv = 0; my $ptmv = '3AKD9Aj'; my $auth = 'Pip@CPAN.org';
+my $name = $0; $name =~ s/.*\///;
+my @dopt = ( 'vol', 'cd', 'pcm' ); # Dfalt mode options
+my %slut = ( '!' => 1, '@' => 2, '#' => 3, '$' => 4, '%' => 5,
+             '^' => 6, '&' => 7, '*' => 8, '(' => 9, ')' => 0 );
+my @chrz = ( {
+               'legc' => '[',  # unsel left bar edge
+               'lgcl' => 'gb', # unsel lt br edg col
+               'barc' => '-',  # unselected bar char
+               'brcl' => 'wb', # unsel bar colorz
+               'regc' => ']',  # unsel rite bar edge
+               'rgcl' => 'gb', # unsel rt br edg col
+               'sldc' => '|',  # unsel slider bar
+               'sdcl' => 'Uu', # unsel slider bar
+               'txcl' => 'ou', # unsel text colorz
+               'mutd' => '*muted*', # unsel muted chan
+             },
+             {
+               'legc' => '{',  # sel left bar edge
+               'lgcl' => 'Gb', # sel lt br edg col
+               'barc' => '=',  # selected bar char
+               'brcl' => 'Wb', # sel bar colorz
+               'regc' => '}',  # sel rite bar edge
+               'rgcl' => 'Gb', # sel rt br edg col
+               'sldc' => 'I',  # sel slider bar
+               'sdcl' => 'Pp', # sel slider bar
+               'txcl' => 'Yp', # sel text colorz
+               'mutd' => '@muted@', # sel muted chan
+             }
+           );
+my @optz = @dopt; my @scrn = (); my @colz = ();
+my %setz = ();    my %bkst = (); my %keyz = ();
+my $chgr = "";    my $keey = ""; my $temp = "";
+my $widt = 0;     my $hite = 0;  my $idle = 0;
+my $wich = 0;     my $mode = 0;  my $oidl = 0;
+my $mute = 0;     my $alll = 0;  my $only = 0;
+
+sub FindChgr {
+  my $test = "";
+  my $chmx = `which ximp`; chomp($chmx);
+  my $aumx = `which aumix`;    chomp($aumx);
+  if   (-e $chmx) { $chgr = "ximp"; }
+  elsif(-e $aumx) { $chgr = "aumix"; }
+  else            { die "Need ximp in your path!!!\n"; }
+  print "Testing for valid mixer device..."; # die if no /dev/mixer
+  system("$chgr 2&>testkaka.txt");
+  open KAKA, "<testkaka.txt"; $test = join '', <KAKA>; close KAKA;
+  unlink("testkaka.txt");
+  if   ($test =~ /unable to open/i) { die "No /dev/mixer found!!! =(\n"; }
+  else { print "found!\n"; }
+}
+
+sub DrawBarz {
+  my $sndx;
+
+  %keyz = Keyz(); $widt = Widt(); $hite = Hite();
+  @scrn = ();     @colz = ();
+  Move(); # needed to reset cursor location for Draw bug
+  foreach (@optz) {
+    $sndx = 0;
+    if($alll || $_ eq $optz[$wich]) { $sndx = 1; }
+    push(@scrn, $chrz[$sndx]{'barc'} x $widt);
+    push(@colz, $chrz[$sndx]{'brcl'} x $widt);
+    substr($scrn[$#scrn],  0, length($_)+1, $chrz[$sndx]{'legc'} . $_);
+    substr($colz[$#colz],  0, length($chrz[$sndx]{'legc'})*2, $chrz[$sndx]{'lgcl'} x length($chrz[$sndx]{'legc'}));
+    substr($colz[$#colz],  length($chrz[$sndx]{'legc'})*2, length($_)*2, $chrz[$sndx]{'txcl'} x length($_));
+    substr($scrn[$#scrn], -1,            1, $chrz[$sndx]{'regc'});
+    substr($colz[$#colz], -1*(length($chrz[$sndx]{'regc'})*2), length($chrz[$sndx]{'regc'})*2, $chrz[$sndx]{'rgcl'} x length($chrz[$sndx]{'regc'}));
+    if (length($scrn[$#scrn]) > 15) {
+      substr($scrn[$#scrn],  length($scrn[$#scrn])-(length($_)+1), length($_), $_ );
+      substr($colz[$#colz], (length($scrn[$#scrn])-(length($_)+1))*2, length($_)*2, $chrz[$sndx]{'txcl'} x length($_));
+      if(length($scrn[$#scrn]) > 31) {
+        if(($mute) || ($only && $_ ne $optz[$wich])) { $temp = $_; $_ = $chrz[$sndx]{'mutd'}; }
+        substr($scrn[$#scrn], int((length($scrn[$#scrn])-(length($_)+1))/2.0), length($_), $_);
+        substr($colz[$#colz], int((length($scrn[$#scrn])-(length($_)+1))/2.0)*2, length($_)*2, $chrz[$sndx]{'txcl'} x length($_));
+        if(($mute) || ($only && $_ ne $optz[$wich])) { $_ = $temp; }
+      }
+    }
+    substr($scrn[$#scrn], int(($setz{$_} / 100.0) * $widt), 1, $chrz[$sndx]{'sldc'});
+    substr($colz[$#colz], int(($setz{$_} / 100.0) * $widt) * 2, length($chrz[$sndx]{'sldc'})*2, $chrz[$sndx]{'sdcl'} x length($chrz[$sndx]{'sldc'}));
+  }
+  Draw(\@scrn,\@colz);
+}
+
+sub ChngBarz { AlllBarz() if $alll; SaveSetz(); }
+
+sub SaveSetz { foreach(keys(%setz)) { `$chgr $_$setz{$_}`; } }
+
+sub LoadSetz {
+  my $curr = ""; my @linz = ();
+  $curr = `$chgr -q`;
+  @linz = split /\n/, $curr;
+  foreach(@linz) {
+    if(/^(\w+) (\d+), (\d+)/) {
+      $setz{$1} = int( ($2 + $3) / 2.0 ); # avg. channels
+    }
+  }
+}
+
+sub SaveValz {
+  open RCFL, ">$ENV{'HOME'}/.mixrrc";
+  foreach(sort(keys(%setz))) { print RCFL "$_:$setz{$_}:$setz{$_}\n"; }
+  close RCFL;
+}
+
+sub LoadValz {
+  my @fldz = ();
+
+  if(-e "$ENV{'HOME'}/.mixrrc") {
+    open(RCFL, "<$ENV{'HOME'}/.mixrrc");
+    foreach(<RCFL>) {
+      @fldz = split /:/;
+      $setz{$fldz[0]} = int(($fldz[1] + $fldz[2]) / 2);
+    }
+    close(RCFL);
+    $mute = 0; $only = 0;
+    SaveSetz();
+  }
+}
+
+sub ToglMode {
+  $mode ^= 1; $wich = 0;
+  if($mode) { @optz = sort(keys(%setz)); } 
+  else      { @optz = @dopt; }
+}
+
+sub ToglMute {
+  $mute ^= 1;
+  if($mute) {
+    foreach (keys(%setz)) { $bkst{$_} = $setz{$_}; $setz{$_} = 0; }
+  } else {
+    foreach (keys(%bkst)) { $setz{$_} = $bkst{$_}; }
+  }
+  ChngBarz();
+}
+
+sub ToglAlll { $alll ^= 1; ChngBarz(); }
+
+sub ToglOnly {
+  $only ^= 1;
+  foreach(keys(%setz)) { 
+    if($_ ne $optz[$wich]) { 
+      if($only) { $bkst{$_} = $setz{$_}; $setz{$_} = 0; $alll = 0; }
+      else      { $setz{$_} = $bkst{$_}; }
+    }
+  }
+  ChngBarz();
+}
+
+sub AlllBarz { foreach(@optz) { $setz{$_} = $setz{$optz[$wich]}; } }
+
+sub AsinChan {
+  my $chan = shift || return;
+
+  for($wich = 0; $wich < @optz; $wich++) {
+    last if($optz[$wich] eq $chan);
+  }
+}
+
+sub ShowInfo {
+  WMsg(" $name v$majv.$minv.$ptmv - written by $auth
+ 
+$name was inspired by aumix
+ 
+ Shout out to Keith && all the LBox.org crew.  Thanks to Beppu-san for 
+being a good friend.  I hope you find mixr useful.  Please don't 
+hesitate to let me know if you app-ree-see-ate it or if you'd like
+me to add something for you.  I'd be glad to improve it given new 
+suggestions.  Please support FSF.org && EFF.org.  Thanks.  TTFN.
+ 
+                                                       -Pip
+ 
+ps. http://Pip.Ax9.org/OneThing.txt
+ 
+", "$name Info Screen");
+}
+
+sub ShowHelp {
+  WMsg(
+"                        Global Keys:                           
+                                                               
+  h         - displays this Help screen                        
+  b         - toggles Big mode (with all channel options)      
+  m         - toggles Muting                                   
+  o         - toggles current channel as Only audible channel  
+  a         - locks slider bar in All channels                 
+  s         - Save all current channel values to ~/.mixrrc     
+  l         - Load ~/.mixrrc into current channel values       
+  v         - jump to Volume channel                           
+  c         - jump to Cd channel                               
+  p         - jump to Pcm channel                              
+ DownArrow  - go to next channel                               
+ UpArrow    - go to previous channel                           
+ LeftArrow  - lower channel level                              
+ RightArrow - raise channel level                              
+  0..9      - jump to n/9th of channel (must shift for jump up)
+ 
+                        System Stuff:
+       ?/H/F1  - Help  :  I - Info  :  x/q/Esc - eXit
+", "$name Help Screen");
+}
+
+FindChgr(); # verify that a valid /dev/mixer && changer can be found
+LoadSetz(); #   before opening a new Curses screen
+DrawBarz();
+while(!defined($keey) || (lc($keey) ne 'x' && lc($keey) ne 'q' && ord($keey) != 27)) {
+  $keey = GetK();
+  LoadSetz();
+  $oidl = $idle;
+  if(defined($keey)) {
+    if   (lc($keey)    eq " ") { ToglAlll(); }
+    elsif(lc($keey)    eq "b") { ToglMode(); }
+    elsif(lc($keey)    eq "m") { ToglMute(); }
+    elsif(lc($keey)    eq "a") { ToglAlll(); }
+    elsif(lc($keey)    eq "o") { ToglOnly(); }
+    elsif(lc($keey)    eq "s") { SaveValz(); }
+    elsif(lc($keey)    eq "l") { LoadValz(); }
+    elsif(lc($keey)    eq "i") { ShowInfo(); }
+    elsif(lc($keey)    eq "v") { AsinChan('vol'); }
+    elsif(lc($keey)    eq "c") { AsinChan('cd'); }
+    elsif(lc($keey)    eq "p") { AsinChan('pcm'); }
+    elsif(   $keey     =~ /^\d$/) { # handle number keys
+      if($setz{$optz[$wich]} > int($keey * 11)) {
+        $setz{$optz[$wich]} = int($keey * 11);
+        ChngBarz();
+      }
+    } elsif(   $keey     =~ /^[!@#\$%^&*()]$/) { # handle shifted number keys
+      $setz{$optz[$wich]} = int($slut{$keey} * 11);
+      ChngBarz();
+    } elsif(exists $keyz{$keey}) {
+      if     ($keyz{$keey} eq "KEY_LEFT")  { 
+        $setz{$optz[$wich]}-- if $setz{$optz[$wich]};
+        ChngBarz();
+      } elsif($keyz{$keey} eq "KEY_RIGHT") { 
+        $setz{$optz[$wich]}++ if $setz{$optz[$wich]} < 99;
+        ChngBarz();
+      } elsif($keyz{$keey} eq "KEY_HOME") { 
+        $setz{$optz[$wich]} = 0;
+        ChngBarz();
+      } elsif($keyz{$keey} eq "KEY_END") { 
+#        $setz{$optz[$wich]} = 99;
+#        ChngBarz();
+      } elsif($keyz{$keey} eq "KEY_UP")    { 
+        $wich = @optz if $wich == 0; $wich--;
+      } elsif($keyz{$keey} eq "KEY_DOWN")  { 
+        $wich++; $wich = 0 if $wich == @optz;
+      } elsif($keey != -1)                 {
+        ShowHelp();
+      } else {
+        if($idle++ <= 255) { Wait(255);  }
+        else               { Wait(2047); }
+        #select( undef, undef, undef, 0.31 );
+        #sleep(1);
+      }
+    } elsif(lc($keey) ne 'x' && lc($keey) ne 'q' && ord($keey) != 27) {
+#    } elsif(lc($keey) eq 'h' || lc($keey) eq '?') {
+      ShowHelp();
+    }
+  }
+  if($idle == $oidl) { $idle = 0; }
+  DrawBarz();
+}

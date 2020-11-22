@@ -1,0 +1,64 @@
+Done:
+	Fixed Expanets sites w/ Ray && Scott
+	
+	Werked more on && tested mk_sites.pl so that Expanets could be 
+	 fully recreated from it.
+	 
+	Described the process more completely
+	
+	Considered further Expanets corporate site solutions
+	
+	Enabled HTML::Mason for use with mod_perl as a development
+	 environment for the beginnings of SoupRaddMinn
+	 
+	I'd like to do the forum && Expanets Dell-like Job Listing
+	 section with Mason if possible too as it'd probably be 
+	 ideal for such tasks (except that it's not configured on
+	 our live server yet).
+	 
+	I ordered O'Reilly's mod_perl book so that I can get smart
+
+	Configured my werkstation further && described deficiencies
+	 to Nick for potential remedies
+	 
+ToDo:
+	Read more on Mason && code some stuff up!
+	
+	clean up krip (C mesg client), finish it done! (or at least
+	 good enuf until later =) )
+	 
+	Bgin SoupRaddMinn, && Forum
+	
+	Grok PnGF
+	
+	Walk lightly around Yulia
+
+Thots:
+	Yulia said that she doesn't like or want to werk with me 
+	 today.  I don't mean to be a poop if indeed I am.  I
+	 know I'm often ridiculously optimistic but... well...
+	 what am I supposed to be?  I'm not trying to be a
+	 stool sample, I'm just trying to be as helpful && 
+	 useful && productive as I can be.
+	 
+	Anyways, I still feel like a loose wheel.  I'm trying
+	 to get a coherent game plan ... I mean team plan for
+	 the future of MindFire but every coder is pretty happy
+	 with their own isolated projects:
+	 	Ray->  F
+	 	Scott->S
+	 	Yulia->C
+	 	Me->   nothing!  I suck!
+	 I thinq we all need to fully understand and finish F.
+	 That as a foundation, we could then polish S while 
+	 migrating C functionality over to S style editing etc.
+	 for catalog pages and the like.  If we were all on the
+	 same page with this stuff, I don't thinq it would be
+	 so hard to get a comprehensive tool up by which 
+	 Christi || DaveR could take a spreadsheet, a mockup,
+	 fill out a few fields and check the right boxes and 
+	 easily and calmly deploy a new S or C partner with 
+	 little agony.  This would be sweet.  Well I've gotta
+	 get on.  I'll likely be back on Sunday evening.
+	 TTFN.
+

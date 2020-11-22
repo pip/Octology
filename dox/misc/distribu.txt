@@ -1,0 +1,150 @@
+Thots on distributed computation/archive/index for QbixRube:
+
+Although it is massive to index millions of donors, their minimum space
+contribution can be set at a level where the relationship is
+beneficial... storing a site's ip and info (if they're committed to
+maintaining at least 256MB)... they could sign up to contribute
+space up to a certain threshold... then they can be mapped many
+subspaces until their threshold is surpassed (including directory
+allocations).  Additionally, people could contribute computational power
+and be allocated werk units... normalized by what would take 24 hours on
+an average x86... calculating so many rube terns and logging them to be
+distributed among space donors.  Any computational contributor must
+contribute at least 256MB as werk space for their local computations but
+space donors could just offer many gigs.  Space holders gain points
+every time someone indexes through their space and successfully obtains
+a node value to solved.  If failed, all permutes can be calculated off
+strand at increasing depth to ascertain error source and they lose
+several points.  Points average according to number of subspaces stored.
+All space must be stored as http gettable text documents.  Werk unit
+updates to subspaces are bundled and emailed weekly (probably Sat.
+night) and each space owner has 24 hours to update their space.  Scripts
+will be distributed to automate the updating.  Spaces are probed for old
+and new values and lose points if they fail.  If a site is ever probed
+and inaccessible entirely, it loses several points.  If enough points
+are lost (per any particular subspace) or an update would cause a
+subspace to expand beyond their specified size threshold, the subspace
+is shifted to another space donor.  If contributors are found to have an
+exorbitant number of incorrect values or they are habitually
+inaccessible, their ability to participate will be revoked.  Weekly log
+bundles are compressed and archived to cds or tape should a site fall so
+corrupted or vanish that all it's data need to be reconstructed.  If the
+amount of donated space is exceptional, data is archived redundantly
+for the most reliable and the least (or newest and unproven).  This
+utilizes space effectively and hedges irrecoverability from tampering or
+instability.  Logs and competition for most space, most computation, and
+both can be tracked and teams (ala SETI) can be established.
+
+Additionally, the main site can track the current werld max thresh depth
+and provide an interface to input your own rube mixed up to that depth
+and to obtain the correct solution (showing trace extraction route etc.)
+and timing results etc.  Or take a solved rube on the page and manually
+or automagically perform random terns up to the current thresh before
+obtaining solution.  Maybe Java3d.  Show space requirements and dates
+each new depth was attained (&& user/team that computed the completion),
+total CPU time and storage space.  Graphs of progress.  % of all rube
+reps calculated.  Space for current thresh, current backup (redundant)
+space... avg. global rube terns / sec, min, hour, day, week, month, year
+... total reps, reps found and updated in last bundle (week), total reps
+found so far, % remaining, projected exhaustion date at current progress
+rate (accounting for increasing participation etc.) ... total space
+required for all reps, total space available so far.  All indexed by
+A-X[20] ... looks up space index for site to query for wich tern.  How
+many leaves found... archives packaged in thresh levels.  Distribute
+query/update scripts as source so that people can write better faster
+ways to store and query if they want but if their results fail, they may
+be kicked out.  Data integrity and quick indexing are most important.
+Then compression && fast computation.
+
+Computators might need a ton of space... 22bytes / rep crunching
+millions of reps each day... 10million reps is <256MB.  Can be zipped and
+transmitted to main server whenever completed for new ~10mil batch.
+
+Each thresh can be divided into equal parts whose results fit into files
+less than but as close to 256MB as possible.
+
+To start from a node, you need the depth, rep, && move to get there (or
+back) so that you don't do it again.  Hit all 15, store the move at the
+new rep.
+
+Er... (15^6)*22 = ~250MB so input for a chunk is a rep (20b) and the
+file containing the ~10M reps and moves 6 moves from current.  If
+unconnected, the result would contain a huge number of redundant reps
+that would need to be discarded at the bundling phase but if a user is
+connected, they can constantly validate moves and only examine
+unconsidered paths.  It would be slower to wait on queries for
+validation but they could cull enormous subspaces of the search and
+minimize the computation.  These checks would only be to depth 5 as 6
+might collide but is far less likely to than any other.  If someone has
+enough space (~3GB) they can download the entire 5th depth (~16MB) so
+that they only ever need to expand 1 move beyond each in their list.
+Maybe they don't even need the 3GB structure to compute the next reps
+and moves because it would only help to check for collides within the
+5th level but none below... and none laterally beyond the sent...
+
+It would make much sense to require around 3.5GB instead and include
+reps for levels 1 through 5 in the parcel so that entire subspace could
+be computed locally but that still fails to match collides with other
+intermediate levels in parallel branches so that sucks too.  It either
+all must be isolated locally and particularly redundant, query
+everything remotely (slowly) but not compute redundantly, or ideally
+store everything locally (but if that was possible, it wouldn't be
+necessary to distribute computation or storage)...
+
+If the computator can lookup (online) it's finds, it could save a lot of
+time at bundling.  Parcels (units?) could always get allocated to
+three users ... if results are not a consensus, give to 4 more and then
+if 6 to 1, accept 6 and mark 1 down.  If closer than 6to1, give to 3
+most trusted and reliable computators for mediation and mark down all
+diffs.  The redundancy is an early attempt to ensure reasonable data
+integrity despite open distribution of the code and decentralization of
+the ongoing computation and storage.
+
+At each level-up update bundling period, reorganize storage structure
+according to statistics for fastest storers so that lowest levels (most
+frequently queried) are capable of handling the most traffic and deep
+levels are stored at increasingly slower storage nodes.
+
+Each level 6 (~250MB) results file should easily and uniformly break
+into 15 (~16MB) sub-files which can be new level 5 seed files for next
+level.  Each level redundantly computed (at least 3X) before canonizing
+and proceeding to next level.
+
+Data updates need validation on traceroute from main server who bundles
+level-up updates so that only valid emails can auto extend global
+database.
+
+Ensure model is flexibly distributed according to state as input and
+index and having move etc. as output and result uniformly so that the
+model can extend to a global index of chess space and go space and prime
+number space etc.  The plan is to establish a devoted community willing
+to map the seemingly intractable and infinite puzzle and mathematical
+problems as far as possible (and flexibly enough to dynamically attempt
+(experiment with) better storage methods etc. for wider potentials.
+First Qbix map might provide the lasting mapping mechanism for global
+participants but the ability to compute and store other parcels later
+is crucial.
+
+Auto optimized reorganization could cause system to survive and thrive
+much longer than otherwise.  Allow community members to participate on
+differing projects or allocate certain percentages of their space or
+computational resources to alternate causes.  Once Qbix is exhausted, it
+would be amusing to parallel participation and milestone trends between
+it and chess.  A random enormous prime number could be ascertained very
+quickly.  Maybe other shortest path mappings could be computed for
+real-world optimal uses like best ip packet routing.  Probably the best
+and most brilliant opportunity would be to have the system map all the
+possible configurations of itself in order to determine how to best
+rearrange itself (not thinking AI but exhaustively and maybe
+heuristically determining actual and exact best possibility for speed
+[of storage || of computation etc.]).  It would be an incredible
+exercise.  I need a catchy name... this could be the most revolutionary
+global cooperative effort since Internet.  Not just data sharing but
+calculation sharing as well.  Companies or college researchers etc.
+could rent the network and the top thousand private participators could
+evenly divide the proceeds etc.  Maybe I could be paid to maintain and
+update the system (or at least oversee it's open-source trajectory) and
+then I could be financially stable and capable of werking on any video
+game or fun thing I felt like.  hmmm...
+
+I think this has insane potential!

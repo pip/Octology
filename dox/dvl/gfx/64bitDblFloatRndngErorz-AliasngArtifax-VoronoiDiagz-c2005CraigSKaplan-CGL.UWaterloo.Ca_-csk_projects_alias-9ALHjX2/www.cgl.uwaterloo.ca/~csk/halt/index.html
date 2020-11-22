@@ -1,0 +1,192 @@
+<html>
+<head>
+<title>The Craig Web Experience: Understanding the Halting Problem</title>
+<link rel="stylesheet" href="http://www.cgl.uwaterloo.ca/~csk/basic.css" type="text/css">
+</head>
+
+<body>
+
+<h1>The Halting Problem</h1>
+
+	Welcome!  It appears that this page gets read on a semi-regular basis.  
+	I hope 
+	you're finding this document to be useful.  Since this page is copyrighted
+	by me, <em>please</em> <a href="http://www.cgl.uwaterloo.ca/~csk/">let
+	me know</a> if you want to do anything with it
+	other than browse it in its current location.
+
+<hr>
+<h2>Terminology</h2>
+
+First of all, I'll be precise about some of the terms I'm going to use here.
+<p>
+A <b>problem</b> is a yes/no question that we ask of a particular input.
+Here are some sample problems:
+
+<ul>
+    <li>Given <em>x</em>, <em>y</em> and <em>z</em>, does <em>x + y = z</em>?
+    <li>Is the number <em>x</em> prime?
+    <li>Is a given sentence grammatical?
+</ul>
+<p>
+An algorithm is a <b>solution</b> to a problem if it correctly provides
+the appropriate yes/no answer to the problem, and is guaranteed to always
+run in a finite amount of time.
+<p>
+A problem is <b>decidable</b> if it has a solution.  If there is no
+algorithm that solves the problem in a finite amount of time, the problem
+is <b>undecidable</b>.
+<hr>
+
+<h2>Turing's Argument</h2>
+
+Are all problems decidable?  Given enough thought, can we always come
+up with a well-defined procedure that takes some input and answers a given
+question about it?  At the start of the 20th century, the belief was that
+this was true.  Mathematicians (there were no computer scientists back 
+then!) believed that we would eventually discover tools that we could use
+to answer any question we wanted (provided we could express it in the 
+language of logic).
+<p>
+In 1931, Kurt G&ouml;del shocked them all by proving that this was 
+impossible.  Using some very clever techniques, he showed that as soon as
+we devise a system that's sufficiently powerful and well-behaved to encompass 
+mathematical reasoning, that system will necessarily contain a statement
+that we could never prove is true, even though it <em>is</em> true.
+<p>
+A few years later, Alan Turing proved an analogous theorem in 
+Computer science.  He showed that there must exist undecidable problems,
+questions for which there is no definable solution.  His proof relied
+on some of the same clever techniques used by G&ouml;del.  Here, I 
+present an adaptation of Turing's proof.
+<p>
+Here's a problem: given a computer program and some input to that
+program, will the program go into an infinite loop when fed that input?
+One could imagine this being a useful tool - you could detect infinite
+loops in your program before you ever ran it, saving yourself some
+debugging nightmares later.  Note that the naive solution, running 
+the program on the input and waiting to see if it stops, isn't valid 
+because it could potentially run forever.  You don't learn anything.
+<p>
+Assume that I was particularly inspired one day and I managed to write
+a solution to the halting problem.  It might look something like this:
+<p>
+<code><pre>
+  bool would_it_stop( char * program, char * input ) {
+      if( <em>something terribly clever</em> ) {
+          return TRUE;
+      } else {
+          return FALSE;
+      }
+  }
+</pre></code>
+<p>
+Don't worry about the specifics of the <code><em>something terribly clever
+</em></code>; just assume I managed to write it somehow.
+<p>
+I could now use this program to check, without actually running a program,
+whether it will loop forever on a particular input.  One input that might
+be of interest would be the <em>program itself</em>.  Remember that 
+the program is, at some level, just a bunch of data.  In this case, the
+program is some characters that decribe instructions for doing something.
+There's nothing wrong with running a program and passing in the program
+itself as input.  We could write a function to do that as follows:
+<p>
+<code><pre>
+ bool stops_on_self( char * program ) {
+     return would_it_stop( program, program );
+ }
+</pre></code>
+<p>
+But now I've set myself up to do something very clever.  This is where
+all the insight comes in.  I'm going to cause everything to get all
+mixed up by deliberately including an infinite loop in a small program 
+that detects infinite loops!  Here it is:
+<p>
+<code><pre>
+ bool bobs_yer_uncle( char * program ) {
+     if( stops_on_self( program ) ) {
+        while( 1 ) {}
+        return FALSE;
+    } else {
+        return TRUE;
+    }
+ }
+</pre></code>
+<p>
+
+What's the meaning of this strange function?  Well, let's think back for
+a second.  I claimed that <code>would_it_stop</code> was a solution to
+the halting problem.  That is, it's an algorithm that always terminates,
+and answers whether or not a program will loop forever on a given input.
+<code>stops_on_self</code> isn't much more complicated - it just passes 
+the program twice to <code>would_it_stop</code> - once as instructions,
+and once as input. <code>bobs_yer_uncle</code> is just slightly more 
+complicated.  Given a program <code>program</code>, if 
+<code>stops_on_self( program )</code> is true, <code>bobs_yer_uncle</code>
+goes into an infinite loop (albeit a very simple one).  Otherwise,
+it stops and returns <code>TRUE</code>.
+<p>
+
+But here's the paradox.  What happens when I try <code>bobs_yer_uncle</code>
+on <em>itself</em>?  Well, clearly one of two things can happen: either it
+runs forever, or it stops and returns <code>TRUE</code>, depending on
+whether the call to <code>stops_on_self</code> returns <code>TRUE</code>
+or <code>FALSE</code>.
+
+<ul>
+	<li>If <code>bobs_yer_uncle( <em>bobs_yer_uncle</em> )</code> goes
+		into an infinite loop, it is because <code>stops_on_self( 
+		<em>bobs_yer_uncle</em> )</code> returned <code>TRUE</code>,
+		which means that <code>would_it_stop( <em>bobs_yer_uncle</em>,
+		<em>bobs_yer_uncle</em> )</code> returned <code>TRUE</code>.
+		But this means that <code>bobs_yer_uncle</code> would
+		<em>stop</em> when fed itself as input!  This contradicts the
+		assumption that it goes into an infinite loop.
+
+	<li>If <code>bobs_yer_uncle( <em>bobs_yer_uncle</em> )</code>
+		stops and returns TRUE, it's because <code>stops_on_self(
+		<em>bobs_yer_uncle</em> )</code> returned <code>FALSE</code>,
+		which means that <code>would_it_stop( <em>bobs_yer_uncle</em>,
+		<em>bobs_yer_uncle</em> )</code> returned <code>FALSE</code>.
+		But this means that <code>bobs_yer_uncle</code> would
+		<em>run forever</em> when fed itself as input!  This contradicts the
+		assumption that it terminates.
+</ul>
+
+<p>
+We have therefore led ourselves to a contradiction.  <code>bobs_yer_uncle</code>
+stops if and only if it runs forever.  Since this is impossible, one of our
+assumptions must be invalid.  By tracing our reasoning backwards, we find
+that it is therefore impossible to have written <code>would_it_stop</code>
+in the first place.  In other words, the halting problem is undecidable.
+
+<p>
+In some sense, this problem (or some related formulation) is the canonical
+undecidable problem.  There are countless other undecidable problems, 
+which can often be expressed in terms of some simple question about a 
+computer program.  For example:
+
+<ul>
+	<li>Will the program ever print out a 5?
+	<li>Will the program ever execute line 26?
+</ul>
+
+It turns out that these sorts of problems are all equivalent to the
+halting problem, in the sense that given a solution to one of them,
+you could write a solution to any of the other ones.  The reasons why
+that is possible are interesting, but beyond the scope of the last sentence
+of this document.
+
+<p>
+
+
+<hr>
+	<table width="100%" border=0 cellpadding=0 cellspacing=0><tr>
+		<td align=left><a href="http://www.cgl.uwaterloo.ca/~csk/">
+			Craig S. Kaplan</a></td>
+	<td align=right><em>Last updated: Monday, 24-Nov-2008 13:30:12 EST</em>
+	</td></tr></table>
+
+</body>
+</html>

@@ -1,0 +1,28 @@
+#!/usr/bin/perl -w
+# 34406FS - ptcnv (CoNVert PipTime) created by Pip@CPAN.Org
+# Desc: ptcnv takes old PipTimes && returns the new format.
+# 37ENEQ7 - added '-fix' option to rename all files in current dir according
+#   to new pt && bak format.
+# Please see `perldoc Time::PT` for more info.
+use strict; my $oldt; my $newt; my $newn;
+if(@ARGV && length($ARGV[0]) && $ARGV[0] =~ /-f/i) {
+  foreach(glob('./*')) {
+    if(/\w+[-\.]([0-9A-Z][0-9A-Za-z]{2,4})$/) {
+      $newn = $_;
+      $oldt = `ptold $1`;
+      $newt = `pt    $oldt` . '0';
+      $newn =~ s/$1/$newt/;
+      print "ptold fixing: renaming $_ to $newn\n";
+      rename($_, $newn);
+    } elsif(/\w+(\.\w+)([-\.])([0-9A-Z][0-9A-Za-z]{6})$/) {
+      $newn = $_;
+      $newt = "-$3$1";
+      $newn =~ s/$1$2$3/$newt/;
+      print "bak   fixing: renaming $_ to $newn\n";
+      rename($_, $newn);
+    }
+  }
+} else {
+  for(@ARGV) { $_ .= '0' x (5 - length($_)) if(length($_) < 5); }
+  $oldt = `ptold @ARGV`; print `pt $oldt`;
+}

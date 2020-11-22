@@ -1,0 +1,45 @@
+#!/usr/bin/perl
+# J2DLFhPT:p.8 crE8d by PipStuart <Pip@CPAN.Org> in ~/dox/2du/ to attempt adapting my original 8d8rm experiment to a vim v8 varE8ion autom8d for d8ok;u.p.d.8;
+# 2du:add bclr for YMD && maybe CMYK-ish for hmsp wi some dark neutral colr BhInd zone;
+use strict ;use warnings;use utf8;use v5.10;use Encode;use Path::Tiny;my $VERSION='0.0';my $d8VS='J81MCphs';
+my  $out8;my $name= $0;my $d8an=$0;$d8an=~ s/.*\///;$d8an.='.'; #=~ s/(\.)$/$1$1/;
+use       Octology::a8;my $dfil='';$dfil=path($d8an)->slurp_utf8() if(-r $d8an);
+use       Octology::d8;my $keey='';
+use       Octology::c8;$ENV{'TERM'}='d8rm';
+my  $d8rm=Octology::c8->new('d8rm'=>1);$d8rm->Insr(0);
+sub D{my $d8im=Octology::d8->new();my $ampm='AM';$ampm='PM' if($d8im->h() > 11);
+  open  $out8,'>&',STDOUT or die "Can't open  duplic8 STDOUT handle: $!";binmode $out8,':encoding(UTF-8)';print $out8 "$z\n$W:$G".$d8im->colr('a')."$W;";
+  close $out8             or die "Can't close duplic8 STDOUT handle: $!";my $pd8s="$d8im";my $pd8e=$d8im->expand();
+  $d8rm->{'_text'}[0]=substr($pd8e,29,4)       . substr($pd8e, 3,4); # better to split up d8 -f than to reconstruct all
+  $d8rm->{'_text'}[1]=substr($pd8e, 8,2)       . substr($pd8e,22,6);
+  $d8rm->{'_text'}[2]=substr($pd8s, 0,1) x 2   . substr($pd8s, 1,1) x 2   . substr($pd8s,2,1) x 2 . substr($pd8s,3,1) x 2;
+  $d8rm->{'_text'}[3]=substr($pd8s, 0,1) x 2   . substr($pd8s, 1,1) x 2   . substr($pd8s,2,1) x 2 . substr($pd8s,3,1) x 2;
+  $d8rm->{'_text'}[4]=substr($pd8s, 4,1) x 2   . substr($pd8s, 5,1) x 2   . substr($pd8s,6,1) x 2 . substr($pd8s,7,1) x 2;
+  $d8rm->{'_text'}[5]=substr($pd8s, 4,1) x 2   . substr($pd8s, 5,1) x 2   . substr($pd8s,6,1) x 2 . substr($pd8s,7,1) x 2;
+  $d8rm->{'_text'}[6]=substr($pd8e,11,2) . ':' . substr($pd8e,14,2) . ':' . $ampm;
+  $d8rm->{'_text'}[7]=substr($pd8e,17,2) . ':' . substr($pd8e,20,2) . ':' . 'sp' ;
+  $d8rm->{'_Fclr'}[0]='RRRRkooo';
+  $d8rm->{'_Fclr'}[1]='YYkGGGGG';
+  $d8rm->{'_Fclr'}[2]='RRooYYGG';
+  $d8rm->{'_Fclr'}[3]='RRooYYGG';
+  $d8rm->{'_Fclr'}[4]='CCBBMMpp';
+  $d8rm->{'_Fclr'}[5]='CCBBMMpp';
+  $d8rm->{'_Fclr'}[6]='CCWBBWCC';
+  $d8rm->{'_Fclr'}[7]='MMWppWKK';
+  $d8rm->{'_bclr'}[0]='b' x 8; # need to compute then find closest bdal colr for bkgr
+  $d8rm->{'_bclr'}[1]='b' x 8;
+  $d8rm->{'_bclr'}[2]='k' x 8;
+  $d8rm->{'_bclr'}[3]='k' x 8;
+  $d8rm->{'_bclr'}[4]='k' x 8;
+  $d8rm->{'_bclr'}[5]='k' x 8;
+  $d8rm->{'_bclr'}[6]='c' x 8;
+  $d8rm->{'_bclr'}[7]='c' x 8;
+#                  $d8rm->Prnt(d8c($pd8s));$d8rm->Prnt("\n"); # these sorta worked but the newlines were behaving weird
+#                  $d8rm->Prnt($d8im->colr('a'));
+# for(split(/\n/,      d8c(substr($pd8s,0,4)) )){$d8rm->Prnt($_);print "$R:$G$_$Y;";}$d8rm->Prnt("\ntesting1");
+# for(split(/\n/, xx(  d8c(substr($pd8s,0,4))))){$d8rm->Prnt($_);print "$R:$G$_$Y;";}$d8rm->Prnt("\n"); # couldn't get newly exported xx() to work right
+# for(split(/\n/, xx(dur8c(substr($pd8s,4,4))))){$d8rm->Prnt($_);print "$B:$G$_$M;";}$d8rm->Prnt("\n"); #   so had to double mid-chars manually above
+  $d8rm->Draw();}
+while    ($keey ne 'Ctd'){$keey=$d8rm->GetK(948);if(length($keey)){
+    if   ($keey eq  '-1'){D;}
+    elsif($keey eq   'x'){$keey='Ctd';}}}

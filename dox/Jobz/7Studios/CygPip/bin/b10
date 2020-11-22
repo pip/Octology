@@ -1,0 +1,20 @@
+#!/usr/bin/perl -w
+# 45UBwOb - b10 (CoNVert base-64 string parameter to decimal)
+#
+# Most source code should be Free!
+#   Code I have lawful authority over is && shall be!
+# Copyright: (c) 2003, Pip Stuart.  All rights reserved.
+# Copyleft :  I license this software under the GNU General Public 
+#   License (version 2).  Please consult the Free Software Foundation 
+#   (http://www.fsf.org) for important information about your freedom.
+# Thank you.  TTFN.
+#                                           -Pip@CPAN.Org
+
+use strict;
+use Math::BaseCnv qw(b10);
+
+my $numb = shift;
+if(!defined($numb) || $numb =~ /^-+[h\?]/i) {
+  die("USAGE: `b10 <Base64NumberStringToConvertToDecimal>`\n");
+}
+print(b10($numb));

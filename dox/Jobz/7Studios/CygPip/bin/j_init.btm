@@ -1,0 +1,16 @@
+@prompt $e[1;30m[$e[37m$z$e[30m][$e[32m$T$e[1;30m][$e[0;32m$P$e[1;30m]ÿ$e[0;37m
+set .zip=unzip
+set .arj=unzip
+alias bak=`dir /K/M *.bak ^ ? del *.bak`
+alias d=describe
+alias g=`dir | grep -i`
+alias ls=f:\djgpp\bin\ls --color
+alias lz=`pkzip -ex local.zip *.* ^ attrib /q +h local.zip ^ del /q /y *.* ^ attrib /q -h local.zip`
+alias q=c:\windows\command\q.exe
+alias rm=f:\djgpp\bin\rm
+alias mv=f:\djgpp\bin\mv
+alias make=f:\djgpp\bin\make
+alias unknown_cmd=cdd
+alias x=`select hv (*.*)`
+setpal 00000000 01000009 02041614 0309091c 042a0000 052a002a 143f1b0a 07382f24
+setpal 38151515 3915153f 3a203c20 3b22303f 3c3f1515 3d3f153f 3e3f3f15 3f3f3f3f

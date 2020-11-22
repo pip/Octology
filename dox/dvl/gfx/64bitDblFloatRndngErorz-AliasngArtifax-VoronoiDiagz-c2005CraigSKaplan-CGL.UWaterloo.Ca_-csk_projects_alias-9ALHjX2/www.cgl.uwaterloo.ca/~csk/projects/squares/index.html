@@ -1,0 +1,101 @@
+<html>
+<head>
+	<title>Rotated Square Illusion</title>
+	<link rel="stylesheet" href="http://www.cgl.uwaterloo.ca/~csk/basic.css" type="text/css">
+</head>
+<body>
+<h1>Rotated Square Illusion</h1>
+
+<p>
+Years ago, I randomly decided to experiment with a simple form of
+abstract tone reproduction.  Take a low-resolution image and represent
+the darkness of each pixel by a black square whose area is proportional
+to that darkness.  If the squares were all disconnected from each other,
+you'd end up with an attractive arrangement of different-sized squares
+that, when looked at the right way, would yield an image as a kind of
+optical illusion.  To add a bit more character, I decided to orient each
+square in the direction of the image gradient of its pixel.  I packed
+the whole thing into a tiny Python script that generated Postscript
+output.
+</p>
+<p>
+As it happens, the results were decent.  Here's an example, a scaled-down
+photo of a cat (<a href="http://www.cgl.uwaterloo.ca/~csk/photos/chaos_talon/dscn1862.jpg.html">this one</a>, to be exact), and its corresponding squares.
+The illusion is most effective if you experiment with different distances
+from your monitor, different viewing angles, and different amounts of
+squinting.
+</p>
+<center>
+<table border=0 cellspacing=10>
+	<tr valign=bottom>
+	<td><img src="talon_small.png" width=25 height=29/></td>
+	<td><img src="talon_test.png" width=512 height=597/></td>
+	</tr>
+</table>
+</center>
+<p>
+I just finished reading <a href="http://processing.org/learning/books/">
+Processing: A Programming Handbook for Visual Designers and Artists</a>,
+by Casey Reas and Ben Fry.  <a href="http://processing.org/">Processing</a> is
+a Java-based development environment and toolkit developed at the MIT Media
+Lab, targeted at the world of new media and digital art (in the style of
+other tools like Max/MSP, PureData, etc).  There were things about Processing
+that I didn't understand and wanted to learn more about, and I was offered
+an opportunity to write a review of the book for a journal.  It's a good
+book for a number of reasons (I'll save the full discussion for the review).
+</p>
+<p>
+One fun aspect of Processing is that it provides access to a lot of
+sophisticated functionality in a simple (almost simplistic, actually) way.
+They give even experienced programmers extra value over writing Java code
+directly by streamlining the common cases in a way that removes obstacles
+between inspiration and implementation.  For example, they provide an
+extension library that simplifies access to webcams.  In the past year or
+two I've acquired several webcams (attached to iMacs), and I figured that
+my square illusion code could easily run in real-time.  Thus, I implemented
+a webcam-based version of the Python script as a first experiment in
+Processing.  In a couple of hours I was up and running.  I captured an
+image of myself scrutinizing the book.
+</p>
+<center>
+	<img src="cam_squares.png" width=587 height=643/>
+</center>
+<p>
+The PDF export is tied to key presses; what you can't see in this image
+is that I'm hitting the space bar with my toe to capture the result.
+</p>
+<p>
+I tweaked the script a bit to make it more pleasant to use in real-time.
+Most of the work consisted of damping the changes in size and orientation
+so that the entire screen wouldn't jitter.  I also threw away small
+gradients.  Unfortunately it doesn't
+appear to run as an applet, presumably because of the difficulty of
+in-browser camera access.
+But if anyone is interested, feel free to grab the <a href="square_illusion.pde">source code</a> and try it out in a local copy of Processing.
+</p>
+<p>
+A few years ago, I took the cat image above and had all the little
+squares cut from paper using a laser cutter.  I then mounted the 
+cut paper slightly above a dark backdrop.  The illusion was particularly
+satisfying when the image coalesced out of a grid of holes in paper.
+The PDF output built-in to the source code above should allow anyone
+to create such a design with a laser cutter or digital craft cutter.
+Let me know if you try it.
+</p>
+
+<font size=-1>
+All images are copyright 2008 by Craig S. Kaplan.  You are
+free to use them for <b>personal</b> and <b>non-commercial</b> purposes.
+Please check with me about any other uses.
+</font>
+</p>
+
+<hr>
+	<table width="100%" border=0 cellpadding=0 cellspacing=0><tr>
+		<td align=left><a href="http://www.cgl.uwaterloo.ca/~csk/">
+			Craig S. Kaplan</a></td>
+	<td align=right><em>Last updated: Sunday, 16-Nov-2008 22:11:30 EST</em>
+	</td></tr></table>
+
+</body>
+</HTML>

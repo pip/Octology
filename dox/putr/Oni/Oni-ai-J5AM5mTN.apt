@@ -1,0 +1,11 @@
+# J5AM5mTN:Oni-ai-J5AM5mTN.apt crE8d by PipStuart <Pip@CPAN.Org> to start logging needed changes to get Oni running with SDL && other libraries && frameworks;
+# 2du:wherever the other notes are (probably ~/dox/2du/putr.ls, tipz.ls, && u.8.) for getting Oni up-to-speed, maybe they should duplic8 or aggreg8 into here;
+<root@OniJ5AM5j7a/home/pip/dox/2du>ai libsdl-gfx1.2-5 libsdl-gfx1.2-dev libsdl-gfx1.2-doc libsdl-image1.2 libsdl-image1.2-dev libsdl-kitchensink0 libsdl-kitchensink-dev libsdl-mixer1.2 libsdl-mixer1.2-dev libsdl-net1.2 libsdl-net1.2-dev libsdl-pango1 libsdl-pango-dev libsdl-sge libsdl-sge-dev libsdl-sound1.2 libsdl-sound1.2-dev libsdl-stretch-0-3 libsdl-stretch-dev libsdl-ttf2.0-0 libsdl-ttf2.0-dev libsdl1.2-dev libsdl-console libsdl-console-dev libalien-sdl-perl libalien-sdl-dev-perl libsdl-perl libasound2-doc libcairo2-doc libglib2.0-doc libxml2-utils libgraphite2-utils libice-doc icu-doc liblzma-doc libpango1.0-doc ttf-dejavu-core libsm-doc libx11-doc libxcb-doc devhelp libxext-doc libxt-doc libmail-box-perl apache2 apache2-doc libgtk2.0-doc spamassassin libemail-simple-perl libmime-tools-perl apache2-suexec-custom libmojolicious-perl razor libencode-detect-perl libgeo-ip-perl libnet-patricia-perl scrot curl
+J5AMLCFa:sz;curl -s https://brave-browser-apt-release.s3.brave.com/brave-core.asc | apt-key --keyring /etc/apt/trusted.gpg.d/brave-browser-release.gpg add -
+source /etc/os-release
+echo "deb [arch=amd64] https://brave-browser-apt-release.s3.brave.com/ $UBUNTU_CODENAME main" | tee /etc/apt/sources.list.d/brave-browser-release-${UBUNTU_CODENAME}.list
+au;ai brave-keyring brave-browser
+au;ai npm node-oauth-sign node-http-signature # J5BMGnod:actually using the npm that came with HTTPS://GitHub.Com/nodejs/help/wiki/Installation anyway. Then
+npm install -g expo-cli #   followed HTTPS://FaceBook.GitHub.IO/react-native/docs/getting-started.html ;
+au;ai audacity openssh-server # J5IMAuda:getting sound recording && editing maybe for Dad's Fix-the-Radio project, or just my own eventual Octology PodCasts;
+J5TMGbra:au;ai libdvdcss2 brasero gpm libgpm-dev

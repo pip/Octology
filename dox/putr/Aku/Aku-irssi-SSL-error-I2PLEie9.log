@@ -1,0 +1,7 @@
+ Irssi v1.0.4-1ubuntu2.2 - HTTP://Irssi.Org
+ 20180225 14:43:04 -!- Irssi: Looking up IRC.Perl.Org
+ 20180225 14:43:04 -!- Irssi: Connecting to IRC.Perl.Org [2600:3c00::f03c:91ff:fedb:bf01] port 7062
+ 20180225 14:43:04 -!- Irssi: warning SSL handshake failed: Connection refused
+ 20180225 14:43:04 -!- Irssi: Connection lost to IRC.Perl.Org
+# not sure why that just happened, but may try reconnecting in a little while to see if problem persists
+# I2PLFbak:Tried again && connected normally. Maybe one of the servers in the Perl IRC rot8ion isn't accepting SSL on port 7062 properly, but most do?;

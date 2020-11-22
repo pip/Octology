@@ -1,0 +1,1415 @@
+#!/usr/bin/perl -w
+# 311CwI9 - fpal created by Pip Stuart <Pip@CPAN.Org> to edit GNU/Linux
+#   console fonts && palettes.
+#   * fpal - Making the GNU/Linux console a more diverse && colorful place * =)
+# 2do:
+#   mk font / pal selector (exactly over all space avail to Edt)
+#   save all fonts && pals I like as .fp[fp]
+#   mk .fpf format faster if necessary (optional index breaks, multiples
+#     per line, try leaving $j internally as whole row byte, 
+#     pack in file as b64? (4 digits = 3 bytes [rows]),
+#     last resort binary =( just leave .psf then... )
+#   add local palette change mode toggle (&& cmdline opt too)
+#   add --help && man page, remember --load (-l) can load .fpf, .psf, 
+#     .psf.gz, .fnt, && .com, explain dynamic coloring
+#   update all help / status text
+#   package everything together
+#  maybe:
+#   mk BuildFnt function more thorough for double bars && different maps
+#   add mouse support to Simp && use it to draw / focus fp
+#   setup ~/.fpalrc to save which .fp path && files should be selectable
+#   mk 'a' smash down, 'z' squish in with better methods than smudge
+#   figure out if perl ioctl can replace C utils (for both font && pal)
+# Notz: 
+#   How do I want the loader to behave? I think the best way would be 
+#     hmm... to auto find all available font && pal files as Dflt with just 
+#     smpl filts for file type but then also a separate favs mode which 
+#     stores a list of ones (added from the full list) in ~/.fpalrc
+#   Dflt update font/pal immed, filt out fonts w/ diff dims
+#
+#   cli params
+#    -l local (only chg this vterm)
+#    -s set
+#    -g get
+#    -f font -sf -gf
+#    -p pal  -sp -gp
+#    -x or -q exit right away
+#    -*h or -*? help
+#    -nc no contrasting color allocation
+#
+
+use strict;
+use Math::BaseCnv qw(:all);
+use Curses::Simp;
+use Time::PT;
+
+my $mjvr = 1; my $mnvr = 0; my $ptvr = '57442FP'; 
+my $auth = 'Pip Stuart <Pip@CPAN.Org>';
+my $name = $0; $name =~ s/.*\///;
+# This hash contains all false characters for a font data file.  Any other
+#   characters in a char map will be read as true (on) pixels.
+my %flsc = ( '-' => 0, ' ' => 0, '0' => 0, '!' => 0, '|' => 0, ':' => 0,
+             '_' => 0, '.' => 0, 'O' => 0, '/' => 0, '~' => 0, '\''=> 0 );
+my $true = 'X'; my $fals = '-'; # chars to use for writing font data pixels
+# The following filename is used to read / write the temporary fonts to /
+#   from the system font generator.
+my $tfil = "/tmp/TempFont.psf";
+my $eror = "GetPChek.err"; # Palette test error file
+my $svfl = "DfltSave.fpf"; # Default filename to save to
+# Following are external command-line utilities used to manip fonts && pals.
+my $gpal = "etfp";# -g -p"; #"getpalette";                  # get pal
+my $spal = "etfp";# -s -p"; #"setpalette";                  # set pal
+my $gfon = "etfp    -f";    #"consolechars --old-font-psf"; # get font
+my $sfon = "etfp -s -f";    #"consolechars --font";         # set font
+my $sqtb = 0; # SQuare TaBle flag (char table && pal blocks width to height)
+my $wrap = 1; # wrapping flag
+
+my $fpmd = 0; my $focu = 0; my $chan = 0; my $blok = 0; # font/pal mode, focus, rgb channel, block
+my $colr; my $blin; my $keey = ""; my $idle = 0; 
+my $chos = 0; my $choi = 0; my $chof = 0; my $chom = 0;
+my $dync = 0; my $uppt = 0;
+my $hite; my $widt; my $cbtm; my $bwid; my $temp;
+my @tscr = (); my @tclr = (); my @cclr = (); my @pdat = (); my @fdat = ();
+my @tdat = (); my $chit = 16; my @bakc = (); my @bakp = (); my @bakf = ();
+my $ehnd; my $thnd; my $shnd; my $xhnd; my $bhnd; my $asav; my $clok = 0;
+my @cprz = (); # contrasting color pairs
+my $fedx = 0; my $fedy = 0;
+my $ftbx = ord('A'); my $ftby = int($ftbx / 32); $ftbx %= 32; # start on 'A'
+my @pvly = (); my @pvlx = ();
+my %shnm = ( ')' => 0, '!' => 1, '@' => 2, '#' => 3, '$' => 4, # shifted numbs
+             '%' => 5, '^' => 6, '&' => 7, '*' => 8, '(' => 9 );
+# The hash below specifies which colors should be used for the CharEditor.
+#  of = the plain off background, on = non-cursor on character blocks,
+#  cf = cursor blocks over the off background, cn = cursor over on blocks,
+#  ch = table character, cu = table cursor, cb = char bkgrnd, ub = curs bg.
+my $chnd = 0; # CHar editor color set iNDex: 0=dfalt fp, 1=fonter, 2=nice fp
+my @clut = ( 'b', 'r', 'g', 'o', 'u', 'p', 'c', 'w', 
+             'B', 'R', 'G', 'Y', 'U', 'P', 'C', 'W' ); # color letters
+my %chcz = ( 'of' => ['p', 'b', 'u'], 'on' => ['o', 'u', 'w'], 
+             'cf' => ['G', 'R', 'W'], 'cn' => ['Y', 'Y', 'C'],
+             'ch' => ['w', 'g', 'G'], 'cu' => ['W', 'P', 'U'],
+             'cb' => ['b', 'b', 'p'], 'ub' => ['u', 'p', 'b'] );
+my @cech = ( '€',   'ﬂ',   '‹',   '›',   'ﬁ' );         # CharEditor Chars
+my @chcl = ( "$chcz{'on'}[$chnd]$chcz{'of'}[$chnd]",
+             "$chcz{'cf'}[$chnd]$chcz{'on'}[$chnd]",
+             "$chcz{'cf'}[$chnd]$chcz{'of'}[$chnd]",
+             "$chcz{'cn'}[$chnd]$chcz{'on'}[$chnd]",
+             "$chcz{'cn'}[$chnd]$chcz{'of'}[$chnd]",
+             "$chcz{'ch'}[$chnd]$chcz{'cb'}[$chnd]",
+             "$chcz{'cu'}[$chnd]$chcz{'ub'}[$chnd]" ); # CharEdtr/Tbl Colors
+# The arrays below are the strings && color codes for the RGB Pal bars.
+my @bnmz = ( 'RED', 'GRN', 'BLU' );
+my @bclz = (  'Rr',  'Gg',  'Uu' );
+my $avai; my $scal; my $wscl;
+my $main = Curses::Simp->new();
+
+# Check command-line params.
+my $prm0 = shift; my $prm1 = ""; my %palp = (); my $pndx = 0;
+my $valz = ""; my $exit = 0; my $fupd = 0; 
+my $rowe = 0;  my $colm = 0;
+while(defined($prm0) && length($prm0)) {
+  if     ($prm0 =~ s/^-+//) {
+    if     ($prm0 =~ /^[xq]/i) { # eXit / Quit
+      $exit = 1; 
+    } elsif($prm0 =~ /^l(.*)$/i) { # load prm1 filename
+      if(defined $1 && -e $1) { $prm1 = $1; }
+      else                    { $prm1 = shift; }
+      LoadFont($prm1);
+    } elsif($prm0 =~ /^s(.*)$/i) { # save (auto) prm1 filename
+      if(defined $1 && -e $1) { $prm1 = $1; }
+      else                    { $prm1 = shift; }
+      $asav = $prm1;
+    }
+  } elsif($prm0 =~ /^([0-9a-z._])([0-9a-z._])([0-9a-z._])([0-9a-z._])?$/i) { 
+    $exit = 1; # quit after doing cmdline pal stuff
+    if(defined $4) {
+      $pndx      = $1;
+      $palp{'R'} = b10($2) * 4;
+      $palp{'G'} = b10($3) * 4;
+      $palp{'B'} = b10($4) * 4;
+    } else {
+      $palp{'R'} = b10($1) * 4;
+      $palp{'G'} = b10($2) * 4;
+      $palp{'B'} = b10($3) * 4;
+    }
+    system("$spal $pndx $palp{'R'} $palp{'G'} $palp{'B'}");
+    $pndx++;
+  } elsif($prm0 =~ /^([0-9a-z._]+|.*\n(.*\n)*)$/i) { 
+    $pndx = $1;
+#print "prm0:\"$prm0\"\n";
+    $exit = 1; # quit after doing cmdline font stuff
+    LoadFont() unless($fupd);
+    $fupd = 1; # flag to update font after all cmdline ones have been loaded
+    @tdat = ();
+    if($pndx =~ /\n/) {
+      @tdat = split /\n/, $pndx;
+#print "tdat:@tdat\n";
+      $pndx = shift(@tdat) while(@tdat && $pndx !~ /^[0-9a-z._]+$/i);
+    }
+    while(defined $pndx) {
+      $pndx = (b10($pndx) % 256);
+      $rowe = 0;
+      if(@tdat) { $prm1 = shift(@tdat); } 
+      else      { $prm1 = shift; }
+#print "pndx:$pndx prm1:$prm1\n";
+      while(defined($prm1) && length($prm1) >= 8) {
+        $colm = 0;
+#print " prm1:$prm1\n";
+        $prm1 =~ s/#.*$//; # strip comments
+        while($colm < 8 && $prm1 =~ s/^(.)//) {
+          if(exists $flsc{$1}) { $fdat[$pndx][$rowe][$colm] = 0; }
+          else                 { $fdat[$pndx][$rowe][$colm] = 1; }
+          $colm++;
+        }
+        $rowe++;
+        if(@tdat) { $prm1 = shift(@tdat); } 
+        else      { $prm1 = shift; }
+      }
+      if(@tdat) {
+        $pndx = $prm1;
+        $pndx = shift(@tdat) while(@tdat && $pndx !~ /^[0-9a-z._]+$/i);
+      }
+      $pndx = undef unless(@tdat);
+    }
+    unshift(@ARGV, $prm1) if(defined $prm1);
+  } else {
+    print "Unrecognized parameter: prm0:" . $prm0 . ":\n";
+    $exit = 1; # quit after doing cmdline font stuff
+  }
+  $prm0 = shift;
+}
+UpdtFont() if($fupd);
+exit if($exit);
+
+sub LoadPale {
+  my @rgbv; $valz = undef;
+  for(my $i = 0; $i < 16; $i++) {
+    $valz = `$gpal $i`;
+    chomp($valz);
+    @rgbv = split(/ /, $valz);
+    shift(@rgbv); # shift off index
+    for(my $j = 0; $j < 3; $j++) {
+      $pdat[$i][$j]  = $rgbv[$j];
+      $pdat[$i][$j] /= 4;
+      $pdat[$i][$j]  = 63 if($pdat[$i][$j] > 63);
+      $pdat[$i][$j]  = b64($pdat[$i][$j]);
+    }
+  }
+}
+
+sub LoadFont { # load font data from system
+  my $ftyp = shift || "psf";
+  my $data = ""; my $dsiz = 0; my $hdsz = 0; my $coff = 0;
+if(0) { # this was my failed attempt to use Perl ioctl to get font data =(
+  open(FH, ">poop");
+  ioctl(FH, 0x00004B60, $data);
+#  ioctl(FH, GIO_FONT, $data);
+  close(FH);
+  @tdat = unpack("C4096", $data);
+  unlink("poop");
+}
+  if     ($ftyp =~ /\.fp[fp]?$/) { # just execute fpal fonts
+    system("perl $ftyp") if(-e $ftyp && -r $ftyp);
+    $ftyp = "psf"; 
+  } elsif($ftyp =~ /\.psf(\.gz)?$/) { # normal .psf or .psf.gz files
+    if($ftyp =~ /\.gz$/) { # uncompress gzipped fonts
+      system("cp $ftyp $tfil.gz");
+      if(-e "$tfil.gz") {
+        system("gunzip   $tfil.gz");
+        system("$sfon    $tfil");
+        unlink($tfil);
+      }
+    } else {
+      system("$sfon $ftyp");
+    }
+    $ftyp = "psf"; 
+  }
+  if($ftyp eq "psf") {
+    system("$gfon $tfil");
+  } elsif(-e $ftyp && -r $ftyp) { # copy other types to temp font file
+    open(SRCF, "<$ftyp"); open(DSTF, ">$tfil");
+    print DSTF $_ while(<SRCF>);
+    close(DSTF); close(SRCF);
+  }
+  open(FONT, "<$tfil");
+  $data = join('', <FONT>);
+  close(FONT);
+  unlink($tfil);
+  if   ($ftyp eq "psf")    { $hdsz =  4; $coff =  3; } 
+  elsif($ftyp =~ /\.com$/) { $hdsz = 99; $coff = 50; }
+  if($hdsz) {
+    @tdat = unpack("C$hdsz", $data); # just get header
+    substr($data, 0, $hdsz, ""); # remove header from data stream
+    # get charhite offset... 0x36, 0x04, 0x00, charhite  in 4-byte psf header
+    $chit = $tdat[$coff] || -1;
+  } else { 
+    $chit = int(length($data) / 256) || -1; # obtain char hite if no header
+  } 
+  $dsiz = $chit * 256;
+  @tdat = unpack("C$dsiz", $data); # get rest of char data
+  for(my $h = 0; $h < 256; $h++) {
+    for(my $i = 0; $i < $chit; $i++) {
+      for(my $j = 0; $j < 8; $j++) {
+        $bakf[$h][$i][$j] = $fdat[$h][$i][$j] = 0;
+        $bakf[$h][$i][$j] = $fdat[$h][$i][$j] = 1 if($tdat[($h*$chit)+$i] & (2**(7-$j)));
+      }
+    }
+  }
+  UpdtFont() unless($ftyp eq "psf");
+}
+
+sub UpdtFont { # Update the current system font with FPal's font
+  my $rowd;
+  open(FONT, ">$tfil");
+  print FONT chr(54), chr(4), chr(0), chr($chit); # .psf header
+  for(my $i = 0; $i < 256; $i++) {
+    for(my $j = 0; $j < $chit; $j++) {
+      $rowd = 0;
+      for(my $k = 0; $k < 8; $k++) {
+        $rowd |= 2**(7-$k) if($fdat[$i][$j][$k]);
+      }
+      print FONT chr($rowd);
+    }
+  }
+  close(FONT);
+  printf("\e(U\e(K"); # This forces the whole font to load on the next line.
+  system("$sfon $tfil");
+  unlink($tfil);
+}
+
+sub SaveFP { # Write both Font && Pal to a disk file
+  my $clnm = shift;
+  $svfl = $clnm if(defined $clnm && length $clnm);
+  $svfl =~ s/\.fp[fp]?$/\.fp/i;
+  $svfl = Prmt('titl' => 'Please enter the filename to save your FONT && PAL to:', $svfl);
+  $svfl =~ s/\.fp[fp]?$//i; $svfl .= ".fp";
+  SaveFPP($svfl);
+  SaveFPF($svfl);
+}
+
+sub SaveFPP { # Write the current FPal Pal to a disk file
+  my $clnm = shift;
+  if(defined $clnm && length $clnm) {
+    $svfl = $clnm;
+  } else {
+    $svfl =~ s/\.fp[fp]?$/\.fpp/i;
+    $svfl = Prmt('titl' => 'Please enter the filename to save your PAL to:', 
+                 $svfl);
+    $svfl =~ s/\.fp[fp]?$//i; $svfl .= ".fpp";
+  }
+  open(FPFL, ">$svfl");
+  print FPFL "#!/bin/sh\n";
+  print FPFL "# ", `pt`," - fpal v$mjvr.$mnvr.$ptvr generated this file.\n";
+  print FPFL "#   Please see \`fpal --help\` or \`man fpal\` for usage details.\n";
+  print FPFL "#   Below are bass64 triplets (RGB) for each of the 16 main palette entries.\n";
+  print FPFL "fpal";
+  for(my $i = 0; $i < 16; $i++) {
+    print FPFL " ", @{$pdat[$i]};
+#    for(my $j = 0; $j < 3; $j++) { print FPFL $pdat[$i][$j]; }
+  }
+  print FPFL "\n";
+  close(FPFL);
+  chmod(0755, $svfl);
+}
+
+sub SaveFPF { # Write the current FPal Font to a disk file
+  my $clnm = shift;
+  if(defined $clnm && length $clnm && -e $clnm) {
+    $svfl = $clnm;
+    open(FPFL, ">>$clnm");
+  } else {
+    $svfl =~ s/\.fp[fp]?$/\.fpf/i;
+    $svfl = Prmt('titl' => 'Please enter the filename to save your FONT to:', 
+                 $svfl);
+    $svfl =~ s/\.fp[fp]?$//i; $svfl .= ".fpf";
+    open(FPFL, ">$svfl");
+    print FPFL "#!/bin/sh\n";
+    print FPFL "# ", `pt`," - fpal v$mjvr.$mnvr.$ptvr generated this file.\n";
+    print FPFL "#   Please see \`fpal --help\` or \`man fpal\` for usage details.\n";
+  }
+  print FPFL "#   Below are bass64 ascii numbers followed by corresponding character maps.\n";
+  print FPFL "fpal \"\n";
+  for(my $i = 0; $i < 256; $i++) {
+    printf FPFL "%02s\n", b64($i);
+    for(my $j = 0; $j < $chit; $j++) {
+      for(my $k = 0; $k < 8; $k++) {
+        $fdat[$i][$j][$k] ? print FPFL $true : print FPFL $fals;
+      }
+      print FPFL "\n";
+    }
+  }
+  print FPFL "\"";
+  close(FPFL);
+  chmod(0755, $svfl);
+}
+
+sub CalcMxCn { # Calculate which color pairs have the Maximum Contrast possible
+  my %sumz = (); my @ordr = (); my $skey;
+  if($dync) {
+    for(my $i = 0; $i < 16; $i++) {
+      $skey = sprintf("%03d", (b10($pdat[$i][0]) + b10($pdat[$i][1]) + b10($pdat[$i][2])));
+      $sumz{$skey} = $i;
+    }
+    @ordr = sort(keys(%sumz));
+    if(@cprz < 4 ||
+       $cprz[0] ne $clut[$sumz{$ordr[$#ordr]}  ] . $clut[$sumz{$ordr[0]}] ||
+       $cprz[1] ne $clut[$sumz{$ordr[7]}       ] . $clut[$sumz{$ordr[4]}] ||
+       $cprz[2] ne $clut[$sumz{$ordr[$#ordr-1]}] . $clut[$sumz{$ordr[1]}] ||
+       $cprz[3] ne $clut[$sumz{$ordr[$#ordr-2]}] . $clut[$sumz{$ordr[2]}]) {
+      $cprz[0] = $clut[$sumz{$ordr[$#ordr]}  ] . $clut[$sumz{$ordr[0]}];
+      $cprz[1] = $clut[$sumz{$ordr[7]}       ] . $clut[$sumz{$ordr[4]}];
+      $cprz[2] = $clut[$sumz{$ordr[$#ordr-1]}] . $clut[$sumz{$ordr[1]}];
+      $cprz[3] = $clut[$sumz{$ordr[$#ordr-2]}] . $clut[$sumz{$ordr[2]}];
+      DrawScrn();
+    }
+  } else {
+    if(@cprz < 4 ||
+       $cprz[0] ne 'Wb' ||
+       $cprz[1] ne 'wu' ||
+       $cprz[2] ne 'Cr' ||
+       $cprz[3] ne 'Pg') {
+      $cprz[0] = 'Wb'; 
+      $cprz[1] = 'wu';
+      $cprz[2] = 'Cr';
+      $cprz[3] = 'Yg'; # 'Pg'
+      DrawScrn();
+    }
+  }
+}
+
+sub DrawTBar {
+  my $text = " fpal ";
+  my $colr = "Gb" x length($text);
+  $text .= "v$mjvr.$mnvr.$ptvr - by $auth ";
+  $colr .= 'WuYbWuCbWu' . ptcc('k') . ';  Ub  WuWu  ' . 
+           'Cu' x 3 . '  ' . 'Cu' x 6 . '  ' . 'Wu' . 
+           'Gb' x 3 . 'Wu' . 'Yb' x 4 . 'Wu' . 'Cb' x 3 . 'Wu';
+  $colr .= 'bb' x ((length($text) * 2) - length($colr));
+  $text .= ' '  x ($widt - length($text));
+  $colr .= 'Cb' x ((length($text) * 2) - length($colr));
+  $main->Prnt('text' => $text, 'colr' => $colr, 'ycrs' => 0, 'xcrs' => 0);
+  DrawPTim();
+}
+
+sub DrawPTim {
+  my $text = pt;
+  $main->Prnt('text' => $text, 'colr' => 'RbobYbGuCuUuPb', 
+              'ycrs' => 0, 'xcrs' => $widt - length($text) - 1);
+}
+
+# € ﬂ ‹ › ﬁ 
+sub DrawCEdt { # Draws Character Editor or file Chooser if($chos)
+  my @escr = (); my @eclr = (); my $titl; my ($i, $j);
+  my $posi = 1;# Edt position(y-val)
+  my $ctwd = 32; $ctwd = 16 if($sqtb);
+  for($i = 0; $i < int(($scal * $chit) / 2); $i++) { # init Editor bkgrnd
+    $escr[$i] = ' '      x ($wscl * 8);    #   w/ solid blank spaces
+    $eclr[$i] = $chcl[0] x ($wscl * 8);    #   && secondary color pairs
+  }
+# 2do: put chooser colors into @chcl
+  if($chos) { # Chooser
+    $i = 0; 
+#my $chos = 0; my $choi = 0; my $chof = 0; my $chom = 0;
+# chooser, choice index, choice offset, choice mode
+    foreach(glob("/usr/share/consolefonts/*")) {
+      if(-r $_) {
+        if(-d $_ && -x $_) { # directory to include
+          s/.*\/(.+\/?)$/$1/;
+          if(length($_) > ($wscl * 8)) {
+            substr($_, ($wscl * 8), length($_), '');
+          }
+          $escr[$i] = $_;
+          $eclr[$i++] = 'Ub' x ($wscl * 8);
+# bleh etfp can't change video modes =(
+        } elsif(/x$chit\.(fp[fp]?|psf(\.gz)?|fnt|com)$/) { # file to include
+          if($i == $choi) {
+            system("fpal -x -l $_");
+            LoadPale(); LoadFont(); InitScal(); UpdtFont(); CalcMxCn();
+            $eclr[$i] = 'Cp' x ($wscl * 8);
+          } else {
+            $eclr[$i] = 'Gb' x ($wscl * 8);
+          }
+          s/.*\/(.+)\.(fp[fp]?|psf(\.gz)?|fnt|com)$/$1/; # strip path && extn
+          if(length($_) > ($wscl * 8)) {
+            substr($_, ($wscl * 8), length($_), '');
+          }
+          $escr[$i] = $_;
+          $i++;
+        }
+        if($i == 1 && length($escr[0]) < ($wscl * 8)) {
+          $escr[0] .= ' ' x (($wscl * 8) - length($escr[0]));
+        }
+      }
+      last if($i >= ($hite - 8)); #8 int(($scal * $chit) / 2)); 
+    }
+  } else {    # Editor
+    for($i = 0; $i < ($scal * $chit); $i++) {
+      for($j = 0; $j < 8; $j++) {
+        if(int($i / $scal) == $fedy && $j == $fedx) { # halfblock in the cursor
+          if($scal % 2 && (($i - $scal + 1) % ($scal * 2)) < 2) { # odd scal && i halfblock to split
+            if((($i - $scal + 1) % ($scal * 2))) { # high side
+              if(substr($escr[int($i/2)], $j*$wscl, 1) eq $cech[1]) {
+                if($fdat[($ftby*$ctwd)+$ftbx][int($i/$scal)][$j]) { # CursorOn
+                  substr($eclr[int($i/2)], $j*$wscl*2, $wscl*2,$chcl[3]x$wscl);
+                } else {
+                  substr($eclr[int($i/2)], $j*$wscl*2, $wscl*2,$chcl[1]x$wscl);
+                }
+              } else {
+                if($fdat[($ftby*$ctwd)+$ftbx][int($i/$scal)][$j]) { # CursorOn
+                  substr($eclr[int($i/2)], $j*$wscl*2, $wscl*2,$chcl[4]x$wscl);
+                } else {
+                  substr($eclr[int($i/2)], $j*$wscl*2, $wscl*2,$chcl[2]x$wscl);
+                }
+              }
+              substr($escr[int($i/2)], $j*$wscl, $wscl,       $cech[2] x$wscl);
+            } else {
+              if(substr($escr[int($i/2)], $j*$wscl, 1) eq $cech[2]) {
+                if($fdat[($ftby*$ctwd)+$ftbx][int($i/$scal)][$j]) { # CursorOn
+                  substr($eclr[int($i/2)], $j*$wscl*2, $wscl*2,$chcl[3]x$wscl);
+                } else {
+                  substr($eclr[int($i/2)], $j*$wscl*2, $wscl*2,$chcl[1]x$wscl);
+                }
+              } else {
+                if($fdat[($ftby*$ctwd)+$ftbx][int($i/$scal)][$j]) { # CursorOn
+                  substr($eclr[int($i/2)], $j*$wscl*2, $wscl*2,$chcl[4]x$wscl);
+                } else {
+                  substr($eclr[int($i/2)], $j*$wscl*2, $wscl*2,$chcl[2]x$wscl);
+                }
+              }
+              substr($escr[int($i/2)], $j*$wscl, $wscl,       $cech[1] x$wscl);
+            }
+          } else {
+            substr($escr[int($i/2)], $j*$wscl, $wscl,     $cech[0] x $wscl);
+            if($fdat[($ftby*$ctwd)+$ftbx][int($i/$scal)][$j]) { # CursorOn
+              substr($eclr[int($i/2)], $j*$wscl*2, $wscl*2, $chcl[4] x $wscl);
+            } else {
+              substr($eclr[int($i/2)], $j*$wscl*2, $wscl*2, $chcl[2] x $wscl);
+            }
+          }
+        } elsif($fdat[($ftby*$ctwd)+$ftbx][int($i/$scal)][$j]) { # non-cursor,OnBlok
+          if($scal % 2 && (($i - $scal + 1) % ($scal * 2)) < 2) { # odd scal && i halfblock to split
+            if((($i - $scal + 1) % ($scal * 2))) { # high side
+              if(substr($escr[int($i/2)], $j*$wscl, 1) eq $cech[1]) { # if on
+                if     (substr($eclr[int($i/2)], $j*$wscl*2, 2) eq $chcl[2]) {
+                  substr($eclr[int($i/2)], $j*$wscl*2, $wscl*2,$chcl[1]x$wscl);
+                } elsif(substr($eclr[int($i/2)], $j*$wscl*2, 2) eq $chcl[4]) {
+                  substr($eclr[int($i/2)], $j*$wscl*2, $wscl*2,$chcl[3]x$wscl);
+                } else {
+                  substr($escr[int($i/2)], $j*$wscl, $wscl, $cech[0] x $wscl);
+                }
+              } else {
+                substr($escr[int($i/2)], $j*$wscl, $wscl, $cech[2] x $wscl);
+              }
+            } else {
+#  $main->Mesg("i/2:" . int($i/2) . " escr:" . sprintf("%8s", $escr[int($i/2)]) . " j:$j cech:$cech[1]") if(!defined $escr[int($i/2)]);
+              substr($escr[int($i/2)], $j*$wscl, $wscl, $cech[1] x $wscl);
+            }
+          } else {#if(int($i / $scal) * 2 == ($i / $scal) * 2) {
+            substr($escr[int($i/2)], $j*$wscl, $wscl, $cech[0] x $wscl);
+          }
+        }
+      }
+    }
+  }
+  if($chos) { $titl = 'File Chooser'; }
+  else      { $titl = 'Font Editor';  }
+  if(defined($ehnd)) {
+    $ehnd->Text(\@escr);
+    $ehnd->Colr(\@eclr);
+  } else {
+    if(!$fpmd && !$focu) { 
+  #    $ehnd = DrwW(\@escr, \@eclr, $posi, 0, $titl, -1, -1, $cprz[0]);
+      $ehnd = Curses::Simp->new('text' => \@escr, 'colr' => \@eclr, 
+                                'yoff' => $posi,  'xoff' => 0, 
+                                'titl' => $titl,
+                                'flagmaxi' => 0,
+                                'flagcntr' => 0);
+    } else { 
+  #    $ehnd = DrwW(\@escr, \@eclr, $posi, 0, $titl, -1, -1, $cprz[1]);
+      $ehnd = Curses::Simp->new('text' => \@escr, 'colr' => \@eclr, 
+                                'yoff' => $posi,  'xoff' => 0, 
+                                'titl' => $titl,
+                                'flagmaxi' => 0,
+                                'flagcntr' => 0);
+    }
+  }
+  DrawStat();
+}
+
+sub DrawCTbl {
+  my $posi = ($wscl * 8) + 2; # 2 - Editor Width Border
+  my $ctrw = 8;  $ctrw = 16 if($sqtb);
+  my $ctcl = 32; $ctcl = 16 if($sqtb);
+  my $char; my $blkc;
+  unless(@tscr) {
+    if($sqtb) {
+      @tscr = ( ' 	' . chr(10) . '',
+                '',
+                ' !"#$%&\'()*+,-./',
+                '0123456789:;<=>?',
+                '@ABCDEFGHIJKLMNO',
+                'PQRSTUVWXYZ[\\]^_',
+                '`abcdefghijklmno',
+                'pqrstuvwxyz{|}~',
+                'ÄÅÇÉÑÖÜáàâäãåçéè',
+                'êëíìîïñóòôöõúùûü',
+                '†°¢£§•¶ß®©™´¨≠ÆØ',
+                '∞±≤≥¥µ∂∑∏π∫ªºΩæø',
+                '¿¡¬√ƒ≈∆«»… ÀÃÕŒœ',
+                '–—“”‘’÷◊ÿŸ⁄€‹›ﬁﬂ',
+                '‡·‚„‰ÂÊÁËÈÍÎÏÌÓÔ',
+                'ÒÚÛÙıˆ˜¯˘˙˚¸˝˛ˇ');
+    } else {
+      @tscr = ( ' 	' . chr(10) . '',
+                ' !"#$%&\'()*+,-./0123456789:;<=>?',
+                '@ABCDEFGHIJKLMNOPQRSTUVWXYZ[\\]^_',
+                '`abcdefghijklmnopqrstuvwxyz{|}~',
+                'ÄÅÇÉÑÖÜáàâäãåçéèêëíìîïñóòôöõúùûü',
+                '†°¢£§•¶ß®©™´¨≠ÆØ∞±≤≥¥µ∂∑∏π∫ªºΩæø',
+                '¿¡¬√ƒ≈∆«»… ÀÃÕŒœ–—“”‘’÷◊ÿŸ⁄€‹›ﬁﬂ',
+                '‡·‚„‰ÂÊÁËÈÍÎÏÌÓÔÒÚÛÙıˆ˜¯˘˙˚¸˝˛ˇ');
+    }
+  }
+  for(my $i = 0; $i < $ctrw; $i++) {
+    for(my $j = 0; $j < $ctcl; $j++) {
+      if($sqtb) { $char = (int($i / 4) * int($ctrw / 4)) + $j; }
+      else      { $char = (int($i / 4) *     $ctrw     ) + $j; }
+      $blkc = $clut[$char] . 'b';
+      $cclr[$i] .= $blkc x 4;
+    }
+    if($chnd) { $tclr[$i] = $chcl[5] x $ctcl; }
+    else      { $tclr[$i] = $cprz[1] x $ctcl; }
+  }
+  if($chnd) { substr($tclr[$ftby], ($ftbx * 2), 2, $chcl[6]); }
+  else      { substr($tclr[$ftby], ($ftbx * 2), 2, $cprz[0]); }
+  if(defined($thnd)) {
+    $thnd->Text(\@tscr);
+    if($focu) { $thnd->Colr(\@cclr); }
+    else      { $thnd->Colr(\@tclr); }
+  } else {
+    if(!$fpmd) { 
+      if($focu) { 
+  #      $thnd = DrwW(\@tscr, \@tclr, 1, $posi, "Font Table", -1, -1, $cprz[0]); 
+        $thnd = Curses::Simp->new('text' => \@tscr, 'colr' => \@tclr, 
+                                  'yoff' => 1, 'xoff' => $posi, 
+                                  'titl' => 'Font Table',
+                                  'flagmaxi' => 0,
+                                  'flagcntr' => 0); 
+      } else { 
+  #      $thnd = DrwW(\@tscr, \@tclr, 1, $posi, "Font Table", -1, -1, $cprz[1]); 
+        $thnd = Curses::Simp->new('text' => \@tscr, 'colr' => \@tclr, 
+                                  'yoff' => 1, 'xoff' => $posi, 
+                                  'titl' => 'Font Table',
+                                  'flagmaxi' => 0,
+                                  'flagcntr' => 0); 
+      }
+    } else { 
+  #    $thnd = DrwW(\@tscr, \@cclr, 1, $posi, "Font Table", -1, -1, $cprz[1]); 
+      $thnd = Curses::Simp->new('text' => \@tscr, 'colr' => \@cclr, 
+                                'yoff' => 1, 'xoff' => $posi, 
+                                'titl' => 'Font Table',
+                                'flagmaxi' => 0,
+                                'flagcntr' => 0); 
+    }
+  }
+  DrawCEdt();
+}
+
+sub DrawStat {
+#  if($sqtb) { if(defined $shnd) { DelW($shnd); $shnd = undef; } return; } 
+  my @sscr = (); my @sclr = ();
+  my $mxwd = 26; # max allowable text width for stat window for 80x25
+  my $posi = $widt - $mxwd - 2; # stick it directly in upper right corner
+  my $text;
+  for(my $i = 0; $i < 8; $i++) {
+    for(my $j = 0; $j < ($widt - $posi - 2); $j++) { # in 80x25,StatWindWidt=18
+      $sscr[$i] .= ' ';#chr(rand(256));
+      $sclr[$i] .= 'Cb';
+    }
+  }
+  $text = "Mode/Focus: ";
+  if(!$fpmd) { 
+    $text .= "Font/";
+    if(!$focu) { $text .= "Editor"; }
+    else       { $text .= "Table";  }
+  } else {
+    $text .= "Pal/";
+    if(!$focu) { $text .= "Value Bars"; }
+    else       { $text .= "Blocks";     }
+  }
+  $sscr[0] = $text;
+  if(!$fpmd) { $text = " p"; }
+  else       { $text = " f"; }
+  $text .= "/Tab - chng Mode/Focus";
+  $sscr[1] = $text;
+  $text = " arrows - ";
+  if(!$fpmd) { 
+    if(!$focu) { $text .= "move cursor";      }
+    else       { $text .= "change character"; }
+  } else {
+    if(!$focu) { $text .= "move slider";      }
+    else       { $text .= "change color"; }
+  }
+  $sscr[2] = $text;
+  if($sqtb) { $temp = ($ftby * 16) + $ftbx; }
+  else      { $temp = ($ftby * 32) + $ftbx; }
+  if(!$fpmd) { 
+    $text = sprintf("Char b64:%02s hex:%02s oct:%03d", b64($temp), hex($temp), cnv($temp,10,8));
+  } else {
+    $text = " ";
+  }
+  $sscr[3] = $text;
+  if(!$fpmd) { 
+    $text = sprintf(" %03d %08db  x:%-2d y:$ftby", $temp, cnv($temp,10,2), $ftbx);
+  } else {
+    $text = " rgb - Red/Green/Blue Bar";
+  }
+  $sscr[4] = $text;
+  if(!$fpmd) { 
+    $text = "Cursor          x:$fedx  y:$fedy";
+  } else {
+    if(!$focu) { $text = " Bar:" . $bnmz[$chan]; }
+    else       { $text = " Block:" . b64($blok) . "   ColorLetter:" . $clut[$blok]; }
+  }
+  $sscr[5] = $text;
+  $text = " ";
+  if(!$fpmd) {
+    if(!$focu) { 
+      $text .= "lock Mode: ";
+      if   ($clok == 0) { $text .= "normal(toggle)"; }
+      elsif($clok == 1) { $text .= "always on"; }
+      else              { $text .= "always off"; }
+    }
+  } else {
+    $text = sprintf("  R:%s %02d  G:%s %02d  B:%s %02d",
+                    $pdat[$blok][0], b10($pdat[$blok][0]),
+                    $pdat[$blok][1], b10($pdat[$blok][1]),
+                    $pdat[$blok][2], b10($pdat[$blok][2]));
+  }
+  $sscr[6] = $text;
+  $text = "? - Help,S - Save,x - eXit";
+  $sscr[7] = $text;
+  for(my $i = 0; $i < @sscr; $i++) { # trim lines to max width size
+    if(length($sscr[$i]) > $mxwd) { $sscr[$i] = substr($sscr[$i], 0, $mxwd); }
+  }
+#  $shnd = DrwW(\@sscr, \@sclr, 1, $posi, "Status Area", -1, -1, 'Yb');
+  if(defined($shnd)) {
+    $shnd->Text(\@sscr);
+    $shnd->Colr(\@sclr);
+  } else {
+    $shnd = Curses::Simp->new('text' => \@sscr, 'colr' => \@sclr, 
+                              'yoff' => 1,      'xoff' => $posi, 
+                              'titl' => 'Status Area',
+                              'flagmaxi' => 0,
+                              'flagcntr' => 0)
+  }
+}
+
+sub DrawBlox {
+  my @xscr = (); my @xclr = ();
+  my $posi = ($wscl * 8) + 2; # 2 - Editor Width Border
+  $posi += 20 if($sqtb); # 18 SquareCharTable, 2 my Border
+  my $pbrw = 2; $pbrw = 4 if($sqtb);
+  my $pbcl = 8; $pbcl = 4 if($sqtb);
+  my $bwid = int(($widt - $posi) / $pbcl);
+  my $bhit; my $indx; my $colr; my $bdat;
+  my $posy; my $posx;
+  for(my $i = 0; $i < $pbrw; $i++) {   # both rows of blox
+    for(my $j = 0; $j < $pbcl; $j++) { # 8 columns of blox
+      $indx = ($i * $pbcl) + $j;
+      $colr = $clut[$indx]; $colr .= 'b';
+#      $bhit = int(($hite - 17) / 2); # for no border
+      $bhit = int(($hite - 19) / $pbrw);  # for border
+      $bhit = int(($hite - 7) / $pbrw) if($sqtb); # for border
+      for(my $k = 0; $k < $bhit; $k++) { # each blok height
+        if     (0){#!$k) {
+          $xscr[($i * $bhit) + $k] .= " "      x $bwid;
+          $xclr[($i * $bhit) + $k] .= $colr    x $bwid; 
+        } elsif($k < ($bhit - 2)) {
+          $xscr[($i * $bhit) + $k] .= $cech[0] x $bwid;
+          $xclr[($i * $bhit) + $k] .= $colr    x $bwid; 
+        } else {
+          $bdat = " " x $bwid;
+          if($bwid < 8) {
+            if     ($k == ($bhit - 2)) { # add blok index to bdat
+              substr($bdat, (int(($bwid+1) / 2) - 2), 3, b64($indx) . " " . $clut[$indx]);
+            } elsif($k == ($bhit - 1)) { # add blok color values to bdat
+              substr($bdat, (int(($bwid+1) / 2) - 2), 3, join('', @{$pdat[$indx]}));
+              $pvly[$indx] = ($i * $bhit) + $k + 1;
+              $pvlx[$indx] = ($j * $bwid) + int(($bwid+1) / 2) - 1;
+            }
+            if($fpmd && $indx == $blok) { 
+              $xclr[($i * $bhit) + $k] .= $cprz[0] x $bwid; 
+            } else { 
+              $xclr[($i * $bhit) + $k] .= $cprz[1] x $bwid; 
+            }
+          } else {
+            if     ($k == ($bhit - 2)) { # add blok index to bdat
+              $bdat = $cech[0]   x $bwid;
+              $xclr[($i * $bhit) + $k] .= $colr x $bwid; 
+            } elsif($k == ($bhit - 1)) { # add blok color values to bdat
+              substr($bdat, (int(($bwid+1) / 2) - 4), 3, b64($indx) . " " . $clut[$indx]);
+              substr($bdat, (int(($bwid+1) / 2)    ), 3, join('', @{$pdat[$indx]}));
+              $pvly[$indx] = ($i * $bhit) + $k + 1;
+              $pvlx[$indx] = ($j * $bwid) + int(($bwid+1) / 2);
+              if($fpmd && $indx == $blok) { 
+                $xclr[($i * $bhit) + $k] .= $cprz[0] x $bwid; 
+              } else { 
+                $xclr[($i * $bhit) + $k] .= $cprz[1] x $bwid; 
+              }
+            }
+          }
+          $xscr[($i * $bhit) + $k] .= $bdat;
+        }
+      }
+    }
+  }
+  $posy = $hite - 5 - @xscr - 2;
+  $posx = $widt - (length($xscr[0]) + 2);
+  for(my $i = 0; $i < @pvly; $i++) { $pvly[$i] += $posy; $pvlx[$i] += $posx; }
+  if(defined($xhnd)) {
+    $xhnd->Text(\@xscr);
+    $xhnd->Colr(\@xclr);
+  } else {
+    if($fpmd && $focu) { 
+#      $xhnd = DrwW(\@xscr, \@xclr, $posy, $posx, "Pal Blocks", -1, -1, $cprz[0]); 
+      $xhnd = Curses::Simp->new('text' => \@xscr, 'colr' => \@xclr, 
+                                'yoff' => $posy,  'xoff' => $posx, 
+                                'titl' => 'Pal Blocks',
+                                'flagmaxi' => 0,
+                                'flagcntr' => 0);
+    } else { 
+#      $xhnd = DrwW(\@xscr, \@xclr, $posy, $posx, "Pal Blocks", -1, -1, $cprz[1]); 
+      $xhnd = Curses::Simp->new('text' => \@xscr, 'colr' => \@xclr, 
+                                'yoff' => $posy,  'xoff' => $posx, 
+                                'titl' => 'Pal Blocks',
+                                'flagmaxi' => 0,
+                                'flagcntr' => 0);
+    }
+  }
+  DrawBarz();
+}
+
+sub DrawBarz {
+  my @bscr = (); my @bclr = (); my $sldr = 0;
+  for(my $i = 0; $i < @bnmz; $i++) {
+    if($i == $chan) {
+      push(@bscr, "=" x ($widt - 2));
+      substr($bscr[$#bscr],  0, 4, '{' . $bnmz[$i]);
+      substr($bscr[$#bscr], (int(($widt - 2) / 2) - 2), 1, $pdat[$blok][$i]);
+      substr($bscr[$#bscr], -4, 4, $bnmz[$i] . '}');
+      push(@bclr, $bclz[$i] x length($bscr[$#bscr]));
+      $sldr = int(b10($pdat[$blok][$i]) / 63.0 * ($widt-3));
+      substr($bscr[$#bscr], $sldr, 1, 'I');
+      substr($bclr[$#bclr], ($sldr * 2), 2, 'Wb');
+    } else {
+      push(@bscr, "-" x ($widt - 2));
+      substr($bscr[$#bscr],  0, 4, '[' . $bnmz[$i]);
+      substr($bscr[$#bscr], (int(($widt - 2) / 2) - 2), 1, $pdat[$blok][$i]);
+      substr($bscr[$#bscr], -4, 4, $bnmz[$i] . ']');
+      push(@bclr, $bclz[$i] x length($bscr[$#bscr]));
+      $sldr = int(b10($pdat[$blok][$i]) / 63.0 * ($widt-3));
+      substr($bscr[$#bscr], $sldr, 1, '|');
+      substr($bclr[$#bclr], ($sldr * 2), 2, 'wp');
+    }
+  }
+  if(defined($bhnd)) {
+    $bhnd->Text(\@bscr);
+    $bhnd->Colr(\@bclr);
+  } else {
+    if($fpmd && !$focu) { 
+#      $bhnd = DrwW(\@bscr,\@bclr,($hite - 5),0,"Pal Value Bars",-1,-1,$cprz[0]);
+      $bhnd = Curses::Simp->new('text' => \@bscr, 'colr' => \@bclr,
+                                'yoff' => ($hite - 5), 'xoff' => 0,
+                                'titl' => 'Pal Value Bars',
+                                'flagmaxi' => 0,
+                                'flagcntr' => 0);
+    } else { 
+#      $bhnd = DrwW(\@bscr,\@bclr,($hite - 5),0,"Pal Value Bars",-1,-1,$cprz[1]);
+      $bhnd = Curses::Simp->new('text' => \@bscr, 'colr' => \@bclr,
+                                'yoff' => ($hite - 5), 'xoff' => 0,
+                                'titl' => 'Pal Value Bars',
+                                'flagmaxi' => 0,
+                                'flagcntr' => 0);
+    }
+  }
+  DrawStat();
+}
+
+sub BuildFnt { # builds default core box / line character maps
+  my $i; my $j;
+  my @bchz = ( 32, 195, 197, 198, 199, 201, 202, 204, 205, 219, 220, 223 );
+#    single bars below are in lat fonts, tektite has diff map
+#     32 space
+#    195 up/rt/dn T (ack or sometimes up/rt turn?)
+#    197 up/dn bar (133,179?)
+#    198 dn/rt turn
+#    199 up/rt/dn T
+#    201 up/lt turn
+#    202 lt/rt bar
+#    204 dn/lt turn
+#    205 lt/up/dn T
+#    219 solid
+#    220 bottom half on
+#    223 top half
+  for($i=0; $i<$chit; $i++) { for($j=0; $j<8; $j++) {
+    $fdat[$_][$i][$j] = 0 foreach(@bchz); # blank all core chars
+    $fdat[219][$i][$j] = 1;                             # mk solid block
+    if($i < int($chit / 2)) { $fdat[223][$i][$j] = 1; } #  && upper /
+    else                    { $fdat[220][$i][$j] = 1; } #   lower half blocks
+  } }
+  for($i=0; $i<$chit; $i++) { # all up/dn single bars
+    if($i < int($chit / 2)) { foreach(195, 197, 199, 201, 205) {
+      $fdat[$_][$i][3] = 1; $fdat[$_][$i][4] = 1;
+    } } else                { foreach(195, 197, 198, 199, 204, 205) {
+      $fdat[$_][$i][3] = 1; $fdat[$_][$i][4] = 1;
+    } }
+  }
+  for($j=0; $j<8; $j++) {     # all lt/rt single bars
+    if($j < 4) { foreach(201, 202, 204, 205) {
+      $fdat[$_][int($chit / 2)][$j] = 1; 
+    } } else   { foreach(195, 198, 199, 202) {
+      $fdat[$_][int($chit / 2)][$j] = 1; 
+    } }
+  }
+  foreach(195, 201) { # 195,201 special extra pixels needed for square edge
+    $fdat[$_][int($chit / 2)][3] = 1;
+    $fdat[$_][int($chit / 2)][4] = 1;
+  }
+  UpdtFont();
+  DrawCEdt();
+}
+
+sub ChngBarz {
+  DrawBlox();
+  system("$spal $blok " . (b10($pdat[$blok][0]) * 4) . " " . 
+                          (b10($pdat[$blok][1]) * 4) . " " . 
+                          (b10($pdat[$blok][2]) * 4));
+  CalcMxCn();
+}
+
+sub InitScal { # init some window dimensions (after current sys $chit loaded)
+  $avai = $hite - 8; # 1:TitleBar above,5:RGBBars below,2:EditorHite Border
+  $scal = $wscl = int($avai / ($chit / 2)); #scal = how many halfhighblocks fit
+  if   ($chit <= 10) { $wscl = int($wscl     / 2); }
+  elsif($chit <= 14) { $wscl = int($wscl * 3 / 4); }
+  if($sqtb) { $wscl = int(($widt - 48) / 8) if($wscl >= (($widt - 48) / 8)); } # 28Stat,18CTbl,2 Edt Border
+  else      { $wscl = int(($widt - 64) / 8) if($wscl >= (($widt - 64) / 8)); } # 28Stat,34CTbl,2 Edt Border
+  $scal = ($wscl * 3) if($scal > ($wscl * 3));
+  #$main->Mesg("chit:$chit scal:$scal wscl:$wscl");
+}
+
+sub CharEdit { # change the state of a character map pixel
+  my $type = shift || 0;
+  if     ($type == 0) { # toggle
+    if($sqtb) { $fdat[($ftby*16)+$ftbx][$fedy][$fedx] ^= 1; }
+    else      { $fdat[($ftby*32)+$ftbx][$fedy][$fedx] ^= 1; }
+  } elsif($type ==  1) { # on
+    if($sqtb) { $fdat[($ftby*16)+$ftbx][$fedy][$fedx]  = 1; }
+    else      { $fdat[($ftby*32)+$ftbx][$fedy][$fedx]  = 1; }
+  } else               { # off
+    if($sqtb) { $fdat[($ftby*16)+$ftbx][$fedy][$fedx]  = 0; }
+    else      { $fdat[($ftby*32)+$ftbx][$fedy][$fedx]  = 0; }
+  }
+  DrawCEdt(); UpdtFont(); DrawCTbl();
+}
+
+sub ShowInfo {
+  $main->Mesg(
+    'titl' => "$name Help Screen",
+    'mesg' => 
+" FPal v$mjvr.$mnvr.$ptvr - by $auth
+ 
+FPal was inspired primarily by two programs:
+  0) Fonter written by Chris Monahan
+   && 
+  1) BaTpal written by Beppu\@CPAN && Tigger (me) back for 4Dos batch =) 
+ 
+ Shout out to Keith && all the LBox.Org crew.  Thanks to Beppu-san for 
+perusing this code for me too.  I hope FPal is useful to you.  Please
+don't hesitate to let me know if you app-ree-see-ate it or if you'd like
+me to add something for you.  I'd be glad to improve it given new 
+suggestions.  Please support FSF.Org && EFF.Org.  Thanks.  TTFN.
+ 
+                                                       -Pip
+",
+);
+}
+
+sub ShowHelp {
+  $main->Mesg(
+    'titl' => "$name Help Screen",
+    'mesg' => 
+"                                Global Keys:
+f     - edit Fonts                   :  p     - edit Pals
+n     - Next mode (toggle Font/Pal)
+F/Tab - switch Focus                 :  Enter - jump to Editor
+Arrows / hjkl / Home End PgUp PgDn            - select/move
+L     - Load fonts or pals           :  s/S   - save all / Save current mode
+c     - quick font/pal file loading Chooser
+w     - toggle Wrap mode             :  d     - toggle Draw square mode
+e     - Erase current character      :  i     - Inverse current character
+y     - flip pixels on X-axis(up/dn) :  Y     - flip pixels on Y-axis(lt/rt)
+A     - smudge across  X-axis(up/dn) :  Z     - smudge across  Y-axis(lt/rt)
+C     - Copy char to clipboard       :  P     - Paste from clipboard
+O     - cycle font cOlor set         :  D     - toggle Dynamic Color mode
+r     - Restore current character    :  R     - restore whole Original font
+0..9  - jump to proportional areas   :  u     - toggle pt Update mode
+/ (followed by another character) - jump to char that followed
+ 
+                           Font Editor/Table Keys:
+M       - rotate draw lock Mode      :  B     - Build core Box / line chars
+*note* hjkl move the char map instead of the cursor when the Editor has focus 
+ 
+                            Pal Blocks/Bars Keys:
+r/g/b   - jump to RGB Bars
+ 
+                                System Stuff:
+               ?/H/F1  - Help  :  I - Info  :  x/q/Esc - eXit
+",
+);
+}
+
+sub IdlSleep {
+  ($idle++ <= 255) ? $main->Wait(0.15)  : $main->Wait(0.63); 
+#  ($idle++ <= 255) ? $main->Wait(63)  : $main->Wait(127); # mildly responsive, heavy on cpu
+#  ($idle++ <= 255) ? $main->Wait(255) : $main->Wait(2047); # more sluggish, light cpu load
+}
+
+sub DrawScrn {
+  DrawCTbl(); # CTbl calls CEdt at end which      calls Stat
+  DrawBlox(); # Blox calls Barz at end which also calls Stat
+  DrawTBar();
+}
+
+$hite = $main->Hite(); $widt = $main->Widt();
+LoadPale();
+LoadFont();
+InitScal();
+UpdtFont();
+CalcMxCn();
+while(!$exit) {
+  if($uppt) { DrawPTim(); }
+  else      { IdlSleep(); }
+  $keey = $main->GetK(-1);
+  if     (($keey !~ /^\d$/) && (lc($keey) eq 'x' || lc($keey) eq 'q' || ord($keey) == 27)) {#trap eXit
+    if(defined $asav) {
+      if   ($asav =~ /\.fpf$/) { SaveFPF($asav); }
+      elsif($asav =~ /\.fpp$/) { SaveFPP($asav); }
+      else { 
+        $asav .= ".fp" unless($asav =~ /\.fp$/);
+        SaveFP($asav); 
+      }
+    }
+    $exit = 1;
+  } elsif(   $keey  eq '?' || $keey eq 'H') { ShowHelp();
+  } elsif(   $keey  eq 'S') { SaveFP();
+  } elsif(   $keey  eq 'I') { ShowInfo();
+  } elsif(   $keey  eq "\r"){ $fpmd = $focu = 0; DrawScrn(); # Return to Editor
+  } elsif(   $keey  eq 'c') { $chos ^= 1; DrawScrn();
+  } elsif(   $keey  eq 'D') { $dync ^= 1; CalcMxCn();
+  } elsif(lc($keey) eq 'u') { $uppt ^= 1;
+  } elsif(lc($keey) eq 'w') { $wrap ^= 1;
+  } elsif(   $keey  eq 'f') { if( $fpmd) { $fpmd  = 0; DrawScrn(); }
+  } elsif(   $keey  eq 'p') { if(!$fpmd) { $fpmd  = 1; DrawScrn(); }
+  } elsif(lc($keey) eq 'n') {              $fpmd ^= 1; DrawScrn();  
+  } elsif(   $keey  eq 'F' || ord($keey) == 9) { $focu ^= 1; DrawScrn(); #FTab
+  } elsif(   $keey  eq '/') { # match next key && jump to it in CharTable
+    $ftbx = ord(GetK(-1));
+    if($sqtb) { $ftby = int($ftbx / 16); $ftbx %= 16; }
+    else      { $ftby = int($ftbx / 32); $ftbx %= 32; }
+    DrawCTbl();
+  } elsif(   $keey  eq 'O') { # Cycle Char editor Colors
+    $chnd++;  $chnd = 0 if($chnd == @{$chcz{'of'}});
+    @chcl = ( "$chcz{'on'}[$chnd]$chcz{'of'}[$chnd]",
+              "$chcz{'cf'}[$chnd]$chcz{'on'}[$chnd]",
+              "$chcz{'cf'}[$chnd]$chcz{'of'}[$chnd]",
+              "$chcz{'cn'}[$chnd]$chcz{'on'}[$chnd]",
+              "$chcz{'cn'}[$chnd]$chcz{'of'}[$chnd]",
+              "$chcz{'ch'}[$chnd]$chcz{'cb'}[$chnd]",
+              "$chcz{'cu'}[$chnd]$chcz{'ub'}[$chnd]" ); # CharEdtr/Tbl Colors
+    DrawScrn();
+  } elsif(   $keey  eq 'C') { # copy current character to clipboard
+    for(my $i = 0; $i < 16; $i++) {
+      for(my $j = 0; $j < 8; $j++) {
+        if($sqtb) { $bakc[$i][$j] = $fdat[($ftby*16)+$ftbx][$i][$j]; }
+        else      { $bakc[$i][$j] = $fdat[($ftby*32)+$ftbx][$i][$j]; }
+      }
+    }
+  } elsif(   $keey  eq 'P') { # paste clipboard character
+    for(my $i = 0; $i < 16; $i++) {
+      for(my $j = 0; $j < 8; $j++) {
+        $bakc[$i][$j] = 0 unless(defined $bakc[$i] && @{$bakc[$i]} && defined $bakc[$i][$j]);
+        if($sqtb) { $fdat[($ftby*16)+$ftbx][$i][$j] = $bakc[$i][$j]; }
+        else      { $fdat[($ftby*32)+$ftbx][$i][$j] = $bakc[$i][$j]; }
+      }
+    }
+    DrawCEdt(); UpdtFont(); DrawCTbl();
+  } elsif(   $keey  eq 'd') { # toggle Draw square mode
+    if($sqtb) { $ftbx += ($ftby * 16); $ftby = int($ftbx / 32); $ftbx %= 32; }
+    else      { $ftbx += ($ftby * 32); $ftby = int($ftbx / 16); $ftbx %= 16; }
+    $sqtb ^= 1; @tscr = (); @cclr = (); DrawScrn();
+  } elsif(lc($keey) eq 'e') { # erase current character pixels
+    for(my $i = 0; $i < 16; $i++) {
+      for(my $j = 0; $j < 8; $j++) {
+        if($sqtb) { $fdat[($ftby*16)+$ftbx][$i][$j] = 0; }
+        else      { $fdat[($ftby*32)+$ftbx][$i][$j] = 0; }
+      }
+    }
+    DrawCEdt(); UpdtFont(); DrawCTbl();
+  } elsif(   $keey  eq 'i') { # inverse current character pixels
+    for(my $i = 0; $i < 16; $i++) {
+      for(my $j = 0; $j < 8; $j++) {
+        if($sqtb) { $fdat[($ftby*16)+$ftbx][$i][$j] ^= 1; }
+        else      { $fdat[($ftby*32)+$ftbx][$i][$j] ^= 1; }
+      }
+    }
+    DrawCEdt(); UpdtFont(); DrawCTbl();
+  } elsif(   $keey  eq 'y') { # invert character pixels across X-axis (up/dn)
+    if($sqtb) { @{$fdat[($ftby*16)+$ftbx]} = reverse(@{$fdat[($ftby*16)+$ftbx]}); }
+    else      { @{$fdat[($ftby*32)+$ftbx]} = reverse(@{$fdat[($ftby*32)+$ftbx]}); }
+    DrawCEdt(); UpdtFont(); DrawCTbl();
+  } elsif(   $keey  eq 'Y') { # invert character pixels across Y-axis (lt/rt)
+    for(my $i = 0; $i < 16; $i++) {
+      if($sqtb) { @{$fdat[($ftby*16)+$ftbx][$i]} = reverse(@{$fdat[($ftby*16)+$ftbx][$i]}); }
+      else      { @{$fdat[($ftby*32)+$ftbx][$i]} = reverse(@{$fdat[($ftby*32)+$ftbx][$i]}); }
+    }
+    DrawCEdt(); UpdtFont(); DrawCTbl();
+  } elsif(   $keey  eq 'r') { # Restore current character
+    for(my $i = 0; $i < 16; $i++) {
+      for(my $j = 0; $j < 8; $j++) {
+        if($sqtb) { $fdat[($ftby*16)+$ftbx][$i][$j] = $bakf[($ftby*16)+$ftbx][$i][$j]; }
+        else      { $fdat[($ftby*32)+$ftbx][$i][$j] = $bakf[($ftby*32)+$ftbx][$i][$j]; }
+      }
+    }
+    DrawCEdt(); UpdtFont(); DrawCTbl();
+  } elsif(   $keey  eq 'R') { # Restore whole original font
+    for(my $h = 0; $h < 256; $h++) {
+      for(my $i = 0; $i < $chit; $i++) {
+        for(my $j = 0; $j < 8; $j++) {
+          $fdat[$h][$i][$j] = $bakf[$h][$i][$j];
+        }
+      }
+    }
+    DrawCEdt(); UpdtFont(); DrawCTbl();
+  } elsif(lc($keey) eq 'a') { # smudge across X-axis (up/dn)
+    for(my $i = 0; $i < 16; $i++) {
+      for(my $j = 0; $j < 8; $j++) {
+        $bakc[$i][$j] = 0;
+        if($i && $i < 15) {
+          if($sqtb) { 
+            if(($fdat[($ftby*16)+$ftbx][$i - 1][$j] && int(rand(1.2))) ||
+               ($fdat[($ftby*16)+$ftbx][$i][$j]     && int(rand(7))) ||
+               ($fdat[($ftby*16)+$ftbx][$i + 1][$j] && int(rand(1.2)))) {
+              $bakc[$i][$j] = 1;
+            }
+          } else { 
+            if(($fdat[($ftby*32)+$ftbx][$i - 1][$j] && int(rand(1.2))) ||
+               ($fdat[($ftby*32)+$ftbx][$i][$j]     && int(rand(7))) ||
+               ($fdat[($ftby*32)+$ftbx][$i + 1][$j] && int(rand(1.2)))) {
+              $bakc[$i][$j] = 1;
+            }
+          }
+        }
+      }
+    }
+    for(my $i = 0; $i < 16; $i++) {
+      for(my $j = 0; $j < 8; $j++) {
+        if($sqtb) { $fdat[($ftby*16)+$ftbx][$i][$j] = $bakc[$i][$j]; }
+        else      { $fdat[($ftby*32)+$ftbx][$i][$j] = $bakc[$i][$j]; }
+      }
+    }
+    DrawCEdt(); UpdtFont(); DrawCTbl();
+  } elsif(lc($keey) eq 'z') { # smudge across Y-axis (lt/rt)
+    for(my $i = 0; $i < 16; $i++) {
+      for(my $j = 0; $j < 8; $j++) {
+        $bakc[$i][$j] = 0;
+        if($j && $j < 7) {
+          if($sqtb) { 
+            if(($fdat[($ftby*16)+$ftbx][$i][$j - 1] && int(rand(1.2))) ||
+               ($fdat[($ftby*16)+$ftbx][$i][$j]     && int(rand(7))) ||
+               ($fdat[($ftby*16)+$ftbx][$i][$j + 1] && int(rand(1.2)))) {
+              $bakc[$i][$j] = 1;
+            }
+          } else { 
+            if(($fdat[($ftby*32)+$ftbx][$i][$j - 1] && int(rand(1.2))) ||
+               ($fdat[($ftby*32)+$ftbx][$i][$j]     && int(rand(7))) ||
+               ($fdat[($ftby*32)+$ftbx][$i][$j + 1] && int(rand(1.2)))) {
+              $bakc[$i][$j] = 1;
+            }
+          }
+        }
+      }
+    }
+    for(my $i = 0; $i < 16; $i++) {
+      for(my $j = 0; $j < 8; $j++) {
+        if($sqtb) { $fdat[($ftby*16)+$ftbx][$i][$j] = $bakc[$i][$j]; }
+        else      { $fdat[($ftby*32)+$ftbx][$i][$j] = $bakc[$i][$j]; }
+      }
+    }
+    DrawCEdt(); UpdtFont(); DrawCTbl();
+  } else { # non-global (ie. focus-specific) key functions
+    if($chos) { # File Chooser
+      if     (   $keey  eq 's') { SaveFPF();
+      } elsif(   $keey  eq 'm') { $chom ^= 1; DrawCEdt();
+      } elsif(   $keey     =~ /^[0-9)!@#\$%^&*(]$/) { # handle numb keys
+        $keey = $shnm{$keey} if($keey !~ /^\d$/);
+# 2do: mk list of files && jump index to number portion
+#        $fedx = int(((8     - 1) / 9) * $keey);
+#        $fedy = int((($chit - 1) / 9) * $keey);
+        DrawCEdt();
+      } elsif($keey =~ /([hjkl]|KEY_(LEFT|RIGHT|UP|DOWN))/) {  # 
+        if     ($keey eq 'h' || $keey eq "KEY_LEFT")  { 
+          if($wrap || $choi) {
+#            $choi = @list unless($choi); 
+            $choi--;      
+            DrawCEdt();
+          }
+        } elsif($keey eq 'l' || $keey eq "KEY_RIGHT") { 
+          if($wrap) { # || ($choi < @list)) {
+            $choi++;      
+#            $choi = 0 if($choi >= @list); 
+            DrawCEdt();
+          }
+        } elsif($keey eq 'k' || $keey eq "KEY_UP")    { 
+          if($wrap || $choi) {
+#            $choi = @list unless($choi); 
+            $choi--;      
+            DrawCEdt();
+          }
+        } elsif($keey eq 'j' || $keey eq "KEY_DOWN")  { 
+          if($wrap) { # || ($choi < @list)) {
+            $choi++;      
+#            $choi = 0 if($choi >= @list); 
+            DrawCEdt();
+          }
+        } elsif($keey eq "KEY_HOME")  { # move to left char from Edt
+        } elsif($keey eq "KEY_END")   { # move to right char from Edt
+        } elsif($keey eq "KEY_PPAGE") { # move to up char from Edt
+        } elsif($keey eq "KEY_NPAGE") { # move to down char from Edt
+        } elsif($keey != -1) { ShowHelp();
+        } else { IdlSleep(); }
+      } else { ShowHelp(); }
+    } elsif(!$fpmd) { # Font
+      if     (   $keey  eq 's') { SaveFPF();
+      } elsif(   $keey  eq 'B') { BuildFnt(); # Build core char blocks
+      } elsif(   $keey  eq 'M') { 
+        $clok = (++$clok % 3); # change char draw lock Mode
+        if($clok) { CharEdit($clok); }
+        else      { DrawStat(); }
+      } elsif(!$focu) { # Font Char Editor
+        if     (   $keey  eq ' ') { CharEdit(); # space toggles
+        } elsif(   $keey  eq 'h') { # scoot Left
+          for(my $i = 0; $i < 16; $i++) {
+            if($wrap) {
+              if($sqtb) { push(@{$fdat[($ftby*16)+$ftbx][$i]}, shift(@{$fdat[($ftby*16)+$ftbx][$i]})); }
+              else      { push(@{$fdat[($ftby*32)+$ftbx][$i]}, shift(@{$fdat[($ftby*32)+$ftbx][$i]})); }
+            } else {
+              if($sqtb) { push(@{$fdat[($ftby*16)+$ftbx][$i]}, '0'); shift(@{$fdat[($ftby*16)+$ftbx][$i]}); }
+              else      { push(@{$fdat[($ftby*32)+$ftbx][$i]}, '0'); shift(@{$fdat[($ftby*32)+$ftbx][$i]}); }
+            }
+          }
+          DrawCEdt(); UpdtFont(); DrawCTbl();
+        } elsif(   $keey  eq 'l') { # scoot Right
+          for(my $i = 0; $i < 16; $i++) {
+            if($wrap) {
+              if($sqtb) { unshift(@{$fdat[($ftby*16)+$ftbx][$i]}, pop(@{$fdat[($ftby*16)+$ftbx][$i]})); }
+              else      { unshift(@{$fdat[($ftby*32)+$ftbx][$i]}, pop(@{$fdat[($ftby*32)+$ftbx][$i]})); }
+            } else {
+              if($sqtb) { unshift(@{$fdat[($ftby*16)+$ftbx][$i]}, '0'); pop(@{$fdat[($ftby*16)+$ftbx][$i]}); }
+              else      { unshift(@{$fdat[($ftby*32)+$ftbx][$i]}, '0'); pop(@{$fdat[($ftby*32)+$ftbx][$i]}); }
+            }
+          }
+          DrawCEdt(); UpdtFont(); DrawCTbl();
+        } elsif(lc($keey) eq 'j') { # scoot Down
+          if($wrap) {
+            if($sqtb) { unshift(@{$fdat[($ftby*16)+$ftbx]}, pop(@{$fdat[($ftby*16)+$ftbx]})); }
+            else      { unshift(@{$fdat[($ftby*32)+$ftbx]}, pop(@{$fdat[($ftby*32)+$ftbx]})); }
+          } else {
+            if($sqtb) { unshift(@{$fdat[($ftby*16)+$ftbx]}, [ split(//, '0' x 8) ] ); pop(@{$fdat[($ftby*16)+$ftbx]}); }
+            else      { unshift(@{$fdat[($ftby*32)+$ftbx]}, [ split(//, '0' x 8) ] ); pop(@{$fdat[($ftby*32)+$ftbx]}); }
+          }
+          DrawCEdt(); UpdtFont(); DrawCTbl();
+        } elsif(lc($keey) eq 'k') { # scoot Up
+          if($wrap) {
+            if($sqtb) { push(@{$fdat[($ftby*16)+$ftbx]}, shift(@{$fdat[($ftby*16)+$ftbx]})); }
+            else      { push(@{$fdat[($ftby*32)+$ftbx]}, shift(@{$fdat[($ftby*32)+$ftbx]})); }
+          } else {
+            if($sqtb) { push(@{$fdat[($ftby*16)+$ftbx]}, [ split(//, '0' x 8) ] ); shift(@{$fdat[($ftby*16)+$ftbx]}); }
+            else      { push(@{$fdat[($ftby*32)+$ftbx]}, [ split(//, '0' x 8) ] ); shift(@{$fdat[($ftby*32)+$ftbx]}); }
+          }
+          DrawCEdt(); UpdtFont(); DrawCTbl();
+        } elsif(   $keey     =~ /^[0-9)!@#\$%^&*(]$/) { # handle numb keys
+          $keey = $shnm{$keey} if($keey !~ /^\d$/);
+          $fedx = int(((8     - 1) / 9) * $keey);
+          $fedy = int((($chit - 1) / 9) * $keey);
+          DrawCEdt();
+        } elsif($keey =~ /KEY_(LEFT|RIGHT|UP|DOWN)/) {
+          if     ($keey eq "KEY_LEFT")  { 
+            if($wrap || $fedx) {
+              $fedx = 8 unless($fedx); $fedx--;      DrawCEdt();
+            }
+            CharEdit($clok) if($clok);
+          } elsif($keey eq "KEY_RIGHT") { 
+            if($wrap || ($fedx < 7)) {
+              $fedx++; $fedx = 0 if($fedx >= 8);     DrawCEdt();
+            }
+            CharEdit($clok) if($clok);
+          } elsif($keey eq "KEY_UP")    { 
+            if($wrap || $fedy) {
+              $fedy = $chit unless($fedy); $fedy--;  DrawCEdt();
+            }
+            CharEdit($clok) if($clok);
+          } elsif($keey eq "KEY_DOWN")  { 
+            if($wrap || ($fedy < ($chit - 1))) {
+              $fedy++; $fedy = 0 if($fedy >= $chit); DrawCEdt();
+            }
+            CharEdit($clok) if($clok);
+          } elsif($keey eq "KEY_HOME")  { # move to left char from Edt
+            if($wrap || $ftbx) {
+              unless($ftbx) { 
+                if($sqtb) { $ftbx = 16; } 
+                else      { $ftbx = 32; } 
+              }
+              $ftbx--;  DrawCTbl();
+            }
+          } elsif($keey eq "KEY_END")   { # move to right char from Edt
+            if($wrap || ($ftbx < 15) || (!$sqtb && $ftbx < 31)) {
+              $ftbx++; $ftbx = 0 if($ftbx >= 32 || ($ftbx >= 16 && $sqtb));
+              DrawCTbl();
+            }
+          } elsif($keey eq "KEY_PPAGE") { # move to up char from Edt
+            if($wrap || $ftby) {
+              unless($ftby) { 
+                if($sqtb) { $ftby = 16; } 
+                else      { $ftby =  8; } 
+              }
+              $ftby--;  DrawCTbl();
+            }
+          } elsif($keey eq "KEY_NPAGE") { # move to down char from Edt
+            if($wrap || ($ftby < 7) || ($sqtb && $ftby < 15)) {
+              $ftby++; $ftby = 0 if($ftby >= 16 || ($ftby >= 8 && !$sqtb));
+              DrawCTbl();
+            }
+          } elsif($keey != -1) { ShowHelp();
+          } else { IdlSleep(); }
+        } else { ShowHelp(); }
+      } else { # Font Char Table
+        if     (   $keey     =~ /^[0-9)!@#\$%^&*(]$/) { # handle numb keys
+          $keey = $shnm{$keey} if($keey !~ /^\d$/);
+          $ftbx = int((255 / 9) * $keey);
+          if($sqtb) { $ftby = int($ftbx / 16); $ftbx %= 16; }
+          else      { $ftby = int($ftbx / 32); $ftbx %= 32; }
+          DrawCTbl();
+        } elsif(lc($keey) eq "h" || $keey eq "KEY_HOME" || $keey eq "KEY_LEFT")  {
+          if($wrap || $ftbx) {
+            unless($ftbx) { 
+              if($sqtb) { $ftbx = 16; } 
+              else      { $ftbx = 32; } 
+            }
+            $ftbx--;  DrawCTbl();
+          }
+        } elsif(lc($keey) eq "l" || $keey eq "KEY_END" || $keey eq "KEY_RIGHT")   {
+          if($wrap || ($ftbx < 15) || (!$sqtb && $ftbx < 31)) {
+            $ftbx++; $ftbx = 0 if($ftbx >= 32 || ($ftbx >= 16 && $sqtb));
+            DrawCTbl();
+          }
+        } elsif(lc($keey) eq "k" || $keey eq "KEY_PPAGE" || $keey eq "KEY_UP")    {
+          if($wrap || $ftby) {
+            unless($ftby) { 
+              if($sqtb) { $ftby = 16; } 
+              else      { $ftby =  8; } 
+            }
+            $ftby--;  DrawCTbl();
+          }
+        } elsif(lc($keey) eq "j" || $keey eq "KEY_NPAGE" || $keey eq "KEY_DOWN")  {
+          if($wrap || ($ftby < 7) || ($sqtb && $ftby < 15)) {
+            $ftby++; $ftby = 0 if($ftby >= 16 || ($ftby >= 8 && !$sqtb));
+            DrawCTbl();
+          }
+        } elsif($keey != -1) { ShowHelp();
+        } else { IdlSleep(); }
+      }
+    } else { # Pal
+      if       (   $keey  eq 's') { SaveFPP();
+      } elsif(!$focu) { # Pal Barz
+        if     (lc($keey) eq 'r') { $chan = 0; DrawBarz();
+        } elsif(lc($keey) eq 'g') { $chan = 1; DrawBarz();
+        } elsif(lc($keey) eq 'b') { $chan = 2; DrawBarz();
+        } elsif(   $keey     =~ /^[0-9)!@#\$%^&*(]$/) { # handle numb keys
+          $keey = $shnm{$keey} if($keey !~ /^\d$/);
+          $pdat[$blok][$chan] = b64( int((63 / 9) * $keey) );
+          ChngBarz();
+        } elsif($keey =~ /([hjkl]|KEY_(LEFT|RIGHT|UP|DOWN))/) {
+          if     ($keey eq 'h' || $keey eq "KEY_LEFT")  { 
+            if($wrap || $pdat[$blok][$chan]) {
+              $pdat[$blok][$chan] =   b10($pdat[$blok][$chan]) - 1;
+              $pdat[$blok][$chan] = 63 if($pdat[$blok][$chan] < 0); 
+              $pdat[$blok][$chan] =   b64($pdat[$blok][$chan]);
+              ChngBarz();
+            }
+          } elsif($keey eq 'l' || $keey eq "KEY_RIGHT") { 
+            if($wrap || b10($pdat[$blok][$chan]) < 63) {
+              $pdat[$blok][$chan] =   b10($pdat[$blok][$chan]) + 1;
+              $pdat[$blok][$chan] =  0 if($pdat[$blok][$chan] > 63); 
+              $pdat[$blok][$chan] =   b64($pdat[$blok][$chan]);
+              ChngBarz();
+            }
+          } elsif($keey eq 'k' || $keey eq "KEY_UP") {
+            if($wrap || $chan) {
+              $chan = 3 unless($chan); $chan--;  ChngBarz(); DrawStat();
+            }
+          } elsif($keey eq 'j' || $keey eq "KEY_DOWN") {
+            if($wrap || ($chan < 2)) {
+              $chan++; $chan = 0 if($chan >= 3); ChngBarz(); DrawStat();
+            }
+          } elsif($keey eq "KEY_HOME") { 
+            $pdat[$blok][$chan] = '0'; ChngBarz();
+          } elsif($keey eq "KEY_END") { 
+            $pdat[$blok][$chan] = '_'; ChngBarz();
+          } elsif($keey != -1) { ShowHelp();
+          } else { IdlSleep(); }
+        } else { ShowHelp(); }
+      } else { # Pal Blox
+        if     (   $keey     =~ /^[0-9)!@#\$%^&*(ABCDEF]$/i) { # handle numbs
+          $keey = b64($shnm{$keey} + 10) if($keey !~ /^\d$/);
+          $blok = (b10($keey) % 16); DrawBlox();
+        } elsif($keey =~ /([hjkl]|KEY_(LEFT|RIGHT|UP|DOWN))/) {
+          if     ($keey eq 'h' || $keey eq "KEY_LEFT")  { 
+            if($wrap || ($blok % 8) || ($sqtb && $blok % 4)) {
+              if($sqtb) { $blok += 4 if(($blok % 4) == 0); }
+              else      { $blok += 8 if(($blok % 8) == 0); }
+              $blok--; DrawBlox();
+            }
+          } elsif($keey eq 'l' || $keey eq "KEY_RIGHT") { 
+            if($wrap || (($blok + 1) % 8) || ($sqtb && ($blok + 1) % 4)) {
+              $blok++; 
+              if($sqtb) { $blok -= 4 if(($blok % 4) == 0); }
+              else      { $blok -= 8 if(($blok % 8) == 0); }
+              DrawBlox();
+            }
+          } elsif($keey eq 'k' || $keey eq "KEY_UP") {
+            if($wrap || ($blok > 7) || ($sqtb && $blok > 3)) {
+              if($sqtb) { $blok -= 4; }
+              else      { $blok -= 8; }
+              $blok += 16 if($blok < 0);
+              DrawBlox();
+            }
+          } elsif($keey eq 'j' || $keey eq "KEY_DOWN") {
+            if($wrap || ($blok < 8) || ($sqtb && $blok < 12)) {
+              if($sqtb) { $blok += 4; }
+              else      { $blok += 8; }
+              $blok -= 16 if($blok >= 16);
+              DrawBlox();
+            }
+          } elsif($keey eq "KEY_HOME") { 
+            $blok = 0;  DrawBlox();
+          } elsif($keey eq "KEY_END") { 
+            $blok = 15; DrawBlox();
+          } elsif($keey != -1) { ShowHelp();
+          } else { IdlSleep(); }
+        } else { ShowHelp(); }
+      }
+    }
+  }
+}

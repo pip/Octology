@@ -1,0 +1,19 @@
+#!/usr/bin/perl -w
+# 5BIFj4Z - sortfile created by Pip Stuart <Pip@CPAN.Org>,
+#   <Pip_Stuart@PlayStation.Sony.Com> to take a filename as a command-line
+#   parameter and alphabetically sort each line before writing the file
+#   back out.  This process is useful when making PSGL packages because
+#   the hand-edited filelist-copyright.csv file should be maintained in
+#   a sorted order.
+use strict;
+use warnings;
+
+my $flnm = shift(); my $fhnd; my @fdat;
+die("Must pass a filename parameter to sort!\n") unless(defined($flnm) && -r $flnm);
+open($fhnd, '<', $flnm);
+@fdat = <$fhnd>;
+close($fhnd);
+undef($fhnd);
+open($fhnd, '>', $flnm);
+for(sort { $a cmp $b } @fdat) { print {$fhnd} "$_"; }
+close($fhnd);

@@ -1,0 +1,19 @@
+# J67M8sol:Oni-sdl.pmfi crE8d by PipStuart <Pip@CPAN.Org> to catalog Oni trying to run 8trm (c8::trm8);
+pmfi Archive::Extract # maybe these up including Alien were unnecessary?
+pmfi Text::Patch
+pmfi Alien::SDL
+pmfi SDL # failed! XS.c: loadable library and perl libraries are mismatched got handshake key 0x... so... before loc8ing them, tried
+pmei XS
+# P.S. Should l8r look into INGY/Pegex-0.70.tar.gz
+Skip blib/lib/auto/share/dist/Pegex/pegex.pgx (unchanged)
+PERL_DL_NONLAZY=1 "/usr/bin/perl" "-MExtUtils::Command::MM" "-MTest::Harness" "-e" "undef *Test::Harness::Switches; test_harness(0, 'blib/lib', 'blib/arch')" t/*.t
+t/000-compile-modules.t ... ok
+t/api.t ................... ok
+t/author-pod-syntax.t ..... skipped: these tests are for testing by the author
+#   && how to do that for all my old && any new modules too, to avoid past testing non-issues blocking installs;
+loc8 XS.c
+pmfi Readonly::XS
+pmfi List::MoreUtils::XS # lots of handshake errors && tests not at all okay, but forcing through this anyway, so maybe try again after Util below?
+# then Util.c became the holdup, but only loc8d in:
+pmfi Params::Util
+#   ... which worked well enough to run another nice Fraktur sumb in 8trm;

@@ -1,0 +1,72 @@
+Tea requires 500 sqft. (assume not including lounge)
+
+Sir approx. 2,500 total needed
+
+12 fite cabs
+1 puzzfite cab
+6 DDR
+10 consoles
+
+lounge
+
+office
+
+storage / repair area
+
+expansion space for pc network
+
+3-seat couch 9' x 4'
+2-seat couch 7' x 4'
+
+  square couch arrangements:
+    729 - 4 tvs facing poles in center w/ 1 3-seat in front of each && 2 2-seats in
+            opposite corners diagonally inward w/ entrances at other corns
+      182ea.
+    400 - 4 tvs facing poles in center w/ 1 3-seat in front of each abutting
+            opposite corners w/ entrances at other corns
+      100ea.
+  column couch arrangements:
+    368 - 2 adjacent tvs facing opposite w/ 1 3-seat && 1 2-seat in front of each
+            w/ 6ft space between tv && couch && 3ft deep tv && stand
+      184ea.
+    171 - 2 adjacent tvs facing opposite w/ 1 3-seat in front of each
+            w/ 4ft space between tv && couch && 3ft deep tv && stand
+       86ea.
+
+  so cramped cons (bean)  are each about  40- 50sqft
+  so cramped cons (couch) are each about  90-100sqft
+     spacious             are each about 180-200sqft (double cramped)
+  so cramped cabs         are each about      50sqft
+     spacious             are each about      90sqft
+  so cramped DDRs         are each about      30sqft
+     spacious             are each about     100sqft
+
+estimate w/ && w/o extra spaces
+
+ok... everything cramped:
+  tea kitchen:                                           400
+  tea lounge:                                            300
+  10 bean-bag console stations:                          400
+  12 fite cabs:                                          600
+   1 puzz cab:                                            50
+   6 DDR:                                                500
+     office                                              250
+        no storage, repair, or expansion areas
+                                                TOTAL:  2500
+ok... everything spacious:
+  tea kitchen:                                           500
+  tea lounge:                                            500
+  10 console stations:                                  2000
+  12 fite cabs:                                         1000
+   1 puzz cab:                                           100
+   6 DDR:                                                600
+     office                                              600
+     storage / repair area                               700
+     expansion area                                     1000
+                                                TOTAL:  7000
+
+38L4N3T - layouts added
+
+for 2500: 20 ft x 75 ft
+for 5000: 40 ft x 75 ft leaving wall up
+for 5000: 40 ft x 75 ft tearing wall down

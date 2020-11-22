@@ -1,0 +1,146 @@
+Written by: Philip Stuart           Date: Monday, February 5th, 2001
+Re: Mr. Fish vs. Stuart
+
+Lisa Profera:
+    Please forward a copy of these documents to Mr. Combs && Mr. Fish.
+There should remain one for the AAA's own records.
+
+
+    This document describes why I did not receive the revised complaint
+and then proceeds to attempt to better explain the scenario which
+precipitated this dispute and mention relevant events which are
+descriptive of the problem.
+
+I would like to make clear why I was unable to possess Mr. Fish's
+revised complaint.
+  I am currently employed by an ASP (Application Service Provider) in
+Santa Ana.  I am a lead programmer there && am responsible to develop
+several highly functional systems with the utmost diligence.  I
+regularly sleep in my office.  I have an air mattress, pillow, blanket,
+a change of clothes, && toiletries in the corner of my office.  It is
+not uncommon for me to sleep more nights at my office than I do in my
+apartment.  I typically work between 50 && 80 hours each week (not
+including time sleeping at the office).  They provide me with food,
+drinks, && a fast dedicated internet connection (T1 line).  I have
+little reason to leave the office.
+  I have never had any reason to deal with certified mail before either
+and therefore have had no context by which to understand it's abnormal
+delivery mechanism.  When I would return home after several days in the
+office, I would occassionally find a pink slip notifying me of a failed
+delivery attempt along with my bills.  I wrongly assumed that the postal
+carrier would attempt to deliver such mail each day and that I would
+eventually be home to sign for it.
+  Last Friday (Feb. 2nd), I received Mr. Fish's January 29th letter
+purporting that I had already received his new complaints.  I was on my
+way to Big Bear when I opened this letter on Friday afternoon since my
+fraternity (AEPi) initiated our Fall/Winter pledge class this past
+weekend.  I returned yesterday (Sunday Feb. 4th) but the post office was
+closed.  When I revisited the post office today, they had nothing for
+me.  It seems that the complaint has been returned to the sender.  I had
+no intention of neglecting my responsibility in this matter which is why
+I'm making an effort to respond by February 7th regardless.  I don't
+want this silliness to go on any longer either.
+  Hopefully this explains why I may be unable to respond directly to any
+specific points Mr. Fish has decided to bring up.
+
+  I have attempted to format the concatenated emails in preparation for
+a massive printing but the size was still prohibitive so I have decided
+to simply post them to my webserver since it will be easily visible &&
+searchable from there.  I'm sure this is unconventional && may possibly
+nullify my ability to utilize anything therein to further my case but I
+don't seem to have another choice so I'm hoping that the arbitrator of
+this case can accept this document as evidence since it will save much
+paper, postage, && time (all of which are scarce for me).  This document
+can be seen at http://BinQ.org/800tele/lenemail.txt
+  It is currently secured by obscurity.  Nobody knows about it (except
+us) and there are no hyperlinks referring to it so no crawler can find
+it.  If this is insufficient, at the arbitrator's request, I will be
+glad to password protect or remove it.
+  It may be feasible to restore them to separate files so that they can
+be more easily referred to.  I will try to do that tonight after work.
+If this can be done, I will place an index file as the default loading
+page at the URL http://BinQ.org/800tele/  so please check there if the
+above text file is unavailable.  It will have been supplanted by myriad
+individual emails.
+  Basically the emails demonstrate my constant diligence.  They catalog
+some evidence of my productivity but there is also a lot of
+demonstratable source code on Mr. Fish's server which speaks much
+further.  I don't know how to introduce that as proof but I guess I can
+explain that I developed a thorough system for embedding database
+queries securely from an arbitrarily complex website.  I established
+several administrative mechanisms as well as user and group level
+permissions for different security levels among data elements or
+authority to perform certain manipulative functions with the database.
+The whole system integrates smoothly with traditional HTML web-based
+submit forms.  It was built hierarchically on top of Perl && MySQL from
+scratch.  I installed and configured the webserver and administrated it
+throughout development.  Constant hardware troubles arose which were
+arduous && stressful to resolve.
+  Something else that is probably relevant is the fact that I had never
+done contract work before.  I had only been employed with a salary
+before Mr. Fish.  I have had no experience with contracts or the
+legality of such practices.  I foolishly assumed that I would be paid
+fairly as long as I worked hard.  In hindsight, I must have been easy
+pickings for someone hoping to take advantage of my abilities without
+reasonable compensation.  Just the fact that he paid me less than $5000
+for 12 weeks of work and that he now sees fit to attempt to win a
+$100,000 award for all of this is a perfect example of his rational
+decision-making deficit.  Initially, the claim was $10k.  Then it was
+raised several times as he reassessed his damages until he finally
+arrived at $100k.  I wouldn't be surprised if his new claim were for
+$1Million.  The whole exercise is asinine.  I don't own anything
+valuable other than my computers which are my trade.  I don't think he
+could win my computers since they are my livelihood.  I don't have any
+savings or more than a couple hundred dollars in my bank account.  I'd
+have to declare bankruptcy and he wouldn't get anything anyway.  This
+all seems to be a horrible folly on his behalf.  I was suckered into it
+myself and it has wasted far too much of my time already but I've got my
+whole life ahead of me.  I sure am glad I get an opportunity to lern
+from this situation so early on.
+  The details have grown humorous to me.  Mr. Fish emails me asking me
+to give him his own password to his server.  How could I possibly know
+it?  He also asks for the root password which he himself chose.  He
+writes letters to point out how little respect I have for the AAA.
+Everything I do is "stalling" or "playing games".  He incessantly
+accused me of the same when I worked for him (even during my most
+productive times).  Mr. Fish is an unhappy man.  There is no way to live
+up to his expectations.  There is no way to fulfill his requirements.
+He scares away all his help.  He had an employee (a nice woman I had the
+priviledge of meeting) named Anita who he yelled at constantly.  He
+brought her to tears both of the two days she could stand to work for
+him.  He said something to the effect of "This task would take a normal
+person an hour so, considering your intelligence, I'll expect it done in
+four hours" to her face while I was there.  He is a terrible man to work
+for.  I couldn't help but love the irony in his mail which exaggerated
+my exaggeration.  It was poetic.  I was thoroughly tempted to duplicate
+his letter verbatim including his own "major inconsistenly", "blatant
+untruth" or "gross exaggeration" quotes etc.  125 is not quite a '100
+percent "exaggeration"' of the actual '66 pages' as he exaggerates
+himself.  I've grown cynical towards this whole situation because it
+never gets any less ridiculous.  I know it may be a serious matter so
+I've tried to be respectful && mature && treat it as such.  Hopefully
+this is visible.
+  Anyway, the emails describe how upset Mr. Fish would get when he
+couldn't reach me by telephone for a day or two.  He would accuse me of
+absurd things just because he'd get my answering machine for several
+hours.  I had never agreed to be reachable by phone.  He constantly
+insulted && berated me and my accomplishments.  He insulted my religious
+commitments and basically ensured that I would despise his intrusive
+micro-management && under-appreciation of my efforts.  It was a
+discouraging ordeal to say the least.  He constantly threatened me which
+was quite intimidating since I had no other income && was reliant on his
+mercy for months to cover my rent and bills.  I will be very pleased to
+never have to deal with such a bitter old man again.  I haven't had
+difficulty finding two companies since who have appreciated me
+substantially.  Speaking of which, I must get to work.  I hope all of
+this is enough to demonstrate my intentions, describe my diligence, &&
+explain my purported negligence.  Email is (naturally) the best way to
+reach me.  I check my PipTigger@Yahoo.com account at least every 3 days.
+I normally check it several times daily though.  I'm sorry if the
+certified mail mixup caused unnecessary trouble.  I have written
+everything above to respond to what I imagine the revised complaint
+would be even though I haven't received it yet.  Thanks for your time.
+TTFN.
+
+-Philip "PipTigger" Stuart
+

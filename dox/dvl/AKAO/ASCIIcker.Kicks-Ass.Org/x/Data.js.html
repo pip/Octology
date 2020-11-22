@@ -1,0 +1,96 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>Form.Validator.Report.Data - no action taken, only data filled</title>
+<link rev="made" href="mailto:Gentoo@lbox.org" />
+</head>
+
+<body style="background-color: white">
+
+<p><a name="__index__"></a></p>
+<!-- INDEX BEGIN -->
+
+<ul>
+
+	<li><a href="#name">NAME</a></li>
+	<li><a href="#synopsis">SYNOPSIS</a></li>
+	<li><a href="#description">DESCRIPTION</a></li>
+	<li><a href="#properties">PROPERTIES</a></li>
+	<ul>
+
+		<li><a href="#messages">messages</a></li>
+	</ul>
+
+	<li><a href="#methods">METHODS</a></li>
+	<ul>
+
+		<li><a href="#start">start</a></li>
+		<li><a href="#run">run</a></li>
+		<li><a href="#finish">finish</a></li>
+	</ul>
+
+	<li><a href="#author">AUTHOR</a></li>
+</ul>
+<!-- INDEX END -->
+
+<hr />
+<p>
+</p>
+<h1><a name="name">NAME</a></h1>
+<p>Form.Validator.Report.Data - no action taken, only data filled</p>
+<p>
+</p>
+<hr />
+<h1><a name="synopsis">SYNOPSIS</a></h1>
+<p>Usage:</p>
+<pre>
+  var fv = new Form.Validator(document.f);
+  var r  = fv.reporter('Data');
+  fv.set('name', 'notBlank', 'Name is required');
+  fv.validate();
+  var messages = r.messages;</pre>
+<p>
+</p>
+<hr />
+<h1><a name="description">DESCRIPTION</a></h1>
+<p>This report object doesn't do anything visibly observable upon validation.
+All it does is fill in some internal data structures so that test scripts
+can inspect them later.</p>
+<p>Think of this as <em>Form.Validator.Report.AlertAll</em> without the <code>alert()</code>.
+It's reason for existing is to facilitate testing of this framework.</p>
+<p>
+</p>
+<hr />
+<h1><a name="properties">PROPERTIES</a></h1>
+<p>
+</p>
+<h2><a name="messages">messages</a></h2>
+<p>This is an <em>Array</em> that contains a list of onFailure messages for
+constraints that failed during the call to <code>fv.validate()</code>.</p>
+<p>
+</p>
+<hr />
+<h1><a name="methods">METHODS</a></h1>
+<p>
+</p>
+<h2><a name="start">start</a></h2>
+<p>This method clears the contents of this.messages just before validation
+starts.</p>
+<p>
+</p>
+<h2><a name="run">run</a></h2>
+<p>This method populates this.messages whenever a constraint fails
+during validation.</p>
+<p>
+</p>
+<h2><a name="finish">finish</a></h2>
+<p>This method does nothing.</p>
+<p>
+</p>
+<hr />
+<h1><a name="author">AUTHOR</a></h1>
+<p>John Beppu &lt;<a href="mailto:beppu@cpan.org">beppu@cpan.org</a>&gt;</p>
+
+</body>
+
+</html>

@@ -1,0 +1,271 @@
+video of talk is at HTTPS://YouTube.Com/watch?v=TmTeXcEixEg with description at HTTP://YAPCNA.Org/yn2016/talk/6630
+Ricardo Signes has read && learned from much Unicode document8ion.
+In programming we map numbers to other semantics. We map to meaning. The map itself must be thought about. We use encodings.
+The numbers are just numbers that we give meaning.
+Character repertoire are concepts like mapping little circle character as degree sign which gets stored as numbers which are a coded charset.
+The encoding is bytes. In ASCII the coded charset && the encoding are the same but that's not the case for Unicode.
+LATIN SMALL LETTER N  can be combined with  COMBINING TILDE  to make a single composed enye.
+HANGUL SYLLABLE GAG  is composed of 3 combined chars: HANGUL CHOSEONG KIYEOK, HANGUL JUNGSEONG A, and HANGUL JUNGSEONG KIYEOK which can be sepR8d by spaces.
+A string could be a list of bytes, codepoints, characters, or grapheme clusters. The list of codepoints && chars are a 1-to-1 mapping so they're equivalent.
+List of bytes is a Buf, list of codepoints is a Uni, and a list of GCs is a Str. That's Perl6. Perl5 scalars ambiguously store all of them.
+A string of chars is text. A string of bytes is a byte-string. You need to encode && decode.
+Char-string can be encoded as bytes. Bytes can be decoded back to chars.
+You can't tell if you've already encoded so you might do it multiple times && ruin you string. You can also decode too much.
+The replacement character is supposed to be used when something decodes to something invalid. Decoding happens on bytes.
+SPU_PV -> 0x50 0x45 0x52 0x4C 0x00 0x91 0xFF 0x01
+CUR    4 |-------------------|
+LEN    8 |---------------------------------------|
+FLAGS  ->  IOK  NOK  POK  ROK  COW  OBJ WIDE TEMP
+The GAG is char U+0AC01 which can't fit in one byte.
+Turning wide flag on uses variable length encoding. The bytes are representative of something else so we have a decoding step.
+It looks a lot like UTF-8. Someone named the WIDE flag UTF8. Whether WIDE is on or off, you can't tell what you'll see in the scalar after Perl decodes it.
+UTF8 flag does not tell you whether you have a decoded UTF-8 string in the scalar.
+You can use utf8::is_utf8( $str ) or Encode::is_utf8( $str ) to test whether the flag is on.
+"The Unicode Bug" lingers.
+bytes.pm is a lexical pragma that says in this scope just ignore the WIDE flag. Stop decoding it into Perl space. Just deal with the bytes in SPU_PV.
+  Last resort for resolving crazy bugs.
+Calling ref on a string won't tell you whether a scalar is returning text or bytes. Both return SCALAR. Can't check data-type or sigil or flags.
+Can't rely on finding elements > 255 which just indic8 a WIDE string && valid text string could all reside below 255.
+The only way to solve this problem is eternal vigilance.
+Input to program is in a byte-stream so you need to decode it as soon as you get it.
+Inside your code make sure that all strings are text except ones that should be byte-strings (like raw JPEG d8a). Consider using variable names to show type.
+When dealing with code you didn't write, find out what libs expect && return. If they're not documented send patches. This is a big deal.
+Output can only send bytes. Make sure to encode all your output as l8 as possible but don't encode your byte-strings. Also don't encode more than once.
+You need to decode all input to your program. @ARGV, files, STDIN, && string literals && variables that come from other than your own code.
+Using #!/usr/bin/perl -CA will auto-decode all input as UTF-8. length will return the expected value.
+If you run from your shell $ perl -I lib my-cool-script "Eat pie." it will say 'Too late for "-CA" option at my-cool-script line 1.'
+If your program is not run by the kernel using the shebang line, then Perl starts up && looks at the shebang line && tries to turn on the switches.
+This is why you can use -t. By that time it has already initialized the arguments. You'll have to only ever run the program from the prompt.
+Also possible to set PERL_UNICODE="A" environment variable which acts as if all perl programs have those switches on.
+Recommend8ion is to not use switches. In program 'use Encode;' then 'decode("UTF-8", $ARGV[0]);'.
+decode can take 3rd param of $chk which defaults to FB_DEFAULT (FallBack) so malformed chars become the question mark replacement char. Could also use
+  FB_CROAK so malformed chars are f8al. Should use this all the time.
+Using 'utf8' encoding (case doesn't matter) is critically different from 'UTF-8' with hyphen. Short version says don't use the UTF-8 algorithm for decoding.
+  Instead use Perl's internal faster mechanism for when the WIDE flag is set. It's rarely wrong but hard to debug.
+You could also use 'my $str = get_bytes();utf8::decode( $str );' which is a built-in that you don't have to 'use utf8;' to get. Does the same as short.
+  Could also use 'my $str = decode_utf8($bytes);' which confusingly uses better long form (but Perl identifiers can't contain hyphens leading2 inconsistency).
+That's for @ARGV. Next is filehandles.
+  sub find_hangul($fh){
+    while(<$fh>){print "got one!" if /\p{Hangul}/;}}
+Reading from a file is just a list of bytes. We'll never see a Hangul char. Could decode it but better to apply a discipline.
+    binmode $fh,   'encoding(UTF-8)'; # insert before the while. Don't use "utf8". Encode::Supported lists good encodings to use.
+If we open the file ourself:
+    open my $fh, '<:encoding(UTF-8)', $filename; # will set the discipline
+Can also do:
+  use open        ':encoding(UTF-8)'; # pragma outside the sub defines lexical pragma in scope
+File handles are things that get passed around to other lexical scopes. If you returned or accept from elsewhere, you must know encoding with careful auditing.
+Now STDIN.
+  say "Login by $username"; actually means: say *STDOUT "Login by $username";
+You can do:
+  binmode *STDOUT, 'encoding(UTF-8)';
+or:
+  use open ':std',':encoding(UTF-8)'; # applies to all *STD(IN|OUT|ERR). Problem with both of these is you're affecting global variables.
+In the event that other libraries in your program might write to STDOUT && you don't want to set encoding globally to apply beyond your program:
+  open my $out, '>&', STDOUT or die "can't dup STDOUT: $!"; # crE8s a local duplic8 of global
+Then can put binmode on them distinctly with:
+  binmode *STDOUT,':encoding(UTF-8)'; # actually better to not binmode on the global, just shown as example
+  binmode    $out,':encoding(UTF-7)'; # and can duplic8 them as many times as needed lexically
+  say      STDOUT  "\x{1F63C}"; # then shows smiling cat emoji
+  say        $out  "\x{1F63C}"; #  and shows '+2D3ePA-'
+If you just:
+  say              "\x{1F63C}"; # prints warning 'Wide character in say at -e line 1.' then prints cat emoji. Often this will be fine in Perl. Not in C.
+Sending raw contents of SPU_PV from Perl can trigger security bugs in other programs. Best not to do this. Setup encodings.
+Now to strings inside our program.
+  my $text  = get_string(); # returns characters
+  spew_output($text);
+Doing  output so need to encode with:
+  use Encode;
+  my $text  = get_string(); # returns characters
+  spew_output(encode('UTF-8',$text));
+If you're using bytes:
+  my $bytes = get_string(); # returns bytes
+  title_case($bytes);
+Need to decode it with:
+  use Encode;
+  my $bytes = get_string(); # returns bytes
+  title_case(decode('UTF-8',$bytes));
+But what you need to know is whether something is text or bytes. You documented all your subs. You sent patches to all your libraries. What about here:
+  my $string = "Husker Du"; # where both 'u' chars have umlaut? 2 dots above, so is this string literal bytes or characters (text)?
+It is neither. We're not doing anything with it yet. *joke* "It's a super-position!" We don't know because we haven't assigned any semantics yet.
+If file is Latin-1: characters match   code-points. m<\N{LATIN SMALL LETTER U WITH DIAERESIS}>          matches. length is  9 (just like it looks).
+  Printing to a file requires :encoding(UTF-8) to write UTF-8. Behaving just as we expect if it was just text.
+If file is UTF-8: 'u' && DIAERESIS are sepR8 bytes. m<\N{LATIN SMALL LETTER U WITH DIAERESIS}> does not match  . length is 11 (surprising!).
+  Printing to a file writes UTF-8 without encoding.  *joke* "Solution is to write all our Perl in Latin-1!!!"
+You can write a program:
+  my $string = "AB CD"; # where AB CD are each Nihongo kanji for gr8 Nipponese guitarist's name. bytes or chars? No ambiguity here. Can't encode file as
+Latin-1. Must be UTF-8. m<\N{Unified_Ideograph}> does not match. length is 13 (surprising!). printing to file writes UTF-8 without encoding.
+  use utf8; # asserting that everything from here down in my scope is the content of my program is encoded in UTF-8 (it's lexical), so decode it.
+            # The contents of code-points you get from a string will be the characters represented by the bytes on disk.
+Still can be a question of bytes or text, but it's text. Very rare to have byte-d8a with values over 255.
+  AB CD => 5E03 888B 0020 5BC5 6CF0. m<\N{Unified_Ideograph}> matches. length is 5 (gr8!). printing to file requires :encoding(UTF-8).
+Try to always use utf8.pm && UTF-8 source, unless program must be just ASCII (for some weird reason, because UTF-8 should be downward compatible).
+So if you want to have both in your program, one option is to make it very clear:
+  use utf8;
+  my $string = 'AB CD';
+  my $bytes1 = "\x00\x12"; # giving byte values
+  my $bytes2 = do { no utf8; "octets" }; # where o has DIAERESIS, c has little tail, e has little slash accent over. Possible to have parts of program encoded.
+Use it judiciously.
+  my $string = get_string();
+  open my $fh, '<', \$string or die "o no: $!"; # needs '<:encoding(UTF-8)' discipline or Perl will just die!
+Now on to output: Need files && STD(OUT|ERR) with binmode.
+`cat` just takes bytes from disk && sends them to terminal which has an encoding.
+`grep` knows how to encode them from POSIX $ENV{'LANG'} or $ENV{'LC_ALL'} or others. LC_ALL='C' is a lot faster because it doesn't have to decode every line.
+Intermission before 3rd section of talk. Recap:
+  decode  input immeD8ly
+  know && document what subs expect what
+  encode output just before outputting it
+  inside program, it's just text like we've been using since 1963!
+"Unicode is fundamentally more complex than any model you'd want to impose on it. There's complexity that you can never sweep under the carpet. If you try,
+  you're either going to break your code or someone else's. At some point, you're going to have to break down && learn what Unicode is about. You cannot
+  pretend it is something it is not."  --Tom "$CamelChar" Christiansen on StackExchange?
+So enye is:
+  my $str = "\N{LATIN SMALL LETTER N}" . "\N{COMBINING TILDE}";
+length of $str is 2! 2 chars are forming 1 Grapheme Cluster. Distinction matters.
+  use utf8;
+  binmode *STDOUT, 'encoding(UTF-8)';
+  my @band_names = ('Husker Du',
+                    'Queensryche', # y has DIAERESIS above
+                    'Queensryche', #   && again
+                    'AB CD');
+  for(@band_names){printf "%12s - Awesome\n",$_;}
+Running program gets:
+    Husker Du - Awesome
+  Queensryche - Awesome
+   Queensryche - Awesome
+        A B  C D  - Awesome  # kanji are noticably wider than Latin chars so I padded with spaces to simul8 offset
+First Queensryche is using char 255 (Ricardo's favorite), LATIN SMALL LETTER Y, COMBINING DIAERESIS. Second has y && combining together. Kanji are just wider.
+  use 5.10;
+  use utf8;
+  use Unicode::GCString; # Grapheme Cluster
+  my @band_names = ('Husker Du',
+                    'Queensryche', # y has DIAERESIS above
+                    'Queensryche', #   && again
+                    'AB CD');
+  for(@band_names){say Unicode::GCString->new($_)->columns;} # looks at char d8abase
+Returns:
+   9
+  11
+  11
+   9  # each Nipponese char counts as double-width, except space (unless using double-width space)
+Here's another issue:
+  /\A Name: .{1,10} \z/  #  . matches just one char without following combiners
+Need to use:
+  /\A Name: \X{1,10} \z/ # \X matches whole Grapheme Cluster at once
+Similarly:
+  split //        # matches between chars
+Better:
+  split /\b{gcb}/ # \b is boundary between stuff, Grapheme Cluster Boundary (became available in Perl 5.22, very recently)
+Then on to comparison:
+  my $band1 = 'Queensryche'; # 12 chars
+  my $band2 = 'Queensryche'; # 11 chars
+  if($band1 eq $band2){ ... }
+Are they considered equal? No. It compares char strings, even though the same concept. One way is to normalize with:
+  use Unicode::Normalize 'NFC'; # C means Combining
+  my $band1 = 'Queensryche'; # 12 chars
+  my $band2 = 'Queensryche'; # 11 chars
+  if(NFC($band1) eq NFC($band2)){ ... } # these become equal
+So does this solve our Unicode comparisons problem? Well if we want to compare case-insensitively, the standard way would be (since 1963):
+  my $x = get_string();
+  my $y = get_string();
+  if(lc $x eq lc $y){ ... }
+such that
+  my $x = 'SanDeE*'
+  my $y = 'Sandee*'
+  if(lc $x eq lc $y){ ... } # comparison works
+If you try:
+  my $x = 'PaSstraSe'; # where uppercase S are German  # we get paSstraSe
+  my $y = 'PASSSTRASSE';                               #     && passstrasse
+  if(lc $x eq lc $y){ ... } # comparison does not work
+In this case, uc happens to work. We might instead have:
+  my $x = 'Theotokos'; # Greek: Theta epsilon omicron tau o with accent kappa omicron c with tail
+  my $y = 'Theotokos'; #   just Theta seems slightly different
+  if(uc $x eq uc $y){ ... } # comparison does not work
+So we use FoldCase:
+  if(fc $x eq fc $y){ ... } # comparison works. Maps strings into a case that exists just for comparisons. It's distinct from lower, upper, or title case.
+Then we get to this thing:
+  my $x = 'x';
+  my $y = 'x';
+  if(fc $x eq fc $y){ ... } # comparison does not work.
+Same concept.
+  my $x = 'x' . "\N{COMBINING HORN}" . "\N{COMBINING DOT BELOW}";
+  my $y = 'x' . "\N{COMBINING DOT BELOW}" . "\N{COMBINING HORN}";
+2 diacritical marks in different order. FoldCase won't work. So:
+  use        Unicode::Collate;
+  my  $uca = Unicode::Collate->new;
+  say $uca->cmp($x, $y); # returns -1, 0, or 1  # the 2 strings are canonically equivalent  # It works && returns 0!
+Now let's imagine we had n:
+  my $x = 'n' . "\N{COMBINING DIAERESIS}" . "\N{COMBINING TILDE}";
+  my $y = 'n' . "\N{COMBINING TILDE}" . "\N{COMBINING DIAERESIS}";
+Similar problem, but returns -1 because stacking on top of n in different order. You can't normalize these to be the same. Need to use Collate for sorting in
+a way that is semantically correct for text.
+  my $x = 'w';  # omega with quote && then tilde above && little tail below  # GREEK SMALL   LETTER OMEGA WITH DASIA AND PERISPOMENI AND YPOGEGRAMMENI  U+1FA7
+                #   last word means Hypo-Grammeni meaning Under-Writing which writes Iota under lowercase letters
+  my $y = 'OI'; # uppercase sepR8s them                                      # GREEK CAPITAL LETTER OMEGA WITH DASIA AND PERISPOMENI GREEK CAPITAL LETTER IOTA
+  # U+0FBF9  # ARABIC LIGATURE UIGHUR KIRGHIZ
+             #   YEH
+             #   WITH HAMZA ABOVE
+             #   WITH ALEF MAKSURA
+             #   ISOLATED FORM                                               # seems to be longest char name in Unicode so far
+  # U+0FC03  # looks just the same but doesn't have UIGHUR KIRGHIZ, each from different dialects
+  sos sos # with slashes through each o  # these are different strings
+  paypal
+  paypal  # with Cyrillic character alef
+  scope   # USA
+  scope   #      Cyrillic
+  $o1 = "\N{LATIN SMALL LETTER O}"; # these are in different scripts
+  $o1 = m< \p{Latin} >x;            # match properties
+  $o1 = m< \p{Scx=Latn} >x;
+  $o2 = "\N{CYRILLIC SMALL LETTER O}";
+  $o2 = m< \p{Scx=Cyrl} >x;
+  # still need to detect confusables just within Latin
+  $_ = "o"; # plus with a circle over it
+  use Unicode::UCD 'charprop';
+  say charprop(ord, 'Numeric_Value'); # prints '1000'
+Title slide has 6 mostly squiggly characters. Take all the boilerpl8 talked about:
+  use 5.20.0;use warnings;use utf8;
+  binmode *STDOUT, 'encoding(UTF-8)';
+  use List::Util 'reduce';use Math::BigFloat;
+  use Unicode::UCD 'charprop';
+  my $squiggly = '%oMe1m'; # chars from title
+  my @values   = map {
+    Math::BigFloat->new(
+      charprop(  ord, 'Numeric_Value'))}
+    split //, $squiggly; # works because all are single-char Grapheme Clusters
+  printf "%.0e", reduce { $a * $b } @values; # prints '1e+15', or a Million Billion! =)
+Everything in talk is documented in Unicode standards:
+  TR36   - Security Consider8ions (Technical Report 36)
+  UAX 44 - Unicode Character D8abase (which scripts they are, their properties, how to match them)
+  UTS 10 - Coll8ion Algorithm (for comparison or sorting)
+  TR29   - Text Segment8ion (how do you split stuff: by char, by Grapheme Cluster, by sentence, by paragraph)
+  TR18   - Regular Expressions
+  TR31   - Identifier and Pattern Syntax (defining which chars are approprE8 for variables in programming languages)
+  TR51   - Emoji (probably main driver of l8st Unicode adoption)
+  U+1F627- ANGUISHED FACE
+We definitely want utilities to test whether any string is a single script && whether 2 strings are confusable. Unicode::Security likely helps there.
+
+Rel8dly from LarryWall's recent /. interview at HTTPS://Developers.SlashDot.Org/story/16/07/14/1349207/the-slashdot-interview-with-larry-wall#comments
+  "Yuck! I mean, XP. Well, I really mean U+1F61D, FACE WITH STUCK-OUT TONGUE AND TIGHTLY-CLOSED EYES."
+
+G7KM9Zoo: IRC.Perl.Org #perl dmac:☠️ ; From gnome-terminal, Ctrl-Shft-U then "1F627 " to get ANGUISHED FACE on command-line or in vim's insert mode(s)?.
+  System Settings > Keyboard > Shoftcuts > Typing or `setxkbmap -option 'compose:menu'` to set X Compose Key which sets up combin8ionz which can be found in
+    /usr/share/X11/locale/en_US.UTF-8/Compose so an example © (Copyright symbol) would use Menu, o, c. Not sure how I'd set this since HHKB has no Menu key.
+  Might put XKBOPTIONS=compose:lsuper in /etc/default/keyboard && `sudo dpkg-reconfigure console-setup`. Older systemz in 'us' layout had Compose key on
+    console with both Alt keys together so LAlt+RAlt,",A=>Ä. PrtScrn also acted as Compose by default. To just use AltGr (RAlt?), need to change
+    'alt keycode 100 = Compose' in active keyboard map to
+    '    keycode 100 = Compose'. Maybe good way is to crE8 new /lib/kbd/keymaps/i386/include/altgr-is-compose.inc with above line && make a new keymap that
+    includes it, then set that as my default keymap. Maybe Ctrl-. does Compose when not in Unicode mode. `dumpkeys --compose-only` shows default sequencez;
+
+G7MMDJts:The set of characters that are deemed whitespace (at least for Perl RegEx /x?) are those that Unicode calls "Pattern White Space", namely:
+  U+0009 CHARACTER TABULATION
+  U+000A LINE FEED
+  U+000B LINE TABULATION
+  U+000C FORM FEED
+  U+000D CARRIAGE RETURN
+  U+0020 SPACE
+  U+0085 NEXT LINE
+  U+200E LEFT-TO-RIGHT MARK
+  U+200F RIGHT-TO-LEFT MARK
+  U+2028 LINE SEPARATOR
+  U+2029 PARAGRAPH SEPARATOR
+
+G8HMIl40:#perl < genio> ua: You can strip Unicode combining marks with $string =~ s/\p{Mark}//g or use Text::Unidecode;

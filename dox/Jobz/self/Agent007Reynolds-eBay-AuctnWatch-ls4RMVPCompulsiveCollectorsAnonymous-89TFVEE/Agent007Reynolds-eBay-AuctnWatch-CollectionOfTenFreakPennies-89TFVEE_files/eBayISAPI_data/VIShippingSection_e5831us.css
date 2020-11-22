@@ -1,0 +1,60 @@
+body,.standard,h3,.standardtitle { font-family:Arial,Helvetica,sans-serif;font-size:x-small;voice-family:"\"}\"";voice-family:inherit;font-size:small; }
+a:active,a:link,.novisited a:visited { color:#0000CC; }
+a:visited { color:#990099; }
+pre { font-family:"Courier New",Courier,monospace;font-size:x-small;voice-family:"\"}\"";voice-family:inherit;font-size:small; }
+h1,.pagetitle { font-size:medium;font-weight:bold;voice-family:"\"}\"";voice-family:inherit;font-size:large; }
+h2,.sectiontitle { font-size:small;font-weight:bold;voice-family:"\"}\"";voice-family:inherit;font-size:medium; }
+h3,.standardtitle { font-weight:bold; }
+.emphasized { color:#009900;font-weight:bold; }
+.error { color:#FF0000; }
+.help { color:#666666; }
+.hide { display:none; }
+.ens { display:inline; }
+.pipe { color:#9999FF; }
+.textbox,.button,.navigation { font-family:Verdana;font-size:xx-small;voice-family:"\"}\"";voice-family:inherit;font-size:x-small; }
+.textboxhelp { color:#666666;font-family:Verdana;font-size:xx-small;voice-family:"\"}\"";voice-family:inherit;font-size:x-small; }
+.nomargin { margin:0px; }
+.bold { font-weight:bold; }
+.fontnormal { font-weight:normal; }
+
+body { background-color:#ffffff;color:#000000; }
+.titlePadding { padding-top:4px;padding-bottom:4px; }
+.shipPadding { padding-top:10px;padding-bottom:5px; }
+.shipSecFont { font-family:arial;font-size:13px; }
+.indentation { padding-left:8px; }
+.error { font-family:arial;font-size:13px;color:#FF0000; }
+.insuranceText { font-family:arial;font-size:10px;color:#999999; }
+.grayOut { font-family:arial;font-size:13px;color:#cccccc; }
+.shipFootNote { font-family:verdana;font-size:10px;color:#999999;padding-bottom:20px; }
+.LessIndentation { padding-left:4px; }
+.extraIndentation { padding-left:12px; }
+.ViShipSecBorder { border-bottom:0px solid #cccccc;border-left:1px solid #cccccc;border-right:1px solid #cccccc;border-top:0px;padding:0px; }
+.ViShipSecHeaderBorder { border-width:1px;border-color:#cccccc;border-style:solid;padding:8px; }
+.ViShipSecTdBorder { border-bottom:1px solid #e5e5e5;border-left:1px solid #e5e5e5;border-right:1px solid #e5e5e5;border-top:0px solid #e5e5e5;padding:8px;font-family:arial;font-size:13px;text-align:left; }
+.ViShipSecThBorder { border-bottom:1px solid #e5e5e5;border-left:1px solid #e5e5e5;border-right:1px solid #e5e5e5;border-top:0px;padding:5px;font-family:arial;font-size:13px;text-align:left; }
+.ViShipSecTdRightBorder { border-bottom:1px solid #e5e5e5;border-left:1px solid #e5e5e5;border-right:0px solid #e5e5e5;border-top:0px solid #e5e5e5;padding:5px;font-family:arial;font-size:13px;text-align:left; }
+.ViShipSecTdLeftBorder { border-bottom:1px solid #e5e5e5;border-left:0px solid #e5e5e5;border-right:1px solid #e5e5e5;border-top:0px solid #e5e5e5;padding:5px;font-family:arial;font-size:13px;text-align:left; }
+.grayText { font-family:arial;font-size:13px;color:#999999; }
+.overlay { background:transparent;position:absolute; }
+.overlay .contentbox { width:100%;position:relative; }
+.overlay .contentbox .content { padding:5px;border:1px solid #666;background:#fff;border-width:0 1px; }
+.overlay .contentbox *,.overlay .shadowbox * { position:relative; }
+.overlay .shadowbox { width:100%;position:absolute;top:7px;left:7px;opacity:.15;filter:"alpha(opacity=15)";-moz-opacity:0.15; }
+.overlay .shadowbox .content { background:#000;padding:10px; }
+.overlay .contentbox .n { border-top:1px solid #666;margin:0 5px;background:#fff; }
+.overlay .contentbox .s { border-bottom:1px solid #666;margin:0 5px;background:#fff;position:relative; }
+.overlay .shadowbox .n,.overlay .shadowbox .s { margin:0 5px;background:#000; }
+.cn,.scn { margin:0;padding:0;height:5px;display:block;font-size:0;line-height:0%; }
+.cn { background:transparent url(http://pics.ebaystatic.com/aw/pics/globalAssets/imgOverlayCorners.gif) no-repeat; }
+.scn { background:transparent url(http://pics.ebaystatic.com/aw/pics/globalAssets/imgOverlayShade.gif) no-repeat; }
+.overlay .n .cn .cn,.overlay .n .scn .scn { background-position:0 0;width:5px;margin-left:-5px; }
+.overlay .n .cn,.overlay .n .scn { background-position:100% -20px;margin-right:-5px; }
+.overlay .s .cn,.overlay .s .scn { background-position:100% -30px;margin-right:-5px; }
+.overlay .s .cn .cn,.overlay .s .scn .scn { background-position:0 -10px;width:5px;margin-left:-5px; }
+.arrowTL,.arrowTR,.arrowBL,.arrowBR { background:transparent url(http://pics.ebaystatic.com/aw/pics/globalAssets/imgOverlayPoints.gif) no-repeat;width:22px;height:25px;position:absolute; }
+.arrowTL { top:12px;left:-21px;background-position:0px 0px; }
+.arrowTR { top:12px;right:-21px;background-position:100% -30px; }
+.arrowBL { bottom:12px;left:-21px;background-position:0px -60px; }
+.arrowBR { bottom:12px;right:-21px;background-position:100% -90px; }
+
+/* b=7239129 */

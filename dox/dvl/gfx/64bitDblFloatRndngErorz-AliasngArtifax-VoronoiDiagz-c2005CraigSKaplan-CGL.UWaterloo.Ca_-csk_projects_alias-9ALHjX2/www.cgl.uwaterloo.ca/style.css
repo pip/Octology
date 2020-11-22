@@ -1,0 +1,38 @@
+
+body {
+    font-family: Helvetica, sans-serif;
+}
+
+#logo {
+    float: left;
+}
+
+#title {
+    float:right;
+}
+
+#menu {
+    clear: both;
+    float: left;
+    width: 250px;
+}
+
+#content {
+    float: left;
+    width: 70%;
+}
+
+#footer {
+    clear: both;
+    width: 100%;
+}
+
+#publicationlist li {
+    margin: 0.5em;
+}
+
+#description {
+    font-size: small;
+    font-style: italic;
+}
+

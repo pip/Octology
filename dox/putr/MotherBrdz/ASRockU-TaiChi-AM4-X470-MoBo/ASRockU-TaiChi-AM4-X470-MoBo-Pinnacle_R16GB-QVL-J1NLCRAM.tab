@@ -1,0 +1,46 @@
+Vendor  	Speed	Suportd Size	Module                  	Chip    	SS/DS	DIMSlot	OC	#   all  Types=DDR4
+HyperX  	2666	2666	16GB	HX426C13PB3K4/64        	Hynix  M-die	DS	2/4		# ~$565 4x16GB exact (maybe super low 13 CASL?)
+HyperX  	2400	2400	16GB	HX424C15FBK4/64                 		DS	2/4		# ~$530 4x16GB exact (Max64GB Fury 288pin CL15)
+Corsair 	3200	3200	16GB	CMD64GX4M4B3200C16 (Hynix C)	Hynix  C 	DS	2/4	v	# ~$500!4x16GB!CMK""!(availabl !thO !mismatchd)
+Corsair 	3200	3200	16GB	CMD32GX4M2B3200C16 (Hynix C)	Hynix  C 	DS	2	v	# ~$255!2x16GB!D2K""!(availabl !thO !mismatchd)
+Corsair 	3200	3200	16GB	CMR32GX4M2D3200C16              		DS	2	v	# ~$438!2x16GB!R2K""!(availabl !thO !mismatchd)
+G.Skill 	2933	2933	16GB	F4-3866C18D-32GTZR              		DS	2	v	# ~$435 2x16GB exact (expensive fast pair 16GB)
+G.Skill 	2933	2933	16GB	F4-3200C14D-32GTZR              		DS	2	v	# ~$380 2x16GB exact (price for low CAS l8ency)
+G.Skill 	2933	2933	16GB	F4-3200C15D-32GTZR              		DS	2	v	# ~$345 2x16GB exact (slightly expensive4slowr)
+G.Skill 	2933	2933	16GB	F4-3333C16D-32GTZSK             		DS	2	v	# ~$330 2x16GB exact (best match value so far!)
+HyperX  	3000	2800	16GB	HX430C15PB3K2/32                		DS	2/4		# ~$288 2x16GB exact (probably super best 4now)
+G.Skill 	2400	2400	16GB	F4-2400C16D-32GFX               		DS	2		# ~$278 2x16GB exact (way expensive for sames?)
+HyperX  	2666	2666	16GB	HX426C13PB3K2/32        	Hynix  M-die	DS	2		# ~$275 2x16GB exact (probably best value now?)
+HyperX  	2400	2400	16GB	HX424C15FBK2/32         	Kingston	DS	2		# ~$269 2x16GB exact (probably quite good deal)
+HyperX  	2133	2133	16GB	HX421C14FBK2/32         	Kingston	DS	2		# ~$268 2x16GB exact (while CL14 2costly4 2133)
+G.Skill 	2133	2133	16GB	F4-2133C15D-32GFX               		DS	2		# ~$267!2x16GB!exact!(steep! ?probably ignore!)
+G.Skill 	2400	2400	16GB	F4-2400C15D-32GFXR              		DS	2		# ~$180 2x16GB exact (CL15 @same price as CL16)
+G.Skill 	2400	2400	16GB	F4-2400C16D-32GFXR              		DS	2		# ~$180 2x16GB exact (CL16 && 2400 slow&&cheap)
+G.Skill 	2133	2133	16GB	F4-2133C15D-32GFXR              		DS	2		# ~$175 2x16GB exact?(mAB ?du!trust? G.Skill ?)
+G.Skill 	2400	2400	16GB	F4-2400C15D-32GFX               		DS	2		# ~$175 2x16GB exact (CL15 2400-GFX? G.Skill ?)
+G.Skill 	2400	2400	16GB	F4-2400C15D-32GFT               		DS	2		# ~$170 2x16GB exact (CL15 bSt4sAmprIczaz CL16)
+G.Skill 	2400	2400	16GB	F4-2400C16D-32GFT               		DS	2		# ~$170 2x16GB exact (maybe cheapest 32 sofar?)
+G.Skill 	2133	2133	16GB	F4-2133C15D-32GFT               		DS	2		# ~$165!2x16GB!exact!(cheap! &&badqualiTrEview)
+HyperX  	2400	2400	16GB	HX424C12PB3/16          	Hynix  M-die	DS	2		# ~$146   16GB exact (CL12 is probably fastlow)
+HyperX  	2666	2666	16GB	HX426C13PB3/16          	Hynix  M-die	DS	2		# ~$141   16GB exact (maybe best cheap startr?)
+Kingston	2133	2133	16GB	KVR21N15D8/16                   		DS	2/4		# ~$122   16GB exact (singl chEpSt slOSt 16GB!)
+Patriot 	2400	2400	16GB	PSD416G24002                    		DS	2/4		# ~$120?  16GB?exact?(notconfirm ?wo ?partnumb)
+ADATA   	2400	2400	16GB	AX4U2400316G16-SRZ              		DS	2/4		# ~$456   16GB exact (stupid expensive seller?)
+ADATA   	2800	2800	16GB	AX4U2800316G16-SRZ              		DS	2		# ~$467   16GB OMG_Hi!
+ADATA   	3200	3200	16GB	AX4U3200316G16-SGZ              		DS	2	v	# ~$503   16GB insane!
+ADATA   	2800	2800	16GB	AX4U2800316G16-SBF              		DS	2		#   N/A NewEgg search.
+Patriot 	3200	2933	16GB	PV432G320C6K       (11BF2)      		DS	2	v	#   N/A NewEgg search.
+CENTURY MICRO	2666	2666	16GB	CD16G-D4U2666                   		DS	2/4		#   N/A NewEgg search.
+GALAX   	2400	2400	16GB	GAL4AXT1BMT2400D17KE161C	Micron B-die	SS	2		#   N/A NewEgg search.
+HyperX  	2400	2400	16GB	HX424C12PB3K2/32        	Hynix  M-die	DS	2		#   N/A NewEgg search.
+ADATA   	2400	2400	16GB	AX4U2400316G16-SWZ              		DS	2/4		#   N/A NewEgg search.
+ADATA   	2400	2400	16GB	AX4U2400316G16-SRD              		DS	2/4		#   N/A NewEgg search 4 all following Ad8a RAM;
+ADATA   	2400	2400	16GB	AX4U2400316G16-SBF              		DS	2/4		#  probably should still see how these price on
+ADATA   	2400	2400	16GB	AX4U2400316G16-QWZ              		DS	2/4		#    Amazon or other mem-sellers B4 culing thM;
+ADATA   	2400	2400	16GB	AX4U2400316G16-QRZ              		DS	2/4		#
+ADATA   	2400	2400	16GB	AX4U2400316G16-QRD              		DS	2/4		#
+ADATA   	2400	2400	16GB	AX4U2400316G16-DWZ              		DS	2/4		#
+ADATA   	2400	2400	16GB	AX4U2400316G16-DRZ              		DS	2/4		#
+ADATA   	2400	2400	16GB	AX4U2400316G16-DRD              		DS	2/4		#
+ADATA   	2400	2400	16GB	AX4U2400316G16-BRZ             	ADATA   	DS	2/4		#
+# GiftCard ID: 0730314825127389	SecurityCode: 2542 ... Simply enter GiftCardID && SecurityCode in CheckOut screen when placing your order;

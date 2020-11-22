@@ -1,0 +1,26 @@
+rem BaTpal batch palette generator v1.1
+setpal 002e323f
+setpal 01023731
+setpal 020b3f23
+setpal 03002a37
+setpal 042f0412
+setpal 05160725
+setpal 063c1e12
+setpal 143c1e12
+setpal 07222a37
+setpal 080b0600
+setpal 380b0600
+setpal 09020411
+setpal 39020411
+setpal 0a001006
+setpal 3a001006
+setpal 0b001025
+setpal 3b001025
+setpal 0c1c0009
+setpal 3c1c0009
+setpal 0d100012
+setpal 3d100012
+setpal 0e361000
+setpal 3e361000
+setpal 0f01020d
+setpal 3f01020d

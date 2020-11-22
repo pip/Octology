@@ -1,0 +1,19 @@
+#!/usr/bin/perl
+# ICRLBADi:lshd crE8d by PipStuart <Pip@CPAN.Org> 2turn lshw .ls files into a colored aligned diff by 2 or 4 [or l8r 3columns(53x3=159chars)];
+# 2du:proprly trak trE nvg8n by $pfxs indNtz,bild custm sumRy hash,stRt prntng2 $out8 4m@d prIoritIzd Nd sumRy,s/// longSt %fldz keyz 1st 4custm colrd shrtz;
+use strict;use warnings;use utf8;use v5.10;use Path::Tiny;use Octology::a8;my $d8VS='ICUL4lsh';my %fldz=('capacity'=>'cpct','capabilities'=>'cpbl',
+  'corefirmwarecpu'=>    "${c}core${g}firm${w}ware${C}cpu",'cpu'=>"${C}cpu",                             'bus info'=>'busn','logical name'=>'lgcn',
+  'core'=>"${c}core",'firmware'=>"${g}firm${w}ware"); #for my $flnm (qw()){ } # mAB prntall&&Xplicitly ls&&shrnk nstdofjustXceptnz2=~/..../lc() 2loopm@chkyz?
+for my $lfnm (<"*.ls">){my $lfil=path($lfnm)->slurp_utf8();my $lfno=$lfnm;my($prfx,$pfxs,$pfxr)=('','','');my($rfie,$rcln,$rval)=('','','');my $opfs;
+  if($lfno=~ s/^(.*)\.(utf8?|txt|log|ls)$/$1.lsh/i){my $mchn=$1;my $si3c='';say "Gener8inG $lfnm 4mat in2: $lfno ..."; # used to s/// $1-$d8VS.lshd B4
+    my @slnz=split(/\n/,$lfil);for(0..$#slnz){ # $slnz[$_]=sprintf("%-53s",$slnz[$_]);  ## orig 3-colm scriptz trunc8d any long lInz B4 intrlEvng thM;
+      if    ($slnz[$_]=~  /^(\s*)     \*(-.+)$/x){$pfxs=$1 if(defined($1) && length($1));$pfxr.=$2 if(defined($2) && length($2));#$pfxr=~ s/(:)(.*)(:)/$1/;
+        $pfxr=~ s/(.*)(-[^-]*)(-)/$1$3/ if(length($pfxs) < length($opfs)); # actually should probably try testing && handling before assignment instead;
+      }elsif($slnz[$_]=~  /^(\s*)     ([^:]*)$/x){$pfxs=$1 if(defined($1) && length($1));$prfx =$2 if(defined($2) && length($2));
+      }elsif($slnz[$_]=~  /^(\s*)([^:]+):(.*)$/ ){$pfxs=$1 if(defined($1) && length($1));my $fiel=lc($2);my $valu=$3;$rfie=$pfxr;$rcln=$rval='';
+        $fiel=$fldz{$fiel} if(exists($fldz{$fiel}));$fiel=~ s/^(....).*/$1/;if($pfxr=~ /^(.+)(:)(.*)/){$rfie="$o$1";$rcln="$K$2";$rval="$P$3";}
+        $rfie=$fldz{$rfie} if(exists($fldz{$rfie}));$si3c.="$z$p$prfx$B$rfie$rcln$rval$R $fiel$Y=$M$valu$W;$z\n";}$opfs=$pfxs;}
+    open my $outs,'>' ,$lfno  or die "Can't open  Output  Script handle: $!";binmode $outs,':encoding(UTF-8)';print $outs $si3c;
+    close   $outs             or die "Can't close Output  Script handle: $!"; chmod   0600, $lfno;}} # mAB hEr shud procS sumRy hash 2just print BlO?
+open     my $out8,'>&',STDOUT or die "Can't open  duplic8 STDOUT handle: $!";binmode $out8,':encoding(UTF-8)';#rint $out8 b256(@ARGV);
+close       $out8             or die "Can't close duplic8 STDOUT handle: $!";

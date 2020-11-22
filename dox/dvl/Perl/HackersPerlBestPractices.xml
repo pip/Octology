@@ -1,0 +1,935 @@
+<?xml version="1.0" encoding="utf-8"?>
+<HackersPerlBestPractices created="5BI3pUC" version="1.0.61TD90o">
+  <!--This XML document was created by Pip Stuart <Pip@CPAN.Org> to document his personal Perl Best Practices as relates to the 256 guidelines
+    presented in Damian Conway's <Damian@Conway.Org> Perl Best Practices book published by O'Reilly.  I (Pip) have included "Hacker" element
+    sections wherever my practices and opinions diverge from Conway's recommendations.  These sections describe what my practice is and why I hold it.
+    Maybe other Perl Hackers (namely my friends: Beppu and Keith) can add their own sections if they feel like it and have time to.  If you do feel
+    inclined to utilize my template below to detail your own Perl practices and you'd like to be associated with this document as a Perl Hacker with
+    any opinion to contribute, please e-mail me a copy of your latest version so that I can merge updates into a master copy.  Once I think I'm
+    relatively done with my opinions, I'll be glad to e-mail my latest copy to anyone who requests it and I'll probably also host it on LBox.Org.-->
+  <!--Pip's Rule-of-Thumb: Dense code (minimal whitespace) is better than the alternative because it enables the programmer to view more code at once.
+    A good over-arching explanation for most of my discrepancies with Conway's recommendations is that I am comfortable with, prefer, and enjoy dense code.
+    I am generally stingy with whitespace (especially blank lines).  I am accustomed to writing and discerning code behavior without separate "paragraphs"
+    (especially since syntax highlighting and code-block delimiter jumping hotkeys diminish the need even further).  On any computer screen, I would
+    rather see lots of code than lots of space.  I usually pack code right up to my brink of obscurity to serve this preference.-->
+  <!-- 2do:
+    add Explanations wherever Summary is too short or interesting answers/tradeoffs are described in text body of Guideline
+    estimate agreement and write more Pip practices
+    estimate relative practice needed to improve my Perl in an order relatively prioritized for what I think is important
+  -->
+  <Chapter index="2" title="Code Layout" count="22">
+    <Guideline index="0" topic="Bracketing" agree="255" practice="0">
+      <Summary>Brace and parenthesize in K&amp;R style.</Summary>
+    </Guideline>
+    <Guideline index="1" topic="Keywords" agree="255" practice="0">
+      <Summary>Separate your control keywords from the following opening bracket.</Summary>
+    </Guideline>
+    <Guideline index="2" topic="Subroutines and Variables" agree="255" practice="0">
+      <Summary>Don't separate subroutine or variable names from the following opening bracket.</Summary>
+    </Guideline>
+    <Guideline index="3" topic="Builtins" agree="0" practice="15">
+      <Summary>Don't use unnessecary parentheses for builtins and "honorary" builtins.</Summary>
+      <Hacker>
+        <Pip>
+          <Summary>Use parentheses for builtins and "honorary" builtins almost always.</Summary>
+          <Explanation>I prefer to use parentheses almost everywhere to make subroutine parameter lists very clear.</Explanation>
+          <Exception>I omit parentheses when a subroutine call (builtin or not) requires a bareword parameter (like printing to a file) or when there are
+            already parentheses surrounding a subroutine call and all of its parameters, especially if it's just a single parameter.</Exception>
+        </Pip>
+      </Hacker>
+    </Guideline>
+    <Guideline index="4" topic="Keys and Indices" agree="255" practice="0">
+      <Summary>Separate complex keys or indices from their surrounding brackets.</Summary>
+      <Hacker>
+        <Pip>
+          <Explanation>I completely agree with this guideline but my definition of "complex" is more lenient than most.</Explanation>
+        </Pip>
+      </Hacker>
+    </Guideline>
+    <Guideline index="5" topic="Operators" agree="240" practice="0">
+      <Summary>Use whitespace to help binary operators stand out from their operands.</Summary>
+    </Guideline>
+    <Guideline index="6" topic="Semicolons" agree="255" practice="0">
+      <Summary>Place a semicolon after every statement.</Summary>
+    </Guideline>
+    <Guideline index="7" topic="Commas" agree="255" practice="0">
+      <Summary>Place a comma after every value in a multiline list.</Summary>
+    </Guideline>
+    <Guideline index="8" topic="Line Lengths" agree="127" practice="0">
+      <Summary>Use 78-column lines.</Summary>
+      <Hacker>
+        <Pip>
+          <Summary>Use 78 or 158-column lines.</Summary>
+          <Explanation>They'll either wrap evenly on standard 80-column displays or fit into my 160x64 consoles even when EOLs are visible (via 'set list' in .vimrc).</Explanation>
+        </Pip>
+      </Hacker>
+    </Guideline>
+    <Guideline index="9" topic="Indentation" agree="31" practice="0">
+      <Summary>Use four-column indentation levels.</Summary>
+      <Hacker>
+        <Pip>
+          <Summary>Use two-column indentation levels.</Summary>
+          <Explanation>I've grown accustomed to two-space indents everywhere and prefer them strongly to any alternative.  I may someday graduate to single-space indentation but two suits me well for now.  I find eight ridiculous and four quite excessive.</Explanation>
+        </Pip>
+      </Hacker>
+    </Guideline>
+    <Guideline index="10" topic="Tabs" agree="255" practice="0">
+      <Summary>Indent with spaces, not tabs.</Summary>
+    </Guideline>
+    <Guideline index="11" topic="Blocks" agree="0" practice="0">
+      <Summary>Never place two statements on the same line.</Summary>
+      <Hacker>
+        <Pip>
+          <Summary>Place two statements on the same line whenever they fit cleanly and their behaviors are apparent.</Summary>
+          <Explanation>I don't like wasting the remaining whitespace on lines unless it's difficult for me to figure out what code does without separate lines or if the following line performs such a similar operation to the current one that this similarity would be vividly highlighted by vertical alignment.</Explanation>
+        </Pip>
+      </Hacker>
+    </Guideline>
+    <Guideline index="12" topic="Chunking" agree="15" practice="0">
+      <Summary>Code in paragraphs.</Summary>
+      <Hacker>
+        <Pip>
+          <Summary>Don't code in paragraphs.</Summary>
+          <Explanation>I don't like blank lines in code files unless it is difficult for me to figure out what the code does (which is rare).</Explanation>
+        </Pip>
+      </Hacker>
+    </Guideline>
+    <Guideline index="13" topic="Elses" agree="0" practice="0">
+      <Summary>Don't cuddle an <Builtin>else</Builtin>.</Summary>
+      <Hacker>
+        <Pip>
+          <Summary>Cuddle elses.</Summary>
+          <Explanation>Cuddled elses are clearly visible to me and delimiter-matching hotkeys help further so I would rather not consistently waste so much whitespace.</Explanation>
+        </Pip>
+      </Hacker>
+    </Guideline>
+    <Guideline index="14" topic="Vertical Alignment" agree="255" practice="15">
+      <Summary>Align corresponding items vertically.</Summary>
+      <Hacker>
+        <Pip>
+          <Explanation>I take this to extremes, aligning many columns across many lines to highlight the most important similarities present.</Explanation>
+        </Pip>
+      </Hacker>
+    </Guideline>
+    <Guideline index="15" topic="Breaking Long Lines" agree="255" practice="127">
+      <Summary>Break long expressions before an operator.</Summary>
+    </Guideline>
+    <Guideline index="16" topic="Non-Terminal Expressions" agree="255" practice="95">
+      <Summary>Factor out long expressions in the middle of statements.</Summary>
+    </Guideline>
+    <Guideline index="17" topic="Breaking by Precedence" agree="63" practice="63">
+      <Summary>Always break a long expression at the operator of the lowest possible precedence.</Summary>
+      <Hacker>
+        <Pip>
+          <Summary>Break a long expression before? the operator of the lowest possible precedence unless it is significantly far back from the 78 or 158 column boundary.</Summary>
+        </Pip>
+      </Hacker>
+    </Guideline>
+    <Guideline index="18" topic="Assignments" agree="63" practice="0">
+      <Summary>Break long assignments before the assignment operator.</Summary>
+      <Hacker>
+        <Pip>
+          <Summary>Don't break long assignments before the assignment operator.</Summary>
+          <Explanation>I wouldn't want to break assignments like this often since it is likely to leave too much whitespace after the lvalue.  I'd generally much rather break long assignments at a low-precedence operator than before the assignment operator.</Explanation>
+          <Exception>If an lvalue is particularly long, this can be the best way to break the assignment.</Exception>
+        </Pip>
+      </Hacker>
+    </Guideline>
+    <Guideline index="19" topic="Ternaries" agree="127" practice="31">
+      <Summary>Format cascaded ternary operators in columns.</Summary>
+      <Hacker>
+        <Pip>
+          <Summary>Format cascaded ternary operators in columns when they won't fit on one or two lines.</Summary>
+          <Explanation>I wouldn't want to waste whitespace on a bunch of small ternaries unless there are too many to fit on a couple lines.</Explanation>
+        </Pip>
+      </Hacker>
+    </Guideline>
+    <Guideline index="20" topic="Lists" agree="255" practice="0">
+      <Summary>Parenthesize long lists.</Summary>
+    </Guideline>
+    <Guideline index="21" topic="Automated Layout" agree="31" practice="3">
+      <Summary>Enforce your chosen layout style mechanically.</Summary>
+      <Hacker>
+        <Pip>
+          <Summary>Don't enforce layout mechanically unless your style can be rigorously codified.</Summary>
+          <Explanation>I'm not confident my column alignment style is uniform yet so I wouldn't want a mechanical layout enforcer until I could be sure it would preserve all of my practices and allow for occassional exceptions (maybe via a <Module>Smart::Comments</Module> entry?).</Explanation>
+        </Pip>
+      </Hacker>
+    </Guideline>
+  </Chapter>
+  <Chapter index="3" title="Naming Conventions" count="10">
+    <Guideline index="22" topic="Identifiers" agree="127" practice="7">
+      <Summary>Use grammatical templates when forming identifiers.</Summary>
+    </Guideline>
+    <Guideline index="23" topic="Booleans" agree="255" practice="7">
+      <Summary>Name booleans after their associated test.</Summary>
+    </Guideline>
+    <Guideline index="24" topic="Reference Variables" agree="15" practice="0">
+      <Summary>Mark variables that store references with a <Code>_ref</Code> suffix.</Summary>
+      <Hacker>
+        <Pip>
+          <Summary>Mark variables that store references with a <Code>/re?f$/</Code> suffix.</Summary>
+          <Explanation>I almost exclusively use four-letter variable names so <Code>_ref</Code> is too long as a useful suffix for me.</Explanation>
+        </Pip>
+      </Hacker>
+    </Guideline>
+    <Guideline index="25" topic="Arrays and Hashes" agree="195" practice="63">
+      <Summary>Name arrays in the plural and hashes in the singular.</Summary>
+      <Hacker>
+        <Pip>
+          <Explanation>My plural array names often end in a "z" instead of an "s" but it is meant as a less common plural designation.</Explanation>
+        </Pip>
+      </Hacker>
+    </Guideline>
+    <Guideline index="26" topic="Underscores" agree="3" practice="3">
+      <Summary>Use underscores to separate words in multiword identifiers.</Summary>
+      <Hacker>
+        <Pip>
+          <Explanation>Since I heavily abbreviate identifiers down to four-letters, I have no room or need to separate words with underscores.</Explanation>
+        </Pip>
+      </Hacker>
+    </Guideline>
+    <Guideline index="27" topic="Capitalization" agree="195" practice="15">
+      <Summary>Distinguish different program components by case.</Summary>
+    </Guideline>
+    <Guideline index="28" topic="Abbreviations" agree="255" practice="3">
+      <Summary>Abbr idents by prefx.</Summary>
+    </Guideline>
+    <Guideline index="29" topic="Ambiguous Abbreviations" agree="15" practice="0">
+      <Summary>Abbreviate only when the meaning remains unambiguous.</Summary>
+      <Hacker>
+        <Pip>
+          <Summary>Abbreviate aggressively regardless of whether the meaning is ambiguous.  Clarify ambiguity with a comment at the declaration.</Summary>
+        </Pip>
+      </Hacker>
+    </Guideline>
+    <Guideline index="30" topic="Ambiguous Names" agree="127" practice="31">
+      <Summary>Avoid using inherently ambiguous words in names.</Summary>
+    </Guideline>
+    <Guideline index="31" topic="Utility Subroutines" agree="255" practice="63">
+      <Summary>Prefix "for internal use only" subroutines with an underscore.</Summary>
+    </Guideline>
+  </Chapter>
+  <Chapter index="4" title="Values and Expressions" count="18">
+    <Guideline index="32" topic="String Delimiters" agree="255" practice="0">
+      <Summary>Use interpolating string delimiters only for strings that actually interpolate.</Summary>
+    </Guideline>
+    <Guideline index="33" topic="Empty Strings" agree="15" practice="0">
+      <Summary>Don't use <Code>""</Code> or <Code>''</Code> for an empty string.</Summary>
+      <Explanation>Use <Code>q()</Code> for an empty string.</Explanation>
+      <Hacker>
+        <Pip>
+          <Summary>Use <Code>''</Code> for an empty string.</Summary>
+          <Explanation>I'm confident <Code>''</Code> is sufficiently clear and common as an empty string.</Explanation>
+        </Pip>
+      </Hacker>
+    </Guideline>
+    <Guideline index="34" topic="Single-Character Strings" agree="" practice="">
+      <Summary>Don't write one-character strings in visually ambiguous ways.</Summary>
+    </Guideline>
+    <Guideline index="35" topic="Escaped Characters" agree="255" practice="15">
+      <Summary>Use named character escapes instead of numeric escapes.</Summary>
+    </Guideline>
+    <Guideline index="36" topic="Constants" agree="" practice="">
+      <Summary>Use named constants, but don't <Builtin>use constant</Builtin>.</Summary>
+      <Explanation>2do</Explanation>
+    </Guideline>
+    <Guideline index="37" topic="Leading Zeros" agree="255" practice="0">
+      <Summary>Don't pad decimal numbers with leading zeros.</Summary>
+    </Guideline>
+    <Guideline index="38" topic="Long Numbers" agree="255" practice="7">
+      <Summary>Use underscores to improve the readability of long numbers.</Summary>
+    </Guideline>
+    <Guideline index="39" topic="Multiline Strings" agree="195" practice="0">
+      <Summary>Lay out multiline strings over multiple lines.</Summary>
+    </Guideline>
+    <Guideline index="40" topic="Here Documents" agree="" practice="">
+      <Summary>Use a heredoc when a multiline string exceeds two lines.</Summary>
+    </Guideline>
+    <Guideline index="41" topic="Heredoc Indentation" agree="" practice="">
+      <Summary>Use a "theredoc" when a heredoc would compromise your indentation.</Summary>
+    </Guideline>
+    <Guideline index="42" topic="Heredoc Terminators" agree="" practice="">
+      <Summary>Make every heredoc terminator a single uppercase identifier with a standard prefix.</Summary>
+    </Guideline>
+    <Guideline index="43" topic="Heredoc Quoters" agree="" practice="">
+      <Summary>When introducing a heredoc, quote the terminator.</Summary>
+    </Guideline>
+    <Guideline index="44" topic="Barewords" agree="" practice="">
+      <Summary>Don't use barewords.</Summary>
+    </Guideline>
+    <Guideline index="45" topic="Fat Commas" agree="" practice="">
+      <Summary>Reserve <Code>=&gt;</Code> for pairs.</Summary>
+    </Guideline>
+    <Guideline index="46" topic="Thin Commas" agree="" practice="">
+      <Summary>Don't use commas to sequence statements.</Summary>
+    </Guideline>
+    <Guideline index="47" topic="Low-Precedence Operators" agree="" practice="">
+      <Summary>Don't mix high- and low-precedence booleans.</Summary>
+    </Guideline>
+    <Guideline index="48" topic="Lists" agree="" practice="">
+      <Summary>Parenthesize every raw list.</Summary>
+    </Guideline>
+    <Guideline index="49" topic="List Membership" agree="" practice="">
+      <Summary>Use table-lookup to test for membership in lists of strings; use <Builtin>any()</Builtin> for membership of lists of anything else.</Summary>
+    </Guideline>
+  </Chapter>
+  <Chapter index="5" title="Variables" count="12">
+    <Guideline index="50" topic="Lexical Variables" agree="" practice="">
+      <Summary>Avoid using non-lexical variables.</Summary>
+    </Guideline>
+    <Guideline index="51" topic="Package Variables" agree="" practice="">
+      <Summary>Don't use package variables in your own development.</Summary>
+    </Guideline>
+    <Guideline index="52" topic="Localization" agree="" practice="">
+      <Summary>If you're forced to modify a package variable, localize it.</Summary>
+    </Guideline>
+    <Guideline index="53" topic="Initialization" agree="" practice="">
+      <Summary>Initialize any variable you localize.</Summary>
+    </Guideline>
+    <Guideline index="54" topic="Punctuation Variables" agree="" practice="">
+      <Summary><Builtin>use English</Builtin> for the less familiar punctuation variables.</Summary>
+    </Guideline>
+    <Guideline index="55" topic="Localizing Punctuation Variables" agree="" practice="">
+      <Summary>If you're forced to modify a punctuation variable, localize it.</Summary>
+    </Guideline>
+    <Guideline index="56" topic="Match Variables" agree="" practice="">
+      <Summary>Don't use the regex match variables.</Summary>
+    </Guideline>
+    <Guideline index="57" topic="Dollar-Underscore" agree="" practice="">
+      <Summary>Beware of any modification via <Code>$_</Code>.</Summary>
+    </Guideline>
+    <Guideline index="58" topic="Array Indices" agree="255" practice="0">
+      <Summary>Use negative indices when counting from the end of an array.</Summary>
+    </Guideline>
+    <Guideline index="59" topic="Slicing" agree="255" practice="191">
+      <Summary>Take advantage of hash and array slicing.</Summary>
+    </Guideline>
+    <Guideline index="60" topic="Slice Layout" agree="" practice="">
+      <Summary>Use a tabular layout for slices.</Summary>
+    </Guideline>
+    <Guideline index="61" topic="Slice Factoring" agree="" practice="">
+      <Summary>Factor large key or index lists out of their slices.</Summary>
+    </Guideline>
+  </Chapter>
+  <Chapter index="6" title="Control Structures" count="22">
+    <Guideline index="62" topic="If Blocks" agree="0" practice="0">
+      <Summary>Use block <Builtin>if</Builtin>, not postfix <Builtin>if</Builtin>.</Summary>
+    </Guideline>
+    <Guideline index="63" topic="Postfix Selectors" agree="" practice="">
+      <Summary>Reserve postfix <Builtin>if</Builtin> for flow-of-control statements.</Summary>
+    </Guideline>
+    <Guideline index="64" topic="Other Postfix Modifiers" agree="" practice="">
+      <Summary>Don't use postfix <Builtin>unless</Builtin>, <Builtin>for</Builtin>, <Builtin>while</Builtin>, or <Builtin>until</Builtin>.</Summary>
+    </Guideline>
+    <Guideline index="65" topic="Negative Control Statements" agree="0" practice="0">
+      <Summary>Don't use <Builtin>unless</Builtin> or <Builtin>until</Builtin> at all.</Summary>
+    </Guideline>
+    <Guideline index="66" topic="C-Style Loops" agree="255" practice="15">
+      <Summary>Avoid C-style <Builtin>for</Builtin> statements.</Summary>
+    </Guideline>
+    <Guideline index="67" topic="Unnecessary Subscripting" agree="255" practice="15">
+      <Summary>Avoid subscripting arrays or hashes within loops.</Summary>
+    </Guideline>
+    <Guideline index="68" topic="Necessary Subscripting" agree="255" practice="15">
+      <Summary>Never subscript more than once in a loop.</Summary>
+    </Guideline>
+    <Guideline index="69" topic="Iterator Variables" agree="" practice="">
+      <Summary>Use named lexicals as explicit <Builtin>for</Builtin> loop iterators.</Summary>
+    </Guideline>
+    <Guideline index="70" topic="Non-Lexical Loop Iterators" agree="255" practice="3">
+      <Summary>Always declare a <Builtin>for</Builtin> loop iterator variable with <Builtin>my</Builtin>.</Summary>
+    </Guideline>
+    <Guideline index="71" topic="List Generation" agree="255" practice="255">
+      <Summary>Use <Builtin>map</Builtin> instead of <Builtin>for</Builtin> when generating new lists from old.</Summary>
+    </Guideline>
+    <Guideline index="72" topic="List Selections" agree="255" practice="255">
+      <Summary>Use <Builtin>grep</Builtin> and <Builtin>first</Builtin> instead of <Builtin>for</Builtin> when searching for values in a list.</Summary>
+    </Guideline>
+    <Guideline index="73" topic="List Transformation" agree="255" practice="255">
+      <Summary>Use <Builtin>for</Builtin> instead of <Builtin>map</Builtin> when transforming a list in place.</Summary>
+    </Guideline>
+    <Guideline index="74" topic="Complex Mappings" agree="" practice="">
+      <Summary>Use a subroutine call to factor out complex list transformations.</Summary>
+    </Guideline>
+    <Guideline index="75" topic="List Processing Side Effects" agree="" practice="">
+      <Summary>Never modify <Code>$_</Code> in a list function.</Summary>
+    </Guideline>
+    <Guideline index="76" topic="Multipart Selections" agree="" practice="">
+      <Summary>Avoid cascading an <Builtin>if</Builtin>.</Summary>
+    </Guideline>
+    <Guideline index="77" topic="Value Switches" agree="255" practice="95">
+      <Summary>Use table look-up in preference to cascaded equality tests.</Summary>
+    </Guideline>
+    <Guideline index="78" topic="Tabular Ternaries" agree="" practice="">
+      <Summary>When producing a value, use tabular ternaries.</Summary>
+    </Guideline>
+    <Guideline index="79" topic="do-while Loops" agree="255" practice="0">
+      <Summary>Don't use <Builtin>do</Builtin><Code>...</Code><Builtin>while</Builtin> loops.</Summary>
+    </Guideline>
+    <Guideline index="80" topic="Linear Coding" agree="" practice="">
+      <Summary>Reject as many iterations as possible, as early as possible.</Summary>
+    </Guideline>
+    <Guideline index="81" topic="Distributed Control" agree="" practice="">
+      <Summary>Don't contort loop structures just to consolidate control.</Summary>
+    </Guideline>
+    <Guideline index="82" topic="Redoing" agree="" practice="">
+      <Summary>Use <Builtin>for</Builtin> and <Builtin>redo</Builtin> instead of an irregularly counted <Builtin>while</Builtin>.</Summary>
+    </Guideline>
+    <Guideline index="83" topic="Loop Labels" agree="" practice="">
+      <Summary>Label every loop that is exited explicitly, and use the label with every <Builtin>next</Builtin>, <Builtin>last</Builtin>, or <Builtin>redo</Builtin>.</Summary>
+    </Guideline>
+  </Chapter>
+  <Chapter index="7" title="Documentation" count="14">
+    <Guideline index="84" topic="Types of Documentation" agree="" practice="">
+      <Summary>Distinguish user documentation from technical documentation.</Summary>
+    </Guideline>
+    <Guideline index="85" topic="Boilerplates" agree="" practice="">
+      <Summary>Create standard POD templates for modules and applications.</Summary>
+    </Guideline>
+    <Guideline index="86" topic="Extended Boilerplates" agree="" practice="">
+      <Summary>Extend and customize your standard POD templates.</Summary>
+    </Guideline>
+    <Guideline index="87" topic="Location" agree="255" practice="0">
+      <Summary>Put user documentation in source files.</Summary>
+    </Guideline>
+    <Guideline index="88" topic="Contiguity" agree="255" practice="0">
+      <Summary>Keep all user documentation in a single place within your source file.</Summary>
+    </Guideline>
+    <Guideline index="89" topic="Position" agree="255" practice="255">
+      <Summary>Place POD as close as possible to the end of the file.</Summary>
+    </Guideline>
+    <Guideline index="90" topic="Technical Documentation" agree="" practice="">
+      <Summary>Subdivide your technical documentation appropriately.</Summary>
+    </Guideline>
+    <Guideline index="91" topic="Comments" agree="127" practice="0">
+      <Summary>Use block templates for major comments.</Summary>
+    </Guideline>
+    <Guideline index="92" topic="Algorithmic Documentation" agree="" practice="">
+      <Summary>Use full-line comments to explain the algorithm.</Summary>
+    </Guideline>
+    <Guideline index="93" topic="Elucidating Documentation" agree="" practice="">
+      <Summary>Use end-of-line comments to point out subtleties and oddities.</Summary>
+    </Guideline>
+    <Guideline index="94" topic="Defensive Documentation" agree="" practice="">
+      <Summary>Comment anything that has puzzled or tricked you.</Summary>
+    </Guideline>
+    <Guideline index="95" topic="Indicative Documentation" agree="" practice="">
+      <Summary>Consider whether it's better to rewrite than to comment.</Summary>
+    </Guideline>
+    <Guideline index="96" topic="Discursive Documentation" agree="" practice="">
+      <Summary>Use "invisible" POD sections for longer technical discussions.</Summary>
+    </Guideline>
+    <Guideline index="97" topic="Proofreading" agree="255" practice="1">
+      <Summary>Check the spelling, syntax, and sanity of your documentation.</Summary>
+    </Guideline>
+  </Chapter>
+  <Chapter index="8" title="Built-in Functions" count="14">
+    <Guideline index="98" topic="Sorting" agree="" practice="?">
+      <Summary>Don't recompute sort keys inside a <Builtin>sort</Builtin>.</Summary>
+    </Guideline>
+    <Guideline index="99" topic="Reversing Lists" agree="255" practice="0">
+      <Summary>Use <Builtin>reverse</Builtin> to reverse a list.</Summary>
+    </Guideline>
+    <Guideline index="100" topic="Reversing Scalars" agree="255" practice="1">
+      <Summary>Use <Builtin>scalar</Builtin> <Builtin>reverse</Builtin> to reverse a scalar.</Summary>
+    </Guideline>
+    <Guideline index="101" topic="Fixed-Width Data" agree="255" practice="63">
+      <Summary>Use <Builtin>unpack</Builtin> to extract fixed-width fields.</Summary>
+    </Guideline>
+    <Guideline index="102" topic="Separated Data" agree="255" practice="0">
+      <Summary>Use <Builtin>split</Builtin> to extract simple variable-width fields.</Summary>
+    </Guideline>
+    <Guideline index="103" topic="Variable-Width Data" agree="255" practice="63?">
+      <Summary>Use <Module>Text::CSV_XS</Module> to extract complex variable-width fields.</Summary>
+    </Guideline>
+    <Guideline index="104" topic="String Evaluations" agree="" practice="">
+      <Summary>Avoid string <Builtin>eval</Builtin>.</Summary>
+    </Guideline>
+    <Guideline index="105" topic="Automating Sorts" agree="255" practice="?">
+      <Summary>Consider building your sorting routines with <Module>Sort::Maker</Module>.</Summary>
+    </Guideline>
+    <Guideline index="106" topic="Substrings" agree="255" practice="3">
+      <Summary>Use 4-arg <Builtin>substr</Builtin> instead of lvalue <Builtin>substr</Builtin>.</Summary>
+    </Guideline>
+    <Guideline index="107" topic="Hash Values" agree="" practice="">
+      <Summary>Make appropriate use of lvalue values.</Summary>
+    </Guideline>
+    <Guideline index="108" topic="Globbing" agree="" practice="">
+      <Summary>Use <Builtin>glob</Builtin>, not <Code>&lt;...&gt;</Code>.</Summary>
+    </Guideline>
+    <Guideline index="109" topic="Sleeping" agree="" practice="?">
+      <Summary>Avoid a raw <Builtin>select</Builtin> for non-integer sleeps.</Summary>
+    </Guideline>
+    <Guideline index="110" topic="Mapping and Grepping" agree="" practice="">
+      <Summary>Always use a block with a <Builtin>map</Builtin> and <Builtin>grep</Builtin>.</Summary>
+    </Guideline>
+    <Guideline index="111" topic="Utilities" agree="" practice="">
+      <Summary>Use the "non-builtin builtins".</Summary>
+    </Guideline>
+  </Chapter>
+  <Chapter index="9" title="Subroutines" count="12">
+    <Guideline index="112" topic="Call Syntax" agree="" practice="">
+      <Summary>Call subroutines with parentheses but without a leading <Code>&amp;</Code>.</Summary>
+    </Guideline>
+    <Guideline index="113" topic="Homonyms" agree="" practice="">
+      <Summary>Don't give subroutines the same names as built-in functions.</Summary>
+    </Guideline>
+    <Guideline index="114" topic="Argument Lists" agree="" practice="">
+      <Summary>Always unpack <Code>@_</Code> first.</Summary>
+    </Guideline>
+    <Guideline index="115" topic="Named Arguments" agree="" practice="">
+      <Summary>Use a hash of named arguments for any subroutine that has more than three parameters.</Summary>
+    </Guideline>
+    <Guideline index="116" topic="Missing Arguments" agree="" practice="">
+      <Summary>Use definedness or existence to test for missing arguments.</Summary>
+    </Guideline>
+    <Guideline index="117" topic="Default Argument Values" agree="" practice="">
+      <Summary>Resolve any default argument values as soon as <Code>@_</Code> is unpacked.</Summary>
+    </Guideline>
+    <Guideline index="118" topic="Scalar Return Values" agree="" practice="">
+      <Summary>Always <Builtin>return</Builtin> <Builtin>scalar</Builtin> in scalar returns.</Summary>
+    </Guideline>
+    <Guideline index="119" topic="Contextual Return Values" agree="" practice="">
+      <Summary>Make list-returning subroutines return the "obvious" value in scalar context.</Summary>
+    </Guideline>
+    <Guideline index="120" topic="Multi-Contextual Return Values" agree="" practice="">
+      <Summary>When there is no "obvious" scalar context return value, consider <Module>Contextual::Return</Module> instead.</Summary>
+    </Guideline>
+    <Guideline index="121" topic="Prototypes" agree="" practice="">
+      <Summary>Don't use subroutine prototypes.</Summary>
+    </Guideline>
+    <Guideline index="122" topic="Implicit Returns" agree="" practice="">
+      <Summary>Always return via an explicit <Builtin>return</Builtin>.</Summary>
+    </Guideline>
+    <Guideline index="123" topic="Returning Failure" agree="" practice="">
+      <Summary>Use a bare <Builtin>return</Builtin> to return failure.</Summary>
+    </Guideline>
+  </Chapter>
+  <Chapter index="10" title="I/O" count="18">
+    <Guideline index="124" topic="Filehandles" agree="" practice="">
+      <Summary>Don't use bareword filehandles.</Summary>
+    </Guideline>
+    <Guideline index="125" topic="Indirect Filehandles" agree="" practice="">
+      <Summary>Use indirect filehandles.</Summary>
+    </Guideline>
+    <Guideline index="126" topic="Localizing Filehandles" agree="" practice="">
+      <Summary>If you have to use a package filehandle, localize it first.</Summary>
+    </Guideline>
+    <Guideline index="127" topic="Opening Cleanly" agree="" practice="">
+      <Summary>Use either the <Module>IO::File</Module> module or the three-argument form of <Builtin>open</Builtin>.</Summary>
+    </Guideline>
+    <Guideline index="128" topic="Error Checking" agree="63" practice="15">
+      <Summary>Never <Builtin>open</Builtin>, <Builtin>close</Builtin>, or <Builtin>print</Builtin> to a file without checking the outcome.</Summary>
+      <Hacker>
+        <Pip>
+          <Summary>Usually <Builtin>open</Builtin>, <Builtin>close</Builtin>, or <Builtin>print</Builtin> to a file without checking the outcome.</Summary>
+          <Explanation>"Never" is way too strong.  These operations work consistently enough that I only occassionally find it worthwhile to check their outcomes.  My experience is that file I/O is easy to drill deeper into with debugging code if any of the signs of failure become apparent.  Even though files are a common point of failure, it's usually not worth the effort to check every return value.  Of course, the domain of your code and the robustness requirements of that domain may shift this to "Usually check" or "Always check" (a.k.a. "Never don't check" like the original) as appropriate.  I've just found always checking in every domain is totally overkill.</Explanation>
+        </Pip>
+      </Hacker>
+    </Guideline>
+    <Guideline index="129" topic="Cleanup" agree="255" practice="0">
+      <Summary>Close filehandles explicitly, and as soon as possible.</Summary>
+    </Guideline>
+    <Guideline index="130" topic="Input Loops" agree="255" practice="0">
+      <Summary>Use <Builtin>while</Builtin> (<Code>&lt;&gt;</Code>), not <Builtin>for</Builtin> (<Code>&lt;&gt;</Code>).</Summary>
+    </Guideline>
+    <Guideline index="131" topic="Line-Based Input" agree="255" practice="3">
+      <Summary>Prefer line-based I/O to slurping.</Summary>
+    </Guideline>
+    <Guideline index="132" topic="Simple Slurping" agree="" practice="">
+      <Summary>Slurp a filehandle with a <Builtin>do</Builtin> block for purity.</Summary>
+    </Guideline>
+    <Guideline index="133" topic="Power Slurping" agree="" practice="">
+      <Summary>Slurp a stream with <Module>Perl6::Slurp</Module> for power and simplicity.</Summary>
+    </Guideline>
+    <Guideline index="134" topic="Standard Input" agree="" practice="">
+      <Summary>Avoid using <Builtin>*STDIN</Builtin>, unless you really mean it.</Summary>
+    </Guideline>
+    <Guideline index="135" topic="Printing to Filehandles" agree="" practice="">
+      <Summary>Always put filehandles in braces within any <Builtin>print</Builtin> statement.</Summary>
+    </Guideline>
+    <Guideline index="136" topic="Simple Prompting" agree="" practice="">
+      <Summary>Always prompt for interactive input.</Summary>
+    </Guideline>
+    <Guideline index="137" topic="Interactivity" agree="255" practice="95?">
+      <Summary>Don't reinvent the standard test for interactivity.</Summary>
+    </Guideline>
+    <Guideline index="138" topic="Power Prompting" agree="" practice="">
+      <Summary>Use the <Module>IO::Prompt</Module> module for prompting.</Summary>
+    </Guideline>
+    <Guideline index="139" topic="Progress Indicators" agree="" practice="">
+      <Summary>Always convey the progress of long non-interactive operations within interactive applications.</Summary>
+    </Guideline>
+    <Guideline index="140" topic="Automatic Progress Indicators" agree="" practice="">
+      <Summary>Consider using the <Module>Smart::Comments</Module> module to automate your progress indicators.</Summary>
+    </Guideline>
+    <Guideline index="141" topic="Autoflushing" agree="" practice="">
+      <Summary>Avoid a raw <Builtin>select</Builtin> when setting autoflushes.</Summary>
+    </Guideline>
+  </Chapter>
+  <Chapter index="11" title="References" count="4">
+    <Guideline index="142" topic="Dereferencing" agree="" practice="">
+      <Summary>Wherever possible, dereference with arrows.</Summary>
+    </Guideline>
+    <Guideline index="143" topic="Braced References" agree="" practice="">
+      <Summary>Where prefix dereferencing is unavoidable, put braces around the reference.</Summary>
+    </Guideline>
+    <Guideline index="144" topic="Symbolic References" agree="" practice="">
+      <Summary>Never use symbolic references.</Summary>
+    </Guideline>
+    <Guideline index="145" topic="Cyclic References" agree="" practice="">
+      <Summary>Use <Builtin>weaken</Builtin> to prevent circular data structures from leaking memory.</Summary>
+    </Guideline>
+  </Chapter>
+  <Chapter index="12" title="Regular Expressions" count="24">
+    <Guideline index="146" topic="Extended Formatting" agree="" practice="">
+      <Summary>Always use the <Builtin>/x</Builtin> flag.</Summary>
+    </Guideline>
+    <Guideline index="147" topic="Line Boundaries" agree="" practice="">
+      <Summary>Always use the <Builtin>/m</Builtin> flag.</Summary>
+    </Guideline>
+    <Guideline index="148" topic="String Boundaries" agree="" practice="">
+      <Summary>Use <Builtin>\A</Builtin> and <Builtin>\z</Builtin> as string boundary anchors.</Summary>
+    </Guideline>
+    <Guideline index="149" topic="End of String" agree="" practice="">
+      <Summary>Use <Builtin>\z</Builtin>, not <Builtin>\Z</Builtin>, to indicate "end of string".</Summary>
+    </Guideline>
+    <Guideline index="150" topic="Matching Anything" agree="" practice="">
+      <Summary>Always use the <Builtin>/s</Builtin> flag.</Summary>
+    </Guideline>
+    <Guideline index="151" topic="Lazy Flags" agree="" practice="">
+      <Summary>Consider mandating the <Module>Regexp::Autoflags</Module> module.</Summary>
+    </Guideline>
+    <Guideline index="152" topic="Brace Delimiters" agree="" practice="">
+      <Summary>Use <Builtin>m{...}</Builtin> in preference to <Builtin>/.../</Builtin> in multiline regexes.</Summary>
+    </Guideline>
+    <Guideline index="153" topic="Other Delimiters" agree="" practice="">
+      <Summary>Don't use any delimiters other than <Builtin>/.../</Builtin> or <Builtin>m{...}</Builtin>.</Summary>
+    </Guideline>
+    <Guideline index="154" topic="Metacharacters" agree="" practice="">
+      <Summary>Prefer singular character classes to escaped metacharacters.</Summary>
+    </Guideline>
+    <Guideline index="155" topic="Named Characters" agree="" practice="">
+      <Summary>Prefer named characters to escaped metacharacters.</Summary>
+    </Guideline>
+    <Guideline index="156" topic="Properties" agree="" practice="">
+      <Summary>Prefer properties to enumerated character classes.</Summary>
+    </Guideline>
+    <Guideline index="157" topic="Whitespace" agree="255" practice="7">
+      <Summary>Consider matching arbitrary whitespace, rather than specific whitespace characters.</Summary>
+    </Guideline>
+    <Guideline index="158" topic="Unconstrained Repetitions" agree="" practice="">
+      <Summary>Be specific when matching "as much as possible".</Summary>
+    </Guideline>
+    <Guideline index="159" topic="Capturing Parentheses" agree="255" practice="255">
+      <Summary>Use capturing parentheses only when you intend to capture.</Summary>
+    </Guideline>
+    <Guideline index="160" topic="Captured Values" agree="" practice="">
+      <Summary>Use the numeric capture variables only when you're sure that the preceding match succeeded.</Summary>
+    </Guideline>
+    <Guideline index="161" topic="Captured Variables" agree="" practice="">
+      <Summary>Always give captured substrings proper names.</Summary>
+    </Guideline>
+    <Guideline index="162" topic="Piecewise Matching" agree="" practice="">
+      <Summary>Tokenize input using the <Builtin>/gc</Builtin> flag.</Summary>
+    </Guideline>
+    <Guideline index="163" topic="Tabular Regexes" agree="" practice="">
+      <Summary>Build regular expressions from tables.</Summary>
+    </Guideline>
+    <Guideline index="164" topic="Constructing Regexes" agree="" practice="">
+      <Summary>Build complex regular expressions from simpler pieces.</Summary>
+    </Guideline>
+    <Guideline index="165" topic="Canned Regexes" agree="" practice="">
+      <Summary>Consider using <Module>Regexp::Common</Module> instead of writing your own regexes.</Summary>
+    </Guideline>
+    <Guideline index="166" topic="Alternations" agree="255" practice="0">
+      <Summary>Always use character classes instead of single-character alternations.</Summary>
+    </Guideline>
+    <Guideline index="167" topic="Factoring Alternations" agree="255" practice="0">
+      <Summary>Factor out common affixes from alternations.</Summary>
+    </Guideline>
+    <Guideline index="168" topic="Backtracking" agree="255" practice="127">
+      <Summary>Prevent useless backtracking.</Summary>
+    </Guideline>
+    <Guideline index="169" topic="String Comparisons" agree="" practice="">
+      <Summary>Prefer fixed-string <Builtin>eq</Builtin> comparisons to fixed-pattern regex matches.</Summary>
+    </Guideline>
+  </Chapter>
+  <Chapter index="13" title="Error Handling" count="14">
+    <Guideline index="170" topic="Exceptions" agree="" practice="">
+      <Summary>Throw exceptions instead of returning special values or setting flags.</Summary>
+    </Guideline>
+    <Guideline index="171" topic="Builtin Failure" agree="" practice="">
+      <Summary>Make failed builtins throw exceptions too.</Summary>
+    </Guideline>
+    <Guideline index="172" topic="Contextual Failure" agree="" practice="">
+      <Summary>Make failures fatal in all contexts.</Summary>
+    </Guideline>
+    <Guideline index="173" topic="Systemic Failure" agree="" practice="">
+      <Summary>Be careful when testing for failure of the <Builtin>system</Builtin> builtin.</Summary>
+    </Guideline>
+    <Guideline index="174" topic="Recoverable Failure" agree="" practice="">
+      <Summary>Throw exceptions on all failures, including recoverable ones.</Summary>
+    </Guideline>
+    <Guideline index="175" topic="Reporting Failure" agree="" practice="">
+      <Summary>Have exceptions report from the caller's location, not from the place where they were thrown.</Summary>
+    </Guideline>
+    <Guideline index="176" topic="Error Messages" agree="" practice="">
+      <Summary>Compose error messages in the recipient's dialect.</Summary>
+    </Guideline>
+    <Guideline index="177" topic="Documenting Errors" agree="" practice="">
+      <Summary>Document every error message in the recipient's dialect.</Summary>
+    </Guideline>
+    <Guideline index="178" topic="OO Exceptions" agree="" practice="">
+      <Summary>Use exception objects whenever failure data needs to be conveyed to a handler.</Summary>
+    </Guideline>
+    <Guideline index="179" topic="Volatile Error Messages" agree="" practice="">
+      <Summary>Use exception objects when error messages may change.</Summary>
+    </Guideline>
+    <Guideline index="180" topic="Exception Hierarchies" agree="" practice="">
+      <Summary>Use exception objects when two or more exceptions are related.</Summary>
+    </Guideline>
+    <Guideline index="181" topic="Processing Exceptions" agree="" practice="">
+      <Summary>Catch exception objects in most-derived-first order.</Summary>
+    </Guideline>
+    <Guideline index="182" topic="Exception Classes" agree="" practice="">
+      <Summary>Build exception classes automatically.</Summary>
+    </Guideline>
+    <Guideline index="183" topic="Unpacking Exceptions" agree="" practice="">
+      <Summary>Unpack the exception variable in extended exception handlers.</Summary>
+    </Guideline>
+  </Chapter>
+  <Chapter index="14" title="Command-Line Processing" count="7">
+    <Guideline index="184" topic="Command-Line Structure" agree="" practice="">
+      <Summary>Enforce a single consistent command-line structure.</Summary>
+    </Guideline>
+    <Guideline index="185" topic="Command-Line Conventions" agree="" practice="">
+      <Summary>Adhere to a standard set of conventions in your command-line syntax.</Summary>
+    </Guideline>
+    <Guideline index="186" topic="Meta-options" agree="" practice="">
+      <Summary>Standardize your meta-options.</Summary>
+    </Guideline>
+    <Guideline index="187" topic="In-situ Arguments" agree="" practice="">
+      <Summary>Allow the same filename to be specified for both input and output.</Summary>
+    </Guideline>
+    <Guideline index="188" topic="Command-Line Processing" agree="" practice="">
+      <Summary>Standardize on a single approach to command-line processing.</Summary>
+    </Guideline>
+    <Guideline index="189" topic="Interface Consistency" agree="" practice="">
+      <Summary>Ensure that your interface, run-time messages, and documentation remain consistent.</Summary>
+    </Guideline>
+    <Guideline index="190" topic="Interapplication Consistency" agree="" practice="">
+      <Summary>Factor out common command-line interface components ino a shared module.</Summary>
+    </Guideline>
+  </Chapter>
+  <Chapter index="15" title="Objects" count="15">
+    <Guideline index="191" topic="Using OO" agree="" practice="">
+      <Summary>Make object orientation a choice, not a default.</Summary>
+    </Guideline>
+    <Guideline index="192" topic="Criteria" agree="" practice="">
+      <Summary>Choose object orientation using appropriate criteria.</Summary>
+    </Guideline>
+    <Guideline index="193" topic="Pseudohashes" agree="" practice="">
+      <Summary>Don't use pseudohashes.</Summary>
+    </Guideline>
+    <Guideline index="194" topic="Restricted Hashes" agree="" practice="">
+      <Summary>Don't use restricted hashes.</Summary>
+    </Guideline>
+    <Guideline index="195" topic="Encapsulation" agree="" practice="">
+      <Summary>Always use fully encapsulated objects.</Summary>
+    </Guideline>
+    <Guideline index="196" topic="Constructors" agree="" practice="">
+      <Summary>Give every constructor the same standard name.</Summary>
+      <Detail>new()</Detail>
+    </Guideline>
+    <Guideline index="197" topic="Cloning" agree="" practice="">
+      <Summary>Don't let a constructor clone objects.</Summary>
+    </Guideline>
+    <Guideline index="198" topic="Destructors" agree="" practice="">
+      <Summary>Always provide a destructor for every inside-out class.</Summary>
+    </Guideline>
+    <Guideline index="199" topic="Methods" agree="" practice="">
+      <Summary>When creating methods, follow the general guidelines for subroutines.</Summary>
+    </Guideline>
+    <Guideline index="200" topic="Accessors" agree="" practice="">
+      <Summary>Provide separate read and write accessors.</Summary>
+    </Guideline>
+    <Guideline index="201" topic="Lvalue Accessors" agree="" practice="">
+      <Summary>Don't use lvalue accessors.</Summary>
+    </Guideline>
+    <Guideline index="202" topic="Indirect Objects" agree="" practice="">
+      <Summary>Don't use the indirect object syntax.</Summary>
+    </Guideline>
+    <Guideline index="203" topic="Class Interfaces" agree="" practice="">
+      <Summary>Provide an optimal interface, rather than a minimal one.</Summary>
+    </Guideline>
+    <Guideline index="204" topic="Operator Overloading" agree="" practice="">
+      <Summary>Overload only the isomorphic operators of algebraic classes.</Summary>
+    </Guideline>
+    <Guideline index="205" topic="Coercions" agree="" practice="">
+      <Summary>Always consider overloading the boolean, numeric, and string coercions of objects.</Summary>
+    </Guideline>
+  </Chapter>
+  <Chapter index="16" title="Class Hierarchies" count="12">
+    <Guideline index="206" topic="Inheritance" agree="" practice="">
+      <Summary>Don't manipulate the list of base classes directly.</Summary>
+      <Detail><Builtin>use base</Builtin> rather than assigning to <Builtin>our @ISA</Builtin>.</Detail>
+    </Guideline>
+    <Guideline index="207" topic="Objects" agree="" practice="">
+      <Summary>Use distributed encapsulated objects.</Summary>
+    </Guideline>
+    <Guideline index="208" topic="Blessing Objects" agree="" practice="">
+      <Summary>Never use the one-argument form of <Builtin>bless</Builtin>.</Summary>
+    </Guideline>
+    <Guideline index="209" topic="Constructor Arguments" agree="" practice="">
+      <Summary>Pass constructor arguments as labeled values, using a hash reference.</Summary>
+    </Guideline>
+    <Guideline index="210" topic="Base Class Initialization" agree="" practice="">
+      <Summary>Distinguish arguments for base classes by class name as well.</Summary>
+    </Guideline>
+    <Guideline index="211" topic="Construction and Destruction" agree="" practice="">
+      <Summary>Separate your construction, initialization, and destruction processes.</Summary>
+    </Guideline>
+    <Guideline index="212" topic="Automating Class Hierarchies" agree="" practice="">
+      <Summary>Build the standard class infrastructure automatically.</Summary>
+    </Guideline>
+    <Guideline index="213" topic="Attribute Demolition" agree="" practice="">
+      <Summary>Use <Module>Class::Std</Module> to automate the deallocation of attribute data.</Summary>
+    </Guideline>
+    <Guideline index="214" topic="Attribute Building" agree="" practice="">
+      <Summary>Have attributes initialized and verified automatically.</Summary>
+    </Guideline>
+    <Guideline index="215" topic="Coercions" agree="" practice="">
+      <Summary>Specify coercions as <Builtin>:STRINGIFY</Builtin>, <Builtin>:NUMERIFY</Builtin>, and <Builtin>:BOOLIFY</Builtin> methods.</Summary>
+    </Guideline>
+    <Guideline index="216" topic="Cumulative Methods" agree="" practice="">
+      <Summary>Use <Builtin>:CUMULATIVE</Builtin> methods instead of <Module>SUPER::</Module> calls.</Summary>
+    </Guideline>
+    <Guideline index="217" topic="Autoloading" agree="" practice="">
+      <Summary>Don't use <Builtin>AUTOLOAD()</Builtin>.</Summary>
+    </Guideline>
+  </Chapter>
+  <Chapter index="17" title="Modules" count="10">
+    <Guideline index="218" topic="Interfaces" agree="" practice="">
+      <Summary>Design the module's interface first.</Summary>
+    </Guideline>
+    <Guideline index="219" topic="Refactoring" agree="" practice="">
+      <Summary>Place original code inline.  Place duplicated code in a subroutine.  Place duplicated subroutines in a module.</Summary>
+    </Guideline>
+    <Guideline index="220" topic="Version Numbers" agree="255" practice="0">
+      <Summary>Use three-part version numbers.</Summary>
+      <Hacker>
+        <Pip>
+          <Explanation>The first part of the version number is the major version number.  The second is the minor version number where even numbers signfiy relative stability while odd minor numbers designate unstable development branches.  My version numbers' third part is uniformly a seven-character string encoding of the date and time using PipTime format (<Module>Time::PT</Module>).</Explanation>
+        </Pip>
+      </Hacker>
+    </Guideline>
+    <Guideline index="221" topic="Version Requirements" agree="" practice="">
+      <Summary>Enforce your version requirements programmatically.</Summary>
+    </Guideline>
+    <Guideline index="222" topic="Exporting" agree="" practice="">
+      <Summary>Export judiciously and, where possible, only by request.</Summary>
+    </Guideline>
+    <Guideline index="223" topic="Declarative Exporting" agree="" practice="">
+      <Summary>Consider exporting declaratively.</Summary>
+    </Guideline>
+    <Guideline index="224" topic="Interface Variables" agree="" practice="">
+      <Summary>Never make variables part of a module's interface.</Summary>
+    </Guideline>
+    <Guideline index="225" topic="Creating Modules" agree="" practice="">
+      <Summary>Build new module frameworks automatically.</Summary>
+    </Guideline>
+    <Guideline index="226" topic="The Standard Library" agree="" practice="">
+      <Summary>Use core modules wherever possible.</Summary>
+    </Guideline>
+    <Guideline index="227" topic="CPAN" agree="" practice="">
+      <Summary>Use CPAN modules where feasible.</Summary>
+    </Guideline>
+  </Chapter>
+  <Chapter index="18" title="Testing and Debugging" count="13">
+    <Guideline index="228" topic="Test Cases" agree="" practice="">
+      <Summary>Write the test cases first.</Summary>
+    </Guideline>
+    <Guideline index="229" topic="Modular Testing" agree="" practice="">
+      <Summary>Standardize your tests with <Module>Test::Simple</Module> or <Module>Test::More</Module>.</Summary>
+    </Guideline>
+    <Guideline index="230" topic="Test Suites" agree="" practice="">
+      <Summary>Standardize your test suites with <Module>Test::Harness</Module>.</Summary>
+    </Guideline>
+    <Guideline index="231" topic="Failure" agree="" practice="">
+      <Summary>Write test cases that fail.</Summary>
+    </Guideline>
+    <Guideline index="232" topic="What to Test" agree="" practice="">
+      <Summary>Test both the likely and the unlikely.</Summary>
+    </Guideline>
+    <Guideline index="233" topic="Debugging and Testing" agree="" practice="">
+      <Summary>Add new test cases before you start debugging.</Summary>
+    </Guideline>
+    <Guideline index="234" topic="Strictures" agree="" practice="">
+      <Summary>Always <Builtin>use strict</Builtin>.</Summary>
+    </Guideline>
+    <Guideline index="235" topic="Warnings" agree="" practice="">
+      <Summary>Always turn on warnings explicitly.</Summary>
+    </Guideline>
+    <Guideline index="236" topic="Correctness" agree="" practice="">
+      <Summary>Never assume that a warning-free compilation implies correctness.</Summary>
+    </Guideline>
+    <Guideline index="237" topic="Overriding Strictures" agree="" practice="">
+      <Summary>Turn off strictures or warnings explicitly, selectively, and in the smallest possible scope.</Summary>
+    </Guideline>
+    <Guideline index="238" topic="The Debugger" agree="" practice="">
+      <Summary>Learn at least a subset of the <Builtin>perl</Builtin> debugger.</Summary>
+    </Guideline>
+    <Guideline index="239" topic="Manual Debugging" agree="" practice="">
+      <Summary>Use serialized warnings when debugging "manually".</Summary>
+    </Guideline>
+    <Guideline index="240" topic="Semi-Automatic Debugging" agree="" practice="">
+      <Summary>Consider using "smart comments" when debugging, rather than <Builtin>warn</Builtin> statements.</Summary>
+    </Guideline>
+  </Chapter>
+  <Chapter index="19" title="Miscellanea" count="14">
+    <Guideline index="241" topic="Revision Control" agree="" practice="">
+      <Summary>Use a revision control system.</Summary>
+    </Guideline>
+    <Guideline index="242" topic="Other Languages" agree="" practice="">
+      <Summary>Integrate non-Perl code into your applications via the <Module>Inline::</Module> modules.</Summary>
+    </Guideline>
+    <Guideline index="243" topic="Configuration Files" agree="" practice="">
+      <Summary>Keep your configuration language uncomplicated.</Summary>
+    </Guideline>
+    <Guideline index="244" topic="Formats" agree="" practice="">
+      <Summary>Don't use formats.</Summary>
+    </Guideline>
+    <Guideline index="245" topic="Ties" agree="" practice="">
+      <Summary>Don't tie variables or filehandles.</Summary>
+    </Guideline>
+    <Guideline index="246" topic="Cleverness" agree="" practice="">
+      <Summary>Don't be clever.</Summary>
+    </Guideline>
+    <Guideline index="247" topic="Encapsulated Cleverness" agree="" practice="">
+      <Summary>If you must rely on cleverness, encapsulate it.</Summary>
+    </Guideline>
+    <Guideline index="248" topic="Benchmarking" agree="" practice="">
+      <Summary>Don't optimize code - benchmark it.</Summary>
+    </Guideline>
+    <Guideline index="249" topic="Memory" agree="" practice="">
+      <Summary>Don't optimize data structures - measure them.</Summary>
+    </Guideline>
+    <Guideline index="250" topic="Caching" agree="" practice="">
+      <Summary>Look for opportunities to use caches.</Summary>
+    </Guideline>
+    <Guideline index="251" topic="Memoization" agree="" practice="">
+      <Summary>Automate your subroutine caching.</Summary>
+    </Guideline>
+    <Guideline index="252" topic="Caching for Optimization" agree="" practice="">
+      <Summary>Benchmark any caching strategy you use.</Summary>
+    </Guideline>
+    <Guideline index="253" topic="Profiling" agree="" practice="">
+      <Summary>Don't optimize applications - profile them.</Summary>
+    </Guideline>
+    <Guideline index="254" topic="Enbugging" agree="" practice="">
+      <Summary>Be careful to preserve semantics when refactoring syntax.</Summary>
+    </Guideline>
+  </Chapter>
+</HackersPerlBestPractices>

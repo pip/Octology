@@ -1,0 +1,61 @@
+Hero Engine Competitive Analysis:  Tools and UI
+Hero Engine Competitive Analysis
+Rev     Name    Change Description      Date
+1.0     Sean Zehnder    First Draft     5/8/07
+
+Executive Summary
+The purpose of this document is to summarize the findings of a competitive analysis of the Hero Engine from the tools perspective.  It should be noted that there are limited materials available on the Hero Engine, and so much of this document is based on publicly available marketing materials and not first-hand experience with their tools.  This document presents a bulleted summary of findings, as well as a set of recommendations.
+The Hero Engine appears to have a rich set of tools in an integrated framework, as well as a few MMOG-specific innovations such as the character customization/editing tools and a server engine.  However, their focus on MMOG-specific technology and the fact that engine licensing is a side-business to their core subscription model provide two important potential exploits for our company.
+Company Profile
+Simutronics Corp is a privately held company of roughly 300 employees with offices in Virginia, St. Louis, Missouri, and Washington, D.C.  Their primary focus as a company has been on the creation of .persistent worlds. (basically online RPG games) utilizing a subscription-based model.  The Hero Engine product began as an internal development effort to support their primary business model -- subscription-based revenue from fantasy RPG games.  The company also owns and operates www.play.net, and is in development on an MMOG called .The Hero.s Journey..
+Key Licensees (announced to-date)
+.       BioWare Austin . Unannounced
+.       Trianit (Germany) . A World of My Own
+.       Stray Bullet Games (Austin) - Unannounced
+.       Colony Studios (Southern California) . Unannounced
+Notes about their tools / engine
+.       Windows-only games
+.       Windows-only development tools
+.       physics and collision system completed that will work simultaneously on both client and server, through a single code base
+.       extensive character creation tools including facial animation and extensive clothing customization tools
+.       utilizes common areas and instanced areas; common areas are zoned and can be instanced on-demand
+.       their tools are heavily focussed on MMOG development; in fact, they are rather generous about UE3 in public comments (because they don.t appear to want to compete in the market for first-person shooter engines)
+.       Metrics and Analytics (including real-time and player behavior visualization features) included with engine
+.       Powerful tools for sculpting, texturing, and editing the game worlds (including terrain, vegetation, and other constructive solid geometry)
+.       Very compact and elegant UI on all tools.  Give the strong impression of an integrated and rich set of tools
+.       Concurrent editing of game levels, areas, etc.
+.       Extensive use of animated timelines for many properties -- used for alpha transitions between two states, blending of parameters, etc.
+.       GUI Editing tools included - including 3D and 2D (Scaleform GFx integration)
+.       Full proprietary script engine with rich editor that is fully-integrated into tool framework.
+.       .Sequence Tree GUI. -- node-graph editor for things like sequencing character animations.
+.       Robust event-based effect sequencing tool -- for sequencing things like particle and other frame rendering effects to create complex special effects
+.       Robust data-driven toolbed to ensure that teams stay in-sync while doing concurrent editing
+.       .Swap. seamlessly between .game. and .edit. modes in the tool -- Editing and previewing are considered separate modes in the tool.  Switching between modes is .seamless,. but they are discrete, nonetheless
+.       .Smart Editors. for complex properties
+.       Team collaboration tools included -- whiteboard, tasks lists, etc.
+.       The server engine is targeting roughly 10,000 concurrent players per realm
+
+Key Integrations (announced to-date)
+.       SpeedTree 4, SpeedTree 2.x
+.       DiamondWare VoIP
+.       Ageia PhysX
+.       ScaleForm GFx
+Strengths
+.       Integrated toolbed -- many references to .all-in-one. tool
+.       Data-driven editing with rich concurrent editing capabilities
+.       Elegant and compact UI -- give the impression that there are extensive options for any given property or effect
+.       Character customization and editing tools are extremely rich compared to any other comparable engine -- unclear how generic this character tool is...
+
+Vulnerabilities
+.       Focus on MMOG-specific technology -- in client engine, server engine, and tools
+.       Engine licensing is, to-date, a secondary revenue stream for the company -- the core business model has been and still appears to be a subscription-based model from their fantasy RPG titles.
+.       No mention about how easy/difficult it is to extend or customize their tools.
+.       Proprietary scripting engine/language means that customers can.t easily hire someone with previous expertise in the language.  Custom extensions to the language can be a mess in the long-run, even if a customer receives the source code to the language/interpreter. 
+.       From some accounts, the split attention between the engine and game (.Hero.s Journey.) development has taxed the resources of the company a bit.  It is unclear how sustainable this split-attention will be, or if one of the two businesses will ultimately win out.
+        
+Recommendations
+1.      It is extremely important that we try to unify our tools into a common ToolBench.  Look & Feel, interaction paradigms, .smart editors. such as animation timelines, etc. can then be shared across tools.  This will both speed iteration (one of our top goals) AND improve the perception of our tools as powerful, user-friendly, and scalable.
+2.      We need to continue to invest in extensible tools, extensible framework, etc.  Our competitors like the Hero Engine are dividing their resources between game production and tools development -- and are focussing heavily on genre-specific tools.  Extensibility incurs higher fixed-costs, but reduces the marginal costs of development dramatically.
+3.      We should integrate a well-established scripting language into our ToolBench.  Python is currently used by BigWorld, whereas Hero Engine utilizes a proprietary scripting language .HeroScript..  Using a standard object-oriented scripting language affords our customers the chance to hire people with previous experience with the language.  Furthermore, it helps to ensure a predictable path for language updates / extensions as well as some degree of backward compatibility (in the long run).  As further evidence of some momentum around Python, it should be noted that Maya now supports both Python and Mel (a proprietary language) Scripting.
+4.      We should pay careful attention to the concurrent editing paradigm that is noted in the Hero Engine.  Editing at the different levels (region, cell, block, etc.) should be able to happen with minimal collision between developers working in parallel.  For example, the terrain shouldn.t change dramatically .under the feet. of another developer who is carefully placing lights and objects based on the previous terrain state.  The ability to have different designers / artists working on object placement, pathing, lighting, etc. in different areas is an important goal, with minimizing the collisions as a key constraint.
+5.      ...

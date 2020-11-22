@@ -1,0 +1,160 @@
+Langworth.Com Zsh/Bash shell notes
+
+Bang-Dollar
+
+Bang-dollar is replaced by the last argument of the previous command. Example:
+
+    mv file.txt /really/long/path/to/some/dir/newname.txt
+    ln -s !$ file.txt
+
+
+Sure beats typing that long path twice!
+
+Ampersand-Bang
+
+Ampersand-bang starts a job and "disowns" it. Meaning, the process is backgrounded like & but is not placed in the jobs list, thus there are no warnings that
+"there are stopped jobs" when closing the terminal because the job isn't going to be stopped.
+
+This is great for launching X applications and then closing the terminal you ran the command from:
+
+    mozilla-firebird &!
+    # (close terminal)
+
+
+Note: This is Zsh-only. Bash users have to apparently run the command in the background and then use the disown command.
+
+STDERR and STDOUT (beginner)
+
+To redirect STDERR to STDOUT (rather, output pipe 2 to output pipe 1):
+
+    command 2>&1
+
+
+To redirect them both to /dev/null:
+
+    command >/dev/null 2>&1
+
+
+Sometimes it's important to put the /dev/null first so that the shell knows where to correctly point STDERR. (True for crontabs on Solaris.)
+
+Quick Loops
+
+For single command iterations, a simple one-statement for loop:
+
+    for i in *.tar.gz; tar -zxvf $i
+
+
+For a more involved loop, chain the commands with '&&' if applicable:
+
+    for i in *.tar.gz; tar -zxvf $i && \
+    echo "File $i okay!" && echo
+
+
+...or create a full block. Say you want to run all the perl scripts in the current directory and separate them by their file name in brackets:
+
+    for i in *.pl; do echo; echo "[$i]"; perl $i; done
+
+
+The first command after the for keyword must be preceded with do.
+
+There are tons of other ways of doing this, of course, such as using xargs.
+
+Appending Directories to Paths
+
+If you need to add a directory to a search path, such as the PERL5LIB or PATH environment variables, it's nice to only add a separator if the variable is
+already defined.
+
+    PERL5LIB=${PERL5LIB:+$PERL5LIB:}/path/to/perl/lib
+
+
+Ranges of Numbers
+
+Need a range of numbers for, say, a for loop? Use the seq command or .. operator:
+
+    echo `seq 1 10`
+
+    echo {1..10}
+
+
+As Ricardo points out, Zsh's expansion respects leading zeros, such as with {001..099}
+
+Verbose Output
+
+If you want to see every command as it is evaluated, use the following in scripts or on the command line. Great for debugging.
+
+    set -x
+
+
+Redirection from Within the Script
+
+Redirecting output can easily be done from the script as well as on the command line. Example:
+
+    #!/bin/sh
+
+    exec >>/tmp/script.log 2>&1
+
+
+Trapping Signals
+
+The trap keyword specifies functions to handle signals. (Available signal names can be viewed with kill -l)
+
+    #!/bin/sh
+
+    reallydie () {
+
+        echo
+        echo "Do you really want to exit? [y/N] "
+        read choice
+        echo
+
+        if [ "X$choice" = 'Xy' ]; then
+            echo "Okay, i'm done."
+            exit 0
+        fi
+    }
+
+    trap 'reallydie' INT
+
+    while true; do
+        echo "boring! hit ^C already"
+        sleep 1
+    done
+
+
+Things of Interest
+
+  * The Home Page
+  * Contact information
+  * Files/Downloads
+  * Perl Testing Reference Card
+  * Cadubi
+  * Thoroughly Miscellaneous
+  * Perl modules (CPAN)
+  * Developer journal (use Perl;)
+  * Images (Flickr)
+  * Bookmarks (del.icio.us)
+
+The Book
+
+             
+             
+             
+             
+             
+             
+             
+             
+Perl Testing:
+
+Perl Testing: A Developer's Notebook
+
+Sessions
+
+Practical Perl Testing @ OSCON 2005
+
+Solutions to Common Testing Problems @ YAPC::NA 2005
+
+Copyright ? 2005 Ian Langworth, Some rights rerserved unless explicitly noted otherwise.
+
+Valid XHTML and CSS. Content available as an XML feed.
+

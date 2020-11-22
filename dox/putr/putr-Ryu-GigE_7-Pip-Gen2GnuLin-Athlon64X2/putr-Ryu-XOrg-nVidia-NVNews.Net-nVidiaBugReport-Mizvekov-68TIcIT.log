@@ -1,0 +1,2481 @@
+____________________________________________
+
+Start of NVIDIA bug report log file.  Please send this report,
+along with a description of your bug, to linux-bugs@nvidia.com.
+
+nvidia-bug-report.sh Version: 1487052
+
+Date: Tue Aug 29 18:16:16 BRT 2006
+uname: Linux localhost 2.6.17-ck1-r2 #9 PREEMPT Sun Aug 20 18:58:01 BRT 2006 i686 AMD Athlon(tm) XP AuthenticAMD GNU/Linux
+
+____________________________________________
+
+/proc/driver/nvidia/version
+NVRM version: NVIDIA Linux x86 Kernel Module  1.0-8774  Tue Aug  1 20:54:08 PDT 2006
+GCC version:  gcc version 4.1.1 (Gentoo 4.1.1)
+
+____________________________________________
+
+/proc/driver/nvidia/cards/0
+Model: 		 GeForce FX 5700LE
+IRQ:   		 193
+Video BIOS: 	 04.36.20.30.00
+Card Type: 	 AGP
+DMA Size: 	 32 bits
+DMA Mask: 	 0xffffffff
+
+____________________________________________
+
+/proc/driver/nvidia/agp/card
+Fast Writes: 	 Supported
+SBA: 		 Supported
+AGP Rates: 	 8x 4x 
+Registers: 	 0x1f000e1b:0x1f004312
+
+____________________________________________
+
+/proc/driver/nvidia/agp/host-bridge
+Host Bridge: 	 PCI device 10de:01e0
+Fast Writes: 	 Supported
+SBA: 		 Supported
+AGP Rates: 	 8x 
+Registers: 	 0x1f00421a:0x00000312
+
+____________________________________________
+
+/proc/driver/nvidia/agp/status
+Status: 	 Enabled
+Driver: 	 AGPGART
+AGP Rate: 	 8x
+Fast Writes: 	 Enabled
+SBA: 		 Enabled
+
+____________________________________________
+
+/proc/driver/nvidia/warnings/README
+The NVIDIA graphics driver tries to detect potential problems
+with the host system and warns about them using the system's
+logging mechanisms. Important warning message are also logged
+to dedicated text files in this directory.
+
+____________________________________________
+
+/proc/driver/nvidia/registry
+VideoMemoryTypeOverride: 1
+EnableVia4x: 0
+EnableALiAGP: 0
+NvAGP: 3
+ReqAGPRate: 15
+EnableAGPSBA: 1
+EnableAGPFW: 1
+SoftEDIDs: 1
+Mobile: 4294967295
+ResmanDebugLevel: 4294967295
+FlatPanelMode: 0
+DevicesConnected: 0
+VideoEnhancement: 0
+RmLogonRC: 1
+VbiosFromROM: 0
+ModifyDeviceFiles: 1
+DeviceFileUID: 0
+DeviceFileGID: 0
+DeviceFileMode: 438
+RemapLimit: 0
+UseCPA: 4294967295
+DetectPrimaryVga: 1
+SaveVBios: 0
+EnableBrightnessControl: 0
+PanelPWMFrequency: 1018
+PanelBrightnessLimits: 65280
+
+____________________________________________
+
+/proc/cmdline
+root=/dev/sda3
+
+____________________________________________
+
+/proc/cpuinfo
+processor	: 0
+vendor_id	: AuthenticAMD
+cpu family	: 6
+model		: 10
+model name	: AMD Athlon(tm) XP
+stepping	: 0
+cpu MHz		: 1837.530
+cache size	: 512 KB
+fdiv_bug	: no
+hlt_bug		: no
+f00f_bug	: no
+coma_bug	: no
+fpu		: yes
+fpu_exception	: yes
+cpuid level	: 1
+wp		: yes
+flags		: fpu vme de pse tsc msr pae mce cx8 apic sep mtrr pge mca cmov pat pse36 mmx fxsr sse syscall mmxext 3dnowext 3dnow up ts
+bogomips	: 3677.68
+
+
+____________________________________________
+
+/proc/interrupts
+           CPU0       
+  0:  280630732    IO-APIC-edge  timer
+  9:         20   IO-APIC-level  acpi
+ 14:         64    IO-APIC-edge  libata
+ 15:         55    IO-APIC-edge  libata
+177:          0   IO-APIC-level  libata, uhci_hcd:usb2
+185:   11510521   IO-APIC-level  libata, ehci_hcd:usb4, cx88[0]
+193:   21448390   IO-APIC-level  nvidia
+201:   22636632   IO-APIC-level  ohci1394, ohci_hcd:usb5
+209:        130   IO-APIC-level  uhci_hcd:usb1
+217:   53371230   IO-APIC-level  ohci_hcd:usb6, eth0
+225:    3902552   IO-APIC-level  ehci_hcd:usb3, NVidia nForce2
+NMI:          0 
+LOC:  280640543 
+ERR:          0
+MIS:          0
+
+____________________________________________
+
+/proc/meminfo
+MemTotal:      1035724 kB
+MemFree:        139696 kB
+Buffers:         18444 kB
+Cached:         183604 kB
+SwapCached:          0 kB
+Active:         711716 kB
+Inactive:       139160 kB
+HighTotal:           0 kB
+HighFree:            0 kB
+LowTotal:      1035724 kB
+LowFree:        139696 kB
+SwapTotal:           0 kB
+SwapFree:            0 kB
+Dirty:              16 kB
+Writeback:           0 kB
+Mapped:         668704 kB
+Slab:            29696 kB
+CommitLimit:    517860 kB
+Committed_AS:  1243452 kB
+PageTables:       2636 kB
+VmallocTotal:   253652 kB
+VmallocUsed:     68844 kB
+VmallocChunk:   182992 kB
+
+____________________________________________
+
+/proc/modules
+udf 83908 0 - Live 0xf0eed000
+snd_rtctimer 2636 1 - Live 0xf0d15000
+pppoe 9920 2 - Live 0xf0d1a000
+pppox 2888 1 pppoe, Live 0xf0d13000
+ppp_generic 23700 6 pppoe,pppox, Live 0xf0d03000
+slhc 6720 1 ppp_generic, Live 0xf0c36000
+af_packet 16712 2 - Live 0xf0d0a000
+ipt_set 2176 4 - Live 0xf0d01000
+xt_limit 2304 2 - Live 0xf0cff000
+ipt_REJECT 4288 7 - Live 0xf0cfc000
+xt_conntrack 2240 18 - Live 0xf0cfa000
+iptable_filter 2432 1 - Live 0xf0cf3000
+xt_length 1792 5 - Live 0xf0cf1000
+xt_mark 1728 1 - Live 0xf0cef000
+ipt_layer7 11500 12 - Live 0xf0c5b000
+xt_tcpudp 3072 12 - Live 0xf0c59000
+xt_CONNMARK 2112 4 - Live 0xf0c57000
+xt_CLASSIFY 1664 11 - Live 0xf0c40000
+iptable_mangle 2304 1 - Live 0xf0c3e000
+ipt_MASQUERADE 2624 1 - Live 0xf0c3c000
+ipt_ULOG 6468 16 - Live 0xf0c39000
+w83627hf 25360 0 - Live 0xf0c4f000
+hwmon_vid 2752 1 w83627hf, Live 0xf0c22000
+hwmon 2452 1 w83627hf, Live 0xf0bd8000
+iptable_nat 6340 1 - Live 0xf0c24000
+ip_nat 14764 2 ipt_MASQUERADE,iptable_nat, Live 0xf0c19000
+eeprom 5584 0 - Live 0xf0bf6000
+ip_conntrack 46068 5 xt_conntrack,xt_CONNMARK,ipt_MASQUERADE,iptable_nat,ip_nat, Live 0xf0c42000
+nfnetlink 5208 2 ip_nat,ip_conntrack, Live 0xf0bfe000
+i2c_isa 3520 1 w83627hf, Live 0xf0a77000
+iptable_raw 1664 0 - Live 0xf0bbe000
+ip_tables 11336 4 iptable_filter,iptable_mangle,iptable_nat,iptable_raw, Live 0xf0c1e000
+x_tables 11396 14 ipt_set,xt_limit,ipt_REJECT,xt_conntrack,xt_length,xt_mark,ipt_layer7,xt_tcpudp,xt_CONNMARK,xt_CLASSIFY,ipt_MASQUERADE,ipt_ULOG,iptable_nat,ip_tables, Live 0xf0bb7000
+ip_set_portmap 4480 3 - Live 0xf0bf3000
+snd_pcm_oss 41632 0 - Live 0xf0c27000
+snd_mixer_oss 16128 3 snd_pcm_oss, Live 0xf0bf9000
+snd_seq_oss 33728 0 - Live 0xf0c0f000
+snd_seq_midi_event 6656 1 snd_seq_oss, Live 0xf0bf0000
+snd_seq 51408 5 snd_seq_oss,snd_seq_midi_event, Live 0xf0c01000
+snd_seq_device 7244 2 snd_seq_oss,snd_seq, Live 0xf0bed000
+rtc 7312 1 snd_rtctimer, Live 0xf0bea000
+reiser4 400728 1 - Live 0xf0c5f000
+ext2 59592 1 - Live 0xf0bda000
+mbcache 7236 1 ext2, Live 0xf0bbb000
+configfs 23312 1 - Live 0xf0bc0000
+ip_set 18972 3 ipt_set,ip_set_portmap, Live 0xf0b73000
+loop 12744 0 - Live 0xf0b79000
+fuse 36552 0 - Live 0xf0bad000
+fbcon 37920 79 - Live 0xf0ba2000
+font 8000 1 fbcon, Live 0xf0b4d000
+bitblit 5440 1 fbcon, Live 0xf0b70000
+softcursor 1728 1 bitblit, Live 0xf0973000
+vesafb_tng 15016 1 - Live 0xf0b67000
+fb 46824 4 fbcon,bitblit,softcursor,vesafb_tng, Live 0xf0b95000
+vesafb_thread 8704 1 vesafb_tng, Live 0xf0b6c000
+mousedev 9692 1 - Live 0xf0b45000
+joydev 8256 0 - Live 0xf0b49000
+usblp 11712 0 - Live 0xf0a99000
+usb_storage 74752 0 - Live 0xf0b81000
+evdev 8192 1 - Live 0xf0a9d000
+sr_mod 15332 0 - Live 0xf0b40000
+cdrom 35168 1 sr_mod, Live 0xf0b5d000
+usbhid 48800 0 - Live 0xf0b50000
+eth1394 17284 0 - Live 0xf0b29000
+tda9887 15952 0 - Live 0xf0ae2000
+tuner 52332 0 - Live 0xf0ab1000
+nvidia 4546004 12 - Live 0xf0f81000
+snd_intel8x0 29404 2 - Live 0xf0a3a000
+snd_ac97_codec 93408 1 snd_intel8x0, Live 0xf0a79000
+snd_ac97_bus 1984 1 snd_ac97_codec, Live 0xf0964000
+snd_pcm 74248 3 snd_pcm_oss,snd_intel8x0,snd_ac97_codec, Live 0xf0a46000
+snd_timer 20484 3 snd_rtctimer,snd_seq,snd_pcm, Live 0xf0a28000
+snd 48420 11 snd_rtctimer,snd_pcm_oss,snd_mixer_oss,snd_seq_oss,snd_seq,snd_seq_device,snd_intel8x0,snd_ac97_codec,snd_pcm,snd_timer, Live 0xf0a02000
+soundcore 7776 3 snd, Live 0xf09ff000
+nvidia_agp 6172 1 - Live 0xf0968000
+cx8800 28620 0 - Live 0xf09f0000
+cx88xx 55396 1 cx8800, Live 0xf0a11000
+ir_common 23812 1 cx88xx, Live 0xf09f8000
+i2c_algo_bit 8264 1 cx88xx, Live 0xf0979000
+video_buf 21060 2 cx8800,cx88xx, Live 0xf09e9000
+tveeprom 13584 1 cx88xx, Live 0xf09e4000
+v4l2_common 14976 2 tuner,cx8800, Live 0xf09df000
+ohci_hcd 19140 0 - Live 0xf09d9000
+ehci_hcd 30088 0 - Live 0xf0987000
+agpgart 26736 2 nvidia,nvidia_agp, Live 0xf097f000
+pata_amd 9228 0 - Live 0xf0958000
+i2c_nforce2 5952 0 - Live 0xf0961000
+forcedeth 28044 0 - Live 0xf096b000
+compat_ioctl32 1088 1 cx8800, Live 0xf0944000
+v4l1_compat 13572 1 cx8800, Live 0xf095c000
+btcx_risc 4168 2 cx8800,cx88xx, Live 0xf0953000
+videodev 7488 2 cx8800,cx88xx, Live 0xf0946000
+uhci_hcd 21260 0 - Live 0xf094a000
+snd_page_alloc 8008 2 snd_intel8x0,snd_pcm, Live 0xf08bc000
+ohci1394 31728 0 - Live 0xf0935000
+ieee1394 291000 2 eth1394,ohci1394, Live 0xf0990000
+8250_pci 19520 0 - Live 0xf08dc000
+usbcore 116864 7 usblp,usb_storage,usbhid,ohci_hcd,ehci_hcd,uhci_hcd, Live 0xf0917000
+i2c_core 17616 10 w83627hf,eeprom,i2c_isa,tda9887,tuner,nvidia,cx88xx,i2c_algo_bit,tveeprom,i2c_nforce2, Live 0xf08e3000
+psmouse 36808 0 - Live 0xf08e9000
+serio_raw 5572 0 - Live 0xf08bf000
+8250_pnp 8384 0 - Live 0xf08d8000
+8250 22180 2 8250_pci,8250_pnp, Live 0xf08d1000
+serial_core 18624 1 8250, Live 0xf08cb000
+unix 23536 469 - Live 0xf08c4000
+
+____________________________________________
+
+/proc/version
+Linux version 2.6.17-ck1-r2 (root@localhost) (gcc version 4.1.1 (Gentoo 4.1.1)) #9 PREEMPT Sun Aug 20 18:58:01 BRT 2006
+
+____________________________________________
+
+/proc/pci does not exist
+
+____________________________________________
+
+/proc/iomem
+00000000-0009f3ff : System RAM
+  00000000-00000000 : Crash kernel
+0009f400-0009ffff : reserved
+000a0000-000bffff : Video RAM area
+000c0000-000cffff : Video ROM
+000d4000-000d87ff : Adapter ROM
+000d9000-000dd7ff : Adapter ROM
+000f0000-000fffff : System ROM
+00100000-3ffeffff : System RAM
+  00100000-002de242 : Kernel code
+  002de243-003d6023 : Kernel data
+3fff0000-3fff2fff : ACPI Non-volatile Storage
+3fff3000-3fffffff : ACPI Tables
+50000000-500fffff : PCI Bus #01
+  50000000-5007ffff : 0000:01:09.0
+  50080000-500fffff : 0000:01:0b.0
+d0000000-dfffffff : PCI Bus #02
+  d0000000-dfffffff : 0000:02:00.0
+    d0000000-dfffffff : vesafb
+e0000000-e1ffffff : 0000:00:00.0
+e2000000-e3ffffff : PCI Bus #02
+  e2000000-e2ffffff : 0000:02:00.0
+    e2000000-e2ffffff : nvidia
+  e3000000-e301ffff : 0000:02:00.0
+e4000000-e6ffffff : PCI Bus #01
+  e4000000-e4ffffff : 0000:01:06.0
+    e4000000-e4ffffff : cx88[0]
+  e6000000-e60003ff : 0000:01:09.0
+    e6000000-e60003ff : sata_sil
+  e6001000-e60010ff : 0000:01:08.2
+    e6001000-e60010ff : ehci_hcd
+  e6002000-e60021ff : 0000:01:0b.0
+    e6002000-e60021ff : sata_sil
+e7000000-e707ffff : 0000:00:05.0
+e7080000-e7080fff : 0000:00:02.0
+  e7080000-e7080fff : ohci_hcd
+e7081000-e7081fff : 0000:00:06.0
+  e7081000-e7081fff : NVidia nForce2
+e7083000-e7083fff : 0000:00:02.1
+  e7083000-e7083fff : ohci_hcd
+e7084000-e70847ff : 0000:00:0d.0
+  e7084000-e70847ff : ohci1394
+e7085000-e708503f : 0000:00:0d.0
+e7086000-e70860ff : 0000:00:02.2
+  e7086000-e70860ff : ehci_hcd
+e7087000-e7087fff : 0000:00:04.0
+  e7087000-e7087fff : forcedeth
+fec00000-fec00fff : reserved
+fee00000-fee00fff : reserved
+ffff0000-ffffffff : reserved
+
+____________________________________________
+
+/proc/mtrr
+reg00: base=0x00000000 (   0MB), size=1024MB: write-back, count=1
+reg01: base=0xe0000000 (3584MB), size=  32MB: write-combining, count=1
+
+____________________________________________
+
+/etc/issue
+[2J[0;0H
+[40m[40m
+[0;1;30;44m.........[40m      [44m.......[40m
+[1;44m........[40m        [44m......[2C[47mLL[5CIIIIII[1CNN[3CNN[1CUU[2CUU[1CXX[2CXX[40m
+[1;30;44m........[40m [47m  [40m [47m  [40m  [44m......[2C[47mLL[7CII[3CNNN[2CNN[1CUU[2CUU[2CXXXX[40m
+[1;30;44m........[40m [47m [40m   [47m [40m   [44m.....[2C[47mLL[7CII[3CNNNN[1CNN[1CUU[2CUU[3CXX[40m
+[1;30;44m........[40m  [43m    [40m   [44m.....[2C[47mLL[7CII[3CNN[1CNNNN[1CUU[2CUU[2CXXXX[40m
+[1;30;44m........[40m [0;30;43m`----'[40m  [1;44m.....[2C[47mLLLLLL[1CIIIIII[1CNN[3CNN[2CUUUU[2CXX[2CXX[40m
+[1;30;44m........[40m [47m.[37m....[30m.[40m   [44m....[40m
+[1;30;44m.......[40m [47m........[40m    [44m..[40m[2C[1;37;40mGentoo Linux 1.12.4 [0m
+[1;30;44m.......[40m [47m.........[40m    [44m.[40m[2C[1;37;40mLinux 2.6.17-ck1-r2[0m
+[1;30;44m.......[40m [47m.........[40m    [30;44m.[40m[2C[1;37;40mOne AMD Athlon XP 1.84GHz CPU, 1GB RAM, 3677.68 Bogomips[0m
+[1;30;44m......[40m [47m..........[40m     [2C[1;37;40mUptime 0 hours 1 minute[0m
+[1;30;44m.....[40m  [47m..........[40m     [2C[1;37;40mlocalhost / \l  [0m
+[1;30;44m.....[43m   [30;47m........[43m   [40m   [2C[1;37;40m[0m
+[1;30;44m...[43m     [47m........[43m    [40m  [2C
+[1;30;44m.[43m       [47m........[43m      [40m[2C
+[1;30;44m.[43m       [40m [47m......[40m [43m      [40m[2C
+[2C
+[0m[255D
+____________________________________________
+
+/etc/gentoo-release
+Gentoo Base System version 1.12.4
+
+____________________________________________
+
+/var/log/nvidia-installer.log does not exist
+
+____________________________________________
+
+/var/log/XFree86.0.log does not exist
+
+____________________________________________
+
+/var/log/Xorg.0.log
+
+X Window System Version 7.1.1
+Release Date: 12 May 2006
+X Protocol Version 11, Revision 0, Release 7.1.1
+Build Operating System: UNKNOWN 
+Current Operating System: Linux localhost 2.6.17-ck1-r2 #9 PREEMPT Sun Aug 20 18:58:01 BRT 2006 i686
+Build Date: 07 August 2006
+	Before reporting problems, check http://wiki.x.org
+	to make sure that you have the latest version.
+Module Loader present
+Markers: (--) probed, (**) from config file, (==) default setting,
+	(++) from command line, (!!) notice, (II) informational,
+	(WW) warning, (EE) error, (NI) not implemented, (??) unknown.
+(==) Log file: "/var/log/Xorg.0.log", Time: Sat Aug 26 12:21:23 2006
+(==) Using config file: "/etc/X11/xorg.conf"
+(==) ServerLayout "Default Layout"
+(**) |-->Screen "Screen0" (0)
+(**) |   |-->Monitor "T910B"
+(**) |   |-->Device "GFX5700LE_CRT"
+(**) |-->Input Device "Keyboard0"
+(**) |-->Input Device "Mice0"
+(WW) `fonts.dir' not found (or not valid) in "/usr/share/fonts/encodings".
+	Entry deleted from font path.
+	(Run 'mkfontdir' on "/usr/share/fonts/encodings").
+(**) FontPath set to:
+	/usr/share/fonts/misc:unscaled,
+	/usr/share/fonts/Type1,
+	/usr/share/fonts/TTF,
+	/usr/share/fonts/corefonts,
+	/usr/share/fonts/freefonts,
+	/usr/share/fonts/sharefonts,
+	/usr/share/fonts/artwiz,
+	/usr/share/fonts/terminus,
+	/usr/share/fonts/ttf-bitstream-vera,
+	/usr/share/fonts/unifont,
+	/usr/share/fonts/cyrillic,
+	/usr/share/fonts/dejavu,
+	/usr/share/fonts/terminus,
+	/usr/share/fonts/Speedo,
+	/usr/share/fonts/xawtv,
+	/usr/share/fonts/Type1,
+	/usr/share/fonts/75dpi:unscaled,
+	/usr/share/fonts/100dpi:unscaled
+(==) RgbPath set to "/usr/share/X11/rgb"
+(==) ModulePath set to "/usr/lib/xorg/modules"
+(**) Option "BlankTime" "30"
+(**) Option "AllowDeactivateGrabs" "true"
+(**) Option "AllowClosedownGrabs" "true"
+(**) Extension "Composite" is enabled
+(II) Open ACPI successful (/var/run/acpid.socket)
+(II) Module ABI versions:
+	X.Org ANSI C Emulation: 0.3
+	X.Org Video Driver: 1.0
+	X.Org XInput driver : 0.6
+	X.Org Server Extension : 0.3
+	X.Org Font Renderer : 0.5
+(II) Loader running on linux
+(II) LoadModule: "bitmap"
+(II) Loading /usr/lib/xorg/modules/fonts/libbitmap.so
+(II) Module bitmap: vendor="X.Org Foundation"
+	compiled for 7.1.1, module version = 1.0.0
+	Module class: X.Org Font Renderer
+	ABI class: X.Org Font Renderer, version 0.5
+(II) Loading font Bitmap
+(II) LoadModule: "pcidata"
+(II) Loading /usr/lib/xorg/modules/libpcidata.so
+(II) Module pcidata: vendor="X.Org Foundation"
+	compiled for 7.1.1, module version = 1.0.0
+	ABI class: X.Org Video Driver, version 1.0
+(--) using VT number 7
+
+(II) PCI: PCI scan (all values are in hex)
+(II) PCI: 00:00:0: chip 10de,01e0 card 147b,1c00 rev c1 class 06,00,00 hdr 80
+(II) PCI: 00:00:1: chip 10de,01eb card 10de,0c17 rev c1 class 05,00,00 hdr 80
+(II) PCI: 00:00:2: chip 10de,01ee card 10de,0c17 rev c1 class 05,00,00 hdr 80
+(II) PCI: 00:00:3: chip 10de,01ed card 10de,0c17 rev c1 class 05,00,00 hdr 80
+(II) PCI: 00:00:4: chip 10de,01ec card 10de,0c17 rev c1 class 05,00,00 hdr 80
+(II) PCI: 00:00:5: chip 10de,01ef card 10de,0c17 rev c1 class 05,00,00 hdr 80
+(II) PCI: 00:01:0: chip 10de,0060 card 147b,1c00 rev a4 class 06,01,00 hdr 80
+(II) PCI: 00:01:1: chip 10de,0064 card 147b,1c00 rev a2 class 0c,05,00 hdr 80
+(II) PCI: 00:02:0: chip 10de,0067 card 147b,1c00 rev a4 class 0c,03,10 hdr 80
+(II) PCI: 00:02:1: chip 10de,0067 card 147b,1c00 rev a4 class 0c,03,10 hdr 80
+(II) PCI: 00:02:2: chip 10de,0068 card 147b,1c00 rev a4 class 0c,03,20 hdr 80
+(II) PCI: 00:04:0: chip 10de,0066 card 147b,1c00 rev a1 class 02,00,00 hdr 00
+(II) PCI: 00:05:0: chip 10de,006b card 147b,1c00 rev a2 class 04,01,00 hdr 00
+(II) PCI: 00:06:0: chip 10de,006a card 147b,1c00 rev a1 class 04,01,00 hdr 00
+(II) PCI: 00:08:0: chip 10de,006c card 0000,0000 rev a3 class 06,04,00 hdr 01
+(II) PCI: 00:09:0: chip 10de,0065 card f47b,1c00 rev a2 class 01,01,8a hdr 00
+(II) PCI: 00:0d:0: chip 10de,006e card 147b,1c00 rev a3 class 0c,00,10 hdr 00
+(II) PCI: 00:1e:0: chip 10de,01e8 card 0000,0000 rev c1 class 06,04,00 hdr 01
+(II) PCI: 01:06:0: chip 14f1,8800 card 0000,0000 rev 03 class 04,00,00 hdr 80
+(II) PCI: 01:07:0: chip 12b9,1008 card 12b9,00aa rev 01 class 07,00,02 hdr 00
+(II) PCI: 01:08:0: chip 1106,3038 card 1106,3038 rev 61 class 0c,03,00 hdr 80
+(II) PCI: 01:08:1: chip 1106,3038 card 1106,3038 rev 61 class 0c,03,00 hdr 80
+(II) PCI: 01:08:2: chip 1106,3104 card 1106,3104 rev 63 class 0c,03,20 hdr 80
+(II) PCI: 01:09:0: chip 1095,3114 card 1095,6114 rev 02 class 01,04,00 hdr 00
+(II) PCI: 01:0b:0: chip 1095,3112 card 1095,6112 rev 02 class 01,04,00 hdr 00
+(II) PCI: 02:00:0: chip 10de,0343 card 107d,29a8 rev a1 class 03,00,00 hdr 00
+(II) PCI: End of PCI scan
+(II) Host-to-PCI bridge:
+(II) Bus 0: bridge is at (0:0:0), (0,0,2), BCTRL: 0x0008 (VGA_EN is set)
+(II) Bus 0 I/O range:
+	[0] -1	0	0x00000000 - 0x0000ffff (0x10000) IX[B]
+(II) Bus 0 non-prefetchable memory range:
+	[0] -1	0	0x00000000 - 0xffffffff (0x0) MX[B]
+(II) Bus 0 prefetchable memory range:
+	[0] -1	0	0x00000000 - 0xffffffff (0x0) MX[B]
+(II) PCI-to-ISA bridge:
+(II) Bus -1: bridge is at (0:1:0), (0,-1,-1), BCTRL: 0x0008 (VGA_EN is set)
+(II) PCI-to-PCI bridge:
+(II) Bus 1: bridge is at (0:8:0), (0,1,1), BCTRL: 0x0202 (VGA_EN is cleared)
+(II) Bus 1 I/O range:
+	[0] -1	0	0x00009000 - 0x0000cfff (0x4000) IX[B]
+(II) Bus 1 non-prefetchable memory range:
+	[0] -1	0	0xe4000000 - 0xe6ffffff (0x3000000) MX[B]
+(II) Bus 1 prefetchable memory range:
+	[0] -1	0	0x50000000 - 0x500fffff (0x100000) MX[B]
+(II) PCI-to-PCI bridge:
+(II) Bus 2: bridge is at (0:30:0), (0,2,2), BCTRL: 0x000a (VGA_EN is set)
+(II) Bus 2 non-prefetchable memory range:
+	[0] -1	0	0xe2000000 - 0xe3ffffff (0x2000000) MX[B]
+(II) Bus 2 prefetchable memory range:
+	[0] -1	0	0xd0000000 - 0xdfffffff (0x10000000) MX[B]
+(--) PCI: (1:6:0) unknown vendor (0x14f1) unknown chipset (0x8800) rev 3, Mem @ 0xe4000000/24
+(--) PCI:*(2:0:0) nVidia Corporation NV36 [GeForce FX 5700LE] rev 161, Mem @ 0xe2000000/24, 0xd0000000/28
+(II) Addressable bus resource ranges are
+	[0] -1	0	0x00000000 - 0xffffffff (0x0) MX[B]
+	[1] -1	0	0x00000000 - 0x0000ffff (0x10000) IX[B]
+(II) OS-reported resource ranges:
+	[0] -1	0	0x00100000 - 0x3fffffff (0x3ff00000) MX[B]E(B)
+	[1] -1	0	0x000f0000 - 0x000fffff (0x10000) MX[B]
+	[2] -1	0	0x000c0000 - 0x000effff (0x30000) MX[B]
+	[3] -1	0	0x00000000 - 0x0009ffff (0xa0000) MX[B]
+	[4] -1	0	0x0000ffff - 0x0000ffff (0x1) IX[B]
+	[5] -1	0	0x00000000 - 0x000000ff (0x100) IX[B]
+(II) PCI Memory resource overlap reduced 0xe0000000 from 0xe1ffffff to 0xdfffffff
+(II) Active PCI resource ranges:
+	[0] -1	0	0xe6002000 - 0xe60021ff (0x200) MX[B]
+	[1] -1	0	0xe6000000 - 0xe60003ff (0x400) MX[B]
+	[2] -1	0	0xe6001000 - 0xe60010ff (0x100) MX[B]
+	[3] -1	0	0xe7085000 - 0xe708503f (0x40) MX[B]
+	[4] -1	0	0xe7084000 - 0xe70847ff (0x800) MX[B]
+	[5] -1	0	0xe7081000 - 0xe7081fff (0x1000) MX[B]
+	[6] -1	0	0xe7000000 - 0xe707ffff (0x80000) MX[B]
+	[7] -1	0	0xe7087000 - 0xe7087fff (0x1000) MX[B]
+	[8] -1	0	0xe7086000 - 0xe70860ff (0x100) MX[B]
+	[9] -1	0	0xe7083000 - 0xe7083fff (0x1000) MX[B]
+	[10] -1	0	0xe7080000 - 0xe7080fff (0x1000) MX[B]
+	[11] -1	0	0xe0000000 - 0xdfffffff (0x0) MX[B]O
+	[12] -1	0	0xd0000000 - 0xdfffffff (0x10000000) MX[B](B)
+	[13] -1	0	0xe2000000 - 0xe2ffffff (0x1000000) MX[B](B)
+	[14] -1	0	0xe4000000 - 0xe4ffffff (0x1000000) MX[B](B)
+	[15] -1	0	0x0000c000 - 0x0000c00f (0x10) IX[B]
+	[16] -1	0	0x0000bc00 - 0x0000bc03 (0x4) IX[B]
+	[17] -1	0	0x0000b800 - 0x0000b807 (0x8) IX[B]
+	[18] -1	0	0x0000b400 - 0x0000b403 (0x4) IX[B]
+	[19] -1	0	0x0000b000 - 0x0000b007 (0x8) IX[B]
+	[20] -1	0	0x0000ac00 - 0x0000ac0f (0x10) IX[B]
+	[21] -1	0	0x0000a800 - 0x0000a803 (0x4) IX[B]
+	[22] -1	0	0x0000a400 - 0x0000a407 (0x8) IX[B]
+	[23] -1	0	0x0000a000 - 0x0000a003 (0x4) IX[B]
+	[24] -1	0	0x00009c00 - 0x00009c07 (0x8) IX[B]
+	[25] -1	0	0x00009800 - 0x0000981f (0x20) IX[B]
+	[26] -1	0	0x00009400 - 0x0000941f (0x20) IX[B]
+	[27] -1	0	0x00009000 - 0x00009007 (0x8) IX[B]
+	[28] -1	0	0x0000f000 - 0x0000f00f (0x10) IX[B]
+	[29] -1	0	0x0000d800 - 0x0000d87f (0x80) IX[B]
+	[30] -1	0	0x0000d400 - 0x0000d4ff (0x100) IX[B]
+	[31] -1	0	0x0000d000 - 0x0000d007 (0x8) IX[B]
+	[32] -1	0	0x0000e400 - 0x0000e41f (0x20) IX[B]
+(II) Active PCI resource ranges after removing overlaps:
+	[0] -1	0	0xe6002000 - 0xe60021ff (0x200) MX[B]
+	[1] -1	0	0xe6000000 - 0xe60003ff (0x400) MX[B]
+	[2] -1	0	0xe6001000 - 0xe60010ff (0x100) MX[B]
+	[3] -1	0	0xe7085000 - 0xe708503f (0x40) MX[B]
+	[4] -1	0	0xe7084000 - 0xe70847ff (0x800) MX[B]
+	[5] -1	0	0xe7081000 - 0xe7081fff (0x1000) MX[B]
+	[6] -1	0	0xe7000000 - 0xe707ffff (0x80000) MX[B]
+	[7] -1	0	0xe7087000 - 0xe7087fff (0x1000) MX[B]
+	[8] -1	0	0xe7086000 - 0xe70860ff (0x100) MX[B]
+	[9] -1	0	0xe7083000 - 0xe7083fff (0x1000) MX[B]
+	[10] -1	0	0xe7080000 - 0xe7080fff (0x1000) MX[B]
+	[11] -1	0	0xe0000000 - 0xdfffffff (0x0) MX[B]O
+	[12] -1	0	0xd0000000 - 0xdfffffff (0x10000000) MX[B](B)
+	[13] -1	0	0xe2000000 - 0xe2ffffff (0x1000000) MX[B](B)
+	[14] -1	0	0xe4000000 - 0xe4ffffff (0x1000000) MX[B](B)
+	[15] -1	0	0x0000c000 - 0x0000c00f (0x10) IX[B]
+	[16] -1	0	0x0000bc00 - 0x0000bc03 (0x4) IX[B]
+	[17] -1	0	0x0000b800 - 0x0000b807 (0x8) IX[B]
+	[18] -1	0	0x0000b400 - 0x0000b403 (0x4) IX[B]
+	[19] -1	0	0x0000b000 - 0x0000b007 (0x8) IX[B]
+	[20] -1	0	0x0000ac00 - 0x0000ac0f (0x10) IX[B]
+	[21] -1	0	0x0000a800 - 0x0000a803 (0x4) IX[B]
+	[22] -1	0	0x0000a400 - 0x0000a407 (0x8) IX[B]
+	[23] -1	0	0x0000a000 - 0x0000a003 (0x4) IX[B]
+	[24] -1	0	0x00009c00 - 0x00009c07 (0x8) IX[B]
+	[25] -1	0	0x00009800 - 0x0000981f (0x20) IX[B]
+	[26] -1	0	0x00009400 - 0x0000941f (0x20) IX[B]
+	[27] -1	0	0x00009000 - 0x00009007 (0x8) IX[B]
+	[28] -1	0	0x0000f000 - 0x0000f00f (0x10) IX[B]
+	[29] -1	0	0x0000d800 - 0x0000d87f (0x80) IX[B]
+	[30] -1	0	0x0000d400 - 0x0000d4ff (0x100) IX[B]
+	[31] -1	0	0x0000d000 - 0x0000d007 (0x8) IX[B]
+	[32] -1	0	0x0000e400 - 0x0000e41f (0x20) IX[B]
+(II) OS-reported resource ranges after removing overlaps with PCI:
+	[0] -1	0	0x00100000 - 0x3fffffff (0x3ff00000) MX[B]E(B)
+	[1] -1	0	0x000f0000 - 0x000fffff (0x10000) MX[B]
+	[2] -1	0	0x000c0000 - 0x000effff (0x30000) MX[B]
+	[3] -1	0	0x00000000 - 0x0009ffff (0xa0000) MX[B]
+	[4] -1	0	0x0000ffff - 0x0000ffff (0x1) IX[B]
+	[5] -1	0	0x00000000 - 0x000000ff (0x100) IX[B]
+(II) All system resource ranges:
+	[0] -1	0	0x00100000 - 0x3fffffff (0x3ff00000) MX[B]E(B)
+	[1] -1	0	0x000f0000 - 0x000fffff (0x10000) MX[B]
+	[2] -1	0	0x000c0000 - 0x000effff (0x30000) MX[B]
+	[3] -1	0	0x00000000 - 0x0009ffff (0xa0000) MX[B]
+	[4] -1	0	0xe6002000 - 0xe60021ff (0x200) MX[B]
+	[5] -1	0	0xe6000000 - 0xe60003ff (0x400) MX[B]
+	[6] -1	0	0xe6001000 - 0xe60010ff (0x100) MX[B]
+	[7] -1	0	0xe7085000 - 0xe708503f (0x40) MX[B]
+	[8] -1	0	0xe7084000 - 0xe70847ff (0x800) MX[B]
+	[9] -1	0	0xe7081000 - 0xe7081fff (0x1000) MX[B]
+	[10] -1	0	0xe7000000 - 0xe707ffff (0x80000) MX[B]
+	[11] -1	0	0xe7087000 - 0xe7087fff (0x1000) MX[B]
+	[12] -1	0	0xe7086000 - 0xe70860ff (0x100) MX[B]
+	[13] -1	0	0xe7083000 - 0xe7083fff (0x1000) MX[B]
+	[14] -1	0	0xe7080000 - 0xe7080fff (0x1000) MX[B]
+	[15] -1	0	0xe0000000 - 0xdfffffff (0x0) MX[B]O
+	[16] -1	0	0xd0000000 - 0xdfffffff (0x10000000) MX[B](B)
+	[17] -1	0	0xe2000000 - 0xe2ffffff (0x1000000) MX[B](B)
+	[18] -1	0	0xe4000000 - 0xe4ffffff (0x1000000) MX[B](B)
+	[19] -1	0	0x0000ffff - 0x0000ffff (0x1) IX[B]
+	[20] -1	0	0x00000000 - 0x000000ff (0x100) IX[B]
+	[21] -1	0	0x0000c000 - 0x0000c00f (0x10) IX[B]
+	[22] -1	0	0x0000bc00 - 0x0000bc03 (0x4) IX[B]
+	[23] -1	0	0x0000b800 - 0x0000b807 (0x8) IX[B]
+	[24] -1	0	0x0000b400 - 0x0000b403 (0x4) IX[B]
+	[25] -1	0	0x0000b000 - 0x0000b007 (0x8) IX[B]
+	[26] -1	0	0x0000ac00 - 0x0000ac0f (0x10) IX[B]
+	[27] -1	0	0x0000a800 - 0x0000a803 (0x4) IX[B]
+	[28] -1	0	0x0000a400 - 0x0000a407 (0x8) IX[B]
+	[29] -1	0	0x0000a000 - 0x0000a003 (0x4) IX[B]
+	[30] -1	0	0x00009c00 - 0x00009c07 (0x8) IX[B]
+	[31] -1	0	0x00009800 - 0x0000981f (0x20) IX[B]
+	[32] -1	0	0x00009400 - 0x0000941f (0x20) IX[B]
+	[33] -1	0	0x00009000 - 0x00009007 (0x8) IX[B]
+	[34] -1	0	0x0000f000 - 0x0000f00f (0x10) IX[B]
+	[35] -1	0	0x0000d800 - 0x0000d87f (0x80) IX[B]
+	[36] -1	0	0x0000d400 - 0x0000d4ff (0x100) IX[B]
+	[37] -1	0	0x0000d000 - 0x0000d007 (0x8) IX[B]
+	[38] -1	0	0x0000e400 - 0x0000e41f (0x20) IX[B]
+(II) LoadModule: "dbe"
+(II) Loading /usr/lib/xorg/modules/extensions/libdbe.so
+(II) Module dbe: vendor="X.Org Foundation"
+	compiled for 7.1.1, module version = 1.0.0
+	Module class: X.Org Server Extension
+	ABI class: X.Org Server Extension, version 0.3
+(II) Loading extension DOUBLE-BUFFER
+(II) LoadModule: "extmod"
+(II) Loading /usr/lib/xorg/modules/extensions/libextmod.so
+(II) Module extmod: vendor="X.Org Foundation"
+	compiled for 7.1.1, module version = 1.0.0
+	Module class: X.Org Server Extension
+	ABI class: X.Org Server Extension, version 0.3
+(II) Loading extension SHAPE
+(II) Loading extension MIT-SUNDRY-NONSTANDARD
+(II) Loading extension BIG-REQUESTS
+(II) Loading extension SYNC
+(II) Loading extension MIT-SCREEN-SAVER
+(II) Loading extension XC-MISC
+(II) Loading extension XFree86-VidModeExtension
+(II) Loading extension XFree86-Misc
+(II) Loading extension XFree86-DGA
+(II) Loading extension DPMS
+(II) Loading extension TOG-CUP
+(II) Loading extension Extended-Visual-Information
+(II) Loading extension XVideo
+(II) Loading extension XVideo-MotionCompensation
+(II) Loading extension X-Resource
+(II) LoadModule: "glx"
+(II) Loading /usr/lib/xorg/modules/extensions/libglx.so
+(II) Module glx: vendor="NVIDIA Corporation"
+	compiled for 4.0.2, module version = 1.0.8774
+	Module class: X.Org Server Extension
+	ABI class: X.Org Server Extension, version 0.1
+(II) Loading extension GLX
+(II) LoadModule: "freetype"
+(II) Loading /usr/lib/xorg/modules/fonts/libfreetype.so
+(II) Module freetype: vendor="X.Org Foundation & the After X-TT Project"
+	compiled for 7.1.1, module version = 2.1.0
+	Module class: X.Org Font Renderer
+	ABI class: X.Org Font Renderer, version 0.5
+(II) Loading font FreeType
+(II) LoadModule: "type1"
+(II) Loading /usr/lib/xorg/modules/fonts/libtype1.so
+(II) Module type1: vendor="X.Org Foundation"
+	compiled for 7.1.1, module version = 1.0.2
+	Module class: X.Org Font Renderer
+	ABI class: X.Org Font Renderer, version 0.5
+(II) Loading font Type1
+(II) LoadModule: "ddc"
+(II) Loading /usr/lib/xorg/modules/libddc.so
+(II) Module ddc: vendor="X.Org Foundation"
+	compiled for 7.1.1, module version = 1.0.0
+	ABI class: X.Org Video Driver, version 1.0
+(II) LoadModule: "v4l"
+(II) Loading /usr/lib/xorg/modules/drivers/v4l_drv.so
+(II) Module v4l: vendor="X.Org Foundation"
+	compiled for 7.1.0, module version = 0.1.1
+	ABI class: X.Org Video Driver, version 1.0
+(II) LoadModule: "bitmap"
+(II) Reloading /usr/lib/xorg/modules/fonts/libbitmap.so
+(II) Loading font Bitmap
+(II) LoadModule: "nvidia"
+(II) Loading /usr/lib/xorg/modules/drivers/nvidia_drv.so
+(II) Module nvidia: vendor="NVIDIA Corporation"
+	compiled for 4.0.2, module version = 1.0.8774
+	Module class: X.Org Video Driver
+(II) LoadModule: "kbd"
+(II) Loading /usr/lib/xorg/modules/input/kbd_drv.so
+(II) Module kbd: vendor="X.Org Foundation"
+	compiled for 7.1.0, module version = 1.1.0
+	Module class: X.Org XInput Driver
+	ABI class: X.Org XInput driver, version 0.6
+(II) LoadModule: "mouse"
+(II) Loading /usr/lib/xorg/modules/input/mouse_drv.so
+(II) Module mouse: vendor="X.Org Foundation"
+	compiled for 7.1.0, module version = 1.1.1
+	Module class: X.Org XInput Driver
+	ABI class: X.Org XInput driver, version 0.6
+(II) v4l driver for Video4Linux
+(II) NVIDIA dlloader X Driver  1.0-8774  Tue Aug  1 20:55:35 PDT 2006
+(II) NVIDIA Unified Driver for all Supported NVIDIA GPUs
+(II) Primary Device is: PCI 02:00:0
+(--) Chipset NVIDIA GPU found
+(II) Loading sub module "fb"
+(II) LoadModule: "fb"
+(II) Loading /usr/lib/xorg/modules/libfb.so
+(II) Module fb: vendor="X.Org Foundation"
+	compiled for 7.1.1, module version = 1.0.0
+	ABI class: X.Org ANSI C Emulation, version 0.3
+(II) Loading sub module "ramdac"
+(II) LoadModule: "ramdac"
+(II) Loading /usr/lib/xorg/modules/libramdac.so
+(II) Module ramdac: vendor="X.Org Foundation"
+	compiled for 7.1.1, module version = 0.1.0
+	ABI class: X.Org Video Driver, version 1.0
+(II) resource ranges after xf86ClaimFixedResources() call:
+	[0] -1	0	0x00100000 - 0x3fffffff (0x3ff00000) MX[B]E(B)
+	[1] -1	0	0x000f0000 - 0x000fffff (0x10000) MX[B]
+	[2] -1	0	0x000c0000 - 0x000effff (0x30000) MX[B]
+	[3] -1	0	0x00000000 - 0x0009ffff (0xa0000) MX[B]
+	[4] -1	0	0xe6002000 - 0xe60021ff (0x200) MX[B]
+	[5] -1	0	0xe6000000 - 0xe60003ff (0x400) MX[B]
+	[6] -1	0	0xe6001000 - 0xe60010ff (0x100) MX[B]
+	[7] -1	0	0xe7085000 - 0xe708503f (0x40) MX[B]
+	[8] -1	0	0xe7084000 - 0xe70847ff (0x800) MX[B]
+	[9] -1	0	0xe7081000 - 0xe7081fff (0x1000) MX[B]
+	[10] -1	0	0xe7000000 - 0xe707ffff (0x80000) MX[B]
+	[11] -1	0	0xe7087000 - 0xe7087fff (0x1000) MX[B]
+	[12] -1	0	0xe7086000 - 0xe70860ff (0x100) MX[B]
+	[13] -1	0	0xe7083000 - 0xe7083fff (0x1000) MX[B]
+	[14] -1	0	0xe7080000 - 0xe7080fff (0x1000) MX[B]
+	[15] -1	0	0xe0000000 - 0xdfffffff (0x0) MX[B]O
+	[16] -1	0	0xd0000000 - 0xdfffffff (0x10000000) MX[B](B)
+	[17] -1	0	0xe2000000 - 0xe2ffffff (0x1000000) MX[B](B)
+	[18] -1	0	0xe4000000 - 0xe4ffffff (0x1000000) MX[B](B)
+	[19] -1	0	0x0000ffff - 0x0000ffff (0x1) IX[B]
+	[20] -1	0	0x00000000 - 0x000000ff (0x100) IX[B]
+	[21] -1	0	0x0000c000 - 0x0000c00f (0x10) IX[B]
+	[22] -1	0	0x0000bc00 - 0x0000bc03 (0x4) IX[B]
+	[23] -1	0	0x0000b800 - 0x0000b807 (0x8) IX[B]
+	[24] -1	0	0x0000b400 - 0x0000b403 (0x4) IX[B]
+	[25] -1	0	0x0000b000 - 0x0000b007 (0x8) IX[B]
+	[26] -1	0	0x0000ac00 - 0x0000ac0f (0x10) IX[B]
+	[27] -1	0	0x0000a800 - 0x0000a803 (0x4) IX[B]
+	[28] -1	0	0x0000a400 - 0x0000a407 (0x8) IX[B]
+	[29] -1	0	0x0000a000 - 0x0000a003 (0x4) IX[B]
+	[30] -1	0	0x00009c00 - 0x00009c07 (0x8) IX[B]
+	[31] -1	0	0x00009800 - 0x0000981f (0x20) IX[B]
+	[32] -1	0	0x00009400 - 0x0000941f (0x20) IX[B]
+	[33] -1	0	0x00009000 - 0x00009007 (0x8) IX[B]
+	[34] -1	0	0x0000f000 - 0x0000f00f (0x10) IX[B]
+	[35] -1	0	0x0000d800 - 0x0000d87f (0x80) IX[B]
+	[36] -1	0	0x0000d400 - 0x0000d4ff (0x100) IX[B]
+	[37] -1	0	0x0000d000 - 0x0000d007 (0x8) IX[B]
+	[38] -1	0	0x0000e400 - 0x0000e41f (0x20) IX[B]
+(II) resource ranges after probing:
+	[0] -1	0	0x00100000 - 0x3fffffff (0x3ff00000) MX[B]E(B)
+	[1] -1	0	0x000f0000 - 0x000fffff (0x10000) MX[B]
+	[2] -1	0	0x000c0000 - 0x000effff (0x30000) MX[B]
+	[3] -1	0	0x00000000 - 0x0009ffff (0xa0000) MX[B]
+	[4] -1	0	0xe6002000 - 0xe60021ff (0x200) MX[B]
+	[5] -1	0	0xe6000000 - 0xe60003ff (0x400) MX[B]
+	[6] -1	0	0xe6001000 - 0xe60010ff (0x100) MX[B]
+	[7] -1	0	0xe7085000 - 0xe708503f (0x40) MX[B]
+	[8] -1	0	0xe7084000 - 0xe70847ff (0x800) MX[B]
+	[9] -1	0	0xe7081000 - 0xe7081fff (0x1000) MX[B]
+	[10] -1	0	0xe7000000 - 0xe707ffff (0x80000) MX[B]
+	[11] -1	0	0xe7087000 - 0xe7087fff (0x1000) MX[B]
+	[12] -1	0	0xe7086000 - 0xe70860ff (0x100) MX[B]
+	[13] -1	0	0xe7083000 - 0xe7083fff (0x1000) MX[B]
+	[14] -1	0	0xe7080000 - 0xe7080fff (0x1000) MX[B]
+	[15] -1	0	0xe0000000 - 0xdfffffff (0x0) MX[B]O
+	[16] -1	0	0xd0000000 - 0xdfffffff (0x10000000) MX[B](B)
+	[17] -1	0	0xe2000000 - 0xe2ffffff (0x1000000) MX[B](B)
+	[18] -1	0	0xe4000000 - 0xe4ffffff (0x1000000) MX[B](B)
+	[19] 0	0	0x000a0000 - 0x000affff (0x10000) MS[B]
+	[20] 0	0	0x000b0000 - 0x000b7fff (0x8000) MS[B]
+	[21] 0	0	0x000b8000 - 0x000bffff (0x8000) MS[B]
+	[22] -1	0	0x0000ffff - 0x0000ffff (0x1) IX[B]
+	[23] -1	0	0x00000000 - 0x000000ff (0x100) IX[B]
+	[24] -1	0	0x0000c000 - 0x0000c00f (0x10) IX[B]
+	[25] -1	0	0x0000bc00 - 0x0000bc03 (0x4) IX[B]
+	[26] -1	0	0x0000b800 - 0x0000b807 (0x8) IX[B]
+	[27] -1	0	0x0000b400 - 0x0000b403 (0x4) IX[B]
+	[28] -1	0	0x0000b000 - 0x0000b007 (0x8) IX[B]
+	[29] -1	0	0x0000ac00 - 0x0000ac0f (0x10) IX[B]
+	[30] -1	0	0x0000a800 - 0x0000a803 (0x4) IX[B]
+	[31] -1	0	0x0000a400 - 0x0000a407 (0x8) IX[B]
+	[32] -1	0	0x0000a000 - 0x0000a003 (0x4) IX[B]
+	[33] -1	0	0x00009c00 - 0x00009c07 (0x8) IX[B]
+	[34] -1	0	0x00009800 - 0x0000981f (0x20) IX[B]
+	[35] -1	0	0x00009400 - 0x0000941f (0x20) IX[B]
+	[36] -1	0	0x00009000 - 0x00009007 (0x8) IX[B]
+	[37] -1	0	0x0000f000 - 0x0000f00f (0x10) IX[B]
+	[38] -1	0	0x0000d800 - 0x0000d87f (0x80) IX[B]
+	[39] -1	0	0x0000d400 - 0x0000d4ff (0x100) IX[B]
+	[40] -1	0	0x0000d000 - 0x0000d007 (0x8) IX[B]
+	[41] -1	0	0x0000e400 - 0x0000e41f (0x20) IX[B]
+	[42] 0	0	0x000003b0 - 0x000003bb (0xc) IS[B]
+	[43] 0	0	0x000003c0 - 0x000003df (0x20) IS[B]
+(II) Setting vga for screen 0.
+(**) NVIDIA(0): Depth 24, (--) framebuffer bpp 32
+(==) NVIDIA(0): RGB weight 888
+(==) NVIDIA(0): Default visual is TrueColor
+(==) NVIDIA(0): Using gamma correction (1.0, 1.0, 1.0)
+(**) NVIDIA(0): Option "NoLogo"
+(**) NVIDIA(0): Option "HWcursor" "true"
+(**) NVIDIA(0): Option "NvAGP" "3"
+(**) NVIDIA(0): Option "ConnectedMonitor" "CRT-0"
+(**) NVIDIA(0): Option "RenderAccel" "true"
+(**) NVIDIA(0): Option "Coolbits" "1"
+(**) NVIDIA(0): Option "AddARGBGLXVisuals" "true"
+(**) NVIDIA(0): Enabling RENDER acceleration
+(**) NVIDIA(0): ConnectedMonitor string: "CRT-0"
+(II) NVIDIA(0): Support for GLX with the Damage and Composite X extensions is
+(II) NVIDIA(0):     enabled.
+(II) NVIDIA(0): NVIDIA GPU GeForce FX 5700LE at PCI:2:0:0
+(--) NVIDIA(0): VideoRAM: 262144 kBytes
+(--) NVIDIA(0): VideoBIOS: 04.36.20.30.00
+(II) NVIDIA(0): Detected AGP rate: 8X
+(--) NVIDIA(0): Interlaced video modes are supported on this GPU
+(--) NVIDIA(0): Connected display device(s) on GeForce FX 5700LE at
+(--) NVIDIA(0):     PCI:2:0:0:
+(--) NVIDIA(0):     LG T910B (CRT-0)
+(--) NVIDIA(0): LG T910B (CRT-0): 400.0 MHz maximum pixel clock
+(II) NVIDIA(0): Assigned Display Device: CRT-0
+(II) NVIDIA(0): Validated modes:
+(II) NVIDIA(0):     "1600x1200"
+(II) NVIDIA(0):     "1280x1024"
+(II) NVIDIA(0):     "1024x768"
+(II) NVIDIA(0):     "800x600"
+(II) NVIDIA(0):     "640x480"
+(II) NVIDIA(0): Virtual screen size determined to be 1600 x 1200
+(WW) NVIDIA(0): No size information available in CRT-0's EDID; cannot compute
+(WW) NVIDIA(0):     DPI from EDID.
+(**) NVIDIA(0): DPI set to (112, 112); computed from "DisplaySize" Monitor section option
+(--) Depth 24 pixmap format is 32 bpp
+(II) do I need RAC?  No, I don't.
+(II) resource ranges after preInit:
+	[0] 0	0	0xd0000000 - 0xdfffffff (0x10000000) MX[B]
+	[1] 0	0	0xe2000000 - 0xe2ffffff (0x1000000) MX[B]
+	[2] -1	0	0x00100000 - 0x3fffffff (0x3ff00000) MX[B]E(B)
+	[3] -1	0	0x000f0000 - 0x000fffff (0x10000) MX[B]
+	[4] -1	0	0x000c0000 - 0x000effff (0x30000) MX[B]
+	[5] -1	0	0x00000000 - 0x0009ffff (0xa0000) MX[B]
+	[6] -1	0	0xe6002000 - 0xe60021ff (0x200) MX[B]
+	[7] -1	0	0xe6000000 - 0xe60003ff (0x400) MX[B]
+	[8] -1	0	0xe6001000 - 0xe60010ff (0x100) MX[B]
+	[9] -1	0	0xe7085000 - 0xe708503f (0x40) MX[B]
+	[10] -1	0	0xe7084000 - 0xe70847ff (0x800) MX[B]
+	[11] -1	0	0xe7081000 - 0xe7081fff (0x1000) MX[B]
+	[12] -1	0	0xe7000000 - 0xe707ffff (0x80000) MX[B]
+	[13] -1	0	0xe7087000 - 0xe7087fff (0x1000) MX[B]
+	[14] -1	0	0xe7086000 - 0xe70860ff (0x100) MX[B]
+	[15] -1	0	0xe7083000 - 0xe7083fff (0x1000) MX[B]
+	[16] -1	0	0xe7080000 - 0xe7080fff (0x1000) MX[B]
+	[17] -1	0	0xe0000000 - 0xdfffffff (0x0) MX[B]O
+	[18] -1	0	0xd0000000 - 0xdfffffff (0x10000000) MX[B](B)
+	[19] -1	0	0xe2000000 - 0xe2ffffff (0x1000000) MX[B](B)
+	[20] -1	0	0xe4000000 - 0xe4ffffff (0x1000000) MX[B](B)
+	[21] 0	0	0x000a0000 - 0x000affff (0x10000) MS[B](OprD)
+	[22] 0	0	0x000b0000 - 0x000b7fff (0x8000) MS[B](OprD)
+	[23] 0	0	0x000b8000 - 0x000bffff (0x8000) MS[B](OprD)
+	[24] -1	0	0x0000ffff - 0x0000ffff (0x1) IX[B]
+	[25] -1	0	0x00000000 - 0x000000ff (0x100) IX[B]
+	[26] -1	0	0x0000c000 - 0x0000c00f (0x10) IX[B]
+	[27] -1	0	0x0000bc00 - 0x0000bc03 (0x4) IX[B]
+	[28] -1	0	0x0000b800 - 0x0000b807 (0x8) IX[B]
+	[29] -1	0	0x0000b400 - 0x0000b403 (0x4) IX[B]
+	[30] -1	0	0x0000b000 - 0x0000b007 (0x8) IX[B]
+	[31] -1	0	0x0000ac00 - 0x0000ac0f (0x10) IX[B]
+	[32] -1	0	0x0000a800 - 0x0000a803 (0x4) IX[B]
+	[33] -1	0	0x0000a400 - 0x0000a407 (0x8) IX[B]
+	[34] -1	0	0x0000a000 - 0x0000a003 (0x4) IX[B]
+	[35] -1	0	0x00009c00 - 0x00009c07 (0x8) IX[B]
+	[36] -1	0	0x00009800 - 0x0000981f (0x20) IX[B]
+	[37] -1	0	0x00009400 - 0x0000941f (0x20) IX[B]
+	[38] -1	0	0x00009000 - 0x00009007 (0x8) IX[B]
+	[39] -1	0	0x0000f000 - 0x0000f00f (0x10) IX[B]
+	[40] -1	0	0x0000d800 - 0x0000d87f (0x80) IX[B]
+	[41] -1	0	0x0000d400 - 0x0000d4ff (0x100) IX[B]
+	[42] -1	0	0x0000d000 - 0x0000d007 (0x8) IX[B]
+	[43] -1	0	0x0000e400 - 0x0000e41f (0x20) IX[B]
+	[44] 0	0	0x000003b0 - 0x000003bb (0xc) IS[B](OprU)
+	[45] 0	0	0x000003c0 - 0x000003df (0x20) IS[B](OprU)
+(II) NVIDIA(0): Setting mode "1600x1200"
+(II) Loading extension NV-GLX
+(II) NVIDIA(0): NVIDIA 3D Acceleration Architecture Initialized
+(II) NVIDIA(0): Using the NVIDIA 2D acceleration architecture
+(**) NVIDIA(0): Option "BackingStore" "true"
+(**) NVIDIA(0): Backing store enabled
+(==) NVIDIA(0): Silken mouse enabled
+(**) Option "dpms"
+(**) NVIDIA(0): DPMS enabled
+(II) Loading extension NV-CONTROL
+(==) RandR enabled
+(II) Initializing built-in extension MIT-SHM
+(II) Initializing built-in extension XInputExtension
+(II) Initializing built-in extension XTEST
+(II) Initializing built-in extension XKEYBOARD
+(II) Initializing built-in extension XC-APPGROUP
+(II) Initializing built-in extension SECURITY
+(II) Initializing built-in extension XINERAMA
+(II) Initializing built-in extension XFIXES
+(II) Initializing built-in extension XFree86-Bigfont
+(II) Initializing built-in extension RENDER
+(II) Initializing built-in extension RANDR
+(II) Initializing built-in extension COMPOSITE
+(II) Initializing built-in extension DAMAGE
+(II) Initializing built-in extension XEVIE
+(II) Initializing extension GLX
+(**) Option "CoreKeyboard"
+(**) Keyboard0: Core Keyboard
+(**) Option "Protocol" "standard"
+(**) Keyboard0: Protocol: standard
+(**) Option "AutoRepeat" "500 30"
+(**) Option "XkbRules" "xorg"
+(**) Keyboard0: XkbRules: "xorg"
+(**) Option "XkbModel" "pc105"
+(**) Keyboard0: XkbModel: "pc105"
+(**) Option "XkbLayout" "us"
+(**) Keyboard0: XkbLayout: "us"
+(**) Option "XkbVariant" "intl"
+(**) Keyboard0: XkbVariant: "intl"
+(**) Option "CustomKeycodes" "off"
+(**) Keyboard0: CustomKeycodes disabled
+(**) Option "Protocol" "ExplorerPS/2"
+(**) Mice0: Device: "/dev/input/mice"
+(**) Mice0: Protocol: "ExplorerPS/2"
+(**) Option "CorePointer"
+(**) Mice0: Core Pointer
+(**) Option "Device" "/dev/input/mice"
+(**) Option "Buttons" "7"
+(**) Option "Emulate3Buttons" "no"
+(**) Option "ZAxisMapping" "6 7"
+(**) Mice0: ZAxisMapping: buttons 6 and 7
+(**) Mice0: Buttons: 11
+(II) XINPUT: Adding extended input device "Mice0" (type: MOUSE)
+(II) XINPUT: Adding extended input device "Keyboard0" (type: KEYBOARD)
+(II) XINPUT: Adding extended input device "NVIDIA Event Handler" (type: Other)
+    xkb_keycodes             { include "xfree86+aliases(qwerty)" };
+    xkb_types                { include "complete" };
+    xkb_compatibility        { include "complete" };
+    xkb_symbols              { include "pc(pc105)+us(intl)" };
+    xkb_geometry             { include "pc(pc105)" };
+(II) Mice0: ps2EnableDataReporting: succeeded
+(II) Open ACPI successful (/var/run/acpid.socket)
+(II) NVIDIA(0): Setting mode "1600x1200"
+(II) Mice0: ps2EnableDataReporting: succeeded
+(II) Open ACPI successful (/var/run/acpid.socket)
+(II) NVIDIA(0): Setting mode "1600x1200"
+(II) Mice0: ps2EnableDataReporting: succeeded
+(II) Open ACPI successful (/var/run/acpid.socket)
+(II) NVIDIA(0): Setting mode "1600x1200"
+(II) Mice0: ps2EnableDataReporting: succeeded
+(II) Open ACPI successful (/var/run/acpid.socket)
+(II) NVIDIA(0): Setting mode "1600x1200"
+(II) Mice0: ps2EnableDataReporting: succeeded
+(II) Open ACPI successful (/var/run/acpid.socket)
+(II) NVIDIA(0): Setting mode "1600x1200"
+(II) Mice0: ps2EnableDataReporting: succeeded
+(II) Open ACPI successful (/var/run/acpid.socket)
+(II) NVIDIA(0): Setting mode "1600x1200"
+(II) Mice0: ps2EnableDataReporting: succeeded
+(II) Open ACPI successful (/var/run/acpid.socket)
+(II) NVIDIA(0): Setting mode "1600x1200"
+(II) Mice0: ps2EnableDataReporting: succeeded
+(II) Open ACPI successful (/var/run/acpid.socket)
+(II) NVIDIA(0): Setting mode "1600x1200"
+(II) Mice0: ps2EnableDataReporting: succeeded
+(II) Open ACPI successful (/var/run/acpid.socket)
+(II) NVIDIA(0): Setting mode "1600x1200"
+(II) Mice0: ps2EnableDataReporting: succeeded
+
+____________________________________________
+
+/etc/X11/xorg.conf
+#Section "Server Flags"
+#	Option         "AllowClosedownGrabs" "true"
+#	Option         "AllowDeactivateGrabs" "true"
+#	Option         "blank time"    "30"
+#
+#EndSection
+
+Section "ServerLayout"
+	Identifier     "Default Layout"
+	Screen 0       "Screen0" 0 0
+	#Screen 1       "Screen1" RightOf "Screen0"
+	#Screen 2       "Screen2" LeftOf "Screen0"
+	InputDevice    "Keyboard0" "CoreKeyboard"
+	#InputDevice    "Keyboard0"
+	#InputDevice    "Mice0"
+	InputDevice    "Mice0" "CorePointer"
+	Option         "AllowClosedownGrabs" "true"
+	Option         "AllowDeactivateGrabs" "true"
+	Option         "blank time"    "30"
+EndSection
+
+Section "ServerLayout"
+	Identifier     "Layout2"
+	Screen 0       "Screen3" 0 0
+	#Screen 1       "Screen1" RightOf "Screen0"
+	#Screen 2       "Screen2" LeftOf "Screen0"
+	InputDevice    "Keyboard1" "CoreKeyboard"
+	InputDevice    "Mice1" "CorePointer"
+	Option         "DontVTSwitch" "true"
+EndSection
+
+
+Section "Files"
+	#FontPath     "unix/:7100"
+	#FontPath     "/usr/share/fonts"
+	FontPath     "/usr/share/fonts/misc:unscaled"
+	
+	FontPath     "/usr/share/fonts/Type1"
+	FontPath     "/usr/share/fonts/TTF"
+
+	FontPath     "/usr/share/fonts/corefonts"
+	FontPath     "/usr/share/fonts/freefonts"
+	FontPath     "/usr/share/fonts/sharefonts"
+
+	FontPath     "/usr/share/fonts/artwiz"
+	FontPath     "/usr/share/fonts/terminus"
+	FontPath     "/usr/share/fonts/ttf-bitstream-vera"
+	FontPath     "/usr/share/fonts/unifont"
+	FontPath     "/usr/share/fonts/cyrillic"
+	FontPath     "/usr/share/fonts/dejavu"
+	FontPath     "/usr/share/fonts/terminus"
+	FontPath     "/usr/share/fonts/encodings"
+
+	FontPath     "/usr/share/fonts/Speedo"
+	FontPath     "/usr/share/fonts/xawtv"
+	FontPath     "/usr/share/fonts/Type1"
+
+	FontPath     "/usr/share/fonts/75dpi:unscaled"
+	FontPath     "/usr/share/fonts/100dpi:unscaled"
+
+	#FontPath     "/usr/local/share/fonts"
+EndSection
+
+Section "Module"
+	Load  "dbe"
+	Load  "extmod"
+	#Load  "fbdevhw"
+	Load  "glx"
+	#Load  "record"
+	Load  "freetype"
+	Load  "type1"
+	Load  "ddc"
+	Load  "v4l"
+	Load  "bitmap"
+	#Load  "dri"
+EndSection
+
+Section "Extensions"
+	Option "Composite" "true"
+	#Option "RENDER" "disable"
+EndSection
+
+Section "InputDevice"
+	Identifier  "Keyboard0"
+	Driver      "kbd"
+	#Option      "Protocol" "evdev"
+	#Option      "Dev Phys" "usb-0000:00:02.0-2/input0"
+
+#	Option	    "XkbModel" "abnt2"
+#	Option	    "XkbLayout" "br"
+#	Option      "XkbVariant" "abnt2"
+
+	Option      "XkbModel" "pc105"
+	Option      "XkbLayout" "us"
+	#Option      "XkbOptions" ""
+	Option      "XkbVariant" "intl"
+EndSection
+
+Section "InputDevice"
+	Identifier  "Keyboard0.new"
+	Driver      "evdev"
+	#Option      "Protocol" "Auto"
+	Option	    "Device" "/dev/input/event0"
+
+	Option      "XkbModel" "evdev"
+	#Option      "XkbLayout" "us"
+	#Option      "XkbVariant" "intl"
+EndSection
+
+Section "InputDevice"
+	Identifier  "Keyboard0.1"
+	Driver      "kbd"
+	Option      "Protocol" "evdev"
+	Option      "Dev Phys" "usb-0000:00:02.1-2/input1"
+
+	Option	    "XkbModel" "pc105"
+	Option	    "XkbLayout" "br"
+	Option      "XkbVariant" "abnt2"
+EndSection
+
+Section "InputDevice"
+	Identifier  "Keyboard1"
+	Driver      "kbd"
+	Option      "Protocol" "evdev"
+	Option      "Dev Phys" "usb-0000:00:02.0-3/input0"
+
+	Option	    "XkbModel" "pc105"
+	Option	    "XkbLayout" "br"
+	Option      "XkbVariant" "abnt2"
+EndSection
+
+
+Section "InputDevice"
+	Identifier  "Mice0"
+	Driver      "mouse"
+#	Option      "Protocol" "evdev"
+#	Option      "Dev Phys" "usb-0000:00:02.1-1/input0"
+	#Option	    "Protocol" "IMPS/2"
+	Option      "Protocol" "ExplorerPS/2"
+	#Option      "Protocol" "Microsoft"
+	Option      "Buttons"  "7"
+	#Option      "Pointer"  "1 2 3 6 7 4 5"
+	#Option      "Pointer"  "1 2 3 4 5 6 7"
+	Option	    "Device" "/dev/input/mice"
+	Option	    "ZAxisMapping" "6 7"
+	Option	    "Emulate3Buttons" "no"
+EndSection
+
+Section "InputDevice"
+	Identifier  "Mice0.new"
+	Driver      "evdev"
+	#Option      "Protocol" "Auto"
+	#Option      "Buttons"  "7"
+	Option	    "Device" "/dev/input/event1"
+	Option      "XkbModel" "evdev"
+	#Option      "Name" "Microsft Microsoft Wireless Optical Desktop 2.20"
+	#Option      "Phys" "*/input1"
+	#Option	    "ZAxisMapping" "6 7 8 9"
+	#Option	    "Emulate3Buttons" "no"
+EndSection
+
+Section "InputDevice"
+	Identifier  "Mice1"
+	Driver      "mouse"
+	Option	    "Protocol" "IMPS/2"
+	Option      "Buttons"  "5"
+	Option      "Pointer"  "1 2 3 4 5"
+	Option	    "Device" "/dev/input/mouse0"
+	Option	    "ZAxisMapping" "4 5"
+	Option	    "Emulate3Buttons" "no"
+EndSection
+
+Section "Monitor"
+	Identifier   "T910B"
+	VendorName   "LG"
+	ModelName    "T910B"
+	DisplaySize  360	270
+	HorizSync    30.0 - 98.0
+	VertRefresh  50.0 - 160.0
+	Option	    "dpms"
+	Option      "ReducedBlanking" "true"
+
+	Modeline "1920x1200" 235.20 1920 1976 2176 2400 1200 1202 1212 1263  # 235 MHz, 98.0 kHz, 77.6 Hz
+
+#	Modeline "640x480" 64.64 640 656 856 800 480 482 486 505  # 65 MHz, 80.8 kHz, 160.0 Hz
+#	Modeline "800x600" 98.00 800 824 1024 1000 600 602 607 632  # 98 MHz, 98.0 kHz, 155.1 Hz
+#	Modeline "1024x768" 125.44 1024 1056 1256 1280 768 770 776 808  # 125 MHz, 98.0 kHz, 121.3 Hz
+#	Modeline "1280x1024" 156.80 1280 1320 1520 1600 1024 1026 1034 1078  # 157 MHz, 98.0 kHz, 90.9 Hz
+#	Modeline "1600x1200" 196.00 1600 1648 1848 2000 1200 1202 1212 1263  # 196 MHz, 98.0 kHz, 77.6 Hz
+#	Modeline "1920x1400" 235.20 1920 1976 2176 2400 1400 1402 1413 1474  # 235 MHz, 98.0 kHz, 66.5 Hz
+EndSection
+
+Section "Monitor"
+        Identifier   "S410B"
+	VendorName   "Samsung"
+	ModelName    "SyncMaster 410B"
+	#DisplaySize  360        270
+	#HorizSync    30.0 - 50.0
+	#VertRefresh  60.0
+
+	#ModeLine "1024x768"  65         1024 1048 1184 1344 768 771 777 806 -hsync -vsync
+EndSection
+
+Section "Monitor"
+        Identifier   "Television"
+	VendorName   "TV"
+	ModelName    "TV"
+	DisplaySize  360        270
+	HorizSync    30.0 - 50.0
+	VertRefresh  60.0
+EndSection
+
+Section "Device"
+	Identifier  "GFX5700LE_CRT"
+	Driver      "nvidia"
+	BusID       "PCI:2:0:0"
+	VendorName  "NVIDIA"
+	BoardName   "GeForce FX 5700LE"
+    	
+	Option "NvAGP" "3"
+    	Option "NoLogo"
+   	Option "RenderAccel" "true"
+	Option "Coolbits" "1"
+	Option "AddARGBGLXVisuals" "true"
+	Option "HWCursor" "true"
+	Option "ConnectedMonitor" "CRT-0"
+	Screen  0
+EndSection
+
+Section "Device"
+	Identifier  "GFX5700E_DFP"
+	Driver      "nvidia"
+	BusID       "PCI:2:0:0"
+	VendorName  "NVIDIA"
+	BoardName   "GeForce FX 5700LE"
+    	
+	Option "NvAGP" "3"
+    	Option "NoLogo"
+   	Option "RenderAccel"
+	Option "HWCursor" "false"
+	Option 	"ConnectedMonitor" "DFP-1"
+	Screen  1
+EndSection
+
+Section "Device"
+	Identifier  "GFX5700LE_TV"
+	Driver      "nvidia"
+	BusID       "PCI:2:0:0"
+	VendorName  "NVIDIA"
+	BoardName   "GeForce FX 5700LE"
+
+	Option  "ConnectedMonitor" "TV-2"
+	Option  "TVOutFormat" "SVIDEO"
+	Option  "TVStandard" "NTSC-M"
+	Screen  1
+	
+EndSection
+
+Section "Device"
+	Identifier  "G2MX400_CRT"
+	Driver      "nvidia"
+	BusID       "PCI:1:10:0"
+	VendorName  "NVIDIA"
+	BoardName   "GeForce 2 MX400"
+    	
+	Option "NvAGP" "3"
+    	Option "NoLogo"
+   	Option "RenderAccel"
+	Option "HWCursor" "false"
+	Option "ConnectedMonitor" "CRT-0"
+	Screen 0
+EndSection
+
+Section "Device"
+	Identifier  "G2MX400_TV"
+	Driver      "nvidia"
+	BusID       "PCI:1:8:0"
+	VendorName  "NVIDIA"
+	BoardName   "GeForce 2 MX400"
+
+	Option  "ConnectedMonitor" "TV-1"
+	Option  "TVOutFormat" "SVIDEO"
+	Option  "TVStandard" "NTSC-M"
+	Screen  1
+	
+EndSection
+
+Section "Screen"
+	Identifier "Screen0"
+	Device     "GFX5700LE_CRT"
+	#Device     "G2MX400_CRT"
+	Monitor    "T910B"
+	DefaultDepth     24
+	Option      "backingstore" "true"
+	
+	SubSection "Display"
+		Depth     24
+		Modes     "1600x1200" "1280x1024" "1024x768" "800x600" "640x480"
+	EndSubSection
+
+	#SubSection "Display"
+	#	Depth     16
+	#	Modes     "1600x1200" "1280x1024" "1024x768" "800x600" "640x480"
+	#EndSubSection
+
+EndSection
+
+Section "Screen"
+	Identifier "Screen3"
+	Device     "G2MX400_CRT"
+	Monitor    "S410B"
+	DefaultDepth     24
+	SubSection "Display"
+		Depth     24
+		Modes     "1024x768"
+	EndSubSection
+EndSection
+
+
+#Section "Screen"
+#	Identifier "Screen1"
+#	Device     "NVIDIA2"
+#	Monitor    "Monitor2"
+#	DefaultDepth     24
+#	SubSection "Display"
+#		Depth     24
+#		Modes     "1024x768"
+#	EndSubSection
+#EndSection
+
+#Section "Screen"
+#	Identifier "Screen2"
+#	Device     "NVIDIA1"
+#	Monitor    "Monitor1"
+#	DefaultDepth     24
+#	SubSection "Display"
+#		Depth     24
+#		Modes     "640x480"
+#	EndSubSection
+#EndSection
+
+#Section "DRI"
+#	Group        0
+#	Mode         0666
+#EndSection
+
+
+____________________________________________
+
+ldd /usr/bin/glxinfo
+
+	linux-gate.so.1 =>  (0xffffe000)
+	libglut.so.3 => /usr/lib/libglut.so.3 (0xa7f72000)
+	libGLU.so.1 => /usr/lib/libGLU.so.1 (0xa7ef6000)
+	libGL.so.1 => //usr//lib/opengl/nvidia/lib/libGL.so.1 (0xa7e71000)
+	libm.so.6 => /lib/libm.so.6 (0xa7e4a000)
+	libc.so.6 => /lib/libc.so.6 (0xa7d0d000)
+	libX11.so.6 => /usr/lib/libX11.so.6 (0xa7c21000)
+	libXext.so.6 => /usr/lib/libXext.so.6 (0xa7c10000)
+	libXxf86vm.so.1 => /usr/lib/libXxf86vm.so.1 (0xa7c0a000)
+	libstdc++.so.6 => /usr/lib/gcc/i686-pc-linux-gnu/4.1.1/libstdc++.so.6 (0xa7b2b000)
+	libgcc_s.so.1 => /usr/lib/gcc/i686-pc-linux-gnu/4.1.1/libgcc_s.so.1 (0xa7b21000)
+	libGLcore.so.1 => //usr//lib/opengl/nvidia/lib/libGLcore.so.1 (0xa735e000)
+	libnvidia-tls.so.1 => //usr//lib/opengl/nvidia/lib/libnvidia-tls.so.1 (0xa735b000)
+	libdl.so.2 => /lib/libdl.so.2 (0xa7357000)
+	/lib/ld-linux.so.2 (0xa7fc1000)
+	libXau.so.6 => /usr/lib/libXau.so.6 (0xa7354000)
+	libXdmcp.so.6 => /usr/lib/libXdmcp.so.6 (0xa734f000)
+
+____________________________________________
+
+____________________________________________
+
+/usr/sbin/dmidecode
+
+# dmidecode 2.8
+SMBIOS 2.2 present.
+37 structures occupying 981 bytes.
+Table at 0x000F0800.
+
+Handle 0x0000, DMI type 0, 19 bytes
+BIOS Information
+	Vendor: Phoenix Technologies, LTD
+	Version: 6.00 PG
+	Release Date: 11/22/2004
+	Address: 0xE0000
+	Runtime Size: 128 kB
+	ROM Size: 512 kB
+	Characteristics:
+		ISA is supported
+		PCI is supported
+		PNP is supported
+		APM is supported
+		BIOS is upgradeable
+		BIOS shadowing is allowed
+		ESCD support is available
+		Boot from CD is supported
+		Selectable boot is supported
+		BIOS ROM is socketed
+		EDD is supported
+		5.25"/360 KB floppy services are supported (int 13h)
+		5.25"/1.2 MB floppy services are supported (int 13h)
+		3.5"/720 KB floppy services are supported (int 13h)
+		3.5"/2.88 MB floppy services are supported (int 13h)
+		Print screen service is supported (int 5h)
+		8042 keyboard services are supported (int 9h)
+		Serial services are supported (int 14h)
+		Printer services are supported (int 17h)
+		CGA/mono video services are supported (int 10h)
+		ACPI is supported
+		USB legacy is supported
+		AGP is supported
+		LS-120 boot is supported
+		ATAPI Zip drive boot is supported
+
+Handle 0x0001, DMI type 1, 25 bytes
+System Information
+	Manufacturer:  
+	Product Name:  
+	Version:  
+	Serial Number:  
+	UUID: 00000000-0000-0000-0000-00508DF51B64
+	Wake-up Type: Power Switch
+
+Handle 0x0002, DMI type 2, 8 bytes
+Base Board Information
+	Manufacturer: http://www.abit.com.tw/
+	Product Name: NF7-S/NF7,NF7-V (nVidia-nForce2)
+	Version: 2.X,1.0
+	Serial Number:  
+
+Handle 0x0003, DMI type 3, 13 bytes
+Chassis Information
+	Manufacturer:  
+	Type: Desktop
+	Lock: Not Present
+	Version:  
+	Serial Number:  
+	Asset Tag:  
+	Boot-up State: Unknown
+	Power Supply State: Unknown
+	Thermal State: Unknown
+	Security Status: Unknown
+
+Handle 0x0004, DMI type 4, 32 bytes
+Processor Information
+	Socket Designation: Socket A
+	Type: Central Processor
+	Family: Athlon
+	Manufacturer: AMD
+	ID: A0 06 00 00 FF FB 83 03
+	Signature: Family 6, Model A, Stepping 0
+	Flags:
+		FPU (Floating-point unit on-chip)
+		VME (Virtual mode extension)
+		DE (Debugging extension)
+		PSE (Page size extension)
+		TSC (Time stamp counter)
+		MSR (Model specific registers)
+		PAE (Physical address extension)
+		MCE (Machine check exception)
+		CX8 (CMPXCHG8 instruction supported)
+		APIC (On-chip APIC hardware supported)
+		SEP (Fast system call)
+		MTRR (Memory type range registers)
+		PGE (Page global enable)
+		MCA (Machine check architecture)
+		CMOV (Conditional move instruction supported)
+		PAT (Page attribute table)
+		PSE-36 (36-bit page size extension)
+		MMX (MMX technology supported)
+		FXSR (Fast floating-point save and restore)
+		SSE (Streaming SIMD extensions)
+	Version: AMD Athlon(tm) XP
+	Voltage: 3.3 V
+	External Clock: 166 MHz
+	Max Speed: 3000 MHz
+	Current Speed: 1833 MHz
+	Status: Populated, Enabled
+	Upgrade: ZIF Socket
+	L1 Cache Handle: 0x0009
+	L2 Cache Handle: 0x000A
+	L3 Cache Handle: No L3 Cache
+
+Handle 0x0005, DMI type 5, 22 bytes
+Memory Controller Information
+	Error Detecting Method: 8-bit Parity
+	Error Correcting Capabilities:
+		None
+	Supported Interleave: One-way Interleave
+	Current Interleave: One-way Interleave
+	Maximum Memory Module Size: 1024 MB
+	Maximum Total Memory Size: 3072 MB
+	Supported Speeds:
+		Other
+	Supported Memory Types:
+		Other
+		DIMM
+		SDRAM
+	Memory Module Voltage: 2.9 V
+	Associated Memory Slots: 3
+		0x0006
+		0x0007
+		0x0008
+	Enabled Error Correcting Capabilities: None
+
+Handle 0x0006, DMI type 6, 12 bytes
+Memory Module Information
+	Socket Designation: A0
+	Bank Connections: 0 1
+	Current Speed: 10 ns
+	Type: Other DIMM SDRAM
+	Installed Size: 512 MB (Double-bank Connection)
+	Enabled Size: 512 MB (Double-bank Connection)
+	Error Status: OK
+
+Handle 0x0007, DMI type 6, 12 bytes
+Memory Module Information
+	Socket Designation: A1
+	Bank Connections: 2 3
+	Current Speed: 10 ns
+	Type: Other DIMM SDRAM
+	Installed Size: 512 MB (Double-bank Connection)
+	Enabled Size: 512 MB (Double-bank Connection)
+	Error Status: OK
+
+Handle 0x0008, DMI type 6, 12 bytes
+Memory Module Information
+	Socket Designation: A2
+	Bank Connections: None
+	Current Speed: 10 ns
+	Type: Other DIMM SDRAM
+	Installed Size: Not Installed
+	Enabled Size: Not Installed
+	Error Status: OK
+
+Handle 0x0009, DMI type 7, 19 bytes
+Cache Information
+	Socket Designation: Internal Cache
+	Configuration: Enabled, Not Socketed, Level 1
+	Operational Mode: Write Back
+	Location: Internal
+	Installed Size: 128 KB
+	Maximum Size: 128 KB
+	Supported SRAM Types:
+		Synchronous
+	Installed SRAM Type: Synchronous
+	Speed: Unknown
+	Error Correction Type: Unknown
+	System Type: Unknown
+	Associativity: Unknown
+
+Handle 0x000A, DMI type 7, 19 bytes
+Cache Information
+	Socket Designation: External Cache
+	Configuration: Enabled, Not Socketed, Level 2
+	Operational Mode: Write Back
+	Location: External
+	Installed Size: 512 KB
+	Maximum Size: 512 KB
+	Supported SRAM Types:
+		Synchronous
+	Installed SRAM Type: Synchronous
+	Speed: Unknown
+	Error Correction Type: Unknown
+	System Type: Unknown
+	Associativity: Unknown
+
+Handle 0x000B, DMI type 8, 9 bytes
+Port Connector Information
+	Internal Reference Designator: PRIMARY IDE
+	Internal Connector Type: On Board IDE
+	External Reference Designator: Not Specified
+	External Connector Type: None
+	Port Type: Other
+
+Handle 0x000C, DMI type 8, 9 bytes
+Port Connector Information
+	Internal Reference Designator: SECONDARY IDE
+	Internal Connector Type: On Board IDE
+	External Reference Designator: Not Specified
+	External Connector Type: None
+	Port Type: Other
+
+Handle 0x000D, DMI type 8, 9 bytes
+Port Connector Information
+	Internal Reference Designator: FDD
+	Internal Connector Type: On Board Floppy
+	External Reference Designator: Not Specified
+	External Connector Type: None
+	Port Type: 8251 FIFO Compatible
+
+Handle 0x000E, DMI type 8, 9 bytes
+Port Connector Information
+	Internal Reference Designator: COM1
+	Internal Connector Type: 9 Pin Dual Inline (pin 10 cut)
+	External Reference Designator:  
+	External Connector Type: DB-9 male
+	Port Type: Serial Port 16450 Compatible
+
+Handle 0x000F, DMI type 8, 9 bytes
+Port Connector Information
+	Internal Reference Designator: COM2
+	Internal Connector Type: 9 Pin Dual Inline (pin 10 cut)
+	External Reference Designator:  
+	External Connector Type: DB-9 male
+	Port Type: Serial Port 16450 Compatible
+
+Handle 0x0010, DMI type 8, 9 bytes
+Port Connector Information
+	Internal Reference Designator: LPT1
+	Internal Connector Type: DB-25 female
+	External Reference Designator:  
+	External Connector Type: DB-25 female
+	Port Type: Parallel Port ECP/EPP
+
+Handle 0x0011, DMI type 8, 9 bytes
+Port Connector Information
+	Internal Reference Designator: Keyboard
+	Internal Connector Type: PS/2
+	External Reference Designator:  
+	External Connector Type: PS/2
+	Port Type: Keyboard Port
+
+Handle 0x0012, DMI type 8, 9 bytes
+Port Connector Information
+	Internal Reference Designator: PS/2 Mouse
+	Internal Connector Type: PS/2
+	External Reference Designator:  
+	External Connector Type: PS/2
+	Port Type: Mouse Port
+
+Handle 0x0013, DMI type 8, 9 bytes
+Port Connector Information
+	Internal Reference Designator: Not Specified
+	Internal Connector Type: None
+	External Reference Designator: USB
+	External Connector Type: Other
+	Port Type: USB
+
+Handle 0x0014, DMI type 9, 13 bytes
+System Slot Information
+	Designation: PCI0
+	Type: 32-bit PCI
+	Current Usage: In Use
+	Length: Long
+	ID: 1
+	Characteristics:
+		5.0 V is provided
+		3.3 V is provided
+		PME signal is supported
+
+Handle 0x0015, DMI type 9, 13 bytes
+System Slot Information
+	Designation: PCI1
+	Type: 32-bit PCI
+	Current Usage: Available
+	Length: Long
+	ID: 2
+	Characteristics:
+		5.0 V is provided
+		3.3 V is provided
+		PME signal is supported
+
+Handle 0x0016, DMI type 9, 13 bytes
+System Slot Information
+	Designation: PCI2
+	Type: 32-bit PCI
+	Current Usage: In Use
+	Length: Long
+	ID: 3
+	Characteristics:
+		5.0 V is provided
+		3.3 V is provided
+		PME signal is supported
+
+Handle 0x0017, DMI type 9, 13 bytes
+System Slot Information
+	Designation: PCI3
+	Type: 32-bit PCI
+	Current Usage: In Use
+	Length: Long
+	ID: 4
+	Characteristics:
+		5.0 V is provided
+		3.3 V is provided
+		PME signal is supported
+
+Handle 0x0018, DMI type 9, 13 bytes
+System Slot Information
+	Designation: PCI4
+	Type: 32-bit PCI
+	Current Usage: Available
+	Length: Long
+	ID: 5
+	Characteristics:
+		5.0 V is provided
+		3.3 V is provided
+		PME signal is supported
+
+Handle 0x0019, DMI type 9, 13 bytes
+System Slot Information
+	Designation: AGP
+	Type: 32-bit AGP
+	Current Usage: Available
+	Length: Long
+	ID: 240
+	Characteristics:
+		5.0 V is provided
+		3.3 V is provided
+
+Handle 0x001A, DMI type 13, 22 bytes
+BIOS Language Information
+	Installable Languages: 3
+		n|US|iso8859-1
+		n|US|iso8859-1
+		r|CA|iso8859-1
+	Currently Installed Language: n|US|iso8859-1
+
+Handle 0x001B, DMI type 16, 15 bytes
+Physical Memory Array
+	Location: System Board Or Motherboard
+	Use: System Memory
+	Error Correction Type: None
+	Maximum Capacity: 1536 MB
+	Error Information Handle: Not Provided
+	Number Of Devices: 3
+
+Handle 0x001C, DMI type 17, 21 bytes
+Memory Device
+	Array Handle: 0x001B
+	Error Information Handle: Not Provided
+	Total Width: Unknown
+	Data Width: Unknown
+	Size: 512 MB
+	Form Factor: DIMM
+	Set: None
+	Locator: A0
+	Bank Locator: Bank0/1
+	Type: Unknown
+	Type Detail: None
+
+Handle 0x001D, DMI type 17, 21 bytes
+Memory Device
+	Array Handle: 0x001B
+	Error Information Handle: Not Provided
+	Total Width: Unknown
+	Data Width: Unknown
+	Size: 512 MB
+	Form Factor: DIMM
+	Set: None
+	Locator: A1
+	Bank Locator: Bank2/3
+	Type: Unknown
+	Type Detail: None
+
+Handle 0x001E, DMI type 17, 21 bytes
+Memory Device
+	Array Handle: 0x001B
+	Error Information Handle: Not Provided
+	Total Width: Unknown
+	Data Width: Unknown
+	Size: No Module Installed
+	Form Factor: DIMM
+	Set: None
+	Locator: A2
+	Bank Locator: Bank4/5
+	Type: Unknown
+	Type Detail: None
+
+Handle 0x001F, DMI type 19, 15 bytes
+Memory Array Mapped Address
+	Starting Address: 0x00000000000
+	Ending Address: 0x0003FFFFFFF
+	Range Size: 1 GB
+	Physical Array Handle: 0x001B
+	Partition Width: 0
+
+Handle 0x0020, DMI type 20, 19 bytes
+Memory Device Mapped Address
+	Starting Address: 0x00000000000
+	Ending Address: 0x0001FFFFFFF
+	Range Size: 512 MB
+	Physical Device Handle: 0x001C
+	Memory Array Mapped Address Handle: 0x001F
+	Partition Row Position: 1
+
+Handle 0x0021, DMI type 20, 19 bytes
+Memory Device Mapped Address
+	Starting Address: 0x00020000000
+	Ending Address: 0x0003FFFFFFF
+	Range Size: 512 MB
+	Physical Device Handle: 0x001D
+	Memory Array Mapped Address Handle: 0x001F
+	Partition Row Position: 1
+
+Handle 0x0022, DMI type 20, 19 bytes
+Memory Device Mapped Address
+	Starting Address: 0x00000000000
+	Ending Address: 0x000000003FF
+	Range Size: 1 kB
+	Physical Device Handle: 0x001E
+	Memory Array Mapped Address Handle: 0x001F
+	Partition Row Position: 1
+
+Handle 0x0023, DMI type 32, 11 bytes
+System Boot Information
+	Status: No errors detected
+
+Handle 0x0024, DMI type 127, 4 bytes
+End Of Table
+
+
+____________________________________________
+
+Scanning kernel log files for NVRM messages:
+
+  /var/log/messages:
+Apr 22 19:22:24 localhost NVRM: loading NVIDIA Linux x86 Kernel Module  1.0-8756  Wed Mar 29 14:26:26 PST 2006
+Apr 23 00:19:23 localhost NVRM: loading NVIDIA Linux x86 Kernel Module  1.0-8756  Wed Mar 29 14:26:26 PST 2006
+Apr 26 22:36:49 localhost NVRM: Xid (0002:00): 13, 0002 beef3901 00000039 00000100 00000000 00000100
+Apr 26 22:36:49 localhost NVRM: Xid (0002:00): 28,  L1 -> L0
+May  9 19:27:03 localhost NVRM: loading NVIDIA Linux x86 Kernel Module  1.0-8756  Wed Mar 29 14:26:26 PST 2006
+May  9 19:34:18 localhost NVRM: loading NVIDIA Linux x86 Kernel Module  1.0-8756  Wed Mar 29 14:26:26 PST 2006
+May  9 19:45:55 localhost NVRM: loading NVIDIA Linux x86 Kernel Module  1.0-8756  Wed Mar 29 14:26:26 PST 2006
+May  9 21:39:16 localhost NVRM: loading NVIDIA Linux x86 Kernel Module  1.0-8756  Wed Mar 29 14:26:26 PST 2006
+May  9 22:03:13 localhost NVRM: loading NVIDIA Linux x86 Kernel Module  1.0-8756  Wed Mar 29 14:26:26 PST 2006
+May  9 22:06:31 localhost NVRM: loading NVIDIA Linux x86 Kernel Module  1.0-8756  Wed Mar 29 14:26:26 PST 2006
+May  9 22:22:19 localhost NVRM: loading NVIDIA Linux x86 Kernel Module  1.0-8756  Wed Mar 29 14:26:26 PST 2006
+May 10 19:17:20 localhost NVRM: loading NVIDIA Linux x86 Kernel Module  1.0-8756  Wed Mar 29 14:26:26 PST 2006
+May 13 00:47:10 localhost NVRM: loading NVIDIA Linux x86 Kernel Module  1.0-8756  Wed Mar 29 14:26:26 PST 2006
+May 14 20:34:11 localhost NVRM: loading NVIDIA Linux x86 Kernel Module  1.0-8756  Wed Mar 29 14:26:26 PST 2006
+May 15 18:31:14 localhost NVRM: loading NVIDIA Linux x86 Kernel Module  1.0-8756  Wed Mar 29 14:26:26 PST 2006
+May 15 18:35:06 localhost NVRM: loading NVIDIA Linux x86 Kernel Module  1.0-8756  Wed Mar 29 14:26:26 PST 2006
+May 23 21:40:42 localhost NVRM: loading NVIDIA Linux x86 Kernel Module  1.0-8762  Mon May 15 13:06:38 PDT 2006
+May 23 21:57:35 localhost NVRM: loading NVIDIA Linux x86 Kernel Module  1.0-8762  Mon May 15 13:06:38 PDT 2006
+May 28 20:04:42 localhost NVRM: loading NVIDIA Linux x86 Kernel Module  1.0-8762  Mon May 15 13:06:38 PDT 2006
+May 28 20:28:44 localhost NVRM: loading NVIDIA Linux x86 Kernel Module  1.0-8762  Mon May 15 13:06:38 PDT 2006
+May 28 20:50:28 localhost NVRM: loading NVIDIA Linux x86 Kernel Module  1.0-8762  Mon May 15 13:06:38 PDT 2006
+May 28 23:05:15 localhost NVRM: loading NVIDIA Linux x86 Kernel Module  1.0-8762  Mon May 15 13:06:38 PDT 2006
+May 29 00:28:02 localhost NVRM: loading NVIDIA Linux x86 Kernel Module  1.0-8762  Mon May 15 13:06:38 PDT 2006
+May 30 23:22:43 localhost NVRM: loading NVIDIA Linux x86 Kernel Module  1.0-8762  Mon May 15 13:06:38 PDT 2006
+May 31 22:02:27 localhost NVRM: loading NVIDIA Linux x86 Kernel Module  1.0-8762  Mon May 15 13:06:38 PDT 2006
+Jun  1 23:08:44 localhost NVRM: loading NVIDIA Linux x86 Kernel Module  1.0-8762  Mon May 15 13:06:38 PDT 2006
+Jun  2 21:42:38 localhost NVRM: loading NVIDIA Linux x86 Kernel Module  1.0-8762  Mon May 15 13:06:38 PDT 2006
+Jun  2 22:19:07 localhost NVRM: loading NVIDIA Linux x86 Kernel Module  1.0-8762  Mon May 15 13:06:38 PDT 2006
+Jun  2 22:24:40 localhost NVRM: loading NVIDIA Linux x86 Kernel Module  1.0-8762  Mon May 15 13:06:38 PDT 2006
+Jun  2 22:34:37 localhost NVRM: loading NVIDIA Linux x86 Kernel Module  1.0-8762  Mon May 15 13:06:38 PDT 2006
+Jun  2 22:38:35 localhost NVRM: loading NVIDIA Linux x86 Kernel Module  1.0-8762  Mon May 15 13:06:38 PDT 2006
+Jun  3 01:49:48 localhost NVRM: loading NVIDIA Linux x86 Kernel Module  1.0-8762  Mon May 15 13:06:38 PDT 2006
+Jun  3 13:14:52 localhost NVRM: loading NVIDIA Linux x86 Kernel Module  1.0-8762  Mon May 15 13:06:38 PDT 2006
+Jun  3 14:10:19 localhost NVRM: loading NVIDIA Linux x86 Kernel Module  1.0-8762  Mon May 15 13:06:38 PDT 2006
+Jun  3 14:21:53 localhost NVRM: loading NVIDIA Linux x86 Kernel Module  1.0-8762  Mon May 15 13:06:38 PDT 2006
+Jun  3 14:30:22 localhost NVRM: loading NVIDIA Linux x86 Kernel Module  1.0-8762  Mon May 15 13:06:38 PDT 2006
+Jun  3 14:50:07 localhost NVRM: loading NVIDIA Linux x86 Kernel Module  1.0-8762  Mon May 15 13:06:38 PDT 2006
+Jun  3 16:35:27 localhost NVRM: loading NVIDIA Linux x86 Kernel Module  1.0-8762  Mon May 15 13:06:38 PDT 2006
+Jun  4 00:12:27 localhost NVRM: loading NVIDIA Linux x86 Kernel Module  1.0-8762  Mon May 15 13:06:38 PDT 2006
+Jun  7 17:10:44 localhost NVRM: loading NVIDIA Linux x86 Kernel Module  1.0-8762  Mon May 15 13:06:38 PDT 2006
+Jun  7 18:38:42 localhost NVRM: loading NVIDIA Linux x86 Kernel Module  1.0-8762  Mon May 15 13:06:38 PDT 2006
+Jun  7 18:48:59 localhost NVRM: loading NVIDIA Linux x86 Kernel Module  1.0-8762  Mon May 15 13:06:38 PDT 2006
+Jun  7 18:54:48 localhost NVRM: loading NVIDIA Linux x86 Kernel Module  1.0-8762  Mon May 15 13:06:38 PDT 2006
+Jun  7 22:01:05 localhost NVRM: loading NVIDIA Linux x86 Kernel Module  1.0-8762  Mon May 15 13:06:38 PDT 2006
+Jun  8 00:25:04 localhost NVRM: loading NVIDIA Linux x86 Kernel Module  1.0-8762  Mon May 15 13:06:38 PDT 2006
+Jun  8 21:45:00 localhost NVRM: loading NVIDIA Linux x86 Kernel Module  1.0-8762  Mon May 15 13:06:38 PDT 2006
+Jun  9 01:35:00 localhost NVRM: loading NVIDIA Linux x86 Kernel Module  1.0-8762  Mon May 15 13:06:38 PDT 2006
+Jun 10 15:55:13 localhost NVRM: loading NVIDIA Linux x86 Kernel Module  1.0-8762  Mon May 15 13:06:38 PDT 2006
+Jun 10 23:38:42 localhost NVRM: loading NVIDIA Linux x86 Kernel Module  1.0-8762  Mon May 15 13:06:38 PDT 2006
+Jun 11 13:37:15 localhost NVRM: loading NVIDIA Linux x86 Kernel Module  1.0-8762  Mon May 15 13:06:38 PDT 2006
+Jun 11 13:44:20 localhost NVRM: loading NVIDIA Linux x86 Kernel Module  1.0-8762  Mon May 15 13:06:38 PDT 2006
+Jun 11 20:04:27 localhost NVRM: loading NVIDIA Linux x86 Kernel Module  1.0-8762  Mon May 15 13:06:38 PDT 2006
+Jun 12 00:26:50 localhost NVRM: loading NVIDIA Linux x86 Kernel Module  1.0-8762  Mon May 15 13:06:38 PDT 2006
+Jun 13 02:39:19 localhost NVRM: loading NVIDIA Linux x86 Kernel Module  1.0-8762  Mon May 15 13:06:38 PDT 2006
+Jun 13 15:17:58 localhost NVRM: loading NVIDIA Linux x86 Kernel Module  1.0-8762  Mon May 15 13:06:38 PDT 2006
+Jun 14 00:46:05 localhost NVRM: loading NVIDIA Linux x86 Kernel Module  1.0-8762  Mon May 15 13:06:38 PDT 2006
+Jun 15 03:14:16 localhost NVRM: loading NVIDIA Linux x86 Kernel Module  1.0-8762  Mon May 15 13:06:38 PDT 2006
+Jun 16 05:28:58 localhost NVRM: loading NVIDIA Linux x86 Kernel Module  1.0-8762  Mon May 15 13:06:38 PDT 2006
+Jun 17 01:03:32 localhost NVRM: loading NVIDIA Linux x86 Kernel Module  1.0-8762  Mon May 15 13:06:38 PDT 2006
+Jun 17 15:59:55 localhost NVRM: loading NVIDIA Linux x86 Kernel Module  1.0-8762  Mon May 15 13:06:38 PDT 2006
+Jun 18 04:52:09 localhost NVRM: loading NVIDIA Linux x86 Kernel Module  1.0-8762  Mon May 15 13:06:38 PDT 2006
+Jun 18 18:13:33 localhost NVRM: loading NVIDIA Linux x86 Kernel Module  1.0-8762  Mon May 15 13:06:38 PDT 2006
+Jun 22 12:48:24 localhost NVRM: loading NVIDIA Linux x86 Kernel Module  1.0-8762  Mon May 15 13:06:38 PDT 2006
+Jun 22 22:24:16 localhost NVRM: loading NVIDIA Linux x86 Kernel Module  1.0-8762  Mon May 15 13:06:38 PDT 2006
+Jun 24 15:30:31 localhost NVRM: loading NVIDIA Linux x86 Kernel Module  1.0-8762  Mon May 15 13:06:38 PDT 2006
+Jun 24 20:17:28 localhost NVRM: loading NVIDIA Linux x86 Kernel Module  1.0-8762  Mon May 15 13:06:38 PDT 2006
+Jun 25 05:10:15 localhost NVRM: loading NVIDIA Linux x86 Kernel Module  1.0-8762  Mon May 15 13:06:38 PDT 2006
+Jun 26 03:29:58 localhost NVRM: loading NVIDIA Linux x86 Kernel Module  1.0-8762  Mon May 15 13:06:38 PDT 2006
+Jun 26 12:35:23 localhost NVRM: loading NVIDIA Linux x86 Kernel Module  1.0-8762  Mon May 15 13:06:38 PDT 2006
+Jun 26 22:28:29 localhost NVRM: loading NVIDIA Linux x86 Kernel Module  1.0-8762  Mon May 15 13:06:38 PDT 2006
+Jun 27 11:29:05 localhost NVRM: loading NVIDIA Linux x86 Kernel Module  1.0-8762  Mon May 15 13:06:38 PDT 2006
+Jun 28 07:49:15 localhost NVRM: loading NVIDIA Linux x86 Kernel Module  1.0-8762  Mon May 15 13:06:38 PDT 2006
+Jun 29 04:47:31 localhost NVRM: loading NVIDIA Linux x86 Kernel Module  1.0-8762  Mon May 15 13:06:38 PDT 2006
+Jul  1 03:00:19 localhost NVRM: loading NVIDIA Linux x86 Kernel Module  1.0-8762  Mon May 15 13:06:38 PDT 2006
+Jul  2 21:38:32 localhost NVRM: loading NVIDIA Linux x86 Kernel Module  1.0-8762  Mon May 15 13:06:38 PDT 2006
+Jul  6 05:14:04 localhost NVRM: loading NVIDIA Linux x86 Kernel Module  1.0-8762  Mon May 15 13:06:38 PDT 2006
+Jul  8 23:22:27 localhost NVRM: loading NVIDIA Linux x86 Kernel Module  1.0-8762  Mon May 15 13:06:38 PDT 2006
+Jul 10 22:32:33 localhost NVRM: loading NVIDIA Linux x86 Kernel Module  1.0-8762  Mon May 15 13:06:38 PDT 2006
+Jul 11 21:27:58 localhost NVRM: loading NVIDIA Linux x86 Kernel Module  1.0-8762  Mon May 15 13:06:38 PDT 2006
+Jul 12 12:12:28 localhost NVRM: loading NVIDIA Linux x86 Kernel Module  1.0-8762  Mon May 15 13:06:38 PDT 2006
+Jul 12 12:22:40 localhost NVRM: loading NVIDIA Linux x86 Kernel Module  1.0-8762  Mon May 15 13:06:38 PDT 2006
+Jul 13 01:26:46 localhost NVRM: loading NVIDIA Linux x86 Kernel Module  1.0-8762  Mon May 15 13:06:38 PDT 2006
+Jul 14 01:45:42 localhost NVRM: loading NVIDIA Linux x86 Kernel Module  1.0-8762  Mon May 15 13:06:38 PDT 2006
+Jul 14 22:14:55 localhost NVRM: loading NVIDIA Linux x86 Kernel Module  1.0-8762  Mon May 15 13:06:38 PDT 2006
+Jul 15 16:08:13 localhost NVRM: loading NVIDIA Linux x86 Kernel Module  1.0-8762  Mon May 15 13:06:38 PDT 2006
+Jul 16 20:34:04 localhost NVRM: loading NVIDIA Linux x86 Kernel Module  1.0-8762  Mon May 15 13:06:38 PDT 2006
+Jul 24 00:42:07 localhost NVRM: loading NVIDIA Linux x86 Kernel Module  1.0-8762  Mon May 15 13:06:38 PDT 2006
+Jul 24 15:33:23 localhost NVRM: loading NVIDIA Linux x86 Kernel Module  1.0-8762  Mon May 15 13:06:38 PDT 2006
+Jul 26 00:36:55 localhost NVRM: loading NVIDIA Linux x86 Kernel Module  1.0-8762  Mon May 15 13:06:38 PDT 2006
+Jul 28 00:00:50 localhost NVRM: loading NVIDIA Linux x86 Kernel Module  1.0-8762  Mon May 15 13:06:38 PDT 2006
+Jul 31 02:41:35 localhost NVRM: loading NVIDIA Linux x86 Kernel Module  1.0-8762  Mon May 15 13:06:38 PDT 2006
+Aug  1 22:05:51 localhost NVRM: loading NVIDIA Linux x86 Kernel Module  1.0-8762  Mon May 15 13:06:38 PDT 2006
+Aug  4 01:20:27 localhost NVRM: loading NVIDIA Linux x86 Kernel Module  1.0-8762  Mon May 15 13:06:38 PDT 2006
+Aug  7 00:57:58 localhost NVRM: loading NVIDIA Linux x86 Kernel Module  1.0-8762  Mon May 15 13:06:38 PDT 2006
+Aug  8 18:58:41 localhost NVRM: loading NVIDIA Linux x86 Kernel Module  1.0-8762  Mon May 15 13:06:38 PDT 2006
+Aug  8 21:30:29 localhost NVRM: loading NVIDIA Linux x86 Kernel Module  1.0-8762  Mon May 15 13:06:38 PDT 2006
+Aug  9 23:12:50 localhost NVRM: loading NVIDIA Linux x86 Kernel Module  1.0-8762  Mon May 15 13:06:38 PDT 2006
+Aug 11 16:04:14 localhost NVRM: loading NVIDIA Linux x86 Kernel Module  1.0-8762  Mon May 15 13:06:38 PDT 2006
+Aug 11 16:12:47 localhost NVRM: loading NVIDIA Linux x86 Kernel Module  1.0-8762  Mon May 15 13:06:38 PDT 2006
+Aug 13 02:13:38 localhost NVRM: loading NVIDIA Linux x86 Kernel Module  1.0-8762  Mon May 15 13:06:38 PDT 2006
+Aug 13 02:18:11 localhost NVRM: loading NVIDIA Linux x86 Kernel Module  1.0-8762  Mon May 15 13:06:38 PDT 2006
+Aug 13 03:34:38 localhost NVRM: loading NVIDIA Linux x86 Kernel Module  1.0-8762  Mon May 15 13:06:38 PDT 2006
+Aug 13 03:38:25 localhost NVRM: loading NVIDIA Linux x86 Kernel Module  1.0-8762  Mon May 15 13:06:38 PDT 2006
+Aug 13 23:37:15 localhost NVRM: loading NVIDIA Linux x86 Kernel Module  1.0-8762  Mon May 15 13:06:38 PDT 2006
+Aug 15 18:53:29 localhost NVRM: loading NVIDIA Linux x86 Kernel Module  1.0-8762  Mon May 15 13:06:38 PDT 2006
+Aug 15 20:48:10 localhost NVRM: loading NVIDIA Linux x86 Kernel Module  1.0-8762  Mon May 15 13:06:38 PDT 2006
+Aug 15 20:54:03 localhost NVRM: loading NVIDIA Linux x86 Kernel Module  1.0-8762  Mon May 15 13:06:38 PDT 2006
+Aug 16 00:14:36 localhost NVRM: loading NVIDIA Linux x86 Kernel Module  1.0-8762  Mon May 15 13:06:38 PDT 2006
+Aug 16 18:15:08 localhost NVRM: Xid (0002:00): 13, 0002 beef3901 00000039 00000100 00000000 00000100
+Aug 16 18:15:08 localhost NVRM: Xid (0002:00): 28,  L1 -> L0
+Aug 17 01:10:38 localhost NVRM: loading NVIDIA Linux x86 Kernel Module  1.0-8762  Mon May 15 13:06:38 PDT 2006
+Aug 17 23:20:03 localhost NVRM: loading NVIDIA Linux x86 Kernel Module  1.0-8762  Mon May 15 13:06:38 PDT 2006
+Aug 18 01:54:42 localhost NVRM: loading NVIDIA Linux x86 Kernel Module  1.0-8762  Mon May 15 13:06:38 PDT 2006
+Aug 20 00:39:11 localhost NVRM: loading NVIDIA Linux x86 Kernel Module  1.0-8762  Mon May 15 13:06:38 PDT 2006
+Aug 20 15:22:55 localhost NVRM: loading NVIDIA Linux x86 Kernel Module  1.0-8762  Mon May 15 13:06:38 PDT 2006
+Aug 20 18:29:49 localhost NVRM: Xid (0002:00): 12, COCOD 00000001 00000000 00000030 00000224 00000000
+Aug 20 18:30:59 localhost NVRM: Xid (0002:00): 12, COCOD 00000001 00000000 00000030 00000224 00000000
+Aug 20 18:31:26 localhost NVRM: Xid (0002:00): 12, COCOD 00000001 00000000 00000030 00000224 00000000
+Aug 20 18:33:37 localhost NVRM: Xid (0002:00): 12, COCOD 00000001 00000000 00000030 00000224 00000000
+Aug 20 20:50:43 localhost NVRM: loading NVIDIA Linux x86 Kernel Module  1.0-8762  Mon May 15 13:06:38 PDT 2006
+Aug 20 22:04:24 localhost NVRM: loading NVIDIA Linux x86 Kernel Module  1.0-8762  Mon May 15 13:06:38 PDT 2006
+Aug 22 03:16:12 localhost NVRM: loading NVIDIA Linux x86 Kernel Module  1.0-8762  Mon May 15 13:06:38 PDT 2006
+Aug 22 21:24:09 localhost NVRM: loading NVIDIA Linux x86 Kernel Module  1.0-8762  Mon May 15 13:06:38 PDT 2006
+Aug 23 00:24:57 localhost NVRM: loading NVIDIA Linux x86 Kernel Module  1.0-8762  Mon May 15 13:06:38 PDT 2006
+Aug 25 02:19:22 localhost NVRM: loading NVIDIA Linux x86 Kernel Module  1.0-8762  Mon May 15 13:06:38 PDT 2006
+Aug 25 02:26:32 localhost NVRM: API mismatch: the client has the version 1.0-8774, but
+Aug 25 02:26:32 localhost NVRM: this kernel module has the version 1.0-8762.  Please
+Aug 25 02:26:32 localhost NVRM: make sure that this kernel module and all NVIDIA driver
+Aug 25 02:26:32 localhost NVRM: components have the same version.
+Aug 25 02:27:48 localhost NVRM: loading NVIDIA Linux x86 Kernel Module  1.0-8774  Tue Aug  1 20:54:08 PDT 2006
+Aug 26 09:20:25 localhost NVRM: loading NVIDIA Linux x86 Kernel Module  1.0-8774  Tue Aug  1 20:54:08 PDT 2006
+Aug 27 01:46:00 localhost NVRM: Xid (0002:00): 13, 0002 beef3901 00000039 00000100 00000000 00000100
+Aug 27 01:46:00 localhost NVRM: Xid (0002:00): 28,  L1 -> L0
+
+____________________________________________
+
+dmesg:
+
+Linux version 2.6.17-ck1-r2 (root@localhost) (gcc version 4.1.1 (Gentoo 4.1.1)) #9 PREEMPT Sun Aug 20 18:58:01 BRT 2006
+BIOS-provided physical RAM map:
+ BIOS-e820: 0000000000000000 - 000000000009f400 (usable)
+ BIOS-e820: 000000000009f400 - 00000000000a0000 (reserved)
+ BIOS-e820: 00000000000f0000 - 0000000000100000 (reserved)
+ BIOS-e820: 0000000000100000 - 000000003fff0000 (usable)
+ BIOS-e820: 000000003fff0000 - 000000003fff3000 (ACPI NVS)
+ BIOS-e820: 000000003fff3000 - 0000000040000000 (ACPI data)
+ BIOS-e820: 00000000fec00000 - 00000000fec01000 (reserved)
+ BIOS-e820: 00000000fee00000 - 00000000fee01000 (reserved)
+ BIOS-e820: 00000000ffff0000 - 0000000100000000 (reserved)
+1023MB LOWMEM available.
+On node 0 totalpages: 262128
+  DMA zone: 4096 pages, LIFO batch:0
+  Normal zone: 258032 pages, LIFO batch:31
+DMI 2.2 present.
+ACPI: RSDP (v000 Nvidia                                ) @ 0x000f6b00
+ACPI: RSDT (v001 Nvidia AWRDACPI 0x42302e31 AWRD 0x00000000) @ 0x3fff3000
+ACPI: FADT (v001 Nvidia AWRDACPI 0x42302e31 AWRD 0x00000000) @ 0x3fff3040
+ACPI: MADT (v001 Nvidia AWRDACPI 0x42302e31 AWRD 0x00000000) @ 0x3fff79c0
+ACPI: DSDT (v001 NVIDIA AWRDACPI 0x00001000 MSFT 0x0100000d) @ 0x00000000
+ACPI: PM-Timer IO Port: 0x4008
+ACPI: Local APIC address 0xfee00000
+ACPI: LAPIC (acpi_id[0x00] lapic_id[0x00] enabled)
+Processor #0 6:10 APIC version 16
+ACPI: LAPIC_NMI (acpi_id[0x00] high edge lint[0x1])
+ACPI: IOAPIC (id[0x02] address[0xfec00000] gsi_base[0])
+IOAPIC[0]: apic_id 2, version 17, address 0xfec00000, GSI 0-23
+ACPI: INT_SRC_OVR (bus 0 bus_irq 0 global_irq 2 dfl dfl)
+ACPI: BIOS IRQ0 pin2 override ignored.
+ACPI: INT_SRC_OVR (bus 0 bus_irq 9 global_irq 9 high level)
+ACPI: IRQ9 used by override.
+Enabling APIC mode:  Flat.  Using 1 I/O APICs
+Using ACPI (MADT) for SMP configuration information
+Allocating PCI resources starting at 50000000 (gap: 40000000:bec00000)
+Built 1 zonelists
+Kernel command line: root=/dev/sda3
+mapped APIC to ffffd000 (fee00000)
+mapped IOAPIC to ffffc000 (fec00000)
+Enabling fast FPU save and restore... done.
+Enabling unmasked SIMD FPU exception support... done.
+Initializing CPU#0
+CPU 0 irqstacks, hard=b0407000 soft=b0406000
+PID hash table entries: 4096 (order: 12, 16384 bytes)
+Detected 1837.530 MHz processor.
+Using pmtmr for high-res timesource
+Console: colour VGA+ 80x25
+Dentry cache hash table entries: 131072 (order: 7, 524288 bytes)
+Inode-cache hash table entries: 65536 (order: 6, 262144 bytes)
+Memory: 1035472k/1048512k available (1912k kernel code, 12564k reserved, 991k data, 164k init, 0k highmem)
+Checking if this processor honours the WP bit even in supervisor mode... Ok.
+Calibrating delay using timer specific routine.. 3677.68 BogoMIPS (lpj=1838841)
+Security Framework v1.0.0 initialized
+Mount-cache hash table entries: 512
+CPU: After generic identify, caps: 0383fbff c1c3fbff 00000000 00000000 00000000 00000000 00000000
+CPU: After vendor identify, caps: 0383fbff c1c3fbff 00000000 00000000 00000000 00000000 00000000
+CPU: L1 I Cache: 64K (64 bytes/line), D cache 64K (64 bytes/line)
+CPU: L2 Cache: 512K (64 bytes/line)
+CPU: After all inits, caps: 0383fbff c1c3fbff 00000000 00000420 00000000 00000000 00000000
+Intel machine check architecture supported.
+Intel machine check reporting enabled on CPU#0.
+CPU: AMD Athlon(tm) XP stepping 00
+Checking 'hlt' instruction... OK.
+SMP alternatives: switching to UP code
+Freeing SMP alternatives: 0k freed
+ tbxface-0109 [02] load_tables           : ACPI Tables successfully acquired
+Parsing all Control Methods:
+Table [DSDT](id 0005) - 782 Objects with 75 Devices 268 Methods 32 Regions
+ACPI Namespace successfully loaded at root b045a050
+evxfevnt-0091 [03] enable                : Transition to ACPI mode successful
+ENABLING IO-APIC IRQs
+..TIMER: vector=0x31 apic1=0 pin1=0 apic2=-1 pin2=-1
+NET: Registered protocol family 16
+ACPI: bus type pci registered
+PCI: PCI BIOS revision 2.10 entry at 0xfb420, last bus=2
+Setting up standard PCI resources
+ACPI: Subsystem revision 20060127
+evgpeblk-0941 [06] ev_create_gpe_block   : GPE 00 to 1F [_GPE] 4 regs on int 0x9
+evgpeblk-0941 [06] ev_create_gpe_block   : GPE 20 to 5F [_GPE] 8 regs on int 0x9
+evgpeblk-1037 [05] ev_initialize_gpe_bloc: Found 9 Wake, Enabled 1 Runtime GPEs in this block
+evgpeblk-1037 [05] ev_initialize_gpe_bloc: Found 0 Wake, Enabled 0 Runtime GPEs in this block
+Completing Region/Field/Buffer/Package initialization:........................................................................................
+Initialized 32/32 Regions 9/9 Fields 29/29 Buffers 18/26 Packages (791 nodes)
+Executing all Device _STA and_INI methods:...............................................................................
+79 Devices found - executed 1 _STA, 2 _INI methods
+ACPI: Interpreter enabled
+ACPI: Using IOAPIC for interrupt routing
+ACPI: PCI Root Bridge [PCI0] (0000:00)
+PCI: Probing PCI hardware (bus 00)
+PCI: nForce2 C1 Halt Disconnect fixup
+PCI: Ignoring BAR0-3 of IDE controller 0000:00:09.0
+Boot video device is 0000:02:00.0
+ACPI: PCI Interrupt Routing Table [\_SB_.PCI0._PRT]
+ACPI: PCI Interrupt Routing Table [\_SB_.PCI0.HUB0._PRT]
+ACPI: PCI Interrupt Routing Table [\_SB_.PCI0.AGPB._PRT]
+ACPI: PCI Interrupt Link [LNK1] (IRQs 3 4 5 6 *7 10 11 12 14 15)
+ACPI: PCI Interrupt Link [LNK2] (IRQs 3 4 5 6 7 *10 11 12 14 15)
+ACPI: PCI Interrupt Link [LNK3] (IRQs 3 4 5 6 7 10 *11 12 14 15)
+ACPI: PCI Interrupt Link [LNK4] (IRQs 3 4 5 6 *7 10 11 12 14 15)
+ACPI: PCI Interrupt Link [LNK5] (IRQs 3 4 5 6 7 10 11 12 14 15) *0, disabled.
+ACPI: PCI Interrupt Link [LUBA] (IRQs 3 4 *5 6 7 10 11 12 14 15)
+ACPI: PCI Interrupt Link [LUBB] (IRQs 3 4 5 6 7 *10 11 12 14 15)
+ACPI: PCI Interrupt Link [LMAC] (IRQs 3 4 *5 6 7 10 11 12 14 15)
+ACPI: PCI Interrupt Link [LAPU] (IRQs 3 4 5 6 7 *10 11 12 14 15)
+ACPI: PCI Interrupt Link [LACI] (IRQs 3 4 5 6 7 10 *11 12 14 15)
+ACPI: PCI Interrupt Link [LMCI] (IRQs 3 4 5 6 7 10 11 12 14 15) *0, disabled.
+ACPI: PCI Interrupt Link [LSMB] (IRQs 3 4 5 6 7 10 11 12 14 15) *0, disabled.
+ACPI: PCI Interrupt Link [LUB2] (IRQs 3 4 5 6 7 10 *11 12 14 15)
+ACPI: PCI Interrupt Link [LFIR] (IRQs 3 4 *5 6 7 10 11 12 14 15)
+ACPI: PCI Interrupt Link [L3CM] (IRQs 3 4 5 6 7 10 11 12 14 15) *0, disabled.
+ACPI: PCI Interrupt Link [LIDE] (IRQs 3 4 5 6 7 10 11 12 14 15) *0, disabled.
+ACPI: PCI Interrupt Link [APC1] (IRQs *16), disabled.
+ACPI: PCI Interrupt Link [APC2] (IRQs *17), disabled.
+ACPI: PCI Interrupt Link [APC3] (IRQs *18), disabled.
+ACPI: PCI Interrupt Link [APC4] (IRQs *19), disabled.
+ACPI: PCI Interrupt Link [APCE] (IRQs *16), disabled.
+ACPI: PCI Interrupt Link [APCF] (IRQs 20 21 22) *0, disabled.
+ACPI: PCI Interrupt Link [APCG] (IRQs 20 21 22) *0, disabled.
+ACPI: PCI Interrupt Link [APCH] (IRQs 20 21 22) *0, disabled.
+ACPI: PCI Interrupt Link [APCI] (IRQs 20 21 22) *0, disabled.
+ACPI: PCI Interrupt Link [APCJ] (IRQs 20 21 22) *0, disabled.
+ACPI: PCI Interrupt Link [APCK] (IRQs 20 21 22) *0, disabled.
+ACPI: PCI Interrupt Link [APCS] (IRQs *23), disabled.
+ACPI: PCI Interrupt Link [APCL] (IRQs 20 21 22) *0, disabled.
+ACPI: PCI Interrupt Link [APCM] (IRQs 20 21 22) *0, disabled.
+ACPI: PCI Interrupt Link [AP3C] (IRQs 20 21 22) *0, disabled.
+ACPI: PCI Interrupt Link [APCZ] (IRQs 20 21 22) *0, disabled.
+Linux Plug and Play Support v0.97 (c) Adam Belay
+pnp: PnP ACPI init
+pnp: PnP ACPI: found 11 devices
+PnPBIOS: Disabled by ACPI PNP
+SCSI subsystem initialized
+PCI: Using ACPI for IRQ routing
+PCI: If a device doesn't work, try "pci=routeirq".  If it helps, post a report
+TC classifier action (bugs to netdev@vger.kernel.org cc hadi@cyberus.ca)
+pnp: 00:00: ioport range 0x4000-0x407f could not be reserved
+pnp: 00:00: ioport range 0x4080-0x40ff has been reserved
+pnp: 00:00: ioport range 0x4400-0x447f has been reserved
+pnp: 00:00: ioport range 0x4480-0x44ff could not be reserved
+pnp: 00:00: ioport range 0x4200-0x427f has been reserved
+pnp: 00:00: ioport range 0x4280-0x42ff has been reserved
+pnp: 00:01: ioport range 0x5000-0x503f has been reserved
+pnp: 00:01: ioport range 0x5100-0x513f has been reserved
+PCI: Bridge: 0000:00:08.0
+  IO window: 9000-cfff
+  MEM window: e4000000-e6ffffff
+  PREFETCH window: 50000000-500fffff
+PCI: Bridge: 0000:00:1e.0
+  IO window: disabled.
+  MEM window: e2000000-e3ffffff
+  PREFETCH window: d0000000-dfffffff
+PCI: Setting latency timer of device 0000:00:08.0 to 64
+NET: Registered protocol family 2
+IP route cache hash table entries: 32768 (order: 5, 131072 bytes)
+TCP established hash table entries: 131072 (order: 7, 524288 bytes)
+TCP bind hash table entries: 65536 (order: 6, 262144 bytes)
+TCP: Hash tables configured (established 131072 bind 65536)
+TCP reno registered
+Machine check exception polling timer started.
+audit: initializing netlink socket (disabled)
+audit(1156594791.847:1): initialized
+VFS: Disk quotas dquot_6.5.1
+Dquot-cache hash table entries: 1024 (order 0, 4096 bytes)
+Initializing Cryptographic API
+io scheduler noop registered
+io scheduler anticipatory registered
+io scheduler deadline registered
+io scheduler cfq registered (default)
+ 0000:01:08.0: HCRESET not completed yet!
+ 0000:01:08.1: HCRESET not completed yet!
+isapnp: Scanning for PnP cards...
+isapnp: No Plug & Play device found
+ipmi message handler version 39.0
+ipmi device interface
+IPMI System Interface driver.
+ipmi_si: Unable to find any System Interface(s)
+IPMI Watchdog: driver initialized
+Copyright (C) 2004 MontaVista Software - IPMI Powerdown via sys_reboot.
+libata version 1.20 loaded.
+sata_sil 0000:01:09.0: version 0.9
+ACPI: PCI Interrupt Link [APC2] enabled at IRQ 17
+ACPI: PCI Interrupt 0000:01:09.0[A] -> Link [APC2] -> GSI 17 (level, high) -> IRQ 177
+ata1: SATA max UDMA/100 cmd 0xF0802080 ctl 0xF080208A bmdma 0xF0802000 irq 177
+ata2: SATA max UDMA/100 cmd 0xF08020C0 ctl 0xF08020CA bmdma 0xF0802008 irq 177
+ata3: SATA max UDMA/100 cmd 0xF0802280 ctl 0xF080228A bmdma 0xF0802200 irq 177
+ata4: SATA max UDMA/100 cmd 0xF08022C0 ctl 0xF08022CA bmdma 0xF0802208 irq 177
+ata1: SATA link down (SStatus 0)
+scsi0 : sata_sil
+ata2: SATA link down (SStatus 0)
+scsi1 : sata_sil
+ata3: SATA link down (SStatus 0)
+scsi2 : sata_sil
+ata4: SATA link down (SStatus 0)
+scsi3 : sata_sil
+ACPI: PCI Interrupt Link [APC3] enabled at IRQ 18
+ACPI: PCI Interrupt 0000:01:0b.0[A] -> Link [APC3] -> GSI 18 (level, high) -> IRQ 185
+ata5: SATA max UDMA/100 cmd 0xF0804080 ctl 0xF080408A bmdma 0xF0804000 irq 185
+ata6: SATA max UDMA/100 cmd 0xF08040C0 ctl 0xF08040CA bmdma 0xF0804008 irq 185
+ata5: SATA link up 1.5 Gbps (SStatus 113)
+ata5: dev 0 cfg 49:2f00 82:346b 83:7d01 84:4003 85:3469 86:3c01 87:4003 88:207f
+ata5: dev 0 ATA-6, max UDMA/133, 234441648 sectors: LBA48
+ata5(0): applying Seagate errata fix (mod15write workaround)
+ata5(0): applying Seagate errata fix (mod15write workaround)
+ata5: dev 0 configured for UDMA/100
+scsi4 : sata_sil
+ata6: SATA link up 1.5 Gbps (SStatus 113)
+ata6: dev 0 cfg 49:2f00 82:346b 83:7d01 84:4003 85:3469 86:3c01 87:4003 88:207f
+ata6: dev 0 ATA-6, max UDMA/133, 312581808 sectors: LBA48
+ata6(0): applying Seagate errata fix (mod15write workaround)
+ata6(0): applying Seagate errata fix (mod15write workaround)
+ata6: dev 0 configured for UDMA/100
+scsi5 : sata_sil
+  Vendor: ATA       Model: ST3120026AS       Rev: 3.18
+  Type:   Direct-Access                      ANSI SCSI revision: 05
+  Vendor: ATA       Model: ST3160023AS       Rev: 3.42
+  Type:   Direct-Access                      ANSI SCSI revision: 05
+SCSI device sda: 234441648 512-byte hdwr sectors (120034 MB)
+sda: Write Protect is off
+sda: Mode Sense: 00 3a 00 00
+SCSI device sda: drive cache: write back
+SCSI device sda: 234441648 512-byte hdwr sectors (120034 MB)
+sda: Write Protect is off
+sda: Mode Sense: 00 3a 00 00
+SCSI device sda: drive cache: write back
+ sda: sda1 sda2 sda3
+sd 4:0:0:0: Attached scsi disk sda
+SCSI device sdb: 312581808 512-byte hdwr sectors (160042 MB)
+sdb: Write Protect is off
+sdb: Mode Sense: 00 3a 00 00
+SCSI device sdb: drive cache: write back
+SCSI device sdb: 312581808 512-byte hdwr sectors (160042 MB)
+sdb: Write Protect is off
+sdb: Mode Sense: 00 3a 00 00
+SCSI device sdb: drive cache: write back
+ sdb: sdb1
+sd 5:0:0:0: Attached scsi disk sdb
+PNP: No PS/2 controller found. Probing ports directly.
+serio: i8042 AUX port at 0x60,0x64 irq 12
+serio: i8042 KBD port at 0x60,0x64 irq 1
+Using IPI Shortcut mode
+ACPI wakeup devices: 
+HUB0 HUB1 USB0 USB1 USB2 F139 MMAC MMCI UAR1 
+ACPI: (supports S0 S1 S4 S5)
+ReiserFS: sda3: found reiserfs format "3.6" with standard journal
+ReiserFS: sda3: using ordered data mode
+ReiserFS: sda3: journal params: device sda3, size 8192, journal first block 18, max trans len 1024, max batch 900, max commit age 30, max trans age 30
+ReiserFS: sda3: checking transaction log (sda3)
+ReiserFS: sda3: Using r5 hash to sort names
+VFS: Mounted root (reiserfs filesystem) readonly.
+Freeing unused kernel memory: 164k freed
+NET: Registered protocol family 1
+Serial: 8250/16550 driver $Revision: 1.90 $ 0 ports, IRQ sharing enabled
+pnp: Device 00:09 disabled.
+pnp: Device 00:0a disabled.
+usbcore: registered new driver usbfs
+usbcore: registered new driver hub
+ACPI: PCI Interrupt Link [APC4] enabled at IRQ 19
+ACPI: PCI Interrupt 0000:01:07.0[A] -> Link [APC4] -> GSI 19 (level, high) -> IRQ 193
+Couldn't register serial port 0000:01:07.0: -28
+ieee1394: Initialized config rom entry `ip1394'
+acpi_bus-0201 [01] bus_set_power         : Device is not power manageable
+ACPI: PCI Interrupt Link [APCM] enabled at IRQ 22
+ACPI: PCI Interrupt 0000:00:0d.0[A] -> Link [APCM] -> GSI 22 (level, high) -> IRQ 201
+PCI: Setting latency timer of device 0000:00:0d.0 to 64
+ohci1394: fw-host0: OHCI-1394 1.1 (PCI): IRQ=[201]  MMIO=[e7084000-e70847ff]  Max Packet=[2048]  IR/IT contexts=[4/4]
+USB Universal Host Controller Interface driver v3.0
+ACPI: PCI Interrupt Link [APC1] enabled at IRQ 16
+ACPI: PCI Interrupt 0000:01:08.0[A] -> Link [APC1] -> GSI 16 (level, high) -> IRQ 209
+PCI: VIA IRQ fixup for 0000:01:08.0, from 7 to 1
+uhci_hcd 0000:01:08.0: UHCI Host Controller
+uhci_hcd 0000:01:08.0: new USB bus registered, assigned bus number 1
+uhci_hcd 0000:01:08.0: irq 209, io base 0x00009400
+usb usb1: configuration #1 chosen from 1 choice
+hub 1-0:1.0: USB hub found
+hub 1-0:1.0: 2 ports detected
+Linux video capture interface: v1.00
+forcedeth.c: Reverse Engineered nForce ethernet driver. Version 0.54.
+acpi_bus-0201 [01] bus_set_power         : Device is not power manageable
+ACPI: PCI Interrupt Link [APCH] enabled at IRQ 21
+ACPI: PCI Interrupt 0000:00:04.0[A] -> Link [APCH] -> GSI 21 (level, high) -> IRQ 217
+PCI: Setting latency timer of device 0000:00:04.0 to 64
+ACPI: PCI Interrupt 0000:01:08.1[B] -> Link [APC2] -> GSI 17 (level, high) -> IRQ 177
+PCI: VIA IRQ fixup for 0000:01:08.1, from 10 to 1
+uhci_hcd 0000:01:08.1: UHCI Host Controller
+uhci_hcd 0000:01:08.1: new USB bus registered, assigned bus number 2
+uhci_hcd 0000:01:08.1: irq 177, io base 0x00009800
+usb usb2: configuration #1 chosen from 1 choice
+hub 2-0:1.0: USB hub found
+hub 2-0:1.0: 2 ports detected
+Linux agpgart interface v0.101 (c) Dave Jones
+ohci_hcd: 2005 April 22 USB 1.1 'Open' Host Controller (OHCI) Driver (PCI)
+usb 1-1: new full speed USB device using uhci_hcd and address 2
+cx2388x v4l2 driver version 0.0.5 loaded
+usb 1-1: configuration #1 chosen from 1 choice
+eth0: forcedeth.c: subsystem: 0147b:1c00 bound to 0000:00:04.0
+i2c_adapter i2c-0: nForce2 SMBus adapter at 0x5000
+i2c_adapter i2c-1: nForce2 SMBus adapter at 0x5100
+pata_amd 0000:00:09.0: version 0.1.7
+acpi_bus-0201 [01] bus_set_power         : Device is not power manageable
+PCI: Setting latency timer of device 0000:00:09.0 to 64
+ata7: PATA max UDMA/133 cmd 0x1F0 ctl 0x3F6 bmdma 0xF000 irq 14
+usb 1-2: new low speed USB device using uhci_hcd and address 3
+usb 1-2: configuration #1 chosen from 1 choice
+ohci1394: fw-host0: SelfID received outside of bus reset sequence
+ata7: dev 0 cfg 49:0f00 82:421c 83:0000 84:0000 85:0000 86:0000 87:0000 88:0407
+ata7: dev 0 ATAPI, max UDMA/33
+ata7: dev 0 configured for UDMA/33
+scsi6 : pata_amd
+  Vendor: HL-DT-ST  Model: DVDRAM GSA-4120B  Rev: A102
+  Type:   CD-ROM                             ANSI SCSI revision: 05
+ata8: PATA max UDMA/133 cmd 0x170 ctl 0x376 bmdma 0xF008 irq 15
+ieee1394: Host added: ID:BUS[0-00:1023]  GUID[000000508df41b64]
+ata8: dev 0 cfg 49:2f00 82:346b 83:4b09 84:4003 85:3469 86:0a09 87:4003 88:203f
+ata8: dev 0 ATA-6, max UDMA/100, 39102336 sectors: LBA
+ata8: dev 0 configured for UDMA/100
+scsi7 : pata_amd
+  Vendor: ATA       Model: ST320410A         Rev: 3.39
+  Type:   Direct-Access                      ANSI SCSI revision: 05
+SCSI device sdc: 39102336 512-byte hdwr sectors (20020 MB)
+sdc: Write Protect is off
+sdc: Mode Sense: 00 3a 00 00
+SCSI device sdc: drive cache: write back
+SCSI device sdc: 39102336 512-byte hdwr sectors (20020 MB)
+sdc: Write Protect is off
+sdc: Mode Sense: 00 3a 00 00
+SCSI device sdc: drive cache: write back
+ sdc: sdc1
+sd 7:0:0:0: Attached scsi disk sdc
+acpi_bus-0201 [01] bus_set_power         : Device is not power manageable
+ACPI: PCI Interrupt Link [APCL] enabled at IRQ 20
+ACPI: PCI Interrupt 0000:00:02.2[C] -> Link [APCL] -> GSI 20 (level, high) -> IRQ 225
+PCI: Setting latency timer of device 0000:00:02.2 to 64
+ehci_hcd 0000:00:02.2: EHCI Host Controller
+ehci_hcd 0000:00:02.2: new USB bus registered, assigned bus number 3
+ehci_hcd 0000:00:02.2: debug port 1
+PCI: cache line size of 64 is not supported by device 0000:00:02.2
+ehci_hcd 0000:00:02.2: irq 225, io mem 0xe7086000
+ehci_hcd 0000:00:02.2: USB 2.0 started, EHCI 1.00, driver 10 Dec 2004
+usb usb3: configuration #1 chosen from 1 choice
+hub 3-0:1.0: USB hub found
+hub 3-0:1.0: 6 ports detected
+nvidia: module license 'NVIDIA' taints kernel.
+ACPI: PCI Interrupt 0000:01:08.2[C] -> Link [APC3] -> GSI 18 (level, high) -> IRQ 185
+ehci_hcd 0000:01:08.2: EHCI Host Controller
+ehci_hcd 0000:01:08.2: new USB bus registered, assigned bus number 4
+ehci_hcd 0000:01:08.2: irq 185, io mem 0xe6001000
+ehci_hcd 0000:01:08.2: USB 2.0 started, EHCI 1.00, driver 10 Dec 2004
+usb usb4: configuration #1 chosen from 1 choice
+hub 4-0:1.0: USB hub found
+hub 4-0:1.0: 4 ports detected
+acpi_bus-0201 [01] bus_set_power         : Device is not power manageable
+ACPI: PCI Interrupt Link [APCF] enabled at IRQ 22
+ACPI: PCI Interrupt 0000:00:02.0[A] -> Link [APCF] -> GSI 22 (level, high) -> IRQ 201
+PCI: Setting latency timer of device 0000:00:02.0 to 64
+ohci_hcd 0000:00:02.0: OHCI Host Controller
+ohci_hcd 0000:00:02.0: new USB bus registered, assigned bus number 5
+ohci_hcd 0000:00:02.0: irq 201, io mem 0xe7080000
+usb usb5: configuration #1 chosen from 1 choice
+hub 5-0:1.0: USB hub found
+hub 5-0:1.0: 3 ports detected
+acpi_bus-0201 [01] bus_set_power         : Device is not power manageable
+ACPI: PCI Interrupt Link [APCG] enabled at IRQ 21
+ACPI: PCI Interrupt 0000:00:02.1[B] -> Link [APCG] -> GSI 21 (level, high) -> IRQ 217
+PCI: Setting latency timer of device 0000:00:02.1 to 64
+ohci_hcd 0000:00:02.1: OHCI Host Controller
+ohci_hcd 0000:00:02.1: new USB bus registered, assigned bus number 6
+ohci_hcd 0000:00:02.1: irq 217, io mem 0xe7083000
+usb usb6: configuration #1 chosen from 1 choice
+hub 6-0:1.0: USB hub found
+hub 6-0:1.0: 3 ports detected
+ACPI: PCI Interrupt 0000:01:06.0[A] -> Link [APC3] -> GSI 18 (level, high) -> IRQ 185
+CORE cx88[0]: subsystem: 0000:0000, board: Prolink PlayTV PVR [card=11,insmod option]
+TV tuner 43 at 0x1fe, Radio tuner -1 at 0x1fe
+agpgart: Detected NVIDIA nForce2 chipset
+agpgart: AGP aperture is 32M @ 0xe0000000
+tveeprom 2-0050: Huh, no eeprom present (err=-121)?
+input: cx88 IR (Prolink PlayTV PVR) as /class/input/input0
+cx88[0]/0: found at 0000:01:06.0, rev: 3, irq: 185, latency: 32, mmio: 0xe4000000
+usb 1-1: USB disconnect, address 2
+tuner 2-0060: All bytes are equal. It is not a TEA5767
+tuner 2-0060: chip found @ 0xc0 (cx88[0])
+tuner 2-0060: type set to 43 (Philips NTSC MK3 (FM1236MK3 or FM1236/F))
+tda9887 2-0043: chip found @ 0x86 (cx88[0])
+cx88[0]/0: registered device video0 [v4l2]
+cx88[0]/0: registered device vbi0
+cx88[0]/0: registered device radio0
+acpi_bus-0201 [01] bus_set_power         : Device is not power manageable
+ACPI: PCI Interrupt Link [APCJ] enabled at IRQ 20
+ACPI: PCI Interrupt 0000:00:06.0[A] -> Link [APCJ] -> GSI 20 (level, high) -> IRQ 225
+PCI: Setting latency timer of device 0000:00:06.0 to 64
+usb 1-1: new full speed USB device using uhci_hcd and address 4
+usb 1-1: configuration #1 chosen from 1 choice
+usb 1-2: USB disconnect, address 3
+intel8x0_measure_ac97_clock: measured 52742 usecs
+intel8x0: clocking to 47467
+acpi_bus-0201 [01] bus_set_power         : Device is not power manageable
+ACPI: PCI Interrupt 0000:02:00.0[A] -> Link [APC4] -> GSI 19 (level, high) -> IRQ 193
+NVRM: loading NVIDIA Linux x86 Kernel Module  1.0-8774  Tue Aug  1 20:54:08 PDT 2006
+usb 1-2: new low speed USB device using uhci_hcd and address 5
+usb 1-2: configuration #1 chosen from 1 choice
+eth1394: eth1: IEEE-1394 IPv4 over 1394 Ethernet (fw-host0)
+usb 5-1: new low speed USB device using ohci_hcd and address 2
+usb 5-1: configuration #1 chosen from 1 choice
+usb 5-3: new full speed USB device using ohci_hcd and address 3
+usb 5-3: configuration #1 chosen from 1 choice
+usbcore: registered new driver hiddev
+input: USB JOYSTICK as /class/input/input1
+input: USB HID v1.00 Joystick [USB JOYSTICK] on usb-0000:01:08.0-2
+input: Microsft Microsoft Wireless Optical Desktop® 2.20 as /class/input/input2
+input: USB HID v1.11 Keyboard [Microsft Microsoft Wireless Optical Desktop® 2.20] on usb-0000:00:02.0-1
+input: Microsft Microsoft Wireless Optical Desktop® 2.20 as /class/input/input3
+input: USB HID v1.11 Mouse [Microsft Microsoft Wireless Optical Desktop® 2.20] on usb-0000:00:02.0-1
+usbcore: registered new driver usbhid
+drivers/usb/input/hid-core.c: v2.6:USB HID core driver
+sr0: scsi3-mmc drive: 78x/78x writer dvd-ram cd/rw xa/form2 cdda tray
+Uniform CD-ROM driver Revision: 3.20
+sr 6:0:0:0: Attached scsi CD-ROM sr0
+Initializing USB Mass Storage driver...
+scsi8 : SCSI emulation for USB Mass Storage devices
+usb-storage: device found at 3
+usb-storage: waiting for device to settle before scanning
+usbcore: registered new driver usb-storage
+USB Mass Storage support registered.
+drivers/usb/class/usblp.c: usblp0: USB Bidirectional printer dev 4 if 0 alt 0 proto 2 vid 0x03F0 pid 0x7304
+usbcore: registered new driver usblp
+drivers/usb/class/usblp.c: v0.13: USB Printer Device Class driver
+mice: PS/2 mouse device common for all mice
+  Vendor: IC        Model: USB Storage-CFC   Rev: 301b
+  Type:   Direct-Access                      ANSI SCSI revision: 00
+sd 8:0:0:0: Attached scsi removable disk sdd
+  Vendor: IC        Model: USB Storage-SMC   Rev: 301b
+  Type:   Direct-Access                      ANSI SCSI revision: 00
+sd 8:0:0:1: Attached scsi removable disk sde
+  Vendor: IC        Model: USB Storage-MMC   Rev: 301b
+  Type:   Direct-Access                      ANSI SCSI revision: 00
+sd 8:0:0:2: Attached scsi removable disk sdf
+  Vendor: IC        Model: USB Storage-MSC   Rev: 301b
+  Type:   Direct-Access                      ANSI SCSI revision: 00
+sd 8:0:0:3: Attached scsi removable disk sdg
+usb-storage: device scan complete
+vesafb: Leadtek Research Inc, NV36 Board - 222129A8, Chip Rev    (OEM: WinFast)
+vesafb: VBE version: 3.0
+vesafb: protected mode interface info at c000:ea80
+vesafb: pmi: set display start = b00ceab6, set palette = b00ceb20
+vesafb: pmi: ports = 3b4 3b5 3ba 3c0 3c1 3c4 3c5 3c6 3c7 3c8 3c9 3cc 3ce 3cf 3d0 3d1 3d2 3d3 3d4 3d5 3da 
+vesafb: VBIOS/hardware supports DDC2 transfers
+vesafb: monitor limits: vf = 160 Hz, hf = 98 kHz, clk = 270 MHz
+vesafb: scrolling: ywrap using protected mode interface, yres_virtual=4915
+vesafb: framebuffer at 0xd0000000, mapped to 0xf2480000, using 24576k, total 262144k
+fb0: VESA VGA frame buffer device
+Console: switching to colour frame buffer device 160x64
+fuse init (API version 7.6)
+loop: loaded (max 4 devices)
+Loading Reiser4. See www.namesys.com for a description of Reiser4.
+Real Time Clock Driver v1.12ac
+ip_tables: (C) 2000-2006 Netfilter Core Team
+Netfilter messages via NETLINK v0.30.
+ip_conntrack version 2.4 (8191 buckets, 65528 max) - 236 bytes per conntrack
+NET: Registered protocol family 17
+CSLIP: code copyright 1989 Regents of the University of California
+PPP generic driver version 2.4.2
+NET: Registered protocol family 24
+agpgart: Found an AGP 3.0 compliant device at 0000:00:00.0.
+agpgart: Putting AGP V3 device at 0000:00:00.0 into 8x mode
+agpgart: Putting AGP V3 device at 0000:02:00.0 into 8x mode
+i2c_adapter i2c-3: SMBus Quick command not supported, can't probe for chips
+i2c_adapter i2c-4: SMBus Quick command not supported, can't probe for chips
+i2c_adapter i2c-5: SMBus Quick command not supported, can't probe for chips
+NVRM: Xid (0002:00): 13, 0002 beef3901 00000039 00000100 00000000 00000100
+NVRM: Xid (0002:00): 28,  L1 -> L0
+ReiserFS: sdb1: found reiserfs format "3.6" with standard journal
+ReiserFS: sdb1: using ordered data mode
+ReiserFS: sdb1: journal params: device sdb1, size 8192, journal first block 18, max trans len 1024, max batch 900, max commit age 30, max trans age 30
+ReiserFS: sdb1: checking transaction log (sdb1)
+ReiserFS: sdb1: Using r5 hash to sort names
+UDF-fs INFO UDF 0.9.8.1 (2004/29/09) Mounting volume 'CDROM', timestamp 2006/08/24 18:33 (1f4c)
+end_request: I/O error, dev sr0, sector 256
+Buffer I/O error on device sr0, logical block 64
+lost page write due to I/O error on sr0
+end_request: I/O error, dev sr0, sector 1036
+Buffer I/O error on device sr0, logical block 259
+lost page write due to I/O error on sr0
+end_request: I/O error, dev sr0, sector 1052
+Buffer I/O error on device sr0, logical block 263
+lost page write due to I/O error on sr0
+end_request: I/O error, dev sr0, sector 256
+Buffer I/O error on device sr0, logical block 64
+lost page write due to I/O error on sr0
+____________________________________________
+Using built-in specs.
+Target: i686-pc-linux-gnu
+Configured with: /var/tmp/portage/gcc-4.1.1/work/gcc-4.1.1/configure --prefix=/usr --bindir=/usr/i686-pc-linux-gnu/gcc-bin/4.1.1 --includedir=/usr/lib/gcc/i686-pc-linux-gnu/4.1.1/include --datadir=/usr/share/gcc-data/i686-pc-linux-gnu/4.1.1 --mandir=/usr/share/gcc-data/i686-pc-linux-gnu/4.1.1/man --infodir=/usr/share/gcc-data/i686-pc-linux-gnu/4.1.1/info --with-gxx-include-dir=/usr/lib/gcc/i686-pc-linux-gnu/4.1.1/include/g++-v4 --host=i686-pc-linux-gnu --build=i686-pc-linux-gnu --disable-altivec --enable-nls --without-included-gettext --with-system-zlib --disable-checking --disable-werror --disable-libunwind-exceptions --disable-multilib --disable-libmudflap --disable-libssp --disable-libgcj --enable-languages=c,c++,fortran --enable-shared --enable-threads=posix --enable-__cxa_atexit --enable-clocale=gnu
+Thread model: posix
+gcc version 4.1.1 (Gentoo 4.1.1)
+____________________________________________
+Using built-in specs.
+Target: i686-pc-linux-gnu
+Configured with: /var/tmp/portage/gcc-4.1.1/work/gcc-4.1.1/configure --prefix=/usr --bindir=/usr/i686-pc-linux-gnu/gcc-bin/4.1.1 --includedir=/usr/lib/gcc/i686-pc-linux-gnu/4.1.1/include --datadir=/usr/share/gcc-data/i686-pc-linux-gnu/4.1.1 --mandir=/usr/share/gcc-data/i686-pc-linux-gnu/4.1.1/man --infodir=/usr/share/gcc-data/i686-pc-linux-gnu/4.1.1/info --with-gxx-include-dir=/usr/lib/gcc/i686-pc-linux-gnu/4.1.1/include/g++-v4 --host=i686-pc-linux-gnu --build=i686-pc-linux-gnu --disable-altivec --enable-nls --without-included-gettext --with-system-zlib --disable-checking --disable-werror --disable-libunwind-exceptions --disable-multilib --disable-libmudflap --disable-libssp --disable-libgcj --enable-languages=c,c++,fortran --enable-shared --enable-threads=posix --enable-__cxa_atexit --enable-clocale=gnu
+Thread model: posix
+gcc version 4.1.1 (Gentoo 4.1.1)
+____________________________________________
+xset -q:
+Keyboard Control:
+  auto repeat:  on    key click percent:  0    LED mask:  00000002
+  auto repeat delay:  500    repeat rate:  30
+  auto repeating keys:  00ffffffdffffbbf
+                        fadfffdfffdfe5ef
+                        ffffffffffffffff
+                        ffffffffffffffff
+  bell percent:  50    bell pitch:  400    bell duration:  100
+Pointer Control:
+  acceleration:  0/10    threshold:  0
+Screen Saver:
+  prefer blanking:  yes    allow exposures:  yes
+  timeout:  1800    cycle:  600
+Colors:
+  default colormap:  0x20    BlackPixel:  0    WhitePixel:  16777215
+Font Path:
+  /usr/share/fonts/misc:unscaled,/usr/share/fonts/Type1,/usr/share/fonts/TTF,/usr/share/fonts/corefonts,/usr/share/fonts/freefonts,/usr/share/fonts/sharefonts,/usr/share/fonts/artwiz,/usr/share/fonts/terminus,/usr/share/fonts/ttf-bitstream-vera,/usr/share/fonts/unifont,/usr/share/fonts/cyrillic,/usr/share/fonts/dejavu,/usr/share/fonts/terminus,/usr/share/fonts/Speedo,/usr/share/fonts/xawtv,/usr/share/fonts/Type1,/usr/share/fonts/75dpi:unscaled,/usr/share/fonts/100dpi:unscaled
+Bug Mode: compatibility mode is disabled
+DPMS (Energy Star):
+  Standby: 1200    Suspend: 1800    Off: 2400
+  DPMS is Enabled
+  Monitor is On
+File paths:
+  Config file:  /etc/X11/xorg.conf
+  Modules path: /usr/lib/xorg/modules
+  Log file:     /var/log/Xorg.0.log
+____________________________________________
+nvidia-settings -q all:
+nvidia-settings could not connect to an X server
+____________________________________________
+
+End of NVIDIA bug report log file.

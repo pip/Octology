@@ -1,0 +1,28 @@
+I'm JAPH JLEOMH (JustLikeEveryOtherMonkHere)...<br>
+I'm also a hardcore gamer... I created the *BBC*<br>
+ which is the <a href="http://BloodyBastardClan.org">BloodyBastardClan</a> ... <br>We're about 8 guys who love to frag!  Mostly CounterStrike, Half-Life, <br>UnrealTournament, & Quake3Arena in that order =)<br>
+I'm werking on a text editor written entirely in Perl...<br>
+...which is called <a href="http://BinQ.org">BinQ</a> =) and it is not unsimilar to Qedit <br>of old 4Dos lore... I hope to make it magnificent... <br>We'll see... <a href="http://www.sourceforge.net">SourceForge</a>, here I come... oh, not quite yet. =)<br>I'm doing other things too ... I hope they come out enormous as well.<br>
+I only enjoy drinking <a href="http://Guinness.ie">Guinness</a> and <a href="http://www.Pepsi.com">Pepsi</a> =) ...<br>
+everything else is mostly urine with stool chunks and feces floaties =O<br>
+I love my <a href="http://Glock.com">Glock</a> 22C and am looking forward to affording a 27...<br>
+I hope to lern to play the accordian like <a href="http://www.TMBG.com">John Linnell</a> someday<br>
+I love snowboarding and playing tennis.<br>
+I love being free to obey G-d's Holy Torah... especially (paraphrased) <code>$Commandment[3] = "The Sabbath is a day of rest which you shall keep holy" .
+ "for in 6 days G-d created and on the 7th, He rested and was refreshed.";</code>
+Soul Calibur is the best fighting game ever made! (if only Han Myong had returned)<br>
+I hope to enjoy a long life of contribution of any useful software I can possibly assist in.<br>
+I'm proud to be a <a href="http://www.AEPi.org">Pi</a>.<br>
+I was raised by two lesbians and I'm often candid... <br>
+and occassionally a shy nerd who solves <a href="http://Rubiks.com">Rubik's Cubes</a> in under 127 seconds.<br>
+I like 2^n-1 better than 2^n for almost any n ... <br>especially recursing 2^n-1 times as in 2^(2^(2^2-1))) which is my favorite number =).<br>
+I love my family and friends...<br>
+I long to code bleeding edge games ... <br>maybe in Perl/OpenGL/x86 Assembly (Go Athlon!) ;)<br>
+This is my humble <a href="http://resumes.dice.com/piptigger">resume</a>.  Hire me?  <br>
+or say Hi: <a href="mailto:pip@binq.org?subject=JAPH saying Hi...">pip@binq.org</a><br>TTFN & Shalom.<br><br>
+
+-*BBC*PipTigger<br><br>
+
+p.s.  Normal people work and some even learn.  PerlMonks lern and some even werk.  Get it?  Werd!<br>
+p.p.s. Byslexia is a Ditch!
+

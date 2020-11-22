@@ -1,0 +1,65 @@
+Done:
+	Installed Debian and compiled apache w/ mod_perl with Beppu
+		
+	Moved offices.
+
+	Republished the sites (I don't know why this had to be done as Ray
+		did it successfully last night AFAIK) with 
+		/var/www/PnG.sys/cgi-bin/PnGS/bin/publisha.pl
+		on Quark...
+		
+	Fixed the pseudo bullets "*" so that each is preceeded by a single 
+		newline (\n) character
+		
+	Duplicated all the ImageFile entries that had been submitted only for
+		denver to all other merchants with the correct imglib_id
+	
+	Tried to figure out why Dfalt imgz aren't appearing for non-denver	
+
+ToDo:
+	Get X to werk on my machine... 640x480x4bpp (16 colors! blech) 
+		isn't sufficient to examine the websites we are werking on.
+		More than 64MB would be particularly helpful for a smoothly
+		running X as well.
+		
+
+	Determine what else is necessary so that all merchants can see gfx
+		like denver...
+
+	Figure out how to get denver.expanets4me insted of /denver
+	
+	Dsine this little jrnl forum && imp it =).
+	
+	Clean && test mk_sites.pl and then polish README && email it to DaveR
+		so's we can have a thorough step-by-step to make a new Sites Partner.
+		
+	Hit up Ray for all the necessary info to do the same thing for PnGF.
+		ie. mk_frame.pl && README
+
+	Hopefully Dsine some semblance of SoupRaddMinn w/ Yulia, Ray, && 
+		Scott so's we can all figure out how to provide a simplified
+		new product deployment mechanism... ie. Christi should login
+		to some site on Helium and fill out fields for a new partner
+		or upload a file for the definition && merchants and... voila!
+		=)  It would be nice.
+	
+	clicktime && more jrnl entries =)  Sorry I've been lagging...
+
+Thots:
+	I'm getting sorta self-conscious about living at the office.  Maybe
+		I should ummm like go home sometimes.  I like blasting tunes && 
+		haX0ring a new Debian distro tho =).
+		
+	Whoa!  I've gotta go vote for HarryBrowne.org today!  I hope he wins
+		the whole darn thing.
+		
+	I'm excited about werking more closely (literally) with Ray in the
+		future.  Hopefully I can grok the Framewerk before I delve into
+		the major codes for Sites && Commerce && ...  lots to get familiar
+		with.
+		
+	I've never really been part of a genuine programming team so I'm 
+		eager to succeed and deathly afraid I'll suck nutz.  I hope we
+		can all werk hard together to complete our projects efficiently
+		&& excellently.
+

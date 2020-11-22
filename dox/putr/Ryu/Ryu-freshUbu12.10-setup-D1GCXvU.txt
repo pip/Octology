@@ -1,0 +1,68 @@
+# This is Ryu's version of the log I already kept for setting up Chun from a fresh Ubuntu 12.10 install, with a few notable varE8ions. I should autom8 all this, if I might be doing it more.
+pip@Ryu:~/.arc$ ls
+Aku_-arc-full-CCOEkvm
+pip@Ryu:~/.arc$ cd ..
+pip@Ryu:~$ cd .old
+bash: cd: .old: No such file or directory
+# I think on Chun, I started fresh install, then became root, rsync'd both old Chun && l8st most important selections from Aku to /home/pip/.old while Ryu just got ~/.arc/Aku... above.
+pip@Ryu:~$ ls
+Desktop  Documents  Downloads  dox  examples.desktop  Music  Pictures  Public  Templates  Videos
+# I note that Chun had a large fontconfig directory in ~pip that Ryu appears not to have.
+# In my original terminal, I did something close to:
+pip@Ryu:~$ mkdir .arc
+pip@Ryu:~$ cd    .arc
+pip@Ryu:~/.arc$ sudo bash
+root@Ryu:~/.arc# passwd
+root@Ryu:~/.arc# rsync -av root@192.168.8.15:/\[A-ort-z\]\* Aku_-arc-full-CCOEkvm/
+root@Ryu:~/.arc# cd ..
+root@Ryu:~# mkdir dox
+root@Ryu:~# cd    dox
+root@Ryu:~/dox# rsync -av root@192.168.8.15:/home/pip/dox/2du  .
+root@Ryu:~/dox# rsync -av root@192.168.8.15:/home/pip/dox/putr .
+root@Ryu:~/dox# cd putr/Chun
+root@Ryu:~/dox/putr/Chun# vi Chun-freshUbu12.10-setup-CCOJ33J.txt 
+# Then I started a second terminal window doing the following:
+pip@Ryu:~$ cd dox
+pip@Ryu:~/dox$ ls
+2du  putr
+pip@Ryu:~/dox$ cd putr
+pip@Ryu:~/dox/putr$ ls
+chun                                                GnmTrmFntz-termz-81RF8w8.txt  PCISndCrdz                                             putr-Ryu-GigE7-Pip-Gen2GnuLin-Athlon64X2
+Chun                                                HrdDskDrvz                    putr-Black-VeeUbu-Pip-FyrFox-userContent-88V1Qa5.css   putr-Taki-FstE63-Pip-XPPro-SonyVaioVGN-SZ240P
+FlxBoxThmz-X.Org-74JJtjj.txt                        LinKrnCfgz                    putr-Chun-GigE31-Pip-Ubu9.04_VstaHmPrm-FujLyfBukT1010  ryu
+FyrFoxCfgz-brwzr-SQLite3-SpeedUpVacuum-998GUls.txt  MotherBrdz                    putr-Gen-FstE3-Pip-Gen2GnuLin-Pentium3                 taki
+FyrFoxLnxz-brwzr-6CB7sBk.txt                        NetRtrG8Wz                    putr-Ken-specs-78I5u3O.txt                             UbuCodNamz-dstr0-943M9WG.lut
+gen                                                 NwEg                          putr-Rose-802.11g-BlakBeryCurv-sys-info-92MCjCM.mkf
+pip@Ryu:~/dox/putr$ mkdir Ryu
+pip@Ryu:~/dox/putr$ cd Ryu
+pip@Ryu:~/dox/putr/Ryu$ ls
+pip@Ryu:~/dox/putr/Ryu$ vi Ryu_-freshUbu12.10-setup-D1GCXvU.txt
+# All that led up to the crE8ion of this file here to follow along with Chun's path in the other window && log whatever differs for Ryu here.
+# Eventually, I should stratify my ~ to only essentials && autom8 this type of setup, as much as I can. Although it probably won't have to be done all that often.
+pip@Ryu:~$ mv Desktop .Desktop
+pip@Ryu:~$ rmdir Documents
+pip@Ryu:~$ rmdir Downloads
+pip@Ryu:~$ rmdir Music
+pip@Ryu:~$ rmdir Pictures
+pip@Ryu:~$ rmdir Public
+pip@Ryu:~$ rmdir Templates
+pip@Ryu:~$ rmdir Videos
+pip@Ryu:~$ cd .config
+pip@Ryu:~/.config$ vi user-dirs.dirs 
+# Here, I did rm most above dirs && added my dox,muz,gfx,mvz.
+pip@Ryu:~/.config$ cd ..
+pip@Ryu:~$ mv examples.desktop .xmplz.dsktp
+pip@Ryu:~$ sudo bash
+root@Ryu:~# apt-get update
+# upgrade unnecessary
+root@Ryu:~# apt-get install vim most screen ctags vim-doc vim-scripts ri ruby-dev ruby1.9.1-examples ri1.9.1 graphviz ruby1.9.1-dev ruby-switch libtemplate-perl graphviz-doc libtemplate-perl-doc libtemplate-plugin-gd-perl libtemplate-plugin-xml-perl ttf-dustin libdata-dump-perl libcrypt-ssleay-perl libscalar-number-perl libauthen-ntlm-perl
+root@Ryu:~# cd .arc/Aku_-arc-full-CCOEkvm/home/pip
+root@Ryu:~/.arc/Aku_-arc-full-CCOEkvm/home/pip# rsync -av  lib  /home/pip/
+root@Ryu:~/.arc/Aku_-arc-full-CCOEkvm/home/pip# rsync -av  bin  /home/pip/
+root@Ryu:~/.arc/Aku_-arc-full-CCOEkvm/home/pip# rsync -av .bak  /home/pip/
+root@Ryu:~/.arc/Aku_-arc-full-CCOEkvm/home/pip# rsync -av .vim* /home/pip/
+root@Ryu:~/.arc/Aku_-arc-full-CCOEkvm/home/pip# rsync -av .bashrc /home/pip/
+root@Ryu:~/.arc/Aku_-arc-full-CCOEkvm/home/pip# rsync -av .lsrc   /home/pip/
+root@Ryu:~/.arc/Aku_-arc-full-CCOEkvm/home/pip# rsync -av .zshrc  /home/pip/
+# then cd /home/pip, did a little chown pip:pip for dox && .bash_history, apt-get install zsh zsh-doc;
+# did chsh -s /bin/zsh, rebooted, installed ncurses, pmei Curses (which appended to my .zshrc that I probably need to edit), then installed a ton of stuff like I already did on Chun.

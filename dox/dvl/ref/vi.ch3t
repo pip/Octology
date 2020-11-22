@@ -1,0 +1,251 @@
+CCHLD0NS:vi.ch3t by PipStuart <Pip@CPAN.Org> originally pasted from Google's cache of HTTP://HEA-WWW.Harvard.Edu/~fine/Tech/vi.html as it appeared on CC902Vd0
+  (Dec 9, 2012 02:31:39 GMT) since the page was 404 at the time (but it's back up as of G7LMEpul). Current page seems to have changed little in the meantime;
+$d8VS='G7LMHvMH'; This is not intended as a tutorial. It is a reference on what every vi key binding does, followed by some useful vi tricks and tips. An
+  expert will probably know most of these already, but an intermediate vi user will find valuable information, and even an expert may learn a thing or two.
+vi Complete Key Binding Reference List:
+Key:    Action:                                                                                         Followed by:
+----   -------------------------------------------------------------------------------------------      ------------
+a      "append"        enter insertion mode  after current character                                    text, ESC
+b      "back"          move backward to beginning of previous word
+c      "change"        command                                                                          cursor motion command
+d      "delete"        command                                                                          cursor motion command
+e      "end"           move  forward to       end of     next word
+f      "find"          character  after cursor in current line                                          character to find
+g      "goto"   ?      UNBOUND (maybe bound in vim but not vi by default?)
+h      "home"          move  left one character
+i      "insert"        enter insertion mode before current character                                    text, ESC
+j      "just"          move  down one line
+k      "key"           move   up  one line
+l      "line"          move right one character
+m      "mark"          mark current line and position                                                   mark character tag (a-z)
+n      "next"          repeat last search
+o      "open"          open line below and enter insertion mode                                         text, ESC
+p      "paste"         put buffer  after cursor
+q      "quick"  ?      UNBOUND
+r      "replace"       replace single character at cursor                                               replacement character expected
+s      "substitute"    substitute single character with new text                                        text, ESC
+t      "text"          same as "f" but cursor moves to just before found character                      character to find
+u      "undo"          command
+v      "version"?      UNBOUND
+w      "word"          move  forward to beginning of     next word
+x      "extract"       delete single character
+y      "yank"          command                                                                          cursor motion command
+z      "zero"          position current line                                                            CR = top; "."=center; "-"=bottom
+A      "Append"        enter insertion mode after end of line                                           text, ESC
+B      "Back"          move backward to beginning of previous Word (skipping punctu8ion)
+C      "Change"        change to end of line                                                            text, ESC
+D      "Delete"        delete to end of line
+E      "End"           move  forward to       end of     next Word (skipping punctu8ion)
+F      "Find"          character before cursor in current line (backwards version of 'f')               character to find
+G      "Goto"          line number prefixed, or Goto end-of-file if none
+H      "Home"          move cursor to the  first line of the screen
+I      "Insert"        enter insertion mode before first non-whitespace character on the line           text, ESC
+J      "Join"          current line with next line
+K      "Key"    ?      UNBOUND
+L      "Last"          move cursor to the   last line of the screen
+M      "Middle"        move cursor to the middle line of the screen
+N      "Next"          repeat last search, but in opposite direction of original search
+O      "Open"          open line above and enter insertion mode                                         text, ESC
+P      "Paste"         put buffer before cursor
+Q      "Quit"          leave visual mode (go into "ex" mode)
+R      "Replace"       replaces through end of current line, then inserts                               text, ESC
+S      "Substitute"    substitute entire line (deletes line, enters insertion mode)                     text, ESC
+T      "Text"          backwards version of 't'                                                         character to find
+U      "Undo"          restores line to state when cursor was moved into it
+V      "Vi"            UNBOUND
+W      "Word"          move  forward to beginning of     next Word (skipping punctu8ion)
+X      "eXtract"       delete backwards single character (like BackSpace)
+Y      "Yank"          entire line
+Z                      first half of quick save-and-exit                                                'Z'
+0                      move to column zero
+1-9                    numeric precursor to other commands                                              [additional numbers (0-9)]   command
+(SPACE)                move right one character
+!                      shell command filter                                                             cursor motion command, shell command
+@                      vi eval                                                                          buffer name (a-z)
+#                      UNBOUND
+$                      move to end-of-line
+%                      match nearest [],(),{} on line, to its match (same line or others)
+^                      move to first non-whitespace character of line
+&                      repeat last ex substitution (":s ...") not including modifiers
+*                      UNBOUND
+(                      move to previous sentence
+)                      move to next sentence
+\                      UNBOUND
+|                      move to column zero
+-                      move to first non-whitespace of previous line
+_                      similar to "^" but uses numeric prefix oddly
+=                      UNBOUND
++                      move to first non-whitespace of next line
+[                      move to previous "{...}"           section                                       '['
+]                      move to     next "{...}"           section                                       ']'
+{                      move to previous blank-line sepR8d section                                       '{'
+}                      move to     next blank-line sepR8d section                                       '}'
+;                      repeat last 'f', 'F', 't', or 'T' command
+'                      move to marked line, first non-whitespace                                        character tag (a-z)
+`                      move to marked line, memorized column                                            character tag (a-z)
+:                      ex-submode                                                                       ex command
+"                      access numbered buffer; load or access lettered buffer                           1-9,a-z
+~                      reverse case of current character and move cursor forward
+,                      reverse direction of last 'f', 'F', 't', or 'T' command
+.                      repeat last text-changing command
+/                      search  forward                                                                  search string, ESC or CR
+<                      unindent command                                                                 cursor motion command
+>                        indent command                                                                 cursor motion command
+?                      search backwards                                                                 search string, ESC or CR
+^A                     UNBOUND
+^B     "backward"      move backward  (up)  one screen
+^C                     UNBOUND
+^D     "down"          move           down half screen
+^E                     scroll text  up  (cursor doesn't move unless it has to)
+^F     "forward"       move  forward (down) one screen
+^G                     show status
+^H                     BackSpace
+^I     "indent"  (TAB) UNBOUND
+^J     "just"   ?      move cursor one line down (same as ^N && j?)
+^K     "key"    ?      UNBOUND
+^L     "reload"        refresh screen
+^M               (CR)  move to first non-whitespace of next line
+^N                     move cursor one line down (same as ^J && j?)
+^O                     UNBOUND
+^P                     move cursor one line  up  (same as       k?)
+^Q                     XON
+^R     "redo"          does nothing (variants: redraw; multiple-redo)
+^S                     XOFF
+^T     "tagjump"       go to the file/code you were editing before the last tag jump
+^U     "up"            move backward   up  half screen
+^V     "vi"     ?      UNBOUND
+^W     "word"   ?      UNBOUND
+^X     "xon"    ?      UNBOUND
+^Y                     scroll text down (cursor doesn't move unless it has to)
+^Z                     suspend program
+^[                     (ESC) cancel started command; otherwise UNBOUND
+^\                     leave visual mode (go into "ex" mode)
+^]                     use word at cursor to lookup function in tags file, edit that file/code
+^^                     switch file buffers
+^_                     UNBOUND
+^?               (DEL) UNBOUND
+
+Definitions:
+  UNBOUND - this key is not normally bound to any vi command
+  word    - a  lower-case word ('w', 'b', 'e' commands) is defined by a consecutive string of letters, numbers, or underscore, or a consecutive string of
+    characters that is not any of {letters, numbers, underscore, whitespace}
+  Word    - an upper-case word ('W', 'B', 'E' commands) is a consecutive sequence of non-whitespace.
+  sentence
+  paragraph
+  cursor motion command - any command which positions the cursor is ok here, including the use of numeric prefixes. In addition, a repeat of the edit command
+    usually means to apply to the entire current line. For example, "<<" means shift current line left; "cc" means replace entire current line; and "dd"
+    means delete entire current line.
+
+Key Bindings in Editing Modes:
+  While in any edit mode (insert, replace, etc.) there are some keys that are used to adjust behavior, rather than just to insert text.
+    ESC - leave edit mode, return to command mode
+    ^D  - move line backwards one shiftwidth. shiftwidth must be set, and either the line must be newly added, or ^T must have been used.
+    ^T  - move all after cursor forwards one shiftwidth
+    ^H  - deletes text that was entered during the current edit mode. Most versions of vi do not allow deleting to previous line.
+    ^V  - insert next character even if it is a editing character.
+
+Repitition Counts:
+  Most commands can be prefixed with a multi-digit number that influences the way the command works.
+    z    position            nth line number
+    G    goto                nth line number
+    |    goto                nth column number
+    r    replace        next n   characters
+    s    substitute for next n   characters
+    <<   shift  n lines left one shiftwidth
+    ^    ignored?
+    _    advance             n-1 lines
+  Need to differentE8 between such things as 5yj vs. y5j?
+
+Multi-buffer:
+  Standard vi does have ability to toggle between two files. They will be last two edited files (edit new files with :efilename). Use control-^ to switch.
+
+  These filenames can be referred to in ex commands, and subshell filters, using two special characters: "%" refers to the current file, and "#" refers to the
+    previous file. Here's some handy things you can do with this feature:
+
+  :map v :!chmod 644 %^[                make world-readable
+  :map q :!ci -l %^[                    RCS checkin
+  :map V :!diff # %^[                   compare previous and current files
+
+Tags: Tags are cool, but I don't use them. Go figure. Maybe I'll write something up here someday.
+
+Mappings and Abbreviations:
+  :map lets you bind a list of keystrokes to a shortcut in command-mode. This shortcut can be multiple-key sequence (with limit8ions), and the commands within
+    can enter and exit edit-mode. Some examples of :map are above, in the multi-buffer section. Below is list of all normally unbound keys in vi command-mode.
+
+  g q v K V # * \ = ^A ^C ^I ^K ^O ^V ^W ^X ^[ ^_
+
+  When you try to map multiple key sequences, you won't be able to start them with lower or upper case letters ("Too dangerous to map that"), but the
+    punctu8ion and control characters are fair game. In addition, : can't be mapped, and sometimes a few other keys. Multiple key sequences can also be very
+    useful with terminal-gener8d sequences, which is why the escape key is bindable. I have my xterm set to generate =f1 for function key one, and so on, so
+    all the function keys are easier to use with bindings.
+
+  If you use multiple key shortcuts, you'll want to know about the timeout variable. With :se timeout, you have a limited time to generate the key sequence.
+    This is useful if the key sequences are terminal gener8d. With :se notimeout, it just keeps waiting until the next character does or doesn't match any
+    possible current sequences.
+
+  :map! lets you bind a list of keystrokes to a shortcut in edit-mode. This is useful for adding editing commands to edit mode. One popular trick is to bind
+    the arrow keys to move up and down while (apparently) staying in edit-mode, as in the last four lines below.
+
+  :map! ^? ^H                         Make delete act like backspace
+  :map! ^[OA ^[ka                     xterm arrow sequences will 
+  :map! ^[OB ^[ja                       exit edit-mode, move the
+  :map! ^[OC ^[la                       cursor, and re-enter edit-mode.
+  :map! ^[OD ^[ha
+
+  If you use the above trick for arrow-keys in edit-mode, you'll want to set timeout, because otherwise you won't get beeps at all when you hit escape, only
+    when you use the next keystroke. With timeout, you get the beep, but after the timeout. Since both of these are annoying, it may be a useful choice to
+    avoid multikey sequences that involve escape, as a matter of taste. Also, many systems now set up command-mode arrow keys in vi by default, which also
+    leads to the same problem.
+
+  :ab lets you bind a key sequence to an abbreviation, for use in edit-mode. Abbreviations don't fire until vi decides that you've typed the shortcut as a
+    whole word. So if taf is a shortcut for Thomas A. Fine, and I type taffy, it won't substitute because I didn't enter taf as a word by itself. (If I'd used
+    :map!, then taffy would do the replacement before I got to the second "f".)
+
+  Abbreviations are echoed normally until complete, therefore the abbreviation can't contain escape (you'd leave edit-mode before completing the abbreviation),
+    but the replacement expression can contain escape, and can leave and return to edit-mode.
+
+  :ab the the
+  :ab #d #define
+  :ab #i #include
+  :ab cmain main(argc,argv)^Mint argc;^Mchar **argv;^M{^M}^[O
+  :ab cmmap mmap(NULL,st.st_size,PROT_READ,MAP_SHARED,fd,0);
+  :ab readsig ^[G:r ~/misc/sig^M
+
+  To keep a live abbreviation from going off in your hands, use ^V. For instance, if I want to type the but have the the abbreviation above, I can let it "fix"
+    it, then back up and unfix it; or I can type "the^V..." and it won't expand the abbreviatoin.
+
+vi Macros Document (HTTP://Soma.NPA.UIUC.Edu/docs/vi.macros)
+
+Repeating with .:
+  Commands can be repeated with the redo command, normally bound to '.', but I've found this to be occasionally unpredictable. If you use multiple key
+    sequences in a macro, and vi is waiting to see if one of those sequences might complete, and you start a new command here, it won't be noticed by the redo.
+    (Solaris, HPUX at least).
+
+System Differences:
+  Older versions of vi didn't automatically setup arrow-keys in command-mode; they didn't interfere with the beep. (mAB multi-key bindings were new@same time?)
+  Some versions of vi have encryption, some don't.
+  Options processing is handled differently from version to version. Solaris prefers -c command in place of +command, and -L instead of -r.
+  Differnt systems may have other keys besides : that are "Too dangerous to map that".
+  The size of macros (:map, etc.) are limited in different ways on different systems.
+  On some systems the environment variable EXINIT overrides .exrc files (Solaris, HPUX), other systems it enhances it (SunOS???, FreeBSD).
+  nvi allows BackSpace to previous line in edit-mode (if previous line was edited) (FreeBSD).
+  variants of vi that have multiple undo have different styles. One style (linux) uses u as undo, and control-R as redo. The other style (FreeBSD) u acts
+    normally, but . continues on in the same direction as the last u (whether it was undo or redo). I prefer the latter because it doesn't interfere as much
+    with traditional vi behaviour.
+
+vi Reference Manual from the University of Michigan at Dearborn (HTTP://WWW.Engin.UMD.UMich.Edu/ECS/online_help/vi.html)
+
+Trick: I've seen various replacements for the fmt command that you can use to format paragraphs almost automatically. Mine's better:
+
+  :map v 0ma}b:'a,.j<ctrl-v><return>070 ?  *<ctrl-v><escape>dwi<ctrl-v><return><ctrl-v><escape>
+
+  Note the control-v's are there to enter the following characters, which would otherwise terminate the map command. The above was written as you have to enter
+    the special characters in traditional vi. In vim, you can use the four literal characters "<CR>" for a carriage return, and also "<Esc>" for Escape. So it
+    may be easier to type this, and it can also go into your .vimrc) more readibly (with thanks to Bart Van den Broeck):
+
+  :map v 0ma}b:'a,.j<CR>070 ?  *<Esc>dwi<CR><Esc>
+
+  It's better because you don't have to pre-join the paragraph by hitting J an arbitrary number of times. Just hit v (or whatever you've mapped it to) starting
+    at the beginning or in the middle of the paragraph, and it joines the rest of the paragraph together, formats one line, and moves the cursor down again.
+    Just keep hitting v and it will keep formatting. You have to stop one before the end or you'll end up with an extra short line. It also does not leave
+    spaces at the end of the line.

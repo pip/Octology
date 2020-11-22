@@ -1,0 +1,17 @@
+# had double-clicked path to paste buffer then pasted && Ctrl-C changed prompt path && don't need to be root
+<root@ChunEC3LA4NC/etc/X11/xorg.conf.d>/etc/X11/xorg.conf.d
+<root@ChunEC3LA4rM~ZLE_LINE_ABORTED>..
+<root@ChunEC3LA59D/etc/X11>
+# probably zsh is just matching paths in %ENV && showing variable names when they match && ZLE_LINE_ABORTED is getting set then expanding for the path
+<root@AkuEC3LAG49~>/etc/X11/ko_KR.eucKR 
+<root@AkuEC3LAGHR/etc/X11/ko_KR.eucKR>/etc/X11/ko_KR.eucKR
+<root@AkuEC3LAGKC~ZLE_LINE_ABORTED>
+<root@AkuEC3LAGeA~ZLE_LINE_ABORTED>..
+<root@AkuEC3LAGkn/etc/X11>/etc/X11/ko_KR.eucKR/
+<root@AkuEC3LAGxU/etc/X11>ko_KR.eucKR 
+<root@AkuEC3LAH6q~ZLE_LINE_ABORTED>
+
+[pip@AkuEC3LAKw0~/dox/putr/Chun]/etc/X11/ko_KR.eucKR
+[pip@AkuEC3LALEx/etc/X11/ko_KR.eucKR]/etc/X11/ko_KR.eucKR
+[pip@AkuEC3LALJM~ZLE_LINE_ABORTED]cd
+[pip@AkuEC3LALlM~]

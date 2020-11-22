@@ -1,0 +1,1041 @@
+<HTML>
+<HEAD>
+<TITLE>The JavaScript Source:  Forms:  Copy Fields</TITLE>
+<META HTTP-EQUIV="The JavaScript Source" CONTENT = "no-cache">
+<META NAME="date" CONTENT="2000-09-09">
+<META NAME="channel" CONTENT="Web Developer">
+<META NAME="author" CONTENT="javascriptsource.com">
+<META NAME="section" CONTENT="Forms">
+<META NAME="description" CONTENT="Allows the user to click a checkbox on a form to duplicate information.  For example, they can copy their billing information into the shipping information fields (assuming they are the same) with one click!  Another useful timesaver for your visitors!">
+
+<SCRIPT LANGUAGE="JavaScript">
+
+<!-- This script and many more are available free online at -->
+<!-- The JavaScript Source!! http://javascript.internet.com -->
+
+<!-- Begin
+var ShipFirst = "";
+var ShipLast = "";
+var ShipEmail = "";
+var ShipCompany = "";
+var ShipAddress1 = "";
+var ShipAddress2 = "";
+var ShipCity = "";
+var ShipState = "";
+var ShipStateIndex = 0;
+var ShipZip = "";
+var ShipConfirm = 0;
+
+function InitSaveVariables(form) {
+ShipFirst = form.ShipFirst.value;
+ShipLast = form.ShipLast.value;
+ShipEmail = form.ShipEmail.value;
+ShipCompany = form.ShipCompany.value;
+ShipAddress1 = form.ShipAddress1.value;
+ShipAddress2 = form.ShipAddress2.value;
+ShipCity = form.ShipCity.value;
+ShipZip = form.ShipZip.value;
+ShipStateIndex = form.ShipState.selectedIndex;
+ShipState = form.ShipState[ShipStateIndex].value;
+ShipConfirm = form.ShipConfirm.checked;
+}
+
+function ShipToBillPerson(form) {
+if (form.copy.checked) {
+InitSaveVariables(form);
+form.ShipFirst.value = form.BillFirst.value;
+form.ShipLast.value = form.BillLast.value;
+form.ShipEmail.value = form.BillEmail.value;
+form.ShipCompany.value = form.BillCompany.value;
+form.ShipAddress1.value = form.BillAddress1.value;
+form.ShipAddress2.value = form.BillAddress2.value;
+form.ShipCity.value = form.BillCity.value;
+form.ShipZip.value = form.BillZip.value;
+form.ShipState.selectedIndex = form.BillState.selectedIndex;
+form.ShipConfirm.checked = form.BillConfirm.checked;
+}
+else {
+form.ShipFirst.value = ShipFirst;
+form.ShipLast.value = ShipLast;
+form.ShipEmail.value = ShipEmail;
+form.ShipCompany.value = ShipCompany;
+form.ShipAddress1.value = ShipAddress1;
+form.ShipAddress2.value = ShipAddress2;
+form.ShipCity.value = ShipCity;
+form.ShipZip.value = ShipZip;       
+form.ShipState.selectedIndex = ShipStateIndex;
+form.ShipConfirm.checked = ShipConfirm;
+   }
+}
+//  End -->
+</script>
+</HEAD>
+
+<BODY BGCOLOR=#ffffff vlink=#0000ff>
+
+<BR>
+<center>
+<table width=600 cellpadding=0 cellspacing=10>
+<tr>
+<td width=468 align=center>
+
+    
+    <!-- AdSpace site=internetcom&size=468x60&PagePos=10&channel=_CHANNEL_&content_site=_SITE_&feature=_FEATURE_ -->
+    <a target="_blank" href="/event.ng/Type=click&ProfileID=499&RunID=13198&AdID=8298&TagValues=194.208.222.250.313.572.579.619.915&FamilyID=1&GroupID=7&Redirect=http://seminars.internet.com/sew/london01/"><img src="http://images.internet.com/ads/2000/12/seslondon_468.gif" border=0 height=60 width=468 alt=""></a>
+    <!-- /AdSpace -->
+</td>
+<td width=120 align=center>
+    <!-- AdSpace site=internetcom&size=120x60&PagePos=10&channel=_CHANNEL_&content_site=_SITE_&feature=_FEATURE_ -->
+    <a target="_blank" href="/event.ng/Type=click&ProfileID=2&RunID=4&AdID=2816&TagValues=196.208.222.250.313.572.579.619.915&FamilyID=3&GroupID=1&Redirect=http://www.internettradeshowlist.com"><img src="/ads/1999/12/tsl-tile.gif" border=0 height=60 width=120 alt="Internet Trade Show List"></a>
+    <!-- /AdSpace -->
+</td>
+</tr>
+</table>
+<BR>
+<BR>
+<basefont size=3>
+<FONT SIZE="+2" FACE="Helvetica,Arial">
+<A HREF="http://javascript.internet.com" TARGET="_top"><FONT COLOR="#0000FF"><b>Home</b></font></A>
+<img src="http://javascript.internet.com/img/arrow.gif" height=13 width=7 border=0 alt="}">
+<A HREF="./" TARGET="_top"><font color="#FF0000"><b>Forms</b></font></A>
+<img src="http://javascript.internet.com/img/arrow.gif" height=13 width=7 border=0 alt="}">
+<FONT COLOR="#006666"><b>Copy Fields</b></font></font>
+<BR>
+<BR>
+<table BORDER=0 WIDTH=486 CELLPADDING=3 CELLSPACING=0>
+<tr><td><font FACE="helvetica,arial,geneva">
+<br>
+<br>
+<!-- Description --><!--content_start-->
+Allows the user to click a checkbox on a form to duplicate information.  For example, they can copy their billing information into the shipping information fields (assuming they are the same) with one click!  Another useful timesaver for your visitors!
+<hr>
+</td></tr>
+</table>
+<!-- Demonstration -->
+<center>
+<form name="billform">
+<table border="1" cellspacing="0" cellpadding="3" width="400">
+
+<tr bgcolor="#003399">
+<td colspan=2 width="100%" bgcolor="#003399">
+<b><font color=white size="-1" face="arial, helvetica">Billing Information</font></b>
+</td>
+</tr>
+<tr>
+<td>
+<font size="-1" face="arial, helvetica">First Name:</font>
+</td>
+<td>
+<input type="text" size="15" maxlength="50" name="BillFirst">
+</td>
+</tr>
+<tr>
+<td>
+<font size="-1" face="arial, helvetica">Last Name:</font>
+</td>
+<td>
+<input type="text" size="15" maxlength="50" name="BillLast">
+</td>
+</tr>
+<tr>
+<td>
+<font size="-1" face="arial, helvetica">E-Mail:</font>
+</td>
+<td>
+<input type="text" size="15" name="BillEmail">
+</td>
+</tr>
+<tr>
+<td>
+<font size="-1" face="arial, helvetica">Company:</font>
+</td>
+<td>
+<input type="text" size="25" maxlength="100" name="BillCompany">
+</td>
+</tr>
+<tr>
+<td>
+<font size="-1" face="arial, helvetica">Address:</font>
+</td>
+<td>
+<input type="text" size="40" maxlength="35" name="BillAddress1">
+</td>
+</tr>
+<tr>
+<td>
+&nbsp;
+</td>
+<td>
+<input type="text" size="40" maxlength="35" name="BillAddress2">
+</td>
+</tr>
+<tr>
+<td>
+<font size="-1" face="arial, helvetica">City:</font>
+</td>
+<td>
+<input type="text" size="25" maxlength="21" name="BillCity">
+</td>
+</tr>
+<tr>
+<td>
+<font size="-1" face="arial, helvetica">State:</font>
+</td> 
+<td>
+<select name="BillState">
+<option selected>
+<option value="AL">ALABAMA
+<option value="AK">ALASKA
+<option value="AZ">ARIZONA
+<option value="AR">ARKANSAS
+<option value="CA">CALIFORNIA
+<option value="CO">COLORADO
+<option value="CT">CONNECTICUT
+<option value="DE">DELAWARE
+<option value="FL">FLORIDA
+<option value="GA">GEORGIA
+<option value="HI">HAWAII
+<option value="ID">IDAHO
+<option value="IL">ILLINOIS
+<option value="IN">INDIANA
+<option value="IA">IOWA
+<option value="KS">KANSAS
+<option value="KY">KENTUCKY
+<option value="LA">LOUISIANA
+<option value="ME">MAINE
+<option value="MD">MARYLAND
+<option value="MA">MASSACHUSETTS
+<option value="MI">MICHIGAN
+<option value="MN">MINNESOTA
+<option value="MS">MISSISSIPPI
+<option value="MO">MISSOURI
+<option value="MT">MONTANA
+<option value="NE">NEBRASKA
+<option value="NV">NEVADA
+<option value="NH">NEW HAMPSHIRE
+<option value="NJ">NEW JERSEY
+<option value="NM">NEW MEXICO
+<option value="NY">NEW YORK
+<option value="NC">NORTH CAROLINA
+<option value="ND">NORTH DAKOTA
+<option value="OH">OHIO
+<option value="OK">OKLAHOMA
+<option value="OR">OREGON
+<option value="PA">PENNSYLVANIA
+<option value="RI">RHODE ISLAND
+<option value="SC">SOUTH CAROLINA
+<option value="SD">SOUTH DAKOTA
+<option value="TN">TENNESSEE
+<option value="TX">TEXAS
+<option value="UT">UTAH
+<option value="VT">VERMONT
+<option value="VA">VIRGINIA
+<option value="WA">WASHINGTON
+<option value="DC">WASHINGTON, D.C.
+<option value="WV">WEST VIRGINIA
+<option value="WI">WISCONSIN
+<option value="WY">WYOMING
+</select>
+&nbsp;&nbsp;
+<input type="text" size="10" maxlength="10" name="BillZip">
+</td>
+</tr>
+<tr>
+<td colspan=2 align=center>
+<input type="checkbox" name="BillConfirm" selected>&nbsp;<font face="arial, helvetica" size="-2">Send confirmation email via email</font>
+</td>
+</tr>
+
+
+<tr bgcolor="#003399">
+<td colspan=2 width="100%" bgcolor="#003399">
+<b><font color=white size="-1" face="arial, helvetica">Shipping Information</font></b>
+<font color=white size="-2" face="arial, helvetica">
+(Check to use Billing Information: <input type="checkbox" name="copy"
+OnClick="javascript:ShipToBillPerson(this.form);" value="checkbox"> )
+</td>
+</tr>
+<tr>
+<td>
+<font size="-1" face="arial, helvetica">First Name:</font></td>
+<td>
+<input type="text" size="15" maxlength="50" name="ShipFirst">
+</td>
+</tr>
+<tr>
+<td>
+<font size="-1" face="arial, helvetica">Last Name:</font>
+</td>
+<td>
+<input type="text" size="15" maxlength="50" name="ShipLast">
+</td>
+</tr>
+<tr>
+<td>
+<font size="-1" face="arial, helvetica">E-Mail:</font>
+</td>
+<td>
+<input type="text" size="15" name="ShipEmail">
+</td>
+</tr>
+<tr>
+<td>
+<font size="-1" face="arial, helvetica">Company:</font>
+</td>
+<td>
+<input type="text" size="25" maxlength="100" name="ShipCompany">
+</td>
+</tr>
+<tr>
+<td>
+<font size="-1" face="arial, helvetica">Address:</font>
+</td>
+<td>
+<input type="text" size="40" maxlength="35" name="ShipAddress1">
+</td>
+</tr>
+<tr>
+<td>
+&nbsp;
+</td>
+<td>
+<input type="text" size="40" maxlength="35" name="ShipAddress2">
+</td>
+</tr>
+<tr>
+<td>
+<font size="-1" face="arial, helvetica">City:</font>
+</td>
+<td>
+<input type="text" size="25" maxlength="21" name="ShipCity">
+</td>
+</tr>
+<tr>
+<td>
+<font size="-1" face="arial, helvetica">State:</font>
+</td> 
+<td>
+<select name="ShipState">
+<option selected>
+<option value="AL">ALABAMA
+<option value="AK">ALASKA
+<option value="AZ">ARIZONA
+<option value="AR">ARKANSAS
+<option value="CA">CALIFORNIA
+<option value="CO">COLORADO
+<option value="CT">CONNECTICUT
+<option value="DE">DELAWARE
+<option value="FL">FLORIDA
+<option value="GA">GEORGIA
+<option value="HI">HAWAII
+<option value="ID">IDAHO
+<option value="IL">ILLINOIS
+<option value="IN">INDIANA
+<option value="IA">IOWA
+<option value="KS">KANSAS
+<option value="KY">KENTUCKY
+<option value="LA">LOUISIANA
+<option value="ME">MAINE
+<option value="MD">MARYLAND
+<option value="MA">MASSACHUSETTS
+<option value="MI">MICHIGAN
+<option value="MN">MINNESOTA
+<option value="MS">MISSISSIPPI
+<option value="MO">MISSOURI
+<option value="MT">MONTANA
+<option value="NE">NEBRASKA
+<option value="NV">NEVADA
+<option value="NH">NEW HAMPSHIRE
+<option value="NJ">NEW JERSEY
+<option value="NM">NEW MEXICO
+<option value="NY">NEW YORK
+<option value="NC">NORTH CAROLINA
+<option value="ND">NORTH DAKOTA
+<option value="OH">OHIO
+<option value="OK">OKLAHOMA
+<option value="OR">OREGON
+<option value="PA">PENNSYLVANIA
+<option value="RI">RHODE ISLAND
+<option value="SC">SOUTH CAROLINA
+<option value="SD">SOUTH DAKOTA
+<option value="TN">TENNESSEE
+<option value="TX">TEXAS
+<option value="UT">UTAH
+<option value="VT">VERMONT
+<option value="VA">VIRGINIA
+<option value="WA">WASHINGTON
+<option value="DC">WASHINGTON, D.C.
+<option value="WV">WEST VIRGINIA
+<option value="WI">WISCONSIN
+<option value="WY">WYOMING
+</select>
+&nbsp;&nbsp;
+<input type="text" size="10" maxlength="10" name="ShipZip">
+</td>
+</tr>
+<tr>
+<td colspan=2 align=center>
+<input type="checkbox" name="ShipConfirm" selected>&nbsp;<font face="arial, helvetica" size="-2">Send confirmation email via email</font>
+</td>
+</tr>
+</table>
+</form>
+</center>
+<P>
+<P>
+<a name="source">
+<table BORDER=0 WIDTH=486 CELLPADDING=3 CELLSPACING=0>
+<tr><td BGCOLOR=yellow><font FACE="helvetica,arial,geneva"><b>The JavaScript Source:  Forms:  Copy Fields</b>
+<p>Simply click inside the window below, use your cursor to highlight the script, and copy (type Control-c or Apple-c) the script into a new file in your text editor (such as Note Pad or Simple Text) and save (Control-s or Apple-s).  The script is yours!!!
+<br><br></font></td></tr>
+<tr><td BGCOLOR=yellow ALIGN=CENTER>
+<form NAME="copy">
+
+<DIV align="center">
+<input type=button value="Highlight All" onClick="javascript:this.form.txt.focus();this.form.txt.select();">&nbsp;&nbsp;&nbsp;&nbsp;
+<INPUT TYPE="text" NAME="total" VALUE="Script Size:  8.75 KB" size=24>
+</DIV>
+
+<textarea NAME="txt" ROWS=20 COLS=75 WRAP=VIRTUAL>
+
+&lt;!-- TWO STEPS TO INSTALL COPY FIELDS:
+
+  1.  Copy the coding into the HEAD of your HTML document
+  2.  Add the last code into the BODY of your HTML document  --&gt;
+
+&lt;!-- STEP ONE: Paste this code into the HEAD of your HTML document  --&gt;
+
+&lt;HEAD&gt;
+
+&lt;SCRIPT LANGUAGE="JavaScript"&gt;
+
+&lt;!-- This script and many more are available free online at --&gt;
+&lt;!-- The JavaScript Source!! http://javascript.internet.com --&gt;
+
+&lt;!-- Begin
+var ShipFirst = "";
+var ShipLast = "";
+var ShipEmail = "";
+var ShipCompany = "";
+var ShipAddress1 = "";
+var ShipAddress2 = "";
+var ShipCity = "";
+var ShipState = "";
+var ShipStateIndex = 0;
+var ShipZip = "";
+var ShipConfirm = 0;
+
+function InitSaveVariables(form) {
+ShipFirst = form.ShipFirst.value;
+ShipLast = form.ShipLast.value;
+ShipEmail = form.ShipEmail.value;
+ShipCompany = form.ShipCompany.value;
+ShipAddress1 = form.ShipAddress1.value;
+ShipAddress2 = form.ShipAddress2.value;
+ShipCity = form.ShipCity.value;
+ShipZip = form.ShipZip.value;
+ShipStateIndex = form.ShipState.selectedIndex;
+ShipState = form.ShipState[ShipStateIndex].value;
+ShipConfirm = form.ShipConfirm.checked;
+}
+
+function ShipToBillPerson(form) {
+if (form.copy.checked) {
+InitSaveVariables(form);
+form.ShipFirst.value = form.BillFirst.value;
+form.ShipLast.value = form.BillLast.value;
+form.ShipEmail.value = form.BillEmail.value;
+form.ShipCompany.value = form.BillCompany.value;
+form.ShipAddress1.value = form.BillAddress1.value;
+form.ShipAddress2.value = form.BillAddress2.value;
+form.ShipCity.value = form.BillCity.value;
+form.ShipZip.value = form.BillZip.value;
+form.ShipState.selectedIndex = form.BillState.selectedIndex;
+form.ShipConfirm.checked = form.BillConfirm.checked;
+}
+else {
+form.ShipFirst.value = ShipFirst;
+form.ShipLast.value = ShipLast;
+form.ShipEmail.value = ShipEmail;
+form.ShipCompany.value = ShipCompany;
+form.ShipAddress1.value = ShipAddress1;
+form.ShipAddress2.value = ShipAddress2;
+form.ShipCity.value = ShipCity;
+form.ShipZip.value = ShipZip;       
+form.ShipState.selectedIndex = ShipStateIndex;
+form.ShipConfirm.checked = ShipConfirm;
+   }
+}
+//  End --&gt;
+&lt;/script&gt;
+&lt;/HEAD&gt;
+
+&lt;!-- STEP TWO: Copy this code into the BODY of your HTML document  --&gt;
+
+&lt;BODY&gt;
+
+&lt;center&gt;
+&lt;form method="post" action="http://www.your-web-site-address-here.com/script.cgi" name="billform"&gt;
+&lt;table border="1" cellspacing="0" cellpadding="3" width="400"&gt;
+
+&lt;tr bgcolor="#003399"&gt;
+&lt;td colspan=2 width="100%" bgcolor="#003399"&gt;
+&lt;b&gt;&lt;font color=white size="-1" face="arial, helvetica"&gt;Billing Information&lt;/font&gt;&lt;/b&gt;
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;
+&lt;font size="-1" face="arial, helvetica"&gt;First Name:&lt;/font&gt;
+&lt;/td&gt;
+&lt;td&gt;
+&lt;input type="text" size="15" maxlength="50" name="BillFirst"&gt;
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;
+&lt;font size="-1" face="arial, helvetica"&gt;Last Name:&lt;/font&gt;
+&lt;/td&gt;
+&lt;td&gt;
+&lt;input type="text" size="15" maxlength="50" name="BillLast"&gt;
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;
+&lt;font size="-1" face="arial, helvetica"&gt;E-Mail:&lt;/font&gt;
+&lt;/td&gt;
+&lt;td&gt;
+&lt;input type="text" size="15" name="BillEmail"&gt;
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;
+&lt;font size="-1" face="arial, helvetica"&gt;Company:&lt;/font&gt;
+&lt;/td&gt;
+&lt;td&gt;
+&lt;input type="text" size="25" maxlength="100" name="BillCompany"&gt;
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;
+&lt;font size="-1" face="arial, helvetica"&gt;Address:&lt;/font&gt;
+&lt;/td&gt;
+&lt;td&gt;
+&lt;input type="text" size="40" maxlength="35" name="BillAddress1"&gt;
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;
+&nbsp;
+&lt;/td&gt;
+&lt;td&gt;
+&lt;input type="text" size="40" maxlength="35" name="BillAddress2"&gt;
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;
+&lt;font size="-1" face="arial, helvetica"&gt;City:&lt;/font&gt;
+&lt;/td&gt;
+&lt;td&gt;
+&lt;input type="text" size="25" maxlength="21" name="BillCity"&gt;
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;
+&lt;font size="-1" face="arial, helvetica"&gt;State:&lt;/font&gt;
+&lt;/td&gt; 
+&lt;td&gt;
+&lt;select name="BillState"&gt;
+&lt;option selected&gt;
+&lt;option value="AL"&gt;ALABAMA
+&lt;option value="AK"&gt;ALASKA
+&lt;option value="AZ"&gt;ARIZONA
+&lt;option value="AR"&gt;ARKANSAS
+&lt;option value="CA"&gt;CALIFORNIA
+&lt;option value="CO"&gt;COLORADO
+&lt;option value="CT"&gt;CONNECTICUT
+&lt;option value="DE"&gt;DELAWARE
+&lt;option value="FL"&gt;FLORIDA
+&lt;option value="GA"&gt;GEORGIA
+&lt;option value="HI"&gt;HAWAII
+&lt;option value="ID"&gt;IDAHO
+&lt;option value="IL"&gt;ILLINOIS
+&lt;option value="IN"&gt;INDIANA
+&lt;option value="IA"&gt;IOWA
+&lt;option value="KS"&gt;KANSAS
+&lt;option value="KY"&gt;KENTUCKY
+&lt;option value="LA"&gt;LOUISIANA
+&lt;option value="ME"&gt;MAINE
+&lt;option value="MD"&gt;MARYLAND
+&lt;option value="MA"&gt;MASSACHUSETTS
+&lt;option value="MI"&gt;MICHIGAN
+&lt;option value="MN"&gt;MINNESOTA
+&lt;option value="MS"&gt;MISSISSIPPI
+&lt;option value="MO"&gt;MISSOURI
+&lt;option value="MT"&gt;MONTANA
+&lt;option value="NE"&gt;NEBRASKA
+&lt;option value="NV"&gt;NEVADA
+&lt;option value="NH"&gt;NEW HAMPSHIRE
+&lt;option value="NJ"&gt;NEW JERSEY
+&lt;option value="NM"&gt;NEW MEXICO
+&lt;option value="NY"&gt;NEW YORK
+&lt;option value="NC"&gt;NORTH CAROLINA
+&lt;option value="ND"&gt;NORTH DAKOTA
+&lt;option value="OH"&gt;OHIO
+&lt;option value="OK"&gt;OKLAHOMA
+&lt;option value="OR"&gt;OREGON
+&lt;option value="PA"&gt;PENNSYLVANIA
+&lt;option value="RI"&gt;RHODE ISLAND
+&lt;option value="SC"&gt;SOUTH CAROLINA
+&lt;option value="SD"&gt;SOUTH DAKOTA
+&lt;option value="TN"&gt;TENNESSEE
+&lt;option value="TX"&gt;TEXAS
+&lt;option value="UT"&gt;UTAH
+&lt;option value="VT"&gt;VERMONT
+&lt;option value="VA"&gt;VIRGINIA
+&lt;option value="WA"&gt;WASHINGTON
+&lt;option value="DC"&gt;WASHINGTON, D.C.
+&lt;option value="WV"&gt;WEST VIRGINIA
+&lt;option value="WI"&gt;WISCONSIN
+&lt;option value="WY"&gt;WYOMING
+&lt;/select&gt;
+&nbsp;&nbsp;
+&lt;input type="text" size="10" maxlength="10" name="BillZip"&gt;
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td colspan=2 align=center&gt;
+&lt;input type="checkbox" name="BillConfirm" selected&gt;&nbsp;&lt;font face="arial, helvetica" size="-2"&gt;Send confirmation email via email&lt;/font&gt;
+&lt;/td&gt;
+&lt;/tr&gt;
+
+
+&lt;tr bgcolor="#003399"&gt;
+&lt;td colspan=2 width="100%" bgcolor="#003399"&gt;
+&lt;b&gt;&lt;font color=white size="-1" face="arial, helvetica"&gt;Shipping Information&lt;/font&gt;&lt;/b&gt;
+&lt;font color=white size="-2" face="arial, helvetica"&gt;
+(Check to use Billing Information: &lt;input type="checkbox" name="copy"
+OnClick="javascript:ShipToBillPerson(this.form);" value="checkbox"&gt; )
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;
+&lt;font size="-1" face="arial, helvetica"&gt;First Name:&lt;/font&gt;&lt;/td&gt;
+&lt;td&gt;
+&lt;input type="text" size="15" maxlength="50" name="ShipFirst"&gt;
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;
+&lt;font size="-1" face="arial, helvetica"&gt;Last Name:&lt;/font&gt;
+&lt;/td&gt;
+&lt;td&gt;
+&lt;input type="text" size="15" maxlength="50" name="ShipLast"&gt;
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;
+&lt;font size="-1" face="arial, helvetica"&gt;E-Mail:&lt;/font&gt;
+&lt;/td&gt;
+&lt;td&gt;
+&lt;input type="text" size="15" name="ShipEmail"&gt;
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;
+&lt;font size="-1" face="arial, helvetica"&gt;Company:&lt;/font&gt;
+&lt;/td&gt;
+&lt;td&gt;
+&lt;input type="text" size="25" maxlength="100" name="ShipCompany"&gt;
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;
+&lt;font size="-1" face="arial, helvetica"&gt;Address:&lt;/font&gt;
+&lt;/td&gt;
+&lt;td&gt;
+&lt;input type="text" size="40" maxlength="35" name="ShipAddress1"&gt;
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;
+&nbsp;
+&lt;/td&gt;
+&lt;td&gt;
+&lt;input type="text" size="40" maxlength="35" name="ShipAddress2"&gt;
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;
+&lt;font size="-1" face="arial, helvetica"&gt;City:&lt;/font&gt;
+&lt;/td&gt;
+&lt;td&gt;
+&lt;input type="text" size="25" maxlength="21" name="ShipCity"&gt;
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;
+&lt;font size="-1" face="arial, helvetica"&gt;State:&lt;/font&gt;
+&lt;/td&gt; 
+&lt;td&gt;
+&lt;select name="ShipState"&gt;
+&lt;option selected&gt;
+&lt;option value="AL"&gt;ALABAMA
+&lt;option value="AK"&gt;ALASKA
+&lt;option value="AZ"&gt;ARIZONA
+&lt;option value="AR"&gt;ARKANSAS
+&lt;option value="CA"&gt;CALIFORNIA
+&lt;option value="CO"&gt;COLORADO
+&lt;option value="CT"&gt;CONNECTICUT
+&lt;option value="DE"&gt;DELAWARE
+&lt;option value="FL"&gt;FLORIDA
+&lt;option value="GA"&gt;GEORGIA
+&lt;option value="HI"&gt;HAWAII
+&lt;option value="ID"&gt;IDAHO
+&lt;option value="IL"&gt;ILLINOIS
+&lt;option value="IN"&gt;INDIANA
+&lt;option value="IA"&gt;IOWA
+&lt;option value="KS"&gt;KANSAS
+&lt;option value="KY"&gt;KENTUCKY
+&lt;option value="LA"&gt;LOUISIANA
+&lt;option value="ME"&gt;MAINE
+&lt;option value="MD"&gt;MARYLAND
+&lt;option value="MA"&gt;MASSACHUSETTS
+&lt;option value="MI"&gt;MICHIGAN
+&lt;option value="MN"&gt;MINNESOTA
+&lt;option value="MS"&gt;MISSISSIPPI
+&lt;option value="MO"&gt;MISSOURI
+&lt;option value="MT"&gt;MONTANA
+&lt;option value="NE"&gt;NEBRASKA
+&lt;option value="NV"&gt;NEVADA
+&lt;option value="NH"&gt;NEW HAMPSHIRE
+&lt;option value="NJ"&gt;NEW JERSEY
+&lt;option value="NM"&gt;NEW MEXICO
+&lt;option value="NY"&gt;NEW YORK
+&lt;option value="NC"&gt;NORTH CAROLINA
+&lt;option value="ND"&gt;NORTH DAKOTA
+&lt;option value="OH"&gt;OHIO
+&lt;option value="OK"&gt;OKLAHOMA
+&lt;option value="OR"&gt;OREGON
+&lt;option value="PA"&gt;PENNSYLVANIA
+&lt;option value="RI"&gt;RHODE ISLAND
+&lt;option value="SC"&gt;SOUTH CAROLINA
+&lt;option value="SD"&gt;SOUTH DAKOTA
+&lt;option value="TN"&gt;TENNESSEE
+&lt;option value="TX"&gt;TEXAS
+&lt;option value="UT"&gt;UTAH
+&lt;option value="VT"&gt;VERMONT
+&lt;option value="VA"&gt;VIRGINIA
+&lt;option value="WA"&gt;WASHINGTON
+&lt;option value="DC"&gt;WASHINGTON, D.C.
+&lt;option value="WV"&gt;WEST VIRGINIA
+&lt;option value="WI"&gt;WISCONSIN
+&lt;option value="WY"&gt;WYOMING
+&lt;/select&gt;
+&nbsp;&nbsp;
+&lt;input type="text" size="10" maxlength="10" name="ShipZip"&gt;
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td colspan=2 align=center&gt;
+&lt;input type="checkbox" name="ShipConfirm" selected&gt;&nbsp;&lt;font face="arial, helvetica" size="-2"&gt;Send confirmation email via email&lt;/font&gt;
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/table&gt;
+&lt;/form&gt;
+&lt;/center&gt;
+
+<p><center>
+<font face="arial, helvetica" size="-2">Free JavaScripts provided<br>
+by <a href="http://javascriptsource.com">The JavaScript Source</a></font>
+</center><p>
+
+&lt;!-- Script Size:  8.75 KB --&gt;</textarea><br><font FACE="helvetica,arial,geneva"><a href="http://javascript.internet.com/link-us.html">Did you use this script?&nbsp;&nbsp;Do you like this site?&nbsp;&nbsp;Please link to us!</a></font></td></tr>
+
+</table>
+</form>
+<!--content_stop-->
+    <!-- AdSpace site=internetcom&size=468x60&PagePos=20&channel=_CHANNEL_&content_site=_SITE_&feature=_FEATURE_ -->
+    <MAP NAME="aspisland-125"><AREA COORDS="0,0,468,60" HREF="/event.ng/Type=click&ProfileID=1085&RunID=9318&AdID=6162&GroupID=14&FamilyID=1&TagValues=197.200.222.1254.694.1016&Redirect=http://www.aspisland.com" TARGET="_blank"></MAP>
+<OBJECT classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000"
+ codebase="http://active.macromedia.com/flash/cabs/swflash.cab#version=3,0,0,0"
+ ID=a3-URLinFLASH WIDTH=468 HEIGHT=60>
+  <PARAM NAME=movie VALUE="/ads/2001/01/aspisland-468.swf"> 
+  <PARAM NAME=quality VALUE=autohigh> 
+  <PARAM NAME=bgcolor VALUE=#FFFFFF> 
+<SCRIPT LANGUAGE=JavaScript>
+<!--
+var ShockMode = 0;
+if (navigator.mimeTypes && navigator.mimeTypes["application/x-shockwave-flash"] && navigator.mimeTypes["application/x-shockwave-flash"].enabledPlugin) {
+	if (navigator.plugins && navigator.plugins["Shockwave Flash"])
+		ShockMode = 1;
+}
+if ( ShockMode ) {
+	document.write('<EMBED SRC="/ads/2001/01/aspisland-468.swf" PARAM NAME=wmode VALUE=opaque"');
+	document.write(' swLiveConnect=FALSE WIDTH=468 HEIGHT=60');
+	document.write(' QUALITY=autohigh WMODE=opaque BGCOLOR=#ffffff');
+	document.write(' TYPE="application/x-shockwave-flash" PLUGINSPAGE="http://www.macromedia.com/shockwave/download/index.cgi?P1_Prod_Version=ShockwaveFlash">');
+	document.write('</EMBED>');
+} else if (!(navigator.appName && navigator.appName.indexOf("Netscape")>=0 && navigator.appVersion.indexOf("2.")>=0)){
+	document.write('<IMG SRC="/ads/2001/01/aspisland_468.gif" WIDTH=468 HEIGHT=60 usemap="#aspisland-468" BORDER=0>');
+}
+//-->
+</SCRIPT>
+<NOEMBED><IMG SRC="/ads/2001/01/aspisland_468.gif" WIDTH=468 HEIGHT=60 usemap="#aspisland-468" BORDER=0></NOEMBED>
+<NOSCRIPT><IMG SRC="/ads/2001/01/aspisland_468.gif" WIDTH=468 HEIGHT=60 usemap="#aspisland-468" BORDER=0></NOSCRIPT></OBJECT>
+    <!-- /AdSpace -->
+
+<p><p>
+
+<SCRIPT LANGUAGE="JavaScript">
+<!-- Begin
+function getCookieVal (offset) {
+var endstr = document.cookie.indexOf(";", offset);
+if (endstr == -1)
+endstr = document.cookie.length;
+return unescape(document.cookie.substring(offset, endstr));
+}
+function GetCookie (name) {
+var arg = name + "=";
+var alen = arg.length;
+var clen = document.cookie.length;
+var i = 0;
+while (i < clen) {
+var j = i + alen;
+if (document.cookie.substring(i, j) == arg)
+return getCookieVal (j);
+i = document.cookie.indexOf(" ", i) + 1;
+if (i == 0)
+break;
+}
+return null;
+}
+function SetCookie (name, value) {
+var argv = SetCookie.arguments;
+var argc = SetCookie.arguments.length;
+var expires = (argc > 2) ? argv[2] : null;
+var path = "/"; //(argc > 3) ? argv[3] : null;
+var domain = (argc > 4) ? argv[4] : null;
+var secure = (argc > 5) ? argv[5] : false;
+document.cookie = name + "=" + escape (value) +
+((expires == null) ? "" : ("; expires=" +
+expires.toGMTString())) +
+((path == null) ? "" : ("; path=" + path)) +
+((domain == null) ? "" : ("; domain=" + domain)) +
+((secure == true) ? "; secure" : "");
+}
+
+var emailcookie = GetCookie('email_address');
+if (emailcookie == null) {
+emailcookie = 'your email here';
+}
+
+function chk(email, formname)
+{
+invalid = "";
+
+if (!email)
+invalid = "No email address found!  Try reloading the page then use the 'email a script' feature again.";
+
+else {
+
+if ( (email.indexOf("@") == -1) || (email.indexOf(".") == -1) ) 
+invalid += "\n\nInvalid email address.  Your email address is missing an '@' sign and a '.' in the domain name (like '.com').  Please check your address then submit again.";
+
+if (email.indexOf("youremailhere") > -1)
+invalid += "\n\nInvalid email address.  Make sure your email address included your username, the '@' sign, and the domain name (like '.com').";
+
+if (email.indexOf("\\") > -1) 
+invalid += "\n\nEmail address contains an invalid back-slash (\\) character.  Remove the character and submit again.";
+
+if (email.indexOf("/") > -1) 
+invalid += "\n\nEmail address contains an invalid forward-slash (/) character.  Remove the character and submit again.";
+
+if (email.indexOf("'") > -1) 
+invalid += "\n\nEmail address contains an invalid apostrophe (') character.  Remove the character and submit again.";
+
+if (email.indexOf("zaz.com.br") > -1) 
+invalid += "\n\nPlease do not use an email address that has an autoresponder set up for it.  Thanks.";
+
+if (email.indexOf("!") > -1) 
+invalid += "\n\nEmail address contains an invalid exclamation point (!) character.  Remove the character or correct the email address then submit again.";
+
+if ( (email.indexOf(",") > -1) || (email.indexOf(";") > -1) )
+invalid += "\n\nPlease only enter one email address in the box at a time.  Remove the extra addresses and submit again.";
+
+if (email.indexOf("?subject") > -1) 
+invalid += "\n\nPlease do not add '?subject=...' to your email address.  Scriptbot will send you the script with a pre-defined subject already.  Please remove the '?subject=...' from your email address and submit again.";
+}
+
+if (invalid == "")
+   {
+   var largeExpDate = new Date();
+   largeExpDate.setTime(largeExpDate.getTime() + (31 * 24 * 3600 * 1000));
+   SetCookie('email_address', email, largeExpDate);
+   if (formname == "scriptbot")
+      {
+      page = "http://javascript.internet.com/sent.html?" + email;
+      window.open(page, "AdWindow", "width=650,height=200");
+      }
+   return true;
+}
+else 
+   { 
+   alert("Oops, something is wrong...." + invalid);
+   return false;
+   }
+}
+
+function updateNewsletters() {
+with (document.forms["newslettersignup"]) {
+emailStr = email.value;
+var emailPat=/^(.+)@(.+)$/;
+var specialChars="\\(\\)<>@,;:\\\\\\\"\\.\\[\\]"; // remove   ( ) < > @ , ; : \ " . [ ]    */
+var validChars="\[^\\s" + specialChars + "\]";
+var quotedUser="(\"[^\"]*\")";
+var ipDomainPat=/^\[(\d{1,3})\.(\d{1,3})\.(\d{1,3})\.(\d{1,3})\]$/;
+var atom=validChars + '+';
+var word="(" + atom + "|" + quotedUser + ")";
+var userPat=new RegExp("^" + word + "(\\." + word + ")*$");
+var domainPat=new RegExp("^" + atom + "(\\." + atom +")*$");
+var matchArray=emailStr.match(emailPat);
+if (matchArray==null) {
+alert("Email address seems incorrect (check @ and .'s)");
+return false;;
+}
+var user=matchArray[1];
+var domain=matchArray[2];
+if (user.match(userPat)==null) {
+alert("The username doesn't seem to be valid.");
+return false;
+}
+var IPArray=domain.match(ipDomainPat);
+if (IPArray!=null) {
+for (var i=1;i<=4;i++) {
+if (IPArray[i]>255) {
+alert("Destination IP address is invalid!");
+return false;
+      }
+   }
+}
+var domainArray=domain.match(domainPat);
+if (domainArray==null) {
+alert("The domain name doesn't seem to be valid.");
+return false;
+}
+var atomPat=new RegExp(atom,"g");
+var domArr=domain.match(atomPat);
+var len=domArr.length;
+if (domArr[domArr.length-1].length<2 || domArr[domArr.length-1].length>3) {
+alert("The address must end in a three-letter domain, or two letter country.");
+return false;
+}
+if (len<2) {
+var errStr="This address is missing a hostname!";
+alert(errStr);
+return false;
+}
+List_Name.value = newsletter.options[newsletter.selectedIndex].value
+		+ nltype.options[nltype.selectedIndex].value;
+
+   var largeExpDate = new Date();
+   largeExpDate.setTime(largeExpDate.getTime() + (31 * 24 * 3600 * 1000));
+   SetCookie('email_address', emailStr, largeExpDate);
+
+return true;
+   }
+}
+// End -->
+</script>
+
+<p>
+<center>
+
+<table cellpadding=0 cellspacing=0 border=0 width="620">
+<tr>
+<td align=left>
+
+<form name="newslettersignup" action="http://e-newsletters.internet.com/cgi-bin/subscribe" method=POST target="_blank" onSubmit="return updateNewsletters();">
+<input type=hidden name=redirect_ok value="http://e-newsletters.internet.com/thankyou_new.html"> 
+<input type=hidden name=List_Name value="">
+<table cellpadding=0 cellspacing=0 border=1 bgcolor=#ffffcc>
+<tr><td align=center valign=middle>
+
+<table cellpadding=5 cellspacing=10 border=0 bgcolor=#ffffcc>
+<tr><td colspan=4 align=center valign=bottom>
+<font face="arial, helvetica" size="-1"><a href="http://e-newsletters.internet.com/javascriptsource.html">Sign up for the JavaScript Source's Newsletters!</a></font></td></tr>
+<tr>
+<td><font face="arial, helvetica" size="-1">
+<select name=newsletter size=2>
+<option value="javascriptsource-update-" selected>Daily
+<option value="javascriptsource-news-">Monthly
+</select>
+<select name=nltype size=2>
+<option value="text" selected>Text
+<option value="html">HTML
+</select>
+</font>
+</td>
+<td align=center valign=middle><center><font face="arial, helvetica" size="-1">
+<SCRIPT>
+<!-- Begin
+document.write('<input type=text size=14 name=email maxlength=50 ');
+document.write('value="'+emailcookie+'" onFocus="if(this.value==\'your email here\')this.value=\'\'\">');
+// End -->
+</SCRIPT>
+<br>
+<input type="submit" name="Submit" value="Subscribe">
+</font>
+</td></tr>
+</table>
+<font face="arial, helvetica" size="-1"><a href="http://www.internet.com/corporate/privacy/privacypolicy.html">internet.com Privacy Policy</a></font>
+</td></tr></table>
+</form>
+
+</TD>
+
+<td align=right>
+
+<form name="scriptbot" action="/cgi-bin/scriptbot.cgi" method="POST" onSubmit="return chk(document.scriptbot.email.value, 'scriptbot')">
+
+<input type=hidden name=filename value='copy-fields.html'>
+
+<table border=1 cellspacing=0 cellpadding=20><tr bgcolor=#ebebeb>
+<td align=center><tt>We'll send this script to you!<p></tt>
+<SCRIPT>
+<!-- Begin
+document.write('<input type=text size=25 name=email value="'+emailcookie+'" onFocus="if(this.value==\'your email here\')this.value=\'\'\">');
+// End -->
+</SCRIPT>
+
+<input type=submit value="Send it!">
+<p><font size="-2">(just click "Send it!" once!)</font></td></tr>
+</table></form>
+</td>
+</tr>
+<tr>
+<td>
+</td>
+<td align=right><font face="arial" size="-2"><div align=right><span class="address">
+[ <A HREF="http://javascript.internet.com/feedback.html" ONMOUSEOVER="window.status='Comments, questions, suggestions, or gripes, we want to hear from you!'; return true" ONMOUSEOUT="window.status=''; return true">Contact Us!</A> ]<BR>
+
+[ <A HREF="http://forums.internet.com/WebX?14@%5e3027@.ee6b313" ONMOUSEOVER="window.status='Visit our JavaScript Forum for assistance!'; return true" ONMOUSEOUT="window.status=' '; return true">JavaScript Forum</A> ]<br>
+
+[ <A HREF="http://javascript.internet.com/contribute/" ONMOUSEOVER="window.status='Submit your script creation to us and it could be featured on our site!'; return true" ONMOUSEOUT="window.status=''; return true">Submit Your Script!</A> ]<p>
+
+The JavaScript Source<p>
+Copyright 1999-2001 internet.com Corp. All Rights Reserved.<p>
+
+</span></div></font></td>
+</tr></table>
+
+<CENTER>
+<FONT SIZE="-1">
+Copyright 2001 internet.com Corp. All Rights Reserved.<BR>
+<A HREF="http://www.internet.com/corporate/legal.html">Legal Notices</A>, &nbsp;<A HREF="http://www.internet.com/corporate/reprints.html#Licensing">Licensing</A>, <A HREF="http://www.internet.com/corporate/reprints.html#Reprints">Reprints</A>, &amp; <A HREF="http://www.internet.com/corporate/reprints.html#Permissions">Permissions</A>, &nbsp;<A HREF="http://www.internet.com/corporate/privacy/privacypolicy.html">Privacy Policy</A>.
+<BR>
+<A HREF="http://www.internet.com"><IMG SRC="/img/URL.gif" ALT="http://www.internet.com/" WIDTH="161" HEIGHT="18" BORDER="0"></A></FONT>
+</CENTER>
+
+
+</center>
+</body></html>

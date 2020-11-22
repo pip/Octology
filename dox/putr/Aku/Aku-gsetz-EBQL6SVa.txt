@@ -1,0 +1,27 @@
+# Wondering about Aku's Ubuntu 14.10 Gnome Unity menu && font settings differing from Ryu && Ken, started researching && found:
+#   HTTP://AskUbuntu.Com/questions/471425/scale-title-bars-and-menu-in-ubuntu-14-04-with-gnome
+# `gsettings list-recursively>Aku-gsetz_lsrecurs-chdispscal-EBQL6KYB.log`, then in SystemSettings > Display changed scale from 1 to 1.12 then
+# `gsettings list-recursively>Aku-gsetz_lsrecurs-chdispscal-EBQL6NM1-1to1.12.log`, then scaled back && restored all term dimensions,
+# `diff Aku-gsetz_lsrecurs-chdispscal-EBQL6KYB.log Aku-gsetz_lsrecurs-chdispscal-EBQL6NM1-1to1.12.log|g '[>|<]'>>Aku-gsetz-EBQL6SVa.txt` apNded&&rE4m@d here:
+< org.gnome.desktop.interface text-scaling-factor 1.5
+> org.gnome.desktop.interface text-scaling-factor 1.6875
+< org.gnome.desktop.interface       cursor-size   24
+> org.gnome.desktop.interface       cursor-size   27
+<   com.ubuntu.user-interface        scale-factor {'DVI-1': 8, 'DVI-0': 8}
+>   com.ubuntu.user-interface        scale-factor {'DVI-1': 8, 'DVI-0': 9}
+# So apparently Aku already had a text scale 1.5 which I probably just have to learn to use gsettings or dconf-editor to set for the others && reboot. mABjust:
+gsettings set org.gnome.desktop.interface text-scaling-factor 1.5
+#   && if UI needs upd8ing too:
+gsettings set   com.ubuntu.user-interface        scale-factor "{'DVI-1': 8, 'DVI-0': 8}"
+# org.gnome.desktop.interface      scaling-factor uint32 1
+#   Above is also relevant as integers instead of changing both text-scaling-factor && cursor-size. The UI scale changes either way.
+# With a big scale, might need FireFox about:config devPixelsPerPx to change too.
+# Apparently the unity-tweak-tool allows changing overall font scaling (&& maybe the title bars && menu too?).
+# Also HTTP://AskUbuntu.Com/questions/342734/increase-menu-bar-size from D97 goes over editing Unity source to change sizes for 12.04 && Unity 5.20.0;
+# On Ryu after changing Display scale from   1 to 1.25:
+  org.gnome.desktop.interface text-scaling-factor 1.25
+  org.gnome.desktop.interface       cursor-size   30
+    com.ubuntu.user-interface        scale-factor {'DVI-I-1': 8, 'DVI-1': 10}
+#   && Ken had the same except for:               {'DVI-I-1': 10}
+#   but couldn't set over ssh because dconf needs D-Bus && an X11 $DISPLAY so booted && logged into Unity, changed Display scale back to 1 (1.0, 24, 8) then
+#   just upd8d text scale to 1.5 so both Ryu && Ken now match Aku's menu && font dimensions;

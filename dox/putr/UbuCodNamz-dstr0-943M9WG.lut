@@ -1,0 +1,34 @@
+Canonical's Ubuntu GNU/Linux Distribution Release Code-Namez.LookUpTable mainly from HTTPS://Wiki.Ubuntu.Com/Releases
+ Version    CodeName        TestingName  ReleaseDate  SupportedUntil: Desktops (Servers)
+_4.10_____  Warty___Warthog___  Sounder  2004-10-20   2006-04-30
+_5.04_____  Hoary___Hedgehog__  Array    2005-04-08   2006-10-31
+_5.10_____  Breezy__Badger____  Colony   2005-10-13   2007-04-13
+_6.06__LTS  Dapper__Drake_____  Flight   2006-06-01   2009-06                  (2011-06)
+_6.10_____  Edgy____Eft_______  Knot     2006-10-26   2008-04-25
+_7.04_____  Feisty__Fawn______  Herd     2007-04-19   2008-10-19
+_7.10_____  Gutsy___Gibbon____  Tribe    2007-10-18   2009-04-18
+_8.04__LTS  Hardy___Heron_____  Alpha    2008-04-24   2011-04                  (2013-04)
+_8.10_____  IntrepidIbex______  Alpha    2008-10-30   2010-04
+_9.04_____  Jaunty__Jackalope_  Alpha    2009-04-23   2010-10
+_9.10_____  Karmic__Koala_____  Alpha    2009-10-29   2011-04
+10.04.4LTS  Lucid___Lynx______           2012-02-16   2013-04                  (2015-04)
+10.10_____  MaverickMeerkat___           2010-10-10   2012-04-10
+11.04_____  Natty___Narwhal___           2011-04-28   2012-10-28
+11.10_____  Oneiric_Ocelot____           2011-10-13   2013-04
+12.04.1LTS  Precise_Pangolin__           2012-08-24   2017-04
+12.10_____  Quantal_Quetzal___           2012-10-18   2014-04
+13.04_____  Raring__Ringtail__           2013-04      2014-10
+13.10_____  Saucy___Salamander           2013-10-17   2014-07
+14.04__LTS  Trusty__Tahr______           2014-04-17                            # Puppy QuirkyTahr (&&Wary?) based on this release
+14.10_____  Utopic__Unicorn___           2014-10-??
+15.04_____  Vivid___Vervet____           2015-04-??
+15.10_____  Wily____Werewolf__           2015-10-??
+16.04__LTS  Xenial__Xerus_____           2016-04-21?
+16.10_____  Yakkety_Yak_______
+17.04_____  Zesty___Zapus_____
+17.10_____  Artful__Aardvark__  # leaving Unity 7 && Mir old defaults, returning to GNOME except 3 this time, may need to try adapting && migr8ing over?
+18.04.1LTS  Bionic__Beaver____
+18.10_____  Cosmic__Cuttlefish  # probably starting Oni fresh sl8 here, trying many sys partitions for maybe l8r migr8ing to SSD, try bigr /boot stilLVM Gnom3?
+19.04_____  Disco___Dingo_____
+19.10_____  Eoan____Ermine____
+20.04__LTS  Focal___Fossa_____

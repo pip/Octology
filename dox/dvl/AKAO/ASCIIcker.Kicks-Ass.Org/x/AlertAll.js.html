@@ -1,0 +1,119 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>Form.Validator.Report.AlertAll - show an alert w/ all validation failures</title>
+<link rev="made" href="mailto:Gentoo@lbox.org" />
+</head>
+
+<body style="background-color: white">
+
+<p><a name="__index__"></a></p>
+<!-- INDEX BEGIN -->
+
+<ul>
+
+	<li><a href="#name">NAME</a></li>
+	<li><a href="#synopsis">SYNOPSIS</a></li>
+	<li><a href="#description">DESCRIPTION</a></li>
+	<li><a href="#properties">PROPERTIES</a></li>
+	<ul>
+
+		<li><a href="#fv">fv</a></li>
+		<li><a href="#messages">messages</a></li>
+		<li><a href="#header">header</a></li>
+		<li><a href="#footer">footer</a></li>
+	</ul>
+
+	<li><a href="#methods">METHODS</a></li>
+	<ul>
+
+		<li><a href="#start">start</a></li>
+		<li><a href="#run">run</a></li>
+		<li><a href="#finish">finish</a></li>
+	</ul>
+
+	<li><a href="#author">AUTHOR</a></li>
+</ul>
+<!-- INDEX END -->
+
+<hr />
+<p>
+</p>
+<h1><a name="name">NAME</a></h1>
+<p>Form.Validator.Report.AlertAll - show an alert w/ all validation failures</p>
+<p>
+</p>
+<hr />
+<h1><a name="synopsis">SYNOPSIS</a></h1>
+<p>Setting up your <em>Form.Validator</em> to use AlertAll:</p>
+<pre>
+  var jsan = new JSAN('js');
+  jsan.use('Form.Validator');
+  jsan.use('Form.Validator.Report.AlertAll');</pre>
+<pre>
+  fv = new Form.Validator(document.report);
+  fv.reporter('AlertAll');</pre>
+<p>Another way to say the same thing:</p>
+<pre>
+  fv = new Form.Validator(document.report);
+  fv.reporter(new Form.Validator.Report.AlertAll());</pre>
+<p>Or don't say anything at all, because AlertAll happens to be the default:</p>
+<pre>
+  fv = new Form.Validator(document.report);
+  // AlertAll is the default reporting mechanism</pre>
+<p>
+</p>
+<hr />
+<h1><a name="description">DESCRIPTION</a></h1>
+<p>This report object is a port of the original <code>fv.validateAndAlert()</code>
+method which would run validation tests, and pop up an alert that had
+the onFailure messages for each contraint that failed.</p>
+<p>
+</p>
+<hr />
+<h1><a name="properties">PROPERTIES</a></h1>
+<p>
+</p>
+<h2><a name="fv">fv</a></h2>
+<p>This is the <em>Form.Validator</em> object that's using this report.</p>
+<p>
+</p>
+<h2><a name="messages">messages</a></h2>
+<p>This is an <em>Array</em> that contains a list of onFailure messages for
+constraints that failed during the call to <code>fv.validate()</code>.</p>
+<p>
+</p>
+<h2><a name="header">header</a></h2>
+<p>Text to be placed at the top of the alert message.</p>
+<p>
+</p>
+<h2><a name="footer">footer</a></h2>
+<p>Text to be placed at the bottom of the alert message.</p>
+<p>
+</p>
+<hr />
+<h1><a name="methods">METHODS</a></h1>
+<p>
+</p>
+<h2><a name="start">start</a></h2>
+<p>This method will clear the messages array in preparation for a validation
+sweep.</p>
+<p>
+</p>
+<h2><a name="run">run</a></h2>
+<p>If a constraint fails, <code>this.messages</code> will have the onFailure message for
+that constraint pushed on to the end of it.</p>
+<p>
+</p>
+<h2><a name="finish">finish</a></h2>
+<p>If <code>this.messages</code> has anything in it, it'll be joined into a ``\n'' separated
+string and displayed in an alert pop-up.</p>
+<p>
+</p>
+<hr />
+<h1><a name="author">AUTHOR</a></h1>
+<p>John Beppu &lt;<a href="mailto:beppu@cpan.org">beppu@cpan.org</a>&gt;</p>
+
+</body>
+
+</html>

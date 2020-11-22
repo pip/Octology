@@ -1,0 +1,95 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+<meta name="robots" content="index,nofollow">
+
+
+
+<title>UserPreferences - csk's bailiwiki</title>
+<link rel="stylesheet" type="text/css" charset="iso-8859-1" media="all" href="/~csk/wiki/classic/css/common.css">
+<link rel="stylesheet" type="text/css" charset="iso-8859-1" media="screen" href="/~csk/wiki/classic/css/screen.css">
+<link rel="stylesheet" type="text/css" charset="iso-8859-1" media="print" href="/~csk/wiki/classic/css/print.css">
+
+
+<link rel="Start" href="/~csk/wiki/moin.cgi/FrontPage">
+<link rel="Alternate" title="Wiki Markup" href="/~csk/wiki/moin.cgi/UserPreferences?action=raw">
+<link rel="Alternate" media="print" title="Print View" href="/~csk/wiki/moin.cgi/UserPreferences?action=print">
+<link rel="Search" href="/~csk/wiki/moin.cgi/FindPage">
+<link rel="Index" href="/~csk/wiki/moin.cgi/TitleIndex">
+<link rel="Glossary" href="/~csk/wiki/moin.cgi/WordIndex">
+<link rel="Help" href="/~csk/wiki/moin.cgi/HelpOnFormatting">
+</head>
+
+<body lang="en" dir="ltr">
+
+
+<div id="logo"><a href="/~csk/wiki/moin.cgi/FrontPage"><img src="/~csk/wiki/classic/img/moinmoin.png" alt="csk's bailiwiki"></a></div>
+<div id="username"><a href="/~csk/wiki/moin.cgi/UserPreferences">UserPreferences</a></div>
+<div id="title"><h1><a title="Click here to do a full-text search for this title" href="/~csk/wiki/moin.cgi/UserPreferences?action=fullsearch&amp;value=UserPreferences&amp;literal=1&amp;case=1&amp;context=40">UserPreferences</a></h1></div>
+<ul id="iconbar">
+<li><a title="Edit" href="/~csk/wiki/moin.cgi/UserPreferences?action=edit"><img src="/~csk/wiki/classic/img/moin-edit.png" alt="Edit" height="12" width="12"></a></li>
+<li><a title="View" href="/~csk/wiki/moin.cgi/UserPreferences"><img src="/~csk/wiki/classic/img/moin-show.png" alt="View" height="13" width="12"></a></li>
+<li><a title="Diffs" href="/~csk/wiki/moin.cgi/UserPreferences?action=diff"><img src="/~csk/wiki/classic/img/moin-diff.png" alt="Diffs" height="11" width="15"></a></li>
+<li><a title="Info" href="/~csk/wiki/moin.cgi/UserPreferences?action=info"><img src="/~csk/wiki/classic/img/moin-info.png" alt="Info" height="11" width="12"></a></li>
+<li><a title="Subscribe" href="/~csk/wiki/moin.cgi/UserPreferences?action=subscribe"><img src="/~csk/wiki/classic/img/moin-subscribe.png" alt="Subscribe" height="10" width="14"></a></li>
+<li><a title="Raw" href="/~csk/wiki/moin.cgi/UserPreferences?action=raw"><img src="/~csk/wiki/classic/img/moin-raw.png" alt="Raw" height="13" width="12"></a></li>
+<li><a title="Print" href="/~csk/wiki/moin.cgi/UserPreferences?action=print"><img src="/~csk/wiki/classic/img/moin-print.png" alt="Print" height="14" width="16"></a></li>
+</ul>
+
+<ul id="navibar">
+<li><a href="/~csk/wiki/moin.cgi/FrontPage">FrontPage</a></li>
+<li><a href="/~csk/wiki/moin.cgi/OldFrontPage">OldFrontPage</a></li>
+<li><a href="/~csk/wiki/moin.cgi/RecentChanges">RecentChanges</a></li>
+<li><a href="/~csk/wiki/moin.cgi/FindPage">FindPage</a></li>
+<li><a href="/~csk/wiki/moin.cgi/HelpContents">HelpContents</a></li>
+</ul>
+<hr id="pagetrail">
+
+
+
+<div id="content" lang="en" dir="ltr">
+<p>
+<form action="/~csk/wiki/moin.cgi/UserPreferences" method="POST"><div lang="en" dir="ltr"><input type="hidden" name="action" value="userform"><table border="0"><tr><td><b>Name</b>   </td><td><input type="text" name="username" value="" size="32"> (Use FirstnameLastname)</td></tr><tr><td><b>Password</b>   </td><td><input type="password" name="password" size="32"></td></tr><tr><td><b></b>   </td><td><input type="submit" name="login" value="Login"> </td></tr></table></div></form> 
+</p>
+<h2 id="head-c0e467cafc91295ae937f1b14bb51b69a2aa9f04">First time</h2>
+Please fill out <strong>Name</strong>, <strong>Password</strong>, <strong>Password repeat</strong> and <strong>Email</strong>. <p>
+<img src="/~csk/wiki/classic/img/idea.png" alt="(!)" height="15" width="15"> It is best to choose a <a href="/~csk/wiki/moin.cgi/WikiName">WikiName</a> (like FirstnameLastname) as username to get your changes and signatures link back to your WikiHomepage. Your email is needed for you to be able to get notifications on page changes and to recover lost login data. 
+</p>
+<p>
+If you click on <strong>Create Profile</strong>, a user profile will be created for you and you will be logged in immediately. 
+</p>
+<h2 id="head-783f02798d5892e34e2b6c2aa451f3417f080785">Logging in</h2>
+If want to re-login, just use <strong>Name</strong> and <strong>Password</strong> and click on <strong>Login</strong>. If you forgot your password, provide your email address and click on <strong>Mail me my account data</strong>. <h2 id="head-75c54f8bf89cb486ce52a1c360253a5078ea96a3">Changing settings</h2>
+<strong>Save</strong> updates your profile (stored on the wiki server). <h2 id="head-cf65372885c4d67a3d0d7d403a351e017e2bf06f">Logging out</h2>
+<strong>Logout</strong> clears the cookie created at login. <h2 id="head-59bf4bb240fdff6c004849e0d6dacc9aaa5524f2">The Cookie</h2>
+<img src="/~csk/wiki/classic/img/alert.png" alt="/!\" height="15" width="15"> The "ID", shown in the response page, gets saved as a cookie in your browser for the system to temporarily recognize you. It will expire next midnight - except if you choose <strong>Remember login information forever</strong> (after being logged in), then the cookie won't expire. </div>
+
+
+
+<div id="footer">
+<div id="credits">
+<a href="http://moinmoin.wikiwikiweb.de/">MoinMoin Powered</a><br>
+    <a href="http://www.python.org/">
+        <img src="/~csk/wiki/classic/img/PythonPowered.png" width="55" height="22" alt="PythonPowered">
+    </a>
+</div>
+
+
+<a href="/~csk/wiki/moin.cgi/UserPreferences?action=refresh&amp;arena=Page.py&amp;key=UserPreferences.text_html">RefreshCache</a> for this page (cached 2009-08-15 19:44:27)<br>
+<p>Immutable page (last edited 2004-07-02 18:02:00 by <span title="hudsucker">JieXu</span>)</p>
+
+<form method="POST" action="/~csk/wiki/moin.cgi/UserPreferences">
+<p>
+<input type="hidden" name="action" value="inlinesearch">
+<input type="hidden" name="context" value="40">
+<a href="/~csk/wiki/moin.cgi/FindPage?value=UserPreferences">FindPage</a> or search titles <input type="text" name="text_title" value="" size="15" maxlength="50"><input type="image" src="/~csk/wiki/classic/img/moin-search.png" name="button_title" alt="[?]">, full text <input type="text" name="text_full" value="" size="15" maxlength="50"><input type="image" src="/~csk/wiki/classic/img/moin-search.png" name="button_full" alt="[?]"> or <a href="/~csk/wiki/moin.cgi/SiteNavigation">SiteNavigation</a>
+</p>
+</form>
+
+<p>Or try one of these actions: <a href="/~csk/wiki/moin.cgi/UserPreferences?action=AttachFile">AttachFile</a>, <a href="/~csk/wiki/moin.cgi/UserPreferences?action=LikePages">LikePages</a>, <a href="/~csk/wiki/moin.cgi/UserPreferences?action=LocalSiteMap">LocalSiteMap</a>, <a href="/~csk/wiki/moin.cgi/UserPreferences?action=SpellCheck">SpellCheck</a></p>
+
+</div>
+
+</body>
+</html>
+

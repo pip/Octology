@@ -1,0 +1,145 @@
+[profiles:]
+list=['b1dcc9dd-5262-4d8d-a863-c897e6d979b9', '14880507-33c4-4dba-aad2-3150676e3a7f', '74fc9390-dfea-4a7a-b2b6-9c78f1445c42', '35f0c566-3662-460f-bd8e-20d3c4252a98', 'aab108a4-da33-4bfd-bc63-681830e51030', 'b07e7805-134c-40ed-a474-0e18fd07c672', 'c7c3d39e-a7d4-45b5-b7d3-76647071d7c8', '16676fc5-3a30-42cc-88e1-e7e5c953f78a']
+default='74fc9390-dfea-4a7a-b2b6-9c78f1445c42'
+
+[profiles:/:aab108a4-da33-4bfd-bc63-681830e51030]
+bold-color='rgb(173,102,102)'
+bold-color-same-as-fg=true
+use-transparent-background=true
+background-color='rgb(3,9,4)'
+cursor-colors-set=false
+visible-name='PipsOthrGnomTerm-TestFont-CCIHPS8'
+default-size-columns=160
+use-theme-colors=false
+font='Noto Mono 12'
+default-size-rows=50
+use-system-font=false
+cell-width-scale=1.0
+background-transparency-percent=6
+palette=['rgb(46,52,54)', 'rgb(89,19,19)', 'rgb(64,105,25)', 'rgb(226,151,63)', 'rgb(14,18,22)', 'rgb(92,28,103)', 'rgb(6,152,154)', 'rgb(211,215,207)', 'rgb(85,87,83)', 'rgb(239,41,41)', 'rgb(138,226,52)', 'rgb(252,233,79)', 'rgb(114,159,207)', 'rgb(246,88,228)', 'rgb(52,226,226)', 'rgb(238,238,236)']
+scrollback-lines=1009000
+foreground-color='rgb(151,184,119)'
+cell-height-scale=1.0
+bold-is-bright=true
+highlight-colors-set=false
+use-theme-transparency=false
+
+[profiles:/:16676fc5-3a30-42cc-88e1-e7e5c953f78a]
+use-custom-command=true
+bold-color='rgb(173,102,102)'
+bold-color-same-as-fg=true
+scrollbar-policy='never'
+use-transparent-background=true
+background-color='rgb(4,5,6)'
+cursor-colors-set=false
+visible-name='d8fd'
+default-size-columns=34
+use-theme-colors=false
+font='Monospace 48'
+custom-command='d8ok -fd'
+default-size-rows=4
+use-system-font=false
+cell-width-scale=1.0
+background-transparency-percent=88
+palette=['rgb(46,52,54)', 'rgb(89,19,19)', 'rgb(64,105,25)', 'rgb(226,151,63)', 'rgb(14,18,22)', 'rgb(92,28,103)', 'rgb(6,152,154)', 'rgb(211,215,207)', 'rgb(85,87,83)', 'rgb(239,41,41)', 'rgb(138,226,52)', 'rgb(252,233,79)', 'rgb(114,159,207)', 'rgb(246,88,228)', 'rgb(52,226,226)', 'rgb(238,238,236)']
+scrollback-lines=888888
+foreground-color='rgb(123,163,83)'
+cell-height-scale=1.0
+bold-is-bright=true
+highlight-colors-set=false
+use-theme-transparency=false
+
+[profiles:/:74fc9390-dfea-4a7a-b2b6-9c78f1445c42]
+bold-is-bright=true
+visible-name='Default'
+
+[profiles:/:c7c3d39e-a7d4-45b5-b7d3-76647071d7c8]
+use-custom-command=true
+bold-color='rgb(173,102,102)'
+bold-color-same-as-fg=true
+scrollbar-policy='never'
+use-transparent-background=true
+background-color='rgb(33,48,63)'
+cursor-colors-set=false
+visible-name='d8ok'
+default-size-columns=34
+use-theme-colors=false
+font='Monospace 48'
+custom-command='d8ok'
+default-size-rows=4
+use-system-font=false
+cell-width-scale=1.0
+background-transparency-percent=94
+palette=['rgb(46,52,54)', 'rgb(89,19,19)', 'rgb(64,105,25)', 'rgb(226,151,63)', 'rgb(14,18,22)', 'rgb(92,28,103)', 'rgb(6,152,154)', 'rgb(211,215,207)', 'rgb(85,87,83)', 'rgb(239,41,41)', 'rgb(138,226,52)', 'rgb(252,233,79)', 'rgb(114,159,207)', 'rgb(246,88,228)', 'rgb(52,226,226)', 'rgb(238,238,236)']
+scrollback-lines=888888
+foreground-color='rgb(88,122,53)'
+cell-height-scale=1.0
+bold-is-bright=true
+highlight-colors-set=false
+use-theme-transparency=false
+
+[profiles:/:b07e7805-134c-40ed-a474-0e18fd07c672]
+bold-color='rgb(173,102,102)'
+bold-color-same-as-fg=true
+use-transparent-background=true
+background-color='rgb(5,10,13)'
+cursor-colors-set=false
+visible-name='PipsTestGnomTerm-DiffFont-D1NBxCf'
+default-size-columns=160
+use-theme-colors=false
+font='Noto Mono 12'
+default-size-rows=50
+use-system-font=false
+cell-width-scale=1.0
+background-transparency-percent=3
+palette=['rgb(46,52,54)', 'rgb(89,19,19)', 'rgb(64,105,25)', 'rgb(226,151,63)', 'rgb(14,18,22)', 'rgb(92,28,103)', 'rgb(6,152,154)', 'rgb(211,215,207)', 'rgb(85,87,83)', 'rgb(239,41,41)', 'rgb(138,226,52)', 'rgb(252,233,79)', 'rgb(114,159,207)', 'rgb(246,88,228)', 'rgb(52,226,226)', 'rgb(238,238,236)']
+scrollback-lines=1009000
+foreground-color='rgb(158,187,129)'
+cell-height-scale=1.0
+bold-is-bright=true
+highlight-colors-set=false
+use-theme-transparency=false
+
+[profiles:/:35f0c566-3662-460f-bd8e-20d3c4252a98]
+bold-color='rgb(173,102,102)'
+bold-color-same-as-fg=true
+use-transparent-background=true
+background-color='rgb(4,5,6)'
+cursor-colors-set=false
+visible-name='PipsCkm8GnomTerm-NiceFont-DC9LDaPt'
+default-size-columns=160
+use-theme-colors=false
+font='Monospace 12'
+default-size-rows=50
+use-system-font=false
+cell-width-scale=1.0
+background-transparency-percent=3
+palette=['rgb(46,52,54)', 'rgb(89,19,19)', 'rgb(64,105,25)', 'rgb(226,151,63)', 'rgb(14,18,22)', 'rgb(92,28,103)', 'rgb(6,152,154)', 'rgb(211,215,207)', 'rgb(85,87,83)', 'rgb(239,41,41)', 'rgb(138,226,52)', 'rgb(252,233,79)', 'rgb(114,159,207)', 'rgb(246,88,228)', 'rgb(52,226,226)', 'rgb(238,238,236)']
+scrollback-lines=1009000
+foreground-color='rgb(158,187,129)'
+cell-height-scale=1.0
+bold-is-bright=true
+highlight-colors-set=false
+use-theme-transparency=false
+
+[profiles:/:14880507-33c4-4dba-aad2-3150676e3a7f]
+bold-color='rgb(173,102,102)'
+bold-color-same-as-fg=true
+use-transparent-background=true
+background-color='rgb(5,10,13)'
+cursor-colors-set=false
+visible-name='Oni-160x50-J34LDWit'
+default-size-columns=160
+use-theme-colors=false
+font='Monospace 12'
+default-size-rows=50
+use-system-font=false
+cell-width-scale=1.0
+background-transparency-percent=3
+palette=['rgb(46,52,54)', 'rgb(89,19,19)', 'rgb(64,105,25)', 'rgb(226,151,63)', 'rgb(14,18,22)', 'rgb(92,28,103)', 'rgb(6,152,154)', 'rgb(211,215,207)', 'rgb(85,87,83)', 'rgb(239,41,41)', 'rgb(138,226,52)', 'rgb(252,233,79)', 'rgb(114,159,207)', 'rgb(246,88,228)', 'rgb(52,226,226)', 'rgb(238,238,236)']
+scrollback-lines=1009000
+foreground-color='rgb(158,187,129)'
+cell-height-scale=1.0
+bold-is-bright=true
+highlight-colors-set=false
+use-theme-transparency=false

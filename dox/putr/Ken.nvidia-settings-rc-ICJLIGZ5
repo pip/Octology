@@ -1,0 +1,52 @@
+#
+# /home/pip/.nvidia-settings-rc
+#
+# Configuration file for nvidia-settings - the NVIDIA X Server Settings utility
+# Generated on Wed Dec 19 18:16:34 2018
+#
+
+# ConfigProperties:
+
+RcFileLocale = C
+ToolTips = Yes
+DisplayStatusBar = Yes
+SliderTextEntries = Yes
+IncludeDisplayNameInConfigFile = Yes
+ShowQuitDialog = Yes
+Timer = PowerMizer_Monitor_(GPU_0),Yes,1000
+Timer = Thermal_Monitor_(GPU_0),Yes,1000
+Timer = Memory_Used_(GPU_0),Yes,3000
+
+# Attributes:
+
+Ken:1.0/CursorShadow=0
+Ken:1.0/CursorShadowAlpha=64
+Ken:1.0/CursorShadowRed=0
+Ken:1.0/CursorShadowGreen=0
+Ken:1.0/CursorShadowBlue=0
+Ken:1.0/CursorShadowXOffset=4
+Ken:1.0/CursorShadowYOffset=2
+Ken:1.0/SyncToVBlank=1
+Ken:1.0/LogAniso=1
+Ken:1.0/FSAA=0
+Ken:1.0/TextureSharpen=1
+Ken:1.0/TextureClamping=1
+Ken:1.0/FXAA=0
+Ken:1.0/AllowFlipping=1
+Ken:1.0/FSAAAppControlled=1
+Ken:1.0/LogAnisoAppControlled=0
+Ken:1.0/OpenGLImageSettings=1
+Ken:1.0/DigitalVibrance[DFP-0]=0
+Ken:1.0/ImageSharpening[DFP-0]=0
+Ken:1.0/ColorSpace[DFP-0]=0
+Ken:1.0/ColorRange[DFP-0]=0
+Ken:1.0/XVideoSyncToDisplay=65536
+Ken:1[dpy:3]/RedBrightness=0.000000
+Ken:1[dpy:3]/GreenBrightness=0.000000
+Ken:1[dpy:3]/BlueBrightness=0.000000
+Ken:1[dpy:3]/RedContrast=0.000000
+Ken:1[dpy:3]/GreenContrast=0.000000
+Ken:1[dpy:3]/BlueContrast=0.000000
+Ken:1[dpy:3]/RedGamma=1.000000
+Ken:1[dpy:3]/GreenGamma=1.000000
+Ken:1[dpy:3]/BlueGamma=1.000000

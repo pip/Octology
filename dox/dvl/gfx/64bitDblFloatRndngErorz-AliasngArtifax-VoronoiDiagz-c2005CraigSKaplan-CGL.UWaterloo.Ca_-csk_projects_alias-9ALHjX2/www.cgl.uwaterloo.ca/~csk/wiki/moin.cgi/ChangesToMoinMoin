@@ -1,0 +1,102 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+<meta name="robots" content="index,nofollow">
+
+
+
+<title>ChangesToMoinMoin - csk's bailiwiki</title>
+<link rel="stylesheet" type="text/css" charset="iso-8859-1" media="all" href="/~csk/wiki/classic/css/common.css">
+<link rel="stylesheet" type="text/css" charset="iso-8859-1" media="screen" href="/~csk/wiki/classic/css/screen.css">
+<link rel="stylesheet" type="text/css" charset="iso-8859-1" media="print" href="/~csk/wiki/classic/css/print.css">
+
+
+<link rel="Start" href="/~csk/wiki/moin.cgi/FrontPage">
+<link rel="Alternate" title="Wiki Markup" href="/~csk/wiki/moin.cgi/ChangesToMoinMoin?action=raw">
+<link rel="Alternate" media="print" title="Print View" href="/~csk/wiki/moin.cgi/ChangesToMoinMoin?action=print">
+<link rel="Search" href="/~csk/wiki/moin.cgi/FindPage">
+<link rel="Index" href="/~csk/wiki/moin.cgi/TitleIndex">
+<link rel="Glossary" href="/~csk/wiki/moin.cgi/WordIndex">
+<link rel="Help" href="/~csk/wiki/moin.cgi/HelpOnFormatting">
+</head>
+
+<body lang="en" dir="ltr">
+
+
+<div id="logo"><a href="/~csk/wiki/moin.cgi/FrontPage"><img src="/~csk/wiki/classic/img/moinmoin.png" alt="csk's bailiwiki"></a></div>
+<div id="username"><a href="/~csk/wiki/moin.cgi/UserPreferences">UserPreferences</a></div>
+<div id="title"><h1><a title="Click here to do a full-text search for this title" href="/~csk/wiki/moin.cgi/ChangesToMoinMoin?action=fullsearch&amp;value=ChangesToMoinMoin&amp;literal=1&amp;case=1&amp;context=40">ChangesToMoinMoin</a></h1></div>
+<ul id="iconbar">
+<li><a title="Edit" href="/~csk/wiki/moin.cgi/ChangesToMoinMoin?action=edit"><img src="/~csk/wiki/classic/img/moin-edit.png" alt="Edit" height="12" width="12"></a></li>
+<li><a title="View" href="/~csk/wiki/moin.cgi/ChangesToMoinMoin"><img src="/~csk/wiki/classic/img/moin-show.png" alt="View" height="13" width="12"></a></li>
+<li><a title="Diffs" href="/~csk/wiki/moin.cgi/ChangesToMoinMoin?action=diff"><img src="/~csk/wiki/classic/img/moin-diff.png" alt="Diffs" height="11" width="15"></a></li>
+<li><a title="Info" href="/~csk/wiki/moin.cgi/ChangesToMoinMoin?action=info"><img src="/~csk/wiki/classic/img/moin-info.png" alt="Info" height="11" width="12"></a></li>
+<li><a title="Subscribe" href="/~csk/wiki/moin.cgi/ChangesToMoinMoin?action=subscribe"><img src="/~csk/wiki/classic/img/moin-subscribe.png" alt="Subscribe" height="10" width="14"></a></li>
+<li><a title="Raw" href="/~csk/wiki/moin.cgi/ChangesToMoinMoin?action=raw"><img src="/~csk/wiki/classic/img/moin-raw.png" alt="Raw" height="13" width="12"></a></li>
+<li><a title="Print" href="/~csk/wiki/moin.cgi/ChangesToMoinMoin?action=print"><img src="/~csk/wiki/classic/img/moin-print.png" alt="Print" height="14" width="16"></a></li>
+</ul>
+
+<ul id="navibar">
+<li><a href="/~csk/wiki/moin.cgi/FrontPage">FrontPage</a></li>
+<li><a href="/~csk/wiki/moin.cgi/OldFrontPage">OldFrontPage</a></li>
+<li><a href="/~csk/wiki/moin.cgi/RecentChanges">RecentChanges</a></li>
+<li><a href="/~csk/wiki/moin.cgi/FindPage">FindPage</a></li>
+<li><a href="/~csk/wiki/moin.cgi/HelpContents">HelpContents</a></li>
+</ul>
+<hr id="pagetrail">
+
+
+
+<div id="content" lang="en" dir="ltr">
+<p>
+Here are the changes I made to the <a href="/~csk/wiki/moin.cgi/MoinMoin">MoinMoin</a> distribution to support my own needs: 
+</p>
+
+    <ul>
+
+    <li>
+<p>
+ Changed formatter/text_html.py and parser/wiki.py to differentiate between 'inline' and 'attachment' in the case of images.  Images are no longer implicitly inlined if indicated using 'attachment'. 
+</p>
+</li>
+    <li>
+<p>
+ Changed userform.py so that anybody can log in, but only I can create new accounts.  This was somewhat tricky -- everyone needs to be able to read the <a href="/~csk/wiki/moin.cgi/UserPreferences">UserPreferences</a> page so that they can log in, but only I should have access to the 'Create' button.  Anyway, this change should now allow me to make the wiki available to anyone while controlling who has an account and, therefore, who can browse the private section.  Note that the ACLs can be set up so that only trusted people can read the private section, but why would I want to let everyone and their dog create accounts? (It seems like the real solution is to separate 'logging in' from 'creating an account'.  But this was a lot of work.  I opted for the simpler method of 'if username == Craig'...) 
+</p>
+<p>
+ Actually, I'll probably have to separate the two eventually.  The method above doesn't actually allow you to create new accounts.  Once you're logged in, you don't get a "create" button, and the "save" button overwrites existing account information (as I discovered when creating an account for Jie).  The system assumes that if you're logged in, you won't need to create an account for someone else since they could just as easily do it themselves.  Yuck. 
+</p>
+</li>
+</ul>
+
+</div>
+
+
+
+<div id="footer">
+<div id="credits">
+<a href="http://moinmoin.wikiwikiweb.de/">MoinMoin Powered</a><br>
+    <a href="http://www.python.org/">
+        <img src="/~csk/wiki/classic/img/PythonPowered.png" width="55" height="22" alt="PythonPowered">
+    </a>
+</div>
+
+
+<a href="/~csk/wiki/moin.cgi/ChangesToMoinMoin?action=refresh&amp;arena=Page.py&amp;key=ChangesToMoinMoin.text_html">RefreshCache</a> for this page (cached 2009-08-12 17:16:46)<br>
+<p>Immutable page (last edited 2004-08-10 13:59:26 by <span title="hudsucker">CraigKaplan</span>)</p>
+
+<form method="POST" action="/~csk/wiki/moin.cgi/ChangesToMoinMoin">
+<p>
+<input type="hidden" name="action" value="inlinesearch">
+<input type="hidden" name="context" value="40">
+<a href="/~csk/wiki/moin.cgi/FindPage?value=ChangesToMoinMoin">FindPage</a> or search titles <input type="text" name="text_title" value="" size="15" maxlength="50"><input type="image" src="/~csk/wiki/classic/img/moin-search.png" name="button_title" alt="[?]">, full text <input type="text" name="text_full" value="" size="15" maxlength="50"><input type="image" src="/~csk/wiki/classic/img/moin-search.png" name="button_full" alt="[?]"> or <a href="/~csk/wiki/moin.cgi/SiteNavigation">SiteNavigation</a>
+</p>
+</form>
+
+<p>Or try one of these actions: <a href="/~csk/wiki/moin.cgi/ChangesToMoinMoin?action=AttachFile">AttachFile</a>, <a href="/~csk/wiki/moin.cgi/ChangesToMoinMoin?action=LikePages">LikePages</a>, <a href="/~csk/wiki/moin.cgi/ChangesToMoinMoin?action=LocalSiteMap">LocalSiteMap</a>, <a href="/~csk/wiki/moin.cgi/ChangesToMoinMoin?action=SpellCheck">SpellCheck</a></p>
+
+</div>
+
+</body>
+</html>
+

@@ -1,0 +1,294 @@
+<html>
+<head>
+	<title>Islamic Star Patterns</title>
+	<link rel="stylesheet" href="http://www.cgl.uwaterloo.ca/~csk/basic.css" type="text/css">
+</head>
+<body>
+
+<h1>Islamic Star Patterns</h1>
+
+<p>
+<center>
+	<img border=0 src="najm_hankin/t1.png" width=699 height=233/>
+</center>
+</p>
+
+<p>
+Islamic star patterns arose in the centuries after the birth of Islam,
+and spread quickly as Islamic rule grew outward from the Middle East 
+to encompass western Europe, northern Africa, and southern Asia.  This
+form of ornamentation peaked in the first half of the second millennium.
+The practice then tapered off as the borders of the Muslim world began
+to shrink.  Today, historical artifacts can be found in countries from
+Spain to Uzbekistan, with important concentrations in Spain, Turkey, Iran,
+and Morocco.
+</p>
+<p>
+There is no precise definition of an Islamic star pattern, but there
+are some general trends.  They tend to be rigidly geometric in design, 
+and feature star-shaped polygonal regions.  They can be found carved
+in wood or stone, built from latticework, or assembled from baked
+terracotta tiles (a style known as <em>Zellij</em>).
+</p>
+<p>
+Although we have a large body of historical examples to study, we 
+don't know exactly how artisans working at the time designed their
+star patterns.  Their methods were typically guarded as trade secrets.
+Thus we are left with the exciting historical puzzle of reverse 
+engineering lost techniques, or inventing new ones altogether.
+We know that Islamic scholars had mastered Euclid's <em>Elements</em>,
+and so we can ascribe to them an advanced knowledge of plane geometry.
+Of course, we have many more mathematical tools available today
+than existed a thousand years ago, and we should utilize those tools
+in the service of ornamental design.  I am interested in understanding
+how star patterns may have been designed in the first place, and how
+we can enlarge the space of designs using what we know today.  I am
+also interested in how to render star patterns and how to manufacture
+them automatically from computer descriptions.
+</p>
+
+<h2>Designing star patterns</h2>
+
+<p>
+I have developed two software approaches for constructing star patterns.
+Both are based on first choosing a tiling of the plane called the
+<em>template tiling</em>.  Each tile in the template is then associated
+with a motif, a small fragment of an overall design.  Tiles are filled
+with motifs, and connected together.  When the template is erased, the
+result is a star pattern.
+</p>
+<p>
+The first approach, which I now call the "Najm method", makes use of
+an explicit understanding of the radially-symmetric motifs that appear
+in many star patterns.  The user chooses specific radially-symmetric
+motifs for each regular polygon in the template tiling.  The computer
+can then fill the remaining tiles using an "inference algorithm" to
+create a design consistent with the user's choices.  
+</p>
+<p>
+The second approach, which I call the "Hankin method", does away with
+explicit motifs and uses only the inference algorithm.  In order to 
+obtain some of the characteristic motifs (like rosettes) that are
+common in star patterns, the Hankin method embeds more intelligence in 
+the template tilings.  The interesting question then becomes to compute
+these new tilings.
+</p>
+<p>
+More information can be found in the papers mentioned below.  Here are
+a few star patterns produced using these methods.  Click on each for
+a larger version.
+</p>
+<center>
+<table border=0 cellspacing=10>
+<tr>
+	<td align=center>
+		<a href="najm_hankin/t2.png"><img border=0 src="najm_hankin/t2_s.png" width=232 height=230/></a>
+	</td>
+	<td align=center>
+		<a href="najm_hankin/t3.png"><img border=0 src="najm_hankin/t3_s.png" width=265 height=230/></a>
+	</td>
+</tr>
+<tr>
+	<td align=center>
+		<a href="najm_hankin/t8.png"><img border=0 src="najm_hankin/t8_s.png" width=260 height=300/></a>
+	</td>
+	<td align=center>
+		<a href="najm_hankin/t9.png"><img border=0 src="najm_hankin/t9_s.png" width=382 height=300/></a>
+	</td>
+</tr>
+</table>
+</center>
+
+<h2>Non-Euclidean star patterns</h2>
+
+<p>
+Once we have articulated these design techniques mathematically, we have
+an opportunity to do things that were either impractical or impossible with
+the mathematical and artistic tools of previous centuries.  One long-standing
+possibility is to construct non-Euclidean Islamic star patterns.  I 
+have shown that we can express the construction techniques above independently
+of Euclid's parallel postulate, and that therefore they apply equally
+well to the Euclidean plane, the hyperbolic plane, and the surface of the
+sphere.  In fact, I construct star patterns in <em>absolute geometry</em>,
+an abstract core from which the three planar geometries can be derived.
+By suitably encoding this geometric foundation in a C++ library, I need only 
+write the design algorithm once.
+</p>
+<p>
+Some examples tell the story best...
+</p>
+
+<center>
+<table border=0 cellspacing=10>
+<tr>
+	<td align=center>
+		<a href="noneuclidean/euclid_filled.png"><img border=0 src="noneuclidean/euclid_filled_s.png" width=216 height=250/></a>
+	</td>
+	<td align=center>
+		<a href="noneuclidean/sphere_filled.jpg"><img border=0 src="noneuclidean/sphere_filled_s.png" width=250 height=250/></a>
+	</td>
+	<td align=center>
+		<a href="noneuclidean/hyper_filled.jpg"><img border=0 src="noneuclidean/hyper_filled_s.png" width=250 height=250/></a>
+	</td>
+</tr>
+<tr>
+	<td align=center>
+		<a href="noneuclidean/euclid_interlaced.png"><img border=0 src="noneuclidean/euclid_interlaced_s.png" width=250 height=250/></a>
+	</td>
+	<td align=center>
+		<a href="noneuclidean/sphere_interlaced.png"><img border=0 src="noneuclidean/sphere_interlaced_s.png" width=250 height=250/></a>
+	</td>
+	<td align=center>
+		<a href="noneuclidean/hyp_inter.jpg"><img border=0 src="noneuclidean/hyp_inter_s.png" width=250 height=250/></a>
+	</td>
+</tr>
+<tr>
+	<td align=center>
+		<a href="noneuclidean/323plane.jpg"><img border=0 src="noneuclidean/323plane_s.png" width=217 height=250/></a>
+	</td>
+	<td align=center>
+		<a href="noneuclidean/323ball.jpg"><img border=0 src="noneuclidean/323ball_s.png" width=251 height=250/></a>
+	</td>
+	<td align=center>
+		<a href="noneuclidean/323hyper.jpg"><img border=0 src="noneuclidean/323hyper_s.png" width=249 height=250/></a>
+	</td>
+</tr>
+</table>
+</center>
+
+<h2>Islamic parquet deformations</h2>
+
+<p>
+Parquet deformations are an abstract form of ornament first introduced
+by William Huff as an exercise for his Architecture students, and later
+popularized by Douglas Hofstadter in his Scientific American column.
+They are a kind of "spatial animation": a tiling of the plane from shapes
+that gradually evolve in space.  They are the aesthetic cousins of 
+Escher's <em>Metamorphosis</em> prints.
+</p>
+<p>
+We can create Islamic parquet deformations as a simple modification of
+Hankin's method.  Given a tiling, Hankin's method is parameterized by
+a single real value called the "contact angle".  All we have to do is
+gradually change that contact angle in space.  The results are striking
+and certainly novel: in centuries past, it would never have been practical
+to construct a pattern where almost every shape is unique!
+</p>
+
+<center>
+<p><a href="ipd/ipd.png"><img border=0 src="ipd/ipd_s.png" width= height=/"></a></p>
+<p><a href="ipd/ipd2.png"><img border=0 src="ipd/ipd2_s.png" width= height=/"></a></p>
+<p><a href="ipd/ipd3.png"><img border=0 src="ipd/ipd3_s.png" width= height=/"></a></p>
+</center>
+
+
+<h2>CAD and star patterns</h2>
+
+<p>
+Once we have software that can construct mathematical descriptions of
+star patterns, we can do more than simply render images of those star
+patterns on the computer screen.  We can also feed the designs to a number
+of different computer-controlled manufacturing technologies.  I am generally
+interested in how computer graphics might play a role in revitalizing the
+use of ornament in architecture, and star patterns are an excellent 
+form of ornament to use as a test case.  I have experimented with 3D 
+rapid prototyping (ZCorp, FDM), laser cutting, waterjet cutting, and CNC
+milling and lathing.  So far, there hasn't been a great deal of research
+necessary -- the manufacturing devices do a great job on their own.  But
+there are opportunities for work that enhances the cooperation between
+designer, software, and machine.
+</p>
+<p>
+Here are a few photographs of these experiments.
+</p>
+
+<center>
+<table border=0 cellspacing=10>
+<tr>
+	<td align=center>
+		<a href="cad/cards1.jpg"><img border=0 src="cad/cards1_s.jpg" width=205 height=250/></a><br>
+		Business cards with a laser-cut pattern
+	</td>
+	<td align=center>
+		<a href="cad/mylar3.jpg"><img border=0 src="cad/mylar3_s.jpg" width=186 height=250/></a><br>
+		Laser-cut mylar
+	</td>
+</tr>
+<tr>
+	<td align=center colspan=2>
+		<a href="cad/gardner_display2.jpg"><img border=0 src="cad/gardner_display2_s.jpg" width=467 height=350/></a><br>
+		A large display of waterjet-cut patterns in metal, wood, MDF, stone,
+		and plexiglass.
+	</td>
+</tr>
+<tr>
+	<td align=center>
+		<a href="cad/lino_block.jpg"><img border=0 src="cad/lino_block_s.jpg" width=267 height=200/></a><br>
+		A linoleum block with a pattern cut by a 3-axis NC milling machine
+		(the outside was carved away by hand)
+	</td>
+	<td align=center>
+		<a href="cad/lino_all.jpg"><img border=0 src="cad/lino_all_s.jpg" width=267 height=200/></a><br>
+		Linoleum block prints from NC-cut patterns
+	</td>
+</tr>
+<tr>
+	<td align=center>
+		<a href="cad/ol6.jpg"><img border=0 src="cad/ol6_s.jpg" width=264 height=250/></a><br>
+		Plywood panel cut by waterjet
+	</td>
+	<td align=center>
+		<a href="cad/starball_fdm.jpg"><img border=0 src="cad/starball_fdm_s.jpg" width=250 height=250/></a><br>
+		A spherical pattern constructed using fused deposition modelling (FDM)
+	</td>
+</tr>
+</table>
+</center>
+
+
+<h2>Papers</h2>
+
+<ul>
+	<li><a href="http://www.cgl.uwaterloo.ca/~csk/papers/bridges2000.html">
+		Computer generated Islamic star patterns</a>.  Bridges 2000.
+	</li>
+	<li><a href="http://www.cgl.uwaterloo.ca/~csk/phd/">
+		Computer Graphics and Geometric Ornamental Design</a>.  PhD thesis,
+		2002.  See especially Chapter 3.
+	</li>
+	<li><a href="http://www.cgl.uwaterloo.ca/~csk/papers/tog2004.html">
+		Islamic star patterns in absolute geometry</a>.  TOG 23(2).
+	</li>
+	<li><a href="http://www.cgl.uwaterloo.ca/~csk/papers/gi2005.html">
+		Islamic star patterns from polygons in contact</a>.  GI 2005.
+	</li>
+</ul>
+
+
+<h2>Software</h2>
+
+<p>
+My Java applet 
+<a href="http://www.cgl.uwaterloo.ca/~csk/washington/taprats/">Taprats</a>
+has been available on the web since around 2000.  A few years later I added 
+a downloadable version of Taprats that allows you to save designs as 
+encapsulated postscript.  It has been downloaded thousands of times and
+used by artists, hobbyists, and teachers.  
+</p>
+<p>
+I am not actively developing Taprats right now, though I do have medium-term
+plans to release a greatly improved new version.  In the meantime, if you
+want a more recent alternative to Taprats, Fran&ccedil;ois Dispot's excellent
+<a href="http://www.wozzeck.net/arabeske/index.html">Arabeske Studio</a> is
+under more active development.
+</p>
+
+<hr>
+	<table width="100%" border=0 cellpadding=0 cellspacing=0><tr>
+		<td align=left><a href="http://www.cgl.uwaterloo.ca/~csk/">
+			Craig S. Kaplan</a></td>
+	<td align=right><em>Last updated: Wednesday, 22-Jun-2005 13:43:18 EDT</em>
+	</td></tr></table>
+
+</body>
+</HTML>

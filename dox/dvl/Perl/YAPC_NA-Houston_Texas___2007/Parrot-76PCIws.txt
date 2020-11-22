@@ -1,0 +1,16 @@
+Pervasive multi-dispatch.
+Instead of call stacks, control-flow uses continuations (like closures for control-flow).
+Reflection && Metaprogramming.
+Everything within trees.
+SymRegs && Named Vars are good.
+PIR line-oriented reg-based VM.
+PMCs (?) can be made.
+
+languages/: abc, Tcl, Punie, Perl 6, Python, PHP, Ruby, Lua, JavaScript, Scheme, Forth, Perl 1, APL, ... new languages not yet conceived
+
+HLL src (high-level language)
+  parse tree
+    PAST (abstract syntax tree)
+      POST (opcode syntax tree)
+        PIR (intermediate r?)
+          bytecode && exec

@@ -1,0 +1,77 @@
+body { 
+    background: white;
+	color: #303030;
+	margin-left: 12%;
+	margin-right: 12%;
+	text-align: left;
+}
+
+A:visited {
+	color: #b030b0;
+}
+
+A:link {
+	color: #3030b0;
+}
+
+.cskname {
+	font-family: verdana, sans-serif;
+	font-weight: bold;
+	font-size: 150%;
+	color: #607060;
+}
+
+.cskbody {
+	margin-left: 10%;
+	margin-right: 10%;
+	color: black;
+}
+
+.cskquote {
+	width: 40%;
+	background-color: #e0e0e0; 
+	border: 1pt; 
+	border-style: solid; 
+	border-color:#000000; 
+	padding: 10pt; 
+	margin-top: 10pt;
+	margin-bottom: 10pt;
+}
+
+.cskheading {
+	width: 100%; 
+	border-width: 2pt 0pt 2pt 0pt; 
+	border-style: solid; 
+	border-color: #000000; 
+	font-weight: bold; 
+	padding: 3pt;
+
+	text-align: center;
+	color: #400000;
+}
+
+.csktitle {
+	border-width: 2pt 0pt 2pt 0pt; 
+	border-style: solid; 
+	border-color: #400000; 
+	padding: 3pt;
+}
+
+.csktitletext {
+	font-family: lucida, verdana, helvetica, arial, sans-serif; 
+	font-size: 72px; 
+	font-weight: bold; 
+	color: #400000;
+}
+
+h2 {
+	font-family: verdana, sans-serif;
+	font-size: 125%;
+	font-weight: bold;
+	color: #607060;
+}
+
+.subtle a {
+	text-decoration: none;
+	color: #dddddd;
+}

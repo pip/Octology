@@ -1,0 +1,3 @@
+<!-- event 71 -->
+<a class=green href="#bog" onmouseover="doTooltip(event,71)"
+   onmouseout="hideTip()">letter</a>.&nbsp;&nbsp; 

@@ -1,0 +1,290 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<disks> <!-- 749Le6w - Pip@CPAN.Org's hard Disk drive registry -->
+<!-- 2do: cp everything off every sticker && describe all drives contents as_of="`pt`" -->
+<!-- 74L0pJh - Estimate:
+  SATA:
+    1 250GB Seagate 7200.8
+    5 320GB Seagate 7200.10
+    2 320GB Seagate ES?
+    1 100GB Seagate 7200.1 (laptop drive in Vantec NexStar3 enclosure)
+    1 similar laptop drive in Taki
+    1 320?  Maxtor
+    1 160?  Maxtor
+  SCSI:
+    4? drives in old Gen
+  MSDuo:
+    4 4GB UltraII
+    1 2GB UltraII
+    1 2GB regular SanDisk
+    1 32MB crap Sony
+  MicroSD:
+    2 1GB SanDisk (one in mobile phone, other in box)
+  FlashDrive:
+    1 64MB FlashDIO or something
+  -->
+  <disk>
+    <description>
+      74IAbY5 - This is the little Seagate 100GB SATA laptop drive that I bought to attempt to install a bootable Gentoo 2007.0 (when it becomes available) for
+        Taki (my Sony Vaio VGN-SZ240P) as the primary XFS partitions and leave a 16GB fourth partition around as probably FAT32 for general mobile
+        file-sharing.  The drive will probably primarily reside in my black Vantec NexStar3 eSATA external enclosure (NST-260SU-BK NewEgg#:17-392-009) for now
+        but my eventual plan is to get things working so smoothly that maybe the internal WindowsXP drive in Taki could become the external enclosed one and
+        having this drive become Taki's primary internal bootable disk.  Maybe Ubuntu's Feisty Fawn will prove a better choice than Gentoo for this goal.
+    </description>
+    <manufacturer>Seagate</manufacturer>
+    <interface>SATA 1.5Gbps?</interface>
+    <capacity>100GB</capacity>
+    <line>Momentus</line>
+    <model>7200.1</model>
+    <model_number>ST910021AS</model_number>
+    <big_bar_string>SG-0YG010-12536-66R-E2SZ</big_bar_string>
+    <revision>A00</revision>
+    <made_in>Singapore</made_in>
+    <spindle_speed>7200</spindle_speed>
+    <firmware>8.02</firmware>
+    <voltage_primary>+5V 0.56A</voltage_primary>
+    <serial_number>3MH0E2SZ</serial_number>     <!-- HDD S/N presumed to be general  "serial_number" -->
+    <product_number>9S3014-030</product_number> <!--     P/N presumed to be general "product_number" -->
+    <date>06524</date>
+    <site>AMK</site>
+    <notes>
+      <note>Do not cover breather hole!</note>
+      <note>Canada Class B digital apparatus ICES-003</note>
+      <note>It seems there are four jumper pins but no diagram as to any potential purpose.  Maybe this information is to be found online or in accompanying
+        printed materials, if any non-default behaviors are even available.</note>
+    </notes>
+  </disk>
+  <disk>
+    <manufacturer>Seagate</manufacturer>
+    <interface>SATA 3.0Gbps</interface>
+    <capacity>320GB</capacity>
+    <line>Barracuda</line>
+    <model>7200.10</model>
+    <model_number>ST3320620AS</model_number>
+    <revision>3.AA</revision>
+    <spindle_speed>7200</spindle_speed>
+ata5: SATA link up 3.0 Gbps (SStatus 123)
+ata5: dev 0 cfg 49:2f00 82:346b 83:7d01 84:4023 85:3469 86:3c01 87:4023 88:407f
+ata5: dev 0 ATA-7, max UDMA/133, 625142448 sectors: LBA48
+nv_sata: Primary device added
+nv_sata: Primary device removed
+nv_sata: Secondary device added
+nv_sata: Secondary device removed
+ata5: dev 0 configured for UDMA/133
+scsi4 : sata_nv
+ieee1394: Host added: ID:BUS[1-00:1023]  GUID[000129100004ef09]
+ata6: SATA link down (SStatus 0)
+scsi5 : sata_nv
+  Vendor: ATA       Model: ST3320620AS       Rev: 3.AA
+  Type:   Direct-Access                      ANSI SCSI revision: 05
+SCSI device sda: 625142448 512-byte hdwr sectors (320073 MB)
+sda: Write Protect is off
+sda: Mode Sense: 00 3a 00 00
+SCSI device sda: drive cache: write back
+SCSI device sda: 625142448 512-byte hdwr sectors (320073 MB)
+sda: Write Protect is off
+sda: Mode Sense: 00 3a 00 00
+SCSI device sda: drive cache: write back
+ sda:<4>nv_sata: Primary device added
+nv_sata: Primary device removed
+nv_sata: Secondary device added
+nv_sata: Secondary device removed
+ sda1 sda2 sda3
+nv_sata: Primary device added
+nv_sata: Primary device removed
+nv_sata: Secondary device added
+nv_sata: Secondary device removed
+sd 4:0:0:0: Attached scsi disk sda
+ACPI: PCI Interrupt Link [APSJ] enabled at IRQ 20
+GSI 21 sharing vector 0x42 and IRQ 21
+ACPI: PCI Interrupt 0000:00:08.0[A] -> Link [APSJ] -> GSI 20 (level, low) -> IRQ 66
+PCI: Setting latency timer of device 0000:00:08.0 to 64
+ata7: SATA max UDMA/133 cmd 0x9E0 ctl 0xBE2 bmdma 0xC000 irq 66
+ata8: SATA max UDMA/133 cmd 0x960 ctl 0xB62 bmdma 0xC008 irq 66
+ata7: SATA link down (SStatus 0)
+scsi6 : sata_nv
+ata8: SATA link down (SStatus 0)
+scsi7 : sata_nv
+XFS mounting filesystem sda3
+Starting XFS recovery on filesystem: sda3 (logdev: internal)
+Ending XFS recovery on filesystem: sda3 (logdev: internal)
+XFS mounting filesystem sda1
+Ending clean XFS mount for filesystem: sda1
+Adding 2080408k swap on /dev/sda2.  Priority:-1 extents:1 across:2080408k
+  </disk>
+  <disk>
+usb 1-6.4.3: new high speed USB device using ehci_hcd and address 8
+usb 1-6.4.3: configuration #1 chosen from 1 choice
+scsi8 : SCSI emulation for USB Mass Storage devices
+usb-storage: device found at 8
+usb-storage: waiting for device to settle before scanning
+  Vendor: ST332062  Model: 0AS               Rev:     
+  Type:   Direct-Access                      ANSI SCSI revision: 02
+SCSI device sdb: 625142448 512-byte hdwr sectors (320073 MB)
+sdb: Write Protect is off
+sdb: Mode Sense: 38 00 00 00
+sdb: assuming drive cache: write through
+SCSI device sdb: 625142448 512-byte hdwr sectors (320073 MB)
+sdb: Write Protect is off
+sdb: Mode Sense: 38 00 00 00
+sdb: assuming drive cache: write through
+sdb: sdb1 sdb2 sdb3 sdb4
+sd 8:0:0:0: Attached scsi disk sdb
+sd 8:0:0:0: Attached scsi generic sg1 type 0
+usb-storage: device scan complete
+  </disk>
+ata5: SATA max UDMA/133 cmd 0x9F0 ctl 0xBF2 bmdma 0xD400 irq 58
+ata6: SATA max UDMA/133 cmd 0x970 ctl 0xB72 bmdma 0xD408 irq 58
+ieee1394: Host added: ID:BUS[0-00:1023]  GUID[00023c01510d274a]
+ata5: SATA link up 3.0 Gbps (SStatus 123)
+ata5: dev 0 cfg 49:2f00 82:346b 83:7d01 84:4023 85:3469 86:3c01 87:4023 88:407f
+ata5: dev 0 ATA-7, max UDMA/133, 625142448 sectors: LBA48
+nv_sata: Primary device added
+nv_sata: Primary device removed
+nv_sata: Secondary device added
+nv_sata: Secondary device removed
+ata5: dev 0 configured for UDMA/133
+scsi4 : sata_nv
+ieee1394: Host added: ID:BUS[1-00:1023]  GUID[000129100004ef09]
+ata6: SATA link down (SStatus 0)
+scsi5 : sata_nv
+  Vendor: ATA       Model: ST3320620AS       Rev: 3.AA
+  Type:   Direct-Access                      ANSI SCSI revision: 05
+SCSI device sda: 625142448 512-byte hdwr sectors (320073 MB)
+sda: Write Protect is off
+sda: Mode Sense: 00 3a 00 00
+SCSI device sda: drive cache: write back
+SCSI device sda: 625142448 512-byte hdwr sectors (320073 MB)
+sda: Write Protect is off
+sda: Mode Sense: 00 3a 00 00
+SCSI device sda: drive cache: write back
+ sda:<4>nv_sata: Primary device added
+nv_sata: Primary device removed
+nv_sata: Secondary device added
+nv_sata: Secondary device removed
+ sda1 sda2 sda3
+nv_sata: Primary device added
+nv_sata: Primary device removed
+nv_sata: Secondary device added
+nv_sata: Secondary device removed
+sd 4:0:0:0: Attached scsi disk sda
+ACPI: PCI Interrupt Link [APSJ] enabled at IRQ 20
+GSI 21 sharing vector 0x42 and IRQ 21
+ACPI: PCI Interrupt 0000:00:08.0[A] -> Link [APSJ] -> GSI 20 (level, low) -> IRQ 66
+PCI: Setting latency timer of device 0000:00:08.0 to 64
+ata7: SATA max UDMA/133 cmd 0x9E0 ctl 0xBE2 bmdma 0xC000 irq 66
+ata8: SATA max UDMA/133 cmd 0x960 ctl 0xB62 bmdma 0xC008 irq 66
+ata7: SATA link down (SStatus 0)
+scsi6 : sata_nv
+ata8: SATA link up 3.0 Gbps (SStatus 123)
+ata8: dev 0 cfg 49:2f00 82:346b 83:7d01 84:4023 85:3469 86:3c01 87:4023 88:407f
+ata8: dev 0 ATA-7, max UDMA/133, 625142448 sectors: LBA48
+nv_sata: Primary device added
+nv_sata: Primary device removed
+nv_sata: Secondary device added
+nv_sata: Secondary device removed
+ata8: dev 0 configured for UDMA/133
+scsi7 : sata_nv
+  Vendor: ATA       Model: ST3320620AS       Rev: 3.AA
+  Type:   Direct-Access                      ANSI SCSI revision: 05
+SCSI device sdb: 625142448 512-byte hdwr sectors (320073 MB)
+sdb: Write Protect is off
+sdb: Mode Sense: 00 3a 00 00
+SCSI device sdb: drive cache: write back
+SCSI device sdb: 625142448 512-byte hdwr sectors (320073 MB)
+sdb: Write Protect is off
+sdb: Mode Sense: 00 3a 00 00
+SCSI device sdb: drive cache: write back
+ sdb:<4>nv_sata: Primary device added
+nv_sata: Primary device removed
+nv_sata: Secondary device added
+nv_sata: Secondary device removed
+ unknown partition table
+sd 7:0:0:0: Attached scsi disk sdb
+device-mapper: 4.6.0-ioctl (2006-02-17) initialised: dm-devel@redhat.com
+JFS: nTxBlock = 8030, nTxLock = 64243
+sd 4:0:0:0: Attached scsi generic sg0 type 0
+sd 7:0:0:0: Attached scsi generic sg1 type 0
+Unable to handle kernel paging request at ffffc200100ccd05 RIP: 
+<ffffffff88243599>{:fdomain:__fdomain_16x0_detect+402}
+PGD 3fb1e067 PUD 3fb1f067 PMD 3ff45067 PTE ffffffff88244163
+Oops: 0009 [1] SMP 
+CPU 0 
+Modules linked in: fdomain BusLogic aic7xxx aic79xx scsi_transport_spi sg nfs lockd sunrpc jfs dm_mirror dm_mod pdc_adma sata_mv ata_piix ahci sata_qstor sata_vsc sata_uli sata_sis sata_sx4 sata_nv sata_via sata_svw sata_sil24 sata_sil sata_promise libata sbp2 ohci1394 ieee1394 sl811_hcd ohci_hcd uhci_hcd usb_storage usbhid ehci_hcd usbcore
+Pid: 3861, comm: insmod Not tainted 2.6.17-gentoo-r7 #1
+RIP: 0010:[<ffffffff88243599>] <ffffffff88243599>{:fdomain:__fdomain_16x0_detect+402}
+RSP: 0000:ffff81003eb1bef8  EFLAGS: 00010246
+RAX: 0000000000000005 RBX: 0000000000000008 RCX: ffffffff88244d00
+RDX: ffffc200100ccd05 RSI: 0000000000000032 RDI: ffffc200100ccd00
+RBP: ffffffff88244d00 R08: 0000000000000000 R09: 0000000000000000
+R10: 0000000000000000 R11: 0000000000000000 R12: 00000000ffffffed
+R13: ffffffff88246860 R14: 0000000000000000 R15: 00000000005805b0
+FS:  000000000057f850(0063) GS:ffffffff80502000(0000) knlGS:0000000000000000
+CS:  0010 DS: 0000 ES: 0000 CR0: 000000008005003b
+CR2: ffffc200100ccd05 CR3: 000000003eaba000 CR4: 00000000000006e0
+Process insmod (pid: 3861, threadinfo ffff81003eb1a000, task ffff81003efcb520)
+Stack: ffffffff88246860 0000000000580590 00000000ffffffed 00000000005805b0 
+       0000000000580590 ffffffff88243b68 ffffffff88246980 ffffffff88249062 
+       ffffffff88246980 0000000000580590 
+Call Trace: <ffffffff88243b68>{:fdomain:fdomain_16x0_detect+29}
+       <ffffffff88249062>{:fdomain:init_this_scsi_driver+98}
+       <ffffffff8019195e>{sys_init_module+171} <ffffffff8015cd42>{system_call+126}
+
+Code: 8a 02 3a 01 75 10 ff ce 0f 84 a6 04 00 00 48 ff c2 48 ff c1 
+RIP <ffffffff88243599>{:fdomain:__fdomain_16x0_detect+402} RSP <ffff81003eb1bef8>
+CR2: ffffc200100ccd05
+ GDT-HA: Storage RAID Controller Driver. Version: 3.04 
+GDT-HA: Found 0 PCI Storage RAID Controllers
+Fusion MPT base driver 3.03.09
+Copyright (c) 1999-2005 LSI Logic Corporation
+Fusion MPT SPI Host driver 3.03.09
+Fusion MPT FC Host driver 3.03.09
+3ware Storage Controller device driver for Linux v1.26.02.001.
+3ware 9000 Storage Controller device driver for Linux v2.26.02.007.
+Compaq SMART2 Driver (v 2.6.0)
+HP CISS Driver (v 2.6.10)
+Adaptec aacraid driver (1.1-5[2409]-mh1)
+megaraid cmm: 2.20.2.6 (Release Date: Mon Mar 7 00:01:03 EST 2005)
+megaraid: 2.20.4.8 (Release Date: Mon Apr 11 12:27:22 EST 2006)
+megasas: 00.00.02.04 Fri Feb 03 14:31:44 PST 2006
+UDF-fs: No VRS found
+XFS mounting filesystem sda3
+Ending clean XFS mount for filesystem: sda3
+XFS mounting filesystem sda1
+Ending clean XFS mount for filesystem: sda1
+Adding 2080408k swap on /dev/sda2.  Priority:-1 extents:1 across:2080408k
+Real Time Clock Driver v1.12ac
+i2c_adapter i2c-0: nForce2 SMBus adapter at 0x1c00
+i2c_adapter i2c-1: nForce2 SMBus adapter at 0x1c40
+forcedeth.c: Reverse Engineered nForce ethernet driver. Version 0.54.
+ACPI: PCI Interrupt Link [APCH] enabled at IRQ 23
+ACPI: PCI Interrupt 0000:00:0a.0[A] -> Link [APCH] -> GSI 23 (level, low) -> IRQ 217
+PCI: Setting latency timer of device 0000:00:0a.0 to 64
+forcedeth: using HIGHDMA
+eth0: forcedeth.c: subsystem: 010de:cb84 bound to 0000:00:0a.0
+eth0: no link during initialization.
+ACPI: PCI Interrupt Link [APC4] enabled at IRQ 19
+GSI 22 sharing vector 0x4A and IRQ 22
+ACPI: PCI Interrupt 0000:01:07.0[A] -> Link [APC4] -> GSI 19 (level, low) -> IRQ 74
+Installing spdif_bug patch: Audigy 2 ZS [SB0350]
+gameport: EMU10K1 is pci0000:01:07.1/gameport0, io 0xa800, speed 1204kHz
+ACPI: PCI Interrupt Link [APC3] enabled at IRQ 18
+GSI 23 sharing vector 0x52 and IRQ 23
+ACPI: PCI Interrupt 0000:01:0a.0[A] -> Link [APC3] -> GSI 18 (level, low) -> IRQ 82
+skge 1.5 addr 0xfe9f4000 irq 82 chip Yukon-Lite rev 9
+skge eth1: addr 00:01:29:f5:61:c2
+skge eth1: enabling interface
+input: PC Speaker as /class/input/input2
+Floppy drive(s): fd0 is 1.44M
+FDC 0 is a post-1991 82077
+skge eth1: Link is up at 100 Mbps, full duplex, flow control none
+
+# This was original ST320's fdisk partition table w/ ~256MB? /boot, 2GB swap, 256GB /, ~64GB empty space for 4th partition.
+# It was exactly duplicated to the second ST320 7200.10 I backed up to which is now the primary drive after another failed attempt to unmerge coldplug on orig.
+Disk /dev/sda: 320.0 GB, 320072933376 bytes
+255 heads, 63 sectors/track, 38913 cylinders
+Units = cylinders of 16065 * 512 = 8225280 bytes
+   Device Boot      Start         End      Blocks   Id  System
+   /dev/sda1               1          32      257008+  83  Linux
+   /dev/sda2              33         291     2080417+  82  Linux swap / Solaris
+   /dev/sda3             292       33713   268462215   83  Linux
+</disks>

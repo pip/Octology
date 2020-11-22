@@ -1,0 +1,32 @@
+# E8FM2hst:/etc/hosts by PipStuart <Pip@CPAN.Org> to name my router, development machines, && laptops with incremented 2ndary Ethernet && Wireless addresses;
+127.0.0.1     localhost  # $VERSION='0.0';$d8VS='J5NMM8BC'; Since Ryu&&Ken's eth0s don't work,eth1s BcAm Dfalt name && 2**n-1 address.Aku mobo only has eth0;
+127.0.1.1     Oni        #          previous  Gigabit  NetGear   WNDR3700v3 was just WiFi Router wi no CableModem
+192.168.8.1   DarjNet    # 6C:B0:CE:44:E9:22  Gigabit  NetGear N600 C3700-100NAS DualBand WiFi G8way  (CableModem port DOCSIS3.0)  EBHLJjSk:Toggled default
+                         # 6C:B0:CE:44:E9:23    *has some problems preserving address reserv8ion      (Internet   port          )    to have router protect
+                         # 6C:B0:CE:44:E9:24     inform8ion as described below*                       (   LAN     port          )    against PortScan && DoS;
+192.168.8.3   Ken        # 00:01:29:F5:AA:CE  Gigabit  NVidia   CK804    NF4 LanParty                 (  upper    port      eth1)
+192.168.8.4   Ken0       # 00:01:29:F5:61:C2  Gigabit  Marvell 88E8001                                (  lower    port      eth0)
+192.168.8.5   ReadyShare # 00:18:4D:FF:FF:07  Gigabit  NetGear N600 C3700-100NAS DualBand WiFi G8way  ( internal  port of server)  H8OMHwQY:for LAN shares?
+192.168.8.6   PS3        # A8:E3:EE:4C:3A:6D  Gigabit? Sony    PlaySt8ion3                            (  only     port      eth0)  F1IL2CTh:PS3 cud wlan0 2;
+192.168.8.7   Ryu        # 00:01:29:FC:C9:82  Gigabit* NVidia   CK804    NF4 LanParty                 (  upper    port      eth1)  (*long cable only 100Mbit)
+192.168.8.8   Ryu0       # 00:01:29:FC:CE:EF  Gigabit  Marvell 88E8001  (maybe this eth0 is failing?) (  lower    port      eth0)  (0 is pretty unresponsive)
+192.168.8.12  PS4        # BC:60:A7:E0:05:54  Gigabit  Sony    PlaySt8ion4 Pro                        (  only     port      eth0)  H8OMHwQY:added reserv8ion;
+192.168.8.15  Aku        # 48:5B:39:4A:DA:D8  Gigabit                                                 (  only     port      eth0)
+#92.168.8.17  Oni        # 70:85:C2:A3:E1:6B  10Ggbit  Aquantia AQC107 N-BaseT -- Wired Connection 2  (  lower    port   enp45s0)
+192.168.8.18  Oni0       # 70:85:C2:A3:E1:6D  Gigabit  Intel   I211            -- Wired Connection 1  (  upper    port   enp42s0)
+192.168.8.19  OniW       # 34:E1:2D:FE:C1:9E  150Mbit  Intel    Wireless       --       DarjNet-5G    (  upper  antannae wlp39s0)
+192.168.8.31  Chun       # 00:17:42:F6:37:65  Gigabit                                                 ( back      port      eth0)
+192.168.8.32  ChunW      # 00:16:EA:69:47:B0  802.11                                                  (front      switch   wlan0)
+192.168.8.63  Taki       # 00:13:A9:2A:B1:5D  100Mbit                                                 (right bak2 port      eth0)
+192.168.8.64  TakiW      # 00:13:02:35:8F:3F  802.11                                                  (inside  rt switch   wlan0)
+192.168.8.88  GlS8W      # B0:72:BF:D0:8E:51  802.11   Samsung GalaxyS8  DeviceName:Samsung-SM-G950U                               H8OMHwQY:added reserv8ion;
+192.168.8.96  GlS4W      # CC:3A:61:E7:71:41  802.11   Samsung GalaxyS4  DeviceName:Android-230134C2B4E55922
+                         #  *Notes*:Both Aku && GlS8W are also getting IPv6 addresses which I might also want to reserve for common LAN access l8r below too.
+                         #     MediaAccessCntrl2AddrRsrv8ionIssuez:Ryu disapeard once,ChunW name reset2 Chun,&&GalxW name reset to android-230134c2b4e55922.
+                         #     MAC in encryption is different MessageAuthentic8ionCode;
+# The following lines are desirable for IPv6 capable hosts:
+::1           ip6-localhost    ip6-loopback
+fe00::0       ip6-localnet
+ff00::0       ip6-mcastprefix
+ff02::1       ip6-allnodes
+ff02::2       ip6-allrouters

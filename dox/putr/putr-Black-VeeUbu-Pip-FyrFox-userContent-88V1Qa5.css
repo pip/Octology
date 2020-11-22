@@ -1,0 +1,108 @@
+/* 88V1Qa5 - Pip's initial usrCntnt.css for FF on VeeUbu. Yay! =) */
+html>body {        font-size:    127% !important;
+                       color: #3377CC !important;
+            background-color: #1B0307 !important;
+            line-height     : normal  !important; }
+a         {            color: #DEED77 !important; }
+a:visited {            color: #A8F8F0 !important; }
+/* Edit this file and copy it as userContent.css into your
+ *   profile-directory/chrome/
+ * This file can be used to apply a style to all web pages you view
+ *   Rules without !important are overruled by author rules if the
+ *   author sets any.  Rules with !important overrule author rules.
+ * example: turn off "blink" element blinking
+ *   blink { text-decoration: none ! important; }
+ * example: give all tables a 2px border
+ *   table { border: 2px solid; }
+ * example: turn off "marquee" element
+ *   marquee { -moz-binding: none; }
+ * For more examples see http://www.mozilla.org/unix/customizing.html
+ *   88V1Qa5 - Pip followed the above link which yielded the following
+ *   comments as example userContent.css.
+/* Obviate need to zoom on many sites. * /
+html>body {
+  font-size: 100% !important;
+  line-height: normal !important;
+}
+/* Disable the deprecated HTML <font> tag. (Like above,
+   reduces need to zoom.) * /
+font {
+  font-family: inherit !important;
+  font-size: inherit !important;
+  color: inherit !important;
+}
+/* Put a thin black border around all dropdown forms like NS4.x * /
+:-moz-dropdown-list {
+  border: 1px solid black !important;
+  border-top-style: solid !important;
+}
+/* Disable marquee display * /
+marquee {
+  -moz-binding: none; display: block; height: auto !important;
+/* This is better than just display:none !important;
+   because you can still see the text in the marquee,
+   but without scrolling.  * /
+}
+/* Until bug 105547 is fixed, a helpful workaround to
+   highlight some links which would pop up a new window: * /
+:link:hover[target="_blank"],:visited:hover[target="_blank"] {
+  color: white !important; background: red !important;
+}
+:link:hover[target="_new"],:visited:hover[target="_new"] {
+  color: white !important; background: red !important;
+}
+/* Many input forms have typing areas so small it's hard to use
+   them. On many of them, this sets a minimum width of about 50
+   characters, and a miniumum height of about 12 characters.  * /
+textarea {
+  min-width: 50ex !important;
+  min-height: 12em !important;
+}
+/* Improve scroll performance on slow machines on some sites. * /
+* {
+*   background-attachment: scroll !important;
+* }
+/* Ignore user-specified style in mail messages.
+   See http://bugzilla.mozilla.org/show_bug.cgi?id=18427 for details.  * /
+.moz-text-html font, .moz-text-html div, .moz-text-html body {
+  font-size: inherit !important;
+  font-family: inherit !important;
+  color: inherit !important;
+  background-color: inherit !important;
+  background-image: inherit !important;
+  text-align: inherit !important;
+  text-indent: inherit !important;
+}
+/* These are for chatzilla: * /
+/* defaults for anything in the chatzilla content area * /
+.output-window {
+    background: #555 !important;
+    color: white !important;
+    font-weight: bold !important;
+/* for testing CSS syntax:
+    border-style: solid;
+    border-width: thick;
+    border-color: #0f0 !important; * /
+}
+/* messages I type * /
+.msg[msg-user$="ME!"] .msg-data {
+    color: orange !important;
+    background: #555 !important;
+}
+/* every other message can have a different color,
+   to make it easier to follow conversations * /
+.msg[mark="odd"] .msg-data {
+    color: white !important;
+    background: #666 !important;
+}
+/* messages directed to me * /
+.msg[important] .msg-data {
+    color: yellow !important;
+/* background: gray !important; * /
+}
+/* messages when people leave the channel * /
+.msg[msg-type="QUIT"] .msg-data {
+    background: #444 !important;
+    color: yellow !important;
+}
+*/

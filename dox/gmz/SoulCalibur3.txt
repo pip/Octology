@@ -1,0 +1,11 @@
+Pip's Soul Calibur 3 Notes:
+
+5B5EdYP Gold Duplication Cheat:
+ 0) 'Main Menu' -> 'Single Player Modes' -> 'Chronicles of the Sword' -> 'New Game'
+ 1) Make plain Barbarians with all the slots you have to create characters.
+ 2) Sortie your Barbarians before any supplied characters and rely heavily on their 44B move from far during every battle.
+ 3) Play CotS seriously up until the first Chronicle where your main character's death is a loss condition and don't spend any gold.
+ 4) Fail that Chronicle by letting your main character die and choose 'Return to Title' and then 'Yes' to "Save current game play?".
+ 5) 'Main Menu' -> 'Shop' and spend all your gold then press Select+Start to hot-reset the game (Do NOT save before the hot-reset).
+ 6) 'Main Menu' -> 'Single Player Modes' -> 'Chronicles of the Sword' -> 'Load' and choose your Barbarian CotS save game.
+ 7) Return to step 4) until you have purchased everything in the 'Shop'.

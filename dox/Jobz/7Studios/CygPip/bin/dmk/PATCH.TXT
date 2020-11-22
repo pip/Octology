@@ -1,0 +1,75 @@
+diff -ruN dmake.orig/make.c dmake/make.c
+--- dmake.orig/make.c	2007-09-18 21:34:32.000000000 +0100
++++ dmake/make.c	2008-01-07 09:57:39.888930900 +0000
+@@ -583,7 +583,8 @@
+       if( cp->ce_attr & A_LIBRARY )
+          tcp->ce_attr ^= A_LIBRARYM;
+ 
+-      /* Return on error or if Make() is still running and A_SEQ is set. */
++      /* Return on error or if Make() is still running and A_SEQ is set.
++       * (All F_MULTI targets have the A_SEQ attribute.)  */
+       if( rval == -1 || (seq && (rval==1)) )
+ 	 goto stop_making_it;
+ 
+@@ -632,6 +633,11 @@
+       }
+    }
+ 
++   /* If we are building a F_MULTI target inherit the time from
++    * its children. */
++   if( (cp->ce_flag & F_MULTI) )
++      cp->ce_time = otime;
++
+    /* All prerequisites are made, now make the current target. */
+ 
+    /* Restore UseWinpath and $@ if needed, see above for an explanation. */
+diff -ruN dmake.orig/startup/startup.mk dmake/startup/startup.mk
+--- dmake.orig/startup/startup.mk	2006-04-20 09:11:06.000000000 +0100
++++ dmake/startup/startup.mk	2008-01-07 09:57:31.310805900 +0000
+@@ -18,7 +18,7 @@
+ 
+ # startup.mk configuration parameters, for each, set it to non-null if you wish
+ # to enable the named facility.
+-__.HAVE_RCS  !:= yes 		# yes => RCS  is installed.
++__.HAVE_RCS  !:=    		# yes => RCS  is installed.
+ __.HAVE_SCCS !:=    		# yes => SCCS is installed.
+ __.DEFAULTS  !:= yes		# yes => define default construction rules.
+ __.EXECS     !:= yes            # yes => define how to build executables.
+@@ -63,7 +63,7 @@
+    RMTARGET      *=  $<
+ 
+ # Default recipe that is used to remove intermediate targets.
+-.REMOVE :; $(RM) $(RMFLAGS) $(RMTARGET)
++.REMOVE :; # $(RM) $(RMFLAGS) $(RMTARGET)
+ 
+ # Check and enable AUGMAKE extensions for SYSV compatibility
+ .IF $(AUGMAKE)
+diff -ruN dmake.orig/unix/runargv.c dmake/unix/runargv.c
+--- dmake.orig/unix/runargv.c	2007-10-06 11:33:06.000000000 +0100
++++ dmake/unix/runargv.c	2008-01-07 09:57:39.888930900 +0000
+@@ -414,7 +414,12 @@
+ 
+ #endif  /* ENABLE_SPAWN && ... */
+ 
+-   DB_RETURN( 1 );
++   /* If wfc is set this command must have been finished. */
++   if( wfc ) {
++      DB_RETURN( 0 );
++   } else {
++      DB_RETURN( 1 );
++   }
+ }
+ 
+ 
+diff -ruN dmake.orig/win95/microsft/config.h dmake/win95/microsft/config.h
+--- dmake.orig/win95/microsft/config.h	2007-10-13 20:43:20.000000000 +0100
++++ dmake/win95/microsft/config.h	2008-01-07 09:57:31.310805900 +0000
+@@ -38,7 +38,7 @@
+ 
+ /* Name and version number of this package */
+ #define PACKAGE "dmake"
+-#define VERSION "4.11"
++#define VERSION "4.11-20080107-SHAY"
+ #define BUILDINFO "Windows / MS Visual C++"
+ 
+ #if defined (_MSC_VER)

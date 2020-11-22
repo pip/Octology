@@ -1,0 +1,5 @@
+src    = /home/pip/dvl/p4p/trunk
+dest   = /home/pip/p4p
+ignore = ^_
+ignore = \.svn
+ignore = \.tt$

@@ -1,0 +1,1023 @@
+locate -r '\.vimrc$' | xargs ls -l
+diff ~/.vimrc ~/.tmp/pip/.vimrc
+diff ~/dox/jobz/Trilogy/Cyg/.vimrc ~/.tmp/pip/.vimrc
+set
+diff --help
+l
+locate examples.btm
+e a
+cls
+l
+updatedb
+x
+dvl/
+jobz/
+7/
+l
+cd CldaHvokSkelMtch
+l
+vim CldaHvokSkelMtch.pl
+l
+updatedb
+cd
+l
+la
+echo $TZ
+echo $DST
+bak .vimrc
+vim .vimrc
+ls
+bak .vimrc
+ls
+vim .vimrc
+locate evim.vim
+cd /usr/share/vim/vim71
+diff evim.vim ~/bin/vim71/evim.vim
+d2u ~/bin/vim71/evim.vim
+diff evim.vim ~/bin/vim71/evim.vim
+vim evim.vim
+ls
+vim vimrc_example.vim
+ls
+la
+grep 78 *.vim
+d2u ~/bin/vim71/filetype.vim
+diff filetype.vim ~/bin/vim71/filetype.vim
+cp ~/bin/vim71/filetype.vim .
+cp ~/bin/vim71/syntax/maxscript.vim syntax
+cp ~/bin/vim71/syntax/maxscript.vim syntax
+x
+locate vimrc_example
+vim /usr/share/vim/vim71/vimrc_example.vim
+vim /usr/share/vim/vim71/vimrc_example.vim
+ls
+vim /usr/share/vim/vim71/gvimrc_example.vim
+vim .vimrc
+bin/
+vim71/
+ls
+macros/
+ls
+vim matchit.vim
+ls
+..
+ls
+..
+ls
+..
+ls
+vim .vimrc
+vim .vimrc
+vim .vimrc
+bak .vimrc
+mv .bak/.vimrc-81G2XSZ .bak/.vimrc-81FIZfM
+updatedb
+bin/
+vim71/
+ls
+vim filetype.vim
+vim ~/.vimrc
+vim ~/.bak/.vimrc-81FFCH2
+ls
+vim filetype.vim
+ls
+grep -i javascript *
+ls syntax/ja*
+syntax/
+ls
+cp xmath.vim maxscript.vim
+ls
+vim maxscript.vim
+ls
+vim maxscript.vim
+grep 78 *
+..
+grep 78 *
+vim evim.vim
+syntax/
+vim maxscript.vim
+vim maxscript.vim
+locate _vimrc
+locate .vimrc
+vim /c/UtlPanl-xmpl-81FCUXc.ms
+d2u maxscript.vim
+vim /c/UtlPanl-xmpl-81FCUXc.ms
+vim maxscript.vim
+d2u /c/UtlPanl-xmpl-81FCUXc.ms
+vim /c/UtlPanl-xmpl-81FCUXc.ms
+vim maxscript.vim
+vim /c/UtlPanl-xmpl-81FCUXc.ms
+vim maxscript.vim
+d2u maxscript.vim
+cp maxscript.vim /usr/share/vim/vim71/syntax
+vim /c/UtlPanl-xmpl-81FCUXc.ms
+vim maxscript.vim
+cp maxscript.vim /usr/share/vim/vim71/syntax
+vim /c/UtlPanl-xmpl-81FCUXc.ms
+locate p0
+locate p0.bat
+locate p0.bat | xargs rm
+locate pr0
+vim maxscript.vim
+/c/
+ls
+l
+vim UtlPanl-xmpl-81FCUXc.ms
+x
+ls
+du -s bin
+dvl/
+ls
+jobz/
+7/
+ls
+ls
+l
+cd Max9Scrp
+l
+lern/
+l
+mc help
+cp /c/Program\ Files/Autodesk/3ds\ Max\ 9/help/* .
+ls
+ll
+....
+..
+du -s 7
+rsync -av 7 pip@LBox.Org:dvl/jobz
+rsync -av 7 pip@LBox.Org:dvl/jobz/
+...
+rsync -av bin pip@LBox.Org:dox/jobz/7/CygPip/
+rsync -av lib pip@LBox.Org:dox/jobz/7/CygPip/
+ls
+lsa
+rsync -av .* pip@LBox.Org:dox/jobz/7/CygPip/
+scp .* pip@LBox.Org:dox/jobz/7/CygPip/
+l
+x
+ss
+x
+ss
+x
+.tmp/
+l
+vim Beyond3D-RealTimeRayTracing-81IFwXj.txt
+x
+x
+ls
+lsa
+updatedb
+x
+bin/
+ls a*
+asc
+./asci
+ascii
+ss
+x
+ss
+l
+dvl/
+jobz/
+7/
+ls
+rsync -av * pip@LBox.Org:dvl/jobz/7/
+l
+cp ~/bin/vim71/filetype.vim .
+cp ~/bin/vim71/syntax/maxscript.vim .
+ss
+ll CldaHvokSkelMtch
+cd CldaHvokSkelMtch
+perl CldaHvokSkelMtch.pl
+perl CldaHvokSkelMtch.pl -m
+perl CldaHvokSkelMtch.pl -h
+..
+l
+x
+ls
+locate --help
+locate -i 3dsmaxcmd
+dvl/
+jobz/
+7/
+cd 3DSMax9
+l
+cd MaxHelp
+l
+scp 3DSMaxCmdHelp.txt pip@LBox.Org:dvl/jobz/7/3DSMax9/MaxHelp
+x
+ss
+exit
+/c/
+Projects/
+cd Tools
+ls
+l
+du -s ResourceExporter
+du -s VisualStudioIntegration
+du -s AutomatedBuild
+cd Automated\ Builds
+ls
+l
+..
+du -s Auto*
+ss
+l
+cd
+dvl/
+jobz/
+7/
+l
+AsetChef/
+l
+..
+cd 3DSMax9
+l
+cd MaxScrp
+l
+cd StdScrpz
+ls
+l
+cd BaseLib
+l
+l
+vim XML-IO.txt
+l
+l
+vim XML-IO.txt
+l
+rm xmlIO.doc
+mv xmlIO.ms XML-IO.ms
+l
+ss
+....
+...
+7/
+rsync -av * pip@LBox.Org:dvl/jobz/7/
+l
+cp ~/bin/vim71/syntax/maxscript.vim .
+scp maxscript.vim pip@LBox.Org:dvl/jobz/7
+x
+l
+la
+ss
+l
+dvl/
+jobz/
+l
+7/
+l
+3DSMax9/
+l
+cd
+bin/
+l
+vim71/
+ls
+syntax/
+l
+ls
+vim maxscript.vim
+vim maxscript.vim
+d2u -s maxscript.vim
+vim maxscript.vim
+d2u -s maxscript.vim
+vim maxscript.vim
+vim maxscript.vim
+bak maxscript.vim
+Malooga
+ls
+..
+syntax/
+ls
+scp maxscript.vim pip@LBox.Org:dox/jobz/7
+vim maxscript.vim
+w
+vim maxscript.vim
+bak maxscript.vim
+..
+ls
+vim filetype.vim
+bak filetype.vim
+syntax/
+ls
+vim maxscript.vim
+l
+ls
+scp maxscript.vim pip@LBox.Org:dvl/jobz/7/
+scp ../filetype.vim pip@LBox.Org:dvl/jobz/7/
+ls file*
+bak maxscript.vim
+vim maxscript.vim
+vim maxscript.vim
+wdht
+ls
+reset
+echo $ROWS
+set
+x
+l
+dvl/
+l
+jobz/
+7/
+l
+l
+ss
+l /c/
+l /c/Program\ Files
+l /c/Program\ Files/Autodesk
+l /c/Program\ Files/Autodesk/3ds\ Max\ 9
+l /c/Program\ Files/Autodesk/3ds\ Max\ 9/Scripts
+ss
+l
+CldaHvokSkelMtch/
+l
+vim CldaHvokSkelMtch.pl
+l
+perl CldaHvokSkelMtch.pl --help
+..
+l
+3DSMax9/
+l
+MaxScrp/
+l
+scp *.* pip@LBox.Org:dvl/jobz/7/3DSMax9/MaxScrp/
+cls
+l
+vim LevelEditorPrototype-Pip-81LFsB7.ms
+...
+l
+DavePrkr/
+l
+mv /c/GameSchedule .
+l
+cd
+l
+la
+lsa
+/c/
+ls
+cd Program\ Files
+l
+cd Autodesk
+l
+cd 3ds\ Max\ 9
+l
+ls
+vim **/*.ms
+locate maxscript.vim
+pu /usr/share/vim/vim71/syntax
+ls
+rm maxscript.vim
+ln -s /home/pstuart/bin/vim71/syntax/maxscript.vim maxscript.vim
+..
+ls
+l
+diff filetype.vim /home/pstuart/bin/vim71/filetype.vim
+rm filetype.vim
+ln -s /home/pstuart/bin/vim71/filetype.vim filetype.vim
+po
+l
+l /usr/share/vim
+l /usr/share/vim/vim71
+l /usr/share/vim/vim71/syntax
+l /usr/share/vim/vim71/syntax | most
+l /usr/share/vim/vim71/syntax | more
+vim **/*.ms
+vim **/*.ms
+vim **/*.ms
+vim **/*.ms
+vim **/*.ms
+vim **/*.ms
+vim **/*.ms
+vim **/*.ms
+vim **/*.ms
+vim **/*.ms
+ls
+vim **/*.ms
+locate ColladaEx
+locate COLLADA
+/c/
+ls
+Projects/
+ls
+ls **/*.ms
+Tools/
+ResourceCooker/
+ls
+Distributable/
+ls
+scripts/
+ls
+vim *.ms
+vim *.ms
+l
+vim MaxToCollada*
+ls
+vim *
+l
+...
+ls
+cd
+ea
+src
+updtdb
+locate -r '\.ms$'
+l
+dvl/
+l
+jobz/
+7/
+l
+3DSMax9/
+l
+cd MaxScrp
+l
+StdScrpz/
+l
+BaseLib/
+l
+vim xmlIO.ms
+vim xmlIO.ms
+vim xmlIO.ms
+ls
+bak xmlIO.ms
+l
+..
+l
+grep -i xml *
+l
+vim MergeAnimation.ms
+vim MergeAnimation.ms
+l
+ls
+l
+ls
+vim *.ms
+l
+locate Distributable
+locate Distributable | most
+locate Distributable | less
+ls
+ss
+l
+....
+l
+AsetChef/
+ls
+l
+mc ResrcCookr
+cp --help
+cp -r /c/Projects/Tools/ResourceCooker/* .
+l
+..
+la
+rm .ResrcCookrNotz.txt.swp
+mv ResrcCookrNotz.txt ResrcCookr
+cd ResrcCookr
+l
+du -s *
+cd Distributable
+l
+ls
+lsf
+llf
+lls
+alias lls
+ls -l -S
+l *.ilk
+l *.exp
+vim XgpExporter.exp
+ls -l -S
+rm *.pdb
+rm *.ilk
+l
+rm *.exp
+ll -S
+du -s *
+du -s * | sort
+..
+du -s *
+cd Distributable
+l
+du -s LiveUpdate
+du -s icons
+du -s scripts
+cd LiveUpdate
+l
+l scripts
+..
+l
+l *.lib
+vim XMLExporter.lib
+l
+rm *.lib
+..
+du -s *
+cd Distributable
+l
+..
+l
+..
+ls
+la
+mv .bak ResrcCookr
+la
+cd ResrcCookr
+l
+la
+la .bak
+ss
+l
+rsync -av * pip@LBox.Org:dvl/jobz/7/AsetChef/ResrcCookr/
+...
+l
+cd AsetChef
+l
+cd ResrcCookr
+l
+cd Distributable
+l
+..
+cd Source
+l
+..
+cd Distributable
+cd scripts
+l
+cd Nine
+l
+.....
+mc ResrcXprtr
+cp -r /c/Projects/Tools/ResourceExporter/* .
+..
+..
+l
+mc AutoBld
+mc VisuStudioInteg
+cp -r /c/Projects/Tools/VisualStudioIntegration/* .
+..
+cp -r /c/Projects/Tools/AutomatedBuild/* .
+l
+2.0/
+ls
+l
+..
+1.0/
+l
+..
+l
+mv 1.0/AutomatedBuild.sln 1.0-AutomatedBuild.sln
+mv 1.0/Distributables 1.0-Distributable
+mv 1.0/Source 1.0-src
+l
+mv 1.0-Distributable 1.0-rel
+l
+1.0/
+la
+..
+rd 1.0
+l
+2.0/
+l
+mv Distributable ../2.0-rel
+mv Source ../2.0-src
+..
+rd 2.0
+l
+mc bldz
+cp -r /c/Projects/Tools/Automated\ Builds/* .
+l
+mv 2.0\ Builds 2.0-bldz
+l 2.0-bldz
+..
+l
+..
+l
+AsetChef/
+l
+cd ResrcXprtr
+l
+du -s *
+cd ColladaImporter
+l
+du -s *
+cd Interface
+l
+du -s *
+cd libs
+l
+rm ColladaImporter_Debug.lib
+...
+..
+l
+du -s *
+cd Output
+l
+cd Debug
+l
+du -s *
+l *
+..
+l
+..
+l
+vim ExporterPlugins.ncb
+l
+rm ExporterPlugins.ncb
+rm -rf Output
+..
+du -s *
+cd ResrcCookr
+la
+ah
+l
+du -s *
+cd Distributable
+l
+..
+l
+mv Distributable rel
+mv Source src
+l
+rel/
+l
+du -s *
+...
+l
+..
+l
+du -s *
+cd 3DSMax9
+l
+du -s *
+cd MaxHelp
+l
+....
+l
+7/
+rsync -av * pip@LBox.Org:dvl/jobz/7/
+du -s *
+l
+mc ObjDefEditr
+cp -r /c/Projects/Tools/ObjectDefEditor/* .
+l
+mv Distributables rel
+mv ObjectDefEditor src
+l
+src/
+l
+...
+l
+rsync -av * pip@LBox.Org:dvl/jobz/7/
+l
+locate LevelEditor
+3DSMax9/
+l
+mc PlugInz
+cp -r /c/Projects/Tools/3DSMax/Plugins/* .
+l
+mv Source src
+l
+cd Plugins
+l
+rm *.pdb
+l
+rm *.ilk
+rm *.lib
+rm *.exp
+l
+..
+l
+du -s *
+rm Plugins.ncb
+rm TestApp.pdb
+rm TestApp.ilk
+l
+cd Output
+l
+du -s *
+du -s */*
+du -s */*/*
+..
+rm -rf Output
+l
+l Plugins
+mv Plugins rel
+l
+rm How\ to\ Create\ a\ New\ Plugin.doc 
+mv How\ to\ Create\ a\ New\ Plugin.txt How2CreateNewPlugIn.txt
+l
+mv Max\ Plugins.msi MaxPlugInz.msi
+l
+..
+l
+..
+l
+rsync -av * pip@LBox.Org:dvl/jobz/7/
+l
+updatedb
+l
+pu ~/dox/jobz/7/
+rsync -av * pip@LBox.Org:dox/jobz/7/
+po
+l
+/c/
+ls
+Perl/
+ls
+site/
+ls
+lib/
+l
+locate fix_4_os2
+which updtdb
+/c/
+ls
+Projects/
+l
+Tools/
+l
+cd 3DSMax
+l
+cd Plugins
+l
+cd Plugins
+ls
+l
+..
+l
+cd Source
+l
+cd Common
+l
+ls **
+ls **/*
+...
+l
+updtdb
+locate tixml
+locate TinyXML
+locate tinyxml
+locate -i tixml
+grep -i -r tixml *
+l
+Source/
+cd LevelEditor
+l
+vim FieldTagLoader.*
+x
+echo $HOME
+x
+x
+ls
+pwd
+cd
+pwd
+src
+bak .Xdefaults
+vim .Xdefaults
+x
+x
+ls
+lsa
+la
+x
+echo $PS1
+l
+la
+echo stuf
+src
+l
+la
+x
+ls
+l
+la
+set | grep -i "^p"
+set
+x
+x
+x
+l
+lsa
+l
+src
+x
+echo $USER
+echo $USERNAME
+echo $PipsUser
+echo $HOSTNAME
+echo $PipsHost
+x
+src
+l
+x
+ls
+lsa
+ls
+la
+x
+l
+lsa
+x
+echo $PS1
+set
+x
+l
+lsa
+x
+x
+x
+x
+x
+set
+src
+ea
+ea
+ls
+la
+vim .Xdefaults
+ea
+ea
+ea
+echo $HOSTNAME
+ea
+x
+bin/
+vim71/
+syntax/
+ls
+vim maxscript.vim
+x
+ea
+x
+/c/Projects/Tools/3DSMax/Plugins/Source/LevelEditor/
+l
+vim FieldTag*
+x
+lsa
+la
+ss
+l
+la
+scp .* pip@LBox.Org:dox/jobz/7/CygPip
+ls
+l
+x
+bin/vim71/syntax/
+vim maxscript.vim
+x
+/c/Projects/Tools/3DSMax/Plugins/Source/LevelEditor/
+l
+vim Fie*
+x
+x
+ss
+x
+/c/Projects
+ls
+Tools/
+l
+cd ResourceCooker
+locate Collada.ms
+x
+cd /c/Program\ Files/Autodesk/3ds\ Max\ 9/Scripts
+l
+cd HavokPhysics
+l
+vim hvkPhysics_Utils.ms
+l
+grep hkSceneEx *
+l RagdollTools
+grep hkSceneEx */*
+grep hkSceneEx **/*
+grep hkSceneEx **/*.ms
+...
+grep hkSceneEx **/*.ms
+grep -i hkSceneEx **/*.ms
+x
+l
+bin/vim71/syntax/
+vim maxscript.vim
+x
+/c/Projects/Tools/3DSMax/Plugins/Source/LevelEditor/
+ls
+x
+cls
+l
+x
+xlsfonts
+xfontsel
+ls
+x
+x
+reset
+cls
+reset
+x
+rxvt -h
+x
+ptok
+x
+ptok
+x
+x
+ptok
+x
+ptok
+x
+ptok
+x
+ls
+l
+vim .zshrc
+perl -e "print $_,\"\n\"for(0..36)"
+perl -e "print $_,\"\\n\"for(0..36)"
+perl -e 'print $_,\"\n\"for(0..36)'
+perl -e 'print $_,\\"\\n\\"for(0..36)'
+perl -e 'print "$_" for(0..36)'
+perl -e 'print "$_\n" for(0..36)'
+perl -e 'print "$_\n" for(0..42)'
+l
+dvl/
+l
+jobz/
+l
+7/
+l
+3DSMax9/
+l
+MaxScrp/
+l
+cd RsrcXprt
+l
+locate Lucida
+locate -i Lucida
+locate -i Lucida | most
+locate -i Lucida | less
+locate -i BitStream
+locate -i vera
+ls
+ss
+l
+x
+x
+x
+x
+x
+dvl/
+jobz/
+l
+7/
+l
+cd 3DSMax9
+ls
+l
+MaxScrp/
+l
+mc RsrcXprt
+mv /c/MaxToCollada.* .
+l
+mv MaxToCollada.bat Max2Clda.bat
+mv MaxToCollada.ms Max2CldaHvok.ms
+mv Max2Clda.bat Max2CldaHvok.bat
+l
+la
+vim *
+vim *
+la
+chmod +w Max2CldaHvok.bat
+l
+chmod 700 *
+l
+vim *
+l
+bak *
+vim *
+l
+vim Max2CldaHvok.bat
+l
+vim *
+l
+vim *
+bak *
+l
+vim *
+updtdb
+locate 7x14
+ls
+l
+l /usr/X11R6/lib/X11/fonts
+l /usr/X11R6/lib/X11/fonts/TTF
+x
+la
+lsa
+mv .LS_COLORS .DIR_COLORS
+x
+rxvt --help
+rxvt -help
+man rxvt
+l
+x

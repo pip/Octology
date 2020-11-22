@@ -1,0 +1,736 @@
+# K4AM2Tc7:JonathanBlow-QAndA-MakingProgrammingLanguageParsersEtc.-lcF-HzlFYKE-K3U-JAQMDSub.subs from HTTPS://YouTu.be/lcF-HzlFYKE # 1h33m43s long;
+# 18:27 on line 422 has the 45YearOld coder reference; 85:29 has the understanding of the universe as being maybe better than anyone who came before;
+00:00 welcome guess while I'm collecting             31:11 one in the interpreter because our             62:57 here but yeah and so now if I want to
+00:02 questions these questions was one that         31:14 policy is that all code runs at                63:01 access the sub member of that I put
+00:05 is a pretty straightforward one to             31:17 compile-time and run-time and we don't         63:04 another brackets to access the file
+00:08 answer our suspect so I'll go ahead and        31:18 want to break that once you start doing        63:05 let's say you could say Y is X so 3
+00:09 ask it and you can be answering it while       31:20 Sim D or something we might actually           63:09 right and if I say print type of this
+00:12 I look at the other questions and that         31:22 decide to break it because we don't            63:12 it'll be int right now the thing is
+00:15 is any plans to make OS independent            31:24 actually do CMD yet but at least for           63:18 because this is a little bit higher
+00:18 static or dynamic libraries and I guess        31:26 like you know interlock compare exchange       63:19 level right then then see we actually
+00:22 I don't know exactly what they mean by         31:29 and stuff we actually have the                 63:25 have arrays unlike C right I actually
+00:24 that but I'm assuming that they mean           31:32 interpreter call out to that as well as        63:29 don't know it can
+00:26 something like okay is there a way that        31:33 the executable code call out to that           63:30 do this in C can you copy an array this
+00:29 you can produce sort of an intermediate        31:35 because we want all code to run the same       63:32 actually copies the data of the array
+00:32 format that gets shipped as a library          31:39 everywhere that's the point of having a        63:34 which you may not want to do oh I don't
+00:34 which then can be built on various             31:40 programming language right it specifies        63:37 think C allows you to do that by default
+00:36 platforms without having you know              31:43 what happens okay                              63:39 if you wrapped it in a struct it can but
+00:38 something happen I think you've already        31:46 so that's that's an inconvenient thing         63:41 it raised it was yeah so this is acting
+00:40 kind of got a solution for this sort of        31:48 so why haven't I changed it to the             63:43 like it's wrapped in a struct which you
+00:41 so I thought I'll just well so so on the       31:50 faster version one is well it's a hassle       63:45 might not want and that's actually this
+00:46 one hand that's not part of my problem         31:54 it's less of a hassle now to do those          63:49 is a performance strip-mine in the
+00:48 statement right now like you know if I         31:56 extra implementations than it is just to       63:52 language as it stands where you could
+00:50 try to solve everything at once I'll           31:59 keep doing that incremental extra work         63:53 accidentally do this it's not that
+00:53 never get anything done I'm already            32:02 but not have to rewrite the system             63:55 common because usually I mean you know
+00:54 doing way more than most people think is       32:04 that'll change if we decide to do AV X         63:59 usually if you pass an array into a
+00:56 saying right at once so you know I'm           32:06 or something suddenly it's like a              64:01 function the function wants to handle it
+01:03 trying to keep keep the problem                32:08 massive amount of stupid glue code and         64:02 raised a variable length which don't
+01:07 statement focused about what this              32:10 the interpreter to do all that and maybe       64:04 have this problem but but to have the
+01:08 compiler is doing and what it's for and        32:11 we'd rather not do it or maybe it's fine       64:07 semantics be simple and consistent we
+01:10 what the first release will be in all          32:13 I don't know but the other reason is           64:09 actually do copy the array in this case
+01:11 that that said okay something I started        32:15 just I haven't had time to think about         64:13 we might so we might add some rule where
+01:18 thinking about recently like later last        32:17 it because I'm working on so many              64:17 : equal is not always strictly like this
+01:19 year is that yeah you know so there's          32:18 projects like I said there is a problem        64:20 just says do type inference right and
+01:22 all these languages like you know              32:24 which is you can't possibly know a             64:22 right now it's almost always the type of
+01:25 JavaScript and people trying to run            32:29 hundred percent of the time if the             64:24 the thing on the right hand side however
+01:27 JavaScript native or whatever the hell         32:32 procedure that you are in if all the           64:26 there already are exceptions for example
+01:29 that's supposed to mean right                  32:35 procedures that it could possibly call         64:28 if your D referencing something from a
+01:30 and in people making stuff like discord        32:37 all the way out are all done and ready         64:31 struct that's like a relative pointer it
+01:36 written in these very slow very                32:38 to compile right because well you could        64:33 turns it into a non-relative pointer
+01:39 error-prone languages like yeah I don't        32:43 be calling through a function pointer          64:35 because relative pointers are small and
+01:41 actually know what dis cords in but I          32:44 you could be calling something you know        64:36 compressed and can't reach very far so
+01:43 guess it uses a react for rendering so I       32:47 you could be calling something from a          64:38 if you remove where it is like from a
+01:45 assume it's all JavaScript all the time        32:48 library that's written in C that will          64:40 strip and won't work anymore
+01:48 and for the most part you know I often         32:50 give you back a data structure or it's         64:42 yeah so we already say this is not
+01:53 will talk to people about this and say         32:52 something or you call in to that and it        64:46 always the same so it might be another
+01:58 like look you're claiming that you're          32:54 calls a callback that it has that calls        64:48 small step to just say we're gonna by
+01:59 using these languages that they give you       32:56 back into your / you have no idea what         64:50 default say we make it an array of
+02:01 a Productivity benefit and stuff but           32:58 the hell is going on right so you need         64:55 unknown size which is a different thing
+02:03 I've never seen that are you actually          33:00 to be able to handle all of that and so        64:58 but I'm not sure how good of an idea
+02:05 measuring that do why do you think             33:04 we're able to do that by the fact that         65:00 that is so so I haven't done it in
+02:07 you're actually getting a benefit all          33:06 this is a higher-level slower                  65:02 reality I've only made this mistake like
+02:08 that but there is one thing that those         33:08 interpretation that runs based on the          65:04 once in a hundred thousand lines of code
+02:10 language actually                              33:12 compilers data structure we can just           65:06 and it wasn't that bad and and that's
+02:13 are giving you and that is just the fact       33:13 look at the data structure and say hey         65:08 the sort of thing that you can issue a
+02:15 that you don't have to do a compile step       33:15 is this ready yeah                             65:09 warning about it's about in your meta
+02:19 to make your thing run on another              33:17 right now you there is some version of         65:11 program and so I just want to see like
+02:21 computer right people will conflate this       33:20 that that you could do with compiled           65:14 gotcha
+02:23 with web browsers they'll say well the         33:21 code but it would still be a little bit        65:15 yeah so so much says someone says what
+02:25 the web browser has solved software            33:23 slower it would have to be something           65:18 about doing the following yes you can do
+02:27 distribution which it hasn't really            33:25 like well every time we admit a compile        65:21 this you can go you can do this and that
+02:28 right it's terrible but you know like          33:27 well if this function happens to be            65:25 says make an array of unknown size out
+02:33 even it's it's really annoying to try to       33:29 ready to run and it already went to the        65:28 of it this is a different type though
+02:34 get programs that run consistently on          33:30 pipeline before us just emit machine           65:31 right so right I don't want to get too
+02:36 different browsers stuff however there         33:33 code representing what we actually want        65:36 much into it yeah so dear a list but
+02:38 is a version of that that actually works       33:36 but if it's not ready yet                      65:39 this when you don't you give a demo of
+02:42 and it's something more like what Java         33:39 you have to emit something that like           65:40 these before - right yeah this is all on
+02:43 had when running on a native processor         33:40 thunks up to the compiler and says             65:42 YouTube you can
+02:46 or something which is you have you have        33:44 suspend execution of this thing until          65:43 find it but this is basically a struct
+02:48 a well-defined set of instructions             33:47 this thing is ready and then when it's         65:45 that points to the array data yeah if
+02:50 something like for example LVM bit code        33:49 ready maybe you actually go down and           65:48 you're talking about implementation and
+02:53 or the Java bytecode or whatever and           33:51 like re overwrite the thing to have an         65:49 so it's not expensive except it is an
+03:00 maybe your operating system knows what         33:54 actual call and then if you do that you        65:52 extra layer of indirection where if the
+03:02 that is and the first time you run the         33:58 can't really write it to the file until        65:54 reason you wanted this on the stack was
+03:04 program it does a compile and caches it        34:00 you put the real call there or you know        65:56 so that you access all the elements
+03:06 right and it doesn't like JIT the              34:04 what I'm saying like at some point maybe       65:58 directly with like math that is known at
+03:08 program because that's terrible it             34:05 the machine code that you're running at        66:00 compile time you actually kind of defeat
+03:12 actually just does a one-off compile           34:08 compile time is not exactly the same as        66:02 that by doing this right because you
+03:14 like you would for any compilation and         34:09 the machine code that you're actually          66:06 specifically told it to forget how big
+03:17 that's just a that would just be a way         34:11 outputting because of this problem and         66:08 the thing was yeah if you if you really
+03:20 of distributing a program without having       34:15 also if it is the same as the machine          66:10 yeah I don't know you could probably get
+03:21 to do this compile step that I think           34:18 code that you're outputting because you        66:12 it back by right you know you could rely
+03:24 would be a useful reduction in friction        34:19 don't want to generate it twice if you         66:15 on compiler optimization to realize what
+03:27 and that might go a long way to offering       34:21 have optimization turned on you know           66:17 this is probably but you know whatever
+03:30 some of these people a possibility about       34:24 then maybe you're introducing more             66:20 so and then just to finish this off so
+03:32 a different way to distribute their            34:27 latency into this then then you would          66:24 going back to the original question
+03:33 software it's not what I'm doing right         34:30 even if it were a slower interpreter           66:26 so for taking pointers and dereferencing
+03:36 now I'm not thinking seriously about it        34:31 because you're waiting for optimization        66:29 pointers and structures and that sort of
+03:38 there is a little bit of a difficult           34:32 to happen so there's just variables that       66:33 thing the syntax there you changed as
+03:40 problem which is that you'd have to            34:35 make it involved and so the answer is we       66:35 well I believe correct yes and so so
+03:42 define an operating system API anyway          34:37 have a bytecode interpreter that's a           66:40 what was the reasoning behind again just
+03:46 because like how do you read from a file       34:41 sort of like another back-end except           66:42 focusing on what did you think needed to
+03:48 in this thing like it's it's one thing         34:43 it's like a middle end so here's a             66:47 be fixed about that let me let me grab
+03:50 to define the bit code but you still           34:51 question that has to do with I guess I         66:49 the fifth ice-t and then I will answer
+03:52 have to have a mapping from like you           34:56 want to say like text translation to a         66:50 this how much ice-t do I drink while
+03:54 know reading from a file or whatever and       34:58 certain extent and I'm I'm curious what        67:03 streaming the answer is approximately
+03:56 then so maybe at that point it does sort       35:01 your thoughts are on it too because I've       67:05 one per hour I guess yeah all right we
+03:59 of would sort of benefit from being            35:03 looked at this sort of thing in the past       67:09 have empirically determined yeah so
+04:03 anchored to a programming language or          35:04 sure                                           67:20 you know so this is a more of a minor
+04:05 something or at least like the fact that       35:05 with the JI meta programming philosophy        67:23 syntactic thing than so they're putting
+04:09 there's a library there that has               35:08 as you currently conceive it do you see        67:26 the type in one place I think is major
+04:10 different definitions on different             35:14 it being a goal to be able to do               67:28 and it would be hard for me to imagine
+04:11 operating systems I don't know but I've        35:16 something like take the input text and         67:29 us changing that right it does seem
+04:13 thought that something like that would         35:19 be able to reconstruct the input text          67:31 pretty important to get that right
+04:15 be useful right if people were actually        35:22 again exactly as it was for example if         67:33 because it causes no end of the
+04:17 doing a good job at building the future        35:25 you wanted to take an incoming program         67:34 frustration and see for basically
+04:20 architecture for what computers are like       35:27 and write out some portion of that             67:36 everybody but then like how do you how
+04:26 they would do that instead of like             35:29 program exactly as it was and                  67:38 do you take the address of things or
+04:28 webassembly in the browser if you know         35:31 that means keeping for example the             67:41 whatever is is more of a minor thing
+04:30 what I'm saying but that's not that's          35:33 comments that we're in there right yeah        67:46 that's more easily changeable and I made
+04:35 not how it is and it's not something I'm       35:36 and you can see what you could see why         67:49 what probably most people would consider
+04:36 working on                                     35:37 this might be important depending on           67:50 a controversial decision really um with
+04:38 absent that I don't think that any more        35:39 what you wanted to use that meta program       67:54 this well okay so at first and we might
+04:42 dynamic version of that is a good idea         35:40 for us I'm curious do you think about          67:56 reverse this or whatever so at first I
+04:44 at all I don't think you should JIT ever       35:42 that and what do you think about that if       67:59 used like Pascal syntax for taking a
+04:46 there are lots of reasons for that God         35:43 you do I do think about that it is our         68:01 point early if you go look back at the
+04:49 why I have to exit steam because it            35:45 plan to do that eventually we don't            68:02 really old videos let's say I have X as
+04:51 keeps telling me about all the games           35:48 quite do it right now so like I said           68:05 an int right and P is going to be the
+04:53 Eric's playing which is fine but the           35:51 when we pass you syntax tree nodes we          68:07 address of X right so back in the day
+04:55 audience doesn't need to know that you         35:54 give you the textual location in the           68:10 you would say this and the carrot just
+04:58 don't need a JIT ever you don't need to        35:55 program we don't have things like              68:14 said take the address and the reason why
+05:00 I don't know whatever other things             35:58 comments right now but we're going to          68:16 I wanted to do that was because I wanted
+05:04 people you don't need a heavy runtime so       36:00 want to and the reason is like I've said       68:22 to change the order of how things happen
+05:06 you don't want a runtime that manages          36:04 many times to people asking about syntax       68:24 in C and if I use the star then it might
+05:09 your memory allocations and does garbage       36:06 and stuff I don't care that much about         68:28 be confusing right so for example if I
+05:11 collection or anything like that unless        36:09 syntax even right now the goal is to           68:31 could say pointer type is a is a pointer
+05:12 a specific application opts into it            36:13 work on language semantics and probably        68:38 to an int right actually you could do
+05:14 which I would encourage specific               36:15 we won't change the syntax for a while         68:44 something like that so I was using carat
+05:16 applications not to so that's the              36:17 and we will probably have some number of       68:47 both to say pointer to int like if
+05:18 problem with the Java model is it              36:19 users I don't know if it'll be before or       68:50 you're talking about it type this is a
+05:20 assumes a very heavy runtime and it            36:21 after the public release but we'll have        68:52 type that's a pointer to int and this is
+05:23 assumes more separation from the machine       36:22 some number of users with real programs        68:55 take the pointer of X right and I say
+05:27 than it would have so someone says I           36:24 and even ignoring those we'll have a           68:58 it's the reverse of the C logic right
+05:31 just described web assembly and huazi          36:27 bunch of library code and like a hundred       69:00 this logic is something like you use the
+05:33 whatever the hell was he is supposed to        36:29 thousand lines plus of game code right         69:04 same syntax to like use the thing as you
+05:34 be and honestly I don't believe that I         36:31 that all is in the old syntax and so you       69:07 did to declare it right but that's kind
+05:37 don't know very much about web assembly        36:34 want to be able to convert that and if         69:09 of a reversal because you're like
+05:39 but the point is once you start tying          36:36 you run it through like a totally grungy       69:11 unwinding the thing and so it's an
+05:41 something to web browsers and all this         36:38 automated converter that messes with           69:13 elimination based grammar basically
+05:43 stuff you could say well you can also do       36:41 indentation and destroys comments so           69:14 you're eliminating things from the
+05:47 it not on a web browser but it's not           36:43 removing comments obviously destroys           69:16 Declaration yeah which is the thing with
+05:49 going to be that good right it's just          36:46 information in your program but even the       69:20 that where I'm using it I'm removing a
+05:51 like the D people who say hey you can          36:48 way I program indentation carries a lot        69:22 star from the where I declared it base
+05:53 program Indy but you don't have to do          36:51 of information or blank lines carry a          69:23 and of course if we program and see
+05:54 garbage collection and it's like well          36:55 lot of information right like I'll put         69:25 we're used to that we've been doing it
+05:56 wait as soon as I don't have garbage           36:57 three lines that are very related to           69:27 forever and we don't think about it but
+05:58 collection I can't do all these other          36:59 each other together and then put a blank       69:29 it's probably kind of confusing and
+05:59 things or use any code that anyone else        37:01 and then some more you know it's like          69:30 weird
+06:01 ever wrote like that's how these things        37:03 reading paragraphs in a in text in             69:31 in the beginning and I'm not sure that
+06:05 always end up you have to define it to         37:06 English text or something right so so I        69:35 it generalizes to all kinds of operators
+06:11 not involve web browsers at all                37:10 consider that important we don't do it         69:37 and stuff so this is much more
+06:13 otherwise you lose so maybe if that's          37:12 yet                                            69:40 straightforward it's like look take the
+06:21 the direction it ends up then great but        37:13 and so then the question is when it            69:42 pointer of the type int to get the type
+06:23 honestly I don't believe that web              37:14 comes to stuff like comments should we         69:44 pointer to int right take the pointer of
+06:27 programmers are mature enough to do the        37:20 actually make tokens for those and             69:46 the value X to get a pointer to X like
+06:30 right thing here                               37:23 should we actually give those to your          69:50 it's it's just the thing instead of the
+06:31 I just don't believe it I've seen too          37:25 meta program by default or does that           69:53 reverse thing right got it now this is
+06:33 much garbage being output by the web           37:28 take extra resources and time and should       69:57 XOR and see but we were appropriating it
+06:34 world so                                       37:31 we instead maybe maybe maybe you can set       69:59 there was no unary carrot and C so I was
+06:38 you can you can tell me that that that         37:39 some options and then those come in on         70:02 like this won't be ambiguous
+06:41 thing matches webassembly + y z whatever       37:41 your message stream or maybe you can get       70:03 the problem is people from freaking
+06:45 the hell that is I simply don't believe        37:42 those in some ancillary way                    70:06 Finland or wherever said oh it's really
+06:49 that that will be a competent execution        37:44 maybe you can call some function that          70:08 hard to type carrot so they're not X or
+06:51 of this idea based on what I've seen           37:46 says look digest this file and give me         70:11 people so I second-guess that a little
+06:53 from web programmers for literally 24          37:48 all the comments in the same format that       70:13 bit and right now the syntax for the
+06:56 years sorry yeah yeah that was a long          37:50 we get the usual semantic messages in          70:15 past few years has actually been star
+07:07 answer but so I guess I've built a list        37:52 but different I don't exactly know             70:17 for pointer and this actually then has
+07:13 of questions now and I just want to say        37:54 what's the best way and this is related        70:21 the reverse meaning of C and that's kind
+07:16 like having looked through the questions       37:56 to some other decisions that are yet to        70:24 of confusing I see except I just got
+07:17 I I've selected the ones that I wanted         37:57 be made so right now like I said much          70:28 used to it really fast and I'm hoping
+07:21 to ask largely based on whether or not I       38:00 earlier in the stream when we load a           70:29 people get used to it really fast but we
+07:24 only love tailed well with the things          38:01 file to parse it we just pull the entire       70:31 might change it back if people find that
+07:27 that we covered in this video so that's        38:04 file into memory right however when we         70:32 too confusing or whatever so this is
+07:29 good strategy yeah if I'm skipping your        38:07 give you identifiers and stuff I think I       70:35 actually you know if I'm going to write
+07:32 question it is not because I thought it        38:09 still allocate those and copy them right       70:37 the type in there this is actually P is
+07:34 was a bad question it's because I don't        38:16 so if you say the identifier hello             70:40 a pointer to int which is the address of
+07:36 think it's maybe the appropriate               38:18 sailor we actually copy that in part           70:44 X which like when you see it like this
+07:37 question for this stream and there's not       38:21 sometimes because there's back slashes         70:45 it really makes a lot of sense I mean
+07:39 going to be an infinitely long Q&A so          38:23 or whatever especially in strings we           70:48 let's write the carrot version to get
+07:42 yeah let's start with the following            38:26 don't have all this weird trigraph stuff       70:50 rid of the seed confusion it's like look
+07:45 question which i think is a I get asked        38:28 like like c has but we have a few things       70:52 this this type is a planner to int and
+07:50 this all the time on my stream and I           38:32 where you might adjust it slightly right       70:55 the value is the pointer to X let your
+07:52 never have a good answer but that              38:36 or like just dealing with new lines or         70:58 brand is very exact same logic to read
+07:54 doesn't mean I'm not gonna ask you             38:38 something in the file right if it's a          71:01 the expression as it can to read the
+07:56 because maybe you do and I think it's an       38:40 DOS file versus whatever but for the           71:03 declaration which yeah yes it's just the
+07:59 important question for beginners which         38:42 most part you could almost imagine just        71:05 only thing is it is a little bit because
+08:01 is what resources would you recommend          38:46 giving if I if I decide we're just going       71:09 of the fact that I'm using starred now
+08:03 someone to use to make a toy compiler          38:48 to keep the memory of the file all the         71:11 this expression has the reverse meaning
+08:06 with or a compiler for educational             38:50 way through compilation then maybe my          71:13 of see yeah even though it's completely
+08:08 purposes so if they watch the stream and       38:52 identifier is just a pointer to the            71:15 consistent in this language right and so
+08:11 they're excited about trying to build a        38:54 thing in the file and if I have to             71:18 do you do the opposite how do you
+08:13 compiler themselves but they don't have        38:55 rewrite the identifier for you know            71:19 dereference to dereference something is
+08:16 the experience you have what are do you        39:00 backslash reasons or something I mean          71:21 really ugly right now I should change it
+08:19 have any advice well again so my advice        39:03 that's another weird one do you keep the       71:24 but it's literally it's it's unary left
+08:22 and we said this at the beginning of the       39:05 backslash and like those are you start         71:28 shift okay just because I wanted
+08:24 stream but I don't know if you saw it my       39:10 getting into really tiny details like          71:30 something that's like I want to take the
+08:27 first piece of advice is a compiler is         39:11 that like do you preserve that probably        71:33 value out and I see it just sort of
+08:29 just a regular program alright so if you       39:14 but then you almost want a totally             71:37 evokes that and I didn't want to use
+08:36 could program a regular program then           39:17 different interface because when you're        71:39 unary less than because you're sort of
+08:38 just use whatever programming language         39:18 talking about the identifier when you're       71:42 asking for more
+08:40 you know and are proficient in and like        39:20 analyzing the program you don't want           71:44 practical problems sometimes if you do
+08:43 to use and start making a compiler right       39:22 weird markup in there maybe you have to        71:46 that so I did this I don't think this is
+08:48 you know it's it's like weddings a gay         39:25 figure out that there was a backslash in       71:49 permanent I think we're gonna change
+08:54 wedding is just like a straight wedding        39:27 there from looking at the text you will        71:50 this to something else the question is
+08:55 I was trying to remember as soon as I          39:29 range given to you with that identifier        71:52 just yeah what's what's better yeah now
+08:59 said a compiler is just like a regular         39:31 maybe like that system of how do you           71:54 the thing is you don't actually
+09:01 program that reminded me of something          39:35 round-trip back to a textually identical       71:55 dereference pointers very often for
+09:02 and I was distracted trying to think of        39:37 file we do not do yet and so we haven't        71:57 example because you'll pass pointers
+09:04 it I miss Keaton Peale quite a bit you         39:40 solved all the small issues I believe          71:59 around like if if s is a pointer to a
+09:09 can go on YouTube and look up key &            39:43 for the most part we are able to               72:03 sandwich right then in this language you
+09:11 peele gay wedding yes it's very just           39:45 round-trip back to a semantically              72:07 say s dot x equals whatever right sy is
+09:14 like a straight wedding yes um you just        39:47 identical file right that we can then          72:11 whatever and you don't care if it's a
+09:18 wear whatever you would normally wear          39:48 compile again and get the same thing we        72:14 pointer or not so whether it's a
+09:19 yeah so but there isn't anything in            39:51 do that in some of our tests is just           72:15 sandwich or not a sandwich you don't
+09:24 particular that you think I guess well I       39:53 those tests probably don't have                72:17 have to change any of this that's true
+09:26 mean they let me just to push on that a        39:55 hundred-percent language feature               72:18 in several newer languages it's not true
+09:28 little bit cuz obviously yes but the           39:56 coverage in fact I guarantee you they          72:21 in something like C so in C you care a
+09:32 only thing is let's say some of those          39:58 don't have hundred-percent language            72:23 lot more if something as a pointer or
+09:35 things we were talking about like the          39:59 feature coverage so it's it's possible         72:25 not here you don't
+09:36 lexer and the parser thing and all that        40:01 to get some things wrong but those are         72:26 these I just found that I was doing
+09:38 sort of stuff if you don't know any of         40:03 easy to fix                                    72:29 these clerical changes all the time that
+09:41 those things it kind of helps someone to       40:04 right the is not rocket science to fix         72:31 were a freaking waste of my time right
+09:44 point out the fact that oh you can break       40:07 those you just have to make sure you           72:33 and so we sort of Auto dereference
+09:45 things into tokens I only point that out       40:08 test them all and cover them all but           72:35 pointers in certain ways not a hundred
+09:47 because like when I first wrote parsers        40:13 because I want well here's the thing so        72:37 percent of the time and so some of the
+09:52 when I was a little kid they were awful        40:16 not just changing the syntax of this           72:39 rest of the language design is like when
+09:54 and the number one reason cuz I never          40:18 language but let's say you decide that         72:41 are things automatically a pointer and
+09:57 thought Oh bucket things into tokens           40:20 you want to go programming rust now and        72:43 like when aren't they you know but you
+10:00 give those tokens IDs right right and as       40:23 you want to output a rust program that         72:50 know so yeah so because of that you
+10:02 soon as I saw that like I actually asked       40:25 would be hard                                  72:53 dereference less and so the fact that
+10:05 a friend who had gone to school when I         40:26 you would have to wrap everything and          72:55 this is a little bit more awkward I
+10:08 went when I was 18 I was talking to            40:27 unsafe or whatever but let's just say          72:57 don't totally care but I don't like this
+10:12 somebody who had actually gone to              40:29 you wanted to do that right now with           72:59 like this is a thing that I think it
+10:13 college and everything and they said oh        40:32 most programming languages there are two       73:01 looks ugly it's weird and I'd rather do
+10:16 you just put them in togas at just that        40:34 ways of doing that one is you write            73:05 something else in the end but that's
+10:18 piece of information was like enough to        40:36 something that's kind of essentially a         73:06 what it is right now got it yeah
+10:20 totally go like oh great                       40:38 preprocessor that doesn't really know          73:09 so I let's wind down here because we're
+10:22 so I mean I guess that's the other thing       40:40 the meaning of things and just tries to        73:14 getting towards the sixth hour yeah I'm
+10:25 is maybe just watch your stream would be       40:42 chomp on the syntax and output the new         73:17 gonna I'm gonna edit this in YouTube
+10:26 one thing but like how do you get a            40:45 syntax and those make a lot of mistakes        73:19 into probably conversation and then QA
+10:28 little bit of that so you're not               40:47 they have a lot of failings they don't         73:22 will be separate yeah it's it's been
+10:29 literally completely going in blind cuz        40:49 understand the semantics of the program        73:25 long so I'll end with two final
+10:31 it's hard I mean this is weird because         40:51 there are some sophisticated things that       73:28 questions one is a question that I guess
+10:33 again so both both in academia and             40:53 they can't do because they don't know          73:31 I don't know the answer to even though
+10:36 industry there's a ton of misinformation       40:55 what types of things are right in the          73:33 it's it's asked I suppose of both of us
+10:37 there's a ton of people making things          40:57 meta program here we know what the types       73:35 and the question is are there things on
+10:40 way harder than they should be in              40:59 of things are and that lets you do a lot       73:37 which you disagree with each other
+10:42 academia especially there's tons of            41:01 more than a purely syntactic thing would       73:39 in programming and how do you try to
+10:44 people obsessing about grammars as             41:03 be the other thing people do these days        73:42 resolve them and I guess I don't know
+10:46 though those were the most important           41:05 is they make a plugin for the compiler         73:46 the answer that I would save not really
+10:48 part of a compiler when in fact they're        41:08 so like you know it's kind of a popular        73:49 that I've experienced I bet we could
+10:50 not that important they obsess about           41:10 thing I guess now to make an LLVM module       73:52 find some you probably find some I mean
+10:52 aspects of type systems that are not           41:14 or plugin or whatever the hell it's            73:55 definitely our indentation in capital is
+10:54 very important for getting practical           41:15 called where you actually get all this         73:57 styles are different but those don't
+10:55 work done on the other hand right just         41:19 information and then you could use that        73:58 matter yeah that doesn't really change
+11:00 like with anything all                         41:22 to output a different programming              74:00 like I don't care if you told me I had
+11:01 of these all of these incorrect things         41:24 language and the problem there is now          74:02 to program in your style I would be like
+11:05 that you would learn have a nugget of          41:26 you have all these tool chain and              74:03 okay I know and mine literally just
+11:09 you know not all of them but a lot of          41:27 portability issues like we were talking        74:07 dates back to knr see this is just what
+11:10 them have a nugget of correctness that         41:28 about earlier in the stream you're also        74:09 like if you look at the UNIX tile is
+11:12 they started out with right and so the         41:30 in llv a LLVM api crazy land which is          74:11 this is what it was right yeah it's just
+11:14 obsessing about grammars and stuff well        41:33 very encumbered and slow and all these         74:15 what I what I learned it doesn't matter
+11:17 there's a few nuggets in there that are        41:35 things and your program just isn't a           74:16 that much um you know there probably are
+11:20 correct and one of those is yes you            41:38 standalone thing anymore it'll break as        74:22 some but if I were to think of some
+11:23 factor your parsing into making tokens         41:40 LLVM changes and whatever so so there          74:26 higher level ones and I'm not sure that
+11:27 and then dealing with tokens and I guess       41:44 are those disadvantages and so this I          74:29 exactly that you would disagree enough
+11:29 the problem is if you just say that            41:46 think is a much simpler cleaner minimal        74:32 to say that what I'm doing is wrong it's
+11:31 simple thing that doesn't seem like you        41:49 way to do it we just don't do it text to       74:34 just like not exactly your way right
+11:33 should have a PhD so then they go add          41:51 text yet we do it you know we do it we         74:36 yeah that I probably the way most of
+11:36 lots more layers get 40 papers in a            41:56 do it at the semantic level yet but but        74:39 them would be I think my impression is
+11:42 refereed journal on that John doesn't          41:58 but text the text is on the roadmap at         74:41 that I will definitely for example use
+11:45 make any sense yeah it totally doesn't         42:00 some point so along those same lines           74:48 someone's crappy library for a while and
+11:46 make any sense so you know that's butBut       42:06 here's I'm going to combine two                74:50 then replace it later or whatever I mean
+11:56 how to answer that in general is a hard        42:08 questions that are sort of similar to          74:53 I don't even do that that often but I
+11:58 problem like I don't I don't know how to       42:10 that one                                       74:54 will do that sometimes whereas you'll be
+12:01 tell you how to do that in general like        42:11 and I think that go together so you gave       74:56 like I just won't tolerate this yeah I'm
+12:03 when I was in school I learned a lot of        42:14 the example earlier where you were             75:01 going from first principles and I'm just
+12:05 things and believed some things that I         42:16 talking about                                  75:02 gonna gonna do it straight out yeah no I
+12:08 don't currently believe right because I        42:17 hey like here's the met a piece of             75:07 I guess what I would say there is I
+12:10 reverse those beliefs based on my              42:19 Medicaid that I wrote that can like            75:09 usually chalk that up mostly they're two
+12:12 experience so how do you do that               42:21 output a stack trace and that sort of          75:11 different goals in the sense that like I
+12:17 faster than I did I don't exactly know         42:23 thing and you're also talking about how        75:15 feel like if I was more of a game
+12:23 just use your time efficiently like            42:26 this metaprogramming stuff comes back to       75:17 designer like you are I would probably
+12:26 people should be able to learn much            42:30 you know the runtime but the runtime I'm       75:20 start making those trade-offs more
+12:28 faster than I did because we didn't have       42:33 sorry the meta program has access to all       75:22 frequently as well though because I feel
+12:30 the Internet in the old days computers         42:36 of this information but of course like         75:25 like if you have this thing in your head
+12:33 were slower and hard to work with as           42:38 you said anything that you can run             75:27 that you're like this is what I'm trying
+12:36 we've said for that doesn't matter that        42:41 during compile time presumably you could       75:28 to do right here that there's this
+12:37 much because software is so slow today         42:43 also sort of pass those things on to           75:30 design and the thing that I'm making
+12:39 that computers are approximately as slow       42:46 runtime and so on so it's kind of a mix        75:33 that effectuates that design I have to
+12:41 as they were back and yeah but it didn't       42:48 there so the questions and I think I           75:37 make some trade-offs because if I spend
+12:45 matter a little bit I guess one thing I        42:50 know the answers to these but I'd rather       75:39 too much time making this thing perfect
+12:53 might say that I just thought of here as       42:52 have you extended because I don't think        75:41 I won't be able to do whatever it is
+12:56 you were saying it is one thing you            42:54 other people maybe know as much about          75:43 that I was trying to do over here as
+12:58 could try is yes look at all of the            42:55 how the compiler works as as I do here         75:44 well like I'm effectively time sharing
+13:03 resources on these topics in in the            42:58 are the two questions you're exporting         75:47 always I feel like those decisions make
+13:06 following way rather than reading what         43:00 compiler level information like type           75:49 a lot of sense at that point cuz I'm
+13:09 someone tells you about how to build a         43:02 tables and such to make meta programming       75:50 just like look yeah it's there's that
+13:11 compiler don't do that start programming       43:03 work when you distribute binary x' can         75:54 there's a hard split there right yeah
+13:14 one without knowing                            43:06 you talk about that and I'm not sure if        75:55 and so so I think in part again because
+13:16 what you're doing and just try some            43:08 they quite understand exactly around           75:57 I'm a designer also and I I want to get
+13:17 stuff and see what you can learn when          43:10 there so maybe you could say meld more         76:00 to the design part early exactly I
+13:20 you cannot make forward progress because       43:11 and the other question is does                 76:03 definitely have a thing where I lay out
+13:22 you start to get stumped then go look to       43:12 reflection meaning I assume this exam          76:06 the code and the way some things happen
+13:26 see what people have said for the              43:15 exact thing that the meta programming          76:09 is very mediocre and then
+13:28 solution to that particular problem            43:17 sort of type annotation all that sort of       76:10 refine it over time and sometimes that's
+13:29 you're having because maybe that's the         43:19 stuff yeah expose your application to          76:12 very good you know the way I say it is
+13:33 way to avoid getting all of this               43:21 reverse engineering and so again I think       76:14 I'm just trying to get experience at
+13:36 nonsense because if you yourself               43:24 I know the answer these two questions          76:16 this particular game so I can become an
+13:38 encountered the actual problem then at         43:25 but you know if you could explain them         76:18 expert in it and then I'll know the
+13:40 least now you have some context to             43:27 for people who don't necessarily know          76:20 right way to solve the problem sometimes
+13:42 evaluate what people what you will then        43:29 okay so let's even you know there are          76:22 that might have resulted in more pain
+13:45 read about it whereas if you read about        43:33 different levels of meta programming           76:23 though so like the the transaction
+13:47 stuff without ever actually having             43:37 right and there are some very basic            76:25 system for the sokoban game I tried a
+13:49 encountered a problem yet then you're          43:41 levels that encompass things that most         76:28 lot of things before that that didn't
+13:51 just gonna you have no idea like it            43:44 programs would want to do even when            76:30 work out maybe if I had just taken a
+13:53 could be the best advice ever coming           43:46 they're not being very meta that C++ and       76:32 very hard line stance early I might have
+13:56 from somebody or it could be nonsense          43:50 C for example don't do very well I guess       76:36 saved some time overall but it's not my
+13:57 and you really don't have a context to         43:52 you post plus is putting it on their           76:39 style and I don't know how to do that
+13:59 judge it so maybe the best thing you           43:54 future which list or whatever but for          76:41 experiment in an alternate reality right
+14:01 could do is try to have some context I         43:56 example I'm gonna run this game right          76:43 so I can't I can't really compare I
+14:03 was here gathering information I agree         43:58 which is in the new language it's about        76:47 don't know for sure which way would have
+14:06 with that                                      44:00 a hundred thousand lines whatever I can        76:48 been better yeah
+14:06 advice in general about all kinds of           44:03 open the editor and I can select an            76:51 and I'm not sure I think I would have
+14:08 programming right like if you work on          44:05 entity right guy so guy it's not a very        76:53 had to do at least one or two crappy
+14:10 something and you try to solve it and          44:09 good name because women are also guys in       76:55 versions I just I might not have had to
+14:13 then you get stuck on some part you now        44:12 this but whatever so guy is just as            76:57 do five crappy versions yeah yeah
+14:15 know exactly what you need to know and         44:16 struct in the code and kind of like you        76:59 because one or two you just need to do
+14:17 then you also have strong motivation to        44:20 can in c-sharp you can add annotations         77:00 to sort of poke out the space and figure
+14:20 learn that thing whereas like abstractly       44:22 that say if it's deprecated                    77:02 out also a second ago I did use the
+14:21 learning about stuff generally I often         44:25 if you should display it in a certain          77:04 example of using someone's crappy
+14:24 was not super motivated at however with        44:27 special way or something but there's a         77:06 library but again because using
+14:27 compilers specifically it just seems           44:29 default way of displaying everything and       77:09 libraries is so painful in C or C++
+14:29 really hard to do to me because let's          44:31 you know this editor is able to walk           77:11 that's very limited that's like if I can
+14:32 say you're writing your parser and             44:34 over the information for that struct           77:14 call into the operating system to do
+14:34 you're like how do I deal with operator        44:36 declaration and and let me use it and          77:15 something and I know it's not the best
+14:36 precedence right you'll have a very            44:42 modify the things in the struct and all        77:17 or if someone has a source-level library
+14:38 specific thing I'm not doing a good job        44:44 of that so if I modify the y coordinate        77:19 that I can just paste into my code I'll
+14:40 at it and then you go read a compiler          44:48 it's doing that by poking the                  77:21 do that for a while I will not like link
+14:44 book about operator precedence and it          44:53 information directly into the data             77:25 in a massive library with many files
+14:45 says well first write out the the              44:54 structure at runtime but you know it's         77:27 that I have to compile differently for
+14:50 grammar in backus-naur form language and       44:57 also telling the editor that it did that       77:29 different platforms unless yeah I think
+14:53 then you get a parser generator and then       44:59 so that the editor can change anything         77:30 there's a high likelihood of me using it
+14:55 you write an lalr representation of your       45:01 it wants to change and so when you have        77:32 in the shipping thing well yeah I mean
+14:59 grammar in the parser generators               45:06 a certain level of what's called               77:35 like STB image versus tensorflow yes not
+15:01 domain-specific language and then you la       45:09 introspection or reflection there's            77:39 you can't talk about those two things in
+15:04 blah blah right and it just like in the        45:11 weird ways that terms change over time         77:41 the same sentence right like I can
+15:08 case of compilers specifically I feel          45:13 right like so it used to be called             77:44 categorically say that I will never ever
+15:11 like like the the anything that they say       45:16 introspection but then c-sharp called it       77:46 ever use tensorflow yeah unless I'm
+15:18 is going to be predicated on this giant        45:21 reflection and so now everybody calls it       77:50 forced to do so at gunpoint or something
+15:21 mountain of stuff that is not actually         45:23 reflection I guess I I don't know that's       77:52 like it just doesn't make any sense by
+15:22 what you want to guess so I don't like a       45:28 because they they never understood the         77:54 the way dude so I was at this conference
+15:27 much harder problem than it is and say         45:29 concept before c-sharp had it I don't          77:59 with Chris Ladner uh-huh and he was
+15:29 graphics                                       45:31 know what it was but I think there's           78:02 talking about the stuff he's doing now
+15:29 where there tend to be more accessible         45:34 also a little bit of the like lambda the       78:04 which I guess is public knowledge but a
+15:32 less overbearing sources in various            45:36 ultimate people have probably like long        78:07 lot of it has to do with like compiling
+15:36 places where you can kind of just go oh        45:39 since rigorously defined these terms in        78:09 trying to compile tensorflow into
+15:38 here's the actual solution and compiler        45:42 some kind of a biblical codex somewhere        78:11 something more reasonable cuz it has a
+15:42 Theory stuff doesn't doesn't seem to           45:46 and now you have to use the right one or       78:13 lot of people so here's the thing I
+15:44 have is yeah yeah so I feel like I feel        45:47 everyone will get mad yeah somebody says       78:16 didn't say this to him straight up so
+15:49 like that is the right strategy                45:50 in chat that that was Java I don't             78:19 maybe if someone wants to link him to
+15:50 generally but it's hard in compilers um        45:51 exactly know but yeah reflection sounds        78:20 this because I had to leave he was doing
+15:54 also you know when when I started              45:53 like a weird verb to me about like doing       78:23 a final
+15:58 streaming more compiler stuff about a          45:57 something whereas introspection is like        78:24 at the time what I had to leave and go
+16:01 year and a half ago I guess or I went          45:59 oh I see right anyway so having this           78:25 to the airport um but like they're doing
+16:03 through a different phase of wave of           46:04 level of information is very useful for        78:28 all this stuff with tensorflow
+16:05 streaming compiler stuff I decided you         46:05 a lot of programs okay so how do you get       78:29 and it is exactly what the game industry
+16:08 know people keep asking me what's the          46:09 this kind of information well what we do       78:34 did from the late 90s to the early 2000s
+16:10 best place to learn compiler things and        46:13 is we export these things if you've been       78:36 in terms of graphic api's we're like hey
+16:12 so I went and bought all the books from        46:15 watching for the many hours that we've         78:39 we made this retained mode of yep how to
+16:13 Amazon that taught compiler stuff and          46:17 been going on we were looking at these         78:43 represent things why I don't know well
+16:17 you know I I didn't think any of them          46:20 data structures a couple hours ago where       78:45 direct show because because the drivers
+16:20 were good and a lot of them pretty much        46:21 we have this type info that's a struct         78:47 had have the most freedom of how to
+16:23 all of them cover things in a cursory          46:24 and these are sort of like subclasses          78:50 optimize and it's the most decoupling
+16:30 fashion and don't really tell you what         46:28 except they're not very object oriented        78:53 and if you have a data representation
+16:32 the real problems are you know right           46:29 about it right it's just these all have        78:55 you can all make say all these
+16:35 even like there was some semester long         46:31 the base type info at the top of the           78:57 theoretical things about how you can
+16:37 course from some reasonable university         46:33 struct and then further information            78:58 walk the tree of the retain mode thing
+16:40 like Stanford or somewhere and you know        46:35 right and                                      79:00 and do the maximum amount of
+16:44 I just went through the videos and the         46:38 well here's the thing about a compiled         79:03 optimization right and it never ever
+16:46 lecture notes to see and it was like I         46:42 language is that you you decide at             79:05 worked in practice right and the
+16:48 just covered everything from a cursory         46:45 compile time what all the types of your        79:07 difference between and and I was gonna
+16:50 level and the problem is those cursory         46:47 things are right you don't make new            79:09 name off all these things I just had to
+16:53 things if you learn something that way         46:49 types at runtime because the way that          79:11 leave like this is exactly direct show
+16:55 they're teaching you this structure of         46:52 your code is fast is that you know what        79:14 like you said or d3d retained mode or
+16:57 how to make the compiler but what I'm          46:53 all your types are and that's also why         79:17 NDL net immerse or like all these
+16:59 saying is that structure is often at           46:55 when we when your meta program wants to        79:20 freakin api's right
+17:01 least somewhat incorrect because when          46:57 look at the syntax tree we can give you        79:21 and I was going to say dude I'm from the
+17:03 you drill down the things that you need        46:59 a type annotation for everything in the        79:24 future because we did all this stop the
+17:05 to do often work better in a different         47:01 syntax tree right so that information          79:29 maximally productive thing you can do
+17:08 structure or without that structure you        47:04 that we give you in that type annotation       79:31 right now is make the immediate mode
+17:10 know so I don't know with compilers it's       47:05 which is these type info structs we also       79:33 thing that replaces this as opposed it
+17:14 hard the the most general thing I would        47:09 just serialize into the executable at          79:34 is trying to better compile the retain
+17:16 say is and this applies to everything in       47:15 well when at the end of compile time and       79:36 mode thing but he wouldn't have listened
+17:19 life be very careful about who you learn       47:18 that data is there at runtime where is         79:38 so whatever
+17:23 from because that will that will               47:21 it well there's there's an extra data          79:39 or he wouldn't believe me he would have
+17:26 determine not only how good you are or         47:22 segment that's just the type info              79:40 listened to me and then said no I think
+17:27 have a strong impact on how good you are       47:24 segment it's a read-only data segment          79:42 you're wrong because blah blah blah um
+17:29 but also how well you integrate it with        47:26 right so you can't modify it and it's          79:44 but like literally so the problem though
+17:32 other thing like the people who are            47:28 just an array of well there's two things       79:47 is the mess is way bigger than it was
+17:34 really good integrate their knowledge of       47:31 so there's an array of pointers to type        79:49 with any of those things even though
+17:38 programming with other aspects of their        47:33 info right so that array is each element       79:50 it's exactly the same because way more
+17:40 personality or other aspects of life or        47:36 in that array is an 8-byte pointer for         79:52 money has gone into it and way more
+17:43 like somehow                                   47:40 64-bit executables and and then pack           79:54 people are doing like neural network
+17:43 somehow your technical knowledge of a          47:43 directly after that is just all these          79:56 stuff so there is way more tensorflow
+17:45 programming language and how to use it         47:45 type info structs which are variable           79:59 code out in the world than there ever
+17:47 interfaces with the ideas of things that       47:47 length right which is why we have the          80:01 was the 3d retain mode code for example
+17:49 you want to do and people you learn from       47:49 array of pointers to them so that you          80:04 it's the second most popular open source
+17:52 will not only teach you the technical          47:50 can index them in constant time maybe it       80:06 project by contributors I think in the
+17:55 parts but the ambition or the the view         47:53 shouldn't be pointers maybe should be          80:09 world which is insane because it doesn't
+17:59 of the world unlike how you might bring        47:54 offsets or something there are various         80:11 do anything it's like it seemed so
+18:01 this thing to bear right and all of that       47:57 ways of compressing all of this more but       80:14 incredibly basic it is really weird
+18:03 matters a lot okay yeah and the the            47:59 we don't do that right now anyway              80:17 yes yeah and not to mention the fact
+18:07 problem is I don't know like you know          48:01 you just have all of these things laid         80:19 that the number of lines of code per
+18:11 most I mean I hate to say it this              48:04 out in this array and that includes            80:21 function like per functional unit it's
+18:14 starkly but like most computer science         48:05 trees so if you have procedure right           80:24 like what is this oh this is a thing
+18:16 professors haven't actually programmed         48:08 like I said the procedure tells you the        80:26 that like rescales an image like how
+18:18 that much right they've programmed a lot       48:09 types of the arguments that's an array         80:28 many lines of code is it it's like seven
+18:20 more than undergraduates they've               48:11 of pointers to other type infos that are       80:30 thousand or ten thousand when you
+18:22 programmed somewhat more than graduate         48:13 at other places right in the in this           80:32 actually count how many things are
+18:23 students they've programmed like epsilon       48:17 type info segment but those pointers are       80:34 actually in there you're like what is
+18:25 compared to a professional video game          48:20 set up for the link phase and they're          80:35 going on it was very strange but
+18:27 programmer who's like 45 years old right       48:22 just they're just in there right and so        80:38 oh well so they'll come out of it
+18:30 yeah so so that's a prop that's a hole         48:24 they're resolved as soon as you start up       80:39 eventually it'll just be ten years no
+18:34 in their skill set right and they they         48:26 these pointers are valid right so that         80:41 it's gonna be a large amount of pain and
+18:36 may you know one thing that they have to       48:32 data is just there and crucially it is         80:42 suffering wasted time and I just wish so
+18:39 you is they can tell you what the              48:34 exactly the same data structures like          80:46 again you know people don't learn from
+18:40 generationally accepted knowledge is and       48:37 you might make in your own program right       80:47 history I'm I'll give them a little bit
+18:43 that contains some things that are very        48:39 a gay wedding is just like a straight          80:50 more of a pass on this one because you
+18:45 true and helpful like the lexing thing         48:41 wedding so you don't have to do some           80:55 know not everyone is going to know game
+18:47 that we talked about but it also like a        48:43 weird like programming language                80:56 industry history or understand that this
+18:50 lot of that knowledge is ossified and          48:46 introspection thing that that only gives       80:59 is the same thing but it's literally the
+18:52 has failed to adapt to the fact that           48:49 you access to certain data and high            81:00 same thing it's how do you talk to an
+18:55 computers are different today and              48:51 the rest of it or something these are          81:03 accelerator and make a program that does
+18:56 software is different today not                48:53 just data structures that you would walk       81:05 general things there were guys at this
+18:58 necessarily in a good way there are some       48:55 as freely as you want the same as you          81:07 conference talking about you know
+18:59 ways in which software is different            48:57 would your own data structures you can         81:09 building hardware and designing you know
+19:01 that's good and other ways the software        48:59 copy them you could do whatever whatever       81:14 designing the hardware to be able to
+19:02 is different that's not good and the           49:03 you want right if that makes sense I           81:15 evaluate tensorflow at a massively
+19:05 problem is that canon of knowledge             49:09 mean it makes sense to me but like I           81:17 parallel way and stuff and I'm like oh
+19:07 that's being maintained by these people        49:12 said I exactly was there part of the           81:19 my god dude yeah it's just like you know
+19:09 who don't have that much programming           49:15 question I feel like I might not have          81:23 how like it's just like you know
+19:11 experience changes very slowly right if        49:16 answered the second part was ooh I guess       81:25 talisman wanted to do automatic
+19:13 you learned from people in industry you        49:20 I'll elaborate a little bit on it and          81:27 billboarding if stuff because that would
+19:15 have the opposite problem right often          49:23 because I think just if that didn't            81:30 be faster and then we all decided that
+19:17 they don't know that much about history        49:25 answer the question here's the thing           81:33 was a stupid idea it's all that same
+19:19 they're ignorant of things they're             49:27 that maybe would be necessary to answer        81:35 kind of thing is happening all right
+19:21 reinventing the wheel in a bad way             49:28 the question so the thing you want to          81:38 last question okay so the question I
+19:23 instead of a good way right                    49:31 understand about this information is           81:43 felt like was too beautifully worded not
+19:26 actually the advancement of technology         49:35 it's it's not only is the gay wedding          81:46 to ask and it's the perfect question I
+19:28 depends on reinventing the wheel               49:39 exactly the same as a straight wedding         81:49 feel like to end on yeah and it is what
+19:30 constantly because we need different           49:40 but it's also the case that you're only        81:54 is the point of computers I don't even
+19:32 kinds of wheels for different purposes         49:44 getting the wedding that you asked for         81:58 know anymore I mean here's a thing when
+19:34 as time goes on and if that seems weird        49:46 like no one's forcing you to get married       82:01 I was when I was little and had my first
+19:37 to you again I'll refer you to actual          49:47 and that's the important thing to              82:03 exposure to computers they were just
+19:40 wheels in the actual world and how many        49:49 remember with something like                   82:05 amazing because I was you know I was in
+19:42 different kinds of them there are and          49:50 metaprogramming so the point of the meta       82:08 the seventh grade so I was like 11 10
+19:44 how different the wheel on a truck is          49:54 programming system is to give you all of       82:10 years old probably because it was the
+19:47 from a wheel on a horse and buggy set up       49:56 the information that it has available          82:11 beginning of seventh grade and like he
+19:51 and why and all that stuff or you know         49:59 but then what parts of that you end up         82:14 was just super cool to have this thing
+19:53 or if we might or the wheels on my chair       50:02 putting into the compiled executable are       82:16 that would do all this stuff right and I
+19:57 therefore good luck with the wheel if          50:04 based on what you do in the meta program       82:19 kind of don't think that's the way
+19:59 you're going to the moon like yes use          50:06 so okay yeah I forgot some judo saying I       82:21 computers are now because even today if
+20:02 one and that's kind of the point like          50:09 forgot to say a few things yeah                82:23 you sat somebody a ten-year-old in front
+20:04 you need to reinvent the point is travel       50:11 so one part of the question that I             82:25 of a modern PC you could like eventually
+20:07 not the wheel if you're thinking of the        50:13 remember now is about reverse                  82:28 get to the amazing part but you would
+20:09 phrase reinvent the wheel you're               50:14 engineering and okay by default if you         82:32 have to do all this annoying stupid
+20:11 fundamentally not actually thinking            50:22 put all of this information in your            82:34 stuff and they're like yeah I guess and
+20:12 about what we do in programming well           50:24 executable then there is an array in           82:37 you'd end up teaching them that
+20:14 actually yeah goal-oriented the the the        50:28 there of what all the types are and            82:39 programming is you do a bunch of these
+20:18 badass lifter that brought Apollo out          50:29 somebody could use that to try and             82:41 really menial steps that you don't
+20:20 onto the pad had some really serious           50:31 understand your program a little bit the       82:44 understand why or what they're for and
+20:23 wheels on it yes yes and they were not         50:34 thing is that's just in a data segment         82:46 then eventually you get to the part
+20:26 just like a caveman wheel from the             50:37 somewhere and then you know there might        82:48 where you could say print hello yeah
+20:29 original wheel that they just kept using       50:41 be occasional machine instructions that        82:50 right
+20:30 no no yeah so so that's the problem with       50:43 you could figure out that like assign          82:51 and it's like what yeah rez before it
+20:35 learning from people in industry and           50:46 that to a value somewhere if your              82:55 was like you turn on step 1 turn on
+20:36 especially web kids these days like they       50:47 program is using that information but          82:58 computer step 2 type print hello and
+20:40 understand not very much and they think        50:49 this information is not like pervasive         83:03 it'll do it like you didn't even have to
+20:44 it's all rocket science and new and            50:52 in your program it's not like the              83:04 say 10 print hello and then run yeah
+20:45 brilliant right and so that's the              50:53 outputted machine code for your                83:06 because like a supercomputer it would do
+20:47 problem that you have if learning from         50:56 procedure also has the type information        83:09 it yeah by the way that's what I think
+20:49 industry and so the problem is you have        50:59 there that they're dissociated so you          83:12 is so hilarious about like there are all
+20:55 to be self propelled and you have to           51:04 can't really connect                           83:15 these people today who think that like
+20:58 sort of dig through both of these              51:06 at all you could a reverse engineer            83:16 the read eval print loop like the repple
+21:00 contexts and other ones right and you          51:08 could see what all the procedure types         83:19 is like amazing technology that helps
+21:05 have to figure out what's good and             51:11 are and that could sort of help them           83:22 you program attack first of all they had
+21:07 what's not and finding finding people to       51:13 guess what this one might be especially        83:24 that in the 1950s second of all my
+21:11 learn from that seem more clue more clue       51:16 if they can look and say like okay the         83:27 Commodore vic-20 when I turned it on was
+21:13 full than average is probably helpful          51:18 code is popping this many things off the       83:29 in a Red Bull
+21:17 but again you have to determine that           51:20 stack so there's this many arguments and       83:30 this isn't like advanced technology
+21:19 because lots of people will tell you           51:22 so I can go look but honestly I think          83:32 right yeah third every see debugger is
+21:21 they know what's going on like if you go       51:25 reverse engineering tools are good             83:36 also a repple you just don't know that
+21:22 read hacker news and stuff there's all         51:26 enough now that this information would         83:38 because you don't program and see it's
+21:24 sorts of like here is a blog post about        51:31 only be incrementally helpful right so         83:39 just people taught you in different
+21:27 how to do whatever how to build                51:33 when you go look at the machine code           83:41 languages so used to think a rebel is an
+21:29 programming languages or whatever and          51:35 it's not like the information is there         83:42 amazing thing like it's as soon as I see
+21:30 it's written by someone who's like done        51:38 for the type of any individual thing all       83:46 someone use the word rebel I'm just like
+21:34 their first programming language and           51:40 of that it's only there if your code           83:47 I do I do the Picard like head and hand
+21:35 it's not very good and they think it's         51:44 asks for it explicitly right so that's         83:50 thing because they've already told me
+21:38 really good and really they want to            51:47 thing one to realize thing too is you          83:53 what their programming experience is
+21:40 advertise themselves more than being           51:51 can turn off this type information if          83:54 before me even asking right but that is
+21:43 committed to not transmitting incorrect        51:53 you want either for security purposes or       84:01 the name for the question of what what
+21:46 knowledge right so we have a basic             51:56 for you know maybe you're running on an        84:02 is even computers I mean what are they
+21:48 information hygiene problem right where        51:59 embedded system with a really small            84:04 for well I mean they used to be amazing
+21:51 we need to transfer the knowledge that         52:01 amount of RAM or something and you want        84:07 things to have fun on and now they're
+21:55 we have about technology from generation       52:03 to keep your program small and you don't       84:10 depressing ways of wasting people's time
+21:57 to generation that's very important            52:05 want this data in there you can do that        84:12 I still in videogames we still managed
+21:59 otherwise this knowledge will be lost          52:08 but of course if that information is not       84:15 to have really interesting moments that
+22:01 and if too much of the knowledge is lost       52:11 there at runtime that limits what you          84:19 can give adults strong experiences so
+22:03 then our systems will degrade in quality       52:13 can do so I would not be able to for           84:22 that's that's the thing that I am an
+22:06 over time and it's actually a parent           52:16 example do this editor interface if I          84:24 expert in and I think it's really hard
+22:08 that that's already happening right            52:18 turned off this information you would          84:26 in very few games do it honestly so
+22:09 because we're not passing this                 52:20 just say well this is a guy what's a guy       84:31 that's one use of computers I think that
+22:11 information correctly enough and               52:22 I don't I don't know it actually               84:34 computers ok here's something that I
+22:13 seriously enough but people think they         52:23 wouldn't even be able to say it's a guy        84:36 haven't said in a lecture for a long
+22:15 have the information because they can          52:25 honestly it would just so there are some       84:38 time but I still believe it the universe
+22:16 write a JavaScript program that scrolls        52:27 things that you can do so you know like        84:42 is a system right it's there are some
+22:19 text or whatever right very slowly but         52:32 I said there's all this type information       84:45 rules whether they're laws of physics or
+22:22 they can't do it so so that is                 52:35 goes into a data segment and then              84:48 like more general rules like like they
+22:29 generational transmission of knowledge         52:37 there's an array of pointers to each           84:50 thought about in the daodejing or x or
+22:31 is hard to begin with even if it's just        52:39 element of the type information well the       84:53 whatever or whether those are the same
+22:35 even if I was sitting in a room with           52:44 way that works in generated code is that       84:54 thing which they maybe our understanding
+22:38 like someone who's 19 right college age        52:47 there's an index for each type and it          84:59 of the universe right now is that there
+22:41 person and I'm trying to communicate to        52:49 just indexes that array and returns you        85:01 are rules that produce
+22:45 that person everything that I know about       52:51 back the pointer right that's that's how       85:03 new state from an old state right which
+22:48 how to do a compiler well that's gonna         52:54 that works and so we can go into a mode        85:06 well computers are like that because
+22:49 take a long time it's gonna be months          52:57 where if we know we're not outputting          85:09 they're in the universe but they give us
+22:52 right of one-on-one minimum actually           52:59 any of this information we can just have       85:13 a way of choosing very specific rule
+22:55 after those months that person still           53:01 the representation of a type just be the       85:17 sets and very specific controlled
+22:59 will not know everything that I had to         53:03 index right and so that lets you do some       85:22 procedures of state change over time
+23:00 give them because you don't really             53:05 of the following things you can say in         85:25 right and that can give us a different
+23:02 understand what somebody else is saying        53:10 just random code like his type of              85:29 understanding of the universe that
+23:03 you have to like make it yours by taking       53:13 is equal to type of B for example right        85:30 nobody was ever in a position to have
+23:06 it into your life and applying it and          53:18 and that just works this is something          85:32 before because we can do those at scale
+23:07 seeing what it really is because verbal        53:20 that executes I guess this would               85:34 and we can do those both at scale in
+23:11 communication is only good for so much         53:24 actually constant evaluate a hundred           85:37 terms of very quickly and on large
+23:12 right now that's made worse by the fact        53:26 percent at runtime this particular             85:39 amounts of data and on large amounts of
+23:16 that only a small percentage of the            53:28 expression because these evaluate two          85:41 rules and so there is a way I think in
+23:20 technical communication out there is           53:30 constants but because this is a                85:46 which someone who designs video games
+23:21 worth doing that with right most of it         53:32 programming language where types are           85:48 there maybe even somebody who plays a
+23:24 is noise right so if you go on Hacker          53:34 first-class for the most part I mean it        85:50 lot of video games and really
+23:26 News and somebody's like here's how to         53:37 it sort of depends on what the                 85:51 understands them there's a way in which
+23:28 do thing X it's probably by someone            53:40 definition of first-class type is just         85:53 those people understand the laws of the
+23:30 who's not very good at doing thing X but       53:42 like it depends on what the definition         85:57 universe better even if they don't know
+23:33 thinks they're good at doing thing X or        53:43 of is is but you could have a variable         86:01 that they do better than almost anybody
+23:35 doesn't care that much that they're            53:50 that you don't know called X and you           86:04 from history except maybe you know Isaac
+23:38 bright or let's take an even more              53:52 could ask if X is equal to float 64            86:07 Newton level people for somebody if you
+23:39 egregious example which is Stack               53:55 which is a type right or you could ask         86:09 know what I'm saying and so computers
+23:42 Overflow right okay yeah if you take the       53:57 if X is equal to type of make sandwich         86:11 are doing that outside video games maybe
+23:45 random answer to how to do a problem           54:02 right these things are valid and this          86:15 they're not doing them that much or
+23:47 from Stack Overflow                            54:05 has to run at runtime because we don't         86:16 outside the simulation world but they're
+23:49 it is probably incorrect it's probably         54:09 know what X is right and so in this case       86:18 definitely doing that and that is very
+23:52 highly incompetent right but you know if       54:12 it would just compare the integers if          86:20 useful there is also a speech that I
+23:57 you go into this crowded bar that is           54:15 you didn't output the type information         86:23 gave at a private conference that's on
+23:59 Stack Overflow and you just listen to a        54:16 and so you have the option to do things        86:24 my list of things to give I need to re
+24:01 random utterance in there it's almost          54:18 like this to have types still be               86:28 update them and maybe give them just
+24:03 certainly going to be one of these             54:21 first-class you just don't get the             86:31 over twitch in the post coronavirus
+24:04 incompetent ones so how do you find the        54:22 information about them if that makes           86:33 world but I have this speech called
+24:06 competent ones it's like not very easy         54:24 sense                                          86:34 games in the future of Education all
+24:10 in fact it's almost impossible right and       54:25 all right 30-second break I have to turn       86:37 right talk about it's about 45 minutes
+24:14 especially if you're a beginner and            54:28 on the light in the room back in a             86:41 and I go into details and stuff but I
+24:15 don't exactly know how to tell the             54:29 second okay                                    86:42 talk about how computers would be a lot
+24:17 difference between confident and               54:39 that was less than 30 seconds that was         86:46 better for education than they currently
+24:18 competent and so we're creating this           54:42 much less than 30 seconds yeah anyway so       86:47 are if you learned from video games and
+24:21 problem                                        54:45 that probably is a good enough answer I        86:49 did some things that we do well most
+24:23 I don't know how far to take this rant         54:48 think okay so here's a question about          86:51 specifically nonverbal communication so
+24:25 right but I don't know exactly how to          54:51 syntax for you and I skipped most syntax       86:53 a thing that I do in game design both in
+24:28 solve the problem but the problem is           54:54 questions because you have explicitly          86:55 braid and the witness is communicate
+24:30 there is too much noise in the room it's       54:55 said multiple times on this stream I've        86:57 non-verbally and there are ways that
+24:32 already hard to communicate these things       54:58 heard you say it once and I've heard you       86:59 it's clear that that could be leveraged
+24:34 it is made too hard by the fact that           54:59 say it multiple times other streams if         87:02 in education in ways that isn't today
+24:37 everybody else is yelling and a lot of         55:00 you don't really care about the syntax         87:05 and I don't want to go much into that
+24:40 the people who are yelling or                  55:02 at this point in time but I did think          87:07 now because I have a whole speech about
+24:41 inexperienced and you know people will         55:06 this was an interesting one to elaborate       87:08 it but but there's that
+24:45 listen to them or not correctly way            55:08 on slightly which was just that someone        87:16 so that's another thing computers do
+24:47 whatever right so if I were benevolent         55:11 was asking it looks like you changed the       87:21 I don't know computers let us
+24:50 dictator I would say hey only these            55:13 syntax from C about how say pointers are       87:22 communicate obviously much more than we
+24:52 certain people are allowed to speak            55:17 dereferenced or how the address is taken       87:24 ever did but that's obviously got a very
+24:53 right the problem with that approach of        55:20 and I thought that might be a good             87:27 bad side to it it also has kind of kind
+24:55 course is that the wrong person gets           55:22 opportunity for you to explain not so          87:32 of a good side to it though like I mean
+24:57 assigned benevolent dictator or that           55:25 much why you explicit syntax that you          87:35 there's a huge amount of official
+24:58 person only has competence in some areas       55:27 did because like you said maybe you            87:37 misinformation about coronavirus like
+25:01 and not others and then you prevent            55:29 don't really even care about that but          87:39 masks don't work or whatever or or you
+25:02 speech that's actually better than the         55:31 could you explain a little bit about why       87:44 know the virus isn't going to be a
+25:04 current speech from arising right and          55:33 you didn't think sees C's or C++ but C's       87:45 problem because the threat is bad that
+25:07 that's not good either                         55:36 really why C's syntax probably needed to       87:48 racism is the problem or whatever right
+25:09 I mean you sort of ideally would have          55:39 be fixed in this case yeah something may       87:50 not not that people might die from it
+25:12 something like a credentialing system          55:41 have something worth mentioning people         87:52 and so like the fact that we have
+25:16 where it's like look the people with the       55:42 who aren't experts so the biggest              87:56 alternative channels of communication
+25:18 credentials are the people you should          55:45 problem with C syntax is not really            87:58 has been good the problem is it's
+25:20 listen to and the people without the           55:49 anything about the the specific                88:00 probably easier to be in a bad
+25:21 credentials are the people you should          55:54 operators right which we did change some       88:03 alternative channel of communication
+25:22 not listen to but all our credentialing        55:56 of them we kept some of them the same          88:04 than a good alternative channel just
+25:24 systems are massively broken broken they       55:57 the problem is that the type like              88:06 like when we're talking about how to
+25:26 don't serve that purpose at all right so       56:00 doesn't really live in one place right         88:07 learn how to program it's probably
+25:29 I don't know what to do about this but         56:04 so if I want to have an array of int           88:09 easier to learn from someone bad than
+25:33 it's a huge problem right and I don't          56:08 pointers in C I would declare int              88:10 someone good just because the bad people
+25:39 even remember what the original question       56:11 pointer thing right thing is the name of       88:12 to learn from are out there much more
+25:40 was but it was basically asking about          56:15 my variable sub-20 okay so part of this        88:14 often and so well what do you do about
+25:43 resources for learning how to make a           56:20 type is on the left part of this type is       88:21 that I don't know and so you know we're
+25:45 compiler so that's what I have to say          56:24 on the right of the name and that just         88:24 in a very intermittent time when it
+25:47 about resources for learning how to make       56:27 goes back to like the way they made some       88:26 comes to computers like if humans don't
+25:49 a compiler I mean that's sort of the           56:30 decisions about about like how to write        88:28 blow ourselves up we're gonna have
+25:51 same answer I usually give which is that       56:36 things that were kind of arbitrary and         88:29 computers for a long time more likely
+25:53 like there's not there's not that much         56:38 there's some kind of logic behind them         88:32 kill ourselves with a bio weapon we're
+25:56 it's the problem because finding it is         56:40 but I don't think they were good               88:37 going to have computers for a long time
+25:59 its own is its own effort essentially          56:42 decisions right now there's some               88:41 and computers today are very different
+26:03 like yeah ok well let's move on to a           56:43 consequences to this so the first is           88:43 than they were 20 years ago mostly worse
+26:06 different question because I think that        56:48 what if you want to be able to talk            88:46 than they were 20 years ago being very
+26:08 maybe a slightly hopeless one and I            56:50 about                                          88:47 honest they're much more powerful but
+26:09 think that one's probably easier for you       56:51 types right well even before that like I       88:50 the software is much worse right and so
+26:12 to answer sure so um someone asked if          56:58 mean it's been so long since I've done         88:52 what does that mean I don't know I don't
+26:17 you could elaborate a little bit on the        57:00 crazy stuff in C because I don't want to       88:55 know where that goes do we do we save
+26:20 run step of the flowchart okay                 57:02 anymore so I just because it gets weird        88:58 software somehow and it gets better
+26:23 so for somebody who doesn't understand         57:06 to write the types but what are some of        89:00 again or does it at least stop getting
+26:26 just right off the bat what it means to        57:11 the cases like definitely pointers to          89:01 worse I don't know you know so so Jim
+26:29 be able to run something at compile time       57:13 functions gets bizarre right                   89:08 Keller for example you can see some
+26:30 could you explain a little bit about how       57:15 I don't I did there are some when you          89:11 YouTube videos from him where he makes a
+26:32 you turn code that has quote-unquote not       57:21 start making aggregate types that are          89:14 case that that Moore's law isn't going
+26:35 been compiled yet                              57:23 weird it just the syntax gets really           89:16 to stop anytime soon he would know
+26:36 into something you can run and then do         57:25 weird and so the oh yeah Sean and Sean         89:19 because he is responsible for a number
+26:39 something with it like just to give them       57:30 gave this example in thing 120 thing 220       89:24 of chip architectures or major parts of
+26:40 a little bit of a explanation of what's        57:36 right so in this case we're using comma        89:26 them and
+26:41 happening there let's just say off the         57:38 to declare two variables of the same           89:26 and being designed lead on them and
+26:44 bat there are two basic ways of doing          57:42 type but the int doesn't go both times         89:27 stuff and he will make compelling
+26:46 this okay one way which is not how I do        57:44 yeah but a pointer does which by the way       89:29 reasons for that but at the same time I
+26:51 it                                             57:48 so one thing a lot of people do I was          89:32 have an argument with him where I say
+26:51 but might be better one way is to do it        57:50 gonna say beginning C programmers but          89:34 like well Moore's law may not cease in
+26:54 kind of like something like Java would         57:52 even people on my team do this they try        89:37 terms of potential power that you're
+26:56 do if it was getting some code right and       57:54 to say oh the star is part of the type         89:40 delivering to people are in terms of
+27:00 in that case this pipeline would be in a       57:56 so we're gonna write it this way but           89:41 total number of transistors but the
+27:02 different order instead of having run          57:58 that burns so like there's stuff like          89:43 degree to which I can effectively use
+27:03 down here in the middle right well how         58:02 that there's a program I think it was          89:45 that for arbitrary things is clearly
+27:07 if you were gonna run machine code how         58:04 called C deckle or whatever that I used        89:47 going down over time because it's harder
+27:10 would you possibly run something before        58:06 to use in college where you would say          89:49 to make a parallel program than a serial
+27:12 machine code generation right you would        58:09 like pointer to function returning array       89:51 program and so forth right I would
+27:13 like generate the machine code and then        58:12 of int no way really yes and it would          89:53 actually argue it's gone down
+27:15 you would put it in the pipe of things         58:14 actually somebody says there's a web           89:55 dramatically over time like well not
+27:17 that could run at compile time right and       58:16 version at C deckle org right awesome so       89:58 like so I would argue it's gone down by
+27:19 then when the compiler hits one of those       58:20 that was that was how you would figure         90:01 hundreds of times well so the the thing
+27:20 functions it would just you know you           58:22 out how to frickin do this right yeah          90:04 that you said to me about about your
+27:24 would somehow you know map that machine        58:25 yeah yeah and so again and so the reason       90:05 cache utilization was huge yes that's
+27:26 code in D memory and you would call into       58:29 functions get weird is because if you          90:08 that's even before you have multiple
+27:29 it and then somehow you have to                58:34 want to declare a variable as a pointer        90:11 CPUs right that even applies if you just
+27:30 translate the results from that thing          58:36 to a function now you want to be able to       90:13 have one CPU yeah so I mean I the way
+27:32 back into the compiler right like like         58:38 write the pointer to the function              90:15 dart I guess this was a private
+27:38 if you're running something that's             58:39 without the name of the function but the       90:17 conversation but yeah what I was saying
+27:39 supposed to return a constant integer          58:41 name is like in the middle and that            90:19 to John was just that look if you write
+27:42 right then at the end you need to take         58:42 changes things it's like this stuff is         90:21 a program that hits the cache perfectly
+27:46 the thing from memory that this thing          58:45 messed up right yeah um also just the          90:24 l1 or l2 the difference in performance
+27:47 returned and and make a constant integer       58:49 way like when you do two-dimensional           90:27 of that and a program that doesn't hit
+27:50 back in the syntax tree of your program        58:51 arrays in C like that gets weird about         90:31 the cache at all so it's just like
+27:52 etc right now I don't actually do this         58:55 what order are they in and stuff and so        90:32 getting memory at you know random places
+27:57 in this fashion for two reasons one is         58:59 the way it works in this language and          90:35 and it completely misses the cache all
+28:00 because that's just not how I did it           59:01 actually in most modern languages              90:37 the time the difference between those
+28:02 initially what I did instead is I run          59:04 even go does this right they were like         90:39 two programs is hundreds of times yes
+28:04 this intermediate representation in an         59:06 look this is stupid we have to fix this        90:41 like it's it's crazy how much slower it
+28:07 interpretive way so you know in the same       59:08 is you write the type all in one place         90:43 is and so when we look at when we're
+28:13 way for every like bytecode instruction        59:11 no matter what and then if you want to         90:46 talking about the performance of two
+28:15 that we generate those are assembly ish        59:13 just refer to the type without the name        90:48 different things
+28:18 looking instructions that are slightly         59:14 you write the same thing and it's easy         90:49 one we're looking at the performance of
+28:20 higher level but they say things like          59:16 to understand right yeah so so the way         90:51 a computer from 1990 and then we're
+28:22 add this register to this register where       59:19 you know the way that we would write           90:54 looking at it for unser computer from
+28:24 the registers are the numbered values          59:21 this and so if you're gonna write then         90:55 2020 it's one thing to say here's how
+28:27 right they're not actual machine               59:22 if you're gonna write the type all in          90:57 much raw power the 20/20 computer
+28:28 registers right or set up this parameter       59:24 one place you either have to write it          90:59 provides but if you start to take the
+28:33 for this procedure or there are things         59:26 all before the name or all after the           91:02 cognitive like oh well it doesn't hit
+28:35 like that well those are all well              59:28 name right because that's the two              91:03 the cache very often like it's really
+28:39 defined right that is an instruction set       59:30 choices I mean you could write it in the       91:05 bad casualization oh and it's
+28:41 architecture and you can write an              59:33 middle of the name but that seems that         91:07 single-threaded
+28:43 interpreter for that just like you can         59:35 so the way we would read we would write        91:08 right oh and it's not Cindy all of a
+28:45 compile those to the instructions on           59:40 this in this language is now I have to         91:10 sudden you've divided by you know eight
+28:47 your target machine so we actually run         59:43 mentally translate so this is an array         91:13 cores you've divided by eight lanes then
+28:49 those directly                                 59:46 of twenty pointers to integers which           91:15 you've divided by 200 cycles for a cache
+28:50 when you're running at compile-time okay       59:49 like I believe like in C I will type           91:18 miss or something yeah you're actually
+28:52 the downside of that is that well              59:52 this automatically without thinking just       91:19 no faster it's like the same speed now
+28:56 there's several downsides one is it's          59:54 because I do it all the time                   91:21 as the computer so it's it's really such
+28:58 slower right because an interpreter is         59:55 but when I actually have to think about        91:25 what they've done is they've moved the
+29:00 just going to be slower than machine           59:57 what this is it gets confusing it is           91:27 high end up really far but the low end
+29:03 code that you're running right so this         59:59 very confusing so we would just write          91:29 is basically where it was and that's
+29:05 version is slower than this version            60:01 this it's an array of twenty-somethings        91:30 really important to remember yeah it
+29:08 which doesn't matter right now                 60:03 what it's an array of twenty pointers to       91:33 means it's that programmers are actually
+29:10 especially because the thread that's           60:06 integers that's just so you write it           91:35 much more important now than they were
+29:12 running your compiled time code is a           60:09 like the same way that you say it which        91:35 might be another way to say it yep
+29:13 different one than the one that's              60:11 that seems good maybe that wouldn't work       91:41 and on that note is that it are we done
+29:14 compiling so you have a certain amount         60:13 so well in other languages than English        91:45 I think we're done all right thanks for
+29:16 of slack but if you run a serious enough       60:15 but maybe it works fine for me so you          91:47 doing this conversation thanks for
+29:18 meta program which people will start to        60:19 know if you want an array of twenty            91:49 sticking through it for like five plus
+29:20 do very quickly you're gonna use up all        60:21 arrays of you know fives it's just that        91:50 hours both Katie and anybody else who
+29:22 that time and then and then your               60:27 it's like oh what each element of the          91:55 has been here for the whole stream if
+29:23 compiler might be gated your compile           60:30 array is this and this is how many there       91:57 you haven't been here for the whole
+29:26 time might be gated on the amount of           60:32 are right so it just it doesn't scramble       91:58 stream this will be on YouTube hopefully
+29:27 time that your meta program takes to run       60:35 that's why we write the way things the         92:00 so I should have recorded locally but I
+29:29 at which point you want this to go down        60:37 way they are wait but does how okay so         92:02 didn't because I'm just used to doing
+29:33 and in fact there is a little bit of a         60:40 now I have some questions yes let's talk       92:04 the lazy thing where I upload the twitch
+29:36 latency term so there's some pipelining        60:44 about accessing so how do you access           92:06 fraud to YouTube and so that's what I'm
+29:38 here and like the message sending like I       60:47 could you put back the twenty five             92:10 gonna do hopefully it survives I've
+29:41 said it sends messages about your syntax       60:48 compound array that the two-dimensional        92:13 worked on all in this respect if it
+29:43 tree to your other thread that's running       60:52 array for a second this way no no the          92:18 doesn't work if this somehow the
+29:45 the program and then that thing will run       60:56 one you had just written it was                92:20 recording has been destroyed we just
+29:48 your meta program and your meta program        60:58 basically brackets twenty brackets five        92:21 have to go repeat this conversation word
+29:50 will do whatever it wants to you with          61:00 you know something okay let's let's see        92:23 for word next week well thanks so much
+29:51 regard to that message and the way it's        61:03 okay let's let's get rid of the other          92:27 for sharing all the compiler info with
+29:53 signal signals that it's done is it            61:06 things in so search write an array of          92:29 us John yeah well you know I mean the
+29:55 enters the read for the next message           61:08 twenty arrays to five I took out the           92:30 the last thing to say is and I guess
+29:57 right so however long that that takes          61:11 pointer for now just yeah yeah yeah okay       92:32 this is obvious about any big topic but
+29:59 introduces some latency into your              61:13 so now I want to access this how do I          92:34 like so we sort of talked about a bunch
+30:02 compiler pipeline which if other things        61:16 access the elements of this array in J         92:37 of things but we also communicated
+30:05 depend on that can slow down your              61:18 okay well if you say let's let's let's         92:39 almost none of the important information
+30:07 throughput and a lot of other things do        61:21 say that we have some variable which is        92:41 that you actually want to know to make a
+30:09 depend on that and so we also would get        61:23 this right and we do some stuff to fill        92:42 compiler and that's just because it's a
+30:11 better throughput if this was machine          61:25 it in or whatever right yes and then I         92:45 big topic and there's a lot to know
+30:14 code instead of interpreted code never         61:28 want to say X is s sub-zero right you          92:46 especially when you talk about practical
+30:16 mind that we're still 27 bazillion times       61:34 know what let's write a program as I           92:48 craftsmanship type of things so you know
+30:18 faster than C++ we still could be faster       61:42 have to remember which okay let's just         92:51 maybe we'll do another one in the future
+30:21 if we did that hmm now why haven't I           61:51 read you I don't remember what's you           92:52 one thing that could happen is I almost
+30:27 changed it to do the faster thing well         61:52 happy to type the same random collection       92:57 was gonna put up my programming language
+30:29 reason number one is just because it           61:54 of letters first file twice that's             92:59 email address and say email here with
+30:31 works right now oh let's do the other          61:57 pretty good yeah okay Sarah of habit job       93:01 good questions that we might cover about
+30:33 disadvantage the other disadvantage is         62:01 we're gonna say s is an array of 20            93:03 compilers in the future but I almost
+30:35 well you have to implement things              62:06 array of five-inch right                       93:06 don't want to do that because you were
+30:36 multiple times right which doesn't seem        62:09 I'm not going to bother filling it in          93:08 gonna get inundated with the same five
+30:39 that bad at the beginning because if           62:11 yet this is going to be 0 initialized          93:11 questions all the time that aren't that
+30:40 you're getting by with some number of          62:12 because that's what we do by default and       93:13 good how do I get on the beta but if you
+30:42 intermediate representation instructions       62:14 say X is s sub 0 I'm going to say type         93:16 want to somehow send Casey the moderator
+30:43 I don't remember how many there are but        62:21 of X is whatever right type of X and           93:19 really good questions if and only if
+30:45 let's say there's like 35 or something         62:27 just exit the program right and so             93:22 they are really good you could whisper
+30:48 right it's just not that many you write        62:31 whoops ending the wrong folder we're           93:23 them to see Mira Tory on Twitch and
+30:50 your implementation for them you're good       62:33 gonna CD there and we're gonna go right        93:29 we'll see if any of them seem like
+30:52 fine but once you start implementing           62:38 so I run that and it says the type of X        93:31 things that we could cover or something
+30:55 like compiler intrinsic like you know          62:41 is array of 5 s 64 right so that's the         93:33 seems reasonable yeah are the right
+30:59 atomic add or you know in a sim D              62:44 first thing is it's always very simple         93:37 thanks everybody and thanks Casey for
+31:03 intrinsic or something                         62:46 if you subscript an array the type of          93:39 running this out thank you John take it
+31:04 we currently have to implement those           62:48 the thing is is whatever's after right         93:40 easy yeah see you later
+31:06 three times right one in the x64               62:51 yep so an INT happens to be an alias for
+31:09 back-end one in the LLVM back-end and          62:55 s 64 that's the only real difference

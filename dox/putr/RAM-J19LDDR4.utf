@@ -1,0 +1,18 @@
+# J19LDDR4:~pip/dox/putr/RAM-J19LDDR4.utf crE8d by PipStuart <Pip@CPAN.Org> to log my l8st RAM specific8ions to cross-reference with MotherBoard QVLs 4 comp@;
+ "Part#"             Type 'Pins' GB  "MHz"  CL    Manufacturer Brand && Model      "Further Details"      # Comments...
+#MD32GX4M4B3200C16 !CMD32GX4M4B  32   3200  16    CorsAir               2x16GB $260 NewEgg, very similar 2 already bought. Know searches don't perfect match!;
+CMK32GX4M2L3200C16  'DDR4' 288  "32"  3200 '16'  "CorsAir Vengeance LPX 2x16GB"     Serial# '184406274'   # CopyRight 2017 CorsAir Components, Made In Taiwan;
+HX426C15FB/4        'DDR4' 288   "4"  2666 '15'  "Kingston Hyper-X"        Serial# '244373T2T20000008182660005'   # ?# 9905702-034.A00LF, Assembled In Taiwan;
+HX426C15FB/8 is on ASRock X470 TaiChi QVL so hopefully at least that 4 can work, even if the supported module size is 8GB && mine is only a 4GB UDIMM;
+CMD64GX4M4B3200C16 (Hynix C)     16   3200  16    CorsAir    DS    2/4    v      # probably the largest fastest most vers8ile new module I could search 2 buy;
+CMD32GX4M4B3200C16 (Hynix C)      8   3200  16    CorsAir    SS    2/4    v      # ? unfortun8ly, it looks like very few premium sticks are Verified 4OverClk;
+CMK32GX4M4Z2933C16                8   2933  16    CorsAir    SS    2/4           # while I'm not sure yet about distinctions between SS/DS && just 2 or 2/4,
+HX426C13PB3K4/64   (Hynix M-die) 16   2666  13    Hyper-X    DS    2/4           #   my history of trust only inclines me toward CorsAir,Hyper-X,G.Skill,Sams;
+HX426C13SB2K4/32                  8   2666  13    Hyper-X    DS    2/4
+HX424C15FBK4/64                  16   2400  15    Hyper-X    DS    2/4
+HX424C15FB2K2/16   (Kingston)     8   2400  15    Hyper-X    DS    2/4
+F4-2400C15Q-32GFX                 8   2400  15    G.Skill    SS    2/4           # also same wi =~ s/C15Q/C16Q/ && then either wi .= 'R' or s/X$/T/;
+            16                    4
+                                 16   2133        Hyper-X                        # probably try checking out HTTPS://Memory.Net/sell-used-memory
+                                                  G.Skill
+                                  8               Samsung          ...           # all slowest speeds down to 4GB modules, mostly with CL15 or CL14 codes;

@@ -1,0 +1,19 @@
+		On 1TNNZ:
+SBLivePlat											144	
+P3-850												207
+Alpha-cooler										49
+Tornado1000 case w/ 300W							175
+Pioneer SCSI DVD 305S OEM							111
+Maxtor 80GB ATA100 OEM								244
+PC133 CAS2 256MB									118
+ViewSonic P815-4									811
+Inno3d Tornado GeForce2MX PCI TwinView				142
+Klipsch v2-400										223
+Sennheiser HD600									349
+			MX500 (buds)							20
+HP ScanJet 6300 USB/SCSI							333
+HP DeskJet 950C USB/Par								195
+Visor Platinum && Achechapies						299 + ~100
+Abit Dual Athlon RAID w/ PC266 support					~200
+AMD Tbird 1.1GHz  X2									~400
+

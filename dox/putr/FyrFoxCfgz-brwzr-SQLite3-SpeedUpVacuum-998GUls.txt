@@ -1,0 +1,7 @@
+HTTP://Tech.SlashDot.Org/story/09/09/07/122201/Chrome-40-Vs-Opera-10-Vs-Firefox-35?art_pos=10
+HTTP://Tech.SlashDot.Org/comments.pl?sid=1360227&cid=29339531
+Fabulously useful Firefox speedup (Score:5, Informative)
+by David Gerard (12369) Alter Relationship <SlashDotNO@SPAMDavidGerard.Co.UK> on 2009-09-07 6:31 (#29339531) Homepage
+on Unix, anyway. Exit Firefox, then do: for i in ~/.mozilla/firefox/*.default/*.sqlite; do sqlite3 $i "vacuum;" ; done
+FF3.x does everything in sqlite. Some of the tables fill with crap 'cos deleted rows are marked "deleted" rather than actually being deleted and compacted.
+I hope future versions will run a vacuum automatically every now and then. On this Ubuntu 9.04 box I had to apt-get install sqlite3.

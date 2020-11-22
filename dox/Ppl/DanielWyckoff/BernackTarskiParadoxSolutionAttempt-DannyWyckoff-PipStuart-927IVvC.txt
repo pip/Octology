@@ -1,0 +1,33 @@
+
+
+Let P be any statement.
+I claim that both P is true and ~P is true.
+This is because everything is true.
+How do I know that everything is true?
+Because I never saw a false statement.
+This is disturbing because the statement "The most disastrous thing imaginable
+is happening now" is true.  And the negation of that statement is true too.
+We need to explore the concept of senses.  In what sense is P true?  In what
+sense is ~P true?
+What am I trying to accomplish by writing this?  To convince others that 
+everything is true.
+A mathematician would object on the basis that we're only speaking in irrelevant senses.  They would demand that we would explain in what sense everything is true.
+A better question now would be how do we explore the structure of Truth?
+Because even though anything and its opposite is true, it's always beneficial 
+to explore in what sense the foregoing is true.
+Some "basic" operations can have more complex redefinitions. Banach-Tarski.  
+1 = 2.
+When do we need to redefine number?  When we have paradoxes which can't be 
+resolved.
+
+Prime statement: Something is unresolved.
+
+
+
+
+
+
+
+
+
+

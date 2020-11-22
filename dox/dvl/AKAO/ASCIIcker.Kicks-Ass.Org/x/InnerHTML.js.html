@@ -1,0 +1,178 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>Form.Validator.Report.InnerHTML - messages inside an element's innerHTML</title>
+<link rev="made" href="mailto:Gentoo@lbox.org" />
+</head>
+
+<body style="background-color: white">
+
+<p><a name="__index__"></a></p>
+<!-- INDEX BEGIN -->
+
+<ul>
+
+	<li><a href="#name">NAME</a></li>
+	<li><a href="#synopsis">SYNOPSIS</a></li>
+	<li><a href="#description">DESCRIPTION</a></li>
+	<li><a href="#properties">PROPERTIES</a></li>
+	<ul>
+
+		<li><a href="#fv">fv</a></li>
+		<li><a href="#messages">messages</a></li>
+		<li><a href="#prefix">prefix</a></li>
+		<li><a href="#suffix">suffix</a></li>
+		<li><a href="#separator">separator</a></li>
+		<li><a href="#onsuccess">onSuccess</a></li>
+	</ul>
+
+	<li><a href="#methods">METHODS</a></li>
+	<ul>
+
+		<li><a href="#start">start</a></li>
+		<li><a href="#run">run</a></li>
+		<li><a href="#finish">finish</a></li>
+	</ul>
+
+	<li><a href="#author">AUTHOR</a></li>
+</ul>
+<!-- INDEX END -->
+
+<hr />
+<p>
+</p>
+<h1><a name="name">NAME</a></h1>
+<p>Form.Validator.Report.InnerHTML - messages inside an element's innerHTML</p>
+<p>
+</p>
+<hr />
+<h1><a name="synopsis">SYNOPSIS</a></h1>
+<p>InnerHTML requires extra elements for the error messages:</p>
+<pre>
+  &lt;form name=&quot;f&quot; action=&quot;/process&quot; method=&quot;post&quot; 
+    onsubmit=&quot;return fv.validate()&quot;&gt;
+    &lt;table&gt;
+      &lt;tr&gt;
+        &lt;td class=&quot;label&quot;&gt;
+          Name:
+        &lt;/td&gt;
+        &lt;td class=&quot;field&quot;&gt; 
+          &lt;input type=&quot;text&quot; name=&quot;name&quot; onkeyup=&quot;fv.validate('name')&quot; /&gt;
+        &lt;/td&gt;
+        &lt;td class=&quot;status&quot; id=&quot;name_errors&quot;&gt;&amp;nbsp;&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+        &lt;td class=&quot;label&quot;&gt;
+          Email:
+        &lt;/td&gt;
+        &lt;td class=&quot;field&quot;&gt; 
+          &lt;input type=&quot;text&quot; name=&quot;email&quot; onkeyup=&quot;fv.validate('email')&quot; /&gt;
+        &lt;/td&gt;
+        &lt;td class=&quot;status&quot; id=&quot;email_errors&quot;&gt;&amp;nbsp;&lt;/td&gt;
+      &lt;/tr&gt;
+    &lt;/table&gt;
+  &lt;/form&gt;</pre>
+<p>Now for the javascript:</p>
+<pre>
+  var jsan = new JSAN('/js');
+  jsan.use('Form.Validator');
+  jsan.use('Form.Validator.Report.InnerHTML');</pre>
+<pre>
+  fv = new Form.Validator('document.f');
+  fv.set('name', 'notBlank', {
+    onFailure: 'Name is required.',
+    onSuccess: '&lt;b&gt;OK&lt;/b&gt;'
+  });
+  fv.set('email', 'notBlank', {
+    onFailure: 'Email is required.',
+    onSuccess: '&lt;b&gt;OK&lt;/b&gt;'
+  });
+  var report = fv.reporter('InnerHTML');
+  report.suffix = &quot;_errors&quot;;</pre>
+<p>
+</p>
+<hr />
+<h1><a name="description">DESCRIPTION</a></h1>
+<p>This method of reporting validation errors was inspired by the way
+<a href="http://www.rememberthemilk.com/">http://www.rememberthemilk.com/</a> does validation on their registration
+form.  Realtime validation is really nice.</p>
+<p>However, Unlike the reporting methods that use alert pop-ups, this 
+technique requires a bit more support from the form.</p>
+<ul>
+<li><strong><a name="item_html_elements_for_displaying_messages_must_be_prov">HTML elements for displaying messages must be provided.</a></strong><br />
+</li>
+It doesn't matter whether it's a div, span, td or whatever.
+As long as it has an innerHTML property that can be modified,
+we can use it.  It should also have an id that consists of:
+`this.prefix + field + this.suffix`.
+<p></p>
+<li><strong><a name="item_input_elements_need_extra_event_handlers_for_realt">Input elements need extra event handlers for realtime response.</a></strong><br />
+</li>
+The example in the <a href="#synopsis">SYNOPSIS</a> uses <code>onkeyup</code>.  I have a suspicion
+that <code>onchange</code> and <code>onblur</code> may also benefit from getting handlers
+hooked up.
+<p></p></ul>
+<p>
+</p>
+<hr />
+<h1><a name="properties">PROPERTIES</a></h1>
+<p>
+</p>
+<h2><a name="fv">fv</a></h2>
+<p>This is the <em>Form.Validator</em> object.</p>
+<p>
+</p>
+<h2><a name="messages">messages</a></h2>
+<p>This is a dictionary of messages keyed by field name.</p>
+<p>
+</p>
+<h2><a name="prefix">prefix</a></h2>
+<p>
+</p>
+<h2><a name="suffix">suffix</a></h2>
+<p>When Form.Validator.Report.InnerHTML looks for an element to put
+a message into, it'll look for the id:</p>
+<pre>
+  this.prefix + field + this.suffix</pre>
+<p>The default prefix is ``'', and the default suffix is currently ``_errors'',
+because that's what seems to make sense for <a href="/HTML/Widget.html">the HTML::Widget manpage</a>.</p>
+<p>
+</p>
+<h2><a name="separator">separator</a></h2>
+<p>It's possible for a field to fail multiple constraints, so a
+separator string for the list of messages was needed.  The default
+is: ``, ''.</p>
+<p>
+</p>
+<h2><a name="onsuccess">onSuccess</a></h2>
+<p>This is the default message that'll be used when a constraint passes.
+It'll be used when an onSuccess message specific to a constraint
+doesn't exist.  The default is ``OK'', but you should probably override
+this one.</p>
+<p>
+</p>
+<hr />
+<h1><a name="methods">METHODS</a></h1>
+<p>
+</p>
+<h2><a name="start">start</a></h2>
+<p>This clears this.messages.</p>
+<p>
+</p>
+<h2><a name="run">run</a></h2>
+<p>This populates this.messages.</p>
+<p>
+</p>
+<h2><a name="finish">finish</a></h2>
+<p>This takes the contents of this.messages and stuffs it inside the
+innerHTML of the elements that have been set aside to hold these
+validation messages.</p>
+<p>
+</p>
+<hr />
+<h1><a name="author">AUTHOR</a></h1>
+<p>John Beppu &lt;<a href="mailto:beppu@cpan.org">beppu@cpan.org</a>&gt;</p>
+
+</body>
+
+</html>

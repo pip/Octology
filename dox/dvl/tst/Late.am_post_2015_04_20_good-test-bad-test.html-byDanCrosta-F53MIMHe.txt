@@ -1,0 +1,245 @@
+# HTTP://Late.am/post/2015/04/20/good-test-bad-test.html
+# I think I might prioritize: Repeatable, Reliable, Selctive, Helpful, Fast
+late.am
+
+by Dan Crosta
+
+Proudly powered by Pelican and Python. Theme by hndr.
+
+Textures by Subtle Pattern. Font Awesome by Dave Grandy.
+
+    Mon 20 April 2015
+    Good Test, Bad Test
+    This article is cross-posted on the Magnetic Tech Blog.
+
+    A good test suite is a developer's best friend -- it tells you what your code does and what it's supposed to do. It's your second set of eyes as you're working, and your safety net before you go to production.
+
+    By contrast, a bad test suite stands in the way of progress -- whenever you make a small change, suddenly fifty tests are failing, and it's not clear how or why the cases are related to your change.
+
+    But how do you know if your test suite is "good"? At PyCon US 2015 I gave a talk that addressed three common myths about testing, which lead down a path of painful testing.
+
+    The talk, and this article, are heavily opinionated. As with all opinions, it's up to you, the reader, to decide whether they're applicable to your particular situation or not. In other words, you still need to use your judgement.
+    What's a "Good" Test?
+
+    I'll define a good test (and by extension a good test suite) as one that has the following virtues:
+        Fast. If a test is slow, developers won't run it locally. This will lead to broken CI builds, and more time spent fixing the code that broke the test afterwards, more context switching, lack of flow, and all the concomitant problems.
+        Selective. If a bug is introduced into the code under test, only one or a few test cases should fail. If all cases start failing, then it will require a too much time to figure out exactly what is wrong. Your tests should point you in the direction of what's wrong.
+        Repeatable. Tests should always give the same result if the code being tested hasn't changed. Any reliance in a test on timing, randomness, or external state (databases, the date or time, etc) will lead to wasted time spent investigating spurious failures.
+        Reliable. Your test should pass when the code is working, and fail when the code has a bug. Perhaps this is self-evident, but it bears repeating -- a test should not give false positives or false negatives.
+        Helpful. In particular, test error messages should be helpful. Seeing "user_has_logged_in() was False after user login" tells you exactly what's wrong, whereas "AssertionError: False is not True" requires you to figure it out for yourself.
+
+    As we'll see, the myths, and the mistakes they cause developers to make while writing tests, come from good intentions, but can lead to violations of one or more of the above principles.
+    Myth 1: 100% Coverage
+
+    This myth is pernicious primarily because of how common it is. Perhaps a team adopts code coverage monitoring after a few bouts with bugs that could easily have been prevented with tests, and there's a land rush to improve coverage. More tests must be better, right?
+
+    Beware: danger lurks in too-eagerly chasing full coverage. The truth of the matter is, there are some tests that simply shouldn't be written: they add too much complexity to your codebase, and provide very little value.
+
+    For example, consider tests that exercise parts of your application that interact with some external resource, not under your control, like a third party API your application works with:
+
+    There's a reason we draw it as a cloud...There's a reason we draw it as a cloud... (source, modified)
+
+    Notice that thing in the middle. There's a reason we draw it as a cloud: we don't really know what happens in there. Anything could happen in there. You might get a very slow connection; you might get corrupted bytes back that don't make any sense; you might simply shout into the void, never to hear back from the third party; or you might be on a plane, with no access to the internet. Since you can't control it, you're totally subject to the whims of the internet and of the third party.
+
+    I call tests that rely on third parties in this way "Mutually-Assured Destruction" tests. Ordinarily, the external service is operating normally and your tests pass. But occasionally, something outside of your control is broken, and suddenly your test suite is reporting a bug that doesn't exist in your code. Either both sides work, or both sides fail, hence "MAD".
+
+    Perhaps this is controversial, but I recommend that you not write tests for this kind of code in the first place. It's failures don't tell you anything interesting or actionable about your codebase.
+
+    Instead, try to minimize the amount of MAD code, and make it as dumb as possible. Don't put business logic that needs thorough testing in-line with third party integrations, and make sure your integrations can report errors back to you. Be sure to test your exception reporting service, and keep notification rules up to date. If you depend on an external service for critical functionality, you can't ensure that it will always be available and correct; but you can be sure that you're notified when it goes down, and have a plan in place to mitigate the impact.
+    Myth 2: Assert About Everything
+
+    Assertions are how tests tell us whether our code is working or not. Without assertions, tests literally wouldn't do anything useful. So, if we add more assertions, we'll increase our confidence that our test does what we want it to do, right?
+
+    Too many assertions, and especially the wrong kinds of assertions create a maintenance hazard in your test suite. Let's illustrate the point with an example, a function which parses a log line from a web server in a hypothetical pipe-separated format, returning a dictionary:
+
+    def test_it_parses_log_lines(self):
+        line = "2015-03-11T20:09:25|GET /foo?bar=baz|..."
+
+        parsed_dict = parse_line(line)
+
+    It is tempting to use the familiar assertEqual with a dictionary whose contents are identical to the parsed result we expect:
+
+    def test_it_parses_log_lines(self):
+        line = "2015-03-11T20:09:25|GET /foo?bar=baz|..."
+
+        parsed_dict = parse_line(line)
+
+        self.assertEqual({
+            "date": datetime(2015, 3, 11, 20, 9, 25),
+            "method": "GET",
+            "path": "/foo",
+            "query": "bar=baz",
+        }, parsed_dict)
+
+    This will certainly work, assuming the parse function is implemented correctly. But what kind of error messages will we get from this test? Take a look:
+
+    AssertionError: {'date': datetime.datetime(2015, 3, 11, 20, 9, 25), 'path': '/foo', 'method': 'G [truncated]... != {'date': datetime.datetime(2015, 3, 11, 20, 9, 25), 'path': '/foo?', 'method': ' [truncated]...
+
+    Can you see what the error is? No? Neither can I. Fortunately, we can fix this fairly easily:
+
+    def test_it_parses_log_lines(self):
+        line = "2015-03-11T20:09:25|GET /foo?bar=baz|..."
+
+        parsed_dict = parse_line(line)
+
+        self.assertEqual(
+            datetime(2015, 3, 11, 20, 9, 25),
+            parsed_dict["date"],
+        )
+        self.assertEqual("GET", parsed_dict["method"])
+        self.assertEqual("/foo", parsed_dict["path"])
+        self.assertEqual("bar=baz", parsed_dict["query"])
+
+    Now when our test fails, we can see exactly what's going on:
+
+    AssertionError: '/foo' != '/foo?'
+
+    We fix the bug, and move on with our lives. Eventually, we'll expand the functionality of the parser, and add more test cases. Inevitably, these assertions will be copied and pasted, with some modification:
+
+    def test_it_parses_get_request_log_lines(self):
+        # ...
+        self.assertEqual("GET", parsed["method"])
+        self.assertEqual("/foo", parsed["path"])
+        self.assertEqual("bar=baz", parsed["query"])
+
+    def test_it_parses_post_request_log_lines(self):
+        # ...
+        self.assertEqual("POST", parsed["method"])
+        self.assertEqual("/foo", parsed["path"])
+        self.assertEqual("bar=baz", parsed["query"])
+
+    def test_it_parses_log_lines_with_oof_requests(self):
+        # ...
+        self.assertEqual("GET", parsed["method"])
+        self.assertEqual("/oof", parsed["path"])
+        self.assertEqual("bar=baz", parsed["query"])
+
+    Notice that only one assertion is actually changing in each test, but we're repeating most of the others. This means that if we break one feature -- say request path parsing -- we'll get failures from most of our test cases. In order to figure out what's actually broken, we'll have to dig through each failure and think hard about each test case to figure out what to fix.
+
+    You should ask yourself, for each test case, "What would I do when this test case fails?" We can minimize the effort required to transate a test failure into a fix by following one simple rule: make only one assertion per test case. Yup, only one.
+
+    Let's rewrite this test suite using the new rule:
+
+    def test_it_parses_request_method(self):
+        # ...
+        self.assertEqual("GET", parsed["method"])
+
+    def test_it_parses_request_path(self):
+        # ...
+        self.assertEqual("/foo", parsed["path"])
+
+    def test_it_parses_query_string(self):
+        # ...
+        self.assertEqual("bar=baz", parsed["query"])
+
+    def test_it_gives_none_when_no_query_string(self):
+        # ...
+        self.assertIsNone(parsed["query"])
+
+    Now, when we break request path parsing, we'll only get one test case failure, and the test case name and failure traceback will point us directly at what we need to fix: the request path parsing portion of our code.
+
+    When you adopt this style of test design, you'll also find that the way you write your test cases changes. Before, we had test cases representing some special cases we expect in the real world: an "oof" request, a POST request, etc.
+
+    Now, our test cases reflect the orthogonal behaviors of the code under test: it parses the request method, path, query string, etc. Not only are the test failures more instructive, but our test cases now serve as better documentation: scanning the names tells us what the parse_line function actually does (and, by extension, what it doesn't do).
+    Myth 3: Mock Makes Tests Better
+
+    Mock is a powerful library for simulating and replacing Python objects in tests. You can safely monkey-patch, check what calls were made against your mocks, raise exceptions, and more.
+
+    Common reasons for using mock are to reduce dependence on external, possibly slow resources, like databases, to isolate testing to one layer of your code, or to control "inputs" to a method or function that come from some nested call. Mock is certainly capable of doing all of these things.
+
+    But with great power comes great responsibility -- used unwisely, mock can wreak more havoc on your testing than the thing you were trying to replace would have. Take, as an example, a suite of tests on a web application with login functionality:
+
+    class DBClient(object):
+        def authenticate(self, username):
+            """Returns True if the user is authenticated.
+            """
+            # WARNING: Don't use this code in production!
+            return True
+
+    class MyApp(object):
+        def login(self, username):
+            if not self.db.authenticate(self.params["username"]):
+                return Response(status=401)
+            # do more stuff ...
+            return Response(status=200)
+
+    Since we want to test the behavior of the login method under two scenarios -- when the user is authenticated, and when the user is not. We might use mock to control the return value of the internal call to authenticate:
+
+    def test_it_returns_200_on_success(self):
+        db = mock.Mock(spec=DBClient)
+        db.authenticate.return_value = True
+
+        app = MyApp(db)
+        response = app.login("dcrosta")
+
+        self.assertEqual(200, response.status)
+
+    def test_it_returns_401_on_failure(self):
+        db = mock.Mock(spec=DBClient)
+        db.authenticate.return_value = False
+
+        app = MyApp(db)
+        response = app.login("dcrosta")
+
+        self.assertEqual(401, response.status)
+
+    Now we'll add a new feature to our application -- user permissions. For simplicity, let's have the authenticate method return not only whether the user is authenticated, but what roles in our application the user has:
+
+    class DBClient(object):
+        def authenticate(self, username):
+            """Returns a tuple of (authenticated, list_of_roles).
+            """
+            # WARNING: Still don't use this code in production!
+            return (True, ["admin"])
+
+    If we stop here, we've introduced a bug into our code: we haven't updated login to handle the new return value from authenticate. But our test suite isn't telling us that, because the test mocks still supply the old format of return value (just a boolean).
+
+    In the worst case, you might not notice this bug until it has been in production for some time, since this particular error won't raise any exceptions (a non-empty tuple is considered truthful in Python).
+
+    Whenever you write a test, you have to consider: what would cause this test case to pass when it ought to fail? With mock, this can happen whenever the object you're replacing has changed.
+
+    The solution for cases like this is to use a "verified double" -- a replacement object that closely, hopefully identically, emulates the behavior of the thing you're replacing. Here's a double for the DBClient class we were previously mocking:
+
+    class StubDBClient(object):
+        def __init__(self):
+            self.users = {}
+
+        def register(self, username, roles):
+            self.users[username] = roles
+
+        def authenticate(self, username):
+            if username not in self.users:
+                return (False, [])
+            return (True, self.users[username])
+
+    Had we been using this double all along, the test cases might have looked like this:
+
+    def test_login_returns_200_on_success(self):
+        db = StubDBClient()
+        db.register("dcrosta")
+
+        app = MyApp(db)
+        response = app.login("dcrosta")
+
+        self.assertEqual(200, response.status)
+
+    def test_login_returns_401_on_failure(self):
+        db = StubDBClient()
+
+        app = MyApp(db)
+        response = app.login("dcrosta")
+
+        self.assertEqual(401, response.status)
+
+    Not only are the tests more readable -- they demonstrate the full set of actions that have to take place to achieve the result being verified -- but the test cases now demonstrate that we've got a bug in our code until we update the login method to understand the new return value from authenticate.
+
+    Since the double itself isn't a one-liner, you're likely to share the double across all test cases that use this functionality. Now you only hvae one place in your tests to update when you change the interface of the real object. Once you change it, your test suite will tell you all the other areas you need to revisit. Once the tests pass, your refactor is complete.
+    Final Thoughts
+
+    Too often, testing is an afterthought. The exciting work that we all crave is to build the actual working code. But no code is created in an eternally perfect and pristine state. We will eventually have to modify it to add or remove functionality, to address performance concerns, to work with new frameworks, etc. Tests are our safety net when we perform these operations on a codebase: they tell us what we've broken, and what we have to fix.
+
+    It's important to acknowledge that tests can smell just as well as real code. We deal with code smell in a test suite the same as we would in any other type of code -- with thought and care. A well designed test suite, one which lives up to the virtues of good testing, will be your best friend in a long-lived codebase.
+
+    Tags: testing, python, pycon
+
+

@@ -1,0 +1,229 @@
+4B6Gobs: DataFutr.txt byPipStuart<Pip@CPAN.Org>
+  The future of data organization && storage will be dominated by global Free (JSON[XY]A?ML). Different tools will arise which let arbitrary data categories
+be easily specified, collaborated upon, && duplicated... these will aggregate into a towering moderator / meta-moderator monolith of data. It will constantly
+be refined like Everything2 && stuff like that. It will become the defacto resource for any data that can be represented hierarchically. The data will easily
+become correlated by XPath statements. A termination character could exist in XPath statements which determine when to follow another link available at the
+destination automagically. That part is not necessary but could make linking less than a 1..1 client / server relationship. So these data elements will be
+replicated to every architecture && operating system. Maybe Google will provide great interface && search software in exchange for targeted && unobtrusive
+advertisement.
+
+  So these data files && their interfaces could embed change logs into
+the entire file as alternate values / versions of each data element.
+This would allow filters to omit (or easily remove) the contributions
+of a rogue data polluter either from the potentially computed result
+(think of the history of a particular data value as containing a stack
+of operations like an HP calculator... maybe some functions won't be
+able to have a proper inverse but the idea remains good).  Another tack
+would be making it all anonymous && less accountable... but I think I'll
+leave the secret political statements on Freenet && other binary secure
+distributed channels that are already good for that purpose.
+
+  The unique id for each data cell update could be a 10-char PT
+(although now thinking of it, I'd rather it were 15-chars).  They could
+incorporate a validated (at least by e-mail if not some ssh cert stuff)
+username, check-in comments.  Having the unique id be a high-precision
+timer... they (taken together as operations on the entire data system)
+can be easily sorted chronologically even if they originated far
+apart...  which according to the best precision any system can maintain,
+there would still be some that would occur in different places at the
+same instant && they would conflict at merge... well anything with
+dependencies done in isolation is prone to this.  So whatever, people
+will have to oversee large-scale mergings... but as each sub-community
+purifies their data && definitions, they become authoritative.  They
+begin to exhaust the available knowledge in that arena (without diving
+further than those already have)... so yeah some things could reach
+out indefinitely but other things would be exhausted... like a gigantic
+global hash where at first your key is the state of your Rubik's Cube
+or a chess board state... the answer is correct when it is known && it
+it is known when it is unknown.  These... I mean yeah it's said that
+we'd need all the molecules in the universe to store just the states of
+chess but somehow I think that was a horribly pessimistic && unrealistic
+assessment.  I believe we can && will exhaust vast areas of research,
+data acquisition, aggregation, maintenance, duplication, querying,
+indexing... there are many issues.  It is ambitious yet it would enable
+broad categorization, representation of everything.  It could generate
+code from any section of data... Data::Dumped Perl or C structs &&
+instantiation or #defines or other good options.  This would take
+tree editing tools.  Many tools are needed.  I am a tool... I make
+tools.  It's just who's tool are you?  Are you a tool of the
+establishment... the commercialized rhetoric that determines for you
+what you want && where to go && what to think.  Are we not men?  We are
+DEVO.  There's goodness in competition... I know... but there's also
+great goodness in sharing.  There is wisdom && power && strength in
+collaboration, cooperation.  Maybe it's a new Tower of Bavel.  Maybe it
+is the unification of the world for abuse?  for Judgement Day?  I don't
+know.  I do know that it sounds pretty good && not necessarily
+intrusive.  This isn't abortion or cyborgs or crazy AI (it could become
+crazy AI but it doesn't necessily precipitate any of these) so it
+shouldn't be a huge ethical, moral, humanistic issue... it is an issue
+because it disturbs the establishments of data.  It turns them over &&
+dumps them out to be copied.  Data is code is data is copyable.  It is
+a wonderful amazing thing.  It is hard to accept that digital anarchy
+can obsolete many existing data peddlers... I am of course
+oversimplifying... certainly data creation && marketing && sale has many
+valuable services but granted monopoly on data is unnatural.  What is
+the argument?  Sometimes that data won't be created without authority to
+hoard it.  That's ridiculous.  Maybe it wouldn't have the same shape &&
+form as it does today... but movies && music && software && video games
+will still be made && performed && needed && fun.  Global
+collaboration... perpetual cooperative improvement on every area of
+knowledge && the tools to manipulate it... these are the way things are
+going && it seems scary && wonderful.  I welcome our benevolent
+cooperating comrades from anywhere.  The only overlords would be those
+who continue to enforce data security for culture... I guess the good
+guys too... the proponents of Free Software && exchange of data...
+would sort of be overlords too to all those who want to hoard data.
+The more people know && are known, the less we'll feel different... the
+more harmonious all things could be.  This is the future I see.
+
+4B6HnE2 - Pip
+  Another thing... this future of data does not stop with categorization
+&& access of traditional data values... these can aggregate into larger
+assets.  There could be representations of geography, topology, even
+models && animations && props.  This data store could become the
+collaborative store of digital world representations as well.  Virtual
+world storage && maintenance needs this technology too.  This would
+enable every car to exist online for anyone to scrutinize... it would
+enable anyone to see the real route for driving directions (to whatever
+Level Of Detail has been datified along their path && their hardware
+can progressively download).  Because everything would be arranged &&
+cross-referenced, arrangements could totally be made which optimize for
+LOD management.  All crucial features && props of terrain && proximate
+zones... then important secondary && tertiary props... then higher
+levels detail on whatever you pay attention to.  This would lead to
+instantly available && theoretically unrestricted increased resolution
+on anything that has been explored.  The important part is, once it's
+easy, we will all explore together... whatever we're interested in &&
+have time for... && it won't be lost unless it's not worthwhile
+anymore... which is an excellent metric.  It will be easy to store &&
+duplicate valuable data.  As long as anyone values it, it should be
+able to remain widely mirrored && accessible via distributed queries to
+a common NameService registry which indexes all manner of code && data
+via URL's && XPaths.  This would allow real cities to be played in GTA
+&& crazy Tony Hawk combos all over real spots && Spiderman swinging in
+any fun city && driving any real vehicle anywhere... && paintballing &&
+FPS && RTS && Fighting... all the fantasy genres can happily co-exist
+on planes of virtual reality.  The highest plane will probably approach
+Stephenson's Metaverse as technology enables it.  I'm happy to be kinda
+like Hiro.
+
+  Other opportunities exist for distribution of computation, rendering,
+etc..  This would let crazy servers render the hardcore state of a piece
+of the world && send the video image, audio, force-feedback, etc.
+appropriate as coming from that sector for their eye's perspective.
+This would permit thin-clients to primarily be video receptors... they
+get a wireless broadcast of the proper video rendering... this rather
+assumes that both powerful && weak hardware cooperates && collaborates
+too... && that a person's virtual coordinates, trajectory, etc. are
+rather universal such that nearby nodes can know it && assist in
+representing it to their capacity.  The distribution could be
+dynamically balanced.  As another client is introduced, each of their
+LOD's should half... thus getting nearer to better equipment would make
+your experience more vivid at a slight expense to everyone else you are
+sharing with.  It seems an interesting future.  Such hotspots in the
+future will become centers of collaboration, education, fantasy,
+research, entertainment... maybe our lives will primarily exist in
+proximity to powerful nodes... or even someday, all the hardware &&
+sharing electricity && processor cycles && rendering time will become
+negligible.  Resolution will become better than anyone's eyes.  Anything
+imaginable could be realized in real-time.  Then it will remain for
+people's fantasies && dreams && thoughts && ideas to be explored &&
+shaped together... maybe after all that sharing, things will be much
+better, much brighter.  Hopefully not still dark... but then people want
+ill-gotten power.  If there are power-centers, they can be corrupted.
+The system must be so distributed... like the internet already seems to
+be... resiliant && able to route around failure... small or large.  This
+idea && principle is like the United States Declaration of Independence.
+The idea that protocols && data && networks && hardware && memory &&
+space && money && time should be shared in the name of progress... in
+the name of collaboration.  Design in the ability to route around
+failure... support that ability whenever it is clear how to do so.  It
+is a wave I see on the horizon.  That I can see it doesn't mean I won't
+be crushed by it... in fact that I can see it means I'm more likely to
+talk about it than anyone around me who can't see it... && they're more
+likely to become irate at the disruptive idea && wish to stifle or
+silence my voice on the inevitability of this future... but even if that
+happens, I must speak what I believe.  I must believe what makes sense
+to me && what I can see.  I'd rather be lost living && breathing the way
+I believe even if quite different than ignoring the tsunami on the
+horizon && pretending everyone talking about it sees nothing that could
+disturb my stable way of life if anything at all.  Maybe it's like
+ostriches.  I don't mean to be full of myself either but I guess I am.
+How can an impending future && revolution be so visible && vivid && yet
+still so remote as to not exist to almost everyone.  Free Software geeks
+have gotten it from way back.  Many more today than ever before.  It
+reaches out to everyone... countries without a crazy police force that
+is bent on maintaining data monopolies will not resist rampant piracy in
+the least.  It feels like it's almost time && yet... maybe I have to
+plant seeds for it as I do && not get to see them bloom.  That's okay
+though too.  It still gives me purpose && appreciation && gratitude for
+vision... for participation... for role.  It is a glorious game.  I like
+it && want to keep playing.
+
+4B6JIDL - Pip
+
+  Also Poker hands could be indexed... odds exhausted.  Just making sure
+everyone really plays Poker against each other on the same footing.
+Pure knowledge of the game they are playing... against each others'
+baiting && bluffing && weathering of longer fluctuations of the outcome
+appearing not to correspond to the odds.  Distill the game to its core
+component.  Maybe that game is still great fun... but like Rubik's
+Cubes, the game seems shallower than it really is to me because of the
+bar which includes easily exhaustible knowledge.  The purer game exists
+where opponents have the same parameters... they enter the arena with
+the same equipment... they both know the same thing... && the game
+emerges from there.  That's how I see it... that's what I want to do
+with technology && games.  Bring common knowledge... cater... handily
+deliver knowledge.  Google is awesome for finding a benevolent way to
+fund vast amounts of it in a positive feedback loop.  Google could
+become corrupted though since it is a large company which must play
+large company games... or at least it seems that way considering the
+prevalent right to earn back huge on investment.  The gigantic expected
+rate of return on stocks && corporations... it is the engine that fuels
+bigger engines.  Free Software is better still than Google.  Maybe it
+directly impacts fewer lives... the attitudes have been similar... so
+even if Google became subverted by big corporate mentalities, they've
+still contributed valuably for a long time.  They highlight the need
+for powerfully mirrored && indexable data.  This stuff is heavy... it
+takes a lot of planning.  My projects keep unfolding.  I need to focus
+on them && DJ... && maybe moving to Nippon.  What about the issue of
+wanting a role... wanting a place that is not unique... that is a
+stereotype... an argumentative Christian, a drunk druggie, a nerd, a
+cool dude snowboarder, a sport biker, an Orthodox Jew, a samurai...
+a something else... a growing person that keeps becoming other things.
+Defining or mimicing stereotypes though.  That is choice... from big to
+small... will I like this genre of game, this product of purchase, this
+person or that one, a particular car, political affiliation, favorite
+movies && music && video games, etc. things that seem new?  ... seem
+different && better... more expressive && fluid... more harmonious &&
+pure.  Where competition is safe && fun && on the same footing as far as
+data is concerned... && where peace permeates other... but the
+vividness... of the depictions of violence... as they are simulated more
+realistically by technology as well... GTA will become less uncanny &&
+more distressing.  Simulated car driving could show death... like of
+realistic characters in realistic collisions.  So maybe people could be
+expected to know the difference always... but if the immersion improved
+many exponential times over... && the interface was indistinguishable
+from true sensation... What are the ethical ramifications therein?
+At some point, will games become so realistic or immersive that the acts
+of violence are really hurtful... like if it was real enough people you
+accosted rather than bots... would it become too real && ugly && not the
+right attitude to condone or support?  What are you saying?  People want
+violent video games however fantastic or realistic... so let them play
+whatever the hell they want.  But when they personally lose the ability
+to discern fake from real... then they act wrong in real && deserve what
+they get (hopefully... assuming there's real justice)... but until then,
+everyone can && should be free to choose to make or play any game
+whatsoever.  If you don't like the violence... don't play.  If you don't
+like horror movies, don't go see them... but don't stop other people
+from choosing that for themself.  That extends all the way... like right
+to punch stopping at someone's nose for their right not to be hit.  The
+Libertarian non-initiation of force... it is good && right.  It is the
+proper way of peace in the future.  It is the proper way to Freedom of
+people && ideas.  I'm not saying it should happen quickly because
+destabilization is not what I want really.  I want a smooth transition
+towards global improvement... but when we're still moving in the
+opposite direction... it makes me want to get off.  Maybe other people
+will too... enough or eventually to gradually improve the power
+structures of goverment && corporation to appreciate Liberty as
+many geeks already do with data.

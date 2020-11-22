@@ -1,0 +1,18 @@
+#!/usr/bin/perl -w
+# 41M4K9h - dow (Day Of Week) <Year> <Month> <Day> created by Pip@CPAN.Org
+#
+# Most source code should be Free!
+#   Code I have lawful authority over is && shall be!
+# Copyright: (c) 2003, Pip Stuart.  All rights reserved.
+# Copyleft :  I license this software under the GNU General Public 
+#   License (version 2).  Please consult the Free Software Foundation 
+#   (http://www.fsf.org) for important information about your freedom.
+# Thank you.  TTFN.
+#                                           -Pip@CPAN.Org
+use strict;
+use Time::DayOfWeek qw(:all);
+my $year = shift;
+if(!defined($year) || $year =~ /^-+[h\?]/i) {
+  die("USAGE: \`dow <Year YYYY> <Month 1..12> <Day 1..31>\`\n");
+}
+print(DayOfWeek($year, shift, shift));

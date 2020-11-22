@@ -1,0 +1,7 @@
+Old Arial pre-Heather version:
+Pg.3
+s/juxtaposed/counter/;
+Pg.4
+s/(agree that ECT can)(be a legitimate tool)/$1, in certain cases,$2/;
+Pg.5
+s/(guide oursel)f( back)/$1ves$2/;

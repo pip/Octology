@@ -1,0 +1,75 @@
+I8FM8USB:Amazon order of mainly USB equipment to hopefully enable my HHKB reliably on Aku again. Also sending results to MHahn "Marie" at PaymentPartner;
+Shipping Address:  Philip Stuart
+                   812 MALLARD AVE APT 6
+                   OSHKOSH, WI   54901-2473, United States
+Payment Method  :  Debit Card  :  **** 3511
+
+Order Summary   :  Order Number:  112-9151594-6604202
+  Item(s) Subtotal             :  $109.99
+  Shipping & Handling          :  $  0.00
+  Total before tax             :  $109.99
+  Estimated tax to be collected:  $  0.00
+  Grand Total                  :  $109.99
+Transactions    :  Price       :  $109.99
+  Sold by                      :  Adorama Camera
+  Condition                    :  New
+  Arriving                     :  Aug 28 - Sep 6
+Product         :  CyberPower Systems LX1500GU 1500VA UPS with LCD Display
+
+Order Summary   :  Order Number:  112-7569091-1837063
+  Item(s) Subtotal             :  $225.70
+  Shipping & Handling          :  $ 12.07
+  Free Shipping                : -$ 12.07
+  Total before tax             :  $225.70
+  Estimated tax to be collected:  $  4.24
+  Grand Total                  :  $229.94
+Transactions    :  Price       :  $ 69.77
+  Arriving                     :  Aug 21 - Aug 24
+  Sold by                      :  OfficeU Jp-Shop
+  Condition                    :  New
+Product         :  Happy Hacking Keyboard Lite2 USB (Black)
+                   Price       :  $ 12.99
+  Sold by                      :  Rosewill Inc.
+  Condition                    :  New - Brand New
+Product         :  Rosewill USB PCIe Card, 2 Port USB 3.0 to PCI Express Card Expansion Card, PCI-E to USB 3.0 2 Port Hub Controller Adapter
+                   Price       :  $ 20.70
+  Sold by                      :  Stick Price
+  Condition                    :  New
+Product         :  Lite-On 24X SATA Internal DVD+/-RW Drive Optical Drive IHAS124-14
+                   Price       :  $ 18.94
+  Sold by                      :  DOLICA
+  Condition                    :  New
+Product         :  ASUS DRW-24F1ST - DVD SATA SUPERMULTI Burner - SERIAL ATA - BLACK - OEM Bulk Drive
+                   Price       :  $ 18.49
+  Sold by                      :  OKRAYDirect
+  Condition                    :  New
+Product         :  [6 FT] USB 3.0 Extension Cable, OKRAY 4 Pack Braided USB Extension Cable Extender Cable – Superspeed A Male to A Female Cord with Durable Gold-Plated Metal Connector(Black White Blue Hot-Pink)
+                   Price       :  $ 84.81
+  Sold by                      :  Amazon.com Services, Inc.
+  Condition                    :  New
+Product         :  Kensington SlimBlade Trackball Mouse (K72327US)
+
+Order Summary   :  Order Number:  112-5043737-0445047
+  Item(s) Subtotal             :  $ 10.75
+  Shipping & Handling          :  $  5.24
+  Total before tax             :  $ 15.99
+  Estimated tax to be collected:  $  0.00
+  Grand Total                  :  $ 15.99
+Transactions    :  Price       :  $ 10.75
+  Sold by                      :  surplusthewaytogo
+  Condition                    :  New
+  Arriving                     :  Aug 21 - Aug 24
+Product         :  Rosewill RC-101 NEC 4+1 Port USB 2.0 PCI Other Card Components, Black and Silver
+
+Order Summary   :  Order Number:  112-1032582-5953848
+  Item(s) Subtotal             :  $ 36.98
+  Shipping & Handling          :  $  0.00
+  Total before tax             :  $ 36.98
+  Estimated tax to be collected:  $  0.00
+  Grand Total                  :  $ 36.98
+Transactions    :  Price       :  $ 18.49
+  Quantity                     :  2
+  Sold by                      :  Brooklyn Parkway
+  Condition                    :  New
+  Arriving                     :  Aug 22 - Aug 29
+Product         :  2 of StarTech.com 4-Port Portable USB 3.0 Hub (Black) - Compact Four Port USB Hub - External USB 3 Hub with built-in cable

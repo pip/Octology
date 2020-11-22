@@ -1,0 +1,166 @@
+33G098Z - Operatio.txt created by Pip to detail initial GameOver
+  operating procedures, figures, etc.
+
+GAME OVER
+Section: 2.2.2  Daily Operating Requirements and Responsibilities 
+(rough draft but bear in mind that much of this is not daily)
+
+The following estimations (personnel and other) were made under the
+assumption that Game Over will require between 3,000 and 4,000 square
+feet of operating space.
+
+
+Staff Overview (in descending order of authority, responsibility, and salary)
+--------------
+
+Location Manager - Person responsible and accountable for all finances,
+procedures, staffing, and shift scheduling of their GO location.
+
+Associate (Location Assistant) Manager - Person primarily responsible for
+inventory (including orders for equipment or software) and the direct
+manager of all normal (ie. non-technician) associates.  Secondary
+responsibility is helping and learning from other managers.
+
+Technical Manager - Person responsible for all equipment repairs,
+PC network administration and security, and software maintenance.
+Also the direct manager of all other technicians.
+
+Other Positions:
+Sanitary Technician (Cleanup Associate), Assistant Technician, Associate
+Gamers, Game Geeks
+
+Each Cleanup Associate is responsible for thoroughly cleaning every
+reasonable part of our facilities 3 or 4 days per week on a schedule
+opposite our business hours.  We should employ two Cleanup Associates.
+These associates may also be scheduled to work during business hours
+to complete a full-time schedule if cleanup duties do not occupy enough
+time (or shifts will be scheduled to partially overlap business hours).
+
+The Assistant Technician, Associate Gamers, and Game Geeks make up our
+Customer Service Representatives.
+
+Our Assistant Technicians are responsible for supporting customers with
+technical issues (troubleshooting), helping with repairs, and learning
+about our entire infrastructure.  We should employ two Assistant
+Technicians.
+
+(*Note: Every position above should normally be full-time.)
+
+Associate Gamers can be part-time or full-time employees who have been
+promoted from Geek positions.  Associate Gamers are primarily responsible
+for accurate money/credit card handling, excellent customer service,
+and maintaining/enforcing our business policies and procedures under
+normal circumstances.  We should employ three Associate Gamers.
+
+Game Geek (maybe "geek" is way too cute so just "Gamer" or something 
+else that's more mundane and professional would be a better name) is 
+our part-time entry-level position.  We should employ four or five Game 
+Geeks.
+
+
+Management Team
+---------------
+
+  The three managers have scheduled meetings twice each week (every 
+Monday and Thursday morning) as well as impromptu meetings whenever 
+the Location Manager feels it is necessary.  These meetings are held 
+in order to discuss and evaluate the success of the business in 
+general, the performance of particular associates, and the budget for 
+needed equipment and staff.  A relatively rigid schedule of meeting 
+topics will be established to address the core decisions that need to 
+be agreed upon regularly but each meeting will afterward shift into a 
+free forum where any other items or ideas can be brought up for 
+discussion.  
+  These meetings should serve the following primary purposes:
+  * synchronize all managers' understanding of location's latest 
+      operating efficiency and profitability in order to agree on
+      team goals for improvement (collective goal establishment and 
+      evaluation [ie. strategic planning])
+  * address specific details of issues with associates or equipment
+  * mutual encouragement, respect, appreciation, and support among 
+      managers to constantly be a unified, coherent, and effective 
+      team
+
+
+Technical Team
+--------------
+
+  Led by the Technical Manager, the Technical Team is primarily 
+concerned with equipment repairs, network configuration, software 
+installation and development, and facility cleanliness.
+
+
+Customer Service Team
+---------------------
+
+  Led by the Associate Manager, the Customer Service Team runs the 
+location floor.  They handle transactions, account setup, simple 
+technical support (login assistance), checkin/checkout, and floor/zone
+patrols.
+
+
+Entire GameOver Team
+--------------------
+
+  Paid monthly meetings where every manager and associate attends to 
+address all Location issues including:
+  * new associate introduction/welcome
+  * status updates regarding progress towards goals
+  * provide training/exposition on procedures and policy changes
+  * public commendations/reward of exceptional performance
+  * feedback/suggestion opportunity
+  * motivation/encouragement for the entire Game Over staff
+
+
+Financial Procedures
+--------------------
+
+
+Inventory Procedures
+-------------------
+
+
+Cleanup Procedures
+------------------
+
+
+Projected Pay Scale
+-------------------
+
+
+Associate Evaluation/Promotion Procedures
+-----------------------------------------
+
+
+Associate Hiring/Interview Procedures
+-------------------------------------
+
+
+Altercation/Conflict Procedures
+-------------------------------
+  Handling complaints
+  Handling theft
+  Handling vandalism (destruction or defacement)
+  Handling violence
+
+
+
+
+--- old notes section ---
+  Assuming: 
+    $2.50 / sq.ft. / mo. rent
+    100 sq.ft. needed / console station
+    50 sq.ft needed / arcade cabinet
+    50 sq.ft needed / PC station
+    GO opens at Noon everyday && closes sometime after 2am 
+      (exact closing time will depend on how many people are still paying to 
+       play but shouldn't exceed 4am under normal circumstances) eg. GO stays
+       open after 2am as long as there are at least 8 gamers clocked in)
+    We do serve simple foods && Boba tea
+    We start with one waitress for lunch, 2 for dinner time && ramp up 
+      according to food popularity
+
+add footnote for 8k space
+email Sirlin draft
+
+mk separate section for chicks, tea, food, bouncers, added attraction

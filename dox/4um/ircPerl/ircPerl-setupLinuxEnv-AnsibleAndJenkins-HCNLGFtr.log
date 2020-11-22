@@ -1,0 +1,27 @@
+Day changed to 22 Dec 2017
+20171222 11:25:58 <Leffe> Hi
+20171222 11:27:25 <ology> Hola
+20171222 11:27:25 <purl> what's up, ology.
+20171222 11:27:32 <ology> shush purl 
+20171222 11:30:58 <Leffe> This is an absolutely out of topic question. Sorry if this is not the right channel. My question is: How would you manage a complex 
+                          build? I have a project that consist of two non-perl programs, a mojolicious server, user data, machine data ... each of them depends 
+                          on specific versions of the others.
+20171222 11:31:34 <Leffe> I think I can do it with gnu make.
+20171222 11:31:50 <Leffe> But may be there is something newer and better
+20171222 11:32:01 <Leffe> any ideas?
+20171222 12:26:38 <El_Che> Leffe: jenkins pipelines
+20171222 12:27:06 <Leffe> hey!
+20171222 12:37:24 <Leffe> Isn't it for CI ? The project I'm in, is for an embedded device. They run linux. I need to install in it, perl, some cpan modules, 
+                          other languages, create users, make directories, write configuration files ... 
+20171222 12:38:08 <Leffe> Do you think it's well suited for this kind of task? Thanks a lot for the answer!
+20171222 12:41:23 <perigrin> Leffe: I'd look at something like ansible to build a test image
+20171222 12:41:39 <perigrin> then have jenkins drive the ansible 
+20171222 12:41:48 <perigrin> as a CI
+20171222 12:43:24 <Leffe> perigrin: I'm having a look at this. Thanks!
+20171222 12:56:53 <Leffe> Sounds good. 
+20171222 14:16:52 <doug_> what should i use instead of growl?
+20171222 14:16:58 -!- doug_ is now known as doug
+20171222 14:17:07 <ology> What is growl?
+20171222 14:17:07 <purl> Grrrrr! or http://growl.info/about.php or like ADD for your computer
+ [20171223 16:15:00] [Pip(+i)] [2:Perl/#perl(+nt)]
+[#perl]

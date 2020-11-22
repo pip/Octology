@@ -1,0 +1,1369 @@
+                          comp.os.linux.security FAQ                           
+                                                                               
+                           Version 1.0,  Jan 1, 2001                           
+                                                                               
+                     Creator and maintainer:  Daniel Swan                      
+                            swan_daniel@hotmail.com                            
+
+
+
+Table of Contents
+
+1)  FAQ Administrativia
+
+    1.1)  Introduction to comp.os.linux.security
+    1.2)  Does comp.os.linux.security have a charter?
+    1.3)  What is covered in this FAQ?
+    1.4)  Who is responsible for this faq, and how can I contribute?
+    1.5)  Acknowledgements and contributions
+    1.6)  Feedback
+    1.7)  Disclaimer and Copyright
+
+2)  General Linux Security
+
+    2.1)  How can I protect myself from Intruders, quickly and easily?
+    2.2)  What it security?
+    2.3)  How secure should my Linux box be?
+    2.4)  Which is the most secure linux distribution?
+
+3)  Firewalling and Masquerading
+
+    3.1)  How do I  set up a firewall under Linux?
+    3.2)  Where can I get sample IPchains rules?
+    3.3)  What is the best way to start-up my firewall at boot time?
+    3.4)  What is the difference between pump and dhcpcd?
+    3.5)  How do I allow incoming UDP, such as CUseeMe or Battlenet through my
+    firewall?
+    3.6)  How can I firewall out traffic from doubleclick.net?
+    3.7)  How do I reject incoming/outgoing pings?
+    3.8)  How can I track traffic volume going through my firewall?
+    3.9)  Why should I filter out outgoing X Windows sessions?
+
+4)  Services
+
+    4.1)  What services should I run?
+    4.2)  How do I know what services I am running?
+    4.3)  What services should I *not* be running?
+    4.4)  How do I disable unecessary services?
+    4.5)  What are tcpwrappers, and how do I use them?
+    4.6)  Should I use Telnet and FTP for remote access?
+    4.7)  Is there a more secure alternative to service <X>?
+    4.8)  Is there a free ssh Client for MS Windows or Mac?
+    4.9)  But hasn't SSh/SSl been cracked?
+    4.a)  What is Identd?  Can I disable it?
+
+5)  Intrusion Detection
+
+    5.1)  What is Intrusion Detection?
+    5.2)  But why would someone want to hack *my* computer?
+    5.3)  What Intrusion Detection programs exist for Linux?
+    5.4)  How do I determine if I've been compromised?
+    5.5)  How can I verify the integrity of my binaries using RPM?
+    5.6)  I've been compromised, what should I do?
+    5.7)  I'm seeing repeated probes to port xxxx... What does this mean?
+    5.8)  What is a 'Honeypot' ?
+    5.9)  I've been scanned by xxx.xxx.xxx.xxx... Should I flood/hack/mailbomb
+    him?
+
+6)  Testing your security
+
+    6.1)  I've read all the docs, and made the suggested changes .. is my
+    computer secure?
+    6.2)  My IP is xxx.xxx.xxx.xxx.  Can you test my security by hacking me?
+    6.3)  Are there any web-based security scanners?
+    6.4)  What vulnerability testing tools are available for Linux?
+
+7)  Viruses and Trojans
+
+    7.1)  Is Linux vulnerable to viruses?
+    7.2)  Is there a virus scanner for Linux?
+    7.3)  What is a trojan?
+    7.4)  How can I verify the integrity of my binaries?
+
+8)  Appendices
+
+    8.1)  Security updates for common Linux distributions
+    8.2)  Related FAQs and Howto's
+    8.3)  Linux Specific Security Websites
+    8.4)  Linux-related, but not linux-specific security websites
+    8.5)  Newsgroups
+
+-------------------------------------------------------------------------------
+
+1)  FAQ Administrativia
+
+1.1)  Introduction to comp.os.linux.security
+   
+           Welcome to comp.os.linux.security.  We ask that you please read the
+        FAQ before asking any questions you may have.  Otherwise:  Look,
+        listen, learn, contribute, but above all, enjoy yourself and the
+        interests you share with the other denizens of the newsgroup.
+       
+            This FAQ is intended to serve as a starting point for those new to
+        the newsgroup, but is also intended to be a survey of  Linux security
+        issues and tools.  This FAQ is aimed at intermediate to experienced
+        Linux users and is intended to not only answer specific questions, but
+        to also facilitate further learning by providing pointers other useful
+        security resources.
+       
+        This introduction/pointer will be posted to comp.os.linux.security
+        appoximately every two weeks.
+       
+        The latest version of this faq can be downloaded from:
+       
+                http://www.memeticcandiru.com/colsfaq.html
+           
+        Or the mirrors at:
+       
+                http://www.linuxsecurity.com/docs/colsfaq.html
+                http://www.geocities.com/swan_daniel/colsfaq.html
+           
+1.2)  Does comp.os.linux.security have a charter?
+   
+     
+    The newsgroup does have a charter.  We ask that you please abide by it when
+        participating in COLS. The charter was written by the original
+        newsgroup proponent Erik de Castro Lopo <erikd@zip.com.au>, in April of
+        1999:
+   
+     
+                "This newsgroup is dedicated to the discussion of issues
+                related to establishing and maintaining the security of
+                machines running the Linux Operating System on all processor
+                architectures.
+               
+                Open discussion of techniques and software for protecting
+                machines against remote attacks (via a network connection) as
+                well as attacks from untrusted local users are welcome. This
+                discussion can include information about which applications are
+                vulnerable, the form of thevulnerability and snippets of source
+                code for demonstrating the vulnerability.
+               
+                The posting of commercial information to this group is
+                permitted only if the information is directly relevant to
+                security and the Linux Operating System.
+               
+                Messages which are cross-posted to or from any advocacy
+                newsgroup are not welcome. As this is a discussion group, the
+                posting binaries is strongly discouraged. Spamming, ECP and EMP
+                of any sort is absolutely not tolerated."
+           
+
+1.3)  What is covered in this FAQ?
+   
+        Specifically, security as it pertains to the Linux operating system.
+   
+        General installation of linux is not covered, nor are products by other
+        vendors, except where they impact Linux security.   It is not my intent
+        to re-invent the wheel, and in cases where relevant information has
+        been covered elsewhere it has been linked to, but is accompanied with
+        commentary on linux-specific issues.
+   
+        Also, I have purposefully left out pointers to 'sploits, and other such
+        naughtiness.  Presentation of such material will benefit those on the
+        offensive end of security more than it will benefit those trying to
+        secure their systems.  A holistic view of system security will serve
+        sysadmins far better than will concentrating on protecting against the
+        'sploit du jour.
+       
+        To do in future:
+       
+            -Add section on backups.
+            -Add a section on encryption tools/filesystem encryption.
+            -Update firewall rules to include iptables rules.
+            -Add a section on logfile monitoring and related tools.
+       
+        Changelog:
+       
+            -Jan 1, 2001:  Initial release.
+       
+1.4)  Who is responsible for this faq, and how can I contribute?
+   
+        Daniel Swan is the creator and maintainer of this FAQ, but it's a large
+        effort, and informed contributions are welcome, particularly
+        suggestions for topics or questions that you feel have been overlooked.
+       
+        This is a living document, and one that is intended to reflect the
+        issues discussed on comp.os.linux.security.  All participants of
+        comp.os.linux.security are urged to contribute in whatever form
+        possible.
+         
+   
+1.5) Acknowledgements and contributions
+   
+        This FAQ primarily owes a debt to the many users in
+        comp.os.linux.security, and the discussions therein.  Although not
+        direct contributors, I'd also like to give a nod to those who have
+        contributed to my own knowledge of Linux security:   Kevin Fenzi and
+        Dave Wreski, authors of the Linux Security Howto, and Kurt Seifried,
+        author of the Linux Administrators Security guide.
+   
+        The following deserve credit for major contributions made to this FAQ:
+       
+            Jessica Luedtke, who co-authored section four (services).
+            Dave Wreski, for his support in hosting a mirror of this FAQ at
+            linuxsecurity.com.
+       
+        Credit for error spotting, suggestions for subject matter, and
+        miscellaneous contributions:
+       
+            Cliff Rayman.
+            nobody@cse.tek.com
+       
+1.6) Feedback
+   
+        Feedback may be sent to swan_daniel@hotmail.com
+   
+1.7) Disclaimer and Copyright
+   
+        This material is provided for free, and without warranty, and I accept
+        no responsibility for use or misuse of the material contained within.
+   
+        I also acknowledge that there may be minor errors in the FAQ, and
+        stress that responsibility for verification of  information provided
+        lies with the end user.
+   
+This document is Copyright 2000 by Daniel Swan. Permission is granted for it to
+        be reproduced electronically on any system, so long as it is reproduced
+        in its entirety, unedited, and with this copyright notice intact. 
+        Commercial use is allowed, provided that I am notified beforehand.
+
+-------------------------------------------------------------------------------
+
+2)  General Linux Security
+
+2.1)  How can I protect myself from intruders, quickly and easily?
+   
+        In a nutshell:
+   
+            1.  Install the most recent security patches for your distribution.
+            2.  Turn off unused services, and tcpwrapper the rest.
+            3.  If accessing your computer remotely, replace Telnet and Ftp
+            with more secure equivalents.
+            4.  Read the rest of this FAQ.
+       
+        Do these simple things, and you'll have covered most of your bases.  
+        If you still want to learn more about security, a couple of other
+        recommended documents are the Linux Security Howto, and the Linux
+        Administrator's Security Guide.  Familiarise yourself with these
+        documents,  make use of their suggestions, and you're well on your way
+        to being secure.
+       
+        Also, see CERT Australia's Unix security checklist at http://
+        www.bris.ac.uk/is/selfhelp/supportstaff/auscert_checklist.html.  It's a
+        bit dated, but it's step-by-step walkthrough of locking down a Unix box
+        is nonetheless quite useful.
+   
+        As well, reading and participating in comp.os.linux.security will
+        assist in your understanding of the finer points, and also help you
+        keep current with new developments.
+   
+2.2)  What is security?
+   
+        Security, in a nutshell, is ensuring the Confidentiality, Integrity,
+        and Availability of your systems and network.
+   
+2.3)  How secure should my linux box be?
+   
+        Even if it were possible to lock a system down air tight, it is not
+        always practical to invest the time and effort required to do so.  The
+        best thing to do is to first determine your risk, and then secure
+        accordingly.
+   
+        risk=(threat*vulnerability*impact)
+   
+        Threat:  What is the probability of you coming under attack?  Who will
+        be trying to penetrate you?  Will you be targeted by seasoned crackers
+        with a bone to pick, or are you only concerned with keeping the $cript
+        kiddies out?  Do you have many users, or are you the only one?  Are
+        your users trusted, or are they experienced programmers who like to
+        "play"?  Are you a reviled site, such as microsoft.com, or are you an
+        innocuous cable modem or dialup user?
+   
+        Vulnerability:  How suceptible to attack is your host?   Do you run
+        many services?  How exploitable are they?  How accessible is your host?
+          Is your host behind a firewall?  Do you offer remote access, and if
+        so, how?  Do others have physical access to your host?  What other
+        potential points of compromise are there?
+   
+        Impact:  What are the ramifications if your machine is compromised?  
+        Will proprietary data enter the public domain?  Is there sensitive or
+        potentially embarassing information on your computer?   Will downtime
+        have a financial impact on you?   How long will it take you to get up
+        and running again, and how much effort will it require?
+   
+2.4)  Which is the most secure linux distribution?
+   
+        There are several linux 'distributions' specifically created with
+        security in mind:
+   
+        Immunix OS:  http://www.immunix.com/immunix.html - A commercially
+        available hardened Linux.
+   
+        Bastille Linux:  http://www.bastille-linux.org/ - A post-install
+        hardening script, presently available only for Redhat up to 6.1.
+   
+        Secure Linux:  http://www.trustix.net/ - A newer hardened Linux
+        project, which focuses on secure default settings.
+   
+        slinux:  http://www.slinux.org/  - Still in its infant stage, slinux is
+        a project to develop a hardened version of the Linux kernel.
+       
+        Security-Enhanced Linux: http://www.nsa.gov/selinux/:  -  This isn't
+        actually a distribution, but an add-on that facilitates "Flexible
+        Support for Security Policies".  Considering the source of this
+        package, an American Intelligence Agency, careful consideration should
+        be made before installing it on machines that store sensitive or
+        proprietary information, at least until a rigorous code audit is done
+        of it.
+       
+        khaOS Linux, a previously promising project, has been halted, due to
+        "...lack of interest from the community at large and our core
+        developers".
+   
+            The various other distributions of Linux vary a little in the
+        secureness of a default install, but all can be customized to the same
+        high degree of security.   You should never rely on the default
+        installation of any distribution for security.  The relative security
+        of the most popular distributions is discussed in Kurt Siefried's Linux
+        Administrator's Security Guide.  Also, by the same author, is the Linux
+        Distribution Security Report.
+   
+            Although technically not Linuxes, OpenBSD and TrustedBSD deserve a
+        mention.  Both are based on NetBSD and  FreeBSD, respectively.  OpenBSD
+        is a free Unix that has been designed with security in mind, and has
+        been subject to very rigorous code auditing.   TrustedBSD is a suite of
+        extentions to FreeBSD intended to make it compliant with the Orange
+        Book B1 security standard.
+   
+-------------------------------------------------------------------------------
+
+
+3)  Firewalling and Masquerading
+
+3.1)  How do I set up a firewall under Linux?
+   
+        If you are new to firewalls, you should first read the Firewalls FAQ,
+        and the Linux Firewall and Proxy Server HOWTO.
+   
+        For those already familiar with firewalls, several tools are available
+        to configure the built in packet filtering capability of the Linux
+        kernel.
+        IPFWADM is for use with 2.0.x kernels, and IPChains for use with 2.2.x
+        kernels and above.  For information on configuring this functionality,
+        see:
+   
+            The IPChains Howto:  http://www.rustcorp.com/linux/ipchains/
+            HOWTO.html
+       
+            The IPFWADM FAQ:  http://www.dreamwvr.com/ipfwadm/ipfwadm-faq.html
+       
+       
+        Other commercial firewalling tools available for Linux:
+       
+            Firewall-1 for Linux:  http://www.checkpoint.com/products/
+            firewall-1/pbrief.html
+           
+            Phoenix Adaptive Firewall:  http://www.progressive-systems.com/
+            products/phoenix/
+           
+            Gateway Gaurdian Firewall:  http://www.gatewayguardian.com/products
+            /gg_personal.shtml
+           
+            Xsentry Internet Firewall:  http://www.trustix.com/products/xsentry
+            /
+       
+3.2)  Where can I get sample/custom firewall rules?
+   
+        Creating a firewall from scratch can be daunting.  Thankfully, there
+        are plenty of same rules, as well as sites and utilities that will help
+        you customize a ruleset for your own needs.  Those making use of
+        automatically generated firewalls should use these firewalls as a base,
+        make sure they understand them, and not blindly trust them.  That being
+        said, here is a list of useful tools:
+   
+        Sample rules:
+   
+            Sample IPChains Rules, and sample IPFWADM Rules by Paul Sery.
+           
+            Jomorris also has a very mature rc.firewall package available
+            through freshmeat.
+       
+        Web-based rule generators:
+       
+            Linux Firewall Design tool:  http://linux-firewall-tools.com/linux/
+            firewall/index.html - A very nice way to configure a basic
+            firewall.  It's faily flexible in its configurability, and also
+            offers instructions on installing the rules generated.
+       
+        Rule generation utilities:
+       
+            PMfirewall:  http://www.pointman.org/pmfirewall/ - PMFirewall is an
+            Ipchains Firewall and Masquerading Configuration Utility for Linux
+            that allows a beginner to build a custom firewall with little or no
+            ipchains experience.
+       
+            mason:  http://users.dhp.com/~whisper/mason/ -  "Mason is a tool
+            that interactively builds a firewall using Linux' ipfwadm or
+            ipchains firewalling. You leave mason running on the firewall
+            machine while you are making all the kinds of connections that you
+            want the firewall to support (and want it to block). Mason gives
+            you a list of firewall rules that exactly allow and block those
+            connections."
+           
+            Nstreams:  http://www.hsc.fr/ressources/outils/nstreams/
+            index.html.en - Nstreams analyzes the streams that occur on a
+            network, and  optionally generates the ipchains or ipfw rules that
+            will match these streams, thus only allowing what is required for
+            the users, and nothing more.
+             
+             
+       
+3.3)  What is the best way to start-up my firewall at boot time?
+   
+        There are many different ways to start your firewall, and your choice
+        of method is often one of personal preference.  Most important,
+        however, you must ensure that there is very little time between the
+        initialization of your networking, and the initialization of your
+        firewall.
+   
+        The best method I have found is to place my firewall initialization
+        (ipchains rules, masquerading, porf forwarding, etc) into a the file /
+        etc/rc.d/rc.firewall, which is called by dhcpcd immediately after
+        leasing an IP.
+       
+        Whatever you do, it is essential that you start your firewall before,
+        or immediatly after bringing up your network devices.
+         
+   
+3.4)  What is the difference between pump and dhcpcd?
+   
+        Pump and dhcpcd, included in the RedHat distribution, are both DHCP
+        clients, programs that will obtain a dynamic IP address from a DHCP
+        server, but dhcpcd offers the added functionality of calling an
+        external program as soon as an IP is successfully leased.
+   
+        The program called by dhcpcd is /etc/dhcpc/dhcpcd-eth0.exe, and you may
+        edit it to call any other program.  Particularly useful is executing
+        your firewall initialization script from /etc/dhcpcd-eth0.exe.  This
+        ensures that the firewall is activated as soon as the device is brought
+        up.
+   
+        To use dhcpcd instead of pump, edit the file /etc/sysconfig/
+        network-scripts/ifup, and change all instances of /sbin/pump to /sbin/
+        dhcpcd.
+   
+3.5)  How do I allow incoming UDP, such as CUseeMe or Battlenet through my
+    masquerading firewall?
+   
+        Ipchains will not allow remotely initiated udp transmissions to connect
+        to internal hosts, for the main reason that it doesn't know which
+        internal host the connection is for.  Thus, something called 'port
+        fowarding' must come into play. Port forwarding works under the
+        assumption that connections to a particular port are always destined to
+        the same host, and automatically forwards all packets to port xxx on to
+        internal host xxx.xxx.xxx.xxx.
+       
+        To use port forwarding, you must download and install ipmasqadm, or
+        ipautofw, depending on your kernel level.  Special kernel options must
+        also be enabled during compilation in order to use port forwarding. 
+        See the man pages for the respective commands to find out which
+        particular kernel parameters are.  Below is listed the proper syntax
+        for each of the port forwarding tools:
+   
+        Battlenet:
+       
+            IPChains:
+           
+                /usr/sbin/ipmasqadm autofw -A -r tcp 6112 6112 -h 192.100.100.2
+                /usr/sbin/ipmasqadm autofw -A -r udp 6112 6112 -h 192.100.100.2
+           
+            IPFWADM:
+       
+                /usr/sbin/ipautofw -A -r tcp 6112 6112 -h 192.100.100.2
+                /usr/sbin/ipautofw -A -r udp 6112 6112 -h 192.100.100.2
+           
+        CUseeMe:
+       
+            IPChains:
+       
+                /usr/sbin/ipmasqadm autofw -A -r tcp 7648 7649 -h 192.100.100.2
+                /usr/sbin/ipmasqadm autofw -A -r udp 7648 7649 -h 192.100.100.2
+           
+            IPFWADM:
+       
+                /usr/sbin/ipautofw -A -r tcp 7648 7649 -h 192.100.100.2
+                /usr/sbin/ipautofw -A -r udp 7648 7649 -h 192.100.100.2
+           
+        Other Services:  You get the idea...
+       
+        For more information, see:  http://www.monmouth.demon.co.uk/ipsubs/
+        portfw-2.2.html
+         
+   
+3.6)  How can I block traffic from doubleclick.net?
+   
+        There are five different ways to block doubleclick.net, each with their
+        own advantages and disadvantages:
+   
+        Hacking your hostfile
+   
+            Add the names of doubleclick servers to your hostfile, and point
+            them towards 127.0.0.1 (loopback) like this:
+       
+            127.0.0.1    ad.doubleclick.net
+            127.0.0.1    ad.ca.doubleclick.net
+            127.0.0.1    ad.uk.doubleclick.net
+            etc, etc...
+       
+            Although simple to implement, this may annoying delays due to
+            timeouts, in which case another option should be considered.
+       
+            For a complete list of advertiser hostnames to block, see http://
+            www.ecst.csuchico.edu/~atman/spam/adblock.shtml.
+       
+        Firewall doubleclick out.
+       
+            Blocking incoming traffic from doublenet can cause troublesome
+            delays, but a superior solution is to block the outgoing requests
+            to doubleclick.net.
+       
+            IPChains:
+                /sbin/ipchains -A output -i eth0 -d 199.95.207.0/24 -j REJECT
+                /sbin/ipchains -A output -i eth0 -d 199.95.208.0/24 -j REJECT
+                /sbin/ipchains -A output -i eth0 -d 208.184.29.0/24 -j REJECT
+                /sbin/ipchains -A output -i eth0 -d 208.211.255.0/24 -j REJECT
+                /sbin/ipchains -A output -i eth0 -d 209.67.38.0/24 -j REJECT
+                /sbin/ipchains -A output -i eth0 -d 204.253.104.0/24 -j REJECT
+       
+            IPFWADM:
+                /sbin/ipfwadm -A output -i eth0 -d 199.95.207.0/24 -j REJECT
+                /sbin/ipfwadm -A output -i eth0 -d 199.95.208.0/24 -j REJECT
+                /sbin/ipfwadm -A output -i eth0 -d 208.184.29.0/24 -j REJECT
+                /sbin/ipfwadm -A output -i eth0 -d 208.211.255.0/24 -j REJECT
+                /sbin/ipfwadm -A output -i eth0 -d 209.67.38.0/24 -j REJECT
+                /sbin/ipfwadm -A output -i eth0 -d 204.253.104.0/24 -j REJECT
+       
+        Use a filtering web proxy.
+       
+            Junkbuster is an ad-blocking proxy available from:  http://
+            www.junkbuster.com.
+       
+        Doubleclick's 'opt out' program.
+       
+            This doesn't really block ads, but should be mentioned for the
+            purpose of clarification.  By registering with doubleclick to 'opt
+            out', all you are doing is asking them not to track you via
+            cookies, but does not prevent you from seeing advertising banners. 
+            To find out more, see:  http://www.doubleclick.net/optout/
+            default.asp.
+       
+3.7)  Should I reject incoming/outgoing pings?
+   
+    Incoming pings can present a danger, in that they can be used to detect
+        your presence, or even to flood your host causing a denial of service. 
+        There seems to be a widespread, but fellatious, belief  that denying
+        incoming pings will render your host invisible to the outside world. 
+        In a narrow sense, this is true, in that your server will no longer
+        respond to pings, but it doesn't take into account other ports that may
+        be open on your host that can still give you away.
+       
+        Disabling pings will render you invisible to casual door-knockers, and
+        those doing a 'ping sweep', but it won't fool a serious portscan of
+        your subnet.    It can't hurt too much to DENY incoming pings, but you
+        should also ensure that other external services are disabled, and not
+        filtered, as this would also alert an attacker that you are using a
+        firewall.  Don't overestimate the benefits of this measure.
+       
+        Ping requests are called echo requests, or ICMP type 8,  and incoming
+        pings can be disabled with ipchains using the following command:
+         
+        ipchains -I input -j DENY -p icmp -s 0.0.0.0/0 echo-request -d
+            $EXTERNALIP
+            ipchains -I output -j DENY -p icmp -s $EXTERNALIP echo-reply -d
+            0.0.0.0/0
+        There are both pros and cons to disabling outgoing ping requests.   The
+        ability to ping other hosts is indispensible to some, and if filtered,
+        will hamper their ability to work.  On the other hand,  some trojans
+        use outgoing pings to broadcast their presence back to their home
+        server.  If you have no need to ping other hosts, it can't hurt to
+        filter outgoing echo-requests, and incoming echo-replies with the
+        following commands:
+         
+        ipchains -I output -j DENY -p icmp -s 0.0.0.0/0 echo-request -d
+            $EXTERNALIP
+            ipchains -I input -j DENY -p icmp -s 0.0.0.0/0 echo-reply -d
+            $EXTERNALIP
+       
+       
+        Other ICMP types that should be disabled to prevent denial of service
+        attacks, are incoming redirect, and outgoing destination unreachable,
+        or ICMP type 5, and ICMP type 3.  Disable them with the following
+        commands:
+         
+        ipchains -I input -j DENY -p icmp -s 0.0.0.0/0 redirect -d $EXTERNALIP
+            ipchains -I output -j DENY -p icmp -s 0.0.0.0/0
+            destination-unreachable -d $EXTERNALIP
+     
+        Don't filter other types of ICMP, for most are essential to normal
+        network functionality.
+   
+        For more information, on ICMP, and the different ICMP types, see RCF
+        792: The Internet Control Message Protocol.
+   
+3.8)  How can I track traffic volume going through my firewall?
+   
+    There are several packages out there, each varying in power and ease of
+        configuration.  Here are some of the packages available:
+         
+        Multi Routing Traffic Grapher:  http://www.mrtg.org - MRTG is a tool to
+            monitor the traffic load on network-links.  MRTG is based on Perl
+            and C and generates HTML pages containing GIF images which provide
+            a LIVE visual representation of this traffic.  MRTG is well suited
+            to enterprise applications.
+        IPAC:  http://www.comlink.apc.org/~moritz/ipac.html - Ipac collects,
+            summarizes, and nicely displays IP accounting data. The output of
+            ipac can be a simple ASCII table, an ASCII graph, or even images
+            with graphs showing traffic progression. ipac can be used for IP
+            traffic analysis and for accounting purposes.
+        Traffic-vis:  http://www.mindrot.org/code/traffic-vis.php3 -
+            traffic-vis is a suite of tools to help determine which hosts have
+            been communicating on an IP network, with whom they have been
+            communicating and the volume of communication taking place on a
+            host by host basis. Reports can be generated in ASCII, HTML,
+            Postscript, and include charts in GIF format.
+        UserIPacct:  http://rsmeyers.3ti.org/useripacct/ - UserIPacct is a
+            fairly new package, but looks interesting enough to mention. 
+            UserIPacct adds per user ip accounting to the kernel via a kernel
+            patch, and contains programs to control and use this accounting
+            data.
+
+3.9)   Why should I filter out outgoing X Windows sessions?
+   
+    X-windows sessions can be used by an intruder to create a back-channel to
+        their own machine.   Xterms are simple to launch using remote buffer
+        overflow vulnerabilities, and should be firewalled out to make things
+        just that much more difficult for intuders.  Disable outgoing Xterms
+        using the following Ipchains command:
+         
+        /sbin/ipchains -A output -j REJECT -i $EXTIF -p tcp -s $EXTIP -d
+            0.0.0.0/0 6000:6010
+            /sbin/ipchains -A output -j REJECT -i $EXTIF -p udp -s $EXTIP -d
+            0.0.0.0/0 6000:6010
+
+-------------------------------------------------------------------------------
+
+
+4)  Services
+
+    4.1)  What services should I run?
+   
+        The ones you need, and only the ones you need. On a desktop system
+        which you don't need to be able to access remotely, this would likely
+        mean no services. If you do need to provide remote access of some type,
+        only run the services necessary to provide the type of access you need.
+        See section 5.7 for lists of common services, their port numbers, and
+        their uses. Consider running different services on different computers
+        to the greatest extent practical, especially services of different
+        levels of importance. For example, you probably don't want to use the
+        same computer for your mission critical web server and your
+        departmental shell server.
+   
+    4.2)  How do I know what services I am running?
+   
+        At the command prompt, run the command "ps auxw" and hit enter. This
+        will print a list of all running processes. You might also want to try
+        using "ps auxf" (or "ps auxfw" if the lines get truncated) - this
+        prints everything in a nice tree format that may give you a better
+        understanding of how and why things are running.
+       
+        "netstat -a" will give you a list of all services that are listening
+        for connections. "netstat -ap", when run as root on newer systems, will
+        do a better job of showing which processes are doing the listening.
+         
+   
+    4.3)  What services should I *not* be running?
+   
+        Any you don't need.  However, particularly notorious, and enabled by
+        default in many distributions are Sendmail, BIND, the "R" services
+        (rcp, rsh, rexec), and FTP/Telnet.  Note: You *don't* need to run a
+        server in order to make outgoing connections of that type. For example,
+        if you want to connect to another computer using ssh, you only need to
+        run the ssh client on your end, not the server, sshd.  Same goes for
+        Telnet and FTP.
+       
+        Other services that should be specifically disabled if you have no
+        particular use for them:  echo, discard, daytime, chargen, and gopher.
+         
+   
+    4.4)  How do I disable unecessary services?
+   
+        Most, but not all of the services are set up within /etc/inetd.conf. 
+        Using your favorite editor, comment out unwanted services by placing a
+        #  at the beginning of each line you want to comment out, and then
+        restart inetd using the following command:   kill -HUP `pidof inetd` .
+       
+        Also, there are many non-networking services that are likely
+        unecessary.  lpr and linuxconf and excellent examples.  These can be
+        disabled by reconfiguring Linux's startup scripts in /etc/rc.d/.  Under
+        RedHat, these startup scripts can be easily enabled and disabled using
+        the command line 'setup' utility.
+         
+   
+    4.5)  What are tcpwrappers, and how do I use them?
+   
+        Tcpwrappers, or tcpd, runs as an intermediary between inetd and the
+        service that inetd calls and filters connections based on the
+        originating IP.   When a connection is made to a particular port, inetd
+        passes the request to tcpd, which checks existing rules (/etc/
+        hosts.all, /etc/hosts.deny)  to see if the connection is allowed.  If
+        it is, it passes the request on to the appropriate client daemon.  If
+        the connection is disallowed, it is simply closed.
+       
+        If you only use your Linux box from home, and don't need to connect to
+        it remotely, it's an excellent idea to deny all remote connections
+        using the following configuration:
+       
+            To deny all connections from all remote hosts, add the following
+            line to /etc/hosts.deny:
+           
+                ALL: ALL
+           
+            To allow all connections from all local hosts, add the following
+            line to /etc/hosts.allow:
+           
+                ALL: LOCAL
+           
+       
+        A more thorough guide on configuring tcpwrappers is available at:  
+        http://www.cats.wright.edu/catsweb/ns/osxs_sec/tcpw_install.html, or
+        you can simply read the tcp manpage by typing  man tcpd.
+         
+   
+    4.6)  Should I use Telnet and FTP for remote access?
+   
+        In a word, No.  The problem with Telnet, FTP, and other non-encrypted
+        protocols is that everything is sent across the network as plain text.
+        This means that someone running a sniffing program on the network,
+        which is very simple under many circumstances, can see everything you
+        send - including your login and password. There are secure alternatives
+        for many protocols. Please consider implementing these to the greatest
+        extent possible.
+         
+   
+    4.7)  Is there a more secure alternative to service <X>?
+   
+        In these days of widespread packet sniffing, which is even taking place
+        at ISPs, it's a good idea to move away from plain-text protocols to
+        their encrypted replacements.  This is by no means a complete list of
+        secure replacements, and is only a survey of the most common one.  It
+        should be mentioned that a recently released sniffing tool has made it
+        possible to sniff SSh/SSl sessions via a man-in-the-middle attack. See
+        section 4.9 for more information.
+         
+         
+             
+                            Insecure Services and Their More Secure            
+                                                 Replacements                  
+                          +------------------+----------------------+          
+                          | Insecure         |Secure                |          
+                          +------------------+----------------------+          
+                          +------------------+----------------------+          
+                          |Telnet            |SSh                   |          
+                          +------------------+----------------------+          
+                          +------------------+----------------------+          
+                          |FTP               |Scp                   |          
+                          +------------------+----------------------+          
+                          +------------------+----------------------+          
+                          |http              |https                 |          
+                          +------------------+----------------------+          
+                          +------------------+----------------------+          
+                          |pop3              |IMAP w/ SSL           |          
+                          +------------------+----------------------+          
+                          +------------------+----------------------+          
+                          |rexec             |SSh                   |          
+                          +------------------+----------------------+          
+                          +------------------+----------------------+          
+                          |rsh               |SSh                   |          
+                          +------------------+----------------------+          
+   
+4.8)  Is there a free ssh Client for MS Windows or Mac?
+   
+     
+    SSh clients for MS Windows:
+         
+            Putty:  http://www.chiark.greenend.org.uk/~sgtatham/putty/ - A
+            popular open source Windows SSH Client.
+           
+            PSCP:  http://www.chiark.greenend.org.uk/~sgtatham/putty/ - An Scp
+            clone that allows secure file transfer via SSh.
+           
+            TSSH:  http://www.zip.com.au/~roca/ttssh.html - An add-on for the
+            terminal emulation program TerraTerm Pro.
+           
+            SSHWin:  ftp://ftp.ssh.org/pub/ssh/ - SSh2/Sftp Client from SSH
+            Communications Security.  Free for non-commercial use.
+           
+            SecureCRT:  http://www.vandyke.com/products/securecrt/index.html -
+            Not free, but worth mentioning.
+             
+        SSh clients for Macintosh:
+         
+        NiftyTelnet w/ SSh:  http://www.lysator.liu.se/~jonasw/freeware/
+            niftyssh/ - SSh enhanced version of NiftyTelnet.
+         
+            BetterTelnet: http://www.cstone.net/~rbraun/mac/telnet/ - SSh
+            support not implemented yet, but coming in next release.
+           
+            F-Secure SSh Client: https://www.europe.f-secure.com/
+            download-purchase/download-forms/sshclientmac.html - Not actually
+            free, but a time-limited demo.
+           
+            Mindterm:  http://www.mindbright.se/mindterm/ -   Mindterm is an
+            open source Java SSH/SCP client which can be run either standalone
+            or as an applet in a web page.
+
+4.9)  But hasn't SSh/SSl been cracked?
+   
+        No, but recently released tools can take advantage of user errors which
+        may enable the sniffing of SSh/SSl sessions.
+       
+            The newly available sniffing tool exploits a potential
+        man-in-the-middle vulnerability of SSh/SSl and has caused quite a stir,
+        particularly following Kurt Seifried's article "The End of SSL and SSH?
+        ".  Richard E. Silverman followed up with an article titled "dsniff and
+        SSH: Reports of My Demise are Greatly Exaggerated".  The gist of the
+        two articles is that SSh/SSl can be vulnerable to m-i-t-m attacks, but
+        this is dependant on uninformed users carelessly validating new
+        certificates.
+       
+            Sniffing of SSh/SSl session is a real threat, but can be overcome
+        by properly educating yourself, and your users on the proper use and
+        nature of SSh/SSl, and Public Key Infrastructure.  Read the two
+        aforementioned articles, and see the following links to learn more
+        about SSh/SSl:
+         
+        The SSh FAQ:  http://www.ssh.org/faq.html
+            Linux SSh tutorial:  http://www.linux.ie/articles/tutorials/ssh.php
+            Article: All about SSh:  http://www.securityportal.com/research/
+            ssh-part1.html
+            Ten Risks of PKI:  http://www.counterpane.com/pki-risks.html
+
+4.a)  What is Identd?  Can I disable it?
+   
+            Identd service is an authentication service that identifies the
+        owner of a specific TCP/IP connection to the remote server accepting
+        the connection.  When a user connects to a remote host, inetd on the
+        remote host sends back a query to port 113 asking "Who is the owner of
+        that particular connection to me?", identd then replies back "username
+        jsmith owns that process".
+       
+              Identd should not be used as a method of authentication - anyone
+        with root access can alter their identd response.  Indeed, on many
+        systems (such as FreeBSD and Windows) even a non-privledged user can
+        specify whatever identd response they want. The protocol is most useful
+        on multiuser systems as a method of tracking down problem users. If one
+        of your users is causing problems on another system, that system's
+        admin can inform you of the username of the specific user causing
+        problems, saving you a lot of legwork.
+       
+            Should you run identd? That's really a judgement call. On systems
+        with many users, the benefits could be great, but it doesn't serve any
+        particular purpose on a single user box.  In fact, running it means
+        leaving a service open to the outside world, with all the security
+        risks that entails. Another thing to consider is that identd can allow
+        attackers to find out valuable information about your system, such as
+        whether a certain service is running as root, the operating system you
+        are running, and the usernames of your users. Consider running identd
+        with the -n flag, which sends userid numbers instead of usernames. See
+        the identd manpage and /etc/identd.conf for more information about the
+        available options.
+       
+            Impact of disabling identd:
+       
+        1)  Remote hosts may have problems tracking attacks originating at your
+        site down to specific users.   This is only significant if you have
+        many users on your host.   Disabling identd on a multi-user system is
+        not only bad sysadmin-etiquette, it will also make it difficult to
+        track down problem users at your site.
+       
+        2)  Some FTP and most IRC servers require that identd be running in
+        order to authenticate remote users.  Disabling identd will limit the
+        number of IRC and FTP servers that will accept your connections.   If
+        you don't use IRC, this isn't really an issue either.
+       
+            You can block access to identd by commenting out the 'auth' line in
+        /etc/inetd.conf, or by using tcpwrappers and/or firewalling software to
+        disable/restrict access. If you need identd enabled in order to connect
+        to a certain server, you might want to consider allowing access to it
+        only from that server. If you do choose to firewall the identd port,
+        strongly consider using a reject policy rather than deny. Using deny
+        may greatly increase the time it takes you to connect to servers that
+        utilize identd, as they will wait for a response of some type before
+        allowing you to connect.
+   
+-------------------------------------------------------------------------------
+
+
+5) Intrusion Detection
+
+5.1)  What is Intrusion Detection?
+   
+        Intrusion detection is the ability to detect people trying to
+        compromise your system.  Intrustion detection is divided into two main
+        categories, host based, and network based.   In simple terms, host
+        based means that you are using a single host to monitor itself, and
+        network based means you are using a host to monitor a complete network
+        segment.  For most home Linux users, you will only be concerned with
+        host-based Intrustion Detection Systems (IDS).
+       
+        For more information on Intrusion Detection, check out:
+       
+            Robert Graham's Intrusion Detection FAQ at: http://
+            www.robertgraham.com/pubs/network-intrusion-detection.html
+           
+            The SANS' Institute's Intrusion Detection FAQ at:  http://
+            www.sans.org/newlook/resources/IDFAQ/ID_FAQ.htm
+             
+       
+5.2)  But why would someone want to hack *my* computer?
+   
+        Home linux boxes are a prime target of computer crackers, as they are
+        often not well secured, and once compromised they can be used as
+        launching points for a more serious attacks.   Compromised boxes can
+        also become DDOS amplifiers, warez servers, or spam relays, to name a
+        few potential abuses.  The high bandwidth of cable/dsl connections is
+        another attraction.
+   
+        Users of cable or ADSL modems are particularly vulnerable, since their
+        extended connectivity time gives intruders a longer window within which
+        to compromise their host.  It is also common for cable users to fall
+        prey to amateur crackers known as "script kiddies" who run automated
+        tools which scan entire subnets for a particular vulnerability. 
+        Casting such a wide net, they are invariably successful in finding a
+        few vulnerable hosts which they then use to compromise other hosts.
+   
+        Your anonymity and obscurity does not ensure that your computer will
+        not be targeted.
+   
+5.3) What Intrusion Detection systems exist for Linux?
+   
+        There are many excellent Intrusion Detection systems for Linux.  Here
+        is are some of the more common ones:
+   
+            Snort:  http://www.clark.net/~roesch/security.html - Possibly the
+            most popular Linux IDS.  It's free, highly customizable, and easy
+            to use.
+       
+            Portsentry:  Portsentry is a portscan detector with the ability to
+            automatically drop routes to attacking hosts, making your system
+            inaccessible to them.  Portsentry can be downloaded from:  http://
+            www.psionic.com/abacus/portsentry/
+       
+            Tripwire:  Tripwire protects against trojans by checking the
+            integrity of your binaries, and alerting you if any binary's
+            signature has changed.  Tripwire can be downloaded from:  http://
+            www.tripwiresecurity.com/products/linux.cfm?cfid=212269&cftoken=
+            6548645
+           
+            LIDS:  http://www.lids.org  - The Linux Intrusion Detection System
+            is a comination Intrusion Detection and hardening patch for the
+            Linux kernel.
+       
+        For a further list of Intrusion detection tools and applications, see: 
+        http://www.whitehats.com/tools/ids.html.
+   
+5.4)  How do I know if I've been compromised?
+   
+    Sometimes, one just gets 'that feeling' that things aren't the way they
+        should be, but you're uncertain where to begin looking for an
+        intruder.  Fear not, CERT has an excellent Intrusion Detection
+        checklist to help you root out intruders.  It is located at:
+        http://www.cert.org/tech_tips/intruder_detection_checklist.html.
+
+    5.5)  How can I verify the integrity of my binaries using Redhat's RPM?
+   
+        Handily, RPM has the functionality to verify the integrity of it's own
+        packages.  To verify all packages installed, use the following command:
+       
+            rpm -Va
+       
+        Any files that have been changed will display one of the following
+        statuses:
+       
+            S = size change
+            M = permissions change
+            5 = MD5 changed
+            L = Symlink changed
+            D = Device change
+            U = User change
+            G = Group change
+            T = Date/Time change
+            missing = file is gone
+       
+        For more information on RPM, enter the following command:  man rpm
+   
+5.6)  I've been compromised, what should I do?
+   
+            1.  Disconnect your computer from its network.
+            2.  Copy logfiles to a floppy for later analysis.
+            3.  Verify your binaries using either Tripwire or RPM (rpm -Va),
+            save output to floppy.
+            4.  Analyze saved data to determine time and method of compromise.
+            5.  Restore system, either from scratch, or from guaranteed
+            pre-compromise backup (you have backups, right?!).
+       
+        For a more in depth guide, see CERT's excellent paper:  "Steps for
+        Recovering from a UNIX or NT System Compromise", located at: http://
+        www.cert.org/tech_tips/win-UNIX-system_compromise.html.
+   
+5.7)  I'm seeing repeated probes to port xxxx... What does this mean?
+   
+        Here are some lists of port assignments:
+       
+            IANA Port Assignments :  http://www.isi.edu/in-notes/iana/
+            assignments/port-numbers - "Official" port assignment from the
+            Internet Assigned Numbers Authority.
+           
+            Port list at NetworkIce:  http://advice.networkice.com/advice/
+            Exploits/Ports - List of ports and hyperlinked explanations that
+            includes 'less standard' ports.
+           
+            List of Trojans:  http://www.tlsecurity.com/trojanh.htm - The most
+            complete list of trojan ports available.
+           
+            Port Search Engine:  http://www.cotse.com/cgi-bin/port.cgi - Very
+            nice search engine for ports, links results to relevant RFC's.
+       
+        For a more in depth analysis of what you're seeing, see Robert Graham's
+        Firewall forensics FAQ:   http://www.robertgraham.com/pubs/
+        firewall-seen.html
+   
+5.8)  What is a 'Honeypot' ?
+   
+        A Honeypot is a hardened host  that masquerades as a vulnerable host
+        for the purposes of observing crackers, and learning how they
+        operate.   The Honeypot host should be inviting enough to attract an
+        attacker, but not so inviting as to arouse suspicion, and should
+        extensively log attacker activities.
+   
+        More resources on creating a  Honeypot:
+   
+            The SANS Instutute's Intrusion Dection Faq:  http://www.sans.org/
+            newlook/resources/IDFAQ/honeypot.htm
+           
+            Lance Spitzner's article "To Build a Honeypot":  http://
+            www.enteract.com/~lspitz/honeypot.html
+           
+            The Deception Tool Kit:  http://www.all.net/dtk/dtk.html - Dummy
+            services that send false responses and log remote queries.
+             
+       
+5.9)  I've been scanned by xxx.xxxx.xxx.xxx... Should I flood/hack/mailbomb
+    him?
+   
+        Most certainly not.  It's possible that this host has already been
+        compromised, and you'd only end up venting on a fellow victim. 
+        Instead, if possible, send a polite note to the Sysadmin of the box,
+        and CC it to the abuse department of his service provider.  They are in
+        a better position to determine the situation and address it
+        appropriately.
+       
+        Also, this is a good opportunity to discuss 'automated response' tools
+        that will react offensively upon detecting a portscan.  This has the
+        opportunity to get you in all sorts of trouble, including infinite
+        loops leading to self-Dos, or even legal trouble.  It's about as wise
+        as setting up bear traps in your own home, and is highly discouraged.
+       
+        Do unto others...
+   
+-------------------------------------------------------------------------------
+
+
+6)  Testing your own Security
+
+6.1)   I've read all the docs, and made the suggested changes .. is my computer
+    secure?
+   
+        No, it's not.  It is both theoretically and practically impossible to
+        completely secure a computer.   Never fall into the trap of believing
+        you are invulnerable.  Remain ever vigilant, and regularly check your
+        logfiles for anomolous activity.
+       
+        That having been said, the goal is to make your computer secure enough
+        to discourage casual attackers, and to slow down the more persistent
+        attacks, allowing you time to identify and respond to them.
+         
+   
+    6.2)  My IP is xxx.xxx.xxx.xxx.  Can you test my security by hacking me?
+   
+Most certainly not!  This is an ethical no-man's-land, in which both parties
+        put themselves at a considerable risk of legal liability.  Not to
+        mention that it's an old gag to post someone else's IP, and encourage
+        others to hack it.
+       
+        If you truly require penetration testing, there are many commercial
+        organizations who offer professional penetration testing services,
+        although they can be costly.  I would be happy to list a few such
+        organizations here for a case of beer and a vendor t-shirt.
+
+6.3)  Are there any web-based security scanners?
+   
+        Yes, there are many, with more cropping up each day.  These are not
+        only useful to test your security, but also to ensure that your IDS is
+        doing it's job.  Take the results of these scans with a grain of salt. 
+        Here are some of the better free scanners that don't require
+        registration:
+   
+            Hackerwhacker :  http://www.hackerwhacker.com  - Services, Ports,
+            Samba, etc.  A well rounded scanner.
+           
+            Max Vision:  http://maxvision.net/#free   - A 'visibility analysis'
+            and a free penetration testing quote by the creator of
+            whitehats.com.
+           
+            Shields Up:  http://www.grc.com - Also known as "Shields Up". 
+            Basic testing, but easy to use.
+           
+            Privacy.net:  http://privacy.net/analyze - Not exactly a scanner,
+            but shows you what information you give out as you surf.  A
+            worthwhile look.
+           
+            Secure-Me:  http://www.secure-me.net/ - A very busy remote port
+            scanner.
+             
+       
+6.4)  What vulnerability testing tools are available for Linux?
+   
+        Here is a list of the most popular remote vulnerability testing tools
+        for Linux.  You should use them against your own system, for you can be
+        sure that others will.  For best results, try running these tools
+        against your own computer from several locations both inside and
+        outside of your firewall.  This will give you a better idea of what an
+        attacker would see than just running it locally.
+   
+            Nmap:  http://www.insecure.org/nmap - A very powerful port scanner
+            that does stealth scans and OS fingerprints, to mention a few of
+            its features.  Undoubtedly the best in its class, with lots of
+            third-party addons available.
+       
+            SAINT:  http://www.wwdsi.com/saint/index.html - A next generation
+            version of SATAN.  Well rounded and thorough.
+           
+            SARA:  http://www-arc.com/sara/ - A third generation auditing tool
+            based on SATAN.
+       
+            Nessus:  http://www.nessus.org/intro.html - A client/server
+            vulnerability scanner.  Also well rounded and thorough.
+           
+            Cybercop Scanner: http://www.pgp.com/products/cybercop-scanner/
+            default.asp  - A commercial scanner with demo available.
+           
+            Webtrends Security Scanner:  http://www.webtrends.com/site_download
+            /wsad.htm?product=security - Another commercial scanner with a 14
+            day demo available.
+       
+        An honorable mention also goes out to some oldtimers to which today's
+        security scanners owe a great debt:  SATAN, COPS, and Tiger.
+   
+-------------------------------------------------------------------------------
+
+7)  Viruses and Trojans
+
+7.1)  Is Linux Vulnerable to viruses?
+   
+        In a practical sense, no.  Technically...
+   
+        Due to the design of Linux, it is difficult for viruses to spread far
+        within a system, as they are confined to infecting the user space of 
+        the user who executes them.  Of course, this is a problem if infected
+        files are launched by root, but as a security conscious individual, you
+        wouldn't be running untrusted files as root, would you?
+   
+        It is theoretically possible for a virus launched by a regular user to
+        escalate its privileges using system exploits, however, a virus with
+        this capability would be quite sizeable, and difficult to write.  As of
+        this date, few viruses have actually been discovered for Linux, and the
+        ones that have been discovered aren't worth losing sleep over.  This
+        will undoubtedly change with time.
+   
+        Viruses do exist for Linux, but are probably the least significant
+        threat you face. On the other hand, Linux is definitely vulnerable to
+        trojans, which are explained in the following section.
+   
+7.2)  What is a trojan?
+   
+        A trojan is a malicious program that masquerades as a legitimate
+        application.  Unlike viruses, they do not self replicate, but instead,
+        their primary purpose is (usually) to allow an attacker remote access
+        to your computer or it's resources.   Sometimes, users can be tricked
+        into downloading and installing trojans onto their own computers, but
+        more commonly, trojans are installed by an intruder to allow him future
+        access to your box.
+       
+        Trojans often come packaged as "root kits".  A "root kit" is a set of
+        trojaned system applications to help mask a compromise.  A root kit
+        will usually include trojaned versions of ps, getty, passwd,
+        tcp_wrappers, login, and syslogd.
+         
+   
+7.3)  Are there virus scanners for Linux?
+   
+        At this point in time, virus Scanners for Linux are aimed at detecting
+        and disinfecting date served to Windows hosts by a Linux file/
+        mailserver.  This can be useful to help stop the spread of viruses
+        among local, non-unix machines.   Due to the lack of viruses for linux,
+        there are presently no scanners to detect viruses within the Linux OS,
+        or it's applications. Trojans present a greater threat to the Linux OS
+        itself than do viruses, and can be detected by regularly verifying the
+        integrity of your binaries.  Methods for doing this are covered in the
+        next section.
+       
+        AMaViS:  http://www.amavis.org/amavis.html - A sendmail plugin that
+        scans incoming mail for viruses.
+       
+        AntiVir for Linux:  http://www.hbedv.com/ - Scans incoming mail and ftp
+        for viruses.
+       
+        Interscan Viruswall: http://www.antivirus.com/products/isvw/ - A
+        Firewall-1 add-on that scans ftp,http,and smtp for  viruses.
+       
+        Sophos AntiVirus:  http://www.sophos.com/products/antivirus/
+        savunix.html - Checks shares, mail attachments, ftp, etc for viruses.
+       
+        Network Associates:  http://www.nai.com/international/uk/asp_set/
+        buy_try/try/product_evals.asp - Scanner for Unix/Linux (demo).
+         
+   
+7.4)  How can I verify the integrity of my binaries?
+   
+        There are three primary methods to verify binary integrity:  Tripwire,
+        RPM, and homegrown solutions:
+       
+        Tripwire:  http://www.tripwire.com - Tripwire is the most popular tool
+        for verifying binaries under Linux.  It's easy to use, highly
+        configurable, and can be automated to provide regular checks of your
+        binaries, and report any changes via email.
+       
+        RPM:  The Redhat Package Manager has it's own built in method for
+        verifying binary integrity, which is useful for spot-checking
+        suspicious files.  For information on using it, see section 5.3,
+        "Checking binary integrity using RPM".
+       
+        Homegrown Solutions:  Many use shell scripts that verify MD5 checksums
+        of a file against previous checksums.   An MD5 checksum can be
+        generated by typing "md5sum filename".  Other commands to generate
+        checksums are cksum and sum.
+         
+   
+-------------------------------------------------------------------------------
+
+8)  Appendices
+
+8.1)  Security updates for common Linux distributions
+   
+     
+        Redhat: http://www.redhat.com/support/errata/index.html
+           
+            Mandrake:  http://www.linux-mandrake.com/en/updates/
+           
+            Suse:  http://www.suse.com/us/support/download/updates/
+           
+            Debian:  http://www.debian.org/security/
+           
+            Slackware:  Slackware doesn't release stand-alone security
+            updates.  The best you can do is subscribe to the
+            "slackware-security" mailing list.  See http://www.slackware.com
+            for details.
+           
+            Caldera:  http://www.caldera.com/support/security/
+           
+            TurboLinux:  http://www.turbolinux.com/security/
+             
+
+8.2)  Related FAQs and Howto's, and other References
+   
+    The Linux Security Howto:  http://www.linuxsecurity.com/docs/Security-HOWTO
+        /
+       
+        The Linux Administration FAQ:  http://www.kalug.lug.net/linux-admin-FAQ
+        /
+       
+        The Linux Security Knowledge Base:  http://www.securityportal.com/lskb/
+       
+        The Linux Administrators Security Guide:  http://www.ibiblio.org/lasg/
+         
+
+8.3)  Linux Specific Security Websites
+   
+    The Linux Security Homepage: http://www.linuxsecurity.com/
+       
+        The Linux Firewall and Security Site:  http://
+        www.linux-firewall-tools.com/linux/
+       
+        Securityfocus' Linux Site:  http://www.securityfocus.com/frames/
+        index.html?focus=linux
+         
+
+8.4)  Linux-related, but not linux-specific security websites
+   
+    Infosec:  http://www.infosyssec.net/ - "The Security Portal for Information
+        System Security Professionals".
+       
+        Securityportal:  http://www.securityportal.com/ - "The Focal Point for
+        Security on the Net".
+       
+        SecurityFocus: http://www.securityfocus.net/ - A very high-fibre news
+        and discussion site.
+       
+        Lance Spitzner's site:  http://www.enteract.com/~lspitz/ - Some great
+        publications, white papers, and articles.
+       
+        Robert Graham's site:  http://www.robertgraham.com/ - Security news,
+        and a pointer to Robert's excellent infosec FAQ's.
+       
+        Packetstorm:  http://packetstorm.securify.com/ - Linux/Unix security
+        news sprinkled with some windows.
+       
+        CERT:  http://www.cert.org/ - A federally funded computer R+D center
+        operated by Carnegie Mellon University.
+       
+        Whitehats:  http://www.whitehats.com/ - "...empowering network and
+        system administrators with the knowledge and tools required to defend
+        their networks in an ongoing struggle against irresponsible or
+        malevelent attack."
+         
+
+8.5)  Newsgroups
+   
+    Newsgroups are essential to keeping current on, and learning more about,
+        computer security.  There are many security related newsgroups, but
+        here's a list of the ones that Linux users will also find useful.
+
+            comp.os.linux.security:  The newsgroup this faq is from.  Focus is
+            on security as it pertains to Linux.
+           
+            comp.security.announce:  A low-traffic group that carries the CERT
+            advisories as they are announced.
+           
+            comp.security.unix:   A fairly high traffic group dealing with
+            security as it pertains to all flavors of Unix.
+           
+            comp.security.firewalls:  Discussions relating to firewalls.
+           
+            comp.security.misc:  Discussions relating to general computer
+            security.
+       
+-------------------------------------------------------------------------------
+
+This document is Copyright 2000 by Daniel Swan. Permission is granted for it to
+be reproduced electronically on any system, so long as it is reproduced in its
+entirety, unedited, and with this copyright notice intact.  Commercial use is
+allowed, provided that I am notified beforehand.
+ 
+ 
+ 
+ 
+ 
+ 
+ 

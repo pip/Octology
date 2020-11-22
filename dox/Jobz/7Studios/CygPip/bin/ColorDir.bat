@@ -1,0 +1,1 @@
+set ColorDir=dirs:bright cyan;exe com bat btm:bright blue;ini cfg log dir:bright yellow;bbl txt doc rtf wpd 3ds bld xml:bright white;htm html:red;mod s3m xm it fcd:cyan;zip a0* lzh arj tar gz tgz bz bz2 tbz:bright magenta;asm c cpp p pas adb jav java pl plx cgi rng:bright green;rni:green;h ads o:white;wav voc smp:magenta;bak sys drv:yellow;dat bin hlp:bright black;*:bright red

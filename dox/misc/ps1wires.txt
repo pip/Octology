@@ -1,0 +1,3 @@
+looking on right-side-up (flat on top, rounded on bottom)
+ 9 pin slots occupied by:
+green orange blank  |  grey/blue yellow red  |  brown blank white

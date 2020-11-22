@@ -1,0 +1,195 @@
+using XWarpPointer and fopen I was able to cobble together an app to move the curser using the touch screen.
+
+I am going to work on implementing clicks next, I will probably track a system timer if I can find the code for it. EDIT: Got the timing ready for clicks, I need to find the function to call the mouse down, and mouse up events Edit: Clicks are now implemented and work properly
+
+I am somewhat of a linux newb so I don't know how to open the device without root access, if it segment faults it is because it doesn't have privileges to open the /dev/hidraw0
+
+Here is the source:
+Quote:
+//g++ -pthread -lX11 -lXtst -L/usr/X11R6/include t1010touch.cpp -otdriver.o
+#include <X11/Xlib.h>
+#include <X11/extensions/XTest.h>
+#include <stdio.h>
+#include <string.h>
+#include <iostream>
+#include <pthread.h>
+
+#define minX 55
+#define maxX 3848 //3903 - 55
+#define minY 234
+#define maxY 3793 //4027 - 234
+#define width 1280 //screen width
+#define height 800 //screen height
+
+int state = 0;
+int mouse = 0;
+//XEvent event;
+Display *display;
+
+void *timerThread(void *threadid)
+{
+int lastState = state;
+timespec * rqtp;
+timespec * rmtp;
+while(true)
+{
+usleep(100000);
+if((state==0)&&(lastState==1))
+{
+mouse = 0;
+std::cout << "\n";
+XTestFakeButtonEvent(display, 1, 0, CurrentTime);
+XFlush(display);
+}
+lastState = state;
+state=0;
+}
+}
+
+int main()
+{
+//X11 init
+Window root;
+Window child;
+XWindowAttributes root_attributes;
+display=XOpenDisplay(0);
+root = XRootWindow(display,0);
+XSelectInput(display,root,KeyReleaseMask);
+child = root;
+std::cout << "X11 ready!\n";
+
+//file input init
+char infile[] = "/dev/hidraw0";
+FILE *input;
+input = fopen(infile, "rb");
+std::cout << "file open!\n";
+
+//timer thread init
+pthread_t thread;
+pthread_attr_t attr;
+pthread_attr_init(&attr);
+pthread_create (&thread,&attr,timerThread,NULL);
+
+//state machine init
+int temp;
+unsigned int mask;
+int xr = 0, yr = 0;
+int xp = 0, yp = 0;
+int x = 0, y = 0;
+int count = 0;
+
+while(1)
+{
+temp = (int)getc(input);
+switch(count)
+{
+case 0:
+if((temp!=0x21)&&(temp!=0x20))
+count--;
+break;
+case 1:
+x |= temp;
+break;
+case 2:
+x |= temp << 8;
+break;
+case 3:
+y |= temp;
+break;
+case 4:
+y |= temp << 8;
+std::cout << "\r(" << x << "," << y << ")\t";
+x = (int)((double)(x-minX)/maxX*width);
+y = (int)((double)(y-minY)/maxY*height);
+XQueryPointer(display, root, &root, &child, &xr, &yr, &xp, &yp, &mask);
+XGetWindowAttributes(display, root, &root_attributes);
+XWarpPointer(display, NULL, NULL, 0, 0, 0, 0, x-xp-root_attributes.x, y-yp-root_attributes.y);
+std::cout << " (" << x << "," << y << ") ";
+if(mouse==0)
+{
+
+mouse=1;
+XTestFakeButtonEvent(display, 1, 1, CurrentTime);
+XFlush(display);
+}
+x = 0;
+y = 0;
+state = 1;
+break;
+default:
+count=0;
+break;
+}
+count ++;
+}
+return 0;
+}
+Last edited by vertago1; March 17th, 2009 at 04:53 PM..
+vertago1 is offline     Reply With Quote
+vertago1
+View Public Profile
+Send a private message to vertago1
+Find More Posts by vertago1
+Old April 8th, 2009       #13
+gcai
+First Cup of Ubuntu
+ 
+Join Date: Jul 2006
+Beans: 6
+        
+Re: Fujitsu T1010 touchscreen and Kubuntu experience
+vertago1, could you please explain how to use that code?
+
+I saved it as t1010touch.cpp, then installed libx11-dev and libxtst-dev, and run:
+
+g++ -pthread -lX11 -lXtst -L/usr/X11R6/include t1010touch.cpp -otdriver.o
+
+No error messages. Got a file called tdriver.o, what do I do with it? What else should I do?
+
+Thanks
+Last edited by gcai; April 8th, 2009 at 10:08 PM..
+gcai is offline         Reply With Quote
+gcai
+View Public Profile
+Send a private message to gcai
+Find More Posts by gcai
+Old April 9th, 2009       #14
+vertago1
+5 Cups of Ubuntu
+ 
+vertago1's Avatar
+ 
+Join Date: Dec 2007
+Beans: 41
+        
+Re: Fujitsu T1010 touchscreen and Kubuntu experience
+well when I execute it I go to the directory of the tdriver.o file and use the command:
+
+sudo ./tdriver.o
+
+I want to put a disclaimer here though. Anytime you run someones code as a root user you ought to have a good idea about what it does. I don't recommend running this on any computer except the fujitsu lifebook T1010, but it may work for other computers if they send the same data over usb.
+
+if you notice the code has the line: char infile[] = "/dev/hidraw0";
+this is the device the code opens. Your kernel must have already created this device for my code to work. If you are using one of the newer ubuntu distributions on a T1010 it should be there. If you don't run the program with sudo or root it gives a seg-fault because of the privileges on /dev/
+
+If there is a way to run it without sudo or su root, please let me know.
+
+Also, Note that at the top of the code there are some constants you can set to calibrate the program. You may want to comment out the lines which trigger the click events so that you can read the output on the screen for testing the min and max of your screen. I recommend using the top, and bottom center to measure the min and max Y, while using the left and right center to measure the min and max X. The first set of numbers is the output of the device, and the second set of numbers is the location the program will move the mouse to.
+
+Edit: I plan on doing an update to it eventually to have an input for each corner of the touch pad and do a better mapping so that the calibration is better, but that will have to wait for when I have more free time.
+Last edited by vertago1; April 9th, 2009 at 01:09 AM..
+vertago1 is offline     Reply With Quote
+vertago1
+View Public Profile
+Send a private message to vertago1
+Find More Posts by vertago1
+Old April 13th, 2009      #15
+gcai
+First Cup of Ubuntu
+ 
+Join Date: Jul 2006
+Beans: 6
+        
+Re: Fujitsu T1010 touchscreen and Kubuntu experience
+Thanks a lot. It's working. I only had to change the 1280 and 800 to my resolution: 1024 and 768.
+You rock!

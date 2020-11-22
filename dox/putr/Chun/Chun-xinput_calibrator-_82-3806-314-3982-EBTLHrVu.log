@@ -1,0 +1,15 @@
+[pip@ChunEBTLHkGQ~/dox/putr/Chun]xinput_calibrator 
+Calibrating EVDEV driver for "Fujitsu Component USB Touch Panel" id=12
+        current calibration values (from XInput): min_x=69, max_x=3791 and min_y=280, max_y=3979
+
+Doing dynamic recalibration:
+        Setting calibration data: 82, 3806, 314, 3982
+        --> Making the calibration permanent <--
+  copy the snippet below into '/etc/X11/xorg.conf.d/99-calibration.conf' (/usr/share/X11/xorg.conf.d/ in some distro's)
+Section "InputClass"
+        Identifier      "calibration"
+        MatchProduct    "Fujitsu Component USB Touch Panel"
+        Option  "Calibration"   "82 3806 314 3982"
+        Option  "SwapAxes"      "0"
+EndSection
+[pip@ChunEBTLHq5H~/dox/putr/Chun]

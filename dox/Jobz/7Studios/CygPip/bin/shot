@@ -1,0 +1,88 @@
+#!/usr/bin/perl -w
+# IA9fB - shot created by Pip at Ax9.org
+#  Desc: I wanted to wrap `scrot` in some common options =)
+#    I only want PNG files at compression level 7, usually want thumbnails, ...
+#  /-(s|w)/i          select window (uppercase shoots windowmanager border too)
+#  /-(c|d)(\d*)/i     countdown $1 secs before taking shot (uc hides count)
+#  /-(e)(\w+)/i       exec $1 on resulting screenshot file
+#  /-(m)/i            grab from multiple displays && join them
+#  /-(t)(\d*)(x|\%)?(\d*)/i   change thumbnail size dimensions or % (uc=!thum)
+#  Note: `shot` relies on `scaleimg` to create the thumbnail instead of `scrot`
+#   unless you specify the thumb size as a percentage
+
+my %optz = ( 'file' => 'shot',    # unique part of filename
+             'scrw' => 0,         # screen width  (loaded after looping)
+             'scrh' => 0,         # screen height (loaded after looping)
+             'whol' => 1,         # whole screen shot?
+             'bord' => 0,         # grab window border too?
+             'dela' => 3,         # delay seconds
+             'coun' => 1,         # countdown?
+             'exec' => '',        # execute on the resultant file
+             'mult' => 0,         # multi-display shot?
+             'thum' => 't',       # make a thumbnail?
+             'thmw' => 128,        # thumbnail's width (pixels)
+             'thmh' => 96,        # thumbnail's height (pixels)
+             'thmm' => 'x', # thumbnail mode: x=w/h, %=use width as percentage
+           );
+my $parm = ""; # parameters...
+
+## PROCESS COMMAND LINE OPTIONS
+$_ = "";
+$_ .= join ' ', @ARGV;
+(/--?h/i || /--?\?/) and 
+    print qq/ IA9fB - shot created by Pip at Ax9.org
+  Desc: I wanted to wrap `scrot` in some common options =\)
+    I only want PNG files at compression level 7, usually want thumbnails, ...
+      usage: $0 
+  -(s|w)i          select window (uppercase shoots windowmanager border too)
+  -(c|d)(#)i       countdown X secs before taking shot (uc hides count)
+  -(e)(X)i         exec X on resulting screenshot file
+  -(m)i            grab from multiple displays && join them
+  -(t)(#)(x|\%)?(#)i   change thumbnail size dimensions or % (uc=!thum)
+/;
+if (/-h/ || /-\?/) { exit; }
+/([^-]\w+)/i        and $optz{'file'}=$1;
+/--?(s|w)/i         and $optz{'whol'}=0 and ($1 ne lc($1)) and $optz{'bord'}=1;
+/--?(c|d)(\d+)/     and (defined($2))   and $optz{'dela'}=$2;
+/--?(C|D)/          and $optz{'coun'}=0;
+/--?(e)(\w+)/i      and (defined($2))   and $optz{'exec'}=$2;
+/--?(m)/i           and $optz{'mult'}=1;
+/--?(t)(\d*)(x|\%)?(\d*)/i and                   $optz{'thum'}=$1
+                           and (defined($2)) and $optz{'thmw'}=$2
+                           and (defined($3)) and $optz{'thmm'}=$3
+                           and (defined($4)) and $optz{'thmh'}=$4;
+
+## BUILDING PARAMETER STRING
+$optz{'file'} =~ s/\.png//i;
+$optz{'file'} .= "_\\\$wx\\\$h_" . `pt`;
+$optz{'ofil'}  = $optz{'file'} . "_thumb.png";
+$optz{'file'} .= ".png";
+$parm = $optz{'file'} . " -q 12 "; # quality 7/8
+unless ($optz{'whol'}) { $parm .= "-s "; }
+if     ($optz{'bord'}) { $parm .= "-b "; }
+if     ($optz{'dela'}) { $parm .= "-d " . $optz{'dela'} . " "; }
+if     ($optz{'coun'}) { $parm .= "-c "; }
+if     ($optz{'mult'}) { $parm .= "-m "; }
+if ($optz{'thum'} eq 't') {
+    if ($optz{'thmm'} eq '\%') { # if %size, let scrot doit
+        if ($optz{'exec'}) { $parm .= "-e " . $optz{'exec'} . " "; }
+        $parm .= "-t " . $optz{'thmw'} . " "; 
+    } else {
+        $optz{'file'} =~ s/\\/\\\\/g;
+        $optz{'ofil'} =~ s/\\/\\\\/g;
+        $parm .= "-e 'scaleimg " . $optz{'file'} . " " . $optz{'thmw'};
+        $parm .= " " . $optz{'thmh'} . " " . $optz{'ofil'} . "' ";
+    }
+}
+#print "scrot $parm\n";
+#print "topi:$_\n"; foreach (keys(%optz)) { print "$_ => ", $optz{$_}, ", "; }; print "\n";
+system("scrot $parm");
+#  -b, --border              When selecting a window, grab wm border too
+#  -c, --count               show a countdown before taking the shot
+#  -d, --delay NUM           wait NUM seconds before taking a shot
+#  -e, --exec APP            run APP on the resulting screenshot
+#  -q, --quality  12.5 = 7/8 ths
+#  -m, --multidisp           For multiple heads, grab shot from each
+#  -s, --select              interactively choose a window or rectnagle
+#  -t, --thumb %NUM   
+#'scrot \'yearmonthday_$wx$h_scrot.png\' -e \'mv $f ~/images/shots/\''

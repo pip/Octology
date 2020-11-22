@@ -1,0 +1,47 @@
+3372S0J - PointSys.txt created by Pip to describe possible point award /
+  redemption system for Sirlin's (&& Lynn's [&& mine too I hope]) 
+  GameOver Entertainment Center
+
+  System has two goals:
+    0) increase reward so that there's compelling incentive to save points
+    1) incorporate some sort of reasonable "day pass"
+
+  thots: day pass should probably not cost more than $40... could be 
+    handled outside of point system.
+
+    1 point = 1 paid hour of play (at probably $5)
+
+    8 paid hours (8 points) would be the same cost as a day pass.  A day 
+      has been estimated at potentially 14 hours of open business so that
+      would be potentially 6 hours free (of course hardly any person 
+      would play non-stop for 14 hours straight... even having to get in
+      right when we open so maybe it wouldn't be so bad).  Let's say the 
+      average person who buys a day pass might stick around inside GO but
+      would only likely be actively playing for 10 of our business hours 
+      for that day (I'm guessing a decent more realistic average here).
+      This would mean only two free hours for 8 paid... so let's use that
+
+  Redemption:
+
+.2    5 points          = 1 hour  free
+.25   8 points          = 2 hours free (day pass)
+.267  15 points         = 4 hours free
+.286  28 points         = 8 hours free
+.313  32 points         = 1 day free (assuming about 10 hours will be used)
+.412  97 points         = 1 week free (assuming about 40 hours will be used)
+.55   235 points        = 1 month free (assuming ~130 hours will be used)
+.73   680 points        = 6 month free (assuming ~500 hours will be used)
+1.0   1000 points       = 1 year free (about 1000 non-transferable hours free)
+
+deltas: .05 .017 .019 .027 .101 .138 .18 .27
+need to graph it to smooth it out better
+
+day pass should be whatever is good price for day pass && not be awarded
+  any points (or even fit evenly within point system).
+
+need formula like maybe something similar to y=x**2 but where:
+  f(5) = 1 && f(1000) = 1000
+should be very mathematical just rounded off to ints that make sense...
+  or might be better to round off to nearest 5 / 10 for large points so
+  people can easily remember them... if so, just always round up so that
+  we don't drop under the curve

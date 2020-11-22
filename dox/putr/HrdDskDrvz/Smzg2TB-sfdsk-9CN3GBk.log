@@ -1,0 +1,16 @@
+<root@Ryu9CN3k9c~/dox/putr/HrdDskDrvz>sfdisk    /dev/sdb < ~/dox/putr/HrdDskDrvz/Smzg2TB-full4-7200.12-Samsung-HD203WI_-1AN1-243201cylzxO1-9CN3GBk.prt
+Checking that no-one is using this disk right now ... OK
+Disk /dev/sdb: 243201 cylinders, 255 heads, 63 sectors/track
+sfdisk: ERROR: sector 0 does not have an msdos signature
+     /dev/sdb: unrecognized partition table type
+Old situation: No partitions found
+New situation: Units = cylinders of 8225280 bytes, blocks of 1024 bytes, counting from 0
+   Device Boot Start     End   #cyls     #blocks   Id  System
+/dev/sdb1   *      0+     62      63-     506047   83  Linux
+/dev/sdb2         63    4157    4095    32893087+  82  Linux swap / Solaris
+/dev/sdb3       4158  200764  196607  1579245727+  83  Linux
+/dev/sdb4     200765  243200   42436   340867170   83  Linux
+Successfully wrote the new partition table
+Re-reading         the     partition table ...
+IfU crE8d||chngd a DOS partition (eg, /dev/foo7),then use dd(1) to zero the first 512 bytes:`dd if=/dev/zero of=/dev/foo7 bs=512 count=1`;(See fdisk(8).)
+<root@Ryu9CN3l8V~/dox/putr/HrdDskDrvz>

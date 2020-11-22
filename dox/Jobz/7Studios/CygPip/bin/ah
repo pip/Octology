@@ -1,0 +1,10 @@
+#!/usr/bin/perl
+# 77QALOk - ah created by Pip Stuart <Pip@CPAN.Org> to `attrib [+-]h .*` in 4NT
+use strict; use warnings; if($ENV{'COMSPEC'} =~ /(4NT|cmd(32)?)\.exe$/i){
+  my $togl =' ';$_ = shift || ''; if(/^-$/ ){   $togl ='H';$_ = shift || ''; }
+      s/\//\\/g; s/\\*$/\\/       if(length);my $dire =    $_;
+  for(glob("$dire.*")){my $astr = "attrib    $_";my $atst =substr(`$astr`,4,1);
+    if(/[^.\\]/ && $togl eq $atst){$astr =~ s/ +/ +h /;
+      $astr =~ s/\+/-/   if($atst eq 'H'); print "$astr\n";system( $astr  ); }
+  } # Perl's system(attrib) calls C:\WINDOWS\System32\attrib.exe,!4NT's builtin
+} else{ print"!*EROR*! ah (Attrib.exe [+-]H) must be run from 4NT|Cmd.exe!\n";}

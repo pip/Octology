@@ -1,0 +1,89 @@
+Written by Pip Stuart on Wednesday, February 21, 2001.
+
+Two copies of this document have been sent to the Arbitration Association (one of which is to be forwarded to the arbitrator [Mr. Combs]) && a third copy has been sent directly to the claimant [Mr. Fish].
+
+I would like to apologize for including my emotionalism && all the personal insults in my previous documentation.  It was indeed gratifying but also clearly counter-productive so I will try to compose this response as directly as possible.
+
+I would like to include the request for further documentation here:
+2. From the Respondent, I want a detailed discussion (in laymen's terms) of what parts of the contract he believes he has performed, and why those services were worth the approximate $5,000 that he has been paid to date.
+It is relevant to point out that a substantial portion of my work for Mr. Fish was not part of the contract (which is why the invoices && payments specified in the contract were not adhered to after the second week of development).  I installed, configured, upgraded, && administered the www.800Telephone.com web server for the duration of development.  I also implemented a great deal of functionality from scratch, which OpenMerchant was supposed to provide.  The contract may make reference to setting up or employing certain assumed or real features of OpenMerchant, which I was forced to construct by myself.  I believe that a portion of this effort was recognized by Mr. Fish && that a majority of the $5,000 was in payment for these extra-contractual developments.  They were necessary to possibly fulfill the goals of the contract && they were difficult to implement since OpenMerchant (with a team of developers) didn't have them operational or easily usable.  I believe that the contract was adhered to for approximately two weeks, during which, I was paid approximately $1,500.  
+
+The agreement could not have been fulfilled without OpenMerchant but we decided to discard it && try to complete the same goals as the agreement had specified by concurrently implementing the core functionality that OpenMerchant was intended to provide.  The contract was voided when we decided that OpenMerchant would not be useful since Exhibit B clearly specifies that my compensation for Week 1 onward, was dependent upon my ability to utilize OM && integrate my efforts with the established OM code.  Near the top of page 2 in the section for "AGREEMENT" (tab 1), it states, "It is anticipated by the Parties that the underlying base software for this E-Commerce site shall be Open Merchant from Open Sales, Inc."  This suggests that OM was an optional component but the clear schedule of deliverables && accompanying payments in section 3 for Exhibit B was in contradiction of this.  OpenMerchant was an integral component of the entire pay schedule && thus the entire contract.  I completed (&& was paid minimally for) a great deal of work that was outside of the contract in an attempt to fulfill the same goals.  If I were to exclusively address  "the parts of the contract [I] believe [I have] performed", I would be overlooking this fact to my detriment.  I will include an asterisk (*) before each item below which was implemented outside of the contract.
+
+
+- * priced / installed / configured server hardware
+
+- * setup all the appropriate Perl && MySQL modules
+
+- established a password protection for the homepage
+
+- constructed && tested initial database layouts && elements
+
+- completed the tables && columns specified in Exhibit A (tab 2) but I did it with straight Perl code since I couldn't get OM to function
+
+- setup logic for "TOUCH-TONE SELECTION PAGE"
+
+- began designing "ORDER PRODUCTS PAGE" logic
+
+- designed necessary components for a "SECURITY PASSWORD MODULE"
+
+- * began implementing a password mechanism from scratch because I wasn't able to get OM to handle it correctly
+
+- * began designing a method for rendering dynamic pages with embedded database queried elements since I couldn't get OM to do it
+
+- demonstrated adequate password functionality to protect an arbitrarily complex website
+
+- * constructed a relatively thorough web interface for changing any database content (just enabled data editing via `chgmysql` code)
+
+- * designed a comprehensive mechanism for modifying entire database, table, && field definitions through a web interface(to allow structural changes via `modmysql` code)
+
+- * extended password functionality to include distinct add / edit / delete permissions associated with any component
+
+- * added unique password hints, session identification tags which persist up to a configurable timeout period, user groups, && new group-level permissions on everything
+
+- * provided demonstrational interfaces for user / group administration && timeout limitations (since no web designer was available yet to make production-worthy interfaces)
+
+- * setup automatic account locking if three login failures were detected within a 24-hour period as well as the ability to allow an administrator to manually [un]lock any specific account or reset any forgotten password
+
+- * enabled an administrator to view a time-stamped log of every system interaction, every login failure, && every locked account
+
+- * constructed a mechanism for any particular database element to be securely referenced from within a standard html document so that a rendering of the page would consider the user's permission settings (if one were logged in) && only present appropriately accessible database content
+
+- * wrote demonstration pages which were all rendered dynamically with hyperlinks to each other && containing arbitrary database elements or appropriate error messages if the user didn't have adequate permissions to view specified data (this was necessary because we didn't have a web designer I could describe the system details to so that she could develop more realistic scenarios)
+
+- * constructed a mechanism for specifying dynamic graphical elements (based on permissions) as well so that different buttons or background images or graphical menus could be presented according to the user (or group)
+
+- * enabled any html or graphic file's permissions to be changed from the administration demo web pages
+
+- setup "COMPARISON TABLE PAGE" logic
+
+- * wrote a module to accept file uploads so that any new html or graphic file could be incorporated remotely (or set to overwrite an existing file) if the user had sufficient permissions to perform uploading && file creation / overwriting
+
+- * built another module which enabled online file editing so that users could actually modify any text file or html source file directly through the web interface (This feature was of limited use since a realistic website development would likely be constructed in a thorough development program like Adobe GoLive or Microsoft FrontPage && then uploaded, but for quick html source or plain text file changes, it proved very useful, very difficult to implement correctly, && an impressive ability of the system.)
+
+- * enabled dynamic page links to be specified through hyperlinks (text), submit forms ("Submit" buttons), && image links (any graphic file) for linking versatility throughout a complex dynamic website
+
+- wrote automatic email module
+
+- documented implemented mechanism
+
+- * archived all code && server configuration files && backed them up onto Mr. Fish's workstation && emailed them to his lawyer
+
+- designed underlying components for "EMPLOYEE DATA BASE RECORDS", "PHONE DIRECTORY", && "STATISTICS TRACKING"
+
+- considered accounting mechanisms && explored credit card verification options
+
+- implemented Anita's few touch-tone html pages within the dynamic framework so that all links && data elements were specified && rendering correctly but these pages were just a step beyond mock-ups
+
+I needed a web designer to make interfaces in order to continue.  I built the necessary infrastructure to securely render the 800Telephone website with different sections && pages && permissions for administrators, employees, vendors, && customers.  There was definitely more code which needed to be written but I couldn't do it without a web designer unless I wrote all the production web pages && drew the graphics myself.  
+
+Apparently "Vijay" was supposed to develop some things for Week 3 but the note says: "Progress will depend on Len and/or Graphics programmers supplying Vijay with HTML and graphics interface."  Even after 12 weeks, I wasn't supplied with a graphics interface (&& neither was Vijay).  
+
+I've probably forgotten several things since it was almost a year ago && all the functional code && archives are on Mr. Fish's computers but I hope the above is sufficient to demonstrate that:
+a) I worked diligently for Mr. Fish for 3 months.
+b) I fulfilled as much of the contract as I was able to.
+c) I was compensated minimally for my efforts.
+d) The contract was nullified after the second or third week of development (when we decided to discard OpenMerchant).
+e) I am not indebted to Mr. Fish for anything.
+
+							-Pip Stuart

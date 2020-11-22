@@ -1,0 +1,2043 @@
+                       Console IOCTLs Under Linux
+                       --------------------------
+
+        Console IOCTLs can be very useful and powerful. These are the
+IOCTls that involve the console. They are the user interface to 
+manipulation of the console. I am going to go over these console IOCTLs
+and give you examples of them. You can make some pretty powerful programs,
+whether they be general utilities or security programs, with these (such
+as Auto Console Switching and Console Access Protection). The structure of
+this article will be the name of the IOCTL, and then example source code
+to uses of the IOCTL. Now, I must warn you that the console IOCTLs are
+being replaced by POSIX functions. These IOCTLs are undocumented Linux
+internals and can be added or dropped without warning. I did not include
+all the console IOCTLs, but I included the ones that I though would be
+important or useful. The switch statement for each of these IOCTLs is in 
+linux/drivers/char/vt.c. Other interesting code to look at would be (all
+in linux/drivers/char) conmakehash.c, console.c, consolemap.c, keyboard.c,
+tty_io.c, vc_screen.c, vga.c. Other interesting files (also in 
+linux/drivers/char) are console_struct.h, consolemap.h, kbd_kern.h, 
+vt_kern.h, and uni_hash.tbl. We are going to be using the IOCTLs defined
+in /usr/include/linux/kd.h, and /usr/include/linux/vt.h.
+
+The function prototype for ioctl() as defined in /usr/include/sys/ioctl.h 
+is:
+  int ioctl(int fd, int request, ...) 
+
+  Technically the ioctl function prototype uses 'int d' but I think 'int
+  fd' is a lot clearer.
+
+  'fd' is the file descriptor of the console (/dev/tty), 'request' is the
+  IOCTL we are requesting (such as KDGETLED), and '...' is argp, the
+  arguments we are passing to ioctl(). When getting values from ioctl() we
+  use a pointer and when the function returns, the value will be stored in
+  our argument. ioctl() is specified in /usr/include/sys/ioctl.h
+
+We will now briefly describe the IOCTLs, the arguments it uses, and an
+example on how to use it where applicable.
+
+KDGETLED:
+        This will return the current state of the LEDs. These lights on
+  your keyboard that are on or off when something such as Caps Lock is on.
+  Although you can turn the LEDs on or off with KDSETLED (described next)
+  without affecting the Caps Lock, Numeric Lock, or Scroll Lock. 
+        It places one of the following values (or a combination of them)
+  into a pointer, that points to a long int:
+
+        Defined in: /usr/include/linux/kd.h
+        0x1 - LED_SCR, set when the Scroll Lock LED is on
+        0x2 - LED_NUM, set when the Numeric Lock LED is on
+        0x4 - LED_CAP, set when the Caps Lock LED is on
+
+        As I previously mentioned, it can return combinations (or the sum)
+  of the LEDs turned on. For example, if the Numeric Lock and Caps Lock
+  are both on, it will return 0x6 (0x2 + 0x4). So when no lights are on,
+  it will return 0x0. This is also how you turn all the LEDs off as 
+  described next in KDSETLED.
+
+  Example:
+        #include <stdio.h>
+        #include <fcntl.h>
+        #include <sys/stat.h>
+        #include <linux/kd.h>  /* Keyboard IOCTLs */
+        #include <sys/ioctl.h> /* ioctl()         */
+        #include <sys/types.h>
+ 
+        #define ERROR -1
+
+        void checkleds();
+
+        void main()
+        {
+          int fd;       /* Console fd (/dev/tty). Used as fd in ioctl() */
+          long int arg; /* Where the LED states will be put into.       */
+
+          /* To use as the fd in ioctl(). */
+          if ((fd = open("/dev/tty", O_NOCTTY)) == ERROR) {
+             perror("open");
+             exit(ERROR);
+          }
+
+          /* Value stored in arg. */
+          if (ioctl(fd, KDGETLED, &arg) == ERROR) {
+             perror("ioctl");
+             close(fd);
+             exit(ERROR);
+          }
+
+          /* Here we print out current LEDS. */
+          checkleds();
+        }
+
+        void checkleds()
+        {
+          /* LED_SCR = 0x1, LED_NUM = 0x2, LED_CAP = 0x4 */
+
+          if (arg == LED_SCR) printf("Scroll Lock LED is on.\n");
+          else if (arg == LED_NUM) printf("Numeric Lock LED is on.\n");
+          else if (arg == LED_CAP) printf("Caps Lock LED is on.\n");
+
+          else if (arg == LED_NUM + LED_CAP) 
+             printf("Numeric Lock and Caps Lock LEDs are on.\n");
+
+          else if (arg == LED_NUM + LED_SCR) 
+             printf("Numeric Lock and Scroll Lock LEDs are on.\n");
+
+          else if (arg == LED_CAP + LED_SCR) 
+             printf("Caps Lock and Scroll Lock LEDs are on.\n");
+
+          else if (arg == LED_NUM + LED_SCR + LED_CAP) 
+             printf("Numeric Lock, Scroll Lock, and Caps Lock LEDs are on.\n");
+
+        }
+
+KDSETLED:
+        I will not go over the values that can be passed again (LED_CAP, 
+  LED_NUM, LED_SCR, etc.) again because I described them for KDGETLED. The
+  argument to ioctl() is a long int (I don't see why this is a long int
+  considering it uses a value no higher than 7) with the number of the LED
+  you want to set. If you want to set more than one LED, add the LED #'s
+  you want set together (such as LED_NUM + LED_CAP). This DOES NOT turn,
+  for example, Caps Lock on. This just turns the LED on the keyboard. To
+  actually turn Caps Lock on use KDSKBLED.
+
+  Example:
+        #include <stdio.h>
+        #include <fcntl.h>
+        #include <unistd.h>
+        #include <signal.h>
+        #include <sys/stat.h>
+        #include <linux/kd.h>
+        #include <sys/types.h>
+        #include <sys/ioctl.h>
+
+        #define ERROR -1
+
+        int fd; /* File descriptor for console (/dev/tty/) */
+
+        void sighandler(int signum);
+
+        void main()
+        {
+          int i;
+
+          /* To be used as the fd in ioctl(). */
+          if ((fd = open("/dev/console", O_NOCTTY)) == ERROR) {
+             perror("open");
+             exit(ERROR);
+          }
+
+          signal(SIGINT,  sighandler);
+          signal(SIGTERM, sighandler);
+          signal(SIGQUIT, sighandler);
+          signal(SIGTSTP, sighandler);
+
+          printf("w00w00!\n\n");
+          printf("To exit hit Control-C.\n");
+
+          while (1) {
+             for (i = 0x01; i <= 0x04; i++) {
+                 /* We do this because there is no LED for 0x03. */
+                 if (i == 0x03) continue; 
+
+                 usleep(50000);
+
+                 if ((ioctl(fd, KDSETLED, i)) == ERROR) {
+                    perror("ioctl");
+                    close(fd);
+                    exit(ERROR);
+                 }
+             }
+          }
+
+          close(fd);
+        }
+
+        void sighandler(int signum)
+        {
+          /* Turn off all leds. No LED == 0x0. */
+          if ((ioctl(fd, KDSETLED, 0x0)) == ERROR) { 
+            perror("ioctl");
+            close(fd);
+            exit(ERROR);
+          }
+
+          printf("\nw00w00!\n");
+          close(fd);
+          exit(0);
+        }
+
+KDGKBLED:
+        This is exactly the same as KDGETLED, except rather than getting
+  the state of the LEDs, it gets the state of the flags themselves.
+  Meaning, whether the LED is on or off doesn't matter, this returns the
+  actual flags (if Caps Lock is on.. even if we turned off the LED with
+  ioctl() and a KDSETLED request. The example in KDGETLED will work 
+  exactly the same except that this is getting the flags, rather than the
+  states of the LEDs. 
+
+KDSKBLED:
+        This is exactly the same as KDSETLED except it sets the flags
+  rather than the states of the LEDs. In other words, we can turn the Caps
+  Lock LED off and use this which will turn Caps Lock on. Now everything
+  will be in uppercase even though the LED light for Caps Lock isn't on. 
+
+  Example: 
+        This will turn off the Caps Lock LED and turn Caps Lock on. The
+  reason we are turning the LED off is just to prove a point that just
+  because the LED isn't on doesn't mean the flag isn't. This should show
+  you how KDSKBLED differs from KDSETLED. This DOES NOT set the keyboard
+  LED for Caps Lock on, this actually sets Caps Lock on. To set the LED as
+  well use KDSETLED.
+
+        #include <stdio.h>
+        #include <fcntl.h>
+        #include <unistd.h>
+        #include <signal.h>
+        #include <sys/stat.h>
+        #include <linux/kd.h>
+        #include <sys/types.h>
+        #include <sys/ioctl.h>
+
+        #define ERROR -1
+
+        void main()
+        {
+          int fd;
+          int flag = 0x4;
+
+          /* To be used as the fd in ioctl(). */
+          if ((fd = open("/dev/console", O_NOCTTY)) == ERROR) {
+             perror("open");
+             exit(ERROR);
+          }
+
+          printf("w00w00!\n\n");
+
+          /* Turn off the Caps Lock LED just to show the difference */
+          /* between KDSETLED and KDSKBLED. */
+          if ((ioctl(fd, KDSETLED, 0x0)) == ERROR) {
+             perror("ioctl");
+             close(fd);
+             exit(ERROR);
+          }
+
+          /* This turns Caps Lock itself, not the light. */ 
+          if ((ioctl(fd, KDSKBLED, flag)) == ERROR) {
+             perror("ioctl");
+             close(fd);
+             exit(ERROR);
+          }
+
+          printf("To show that Caps Lock is on even though the Caps"
+                 "Lock LED isn't...\n");
+          printf("Enter something: ");
+          scanf("%s", NULL);
+
+          /* Turn off any LEDs on (such as Numeric Lock) since we are */
+          /* turning them all off with KDSKBLED right after this.     */
+          if ((ioctl(fd, KDSETLED, 0x0)) == ERROR) {
+             perror("ioctl");
+             close(fd);
+             exit(ERROR);
+          }
+
+          /* Now the Caps Lock is off. */ 
+          if ((ioctl(fd, KDSKBLED, 0x0)) == ERROR) {
+             perror("ioctl");
+             close(fd);
+             exit(ERROR);
+          }
+ 
+          close(fd);
+        }
+
+KDGKBTYPE:
+        This will always return KB_101 (0x02), which is the standard
+  keyboard. So I am not even going to explain this. Two other values
+  defined are KB_84 (0x01) and KB_OTHER (0x03).
+
+        Defined in: /usr/include/linux/kd.h
+        0x1 - KB_84
+        0x2 - KB_101 (Standard/Default) 
+        0x3 - KB_OTHER
+
+KDGETMODE:
+        This returns the current console mode into the argument passed to
+  ioctl() that is a pointer to a long int. The console is by default in
+  text mode. The two modes you have are graphics and text mode.
+        
+  Defined in: /usr/include/linux/kd.h
+  0x00 - KD_TEXT     - Text Mode (Default)
+  0x01 - KD_GRAPHICS - Graphics Mode
+
+        There had been KD_TEXT0 and KD_TEXT1 but they are obsolete now.  
+
+  Example:
+        #include <stdio.h>
+        #include <fcntl.h>
+        #include <unistd.h>
+        #include <signal.h>
+        #include <sys/stat.h>
+        #include <linux/kd.h>
+        #include <sys/types.h>
+        #include <sys/ioctl.h>
+
+        #define ERROR -1
+
+        void main()
+        {
+          int fd;
+          long int arg;
+
+          /* To be used as the fd in ioctl(). */
+          if ((fd = open("/dev/console", O_NOCTTY)) == ERROR) {
+             perror("open");
+             exit(ERROR);
+          }
+
+          printf("w00w00!\n\n");
+
+          if ((ioctl(fd, KDGETMODE, &arg)) == ERROR) {
+             perror("ioctl");
+             close(fd);
+             exit(ERROR);
+          }
+
+          if (arg == KD_TEXT) printf("console in text mode.\n");
+          else if (arg == KD_GRAPHICS) 
+             printf("console is in graphics mode.\n"); 
+
+          close(fd);
+        }
+        
+KDSETMODE:
+        This takes a long int that is either set to I assume that SVGAlib
+  uses this IOCTL (even if another function calls it). The modes and
+  definitions are specified above.
+
+  Example:
+        ***** TEST IN GRAPHICS MODE *****
+        ***** TEST IN GRAPHICS MODE *****
+        ***** TEST IN GRAPHICS MODE *****
+        (test with code above)
+
+
+KDMKTONE:
+        This will generate a tone, and the amount of clock cycles are 
+  passed as the argument to ioctl(). Note this is different from KIOCSOUND
+  which is the sound generation. 
+
+  Example:
+
+        #include <stdio.h>
+        #include <fcntl.h>
+        #include <unistd.h>
+        #include <signal.h>
+        #include <sys/stat.h>
+        #include <linux/kd.h>
+        #include <sys/types.h>
+        #include <sys/ioctl.h>
+
+        #define ERROR -1
+
+        void main()
+        {
+          int i;
+          int fd;
+          int beep = (125 << 16) + 1591; /* This is the default beep. */
+
+
+          /* To be used as the fd in ioctl(). */
+          if ((fd = open("/dev/console", O_NOCTTY)) == ERROR) {
+             perror("open");
+             exit(ERROR);
+          }
+
+          printf("w00w00!\n\n");
+
+          for (i = 0; i <= 25; i++) { 
+              if ((ioctl(fd, KDMKTONE, beep)) == ERROR) {
+                   perror("ioctl");
+                 close(fd);
+                 exit(ERROR);
+              }
+
+              beep += 50;
+              usleep(150000);
+          }
+
+          /* Turn off the tone now. */
+          if ((ioctl(fd, KDMKTONE, 0)) == ERROR) {
+             perror("ioctl");
+             close(fd);
+             exit(ERROR);
+          }
+
+          close(fd);
+        }
+
+KIOCSOUND:
+        This and KDMKTONE both make sounds but they are in fact different.
+  This has tones from 0-30000 (the sounds are 1193180/frequency), whereas
+  KDMKTONE has higher values such as, the default beep you hear when you
+  get Ctrl-G (the value is 125<<16 + 0x637), is 8,193,591 clock cycles.
+
+  Example:
+        Note, this flashes the LEDs as well for effect, they aren't needed
+  here.
+
+        #include <stdio.h>
+        #include <fcntl.h>
+        #include <unistd.h>
+        #include <signal.h>
+        #include <sys/stat.h>
+        #include <linux/kd.h>
+        #include <sys/types.h>
+        #include <sys/ioctl.h>
+
+        #define ERROR -1
+
+        int fd;
+
+        void sighandler(int signum);
+
+        void main()
+        {
+          int lednum;
+          int i, j, k;
+
+          /* To be used as the fd in ioctl(). */
+          if ((fd = open("/dev/console", O_NOCTTY)) == ERROR) {
+             perror("open");
+             exit(ERROR);
+          }
+
+          printf("w00w00!.\n\n");
+
+          /* We don't want an LED still on after we quit. */
+          signal(SIGINT,  sighandler);
+          signal(SIGTERM, sighandler);
+          signal(SIGQUIT, sighandler);
+          signal(SIGTSTP, sighandler);
+
+          printf("For the best sounding one, use the example values shown.\n");
+          printf("To exit hit Control-C.\n");
+
+          while (1) {
+             printf("Enter range of tones to play (i.e. 100-3000): ");
+             scanf("%d%*c%d", &i, &j);
+
+             printf("Enter intervals to skip (i.e. 10): ");
+             scanf("%d", &k);
+
+             printf("Doing %d through %d, with an interval of %d:\n\n", 
+                    i, j, k);
+
+             for (; i <= j; i += k) {
+                for (lednum = 0x01; lednum <= 0x04; lednum++) {
+                   if (lednum == 0x03) continue;
+
+                   usleep(10000);
+
+                   if ((ioctl(fd, KDSETLED, lednum)) == ERROR) {
+                      perror("ioctl");
+                      close(fd);
+                      exit(ERROR);
+                   }
+
+                }
+
+                if ((ioctl(fd, KIOCSOUND, i)) == ERROR) {
+                   perror("ioctl");
+                   close(fd);
+                   exit(ERROR);
+                }
+
+                printf("%d\n", i);
+                if (i == j) break;
+
+                usleep(70000);
+
+             }
+
+             /* Turn off all sound. */
+             if ((ioctl(fd, KIOCSOUND, 0x0)) == ERROR) {
+                perror("ioctl");
+                close(fd);
+                exit(ERROR);
+             }
+
+             /* Turn off all leds. */
+             if ((ioctl(fd, KDSETLED, 0x0)) == ERROR) {
+                perror("ioctl");
+                close(fd);
+                exit(ERROR);
+             }
+
+             putchar('\n');
+          }
+
+          close(fd); /* Will never get this far. */
+        }
+
+        void sighandler(int signum)
+        {
+            /* Stop all sound. */
+            if ((ioctl(fd, KIOCSOUND, 0x0)) == ERROR) { 
+             perror("ioctl");
+             close(fd);
+                 exit(ERROR);
+          }
+
+          /* Turn off all leds. */
+          if ((ioctl(fd, KDSETLED, 0x0)) == ERROR) { 
+             perror("ioctl");
+             close(fd);
+             exit(ERROR);
+          }
+
+          printf("\nw00w00!\n");
+          close(fd);
+          exit(0);
+        }
+
+GIO_FONT and GIO_FONTX:
+        These are both very similar except GIO_FONTX returns more.
+  GIO_FONTX returns a struct consolefontdesc, and GIO_FONT only returns
+  the font data in expanded form (which is the same as consolefontdesc's
+  chardata). The structure for consolefontdesc is:
+
+  struct consolefontdesc {
+     unsigned short charcount;  /* characters in font (256 or 512)         */
+     unsigned short charheight; /* scan lines per character (1-32)         */
+     char *chardata;            /* font data in expanded form (8192 bytes) */
+  }
+
+  Example:
+        #include <stdio.h>
+        #include <fcntl.h>
+        #include <unistd.h>
+        #include <stdlib.h>
+        #include <sys/stat.h>
+        #include <linux/kd.h>
+        #include <sys/types.h>
+        #include <sys/ioctl.h>
+
+        #define ERROR -1
+
+        void main()
+        {
+          int fd;
+          struct consolefontdesc confont;
+
+          if ((confont.chardata = malloc(8192)) == NULL) {
+             perror("malloc");
+             exit(ERROR);
+          }
+
+          /* To be used as the fd in ioctl(). */
+          if ((fd = open("/dev/console", O_NOCTTY)) == ERROR) {
+             perror("open");
+             exit(ERROR);
+          }
+
+          printf("w00w00!\n\n");
+
+          /* GIO_FONTX returns struct consolefontdesc, GIO_FONT just */
+          /* returns the equivalent to consolefontdesc->chardata.    */
+          if ((ioctl(fd, GIO_FONTX, &confont)) == ERROR) {
+             perror("ioctl");
+             close(fd);
+             exit(ERROR);
+          }
+
+          printf("Character count: %u\n", confont.charcount);
+          printf("Character height (scan lines per character): %u\n", 
+                 confont.charheight);
+          printf("Font data in expanded form: %s\n", confont.chardata);
+          close(fd);
+        }
+
+PIO_FONTRESET:
+        This resets the font to the default font. You would use this if
+  you were playing with fonts (with PIO_FONT) and messed it up, you could
+  then reset it with this. This is no longer implemented, and I just wrote
+  something for this for historical purposes.
+
+  Example:
+        #include <stdio.h>
+        #include <fcntl.h>
+        #include <unistd.h>
+        #include <sys/stat.h>
+        #include <linux/kd.h>
+        #include <sys/types.h>
+        #include <sys/ioctl.h>
+
+        #define ERROR -1
+
+        void main()
+        {
+          int fd;
+
+          /* To be used as the fd in ioctl(). */
+          if ((fd = open("/dev/console", O_NOCTTY)) == ERROR) {
+             perror("open");
+             exit(ERROR);
+          }
+
+          printf("w00w00!\n\n");
+          printf("(now calling ioctl().. this will probably fail:\n");
+
+          /* Reset the font to the default. */
+          if (ioctl(fd, PIO_FONTRESET, 1) == ERROR) {
+             perror("ioctl");
+             close(fd);
+             exit(ERROR);
+          }
+
+          printf("The font is now reset.\n");
+
+          close(fd);
+        }
+
+KDGKBMODE:
+        This will get the current keyboard mode (raw mode, unicode, half
+  raw, etc.). The argument passed to ioctl() is a pointer to a long int.
+
+  Possible modes are: raw, medium raw, Unicode, and xlate.
+  
+  Defined in: /usr/include/linux/kd.h
+  0x00 - K_RAW
+  0x01 - K_XLATE (the default keyboard mode)
+  0x02 - K_MEDIUMRAW
+  0x03 - K_UNICODE
+
+  Example:
+        #include <stdio.h>
+        #include <fcntl.h>
+        #include <unistd.h>
+        #include <sys/stat.h>
+        #include <linux/kd.h>
+        #include <sys/types.h>
+        #include <sys/ioctl.h>
+
+        #define ERROR -1
+
+        void main()
+        {
+          int fd;
+          long mode;
+
+          /* To be used as the fd in ioctl(). */
+          if ((fd = open("/dev/console", O_NOCTTY)) == ERROR) {
+             perror("open");
+             exit(ERROR);
+          }
+
+          printf("w00w00!\n\n");
+
+          if ((ioctl(fd, KDGKBMODE, &mode)) == ERROR) {
+             perror("ioctl");
+             close(fd);
+             exit(ERROR);
+          }
+
+          printf("Keyboard in ");
+          if (mode == K_RAW) printf("raw mode.\n");
+          else if (mode == K_XLATE) printf("xlate mode.\n");
+          else if (mode == K_MEDIUMRAW) printf("medium raw mode.\n");
+          else if (mode == K_UNICODE) printf("Unicode mode.\n");
+          else printf("0x0%x\n", mode); /* For future modes.\n");
+
+
+          close(fd);
+        }
+
+KDSKBMODE:
+        This will set the current keyboard mode (raw mode, unicode, half
+  raw, etc.). The argument passed to ioctl() is a long int. I stated
+  the possible values in KDGKBMODE. 
+
+  Example:
+        #include <stdio.h>
+        #include <fcntl.h>
+        #include <unistd.h>
+        #include <sys/stat.h>
+        #include <linux/kd.h>
+        #include <sys/types.h>
+        #include <sys/ioctl.h>
+
+        #define ERROR -1
+
+        void main(int argc, char **argv)
+        {
+          int fd;
+          long mode;
+
+          if (argc < 2) {
+             printf("Usage: %s <mode>\n\n", argv[0]);
+             printf("Possible modes are:\n");
+             printf("0x00 for raw mode\n");
+             printf("0x01 for xlate mode (the default keyboard mode)\n");
+             printf("0x02 for medium raw mode\n");
+             printf("0x03 for Unicode mode\n\n");
+             exit(1);
+          }
+
+          /* To be used as the fd in ioctl(). */
+          if ((fd = open("/dev/console", O_NOCTTY)) == ERROR) {
+             perror("open");
+             exit(ERROR);
+          }
+
+          printf("w00w00!\n\n");
+
+          mode = atoi(argv[1]);
+          if ((ioctl(fd, KDSKBMODE, mode)) == ERROR) {
+             perror("ioctl");
+             close(fd);
+             exit(ERROR);
+          }
+
+          printf("Setting keyboard to ");
+          if (mode == K_RAW) printf("raw mode.\n");
+          else if (mode == K_XLATE) printf("xlate mode.\n");
+          else if (mode == K_MEDIUMRAW) printf("medium raw mode.\n");
+          else if (mode == K_UNICODE) printf("Unicode mode.\n");
+          else printf("0x0%x\n", mode); /* For future modes.\n");
+
+
+          close(fd);
+        }
+
+KDGKBMETA:
+        This will get the meta key handling mode. The default meta key 
+handling mode is the escape prefix.
+
+          Defined in: /usr/include/linux/kd.h
+        0x00 There is no meta key handling mode set.
+        0x03 K_METABIT   (which is setting the high order bit)
+        0x04 K_ESCPREFIX (escape prefix) 
+
+  I believe that 0x01 is also escape prefix, but I'm not sure. I get 0x01 
+  returned from KDGKBMETA but it is not defined in  /usr/include/linux/kd.h, 
+  and 0x01 is not returned in the switch statement linux/drivers/char/vt.c.
+
+  Example:
+        #include <stdio.h>
+        #include <fcntl.h>
+        #include <unistd.h>
+        #include <sys/stat.h>
+        #include <linux/kd.h>
+        #include <sys/types.h>
+        #include <sys/ioctl.h>
+
+        #define NONE   0
+        #define ERROR -1
+
+        void main()
+        {
+          int fd;
+          long mode;
+
+          /* To be used as the fd in ioctl(). */
+          if ((fd = open("/dev/console", O_NOCTTY)) == ERROR) {
+             perror("open");
+             exit(ERROR);
+          }
+
+          printf("w00w00!\n\n");
+
+          if ((ioctl(fd, KDGKBMETA, &mode)) == ERROR) {
+             perror("ioctl");
+             close(fd);
+             exit(ERROR);
+          }
+
+          printf("Meta key handler is ");
+          if (mode == NONE) printf("not set.\n");
+          else if (mode == K_METABIT) printf("setting high order bit.\n");
+          else if (mode == K_ESCPREFIX) printf("the escape prefix.\n");
+          else printf("0x0%x\n", mode); /* For future modes.\n");
+
+          putchar('\n');
+
+          close(fd);
+        }
+
+KDSKBMETA:
+        This will set the meta key handling mode. The modes are the same
+  as the ones mentioned right before this in KDGKBMETA.
+
+  Example:
+        #include <stdio.h>
+        #include <fcntl.h>
+        #include <unistd.h>
+        #include <sys/stat.h>
+        #include <linux/kd.h>
+        #include <sys/types.h>
+        #include <sys/ioctl.h>
+
+        #define NONE   0
+        #define ERROR -1
+
+        void main(int argc, char **argv)
+        {
+          int fd;
+          long mode;
+
+          if (argc < 2) {
+             printf("Usage: %s <mode>\n\n");
+             printf("Mode is one of the following values:\n");
+             printf("0x03 - K_METABIT   (set high order bit)\n");
+             printf("0x03 - K_ESCPREFIX (escape prefix)\n\n");
+          }
+
+          /* To be used as the fd in ioctl(). */
+          if ((fd = open("/dev/console", O_NOCTTY)) == ERROR) {
+             perror("open");
+             exit(ERROR);
+          }
+
+          printf("w00w00!\n\n");
+
+          printf("Setting meta key handler mode ");
+
+          mode = atoi(argv[1]);
+          if (mode == NONE) printf("off.\n");
+          else if (mode == K_METABIT) printf("to: set high order bit.\n");
+          else if (mode == K_ESCPREFIX) printf("to: escape prefix.\n");
+          else printf("0x0%x\n", mode); /* For future values */
+
+          if ((ioctl(fd, KDSKBMETA, mode)) == ERROR) {
+             perror("ioctl");
+             close(fd);
+             exit(ERROR);
+          }
+
+          putchar('\n');
+
+          close(fd);
+        }
+
+KDGKBENT:
+        Gets an entry from the key translation table. It converts the
+  keycode to an action code). You pass a struct kbentry.
+
+  Defined in: /usr/include/linux/kd.h
+  struct kbentry {
+      u_char  kb_table; /* Table number where the key map is. */
+      u_char  kb_index; /* An index into the key map.         */
+      u_short kb_value; /* Value returned in here.            */
+  }
+
+  It uses key_maps[] defined in linux/drivers/char/defkeymap.c, which is
+  are pointers to other keymaps (such as plain_map[], shift_map[], etc.)
+  All the keycodes are u_short.
+
+  All the keys are greater than or equal to 0. 
+  Here are the maximum values (defined in linux/drivers/char/defkeymap.c):
+  kb_index <= NR_KEYS (NR_KEYS == 128)
+  kb_table <= MAX_NR_KEYMAPS (MAX_NR_KEYMAPS == 256)
+ 
+  Example:
+        #include <stdio.h>
+        #include <fcntl.h>
+        #include <errno.h>
+        #include <unistd.h>
+        #include <sys/stat.h>
+        #include <linux/kd.h>
+        #include <sys/types.h>
+        #include <sys/ioctl.h>
+
+        #define ERROR -1
+        #define NR_KEYS 128
+        #define MAX_NR_KEYMAPS 256
+
+        void main()
+        {
+          int fd;
+          register int i, j;
+          struct kbentry kbent;
+
+          /* To be used as the fd in ioctl(). */
+          if ((fd = open("/dev/console", O_NOCTTY)) == ERROR) {
+             perror("open");
+             exit(ERROR);
+          }
+
+          printf("w00w00!\n\n");
+
+          kbent.kb_table = 0; /* Keyboard maps at table element 0 */
+          kbent.kb_index = 0; /* Index into keyboard map          */
+
+
+          for (i = 0; i <= MAX_NR_KEYMAPS; i++) {
+              for (j = 0; j <= NR_KEYS; j++) {
+                  if (ioctl(fd, KDGKBENT, &kbent) == ERROR) {
+                     if (errno == EINVAL) continue;
+                     else { 
+                        perror("ioctl");
+                        close(fd);
+                        exit(ERROR);
+                     }
+                  }
+
+                  usleep(20000); /* To slow output. */
+
+                  /* Skip over no such, or in an invalid map. */
+                  if ((kbent.kb_value   == K_HOLE) 
+                     || (kbent.kb_value == K_NOSUCHMAP)) continue;
+
+                  if (!isprint(kbent.kb_value)) {
+                      printf("Skipped unprintable character at: "
+                             "Table %d, Index %d\n", 
+                             kbent.kb_table, kbent.kb_index);
+
+                               kbent.kb_index++;
+                        continue;
+                  }
+
+                  printf("Table: %d, Index: %d, ", 
+                         kbent.kb_table, kbent.kb_index);
+
+                  kbent.kb_index++;
+
+                  printf("Key: %c (0x%x)\n", kbent.kb_value, kbent.kb_value);
+
+              }
+
+              j = 0;
+              kbent.kb_index = j;
+              kbent.kb_table = i;
+          }
+
+          putchar('\n');
+             close(fd);
+      }
+
+KDSKBENT:
+        Sets an entry in the key translation table. You pass a struct
+  kbentry. See the KDGKBENT above for the structure (defined in
+  /usr/include/linux/kd.h).
+
+        I am not going to include one for this.. it would have bad results.
+  You set the kb_table to a value as an index to the keymap, kb_index as
+  an index into the keymap, and kb_value as the value you want to set it
+  to. You do not pass this as a pointer (i.e. not as &kbent as seen
+  above.
+
+KDGKBDIACR:
+        This will print all the accented symbols (or characters). The
+  argument passed to ioctl() is a pointer to a struct kbdiacrs. 
+
+  Defined in: /usr/include/linux/kd.h
+  struct kbdiacrs {
+      unsigned int kb_cnt;
+      struct kbdiacr[256];
+  };
+
+  The structure kbdiacr is where the actual symbols and values are
+  in (also defined in /usr/include/linux/kd.h:
+
+  struct kbdiacr {
+      u_char diacr;
+      u_char base;
+      u_char result;
+  }
+
+  Example:
+
+        #include <stdio.h>
+        #include <fcntl.h>
+        #include <unistd.h>
+        #include <sys/stat.h>
+        #include <linux/kd.h>
+        #include <sys/types.h>
+        #include <sys/ioctl.h>
+
+        #define ERROR -1
+
+        void main()
+        {
+          int fd;
+          register int i;
+
+          struct kbdiacr  kbdiacr;
+          struct kbdiacrs kbdiacrs;
+
+          /* To be used as the fd in ioctl(). */
+          if ((fd = open("/dev/console", O_NOCTTY)) == ERROR) {
+             perror("open");
+             exit(ERROR);
+          }
+
+          printf("w00w00!\n\n");
+
+          if (ioctl(fd, KDGKBDIACR, &kbdiacrs) == ERROR) {
+             perror("ioctl");
+             close(fd);
+             exit(ERROR);
+           }
+
+          printf("Number of entries in kbdiacrs: %d\n", kbdiacrs.kb_cnt);
+
+          for (i = 0; i <= kbdiacrs.kb_cnt; i++) {
+              kbdiacr = kbdiacrs.kbdiacr[i];
+
+              printf("diacr - Character: %c, Hex: 0x%x\n",
+                     kbdiacr.diacr, kbdiacr.diacr);
+
+              printf("base - Character: %c, Hex: 0x%x\n",
+                     kbdiacr.base, kbdiacr.base);
+
+              printf("result - Char: %c, Hex: 0x%x\n\n",
+                     kbdiacr.result, kbdiacr.result);
+          }
+
+          putchar('\n');
+          close(fd);
+      }
+
+KDGETKEYCODE:
+        This one should be fairly obvious. It reads the keys from the
+  kernel keycode entry. This converts the scan code to keycode. The
+  argument to ioctl() is a struct kbkeycode.
+
+        Defined in: /usr/include/linux/kd.h
+        struct kbkeycode {
+           unsigned int scancode;
+           unsigned int keycode;
+        }
+
+  Example:
+
+        #include <stdio.h>
+        #include <fcntl.h>
+        #include <unistd.h>
+        #include <sys/stat.h>
+        #include <linux/kd.h>
+        #include <sys/types.h>
+        #include <sys/ioctl.h>
+
+        #define ERROR -1
+
+        void main()
+        {
+          int fd;
+          register int i;
+
+          struct kbkeycode keycode;
+
+          if ((fd = open("/dev/console", O_NOCTTY)) == ERROR) {
+             perror("open");
+             exit(ERROR);
+          }
+
+          printf("w00w00!\n\n");
+
+          keycode.scancode = 1; /* Scancode to convert to keycode. */
+
+          while(1) {
+
+             if (keycode.scancode > 255) {
+                putchar('\n');
+                close(fd);
+                exit(0);
+             }
+
+             if (ioctl(fd, KDGETKEYCODE, &keycode) == ERROR) {
+                keycode.scancode++;
+                continue;
+              }
+
+             printf("Keycode: %d (from scan code %d)\n", 
+                    keycode.keycode, keycode.scancode);
+
+             keycode.scancode++;
+
+          }
+
+      }
+
+KDSIGACCEPT:
+        This is basically the equivalent of signal(). I assume signal()
+  calls this, as this is the way to accept signals from keyboard input.
+  The argument passed to ioctl() is the signal number the process is
+  willing to accept. The value is greater than 1, but less than N_SIG.
+
+  Example:
+        This will not work, sorry. But included as an example anyway. If
+        anyone knows why this will not work, please let me know. I saw no
+        indications as to why from following the signals in
+        linux/kernel/exit.c, but it is possible I missed something.
+
+        #include <stdio.h>
+        #include <fcntl.h>
+        #include <unistd.h>
+        #include <signal.h>
+        #include <sys/stat.h>
+        #include <linux/kd.h>
+        #include <sys/types.h>
+        #include <sys/ioctl.h>
+
+        #define ERROR -1
+
+        void main()
+        {
+          int fd;
+          int signum = 2; /* Signal to accept keyboard input for. */
+                          /* SIGINT == 2                          */
+
+          if ((fd = open("/dev/console", O_NOCTTY)) == ERROR) {
+             perror("open");
+             exit(ERROR);
+          }
+
+          printf("w00w00!\n\n");
+
+          printf("Ignoring SIGINT (Ctrl-C) before call to ioctl().\n");
+          signal(SIGINT, SIG_IGN);
+
+          if (ioctl(fd, KDSIGACCEPT, signum) == ERROR) {
+             perror("ioctl");
+             close(fd);
+             exit(ERROR);
+          }
+
+          printf("Signal is now being accepted. "
+                 "Try aborting with Ctrl-C (this does not work). Hit enter.\n");
+          
+          getchar();
+          printf("Well, you were supposed to abort rather than hit Enter.\n");
+
+          close(fd);
+      }
+
+
+Now that this is the first VT_* IOCTL, I want to mention we now include
+/usr/include/linux/vt.h, and not /usr/include/linux/kd.h anymore. I must
+also mention that the next two sets of IOCTLs are my favorite. VT_* and
+TIOCLINUX are fun IOCTLs and can be incredibly useful and powerful.
+
+VT_OPENQRY:
+        This will return an int that is the first available console
+  number. If tty1-tty6 were all opened consoles, it would return 7.
+  This value will be greater than 1, but less than the maximum number of
+  consoles (MAX_NR_CONSOLES), is currently 63 (in Linux 2.0.33).
+
+
+  Example:
+        #include <stdio.h>
+        #include <fcntl.h>
+        #include <unistd.h>
+        #include <sys/stat.h>
+        #include <linux/vt.h>
+        #include <sys/types.h>
+        #include <sys/ioctl.h>
+
+        #define ERROR -1
+
+        void main()
+        {
+          int fd;
+          int freecon;
+
+          if ((fd = open("/dev/console", O_NOCTTY)) == ERROR) {
+             perror("open");
+             exit(ERROR);
+          }
+
+          printf("w00w00!\n\n");
+
+          if (ioctl(fd, VT_OPENQRY, &freecon) == ERROR) {
+             perror("ioctl");
+             close(fd);
+             exit(ERROR);
+          }
+
+          printf("The first free (non opened) console is tty%d\n", freecon);
+          close(fd);
+      }
+
+VT_GETSTATE: 
+        This gets the state of the active VT. The argument passed to
+  ioctl() is apointer to a struct vt_stat.
+
+  Defined in: /usr/include/linux/vt.h
+  struct vt_stat {
+      unsigned short v_active; /* active VT      */
+      unsigned short v_signal; /* signal to send */
+      unsigned short v_state;  /* vt bitmask     */
+  }
+
+  Example
+        #include <stdio.h>
+        #include <fcntl.h>
+        #include <unistd.h>
+        #include <sys/stat.h>
+        #include <linux/vt.h>
+        #include <sys/types.h>
+        #include <sys/ioctl.h>
+
+        #define ERROR -1
+
+         void main()
+        {
+          int fd;
+          struct vt_stat stat;
+
+          printf("w00w00!\n\n");
+
+          /* used as fd for ioctl() */
+          if ((fd = open("/dev/tty", O_NOCTTY)) == ERROR) {
+                perror("open");
+                exit(ERROR);
+          }
+
+          if (ioctl(fd, VT_GETSTATE, &stat) == ERROR) {
+             perror("ioctl");
+             close(fd);
+             exit(ERROR);
+          }
+
+          printf("Current VT: tty%d\n", stat.v_active);
+          printf("Signal to send: %d\n", stat.v_signal);
+          printf("VT bitmask: %d\n", stat.v_state);
+          
+          close(fd);
+        }
+
+VT_GETMODE:
+        This will return the mode of the active VT. The argument to
+  ioctl() is a pointer to a struct vt_mode.
+
+  Defined in: /usr/include/linux/vt.h
+  struct vt_mode {
+      char  mode;   /* vt mode                                 */
+      char  waitv;  /* if set, hangs on write when not active  */
+      short relsig; /* sig to raise on release request         */
+      short acqsig; /* sig to raise on acquisition             */
+      short frsig;  /* unused (set to 0)                       */
+  }
+
+  Example:
+        #include <stdio.h>
+        #include <fcntl.h>
+        #include <unistd.h>
+        #include <sys/stat.h>
+        #include <linux/vt.h>
+        #include <sys/types.h>
+        #include <sys/ioctl.h>
+
+        #define ERROR -1
+
+        void main()
+        {
+          int fd;
+          struct vt_mode mode;
+
+          if ((fd = open("/dev/console", O_NOCTTY)) == ERROR) {
+             perror("open");
+             exit(ERROR);
+          }
+
+          printf("w00w00!\n\n");
+
+          if (ioctl(fd, VT_GETMODE, &mode) == ERROR) {
+             perror("ioctl");
+             close(fd);
+             exit(ERROR);
+          }
+
+          printf("Modes of active VT:\n");
+
+          if (mode.mode == VT_AUTO) printf("Automatic VT switching\n");
+          else if (mode.mode == VT_PROCESS) 
+             printf("Process controls switching.\n");
+          else if (mode.mode == VT_ACKACQ) 
+             printf("Acknowledgement of switches.\n");
+          else printf("mode == %d\n", mode.mode);
+
+          if (mode.waitv) printf("Will wait on writes if not active.\n");
+          else printf("Will not wait on writes even when not active.\n");
+
+          printf("Signal number to release on release request: %d\n",
+                 mode.relsig);
+
+          printf("Signal number to raise on acquisition: %d\n",
+                 mode.acqsig);
+
+          close(fd);
+      }
+
+VT_SETMODE:
+        This will set the mode of the active VT. The argument to
+  ioctl() is a struct vt_mode. In the current kernel (which is 2.0.33) you
+  can not set the mode to VT_ACKACQ because it will return an invalid
+  argument. I listed vt_mode structure right above in VT_GETMODE.
+  If you turn VT_PROCESS on and then change VTs yourself, it will turn
+  VT_PROCESS off, effectively putting it in VT_AUTO mode again.
+
+VT_RELDISP:
+        This will release a display. The argument you pass to ioctl() is a
+  int to the VT number (ttyX). You will call VT_DISALLOCATE after this.
+  This will return EINVAL if the tty mode is not VT_PROCESS (which is
+  where the process controls the switching).
+
+VT_DISALLOCATE:
+        This deallocates the memory associated with VT. The argument
+  passed to ioctl() is the VT to disallocate. This would be called after
+  VT_RELDISP.
+
+  Example:
+        #include <stdio.h>
+        #include <fcntl.h>
+        #include <unistd.h>
+        #include <sys/stat.h>
+        #include <linux/vt.h>
+        #include <sys/types.h>
+        #include <sys/ioctl.h>
+
+        #define ERROR -1
+
+         void main()
+        {
+          int fd;
+          int tty;
+
+          printf("w00w00!\n\n");
+
+          if (argc < 2) {
+             printf("Usage: %s <tty>\n", argv[0]);
+             printf("tty is a tty to disallocate\n\n");
+             exit(ERROR);
+          }
+
+          tty = atoi(argv[1]);
+
+          /* used as fd for ioctl() */
+          if ((fd = open("/dev/tty", O_NOCTTY)) == ERROR) {
+                perror("open");
+                exit(ERROR);
+          }
+
+          printf("disallocating tty%d\n", tty);
+          if (ioctl(fd, VT_DISALLOCATE, tty) == ERROR) {
+             perror("ioctl");
+             close(fd);
+             exit(ERROR);
+          }
+
+          close(fd);
+        }
+
+VT_RESIZE:
+        Sets the size the kernel thinks the screensize is. The argument
+  passed to ioctl() is a pointer a struct vt_sizes.
+
+  Defined in: /usr/include/linux/vt.h
+  struct vt_sizes {
+      ushort v_rows;       /* Number of rows on screen.    */
+      ushort v_cols;       /* Number of columns on screen. */
+      ushort v_scrollsize; /* Not longer used.             */
+  }
+
+  This does NOT change the video mode, only what the kernel's idea of the
+  screensize.
+
+  Example:
+        #include <stdio.h>
+        #include <fcntl.h>
+        #include <unistd.h>
+        #include <sys/stat.h>
+        #include <linux/vt.h>
+        #include <sys/types.h>
+        #include <sys/ioctl.h>
+
+        #define ERROR -1
+
+        void main(int argc, char **argv)
+        {
+          int fd;
+          struct vt_sizes sizes;
+
+          printf("w00w00!\n\n");
+
+          if (argc < 3) {
+             printf("Usage: %s <rows> <cols>\n", argv[0]);
+             printf("rows is the number of rows in the console\n");
+             printf("cols is the number of columns in the console\n\n");
+             exit(1);
+          }
+
+          if ((fd = open("/dev/console", O_NOCTTY)) == ERROR) {
+             perror("open");
+             exit(ERROR);
+          }
+
+          sizes.v_rows = atoi(argv[1]);
+          sizes.v_cols = atoi(argv[2]);
+
+          if (ioctl(fd, VT_RESIZE, &sizes) == ERROR) {
+             perror("ioctl");
+             close(fd);
+             exit(ERROR);
+          }
+
+          printf("Kernel's idea of screensize is now:\n");
+          printf("Rows: %d, Columns: %d\n", sizes.v_rows, sizes.v_cols);
+          close(fd);
+      }
+
+VT_RESIZEX:
+        Sets the size the kernel thinks the screen size plus more.
+  Notice this uses a different structure than VT_RESIZE. This includes a
+  little bit more than VT_RESIZE does. The argument passed to ioctl() is a
+  pointer a struct vt_consize.
+
+  Defined in: /usr/include/linux/vt.h
+  struct consize {
+      unsigned short v_rows; /* rows                            */
+      unsigned short v_cols; /* columns                         */
+      unsigned short v_vlin; /* video scan lines                */
+      unsigned short v_clin; /* video font heigh (must be < 32) */
+      unsigned short v_vcol; /* video column number             */
+      unsigned short v_ccol; /* video font width?               */
+  }
+
+  I'm not sure what v_ccol is for.
+
+  Example:
+
+VT_ACTIVATE:
+        This is what happens when you do a Alt-Fx, and it switches the
+  VT. This can be incredible useful to be able to have a program change
+  the VTs without having to do it manually. 
+
+  Example:
+        /* ACS - Auto Console Switching                                    */
+        /* What this does is allows you to specify VTs (virtual terminals, */
+        /* also known as consoles) to watch. When it detects new data on   */
+        /* this tty it will automatically switch.                          */
+        /*                                                                   */
+        /* This allows you to do many things at once such as:              */
+        /*   1.) IRC on one VT                                             */
+        /*   2.) IRC on a different IRC network on another                 */
+        /*   3.) wait for a web page to load up on another                 */
+        /*   4.) wait for telnet to connect to a site on another           */
+        /*                                                                   */
+        /* Compile with -DBEEPONLY to cause a beep on new activity, rather */
+        /* than switching to the console with new activity.                */
+        /*                                                                   */
+        /* So you can see the uses of this. Enjoy.                         */
+        /* Shok (Matt Conover), shok@dataforce.net                         */
+
+        #include <stdio.h>
+        #include <fcntl.h>
+        #include <signal.h>
+        #include <sys/stat.h>
+        #include <linux/vt.h>
+        #include <sys/ioctl.h>
+        #include <sys/types.h>
+
+        #define ERROR -1
+        #define MAXVTNUM 63
+          
+        struct vcs {
+          int fd;
+          char curbuf[6666], prevbuf[6666];
+        } vcs[MAXVTNUM];
+
+        int fd;
+
+        void clean(int val);
+        void syntax(char **argv);
+        void parse(int argc, char **argv);
+
+        void sighandler(int signum);
+
+
+        void main(int argc, char **argv)
+        {
+          char buf[512];
+          register int i;
+          register int tty;
+  
+          /* Initialization. */
+          bzero(buf, sizeof(buf));
+
+
+          for (i = 0 ; i < MAXVTNUM; i++) {
+             vcs[i].fd = -1, vcs[i].curbuf[0] = 0;
+
+             bzero(vcs[i].curbuf,  sizeof(vcs[i].curbuf));
+             bzero(vcs[i].prevbuf, sizeof(vcs[i].prevbuf));
+          }
+          /* --------------- */
+
+          printf("w00w00!\n");
+          parse(argc, argv); /* Take care of arguments (such as the VTs), */
+                             /* as well as open the files.                */
+
+          /* Turn into a daemon, exit the parent. */
+          if (fork() != 0) 
+             exit(0);
+
+          /* Need to switch to the active console. tty is what we pass */
+          /* to ioctl() with VT_ACTIVATE.                              */
+          if ((tty = open("/dev/tty", O_RDWR)) == ERROR) {
+             perror("open");
+             exit(ERROR);
+          }
+ 
+          /* Used so that when we receive a signal to abort, we close up */
+          /* all the open file descriptors, and give them a message that */
+          /* we are aborting. If this is run as a daemon, then you would */
+          /* have to send it with kill -2, -3 or -15.                    */
+          signal(SIGINT,  sighandler);  
+          signal(SIGTERM, sighandler);
+          signal(SIGQUIT, sighandler);
+
+          while (1)
+             for (i = 0; i < MAXVTNUM; i++) 
+                if (vcs[i].fd != -1) {
+
+                   /* Copy the current buffer into the previous one, */
+                   /* for later use.                                 */
+                   strcpy(vcs[i].prevbuf, vcs[i].curbuf);
+
+                   /* Get to the beginning of the screen. */
+                   lseek(vcs[i].fd, 0, SEEK_SET); 
+
+                   if ((read(vcs[i].fd, vcs[i].curbuf, sizeof(vcs[i].curbuf)))
+                        == ERROR) {
+                      perror("read");
+                      clean(ERROR);
+                   }
+
+                   /* Compare the buffer of the previous screen dumb with */
+                   /* this one. If they are different, new data has been  */
+                   /* received and we switch consoles.                    */
+
+                   if ((strcmp(vcs[i].curbuf, vcs[i].prevbuf) != 0) 
+                           && (vcs[i].prevbuf[0] != 0))
+#                     ifdef BEEPONLY
+                      ioctl(tty, VT_ACTIVATE, i+1);
+#                     else
+                      write(tty, '\a', 1);
+#                     endif
+                   usleep(500000);
+                } 
+        }
+
+        void parse(int argc, char **argv)
+        {
+          int i;
+          char *p;
+          char buf[512], bfa[512];
+
+          if (argc < 2)
+             syntax(argv);
+
+          sprintf(buf,"Watching ");
+
+          for (argc--; argc; argc--) {
+             if (strcasecmp(argv[argc], "all") == 0) {
+                for (i = 0; i < MAXVTNUM; i++) {
+                   sprintf(buf, "/dev/vcs%d", i+1);
+
+                   vcs[i].fd = open(buf, O_RDONLY | O_NOCTTY);
+                   if (vcs[i].fd == ERROR) {
+                      perror("open");
+                      clean(ERROR);
+                   }
+                }
+
+                printf("Watching all tty's...\n");
+                return;
+             }
+
+             if (strncasecmp(argv[argc], "tty", 3) != 0)
+                   syntax(argv);
+
+             strcat(buf, argv[argc]);
+             strcat(buf, " ");
+
+             p = (argv[argc]+3);
+
+             sprintf(bfa, "/dev/vcs%d", atoi(p));
+             vcs[atoi(p) - 1].fd = i = open(bfa, O_RDONLY | O_NOCTTY);
+
+                    if (vcs[atoi(p) - 1].fd == ERROR) {
+                perror("open");
+                clean(ERROR);
+             }
+          }
+
+          buf[strlen(buf) - 1] = 0;
+
+          strcat(buf, "...\n");
+          printf(buf);
+        }
+
+        void syntax(char **argv)
+        {
+          printf("Syntax: %s <all | tty2 tty3 ttyX ...>\n", argv[0]);
+          exit(ERROR);
+        }
+
+        void clean(int val)
+        {
+          register int i;
+
+          for (i = 0; i < MAXVTNUM; i++)
+              if (vcs[i].fd != -1) close(vcs[i].fd);
+
+          close(fd);
+          exit(val);
+        }
+
+        void sighandler(int signum)
+        {
+          char msg[] = "Received signal to abort. Now exiting.\n";
+
+          close(fd);
+
+          fd = open("/dev/tty", O_NOCTTY | O_WRONLY);
+          if (fd == ERROR) {
+             printf(msg);
+             clean(signum);
+          }
+
+          /* Give aborting message to current VT. */
+          write(fd, msg, sizeof(msg)); 
+
+          clean(signum);
+        }
+
+VT_WAITACTIVE:
+        This will sleep until you switch to the VT it is watching (or
+  another program calls VT_SWITCH and switches, for example). When this
+  occurs, ioctl() will return true.
+
+  Example:
+        #include <stdio.h>
+        #include <fcntl.h>
+        #include <unistd.h>
+        #include <sys/stat.h>
+        #include <linux/vt.h>
+        #include <sys/types.h>
+        #include <sys/ioctl.h>
+
+        #define ERROR -1
+
+         void main()
+        {
+          int fd;
+
+          printf("w00w00!\n\n");
+
+          if ((fd = open("/dev/tty", O_NOCTTY)) == ERROR) {
+                perror("open");
+                exit(ERROR);
+          }
+
+          if (ioctl(fd, VT_WAITACTIVE, 1) == ERROR) {
+             perror("ioctl");
+             close(fd);
+             exit(ERROR);
+          }
+
+          printf("tty1 has been activated\n");
+          close(fd);
+        }
+
+VT_LOCKSWITCH:
+VT_UNLOCKSWITCH:
+        VT_LOCKSWITCH disables switching the console, and VT_UNLOCKSWITCH
+  disables locking and allows switching.
+
+  Example:
+    /* w00w00! */
+    /* CAP - Console Access Protection                                  */
+    /* This provides security from phsyical access to your conoles.     */
+    /* When you run this program, it will clear the screen and prompt   */
+    /* for a password. After so many failed attempts it will lock the   */
+    /* tty and not allow them to try anymore. While this program is     */
+    /* running, they can't abort this program, and they can not switch  */ 
+    /* consoles either. The only only way around this is to reboot the  */
+    /* computer, in which case it will be obvious that someone tried to */
+    /* access your server's consoles. This will log the date and time   */
+    /* the person tried to get access into your console.                */
+    /*                                                                        */
+    /* Compile: [g]cc -o CAP CAP.c -ltermcap                            */
+    /* If you have shadow passwords compile with -DUSESHADOW.           */
+    /* To compile in debug (or testing) mode, compile with -DDEBUG.     */
+    /*                                                                        */
+    /*             Shok (Matt Conover), shok@dataforce.net              */
+
+    #include <pwd.h>
+    #include <term.h>
+    #include <stdio.h>
+    #include <fcntl.h>
+    #include <errno.h>
+    #include <unistd.h>
+    #include <stdlib.h>
+    #include <signal.h>
+    #include <syslog.h>
+    #include <shadow.h>
+    #include <linux/vt.h>
+    #include <sys/stat.h>
+    #include <sys/ioctl.h>
+    #include <sys/types.h>
+
+    #ifdef  DEBUG
+    #define SIGSEGV 11 /* SIGSEGV == sig # 11 */
+    #endif
+
+    #define ERROR -1
+    #define SAME   0
+    #define LOCKOUT 3  /* How long in minutes to lock out of the console.     */
+    #define MAXFAIL 3  /* Number of times they can enter an invalid password. */
+                       /* before being locked out for LOCKOUT minutes.        */
+
+    /* Used to disable switching consoles. */
+    #define LOCKVT(x)     if ((ioctl(fd, VT_LOCKSWITCH, 1)) == ERROR) { \
+                             perror("locking console (/dev/tty/)");     \
+                             exit(ERROR);                               \
+                          }
+
+    /* Used to reenable ability to switch consoles. */
+    #define UNLOCKVT(x)   if ((ioctl(fd, VT_UNLOCKSWITCH, 1)) == ERROR) { \
+                             perror("locking console (/dev/tty/)");       \
+                             exit(ERROR);                                 \
+                          }
+
+
+    int fd; /* Console fd. */
+
+    char *strip(char *str); /* Used to strip newlines from ctime(). */
+    #ifdef DEBUG
+    void sighandler(int signum);
+    #endif DEBUG
+
+    void main()
+    {
+      int uid;
+      int failed    = 0; /* Number of failed attempts out of MAXFAIL.      */
+      int totfailed = 0; /* Number of total failed attempts (not reseted). */
+  
+      time_t tm;
+
+      char curtime[64];
+
+      /* Don't change passwd or realpasswd's length. This is the maximum */
+      /* password length allow from getpass(). Any smaller can overflow. */
+      char *pass, passwd[128], realpasswd[128]; 
+
+      struct passwd *pwd;
+     #ifdef USESHADOW
+      struct spwd   *spwd;
+     #endif
+
+      if ((fd = open("/dev/tty", O_RDWR)) == ERROR) {
+            perror("opening console (/dev/tty)");
+          exit(ERROR);
+      }
+  
+      /* Disable signals (so attackers can't abort program). */
+
+     #ifndef DEBUG
+      signal(SIGHUP,  SIG_IGN);
+      signal(SIGINT,  SIG_IGN);
+      signal(SIGTERM, SIG_IGN);
+      signal(SIGQUIT, SIG_IGN);
+      signal(SIGTSTP, SIG_IGN);
+     #else
+      signal(SIGINT, sighandler);
+      signal(SIGTERM, sighandler);
+      signal(SIGQUIT, sighandler);
+      signal(SIGTSTP, sighandler);
+      signal(SIGSEGV, sighandler);
+     #endif
+
+      LOCKVT(fd); /* Lock the VT. It can no longer switch. */
+
+      uid = getuid();
+      pwd = getpwuid(uid);
+     #ifdef USESHADOW
+      if ((spwd = getspnam(pwd->pw_name)) == NULL) {
+         perror("getspnam");
+         exit(ERROR);
+      }
+
+      strncpy(realpasswd, spwd->sp_pwdp, sizeof(realpasswd));  
+     #else
+      strncpy(realpasswd, pwd->pw_passwd, sizeof(realpasswd)); 
+     #endif  
+
+      clr(); /* clear the screen */
+      printf("w00w00!\n");
+      printf("Console is now locked.\n");
+      getchar();
+
+      /* Used to log invalid password attempts. */
+      openlog("CAP/conprot", LOG_CONS, LOG_AUTHPRIV); 
+
+      while (1) {
+         /* Get the password from the user. */
+         pass = getpass("Enter password: ");
+
+     
+         /* Encrypt the password from getpass(). 
+         /* Note, we are using realpasswd for our salt. This is to allow a */
+         /* salt of any size. This also saving us the trouble of getting   */
+         /* the salt ourselves.                                                   */
+         strncpy(passwd, crypt(pass, realpasswd), sizeof(passwd));
+
+         passwd[128] = '\0'; /* NULL terminate passwd just to be safe.     */
+
+     #ifdef DEBUG
+         printf("Encrypted password from user: %s\n", passwd);
+         printf("The real encrypted password: %s\n", realpasswd);
+     #endif
+
+         if ((strcmp(passwd, realpasswd)) == SAME) {
+            /* Unlock the console, to allow it to switch. */
+            UNLOCKVT(fd);
+
+            closelog(); /* Close logging. */
+
+               clr();
+
+            printf("Everything is now restored.\n");
+
+            if (totfailed == 0) printf("No one tried to access the console.\n");
+            else 
+               printf("Total number of failed attempts to unlock console: %d\n",
+                      totfailed);
+
+            exit(0);
+         } else {
+            failed++, totfailed++; /* Increase number of failed attempts. */
+
+            /* Log bad attempts to syslog. */
+            tm = time(NULL);
+
+            snprintf(curtime, sizeof(curtime), (char *)ctime(&tm));
+            strip(curtime); /* Strip new lines out of the time. */
+            syslog(LOG_WARNING, "Failed access attempt on: %s", curtime);
+
+            printf("Invalid password.\n");
+
+            if (failed >= MAXFAIL) {
+               printf("Maximum number of failed attempts.\n"
+                      "Now locking for %d minutes.\n", LOCKOUT);
+
+               sleep(LOCKOUT * 60); /* Convert the minutes to seconds. */
+               failed = 0; /* Reset the number of failed attempts.     */
+            }
+         }
+      }
+    }
+
+    char *strip(char *str)
+    {
+      register int i;
+
+      for (i = 0; str[i]; i++) 
+          /* Strip newline out of string.                          */
+          /* We do this because syslog appends the newline itself. */
+          if (str[i] == '\n') str[i] = '\0'; 
+
+      return str;
+    }
+
+    #ifdef DEBUG
+    void sighandler(int signum)
+    {
+      if (signum == SIGSEGV) printf("Received SIGSEGV.\n");
+         printf("\nAborting and unlocking console.\n");
+
+      UNLOCKVT(fd);
+
+      if (signum == 11) kill(getpid(), 11);
+      exit(0);
+    }
+    #endif
+
+    /* Clear the screen usning termcap */
+    clr()
+    {
+      char *clear;
+      char clbuf[1024], *clbp = clbuf;
+
+      if (tgetent(clbuf, getenv("TERM")) == ERROR) {
+         perror("tgetent");
+         system("clear");
+         return;
+      }
+
+      if ((clear = tgetstr("cl", &clbp)) == NULL) {
+         perror("tgetent");
+         system("clear");
+         return;
+      }
+
+      if (clear)
+         tputs(clear, tgetnum("li"), putchar);
+    }
+
+VT_SENDSIG:
+        This is in the include file, but it isn't used linux/drivers/char
+  anywhere. This is to send a signal to the bitmask of a VT. Because it
+  isn't used anywhere I'm not going to include an example, I'm just
+  mentioning this for your information.
+
+
+        There are a whole series of functions with TIOCLINUX. You use a
+subcode (somewhat like you do with ICMP functions) to do different things.
+You may notice some subcodes (such as subcode 2 and 10) also take
+additional arguments.
+
+TIOCLINUX:
+
+  We will show these subcodes in order:
+
+  subcode 0:
+        This is to dump the screen. This is obsolete now, because this is
+    what /dev/vcsX and /dev/vcsaX now (which is what our ACS seen above
+    uses to detect new data). Further note: subcode 0, 8, and 9 have all
+    be replaced by /dev/vcsX and /dev/vcsaX.
+
+  subcode 1:
+        This will return task information. This is now deprecated, so
+    avoid use of it (why would you need to use this?).
+
+  subcode 2:
+        This works with subcode 3 as well. This is for cutting and
+    pasting. You pass it a struct that contains the subcode, the start row
+    column, the end row and column, and the selection mode (0 for
+    character by character, 1 for word-by-word, 2 for line-by-line cut and
+    selecting). The characters selected (or cut) are highlighted and put
+    into a buffer that is in the sel_buffer (in linux/drivers/char/console.c).
+    The argument is a pointer to a struct that looks like this:
+
+    struct {
+       char subcode; /* this will be 2                                   */
+       short xs;     /* where to start cutting (0 = left side of screen) */
+       short ys;     /* where to start cutting (0 = top of the screen)   */
+       short xe;     /* where to end the cutting                         */
+       short ye;     /* where to end the cutting                         */
+    }
+
+  subcode 3: 
+        This works with subcode 2. subcode 2 cuts out some test from the
+    console and this pastes it to the fd (from the sel_buffer mentioned
+    above in subcode 2).
+
+  subcode 4:
+        This will unblank the screen (this is what happens when the screen
+    saver comes on and then you hit a key).
+
+    Example: 
+        Will be added
+
+  subcode 5:
+        This is to set the lookup table defining characters in a "word",
+    for word-by-word selection. It is user settable table that defines 
+    the characters that are considered to be alphabetic. This will be
+    stored in inWordLut (which is in linux/drivers/char/selection.c.
+
+        It looks like this:
+        static u32 inwordLut[8] = {
+          0x00000000, /* control chars     */
+          0x03FF0000, /* digits            */
+          0x87FFFFFE, /* uppercase and '_' */
+          0x07FFFFFE, /* lowercase         */
+          0x00000000,
+          0x00000000,
+          0xFF7FFFFF, /* latin-1 accented letters, not multiplication sign */
+          0xFF7FFFFF  /* latin-1 accented letters, not division sign */
+        };
+
+  subcode 6:
+        This will return the shift_state. The argument passed to ioctl()
+    is a pointer to a char.
+
+  subcode 7:
+        This will return the report_mouse. The argument passed to ioctl()
+    is a pointer to a char.
+
+  subcode 8:
+        This dumps the screen height, cursor position, and all character
+    attribute pairs. This is obsolete now and the kernel will report an
+    error if you try to use it. This is because we now have /dev/vcsX and
+    /dev/vcsaX and you can just read from there. Only use this if you have
+    a kernel between 1.1.67 and 1.1.92.
+
+  subcode 9:
+        This will restore the width and height, cursor position, and all
+    character attributes. If you try to use this in anything later
+    than 1.1.92 you will get an error. Write to /dev/vcsX or /dev/vcsaX
+    instead.
+
+  subcode 10:
+        This is what handles the power saving for new generation monitors.
+    If you are idle for so long the screen will blank. The argument passed
+    to this will be a pointer to a structure that includes the subcode
+    (which will be 10) and one of the following types:
+
+        0: Screen blanking is disabled.
+        1: Video adapter registers are saved and the monitor is put into
+           standby mode (it turns off vertical sychronization pulses).
+           If your monitor has an Off_Mode timer, it will eventually power
+           down by itself.
+        2: The settings are saved and then it turns the monitor off (it
+           turns off both vertical and horizontal sychronization pulses. 
+           If your monitor doesn't have an Off_Mode timer, or you want
+           your monitor to power down immediately when the blank_timer
+           times out, use this.
+
+    We will use the following structure:
+    struct {
+        char subcode; /* This will be 10            */
+        char mode;    /* 0: disable screen blanking */
+                      /* 1: go into "standby" mode  */
+                      /* 1: go into "off" mode      */
+    }
+
+  Conclusion:
+        I am sorry for the length of this article, but I wanted to give
+examples for many of these to show the uses of console IOCTLs. As I
+mentioned in the introduction, IOCTLs are being replaced by POSIX, but
+this is better. Why do you need console IOCTLs? There are a lot of
+undocumented things that you can do with console IOCTLs you can't do
+otherwise (for example, ACS and CAP).
+
+                        Shok (Matt Conover)
+
+Email: shok@dataforce.net
+Web: http://www.w00w00.org

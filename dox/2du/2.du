@@ -1,0 +1,49 @@
+# K1ALGNU2:2.du crE8d by PipStuart <Pip@CPAN.Org> as my newest ToDo file following after d.8. wrapped up a whole 160x50 page;$VERSION='0.0';$d8VS='K38M5gti';
++ /usr/lib/x86_64-linux-gnu/qt5/plugins/platforms/libqxcb.so is probably from Qt5.13.1 && should be restored to 5.12.4 so hopefully Krita wil run fIne again.
++ Probably need to apt install `dpkg -l libxcb-\*|gi ii` that are alreD there, or go into ~/.mk/qt5/ && clone a 5.12.4 to build && instl ovr curNt /usr/lib/;
++ rebilt ~/dvl/m8/qtx/Makefile against ~/.mk/qt5/Qt5.14.0 (instead of old 5.13.1-pnp) but binary core-dumped because it couldn't find any xcb pl@form plugin;
++ For above, git list branches first to see if there's any v5.14.1 or other newest code-base to build && link against, since just 5.14 may get overriden l8r;
++ went the other way with it && rebuilt qtx with Qt5.12.4 since all my system packages come from that released version,which should maximize my comp@ibility;
++ I had to Ctrl-Shift-F to hot-key get Krita out of stuck FullScreen mode, but toolbars are so large that the vertical aspect doesn't fit my displA properly;
+- fix MPlayer stutter on O*Back* && vid/R* (maybe from ALSA, Pulse, othr?); + fix volume ShiftF11 && F12 hot-keys to be responsive && hav notific8ions again;
++ fix gti d8ok geometry to stick properly in the corner of my left display; + try hooking up 3rd monitor to Oni && setting gti 2 throw arranged terms there2;
++ fix lsd8 to blink on broken sym-link like /etc/printcap does in ls now && also detect when not outputting to TTY && autorun results through sS for no colr;
++ HTTPS://GitHub.Com/flatpak/xdg-desktop-portal-gtk/issues/215 links to HTTPS://GitHub.Com/flatpak/xdg-desktop-portal/pull/364 && also the Gnome-Shell merge:
+- HTTPS://GitLab.Gnome.Org/GNOME/gnome-shell/merge_requests/326 to potentially resolve xdg-desktop-portal-gtk from spamming /var/log/syslog for Introspect or
++ `gsettings set org.gnome.shell introspect true`; running ~/dvl/g8/jack/xdp/autogen.sh gets down to (before building xdp xdg-desktop-portal then xdpg -gtk):
++ ./configure: error: Package requirements (libpipewire-0.2 >= 0.2.6) were not met: Requested 'libpipewire-0.2 >= 0.2.6' but version of libpipewire is 0.2.5;
++ [pip@OniK1CLIpip~/dvl/g8/jack/xdpg]./configure LIBS='-lX11 -lm -lfreetype -lfontconfig -lXext -lz -lpng16 -lpixman-1 -lXrender';mkj # finaly bilt xdpg.Yay!
++ HTTPS://VideoLAN.Org/vlc/download-skins2-go.php?url=vlc-skins.zip has a bad nginx right now but should l8r be good place to add ~/.local/share/vlc/skins2/;
+- `m pulse-client.conf` && getrlimit for daemon, && pa for SUID && paprefs; + `m alsactl` for ALSA_CARD_OPTIONS='all'? web-searches do not seem good results;
++ `systemctl list-unit-files --type=service|gi '(en|dis)abled|mask|static'` + `sz;  sctl stop|disable|mask|status` are described on May 18th,2016 in article:
++ HTTPS://Linux.Com/tutorials/cleaning-your-linux-startup-process/ ; - search 4 EchoFalls SmokedSalmon CohoTrio of CajunSpice, Traditional, && Pepper - 12oz;
+- prIc Oni SSD,mAB ordr 2TB,invStig8 Aku offline B4 clEnsl8 Ubu19.10 2trustAgN, mv Ryu 2 lvngrm wi RoseWill WiFi cRd as altnet && Ken 2 bdrm && Aku 2 closet;
+- $100 4 good NVMe SolidSt8Drv && sAvup $140 4 UPS b@ryz, mAB `bak` needs to SKp @-signs in filenames like getty@.service or I can just backslash it on CLI?;
+- use dpkg 2 arc all Oni instld pkgz && tst closet drvz in dock 2 find wich mItB bSt 2 use 4 muz && mvz pRtitionz lEving curNt drv bootable && seting up SSD;
++ setup all trmz 4 160x50,rsyn2Ryu,lern why User && Host RdRk in sak prmpt; + why src in kon has 16 back-slashez, acs && ai image viewrz && tSt in my ~/gfx/;
++ fixup all trmz 2 prEXport TERM_PROGRAM lIk GNUstep_Terminal as sepR8d distinction 4 custom BhAviorz, gpom,'refix UTF8 alInmNt', Xpand s srchl,upd8 .bashrc;
++ lern how 2 bild ~/dvl/m8/sudo so admin_success file will no-longer be crE8d (at least until I need to upd8 the repo 4 a new security release && patch AgN);
+- upd8 a8.pm ~/.Hrc object loading, loc8 && study .style fIlz, mk new Utl like lrc which regener8z ~/.shl.style from compact ~/.Hrc source-highlight section;
++ resurrect ~/.Hrc. && restore wh8 aliasez 2 .Hrc, look in2 ~/.thumbnails/normal/*.png 2Cif nSSary, resrch RuneScape3 4 GNULin?,cfg ~/.* in2 .config||.local;
++ ul FTG-014.wav 4 Dad chat, k8 prv8 && login 2 all othr acctz in FyrFox rEstord hist, werk on c8 2 handle cat && tac, && all the most useful  cut functionz;
+- werk on sumb to have entriez for all new ~/bin fIlz (esp. for those that deserve to go in Octology),werk on s8 2 handle all the most useful sort functionz;
+- upd8 U2bdl && try to wrap U8::U2b functionz in Xpect wrapper to show large video download progress && autom8 U2b8 to get -F Formats to then dbl -f 2 mjoin;
++ for U2b2 && U2b8 showing progress try getting short 36-second video of JoeRogan about MGTOW at 'HTTPS://YouTu.be/MAPYcJ68_fU' 2obtain 4matting escape cOdz;
+- start adding POD to most Octology .pm && ~/bin fIlz, mk acS new Utl calling dpkg -l on all searched pkg-nAmz pIpd thru $PAGER,stRt loging instld 4 SSDinst;
+- clean out ~/.mk/ && /opt/ of Qt buildz not needed 4 ~/dvl/m8/qtx/ since pretty massive,mk U8::Upd8 wget U2b-dl l8st in2 ~/bin/&&thN run bak on new version;
+- migr8 bak && e from Utl.pm to d8.pm::b&&a8.pm::e, rm Pip::Utl.pm from Octl, fix bak to werk from non-local dirz && e to use a8-new .Hrc 4 fIlz && !~/.erc/;
+- fix `l ~/dvl/a8/S*|S2f4|c2f4` handling : colon $z reset, werk on `S2 t|c2` && maybe redefine Fclr && bclr F && b layer namez to just C && c insted allOver;
++ aftr nXt rEboot werk on gti as new ti wich adjustz gt d8ok && d8fd prOfIlez 2B just 33x4 (&& in .zshrc rs ReSizez) B4 wmc mkz 33x1 && mvz 2 lOwrIt cornerz;
++ add 2 ti 3 d8okz snapped2lOwrIt crnrz && only 1 d8fd in uprIt displA thN gNr8 a whol slew of gtz && sakz in othr 3 crnrz of all 4 displAz on all 8 vdsktpz;
++ add 2 d8ok new 49 wId optn wich putz d8 && spcz B4 d8-fd (but let Dflt bolD stil togl on just d8 pRt) && mk new gt && mAB sa || qt || it prOfIlz 2 displAy;
++ rsrch "failed to start Load AppArmor profiles" at boot (needed `sudo dpkg --purge snapd` aftr rEmvng insecure '.' from $PATH) && ran wireshark 4 netraffic;
++ rEnAm sum8 fact fibo prim && s/.$/z/ to s/^./SFP/ everywhere,so Xportz of Primez R less likely to collide with expectedly more common usage of pRameterz();
++ upd8 8plc to have end-page beyond 160x50 in 240x67 with 3x3 grid of 79x22 blox && cleanup Remaining LeftOver && shown countz so Nding percNt Bcomes accur8;
+- HTTPS://YouTu.be/bwJBCfpFT_E "Randomness in Bash && Linux: shuf && \$RANDOM" # J45:10m3s of LukeSmith reminding me to mk `shfl` du mor `shuf` stuff aswell;
+- rEvIv tiglet as flet wich goes thru ~/lib/Octology/f8/f0nt/flet/* && XtNd d8ok 2 have a couple good colored fig/toilet rendering optionz4:160x50 && 240x67;
++ reflecting on middle of d.8. if G-d exists in a predominantly good form then I don't want to be considered His adversary && would rather serve as His ally;
+- figure out why kpc:/>xx Clipboard cleared. kpc:/>x spewed "b: maximum nested function level reached; increase FUNCNEST?",cnsidr prepng Octl 4 PerlConfTalk;
+- unplug switch from router, mirror Oni 2 Ken, restore net, mirror GitHub to GitLab or SF.Net, improve CJ results bAsd on popul8ionz, rsrch purific8ion tabz;
+  stRt lOding many old HDDz in dock / NclOsure on Oni 2 prEpare a new clEn instl of 19.10 onto SSD && 3 old drIvz so curNtz can mnt BlO4 OniAku&&Ryu rEbildz;
+  stuD screencasterz byzanz kazam gnome-flashback gnome-shell-extension-easyscreencast gtk-recordmydesktop key-mon screenkey shelr vokoscreen && tSt 4 bestz;
+  rsrch sLing 1st&&2ndSeriesGPKs on EBay or CardCollector sites, write back to Gina && Jose, stRt GGG (r8d XXX), PipScript, revive Pip4President on BavL.Org;

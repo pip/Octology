@@ -1,0 +1,1320 @@
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html">
+  <!-- base href="http://www.cgl.uwaterloo.ca/~wbcowan/colour/emse.html" -->
+  <title>Rendering with Limited Means</title>
+</head>
+
+<body background="emse_files/emse.html">
+<hr>
+
+<p>Return to:</p>
+<ul>
+  <li><a href="../../index.html">Bill Cowan's homely page</a>.</li>
+  <li><a href="../index.html">Bill Cowan's research page.</a></li>
+</ul>
+<hr>
+
+<p><em>Note.</em> What follows is a manuscript version of the invited lecture
+I gave at the Jacques Cartier Institute Conference on Imaging (St- Etienne,
+December, 1995). This lecture was very well received, and my first idea was
+to write a separately publishable manuscript. As its length increased I
+decided that I would use it as a chapter in the book I am preparing,
+provisionally titled Colour Theory and Practice for Computer Graphics. At
+that point further refining of the manuscript became less important than
+shaping it in accord with material in other chapters of the book, and I am
+leaving that task until later.</p>
+<hr>
+
+<h1>Rendering with Limited Means</h1>
+
+<h3>William Cowan</h3>
+
+<h4>
+<blockquote>
+  Department of Computer Science<br>
+  University of Waterloo<br>
+  Waterloo, Ontario, Canada<br>
+  WBCowan@cgl.UWaterloo.ca</blockquote>
+</h4>
+
+<p></p>
+<hr>
+<strong>DRAFT: Please do not quote without permission!</strong>
+<hr>
+
+<p></p>
+
+<p>Rendering is the middle stage of what might be called the image generation
+pipeline. The initial stage of this process is usually called modelling, and
+consists of the production of an abstract description of the image. Most
+usually, modelling is done by an artist or designer using an image editor,
+often called a modeller. At least, this terminology is standard when the
+model is the description of a three-dimensional object. However, if the model
+is two-dimensional the image editor is more likely to be known as a paint or
+illustration program. Also, other inputs are clearly possible, an example
+being a computer vision system.</p>
+
+<p>Rendering then uses the description produced by the modeller to produce an
+intermediate representation. For three-dimensional models the rendering
+process typically consists of lighting calculations, hidden surface removal,
+scan conversion, and so on. Note that while scan conversion implies a
+raster-defined format this is not necessary, and something like a display
+list is also possible. For two-dimensional models rendering can be
+inconsequential.</p>
+
+<p>The final part of the image generation pipeline is image display. This is
+accomplished by taking the description produced by the rendering process and
+converting it to a set of instructions that can be used to produce the image
+on a device. This last step usually involves some sort of image calibration.
+For example, the result of a rendering calculation often provides the
+tristimulus values of light in the scene mapped onto a plane by a perspective
+transformation. To display this image on a real device it is necessary to use
+a device characterization (<a
+href="http://web.archive.org/web/20050212174134/http://www.cgl.uwaterloo.ca/%7Ewbcowan/colour/emse.html#Stone%20et%20al.,%201988">Stone
+et al., 1988</a>; <a
+href="http://web.archive.org/web/20050212174134/http://www.cgl.uwaterloo.ca/%7Ewbcowan/colour/emse.html#Bell,%201996">Bell,
+1996</a>) to determine exactly what device coordinates correspond to each
+tristimulus value in the image. Furthermore, in the general case where there
+is not a good match between the colours of the rendered image and the
+possible colour outputs of the device gamut-mapping (<a
+href="http://web.archive.org/web/20050212174134/http://www.cgl.uwaterloo.ca/%7Ewbcowan/colour/emse.html#Stone%20et%20al.,1988">Stone
+et al., 1988</a>) must be performed as part of this step.</p>
+
+<p>The division between different stages of the image generation pipeline is
+not fixed, but depends on many factors. For example, the inclusion of a
+PostScript interpreter in a printer often moves the division between
+rendering and display. Furthermore, some parts of this process clearly cannot
+stand on their own. For example, a modeller with no capability for rendering
+or display would be extremely hard to use. All the same, it is clear that the
+general breakdown described above is widely accepted in the computer graphics
+community, not least because graphics researchers describe their research in
+those terms.</p>
+
+<p>What concerns me in this paper is a pair of assumptions. First, that the
+output of the modeller should be renderable by a variety of different
+renderers. Second, that the output of a renderer should be displayable on a
+variety of different display surfaces. The first assumption is implicit in
+the design of most image creation systems, specifically in the assumption
+that a single image format can be used to drive many different renderings:
+wire- frame, radiosity, ray-tracing, and so on. The second is implicit in all
+attempts to perform image reproduction. The importance of these assumptions
+is that they are generally used to limit the capability of image creation
+tools, and to define who should be expected to do what among the human users
+and developers of these systems. For example, the rough distinctions
+suggested here suggest that the image creator, while using the modeller, need
+not know what rendering and displaying will be done.</p>
+
+<p>The argument of this paper is that capabilities required by image creators
+necessarily make a breakdown between modelling, rendering and displaying
+impossible. This is accomplished by considering some generic problems that
+arise in image rendering, and showing that they can be surmounted only by
+incorporating parts of the nominally independent modelling and display
+processes into rendering.</p>
+
+<p>These questions originally arose in the context  of the following
+question: how should rendering be modified if the displayed output is known
+to be limited? On trying to give a precise definition to terms in this
+question I discovered `unlimited image' to be a self-contradiction. The rest
+followed as a result of examining the consequences of this notion for
+rendering. In discussing these issues I have intentionally kept my
+consideration to a relatively high level, not getting into the details of
+algorithms that solve some of the problems that arise, but describing their
+general properties, and leaving the details for other occasions.</p>
+<hr>
+
+<h2>I. What does `limited means' mean?</h2>
+
+<p>The short answer is that all rendering whatsoever is done using limited
+means. Unlimited means would allow exact physical replication of the
+original, as discussed in Section III, below. We may react to limitations of
+our presentation media in two ways. The first is conceptually technical: we
+would reproduce the original object exactly if we could, and the problem we
+face is that of creating an appropriate perceptual metric that will provide a
+well-defined answer to questions like which of two renderings is closer to
+the exact object. The second is conceptually artistic: rendering provides a
+`reading' of the original, which has the effect of inducing organization on
+the original. This `reading' has the effect of strengthening some features of
+the original, and weakening features irrelevant to the induced organization
+is actually desirable. Note that this response to limitations in the
+rendering medium links modelling - in which the composition/organization of
+the image is created - to post-rendering - in which final adjustment of the
+image to take into account the presentation medium takes place.</p>
+
+<p>Responding in a technical way to limited means let us consider several
+specific examples. Two examples from colour reproduction are well-known. The
+obvious one occurs when it is necessary to provide a reproduction of an image
+on a device that has a colour gamut that is either too big or too small
+compared to the colour specification present in the original. A variety of
+techniques exist for compressing and expanding colour gamuts, some
+interactive (e.g. <a
+href="http://web.archive.org/web/20050212174134/http://www.cgl.uwaterloo.ca/%7Ewbcowan/colour/emse.html#Stone%20etal.,%201988">Stone
+et al., 1988</a>; <a
+href="http://web.archive.org/web/20050212174134/http://www.cgl.uwaterloo.ca/%7Ewbcowan/colour/emse.html#Lamming%20and%20Rhodes,1988">Lamming
+and Rhodes, 1988</a>), some algorithmic (<a
+href="http://web.archive.org/web/20050212174134/http://www.cgl.uwaterloo.ca/%7Ewbcowan/colour/emse.html#Tumblin%20and%20Rushmeier,%201993">Tumblin
+and Rushmeier, 1993</a>). While none is perfect, and further research is
+clearly worth doing, the problem is well-posed at the level that such
+research tries to answer it.  A second technical problem exists when the
+colour gamut of the presentation device, which consists, after all, of a
+finite number of colours, has so few available colours that colours present
+in the image can be presented only by colours that are perceptually different
+from them. Again, many algorithms exist for making the optimal set of colour
+choices when loading the colour look-up table on devices with limited
+bandwidth at each pixel (colour sets, ????). Alternately, and this is an
+important theme in managing with limited means, half-toning or dithering
+techniques (half-toning, ????; dithering, ????) exist, which decrease spatial
+resolution in order to increase chromatic resolution. Note the possibility of
+degrading inessential features of the image in order to provide more
+information about features that are considered to be more important, although
+it is not at all obvious how importance , or lack thereof, is assessed.</p>
+
+<p>Many other examples exist, and are seen by interpreting conventional
+imaging operations in terms of the necessity of compromising image attributes
+because of limitations of the presentation medium. Clipping algorithms, for
+example, consistently remove graphical information that would be present on a
+larger image. Perspective transformations cope with imaging a
+three-dimensional original onto a two-dimensional display surface. Motion
+blur provides cues that motion is present in static images. Clearly, once
+elementary imaging operations are re-interpreted in this way it is
+inconceivable that any display medium would be considered as free of
+limitations.</p>
+<hr>
+
+<h2>II. Rendering criteria</h2>
+
+<p>Any discussion of `limited means' implicitly requires a rendering
+criteria, which describes quantitatively or qualitatively how closely the
+rendered image follows the original. Here are some examples of criteria that
+have been used at one time or another in computer rendering.</p>
+
+<h3>1. Physical identity</h3>
+
+<p>How close does the physical reality of the rendering approach the physical
+reality of the rendered object? Such a question is sensible to ask only when
+the medium in which the rendering occurs is identical to the medium in which
+the original exists. For example, if rendering the same image on two CRTs of
+the same type we would ask if the two images were physically identical or
+not, presumably by counting photons of different wavelengths emitted by the
+CRTs. Differences would indicate the necessity of calibrating one or both
+CRTs.</p>
+
+<p>It is, of course, not necessary for the original to have a physical
+reality. In a CAD/CAM system the data structures describing a part contain a
+physical description. The manufacturing stage of the operation is designed to
+realize that physical description in a real object. It is, perhaps, unusual
+to use rendering' to describe the manufacturing operation. It is more usual
+to use rendering to describe the operation in which the part designer
+receives a two-dimensional graphical display of the part as feedback during
+design. Such a rendering cannot be judged using a criterion of physical
+identity.</p>
+
+<p>Note that it is quite possible that all aspects of the physical reality of
+a rendering may not be relevant. The geometry, the material from which a part
+is made are likely to be important, but not its temperature. Thus, physical
+criteria must specify which aspects of the original are relevant. As we will
+see below, this can create a grey area between physical and sensational
+criteria.</p>
+
+<h3>2. Identity of sensation</h3>
+
+<p>Because the creation of exact physical identity is often not possible
+image quality criteria often fall back on a more relaxed standard: identity
+of sensation. This means that the rendering creates precisely the same
+sensory inputs that the rendered object would. Again, a precise example is
+available from colour.  Physically, the light emitted from a surface is
+specified by its spectral power distribution, among other things. Yet the
+perception of colour in the human visual system is three- dimensional,
+indicating that, in some way the human visual system separates spectral power
+distributions into equivalence classes, and that any two spectral power
+distributions lying in the same equivalence class are perceived to be `the
+same colour'. Under certain viewing conditions the structure of the
+equivalence classes is specified by Grassmann's three laws (<a
+href="http://web.archive.org/web/20050212174134/http://www.cgl.uwaterloo.ca/%7Ewbcowan/colour/emse.html#Wyszecki%20and%20Stiles,%201982">Wyszecki
+and Stiles, 1982</a>), which are believed to be determined by retinal
+photoreceptors. On this basis it is possible to create an image that provides
+stimulation of an arbitrary member of the right equivalence class, something
+that allows an huge saving in display bandwidth. For example, CRTs use three
+phosphors to produce light output that creates the correct cone stimulation
+for a given image. By contrast, creation of the correct physical signal is
+unimaginable in principle. (In practice the work on linear reflectance spaces
+and linear lighting models suggests that it may be possible within limits
+based on sensation responses of the human visual system, a more complex
+possibility, not yet realized.)</p>
+
+<p>Another example can be found in image geometry. At any instant the spatial
+arrangement of light on the photoreceptors is described by the geometrical
+optics of the cornea, lens and retina. Inverting these optical
+transformations makes it possible to determine the geometrical arrangement of
+light in the image plane that is needed to create the same photoreceptor
+stimulation that the imaged object does. The result, not surprisingly, is
+very close to the classical theory of perspective, which is also the basis of
+camera design. This, presumably, is the basis of the term `photorealism',
+which is used to describe images created using a single static viewpoint.
+(Note that this usage of photorealism allows animation, which is
+conceptualized as being equivalent to a series of images, each associated
+with a specific static viewpoint, not all viewpoints necessarily the same,
+however.)</p>
+
+<p>The basic idea that lies behind sensation identity is the following: if
+all input signals to a system are the same then all internal signals within
+the system will also be the same. While this idea is obviously correct it is
+not easy to put into practice. In computer graphics it is usual to separate
+the spatial (geometric), temporal and chromatic (colour) degrees of freedom,
+assuming that it is sensible to talk about the colour at a particular
+location and time as being uniquely defined by whatever sensations can be
+attributed to receptors that monitor that location at the specific time. The
+independence this creates between different aspects of the image makes
+computation possible. As we will see below, this independence is
+problematic.</p>
+
+<h3>3. Perceptual/cognitive identity.</h3>
+
+<p>Sensation identity treats perception as a filtering process: a large
+amount of information exists in the physical world, some fraction of which
+enters the human nervous system. Perceptual processes then act on this
+limited amount of information to reconstruct the physical object that gave
+rise to the information. This view is very sympathetic to the aims of
+photorealistic imagery. The image supplies information that, at the level of
+the senses, is as close as possible to the information that would be supplied
+by the imaged object. If it is close enough the perceiver is able to
+reconstruct the correct object, and perceives the image correctly.</p>
+
+<p>It is, of course, possible to operate at a higher level, asking that the
+image should create the correct perception, whether or not the correct
+sensations are provided. This clearly involves both perceptual and cognitive
+processes. This is obviously much more complex than sensation identity. When
+an image is designed to create sensation identity it can rely on aspects of
+the nervous system that vary little from person to person. For example,
+photopigment responsitivities vary little, person to person. So do optical
+imaging properties of eyes. Furthermore, external modifications of the
+imaging system (eyeglasses) and internal changes in neural wiring operate
+specifically to bring ocular imaging close to a common standard. These
+considerations are the foundation of the clean standards that exist for
+describing sensation identity. These standards, not surprisingly, are popular
+in computer graphics and other technical disciplines that deal with human
+perception. Once they are accepted managing sensation identity is a problem
+that is susceptible to purely technical solution.</p>
+
+<p>Unfortunately, there are many examples in the perception literature
+showing us very clearly that sensation identity does not necessarily imply
+perceptual identity in the way that physical identity implies sensation
+identity. The status of these examples is an important issue for current
+models of computer graphics, which are strongly based on sensation identity.
+They may be a small number of isolated, exceptional cases; if so, they are
+best treated as exceptional cases within a rendering model based on sensation
+identity. On the other hand, they may be the rule, and not the exceptions. If
+so, it is necessary to find both new standards for evaluating images and new
+methods for generating them.</p>
+
+<p>This paper argues that non-identity of perceptual and sensation identity
+is common. How should computer graphics come to grips with this problem? We
+will argue that an important part of the solution is to be found by observing
+the practice of human renderers (artists and designers) determining the
+extent to which their customary practice follows the rules of physical and
+sensation identity, and understanding the artistic and design problems that
+cause them to deviate from these simple technical standards. In doing so we
+will start by examining the problems that make the production of physical
+identity hard or impossible, because they show the forces that drive imaging
+toward sensation identity, which has, to be sure, the weakness of producing
+images that are applicable only to the sensory systems for which they are
+designed. We follow that by examining sensation identity, looking
+particularly at three well-known places where sensation identity breaks down.
+These are problems well known to researchers in perception, and we will try
+to evaluate how pervasive a problem they are likely to be for computer
+graphics and discuss current attempts to modify conventional rendering
+systems so as to offer facilities for handling them effectively. Only at that
+point do we turn to more systemic issues, such as are raised by the practice
+of artists. These problems raise major issues for the fundamental
+architecture of rendering and modelling systems. We provide some algorithmic
+solutions to these problems, but without giving extensive details, which can
+be found in other papers.</p>
+<hr>
+
+<h2>III. Three things we know about physics</h2>
+
+<p>A physical view of rendering takes the following rather simple form. The
+perception of an image is the result of a physical stimulus consisting of
+photons impinging on the sensory systems of an observer. Let us create that
+physical stimulus, specified by photon wavelength and geometry, exactly as it
+exists in the real world in the presence of the modelled objects. The usual
+approximation for computer graphics restricts itself to recreating the light
+falling on a corneal surface that is fixed in position and direction. This
+limitation is not, however, necessary, at least in principle. A more
+Gibsonian approach to image synthesis, one in the spirit of virtual reality,
+might attempt to create the entire light field, allowing the observer to move
+within it (<a
+href="http://web.archive.org/web/20050212174134/http://www.cgl.uwaterloo.ca/%7Ewbcowan/colour/emse.html#Gibson,%201966">Gibson,
+1966</a>).</p>
+
+<p>Why is this difficult? First there is a problem of scale. The wavelength,
+position and direction of photons, to the extent that these concepts are
+well-defined, are determined by quantum mechanical interactions between light
+emitted by whatever sources of illumination exist in the model and the exact
+electronic configurations of the atoms and molecules that comprise the
+objects of the model. Obviously this is prohibitive. To begin with, just
+providing a full description of the 10^30 elementary particles in a typical
+model is effectively impossible. Even worse, each one of these particles is
+integrating the Schrodinger equation in parallel with all other particles, in
+real time, to infinite precision, and in a field to which every other
+particle contributes. The optical field created by the model is the result of
+all this activity.</p>
+
+<p>Nothing in this problem is new! Approximations are required, and optical
+physics provides us with rich and effective models for a wide variety of
+physical and optical phenomena. A great deal of the incontestable success of
+computer graphics over the past twenty years owes itself to the effective
+exploitation of models originally created in the physics community for the
+express purpose of providing a bridge between microscopic models of physical
+processes and the optical measurements to which they give rise.</p>
+
+<p>Lest this description appear to trivialize research in rendering let us
+note that models adopted from optical physics must be extensively adapted
+before they can be used for rendering. Why? It is a truism of physics that
+except in a small number of special cases the size and complexity of a model
+vastly exceeds that of the system modelled. Research in physics, quite
+rightly, attends most closely to the special cases, which are chosen
+according to several criteria. First, they eliminate to the greatest extent
+possible every physical effect that is not completely understood. Second,
+they come as close as possible to one or another easy to model (and easy to
+calculate) limiting case. The isolated hydrogen atom, a staple of elementary
+quantum mechanics textbooks, is a typical example; a polyhedral container
+filled with a dilute ideal gas is another. Such cases are chosen because they
+are easy to model; experimentally, it is necessary to create artificial cases
+that closely approximate these conditions in order to provide meaningful
+comparison between experimental measurements and model calculations.</p>
+
+<p>Unfortunately, such cases do not create very interesting images! Thus,
+computer graphics research generally pushes such models well outside the
+conditions in which they are easy to calculate, and explicitly by harnessing
+them to models of undeniable complexity. In fact, the limits of rendering
+technology tend to be defined by the ratio of rendering effort to complexity
+of the model rendered. Thus, the discoveries that are most important in
+computer graphics tend to be closer to the discoveries of engineering than to
+those of physics. What does this mean? The physicist can assure the engineer,
+on the basis of experiments with simple flow geometry, that a certain fluid
+is described by the Navier-Stokes equation, for example, with certain
+parameters. The engineer, in using this assurance, wants to use the
+Navier-Stokes equation to determine properties of fluid flow in complex
+geometries. To do so it is necessary to find effective approximations that
+enable him to draw appropriate conclusions on the basis of realizable
+computations. A computer graphics computation designed to image an unusually-
+shaped part made of aluminum, using optical properties of the aluminum
+surface provided by a physical model, must usually find a very similar
+realizable computation, something that is only rarely straightforward.</p>
+
+<p>In finding a suitable computation - that is, one which approximates the
+underlying optical physics for all features that are visible, or at least
+important, in the image - we take a variety of things into account. For
+example, it is possible to neglect phenomena on length scales substantially
+smaller than the resolution of the output medium, or on length scales
+substantially greater than the size of the output medium. As a second
+example, it is appropriate to choose an approximate computation that gets
+right features of the image that are important to the image creator, as
+opposed to features that are unimportant to the image creator. As a third and
+more complex example, consider motion. If the display medium has no temporal
+dependence, but motion is to be displayed, it is essential to choose an
+approximation that renders the motion into a form that is consistent with the
+visual language being used by the image creator. Motion blur might be
+appropriate in one case; multiple images in another.</p>
+
+<p>The first of these examples shows us that choosing a suitable
+approximation - that is, choosing a rendering equation - requires us to know
+details of the display medium. The second shows that the choice also depends
+on the intentions of the image creator. The third shows that the choice
+depends on interactions between the intentions of the image creator and the
+display medium. These constraints are recognized to be important, but are
+currently handled implicitly. `For the type of image you want to create this
+rendering system is better than the other one.' `You need system A if you
+want to get good quality printed output for this printer.' `You need to
+fiddle your model like this if you want to get a strong feeling of motion in
+the printed result.'</p>
+
+<p>Fair enough. But while these arguments show that the interactions exist in
+principle they are not convincing to the effect that current ad hoc methods
+of handling these problems are unsatisfactory. The next two sections of this
+paper consider several specific problems that occur when perceptual and
+design issues are addressed, and describe solutions to those issues,
+emphasizing how the solutions cut across modelling/rendering/display
+boundaries not just in practice but in principle.</p>
+<hr>
+
+<h2>IV. Three things we know about vision</h2>
+
+<p>This section describes three salient facts about human vision, facts that
+influence capabilities and freedoms that are available during the image
+creation process. Are they attributes of sensation or perception, in the
+senses described in Section II of this paper? This question does not have a
+clean answer. First, the boundary between sensation and perception is not as
+sharp as might first be thought. Here are two examples of this problem. We
+might define sensation psychologically as purely filtered physical input,
+independent of active processing; but the very light shining on the
+phototreceptors is changed by the position of eye muscles, body posture, and
+so on. We might define sensation physiologically as low level signals
+uninfluenced by neural activity; but we find that rods and cones receive
+input from horizontal cells. Second, even with the intuitive
+sensation/perception dichotomy used above some of these facts are more
+`sensational'; some are more perceptual.</p>
+
+<h3>1. Perception is primarily local</h3>
+
+<p>A variety of phenomena demonstrate that human vision is more sensitive to
+local variations in an image than it is to global ones. This can be
+demonstrated in a variety of ways. One very psychophysical approach is simply
+to notice that the spatial modulation transfer function peaks away from zero,
+indicating that there is an optimal length scale for the perception of
+changing colour in an image. This means that if we are allowing colour
+assignment artifacts of a size that is inversely proportional to their
+perceptibility we would be willing to allow artifacts that produce gradual
+changes in colour, in preference to ones that produce changes in colour that
+are more localized. (Note that the peak in the modulation transfer function
+means that there are changes that are too localized to be easily perceptible.
+We are not concerned with such changes here.)</p>
+
+<p>Curiously, insensitivity to large scale changes makes it beneficial to
+compute globally when creating an image, which is contrary to the usual
+practice of computing each pixel without considering the colour assignments
+that have been, or will be, made to other pixels. Why? If it is possible, by
+increasing the error at very long length scales, to decrease the error that
+exists at shorter length scales, the fidelity of the image improves. Such a
+trade-off is possible only by examining the image at long length scales -
+that is, globally. So the relative insensitivity of the human visual system
+to global artifacts makes global computation beneficial. We will see below
+several other reasons why global computation is important, and from them
+develop algorithms that can be used to render otherwise unrenderable
+images.</p>
+
+<p>Thinking about visual phenomena, in contrast to the psychophysical
+reasoning above, it is possible to see several other arguments in favour of
+global computation. Consider, for example, the perception of brown. When does
+it occur? Brown is perceived whenever a colour is simultaneously
+yellow/orange/red in hue and dark. Dark, however, is a relative perception.
+It does not make sense to say that a specific colour is dark, only that a
+colour is dark relative to another colour. Thus, the same light falling on
+the retina may appear dark in one circumstance - when most other areas of
+retina have more light falling on them - and light in another circumstance -
+when most other areas of the retina have less light falling on them. In other
+words, the same stimulus may appear yellow in one case, when surrounded by
+black, and brown in another, when surrounded by white. If the goal of
+rendering is to produce something brown it is necessary to compute its colour
+value taking into account the colour value of surrounding areas.</p>
+
+<p>Normally, such computations are automatically performed correctly as the
+result of brown objects being given low reflectance when they are modelled.
+What is interesting, however, is the possibility of having the same light -
+or tristimulus values - perceived one way in one part of an image and another
+way in another part of the image. Of course, the converse is also true:
+different tristimulus values can lead to the same perception in different
+parts of an image. Taking advantage of this opportunity requires exactly the
+same sort of global computation mentioned above.</p>
+
+<p>Consider the problem of representing a sunset. The sun and sky are very
+bright, while near objects are in deep shadow. The dynamic range of such an
+image can easily be as high as 100,000. This far exceeds the dynamic range of
+paint (about 20), printing (about 10), photographic transparencies (about
+200), CRTs (about 100), and of every other display device of which I know.
+Any normal rendering computation will produce a result only part of which can
+be displayed. That is, the display component must choose among a variety of
+unsatisfactory solutions. Centre the dynamic range of the output device on
+the sun and sky, leaving everything else black. Or centre the dynamic range
+on the shadows, leaving everything else featureless white. Or condense the
+dynamic range making the scene appear as it would viewed through fog. Or ...
+The non-existence of a satisfactory solution seems somewhat peculiar because,
+after all, human photoreceptors have a dynamic range not much greater than
+100. Thus, it turns out that our ability so `see' a sunset at all depends on
+adaptation. When we look into the shadow our eyes adapt to low light levels
+and we can see a tonal range appropriate to the objects in shadow; when we
+look into the sky our eyes adapt to high light levels and we see a tonal
+range appropriate to strongly illuminated objects. Adaptation is not
+instantaneous, and we have all had the experience of waiting a few seconds
+after moving our gaze from light to dark, or dark to light until the
+appropriate adaptive state is present, thereby allowing effective vision.
+Similarly, it is impossible to see small objects superimposed on the sky
+other than as silhouettes because out visual system automatically adapts to
+the light level that covers most of the field of view.</p>
+
+<p>Mechanisms that do not have a model of human adaptation, such as
+photography or physically-based rendering, have no straightforward method of
+capturing these visual changes, although we will mention a few ad hoc
+approaches to this problem in the next few paragraphs. On the other hand, a
+human renderer, a painter, for example, does the right thing more or less
+automatically. It works like this. He or she looks at part of the scene to be
+rendered, having the state of adaptation that any observer would have when
+looking at that part of the scene. In order to paint, attention is then
+transferred to the painting, and the state of adaptation changes to one
+appropriate to a visual system viewing the painting. The remembered
+appearance is then transferred to the painting. The result is to place on the
+painting an appearance similar to that which would be seen by an observer
+viewing the scene, but with the state of adaptation of the observer when
+viewing the painting. It seems that this effect then demands a model of
+visual adaptation. Indeed, an suitably detailed model of adaptation, applied
+both to the model to be rendered and to the displayed image, might do the
+trick. Unfortunately, visual science cannot present us with a suitable model,
+and it is even unclear that human vision is sufficiently standardized for
+such a model to be possible. (The effectiveness of artists such as Claude de
+Lorraine, Turner, or Magritte might argue that such a model does indeed
+exist, or possibly not, depending on how you judge their success.)</p>
+
+<p>What is the effect of following the artist's practice? Locally, the
+contrast is veridical; but over longer distances there will be tonal changes.
+Specifically, leaves and branches of a tree seen against the background of
+the sky are as black as possible. But the same photometric levels, seen in
+shadow, are painted much lighter, taking into account the difference in
+adaptation when visual attention is directed to dark parts of the scene.
+These different parts of the picture are joined as seamlessly as possible.
+Interestingly, the necessity of presenting some level of detail at so many
+levels of brightness, and of joining those levels together, is very complex,
+and detailed viewing of paintings by the artists mentioned in the preceding
+paragraph reveals many inconsistencies in lighting. Some of these
+inconsistencies, to be sure, are just mistakes, but many are genuinely
+necessary in order to solve problems of presentation.</p>
+
+<p>Fang (<a
+href="http://web.archive.org/web/20050212174134/http://www.cgl.uwaterloo.ca/%7Ewbcowan/colour/emse.html#Fang,%201993">1993</a>)
+described a different method for image representation.  Using this technique
+an image is described as a collection of two- dimensional polygons. The
+rendering process uses any lighting model to produce a colour specification
+for each polygon, most likely by computing a colour specification for each
+vertex, and assuming that shading of some kind will be employed. Now, it is
+possible that some of these colour specifications lie outside the gamut of
+the display device. How does this representation allow this problem to be
+handled in a controlled manner? Associated with an image is a description of
+its two-dimensional geometry - the polygons - and a hierarchy of constraints.
+At the highest level of the hierarchy is a constraint that forces each pixel
+to have a colour specification lying within the gamut of the display device. 
+At the second level of the hierarchy is a constraint that holds constant the
+contrast at the edges of each pair of adjoining polygons. At the third level
+of the hierarchy is a constraint that tries to maintain polygons close to the
+computed colour. The effect of the highest level constraint is to ensure that
+every colour is displayable. The effect of the other two constraints is to
+ensure that contrast, a local property, takes precedence over absolute
+colour, a global property. The result is an image quite similar to the images
+created by painters when they render high contrast scenes. The medium appears
+to have available higher contrast than is actually present.</p>
+
+<p>Fang's algorithm fits fairly well into the computational pipeline
+discussed in section I, but with part of what is usually considered to be
+rendering - scan conversion - put into the display stage. It is this change
+in the boundary between rendering and displaying that presents the necessity
+of the unusual image representation. Note, however, that in putting scan
+conversion into the display stage - which means, in effect, that it is more
+likely to be handled by the display hardware than by the modelling/rendering
+software - we are recapitulating the effect of PostScript on printing
+software. PostScript provides an image representation that is
+resolution-independent, so that the same PostScript file can be displayed on
+devices that vary in resolution. Of course, scan conversion must be delayed
+until the device resolution is known, which makes it natural to scan convert
+in the display phase of imaging. In the same way Fang postpones the actual
+assignment of colour values until the colour gamut of the display device is
+known. However, in order to take advantage of the effects discussed in this
+section it is advantageous to maintain the image in a representation in which
+scan conversion has not yet taken place.</p>
+
+<p>It is natural to ask if something similar can be done with images that are
+more conventional in representation, methods that allow scan conversion to
+take place before the colour gamut of the display device is known. In fact,
+two methods exist. Neither is new; both can be implemented efficiently
+compared to the constraint solution required by Fang. The first has long been
+known in printing as `unsharp masking' (<a
+href="http://web.archive.org/web/20050212174134/http://www.cgl.uwaterloo.ca/%7Ewbcowan/colour/emse.html#Yule,%201967">Yule,
+1967</a>). It involves subtracting from the image a blurred version of
+itself. This technique reduces contrast on all length scales longer than the
+size of the blurring, while maintaining contrast at shorter length scales.
+Digital implementation is easy, and might be able to vary the length scale
+from one part of the image to another. This would alleviate the main weakness
+of unsharp masking as normally practiced, processing the image with a filter
+having a length scale that is the same even though length scales vary from
+one part of the image to another.</p>
+
+<p>The second has long been used in the photographic community, where it is
+called dodging. When a photographic transparency has information that cannot
+be displayed within the dynamic range of the photographic paper on which it
+is to be printed, the photographer can intervene in the exposure and
+development of the paper so that different tone reproduction curves (Lamming
+and Rhodes, 1988) are used in different parts of the image. Note that this
+process is extremely interactive as performed by photographers; all the
+technical details of each process are guided by image contents. It is also
+possible, though less common, to light and expose the original scene knowing
+that dodging will later be used to produce the final image.</p>
+
+<p>Recently, Tumblin and Rushmeier (1993) demonstrated a method for
+post-processing images that has similar effects to dodging. While it provides
+substantial improvement for certain types of problem image, its results seems
+inferior to those produced in the printing and photographic industries. One
+might hypothesize that the limitation lies within its inability to provide
+interaction between image content and display processing, about which more is
+discussed below. In this respect a `less rendered' representation, like that
+of Fang provides scope for higher level interaction with the image without
+requiring user intervention.</p>
+
+<h3>2. Perception is active</h3>
+
+<p>Elementary books on visual perception often describe the human eye as
+being `like a camera', with an aperture, the pupil, that controls the amount
+of light on the image plane, the retina, which is overlaid by a
+photosensitive surface, the photoreceptors. This is true enough, as far as it
+goes, but can be seriously misleading. The difference that is omitted from
+the above description - the camera has a shutter, but the eye receives light
+continuously - is actually very significant. It means that a camera captures
+a single image, and that the process of deciding what the image should
+contain - where the camera is pointed, how it is focussed, and so on - is
+decoupled from the acquisition of the image, which occurs with the variables
+that control the image contents completely static.</p>
+
+<p>The human eye, on the other hand, appears to have no shutter, either
+optically or neurally. Thus, the most natural model to describe the
+excitation of the visual system is a set of photoreceptors, each providing a
+continuous excitation signal to the brain. This input drives a continuously
+modulated output signal that, among other things, controls head position and
+direction of gaze - and so the image that lies on the retina. Thus, it may be
+significantly more natural to consider the visual system as a feedback
+control system, with the current visual input being one important factor that
+controls future visual input. Some aspects of this control are voluntary
+(conscious); others are involuntary. A model like this is not so natural for
+photography for two reasons. First, the intelligence that positions the
+camera is not part of the camera. Second, there is a very slow link between
+image acquisition, which diminishes the influence of present input on future
+input. Vision systems including actuators, an important current topic in
+artificial intelligence, is one attempt to come to grips with the first
+issue. The use of video and polaroid cameras for quick proofing is an attempt
+within the photographic community to handle the second.</p>
+
+<p>The feedback control model of vision fits well with ideas like `active
+perception', as advocated by Rock (1983). The idea of active perception is
+that the organism actively seeks the information that answers relevant
+questions, and is not simply the interpreter of sense input that arrives from
+the environment. How does a perception model based on active perception
+influence imaging? Let's start by considering how the third dimension is
+normally perceived. When the head position and direction of gaze are held
+constant there are a variety of cues that can be used to infer information
+about depth: occlusion, binocular disparity, relative size, and so on. When
+head position and gaze direction are allowed to vary a variety of new depth
+cues: particularly motion parallax. All these depth cues are useful for
+determining distances in depth, which allow absolute positioning in depth and
+orientation of objects and parts of objects. These aspects of depth are
+addressed in a growing body of computer graphics and virtual reality research
+(For example, Ware, ????.)</p>
+
+<p>There is, however, another aspect of viewpoint motion that has received
+less attention. Many physical objects have what might be called `degenerate
+viewpoints', which are viewpoints from which the projection of the object has
+qualitative features that are not present when the object is projected with
+respect to general viewpoints. For example, a cube, isolated in space and
+viewed from a general viewpoint, has three visible sides. From one set of
+degenerate viewpoints only a single side is visible in projection, and it is
+impossible to determine whether the projected object is a cube or a square or
+a variety of other shapes. In the absence of other cues an observer will
+assume the object to be a square when it is seen from such degenerate
+viewpoints, just because it is a more general solution. (A square looks like
+a square from more viewpoints than does a cube. ) Thus, it is important to
+avoid degenerate viewpoints when rendering.</p>
+
+<p>Note that important information can be provided by the existence of a
+degenerate viewpoint in an image. There is a set of degenerate viewpoints
+from which a cube has two sides visible, neither of which are the top or
+bottom. If a ground plane is implied this degenerate viewpoint implies
+significant information about the size of the cube. (Unless contradictory
+information is given observers will assume the view point to be at eye
+level.)</p>
+
+<p>How does an artist allow for observers who implicitly assume that
+viewpoints are generic, which amounts to saying that the results of any
+non-generic viewpoint are assumed to be properties of the object rather than
+of the viewpoint? Obviously, veridical perception requires the artist to find
+a generic viewpoint for each object presented. This requirement is obviously
+easy to fulfill for a single object, only a small number of possible
+viewpoints are excluded. A second object, however, excludes a further set of
+possible viewpoints, not necessarily correlated with the first set. And so
+on, as the number of objects in the scene multiplies. (Note that the more
+complex an object the more excluded viewpoints, so this argument is
+independent of how the scene is broken down into objects and parts of
+objects.) Before long it is no longer possible to fulfill the pictorial
+object of the image, and obey the complete set of viewpoint constraints. What
+can be done?</p>
+
+<p>First, note that this discussion explicitly pushes the choice of
+view-point into the realm of rendering; the modeller can no longer choose the
+view-point without consideration for the effect of the choice on the rendered
+image. Second, observe that these considerations apply very differently to
+animation than they do to static imagery, because animation explicitly
+contains multiple view-points because of changes in camera position. The
+extra freedom associated with animation makes the description of constraints
+too difficult for the present discussion.</p>
+
+<p>The artist has two possible strategies for dealing with static images,
+which are normally combined. The first is determining a hierarchy of
+importance among the objects. It is obvious that some objects must have
+geometry that is perceived correctly, while others are more tolerant of
+ambiguity. Judgements of this kind, of course, interact strongly with
+artistic objectives; currently no method exists for communicating them to a
+renderer. But even when the set of important constraints on view-point is
+thus reduced there may still be no possible view-point that allows an
+adequate rendering. This makes possible a second strategy, rendering
+different objects from different viewpoints.  The result can be disambiguated
+object geometry, but at the cost of geometric inconsistency. Again the
+benefit of geometric disambiguation compared to the cost of inconsistency is
+a matter of artistic judgement, and no method exists for communicating it to
+a renderer. In addition, the inclusion of multiple view-points in a single
+image correctly represents the perception of an observer faced with the
+three-dimensional object being represented. In the usual case that the
+present view-point does not resolve important ambiguities the observer
+changes . And if there is no position that provides an adequately generic
+view-point the observer mentally integrates the results of viewing the object
+from several different view-points.</p>
+
+<p>Another way that active perception influences vision is through relative
+colour judgements. The phenomena of contrast and adaptation are known to make
+important contributions to colour appearance and colour constancy. (See <a
+href="http://web.archive.org/web/20050212174134/http://www.cgl.uwaterloo.ca/%7Ewbcowan/colour/emse.html#Boynton,%201979">Boynton,
+1979</a>, for example.) They play a role when viewing natural scenes and when
+viewing displayed imagery. There is also another effect that is likely to be
+important for displayed imagery, involving reference of some kind to the
+gamut of the display medium. Consider the following example. Early colour
+television displays had a red phosphor that was predominantly short
+wavelength.  In isolation its colour would probably be described as orange,
+not red. When fire trucks were part of an image their colour could be no more
+red than the colour of the phosphor. Yet that colour tended to be
+satisfactory, presumably because the viewer knew that the displayed colour
+was indeed the colour closest to fire truck colour of all colours available
+in the gamut. Colour relationships, not just to the colours present on the
+screen, but to all colours that ever appeared on the screen were important in
+making the colour satisfactory.</p>
+
+<p>Later, the red phosphor was improved, moving to a longer wavelength. At
+that point what was the `right' way to display old programs. Simplicity would
+suggest showing the same RGB values, but then the fire trucks would change
+colour to be now the reddest colour available in the new gamut. Colorimetric
+precision would suggest recalculating the colours to keep tristimulus values
+the same, regardless of the  change in phosphor. Which is right? Intuition,
+and experience, suggests that it depends on what you want the rebroadcasted
+program to look like. To make it look as good as possible display the old RGB
+values; to make it look like period television display the old tristimulus
+values. Knowing the new colour gamut, the viewer will actively interpret the
+missing red colours producing either the experience of poor colour rendition
+or a period effect. What happens in reality depends on consistency with other
+cues.</p>
+
+<p>Here, active interpretation of perceptual input makes it necessary to make
+what seem like modelling judgements in the display phase of image creation.
+Yet the modeller is almost always absent when display occurs for computer
+graphic imagery. In the fire truck example, above, `modelling' turns out to
+be a cooperative process. Some colour decisions were made when the original
+production was done; others were deferred to a person who had creative
+responsibility when the original was reproduced. In computer- mediated image
+creation we would like to have image display completely under machine
+control. One solution is to have the machine act creatively; a more likely
+solution is for the modeller to leave behind `hints', like those used in font
+rendering,</p>
+
+<p>Considering hints more abstractly, they make a statement about the image
+that expands what is available in the usual representation of the image,
+offering additional information that is used when creating the function that
+maps the image from its device- independent representation into an
+appropriate device-relative representation. Thus, they contain important
+image invariants that should be preserved in the display process, but that
+are not adequately specified in the explicit representation. We should expect
+these invariants, as they are better understood, to migrate into an improved
+representation. From time to time substantial changes in representation must
+be made to accommodate information that has previously not been
+representable. Recent research in reflective image representations is based
+on the notion that reflective descriptions of rendered images contain a
+richer set of invariants than current representations, which are based on
+emitted light, and are thereby illuminant-dependent.</p>
+
+<p>A final interesting effect of active perception occurs when we view the
+screens of CRTs. In all but the darkest rooms there are many reflections from
+objects in the environment of the CRT, usually including an image of the
+user. These reflections are much more apparent in photographs of CRTs than
+they are in normal viewing. Why? It is usually the case that the user's
+attention is focussed on a small part of the screen of the CRT.  A variety of
+head positions are possible for viewing this portion of the screen, and one
+is chosen that moves reflections away from the area of interest. When
+attention is focussed on a different portion of the screen, head position
+unconsciously moves to get reflections well away from the new location. These
+movements, which are undertaken reflexively, are not possible with a
+photograph. The photographed reflection rests stubbornly in the same location
+regardless of head motions. Defeating this response raises the
+attention-catching potential of the reflection, because a mechanism,
+head-motion, that previously sorted visual input into useful classes, images
+to be regarded, reflections to be ignored, is no longer available.</p>
+
+<h3>3. Perception solves problems</h3>
+
+<p>In the previous section perceptual systems are described as active. This
+activity is goal-directed, which means that these systems are not passively
+observing the environment, but are actively looking in the environment for
+information that solves a problem or answers a question. Often, more than one
+strategy is available to solve a problem in which case the observer chooses
+one that works given the available stimulus and context. As a concrete
+example consider the perception of black and white.</p>
+
+<p>Encountering a surface that appears to be achromatic, which means `of the
+same colour as the perceived illuminant', observers often need to know
+whether the surface is black or white. What aspects of the stimulus control
+this judgement, or make such a judgement possible? The obvious, and immediate
+answer is that if the surface is very bright it is perceived as white; if
+it's very dark it is perceived as black; and if it's in between it's
+perceived as grey. This simple response works most of the time.</p>
+
+<p>Thinking a little more deeply we should recognize that terms like `very
+light' or `very dark' are not so simple. Their meanings include a qualifier
+like `compared to other objects in the visual environment'. If there is doubt
+or ambiguity when applying the test in the previous paragraph, the judgement
+can be made more carefully, with the qualifier taken into account.</p>
+
+<p>Such a judgement may still be incorrect if illumination is not uniform.
+Under such conditions a brightly illuminated black area may actually reflect
+more light than a dimly illuminated white area. A large body of
+psychophysical data studying such judgements show that human observers are
+almost always successful in interpreting lighting effects correctly, and
+determine which surfaces reflect almost no incident light, labelling them as
+black, and which surfaces reflect almost all incident light, labelling them
+as white.</p>
+
+<p>Now, however, as a fourth level of difficulty, suppose we deliberately
+remove the observer's ability to make judgements about illumination. Is it
+possible for the observer to discriminate a brightly illuminated black
+surface from a dimly illuminated white one? Asking this question we discover
+yet another method that observers can, and do, use in telling white from
+black. For white surfaces have highlights that are only a little bit brighter
+than the remainder of the surface, while black surfaces have highlights that
+are very much brighter than the remainder of the surface. Even light
+reflected from dust particles on the surface are enough to allow an observer
+to make this judgement.</p>
+
+<p>We now have four methods an observer can use to discriminate black from
+white. Do they exhaust the possibilities? Probably not. As Gibson (<a
+href="http://web.archive.org/web/20050212174134/http://www.cgl.uwaterloo.ca/%7Ewbcowan/colour/emse.html#Gibson,%201966">1966</a>)
+suggests, if there is information in the light field that can be used to make
+the judgement, the observer can probably learn to extract it, subject only to
+very low level receptoral limitations.</p>
+
+<p>This example has an important lesson for computer graphics. When creating
+a modelling system the user can be expected to want to make an object black.
+To do so it is necessary to have control over many more things than might be
+expected. First, there is the brightness of light emitted from the object.
+Then there is the reflectance of the object. In addition there is the overall
+pattern illumination. And finally, there is the surface texture of the
+object. The blackest object is one that is dark, in an area of illumination
+where there are also some bright objects, and with noticeable highlights on
+its surface. And if, as suggested above, there are as yet unknown
+characteristics that are perceived as being black, those too should be
+controllable.</p>
+
+<p>Note that the above prescription for `blackness' is one that would be used
+by a designer who wishes to make a physical object, a watch strap, for
+example, look black. When designing physical objects it is impossible to
+control in advance the visual environment in which they will appear, so a
+robustly-designed object should share all possible cues for blackness. More
+freedom exists when creating images, but this freedom is often known only
+when final rendering takes place. Somehow the rendering system must know
+enough about the semantics of the image to compensate for accidental effects
+that occur during rendering. `Hints', suggested above are a crude way of
+doing so. More likely, a different, and richer, image representation is
+needed.</p>
+
+<p>On intuitive grounds alone it is obvious that the different available
+methods for choosing between white and black differ in strength, or
+importance, and that when they conflict with one another a situation-specific
+dominance hierarchy must exist. An example of this exists between picture and
+sound when movie film is projected in a theatre. What is perceived to be the
+source of the sound? Temporal coincidence between moving lips and the sound
+of human speech suggests that there is only a single phenomenon, and the
+viewer must choose between visual localization cues, which locate the origin
+of the sound on the screen, in front of the viewer, and audio localization
+cues, which locate the origin of the sound to the side, the position of the
+speakers.</p>
+
+<p>In the theatre the visual cue dominates, but this domination is easily
+disrupted. As little as 100 milliseconds of desynchronization between sound
+and picture breaks the integrity of the phenomenon, and the origin of the
+sound moves off the screen to the location of the speakers. The precise
+parameters of this effect are very stimulus dependent, another example, of an
+extraneous (modelling) feature that should be incorporated into the rendering
+and display parts of the image creation process.</p>
+
+<p>The examples I have given of the problem-solving nature of perception are
+by no means exhaustive. In fact, a catalogue of problem-solving strategies
+sufficiently comprehensive to drive a deterministic rendering process based
+on `hinted' intentions captured during modelling is pretty-well
+inconceivable, not to mention the creation of hint semantics rich enough
+unambiguously to denote design intentions. As an alternate approach I will
+look briefly at the practice of artists, who approach image creation from a
+perspective that does not differentiate among modelling, rendering and
+displaying.</p>
+<hr>
+
+<p></p>
+
+<h2>V. Three things we know about the practice of artists</h2>
+
+<p>The practice of artists is even less well-understood and codified than the
+behaviour of the very complex systems humans use for perceiving the world.
+The following few paragraphs attempt to do no more than discuss several rules
+of thumb I have observed, and which are pretty well intuitively obvious, with
+the intention of showing that they are important to consider when rendering
+and displaying images. They form the basis of a general argument that the
+artistic practice of complete integration of modelling, rendering and
+displaying has important lessons about how image representations must become
+richer, or the phases of image creation less distinct. To be fair, however,
+since this material is much less well explored this material exists more to
+show things that we might know in the future, than things that we know
+today.</p>
+
+<h3>1. Art abstracts</h3>
+
+<p>A work of art, whether literary, musical or visual, is organized around a
+small number of themes, and in this respect it differs from a randomly taken
+snapshot of reality. The artist avoids the infeasible cost of putting all
+real things into the work by using the theme to eliminate irrelevant aspects
+of objects that comprise the work. Thus, the details that are presented are
+expected by a reader listener or viewer to cohere around a theme, to
+contribute to the `story' that's being told. As a result the artist should
+and does expect the observer to pay attention to every detail: if a tree has
+detailed bark then the bark, and probably some aspect of the detail itself,
+is significant, and the observer should plan to explore whatever detail is
+presented.</p>
+
+<p>Thus, the rendering system must make decisions about what to render or
+what to display affect the quality of a work, not as a display of virtuosity,
+as is common in computer graphics today, but knowing that the choice will be
+interpreted semantically by viewers. The importance of doing so is most
+easily seen by observing the practice of photographers.</p>
+
+<p>Many interesting examples of the abstracting process, and its contribution
+to the rendering choices of artists are to be found in Renaissance art. For
+example, in Sassetti's, Saint Francis Giving his Cloak to the Poor Man, (<a
+href="http://web.archive.org/web/20050212174134/http://www.cgl.uwaterloo.ca/%7Ewbcowan/colour/emse.html#Hall,%201992">Hall,
+1992</a>, Plate 4) the cloak is painted using a specific pigment,
+ultramarine, which was very expensive. The choice of the pigment, which might
+be considered as a concern of either the rendering or display stage of image
+creation, was affected by the high cost of the pigment at the time the
+painting was made, reinforcing the painter's theme, that something valuable
+was being presented. To be specific, a property of rendering or display, was
+in this case very properly part of colour choices made when the image was
+composed. This interaction is the rule in the practice of artists.</p>
+
+<h3>2. The Ultimate Product is Two-dimensional</h3>
+
+<p>Artists are aware, at the time an image is composed exactly what will be
+the ultimate product, and particularly in what medium it will be
+displayed.</p>
+
+<p>Photography is probably the artistic medium closest in spirit to
+photorealistic rendering. In creating a photograph, the photographer arranges
+the objects to be photographed, chooses the position intensity and colour of
+the illumination, and positions the camera at a specific view-point. Then,
+the composition complete, the camera exposes the film, a process in which
+optical physics is respected completely. Development of the film, and the
+production of a print from the exposed transparency offers an opportunity to
+fine-tune the composition, but not to make any substantial adjustment. (<a
+href="http://web.archive.org/web/20050212174134/http://www.cgl.uwaterloo.ca/%7Ewbcowan/colour/emse.html#Evans,%201959">Evans,
+1959</a>)</p>
+
+<p>Each compositional activity is inter-related with all the others. The
+focus of this inter-relationship is the ultimate two- dimensional projection
+that goes onto the film. Many non-obvious aspects of the rendering process
+also affect the composition: the transfer characteristics of the film,
+optical characteristics of the camera lens, and so on. Furthermore,
+opportunities exist during development to compensate for some of these
+factors, making the overall process even more complicated. Two aspects of
+this process are important for the practice of rendering. First, aspects of
+the compositional process are part of rendering as image creation is done in
+computer graphics. Thus, the modeller, conceived as the photographer of an
+imaginary scene, needs to have control over aspects of the rendering process
+as part of modelling. This implies, as has been mentioned several times
+above, that it be possible to encode information that directs rendering in
+addition to the usual geometric and colour information contained in the
+output of the model. And since different rendering methods, like ray-tracing
+and radiosity, operate in substantially different ways it is necessary to
+have available a vocabulary describing rendering that is at a high enough
+level of abstraction that directives written relative to concepts encoded in
+the vocabulary should be interpretable in terms of any rendering method.</p>
+
+<p>Second, and contradictory to the first point, the decision to change some
+part of the photographic process, film lens, etc., often requires a corollary
+decision to change some part of the model. For example, a higher contrast
+film makes shadows more prominent, and often requires the geometric
+rearrangement of objects in the model so that contours at the edges of
+objects are not confused with illumination contours caused by shadows. It is
+not the case that the photographer corrects a defective composition when the
+film changes, but that the relative quality of different compositions depends
+on the film type. Thus, it is not possible to define, by analogy with
+software engineering, a waterfall method for image creation. Changes in
+downstream activities, like rendering and display, require complementary
+changes in upstream activities like modelling.</p>
+
+<h3>3. Artists See Opportunities, not Limitations</h3>
+
+<p>The most important thing we can learn from artists, which largely subsumes
+the two points above, is to look in the algorithms of rendering and the
+properties of display media for expressive opportunities rather than
+expressive limitations. The result of changing stance in this way is more
+profound than is immediately obvious. Consider the problem of limited colour
+gamuts, as it appears in image reproduction. Realistic rendering produces a
+set of colour specifications that are to be displayed. Often some of these
+colour specifications lie outside the set of colours displayable on the
+output device, its colour gamut. We respond by looking for methods of
+transforming the set of rendered colours so as to lose as little as possible
+from the `exact', `as rendered' image. (Ferwerda et al. (<a
+href="http://web.archive.org/web/20050212174134/http://www.cgl.uwaterloo.ca/%7Ewbcowan/colour/emse.html#Ferwerda%20et%20al.,%201996">1996</a>)
+is a recent example showing how far it is possible to go in looking for
+perceptual processes that might be common to most observers.) The practice of
+artists looks instead for representational possibilities in the colour gamut
+of the device to be used, with the model chosen in such a way as to exploit
+those capabilities. The consequence, of course, is that neither modelling nor
+rendering can be performed without a complete knowledge of the display
+medium. I will return to the implications of this conclusion after giving a
+few peculiar examples of how artists and designers exploit their knowledge of
+the output medium.</p>
+
+<p>Consider asking an artist to create a still-life to be photographed. When
+at the fruit store choosing a lemon, for example, to be part of the
+composition, the artist/modeller does not choose a lemon that is near the
+centre of the distribution of all lemons, but one that is at an extreme, with
+the yellowest possible colour, and as close as possible to the `ideal' lemon
+shape. This does not conform to psychological models of perception that
+suggest that a lemon is most recognizable when it is most like the average
+lemon, but to models that suggest that there is a prototypical lemon, and
+that this prototypical lemon is exaggerated compared to real lemons. Why
+might this exaggeration be important? The actual lemon has properties of
+touch and smell, and a three dimensional shape that will be only imperfectly
+represented in the two-dimensional image. The lemon to be imaged is chosen so
+that the imaged qualities, outline shape, colour, visual texture, and so on,
+are exaggerated compared to a typical lemon. It is safe to assume that the
+artist/modeller knows when choosing the lemon to be photographed, exactly
+which properties will be available in the ultimate display medium and chooses
+the lemon accordingly. This hypothesis is confirmed when the still- life is
+illuminated and the camera positioned. The orientation of the lemon, which
+affects the colour and outline, since neither is the same from different
+points of view, is changed for each new arrangement of light and
+view-point.</p>
+
+<p>Similar affects can be noticed if observers are allowed to vary the colour
+within the two-dimensional outline of a well-known object, such as a banana,
+so as to make the colour the right one for that object. Consistent colour
+shifts are produced from the colour of the real object, consistent, that is,
+across observers so that different observers vary the colour in the same
+direction away from the colour of the real object, and across objects so that
+different objects are varied in colour so as to choose colours that are more
+extreme in hue and saturation than the colours of real objects. These results
+suggest that observers are, like the artist/modellers of the previous
+paragraph, choosing colours that in some way compensate for a shortfall of
+characteristics in other dimensions of the representation. The systematic
+behaviour of different observers provides the possibility that an
+observer-independent `hinting language' might be definable, as suggested
+several times already in this document.</p>
+
+<p>Finally, an interesting practical example exists when photographing colour
+CRTs. The red primary on a colour CRT is usually not strong enough for the
+best rendition of reds. When viewing the CRT observers seem to compensate for
+this shortfall without too much difficulty, but the red colours are often
+objectionably desaturated when slides are made by photographing a CRT.
+Presumably observers are not taking into account the fact that the photograph
+is of a CRT, and are expecting instead the colour gamut that is available in
+transparency film. Thus, reds look undesirably washed out. By using
+Kodachrome slide film, which substantially enhances red, the film distortion
+negates the CRT distortion producing reds that `look correct'. Note carefully
+that this case is indeed paradoxical, in that we are actually piling one
+falsehood on top of another to compensate for an incompleteness in human
+perception, its inability to comprehend properly that the photograph is of an
+object with an unusual colour gamut. This example, like the one immediately
+above, is totally ad hoc, in the sense that the solution is not the result of
+a specific model, but just a fix that happens to work for a particular
+problem. Yet, it holds out hope that future research will be able to find
+enough order in the process that we will be able to create a hinting language
+that allows modellers to encode robust directions for rendering and
+displaying software that we will in the future be able to provide more
+satisfactory rendering.</p>
+<hr>
+
+<p></p>
+
+<h2>VI. Conclusions</h2>
+
+<p>This paper examines the physical, perceptual and artistic implications of
+assuming that the process of image creation can be broken down into discrete,
+separable parts. It comes to the conclusion that they cannot be so separated
+without unacceptable compromise in the quality of the final result. On the
+other hand it is obvious that the separation is extremely useful from a
+technical point of view, and becoming more so as images spread more widely.
+Image creators, for example, who place the results of their work on the World
+Wide Web, have very little control indeed of the display software that will
+be used. Furthermore, partially rendered images are becoming more widespread,
+further diminishing this loss of control. Stringent specifications on what
+the receiver of an image specification can do with it are unlikely to be
+successful, yet it is obvious that richer image representations must be
+discovered so that it is possible, at least, for image receiving software to
+do a job that is more in accord with the intentions of the image creator. We
+have suggested the possibility of defining a hinting system, like that
+currently used for rendering fonts. The examples given in this paper are not
+intended to provide a comprehensive basis on which such a system can be
+defined, but suggestions for cases that must be handled by any such
+system.</p>
+
+<p>Furthermore, we consider it essential that attention be paid to the
+efforts of practicing artists who are attempting to generalize their own
+practice so as to be able to produce works of art that are able to survive in
+a medium like the World Wide Web, where rendering and displaying are not
+standardized.</p>
+<hr>
+
+<p></p>
+
+<h2>VII. Acknowledgements</h2>
+
+<p>An earlier form of this work was presented as part of the Conference on
+Imaging organized at Ecole Des Mines in St-Etienne, December, 1995, by
+Bernard Peroche and Claude Piche. I would like to thank them for the
+invitation to give this talk, which gave me the impetus to put into a unified
+form thoughts that occur scattered throughout many theses and seminars.</p>
+
+<p>I have been fortunate to be able to discuss these matters with a variety
+of visual artists and perceptual psychologists, and have learned much from
+these discussions, not to mention the challenges my students have often faced
+with determination, to put ideas like the ones discussed here into algorithms
+or heuristics.</p>
+<hr>
+
+<p></p>
+
+<h2>VIII. References</h2>
+
+<p><a
+href="http://web.archive.org/web/20050212174134/http://www.cgl.uwaterloo.ca/%7Ewbcowan/colour/emse.html"
+name="Bell, 1996"></a><a
+href="http://web.archive.org/web/20050212174134/http://www.cgl.uwaterloo.ca/%7Eiebell">I.
+E. Bell</a>, 1996, Spline-Based Tools for Conventional and reflective Image
+Reproduction, Ph.D. Thesis, Department of Computer Science, University of
+Waterloo.</p>
+
+<p><a
+href="http://web.archive.org/web/20050212174134/http://www.cgl.uwaterloo.ca/%7Ewbcowan/colour/emse.html"
+name="Boynton, 1979">R. M. Boynton, 1979, Human Color Vision, New York: Holt
+Rinehart &amp; Winston.</a></p>
+
+<p>colour sets</p>
+
+<p>dithering</p>
+
+<p><a
+href="http://web.archive.org/web/20050212174134/http://www.cgl.uwaterloo.ca/%7Ewbcowan/colour/emse.html"
+name="Evans, 1959">R. M. Evans, 1959, Eye, Film, and Camera in Color
+Photography, New York: Wiley.</a></p>
+
+<p><a
+href="http://web.archive.org/web/20050212174134/http://www.cgl.uwaterloo.ca/%7Ewbcowan/colour/emse.html"
+name="Fang, 1993">L. Fang, 1993, Constraint-based Rendering for Scenes with
+High Dynamic Ranges, M.Math. Thesis, Department of Computer Science,
+University of Waterloo.</a></p>
+
+<p><a
+href="http://web.archive.org/web/20050212174134/http://www.cgl.uwaterloo.ca/%7Ewbcowan/colour/emse.html"
+name="Ferwerda et al., 1996">J. A. Ferwerda, S. N. Pattanaik, P. Shirley
+&amp; D. P. Greenberg, 1996, `A Model of Visual Adaptation for Realistic
+Image Synthesis', Proceedings of SIGGRAPH'96, 249-258.</a></p>
+
+<p><a
+href="http://web.archive.org/web/20050212174134/http://www.cgl.uwaterloo.ca/%7Ewbcowan/colour/emse.html"
+name="Gibson, 1966">J. J. Gibson, 1966, The Senses Considered as Perceptual
+Systems, Boston: Houghton Mifflin.</a></p>
+
+<p>half-toning</p>
+
+<p><a
+href="http://web.archive.org/web/20050212174134/http://www.cgl.uwaterloo.ca/%7Ewbcowan/colour/emse.html"
+name="Hall, 1992">M. B. Hall, 1992, Color and Meaning: Practice and Theory in
+Renaissance Painting, Cambridge: Cambridge University Press.</a></p>
+
+<p><a
+href="http://web.archive.org/web/20050212174134/http://www.cgl.uwaterloo.ca/%7Ewbcowan/colour/emse.html"
+name="Lamming and Rhodes, 1988">M. G. Lamming and W. L. Rhodes, 1988, Towards
+WYSIWYG Color: A Simplified Method for Improving the Printed Appearance of
+Computer Generated Images, EDL-88-2, Xerox PARC Technical Report.</a></p>
+
+<p>I. Rock, 1983, The Logic of Perception, Cambridge: MIT Press.</p>
+
+<p><a
+href="http://web.archive.org/web/20050212174134/http://www.cgl.uwaterloo.ca/%7Ewbcowan/colour/emse.html"
+name="Stone et al., 1988">M. C. Stone, Wm Cowan and J. C. Beatty, 1988, Color
+Gamut Mapping and the Printing of Digital Color Images', ACM Transactions on
+Graphics, 7, 249-292.</a></p>
+
+<p><a
+href="http://web.archive.org/web/20050212174134/http://www.cgl.uwaterloo.ca/%7Ewbcowan/colour/emse.html"
+name="Tumblin and Rushmeier, 1993">J. Tumblin and H. Rushmeier, 1993, `Tone
+Reproduction for Realistic Images', IEEE Computer Graphics and Applications,
+13, 42-48.</a></p>
+
+<p>Ware, ????</p>
+
+<p><a
+href="http://web.archive.org/web/20050212174134/http://www.cgl.uwaterloo.ca/%7Ewbcowan/colour/emse.html"
+name="Wyszecki and Stiles, 1982">G. W. Wyszecki and W. S. Stiles, 1982, Color
+Science, second edition, New York: Wiley.</a></p>
+
+<p><a
+href="http://web.archive.org/web/20050212174134/http://www.cgl.uwaterloo.ca/%7Ewbcowan/colour/emse.html"
+name="Yule, 1967">J. A. C. Yule, 1967, Principles of Color Reproduction, New
+York:  Wiley.</a></p>
+<script language="Javascript">
+<!--
+
+// FILE ARCHIVED ON 20050212174134 AND RETRIEVED FROM THE
+// INTERNET ARCHIVE ON 20070620164239.
+// JAVASCRIPT APPENDED BY WAYBACK MACHINE, COPYRIGHT INTERNET ARCHIVE.
+// ALL OTHER CONTENT MAY ALSO BE PROTECTED BY COPYRIGHT (17 U.S.C.
+// SECTION 108(a)(3)).
+
+var sWayBackCGI = "http://web.archive.org/web/20050212174134/";
+
+function xResolveUrl(url) {
+var image = new Image();
+image.src = url;
+return image.src;
+}
+function xLateUrl(aCollection, sProp) {
+var i = 0;
+for(i = 0; i < aCollection.length; i++) {
+if (typeof(aCollection[i][sProp]) == "string") { 
+if (aCollection[i][sProp].indexOf("mailto:") == -1 &&
+aCollection[i][sProp].indexOf("javascript:") == -1) {
+if(aCollection[i][sProp].indexOf("http") == 0) {
+aCollection[i][sProp] = sWayBackCGI + aCollection[i][sProp];
+} else {
+aCollection[i][sProp] = sWayBackCGI + xResolveUrl(aCollection[i][sProp]);
+}
+}
+}
+}
+}
+
+xLateUrl(document.getElementsByTagName("IMG"),"src");
+xLateUrl(document.getElementsByTagName("A"),"href");
+xLateUrl(document.getElementsByTagName("AREA"),"href");
+xLateUrl(document.getElementsByTagName("OBJECT"),"codebase");
+xLateUrl(document.getElementsByTagName("OBJECT"),"data");
+xLateUrl(document.getElementsByTagName("APPLET"),"codebase");
+xLateUrl(document.getElementsByTagName("APPLET"),"archive");
+xLateUrl(document.getElementsByTagName("EMBED"),"src");
+xLateUrl(document.getElementsByTagName("BODY"),"background");
+var forms = document.getElementsByTagName("FORM");
+if (forms) {
+var j = 0;
+for (j = 0; j < forms.length; j++) {
+f = forms[j];
+if (typeof(f.action)  == "string") {
+if(typeof(f.method)  == "string") {
+if(typeof(f.method) != "post") {
+f.action = sWayBackCGI + f.action;
+}
+}
+}
+}
+}
+
+
+//-->
+</script>
+</body>
+</html>

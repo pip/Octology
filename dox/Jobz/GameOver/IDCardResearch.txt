@@ -1,0 +1,238 @@
+ID Card Research Summary:
+
+  *Note: Price estimates are the cheapest found rounded up a little or 
+    question marks if still undetermined.
+
+  If we want to open with inexpensive cards (ie. not smart cards with built-in
+processors or proximity cards with Radio Frequency IDs etc.), we can basically
+go with either of the older card technologies: magstripes or barcodes.
+
+  Barcodes would require $2k for a card printer, each card would cost 
+10cents, && barcode scanners would be employed around the arcade for about 
+$100 each.
+  Barcodes are much less secure than magstripes because they can be visibly 
+copied.
+
+  Magstripes would not require the $2k printer (although they could benefit
+from it to print GO logos, usernames, && other personalization onto the 
+cards).  The expenses would be a magstripe writer for $800, 
+each card would be 20cents, && readers would again be around $100 apiece.
+  Special magstripe card printers can encode the stripe && print visible 
+info on the cards at once for about $3500.
+
+
+  The future fully automated ideal seems way too expensive.  Bill-machines 
+which are also card reader/writers are only available in solution packages 
+&& I haven't been able to get estimated prices on any of those yet but I get
+the impression $50-$100k would be normal for the whole deal.  That would be 
+all the bill-machines, readers, software, etc. GO would need.  Automatic 
+turnstile entry gates would be similarly pricey at around $4k each.  Maybe 
+we'd only need 2 of those.
+
+  There are cheap turnstiles which don't lock but count clicks && can send 
+the event to a PC.  This PC could alarm if more clicks registered than cards
+recognized.  This kind should cost about $1600 while a locking one which can
+be triggered to allow passage from admin software costs about $4k.
+
+  Additionally, the general idea of putting money or time onto the cards
+is expensive.  It would be better (ie. cheaper) if the cards are merely
+identification.  They are printed (&& the magstripe gets encoded)
+only once.  From there on, the card is solely identification && the only
+equipment needed are readers which send the ID to the network database
+for account updating.  This is more secure also since people cannot
+tamper with their ID card to do anything but change their identity
+(ie. the home card hacker cannot add $1000 or 1000 hours to his card
+since the account balance is stored only in our private database).  Of 
+course this would also mean that all monetary transactions would be 
+manual so it adds employee time / expense but it's still probably much
+less than the equipment costs.
+
+Unit costs:
+                BarCode  Magstripe  PrintedMagstripe  PrintEncodeSimult
+printer           2000                2000              3500
+writer                     800         800                   
+reader             100     100         100               100
+single card           .10     .20         .20               .20
+  TOTAL           2100     900        2900              3600
+  Assuming we need 3 print/write sets, 8 readers, && 10,000 cards to start:
+printers          6000                6000             10500
+writers                   2400        2400                   
+readers            800     800         800               800
+10k cards         1000    2000        2000              2000   
+ GRAND TOTAL      7800    5200       11200             13300
+
+
+  So spend about $5k total for cheapo blank magstripes:
+    $800    x      3 = $2,400 reader/writers
+    $100    x      8 = $  800 readers
+    $  0.20 x 10,000 = $2,000 10,000 blank cards
+  or $13k total to include 3 card printer/writers for printed cards.
+
+  They always come with Windows POS software which should be sufficient.
+
+  More research could be beneficial since each of these industries is vast
+but this is what I have so far...
+
+
+
+
+Lnks:
+
+http://dir.yahoo.com/Business_and_Economy/Business_to_Business/Security/Identification_and_Authentication_Systems/
+
+
+Cawley Digital ID:
+  http://www.cawleydigitalid.com/frames.asp?Category=Complete+Systems
+1 color sys comes w/ 900 cards $2695
+additional 100 mag stripe cards / pack $20.00   @ $0.20 / card
+bulk discount at 10k cards
+
+discount printer: FP35 1500 cards/ribbon $1995
+
+both come with Windows software to do all printing
+
+
+A Photo ID:  company looks bad
+
+
+Custom Plastic Cards:
+  http://www.member-cards.com/order_CCard4.htm
+price quote on 2-sided black 15mm cards with magstripe for 1000 quantity is 
+  $0.48 / card  ... pretty high
+
+
+Plasco ID:
+  http://www.plascoid.com/ProductDetail.asp?ItemID=181
+Eltron card printer w/ mag stripe encoder: $3,225
+  http://www.plascoid.com/ProductDetail.asp?ItemID=53
+Persona C11 card printer (slow 30 seconds / card print): $1,975
+  http://www.plascoid.com/ProductDetail.asp?ItemID=194
+        C16 is $2,560   (both C11 && C16 priced w/ mag stripe encoders)
+Mag Stripe Reader: $342  Writer: $1,098
+  http://www.plascoid.com/BrowseStore.asp?CategoryID=61
+
+
+Oak Tree Data:
+  http://www.oaktreedata.com/
+Similar complete card printing systems w/ mag stripe options... maybe a bit
+    more expensive than some others above but has interesting web option:
+  http://www.oaktreedata.com/ebadge_intro.htm
+    where you can just upload images for cards && they ship within one workday
+    at $6 each card for 100+.  We can get them w/ mag stripes so we'd only 
+    need the encoders... hmm so assuming $3k for a printer && $0.20 / blank 
+    card, buying a printer is worthwhile if you need more than 500 cards.
+
+
+DataCard Group (all kinds of good smart card stuff):
+  http://www.datacard.com/
+
+
+BarCode Discount:
+  http://www.barcodediscount.com/
+Stationary scanner: $430
+  http://www.barcodediscount.com/catalog/symbol/ls9100.htm
+Hand scanner: $205
+  http://www.barcodediscount.com/catalog/symbol/ls1902.htm
+
+
+MagTek USB magstripe reader: $75
+  http://www2.nextag.com/Magtek_USB_Mini_Keyboard~55285147z3znzzz1z300164zzmainz2-htm
+
+
+ID Tech:
+  http://www.idt-net.com/
+Magstripe Reader/Writer sales rep Charlotte said ballpark $600-$800 each
+  http://www.idt-net.com/products/mag_stripe/reader.cfm
+Minimag reader: $86 each
+  http://www.cherry-elo-epson-psc-verifone-pos.com/idtech/minimag.htm
+Reader-Writer: $680
+  http://www.cherry-elo-epson-psc-verifone-pos.com/idtech/3840-stripe-reader-writer.htm
+Slidable barcode reader: $100
+  http://www.cherry-elo-epson-psc-verifone-pos.com/idtech/omni-barcode-reader.htm
+
+
+
+Turnstiles: can't find on EBay
+
+  http://directory.google.com/Top/Business/Construction_and_Maintenance/Materials_and_Supplies/Site_Construction/Stadium_Equipment/Pedestrian_Control_Devices/
+
+
+Brascon:
+  http://www.brascon.com/turnprotect.htm
+Electric Turnstile TS4-3ASSE looks good but got hung up on each call for pricing.
+
+
+Sentronic International:
+  http://www.sentronicinternational.com/
+Gatemaster: G-96 Electronic Turnstile estimate: $1800
+  http://www.sentronicinternational.com/gatemaster.html
+Monitor: waist-high barrier-free optical estimate: $3800 blank cab: $1500
+
+
+Signature Fencing: (800)569-2751 dial 1 for sales
+  http://www.signaturefencing.com/
+Game zone barricades:
+  http://www.signaturefencing.com/f_crowdstopper.html
+Polycade: $?  Rotocade: $?  
+no answer in sales 
+
+*note* we should think about whether we want little barricades for game/spectator 
+  zone separation or tall stuff with plastic/glass windows... even sound blocking
+  so the spectator zone can be much quieter than the din of entertainment noise.
+  Little ones would be easier to store, reconfigure, replace, less expensive...
+  but also easier to thwart && wouldn't block sound.  A separate room or tall 
+  windowed barricades would be the opposite.  I think the small ones would be best
+  unless we have a problem with people hopping or moving them without our notice.
+  The above rotocade seems good though... tall && probably heavy but still good.
+  There's all kinds of little metal bar ones too.  We should look into these more 
+  thoroughly later since they are not as crucial but we might be able to get a 
+  deal if we buy the turnstiles && barricades from the same place.
+
+
+Alvarado: (800)423-4143 in Chino, CA
+  http://www.alvaradomfg.com/
+Sales Rep: Jonathan Watson x311 jwatson@alvaradomfg.com
+    recommended we check out Ontario DeJaVu stripclub on Mission && Central 
+  stucco-colored bldg fully automated system they just did which prints barcode 
+  tickets from bill-machines && turnstiles scan barcodes to allow access.
+    other salesman: William Vosf
+manual counting turnstile estimate: $1600
+EDC Electronic Turnstile estimate:  I asked 4 times && he wouldn't tell me
+  http://www.alvaradomfg.com/whturnstiles.htm
+Sounds like they can help us do the whole thing.
+
+
+Perey Turnstiles: (203)301-0885 dial 2 for sales in Connecticut
+no 800 number... weird
+  http://www.turnstile.com/
+no answer in sales
+
+
+Controlled Access, Inc.: (800)942-0829  in Ohio
+  http://www.controlledaccess.com/
+Silhouette Turnstiles w/ Enduro Electronic Control Head:
+  http://www.controlledaccess.com/silhouette.html
+sales reps were not in
+
+
+
+Bill-Machines:
+  http://directory.google.com/Top/Business/Business_Services/Supplies_and_Equipment/Change_Machines/
+
+Jamex Vending Systems: (800)289-6550 in NY
+  http://www.jamexvending.com/
+Card Dispensers: $? Revalue stations: $?
+  http://www.jamexvending.com/cardvending.html
+Sales reps already went home bleh
+
+
+Standard Change-Makers, Inc.: (562)942-7188 Santa Fe Springs, CA 90670
+  http://www.standardchange.com/
+Card Systems Dispense && Revalue: 
+Sales Rep.  Jeff Kagen cell# (909)225-8984 
+  Unless it's for laundry machines, Jeff can't help but he gave me:
+Debitek: (800)332-4835 (423)894-6177 in Tennessee
+  http://www.debitek.com
+magstripe value card solutions:
+  http://www.ingenico-us.com/debitek/p_cardissuingsystems.html
+office closed for the day

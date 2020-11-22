@@ -1,0 +1,55 @@
+.citebox {
+	/* padding: 5px 5px 5px 5px; */
+	padding-left: 0px; 
+	padding-right: 0px; 
+	padding-top: 0px; 
+	padding-bottom: 0px; 
+
+	margin-bottom: 10px;
+	/* border-width: 0 0 thin thin; */
+	border-width: 0 0 0 0;
+	border-style: solid;
+	border-color: #808080;
+}
+
+.citeyear {
+	/* padding: 5px 5px 5px 5px; */
+	padding-left: 0px; 
+	padding-right: 0px; 
+	padding-top: 5px; 
+	padding-bottom: 0px; 
+
+	margin-bottom: 10px;
+	margin-left: -20pt;
+	border-width: 0 0 thin 0;
+	border-style: solid;
+	border-color: #202020;
+
+	color: #202020;
+	font-family: verdana, sans-serif; 
+	font-size: 80%; 
+	font-weight: bold;
+}
+
+.citation {
+	margin-left: 5px;
+	margin-right: 5px;
+	/* font-size: 80%; */
+}
+
+.citelinks {
+	text-align: left;
+	text-indent: 5px;
+	font-family: verdana, sans-serif; 
+	font-size: 60%; 
+	color: #101010;
+	margin-top: 3px;
+	margin-bottom: 0px;
+	padding-top: 2px;
+	padding-bottom: 2px;
+	background: #f0f0f0;
+}
+
+.citelinks A {
+	text-decoration: none;
+}

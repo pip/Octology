@@ -1,0 +1,81 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+    <head>
+      <title> The UW Computer Graphics Lab Gallery</title>
+      <meta http-equiv="Content-Type" content="text/html;charset=utf-8">
+      <link href="style.css" rel="stylesheet" type="text/css">
+      <META HTTP-EQUIV="PRAGMA" CONTENT="NO-CACHE">
+      <script type="text/javascript" src="swfobject.js"></script>
+    </head>
+    <body>
+
+    <div id="banner">
+        <div id="logo">
+          <a href="index.html"><img src="images/flamingo.png" alt="CGL" border=1 hspace=20 vspace=20 ></a>
+        </div>
+        <div id="title">
+          <img src="http://www.cgl.uwaterloo.ca/images/home/Title3.gif" alt="Computer Graphics Lab"  hspace=20 vspace=20 >
+        </div> 
+    </div>
+
+    <div id="menu">
+	<ul>
+	<li> <a href="index.html">Overview</a></li>
+	<li> <a href="people.html">People</a></li>
+	<li> <a href="project.html">Projects</a></li>
+	<li> <a href="course.html"> Courses</a></li>
+	<li> <a href="thesis.html">Theses</a></li>
+	<li> <a href="publication.html">Publications</a></li>
+	<li> <a href="poster.html">Posters</a></li>
+        <li> <b>Gallery</b></li>
+	<li> <a href="software.html">Software</a></li>
+	</ul>
+	<ul>
+	<li> <a href="Private/index.html">Info for Lab Members</a>
+	</ul>
+    </div> 
+
+<!-- END HEADER -->
+
+    <div id="content">
+        <div id="flashcontent">Gallery viewer requires JavaScript and the Flash Player. 
+          <a href="http://www.macromedia.com/go/getflashplayer/">Get Flash.</a>
+        </div>
+        <p>&nbsp;</p>
+	<script type="text/javascript">
+		var fo = new SWFObject("gallery.swf", "viewer", "100%", "100%", "8", "#181818");
+		
+		// SIMPLEVIEWER CONFIGURATION OPTIONS
+		// To use an option, uncomment it by removing the "//" at the start of the line
+		// For a description of config options, go to: 
+		// http://www.airtightinteractive.com/simpleviewer/options.html
+		
+		//fo.addVariable("xmlDataPath", "gallery.xml");
+		//fo.addVariable("firstImageIndex", "5");	
+		//fo.addVariable("langOpenImage", "Open Image in New Window");
+		//fo.addVariable("langAbout", "About");	
+		//fo.addVariable("preloaderColor", "0xFFFFFF");
+		
+		fo.write("flashcontent");	
+                //registerSWFObject(fo, "flashcontent");
+	</script>
+    </div>
+
+
+<!-- BEGIN TRAILER -->
+    <div id="footer" style="clear:both; width:100%;">
+      <br><br>
+      <hr>
+Last updated: Fri Nov 28 12:39:17 EST 2008
+<br>      <font face="Verdana, Arial, Helvetica, sans-serif" size="1">
+        <a href="http://www.uwaterloo.ca/">University of Waterloo</a> | 
+        <a href="http://www.cs.uwaterloo.ca/">School of Computer Science</a> | 
+        200 University Ave. W. | Waterloo, Ontario Canada | N2L 3G1 |
+        519.888.4567x34548 | 
+        <a href="http://www.cgl.uwaterloo.ca/">www.cgl.uwaterloo.ca</a>
+      </font>
+       <br>
+    </div>
+
+  </body>
+</html>

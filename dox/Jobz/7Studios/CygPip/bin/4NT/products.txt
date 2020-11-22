@@ -1,0 +1,696 @@
+
+                        ษอออออออออออออออออออออป
+                        บ     JP Software     บ
+                        บ Product Information บ
+                        ศอออออออออออออออออออออผ
+
+                            JP Software Inc.
+                             P.O. Box 1470
+                      E. Arlington, MA 02474, USA
+
+                             (781) 646-3975
+                           fax (781) 646-0904
+                         Email sales@jpsoft.com
+                       Web http://www.jpsoft.com/
+
+                             April 12, 1999
+
+
+This file will give you complete information on the products we sell,
+and other related items like ordering and shipping.
+
+There's a lot of information here.  Here's a QUICK SUMMARY for those in
+a hurry ...
+
+   * Already know what you want to order and need no additional
+     information?  Go right to one of our order forms:
+
+          ORDFORM.TXT         For new customers
+          UPGFORM.TXT         For current customers
+
+   * Aren't sure what our products are or which one(s) might be useful
+     to you?  See the PRODUCT OVERVIEW and NEW COPIES sections below,
+     along with our SATISFACTION GUARANTEE.
+
+   * Need to know what printed documentation you'll receive with the
+     products you order?  See DOCUMENTATION.
+
+   * Need international shipping rates?  Dealers outside the U.S.?  See
+     the file INTERNAT.TXT.
+
+   * Want to purchase our products to run on multiple systems?  Already
+     own one or more products, and need more copies so you can run them
+     on multiple systems?  See MULTI-SYSTEM LICENSES.
+
+   * Need to run scripts or batch files across a group of systems
+     without installing an updated command line?  See RUNTIME PRODUCTS.
+
+   * Own one or more JP Software products and want the latest
+     version(s)?  See UPGRADES.  Need to purchase additional products,
+     or switch products?  See ADD-ONS and CONVERSIONS.
+
+   * Need some other administrative information?  Check out CONTACTING
+     JP SOFTWARE (just below) and the sections on PAYMENT, SHIPPING, and
+     LEGAL INFORMATION near the end of the file.
+
+   * Want to know what other interesting items we sell?  See ADDITIONAL
+     PRODUCTS.
+
+Copyright and trademark notices are at the end of this file.
+
+PLEASE NOTE:  Prices listed here do not include shipping.  See SHIPPING
+below for details, and see our order form or INTERNAT.TXT for shipping
+charges.
+
+
+CONTACTING JP SOFTWARE
+----------------------
+   Often the simplest way to learn more about our products, place an
+   order, or find the latest updates is to visit our web site at
+   http://www.jpsoft.com/.
+
+   You can order most products from the dealer you or your company use
+   regularly; if your dealer does not carry the product they can order
+   it easily from JP Software.  Our products are available from software
+   vendors such as Corporate Software and Technology, Software House,
+   and Programmer's Paradise.  See the web site for a complete dealer
+   list; also see INTERNAT.TXT for dealers outside the U.S. (Dealers,
+   VARs, and consultants, please contact us for reseller pricing and
+   terms.)
+
+   If you have questions which are not answered here or on our web site,
+   need a quote, or want to contact our Sales and Customer Service
+   departments directly for any other reason, we be reached as follows:
+
+          Email orders / inquiries      sales@jpsoft.com
+          Dealer inquiries              dealers@jpsoft.com
+          Technical support             support@jpsoft.com
+          Phone orders                  (800) 368-8777 (US / Canada)
+          General phone inquiries       (781) 646-3975
+          Fax line                      (781) 646-0904
+          Support voice mail            (781) 646-0798
+
+   Our phones are normally staffed on weekdays from 8:30 AM to 5:00 PM,
+   eastern U.S. time.
+
+   Notes On Security of Electronic Orders:
+      
+      Orders placed via the electronic ordering service on our web site
+      are handled by a "secure server".  The server and the electronic
+      ordering service are managed by Digital River, a major Internet
+      commerce vendor, and are not under our control, but to the best of
+      our knowledge they transmit your order in a secure fashion, and
+      are as secure as other similar services on the Internet.  Look for
+      the security symbol displayed by your web browser to make sure you
+      have established a "secure connection" to this service when
+      placing your order.
+
+      You can transmit your order to us electronically via CompuServe
+      Mail, Internet email, or our web site.  CompuServe Mail services
+      are centrally located and generally considered to be quite secure.
+      The security of Internet email is almost entirely beyond our
+      control, though we have received email orders for years and have
+      never experienced any security problems.
+      
+      If you are still concerned about the security of electronic orders
+      please place your order by phone, fax, or mail; or send it
+      electronically, include a reliable daytime U.S. or Canadian
+      telephone number, and mark "Please call" in the credit card
+      section of the form.  We will call you for the credit card number
+      when we receive your message.  This service is not available
+      outside the U.S. and Canada.
+
+
+SATISFACTION GUARANTEE
+----------------------
+   If you are not fully satisfied with a JP Software product you may
+   return it at any time up to 90 days after purchase for a refund of
+   the full product price (shipping and rush order charges are not
+   refundable).
+
+   If you are dissatisfied with a product we sell which is not produced
+   by JP Software you may return it for a full refund if in our judgment
+   it is complete, is not damaged in any way, and is in resellable
+   condition, or a 50% refund if not.
+
+   Please contact us for a return authorization before returning any
+   product for a refund.
+
+   This satisfaction guarantee does not apply to multi-system licenses
+   for more than 10 computers, or to purchases of more than 10
+   individual copies at one time.  [Should you need to evaluate a
+   product for a larger purchase, with the option to return it if it
+   does not meet your needs, use your downloaded trial copy, or order a
+   small license first (small licenses are upgradable to larger licenses
+   with no price penalty, as described under Multi-System Licenses
+   below).]
+
+   See the LICENSE.TXT file or the printed material which came with your
+   order for the complete text of our warranty and related disclaimers,
+   which is separate from this satisfaction guarantee.
+
+
+PRODUCT OVERVIEW
+----------------
+   JP Software's award-winning products are designed to make it easier
+   to work with your computer by providing powerful, flexible, and easy
+   to use command line tools.
+
+   All six of our primary products are "command processors":  They
+   display the command prompt (for example, "C:\>" or "[C:\]"), allow
+   you to enter commands, and interpret and execute the commands you
+   type.
+
+   Your operating system comes with a command processor which performs
+   the same basic function (it's called COMMAND.COM in DOS and Windows
+   95, or CMD.EXE in OS/2 and Windows NT).  As you probably know if
+   you've used the command prompt at all, these built-in command
+   processors are very limited, out of date, and quite unfriendly.
+
+   In contrast, our products are modern tools which make the command
+   line easy and straightforward to use, rather than frustrating and
+   inefficient.  They're compatible with the traditional command
+   processors that come with your operating system, so the commands
+   you're used to work just as you'd expect.  Then we've added hundreds
+   of new features and capabilities that will make work at the command
+   prompt simple, productive, and worthwhile.
+
+   We've also created a comprehensive set of new batch file commands and
+   functions that allow batch developers to perform in a few lines what
+   used to take hundreds -- or couldn't be done at all.
+
+   If you've never used our products, you're probably reading this
+   because you downloaded a trial copy.  We encourage you to try this
+   product (or any of the others we offer!) and see if you like it.  For
+   a more detailed overview of features see Chapter 1 of the
+   "Introduction and Installation Guide", in the file <PRODNAME>.TXT
+   (i.e.  4DOS.TXT, 4NT.TXT, etc.), or our web site.  Feel free to
+   contact us with questions that come up during your evaluation.  You
+   can also purchase any product and try it out, risk-free, under our
+   full 90-day money-back satisfaction guarantee (see the previous
+   section).
+
+   All six of our products offer very similar sets of features and
+   commands.  Our goal is to make the same set of enhancements available
+   in each operating environment, so you can move easily from one to
+   another without having to limit your work, or switch tools.
+
+   Our command processors are divided into two types:  "Text Mode" and
+   "Graphical User Interface" (GUI) products.  A text mode command
+   processor is the kind you're probably used to:  It displays commands
+   and their output in a fixed font, typically with 80 columns in a line
+   and 25 lines on the screen, and offers none of the "graphical"
+   features like menus or toolbars that are common in GUI environments
+   such as Windows or OS/2.  A GUI command processor works very much
+   like a text mode product, but runs in a GUI environment and has the
+   "look and feel" appropriate to that environment.  GUI command
+   processors aren't as flexible as their text-mode counterparts in
+   handling text-mode application programs, but they often "fit" better
+   in the GUI environment.  (For a more comprehensive document on
+   choosing the right product, see our web site.)
+
+   The individual products are:
+
+      * 4DOS, our award-winning 16-bit DOS product, replaces the
+        traditional DOS command processor (COMMAND.COM) under Windows
+        95/98, MS-DOS / PC-DOS 3.0 or above, Novell DOS / OpenDOS 3.4 or
+        above, and in OS/2 DOS sessions.
+
+      * 4NT, a 32-bit Windows NT text-mode command processor, replaces
+        Windows NT's CMD.EXE under Windows NT 3.51, 4.0, and above.
+
+      * 4OS2, our 32-bit OS/2 text-mode command processor, replaces the
+        default OS/2 command processor (CMD.EXE) under OS/2 Warp 3.0,
+        Warp 4.0, and above.
+
+      * Take Command/32, our 32-bit Windows GUI command processor, runs
+        under Windows 95/98 and Windows NT 3.51, 4.0, and above.
+
+      * Take Command for OS/2 is a 32-bit OS/2 Presentation Manager GUI
+        command processor.  It runs under OS/2 Warp 3.0 and 4.0.
+
+      * Take Command/16. a 16-bit Windows 3.x GUI command processor,
+        runs under Windows 3.1 and 3.11, and Windows for Workgroups.
+
+   We also offer:
+   
+      - Product Packs and a CD which make it easy to combine products to
+        suit your needs; see the next section (NEW COPIES) for details.
+
+      - Multi-system licenses which allow you to run any product or set
+        of products on multiple systems; see MULTI-SYSTEM LICENSES
+        below.
+
+      - Runtime products which let you run scripts or batch files across
+        a group of systems without installing a complete updated command
+        line; see RUNTIME PRODUCTS below.
+
+
+NEW COPIES
+----------
+   We offer each product individually at $69.95 (includes an
+   Introduction and Installation Guide; the Reference Manual can be
+   purchased separately for $16.95).
+
+   A quick description of each product is in the previous section; for
+   more details see the documentation which came with the product you
+   downloaded, or the complete descriptions available on our web site.
+
+   Our CD and Product Packs give you a wide range of options for
+   purchasing multiple products, depending on your operating system and
+   your needs and preferences:
+      
+   >> The JP CD SUITE includes all six products for those using multiple
+      operating systems, and costs only $119.95!
+                                                                  
+      In most cases, you'll find the CD Suite offers better value than
+      any Product Pack when you are purchasing three or more of our
+      products, and many users of just two products find it more
+      convenient as well.  Also, when upgrade time comes, at current
+      prices a CD upgrade costs the same as upgrading two individual
+      products.  The CD Suite comes with complete on-line documentation
+      and both Introduction and Installation Guides; if you need
+      Reference Manuals the Reference Manual Pack is only $29.95.
+
+   >> We also offer the following packs for those who need to use two
+      complementary products on one system:
+                                                                  
+         * The Windows 95/98 Pack includes 4DOS and Take Command/32, for
+           just $99.95.
+   
+         * The Windows NT Pack includes 4NT and Take Command/32 for
+           $99.95.
+   
+         * The OS/2 Pack includes 4OS2 and 4DOS for only $99.95.
+   
+         * The Windows Pack includes 4DOS and Take Command/16, for
+           $99.95.
+
+   Finally, we offer a "Help Text Disk" for 4DOS, 4OS2, and 4NT.  This
+   disk, which is available for $19.95, contains the files you need to
+   customize our help text (for use on your own system or by others
+   within your organization who have purchased our products).  The 4DOS
+   help text includes a help compiler; the 4OS2 and 4NT help text
+   require the compiler appropriate to your operating system (e.g., from
+   the OS/2 or Windows NT Software Development Kit).  The 4DOS and 4OS2
+   help text source files are ASCII; the 4NT source file is in Microsoft
+   Word 97 format.
+
+
+MULTI-SYSTEM LICENSES
+---------------------
+   Multi-System Licenses allow you to run our enhanced command line
+   tools on multiple systems, at a substantial discount.  Larger
+   licenses are discounted even more heavily, and multi-product licenses
+   are available as well (details on both are below).
+
+   (If you need to run batch files across a group of systems without
+   installing an updated command line see the next section on RUNTIME
+   PRODUCTS.)
+
+   Some typical license configurations and prices are shown below.  For
+   larger licenses or intermediate license sizes not shown, please
+   request a specific quote on the license configuration that best meets
+   your needs.
+
+   Partial Multi-System License Price Schedule:
+
+           Number of         One         Two       JP CD
+             Systems     Product    Products       Suite
+           ---------    --------    --------    --------
+                2        $   118     $   148     $   177
+                5            266         332         399
+               10            440         550         660
+               15            580         730         880
+               20            730         910       1,090
+               25            870       1,090       1,310
+               50          1,470       1,840       2,210
+              100          2,350       2,950       3,550
+              200          3,650       4,550       5,500
+              250          4,150       5,150       6,200
+              500          6,500       8,150       9,750
+
+   Multi-system licenses may be used at any number of physical sites,
+   and on networked or stand-alone systems, as long as all support and
+   distribution are handled through a single location.
+
+   You can increase your license size at any time simply by paying the
+   increase fee, which is the difference in price between the old and
+   new licenses (if your old license is not for the current version you
+   must upgrade it when you order the increase; see UPGRADES above for
+   information).  When you place a license increase order be sure to
+   provide your serial number, and the old and new number of systems
+   licensed.  Contact us for a quote on license sizes not listed above.
+
+   Multi-system licenses include the Introduction and Installation
+   Guide(s) for the product(s) you license.  Additional Reference
+   Manuals and/or manual sets are available for all products; contact us
+   for pricing and item numbers.
+
+
+RUNTIME PRODUCTS
+----------------
+   JP Software's Runtime products are advanced scripting tools designed to
+   give IS managers, network administrators, and VARs the ability to run
+   powerful batch scripts across a wide range of platforms in corporate and
+   network environments.
+   
+   All four runtime products offer the full power of the corresponding
+   complete command line tools described above.  The only functional
+   difference between the runtime version and the complete version of
+   each product is that the runtime version can only run batch files,
+   and does not display the normal interactive command prompt (e.g.
+   "C:\>").
+
+   The runtime products are:
+   
+      4DOS Runtime:  Text-based scripting for Windows 95/98, DOS, and
+      OS/2 DOS sessions.
+   
+      4NT Runtime:  Text-based scripting for Windows NT.
+   
+      4OS2 Runtime:  Text-based scripting for OS/2 Warp.
+   
+      Take Command/32 Runtime:  GUI-based scripting for Windows 95/98 and
+      Windows NT.
+   
+   These tools are perfect when you don't want to learn a whole new
+   language, but you need a lot more than what traditional batch files
+   offer.
+
+   Some typical runtime product configurations and prices are shown
+   below.  For larger licenses or intermediate license sizes not shown,
+   please request a specific quote on the license configuration that
+   best meets your needs.
+   
+   Partial Runtime Products Price Schedule:
+   
+           Number of         One         Two         All
+             Systems     Product    Products    Products
+           ---------    --------    --------    --------
+               25        $   369    $    459    $    550
+               50            610         770         920
+              100            980       1,230       1,470
+              200          1,520       1,900       2,280
+              250          1,720       2,140       2,570
+              500          2,700       3,350       4,050
+             1000          4,150       5,200       6,250
+             2000          6,400       8,000       9,700
+             5000         11,500      14,200      17,100
+   
+   You can increase your runtime license size at any time simply by
+   paying the increase fee, which is the difference in price between the
+   old and new licenses.
+   
+   Runtime licenses may be used at any number of physical sites within your
+   organization.  They can also be used on networked or stand-alone
+   systems, as long as all support and distribution are handled through a
+   single location.
+   
+   Each runtime license includes a single-seat development license for the
+   corresponding base product, allowing the developer full access to the
+   enhanced script language along with debugging tools and the company's
+   complete interactive command line toolset.  Licenses can be customized
+   to include additional development seats at our standard multi-system
+   license rates.
+   
+   We also offer two special kinds of licenses.  Please contact us for
+   details on:
+   
+      - Use in "thin-client" environments under Microsoft's Windows
+        NT Terminal Server or Citrix Winframe / Metaframe
+        
+      - OEM licensing for VARs and developers who wish to distribute
+        products or script-based tools to multiple customers using 4DOS,
+        4NT, 4OS2, or Take Command/32 runtime scripts.
+
+
+DOCUMENTATION
+-------------
+   The printed documentation available for our products includes an
+   Introduction and Installation Guide to help you get started using the
+   software, and a Reference Manual with complete reference information.
+   There are two versions of each -- one covers the character-mode
+   products (4DOS, 4OS2, and 4NT); the other covers all three versions
+   of Take Command.
+
+   Virtually all of the information in these manuals is also included in
+   the online help for each product.  In addition, the Introduction and
+   Installation Guide is included in ASCII form with all of our
+   products.
+
+   Here's the printed documentation we ship with each product:
+
+      - New copies of 4DOS, 4OS2, 4NT, Take Command, the product packs,
+        and the JP CD Suite all come with the corresponding Introduction
+        and Installation Guide(s).  The Reference Manual(s) must be
+        purchased separately ($16.95 each, or both for $29.95).
+
+      - Multi-system licenses come with an Introduction and Installation
+        Guide for the product(s) licensed.  Reference Manuals and/or
+        additional manual sets which include the Introduction and
+        Instllation Guide and Reference Manual may be purchased (up to
+        the number of systems licensed), contact us for pricing.
+
+      - Upgrades and Add-Ons / Conversions come with the new
+        Introduction and Installation Guide(s) you need for the
+        product(s) you are upgrading.  New Reference Manuals must be
+        purchased separately ($16.95 each).
+
+   PLEASE NOTE:  If you order through our electronic delivery service
+   you'll receive an ASCII copy of the Introduction and Installation
+   Guide, and complete reference information in the online help.
+   Printed documentation is NOT included with online orders, and must be
+   purchased separately.
+   
+   Printed manuals may be ordered separately as an add-on to any product
+   you purchase electronically.  The cost is $16.95 for either Reference
+   Manual alone, or $29.95 for both; $19.95 for a Reference Manual and
+   the corresponding Introduction and Installation Guide; or $34.95 for
+   a full set containing both Reference Manuals and both Introduction
+   and Installation Guides.  (Introduction and Installation Guides are
+   not sold separately.)
+
+   ASCII copies of our reference manuals are available to blind users.
+   Contact sales@jpsoft.com for information.
+
+
+UPGRADES
+--------
+   Individual product upgrades are $34.95 for the first product, and
+   $19.95 for each additional product.  Please include your current
+   serial number for each product you are upgrading.
+
+   A JP CD Suite upgrade is $54.95 if you have the CD Suite Release 2
+   with six products, or $64.95 if you have CD Suite Release 1 with 5
+   products.  Maintenance releases of the CD Suite are $19.95.
+
+   Switching operating systems?  Not sure which operating system you'll
+   be using in the future?  Own three or more products already?  Convert
+   from your current individual product(s) to the JP CD Suite (listed on
+   the upgrade order form under Add-Ons / Conversions) and you'll
+   receive all six JP Software command line tools, including upgrades
+   for all the products you own now.  This option is just $89.95 if you
+   own one product, and $69.95 if you own two or more -- if you are
+   upgrading three or more products this means you can convert to the CD
+   Suite for the same amount you'd pay for your upgrade, or less!
+
+   Additional Upgrade Notes:
+
+      Individual product upgrade and add-on prices listed here and on
+      the upgrade order form are valid for those who own an up to date,
+      registered copy of 4DOS 5.0 or above, 4OS2 or 4NT 2.0 or above, or
+      any version of Take Command.  Upgrades from older versions (4DOS
+      4.02 and below, 4OS2 / 4NT 1.x) are an additional $10 per product.
+
+      If you have a multi-system license and it is listed in the table
+      below, you can order an upgrade at that price -- just be sure to
+      provide your serial number and the number of systems licensed with
+      your order.  If your license size is not listed, contact us for a
+      quote.  To increase your license size at the same time as you
+      upgrade you must purchase the upgrade, and also pay the
+      appropriate license increase fee; see MULTI-SYSTEM LICENSES above
+      for increase fees.
+
+         Partial Multi-System License UPGRADE Price Schedule:
+
+              Number of         One         Two       JP CD
+                Systems     Product    Products       Suite
+              ---------    --------    --------    --------
+                   2       $     45    $     66    $     69          
+                   5             80          99         111         
+                  10            133         166         199         
+                  15            176         220         264         
+                  25            263         328         394         
+                  50            440         550         665         
+                 100            710         880       1,060       
+                 250          1,240       1,550       1,860       
+                 500          1,960       2,440       2,930       
+
+
+ADD-ONS and CONVERSIONS
+-----------------------
+   We offer substantial discounts when you need to purchase an
+   additional product for use on the same system as your current JP
+   Software product(s), switch from one product to another, or upgrade
+   to the JP CD Suite with all six products.
+
+   To add a product to your current system, or switch from one product
+   to another, list the new product(s) you need on the order form; the
+   cost is only $29.95 each.
+
+   To upgrade to the JP CD Suite with all six products you'll pay just
+   $89.95 if you currently own one product, and $69.95 if you own two or
+   more.  This price includes upgrades for all products you currently
+   own.
+
+   These reduced prices are NOT valid if you need another product for
+   use on a different system (e.g., you have 4DOS on one system and want
+   to keep using it, and also put 4NT on a different system).  In that
+   case you'll need to use our standard new system prices -- see "New
+   Copies and Product Packs" above for details.
+
+
+ADDITIONAL PRODUCTS
+-------------------
+
+   These products are selected to complement JP Software's primary
+   offerings with utilities, editors, and other tools.  We use most of
+   these products ourselves, and wanted to make them available to you as
+   well.  If you need more information see the manufacturers' web sites
+   listed below (or check our web site for convenient links).
+
+     * Partition Magic (PowerQuest, $69.95):  Too much space in one hard
+       drive partition?  Too little in another?  This invaluable
+       management tool lets you resize and move partitions, and even
+       changes cluster size on the fly!  We've found it easy to use,
+       fast, reliable.  Runs under DOS, OS/2, Windows 95/98, and Windows
+       NT; supports a wide range of partition types including FAT,
+       FAT32, HPFS, NTFS, and more.  (Web site at
+       http://www.powerquest.com/)
+
+     * System Commander Deluxe (V Communications, $69.95):  This is an
+       elegant solution for the multiple operating system user who's
+       tired of "dual boot", and operating systems at war with each
+       other.  System Commander boots more than 30 operating systems,
+       including all recent and most older versions of MS-DOS, PC-DOS,
+       DR-DOS / Novell DOS, OS/2, Windows 95/98, Windows NT, Netware,
+       Linux, and many more.  It supports up to 99 boot menu choices,
+       and handles unusual problems -- like booting multiple OS's from
+       the C drive, or making the proper primary partition visible to
+       each OS -- with ease.  (Web site at http://www.v-com.com/)
+
+     * Boxer / TKO (Boxer Software, $79.95):  This award-winning text
+       editor is a fast, easy-to-use, full-featured editor you can use
+       for batch files, simple documents, and program code.  It offers
+       hundreds of advanced features ranging from cross-file search and
+       replace to color syntax highlighting for multiple file types
+       (including for JP Software batch files!), and is fully
+       reconfigurable to suit your tastes.  A "light" version of Boxer,
+       Boxer/EZ, will be shipped with each purchased copy of 4DOS 6.02.
+       This enhanced "TKO" version supports much larger files than
+       Boxer/EZ, and includes dozens of additional features.  (Web site
+       at http://www.boxersoftware.com/users/dhamel/)
+
+     * REXX is a powerful, flexible, easy to use scripting language
+       developed by IBM.  It's a perfect complement to the 4DOS, 4OS2,
+       4NT, and Take Command batch language, and excellent for
+       performing string manipulation and other more complex functions
+       in batch files.  REXX is more powerful than traditional batch
+       languages, but without the heavy technical baggage of
+       conventional programming tools.  It was specifically designed to
+       be easy to read and write, so you can get started quickly and get
+       your work done efficiently.  If you need advanced string
+       processing capabilities, or are stretching the limits of our
+       batch language, then REXX is for you!
+
+       We offer two REXX products:
+
+        - WinREXX (Enterprise Alternatives, $79.95) is a complete,
+          GUI-based REXX implementation for Windows 3.x, 95/98, and NT,
+          and is directly supported from within 4NT and Take Command.
+          Develop your WinREXX scripts using the built-in IDE, then run
+          them seamlessly from your Take Command or 4NT command line, or
+          invoke them from batch files.  (Web site at
+          http://www.winrexx.com/)
+
+        - Personal REXX (Quercus, DOS $149.95; DOS and OS/2 $169.95; DOS
+          and Windows 3.x/95/98/NT $169.95) is a complete DOS and OS/2
+          character-mode version of REXX, and can be used easily from
+          within 4DOS or 4OS2.  The OS/2 version goes beyond what's
+          available in IBM's OS/2 REXX.  (Web site at
+          http://www.quercus-sys.com/)
+
+
+PAYMENT
+-------
+   We accept credit cards issued by Mastercard (and Eurocard), Visa,
+   American Express, and Discover.
+
+   Personal checks, bank checks, and money orders must be in US funds,
+   and drawn on a US or Canadian bank.  Postal money orders in US funds
+   are also acceptable.  Sorry, we cannot accept EuroCheques (our bank
+   can't cash them).  See the next section for information on COD
+   shipments.
+
+   Cash may be sent at your own risk, and must be U.S. currency.  If you
+   do send cash we strongly recommend using Registered Mail.
+
+   Purchase Orders are accepted from established companies and
+   government agencies, on 30-day terms.  Credit references are required
+   for new customers.  Orders under $100 must be prepaid.  Contact us
+   for additional requirements before submitting a purchase order from
+   outside the U.S. and Canada.
+
+
+SHIPPING
+--------
+   Orders typically require 2 - 3 business days processing time before
+   shipment, and may take more or less depending on our order backlog.
+   Shipping and delivery times may increase significantly during peak
+   upgrade periods.
+
+   In the U.S. we ship via UPS Ground service (delivery typically 1 - 8
+   days after shipment, depending on your location), or via UPS 2-day
+   (BLue Label) service, at the rates shown on the order form.
+   Shipments to Alaska, Hawaii, and APO or FPO addresses are normally
+   sent via U.S. Priority Mail (use rates shown for UPS Ground service).
+
+   Contact us for other expedited domestic shipping options including
+   UPS overnight (Red Label), FedEx services, and other carriers.
+
+   COD shipping is normally available only for UPS shipments within the
+   U.S., and adds $6 to the UPS shipping charge shown on the order form.
+
+   Rates for shipments outside the U.S. are based on total weight.  The
+   rate table is in the file INTERNAT.TXT.
+
+   If you receive international shipments via a freight forwarder in the
+   U.S. please include both your address and the U.S. shipping address,
+   and use the U.S. rate chart on the order form.
+
+
+LEGAL INFORMATION
+-----------------
+   Copyright 1999, JP Software Inc., All Rights Reserved.
+
+   4DOS and Take Command are registered trademarks of JP Software Inc.
+   4DOS, 4OS2, and 4NT are JP Software Inc.'s trademarks for its family
+   of character-mode command processors.
+
+   JP Software, jpsoft.com, and all JP Software designs and logos are
+   also trademarks of JP Software Inc.
+
+   Other product and company names are trademarks of their respective
+   owners.
+
+   The license agreement which governs your use of our products is
+   included separately in the file LICENSE.TXT (for downloaded copies),
+   and / or on documents shipped with your order (for copies on diskette
+   or CD).
+
+   Published by JP Software Inc., P.O. Box 1470, E. Arlington, MA 02474,
+   U.S.A., phone 781-646-3975, fax 781-646-0904.
+
+   All prices and terms subject to change without notice.
+

@@ -1,0 +1,30 @@
+#!/usr/bin/perl -w
+# 24RNkce - syncdate created by Pip Stuart <Pip@CPAN.Org> to
+#   synchronize the system date/time with an authoritative web page.
+# 2do:  maybe print difference between times before && after setting
+#       setup cron to sync daily?
+
+use strict;
+
+my $data; my $year; my $mont; my $dayo; my $hour; my $minu; my $seco;
+my %mons = ('January' => '01', 'February' => '02', 'March'     => '03',
+            'April'   => '04', 'May'      => '05', 'June'      => '06',
+            'July'    => '07', 'August'   => '08', 'September' => '09',
+            'October' => '10', 'November' => '11', 'December'  => '12' );
+
+# read date site into local file
+`wget -q -O /tmp/nowdate.html http://www.time.gov/timezone.cgi?Pacific/d/-8`;
+open(DATE, "</tmp/nowdate.html"); $data = join '', <DATE>; close(DATE);
+# parse file for embedded date/time
+if($data =~ /<b>(\d+):(\d+):(\d+)<br>/i) {
+  $hour = $1; $minu = $2; $seco = $3;
+}
+if($data =~ /day, (\w+) (\d+), (\d+)<br>/i) {
+  $mont = $mons{$1}; $dayo = $2; $year = $3;
+}
+# pad DD
+$dayo = "0$dayo" if(length($dayo) == 1);
+# call `date` with proper params
+# `date` format for setting: MMDDhhmmYYYY.ss
+print "setting: date $mont$dayo$hour$minu$year.$seco\n";
+system("date $mont$dayo$hour$minu$year.$seco");

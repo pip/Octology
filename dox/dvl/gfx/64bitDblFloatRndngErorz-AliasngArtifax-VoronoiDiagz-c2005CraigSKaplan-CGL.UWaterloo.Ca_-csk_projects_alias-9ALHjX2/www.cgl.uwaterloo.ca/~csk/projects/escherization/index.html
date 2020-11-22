@@ -1,0 +1,288 @@
+<html>
+<head>
+	<title>Escherization</title>
+	<link rel="stylesheet" href="http://www.cgl.uwaterloo.ca/~csk/basic.css" type="text/css">
+</head>
+<body>
+<h1>Escherization</h1>
+
+<br>
+<center>
+<table border=0>
+	<tr>
+	<td><img border=0 width=153 height=200 src="ex/step_1.png"/></td>
+	<td><img border=0 width=135 height=200 src="ex/step_2.png"/></td>
+	<td><img border=0 width=135 height=200 src="ex/step_3.png"/></td>
+	<td><a href="ex/escher_final.jpg"><img border=0 width=200 height=200 src="ex/thumbs/escher_final.jpg"/></a></td>
+	</tr>
+</table>
+</center>
+<br>
+<br>
+
+Over his life, the Dutch graphic artist M.C. Escher created over
+a hundred ingenious tesselations in the plane.
+Some were simple and geometric, used as prototypes for more complex
+endeavors.  But in most the tiles were recognizable animal forms
+such as birds, fish and reptiles.
+The definitive reference on Escher's divisions of the plane is Doris
+Schattschneider's <em>Visions of Symmetry</em>, now in a second edition.
+A good place to view some of Escher's work online is 
+the <a href="http://www.worldofescher.com/">World of Escher</a>.
+Be sure also to check out these examples from Escher's notebook:
+<a href="http://www.kalymnos-isl.gr/dimitri/escher/Lizards_symmetry-1939.html">E25</a>,
+<a href="http://www.kalymnos-isl.gr/dimitri/escher/Butterflies-Symmetry-1938.html">E70</a>, and
+<a href="http://www.kalymnos-isl.gr/dimitri/escher/fish&boats-symmetry-1948.html">E72</a>.
+<p>
+Escher was able to discover such tilings through a combination of
+natural ability and sheer determination.  Can we automate the discovery
+of tilings by recognizable motifs?  More formally, we pose the 
+<em>Escherization problem</em>: 
+<p>
+<blockquote>
+	Given a shape <em>S</em>, find a new shape <em>T</em> such that:
+	<ol>
+	<li><em>T</em> is as close as possible to <em>S</em>; and
+	<li>Copies of <em>T</em> fit together to form a tiling of the plane.
+	</ol>
+</blockquote>
+<p>
+We have developed an algorithm that can produce reasonable solutions to
+the Escherization problem.  It is based on three large components:
+</p>
+<ul>
+	<li><b>A parameterized space of tilings.</b>  We develop a parameterization
+	    of the space of isohedral tilings, a family of tilings that 
+		can express the designs Escher created.  Every possible tile 
+		shape boils down to a sequence of real numbers.  An interactive
+		tool lets us modify these numbers in a natural way (corresponding
+		to Escher manipulating drawings by hand).  More importantly, we
+		can direct the computer to search through possible sequences of
+		numbers, trying to find good tilings by brute force.
+	</li>
+	
+	<li><b>A comparison function for shapes.</b>  We can dial up a collection
+	    of tile shapes using the parameterization above.  We need to know
+		how well each of these tiles approximates the goal shape provided
+		by the user.  We use a metric from the computer vision 
+		literature that efficiently finds the L<sup>2</sup> distance 
+		between two polygons.  Our objective then becomes to locate the
+		particular tile shape that compares most favourably to the goal
+		shape.
+	</li>
+
+	<li><b>An optimization algorithm.</b>  We need a meaningful strategy
+	    for sorting through the large shape of possible tile shapes for 
+		the best one (the one that's closest to the goal shape).  We use
+		a simulated annealing algorithm from <em>Numerical Recipes</em>.
+		When suitably tuned, it tends to find good tile shapes without 
+		getting stuck in objectionable local minima.
+	</li>
+</ul>
+
+<p>
+Here are some images produced using Escherization.  Click on each
+one for a full-size version.
+</p>
+
+<center>
+<table border=0>
+	<tr>
+	<td valign=top align=center width=256><a href="mono/a_plague_of_frogs.jpg"><img width=250 height=250 src="mono/thumbs/a_plague_of_frogs.jpg"/></a><br><em>A Plague of Frogs</em></td>
+	<td valign=top align=center width=256><a href="mono/dogs_dogs_everywhere.jpg"><img width=250 height=250 src="mono/thumbs/dogs_dogs_everywhere.jpg"/></a><br><em>Dogs; Dogs Everywhere</em></td>
+	</tr>
+	<tr>
+	<td valign=top align=center width=256><a href="mono/tea-sselation.jpg"><img width=250 height=250 src="mono/thumbs/tea-sselation.jpg"/></a><br><em>Tea-ssellation</em></td>
+	<td valign=top align=center width=256><a href="mono/tux-ture_mapping.jpg"><img width=250 height=249 src="mono/thumbs/tux-ture_mapping.jpg"/></a><br><em>Tux-ture Mapping</em></td>
+	</tr>
+	<tr>
+	<td valign=top align=center width=256><a href="mono/twisted_sisters.jpg"><img width=250 height=250 src="mono/thumbs/twisted_sisters.jpg"/></a><br><em>Twisted Sisters</em></td>
+	<td valign=top align=center width=256><a href="mono/wiener_dog_art.jpg"><img width=250 height=250 src="mono/thumbs/wiener_dog_art.jpg"/></a><br><em>Wiener Dog Art</em></td>
+	</tr>
+</table>
+</center>
+
+<h2>Dihedral Escherization</h2>
+
+<p>
+Escher also created a number of dihedral tilings: designs featuring
+two different shapes.  He was fond of these designs, since with more
+than one shape it was possible to tell a story, to have the shapes
+complement each other somehow.
+</p>
+<p>
+The Escherization problem can be adapted in an obvious way to two 
+goal shapes.  We can also extend the space of tilings by including
+in the parameterization a path that splits an isohedral tile shape into
+two pieces.  We compare the two pieces to the goal shapes and run
+the optimization as before, attempting to minimize the maximum of 
+the two comparisons.
+</p>
+
+<center>
+<table border=0>
+	<tr>
+	<td valign=top align=center width=256><a href="di/godelbach.jpg"><img width=250 height=250 src="di/thumbs/godelbach.jpg"/></a><br><em>G&ouml;del, Bach (Braided): An Eternal Escherization</em></td>
+	<td valign=top align=center width=256><a href="di/isohedral_chickens.jpg"><img width=250 height=250 src="di/thumbs/isohedral_chickens.jpg"/></a><br><em>Funky Chickens</em></td>
+	</tr>
+	<tr>
+	<td valign=top align=center width=256><a href="di/owl_pussycat.jpg"><img width=250 height=250 src="di/thumbs/owl_pussycat.jpg"/></a><br><em>The Owl and the Pussycat</em></td>
+	<td valign=top align=center width=256><a href="di/pen_rose.jpg"><img width=250 height=250 src="di/thumbs/pen_rose.jpg"/></a><br><em>Pen/Rose Tiling</em></td>
+	</tr>
+	<tr>
+	<td valign=top align=center width=256><a href="di/rembrandt.jpg"><img width=250 height=250 src="di/thumbs/rembrandt.jpg"/></a><br><em>Rembrandt and Mrs. van Rijn</em></td>
+	<td valign=top align=center width=256><a href="di/strange_tractors.jpg"><img width=250 height=250 src="di/thumbs/strange_tractors.jpg"/></a><br><em>Strange 'Tractors</em></td>
+	</tr>
+</table>
+</center>
+
+<p>
+Dihedral Escherization can also be exploited to create designs in 
+the style of Escher's 
+<em><a href="http://www.worldofescher.com/gallery/jpgs/P8L.jpg">Sky and 
+Water</a></em>.  We need to restrict 
+the search to a narrower class of possible tiling types (what Dress
+calls &ldquo;Heaven and Hell Patterns&rdquo;).  Once the desired
+tiling has been discovered the rest of the process is fairly easy,
+since we already have an association between a realistic, user-supplied
+goal shape and an abstract, more geometric tile shape.  We just need
+to morph between those two extremes.  Here's one example, based on
+<em>Rembrandt and Mrs. van Rijn</em> above.
+</p>
+
+<center>
+	<a href="di/skywater.png"><img width=155 height=300 src="di/thumbs/skywater.png"/></a>
+</center>
+
+<h2>Aperiodic Escherization</h2>
+
+<p>
+The Penrose tilings P2 (kites and darts) and P3 (thin and thick rhombs)
+can also be parameterized and fed to the Escherization system.  It's
+much harder to discover satisfying results, because of the idiosyncratic
+shapes of the Penrose tiles.  It's exciting to be able to produce these
+aperiodic pictures &ndash; Penrose and Escher were friends, but sadly
+Escher passed away before Penrose discovered P2 and P3.  Penrose has
+asked what sorts of designs Escher would have been able to create from
+these tilings.
+</p>
+
+
+
+<center>
+<table border=0>
+	<tr>
+	<td valign=top align=center width=256><a href="penrose/a_walk_in_the_park.jpg"><img width=250 height=250 src="penrose/thumbs/a_walk_in_the_park.jpg"/></a><br><em>A Walk in the Park</em></td>
+	<td valign=top align=center width=256><a href="penrose/penrose_chickens.jpg"><img width=250 height=250 src="penrose/thumbs/penrose_chickens.jpg"/></a><br><em>Busby Berkeley Chickens</em></td>
+	</tr>
+	<tr>
+	<td valign=top align=center width=256><a href="penrose/pentalateral_commission.png"><img width=250 height=250 src="penrose/thumbs/pentalateral_commission.jpg"/></a><br><em>The Pentalateral Commission</em></td>
+	<td></td>
+	</tr>
+</table>
+</center>
+
+<p>
+You might enjoy playing with the edges of Penrose tiles to see whether
+you can produce recognizable shapes.  I've created a
+<a href="http://www.cgl.uwaterloo.ca/~csk/software/penrose/">Java applet</a>
+that lets you do so interactively.
+
+<h2>Non-Euclidean Escherization</h2>
+
+<p>
+Escher made four wonderful <em>Circle Limit</em> patterns, designs
+based on non-Euclidean geometry.  Escher didn't have the mathematical 
+background to manipulate hyperbolic patterns symbolically, but he certainly
+had the intuition necessary to create pictures of them.
+</p>
+<p>
+Our Escherization algorithm cannot easily be translated into non-Euclidean
+geometry, for deep reasons having to do with the notion of shape, as used
+in the shape comparison metric.  However, for some isohedral tiling types
+it is possible to transfer the <em>output</em> of Escherization from 
+the Euclidean plane to the hyperbolic plane or to the surface of a sphere.
+The process is a kind of non-linear warp of a piece of the Escherized tiling.
+</p>
+
+<center>
+<table border=0>
+	<tr>
+	<td colspan=2 valign=top align=center><a href="noneuc/circle_limit_5.jpg"><img width=250 height=250 src="noneuc/thumbs/circle_limit_5.jpg"/></a><br><em>Circle Limit V</em></td>
+	</tr>
+	<tr>
+	<td valign=top align=center width=256><a href="noneuc/hteapots_45c.jpg"><img width=250 height=250 src="noneuc/thumbs/hteapots_45c.jpg"/></a><br><em>Hyperbolic Teapots I</em></td>
+	<td valign=top align=center width=256><a href="noneuc/hteapots_46c.jpg"><img width=250 height=250 src="noneuc/thumbs/hteapots_46c.jpg"/></a><br><em>Hyperbolic Teapots II</em></td>
+	</tr>
+	<tr>
+	<td colspan=2 valign=top align=center><a href="noneuc/sphere_and_teapot.jpg"><img width=450 height=250 src="noneuc/thumbs/sphere_and_teapot.jpg"/></a><br><em>Spheres on a Teapot, Teapots on a Sphere</em></td>
+	</tr>
+</table>
+</center>
+
+
+
+<h2>Papers</h2>
+
+<ul>
+	<li><a href="http://www.cgl.uwaterloo.ca/~csk/papers/siggraph2000.html">
+		Escherization</a>.  SIGGRAPH 2000.
+	</li>
+	<li><a href="http://www.cgl.uwaterloo.ca/~csk/phd/">
+		Computer Graphics and Geometric Ornamental Design</a>.  PhD thesis,
+		2002.  See especially Chapter 4.
+	</li>
+	<li><a href="http://www.cgl.uwaterloo.ca/~csk/papers/gi2004.html">
+		Dihedral Escherization</a>.  GI 2004.
+	</li>
+</ul>
+
+<h2>Software</h2>
+
+The SIGGRAPH 2000 paper mentions
+a couple of files used by the system to describe the isohedral
+tilings.  Copies of these are available here, with a few updates.
+<p>
+<dl>
+	<dt><a href="isohedral.ih.txt">isohedral.ih</a> 
+		(last updated: May 8th, 2002)
+	<dd>This file contains specifications for the representation and
+	    drawing of the 81 isohedral tilings realizable by unmarked tiles.
+		Among other things, it provides the incidence symbol, a simple
+		colouring, and a set of rules for deriving aspect transform
+		matrices.
+	<p>
+	<dt><a href="geo.py.txt">geo.py</a> and <a href="params.py.txt">params.py</a>
+	<dd>These two files together provide a script for navigating the 
+	    tiling vertex parameterizations of the isohedral tiling types.
+		params.py contains a function for each unique parameterization,
+		and can be used as a source from which to build your own library
+		for parameterizing legal isohedral tiling polygons.
+</dl>
+
+<p>
+I have also made a Java applet that allows you to explore the space of
+Penrose tile shapes interactively.  It's a fun way to play with this
+rather mysterious tiling.  Most of the effort related to aperiodic tilings
+seems to be related to their combinatorial properties, without considering
+the actual shapes that can be produced.  You can try the applet
+<a href="http://www.cgl.uwaterloo.ca/~csk/software/penrose">here</a>.
+</p>
+
+<!-- <h2>Other resources</h2> -->
+
+<font size=-1>
+All final tilings are copyright 2000 by Craig S. Kaplan.  You are
+free to use them for <b>personal</b> and <b>non-commercial</b> purposes.
+Please check with me about any other uses.
+</font>
+
+<hr>
+	<table width="100%" border=0 cellpadding=0 cellspacing=0><tr>
+		<td align=left><a href="http://www.cgl.uwaterloo.ca/~csk/">
+			Craig S. Kaplan</a></td>
+	<td align=right><em>Last updated: Saturday, 03-Feb-2007 23:18:05 EST</em>
+	</td></tr></table>
+
+</body>
+</HTML>

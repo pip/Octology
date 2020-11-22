@@ -1,0 +1,5 @@
+Both monitors were originally at Brightness: 50, Contrast: 80, ColorTemp: User Mode but HDMI left vs. DVI right make colors way off so trying to balance with
+                            left Brightness: 98, Contrast: 16, ColorTemp: User Mode
+                           right Brightness: 32, Contrast: 98, ColorTemp: Cool
+No settings yet seem to balance dark left with bright right so probably need to revert to both DVI && restore original settings above to achieve balance again.
+Too bad that HDMI actually looks best but matched dual displays are probably more important;

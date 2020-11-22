@@ -1,0 +1,24 @@
+video of talk is at HTTPS://YouTube.Com/watch?v=DzRYGudfu0s with description at HTTP://YAPCNA.Org/yn2016/talk/6590
+Brad Lhotsky works for HTTPS://CraigsList.Org/about/craigslist_is_hiring BradLhotsky@GMail.Com HTTPS://GitHub.Com/reyjrar
+do one thing well (Unix Philosophy)
+use Perl diamond <> oper8or to flexibly accept input from file or STDIN
+allow Expect to manage oper8ion && redirection to sort or other commandz (composability)
+make columnar output && have option to affect output record sepR8or (or at least give plugin interface)
+not so much talking about Curses captive interfacez
+have example uses: show how tool is used, expected argumentz, output when run
+consider uploading to App:: namespace on CPAN
+study Getopt::Long::Descriptive (support --help, --manual, GitHub Wiki, write blog post... also support --color or --no-color)
+      Pod::Usage (maybe better for gener8ing manual page info than above)
+      Term::ReadLine (mainly for command history navig8ion?)
+      Term::ANSIColor (maybe check for color options in ~/.gitconfig or allow themez && don't make color only determiner of important info)
+      File::Basename
+      File::Spec
+      File::Path
+      File::Temp
+      App::Cmd
+      Dist::Zilla
+      Path::Tiny
+      Pod::Weaver
+                 ::Section::Collect::FromOther (use POD from other modulez)
+      CLI::Helpers inspired by Damian Conway's IO::Prompt has a lot of input && output optionz
+make --yes on command line or prompt for confirm8ion before doing any destructive actionz

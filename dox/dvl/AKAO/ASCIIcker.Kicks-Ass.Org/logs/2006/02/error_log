@@ -1,0 +1,40 @@
+[Mon Feb 27 18:26:52 2006] [catalyst] [debug] Debug messages enabled
+[Mon Feb 27 18:26:52 2006] [catalyst] [debug] Loaded plugins:
+.------------------------------------------------------------------------------.
+| Catalyst::Plugin::DefaultEnd 0.03                                            |
+| Catalyst::Plugin::Static::Simple 0.13                                        |
+| Catalyst::Plugin::SubRequest 0.10                                            |
+'------------------------------------------------------------------------------'
+
+[Mon Feb 27 18:26:52 2006] [catalyst] [debug] Loaded dispatcher "Catalyst::Dispatcher"
+[Mon Feb 27 18:26:52 2006] [catalyst] [debug] Loaded engine "Catalyst::Engine::Apache::MP13"
+[Mon Feb 27 18:26:52 2006] [catalyst] [debug] Found home "/usr/lib/perl5/site_perl/5.8.6/WWW/ASCIIcker"
+[Mon Feb 27 18:26:52 2006] [catalyst] [debug] Loaded components:
+.-------------------------------------------------------------------+----------.
+| Class                                                             | Type     |
++-------------------------------------------------------------------+----------+
+| WWW::ASCIIcker::Controller::Root                                  | instance |
+| WWW::ASCIIcker::Controller::X                                     | instance |
+| WWW::ASCIIcker::View::TT                                          | instance |
+'-------------------------------------------------------------------+----------'
+
+[Mon Feb 27 18:26:52 2006] [catalyst] [debug] Loaded Private actions:
+.----------------------+----------------------------------------+--------------.
+| Private              | Class                                  | Method       |
++----------------------+----------------------------------------+--------------+
+| /default             | WWW::ASCIIcker                         | default      |
+| /end                 | WWW::ASCIIcker                         | end          |
+| /x/index             | WWW::ASCIIcker::Controller::X          | index        |
+| /root/welcome_messa- | WWW::ASCIIcker::Controller::Root       | welcome_mes- |
+| ge                   |                                        | sage         |
+'----------------------+----------------------------------------+--------------'
+
+[Mon Feb 27 18:26:52 2006] [catalyst] [debug] Loaded Path actions:
+.--------------------------------------+---------------------------------------.
+| Path                                 | Private                               |
++--------------------------------------+---------------------------------------+
+| /welcome_message                     | /root/welcome_message                 |
+| /x/index.html                        | /x/index                              |
+'--------------------------------------+---------------------------------------'
+
+[Mon Feb 27 18:26:52 2006] [catalyst] [info] WWW::ASCIIcker powered by Catalyst 5.64

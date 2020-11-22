@@ -1,0 +1,106 @@
+IP-MobileApp-LorenAnKarlo-callNotes-99U9Brw.txt (Wed Sep 30 09:11:53:58 2009 PDT)
+L&&K had some issues wi NDA that they expect to sort out later today or soon.
+L:Focus on hi-lvl tech for this conversation.
+Need2bld prototyp showing we can gather at least focus-grp data. Prolly need to dcide platform.
+K:IF needs2work with momz in suprmarkt co lyn?
+L:Not4prototyp. Pip, want to describe your platform findings?
+...
+K:Recommends iPhone or maybNokia(sinc bkgrnded apz can be a prob as lackng from iPhon)
+L:Let's mv2featurz.Questions2Sasha on func:
+  0)UseCases? OJ mom in stor, input, prod-featurz, usability?
+    AlsoAdmn use wi bkend ovrsyt
+  1)Connectivity? Replac usr mobl devicz? iPodTouch? Just4Trial?
+  2)Tied2DvicDistro or anApp? (&& if so, avail in AppStor)
+  3)ForPitch purpz,doez instald-base matr?
+
+KKilayko@GMail.Com
+
+--actual e-mail--
+from:Pip   Stuart  <PipStuart@GMail.Com>
+to  :Loren Kaiser  <Loren@Kai-Tech.Com>,
+     Karlo Kilayko <KKilayko@GMail.Com>
+date:Wed, Sep 30, 2009 at 10:55am
+subject:IP MobileApp Wed. 9am Morning Meeting Call Notes
+
+Loren called Pip, then conference called in Karlo. (Loren and Karlo
+were driving, Pip was at his computer)
+Pip and Karlo were introduced.
+Loren and Karlo discussed some minor issues they have yet to resolve
+with NDAs, expect them to sort out soon.
+<dialog paraphrased>
+L:So let's try to focus on high-level technology issues for this
+conversation. We need to build a prototype which shows that we can at
+least gather this focus-group data. We probably need to decide on the
+platform first.
+K:Does the interface need to work with overwhelmed moms in the
+supermarket check-out line?
+L:Not for the prototype. Pip, please describe your platform research findings.
+P:Apple's iPhone seemed too restrictive for this prototyping phase
+when compared with alternative platforms that favor more open-source
+collaboration on the Mobile Operating Systems and development
+tool-sets, such as:
+
+ * Open Hardware Alliance's (OHA's) Android (which started within,
+and was subsequently opened by, Google)
+
+ * N900 on Maemo (by Nokia)
+
+ * Pixi on WebOS (by Palm)
+
+Others which may warrant consideration are MobLin, Ubuntu Mobile
+Edition, Access Linux Platform (ALP), ...
+
+K:I recommend iPhone, or maybe Nokia since I have connections there
+and the lack of support for backgrounding applications may be a
+crucial hindrance of iPhone.
+L:Let's move to features. Pip, please take notes (since Karlo and I
+are driving) listing questions on functionality that we all have for
+Sasha.
+
+ 1a) What are our primary "front-end" use-cases? Is this for a
+saddled mom trying to juggle phoning her OJ choice along with too many
+other things? What sorts of input, product-features, and usability can
+be designated by these representative use-cases?
+
+ 1b) What are our primary "back-end" use-cases? How will the tests be
+specified, administered, deployed, monitored, modified, audited,
+aggregated, summarized, and presented from the operator's view-point?
+
+ 2) How integral is instant connectivity? Are we expecting to replace
+every end-user's existing mobile phone? Could a sometimes-connected
+iPodTouch version be a good alternative to support (maybe just during
+trials)?
+
+ 3) Is this program tied to a specific device that must be
+distributed pre-configured or is it an application available in an
+AppStore?
+
+ 4) For pitch purposes, how significant is the installed-base of the
+target hardware platform that we prototype on?
+
+P:I think we should like to have a rough list of priorities as to the
+significance of many aspects that should go into platform selection
+beyond installed-base, like:
+
+ * ease of development
+
+ * ease of deployment
+
+ * ease of demonstration or presentation
+
+ * impact of demonstration (how impressive some platforms potentially
+fancy features could be)
+
+ * ease of administration
+
+L:Thanks. That seems good for now. Pip, please take down Karlo's
+e-mail address and send these notes to each of us so that I can
+discuss them with Sasha and get back to you two later. Feel free to
+carry on any discussions or link-sharing directly together.
+KP:Thanks.
+L:I'll arrange another meeting for us again soon.
+KP:Okay.
+LKP:Bye.
+<disconnections>
+
+P.S. Please feel free to add any additional details I may have missed. -Pip

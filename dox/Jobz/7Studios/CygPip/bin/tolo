@@ -1,0 +1,1 @@
+#!/usr/bin/perl -e rename($_, lc) foreach @ARGV;

@@ -1,0 +1,450 @@
+42N8l0i - xmlcheat.txt created by Pip Stuart <Pip@CPAN.Org> to help 
+  remember key XML terminology, ideas, && syntax.
+XML             == eXtensible Markup Language.
+XML is not actually a Markup Language but a meta-language or a Markup
+  Language Toolkit which helps you build any real markup language.
+"well formed"   == parses correctly because every <open> has a proper 
+  close (</open>) && inside elements [<>&'"] are &(lt|gt|amp|apos|quot);
+"valid"         == both well formed && a proper implementation of a 
+  particular document model (eg. valid XHTML or valid SVG document).
+The most common ways to define markup languages in XML are: DTDs && Schemas.
+"DTD"           == Document Type Definition is a collection of rules, or
+  declarations, describing elements && other markup objects.  Element
+  declarations define content model.
+"content model" == what an element can contain && in what order.
+Schema          == a way to specify patterns for data (which is absent from
+  DTDs) (e.g., define a date field that only accepts YYYY-MM-DD data).
+XPath / XPointer / XLink == an XML link language
+XInclude        == imports files
+XQuery          == XML database interface
+CSS             == Cascading Style Sheets are good for presenting XML 
+  documents to the Web.
+XSL             == eXtensible Style Language is good for presenting XML
+  in highly detailed ways for print quality.
+RDF             == Resource Description Framework is a language for 
+  summarizing && showing relationships between documents.
+XSLT            == eXtensible Style Language for Transformations lets
+  you convert XML documents into any other format.
+SAX             == Simple API for XML is the easy programming interface.
+DOM             == Document Object Model lets you move around an object
+  tree for complex processing.
+XSL-FO          == Formatting Objects are an intermediate step in turning
+  XML into printable formats like PDF.
+Declarations are either at the top of a document or in a DTD but never
+  inside of elements.  They set parameters for the parsing session && 
+  define rules for validation or declare special replacement entities.
+Processing Instructions are software-specific directives for convenience.
+Comments are like html <!-- comment text -->.
+CDATA sections are special regions where the parser suspends tag recognition.
+Entity References are commands telling the parser to insert predefined text.
+  &EntityRefs; don't use <angle bracket syntax/>.
+"XML Document"  == logical object rather than a physical one.  Could be many
+  files which together are complete (ie. well-formed) XML.
+XML Documents have 2 parts: Document Prolog && Document Element
+Document Prolog contains metadata (Prolog is optional).
+Document Element (aka. Root Element) contains all other elements && content.
+Prolog has 2 parts: XML Declaration (for basic parsing) && document type 
+  declaration (for complex parsing). *NOTE* DTdeclaration is not the same as
+  the acronym DTDefinition.
+Sample XML declaration: <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+  Optional but must always appear in 1st line if provided.  'standalone' only
+  refers to whether external DTDs need to be loaded for parsing this document
+  but content entities could still reference other files ... they just can't
+  have parse Definition info.
+Sample DOCTYPE declaration: 
+  <!DOCTYPE profile SYSTEM "/home/pip/profile.dtd" [ <!ENTITY myname "Pip"> ]>
+Internal Subset is any number of optional ENTITY declarations inside square
+  brackets [].
+External Subset is DOCTYPE && SYSTEM fields && values like barebones:
+  <!DOCTYPE usr SYSTEM "/usr/local/share/xml/dtd/usr.dtd">
+DTD identifier (SYSTEM) can also be 'PUBLIC' if there's some constant DTD
+  resource but you still have to specify a backup SYSTEM value so PUBLIC
+  doesn't seem very practical.
+Sample NameSpace declaration (sample URLs don't really work): 
+  <clist 
+    xmlns:ml="http://Pip.Ax9.Org/MuchLove/"
+    xmlns:dj="http://Pip.Ax9.Org/DumbJock/"
+  > ... <ml:french_fry/></clist>
+element attributes:
+  xml:space="preserve" keeps whitespace intact
+&#nnn; or &#xnn; are numeric references to unicode characters
+normally &EntityRefs; are themselves parsed but if they are not text or XML,
+  they should be specified as unparsed with the NDATA keyword.
+Sample Unparsed Entity: <!ENTITY mypic SYSTEM "pix/pip.png" NDATA PNG>
+  where 'PNG' is the mandatory Notation Identifier that follows 'NDATA'.
+Sample CDATA section: <![CDATA[ unparsed character data with <, >, && & ]]>
+Sample Processing Instruction (PI): <?target data?>
+Dictionary      == a simple 1-to-1 mapping of properties to values where each
+  property has a name (aka. key) as a unique identifier.
+Sample Dictionary (within complete XML file):
+  <?xml version="1.0" encoding="UTF-8"?>
+  <!DOCTYPE plist SYSTEM "file://localhost/usr/share/dtd/PropertyList.dtd">
+  <plist version="0.9">
+    <dict>
+      <!--  KEY                     VALUE  -->
+      <key>BothSides</key>         <false/>
+      <key>Level</key>             <integer>1</integer>
+      <key>PlayerHasWhite</key>    <true/>
+      <key>SpeechRecognition</key> <false/>
+    </dict>
+  </plist>
+Narrative Documents == text meant to be read by people rather than puters.
+  Websites, books, journals, articles, essays, etc. are NDs.
+Flow                == stream of text within an ND which is to be read 
+  continuously from start to finish.
+Section             == hierarchical divisions of NDs which organize a 
+  document by topics, usually with titles (called "heads").  Sections can
+  be stored in separate files so many people can work on them in parallel
+  && they can be joined into a coherent ND via &EntityRefs;.  Sections
+  only hold text data.
+Sample Section Scheme:
+  <section>
+    <head>Major Section</head>
+    <subsection>
+      <head>Minor Section</head>
+      <paragraph>some text...</paragraph>
+    </subsection>
+    <subsection>
+      <head>Another Minor Section</head>
+      <paragraph>some more text...</paragraph>
+    </subsection>
+  </section>
+Block               == element type which contains a flow && is typically
+  formatted as a rectangular region separated from other blocks by space
+  above && below.  Paragraphs, section heads, && list items are blocks.
+  Blocks hold mixed content (text data && elements).
+Inline Elements     == elements inside blocks which mark words or phrases
+  for special formatting.  Emphasis, glossary terms, && important names
+  would be designated as Inline Elements.
+Metadata            == info about a document that is not part of the flow.
+  Author name, copyright date, publisher, revision history, ISBN, etc..
+Linked Objects      == bookmarks in a document.
+Cross Reference     == element referring to a section or object somewhere
+  else in the document.
+Invisible Marker    == posts within a document with no function other than
+  to designate a location to assist in index generation, page number
+  calculation, or hyperlinking.
+DocBook             == the best markup language for technical documentation.
+  DocBook is large && has a steep learning curve with many highly 
+  specialized elements.
+SVG                 == Scalable Vector Graphics.
+CML                 == Chemical Markup Language.
+MoDL                == Molecular Dynamics Language.
+  http://Violet.CSA.IISC.ERNet.IN/~modl/
+  Good example of xml graphs describing atom nodes && bond links.
+VRML                == Virtual Reality Markup Language.
+  http://Web3D.Org/
+MathML              == Mathematics Markup Language.
+  http://WWW.DesSci.Com/en/support/tutorials/mathml/default.htm
+RSS                 == Rich Site Summary (or Really Simple Syndication)
+  describes content on web sites for customizable portals treating topics
+  as "channels" for "content aggregation".  "Pull" && "Push" (aka. Publish
+  && Subscribe) models.
+MIME                == Multipurpose Internet Mail Extensions used as the
+  format of the content type (eg. audio/oggvorbis) in channel element
+  enclosures.
+Schemas perform validation.
+PSVI                == Post Schema Validation Infoset includes info about
+  datatypes && structure for further processing.
+Validation happens on at least 4 levels:
+  Structure     : use && placement of markup elements && attributes
+  DataTyping    : patterns of character data (eg. numbers, dates, text)
+  Integrity     : status of links between nodes && resources
+  Business Rules: miscellaneous tests (eg. spelling, checksum, etc.)
+DTDs are rotten schemas because they don't support namespaces && can't accept
+  children out of order but are good because of their simplicity.
+Sample DTD:
+  <!-- Census Markup Language (use <census-record> as the document element) -->
+  <!ELEMENT census-record (date, taker, address, person+)>
+  <!ATTLIST census-record taker   CDATA   #REQUIRED>
+  <!ELEMENT date (year, month, day)> <!-- date the info was collected -->
+  <!ELEMENT year       #PCDATA>
+  <!ELEMENT month      #PCDATA>
+  <!ELEMENT day        #PCDATA>
+  <!ELEMENT address (street, city, county, country, postalcode)> <!--addinfo-->
+  <!ELEMENT street    (#PCDATA | unit)*>
+  <!ELEMENT city       #PCDATA>
+  <!ELEMENT county     #PCDATA>
+  <!ELEMENT country    #PCDATA>
+  <!ELEMENT postalcode #PCDATA>
+  <!ELEMENT unit       #PCDATA>
+  <!ELEMENT person     (name, age, gender)> <!-- person information -->
+  <!ELEMENT name       (first, last, (junior | senior)?)>
+  <!ELEMENT age        #PCDATA>
+  <!ELEMENT gender     #PCDATA>
+  <!ELEMENT first      #PCDATA>
+  <!ELEMENT last       #PCDATA>
+  <!ELEMENT junior      EMPTY>
+  <!ELEMENT senior      EMPTY>
+  <!ATTLIST person
+      pid       ID                   #REQUIRED
+      employed  (fulltime|parttime)  #IMPLIED>
+Special ID (or IDREF) is a unique identifier within document scope.  No other
+  element can have an ID-type attribute with the same value.
+Parameter Entities are similar to &EntityRefs; but they use '%'.
+Sample Parameter Entity:
+  <!ENTITY % common.atts "
+    id    ID    #IMPLIED
+    class CDATA #IMPLIED">
+  <!ATTLIST foo %common.atts;>
+  <!ATTLIST bar %common.atts;
+    extra CDATA #FIXED "baz">
+Use elements to hold content that is part of your document && attributes to
+  modify element behavior.
+DTD conditional sections can only be used in external subsets.
+Sample conditional section:
+  <!ENTITY % optional.stuff "INCLUDE">
+  <![INCLUDE[  <!-- can also be "<![%optional.stuff;[" -->
+    <!ELEMENT foo (bar, caz, bub?)>
+    <!ATTLIST foo crud CDATA #IMPLIED)>
+  ]]>
+  <![IGNORE[
+    <!ELEMENT blah #PCDATA>
+    <!ELEMENT glop (flub|zuc) 'zuc')>
+  ]]>
+Since DTDs have severe shortcomings, other schema standards have arisen.
+XMLS0               == W3C XML Schema Recommendation 0 (Primer)
+XMLS1               == W3C XML Schema Recommendation 1 (Structures)
+XMLS2               == W3C XML Schema Recommendation 2 (Datatypes)
+RELAX NG            == Regular Language Description for XML, New Generation
+  (pronounced "relaxing") merges RELAX && TREX (Tree Regular Expressions for
+  XML) supporting namespaces, datatypes, interchangeable elements/attributes
+  in content descriptions, && flexible content models.
+Schematron          == uses XPath expressions to define validation rules in
+  remarkably flexible ways.
+Schema Benefits:
+  publishable specification as language description
+  catches high-level mistakes in data formats
+  more portable && efficient than most test programs you could write
+  extensible && modular design aids language evolution && component sharing
+Schema Drawbacks:
+  reduces flexibility for specifying things like a content model which 
+    requires particular children but they can appear in arbitrary order
+  can be obstacles for document authors since structure enforcement can be
+    confusing or frustrating while learning
+  must be maintained && updates may make older documents invalid
+  designing them is difficult since you must carefully consider how each 
+    element should fit together, which input to accommodate, && special cases
+Schemas can be thought of as a quality control tool providing extra assurance
+  that documents in your language are complete && structurally sound.
+Simple Schema Types:
+  xs:string contains any text
+  xs:token contains text tokens separated by normalized whitespace
+  xs:QName contains namespace-qualified name
+  xs:decimal contains decimal number of arbitrary precision
+  xs:integer
+  xs:float contains 32-bit IEEE754 floating point number
+  xs:ID or xs:IDREF behaves the same as ID, IDREF in DTDs
+  xs:boolean contains true or false value as "true" or "false" (or "1" or "0")
+  xs:time contains time in ISO8601 format (HH:MM:SS-Timezone)
+  xs:date contains date in ISO8601 format (CCYY-MM-DD)
+  xs:dateTime contains date/time in ISO8601 format (CCYY-MM-DDTHH:MM:SS-Tz)
+Sample Definition of date if it weren't already a Simple Type (using an
+  example of "facets" to constrain the year number):
+  <xs:element name="date">
+    <xs:complexType>
+      <xs:all>
+        <xs:element ref="year" />
+        <xs:element ref="month"/>
+        <xs:element ref="day"  />
+      </xs:all>
+    </xs:complexType>
+  </xs:element>
+  <xs:simpleType name="yearNum">
+    <xs:restriction base="xs:integer">
+      <xs:minInclusive value="1900"/>
+      <xs:maxInclusive value="2900"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="year"  type="yearNum"/>
+  <xs:element name="month" type="xs:integer"/>
+  <xs:element name="day"   type="xs:integer"/>
+Facets can create fixed values, constrain the length of strings, && match
+  patterns with regular expressions.
+Sample facet to match 3 digit + 3 letter <postalcode>885JKL</postalcode>:
+  <xs:element name="postalcode" type="pcode"/>
+  <xs:simpleType name="pcode">
+    <xs:restriction base="xs:token">
+      <xs:pattern value="[0-9]{3}[A-Z]{3}"/>
+    </xs:restriction>
+  </xs:simpleType>
+Sample facet for gender enumeration:
+  <xs:simpleType name="genderType">
+    <xs:restriction base="xs:token">
+      <xs:enumeration value="female"/>
+      <xs:enumeration value="male"/>
+    </xs:restriction>
+  </xs:simpleType>
+XML Schemas now support many more features including: type extension &&
+  restriction, lists, unions, && namespace features.
+    See http://ORA.Com/catalog/xmlschema/ for more info.
+RELAX NG goes further by integrating attributes into content models which
+  greatly simplifies schema structure.  Basically seems like RELAX NG is
+  better than XML Schemas (which in turn are better than DTDs) in every way.
+    See http://ORA.Com/catalog/relax/ for more info.
+RELAX NG has an optional compact syntax (with all the features) which 
+  resembles the brevity of DTDs.  
+    See http://WWW.XML.Com/pub/a/2002/06/19/rng-compact.html for more info.
+"pattern" is the basic component of a RELAX NG schema.  A pattern denotes
+  any construct that describes the order && types of structure && content
+  (including element or attribute declarations, char data, or a combo).
+"element" construct declares elements && establishes where they can appear.
+Sample RELAX NG Schema:
+  <element xmlns="http://relaxng.org/ns/structure/1.0"
+    datatypeLibrary="http://WWW.W3.Org/2001/XMLSchema-datatypes">
+    <start>
+      <element name="authorname">
+        <choice> <!-- allows any order of mutually exclusive options -->
+          <text/>
+          <group> <!-- requires children -->
+            <element name="first"><text/></element>
+            <element name="last" ><text/></element>
+          </group>
+        </choice>
+      </element>
+      <element name="para">
+        <zeroOrMore>
+          <interleave> <!-- requires children but accepts any order -->
+            <ref         name="para.content"/>
+            <externalRef name="footnote.rng"/>
+          </interleave>
+        </zeroOrMore>
+      </element>
+    </start>
+    <oneOrMore>
+      <define name="para.content">
+        <text/>
+      </define>
+    </oneOrMore>
+    <optional>
+      <element name="footer">
+        <text/>
+      </element>
+      <element name="bookmark">
+        <empty/>                <!-- no content          -->
+      </element>
+      <element name="size">
+        <choice>
+          <value>small </value> <!-- predetermined value -->
+          <value>medium</value>
+          <value>large </value>
+          <value type="string">EXTRALarge</value> 
+            <!-- type="string" turns off default normalization of whitespace-->
+        </choice>
+      </element>
+      <element name="count">
+        <data type="integer"/>
+          <!-- text following specific datatype pattern  -->
+      </element>
+      <element name="vector">
+        <list>                  <!-- sequence of values  -->
+          <oneOrMore>
+            <data type="float"/>
+          </oneOrMore>
+        </list> <!-- accepts <vector>44.034 19.0 -65.33</vector> -->
+      </element>
+      <element name="username">
+        <data type="string">
+          <param name="maxLength">8</param>
+        </data>
+      </element>
+      <element name="report">
+        <attribute name="date"> <!-- attribute order is not significant -->
+          <text/>
+        </attribute>
+      </element>
+      <element name="emphasis" ns="http://HowToWrite.Info"> <!-- namespace -->
+        <attribute name="style"/> <!-- empty attribute defaults to <text/> -->
+      </element>
+    </optional>
+  </element>
+Sample RELAX NG Name Class (pattern that substitutes for a set of elements
+  or attribute types) which allows any element or attribute to have the 
+  described content model:
+  <grammar xmlns="http://relaxng.org/ns/structure/1.0">
+    <start>
+      <ref name="all-elements"/>
+    </start>
+    <define name="all-elements">
+      <element>
+        <anyName/> <!-- use in place of "name" attribute -->
+        <zeroOrMore>
+          <choice>
+            <ref name="anyElement"/>
+            <text/>
+            <attribute><anyName/></attribute>
+          </choice>
+        </zeroOrMore>
+      </element>
+    </define>
+  </grammar>
+Only built-in RELAX NG datatypes are: "string" && "token".
+  The only difference is "token" normalizes whitespace.  They correspond to
+  datatypes "value" && "fixed" respectively.
+Other datatypes must be imported from another specification with a
+  "datatypeLibrary" attribute either in an element declaration to propagate
+  to all nested elements or specified for each data element that needs it.
+Some datatypes allow further pattern restriction with the <param/> element as
+  a child of the <data/> element like the "username" element above.
+Name Classes can be limited by the <except/> element.
+Named Patterns allow you to move declarations outside the main pattern thus
+  breaking a schema into discrete parts which can be reused.
+Sample Layout of Named Pattern:
+  <grammar>
+    <start>
+      main pattern
+    </start>
+    <define>
+      pattern
+    </define>
+    more pattern definitions
+  </grammar>
+Named Patterns are imported using a <ref/> element.
+"combine" attribute can be used with either "choice" or "interleave" container
+  to specify aggregation of multiple pattern definitions (in <define/>).
+External References can locate a grammar file <externalRef href="section.rng"/>
+For Nested Grammars, ref only references definitions from the current grammar.
+parentRef functions like ref but looks for definitions one level up.
+Merging Grammars can be accomplished with <include href="block.rng"> + combine.
+Schematron should only (at this point) be used to assist XML Schemas or
+  RELAX NG by providing specialized constraints with something like:
+  <rule context="email">
+    <p>Found an e-mail address...</p>
+    <assert test="contains(.,'@')">Error: No @ in e-mail!</assert>
+    <assert test="contains(.,'.')">Error: No . in e-mail!</assert>
+    <assert test="length(.)>20">Warning: E-mail is unusually long!</assert>
+  </rule>
+Links:
+  http://www.xmloperator.net/
+  http://www.xmlsoftware.com/
+  http://www.garshol.priv.no/download/xmltools/
+RELAX NG documents are called "schema documents" which are used to validate
+  "instance documents".
+Lexical Processing == processing the actual text of an XML document.
+Infoset            == higher-level logical view  of an XML document.
+Schema languages (such as RELAX NG) operate on an Infoset so they can
+  constrain elements, attributes, && textual content but they cannot
+  constrain things outside the Infoset like order of attributes, quote style,
+  spacing, comments, processing instructions, or entity references.
+
+
+
+OldThoughts:
+  types:
+    <true/>  <yes/> <on/>  <one/>
+    <false/> <no/>  <off/> <zero/>
+    <int>n</int>
+    <float>nn.dd</float>
+    <string>ccc</string>
+    <comment>ccc ccc</comment> <!-- comments on data rather than XML -->
+    <list>
+      <!-- any types -->
+    </list>
+    <dict>
+      <!-- like a list but elements are always a pair: strings which
+             are valid variable names as keys && any type as value   -->
+      <key>k0</key> <true/>
+      <key>k1</key> <float>nn.dd</float>
+      <key>k2</key> <list>...</list>
+      <key>k3</key> <dict>...</dict>
+    </dict>

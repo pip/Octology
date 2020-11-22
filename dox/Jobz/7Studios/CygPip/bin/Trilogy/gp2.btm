@@ -1,0 +1,108 @@
+REM Attempt to port GetPrimes from my HP48GX into 4DOS batch
+REM         I now think my previous attempt was a great success
+echos Finding MaxCheck... please wait...                  ÿ
+timer on /3
+set pfil=c:\Primes.txt
+inkey /c /w0 %%ky
+set mcln=1
+set mcpn=2
+set mcps=4
+REM set mcln=78490
+REM set mcpn=999883
+REM set mcps=999766013689
+set esiz=%1
+if "%esiz" == "" set esiz=1048576
+if exist %pfil goto alreadymade
+echo 1
+echo 1 > %pfil
+echo 2
+echo 2 >> %pfil
+echo 3
+echo 3 >> %pfil
+echo 5
+echo 5 >> %pfil
+if "%esiz" == "1048576" set esiz=256
+:alreadymade
+set phnd=%@fileopen[%pfil,read,t]
+set linz=%@lines[%pfil]
+set strt=%@inc[%linz]
+set poop=%@fileseekl[%phnd,%linz]
+set x=%@fileread[%phnd]
+set poop=%@fileseekl[%phnd,%mcln]
+if %esiz LE %linz set esiz=%@eval[%linz+5]
+if %mcps GE %x timer on /2
+if %mcps GE %x goto loopie
+:lodmc
+set mcpn=%@fileread[%phnd]
+set mcps=%@eval[%mcpn*%mcpn]
+set mcln=%@inc[%mcln]
+if %mcps LT %x goto lodmc
+echo [1;33mNth   [0;37m-[1;32m Prime [0;37m- Delta of MC - %% of file examined to find Prime - Time taken
+echos Done... MaxCheck Line%@dec[%mcln]:%mcpný=%mcps              ÿ
+timer on /2
+:loopie
+inkey /p /w0 %%ky
+if "%ky" == "" goto end
+timer on
+set poop=%@fileseekl[%phnd,2]
+set x=%@eval[%x+2]
+if %x LT %mcps goto repeet
+set mcln=%@inc[%mcln]
+set poop=%@fileseekl[%phnd,%mcln]
+set mcpn=%@fileread[%phnd]
+set mcps=%@eval[%mcpn*%mcpn]
+set poop=%@fileseekl[%phnd,2]
+:repeet
+set poop=%@fileread[%phnd]
+if %poop == %mcpn goto found1
+set poop=%@eval[%x/%poop]
+if %poop != %@int[%poop] goto repeet
+set x=%@eval[%x+2]
+set poop=%@fileseekl[%phnd,2]
+if %x LT %mcps goto repeet
+set mcln=%@inc[%mcln]
+set poop=%@fileseekl[%phnd,%mcln]
+set mcpn=%@fileread[%phnd]
+set mcps=%@eval[%mcpn*%mcpn]
+set poop=%@fileseekl[%phnd,2]
+goto repeet
+:found1
+echo %x >> %pfil
+set linz=%@inc[%linz]
+set poop=%@inc[%linz]
+screen 23 0 [1;33m%poop:[1;32m%x[0;37m %@eval[%mcps-%x] %@eval[100*%@dec[%mcln]/%poop]%%ÿ
+timer
+if %poop LT %esiz goto loopie
+:end
+set esiz=%@timer[2]
+set linz=%@time[%@left[%@index[%esiz,.],%esiz]]
+set esiz=%@instr[5,5,%esiz]
+set linz=%@eval[%linz+%esiz-%@int[%esiz]]
+set x=%@eval[%linz/(%poop-%strt)]
+set ky=%@eval[%@index[%x,.]+3]
+set x=%@left[%ky,%x]
+screen 23 0 *** Quitting GetPrime ***  Avg:[1;31m%x  [0;37mEnding MaxCheck Line%@dec[%mcln]:%mcpný=%mcps
+echo.
+set poop=%@fileclose[%phnd]
+copy %pfil i:\Primes.bak\P%poop.txt /q
+set x=
+set ky=
+set strt=
+set mcln=
+set mcpn=
+set mcps=
+set linz=
+set phnd=
+set poop=
+set pfil=
+set esiz=
+timer /3
+REM *******NOTE******* Please let me know if you find a way to optimize
+REM *******NOTE*******  this any further without using assembly.  Thank
+REM *******NOTE*******  you .and. may the G-d of Abraham, Isaac, .and.
+REM *******NOTE*******  Jacob be with you.  Shalom.
+REM *******NOTE*******            *
+REM *******NOTE*******        *********
+REM *******NOTE*******         *******
+REM *******NOTE*******        *********             Love, in Messiah,
+REM *******NOTE*******            *          -Tigger .or. nitemare@uci.edu

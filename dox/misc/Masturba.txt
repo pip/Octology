@@ -1,0 +1,112 @@
+3C5Meqx 
+
+Hmm... so I'm just stoned && thinking ... well thinking about getting turned on... how regularly it happens... how easy it is... about strip clubs && pr0n... about men && women... about vaginas... fluffy moist cotton candy which beckons... all the time.  I have the stereo plug for your sound card... the harddrive for your workstation... the train / tunnel... car / garage, key, bolt, screw, nail...So I think this:
+
+  The average woman considers male sex-drive too strong... men would bone nearly all the time && women care about other things more... as part of heterosexual relationships, women seem wish men would want sex less && would care more for the other things.  Of course there are many other things for both && men are obviously becoming more sensitive in general... becoming more allowed to express sensitivity && emotion... too much?  not enough?  changing.  It's still not enough.  Are women becoming more allowed to have sex drives like men or is it not in them.  Like I could guess that sensitivity && sex are melding together... becoming equal && the same but then men tend to desire violent sex (which is rough... not sensitive... but passionate... hmm) so men may get so sensitive that we want less violent sex or only want gentle... or maybe women want it rough too but haven't been allowed to explore that before.
+
+  Men left to their lonesome masturbate more frequently the more they have alone time... of course.  Hmm but is it violent?  Most men probably masturbate much more gently than they fantasize about or do during sex... but maybe that's because the tenderness of a vagina is ripe internal billowy flesh which can be forced greatly without damage to the penis.  Devirginization hurts.  Do men want to hurt women through sex?  Do men not want to be hurt equally?  Should we?
+  
+  So most men masturbate probably weekly if not daily.  With lots of free privacy && internet access, it is likely many times each day.  Healthy men would clearly like to have sex at least 7 times each day if they could.  I suspect this is not the case for women.  Should it be?  Are they just still repressed by sexual acceptance && social norms or ... well:  Do they already?  Maybe my perception is wrong && women already do please themselves with hands && showers && toys with similar frequency to men... but my impression... suspicion is that women don't masturbate as much && how that would be a powerful metric of the difference ingrained in the variance of gender if it could be measured on a species-wide level... since studies would be particularly difficult to conduct on anything but an anonymous basis... even then many participants would be overly attracted to a study because of the topic && the results would skew so it wouldn't be representative of anything... heh every study only can conclude things which allow (or desire) them selves to be studied... so I've begun a study to determine if knowledge && wisdom only exist outside of studies. =)
+
+  Maybe a huge maturbation site with AC's (Anonymous Cowards) like /. (SlashDot.org) could... bleh it would be asinine.  There would be so much lower Signal/Noise than /. since kids && pervs would... that's what the moderation system is for... let smart people rise to the top as consistently voted trustworthy or smart... according to growth, allow / request some formula of (oldest + most consistently voted good) get meta-mod privs.  /. works.  
+  
+  hehe... sidetrack.  Most people won't pay for /. who like it... who may derive great value from it... but that's the thing... there's a few people at the top who make the most important decisions && maybe should make them so often that they should be paid to so that... but for the most part, the articles && discussion are the great value && they are provided by free posters/users... who primarily care about the free exchange && accumulation of worthwhile data && code... stuff that will not have to be lost if it is valuable... hmm but then freely available SlashCode is very important... useful && ongoing development is valuable since it facilitates the ability to post topics && widely discuss... but it's open source && much of the readership... so the free exchange && accumulation of worthwhile data && code means that useful things won't die... they don't need to.  Then there's lots of room for nostalgic, ecclectic, eccentric, experimental, etc. stuff to be perpetually preserved && improved alongside all the useful stuff.  Movie-lovers && musicians would be aghast if the original (&& let's presume the highest quality source) of their favorite movie or album were destroyed && could never be experienced as original again.  Maybe if there were only cassettes, it would just mean no more good copies could be made but if it were shored up as intellectual property never to be released on VHS or DVD, it could perish permanently when people still value it.  This doesn't have to happen but the profit gears of such industries don't break smoothly.  Technology allows us to select arbitrary quality of entertainment media to meet entirely personal preferences along an entire potential spectrum.  The necessary ingredient is high-quality originals... heh ok this should be called the super-stoned-Masturbation-train-of thought which umm isn't really all that much about Masturbation =)... maybe the train will drive through the tunnel again... so if there are high-quality sources for the most valuable audio/video/future 3D worlds/etc. then with an entire spectrum of compression(*), people who feel connected to music/movies/games can choose where to bring whatever they like wherever they like.  I could write a script which takes every .flac (Free Lossless Audio Codec) file on my hard-drive && turn them all into .ogg vorbis or .mp3 files of any size/quality ratio that suits me.  The media server software could know I have a 20GB portable player for snowboarding so it could let me choose any songs I want... then it can exactly fit all of the portables memory with the highest quality lossy versions.  I could set a threshold... in case I pick too many songs to squeeze into the player, tell the server to stop adding songs when quality level needs to get down too low on any or the average song.  Because compression takes a great deal of processing time today, real-time balancing of exact quality levels play-list wide is not feasible because it would require tons of repeat encoding... maybe as processors && encoding algorithms get faster, real-time will be closer && finer encoding-level granularity will be more worthwhile... but there's still some good choices now:
+
+    0) Change nothing except real-time.  Setup the playlist you want on your iPod/movies you want on your portable tv/games you want on your GBA a day ahead... or once a month or annually.  As people balance their space / quality preferences to include their most worthwhile data && storage becomes more plentiful, a point will come when the average person can encompass nearly everything they would care to in their portable media... so the need to modify the playlist (which would require re-compressing everything to fit anew) would become less frequent.  Processors will get faster too making encoding faster but storage growth is trouncing the duel with computation speed so there will be way more data to compress to fit... but the improvement of both will eventually submerge the problem for the average person... with great value && convenience.  Maybe setup your playlist a month ahead of time as a background process on your PC... distribute the computation among idling clients though... whoo that can solve the processor problem.  Holy shit this software would be so useful && valuable.  Anyway, even if it takes a long time, it will gradually take less time for the same job && people could get to where there isn't really much else they want in their iPod anyway so they don't even want to re-compress the list for it anymore.  Just start with the best, fastest, most useful possible && let time solve the time problem.
+
+    1) Distribute the processing... that idea was too good not to be it's own
+
+    2) Store a huge database of raw source data sizes && the formula or dataset of the filesize dropoff using particular versions of particular codecs.  Then clients could just consult this (using the same keys as CDDB && stuff) to know precisely how to balance the whole playlist.  In fact both 1 && 2 are good ideas together.
+
+    3) I had another idea but I can't remember it now... maybe I should smoke more weed or masturbate =)
+  
+        both
+  
+    ah there =)
+
+3C6099W
+
+Well so stoned again... aboutface?... maybe masturbation is bad?  maybe sex drive is bad?  should be repressed... or it's natural but there are harmful/unnatural manifestations of the drive... who defines?... partners, pain, wounds, asphyxiation... what is healthy?  normal?  average?  mundane?  boring?
+
+  Maybe the spectrum of non-socially acceptable or popularly practiced sexual desire && behavior is all good && we'll eventually all die making love... wow this tied right into VioLove didn't it?  Is it ok for sex to be violent?  People are different so some want, appreciate, need violence... but there's the bigger issue... Is all violence bad?  heh or any?  Is death bad?  If fear-of-death/love-of-life causes you not to live normally, properly, enjoyably... hmm that answer depends on whether death is bad.  Shit bad && good.  They're different along our perception spectrum but why must one always be bigger?  Red bigger than Blue except in squad lights.  Good is better... but is better larger than worse?  Is larger more... ok now into the infinite opposites because there aren't OneThing.
+
+  Maybe I think too much && don't code enough.  I feel like I should code frantically because there is so much great code I want to write for me && others... but I guess I need or want to write these ideas down more... well I'm feeling nearly sated so I guess I'll code on PipTime some more.  I'd like to use super pimp with all the distributed computation of compressing 3d worlds && sounds into any space optimally to work in my pocket computer && broadcast stereoscopic versions to my shades while I'm snowboarding... maybe more useful riding up the lift than down the slope but could provide a 3d colored skybeam of where my friends are just like SSX... hmm but then if these worlds are massively multiplayer through ubiquitous wireless broadband, pre-compression with some iTunes-like client to download to the portable memory won't be necessary... ah but compression will still be needed on the server even if only for streaming to the clients with varied capabilities.  Remember that the highest quality data source should be the authority... a pure data repository server... everything else is a client which may ultimately share the compression computation load but their role should primarily be to store && play the highest quality of imperfect versions they can.  This means each user PC, laptop, Palm (sidetrack... isn't it funny that Palm Computing's PalmPilots name is based on being held && used in the open && Microsoft's closed hidden private secret is the PocketPC from the closed source company.  Palm is a good name for a Free Software small computer because of the symbolic freedom && utility.) Computer, iPod, Karma, SliMP3, Tivo, XBox Media Player, PlayStation3?, etc.  I've got a long way to go.  It takes me forever to write PipTime... how is the whole pyramid of software I dream of writing possible if I am to do it alone && make such sluggish progress?  Hmm what is my pyramid (from configurable software ie. non-BIOS, flash firmware, etc.)?
+
+  + Linux
+  + GNU                               KEY : the first column describes
+  + Debian                                   my needs && my work left
+  + zsh                              __________________________________________
+  + vim
+  + nasm                             + = basically done (perfect to sufficient)
+  + gcc                              - = in active development
+  + perl                             . = working but needs more or rewrite
+  + XFree86                            = nothing implemented yet
+  + SDL
+  + e
+  + bak
+  + BaseCnv
+  + cnv
+  + Fields
+  - PT
+  - Frame
+  - pt
+  . Simp
+  . ptok
+  + ximp
+  + mixr
+  . etfp
+  . fontpal
+    dic
+    ptfilter
+    dbst
+    rsync util
+    xirc
+  . seed
+    GO player tracker
+    peop
+    2do
+    plan
+    muny
+    Game
+      SUCC
+      SUDS
+      TICE
+      GUSD
+      MENT
+      GAME
+  . mrb
+  . zinf upgrades
+  . pimp
+    GES
+  . prym
+    Free GIFT
+    FFDB FreeFileDataBase
+  . figz (tiglet)
+  . filt (pc)
+    play
+  . BinQ
+  . orb
+    qbix in Game
+    FFGT FreeFightingGameTool
+    StreetFighterEternal (rip ST)
+    free 3d modeling / animation app from inside Game (port Bender or EQX?)
+    DimensionOwl
+    Edge/JADE/Sord/Blad/Blud a bevy of fighting games
+    3DTPDARAFABOG game
+    Race (Street/Dirt Motor/Pedal Cycle/Car game)
+    Bord (Skate/Snow/Surf game)
+    Sprt (Futball/Football/Hockey/Tennis/Baseball game)
+    Chil (Arcade/Poolhall/Restaurant/Juicebar/Coffeeshop hangout game)
+    every 3d game above should have pr0n codes, modes, cams, etc.
+    GNUniverse (a good Matrix / Metaverse with DimensionOwl through Chil 
+      all available limited through massively multiplayer)
+    ... whatever the GNUniverse needs
+
+  Well almost all of them depend heavily on everything earlier.  Maybe my life won't be long enough to complete Game or orb but I want to use an orb to race bikes with hot nude babes on the back in the GNUniverse.  I have imagined it but cannot do it alone... so I procrastinate by writing this stuff or does this help to solidify the plan, priorities, thoughts, goals?  both =)  Uhh so I'm gonna relax for a bit then try to improve pt later && beat Prince of Persia... such a great game.  Bye.
+
+-Pip 
+
+3C62THt  heh at least I have a solidifying definition of pt && a utility which already does a lot of the work in an inflexible way... if I rush to complete each of my projects, I may get to GNUniverse faster... but I might also make more mistakes with bigger setbacks so I just have to keep thinking && caring about my priorities as much as I want to.  I have a pretty detailed dream... lifelong project.  If only I wanted to communicate by writing less, needing companionship less, chatting && pondering life less... then I'd have more time to code && make more progress.  Maybe I can't concentrate on code too much or maybe someday I will code more but it's ok not to today.  Maybe I can gain more experience && money in the game industry again soon && then I will be able to take months off intending to hole up for spring or fall to code on my dream.  I need to work on my stuff during the busy-ness of other stuff too though.  Just keep thinking && prioritizing... trying to make next most important progress efficient && thorough.  If you think you're prioritizing too much... I don't think it would be bad to prioritize your prioritizing.  Plan to plan.  Schedule scheduling if need be.  Think about the problems, their relationships, the code needed.  Write && play, play && write.
+
+
+  * This spectrum of lossless compression of media data appears today to have a finite set of choices along the spectrum of options (like CBR 96k, 128k, or 320k MP3s) but those are likely a simplification for users who typically don't want too many choices or to push the boundaries... but advanced options which could gain popularity (if the utility of understanding wider choice became worth the effort to learn the ramifications enough to be contagious) could be implemented in better tools with an arbitrarily more fine-grained degree of loss-of-quality for the benefit of size (or speed but that is nearly negligible already).

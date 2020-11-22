@@ -1,0 +1,43 @@
+# KAPMAres:~/dox/2du/res.ls crE8d by PipStuart <Pip@CPAN.Org> to hopefully eventually be my prioritized list of 212 deceased people I'd most like to resurrect;
+     -     :GrandMa                "Sis"                   Lennon
+     -     :Uncle      Alexander   "AlBoy"                 Mathews
+     -     :Mister                                         Lennon
+     -     :           John                                Lennon
+     -     :           Albert                              Einstein
+     -     :           Wolfgang    "Wolfy"         Amadeus Mozart
+     -     :"Herr"                                         Salieri
+     -     :           Robin                               Williams
+     -     :           Christopher                         Hitchens
+     -     :           George                              Burns
+     -     :           Adolph                              Hitler          # just 2 make sure 2 keep things pretty damn "spicy", && we stay on-our-toes!  ;)
+     -     :Doctor     Martin                      Luther  King     Junior
+     -     :           John                        F.      Kennedy
+     -     :"Savior"   Y'shua      "JesusH.Christ" Ha      Mashiach        # it would be pretty sweet irony, if He existed && hasn't resurrected before!  ;)
+     -     :                                               Beethoven (sp?)
+     -     :                                               Bach
+     -     :           Yohannes (sp?)                      Kepler    (sp?)
+     -     :                                               Copernicus
+     -     :                                               Plato
+     -     :                                               Aristotle
+     -     :                                               Socrates
+     -     :           Alfred                              Hitchcock
+     -     :           Carl                                Sagan
+     -     :Mister                                         Rogers
+     -     :Artist     Formerly    "known"         As      "Prince"
+     -     :           Joshua                              Nardoni
+     -     :           Chad                                Beatty    (sp?)
+     -     :           Joseph                              Stalin
+     -     :           Pol                                 Pot
+     -     :           Musashi                             Miyamoto-sensee
+     -     :           Sun                                 Tzu
+     -     :           Lao                                 Tzu
+     -     :           Michael                             Jackson
+     -     :           Edward                              McMahon   (sp?)
+     -     :           Farah                               Faucet    (sp?)
+     -     :           Nicholas                            Farah
+     -     :           Levi                                Jacob
+     -     :Prophet                                        Muhammad
+     -     :Prophet                                        Eliyahu
+     -     :           Yochanan    "TheBaptist"
+     -     :"Doubting" Thomas
+     -     :           Judas                               Iscariot

@@ -1,0 +1,7 @@
+Title: Structure
+
+Abstract: Teach children (with their XOs in-hand) common scientific, geometric, chemical, astronomic, and artistic structures both visually (using the laptop displays) and physically (by triangulating their relative locations according to mesh-network latencies from every antenna).
+
+I believe children could be taught to represent particular chemicals within a larger molecular compound, particular stars of a constellation, or other descriptive nodes on interesting graphs where they must arrange themselves physically (and probably without any urgency of time limitations) to more deeply internalize the relative organization and orientation of certain educational structures.  There could be easy ones that clearly tell them where to move, harder ones where they get hints, and harder still where they have to guess or piece together puzzles with their physical positions.
+
+I could describe a lot more about this and would love to work on coding it too but I've run way over 100 words here so please feel free to e-mail me.

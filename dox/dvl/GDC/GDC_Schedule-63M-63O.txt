@@ -1,0 +1,29 @@
+63M:
+  9-A:
+    What's Next Panel - Jamil Moledina, Masaya Matsuura-san, David Perry, Louis Castle, Mark Cerny, Cyrus Lum
+    Sex in Games: Hardcore - Brenda Brathwaite
+  AU-BU:
+    Platform Keynote: PlayStation 3: Beyond the Box - Phil Harrison (Sony)
+  C-D:
+    Free to Play!  Pay for Stuff: The Digital Content Sales Frontier - Daniel James, Matt Mihaly
+    Sex in Games: The Exciting Evolution of Adult Content - Brenda Brathwaite
+    Building a Better Battlestar Keynote - Ronald Moore
+  EU-FU:
+    The Gym: Where The Incredible Hulk Goes To Train - Bryan Brandt, Kevin Coughlan
+    Competitive and PvP Systems in Massively Multiplayer Games - Damion Schubert
+    Quality of Life - Instigating Change from the Bottom Up - Judy Tyrer
+  G-H:
+    MMO Player-to-Player Sales, or You only paid $50 for that blaster? - Sam Lewis
+63N:
+  9-A:
+    Advanced Prototyping - Chaim Gingold, Chris Hecker
+    Game Developers' Bill of Rights - Jason Della Rocca
+    Sim, Render, Repeat - An Analysis of Game Loop Architectures - Trent Oster
+  AU-BU:
+    Disrupting Development Keynote - Satoru Iwata-san (Nintendo)
+  C-D:
+    Metaverse Roadmap: Pathways to the 3D Web - Bridget Agabra Goldstein, John Smart, Jerry Paffendorf
+    What's Next in Design - Will Wright
+  E-F:
+    The Button Masher: Examining The Dynamics of Button Mashing Gameplay - Carlos Martin
+  EU-FU:

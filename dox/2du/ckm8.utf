@@ -1,0 +1,92 @@
+# DASM8kGD:ckm8.txt crE8d by PipStuart <Pip@CPAN.Org> as initial plan to have my Mom help oversee development of a simple Chess program by the end of D 2013;
+# $VERSION='0.0';$d8VS='K7BM3THA';2du:?;
+ A Oct   B Nov   C Dec
+sMTWtFS sMTWtFS sMTWtFS
+  12345      12 1234567
+6789ABC 3456789 89ABCDE
+DEFGHIJ ABCDEFG FGHIJKL
+KLMNOPQ HIJKLMN MNOPQRS
+RsTUV   OPQRSTU TUV
+So maybe 4 2-week (except the last is 3-weeks wrapping my birthday DCD && Christmas DCP) milestones on Mondays: DBB,DBP,DC9,DCU
+DBB:define pieces, movement, && string forms of board d8a encapsul8d in a module
+DBP:render rot8able colored detail in at least pseudo 160x50 text mode && add interface features of move history with d8 timings (&& 240x67, 80x25, 8x8?)
+DC9:incorpor8 best free Chess d8abase I can find or hack my own to track play history && provide navig8ion through online records
+DCU:detect moving into check && checkmate conditions && polish interface for input from keyboard, mouse (Chun touch?), or joystick
+DAUMGepL: Unicode pieces:
+Name    Symbol Codepoint HTML
+WKing   ♔      U+2654    &#9812;
+WQueen  ♕      U+2655    &#9813;
+WRook   ♖      U+2656    &#9814;
+WBishop ♗      U+2657    &#9815;
+WknIght ♘      U+2658    &#9816;
+WPawn   ♙      U+2659    &#9817;
+kking   ♚      U+265A    &#9818;
+kqueen  ♛      U+265B    &#9819;
+krook   ♜      U+265C    &#9820;
+kbishop ♝      U+265D    &#9821;
+kknight ♞      U+265E    &#9822;
+kpawn   ♟      U+265F    &#9823;
+♔ ♕ ♖ ♗ ♘ ♙ 
+♚ ♛ ♜ ♝ ♞ ♟ 
+32 characters:RIBKQSTO                PAWNCDEF      <White          black> pawncdef                    ribkqsto
+     Rook   ♖ Rosie   Roost           Pawn ♙ Philip  Phalanx               pawn ♟ paul  poison         rook   ♜ rachel  ruins
+   knIght   ♘ Igor    Isle           pAwn  ♙ Angie   Anvil                pawn  ♟ audry arid         knight   ♞ ivan    injure
+     Bishop ♗ Brenda  Brave         paWn   ♙ William Water               pawn   ♟ wayne waste          bishop ♝ barbara blood
+     King   ♔ Kevin   Kind         pawN    ♙ Natalie Nature             pawn    ♟ norma noose          king   ♚ kilgore kraven
+     Queen  ♕ Quill   Quest      pawn C    ♙ Curtis  Carver           pawn c    ♟ clint caustic        queen  ♛ quartz  quasher
+   biShop   ♗ Steven  Smith      pawn D    ♙ Dottie  Divine           pawn d    ♟ donna decay        bishop   ♝ shawn   slayer
+knighT      ♘ Theresa Trotter    pawn E    ♙ Evan    Evergreen        pawn e    ♟ exon  evil      knight      ♞ trina   trample
+    rOok    ♖ Orville Olive      pawn F    ♙ Fran    Fire             pawn f    ♟ fiona frost         rook    ♜ oden    operose
+I'm still unsure about string form of board. Maybe compact form of  32 characters design8ing b64 coordin8 for RIBKQSTOPAWNCDEFpawncdefribkqsto where captured
+pieces specify their loc8ion as the same as the opponent King. Then 64 character expanded form placing the above letters in position with 0 or 1 used for
+unoccupied White or blacK squares respectively. The uniform length of these formats seems advantageous for comparison but l8-game FEN is more compact.
+Utilities to convert between 32 position, FEN, PGN, && full board 64 will be needed. I'm not sure where axes && indexed ordering should go yet though.
+Upper-left 0 has seemed best so far but puts White on top disturbingly. Rot8ing or inverting seems so desirable that maybe one of those should become default.
+                                                                                                              K6k/8/8/8/8/8/8/8 might be shortest FEN.
+Slashes in FEN are extraneous and dash could be used to design8 no more pieces or alt captured in 32pos form: K6k-
+Roundtripping through FEN will lose track of which pawns are which and RIB vs. STO and may just have to alloc8 them in order. CCN8:Ckm8 Coordin8 Not8ion?
+Another format could list pieces and positions assuming King and king as first two starting as 62 characters which dwindle by pairs as captures are made.
+3xQ4 is an endgame example with kings remaining in their starting positions and the only other piece is the White Queen still on her starting square too.
+Need to append fields for next turn, castling, en passant potential, half-move clock since last capture or pawn advance for 50-move draw, full-move number,
+optional encoded rot8ion, history format, and then move history. 0101010110101010010101011010101001010101101010100101010110101010-NCCCCEDMMRFHHHHHHHHHHHH...
+ckm8 main differences from traditional Chess programs:           01010101/10101010/01010101/10101010/01010101/10101010/01010101/10101010-NCCCCEDMMRFHH...
+  0) White defaults to up top; 1) piece N means pawN instead of kNight; 2) "moves" are synonymous with 0-based plys rather than 1-based with half-moves;
+History format default includes d8 stamps then reversible piece-position pairs for source and destin8ion squares which should be able to be followed all the
+way back to a game's starting conditions and valid8 NCCCCEDMM. Any of my 3 board string formats (64b, 32p, && ppl) for (full 64 Board, 32 Positions, and
+Piece-Position List) should termin8 with a dash where 32p and ppl with 15 pieces captured will be the same length and should be discernible as ppl if and only
+if all even positions from 2 on only include valid piece name abbreV8ions. If using a dash (instead of opponent king position) for captured pieces in 32p turns
+out to unacceptably complic8 things then another character should be selected or such an altern8ive captured design8ion option should just be removed entirely.
+32p and ppl board represent8ion options are for brevity and slightly easier human construction but are inessential and should be back-burner to mainstay 64b.
+Maybe RF rot8ion and history format options should precede NCCCCEDMM since any full history makes them unnecessary so they should be optional too.
+Interface should present history with separ8 dur8ions between d8 stamps on moves. N =~ /^[Wk]$/. CCCC should get dashes for no longer available castling.
+E should be - when en passant is unavailable or the position when it is (and maybe that only when an opposing pawn is in position to potentially perform it?).
+D should be b64 plys toward 50-move draw. MM is b64 moves (plys) with 4096 as an abundant maximum (269*2 record). R and F will probably be b64 characters that
+encode bits for board or pieces rot8ion and trailing history format options. 64b could like FEN allow any slashes and maybe digits other than 01 for blanks.
+Distinctly coloring at least the backgrounds of rows differently might help readability without needing slashes.
+DB6LBdXM:Now thinking appending history to single string form of board and d8a just gets too unwieldy quickly with d8 stamps so throw RF back to the end and
+have similar blocks of separ8 lines starting from /^(hist|futr):/; Redefinition of "move" to 0-based plys renders N for next turn obvious so should be omitted.
+So maybe RF should still come first in case full following history section describes CCCCEDMM allowing it to be omitted and gener8d.
+ppl should accept arbitrary order past Kk and persist when selected as driving represent8ion but otherwise presented as RIBQSTOPAWNCDEFpawncdefribqsto.
+ckm8 main innov8ions: 0) every piece has become unique, named (with expected gender), and abbreV8d because distinguishing pieces of common type adds variety;
+1) every square has become positionally identifiable by a single b64 character; 2) d8 timed events and navig8ion; 3) making Chess colorful at least by type;
+32 characters:      RIBKQSTO       PAWNCDEF          <White     black>         pawncdef        ribkqsto
+     Rook   ♖      knIght   ♘        Bishop ♗         King ♔        Queen  ♕      biShop   ♗    knighT      ♘      rOok    ♖
+     Rosie           Igor            Brenda           Kevin         Quill           Steven           Theresa        Orville
+     Roost           Isle            Brave            Kind          Quest           Smith            Trotter        Olive
+     Pawn   ♙       pAwn    ♙      paWn     ♙      pawN    ♙        C pawn ♙        D pawn ♙         E pawn ♙       F pawn ♙
+     Philip          Angie           William          Natalie       Crew            Dottie           Evan           Fran
+     Phalanx         Anvil           Water            Nature        Carver          Divine           Evergreen      Fire
+     pawn   ♟       pawn    ♟      pawn     ♟      pawn    ♟        c pawn ♟        d pawn ♟         e pawn ♟       f pawn ♟
+     peter           audry           wayne            norma         clint           donna            exon           fiona
+     poison          arid            waste            noose         caustic         decay            evil           frost
+     rook   ♜      knight   ♞        bishop ♝         king ♚        queen  ♛      bishop   ♝    knight      ♞      rook    ♜
+     rachel          ivan            barbara          kilgore       quartz          shawn            trina          oden
+     ruins           injure          blood            kraven        quasher         slayer           trample        operose
+DBILDu41:cnv *.fpp wi ANSI krgObPcw KRGYBMCW 2 krOgcbPw KRYGCBMW .pal8 && pick initial 8 pal8 && 8 f0nt files to begin using;
+                   && !VGA kbgcrPOw KBGCRMYW
+H4AM8Au5:U2b chat emoji (with middle short ones overlapping or combining out of 6 faces?):😶😐🙂☺😀😁 && kitty 😸;
+I99MCKM8:Probably would be good to extract best SDL pal8 definition into a new standalone .pal8 file which can then be run before `ckm8 -c` to contrast well.
+Figure out why Simp segfaults (coredump) at exit with priority. Eventually it would be cool to take a minimal standard 80x25 (or 40x12 even?) Curses terminal
+  to build up some easily discernible introduction, demonstr8ion, && educ8ion;
+J29LNigt:HTTPS://YouTu.be/RGQe8waGJ4w "The Trapped Knight - 2084" # 6m12s by NumberPhile about excellent winding pattern which skews before collapse b10(Wa);
+K7BM3THA:HTTPS://YouTu.be/wTJI_WuZSwE "The Impossible ChessBoard Puzzle" # K75:18m41s of 3Blue1Brown with poignant bit-flip at 2m24s from "Do math!" to meth;

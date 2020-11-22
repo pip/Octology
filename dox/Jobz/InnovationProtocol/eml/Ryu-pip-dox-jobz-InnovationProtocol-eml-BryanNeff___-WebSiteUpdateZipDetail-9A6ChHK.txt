@@ -1,0 +1,34 @@
+from   : "BryanNeff" <BNeff@InnovationProtocol.Com>
+to     : "PipStuart" <PipStuart@GMail.Com>
+date   : Mon, Oct 5, 2009 at 14:59
+subject: IP new homepage files
+
+Hey Pip,
+
+Please find attached the new homepage files.
+
+  AllPages14_.jpg       - This is a full mockup of the homepage appearance
+
+  AllPages14_grids.jpg  - This is a full mockup of the homepage appearance with gridline guides for alignment
+
+  AllPages14_guides.jpg - This is a guideline for width dimensions
+
+Other files are the source / working files to pull images from
+
+Would like to see a mockup example of this page tomorrow afternoon before 2.
+
+Please let me know if you have any questions - happy to answer.
+
+All the best,
+Bryan
+bryan neff
+Creative Strategist
+Innovation Protocol
+Strategic Brand Development
+213.626.0660 x03 direct
+800.586.2215 toll free
+213.403.5691 fax
+949.697.5908 mobile
+bneff @ innovationprotocol.com
+811 Traction Avenue, Suite 2C, Los Angeles, CA 90013
+Note: Follow IP on Twitter! - http://Twitter.com/InnovationProto

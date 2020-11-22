@@ -1,0 +1,16 @@
+#!/usr/bin/perl -w
+# 4BJ9OVI - xmltidy created by Pip Stuart <Pip@CPAN.Org>
+#   to tidy up all the element indenting of XML documents.
+# The parameters are:
+#   filename
+#   indent_string  ('tab' works as an alternate way to specify "\t")
+# Examples:
+#   `xmltidy FileName.xml ' '`     # one  (1) space  per indent level
+#   `xmltidy FileName.xml '    '`  # four (4) spaces per indent level
+#   `xmltidy FileName.xml tab`     # one  (1) tab    per indent level
+# This utility is part of the XML::Tidy Perl Module.  Please run
+#   `perldoc XML::Tidy` from the command-line for further documentation.
+# This is licensed under the GNU General Public License version 2.
+use strict; use XML::Tidy;
+my $flnm = shift() || die "USAGE: `$0 FileName.xml '<indent_string>'`\n";
+my $tidy = XML::Tidy->new($flnm); $tidy->tidy(shift()); $tidy->write();

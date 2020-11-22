@@ -1,0 +1,43 @@
+Could not apply the stored configuration for monitors
+
+required virtual size does not fit available size: requested=(1,
+1), minimum=(320,200), maximum=(8192,8192)
+
+HTTPS://AskUbuntu.Com/questions/67337/how-do-i-get-rid-of-this-monitor-error suggests removing $HOME/.config/monitors.xml so I moved it to
+monitors-HAUMESN0.xml then rebooted && it came back up with no error dialog this time, so that hopefully fixes it;
+
+Had to `pmfi Curses` to overwrite mismatched CursesBoot.c with old Perl handshake hex-code;
+Still probably need to re-install all SDL stuff so ckm8 can work again && also recalibr8 touchscreen since it seems way off now;
+HB1M7eVv:Re-ran xinput_calibr8or && saved new log. ckm8 worked without needing to force install new Alien::SDL or SDL, but did need to `pmfi IO::Tty` for g3.
+Also boot-up systemd shows Red "failed to start AppArmor initialization" which led to HTTPS://AskUbuntu.Com/questions/767272/apparmor-init-failed-exit-code-123
+suggesting `agi apparmor-easyprof-ubuntu` can resolve the error by crE8ing the necessary directories. Regarding the new gnome-terminal deprec8ing -e and -x
+options, it appears that it can work to just modify the d8ok profile's custom command from /bin/zsh to just d8ok instead (and hopefully -fd will work too).
+ai krita krita-data icc-profiles icc-profiles-free
+Reading package lists... Done
+Building dependency tree       
+Reading state information... Done
+The following additional packages will be installed:
+  kinit kio kwayland-data kwayland-integration libbasicusageenvironment1 libdvbpsi10 libebml4v5 libfam0 libgroupsock8 libgsl23 libgslcblas0 libhfstospell9
+  libiso9660-8 libkf5archive5 libkf5auth-data libkf5auth5 libkf5codecs-data libkf5codecs5 libkf5completion-data libkf5completion5 libkf5config-bin
+  libkf5config-data libkf5configcore5 libkf5configgui5 libkf5configwidgets-data libkf5configwidgets5 libkf5coreaddons-data libkf5coreaddons5 libkf5crash5
+  libkf5dbusaddons-bin libkf5dbusaddons-data libkf5dbusaddons5 libkf5doctools5 libkf5guiaddons5 libkf5i18n-data libkf5i18n5 libkf5iconthemes-bin
+  libkf5iconthemes-data libkf5iconthemes5 libkf5idletime5 libkf5itemviews-data libkf5itemviews5 libkf5jobwidgets-data libkf5jobwidgets5 libkf5kiocore5
+  libkf5kiontlm5 libkf5kiowidgets5 libkf5notifications-data libkf5notifications5 libkf5service-bin libkf5service-data libkf5service5 libkf5solid5
+  libkf5solid5-data libkf5sonnet5-data libkf5sonnetcore5 libkf5sonnetui5 libkf5textwidgets-data libkf5textwidgets5 libkf5wallet-bin libkf5wallet-data
+  libkf5wallet5 libkf5waylandclient5 libkf5widgetsaddons-data libkf5widgetsaddons5 libkf5windowsystem-data libkf5windowsystem5 libkwalletbackend5-5
+  liblivemedia58 libmatroska6v5 libopencolorio1v5 libopenmpt-modplug1 libphonon4qt5-4 libpolkit-qt5-1-1 libpoppler-qt5-1 libproxy-tools libqt5concurrent5
+  libqt5multimedia5 libqt5waylandclient5 libqt5waylandcompositor5 libqt5x11extras5 libresid-builder0c2a libsidplay2 libssh2-1 libtinyxml2.6.2v5 libupnp6
+  libusageenvironment3 libvcdinfo0 libvlc-bin libvlc5 libvlccore8 libvoikko1 libyaml-cpp0.3v5 phonon4qt5 phonon4qt5-backend-vlc qtwayland5 sonnet-plugins
+  vlc-data vlc-plugin-base vlc-plugin-video-output
+Suggested packages:
+  ffmpeg krita-l10n fam gsl-ref-psdoc | gsl-doc-pdf | gsl-doc-info | gsl-ref-html voikko-fi phonon4qt5-backend-gstreamer hspell libdvdcss2
+seems like maybe too much, but ffmpeg && fam FileAlter8ionMonitor famd sound good && check out other suggestions, like libmonitoring-plugin && Nagios;
+HB1M9s5E:`ai pngtools` gets `pngchunks` (which both could be nicely reformatted and colored) to read new gfx/icn/FamFamFam.Com_silk* 700 MarkJames' free PNGs;
+HB1MCsOU:May need `sz;dpkg-reconfigure libdvd-pkg` to dl VideoLAN.Org source, compile, and install libdvdcss2 libdvdcss-dev ... for the first time;
+HBBLNMx5:Now upgrading Aku to 17.10 also, && recognize that orpie RPN calQl8or removed && no longer available so may need to build from source or something.
+  It looks like Aku also needs `pmfi SDL` to resolve old handshake problem;
+HBCL4RnM:Running `xev` on Chun suggests that the 5 buttons beside the touchscreen labeled 1 (A dn-arow), 2 (B up-arow), 3 (rot8), 4 (Fn), && ENT (chain)
+  map to XF86ScrollDown, XF86ScrollUp, rot8-orient8ion-CCW?, Control_L, && probably Alt? as WindowManager search command popup. ScrollSensor seems inactive.
+  Would be nice for Krita && Gimp && probably Inkscape to temporarily remap that 4 Fn LtCtrl button to CtrlZ undo when in closed tablet mode;
+HBELArtz:Needed to `ai rename` after Aku 17.10, then append below to /etc/apt/sources.list to `ai docker-ce` (maybe append edge) && relogin before testing.
+deb [arch=amd64] https://download.docker.com/linux/ubuntu zesty stable ;

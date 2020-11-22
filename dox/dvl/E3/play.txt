@@ -1,0 +1,9 @@
+Play will be a universal player encompassing as much as possible...
+  mixr,pimp,xmpk,mplay,any other emulators, media players, etc..
+Play will first get a Curses::Simp text interface then a GUI afterwards
+  with Perl/Tk &&/or SDLPerl.
+
+Linx:
+  PS2->PC Parallel: http://www.gtasanandreas.net/artwork/gallery.php?id=919
+  by edisoncarter from: http://www.gtaforums.com/index.php?showtopic=172825
+  my login for GTAForums.Com: GTAPip.poop

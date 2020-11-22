@@ -1,0 +1,82 @@
+body { 
+    background: white;
+	color: #303030;
+
+	margin-left: 13%;
+	margin-right: 13%;
+	margin-top: 50pt;
+}
+
+ul {
+	list-style-type: square;
+/*	margin-left: -10pt; */
+}
+
+li {
+	padding-top: 5pt;
+	padding-bottom: 5pt;
+}
+
+A:visited {
+	color: #b030b0;
+}
+
+A:link {
+	color: #3030b0;
+}
+
+A.quiet:visited img {
+	color: #404040;
+}
+
+A.quiet:link img {
+	color: #404040;
+}
+
+h1 {
+	font-family: verdana, sans-serif;
+	font-size: 150%; 
+	font-weight: bold; 
+	color: #607060;
+	text-indent: -20pt;
+}
+
+h2 {
+	font-family: verdana, sans-serif;
+	font-size: 125%; 
+	font-weight: bold; 
+	color: #607060;
+	text-indent: -20pt;
+}
+
+h3 {
+	font-family: verdana, sans-serif;
+	font-size: 110%; 
+	font-weight: bold; 
+	color: #607060;
+	text-indent: 0pt;
+}
+
+h4 {
+	/* font-family: verdana, sans-serif; */
+	font-size: 100%; 
+	font-weight: bold; 
+	color: #607060;
+	text-indent: 0pt;
+}
+
+.bigger {
+	font-family: verdana, sans-serif;
+	font-size: 150%; 
+	font-weight: bold; 
+	color: #607060;
+	text-indent: -20pt;
+}
+
+.big {
+	font-family: verdana, sans-serif;
+	font-size: 125%; 
+	font-weight: bold; 
+	color: #607060;
+	text-indent: -20pt;
+}

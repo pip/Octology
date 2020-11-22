@@ -1,0 +1,54 @@
+Hey Pip,
+
+So, the good news is that it looks like I got David out of my life.  He sent me a quizzical happy birthday e-mail, and I explained to him in greater detail
+why I was cutting him off, and that I would always respond to e-mails, etc.
+
+Call me paranoid but I think he was giving me sociopathic strains of weed or something, because now that I smoked me some killer medium-strength sativa called
+Dream Queen from the local dispensary with my new medical rec, I'm feeling more human!!  It's as if, a part of my soul that the Prozac and the sociopathic
+weed attenuated has regrown.
+
+I bought half an ounce for only $120, and plan on being slightly stoned constantly for the next few months.  I love this weed!
+
+Anyway, now that I'm human I thought I would e-mail you, the only person in the world who responds to my sensitive intellectual e-mails in kind.
+
+Bool2 is going well, and it's kind of funny because I'm writing all these list utilities -- proving things like the last one I finished --
+
+Lemma firstn_all_min_cons_in_hd :
+  forall {T:Type} (pfdt:type_eq_dec T)
+         (l:list T) (x:T) (pf':In x (x::l))
+         (pf:In x l),
+  firstn_all_min pfdt (x::l) x pf' = x::firstn_all_min pfdt l x pf.
+
+Which in pseudocode means that the minimal initial segment of a list that begins with a given element x, which segment still contains all occurrences of x --
+that minimal list begins with x and ends with the minimal initial segment of the final segment of the first list mentioned that still contains all occurrences
+of the x's.
+
+Phew, and it's kind of obvious, and kind of dry and kind of wanky, but it's what I do, and it's better than any work which any job in Los Angeles would give
+me!!
+
+So, there you go!
+
+I'm about to return to coding and trying to get one more commit tonight.
+
+We're getting a new roof, and I remember the last time we got a new roof, when we were hanging out in my room, and there were all these Mexicans tearing off
+our old roof VERY LOUDLY, and we were laughing at it!
+
+That was 25 years ago and we're still super-close friends!
+
+Now for my human side, to extol how grateful I am that you take me seriously, and respect me, and are loyal.
+
+I feel bad that your borderline ADHD caused you to tweak out too crazy in Los Angeles.  I went crazy in Los Angeles without tweak, because Los Angeles is one
+of the most casually sociopathic cities in the world.  You can't get any job without coming face to face with a sociopath, and there is all this crazy Matrix
+mirror shit going on in traffic, and there's all these nuts, and then throw in your medicine at too high a dose, with a girlfriend who thought she could treat
+you the way she did, when you're out of her league physically and intellectually, etc.
+
+So, I don't recommend coming back to LA to live because there might be more crazy shit if you need the tweak, but
+
+I want you to know that I never hold anything against you regarding how you behaved, because one thing is true -- you never truly wronged me during any of
+that shit!!  And that's saying a lot, because every person I've tried to establish a close friendship has crossed the line at some point . . . I think . . .
+maybe not -- there are people who are really nice to me but whom I don't relate to, and don't feel close to.
+
+Anyway, let me know how you are, and I'll return to bool2 soon, and hopefully one day soon I'll exhaust all these dinky list functions that I have to write in
+order to get to the good stuff, the deep math, rather than deep putzing!!
+
+❤ Danny

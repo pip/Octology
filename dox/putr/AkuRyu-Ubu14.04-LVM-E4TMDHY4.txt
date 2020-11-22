@@ -1,0 +1,148 @@
+E4LMG2P8:Monday
+On Aku:
+May need software-properties tool or pkg-mngr after dist-upgrade to 14.04LTS to re-enable 3rd-party sources.
+Also need to learn how to properly clone and mount drives since plain dd seems not to work.
+May also need to agi xfsprogs to be able to read old Gentoo drives since installer auto-removed.
+After fresh 14.04 install to Ryu, shutdown hung and needed manual reboot. Then added terminal to sidebar, launched, `sudo bash`, `apt-get update`,
+  `apt-get upgrade` (got about a dozen new packages), then main menu shutdown restart succeeded.
+
+E4MMLINK:Tuesday
+Ryu new drive: zipped snapshot of ~pip then started as root big `rsync -av root@192.168.8.15:/home/pip/\[b-m\]\* .` to backup main Aku files took a little
+  over 4 hours to complete.
+
+E4NMCATS:Wednesday
+Since using dd to attempt to duplicate whole original Aku 2TB Samsung sda drive over to new 2TB Seagate sdb seems to have introduced errors when trying to
+  boot and has duplicated the LVM PV UUID creating a conflict, I decided to try to start over on a fresh new drive.
+After running `sfdisk -d /dev/sda > /home/pip/dox/putr/Aku/Aku_-sda-LVM-pRtitNz-E4MMEtFR.txt` I copied over to sdb E4NMCklZ.txt and edited a to b.
+Then reran `sfdisk /dev/sdb < $sdbf` and `fdisk -l` shows partition parity. Now it looks like I can run `lvm pvscan` to see just sda5 PV in my default
+  'ubuntu' VG. Then `lvm pvcreate /dev/sdb5` makes the new PV and another pvscan shows both sda5 and sdb5 with only a in the VG. Then `lvm vgextend ubuntu
+  /dev/sdb5` adds b to the VG. Another scan confirms. Then I should be able to run `nice -n 16 lvm lvconvert -m1 /dev/ubuntu/root` to start huge sync process.
+  Once complete, should be able to `lvm vgreduce ubuntu /dev/sdb5` and scan to confirm, then `lvm pvremove /dev/sdb5` and scan again then just need to figure
+  out best way to setup bootable grub on sdb1.
+
+E4NMDROP
+Since sda1 and sdb1 are relatively normal partitions, `dd if=/dev/sda1 of=/dev/sdb1` completed quickly and should at least sync /boot file data properly, even
+  if I'll probably later need to boot from an Ubuntu LiveCD to update-grub from to finally load the disk's boot sector. Should probably research further about
+  whether I'll need to somehow reverse the lvconvert mirroring config before safely vgreduce and pvremove. It looks like `lvm lvconvert --splitmirrors ...`
+  with some appropriate option is what I'm looking for. Actually, it's looking like splitmirrors needs a name by which to create a new logical volume. Maybe I
+  should be using pvmove instead of live RAID1 mirroring? Nevermind that. pvmove actually does move from one disk to another so I do really want mirroring at
+  least until drives are synchronized. Still may need some lvconvert to stop mirroring before removal. So maybe I will need to `lvm lvconvert --splitmirrors 1
+  -n root-o ubuntu/root /dev/sdb5` then `lvm lvs -a -o+devices` to see 2 separated root volumes then `lvm lvchange -an ubuntu/root-o` to make other volume
+  inactive. Then might need `vgsplit ubuntu ubuntu-o /dev/sdb5` then lvs should show 2 VGs with ubuntu just on /dev/sda5 and ubuntu-o just on /dev/sdb5. Maybe
+  splitting the separate VG off is not what I want because powering down the drive and rebooting might make Aku upset if he's expecting the VG that is no
+  longer there.
+
+E4OM9KUL:Thursday
+It looks like my lvconvert -m1 mirror command is super slow, finishing about 1% per hour so it'll probably take over 4 days to complete!
+Although Chun was able to `pmei Curses` with new Perl 5.18 (replacing 5.14), `pmei CPAN` fails, as well as Module::Build, Alien::SDL, && SDL. ckm8 is broken &&
+  I'm frustrated. `pmei CPAN` from v.2.00 to v.2.05 also failed (similarly to Chun) on Aku. I'm going to try to power down Ryu, swap new Seagate with old
+  Samsung drive, blast fans, && swap new Asus sound card with old Creative. I'll try swapping in Aku's VaporX 5770 video card later, after long disk mirroring
+  finishes and both disks prove bootable. So swapping disks worked fine but Asus sound produced errors so I put PCI Audigy back in bottom slot and tested it
+  working fine there. I also tried moving nVidia card to lower slot but no video came up when booting so I moved it back to the upper PCI-E 16 slot and video
+  came back up when booting. On Ryu started `sudo bash` to become root, then `rsync -av root@192.168.8.15:/home/pip/.lsrc .` and same for vimrc && zshrc then
+  started ~/.inst/ && .bak. Doing simultaneous rsync slows Aku's lvconvert way down so probably better to just figure out how to mount LVM partitions directly
+  from Ryu's eSATA dock for synchronizing ~/.arc/ instead of trying massively slow additional rsync over my LAN.
+
+E4PMCCCC:Friday
+Aku's sidebar contains: Terminal, FireFox, Google Chrome, Software Updater, Ubuntu Software Center, System Settings, CCSM, Workspace Switcher, Files, Floppy
+  Disk. On Ryu, moved Files icon down above Floppy. Unlocked from Launcher LibreOffice Writer, Calc, && Impress as well as Amazon. Dragged Software Updater
+  above Software Center. `apt-get install vim vim-doc zsh zsh-doc w3m most` Made System Settings > Appearance color match Aku with #020F1A and Behavior
+  auto-hide Launcher && enable workspaces. In Look, switched wallpapers drop-down to colors & gradients && picked first solid color option. Moved Launcher
+  Workspace Switcher icon above Files && below System Settings. Right-clicked En language indicator to pick 'text entry settings' then unchecked 'show current
+  input source in the menu bar'. Right-clicked menu bar clock to pick 'time & date settings...' then under 'clock' tab checked to show weekday, date & month,
+  year, 24-hour time, && seconds. Added Year to Aku's && Chun's clock displays too. Back on Ryu started new plain bash terminal && ran `zsh`. Ran `vim
+  ~/.config/user-dirs.dirs` and changed to .Dsktp, .dl, .Tmpl8z, .pub, dox, muz, gfx, mvz like Aku. Moved Desktop, Downloads, Public, && Templates && removed
+  Documents, Music, Pictures, && Videos. Moved examples.desktop to .xmplz.dsktp. Rebooted to see dirs changes take effect. Did `sudo chown pip:pip
+  .bash_history` then ran `zsh` then `chsh pip`, entered password then entered '/usr/bin/zsh' then exited to test but term icon still started up plain bash.
+  Ran `cd ~/.gconf/apps` then `rsync -av pip@192.168.8.15:.gconf/apps/g\* .` then rebooted to test. Seems good. `sz`, `agi indicator-multiload`. `x` then in
+  Launcher apps started 'System Load Indicator'. Then right-clicked to Preferences and enabled mem, net, load, && hard disk. On Ryu, no sshd so I couldn't
+  ssh in from Chun so I ran `sz` then `agi openssh-server` which pulled in a bunch of additional apparently needed packages. Hmm. ssh still doesn't work yet
+  so I must need to enable it in some additional way. After unplugging new Ryu 14.04 drive && attempting again to boot from new drive that was used on Aku to
+  dd copy 13.10 I let the boot process complete attempting to fix errors && then it could boot but the system seemed to reset to defaults && not allow
+  configuration changes. I tried to aguu && it seemed to complete but I didn't attempt the dist-upgrade to 14.04. With the LVM partition seemingly fixed &&
+  accessible again, I turned off the drive dock && rebooted Ryu off his new internal 14.04 drive then once up turned on the dock again && was able to mount
+  /dev/ubuntu/root to /mnt/sdb5 && began the massive rsync -av into /home/pip/.arc so that I hopefully won't have to do it slower over my LAN. Note that my
+  sda PV is in a separate VG titled 'ubuntu-vg'. After this rsync completes, I should probably repartition sdb && start a new mirror for Ryu. The problems are
+  that dd made the new drive's PV UUID the same as Aku's original Samsung drive && the repaired errors apparently render it bootable but only in some default
+  unchangeable state so better to just start it over with a fresh partition && pvcreate after ~/.arc is sync'd off of it. I'm not sure yet whether it's a
+  better idea to restart that drive with a fresh install from the 14.04 LiveCD or to LVM mirror Ryu's sda which might be harder to make it a bootable backup.
+  Either way, it's good to have the vast majority of Aku's ~ sync'd to his own mirror && on Chun && new Ryu (with .arc too) all updated to 14.04. I do still
+  need to learn more about whether splitmirrors will be necessary for Aku's new Seagate drive && how to update-grub on it to make it a fully bootable backup.
+  Eventually running a RAID1 mirror in Aku all the time seems like a good idea. Initiating Aku's mirror was done mainly following
+  HTTP://Linux.M2OSW.Com/creating-drive-mirror-lvm-including-exact-partition-cloning which doesn't yet explain splitting the mirror or making the new disk
+  bootable. I tseems like it might be a good idea to vgrename each of my disks that won't be dedicated mirrors separately to ease later mounting &&
+  synchronization.
+
+E4QMA6wn:Sabbath
+On Ryu, had to also run `sudo ufw allow 22` to let me ssh in from Chun but apparently the default still won't allow root login which I use for some
+  system-level rsync commands so I still need to figure out how to allow that, even though it may pose a serious security risk. If my partitions weren't
+  already using the entire disks, then using LVM to create stable snapshots to backup from would probably be a good idea as an alternative to having LVM
+  perform the full LV partition mirroring. I could create a snapshot with 2GB available to grow to hold changes while backup is being copied with:
+  `sudo lvcreate -L2G -s -n root-bak /dev/ubuntu-vg/root` then `sudo md /mnt/root-bak` && `sudo mount /dev/ubuntu-vg/root-bak /mnt/root-bak`.
+E4QMI321:Sabbath
+Ryu's rsync finished so I powered him down && unplugged his good new drive && rebooted off the 14.04 LiveCD && powered on the drive dock just after booting
+  from the CD started (which was necessary since the bad dd 13.10 disk was still poorly bootable with earlier SATA detection than my ROM drive). Aku's
+  mirroring is past 76% complete so I have just about 24 hours left to learn how to stop mirroring && make his cloned disk bootable before swapping it in with
+  his new video card. Ryu's new fresh 14.04 install took less than half an hour. First boot brought up Software Updater so I got it up-to-date then changed
+  the menubar clock && hid the language text entry indicator. Then moved Launcher Files icon down && unlocked 3 LibreOffice && Amazon icons. Then changed
+  Settings > Appearance to #020F1A with right-click customize && wallpapers drop-down to Colors&Gradients then picking the first solid option. Then Launcher
+  "soft" && dragging Software Updater icon above Software Center then "term" && putting Terminal above FireFox just below Launcher button. Then launched
+  terminal to `sudo bash` then `apt-get update` then `apt-get upgrade` just got newer bash then `apt-get install vim vim-doc zsh zsh-doc w3m most
+  indicator-multiload`. I should learn what's in vim-scripts later. Then `rsync -av pip@192.168.8.32:.config/user-dirs.dirs .config`, `exit`, `mv Desktop
+  .Dsktp`, `mv Documents dox`, `mv Downloads .dl`, `mv examples.desktop .xmplz.dsktp`, `mv Music muz`, `mv Pictures gfx`, `mv Public .pub`, `mv Templates
+  .Tmpl8z`, `mv Videos mvz`. `rsync -av 192.168.8.32:.lsrc .` && for .vimrc && .zshrc then bin then `sudo rsync -av root@192.168.8.32:/home/pip/lib .` since
+  I think some files in there are owned by root. Getting lib perls took a minute so I reopened Appearance > Behavior to Auto-Hide Launcher && enable
+  workspaces. Then moved Files icon below Workspace Switcher. Then `rsync -av 192.168.8.32:.gconf/apps/g\* .gconf/apps` then `exit` && reboot to test. Then
+  term still brought up bare-bones bash but `zsh` looked good so `x`, `chsh pip`, enter password, enter /usr/bin/zsh, then opening PipsCkm8GnomTerm came up
+  with zsh normally. Now this new Ryu setup is looking pretty comfortable && is just awaiting my larger ~ sync of .bak, dox, dvl, gfx, gmz, muz, mvz, .arc.
+  `sudo du -sb /home/pip` returns 263,664,210 which isn't too huge && would probably shrink a lot if I'd just clean my old perls out of lib. I also launched
+  System Load Indicator && set my preferences. All told took about an hour && a half to setup this fresh install. Nice! Maybe later I should
+  `sudo vgrename ...` from default "ubuntu-vg" to "vg-Ryu1" or something similarly descriptive. I'm not sure why it's constantly hitting the disk like the
+  installer did. I shut Ryu down for now but next time I boot him off that docked drive, I should probably `agi openssh-server` && `ufw allow 22`.
+
+E4SMELLY:Monday
+After following basic LVM mirroring directions on Aku by doing:
+  `sfdisk /dev/sdb < pRtitNz.txt`
+  `pvcreate /dev/sdb5`
+  `vgextend ubuntu /dev/sdb5`
+  `lvconvert -m1 /dev/ubuntu/root` taking 4+ days I'm now attempting to split the mirrors as both bootable.
+  `lvconvert --splitmirrors 1 -n root-o ubuntu/root /dev/sdb5`
+  `lvchange -an ubuntu/root-o` to make other root inactive
+  `vgsplit ubuntu vgaku0 /dev/sdb5` then try
+  `lvrename vgaku0/root-o vgaku0/root` then maybe
+  `grub-install /dev/sdb` or `grub`, `root (hd1,0)`, `setup (hd1)`, `quit`
+Tried just g-i first then powered down dock && `lvs -a -o+devices` shows many I/O errors. Before I try to reboot off just Samsung again, I think I should try
+  to `vgreduce vgaku0 /dev/sdb5` but it failed with Volume group "vgaku0" not found so just trying reboot. Booting showed crazy video tearing on left display
+  but then seemed to start off Samsung otherwise fine. Then powering down, unplugging Samsung && attempting just booting off docked Seagate failed with no
+  dev mapper root error message so trying to repair off LiveCD now. Didn't know what to do yet. Need more research so rebooted off Samsung sda && with Seagate
+  sdb back on in dock in inactive vgaku0 VG. Alternative to splitmirrors might be `lvconvert -m0 /dev/ubuntu/root /dev/sdb5`. I'm not yet sure even how to
+  merge VG's && reactivate mirroring. At least I can reactivate the LV then mount sdb5 to rsync.
+E4SMFsBq:Monday
+I expect I could
+  `lvremove vgaku0/root`
+  `vgremove vgaku0`
+  `vgextend ubuntu /dev/sdb5`
+  `lvconvert -m1 /dev/ubuntu/root` to reestablish mirror but it'd probably take a long time even though sda5 && sdb5 are still almost entirely in sync. I just
+  want to learn how to make the mirror so thorough that Aku can properly boot up off either disk. Remember that the PV disk in the command: `lvconvert -m0
+  /dev/ubuntu/root /dev/sdb5` is the disk you want to remove when unmirroring. If crashing && uncontrolled rebooting becomes common, it might be better to
+  create the mirror with `lvconvert -m1 --mirrorlog mirrored --alloc anywhere /dev/ubuntu/root` so that rebuilding the mirror won't require hours to complete.
+  Note that if I want to partition a same sized drive, I can run: `sfdisk -d /dev/sda | sfdisk /dev/sdb`. I might also later want to mirror swap too with a
+  command like: `lvconvert -m1 --mirrorlog mirrored --alloc anywhere ubuntu/swap_1 /dev/sdb5` after already setting up root similarly. For GRUB, I might need
+  to `rm /boot/grub/device.map`, `grub-install --recheck /dev/sdb`, `update-grub2`. Trying Seagate again prints:
+  Gave up waiting for root device.  Common problems:
+   - Boot args (cat /proc/cmdline)
+     - Check rootdelay= (did sys wait long enough?)
+     - Check root= (did sys wait for right device?)
+   - Missing modules (cat /proc/modules; ls /dev)
+  ALERT!  /dev/mapper/ubuntu-root does not exist. Dropping to a shell!
+E4SMHOPE:Monday
+It might be feasible to run the 20 hour dd copy then boot off CD && run `pvchange --uuid /dev/sda5` with only the new drive powered on. I can't `vgreduce
+  vgaku0 /dev/sdb5` because the PV is still in use as the only PV in the VG. I could `vgremove vgaku0` if I was sure I could get it back. I am able to
+  `lvrename vgaku0/root vgaku0/root-o`, `vgmerge ubuntu vgaku0` to get sdb5 back in my ubuntu VG but still unsure how to reestablish the mirror from there.
+  I created a new mirror of ubuntu/swap_1 then split as swap_1-o so that sda5 && sdb5 would be closer to identical.
+Yay! It looks like I finally got it to work. I had just my ubuntu VG containing sda5 root && swap_1 LV's && also my split mirrors on sdb5 named root-o &&
+  swap_1-o then I booted off my LiveCD && only powered on the Seagate in my drive dock (which then became sda). I picked Try Ubuntu && opened a terminal then
+  did `sudo bash`, `lvremove ubuntu/root` && confirm then `lvremove ubuntu/swap_1` && confirm. Both of those were from the missing PV. Then `vgreduce
+  --removemissing ubuntu`, `lvrename ubuntu/root-o ubuntu/root`, `lvrename ubuntu/swap_1-o ubuntu/swap_1` then rebooting just off the Seagate finally worked.
+  I've tested successful boots off either disk now. Time to test upgrading video && sound cards. Yay! Samsung now external backup. R9 VaporX && Xonar installed
+  && working. Ryu with old VaporX works too.

@@ -1,0 +1,18 @@
+.ebay .standard,.ebay p,.ebay td,.ebay blockquote,.ebay div,.ebay span,.ebay ul,.ebay ol,.ebay dl { font-family:Arial,Helvetica,sans-serif;font-size:small !important; }
+.ebay a:active,.ebay a:link,.ebay .novisited a:visited { color:#0000CC; }
+.ebay a:visited { color:#990099; }
+.ebay pre { font-family:"Courier New",Courier,monospace;font-size:small !important; }
+.ebay h1,.ebay .pagetitle { font-family:Arial,Helvetica,sans-serif;font-size:large !important;font-weight:bold; }
+.ebay h2,.ebay .sectiontitle { font-family:Arial,Helvetica,sans-serif;font-size:medium !important;font-weight:bold; }
+.ebay h3,.ebay th,.ebay .standardtitle { font-family:Arial,Helvetica,sans-serif;font-weight:bold; }
+.ebay .emphasized { font-family:Arial,Helvetica,sans-serif;color:#009900;font-weight:bold; }
+.ebay .error { font-family:Arial,Helvetica,sans-serif;color:#FF0000; }
+.ebay .help { font-family:Arial,Helvetica,sans-serif;color:#666666; }
+.ebay .pipe { font-family:Arial,Helvetica,sans-serif;color:#9999FF; }
+.ebay .button,.ebay .navigation { font-family:Verdana,Arial,Helvetica,sans-serif;font-size:x-small !important; }
+.ebay .textbox { font-family:Verdana,Arial,Helvetica,sans-serif;font-size:x-small !important;color:#000000; }
+.ebay .textboxhelp { font-family:Verdana,Arial,Helvetica,sans-serif;font-size:x-small !important;color:#666666; }
+.ebay .nomargin { margin:0px; }
+.ebay .lessen { color:#cccccc; }
+
+/* b=7239129 */

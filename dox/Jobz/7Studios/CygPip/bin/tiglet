@@ -1,0 +1,96 @@
+#!/usr/bin/perl
+
+#GrokThisHackPliz
+
+my $fntd = `figlet -I2`;           #this is 4linux
+#my $fntd = "/pip/4dos/fig/fonts";  #this is 4dos
+
+   chomp ($fntd);
+   $fntd .= "/*.flf";
+my $text = "@ARGV";
+my $outf = "dfaltout.txt";
+my @fntz = glob("$fntd");
+my $coun = 0;
+my $fcou = 0;
+my $lall = 0;
+#my $favs = "19 20 24 32 36 37 64 67 69 70 75 76 77 78 80 84 85 90 93 100 102 ";
+my $favs = "14 15 19 22 24 25 32 36 37 64 65 67 70 76 78 81 84 85 87 88 90 94 100 102 ";
+#my $favs = ""; #Above are my 4dos&&Linux favs but I have more fonts than most.
+my $optn = ""; # Your mileage and font numbers may vary.
+my $inpt = "";
+my @favz = split /\s+/, $favs;
+
+if ($text =~ m/^\s*-a/i) { $text =~ s/^\s*-a//i; $lall = 1; }
+
+print "                       Tigger's Figlet Chooser v0.2\n";
+print "USAGE:  me\@myserver:\% perl tiglet.pl \"KakA NachoZ\"\n";
+print "Tiglet lets you interactively select the perfect figlet font \n";
+print " for your .sig or msg or title or... =) smiley!  \n";
+print "Specify -a on the command line to rotate through all available\n";
+print " fonts or just run normally to rotate only favorites\n"; 
+print "Please email suggestions or constructive criticisms to Pip\@BinQ.org\n";
+print "n or Enter - checks next font, p - checks previous font\n";
+print "  Any specific number jumps directly to that font\n";
+print "t - prompts for text change, e - prompts for filename to export to\n";
+print "Y - SAVES selected text to specified exportfile and quits\n";
+print "Q - QUITS without saving, ... the parameters are not case-sensitive\n";
+print "Toggles: s=squish, k=kern, o=overlap, c=center, l=left, r=right, f=favorite\n";
+
+if ($text eq "") {
+    $text = "KakA NachoZ";
+    print "Please enter text to display [$text]: ";
+    chomp ($poop = <STDIN>); if ($poop ne "") { $text = $poop; }
+    print "Please enter a file to write selected text to [$outf]: ";
+    chomp ($poop = <STDIN>); if ($poop ne "") { $outf = $poop; }
+}
+while ($inpt !~ /q|x|y|d/i && (($lall && $coun < @fntz) || (!$lall && $fcou < @favz))) {
+    @favz = split /\s+/, $favs;
+    if ($lall) {
+        $fntz[$coun] =~ s!.*/!!;
+        $kaka = `figlet -f $fntz[$coun] $optn $text`;
+        print "${kaka}Font\#$coun:$fntz[$coun],Text:$text,Optn:$optn,Favs:$favs,cmd[npYteskocq]: ";    
+    } else {
+        $fntz[$favz[$fcou]] =~ s!.*/!!;
+        $kaka = `figlet -f $fntz[$favz[$fcou]] $optn $text`;
+        print "${kaka}Font\#$favz[$fcou]:$fntz[$favz[$fcou]],Text:$text,Optn:$optn,Favs:$favs,cmd[npYteskocq]: ";
+    }
+    chomp ($inpt = <STDIN>); $inpt =~ tr/A-Z/a-z/;
+    if ($inpt =~ /f/) { 
+        if ($favs =~ /$coun /) { 
+            if ($lall) { $favs =~ s/$coun //; } 
+            else { $favs =~ s/$favz[$fcou] //; }
+	} else { 
+	    if ($lall) { $favs .= "$coun "; }
+	    else { $favs .= "$favz[$fcou] "; }
+	} 
+    }
+    if ($inpt eq "" || $inpt =~ /n/) { $coun++; $fcou++;
+        if (($lall && $coun == @fntz) || (!$lall && $fcou == @favz)) { 
+            print "Last Font Displayed!  Loop back to beginning? (y/n) ";
+            $poop = <STDIN>; if ($poop =~ /y/i) { $coun = 0; $fcou = 0; }
+        }
+    }
+    if ($inpt =~ /p/) { $coun--; $fcou--; }
+    if ($inpt =~ /\d+/) { $coun = $inpt;
+        if ($coun < 0) { $coun = 0; }
+        if ($coun > @fntz) { $coun = $#fntz; }
+    }
+    if ($inpt =~ /y/ || $inpt =~ /d/) {
+        print "Saving to $outf and Quitting!\n";
+        open OUTF, ">$outf"; print OUTF $kaka; close OUTF;
+    }
+    if ($inpt =~ /t/) { 
+        print "New Text [$text]: "; chomp ($poop = <STDIN>);
+        if ($poop ne "") { $text = $poop; }
+    }
+    if ($inpt =~ /e/) { 
+        print "Export File [$outf]: "; chomp ($poop = <STDIN>);
+        if ($poop ne "") { $outf = $poop; }
+    }
+    if ($inpt =~ /s/ || $inpt =~ /k/ || $inpt =~ /o/ ||
+        $inpt =~ /c/ || $inpt =~ /l/ || $inpt =~ /r/) {
+        if ($optn =~ /-$inpt /i) { $optn =~ s/(-$inpt |$inpt)//gi; }
+        else { $optn .= "-$inpt "; }
+    }
+    if ($inpt =~ /q/ || $inpt =~ /x/) { print "Quitting Without Saving!\n"; }
+}

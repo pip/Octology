@@ -1,0 +1,91 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd" >
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en" >
+  [%- DEFAULT title = "PipForPresident.Org (P4P)" %]
+  <head>
+    <title>[% title %]</title>
+    <meta http-equiv="content-type" content="text/html;charset=utf-8" />
+    <link rel="stylesheet"           href="/css/main.css"
+         type="text/css"                                              />
+    <link rel="stylesheet"           href="/css/standard-may.css"
+         type="text/css"            title="standard-may"              />
+    <link rel="alternate stylesheet" href="/css/standard-wby.css"
+         type="text/css"            title="standard-wby"              />
+    <link rel="alternate stylesheet" href="/css/standard-wkg.css"
+         type="text/css"            title="standard-wkg"              />
+    <link rel="alternate stylesheet" href="/css/standard-krd.css"
+         type="text/css"            title="standard-krd"              />
+    <link rel="alternate stylesheet" href="/css/impacted-may.css"
+         type="text/css"            title="impacted-may"              />
+    <link rel="alternate stylesheet" href="/css/impacted-wby.css"
+         type="text/css"            title="impacted-wby"              />
+    <link rel="alternate stylesheet" href="/css/impacted-wkg.css"
+         type="text/css"            title="impacted-wkg"              />
+    <link rel="alternate stylesheet" href="/css/impacted-krd.css"
+         type="text/css"            title="impacted-krd"              />
+    <link rel="alternate stylesheet" href="/css/marginalized-may.css"
+         type="text/css"            title="marginalized-may"          />
+    <link rel="alternate stylesheet" href="/css/marginalized-wby.css"
+         type="text/css"            title="marginalized-wby"          />
+    <link rel="alternate stylesheet" href="/css/marginalized-wkg.css"
+         type="text/css"            title="marginalized-wkg"          />
+    <link rel="alternate stylesheet" href="/css/marginalized-krd.css"
+         type="text/css"            title="marginalized-krd"          />
+    <script type="text/javascript"    src="/js/Prototype/prototype.js"    ></script>
+    <script type="text/javascript"    src="/js/Prototype/scriptaculous.js"></script>
+    <script type="text/javascript"    src="/js/Prototype/behaviour.js"    ></script>
+    <script type="text/javascript"    src="/js/HTTP/Cookies.js"           ></script>
+    <script type="text/javascript"    src="/js/CSS/Change.js"             ></script>
+    <script type="text/javascript"    src="/js/DOM/domLib.js"             ></script>
+    <script type="text/javascript"    src="/js/DOM/domTT.js"              ></script>
+    <script type="text/javascript"    src="/js/main.js"                   ></script>
+  </head>
+  <body>
+    <div id="pt-tooltip-pool" style="display:none">
+      <div id="pt-tooltip-content">hi<br />you must be new here</div>
+    </div>
+    <div id="header">
+      <form id="theme-selector" action="">
+        Theme:
+        <select name="theme" onchange="css.change(this.options[this.selectedIndex].value)">
+          <option value="standard-may"    >standard - mid_aqu_yel    </option>
+          <option value="standard-wby"    >standard - wht_blu_yel    </option>
+          <option value="standard-wkg"    >standard - wht_blk_gry    </option>
+          <option value="standard-krd"    >standard - blk_red_drd    </option>
+          <option value="impacted-may"    >impacted - mid_aqu_yel    </option>
+          <option value="impacted-wby"    >impacted - wht_blu_yel    </option>
+          <option value="impacted-wkg"    >impacted - wht_blk_gry    </option>
+          <option value="impacted-krd"    >impacted - blk_red_drd    </option>
+          <option value="marginalized-may">marginalized - mid_aqu_yel</option>
+          <option value="marginalized-wby">marginalized - wht_blu_yel</option>
+          <option value="marginalized-wkg">marginalized - wht_blk_gry</option>
+          <option value="marginalized-krd">marginalized - blk_red_drd</option>
+        </select>
+      </form>
+      <div id="navbar">
+        <ul>
+          <li><a href="/index.htm" >Home</a>           </li>
+          <li><a href="/plan.htm"  >Plan</a>           </li>
+          <li><a href="/ifaq.htm"  >IFAQ</a>           </li>
+          <li><a href="/faq.htm"   >FAQ</a>            </li>
+          <!--
+          <li><a href="/plat.htm"  >Platform</a>       </li>
+          <li><a href="/eml.htm"   >E-mail</a>         </li>
+          <li><a href="/audio.htm" >Audio</a>          </li>
+          <li><a href="/video.htm" >video</a>          </li>
+          -->
+          <li><a href="/tru.htm"   >Truisms</a>        </li>
+          <li><a href="/pledge.htm">Pledges</a>        </li>
+          <li><a href="/auto.htm"  >Autobiography</a>  </li>
+          <li><a href="/blog/"     >Blog</a>           </li>
+          <li><a href="/arc.htm"   >SiteArchives</a>   </li>
+          <li><a href="/cont.htm"  >Contact</a>        </li>
+        </ul>
+      </div>
+      <h1>Pip Stuart for President in 2008</h1>
+      [% IF preface %]
+        <div class="preface">
+        [% PROCESS $preface %]
+        </div>
+      [% END %]
+    </div>
+    <div id="main">

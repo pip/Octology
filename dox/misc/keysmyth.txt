@@ -1,0 +1,1263 @@
+[For anyone coming here from a direct request, I strongly recommend that
+you click here to see a far more complete page dealing with our writings
+on network effects, path dependence, the Microsoft Antitrust case, and
+our forthcoming book].
+
+I apologize for any typo's. I lost the computer file used for this paper
+and had to scan it in with some resulting errors. 
+
+(Journal of Law & Economics vol. XXXIII (April 1990)] 
+
+THE FABLE OF THE KEYS*
+S. J. LIEBOWITZ and STEPHEN E. MARGOLIS 
+1. INTRODUCTlON
+The term 'standard' can refer to any social convention (standard of
+conduct, legal standards), but it most often refers to conventions that
+require exact uniformity (standards of measurement, computer operating
+systems). Current efforts to control the development of high-resolution
+television, multitasking computer-operating systems, and videotaping
+formats have heightened interest in standards. 
+
+The economic literature on standards has focused recently on the
+possibility of market failure with respect to the choice of a standard.
+In its strongest form, the argument is essentially this: an established
+standard can persist over a challenger, even where all users prefer a
+world dominated by the challenger, if users are unable to coordinate
+their choices. For example, each of us might prefer to have Beta-format
+videocassette recorders as long as prerecorded Beta tapes continue to be
+produced, but individually we do not buy Beta machines because we don't
+think enough others will buy Beta machines to sustain the prerecorded
+tape supply. I don't buy a Beta format machine because I think that you
+won't you don't buy one because you think that I won't. In the end, we
+both turn out to be correct, but we are both worse off than we might
+have been. This, of course, is a catch-22 that we might suppose to be
+common in the economy. There will be no cars until there are gas
+stations there will be no gas stations until there are cars. Without
+some way out of this conundrum, joyriding can never become a favorite
+activity of teenagers.1 
+
+The logic of these economic traps and conundrums is impeccable as far as
+it goes, but we would do well to consider that these traps are sometimes
+escaped in the market. Obviously, gas stations and automobiles do exist,
+so participants in the market must use some technique to unravel such
+conundrums. If this catch-22 is to warrant our attention as an empirical
+issue, at a minimum we would hope to see at least one real-world example
+of it. In the economics literature on standards,2 the popular real-world
+example of this market failure is the standard Qwerty typewriter
+keyboard 3 and its competition with the rival Dvorak keyboard.4 This
+example is noted frequently in newspaper and magazine reports, seems to
+be generally accepted as true, and was brought to economists' attention
+by the papers of Paul David.5 According to the popular story, the
+keyboard invented by August Dvorak, a professor of education at the
+University of Washington, is vastly superior to the Qwerty keyboard
+developed by Christopher Sholes that is now in common use. We are to
+believe that, although the Dvorak keyboard is vastly superior to Qwerty,
+virtually no one trains on Dvorak because there are too few Dvorak
+machines, and there are virtually no Dvorak machines because there are
+too few Dvorak typists. 
+
+This article examines the history, economics, and ergonomics of the
+typewriter keyboard. We show that David's version of the history of the
+market's rejection of Dvorak does not report the true history, and we
+present evidence that the continued use of Qwerty is efficient given the
+current understanding of keyboard design. We conclude that the example
+of the Dvorak keyboard is what beehives and lighthouses were for earlier
+market-failure fables. It is an example of market failure that will not
+withstand rigorous examination of the historical record.6 
+
+II. SOME ECONOMICS OF STANDARDS
+Some standards change over time without being impaired as social
+conventions. Languages for example, evolve over time, adding words and
+practices that are useful and winnowing features that have lost their
+purpose. Other standards are inherently inflexible. Given current
+technologies, it won t do, for example, for broadcast frequencies to
+drift the way that orchestral tuning has. A taste for a slightly larger
+centimeter really can t be accommodated by a sequence of independent
+decisions the way that increased use of contractions in academic writing
+cam Obviously. if standards can evolve at low cost, they would be
+expected to evolve into the forms that are most efficient (in the eyes
+of those adopting the standards). Conversely, an inappropriate standard
+is most likely to have some permanence where evolution is costly. 
+
+In a recent article on standards, Joseph Farrell and Garth Saloner
+present a formal exploration of the difficulties associated with
+changing from one standard to another.7 They construct hypothetical
+circumstances that might lead to market failure with respect to
+standards. To refer to the condition in which a superior standard is not
+adopted, they coin the phrase excess inertia. Excess inertia is a type
+of externality: each nonadopter of the new standard imposes costs on
+every other potential user of the new standard. In the case of excess
+inertia, the new standard can be clearly superior to the old standard,
+and the sum of the private costs of switching to the new standard can be
+less than the sum of the private benefits, and yet the switch does not
+occur. This is to be differentiated from the far more common invention
+of new standards superior to the old, but for which the costs of
+switching are too high to make the switch practicable. Users of the old
+standard may regret their choice of that standard, but their continued
+use of the old standard is not inefficient: would it not be foolish to
+lay all regrets at the doorstep of externalities? 
+
+Farrell and Saloner's construct is useful because it shows the
+theoretical possibility of a market failure and also demonstrates the
+role of information. There is no possibility of excess inertia in their
+model if all participants can communicate perfectly. In this regard,
+standards are not unlike other externalities in that costs of
+transacting are essential. Thus, standards can be understood within the
+framework that Coase offered decades ago.8 
+
+By their nature, this model and others like it must ignore many factors
+in the markets they explore. Adherence to an inferior standard in the
+presence of a superior one represents a loss of some sort: such a loss
+implies a profit opportunity for someone who can figure out a means of
+internalizing the externality and appropriating some of the value made
+available from changing to the superior standard. Furthermore,
+institutional factors such as head starts from being first on the
+market, patent and copyright law, brand names, tie-in sales, discounts,
+and so on, can also lead to appropriation possibilities (read "profit
+opportunities") for entrepreneurs, and with these opportunities we
+expect to see activity set in motion to internalize the externalities.
+The greater the gap in performance between two standards, the greater
+are these profit opportunities, and the more likely that a move to the
+efficient standard will take place. As a result, a clear example of
+excess inertia is apt to be very hard to find. Observable instances in
+which a dramatically inferior standard prevails are likely to be
+short-lived, imposed by authority, or fictional. 
+
+The creator of a standard is a natural candidate to internalize the
+externality.9 If a standard can be ''owned," the advantage of the
+standard can be appropriated. at least in part, by the owner. Dvorak,
+for example, patented his keyboard. An owner with the prospect of
+appropriating substantial benefits from a new standard would have an
+incentive to share some of the costs of switching to a new standard.
+This incentive gives rise to a variety of internalizing tactics.
+Manufacturers of new products sometimes offer substantial discounts to
+early adopters, offer guarantees of satisfaction or make products
+available on a rental basis. Sometimes manufacturers offer rebates to
+buyers who turn in equipment based on old standards, thus discriminating
+in price between those who have already made investments in a standard
+and those who have not. Internalizing tactics can be very simple: some
+public utilities once supplied light bulbs. and some UHF television
+stations still offer free UHF indoor antennas. In many industries firms
+provide subsidized or free training to assure an adequate supply of
+operators. Typewriter manufacturers were an important source of trained
+typists for at least the first fifty years of that technology.10 
+
+Another internalizing tactic is convertibility. Suppliers of
+new-generation computers occasionally offer a service to convert files
+to new formats. Cable-television companies have offered hardware and
+services to adapt old televisions to new antenna systems for an interim
+period. Of interest in the present context. for a time before and after
+the Second World War typewriter manufacturers offered to convert Qwerty
+typewriters to Dvorak for a very small fee.11 
+
+All of these tactics tend to unravel the apparent trap of an inefficient
+standard. but there are additional conditions that can contribute to the
+ascendancy of the efficient standard. An important one is the growth of
+the activity that uses the standard. If a market is growing rapidly the
+number of users who have made commitments to any standard is small
+relative to the number of future users. Sales of audiocassette players
+were barely hindered by their incompatibility with the reel-to-reel or
+eight-track players that preceded them. Sales of sixteen-bit computers
+were scarcely hampered by their incompatibility with the disks or
+operating systems of eight-bit computers. 
+
+Another factor that must be addressed is the initial competition among
+rival standards. If standards are chosen largely through the influence
+of those who are able to internalize the value of standards we would
+expect in Darwinian fashion the prevailing standard to be the fittest
+economic competitor. Previous keyboard histories have acknowledged the
+presence of rivals but they seem to view competition as a process
+leading to results indistinguishable from pure chance. 
+
+Consideration of the many complicating factors present in the market
+suggests that market failure in standards is not as compelling as many
+of the abstract models seem to suggest. Theoretical abstraction presents
+candidates for what might be important, but only empirical verification
+can determine if these abstract models have anything to do with reality.
+
+III. THE CASE FOR THE SUPERIORITY OF THE DVORAK KEYBOARD
+Paul David introduces economists to the conventional story of the
+development and persistence of the current standard keyboard, known as
+the Universal. or Qwerty, keyboard.12 The key features of that story are
+as follows. The operative patent for the typewriter was awarded in 1868
+to Christopher Latham Sholes, who continued to develop the machine for
+several years. Among the problems that Sholes and his associates
+addressed was the jamming of the type bars when certain combinations of
+keys were struck in very close succession. As a partial solution to this
+problem, Sholes arranged his keyboard so that the keys most likely to be
+struck in close succession were approaching the type point from opposite
+sides of the machine. Since Qwerty was designed to accomplish this now
+obsolete mechanical requirement, maximizing speed was not an explicit
+objective. Some authors even claim that the keyboard is actually
+configured to minimize speed since decreasing speed would have been one
+way to avoid the jamming of the typewriter. At the time, however, a
+two-finger hunt-and-peck method was contemplated, so the keyboard speed
+envisioned was quite different from touch-typing speeds. 
+
+The rights to the Sholes patent were sold to E. Remington & Sons in
+early 1873. The Remingtons added further mechanical improvements and
+began commercial production in late 1873. 
+
+A watershed event in the received version of the Qwerty story is a
+typing contest held in Cincinnati on July 25, 1888. Frank McGurrin, a
+court stenographer from Salt Lake City, who was apparently the first to
+memorize the keyboard and use touch-typing, won a decisive victory over
+Louis Taub. Taub used the hunt-and-peck method on a Caligraph, a machine
+that used seventy-two keys to provide upper- and lower-case letters.
+According to popular history, the event established once and for all
+that the Remington typewriter, with its Qwerty keyboard, was technically
+superior. More important, the contest created an interest in
+touch-typing, an interest directed at the Qwerty arrangement.
+Reportedly, no one else at that time had skills that could even approach
+McGurrin's, so there was no possibility of countering the claim that the
+Remington keyboard arrangement was efficient. McGurrin participated in
+typing contests and demonstrations throughout the country and became
+something of a celebrity. His choice of the Remington keyboard which may
+well have been arbitrary contributed to the establishment of the
+standard. So it was. according to the popular telling that a keyboard
+designed to solve a short-lived mechanical problem became the standard
+used daily by millions of typists.13 
+
+In 1936, August Dvorak patented the Dvorak Simplified Keyboard (DSK)
+claiming that it dramatically reduced the finger movement necessary for
+typing by balancing the load between hands and loading the stronger
+fingers more heavily. Its inventors claimed advantages of greater speed
+reduced fatigue and easier learning. These claims have been accepted by
+most commentators including David who refers. without citation to
+experiments done by the U.S. Navy that had shown that the increased
+efficiency obtained with the DSK would amortize the cost of retraining a
+group of typists within ten days of their subsequent full-time
+employment.14 In spite of its claimed advantages the Dvorak keyboard has
+never found much acceptance. 
+
+This story is the basis of the claim that the current use of the Qwerty
+keyboard is a market failure. The claim continues that a beginning
+typist will not choose to train in Dvorak because Dvorak machines are
+likely to be difficult to find and offices will not equip with Dvorak
+machines because there is no available pool of typists. 
+
+This is an ideal example. The number of dimensions of performance are
+few and in these dimensions the Dvorak keyboard appears overwhelmingly
+superior. These very attributes however imply that the forces to adopt
+this superior standard should also be very strong. It is the failure of
+these forces to prevail that warrants our critical examination.
+
+IV. THE MYTH OF DVORAK
+Farrell and Saloner mention the typewriter keyboard as a clear example
+of market failure.15 So too does the textbook by Tirole.16 Both works
+cite David's article as the authority on this subject. Yet there are
+many aspects of the Qwerty-versus-Dvorak fable that do not survive
+scrutiny. First, the claim that Dvorak is a better keyboard is supported
+only by evidence that is both scant and suspect. Second, studies in the
+ergonomics literature find no significant advantage for Dvorak that can
+be deemed scientifically reliable. Third, the competition among
+producers of typewriters, out of which the standard emerged, was far
+more vigorous than is commonly reported. Fourth, there were far more
+typing contests than just the single Cincinnati contest. These contests
+provided ample opportunity to demonstrate the superiority of alternative
+keyboard arrangements. That Qwerty survived significant challenges early
+in the history of typewriting demonstrates that it is at least among the
+reasonably fit, even if not the fittest that can be imagined.
+
+A. GAPS IN THE EVIDENCE FOR DVORAK
+Like most of the historians of the typewriter,17 David seems to assume
+that Dvorak is decisively superior to Qwerty. He never questions this
+assertion, and he consistently refers to the Qwerty standard as
+inferior. His most tantalizing evidence is his undocumented account of
+the U.S. Navy experiments. After recounting the claims of the Navy
+study. he adds ''if as Apple advertising copy says, DSK 'lets you type
+20 to 40% faster- why did this superior design meet essentially the same
+resistance as the previous seven improvements on the Qwerty typewriter
+keyboard?''18 
+
+Why indeed? The survival of Qwerty is surprising to economists only in
+the presence of a demonstrably superior rival. David uses Qwerty's
+survival to demonstrate the nature of path dependency, the importance of
+history for economists. and the inevitable oversimplification of reality
+imposed by theory. Several theorists use his historical evidence to
+claim empirical relevance for their versions of market failure. But on
+what foundation does all this depend? All we get from David is an
+undocumented assertion and some advertising copy. 
+
+The view that Dvorak is superior is widely held. This view can be traced
+to a few key sources. A book published by Dvorak and several co-authors
+in 1936 included some of Dvorak s own scientific inquiry.19 Dvorak and
+his co-authors compared the typing speed achieved in four different and
+completely separate experiments. conducted by various researchers for
+various purposes.20 One of these experiments examined the typing speed
+on the Dvorak keyboard and three examined typing speed on the Qwerty
+keyboard. The authors claimed that these studies established that
+students learn Dvorak faster than they learn Qwerty. A serious criticism
+of their methodology is that the various studies that they compared used
+students of different ages and abilities (for example students learning
+Dvorak in grades 7 and 8 at the University of Chicago Lab School were
+compared with students in conventional high schools), in different
+school systems taking different tests and in classes that met for
+different periods of time. Still more serious is that they did not
+stipulate whether their choice of studies was a random sample or the
+full population of available studies. So their study really establishes
+only that it is possible to find studies in which students learning to
+type on Qwerty keyboards appear to have progressed less rapidly in terms
+of calendar time than Dvorak s students did on his keyboard. Even in
+this Dvorak study however the evidence is mixed as to whether students
+as they progress. retain an advantage when using the Dvorak keyboard
+since the differences seem to diminish as typing speed increases. 
+
+In general it is desirable to have independent evaluation and here the
+objectivity of Dvorak and his co-authors seems particularly open to
+question. Their book is more in the vein of an inspirational tract than
+a scientific work. Consider the following taken from their chapter about
+relative keyboard performances): 
+
+The bare recital to you of a few simple facts should suffice to indict
+the available spatial pattern that is so complacently entitled the
+universal [Qwerty] keyboard. Since when was the universe lopsided? The
+facts will not be stressed, since you may finally surmount most of the
+ensuing handicaps of this [Qwerty] keyboard. Just enough facts will be
+paraded to lend you double assurance that for many of the errors that
+you will inevitably make and for much of the discouraging delay you will
+experience in longed-for speed gains. you are not to blame. if you grow
+indignant over the beginner s role of innocent victim. remember that a
+little emotion heightens determination.21 Analysis of the present
+keyboard is so destructive that an improved arrangement is a modern
+imperative. Isn't it obvious that faster. more accurate, less fatiguing
+typing can be attained in much less learning time provided a simplified
+keyboard is taught. 22 The Navy study, which seems to have been the
+basis for some of the more extravagant claims of Dvorak advocates, is
+also flawed. Arthur Foulke, Sholes's biographer, and a believer in the
+superiority of the Dvorak keyboard, points out several discrepancies in
+the reports coming out of the Navy studies. He cites an Associated Press
+report of October 7, 1943, to the effect that a new typewriter keyboard
+allowed typists to ''zip along at 180 words per minute'' but then adds
+'However, the Navy Department, in a letter to the author October I4,
+1943 by Lieutenant Commander W. Marvin McCarthy said that it had no
+record of and did not conduct such a speed test, and denied having made
+an official announcement to that effect.''23 Foulke also reports a
+Business Week story of October 16, 1943, that reports a speed of 108,
+not 180, words per minute. 
+
+We were able to obtain, with difficulty, a copy of the 1944 Navy
+report.24 The report does not state who conducted the study. It consists
+of two parts, the first based on an experiment conducted in July of 1944
+and the second based on an experiment conducted in October of that year.
+The report's foreword states that two prior experiments had been
+conducted but that "the first two groups were not truly fair tests." We
+are not told the results of the early tests. 
+
+The first of the reported experiments consisted of the retraining of
+fourteen Navy typists on newly overhauled Dvorak keyboards for two hours
+a day. We are not told how the subjects were chosen, but it does not
+appear to be based on a random process. At least twelve of these
+individuals had previously been Qwerty typists with an average speed of
+thirty-two words per minute although the Navy defined competence as
+fifty words per minute. The typists had IQs that averaged 98 and
+dexterity skills with an average percentile of 65. The study reports
+that it took fifty-two hours for typists to catch up to their old speed.
+After completing an average of eighty-three hours on the new keyboard,
+typing speed had increased to an average of fifty-six net words per
+minute compared to their original thirty-two words per minute, a 75
+percent increase. 
+
+The second experiment consisted of the retraining of eighteen typists on
+the Qwerty keyboard. It is not clear how these typists were picked or
+even if members of this group were aware that they were part of an
+experiment. We are not told whether this training was performed in the
+same manner as the first experiment (the Navy retrained people from time
+to time and this may just have been one of these groups). The
+participants IQs and dexterity skills are not reported. It is difficult
+to have any sense whether this group is a reasonable control for the
+first group. The initial typing scores for this group averaged
+twenty-nine words per minute but these scores were not measured
+identically to those from the first experiment. The report states that
+because three typists had net scores of zero words per minute initially.
+the beginning and ending speeds were calculated as the average of the
+first four typing tests and the average of the last four typing tests.
+In contrast, the initial experiment using Dvorak simply used the first
+and last test scores. This truncation of the reported values reduced the
+measured increase in typing speed on the Qwerty keyboard by a
+substantial margin.25 
+
+The measured increase in net typing speed for Qwerty retraining was from
+twenty-nine to thirty-seven words per minute (28 percent) after an
+average of 158 hours of training, considerably less than the increase
+that occurred with the Dvorak keyboard. 
+
+The Navy study concludes that training in Dvorak is much more effective
+than retraining in Qwerty. But the experimental design leaves too many
+questions for this to be an acceptable finding. Do these results hold
+for typists with normal typing skills or only for those far below
+average? Were the results for the first group just a regression to the
+mean for a group of underperforming typists? How much did the Navy
+studies underestimate the value of increased Qwerty retraining due to
+the inconsistent measurement? Were the two groups given similar
+training? Were the Qwerty typewriters overhauled, as were the Dvorak
+typewriters? There are many possible biases in this study. All,
+suspiciously, seem to be in favor of the Dvorak design. 
+
+The authors of the Navy study do seem to have their minds made up
+concerning the superiority of Dvorak. In discussing the background of
+the Dvorak keyboard and prior to introducing the results of the study,
+the report claims: ''Indisputably, it is obvious that the Simplified
+Keyboard is easier to master than the Standard Keyboard.".26 Later they
+refer to Qwerty as an "ox'' and Dvorak as a ''jeep'' and add: ''no
+amount of goading the oxen can materially change the end result." 27 
+
+There are other problems of credibility with these Navy studies having
+to do with potential conflicts of interest. Foulke 28 identifies Dvorak
+as Lieutenant Commander August Dvorak, the Navy's top expert in the
+analysis of time and motion studies during World War II. Earle Strong, a
+professor at Pennsylvania State University and a one-time chairman of
+the Office Machine Section of the American Standards Association,
+reports that the 1944 Navy experiment and some Treasury department
+experiments performed in 1946 were conducted by Dr. Dvorak.29 We also
+know that Dvorak had a financial stake in this keyboard. He owned the
+patent on the keyboard and had received at least $130,000 from the
+Carnegie Commission for Education for the studies performed while he was
+at the University of Washington.30 
+
+But there is more to this story than the weakness of the evidence
+reported by the Navy, or Dvorak, or his followers. A 1956 General
+Services Administration study by Earle Strong, which was influential in
+its time, provides the most compelling evidence against the Dvorak
+keyboard.31 This study is ignored in David's history for economists and
+is similarly ignored in other histories directed at general audiences.
+Strong conducted a carefully controlled experiment designed to examine
+the costs and benefits of switching to Dvorak. He concluded that
+retraining typists on Dvorak had no advantages over retraining on
+Qwerty. 
+
+In the first phase of Strong's experiment ten government typists were
+retrained on the Dvorak keyboard. It took well over twenty-five days of
+four-hour-a-day training for these typists to catch up to their old
+Qwerty speed. (Compare this to the claim David makes about the Navy
+study's results that the full retraining costs were recovered in ten
+days.) When the typists had finally caught up to their old speed Strong
+began the second phase of the experiment. The newly trained Dvorak
+typists continued training and a group of ten Qwerty typists began a
+parallel program to improve their skills. In this second phase the
+Dvorak typists progressed less quickly with further Dvorak training than
+did Qwerty typists training on Qwerty keyboards. Thus Strong concluded
+that Dvorak training would never be able to amortize its costs. He
+recommended that the government provide further training in the Qwerty
+keyboard. for Qwerty typists. The information provided by this study was
+largely responsible for putting Dvorak to rest as a serious alternative
+to Qwerty for those firms and government agencies responsible for
+choosing typewriters.32 
+
+Strong's study does leave some questions unanswered. Because it uses
+experienced typists it cannot tell us whether beginning Dvorak typists
+could be trained more quickly than beginning Qwerty typists. Further,
+although one implication of Strong s study is that the ultimate speed
+achieved would be greater for Qwerty typists than for Dvorak typists
+(since the Qwerty group was increasing the gap over the Dvorak group in
+the second phase of the experiment), we cannot be sure that an
+experiment with beginning typists would provide the same results.33 
+
+Nevertheless, Strong's study must be taken seriously. It attempts to
+control the quality of the two groups of typists and the instruction
+they receive. It directly addresses the claims that came out of the Navy
+studies, which consider the costs and benefits of retraining. It
+directly parallels the decision that a real firm or a real government
+agency might face: is it worthwhile to retrain its present typists? The
+alleged market failure of the Qwerty keyboard as represented by Farrell
+and Saloner's excess inertia is that all firms would change to a new
+standard if only they could each be assured that the others would
+change. If we accept Strong's findings, it is not a failure to
+communicate that keeps firms from retraining its typists or keeps
+typists from incurring their own retraining costs. If Strong's study is
+correct, it is efficient for current typists not to switch to Dvorak. 
+
+Current proponents of Dvorak have a different view when they assess why
+the keyboard has not been more successful. Hisao Yamada, an advocate of
+Dvorak who is attempting to influence Japanese keyboard development,
+gives a wide-ranging interpretation to the Dvorak keyboard's failure. He
+blames the Depression, bad business decisions by Dvorak, World War II,
+and the Strong report. He goes on to say: 
+
+There were always those who questioned the claims made by DSK followers.
+Their reasons are also manifold. Some suspected the superiority of the
+instructions by DSK advocates to be responsible (because they were all
+holders of advanced degrees): such a credential of instructors is also
+apt to cause the Hawthorne effect. Others maintain that all training
+experiments, except the GSA one as noted, were conducted by the DSK
+followers, and that the statistical control of experiments was not well
+exercised. This may be a valid point. It does not take too long to
+realize, however. that it is a major financial undertaking to organize
+such an experiment to the satisfaction of statisticians.... The fact
+that those Critics were also reluctant to come forth in support of such
+experiments . . . may indicate that the true reason of their criticism
+lies elsewhere.34 This is one nasty disagreement.35
+
+Nevertheless, Yamada as much as admits that experimental findings
+reported by Dvorak and his supporters cannot be assigned much
+credibility and that the most compelling claims cited by Yamada for DSK
+s superiority come from Dvorak's own work. Much of the other evidence
+Yamada uses to support his views of DSK s superiority actually can be
+used to make a case against Dvorak. Yamada refers to a 1952 Australian
+post office study that showed no advantages for DSK when it was first
+conducted. It was only after adjustments were made in the test procedure
+(to remove psychological impediments to superior performance) that DSK
+did better.36 He cites a 1973 study based on six typists at Western
+Electric where after 104 hours of training on DSK, typists were 2.6
+percent faster than they had been on Qwerty.37 Similarly Yamada reports
+that in a 1978 study at Oregon State University after 100 hours of
+training typists were up to 97.6 percent of their old Qwerty speed.38
+Both of these retraining times are similar to those reported by Strong
+and not to those in the Navy study. Yamada however thinks the studies
+themselves support Dvorak.39 But unlike the Strong study neither of
+these studies included parallel retraining on Qwerty keyboards. As the
+Strong study points out even experienced Qwerty typists increase their
+speed on Qwerty if they are given additional training. Even if that
+problem is ignored the possible advantages of Dvorak are all much weaker
+than those reported from the Navy study.
+
+B. EVIDENCE FROM THE ERGONOMICS LITERATURE 
+The most recent studies of the relative merits of keyboards are found in
+the ergonomics literature. These studies provide evidence that the
+advantages of the Dvorak is either small or nonexistent. For example A.
+Miller and J. C. Thomas conclude that "the fact remains however that no
+alternative has shown a realistically significant advantage over the
+Qwerty for general purpose typing."40 In two studies based on analysis
+of hand-and-finger motions R. F. Nickells Jr. finds that Dvorak is 6.2
+percent faster than Qwerty,41 and R. Kinkhead finds only a 2.3 percent
+advantage for Dvorak.42 Simulation studies by Donald Norman and David
+Rumelhart find similar results: 
+
+In our studies . . . we examined novices typing on several different
+arrangements of alphabetically organized keyboards, the Sholes (Qwerty)
+keyboard, and a randomly organized keyboard to control against prior
+knowledge of Sholes). There were essentially no differences among the
+alphabetic and random keyboards. Novices type slightly faster on the
+Sholes keyboard, probably reflecting prior experience with it. We
+studied expert typists by using our simulation model. Here, we looked at
+the Sholes and Dvorak layouts, as well as several alphabetically
+arranged keyboards. The simulation showed that the alphabetically
+organized keyboards were between 2% and 9%n slower than the Sholes
+keyboard, and the Dvorak keyboard was only about 5% faster than the
+Sholes. These figures correspond well to other experimental studies that
+compared the Dvorak and Sholes keyboards and to the computations of
+Card, Moran, and Newell . . . for comparing these keyboards.... For the
+expert typist, the layout of keys makes surprisingly little difference.
+There seems no reason to choose Sholes, Dvorak. or alphabetically
+organized keyboards over one another on the basis of typing speed. It is
+possible to make a bad keyboard layout, however, and two of the
+arrangements that we studied can be ruled out.43 These ergonomic studies
+are particularly interesting because the claimed advantage of the Dvorak
+keyboard has been based historically on the claimed ergonomic advantages
+in reduced finger movement. Norman and Rummelhart's discussion offers
+clues to why Dvorak does not provide as much of an advantage as its
+proponents have claimed. They argue, 
+
+For optimal typing speed. keyboards should be designed so that: 
+A. The loads on the right and left hands are equalized. 
+B. The load on the home (middle) row is maximized. 
+C. The frequency of alternating hand sequences is maximized and the
+frequency of same-finger typing is minimized.
+
+The Dvorak keyboard does a good job on these variables, especially A and
+B: 67% of the typing is done on the home row and the left-right hand
+balance is 47-53%. Although the Sholes (Qwerty) keyboard fails at
+conditions A and B (most typing is done on the top row and the balance
+between the two hands is 57% and 43%), the policy to put successively
+typed keys as far apart as possible favors factor C, thus leading to
+relatively rapid typing.44 
+
+The explanation for Norman and Rummelhart's factor C is that during a
+keystroke, the idle hand prepares for its next keystroke. Thus Sholes's
+decision to solve a mechanical problem through careful keyboard
+arrangement may have inadvertently satisfied a fairly important
+requirement for efficient typing. 
+
+The consistent finding in the ergonomic studies is that the results
+imply no clear advantage for Dvorak. These studies are not explicitly
+statistical, yet their negative claim seems analogous to the scientific
+caution that one exercises when measured differences are small relative
+to unexplained variance. We read these authors as saying that, in light
+of the imprecision of method, scientific caution precludes rejection of
+the hypothesis that Dvorak and Qwerty are equivalent. At the very least,
+the studies indicate that the speed advantage of Dvorak is not anything
+like the 20-40 percent that is claimed in the Apple advertising copy
+that David cites. Moreover, the studies suggest that there may be no
+advantage with the Dvorak keyboard for ordinary typing by skilled
+typists. It appears that the principles by which Dvorak ''rationalized"
+the keyboard may not have fully captured the actions of experienced
+typists largely because typing appears to be a fairly complex activity. 
+
+A final word on all of this comes from Frank McGurrin, the world's first
+known touch-typist: 
+
+Let an operator take a new sentence and see how fast he can write it.
+Then, after practicing the sentence, time himself again, and he will
+find he can write it much faster: and further practice on the particular
+sentence will increase the speed on it to nearly or quite double that on
+the new matter. Now let the operator take another new sentence, and he
+will find his speed has dropped back to about what it was before he
+commenced practicing the first sentence. Why is this? The fingers are
+capable of the same rapidity. It is because the mind is not so familiar
+with the keys.45
+
+Of course, performance in any physical activity can presumably be
+improved with practice. But the limitations of typing speed, in
+McGurrin's experiment, appear to have something to do with a mental or,
+at least, neurological skill and fairly little to do with the
+limitations on the speeds at which the fingers can complete their
+required motions.
+
+C. TYPEWRITER COMPETITION
+The Sholes typewriter was not invented from whole cloth. Yamada reports
+that there were fifty-one inventors of prior typewriters, including some
+earlier commercially produced typewriters. He states: "Examination of
+these materials) reveal that almost all ideas incorporated into Sholes'
+machines, if not all, were at one time or another already used by his
+predecessors."46 
+
+Remington's early commercial rivals were numerous, offered substantial
+variations on the typewriter, and in some cases enjoyed moderate
+success. There were plenty of competitors after the Sholes machine came
+to market. The largest and most important of these rivals were the Hall,
+Caligraph, and Crandall machines. The Yost, another double-keyboard
+machine, manufactured by an early collaborator of Sholes, used a
+different inking system and was known particularly for its attractive
+type. According to production data assembled by Yamada, the machines
+were close rivals, and they each sold in large numbers.47 Franz Xavier
+Wagner, who also worked on the I873 Remington typewriter, developed a
+machine that made the type fully visible as it was being typed. This
+machine was offered to, but rejected by, the Union Typewriter Company,
+the company formed by the 1893 merger of Remington with six other
+typewriter manufacturers.48 In 1895, Wagner joined John T. Underwood to
+produce his machine. Their company, which later became Underwood,
+enjoyed rapid growth, producing two hundred typewriters per week by
+1898.49 Wagner's offer to Union also resulted in the spin-off from Union
+of L. C. Smith, who introduced a visible-type machine in 1904.50 This
+firm was the forerunner of the Smith-Corona company. 
+
+Two manufacturers offered their own versions of an ideal keyboard:
+Hammond in 1893 and Blickensderfer in 1889.51 Each of these machines
+survived for a time, and each had certain mechanical advantages.
+Blickensderfer later produced what may have been the first portable and
+the first electric typewriters. Hammond later produced the Varityper, a
+standard office type-composing machine that was the antecedent of
+today's desktop publishing. The alternative keyboard machines produced
+by these manufacturers came early enough that typewriters and, more
+important, touch-typing were still not very popular. The Blickensderfer
+appeared within a year of the famous Cincinnati contest that first
+publicized touch-typing. 
+
+In the 1880s and 1890s typewriters were generally sold to offices not
+already staffed with typists or into markets in which typists were not
+readily available. Since the sale of a new machine usually meant
+training a new typist, a manufacturer that chose to compete using an
+alternative keyboard had an opportunity. As late as 1923, typewriter
+manufacturers operated placement services for typists and were an
+important source of operators. In the earliest days, typewriter salesmen
+provided much of the limited training available to typists.52 Since
+almost every sale required the training of a typist, a typewriter
+manufacturer that offered a different keyboard was not particularly
+disadvantaged. Manufacturers internalized training costs in such an
+environment, so a keyboard that allowed more rapid training might have
+been particularly attractive. 
+
+Offering alternative keyboards was not a terribly expensive tactic. The
+Blickensderfer used a type-bar configuration similar in principle to the
+IBM Selectric type ball and, so, could easily offer many different
+configurations. The others could create alternative keyboard
+arrangements by simply soldering the type to different bars and
+attaching the keys to different levers. So apparently the problem of
+implementing the conversion was not what kept the manufacturers from
+changing keyboards. 
+
+The rival keyboards did ultimately fail, of course.53 But the Qwerty
+keyboard cannot have been so well established at the time the rival
+key-boards were first offered that they were rejected because they were
+non-standard. Manufacturers of typewriters sought and promoted any
+technical feature that might give them an advantage in the market.
+Certainly shorter training and greater speed would have been an
+attractive selling point for a typewriter with an alternative keyboard.
+Neither can it be said that the rival keyboards were doomed by inferior
+mechanical characteristics because these companies went on to produce
+successful and innovative, though Qwerty-based, typing machines. Thus we
+cannot attribute our inheritance of the Qwerty keyboard to a lack of
+alternative keyboards or the chance association of this keyboard
+arrangement with the only mechanically adequate typewriter.
+
+D. TYPING COMPETITIONS
+Typing competitions provided another test of the Qwerty keyboard. These
+competitions are somewhat underplayed in the conventional history.
+David's history mentions only the Cincinnati contest. Wilfred Beeching's
+history, which has been very influential, also mentions only the
+Cincinnati contest and attaches great importance to it: "Suddenly. to
+their horror. it dawned upon both the Remington Company and the
+Caligraph company officials, torn between pride and despair, that
+whoever won was likely to put the other out of business!" Beeching
+refers to the contest as having established the four-bank keyboard of
+the Remington machine ''once and for all."54 
+
+In fact. typing contests and demonstrations of speed were fairly common
+during this period. They involved many different machines, with various
+manufacturers claiming to hold the speed record. 
+
+Under the headline ''Wonderful Typing," the New York Times 55 reported
+on a typing demonstration given the previous day in Brooklyn by a Mr.
+Thomas Osborne of Rochester, New York. The Times reported that Mr.
+Osborne ''holds the championship for fast typing, having accoomplished
+126 words a minute at Toronto August 13 last.'' In the Brooklyn
+demonstration he typed 142 words per minute in a five-minute test, 179
+words per minute in a single minute. and 198 words per minute for 30
+seconds. He was accompanied by a Mr. George McBride, who typed 129 words
+per minute blindfolded. Both men used the non-Qwerty Caligraph machine.
+The Times offered that "the Caligraph people have chosen a very pleasant
+and effective way of proving not only the superior speed of their
+machine, but the falsity of reports widely published that writing
+blindfolded was not feasible on that instrument.56 Note that this was
+just months after McGurrin's Cincinnati victory.
+
+There were other contests and a good number of victories for McGurrin
+and Remington. On August 2, 1888, the Times reported a New York contest
+won by McGurrin with a speed of 95.8 words per minute in a five-minute
+dictation.58 In light of the received history, according to which
+McGurrin is the only person to have memorized the keyboard, it is
+interesting to note the strong performance of his rivals. Miss May Orr
+typed 95.2 words per minute, and M. C. Grant typed 93.8 words per
+minute. Again, on January 9, 1889, the Times reported a McGurrin victory
+under the headline ''Remington Still Leads the List."58 
+
+We should probably avoid the temptation to compare the Caligraph speed
+with the Remington speeds, given the likely absence of any serious
+attempts at standardizing the tests. Nevertheless, it appears that the
+issue of speed was not so readily conceded as is reported in Beeching's
+history. Typists other than McGurrin could touch-type, and machines
+other than Remington were competitive. History has largely ignored
+events that did not build toward the eventual domination by Qwerty. This
+focus may be reasonable for the history of the Remington Company or the
+Qwerty keyboard. But if we are interested in whether the Qwerty
+keyboard's existence can be attributed to more than happenstance or an
+inventor's whim, these events do matter.
+
+V. CONCLUSIONS
+The trap constituted by an obsolete standard may be quite fragile.
+Because real-world situations present opportunities for agents to profit
+from changing to a superior standard, we cannot simply rely on an
+abstract model to conclude that an inferior standard has persisted. Such
+a claim demands empirical examination. 
+
+As an empirical example of market failure, the typewriter keyboard has
+much appeal. The objective of the keyboard is fairly straightforward: to
+get words onto the recording medium. There are no conflicting objectives
+to complicate the interpretation of performance. But the evidence in the
+standard history of Qwerty versus Dvorak is flawed and incomplete.
+First, the claims for the superiority of the Dvorak keyboard are
+suspect. The most dramatic claims are traceable to Dvorak himself, and
+the best-documented experiments, as well as recent ergonomic studies,
+suggest little or no advantage for the Dvorak keyboard.59 
+
+Second, by ignoring the vitality and variety of the rivals to the
+Remington machine with its Qwerty keyboard, the received history implies
+that Sholes's and McGurrin's choices, made largely as matters of
+immediate expediency, established the standard without ever being
+tested. More careful reading of historical accounts and checks of
+original sources reveal a different picture: there were touch-typists
+other than McGurrin: there were competing claims of speed records: and
+Remington was not so well established that a keyboard offering
+significant advantages could not have gained a foothold. If the fable is
+to carry lessons about the workings of markets, we need to know more
+than just who won. The victory of the tortoise is a different story
+without the hare. 
+
+There is more to this disagreement than a difference in the evidence
+that was revealed by our search of the historical record. Our reading of
+this history reflects a more fundamental difference in views of how
+markets, and social systems more generally, function. David's overriding
+point is that economic theory must be informed by events in the world.
+On that we could not agree more strongly. But ironically. or perhaps
+inevitably, David's interpretation of the historical record is dominated
+by his own implicit model of markets, a model that seems to underlie
+much economic thinking. In that model an exogenous set of goods is
+offered for sale at a price, take it or leave it. There is little or no
+role for entrepreneurs. There generally are no guarantees, no rental
+markets, no mergers, no loss-leader pricing, no advertising, no
+marketing research. When such complicating institutions are
+acknowledged, they are incorporated into the model piecemeal. And they
+are most often introduced to show their potential to create
+inefficiencies, not to show how an excess of benefit over cost may
+constitute an opportunity for private gain. 
+
+In the world created by such a sterile model of competition, it is not
+surprising that accidents have considerable permanence. In such a world,
+embarking on some wrong path provides little chance to jump to an
+alternative path. The individual benefits of correcting a mistake are
+too small to make correction worthwhile, and there are no agents who
+might profit by devising some means of capturing a part of the aggregate
+benefits of correction . 
+
+It is also not surprising that in such a world there are a lot of
+accidents. Consumers are given very little discretion to avoid starts
+down wrong paths. A model may assume that consumers have foresight or
+even that they are perfectly rational, but always in a very limited
+sense. For example, in the model of Farrell and Saloner, consumers can
+predict very well the equilibrium among the two candidate standards. But
+they are attributed no ability to anticipate the existence of some
+future, better standard. We are not led to ask how the incumbent
+standard achieved its status: as in David's telling, "It jes' growed." 
+
+But at some moment, users must commit resources to a standard or wait.
+At this moment, they have clear incentives to examine the
+characteristics of competing standards. They must suffer the
+consequences of a decision to wait, to discard obsolete equipment or
+skills, or to continue to function with an inferior standard. Thus, they
+have a clear incentive to consider what lies down alternative paths.
+Though their ability to anticipate future events may not be perfect,
+there is no reason to assume that it is bad relative to any other
+observers. 
+
+Finally, it is consistent that, in a world in which mistakes are
+frequent and permanent, ''scientific approaches" cannot help but make
+big improvements to market outcomes. In such a world, there is ample
+room for enlightened reasoning, personified by university professors, to
+improve on the consequences of myriad independent decisions. What
+credence can possibly be given to a keyboard that has nothing to
+accredit it but the trials of a group of mechanics and its adoption by
+millions of typists? If we use only sterilized models of markets, or
+ignore the vitality of the rivalry that confronts institutions, we
+should not be surprised that the historical interpretations that result
+are not graced with the truth that Cicero asks of historians.
+
+
+
+--------------------------------------------------------------------------------
+
+
+
+
+--------------------------------------------------------------------------------
+
+
+Footnotes
+1 This trap is treated more seriously in the literature on standards
+than in other economics literature. This reflects a supposition that
+foresight, integration, or appropriation are more difficult in the case
+of standards. The current literature fails to explain why these
+''externalities'' are particularly relevant for standards. we will have
+more to say about this in forthcoming work.
+
+2 See, for example, Joseph Farrell & Garth Saloner, Standardization,
+Compatibility, and Innovation, 16 Rand J Econ. 70 l955): Michael L. Katz
+& Carl C Shapiro, Network Externalities, Competition, and Compatibility,
+25 Am. Econ Rev. 424 1985): and Jean Tirole, The Theory of Industrial
+Organization (1988).
+
+3 "Qwerty'' stands for arrangement of letters in the upper left-hand
+portion of the keyboard below the numbers This keyboard is also known as
+the Sholes, or Universal, keyboard.
+
+4 This is also sometimes known as the DSK keyboard for Dvorak Simplified
+Keyboard or the simplified keyboard). As explained below, the keys are
+arranged in a different order.
+
+5 Paul A David, Clio and the Economics of QWERTY, 75 Am Econ. Rev. 332
+l985): and Paul A. David, Understanding the Economics of QWERTY: The
+Necessity of History, in Economic History and the Modern Economist :
+William N Parker ed. 1986).
+
+6 See Ronald Coase The Lighthouse in Economics. 17 J. Law Econ. 357
+(1974) and Steven N. Cheung, The Fable of the Bees: An Economic
+Investigation. 16 J Law & Econ H (1973) Our debt is obvious.
+
+7 Farrell & Saloner. supra note 2.
+
+8 Ronald H Coase. The Problem of Social Cost 3 J Law & Econ. 1 (1960).
+Of course. inertia is not necessarily inefficient Some delay in settling
+on a standard will mean that relatively more is known about the
+associated technology and the standards themselves by the time most
+users commit to a technology. Recall the well-known discussion of Harold
+Demsetz, Information and Efficiency Another viewpoint 12 J I Law & Econ
+1 (1969) on the nature of efficiency. If a God can costlessly cause the
+adoption of the correct stand rd any inertia is excessive (inefficient)
+in comparison. But it seems ill advised to hold this up as a serious
+benchmark Excessive inertia should be defined relative to some
+achievable result. Further. some reservation in committing to standards
+will allow their creators to optimize standards rather than rushing them
+to the market to be first. If the first available standard were always
+adopted, then standards, like patents, might generate losses from the
+rush to be first. Creators might rush their standards to market, even
+where waiting would produce a better and more profitable product.
+
+9 We may ask ourselves why new standards are created if not with the
+idea of some pecuniary reward One would hardly expect nonobvious and
+costly standards to proliferate like manna from heaven.
+
+10David "Understanding.. p 5 Additionally see Herkimer County Historical
+Society. The Story of the Typewriter: l873-192 (l923). which notes that
+in the early 1920's a single typewriter company was producing 100.000
+typists a year. 11 Arthur Foulke Mr. Typewriter: A biography of
+Christopher Latham Sholes 106 (1961), which notes: Present day keyboard
+machines may be converted to the simplified Dvorak keyboard in local
+typewriter shops. is now available on any typewriter. And it costs as
+little as $5 to convert a Standard to a simplified keyboard.
+
+12 David, Clio and the Economics of QWERTY, supra note 5.
+
+13 This history follows David, Clio and the Economics of Qwerty, supra
+note 5, but also see Wilfred A Beeching, A Century of the Typewriter
+(1974), as an example of an account with the features and emphasis
+described here.
+
+14 David, Clio. supra note 5. at 332 If true. this would be quite
+remarkable. A converted Sholes typist will be typing so much faster that
+whatever the training cost it is repaid every ten days. Counting only
+working days this would imply that the investment in retraining repays
+itself approximately twenty-three times in a year. Does this seem even
+remotely possible? Do firms typically ignore investments with returns in
+the range of 2200 percent?
+
+15 Farrell & Saloner. supra note 2.
+
+16 Tirole, supra note 2 at 405. states: "Many observers believe that the
+Dvorak keyboard is superior to this Qwerty standard even when retraining
+costs are taken into account. However it would be foolish for a firm to
+build this alternative keyboard and for secretaries to switch to it
+individually". Under some circumstances it might have been foolish for
+secretaries and firms to act in this manner but this type of behavior
+hardly seems foolish in many real-world situations For example, large
+organizations (federal. state. and local governments, Fortune 500
+companies, etc.. often have tens of thousands of employees. And these
+organizations could undertake the training if the costs really are
+compensated in a short time. See notes 11 and 14 supra.
+
+17 For example, see Beeching' .supra note 13, or Foulke, supra note H .
+
+18 David, Understanding. supra note 5, at 34.
+
+19 August Dvorak, Nellie L Merrick, William L Dealy & Gertrude C. Ford,
+Typewriting Behavior 1 19361.
+
+20 Id at 226.
+
+21 Id. at 210.
+
+22 Id. at 2217
+
+23 Foulke, supra note 11 at 103.
+
+24 We tried to have the Navy supply us with a copy when our own research
+Librarians could not find it. The Navy research librarian had no more
+success even though she checked the Navy records, the Martin Luther King
+Library. the Library of Congress the National Archives the National
+Technical Communication service, etc. we were finally able to locate a
+copy held by an organization, Dvorak International. We would like to
+thank ,its director, Virginia Russell for her assistance. She believes
+that they obtained their copy from the Underwood Company. we would be
+more sanguine about the question of the document's history had it been
+available in a public archive The copy we received was A Practical
+Experiment in Simplified Keyboard Retraining--a Report on the Retraining
+of Fourteen Standard Keyboard Typists on the Simplified Keyboard and a
+Comparison of Typist Improvement from Training on the standard Keyboard
+and Retraining on the Simplified Keyboard. Navy department Division of
+Shore Establishments and Civilian Personnel, Department of Services.
+Training Section. Washington. D C. (July and October 1944)
+
+25 It is not an innocuous change. We are told that three Qwerty typists
+initially scored zero on the typing test but that their scores rose to
+twenty-nine, thirteen, and sixteen within four days (at 20). we are also
+told that several other typists had similar improvements in the first
+four days. These improvements are dismissed as mere testing effects that
+the researchers wish to eliminate. But the researchers made no effort to
+eliminate the analogous testing effect for the Dvorak typists.
+Truncating the measurements to the average of the first four days
+reduces the reported speed increases for the three typists with zero
+initial speed by at least thirteen, twelve, and fourteen. Assuming the
+existence of two other typists with similar size testing effects,
+removing this testing effect would reduce the reported speed
+improvements by 3.6 words per minute lowering the gain from 46 percent
+to 28 percent. The effect of the truncation at the end of the measuring
+period cannot be determined with any accuracy but there is no testing
+effect be removed at this stage of the experiment after many tests have
+been taken. While the apparent effect of these measurement techniques is
+significant, the indisputable problem is that they were not applied
+equally to the Qwerty and Dvorak typists.
+
+26 Navy. supra note 24. at 2.
+
+27 id. at 23.
+
+28 5 supra, note 11. at 103
+
+29 Earle P. Strong. A Comparative Experiment in Simplified Keyboard
+retraining and Standard Keyboard Supplementary Training (US. General
+Services Administration I956). However. Yamada. trying to refute
+criticisms of Dvorak's keyboard, claims that Dvorak did not conduct
+these studies, he only provided the typewriters. See Hisao Yamada, A
+Historical Study of Typewriters and Typing Methods: From the Position of
+Planning Japanese Parallels, 2 J. Information Processing 175 (1980). He
+admits that Dvorak was in the Navy and in Washington when the studies
+were conducted but denies any linkage. We do not know whom to believe,
+but we are skeptical that Dvorak would not have had a large influence on
+these tests, based on the strong circumstantial evidence and given
+Foulke's identification of Dvorak as the Navy's top expert on such
+matters. Interestingly, Yamada accuses Strong of being biased against
+the Dvorak keyboard (at 188). He also impugns Strong s character. He
+accuses Strong of refusing to provide other (unnamed researchers with
+his data. He also implies that Strong stole money from Dvorak because in
+1941, when Strong was a supporter of Dvorak's keyboard, he supposedly
+accepted payment from Dvorak to conduct a study of the DSK keyboard
+without ever reporting his results to him. 30 Yamada: sup note 29.
+
+31 Strong supra note 29.
+
+32 At the time of Strong s experiment. Dvorak had attracted a good deal
+of attention. At least one trade group had taken the position that.
+Pending confirmation from the Strong study it would adopt Dvorak as its
+new standard See US plans to test New Typewriter, New York Times.
+November 1, 1955: Revolution in the Office. New York Times. November 30
+1955 key Changes Debated, New York Times June 18. 1956: US. balks at
+Teaching Old Typists New Keys, New York Times July 2 1956: and Peter
+White,. Pyfgcrt vs. Qwertyuiop, New York Times January 22 1956. at 18.
+
+33 In fact, both the Navy and General Service Administration studies
+found that the best typists take the longest time to catch Up to their
+old speed and showed the smallest percentage improvement with
+retraining.
+
+34 Yamada. supra note 29, at 189.
+
+35 Also see note 29 supra.
+
+36 Yamada, supra note 29, at 185.
+
+37 Id. at 188.
+
+38 Id.
+
+39 Yamada interprets the Oregon study to support the Dvorak keyboard. To
+do so he fits an exponential function to the Oregon data and notes that
+the limit of the function as hours of training goes to infinity is 17
+percent greater than the typist s initial Qwerty speed. This function is
+extremely flat, however, and even modest gains appear well outside the
+range of the data. A 10 percent gain, for example, would be projected to
+occur only after 165 hours of training .
+
+40 A. Miller & J. C. Thomas, Behavioral Issues in the Use of interactive
+Systems, 9 Int. J. of Man-Machine Stud. 509 (l977).
+
+41 Cited in Hisao Yamada, Certain Problems Associated with the Design of
+input Key-boards for Japanese Writing, in Cognitive Aspects of Skilled
+Typewriting 336 (William E. Cooper ed. 1983).
+
+42 Cited in id. at 365.
+
+43 Donald A Norman and David E. Rumelhart Studies of Typing from the LNR
+Research Group. in Cognitive Aspects of Skilled typewriting 45, (William
+E. Cooper ed. 1983).
+
+44 Id.
+
+45 George C. Mares. The History of the Typewriter (1909).
+
+46 Yamada. supra note 41, at 177.
+
+47 id. at 181.
+
+48 Beeching, supra note 13, at 165.
+
+49 id. at 214.
+
+50 id. at 165.
+
+51 David, Understanding, supra note 5, at 38. Also see Beeching. supra
+note 13, at 40, 199. Yamada, supra note 29, at 184. in discussing the
+Hammond keyboard arrangement states: "This 'ideal' arrangement was far
+better than Qwerty but it did not take root because by then Remington
+Schools were already turning out a large number of Qwerty typists every
+year." In 1893, Blickenderfer offered a portable typewriter with the
+Hammond keyboard.
+
+52 Herkimer County historical Society. supra note 10, at 78.
+
+53 We should also take note of the fact that the Qwerty keyboard,
+although invented in the United States. has become the dominant keyboard
+throughout the world. Foreign countries, when introduced to typewriters,
+need not have adopted this keyboard if superior alternatives existed
+since there would not yet have been any typists trained on Qwerty Yet
+all other keyboard designs fell before the Qwerty juggernaut. In France
+and some other countries, the keyboard is slightly different than the
+Qwerty keyboard used in the United states The major difference is that
+the top left-hand keys are Azerty that is also what these keyboard
+designs are called) and several letters are transposed, but most of the
+keys are identical .
+
+54 Beeching supra note 13. at 41.
+
+55 New York Times, February 28, 1889. at 8.
+
+56 id.
+
+57 Id. at 2.
+
+58 Id.
+
+59 See text at notes 30-43. There are several versions of the claim that
+a switch to Dvorak would not be worthwhile. The strongest. which we do
+not make. is that Qwerty is proven to be the best imaginable keyboard.
+Neither can we claim that Dvorak is proven to be inferior to Qwerty. Our
+claim is that there is no scientifically acceptable evidence that Dvorak
+offers any read advantage over Qwerty. Because of this claim, our
+assessment of a market failure in this case is rather simple. It might
+have been more complicated. For example, if Dvorak were found to be
+superior. it might still be the case that the total social benefits are
+less than the cost of switching. In that case, we could look for market
+failure only in the process that started us On the Qwerty keyboard (if
+the alternative were available at the beginning). Or we might have
+concluded that Dvorak is better and that all parties could be made
+better off if we could costlessly command both a switch and any
+necessary redistribution. Such a finding would constitute a market
+failure in the sense of mainstream welfare economics. Of course, this
+circumstance still might not constitute a market in the sense of
+Demsetz. which requires consideration of the costs of feasible
+institutions that could efiect the change. 
+
+
+
+--------------------------------------------------------------------------------
+
+
+
+
+--------------------------------------------------------------------------------
+
+
+BIBLIOGRAPHY
+Beeching, Wilfred. A Century of the Typewriter. New York: St. Martin's
+Press, 1974. 
+
+Cheung, Steven N. S. ''The Fable of the Bees: An Economic
+Investigation.'' Journal of Law and Economics 16 (April 1973): 11-33. 
+
+Coase, Ronald H . "The Problem of Social Cost." Journal of Law and
+Economics 3 (October 1960): 1-44. 
+
+Coase, Ronald H. ''The Lighthouse in Economics." Journal of Law and
+Economics 17 October 1974): 357-76. 
+
+David, Paul A. ''Clio and the Economics of QWERTY.'' American Economic
+Review 75 (May 1985): 332-37. 
+
+David, Paul A. ''Understanding the Economics of QWERTY: The Necessity of
+History.'' In Economic History and the Modern Economist edited by W. N
+Parker. New York: Basil Blackwell, 1986. 
+
+Demsetz Harold. ''Information and Efficiency: Another Viewpoint.''
+Journal of Law and Economics 12 April 1969): 1-22. 
+
+Dvorak. August: Merrick Nellie L.: Dealey. William Leyland Ford.
+Gertrude C. Typewriting Behavior . New York: American Book Co.. 1936. 
+
+Farrell Joseph. and Saloner. Garth. ''Standardization. Compatibility.
+and Innovation.'' Rand Journal 16 Spring 1985): 70-83. 
+
+Foulke. Arthur. Mr. Typewriter: A Biography of Christopher Latham
+Sholes.. Boston: Christopher Publishing 1961. 
+
+Herkimer County Historical Society. The Story of the typewriter: New
+York: Andrew H. Kellogg. 1923. 
+
+Katz Michael L. and Shapiro. Carl. ''Network Externalities. Competition.
+and Compatibility.'' American Economic Review 75 June 1985): 425-40. 
+
+Kinkhead R. ''Typing Speed. Keying Rates and Optimal Keyboard Layouts.''
+Proceedings of the Human Factors Society 19 1975. pp. 159-61. 
+
+Landes. William M.. and Posner Richard A. "Trademark Law: An Economic
+Perspective.'' Journal of Law and Economics 30 October 19871: 265-309. 
+
+Liebowitz S. J. ''Tie-in Sales and Price Discrimination '' Economic
+Inquiry 21 July 1983): 387-99. 
+
+Liebowitz S. J. ''Copying and indirect Appropriability: Photocopying of
+Journals. Journal of Political Economy 93 October l985: 945-57. 
+
+Mandeville. Bernard M. The Fable of The Bees. New York: Capricorn Books.
+1962. 
+
+Mares George C. The History of The Typewriter. London: Guilbert Pitman.
+1909. 
+
+Margolis. Stephen E. ''Two Definitions of Efficiency in Law and
+Economics." Journal of Legal Studies 16 July 1987: 471-82. 
+
+Miller L. A. and Thomas. J. C. ''Behavioral Issues in the Use of
+Interactive Systems.'' International Journal of Man-Machine Studies 9
+1977 : 509-36. 
+
+Navy Department A Practical Experiment in Simplified Keyboard Retraining
+-- a Report on the retraining of fourteen standard Keyboard Typists on
+the Simplified Keyboard and a Comparison of Typist Improvement from
+Training on the Standard Keyboard and retraining on the Simplified
+Keyboard. Department of Services. Training Section. Washington DC .:
+Navy Department. Division of Shore Establishments and Civilian
+Personnel. July 1944 and October 1944. 
+
+New York Times. ''Typewriters Contest for a Prize.'' August 2. 1888. 
+
+New York Times. ''Remington Still Leads the List.'' January 9 1889. 
+
+New York Times. ''Wondedul Typing.'' February 28. i889. 
+
+New York Times. ''Revolution in the Office.'' November 11. 1955. 
+
+New York Times. ''US. Plans to Test New Typewriter.'' November 11. 1955. 
+
+New York Times. ''Pyfgcrl vs. Qwertyuiop.'' January 22. 1956. 
+
+New York Times. ' Key Changes Debated '' June 18. 1956. 
+
+New York Times. U S Balks at Teaching Old Typists New Keys.'' July 2
+1956. 
+
+Norman. Donald A.. and Rumelhart. David E. ''Studies of Typing from the
+LNR Research Group." In Cognitive Aspects of Skilled Typewriting, edited
+by William E. Cooper. New York: Springer-Verlag 1983. 
+
+Strong Earle P. A Comparative Experiment in Simplified Keyboard
+Retraining and Standard Keyboard supplementary Training. Washington DC.:
+US. General Services Administration 1956. 
+
+Tirole Jean., The Theory of Industrial Organization, Cambridge: MIT
+Press 1988. 
+
+Yamada Hisao. "A Historical Study of Typewriters and Typing Methods.
+Journal of Information Processing, 2 1980: 175-202 
+
+Yamada Hisao. Certain Problems Associated with the Design of Input
+Keyboards for Japanese Writing. In Cognitive Aspects of Skilled
+Typewriting, edited by William E. Cooper. New York: Springer-Verlag.
+1983. 
+
+ 
+
+
+
+--------------------------------------------------------------------------------
+
+
+Some interesting keyboard sites:
+
+Click here for graphic view of old typewriters : Contains lots of
+history, pictures of old machines, and entertaining discussion.
+
+ A compendium of typewriter sites : Contains many links to web sites
+ that discuss typewriter collecting, and more importantly, typewriter
+ history including warnings when a site contains misleading information.
+
+ 
+
+
+
+--------------------------------------------------------------------------------
+
+
+ 
+
+@ 1990 by The University of Chicago. All rights reserved.
+0022-2186/90/3301-0005$01.50 
+
+ 
+

@@ -1,0 +1,121 @@
+     JP Software                                Standard Order Form [4/99]
+     P.O. Box 1470                               Email to sales@jpsoft.com
+     E. Arlington, MA 02474 USA                   or fax to (781) 646-0904
+
+     This order form covers our standard product line:  New copies,
+     product packs, our CD Suite, and associated manuals.  It also
+     includes some space for you to list other items you may want.
+
+     For multi-system licenses, more shipping information, and answers to
+     other ordering questions, see the PRODUCTS.TXT file.  If you need
+     additional information, or want to order directly from our web site:
+
+        For                             See
+        -------------------------       --------------------------
+        On-line order entry             http://www.jpsoft.com/
+        Email orders / inquiries        sales@jpsoft.com
+        Phone orders                    (800) 368-8777 (US / Canada)
+        General phone inquiries         (781) 646-3975
+        Upgrade order form              UPGFORM.TXT file
+        Detailed product information    PRODUCTS.TXT file
+        International shipping rates    INTERNAT.TXT file
+
+     =====================================================================
+     First, tell us who you are:
+
+     Name (first, last) __________________________________________________
+
+     Company _____________________________________________________________
+
+     Address _____________________________________________________________
+
+             _____________________________________________________________
+
+     City, State/Prov, Post Code _________________________________________
+
+     Country _____________________________________________________________
+
+     Phone _____________________________  Fax ____________________________
+
+     E-Mail ______________________________________________________________
+       (Will only be used by JP Software to notify you of upgrades or
+        contact you with other information related to our products.)
+
+     Register products to:  ___ Company     ___ Individual
+     Send information on:  ___ Multi-System Licenses  ___ Reseller Pricing
+
+     Where did you hear about our products? ______________________________
+
+     =====================================================================
+     Now, what would you like to order?
+
+     [Printed reference manuals for all products are sold separately.
+     Not sure what to order?  See PRODUCTS.TXT for more information.]
+
+                                                      Total Price
+     New Copies and Product Packs
+     ___ 4DOS ($69.95, 1 lb) ......................... __________  [NC100]
+     ___ 4OS2 ($69.95, 1 lb) ......................... __________  [NC110]
+     ___ 4NT ($69.95, 1 lb) .......................... __________  [NC120]
+     ___ Take Command/16 ($69.95, 1 lb) .............  __________  [NC130]
+     ___ Take Command/32 ($69.95, 1 lb) .............  __________  [NC140]
+     ___ Take Command for OS/2 ($69.95, 1 lb) .......  __________  [NC150]
+
+     ___ JP CD Suite (six products, $119.95, 1 lb) ..  __________  [CD180]
+
+     ___ Win95/98 Pack (TCMD/32, 4DOS; $99.95, 1 lb) . __________  [PK184]
+     ___ Windows NT Pack (4NT, TCMD/32; $99.95, 1 lb)  __________  [PK186]
+     ___ Windows Pack (TCMD/16, 4DOS; $99.95, 1 lb) .. __________  [PK183]
+     ___ OS/2 Pack (4OS2, 4DOS; $89.95, 1 lb) ........ __________  [PK182]
+
+     Manuals
+     ___ 4DOS, 4OS2, 4NT Reference ($16.95, 2 lb) .... __________  [BK500]
+     ___ Take Command Reference ($16.95, 2 lb) ....... __________  [BK530]
+     ___ Reference Manual Pack ($29.95, 4 lb) ........ __________  [BK580]
+
+     Multi-System Licenses / Other JP Software Products
+     ___ ____________________________________________  __________  [     ]
+     ___ ____________________________________________  __________  [     ]
+     ___ ____________________________________________  __________  [     ]
+
+     Other Products (see PRODUCTS.TXT for more info)
+     ___ Partition Magic ($69.95, 2 lb) .............. __________  [NJ480]
+     ___ System Commander Deluxe ($69.95, 2 lb) ...... __________  [NJ482]
+     ___ Boxer / TKO ($79.95, 1 lb) .................. __________  [NJ450]
+     ___ WinREXX ($79.95, 1 lb) ...................... __________  [NJ400]
+     ___ Personal REXX for DOS ($149.95, 3 lb) ....... __________  [NJ420]
+     ___ Personal REXX for OS/2 ($169.95, 4 lb) ...... __________  [NJ421]
+     ___ Personal REXX for DOS/Win ($169.95, 4 lb) ... __________  [NJ422]
+
+     --------------------------------
+     | U.S. SHIPPING:               |      Subtotal  $ __________
+     |    Order      UPS      UPS   |
+     |  Subtotal    Ground   2-day  |  Sales Tax (MA
+     | ----------   ------   -----  |  5%, MN 6.5%)  $ __________
+     | $  1 -  50    $ 6      $10   |
+     | $ 51 - 250    $ 7      $14   |       Shipping $ __________
+     | $251 - 500    $10      $16   |
+     | $500+          contact us    |  ORDER TOTAL   $ __________
+     |                              |
+     | ALL OTHER COUNTRIES:  Fill   |
+     | in total weight, see rates   |  Total Weight    __________  lb
+     | in INTERNAT.TXT file.        |   (for international shipments)
+     --------------------------------
+
+     =====================================================================
+     Thanks for your order!  Now please choose a payment method:
+
+     ___Credit Card:  __MC  __Visa  __Discover  __Amex
+
+        Card # _________________________________________ Expires ____/____
+
+        Signature ________________________________________________________
+
+     ___Check (US bank, US funds)  ___COD*  ___P.O.*  #___________________
+
+     [* See PRODUCTS.TXT for terms *before* selecting COD or PO payment!]
+     =====================================================================
+
+     Legal Stuff:  Copyright 1999, JP Software Inc., All Rights Reserved.
+     See PRODUCTS.TXT for trademarks.  All prices and terms subject to
+     change without notice.

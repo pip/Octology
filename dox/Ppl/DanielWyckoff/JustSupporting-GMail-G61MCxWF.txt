@@ -1,0 +1,58 @@
+Hey Pip,
+
+Heather has slowed down vastly on her e-mails to me, which is relieving, but at the same time she opened up enough to me about her troubled past where that I more or less approve of her and care about her. 
+
+Anyway, my agreement to you still stands.  I'll never e-mail your mom again, unless  she initiates it, and recently on her birthday I posted a Happy Birthday, and said something like, "Thank you for procreating one of my favorite people of all time," and she didn't "like" it or respond, so I won't post on her wall again.
+
+Anyway, the bad news is that you're deep in depression, and I KNOW you can beat this thing.  Just be patient.  It might take ten months or it might take eight years, but I promise you the process of beating it will equip you to do more good things after you beat it.
+
+I just got back from my friend David's again, my only social friend, and I realized that I'm a loner.  I feel comfortable around you, but not around very many people.  I more or less like David but we still have some type of esoteric trust issues.
+
+And that's the case with most of the people I've met.  Also, I feel very comfortable around my dad in moderation.
+
+I'm working on a hard theorem right now, and I thought I would explain it a little bit to get you thinking.
+
+Have you ever heard of "mutual recursion?"
+
+It's where you define two or more recursive functions that are mutually tied to each other.
+
+The classic example, which I actually use in my code is "even" and "odd."
+
+You can define "odd" and "even" together recursively on an arbitrary integer, where the argument "n" is decreasing.
+
+So, maybe you would see "0 is even" and "n+1 is even if n is odd." 
+
+Then you would at the same time have to define "odd" recursively by saying that "n+1 is odd, when n is even."
+
+So, they're two functions defined together recursively.
+
+So, I'm doing something like that although much more complicated, and even though I don't expect you to understand this completely (I woudln't if I heard it for the first time), I'm trying to formalize Tarski's unique countable atomless Boolean algebra theorem.  It involves what's called a back-and-forth argument, which is basically a mutually recursive argument where you index one countable Boolean algebra with even numbers, the other one with odd numbers, and do some math play in between, anyway . . .
+
+Please let me know which exercises you are doing to beat depression.  I know how easy it is to fantasize about death and suicide.  Back when I was depressed, I would most look forward to sleep, because maybe I would have a kick-ass dream, and dreaded that awful feeling of waking up in the morning, realizing that, "Fuck! I'm still alive, I didn't die in my sleep, I have to feel this shit for the whole day, and to top it off society sucks too!" (which  I still believe it does -- they won't finance my important formalization work in any normal respectable way, and I'm a pure product of the education system and the ideals they taught me to believe in by reading novels, like The Fountainhead in high school and poems like The Path Less Travelled.
+
+Anyway, right now programming is work, it feels like work, which it didn't feel like in high school.  I struggle more that I'm aging and am stoney, and even though I do a significant percentage stoned, it's still work.
+
+Pip, you're not alone.  I remember you saying that you felt intellectually alone, and I'm sorry I don't understand the metaphysics of Octology like you do, but you can relate because you don't understand my whole Great Spirit as Boolean algebra, nor does any professor or any person I've met.  I had e-mailed several professional mathematicians about my metaphysical ideas, and they didn't respond in a way that might suggest that they believed in it.  But, one professor in particular has been the nicest to me out of every professional mathematician that I've interacted with (and he's prominent, having written a standard text on abstract algebra),; he's  been ESPECIALLY nice to me.  He even called me a genius in one e-mail, and he was the guy I sent my half-page original theorem to, which he liked and said was correct.  He even did his own proof of it using his own observations. 
+
+Anyway, I had that awful feeling that you have now for about twenty years, and it only was medicated about ten-twelve years ago, and the meds took about 8-10 years to work.  And so, the good news is that, as long as you can stay optimistic about minor victories, and lapses in awareness of the pain, you'll be okay.  You'll enjoy the process of beating it, so long as you regularly push yourself to take the first step.It's kind of a pain in the ass to force yourself to exert yourself, when you feel so much pain already and might even feel a little worse when you try to do something constructive -- but those significant yet ultimately brief moments where you _forget_ you're in pain is actually the best technique to overcoming that feeling in a long term sense, so that some time in the foresseable future, you'll almost always feel at ease or pleasurable during most normal situations. 
+
+I still have some anxiety, but that's just because my brain is wacky, I don't have pain any more.
+
+And you can get there too, and I know what it's like to constantly wish you could just abort mission and go to the spirit world, but you still have a lot to do in this world.
+
+So, please once again, let me know which activities you're doing to distract your awareness from the pain, just so I know we're on the same page.  Also, try to spoil yourself with rewards for doing good things; like if you can write down philosophical thoughts for an hour or type them, then afterwards, reward yourself with some stoney gaming or something.
+
+It could be any combination of video games, porn, arts and crafts, movies, Youtube, puzzles, code, contemplation, philsoophy, writing, etc. 
+
+Once again, you're not alone, and I care about you very much.  I care about you as a person, because we have very similar ideals.  I always think of you as cooler than me.  You used to ride motorcycles and snowboard and do hard drugs and have so much success with pretty girlfriends.
+
+So . . . don't give up on weed either.  Weed is the best euphoric drug, and when I was depressed, I would love to play guitar stoned, and in fact it was harder to stop myself from doing it than to do it, and I know you can find some fun video game to play or something or some puzzle to do or something like that or some activity.
+
+It's almost impossible to not fantasize about death when you feel as bad as you do, but there's a lot to be optimistic about.  You don't have to work a job with assholes (most jobs have them and the management doesn't intervene, because they're assholes too),
+
+I just wanted to connect.
+
+Love,
+Danny
+
+P.S. I'm stoned right now and will soon return to stoney coding.

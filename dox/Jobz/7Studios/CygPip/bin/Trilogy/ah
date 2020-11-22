@@ -1,0 +1,14 @@
+#!/usr/bin/perl -w
+# 77QALOk - ah created by Pip Stuart <Pip@CPAN.Org> to `attrib +h .*` for 4NT
+use strict;
+if($ENV{'COMSPEC'} =~ /(4NT|cmd(32)?)\.exe$/i) {
+  my $dire = shift() || ''; $dire =~ s/\//\\/g; $dire =~ s/\\*$/\\/ if(length($dire));
+  for(glob($dire . '.*')) {
+    my $atst = `attrib    $_`;
+    if(/[^.\\]/ && substr($atst,4,1) eq ' ') {
+      print    "attrib +h $_\n";
+      system(  "attrib +h $_");
+    }
+  } # perl's system(attrib) calls C:\WINDOWS\system32\attrib.exe,!4NT's builtin
+} else { print "!*EROR*! ah (attrib.exe +h) should only be called from 4NT or cmd.exe!\n";
+}

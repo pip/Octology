@@ -1,0 +1,13 @@
+video of talk is at HTTPS://YouTube.Com/watch?v=9u6O0dLuqhI with description at HTTP://YAPCNA.Org/yn2016/talk/6833
+templ8 for new .pl && .pm filez && promptz to crE8 directoriez that don't yet exist
+coloring on matching thingz or red when undeclared or typo (with normal syntax highlighting off)
+dollar variablez explained
+star followz variable && below status shows comment from declar8ion
+folding just on global matchez
+folding just on defined subz
+alignment in && out of insert mode
+completions with tabz to end stringz or another add newline or templ8 if, for, while blockz
+moving block selection around amidst other code
+tarball should have all pluginz needed (HTTPS://Drive.Google.Com/file/d/0Bx3f0gFZh5JqTktJVFhlVGItR2s/view?usp=sharing which is linked from talk description)
+see HTTPS://GitHub.Com/thoughtstream/Damian-Conway-s-Vim-Setup for even more madness
+Normal mode = key does alignments. Insert mode has smart-completions with Tab. Lots of Tab completions.

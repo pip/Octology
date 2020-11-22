@@ -1,0 +1,1520 @@
+/1987/rax.zip                        ****  Rax by Raxsoft (8k)
+/1990/atom.zip                       ****  Atom by Sorcerers (17k)
+/1991/cronolog.zip                   ****  Cronologia by Cascada (444k)
+/1991/vectdemo.zip                   ****+ Vectdemo by Ultraforce (194k)
+/1992/amnesia.zip                    ****+ Amnesia by Renaissance (790k)
+/1992/c_dream.zip                    ****+ Crystal Dream by Triton (1060k)
+/1992/cda_xm92.zip                   ****  X-Mas '92 by Cascada (272k)
+/1992/dentro.zip                     ****  Dentro by Ultraforce (240k)
+/1992/dust_pre.zip                   ****  Preview by Dust (405k)
+/1992/fishtro.zip                    ****  Fishtro by Future Crew (222k)
+/1992/fo_life.zip                    ****  Facts of Life by Witan -
+                                           | TP92:demo:01: (1095k)
+/1992/monstra.zip                    ****  Monstra by Flash Productions -
+                                           | TP92:demo:??: (1295k)
+/1992/rbgdemo2.zip                   ****  Black Glass Demo 2 by Renaissance
+                                           | (86k)
+/1992/realthng.zip                   ****  Even Better Than The Real Thing by
+                                           | Phoney Coders (129k)
+/1992/takeover.zip                   ****  Takeover by Epical (684k)
+/1992/tpcdemo.zip                    ****  Ecargxus by The Phoney Coders (227k)
+/1992/tpcshoot.zip                   ****  Shoot by The Phoney Coders (185k)
+/1992/warlock.zip                    ****  Warlock by Warlock (1264k)
+/1992/x_mas92.zip                    ****  Xmas '92 by The Phoney Coders -
+                                           | TP92:demo:??: (259k)
+/1993/0-9/2ndreal.zip                ***** Second Reality by Future Crew -
+                                           | ASM93:demo:01: (2035k)
+/1993/a/appeal.zip                   ****  Hex Appeal by Cascada (338k)
+/1993/c/cd2_trn.zip                  ***** Crystal Dream 2 by Triton -
+                                           | TCC93:demo:01: (2059k)
+/1993/d/dowhack.zip                  ****  Do-Whack-A-Do by Renaissance (158k)
+/1993/e/elements.zip                 ****  Elements by Xography -
+                                           | ASM93:demo:03: (1389k)
+/1993/e/emf_ecl.zip                  ****+ Eclipse by EMF - ASM93:in64:01:
+                                           | (71k)
+/1993/g/gustrit.zip                  ****+ Gravis Ultrasound Advertisement by
+                                           | Triton (1421k)
+/1993/h/hell.zip                     ****  Hell by Tran (881k)
+/1993/l/lunatic.zip                  ****  Lunatic by Extreme - TCC93:demo:02:
+                                           | (187k)
+/1993/m/myst_tsi.zip                 ****  Mystic by TSI (279k)
+/1993/o/opticnrv.zip                 ****  Optic Nerve by Silents PC -
+                                           | ASM93:demo:02: (1259k)
+/1993/o/opticpat.zip                 ****  Optic Nerve (patch) by Silents PC -
+                                           | ASM93:demo:02: (8k)
+/1993/p/panic.zip                    ****+ Panic by Future Crew - TP92:demo:02:
+                                           | (906k)
+/1993/p/planb.zip                    ****  Plan B by Sonic PC - ASM93:in64:06:
+                                           | (62k)
+/1993/s/sagadust.zip                 ****+ Saga by Dust - ASM93:demo:04:
+                                           | (1820k)
+/1993/t/t_holic.zip                  ****  Techno Holic by Extreme (154k)
+/1993/u/unlpower.zip                 ****  Unleashed Power by S!P -
+                                           | TCC93:demo:04: (488k)
+/1993/u/unreal11.zip                 ***** Unreal v1.1 by Future Crew -
+                                           | ASM92:demo:01: (1304k)
+/1993/w/wish_m12.zip                 ****  Wish by Majic 12 (289k)
+/1994/0-9/2ndpatch.zip               ***** Second Reality (fix) by Future Crew
+                                           | - ASM93:demo:01: (35k)
+/1994/0-9/3940.zip                   ****  3940 by ??? - ASM94:in4k:07: (6k)
+/1994/a/accident.zip                 ***+  The Accident by Axidental -
+                                           | ASM94:demo:19: (1293k)
+/1994/a/acme_bsd.zip                 ***+  Blue Steel by Acme (231k)
+/1994/a/acme_bug.zip                 ***+  Bugfixed by Acme - TP94:demo:10:
+                                           | (712k)
+/1994/a/acme_doa.zip                 ****  Dead on Arrival by Acme (705k)
+/1994/a/airframe.zip                 ****  Airframe by Prime - ASM94:in64:01:
+                                           | (59k)
+/1994/a/ambience.zip                 ****  Ambience (Timeless 2) by Tran (353k)
+/1994/b/boem.zip                     ****  BBS Boem by Spirit (48k)
+/1994/b/bytekiss.zip                 ***+  Bytes & Kisses by JL Enterprises
+                                           | (227k)
+/1994/c/cardiac.zip                  ****+ Cardiac by Infiny - TP93:demo:03:
+                                           | (2518k)
+/1994/c/catchup.zip                  ****+ Cachup by Grif - ASM94:demo:07:
+                                           | (1486k)
+/1994/c/cc_rthng.zip                 ****  The Real Thing by Capacala -
+                                           | ASM94:demo:06: (1324k)
+/1994/c/chaos.zip                    ***+  Chaos by ??? - ASM94::: (6k)
+/1994/c/chaos486.zip                 ***+  Chaos 486 by Noxious (2k)
+/1994/c/clx_cbro.zip                 ****  Message From the Cosmic Brothers by
+                                           | Complex - ASM94:demo:09: :
+                                           | 386,,GUS, (1270k)
+/1994/c/crystal2.zip                 ****  Crystal #2 by Xography - BBS:::
+                                           | (19k)
+/1994/c/cyboman2.zip                 ****+ Cyboman 2 by Complex - TP94:in64:01:
+                                           | (65k)
+/1994/d/drain.zip                    ****  Drain by ??? - ASM94::: (5k)
+/1994/d/dust_unt.zip                 ****+ Untitled by Dust - TP93:demo:01:
+                                           | (838k)
+/1994/e/ec.zip                       ****  BBS Eyecatcher by S!P (359k)
+/1994/e/echoes.zip                   ****  Echoes of the Past by Nostalgia -
+                                           | BIZ94:demo:01: (771k)
+/1994/e/edosbbs.zip                  ***+  BBS Edo's by Genuine (43k)
+/1994/e/epic.zip                     ****  Epic by Zuul Design (764k)
+/1994/f/fatal.zip                    ****  Fatal Fantasies by Massive -
+                                           | BIZ94:demo:05: (779k)
+6-7-98 1:11a
+/1994/f/fdreams.zip                  ****+ Fractal Dreams by Mental Design -
+                                           | ASM94:in4k:06: (6k)
+/1994/f/fractals.zip                 ****  Fractals by Schwartz -
+                                           | ASM94:in4k:04: (5k)
+/1994/f/fsn_sj.zip                   ****  Space Jam by Fascination -
+                                           | ASM94:in64:02: (60k)
+/1994/f/fsn_ue.zip                   ***+  Unlimited Existance by Fascination -
+                                           | ABD94:demo:06: (126k)
+/1994/f/ftj_eros.zip                 ****  Abraham by Project Plant -
+                                           | TP94:in64:04: (68k)
+/1994/f/fudge.zip                    ****  Fudged Insanity by Razor 1911 (54k)
+/1994/g/gbu_sp.zip                   ****  The Good, The Bad, The Ugly by S!P -
+                                           | TP93:demo:02: (546k)
+/1994/g/giant.zip                    ****  Giant by Sigma of STP -
+                                           | ASM94:in4k:XX: (10k)
+/1994/g/gn_skp.zip                   ****  GooRoo Nation by Starry Knights
+                                           | Productions (712k)
+/1994/g/grey.zip                     ****  Grey by Abaddon - TP94:in64:11:
+                                           | (66k)
+/1994/g/grimtro.zip                  ***+  Grimtro by Twin Killer of Gollum -
+                                           | BP94::: (2k)
+/1994/h/handy.zip                    ****  Handy by Abaddon - ASM94:in4k:: (7k)
+/1994/h/happijoy.zip                 ****  Happy Happy Joy Joy by Darkzone -
+                                           | ASM94:in4k:10: (8k)
+/1994/h/holistic.zip                 ****+ Holistic by Cascada - ASM94:demo:02:
+                                           | (1043k)
+/1994/h/hsa_silc.zip                 ***+  Silence by Hysteria - ASM94:demo:08:
+                                           | (870k)
+/1994/i/images.zip                   ***+  Images by Epical - ASM94:demo:05:
+                                           | (1344k)
+/1994/i/inspirat.zip                 ***+  Inspiration by Reality (143k)
+/1994/i/isd.zip                      ***+  Infinite Space Dreams by Massive -
+                                           | TP94:in64:XX: (54k)
+/1994/j/journey.zip                  ***+  Journey by Keen Like Frogs (1528k)
+/1994/j/just.zip                     ***+  Just Do It by Grif - ASM94:in4k:09:
+                                           | (3k)
+/1994/k/kukoo2.zip                   ***+  BBS Pleasure Access by The Flamoots
+                                           | (28k)
+/1994/l/la_intro.zip                 ***+  BBS Lunatic Asylum by Logic Design
+                                           | (18k)
+/1994/l/ld_warpf.zip                 ****  Warp by Legend Design -
+                                           | ASM94:demo:04: (2226k)
+/1994/l/ldbbstro.zip                 ***+  BBS Golden Image by Legend Design
+                                           | (23k)
+/1994/l/legalize.zip                 ***+  Legalize It by Patte of Xography -
+                                           | ASM94:in4k:XX: (5k)
+/1994/l/legend_.zip                  ****  Legend by Impact Studios -
+                                           | TP93:demo:04: (1569k)
+/1994/m/magic.zip                    ****  The Magic Circle by TET -
+                                           | ASM94:in64:06: (57k)
+/1994/m/mars.zip                     ***+  Martian Terrain Demo by Tim Clarke
+                                           | (2k)
+/1994/m/marspal.zip                  ***+  Martian Terrain Demo (pallette
+                                           | change) by Tim Clarke (5k)
+/1994/m/mega_ega.zip                 ****  Mega-Ega by S-Cubed (253k)
+/1994/m/megamix.zip                  ***+  Megamix by Realtech (2455k)
+/1994/m/move.zip                     ****  Move by Chicken of S!P -
+                                           | ASM94:in4k:05: (3k)
+/1994/m/ms_suxx.zip                  ***   Microsoft SUXX! by Anonymous (260k)
+/1994/m/msrules.zip                  +     Microsoft Rules by The Eye of
+                                           | Brainwash (576k)
+/1994/n/newintro.zip                 ***+  New Intro by Majic 12 (48k)
+
+6/29/98 8:45a @@@@@@@
+/1994/o/oppstsf2.zip                 ***+  Opposites by Fulmar Design (84k)
+/1994/o/optimize.zip                 ****+ Optimize by Feenix of Epical -
+                                           | ASM94:in4k:03: (4k)
+/1994/o/ott.zip                      ***+  Over the Top by Valhalla (39k)
+/1994/p/passion.zip                  ***+  Passion by Doomsday Productions -
+                                           | ASM94:in64:08: (51k)
+/1994/p/paula.zip                    ***+  Paula Faked by Jamm - ABD94:demo:08:
+                                           | (36k)
+/1994/p/plasmat.zip                  ***+  Plasmatic by Zden - ASM94:in4k:11:
+                                           | (3k)
+/1994/p/poor_m12.zip                 ****+ Poor by Majic 12 (228k)
+/1994/p/prg_whs.zip                  ***+  Washandje by Progress -
+                                           | BIZ94:in64:04: (64k)
+/1994/p/prologue.zip                 ***+  Prologue by Logic Design -
+                                           | BIZ94:demo:02: (613k)
+/1994/p/ptm_tfo.zip                  ****  Final Option by Phantom Design -
+                                           | ASM94:demo:11: (1998k)
+/1994/r/r_meetro.zip                 ***+  Meetro by Remedy Productions,
+                                           | Diffusion (70k)
+/1994/r/raiser.zip                   ***+  Hellraiser by MegaBusters -
+                                           | TP94:demo:08: (1152k)
+/1994/r/religion.zip                 ***+  Religion by Xtacy (214k)
+/1994/r/rust.zip                     ***+  Rust by Rust (19k)
+/1994/r/rzr_red.zip                  ***+  Red by Razor 1911 (186k)
+/1994/s/serious.zip                  ****  Serious by J!P - ABD94:demo:04:
+                                           | (145k)
+/1994/s/show_fix.zip                 ****+ Show (bugfixed) by Majic 12 (681k)
+/1994/s/showsecr.zip                 ****+ Show (secret part) by Majic 12 (15k)
+/1994/s/spam.zip                     ****  Spam by Xtoto of Valhalla -
+                                           | ASM94:in4k:02: (4k)
+/1994/s/spoint.zip                   ***+  BBS Pointbreak by S!P (14k)
+/1994/s/squash.zip                   ***+  Squash-a-Delic by Mental Design
+                                           | (74k)
+/1994/s/stoned.zip                   ****+ Stoned by Stone of Dust -
+                                           | ASM94:in4k:01: (5k)
+/1994/t/tdslogic.zip                 ***+  Logical Thoughts by TDS -
+                                           | TP93:demo:16: (574k)
+/1994/t/tempesta.zip                 ***+  Tempesta by Soft One Productions -
+                                           | ASM94:demo:12: (1902k)
+/1994/t/themo.zip                    ***+  The Mo by Demons - ASM94:demo:21:
+                                           | (588k)
+/1994/t/timefix.zip                  ***+  Timeless (fix) by Tran (0k)
+/1994/t/timeless.zip                 ***+  Timeless by Tran (153k)
+/1994/t/tiny.zip                     ****  Tiny by Kroc of Infiny -
+                                           | ASM94:in4k:XX: (3k)
+/1994/t/tomte.zip                    ***+  Tomtesaft by ??? - ASM94:in4k:XX:
+                                           | (3k)
+/1994/t/trekmo.zip                   ***+  Trekmo by Patrick Aalto -
+                                           | ASM94:demo:13: (594k)
+/1994/t/tylsae.zip                   ***+  Tylsae by Tarzan Tuotanto -
+                                           | TP94:in64:XX: (54k)
+/1994/u/uneatble.zip                 ****  Uneatable by The Coexistence -
+                                           | ASM94:demo:14: (2193k)
+/1994/v/val_pv.zip                   ****  Peripheral Vision by Valhalla -
+                                           | TP94:in64:02: (70k)
+/1994/v/vdentro.zip                  ***+  Dentro by Void - BIZ94:demo:03:
+                                           | (195k)
+/1994/v/virt.zip                     ****  Virtuosis by SB of Remal -
+                                           | ASM94:in4k:08: (5k)
+/1994/v/volbyval.zip                 ****  Visions of Light by Valhalla -
+                                           | ASM94:demo:15: (1351k)
+/1994/x/x3m_sf.zip                   ***+  Strange Feelings by Extreme -
+                                           | TP94:demo:??: (186k)
+/1995/0-9/165plasm.zip               ***+  165b Raster Plasma by Project -
+                                           | ASM95:in4k:XX: (2k)
+/1995/0-9/2ndchrst.zip               ***   Second Christianity by INF :
+                                           | 386,,GUS, (541k)
+/1995/0-9/4kflight.zip               ****  4k Flight by Scoop - TG95:in4k:01:
+                                           | (3k)
+/1995/0-9/4kg.zip                    ***+  4kg by Lopez, Firehawk -
+                                           | ASM95:in4k:XX: (4k)
+/1995/0-9/4kr.zip                    ***+  Intro by Xenogenesis - TG95:in4k:03:
+                                           | (3k)
+/1995/a/ac_expr.zip                  ****  Expression by Abstract Concepts -
+                                           | X95:demo:02: (560k)
+/1995/a/acme_big.zip                 ****  Big Deal by Acme - X95:demo:01:
+                                           | (660k)
+/1995/a/acme_syw.zip                 ***+  1st Smoke Yellow Weed by Acme -
+                                           | SIH95:in64:01: (55k)
+/1995/a/acolors.zip                  ****  Colors by A-Men (1164k)
+/1995/a/act1.zip                     ****  ACT1 by Psychic Link (756k)
+/1995/a/adr_why.zip                  ***+  Why by Adrar Design (100k)
+/1995/a/ahrum.zip                    ***+  Ahrum by ??? - ASM95:in4k:11: (12k)
+/1995/a/alabtro.zip                  ****  Alabtro by Ghoul of Xenon
+                                           | Development - BP95:in4k:06: (4k)
+/1995/a/ams_emg.zip                  ***+  Electrical Movement (GUS) by
+                                           | Amorphous - ABD95:demo:02:
+                                           | (679k)
+/1995/a/an_mod0.zip                  ***+  Model 0 by Analogue - SIH95:demo:02:
+                                           | (336k)
+/1995/a/angel.zip                    ****+ Project Angel by Impact Studios -
+                                           | TP94:demo:01: (3779k)
+/1995/a/animate.zip                  ***** Animate by Schwartz - ASM95:in4k:01:
+                                           | (4k)
+/1995/a/aquafix.zip                  ***+  Aquaphobia by Realtech -
+                                           | TP95:demo:11: (2436k)
+/1995/a/ascii95.zip                  ***+  ASCII by Paranoids (52k)
+/1995/a/astro.zip                    ***+  Astro by Astroidea - EXE95:in64:01:
+                                           | (65k)
+/1995/a/autumn.zip                   ***+  Autumn by Epsilon - WIR95:in64:02:
+                                           | (60k)
+/1995/b/believe.zip                  ****  Believe by Valhalla - ASM95:in64:06:
+                                           | (62k)
+/1995/b/beta.zip                     ***+  Beta by Digitize Design Group -
+                                           | ASM95:demo:XX: (1439k)
+/1995/b/blueeyes.zip                 ***+  Blue Eyes by @ - JUH95A:demo:10:
+                                           | (1402k)
+/1995/b/bunny.zip                    ***+  Bunny by SRK - BP95:in64:03: (57k)
+/1995/b/burma.zip                    ***+  Burma by Proxima - BP95:in64:02:
+                                           | (63k)
+/1995/c/c_posi_p.zip                 ****  Positive by Coral - AGR95:demo:??:
+                                           | (115k)
+/1995/c/cass.zip                     ***+  Cassiopeia by ??? - TG95:in4k:06:
+                                           | (3k)
+/1995/c/cc_2lite.zip                 ****  Zweilight Zone by Capacala -
+                                           | ASM95:demo:04: (1008k)
+/1995/c/cc_ureah.zip                 ****  The Unreal Thing by Capacala (925k)
+/1995/c/cda_tp5i.zip                 ***+  Intro by Cascada - TP95:in64:05:
+                                           | (61k)
+/1995/c/chrome.zip                   ***+  Chrome by TomCat, Abaddon -
+                                           | ASM95:in4k:04: (5k)
+/1995/c/clash.zip                    ***+  Clash by Grif (353k)
+/1995/c/clx_bgfr.zip                 ****  Bill G Force by Complex -
+                                           | ASM95:in64:03: (63k)
+/1995/c/clx_dope.zip                 ****+ Dope by Complex - TG95:demo:01:
+                                           | (893k)
+/1995/c/clx_xtal.zip                 ****  Xtal by Complex (1410k)
+/1995/c/clxfinal.zip                 ***+  Complexity by Byteam -
+                                           | ASM95:in4k:07: (9k)
+/1995/c/cma_brw.zip                  ****  60BR W by Coma - TP95:demo:08:
+                                           | (690k)
+/1995/c/cma_gion.zip                 ****  Gustation by Camorra (60k)
+/1995/c/countdwn.zip                 ***+  Countdown by Realtech -
+                                           | WIR95:demo:04: (903k)
+/1995/c/ctslasse.zip                 ****  Lasse Reinbong by Cubic Team -
+                                           | TP95:in64:01: (63k)
+/1995/d/dandruff.zip                 ***+  Dandruff by YeTi - BP95:in64:07:
+                                           | (36k)
+/1995/d/detour.zip                   ****  Detour by Halcyon - ASM95:in64:05:
+                                           | (59k)
+/1995/d/devsite.zip                  ***+  BBS Developer's Site by Waterlogic
+                                           | (634k)
+/1995/d/dimensio.zip                 ***+  Dimension by Realtech -
+                                           | TP94:demo:05: (1025k)
+/1995/d/dragon.zip                   ****  Dragon by T. Glasmachers -
+                                           | ASM95:in4k:08: (14k)
+/1995/d/dream.zip                    ****  Dream by Jamm - TP95:demo:02:
+                                           | (1349k)
+/1995/d/drift.zip                    ****+ Drift by Wild Light - ASM95:in64:01:
+                                           | (69k)
+/1995/d/drinks.zip                   ***+  BBS $1 Drinks by Xtatic (18k)
+/1995/d/ds_bliss.zip                 ***+  Digital Bliss by DeathStar -
+                                           | TP95:demo:EE: (2712k)
+/1995/d/dxproj.zip                   ****  DX Project by Realtech -
+                                           | ASM95:demo:03: (2373k)
+/1995/e/e_jade.zip                   ****  Jade by Eclipse - TP94:in64:EE:
+                                           | (61k)
+/1995/e/elements.zip                 ****  Elements by ??? - ASM95:in4k:XX:
+                                           | (3k)
+/1995/e/emf_vrs2.zip                 ****+ Verses (revision) by EMF -
+                                           | ASM94:demo:01: (497k)
+/1995/e/ep_lion.zip                  ****  Lion by Epsilon - WIR95:in4k:01:
+                                           | (5k)
+/1995/e/epsilon.zip                  ***+  Epsilon by Infiny (400k)
+/1995/e/estm_eup.zip                 ***+  Euphoria by Esteem - MOV95:demo:01:
+                                           | (1854k)
+/1995/e/excuse.zip                   ***+  No Excuse by Omicron - I95:demo:01:
+                                           | (1777k)
+/1995/f/fdg_grov.zip                 ***+  Planet Groove by Fudge -
+                                           | TP95:demo:20: (793k)
+/1995/f/fdg_rec.zip                  ***+  The Recipe by Fudge - SE95:demo:03:
+                                           | (391k)
+/1995/f/finland.zip                  ***+  Finland by ??? - ASM95:in4k:XX: (2k)
+/1995/f/flight.zip                   ***+  Flight by Kosmic - NAID95:demo:03:
+                                           | (1753k)
+/1995/f/flow.zip                     ****  Flow by Craze - TP95:demo:12:
+                                           | (1260k)
+/1995/f/fr_debut.zip                 ***+  Debut by Fraction (76k)
+/1995/f/fruityfn.zip                 ****  Fruit Cake by Deus (67k)
+/1995/f/fsn_dsy.zip                  ****  Daisy by Fascination (348k)
+/1995/f/fsn_hive.zip                 ****  Hive by Fascination - ABD95:demo:01:
+                                           | (861k)
+/1995/f/ftj_act.zip                  ***+  Groove Action (buggy) by Plant
+                                           | (155k)
+/1995/f/ftj_love.zip                 ***+  Divine Booty by Plant -
+                                           | ASM95:demo:DD: (3007k)
+/1995/f/ftj_pika.zip                 ****  Cyboman 3 by Plant - JUH95B:demo:02:
+                                           | (539k)
+/1995/h/h_disord.zip                 ****  Disorder by Halcyon -
+                                           | JUH95A:demo:03: (264k)
+/1995/h/h_klooni.zip                 ***+  Da Clone by Halcyon (172k)
+/1995/h/h_life.zip                   ****  Lifeforms by Halcyon -
+                                           | JUH95B:demo:03: (290k)
+/1995/h/hardboil.zip                 ***+  Hardboiled by Reality (20k)
+/1995/h/hardcore.zip                 ***+  Encore by TPOLM - TP95:demo:19:
+                                           | (548k)
+/1995/h/havoc.zip                    ****  Havoc by Extreme - ASM95:in4k:05:
+                                           | (6k)
+/1995/h/hemp.zip                     ***+  Hemp Hemp Hemp by Live : ,,GUS,
+                                           | (271k)
+/1995/h/hurtless.zip                 ****  Hurtless by TFL, TDV -
+                                           | WIR95:demo:09: (2017k)
+/1995/h/hurtprob.zip                 ****  Hurtless (fix) by TFL, TDV -
+                                           | WIR95:demo:09: (8k)
+/1995/i/ign_pump.zip                 ****  Pump by Iguana (546k)
+/1995/i/img_ancr.zip                 [n/a] Ancient Routines by Image -
+                                           | X95:demo:05: (497k)
+/1995/i/incident.zip                 ***+  Incident by Plexus, The Cross (55k)
+/1995/i/incompa.zip                  ***+  Incompatibility by Byteam :
+                                           | 386,,GUS, (65k)
+/1995/i/innon3k.zip                  ***+  3k Innocence by Twaddler of Proxima
+                                           | - BP95:in4k:01: (3k)
+/1995/i/itsdemo.zip                  ****+ Into the Shadows by Triton (3510k)
+/1995/j/jfight2.zip                  ***+  Fighting for Something by Japotek -
+                                           | ASM95:demo:10: (2030k)
+/1995/j/juice.zip                    ***+  Juice by Psychic Link -
+                                           | ASM95:demo:02: (835k)
+/1995/j/juice11.zip                  ****  Juice by Psychic Link -
+                                           | ASM95:demo:02: (848k)
+/1995/j/juicefix.zip                 ****  Juice (patch) by Psychic Link -
+                                           | ASM95:demo:02: (62k)
+/1995/k/korso.zip                    ****  Who Else Upgrade a Robot by Orange -
+                                           | ABD95:in64:01: (52k)
+/1995/l/ld_justp.zip                 ****  Just by Legend Design -
+                                           | WIR95:demo:02: (1046k)
+/1995/l/lib_updt.zip                 ***+  Liberation (patch) by Force 2 -
+                                           | TP94:demo:XX: (22k)
+/1995/l/liberfix.zip                 ***+  Liberation (fix) by Force 2 -
+                                           | TP94:demo:XX: (11k)
+/1995/l/libfinal.zip                 ***+  Liberation by Force 2 -
+                                           | TP94:demo:XX: (1534k)
+/1995/l/livelove.zip                 ***+  Love by Live (367k)
+/1995/l/loop01.zip                   ***+  Loop01 by pascal of Cubic Team -
+                                           | ASM95:in4k:10: (11k)
+/1995/m/magic64.zip                  ***+  Magic Carpet by KLF - WIR95:in64:01:
+                                           | (64k)
+/1995/m/magic64f.zip                 ***+  Magic Carpet 64 (final) by KLF -
+                                           | WIR95:in64:01: (74k)
+/1995/m/maple_dz.zip                 ***+  Maple by Dark Zone - TG95:in64:03:
+                                           | (46k)
+/1995/m/mass_jwl.zip                 ***+  Jewelry by Massive - SIH95:in64:05:
+                                           | (60k)
+/1995/m/mb_nexus.zip                 ***+  The Timegate by MB (39k)
+/1995/m/mbs.zip                      ****  Mind Body Soul by Omicron -
+                                           | TP95:demo:09: (1629k)
+/1995/m/mcl_hd.zip                   ***+  Higher Desire by Miracle -
+                                           | ASM95:demo:06: (812k)
+/1995/m/mfx_tgr.zip                  ****  Transgression by MFX -
+                                           | AGR95:i128:02: (52k)
+/1995/m/mighty.zip                   ****  Mighty by Xtacy - SE95:demo:02:
+                                           | (1036k)
+/1995/m/mind.zip                     ****  Mind Crash by Spirit - TP94:in64:XX:
+                                           | (63k)
+/1995/m/money.zip                    ****  Money by Hyperopia - TP95:demo:13:
+                                           | (955k)
+/1995/m/msqebeat.zip                 ***+  E-Beat by Masque - TP95:demo:07:
+                                           | (599k)
+/1995/m/mwb_esc.zip                  ***+  Escape by MWB - WIR95:demo:06:
+                                           | (845k)
+/1995/n/nation0.zip                  ****  Nation Zero by Jamm - ASM95:in64:04:
+                                           | (83k)
+/1995/n/nitro.zip                    ***+  Nitro by Stereocode (26k)
+/1995/n/nlife.zip                    ***+  Night Life by The Apollo Project
+                                           | (480k)
+/1995/n/noc_bri2.zip                 ***+  Brilliance by Noice - I95:demo:02:
+                                           | (652k)
+/1995/n/nooon_he.zip                 ****  Heaven by Nooon - ASM95:in4k:02:
+                                           | (4k)
+/1995/n/nooon_no.zip                 ****  No by Nooon - TP94:demo:02: (1307k)
+/1995/n/nooon_st.zip                 ****+ Stars (bugfixed) by Nooon -
+                                           | ASM95:demo:01: (1142k)
+/1995/o/obez.zip                     ***+  Obez by Kloon - WIR95:in64:04: (58k)
+/1995/o/obj_demo.zip                 ***+  Objection by Spirit - WIR95:demo:10:
+                                           | (669k)
+/1995/o/offbyte.zip                  ***+  Only For Few Bytes by Lunatic -
+                                           | ASM95:in4k:12: (4k)
+/1995/o/okean.zip                    ****  Sea Robot of Love by Orange -
+                                           | TP95:in64:??: (62k)
+/1995/o/olymp31.zip                  ***+  Ulysse 31 by Olympus -
+                                           | WIR95:demo:05: (1387k)
+/1995/o/opticron.zip                 ****  Opticron by Craw Productions -
+                                           | NAID95:demo:01: (566k)
+/1995/o/optimal.zip                  ***+  Optimal Torque by Dubius -
+                                           | ASM95:demo:08: (971k)
+/1995/o/os2comic.zip                 ****  OS/2 Demo by Comic (Complex) -
+                                           | OS2W:demo:02: (357k)
+/1995/o/ote.zip                      ***+  Over the Edge by Sorrox -
+                                           | TG95:demo:03: (640k)
+/1995/p/p_deadl.zip                  ****  Deadline by Purple (94k)
+/1995/p/p_skufin.zip                 ****  Skumle Planer (bugfix) by Purple -
+                                           | SE95:demo:01: (615k)
+/1995/p/perf_fin.zip                 ****  Performance (bugfix) by Logic Design
+                                           | - BIZ95:demo:01: (913k)
+/1995/p/pha_mure.zip                 ***+  Murel by Phenomena - I95:in64:01:
+                                           | (51k)
+/1995/p/phase2.zip                   ****  Phase 2 by Nostalgia -
+                                           | BIZ95:in4k:01: (5k)
+/1995/p/phenofix.zip                 ***+  Phenotype (bugfix) by Purge -
+                                           | WIR95:demo:03: (595k)
+/1995/p/phenotyp.zip                 ***+  Phenotype by Purge - WIR95:demo:03:
+                                           | (595k)
+/1995/p/pls_reve.zip                 ***+  Reve by Pulse - TP95:demo:05: (990k)
+/1995/p/poliisi.zip                  ***+  Poliisi by Coma (757k)
+/1995/p/pro_nut.zip                  ***+  Professor Nutbutter by Mindprobe -
+                                           | JUH95B:demo:07: (612k)
+/1995/p/psilly.zip                   ****  Pink 'n Silly by Deus (60k)
+/1995/p/ptm-intr.zip                 ***+  Intrance by Phantom Design :
+                                           | 486,,GUS, (659k)
+/1995/p/pureness.zip                 ****  Pureness by Waterlogic (1399k)
+/1995/r/reality.zip                  ***+  Reality by Funk - TP95:in64:16:
+                                           | (63k)
+/1995/r/relapse.zip                  ***+  Relapse by Valhalla - DS95:demo:01:
+                                           | (1067k)
+/1995/r/remix2.zip                   ***+  Remix 2 by Future Hackers -
+                                           | ENL95:in8k:01: (7k)
+/1995/r/royal.zip                    ***+  The Royal Family by Orange -
+                                           | TP95:in64:09: (63k)
+/1995/r/rt_6sens.zip                 ****  The 6th Sense by Realtech -
+                                           | TP95:demo:EE: (2301k)
+/1995/r/rt_fli.zip                   ***+  FLI by Real-Time - WIR95:in4k:03:
+                                           | (5k)
+/1995/r/rty_flux.zip                 ***+  BBS Mindflux by Reality (17k)
+/1995/s/sametech.zip                 ****  Sametech Annihilation by KLF (68k)
+/1995/s/sck_bsc.zip                  ****  Basics by Shock (12k)
+/1995/s/sehabla.zip                  ****  Sehablad Routines by Jamm -
+                                           | JUH95B:in64:01: (65k)
+/1995/s/sembla.zip                   ***+  Semiotic Semblance by Fit -
+                                           | ABD95:in64:03: (56k)
+/1995/s/semtex.zip                   ***+  Semtex City by J!P - JUH95A:demo:01:
+                                           | (401k)
+/1995/s/semtex64.zip                 ****  Semtex Annihalation by J!P -
+                                           | ABD95:in64:02: (67k)
+/1995/s/skumlfix.zip                 ****  Skumle Planer by Purple -
+                                           | SE95:demo:01: (630k)
+/1995/s/slow.zip                     ****  Slow by Italian Bad Boys,
+                                           | Pornorockerz (1098k)
+/1995/s/sm_awake.zip                 ***+  The Awakening by Smash (316k)
+/1995/s/smooth.zip                   ****  Smooth by Pulp Productions -
+                                           | ASM95:in4k:XX: (4k)
+/1995/s/snc_warp.zip                 ****  OS/2 Warp by Sonic - OS2W:demo:03:
+                                           | (777k)
+/1995/s/so.zip                       ***+  So? by Xenon Development -
+                                           | BP95:in64:08: (60k)
+/1995/s/solnop3k.zip                 ****  3kb by SOL of NOP (10k)
+/1995/s/solstice.zip                 ****  Solstice by Valhalla -
+                                           | WIR95:demo:01: (1649k)
+/1995/s/sp_drst.zip                  ****  Dreamsteal by S!P (1111k)
+/1995/s/sp_up.zip                    ***+  Up Intro by S!P (59k)
+/1995/s/speed.zip                    ****  Speed by Codex of Paranoids -
+                                           | ASM95:in4k:06: (4k)
+/1995/s/spring.zip                   ****  Spring by Logic Design -
+                                           | X95:in64:01: (103k)
+/1995/s/startro.zip                  ***+  Startro by Reality (17k)
+/1995/s/state.zip                    ***+  State of Hate by Dubius -
+                                           | TP95:demo:04: (1149k)
+/1995/s/strictly.zip                 ***+  Strictly 4kb by Olppa of TET -
+                                           | ASM95:in4k:14: (4k)
+/1995/t/tbr_ovrf.zip                 ***+  Overflow by Black Rain -
+                                           | ASM95:demo:13: (750k)
+/1995/t/tc_unr.zip                   ***+  Unreadable by The Coexistence -
+                                           | TP95:in64:08: (75k)
+/1995/t/technon2.zip                 ***+  Technon by Core - NAID95:demo:05:
+                                           | (417k)
+/1995/t/textro.zip                   ****  Textro by OTM (186k)
+/1995/t/tfa_uitg.zip                 ***+  Uitgeroeid by Ground Zero of TFA -
+                                           | X95:demo:03: (365k)
+/1995/t/three.zip                    ***+  Three by the Heretics (54k)
+/1995/t/track1.zip                   ***+  Track 1 by Digital House -
+                                           | WIR95:in64:05: (60k)
+/1995/t/tro.zip                      ***+  Tro by Remal (57k)
+/1995/t/tucxmas.zip                  ***+  Xmasdemo '94 by TUC (20k)
+/1995/t/tv.zip                       ***+  Television by Orange -
+                                           | ASM95:demo:07: (660k)
+/1995/u/ufo.zip                      ***+  UFO by Zeb, Barti (337k)
+/1995/u/underh2o.zip                 ***+  Underwater by Technomancer -
+                                           | GP95:demo:02: (954k)
+/1995/u/units.zip                    ***+  Units by 6502 (30k)
+/1995/v/val_bes.zip                  ****  Bibi-Ergo-Sum by Valhalla -
+                                           | TG95:in64:02: (65k)
+/1995/v/val_fmf.zip                  ****  Fluid Motion by Valhalla -
+                                           | TG95:in64:01: (121k)
+/1995/v/val_os2f.zip                 ****+ OS/2 Warp demo by Valhalla -
+                                           | OS2W:demo:01: (517k)
+/1995/v/visions.zip                  ****  Visions by Sorrox - BP95:in64:01:
+                                           | (58k)
+/1995/x/x14.zip                      ****+ X14 by Orange - JUH95B:demo:01:
+                                           | (675k)
+/1995/x/x3m_hvc.zip                  ****  Havoc by Vocious of Extreme -
+                                           | ASM95:in4k:??: (11k)
+/1995/x/x_file.zip                   ****  X-File by Rebels, Diffusion -
+                                           | TP95:in64:18: (27k)
+/1995/x/x_y_z.zip                    ****+ Project XYZ by Orange -
+                                           | JUH95A:demo:02: (501k)
+/1995/x/xnn_fix.zip                  ****  Fix by Xenon Development (249k)
+/1995/x/xorgasm.zip                  ****  Xorgasm by Genuine - TP94:demo:XX:
+                                           | (570k)
+/1995/y/y_blfix.zip                  ***+  Blues (bugfix) by Symptom (327k)
+/1996/0-9/1frame.zip                 ****  1 Frame by Hydrogen (6k)
+/1996/0-9/1k_intro.zip               ***+  1000 Byte Intro by Frenzy : 386DX
+                                           | (1k)
+/1996/0-9/24hd.zip                   ***+  24h Demo by Heaven Software -
+                                           | MET96:demo:01: (606k)
+/1996/0-9/255latex.zip               ****+ Latex by Blank - SYM96:demo:01: :
+                                           | 486DX,VESA,GUS/SB/PAS, (1589k)
+/1996/0-9/4kquark.zip                ****  4k by Quark - OZ96:in4k:01: (4k)
+/1996/0-9/4kworld.zip                ***+  World 4k by Furball - MEK96:in4k:02:
+                                           | (10k)
+/1996/a/ab_remix.zip                 ***+  Aboriginal Remix by Paragon -
+                                           | ABD96:in64:01: (72k)
+/1996/a/abc_farm.zip                 ****  Farmer by Absence (6k)
+/1996/a/aborignl.zip                 ***+  Aboriginal by Paragon -
+                                           | JUH96A:in64:04: (53k)
+/1996/a/adrift.zip                   ***+  Adrift by Wild Light - TP96:in64:11:
+                                           | : 486DX,GUS/SB (64k)
+/1996/a/ages.zip                     ***+  Ages by Happo - ASM96:demo:09:
+                                           | (1182k)
+/1996/a/agschapi.zip                 ***+  Chapi Chapo I by Aegis -
+                                           | SAT96:demo:03: (1332k)
+/1996/a/ai_gss.zip                   ***+  Generated Sintab Sux by Reptile of
+/1996/a/ai_mutha.zip                 ***+  Mutha by Astroidea - CAC96B:demo:01:
+                                           | (936k)
+/1996/a/ai_strok.zip                 ****+ Stroke by Ionic of Astroidea -
+                                           | ASM96:in4k:04: (17k)
+/1996/a/alto.zip                     ***+  Alto Knallo by Free Electric Band -
+                                           | TP96:demo:01: : GUS/SB/PAS
+                                           | (1190k)
+/1996/a/alucia.zip                   ***+  Andalucia by Halcyon -
+                                           | ASM96:in64:08: (60k)
+/1996/a/amb_juni.zip                 ***+  Junior by Amable - TP96:in64:02:
+                                           | (73k)
+/1996/a/ame_pain.zip                 ****  Pain by Amnesty - GP96:in4k:01: (5k)
+/1996/a/an_dea.zip                   ***+  Dea by Analogue - BIZ96:demo:03:
+                                           | (705k)
+/1996/a/ancircs3.zip                 ****  Circuit (S3 pre) by Analogue -
+                                           | TP95:demo:17: (1412k)
+/1996/a/anima.zip                    ***+  Anima by Dave of Byteam -
+                                           | ANT96:in4k:06: (4k)
+/1996/a/arise-f.zip                  ***+  Arise (final) by Beyond -
+                                           | NAID96:demo:04: (1373k)
+/1996/a/atw_prot.zip                 ****  Proton by Artwork - ASM96:demo:08:
+                                           | (1340k)
+/1996/b/b-drill.zip                  ***+  Drill Me, Please Me by Byterapers -
+                                           | ABD96:demo:01: (2058k)
+/1996/b/b666_fin.zip                 ***+  Vitamin B666 by Exmortis -
+                                           | GRV96:demo:02: (3709k)
+/1996/b/babylon.zip                  ****  Babylon by Psychic Monks -
+                                           | ASM96:demo:DD: (770k)
+/1996/b/beyond.zip                   ***+  Beyond by Immortals - MOV96:demo:02:
+                                           | : GUS/SB/PAS,VESA (2276k)
+/1996/b/blue2.zip                    ***+  Dreaming in Blue by Alien (4k)
+/1996/b/bomb.zip                     ***+  Bomb by Woland of Exhumers -
+                                           | ANT96:in4k:03: (15k)
+/1996/b/bor_seit.zip                 ***+  Seita by Borealis - DML96B:in64:01:
+                                           | (62k)
+/1996/b/bulll.zip                    ****  Bulll by Trepaan - BIZ96:demo:01:
+                                           | (2656k)
+/1996/c/c-ngtive.zip                 ***+  Negative by Coral - ABD96:in64:08:
+                                           | (76k)
+/1996/c/caleid.zip                   ****+ Caleidoscope by Byteam -
+                                           | SCE96:in4k:03: (11k)
+/1996/c/cartoon.zip                  ***+  Cartoon by Mist - TG96:in64:02:
+                                           | (61k)
+/1996/c/chipipo.zip                  ****  BBS Intro by Chiparus (3k)
+/1996/c/chrome2.zip                  ****  Chrome 2 by Tomcat of Abaddon -
+                                           | ASM96:in4k:05: (6k)
+/1996/c/cinema.zip                   ***+  Cinemania by Promise -
+                                           | SCE96:demo:03: (1011k)
+/1996/c/clx_rebe.zip                 ****  Rebel (As Perceived) by Complex -
+                                           | SKE96:demo:04: (2588k)
+/1996/c/clx_wego.zip                 ***+  We Go by Complex - ASM96:in64:02:
+                                           | (77k)
+/1996/c/clxsperm.zip                 ***+  Supermax by Complex - TG96:in64:03:
+                                           | (58k)
+/1996/c/cma_ctr.zip                  ***+  The Control by COMA - TG95:demo:02:
+                                           | (2459k)
+/1996/c/cma_dgst.zip                 ****  Disgust by Camorra - GP96:demo:01:
+                                           | (779k)
+/1996/c/cma_gstb.zip                 ****  GU-Star (bugfixed) by Camorra (62k)
+/1996/c/cma_gstr.zip                 ****  GU-Star by Camorra (60k)
+/1996/c/cma_tomu.zip                 ****  Tomu by COMA - DML96:in80:01: (84k)
+/1996/c/cmapaifx.zip                 ****  Paimen (english version) by COMA -
+                                           | JUH96A:demo:02: (321k)
+/1996/c/cmapaim.zip                  ****  Paimem by COMA - JUH96A:demo:02:
+                                           | (976k)
+/1996/c/cmatuhka.zip                 ****  Tuhka by COMA - DML96B:in64:03:
+                                           | (73k)
+/1996/c/cneutral.zip                 ***+  Neutral by Coral - ASM96:in64:05:
+                                           | (135k)
+/1996/c/cob.zip                      ****  Cob by Nooon, Orange -
+                                           | SAT96B:in64:12: (67k)
+/1996/c/coc_halo.zip                 ****  Halo-The Illumination by Cobra
+                                           | Creations - ABD96:demo:03:
+                                           | (1635k)
+/1996/c/coc_muna.zip                 ****  Egg-O'Trip by Cobra Creations -
+                                           | DML96:demo:02: (478k)
+/1996/c/coco-nuz.zip                 ***+  Coc'O Nuts by Cobra Creations -
+                                           | DML96B:demo:03: (1359k)
+/1996/c/comacore.zip                 ***+  Washing Machine Encore by COMA -
+                                           | SKE96:demo:01: (2732k)
+/1996/c/comawasm.zip                 ***+  Washing Machine by COMA -
+                                           | ASM96:demo:XX: (2617k)
+/1996/c/corrsive.zip                 ****  Corrosive 3 by Exmortis (1820k)
+/1996/c/countach.zip                 ****  Countach by Dave of Byteam -
+                                           | ASM96:in4k:02: (12k)
+/1996/c/craw_inf.zip                 ****  Infinity by Craw Productions -
+                                           | NAID96:demo:02: (781k)
+/1996/c/crawford.zip                 ***+  Station Crawford by Paragon -
+                                           | ASM96:in64:07: (60k)
+/1996/c/csa.zip                      ***+  Cosmic Space Arabi by TPOLM -
+                                           | TP96:in64:04: (61k)
+/1996/c/ctslrbfn.zip                 ****  Lasse Reinbong (final) by Cubic Team
+                                           | - TP95:in64:01: (174k)
+/1996/c/ctstoast.zip                 ****+ Toasted (final) by Cubic Team, $een
+                                           | - ASM96:demo:02: (1820k)
+/1996/c/ctstst.zip                   ****+ Toasted by Cubic Team, $een -
+                                           | ASM96:demo:02: (2233k)
+/1996/c/ctststfx.zip                 ****+ Toasted (bugfix) by Cubic Team, $een
+                                           | - ASM96:demo:02: (278k)
+/1996/c/ctswhat.zip                  ****  What? by Cubic Team, $een -
+                                           | SE96:in64:02: (68k)
+/1996/c/cyber.zip                    ***+  Famous Cyber People by Pulse -
+                                           | WIR96:in64:02: (64k)
+/1996/d/dawn.zip                     ***+  Dawn by Jamm - JUH96A:in64:01: (62k)
+/1996/d/daydream.zip                 ****  Daydream by Japotek - ASM96:demo:06:
+                                           | (1741k)
+/1996/d/dcb_tcef.zip                 ****  Trans Cheddar Express by DCB -
+                                           | NAID96:demo:01: (1317k)
+/1996/d/ddg_meep.zip                 ***+  Meep by Digitize Design Group -
+                                           | ABD96:demo:06: (1186k)
+/1996/d/deesbab.zip                  ****  Deesbab by Orange - TP96:in64:01: :
+                                           | 486DX (68k)
+/1996/d/den-girl.zip                 ***+  If I Was a Girl, I Would Rape Myself
+                                           | by Dentifrice - VOL96:in64:??:
+                                           | (51k)
+/1996/d/desert.zip                   ****  Desert by Exosworm of Enlightenment
+                                           | - ANT96:in4k:01: (9k)
+/1996/d/devotion.zip                 ****  Devotion by Waterlogic -
+                                           | TS96:demo:01: (2575k)
+/1996/d/disco.zip                    ***+  Disco Volante by Eufrosyne -
+                                           | JUH96A:in64:02: (44k)
+/1996/d/distant.zip                  ****  Distant by Remal (4k)
+/1996/d/dl_exp.zip                   ***+  Experience by Dark Legions :
+                                           | 486/66,,GUS/SB, (1876k)
+/1996/d/downtown.zip                 ***+  Downtown by Abyss - TP96:demo:16: :
+                                           | P5,VESA,GUS/SB,2MB (1003k)
+/1996/d/dragon11.zip                 ***+  Dragon v1.1 by GooRoo (1268k)
+/1996/e/e.zip                        ****  (E) by Zden, Moshe - WIR96:demo:05:
+                                           | (1276k)
+/1996/e/e9-fett.zip                  ****  Fettina by Magic of Ethos 9 -
+                                           | TP96:in4k:02: (4k)
+/1996/e/e_demov2.zip                 [n/a] ?? by ?? - PRN96:demo:??: (152k)
+/1996/e/e_magic.zip                  ***+  Magic by Eclipse - VOL96:demo:??:
+                                           | (436k)
+/1996/e/e_teddy2.zip                 ***+  Teddybear's Revenge by Eclipse -
+                                           | SAT96:in64:01: (71k)
+/1996/e/ely-xpr.zip                  ***+  BBS The X-Press by Elyssis (12k)
+/1996/e/emf_porn.zip                 ***+  Porno by EMF - JUH96A:in64:15: (60k)
+/1996/e/emp_fnal.zip                 ***+  Empire (final) by TPOLM -
+                                           | TP96:demo:05: : 486,GUS/SB/PAS
+                                           | (1149k)
+/1996/e/entrance.zip                 ***+  Entrance by Sigmatic of Jello (464k)
+/1996/e/est_pray.zip                 ****  Pray by Esteem - MOV96:demo:01: :
+                                           | P5,GUS/SB/PAS,VESA (2203k)
+/1996/e/exine.zip                    ***+  Exine by Anarchy - VOL96:demo:??:
+                                           | (1282k)
+/1996/e/explora.zip                  ***+  Explora by Bomb, Oxygene -
+                                           | SAT96B:demo:02: (1509k)
+/1996/f/f-white.zip                  ****  White Essence by Funk -
+                                           | SE96:in64:03: (70k)
+/1996/f/facesfin.zip                 ***+  Faces by Nostalgia - TP95:demo:DD:
+                                           | (893k)
+/1996/f/faith.zip                    ***+  Faith by Vertigo (13k)
+/1996/f/fashion.zip                  ****+ Fashion by Logic Design -
+                                           | X96:demo:01: (2022k)
+/1996/f/fdg_abfi.zip                 ***+  In Absence of Minor by Fudge -
+                                           | SE96:demo:01: (1295k)
+/1996/f/fdg_ucla.zip                 ****  Venus by Fudge - TP96:demo:03: :
+                                           | P5,GUS/SB/PAS (1638k)
+/1996/f/fmotion.zip                  ***+  Full Motion by Spirit New Style -
+                                           | BIZ96:demo:02: (2099k)
+/1996/f/fnk-esse.zip                 ****  Essence by Funk - MEK96:in64:01:
+                                           | (84k)
+/1996/f/fns_naom.zip                 ***+  Naomi by Finesse - REM96:demo:01:
+                                           | (342k)
+/1996/f/frs_blnd.zip                 ****  Blind by Eufrosyne - ASM96:in64:01:
+                                           | (59k)
+/1996/f/fsn_hdyd.zip                 ***+  How Do You Do by Fascination -
+                                           | JUH96A:demo:07: (571k)
+/1996/f/ftj_ymca.zip                 ****+ Caero (final) by EMF, Plant -
+                                           | TP95:demo:01: (1370k)
+/1996/g/g_mean.zip                   ***+  Mean by Gasp Inc. - ABD96:in64:XX:
+                                           | (65k)
+/1996/g/genia.zip                    ****  Genia by Remal - SCE96:in64:01:
+                                           | (67k)
+/1996/h/h_empty.zip                  ***+  Empty by Halcyon - SEN96:in64:01:
+                                           | (66k)
+/1996/h/h_heart.zip                  ***+  From My Heart by Halcyon -
+                                           | ABD96:demo:05: (2249k)
+/1996/h/h_innu.zip                   ***+  Innuendo by Halcyon -
+                                           | JUH96A:demo:01: (371k)
+/1996/h/headache.zip                 ****+ Headache by Psychic Link (1419k)
+/1996/h/headfix.zip                  ****+ Headache (patch) by Psychic Link
+                                           | (87k)
+/1996/h/headfixd.zip                 ****+ Headache (bugfixed) by Psychic Link
+                                           | (1419k)
+/1996/h/htc_gunk.zip                 ***+  Gunk by Heretics - OZ96:demo:01:
+                                           | (427k)
+/1996/h/hyp_ace.zip                  ***+  BBS A.C.E. by FatBoy of Hyperopia
+                                           | (4k)
+/1996/i/i_bomb.zip                   ****  Bomb by Impact Studios -
+                                           | SAT96:demo:02: (1386k)
+/1996/i/igloo_fl.zip                 ***+  Flirt (final) by Igloo -
+                                           | SAT96:demo:04: (1050k)
+/1996/i/ign_desp.zip                 ****  Despair by Iguana - EUS96:demo:01:
+                                           | (1114k)
+/1996/i/indigo.zip                   ****  Indigo by Purple - TP95:demo:??:
+                                           | (1106k)
+/1996/i/inf_chnd.zip                 ***+  ChunderChuk by INF - TG96:demo:03:
+                                           | (1197k)
+/1996/i/inf_love.zip                 ***+  The Ultimate Love Creation by INF -
+                                           | TSP96:in64:01: (67k)
+/1996/i/inf_sati.zip                 ****  Mainstream 2 by INF - BP96:in80:04:
+                                           | (86k)
+/1996/i/inside.zip                   ****+ Inside by CNCD - TG96:demo:01:
+                                           | (2141k)
+/1996/i/intodark.zip                 ****  Into The Dark by Halcyon -
+                                           | DML96:demo:01: (530k)
+/1996/k/k_boffix.zip                 ***+  Bof (bugfixed) by Kloon (211k)
+/1996/k/k_limero.zip                 ***+  Pressure by Kloon - SAT96:in64:03:
+                                           | (74k)
+/1996/k/k_orb_f.zip                  ***+  Orbital by Kloon - WIR96:in64:07:
+                                           | (61k)
+/1996/k/karanga.zip                  ***+  Karanga by Color - WIR96:demo:08:
+                                           | (1103k)
+/1996/k/korso100.zip                 ****  You am I You am the Robot by Orange
+                                           | - TG96:in64:01: (61k)
+/1996/l/leroy.zip                    ****  Leroy by Xtacy - SE96:demo:02:
+                                           | (2702k)
+/1996/l/leroyfix.zip                 ****  Leroy (SB/8MB fix) by Xtacy -
+                                           | SE96:demo:02: (99k)
+/1996/l/lite.zip                     ***+  Lite by The Mad Team -
+                                           | SCE96:in64:02: (61k)
+/1996/l/logus-t5.zip                 ****  Planet Logus-T5 by Camorra (902k)
+/1996/l/luminati.zip                 ****  Luminati by Tran, Basehead (496k)
+/1996/l/luxury.zip                   ***+  Luxury by Amorphous -
+                                           | JUH96A:in64:05: (62k)
+/1996/m/m12_flsh.zip                 ****  Flash by Majic 12 - FLAG96:demo:01:
+                                           | (1612k)
+/1996/m/machifix.zip                 ****  Machines of Madness (SB fix) by
+                                           | Dubius - ASM96:demo:01: (20k)
+/1996/m/machines.zip                 ****  Machines of Madness by Dubius -
+                                           | ASM96:demo:01: (3776k)
+/1996/m/mandala.zip                  ***+  Mandala by Rod of Mandula -
+                                           | SCE96:in4k:05: (5k)
+/1996/m/mantmag.zip                  ***+  Magma by Mentasm - SAT96B:demo:01:
+                                           | (2084k)
+/1996/m/manty.zip                    ***+  Manty the Ambient by
+                                           | Aurinkovoodoomandariini -
+                                           | ABD96:in64:04: (46k)
+/1996/m/maxreal.zip                  ****+ Maximum Reality by Unique PC -
+                                           | SCE96:in4k:01: (10k)
+/1996/m/mc_palca.zip                 ***+  MC Palca by Tomcat of Abaddon -
+                                           | ANT96:in1k:??: (1k)
+/1996/m/megademo.zip                 ****  Megablast by Orange - TP96:demo:02:
+                                           | : GUS/SB/PAS,8+MB (2897k)
+/1996/m/menace.zip                   ***+  Menace by Eternal Project -
+                                           | FLAG96:in4k:02: (11k)
+/1996/m/mental.zip                   ****  Mental Debug by Dead Beef -
+                                           | TP96:demo:04: (2419k)
+/1996/m/method.zip                   ***+  Methodology by Blala of Byteam -
+                                           | ANT96:in4k:05: (9k)
+/1996/m/mfx_tgr2.zip                 ****+ Transgression 2 by MFX -
+                                           | JUH96A:in64:03: (55k)
+/1996/m/mir_nvas.zip                 ***+  Never Assume by Miracle -
+                                           | NAID96:demo:05: (1095k)
+/1996/m/mobiliz.zip                  ****  Mobilization by Jani Honkanen -
+                                           | ASM96:in4k:03: (4k)
+/1996/m/molejo.zip                   ***+  Molejo by Valhalla - WIR96:in64:03:
+                                           | (54k)
+/1996/m/motion_.zip                  ***+  Motion by Incognita (17k)
+/1996/m/mview.zip                    ***+  Magic View by Dubius -
+                                           | ABD96:demo:02: (1170k)
+/1996/m/mwb_andf.zip                 ****  Andemptio by MWB - SAT96:demo:06:
+                                           | (945k)
+/1996/n/narcosis.zip                 ****  Narcosis by Exact - SCE96:in4k:04:
+                                           | (10k)
+/1996/n/nation2.zip                  ***+  Nation Zero 2 by Jamm -
+                                           | ASM96:in64:03: (72k)
+/1996/n/nf_tdiff.zip                 ****  The Difference by N-Factor -
+                                           | SE96:in64:01: (76k)
+/1996/n/ninja2.zip                   ****  Ninja 2 by Melon - TG96:demo:03:
+                                           | (1318k)
+/1996/n/noc_conf.zip                 ***+  Confusion by Noice - TP95:demo:25:
+                                           | (1059k)
+/1996/n/nooon_a2.zip                 ***+  BBS A.C.E. 2 by Karl of Nooon (5k)
+/1996/n/ntr-dive.zip                 ***+  Dive by Neutron - SCE96:demo:01:
+                                           | (685k)
+/1996/n/nutz.zip                     ****  Nutz by Hyperopia - ASM96:demo:11:
+                                           | (1661k)
+/1996/o/o_solex.zip                  ***+  Solex by Oxygene (280k)
+/1996/o/omc_chop.zip                 ****  Chopsticks by Omicron -
+                                           | REM96:in64:01: (52k)
+/1996/o/otherone.zip                 ***+  The Other One by Cheese Team -
+                                           | BIZ96:demo:05: (1562k)
+/1996/o/oxg_cont.zip                 ****+ Contrast (final) by Oxygene -
+                                           | SAT96:demo:01: (1620k)
+/1996/p/p-denond.zip                 ***+  Den Onde Corporation (final) by
+                                           | Purple - SE96:demo:03: (1282k)
+/1996/p/palcika.zip                  ****  Palcika by Tomcat of Abaddon -
+                                           | ANT96:in4k:02: (4k)
+/1996/p/panto.zip                    ***+  Pantomime by Petros, Smokey -
+                                           | SCE96:in4k:08: (10k)
+/1996/p/paper.zip                    ****+ Paper by Psychic Link -
+                                           | WIR96:in64:01: (62k)
+/1996/p/planb.zip                    ****  Plan B by Xevius - SE96:demo:06:
+                                           | (1723k)
+/1996/p/pls_blc.zip                  ****  Balance by Pulse - GRV96:demo:01:
+                                           | (2333k)
+/1996/p/pls_cntc.zip                 ***+  Contact by Pulse (2945k)
+/1996/p/pls_est.zip                  ***+  Eyesight by Pulse (1664k)
+/1996/p/pls_revf.zip                 ****  Reve (final) by Pulse -
+                                           | TP95:demo:05: (964k)
+/1996/p/prg-ich.zip                  ****  Ich Kann Euch Sehen by Purge -
+                                           | WIR96:demo:02: (2172k)
+/1996/p/prx-evil.zip                 ***+  Evil Killing Toys by Proxima -
+                                           | BP96:in80:01: (73k)
+/1996/p/puke4kb.zip                  ***+  Puke by Borzom of Exotic Designs -
+                                           | MOV96:in4k:EE: : 386,VGA (13k)
+/1996/p/pulse.zip                    ****  Pulse by Alien - EUS96:in4k:02: (2k)
+/1996/p/pure.zip                     ****+ Pure Spirit by The Counsellor of
+                                           | Spirit New Style -
+                                           | ASM96:in4k:01: (9k)
+/1996/r/radiatio.zip                 ***+  Radiation by Net of Urinate -
+                                           | PS96:in4k:03: (10k)
+/1996/r/rcn-orzo.zip                 ****  D'Orzo by Recreation -
+                                           | TMDC96:demo:01: (765k)
+/1996/r/rcnserge.zip                 ***+  Sergei by Recreation -
+                                           | ASM96:demo:12: (834k)
+/1996/r/reanim8r.zip                 ****  Reanimator by Rage - TP95:demo:03:
+                                           | (3470k)
+/1996/r/refract.zip                  ****  Refraction by Abaddon (23k)
+/1996/r/revolutn.zip                 ****  Revolution by Marathon Man -
+                                           | EUS96:in4k:01: (4k)
+/1996/r/rotali.zip                   ****  Rotaliator by Dubius -
+                                           | SKE96:demo:05: (2573k)
+/1996/r/rox_rf.zip                   ***+  Hard Rox by Skal - WIR96:demo:01:
+                                           | (1195k)
+/1996/r/running.zip                  ****  Running Wild by Hurricane -
+                                           | SCE96:in4k:02: (10k)
+/1996/s/sb_argon.zip                 ****  Argonautical by Stephen of Silicon
+                                           | Brain - ANT96:in1k:02: (1k)
+/1996/s/sck-aln.zip                  ****  Alien by Shock - SCE96:demo:02:
+                                           | (1031k)
+/1996/s/sck-err.zip                  ***+  Error 808 by Shock - PS96:demo:01:
+                                           | (1692k)
+/1996/s/sck-haze.zip                 ***+  Haze by Shock - ANT96:demo:02:
+                                           | (2026k)
+/1996/s/sck-one.zip                  ***+  One by Shock - FLAG96:demo:03:
+                                           | (1423k)
+/1996/s/sck-onyx.zip                 ***+  Onyx by Shock - CAC96B:demo:02:
+                                           | (1546k)
+/1996/s/sck-uno.zip                  ****  Unoptimized by TSC of Shock -
+                                           | ANT96:in1k:01: (8k)
+/1996/s/sck_jade.zip                 ***+  Jade by Shock - TP96:in64:07: :
+                                           | P5,GUS (68k)
+/1996/s/sck_s808.zip                 ***+  State 808 by Shock (1420k)
+/1996/s/sha.zip                      ***+  Sheer Heart Attack by TLOTB, Zoran -
+                                           | EUS96:demo:05: (1174k)
+/1996/s/shorty.zip                   ***+  Shorty by The Russian of The Clan -
+                                           | ASM96:in4k:06: (6k)
+/1996/s/sl_fake.zip                  ***+  Fake by Sublogic (86k)
+/1996/s/snc_lbd.zip                  ****  Little Big Demo by Sanction -
+                                           | MEK96:in4k:01: (7k)
+/1996/s/snc_lbd2.zip                 ****  Little Big Demo 2 by Sanction -
+                                           | WIR96:in4k:01: (9k)
+/1996/s/soft.zip                     ****  Soft by Valhalla (5k)
+/1996/s/solfix.zip                   ****  Solstice (fix) by Valhalla -
+                                           | WIR95:demo:01: (143k)
+/1996/s/speed.zip                    ***+  Speed by Nostalgia - X96:in64:??:
+                                           | (56k)
+/1996/s/sphere.zip                   ***+  Sphere by Mortal Compact -
+                                           | CAC96B:in64:01: (76k)
+/1996/s/stc_gest.zip                 ***+  Gesture by Jasper of Substance
+                                           | (401k)
+/1996/s/stuff.zip                    ****  Stuff by Xtacy - TP95:demo:06:
+                                           | (2567k)
+/1996/s/stv.zip                      ****  Super Television by Orange -
+                                           | ASM96:demo:04: (1241k)
+/1996/s/synergis.zip                 ****  Synergistic by Mistery -
+                                           | ABD96:in64:05: (68k)
+/1996/t/tat.zip                      ***+  The Astonishing Tribe by Yodel -
+                                           | TP96:in64:05: (63k)
+/1996/t/tbl_69.zip                   ***+  '69 by The Black Lotus -
+                                           | ASM96:in64:09: (71k)
+/1996/t/td-soft.zip                  ***+  Soft by Tidal - REM96:demo:??:
+                                           | (1000k)
+/1996/t/tdc-subc.zip                 ****  Subconscious by TDC - ABD96:demo:04:
+                                           | (2619k)
+/1996/t/timeout.zip                  ***+  Timeout by Excess - TG96:demo:06:
+                                           | (1830k)
+/1996/t/tls_mom.zip                  ***+  Mind Over Matter by The Lost Souls -
+                                           | TG96:demo:08: (1237k)
+/1996/t/tntdune.zip                  ***+  BBS Dune by Bisounours, Gizmo of
+                                           | Tiny Toons (6k)
+/1996/t/trapkont.zip                 ***+  BBS Bad News by Hollands Hoop (8k)
+/1996/t/tremor2.zip                  ***+  Tremor by DEMOlition -
+                                           | TMDC96:demo:02: (415k)
+/1996/t/twisted.zip                  ***+  Twisted by Intricate Designs -
+                                           | OZ96:demo:02: (491k)
+/1996/u/u8-daze.zip                  ****  Daze by Urinate - TP96:in64:08: :
+                                           | 386,GUS (66k)
+/1996/u/u8-life.zip                  ****+ Life by Pupu of Urinate -
+                                           | ANT96:in1k:03: (4k)
+/1996/u/uni_pret.zip                 ****  Pretender by Unique PC -
+                                           | RAGE96:in4k:02: (12k)
+/1996/u/unknown.zip                  ***+  Unknown by Exhumers - TP96:in64:09:
+                                           | : 386,,GUS, (67k)
+/1996/v/velvet2.zip                  ****  Velvet 2 by N-Factor -
+                                           | WIR96:in64:10: (63k)
+/1996/v/virus.zip                    ****  Virus by Exhumers - RAGE96:in4k:01:
+                                           | (13k)
+/1996/v/vision.zip                   ***+  Vision by Fefe of Breeze -
+                                           | SCE96:in4k:10: (7k)
+/1996/v/vividexp.zip                 ***+  Vivid Experiment by Doomsday
+                                           | Productions - ASM96:demo:03:
+                                           | (2253k)
+/1996/v/vlt_byte.zip                 ****  Reality Bytes by Velvet -
+                                           | JUH96A:demo:03: (3146k)
+/1996/w/water.zip                    ***+  Water by Spirit New Style -
+                                           | ASM96:in64:06: (183k)
+/1996/x/xaos_f.zip                   ***+  Xaos by Mist - WIR96:demo:06: (737k)
+/1996/x/xcursion.zip                 ****  Excursion by Vista Software -
+                                           | ABD96:in64:02: (55k)
+/1996/x/xes_air.zip                  ***+  Air by XES - ABD96:in64:03: (62k)
+/1996/y/yitchxxx.zip                 ***+  Things Change by Proxima (104k)
+/1996/z/zerograv.zip                 ***+  Zero Gravity by Blasphemy -
+                                           | TP96:demo:13: :
+                                           | P5,GUS/SB/PAS,4MB (1988k)
+/1997/0-9/15_sec.zip                 ****  Larry by Tmur of Capanna -
+                                           | ANT97:in1k:02: : ,,GUS!, (1k)
+/1997/a/aa_1kint.zip                 ***+  1k Intro by Screeny of Axioma -
+                                           | ANT97:in1k:09: (7k)
+/1997/a/aa_water.zip                 ***+  Water by Hypnos of Axioma -
+                                           | ANT97:in1k:03: (7k)
+/1997/a/acme-4e.zip                  ***+  Forever Dreaming by Acme, Quad -
+                                           | TP97:demo:EE: (1535k)
+/1997/a/acme_303.zip                 ****+ 303 by Acme - X97:demo:01: (3155k)
+/1997/a/ai_overd.zip                 ****  Overdrive by Astroidea -
+                                           | RAGE97:demo:03: :
+                                           | 486,,GUS/SB,16MB (2822k)
+/1997/a/ai_spice.zip                 ***+  Spiceless by Astroidea -
+                                           | ANT97:demo:01: :
+                                           | P5,VESA,GUS1M/SB,16MB (2389k)
+/1997/a/amb_nobl.zip                 ***+  Noblesse by Amable - ASM97:in64:08:
+                                           | : P5,VESA,GUS/SB,8MB (145k)
+/1997/a/an_stas.zip                  ***+  Stasis by Analogue - X97:demo:02:
+                                           | (1878k)
+/1997/a/anataus4.zip                 ***+  Anataus 4 by Fit - ABD97:demo:03: :
+                                           | P5,,GUS/SB,16MB (1166k)
+/1997/a/ancient.zip                  ***+  Ancient Plate by Norferin -
+                                           | IO97:demo:02: (2295k)
+/1997/a/astral.zip                   ****+ Astral Blur by The Black Lotus -
+                                           | TG97:demo:03: : ,VESA,, (4210k)
+/1997/a/ay-core.zip                  ***+  Core by Autopsy - RAGE97:in4k:02:
+                                           | (5k)
+/1997/b/b-panfin.zip                 ****  Pandemic (final) by Byterapers -
+                                           | ABD97:demo:01: : P5,,GUS/SB,
+                                           | (870k)
+/1997/b/beamed.zip                   ***+  Beamed by Blasphemy - SE97:in64:03:
+                                           | (57k)
+/1997/b/boostfin.zip                 ****  Boost (final) by Doomsday -
+                                           | ASM97:demo:01: : P5,VESA,GUS/SB,
+                                           | (4532k)
+/1997/b/bornfat.zip                  ***+  Born Fat by Anakata - TG97:in4k:05:
+                                           | (6k)
+/1997/b/bumptro.zip                  ***+  Bumptro by Ollie of Kalvados -
+                                           | TG97:in4k:04: (9k)
+/1997/b/bw-disl.zip                  ***+  Dislocated by Bandwagon -
+                                           | ASM97:in64:03: : 386,,GUS/SB,
+                                           | (64k)
+/1997/c/cave_fix.zip                 ***+  Stoneage Fiction by Itsari -
+                                           | BIZ97:demo:02: :
+                                           | P5,VESA,GUS/SB/PAS,16MB (2378k)
+/1997/c/chr-shap.zip                 ****+ Shapeshifter by Chrome -
+                                           | ANT97:in4k:01: : P5,,GUS!, (6k)
+/1997/c/cloudbst.zip                 ***+  Cloudburst by Purple - SE97:demo:02:
+                                           | : ,VESA,, (1279k)
+/1997/c/cn-gss2.zip                  ****  Generated Sintab Sux 2 by Corpse of
+                                           | Capanna - ANT97:in1k:04: : fprot
+                                           | misreports a virus - there is
+                                           | none (1k)
+/1997/c/comaclub.zip                 ***+  Liity Kerhoon by COMA -
+                                           | ABD97:in64:06: : ,,GUS, (63k)
+/1997/c/coredump.zip                 ***+  Coredump by Cocoon - WIR97:demo:03:
+                                           | (2646k)
+/1997/c/crs-alvn.zip                 ***+  Alvin Stardust by Cryonics -
+                                           | DH97:demo:01: :
+                                           | ,VESA,GUS/SB,16+MB (2380k)
+/1997/c/crs-mlw.zip                  ***+  Mellow (final) by Cryonics -
+                                           | TP96:demo:14: : P5,SB (1731k)
+/1997/c/crs-trvl.zip                 ***+  Travelling by Cryonics -
+                                           | ASM97:demo:05: :
+                                           | P5,VESA,GUS/SB,16MB (2335k)
+/1997/c/ctp-oxen.zip                 ***+  Oxel by Wezo, Reactor of Caterpillar
+                                           | - ANT97:in1k:06: (3k)
+/1997/c/ctx-clon.zip                 ***+  Clone by Cortex of Index -
+                                           | SNS97:in4k:01: : ,,, (9k)
+/1997/c/ctx_bub.zip                  ***+  Bubble by Cortex of Index -
+                                           | TG97:in4k:01: (3k)
+/1997/d/dalt.zip                     ****  Dalt by Mist - TG97:in64:10: (62k)
+/1997/d/dawnscar.zip                 ***+  Dawn Scared by Arkham -
+                                           | VOL97:demo:03: : 386,,GUS/SB,
+                                           | (4368k)
+/1997/d/deviance.zip                 ***+  Deviance by Frame 18, Remal -
+                                           | SCE97:demo:03: : ,VESA,GUS1M/SB,
+                                           | (2869k)
+/1997/d/digitalf.zip                 ****  Digital Fantasy by EG -
+                                           | ANT97:in1k:01: (0k)
+/1997/d/dna_sevn.zip                 ***+  Seven by DNA - MEK97:in4k:04: : 486-
+                                           | 66,,, (5k)
+/1997/d/dosshell.zip                 ***+  DOS Shell by Gyiksoft of ESP Team -
+                                           | RAGE97:in4k:06: (15k)
+/1997/d/drain.zip                    ***+  Drain by Vista - ABD97:in64:01: :
+                                           | TZ1300 ripoff - 486-100,,GUS/SB,
+                                           | (61k)
+/1997/d/ds-claud.zip                 ****  Claudia by Deathstar -
+                                           | MEK97:demo:01: :
+                                           | P5,VESA,GUS/SB,16M (4431k)
+/1997/d/ds-dmz.zip                   ***+  Democratia by Deathstar -
+                                           | SAT97:demo:EE: : ,,GUS/SB/PAS,
+                                           | (2696k)
+/1997/d/dsd_wish.zip                 ***+  I Wish I Was a Skijumper by Doomsday
+                                           | - ABD97:demo:02: :
+                                           | 486,,GUS/SB,8MB (2604k)
+/1997/e/e9-hias.zip                  ****  Hias by Ethos 9 - MEK97:in4k:02:
+                                           | (8k)
+/1997/e/e9-rinse.zip                 ***+  Rinse Out by Ethos 9 - TP97:in64:17:
+                                           | : P75,,GUS, (61k)
+/1997/e/edelweis.zip                 ***+  C'est Le by TPOLM - ABD97:demo:05:
+                                           | (725k)
+/1997/e/eden.zip                     ****  Eden by Bomb - TP97:demo:DD: :
+                                           | ,,GUS/SB, (5026k)
+/1997/e/entropia.zip                 ***+  Entropia by Exmortis - GP97:demo:01:
+                                           | : ,,,12MB (1685k)
+/1997/e/est_1k.zip                   ***+  Invention by CyberEagle of Esteem
+                                           | (4k)
+/1997/e/exo-hyp.zip                  ***+  Hypnotic by Exobit - EUS96:demo:02:
+                                           | : 486,,GUS/SB,4MB (1526k)
+/1997/f/fade2.zip                    ***+  Fade 2 by Zien of Nocturnal -
+                                           | DST97:in4k:01: (8k)
+/1997/f/fcy-moti.zip                 ****  Motions by Faculty - RAGE97:demo:01:
+                                           | : P5,VESA,GUS,8MB (2942k)
+/1997/f/fdg_lion.zip                 ***+  Holo by Fudge - ABD97:in64:07: (62k)
+/1997/f/fdg_live.zip                 ***+  Gene by Fudge - TG97:in64:01: (60k)
+/1997/f/fdg_lode.zip                 ***+  Mother Lode by Fudge -
+                                           | ASM97:in64:XX: : P5,VESA,, (61k)
+/1997/f/fdg_pg11.zip                 ****  Pager-11 by Fudge - TP97:in64:04: :
+                                           | ,VESA,, (58k)
+/1997/f/fdg_spam.zip                 ****  Jakoob by Fudge - TG97:demo:09:
+                                           | (1755k)
+/1997/f/fdg_subo.zip                 ***+  Super Bon Bon by Fudge -
+                                           | SE97:in64:01: (61k)
+/1997/f/fever.zip                    ***+  Fever by Exact - SCE97:in64:01:
+                                           | (72k)
+/1997/f/frs_blfn.zip                 ****  Blind (final) by Eufrosyne -
+                                           | ASM96:in64:01: : 486,VGA,GUS/SB,
+                                           | (64k)
+/1997/f/frs_tz13.zip                 ****  Time Zone +13:00 by Eufrosyne -
+                                           | JUH97:demo:03: : ,,GUS/SB/PAS,
+                                           | (689k)
+/1997/f/fumble.zip                   ***+  Fumble by Holydrake of Autumn -
+                                           | GRV97:in4k:06: : 386,,, (6k)
+/1997/g/gds-evol.zip                 ***+  Evolution by Gods - SAT97:demo:01: :
+                                           | ,VESA,GUS/SB/PAS, (3203k)
+/1997/g/genocyd.zip                  ****  Genocyd by GMF - WIR97:demo:01:
+                                           | (2626k)
+/1997/g/goose.zip                    ***+  Goose by Byteam - SNS97:in4k:06: :
+                                           | ,,, (11k)
+/1997/g/grc-typh.zip                 ****+ Typhoid by React of Gyroscope -
+                                           | ANT97:in4k:02: (4k)
+/1997/h/hc_deal.zip                  ***+  Deal by Mrock of Hellcore -
+                                           | GRV97:in4k:01: (4k)
+/1997/h/hc_great.zip                 ***+  Ghreath by Mrock of Hellcore -
+                                           | IO97:in4k:02: (4k)
+/1997/h/hc_nap.zip                   ***+  Narcotic Nap by Hellcore -
+                                           | AST97:demo:03: : ,VESA,, (2716k)
+/1997/h/hc_shock.zip                 ****  Extremal Shock by Mrock of Hellcore
+                                           | - GP97:in4k:01: (12k)
+/1997/h/hc_so.zip                    ***+  Syrius Orbitter by Hellcore -
+                                           | GRV97:demo:07: : ,VESA,, (2262k)
+/1997/h/hc_sut.zip                   ****  Sut by Mrock of Hellcore -
+                                           | AST97:in4k:01: : ,VESA,, (17k)
+/1997/h/headh14.zip                  [n/a] Headhunter (graphics engine) by
+                                           | Iguana (630k)
+/1997/h/headrush.zip                 ***+  Headrush by Zien - BP97:in4k:02:
+                                           | (8k)
+/1997/h/helium.zip                   ****  Helium by Viznut - ASM97:in4k:01:
+                                           | (4k)
+/1997/h/hjb_neon.zip                 ****  Neon by Haujobb - DML97:demo:01: :
+                                           | P5,,GUS/SB, (878k)
+/1997/h/hjbdoubt.zip                 ***+  Doubt by Haujobb - TP97:demo:07: :
+                                           | heavy precalcs - ,,GUS/SB,
+                                           | (1552k)
+/1997/h/hypno2.zip                   ***+  Hypnoman 2 by TPOLM - BIZ97:demo:05:
+                                           | (781k)
+/1997/i/ifs3d.zip                    ***+  IFS 3D by Jilt of Liberty -
+                                           | GP97:in4k:02: (4k)
+/1997/i/img_apni.zip                 ***+  APNI by Image - X97:in4k:02: (10k)
+/1997/i/img_ppl.zip                  ***+  People by Image - X97:demo:EE: :
+                                           | 486,SVGA,GUS,16MB (955k)
+/1997/i/implant.zip                  ***+  Implant by Motion - GP97:in64:??: :
+                                           | 386,,GUS, (61k)
+/1997/i/inbloom.zip                  ***+  In Bloom by Bytes of Prey -
+                                           | ABD97:demo:04: :
+                                           | 486,,GUS/SB/PAS,8MB (1590k)
+/1997/i/isonauru.zip                 ***+  Massiivinen Tirskahdus by tAAt -
+                                           | ABD97:demo:06: : 486,,GUS/SB,
+                                           | (1341k)
+/1997/j/jest.zip                     ****  Jest by Camorra - ASM97:in64:07: :
+                                           | ,VESA,GUS/SB, (69k)
+/1997/j/jizz.zip                     ****+ Jizz by The Black Lotus -
+                                           | WIR97:in64:01: : 486DX,,GUS1M,
+                                           | (62k)
+/1997/j/jlo_f-it.zip                 ****  Face It by Jello - TG97:in64:03: :
+                                           | ,VESA,, (65k)
+/1997/k/kmulti.zip                   ***+  Multikolor by Kolor - WIR97:demo:08:
+                                           | (1346k)
+/1997/k/kos_dms.zip                  ***+  Dance Move Shake by Kosmic :
+                                           | ,,GUS/SB, (1429k)
+/1997/k/kwissen.zip                  ***+  Wissenschaft by Kolor -
+                                           | EVK97:demo:01: : P5,VESA,,
+                                           | (1202k)
+/1997/l/lbt_gone.zip                 ***+  Gone by Liberty - IO97:demo:??: :
+                                           | ,,GUS/SB,8MB (3467k)
+/1997/l/lgs_draf.zip                 ***+  Draft by Infinite of Logrus -
+                                           | GP97:in4k:03: (4k)
+/1997/l/lithium.zip                  ****  Lithium by Vista - JUH97:in64:01:
+                                           | (60k)
+/1997/m/m0p-3pp.zip                  ***+  Three Little Goats by Moppi
+                                           | Productions - TP97:demo:04: :
+                                           | 486,,GUS/SB/PAS,16MB (1815k)
+/1997/m/m_stream.zip                 ***+  Mainstream by Moottori -
+                                           | ASM97:in64:01: :
+                                           | 486,,GUS/SB/PAS, (61k)
+/1997/m/majestic.zip                 ***+  Majestic by Proxium : 486DX,,, (4k)
+/1997/m/markku.zip                   ***+  The Secret Life of Mr. Black by
+                                           | Orange - ASM97:demo:02: :
+                                           | ,,GUS/SB/PAS, (1343k)
+/1997/m/martian.zip                  ***+  Martian by Euthanasia -
+                                           | SCE97:demo:01: : P5,,GUS1M,8MB
+                                           | (878k)
+/1997/m/mayhem.zip                   ***+  Mayhem (final) by Incognita -
+                                           | EUS97:demo:01: :
+                                           | P5,SVGA,GUS1M/SB,8MB (3041k)
+/1997/m/mc4k.zip                     ***+  Magic Carpet 4k by DNA -
+                                           | WIR97:in4k:02: : 486DX,,, (5k)
+/1997/m/mcd_modr.zip                 ***+  Moderator by MCD - EUS97:in64:02: :
+                                           | ,,SB, (68k)
+/1997/m/mcp_spla.zip                 ***+  Splash by Mortal Compact -
+                                           | ANT97:in64:01: (62k)
+/1997/m/meyer2.zip                   ****  Meyer 2 by Funk - MEK97:in4k:03:
+                                           | (4k)
+/1997/m/mfx_2g.zip                   ****  Gamma 2 by MFX - TP97:in64:14: :
+                                           | ,VESA,GUS, (63k)
+/1997/m/mfx_gma.zip                  ***+  Gamma by MFX - ABD97:in64:03: : too
+                                           | slow on 6x86 - P5,,, (61k)
+/1997/m/mindtrap.zip                 ****  Mindtrap by Trauma - ASM97:demo:03:
+                                           | : 486DX,VESA,GUS/SB,6MB (1878k)
+/1997/m/mir_eflo.zip                 ***+  Esperflow by Miracle :
+                                           | P5,,GUS/SB,8MB (1277k)
+/1997/m/misg.zip                     ****  Misguided by Haujobb -
+                                           | WIR97:demo:02: :
+                                           | P133,,GUS/SB,8MB (1394k)
+/1997/m/monolife.zip                 ***+  Monolife by Hatha - X97:in64:03:
+                                           | (59k)
+/1997/m/msqzeit.zip                  ***+  Zeitgeist by Masque - MEK97:demo:04:
+                                           | : P5,SVGA,GUS/SB, (1841k)
+/1997/m/mundai_f.zip                 ***+  Mundai by Blasphemy - TP97:demo:02:
+                                           | : ,VESA,,16MB (2559k)
+/1997/n/nfn_trip.zip                 ***+  Trip Into Your Mind by Norferin -
+                                           | GRV97:demo:06: :
+/1997/n/nirthday.zip                 ***+  Happy Nirthday Zuul by Barti, Zeb
+                                           | (246k)
+/1997/n/nwave240.zip                 ****  Neural Wave by The Black Lotus -
+                                           | X97:in64:02: : P5,VESA,GUS@240,
+                                           | (59k)
+/1997/n/nygma.zip                    ***+  Nygma by Talent (278k)
+/1997/o/ourpl.zip                    ***+  Our Plant of Cheese by TPOLM -
+                                           | JUH97:in64:02: (54k)
+/1997/o/outcast.zip                  ***+  Outcast by Sublogic - TG97:demo:05:
+                                           | : P60,,GUS/SB,8MB (1558k)
+/1997/o/outside.zip                  ***+  Outside by Melon - TG97:demo:04: :
+                                           | ,,GUS/SB, (1741k)
+/1997/p/paper2.zip                   ***+  Paper 2 by Byteam - KER97:in4k:03: :
+                                           | P5,VESA,, (8k)
+/1997/p/pernek.zip                   ***+  Pernek by Mist - WIR97:demo:12: :
+                                           | ,,GUS, (1050k)
+/1997/p/pk_storm.zip                 ****  Stormbringer by Psyko, Lithium -
+                                           | SAT97:demo:EE: : P5,,GUS/SB,
+                                           | (2990k)
+/1997/p/plp_live.zip                 ****  Live by Pulp Productions :
+                                           | 486DX,,GMIDI, (5k)
+/1997/p/pls_bp.zip                   ****  Broken Pipe by Pulse - GP97:in64:01:
+                                           | : P133,,GUS,6MB (68k)
+/1997/p/pls_cybf.zip                 ***+  Famous Cyber People (final) by Pulse
+                                           | - WIR96:in64:02: : 486,,GUS,
+                                           | (95k)
+/1997/p/pls_sink.zip                 ****+ Sink by Pulse - TP97:in64:07: :
+                                           | P5,,, (63k)
+/1997/p/pls_sunf.zip                 ****  Sunflower by Pulse - GRV97:demo:02:
+                                           | : P5,,,8MB (2810k)
+/1997/p/poorguy.zip                  ***+  Poor Guy by X-Man of SD, PCN -
+                                           | WIR97:in4k:01: : 386,,, (6k)
+/1997/p/pp_sless.zip                 ***+  Spaceless by Portal Project -
+                                           | TMDC97:demo:02: :
+                                           | 486,GUS/SB,EGA, (1356k)
+/1997/p/prelude.zip                  ***+  Prelude by Nostalgia -
+                                           | BIZ97:demo:03: : ,VESA,, (2022k)
+/1997/p/prg-t209.zip                 ***+  Totraum 209 by Purge -
+                                           | MEK97:in64:01: :
+                                           | P5,24/32bVGA,GUS, (56k)
+/1997/p/psitron.zip                  ***+  Psitron by Zden, Moshe -
+                                           | SCE97:in64:04: (50k)
+/1997/p/psn_fant.zip                 ****  Fantasy World by Poison -
+                                           | IO97:demo:01: :
+                                           | 486DX4,VESA,GUS1M/SB/PAS,16MB
+                                           | (5919k)
+/1997/p/psn_pano.zip                 ****  Panoramix by Poison - GRV97:demo:04:
+                                           | : DX4,VESA,GUS1M/SB/PAS,16MB
+                                           | (4918k)
+/1997/p/psygazer.zip                 ***+  Psygazer by Xevius - SE97:demo:01: :
+                                           | 486,VESA,GUS1M/SB/PAS,16MB
+                                           | (3383k)
+/1997/q/qd-adfix.zip                 ***+  Addicted (bugfixed) by Quad -
+                                           | X97:demo:05: (1795k)
+/1997/q/qdfocfin.zip                 ***+  Focus by Quad - BIZ97:demo:01: :
+                                           | P5,VESA,GUS1M/SB,16MB (3589k)
+/1997/r/r_area.zip                   ***+  Area by Ribbon - WIR97:demo:05:
+                                           | (1178k)
+/1997/r/r_plume.zip                  ***+  Plume by Ribbon : 386,VESA,,8MB
+                                           | (2188k)
+/1997/r/rcn-alex.zip                 ***+  Alexandrei Pjotroviz by Recreation -
+                                           | ASM97:demo:11: : ,VESA,, (1055k)
+/1997/r/rcn-func.zip                 ***+  Function by Recreation -
+                                           | TP97:in64:11: : ,VESA,GUS, (64k)
+/1997/r/rcn-grbl.zip                 ****  Greble by Recreation -
+                                           | ASM97:in64:02: :
+                                           | 486DX,,GUS/SB,6.5MB (203k)
+/1997/r/rcn-ma3f.zip                 ****  MA3 (final) by Recreation -
+                                           | TG97:demo:07: (1331k)
+/1997/r/rcn-tahf.zip                 ***+  Tahma by Recreation -
+                                           | TMDC97:demo:01: : ,,,15MB
+                                           | (1338k)
+/1997/r/resnow.zip                   ****  Resurrection Now by Jamm -
+                                           | ASM97:demo:12: (2416k)
+/1997/r/robotnik.zip                 ****+ Robotnik by Rage - TG97:demo:02: :
+                                           | 486DX,,GUS/SB,8MB (2060k)
+/1997/r/rvl_i.zip                    ***+  Revelation 1 by Revelation -
+                                           | GRV97:in64:03: : ,VESA,GUS,
+                                           | (61k)
+/1997/s/saintfin.zip                 ****  Saint by Halcyon - ASM97:demo:DD: :
+                                           | ,,GUS/SB,8MB (941k)
+/1997/s/sat_expl.zip                 ***+  Explosive by Satire - CRS97:demo:02:
+                                           | : P5,,GUS/SB, (3120k)
+/1997/s/sb-swfix.zip                 ****  Sleepwalkers by Silicon Brain (62k)
+/1997/s/sb_hoftu.zip                 ***+  History of the Universe by Dave of
+                                           | Silicon Brain - ANT97:in1k:08: :
+                                           | 256 bytes! (5k)
+/1997/s/sck-reli.zip                 ***+  Religion by Shock - SCE97:demo:06: :
+                                           | ,,GUS1M/SB/PAS, (1602k)
+/1997/s/seks.zip                     ***+  CNCD vs Orange by CNCD, Orange -
+                                           | TG97:demo:01: : ,,GUS/SB,
+                                           | (3636k)
+/1997/s/sense.zip                    ****  Sense by Blasphemy - SE97:demo:05: :
+                                           | P5,VESA,GUS/SB, (1130k)
+/1997/s/seven.zip                    ****  Seven by Immortals - ASM97:demo:06:
+                                           | : P5,VESA,GUS/SB,16MB (2643k)
+/1997/s/shianlee.zip                 ***+  Shian Lee by Bomb - VOL97:demo:01:
+                                           | (2566k)
+/1997/s/sirio.zip                    ***+  Sirio by The Banner - EUS97:demo:02:
+                                           | : 386DX,,GUS/SB/PAS,4MB (1371k)
+/1997/s/sk-iflic.zip                 ***+  IFLIC by Spinning Kids : ,VESA,GUS,
+                                           | (136k)
+/1997/s/sl_macy.zip                  ***+  Supermacy by Sublogic -
+                                           | TP97:in64:08: (63k)
+/1997/s/sl_paul.zip                  ***+  Paul Pot by Sublogic -
+                                           | DST97:in64:01: (77k)
+/1997/s/snc_omna.zip                 ****+ Omniscient (p300-360 versions) by
+                                           | Sanction - MEK97:in4k:01: :
+                                           | ,,GMIDI, (38k)
+/1997/s/snc_omni.zip                 ****+ Omniscient by Sanction -
+                                           | MEK97:in4k:01: : ,,GMIDI (13k)
+/1997/s/sns_7gfn.zip                 [n/a] 7G by Sense - ASM97:demo:13: (985k)
+/1997/s/sns_sday.zip                 ***+  Saturday by Spirit New Style -
+                                           | X97:demo:03: : P5,,GUS/SB,
+                                           | (2787k)
+/1997/s/sns_tdrm.zip                 ****+ The Dream by Spirit New Style -
+                                           | X97:in4k:01: (4k)
+/1997/s/space.zip                    ****  Space by Euthanasia -
+                                           | RAGE97:demo:02: : P5,,GUS1M,8MB
+                                           | (977k)
+/1997/s/spotlite.zip                 ****  Spotlight by Funk - MEK97:in64:02:
+                                           | (63k)
+/1997/s/stash.zip                    ****+ Stash by The Black Lotus -
+                                           | TP97:in64:01: : P5,VESA,GUS1M,
+                                           | (65k)
+/1997/s/stones.zip                   ***+  Stones by Promise - SCE97:demo:04: :
+                                           | P5,VESA,GUS/SB,16MB (2963k)
+/1997/t/thorn.zip                    ***+  Thorn by Fuse - WIR97:in64:02: :
+                                           | ,,GUS, (56k)
+/1997/t/toofar.zip                   ***+  Too Far by Scooter, Chaos -
+                                           | CRS97:demo:04: : ,,SB, (1033k)
+/1997/t/toontown.zip                 ***+  Toontown by Kolor - MEK97:demo:03:
+                                           | (853k)
+/1997/t/torus2.zip                   ***+  Torus 2 by Ollie of Kalvados -
+                                           | RAGE97:in4k:07: : P133,,, (10k)
+/1997/t/tower.zip                    ***+  Tower by Hypnotize - GP97:in64:04: :
+                                           | DX4/100,,GUS/SB,4MB (63k)
+/1997/t/tpolmbjo.zip                 ****  Bjor by TPOLM - TP97:in64:02: (62k)
+/1997/t/tpomolmf.zip                 ***+  Omo by TPOLM - DML97:in64:02: (72k)
+/1997/t/trans.zip                    ***+  Transmogrification by Blocc (197k)
+/1997/t/trans2.zip                   ***+  Transmogrification 2 by Blocc -
+                                           | TP97:in64:15: : ,VESA,GUS, (58k)
+/1997/t/tribes.zip                   ****+ Tribes by Pulse, Melon -
+                                           | TP97:demo:01: (4974k)
+/1997/t/trilobit.zip                 ***+  Trilobit by Thumbz of The Phrenetics
+                                           | - BP97:in4k:01: (6k)
+/1997/u/unclean.zip                  ***+  Unclean by Exmortis - GRV97:demo:01:
+                                           | : P5,VESA,GUS/SB/PAS,16MB
+                                           | (3612k)
+/1997/v/val_btc.zip                  ***+  Brighten the Corners by Valhalla -
+                                           | X97:in64:01: (61k)
+/1997/v/velvet4.zip                  ***+  Velvet 4 by Fatal Justice -
+                                           | MEK97:in64:03: (62k)
+/1997/v/vgonatur.zip                 ****  Nature by Vertigo - CRS97:demo:01: :
+                                           | P5,3dfx opt.,,16MB (2950k)
+/1997/x/xct_ouln.zip                 ****+ Outline by Exact - KER97:in4k:01:
+                                           | (9k)
+/1997/x/xctprove.zip                 ****  Prove by Exact - TP97:in64:10: :
+                                           | 386,,GUS,8MB (67k)
+/1997/y/yadot.zip                    ***+  Ya Dot Klimon by Byterapers -
+                                           | TP97:demo:09: : ,,GUS/SB/PAS,
+                                           | (1481k)
+/1998/a/ancera.zip                   ***+  Ancera by Sol - MEK98:demo:08: :
+                                           | ,VESA,GUS/SB/PAS, (1072k)
+/1998/a/ay-sins.zip                  ***+  Sins by Autopsy - FLAG98:in4k:05: :
+                                           | 386,VESA,Adlib,3MB, (9k)
+/1998/b/boutique.zip                 ***+  Paul's Boutique by Amable -
+                                           | MEK98:in64:01: (62k)
+/1998/c/cdx_wdky.zip                 ***+  We Don't Know You by Calodox -
+                                           | MEK98:demo:11: :
+                                           | ,VESA,GUS/SB/PAS, (1703k)
+/1998/c/codeless.zip                 ***+  Codeless by Atomik - FLAG98:in4k:03:
+                                           | (5k)
+/1998/c/crs-loco.zip                 ****  Loco by Cryonics - TG98:demo:02: :
+                                           | P5,VESA,,32MB (4936k)
+/1998/c/ctsretro.zip                 ***+  Retro by Cubic, $een -
+                                           | ASM97:demo:15: (2702k)
+/1998/c/ctx_spin.zip                 ****  Spin by Index - TG98:in4k:01: :
+                                           | 386,,Adlib, (4k)
+/1998/d/dimen.zip                    ****  Dimension by Gods - TG98:demo:01: :
+                                           | ,3dfx opt.,GUS/SB/PAS, (4662k)
+/1998/d/dma_rppa.zip                 ***+  Rappa by Dilemma - FLAG98:in4k:01: :
+                                           | ,,GUS (worthless though), (6k)
+/1998/e/e9-lisa.zip                  ***+  Lisa by Ethos 9 - MEK98:in4k:01: :
+                                           | ,,GMIDI, (9k)
+/1998/e/elekfin.zip                  ****  Elektroniks (final) by Doomsday -
+                                           | TP97:demo:08: :
+                                           | 486DX,VESA,GUS1M/SB/PAS,8MB
+                                           | (2718k)
+/1998/e/exd-pina.zip                 ****  Pina by Exceed - FLAG98:in64:01:
+                                           | (63k)
+/1998/f/f_fix01.zip                  ****+ The Fulcrum (bugfix) by Matrix -
+                                           | MEK98::: (163k)
+/1998/f/fidget.zip                   ***+  Fidget by Blocc : ,VESA,GUS, (61k)
+/1998/f/fulcrum.zip                  ****+ The Fulcrum by Matrix -
+                                           | MEK98:demo:01: :
+                                           | P166,VESA,GUS/SB,32MB (5961k)
+/1998/g/gftlight.zip                 ****  The Gift of Light by Superstition -
+                                           | AMB98:demo:01: (1829k)
+/1998/g/groovy.zip                   ****  Groovy by Bomb - VOL98:demo:02: :
+                                           | runs in DOS or Linux -
+                                           | ,,GUS/SB,8MB (1262k)
+/1998/i/influv2f.zip                 ***+  Love Creation mk2 by INF -
+                                           | TP97:in64:05: : P100,,GUS, (73k)
+/1998/j/jlo_womn.zip                 ***+  Women by Jello - TP97:demo:11: :
+                                           | 386DX,VESA,GUS/SB,16MB (2960k)
+/1998/k/k_strato.zip                 ***+  Strato Bank by Kolor -
+                                           | MEK98:demo:10: : P5,,, (3573k)
+/1998/l/licht_.zip                   ***+  Licht by Haujobb - MEK98:in64:02: :
+                                           | P5,VESA,GUS,12MB (62k)
+/1998/m/magic.zip                    ****  Magic by Breeze - TP97:in4k:01: :
+                                           | ,,GUS, (4k)
+/1998/n/next.zip                     ***+  Next by Digital Nerds -
+                                           | TG98:djav:02: : JAVA (3119k)
+/1998/n/noc_goat.zip                 ***+  Goatique by Noice - TG98:demo:09: :
+                                           | P5,VESA,GUS/SB,32MB (5161k)
+/1998/p/photon.zip                   ****  Photon (final) by Purple -
+                                           | TG98:in64:02: :
+                                           | ,VESA,GUS/SB/PAS,16MB (146k)
+/1998/p/pls_sqrf.zip                 ****  Square (final) by Pulse -
+                                           | TP97:demo:05: (2123k)
+/1998/p/plysform.zip                 ****  Lightforms by Purple - TP97:in64:03:
+                                           | : ,VESA,GUS,16MB (58k)
+/1998/q/qd-errat.zip                 ***+  Erratic by Quad - AMB98:in64:01: :
+                                           | ,VESA,, (67k)
+/1998/s/scdreams.zip                 ***+  Dreams of Destiny by Suburban
+                                           | Creations - MEK98:demo:05: :
+                                           | P5,VESA,GUS/SB/PAS,12MB (1618k)
+/1998/s/sl_jive2.zip                 ****  Jive 2 by Sublogic - TG98:in64:01: :
+                                           | ,VESA,GUS/SB, (105k)
+/1998/s/suspect.zip                  ***+  Checkpoint by SDI, Obnoxious -
+                                           | MEK98:demo:06: : ,,GUS/SB/PAS,
+                                           | (512k)
+/1998/t/tls_ii.zip                   ***+  II by The Lost Souls - TG98:demo:05:
+                                           | : 486DX,VESA,GUS/SB, (2428k)
+/1998/t/tmdc3pre.zip                 ***+  Text Mode Demo Compo 3 Pre-
+                                           | Invitation Intro by Trauma -
+                                           | TMDC98::: : 386,,GUS/SB/PAS,
+                                           | (633k)
+/1998/t/tribes.zip                   ****+ Tribes (final) by Pulse, Melon -
+                                           | TP97:demo:01: (5126k)
+/1998/u/urknall.zip                  ***+  Urknall by Blasphemy - TG98:demo:06:
+                                           | : P5,VESA,,16MB (2248k)
+/1998/w/wanda5.zip                   ***+  Wanda in 64k by Byteam -
+                                           | FLAG98:in64:02: (64k)
+/windows/1996/ctslrw95.zip           ****  Lasse Reinbong (re-release) by Cubic
+                                           | Team, $een : Windows 95 (121k)
+/windows/1997/ctswht95.zip           ****  What (rerelease) by pascal : Windows
+                                           | '95 - ,,, (77k)
+/windows/1997/vgonatur.zip           ****  Nature by Vertigo - CRS97:demo:01: :
+                                           | P5,3dfx opt.,,16MB (2950k)
+/windows/1998/astral32.exe           ****+ Astral Blur by The Black Lotus -
+                                           | TG97:demo:03: : If this does not
+                                           | work, try astral32.zip with
+                                           | ixalance.zip (4767k)
+/windows/1998/astral32.zip           ****+ Astral Blur by The Black Lotus -
+                                           | TG97:demo:03: : Requires
+                                           | ixalance.zip (4515k)
+/windows/1998/fr101.exe              ****  Final Reality by Remedy (7777k)
+/windows/1998/ixalance.zip           [n/a] iXalance Loader System by The Black
+                                           | Lotus : Used to play
+                                           | astral32.zip and stash32.zip
+                                           | (94k)
+/windows/1998/jizz32.exe             ****+ Jizz by The Black Lotus -
+                                           | WIR97:in64:01: : If this does
+                                           | not work, try jizz32.zip with
+                                           | ixalance.zip (251k)
+/windows/1998/jizz32.zip             ****+ Jizz by The Black Lotus -
+                                           | WIR97:in64:01: : Requires
+                                           | ixalance.zip (57k)
+/windows/1998/stash32.exe            ****+ Stash by The Black Lotus -
+                                           | TP97:in64:01: : If this does not
+                                           | work, try stash32.zip with
+                                           | ixalance.zip (279k)
+/windows/1998/stash32.zip            ****+ Stash by The Black Lotus -
+                                           | TP97:in64:01: : Requires
+                                           | ixalance.zip (85k)
+

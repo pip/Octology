@@ -1,0 +1,5 @@
+C:\CygPip\bin\rxvt.exe -ls -geometry 27x1+1632+944 -fb "Courier New-63-bold" -fn "Courier New-63-bold" -fm "Courier New-63-bold" -T PTok +sb -e /bin/zsh
+C:\CygPip\bin\rxvt.exe -ls -geometry 80x43 -fb "Lucida Console-23" -fn "Lucida Console-23" -fm "Lucida Console-23" -T Rxvt-zsh-80 -e /bin/zsh
+C:\CygPip\bin\rxvt.exe -ls -geometry 160x64+0+0 -e /bin/zsh
+# the last main one inherits almost everything from ~/.Xdefaults && each req.
+# having the start-in dir be C:\home\pstuart

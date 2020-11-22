@@ -1,0 +1,4 @@
+@echo off
+set TEXT=%@select[con,1,1,18,10,palette]
+echo %TEXT%
+set TEXT=

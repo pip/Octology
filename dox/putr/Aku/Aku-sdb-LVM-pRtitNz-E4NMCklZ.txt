@@ -1,0 +1,8 @@
+# partition table of /dev/sdb
+unit: sectors
+
+/dev/sdb1 : start=     2048, size=   497664, Id=83, bootable
+/dev/sdb2 : start=   501758, size=3906527234, Id= 5
+/dev/sdb3 : start=        0, size=        0, Id= 0
+/dev/sdb4 : start=        0, size=        0, Id= 0
+/dev/sdb5 : start=   501760, size=3906527232, Id=8e

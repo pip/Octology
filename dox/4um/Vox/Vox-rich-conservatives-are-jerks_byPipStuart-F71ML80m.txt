@@ -1,0 +1,107 @@
+F71ML80m:"Rich Conservatives Are Jerks" by @PipStuart8 as refutation of Vox article from F6J about purported "danger in assuming conservatives are jerks";
+
+On Twitter in late June 2015, @voxdotcom tweeted: Why it's dangerous to assume conservative economic policy views make someone a jerk Bit.ly/1GaSTqY
+  which redirected to Vox.Com/2015/6/19/8811831/conservatives-rich-people-jerks which I aim to thoroughly deconstruct below.
+
+First of all, whoever tweeted "dangerous" in summarizing the original article either lacks understanding of most common definitions of that word or is
+  distressingly sensationalizing the summary with base fear-tactics that I wish Vox would strive harder to transcend... or maybe they're accurately
+  insinuating that rich conservatives are inherently dangerous for others to assume anything rational about? I don't like the tweet. The only "danger"
+  actually in the article refers to confirmation bias. Vox: Please review and improve your tweet policies! Maybe my rebuttal can be tweeted: "Why it's
+  not dangerous to identify that jerky conservative economic policy views are held by jerks"?
+
+Now the author, "Timothy B. Lee" <Tim@Vox.Com> (or presumably some editor, on his behalf) started with this title:
+  "Sorry, liberals, liking free markets doesn't make someone a jerk"
+
+From the outset, I disagree with such a thesis, so my comparable title is:
+  "Sorry, conservatives, but liking and defending free markets as you do probably makes you jerks, at best!"
+
+Then there is a big very smiley photograph with the sub-text:
+  "Bill Gates, the world's richest man, is spending billions to eradicate developing-world diseases like malaria. Chip Somodevilla/Getty Images"
+
+For some clearly recent context, please read:
+  Vox.Com/2015/6/10/8760199/gates-foundation-criticism
+  Vox.Com/2015/6/16/8790357/rich-people-jerks
+  Vox.Com/2015/6/22/8824559/rich-people-jerks-again
+
+While I enthusiastically applaud David Roberts @drvox <David@Vox.Com> for his excellent June 22nd rich-people-jerks-again response to Tim Lee's article,
+  especially for elucidating readers on rule utilitarianism and empiricism (both of which I hold in supremely high regard as well), I think I may be more
+  inclined and better poised to dismantle each specific argument, toward our common goal of increased welfare.
+
+Bill Gates has also been interviewed by Vox on YouTube. I consider the philanthropic endeavors of his (and wife, Melinda's) Foundation to probably be much
+  better for the world than if they were not being conducted, however the lack of transparency (and therefore our inability to independently measure and
+  scrutinize the effectiveness of their methods and question their priorities) is unsettling, to say the least. I don't think a person needs to be especially
+  cynical to imagine that the Gates family is making a calculated expenditure (which happens to benefit much of our world) that is primarily motivated by
+  their own deep desire for self and wealth preservation. Bill Gates hardly ever seemed to be generous or cooperative for the collective good during his
+  career. He typified greed. He condoned or endorsed the covert subversion (if not overt hijacking) of interoperability standards in order to maximize
+  profit for MicroSoft through proprietary lock-in. He led the company to be notorious as unfair competitors. To assume he's somehow gotten much kinder, more
+  gentle and soft, and became genuinely benevolent (after purportedly retiring) is probably naive and foolhardy. I cautiously consider his philanthropies to
+  be beneficial, but that comes with a great dose of skepticism. During high school, I mainly learned how to program basic videogames in C and x86 Assembly
+  in MS-DOS on my first PC. I went on to enjoy a relatively successful career as a professional videogame tools programmer for over a decade, routinely
+  fighting against MicroSoft exclusivity in order to support concurrent development for PlayStation, Nintendo, and alternate platforms. I have strongly
+  preferred GNU/Linux environments since the late 1990's, so it's probably predictable that I may never be able to fully trust MicroSoft or Bill Gates to
+  voluntarily become truly good and cooperative with the rest of the world. That's just not how they normally operate.
+
+Back to Lee's article, he starts:
+  My colleague David Roberts thinks rich people are jerks. He has two pieces of evidence for this, drawing on research from political scientists. First,
+  researchers found that "higher social class predicts increased unethical behavior." Second, a survey found that rich people are more conservative than the
+  general public on issues of economic policy.
+
+2du:reread orig article && contend with st8d summary, if inaccur8 or incomplete
+
+
+It's the second piece I want to focus on here. People in the top 1 percent of incomes have views that are generally associated with the right-hand side of the political spectrum. Rich people favored lower taxes, less social spending, less regulation, and free trade. They were more concerned with the deficit than with climate change. In Roberts's view, this makes them "jerks."
+
+Doubtless, there are some rich people whose conservative views reflect narrowly selfish considerations, just as there are selfish people of all ideological persuasions. But it's both wrong and counterproductive to assume that a preference for lower taxes, less regulation, or free trade makes someone a jerk.
+
+Not only do many people hold these views for altruistic reasons, but reflexively questioning the motives of our ideological opponents deprives us of opportunities to learn from them. And that's important because often people who think differently than us really do know things we don't.
+Economic policy is complicated
+
+To figure out whether a policy is good or bad, you have to first figure out what effects it would have. And while ideologues like to treat this as obvious, it rarely is.
+
+Consider the minimum wage, one of the topics covered in the survey Roberts cites. Much of the debate over the minimum wage focuses on the empirical question of how a higher minimum wage would affect low-wage workers. Some economists believe a higher minimum wage will eliminate low-wage jobs; others believe this effect is negligible.
+
+And crucially, this depends on the details. It's plausible that today's relatively low federal minimum wage costs few jobs, and that higher minimum wages in wealthy urban areas won't cause much unemployment. But in areas where wages are lower, minimum wages can cause a lot of harm. For example, as my colleague Matt Yglesias wrote a couple of weeks ago, a proposal by the mayor of St. Louis to raise the city's minimum wage to $15 per hour would likely cost a lot of people their jobs.
+
+"Some economists believe that a higher minimum wage will eliminate low-wage jobs"
+
+So is someone who opposes a $15 minimum wage in St. Louis a jerk? Or are you a jerk if you oppose a $15 per hour minimum wage in Los Angeles but not if you hold the same view in St. Louis? That's silly. Many people who oppose a higher minimum wage do so because they believe high minimum wages are bad for the workers they're supposed to help.
+
+And the same point applies to most of the other issues covered in the survey. Liberals are inclined to see conservative opposition to spending money on assisting the poor with housing, food, and health care as mean-spirited. But those programs are financed with taxes, and many conservatives — wealthy and otherwise — sincerely believe that high taxes on the wealthy shrink the economic pie, making everyone worse off in the long run. They also think private charity is a more effective way to help low-income people than government welfare programs.
+
+Conservatives believe that subsidies for higher education can drive up the cost of college and often disproportionately benefit students from high-income families. They believe that Social Security's finances — and the national debt more generally — are unsustainable, and that reforming the nation's finances now will be less painful — and fairer to future generations — than waiting until the problems become a crisis.
+
+Of course, if you're a liberal you probably don't find these arguments persuasive. And you might be right. But it's also possible that conservatives understand something about the economy that you don't.
+Liberals can be jerks too
+
+Another way to illustrate the point is to consider cases where right-leaning people believe liberals behave like jerks. Education provides a good example. In the view of many conservatives, it's hypocritical for liberal elites such as President Obama to send his own children to expensive private schools while opposing voucher programs that would give less affluent students the same opportunity.
+
+Among advocates of school choice, it's widely believed that opponents' opposition is driven by the influence of teachers unions that put the interests of their members ahead of those of school children.
+
+Of course, that's an oversimplification. Most liberals don't oppose school choice because they're beholden to teachers unions. They do so because they believe these programs drain money from public schools and violate the separation of church and state.
+
+"Most liberals don't oppose school choice because they're beholden to teachers unions"
+
+Yet the vehemence with which Democratic politicians oppose school choice proposals surely has something to do with the financial influence of teachers unions, just as Republicans' dedication to upper-bracket tax cuts has something to do with the financial influence of conservatives billionaires. So it's not hard to see why conservatives would view liberal intransigence on this issue as a sign that they lack compassion.
+Nationalism isn't nice
+
+The survey included three questions about trade policy, and these demonstrate that who is a jerks is often in the eye of the beholder. Respondents were asked if they agreed with "the government's top policy priority should be protecting the jobs of American workers," "more US companies setting up operation overseas," and "approve of trade relations with China."
+
+"Opposing trade deals because they cost American jobs can be seen a jerk move"
+
+If you're focused on the United States, you might think the compassionate viewpoint is "yes" on protecting American jobs and "no" on offshoring and trading with China (though American workers benefit from cheap imports, so the net effect isn't always clear). But things look different if you look at things from a global perspective. Over the past two decades, as American companies have increasingly moved jobs overseas, the wages of workers in developing countries like China have skyrocketed. Whatever harm trade deals and outsourcing might have done to low-wage workers in the United States, they're dwarfed by the benefits these trends have provided to much poorer workers in developing countries.
+
+As Democrats have made the case against the Trans-Pacific Partnership, which would expand trade with developing countries such as Vietnam and Malaysia, they've done so with a mix of compassionate arguments — the deal could raise the costs of generic drugs in developing countries — and more selfish ones. Liberal icon Bernie Sanders, for example, complained last month that the TPP could move jobs from the United States to low-wage Vietnam. But a genuine egalitarian would count that as an argument in favor of the agreement; the Vietnamese workers need those jobs a lot more than American workers do.
+
+In short, opposing trade deals because they cost American jobs can be seen a jerk move. And on this issue, rich people who advocate free trade are being more compassionate than members of the general public who oppose it.
+The problem with treating your opponents like jerks
+
+To be sure, many conservatives are jerks, just as many liberals — and people in general — are. But the problem with assuming the other guy's politics is a sign of bad character is that it makes it more likely that you'll miss important arguments that are opposed to your own point of view.
+
+Everyone is prone to a fallacy known as confirmation bias: once you've chosen sides in a particular debate, you're more likely to notice evidence in favor of your point of view and less likely to notice evidence on the other side. This is why liberals and conservatives seem to live in different factual universes. Facts that support a liberal worldview circulate more widely in liberal circles than in conservative ones, and vice versa.
+
+"Liberals and conservatives seem to live in different factual universes"
+
+If you want to be a truly compassionate person, it's important to advocate policies that will actually make the world a better place, not merely those that make you feel like you're making the world better. And that means you have to constantly fight the dangers of confirmation bias — to seek out evidence that might contradict your ideological preconceptions.
+
+And the best way to do that is to treat your ideological opponents as human beings who mostly share your values but have different views about how to achieve them. Sometimes, your opponents really are just assholes, and interpreting their arguments charitably will prove to be a waste of time. But other times, you'll be surprised to learn things about the world that you wouldn't have discovered otherwise.
+

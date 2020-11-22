@@ -1,0 +1,26 @@
+if "%1" == "" .or. not exist %1 goto errorQuit
+set outf=c:\xplodedP.txt
+if "%2" != "" set outf=%2
+del %outf /q /e
+set fhnd=%@fileopen[%1, read]
+echo 1 >> %outf ^ echo 2 >> %outf ^ echo 3 >> %outf
+set last=3
+set coun=3
+:loopie
+set diff=%@fileread[%fhnd, 1]
+if "%diff" == "**EOF**" goto end
+set diff=%@eval[%@ascii[%diff]-47]
+if %diff GT 10 set diff=%@eval[%diff-8]
+if %diff GT 36 set diff=%@eval[%diff-7]
+if %diff GT 62 set diff=%@eval[%diff-6]
+if %diff GT 62 echos !
+set line=%@eval[%last+2*%diff]
+set last=%line
+set coun=%@inc[%coun]
+echo %line >> %outf
+goto loopie
+:errorQuit
+echo Need a file of good Squished Primes please!
+:end
+echo Total Xploded Primes: %coun
+set outf= ^ set fhnd= ^ set line= ^ set last= ^ set diff= ^ set coun=

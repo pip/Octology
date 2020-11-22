@@ -1,0 +1,12 @@
+A minimum of $2400 is to be paid for the service of loading as much old
+customer data as is possible into a MySQL database.  Any time worked in
+excess of 80 hours on this task is to be payed at $30 / hour.  $1200 is
+to be payed on Friday November 12th, 1999 and the remainder is to be
+payed upon completion.  Aside from monetary compensation, I am also to
+receive several computer hardware items in exchange for my services.
+These must be delivered on or before November 12th, 1999.  The following
+items and $1200 must be delivered by November 12th, 1999 in order for
+any further work to commence the following week:
+    Abit BF6 Motherboard ~$110
+    Corsair 128MB PC133 SDRAM DIMM ~$250
+    Kenwood 52X TrueX IDE CDROM ~$100

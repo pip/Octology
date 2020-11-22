@@ -1,0 +1,36 @@
+G1ALLqKf:This is meant to document my steps on a new drive for Akuma to get Valve Steam installed. First tried to get AMD drivers with
+`agi fglrx fglrx-amdcccle fglrx-amdcccle-updates fglrx-core fglrx-dev fglrx-updates fglrx-updates-core fglrx-updates-dev` but there's many conflicts.
+I wish the open Radeon drivers could be good enough, but I'm sure GuiltyGearXrd will require top acceler8ion if my specs can handle it at all. Gotta research
+installing fglrx && maybe wine then steam. `lspci -vvnn | g VGA` spewed a lot of stuff but salient line was:
+04:00.0 VGA compatible controller [0300]: Advanced Micro Devices, Inc. [AMD/ATI] Curacao XT [Radeon R7 370 / R9 270X/370 OEM] [1002:6810] (prog-if 00 [VGA controller])
+where my card is an R9 270X 2GB. I went to Support.AMD.Com/en-us/download in both FireFox && Chromium to display l8st driver results but their web form seems
+to be broken. Maybe I'll just try steam without fglrx? Using apt-get seems to conflict too much but in "System Settings" > "Software & Updates" >
+"Additional Drivers" it looks like I can switch from using the open xserver-xorg-video-ati driver to either fglrx or fglrx-updates. I'm going to try them.
+Switched to fglrx && rebooted then `fglrxinfo` gave good results. Then ran `agi libva-glx1 libva-egl1 vainfo` to hopefully get hardware Video Acceler8ion.
+Now I'm just trying `agi steam` to see if it works. It looks like all the dependency packages are just i386 instead of x64. Seems to have installed && be
+running decently but I forgot my old login info && my client is not connecting to their servers for help correctly. Maybe try again tomorrow.
+
+G1BL9nS3:So I tried on newAku's drive in NexStar enclosure to try fglrx but then HDMI audio didn't work && displays got cloned without option to sepR8 && I
+found a site saying Open xserver-xorg-video-ati drivers are better for games anyway && fglrx are only for older workst8ion tasks so I tried to switch back &&
+had some trouble reverting while keeping audio through HDMI. I also had a scary boot where turning off external drive had internal spewing sda errors for 5
+minutes before I tried to reboot then the drive wasn't detected, then the third time it seemed fine && fsck succeeded to hopefully fix whatever went wrong.
+Note that steam installed a ~/Steam/ directory with logs/ for bootstrap inform8ion but I moved it to ~/.steam/home_Steam/ && further runs seemed not to
+complain about expecting to find the original in my home directory (which I of course like to keep quite tidy). Also after rebooting further runs of steam
+hung with an error message I forget about X something not working but the solution was:
+  cd $HOME/.steam/ubuntu12_32/steam-runtime/i386/usr/lib/i386-linux-gnu
+  mv libstdc++.so.6 libstdc++.so.6.bak
+  cd $HOME/.steam/ubuntu12_32/steam-runtime/amd64/usr/lib/x86_64-linux-gnu
+  mv libstdc++.so.6 libstdc++.so.6.bak
+since Steam pre-packaged old versions of the libraries that Mesa has upd8d. So classic Half-Life ran quite nicely (even though there's almost nobody on any
+servers). It seems pretty safe to just `agi steam` on my original Aku drive now too (without fglrx), but I'll probably w8 a while to do this, maybe until
+after I confirm whether GuiltyGearXrd will run since that is the only real reason why I want Steam badly for now. Next time I reboot off the external newAku
+Steam drive, I should test && attempt to configure fighting sticks. It would also be a good idea to find some case-screws for the enclosure. Also note that
+after switching to fglrx && back on newAku drive, it looked like HDMI audio out was still selected but I needed to click on it again for audio to work;
+
+G1NLIueG:I decided to just go ahead on Aku's old main drive && `agi steam` && `steam` then downloaded upd8s but then printed:
+[2016-01-23 18:55:58] Startup - updater built Dec 14 2015 11:15:53
+SteamUpdateUI: An X Error occurred
+X Error of failed request:  BadValue (integer parameter out of range for operation)
+
+Maybe this can be fixed with the libstdc++ stuff above or is a problem with dual-displays? I'll try to debug. Moved ~/Steam .steam/home_Steam && stdc++ 2 .bak
+then trying `steam` again. That seemed to do the trick. Saved login info. Granted access from new computer. Looks good;

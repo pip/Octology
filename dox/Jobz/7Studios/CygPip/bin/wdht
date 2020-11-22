@@ -1,0 +1,15 @@
+#!/usr/bin/perl -w
+# 5BHEQ4j - wdht created by Pip Stuart <Pip@CPAN.Org> to start a
+#   tiny Curses::Simp application to just read the current width &&
+#   height of the console && print them in the upper-left corner of
+#   the screen as they change (since my KDE terminals don't seem to
+#   show the normal tooltips of resized console text dimensions).
+# Press 'x' to exit.
+use strict;
+use Curses::Simp;
+my $simp = Curses::Simp->new(); my $keey = ''; my $wdht;
+while($keey !~ /[xq]/i) {
+  $wdht = $simp->Widt() . 'x' . $simp->Hite() . "\n";
+  $simp->Draw('text' => [$wdht]);
+  $keey = $simp->GetK(1);
+}

@@ -1,0 +1,22 @@
+From pip@Genjuro.org Thu Mar 01 06:52:02 2001
+Envelope-to: root@genjuro
+Received: from root by Genjuro with local (Exim 3.12 #1 (Debian))
+	id 14YUQz-0000JM-00
+	for <root@genjuro>; Thu, 01 Mar 2001 06:52:01 -0800
+From: pip@Genjuro.org (Cron Daemon)
+To: root@genjuro
+Subject: Cron <root@Genjuro> test -e /usr/sbin/anacron || run-parts --report /etc/cron.monthly
+X-Cron-Env: <SHELL=/bin/sh>
+X-Cron-Env: <PATH=/usr/local/sbin:/usr/local/bin:/sbin:/bin:/usr/sbin:/usr/bin>
+X-Cron-Env: <HOME=/root>
+X-Cron-Env: <LOGNAME=root>
+Message-Id: <E14YUQz-0000JM-00@Genjuro>
+Date: Thu, 01 Mar 2001 06:52:01 -0800
+Status: RO
+Content-Length: 123
+Lines: 3
+
+/etc/cron.monthly/proftpd:
+Rotating proftpd server logfile:
+Rotated `/var/log/xferreport' at Thu Mar  1 06:52:01 PST 2001.
+

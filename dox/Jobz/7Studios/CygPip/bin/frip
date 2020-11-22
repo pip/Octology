@@ -1,0 +1,71 @@
+#!/usr/bin/perl -w
+# 7856rqP - frip created by Pip Stuart <Pip@CPAN.Org> to wrap cdparanoia to
+#   easily RIP audio CDs into FLAC format
+# 2do: s/(cd)\1/$1paranoia/ && updt track-info gathering code to !need cdcd
+#   my $cdpa = `cdparanoia -vsQ 2>&1`;
+use strict;
+my %edat = (); my $edtf = 'edtf'; my $cdat = `cdcd tracks`; print "\n";
+my %data = ('albm' => '', 'arti' => '', 'trax' => 0, 'leng' => 0,'tinf' => [],
+            'path' => '/home/pip/muz/flac/'); my $indx; my $numb;
+sub FixxName { # substitute characters && patterns to mk good filenames
+  my $name = shift; my  $fpth = shift; $name =~ s/\//-/g if(!$fpth);
+     $name =~ s/['"*\<\>?\[\]]//g;     $name =~ s/ /_/g; $name =~ s/:/-_/g;
+     $name =~ s/(^|[^\\])([!&=+()])/$1\\$2/g; $name =~ s/__+/_/g;
+     $name =~ s/^_?(\d\d?-_)/-$1/; $name =~ s/_+\W?$//; return($name);
+}
+$data{'albm'} = FixxName($1) if($cdat =~ /^Album name:\s+(.*)\n/);
+$data{'arti'} = FixxName($1) if($cdat =~ /\nAlbum artist:\s+(.*)\n/);
+if($cdat =~ /\nTotal tracks:\s+(\d+)\s+Disc length:\s+(\d+:\d+)\n/) {
+                           $data{'trax'} = $1; $data{'leng'} = $2;
+  for(my $indx = 0;$indx < $data{'trax'};$indx++) { $numb = $indx + 1;
+    if($cdat =~ /\n\s?$numb:[ \>]{5}(\[[ 0-9]\d:\d\d\.\d\d\] +([^\n]*))\n/) {
+      my $trki = $1; $trki = $2 if(defined($2) && length($2));
+      $data{'tinf'}[$indx] = FixxName($trki);
+    }
+  }
+}
+open( EDTF,'>',$edtf);
+print EDTF "# EditFileNamz - arti/albm/ will be created as dirs in path && in filenames\n";
+print EDTF "path:$data{'path'}\narti:$data{'arti'}\nalbm:$data{'albm'}\n";
+for(my $indx = 0;$indx < $data{'trax'};$indx++) {$numb=sprintf("%02d",$indx+1);
+  print EDTF "$numb:",$data{'tinf'}[$indx],"\n";
+} close(EDTF);system($ENV{'EDITOR'} . " $edtf");
+open(   EDTF,'<',$edtf);
+while( <EDTF>) {
+  if   (/^path:(.*)/ ) { $edat{'path'}        = $1;$edat{'path'}=~ s/\/*$/\//;}
+  elsif(/^arti:(.*)/ ) { $edat{'arti'}        =                  FixxName($1);}
+  elsif(/^albm:(.*)/ ) { $edat{'albm'}        =                  FixxName($1);}
+  elsif(/^(\d+):(.*)/) { $indx = ($1 - 1); $edat{'tinf'}[$indx] =FixxName($2);}
+} close(EDTF); unlink($edtf) if(-e $edtf);
+unless(exists($edat{'tinf'}) && defined($edat{'tinf'}) && @{$edat{'tinf'}}) {
+  for(sort(keys(%data))) { print "keey:$_ => '" . $data{$_} . "'\n"; }
+  die("!*EROR*! No tracks specified!  Quitting...\n");
+}
+$edat{'mpat'}  = $edat{'path'};
+$edat{'mpat'} .= $edat{'arti'} . '/' if(exists($edat{'arti'}));
+$edat{'spat'}  = $edat{'mpat'};
+$edat{'spat'}  =~ s/\\([^\\])/$1/g;
+mkdir($edat{'spat'}, 0755) unless(-d $edat{'spat'});
+$edat{'mpat'} .= $edat{'albm'} . '/' if(exists($edat{'albm'}));
+$edat{'spat'}  = $edat{'mpat'};
+$edat{'spat'}  =~ s/\\([^\\])/$1/g;
+mkdir($edat{'spat'}, 0755) unless(-d $edat{'spat'});
+for(my $indx = 0;$indx < @{$edat{'tinf'}};$indx++) {
+  if(defined($edat{'tinf'}[$indx])) { my $null;
+       $numb  = sprintf("%02d",$indx + 1);
+    my $fnam  = $numb . '_' . $edat{'arti'} . '-' . $edat{'albm'} . '-';
+       $fnam .= $edat{'tinf'}[$indx];
+    my $snam  = $fnam; $snam =~ s/\\([^\\])/$1/g;
+    unless(-e "$snam.wav" ) { print "frip:$snam.wav....\n";
+      $null = `cdparanoia -w $numb $fnam.wav 2>&1`;
+    }
+    unless(-e "$snam.flac") { print " -> :$snam.flac...\n";
+      $null = `flac $fnam.wav 2>&1`;
+    }
+    if(-e "$snam.wav" ) { unlink("$snam.wav"); }
+    else { print "EROR! Couldn't find: $snam.wav to unlink!\n"; }
+    if(-e "$snam.flac") { print "mvto:$edat{'path'}...";
+      $null = `mv $fnam.flac $edat{'mpat'} 2>&1`; print "done\n"; }
+    else { print "EROR! Couldn't find: $snam.flac to move!\n"; }
+  }
+}

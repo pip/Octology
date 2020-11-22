@@ -1,0 +1,1213 @@
+
+                             OrBit Editor
+
+                             Version 1.0
+
+                            By Doug Olson
+
+
+
+
+
+                  Copyright (c) 1993 OrBit Software
+                         All rights reserved
+
+
+
+
+                            OrBit Software
+                            P.O. Box 53426
+                       Bellevue, WA 98015-3426
+                          BBS (206) 827-9511
+
+      OrBit Software is a member of the Association of Shareware
+                         Professionals (ASP).
+
+
+                           IMPORTANT NOTICE
+
+The OrBit  Editor is  a "shareware  program" that  is provided  at  no
+charge to the user for a 30 day evaluation period. If after this trial
+period you find the program useful and wish to continue using it,  you
+must register it with OrBit Software.  Continuing to use this  program
+beyond the 30  day trial  period is a  violation of  Federal law  that
+carries severe penalties.
+
+Due  to  the  low  overhead  of  the  shareware  distribution  method,
+registration for the OrBit Editor is  only $25.00 ($30.00 outside  US)
+including  shipping  and   handling.  There  are   many  benefits   to
+registering, so please see the section titled "REGISTERING THE EDITOR"
+for complete details.
+
+                        DISCLAIMER OF WARRANTY
+
+THIS PROGRAM CAN MODIFY MS-DOS FILES. THE USER MUST ASSUME THE  ENTIRE
+RISK OF USING THIS PROGRAM.
+
+THIS PROGRAM, INSTRUCTION MANUAL, AND REFERENCE MATERIALS ARE SOLD "AS
+IS," WITHOUT  WARRANTY AS  TO THEIR  PERFORMANCE, MERCHANTABILITY,  OR
+FITNESS FOR ANY PARTICULAR PURPOSE.  THE ENTIRE RISK AS TO THE  RESULT
+AND PERFORMANCE OF THIS PROGRAM IS ASSUMED BY YOU.
+
+THIS PROGRAM  IS  SOLD  WITHOUT  ANY  EXPRESS  OR  IMPLIED  WARRANTIES
+WHATSOEVER.  BECAUSE OF THE DIVERSITY OF CONDITIONS AND HARDWARE UNDER
+WHICH THIS  PROGRAM  MAY  BE  USED,  NO  WARRANTY  OF  FITNESS  FOR  A
+PARTICULAR PURPOSE  IS OFFERED.    THE USER  IS  ADVISED TO  TEST  THE
+PROGRAM THOROUGHLY BEFORE RELYING ON IT.   ANY LIABILITY OF SELLER  OR
+MANUFACTURER WILL  BE LIMITED  EXCLUSIVELY TO  PRODUCT REPLACEMENT  OR
+REFUND OF THE PURCHASE PRICE.
+
+
+
+                     TABLE OF CONTENTS
+
+
+
+    1.   INTRODUCTION . . . . . . . . . . . . . . . . . .   3
+
+    2.   INSTALLING THE EDITOR  . . . . . . . . . . . . .   3
+
+    3.   SYSTEM REQUIREMENTS  . . . . . . . . . . . . . .   5
+
+    4.   LOADING THE EDITOR . . . . . . . . . . . . . . .   5
+
+    5.   THE EDIT DISPLAY . . . . . . . . . . . . . . . .   7
+
+    6.   GETTING AROUND IN THE EDITOR . . . . . . . . . .   8
+         6.1  Keyboard Control  . . . . . . . . . . . . .   8
+         6.2  Mouse Control . . . . . . . . . . . . . . .   9
+         6.3  Making Modifications  . . . . . . . . . . .  10
+
+    7.   EDITOR OPTIONS . . . . . . . . . . . . . . . . .  11
+         7.1  DONE - ESCAPE Key . . . . . . . . . . . . .  11
+         7.2  HELP - F1 Key . . . . . . . . . . . . . . .  11
+         7.3  SEARCH FILE - F2 Key  . . . . . . . . . . .  11
+         7.4  TOGGLE VIEW - F3 Key  . . . . . . . . . . .  12
+         7.5  HOW TO REGISTER - F4 Key  . . . . . . . . .  12
+         7.6  RESET CHANGES - F10 Key . . . . . . . . . .  12
+
+    8.   ERROR MESSAGES . . . . . . . . . . . . . . . . .  13
+
+    9.   EDITING FILES  . . . . . . . . . . . . . . . . .  15
+
+    10.  TIPS AND TROUBLESHOOTING . . . . . . . . . . . .  15
+         10.1 OrBit Editor Files  . . . . . . . . . . . .  15
+         10.2 Video Support . . . . . . . . . . . . . . .  16
+
+    11.  REGISTERING THE EDITOR . . . . . . . . . . . . .  17
+         11.1 Individual Registrations  . . . . . . . . .  17
+         11.2 Registering a Site License  . . . . . . . .  18
+
+    12.  TECHNICAL SUPPORT  . . . . . . . . . . . . . . .  19
+
+    13.  AUTHOR'S COMMENTS  . . . . . . . . . . . . . . .  19
+
+    14.  DEFINITION OF SHAREWARE  . . . . . . . . . . . .  20
+
+    15.  NOTICE TO DISTRIBUTORS . . . . . . . . . . . . .  21
+
+    16.  ASSOCIATION OF SHAREWARE PROFESSIONALS . . . . .  21
+
+OrBit Editor (TM) Version 1.0            Copyright 1993 OrBit Software
+
+1.  INTRODUCTION
+    ============
+
+    The OrBit Editor is a program that allows you to quickly and
+    easily view or edit any type of file.  This program is useful when
+    there is a need to see or modify the exact contents of a file.
+
+    The program provides a simultaneous ASCII and numeric display.
+    The numeric display can show file information in decimal or
+    hexadecimal form.  Changes can easily be made in either ASCII or
+    numeric form.
+
+    The editor features a fast and easy to use interface that requires
+    very little learning.  All the options available to the user are
+    clearly displayed as buttons at the bottom of the screen.
+
+    An important feature, and one that most editors do not provide, is
+    support for 43 and 50 line mode.  These extended displays increase
+    productivity by providing a larger view into the file.
+
+    We hope that you find this program not only useful, but a pleasure
+    to use.  Since it is distributed as "shareware," we encourage you
+    to share it with anyone who might also find it useful.  If you do
+    find the program useful and wish to continue using it beyond the
+    30 day trial period, we ask that you register it with OrBit
+    software.  When you register your copy of the editor, you will
+    receive the most recent version of the editor in the mail, be
+    entitled to technical support, and be notified of major product
+    updates.  Please see the section titled "REGISTERING THE EDITOR"
+    for complete details.
+
+2.  INSTALLING THE EDITOR
+    =====================
+
+    The OrBit Editor is easy to install onto your system.  You may
+    have received the editor on a single floppy disk or perhaps you
+    downloaded it from a bulletin board system.  The editor can be
+    installed onto your hard drive or run off a floppy disk.
+
+    Note: If you are unfamiliar with the process of copying files or
+    modifying your PATH statement, we suggest consulting your MS-DOS
+    manual for help.  If you still do not feel comfortable with these
+    steps then we suggest getting help from a friend or from person
+    who setup your system.
+
+    The preferred way to install the OrBit Editor onto your system is
+    to create a new directory on your hard drive, copy the editor
+    files into it, and then add this directory to your PATH.
+
+    Lets go through these steps in more detail.  The first step is to
+    create a directory to hold the OrBit Editor files.  On most
+    systems the C: drive is your hard drive (if this is not the case
+    on your system or you prefer to install to a different drive,
+
+                                Page 3
+
+
+OrBit Editor (TM) Version 1.0            Copyright 1993 OrBit Software
+
+    simply substitute C: with the desired drive).  From the MS-DOS
+    prompt (If you are inside of Windows, exit to MS-DOS) type the
+    following command:
+
+        MD C:\ORBIT
+
+    This command will create a directory named \ORBIT on your C:
+    drive.  The next step is to copy the OrBit Editor files into this
+    directory.  Change to the drive and directory where the OrBit
+    Editor files are located and type:
+
+       COPY O.EXE C:\ORBIT
+       COPY README.TXT C:\ORBIT
+       COPY ORBIT.DOC C:\ORBIT
+       COPY INVOICES.TXT C:\ORBIT
+
+    This will copy the OrBit Editor files into the \ORBIT directory on
+    your hard drive.
+
+    The final installation step is to add the \ORBIT directory to your
+    system PATH.  The PATH is an environment variable that is usually
+    set in your AUTOEXEC.BAT file.  The PATH is a list of directories
+    that the system will search when looking for an executable file.
+    By adding the \ORBIT directory to the PATH, you can execute the
+    OrBit Editor from any directory by simply typing the name of the
+    editor (for more information on executing the editor, please see
+    the next section titled RUNNING THE EDITOR).
+
+    To add the \ORBIT directory to your PATH, you will need to edit
+    your AUTOEXEC.BAT file.  The MS-DOS EDIT command can be used to
+    edit a file such as this (please see your MS-DOS manual for more
+    information on editing text files).  Once you bring up your
+    AUTOEXEC.BAT file in an editor, you should see a line that starts
+    out PATH= and then a list of directories follows.  Below is an
+    example of what your PATH command might look like:
+
+       PATH=C:\DOS
+
+    To add the \ORBIT directory to the path, simply add a semicolon to
+    the end of the list of directories and then type C:\ORBIT.  Below
+    is an example:
+
+       PATH=C:\DOS;C:\ORBIT
+
+    After completing this modification, you will need to reboot your
+    system to have it take effect.  After rebooting you will ready to
+    begin using the OrBit Editor!
+
+
+
+
+
+
+
+                                Page 4
+
+OrBit Editor (TM) Version 1.0            Copyright 1993 OrBit Software
+
+3.  SYSTEM REQUIREMENTS
+    ===================
+
+    The OrBit Editor will run on IBM PCs and compatible computers with
+    a minimum of 256K of memory and running MS-DOS version 3.00 or
+    later.
+
+    The OrBit Editor supports a wide range of video configurations.
+    The following types of video are supported:
+
+         VGA     EGA     CGA     MCGA     MONOCHROME
+
+    The editor can be installed onto your hard drive or run from a
+    floppy disk.
+
+4.  RUNNING THE EDITOR
+    ==================
+
+    To execute the editor from the MS-DOS command prompt, type the
+    name of the editor followed by the name of the file you wish to
+    edit.  Below is an example:
+
+     O MYFILE.BIN
+
+    O is the name of the OrBit Editor executable file and MYFILE.BIN
+    is the name of the file to be edited.  The full command line
+    syntax is:
+
+     O <file> <switches>
+
+    There are several command line switches that can be specified when
+    loading the editor.  Command line switches are used to give the
+    editor specific instructions.  Below is a list of the available
+    command line switches:
+
+
+      /25    This switch sets the size of the edit display to 25
+             vertical lines.
+
+      /43    This switch sets the size of the edit display to 43
+             vertical lines. Please note that this mode requires an
+             EGA or VGA display.
+
+      /50    This switch set the size of the edit display to 50
+             vertical lines.  Please note that this mode requires
+             a VGA display.
+
+      /D     This switch sets the numeric display to decimal mode at
+             load time.
+
+      /L     This switch disables the option buttons that appear at
+             the bottom of the screen.  This increases the size of
+             the edit region.
+
+                                Page 5
+
+OrBit Editor (TM) Version 1.0            Copyright 1993 OrBit Software
+
+
+      /M     This switch instructions the editor to maximize the size
+             of the edit region.  The editor will automatically
+             select highest resolution text mode available and
+             disable the option buttons.  This switch will provide
+             the maximum size of edit display possible.
+
+      /R     This switch allows read-only viewing of the file.  This
+             switch is ideal when you want to view a file but not
+             modify it.
+
+      /V     This switch enables alternate video access.  This switch
+             should only be used when direct video access is not
+             supported on your system.  See TIPS AND TROUBLESHOOTING
+             for more information.
+
+      /B     This switch makes the editor display more readable on
+             some systems with monochrome monitors.  When this switch
+             is used, the editor display appears only in black and
+             white (no color)
+
+      /Z     This switch disables mouse support.  This switch is most
+             useful in situations where your mouse is not Microsoft
+             mouse compatible.
+
+    Command line switches are added after the filename.  The below
+    example:
+
+      O MYFILE.BIN /50
+
+    Edits the file MYFILE.BIN and tells the editor to use 50 line
+    mode.
+
+    The below example:
+
+      O MYFILE.BIN /Z /R /43
+
+    Edits the file MYFILE.BIN, disables the mouse, sets read-only
+    mode, and sets 43 line mode.
+
+    Command line switches can be specified in any order after the
+    filename.  Each command line argument must be separated by a
+    space.
+
+    If no command line switches are specified, the editor will use its
+    default settings, which are: opening the file in read/write mode,
+    hexadecimal display, options buttons, and mouse enabled.  The
+    editor will match the current video mode when in 25. 43. or 50
+    line mode.
+
+
+
+
+
+                                Page 6
+
+OrBit Editor (TM) Version 1.0            Copyright 1993 OrBit Software
+
+5.  THE EDITOR DISPLAY
+    ==================
+
+    Once the editor is loaded you will see the main edit display.  A
+    data display occupies the majority of the screen while a set of
+    editor options is presented along the bottom.
+
+    The data display shows the contents of the file beginning with the
+    first byte in the upper left hand corner.  Each data line begins
+    with an offset value that represents the position within the file.
+    The data display consists of two distinct regions.
+
+    On the left is the numeric region that can display data in decimal
+    or hexadecimal form.  This region is useful because it displays
+    the exact value of the data within the file.
+
+    To the right of the numeric region is the ASCII region.  This
+    region displays the ASCII representation of the numeric data on
+    the left.  This region is very useful for reading text contained
+    within the file.
+
+    On the far right of the data display is the scroll bar.  The
+    scroll bar is oriented vertically with an up arrow at the top of
+    the bar and a down arrow at the bottom.  Between the arrows is a
+    block (known as the thumb) which represents the general location
+    within the file.  When the thumb is located at the top of the
+    scroll bar the data being viewed is from the beginning of the
+    file.  As you move further on in the file, the thumb will move
+    down towards the bottom of the scroll bar.  When you finally reach
+    the end of the file, the thumb will be at the bottom of the scroll
+    bar.  The thumb is a convenient and easy way to gauge your current
+    position within the file.
+
+    You will notice that one byte of data in the numeric region is
+    highlighted and contains a flashing cursor.  This is the location
+    of the edit cursor that indicates the byte that will be changed if
+    a modification is entered.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                                Page 7
+
+OrBit Editor (TM) Version 1.0            Copyright 1993 OrBit Software
+
+6.  GETTING AROUND IN THE EDITOR
+    ============================
+
+    This section describes how to control the edit cursor and make
+    modifications using the keyboard and mouse.
+
+    6.1  Keyboard Control
+    ---------------------
+
+        The edit cursor is located within the edit area and is used to
+        select a specific byte of data to change.  The edit cursor is
+        seen as a highlighted and/or underlined field within the edit
+        area.  The edit cursor can be moved to any location within the
+        file by using the cursor keys on the keyboard or by
+        positioning it with the mouse pointer.
+
+        To move the edit cursor with the keyboard, the four arrow keys
+        can be used.  The right arrow key will move the edit cursor to
+        the right while the left arrow moves the edit cursor to the
+        left.  If the edit cursor happens to be at end of a row of
+        data (far right) when the right arrow key is pressed, the edit
+        cursor will move down to the first field (far left) of the
+        line below.  Accordingly, when the edit cursor is on the first
+        field of a data line, pressing the left arrow key will move it
+        to the end of the line above.  The up and down arrow keys move
+        the edit cursor directly up or directly down one edit line.
+
+        The edit region can be scrolled up or down by moving the edit
+        cursor to the upper or lower edges of the edit region and then
+        pressing the up or down arrow key to scroll in the
+        corresponding direction.  In addition to scrolling one line at
+        a time, the 'page up' and 'page down' keys on your keyboard
+        can be used to move an entire page up or down respectively.
+        The Home and End keys on your keyboard are convenient ways of
+        moving directly to the top or bottom of the file.
+
+        As previously mentioned, there are two data regions; the
+        numeric region on the left, and the ASCII region on the right.
+        The TAB key on the keyboard is used to move the edit cursor
+        between the two regions.  Pressing the TAB key while in the
+        numeric region will cause it to jump to the corresponding byte
+        of data in the ASCII region.  Pressing TAB again will move the
+        edit cursor back to its original position in the numeric
+        region.
+
+        In addition to using the keyboard to control the edit cursor,
+        the keyboard can be used to issue editor commands.  For
+        example, a dialog containing keyboard help can be brought up
+        by pressing the function key F1 on the keyboard.  The
+        remaining editor commands are described in detail in the
+        EDITOR OPTIONS section later in this manual.
+
+
+
+                                Page 8
+
+OrBit Editor (TM) Version 1.0            Copyright 1993 OrBit Software
+
+        The below table provides a list of the available keyboard
+        commands.  Please note that some of these functions are
+        described later in this manual.
+
+          Keyboard Key   Description
+        =============================================================
+          Left arrow     Moves the edit cursor to the left.
+          Right arrow    Moves the edit cursor to the right.
+          Up arrow       Moves the edit cursor up one data line.
+          Down arrow     Moves the edit cursor down one data line.
+          ESCAPE         Exit the editor, prompts to save file.
+          F1             Displays the help information.
+          F2             Search the file for a byte sequence.
+          F3             Toggle the numeric display between the
+                         decimal and hexadecimal view.
+          F4             Displays registration information.
+          F10            Resets changes to the file.
+          Page Up        Moves the edit region up one page of data.
+          Page Down      Moves the edit region down one page of data.
+          Home           Moves the edit cursor to the top of the
+                         file.
+          END            Moves the edit cursor to the last page of
+                         data.
+          BACKSPACE      Resets the byte under the edit cursor to
+                         its original value and moves the edit
+                         cursor left.
+        =============================================================
+
+    6.2  Mouse Control
+    ------------------
+
+        Using the mouse within the editor provides a quick way to move
+        within the file and select options.
+
+        The mouse cursor can be used to quickly move the edit cursor
+        to any field within the edit display.  To select a field,
+        simply position the mouse cursor over the field and press the
+        left mouse button.  You will see the field highlight when the
+        edit cursor moves to it.  The mouse provides an advantage over
+        the keyboard controls because it can directly move to any
+        field within the numeric or ASCII region.
+
+        To the right of the edit display is the scroll bar.  You will
+        find that there is an arrow at the top and bottom of the
+        scroll bar.  The edit display can be scrolled up or down by
+        clicking the mouse on the corresponding arrow.
+
+        Between the two arrows on the scroll bar you will see a block
+        known as the thumb.  The thumb can move to any position
+        between the two arrows and represents the data display's
+        approximate location within the file.  The thumb can be
+        quickly moved to any position by positioning the mouse cursor
+        over it and holding down the left mouse button.  While holding
+
+                                Page 9
+
+OrBit Editor (TM) Version 1.0            Copyright 1993 OrBit Software
+
+        down the left mouse button, move the mouse up or down to
+        position the thumb.  As the thumb moves, the display will
+        update to show data from the corresponding location within the
+        file.  When you are done positioning the thumb simply release
+        the mouse button.
+
+        There is one more way to position the thumb.  This method
+        involves clicking the mouse on the scroll bar somewhere
+        between the thumb and the ending arrows.  When you click the
+        mouse in this region, the thumb will move one position toward
+        the mouse cursor.
+
+        Below the edit display you will see a row of six option
+        buttons.  Each button contains a description of its purpose
+        and the keyboard command to active it.  The mouse can be used
+        here as an alternate to the keyboard.  To select an option,
+        simply click the left mouse button on the desired option
+        button.  You will see the button move (representing it being
+        pressed) as the option is selected.
+
+    6.3  Making Modifications
+    -------------------------
+
+        This section describes how to make file modifications.
+
+        The edit cursor is represented by a highlighted field within
+        the edit display.  When a modification is entered, the byte
+        under the edit cursor is modified.
+
+        To make a modification, position the edit cursor on the byte
+        you wish to modify.  If you are within the numeric region,
+        position the cursor on the first digit of the decimal or
+        hexadecimal number.  To make the change, simply type the new
+        value on the keyboard.  You will notice that the field turns
+        red indicating it has been modified.  After a modification has
+        been entered the edit cursor will automatically moves forward
+        to the next byte.  If you made a mistake or wish to change the
+        previous value, you can use the left arrow key to move back to
+        the modified field and try again.
+
+        If after making a change you decide that you want the original
+        value back, move the edit cursor to the desired field and
+        press the BACKSPACE key on your keyboard.  The field will
+        return to its original (unmodified) value and will turn white
+        indicating it is unmodified.  If you decide that you want the
+        entire file returned to its original state, choose the RESET
+        CHANGES option by pressing F10 on the keyboard or clicking on
+        the appropriate option button with the mouse.
+
+        When you make a change to the file, it is not written to the
+        disk until you exit the editor and choose to save.  This means
+        that you are free to make changes throughout the file and can
+        wait until exiting to decide if you wish to save changes.
+
+                               Page 10
+
+OrBit Editor (TM) Version 1.0            Copyright 1993 OrBit Software
+
+
+        Since modified bytes appear red, you can easily identify
+        changed areas when scrolling through the file.
+
+7.  EDITOR OPTIONS
+    ==============
+
+    This section describes each editor option in detail.  An editor
+    option can be activated either by pressing a keyboard function key
+    or by clicking the mouse on an option button.
+
+    7.1  DONE - ESCAPE Key
+    ----------------------
+        This option is used when you are done viewing or modifying a
+        file and wish to exit the program.  This option can be
+        selected by either pressing the F1 key on the keyboard or by
+        clicking the mouse on the DONE button.  If you have made
+        modification to the file the editor will ask you if you wish
+        to save these modifications.  You can press 'Y' to have the
+        modifications saved or press 'N' to exit without saving.
+
+    7.2  HELP - F1 Key
+    ------------------
+        This option displays a summary of the options available within
+        the editor.  To return to the editor simply press a key or
+        press the left mouse button.
+
+    7.3  SEARCH FILE - F2 Key
+    -------------------------
+        This option provides a facility to search the file for
+        particular text strings or sequences of bytes.  To active the
+        SEARCH FILE option simply press the F2 function key on the
+        keyboard or click the mouse pointer on the SEARCH FILE button.
+
+        After selecting this option you will see the SEARCH FILE
+        dialog on the screen.  This dialog provides a very flexible
+        interface for inputting the search string in ASCII, decimal,
+        or hexadecimal form.  The cursor will begin in the ASCII field
+        where you can type a text string.  As you type, you will
+        notice that the two fields below (Hex and Decimal)
+        automatically update to show the corresponding values in the
+        ASCII field.  This is because all three fields (ASCII, Hex,
+        and Decimal) represent the one search value.  Each of these
+        fields show the search value in its own format.  You can move
+        freely between these fields by pressing the up and down arrow
+        keys on your keyboard and move left or right by pressing the
+        left or right keys.
+
+        This interface may seem unusual at first, however it can prove
+        to be very useful in some situations.  For example, if you
+        needed to search for an ASCII string followed by a zero you
+        would start out by typing the ASCII string in the ASCII field
+        and then move down into the hex (or Decimal) field and enter
+
+                               Page 11
+
+OrBit Editor (TM) Version 1.0            Copyright 1993 OrBit Software
+
+        the zero.  Since you can't enter the ASCII equivalent of zero
+        in the ASCII region, it was necessary to move down into one of
+        the numeric fields to enter the value of zero.
+
+        The final field on the SEARCH FILE dialog (labeled 'Begin
+        search at') specifies where in the file the search will begin.
+        The search can begin at two locations, either at the top of
+        the file or at the current edit cursor location.  Once you
+        have moved to this field by pressing the down arrow key you
+        can toggle its state by pressing the space bar.  When you
+        select CURSOR LOCATION, the search will begin at the current
+        edit cursor location and continue down in the file until the
+        end of the file is reached.
+
+        Once you have entered your search string and have selected the
+        location to begin the search, press the F2 function key to
+        begin the search.  If you do not wish to perform a search you
+        can press the ESCAPE key to abort and return to the main edit
+        display.
+
+        After pressing the F2 key, the editor will begin searching the
+        file.  If a match is found the editor will stop and display
+        the location of the matching string.  The edit cursor will
+        highlight the first byte of the string.  You have two options
+        at this point, you can press F2 to continue the search or
+        press ESCAPE to discontinue the search leaving the edit cursor
+        on the found string.
+
+    7.4  TOGGLE VIEW - F3
+    ---------------------
+        By pressing the F3 key or clicking on the Toggle View button
+        he numeric display will alternate between a hexadecimal and
+        decimal view.  In the hexadecimal view 16 bytes of data are
+        displayed on each edit line.  When you change to the decimal
+        view, you will notice that only 10 bytes of data are displayed
+        on each edit line.
+
+    7.5  HOW TO REGISTER - F4
+    -------------------------
+        This option provides information on how to register your copy
+        of the OrBit Editor with OrBit Software.
+
+    7.6  RESET CHANGES - F10
+    ------------------------
+        This option will return the file to its original unmodified
+        state.  All changes that you have entered will be lost.  If
+        you wish to reset only a particular change you can use the
+        BACKSPACE key.  For more information on the use of the
+        BACKSPACE key, please see the section titled "Making
+        Modifications".
+
+
+
+
+                               Page 12
+
+OrBit Editor (TM) Version 1.0            Copyright 1993 OrBit Software
+
+8.  ERROR MESSAGES
+    ==============
+
+    While using the OrBit Editor you may encounter an error message if
+    there is a problem such as reading or writing to the file being
+    edited.  Even though errors of this type should be very uncommon,
+    the editor is equipped to let the user know when one does occur.
+    If an error occurs while inside the editor a message box will
+    appear indicating which error occurred and giving you the option
+    to retry or quit the editor.  Please note that if you select to
+    quit, the changes you have made to the file will be lost.  Below
+    is a description of the possible error messages:
+
+    File not found
+    --------------
+    This message indicates that the file specified could not be found.
+    Verify that the file was spelled correctly and that the file
+    extension was specified.
+
+    Invalid path
+    ------------
+    If the path specified does not exist this message will be
+    displayed.  Verify that the drive and path are specified
+    correctly.
+
+    Out of file handles
+    -------------------
+    MS-DOS uses a file handle each time a file is opened.  This error
+    indicates that there were no file handles available to open the
+    file.  To increase the number of file handles available on your
+    system, please read about the FILES command in your MS-DOS manual.
+
+    Access denied
+    -------------
+    This message indicates that the file is currently being used by
+    another process or is read only.  The MS-DOS ATTRIB command can be
+    used to remove the read-only attribute from an MS-DOS file.  For
+    more information on the ATTRIB command, please see your MS-DOS
+    manual. If you are editing a file that is on a network, it is
+    possible that another user currently has the file open.  Try using
+    the /R switch to open the file for read-only.
+
+    Unable to open file
+    -------------------
+    This error indicates that MS-DOS was unable to open the file.
+
+    Insufficient memory
+    -------------------
+    If this error occurs then your system does not have enough free
+    memory to execute the editor.  To execute the OrBit Editor a
+    minimum of 128K is needed.  Please see your MS-DOS manual for ways
+    of increasing your available memory.
+
+
+                               Page 13
+
+OrBit Editor (TM) Version 1.0            Copyright 1993 OrBit Software
+
+    Memory allocation error
+    -----------------------
+    This message indicates that an error occurred allocating memory
+    for the editor's use.  If this error occurs, you may want to shut
+    down your system and retry after rebooting.
+
+    The disk is write protected
+    ---------------------------
+    This message indicates that the floppy disk containing the file
+    you wish to edit is write protected.  Write protected means that
+    the disk cannot be written to because the write protect notch
+    (physically on the disk) is covered or slid into the write
+    protected position.  If this error occurs, remove the disk from
+    your floppy drive and remove the write protection.  Next place the
+    disk back into your floppy drive and select 'R' to retry.  If you
+    wish to abort your changes, you can select "Q" to exit the editor
+    without saving the modifications.
+
+    Sharing violation
+    ------------------
+    This message indicates that the file is currently being used by
+    another process.  If you are editing a file that is on a network,
+    then it is possible that another user is using the file.  If you
+    are running under a multi-tasking operating system such as
+    Windows, Windows NT, or OS/2 it is possible that another task is
+    using the file.
+
+    General read error
+    ------------------
+    This error indicates that MS-DOS was unable to read data from the
+    file that is being edited.  If this error persists, even after
+    several retries, it is possible that the file is damaged.  If the
+    file being edited is on a floppy disk, please verify that the
+    floppy disk is properly inserted into the floppy disk drive.
+
+    General write error
+    -------------------
+    This error indicates that MS-DOS was unable to write data to the
+    file that is being edited.  If this error persists, even after
+    retries, it is possible that the file is damaged.  If the file
+    being edited is on a floppy disk, please verify that the floppy
+    disk is properly inserted into the floppy disk drive.
+
+    File seek error
+    ---------------
+    This error indicates that MS-DOS was unable to perform a file
+    operation on the file being edited.  If this error persists after
+    several retries, it is possible that the file is damaged.  If the
+    file being edited is on a floppy disk, please verify that the
+    floppy disk is properly inserted into the floppy disk drive.
+
+    50 line mode not supported
+    --------------------------
+
+                               Page 14
+
+OrBit Editor (TM) Version 1.0            Copyright 1993 OrBit Software
+
+    This error indicates that your system cannot support 50 line mode.
+    50 line mode is only supported on systems with VGA graphics.
+
+    43 line mode not supported
+    --------------------------
+    This error indicates that your system cannot support 43 line mode.
+    43 line mode is only supported on systems with EGA or VGA
+    graphics.
+
+9.  EDITING FILES
+    =============
+
+    People edit files for many reasons. Sometimes specific changes
+    need to be made to a file and the user is familiar with the file
+    being edited.  Other times a user may not be as familiar as he
+    would like with the file's format but still needs to make a
+    modification.
+
+    Any time you are going to modify a file it is important to make a
+    backup of the original file before proceeding.  This will allow
+    you to revert back to the original if your changes are
+    unsuccessful.  It is also very important to know exactly what you
+    are modifying within a file.  Editing files such as executables or
+    database files is extremely risky if you are not completely
+    familiar with their internal layout.  If you make uninformed
+    modifications to these types of files it is very likely they will
+    no longer function properly.
+
+    The OrBit Editor should not be used in place of a word processor
+    or database application to modify the those application's data
+    files.  Modifying these types of files may cause them to be
+    rendered unusable.
+
+    Another common use of an editor is to simply explore data files.
+    There are some people (such as the author) who find particular
+    pleasure and interest in examining the contents of files.
+
+10. TIPS AND TROUBLESHOOTING
+    ========================
+
+    This section contains additional technical information that may
+    prove to be useful to the more advanced user.
+
+    10.1 OrBit Editor Files
+    -----------------------
+        Below is a description of each file included with the editor:
+
+        O.EXE         This is the OrBit Editor executable file.
+        ORBIT.DOC     This is the file you are reading.
+        INVOICES.TXT  This file contains a registration form that
+                      can be printed and used as an invoice.
+        README.TXT    This file contains information to get started
+                      quickly.
+
+                               Page 15
+
+OrBit Editor (TM) Version 1.0            Copyright 1993 OrBit Software
+
+        VENDOR.DOC    This text file contains information for
+                      Shareware vendors and distributors.
+        FILE_ID.DIZ   This file contains a brief description of the
+                      OrBit Editor and is useful to BBS Sysops.
+
+    10.2 Video Support
+    ------------------
+        A significant amount of work has gone into ensuring the OrBit
+        Editor will be compatible with your system's video card.  Upon
+        startup, the OrBit Editor examines the system's video
+        configuration and stores information such as the current video
+        mode and scan line resolution.  When you exit the editor your
+        video will be returned its original state. Even though the
+        editor was designed to deal with proprietary video modes, it
+        is possible that an unanticipated configuration could cause
+        the editor to not display properly.
+
+        If the editor display does not function properly, there are
+        several command line options that may correct the problem.
+
+        /V   This switch tells the editor to use the system BIOS for
+             all video access.  This switch should be used if your
+             system does not support "direct video" writes.
+
+        /B   This switch turns the editor display to black and white.
+             No special colors or intensities are used.  Not all
+             monochrome configurations can be detected, so this
+             switch is useful when the editor does not appear
+             correct on a system with a monochrome display.
+
+        /25  This switch instructs the editor to use the common 25
+             line video mode.  It is possible that higher line modes
+             are not supported on you system (and the editor can not
+             detect it).
+
+        /Z   This switch turns the editor's use of the mouse off.  If
+             your mouse is of a propriety design, it could be
+             incompatible with the editor.  This switch will prevent
+             the editor from issuing any mouse service calls
+             (INT 33h).
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                               Page 16
+
+OrBit Editor (TM) Version 1.0            Copyright 1993 OrBit Software
+
+11. REGISTERING THE EDITOR
+    ======================
+
+    This section describes how to register your copy of the OrBit
+    Editor.
+
+    11.1 Individual Registration
+    ----------------------------
+        As mentioned above, the OrBit Editor is a "shareware program"
+        that can be used for a 30 day trial period.  If after this
+        trial period you find the program useful and wish to continue
+        using it, you must register it with OrBit Software. Continuing
+        to use this program beyond the 30 day trial period is a
+        violation of Federal law.
+
+        Due to the low overhead of the shareware distribution method,
+        registration for the OrBit Editor is only $25.00 ($30.00
+        outside US) including shipping and handling.
+
+        If you find the OrBit Editor useful and you decided to
+        continue using it, please take the time to register your copy.
+        Below are some of the benefits of becoming a registered user:
+
+          * You will receive the registered version of the editor
+            that does not display the registration advertisement
+            when exiting.
+
+          * 90 days of free technical support (from the date of
+            registration).
+
+          * Automatic notification of major program updates.
+
+          * Reduced price on program updates.
+
+          * 24-hour access to the OrBit Software Bulletin Board
+            System (BBS) at (206) 827-9511.
+
+        To register your copy of the OrBit Editor, send a check or
+        money order for $25.00 ($30.00 outside US) to:
+
+            OrBit Software
+            P.O. Box 53426
+            Bellevue, WA  98015-3426
+
+        Please specify whether you prefer a 5.25 or 3.5 inch floppy
+        diskette.
+
+        After registering, OrBit Software will send you a diskette
+        containing the latest version of the OrBit Editor and a letter
+        to confirm your registration and provide your registration
+        number.  This "registered" version of the editor will not
+        display the message asking you to register each time you exit.
+        Please allow 2-4 weeks for delivery.
+
+                               Page 17
+
+OrBit Editor (TM) Version 1.0            Copyright 1993 OrBit Software
+
+
+        A file named INVOICES.TXT is included in the event you need an
+        invoice to submit to your purchasing or accounts payable
+        department.  This is a simple ASCII text file that can be
+        printed to your printer.  For example, if your printer is on
+        LPT1 the following command can be executed from the MS-DOS
+        prompt:
+
+           COPY INVOICES.TXT LPT1
+
+        This will copy the invoice file to your printer.  Two pages
+        will be printed; the first is an invoice for an individual
+        registration and the second is an invoice for a site license.
+
+    11.2 Registering a Site License
+    -------------------------------
+        A site license for the OrBit Editor is available for a very
+        reasonable fee of $500 dollars.  This license allows unlimited
+        usage of the OrBit Editor within the registered organization
+        regardless of the number of individual workstations.
+
+        A company that purchases a site license will receive a
+        customized version of the OrBit Editor that displays the
+        company as the licensed user.  Site licenses include 6 months
+        of free technical support.
+
+        To register a site license for you company, please send a
+        check or money order for $500.00 to OrBit Software.  Please
+        include your company name, phone number, and optionally the
+        name of a person to serve as a contact.  Please also specify
+        whether you prefer 5.25 or 3.5 inch floppy diskettes.
+
+        For your convenience, the file INVOICES.TXT contains an
+        invoice for registering a site license.  This can be used if
+        your accounts payable department prefers an invoice.  Please
+        see the previous section for instructions on how to print the
+        invoice to your printer.
+
+        Upon receiving your site license registration, OrBit software
+        will send you 5 copies of the OrBit Editor that can be used as
+        masters for you to duplicate and distribute throughout your
+        organization.  This version of the OrBit Editor will have been
+        customized to display your company name as the licensed user.
+
+        In addition to the floppy disks you will receive a site
+        license certificate and be entitled to a reduced price on
+        product updates.
+
+        If your organization contains more than 20 users of the OrBit
+        Editor, a site license is a very cost effective means of
+        registration.
+
+
+
+                               Page 18
+
+OrBit Editor (TM) Version 1.0            Copyright 1993 OrBit Software
+
+12. TECHNICAL SUPPORT
+    =================
+
+    An advantage of being a registered user is receiving technical
+    support.  By registering you will be entitled to 90 days of free
+    technical support.  Although every effort has been made to make
+    the OrBit Editor easy to use and compatible with a wide range of
+    hardware, it is still possible that questions or problems will
+    arise.
+
+    There are two ways to receive technical support.  The first (and
+    recommended) method is to call the OrBit Bulletin Board System
+    (BBS) at (206) 827-9511 using a modem.  After connecting to the
+    OrBit BBS you can post a message to our support staff describing
+    your question or problem.  A member of the OrBit Software support
+    staff will read and respond to your message within 48 hours
+    (average response time is 24 hours).  Complete instructions for
+    posting such a message are provided on-line.
+
+    Since the response to your question will be posted to the BBS, we
+    suggest that you call back in 24-48 hours.  After logging on, the
+    system will notify you if there is a response waiting for you to
+    read.
+
+    If you do not have access to a modem, technical support is also
+    available via the US Mail.  Write us a letter describing your
+    question or problem and send it to OrBit software.  Your letter
+    will be answered in a timely manner by a member of the OrBit
+    technical support staff.  When writing to us for technical
+    support, please include your registration number, a description of
+    your system (including video card), and as much information as
+    possible about your question or problem.
+
+13. AUTHOR'S COMMENTS
+    =================
+
+    I would like to take a moment to explain why I created the OrBit
+    Editor and why I think it is unique.
+
+    My inspiration for creating this editor was a direct result of my
+    dissatisfaction with the binary editors currently available.  For
+    my own personal use, I needed a binary file editor that was easy
+    to use, loaded extremely fast, supported 50 line mode, and allowed
+    editing in decimal mode.  There was not an editor available that
+    provided all of these features.
+
+    I found that most of the binary editors that were commercially
+    available supported editing at the sector and physical level in
+    addition to the file level.  These editors were made for advanced
+    users who understand these features and can safely use them.  When
+    loading, some of these editors spent a significant amount of time
+    examining the file system and directory structure before allowing
+    the user to begin editing.
+
+                               Page 19
+
+OrBit Editor (TM) Version 1.0            Copyright 1993 OrBit Software
+
+
+    The user who simply needs to binary edit a file should not be
+    exposed to the complexities of sector level editing or be required
+    to wait while the editor examines the file system.
+
+    The OrBit Editor is my solution to these problems.  The editor
+    loads extremely fast (less than 3 seconds on most systems) and
+    clearly displays the options available to the user.  Since the
+    editor only interacts at the file level there is no possibility
+    that the user is going to accidently damage the file system.
+
+    To ensure the editor was small and fast, I coded it in assembly
+    language.  The editor's executable file is very small (34K) and
+    memory requirements are at a minimum.  The speed of the editor's
+    searching and scrolling exceeds that of most editors.  Support
+    personnel who carry a disk containing the "essentials" will be
+    pleased with the small file size and the fact it is self contained
+    within the single executable file.
+
+14. DEFINITION OF SHAREWARE
+    =======================
+
+    Shareware distribution gives users a chance to try software before
+    buying it. If you try a Shareware program and continue using it,
+    you are expected to register. Individual programs differ on
+    details -- some request registration while others require it, some
+    specify a maximum trial period. With registration, you get
+    anything from the simple right to continue using the software to
+    an updated program with printed manual.
+
+    Copyright laws apply to both Shareware and commercial software,
+    and the copyright holder retains all rights, with a few specific
+    exceptions as stated below. Shareware authors are accomplished
+    programmers, just like commercial authors, and the programs are of
+    comparable quality. (In both cases, there are good programs and
+    bad ones!) The main difference is in the method of distribution.
+    The author specifically grants the right to copy and distribute
+    the software, either to all and sundry or to a specific group. For
+    example, some authors require written permission before a
+    commercial disk vendor may copy their Shareware.
+
+    Shareware is a distribution method, not a type of software. You
+    should find software that suits your needs and pocketbook, whether
+    it's commercial or Shareware. The Shareware system makes fitting
+    your needs easier, because you can try before you buy. And because
+    the overhead is low, prices are low also. Shareware has the
+    ultimate money-back guarantee -- if you don't use the product, you
+    don't pay for it.
+
+
+
+
+
+
+                               Page 20
+
+OrBit Editor (TM) Version 1.0            Copyright 1993 OrBit Software
+
+15. NOTICE TO DISTRIBUTORS
+    ======================
+
+    Authorization to distribute the OrBit Editor package is
+    automatically granted to distributors recognized by the (ASP) as
+    adhering to its guidelines for shareware distributors and such
+    distributors may begin offering the OrBit Editor immediately.
+    Please see the VENDOR.DOC file for complete information
+    particularly if you are not an ASP distributor.
+
+16. Association of Shareware Professionals
+    ======================================
+
+
+                                      +---------+
+                                +---------+     |              (R)
+                              --|         |o    |------------------
+                                |   +---------+ |  Association of
+                                |   |         |-+  Shareware
+                                +---|    o    |    Professionals
+                              ------|    |    |--------------------
+                                    +---------+    MEMBER
+
+    This program is produced by a member of the Association of
+    Shareware Professionals (ASP).  ASP wants to make sure that the
+    shareware principle works for you.  If you are unable to resolve a
+    shareware-related problem with an ASP member by contacting the
+    member directly, ASP may be able to help.  The ASP Ombudsman can
+    help you resolve a dispute or problem with an ASP member, but does
+    not provide technical support for member products. Please write to
+    the ASP Ombudsman at 545 Grover Road, Muskegon, MI  49442-9427 or
+    send a CompuServe message via CompuServe Mail to ASP Ombudsman
+    70007,3536.  The OMB may be contacted by FAX by sending to the ASP
+    FAX number: (616) 788-2765. In communication with the OMB please
+    include a telephone number and/or FAX if available.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                               Page 21
+

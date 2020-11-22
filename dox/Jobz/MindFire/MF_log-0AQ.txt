@@ -1,0 +1,177 @@
+Stuff done:
+    Today I was emailed a link to SOAP and attached the ibuy demo.
+
+    I was supposed to get them running on quark but...
+
+     SOAP required a newer version of Apache than could be found on
+     quark so it would need to be reconfigured && recompiled which would
+     likely result in downtime on the live webserver which is probably
+     not the best idea just to get a little demo running... so after
+     much deliberation, we determined that helium would be a better
+     place to do it and then before beginning that, we realized that
+     helium couldn't lose it's apache either because customers are
+     relying on sites hosted there too so I got an account on quincy
+     (Julia's machine) and spent endless hours installing stuff on it.
+                                                                    =)
+
+    I was also given root accounts on quark, helium, && quincy today.  I
+     tried to enable sudo w/ sudoers on quark for a bit today but I
+     didn't go to the trouble of actually installing the whole thing so
+     it didn't werk.  No biggie.  Maybe next week.
+
+    To get ibuy demo on quincy (Julia's RedHat box) I had to:
+     -Install new CPAN modules, Perl 5.6, && a the latest stable Apache
+     -Apache DocRoot: /home/httpd/htm/    Internal: http://192.168.1.9
+     -I tried to install mod_perl unsuccessfully.  DBD::mysql also
+       failed but these weren't crucial.  HTML::Mason crapped too.
+     -SOAP required Net::FTP && XML::Parser.
+     -the latest Net stuff was in Bundle::libwww which installed a ton
+       of other assorted web stuff successfully.
+     -XML::Parser required Expat which is a C token manipulator /
+       grouper instrumental in XML deciphering.
+     -Expat (stable) was found on SourceForge.net and installed fine.
+     -XML::Parser succeeded as well.
+     -Then SOAP needed LWP::UserAgent which couldn't be found directly
+       but was eventually found in Bundle::LWP.
+     -LWP couldn't install for many errors in the `make test`.
+     -Tried other LWP modules (RobotUA, Simple, etc.) to no avail.
+     -hmmm... I was puzzled... and had to pee... so I did...
+     -Then I was refreshed... so I downloaded libwww-perl-5.48.tar.gz
+       from CPAN && installed that manually.
+     -libwww required URI which I tried to install automagically through
+       CPAN.pm.
+     -which failed so I tried the manual route for URI-1.09 as well.
+     -which got the same errors but somehow was able to install anyway,
+       which then allowed libwww to install alright finally.
+     -then SOAP found UserAgent && succeeded finally and I was happy. =)
+
+    Nick and I considered the state of MindFire servers.  It seems that
+     we currently have insufficient hardware, power protection,
+     ventilation, && equipment organization.  We examined the current
+     servers and their functions as far as we knew or could ascertain.
+        Regarding Power:
+     I basically recommended that we get some BestPower.com UPS's to
+     cover the power needs of the 5 servers we are currently utilizing
+     as a short-term solution.  BestPower UPS's provide great value and
+     typically have available open-source software ready to be utilized
+     on a Linux webserver to monitor the power supply and safely
+     shutdown etc. in the event of an interruption.  They of course werk
+     very well with NT-based servers as well (AFAIK).
+        Regarding Organization:
+     When possible, the rack mountable systems (quark && production)
+     should be relocated to a dedicated colocation facility primarily
+     for stability, security, && data integrity reasons.  I have dealt
+     with Exodus for this sort of service before and was very pleased.
+        Regarding Upgrading the Phone System Server:
+     Apparently a new Dell machine has already been purchased and is
+     presently being configured to replace the black box server which is
+     handling our phone system. This new configuration should be
+     sufficient for our phone system hardware needs for probably at
+     least the next year.
+        Regarding Upgrading the Internal NT Workgroup/File Server:
+     This box should be replaced by a fast P3 box probably also from
+     Dell with at least 256MB && 36GB.  This server is known as "Server"
+     on our internal LoseDoze Netwerking Werkgroup (MindFire).  It used
+     to be responsible for proxy services but that function has been
+     replaced by a router configured to allocate internal addresses by
+     DHCP thus the server will only need to perform LoseDoze Netwerk
+     passwerd authentication and communal file sharing/archiving/backup
+     services.  Tape backup is important there.
+        Regarding Upgrading Helium:
+     We should get a nice middle to low end VA Linux server to do all
+     our internal development on.  We should only run needed services
+     (like all internal mails) on helium if we have secondary
+     alternatives that can fill in seemlessly.  We should not have to
+     worry about customers or anyone outside seeing our internal
+     development server.  In fact, nobody outside or inside should
+     expect any sort of stability or service to come from our internal
+     development server.  We should be able to experiment whenever it's
+     appropriate and no have to worry that a crash on our development
+     server is going to deprive any of our customers or any of our
+     internal operations of anything.  Even if helium is reliable, we
+     should not assume we can rely on it so that it can properly serve
+     it's purpose for new development.  Both live hosting and staging
+     should be performed on quark.  If a customer needs to validate
+     certain developments before they are acceptable for live
+     publication, they should be visible in a special passwerd-protected
+     staging area on quark setup specifically for such clients.  We
+     should rigorously adhere to certain reasonable development
+     procedure flows such as: R&D/Concept/Design/Prototyping/Mockups/
+     Alpha version testing should all be done on helium and ONLY visible
+     internally.  After an Alpha version has gotten sufficient thumbs up
+     from the project manager (and has been tested and sanity checked by
+     others inside) it can be scripted to be archived and reconstructed
+     on quark in a passwerd protected area for Beta.  This is restricted
+     external access according to the needs of the project.  Then if
+     Beta is tested and accepted, it can be made live.  If anything was
+     already in place beforehand, it must be archived onto the NT server
+     and backedup on tape or cd before it can be clobbered by the newly
+     initiated Beta version.  To be able to do all this, all code must
+     be written relatively (ie. no absolute paths) or if absolute paths
+     are absolutely necessary, they must reside in documented && coherent
+     configuration, header, or source files which get inherited by every
+     code-based invocation of the needed path.  It must be
+     straightforward to verify or alter which stage of development any
+     code base is in.  Ideally the stages would consist of nothing
+     beyond copying the code into the new appropriate locale.  Another
+     important thing to note is that any code in the Beta section of
+     quark should never be edited.  It should only be updated when fixes
+     or changes are made to our internal Alpha (on helium) and we deem
+     them good enough to replace the current state of Beta.
+     Additionally, there should be one special exception made to the
+     rule of code development flow.  The actual running live code should
+     be modified directly if and only if a customer needs it fixed with
+     such immediate urgency that it would not be feasible to test Alpha
+     and Beta versions at all anyway and the said direct development has
+     little to no chance of ruining anything else crucial to the live
+     site.  This should be a very special and rare scenario that can
+     likely be avoided with cautious adherence to the described
+     development method.  Hopefully special staging scripts could be
+     designed and coded to simplify and enforce this process rather
+     automagically (probably even initiated from a special project
+     administration webpage [read .cgi] that logs project status changes
+     and emails the whole project team when such notable events have
+     taken place.  This may seem overkill for small teams but it would
+     probably be an invaluable practice and a useful method for quickly
+     ascertaining the progress/milestones/reliability of each project.
+     I'd like to see such clear distinctions.  Hopefully we can realize
+     some additional useful structure to our development methods.  I'm
+     eager to do all I can to see that such things happen.
+
+    I setup a journal directory for myself (`pip`) on quincy so
+     that my personal updates and journals could be found localized
+     internally.  It's at http://192.168.1.9/jrnl/pip/.  This might be a
+     good practice for all our hackers to do.  It'd be simple to extend
+     this to html'ers && graphics designers with a submit form that they
+     quickly fill before departing werk as a matter of habit.  Initially
+     the "What I've done since I got to werk: ", "What I should do next
+     time I come to werk: ", && "How I feel about werk today or life
+     yesterday or anything else I happen to feel like mentioning right
+     now: "... those 3 would likely provide valuable insight into
+     productivity, morale, frustration, etc. in an open medium.  An
+     acceptable place to vent (respectfully according to MindFire's
+     rules) at the end of the day.  Answers could be terse and should
+     never be a source for criticism.  I'm probably getting carried away
+     with this too but it might be neat to try and make a voluntary
+     daily journal that is public only within the company and almost
+     completely exempt from reprimand.  Daily log/update/bitch session.
+     That's enough for now.
+
+ToDo:
+    I'm probably going to need to understand very clearly the procedure
+     for manually creating a PnGS site within the database etc. so that
+     I can make sure that I have a script correctly create all the
+     branch-specific sites for Expanets before sunrise on Monday, A300.
+
+    I'd like to lern more about the specs on all of our servers and all
+     of the services that they are providing.  Hopefully we can figure
+     out how to best use the equipment we have and accurately determine
+     what additional hardware will be necessary for the successful
+     development of quality software solutions affordably produced to
+     exceed the needs of our clients.
+
+    Code more!  Install Potato!  Viva Debian!
+
+Thots:
+    Tired one I am.  Go to sleep I must.  TTFN.
+

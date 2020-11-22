@@ -1,0 +1,1059 @@
+body {
+	background: #eaeaea url(images/bg.gif) repeat-x;
+	padding: 0;
+	margin: 0;
+	font: 12px Geneva, Arial, Helvetica, sans-serif;
+}
+
+/*<group=appview>*/
+
+.appinfo {
+	background: #f2f7fd;
+	color: black;
+	margin: 0 0 10px -10px;
+	padding: 3px 10px;
+	font-size: 11px;
+}
+
+#tagcloudcontent {
+	width: 550px;
+	padding: 0;
+	background: white;
+}
+
+.margins {
+	padding: 10px;
+}
+
+.white {
+	color: white;
+}
+
+.app {
+
+}
+
+.appview div {
+	display: inline;
+	height: 32px;
+}
+
+.appview {
+
+}
+
+.editbutton {
+	font-size: 10px;
+	padding: 9px 0 0;
+	font-weight: normal;
+	float: right;
+	margin-right: 0;
+}
+
+.description {
+	padding-right: 10px;
+}
+
+.editbutton a:hover {
+	background: #737373;
+	color: white;
+}
+
+.editbutton a {
+	border: 5px none #737373;
+	text-decoration: none;
+	margin-right: 0;
+	background: white;
+	color: black;
+	padding: 4px;
+	border-top-style: solid;
+	margin-left: 5px;
+}
+
+.titleview {
+	font-size: 14px;
+	font-weight: bold;
+	height: 22px;
+	float: left;
+	margin-bottom: 0;
+	padding-left: 4px;
+	width: 370px;
+	padding-top: 16px;
+}
+
+.apphide {
+	clear: left;
+	width: 520px;
+	margin-top: 0;
+	margin-right: 200px;
+	margin-bottom: 0;
+	padding-left: 40px;
+	background: white;
+}
+
+.myappsdown {
+	margin: 0;
+	float: none;
+}
+
+.altbg {
+	background: white;
+	height: 42px;
+	padding: 4px 0;
+	width: 560px;
+	margin: 0;
+}
+
+.titleview a {
+	text-decoration: none;
+	color: #3d3d3d;
+	border-bottom: none;
+}
+
+.titleview a {
+	color: #3e3e3e;
+	white-space: pre;
+	border-bottom: 2px hidden #444444;
+	text-decoration: none;
+}
+
+.titleview a:hover {
+	margin-bottom: 0;
+	border-bottom: 2px solid #de7600;
+	text-decoration: none;
+	padding-bottom: 0;
+}
+
+.appviewheading {
+	border-bottom: 2px solid #cccccc;
+	margin-right: 170px;
+	height: 20px;
+	background: no-repeat url(images/listheadbg.gif);
+	padding-top: 5px;
+	margin-bottom: 0;
+	color: white;
+}
+
+.iconhead {
+	width: 50px;
+	float: left;
+	display: block;
+	height: 1px;
+}
+
+.iconview {
+	height: 32px;
+	width: 32px;
+	margin: 0 2px;
+	padding: 5px;
+	float: left;
+	font-size: 14px;
+}
+
+.whitebg {
+	background: white;
+}
+
+.apphidediv {
+	padding: 5px;
+	margin: 0;
+}
+
+.apphide .tags {
+	background: #f6f6f6;
+	margin-bottom: 1px;
+	color: black;
+	padding: 4px;
+}
+
+.apphide .tags a {
+	text-decoration: none;
+}
+
+.apphide .tags a:hover {
+	text-decoration: underline;
+}
+
+.titlehead {
+	display: block;
+	width: 440px;
+	float: left;
+}
+
+.toggleuse {
+	width: 70px;
+	float: left;
+	padding-top: 16px;
+}
+
+.l_iusethis {
+	padding: 3px 5px;
+	background: #1a6200;
+	text-decoration: none;
+	color: White;
+	font-size: 10px;
+	width: 60px;
+}
+
+.l_stopusing {
+	padding: 3px 5px;
+	background: #e23d00;
+	text-decoration: none;
+	color: White;
+	font-size: 10px;
+	width: 60px;
+}
+
+.toggleuse a:hover {
+	background: #565656;
+}
+
+.useview {
+	width: 50px;
+	text-align: right;
+	font-size: 14px;
+	font-weight: normal;
+	float: left;
+	margin-bottom: 0;
+	padding-left: 4px;
+	height: 25px;
+	padding-top: 14px;
+}
+
+.usehead {
+	width: 55px;
+	text-align: right;
+	float: left;
+	display: block;
+}
+
+.app img {
+	float: left;
+}
+
+.minmax {
+	margin-bottom: -1px;
+	padding-right: 3px;
+}
+
+.app h2 a:hover {
+	color: #919191;
+}
+
+/*</group>*/
+
+/*<group=Structure>*/
+
+#footer {
+	clear: both;
+	text-align: center;
+	padding-top: 20px;
+	padding-bottom: 20px;
+}
+
+#adbanner {
+	border: 1px hidden;
+	width: 728px;
+	margin-bottom: 15px;
+	margin-top: 15px;
+	height: 90px;
+}
+
+#content {
+	position: absolute;
+	top: 55px;
+	width: 730px;
+	margin-left: -365px;
+	left: 50%;
+	padding: 0;
+}
+
+#sidebar {
+	width: 160px;
+	float: right;
+}
+
+#logo {
+	float: left;
+	position: absolute;
+	top: 0;
+	margin-top: 12px;
+	padding: 0;
+}
+
+#header {
+	padding: 0;
+	float: none;
+	margin: 13px 0 10px;
+}
+
+#container {
+	padding: 0;
+	width: 730px;
+	margin: 0 0 0 -365px;
+	left: 50%;
+	position: absolute;
+}
+
+/*</group>*/
+
+/*<group=Style>*/
+
+img {
+	border-style: none;
+}
+
+a {
+	color: #3b5388;
+}
+
+h1 {
+	color: #ff7c00;
+	font-weight: bold;
+	font-size: 23px;
+}
+
+.heading {
+	width: 300px;
+	margin-bottom: 10px;
+}
+
+.headingcont {
+	margin-bottom: 20px;
+}
+
+#headinglinks a {
+	background: #353535;
+	margin-left: 2px;
+	text-decoration: none;
+	font-size: 11px;
+	color: white;
+	padding-top: 3px;
+	padding-right: 3px;
+	padding-left: 3px;
+	padding: 3px;
+}
+
+#headinglinks {
+	margin-top: 10px;
+	display: inline;
+}
+
+h2 {
+	margin-top: 0;
+	font: 100 15px Geneva, Arial, Helvetica, sans-serif;
+	font-weight: bold;
+}
+
+/*</group>*/
+
+/*<group=Topmenu>*/
+
+#topmenu {
+	float: right;
+	font-size: 93%;
+	line-height: normal;
+	margin-left: 0;
+	margin-top: 3px;
+	margin-right: 0;
+	padding-right: 0;
+}
+
+#topmenu ul {
+	margin: 0;
+	padding: 0;
+	padding: 10px 10px 0;
+	list-style: none;
+	float: right;
+}
+
+#topmenu li {
+	float: left;
+	background: url("images/tmar.gif")
+      no-repeat right top;
+	margin: 0 0 0 2px;
+	padding: 0;
+}
+
+#topmenu li#tmsearch {
+	float: left;
+	background: none no-repeat right top;
+	padding: 0;
+	margin: 0 0 0 10px;
+}
+
+#topmenu a {
+	display: block;
+	background: url("images/tmal.gif")
+      no-repeat left top;
+	padding: 5px;
+}
+
+#topmenu #current {
+	background: url("images/tmgr.gif")
+      no-repeat right top;
+}
+
+#topmenu #current a {
+	background: url("images/tmgl.gif")
+      no-repeat left top;
+	color: black;
+}
+
+/* Commented Backslash Hack
+     hides rule from IE5-Mac \*/
+  #topmenu a {
+	float: none;
+	text-decoration: none;
+	color: white;
+}
+
+/* End IE5-Mac hack */
+
+#topmenu li:hover {
+	background: url("images/tmbr.gif")
+      no-repeat right top;
+}
+
+#topmenu a:hover {
+	background: url("images/tmbl.gif")
+      no-repeat left top;
+}
+
+#tmsearch input {
+	border: 1px solid #686868;
+	width: 100px;
+	margin: 3px 0 0;
+	background: white;
+	padding: 2px;
+	font-size: 10px;
+}
+
+/*</group>*/
+
+/*<group=Sidebar>*/
+
+.sidecont {
+	margin: 1px 0 10px;
+	padding: 5px;
+	background: white;
+}
+
+.sidetop {
+	overflow: hidden;
+	background: no-repeat  url(images/sidebg.gif);
+	text-align: left;
+	margin: 0;
+	color: white;
+	padding: 9px 4px 4px;
+}
+
+/*</group>*/
+
+/*<group=Appview>*/
+
+.iconandcount {
+	float: left;
+	width: 50px;
+	margin-right: 0;
+	padding: 0;
+	margin-left: 0;
+}
+
+.number {
+	font-size: 17px;
+	font-weight: bold;
+	text-align: center;
+	margin-bottom: 1px;
+	background: #ff6003;
+	margin-top: 0;
+	padding-top: 5px;
+	padding-bottom: 5px;
+	color: #ffffff;
+}
+
+.applinks {
+	font-size: 11px;
+}
+
+.mininumber {
+	background: #ff6003;
+	padding: 2px;
+	margin: 2px 4px 2px 0;
+	font-weight: bold;
+	color: White;
+}
+
+.appcontent {
+	padding: 0;
+	margin: 0 170px 10px 58px;
+}
+
+.topborder {
+	background: no-repeat url(images/iusethisbg.gif);
+	height: 4px;
+	margin: 0 0 1px;
+	padding: 0;
+}
+
+.roundappcorner {
+	background: no-repeat url(images/roundappbg.png);
+	float: left;
+	width: 200px;
+	height: 5px;
+}
+
+d.topborder2 {
+	background: #d0d0d0;
+	height: 4px;
+	margin-bottom: 1px;
+}
+
+.topborder3 {
+	background: #65605b;
+	height: 4px;
+	margin-bottom: 1px;
+}
+
+.iconside {
+	background: white;
+	margin-bottom: 1px;
+	padding: 5px;
+}
+
+.icon {
+	margin-left: -16px;
+	left: 50%;
+	position: relative;
+}
+
+.avatarimage {
+	border: 1px solid #8c8c8c;
+	margin-right: 6px;
+	margin-left: 6px;
+}
+
+.appcontent p {
+	margin-top: 8px;
+}
+
+.iusethis {
+	background: #3a3734 no-repeat url(images/iusethisbbg.png);
+	font-size: 9px;
+	color: white;
+	text-align: center;
+	margin-bottom: 1px;
+	padding-top: 0;
+	padding-bottom: 1px;
+}
+
+.black {
+	color: black;
+}
+
+.iusethis:hover {
+	background: #7d7d7d no-repeat url(images/iusethisbbg.png);
+}
+
+.gray {
+	color: gray;
+	font-size: 11px;
+}
+
+.marginsappview {
+	background: white;
+	padding-left: 10px;
+	padding-bottom: 10px;
+}
+
+.appmargins {
+	margin-bottom: 10px;
+	padding-left: 10px;
+	padding-bottom: 10px;
+}
+
+.iusethis a {
+	color: white;
+	text-decoration: none;
+	display: block;
+	padding-top: 4px;
+	padding-bottom: 4px;
+}
+
+.appcontent h1 {
+	padding: 20px 0 0;
+	margin-bottom: 3px;
+	margin-top: 0;
+	color: #3e3e3e;
+}
+
+.appcontent H1 a {
+	color: #3e3e3e;
+	border-bottom: 2px hidden #444444;
+	text-decoration: none;
+	font-weight: bold;
+	font-size: 23px;
+}
+
+.appcontent H1 a:hover {
+	margin-bottom: 0;
+	border-bottom: 2px solid #de7600;
+	text-decoration: none;
+	padding-bottom: 0;
+}
+
+/*</group>*/
+
+/*<group=Comments>*/
+
+#commenthead h1 {
+	color: #df5502;
+	margin-bottom: 0;
+	margin-top: 25px;
+	font: bold 23px sans-serif;
+	white-space: pre;
+	font-weight: bold;
+	font-size: 23px;
+}
+
+.comment {
+	background: #e1e1e1 repeat-x url(images/commentbg.gif);
+	padding: 0;
+	margin-left: 0;
+	margin-top: 0;
+	margin-bottom: 10px;
+	font-size: 11px;
+}
+
+.comment p {
+	padding: 10px 10px 0;
+	margin-top: 0;
+	margin-bottom: 0;
+}
+
+#writecomment {
+	background: #e1e1e1 repeat-x url(images/commentbg.gif);
+}
+
+#writecomment p {
+	padding: 5px;
+}
+
+#comment_form_body {
+	font: 11px Geneva, Arial, Helvetica, sans-serif;
+	width: 460px;
+	margin-top: 10px;
+	margin-bottom: 10px;
+}
+
+.commentsub {
+	color: #424242;
+	font-size: 10px;
+	padding-top: 10px;
+}
+
+#writecomment form fieldset {
+	border-style: none;
+}
+
+#writecomment form fieldset input {
+	font-size: 10px;
+}
+
+.comment select {
+	font-size: 9px;
+	float: right;
+	margin-right: 10px;
+	margin-bottom: 10px;
+}
+
+.comment option {
+	font-size: 9px;
+}
+
+.problem {
+	margin: 0;
+	padding: 0;
+}
+
+/*</group>*/
+
+/*<group=login>*/
+
+#login {
+	padding: 30px;
+}
+
+#login dl {
+	margin: 10px;
+}
+
+#login .password {
+	clear: left;
+}
+
+#login dt {
+	margin: 10px 0 5px;
+	padding: 0;
+}
+
+#login dd input.submit {
+	margin-top: 10px;
+}
+
+#loginregister {
+	float: right;
+	padding-top: 68px;
+}
+
+#login dd {
+	padding: 0;
+	margin-right: 0;
+	margin-left: 0;
+}
+
+/*</group>*/
+
+/*<group=Pagenr>*/
+
+#pagenr a, #pagenr a:visited {
+	border: 2px solid white;
+	text-decoration: none;
+	color: #f46800;
+	padding: 2px 5px;
+	background: white;
+	margin: 0;
+}
+
+.pagercurrent {
+	padding: 4px 7px;
+	margin: 1px;
+	font-weight: bold;
+}
+
+#pagenr {
+	font-weight: normal;
+	margin-left: 60px;
+	margin-top: 20px;
+}
+
+#pagenr a:hover {
+	border-color: #f46800;
+	color: #65605b;
+}
+
+/*</group>*/
+
+/*<group=Usermenu>*/
+
+#usermenu {
+	margin-bottom: 10px;
+	float: right;
+	background: repeat-x;
+	margin-top: 9px;
+}
+
+.width550 {
+	padding: 0;
+	margin: 0 0 1px;
+	width: 550px;
+	background: #888888;
+}
+
+#usermenucontent {
+	width: 565px;
+	margin: 5px 0 1px;
+	padding: 0;
+}
+
+#usermenucontent h1 {
+	margin: 0;
+	color: #323232;
+	padding: 20px 5px 5px 0;
+}
+
+#usermenu a, #usermenu a:visited {
+	border: 5px none #737373;
+	text-decoration: none;
+	margin-right: 4px;
+	background: white;
+	color: black;
+	padding: 4px;
+	border-top-style: solid;
+}
+
+#usermenu a:hover {
+	background: #737373;
+	color: white;
+}
+
+/*</group>*/
+
+/*<group=tag>*/
+
+#crumb input {
+	font-size: 23px;
+	border: 1px solid #aeaeae;
+	width: 120px;
+	color: #ff7c00;
+	background: #f4f4f4;
+	font-weight: bold;
+	letter-spacing: -1px;
+}
+
+#crumb input:hover {
+	border-color: #757575;
+}
+
+/*</group>*/
+
+/*<group=Register
+>*/
+
+#register {
+	width: 300px;
+}
+
+.errormessages {
+	visibility: hidden;
+	margin-left: 300px;
+	display: block;
+	width: 120px;
+	padding: 8px 4px 4px 15px;
+	height: 20px;
+	margin-top: 7px;
+}
+
+#register fieldset {
+	display: block;
+	width: 17em;
+	padding: 0 1em 1em 1em;
+	border: 0;
+	margin: 30px 0 3em 30px;
+}
+
+#register fieldset.radio {
+	width: 15em;
+	margin: 1em 0 2em 0;
+}
+
+#register fieldset.radio input {
+	clear: both;
+	float: left;
+	width: auto;
+}
+
+#register fieldset.radio label {
+	font-weight: normal;
+}
+
+#register input {
+	display: block;
+	width: 15em;
+	border: 1px solid #9b9b9b;
+}
+
+#register input:hover {
+	border-color: #3a3a3a;
+}
+
+#register label {
+	display: block;
+	margin-bottom: 1em;
+	font-weight: bold;
+	text-align: left;
+	width: 15em;
+}
+
+#register input.checkbox {
+	width: 12px;
+	height: 12px;
+}
+
+#register label.first {
+	padding-top: 1em;
+}
+
+#register select {
+	display: block;
+}
+
+/*</group>*/
+
+/*<group=Settings
+>*/
+
+.settings td {
+	vertical-align: top;
+	margin: 0;
+	padding: 0;
+}
+
+.settings table {
+	margin: 0;
+	padding: 30px 5px 5px;
+	clear: left;
+}
+
+.settings legend {
+	float: left;
+	display: inline;
+	font-size: 15px;
+	font-weight: bold;
+	padding-bottom: 10px;
+	color: #ff7c00;
+}
+
+.settings {
+	width: 560px;
+	background: white;
+}
+
+.errormessages {
+	visibility: hidden;
+	margin-left: 300px;
+	display: block;
+	width: 120px;
+	padding: 8px 4px 4px 15px;
+	height: 20px;
+	margin-top: 7px;
+}
+
+.settings fieldset {
+	display: block;
+	width: 20.5em;
+	padding: 5px;
+	border: 1px #b9b9b9 solid;
+	margin: 10px 0 3em 10px;
+	background: #e1e1e1;
+	float: left;
+}
+
+.settings fieldset.radio {
+	width: 15em;
+	margin: 1em 0 2em 0;
+}
+
+.settings fieldset.radio input {
+	clear: both;
+	float: left;
+	width: auto;
+}
+
+.settings fieldset.radio label {
+	font-weight: normal;
+}
+
+.settings input {
+	display: block;
+	border: 1px solid #9b9b9b;
+	width: 18.5em;
+}
+
+.settings input:hover {
+	border-color: #3a3a3a;
+}
+
+.settings label {
+	display: block;
+	margin-bottom: 1em;
+	font-weight: bold;
+	text-align: left;
+	width: 15em;
+	clear: left;
+}
+
+.settings input.checkbox {
+	width: 12px;
+	height: 12px;
+}
+
+.settings label.first {
+	padding-top: 1em;
+}
+
+.settings input.upload {
+	width: 15em;
+}
+
+.settings select {
+	display: block;
+}
+
+/*</group>*/
+/*<group=Overlay>*/
+
+#moverlay {
+	background-image: url(images/overlay.png);
+	display: block;
+	position: absolute;
+	top: 0pt;
+	left: 0pt;
+	z-index: 90;
+	width: 100%;
+}
+
+#moverlayheadertext {
+	color: White;
+	font-size: 25px;
+	float: left;
+	display: block;
+	padding-top: 5px;
+	padding-left: 30px;
+}
+
+* html #moverlay {
+	background-color: #333;
+	back\ground-color: transparent;
+	background-image: url(blank.gif);
+	filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src="overlay.png", sizingMethod="scale");
+}
+
+#moverlayheader {
+	background: no-repeat url(images/messagebg.png);
+	height: 68px;
+	padding-top: 15px;
+	padding-right: 20px;
+	padding-left: 18px;
+	overflow: hidden;
+}
+
+#moverlaycontent {
+	background: #eaeaea;
+	margin-top: 0;
+	padding: 17px 18px 15px;
+}
+
+#moverlaytop {
+	background: url(images/messagetop.png) no-repeat;
+	height: 8px;
+}
+
+#moverlaybot {
+	background: no-repeat url(images/messagebot.png);
+	height: 6px;
+}
+
+#messagewarning {
+	background: no-repeat url(images/messagewarning.png);
+	height: 26px;
+	color: white;
+	padding-left: 18px;
+	margin-top: 15px;
+	padding-top: 6px;
+}
+
+#moverlaymessage {
+	width: 400px;
+	left: 50%;
+	top: 100px;
+	position: absolute;
+	margin-left: -200px;
+}
+
+#overlaylogo {
+	margin-right: 10px;
+	float: left;
+}
+
+/*</group>*/

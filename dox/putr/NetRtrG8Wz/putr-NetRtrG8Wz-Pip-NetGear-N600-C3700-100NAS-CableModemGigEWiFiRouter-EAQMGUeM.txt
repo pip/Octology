@@ -1,0 +1,8 @@
+# under device foot stands are the following identification labels
+MAC   : 6CB0CE44E922
+Serial: 3KX1487B00EA1
+SSID  : NETGEAR07      (l8rset2 DarjNet      admin:flc4uandme && DarjNet-5G)
+Key   : phobicdaisy537 (        flc4unme)
+HTTP://RouterLogin.Net (default 192.168.0.1) admin:password (l8rset2 192.168.8.1)
+# on bottom of box label
+TA    : 100-18391-01R8

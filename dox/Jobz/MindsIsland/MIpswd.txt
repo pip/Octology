@@ -1,0 +1,4 @@
+ssh pip@somebox.com                           pooploop
+http://Project.SomeBox.Com                pip.silly
+http://Stage.MindsIsland.Com          miadmin.12dunkindonuts
+http://Stage.MindsIsland.Com/mytrade/     pip.silly

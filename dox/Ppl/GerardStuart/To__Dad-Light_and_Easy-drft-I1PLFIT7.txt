@@ -1,0 +1,428 @@
+Thursday, January 25, 2018 - 1128 Gtime / 1028 Ptime : I1PLASAG
+
+Dear Dad,
+
+Thank you for each of your latest messages. They're wonderful.
+
+I have received your criticism of my earlier message header stamp colors, which led me to revert most simply back to black, but have also darkened the remaining colors to hopefully provide similar effect but with improved contrast.
+
+Please let me know if you ever have any further preferences regarding future message presentation techniques. If any specific markup would benefit you somehow (even down to specifying exact RGB values for any recurring contexts), I should probably be able to incorporate it rather consistently once it's known about. I intend to progressively absorb (and then adopt) most of your established color and emphasis conventions (since they seem to serve us both quite well, so far). I aspire to eventually start mimicking your fabulous stylings enough that I too can become adept at embedding complementary images and flowing the text layout formatting in ways that seem most conducive to accurate perception and comprehension of subtleties (in intent and meaning). You're magnificently expressive, artistic, emotive, and elegant in every e-mail, while remaining so rigorous and methodical with the navigation through tangled topic themes, specific conversation threads, and efficient references for re-establishing context.
+
+I am so grateful for every one of your messages. They're amazing and engaging (at least after they cease to loom as insurmountable, overwhelming, or intimidating... which are each probably disconcerting initial responses which are much more of my fault than yours). I would like to approximate your ability to craft earnest, yet jovial and loving, messages. It's beautiful stuff. I will keep working on reinforcing more confidence that I am capable (and deserving) enough to maintain some levels of balance with you... and I will try to clearly let you know if I need an unusually extended amount of time to muster the courage or concentration required to catch up to latest messages.
+
+I'm obviously stubbornly insecure about my capacity for maintaining comfortably balanced dialog with you, but I will keep trying to internalize how patient you are, how assured you remain that our timing is effectively perfect, and that you convey understanding and compassion for my hurdles.
+
+Thank you for being proud of me. Thank you for believing I can and will do great things. Thank you for forgiving my failures and inadequacies, and helping me to succeed ahead. Thank you for respecting me enough to listen carefully and respond considerately when I have been able to convey my struggles and hopes. Thank you for your constant love, attention, and enthusiasm. Thank you for devoting copious effort to facilitate learning. Thank you for everything (the increasingly great and the diminishingly awful) that has resulted from our relationship. Thank God for everything too, if He exists and hears such thoughts and prayers.
+
+I am feeling a mounting sense of appreciation and privilege that I get to wake and live each day. I'm feeling more honored than pathetic. Maybe I have always been a child of God. Maybe I am Messiah-like, more than I appear to be, with divine capabilities and purpose. Maybe you and Uncle Peterson are enabling me to rediscover faith, the supernatural, the metaphysical, the spiritual, timeless truth, wisdom, and the shepherding of my own soul (along with maybe others).
+
+So I think I understand your usage and description of the new "full ID" references to continue the contexts for multiple conversations. I have noticed that you seem to be employing more Unicode characters and symbols for various purposes. This additional layer of encoding can further complicate synchronization challenges between the legibility and accessibility of local copies, but probably won't cause either of us too much frustration to consistently deal with. Regarding your new border lines, I notice that the 92 rendered spot characters all appear the same, but every 18th is encoded as just xB7 instead of the remainder which are x2219. Do these uniform, yet inconspicuous, variations indicate something significant, like for the automated alignment of composition sections within your tools or work-flow, or are they unintentional or otherwise inconsequential?
+
+I am still thinking about how to respond to your Jan. 15th 2018, 1327 Gtime Canto 8 in our "Eve-Eve" Thread. May need another week or so for that, but I would like to say thank you reiterating your generous willingness to re-send me any of the 62 items potentially lost since 2012. I need more time to gather and audit all that I have, but probably most or all of those 62 remain in fine condition with me (the majority still so far unopened). What I have been lamenting and regretting more was the hundreds of letters you sent me probably between 1998 and 2008. About 3 dozen of those handwritten gems survived in my storage unit (away from terrible landlords), and were retrieved around 2013, but there were probably another 200 or more which were stolen. Whatever I don't have, I don't really need. Maybe the few survivors are a perfect selection for what I may still need ahead. After I attempt to locate and chronicle the 62 since 2012, I will also try to account for the dates and apparent titling of the earlier ones too. It would be nice to summarize (and eventually completely transcribe, if not also record narration of) all the letters I still have to digest. Hopefully I will make some good headway on these tasks in the upcoming weeks, and then we can start filling in any gaps from the 62.
+
+There's lots of other deep stuff in there to think about, form further questions from, and respond to. That one is now 10 days old, so hopefully I can dive into it thoroughly somewhat soon.
+
+There's also:
+
+∙∙∙∙∙∙∙∙∙∙∙∙∙∙∙∙∙·∙∙∙∙∙∙∙∙∙∙∙∙∙∙∙∙∙·∙∙∙∙∙∙∙∙∙∙∙∙∙∙∙∙∙·∙∙∙∙∙∙∙∙∙∙∙∙∙∙∙∙∙·∙∙∙∙∙∙∙∙∙∙∙∙∙∙∙∙∙·∙∙
+Thread subjected:  Two Videos to Share
+T16,C13/13 (D>P) sent Wed Jan 24 2018, 1407 Gtime / 1307 Ptime
+∙∙∙∙∙∙∙∙∙∙∙∙∙∙∙∙∙·∙∙∙∙∙∙∙∙∙∙∙∙∙∙∙∙∙·∙∙∙∙∙∙∙∙∙∙∙∙∙∙∙∙∙·∙∙∙∙∙∙∙∙∙∙∙∙∙∙∙∙∙·∙∙∙∙∙∙∙∙∙∙∙∙∙∙∙∙∙·∙∙
+
+which you sent me yesterday. I'm really excited to learn more about your (and God's?) Fix the Radio plans. I am extremely hopeful that it can become a challenging and rewarding project for us to collaborate on in order to diminish suffering for ourselves and the many lost souls of our generations. I hope we develop and cultivate a modest audience to inform, educate, entertain, and inspire. It seems to have great purpose and meaning which is invigorating and revivifying. I'm thoroughly pleased to be embarking on such an exploratory journey for good together. There are many other topics in there which I intend to respond to in greater detail soon as well.
+
+Then there's this new "Light & Easy" thread which I am responding to now. Hopefully I can get through this one in depth here today.
+
+Okay, so 6 Light topics and 7 Easy questions.
+
+Topic ❶  :::  Difficulties Regarding Finding
+                              Old Emails in Gmail
+
+Regarding your numbering of Threads following T and Cantos following C (along with slash over total so far), such conventions should serve us well for both clear and compact referencing later. For us to try to get on the same page for this stuff, could you please confirm whether my simple list of T index numbers and maps to the corresponding "Thread subjected:" values are the same as yours? Hopefully we will be able to remain mostly synchronized with shared unambiguous indexing going forward, after you help me reconcile the maybe two I am not finding with:
+
+1. HAFMD2BO P2G First Public Octology Release
+2. HALMLl00 G2P Help ? How ? Why ?
+3. HB5LC2PR P2G FixTheRadio Script_000.0
+4. HBHLISTN P2G Belief in God by One Means or Another?
+5. HBQL8P3V P2G Testing d8g Code and Music Article
+6. HBRL7ZBK P2G Preview of Dr. Peterson's New Book
+7. HBSLAq00 G2P Tuesday & 7 other Daze of the Week
+8. HBTLGGpo P2G FtR + Octology Scrobbler?
+9. HC9LKxeS P2G Two Videos to Share
+A. HCDL4H00 G2P Happy Birthday - Number 41
+B. HCML4V00 G2P Fall Off Planet ? No.
+C. HCULNx00 G2P Happy New Year's Eve-Eve
+D. I1CLGGg4 P2G Are You Okay?
+E. I1NLAh00 G2P Light & Easy
+F. ?
+G. ?
+
+Topic ❷ :::  Pip's New d8stamp - in full color
+
+Hopefully already addressed at the start of this Canto.
+
+
+On some other assorted topics:
+
+In thinking further about your multi-hour loss of a long draft message, I realized that the "Control-z" undo mechanism might have actually preserved multiple intermediate states of progress in saved construction history. I haven't investigated in enough detail yet to know precisely how the GMail system usually handles such features, but you might want to experiment with performing multiple Ctrl-z undo operations to see if that mechanism enables you to recover from potentially similar future losses. Hopefully there is also some matching hot-key sequence which performs a "redo" operation, in case you undo too many edits and want to revert back the previous one that you just undid. Sorry I wasn't more clear about this possibility earlier, in time to
+
+I'm thrilled to have received my copy of Dr. Peterson's 12 Rules for Life, which I look forward to pouring over and discussing throughout the upcoming year. Please let me know if you would like me to ask Mom to also order a copy to be sent to you too. It might be compelling for us to try to examine a chapter together each month, or something like that, if you're interested?
+
+Over the past couple weeks, I have appreciated several new videos which may deserve their own new threads for discussion ahead, but we probably have plenty of other material to sort out and deal with first. Since that stuff may be best to leave on the back-burner for a bit, I have just appended small notes to my related Octology documentation. Maybe when you aren't too busy with higher priorities, and have some time to absorb them casually, then we can start phasing in new threads to supplant some of our currently most lively ones. My brief initial notes can be mainly found at the bottom of:
+
+  HTTPS://GitHub.Com/Pip/Octology/raw/master/dox/2du/know.ls
+
+This morning, I uploaded a bunch of my old pictures to new shared photo albums, which I thought you might like to see (for those you haven't yet):
+
+  HTTPS://Photos.App.Goo.gl/COeDDDS7UBwgjW9k2 PipzFavor8z
+  HTTPS://Photos.App.Goo.gl/E7wUCrfsuwSLLRif2 PipzDarj
+  HTTPS://Photos.App.Goo.gl/GbSCOvhOHgV6k2Qg1 PipzCkm8
+
+I pray that you are in good health and better spirits, and I look forward to more hearty discussion through our love-letters ahead.
+
+I love you Dad.
+
+Love,
+-Pip =)
+
+
+On Tue, Jan 23, 2018 at 10:43 AM, Gerry Stuart <gerrystu@gmail.com> wrote:
+
+
+    Tuesday, January 23, 2018  -  1143 Gtime / 1043 Ptime
+
+              Good morning Pip,
+
+                        It is time for a Light & Easy email.
+
+                                  Light topics.          Easy questions.    
+                                        6 of 'em.                           7 of 'em.        
+
+
+                       
+
+    ​
+    Topic ⓿  :::  Contents
+
+     Topic ❶  :::  Difficulties Regarding Finding Old Emails in Gmail
+     Topic ❷  :::  Pip's New d8stamp - in full color
+     Topic ❸  :::  Little Happinesses
+     Topic ❹  :::  The Narration Project
+     Topic ❺  :::  Angie's New Homestead
+     Topic ❻  :::  Incidental Questions
+
+
+                       
+    ​
+
+    Topic ❶  :::  Difficulties Regarding Finding
+                                  Old Emails in Gmail
+
+    When we are at the Gmail "Directory" screen -- what
+    does the date (in the extreme right column) tell us ?
+
+         Well.   It's a crapshoot! 
+
+                                 It is not the date of the  first  email in the  thread.
+                           Neither is it the date of the  last  email in the  thread.
+
+    Most of the time -- it may be the date of the  last  email in that thread 
+                                (which was sent to you).
+
+                        But.   There are exceptions to this.   So don't count on it.
+
+    My general conclusion on the possible "use" of this "Date" column -- to assist
+    me in finding a particular email is  :::  don't bother.    It's just too confusing!
+
+    So.   When I want to help you (or me) to find a given email -- I shall give you
+    the email's "Thread subject" -- as that is "carved in stone" when the very
+    first email in a thread is created.   Gmail does not allow that to ever be edited.  
+
+            So -- that is a fairly excellent way to begin the finding of
+            a particular canto (individual email section) in any thread.
+
+                   Therefore ::: when I want to direct you to some old stuff 
+                   that I sent you -- or you sent me -- I shall customarily say
+                   something like:
+
+    ∙∙∙∙∙∙∙∙∙∙∙∙∙∙∙∙∙·∙∙∙∙∙∙∙∙∙∙∙∙∙∙∙∙∙·∙∙∙∙∙∙∙∙∙∙∙∙∙∙∙∙∙·∙∙∙∙∙∙∙∙∙∙∙∙∙∙∙∙∙·∙∙∙∙∙∙∙∙∙∙∙∙∙∙∙∙∙·∙∙
+    Thread subjected:  First Public Octology Release
+    T1,C5/16 (P>D) sent Tue Oct 17 2017, 0752 Gtime / 0652 Ptime
+    ∙∙∙∙∙∙∙∙∙∙∙∙∙∙∙∙∙·∙∙∙∙∙∙∙∙∙∙∙∙∙∙∙∙∙·∙∙∙∙∙∙∙∙∙∙∙∙∙∙∙∙∙·∙∙∙∙∙∙∙∙∙∙∙∙∙∙∙∙∙·∙∙∙∙∙∙∙∙∙∙∙∙∙∙∙∙∙·∙∙
+            (possibly followed by some sub-sectional information)
+
+                                           Here is the demystification for the
+                                     hieroglyphics in the second line above:
+
+    T1,C5/16 (P>D)
+
+    T1          T = Thread   I started numbering our email Threads
+                                     sequentially (1,2,3 ...) on Oct 15 2017.
+                                     I can't imagine that this number will be
+                                     of any particular use to you.   Just me.
+
+    C5/16     C = Canto    Simply the email-number (section) in
+                                     this thread.   C5/16  means Canto #5
+                                     in this thread which (so far) has
+                                     16 cantos in it.
+
+    (P>D)     P = Pip        D = Dad     P>D  are your emails to me.
+                                                     D>P  are  my  emails to you.
+
+
+                       
+
+    ​
+    Topic ❷ :::  Pip's New d8stamp - in full color
+
+         In this (ID next 2 lines) email:
+
+    ∙∙∙∙∙∙∙∙∙∙∙∙∙∙∙∙∙·∙∙∙∙∙∙∙∙∙∙∙∙∙∙∙∙∙·∙∙∙∙∙∙∙∙∙∙∙∙∙∙∙∙∙·∙∙∙∙∙∙∙∙∙∙∙∙∙∙∙∙∙·∙∙∙∙∙∙∙∙∙∙∙∙∙∙∙∙∙·∙∙
+    Thread subjected:  Testing d8g Code and Music Article
+    T11,C1/2 (P>D) sent Sun Nov 26 2017, 0938 Gtime / 0838 Ptime
+    ∙∙∙∙∙∙∙∙∙∙∙∙∙∙∙∙∙·∙∙∙∙∙∙∙∙∙∙∙∙∙∙∙∙∙·∙∙∙∙∙∙∙∙∙∙∙∙∙∙∙∙∙·∙∙∙∙∙∙∙∙∙∙∙∙∙∙∙∙∙·∙∙∙∙∙∙∙∙∙∙∙∙∙∙∙∙∙·∙∙
+
+         -- you said:
+
+    ∙∙∙∙∙∙∙∙∙∙∙∙∙∙∙∙∙∙∙∙∙∙∙∙∙∙∙∙∙∙∙∙∙∙∙∙∙∙∙∙∙∙·∙∙∙∙∙∙∙∙∙∙∙∙∙∙∙∙∙·∙∙∙∙∙∙∙∙∙∙∙∙∙∙∙∙∙·∙∙∙∙∙∙∙∙∙∙∙∙∙∙∙∙∙·∙∙
+    Sunday, November 26, 2017 - 0925 Gtime / 0825 Ptime : HBQL8P3V       C 
+
+    Dear Dad,
+
+       Above is the result of my updated e-mail header 
+       d8-stamping utility, which now copies all the 
+       HTML needed into my clipboard buffer so I can 
+       easily paste it into new compositions without 
+       having to manually specify the colors and 
+       attributes anymore.
+                                       Please let me know if it's 
+                                       looking good to you too.
+    ∙∙∙∙∙∙∙∙∙∙∙∙∙∙∙∙∙∙∙∙∙∙∙∙∙∙∙∙∙∙∙∙∙∙∙∙∙∙∙∙∙∙·∙∙∙∙∙∙∙∙∙∙∙∙∙∙∙∙∙·∙∙∙∙∙∙∙∙∙∙∙∙∙∙∙∙∙·∙∙∙∙∙∙∙∙∙∙∙∙∙∙∙∙∙·∙∙
+
+    This was your first email to me -- with the d8stamp
+    in all color -- which I have tagged   C   above -- as
+    I will be referring to it later. 
+
+                                          In the very next canto
+              (Canto #2 in that "only 2-cantos" thread)
+                                                             -- I said:
+
+    ∙∙∙∙∙∙∙∙∙∙∙∙∙∙∙∙∙∙∙∙∙∙∙∙∙∙∙∙∙∙∙∙∙∙∙∙∙∙∙∙∙∙·∙∙∙∙∙∙∙∙∙∙∙∙∙∙∙∙∙·∙∙∙∙∙∙∙∙∙∙∙∙∙∙∙∙∙·∙∙∙∙∙∙∙∙∙∙∙∙∙∙∙∙∙·∙∙
+    Thank you for this email​.   And for your
+    updated e-mail header d8-stamping utility.
+
+            I believe I'm going to continue
+                 chewing on it.   And let you
+                   know my thoughts on it --
+                       a bit later -- if that's ok.
+    ∙∙∙∙∙∙∙∙∙∙∙∙∙∙∙∙∙∙∙∙∙∙∙∙∙∙∙∙∙∙∙∙∙∙∙∙∙∙∙∙∙∙·∙∙∙∙∙∙∙∙∙∙∙∙∙∙∙∙∙·∙∙∙∙∙∙∙∙∙∙∙∙∙∙∙∙∙·∙∙∙∙∙∙∙∙∙∙∙∙∙∙∙∙∙·∙∙
+
+    This was on Sunday, November 26, 2017.
+
+    Having heard no complaints from you on
+    my intended "chewing" -- that's what I did.
+
+    Ok.   I'm done now.   And ready to reply to your:
+
+                                       Please let me know if it's 
+                                       looking good to you too.
+
+                  My sentiments follow here:
+
+      A  
+
+    Essentially the last email that you sent to me
+    -- with the d8stamp in all black -- was the one
+    with the ID in the next 2 lines.
+
+    ∙∙∙∙∙∙∙∙∙∙∙∙∙∙∙∙∙·∙∙∙∙∙∙∙∙∙∙∙∙∙∙∙∙∙·∙∙∙∙∙∙∙∙∙∙∙∙∙∙∙∙∙·∙∙∙∙∙∙∙∙∙∙∙∙∙∙∙∙∙·∙∙∙∙∙∙∙∙∙∙∙∙∙∙∙∙∙·∙∙
+    Thread subjected:  First Public Octology Release
+    T1,C3/16 (P>D) sent Mon Oct 16 2017, 0637 Gtime / 0537 Ptime
+    ∙∙∙∙∙∙∙∙∙∙∙∙∙∙∙∙∙·∙∙∙∙∙∙∙∙∙∙∙∙∙∙∙∙∙·∙∙∙∙∙∙∙∙∙∙∙∙∙∙∙∙∙·∙∙∙∙∙∙∙∙∙∙∙∙∙∙∙∙∙·∙∙∙∙∙∙∙∙∙∙∙∙∙∙∙∙∙·∙∙
+
+    This was your d8stamp in that one:
+
+    Monday, October 16, 2017, 0626 Gtime / 0526 Ptime HAGM5QpH       A  
+
+      B  
+
+    But -- the following day -- in the same thread (2 cantos down)
+    -- I received the beginning of your tweaking the d8stamp.
+
+    That email's ID is here -- in the next 2 lines.
+
+    ∙∙∙∙∙∙∙∙∙∙∙∙∙∙∙∙∙·∙∙∙∙∙∙∙∙∙∙∙∙∙∙∙∙∙·∙∙∙∙∙∙∙∙∙∙∙∙∙∙∙∙∙·∙∙∙∙∙∙∙∙∙∙∙∙∙∙∙∙∙·∙∙∙∙∙∙∙∙∙∙∙∙∙∙∙∙∙·∙∙
+    Thread subjected:  First Public Octology Release
+    T1,C5/16 (P>D) sent Tue Oct 17 2017, 0752 Gtime / 0652 Ptime
+    ∙∙∙∙∙∙∙∙∙∙∙∙∙∙∙∙∙·∙∙∙∙∙∙∙∙∙∙∙∙∙∙∙∙∙·∙∙∙∙∙∙∙∙∙∙∙∙∙∙∙∙∙·∙∙∙∙∙∙∙∙∙∙∙∙∙∙∙∙∙·∙∙∙∙∙∙∙∙∙∙∙∙∙∙∙∙∙·∙∙
+
+    Here is your d8stamp from that one:
+
+    Tuesday, October 17, 2017, 0707 Gtime / 0607 Ptime HAHM67D7       B  
+
+    ... and we see that only the very-tail-end is in living technicolor.
+
+                         Kinda pretty -- huh ?      Yes.   I agree.
+
+      C  
+
+    And then -- 40 days hence -- I received what
+    appeared to be the final version of said tweakery.
+
+              That email's ID is here -- in the next 2 lines.
+
+    ∙∙∙∙∙∙∙∙∙∙∙∙∙∙∙∙∙·∙∙∙∙∙∙∙∙∙∙∙∙∙∙∙∙∙·∙∙∙∙∙∙∙∙∙∙∙∙∙∙∙∙∙·∙∙∙∙∙∙∙∙∙∙∙∙∙∙∙∙∙·∙∙∙∙∙∙∙∙∙∙∙∙∙∙∙∙∙·∙∙
+    Thread subjected:  Testing d8g Code and Music Article
+    T11,C1/2 (P>D) sent Sun Nov 26 2017, 0938 Gtime / 0838 Ptime
+    ∙∙∙∙∙∙∙∙∙∙∙∙∙∙∙∙∙·∙∙∙∙∙∙∙∙∙∙∙∙∙∙∙∙∙·∙∙∙∙∙∙∙∙∙∙∙∙∙∙∙∙∙·∙∙∙∙∙∙∙∙∙∙∙∙∙∙∙∙∙·∙∙∙∙∙∙∙∙∙∙∙∙∙∙∙∙∙·∙∙
+
+         As you can see -- it is 10 threads (and 40 days) later
+         than the earlier one (on Tue Oct 17 2017).
+
+              And here is your d8stamp from that one:
+
+    Sunday, November 26, 2017 - 0925 Gtime / 0825 Ptime : HBQL8P3V       C  
+
+    ... with the technicolor now running entirely from stem to stern.
+
+         And the question is  :::  Do I like it ?
+
+              And my answer ?    I do not.   Why ?
+
+                   Because I can't read the information
+                   that is very important to me -- which
+                   is:  everything in front of the 
+
+                                     : HBQL8P3V
+
+         This particular evaluator's (me's) opinion
+         (and suggestion) would be to return to the   B   version.
+
+                                     Nuff sed.
+
+
+                       
+
+    ​
+    Topic ❸  :::  Little Happinesses
+
+         As you know -- from my telling you:  I save things.
+         Mostly paper (and books).   But other stuff too.
+
+    Some (especially papers) are filed nicely in dozens of
+    3-ring binders -- or in multiple 4-drawer filing cabinets.  
+
+         And books (plus CDs, and DVDs) in bookcases.
+
+    But -- I've pretty well run out of space for my accumulations.  
+    So.   Boxes take up the chore beyond the more preferred casery.  
+
+                   H'ever.   Locating items -- in about 100
+                   (or so) boxes -- am not an easy task.
+
+    And -- often (depending on the urgentness of the missing bauble)
+    I just write myself a little note:  Find Urdangs -- and stick it afore
+    myself -- above my desk -- where it will remind me that I want to
+    do this sometime before 2076.
+
+                   
+    ​
+    Well.   I did this beaucoup months ago.   And.   Since I live in
+    a government subsidized apartment building -- they conduct
+    an annual inspection of our units once a year (every mid-January).
+
+                   So.   In my final preparations for this year's
+                   scrutiny -- at 0823 on the Tuesday morning
+                   of January 16th 2018 -- there they were.  
+
+              Inside a little box that I just happened to open
+              -- because it was slightly caving -- causing the
+              boxes above it to be precariously tilting. 
+
+    Normally -- one would consider this a vexation / an annoyance
+    / irritation / a nuisance / hassel / a frustration factor.  
+
+               But I knew otherwise.   Who was it that selected
+               that very box to capitulate today ?   Of course --
+                        the Supreme Gift-Giver.   My Father.
+
+                              
+    ​
+                 And there -- inside -- were my two Urdangs.  
+             The one on prefixes -- and the other -- on suffixes.
+
+     Now.   All I have to do is write myself another note -- saying: 
+
+             Find the "Find Urdangs" post-it -- and take it down.
+
+        But.   That's a "later for you" -- something a friend of mine
+           used to say back in 1964 -- when some "agenda item"
+                      was of little importance at the moment.
+
+                   
+    ​
+            So.  I said, "Thank you Father" -- and smiled gleefully
+                      -- for most of the remainder of the day.
+
+
+                       
+
+
+    ​Topic ❹  :::  The Narration Project
+
+                    On Sunday, November 5, 2017 @ 1230 Ptime
+                    -- you sent me the "FTR-000" audio recording
+                    that you did of the "James Allen 1902" script.
+
+                                        10-Q sow much.
+
+          Q#1 - Did you sit or stand to do your narration ?
+
+          Q#2 - Did you do your recording wearing headphones ?
+
+          Q#3 - If yes -- was the headphone sound delayed at all ?
+
+
+                       
+
+
+     Topic ❺  :::  Angie's New Homestead
+
+                    I just received a new address for Angie.
+                    In case you don't yet have it -- it is:
+
+                               306 West Worley Street 
+                             Columbia MO 65203-3326
+
+
+                       
+
+
+    Topic ❻  :::  Incidental Questions
+
+          Q#4 - Which edition (date) of the NIV Bible do you have ?
+
+                   
+    ​
+                    About a year ago -- I sent you a "Tim & Katy" mug.
+
+          Q#5 - Did you receive it ?
+
+          Q#6 - Do you drink coffee ?
+
+                    Reminder  :::  Dr. Pete's book hits the stands today.
+
+          Q#7 - Were you planning to pick it up ?
+
+
+                       
+
+
+               I love you Philip.
+
+    -Dad  :)
+             
+    difstamp-1029384Tuesday, January 23, 2018  -  1143 Gtime / 1043 Ptime75647382910-
+
+
+

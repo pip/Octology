@@ -1,0 +1,43 @@
+ Max:fixAC_BumperBoat.max|ZN_Pirate_02.max hangingCookr,rm xtraneousP4stuf,auto set clientz2rel pathz(in .ini filz?)&&cnv utl4all old from abs2rel,
+  readKevz eml prntout,askErth4 2nd box,stuDVCS,write proposal,
+ LvlEdt:stuPlgIn,stuXMLpars|gen,stuDirIO,stuMousEv dox,wikiPikPt inconsistency,add abilities,sy,mkXRefz instd of objz,sync,bldCookr,resrcz,etc.,
+   C:\Projects\Games\Carnival\Assets\(CarnivalParamTypes|Raw\ObjectDefs\*).xml
+  ChrisFelts:recmndz:we establsh nw name4our typicalXRefObjz,add panl in obj create,lern from many GameObjz inFirefitrLvl,coHvok const siz ringz,ParmGeoHlp?,
+  Gian      :HTTP://Intranet/wiki/index.php?title=Design_Department_Feedback
+ Pip:fix .vimrc B 2`bak %`,fix updtdb,addMxScrpRef2sy.vim,rsyn2LBox,mk moreRxvt.cfgz4PTok&&2replaceCygWin.bat w/goodTxtSelectn,fixMPlyr,
+  stuSCons.Org,stuWii bld proc&&mk utl,auditCookr,coordWiiAutoInstlr w/Earth again,rsrch,plan,&&drft proposl4Bzr,nm stndrdz,depz,cookr,bldz,pipelin,&&workfloz,
+  stu[gs]etfacl&&CPAN*.pm2!rmACLs4`c(p|hmod)`or mk4NT .(pl|bat)2RecuFix dirz(!drv),tstWii bld inPipCyg[+-]ACLs,cnfirmWii bldz w/fix(wethr in(Pip|Orig)Cyg),
+  updtWiki:Wii_setup_guide&&.bat2reflectC:\Projects\Middleware\Nintendo\wii\RVL_SDK\RVL_NDEV.bat as rt vers&&ck difz,old plan was:
+    cnfirm%ENV&&get /c/NDEV/RVL_SDK-2_4-061130/RVL_NDEV.bat2run fromWinExplr w/dflt bash(!zsh),
+  mkAutoPAR.pl utl2tk all stepz fromHTTP://Intranet/wiki/index.php?title=Perl aftrAP588822instl&&hndl all othr setup(asPAR.exe itself?;))
+  P4P:HTTP://WWW.Sen.Ca.Gov/ftp/SEN/cngplan/CD36.HTM, stuAutoBld in/Projects/Tools/AutomatedBuild/2.0/Source/&&C#...ack!=(
+ Notz:Max9Scrp:"C:\Program Files\Autodesk\3ds Max 9\help\maxscript.chm",Max9Linx:HTTP://ScriptSpot.Com
+  WikiLinx:HTTP://Intranet/wiki/index.php?title=(Wii_setup_guide|Resource_Cooker_Guide|Max_9)
+  Cookr:after cookng filz:/Projects/Games/Carnival/Assets/Fun\ Park.msbuild gets created w/steps,(pre|post)-bld steps should probably be added there in or
+    around Task or ThreadedTask,we use MSBld v2.0frmwrk&&latest(as of 818DwDK)is v3.5frmwrk of .Net(suposdly dn-cmpat,released few weeks ago)suprts MltiThrd,
+    when AC_RT_CoilsPegs.max refs Games/Carnival/Concepts/Games/finals/Classic_RingToss_Game.jpg && lc() on that so mkCookr not die on that shit,ckTimeLimt,
+  MSBld:HTTP://MSDN2.MicroSoft.Com/en-us/library/0k6kkbsd.aspx
+  (dox) HTTP://Channel9.MSDN.Com/wiki/default.aspx/MSBuild.HomePage
+        HTTP://Blogs.MSDN.Com/msbuild/archive/tags/Futures/default.aspx                 (from the MSBuild Team's Blog)
+        HTTP://Channel9.MSDN.Com/wiki/default.aspx/MSBuild.RunACustomToolFromMyProject  (... looks like what you may want to accomplish. -Kev)
+  bld:Andy'sUtl:/Projects/Games/Core/Projects/(Make|VisualStudio2005) TstFilz:/Projects/Middleware/Nintendo/wii/RVL_SDK/build/tools/TexConv/src/*.cpp
+    FunPark:when cmpilng,mk folowng filz+w by`p4 edit`(b4VisStu open proj):
+      /c/Proj*/Games/C(arnival/Development/Game/Wi(i|n32)/FunPark([DR]|_(Debug|Release))\.e(lf|xe)|ore/Interface/Lib/Wi(i|n32)/Core_(Debug|Release)\.(a|lib))
+      /c/Proj*/Games/Carnival/Source/Game/FunPark.vcproj  ... where abov probably uses following depot paths (which I had as a ChLs at 814I5g5 b4 revert):
+       //depot/Games/Carnival/3.0-CoreSandbox/Source/Game/FunPark.vcproj.vspscc               # add
+       //depot/Games/Carnival/3.0-CoreSandbox/Source/Game/FunPark.vssscc                      # add
+       //depot/Games/Carnival/3.0/Development/Game/Wii/FunParkD.elf                           # edit
+       //depot/Games/Carnival/3.0/Development/Game/Wii/FunParkR.elf                           # edit
+       //depot/Games/Carnival/3.0/Development/Game/Win32/FunPark_Debug.exe                    # edit
+       //depot/Games/Carnival/3.0/Development/Game/Win32/FunPark_Release.exe                  # edit
+       //depot/Games/Carnival/3.0/Source/Game/FunPark.sln                                     # edit
+       //depot/Games/Carnival/3.0/Source/Game/FunPark.vcproj                                  # edit
+       //depot/Games/Core    /3.0/CoreTestApp/CoreTestApp.vcproj                              # edit
+       //depot/Games/Core    /3.0/Interface/Lib/Wii/Core_Debug.a                              # edit
+       //depot/Games/Core    /3.0/Interface/Lib/Wii/Core_Release.a                            # edit
+       //depot/Games/Core    /3.0/Interface/Lib/Win32/Core_Debug.lib                          # edit
+       //depot/Games/Core    /3.0/Interface/Lib/Win32/Core_Release.lib                        # edit
+       //depot/Games/Core    /3.0/Projects/VisualStudio2005/BuildWii.bat                      # edit
+       //depot/Games/Core    /3.0/Projects/VisualStudio2005/Core.vcproj                       # edit
+      Wii:rsrch precmpild hedrz onCodWar,maybe portMkfil2DOS2avoid2-pass`sed`4pathz&&namzD2Ucnv,
+          goals:ditchVisStuIntgrtr,fix .cpp cmpilz&&genrl lnkr erz retnd2VisStu outp pane,add#def4$User inWiiMkflz,

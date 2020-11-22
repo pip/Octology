@@ -1,0 +1,41 @@
+[4DOS]
+InstallPath=c:\pip\4dos\
+ColorDir=dirs:bright cyan;exe com bat btm:bright blue;ini cfg log dir:bright yellow;bbl txt doc rtf wpd 3ds bld:bright white;htm html:red;mod s3m xm it fcd:cyan;zip a0* lzh arj:bright magenta;asm c cpp p pas adb jav java pl plx cgi:bright green;h ads o:white;wav voc smp:magenta;bak sys drv:yellow;dat bin hlp:bright black;*:bright red
+PopupWinColors=Cyan on Blue
+Swapping=xms, c:\
+Alias=512
+EnvFree=512
+Environment=1024
+History=2048
+LocalHistory=No
+LocalAliases=No
+LocalDirHistory=No
+BatchEcho=No
+EditMode=Insert
+CursorOver=100
+CursorIns=10
+UMBLoad=No
+UMBHistory=No
+UMBDirHistory=No
+UMBEnvironment=No
+UMBAlias=No
+TabStops=4
+BrightBG=Yes
+HistCopy=Yes
+AppendToDir=No
+FuzzyCD=3
+Win95SFNSearch=No
+AmPm=Yes
+BeepLength=1
+BeepFreq=110
+CDDWinColors=Bright Yellow on Blue
+ListboxBarColors=Bright Green on Blue
+[ReleaseInfo]
+Description=4NT Version 3.02
+[4NT]
+ColorDir=dirs:bright cyan;exe com bat btm:bright blue;ini cfg log dir:bright yellow;bbl txt doc rtf wpd 3ds bld:bright white;htm html:red;mod s3m xm it fcd:cyan;zip a0* lzh arj:bright magenta;asm c cpp p pas adb jav java pl plx cgi:bright green;h ads o:white;wav voc smp:magenta;bak sys drv:yellow;dat bin hlp:bright black;*:bright red
+PopupWinColors=Cyan on Blue
+EditMode=Insert
+AppendToDir=Yes
+BatchEcho=No
+EvalMax=8

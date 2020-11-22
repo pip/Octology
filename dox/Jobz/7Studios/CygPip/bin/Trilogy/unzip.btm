@@ -1,0 +1,24 @@
+@echo off
+set err=0
+set dst=..
+if %2x != x set dst=%2
+if %@ext[%1]==ARJ goto ARJ
+if %@ext[%1]==ZIP goto ZIP
+if %@ext[%1]==LZH goto ZIP
+set err=1
+goto done
+
+:ARJ
+  arj x -v -y %1 %dst
+  set err=0
+  goto done
+
+:ZIP
+  gus %1 %dst
+  set err=0
+
+:done
+if %err==0 echo [PiMP]
+if %err==1 echo [FILE] [%1] not ARJ or ZIP
+unset err
+unset dst

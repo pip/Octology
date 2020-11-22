@@ -1,0 +1,603 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>Form.Validator - a framework for client-side form validation</title>
+<link rev="made" href="mailto:Gentoo@lbox.org" />
+</head>
+
+<body style="background-color: white">
+
+<p><a name="__index__"></a></p>
+<!-- INDEX BEGIN -->
+
+<ul>
+
+	<li><a href="#name">NAME</a></li>
+	<li><a href="#synopsis">SYNOPSIS</a></li>
+	<li><a href="#description">DESCRIPTION</a></li>
+	<li><a href="#methods">METHODS</a></li>
+	<ul>
+
+		<li><a href="#new_form_validator_form_">new Form.Validator(form)</a></li>
+		<li><a href="#set_field__constraint__option__">set(field, constraint, option);</a></li>
+		<ul>
+
+			<li><a href="#the_constraint_object_s_standard_properties">The constraint object's standard properties</a></li>
+		</ul>
+
+		<li><a href="#get__"><code>get()</code></a></li>
+		<li><a href="#get_field_"><code>get(field)</code></a></li>
+		<li><a href="#reporter_report__">reporter(report);</a></li>
+		<li><a href="#validate__"><code>validate()</code></a></li>
+		<li><a href="#validate_field______">validate(field, ...)</a></li>
+		<li><a href="#validateandalert">validateAndAlert</a></li>
+	</ul>
+
+	<li><a href="#builtin_validation_functions">BUILT-IN VALIDATION FUNCTIONS</a></li>
+	<ul>
+
+		<li><a href="#notblank">notBlank</a></li>
+		<li><a href="#notzero">notZero</a></li>
+	</ul>
+
+	<li><a href="#validation_function_generators">VALIDATION FUNCTION GENERATORS</a></li>
+	<ul>
+
+		<li><a href="#makelengthmin_number_"><code>makeLengthMin(number)</code></a></li>
+		<li><a href="#makelengthmax_number_"><code>makeLengthMax(number)</code></a></li>
+		<li><a href="#makevaluemin_number_"><code>makeValueMin(number)</code></a></li>
+		<li><a href="#makevaluemax_number_"><code>makeValueMax(number)</code></a></li>
+		<li><a href="#makematchregex_regex_"><code>makeMatchRegex(regex)</code></a></li>
+		<li><a href="#makenotmatchregex_regex_"><code>makeNotMatchRegex(regex)</code></a></li>
+		<li><a href="#makeoptional_funktion_"><code>makeOptional(funktion)</code></a></li>
+	</ul>
+
+	<li><a href="#writing_your_own_validation_functions">WRITING YOUR OWN VALIDATION FUNCTIONS</a></li>
+	<li><a href="#writing_your_own_validation_reporters">WRITING YOUR OWN VALIDATION REPORTERS</a></li>
+	<li><a href="#inspiration">INSPIRATION</a></li>
+	<li><a href="#to_do">TO DO</a></li>
+	<li><a href="#author">AUTHOR</a></li>
+</ul>
+<!-- INDEX END -->
+
+<hr />
+<p>
+</p>
+<h1><a name="name">NAME</a></h1>
+<p>Form.Validator - a framework for client-side form validation</p>
+<p>
+</p>
+<hr />
+<h1><a name="synopsis">SYNOPSIS</a></h1>
+<p>First, make a form with an <code>onsubmit</code> handler:</p>
+<pre>
+  &lt;form name=&quot;stuff&quot;
+    action=&quot;process_stuff.mas&quot;
+    method=&quot;post&quot;
+    onsubmit=&quot;return fv.validate()&quot;&gt;</pre>
+<pre>
+    name: 
+      &lt;input name=&quot;name&quot; type=&quot;text&quot;/&gt;&lt;br/&gt;</pre>
+<pre>
+    category:
+      &lt;select name=&quot;category_id&quot;&gt;
+        &lt;option value=&quot;0&quot;&gt;Select a category&lt;/option&gt;
+        &lt;option value=&quot;1&quot;&gt; cat 1 &lt;/option&gt;
+        &lt;option value=&quot;2&quot;&gt; cat 2 &lt;/option&gt;
+        &lt;option value=&quot;3&quot;&gt; cat 3 &lt;/option&gt;
+      &lt;/select&gt;
+      &lt;br/&gt;</pre>
+<pre>
+    cost:
+      &lt;input name=&quot;cost&quot; type=&quot;text&quot;/&gt;&lt;br/&gt;</pre>
+<pre>
+    &lt;input type=&quot;submit&quot; name=&quot;submit&quot; value=&quot;Save&quot; /&gt;
+  &lt;/form&gt;</pre>
+<p>Then, define the reporting method and your constraints:</p>
+<pre>
+  &lt;script&gt;
+    fv = new Form.Validator(document.stuff);
+    fv.reporter('AlertAll');    // show a pop-up with all errors
+    fv.set('name',        'notBlank',           &quot;Name is required.&quot;);
+    fv.set('name',        fv.makeLengthMax(32), &quot;Name is too long.&quot;);
+    fv.set('category_id', 'notZero',            &quot;Please pick a category.&quot;);
+    fv.set('cost',        fv.makeValueMin(5),   &quot;Cost must be 5 or greater.&quot;);
+    fv.set('cost',        fv.makeValueMax(100), &quot;Cost may not exceed 100.&quot;);
+  &lt;/script&gt;</pre>
+<p>At any time, you can change the way validation is reported:</p>
+<pre>
+  &lt;script&gt;
+    fv.reporter('AlertAll');    // pop-up with all errors</pre>
+<pre>
+    fv.reporter('AlertFirst');  // pop-up with first error</pre>
+<pre>
+    fv.reporter('InnerHTML');   // errors placed in the innerHTML...
+                                // ...of an element
+                                // require a bit more setup.
+                                // Please consult the docs for
+                                // Form.Validator.Report.InnerHTML
+                                // for the little details
+                                // that make all the difference.
+  &lt;/script&gt;</pre>
+<p>Cliff's Notes:</p>
+<pre>
+  Learn to use set(), reporter(), and validate().</pre>
+<p>Demo Site:</p>
+<pre>
+  <a href="http://asciicker.kicks-ass.org/x/form_validator_demo.html">http://asciicker.kicks-ass.org/x/form_validator_demo.html</a></pre>
+<p>
+</p>
+<hr />
+<h1><a name="description">DESCRIPTION</a></h1>
+<p><em>Form.Validator</em> provides a framework for form validation that allows
+one to concisely define validation constraints.  The readability of the
+code you have to write was of prime concern, and tangential to that was
+the notion of keeping typing to a reasonable minimum.  The goal was to
+provide an expressive API that would be easy to read as well as write,
+requiring the programmer to only learn a few methods to do his work.</p>
+<p>The method that you will be most concerned with will be <code>set()</code>.  It is
+through <code>set()</code> that input fields will be associated with constraint
+functions, and you'll call this method repeatedly for each constraint
+you want to define.  (There is a lot of opportunity for vertical
+alignment of parameters for those of you who are ASCII-artistically
+inclined.)</p>
+<p>The current collection of validation functions and function generators
+is fairly small, but they should be expressive enough for almost any
+need.  Learn them well, but when they're just not enough, know that
+you can always write your own validation functions to test anything
+else you need.</p>
+<p>Finally, one of the most intersting features of <em>Form.Validator</em> is
+that you can choose different ways to report validation failure.  Using
+the <code>reporter()</code> method, you can tell a form validator to '<strong>AlertAll</strong>'
+which means display an alert pop-up that shows all validation failures
+upon unsuccessful validation.  If you want to be more modern, you can
+use '<strong>InnerHTML</strong>'.  This makes it so that you can see error messages
+being updated in divs or spans as you type into the form.  (For real
+world examples of this technique, see <a href="#inspiration">INSPIRATION</a>.)</p>
+<p>What's nice about this approach is that changing between different
+reporting mechanisms is a fairly effortless task for the programmer.
+This was the result of having a clean separation between the code that
+does validation and the code that does error reporting.</p>
+<p>The end result is a framework for form validation that (I hope) will
+help a lot of programmers with their client-side validation needs.</p>
+<p>
+</p>
+<hr />
+<h1><a name="methods">METHODS</a></h1>
+<p>
+</p>
+<h2><a name="new_form_validator_form_">new Form.Validator(form)</a></h2>
+<p>This is the constructor.  It takes a form object as its only parameter.</p>
+<p><strong>Example</strong>:</p>
+<pre>
+  var fv = new Form.Validator(document.stuff);
+  var fv2 = new Form.Validator(document.forms[0]);</pre>
+<p>
+</p>
+<h2><a name="set_field__constraint__option__">set(field, constraint, option);</a></h2>
+<p>This method associates a form field with a validation function
+and an error message.</p>
+<p>The first parameter is the name of a form field.</p>
+<p>The second parameter is either a string with the name of a
+built-in validation function (like <code>notBlank</code> or <code>notZero</code>),
+or an actual function that can perform a validation test.</p>
+<p>The third parameter is either a string that will be used when
+the validation fails or an object with properties that will be
+used by a report object to display validation results.
+<em>Form.Validator.Report.InnerHTML</em> is currently the only class
+that will take advantage of this.  The standard properties for
+the object form of the 3rd parameter are as follows:</p>
+<p>
+</p>
+<h3><a name="the_constraint_object_s_standard_properties">The constraint object's standard properties</a></h3>
+<dl>
+<dt><strong><a name="item_onfailure">onFailure</a></strong><br />
+</dt>
+<dd>
+Message to use when validation fails.  (Internally, the 3rd parameter
+gets assigned to onFailure when it's passed in as a string.)
+</dd>
+<p></p>
+<dt><strong><a name="item_onsuccess">onSuccess</a></strong><br />
+</dt>
+<dd>
+Message to use when validation succeeds.  (InnerHTML will use this
+if you provide it.)
+</dd>
+<p></p>
+<dt><strong><a name="item_constraint">constraint</a></strong><br />
+</dt>
+<dd>
+This is the function used for testing a field.  It should be able to
+take a <em>Form.Validator</em> object and a field name as parameters.
+(Internally, the 2nd parameter is assigned to constraint.)
+</dd>
+<p></p>
+<dt><strong><a name="item_field">field</a></strong><br />
+</dt>
+<dd>
+This is the name of the field that is being checked.  (Internally, the
+first paramter is assigned to field.)
+</dd>
+<p></p></dl>
+<p><strong>Example</strong>:  The standard way.</p>
+<pre>
+  // using a built-in validator function
+  fv.set('name', 'notBlank', &quot;Name must be filled in.&quot;);</pre>
+<p><strong>Example</strong>:  Using a custom validation function.</p>
+<pre>
+  // using a custom validator
+  fv.set('category_id',
+    function(fv, field) {
+      if (fv.form[field].value == 3) {
+        return false;
+      } else {
+        return true;
+      }
+    },
+    &quot;Problems always come in 3s.  Bad choice, my friend.&quot;
+  );</pre>
+<p><strong>Example</strong>:  Passing an object in the third parameter</p>
+<pre>
+  fv.reporter('InnerHTML');
+  fv.set(
+    'email', 
+    'notBlank', 
+    {
+      onFailure: 'Please fill in an email address',
+      onSuccess: 'OK'
+    }
+  );</pre>
+<p>Note that the following 2 statements are equivalent:</p>
+<pre>
+  fv.set('x', 'notBlank', { onFailure: 'X is required' });
+  fv.set('x', fv.notBlank, 'X is required');</pre>
+<p>
+</p>
+<h2><a name="get__"><code>get()</code></a></h2>
+<p>
+</p>
+<h2><a name="get_field_"><code>get(field)</code></a></h2>
+<p>This method returns a list of the constraints for a given input field.
+If a field is not passed in, this method will return all constraints
+in the order that they were defined.</p>
+<p><strong>Example</strong>:</p>
+<pre>
+  var name_constraints = fv.get('name');   // constraints for name
+  var all_constraints  = fv.get();         // Array of all constraints</pre>
+<p>
+</p>
+<h2><a name="reporter_report__">reporter(report);</a></h2>
+<p>This method allows one to specify the way validation errors will be reported
+back to the user.  Your choices are as follows:</p>
+<dl>
+<dt><strong><a name="item_alertall">AlertAll</a></strong><br />
+</dt>
+<dd>
+This is the classical approach where all validation messages are joined
+together and displayed in an alert pop-up.  
+See <em>Form.Validator.Report.AlertAll</em>.
+</dd>
+<p></p>
+<dt><strong><a name="item_alertfirst">AlertFirst</a></strong><br />
+</dt>
+<dd>
+This will stop on the first validation error and display an alert
+pop-up.  After the pop-up is closed, it will focus on the form element
+where the validation error occured.
+See <em>Form.Validator.Report.AlertFirst</em>.
+</dd>
+<dd>
+<p>(I affectionately refer to this as Indian-style validation.)</p>
+</dd>
+<p></p>
+<dt><strong><a name="item_innerhtml">InnerHTML</a></strong><br />
+</dt>
+<dd>
+This was inspired by the way <a href="http://www.remeberthemilk.com/">http://www.remeberthemilk.com/</a> handles
+form validation during user registration.  If you try to create an
+account on that site, you'll see that it validates the form as you
+type, and validation messages are placed in the innerHTML of an element
+right next to the form input it references.
+</dd>
+<dd>
+<p>I was so impressed by that validation technique that I rearchitected
+<em>Form.Validator</em> so that it could accomodate multiple validation styles
+with this particular style in the forefront of my thoughts.</p>
+</dd>
+<dd>
+<p>See <em>Form.Validator.Report.InnerHTML</em>.</p>
+</dd>
+<p></p></dl>
+<p><strong>Example</strong>:</p>
+<pre>
+  // You can change the reporting method at any time.
+  fv.reporter('AlertFirst');
+  fv.validate();
+  fv.reporter('AlertAll');
+  fv.validate();</pre>
+<p>Note that you can also pass an object to the <code>reporter()</code> method.  The
+minimum requirement is that the object support a start(), <a href="#item_run"><code>run()</code></a> and <a href="#item_finish"><code>finish()</code></a>
+method.</p>
+<p><strong>Example</strong>:</p>
+<pre>
+  fv.reporter(new Form.Validator.Report.AlertFirst(fv));</pre>
+<p>This is effectively the same as:</p>
+<pre>
+  fv.reporter('AlertFirst');</pre>
+<p>
+</p>
+<h2><a name="validate__"><code>validate()</code></a></h2>
+<p>
+</p>
+<h2><a name="validate_field______">validate(field, ...)</a></h2>
+<p>This method runs through the list of constraints in the order they were
+defined.  It also executes the <a href="#item_start"><code>start()</code></a>, <a href="#item_run"><code>run()</code></a>, and <a href="#item_finish"><code>finish()</code></a> methods of
+the report object at the appropriate times.</p>
+<p>If any of the constraints failed, this method will return false.  Otherwise, 
+it'll return true.</p>
+<p><strong>Example</strong>: Validating a form all at once</p>
+<pre>
+  &lt;form action=&quot;/process&quot; method=&quot;post&quot; onsubmit=&quot;return fv.validate()&quot;&gt;
+    ...                                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  &lt;/form&gt;</pre>
+<p><strong>Example</strong>: Also validating one field at a time</p>
+<pre>
+  &lt;form action=&quot;/process&quot; method=&quot;post&quot; onsubmit=&quot;return fv.validate()&quot;&gt;
+    &lt;label&gt;name&lt;/label&gt;
+    &lt;input type=&quot;text&quot; name=&quot;name&quot; onkeyup=&quot;fv.validate('name')&quot; /&gt;
+    &lt;!--                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ --&gt;
+    &lt;label&gt;email&lt;/label&gt;
+    &lt;input type=&quot;text&quot; name=&quot;name&quot; onkeyup=&quot;fv.validate('email')&quot; /&gt;
+    &lt;!--                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ --&gt;
+  &lt;/form&gt;</pre>
+<p>
+</p>
+<h2><a name="validateandalert">validateAndAlert</a></h2>
+<p><strong>*** DEPRECATED ***</strong></p>
+<p>This function is intended to be used as an <code>onsubmit</code> handler on a form.  It
+runs through the validation tests in the order they were defined and displays
+an alert box if any of the validation tests failed.  Then it will return
+<code>false</code> to prevent the form from being submitted.</p>
+<p><strong>Example</strong>:</p>
+<pre>
+  &lt;form name=&quot;stuff&quot;
+    action=&quot;process_stuff.mas&quot;
+    method=&quot;POST&quot;
+    onsubmit=&quot;return fv.validateAndAlert()&quot;&gt;</pre>
+<p>
+</p>
+<hr />
+<h1><a name="builtin_validation_functions">BUILT-IN VALIDATION FUNCTIONS</a></h1>
+<p>
+</p>
+<h2><a name="notblank">notBlank</a></h2>
+<p>For inputs that shouldn't be blank, use this test function.</p>
+<p>
+</p>
+<h2><a name="notzero">notZero</a></h2>
+<p>For inputs that shouldn't be 0, use this test function.</p>
+<p>
+</p>
+<hr />
+<h1><a name="validation_function_generators">VALIDATION FUNCTION GENERATORS</a></h1>
+<p>
+</p>
+<h2><a name="makelengthmin_number_"><code>makeLengthMin(number)</code></a></h2>
+<p>This method returns a function that will ensure that the contents
+of a field are at least n characters long.</p>
+<p><strong>Example</strong>:</p>
+<pre>
+  fv.set(
+    'name',
+    fv.makeLengthMin(3),
+    &quot;The name field must be at least 3 characters long&quot;
+  );</pre>
+<p>
+</p>
+<h2><a name="makelengthmax_number_"><code>makeLengthMax(number)</code></a></h2>
+<p>This method returns a function that will ensure that the contents
+of a field are not more than n characters long.</p>
+<p><strong>Example</strong>:</p>
+<pre>
+  fv.set(
+    'name',
+    fv.makeLengthMax(10),
+    &quot;The name field may not be more than 10 characters long&quot;
+  );</pre>
+<p>
+</p>
+<h2><a name="makevaluemin_number_"><code>makeValueMin(number)</code></a></h2>
+<p>This method returns a function that will ensure that the value
+of a field is at least n.</p>
+<p>
+</p>
+<h2><a name="makevaluemax_number_"><code>makeValueMax(number)</code></a></h2>
+<p>This method returns a function that will ensure that the value
+of a field is less than or equal to n.</p>
+<p>
+</p>
+<h2><a name="makematchregex_regex_"><code>makeMatchRegex(regex)</code></a></h2>
+<p>This method returns a function that will match the regex passed
+to it.</p>
+<p><strong>Example</strong>:</p>
+<pre>
+  fv.set(
+    'country',
+    fv.makeMatchRegex(/CA|US/),
+    &quot;Sorry, we do not ship outside of Canada or the US.&quot;
+  );</pre>
+<p>
+</p>
+<h2><a name="makenotmatchregex_regex_"><code>makeNotMatchRegex(regex)</code></a></h2>
+<p>This method returns a function that will make sure that the
+specified input does not match the given regex.</p>
+<p><strong>Example</strong>:</p>
+<pre>
+  fv.set(
+    'do_i_look_fat_in_this',
+    fv.makeNotMatchRegex(/[Yy]es/),
+    &quot;I hate you!&quot;
+  );</pre>
+<p>
+</p>
+<h2><a name="makeoptional_funktion_"><code>makeOptional(funktion)</code></a></h2>
+<p>Sometimes, you only want to check a constraint if something was
+typed in.  That's when you'd use this method.</p>
+<p><strong>Example</strong>:</p>
+<pre>
+  var naive_email_regex = /^([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})$/;
+  fv.set(
+    'email',
+    fv.makeOptional(fv.makeMatchRegex(naive_email_regex)),
+    'If you're going to type in an email address, type it right!'
+  );</pre>
+<p>Thus, you can wrap any function with fv.makeOptional to make it
+an optional constraint.  (Optional is defined as ``check if the field
+is not blank''.)</p>
+<p>
+</p>
+<hr />
+<h1><a name="writing_your_own_validation_functions">WRITING YOUR OWN VALIDATION FUNCTIONS</a></h1>
+<p>If the provided validation tests cannot fulfill your needs, you may add
+validation functions of your own.  They should expect to receive 2
+parameters.  The first is the Form.Validator object (fv) and the second
+is the name of the field that the function needs to test.  To get at the
+actual form, access <code>fv.form</code>.</p>
+<p><strong>Example</strong>:</p>
+<pre>
+  function notOdd (fv, field) {
+    var form = fv.form;
+    if (form.field.value &gt; 0 &amp;&amp; form.field.value &amp; 0x01) {
+      return false;
+    } else {
+      return true;
+    }
+  };</pre>
+<pre>
+  fv.set('number', notOdd, &quot;Only positive, even numbers are allowed.&quot;);</pre>
+<p>Furthermore, if you feel compelled to add this method to the Form.Validator
+class, you can do this:</p>
+<pre>
+  Form.Validator.prototype.notOdd = notOdd;</pre>
+<p>Now that we've added the <code>notOdd</code> method, all Form.Validator objects 
+can test to see whether a field has an odd value or not.</p>
+<p>
+</p>
+<hr />
+<h1><a name="writing_your_own_validation_reporters">WRITING YOUR OWN VALIDATION REPORTERS</a></h1>
+<p>Currently, you get to pick from</p>
+<pre>
+  Form.Validator.Report.AlertAll,
+  Form.Validator.Report.AlertFirst, and
+  Form.Validator.Report.InnerHTML</pre>
+<p>as a way to report what went wrong.  If you want to implement your own
+way of reporting that works within the <em>Form.Validator</em> framework, here
+are the methods your object needs to implement.</p>
+<dl>
+<dt><strong><a name="item_the_constructor">The Constructor</a></strong><br />
+</dt>
+<dd>
+The constructor will be passed a <em>Form.Validator</em> object with which
+it can do whatever it wants.  It can be useful, so keeping it in a
+property for later use is recommended.
+</dd>
+<p></p>
+<dt><strong><a name="item_start"><code>start(constraints)</code></a></strong><br />
+</dt>
+<dd>
+Before validation starts, this method will be called with a list of
+constraints that will be checked in this pass.  You can use this
+opportunity to perform initializaton.
+</dd>
+<p></p>
+<dt><strong><a name="item_run"><code>run(ok, constraint)</code></a></strong><br />
+</dt>
+<dd>
+Implement a method that takes a boolean value and a constraint object.
+The boolean value will contain the result of the constraint function.
+If it's false, that means the constraint failed, so you'll want
+to update some data structures so that you'll be able to display an
+error message.
+</dd>
+<p></p>
+<dt><strong><a name="item_finish"><code>finish()</code></a></strong><br />
+</dt>
+<dd>
+The finish method is executed after all the validations have been
+performed.  If you haven't done so already, now would be a good time
+to actually display any messages concerning validation failures.
+</dd>
+<p></p></dl>
+<p>If this object prototype is placed within the Form.Validator.Report.*
+namespace, the <code>reporter()</code> method will be able to see it.  For
+example, if you created something called Form.Validator.Report.SVG,
+you could tell your <em>Form.Validator</em> object to use it by saying:</p>
+<pre>
+  fv.reporter('SVG');</pre>
+<p>If, for whatever reason, you don't want to put your reporter in the
+Form.Validator.Report.* namespace, that's fine.  As long as you support
+the <a href="#item_start"><code>start()</code></a>, <a href="#item_run"><code>run()</code></a>, and <a href="#item_finish"><code>finish()</code></a> methods, it will work.  The 
+only difference is that you'll have to call <code>reporter()</code> a little
+differently.  For example, if you created a report object prototype
+called My.Brilliant.Report, you'd make the validator use it by saying:</p>
+<pre>
+  fv.reporter( new My.Brilliant.Report() );</pre>
+<p>
+</p>
+<hr />
+<h1><a name="inspiration">INSPIRATION</a></h1>
+<p>Originally, I wanted to avoid repeatedly writing the same javascript
+over and over again for form validation.  I'm satisfied with how I
+tackled that problem, but new developments in form validation techniques
+have pushed me to improve this library further.  To that end, 
+I am indebted to the following implementations of form validation for
+their inspiration.</p>
+<dl>
+<dt><strong><a name="item_http_3a_2f_2frememberthemilk_2ecom_2fsignup_2f"><a href="http://rememberthemilk.com/signup/">http://rememberthemilk.com/signup/</a></a></strong><br />
+</dt>
+<dd>
+This is the first implementation of the innerHTML validation technique
+that I ever saw.  My friend, Jeremy Seitz, brought this to my attention
+for the signup page alone, and I must agree with him that it is quite
+impressive how they validate your input as you type, even making AJAX
+requests for some of their constraint checking.  If I hadn't seen this,
+I would not have been motivated to rearchitect <em>Form.Validator</em>.
+</dd>
+<p></p>
+<dt><strong><a name="item_http_3a_2f_2fmasuidrive_2ejp_2fvalidation_2findex_"><a href="http://masuidrive.jp/validation/index_en.html">http://masuidrive.jp/validation/index_en.html</a></a></strong><br />
+</dt>
+<dd>
+This is a more general implementation of the innerHTML validation
+technique that uses the Behaviour library in a clever way.  (However, It
+would have been nicer if he didn't assimilate the code of behaviour.js
+into his own library.)
+</dd>
+<p></p></dl>
+<p>
+</p>
+<hr />
+<h1><a name="to_do">TO DO</a></h1>
+<ul>
+<li><strong><a name="item_add_more_validation_functions_2e">Add more validation functions.</a></strong><br />
+</li>
+Surprisingly, <code>notBlank</code> and <code>notZero</code> alone can take you pretty far, 
+but a few more validation functions would be nice to have.
+<p></p>
+<li><strong><a name="item_be_able_to_handle_checkboxes_and_radio_buttons">Be able to handle checkboxes and radio buttons</a></strong><br />
+</li>
+Perhaps a validation function called <code>isChecked()</code> could be written.
+<p></p>
+<li><strong><a name="item_add_a_validation_function_named_2c__27isrequired_2">Add a validation function named, 'isRequired'</a></strong><br />
+</li>
+This would subsume <code>notBlank</code> and <code>notZero</code>.
+<p></p></ul>
+<p>
+</p>
+<hr />
+<h1><a name="author">AUTHOR</a></h1>
+<p>John Beppu (<a href="mailto:beppu@cpan.org">beppu@cpan.org</a>)</p>
+
+</body>
+
+</html>

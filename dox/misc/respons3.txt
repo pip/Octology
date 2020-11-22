@@ -1,0 +1,42 @@
+Written by: Philip Stuart           Date: Thursday, September 7th, 2000
+Re: Mr. Fish vs. Stuart
+
+  Following is a summary of my dispute with Mr. Fish:
+
+    Mr. Fish and I entered a contract which required the installation,
+configuration, and enhancement of an open-source system called
+OpenMerchant (late April).  OpenMerchant was the beta e-commerce
+software that Mr. Fish had chosen to have his 800Telephone system
+implemented with.
+
+    I was to be paid $822 each week with a significant completion bonus.
+Despite my vigilant efforts, I was unable to install and configure
+OpenMerchant to function correctly (early May).  This was due to the
+inadequate state of the beta-release code available at that time.  As a
+result, I was unable to meet the deliverables for week 2 or any week
+following.
+
+    Mr. Fish stopped paying me because I was unable to meet the
+deliverables.  We then entered a vague verbal agreement that I should
+attempt to replace OpenMerchant with an equivalent system I would
+develop from scratch (mid May).
+
+    By dropping OpenMerchant, the necessary deliverables (and the order
+in which they could be constructed) was drastically changed.  Mr. Fish
+was enthusiastic and agreed to pay my personal bills.  I was paid either
+$500 or $600 every other week for the remainer of my development effort
+(which narrowly covered my costs).  Mr. Fish failed to even pay me
+enough to afford my bills during July.  During the entire twelve weeks,
+I received approximately $5000 (less than half of the $10k for ten weeks
+which we had agreed on).  He grew increasingly abusive and irrational.
+I was forced to persue other employment in order to cover my living
+expenses.
+
+    Based on the fact that our entire contract became invalid after the
+third week of development (when we agreed to drop OpenMerchant), I would
+like Mr. Fish and I to go our separate ways with no further recourse for
+additional punitive action.
+
+
+Philip Stuart
+

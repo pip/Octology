@@ -1,0 +1,9 @@
+    </div> <!-- end of #main -->
+    <script type="text/javascript">
+      var css = new CSS.Change({
+        cookie_name   : 'css',
+        cookie_expire : '+7d'
+      });
+    </script>
+  </body>
+</html>

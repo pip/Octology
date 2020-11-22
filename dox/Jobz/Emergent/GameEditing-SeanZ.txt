@@ -1,0 +1,80 @@
+UI Analysis: In-Game vs. External Edit-ing
+UI Analysis: In-Game vs. External Edit-ing
+Rev     Name    Change Description      Date
+1.0     Sean Zehnder    First Draft     5/8/07
+
+Executive Summary
+The purpose of this document is to analyze the types of user tasks that are more/less suited for in-game vs. external game editors. 
+The idea of in-game editing sounds extremely compelling, but in practice it is not ideal for many (or even most) game development tasks. 
+MORE - TBD
+
+High-Level User Tasks 
+Scene Composition / Design
+The task of creating the game space, placing objects, placing lights, placing actors, and establishing important zone markup such as pathing, ambient properties, and placing/tuning of high-level impostors such as skyboxes.
+Materials Editing/Compositing
+The task of editing layers, textures, and properties of materials that can be applied to objects in the game.
+Dynamics Editing
+The task of editing AI scripts, physics, and mutable effects such as weather.
+Character Editing
+The task of designing, customizing, rigging, clothing, and animating NPC.s and the player-character.
+Animation Compositing
+The task of sequencing, blending, editing .canned. animations (i.e. animations originally setup in a 3D animation and modeling package like Maya).  This also includes blending of .canned. animations with ragdoll and other physics.
+
+High-Lever Usage Scenarios
+Rough-In
+First pass on something.  Just trying to get something working, where the environment, major components, and all the pieces are roughly in place.  Organization of pieces, the structure and partitioning of the tasks that are forthcoming, is critical at this stage.
+Careful Editing / Tuning
+The foundational work is done, and now the user needs to more carefully place objects, edit their properties, and do the bulk of the .heavy lifting. to not only get the thing to work, but also look appropriate.  The amount of time in a given view, editing a given property, etc. is greater in this phase than in the rough-in.  Context of the current object/view/etc. is still quite important.
+Final Polish / Tuning
+In this phase, the game/level/etc. works and looks appropriate, and now the user is trying to make it look and work perfectly.  Here, careful considerations are made of the in situ experience of the game/level/etc.  It is important that the user be able to spend a great deal of time in-game, and occasionally return to the editing environment in order to tweak settings or make minor adjustments to in-game elements.  The speed of toggling between in-game and editor modes is very important in this phase.
+
+Meta-Tasks
+Monitoring Health / Performance / Behavior of System or Object
+It is frequently important that the user be provided with different view onto the behavior of a system or dynamic entity.  This can take the form of overlays in-game, overlays in-editor, or dedicated metrics tools for post-hoc and filtered analysis.
+Troubleshooting
+The task of troubleshooting occurs frequently during the course of one.s work.  It typically involves the awareness of a desired-state, knowledge of a known sub-optimal state currently in effect, and a search for paths to take the known-bad state into the desired state.
+
+In-Game Perspective and .Appropriate. POV
+The idea of in-game editing (wysiwyg-style) sounds extremely compelling, but in practice it is not ideal for most game development tasks.  Different in situ perspectives are suited to different tasks.  This is well understood in many 3D games -- for example, .Prince of Persia: The Sands of Time. allows the player to switch to a first-person perspective for things like aiming and shooting, but the player is unable to move while in this perspective.  When climbing a wall or jumping between pillars in a temple, a first-person perspective would be extremely limiting.
+
+We will face the same sort of challenges in designing an engaging and usable game editor -- and careful attention must be paid to enabling the appropriate perspective for a given user task.  Some types of editing can and should be enabled .in the game,. other tools should look as much like the game as possible, while substituting representative geometry and enabling different camera modes -- and it should be as seamless as possible to switch between .editor. and .game. modes.
+Task    Comments on In-Game Editor UI
+Editing of Constructive Solid Geometry  Not ideal.
+Placement of static objects     Could be helpful in some careful editing or fine tuning scenarios.
+Placing/tuning point lights     Could be helpful in some careful editing or fine tuning scenarios.
+Placing/tuning directional lights       Not ideal.
+Procedural Terrain Generation   Not ideal.
+Terrain Sculpting (for paths)   Could be helpful in some careful editing or fine tuning scenarios.
+Terrain Sculpting (general)     Not ideal.
+Analysis of Player Behavior (navigational)      Not ideal.
+Analysis of Dynamic Entity Behavior     Not ideal, especially if the dynamic entity can move.
+Player Navigational Behavior    In some types of post-hoc analyses about why people navigated the way they did at key choice-points, this could be useful.
+Zone/Light/Detail Info Markup   Could be useful in some scenarios.
+Texturing of Terrain    Some types of terrain decoration and texturing could benefit from an in-game editor.  For example, a hillside that a designer wants to discourage the player from climbing - designer could add boulders precisely to look realistic while also blocking the path.
+Placing/Editing Scripted Triggers       Placing scripted triggers could benefit from an in-game editor.  A designer could actually navigate to a desired spot and then drop a trigger of some kind.
+Editing Impostors       Not ideal.
+Blending / Morphing Character Animation Not ideal.
+Marking Key Positions   Could be some benefit here.
+Noting Gameplay Defects One might validate / discover defects in-game, but it is not typically ideal to fix a subtle problem that could require a variety of task adjustments.
+Noting Asset Defects    One might validate / discover defects in-game, but it is not typically ideal to fix a subtle problem that could require a variety of task adjustments.
+Asset Utilization       Not ideal.
+Placing/Tuning Music/Sound Triggers     Could be useful in some scenarios.
+Editing a Particle Effect       Not ideal.
+Sequencing a Special Effect including sound, particles  Not ideal.
+Mapping a special effect to an object / behavior / trigger      Could be useful in some scenarios.
+Materials Editing       Not ideal.
+Shader Editing  Not ideal.
+Applying material / shader to object    Could be helpful in some careful editing or fine tuning scenarios.
+
+Conclusions
+.       In-game editing does not replace external game editing needs, and is therefore a feature of lower priority than robust external editing capabilities.
+.       An in-game editor is primarily suited for the careful editing / fine-tuning phases of development.  
+.       An in-game editor does not afford a significant advantage during the rough-in tasks associated with game production.
+.       We cannot presume to create one in-game editor for all games -- since the definition of .in-game. will vary across customers, genres, etc.  
+.       In-game editing is a sexy feature from a marketing perspective, in that it makes it seem like the overall construction of a game is simplified to the point of being trivial.  We know that this is not indeed the case, as a significant amount of design and development effort had to be in place in order for the .in-game. preview/editor to function and look appropriate.
+Recommendations
+.       Our external game editing tools (meaning not in-game tools) are top-priority. 
+.       We should not think of an in-game editor as replacing a similar external editor; the external editor is a necessary precursor and complementary feature to any in-game editing capabilities.
+.       Our ToolBench should make it as seamless as possible to switch between editing and game preview modes.  
+.       We should provide a default previewer that is integrated with the toolbench which launches a separate game window, and shows lighting, particle effects, physics, and other game dynamics as close to game-ready as possible.
+.       Certain tasks being done in the external editor should enable .rapid preview. which launches the game runtime with the player positioned near the object/area being edited.  This would allow a player to adjust an NPC animation, click .rapid preview,. and then see the character in the appropriate spot in the game automatically.  No additional camera placement or setup need be required to show the user what their current item of focus will look like in the game.

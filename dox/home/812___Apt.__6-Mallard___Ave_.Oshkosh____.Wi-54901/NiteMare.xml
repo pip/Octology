@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<vehicle>
+  <motorcycle>
+    <description>
+      <color>black</color>
+      <year>2005</year>
+      <make>Yamaha</make>
+      <model>YZF-R6</model>
+      <status>crashed</status>
+      <license>17R1497</license>
+      <VehicleIdentificationNumber>JYARJ06Y05A004497</VehicleIdentificationNumber>
+    </description>
+    <creditor>
+      <name>Yamaha Motor Corporation</name>
+      <phone>(800)365-2650</phone>
+      <address>Retail Services
+               PO Box 60107
+               City of Industry, Ca 91716-0107</address>
+    </creditor>
+    <account>
+      <name>Philip A. Stuart</name>
+      <number>176-6211-0072-7644</number>
+      <monthly_payment>199.99</monthly_payment>
+      <as_of pt="6AHIE6H" date="Tue Oct 17 18:14:06:17 2006">
+        <balance>9,554.08</balance>
+        <months_late>4</months_late>
+      </as_of>
+    </account>
+  </motorcycle>
+  <motorcycle>
+    <description>
+      <color>red</color>
+      <year>2005</year>
+      <make>Yamaha</make>
+      <model>YZF-R6</model>
+      <status>stolen</status>
+      <license>17G7775</license>
+      <VehicleIdentificationNumber>JYARJ06Y05A005049</VehicleIdentificationNumber>
+    </description>
+    <creditor>
+      <name>HSBC</name>
+      <phone>(800)692-0809 x6603</phone>
+      <address>HSBC Retail Services
+               Post Office Box 4153-K
+               Carol Stream, Il 60197-4153</address>
+    </creditor>
+    <account>
+      <name>Philip A Stuart</name>
+      <number>410152-00-282537</number>
+      <monthly_payment>281.27</monthly_payment>
+      <as_of pt="6AHIE6H" date="Tue Oct 17 18:14:06:17 2006">
+        <balance>8,574.84</balance>
+        <months_late>3</months_late>
+      </as_of>
+    </account>
+  </motorcycle>
+  <car>
+    <description>
+      <color>burgundy</color>
+      <year>1998</year>
+      <make>Mitsubishi</make>
+      <model>Eclipse</model>
+      <model_moniker>RS</model_moniker>
+      <as_of pt="71NHL0O" date="Tue Jan 23 17:21:00:24 2007">
+        <status>functional</status>
+      </as_of>
+      <license>4YBD443</license>
+      <VehicleIdentificationNumber>4A3AK34Y0WE105906</VehicleIdentificationNumber>
+    </description>
+  </car>
+</vehicle>

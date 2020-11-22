@@ -1,0 +1,40 @@
+Done:
+    I examined and tested the dox and current state of code for
+     webmail.care.lv for a couple hours.  New accounts are totally
+     broken but the one existing one we have to test operated reliably
+     for the 15 minutes I waited for responses from their server.
+
+    I met with Julia for over an hour to discuss more thoroughly, the
+     state of the art with PnG_Core && _Mindfire databases which are
+     crucial to the construction of PnGSites ... like for Expanets
+     before Monday =).  Basically Scott knows it better now because he's
+     changed so much of the code and procedure.  I've asked him to
+     describe it as much as possible and to email me the result before
+     Sunday afternoon.
+
+ToDo:
+    Come in on Sunday && start->finish Expanets Partners (branches)
+     sites in PnGS and test 'em.
+
+    Install the new vid card/hard drive/ && Potato distro next week.
+
+    Install sudo on quark && helium if possible... maybe production too.
+
+    Further determine current hardware specs and assist Nick && Moe in
+     making our equipment situation better.
+
+    Keep notes on what I've werked on each day and approximate times
+     spent thereon.
+
+    Get a sleeping bag next week in case I need to sleep on the floor
+     again... && make sure to bring Beppu-san &&
+     Keiferz into the office to say hey to everyone =).
+
+Thots:
+    I had fun this week and am excited about my future with MindFire.  I
+     really hope I can do a great job and help the company to succeed in
+     all it's endeavors and further propagate it's genuine appreciation
+     for all employees and clients.  This is totally the kind of company
+     I want to werk for... the only way it could be better is if we were
+     making video games =).  But it's still the best job I've had yet!
+     I really don't want to screw this up.  Back next week.

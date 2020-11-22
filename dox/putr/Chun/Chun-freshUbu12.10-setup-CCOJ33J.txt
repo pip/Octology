@@ -1,0 +1,157 @@
+pip@pip-Chun-LifeBook-T1010:~$ mkdir dox
+pip@pip-Chun-LifeBook-T1010:~$ cd dox
+pip@pip-Chun-LifeBook-T1010:~/dox$ mkdir putr
+pip@pip-Chun-LifeBook-T1010:~/dox$ cd putr
+pip@pip-Chun-LifeBook-T1010:~/dox/putr$ mkdir Chun
+pip@pip-Chun-LifeBook-T1010:~/dox/putr$ cd Chun
+pip@pip-Chun-LifeBook-T1010:~/dox/putr/Chun$ vi Chun-freshUbu12.10-setup-CCOJ33J.txt
+# So I just installed a fresh Ubuntu 12.04.1 onto Chun here, then ran the SoftwareUpdater && I think I successfully upd8d a few available packages before
+# changing the settings. The default was to only offer dist-upgrade for new LTS releases so I changed that to show all available dist-upgrades && then was able
+# to smoothly upgrade to this clean 12.10, then I sync'd Chun's old /home/pip && much of Aku's current /home/pip both into Chun's current /home/pip/.old in
+# hopes that I'll be able to selectively construct a relatively complete new home directory incorpor8ing the best parts of both the .old ones into a useful new
+# ~pip for Chun's l8st incarn8ion here. It's Christmas Eve of 2012 right now && we came to Chilton to wish Grandma Hildegard a Happy 96th Birthday && Merry
+# Christmas (which are both tomorrow) && for Baba && Roro to take her to Mass tonight so they 3 are off doing that right now while Ange && I stayed at her
+# place, untangled the extension cord from her vacuum, assembled her new 3-bin hanging hamper cart, && we need to keep stirring the pumpkin soup every 20
+# minutes or so. Then we went outside && had what I might try to make be my last cigarette, one of Anch's Maverick 100's. Then we came back in && she tried to
+# knit for a bit before she decided to try to nap && I booted Chun up here to see how much I could configure just utilizing whatever I've already put into .old
+# here (since I'm not able to be online right now to install new packages in the typical apt-get fashion). Recognizing that I've just today established
+# completely vanilla fresh installs of 12.10 on both Chun && Ryu (&& have plans to do the same for Aku l8r too, if he can't dist-upgrade cleanly all the way
+# from his current 10.04 to 12.10), it makes sense to keep track of everything I have to do to get each of these fresh installs to become thoroughly customized
+# to my configur8ion preferences. So, I think I just had a fresh 12.10 plus Chun && Aku sync'd to .old before starting the commands shown above to begin
+# documenting every major change I need to make in order to be comfortable with all my tools available. Maybe I should write a short outline of what things I
+# think should be done in what order:
+#   0: compare .old lib dirs && construct a new one;
+#   1: same with bin;
+#   2: save a manual .bak of initial default .bashrc, then add export PERL5LIB && path;
+#   3: confirm pt && bak are oper8ional;
+#   4: merge .old .bashrc versions into new current && confirm sourcing;
+#   5: setup best .lsrc && verify;
+#   6: `sudo bash` to become root, then bak /etc/hostname before upd8ing from pip-Chun-LifeBook-T1010 to just Chun;
+#   7: merge best .zshrc && port whatever I can to .bashrc also;
+#   8: open GUI SystemSettings && start configuring those options;
+#   9: get online to install: vim, zsh, most, ncurses?, ...;
+pip@pip-Chun-LifeBook-T1010:~$ l
+Desktop/  Documents/  Downloads/  dox/  examples.desktop  fontconfig/  Music/  Pictures/  Public/  Templates/  Videos/
+pip@pip-Chun-LifeBook-T1010:~$ du -sb * | sort -n
+4096	Desktop
+4096	Documents
+4096	Downloads
+4096	Music
+4096	Pictures
+4096	Public
+4096	Templates
+4096	Videos
+8445	examples.desktop
+27781	dox
+146240	fontconfig
+# Googling for how to override all the unhidden Ubuntu user directories, found HTTP://AskUbuntu.Com/questions/66322/how-can-i-change-the-desktop-folder-path
+# You can set the path to the desktop directory in the ~/.config/user-dirs.dirs file:
+
+# This file is written by xdg-user-dirs-update
+# If you want to change or add directories, just edit the line you're
+# interested in. All local changes will be retained on the next run
+# Format is XDG_xxx_DIR="$HOME/yyy", where yyy is a shell-escaped
+# homedir-relative path, or XDG_xxx_DIR="/yyy", where /yyy is an
+# absolute path. No other format is supported.
+XDG_DESKTOP_DIR="$HOME/Desktop"
+XDG_DOWNLOAD_DIR="$HOME/Downloads"
+XDG_TEMPLATES_DIR="$HOME/"
+XDG_PUBLICSHARE_DIR="$HOME/Public"
+XDG_DOCUMENTS_DIR="$HOME/Documents"
+XDG_MUSIC_DIR="$HOME/Music"
+XDG_PICTURES_DIR="$HOME/Pictures"
+XDG_VIDEOS_DIR="$HOME/Videos"
+pip@pip-Chun-LifeBook-T1010:~$ mv Desktop .Desktop
+pip@pip-Chun-LifeBook-T1010:~$ rmdir Documents
+pip@pip-Chun-LifeBook-T1010:~$ rmdir Downloads
+pip@pip-Chun-LifeBook-T1010:~$ rmdir Music
+pip@pip-Chun-LifeBook-T1010:~$ rmdir Pictures
+pip@pip-Chun-LifeBook-T1010:~$ rmdir Public
+pip@pip-Chun-LifeBook-T1010:~$ rmdir Templates
+pip@pip-Chun-LifeBook-T1010:~$ rmdir Videos
+pip@pip-Chun-LifeBook-T1010:~$ cd .config
+pip@pip-Chun-LifeBook-T1010:~/.config$ vi user-dirs.dirs
+XDG_DESKTOP_DIR="$HOME/.Desktop"
+XDG_PUBLICSHARE_DIR="$HOME/"
+XDG_DOWNLOAD_DIR="$HOME/"
+XDG_TEMPLATES_DIR="$HOME/"
+XDG_DOCUMENTS_DIR="$HOME/dox"
+XDG_MUSIC_DIR="$HOME/muz"
+XDG_PICTURES_DIR="$HOME/gfx"
+XDG_VIDEOS_DIR="$HOME/mvz"
+# Merry Christmas morning! I still need to deal with ~/fontconfig/ to be properly hidden && there's already a .fontconfig there too. Should also mv
+# examples.desktop to be hidden also.
+pip@pip-Chun-LifeBook-T1010:~/.config$ cd ../fontconfig
+pip@pip-Chun-LifeBook-T1010:~/fontconfig$ mv * ../.fontconfig
+pip@pip-Chun-LifeBook-T1010:~/fontconfig$ cd ..
+pip@pip-Chun-LifeBook-T1010:~$ rmdir fontconfig
+pip@pip-Chun-LifeBook-T1010:~$ mv examples.desktop .xmplz.dsktp
+pip@pip-Chun-LifeBook-T1010:~$ sudo bash
+[sudo] password for pip: 
+root@pip-Chun-LifeBook-T1010:~# hostname Chun
+root@pip-Chun-LifeBook-T1010:~# cd /etc
+root@pip-Chun-LifeBook-T1010:/etc# vi hostname
+# Upd8d hostname then exited all my terminals && logged back in to confirm hostname at least in prompt upd8d successfully.
+root@Chun:~# apt-get install vim most screen
+# This also pulled in vim-runtime && suggested:
+root@Chun:~# apt-get install ctags vim-doc vim-scripts
+# ..which also pulled in some Ruby && YAML stuff too && then following all suggestions:
+root@Chun:~# apt-get install ri ruby-dev ruby1.9.1-examples ri1.9.1 graphviz ruby1.9.1-dev ruby-switch libtemplate-perl graphviz-doc libtemplate-perl-doc libtemplate-plugin-gd-perl libtemplate-plugin-xml-perl ttf-dustin libdata-dump-perl libcrypt-ssleay-perl libscalar-number-perl libauthen-ntlm-perl
+root@Chun:~# cd .old/Aku_-rfndUbun2-10.04-CCOBIti
+# Orphaned Ubuntu on Akuma
+root@Chun:~/.old/Aku_-rfndUbun2-10.04-CCOBIti# cp -r  lib  ../..
+root@Chun:~/.old/Aku_-rfndUbun2-10.04-CCOBIti# cp -r  bin  ../..
+root@Chun:~/.old/Aku_-rfndUbun2-10.04-CCOBIti# cp -r .bak  ../..
+root@Chun:~/.old/Aku_-rfndUbun2-10.04-CCOBIti# cp -r .vim* ../..
+root@Chun:~/.old/Aku_-rfndUbun2-10.04-CCOBIti# cp .bashrc  ../..
+root@Chun:~/.old/Aku_-rfndUbun2-10.04-CCOBIti# cp .lsrc    ../..
+root@Chun:~/.old/Aku_-rfndUbun2-10.04-CCOBIti# cp .zshrc   ../..
+root@Chun:~/.old/Aku_-rfndUbun2-10.04-CCOBIti# cd          ../..
+root@Chun:~# chown -R pip:pip lib bin .bak .vim* .bash_history .bashrc .lsrc .zshrc
+# ..then attempted to log back in && confirmed that my lib, bin, && bash shells all seem proper.
+[root@ChunCCPEd8H~]# apt-get install zsh zsh-doc
+# ..then as pip, did chsh -s /bin/zsh before rebooting. Also unlocked LibreOffice buttons from Launcher bar on left && dropped in Terminal && SoftwareUpd8r.
+# Also had to s/pip-Chun-LifeBook-T1010/Chun/ in /etc/hosts to get rid of sudo: unable to resolve host error. Now fresh login && sz yield:
+<root@ChunCCPFAST~>apt-get install xinput-calibrator
+# ..to try to get Chun's touchscreen to work properly with Ubuntu's OnBoard;
+# Running Calibr8Touchscreen got: copy the snippet below into '/etc/X11/xorg.conf.d/99-calibration.conf'
+Section "InputClass"
+  Identifier   "calibration"
+  MatchProduct "Fujitsu Component USB Touch Panel"
+  Option       "Calibration"    "93 3863 306 3980"
+EndSection
+# sz;e /usr/share/X11/xorg.conf.d/10-evdev.conf
+# Find Touchscreen InputClass && add: Option "Calibration" "..." line;
+#CCRE1ds:apt-get install ncurses && pmei Curses,customize workspace switcher && compiz;
+<root@ChunCCRE7Mf~>apt-get install ncurses-base ncurses-bin ncurses-doc ncurses-examples ncurses-term
+# Only doc,examples,&& term installed since base && bin must've already been included in 12.10 here.
+# Tried to pmei Curses which setup CPAN && ~/perl5 && appended variables to .zshrc but failed quickly with: In file included from Curses.c:11:0:
+#c-config.h:7:21: fatal error: ncurses.h: No such file or directory
+# Should also rm ~/lib/(site|tmp5.10fix);
+<root@ChunCCREPUg~/lib>rm -rf tmp5.10fix
+<root@ChunCCREPad~/lib>site/
+<root@ChunCCREPfP~/lib/site>l
+t0tl:8K
+d700 6 pip pip 100 ICCPDtZc Graph/
+d755 5 pip pip 100 ICCPDtDM perl5.10.1-9AG1mqn/
+<root@ChunCCREPfw~/lib/site>cd Graph 
+<root@ChunCCREPsG~/lib/site/Graph>ls
+AdjacencyMap     AdjacencyMatrix.pm  BitMatrix.pm  Directed.pm  Easy.pm    MSTHeapElem.pm  TransitiveClosure     Traversal     Undirected.pm
+AdjacencyMap.pm  Attribute.pm        Convert.pm    Easy         Matrix.pm  SPTHeapElem.pm  TransitiveClosure.pm  Traversal.pm  UnionFind.pm
+<root@ChunCCREPsk~/lib/site/Graph>..
+<root@ChunCCREQ3Z~/lib/site>mv Graph ..
+<root@ChunCCREQDJ~/lib/site>..
+<root@ChunCCREQF0~/lib>rm -rf site
+<root@ChunCCREQNi~/lib>chmod 755 Graph
+<root@ChunCCREQQi~/lib>cd
+<root@ChunCCREugx~>agi libncurses5-dev libncursesw5-dev libtinfo-dev
+# Now pmei Curses worked. Yay! Now trying to configure workspaces && compiz, installing ccsm && following most suggestions && recommendations:
+<root@ChunCCRFQKK~>agi compiz compiz-core compiz-dev compiz-gnome compiz-plugins compiz-plugins-default compiz-plugins-main compiz-plugins-main-default compiz-plugins-main-dev compiz-plugins-extra compizconfig-backend-gconf compizconfig-settings-manager dh-make debian-keyring g++-multilib g++-4.7-multilib gcc-4.7-doc libstdc++6-4.7-dbg libcairo2-doc libglib2.0-doc libglibmm-2.4-doc libgtkmm-3.0-dev libgtk-3-doc libice-doc libpango1.0-doc imagemagick libsigc++-2.0-doc libsm-doc libstdc++6-4.7-doc libxcb-doc libxext-doc libmail-box-perl lib32stdc++6-4.7-dbg lib32mudflap0 imagemagick-doc autotrace curl enscript ffmpeg gimp gnuplot grads hp2xx html2ps libwmf-bin mplayer radiance texlive-base-bin transfig ufraw-batch libgtk2.0-doc devhelp libatkmm-1.6-doc libcairomm-1.0-doc gtkmm-documentation libgtkmm-3.0-doc libmail-imapclient-perl libmime-tools-perl spamassassin gawk-doc gimp-help-en gimp-data-extras gnuplot-doc weblint-perl xhtml2ps texlive-base-bin libbluray-bdj pulseaudio-esound-compat geotiff-bin gdal-bin libgeotiff-epsg libhdf4-doc libhdf4-dev hdf4-tools libauthen-sasl-perl proj-bin mplayer-doc fping radiance-doc razor libnet-ident-perl libdbi-perl pyzor libmail-dkim-perl tclreadline perl-tk xfig ufraw tk8.5
+# Apparently ccsm or MyUnity might be necessary to alter 2x2 workspace configur8ion.
+#CCRH7eD:Used ccsm to disable DesktopWall,enable DesktopCube && Rot8, made virtual desktops 4x2 (with only top4 available as cube && bottom4 pickable with
+#  grid switcher icon, which then will let cube rot8 just on bottom4). Still need to fix touchscreen calibr8ion to start with X11 properly.
+<root@ChunCCTMOf6~>agi parsec47 parsec47-data oss-compat
+# pulled in: libbulletml0d2 libmikmod2 libsdl-mixer1.2
+# D1K0VfA: setting up SDL deps:
+<root@ChunD1K0Ub4~>agi libsdl-net1.2-dev libsdl-mixer1.2-dev libsdl1.2-dev libsdl-image1.2-dev libsdl-ttf2.0-dev libsdl-gfx1.2-dev libsdl-pango-dev build-essential xorg-dev libx11-dev libxv-dev libpango1.0-dev libfreetype6-dev libvorbis-dev libpng12-dev libogg-dev libasound2-doc libsdl-gfx1.2-doc libxaw-doc libxt-doc
+# ..then pmei CPAN,YAML,Module::Build,SDL

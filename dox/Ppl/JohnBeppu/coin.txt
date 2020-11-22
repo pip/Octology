@@ -1,0 +1,65 @@
+I7KMCoin: HTTPS://YouTube.Com/channel/UCBaU9NXRPjkLGgJy-M7RPCw/playlists probably has 7 good TechAnalysis lessons by CryptoCred which I should study l8r.
+  Also `ssh -N -T -R22222:localhost:22 pip@MetaNotes.Com -Cv` should crE8 a reverse tunnel out of Aku so that Beppu-san or I can l8r get back from elsewhere.
+  HTTPS://Unix.StackExchange.Com/questions/46235/how-does-reverse-ssh-tunneling-work should describe the process && options well, which Beppu-san utilized;
+I7BMBitC:So needed to Show Addresses in Electrum 3.2.2 default_wallet then copy top receiving address over to priv8 message to Beppu-san in Slack.
+  He used it to transfer ~0.02 BitCoin to me which then provided a link to BlockTrail.Com to show the status of "unconfirmed", which may take several minutes
+  to go through; Next he wanted to show me how HTTPS://ShapeShift.IO can anonymize amounts through Monero; For the transfer of ~0.02, the rel8ively fixed cost
+  from SegWit to SegWit was ~`q 0.00001905x6350` = ~$0.12cents as fee, which is probably mostly a function of the BitCoin price but is something maybe we will
+  want to study more l8r. Beppu-san used HTTPS://MyMonero.Com to crE8 a new account with priv8 login key to make a new wallet. Sometimes ShapeShift doesn't
+  work correctly (gets 500 errors && can't even talk with itself). Another altern8ive is HTTPS://XMR.To which is way simpler && only do Monero to BTC. Our
+  goal to anonymize is to do Monero to Monero to break chain of identity. For alts, maybe HTTPS://Binance.Com is better than HTTPS://BitTREx.Com (where he is
+  still downloading price d8a from). If I make an account on Binance, probably shouldn't use my real identity && forego 2-factor authentic8ion. They also have
+  integr8d TradingView for visualizing price d8a (which is Bep's preference). BNB is their own coin for lower trading fees. XMR is the code for Monero though.
+  For clearing out MyMonero to BitCoin through XMR.To, you need to calcul8 fees && the exchange r8 to determine the exact amount of target BTC for the result.
+  There was a bad error message for XMR.To because BTC only supported up to 8 decimal places. My chart is at HTTPS://TradingView.Com/chart/FkLhBiaO for l8r.
+  If I don't mind my identity being assoC8d, there's also Gemini && CoinBase to buy BTC with USD. Also study BabyPips.Com && make an account on Expo.IO for
+  l8r publishing any upd8s to React_n8ive d8ok code so Beppu-san can check it out too; Study HTTP://LopP.Net/bitcoin.html && take notes to learn more details;
+I77MM77I: HTTPS://Expo.IO # Gener8ing QR code for conveying React_n8ive applic8ions over local WiFi or uploading somewhere, which can target Android && iOS.
+# Need to research NodeBrew, build proper l8st NodeJS to then setup React_n8ive development system with vim plug-in_manager for including JSX syntax support;
+I75MABIT: HTTPS://BitMEx.Com/app/trade/XBTUSD # mainly BitCoin links from Beppu-san && Electrum crypto-currency wallets are worth investig8ing more l8r too;
+          HTTPS://BitMEx.Com/chartEmbed?symbol=XBTUSD
+          HTTPS://NPMJS.Com/search?q=bitmex
+          HTTPS://GitHub.Com/ccxt/ccxt
+          HTTPS://TruffleFrameWork.Com
+          HTTPS://ShapeShift.IO
+          HTTPS://VPNBook.Com/freevpn # probably De or Fr versions ahead of Euro1 or Euro2;
+          HTTPS://LinuxConfig.Org/how-to-install-bitcoin-wallet-on-ubuntu-18-04-bionic-beaver-linux
+          HTTPS://Ethereum.Org && HTTPS://Ethereum.StackExchange.Com/questions/2699/is-there-any-ether-mixer-tumbler-available
+          HTTPS://Beppu-Trading.Slack.Com # where we can hopefully chat in the future about trading
+          HTTPS://BlockTrail.Com/BTC/tx/f0e447f57b87efe748c8ba89c50a671ebda6053de94f4032dee10336b47358a9 # or similar to inspect transactions && confirm8ions
+  # The following were tabz we opened while trying to set things up && start learning how to make d8ok inside the initial d8st project:
+          https://mail.protonmail.com/login
+          https://ethereum.stackexchange.com/questions/2699/is-there-any-ether-mixer-tumbler-available
+          https://electrum.org/#download
+          https://www.tradingview.com/symbols/XBTUSD/
+          https://www.tradingview.com/chart/FkLhBiaO/
+          https://www.bitmex.com/app/trade/XBTUSD
+          https://github.com/hokaccha/nodebrew
+          https://facebook.github.io/react-native/docs/text-style-props#fontfamily
+          https://facebook.github.io/watchman/docs/install.html
+          https://momentjs.com/docs/#/displaying/
+          https://www.timeanddate.com/time/map/
+          https://github.com/react-native-training/react-native-fonts
+          https://facebook.github.io/react-native/docs/text-style-props#fontsize
+          http://www.devacron.com/how-to-install-watchman-on-linux/
+          http://mdn.beonex.com/en/DOM/window.setInterval.html
+          https://stackoverflow.com/questions/49532028/how-to-make-font-size-responsive-in-react-native
+          https://facebook.github.io/react-native/docs/text.html
+          https://github.com/nirsky/react-native-scaling-example
+          https://expo.io/@pip
+          https://reactjs.org/docs/conditional-rendering.html
+We did setup NodeBrew && got the l8st node v10.6.0 setup to then enable install8ion of React_n8ive && then watchman for `npm start` to sometimes work for
+  hot-loading project upd8s in ~/dvl/t8/rn8v/d8st/ before doing `npm i -g exp` which allowed us to instead use `exp start` there more consistently. I think
+  we did something like `npm install --save react-native` originally inside the project to just load into the local node_modules/ directory;
+2du:sepR8 out React dvl notez from trading && tidy things up or sumRIz most important detailz 4 betr rFrNcing l8r, `exp --help` shows lots of Dtaild optnz,
+  stuD major techz&&Etherium smRt contrax,stuD BitMEx&&lern trAdng,stuD pRticip8 votng systMz as tSt contrax,contMpl8 any lucr8iv dvl opor2niTz wiBep,
+  test if watchman is needed for `exp start` to detect source upd8s or if it uses its own better varE8ion (so the former could be disabled);
+I87MBrav:SepR8 Brave browser links:
+         HTTPS://Mail.ProtonMail.Com GuyGooway
+         HTTPS://GMail.Com           GuyGooway
+         HTTPS://TradingView.Com/symbols/BTCUSD
+         HTTPS://BitMEx.Com/login?dest=/app/trade/XBTUSD
+         HTTPS://Forums.AVoiceForMen.Com
+         HTTPS://MGTOW.Com/forums/forum/mgtow
+         HTTPS://TheRationalMale.Com
+         U2b CryptosRUs "Daily Bitcoin && Cryptocurrency News 8/1/2018"

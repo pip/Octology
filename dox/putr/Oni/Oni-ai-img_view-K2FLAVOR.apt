@@ -1,0 +1,56 @@
+# K2FLAVOR:Oni-ai-img_view.apt crE8d by PipStuart <Pip@CPAN.Org> to log the image viewing applic8ions I've installed onto Oni today;
+[pip@OniK2FLAMER~]acs image|gi view|mo;en 'built the package selection list';sz
+<root@OniK2FLAVOR/home/pip>ai eog dailystrips aview comix eog-plugin-fit-to-width eog-plugin-fullscreen-background eog-plugin-hide-titlebar eog-plugin-map eog-plugin-maximize-windows eog-plugin-slideshow-shuffle eog-plugin-exif-display eom eom-common eom-dev ephoto feh fbi fim geeqie gliv gpicview gthumb gthumb-data gthumb-dev gwenview imv imview libgtkimageview-dev libgtkimageview0 lximage-qt mapivi mcomix mirage pfsglview pfsview phototonic pqiv preview.app qiv showfoto sxiv tetradraw uefitool-cli viewnior xli xloadimage qcomicbook
+# here in vim ":r!dpkg -l <PastePkgListFromAboveAICommand>" yielded the following output:
+Desired=Unknown/Install/Remove/Purge/Hold
+| Status=Not/Inst/Conf-files/Unpacked/halF-conf/Half-inst/trig-aWait/Trig-pend
+|/ Err?=(none)/Reinst-required (Status,Err: uppercase=bad)
+||/ Name                             Version                 Architecture Description
++++-================================-=======================-============-======================================================================
+ii  eog                              3.34.1-1                amd64        Eye of GNOME graphics viewer program
+ii  aview                            1.3.0rc1-9build1        amd64        A high quality ASCII art image viewer and video player
+ii  comix                            4.0.4-4.1               all          GTK Comic Book Viewer
+ii  dailystrips                      1.0.28-11               all          view web comic strips more conveniently
+ii  eog-plugin-exif-display          3.26.4-1                amd64        Exif Display plugin for GNOME Image Viewer
+ii  eog-plugin-fit-to-width          3.26.4-1                amd64        Fit to Width plugin for GNOME Image Viewer
+ii  eog-plugin-fullscreen-background 3.26.4-1                amd64        Fullscreen Background plugin for GNOME Image Viewer
+ii  eog-plugin-hide-titlebar         3.26.4-1                amd64        Hide Titlebarplugin for GNOME Image Viewer
+ii  eog-plugin-map                   3.26.4-1                amd64        Map plugin for GNOME Image Viewer
+ii  eog-plugin-maximize-windows      3.26.4-1                amd64        Maximize Windows plugin for GNOME Image Viewer
+ii  eog-plugin-slideshow-shuffle     3.26.4-1                amd64        Slideshow Shuffle plugin for GNOME Image Viewer
+ii  eom                              1.22.2-0ubuntu1         amd64        Eye of MATE graphics viewer program
+ii  eom-common                       1.22.2-0ubuntu1         all          Eye of MATE graphics viewer program (common files)
+ii  eom-dev                          1.22.2-0ubuntu1         amd64        Eye of MATE graphics viewer program (development files)
+ii  ephoto                           1.5-2                   amd64        Comprehensive Image Viewer Using EFL
+ii  fbi                              2.10-3ubuntu1           amd64        Linux frame buffer image viewer
+ii  feh                              3.2.1-1                 amd64        imlib2 based image viewer
+ii  fim                              0.5.3-2                 amd64        scriptable frame buffer, X.org and ascii art image viewer
+ii  geeqie                           1:1.5.1-1               amd64        image viewer using GTK+
+ii  gliv                             1.9.7-2build1           amd64        image viewer using gdk-pixbuf and OpenGL
+ii  gpicview                         0.2.5-3                 amd64        lightweight image viewer
+ii  gthumb                           3:3.8.0-2               amd64        image viewer and browser
+ii  gthumb-data                      3:3.8.0-2               all          image viewer and browser - arch-independent files
+ii  gthumb-dev                       3:3.8.0-2               amd64        image viewer and browser - development files
+ii  gwenview                         4:19.04.3-0ubuntu2      amd64        image viewer
+ii  imv                              3.0.0-1                 amd64        command line image viewer intended for use with tiling window managers
+ii  imview                           1.1.9h-1                amd64        Image viewing and analysis application
+ii  libgtkimageview-dev              1.6.4+dfsg-2            amd64        image viewer widget for GTK+ (development files)
+ii  libgtkimageview0                 1.6.4+dfsg-2            amd64        image viewer widget for GTK+
+ii  lximage-qt                       0.14.1-1ubuntu1         amd64        Image viewer for LXQt
+ii  mapivi                           0.9.7-1.1               all          Photo viewer and organizer with emphasis on IPTC fields
+ii  mcomix                           1.2.1-1.1               all          GTK+ image viewer for comic books
+ii  mirage                           0.9.5.2-1               amd64        fast and simple GTK+ image viewer
+ii  pfsglview                        2.1.0-4                 amd64        command line HDR manipulation programs (OpenGL/GLUT viewer)
+ii  pfsview                          2.1.0-4                 amd64        command line HDR manipulation programs (Qt viewer)
+ii  phototonic                       2.1-2                   amd64        image viewer and organizer
+ii  pqiv                             2.11-1                  amd64        Powerful image viewer with minimal UI
+ii  preview.app                      0.8.5-11build1          amd64        General purpose image viewer for GNUstep
+ii  qcomicbook                       0.9.1-2                 amd64        qt viewer for comic book archives (cbr/cbz/cba/cbg/cbb)
+ii  qiv                              2.3.1-1build1           amd64        Quick image viewer for X
+ii  showfoto                         4:5.9.0-1ubuntu4        amd64        image viewer/editor for KDE
+ii  sxiv                             25-1                    amd64        simple X image viewer
+ii  tetradraw                        2.0.3-9build2           amd64        ANSI drawing and viewing utility
+ii  uefitool-cli                     0.26.0-2                amd64        UEFI firmware image viewer and editor - CLI version
+ii  viewnior                         1.6-1build1             amd64        simple, fast and elegant image viewer
+ii  xli                              1.17.0+20061110-5build1 amd64        command line tool for viewing images in X11
+ii  xloadimage                       4.1-25                  amd64        Graphics file viewer under X11

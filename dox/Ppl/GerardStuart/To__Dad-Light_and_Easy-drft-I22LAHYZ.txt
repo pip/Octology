@@ -1,0 +1,49 @@
+So probably want to get on same page with Thread,Canto references. Issues:
+0) Begin composition draft time stamp headers versus l8r sent time footers versus system meta-d8a times... Which are most useful to gener8 && utilize ahead?
+1) Tables can be very difficult to completely remove from editor, especially when solitary? Are there tricks to entirely delete (or at least conceal) them?
+2) Would probably prefer the (?>?) use G && P instead of D for Dad here but then uses Gtime / Ptime immeD8ly below, although maybe discrepancy makes a bit
+     of sense when considering the sender > recipient is the more personal usage, while the times are more positional zone identifiers, so unify P/G S/D or no?
+3) The (G>P) or (P>G) should probably correspond with the sender>recipient of whatever Canto is referenced, rather than staying from start of Thread, right?
+4) Is it fine to replace the Unicode double-quotes around the subject with just standard old quotes for now? (since my utility is not gener8ing Unicode yet)
+
+Back to issue 0 a bit more, should most new messages which are appending another Canto to an established Thread get prepended with their self-identifying
+reference box as our new preferred header, but it should be inserted at the top just prior to actual sending, so that times correspond well for searching?
+
+Maybe we can set most of the old stuff aside for a while? I think our new referencing system will help immensely whenever we l8r wish to revisit any already
+touched-on topic. We have gotten into a lot of pretty deep stuff over the last many weeks, and some of it maybe just scratches the surface, but I am feeling
+pretty comfortable to leave most of that behind for now, kind of simmering on a back-burner. So can we rekindle the most unresolved stuff again a bit l8r?
+
+I may need to share the Yudkowsky AI-Risk stuff, if I haven't yet.
+
+I have pushed some upd8s to know.ls && 8.txt which you may not have noticed or digested yet.
+
+Once you feel sufficiently caught up with that l8st material, do you have any thoughts about already established Threads which contain hanging questions or
+other aspects which seem like they would be best to discuss in greater detail promptly (rather than being shelved for now)... or do you have any good ideas
+for new Threads which might be most beneficial to start up next?
+
+I'm sorry you were and are #5 in the strained phone story. I'm still trying to figure out which number I most likely am, and whether I could have handled or
+described it all any better. Please let me know if I could learn to serve a better role amidst it all.
+
+Regarding the Photos albums, almost all the images were originally captured on my phone and had only resided there until I decided most to be fit for public
+display so I uploaded && published them through Google's Photos applic8ion. Due to this picture pipeline, most of the images have not yet been sepR8ly
+downloaded to my computers, so I don't yet have any easy way to just grab an entire album and send it to you as a single .zip file archive or anything like
+that. I expect that you can probably select each image through the web interface and manually download each one, which may be what I end up doing if I find
+myself really wanting better local copies of all of them. I will let you know if I do go through such a process or discover some other way to easily send you
+everything at once. Please feel free to let me know if you have any difficulty downloading copies of whatever your favorites are from the website. I should be
+able to easily select whatever your Top8 are and just send them directly to your GMail account from my phone again, although that would be a good opportunity
+to start saving some of the best on my computer hard drives too, where they'll be easier to preserve or manipul8 in the future, so I might just go that route.
+Sorry I can't be of much more help there just yet.
+
+I'm excited to be learning more about the Radio. Head, Mouth, Paper, Life... sounds interesting and good.
+
+Maybe instead of juggling too many other Threads right now, we can try to focus on two mains:
+0) Fundamentals, Materials, and Plans for Fixing the Radio
+1) studying one rule each month from Dr. Peterson's 12 Rules for Life
+... along with whatever additional Threads seem most pressing. How does such a distill8ion sound to you?
+
+Umm the "more hearty" might have been a good pun for both of us and something to joke about without taking it too seriously, but I suspect you may have
+misinterpreted it as hoping that there would be notably "more" as though it were in contrast to there being none or not enough so far. I'm pretty sure I
+intended it to be like "hopefully loading additional heaps atop the already abundant". I think our messages are remarkably heart-felt and hearty in strength
+and sincerity and growing capacity for delving into more difficult and unsavory topics.
+
+I love you, Dad.

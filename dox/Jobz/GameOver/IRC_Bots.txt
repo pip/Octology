@@ -1,0 +1,2 @@
+telnet to exile.floomp.net:1640 for the full console of exile` bot
+for #GameOver && #ILoveSirlin channels

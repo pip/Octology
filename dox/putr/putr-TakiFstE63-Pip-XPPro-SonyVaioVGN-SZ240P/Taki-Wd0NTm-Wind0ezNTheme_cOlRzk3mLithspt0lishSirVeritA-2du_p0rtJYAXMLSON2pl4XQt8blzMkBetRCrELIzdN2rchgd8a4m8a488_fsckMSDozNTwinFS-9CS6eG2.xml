@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- 2do: write XML::Tidy utl to parse all @Color.? && cnv parm to cmnt wi RGB ints e.g., <3D_Objects Color1="#01040F"> <!- R:  1 G:  4 B: 15 ->-->
+<!-- zsh: echo "tidydox"; rm 9pnet.com; mv Drvz.txt ../putr/; mv FireFox-lnx-6CB7sBk.txt ../putr/; rm TV.txt; mv WinTheme.xml ../putr/taki/Taki-Wd0NTm-Wind0ezNTheme_cOlRzk3mLithspt0lishSirVeritA-2du_p0rtJYAXMLSON2pl4XQt8blzMkBetRCrELIzdN2rchgd8a4m8a488_fsckMSDozNTwinFS.SGI_XPFSwinzNsted0vBaddBl0xEbluzuAEdzhJ3wuiceb0xG0Z0GuZuDuDu2DeDeAAbeAbA-ThizLilFylKerEzQuiethanAim_nAme_nem_nm_n0_n0m_nahm_numbplEzhaz8chEzubahgahzL1n0tLc8znuhm_num_noom_nume_nEwmRL0G_GNUmeriXMas_IhazAmnt-crE8d-59NHj8N-l8stvRZN-9CS6eG2.xml -->
+<Pips_Microsoft_Windows_Theme created="59NHj8N">
+  <3D_Objects Color1="#01040F">
+    <font Color="#FFFF00" />
+  </3D_Objects>
+  <Active_Title_Bar Size="21" Color1="#000000" Color2="#160105">
+    <font Face="Lucida Casual" Size="11" Color="#00FFFF" />
+  </Active_Title_Bar>
+  <Active_Window_Border Size="1" Color1="#01140F" />
+  <Application_Background Color1="#01030A" />
+  <Caption_Buttons Size="21" />
+  <Desktop Color1="#000000" />
+  <Icon Size="32">
+    <font Face="Microsoft Sans Serif" Size="8" />
+  </Icon>
+  <Icon_Spacing_Horizontal Size="43" />
+  <Icon_Spacing_Vertical Size="43" />
+  <Inactive_Title_Bar Size="21" Color1="#160105" Color2="#01040F">
+    <font Face="Lucida Casual" Size="11" Color="#007FBF" />
+  </Inactive_Title_Bar>
+  <Inactive_Window_Border Size="1" Color1="#01040F" />
+  <Menu Size="25" Color1="#01040F">
+    <font Face="Lincoln" Size="15" Color="#77EECA" /> <!-- 119 238 202 -->
+  </Menu>
+  <Message_Box>
+    <font Face="BernhardMod BT" Size="14" Color="#00FF00" />
+  </Message_Box>
+  <Palette_Title Size="17">
+    <font Face="Times New Roman" Size="10">
+      <bold />
+    </font>
+  </Palette_Title>
+  <Scrollbar Size="16" />
+  <Selected_Items Size="25" Color1="#0E0624">
+    <font Face="Lincoln" Size="15" Color="#FFFFFF" />
+  </Selected_Items>
+  <Tool_Tip Color1="#160624">
+    <font Face="Kelt" Size="18" Color="#FF7F3F" />
+  </Tool_Tip>
+  <Window Color1="#160624">
+    <font Color="#00FF00" />
+  </Window>
+</Pips_Microsoft_Windows_Theme>

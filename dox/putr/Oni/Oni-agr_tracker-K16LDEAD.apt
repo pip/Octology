@@ -1,0 +1,38 @@
+did `dpkg -l \*tracker\*` && got the following in most:
+Desired=Unknown/Install/Remove/Purge/Hold
+| Status=Not/Inst/Conf-files/Unpacked/halF-conf/Half-inst/trig-aWait/Trig-pend
+|/ Err?=(none)/Reinst-required (Status,Err: uppercase=bad)
+||/ Name                           Version         Architecture Description
++++-==============================-===============-============-================================================================
+ii  libtracker-control-2.0-0:amd64 2.3.0-1         amd64        library to control/monitor tracker miners
+ii  libtracker-miner-2.0-0:amd64   2.3.0-1         amd64        tracker data miner library
+ii  libtracker-sparql-2.0-0:amd64  2.3.0-1         amd64        metadata database, indexer and search tool - library
+ii  libxatracker2:amd64            19.2.1-1ubuntu1 amd64        X acceleration library -- runtime
+un  rygel-tracker                  <none>          <none>       (no description available)
+ii  tracker                        2.3.0-1         amd64        metadata database, indexer and search tool
+ii  tracker-extract                2.3.0-1         amd64        metadata database, indexer and search tool - metadata extractors
+ii  tracker-miner-fs               2.3.0-1         amd64        metadata database, indexer and search tool - filesystem indexer
+
+... so trying to see if I can cleanly && easily apt-get remove to get rid of this tracker via:
+<root@OniK16LD3Ja/home/pip>agr libtracker-sparql-2.0-0 libtracker-miner-2.0-0 libtracker-control-2.0-0 tracker-miner-fs tracker-extract tracker
+Reading package lists... Done
+Building dependency tree       
+Reading state information... Done
+The following packages were automatically installed and are no longer required:
+  apturl apturl-common brasero-cdrkit brasero-common dvd+rw-tools dvdauthor gir1.2-totem-1.0 gir1.2-totemplparser-1.0 growisofs libbrasero-media3-1 libburn4
+  libcue2 libgom-1.0-0 libgsf-1-114 libgsf-1-common libisofs6 libjte1 libtotem0 linux-headers-5.3.0-23 linux-headers-5.3.0-23-generic
+  linux-image-5.3.0-23-generic linux-modules-5.3.0-23-generic linux-modules-extra-5.3.0-23-generic nautilus-extension-brasero totem-common
+Use 'apt autoremove' to remove them.
+The following packages will be REMOVED:
+  brasero gnome-shell-extension-desktop-icons grilo-plugins-0.3-base libtracker-control-2.0-0 libtracker-miner-2.0-0 libtracker-sparql-2.0-0 nautilus
+  nautilus-share totem totem-plugins tracker tracker-extract tracker-miner-fs ubuntu-desktop ubuntu-desktop-minimal ubuntu-unity-desktop
+0 upgraded, 0 newly installed, 16 to remove and 0 not upgraded.
+After this operation, 9,809 kB disk space will be freed.
+Do you want to continue? [Y/n] n
+Abort.
+<root@OniK16LDDb4/home/pip>
+
+... but I don't want to remove ubuntu-desktop(-minimal)? && especially not ubuntu-unity-desktop or brasero. I wonder why those would have tracker as
+crucial dependencies. It's a sad day that ChunLi is DEAD too. I unscrewed about 2-dozen screws to get to her motherboard && popped the watch battery
+out && back in, expecting this to reset the BIOS from having a forgotten Supervisor PassWord, but now it requires the PassWord to boot the HardDrive
+&& alarms after 3 failed attempts. Looks like she's a goner && I have no functioning laptop anymore with both Chun && Taki being out-of-commission =( ;

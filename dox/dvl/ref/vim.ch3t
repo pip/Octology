@@ -1,0 +1,76 @@
+Navigation:   # 24LK24L: Vi cheat sheet by PipStuart <Pip@CPAN.Org>
+ #h,j,k,l=lt,dn,up,rt  0,^,$=home,HOME,end  #<CR>,#-=go HOME # lines frwd,back
+ #f<char>,T<char>=find,Till(back)char on curline  #;,","=repeat f||T frwd,back
+ #w,b,e=words frwd,back,frwdend (UC skips adjacent punctuation)
+ #gg||G=goto line # (BOF||EOF if !#)
+ #H,L=goto line # from screentop (home), bottom (last)  M=goto Middle of screen
+ #^F,^B=move # pages down,up  #^D,^U=move # lines down,up (half page if !#)
+ #^E,^Y=scroll screen # lines down,up  z.,z-=move cursor line center,bottom
+ ^G=give status of filename, total lines, cursor % down  ^L=redraw screen
+ #),(||},{||]],[[=sentences||paragraphs||sections forward,back
+ %=find next bracket (|| goto bracket match if already on one)
+ m<a-z>=set bookmark  `<a-z>,'=goto specified mark,goto HOME of mark line
+ ``,''=back to line before jump from G || /,goto HOME of line before jump
+ /<srch>,?=search for srch frwd,back  #n,N=search again frwd,back
+File/Buffer Handling:
+ #u,U,^R=undo # changes,all changes to current line,redo
+ :[x,y] w[!] [>>] [<file>],ZZ,:q!=(range)Write(force)(append)(file),WQ,Quit
+ :f <file>=set filename   :e <file>=edit another file  :cd <dir>=set dir
+ ^^=goto previous buffer  :r <file>|!<cmd>=read into current buffer
+Mode Changes:
+ <esc>=command mode  a,i||A,I=append,insert text from cursor||from line
+ o||O=open newline after||before current line
+Editing:
+ :help [cmd]=get online help  #.=repeat last command # times  #J=join # lines
+ :[x,y]g/<str>/<cmd>,v=(on lines x thru y) run cmd on lines matching str,
+   !matching (eg.:g/<str>/d,v deletes every line with,without str.)
+ :[x,y]s/<p>/<r>/<f>=regex (lines x thru y) (f:global,ignorecase,confirm)
+ &=repeat last regex substitution (eg.:s/wrong/good)
+ v,V,^V=Visual modes for char,line,column (to justify:v-select,:'<,'>!fmt)
+ gu,gU,g?=toLower,toUpper,rot13 visual selection
+ #x,X=delete # chars starting w/ cursor frwd, before cursor back
+ #dw,db,dd=Del to end of word frwd,del to bgin of word back,del line
+ #yw,yb,yy,Y=Yank word to clipboard,line,line
+ <\w>p,P=Put (optional) buff aft,b4 curs (or line if buff holds whole line)
+ #<<,>>=move # lines one shiftwidth left,right
+ #r<chr>,R=replace # chars w/ chr && return to cmd mode,Replace rest of line
+ #s,S=substitute chars,lines (ie. del && leave in insert mode)
+ #cw,cc,C=change word,change line,change to EOL
+ :[x,y]left,center,right=justify text  #~=switch case on # chars
+ :map <str> <seq>=interpret <str> as <seq> (eg.:map ^C :!cc %^V<cr> 
+   which invokes cc on current filename [%])  :unmap||:unab=unsets map or ab
+ :ab <s> <str>=set s as abbrev. for str (eg.:ab p perldo)(To use ab:': p ')
+ @<a-z>,@@=invoke register,last called register again
+    example register: o:s/bad/good/gi<Esc>"zdd
+       open a new line,regex,<Esc> (the key) finishes insert-mode input,
+       "zdd delete line to register 'z', then type @z to regex curline
+CommandLine Options:
+ `vi +# file`=open file in vi with curs on line#
+ `vi +/<str> file`=open file in vi with curs on 1st str match
+Variable Options: (:set xyz||:set noxyz)
+ ai=AutoIndent
+ aw=AutoWrite (save@every shell escape)
+ cindent=C-style indentation
+ dir\=<str>=where vi should store tmp files
+ eb=ErrorBells (beep on goof)
+ fo\=<fo-table optz>=FormatOptions
+ fo-table=tcq2l (text,cmnts, ,2nd line of paragraphs,leave long lines)
+ ic=IgnoreCase (for / && ? searches)
+ list=show tab as ^I && <CR> as $
+ modeline=when reading files, run lines like 
+    <sp>vi:set options|map ...|ab ...|!...: if found in first or last 5
+ nu=show line NUmbers
+ redraw=keep screen updated
+ remap=mappings will fully expand
+ report\=#=give notice when delete or yank affects # or more lines
+ ro=treat current buff as ReadOnly
+ sh\=<str>=SHell to be used for escapes
+ si=SmartIndent (code indenting)
+ sm=ShowMatch of paren blocks
+ sw\=#=set ShiftWidth (DFalt:8)
+ tw=TextWidth from left where lines should wrap
+ ts\=#=show TabStops in editor as # of spaces
+ undolines\=#
+ wm\=#=WrapMargin col from rt (0=don't put<LF>in file but show on scrn)
+ wrap=whether long lines should be shown multiline on screen
+ ws=WrapSearch (connect top && bottom of file)

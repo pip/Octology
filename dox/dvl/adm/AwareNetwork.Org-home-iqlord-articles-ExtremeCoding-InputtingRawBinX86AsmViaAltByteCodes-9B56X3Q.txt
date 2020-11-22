@@ -1,0 +1,480 @@
+
+
+   Legion2000 Security Research
+
+
+iqlord writes: When you can master this you won't need any tools to do your
+preprocessing, compiling, assembling or linking. Because you have then reached
+the bottom, and you will be doing it all by yourself.
+You will have total control!
+
+Enjoy!
+
+
+;
+; Legion2000 SR iqlord's eXtreme coding
+;
+;        ____  ___ __
+;   ____ \   \/  //  |________   ____   _____   ____
+; _/ __ \ \     /\   __\_  __ \_/ __ \ /     \_/ __ \
+; \  ___/ /     \ |  |  |  | \/\  ___/|  Y Y  \  ___/
+;  \___  >___/\  \|__|  |__|    \___  >__|_|  /\___  >
+;      \/      \_/                  \/      \/     \/
+;                                   .___.__
+;                    ____  ____   __| _/|__| ____    ____
+;                  _/ ___\/  _ \ / __ | |  |/    \  / ___\
+;                  \  \__(  <_> ) /_/ | |  |   |  \/ /_/  >
+;                   \___  >____/\____ | |__|___|  /\___  /
+;                       \/           \/         \//_____/
+;
+; For experienced thirsty hackers only!
+; - File is ANSI and not UNICODE
+; - Todays smooches goes to rattlesnake, ntfx and ultra-m
+;
+; Enjoy!
+;
+
+__Howto_______________________________________________________
+\____________________________________________________________/
+   
+   To write and save the input without using an external
+   editor you can use CON.
+   CON (Console) is (keyb for input) and (monitor for output).
+
+   copy CON filename.ext
+
+   This will place the input in a buffer.
+   To save the buffer and create a file you press CTRL-Z.
+
+   Ex:
+   copy CON file.com   -> set buffer
+   ALT-195             -> code
+   CTRL-Z              -> write buffer to file.com
+
+__Ex.1_[1Byte]________________________________________________
+\____________________________________________________________/
+
+   Purpose
+   --------
+   This program will simply return (nothing).
+
+   Code string
+   ------------
+   ALT-195, CTRL-Z
+
+   Disassembled code
+   ------------------
+   :0001.0100 C3                     retn
+
+__Ex.2_[4Byte]________________________________________________
+\____________________________________________________________/
+
+   Purpose
+   --------
+   This program will exit in a proper way.
+
+   Code string
+   ------------
+   ALT-180, ALT-76, ALT-205, ALT-33, CTRL-Z
+
+   Disassembled code
+   ------------------
+   :0001.0100 B44C                   mov ah, 4C
+   :0001.0102 CD21                   int 21
+
+__Ex.3_[10Byte]_______________________________________________
+\____________________________________________________________/
+
+   Purpose
+   --------
+   This program will halt and wait for a keypress and then
+   exit in a proper way.
+
+   Code string
+   ------------
+   ALT-180, ALT-09, ALT-254, ALT-204, ALT-205, ALT-33,
+   ALT-180, ALT-76, ALT-205, ALT-33, CTRL-Z
+
+   Disassembled code
+   ------------------
+   :0001.0100 B409                   mov ah, 09
+   :0001.0102 FECC                   dec ah
+   :0001.0104 CD21                   int 21
+   :0001.0106 B44C                   mov ah, 4C
+   :0001.0108 CD21                   int 21
+
+__Ex.4_[24Byte_(string_size_included)]________________________
+\____________________________________________________________/
+
+   Purpose
+   --------
+   This program will print out a string and then return.
+
+   Code string
+   ------------
+   ALT-186, ALT-09, ALT-01, ALT-180, ALT-09, ALT-205,
+   ALT-33, ALT-195, ALT 32, Extreme Coding$, CTRL-Z
+
+   Disassembled code
+   ------------------
+   :0001.0100 BA0901                 mov dx, 0109
+   :0001.0103 B409                   mov ah, 09
+   :0001.0105 CD21                   int 21
+   :0001.0107 C3                     retn
+
+   :0001.0108 204578                 and [di+78], al
+   :0001.010B 7472                   je 017F
+   :0001.010D 65                     BYTE 065h
+
+   :0001.010E 6D                     insw
+   :0001.010F 6520436F               and gs:[bp+di+6F], al
+   :0001.0113 64696E672400           imul bp, fs:[bp+67], 0024
+
+__dec____________asm_________________________hex______________
+\____________________________________________________________/
+
+   ALT-00      -> add [bx][si],al          -> (00) # N/A
+   ALT-01      -> add [bx][si],ax          -> (01)
+   ALT-02      -> add al,[bx][si]          -> (02)
+   ALT-03      -> add ax,[bx][si]          -> (03)
+   ALT-04      -> add al,000               -> (04)
+   ALT-05      -> add ax,00000             -> (05)
+
+   ALT-06      -> push es                  -> (06)
+   ALT-07      -> pop es                   -> (07)
+
+   ALT-08      -> or [bx][si],al           -> (08) # N/A
+   ALT-09      -> or [bx][si],ax           -> (09)
+   ALT-10      -> or al,[bx][si]           -> (0A)
+   ALT-11      -> or ax,[bx][si]           -> (0B)
+   ALT-12      -> or al,000                -> (0C)
+   ALT-13      -> or ax,00000              -> (0D) # N/A
+
+   ALT-14      -> push cs                  -> (0E)
+   ALT-15      -> sldt [bx][si]            -> (0F)
+
+   ALT-16      -> adc [bx][si],al          -> (10)
+   ALT-17      -> adc [bx][si],ax          -> (11)
+   ALT-18      -> adc al,[bx][si]          -> (12)
+   ALT-19      -> adc ax,[bx][si]          -> (13)
+   ALT-20      -> adc al,000               -> (14)
+   ALT-21      -> adc ax,00000             -> (15)
+
+   ALT-22      -> push ss                  -> (16)
+   ALT-23      -> pop ss                   -> (17)
+
+   ALT-24      -> sbb [bx][si],al          -> (18)
+   ALT-25      -> sbb [bx][si],ax          -> (19)
+
+   ALT-26      -> al,[bx][si]              -> (1A) # N/A
+   ALT-27      -> ax,[bx][si]              -> (1B)
+
+   ALT-28      -> sbb al,000               -> (1C)
+   ALT-29      -> sbb ax,00000             -> (1D)
+
+   ALT-30      -> push ds                  -> (1E)
+   ALT-31      -> pop ds                   -> (1F)
+
+   ALT-32      -> and [bx][si],al          -> (20)
+   ALT-33      -> and [bx][si],ax          -> (21)
+   ALT-34      -> and al,[bx][si]          -> (22)
+   ALT-35      -> and ax,[bx][si]          -> (23)
+   ALT-36      -> and al,000               -> (24)
+   ALT-37      -> and ax,00000             -> (25)
+
+   ALT-38      -> add es:[bx][si],al       -> (26)
+   ALT-39      -> daa                      -> (27)
+
+   ALT-40      -> sub [bx][si],al          -> (28)
+   ALT-41      -> sub [bx][si],ax          -> (29)
+
+   ALT-42      -> al,[bx][si]              -> (2A)
+   ALT-43      -> ax,[bx][si]              -> (2B)
+
+   ALT-44      -> sub al,000               -> (2C)
+   ALT-45      -> sub ax,00000             -> (2D)
+
+   ALT-46      -> add cs:[bx][si],al       -> (2E)
+   ALT-47      -> das                      -> (2F)
+
+   ALT-48      -> xor [bx][si],al          -> (30)
+   ALT-49      -> xor [bx][si],ax          -> (31)
+   ALT-50      -> xor al,[bx][si]          -> (32)
+   ALT-51      -> xor ax,[bx][si]          -> (33)
+   ALT-52      -> xor al,000               -> (34)
+   ALT-53      -> xor ax,00000             -> (35)
+
+   ALT-54      -> add ss:[bx][si],al       -> (36)
+   ALT-55      -> aaa                      -> (37)
+
+   ALT-56      -> cmp [bx][si],al          -> (38)
+   ALT-57      -> cmp [bx][si],ax          -> (39)
+   ALT-58      -> cmp al,[bx][si]          -> (3A)
+   ALT-59      -> cmp ax,[bx][si]          -> (3B)
+   ALT-60      -> cmp al,000               -> (3C)
+   ALT-61      -> cmp ax,00000             -> (3D)
+
+   ALT-62      -> add ds:[bx][si],al       -> (3E)
+   ALT-63      -> aas                      -> (3F)
+
+   ALT-64      -> inc ax                   -> (40) # COMMON
+   ALT-65      -> inc cx                   -> (41) # COMMON
+   ALT-66      -> inc dx                   -> (42)
+   ALT-67      -> inc bx                   -> (43)
+   ALT-68      -> inc sp                   -> (44)
+   ALT-69      -> inc bp                   -> (45)
+   ALT-70      -> inc si                   -> (46)
+   ALT-71      -> inc di                   -> (47)
+
+   ALT-72      -> dec ax                   -> (48) # COMMON
+   ALT-73      -> dec cx                   -> (49) # COMMON
+   ALT-74      -> dec dx                   -> (4A)
+   ALT-75      -> dec bx                   -> (4B)
+   ALT-76      -> dec sp                   -> (4C)
+   ALT-77      -> dec bp                   -> (4D)
+   ALT-78      -> dec si                   -> (4E)
+   ALT-79      -> dec di                   -> (4F)
+
+   ALT-80      -> push ax                  -> (50)
+   ALT-81      -> push cx                  -> (51)
+   ALT-82      -> push dx                  -> (52)
+   ALT-83      -> push bx                  -> (53)
+   ALT-84      -> push sp                  -> (54)
+   ALT-85      -> push bp                  -> (55)
+   ALT-86      -> push si                  -> (56)
+   ALT-87      -> push di                  -> (57)
+
+   ALT-88      -> pop ax                   -> (58)
+   ALT-89      -> pop cx                   -> (59)
+   ALT-90      -> pop dx                   -> (5A)
+   ALT-91      -> pop bx                   -> (5B)
+   ALT-92      -> pop sp                   -> (5C)
+   ALT-93      -> pop bp                   -> (5D)
+   ALT-94      -> pop si                   -> (5E)
+   ALT-95      -> pop di                   -> (5F)
+
+   ALT-96      -> pusha                    -> (60)
+   ALT-97      -> popa                     -> (61)
+   ALT-98      -> bound ax,[bx][si]        -> (62)
+   ALT-99      -> arpl [bx][si],ax         -> (63)
+
+   ALT-100     -> add fs:[bx][si],al       -> (64)
+   ALT-101     -> add gs:[bx][si],al       -> (65)
+   ALT-102     -> add [bx][si],al          -> (66)
+   ALT-103     -> add [eax],al             -> (67)
+
+   ALT-104     -> push 00000               -> (68)
+   ALT-105     -> imul ax,w,[bx][si],00000 -> (69)
+   ALT-106     -> push 000                 -> (6A)
+   ALT-107     -> imul ax,w,[bx][si],000   -> (6B)
+
+   ALT-108     -> insb                     -> (6C)
+   ALT-109     -> insw                     -> (6D)
+
+   ALT-110     -> outsb                    -> (6E)
+   ALT-111     -> outsw                    -> (6F)
+
+   ALT-112     -> jo 000000002             -> (70)
+   ALT-113     -> jno 000000002            -> (71)
+   ALT-114     -> jb 000000002             -> (72)
+   ALT-115     -> jae 000000002            -> (73)
+   ALT-116     -> je 000000002             -> (74)
+   ALT-117     -> jne 000000002            -> (75)
+   ALT-118     -> jbe 000000002            -> (76)
+   ALT-119     -> ja 000000002             -> (77)
+   ALT-120     -> js 000000002             -> (78)
+   ALT-121     -> jns 000000002            -> (79)
+   ALT-122     -> jp 000000002             -> (7A)
+   ALT-123     -> jnp 000000002            -> (7B)
+   ALT-124     -> jl 000000002             -> (7C)
+   ALT-125     -> jge 000000002            -> (7D)
+   ALT-126     -> jle 000000002            -> (7E)
+   ALT-127     -> jg 000000002             -> (7F)
+
+   ALT-128     -> add b,[bx][si],000       -> (80)
+   ALT-129     -> add w,[bx][si],00000     -> (81)
+   ALT-130     -> add b,[bx][si],000       -> (82)
+   ALT-131     -> add w,[bx][si],000       -> (83)
+
+   ALT-132     -> test [bx][si],al         -> (84)
+   ALT-133     -> test [bx][si],ax         -> (85)
+
+   ALT-134     -> xchg al,[bx][si]         -> (86)
+   ALT-135     -> xchg ax,[bx][si]         -> (87)
+
+   ALT-136     -> mov [bx][si],al          -> (88)
+   ALT-137     -> mov [bx][si],ax          -> (89)
+   ALT-138     -> mov al,[bx][si]          -> (8A)
+   ALT-139     -> mov ax,[bx][si]          -> (8B)
+   ALT-140     -> mov [bx][si],es          -> (8C)
+
+   ALT-141     -> lea ax,[bx][si]          -> (8D)
+   ALT-142     -> mov es,[bx][si]          -> (8E)
+   ALT-143     -> pop w,[bx][si]           -> (8F)
+
+   ALT-144     -> nop                      -> (90) # COMMON
+
+   ALT-145     -> xchg cx,ax               -> (91)
+   ALT-146     -> xchg dx,ax               -> (92)
+   ALT-147     -> xchg bx,ax               -> (93)
+   ALT-148     -> xchg sp,ax               -> (94)
+   ALT-149     -> xchg bp,ax               -> (95)
+   ALT-150     -> xchg si,ax               -> (96)
+   ALT-151     -> xchg di,ax               -> (97)
+
+   ALT-152     -> cbw                      -> (98)
+   ALT-153     -> cwd                      -> (99)
+
+   ALT-154     -> call 00000:000000        -> (9A)
+
+   ALT-155     -> fwait                    -> (9B)
+   ALT-156     -> pushf                    -> (9C)
+   ALT-157     -> popf                     -> (9D)
+   ALT-158     -> sahf                     -> (9E)
+   ALT-159     -> lahf                     -> (9F)
+
+   ALT-160     -> mov al,[00000]           -> (A0)
+   ALT-161     -> mov ax,[00000]           -> (A1)
+   ALT-162     -> mov [00000],al           -> (A2)
+   ALT-163     -> mov [00000],ax           -> (A3)
+
+   ALT-164     -> movsb                    -> (A4)
+   ALT-165     -> movsw                    -> (A5)
+
+   ALT-166     -> cmpsb                    -> (A6)
+   ALT-167     -> cmpsw                    -> (A7)
+
+   ALT-168     -> test al,000              -> (A8)
+   ALT-169     -> test ax,00000            -> (A9)
+
+   ALT-170     -> stosb                    -> (AA)
+   ALT-171     -> stosw                    -> (AB)
+   ALT-172     -> lodsb                    -> (AC)
+   ALT-173     -> lodsw                    -> (AD)
+   ALT-174     -> scasb                    -> (AE)
+   ALT-175     -> scasw                    -> (AF)
+
+   ALT-176     -> mov al,000               -> (B0)
+   ALT-177     -> mov cl,000               -> (B1)
+   ALT-178     -> mov dl,000               -> (B2)
+   ALT-179     -> mov bl,000               -> (B3)
+   ALT-180     -> mov ah,000               -> (B4)
+   ALT-181     -> mov ch,000               -> (B5)
+   ALT-182     -> mov dh,000               -> (B6)
+   ALT-183     -> mov bh,000               -> (B7)
+
+   ALT-184     -> mov ax,00000             -> (B8)
+   ALT-185     -> mov cx,00000             -> (B9)
+   ALT-186     -> mov dx,00000             -> (BA)
+   ALT-187     -> mov bx,00000             -> (BB)
+   ALT-188     -> mov sp,00000             -> (BC)
+   ALT-189     -> mov bp,00000             -> (BD)
+   ALT-190     -> mov si,00000             -> (BE)
+   ALT-191     -> mov di,00000             -> (BF)
+
+   ALT-192     -> rol b,[bx][si],000       -> (C0)
+   ALT-193     -> rol w,[bx][si],000       -> (C1)
+
+   ALT-194     -> retn 00000               -> (C2)
+   ALT-195     -> retn                     -> (C3) # COMMON
+
+   ALT-196     -> les ax,[bx][si]          -> (C4)
+   ALT-197     -> lds ax,[bx][si]          -> (C5)
+   ALT-198     -> mov b,[bx][si],000       -> (C6)
+   ALT-199     -> mov w,[bx][si],00000     -> (C7)
+
+   ALT-200     -> enter 00000,000          -> (C8)
+   ALT-201     -> leave                    -> (C9)
+
+   ALT-202     -> retf,0000                -> (CA)
+   ALT-203     -> retf                     -> (CB)
+
+   ALT-204     -> int 3                    -> (CC)
+   ALT-205     -> int 000                  -> (CD) # COMMON
+   ALT-206     -> into                     -> (CE)
+   ALT-207     -> iret                     -> (CF)
+
+   ALT-208     -> rol b,[bx][si],1         -> (D0)
+   ALT-209     -> rol w,[bx][si],1         -> (D1)
+   ALT-210     -> rol b,[bx][si],cl        -> (D2)
+
+   ALT-211     -> rol w,[bx][si],cl        -> (D3)
+
+   ALT-212     -> aam 000                  -> (D4)
+   ALT-213     -> aad 000                  -> (D5)
+
+   ALT-214     -> setalc                   -> (D6)
+   ALT-215     -> xlat                     -> (D7)
+
+   ALT-216     -> fadd d,[bx][si]          -> (D8)
+   ALT-217     -> fld d,[bx][si]           -> (D9)
+   ALT-218     -> fiadd d,[bx][si]         -> (DA)
+   ALT-219     -> fild d,[bx][si]          -> (DB)
+
+   ALT-220     -> fadd q,[bx][si]          -> (DC)
+   ALT-221     -> fld q,[bx][si]           -> (DD)
+   ALT-222     -> fiadd w,[bx][si]         -> (DE)
+   ALT-223     -> fild w,[bx][si]          -> (DF)
+
+   ALT-224     -> loopne 000000002         -> (E0)
+   ALT-225     -> loope 000000002          -> (E1)
+   ALT-226     -> loop 000000002           -> (E2)
+   ALT-227     -> jcxz 000000002           -> (E3)
+
+   ALT-228     -> in al,000                -> (E4)
+   ALT-229     -> in ax,000                -> (E5)
+
+   ALT-230     -> out 000,al               -> (E6)
+   ALT-231     -> out 000,ax               -> (E7)
+
+   ALT-232     -> call 000000003           -> (E8)
+   ALT-233     -> jmp 000000003            -> (E9)
+
+   ALT-234     -> jmp 00000:00000          -> (EA)
+   ALT-235     -> jmps 000000002           -> (EB)
+
+   ALT-236     -> in al,dx                 -> (EC)
+   ALT-237     -> in ax,ax                 -> (ED)
+
+   ALT-238     -> out dx,al                -> (EE)
+   ALT-239     -> out dx,ax                -> (EF)
+
+   ALT-240     -> lock                     -> (F0)
+   ALT-241     -> ???                      -> (F1)
+   ALT-242     -> repne                    -> (F2)
+   ALT-243     -> repe                     -> (F3)
+   ALT-244     -> hlt                      -> (F4)
+   ALT-245     -> cmc                      -> (F5)
+
+   ALT-246     -> test b,[bx][si],000      -> (F6)
+   ALT-247     -> test w,[bx][si],00000    -> (F7)
+
+   ALT-248     -> clc                      -> (F8)
+   ALT-249     -> stc                      -> (F9)
+   ALT-250     -> cli                      -> (FA)
+   ALT-251     -> sti                      -> (FB)
+   ALT-252     -> cld                      -> (FC)
+   ALT-253     -> std                      -> (FD)
+
+   ALT-254     -> inc b,[bx][si]           -> (FE)
+   ALT-255     -> inc w,[bx][si]           -> (FF)
+
+__none_useable_code___________________________________________
+\____________________________________________________________/
+
+   ALT-00      -> add [bx][si],al          -> (01)
+   ALT-08      -> or [bx][si],al           -> (08)
+   ALT-13      -> or ax,00000              -> (0D)
+   ALT-26      -> al,[bx][si]              -> (1A) = ^Z
+
+   0,3,6,8,16(0x10),19(0x13),27(0x1b),255(0xFF)
+
+__combinations________________________________________________
+\____________________________________________________________/
+
+   ALT-180 + ALT-76   -> mov ah,4Ch        -> (B44C) # COMMON
+   ALT-205 + ALT-33   -> int 21h           -> (CD21) # COMMON
+   ALT-254 + ALT-196  -> inc ah            -> (FEC4)
+   ALT-254 + ALT-204  -> dec ah            -> (FECC)
+
+   /iqlord : l2k SR : respect to ya all!

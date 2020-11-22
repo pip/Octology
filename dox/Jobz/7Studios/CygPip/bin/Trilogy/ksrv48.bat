@@ -1,0 +1,2 @@
+@ECHO OFF
+C:\LINK48\ksrv48

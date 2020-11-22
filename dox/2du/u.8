@@ -1,0 +1,106 @@
+#!/usr/bin/perl
+# J24LGu8d:u.8 crE8d by PipStuart <Pip@CPAN.Org> in ~/dox/2du/ to attempt adapting my original 8trm8 experiment to a vim v8 varE8ion autom8d for upsidown 2du;
+# J29:sinc d8a fIl u.8. alreD blox whIl cOd hEr stil has rm2grO mor2du wil shft hEr until nw fIl pAr stRtd 2 try 4 fluidiT AgN sO Xpct non-cOd ItMz hEr4AwhIl;
+# J2ELEVEN:so anothr good sId-proj 2 stRt soon wud B sum static img-d8a analyzr 4 my ~/gfx/cmx/LoLcatz/* 2 @Mpt 2 Dtect wutevr captionz 4 rEnAm 2 try autom8d;
+# J2DLBERT:all about tripletz of scrnz wi 9x3 && HDPVMI inz but quad-grid in close pos chopz supr-wId 4 dNs 4K betr boxd than fRbRdEvNwIdr but OpNz vert edgz;
+#   mAB tSt othr RAM B4 Ksng Oni,ordr PS/2 Y-spltr Kblz && sterEOz,l8r come bak 2 Gnome 4 GoodGuy confiGinG,prune arc && inst from RsynFull,not much rm2grOnO;
+#   So like maybe breaking out of all the rigid constraints can allow for a lot of broader free-form flowing prose to present and propose how the system goes?
+#   Ahem, I meant to say that while it can get quite routine and become a sort of game to perform the most consistently coherent represent8ions within the bit
+#     of space context alloc8s, it's still critical to also work towards some 2du-centric editor experiment which might auto-unify tight && loose endz with
+#     clearly less regard for the clock our four-fathers watched while waggling wrist! Am I taking the piss out? Shit... What up Bit Chute? PieceOmEpI?! ;)
+my $B4Us="CanIgetA3rdlInvoichErplEz?YupYup.Plan etc hosts 4 all new MACz plus IPz mAB by 1st 2nd 4th byte 4b64 5th b64 .8. && Only 6th 4 3rd byte gt 63?";#
+# 2.u:c8:trm8 custmIz 4 sepR8 d8ok && JoyStk st8us wndO 2 autOupd8,try2bootOni,rEdMoBomanUal,stRtUbuHDDinstl, kInda fascin8ng TheTrapnIt 2TT fIlsIz 2048 W0+a,
+#   ordr 2 new DP Kblz,log manUal mkdir ~/dox/putr,rsyn Rsyn*.ls,rsyncmdCore&&~/lib/Math,folO&&log furthr stepz 4 setup of libz && Utlz 4 Oni 2 tAk Ovr 4 Aku,
+#   nstl Oni 2 Ks,mAB clEn rmout && drag Sony bakin,"our sin?",clEnmoutbrshTthz,getUniT,ifOni sndzgud swp lFt248 HDMI sndbakout && juggle DVI01->LR DP->up32i,
+#   220 budg bSt 4 CyPwr b@z ~140 but sAv 110 mor nstd 4 4th 1080p dsplA ~330? AsusVG279Q only 3 diag wIdr,stil 5 lS than 32" && not curvd but hIrqualiT imgz,
+#   audit u.8* 4 crit stuf 2 fnsh nXt B4 spwn sepR8 nw vers 4 fOcus aftr,mAB mk L b64 fIlsIz 'el' AgN,  ... shwr,washAr,cutOnAlz,brshTth,tkotrash(&&frEzNPza),
+#   fix c8.pm so multiple c8 objectz can draw sepR8 new SDL windowz without meddling in each others global variables or behaviors (without direct intentions),
+#   ck all of HTTPS://GitHub.Com/Libvisual/libvisual/issues?page=1&q=is%3Aissue+is%3Aopen 2 DcId wut Cmz bSt 2 lern about,focus on,&&fix 2 improve libviz gfx;
+# 2du:stRtfuncz,try2spwn2ndwindOwi difprspcv4 othrz+f0ntz,nEd new anim8n systM 4 flashng cursor XperimNtz,get 1st bash aliasz B4 zsh && H sepR8d zon8ionz 2Uz,
+#   Byond adng SDL-take on d8ok alsO mk bAsic HHKSlimBJoysTablet st8ztXt rNdition box OvrlAyz 2 4 dMonst8nz && prEsNt8nz,hotkE quad 80x25zoomz quik,spwn2nd8t,
+#   whIl bOth d8a && cOd R quIt rigid nO budg in 4mer && shud nEd nothr XperimNtal brnch 2 focus prIm hIlItz && editz (@lEst I can brEthe hEr a bit betr4now),
+#   plan 2 stRt minimal 10x3 charz contrasting blacK vs White then toglcAsz dRkz,spIral off in2 smalr specializ8ionz of plAnz axEz lAyrz 2 anim8 by w8 && d8z,
+#   4 joy use 9x3 left 3rd stick each 8 butnz 3-char trIanglz top4 thN wId sOlO wId sOlO botm if not squEzng stRt/optnz + sLect/share or L3 + R3 instead 4out,
+#   mAB kybd fitz 2x2 of 9x3 quadz of barz of 27 3-cubed 2 SNTally rEduce && Xpand aggrSively along those axes of delinE8ion && demarc8ion 4 minimIz8ion l8rz?
+#   BUTful vision of new version of fallout9.tasm side && up-scrolling historical non-neutral joy && key EvNtz B4 full pointer && multi-stick diagonaliz8ionz!
+# bAsicly bild ~/.tmp/d8+dur8-timed registries 4 all 3 d8ox 2 subscrIb on chanLz 2 slip keyz out && in2 stAgd upd8z thN add g3 wrItz 2 thOz && SKpjmp2OvrlAkz,
+# alsO lIk YMD hms RGB f||p => A 4 bg colr && add crnr d8ox && add 2 bgz 4 calN alsO wi smRt stAgz of 4wRd && bkwRd YMW mAB EvN 4 odd vs EvN dAz 2 wi joystik,
+use strict ;use warnings;use utf8;use v5.10;use Encode;use Path::Tiny;my $VERSION='0.0';my $d8VS='J81M8888'; #   badly nEdz DAL 8pal8z4 256,d8ok upd8crnrzetc;
+my $out8   ;my $name= $0;my $d8an=$0;$d8an=~ s/.*\///;$d8an.='.'; #=~ s/(\.)$/$1$1/; #chop($d8a); # BlO tAkN from ~/bin/U23c U2b CC joiner to2 3-columnz outz;
+use         Octology::a8;my $dfil='';$dfil=path($d8an)->slurp_utf8() if(-r $d8an); # !$HOST in bash or sh -c 'ec $H..'#...m8->{_xscl}=0.8;$trm8->Rsiz(75,240);
+use         Octology::d8;my($pwid,$cwdr,$user,$host,$hndx)=(qw(18 ~ pip Oni 0 ));
+use         Octology::c8;my @hist=();$user=$ENV{'USER'} if(exists($ENV{'USER'}));$cwdr=$ENV{'PWD'} if(exists($ENV{'PWD'}));  #tst hi-res
+                                     $host=$ENV{'HOST'} if(exists($ENV{'HOST'}));  #...m8->{'_xscl'}=2.2;$trm8->Rsiz(25, 80);#tst lo-res
+  my ($d8im,$tcwd);                  $host=$ENV{'HOSTNAME'} if(exists($ENV{'HOSTNAME'}) && !exists($ENV{'HOST'})); # in case !zsh
+  my  $tStd=Octology::c8->new('cmds'=>'lsd8');$tStd=Octology::c8->new($d8an) if(-r $d8an);my $tstx=$tStd;my $tstm=''; # .(xinitrc|mikmod_playlist)
+      # tst lOd2smal fIleobjX, shud stRt pRsng&&colrng by XtNgrp,XtNsion,thN nAm,thN contNt Dtection
+  my  $tstc=Octology::c8->new('cmds'=>'lsd8');$ENV{'TERM'}='8trm'; #want'u.8t' #tStlOdcmnd output,&&tSt whether I can upd8 ENV for lodH in subshell to detect
+  my  $d8rm=Octology::c8->new('d8rm'=>1); # proly stRt just 8x1 wich can Rsiz && scAl 4 'Sat Feb  9 18:28:36:41 -0600 2019 ' in2 16x2 wi Dow Mon $D $z,$Y $tIm;
+# my  $i8rm=Octology::c8->new('i8rm'=>1); # mk this in2 c8.pm sepR8 JoyStick 27x3 monitor 2 hOpfuly upd8 && draw() on wiot nEd 4 K() GetK() 2 poll JoyStixNKyz.
+  # mAB mk smthng new nstdof  term   2 wich duz clok && stix && kybdz sepR8d wndO XperimNtz && EvN2aly rEd libvisual d8a in ther && dMo colrz d8 OctlbAsx etc.
+  # probably change term window titl 2 'u.8t' 2 B less confused wi 8trm;
+  # get orc && l8st gst-dvl so viz can let DDG srch imgz 4 stel && satel 2 bounc 4 `~/muz/flac/TheyMightBeGiants/Apollo_18;3 *stel* ~/muz/s3m/*satel*` duoart.
+  # then stRt dropping in d8z on idle in lowr-rite wi bg RGB && whN upr butnz idle stRt anim8ng dMonstr8n of YMD RGB signific8ion of triplet assoC8ionz 2 gAn;
+  my $nwd8=Octology::d8->new();
+  $d8rm->{'_text'}[1]="$nwd8";
+  $d8rm->{'_Fclr'}[1]='RoYG';
+  $d8rm->{'_text'}[2]="$nwd8";substr($d8rm->{'_text'}[2],0,4,'');
+  $d8rm->{'_Fclr'}[2]='CBMp';
+        $d8rm->Draw(); $nwd8->w8('88');
+  my  $trm8=Octology::c8->new('term'=>1);
+  sub D{$trm8->Draw();
+#       $d8rm->Draw();
+#       $i8rm->Draw();
+       } # mAB special st8us of sub-windows can self-upd8 && not Draw here?;
+  sub K{$trm8->GetK(@_);}if($host=~ /(Chun)/i){$trm8->{'_yscl'}*=0.88;$trm8->{'_xscl'}*=0.92;}
+  elsif($host=~ /^([GTCKRAO])(..)(.?)$/i){$trm8->{'_yscl'}*=1.29;$trm8->{'_xscl'}*=1.48;} $trm8->{'_flagbten'}=1; # try2flag l8stBtix4nO\n NdB41stPrmptcaldnXt
+sub P{$d8im=Octology::d8->new();$cwdr =~ s/^\/home\/$user/~/;$pwid=length("$user$host$cwdr")+11;push(@hist,'');$hndx=$#hist; # build basic 8sh prompt
+      $trm8->Prnt("\n") if(@{$trm8->{'_text'}} && (!exists($trm8->{'_flagbten'}) || $trm8->{'_flagbten'})); # flagdl8stBtix4 \n Nd
+      $tcwd="$B$cwdr";$tcwd=~ s/(\/)/$Y$1$B/g; if (        $trm8->{'_flagbten'}){ # do some temporary directory field color8ion   ## BktikNdflag4dupngprmt ##;
+open    $out8,'>&',STDOUT or die "Can't open  duplic8 STDOUT handle: $!";binmode $out8,':encoding(UTF-8)';print $out8 "$z\n$W:$G$user$B\@$C$host".$d8im->colr(
+ 'a')."$tcwd$W;";close $out8 or die "Can't close duplic8 STDOUT handle: $!";} #$trm8->Prnt("\n".`$cmdl`);}}P;   # similR2Btix but Xtra nwlIn @Nd && flashing
+      $trm8->Prnt($W."[$G$user$B\@$C$host".$d8im->colr('a')."$tcwd$W]");}P; # this 1st P() callz Prnt wich initz SDL
+sub H{$trm8->XCrs($pwid);my($y,$x)=$trm8->Move();$hist[$hndx]=substr($trm8->{'_text'}[$y],$x,length($trm8->{'_text'}[$y])-$x,'');}sub Pr{$trm8->Prnt(@_);}
+sub C{my $cfco=shift||return;for(0..$cfco->{'_hite'}-1){Pr("\n");Pr($cfco->{'_text'}[$_],$cfco->{'_Fclr'}[$_],$cfco->{'_bclr'}[$_],$cfco->{'_f0nt'}[$_]);}}
+my $keey='';my($cmdl,$pcmd); # CatFileCol8Obj above
+while    (    $keey ne 'Ctd'){$keey=K(3.3);if(length($keey)){ # any Control-d exits, Lt|Rt mv cursor within cmdl, Up|Dn nav hist, PUp|PDn nav scrolbak
+    if   (    $keey eq  '-1'){} # mk d8 obj, sv curs xy, jmp 2 Nd of term, prnt colr d8, jmp bak 2 orig curs loc8n;
+    elsif(    $keey eq  'Lt'){$trm8->{'_xcrs'}-- if($trm8->{'_xcrs'} >                                  $pwid    );}
+    elsif(    $keey eq  'Rt'){$trm8->{'_xcrs'}++ if($trm8->{'_xcrs'} < length($trm8->{'_text'}[$trm8->{'_ycrs'}]));}
+    elsif(    $keey eq  'Up' && $hndx         ){H;Pr($hist[--$hndx]);} # maybe shouldn't let you edit old history?
+    elsif(    $keey eq  'Dn' && $hndx < $#hist){H;Pr($hist[++$hndx]);}
+    elsif(    $keey eq 'PUp'){$trm8->ScBk(     );}
+    elsif(    $keey eq 'PDn'){$trm8->ScFw(     );}
+    elsif(    $keey eq 'Ins'){$trm8->Insr( '^' );}
+    elsif(    $keey eq 'Hom'){$trm8->XCrs($pwid);}                                      # should jump xcrs to start of cmdl (after end of prompt)
+    elsif(    $keey eq 'End'){$trm8->XCrs(length($trm8->{'_text'}[$trm8->{'_ycrs'}]));} # should jump xcrs to end   of cmdl
+    elsif(    $keey eq 'Cto'){$trm8->OvDr( '^' );} # note that maybe SDL bypasses GnomTweakTool CapsLock button remap to Control, so may need xtra tests 4 it?
+    elsif(    $keey eq 'Ctp'){$trm8->Prnt("test\e]50;m\e\\med\e]50;r\e\\roman3\e]50;t\e\\tektite");} # Control-p to test Prnt new escapes
+    elsif(    $keey eq 'Ctc'){Pr("\n") if(exists($trm8->{'_flagbten'}) && !$trm8->{'_flagbten'});P;} # Control-c to cancel cur cmdln && begin fresh on nxt ln
+    elsif(    $keey eq "\b" ){if($trm8->{'_xcrs'} > $pwid){substr($trm8->{'_text'}[$trm8->{'_ycrs'}],--$trm8->{'_xcrs'},1,'');}} # Backspace
+    elsif(ord($keey)==  127 ){my($y,$x)=$trm8->Move();substr($trm8->{'_text'}[$y],$x,1,'') if(length($trm8->{'_text'}[$y]) > $x && $x >= $pwid);} # Delete
+    elsif(ord($keey)==   13 ){my($y,$x)=$trm8->Move();$hndx=$#hist;my $cmdl=$trm8->{'_text'}[$y];$cmdl=~ s/^(.*\[$user\@$host[0-9A-Za-z._]{8}[^\]]+\])//;
+      $hist[$hndx]=$cmdl; # instead of loading cmdl with substr from pwid, better to strip off all up to last prompt (but problemz when cmd spanz linez)
+      if (    $cmdl eq 'LoL'){$cmdl='echo ';C($tstx);} if($cmdl eq 'l'){$cmdl='lsd8';} if($cmdl eq 'f'){$cmdl='c8fn c8-E8AM3T4R.pm';}
+      if (    $cmdl =~  /^\s*l(\s|;|\||$)/  ){$cmdl=~ s/l/lsd8/;} # some broader aliasing for most needed l lsd8;
+      if (    $cmdl eq 'M'  ){$cmdl='echo ';C($tstm);} if($cmdl eq 'm'){$cmdl='man ';} if($cmdl eq 'd'){$cmdl='dic    ';} # basic aliasez
+      if (    $cmdl eq 'C'  ){$cmdl='echo ';C($tstc);} if($cmdl eq 'c'){$cmdl='wc  ';} if($cmdl eq 'p'){$cmdl='ps     ';} #if($cmdl eq '8'){$cmdl='vi';}
+      if (    $cmdl eq 's'  ){$cmdl=          "source-highlight -f esc --style-file=/home/$user/.shl.style -s perl -i /home/$user/dox/2du/$d8an";}
+      if (    $cmdl =~  /^\s*s\s+(.+)/){$cmdl="source-highlight -f esc --style-file=/home/$user/.shl.style -s perl -i       $1                 ";}
+              $cmdl =~ s/^ls( |$)/ls -C --color=always -w $trm8->{'_widt'}$1/;$cwdr =~ s/^~/\/home\/$user/; # alias ls -C --color=always -w 160 2B lIke zsh
+   my $didp=0;$pcmd =  $cmdl;$pcmd=~ s/(^\s+|\s+$)//g; # strip surrounding space from potential Path CoMmanD
+      if (    $pcmd =~ m|^[-0-9A-Z._/]+$|i){ # there might be some cmdl text that shouldn't try -d so try to first m// against only tested dircharz
+        if (  $pcmd =~ s/^\.(\.+)/$1/){$cwdr =~ s/\/[^\/]+$// while($pcmd =~ s/^\.//);$cwdr='/' unless(length($cwdr));$didp=1;}
+        elsif($pcmd =~  /^\//  &&
+              -d       "$pcmd"){$cwdr  =   $pcmd ;$cwdr =~ s/^\/+/\//;$cwdr =~ s/(.)\/$/$1/;$didp=1;}
+        elsif($pcmd =~ s/\/$// || ($cwdr eq '/' && -d "/$pcmd") || # when cwdr eq /, don't tst //pcmd
+              -d "$cwdr/$pcmd"){$cwdr .= "/$pcmd";$cwdr =~ s/^\/+/\//;$cwdr =~ s/(.)\/$/$1/;$didp=1;}}
+      if (   !$didp){
+        if   ($cmdl eq 'x'  ){$keey='Ctd';} # x alias for exit pretends Control-d pressed
+        else                 {$cmdl="cd $cwdr;$cmdl 2>&1";$trm8->Prnt("\n");$trm8->Btix(      $cmdl );}}P;
+    if   (    $cmdl !~  /^\s*([^;]+\/|x|\.\.)(\s|;|\.\.|$)/){ # try not to make call to just x for exit inBtix;
+open    $out8,'>&',STDOUT or die "Can't open  duplic8 STDOUT handle: $!";binmode $out8,':encoding(UTF-8)';print $out8 "$z$c$cmdl$W;\n",decode('UTF-8',`$cmdl`);
+close   $out8             or die "Can't close duplic8 STDOUT handle: $!";} #$trm8->Prnt("\n".`$cmdl`);}}P;   # similR2Btix but Xtra nwlIn @Nd && flashing
+   }else                     {                            $trm8->Prnt(                        $keey );       # cursor && hist changez proly out-of-sync
+open    $out8,'>&',STDOUT or die "Can't open  duplic8 STDOUT handle: $!";binmode $out8,':encoding(UTF-8)';print $out8 $keey;
+close   $out8             or die "Can't close duplic8 STDOUT handle: $!";                             } D;}} #   cursorz @EoLz && seemz slower

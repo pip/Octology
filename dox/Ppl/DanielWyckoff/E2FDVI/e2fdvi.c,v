@@ -1,0 +1,6590 @@
+head	1.102;
+access;
+symbols;
+locks
+	Pip:1.102; strict;
+comment	@ * @;
+
+
+1.102
+date	2008.10.09.12.35.42;	author dwyckoff76;	state Exp;
+branches;
+next	1.101;
+
+1.101
+date	2008.10.09.12.14.36;	author dwyckoff76;	state Exp;
+branches;
+next	1.100;
+
+1.100
+date	2008.10.09.11.12.18;	author dwyckoff76;	state Exp;
+branches;
+next	1.99;
+
+1.99
+date	2008.09.17.11.35.25;	author dwyckoff76;	state Exp;
+branches;
+next	1.98;
+
+1.98
+date	2008.09.14.09.27.01;	author dwyckoff76;	state Exp;
+branches;
+next	1.97;
+
+1.97
+date	2008.09.12.04.52.37;	author dwyckoff76;	state Exp;
+branches;
+next	1.96;
+
+1.96
+date	2008.09.12.00.32.30;	author dwyckoff76;	state Exp;
+branches;
+next	1.95;
+
+1.95
+date	2008.09.11.05.29.18;	author dwyckoff76;	state Exp;
+branches;
+next	1.94;
+
+1.94
+date	2008.09.11.05.19.26;	author dwyckoff76;	state Exp;
+branches;
+next	1.93;
+
+1.93
+date	2008.09.11.01.24.41;	author dwyckoff76;	state Exp;
+branches;
+next	1.92;
+
+1.92
+date	2008.09.10.22.42.21;	author dwyckoff76;	state Exp;
+branches;
+next	1.91;
+
+1.91
+date	2008.09.10.00.51.16;	author dwyckoff76;	state Exp;
+branches;
+next	1.90;
+
+1.90
+date	2008.09.09.21.51.27;	author dwyckoff76;	state Exp;
+branches;
+next	1.89;
+
+1.89
+date	2008.09.09.21.21.30;	author dwyckoff76;	state Exp;
+branches;
+next	1.88;
+
+1.88
+date	2008.09.09.20.48.14;	author dwyckoff76;	state Exp;
+branches;
+next	1.87;
+
+1.87
+date	2008.09.09.07.14.22;	author dwyckoff76;	state Exp;
+branches;
+next	1.86;
+
+1.86
+date	2008.09.09.07.12.07;	author dwyckoff76;	state Exp;
+branches;
+next	1.85;
+
+1.85
+date	2008.09.09.05.30.43;	author dwyckoff76;	state Exp;
+branches;
+next	1.84;
+
+1.84
+date	2008.09.09.05.26.44;	author dwyckoff76;	state Exp;
+branches;
+next	1.83;
+
+1.83
+date	2008.09.09.04.00.15;	author dwyckoff76;	state Exp;
+branches;
+next	1.82;
+
+1.82
+date	2008.09.09.02.03.39;	author dwyckoff76;	state Exp;
+branches;
+next	1.81;
+
+1.81
+date	2008.09.09.01.09.50;	author dwyckoff76;	state Exp;
+branches;
+next	1.80;
+
+1.80
+date	2008.09.09.00.11.15;	author dwyckoff76;	state Exp;
+branches;
+next	1.79;
+
+1.79
+date	2008.09.08.23.23.19;	author dwyckoff76;	state Exp;
+branches;
+next	1.78;
+
+1.78
+date	2008.09.08.20.12.14;	author dwyckoff76;	state Exp;
+branches;
+next	1.77;
+
+1.77
+date	2008.09.08.19.26.40;	author dwyckoff76;	state Exp;
+branches;
+next	1.76;
+
+1.76
+date	2008.09.08.19.23.51;	author dwyckoff76;	state Exp;
+branches;
+next	1.75;
+
+1.75
+date	2008.09.08.19.14.32;	author dwyckoff76;	state Exp;
+branches;
+next	1.74;
+
+1.74
+date	2008.09.08.19.11.32;	author dwyckoff76;	state Exp;
+branches;
+next	1.73;
+
+1.73
+date	2008.09.08.04.39.21;	author dwyckoff76;	state Exp;
+branches;
+next	1.72;
+
+1.72
+date	2008.09.07.20.10.33;	author dwyckoff76;	state Exp;
+branches;
+next	1.71;
+
+1.71
+date	2008.09.07.08.58.14;	author dwyckoff76;	state Exp;
+branches;
+next	1.70;
+
+1.70
+date	2008.09.07.07.23.36;	author dwyckoff76;	state Exp;
+branches;
+next	1.69;
+
+1.69
+date	2008.09.07.06.59.14;	author dwyckoff76;	state Exp;
+branches;
+next	1.68;
+
+1.68
+date	2008.09.06.05.51.52;	author dwyckoff76;	state Exp;
+branches;
+next	1.67;
+
+1.67
+date	2008.09.05.08.27.33;	author dwyckoff76;	state Exp;
+branches;
+next	1.66;
+
+1.66
+date	2008.09.05.06.13.47;	author dwyckoff76;	state Exp;
+branches;
+next	1.65;
+
+1.65
+date	2008.09.05.00.21.00;	author dwyckoff76;	state Exp;
+branches;
+next	1.64;
+
+1.64
+date	2008.09.05.00.01.13;	author dwyckoff76;	state Exp;
+branches;
+next	1.63;
+
+1.63
+date	2008.09.04.23.25.45;	author dwyckoff76;	state Exp;
+branches;
+next	1.62;
+
+1.62
+date	2008.09.04.23.06.54;	author dwyckoff76;	state Exp;
+branches;
+next	1.61;
+
+1.61
+date	2008.09.04.21.04.36;	author dwyckoff76;	state Exp;
+branches;
+next	1.60;
+
+1.60
+date	2008.09.03.02.01.01;	author dwyckoff76;	state Exp;
+branches;
+next	1.59;
+
+1.59
+date	2008.09.03.01.54.03;	author dwyckoff76;	state Exp;
+branches;
+next	1.58;
+
+1.58
+date	2008.09.01.22.27.40;	author dwyckoff76;	state Exp;
+branches;
+next	1.57;
+
+1.57
+date	2008.09.01.19.52.57;	author dwyckoff76;	state Exp;
+branches;
+next	1.56;
+
+1.56
+date	2008.09.01.19.45.31;	author dwyckoff76;	state Exp;
+branches;
+next	1.55;
+
+1.55
+date	2008.09.01.17.46.47;	author dwyckoff76;	state Exp;
+branches;
+next	1.54;
+
+1.54
+date	2008.09.01.03.52.32;	author dwyckoff76;	state Exp;
+branches;
+next	1.53;
+
+1.53
+date	2008.09.01.01.04.32;	author dwyckoff76;	state Exp;
+branches;
+next	1.52;
+
+1.52
+date	2008.08.31.23.32.47;	author dwyckoff76;	state Exp;
+branches;
+next	1.51;
+
+1.51
+date	2008.08.31.06.18.48;	author dwyckoff76;	state Exp;
+branches;
+next	1.50;
+
+1.50
+date	2008.08.31.03.51.28;	author dwyckoff76;	state Exp;
+branches;
+next	1.49;
+
+1.49
+date	2008.08.30.23.52.40;	author dwyckoff76;	state Exp;
+branches;
+next	1.48;
+
+1.48
+date	2008.08.30.23.48.01;	author dwyckoff76;	state Exp;
+branches;
+next	1.47;
+
+1.47
+date	2008.08.30.22.48.17;	author dwyckoff76;	state Exp;
+branches;
+next	1.46;
+
+1.46
+date	2008.08.30.18.16.23;	author dwyckoff76;	state Exp;
+branches;
+next	1.45;
+
+1.45
+date	2008.08.30.18.08.55;	author dwyckoff76;	state Exp;
+branches;
+next	1.44;
+
+1.44
+date	2008.08.30.13.08.18;	author dwyckoff76;	state Exp;
+branches;
+next	1.43;
+
+1.43
+date	2008.08.30.11.56.36;	author dwyckoff76;	state Exp;
+branches;
+next	1.42;
+
+1.42
+date	2008.08.30.08.45.15;	author dwyckoff76;	state Exp;
+branches;
+next	1.41;
+
+1.41
+date	2008.08.28.20.06.17;	author dwyckoff76;	state Exp;
+branches;
+next	1.40;
+
+1.40
+date	2008.08.28.17.40.59;	author dwyckoff76;	state Exp;
+branches;
+next	1.39;
+
+1.39
+date	2008.08.28.17.38.09;	author dwyckoff76;	state Exp;
+branches;
+next	1.38;
+
+1.38
+date	2008.08.28.17.31.57;	author dwyckoff76;	state Exp;
+branches;
+next	1.37;
+
+1.37
+date	2008.08.28.10.28.27;	author dwyckoff76;	state Exp;
+branches;
+next	1.36;
+
+1.36
+date	2008.08.28.08.55.56;	author dwyckoff76;	state Exp;
+branches;
+next	1.35;
+
+1.35
+date	2008.08.27.06.58.55;	author dwyckoff76;	state Exp;
+branches;
+next	1.34;
+
+1.34
+date	2007.09.21.21.11.06;	author dwyckoff76;	state Exp;
+branches;
+next	1.33;
+
+1.33
+date	2007.09.21.21.05.34;	author dwyckoff76;	state Exp;
+branches;
+next	1.32;
+
+1.32
+date	2007.07.17.01.03.44;	author dwyckoff76;	state Exp;
+branches;
+next	1.31;
+
+1.31
+date	2007.07.16.07.37.12;	author dwyckoff76;	state Exp;
+branches;
+next	1.30;
+
+1.30
+date	2007.07.16.06.49.38;	author dwyckoff76;	state Exp;
+branches;
+next	1.29;
+
+1.29
+date	2007.07.16.04.53.34;	author dwyckoff76;	state Exp;
+branches;
+next	1.28;
+
+1.28
+date	2007.07.16.01.19.46;	author dwyckoff76;	state Exp;
+branches;
+next	1.27;
+
+1.27
+date	2007.07.15.23.57.04;	author dwyckoff76;	state Exp;
+branches;
+next	1.26;
+
+1.26
+date	2007.07.15.23.55.10;	author dwyckoff76;	state Exp;
+branches;
+next	1.25;
+
+1.25
+date	2007.07.15.21.27.22;	author dwyckoff76;	state Exp;
+branches;
+next	1.24;
+
+1.24
+date	2007.07.15.21.26.21;	author dwyckoff76;	state Exp;
+branches;
+next	1.23;
+
+1.23
+date	2007.07.15.21.16.38;	author dwyckoff76;	state Exp;
+branches;
+next	1.22;
+
+1.22
+date	2007.07.15.15.39.32;	author dwyckoff76;	state Exp;
+branches;
+next	1.21;
+
+1.21
+date	2007.07.15.04.08.12;	author dwyckoff76;	state Exp;
+branches;
+next	1.20;
+
+1.20
+date	2007.07.15.00.52.43;	author dwyckoff76;	state Exp;
+branches;
+next	1.19;
+
+1.19
+date	2007.07.14.22.46.08;	author dwyckoff76;	state Exp;
+branches;
+next	1.18;
+
+1.18
+date	2007.07.14.10.04.33;	author dwyckoff76;	state Exp;
+branches;
+next	1.17;
+
+1.17
+date	2007.07.14.03.33.58;	author dwyckoff76;	state Exp;
+branches;
+next	1.16;
+
+1.16
+date	2007.07.14.03.00.33;	author dwyckoff76;	state Exp;
+branches;
+next	1.15;
+
+1.15
+date	2007.07.13.13.05.49;	author dwyckoff76;	state Exp;
+branches;
+next	1.14;
+
+1.14
+date	2007.07.13.10.40.24;	author dwyckoff76;	state Exp;
+branches;
+next	1.13;
+
+1.13
+date	2007.07.13.06.08.59;	author dwyckoff76;	state Exp;
+branches;
+next	1.12;
+
+1.12
+date	2007.07.12.15.00.48;	author dwyckoff76;	state Exp;
+branches;
+next	1.11;
+
+1.11
+date	2007.07.12.10.41.34;	author dwyckoff76;	state Exp;
+branches;
+next	1.10;
+
+1.10
+date	2007.07.12.06.12.11;	author dwyckoff76;	state Exp;
+branches;
+next	1.9;
+
+1.9
+date	2007.07.08.17.01.48;	author dwyckoff76;	state Exp;
+branches;
+next	1.8;
+
+1.8
+date	2007.07.05.11.24.33;	author dwyckoff76;	state Exp;
+branches;
+next	1.7;
+
+1.7
+date	2007.05.22.11.28.40;	author dwyckoff76;	state Exp;
+branches;
+next	1.6;
+
+1.6
+date	2007.05.11.03.34.09;	author dwyckoff76;	state Exp;
+branches;
+next	1.5;
+
+1.5
+date	2007.05.10.12.12.01;	author dwyckoff76;	state Exp;
+branches;
+next	1.4;
+
+1.4
+date	2007.05.10.09.05.00;	author dwyckoff76;	state Exp;
+branches;
+next	1.3;
+
+1.3
+date	2007.05.10.05.59.23;	author dwyckoff76;	state Exp;
+branches;
+next	1.2;
+
+1.2
+date	2007.05.09.15.03.05;	author dwyckoff76;	state Exp;
+branches
+	1.2.1.1;
+next	1.1;
+
+1.1
+date	2007.05.09.08.39.43;	author dwyckoff76;	state Exp;
+branches;
+next	;
+
+1.2.1.1
+date	2007.05.10.08.59.11;	author dwyckoff76;	state Exp;
+branches;
+next	;
+
+
+desc
+@This is my first attempt at a DVI Previewer.  Wish me luck.
+@
+
+
+1.102
+log
+@Adjusted kpathsea functions, so that only Type1 files are considered.
+@
+text
+@/*To Do:  
+ *changes fonts_array in stats_type to linked list
+ *Deal efficiently with rendering, i.e. render only what will be displayed
+ *Deal efficiently with fonts[] and name[] area 
+ *Remember to free fonts / font files
+ */
+
+#define _GNU_SOURCE
+#include <gtk/gtk.h>
+#include <cairo-ft.h>
+#include <ft2build.h>
+#include <stdio.h>
+#include <string.h>
+#include <math.h>
+#include <ctype.h>
+#include FT_FREETYPE_H
+#include FT_GLYPH_H
+#include <kpathsea/kpathsea.h>
+
+#define W_IN					8.5
+#define R_IN					11.0
+#define HORIZ_RES				1280.0
+#define VERT_RES				1024.0
+#define INIT_WIN_WIDTH			((15.0/16.0) * HORIZ_RES)
+#define INIT_WIN_LENGTH			((11.0/12.0) * VERT_RES)
+#define INIT_PAGE_WIDTH_ACT		((14.0/15.0) * INIT_WIN_WIDTH)
+#define INIT_PAGE_LENGTH_ACT	((R_IN/W_IN) * INIT_PAGE_WIDTH_ACT)
+#define INIT_PAGE_WIDTH_DISP	INIT_PAGE_WIDTH_ACT
+#define INIT_PAGE_LENGTH_DISP	((10.0/11.0) * INIT_WIN_LENGTH)
+#define MIN_WIN_WIDTH			((1.0/10.0) * INIT_WIN_WIDTH)
+#define MIN_WIN_LENGTH			((1.0/10.0) * MIN_WIN_WIDTH)
+#define PT_PER_IN				72.27
+#define SP_PER_PT_TH			65536.0
+#define SP_PER_PT				64838.45196
+#define M_IN					1.0
+#define L_IN					(W_IN - 2.0*M_IN)
+#define L_SP					(L_IN * PT_PER_IN * SP_PER_PT)
+#define S_IN					(R_IN - 2.0*M_IN)
+#define S_SP					(S_IN * PT_PER_IN * SP_PER_PT)
+#define SAMPLE_DVI				"sample.dvi"
+#define MAXLINE					80
+#define MAX_H_SP				(SP_PER_PT * PT_PER_IN * W_IN)
+#define MAX_V_SP				(SP_PER_PT * PT_PER_IN * R_IN)
+#define MAXH					31934563.0
+#define MAXV					43725786.0
+/*#define FONTFILE1	"/usr/share/texmf-texlive/fonts/type1/bluesky/cm/cmr10.pfb" */
+#define FONTFILE1	"/usr/share/texmf-texlive/fonts/type1/bluesky/ams/eumr10.pfb"
+#define FONTFILE2	"/usr/share/texmf-texlive/fonts/type1/bluesky/cm/cmti10.pfb"
+#define TFMFILE		"/usr/share/texmf-texlive/fonts/tfm/public/cm/cmr10.tfm"
+#define MAX_WORD_SIZE			1024
+#define WIDTH_FAC				70000
+#define TFM_PER_FT				((double)( 1.027781 / 640.0)) 
+/*define TFM_PER_FT				((double)( 1.027781 / 991.0)) */ 
+#define DEFAULT_FONT_AREA	"/usr/share/texmf-texlive/fonts/type1/bluesky/cm/"
+#define DEFAULT_FONT_SUFFIX "pfb"
+#define RES						72.0
+
+typedef struct {
+	unsigned char font_num;
+	unsigned long cnsfc;		/* current number of same-fonted characters */
+} font_changes_type;
+
+typedef struct {
+	long scale;	
+	long design;
+	unsigned char a, l;
+	char name[512];			/* full name of font */
+	unsigned char font_num;
+} font_type;
+
+typedef struct {
+	long maxv; 
+	long maxh; 
+	int maxstackdepth;
+	unsigned long num_chars;
+	long num_pages;
+	long num_fonts;
+	unsigned long num_font_changes;
+	font_changes_type *font_changes;
+	font_type *fonts;
+} stats_type;
+
+
+typedef struct {
+	cairo_glyph_t *proto_glyphs;
+	gint16 width;
+	gint16 height;
+	stats_type *stats;
+	FT_Library 	*library;
+	cairo_font_face_t **font_faces;
+	double border_width;
+	GdkColor bgcolor;
+} datatype1;
+
+typedef struct {
+		long h;
+		long v;
+		long w;
+		long x;
+		long y;
+		long z;
+} state_type;	/* ignoring hh, vv */
+
+
+unsigned char get_byte(FILE *dvi);
+char signed_byte(FILE *dvi);
+unsigned int get_two_bytes(FILE *dvi);
+int signed_pair(FILE *dvi);
+unsigned long get_three_bytes(FILE *dvi);
+long signed_trio(FILE *dvi);
+long signed_quad(FILE *dvi);
+
+void get_stats(stats_type *stats);
+void get_proto_glyphs_font_changes(cairo_glyph_t **proto_glyphs, 
+								   stats_type *stats, FT_Face *faces);
+
+static gboolean expose_event_callback(GtkWidget *widget, GdkEventExpose *event,
+									 gpointer data);
+
+void copy_glyphs(datatype1 *data, cairo_glyph_t *glyphs);
+void adv_thru_argumented_opcodes(FILE *dvi, unsigned char b);
+void adv_thru_preamble(FILE *dvi);
+unsigned long get_width(unsigned char index, FT_Face *face, stats_type *stats,
+						unsigned char font_num);
+void adv_to_font_defs(FILE *dvi);
+void adv_thru_fnt_def_params(FILE *dvi, stats_type *stats, 
+							 unsigned char cur_oc);
+unsigned char adv_thru_cur_op_call(FILE *dvi, unsigned int *args_len);
+
+void show_glyphs(cairo_t *cr, cairo_glyph_t *glyphs, stats_type *stats,
+				 cairo_font_face_t **font_faces);
+void load_all_font_changes_into_cr(cairo_t *cr, stats_type *stats,  
+								   font_changes_type *font_changes_end);
+
+void get_num_chars_num_font_changes(stats_type *stats, FILE *dvi);
+void handle_fnt_num(unsigned long *cfci, stats_type *stats, unsigned long *pci,
+					unsigned long cci, unsigned char cur_oc);
+void get_num_fonts(stats_type *stats, FILE *dvi);
+unsigned char get_font_index(font_type *fonts, unsigned char font_num);
+/*
+double h_p(cairo_glyph_t glyph, double w_p);
+double v_p(cairo_glyph_t glyph, double s_p); */
+void scale_glyphs(cairo_glyph_t *glyphs, unsigned long num_chars, gint16 w_p,
+				  double thickness);
+double x_p(double h_pu, double w_p);
+double y_p(double v_pu, double w_p, double thickness);
+void draw_page_dividers(cairo_t *cr, long num_pages, double thickness,  
+						double page_width, GdkColor *color);
+long load_font(char *full_font_path, unsigned char **font_file);
+long get_final_pos(FILE *file);
+/***************************************************************/
+
+gint config_event_callback(GtkWidget *widget, GdkEventConfigure *event, 
+						   gpointer data)
+{
+	datatype1 *_data;
+	static GdkEventExpose expose_event;
+
+	GtkWidget *scrolled_window, *drawing_area;
+
+	scrolled_window = GTK_WIDGET( 
+		gtk_container_get_children(GTK_CONTAINER(widget))->data);
+
+	drawing_area = GTK_WIDGET(
+		gtk_container_get_children(GTK_CONTAINER(scrolled_window))->data);
+	
+	_data = (datatype1 *) data;
+	_data->border_width = gtk_container_get_border_width(GTK_CONTAINER(widget));
+
+	expose_event.type = GDK_EXPOSE;
+	expose_event.window = drawing_area->window;
+	expose_event.send_event = TRUE;
+	expose_event.area.x = 0;
+	expose_event.area.y = 0;
+	expose_event.area.width = _data->width = 
+		event->width - 2 * _data->border_width; 
+	expose_event.area.height = _data->height = 
+		event->height - 2 * _data->border_width;
+	expose_event.region = gdk_region_rectangle(&(expose_event.area));
+	expose_event.count= 0;
+	expose_event_callback(drawing_area, &expose_event, data);  
+	
+	return FALSE; 
+}
+
+void scale_glyphs(cairo_glyph_t *glyphs, unsigned long num_chars, 
+				  gint16 w_p, double thickness)
+{
+	unsigned long i;
+
+	for (i = 0; i < num_chars; i++) {
+		/*
+		glyphs[i].x = round((h_p(glyphs[i], (double) w_p))); 
+		glyphs[i].y = round((v_p(glyphs[i], (double) w_p * R_IN / W_IN))); */
+
+		glyphs[i].x = x_p(glyphs[i].x, (double) w_p);
+		glyphs[i].y = y_p(glyphs[i].y, (double) w_p, thickness);
+	}	
+}
+
+void draw_page_dividers(cairo_t *cr, long num_pages, double thickness,  
+						double page_width, GdkColor *color)
+{
+	int i;
+
+	cairo_set_source_rgb(cr, (double) color->red/ 65535.0, 
+							 (double) color->green/65535.0, 
+						 	 (double) color->blue/65535.0);
+
+	for (i = 0; i < num_pages - 1; i++) {
+		cairo_rectangle(cr, 0, (i + 1) * page_width * R_IN / W_IN + 
+								i * thickness, page_width, thickness); 
+		cairo_fill(cr);
+	}
+}
+
+/* Remember to use cairo_save to handle multiple fonts */
+static gboolean expose_event_callback(GtkWidget *widget, GdkEventExpose *event,
+									 gpointer data)
+{
+	datatype1 *_data;
+	cairo_t *cr;
+	int new_length;
+	double em = 10.00003, pppt;
+	cairo_glyph_t *glyphs; 
+
+	_data = (datatype1 *) data;
+	
+	glyphs = g_slice_alloc(_data->stats->num_chars * sizeof(cairo_glyph_t));
+
+
+/*	new_length = round(((double) _data->height) * 
+					   ((double) _data->stats->num_pages) * 
+					    INIT_PAGE_LENGTH_ACT / INIT_PAGE_LENGTH_DISP);*/
+
+	new_length = round(((double) _data->stats->num_pages) * 
+					   ((double) _data->width) * R_IN / W_IN); 
+
+	gtk_widget_set_size_request(widget, -1, new_length);
+
+	pppt = _data->width / (W_IN * PT_PER_IN); 
+	gdk_window_clear(widget->window);
+
+	cr = gdk_cairo_create(widget->window);
+	draw_page_dividers(cr, _data->stats->num_pages, _data->border_width,
+					   _data->width, &(_data->bgcolor));
+	cairo_set_source_rgb(cr, 0, 0, 0);
+	cairo_set_font_size(cr, em * pppt);
+
+	copy_glyphs(_data, glyphs);
+	scale_glyphs(glyphs, _data->stats->num_chars, _data->width, 
+				 _data->border_width);
+
+	show_glyphs(cr, glyphs, _data->stats, _data->font_faces); 
+
+	g_slice_free1(_data->stats->num_chars * sizeof(cairo_glyph_t), glyphs);
+	cairo_destroy(cr);
+	
+	return FALSE;
+}
+
+
+void show_glyphs(cairo_t *cr, cairo_glyph_t *glyphs, stats_type *stats,
+				 cairo_font_face_t **font_faces)
+{
+	int fci;	/* font change index */
+
+	for (fci = 0; fci < stats->num_font_changes; fci++) {
+		cairo_set_font_face(cr, 
+		  	font_faces[get_font_index(stats->fonts, 
+		  						      stats->font_changes[fci].font_num)]);
+		cairo_show_glyphs(cr, glyphs, stats->font_changes[fci].cnsfc);
+		glyphs += stats->font_changes[fci].cnsfc;
+	} 
+}
+
+/*
+double h_p(cairo_glyph_t glyph, double w_p)
+{
+	return (w_p * ((L_IN/W_IN)*(glyph.x - 1.0/2.0) + 1.0/2.0));
+}
+
+double v_p(cairo_glyph_t glyph, double s_p)
+{
+	return (s_p * ((S_IN/R_IN)*(glyph.y - 1.0/2.0) + 1.0/2.0));
+}
+*/
+
+double x_p(double h_pu, double w_p)
+{
+	long res;
+
+	res = w_p / 8.5;
+
+	return w_p * h_pu + res * (1.0 - 2.0 * h_pu);
+}
+
+long Floor(double n)
+{
+	if ((double) floor(n) == n)
+		return (long) n - 1;
+	return floor(n);
+}
+
+double y_p(double v_pu, double w_p, double thickness)
+{
+/*	return (v_pu - (double)floor(v_pu)) * (w_p * R_IN / W_IN - 2.1 * RES) +
+		   RES * (1.0 + R_IN * (double)floor(v_pu)); */
+	long res;
+
+	res = w_p / 8.5;
+
+	return (double)Floor(v_pu) * (R_IN * res + thickness) + 
+			(v_pu - (double)Floor(v_pu)) *
+		   (w_p * R_IN / W_IN - 2.1 * res) + res;
+}
+
+/* reads a word of n bytes from stream, with 0 <= n <= 255 */
+void readword(unsigned short n, FILE *stream, unsigned char *word)
+{
+	fread((void *) word, sizeof(char), n, stream); 
+}
+
+/* assumes file is open and is at the beginning; ultimately leaves it 
+ * in that state */
+long get_final_pos(FILE *file) 
+{
+	fpos_t fp[1];
+
+	fseek(file, 0, SEEK_END);
+	fgetpos(file, fp); 
+	rewind(file);
+	return (int) fp->__pos; 
+}
+
+void clearbuf(unsigned char *buf, int len)
+{
+	int i;
+
+    for (i = 0; i < len; i++) {
+		buf[i] = 0;
+	}
+}
+
+void get_num_pages_stack_depth(stats_type *stats, FILE *dvi)
+{
+	int q; 			/* pointer to post location */
+	long cur_pos;
+	unsigned char byte;
+	
+	cur_pos = get_final_pos(dvi);
+
+	do {
+		fseek(dvi, cur_pos - 1, SEEK_SET);
+		byte = get_byte(dvi);
+		cur_pos--;
+	} while (byte == 223);
+
+	/* skip past identification byte to beginning of q */
+	fseek(dvi, cur_pos - 4, SEEK_SET); 
+	
+	q = signed_quad(dvi);
+
+	fseek(dvi, q, SEEK_SET);
+
+	get_byte(dvi);	 	/* post op-code */ 
+	signed_quad(dvi);	/* final bop */
+	signed_quad(dvi);	/*numerator */
+	signed_quad(dvi);	/* denominator */
+	signed_quad(dvi);	/* mag */
+
+	stats->maxv = (long) signed_quad(dvi);
+	stats->maxh = (long) signed_quad(dvi);
+	stats->maxstackdepth =  get_two_bytes(dvi);
+	stats->num_pages = (long) get_two_bytes(dvi);
+}
+
+unsigned char get_byte(FILE *dvi)
+{
+	unsigned char word[1];
+	
+	readword(1, dvi, word);
+	
+	return word[0];
+}
+
+char signed_byte(FILE *dvi)
+{
+	unsigned char word[1];
+
+	readword(1, dvi, word);
+	
+	if (word[0] < 128)
+		return word[0];
+	else
+		return word[0] - 256;
+}
+
+unsigned int get_two_bytes(FILE *dvi)
+{
+	unsigned char word[2];
+
+	readword(2, dvi, word);
+	
+	return 256*word[0] + word[1];
+}
+
+int signed_pair(FILE *dvi)
+{
+	unsigned char word[2];
+
+	readword(2, dvi, word);
+
+	if (word[0] < 128) 
+		return word[0]*256 + word[1];
+	return (word[0] - 256) * 256 + word[1];
+}
+
+unsigned long get_three_bytes(FILE *dvi)
+{
+	unsigned char word[3];
+
+	readword(3, dvi, word);	
+	return (word[0]*256 + word[1])*256 + word[2];
+}
+
+long signed_trio(FILE *dvi)
+{
+	unsigned char word[3];
+
+	readword(3, dvi, word);
+	if (word[0] < 128)
+		return (word[0] * 256 + word[1]) * 256 + word[2];
+	return ((word[0] - 256)*256 + word[1]) * 256 + word[2];
+}
+
+long signed_quad(FILE *dvi)
+{
+	unsigned char word[4];
+
+	readword(4, dvi, word);
+	if (word[0] < 128)
+		return ((word[0] * 256 + word[1]) * 256 + word[2])*256 + word[3];
+	return (((word[0] - 256) * 256 + word[1])*256 + word[2])*256 + word[3];
+}
+
+
+void adv_thru_preamble(FILE *dvi)
+{
+	int i;
+	int k;			/* number of bytes of comment */
+
+	rewind(dvi);
+
+	get_byte(dvi);	/* pre-amble opcode */
+	get_byte(dvi);	/* identifier byte */
+	signed_quad(dvi);	/* numerator */
+	signed_quad(dvi);	/* denominator */
+	signed_quad(dvi);	/* magnitude */
+	k = get_byte(dvi);		/* k */
+	for (i = 0; i < k; i++)	/* advance through comments */
+		get_byte(dvi);
+}
+
+/* assumes dvi is already open */
+
+/* advance thru bops and fnt_def; returns last non-nop-fnt-def byte
+ * Returns 1 if one of those two commands were found; 0 otherwise */
+
+unsigned char adv_thru_nops_fnt_defs(FILE *dvi)
+{
+	unsigned char ret = 0;
+
+	while ((ret = get_byte(dvi)) == 138 || (ret >= 243 && ret <= 246))
+		ret = 1;
+
+	return ret;
+}
+
+
+/* boolean: returns number of bytes of arguments, 0 if none 
+ * leaves FILE* unchanged; add zs later, maybe leave FILE* 
+ * unchanged more elegantly! */
+unsigned char argus(unsigned char byte, FILE *dvi)
+{
+	unsigned char a,l;
+	int orig_pos;
+	long k;
+	fpos_t fp[1];
+
+	fgetpos(dvi, fp);
+	orig_pos = fp->__pos;
+	
+	switch (byte) {
+		case 139:
+			return 44;
+  		case 143: case 148: case 153: case 157 : case 162: case 167 : 
+			return 1;
+		case 144: case 149: case 154: case 158:  case 163: case 168 :
+			return 2;
+		case 145: case 150: case 155:  case 159:  case 164: case 169 :
+			return 3;
+		case 146: case 151: case 156: case 160: case 165: case 170 :
+			return 4;
+		case 239:
+			k = (long) get_byte(dvi);
+			fseek(dvi, orig_pos, SEEK_SET);
+			return k + 1;
+		case 240:
+			k = (long) signed_pair(dvi);
+			fseek(dvi, orig_pos, SEEK_SET);
+			return k + 2;
+		case 241:
+			k = (long) signed_trio(dvi);
+			fseek(dvi, orig_pos, SEEK_SET);
+			return k + 3;
+		case 242:
+			k = signed_quad(dvi);
+			fseek(dvi, orig_pos, SEEK_SET);
+			return k + 4;
+		case 243:
+			fseek(dvi, orig_pos + 1 + 4*3, SEEK_SET);
+			a = get_byte(dvi);
+			l = get_byte(dvi);
+			fseek(dvi, orig_pos, SEEK_SET);
+			return (1 + 4*3 + 2 + a + l);
+		case 244:
+			fseek(dvi, orig_pos + 2 + 4*3, SEEK_SET);
+			a = get_byte(dvi);
+			l = get_byte(dvi);
+			fseek(dvi, orig_pos, SEEK_SET);
+			return (2 + 4*3 + 2 + a + l);
+		case 245:
+			fseek(dvi, orig_pos + 3 + 4*3, SEEK_SET);
+			a = get_byte(dvi);
+			l = get_byte(dvi);
+			fseek(dvi, orig_pos, SEEK_SET);
+			return (3 + 4*3 + 2 + a + l);
+		case 246:
+			fseek(dvi, orig_pos + 4 + 4*3, SEEK_SET);
+			a = get_byte(dvi);
+			l = get_byte(dvi);
+			fseek(dvi, orig_pos, SEEK_SET);
+			return (4 + 4*3 + 2 + a + l);
+	
+	}
+	return 0;
+}
+
+unsigned char adv_thru_cur_op_call(FILE *dvi, unsigned int *args_len)
+{
+	unsigned char byte;
+	fpos_t fp[1];
+
+	byte = get_byte(dvi); 
+	if ((*args_len = argus(byte, dvi))) {
+		fgetpos(dvi, fp);
+		fseek(dvi, fp->__pos + *args_len, SEEK_SET); 
+	} 
+
+	return byte;
+}
+
+void get_num_chars_num_font_changes(stats_type *stats, FILE *dvi)
+{
+	unsigned char cur_oc;	/*current opcode */ 
+	unsigned int dummy;
+	int i1, i2;
+
+	stats->num_chars = 0;
+	stats->num_font_changes = 0;
+
+	adv_thru_preamble(dvi);
+
+	for (i1 = 0; i1 < stats->num_pages; i1++) {
+		get_byte(dvi);		/* bop opcode */
+		for (i2 = 0; i2 < 11; i2++)
+			signed_quad(dvi);
+		while ((cur_oc = adv_thru_cur_op_call(dvi, &dummy))) {
+			if (!(cur_oc >> 7)) {
+				stats->num_chars++;
+			} else if (171 <= cur_oc && cur_oc <= 235) {
+				stats->num_font_changes++;
+			}
+		}
+	}
+}
+
+void adv_thru_fnt_def_params(FILE *dvi, stats_type *stats, unsigned char cur_oc)
+{
+	fpos_t fp[1];
+	unsigned char a, l;
+
+	fgetpos(dvi, fp);
+	fseek(dvi, (int) (fp->__pos) + (cur_oc - 243 + 1) + 12, SEEK_SET);
+	a = get_byte(dvi);
+	l = get_byte(dvi);
+	fgetpos(dvi, fp);
+	fseek(dvi, (int) (fp->__pos) + a + l, SEEK_SET);
+}
+
+
+/* assumes dvi is currently pointing to post */
+void adv_to_font_defs(FILE *dvi)
+{
+    fpos_t fp[1];
+
+	fgetpos(dvi, fp);
+    /* adv thru post's params */
+	fseek(dvi, fp->__pos + 1 + 4*6 + 2*2, SEEK_SET);
+}
+
+/* doesn't fseek back to original file position.  Must do that explicitly 
+ * Assumes dvi is at position q*/
+void get_num_fonts(stats_type *stats, FILE *dvi)
+{
+	unsigned char byte;
+	stats->num_fonts = 0;
+	
+	adv_to_font_defs(dvi);
+	byte = get_byte(dvi);
+
+	/* while get font_def? byte != post_post */
+	do {	
+		if (243 <= byte && byte <= 246) {
+			if (byte > 243) { 
+				printf("TeX82 didn't generate your DVI file.\n");
+				printf("byte is %u\n", byte);
+			}
+			stats->num_fonts++;
+		}
+		adv_thru_fnt_def_params(dvi, stats, byte);
+		byte = get_byte(dvi);
+	} while (byte != 249);	
+}
+
+
+/* assumes at most 256 fonts */
+void get_font_info(stats_type *stats, FILE *dvi)
+{
+	long q, cur_pos; 			/* pointer to post location */
+	int j, cfi;	/* cfi is current_font_index */
+	unsigned char byte;
+	fpos_t fp[1];
+	unsigned char cur_char;
+
+	cfi = 0;
+	cur_pos = get_final_pos(dvi);
+
+	do {
+		fseek(dvi, cur_pos - 1, SEEK_SET);
+		byte = get_byte(dvi);
+		cur_pos--;
+	} while (byte == 223);
+
+	/* skip to beginning of q (assumes we skipped identification byte) */
+	fseek(dvi, cur_pos - 4, SEEK_SET); 
+
+	q = signed_quad(dvi);
+
+	fseek(dvi, q, SEEK_SET);
+	get_num_fonts(stats, dvi);
+	fseek(dvi, q, SEEK_SET);
+	
+	stats->fonts = g_slice_alloc(stats->num_fonts * sizeof(font_type));
+	
+	adv_to_font_defs(dvi);
+	byte = get_byte(dvi);
+
+	/* while get font_def? byte != post_post */
+	do {	
+		if (243 <= byte && byte <= 246) {
+			if (byte > 243) {
+				printf("TeX82 didn't generate your DVI file.\n");
+			}
+			fgetpos(dvi, fp);
+			stats->fonts[cfi].font_num  = get_byte(dvi);	
+			fseek(dvi, (int) (fp->__pos) + (byte - 243 + 1) + 4, SEEK_SET);
+			stats->fonts[cfi].scale  = signed_quad(dvi);
+			stats->fonts[cfi].design = signed_quad(dvi);
+			stats->fonts[cfi].a = get_byte(dvi);
+			stats->fonts[cfi].l = get_byte(dvi);
+			for (j = 0, stats->fonts[cfi].name[0] = '\0'; 
+				 j < stats->fonts[cfi].a + 
+				 	 stats->fonts[cfi].l; j++) {
+				cur_char = get_byte(dvi);
+				stats->fonts[cfi].name[j] = cur_char;
+			}
+			stats->fonts[cfi].name[j] = '\0';
+		}
+		byte = get_byte(dvi);
+		cfi++;
+	} while (byte != 249);	
+	
+}
+
+void get_stats(stats_type *stats)
+{
+	FILE *dvi;
+	char l[MAXLINE]; 	/* current line */
+	char *lp[1];
+/*	char *ss_pos; */
+
+
+	*lp = l;
+
+	dvi = fopen(SAMPLE_DVI, "r");
+	get_num_pages_stack_depth(stats, dvi); 
+	get_num_chars_num_font_changes(stats, dvi);
+	get_font_info(stats, dvi);
+
+	fclose(dvi);
+}
+
+
+/* remember to free glyphs when expose_event yields different DVI files! */
+
+void copy_glyphs(datatype1 *data, cairo_glyph_t *glyphs)
+{
+	int i; 
+
+	for (i = 0; i < data->stats->num_chars; i++) {
+		glyphs[i].x = data->proto_glyphs[i].x;
+		glyphs[i].y = data->proto_glyphs[i].y;
+		glyphs[i].index = data->proto_glyphs[i].index;
+	}
+}
+
+/* no overflow increment.  Assumes initial value is ULONG_MAX */
+void no_of_inc(unsigned long *num)
+{
+  if (~*num)
+	*num += 1;
+  else
+  	 *num = 0;
+}
+
+void init_state(state_type *state, int maxstackdepth)
+{
+	int i;
+
+	for (i = 0; i < maxstackdepth; i++) {
+		state[i].h = state[i].v = state[i].w = state[i].x = state[i].y =
+		state[i].z = 0;
+	}
+} 
+
+void get_proto_glyphs_font_changes(cairo_glyph_t **proto_glyphs, 
+								   stats_type *stats, FT_Face *faces)
+{
+	FILE *dvi;
+	fpos_t fp[1];	/* file position */
+	state_type *state;
+	state_type cur_state;
+	int p_i = 0;		/* page index.  1 less than current page num */ 
+	unsigned char cur_oc, cur_fn;/* current op-code and current font_number */
+	unsigned long pci;/* previous char index: for use by ...->font_changes */
+	unsigned int cur_args_len;	/* length in bytes of arguments of current 
+								   op_code */
+
+	int s = 0;     /* current stack-depth */
+	unsigned long cci = ULONG_MAX;	/* current character index */
+	unsigned long cfci = ULONG_MAX;	/* current font change index */
+
+	state = g_slice_alloc(stats->maxstackdepth * sizeof(state_type));
+	*proto_glyphs = g_slice_alloc(stats->num_chars * sizeof(cairo_glyph_t));
+	stats->font_changes = g_slice_alloc(stats->num_font_changes * 
+										sizeof(font_changes_type));
+
+	dvi = fopen(SAMPLE_DVI, "r");
+
+	adv_thru_preamble(dvi);
+			/* must take care of sets and puts and putchars */ 
+			/* am using this advancing thru then tracing back 
+			 * algorithm to handle random fnt_defs */
+		while ((cur_oc = adv_thru_cur_op_call(dvi, &cur_args_len)))
+			if (cur_oc == 139) {
+				cur_state.h = cur_state.v = cur_state.w = cur_state.x = 
+				cur_state.y = cur_state.z = 0;
+				init_state(state, stats->maxstackdepth);
+			} else if (cur_oc == 140) {
+				p_i++;
+			} else if (!(cur_oc >> 7)) {
+				no_of_inc(&cci);
+				(*proto_glyphs)[cci].index = FT_Get_Char_Index(
+					faces[get_font_index(stats->fonts, cur_fn)], cur_oc); 
+
+				(*proto_glyphs)[cci].x = ((double) cur_state.h) / MAXH; 
+				(*proto_glyphs)[cci].y = (double) p_i + 
+										 ((double) cur_state.v) / MAXV; 
+				cur_state.h += get_width(cur_oc, 
+					&faces[get_font_index(stats->fonts, cur_fn)], 
+					stats, cur_fn); 
+				/*cur_state.h += 300000;*/
+			} else if (cur_oc == 141) /* push */ {
+				state[s].h = cur_state.h;
+				state[s].v = cur_state.v;
+				state[s].w = cur_state.w;
+				state[s].x = cur_state.x;
+				state[s].y = cur_state.y;
+				state[s].z = cur_state.z;
+				s++; 
+			} else if (cur_oc == 142) /* pop */ {
+				s--;
+				cur_state.h = state[s].h;
+				cur_state.v = state[s].v;
+				cur_state.w = state[s].w;
+				cur_state.x = state[s].x;
+				cur_state.y = state[s].y;
+				cur_state.z = state[s].z; 
+			} else if (143 <= cur_oc && cur_oc <= 146) {
+				fgetpos(dvi, fp); 
+				switch (cur_oc) { 
+					case 143 :		/* right1*/ 
+						fseek(dvi, fp->__pos - 1, SEEK_SET);
+						cur_state.h += signed_byte(dvi);
+						break;		
+					case 144 : 		/* right2*/ 
+						fseek(dvi, fp->__pos - 2, SEEK_SET);
+						cur_state.h += signed_pair(dvi);
+						break;		
+					case 145 :		/* right3*/ 
+						fseek(dvi, fp->__pos - 3, SEEK_SET);
+						cur_state.h += signed_trio(dvi);
+						break;		
+					case 146 :		/* right4*/ 
+						fseek(dvi, fp->__pos - 4, SEEK_SET);
+						cur_state.h += signed_quad(dvi);
+						break;
+				}
+			} else if (cur_oc == 147)  		/* w0 */
+				cur_state.h += cur_state.w; 
+			  else if (148 <= cur_oc && cur_oc <= 151) {
+				fgetpos(dvi, fp); 
+				switch (cur_oc) {
+					case 148:				/* w1 */
+						fseek(dvi, fp->__pos - 1, SEEK_SET);
+						cur_state.w  = signed_byte(dvi);
+						break;
+					case 149:				/* w2 */
+						fseek(dvi, fp->__pos - 2, SEEK_SET);
+						cur_state.w  = signed_pair(dvi);
+						break;
+					case 150:				/* w3 */
+						fseek(dvi, fp->__pos - 3, SEEK_SET);
+						cur_state.w  = signed_trio(dvi);
+						break;
+					case 151:				/* w4 */
+						fseek(dvi, fp->__pos - 4, SEEK_SET);
+						cur_state.w  = signed_quad(dvi);
+						break;
+				}
+				cur_state.h += cur_state.w;
+			} else if (cur_oc == 152)		/* x0 */ 
+				cur_state.h += cur_state.x;
+			  else if (153 <= cur_oc && cur_oc <= 156) {
+				fgetpos(dvi, fp); 
+				switch (cur_oc) {
+					case 153:				/* x1 */
+						fseek(dvi, fp->__pos - 1, SEEK_SET);
+						cur_state.x = signed_byte(dvi);
+						break;
+					case 154:				/* x2 */
+						fseek(dvi, fp->__pos - 2, SEEK_SET);
+						cur_state.x = signed_pair(dvi);
+						break;
+					case 155:				/* x3 */
+						fseek(dvi, fp->__pos - 3, SEEK_SET);
+						cur_state.x = signed_trio(dvi);
+						break;
+					case 156:				/* x4 */
+						fseek(dvi, fp->__pos - 4, SEEK_SET);
+						cur_state.x = signed_quad(dvi);
+						break;
+				cur_state.h += cur_state.x;
+				}
+			} else if (157 <= cur_oc && cur_oc <= 160) {
+				fgetpos(dvi, fp); 
+				switch (cur_oc) {
+					case 157:				/* down1 */
+						fseek(dvi, fp->__pos - 1, SEEK_SET);
+						cur_state.v += signed_byte(dvi); 
+						break;
+					case 158:				/* down2 */
+						fseek(dvi, fp->__pos - 2, SEEK_SET);
+						cur_state.v += signed_pair(dvi); 
+						break;
+					case 159:				/* down3 */
+						fseek(dvi, fp->__pos - 3, SEEK_SET);
+						cur_state.v += signed_trio(dvi); 
+						break;
+					case 160:				/* down4 */
+						fseek(dvi, fp->__pos - 4, SEEK_SET);
+						cur_state.v += signed_quad(dvi); 
+						break;
+				}
+			} else if (cur_oc == 161) 		/* y0 */
+				cur_state.v += cur_state.y;
+			  else if (162 <= cur_oc && cur_oc <= 165) {
+				fgetpos(dvi, fp); 
+				switch (cur_oc) {
+					case 162:				/* y1 */
+						fseek(dvi, fp->__pos - 1, SEEK_SET);
+						cur_state.y = signed_byte(dvi);
+						break;
+					case 163:				/* y2 */
+						fseek(dvi, fp->__pos - 2, SEEK_SET);
+						cur_state.y = signed_pair(dvi);
+						break;
+					case 164:				/* y3 */
+						fseek(dvi, fp->__pos - 3, SEEK_SET);
+						cur_state.y = signed_trio(dvi);
+						break;
+					case 165:				/* y4 */
+						fseek(dvi, fp->__pos - 4, SEEK_SET);
+						cur_state.y = signed_quad(dvi);
+						break;
+				}
+				cur_state.v += cur_state.y;
+
+			} else if (cur_oc == 166) {
+				cur_state.v += cur_state.z;
+			} else if (167 <= cur_oc && cur_oc <= 170) {
+				fgetpos(dvi, fp);
+				switch (cur_oc) {
+					case 167:
+						fseek(dvi, fp->__pos - 1, SEEK_SET);
+						cur_state.z = signed_byte(dvi);
+						break;
+					case 168:
+						fseek(dvi, fp->__pos - 2, SEEK_SET);
+						cur_state.z = signed_pair(dvi);
+						break;
+					case 169:
+						fseek(dvi, fp->__pos - 3, SEEK_SET);
+						cur_state.z = signed_trio(dvi);
+						break;
+					case 170:
+						fseek(dvi, fp->__pos - 4, SEEK_SET);
+						cur_state.z = signed_quad(dvi);
+						break;
+				}
+				cur_state.v += cur_state.z;
+			} else if (171 <= cur_oc && cur_oc <= 234) {
+				cur_fn = cur_oc - 171;
+				handle_fnt_num(&cfci, stats, &pci, cci, cur_oc);
+				/* remember to consider case of nops appearing in-between */
+			}
+	g_slice_free1(stats->maxstackdepth * sizeof(state_type), state);
+	fclose(dvi);
+}
+
+
+void handle_fnt_num(unsigned long *cfci, stats_type *stats, unsigned long *pci,
+					unsigned long cci, unsigned char cur_oc)
+{
+	no_of_inc(cfci);
+	if (*cfci) {
+		if (~(*pci)) {
+			stats->font_changes[*cfci-1].cnsfc = cci - *pci + 1;
+		} else {
+			stats->font_changes[*cfci-1].cnsfc = cci + 1; 
+		}
+		*pci = cci + 1;
+	} else {
+		*pci = ULONG_MAX;
+		stats->font_changes[*cfci].cnsfc = 0;
+	}
+	stats->font_changes[*cfci].font_num = cur_oc - 171;
+
+	if (*cfci == stats->num_font_changes - 1) {
+		stats->font_changes[*cfci].cnsfc = stats->num_chars - cci - 1;
+	}
+}
+
+/* get font_index corresponding to given font number */
+
+unsigned char get_font_index(font_type *fonts, unsigned char font_num)
+{
+	int i = 0;
+
+	while (fonts[i].font_num != font_num)
+		i++;
+
+	return i;
+}
+
+
+/* Returns width of character in sp (DVI) units */
+unsigned long get_width(unsigned char index, FT_Face *face, stats_type *stats,
+						unsigned char font_num)
+{
+	unsigned long width;
+
+	FT_Load_Glyph(*face, FT_Get_Char_Index(*face, index), FT_LOAD_CROP_BITMAP);
+	width = ((*face)->glyph->advance.x);
+	return (unsigned long) 
+		round((double)width * TFM_PER_FT * 
+			  (double) 
+			  (stats->fonts[get_font_index(stats->fonts, font_num)].scale));
+}
+
+
+long load_font(char *full_font_path, unsigned char **font_file)
+{
+	FILE *ff;	/* font file */
+	long file_length;
+
+	ff = fopen(full_font_path, "r");
+	file_length = get_final_pos(ff) + 1;
+	*font_file = g_slice_alloc(file_length * sizeof(unsigned char *)); 
+	fread((void *) *font_file, sizeof(char), (size_t) file_length, ff);
+	fclose(ff);
+
+	return file_length;
+}
+
+void get_set_FT_faces(FT_Face **faces, FT_Library *library, stats_type *stats,
+					  unsigned char ***font_files, long **font_files_lengths)
+{
+	int i, j, error = 0;
+	char *full_font_path;
+	int pt;
+
+	*faces = g_slice_alloc(stats->num_fonts * sizeof(FT_Face));
+	*font_files = g_slice_alloc(stats->num_fonts * sizeof(unsigned char **));
+	*font_files_lengths = g_slice_alloc(stats->num_fonts * sizeof(long));
+
+	for (i = 0; i < stats->num_fonts; i++) {
+		j = 0;
+		if (stats->fonts[i].name[0] == '/') {
+			strcpy(full_font_path, stats->fonts[i].name);
+		} else {
+			full_font_path = 
+				kpse_find_file(stats->fonts[i].name, kpse_type1_format, 0);
+		}
+
+		(*font_files_lengths)[i] = 
+			load_font(full_font_path, &((*font_files)[i]));
+	
+		while (!isdigit(stats->fonts[i].name[j]))
+			j++;
+	
+		pt = atoi(stats->fonts[i].name + j); 
+		error = FT_New_Memory_Face(*library, (*font_files)[i], 
+								   (*font_files_lengths)[i], 0, &((*faces)[i])); 
+
+/*
+		printf("%d\n", (int)round(((double) pt) * RES * INIT_PAGE_WIDTH_DISP 
+							*((double) stats->fonts[i].scale)	/ 
+						  (PT_PER_IN * HORIZ_RES * 
+						   ((double) stats->fonts[i].design))));*/
+		FT_Select_Charmap((*faces)[i], 1094992451);
+	
+		error = FT_Set_Char_Size(
+					(*faces)[i], (int) 
+					(round(((double) pt) * RES * INIT_PAGE_WIDTH_DISP 
+							*((double) stats->fonts[i].scale)	/ 
+						  (PT_PER_IN * HORIZ_RES * 
+						   ((double) stats->fonts[i].design)))) * 64, 
+				    0, 0, 0);
+	}
+
+	if (error) {
+		fprintf(stderr, "Unknown File Format\n");
+	}
+}
+
+void get_cairo_font_faces(cairo_font_face_t ***font_faces, FT_Face *faces, 
+						  long num_fonts)
+{
+	int i;
+
+	*font_faces = g_slice_alloc(num_fonts * sizeof(cairo_font_face_t *));
+
+	for (i = 0; i < num_fonts; i++) {
+		(*font_faces)[i] = 
+			cairo_ft_font_face_create_for_ft_face(faces[i], 
+												  FT_LOAD_CROP_BITMAP);
+	}
+}
+
+int main(int argc, char *argv[])
+{
+	GtkWidget *drawing_area, *window, *scrolled_window, *vbox;
+	FT_Library 	library;
+	FT_Face 	*faces;			/* array of faces */ 
+	cairo_font_face_t **font_faces; /* array of "cairo_font_face *"s */
+	datatype1 data1;
+	const GdkColor white = {0, 65535, 65535, 65535};
+	const GdkColor gray = {0, 0xea60, 0xea60, 0xea60};
+
+	stats_type stats;
+	int error;
+	int i;
+	unsigned char **font_files;
+	long *font_files_lengths;
+
+/* glyphs_t will hold x = x_sp/l_sp, y = y_sp/s_sp
+ * 0 <= x,y <= 1  */
+	cairo_glyph_t *proto_glyphs; 
+
+
+/*	GSList *list; */
+
+	kpse_set_program_name(argv[0], NULL);
+	kpse_init_prog(argv[0], 300, NULL, "cmr10");
+
+	get_stats(&stats); 
+
+	error = FT_Init_FreeType(&library);
+	if (error) {
+		fprintf(stderr, "Initialization of library failed");
+		return 1;
+	}
+
+	get_set_FT_faces(&faces, &library, &stats, &font_files, 
+					 &font_files_lengths);
+
+	get_cairo_font_faces(&font_faces, faces, stats.num_fonts);
+
+	if (error == FT_Err_Unknown_File_Format) {
+	    return 1;
+	} else if (error) {
+		fprintf(stderr, "Font file could not be opened or read or "
+					    "is broken\n");
+		return 1;
+	}
+
+	get_proto_glyphs_font_changes(&proto_glyphs, &stats, faces);
+
+/* add for loop of FT_Dones
+	FT_Done_Face(face1); */
+
+/*	g_mem_set_vtable (glib_mem_profiler_table); */
+
+	gtk_init(&argc, &argv);
+
+
+	window = gtk_window_new(GTK_WINDOW_TOPLEVEL);
+	gtk_widget_modify_bg(window, GTK_STATE_NORMAL, &gray);
+	gtk_widget_set_size_request(window, INIT_WIN_WIDTH/10, INIT_WIN_LENGTH/10);
+	gtk_window_resize(GTK_WINDOW(window), INIT_WIN_WIDTH, INIT_WIN_LENGTH);
+
+	vbox = gtk_vbox_new(TRUE, 0);
+	
+
+	drawing_area = gtk_drawing_area_new();
+/*	gtk_widget_set_size_request(drawing_area, -1, 
+								stats.num_pages * INIT_PAGE_LENGTH_ACT); */
+	gtk_container_set_border_width(GTK_CONTAINER(window),
+								   (INIT_WIN_WIDTH - INIT_PAGE_WIDTH_DISP) / 2); 
+
+	scrolled_window = gtk_scrolled_window_new(NULL, NULL);
+
+	gtk_container_set_border_width(GTK_CONTAINER(scrolled_window), 0); 
+
+	gtk_scrolled_window_set_policy(GTK_SCROLLED_WINDOW(scrolled_window), 
+								   GTK_POLICY_AUTOMATIC, GTK_POLICY_AUTOMATIC);
+
+	gtk_widget_modify_bg(drawing_area, GTK_STATE_NORMAL, &white);
+
+	gtk_scrolled_window_add_with_viewport(
+			GTK_SCROLLED_WINDOW(scrolled_window), drawing_area); 	
+
+	gtk_container_add(GTK_CONTAINER(window), scrolled_window);
+
+	gtk_widget_set_events(drawing_area, GDK_ALL_EVENTS_MASK);	
+	gtk_widget_realize(drawing_area); 
+
+	data1.proto_glyphs = proto_glyphs;
+	data1.library = &library;
+	data1.font_faces = font_faces; 
+	data1.width = INIT_PAGE_WIDTH_DISP; 
+	data1.height = INIT_PAGE_LENGTH_DISP;
+	data1.stats = &stats;
+	data1.bgcolor.red = gray.red;
+	data1.bgcolor.green = gray.green;
+	data1.bgcolor.blue = gray.blue;
+
+	gtk_widget_add_events(window, GDK_ALL_EVENTS_MASK);
+
+	g_signal_connect(G_OBJECT(drawing_area), "expose_event", 
+					 G_CALLBACK(expose_event_callback), (gpointer) &data1);
+
+	g_signal_connect(G_OBJECT(window), "destroy", G_CALLBACK(gtk_main_quit), 
+					 NULL);
+
+	g_signal_connect(G_OBJECT(window), "configure_event", 
+					 G_CALLBACK(config_event_callback), (gpointer) &data1);
+
+	gtk_widget_show_all(window);
+
+	gtk_main();
+
+	for (i = 0; i < stats.num_fonts; i++) {
+		FT_Done_Face(faces[i]);
+		cairo_font_face_destroy(font_faces[i]);
+		g_slice_free1(font_files_lengths[i]*sizeof(char), font_files[i]);
+	}
+
+	g_slice_free1(stats.num_fonts * sizeof(long), font_files_lengths);
+	g_slice_free1(stats.num_fonts * sizeof(unsigned char *), font_files);
+
+	FT_Done_FreeType(library);
+
+	g_slice_free1(stats.num_chars * sizeof(cairo_glyph_t), proto_glyphs);
+	g_slice_free1(stats.num_font_changes * sizeof(font_changes_type),
+				  stats.font_changes); 
+	/*g_atexit(g_mem_profile);
+
+	list = (GSList*) g_malloc(sizeof(GSList));
+	list->next = (GSList*) g_malloc(sizeof(GSList));
+	g_free(list->next); */
+
+	g_slice_free1(stats.num_fonts * sizeof(cairo_font_face_t *), font_faces);
+	g_slice_free1(stats.num_fonts * sizeof(FT_Face), faces);
+	
+	return 0;
+}
+@
+
+
+1.101
+log
+@Load Font Files into memory, instead of leaving multiple open file handles
+After all FOPEN_MAX is 12 or 16 or something low like that.  Handled
+memory free-ing, too!
+@
+text
+@a1002 16
+char *get_full_font_path(char *fontname)
+{
+	kpse_file_format_type fti;
+	char *ret_i, *ret_f;
+
+	for (fti = 0; fti < kpse_last_format; fti++) {
+			/* Hack: Troff file doesn't work apparently */
+		if (fti == kpse_troff_font_format) 
+			continue;
+		if ((ret_i = kpse_find_file(fontname, fti, 0)))
+			ret_f = ret_i; 
+	}
+
+	return ret_f; 
+}
+
+d1034 2
+a1035 1
+			full_font_path = get_full_font_path(stats->fonts[i].name);
+@
+
+
+1.100
+log
+@Added calls to FT_Get_Char_Index and FT_Select_Charmap to deal with
+ligatures and Euler fonts
+@
+text
+@a1 2
+ *Add more than one font
+ *Add more than one page
+d5 1
+a5 2
+ *Remember to free fonts
+ *Add xxx op-code handling
+d149 2
+d326 1
+a326 1
+int get_final_pos(FILE *file) 
+d348 1
+a348 1
+	int cur_pos;
+d641 2
+a642 2
+	long q; 			/* pointer to post location */
+	int cur_pos, j, cfi;	/* cfi is current_font_index */
+d1020 16
+a1035 1
+void get_set_FT_faces(FT_Face **faces, FT_Library *library, stats_type *stats)
+d1042 2
+d1052 4
+a1055 1
+		
+d1060 2
+a1061 7
+		/*
+		printf("pt is %d.\n", pt);
+		printf("scale is %ld.\n", stats->fonts[i].scale);
+		printf("design is %ld.\n", stats->fonts[i].design);
+
+		printf("%s\n", full_font_path);*/
+		error = FT_New_Face(*library, full_font_path, 0, &((*faces)[i])); 
+d1111 2
+d1132 2
+a1133 2
+	get_set_FT_faces(&faces, &library, &stats);
+					 
+d1214 1
+d1217 3
+@
+
+
+1.99
+log
+@minor change.  advance rather than metrics.
+@
+text
+@d786 3
+a788 1
+				(*proto_glyphs)[cci].index = cur_oc; 
+d996 1
+a996 1
+	FT_Load_Glyph(*face, index, FT_LOAD_CROP_BITMAP);
+d1054 1
+@
+
+
+1.98
+log
+@added CROP_BITMAP flag
+@
+text
+@d49 2
+a50 1
+#define FONTFILE1	"/usr/share/texmf-texlive/fonts/type1/bluesky/cm/cmr10.pfb"
+d995 1
+a995 1
+	width = ((*face)->glyph->metrics.width);
+@
+
+
+1.97
+log
+@is working great, except for no VF / PK file handling abilities.
+I'm studying those file structures as we speak.
+@
+text
+@d993 1
+a993 1
+	FT_Load_Glyph(*face, index, FT_LOAD_DEFAULT);
+d1076 1
+a1076 1
+												  FT_LOAD_DEFAULT);
+@
+
+
+1.96
+log
+@used kpathsea in a very inefficient for-loop to determine file locations
+.  Am about to add support for xxx
+@
+text
+@d488 1
+d505 16
+d1038 4
+d1043 1
+d1045 7
+d1053 2
+a1054 2
+					(*faces)[i], 
+					round(((double) pt) * 64.0 * RES * INIT_PAGE_WIDTH_DISP 
+d1057 2
+a1058 2
+						   ((double) stats->fonts[i].design))), 
+				    0, 0, 0); 
+@
+
+
+1.95
+log
+@finished calculation gracefully.  Is perfect now, except for need to add
+xxx-handling, kpathsea functionality, and code-cleanup
+@
+text
+@d21 1
+d984 17
+d1004 1
+a1004 1
+	char full_font_path[1024] = "";
+d1010 1
+a1010 1
+		j = 0; 
+d1014 1
+a1014 3
+			strcpy(full_font_path, DEFAULT_FONT_AREA);
+			sprintf(full_font_path + strlen(full_font_path), "%s", 
+					stats->fonts[i].name);
+a1015 4
+		sprintf(full_font_path + strlen(full_font_path), ".%s", 
+				DEFAULT_FONT_SUFFIX);
+		full_font_path[strlen(full_font_path)] = '\0';
+		
+d1017 1
+a1017 2
+		while (isdigit(stats->fonts[i].name[
+				 strlen(stats->fonts[i].name) - j - 1])) {
+d1019 2
+a1020 3
+		}
+
+		pt = atoi(stats->fonts[i].name + (strlen(stats->fonts[i].name)) - j);
+d1072 3
+@
+
+
+1.94
+log
+@got right background color for new page divider!  Now, I have to adjust
+the calculations to account for the thickness of the page divider
+@
+text
+@d144 2
+a145 1
+void scale_glyphs(cairo_glyph_t *glyphs, unsigned long num_chars, gint16 w_p);
+d147 1
+a147 1
+double y_p(double v_pu, double w_p);
+d186 1
+a186 1
+				  gint16 w_p)
+d196 1
+a196 1
+		glyphs[i].y = y_p(glyphs[i].y, (double) w_p);
+d250 2
+a251 1
+	scale_glyphs(glyphs, _data->stats->num_chars, _data->width);
+d304 1
+a304 1
+double y_p(double v_pu, double w_p)
+d312 2
+a313 1
+	return (double)Floor(v_pu) * R_IN * res + (v_pu - (double)Floor(v_pu)) *
+@
+
+
+1.93
+log
+@scaling works perfectly.  Now I want to add a page divider!
+@
+text
+@d92 2
+d147 2
+a155 1
+	double border_width;
+d166 1
+a166 1
+	border_width = gtk_container_get_border_width(GTK_CONTAINER(widget));
+d174 1
+a174 1
+		event->width - 2 * border_width; 
+d176 1
+a176 1
+		event->height - 2 * border_width;
+d199 15
+d243 2
+d1046 2
+d1089 1
+d1091 1
+d1127 3
+@
+
+
+1.92
+log
+@changed new_length.  no real change.
+@
+text
+@d57 1
+d139 1
+d141 4
+a144 1
+double v_p(cairo_glyph_t glyph, double s_p);
+d181 2
+a182 1
+void scale_glyphs(cairo_glyph_t *glyphs, int num, gint16 w_p, gint16 s_p)
+d184 1
+a184 1
+	int i;
+d186 2
+a187 1
+	for (i = 0; i < num; i++) {
+d189 4
+a192 1
+		glyphs[i].y = round((v_p(glyphs[i], (double) w_p * R_IN / W_IN)));  
+d229 1
+a229 2
+	scale_glyphs(glyphs, _data->stats->num_chars, 
+				 _data->width,  _data->height); 
+d254 1
+d264 5
+d270 23
+a619 2
+	printf("q is %ld\n", q); 
+
+d992 1
+a992 1
+					round(((double) pt) * 64.0 * 72.0 * INIT_PAGE_WIDTH_DISP 
+@
+
+
+1.91
+log
+@added adv_thru_fnt_def_params call, where necessary.  Preparing to use
+the kpathsea library by the great Karl Berry!
+@
+text
+@d202 1
+a202 1
+	new_length = round(((double) _data->height) * 
+d204 4
+a207 1
+					    INIT_PAGE_LENGTH_ACT / INIT_PAGE_LENGTH_DISP);
+@
+
+
+1.90
+log
+@added dynamically obtained pt size
+@
+text
+@d8 1
+d544 1
+a544 1
+			if (byte > 243)
+d546 2
+d550 1
+d576 1
+a576 1
+	
+d578 3
+d593 1
+a593 1
+			if (byte > 243)
+d595 1
+@
+
+
+1.89
+log
+@minor changes.  Preparing to QA/test other DVI files
+@
+text
+@d17 1
+d915 1
+a915 1
+	int i, error = 0;
+d917 1
+d922 1
+d933 9
+d945 4
+a948 2
+					round(10.0 * 64.0 * 72.0 * INIT_PAGE_WIDTH_DISP / 
+						  (PT_PER_IN * HORIZ_RES)), 
+@
+
+
+1.88
+log
+@Scaling is working great! Without hackfactors!
+@
+text
+@d198 5
+a202 3
+	
+	new_length = (double) _data->height * _data->stats->num_pages * 
+					 INIT_PAGE_LENGTH_ACT / INIT_PAGE_LENGTH_DISP;
+d1014 2
+a1015 2
+	gtk_widget_set_size_request(drawing_area, -1, 
+								stats.num_pages * INIT_PAGE_LENGTH_ACT);
+@
+
+
+1.87
+log
+@changed sample2.dvi -> sample.dvi
+@
+text
+@a48 3
+#define HACKFACTOR_X			0.75
+#define HACKFACTOR_Y			1.0
+#define HACK_SCALE				0.95
+d136 2
+d179 4
+a182 6
+		glyphs[i].x = round((double) glyphs[i].x * 
+							(double) w_p * HACKFACTOR_X); 
+		glyphs[i].y = round((double) glyphs[i].y * 
+							(double) w_p * HACKFACTOR_Y * R_IN / W_IN); 
+	}
+}	
+a237 2
+/* Keep as a reference to future scaling */
+/*
+d247 1
+a247 1
+*/
+d929 5
+a933 2
+		error = FT_Set_Char_Size((*faces)[i], 
+								   round(10.0 * 64.0 * HACK_SCALE), 0, 0, 0); 
+@
+
+
+1.86
+log
+@adjusted HACK_FACTORs
+@
+text
+@d40 1
+a40 2
+#define SAMPLE_DVI				"sample2.dvi"
+#define SAMPLE_DVIT				"sample2.dvit"
+@
+
+
+1.85
+log
+@working great, so far!  Displays multi-fonted files perfectly, multi-pages
+Just need to take into account the "10" of cmr10, etc., you know what I mean
+@
+text
+@d52 1
+d935 2
+a936 1
+		error = FT_Set_Char_Size((*faces)[i], 10 * 64, 0, 0, 0); 
+d986 2
+@
+
+
+1.84
+log
+@fixed crazy rendering bug.  I was missing the zs.  Will clean up later.
+@
+text
+@a860 21
+			
+			
+		#if 0	
+			else if (243 <= cur_oc && cur_oc <= 246) {
+				if (cur_oc > 243) {
+					printf("You're using too high a font number for this "
+						   "DVI Previewer.\n");
+				} else {
+					fgetpos(dvi, fp);
+					fseek(dvi, fp->__pos - cur_args_len, SEEK_SET);
+					adv_thru_fnt_def_params(dvi, stats, cur_oc);
+					cur_oc = get_byte(dvi);
+					if (171 <= cur_oc && cur_oc <= 234) {
+						cur_fn = cur_oc - 171;
+						handle_fnt_num(&cfci, stats, &pci, cci, cur_oc);
+					} else {
+						printf("Font number out of range.\n");
+					} 
+		     }
+			}
+		#endif
+a955 10
+void debug_glyphs(cairo_glyph_t *proto_glyphs, unsigned long num_chars)
+{
+  int i;
+
+  for (i = 0; i < num_chars; i++) {
+	printf("(%f, %f) %lu\n", proto_glyphs[i].x, proto_glyphs[i].y,
+						  proto_glyphs[i].index);
+  }
+}
+
+a994 1
+	debug_glyphs(proto_glyphs, stats.num_chars);
+@
+
+
+1.83
+log
+@getting bad message.  Will continue soon by removing outer loop in
+get_proto_glyphs_*
+@
+text
+@d430 3
+a432 1
+  		case 143: case 148: case 153: case 157 : case 162: 
+d434 1
+a434 1
+		case 144: case 149: case 154: case 158:  case 163:
+d436 1
+a436 1
+		case 145: case 150: case 155:  case 159:  case 164:
+d438 1
+a438 1
+		case 146: case 151: case 156: case 160: case 165:
+d647 1
+a647 1
+	(*num)++;
+d669 1
+a669 1
+	int i1, i2;
+a686 7
+	for (i1 = 0; i1 < stats->num_pages; i1++) {
+		get_byte(dvi);		/* bop opcode */
+		cur_state.h = cur_state.v = cur_state.w = cur_state.x = cur_state.y = 
+			cur_state.z = 0;
+		init_state(state, stats->maxstackdepth);
+		for (i2 = 0; i2 < 11; i2++) /* advance thru bop args */
+			signed_quad(dvi);
+d691 7
+a697 1
+			if (!(cur_oc >> 7)) {
+d701 1
+a701 1
+				(*proto_glyphs)[cci].y = (double) i1 + 
+d833 23
+d860 5
+a864 1
+			} else if (243 <= cur_oc && cur_oc <= 246) {
+d878 2
+a879 2
+					}
+				}
+d881 1
+a881 1
+		}
+d977 10
+d1026 1
+@
+
+
+1.82
+log
+@minor changes.  Seems to be behaving okay, except for certain undesirable
+width discrepancies
+@
+text
+@d94 8
+a133 1
+void free_font_changes(font_changes_type *font_changes);
+d171 1
+a195 1
+
+a197 3
+
+/*	FILE *dvi_f;
+	FILE *tfm_f; */
+d202 1
+a202 1
+	new_length = (double) _data->height *  
+d222 1
+a222 1
+
+d650 10
+a663 9
+	typedef struct {
+		long h;
+		long v;
+		long w;
+		long x;
+		long y;
+		long z;
+	} state_type;	/* ignoring hh, vv */
+
+a676 3
+	cur_state.h = cur_state.v = cur_state.w = cur_state.x = cur_state.y = 
+	cur_state.z = 0;
+
+d687 3
+d695 1
+a695 1
+		while ((cur_oc = adv_thru_cur_op_call(dvi, &cur_args_len))) 
+d700 2
+a701 1
+				(*proto_glyphs)[cci].y = ((double) cur_state.v) / MAXV; 
+d959 1
+d988 1
+a1001 1
+	
+d1004 2
+a1005 1
+	gtk_widget_set_size_request(drawing_area, -1, INIT_PAGE_LENGTH_ACT);
+d1048 5
+d1057 1
+a1057 1
+				  stats.font_changes);
+d1063 3
+a1066 1
+	g_slice_free1(stats.num_fonts * sizeof(FT_Face), faces);
+@
+
+
+1.81
+log
+@Handles multiple fonts great!  Still has width issues, though.  Especially
+with ligatures
+@
+text
+@d54 2
+a55 1
+#define TFM_PER_FT				((double)( 1.027781 / 991.0)) 
+d172 4
+a175 2
+		glyphs[i].x *= w_p * HACKFACTOR_X; 
+		glyphs[i].y *= w_p * HACKFACTOR_Y * R_IN / W_IN; 
+a851 10
+/*
+void handle_fnt_num
+{
+	no_of_inc;
+	if (
+
+
+
+} */
+
+d894 1
+a894 1
+	FT_Load_Glyph(*face, index, FT_LOAD_NO_SCALE);
+a901 15
+void print_font_changes(stats_type *stats)
+{
+  int i;
+  unsigned long grand_total = 0;
+
+  for (i = 0; i < stats->num_font_changes; i++) {
+  		printf("font_num: %d, cnsfc: %lu\n", stats->font_changes[i].font_num, 
+											 stats->font_changes[i].cnsfc); 
+		grand_total += stats->font_changes[i].cnsfc;
+  }
+  printf("Num_chars is %lu.  Grand total is %lu.\n", 
+  		 stats->num_chars, grand_total); 
+
+}
+
+d939 1
+a939 1
+												  FT_LOAD_NO_SCALE); 
+a980 1
+	print_font_changes(&stats);
+@
+
+
+1.80
+log
+@got pointers working better.  compiles.  runs . . . kind of.  Am
+preparing to render the proper fonts
+@
+text
+@d120 2
+a121 1
+/*void show_glyphs(cairo_t *cr, cairo_glyph_t *glyphs, stats_type *stats); */
+a181 2
+	FT_Face 	face1, face2;
+	int error;
+a182 1
+	cairo_font_face_t *font_face1, *font_face2;
+a206 18
+	error = FT_New_Face(*_data->library, FONTFILE1, 0, &face1); 
+	error = FT_New_Face(*_data->library, FONTFILE2, 0, &face2); 
+
+	error = FT_Set_Char_Size(face1, 10 * 64, 0, 0, 0 );    
+	error = FT_Set_Char_Size(face2, 10 * 64, 0, 0, 0 );    
+
+	if (error == FT_Err_Unknown_File_Format) {
+		fprintf(stderr, "Unknown File Format\n");
+	    return 1;
+	} else if (error) {
+		fprintf(stderr, "Font file could not be opened or read or "
+					    "is broken\n");
+		return 1;
+	}
+
+	font_face1 = cairo_ft_font_face_create_for_ft_face(face1, FT_LOAD_NO_SCALE);
+	font_face2 = cairo_ft_font_face_create_for_ft_face(face2, FT_LOAD_NO_SCALE);
+	
+d211 2
+a212 11
+	cairo_set_font_face(cr, font_face1);
+	cairo_show_glyphs(cr, glyphs, _data->stats->num_chars / 2);
+	cairo_set_font_face(cr, font_face2);
+	cairo_show_glyphs(cr, glyphs + _data->stats->num_chars / 2,
+					 (_data->stats->num_chars / 2) - 2); 
+/*	show_glyphs(cr, glyphs, _data->stats); */
+
+	FT_Done_Face(face1);
+	FT_Done_Face(face2);
+	cairo_font_face_destroy(font_face1);
+	cairo_font_face_destroy(font_face2);
+d220 2
+a221 3
+#if 0
+void load_all_font_changes_into_cr(cairo_t *cr, stats_type *stats,  
+								   font_changes_type *font_changes_end)
+d223 1
+a223 9
+	int i;
+
+	for (i = 0; i < stats->num_font_changes; i++, font_changes_end--) {
+		font_face = cairo_ft_
+
+
+
+	}
+
+d225 7
+a233 12
+void show_glyphs(cairo_t *cr, cairo_glyph_t *glyphs, stats_type *stats)
+{
+	load_all_font_changes_into_cr(cr, stats, 
+						&(stats->font_changes[stats->num_font_changes - 1]));
+	do {
+		load_current_font(cr);
+		cairo_show_glyphs(cr, glyphs, changes->cnsfc);
+		glyphs += changes->cnsfc;
+	} while (changes->next && (changes = changes ->next));
+}
+
+#endif
+d837 1
+d870 1
+a870 1
+		*pci = cci;
+d912 1
+d917 1
+d919 3
+d943 1
+a943 1
+		error = FT_Set_Char_Size((*faces)[i], 10 * 64, 0, 0, 0);  
+@
+
+
+1.79
+log
+@got all the pointers working for the faces/font_faces variables.
+Still not functional, though
+@
+text
+@d90 1
+d105 1
+a105 1
+								   stats_type *stats, FT_Face *face);
+d129 1
+d225 1
+d232 1
+a232 1
+	cairo_show_glyphs(cr, glyphs, _data->stats->num_chars / 2); 
+d242 1
+a243 1
+	g_slice_free1(_data->stats->num_chars * sizeof(cairo_glyph_t), glyphs);
+d687 1
+a687 1
+								   stats_type *stats, FT_Face *face)
+d736 4
+a739 2
+				cur_state.h += get_width(cur_oc, face, stats, cur_fn); 
+				/* cur_state.h += 300000; */
+a1009 2
+	cairo_t *cr;
+	cairo_font_face_t *cfft;
+a1030 2
+#if 0
+
+d1039 1
+a1039 1
+	get_proto_glyphs_font_changes(&proto_glyphs, &stats, &face);
+d1041 2
+a1042 2
+
+	FT_Done_Face(face);
+a1076 2
+	cr = gdk_cairo_create(drawing_area->window);
+	cairo_set_source_rgb(cr, 0, 0, 0);
+a1077 3
+	cfft = cairo_ft_font_face_create_for_ft_face(face, 0); 
+	cairo_set_font_face(cr, cfft);
+	
+d1080 1
+a1100 2
+	cairo_font_face_destroy(cfft);
+	cairo_destroy(cr);
+d1110 1
+a1110 1
+#endif
+@
+
+
+1.78
+log
+@made fonts stored in reasonable array instaed of 256-sized area
+@
+text
+@d47 2
+a48 1
+#define FONTFILE	"/usr/share/texmf-texlive/fonts/type1/bluesky/cm/cmr10.pfb"
+d55 1
+a55 1
+#define DEFAULT_FONT_AREA	"/usr/share/texmf-texlife/fonts/type1/bluesky/cm/"
+d120 3
+a122 2
+/*void load_all_font_changes_into_cr(cairo_t *cr, 
+								   font_changes_type *font_changes);*/
+d179 1
+a179 1
+	FT_Face 	face;
+d182 1
+a182 1
+	cairo_font_face_t *font_face;
+d207 2
+a208 1
+	error = FT_New_Face(*_data->library, FONTFILE, 0, &face); 
+d210 2
+a211 1
+	error = FT_Set_Char_Size(face, 10 * 64, 0, 0, 0 );    
+d222 1
+a222 2
+	font_face = cairo_ft_font_face_create_for_ft_face(face, FT_LOAD_NO_SCALE);
+	cairo_set_font_face(cr, font_face);
+d228 5
+a232 1
+	cairo_show_glyphs(cr, glyphs, _data->stats->num_chars); 
+d235 4
+a238 2
+	FT_Done_Face(face);
+	cairo_font_face_destroy(font_face);
+d245 1
+d247 2
+a248 1
+void load_all_font_changes_into_cr(cairo_t *cr, font_changes_type *font_changes)
+d250 4
+d257 3
+d264 2
+a265 1
+	load_all_font_changes_into_cr(cr, stats->font_changes);
+d272 1
+a273 1
+
+a620 1
+			stats->num_fonts++;
+d632 1
+a632 1
+				sprintf(stats->fonts[cfi].name, "%c", cur_char);
+d700 1
+a700 1
+	unsigned char cur_oc;
+d733 1
+a733 1
+				cur_state.h += get_width(cur_oc, face, stats, 0); 
+d862 1
+d956 41
+d1001 2
+a1002 1
+	FT_Face 	face;			/* will be destroyed after width calc */
+a1023 2
+	
+	error = FT_New_Face(library, FONTFILE, 0, &face); 
+d1025 4
+a1028 1
+	error = FT_Set_Char_Size(face, 10 * 64, 0, 0, 0 );    
+a1030 1
+		fprintf(stderr, "Unknown File Format\n");
+d1115 2
+a1116 1
+
+@
+
+
+1.77
+log
+@reverted to revision 1.73 after realization of error
+@
+text
+@d7 1
+d67 1
+d79 1
+a79 1
+	font_type fonts[256];
+d125 1
+d544 22
+d570 1
+a570 1
+	int cur_pos, j;
+d573 3
+a575 2
+	unsigned char cur_char, cur_font_num;
+	
+d589 4
+d602 1
+d604 1
+a604 1
+			cur_font_num = get_byte(dvi);	/* assumes cur_font_num <= 255 */
+d606 7
+a612 7
+			stats->fonts[cur_font_num].scale  = signed_quad(dvi);
+			stats->fonts[cur_font_num].design = signed_quad(dvi);
+			stats->fonts[cur_font_num].a = get_byte(dvi);
+			stats->fonts[cur_font_num].l = get_byte(dvi);
+			for (j = 0, stats->fonts[cur_font_num].name[0] = '\0'; 
+				 j < stats->fonts[cur_font_num].a + 
+				 	 stats->fonts[cur_font_num].l; j++) {
+d614 1
+a614 1
+				sprintf(stats->fonts[cur_font_num].name, "%c", cur_char);
+d616 1
+a616 1
+			stats->fonts[cur_font_num].name[j] = '\0';
+d619 1
+d621 1
+d900 12
+d923 2
+a924 1
+			  (double) (stats->fonts[font_num].scale));
+@
+
+
+1.76
+log
+@no real change, just whitespace
+@
+text
+@a6 1
+ *Make sure DVI is only opened and closed once
+a15 1
+#include <ctype.h>
+d100 2
+a101 2
+void get_proto_glyphs(cairo_glyph_t **proto_glyphs, stats_type *stats, 
+					  FT_Face *face);
+a122 1
+void get_font_changes(stats_type *stats);
+d200 1
+d204 1
+a204 2
+	error = FT_Set_Char_Size(face, 10 * 64, 0, 0, 0 );  
+	cairo_set_font_size(cr, em * pppt);
+d223 1
+a223 1
+/*	show_glyphs(cr, glyphs, _data->stats, &face); */
+d234 1
+a234 3
+/*change face into a main variable */
+void load_all_font_changes_into_cr(cairo_t *cr, FT_Face *face,  
+								   font_changes_type *font_changes_end)
+d236 1
+a236 1
+	
+d241 1
+a241 2
+void show_glyphs(cairo_t *cr, cairo_glyph_t *glyphs, stats_type *stats,
+				 FT_face *face)
+d243 1
+a243 3
+	load_all_font_changes_into_cr
+		(cr, 
+	     &(stats->font_changes[stats->num_font_changes-1]);
+d632 2
+a633 2
+void get_proto_glyphs(cairo_glyph_t **proto_glyphs, stats_type *stats, 
+					  FT_Face *face)
+d650 1
+d654 1
+d656 2
+a657 1
+	int s = 0;     /* current stack-depth */
+d663 3
+d809 20
+a828 1
+			}  
+d834 11
+a890 36
+void get_font_changes(stats_type *stats)
+{
+	int i1, i2;
+	FILE *dvi;
+	unsigned char cur_oc;
+	unsigned int cur_args_len;	/* length in bytes of arguments of current
+								   op-code */
+
+	unsigned long pci;/* previous char index: for use by ...->font_changes */
+	unsigned long cci = ULONG_MAX;	/* current character index */
+	unsigned long cfci = ULONG_MAX;	/* current font change index */
+	
+	
+	stats->font_changes = g_slice_alloc(stats->num_font_changes * 
+										sizeof(font_changes_type));
+	dvi = fopen(SAMPLE_DVI, "r");
+	adv_thru_preamble(dvi);
+
+	for (i1 = 0; i1 < stats->num_pages; i1++) {
+		get_byte(dvi);		/* bop opcode */
+		for (i2 = 0; i2 < 11; i2++) /* advance thru bop args */
+			signed_quad(dvi);
+			/* must take care of sets and puts and putchars */ 
+			/* am using this advancing thru then tracing back 
+			 * algorithm to handle random fnt_defs */
+		while ((cur_oc = adv_thru_cur_op_call(dvi, &cur_args_len))) {
+			if (!(cur_oc >> 7)) {
+				no_of_inc(&cci);
+			} else if (171 <= cur_oc && cur_oc <= 234) {
+				handle_fnt_num(&cfci, stats, &pci, cci, cur_oc);
+			}
+		}
+	}
+	fclose(dvi);
+}
+
+d911 1
+a911 1
+	get_font_changes(&stats);
+d920 1
+a920 1
+	error = FT_Set_Char_Size(face, 10 * 64, 0, 0, 0 ); 
+d931 1
+a931 1
+	get_proto_glyphs(&proto_glyphs, &stats, &face);
+@
+
+
+1.75
+log
+@removed old comments and changed some function names
+@
+text
+@d206 1
+a206 1
+	error = FT_Set_Char_Size(face, 10 * 64, 0, 0, 0 );    
+d928 1
+a928 1
+	error = FT_Set_Char_Size(face, 10 * 64, 0, 0, 0 );    
+@
+
+
+1.74
+log
+@separated get_proto_glyphs_font_changes into 2 separate functions.
+still have to comment out old code and change some function names
+@
+text
+@d102 2
+a103 2
+void get_proto_glyphs_font_changes(cairo_glyph_t **proto_glyphs, 
+								   stats_type *stats, FT_Face *face);
+d640 2
+a641 2
+void get_proto_glyphs_font_changes(cairo_glyph_t **proto_glyphs, 
+								   stats_type *stats, FT_Face *face)
+d811 1
+a811 18
+
+			} /* remember to consider case of nops appearing in-between */
+			/* else if (243 <= cur_oc && cur_oc <= 246) {
+				if (cur_oc > 243) {
+					printf("You're using too high a font number for this "
+						   "DVI Previewer.\n");
+				} else {
+					fgetpos(dvi, fp);
+					fseek(dvi, fp->__pos - cur_args_len, SEEK_SET);
+					adv_thru_fnt_def_params(dvi, stats, cur_oc);
+					cur_oc = get_byte(dvi);
+					if (171 <= cur_oc && cur_oc <= 234) {
+						handle_fnt_num(&cfci, stats, &pci, cci, cur_oc);
+					} else {
+						printf("Font number out of range.\n");
+					}
+				} 
+			}*/ 
+d939 1
+a939 1
+	get_proto_glyphs_font_changes(&proto_glyphs, &stats, &face);
+@
+
+
+1.73
+log
+@font_changes array appears to be valid
+@
+text
+@d7 1
+d17 1
+d125 1
+a202 1
+	cairo_set_font_size(cr, em * pppt);
+d207 1
+d226 1
+a226 1
+/*	show_glyphs(cr, glyphs, _data->stats); */
+d237 3
+a239 1
+void load_all_font_changes_into_cr(cairo_t *cr, font_changes_type *font_changes)
+d241 1
+a241 1
+
+d246 2
+a247 1
+void show_glyphs(cairo_t *cr, cairo_glyph_t *glyphs, stats_type *stats)
+d249 3
+a251 1
+	load_all_font_changes_into_cr(cr, stats->font_changes);
+a657 1
+	unsigned long pci;/* previous char index: for use by ...->font_changes */
+d661 1
+a662 3
+	unsigned long cci = ULONG_MAX;	/* current character index */
+	unsigned long cfci = ULONG_MAX;	/* current font change index */
+
+a667 3
+	stats->font_changes = g_slice_alloc(stats->num_font_changes * 
+										sizeof(font_changes_type));
+
+d812 2
+a813 4
+			} else if (171 <= cur_oc && cur_oc <= 234) {
+				handle_fnt_num(&cfci, stats, &pci, cci, cur_oc);
+				/* remember to consider case of nops appearing in-between */
+			} else if (243 <= cur_oc && cur_oc <= 246) {
+d827 2
+a828 2
+				}
+			}
+a833 11
+/*
+void handle_fnt_num
+{
+	no_of_inc;
+	if (
+
+
+
+} */
+
+
+d880 36
+d936 1
+a936 1
+
+@
+
+
+1.72
+log
+@not currently compilable . . . have to go now
+@
+text
+@d120 3
+a122 1
+
+d492 1
+a492 1
+void get_num_chars(stats_type *stats, FILE *dvi)
+d499 1
+d509 3
+a511 1
+					stats->num_chars++;
+d603 1
+a603 1
+	get_num_chars(stats, dvi);
+a650 1
+	font_changes_type *temp;
+d656 1
+a660 2
+	stats->font_changes = NULL;
+
+a661 2
+
+
+d663 2
+d809 3
+d823 1
+a823 25
+						if (stats->font_changes) { 
+							if (~pci) {
+								stats->font_changes->cnsfc = cci - pci + 1;
+							} else {
+								stats->font_changes->cnsfc = cci + 1; 
+							}
+							pci = cci;
+							if (stats->font_changes->prev) {
+								stats->font_changes->prev->next = 
+									stats->font_changes;
+							} 
+							temp = stats->font_changes;
+							stats->font_changes = 
+								g_malloc(sizeof(font_changes_type));
+							stats->font_changes->prev = temp;
+							stats->font_changes->next = NULL;
+						} else {
+							pci = ULONG_MAX;
+							stats->font_changes = 
+								g_malloc(sizeof(font_changes_type));
+							stats->font_changes->prev = NULL;
+							stats->font_changes->next = NULL;
+							stats->font_changes->cnsfc = 0;
+						}
+						stats->font_changes->font_num = cur_oc - 171;
+d834 33
+d881 1
+a881 1
+void adv_to_penultimate_fc(font_changes_type **font_changes)
+d883 1
+a883 18
+	while ((*font_changes)->next) 
+		*font_changes = (*font_changes)->next;
+
+	if ((*font_changes)->prev)
+		*font_changes = (*font_changes)->prev;
+}
+
+/* de-allocates all memory associated with font_changes */
+void free_font_changes(font_changes_type *font_changes)
+{
+	adv_to_penultimate_fc(&font_changes);
+
+	while (font_changes->next) {
+		g_free(font_changes->next);			
+		font_changes->next = NULL;
+		if (font_changes->prev)
+			font_changes = font_changes->prev;
+	}
+d885 4
+a888 1
+	g_free(font_changes);
+d932 1
+a998 1
+	free_font_changes(stats.font_changes);
+a999 1
+	/* g_free(*proto_glyphs); */
+d1001 2
+@
+
+
+1.71
+log
+@not compilable now; just realized that I should use an array instead
+of a doubly-linked list, so I will re-do font_changes
+@
+text
+@d56 1
+a56 1
+typedef struct _font_changes_type {
+a58 4
+	/* pointer to next element in 2x-linked list */
+	struct _font_changes_type *next;
+	/* pointer to prev element in 2x-linked list */
+	struct _font_changes_type *prev;	
+d75 1
+@
+
+
+1.70
+log
+@made font-face creation local to expose_event_callback, in general
+However, I need one minor face creation for width calculations in
+get_proto_glyphs*
+@
+text
+@a6 1
+ *fix double-pointer issue in proto_glyphs
+@
+
+
+1.69
+log
+@fixed stupid double-pointer mistake I made with proto_glyphs.  Have yet to
+truly error-check free_font_changes
+@
+text
+@a86 1
+	FT_Face 	*face;
+d90 1
+d176 2
+a180 1
+	
+d202 14
+a215 1
+	cairo_set_font_size(cr, em * pppt); 
+d217 1
+a217 2
+	font_face = cairo_ft_font_face_create_for_ft_face(*_data->face, 
+													 FT_LOAD_NO_SCALE);
+d227 1
+d252 1
+a253 1
+#endif
+a871 1
+	/*font_changes_type *fcp[1];*/
+d898 1
+a898 1
+	FT_Face 	face;
+d904 1
+a904 1
+
+a909 1
+	/*type_query(); */
+a910 1
+	int error;
+d920 1
+a920 1
+
+d936 1
+d978 1
+a978 1
+	data1.face = &face;
+a997 1
+	FT_Done_Face(face);
+@
+
+
+1.68
+log
+@Added stats->font_changes doubly linked list.  Is working great.
+Rendering is still valid.  I have yet to use font_changes in rendering
+text, though
+@
+text
+@d4 1
+d7 1
+d86 1
+a86 1
+	cairo_glyph_t **proto_glyphs;
+d120 7
+d221 19
+d602 3
+a604 3
+		glyphs[i].x = data->proto_glyphs[0][i].x;
+		glyphs[i].y = data->proto_glyphs[0][i].y;
+		glyphs[i].index = data->proto_glyphs[0][i].index;
+d856 24
+d895 1
+a895 6
+	cairo_glyph_t *proto_glyphs[1]; /* am using a double-pointer so that 
+							   I can assign *glyphs to a local static 
+							   result of calloc, and let other functions
+							   access glyphs.  I hope that makes sense. */
+
+
+d923 1
+a923 1
+	get_proto_glyphs_font_changes(proto_glyphs, &stats, &face);
+d990 1
+d993 1
+a993 1
+	g_slice_free1(stats.num_chars * sizeof(cairo_glyph_t), *proto_glyphs);
+@
+
+
+1.67
+log
+@Currently not runnable.  Problem with byte-positions in the DVI file.
+Will resume later on.
+@
+text
+@d67 1
+d116 1
+d203 1
+d438 1
+a438 1
+unsigned char adv_thru_cur_op_call(FILE *dvi)
+a441 1
+	unsigned char args;		/* bytes of args */
+d444 1
+a444 1
+	if ((args = argus(byte, dvi))) {
+d446 1
+a446 1
+		fseek(dvi, fp->__pos + args, SEEK_SET); 
+d455 1
+d466 1
+a466 1
+		while ((cur_oc = adv_thru_cur_op_call(dvi))) {
+a504 1
+	unsigned char name_len, area_len;
+d534 2
+a535 2
+			area_len = get_byte(dvi);
+			name_len = get_byte(dvi);
+d537 2
+a538 1
+				 j < area_len + name_len; j++) {
+d584 2
+a586 2
+  else
+	(*num)++;
+d609 2
+d635 1
+a635 1
+		while ((cur_oc = adv_thru_cur_op_call(dvi))) 
+d774 2
+a782 1
+								printf("Something is wrong.\n");
+a877 1
+#if 0
+a951 1
+#endif
+@
+
+
+1.66
+log
+@quick change: added FT_LOAD_NO_SCALE to create_ft_face* etc.
+I like the results
+@
+text
+@d55 9
+d77 1
+a77 1
+	int **font_changes;
+d101 2
+a102 2
+void get_proto_glyphs(cairo_glyph_t **proto_glyphs, stats_type *stats, 
+					  FT_Face *face);
+d113 2
+d471 14
+d577 11
+a587 2
+void get_proto_glyphs(cairo_glyph_t **proto_glyphs, stats_type *stats,
+					 FT_Face *face)
+d603 3
+d608 2
+a609 3
+	unsigned long cci = 0;	/* current character index */
+	unsigned char cur_oc;
+	
+d613 2
+a614 2
+/*	state = (state_type *) g_malloc((gulong) ((stats->maxstackdepth *
+								   sizeof(state_type)); */
+a616 2
+/*	*proto_glyphs = (cairo_glyph_t *) g_malloc((size_t) stats->num_chars *
+	  						   				 sizeof(cairo_glyph_t)); */
+d632 1
+a637 1
+				cci++;
+d763 40
+a802 1
+			} 
+a803 1
+			/* ignore fntdefs for now */
+d870 3
+a872 1
+	get_proto_glyphs(proto_glyphs, &stats, &face); 
+d947 1
+@
+
+
+1.65
+log
+@changed width of "W" to non-scaled value, in #define constants.
+Run an rcsdiff to see what I mean!
+@
+text
+@d181 2
+a182 1
+	font_face = cairo_ft_font_face_create_for_ft_face(*_data->face, 0);
+@
+
+
+1.64
+log
+@prints in 1 font, but reads 2-fonted DVI file, at least!  Fixed 223 bug
+in order to achieve this
+@
+text
+@d5 1
+d47 1
+a47 1
+#define HACKFACTOR_X			0.55
+d51 1
+a51 1
+#define TFM_PER_FT				((double)( 1.027781 / 640.0)) 
+@
+
+
+1.63
+log
+@changed to unscaled FreeType.  Still crashes with DVI file of more than
+one font
+@
+text
+@a237 1
+	unsigned char buf[MAX_WORD_SIZE];
+d239 2
+a240 1
+	int final_pos;
+d242 1
+a242 1
+	final_pos = get_final_pos(dvi);
+d244 5
+a248 7
+	fseek(dvi, final_pos - 3, SEEK_SET);
+	readword(1, dvi, buf);
+	if (buf[0] == 223) {
+		clearbuf(buf, 1);
+		fseek(dvi, final_pos - 7, SEEK_SET);
+		readword(1, dvi, buf);
+	}
+a249 1
+	clearbuf(buf, 1);
+d251 1
+a251 1
+	fseek(dvi, final_pos - 12, SEEK_SET); 
+a255 3
+	/*fgetpos(dvi[0], fp);*/ 
+
+	/* readword(1, dvi[0], buf);*/ 
+a489 1
+	printf("q is %ld\n", q);
+a501 1
+			printf("%u\n", cur_font_num);
+a503 1
+			printf("scale is %ld\n", stats->fonts[cur_font_num].scale);
+d727 1
+a727 1
+			}
+a729 1
+			/* else if (243 <= cur_oc && cur_oc <= 246) */
+@
+
+
+1.62
+log
+@Works for 1-font file.  Widths appear a little off.  Will check against
+previous version
+@
+text
+@d42 2
+a43 2
+#define MAXH					31934563
+#define MAXV					43725786
+d46 1
+a46 1
+#define HACKFACTOR_X			0.75
+d606 2
+a607 2
+				(*proto_glyphs)[cci].x = (double) cur_state.h / MAXH; 
+				(*proto_glyphs)[cci].y = (double) cur_state.v / MAXV; 
+d745 1
+a745 1
+/* Returns width of character in sp units */
+d751 1
+a751 1
+	FT_Load_Glyph(*face, index, FT_LOAD_DEFAULT);
+@
+
+
+1.61
+log
+@added fonts struct and it still works
+@
+text
+@d474 1
+d477 2
+a478 2
+	int q; 			/* pointer to post location */
+	int final_pos, i, j;
+d482 1
+a482 1
+	unsigned char cur_char;
+d484 1
+a484 1
+	final_pos = get_final_pos(dvi);
+d486 2
+a487 4
+	fseek(dvi, final_pos - 3, SEEK_SET);
+	byte = get_byte(dvi);
+	if (byte == 223) {
+		fseek(dvi, final_pos - 7, SEEK_SET);
+d489 2
+a490 1
+	}
+d492 2
+a493 2
+	/* skip past identification byte to beginning of q */
+	fseek(dvi, final_pos - 12, SEEK_SET); 
+d496 1
+d500 1
+d503 1
+a503 1
+	for (i = 0;(byte = get_byte(dvi)) != 249; i++)
+d508 2
+d511 3
+a513 2
+			stats->fonts[i].scale  = signed_quad(dvi);
+			stats->fonts[i].design = signed_quad(dvi);
+d516 2
+a517 2
+			for (j = 0, stats->fonts[i].name[0] = '\0'; j < area_len + name_len;
+				 j++) {
+d519 1
+a519 1
+				sprintf(stats->fonts[i].name, "%c", cur_char);
+d521 1
+a521 1
+			stats->fonts[i].name[j] = '\0';
+d523 2
+a524 1
+	
+d755 1
+a755 1
+			  (double) stats->fonts[font_num].scale);
+@
+
+
+1.60
+log
+@Cleaned remnants of old code.  Still works great!  Only one font, though
+Will work on handling multiple fonts soon.  Renders straight from DVI
+file and Font file!
+@
+text
+@d1 5
+a5 3
+/* For now, we use a dvitype file instead of dvi file for processing */
+/* Will change of course later. */
+
+d51 2
+d54 5
+d66 1
+d68 1
+a68 2
+	long scale;	/* temporarily not a pointer */
+	long design; /* temporarily not a pointer */
+d100 2
+a101 1
+unsigned long get_width(unsigned char index, FT_Face *face, stats_type *stats);
+d477 1
+a477 1
+	int final_pos;
+d480 2
+d499 20
+a518 7
+	byte = get_byte(dvi);	/* get font_def? byte */
+	if (243 <= byte && byte <= 246) {
+		fgetpos(dvi, fp);
+		fseek(dvi, (int) (fp->__pos) + (byte - 243 + 1) + 4, SEEK_SET);
+		stats->scale = signed_quad(dvi);
+		stats->design = signed_quad(dvi);
+	}
+d602 1
+a602 1
+				cur_state.h += get_width(cur_oc, face, stats); 
+d740 2
+a741 1
+unsigned long get_width(unsigned char index, FT_Face *face, stats_type *stats)
+d748 2
+a749 1
+		round((double)width * TFM_PER_FT * (double) stats->scale);
+@
+
+
+1.59
+log
+@Font rendering works great!  Ignoring FT_Get_Char_Index, as that was
+giving 0 widths . . . very bad.  Still is sloppy code, will clean next
+@
+text
+@a83 1
+/* void get_proto_glyphs_old(cairo_glyph_t **proto_glyphs, stats_type *stats);*/
+a87 2
+double h_p(cairo_glyph_t glyph, double w_p);
+double v_p(cairo_glyph_t glyph, double s_p);
+a131 2
+	/*	(*glyphs)[i].x = h_p((*glyphs)[i], w_p);
+	   	(*glyphs)[i].y = v_p((*glyphs)[i], s_p);*/ 
+d172 1
+a172 9
+		/*
+	cairo_rectangle(_data->cr, event->area.x, event->area.y, 
+					    event->area.width, event->area.height);
+
+	cairo_clip(_data->cr); */
+
+	/* We need copy_glyphs here, because of cairo_destroy */
+/*	while (gtk_events_pending())
+		gtk_main_iteration(); */
+d186 2
+d197 1
+a197 1
+
+a511 18
+
+/*	dvit = fopen(SAMPLE_DVIT, "r");
+	while ((len = getline(lp, &n, dvit)) != -1 ) {
+		if ((ss_pos = strstr(l, "maxv")))  {
+			stats->maxv = atoi(&ss_pos[5]);
+		}
+		if ((ss_pos = strstr(l, "maxh")))  {
+			stats->maxh = atoi(&ss_pos[5]);
+		}
+		if ((ss_pos = strstr(l, "maxstackdepth")))  {
+			stats->maxstackdepth = atoi(&ss_pos[5]);
+		}
+		if (strstr(l, "setchar")) 
+			stats->num_chars++;
+	}
+
+	fclose(dvit); */
+
+a708 1
+/*	g_free(state); */
+a712 41
+#if 0
+void get_proto_glyphs_old(cairo_glyph_t **proto_glyphs, stats_type *stats)
+{
+	FILE *dvit;
+
+	typedef struct {
+		long h;
+		long v;
+		long w;
+		long x;
+		long y;
+		long z;
+	} state_type;	/* ignoring hh, vv */
+
+	char *ss; 	/* used to hold result of strstr */
+
+/*	state_type *state; */
+
+	state_type state[2];
+	state_type cur_state;
+
+	int s = 0;	/* current stack-depth */
+	unsigned long cci = 0;	/* current character index */
+	char l[MAXLINE]; 
+	char *lp[1];	/* l pointer */
+	ssize_t len;
+	size_t n = MAXLINE; 
+
+	*lp = l;
+
+	*proto_glyphs = (cairo_glyph_t *) calloc((size_t) stats->num_chars, 
+	  						   				 sizeof(cairo_glyph_t));
+
+/*	state = (state_type *) calloc((size_t) stats->maxstackdepth, 
+ *								   sizeof(state_type)); */
+	dvit = fopen(SAMPLE_DVIT, "r");
+	cur_state.h = cur_state.v = cur_state.w = cur_state.x = cur_state.y = 
+	cur_state.z = 0;
+
+	while ((len = getline(lp, &n, dvit)) != -1 && 
+			!strstr(l, "beginning of page 1")); 
+a713 81
+	while ((len = getline(lp, &n, dvit)) != -1) {
+		if (strstr(l, "push"))  {
+			state[s].h = cur_state.h;
+			state[s].v = cur_state.v;
+			state[s].w = cur_state.w;
+			state[s].x = cur_state.x;
+			state[s].y = cur_state.y;
+			state[s].z = cur_state.z;
+			s++; 
+		}  else if (strstr(l, "pop")) { 
+			s--;
+			cur_state.h = state[s].h;
+			cur_state.v = state[s].v;
+			cur_state.w = state[s].w;
+			cur_state.x = state[s].x;
+			cur_state.y = state[s].y;
+			cur_state.z = state[s].z; 
+		} else if ((ss=strstr(l, "down"))) {
+			cur_state.v += atoi(&ss[6]);
+		} else if ((ss=strstr(l, "right"))) {
+			cur_state.h += atoi(&ss[7]);
+			/*assumes h > 0 */
+		} else if ((ss=strstr(l, "setchar"))) {
+		    /*printf("%d\n", atoi(&ss[7])); */
+			(*proto_glyphs)[cci].index = atoi(&ss[7]);
+			/*(*proto_glyphs)[cci].x = (double) cur_state.h / MAX_H_SP; */
+			(*proto_glyphs)[cci].x = (double) cur_state.h / MAXH; 
+			/* (*proto_glyphs)[cci].y = (double) cur_state.v / MAX_V_SP; */ 
+			(*proto_glyphs)[cci].y = (double) cur_state.v / MAXV; 
+			cur_state.h += atoi(strstr(l,"+") + 1);
+			cci++;
+		} else if ((ss=strstr(l, ": w"))) {
+		    if (ss[3] == '0') {
+				cur_state.h += cur_state.w; 
+			} else {
+				cur_state.w  = atoi(&ss[5]);
+				cur_state.h += atoi(&ss[5]);
+			}
+		} else if ((ss=strstr(l, ": y"))) { 
+			if (ss[3] == '0') {
+				cur_state.v += cur_state.y;
+			} else {
+				cur_state.y  = atoi(&ss[5]);
+				cur_state.v += atoi(&ss[5]);
+			} 
+		} 
+	} 
+
+/*		*glyphs = 
+	  		(cairo_glyph_t *) calloc(5, sizeof(cairo_glyph_t));
+
+		(*glyphs)[0].index = 1;
+		(*glyphs)[0].x = 0.0; 
+		(*glyphs)[0].y = 0.2; 
+		(*glyphs)[1].index = 2;
+		(*glyphs)[1].x = 0.25;
+		(*glyphs)[1].y = 0.2; 
+		(*glyphs)[2].index = 3;
+		(*glyphs)[2].x = 0.5; 
+		(*glyphs)[2].y = 0.2; 
+		(*glyphs)[3].index = 4;
+		(*glyphs)[3].x = 0.75; 
+		(*glyphs)[3].y = 0.2; 
+		(*glyphs)[4].index = 5;
+		(*glyphs)[4].x = 0.9; 
+		(*glyphs)[4].y = 0.2; 
+	copy_glyphs_done++;  */
+
+	fclose(dvit);
+}
+#endif
+
+/*
+long ft_pixels_to_sp(double num_pix)
+{
+	return (long) round(num_pix / (HACKFACTOR * 100.0 * (300.0/473628672.0)));
+
+}
+*/
+
+/* z is q */
+a716 1
+	FT_UInt glyph_index;
+a718 1
+	glyph_index = FT_Get_Char_Index(*face, index);
+a724 54
+#if 0
+	z = stats->scale;
+	alpha = 16;
+
+	while (z >= 040000000) {
+		z /= 2; 
+		alpha += alpha;
+	}
+
+
+	beta = 256 / alpha;
+	alpha *= z;
+
+	glyph_index = FT_Get_Char_Index(*face, index);
+	FT_Load_Glyph(*face, glyph_index, FT_LOAD_DEFAULT);
+/*	width = (*face)->glyph->metrics.width; */
+	width = (((*face)->glyph->advance.x) >> 6);
+	width *= WIDTH_FAC;
+
+/*	printf("%lu\n", width); */
+
+/*
+	for (i = 3; i >= 0; i--) {
+		b[i] = width % 256;
+		width -= b[i];
+		width /= 256;
+	}
+*/
+/*
+	for (i = 3; i >= 0; i--, width >>= 8) {
+		b[i] = 255 & width;
+	} 
+
+	ret = (((((b[3] * z) / 0400) + (b[2] * z)) / 0400) + (b[1] * z)) / beta;
+	if (b[0] > 0) {
+		if (b[0] < 255)
+			printf("Not okay.\n");
+		else
+			ret -= alpha;
+	} 
+
+	return ret; */
+
+	return width;
+/*	return (unsigned long)((float) ret * HACKFACTOR);*/ 
+/*	return (unsigned long)
+		 ft_pixels_to_sp((double) (((double) 
+		 									  26.6))); */
+/*	return (unsigned long) 
+		   (ft_pixels_to_sp((double) (((*face)->glyph->advance.x) >> 6))); */
+
+#endif
+
+
+@
+
+
+1.58
+log
+@still has screwy widths; about to read from TFM file
+@
+text
+@d44 2
+a45 1
+#define HACKFACTOR				100000.0
+d48 2
+d137 2
+a138 2
+		glyphs[i].x *= w_p; 
+		glyphs[i].y *= w_p * R_IN / W_IN; 
+d857 1
+d863 1
+d870 8
+a877 5
+	unsigned long width, ret;
+	unsigned char b[4];
+	int i;
+	int alpha, beta;
+	long z;
+d879 1
+d929 3
+a931 1
+}
+@
+
+
+1.57
+log
+@widths still not done, but am working on memory leaks now
+will possibly use valgrind
+@
+text
+@d43 2
+a44 1
+#define HACKFACTOR				0.3
+d46 1
+a46 1
+
+a582 2
+	printf("%d\n", stats->maxstackdepth);
+
+a587 2
+	printf("%lu\n", stats->num_chars);
+
+d603 2
+a604 2
+				/*cur_state.h += get_width(cur_oc, face, stats); */
+				cur_state.h += 300000; 
+d874 1
+a874 1
+	while (z >= pow(2,22)) {
+d884 8
+a891 3
+	FT_Load_Glyph(*face, glyph_index, FT_LOAD_NO_SCALE);
+	width = (*face)->glyph->metrics.width; 
+	
+d897 5
+d903 1
+a903 1
+	ret = (((((b[3] * z) / 256) + (b[2] * z)) / 256) + (b[1] * z)) / beta;
+d911 4
+a914 1
+	return ret; 
+d947 1
+a947 1
+	GSList *list;
+d958 1
+d972 1
+a972 1
+	g_mem_set_vtable (glib_mem_profiler_table);
+d1039 1
+a1039 1
+	g_atexit(g_mem_profile);
+d1043 1
+a1043 1
+	g_free(list->next);
+@
+
+
+1.56
+log
+@fixed bug!!! was an uninitialized counting variable
+@
+text
+@d606 2
+a607 2
+				/* cur_state.h += get_width(cur_oc, face, stats); */
+				cur_state.h += 300000;
+a876 1
+/*
+d887 1
+a887 1
+	FT_Load_Glyph(*face, glyph_index, FT_LOAD_DEFAULT);
+d902 1
+a902 1
+	} */
+d904 2
+a905 2
+/*	return ret; */
+	return (unsigned long)
+d907 1
+a907 1
+		 									  26.6))); 
+@
+
+
+1.55
+log
+@minor garbage collection.  still slow.
+@
+text
+@d157 2
+a158 2
+	glyphs = (cairo_glyph_t *) calloc((size_t) _data->stats->num_chars, 
+	  						   				 sizeof(cairo_glyph_t));
+d180 2
+d190 1
+a190 1
+	free(glyphs);
+d445 2
+d578 8
+a585 2
+	state = (state_type *) calloc((size_t) stats->maxstackdepth, 
+								   sizeof(state_type));
+d587 3
+a589 2
+	*proto_glyphs = (cairo_glyph_t *) calloc((size_t) stats->num_chars, 
+	  						   				 sizeof(cairo_glyph_t));
+d738 2
+a739 1
+	free(state);
+d938 1
+d962 2
+d1026 8
+a1033 1
+	free(*proto_glyphs);
+@
+
+
+1.54
+log
+@still not working well
+@
+text
+@d188 1
+d727 2
+@
+
+
+1.53
+log
+@minor changes . . . preparing to use gprof!!!
+@
+text
+@a535 1
+/* remember to check for NULL, for multiple calls */
+@
+
+
+1.52
+log
+@GTK is running really really slow!!!
+@
+text
+@a861 1
+	printf("%ld\n", z);
+d945 1
+a945 1
+	get_proto_glyphs(proto_glyphs, &stats, &face);
+d1010 1
+@
+
+
+1.51
+log
+@not compilable . . . am in the middle of scaling (widths especially)
+but it does process the DVI file okay, it just doesn't handle scaling
+okay
+@
+text
+@d54 2
+a55 2
+	int *scale;
+	int *design;
+d90 1
+a90 1
+unsigned long get_width(unsigned char index, FT_Face *face);
+d459 1
+d461 3
+a463 1
+
+d471 1
+d476 1
+a476 1
+	readword(1, dvi, &byte);
+d479 1
+a479 1
+		readword(1, dvi, byte);
+d488 8
+a495 1
+	adv_to_font_defs(FILE *dvi)
+d595 2
+a596 1
+				cur_state.h += get_width(cur_oc, face);
+d849 1
+d851 1
+a851 1
+unsigned long get_width(unsigned char index, FT_Face *face)
+d855 2
+a856 2
+	unsigned char bytes[4];
+	char i;
+d860 1
+d862 11
+a872 1
+	while (
+d879 2
+a880 2
+		bytes[i] = width % 256;
+		width -= bytes[i];
+d885 9
+a893 1
+/*	return (unsigned long)
+d895 3
+a897 3
+		 									  26.6))); */
+	return (unsigned long) 
+		   (ft_pixels_to_sp((double) (((*face)->glyph->advance.x) >> 6)));
+d900 1
+a1010 1
+	
+@
+
+
+1.50
+log
+@am almost done with new backend
+@
+text
+@d43 1
+a43 1
+#define HACKFACTOR				1.0
+d54 2
+d80 1
+a80 1
+void get_proto_glyphs_old(cairo_glyph_t **proto_glyphs, stats_type *stats);
+d90 2
+d456 31
+d499 2
+a500 1
+	get_num_chars(stats, dvi); 
+d558 1
+d579 1
+a579 1
+		while ((cur_oc = adv_thru_cur_op_call(dvi))) {
+d624 1
+a624 1
+			} else if (148 <= cur_oc && cur_oc <= 151) {
+d629 1
+d633 1
+d637 1
+d641 1
+d644 1
+d646 2
+a647 1
+			} else if (153 <= cur_oc && cur_oc <= 156) {
+d652 1
+d656 1
+d660 1
+d664 1
+d666 1
+d673 1
+d677 1
+d681 1
+d685 1
+d689 2
+a690 1
+			} else if (162 <= cur_oc && cur_oc <= 165) {
+d694 2
+a695 1
+						fseek(dvi, fp->_pos - 1, SEEK_SET);
+d698 2
+a699 1
+						fseek(dvi, fp->_pos - 2, SEEK_SET);
+d702 2
+a703 1
+						fseek(dvi, fp->_pos - 3, SEEK_SET);
+d706 2
+a707 1
+						fseek(dvi, fp->_pos - 4, SEEK_SET);
+d710 1
+d712 1
+a712 1
+
+d714 1
+a714 8
+			/*} else if (243 <= cur_oc && cur_oc <= 246) {  
+			}*/
+
+				   } 
+			
+			
+
+		}
+d717 1
+d829 1
+d833 2
+a834 1
+	return (long) round(num_pix / (HACKFACTOR * 0.00006334));
+d840 9
+a848 1
+	FT_UInt glyph_index; 
+d852 12
+@
+
+
+1.49
+log
+@trimmed down comments, works great!  Just need to read actual rendering
+data from DVI file now.
+@
+text
+@d76 3
+a78 1
+void get_proto_glyphs(cairo_glyph_t **proto_glyphs, stats_type *stats);
+d87 1
+d369 2
+a370 1
+ * leaves FILE* unchanged; add zs later */
+d501 21
+d523 144
+a666 1
+void get_proto_glyphs(cairo_glyph_t **proto_glyphs, stats_type *stats)
+a819 1
+	get_proto_glyphs(proto_glyphs, &stats);
+d839 1
+@
+
+
+1.48
+log
+@got correct number of chracters; 775!!!!  Am about to delete #if 0s
+@
+text
+@a244 1
+	printf("q is %d\n", q);  
+d256 1
+a256 1
+	printf("maxv is %ld\n", stats->maxv = (long) signed_quad(dvi));
+d366 1
+a366 1
+ * leaves FILE* unchanged */
+a440 1
+			printf("%u\n", (unsigned int) cur_oc);
+a442 1
+					printf("%u, %lu\n",(unsigned int) cur_oc, stats->num_chars);
+a447 95
+#if 0
+void get_num_chars_old(stats_type *stats, FILE *dvi)
+{
+	int i, j, m;
+	fpos_t fp[1];
+	unsigned char b1, b2, 
+					 a, 
+					 l;
+	
+	long k, 				/* font number */
+		 c,
+		 s,
+		 d;
+	unsigned char *n; 
+
+	stats->num_chars = 0;
+
+	adv_thru_preamble(dvi);
+	fgetpos(dvi, fp);
+	printf("post-preamble is byte %d\n", (int) fp->__pos); 
+	
+	for (i = 0; i < stats->num_pages; i++) {
+		get_byte(dvi);		/* bop */
+		for (m = 0; m < 11; m++) 
+			signed_quad(dvi);
+		fgetpos(dvi, fp);
+		printf("post-bop is %u\n", (int) fp->__pos);
+		while ((b1 = get_byte(dvi)) != 140) {
+			fgetpos(dvi, fp);
+			fseek(dvi, fp->__pos - 1, SEEK_SET);
+			# if 0
+			if (adv_thru_nops_fnt_defs(dvi)) { 
+				fgetpos(dvi, fp);
+				fseek(dvi, fp->__pos - 1, SEEK_SET);
+				if ((b2 = get_byte(dvi)) >= 243 && b2 <= 246) /* fntdef */
+					switch (b2) {
+						case 243:
+							k = get_byte(dvi);		
+							break;
+						case 244:
+							k = get_two_bytes(dvi);
+							break;
+						case 245:
+							k = get_three_bytes(dvi);
+							break;
+						case 246:
+							k = signed_quad(dvi); 
+							break;
+					}
+					c = signed_quad(dvi);
+					s = signed_quad(dvi);
+					d = signed_quad(dvi);
+					a = get_byte(dvi);
+					l = get_byte(dvi);
+					n = (unsigned char *) calloc((size_t) a + l, sizeof(char)); 
+					for (j = 0; j < a + l; j++)
+						n[j] = get_byte(dvi);
+
+				/* add fntnum opcodes somewhere */
+			
+			} else {
+			#endif
+		/*		fgetpos(dvi, fp);
+				fseek(dvi, fp->__pos - 1, SEEK_SET); 
+				b2 = get_byte(dvi); */
+				printf("non-nops-font-defs %u\n", (unsigned int) b1);
+				if (!(b1 >> 7)) {
+					stats->num_chars++;
+					printf("%u, %lu\n",(unsigned int) b1, stats->num_chars);
+				} else
+					adv_thru_argumented_opcodes(dvi, b1);
+		/*	} */
+			get_byte(dvi);
+		}
+	}
+}
+#endif
+
+void adv_thru_argumented_opcodes(FILE *dvi, unsigned char b)
+{
+  switch (b) {
+	/* right1, w1, x1, down1, y1 */
+  	case 143: case 148: case 153: case 157 : case 162: 
+		get_byte(dvi); break;
+	case 144: case 149: case 154: case 158:  case 163:
+		get_two_bytes(dvi); break;
+	case 145: case 150: case 155:  case 159:  case 164:
+		get_three_bytes(dvi); break;
+	case 146: case 151: case 156: case 160: case 165:
+		signed_quad(dvi); break;
+
+	/* add zs later */
+  } 
+}
+
+a461 1
+	printf("num_chars is %lu\n", stats->num_chars); 
+a651 1
+#if 0
+a662 2
+	printf("%lu\n", get_width(84, &face));
+
+d736 1
+a736 1
+#endif
+@
+
+
+1.47
+log
+@currently error-checking; compiles but doesn't run
+@
+text
+@d366 64
+d432 22
+d527 1
+@
+
+
+1.46
+log
+@removed all FILE**s, and replaced them with FILE*s
+@
+text
+@d53 1
+d67 3
+a69 3
+int get_byte(FILE *dvi);
+int signed_byte(FILE *dvi);
+int get_two_bytes(FILE *dvi);
+d71 3
+a73 3
+int get_three_bytes(FILE *dvi);
+int signed_trio(FILE *dvi);
+int signed_quad(FILE *dvi);
+d84 1
+a84 1
+unsigned long wordtoi(unsigned char *word, unsigned int len);
+d251 2
+a252 2
+	printf("post is %d\n", get_byte(dvi));	 	/* post op-code */ 
+	printf("final bop is %d\n", signed_quad(dvi));	/* final bop */
+d263 1
+a263 1
+int get_byte(FILE *dvi)
+d272 1
+a272 1
+int signed_byte(FILE *dvi)
+d284 1
+a284 1
+int get_two_bytes(FILE *dvi)
+d304 1
+a304 1
+int get_three_bytes(FILE *dvi)
+d312 1
+a312 1
+int signed_trio(FILE *dvi)
+d322 1
+a322 1
+int signed_quad(FILE *dvi)
+d333 126
+d464 1
+a464 4
+	char *ss_pos;
+	ssize_t len;
+	unsigned long num_pages;
+	int i;
+a465 1
+	size_t n = MAXLINE; 
+d470 2
+a471 7
+	get_num_pages_stack_depth(stats, dvi);
+	printf("Num pages is %ld, max stack depth is %d\n", 
+			stats->num_pages, 
+			stats->maxstackdepth);
+
+	/*adv_past_preamble;
+	get_ */
+d473 2
+d664 1
+a664 2
+
+	#if 0
+a751 1
+
+@
+
+
+1.45
+log
+@stats are okay; am about to remove all FILE**s
+@
+text
+@d66 7
+a72 7
+int get_byte(FILE **dvi);
+int signed_byte(FILE **dvi);
+int get_two_bytes(FILE **dvi);
+int signed_pair(FILE **dvi);
+int get_three_bytes(FILE **dvi);
+int signed_trio(FILE **dvi);
+int signed_quad(FILE **dvi);
+d222 1
+a222 1
+void get_num_pages_stack_depth(stats_type *stats, FILE **dvi)
+a226 1
+	fpos_t fp[1];
+d228 1
+a228 1
+	final_pos = get_final_pos(dvi[0]);
+d230 2
+a231 2
+	fseek(dvi[0], final_pos - 3, SEEK_SET);
+	readword(1, dvi[0], buf);
+d234 2
+a235 2
+		fseek(dvi[0], final_pos - 7, SEEK_SET);
+		readword(1, dvi[0], buf);
+d240 1
+a240 1
+	fseek(dvi[0], final_pos - 12, SEEK_SET); 
+d245 1
+a245 1
+	fseek(dvi[0], q, SEEK_SET);
+d256 1
+a256 1
+	printf("maxv is %d\n", stats->maxv = (long) signed_quad(dvi));
+d262 1
+a262 1
+int get_byte(FILE **dvi)
+d266 1
+a266 1
+	readword(1, dvi[0], word);
+d271 1
+a271 1
+int signed_byte(FILE **dvi)
+d275 1
+a275 1
+	readword(1, dvi[0], word);
+d283 1
+a283 1
+int get_two_bytes(FILE **dvi)
+d287 1
+a287 1
+	readword(2, dvi[0], word);
+d292 1
+a292 1
+int signed_pair(FILE **dvi)
+d296 1
+a296 1
+	readword(2, dvi[0], word);
+d303 1
+a303 1
+int get_three_bytes(FILE **dvi)
+d307 1
+a307 1
+	readword(3, dvi[0], word);	
+d311 1
+a311 1
+int signed_trio(FILE **dvi)
+d315 1
+a315 1
+	readword(3, dvi[0], word);
+d321 1
+a321 1
+int signed_quad(FILE **dvi)
+d325 1
+a325 1
+	readword(4, dvi[0], word);
+d334 1
+a334 1
+	FILE *dvi[1];
+d346 1
+a346 1
+	dvi[0] = fopen(SAMPLE_DVI, "r");
+@
+
+
+1.44
+log
+@not compilable, am going for a walk, am in the process of making
+get_stats DVI-compatible
+@
+text
+@d48 3
+a50 3
+	unsigned long maxv; 
+	unsigned long maxh; 
+	unsigned int maxstackdepth;
+d52 1
+a52 1
+	unsigned long num_pages;
+d64 10
+d83 1
+d203 1
+a203 1
+unsigned long get_final_pos(FILE *file) 
+d205 1
+a205 1
+	unsigned long pos;
+d207 2
+a208 1
+	pos = fseek(file, 0, SEEK_END);
+d210 10
+a219 1
+	return pos;
+d221 2
+a222 1
+void get_num_pages_stack_depth(stats_type *stats, FILE *dvi)
+d224 6
+a229 2
+	char buf[MAX_WORD_SIZE];
+	int final_pos = get_final_pos(dvi);
+d231 2
+a232 2
+	fseek(file, final_pos - 5, SEEK_SET);
+	readword(1, dvi, buf);
+d234 3
+a236 2
+		fseek(file, final_pos - 9, SEEK_SET);
+		readword(1, dvi, buf);
+d239 1
+d241 7
+d249 81
+d335 1
+a335 1
+	FILE *dvi;
+d347 1
+a347 1
+	dvi = fopen(SAMPLE_DVI, "r");
+d349 3
+d353 2
+a354 6
+
+
+
+
+	adv_past_preamble;
+	get_
+d544 3
+a546 1
+	get_stats(&stats);
+d633 1
+@
+
+
+1.43
+log
+@compiles okay . . . am just about to read from DVI file instead of DVIT
+file
+@
+text
+@d43 3
+a45 1
+#define HACKFACTOR				0.00006334
+d52 1
+d183 34
+d219 1
+a219 1
+	FILE *dvit;
+d224 2
+d231 12
+a242 1
+	dvit = fopen(SAMPLE_DVIT, "r");
+d257 1
+a257 4
+	fclose(dvit);
+
+/*	printf("maxv is %lu, maxh is %lu\n", *maxv, *maxh); */
+/*	printf("num_chars is %lu\n", *num_chars); */
+a386 4
+/*
+unsigned long round(double num)
+{
+	double frac;
+a387 6
+  	frac = modf(num, NULL);
+	if (frac >= 0.5)
+		return (unsigned long) ceil(num);
+	return (unsigned long) floor(num);
+}
+*/
+d390 1
+a390 1
+	return (long) round(num_pix / HACKFACTOR); 
+@
+
+
+1.42
+log
+@added proto_glyphs, so DVIT file is read only once, not after every
+callback, as it was before
+@
+text
+@d11 1
+d17 2
+a18 2
+#define HORIZ_RES				1024.0
+#define VERT_RES				768.0
+d42 2
+d340 4
+d345 21
+d401 4
+a404 4
+	error = FT_New_Face(library, 
+					"/usr/share/texmf-texlive/fonts/type1/bluesky/cm/cmr10.pfb",
+					0,
+					&face);  
+@
+
+
+1.41
+log
+@fixed missing w[3]s; now the spacing looks reasonable, but the scaling
+is still off
+@
+text
+@d43 9
+a51 1
+	cairo_glyph_t **glyphs;
+d55 1
+d58 3
+d66 1
+a66 1
+void init_glyphs(cairo_glyph_t **glyphs, unsigned long *num_chars);
+d101 1
+a101 1
+void scale_glyphs(cairo_glyph_t **glyphs, int num, gint16 w_p, gint16 s_p)
+d108 2
+a109 2
+		(*glyphs)[i].x *= w_p; 
+		(*glyphs)[i].y *= w_p * R_IN / W_IN; 
+a121 1
+	unsigned long num_chars;
+d125 2
+d131 3
+a136 1
+
+d154 4
+a157 3
+	/* We need init_glyphs here, because of cairo_destroy */
+	init_glyphs(_data->glyphs, &num_chars); 
+	scale_glyphs(_data->glyphs, num_chars, _data->width, _data->height); 
+d159 1
+a159 1
+	cairo_show_glyphs(cr, *(_data->glyphs), num_chars); 
+d177 1
+a177 2
+void get_stats(unsigned long *maxv, unsigned long *maxh, 
+ 			   unsigned int *maxstackdepth, unsigned long *num_chars)
+d181 1
+d183 5
+d190 1
+a190 1
+	while (fgets(l, MAXLINE, dvit)) {
+d192 1
+a192 1
+			*maxv = atoi(&ss_pos[5]);
+d195 1
+a195 1
+			*maxh = atoi(&ss_pos[5]);
+d198 1
+a198 1
+			*maxstackdepth = atoi(&ss_pos[5]);
+d201 1
+a201 1
+			(*num_chars)++;
+d214 13
+a226 1
+void init_glyphs(cairo_glyph_t **glyphs, unsigned long *num_chars)
+a227 2
+	unsigned long maxv, maxh;
+	unsigned int maxstackdepth; 
+a245 1
+
+a252 1
+	*num_chars = 0;
+d255 2
+a256 3
+	get_stats(&maxv, &maxh, &maxstackdepth, num_chars);
+	*glyphs = 
+	  (cairo_glyph_t *) calloc((size_t) *num_chars, sizeof(cairo_glyph_t));
+d258 2
+a259 1
+/*	state = (state_type *) calloc((size_t) maxstackdepth, sizeof(state_type)); */
+d291 5
+a295 5
+			(*glyphs)[cci].index = atoi(&ss[7]);
+			/*(*glyphs)[cci].x = (double) cur_state.h / MAX_H_SP; */
+			(*glyphs)[cci].x = (double) cur_state.h / MAXH; 
+			/* (*glyphs)[cci].y = (double) cur_state.v / MAX_V_SP; */ 
+			(*glyphs)[cci].y = (double) cur_state.v / MAXV; 
+d333 1
+a333 1
+	init_glyphs_done++;  */
+d337 1
+a337 1
+	
+d348 1
+d353 1
+a353 1
+	cairo_glyph_t *glyphs[1]; /* am using a double-pointer so that 
+d364 2
+a365 1
+	*glyphs = NULL;
+d425 1
+a425 1
+	data1.glyphs = glyphs;
+d429 1
+d450 1
+a450 1
+	free(*glyphs);
+@
+
+
+1.40
+log
+@messed up one line!
+@
+text
+@d37 4
+a40 1
+
+d94 2
+a95 2
+	/*	glyphs[i].x = h_p(glyphs[i], w_p);
+	   	glyphs[i].y = v_p(glyphs[i], s_p);	*/
+d97 1
+a97 1
+		(*glyphs)[i].y *= s_p; 
+d263 4
+a266 2
+			(*glyphs)[cci].x = (double) cur_state.h / (double) maxh;
+			(*glyphs)[cci].y = (double) cur_state.v / (double) maxv;
+d269 7
+a275 2
+		} else if (strstr(l, ": w0")) { 
+			cur_state.h += cur_state.w; 
+@
+
+
+1.39
+log
+@removed minor diagnostics.  Go getline!!!
+@
+text
+@a10 1
+#include <unistd.h>
+@
+
+
+1.38
+log
+@An ill-spaced success!!!!  At least it prints out . . . sort of . . .
+I will need to adjust spacing considerably
+@
+text
+@a138 1
+    printf("num_chars is %lu\n", num_chars);
+d261 2
+a262 2
+			printf("%e\n",(*glyphs)[cci].x = (double) cur_state.h / (double) maxh);
+			printf("%e\n", (*glyphs)[cci].y = (double) cur_state.v / (double) maxv);
+@
+
+
+1.37
+log
+@finally realized that the init_glyphs _has_ to be called repeatedly for each
+config_event / expose_event callback
+@
+text
+@d4 2
+d11 1
+a38 1
+int init_glyphs_done = 0; /* hopefully sole global */
+d52 1
+a52 1
+void init_glyphs(cairo_glyph_t **glyphs);
+d99 2
+d108 1
+d137 4
+a140 3
+	init_glyphs(_data->glyphs); /* We need init_glyphs here, because of 
+	                               cairo_destroy */
+	scale_glyphs(_data->glyphs, 5, _data->width, _data->height); 
+d142 1
+a142 1
+	cairo_show_glyphs(cr, *(_data->glyphs), 5); 
+d192 1
+a192 1
+void init_glyphs(cairo_glyph_t **glyphs)
+a193 1
+	unsigned long num_chars = 0; /*number of characters in DVI(T) file */
+d196 1
+d198 35
+a232 1
+	printf("Hello\n");
+d234 45
+a278 4
+	get_stats(&maxv, &maxh, &maxstackdepth, &num_chars);
+/*	*glyphs = 
+	  (cairo_glyph_t *) calloc((size_t) num_chars, sizeof(cairo_glyph_t)); */
+		*glyphs = 
+d296 3
+a298 1
+	init_glyphs_done++; 
+@
+
+
+1.36
+log
+@no seg faults, still don't fully understand redundant init_glyphs
+@
+text
+@d36 2
+d132 2
+a133 1
+	init_glyphs(_data->glyphs);
+d192 2
+a196 1
+/*	if (!(*glyphs))  { */
+d215 1
+a215 1
+/*	} */
+d243 2
+a299 2
+	init_glyphs(glyphs);
+
+@
+
+
+1.35
+log
+@Just added some constants.  Am preparing to do real DVI processing.  Hopefully
+by next commit, I will have done some real DVI processing
+@
+text
+@d7 2
+d34 1
+d37 1
+a37 1
+	cairo_glyph_t *glyphs;
+d48 1
+a48 1
+void init_glyphs(cairo_glyph_t *glyphs);
+d83 1
+a83 1
+void scale_glyphs(cairo_glyph_t *glyphs, int num, gint16 w_p, gint16 s_p)
+d88 4
+a91 2
+		glyphs[i].x = h_p(glyphs[i], w_p);
+	   	glyphs[i].y = v_p(glyphs[i], s_p);	
+d133 1
+a133 1
+	cairo_show_glyphs(cr, _data->glyphs, 5);  
+d151 2
+a152 1
+void init_glyphs(cairo_glyph_t *glyphs)
+d154 58
+a211 15
+	glyphs[0].index = 1;
+	glyphs[0].x = 0.0; 
+	glyphs[0].y = 0.2; 
+	glyphs[1].index = 2;
+	glyphs[1].x = 0.25;
+	glyphs[1].y = 0.2; 
+	glyphs[2].index = 3;
+	glyphs[2].x = 0.5; 
+	glyphs[2].y = 0.2; 
+	glyphs[3].index = 4;
+	glyphs[3].x = 0.75; 
+	glyphs[3].y = 0.2; 
+	glyphs[4].index = 5;
+	glyphs[4].x = 1.0; 
+	glyphs[4].y = 0.2; 
+a214 1
+
+d228 6
+a233 1
+	cairo_glyph_t glyphs[10]; 
+d323 1
+@
+
+
+1.34
+log
+@This is really version 1.32
+@
+text
+@d1 3
+d12 2
+a13 2
+#define HORIZ_RES				1600.0
+#define VERT_RES				1200.0
+d30 2
+d193 1
+a193 1
+					"/usr/share/texmf-tetex/fonts/type1/bluesky/cm/cmr10.pfb",
+@
+
+
+1.33
+log
+@Currently, not operational for multiple pages
+It has something to do with gtk_widget_set_size_request and
+perhaps other functions.  It sort of works for num_pages = 1
+and shows a blank page for num_pages = 2.  Will revert to previous
+version
+@
+text
+@a0 5
+/*Assumes gint/int to be 4 bytes long 
+ * Assumes DVI file to be less than ((2^31)/INIT_PAGE_LENGTH_ACT) 
+ * pages, which is typically over a million pages long.  Probably 
+ * requires even less than that amount, but this is the absolute 
+ * upper limit */
+a30 1
+	int num_pages;
+d40 1
+a40 1
+void init_glyphs(cairo_glyph_t *glyphs, int num_pages);
+d120 2
+a121 3
+	init_glyphs(_data->glyphs, _data->num_pages);
+	scale_glyphs(_data->glyphs, 5*_data->num_pages, 
+				 _data->width, _data->height); 
+d123 1
+a123 1
+	cairo_show_glyphs(cr, _data->glyphs, 5*_data->num_pages);  
+d141 1
+a141 1
+void init_glyphs(cairo_glyph_t *glyphs, int num_pages)
+d143 15
+a157 19
+	int i;
+
+	for (i = 0; i < num_pages; i++) {	
+		glyphs[0 + 5*i].index = 1;
+		glyphs[0 + 5*i].x = 0.0; 
+		glyphs[0 + 5*i].y = 0.2 + num_pages; 
+		glyphs[1 + 5*i].index = 2;
+		glyphs[1 + 5*i].x = 0.25;
+		glyphs[1 + 5*i].y = 0.2 + num_pages; 
+		glyphs[2 + 5*i].index = 3;
+		glyphs[2 + 5*i].x = 0.5; 
+		glyphs[2 + 5*i].y = 0.2 + num_pages; 
+		glyphs[3 + 5*i].index = 4;
+		glyphs[3 + 5*i].x = 0.75; 
+		glyphs[3 + 5*i].y = 0.2 + num_pages; 
+		glyphs[4 + 5*i].index = 5;
+		glyphs[4 + 5*i].x = 1.0; 
+		glyphs[4 + 5*i].y = 0.2 + num_pages; 
+	}
+d164 1
+a164 1
+	GtkWidget *drawing_area, *window, *scrolled_window; 
+d177 2
+a180 2
+	int num_pages = 2;
+
+d208 2
+a209 2
+
+	drawing_area = gtk_drawing_area_new(); 
+a210 3
+	gtk_widget_set_size_request(drawing_area, -1, 
+								INIT_PAGE_LENGTH_ACT * num_pages);
+
+d212 2
+d236 1
+a236 1
+	init_glyphs(glyphs, num_pages);
+a244 1
+	data1.num_pages = num_pages;
+@
+
+
+1.32
+log
+@I finally got the vertical scaling to work well with the scrolled
+window!!!
+@
+text
+@d1 5
+d36 1
+d46 1
+a46 1
+void init_glyphs(cairo_glyph_t *glyphs);
+d126 3
+a128 2
+	init_glyphs(_data->glyphs);
+	scale_glyphs(_data->glyphs, 5, _data->width, _data->height); 
+d130 1
+a130 1
+	cairo_show_glyphs(cr, _data->glyphs, 5);  
+d148 1
+a148 1
+void init_glyphs(cairo_glyph_t *glyphs)
+d150 19
+a168 15
+	glyphs[0].index = 1;
+	glyphs[0].x = 0.0; 
+	glyphs[0].y = 0.2; 
+	glyphs[1].index = 2;
+	glyphs[1].x = 0.25;
+	glyphs[1].y = 0.2; 
+	glyphs[2].index = 3;
+	glyphs[2].x = 0.5; 
+	glyphs[2].y = 0.2; 
+	glyphs[3].index = 4;
+	glyphs[3].x = 0.75; 
+	glyphs[3].y = 0.2; 
+	glyphs[4].index = 5;
+	glyphs[4].x = 1.0; 
+	glyphs[4].y = 0.2; 
+d175 1
+a175 1
+	GtkWidget *drawing_area, *window, *scrolled_window, *vbox;
+d188 1
+a188 1
+	/*type_query(); */
+d190 1
+a190 1
+	int error;
+d219 2
+a220 2
+	vbox = gtk_vbox_new(TRUE, 0);
+	
+d222 3
+a225 2
+	drawing_area = gtk_drawing_area_new();
+	gtk_widget_set_size_request(drawing_area, -1, INIT_PAGE_LENGTH_ACT);
+d248 1
+a248 1
+	init_glyphs(glyphs);
+d257 1
+@
+
+
+1.31
+log
+@minor changes
+@
+text
+@d7 20
+a26 18
+#define W_IN				8.5
+#define R_IN				11.0
+#define HORIZ_RES			1600.0
+#define VERT_RES			1200.0
+#define INIT_WIN_WIDTH		((15.0/16.0) * HORIZ_RES)
+#define INIT_WIN_LENGTH		((11.0/12.0) * VERT_RES)
+#define INIT_PAGE_WIDTH		((14.0/15.0) * INIT_WIN_WIDTH)
+#define INIT_PAGE_LENGTH	(R_IN/W_IN * INIT_PAGE_WIDTH)
+#define MIN_WIN_WIDTH		((1.0/10.0) * INIT_WIN_WIDTH)
+#define MIN_WIN_LENGTH		((1.0/10.0) * MIN_WIN_WIDTH)
+#define PT_PER_IN			72.27
+#define SP_PER_PT_TH		65536.0
+#define SP_PER_PT			64838.45196
+#define M_IN				1.0
+#define L_IN				(W_IN - 2.0*M_IN)
+#define L_SP				(L_IN * PT_PER_IN * SP_PER_PT)
+#define S_IN				(R_IN - 2.0*M_IN)
+#define S_SP				(S_IN * PT_PER_IN * SP_PER_PT)
+a70 1
+		
+d91 1
+d98 4
+d103 1
+a103 1
+	_data = (datatype1 *) data;
+d164 1
+a164 1
+	GtkWidget /**drawing_area,*/ *window, *scrolled_window, *vbox;
+d212 2
+a213 1
+/*	drawing_area = gtk_drawing_area_new(); */
+d215 1
+a215 1
+								   (INIT_WIN_WIDTH - INIT_PAGE_WIDTH) / 2); 
+d243 2
+a244 2
+	data1.width = INIT_PAGE_WIDTH; 
+	data1.height = INIT_PAGE_LENGTH;
+@
+
+
+1.30
+log
+@this is version 1.20
+@
+text
+@d158 1
+a158 1
+	GtkWidget *drawing_area, *window, *scrolled_window;
+a198 2
+
+	drawing_area = gtk_drawing_area_new();
+d201 6
+@
+
+
+1.29
+log
+@still not working
+@
+text
+@d7 18
+a24 20
+#define W_IN					8.5
+#define R_IN					11.0
+#define HORIZ_RES				1600.0
+#define VERT_RES				1200.0
+#define INIT_WIN_WIDTH			((15.0/16.0) * HORIZ_RES)
+#define INIT_WIN_LENGTH			((11.0/12.0) * VERT_RES)
+#define INIT_ACT_PAGE_WIDTH		((14.0/15.0) * INIT_WIN_WIDTH)
+#define INIT_ACT_PAGE_LENGTH	(R_IN/W_IN * INIT_ACT_PAGE_WIDTH)
+#define INIT_DISP_PAGE_WIDTH	INIT_ACT_PAGE_WIDTH
+#define INIT_DISP_PAGE_LENGTH	((10.0/11.0) * INIT_WIN_LENGTH)
+#define MIN_WIN_WIDTH			((1.0/10.0) * INIT_WIN_WIDTH)
+#define MIN_WIN_LENGTH			((1.0/10.0) * MIN_WIN_WIDTH)
+#define PT_PER_IN				72.27
+#define SP_PER_PT_TH			65536.0
+#define SP_PER_PT				64838.45196
+#define M_IN					1.0
+#define L_IN					(W_IN - 2.0*M_IN)
+#define L_SP					(L_IN * PT_PER_IN * SP_PER_PT)
+#define S_IN					(R_IN - 2.0*M_IN)
+#define S_SP					(S_IN * PT_PER_IN * SP_PER_PT)
+a30 1
+	GtkWidget *scrolled_window;
+d45 1
+a45 2
+	guint border_width;
+	const GdkColor white = {0, 65535, 65535, 65535};
+d47 1
+a47 3
+	GtkWidget *scrolled_window;
+    GtkWidget *drawing_area1;
+	gint new_height;
+a48 1
+	_data = (datatype1 *) data;
+d52 4
+a57 24
+	drawing_area1 = GTK_WIDGET(
+			gtk_container_get_children(GTK_CONTAINER(scrolled_window))->data);
+
+				/* new drawing_area1 */
+	if (_data->width + 2*border_width != event->width) { 
+		gtk_widget_destroy(drawing_area1);
+		gtk_container_remove(GTK_CONTAINER(widget), scrolled_window);
+		drawing_area1 = gtk_drawing_area_new();
+		new_height = 
+			(double)_data->height/(double)(event->height - 2*border_width) *
+			R_IN * _data->width / (double) W_IN; 
+				
+		gtk_widget_set_size_request(drawing_area1, -1, 
+									new_height);		
+		
+		gtk_widget_modify_bg(drawing_area1, GTK_STATE_NORMAL, &white);
+		gtk_scrolled_window_add_with_viewport(
+			GTK_SCROLLED_WINDOW(scrolled_window), drawing_area1); 
+		g_object_ref((gpointer) scrolled_window);
+		gtk_container_add(GTK_CONTAINER(widget), scrolled_window);
+		gtk_widget_realize(drawing_area1);
+		gtk_widget_show(widget); 
+	}
+
+d59 1
+a59 1
+	expose_event.window = drawing_area1->window;
+a68 3
+/*	g_object_set_property(G_OBJECT(drawing_area1), "height-request",  
+						G_VALUE(((double)old_height/(double)_data->height)
+							* R_IN * _data->width / (double) W_IN)); */ 
+d70 1
+a70 1
+	expose_event_callback(drawing_area1, &expose_event, data);  
+a89 1
+	GtkAdjustment *horizontal, *vertical;
+a95 1
+	/*gtk_widget_show_now(widget); */ 
+d117 1
+a117 13
+	cairo_show_glyphs(cr, _data->glyphs, 5); 
+
+	horizontal = gtk_scrolled_window_get_hadjustment(
+					GTK_SCROLLED_WINDOW(_data->scrolled_window));
+	vertical = gtk_scrolled_window_get_vadjustment(
+					GTK_SCROLLED_WINDOW(_data->scrolled_window));
+
+	/* hack begin */
+	gtk_adjustment_set_value(vertical, vertical->value + 
+											 vertical->page_increment);
+	gtk_adjustment_set_value(vertical, vertical->value - 
+											 vertical->page_increment);
+	/* hack end */
+d158 1
+a158 1
+	GtkWidget *drawing_area1, *drawing_area2, *window, *scrolled_window;
+d171 1
+d200 1
+a202 8
+	drawing_area1 = gtk_drawing_area_new();
+	drawing_area2 = gtk_drawing_area_new();
+	gtk_widget_set_size_request(drawing_area1, -1, 
+										INIT_ACT_PAGE_LENGTH);
+/*	gtk_widget_set_size_request(drawing_area2, INIT_ACT_PAGE_WIDTH, 
+										INIT_ACT_PAGE_LENGTH);*/
+
+
+d204 1
+a204 1
+								   (INIT_WIN_WIDTH - INIT_DISP_PAGE_WIDTH) / 2); 
+a206 1
+	g_object_ref((gpointer) scrolled_window);
+d213 1
+a213 2
+	gtk_widget_modify_bg(drawing_area1, GTK_STATE_NORMAL, &white);
+	gtk_widget_modify_bg(drawing_area2, GTK_STATE_NORMAL, &white);
+d216 1
+a216 1
+			GTK_SCROLLED_WINDOW(scrolled_window), drawing_area1); 
+d220 3
+a222 3
+	gtk_widget_set_events(drawing_area1, GDK_ALL_EVENTS_MASK);	
+	gtk_widget_realize(drawing_area1); 
+	cr = gdk_cairo_create(drawing_area1->window);
+d232 2
+a233 3
+	data1.width = INIT_ACT_PAGE_WIDTH; 
+	data1.height = INIT_ACT_PAGE_LENGTH;
+	data1.scrolled_window = scrolled_window;
+d237 1
+a237 1
+	g_signal_connect(G_OBJECT(drawing_area1), "expose_event", 
+@
+
+
+1.28
+log
+@Coded a major hack.  Page down screen, then up screen to make the
+expose event work.  But the good news is that it works -- it scales
+with the scroll bars.  Now I just have to shorten the length of
+the scroll bars
+@
+text
+@d48 2
+a49 1
+	double border_width;
+d51 3
+a53 1
+	GtkWidget *scrolled_window, *drawing_area;
+d55 1
+a58 4
+	drawing_area = GTK_WIDGET(
+		gtk_container_get_children(GTK_CONTAINER(scrolled_window))->data);
+	
+	_data = (datatype1 *) data;
+d61 24
+d86 1
+a86 1
+	expose_event.window = drawing_area->window;
+d96 3
+d100 1
+a100 1
+	expose_event_callback(drawing_area, &expose_event, data);  
+d127 1
+a145 3
+/*	widget->allocation.width = INIT_ACT_PAGE_WIDTH;
+	widget->allocation.height = INIT_ACT_PAGE_LENGTH;*/
+
+d156 1
+d161 1
+d202 1
+a202 1
+	GtkWidget *drawing_area, *window, *scrolled_window;
+a214 1
+	/*type_query(); */
+d245 3
+a247 2
+	drawing_area = gtk_drawing_area_new();
+	gtk_widget_set_size_request(drawing_area, INIT_ACT_PAGE_WIDTH, 
+d249 2
+a251 2
+/*	drawing_area->allocation.width = INIT_ACT_PAGE_WIDTH;
+	drawing_area->allocation.height = INIT_ACT_PAGE_LENGTH; */
+d257 1
+d264 2
+a265 1
+	gtk_widget_modify_bg(drawing_area, GTK_STATE_NORMAL, &white);
+d268 1
+a268 5
+			GTK_SCROLLED_WINDOW(scrolled_window), drawing_area); 
+/*	gtk_container_resize_children(GTK_CONTAINER(window));
+	gtk_container_resize_children(GTK_CONTAINER(scrolled_window));*/
+
+	gtk_container_check_resize(GTK_CONTAINER(scrolled_window));	
+d272 3
+a274 3
+	gtk_widget_set_events(drawing_area, GDK_ALL_EVENTS_MASK);	
+	gtk_widget_realize(drawing_area); 
+	cr = gdk_cairo_create(drawing_area->window);
+d290 1
+a290 1
+	g_signal_connect(G_OBJECT(drawing_area), "expose_event", 
+@
+
+
+1.27
+log
+@this is version 1.20
+@
+text
+@d7 20
+a26 18
+#define W_IN				8.5
+#define R_IN				11.0
+#define HORIZ_RES			1600.0
+#define VERT_RES			1200.0
+#define INIT_WIN_WIDTH		((15.0/16.0) * HORIZ_RES)
+#define INIT_WIN_LENGTH		((11.0/12.0) * VERT_RES)
+#define INIT_PAGE_WIDTH		((14.0/15.0) * INIT_WIN_WIDTH)
+#define INIT_PAGE_LENGTH	(R_IN/W_IN * INIT_PAGE_WIDTH)
+#define MIN_WIN_WIDTH		((1.0/10.0) * INIT_WIN_WIDTH)
+#define MIN_WIN_LENGTH		((1.0/10.0) * MIN_WIN_WIDTH)
+#define PT_PER_IN			72.27
+#define SP_PER_PT_TH		65536.0
+#define SP_PER_PT			64838.45196
+#define M_IN				1.0
+#define L_IN				(W_IN - 2.0*M_IN)
+#define L_SP				(L_IN * PT_PER_IN * SP_PER_PT)
+#define S_IN				(R_IN - 2.0*M_IN)
+#define S_SP				(S_IN * PT_PER_IN * SP_PER_PT)
+d33 1
+d93 1
+d118 3
+d124 11
+a134 1
+	cairo_show_glyphs(cr, _data->glyphs, 5);  
+a216 1
+	drawing_area = gtk_drawing_area_new();
+d219 7
+d227 1
+a227 1
+								   (INIT_WIN_WIDTH - INIT_PAGE_WIDTH) / 2); 
+d239 5
+a243 1
+			GTK_SCROLLED_WINDOW(scrolled_window), drawing_area); 	
+d259 3
+a261 2
+	data1.width = INIT_PAGE_WIDTH; 
+	data1.height = INIT_PAGE_LENGTH;
+@
+
+
+1.26
+log
+@horizontal scaling isn't working, and I'm gonna revert to previous version
+@
+text
+@d7 18
+a24 21
+#define W_IN					8.5
+#define R_IN					11.0
+
+#define HORIZ_RES				1600.0
+#define VERT_RES				1200.0
+#define INIT_WIN_WIDTH			((15.0/16.0) * HORIZ_RES)
+#define INIT_WIN_LENGTH			((11.0/12.0) * VERT_RES)
+#define INIT_DISP_PAGE_WIDTH	((14.0/15.0) * INIT_WIN_WIDTH)
+#define INIT_DISP_PAGE_LENGTH	((14.0/15.0) * INIT_WIN_LENGTH)
+#define INIT_ACT_PAGE_WIDTH		INIT_DISP_PAGE_WIDTH
+#define INIT_ACT_PAGE_LENGTH	(R_IN / W_IN) * INIT_ACT_PAGE_WIDTH 
+#define MIN_WIN_WIDTH			((1.0/10.0) * INIT_WIN_WIDTH)
+#define MIN_WIN_LENGTH			((1.0/10.0) * MIN_WIN_WIDTH)
+#define PT_PER_IN				72.27
+#define SP_PER_PT_TH			65536.0
+#define SP_PER_PT				64838.45196
+#define M_IN					1.0
+#define L_IN					(W_IN - 2.0*M_IN)
+#define L_SP					(L_IN * PT_PER_IN * SP_PER_PT)
+#define S_IN					(R_IN - 2.0*M_IN)
+#define S_SP					(S_IN * PT_PER_IN * SP_PER_PT)
+a45 2
+	gint width, height;
+	GtkAllocation allocation; 
+d47 1
+a47 3
+	_data = (datatype1 *) data;
+	border_width = gtk_container_get_border_width(GTK_CONTAINER(widget));
+	GtkWidget *scrolled_window, *drawing_area1/*, *drawing_area2 */;
+d52 1
+a52 1
+	drawing_area1 = GTK_WIDGET(
+a53 16
+
+	gtk_window_get_size(GTK_WINDOW(widget), &width, &height);
+
+/*	drawing_area1->requisition.width = (14.0/15.0) * width; 
+	drawing_area1->requisition.height = (14.0/15.0) * height; */
+
+	allocation.width = width - 2 * border_width;
+	allocation.height = height - 2 * border_width;
+	allocation.x = (1.0/30.0) * width;
+	allocation.y = (1.0/30.0) * width; /* yes, width */
+
+	gtk_widget_size_allocate(drawing_area1, &allocation);
+
+
+/*	drawing_area1->allocation.width = 	(14.0/15.0) * width; 
+	drawing_area1->allocation.height = 	(14.0/15.0) * height; */ 
+d55 2
+d59 1
+a59 1
+	expose_event.window = drawing_area1->window;
+a62 4
+
+
+
+	/*
+d66 1
+a66 5
+		event->height - 2 * border_width; */
+
+	expose_event.area.width = _data->width = width;
+	expose_event.area.height = _data->height = height;
+
+d70 1
+a70 1
+	expose_event_callback(drawing_area1, &expose_event, data);  
+a89 1
+/*	GtkRequisition requisition;*/
+a95 4
+	widget->requisition.width = INIT_ACT_PAGE_WIDTH;
+	widget->requisition.height = INIT_ACT_PAGE_LENGTH; 
+/*	gtk_widget_size_request(widget, &requisition); */
+
+d158 1
+a158 2
+	GtkWidget *drawing_area1, *drawing_area2, *window, *scrolled_window;
+/*	GtkRequisition requisition; */
+d171 1
+d199 3
+a201 2
+	gtk_widget_set_size_request(window, INIT_WIN_WIDTH/10, 
+										INIT_WIN_LENGTH/10);
+d203 2
+a205 14
+	drawing_area1 = gtk_drawing_area_new();
+	drawing_area2 = gtk_drawing_area_new();
+
+	gtk_widget_set_size_request(drawing_area1, 
+						INIT_ACT_PAGE_WIDTH/10, 
+				   		INIT_ACT_PAGE_LENGTH/10);	
+
+	gtk_widget_set_redraw_on_allocate(drawing_area1, TRUE);
+	/*drawing_area1->allocation.width = INIT_ACT_PAGE_WIDTH;
+	drawing_area1->allocation.height = INIT_ACT_PAGE_LENGTH; */
+
+
+	gtk_container_set_border_width(GTK_CONTAINER(window),
+								   (INIT_WIN_WIDTH - INIT_DISP_PAGE_WIDTH) / 2); 
+d213 1
+a213 1
+	gtk_widget_modify_bg(drawing_area1, GTK_STATE_NORMAL, &white);
+d216 1
+a216 2
+			GTK_SCROLLED_WINDOW(scrolled_window), drawing_area1); 	
+	gtk_container_resize_children(GTK_CONTAINER(scrolled_window)); 
+d220 3
+a222 3
+	gtk_widget_set_events(drawing_area1, GDK_ALL_EVENTS_MASK);	
+	gtk_widget_realize(drawing_area1); 
+	cr = gdk_cairo_create(drawing_area1->window);
+d232 2
+a233 2
+	data1.width = INIT_DISP_PAGE_WIDTH; 
+	data1.height = INIT_DISP_PAGE_LENGTH;
+d237 1
+a237 1
+	g_signal_connect(G_OBJECT(drawing_area1), "expose_event", 
+@
+
+
+1.25
+log
+@this is officially -r1.22
+@
+text
+@d49 2
+d52 3
+a54 1
+	GtkWidget *scrolled_window, *drawing_area1, *drawing_area2;
+d61 16
+a77 2
+	_data = (datatype1 *) data;
+	border_width = gtk_container_get_border_width(GTK_CONTAINER(widget));
+d84 4
+d91 5
+a95 1
+		event->height - 2 * border_width;
+d119 1
+d126 4
+d193 1
+a205 1
+	/*type_query(); */
+d239 10
+a248 2
+	gtk_widget_set_size_request(drawing_area1, INIT_ACT_PAGE_WIDTH, 
+				   							  INIT_ACT_PAGE_LENGTH);	
+d262 1
+@
+
+
+1.24
+log
+@gonna revert to 1.22 now
+@
+text
+@a46 1
+	GtkAdjustment *new_horizontal, *new_vertical;
+d50 1
+a50 1
+	GtkWidget *scrolled_window, *drawing_area1/*, *drawing_area2*/;
+a51 2
+	_data = (datatype1 *) data;
+	border_width = gtk_container_get_border_width(GTK_CONTAINER(widget));
+d56 4
+a59 17
+		gtk_container_get_children(GTK_CONTAINER(scrolled_window))->data); 
+
+	new_horizontal = gtk_scrolled_window_get_hadjustment(
+					GTK_SCROLLED_WINDOW(scrolled_window));
+	new_vertical = gtk_scrolled_window_get_vadjustment(
+					GTK_SCROLLED_WINDOW(scrolled_window));
+	new_horizontal->upper *= (double) (_data->width - 2 * border_width) / 
+							 (double) (event->width - 2 * border_width);
+	new_vertical->upper *=  (double) (_data->height - 2 * border_width) / 
+							(double) (event->height - 2 * border_width); 
+
+
+	gtk_scrolled_window_set_hadjustment(GTK_SCROLLED_WINDOW(scrolled_window),
+										new_horizontal);
+	gtk_scrolled_window_set_vadjustment(GTK_SCROLLED_WINDOW(scrolled_window),
+										new_vertical); 
+
+d73 1
+a73 1
+	expose_event_callback(widget, &expose_event, data);  
+a92 1
+	GtkWidget *scrolled_window, *drawing_area1;
+a101 6
+	scrolled_window = GTK_WIDGET( 
+		gtk_container_get_children(GTK_CONTAINER(widget))->data);
+
+	drawing_area1 = GTK_WIDGET(
+		gtk_container_get_children(GTK_CONTAINER(scrolled_window))->data); 
+
+d103 1
+a103 1
+	gdk_window_clear(drawing_area1->window);
+d105 1
+a105 1
+	cr = gdk_cairo_create(drawing_area1->window);
+a161 1
+	GtkAdjustment *horizontal, *vertical;
+a212 5
+	horizontal = gtk_scrolled_window_get_hadjustment(
+					GTK_SCROLLED_WINDOW(scrolled_window));
+	vertical = gtk_scrolled_window_get_vadjustment(
+					GTK_SCROLLED_WINDOW(scrolled_window));
+
+d242 1
+a242 1
+/*
+d244 1
+a244 5
+					 G_CALLBACK(expose_event_callback), (gpointer) &data1); */
+
+	g_signal_connect(G_OBJECT(window), "expose_event", 
+					 G_CALLBACK(expose_event_callback), (gpointer) &data1); 
+
+@
+
+
+1.23
+log
+@still not scaling right, will try to switch from drawing_area to
+window in the expose_event_callback
+@
+text
+@d89 1
+a89 1
+	expose_event_callback(drawing_area1, &expose_event, data);  
+d109 1
+d119 6
+d126 1
+a126 1
+	gdk_window_clear(widget->window);
+d128 1
+a128 1
+	cr = gdk_cairo_create(widget->window);
+d275 1
+a275 1
+	g_signal_connect(G_OBJECT(drawing_area1), "expose_event", 
+@
+
+
+1.22
+log
+@about to pack two drawing areas in a box together
+to see how it looks
+@
+text
+@d47 1
+d51 1
+a51 1
+	GtkWidget *scrolled_window, *drawing_area1, *drawing_area2;
+d53 2
+d59 17
+a75 4
+		gtk_container_get_children(GTK_CONTAINER(scrolled_window))->data);
+	
+	_data = (datatype1 *) data;
+	border_width = gtk_container_get_border_width(GTK_CONTAINER(widget));
+d178 1
+d230 5
+d264 3
+d269 2
+a270 1
+					 G_CALLBACK(expose_event_callback), (gpointer) &data1);
+@
+
+
+1.21
+log
+@got scroll bars to work!!
+@
+text
+@d50 1
+a50 1
+	GtkWidget *scrolled_window, *drawing_area;
+d55 1
+a55 1
+	drawing_area = GTK_WIDGET(
+d62 1
+a62 1
+	expose_event.window = drawing_area->window;
+d73 1
+a73 1
+	expose_event_callback(drawing_area, &expose_event, data);  
+d161 1
+a161 1
+	GtkWidget *drawing_area, *window, *scrolled_window;
+d206 3
+a208 2
+	drawing_area = gtk_drawing_area_new();
+	gtk_widget_set_size_request(drawing_area, INIT_ACT_PAGE_WIDTH, 
+d219 1
+a219 1
+	gtk_widget_modify_bg(drawing_area, GTK_STATE_NORMAL, &white);
+d222 1
+a222 1
+			GTK_SCROLLED_WINDOW(scrolled_window), drawing_area); 	
+d226 3
+a228 3
+	gtk_widget_set_events(drawing_area, GDK_ALL_EVENTS_MASK);	
+	gtk_widget_realize(drawing_area); 
+	cr = gdk_cairo_create(drawing_area->window);
+d243 1
+a243 1
+	g_signal_connect(G_OBJECT(drawing_area), "expose_event", 
+@
+
+
+1.20
+log
+@scaling works perfectly now!
+deleted extraneous comments
+@
+text
+@d7 21
+a27 18
+#define W_IN				8.5
+#define R_IN				11.0
+#define HORIZ_RES			1600.0
+#define VERT_RES			1200.0
+#define INIT_WIN_WIDTH		((15.0/16.0) * HORIZ_RES)
+#define INIT_WIN_LENGTH		((11.0/12.0) * VERT_RES)
+#define INIT_PAGE_WIDTH		((14.0/15.0) * INIT_WIN_WIDTH)
+#define INIT_PAGE_LENGTH	(R_IN/W_IN * INIT_PAGE_WIDTH)
+#define MIN_WIN_WIDTH		((1.0/10.0) * INIT_WIN_WIDTH)
+#define MIN_WIN_LENGTH		((1.0/10.0) * MIN_WIN_WIDTH)
+#define PT_PER_IN			72.27
+#define SP_PER_PT_TH		65536.0
+#define SP_PER_PT			64838.45196
+#define M_IN				1.0
+#define L_IN				(W_IN - 2.0*M_IN)
+#define L_SP				(L_IN * PT_PER_IN * SP_PER_PT)
+#define S_IN				(R_IN - 2.0*M_IN)
+#define S_SP				(S_IN * PT_PER_IN * SP_PER_PT)
+d202 3
+d207 2
+a208 2
+	gtk_widget_set_size_request(window, INIT_WIN_WIDTH/10, INIT_WIN_LENGTH/10);
+	gtk_window_resize(GTK_WINDOW(window), INIT_WIN_WIDTH, INIT_WIN_LENGTH);
+d210 1
+a210 2
+								   (INIT_WIN_WIDTH - INIT_PAGE_WIDTH) / 2); 
+
+d237 2
+a238 2
+	data1.width = INIT_PAGE_WIDTH; 
+	data1.height = INIT_PAGE_LENGTH;
+@
+
+
+1.19
+log
+@resizing works! but there's some scaling factor off
+@
+text
+@a6 2
+#define MAX_POS_TYPES 		10000
+
+d18 2
+a19 1
+#define SP_PER_PT			65536.0
+d21 2
+a22 2
+#define E_IN				(W_IN - 2.0*M_IN)
+#define E_SP				(E_IN * PT_PER_IN * SP_PER_PT)
+d37 1
+a37 1
+double v_p(cairo_glyph_t glyph, double r_p);
+a45 3
+	/*gboolean ret;
+
+	GClosure* g_cclosure;*/
+d64 1
+a64 1
+		event->width; 
+d66 1
+a66 1
+		event->height;
+d69 1
+a69 9
+
+/*	g_signal_stop_emission_by_name(drawing_area, "expose_event"); */
+	/*gdk_event_put((GdkEvent *) &expose_event);  */
+/*	g_signal_emit_by_name(drawing_area, "expose_event", NULL); */
+	printf("configure\n"); 
+/*
+	g_cclosure_new(G_CALLBACK(expose_event_callback), data, NULL);
+	g_closure_invoke(g_cclosure, (GValue *)&ret, 0, NULL, NULL); */
+			
+d74 1
+a74 43
+/*
+void type_query(void)
+{
+  unsigned long l;
+  GTypeQuery query;
+
+  g_type_init();
+
+  for (l= 0; l < MAX_POS_TYPES; l++) {
+		g_type_query(l, &query);
+	   	if (query.type > 0)
+			printf("Type %lu is %s\n", l, query.type_name);
+  }
+}
+
+*/
+
+
+/*
+void query(void)
+{
+*	*GSignalQuery query;
+	int i; /
+
+	GType type;
+
+	g_type_init();
+	type = g_type_from_name("GtkWidget*");
+	printf("type is %d\n", (int) type);
+
+	*
+	g_signal_query(
+		g_signal_lookup("expose_event", g_type_from_name("GtkWidget")), 
+	    &query);	
+
+	for (i = 0; i < query.n_params; i++) {
+		printf("%s\n", g_type_name(query.param_types[i]));
+    }
+/	
+}
+*/
+
+void scale_glyphs(cairo_glyph_t *glyphs, int num, gint16 w_p, gint16 r_p)
+d80 1
+a80 1
+	   	glyphs[i].y = v_p(glyphs[i], r_p);	
+a120 1
+	printf("expose.\n");
+d127 1
+a127 5
+	double l_p;
+
+	l_p = w_p - 2*M_IN * w_p / W_IN;
+
+	return (M_IN * w_p / W_IN + glyph.x * l_p); 
+d130 1
+a130 1
+double v_p(cairo_glyph_t glyph, double r_p)
+d132 1
+a132 5
+	double s_p;
+
+	s_p = r_p - 2* M_IN * r_p / R_IN;
+
+	return (M_IN * r_p / R_IN + glyph.y * s_p);
+a224 5
+/*
+	gtk_widget_set_double_buffered(drawing_area, FALSE);
+	gtk_widget_set_double_buffered(window, FALSE);
+	gtk_widget_set_double_buffered(scrolled_window, FALSE); */
+
+a236 2
+	g_signal_stop_emission_by_name(drawing_area, "expose_event"); 
+
+@
+
+
+1.18
+log
+@foo-barred
+@
+text
+@d39 1
+d47 1
+a47 1
+	gboolean ret;
+d49 1
+a49 1
+	GClosure* g_cclosure;
+d74 1
+d76 3
+a78 3
+	/*g_signal_emit_by_name(drawing_area, "expose_event", NULL); */
+/*	printf("hello\n"); */
+
+d80 1
+a80 1
+	g_closure_invoke(g_cclosure, (GValue *)&ret, 0, NULL, NULL); 
+d82 1
+a82 1
+/*	expose_event_callback(drawing_area, &expose_event, data); */ 
+d86 1
+a86 1
+
+d101 1
+d104 1
+a104 2
+
+
+d107 2
+a108 2
+/*	*GSignalQuery query;
+	int i; */
+d116 1
+a116 1
+	/*
+d124 1
+a124 1
+*/	
+d126 1
+a126 1
+
+d168 1
+d175 1
+d198 21
+d234 1
+a234 2
+	type_query();
+	return 0;
+d282 2
+a283 1
+	
+d288 6
+a293 15
+	glyphs[0].index = 1;
+	glyphs[0].x = 0.0; 
+	glyphs[0].y = 0.2; 
+	glyphs[1].index = 2;
+	glyphs[1].x = 0.25;
+	glyphs[1].y = 0.2; 
+	glyphs[2].index = 3;
+	glyphs[2].x = 0.5; 
+	glyphs[2].y = 0.2; 
+	glyphs[3].index = 4;
+	glyphs[3].x = 0.75; 
+	glyphs[3].y = 0.2; 
+	glyphs[4].index = 5;
+	glyphs[4].x = 1.0; 
+	glyphs[4].y = 0.2; 
+d305 2
+d314 1
+a314 1
+					 G_CALLBACK(config_event_callback), (gpointer) &data1); 
+@
+
+
+1.17
+log
+@will redo just by good old fashioned formulas
+@
+text
+@d7 1
+d10 3
+a12 3
+#define H_IN				11.0
+#define HORIZ_RES			1600
+#define VERT_RES			1200
+d16 1
+a16 1
+#define INIT_PAGE_LENGTH	(H_IN/W_IN * INIT_PAGE_WIDTH)
+d20 1
+a20 1
+#define SP_PER_PT			65536
+d22 1
+a22 1
+#define E_IN				(W_IN - 2*M_IN)
+d24 1
+a24 1
+#define S_IN				(H_IN - 2*M_IN)
+a33 7
+typedef struct {
+	datatype1 *data1;
+	GtkWidget *widget;
+	GdkEventExpose event[1];
+	gpointer data;
+} datatype2;
+
+d37 2
+d44 13
+a56 1
+	GdkEventExpose expose_event;
+d59 2
+d62 4
+a65 4
+	expose_event.window = widget->window;
+	expose_event.send_event = 0;
+	expose_event.area.x = event->x;
+	expose_event.area.y = event->y;
+d67 1
+a67 2
+		event->width - 2 * gtk_container_get_border_width(
+								GTK_CONTAINER(widget));
+d69 1
+a69 2
+		event->height - 2 * gtk_container_get_border_width(
+								GTK_CONTAINER(widget));
+d71 36
+d108 1
+a108 1
+	expose_event_callback(widget, &expose_event, data); 
+d110 13
+a122 1
+	return FALSE;
+d126 10
+d142 1
+a142 5
+	cairo_scaled_font_t *scaled_font;
+	cairo_matrix_t font_matrix, ctm;
+	cairo_font_options_t *font_options;
+	FT_Face 	face;
+
+d152 1
+a152 1
+/*	gdk_window_clear(widget->window);*/ 
+d156 1
+a156 5
+	font_options = cairo_font_options_create();
+	cairo_matrix_init_scale(&font_matrix, PT_PER_IN * SP_PER_PT,
+										  PT_PER_IN * SP_PER_PT);
+	cairo_matrix_init(&ctm, E_IN, 0, 0, S_IN,
+				   	 		_data->width / W_IN, _data->height / H_IN);
+a157 3
+		
+
+	cairo_set_font_size(cr, em * pppt); 
+d160 1
+a160 8
+	scaled_font = cairo_scaled_font_create(font_face, &font_matrix, 
+						&ctm, font_options);
+	face = cairo_ft_scaled_font_lock_face(scaled_font);
+
+	font_face = cairo_ft_font_face_create_for_ft_face(face, 0);
+	cairo_set_font_face(cr, font_face);
+	
+	/*
+d166 2
+a170 1
+	cairo_ft_scaled_font_unlock_face(scaled_font);
+a171 1
+	FT_Done_Face(face);
+d176 18
+d196 1
+a196 1
+	GtkWidget *drawing_area, *window, *scrolled_window, *vbox; 
+a198 2
+	/*FT_GlyphSlot slot; */
+	/* FT_Vector	pen; */
+a199 1
+/*	datatype2 data2; */
+d209 3
+d238 1
+d247 1
+a247 1
+	gtk_container_set_border_width(GTK_CONTAINER(scrolled_window), 5); 
+d257 1
+a257 3
+	vbox = gtk_vbox_new(TRUE, 5);
+	gtk_box_pack_start_defaults(GTK_BOX(vbox), scrolled_window);
+	gtk_container_add(GTK_CONTAINER(window), vbox);
+d285 3
+d294 1
+d296 1
+a296 1
+					 G_CALLBACK(config_event_callback), (gpointer) &data1);
+@
+
+
+1.16
+log
+@Segmentation fault bug
+@
+text
+@d118 1
+a118 1
+	cairo_show_glyphs(cr, _data->glyphs, 5); 
+d120 1
+a121 1
+	cairo_font_face_destroy(font_face);
+d141 1
+d223 1
+@
+
+
+1.15
+log
+@Works the way I want it to
+@
+text
+@d7 3
+d12 6
+a17 4
+#define INIT_WIN_WIDTH		1500
+#define INIT_WIN_LENGTH		1100
+#define INIT_PAGE_WIDTH		1400
+#define INIT_PAGE_LENGTH	1812	/* 8.5 x 11 */
+d19 6
+a24 1
+#define IN_PER_WIN			8.5
+d30 1
+d56 6
+a61 2
+	expose_event.area.width = _data->width = event->width;
+	expose_event.area.height = event->height;
+d75 6
+a80 1
+	cairo_font_face_t *cfft;
+a81 1
+/*	cairo_matrix_t matrix; */
+d88 2
+a89 1
+	pppt = _data->width / (IN_PER_WIN * PT_PER_IN); 
+d94 5
+a98 1
+/*	cairo_matrix_init_scale (&matrix, , , ); */
+d100 1
+d103 8
+a110 2
+	cfft = cairo_ft_font_face_create_for_ft_face(*_data->face, 0);
+	cairo_set_font_face(cr, cfft);
+d120 2
+a121 1
+	cairo_font_face_destroy(cfft);
+d123 1
+d140 4
+a143 1
+	cairo_glyph_t glyphs[10];
+d198 2
+a199 2
+	glyphs[0].x = 0; 
+	glyphs[0].y = 300; 
+d201 2
+a202 2
+	glyphs[1].x = 200;
+	glyphs[1].y = 300; 
+d204 2
+a205 2
+	glyphs[2].x = 400; 
+	glyphs[2].y = 300; 
+d207 2
+a208 2
+	glyphs[3].x = 600; 
+	glyphs[3].y = 300; 
+d210 2
+a211 2
+	glyphs[4].x = 800; 
+	glyphs[4].y = 300; 
+d219 1
+a219 1
+	
+@
+
+
+1.14
+log
+@finally got the resize to work!!!
+@
+text
+@a16 2
+	gint draw_x[1]; 
+	gint draw_y[1];
+d19 1
+a19 1
+
+d23 1
+d29 25
+d61 1
+d69 2
+a70 1
+	gdk_window_clear(widget->window); 
+d77 1
+a77 1
+	cairo_set_font_size(cr, 10*1.307692339); 
+d182 1
+d188 2
+@
+
+
+1.13
+log
+@removed viewport declarations, am trying to
+get the resize window option to work
+@
+text
+@a20 1
+	double ptpem;
+a71 2
+	/* gint root_x[1], root_y[1]; */
+	/* gint draw_x[1], draw_y[1]; */
+a81 1
+	FT_UShort ppem;			/* equal to x_ppem */
+d110 2
+a111 1
+	gtk_widget_set_size_request(window, INIT_WIN_WIDTH, INIT_WIN_LENGTH);
+d113 1
+a113 1
+								   (INIT_WIN_WIDTH - INIT_PAGE_WIDTH) / 2);
+d117 1
+a117 1
+	gtk_container_set_border_width(GTK_CONTAINER(scrolled_window), 5);
+d130 1
+a130 11
+  
+
+/*	printf("Type is %s\n", g_type_name(
+						gdk_drawable_get_type(scrolled_window));*/	
+	/*gtk_container_set_resize_mode(GTK_CONTAINER(scrolled_window), 
+								  GTK_RESIZE_PARENT); */
+/*	gtk_container_add(GTK_CONTAINER(viewport), drawing_area);*/ 
+	/* gtk_window_get_position(GTK_WINDOW(window), root_x, root_y); */
+	gtk_window_get_position(GTK_WINDOW(window), data1.draw_x, 
+											    data1.draw_y);
+
+a131 1
+
+d156 1
+a156 8
+	data1.ptpem = ppem;
+
+	/*printf("Size is %g\n", 
+		   (double)( face->size->metrics.x_ppem*IN_PER_WIN*PT_PER_IN) /
+		   PAGE_WIDTH ); */ 
+
+/*	printf("PPEM is %d\n", (int) face->size->metrics.x_ppem); */
+
+@
+
+
+1.12
+log
+@Mag_c is working great, or is about to, rather . . .
+@
+text
+@d7 8
+a14 8
+#define HORIZ_RES	1600
+#define VERT_RES	1200
+#define WIN_WIDTH	1500
+#define WIN_LENGTH	1100
+#define PAGE_WIDTH	1400
+#define PAGE_LENGTH	1812	/* 8.5 x 11 */
+#define PT_PER_IN	72.27
+#define IN_PER_WIN	8.5
+d72 1
+a72 1
+	GtkWidget *drawing_area, *window, *scrolled_window, *viewport; 
+a80 1
+	GtkAdjustment *horizontal, *vertical;
+d114 1
+a114 2
+/*	g_object_set(drawing_area, "background", "#000000", NULL); */
+	gtk_widget_set_size_request(window, WIN_WIDTH, WIN_LENGTH);
+d116 1
+a116 1
+								   (WIN_WIDTH - PAGE_WIDTH) / 2);
+a118 5
+	horizontal = gtk_scrolled_window_get_hadjustment(
+					GTK_SCROLLED_WINDOW(scrolled_window));
+	vertical = gtk_scrolled_window_get_vadjustment(
+					GTK_SCROLLED_WINDOW(scrolled_window));
+	viewport = gtk_viewport_new(horizontal, vertical); 
+a120 1
+	gtk_container_set_border_width(GTK_CONTAINER(viewport), 5); 
+d130 10
+a139 2
+	gtk_container_add(GTK_CONTAINER(window), scrolled_window);
+	/*gtk_container_add(GTK_CONTAINER(viewport), drawing_area); */
+@
+
+
+1.11
+log
+@about to erase fontconfig stuff
+@
+text
+@a2 2
+#include <fontconfig/fontconfig.h>
+#include <fontconfig/fcfreetype.h>
+a37 2
+	double em = 10.0;			/* ultimately to be expressed in device space */
+	double dummy = 0.0;
+d52 1
+a52 4
+	cairo_user_to_device_distance(cr, &em, &dummy);
+	printf("%g\n", em); 
+	cairo_set_font_size(cr, em);   
+/*	cairo_set_font_size(cr, 10); */ 
+a89 13
+	FcPattern *pattern;
+	FcBlanks *blanks;
+	int count;
+
+	pattern = FcFreeTypeQuery(
+				(const FcChar8 *) 
+				"/usr/share/texmf-tetex/fonts/type1/bluesky/cm/cmr10.pfb",
+				0, blanks, &count); 
+
+	FcPatternPrint(pattern);
+
+	return 0;
+
+d151 1
+a151 1
+	glyphs[0].y = 100; 
+d153 2
+a154 2
+	glyphs[1].x = 50;
+	glyphs[1].y = 100; 
+d156 2
+a157 2
+	glyphs[2].x = 100; 
+	glyphs[2].y = 100; 
+d159 2
+a160 2
+	glyphs[3].x = 150; 
+	glyphs[3].y = 100; 
+d162 2
+a163 2
+	glyphs[4].x = 200; 
+	glyphs[4].y = 100; 
+@
+
+
+1.10
+log
+@got simple glyph rendering to work
+@
+text
+@d3 2
+d16 1
+d23 1
+d40 3
+d45 3
+d53 7
+a59 1
+	cairo_set_font_size(cr, 10);   /* will replace with ppem stuff */
+d93 7
+d101 8
+a108 1
+	int error; 
+d190 7
+@
+
+
+1.9
+log
+@still doesn't work.
+@
+text
+@d13 1
+a13 1
+#define POINTS 		50	
+a17 1
+	cairo_t *cr;
+d19 1
+d34 3
+d39 1
+d41 6
+a46 2
+/*	gdk_window_clear(widget->window); */
+
+d53 1
+a53 2
+	cairo_move_to(_data->cr, 0.5, 0.5);
+	cairo_show_text(_data->cr, "Hello");
+d55 2
+a56 1
+	cairo_show_glyphs(_data->cr, _data->glyphs, 5); 
+a156 1
+	/*cairo_set_font_size(cr, 1); */
+a157 1
+	data1.cr = cr;
+d159 1
+a159 1
+
+@
+
+
+1.8
+log
+@minor changes
+@
+text
+@d2 1
+a15 2
+	GdkPixmap *bitmap;
+	GdkGC *gc;
+d18 3
+d37 12
+a48 1
+	gdk_window_clear(widget->window);
+d50 1
+a50 10
+	gdk_gc_set_fill(_data->gc, GDK_STIPPLED);
+	gdk_gc_set_stipple(_data->gc, _data->bitmap); 
+	gdk_gc_set_ts_origin(_data->gc, *(_data->draw_x)+5+5+20 + 100, 
+ 									*(_data->draw_y)+5+5+20 + 100);
+
+	gdk_draw_drawable(widget->window, _data->gc, widget->window, 
+					  *(_data->draw_x)+5+5 + 100, *(_data->draw_y)+5+5 + 100,
+					  *(_data->draw_x)+5+5 + 100, *(_data->draw_y)+5+5 + 100,
+					  -1, -1);	
+	return TRUE;
+a61 1
+	gchar *bitmap;
+d67 2
+a91 10
+	error = FT_Set_Char_Size(face, 0, POINTS*64, 0, 0);
+	if (error) {
+		printf("Error in Set_Char_Size.\n");
+		return 1;
+	} 
+
+	error = FT_Load_Char(face, FT_Get_Char_Index(face, '0'), 
+						 FT_LOAD_RENDER | FT_LOAD_TARGET_MONO); 
+
+	bitmap = (gchar *)(face->glyph->bitmap.buffer); 
+d126 1
+a126 1
+	gtk_widget_realize(drawing_area);
+d128 2
+a129 5
+	data1.bitmap = 
+		gdk_bitmap_create_from_data(drawing_area->window, bitmap, 
+									face->glyph->bitmap.width, 
+									face->glyph->bitmap.rows);
+	data1.gc = gdk_gc_new(drawing_area->window);
+d131 19
+d151 2
+a152 1
+	/*printf("Bitmap is %s\n", bitmap); */
+d164 5
+@
+
+
+1.7
+log
+@minor changes . . . preparing to use Cairo
+@
+text
+@d63 1
+a132 7
+	printf("Numfaces is: %d\n",(int) face->num_faces);
+	printf("Strlen is: %d\n", (int)strlen(bitmap));
+	if (bitmap == NULL)
+		printf("Is null.\n");
+	printf("Width is: %d\n", face->glyph->bitmap.width);
+	printf("Rows is: %d\n", face->glyph->bitmap.rows); 
+
+@
+
+
+1.6
+log
+@turns out it was correct before!  For 10 points, width and rows _are_
+5 and 6 (or 6 and 5)
+@
+text
+@d39 2
+a40 2
+	gdk_gc_set_ts_origin(_data->gc, *(_data->draw_x)+5+5+20, 
+ 									*(_data->draw_y)+5+5+20);
+d43 2
+a44 2
+					  *(_data->draw_x)+5+5, *(_data->draw_y)+5+5,
+					  *(_data->draw_x)+5+5, *(_data->draw_y)+5+5,
+d130 1
+d134 2
+a138 2
+	return 0;
+
+a142 1
+	gtk_widget_realize(drawing_area);
+@
+
+
+1.5
+log
+@Still not working, we'll see what will happen
+@
+text
+@d12 1
+a56 2
+	FT_Glyph glyph; 
+	FT_BitmapGlyph bitmap_glyph; 
+a62 4
+	FT_Bitmap *source;
+
+	/*   FT_GlyphSlot = struct FT_GlyphSlotRec_* = 
+	 *   FT_GlyphSlotRec* */
+a76 6
+/*	error = FT_New_Face(library, 
+					"/usr/share/fonts/type1/gsfonts/a010013l.pfb",
+					0,
+					&face); */
+
+
+d86 1
+a86 12
+/*	error = FT_Load_Char(face, 1, FT_LOAD_RENDER); */
+/*FT_Get_Char_Index(face, '0') */
+	error = FT_Load_Glyph(face,1 , FT_LOAD_TARGET_MONO | FT_LOAD_NO_BITMAP); 
+	if (error) {
+		printf("Error in LoadGlyph.\n");
+		return 1;
+	}
+
+/*	error = FT_Render_Glyph(face->glyph, FT_RENDER_MODE_MONO); */
+
+	
+/*	error = FT_Set_Char_Size(face, 0, 10*64, 0, 0);
+d90 1
+a90 1
+	} */
+d92 2
+a93 16
+/*	slot = face->glyph;*/ 
+	error = FT_Get_Glyph(face->glyph, &glyph);
+	if (error) {
+		printf("Error in Get_Glyph.\n");
+		return 1;
+	}
+
+	error = FT_Glyph_To_Bitmap(
+				&glyph, 
+				FT_RENDER_MODE_MONO,
+				NULL, 0);
+
+	if (error) {
+		printf("Error in FT_Glyph_To_Bitmap");
+		return 1;
+	}
+d95 1
+a95 2
+	if (glyph->format != FT_GLYPH_FORMAT_BITMAP)
+		printf("Oh no.\n");	
+a96 8
+	/*bitmap = (gchar *)(glyph->bitmap.buffer); */ 
+	bitmap_glyph = (FT_BitmapGlyph) glyph; 
+	source = &bitmap_glyph->bitmap;
+	bitmap = (gchar *)(source->buffer); 
+
+/*	pen.x = 300 * 64;
+	pen.y = (VERT_RES - 200) * 64; */
+	
+d133 2
+a134 2
+	printf("Width is: %d\n", source->width);
+	printf("Rows is: %d\n", source->rows); 
+d140 2
+a141 2
+									bitmap_glyph->bitmap.width, 
+									bitmap_glyph->bitmap.rows);
+@
+
+
+1.4
+log
+@moved version 1.2.1.1 to main branch
+@
+text
+@d64 1
+d97 3
+a99 4
+/*	error = FT_Load_Char(face, '0', FT_LOAD_RENDER);*/ 
+
+	error = FT_Load_Glyph(face, FT_Get_Char_Index(face, '0'), 
+						  FT_LOAD_TARGET_MONO);
+d105 1
+a105 1
+	error = FT_Render_Glyph(face->glyph, FT_RENDER_MODE_MONO); 
+d108 1
+a108 1
+	error = FT_Set_Char_Size(face, 0, 10*64, 0, 0);
+d112 1
+a112 1
+	} 
+d124 1
+a124 1
+				0, 1);
+d129 4
+a132 1
+	} 
+d136 2
+a137 1
+	bitmap = (gchar *)(bitmap_glyph->bitmap.buffer); 
+d174 9
+a190 3
+	printf("Strlen is: %d\n", (int)strlen(bitmap));
+	printf("Width is: %d\n", bitmap_glyph->bitmap.width);
+	printf("Rows is: %d\n", bitmap_glyph->bitmap.rows); 
+@
+
+
+1.3
+log
+@experimented with layout, but will revert to drawing_area
+@
+text
+@d4 1
+d34 1
+a34 1
+	gdk_window_clear(GTK_LAYOUT(widget)->bin_window);
+a35 3
+/*	gdk_gc_set_stipple(_data->gc, _data->bitmap); 
+	gdk_gc_set_ts_origin(_data->gc, *(_data->draw_x)+5+20, 
+ 									*(_data->draw_y)+5+20);
+d37 8
+a44 6
+
+	gdk_draw_drawable(GTK_LAYOUT(widget)->bin_window, _data->gc, 
+					  GTK_LAYOUT(widget)->bin_window, 
+					  *(_data->draw_x)+5, *(_data->draw_y)+5,
+					  *(_data->draw_x)+5, *(_data->draw_y)+5,
+					  -1, -1);*/	
+d50 1
+a50 1
+	GtkWidget *layout, *window, *scrolled_window; 
+d55 3
+a57 1
+	FT_GlyphSlot slot;
+d63 1
+d79 7
+a85 1
+					&face);
+d96 12
+a107 1
+	error = FT_Load_Char(face, '0', FT_LOAD_RENDER);
+d109 25
+a133 1
+	slot = face->glyph;
+d137 1
+a137 1
+
+a139 2
+	bitmap = (gchar *)(slot->bitmap.buffer); 	
+
+d141 1
+a141 1
+	layout = gtk_layout_new(NULL, NULL);
+a143 3
+	g_signal_connect(G_OBJECT(window), "destroy", G_CALLBACK(gtk_main_quit), 
+					 NULL);
+
+d152 2
+a153 2
+	/*gtk_scrolled_window_set_policy(GTK_SCROLLED_WINDOW(scrolled_window), 
+								   GTK_POLICY_AUTOMATIC, GTK_POLICY_AUTOMATIC); */
+d155 1
+a155 4
+	gtk_container_add(GTK_CONTAINER(window), scrolled_window);
+	gtk_container_add(GTK_CONTAINER(scrolled_window), layout);
+	
+	gtk_widget_set_events(layout, GDK_EXPOSURE_MASK);
+d157 2
+a158 4
+	gtk_widget_realize(layout);
+	if (GTK_WIDGET(layout)->window == NULL) {
+		printf("Is NULL.\n");
+	}
+d160 1
+d162 2
+a163 1
+	/*gtk_layout_set_size(GTK_LAYOUT(layout), 1600, 128000); */
+d165 2
+a166 1
+		/*gtk_container_add(GTK_CONTAINER(viewport), drawing_area); */
+d170 12
+a182 5
+	data1.bitmap = 
+		gdk_bitmap_create_from_data(GTK_LAYOUT(layout)->bin_window, bitmap, 
+									slot->bitmap.width, slot->bitmap.rows);
+		
+	data1.gc = gdk_gc_new(GTK_LAYOUT(layout)->bin_window); 
+d184 1
+a184 1
+	g_signal_connect(G_OBJECT(layout), "expose_event", 
+d186 3
+@
+
+
+1.2
+log
+@not really working, but ...
+@
+text
+@d33 1
+a33 1
+	gdk_window_clear(widget->window);
+d36 2
+a37 2
+	gdk_gc_set_ts_origin(_data->gc, *(_data->draw_x)+5+5+20, 
+ 									*(_data->draw_y)+5+5+20);
+d40 4
+a43 3
+	gdk_draw_drawable(widget->window, _data->gc, widget->window, 
+					  *(_data->draw_x)+5+5, *(_data->draw_y)+5+5,
+					  *(_data->draw_x)+5+5, *(_data->draw_y)+5+5,
+d50 1
+a50 1
+	GtkWidget *drawing_area, *window, *scrolled_window, *viewport; 
+a89 1
+	bitmap = (gchar *)(slot->bitmap.buffer); 	
+a93 1
+	
+d96 2
+d99 1
+a99 1
+	drawing_area = gtk_drawing_area_new();
+d102 3
+d113 7
+a119 1
+	viewport = gtk_viewport_new(horizontal, vertical); 
+d121 4
+a124 2
+	gtk_container_set_border_width(GTK_CONTAINER(scrolled_window), 5);
+	gtk_container_set_border_width(GTK_CONTAINER(viewport), 5); 
+a125 2
+	gtk_scrolled_window_set_policy(GTK_SCROLLED_WINDOW(scrolled_window), 
+								   GTK_POLICY_AUTOMATIC, GTK_POLICY_AUTOMATIC);
+d127 1
+a127 2
+	gtk_scrolled_window_add_with_viewport(
+			GTK_SCROLLED_WINDOW(scrolled_window), drawing_area); 	
+d129 1
+a129 2
+	gtk_container_add(GTK_CONTAINER(window), scrolled_window);
+	/*gtk_container_add(GTK_CONTAINER(viewport), drawing_area); */
+d135 1
+a135 1
+		gdk_bitmap_create_from_data(drawing_area->window, bitmap, 
+d137 2
+a138 1
+	data1.gc = gdk_gc_new(drawing_area->window);
+d140 1
+a140 1
+	g_signal_connect(G_OBJECT(drawing_area), "expose_event", 
+a141 3
+	g_signal_connect(G_OBJECT(window), "destroy", G_CALLBACK(gtk_main_quit), 
+					 NULL);
+
+@
+
+
+1.2.1.1
+log
+@I'm lost.
+@
+text
+@a3 1
+#include FT_GLYPH_H
+d35 1
+a35 2
+	gdk_gc_set_fill(_data->gc, GDK_STIPPLED);
+	gdk_gc_set_stipple(_data->gc, _data->bitmap); 
+d38 1
+d43 1
+a43 1
+					  -1, -1);	
+d54 1
+a54 3
+	/*FT_GlyphSlot slot; */
+	FT_Glyph glyph; 
+	FT_BitmapGlyph bitmap_glyph; 
+a59 1
+	const GdkColor white = {0, 65535, 65535, 65535};
+d75 1
+a75 7
+					&face);  
+
+/*	error = FT_New_Face(library, 
+					"/usr/share/fonts/type1/gsfonts/a010013l.pfb",
+					0,
+					&face); */
+
+d86 1
+a86 12
+/*	error = FT_Load_Char(face, '0', FT_LOAD_RENDER);*/ 
+
+	error = FT_Load_Glyph(face, FT_Get_Char_Index(face, '0'), 
+						  FT_LOAD_TARGET_MONO);
+	if (error) {
+		printf("Error in LoadGlyph.\n");
+		return 1;
+	}
+
+	error = FT_Render_Glyph(face->glyph, FT_RENDER_MODE_MONO); 
+
+	
+d88 2
+a89 25
+	if (error) {
+		printf("Error in Set_Char_Size.\n");
+		return 1;
+	} 
+
+/*	slot = face->glyph;*/ 
+	error = FT_Get_Glyph(face->glyph, &glyph);
+	if (error) {
+		printf("Error in Get_Glyph.\n");
+		return 1;
+	}
+
+	error = FT_Glyph_To_Bitmap(
+				&glyph, 
+				FT_RENDER_MODE_MONO,
+				0, 1);
+
+	if (error) {
+		printf("Error in FT_Glyph_To_Bitmap");
+		return 1;
+	} 
+
+	/*bitmap = (gchar *)(glyph->bitmap.buffer); */ 
+	bitmap_glyph = (FT_BitmapGlyph) glyph; 
+	bitmap = (gchar *)(bitmap_glyph->bitmap.buffer); 
+d93 1
+a116 2
+	gtk_widget_modify_bg(drawing_area, GTK_STATE_NORMAL, &white);
+
+d125 1
+d128 1
+a128 3
+									bitmap_glyph->bitmap.width, 
+									bitmap_glyph->bitmap.rows);
+	gtk_widget_realize(drawing_area);
+a130 7
+	
+	printf("Strlen is: %d\n", (int)strlen(bitmap));
+	printf("Width is: %d\n", bitmap_glyph->bitmap.width);
+	printf("Rows is: %d\n", bitmap_glyph->bitmap.rows); 
+	/*printf("Bitmap is %s\n", bitmap); */
+
+
+@
+
+
+1.1
+log
+@Initial revision
+@
+text
+@d1 141
+@

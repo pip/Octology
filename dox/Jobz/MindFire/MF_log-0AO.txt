@@ -1,0 +1,63 @@
+Pip's Journal: A-24-0
+
+Stuff done:
+ DaveR, Christi, Julia, && I met to consider the Expanets situation and
+ what sorts of changes may lie ahead for PnGC (&& S).  Initially, PnGS
+ will be deployed for the 127 different branches (by Mon,A30).  It seems
+ that PnGC may need to be substantially augmented or
+ respec'd/designed/coded to satisfy (by B15?).  Product catalog is a
+ major component which needs much attention.  Others less clear.
+
+ Discussed PnG(C&&S) w/ Julia.  Considered some of the poor algorithms /
+ redundant calculations currently being employed with mind for recoding.
+ Too-many-hands-in-the-cookie-jar problem has Julia pretty irked about
+ the code managability and extensibility (and even it's usefulness now).
+
+ Began this Journal.
+
+ Read the coding procedures && CVS dox (from Scott)... and got CVS to
+ let me checkout stuff etc.
+
+ Looked for some auto-testing code (which Julia said is needed).
+ Haven't found anything worthwhile yet.
+
+ Briefly discussed current and potential future hardware configurations
+ for servers with Moe && Ray.
+
+ToDo:
+ Find and know any specs/dox/design notes for latest PnGC.
+
+ Better determine problems/needs/wishes for current or new PnGC.
+
+ Examine Dell/IBM/Cisco/etc. sites for MindFires on how to make PnGC
+ more like the big boys (if not better).
+
+ Find or write some testing code to ensure that Apache/MySQL are
+ correctly serving a large number of our PnGSites automagically and
+ potentially hitup forms too.
+
+ Need to meet with Moe && Ray to more seriously and carefully consider a
+ future plan for server equipment configurations etc.
+
+Thots:
+ I really like the people and environment here.  I hope to do great werk.
+
+ I'd like to better understand what our separate projects are supposed
+ to do and how well they succeed at their respective tasks.  I don't
+ quite grasp where PnGF ends and C && S && ?... begin.  Additionally, if
+ PnGS is generally the interface (and configurator) for PnGC, how much
+ of (ie. what functionality of) PnGS is required for PnGC to operate
+ correctly?
+
+ ... What are all the PnG products and what's their primary purpose?
+ How successful are the current developments underway on each project in
+ achieving that purpose?
+
+ I really don't know if PnGC needs to be rewritten from scratch just to
+ have less bugs and handle catalog stuff better.  Apparently Julia was
+ it's primary developer and she's gung-ho to have it redone so I'll keep
+ that in mind but doing so and meeting a deadline in less than three
+ weeks could be nearly impossible.
+
+ I need a key so I don't get kicked out of here every night by the last
+ person to leave =).  Christi's kicking me out.  TTFN.

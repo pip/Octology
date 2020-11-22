@@ -1,0 +1,28 @@
+Sirlin's MAS stick button maps (as viewed from inside):
+
+           DreamCast:
+
+         Start  Select
+                                 Dn
+    L   Z   Y   X
+                            Lt        Rt
+    R   C   B   A
+                                 Up
+
+
+            Arcade:
+
+            Ground
+           (Grn/Wht)
+
+         Start
+       (Org/Blk)
+                                         Dn
+       Z       Y       X                (Org)
+     (Red)   (Blu) (Wht/Blk)
+                                   Lt          Rt
+       C       B       A        (Red/Blk)     (Grn)
+   (Blk/Wht) (Wht) (Blu/Wht)
+                                         Up
+            Credit                      (Blk)
+           (Red/Wht)

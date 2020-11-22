@@ -1,0 +1,8 @@
+# partition table of /dev/sda after 'sfdisk -d /dev/sda', eventually LVM should be smart enough to know dd was likely used when finding duplicate PV && gen new
+unit: sectors
+
+/dev/sda1 : start=     2048, size=   497664, Id=83, bootable
+/dev/sda2 : start=   501758, size=3906527234, Id= 5
+/dev/sda3 : start=        0, size=        0, Id= 0
+/dev/sda4 : start=        0, size=        0, Id= 0
+/dev/sda5 : start=   501760, size=3906527232, Id=8e

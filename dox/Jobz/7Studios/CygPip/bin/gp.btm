@@ -1,0 +1,107 @@
+REM Attempt to port GetPrimes from my HP48GX into 4DOS batch
+REM         I now think my previous attempt was a great success
+echos Finding MaxCheck... Search may take several minutes...ÿ
+timer on /3
+set pfil=c:\Primes.txt
+inkey /c /w0 %%ky
+set wrln=%@eval[%_rows-2]
+set mcln=1
+REM set mcln=78490
+set esiz=%1
+if "%esiz" == "" set esiz=8388608
+if exist %pfil goto alreadymade
+echo 1
+echo 1 > %pfil
+echo 2
+echo 2 >> %pfil
+echo 3
+echo 3 >> %pfil
+echo 5
+echo 5 >> %pfil
+if "%esiz" == "8388608" set esiz=256
+:alreadymade
+set phnd=%@fileopen[%pfil,read,t]
+if "%linz" == "" set linz=%@lines[%pfil]
+set strt=%@inc[%linz]
+set x=%endx
+if "%x" != "" goto skipBigSeek
+set poop=%@fileseekl[%phnd,%linz]
+set x=%@fileread[%phnd]
+:skipBigSeek
+if %esiz LE %linz set esiz=%@eval[%linz+5]
+REM if %linz GT 64 set mcln=%@int[%@eval[%linz*0.001]]
+set poop=%@fileseekl[%phnd,%mcln]
+set mcpn=%@fileread[%phnd]
+set mcps=%@eval[%mcpn*%mcpn]
+if %mcps GE %x goto beforeloopie
+:lodmc
+set mcln=%@inc[%mcln]
+set mcpn=%@fileread[%phnd]
+set mcps=%@eval[%mcpn*%mcpn]
+if %mcps LT %x goto lodmc
+:beforeloopie
+echos Done... MaxCheck Line%mcln:%mcpný=%mcps                ÿ
+timer on /2
+echo.
+screen %wrln 0 [1;31mNth   -[32mPrime  -[34mDelta of MC-[0;33m100th of %% of file checked for Prime-[37mTime taken
+echo.
+:loopie
+inkey /w0 /p /x %%ky
+if "%ky" == "" goto end
+timer on
+set poop=%@fileseekl[%phnd,2]
+set x=%@eval[%x+2]
+if %x LT %mcps goto repeet
+set mcln=%@inc[%mcln]
+set poop=%@fileseekl[%phnd,%mcln]
+set mcpn=%@fileread[%phnd]
+set mcps=%@eval[%mcpn*%mcpn]
+set poop=%@fileseekl[%phnd,2]
+:repeet
+set poop=%@fileread[%phnd]
+if %poop == %mcpn goto found1
+if %@eval[%x/%poop] != %@int[%@eval[%x/%poop]] goto repeet
+set x=%@eval[%x+2]
+set poop=%@fileseekl[%phnd,2]
+if %x LT %mcps goto repeet
+set mcln=%@inc[%mcln]
+set poop=%@fileseekl[%phnd,%mcln]
+set mcpn=%@fileread[%phnd]
+set mcps=%@eval[%mcpn*%mcpn]
+set poop=%@fileseekl[%phnd,2]
+goto repeet
+:found1
+echo %x >> %pfil
+set linz=%@inc[%linz]
+set poop=%@inc[%linz]
+screen %wrln 0 [1;31m%poop[32m%x[34m%@eval[%mcps-%x][0;33m%@eval[10000*%mcln/%poop][37m
+timer
+if %poop LT %esiz goto loopie
+:end
+set endx=%x
+set x=%@timer[2]
+set ky=%@time[%@left[%@index[%x,.],%x]]
+set x=%@instr[7,3,%x]
+set ky=%@eval[%ky+%x]
+set x=%@eval[%ky/(%poop-%strt)]
+set ky=%@eval[%@index[%x,.]+3]
+set x=%@left[%ky,%x]
+screen %@inc[%wrln] 0 *** Quitting GetPrime ***  Avg:[1;31m%x  [0;37mEnding MaxCheck Line%mcln:%mcpný=%mcps
+echo.
+set poop=%@fileclose[%phnd]
+copy %pfil d:\bak\Primez\P%@inc[%linz].txt /q
+::copy %pfil N:\Primes.txt /q
+set x=^set ky=^set strt=^set wrln=^set mcln=^set mcpn=^set mcps=^set phnd=
+set poop=^set pfil=^set esiz=
+REM set linz=
+REM set endx=
+timer /3
+REM *******NOTE******* Please let me know if you find a way to optimize
+REM *******NOTE*******  this any further without using assembly.  Thank
+REM *******NOTE*******  you .and. may the G-d of Abraham, Isaac, .and.
+REM *******NOTE*******  Jacob be with you.  Shalom.
+REM *******NOTE*******            *
+REM *******NOTE*******        *********
+REM *******NOTE*******         *******
+REM *******NOTE*******        *********             Love, in Mashiach,
+REM *******NOTE*******            *       -PipTigger .or. nitemare@uci.edu

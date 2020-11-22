@@ -1,0 +1,40 @@
+HTTP://VistaForums.Com/FORUM/Topic587-9-1.aspx
+
+The Bcdedit.exe command-line tool can be used to add, delete and edit entries in the BCD store which contains objects. Each object is identified by a GUID
+(Globally Unique Identifier). Every drive or partition on the system will have its own GUID and could be {legacy} (to describe a drive or partition on which a
+pre-Windows Vista operating system), {default} (to describe the drive or partition containing the current default operating system), or {current} (to
+describe the current drive or partition one is booted to), or for example {c34b751a-ff09-11d9-9e6e-0030482375e7} (to describe another drive or partition
+on which an operating system has been installed).
+
+Bcdedit.exe is located in the \Windows\System32 directory of the Windows Vista partition and can be accessed only from the Commad Prompt which is found on
+the Windows Vista start menu at Start>All Programs>Accessories
+
+Command-line Help
+
+bcdedit /? Shows all commands one is able to use
+bcdedit.exe /? CREATESTORE Shows detailed information for the command CREATESTORE or any other command available in bcdedit as shown when running
+bcdedit /? followed by the particular command more information is required for.
+bcdedit or bcdedit /enum all Shows the current structure of your boot configuration data.
+
+The GUID tags {xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx} of all Windows installations present on your computer will be displayed.
+
+Create a Backup
+
+It is strongly recommended that one creates a backup of the BCD store before making any changes to it.
+bcdedit /export "D:\BCD Backup\Bcd Backup" Creates a backup to a pre-created folder, in this case ?BCD Backup? on drive D:
+bcdedit /import "D:\BCD Backup\Bcd Backup" Restores the backup previously created
+
+Making Changes to the Boot Configuration Data
+
+bcdedit /set {legacy} Description "Windows XP Professional SP2" Changes the text description of the ?Legacy? OS line in the boot menu. The quotation marks
+must be included in the command
+bcdedit /set {current} description "Windows Vista Build 5308 x86" Changes the text of the boot menu line for the Vista or non-Vista installation one is
+currently booted to, from the default "Microsoft Windows" or other description to that shown in the quotation marks
+bcdedit /set {5189b25c-5558-4bf2-bca4-289b11bd29e2} description ?Windows Vista Build 5270 x64? Changes the text of the boot menu line for any other Vista
+installation. One must use the GUID for that particular installation as shown when one runs the bcdedit or bcdedit /enum all command
+bcdedit /default {current} Sets the current Windows installation one is booted to as the default Windows boot OS
+bcdedit /default {5189b25c-5558-4bf2-bca4-289b11bd29e2} Sets the referenced Windows OS as the {default} Windows boot OS
+bcdedit /default {legacy} Sets the legacy (Windows XP SP2) OS as {default} boot item
+bcdedit /displayorder Sets the display order of boot menu items for example:
+bcdedit.exe /displayorder {legacy} {current}
+bcdedit /timeout 15 Changes the default 30 second time-out of the boot menu to 15 seconds or any other value inserted.

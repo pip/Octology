@@ -1,0 +1,126 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+<meta name="robots" content="index,nofollow">
+
+
+
+<title>OldFrontPage - csk's bailiwiki</title>
+<link rel="stylesheet" type="text/css" charset="iso-8859-1" media="all" href="/~csk/wiki/classic/css/common.css">
+<link rel="stylesheet" type="text/css" charset="iso-8859-1" media="screen" href="/~csk/wiki/classic/css/screen.css">
+<link rel="stylesheet" type="text/css" charset="iso-8859-1" media="print" href="/~csk/wiki/classic/css/print.css">
+
+
+<link rel="Start" href="/~csk/wiki/moin.cgi/FrontPage">
+<link rel="Alternate" title="Wiki Markup" href="/~csk/wiki/moin.cgi/OldFrontPage?action=raw">
+<link rel="Alternate" media="print" title="Print View" href="/~csk/wiki/moin.cgi/OldFrontPage?action=print">
+<link rel="Search" href="/~csk/wiki/moin.cgi/FindPage">
+<link rel="Index" href="/~csk/wiki/moin.cgi/TitleIndex">
+<link rel="Glossary" href="/~csk/wiki/moin.cgi/WordIndex">
+<link rel="Help" href="/~csk/wiki/moin.cgi/HelpOnFormatting">
+</head>
+
+<body lang="en" dir="ltr">
+
+
+<div id="logo"><a href="/~csk/wiki/moin.cgi/FrontPage"><img src="/~csk/wiki/classic/img/moinmoin.png" alt="csk's bailiwiki"></a></div>
+<div id="username"><a href="/~csk/wiki/moin.cgi/UserPreferences">UserPreferences</a></div>
+<div id="title"><h1><a title="Click here to do a full-text search for this title" href="/~csk/wiki/moin.cgi/OldFrontPage?action=fullsearch&amp;value=OldFrontPage&amp;literal=1&amp;case=1&amp;context=40">OldFrontPage</a></h1></div>
+<ul id="iconbar">
+<li><a title="Edit" href="/~csk/wiki/moin.cgi/OldFrontPage?action=edit"><img src="/~csk/wiki/classic/img/moin-edit.png" alt="Edit" height="12" width="12"></a></li>
+<li><a title="View" href="/~csk/wiki/moin.cgi/OldFrontPage"><img src="/~csk/wiki/classic/img/moin-show.png" alt="View" height="13" width="12"></a></li>
+<li><a title="Diffs" href="/~csk/wiki/moin.cgi/OldFrontPage?action=diff"><img src="/~csk/wiki/classic/img/moin-diff.png" alt="Diffs" height="11" width="15"></a></li>
+<li><a title="Info" href="/~csk/wiki/moin.cgi/OldFrontPage?action=info"><img src="/~csk/wiki/classic/img/moin-info.png" alt="Info" height="11" width="12"></a></li>
+<li><a title="Subscribe" href="/~csk/wiki/moin.cgi/OldFrontPage?action=subscribe"><img src="/~csk/wiki/classic/img/moin-subscribe.png" alt="Subscribe" height="10" width="14"></a></li>
+<li><a title="Raw" href="/~csk/wiki/moin.cgi/OldFrontPage?action=raw"><img src="/~csk/wiki/classic/img/moin-raw.png" alt="Raw" height="13" width="12"></a></li>
+<li><a title="Print" href="/~csk/wiki/moin.cgi/OldFrontPage?action=print"><img src="/~csk/wiki/classic/img/moin-print.png" alt="Print" height="14" width="16"></a></li>
+</ul>
+
+<ul id="navibar">
+<li><a href="/~csk/wiki/moin.cgi/FrontPage">FrontPage</a></li>
+<li><a href="/~csk/wiki/moin.cgi/OldFrontPage">OldFrontPage</a></li>
+<li><a href="/~csk/wiki/moin.cgi/RecentChanges">RecentChanges</a></li>
+<li><a href="/~csk/wiki/moin.cgi/FindPage">FindPage</a></li>
+<li><a href="/~csk/wiki/moin.cgi/HelpContents">HelpContents</a></li>
+</ul>
+<hr id="pagetrail">
+
+
+
+<div id="content" lang="en" dir="ltr">
+<h2 id="head-d0710fd829ecb533e9464dbd7411dd5c469ba6a3">MoinMoin Wiki</h2>
+<p>
+A <a href="/~csk/wiki/moin.cgi/WikiWikiWeb">WikiWikiWeb</a> is a collaborative hypertext environment, with an emphasis on easy access to and modification of information. This wiki can also link to <a href="/~csk/wiki/moin.cgi/InterWiki">InterWiki</a> space. 
+</p>
+<p>
+<a href="/~csk/wiki/moin.cgi/MoinMoin">MoinMoin</a> is a Python <a class="interwiki" title="Wiki" href="http://c2.com/cgi/wiki?WikiClone"><img src="/~csk/wiki/classic/img/moin-inter.png" alt="[Wiki]" height="16" width="16">WikiClone</a>, based on <a class="interwiki" title="Wiki" href="http://c2.com/cgi/wiki?PikiPiki"><img src="/~csk/wiki/classic/img/moin-inter.png" alt="[Wiki]" height="16" width="16">PikiPiki</a>. The name is a common German slang expression explained on the <a href="/~csk/wiki/moin.cgi/MoinMoin">MoinMoin</a> page. If you run a Wiki using <a href="/~csk/wiki/moin.cgi/MoinMoin">MoinMoin</a>, please add it to the <a class="interwiki" title="MoinMoin" href="http://moinmoin.wikiwikiweb.de/MoinMoinWikis"><img src="/~csk/wiki/classic/img/moin-inter.png" alt="[MoinMoin]" height="16" width="16">MoinMoinWikis</a> page. Contributed code is on the <a class="interwiki" title="MoinMoin" href="http://moinmoin.wikiwikiweb.de/MacroMarket"><img src="/~csk/wiki/classic/img/moin-inter.png" alt="[MoinMoin]" height="16" width="16">MacroMarket</a>, <a class="interwiki" title="MoinMoin" href="http://moinmoin.wikiwikiweb.de/ActionMarket"><img src="/~csk/wiki/classic/img/moin-inter.png" alt="[MoinMoin]" height="16" width="16">ActionMarket</a> and <a class="interwiki" title="MoinMoin" href="http://moinmoin.wikiwikiweb.de/ParserMarket"><img src="/~csk/wiki/classic/img/moin-inter.png" alt="[MoinMoin]" height="16" width="16">ParserMarket</a> pages. For more details and further topics, see the <a href="/~csk/wiki/moin.cgi/MoinMoin">MoinMoin</a> page. 
+</p>
+<hr>
+ You can edit any page by pressing the link at the bottom of the page.  Capitalized words joined together form a <a href="/~csk/wiki/moin.cgi/WikiName">WikiName</a>, which hyperlinks to another page.  The highlighted title searches for all pages that link to the current page.  Pages which do not yet exist are linked with a question mark: just follow the link and you can add a definition. <p>
+To get an overview over this site and what it contains, see the <a href="/~csk/wiki/moin.cgi/SiteNavigation">SiteNavigation</a> page. 
+</p>
+<p>
+To learn more about what a <a href="/~csk/wiki/moin.cgi/WikiWikiWeb">WikiWikiWeb</a> is, read about <a class="interwiki" title="MoinMoin" href="http://moinmoin.wikiwikiweb.de/WhyWikiWorks"><img src="/~csk/wiki/classic/img/moin-inter.png" alt="[MoinMoin]" height="16" width="16">WhyWikiWorks</a> and the <a class="interwiki" title="MoinMoin" href="http://moinmoin.wikiwikiweb.de/WikiNature"><img src="/~csk/wiki/classic/img/moin-inter.png" alt="[MoinMoin]" height="16" width="16">WikiNature</a>. Also, consult the <a class="interwiki" title="MoinMoin" href="http://moinmoin.wikiwikiweb.de/WikiWikiWebFaq"><img src="/~csk/wiki/classic/img/moin-inter.png" alt="[MoinMoin]" height="16" width="16">WikiWikiWebFaq</a>. 
+</p>
+<hr>
+ Interesting starting points: 
+        <ul>
+
+        <li>
+<p>
+ <a href="/~csk/wiki/moin.cgi/RecentChanges">RecentChanges</a>: see where people are currently working 
+</p>
+</li>
+        <li>
+<p>
+ <a href="/~csk/wiki/moin.cgi/HelpForBeginners">HelpForBeginners</a>: to get you going 
+</p>
+</li>
+        <li>
+<p>
+ <a href="/~csk/wiki/moin.cgi/WikiSandBox">WikiSandBox</a>: feel free to change this page and experiment with editing 
+</p>
+</li>
+        <li>
+<p>
+ <a href="/~csk/wiki/moin.cgi/FindPage">FindPage</a>: search or browse the database in various ways 
+</p>
+</li>
+        <li>
+<p>
+ <a href="/~csk/wiki/moin.cgi/SyntaxReference">SyntaxReference</a> 
+</p>
+</li>
+</ul>
+
+</div>
+
+
+
+<div id="footer">
+<div id="credits">
+<a href="http://moinmoin.wikiwikiweb.de/">MoinMoin Powered</a><br>
+    <a href="http://www.python.org/">
+        <img src="/~csk/wiki/classic/img/PythonPowered.png" width="55" height="22" alt="PythonPowered">
+    </a>
+</div>
+
+
+<a href="/~csk/wiki/moin.cgi/OldFrontPage?action=refresh&amp;arena=Page.py&amp;key=OldFrontPage.text_html">RefreshCache</a> for this page (cached 2009-07-19 13:08:18)<br>
+<p>Immutable page (last edited 2004-07-03 18:41:28 by <span title="Kitchener-HSE-ppp3576837.sympatico.ca">JieXu</span>)</p>
+
+<form method="POST" action="/~csk/wiki/moin.cgi/OldFrontPage">
+<p>
+<input type="hidden" name="action" value="inlinesearch">
+<input type="hidden" name="context" value="40">
+<a href="/~csk/wiki/moin.cgi/FindPage?value=OldFrontPage">FindPage</a> or search titles <input type="text" name="text_title" value="" size="15" maxlength="50"><input type="image" src="/~csk/wiki/classic/img/moin-search.png" name="button_title" alt="[?]">, full text <input type="text" name="text_full" value="" size="15" maxlength="50"><input type="image" src="/~csk/wiki/classic/img/moin-search.png" name="button_full" alt="[?]"> or <a href="/~csk/wiki/moin.cgi/SiteNavigation">SiteNavigation</a>
+</p>
+</form>
+
+<p>Or try one of these actions: <a href="/~csk/wiki/moin.cgi/OldFrontPage?action=AttachFile">AttachFile</a>, <a href="/~csk/wiki/moin.cgi/OldFrontPage?action=LikePages">LikePages</a>, <a href="/~csk/wiki/moin.cgi/OldFrontPage?action=LocalSiteMap">LocalSiteMap</a>, <a href="/~csk/wiki/moin.cgi/OldFrontPage?action=SpellCheck">SpellCheck</a></p>
+
+</div>
+
+</body>
+</html>
+

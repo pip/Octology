@@ -1,0 +1,32 @@
+Randy sent Pip mesg:"Pip!" date:994FA00(Fri Sep 4 15:10:00:00 2009 PST):
+Pip,
+
+how are your hacking skills these days?
+
+Oh, and this is Randy from Seven Studios back in the day? How goes things?
+
+Hey man, a girl ran off with my computer, she claims she doesn't have it, she said she gave it to some guy, he says he mailed it to me, it never showed up, yadda yadda yadda..
+
+Anyways, I contacted the anti-virus company that is on my laptop and they said that the software is still receiving updates.
+
+I got an IP address and dates would you know how or know anyone who might be able to track that down at all?
+
+Outside of that, what have you been up to?
+
+Cheers man,
+
+Randy
+
+--
+Hey Randy,
+
+I'm a hacker in the old-school Unix && Perl curious programmer sense of the word but not much of a hacker who cracks into secured systems via exploits so I probably can't help you much there.
+
+Yeah, I remember you from Seven Studios. Things haven't gone too well for me since leaving Seven. Vanessa Schlais && I have stayed boyfriend && girlfriend most of that time since we both got canned last February of 2008. We've remained unemployed && even sometimes homeless. It's been pretty shitty but hopefully things will turn better soon. We're trying to put things together from her parents' house in Santa Barbara for now but even this isn't going well so far. We have pretty awful problems with miscommunication && mistrust that hinder us from succeeding together or apart. We've failed to put any solid business plan together for our own start-up so far. I've tried to land any other programming job but nothing promising has materialized from that. Things have been kinda bleak but at least they keep changing. ;)
+
+Sorry to hear that chick jacked your laptop, man. I don't know much about tracking it but I'd expect that if you've reported it stolen with your local Police Department, then you should be able to search online for which ISP owns the block of IP-addresses where it has received anti-virus updates, then contact them && fax a copy of the police-report to request which user account had those IPs on the dates you've recorded so you could investigate further. Probably going through the chick && guy she gave it to would be your best first bet, but it sounds like they may be a dead-end for you so maybe try the legal route. If the guy says he mailed it to you, ask if he sent it registered mail, when, from where, for how much, if there's a tracking number or receipt info, etc. && if you've filed it stolen that might also get him to cooperate more. Sorry I don't know how to help you better. I hope you find it in working condition.
+
+Be well && keep in touch, dude. =)
+
+Sincerely,
+-Pip

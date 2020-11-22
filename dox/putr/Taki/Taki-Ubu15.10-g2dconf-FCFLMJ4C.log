@@ -1,0 +1,74 @@
+[pip@TakiFCFLKmY8~/.gconf/apps/gnome-terminal/profiles/Profile1]gsettings list-recursively org.gnome.Terminal.Legacy.Profile:/org/gnome/terminal/legacy/profiles:/:23dd35a3-f6d0-4ba6-a073-26e08db2e30a/|s8
+org.gnome.Terminal.Legacy.Profile allow-bold true
+org.gnome.Terminal.Legacy.Profile audible-bell true
+org.gnome.Terminal.Legacy.Profile background-color '#000000'
+org.gnome.Terminal.Legacy.Profile background-transparency-percent 50
+org.gnome.Terminal.Legacy.Profile backspace-binding 'ascii-delete'
+org.gnome.Terminal.Legacy.Profile bold-color '#000000'
+org.gnome.Terminal.Legacy.Profile bold-color-same-as-fg true
+org.gnome.Terminal.Legacy.Profile cjk-utf8-ambiguous-width 'narrow'
+org.gnome.Terminal.Legacy.Profile cursor-blink-mode 'system'
+org.gnome.Terminal.Legacy.Profile cursor-shape 'block'
+org.gnome.Terminal.Legacy.Profile custom-command ''
+org.gnome.Terminal.Legacy.Profile default-show-menubar true
+org.gnome.Terminal.Legacy.Profile default-size-columns 80
+org.gnome.Terminal.Legacy.Profile default-size-rows 24
+org.gnome.Terminal.Legacy.Profile delete-binding 'delete-sequence'
+org.gnome.Terminal.Legacy.Profile encoding 'UTF-8'
+org.gnome.Terminal.Legacy.Profile exit-action 'close'
+org.gnome.Terminal.Legacy.Profile font 'Monospace 12'
+org.gnome.Terminal.Legacy.Profile foreground-color '#00FF00'
+org.gnome.Terminal.Legacy.Profile login-shell false
+org.gnome.Terminal.Legacy.Profile palette ['#2E2E34343636', '#CCCC00000000', '#4E4E9A9A0606', '#C4C4A0A00000', '#34346565A4A4', '#757550507B7B', '#060698209A9A', '#D3D3D7D7CFCF', '#555557575353', '#EFEF29292929', '#8A8AE2E23434', '#FCFCE9E94F4F', '#72729F9FCFCF', '#ADAD7F7FA8A8', '#3434E2E2E2E2', '#EEEEEEEEECEC']
+org.gnome.Terminal.Legacy.Profile rewrap-on-resize true
+org.gnome.Terminal.Legacy.Profile scrollback-lines 8192
+org.gnome.Terminal.Legacy.Profile scrollback-unlimited false
+org.gnome.Terminal.Legacy.Profile scrollbar-policy 'always'
+org.gnome.Terminal.Legacy.Profile scroll-on-keystroke true
+org.gnome.Terminal.Legacy.Profile scroll-on-output false
+org.gnome.Terminal.Legacy.Profile update-records true
+org.gnome.Terminal.Legacy.Profile use-custom-command false
+org.gnome.Terminal.Legacy.Profile use-system-font true
+org.gnome.Terminal.Legacy.Profile use-theme-colors true
+org.gnome.Terminal.Legacy.Profile use-theme-transparency true
+org.gnome.Terminal.Legacy.Profile use-transparent-background false
+org.gnome.Terminal.Legacy.Profile visible-name 'PipsCkm8GnomTerm-NiceFont-DC9LDaPt'
+org.gnome.Terminal.Legacy.Profile word-char-exceptions @ms nothing
+[pip@TakiFCFLKraD~/.gconf/apps/gnome-terminal/profiles/Profile1]gconftool-2 -a "/apps/gnome-terminal/profiles/Profile4"|s8
+ allow_bold = true
+ alternate_screen_scroll = true
+ background_color = #000000000000
+ background_darkness = 0.93693697452545166
+ background_image = 
+ background_type = transparent
+ backspace_binding = ascii-del
+ bold_color = #000000000000
+ bold_color_same_as_fg = true
+ cursor_blink_mode = system
+ cursor_shape = block
+ custom_command = /bin/zsh
+ default_show_menubar = true
+ default_size_columns = 160
+ default_size_rows = 50
+ delete_binding = escape-sequence
+ exit_action = close
+ font = Liberation Mono 8
+ foreground_color = #0000FFFF0000
+ login_shell = true
+ palette = #000000000000:#AAAA00000000:#0000AAAA0000:#FF8FBE3548C1:#34346565A4A4:#AAAA0000AAAA:#0000AAAAAAAA:#323232323232:#AAAAAAAAAAAA:#F4AE24172417:#5555FFFF5555:#FFFFFFFF5555:#72729F9FCFCF:#BB056102D47A:#5555FFFFFFFF:#FFFFFFFFFFFF
+ scroll_background = true
+ scrollback_lines = 512
+ scrollback_unlimited = true
+ scrollbar_position = right
+ scroll_on_keystroke = true
+ scroll_on_output = false
+ silent_bell = false
+ title_mode = replace
+ title = PipsCkm8GnomTerm
+ update_records = true
+ use_custom_command = false
+ use_custom_default_size = true
+ use_system_font = false
+ use_theme_colors = false
+ visible_name = PipsCkm8GnomTerm-NiceFont-DC9LDaPt
+ word_chars = -A-Za-z0-9,./?%&#:_=+@~

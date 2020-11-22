@@ -1,0 +1,192 @@
+REM Attempt to port GetPrimes from my HP48GX into 4DOS batch
+REM         I now think my previous attempt was a great success
+echos Finding MaxCheck... Search may take several minutes...ÿ
+timer on /3
+set pfil=c:\Primes.txt
+inkey /c /w0 %%ky
+set wrln=%@eval[%_rows-2]
+set mcnm=3
+set mcpn=3
+set mcps=9
+set esiz=%1
+if "%esiz" == "" set esiz=8388608
+set p0=001010120210122021021231010161204022122040105510120422202104610162401232212313404021231015313125
+set p1=0824220242202210540122051234343221321316450401046101610191343122612232512040240402810122322A0434
+set p2=22351220254801202101502G223846101231025401012553521231316120120249210B10450432228210545376210104
+set p3=5228070A23210132404642501045070210438B1237013701322150A2021262102125226125321C8431202A5073156401
+set p4=3221012310240431645021076123218342234561220D0431613525129407C1052152313A0105D0222120515040707297
+set p5=31010A3524012024054046212322750162134322A20461280461046138120120519A5012202A0272502570126108B420
+set p6=404042040423E404324825508212280462101B0527322870120224255802183B10120516E42562450123240162212040
+set p7=75381250222D26134358101B5207226461E222321052102A2018015021C22134F702101046213429102E134223251202
+REM set p8=12040729156D2918321262240453404354B01321384220245042223242022243B2A08134E38104202183587205240402
+REM set p9=461B07040491013722057312E040212232152351654B2520A3842610243212E640540708B82782081204342231204051
+REM set pA=22051681291321316216510E1B225562101825321505E702A62452013422B6213584040129216101625B42340E120516
+REM set pB=2G532401943704610527231312322521223819150420450192E2134520D0210750243B52821621532512525079104831
+REM set pC=6102A26224204010A012252645231H6521205257043A0521280521532512520551627204382G0D0A20450213A2043123
+REM set pD=1585912231075043401265A3D0191016450570D3A312261352219180521268434F24220272052D04372324B940405129
+REM set pE=10584040197C132152355213A0764255621915202273A0D321915B913407055G01252232102B194226122052404291C1
+REM set pF=02A0B12012B2310G2375040423135A261C10543135162723122324502273225402812225832438162843450255H12312
+REM total  1539 = 16 * 96 + 3
+REM breaks 99,195,291,387,483,579,675,771,867,963,1059,1155,1251,1347,1443,1539
+if exist %pfil goto alreadymade
+echo 1
+echo 1 > %pfil
+echo 2
+echo 2 >> %pfil
+echo 3
+echo 3 >> %pfil
+echo 5
+echo 5 >> %pfil
+if "%esiz" == "8388608" set esiz=256
+:alreadymade
+set phnd=%@fileopen[%pfil,read,t]
+if "%linz" == "" set linz=%@lines[%pfil]
+set strt=%@inc[%linz]
+set x=%endx
+if "%x" != "" goto skipBigSeek
+set poop=%@fileseekl[%phnd,%linz]
+set x=%@fileread[%phnd]
+:skipBigSeek
+set poop=%@fileclose[%phnd]
+if %esiz LE %linz set esiz=%@eval[%linz+7]
+if %mcps GT %x goto beforeloopie
+:lodmc
+set mcnm=%@inc[%mcnm]
+set last=%mcpn
+set diff=%@int[%@eval[(%mcnm-3)/96]]
+set spln=p%@convert[10,16,%diff]
+set diff=%@eval[(%mcnm-3)-(%diff*96)]
+set diff=%@right[1,%@left[%diff,%[%spln]]]
+REM set diff=%@instr[%@dec[%diff],1,%[%spln]]
+set diff=%@ascii[%diff]
+if %diff LT 58 set mcpn=%@eval[%last+2*(%diff-47)]
+if %diff LT 58 goto calc0Square
+if %diff LT 91 set mcpn=%@eval[%last+2*(%diff-54)]
+if %diff LT 91 goto calc0Square
+if %diff LT 123 set mcpn=%@eval[%last+2*(%diff-60)]
+if %diff LT 123 goto calc0Square
+if %diff LT 246 set mcpn=%@eval[%last+2*(%diff-65)]
+:calc0Square
+set mcps=%@eval[%mcpn*%mcpn]
+if %mcps LT %x goto lodmc
+:beforeloopie
+echos Done... MaxCheck Line%mcnm:%mcpný=%mcps                ÿ
+timer on /2
+echo.
+screen %wrln 0 [1;33mNth   :[32mPrime  [0;37m- Delta of MC - 100th of [31m%%[37m of file checked for Prime - Time taken
+echo.
+:loopie
+inkey /w0 /p /x %%ky
+if "%ky" == "" goto end
+timer on
+set chnm=3
+set last=3
+REM set poop=%@fileseekl[%phnd,2]
+set x=%@inc[%@inc[%x]]
+if %x LT %mcps goto repeet
+set mcnm=%@inc[%mcnm]
+set last=%mcpn
+set diff=%@int[%@eval[(%mcnm-3)/96]]
+set spln=p%@convert[10,16,%diff]
+set diff=%@eval[(%mcnm-3)-(%diff*96)]
+set diff=%@right[1,%@left[%diff,%[%spln]]]
+REM set diff=%@instr[%@dec[%diff],1,%[%spln]]
+set diff=%@ascii[%diff]
+if %diff LT 58 set mcpn=%@eval[%last+2*(%diff-47)]
+if %diff LT 58 goto calc1Square
+if %diff LT 91 set mcpn=%@eval[%last+2*(%diff-54)]
+if %diff LT 91 goto calc1Square
+if %diff LT 123 set mcpn=%@eval[%last+2*(%diff-60)]
+if %diff LT 123 goto calc1Square
+if %diff LT 246 set mcpn=%@eval[%last+2*(%diff-65)]
+:calc1Square
+set mcps=%@eval[%mcpn*%mcpn]
+set chnm=3
+set last=3
+REM set poop=%@fileseekl[%phnd,2]
+:repeet
+set poop=%last
+set chnm=%@inc[%chnm]
+set diff=%@int[%@eval[(%chnm-3)/96]]
+set chln=p%@convert[10,16,%diff]
+set diff=%@eval[(%chnm-3)-(%diff*96)]
+set diff=%@right[1,%@left[%diff,%[%chln]]]
+REM set diff=%@instr[%@dec[%diff],1,%[%chln]]
+set diff=%@ascii[%diff]
+if %diff LT 58 set last=%@eval[%last+2*(%diff-47)]
+if %diff LT 58 goto doneLast
+if %diff LT 91 set last=%@eval[%last+2*(%diff-54)]
+if %diff LT 91 goto doneLast
+if %diff LT 123 set last=%@eval[%last+2*(%diff-60)]
+if %diff LT 123 goto doneLast
+if %diff LT 246 set last=%@eval[%last+2*(%diff-65)]
+:doneLast
+REM set poop=%@fileread[%phnd]      get next prime
+if %poop == %mcpn goto found1
+set kaka=%@eval[%x/%poop]
+if %kaka != %@int[%kaka] goto repeet
+set x=%@inc[%@inc[%x]]
+set chnm=3
+set last=3
+REM set poop=%@fileseekl[%phnd,2]
+if %x LT %mcps goto repeet
+set mcnm=%@inc[%mcnm]
+set last=%mcpn
+set diff=%@int[%@eval[(%mcnm-3)/96]]
+set spln=p%@convert[10,16,%diff]
+set diff=%@eval[(%mcnm-3)-(%diff*96)]
+set diff=%@right[1,%@left[%diff,%[%spln]]]
+REM set diff=%@instr[%@dec[%diff],1,%[%spln]]
+set diff=%@ascii[%diff]
+if %diff LT 58 set mcpn=%@eval[%last+2*(%diff-47)]
+if %diff LT 58 goto calc2Square
+if %diff LT 91 set mcpn=%@eval[%last+2*(%diff-54)]
+if %diff LT 91 goto calc2Square
+if %diff LT 123 set mcpn=%@eval[%last+2*(%diff-60)]
+if %diff LT 123 goto calc2Square
+if %diff LT 246 set mcpn=%@eval[%last+2*(%diff-65)]
+:calc2Square
+set mcps=%@eval[%mcpn*%mcpn]
+set chnm=3
+set last=3
+REM set poop=%@fileseekl[%phnd,2]
+goto repeet
+:found1
+echo %x >> %pfil
+set linz=%@inc[%linz]
+set poop=%@inc[%linz]
+screen %wrln 0 [1;33m%poop:[32m%x[0;37m %@eval[%mcps-%x] %@eval[10000*%mcnm/%poop][31m%%[37mÿ
+timer
+if %poop LT %esiz goto loopie
+:end
+set endx=%x
+set x=%@timer[2]
+set ky=%@time[%@left[%@index[%x,.],%x]]
+set x=%@instr[7,3,%x]
+set ky=%@eval[%ky+%x]
+set x=%@eval[%ky/(%poop-%strt)]
+set ky=%@eval[%@index[%x,.]+3]
+set x=%@left[%ky,%x]
+screen %@inc[%wrln] 0 *** Quitting GetPrime ***  Avg:[1;31m%x  [0;37mEnding MaxCheck Line%mcnm:%mcpný=%mcps
+echo.
+copy %pfil K:\Primes.bak\P%@inc[%linz].txt /q
+::copy %pfil N:\Primes.txt /q
+set x= ^ set ky= ^ set kaka= ^ set chln=
+set p0= ^ set p1= ^ set p2= ^ set p3= ^ set p4= ^ set p5= ^ set p6=
+set p7= ^ set p8= ^ set p9= ^ set pA= ^ set pB= ^ set pC= ^ set pD=
+set pE= ^ set pF=
+set strt= ^ set wrln= ^ set mcnm= ^ set mcpn= ^ set mcps= ^ set phnd=
+set poop= ^ set pfil= ^ set esiz= ^ set spln= ^ set diff= ^ set last=
+set chnm=
+REM set linz=
+REM set endx=
+timer /3
+REM *******NOTE******* Please let me know if you find a way to optimize
+REM *******NOTE*******  this any further without using assembly.  Thank
+REM *******NOTE*******  you .and. may the G-d of Abraham, Isaac, .and.
+REM *******NOTE*******  Jacob be with you.  Shalom.
+REM *******NOTE*******            *
+REM *******NOTE*******        *********
+REM *******NOTE*******         *******
+REM *******NOTE*******        *********
+REM *******NOTE*******            *       -PipTigger .or. nitemare@uci.edu

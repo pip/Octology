@@ -1,0 +1,71 @@
+# ICILBack:AsusC6H-RefundDetails.utf8 crE8d by PipStuart <Pip@CPAN.Org> to document the significant elements of my trying to get a newer better MoBo instead;
+# Starting with some details from my original RMA response e-mail:
+Account              Number:   4076883;  Customer ID     :  PipStuart@Gmail.Com ;
+Dear Philip Stuart, Thank you for requesting a Return Merchandise Authorization (RMA) Number from Newegg.
+  Your RMA Number is valid for 14 days, and will expire on 12/22/2018.
+  Your refund or replacement will be issued promptly once the returned item(s) are received and processed in our warehouse.
+Return Summary:  RMA Number:  85819780;  Return   Type   :  Replacement;  Restocking Fee: $0.00;
+  Original    Order  Number: 424602494;  Customer Comment: "This motherboard is permanently stuck with error Q-code 8 every time any attempt to boot is made."
+    "This is constant regardless of any possible physical configuration available. Apparently this issue has been prevalent and may even arise after some "
+      "falsely reassuring periods of operational stability (and under stressful loads). Would it be possible to please receive credit back to my account so "
+      "that I could apply it towards a superior AM4 motherboard in the near future? I need to research more.";
+  The replacement will be sent to:  Philip Stuart  812 Mallard Ave  Apt 6  Oshkosh,WI,54901-2473;
+  Return Item List:  1 x ($219.99) ASUS ROG Crosshair VI Hero AM4 AMD X370 SATA 6Gb/s USB 3.1 ATX AMD Motherboard  $219.99 ;  # That's most of the info there;
+# Then yesterday, Dec. 17th, 2018 at 5:01PM I got an e-mail which included:
+Order  Summary:  RMA Number:  85819780;  Shipping Method:  Newegg 3 Business Days;    Order Date:  12/17/2018     3:00:35PM;
+  Replacement Order  Number: 125043820;                                 Estimated to Ship Out On:  12/18/2018 by End of Day;  # Regarding another AsusC6H...
+NewEgg Chat :    # ... so l8 last night (technically this morn) I followed the e-mail link to Customer Service (not sure what precise time). Chat log follows:
+  System    : "Connecting..."
+  Pip Stuart: "Initial Question/Comment:Other Return or RMA Related Questions:Pertaining to RMA Number: 85819780 ... and Replacement Order Number: 125043820"
+   "I've learned Asus' C6H fails (like mine did) with some regularity. I do *NOT* want another! Please just credit my account or issue refund so I can buy "
+     "newer board instead, or e-mail me to discuss. Thanks, -PipStuart";
+  System    : "Waiting for a Customer Service Representative... You are number (5) in queue...(4)(3)(2) Winnie has joined this session! Connected with Winnie"
+  Winnie    : "Hi Pip, I am happy to assist you with the return issue. Would you mind if I have a few minutes to check your order detail first?"
+  Pip Stuart: "Not at all.  Take your time. I can wait."
+  Winnie    : "Thank you for your patience. I see the RMA replacement has been created. Would you like to refund for this RMA?"
+  Pip Stuart: "Yes, please. Thank you, Winnie. If you can authorize this refund, I think that's all I'm needing for now. Great help!  =)  "
+  Winnie    : "Thank you for your patience. After checking, the item is non-refundable,in this case,we are willing to change this RMA for store credit refund."
+              "We will email you a Newegg gift card to the email address on file with your account."
+              "The gift card does not expire and can be used as payment on any Newegg order."
+  Pip Stuart: "Perfect! I fully intended to purchase a different (newer) motherboard also from you at NewEgg. Thank you very much. Do you require anything "
+                "further from me, like awaiting some further confirmation or anything?"
+  Winnie    : "My pleasure:) I have sent a request to cancel the replacement order. We'll definitely try our best to stop it. If the order has still been "
+                "shipped out, please kindly let us know, we can issue the RMA, or see if we can recall the package."
+  Pip Stuart: "Ah, okay. My most recent e-mail indicates that the replacement board was scheduled to ship EndOfDay now today Tues. Dec. 18th. If I discover "
+      "it has shipped or the Gift-Card fails to reach my e-mail within the next couple days, I will just seek further assistance from your Customer Service."
+  Winnie    : "We are trying our best to cancel the order for you. If the order has still been shipped out, please kindly let us know, we will continue to "
+                "check if we can recall the package. If not, please keep the item unopened upon delivery and contact us back for a refund RMA."
+  Pip Stuart: "Sounds good. I will do exactly that. Thank you again. Have a good night and work shift.  =)  "
+  Winnie    : "My pleasure:) Have a good night:) A survey will appear once you leave this chat by clicking the "X" button. Please take a moment to rate my "
+                "service as your feedback is highly appreciated!"  # Almost all messages transcribed verbatim, but a few inessential details cut to fit better;
+  Pip Stuart: "No problem. 5 eggs for Winnie."  # So this should be where we are now. Hopefully they won't ship another C6H and GiftCard for $220 will come...
+  Winnie    : "Thank you!"                      #   ... to my e-mail soon so I can purchase X470 board instead,after researching whether ASRock Taichi, AsusROG
+  System    : "The chat session has ended.";    #   ... StrixGaming-F,AsusPrimePro,or some other board seems best to try next. Need new CPU thermal-paste too!;
+# Winnie    : "Thank you for your patience. After checking, the item is non-refundable,in this case,we are willing to change this RMA for store credit refund."
+              "We will email you a Newegg gift card to the email address on file with your account."
+# Winnie    : "We are trying our best to cancel the order for you. If the order has still been shipped out, please kindly let us know, we will continue to "
+                "check if we can recall the package. If not, please keep the item unopened upon delivery and contact us back for a refund RMA."
+  Pip Stuart: "Last Tue.Dec.18th CustomerServRep Winnie told me item is not directly refundable, but NewEgg would be willing to change my "
+                '"RMA for store credit refund." If not recalled, contact back for "refund RMA."' # ICQL9RMA:tryng2return C6H again4 NewEgg credit refund card;
+  System    : "17560 Rowland St.; City of Industry, Ca 91748; ATTN: RMA 86333420" Return Submitted: 12/26/2018 08:07 AM; RMA #: 86333420; ## ICQLA7RM; ##;
+# J18L5RMA:Since receiving GMail 12 hours ago acknowledging NewEgg returns warehouse hase received the second return, I've re-entered the online interface at
+#   HTTPS://Help.NewEgg.Com/contactus/chat under "Chat With Us" > "Returns" > "Refund or Replacement" with my inform8ion, Sales Order Number: 125043820 &&
+    Message : "RMAs: 85819780 and 86333420 ; Dec.18 chat with CustSrvc Winnie said she could change RMA to store credit refund as giftcard and would cancel "
+ "replacement or I should return 2nd one unopened to ask for credit refund again. Email hours ago said your warehouse received. Please confirm&&credit refund."
+#   ... now 10th in queue w8ing for CustomerServiceRepresent8ive... really hoping they won't just try to ship out a third motherboard that I no longer want!
+  Iverson   : "Hello Pip, I am more than happy to assist you with this refund request."
+  Pip Stuart: "Thank you, Iverson.  I spoke with Winnie over this Customer Service chat once the first RMA was received by your warehouse and she said she'd "
+                "try to cancel the replacement or recall the shipment..."
+                "... but that if I got a 2nd one, I should contact back for another RMA and return it unopened."
+              "She also explained that direct refund to my payment account was not available, but that she would \"change this RMA for store credit refund\" "
+                "which would be an e-mailed gift-card which would not expire that I could use to purchase a better product."
+  Iverson   : "I just update this RMA to a refund one, you could have received the email showing a full refund will be processed."
+  Pip Stuart: "Excellent! Thank you very much.  I will attempt to contact you again if I fail to receive that e-mail or if I receive another one notifying me "
+                "that yet a new replacement has been shipped out again."
+  Iverson   : "I just checked, it won't ship it again, as I have already modified it to a refund one, and no replacement order was created."
+              "You will see the refund in original form of payment in 3-5 business days."
+  Pip Stuart: "Great. I totally appreciate your fine assistance.  =)  "
+  Iverson   : "My pleasure, Sir. Thank you for contacting us, Hope you could have a good night and Happy new year! A survey will appear once you leave this "
+                "chat by clicking the \"X\" button. Please take a moment to rate my service as your feedback is highly appreciated!"
+  Pip Stuart: "You're welcome. I hope you also have a good night and Happy New Year! I am glad to rate you highly in the survey. Good service. "
+                "Thank you again, Iverson."     # ... then off to take survey, which shouldn't need to be logged like above (despite my glowing compliments);

@@ -1,0 +1,48 @@
+@echo off
+set wattcp.cfg=%HOME%\bin\4NT
+set GNULinUN=pip
+set PipsUser=pstuart
+set PipsHost=W-PStu
+set PipsOSys=Windows_NT
+set PipsShel=4NT
+set PipsRows=%_ROWS
+set PipsCols=%_COLUMNS
+set RyuIP=192.168.1.7
+set LBoxDN=LBox.Org
+set LBoxIP=216.158.99.146
+set RiskDN=MetaNotes.Kicks-Ass.Org
+set RiskIP=208.78.101.177
+set  Ryu=%GNULinUN%@%RyuIP%:
+set LBox=%GNULinUN%@%LBoxDN%:
+set Risk=%GNULinUN%@%RiskIP%:
+set PERL5LIB=%HOME%\lib;%HOME%\lib\site
+set P4EDITOR=%HOME%\bin\vim.bat
+alias ................=cd................
+alias ...............=cd...............
+alias ..............=cd..............
+alias .............=cd.............
+alias ............=cd............
+alias ...........=cd...........
+alias ..........=cd..........
+alias .........=cd.........
+alias ........=cd........
+alias .......=cd.......
+alias ......=cd......
+alias .....=cd.....
+alias ....=cd....
+alias ...=cd...
+alias ..=cd..
+alias .=cd
+alias ~=cd %HOME%
+alias x=exit
+alias pu=pushd
+alias po=popd
+alias grep=Grep4NT
+alias MPlayer=MPlyr
+::call m n
+::call m m n
+call sp 4NT
+::setdos /p*
+:: 79J5Ybn - the above `setdos /p*` call enables %* to grab all remaining cmdln
+::   params in .bat filz, just as ParameterChar=* does in 4NT.ini
+::cd %HOME%

@@ -1,0 +1,7 @@
+video of talk is at HTTPS://YouTube.Com/watch?v=O4T5_KVHL2I with description at HTTP://YAPCNA.Org/yn2016/talk/6565
+IRC has been on the wane since gamers domin8d in 2003. FreeNode has grown since then though. Has around 89,000 users.
+Should use: `/msg NickServ REGISTER $pswd Pip@CPAN.Org` to preserve Pip or PipStuart nick.
+Should study ~/.irssi/config && theme to customize.
+/away message will set away status && again or /back will notify your return.
+@nick are oper8ors. +nick are voiced in channels that require it.
+Talk was very basic. Just study Irssi.

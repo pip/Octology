@@ -1,0 +1,219 @@
+# K51METOc:2.8. crE8d by PipStuart <Pip@CPAN.Org> as hopefully a compelling proposal for the June 24th-26th Perl Conference in the Cloud app on PaperCall.IO;
+  Talk___Title:
+Octology,the ontology of 8, for a new gener8ion of Perl Hackers who coordin8 and collabor8 on brighter future comput8ion, culmin8ing in gr8r human civiliz8ion.
+  Elev8orPitch: (300 chars or _less_)
+Care to learn an immense amount of Perl, GNU/Linux, Zsh, Vim, System-Administr8ion, minimal abbreV8ions, code condens8ion, diverse d8a-represent8ions, autom8d coloriz8ion, lossless conversions, math comput8ion, problem-solving, video-game development, etc. in an hour? Then this is the talk for you!
+  Description_: (supporting MarkDown)
+# Octology
+This talk is about an unimaginably ambitious project which aims to become a rigorous ontology by which all future comput8ion could be subsumed.
+
+## DownLoad
+It is presently hosted on [GitHub](https://github.com/pip/Octology) and [SourceForge](https://sourceforge.net/p/octology) with intention to prepare it for a [CPAN](https://metacpan.org/author/PIP) release within June of 2021 (8 years after it was essentially started).
+
+## Instal8n
+The above linked Git repositories are meant to be installed into (or copied over) almost any existing GNU/Linux `$HOME` directory (where a modern Perl 5 and a few other prerequisites could be found in the `$PATH`).
+
+## dMonstr8
+During this talk, I will be demonstr8ing many Perl scripts which generally adhere to the Unix Philosophy (attempting to do *at-least* one thing well and to be nicely interoperable).
+
+My name is Pip (and if you think of the Python Install8ion Program, you're not alone, but might find my aversion to whitespace quite stunning and in stark contrast). I am the spots on dice, dominos, and the suits on playing cards. Octology includes code to manipul8 each of those for innumerable types of games. There's also an interactive mechanism for showing A-Star path-finding in tons of [Screeps](https://screeps.com) Real-Time-Strategy game maps. You'll be introduced to a fE8ure-rich varE8ion on the classic game of Chess called `ckm8` (which only has a couple minor bugs left to squash yet). There's a Rubik's Cube spoonerism called `qbix` which renders in Curses text-mode.
+
+I will be starting things off by running my elabor8 alias `ti` which is an abbreV8ion for "Terminal-Initializ8ion" that popul8s my 8 virtual desktops with myriad Gnome-Terminal applic8ions (with slightly transparent backgrounds which depend on the Compiz compositing within the Unity desktop-environment, so you can see some of the content below when my terminals are overlapping each other directly). I will demonstr8 my `trmz` Zsh alias which colorfully lists dozens of other terminal applic8ions which you too can easily have at your disposal. A guiding principle of Octology is to attempt to always provide at least 2 (and 8 even better) ways to accomplish whatever task you wish to accomplish (even when it means reinventing multiple wheels, exhibiting varying levels of roundness).
+
+Next, I will run `sumb` which SUMmarizes Octology's ~/bin/ directory with autom8d color8ion of detailed descriptions of the wide array of over 122 different utility programs. They are organized by the ~/lib/Octology/ Perl-Modules that they are most assoC8d with. a8 is the most fundamental base-level module which Autom8s the exporting of An Awesome Array of variables, d8a-structures, and functions which are used heavily throughout the rest of the system. b8 is the Base-transl8ion module which also incorpor8s many templ8 examples of useful mathematical comput8tions and serial progressions. c8 is a Complex Collection of the Command-line Cat and Cut programs as well as Curses-like SDL graphical functionality which favors tied-arrays as ways to manipul8 Columns of Colorful text in 64 (8-squared) different `.f0nt` formats. d8 is the module which gener8s and manipul8s 8-character time-stamps which exhibit sub-second precision which is employed for timing purposes throughout Octology. f8 is the module which handles `.f0nt` and `.pal8` files for classic bitmapped easily customizable characters and very terse color palettes. m8 is not an actual module yet, but is the eventual home for Mapping and graphing functionality which can encompass arbitrary edge rel8ionships between nodes and is already the umbrella under which Markup-rel8d utilities handling XML Mixed-node reformatting and binariz8ion. U8 is a module which handles some UTF-8 character-table gener8ion, code-file Upd8ing, and U2b (YouTube) video-file downloading, name reformatting, and transcript organiz8ion.
+
+This talk will walk new users through the myriad efficient ways that Octology commands and utilities can optimize oper8or time and key-strokes to accomplish many useful tasks intuitively, via code which can be easily and rapidly modified to suit ever more specialized cases (once the shock of how dense it all is has worn off).
+
+The finale will be demonstr8ing `8plc` which is Octology's Pre-cursor Letter Counter that processes the ~/dox/2du/8.utf file and the 1,391 8-words that are itemized within and reformul8s about 8 different ways to restructure the set of words to provide insight into interrel8ionships and correl8ions between altern8 perspectives on how such words can be constructed. This culmin8s in the 3 crosses from Calvary which came together during PassOver (just prior to Good Friday and Easter of this Year, 2020).
+
+#### K5IM5kim:Since proposal (similar to above) got rejected, was thinking about practicing scripting && presenting something in prepR8ion for a potential
+#  lightning-talk `d8 K6O` && it occured to try starting with .lrc as example of new sort of style of an executable d8a-file (via `lrc`) describing how to
+#  intuitively gener8 the standard format .lsrc then explain that .Hrc is a similar type of executable d8a-4mat takN 2 othr Xtremes (with `lodH` && `a8`);
+# Maybe then ftst shows 6 more different categories of administr8ion && coding d8a && resp gener8s a nicely colorized list of specific8ions 4 resolutions;
+
+K6AMIHot:
+Octology, the ontology of 8, for a new gener8ion of Perl Hackers who coordin8 and collabor8 on brighter future comput8ion, culmin8ing in gr8r human civiliz8ion.
+Submitted to: Conference in the Cloud May 01, 2020 18:41 CDT
+ Profile: Pip Stuart
+ Talk Format: Standard Talks (50 minutes)
+ Audience Level: All
+ Tags: Perl, GNU/Linux, Zsh, Vim, Curses, SDL, Git, Ubuntu, Unity, Compiz, YouTube, KeePass, Screeps
+ Created on May 01, 2020 18:41 CDT
+ Updated on May 01, 2020 18:44 CDT
+Elevator Pitch:
+Care to learn an immense amount of Perl, GNU/Linux, Zsh, Vim, System-Administr8ion, minimal abbreV8ions, code condens8ion, diverse d8a-represent8ions, autom8d coloriz8ion, lossless conversions, math comput8ion, problem-solving, video-game development, etc. in an hour?! Then this is the talk for you!
+
+Description
+Octology
+This talk is about an ambitious grandiose project which aims to become a rigorous ontology by which all future comput8ion could be subsumed. Almost everything in the known universe has already begun to be planned for l8r inclusion, according to coherent prioritiz8ion.
+
+DownLoad
+It is presently hosted on GitHub and SourceForge with intention to prepare it for a CPAN release before July of 2021 (8 years after it was essentially started).
+
+Instal8n
+The above linked Git repositories are meant to be installed into (or copied over) almost any existing GNU/Linux $HOME directory (where a modern Perl 5 and a few other prerequisites could be found in the $PATH).
+
+dMonstr8
+During this talk, I will be demonstr8ing many Perl scripts which generally adhere to the Unix Philosophy (attempting to do at-least one thing well and to be nicely interoperable).
+
+My name is Pip (and if you think of the Python Install8ion Program, you're not alone, but might find my aversion to whitespace quite stunning and in stark contrast). I am the spots on dice, dominos, and the suits on playing cards. Octology includes code to manipul8 each of those for innumerable types of games. There's also an interactive mechanism for showing A-Star path-finding in tons of Screeps Real-Time-Strategy game maps. You'll be introduced to a fE8ure-rich varE8ion on the classic game of Chess called ckm8 (which only has a couple minor bugs left to squash yet). There's a Rubik’s Cube spoonerism called qbix which renders in Curses text-mode.
+
+I will be starting things off by running my elabor8 alias ti which is an abbreV8ion for "Terminal-Initializ8ion" that popul8s my 8 virtual desktops with myriad Gnome-Terminal applic8ions (with slightly transparent backgrounds which depend on the Compiz compositing within the Unity desktop-environment, so you can see some of the content below when my terminals are overlapping each other directly). I will demonstr8 my trmz Zsh alias which colorfully lists dozens of other terminal applic8ions which you too can easily have at your disposal. A guiding principle of Octology is to attempt to always provide at least 2 (and 8 even better) ways to accomplish whatever task you wish to accomplish (even when it means reinventing multiple wheels, exhibiting varying levels of roundness).
+
+Next I will be showing off cJ and CJ which are d8a-processing scripts to aggreg8, summarize, and analyze CoViD-19 (where b64 19 is equal to b10 J). Hopefully these rel8ively simple scripts can provide some useful insights into infection and mortality r8s for various St8s of particular interest to users. I hope they can help (at least in some small way) to save lives and diminish suffering and stress.
+
+Then, I will run sumb which SUMmarizes Octology's ~/bin/ directory with autom8d color8ion of detailed descriptions of the wide array of over 122 different utility programs. They are organized by the ~/lib/Octology/ Perl-Modules that they are most assoC8d with. a8 is the most fundamental base-level module which Autom8s the exporting of An Awesome Array of variables, d8a-structures, and functions which are used heavily throughout the rest of the system. b8 is the Base-transl8ion module which also incorpor8s many templ8 examples of useful mathematical comput8tions and serial progressions. c8 is a Complex Collection of the Command-line Cat and Cut programs as well as Curses-like SDL graphical functionality which favors tied-arrays as ways to manipul8 Columns of Colorful text in 64 (8-squared) different .f0nt formats. d8 is the module which gener8s and manipul8s 8-character time-stamps which exhibit sub-second precision which is employed for timing purposes throughout Octology. f8 is the module which handles .f0nt and .pal8 files for classic bitmapped easily customizable characters and very terse color palettes. m8 is not an actual module yet, but is the eventual home for Mapping and graphing functionality which can encompass arbitrary edge rel8ionships between nodes and is already the umbrella under which Markup-rel8d utilities handling XML Mixed-node reformatting and binariz8ion. U8 is a module which handles some UTF-8 character-table gener8ion, code-file Upd8ing, and U2b (YouTube) video-file downloading, name reformatting, and transcript organiz8ion.
+
+This talk will walk new users through the myriad efficient ways that Octology commands and utilities can optimize oper8or time and key-strokes to accomplish many useful tasks intuitively, via code which can be easily and rapidly modified to suit ever more specialized cases (once the shock of how dense it all is has worn off).
+
+The finale will be demonstr8ing 8plc which is Octology's Pre-cursor Letter Counter that processes the ~/dox/2du/8.utf file and the 1,391 8-words that are itemized within and reformul8s about 8 different ways to restructure the set of words to provide insight into interrel8ionships and correl8ions between altern8 perspectives on how such words can be constructed. This culmin8s in the 3 crosses from Calvary which came together during PassOver (just prior to Good Friday and Easter of this Year, 2020).
+
+I gr8ly hope my talk will be illumin8ing in multiple ways, to many potential attendees.
+
+Notes
+Contact8
+Please feel free to e-mail me ( Pip@CPAN.Org or PipStuart@GMail.Com ) or call (920)636-6271 if you would like to discuss any portion of this talk proposal, or to clarify technical requirements that I lacked the time to compile and convey adequ8ly above.
+
+ThankYou
+I gr8ly appreC8 your willingness to consider my proposal for inclusion in The Perl Conference in the Cloud this year.
+
+History8
+I’ve given a Lightning Talk at the 2007 YAPCNA, but am rather nervous while imagining and attempting to present all that I’ve been working on recently within an entire 50-minute talk.
+
+Interrog8ion
+I am quite excited by the prospect of having a healthy Question and Answer session afterward though. I really hope my talk gets accepted and that it goes off decently well.
+
+PrepR8ion
+I will try to prepare and rehearse whatever seems most worthwhile to present within the allotted time, and hope to revitalize some of the Perl community’s earlier vigor and enthusiasm by demonstr8ing gr8 power.
+
+Submitted Co-Presenters;
+
+####
+
+Feedback About Submission: The Perl and Raku Conf on May 05, 2020 10:01 CDT
+
+Dear Pip Stuart,
+
+We are sorry to inform you that your talk, Octology, the ontology of 8, for a new gener8ion of Perl Hackers who coordin8 and collabor8 on brighter future comput8ion, culmin8ing in gr8r human civiliz8ion., wasn’t selected for Conference in the Cloud.
+
+We had a lot of great submissions to our CFP, including yours, and the decision making process was not easy.
+
+Hopefully we will still you see at Conference in the Cloud.
+
+Thank you again.
+
+Conference in the Cloud Organizers
+
+####
+Search lyrics sites for "Pearly Whites", "casting Pearls before Swine", && "Pearl necklaces" to clip song segments together for musical references or comedy.
+
+Audit GoZo HoodNigga, BBoyz Rhymin&&Stealin PiecesOf8, NASA Kanye Gifted, && BiaB Resurrect for 31-second segments to gather all lyrics for as well.
+
+Audit Obsidia Cobra && Hello for 31-second clips && maybe UKF EllieGoulding Figure8 && some other final song like Rammstein Sonne to select for singing to.
+
+Consider prototyping pr8 (Twitter-clone) which has no hard character-limit but applies auto-compaction techniques to mostly unambiguously fit in 240, 160, 80.
+
+`cd ~/mvz/pr0/avi;mplr -vo caca -fixed-vo h*` then manually scale down text-like vid window could show && hear ASCII pr0n if I decide funny && fine 2 include;
+`cd ~/muz/U2b ;g3 -k 123  ukf/El*` for Xilent's EllieGoulding remix of "Figure8". Running `g3 -v goom2k1 ...` is probably best of -V Visualizers for now;
+`cd ~/muz/mp3 ;g3 -k 104 GoZo/02*` for HoodNigga chorus ending in "Kanye".
+`cd ~/muz/U2b ;g3 -k 125 N.*     ` for last 31 seconds of Gifted rap to "MerryChristmas"!
+#cd ~/muz/flac;g3 -k  23 Beas*/L*/01*` for ending right after "Piece-of-8"!
+#cd ~/muz/flac;g3 -k 292 Boot*/B*/14*Go.flac` for just the start of "Right thurrr...". Song part at 317. "MothaFucka" part at 359. Maybe best from 349-380.
+`cd ~/muz/flac;g3 -k   2 T*/Boot*` for very nice 31 of my PoopNastyPip backups probably is cooler and better aligned than even all the above.
+# maybe instead of 8 complete 31sec full background music clips, let one just include 8secs of 2LiveCrew && a couple other decent "Pearl" lyrics isol8d;
+`cd ~/mvz/U2b ;mp -ss  1 -endpos 31 nxt/O*Res*` for probably just the str8 first verse of Resurrect rap by BoyInABand. Maybe start at ~150 for final verse?
+`cd ~/mvz/U2b ;mp -ss  1 -endpos 31     O*Bac*` for BackAgain to just barely get going.
+`cd ~/mvz/U2b ;mp -ss 89 -endpos 31 vid/R*Son*` for Sonne;
+# Probably just need to pick 2 more good candid8s from Obsidia or elsewhere to have good music driving each of my 8 31-second segments (&& autom8 g3 stop);
+Easy to (-s $FileName)*8 for bit Size then divide that by 31 seconds && round off the fractional part to nearest integer && call `sloc -b $Baud $FileName`;
+
+Start sketching comic of Pip at the PerlyG8s in && out of His mind && prepare to make fun of SavingTheClockTower from Lightning(Talk) in d8ok demonstr8ion;
+Start drafting ending credits .ansi to sloc scroll through for final 8th 31-second segment && then attend to scripting dialog && singing during cmnd XeQtn;
+
+Get camera recording (&& hopefully horizontally flipped somehow so it's legible); Search for good summaries of "prayer" && RevL8ion from Biblical scholars;
+####
+Zoom: In browser open HTTPS://Zoom.US && select "Host a Meeting" > "with video on", pick open-xdg whatever then adjust maxed audio output volume before
+  picking record && giving probably full-size video intro before starting to also "Share Screen" which will then shunt vid to tiny upper-right corner;
+`g3lt` is gst123 wrapper for LightningTalk with pre-timed audio playlist of gst123 on Oiki for demonstr8ion of original GnomeSTreamer basic output to press
+  '?' on within remaining 19-seconds of play-time to show help-text, then spawns `g3` with LibVis monoscope on 63-secs of Figure8, 36-secs of PoopNastyPip,
+  63-secs of Cobra, && 63-secs of WhyDuITry to wrap the whole sequence up real close to 4-mins 8-secs total. Might want to add some 8-secs song4 sloc cred;
+
+#### K6FMHIRE: `g3lt`  is the alias which wraps gst123 && g3 4my LightningTalk;
+ 0) GL       ; ? ; h ; "I WelcomeU2 my Octology!" (you will get to suck pipes);
+ 1) dict pip ; d pip ; "So how does my dict8? ;)" (my seed's like sweet fruit);
+ 2) wh64  8  ; wh64  ; c8 .Hrc|g '^A'; # shouldB past Groove just into Figure8;
+  a8|hl 1P 9 ; lodH|hl 1P 9 ; tstn ; ckm8 ; sumb ;  GG  ;  S2 t2|c2 ;
+ 3) tsgr  b  ; tstc  ; resp ; gnp8 ; Prmz ; Sumz ; Fibz ; Fctz 47 2 ;
+## `xe` autom8z everything but manual moving of ckm8 && then qbix && SC at end;
+ 4)     ftst ; d8ok D; "Use 8 (or 5) chars 2 design8 1489 _eX0O _pV0lxxx 2511."
+ 6)   cJ  a  ;  CJ   ; "My p8 has a Royal-Crown from viral code, not CoViD-19!"
+ 5)'BlO\/q80';  SC8  ; "sloc output tmp lodH, $gs calN.ansi, && $gs 8plc.ansi;"
+ 7)qbix*ftst*; *SC*  ; "SlowCat blasting bolts from my Lightning-Talk Credits;"
+#### K6GMCRED: if(-s cred.utf){bytes: 2291x8 = 18328/16 = 1145.5 };
+# Hello. Welcome! My name is Pip and today I'd like to introduce U 2 Octology.
+" Octology will enable you 2 control computers far more efficiently than U ..."
+"  ... could before.   You will become a master of the command-line, easily..."
+"  ... able to add colors or attributes to any textual programs.   It will ..."
+"  ... even improve your vocabulary && also your understanding of mathematics."
+# Octology can && will do all this && much more. I hope you enjoy using it.  =)
+" Well gr8 thanks 2 all U viewers. Please check-out Octology on GitHub! GGPO. "
+K6MME2Id:upd8 cred,add xe (xte wrapr) 2 a8.pm,upd8 shots,clEn $gs ~/gfx/sho,
+  gac && gpom,rEview Dad chat,add intro,rec new vid && ul 2 U2b,chat wi Dad;
+K6NM9LIV:brk apRt PSFF,tSt rec phOn,prep vocalscript,practice thN rec Take1;
+K6OM35MX:script conclusion && some quality explan8ions for the middle,`gap`;
+K6UMLQUE: - rsrch max SSDI income,audit all 2du lstz into here 4 BlO,think over feasible mutual internal consistency agreement pact treaty alliance union etc.,
+- prep l8st Resume 4 Pip.BavL.Org/Res ,rsrch PerlJobz,contempl8 pr0n more && try harder ;) to think of down-sides on an individual (&&/or society-wide) basisz,
+- think more about GPS DegMinSec where 1st char may normally be expected to be just 0..5 thN all following R base60 0..59(x) && full coords split LongLatEvNly;
+K71M34ss: + HTTPS://SSA.Gov/oact/cola/sga.html && twp.html have $1260/Mo. as disqualifying from SSDI paymNts probly immeD8ly && TrialWorkPeriod $910/Mo.as 2020
++ max for 9 out of rot8ing 60Month window. $910/4.3Wkz=$211.6279/15hoursPerWeek=$14.1085 so max $14/hour && never paid for more than 15hoursPerWeek should keep
++ me away from the 9 months I could make between $910 && $1260 extra. Both limits are such bullshit when my fucking Payee gets over $1600/Mo. for me already! ;
+K71MCoMa: + HTTPS://DisabilitySecrets.Com/resources/social-security-disability/ssdi/income-limits-ssdi-benefits has $2110/Mo. as "Substantial Gainful Activity"
++ threshold for blind disabled person. While a non-blind cannot earn more than $1260/Mo. they can have "unearned income" from investments, interest, or assets.
++ If I could be design8d as clinically blind && earn up to $2110/Mo. / 4.3Wkz=~$ 490/Wk. /~18hourz/Wk.=~$27/hr. (or 15hrz/Wk.@ $32/hr.) shouldBgr8 improvement.
++ Seems I'd need2have aweful 20/200 2B blindlegally. Up to $1260/Mo. / 4.3Wkz=~$ 293/Wk. /~18hourz/Wk.=~$16/hr. (or 15hrz/Wk.@ $19/hr.) shouldstilBimprovement;
+K75M0FrE:GMail Danny HapyBDay && Dad Thanx; K7AMBXxX:`cdst -f 8` && `cdst -fdx 8` && `cdst -fdn 8`; K7HM7DAY: - MonDay`d8 K7R`fill$485lease && GMailPPreceipts;
+K7HM7HM7: - reply2Josh about song,   audit recent ~/dox/2du/* && shoot for organizing the top eighth on Sunday `d8 K7J`,   stRt LoverBot AI XperimNt wi warmth;
+K7NML8rZ: - cp Zerrien's commitment-extension letter from Ryu's notebook's last sepR8or pocket (along with Judge, lawyer, && other details which went into it);
+K7OM10Cm:   mkup "The 10 Command(ment)s in Perly-g8 Scripture" probably with just 9 running from 0..7 then 10 as last in octal, knowing people will read "Ten";
+K7OMDEAL:   maybe 10 Cmnds could be b64 for 65 total divided into 13 tablets, each with 5 roman-numeral entries&&suits sHDc plus jokerz,8pawnz,RooknIghtBishop;
+K7OMGerS:   0) Please buy LogiTech WebCam ~$120 &quicklink=true ?   1) How are you able to detect when you're seeing God or not, && how do you see God in me?
+    HTTPS://NewEgg.Com/logitech-c920e/p/1EF-000C-002E8?Item=9SIAK8DBAV7816&Description=logitech%20webcam&cm_re=logitech_webcam-_-1EF-000C-002E8-_-Product
+  2) Do you have plans for us to also "FixTheChristianity" when we "FixTheRadio", && if so, how? - 3) Do you conceive of consciousness as internal to a body?y;
+K7OMJENI:lastWeek:"Would you like to become a powerful computer-expert who can command almost any desirable functionality with only a few simple key-strokes?";
+K7OMMUZI:"When ... you've gotten to the 13th tablet, you'll almost have a full-deck!?" Try to make the "10 Commands Just For Gerry" with any good 4 pickd card;
+K7TMMake: - revisit Fiverr 4 game-development freelancing or online coding lessons && tutoring once Jai is released or I get farther in Qt or Perl OpenGL code;
+K87M0DEL:   find LibVisual actor or main code 2 build audio-analyzer which starts 2 legitim8ly Dtect && shO /\[(Music|Applause|Laughter|(Foreign|Silence)?)\]/;
+K88MGATE:   PrisMoid<hIgh-hevN>ParaDice # as 8 rel8d zonez of Pip'z homiez loc8d 4 special purposes, which will become both simul8d varE8ion && real geography;
+K88MHOME:   PhysEcal<hOme-h8hL>Purg8ory # MED8 && IONL ul 2 dl 2 ur 2 dr, maybe only hevN out of all 8 which is happy to have no bodies or physical impacts?! ;
+  "Take 2 of these and smash them in the morning! ;) " as decent punch-line for false-start on making 15 5-command tablets (75-commands total) && 13 remaining;
+K89MHear:   study pacmd && see if an optn could be added to mix8 to normalize each per-app volume and scale str8 with the primary global master volume control;
+K8AM8CMD:   15 N8 b8 c8 d8 f8 g8 h8 k8 l8 m8 p8 r8 s8 w8 y8 # prep 2 Dtermine probably top 75 cmndz here && othrz compactd lIk smUl8 crdn8 ordn8 MUl8 etc.;
+             36 DN8 aV8 ab8 ag8 al8 aw8 b8a bl8 cS8 cr8 el8 f8h f8l fL8 fr8 gM8 gr8 iD8 ir8 mL8 n8l oP8 or8 pN8 pl8 pr8 rN8 sN8 sk8 sl8 sp8 st8 sw8 tr8 ur8 vL8
+              83 NfN8 SSN8 abl8 aer8 agn8 agr8 alg8 ans8 aur8 bel8 ber8 bin8 bor8 bov8 ckm8 col8 crE8 crN8 cur8 deV8 deb8 dil8 don8 elu8 equ8 est8 exP8
+            fix8 fr8r gyr8 ing8 inm8 inn8 ion8 jub8 jug8 kin8 l8nt laB8 lan8 leg8 lig8 loc8 lor8 lun8 lux8 lyr8 lys8 mal8 meD8 mec8 met8 mic8 mor8 mut8
+            neg8 not8 nov8 obV8 obl8 orn8 pal8 ped8 phN8 pir8 pup8 r8io raD8 reb8 rel8 rot8 rug8 s8E8 sav8 sed8 soC8 stL8 str8 tan8 unE8 upd8 vac8 zon8 28x2+27
+              132 acer8 actu8 adul8 aggr8 agit8 aliN8 anim8 appL8 avoc8 bloV8 brom8 carE8 catN8 cilE8 citr8 clav8 clim8 cogn8 coll8 conn8 cr8or crem8
+            curv8 cusp8 cyan8 d8ing defl8 deit8 dent8 dict8 educ8 effl8 elev8 elim8 emaC8 eman8 emir8 emul8 enec8 epal8 epil8 f8ful falc8 folE8 form8
+            frig8 fumR8 furc8 gest8 glaC8 glaD8 hI8us hast8 hydr8 imit8 infl8 ingr8 iris8 isol8 iter8 lact8 lanE8 larv8 libr8 limb8 m8rix m8ron magn8
+            mand8 migr8 minE8 n8ion n8ive n8ure narr8 nerv8 nitr8 oper8 outg8 ovul8 oxal8 oxid8 p8ron palm8 palp8 pect8 pinn8 pixL8 plac8 plan8 plic8
+            port8 pot8o pred8 prel8 prim8 priv8 prob8 prol8 pron8 pror8 puls8 quin8 ruin8 sens8 sepR8 serr8 silv8 situ8 speC8 sper8 st8us strI8 sulf8
+            tern8 test8 thE8r titr8 tom8o tr8or ulul8 umbr8 urin8 valU8 valv8 varE8 vibr8 vicR8 viol8 virg8 vitE8 vulg8 23x5+17 # so 266 total here 2 pik from;
+K8RM8du2:   fix Fctz b256 conversion precision probably,   think of primes being potentially predictive or formulaic in maybe irrational or other number-bases;
+K8RM8num:   fix q to have better default trunc8 && round not needing c8 to cut just stRt; # UbuK4 50:2-B,i,n; SSD:/ (ext4:noatime) HDD:/home/m[uv]z /swap /var;
+K8SMJOBS: + e-mail Michelle again on Monday asking for a copy of all my diagnoses please,   research Atari2600 titles && NES && SMS games to start coding anew;
+K8SMKEEP: + e-mail Marie with Mom's message about EIP not requiring payee accounting for,   look into PlaySt8ionPlus renewal expense && scheduled auto-payment;
+K8UM8GMZ:   pick best 4 vidgmz from 72-80 2 start on 4 Sep&&Oct && 6 in 80-88 4 Nov&&Dec,   plan top10 Atari2600 gmz 4 Jan&&Feb 2021 && 12 from NES 4 Mar&&Apr;
+K92MFunk:   Christians Vs. Dinosaurs (including mayB anim8ronic Fossils&&prayer assists);   PedanticPip(&&ClosedCapshaionCritaic)as nwU2b chanL4FamFriendlyFun;
+K95M0vOt: - mk sure 2 vote && get l8st mailed absentee ballot into outgoing mail Tue K98; + K99MCODE:"Challenge almost everything, including this!"-PPPlatRule;
+K9OM9I8T: + FcBk, ordr Amzn, GMl Dad, Dunc, PP, && housing eviction lawyerz (aftr serch); + K9PM9PM9:rsrch SSDI 4 Cali, GMl SS lawyerz 4 means-tst && eviction;
+K9PMEtip:   weekly keep-in-touch with Dunc, MikeAdams,Torrey, Ami,Tone,Nissim, &&JohnTam; + K9PMJACK:follow-up on the Referral e-mail from SJ 2 fight eviction;
+K9QMGeek: + research eviction mor8orium thru Dec. && how to declare && 2 fight on my own;   K9QMGive:research how to setup sepR8 PedanticPip channel && zoom 1;
+KAHM8KAJ:   bring Ryu up2 Oni cfg, sync Ryu 2 Ken && Xdrvz, pak drvz in bakpax && cRtrnk; - KAHM8inP:research 28DayTermin8n && eviction laws, tape note 2 door;
+KAOMIdu2:   login 2 PeerTube acctz AgN && renew support 4 it as viable altern8ive plat4m; + KAOMIfnd:askDad4money4:fd,clthz,Eblnktz,cR,lawyer,UPSz,laptp,ampz?;
+KAQM8TRY: + GMl Michelle && MealsOnWheels, draft job 4m msg && rsrch Perl && Game stuDOz;   KARMA8Gd:mkGr8BookGod'sUnHolyWordsReOrdered(HomoPhonesAllowdAloud);
+KASM02du:   mk nwU2b chanLz4:PP,LaidyLaicyLiteral or LiteralLexyLips,UzGuyGooway,thN CCC;   KASM0L8r:EvN2ly DvLup newAIz4both:GloryGailGaizer&&PowerPufaiPusai;
+KASM1NDD:   thN4 8th chanL(countzPS)@Mpt2mk nwDoctorDisorder or DamnaitionDaimon maleAI?; - KASM8adv:call Sharon@Advocap4food,track down&&GMlBiddeford4Eblnktz;
+KAVMGDIR:   mk Improvis8ionIngeland && RappingRt chanLz 4 IambicPentameter,Haikuz,&&stuf; + KAVMGEHH:HapyHaloween,4hIgh:1Med2Sup3Arc4Newz5Stud6Cafe7hOtL8+Xtra;
+KB4LCjrk: - "Listen here, you little jerk!" -DougCarder Captain'sCove LandLord (mAB ex?); - KBFL7HAD:JewishJesus should join,wrIt7Unclz,prep16G,rec&&ul 1st PP;
+KBFLI0NS: - ckot Lion'sClub 4 mAB eyez-ckd && hopefully new glassez EvN B4 Jan2021 AARP?;   KBILISTN:VocalVal does DubStepLyrics wi hdf0nz on&&recz just Voice;
+KBKL7unc:   prep BavL LMS,adrS envelopes,callLionsClubOsh,setup2,8,64&&512P8reonTierz,DM;

@@ -1,0 +1,26 @@
+Wed. 4-5 Tools Production Roundtable   Walker/Weinstein
+ mostly dominated by Microsoft dudes
+ they have awesome server request system which automates builds, regression
+   tests, etc. with checkins so everyone has fast (4.5mins) access to latests
+ some teams have lost (or got corrupted) big binary data in SourceSafe
+ others use Perforce, AlienBrain, && CVS more happily
+ common curiosity about SubVersion but nobody trusts it yet
+ generally smaller more specialized tools are employed than big do-it-alls
+ I mentioned that we were moving towards xml
+ session gobbled up by 3 Microsoft dudes being all proud of C# && not relating
+   well to others
+
+Wed. 5:30-6:30 AI: Light && Dark Sides  Peter Molyneux
+ state machines are not really AI
+ potential for deep living simulated worlds which are consistent apart from
+   player influence / interaction
+ learn type / abilities / reflex speed of player && make games react
+ save player AI profile && carry over into other games as appropriate
+   eg. RTS rushdown aggressive player is probably similarly aggressive in FPS
+   so AI enemies can account for that
+ MMORPGs can be better when AI plays for / like player when not controlling
+ Agents can have complex influences into behavior but very hard to test / tune
+ important to have clear feedback for which training is reinforced
+
+PSP is gonna be huge
+Death Jr. looks cool

@@ -1,0 +1,2540 @@
+<html><head><title>Most Pertinant Fish vs. Stuart Emails</title></head>
+<body bgcolor="#03071B" text="#A8F8F0">
+<center><h4>Pertinant Fish vs. Stuart Emails</h4></center><br>
+<p>This document extracts the most descriptive emails from the
+salvageable email history between Fish &amp;&amp; Stuart available
+at <a href="http://BinQ.org/800tele/lenemail.txt">
+http://BinQ.org/800tele/lenemail.txt</a>.  I've commented after each
+section.  They should also be in relatively chronological order except
+when multiple attachments are included in the same section.  Then they
+will be latest to earliest for that section. Basically the deeper the
+arrow ( <b>&gt;</b> ) indented nesting level is, the earlier the mail
+was.  Hopefully this is a good summary for what happened.</p>
+<hr>
+<code>
+<br>From: leonard3@home.com
+<br>Received: from app02.guru.com (app02.guru.com [192.168.11.12])
+<br>        by guru.com (8.9.3/8.9.3) with SMTP id WAA11025
+<br>        for <piptigger@dimensionsoftware.com>; Tue, 28 Mar 2000 22:54:45 -0800
+<br>Message-ID: <469687430.954312888665.JavaMail.guru@app02.guru.com>
+<br>Date: Tue, 28 Mar 2000 22:54:48 -0800 (PST)
+<br>To: piptigger@dimensionsoftware.com
+<br>Subject: programming
+<br>
+<br>PiP:
+<br>
+<br>I am in the same area as you.
+<br>
+<br>I have some interesting needs which may fit into your plans.
+<br>
+<br>Please e-mail with your phone number or give me a call at 949-644-7876.
+<br>
+<br>Len Fish
+<br>
+<br>-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+<br>Guru.com
+<br>Power for Independent Professionals
+<br>http://www.guru.com
+<br>
+<br>Your privacy is very important to us. Rest
+<br>assured that Guru.com will not sell, rent, or give your email
+<br>address to anyone.
+</code>
+<p>It begins...</p>
+<hr>
+<code>
+<br>>From: "Len Fish" <leonard3@home.com>
+<br>>To: "Pip Stuart" <piptigger@hotmail.com>
+<br>>Subject: Re: Your counter-proposal and misc.
+<br>>Date: Mon, 24 Apr 2000 17:09:23 -0700
+<br>>
+<br>>PIP
+<br>>
+<br>>My proposal to you, if you will recall was to pay you far more than the
+<br>>$500.00 a week I offered you , based purely on your statement that you
+<br>>could
+<br>>complete it in 8 weeks. Do you recall that? I gratuitously added another
+<br>>two
+<br>>weeks hedge time. May be $500.00 a week and you looking for other work is
+<br>>doable, but I suspect it wouldn't work.
+<br>>
+<br>>I believe this is the sort of thing I do not want to get involved in. I.E.
+<br>>I
+<br>>make an offer , you counter-offer, I magnamimously agree, and you
+<br>>graciously
+<br>>accept my offer, but then want more if things don't turn out as you
+<br>>planned.
+<br>>I'm afraid I've had all I can take of that sort of thing.
+<br>>
+<br>>I have no idea how hard you work. I don't care to monitor that. I want to
+<br>>look at deliverables on dates.
+<br>>
+<br>>I will just look for someone else to do the job, if you feel my offer was
+<br>>not overly fair.  I've had it with Vijay, and I don't intend to jump back
+<br>>in
+<br>>the frying pan. I had hoped even if it took longer, you would feel the
+<br>>reward of $1000.00 per week would average it out fairly. But, I don't wish
+<br>>to get off on the wrong foot where you feel like a socialist abused by a
+<br>>capitalist.
+<br>>
+<br>>If you prefer we can just do things on an hourly basis as before. I'm
+<br>>beginning to sour on this whole OM project.
+<br>>
+<br>>I'm back now. Maybe we can meet and reach some conclusions tonight and
+<br>>remain friends.
+<br>>
+<br>>To answer your other questions: No it has nothing to do with windows. I had
+<br>>sent VJ a Linux version of OUTLOOK that works with RH 6.2 and has the
+<br>>equivalent of Exchange on our server. Nothing else has to be windows
+<br>>compatible now, I don't think. Maybe the x version but, not Microsoft. It
+<br>>might be nice, but I don't see it as a necessity.
+<br>>
+<br>>I have no idea whether the tables will arrive on time or not. His last
+<br>>demands have sealed his fate as far as I am concerned. I've turned the
+<br>>other
+<br>>cheek long enough. Kill all his permissions! I'm tired of working with
+<br>>primadonnas.
+<br>>
+<br>>949-644-7876.
+<br>>
+<br>>Len
+<br>>
+<br>>----- Original Message -----
+<br>>From: Pip Stuart <piptigger@hotmail.com>
+<br>>To: <leonard3@home.com>
+<br>>Sent: Monday, April 24, 2000 2:46 PM
+<br>>Subject: Re: out
+<br>>
+<br>>
+<br>> > Hello Len.
+<br>> >
+<br>> >     I tried your cell number but there was no answer so I figured I'd
+<br>>send
+<br>>a
+<br>> > quick mail and try your phone again later.
+<br>> >     I have reviewed all of the documentation for 800Telephone.com and I
+<br>>feel
+<br>> > confident that I could provide the required code to support such a
+<br>>system.
+<br>> > My issues are (in order of importance):
+<br>> >         1) The documents are very clear that operation must seamlessly
+<br>> > integrate with Outlook, SQL 7, Windows (ie. new Windows programs must be
+<br>> > able to be run next to the operating pages of the website), etc.  All of
+<br>> > this is Microsoft software which is often non-trivial to integrate with
+<br>> > Internet standard equivalents (ie. open-source versions such as
+<br>>sendmail,
+<br>> > MySQL, and browser windows like Netscape).  My question is: Do these
+<br>> > exhibits need to reflect the option to incorporate non-Microsoft
+<br>>solutions?
+<br>> >         2) If it is obvious that I have worked diligently for 10
+<br>>consecutive
+<br>> > weeks and have been clearly as productive as possible, it seems terribly
+<br>> > unfair that I should have to work toward the completion of such a large
+<br>> > project for free if in fact it cannot be completed by that time.  The
+<br>> > project may require more than 10 weeks (I'm not planning that it will
+<br>>but
+<br>>it
+<br>> > may) and if I have worked hard for that entire time, I feel that I
+<br>>should
+<br>> > not have to work for free thereafter.  I'm not sure what a fair
+<br>> > determination of how hard I've worked would be but hopefully we can
+<br>>agree
+<br>>on
+<br>> > something fair for both of us.
+<br>> >         3) May I please take this week to thoroughly digest OpenMerchant
+<br>>and
+<br>> > then begin the actual development of the site and tables next week?
+<br>> >
+<br>> > It may turn out that all of this is inconsequential if indeed Vijay has
+<br>> > delivered the tables on time.  I'm going out to get some lunch.  I'll be
+<br>> > back for a while before my fraternity meeting tonight.  Please reply
+<br>>with
+<br>> > any further information whenever possible.  Thanks very much.  TTFN &
+<br>>Chag
+<br>> > Sameach.
+<br>> >
+<br>> > -PipTigger
+<br>> > ________________________________________________________________________
+<br>> > Get Your Private, Free E-mail from MSN Hotmail at http://www.hotmail.com
+<br>> >
+<br>>
+<br></code>
+<br><p>Mr. Fish hired me to setup && administer a webserver.  We initially
+<br>agreed that I would be paid $32 / hour for any work I did which
+<br>sounded fine to me since I had assumed I would be able to work like
+<br>a normal employee for 40+ hours each week.  Mr. Fish had a falling out
+<br>with his original programmer (Vijay) before the project had even begun
+<br>so he replaced "Vijay" with "Pip" in the text of his contract && had me
+<br>take over the development. The project was to enhance an already
+<br>supposedly "robust" open source e-commerce system called OpenMerchant.
+<br>He didn't want to hire me as an employee and had suggested I be a
+<br>contractor (which I had never done before).  I was wiling to try if we
+<br>could agree on something fair.  The above email is so telling.  I wanted
+<br>to be treated fairly.  Mr. Fish's first offer was for a measly $500 per
+<br>week.  I should have looked for work elsewhere at that clear sign that
+<br>his aims were to pay as unfairly as possible.  We bickered about the
+<br>agreement from the beginning.</p>
+<br><hr>
+<br><code>
+<br>>From: "Len Fish" <leonard3@home.com>
+<br>>To: "Pip Stuart" <piptigger@hotmail.com>
+<br>>Subject: Re: New Site...
+<br>>Date: Fri, 5 May 2000 20:22:20 -0700
+<br>>
+<br>>I fail to see how that is possible. I just forwarded the unopened messages.
+<br>>
+<br>>Len
+<br>>----- Original Message -----
+<br>>From: Pip Stuart <piptigger@hotmail.com>
+<br>>To: <leonard3@home.com>
+<br>>Sent: Friday, May 05, 2000 6:19 PM
+<br>>Subject: New Site...
+<br>>
+<br>>
+<br>> > Len, I put the new pages in the directory:
+<br>> >     http://24.16.72.254/site/
+<br>> > The double forwarding of the email must have change the graphic file
+<br>>formats
+<br>> > because they were incorrectly converted when I got them.  I'll email
+<br>>Brian
+<br>> > on Monday to ask for the right versions directly.  TTFN & Shabbat
+<br>>Shalom.
+<br>> >
+<br>> > -PipTigger
+<br>> >
+<br>> >
+<br>> > ________________________________________________________________________
+<br>> > Get Your Private, Free E-mail from MSN Hotmail at http://www.hotmail.com
+<br>> >
+<br>>
+<br></code>
+<br><p>Mr. Fish fails to see a lot of things.  He presumes I'm lying early on.</p>
+<br><hr>
+<br><code>
+<br>>From: "Len Fish" <leonard3@home.com>
+<br>>To: "Pip Stuart" <piptigger@hotmail.com>
+<br>>Subject: Re: Invoice for Week 2 of Agreement (April 30 - May 6, 2000)
+<br>>Date: Tue, 9 May 2000 16:27:36 -0700
+<br>>
+<br>>PIP:
+<br>>
+<br>>Per our conversation Sunday, we will have a check for you for $822.22 by
+<br>>Thursday, sooner if you need it.
+<br>>
+<br>>While you did fall short of your contractual terms, we are waiving them for
+<br>>this past week, but wil have to adhere to them beginning the current week.
+<br>>
+<br>>You are doing a good job.
+<br>>
+<br>>Len
+<br>>
+<br>>Len
+<br>>----- Original Message -----
+<br>>From: Pip Stuart <piptigger@hotmail.com>
+<br>>To: <leonard3@home.com>
+<br>>Cc: <piptigger@hotmail.com>
+<br>>Sent: Tuesday, May 09, 2000 12:19 PM
+<br>>Subject: Invoice for Week 2 of Agreement (April 30 - May 6, 2000)
+<br>>
+<br>>
+<br>> > For the services rendered by Pip Stuart for 800Telephone during the week
+<br>> > beginning April 30th and ending May 6th, 2000, the amount due is:
+<br>> > $822.22
+<br>> >
+<br>> > The tasks addressed during this period included:
+<br>> >     -Server configuration for MySQL database integration
+<br>> >     -Preliminary database table construction
+<br>> >     -Perl code construction for database maintenance purposes
+<br>> >     -Feature enhancement and debugging of the utility scripts
+<br>> >     -Further examination and familiarization with OpenSales' code
+<br>> >     -Database construction of 5 tables with sample data
+<br>> >     -Testing performed on initial tables with emphasis on data integrity
+<br>> >     -Specification of limitations to be placed on each column or field
+<br>> >     -MySQL stability issues examined for potential transaction
+<br>>enhancements
+<br>> > to increase reliability
+<br>> >
+<br>> > -Pip
+<br>> > ________________________________________________________________________
+<br>> > Get Your Private, Free E-mail from MSN Hotmail at http://www.hotmail.com
+<br>> >
+<br>>
+<br></code>
+<br><p>The only invoice (ie. the only week I [nearly] fulfilled the contract).
+<br>Also the only time I did "a good job".  There were no other invoices
+<br>because everything became vague && verbal once we ditched OpenMerchant
+<br>&amp;&amp; the originally signed agreement during the third week.</p>
+<br><hr>
+<br><code>
+<br>>From: "Len Fish" <leonard3@home.com>
+<br>>To: "PIP TIGGER(2)" <piptigger@hotmail.com>
+<br>>Subject: after thought --Things to do list.
+<br>>Date: Sat, 13 May 2000 20:23:46 -0700
+<br>>
+<br>>Pip-
+<br>>
+<br>>Sometime when you get the chance, not necessarily this week, the following
+<br>>refinement program should be written for the password module if you have
+<br>>not done so already.
+<br>>
+<br>>Legally, if anyone in the company knows an employee's password, even the
+<br>>root administrator, you cannot hold an employee legally responsible based
+<br>>on anything they may have done identified by the password they operated
+<br>>under.
+<br>>
+<br>>Thus we should generate a randon PIN at the time they come on board and
+<br>>give it to them. There should be an admin page (not graphic designed, just
+<br>>plain vanilla) where any employee can change their pin number as long as
+<br>>they know the old one. They will be instructed to immediately change that
+<br>>pin given to them and change it in the future any time they believe their
+<br>>pin may have been compromised.
+<br>>
+<br>>The pin should be stored encrypted, and shown as asteriskd when they type
+<br>>it in (twice for comparison). I don't think we should use the hint thing
+<br>>for employees. People are too litigious.
+<br>>
+<br>>Throughout the system, if someone, anyone,  inserts their pin number
+<br>>incorrectly four times in a one hour period, lock the account and print out
+<br>>the fact in an exception file which automatically is generated for
+<br>>management once every 24 hrs. If suddenlt there are more than x lockouts in
+<br>>a 10 minute the period, the system administrator must be notified at once,
+<br>>plus the person on duty for the current shift.
+<br>>
+<br>>Give me a call Sunday, when you are awake.
+<br>>
+<br>>Len
+<br>>
+<br>>Len
+<br></code>
+<br><p>"People are too litigious."  Are they?</p>
+<br><hr>
+<br><code>
+<br>>From: "Len Fish" <leonard3@home.com>
+<br>>To: "PIP TIGGER(2)" <piptigger@hotmail.com>
+<br>>Subject: acknowledging e-mails
+<br>>Date: Tue, 23 May 2000 09:24:32 -0700
+<br>>
+<br>>PIP
+<br>>
+<br>>As you seem to have an aversion to the phone, it would be helpful if you
+<br>>took the very limited time and effort to respond to e-mails to some extent.
+<br>>If you are not going to do so, it would nice if you would return phone
+<br>>messages when I call.
+<br>>
+<br>>Being considerate of those we work with is a two way street.
+<br>>
+<br>>I have not received any reply to my e-mails or a return call from a message
+<br>>left with your roomate yesterday. This not a first occurance; thus this
+<br>>note.  I can't try to help you if you raise a pseudo iron curtain.
+<br>>
+<br>>Len
+<br></code>
+<br><p>I was inaccessible for 2 days && Mr. Fish displayed his typical response to
+<br>situations he cannot absolutely control.</p>
+<br><hr>
+<br><code>
+<br>>From: "Len Fish" <leonard3@home.com>
+<br>>To: "Pip Stuart" <piptigger@hotmail.com>
+<br>>Subject: Re: OpenMerchant is now called AllCommerce 1.0
+<br>>Date: Wed, 24 May 2000 16:29:05 -0700
+<br>>
+<br>>Pip
+<br>>
+<br>>I don't understand. Where did 1.0 come from? They were just at 9.6 and that
+<br>>didn't work at all.
+<br>>
+<br>>Are the passwords working yet? Please worry about what we are behind, b4
+<br>>spending too much time on what these guys are promising. I hope the
+<br>>passwords will be completed TODAY.
+<br>>
+<br>>Len
+<br>>----- Original Message -----
+<br>>From: Pip Stuart <piptigger@hotmail.com>
+<br>>To: <leonard3@home.com>
+<br>>Sent: Wednesday, May 24, 2000 2:26 PM
+<br>>Subject: OpenMerchant is now called AllCommerce 1.0
+<br>>
+<br>>
+<br>> > P.S. <a href="http://www.opensales.org">OpenSales</a> has the version
+<br>>1.0
+<br>> > today which I intend to try out thoroughly next week before we write off
+<br>> > OpenSales altogether.  This release version should give us a great idea
+<br>>of
+<br>> > what we can expect from that AllCommerce system and how much of what we
+<br>>need
+<br>> > it already does.  If we then do decide to write almost everything
+<br>>ourselves,
+<br>> > we'll at least have a much more informed decision relative to other
+<br>>options
+<br>> > etc.  Let me know what you think.  TTFN.
+<br>> >
+<br>> > -Pip
+<br>> > ________________________________________________________________________
+<br>> > Get Your Private, Free E-mail from MSN Hotmail at http://www.hotmail.com
+<br>> >
+<br>>
+<br></code>
+<br><p>Clearly we had discussed ditching OpenMerchant at this time.  Mr. Fish had
+<br>already written version 0.9.6 off && was incapable of comprehending the
+<br>abbrev. of 0.9.6 to simply 9.6 for pre-release development.  The 1.0 release
+<br>happened with a name change to AllCommerce (from OpenMerchant).  I had tried
+<br>for weeks to get 0.7.4 && 0.9.6 to work correctly on the server.  I was
+<br>unsuccessful && was getting farther behind as a result so we decided to
+<br>discard OpenMerchant right before they released AllCommerce 1.0 (which
+<br>probably wasn't any better than 0.9.6 of OM).  Anyway, the above mail is
+<br>basically the most relevant of all as it acknowledges the fact that I was
+<br>preparing to reimplement the core functionality of OM from scratch since
+<br>there was no other way for me to fulfill the contract (I couldn't get OM
+<br>to work by itself, much less enhance it for Mr. Fish's purposes).</p>
+<br><hr>
+<br><code>
+<br>>From: "Len Fish" <leonard3@home.com>
+<br>>To: "Pip Stuart" <piptigger@hotmail.com>
+<br>>Subject: Re: Passwords
+<br>>Date: Thu, 25 May 2000 10:57:52 -0700
+<br>>
+<br>>PIP:
+<br>>
+<br>>As I understand it, you have applied the password only routine to the super
+<br>>user also. I had never envisioned that. His is too sensitive.
+<br>>
+<br>>The 15 minutes and hour you took notes on, seem sufficent for the users
+<br>>only. A phone call asking my feeling on the subject may have been
+<br>>worthwhile
+<br>>in the interest of saving your scarce time availability. Now that it is
+<br>>done, I think we should just leave it for the time being in the interest of
+<br>>letting you catch up.
+<br>>
+<br>>I still believe the telephone may be a tremendous time saver for you every
+<br>>once in a while.
+<br>>
+<br>>We need to get together later this afternoon to give you your check. I
+<br>>assume the password situation will be totally wrapped up by then.
+<br>>
+<br>>I did not see a comment on protecting permissions down to the field level.
+<br>>Is that implemented?
+<br>>
+<br>>Len
+<br>>\
+<br>>
+<br>>----- Original Message -----
+<br>>From: Pip Stuart <piptigger@hotmail.com>
+<br>>To: <leonard3@home.com>
+<br>>Sent: Thursday, May 25, 2000 8:16 AM
+<br>>Subject: Passwords are working perfectly (as far as I can tell)
+<br>>
+<br>>
+<br>> > Hey Len.  Please feel free to test the password module at:
+<br>> >   http://24.16.72.254/pw/index.cgi
+<br>> > the 5 test users I created are "super", "admin", "employee", "vendor", &
+<br>> > "customer" in order of test permissions.  Their passwords are the same
+<br>>as
+<br>> > their usernames for now.  There are four pages available currently named
+<br>> > "page_a", "page_b", "page_c", & "page_d".  Each of the pages and users
+<br>>have
+<br>> > read & write permission levels (which can be set from the
+<br>>/test/index.cgi
+<br>> > script to modify the two tables in MySQL called User_Permissions and
+<br>> > Page_Permissions ... the text in the pages is not yet dynamic but I'll
+<br>>plug
+<br>> > in that code today so that it pulls it's own permissions from the table
+<br>> > which describes itself into it's html layout.  Also, when the time limit
+<br>>(in
+<br>> > minutes) expires right now, it just goes back to the login screen but I
+<br>>will
+<br>> > be adding the new page for only requesting the password (and saving the
+<br>> > username from the last logged in session) up until the time expired is 4
+<br>> > times the time limit so for super whose time limit expires every two
+<br>> > minutes, it'll only ask for his password again up until 8 minutes while
+<br>>most
+<br>> > other users don't timeout until 15 minutes of non-activity so their
+<br>>password
+<br>> > only level would be an hour.  If you have questions, find bugs, have
+<br>> > recommendations, etc. feel free to reply with whatever.  I'll be
+<br>>checking
+<br>> > email as often as I get to good stopping points in code writing (like
+<br>>now).
+<br>> > TTFN & Shalom.
+<br>> >
+<br>> > -Pip
+<br>> > ________________________________________________________________________
+<br>> > Get Your Private, Free E-mail from MSN Hotmail at http://www.hotmail.com
+<br>> >
+<br>>
+<br>
+<br>The next day, I'd obviously spent a great deal of time implementing a
+<br>permission system for accessing database elements && dynamic pages.
+<br>These were functions that OM was supposed to handle for us.
+<br>
+<br>>From: "Len Fish" <leonard3@home.com>
+<br>>To: "PIP TIGGER(2)" <piptigger@hotmail.com>
+<br>>Subject: use of our cox lines and isp by your roomates, not to mention your
+<br>>computer.
+<br>>Date: Thu, 25 May 2000 17:38:02 -0700
+<br>>
+<br>>I noticed the modem line from your apartment being furiously used late
+<br>>afternoon Thursday.
+<br>>
+<br>>I called thinking you had delayed your trip to SD.
+<br>>
+<br>>Your roomate told me you were gone. I asked if anyone was using the
+<br>>computer and he said he was using yours.
+<br>>
+<br>>He asked me if I thought that was not proper, and I said I would prefer he
+<br>>did not.
+<br>>
+<br>>It has now been an hour, and he continues to use it.
+<br>>
+<br>>Do you approve of this? I worry about anyone I don't know using my isp
+<br>>line. I also don't like much a stranger having access to the Super user
+<br>>computer work station.
+<br>>
+<br>>I could pull the line easily, but out of courtesy to you I am not doing so
+<br>>THIS time.
+<br>>
+<br>>Len
+<br>>
+<br></code>
+<br><p>This is an incredible example of Mr. Fish's incapacity to comprehend
+<br>basic technology.  He saw the lights flickering on his hub && somehow
+<br>convinced himself that my computer at my apartment was capable of using
+<br>his "isp line" at his home.  My roommate was playing a video game on my
+<br>computer while I was away (through the cable modem that all my roommates
+<br>share the expense for) && Mr. Fish called && very rudely told him to
+<br>stop using my computer.  It was a coincidence that he happened to be
+<br>using my computer when Mr. Fish saw his lights flickering.  I did not
+<br>leave my computer connected to Mr. Fish's server.  I didn't leave
+<br>passwords lying around.  Mr. Fish is still unsure about communications
+<br>technology which he so wants to sell.  It's similar to accusing me of
+<br>running my refrigerator off his electricity for hours because he's been
+<br>monitoring the meter on the side of his house && nobody else knows where
+<br>his electrical outlets are.  Mr. Fish is a paranoid idiot.  He imagines
+<br>evil hackers are out to steal his wonderful ideas whenever he's not
+<br>vigilant enought to monitor his flickering lights of wisdom.  This
+<br>episode cause my roommates to hang up on Fish when he'd call &amp;&amp;
+<br>they'd give me a hard time for working for such a dunderhead.</p>
+<br><hr>
+<br><code>
+<br>>From: "Len Fish" <leonard3@home.com>
+<br>>To: "Pip Stuart" <piptigger@hotmail.com>
+<br>>Subject: Re: Passwords
+<br>>Date: Thu, 25 May 2000 19:28:52 -0700
+<br>>
+<br>>PIP
+<br>>
+<br>>Nice work.
+<br>>
+<br>>The only way you can use the  file you mention to see who is logged on
+<br>>PRECISELY is to erase a name each time they log off. A  periodic cleaup
+<br>>might or might not be accurate.
+<br>>
+<br>>Wouldn't a Saturday trip to San Diego or elsewhere be a better allocation
+<br>>of
+<br>>your time?
+<br>>
+<br>>Len
+<br>>----- Original Message -----
+<br>>From: Pip Stuart <piptigger@hotmail.com>
+<br>>To: <leonard3@home.com>
+<br>>Sent: Thursday, May 25, 2000 2:14 PM
+<br>>Subject: Re: Passwords
+<br>>
+<br>>
+<br>> > I hope you'll be pleased that I got all of it to work very nicely before
+<br>>I
+<br>> > left.  I fixed the bug in the password only timelimit (it was a
+<br>>comparative
+<br>> > logic error which was very hard to catch).  The dynamic pages also seem
+<br>>to
+<br>> > work perfectly for different tables, fields, and records.  The new
+<br>>syntax
+<br>> > is:
+<br>> >   {KnownField=KnownValue'KnownTable.DesiredField}
+<br>> > Those are curly braces on the ends.  You can see examples of these
+<br>>inside
+<br>> > each of the pages a through d when you choose write to edit them.  The
+<br>>fifth
+<br>> > page I added is the running logfile of all transactions to the system.
+<br>>Only
+<br>> > super can write to it and only he and admin can see it but it shows
+<br>>details
+<br>> > of every operation performed and when they occurred.  I enhanced the
+<br>>session
+<br>> > id program to take parameters for periodic cleanup of abandoned id's
+<br>>that
+<br>> > have expired so that we can keep the directory clean as often as we'd
+<br>>like.
+<br>> > It also has the nice side effect of leaving only the files that
+<br>>correspond
+<br>> > directly to active sessions (without harming those sessions) so we can
+<br>>count
+<br>> > how many people are logged in at one time precisely and easily with
+<br>>this.
+<br>> > I've added the ability to write files now according to the proper
+<br>> > permissions also.  I hope you have fun playing with it.  Please email me
+<br>>any
+<br>> > comments or criticisms and I'll address them as promptly as I'm able.
+<br>>The
+<br>> > only thing that remains (as far as I can tell) is to add some checks to
+<br>> > examine the actions logfile to see if someone has failed 3 consecutive
+<br>>login
+<br>> > attempts within the past hour and then to lock the account for 24 and
+<br>>issue
+<br>> > an email to admin but otherwise, the password module seems to be running
+<br>> > properly in every way now.  I also removed the password only check on
+<br>>super
+<br>> > for you but it works as described for all other users.  Feel free to
+<br>>change
+<br>> > the permissions in the tables and see how the files accessability
+<br>>reflects
+<br>> > those levels.  I'll probably call you right around 11am tomorrow
+<br>>morning.
+<br>> > TTFN & Shalom.
+<br>> >
+<br>> > -Pip
+<br>> >
+<br>>
+<br></code>
+<br><p>I worked almost all night && all day && Mr. Fish still had a problem
+<br>with me meeting a friend for dinner in San Diego.  He wanted to rule
+<br>over me as much as possible.</p>
+<br><hr>
+<br><code>
+<br>>From: "Len Fish" <leonard3@home.com>
+<br>>To: "PIP TIGGER(2)" <piptigger@hotmail.com>
+<br>>Subject: new demo for AllCommerce
+<br>>Date: Thu, 25 May 2000 22:37:00 -0700
+<br>>
+<br>>PIP
+<br>>
+<br>>Re: Demo
+<br>>
+<br>>I don't know. It still says it is 7.6. However it has many better features
+<br>>for creating product listings. Still, except for a nice pull down menu
+<br>>creation screen, it seems a bit sophmoric. Maybe a demo for 1.0 All
+<br>>Commerce would be better.
+<br>>
+<br>>I really feel the constraints of their system would make the product we
+<br>>have started a weak compromise. With a decent input page generator, and
+<br>>also output page generator we could easily do what they do.
+<br>>
+<br>>If some of their code is cleaner, you can always cut and paste for some
+<br>>things.
+<br>>
+<br>>If you think it's great, and will do what we want, you are free to make a
+<br>>reasoned argument for it. I frankly don't see it. We have a better bedrock
+<br>>base already.
+<br>>
+<br>>Len
+<br></code>
+<br><p>I asked about drawing up a new agreement but Mr. Fish declined.  He
+<br>promised to pay for my expenses.  I asked if I could take time to try to
+<br>get AllCommerce to work for us once again.  Basically, Mr. Fish replies
+<br>above "You should write it yourself (so that I can sell it myself).  We
+<br>don't need AllCommerce (OpenMerchant)."</p>
+<br><hr>
+<br><code>
+<br>>From: "Len Fish" <leonard3@home.com>
+<br>>To: "Pip Stuart" <piptigger@hotmail.com>
+<br>>Subject: Re: Murray etc.
+<br>>Date: Sun, 28 May 2000 11:33:06 -0700
+<br>>
+<br>>PIP
+<br>>
+<br>>I'll trust you to send murray the e-mail.
+<br>>
+<br>>I'm off to Las Vegas- Hope you make a LOT of progress today etc. I think
+<br>>you
+<br>>should not spend much time on a re-schedule except for your use. It's too
+<br>>late to change the basic agreement, but it will be helpful to see your
+<br>>targets.
+<br>>This is Murray Brett's URL.
+<br>>ramjet@ihug.co.nz <ramjet@ihug.co.nz>
+<br>>The Hemp lady looks like she will be in our fold. She sounds very good.
+<br>>
+<br>>My cellular while I'm away is 949-500-2128-My pager which goes off in LV is
+<br>>1-800-761-1792-Put in yor phone number with area code please.
+<br>>
+<br>>Len
+<br>>
+<br>>
+<br>>----- Original Message -----
+<br>>From: Pip Stuart <piptigger@hotmail.com>
+<br>>To: <leonard3@home.com>
+<br>>Sent: Sunday, May 28, 2000 10:01 AM
+<br>>Subject: Re: Confirm
+<br>>
+<br>>
+<br>> > I have uploaded the .fla file to his ftp server as requested however I
+<br>>was
+<br>> > never given his email address so I cannot let him know that I have
+<br>>placed
+<br>>it
+<br>> > there for his retrieval.  If you could please supply me with his address
+<br>>or
+<br>> > just let him know that I put the file there for him, I would appreciate
+<br>>it.
+<br>> > Thanks.
+<br>> >
+<br>> > -Pip
+<br>> >
+<br>> >
+<br>> > >From: "Len Fish" <leonard3@home.com>
+<br>> > >To: "PIP TIGGER(2)" <piptigger@hotmail.com>
+<br>> > >Subject: Confirm
+<br>> > >Date: Sun, 28 May 2000 00:25:10 -0700
+<br>> > >
+<br>> > >Please confirm you have sent murray Brett the file.
+<br>> > >
+<br>> > >Len
+<br>> >
+<br>> > ________________________________________________________________________
+<br>> > Get Your Private, Free E-mail from MSN Hotmail at http://www.hotmail.com
+<br>> >
+<br>> >
+<br>>
+<br></code>
+<br><p>I wanted a new agreement reflecting the new programming Fish expected for
+<br>free.  He didn't want to see how unfair it was to me.  He only wanted to
+<br>abuse my abilities && pay me poorly.</p>
+<br><hr>
+<br><code>
+<br>>From: "Leonard" <leonard3@home.com>
+<br>>Reply-To: "Leonard" <leonard3@home.com>
+<br>>To: "Pip Stuart" <piptigger@hotmail.com>
+<br>>Subject: Re: Marathon Update...
+<br>>Date: Thu, 1 Jun 2000 12:17:40 -0700
+<br>>
+<br>>Having had no phone line access since I left, I now hVE ONE at least for a
+<br>>moment. Not too good news, but I guess in the end it will be solid aqnd
+<br>>that's very important. Hope all this won't slowdown the production version.
+<br>>
+<br>>I thinki I'll be back tonight or tomorrow niight.
+<br>>
+<br>>Len
+<br>>----- Original Message -----
+<br>>From: Pip Stuart <piptigger@hotmail.com>
+<br>>To: <leonard3@home.com>
+<br>>Sent: Thursday, June 01, 2000 11:47 AM
+<br>>Subject: Marathon Update...
+<br>>
+<br>>
+<br>> > Hey Len,
+<br>> > I just wanted to give you an update on my progress.  After the
+<br>>preliminary
+<br>> > testing on Tue. and a stronger one yesterday afternoon, it became
+<br>>apparent
+<br>> > that security concerns (in regards to database access) hadn't been
+<br>> > sufficiently addressed.  I thought of ways to circumvent the security
+<br>> > measures originally developed.  I researched and read for almost 2 hours
+<br>> > last night about CGI security methods and special procedures for state
+<br>> > retention.  I originally had the permissions residing within the same
+<br>> > database as the rest of the data (these permissions determine who can
+<br>>access
+<br>> > anything whatsoever from databases to users to actual data records to
+<br>> > files).  Last night I designed two solutions and after much
+<br>>consideration,
+<br>>I
+<br>> > decided on one and began coding it (to be more secure this time around).
+<br>> > That's what I'm working on right now.  Previously, with some creative
+<br>>html
+<br>> > submission, users could override their own permission level and with
+<br>>that
+<br>> > access, simply set their permissions higher which would enable
+<br>>everything
+<br>>to
+<br>> > be compromised.  The new design basically segregates each level
+<br>>according
+<br>>to
+<br>> > how damaging a security breach could be.  This means that basically only
+<br>>the
+<br>> > super user can access the database and user permission tables.  I've
+<br>>also
+<br>> > had to add a new criterion for testing which enables partial creations.
+<br>> > This has taken a lot of time since all the code tests need to reflect
+<br>>this
+<br>> > new field too and it's not behaving properly just yet.  This new
+<br>>structure
+<br>> > should prove much more reliable and secure.  I'm planning to get this
+<br>>all
+<br>> > done by tonight (hopefully bugs fixed too).  I've also done some server
+<br>> > maintenance while you were gone which removed the openmerchant virtual
+<br>>host
+<br>> > and other settings which were involved with the development version of
+<br>>that.
+<br>> >   I've left most of the files on the server (in case we can benefit from
+<br>> > their code or data structures etc.) but I've removed them from the
+<br>>apache
+<br>> > configuration and cleaned up the web server operation methods.  I've
+<br>>also
+<br>> > looked at Dynamic.net this week to see if we could setup
+<br>> > len@800telephone.com (& pip@800 etc.)through them and it seems that all
+<br>>of
+<br>> > their email packages cost money and aren't included with most of the
+<br>>hosting
+<br>> > options.  If you were emailed special instructions on what services are
+<br>> > included with our hosting package or how to specifically setup email
+<br>> > aliases, please forward them to me so I can make more progress on that
+<br>> > front.  I read and fiddled for a while with how to setup the required
+<br>>email
+<br>> > services directly from the 800tele server but I didn't get a chance to
+<br>> > configure them completely because I'm still not quite sure where all the
+<br>> > proper settings files are and even if I could get them working perfectly
+<br>> > right now (probably with forwarding from len@800 to leonard3@home etc.),
+<br>>it
+<br>> > would be useless since mail sent to an @800tele address will be going to
+<br>> > dynamic.net until they alias to our server or we can configure theirs to
+<br>> > forward directly.  Once the mail could get through, I'll work on it more
+<br>> > diligently but I couldn't justify spending more than an hour or two on
+<br>>it
+<br>> > this week since I can't test it yet and it won't work until dynamic is
+<br>>setup
+<br>> > for the addresses anyway.  I've had a lot of other code on my mind too.
+<br>> > I've finally gotten my harddrives working correctly without creating
+<br>>SCSI
+<br>> > bus errors.  I'd be coding on my floor computer while the other one was
+<br>> > formatting the 18GB drive (for almost 2 hours) which had to be done 3
+<br>>times
+<br>> > before it would actually take an Operating System installation.  Now my
+<br>>main
+<br>> > computer is running solidly (with the case cover on and everything) and
+<br>>so
+<br>> > is the floor one.  I've gotten a ton done this week.  I don't have too
+<br>>much
+<br>> > more before this ModifyMySQL module is working with the new design and
+<br>>is
+<br>> > actually safe from cracking (or at least far more secure than the
+<br>>original).
+<br>> >   Of course I'd like to have a testable version of it late this
+<br>>afternoon
+<br>>or
+<br>> > early this evening.  If I get such a version up (that's not
+<br>>frighteningly
+<br>> > buggy), I'll send you another email with a link to it.  Anyway, this is
+<br>>what
+<br>> > I've been doing and what I'm working on now.  I hope your trip was as
+<br>>good
+<br>> > as possible.  Talk to you soon.  TTFN & Shalom.
+<br>> >
+<br>> > -Pip
+<br>> > ________________________________________________________________________
+<br>> > Get Your Private, Free E-mail from MSN Hotmail at http://www.hotmail.com
+<br>> >
+<br>> >
+<br>>
+<br></code>
+<br><p>I removed the OpenMerchant virtual host && settings from the server since
+<br>we weren't going to use them any longer.  I also had a harddrive meltdown
+<br>which was a huge headache.</p>
+<br><hr>
+<br><code>
+<br>>From: "Len Fish" <leonard3@home.com>
+<br>>To: "PIP TIGGER(2)" <piptigger@hotmail.com>
+<br>>Subject: Sorry
+<br>>Date: Thu, 8 Jun 2000 17:47:18 -0700
+<br>>
+<br>>Pip:
+<br>>
+<br>>Sorry. It was foolish of me to think you would raise a finger to help me,
+<br>>after I foolishly rented an office because I thought that would make you
+<br>>happy. I know I will learn by my error.
+<br>>
+<br>>Don't worry about it. Everything happens for the best.
+<br>>
+<br>>You have a check available to you today if you want it.
+<br>>
+<br>>Just call and we can make arrangements.
+<br>>
+<br>>Len
+<br></code>
+<br><p>This was another ridiculous situation.  Early on, Mr. Fish asked if I'd
+<br>like to work in an office if he were to get one.  I said "Yes if it has
+<br>a T1 line."  Weeks later, he shows me his new office && tells me I can
+<br>work there && move the server in from his home.  I told him I would when
+<br>he bought a T1 line for the office.  Until then, the cable modems the
+<br>server && I were connected to were better than the dial-up phone modems
+<br>he intended to utilize until he could weasel a deal for some cheap DSL.
+<br>He got all upset as if I had chose the office && had promised that I
+<br>would work from it && now happily wasted his money by staying at home.
+<br>The truth is that he found && rented the office on his own.  I didn't
+<br>even see it until he had already excitedly moved his own stuff in.  I
+<br>didn't mislead him.  I probably would have worked nights there if he
+<br>would have bought a T1 line but he couldn't justify that expenditure so
+<br>I couldn't justify leaving my bedroom && cable modem.  It was simple to
+<br>me but he wanted to argue about it && got all venomous.  I told him he
+<br>wouldn't pay me like an employee so why does he want to dictate my work
+<br>conditions && treat me poorly as if I were his subordinate.  He didn't
+<br>appreciate that.</p>
+<br><hr>
+<br><code>
+<br>>From: "Len Fish" <leonard3@home.com>
+<br>>To: "Pip Stuart" <piptigger@hotmail.com>
+<br>>Subject: Re: I understand
+<br>>Date: Fri, 9 Jun 2000 09:05:11 -0700
+<br>>
+<br>>Pip
+<br>>
+<br>>I was informed yesterday by a programmer type much of what you said, but I
+<br>>couldn't previously imagine.
+<br>>
+<br>>I.E. the real reason you wanted bandwidth had very little to do with
+<br>>programming ( as I foolishly thought) but all about "surfing the web" while
+<br>>programming, such as your seven channels being open.
+<br>>
+<br>>I guess I will have to update my knowledge continually of this generation.
+<br>>
+<br>>I am serious. You are as you often point out a contractor. We should stick
+<br>>by those rules, and I should forget about invading your space, by trying to
+<br>>do things I think you would like or be helpful. I'm stuck with the space.
+<br>>Shame on me. Hopefully I'll forget about it, because the work you do from
+<br>>your bedroom will be great.
+<br>>
+<br>>Speaking of contracts, you have really abused the terms repeatedly of
+<br>>giving
+<br>>documentation each week as a condition of payment. Please on receipt of
+<br>>this
+<br>>e-mail send an e-mail with ALL our code to me at my e-mail address AND CC:
+<br>>to MTyson@san.it.com.
+<br>>
+<br>>A simple flow chart (for openers) and disk would also be appropriate
+<br>>beginning next week.
+<br>>
+<br>>Someday when we get a high speed connection at my new office (which I
+<br>>really
+<br>>needed badly), I will inform you, and you can do as you wish.
+<br>>
+<br>>Len
+<br>>
+<br>>----- Original Message -----
+<br>>From: Pip Stuart <piptigger@hotmail.com>
+<br>>To: <leonard3@home.com>
+<br>>Sent: Friday, June 09, 2000 5:57 AM
+<br>>Subject: Re: Sorry
+<br>>
+<br>>
+<br>> > You don't need to apologize for renting an office.  You should
+<br>>understand
+<br>> > that you did it because you wanted to.  You may have been slightly
+<br>> > influenced by my affirmation that working from offices can be better
+<br>>than
+<br>> > most other options.  It was not my decision to make.  I did not see the
+<br>> > place or know anything about it while you were deciding and I haven't
+<br>> > hesitated to say repeatedly (even boringly so) that all I really care
+<br>>about
+<br>> > is bandwidth.  Maybe you've never heard me or you don't believe me.  You
+<br>>can
+<br>> > even choose to insult me and say that I would never dream of "helping"
+<br>>you
+<br>> > out in any way.  You can yell at me and tell me that I never solve
+<br>>problems
+<br>> > and that I only tell you that things can't be done.  You need to
+<br>>understand
+<br>> > that YOU got this office.  I did not twist your arm.  I did not spend or
+<br>> > waste your money.  I have never lied to you about what an office means
+<br>>to
+<br>> > me.  I told you I'd be glad to work there IFF (which means if and only
+<br>>if)
+<br>> > there was a fast internet connection.  That was true when I told you and
+<br>>it
+<br>> > remains.  I stream nearly cd quality music at almost all times.  I
+<br>>cannot
+<br>> > during the peak cable modem usage saturation times during most evenings.
+<br>> > The throughput provided by my cable modem is not enough for me.  I
+<br>>prefer
+<br>> > coding while listening to certain mp3 radio stations.  I code with
+<br>>usually
+<br>>7
+<br>> > or 8 simultaneous open connections to servers.  I cannot work from a
+<br>> > telephone-based 56k modem.  Maybe you can call it "needing to make
+<br>> > sacrifices" because it's something that you know you're able to do since
+<br>>you
+<br>> > just need to check some websites and send some email once in a while.  I
+<br>> > understand that I cannot exist like that.  If you wanted to hire me as
+<br>>your
+<br>> > direct employee for 56k+/year, I'd work wherever you want me to.  If you
+<br>> > wanted me to underproduce until we could "afford" sufficient
+<br>>accomodations
+<br>> > or ones that even compete with the service we already have established
+<br>>in
+<br>> > our residences, you would be in a position to make that decision.  Since
+<br>> > that is not going to happen, I have to be productive considering how
+<br>>much
+<br>> > remains to be done.  I have to be well connected all the time to be
+<br>> > productive.  It is simple and clear to me.  You choose to accuse me of
+<br>>being
+<br>> > unwilling to "lift a finger" to help you as if I don't write code as
+<br>> > carefully and thoroughly and diligently as I can control my mind to do.
+<br>>I
+<br>> > want to do a good job and I want to get payed.  If your intent is to
+<br>>insult
+<br>> > me and irritate me, your tactics will only serve to denegrate my morale
+<br>>and
+<br>> > consequently my effectiveness.  You may choose to see red over this
+<br>>issue
+<br>> > (or any other for that matter) but I hope you can see that I have not
+<br>>misled
+<br>> > you.  If anything, I've been generous to reinforce as many times as I
+<br>>have,
+<br>> > how important a T1 line is to me and how inadequate and annoying I find
+<br>> > anything less to be.  Please digest this mail and respond if you would
+<br>>like
+<br>> > to.  I don't want to have a bad relationship with you ... but I also am
+<br>> > unwilling to take abuse when it's undeserved.  You even threaten me
+<br>>subtly
+<br>> > below with cracks about learning by your error and everything happening
+<br>>for
+<br>> > the best.  In your mind, I do you no favors and therefore you won't do
+<br>>any
+<br>> > for me.  What you don't see is that I'm trying to get work done.  I'm
+<br>>not
+<br>> > trying to sit in an office with no access and twiddle my thumbs or play
+<br>> > video games and listen to music all day.  I don't appreciate it when my
+<br>>hard
+<br>> > work, in fact my dedication, is insulted ... and then I'm threatened by
+<br>>some
+<br>> > unwillingness of my employer to be remotely helpful in the future.
+<br>>Maybe
+<br>> > you should reconsider how to best get things done.  If you're convinced
+<br>>that
+<br>> > you're way is always the only right way, you're really the only one you
+<br>>can
+<br>> > rely upon.  You need to draw your own graphics and write your own code
+<br>> > because nobody is going to meet your standards for creativity and
+<br>> > inventiveness and your 7 day work ethic and all the other standards that
+<br>>you
+<br>> > hold yourself to and can accuse the rest of the world of failing in.  I
+<br>> > doubt you even can hear or understand much of what I say because you're
+<br>>so
+<br>> > opinionated and stubborn.  I have been trying to work with you.  You
+<br>>have
+<br>> > been far more hostile towards me on several occassions, than I have ever
+<br>> > been towards you.  I'd like to work with you so that, together, we can
+<br>> > complete this contract.  I would like to provide you with highly
+<br>>functional
+<br>> > and configurable software so that you can be happy (if that's possible
+<br>> > before you've made money), I can pay my rent and afford to repair my
+<br>>Jeep,
+<br>> > and we can both decide what happens from there.  If you would like me to
+<br>> > stick around for any sort of duration beyond my current obligation, I
+<br>> > suggest you swallow your shallow apologies and try to understand where
+<br>>I'm
+<br>> > coming from (as I do for you) so that we can understand each other
+<br>>better
+<br>> > and accomplish something useful and valuable.  Maybe you don't care if I
+<br>> > stick around because you think I have no loyalty or that I don't work
+<br>> > hard... I won't even lift a finger after all (except to type thousands
+<br>>of
+<br>> > stupid characters huh?).  If you really think those things, then you
+<br>>just
+<br>> > don't know me and the reason you don't know me is that you haven't tried
+<br>>to
+<br>> > know me.  If you don't really think those things, then you should not
+<br>>say
+<br>> > them because they are destructive and do not accomplish anything
+<br>>productive
+<br>> > whatsoever.  I don't need tension.  Hopefully we can meet on Sunday at
+<br>>11
+<br>>to
+<br>> > discuss everything nicely.  I would be pleased if I could receive a
+<br>>check
+<br>> > then.  Thank you.  TTFN & Shalom.
+<br>> >
+<br>> > -Pip
+<br>>
+<br></code>
+<br><p>Well there's a poignant response on my part.  Mr. Fish is crazy && dealing
+<br>with him is nearly impossible.  It's pretty amazing that it took him almost
+<br>a month to start treating me badly.  Blatant distrust, insults, arguments,
+<br>etc. were what followed.  Most people get the insults && arguments after a
+<br>couple days (considering his other relationships I've observed).</p>
+<br><hr>
+<br><code>
+<br>>From: "Len Fish" <leonard3@home.com>
+<br>>To: "PIP TIGGER(2)" <piptigger@hotmail.com>
+<br>>Subject: Fw: 800 Telephone
+<br>>Date: Sun, 11 Jun 2000 21:35:00 -0700
+<br>>
+<br>>PIP
+<br>>
+<br>>Most people who are buying a service hate to be ignored.
+<br>>
+<br>>I expect you will take care of this at once. I will check with Matt first
+<br>>thing in ther A.M.
+<br>>
+<br>>Len
+<br>>----- Original Message -----
+<br>>From: Matthew P. Tyson, Esq.
+<br>>To: leonard3@home.com
+<br>>Sent: Sunday, June 11, 2000 3:26 PM
+<br>>Subject: 800 Telephone
+<br>>
+<br>>
+<br>>hi len,
+<br>>
+<br>>i haven't received any e-mails regarding 800 Telephone.  ;-(
+<br>>
+<br>>cheers,
+<br>>matt
+<br>
+<br>>From: "Len Fish" <leonard3@home.com>
+<br>>To: "PIP TIGGER(2)" <piptigger@hotmail.com>
+<br>>Subject: documentation
+<br>>Date: Sun, 11 Jun 2000 21:44:42 -0700
+<br>>
+<br>>PIP
+<br>>
+<br>>Matt's e-mail is MPT@tcventures.com.
+<br>>
+<br>>I am sure you will take care of this as well as defining what is in the
+<br>>files you have named.
+<br>>
+<br>>While I have bent over backwords to be helpful to you, I am sure you
+<br>>realize the time has come for you to reciprocate. You may be behind, but I
+<br>>know of no good reason for not keeping the documentation up to date.
+<br>>
+<br>>I do not wish to continue to pay for what I am not getting. I am sure you
+<br>>can understand that.
+<br>>
+<br>>Len
+<br></code>
+<br><p>The threats to withold payment for even my living expenses begin...</p>
+<br><hr>
+<br><code>
+<br>>From: "Len Fish" <leonard3@home.com>
+<br>>To: "PIP TIGGER(2)" <piptigger@hotmail.com>
+<br>>Subject: non-disclosure
+<br>>Date: Sun, 11 Jun 2000 22:13:56 -0700
+<br>>
+<br>>PIP
+<br>>
+<br>>You mentioned you had told a friend what you had accomplished regarding
+<br>>your work on making Mysql more usable for our employees.
+<br>>
+<br>>That is a violation of Paragraph 8 of your agreement under which you work.
+<br>>
+<br>>I am not interested in getting into a hassle with you, but would probably
+<br>>due so if you failed to observe our agreement re: confidentiality, as if it
+<br>>did not exist. Please in the future observe it, even though as you have
+<br>>pointed out to me "It is hard".
+<br>>
+<br>>As the agreement points out, you are the programmer. As you were always
+<br>>well aware that Perl is not compileable and have recently carefully pointed
+<br>>that out to me, I must assume you as an expert in Perl and CGI knew that
+<br>>all along, and therefore where the word "compileable" is utilized in our
+<br>>agreement, it does not apply to Perl or CGI.
+<br>>
+<br>>Paragraph 5 is also germain with respect to turning over documentation.
+<br>>
+<br>>It might also be helpful for you to re-read Exhibit "C". While I have tried
+<br>>to be lenient, as you were far behind schedule, your continued insistance
+<br>>that you wish to be considered strictly a contractor is a fair request, and
+<br>>both sides should abide by that.
+<br>>
+<br>>By the end of next week, we shall expect Exhibit "C" to have been fully
+<br>>complied with.
+<br>>
+<br>>If you have any problem with any of the above, please let me know at once.
+<br>>
+<br>>Len
+<br></code>
+<br><p>Legal threats too.  If it's not yet obvious, I'm a young programmer.  I'm
+<br>not a lawyer && cannot afford to hire one.  I don't have savings.  I was
+<br>suckered into doing contract work (for the first time) for Fish.  I got
+<br>in way over my head && worked as hard as I could to get out but he made
+<br>it increasingly impossible for me to do so.</p>
+<br><hr>
+<br><code>
+<br>>From: Pip Stuart <piptigger@hotmail.com>
+<br>>To: <leonard3@home.com>
+<br>>Sent: Tuesday, June 13, 2000 12:59 PM
+<br>>Subject: Resending the archive...
+<br>>
+<br>> Relax... I didn't build my own website... I needed to take a break from
+<br>> coding so I started reinstalling Debian last week.  It werked.  I
+<br>haven't
+<br>> been tweaking it or loving it or anything like you must imagine.  I am
+<br>> interested in completing the contract.  You say the facts suggest I'm
+<br>> somehow "not trying" ... well I don't know what facts you're referencing
+<br>but
+<br>> they are not readily apparent to me considering I am the one who's werk
+<br>is
+<br>> in question here and I know that I'm getting as much done as I can.
+<br>I've
+<br>> attached the archive again.  Please let me know if it still doesn't send
+<br>> properly.  Also... could you reply with the best email address for Matt
+<br>> Tyson so I can send a copy to that particular one and not guess at three
+<br>of
+<br>> them.  Thanks.  TTFN.
+<br>>
+<br>> -Pip
+<br>>
+<br>> >From: "Len Fish" <leonard3@home.com>
+<br>> >To: "PIP TIGGER(2)" <piptigger@hotmail.com>
+<br>> >Subject: No attachments
+<br>> >Date: Tue, 13 Jun 2000 07:53:06 -0700
+<br>> >
+<br>> >PIP
+<br>> >
+<br>> >Despite your nit picky answers to e-mails I have sent in the best of nature
+<br>> >to keep you in the future from making a careless error, you have still not
+<br>> >sent the documentation or flow charts which were not included, as there
+<br>> >were no attachments.
+<br>> >
+<br>> >Further , as there are less than 4 weeks to the finish date of July 8, and
+<br>> >your priorities seem to be not totally on our project, which IS far behind,
+<br>> >we will be going by the deliverables as listed in the agreement until such
+<br>> >time as you can catch up . It is you who must worry about your "completing
+<br>> >the contract", not myself.
+<br>> >
+<br>> >One would think you would be more interested in living up to your written
+<br>> >agreements as opposed to building your own website, and numerous other
+<br>> >matters which side track you. I hope they are remunerative, as you are
+<br>> >"biting the proverbial hand that feeds you".
+<br>> >
+<br>> >I hope the documentation attachments will be sent to Matt and myself before
+<br>> >we meet, and that you might direct all your available working time to our
+<br>> >behind schedule problem.
+<br>> >
+<br>> >You like to say "I'm trying", but the facts seem to indicate otherwise.
+<br>> >
+<br>> >Len
+<br></code>
+<br><p>More threats... The "building your own website" he refers to is none
+<br>other than this server http://BinQ.org which hasn't changed since I set
+<br>it up back then.  You can load the homepage && view the source in your
+<br>browser.  It is obviously a trivially simple website with half a page of
+<br>html source.  Anything he found out that I was doing other than working
+<br>incessantly for him (typically something to keep myself sane because I
+<br>was already working on his stuff nearly 80 hours each week) was an
+<br>unacceptable "side track".  He wanted a slave.</p>
+<br><hr>
+<br><code>
+<br>>From: "Len Fish" <leonard3@home.com>
+<br>>To: "Pip Stuart" <piptigger@hotmail.com>
+<br>>Subject: Re: Pip's before leaving stuff...
+<br>>Date: Thu, 15 Jun 2000 08:17:44 -0700
+<br>>
+<br>>PIP
+<br>>
+<br>>I am truly appalled that for an emergency like this, you would not have
+<br>>contacted me at 4:00P.M.
+<br>>
+<br>>Under the circumstances, I feel your trying to put some blame on the
+<br>>hardware is very, very inappropriate. The hardware has performmed perfectly
+<br>>and crashes only when YOU are doing something to change programs. As you
+<br>>recall the file it crashed on last time.
+<br>>
+<br>>I hope you are correct that Anita's time, if she is still an employee is
+<br>>not
+<br>>wasted. That would be the height of irresponsibility.
+<br>>
+<br>>Is there no way you can call me at 1-800-835-3849 from Wisconsin, and make
+<br>>a
+<br>>college-try at getting the server back up?
+<br>>
+<br>>Len
+<br>>----- Original Message -----
+<br>>From: Pip Stuart <piptigger@hotmail.com>
+<br>>To: <leonard3@home.com>
+<br>>Sent: Thursday, June 15, 2000 6:55 AM
+<br>>Subject: Pip's before leaving stuff...
+<br>>
+<br>>
+<br>> > Hello Len.  I wanted to send an update before I head off to the airport.
+<br>> > I've been werking all night and this is what I did:
+<br>> >   I got all subdirectories in PageNames to work correctly (that is with
+<br>>or
+<br>> > without a / before the path)
+<br>> >   I made a very special public clause for protected files that have a
+<br>> > PageName which begins with img/ or /img/ so that they can be placed in a
+<br>> > folder specifically for graphics and referencable from any html document
+<br>>on
+<br>> > the server (including other dynamic ones which is really the whole
+<br>>point).
+<br>> >   I extended the default PageName functionality so that if none is
+<br>>supplied
+<br>> > and a local file is selected for upload (when creating a new protected
+<br>>file
+<br>> > on the server), it extracts the local file name for use as the server's
+<br>> > PageName.
+<br>> >   I also enabled detection of .gif or .jpg as default upload files so
+<br>>that
+<br>> > they automatically get /img/ prepended so that they will automatically
+<br>>be
+<br>> > accessible as graphics for other pages.  To make uploaded graphics
+<br>> > inaccessible, you must supply a PageName when uploading that does not
+<br>>begin
+<br>> > with img/ or /img/.
+<br>> >   I further debugged the transition from ' in the dynamic accesses over
+<br>>to
+<br>>~
+<br>> > (accent to tilde).
+<br>> >   I completed the ability for any user to change their hint or password
+<br>> > online securely (with all the redundancy and correct error messages
+<br>>etc.).
+<br>> >   I fixed a bug with the password timeout which would allow create and
+<br>> > delete functionality to circumvent the idle period limitations.
+<br>> >   I corrected the hostname setting on the server in preparation for the
+<br>> > repointing of the domain.
+<br>> >   I adjusted the date and time which are local to the server so that the
+<br>> > timed lockout test can be accurate.  The server was defaulted to some
+<br>>time
+<br>> > last year and a few hours off before so they should be correct now.
+<br>> >   I wrote portions of user and permission level alteration code so that
+<br>> > database updates (for users, permissions, and end-customer-bound data
+<br>> > tables) can be updated securely.
+<br>> >   I was werking on secure data update/insert and user
+<br>> > security/administration functions when it became apparent that a
+<br>>particular
+<br>> > Perl module would be helpful for database integration
+<br>>(Data::DataTables).
+<br>> > When retrieving this module (which is relatively small and should have
+<br>>been
+<br>> > a quick installation), the installation utility detected that a newer
+<br>> > version of Perl was available and automatically proceeded to download
+<br>>and
+<br>> > install that.  Our original version of Perl was something like 5.0.0.3
+<br>>and
+<br>> > the newest one (which was just released a week or two ago IIRC) is
+<br>>version
+<br>> > 5.6.  This began at around 4:00am and ran for nearly half an hour.  When
+<br>>it
+<br>> > completed, the server stopped responding (and presumably hard-crashed).
+<br>>I
+<br>> > haven't been able to access the development server since (through http,
+<br>> > telnet, or ftp).  I've been trying to write more code locally but I have
+<br>>had
+<br>> > no way to test anything for the past two hours.  I've tried to probe the
+<br>> > server numerous times hoping that it isn't totally locked up but it
+<br>>hasn't
+<br>> > responded.  I must leave for the LAX in less than 1 hour.  I've
+<br>>accomplished
+<br>> > everything I could tonight.  Hopefully we can resolve the server problem
+<br>> > promptly when I return next week.  I wasn't doing anything anomolous
+<br>>tonight
+<br>> > nor the other time the server crashed.  If the filesystem indeed needs
+<br>>to
+<br>>be
+<br>> > rebuilt again, I think it is apparent that the hardware components in
+<br>>the
+<br>> > development server are sub-par and should be replaced with higher
+<br>>quality
+<br>> > equipment.  The most likely culprits of such recurring failures would be
+<br>>(in
+<br>> > order of likelihood) a poorly manufactured hard drive, defective IDE
+<br>>cables,
+<br>> > faulty memory modules (RAM), or a deficient disk controller (EIDE) on
+<br>>the
+<br>> > motherboard.  Hopefully the problem did not result in filesystem
+<br>>corruption
+<br>> > as it did last time so the repair can be quick and painless.  Anita
+<br>>should
+<br>> > be able to construct pages (based on what we discussed earlier this
+<br>>week)
+<br>>to
+<br>> > display content for preliminary html documents like the touchtone and
+<br>> > product category pages.  Those can be developed locally on her
+<br>>workstation
+<br>> > until we can re-establish access to the development server.  I really am
+<br>> > amazed that this happened just before I'm leaving and have been hoping
+<br>>that
+<br>> > the server would come back up but it doesn't look like that's happening.
+<br>> > I'll probably be in touch on Tuesday as soon as I can wake up.  Have a
+<br>>good
+<br>> > weekend if possible.  TTFN & Shalom.
+<br>> >
+<br>> > -PipTigger
+<br>> >
+<br>> > p.s. Please forward this to Anita or fill her in as to the changes that
+<br>>have
+<br>> > been made in the system so that the briefing next week can be brief.  I
+<br>>was
+<br>> > going to cc this mail to her but I realized that it might contain some
+<br>> > things that you wouldn't want her to see so I figured you can determine
+<br>> > that.  If you would like, next week I'll distill this email down to just
+<br>>the
+<br>> > details of the system changes as they pertain to her and making pages in
+<br>> > general.  Let me know.  Thanks.
+<br>> > ________________________________________________________________________
+<br>> > Get Your Private, Free E-mail from MSN Hotmail at http://www.hotmail.com
+<br>> >
+<br>>
+<br></code>
+<br><p>... and so on.  I kept busting my hump.  He kept getting more && more
+<br>abusive.  Clearly I continued to implement things that OM was supposed to
+<br>do.  We argued more && more.</p>
+<br><hr>
+<br><code>
+<br>>From: "Len Fish" <leonard3@home.com>
+<br>>To: "Pip Stuart" <piptigger@hotmail.com>
+<br>>Subject: Re: Pip's before leaving stuff...
+<br>>Date: Thu, 15 Jun 2000 08:29:05 -0700
+<br>>
+<br>>Pip:
+<br>>
+<br>>"You hoped the server would come back by itself"  ?
+<br>>
+<br>>Come-come.
+<br>>
+<br>>When I went to college in Philadelphia there was a bank whose slogan was:
+<br>>
+<br>>'Wishing won't do it, Saving will'. In your case something more positive
+<br>>like calling me and rebuilding the system, would ahve been better than
+<br>>"WISHING". Particularly as you were leaving for four or five days, and we
+<br>>are without a system.
+<br>>
+<br>>You correctly assumed it would have been a bad idea to communicate your
+<br>>message directly to Anita. Particularly in view of your Anita like attempt
+<br>>to place the blame for the problem (when there was a short and apparently
+<br>>non-compatible new version of Perl) involved on the machine, which you have
+<br>>determined unilaterly musty be inferior because it is not IBM, DELL or
+<br>>Compaq. Please give it a risk. It is pilot error, and that's a better way
+<br>>to
+<br>>attack it than blaming the hardware. I rteally am surprised at you. It is a
+<br>>possibility, but under the circumstances, way down on the probability list.
+<br>>Computers crash when you are developing new code. Actually we have been
+<br>>pretty lucky.
+<br>>
+<br>>I wonder why the disk and ram don't get up and crash when you are
+<br>>excercising them with old proven code???? Pretty smart hardware, don't you
+<br>>think?
+<br>>
+<br>>Good luck on your trip.
+<br>>
+<br>>Len
+<br>>
+<br></code>
+<br><p>Fish is an asshole!  I was leaving to be with my brother as he underwent
+<br>radiation treatment for Hodgkins Lymphoma in Wisconsin.  Fish knew this
+<br>&& still expected me to be primarily concerned with 800Telephone.  This
+<br>is about the time when I began to hate this worthless excuse for a man
+<br>who calls himself Fish && who treats everyone he encounters poorly
+<br>because his own intelligence has been falsely self inflated for the
+<br>greater part of a century.  Time && a bit of maturity have enabled me to
+<br>harbor less resentment over the whole ordeal... but reliving the old
+<br>feelings chronicled in all this email rekindles my anger towards this
+<br>wicked man.  I'm tired of thinking about his stupidity.  I'm frustrated
+<br>that he was able to treat me so poorly && waste months of my life &&
+<br>keep me in this arbitration for almost a year now.  He would be
+<br>absolutely nothing in this world if he didn't have money because he
+<br>obviously has never learned how to deal with people nicely.  He's so
+<br>afraid of being a worthless bitter old man that he is always trying to
+<br>prove his compentence && usefulness in things that he knows very little
+<br>about.  Fish is just a big old jirk who got lucky with Silly String.
+<br>Maybe he'll sue me for using his brand without permission now.  Maybe his
+<br>ideas are so old && decrepit that they've already passed into the public
+<br>domain.  Oh... woe is Fish when his best ideas are older than all of
+<br>today's "young generation".</p>
+<br><hr>
+<br><code>
+<br>>From: "Len Fish" <leonard3@home.com>
+<br>>To: "Pip Stuart" <piptigger@hotmail.com>
+<br>>Subject: Re: Overwhelming code changes
+<br>>Date: Thu, 6 Jul 2000 23:57:43 -0700
+<br>>
+<br>>Pip
+<br>>
+<br>>I am sorry to say it, but it is not as if we will have much done by Tuesday
+<br>>if you don't do it, Based on my read of what you acccomplish lately, I'd
+<br>>like to compare it to what you think you will accomplish if you don't do
+<br>>it.
+<br>>Today was another of those something has come up or I am not feeling
+<br>>productive days, I guess.
+<br>>
+<br>>It sure shoots the day when you don't get up till after 2P.M. The take on
+<br>>special tasks till at least after 6PM.
+<br>>
+<br>>I think it would be very instructive if you would send me the code segment
+<br>>involved , and then show me in person for a few minutes the overwhelming
+<br>>amount of work with an underliner you speak about. Let's see. You get up at
+<br>>2PM and quit at 4PM on Friday.  I guess we won't get anything too massive
+<br>>done tomorrow.
+<br>>
+<br>>In the meantime, perhaps you can tell me about the overwhelming amount of
+<br>>code you have written for the statistics package or vendor program. It
+<br>>might
+<br>>of course also be helpful if you are unsure of a human interface, to pass
+<br>>it
+<br>>by me before getting too deep into the code, so we can agree before hand.
+<br>>This would avoid the situation at hand in the future.
+<br>>
+<br>>You mention you are working 50 hours a week as a yardstick. As you know the
+<br>>hours you work or don't work are not the basis of our agreement. You can be
+<br>>paid by working 1 hour if you get the code done.
+<br>>
+<br>>Len
+<br>>
+<br>>
+<br>>----- Original Message -----
+<br>>From: Pip Stuart <piptigger@hotmail.com>
+<br>>To: <leonard3@home.com>
+<br>>Sent: Thursday, July 06, 2000 3:50 PM
+<br>>Subject: Re: update
+<br>>
+<br>>
+<br>> > My analysis was based upon how much code would need to be thrown out and
+<br>> > entirely rewritten and how much other code would be able to be modified
+<br>>in
+<br>> > place.  The total of the two is overwhelmingly large.  It can be done.
+<br>>It's
+<br>> > a lot of work.  I hope it wouldn't take until next Tuesday to get it
+<br>>right
+<br>> > but it could.  Do you want me to do it?
+<br>> >
+<br>> > -Pip
+<br>> >
+<br>> > p.s. I've downloaded all of Anita's test directory from Dynamic.net.
+<br>> >
+<br>> >
+<br>> > ________________________________________________________________________
+<br>> > Get Your Private, Free E-mail from MSN Hotmail at http://www.hotmail.com
+<br>> >
+<br>> >
+<br>>
+<br></code>
+<br><p>I needed interfaces to continue but he couldn't hang on to any html
+<br>designer since he treated them all too poorly or contested their pay
+<br>or both.  He had to basically audit all of my work && then make up
+<br>new things to distract me from the fact that I needed interfaces to
+<br>make progress.  What he came up with was a massive rewrite of basically
+<br>the entire html-embedding structure so that it could be understood by
+<br>a "normal" person rather than a typical html coder.  This new focus was
+<br>unwarranted && I refused because my system already worked very well &&
+<br>even the original agreement made no mention of making the technical
+<br>underlying details of the system "simple".  Only the interface had to be
+<br>easy which would have been a trivial exercise if he could have hung onto
+<br>any competent html developer.</p>
+<br><hr>
+<br><code>
+<br>>From: "Len Fish" <leonard3@home.com>
+<br>>To: "Pip Stuart" <piptigger@hotmail.com>
+<br>>Subject: Re: Non-video games playing
+<br>>Date: Fri, 7 Jul 2000 23:51:16 -0700
+<br>>
+<br>>PIP
+<br>>
+<br>>I like you. I want to help you, but you are in my opinion making it
+<br>>difficult to do so. Today was just another typical day in another typical
+<br>>week. We got very little accomplished since last Sunday. A lot of
+<br>>pointless
+<br>>arguing, a lot of excuses for not getting things done, but not much
+<br>>cooperation and coding.
+<br>>
+<br>>I had up until now attributed your attitude to honorable motives. I am now
+<br>>reconsidering even that last vestige of hope in your willingness to fulfill
+<br>>your commitments to me without a huge ration of mental gymnastics. I am not
+<br>>up to playing your mental video games. My commitment to you was based on
+<br>>your honest efforts,
+<br>>
+<br>>Today you didn't bother calling till 3:20 P.M. I had given up on hearing
+<br>>from you so left my cellular in the house while I worked in the garage. 40
+<br>>minutes later I noticed a message. By the way you never called again, as I
+<br>>have caller ID on  my cellular. I called  at 4:00PM and got an answering
+<br>>machine that said Hello----Hello, I left a message. At 4:20 I called again-
+<br>>still the same message and no answer. At 4:45 still the same message and no
+<br>>answer.
+<br>>
+<br>>Out of defference to your religious beliefs (which in my opinion do not
+<br>>square with your actions), I didn't call again. :Pious is as Pious does. So
+<br>>at 6:20PM you sent me another excuse message via e-mail why you have
+<br>>accomplished little if anything, along with a request to be able to
+<br>>reanalyse our agreement and send you $500.00. Apparently from your request,
+<br>>it's too much for you at this late stage to know what you agreed to do from
+<br>>the written agreements in your possession.
+<br>>
+<br>>I see no justification to pay you another $500.00 while you are playing
+<br>>mind
+<br>>games and delivering nothing. If you care to update the web page code by
+<br>>throwing away (deleting code, and making a few adjustments as I have
+<br>>suggested,)  I will do my part and advance you another $500.00. I will also
+<br>>pay next months rent at the end of July, as I have previously told you I
+<br>>would not hang you out to dry.
+<br>>
+<br>>But, Pip, if you intend to continue with your arguing, excuses for not
+<br>>getting code and documentation done, and in general acting like I am the
+<br>>Social Security system, do not count on me after that.
+<br>>
+<br>>It's quite elementary and simple. You have trashed our agreement. Cost me a
+<br>>great deal of money by so doing, and I can no longer support your selfish
+<br>>ways. I'd rather play solitaire in my empty office until I find a solid
+<br>>citizen to work with.
+<br>>
+<br>>When you can set working hours for yourself , you being your own boss, and
+<br>>give priorities to work over play, as evidence by working code, you can
+<br>>expect checks from me. In the absence thereof, putting up a web page, and
+<br>>making some small improvements to your code, or spending an hour
+<br>>begrudgingly to install a disk drive to save you time from a potential
+<br>>crash, or rapidly downloading a new version of SQl are not a weeks
+<br>>contribution. As was true with a lady I tried to help, there comes a time
+<br>>when , having lived up to MY agreements, I must wait for the other party to
+<br>>catch up.
+<br>>
+<br>>In short you have played me for Joe Stupid as long as I care to be played.
+<br>>It's simple. No code per the agreement, no money. Capitalism has made this
+<br>>country great. If one cares to work, they can achieve wonders. Look around
+<br>>you. If one chooses to achieve the good lifestyle, they can become a
+<br>>Newport
+<br>>Beach guru. They can also choose to be a beach bum. I would not be of help
+<br>>to you if I further encouraged the latter lifestyle.
+<br>>
+<br>>You have in me a person who has the capability and had the desire to set
+<br>>you
+<br>>up financially, so you could throw away your career, if you so chose, on
+<br>>your own. You have cut that process off in its prime.  Maybe that was the
+<br>>right decision for you.
+<br>>
+<br>>If you re-read the above, it boils down to if you care to deliver the goods
+<br>>you will be paid, (with the exception of your August rent.) If you don't,
+<br>>you will have to find another source of income (but without infringing our
+<br>>agreement re: confidentiality or liability for non-completion).
+<br>>
+<br>>BTW-You have chosen e-mail as a way to avoid me knowing when you are
+<br>>working
+<br>>and at home, and when you are not. It is not fooling anyone, The proof is
+<br>>always in what you are accomplishing, and that for a period of 10 weeks is
+<br>>not commensurate with your coding abilities and the time elapsed.
+<br>>
+<br>>I'd be happy to meet with you Saturday night or later Sunday afternoon. I
+<br>>have previous engagements earlier on Sunday. That way you can have another
+<br>>excuse to kill the better part of Sunday.
+<br>>
+<br>>Len
+<br>>
+<br>>----- Original Message -----
+<br>>From: Pip Stuart <piptigger@hotmail.com>
+<br>>To: <leonard3@home.com>
+<br>>Sent: Friday, July 07, 2000 6:23 PM
+<br>>Subject: Re: contact
+<br>>
+<br>>
+<br>> > Hey Len.
+<br>> >   I've called a couple of times since 3pm and just got your answering
+<br>> > machine so I figured I'd just reply to your email.  The DNS server that
+<br>> > services my subdomain was busted a good part of last night and this
+<br>>morning
+<br>> > so I couldn't test any code changes until now (it actually broke again
+<br>>while
+<br>> > I was composing this mail so I can't send it yet).  I read portions of
+<br>>the
+<br>> > contract exhibits again and I realized that I really need a digital copy
+<br>>of
+<br>> > them so that I can search for certain things that I've read but can't
+<br>>quite
+<br>> > remember where to locate.  Could you please save them as text or html
+<br>>and
+<br>> > attach them in an email to me so that I can search them from my
+<br>>computer?
+<br>> > Thanks.
+<br>> >   If you're available, let's meet on Sunday or Monday afternoon to
+<br>>determine
+<br>> > my priorities for next week.  I'll be addressing whatever issues I can
+<br>>and
+<br>> > fleshing my design for the statistics and vendor components in the mean
+<br>> > time.  Also, I'm nearly broke and my car insurance payment is due.  Can
+<br>>I
+<br>> > get payed another $500 at our next meeting?  Thank you.  Have a good
+<br>> > weekend.
+<br>> >
+<br>> > -Pip
+<br>> >
+<br>> > >From: "Len Fish" <leonard3@home.com>
+<br>> > >To: "PIP TIGGER(2)" <piptigger@hotmail.com>
+<br>> > >Subject: contact
+<br>> > >Date: Fri, 7 Jul 2000 10:21:26 -0700
+<br>> > >
+<br>> > >Pip
+<br>> > >
+<br>> > >I'll be around today and not checking my e-mail. Therefore if you would
+<br>> > >like an answer to anything please dial 949-644-7876. It will be
+<br>>forwarded
+<br>> > >to my cellular.
+<br>> > >
+<br>> > >If you send an e-mail, I shall assume you did not need an answer until
+<br>> > >Saturday night or Sunday. I'll try to be especially alert between 2 and
+<br>>4
+<br>> > >when you may be on the job..
+<br>> > >
+<br>> > >Len
+<br>> >
+<br>> > ________________________________________________________________________
+<br>> > Get Your Private, Free E-mail from MSN Hotmail at http://www.hotmail.com
+<br>> >
+<br>>
+<br></code>
+<br><p>Basically Fish saying "Rewrite the working code exactly as I want it or
+<br>else you won't be able to afford rent!"</p>
+<br><hr>
+<br><code>
+<br>>From: "Len Fish" <leonard3@home.com>
+<br>>To: "PIP TIGGER(2)" <piptigger@hotmail.com>
+<br>>Subject: A clean solution to the HTML coder problem
+<br>>Date: Sat, 8 Jul 2000 07:48:43 -0700
+<br>>
+<br>>PIP:
+<br>>
+<br>>Please do not figure out all the reasons you won't or can't or how huge a
+<br>>job it is to implement the rather simple , clean, LOGICAL, solution I
+<br>>suggest to clean up the coder interface for the average HTML programmer.
+<br>>
+<br>>It leaves your existing code TOTALLY in tact, and uses your favorite table
+<br>>method which is HTML compatible.
+<br>>
+<br>>It would be refreshing, although probably asking far too much, for you to
+<br>>view this suggestion which hit me this AM at 5:00, with a positive
+<br>>attitude, as opposed to it wasn't invented here. It's sent in Word for
+<br>>windows , an earlier version. If you have Word, it should work. Notice
+<br>>among other things, no curley cues, braces or periods.
+<br>>
+<br>>Len
+<br></code>
+<br><p>He wanted me to fundamentally alter the entire syntax && parsing rules
+<br>which were the assumptions all of my modules were built upon.  I didn't
+<br>isolate them in a header file because I never imagined I would be second
+<br>guessed or that my decisions would need to be overridden.  There wasn't
+<br>any good reason for the rewrite.  I designed && implemented the necessary
+<br>functionality.  I was unwilling to rewrite it for an arbitrary &&
+<br>unrealistic reason.</p>
+<br><hr>
+<br><code>
+<br>>From: "Len Fish" <leonard3@home.com>
+<br>>To: "Pip Stuart" <piptigger@hotmail.com>
+<br>>Subject: Re: Reply
+<br>>Date: Sun, 9 Jul 2000 18:01:25 -0700
+<br>>
+<br>>Pip
+<br>>
+<br>>I'm too busy to take care of your extraneous desires. I have gone far more
+<br>>than the extra mile for you, and have been abused for my efforts. Life is a
+<br>>two way street. People do get tired of their continual efforts to be
+<br>>helpful
+<br>>responded to by more neglect. You can run your consulting business as you
+<br>>please, and we can react as we appropriately please.
+<br>>
+<br>>If you have any specific questions about your responsibilities under the
+<br>>contract, and can't take any of your valuable time away from your important
+<br>>pool playing and games playing, I'll try to find the time to answer your
+<br>>questions, as I have certainly read it carefully, as did you being an
+<br>>adult,
+<br>>a business man running his own consulting service, and capable of demanding
+<br>>a certain price for his work. Try asking a specific question. Otherwise I
+<br>>cannot help you.
+<br>>
+<br>>While I hate to bring it up, we are now facing serious monetary damages
+<br>>because of your failure to deliver. They get more signifiicant each day.
+<br>>It
+<br>>will be difficult for me to ask my associates to turn the other cheek. If
+<br>>it's a lawsuit you are looking for, I suggest you will be quite succesful
+<br>>in
+<br>>that desire, based on your actions. I hope at your early career stage you
+<br>>will not make that mistake, and perhaps blemish your public record history.
+<br>>
+<br>>Please don't count on any extra busy work by me while you are in and have
+<br>>been for weeks in serious default of our agreement.
+<br>>
+<br>>You as a consultant have also failed to repond to at least two other
+<br>>e-mails
+<br>>I sent you over the wekend, as well as ignored invitations to meet Saturday
+<br>>Eve. or Sunday afternoon.
+<br>>
+<br>>Len
+<br>
+<br>>From: "Len Fish" <leonard3@home.com>
+<br>>To: "PIP TIGGER(2)" <piptigger@hotmail.com>
+<br>>Subject: contract completion
+<br>>Date: Sun, 9 Jul 2000 20:22:17 -0700
+<br>>
+<br>>Please let me know if you are not planning on finishing the contract, so I
+<br>>can quit wasting time and turn it over to our attorney tomorrow.
+<br></code>
+<br><p>... more legal threats && pretending to have been helpful to me all
+<br>along...</p>
+<br><hr>
+<br><code>
+<br>>From: Pip Stuart [mailto:piptigger@hotmail.com]
+<br>>Sent: Thursday, July 13, 2000 6:53 PM
+<br>>To: mpt@tcventures.com
+<br>>Cc: leonard3@home.com
+<br>>Subject: Re: Let's say good bye ...
+<br>>
+<br>>
+<br>>I am e-mailing you and Len an assurance at once that I will not
+<br>>tamper, copy for personal use, or delete any data on the server, before Len
+<br>>reconnects it. The first thing when Len connects it, from his office, he
+<br>>would
+<br>>like me to send to you the current version in the machine as of that point
+<br>>in time.
+<br>>
+<br>>I'm not sure that the current version of the machine is but I'll look for
+<br>>one and if I find it, I'll be sure to send it to you.
+<br>>
+<br>>-Pip
+<br>>
+<br>> >From: "Len Fish" <leonard3@home.com>
+<br>> >To: "Pip Stuart" <piptigger@hotmail.com>
+<br>> >CC: "Matthew P. Tyson, Esq." <mpt@tcventures.com>
+<br>> >Subject: Re: Let's say good bye to arrogance and games playing.
+<br>> >Date: Wed, 12 Jul 2000 14:40:23 -0700
+<br>> >
+<br>> >Pip
+<br>> >
+<br>> >I appreciate your reasonable reply. Working together to accomplish a goal
+<br>> >makes more sense than confrontation. My desire is to pay you, but also
+<br>>for
+<br>> >you to work at least as diligently as if you had a job. Even now you are
+<br>> >suggesting mock-up pages which is fine, but no mention of the harder
+<br>>stuff
+<br>> >such as statistics pages (in the agreement) and  I believe you had
+<br>> >scheduled, or the vendor pages (in the agreement) you had scheduled.
+<br>> >
+<br>> >If you can bring yourself to look at my needs, as I have always been
+<br>> >willing
+<br>> >to look at yours, I will be happy to advance the money for your insurance
+<br>> >etc. You have a golden goose here in me.  not a silly goose.Why you think
+<br>> >there are greener pastures out there for a midnight programmer, I am not
+<br>> >sure.
+<br>> >
+<br>> >You in turn could consider doing either the statistics page, vendor, or
+<br>>the
+<br>> >new interface which Matt thinks should be no more than a day of diligent
+<br>> >work.
+<br>> >
+<br>> >It will probably come as a shock to you, but my thinking has always been
+<br>> >how
+<br>> >to get you more , not less. It's been my difficulty in getting
+<br>>appropriate
+<br>> >reciprocity, that has forced me to protect myself.
+<br>> >
+<br>> >Try doing more than you think you are suppossed to, and watch what
+<br>>happens
+<br>> >if you ask for something.
+<br>> >
+<br>> >I would like you to e-mail Matt and I an assurance at once that you will
+<br>> >not
+<br>> >tamper, copy for personal use, or delete any data on the server, before I
+<br>> >reconnect it. The first thing when I connect it, from my office, I would
+<br>> >like you to send to Matt the current version in the machine as of that
+<br>> >point
+<br>> >in time.
+<br>> >
+<br>> >If all the above sounds reasonable to you, I will have a check for you
+<br>>when
+<br>> >you visit my office.
+<br>> >
+<br>> >Matt's best e-mail address is matt@tcventures.com.
+<br>> >
+<br>> >Len
+<br>> >----- Original Message -----
+<br>> >From: Pip Stuart <piptigger@hotmail.com>
+<br>> >To: <leonard3@home.com>
+<br>> >Cc: <matt@beyondata.com>
+<br>> >Sent: Wednesday, July 12, 2000 11:54 AM
+<br>> >Subject: Re: First we have to address the existing facts
+<br>> >
+<br>> >
+<br>> > >   I'm not going to address your purported "existing facts" right now.
+<br>>I
+<br>> > > just wanted to inform you that I have to head to the valley until
+<br>> >tomorrow.
+<br>> > > When I return, I intend to werk on mockups with more realistic page
+<br>> > > scenarios (and more intuitive field names) than could be found in the
+<br>> > > rudimentary test pages I've put out already.  I'll also update the
+<br>> > > README.txt to reflect the newer examples.  Please turn the server back
+<br>> >on
+<br>> >if
+<br>> > > you'd like me to develop there.
+<br>> > >   I don't know what your schedules are like but I was wondering if we
+<br>> >could
+<br>> > > all meet any afternoon or evening next week to discuss several things.
+<br>> > > Namely:
+<br>> > >   -What's in place now
+<br>> > >   -How it werks
+<br>> > >   -What remains to be done (as specified exactly by the contract)
+<br>> > >   -What remains to be done (outside of the contract)
+<br>> > >   -The reality that I need to be able to afford to pay my car
+<br>>insurance
+<br>> >and
+<br>> > > buy groceries and not subsist merely on checks that cover nothing
+<br>>beyond
+<br>> >my
+<br>> > > rent the day that it's due
+<br>> > >
+<br>> > >   You two may have other items on the agenda as well.  Hopefully we
+<br>>can
+<br>> >all
+<br>> > > discuss them calmly and come to some kind of amicable resolve as to
+<br>>the
+<br>> > > future of this project (and our relationship).
+<br>> > >   Please respond at your next convenience with an acceptable meeting
+<br>> >time.
+<br>> > > Thank you.
+<br>> > >
+<br>> > > -Pip
+<br>> > >
+<br>> > > >From: "Len Fish" <leonard3@home.com>
+<br>> > > >To: "PIP TIGGER(2)" <piptigger@hotmail.com>
+<br>> > > >CC: "Matthew P. Tyson, Esq." <mpt@tcventures.com>
+<br>> > > >Subject: First we have to address the existing facts
+<br>> > > >Date: Wed, 12 Jul 2000 01:10:20 -0700
+<br>> > > >
+<br>> > > >Pip
+<br>> > > >
+<br>> > > >I understand you and Matt had a candid conversation.
+<br>> > > >
+<br>> > > >I certainly learned some new and interesting facts according to you.
+<br>> > > >
+<br>> > > >1) I pepper you with e-mails causing you not to concentrate. The fact
+<br>> >is
+<br>> >I
+<br>> > > >have spent 10's of hours combing the web trying to find ways to
+<br>> >simplify
+<br>> > > >your job, on subjects like e-mail, statistics, accounting, and
+<br>> >transaction
+<br>> > > >layers. The total may have used up 10hrs of your time over 10 weeks
+<br>>but
+<br>> > > >potentially and actually if the tranaction layer works, will save far
+<br>> >more.
+<br>> > > >Most upsetting is that you have not only not complained, you have
+<br>> >thanked
+<br>> > > >me.
+<br>> > > >I would be happy to let you solve your problems on your own, but that
+<br>> > > >doesn't seem to happen.
+<br>> > > >
+<br>> > > >2) I micro manage. If watching and then reacting to how little time
+<br>>you
+<br>> >are
+<br>> > > >spending on a project you are way behind on is micro managing, I
+<br>>cannot
+<br>> > > >disagree.
+<br>> > > >
+<br>> > > >3) I am asking for things not in the agreement. If you are referring
+<br>>to
+<br>> >the
+<br>> > > >latest interface matter, paragraph 10 gives me the clear right to
+<br>>have
+<br>> >the
+<br>> > > >final say on customer and user interface matters. Please read it.
+<br>> > > >Furthermore, this is about the only time I have disagreed with your
+<br>> > > >handling of anything in a major way.
+<br>> > > >
+<br>> > > >4) We do have an underlying problem. You probably did not analyse the
+<br>> >Open
+<br>> > > >Sales software sufficiently in the beginning. It was your decision,
+<br>> >(and
+<br>> >I
+<br>> > > >told you I would agree to anything you chose to do,) that it would be
+<br>> > > >faster to do without Open Sales. I think you made the right decision.
+<br>> > > >However that decision requires you to do things like permissions, and
+<br>> > > >statistics you might not have had to do in Open Sales. You have
+<br>> >selected
+<br>> > > >the infrastructure you have to do, and I have not disagreed ever with
+<br>> >your
+<br>> > > >choices.
+<br>> > > >
+<br>> > > >I believe the fact it has taken longer is either your ability (while
+<br>> >very
+<br>> > > >good)  I and you perhaps overestimated, coupled with haphazzard work
+<br>> > > >habits.
+<br>> > > >
+<br>> > > >I would be happy to see you come to work at the same time each day in
+<br>> >an
+<br>> > > >office, and do a days work. As a consultant you work or don't work
+<br>>when
+<br>> >you
+<br>> > > >choose. But, you are suppossed to be tracking an agreement schedule.
+<br>> >Have
+<br>> > > >you lost the agreement? I don't think it is a good environment for
+<br>>you,
+<br>> >but
+<br>> > > >I also have great trouble seeing you in a job.
+<br>> > > >
+<br>> > > >I really don't know what the answer is, but I think we need a third
+<br>> >party,
+<br>> > > >Matt or someone else you trust, to help us work through it. I am
+<br>> >willing
+<br>> >to
+<br>> > > >try.
+<br>> > > >
+<br>> > > >Len
+<br>> > >
+<br>> > >
+<br>>________________________________________________________________________
+<br>> > > Get Your Private, Free E-mail from MSN Hotmail at
+<br>>http://www.hotmail.com
+<br>> > >
+<br>> >
+<br>>
+<br>>________________________________________________________________________
+<br>>Get Your Private, Free E-mail from MSN Hotmail at http://www.hotmail.com
+<br>>
+<br></code>
+<br><p>... the beginning of the end...</p>
+<br><hr>
+<br><code>
+<br>>From: "Len Fish" <leonard3@home.com>
+<br>>To: "PIP TIGGER(2)" <piptigger@hotmail.com>
+<br>>Subject: running out of memory
+<br>>Date: Thu, 20 Jul 2000 15:07:13 -0700
+<br>>
+<br>>_PIP
+<br>>
+<br>>Perhaps you have run out of memory.
+<br>>
+<br>>After it runs of memory, it has the presence of mind to return to the
+<br>>previous page. It does not blow up. Some smart ram.
+<br>>
+<br>>Perhaps you would like to see it for yourself, as you are convinced I am
+<br>>such an idiot.
+<br>>
+<br>>Len
+<br>> >
+<br>> > July 20 Pip->Len
+<br>> >
+<br>> > Look... you need to relax.  You get all uptight about every little thing.  I
+<br>> > addressed that email to Nataly because it was for her.  I copied it to you
+<br>> > as a courtesy to you which was obviously foolish of me.  It was not an
+<br>> > update for you to scrutinize or infer things from but apparently it's
+<br>> > inevitable that you are always as pessimistic and paranoid as is humanly
+<br>> > possible.  You accuse me of all sorts of sluggishness everytime I go to
+<br>> > sleep.  I can't use your spreadsheet because I don't have Excel or whatever
+<br>> > you use so you can record this stuff if you want to...  I werked about 10
+<br>> > hours on Tuesday evening/night/Wednesday morning on all the issues I was
+<br>> > addressing then (mostly lerning JavaScript and hacking the auto-html
+<br>> > generation problem).  Last night and this morning, I worked about 8 hours on
+<br>> > the following:
+<br>> > * I made the specified changes to the CodeTabl name and embedded
+<br>> > information,
+<br>> > * I reworked the calculate / generate script and added each field name,
+<br>> > * I constructed an insertion sample as an option,
+<br>> > * I described the scenario and gave an explanation of the cautions in page
+<br>> > insertion of the generated code,
+<br>> > * I configured the server to accept Nataly's pages (as you already know) and
+<br>> > then explained it for her as clearly as I could,
+<br>> > * I added more descriptive error messages to the demo code,
+<br>> > * I linked the CodeTabl from any edit page (into a new window),
+<br>> > * I centered the buttons in the tables,
+<br>> > * I added headings to all the administrative tables and made the text
+<br>> > changes you requested,
+<br>> > * I fixed the caching problem (which took a very long time to do) by
+<br>> > constructing a creative unique but identifiable method for framing each
+<br>> > example on the reads (this succeeded after many other imagined and
+<br>> > implemented solutions failed and had to be discarded),
+<br>> > * I fixed the &&'s and made the permission failure more descriptive,
+<br>> > * I changed all the intro text according to your suggestions,
+<br>> > * and I've been werking on the statistics but it's not done yet.  I was
+<br>> > werking on it when I fell asleep at 8 this morning.  I was planning on
+<br>> > werking on it when I woke up but apparently it's more important for me to
+<br>> > defend myself and my efforts to you because you are so very insecure and
+<br>> > threatened by everything.  Can you micromanage now?  Have I reassured you
+<br>> > that I have been werking?  You can't let me out of your sight for 12 hours
+<br>> > before your mind races with all the terrible things I might be doing instead
+<br>> > of werking.
+<br>> >   After getting all worked up like this, I can't concentrate on code.  I'll
+<br>> > try to finish the statistics later.  I tried to finish them yesterday but I
+<br>> > had quite a few issues (above) that required immediate attention to get them
+<br>> > out of the way.  I need to relax for a while.  Please reply if you'll have a
+<br>> > check for me today.  TTFN.
+<br>> >
+<br>> > -Pip
+<br>> >
+<br>> > p.s. I don't know why you couldn't read or edit any pages.  Maybe your
+<br>> > computer ran out of memory like last time.  It's been werking fine for me.
+<br></code>
+<br><p>I had to keep working until I could start my new job so that I wouldn't
+<br>have to struggle to pay bills anymore.</p>
+<br><hr>
+<br><code>
+<br>>From: "Len Fish" <leonard3@home.com>
+<br>>To: "Pip Stuart" <piptigger@hotmail.com>
+<br>>Subject: Re: Statistics sheet.
+<br>>Date: Wed, 26 Jul 2000 11:36:41 -0700
+<br>>
+<br>>Pip
+<br>>
+<br>>I do realize that only you have brains. Fortunately I do have experience.
+<br>>It
+<br>>is statistically significant, no matter what you think, when lights flash
+<br>>for data transfer both on the router and server for 10 minutes straight.
+<br>>(no
+<br>>pause for air)
+<br>>
+<br>>Particularly when in months they have not done so before. It is also
+<br>>significant when you don't return beeper pages, so I HAVE TO unplug the
+<br>>server, so then you can complain about that.
+<br>>
+<br>>I have two unanswered questions from my last e-mail.
+<br>>
+<br>>1) Are yoy planning to contact Nataly?
+<br>>2) Are you planning to scour whatever log -in information you can find to
+<br>>ascertain who is accessing the server?
+<br>>
+<br>>I am sure you do not intend, so I am not putting down several hours for
+<br>>configuring your computer, as that is a necessity caused by the
+<br>>consequences
+<br>>of your actions, certainly not contemplated within our agreement. When you
+<br>>get it up and running, please advise me.
+<br>>
+<br>>I will call after 3:P.M. or call me.
+<br>>
+<br>>If I am to leave the computer plugged in, other than when you tell me YOU
+<br>>are using it, we will  have to get to the bottom of this "unknown" usage.
+<br>>
+<br>>Len
+<br>>
+<br>>
+<br>>----- Original Message -----
+<br>>From: Pip Stuart <piptigger@hotmail.com>
+<br>>To: <leonard3@home.com>
+<br>>Sent: Wednesday, July 26, 2000 3:14 AM
+<br>>Subject: Re: Statistics sheet.
+<br>>
+<br>>
+<br>> > Hey Len... I had access to a decent computer at werk today and almost
+<br>> > finished setting it up so I'd be comfortable developing on it.  It has
+<br>>Word
+<br>> > on it already so I'll be able to view the attachment you sent me from
+<br>>there
+<br>> > (and save it into another format myself).  I'll do that the next time
+<br>>I'm
+<br>> > there.  I've been werking on the codetabl stuff for several hours.  I
+<br>>can't
+<br>> > test it since you unplug the server every time you see lights flashing.
+<br>>I
+<br>> > also cannot check the server's logfiles for anything suspicious like you
+<br>> > have asked.  The method for loading codetabl pages has been very
+<br>>difficult
+<br>> > to code.  I'm getting pretty tired so I wanted to send this update to
+<br>>you
+<br>>in
+<br>> > case I fell asleep.  I'm trying to keep werking until I get to a point
+<br>>where
+<br>> > I need to test it before I can do anything further (or to where I'm
+<br>> > confident that it's done).  Please reply to this when you can and feel
+<br>>free
+<br>> > to call me after 3pm if you haven't heard from me otherwise so that we
+<br>>can
+<br>> > coordinate meeting with Matt.  TTFN.
+<br>> >
+<br>> > -PipTigger
+<br>> >
+<br>> > p.s. Regarding Nataly: I have no idea what she should do with FrontPage.
+<br>>If
+<br>> > you want her to make pages, please feel free to let her know what you'd
+<br>> > like.  I'll be glad to help her with technical issues should they arise
+<br>>but
+<br>> > I have no concept of what her assignment should be if that's what you
+<br>>were
+<br>> > asking.
+<br>> >
+<br>> > >From: "Len Fish" <leonard3@home.com>
+<br>> > >To: "PIP TIGGER(2)" <piptigger@hotmail.com>
+<br>> > >Subject: Statistics sheet.
+<br>> > >Date: Tue, 25 Jul 2000 18:35:33 -0700
+<br>> > >
+<br>> > >I did this in Word, but there is no option to send in HTML.
+<br>> > >
+<br>> > >What should I do?
+<br>> > >
+<br>> > >Len
+<br>> > ><< Doc1.doc >>
+<br>> >
+<br>> > ________________________________________________________________________
+<br>> > Get Your Private, Free E-mail from MSN Hotmail at http://www.hotmail.com
+<br>> >
+<br>>
+<br></code>
+<br><p>...about to meet with Fish && his lawyer...  I had finally landed &&
+<br>began a new job which paid well && employed nice people.</p>
+<br><hr>
+<br><code>
+<br>>From: "Len Fish" <leonard3@home.com>
+<br>>To: "PIP TIGGER(2)" <piptigger@hotmail.com>
+<br>>CC: "Matthew P. Tyson, Esq." <mpt@tcventures.com>
+<br>>Subject: Effort
+<br>>Date: Thu, 27 Jul 2000 08:24:15 -0700
+<br>>
+<br>>Pip:
+<br>>
+<br>>A little re-cap of ysterdays late afternoon meeting.
+<br>>
+<br>>I think I have been very understanding of your stealth move to take a full
+<br>>time position.
+<br>>
+<br>>I cannot help but believe and I think you agree, it is your obligation to
+<br>>complete your agreement in a reasonable time frame, (as you are already
+<br>>several weeks past due the "complete date" with significant programming
+<br>>left).
+<br>>
+<br>>I am willing to entetain a new reasonable schedule, as I have always been.
+<br>>I just was not willing to re-write the agreement. You chose not to respond
+<br>>to that suggestion. I'd be happy to send you a copy of the e-mail around
+<br>>the time of my trip to Las Vegas, but I am sure you are familiar with it.
+<br>>After the first four weeks of the agreement, you were actually paid by work
+<br>>performed, not the schedule.
+<br>>
+<br>>I also invited you to explain why OS was a desirable base for you to build
+<br>>upon per the agreement, but again no reply. You chose to build it basically
+<br>>on MySql and Red Hat as opposed to OS. You had already done the major part
+<br>>of that change i.e. tables and permissions, when you slipped into that
+<br>>mode. You were always, and still are, given the choice of utilizing ideas
+<br>>and concepts from OS. So far you have ignored doing that. We have agreed
+<br>>not to take actual code from OS.
+<br>>
+<br>>If it were not for my help (and E-mails) you would probably still be
+<br>>struggling with OS Cookies.
+<br>>
+<br>>Per our conversation with Matt and afterwards, I am willing to allow you to
+<br>>finish the agreement, and pay you the balance due under our agreement. I
+<br>>expect 35-40 hours week effort as opposed to 60 or 80 for which you
+<br>>apparently wish a premium. There are some who might take the position,
+<br>>being behind seriously, you owe us that, but I guess in the ethics of
+<br>>today, that is un-realistic.
+<br>>
+<br>>Matt and I look forward to a realistic schedule based on the fact that the
+<br>>infrastructure is mostly done, and the schedule to be in accord with the
+<br>>applications time frames in the agreement. Payment to be made on
+<br>>deliverables, with daily time accounting, but only two or three times each
+<br>>week detailing work done. It would be refreshing to have you work and react
+<br>>as a solid somewhat mature business partner, as opposed to an oppresed
+<br>>indentured servant. You might be pleased with the ending outcome.
+<br>>
+<br>>Len
+<br>>
+<br>
+<br>>From: "Len Fish" <leonard3@home.com>
+<br>>To: "PIP TIGGER(2)" <piptigger@hotmail.com>
+<br>>CC: "Matthew P. Tyson, Esq." <mpt@tcventures.com>
+<br>>Subject: update
+<br>>Date: Thu, 27 Jul 2000 23:49:23 -0700
+<br>>
+<br>>Pip:
+<br>>
+<br>>7/27/2000   11:47 P.M.
+<br>>
+<br>>This will document the fact that I did not receive any e-mail from you with
+<br>>respect to hours worked on our agreement since our meeting yesterday
+<br>>afternoon, nor any other communication. In view of the fact that it is
+<br>>costly for us not to finish this project, we wish to make certain there are
+<br>>no errors in communication.
+<br>>
+<br>>As the party who does not prevail in a legal confrontation between us, ends
+<br>>up paying all the damages and costs including attorney fees, we want to
+<br>>make certain neither of us stumbles into litigation by mistake.
+<br>>
+<br>>Continued failure to communicate, even as per your latest commitment, may
+<br>>be interpreted by us as a choice to stop working on the agreement. At such
+<br>>time as we reach such a conclusion, we will take whatever action we feel
+<br>>appropriate without additional discussion.
+<br>>
+<br>>Len
+<br></code>
+<br><p>... almost done with legal threats? ...</p>
+<br><hr>
+<br><code>
+<br>>From: "Len Fish" <leonard3@home.com>
+<br>>To: "PIP TIGGER(2)" <piptigger@hotmail.com>
+<br>>CC: "Matthew P. Tyson, Esq." <mpt@tcventures.com>
+<br>>Subject: Todays excuses
+<br>>Date: Fri, 28 Jul 2000 23:44:15 -0700
+<br>>
+<br>>  "   guess I'll set
+<br>> > codetabl aside and werk on describing what remains to be done and how
+<br>>long
+<br>> > it will take until you notify me that the server is back up. was
+<br>>planning
+<br>> > on having this description and projected schedule prepared for review by
+<br>> > this Wednesday evening.  Is that an acceptable meeting time for you?  In
+<br>>the
+<br>> > event that it is not ready by then, I'll send you an email explaining
+<br>>why
+<br>> > and how much longer I anticipate it will take me to compile the
+<br>>necessary
+<br>> > information.  As soon as I am confident that it is complete, I will
+<br>>email it
+<br>> > to both of you."
+<br>>
+<br>>
+<br>>Pip
+<br>>
+<br>>You sent this last night. I notified you early this AM the server was up.
+<br>>After your excuses you made the above commitment. Just wanted all to be
+<br>>aware you have never contacted me again as of this moment. Of course there
+<br>>will be another excuse. Why don't I have a string of excuses for my
+<br>>commitments to you?
+<br>>
+<br>>No schedule
+<br>>No e-mail
+<br>>no anything
+<br>>
+<br>>Len
+<br>
+<br>July 30, 0 -> Len && Matt
+<br>
+<br>  What are you talking about?  What commitment have I not lived up to?  That
+<br>I let 28 hours go by between our meeting last Wednesday and the time I sent
+<br>you an email?  That I told you that I couldn't werk because you unplugged
+<br>the server?  That I told you that I intended to have something prepared for
+<br>our new agreement next Wednesday night (and Wed. is not here yet)?
+<br>  I'm not sure what I'm always deficient in that you think I need to make
+<br>excuses to you but I'm really tired of all this stupidity.  If I have to
+<br>deal with this crap much more (especially with the regularity which you're
+<br>demanding), I'm going to have to quit doing anything for you and let you
+<br>turn it over to whoever you think will accomplish your goals for you.  Maybe
+<br>your goals now include garnishing my wages in the upcoming years.  If that's
+<br>more important to you than finishing this software, you'll at least get a
+<br>shot in court if you keep acting as you have been.
+<br>  I don't like dealing with you.  I don't have to anymore.  You should want
+<br>me to continue dealing with you but you don't seem to want me to.  I thought
+<br>I made it clear last week that I'd prefer we each went our separate ways.
+<br>I'm tired of werking for you.  You're tired of my "poor work ethic" and all
+<br>the other innumerable deficiencies you've attributed to me over the past
+<br>months.  You've payed me poorly.  Apparently it's "blackmail" or something
+<br>worse for me to ask to be payed any better going forward.
+<br>  Presently, you want me to finish this project.  You're not comprehending
+<br>that I don't want or need to deal with your insanity anymore.  You have one
+<br>more chance to get off my back with all the antagonistic emails before I
+<br>refuse to ever "lift a finger" for you again.  You can sue and whatever will
+<br>happen will happen but if your goal is to get this software written, you are
+<br>sabotaging yourself.
+<br>  I'm not really afraid of litigation from you.  At this point, I'd be
+<br>dismayed by the waste of time it would entail for me but (hypothetically) I
+<br>might even be glad to pay you for you to just leave me alone.  I sincerely
+<br>doubt that I would lose any money though after the situation was closely
+<br>examined considering how favorable California laws are toward contractors.
+<br>  Now (assuming you're going to be less hostile as an outgrowth of your new
+<br>understanding as to how we are to accomplish anything together), I can send
+<br>you an email every single day (which contains only the number of hours I've
+<br>werked for you) if this is what you need but I will not read email from you
+<br>every day.  We can schedule a meeting once a week.
+<br>  I'm am getting well established in my new office and currently have the
+<br>ability to accomplish a lot of werk for both them and you.  Is it worth it
+<br>for me to do so?  Once you answer that question from my perspective (which I
+<br>doubt you're capable of doing), you'll have a grasp on how to handle this.
+<br>Until now, you've really blown it.
+<br>  I think it is fair that you unplug the server whenever you feel like it.
+<br>Your paranoia and general fear of things you don't understand (like this
+<br>"young generation") govern your actions and I've grown to accept that a
+<br>server located close to you is not a stable place to develop software.  I
+<br>hope Nataly can accept the same volatility if/when she encounters it.  When
+<br>the server is not accessible, I will not be able to test any code I have
+<br>written.  Please keep that in mind whenever you feel compelled to pull the
+<br>plug and don't pretend that I have lame excuses when I code a lot for you
+<br>and can't even run it only because of you.
+<br>  The more I read emails from you the more I think you are the one incapable
+<br>of communicating effectively.  I have been quite clear about many different
+<br>issues in the past and you somehow bumble over the text and only ingest what
+<br>you're hoping for but you entirely omit or misunderstand the key elements.
+<br>The exchange below is characteristic... (in the email sent early Friday
+<br>morning) I state clearly that I'm werking on a new agreement which should be
+<br>ready by "Wednesday" and if it's not done by then, I'll explain why by then.
+<br>  Maybe this is terribly confusing.  Maybe you thought I meant some
+<br>Wednesday in 1963.  Maybe the "Wednesday" when viewed on your screen read
+<br>like "yesterday" or "Friday".  I'm not sure what happened but I am sure that
+<br>I don't think I'm the incapable communicator in our relationship (or what's
+<br>left of it) despite how adamantly you affirm that I am.
+<br>  It seems we're playing hardball now.  I like the sport.  I used to be a
+<br>pretty decent 2nd baseman.  It's your turn at the plate.  Sa-wing batta.
+<br>  TTFN.
+<br>
+<br>-Pip
+<br>
+<br>p.s. Do you have anything to interject Matt?
+<br>
+<br>
+<br>>From: "Len Fish" <leonard3@home.com>
+<br>>To: "PIP TIGGER(2)" <piptigger@hotmail.com>
+<br>>Subject: You have reached the first plateau-Now the 2nd.
+<br>>Date: Tue, 1 Aug 2000 10:05:42 -0700
+<br>>
+<br>>Pip:
+<br>>
+<br>>Based on your e-mail of 7/30, your actions over the past 13 weeks, and your
+<br>>general attitude that your word, written or oral is only good as long as it
+<br>>suits you, I can no longer rely on you or your iffy software developed for
+<br>>us.
+<br>>
+<br>>We, nor anyone else can build a business on quicksand. Businesses are made
+<br>>on agreements, by people who not only wish to negotiate the highest
+<br>>possible price and agree on a fixed price contract to get it, but by people
+<br>>who  maintain their written and and/or oral agreements, as opposed to
+<br>>spending more time writing excuses and purported justifications than
+<br>>software.
+<br>>
+<br>>Based on your e-mail you wish to unilaterally change our agreement, and
+<br>>increase the price because you have not been able to come close to
+<br>>completeing your agreement with or without OS as promised. The problem with
+<br>>that is : You did not live up to your last agreement, why would we trust
+<br>>you on any new one?. This particularly in view of your classic 7/30 e-mail,
+<br>>which I feel certain the arbitrator or court will find inciteful.
+<br>>
+<br>>If your new "Wednesday" agreement agrees to finish the contract with 35 to
+<br>>40 hours a week, and hypothetically the extra payoff would come as a bonus
+<br>>at the completion feel free to submit it. If it is a new agreement based on
+<br>>your "Napster" view of law, it may not be worth the time to submit it.
+<br>>
+<br>>You say I am "up to bat." I think you have misjudged my options. After
+<br>>considerable thought, I have decided to unplug the server, put the software
+<br>>in a vault, and start all over, holding you responsible for the costs to
+<br>>crash through a new program and damages for this disasterous 13 week
+<br>>default.  I am sure you noted when you negotiated the agreement that "Time
+<br>>was of the essence". It was. You are over 21, and smart enough to make over
+<br>>$50,000 a year, and negotiate the agreement  for a higher price as a
+<br>>trade-off for a fixed price. You are old enough, and liquid enough to honor
+<br>>your written agreements.
+<br>>
+<br>>Matt is no longer interested in working something out with what he sees as
+<br>>a gun pointed to our heads by yes; a blackmailer. You need not copy him
+<br>>again, as I believe he does not feel you are capable of an honorable
+<br>>resolution within our agreement. You had the chance, and you chose to
+<br>>ignore it. Yes 30 hours when the next report was due  in 12, and with your
+<br>>previous transgressions,  is under the circumstances, major.
+<br>>
+<br>>You told Matt and I your employer knows of your work for us. That if true,
+<br>>may constitute interference with a contractual relationship. We also feel
+<br>>it in the interest of potential employers to relate our experience with Pip
+<br>>Stuart, to Dice and Guru. Feel free to tell them and send them our
+<br>>agreement, as well as your experiences with me.
+<br>>
+<br>>Len
+<br>>
+<br>
+<br>>From: "Len Fish" <leonard3@home.com>
+<br>>To: "PIP TIGGER(2)" <piptigger@hotmail.com>
+<br>>Subject: Reply
+<br>>Date: Wed, 2 Aug 2000 21:33:49 -0700
+<br>>
+<br>>I will save my detailed reply for the arbitrator.
+<br>>
+<br>>From the time you were instrumental in getting rid of VJ, you have ignored
+<br>>our agreement and did it your way.
+<br>>
+<br>>Despite my efforts to pay you despite your half hearted work ethic, and
+<br>>abuse of me, you continued to tell me off at every opportunity.
+<br>>
+<br>>Had you not tricked me into hiring you stating Open Merchant was a viable
+<br>>platform for the agreement, you would have been paid according to the
+<br>>deliverables. You were given all the details of the work you were to
+<br>>perform , in writing prior to your signing the agreement. I have no
+<br>>reasonable documentation, no flow charts, no configuration listings or
+<br>>narratives.
+<br>>
+<br>>In business we must rely on contracts. Unfortunately, I relied upon your
+<br>>word. You clearly feel contracts are for others.
+<br>>
+<br>>Len
+<br>
+<br>>From: "Len Fish" <leonard3@home.com>
+<br>>To: "PIP TIGGER(2)" <piptigger@hotmail.com>
+<br>>Subject: Your latest reply
+<br>>Date: Wed, 2 Aug 2000 23:48:58 -0700
+<br>>
+<br>>Pip
+<br>>
+<br>>In your 7/30 letter you still insisted upon additional remuneration.
+<br>>
+<br>>In your reply you state.
+<br>>
+<br>>"I was still willing to complete the project if
+<br>>we could agree upon a more relaxed schedule since you made it clear that I
+<br>>would not be paid any more reasonably for the remainder of development."
+<br>>
+<br>>That seems to be a change in your position. My position was if there was no
+<br>>additional compensation demanded (you seem to agree to that) and if 35-40
+<br>>hours of effort per week was expended on finishing, I was willing to
+<br>>proceed. I still would be if you could bring yourself to stop emanating
+<br>>venom, and trying to subvert any associates of mine you meet such as "What
+<br>>kind of a mess have we gotten ourselves into?" There is no way I could
+<br>>trust you to work with a new programmer, hence requiring a fresh start.
+<br>>
+<br>>In view of the fact that you admittedly spent only a total of 3 hours in
+<br>>the past 9 days  and 0 essentially for the latest week,  This
+<br>>"blackmailing" made it impossible to go forward.
+<br>>
+<br>>I am preparing the arbitration demand which will be filed as soon as it is
+<br>>completed. It is obvious from all your correspondence that you confuse a
+<br>>contractual business relationship with being an employee. We had no
+<br>>obligation to pay you anything above and beyond our agreement, nor
+<br>>incidentally did you make any such demand until after you took a job.
+<br>>
+<br>>You chose to abandon Open Merchant and I agreed, because you felt it would
+<br>>be faster. I have no obligation to change anything due your failure to
+<br>>properly analyse OM prior to taking on the contract despite my repeated
+<br>>plea that you do so.
+<br>>
+<br>>I am writing this because I wish to clarify, that you have changed your
+<br>>position since your highly insulting and improper letter of July 30.
+<br>>
+<br>>Leonard
+<br>
+<br>Aug. 2, 0 -> Len && Matt
+<br>
+<br>Hello Len,
+<br>  I just wanted to make it very clear that I deeply regret the situation we
+<br>have now found ourselves in.  And it is important to point out that the
+<br>waning of my progress on your 800Telephone system was the direct result of
+<br>failure to comply with the agreed financial arrangements between us.  I was
+<br>paid an amount which was significantly less than half of the amount
+<br>described in our original agreement.  In addition, there are many factors
+<br>that were not contemplated under the original agreement.  When we decided
+<br>not to utilize OpenSales, for instance, there was an entire set of
+<br>functionality which I needed to construct from scratch.  This had not been
+<br>detailed or even foreseen in the contract.  I have consistently tried to be
+<br>reasonable and help the project through to finalization and even after you
+<br>had threatened legal action, I was still willing to complete the project if
+<br>we could agree upon a more relaxed schedule since you made it clear that I
+<br>would not be paid any more reasonably for the remainder of development.
+<br>  In an effort to show good faith and to help you attain your goals, I had
+<br>persisted on the project, even though it was consuming a lot of my time and
+<br>despite the fact that my living expenses were only narrowly covered by the
+<br>income I was deriving from my work for you.  Ultimately, however, I was
+<br>forced to seek new employment since the project's scope was expanding and
+<br>consuming more hours but the commensurate payments were not forthcoming.  I
+<br>had no other way to support myself.
+<br>  Another unfortunate aspect of all this is that when I started employment
+<br>with you, I was enthusiastic about the opportunity to share your vision and
+<br>make it come to life.  However, throughout my work with you, the reality is
+<br>that I have felt consistently abused by you.  You have antagonized and
+<br>insulted me often.  You have implied or explicitly stated that you believe I
+<br>am attempting to cheat you.  Please be clear on this point:  You already
+<br>possess all the code I developed for you along with all the documentation
+<br>and configurations I have made.  I am holding nothing ransom.  You can
+<br>readily hire another programmer to finish what I've begun without incurring
+<br>any damages on your part.  You certainly possess what you have paid for.  As
+<br>to whatever damages you believe you might incur in replacing me, bear in
+<br>mind that this could have been avoided had you paid me fairly and insulted
+<br>me less frequently.
+<br>  I have certainly wanted (and still very much want) to avoid a lawsuit if
+<br>possible but it has been increasingly apparent that our business
+<br>relationship and trust have deteriorated to an irreparable state.  You have
+<br>no basis upon which to sue me - not to mention that I have no assets which
+<br>might make it worth your while.  You are threatening to take me to court
+<br>unless I am willing to keep working unreasonably hard for you on a project
+<br>that was not fully clarified up front and all the while, I would be required
+<br>to continue to endure poor compensation and treatment until the project can
+<br>somehow be completed.  That is untenable to me.  If I had been paid
+<br>appropriately under the terms of the agreement, I would have been able to
+<br>remain full time on the project and progress would not have had to slow down
+<br>in order for me to obtain sufficient income elsewhere.
+<br>  I do not think we are capable of working together any longer so I will not
+<br>waste any more time trying to describe an agreement which I think would be
+<br>fair to both of us.  At this juncture, it seems clear that I am not the
+<br>right programmer for you.  You have paid me approximately half of what was
+<br>expected and you have well beyond half of the project completed and in your
+<br>possession.  If you are successful in finding a competent programmer who is
+<br>willing to work with you, I believe there remains approximately 7 or 8 weeks
+<br>of work before your 800Telephone system can possibly see thorough completion
+<br>and deployment.  I wish you well in that regard and would be entirely
+<br>willing to work with whomever you hire to make the transition smooth.
+<br>
+<br>Thank you.
+<br>
+<br>-Pip
+</code>
+<p>
+... Well, that just about wraps it up.  Sorry if even the summary is way
+too verbose.  I'd sure be glad to be done with all this stuff once &&
+for all.  It'd be nice to have been paid more appropriately for my
+efforts but it is probably my fault for getting swindled by such a
+turd.  TTFN.<br>
+<br>
+-Pip
+</p></body></html>

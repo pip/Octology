@@ -1,0 +1,18 @@
+IB9L28BC:Since I've largely switched over to DuckDuckGo search && just discovered their *!Bang* feature that included a suggestion form, I just now submitted:
+ I'm not yet familiar enough with the typical conventions associated with allocations for your *bang* feature to anticipate what an appropriate "Bang URL"
+   might be above (or even whether your more routine search functions would actually be a preferable place to perform such a task)... but since I'm just
+   discovering the feature, I figured it would be extremely useful if "!1bangs" would simply list all single-character site mappings, so PCRE would be
+   something like =~ /^!\w$/;
+ This would be great to help new users ease into the over 11,000 current bang mappings by starting to focus on approximately just 1 page listing something
+   close to the oldest and most popular 26 sites which earned the most efficient minimal-length "Bang Commands" already.
+ Then a secondary dense grid (probably needing several pages to scroll through now too) could be presented with all 2-character mappings after command:
+   "!2bangs" to convey the next most efficient class to incorporate usage of.
+ Attempting to simultaneously present all 3-character Bang Commands, or anything beyond, would probably prove too voluminous to be performant and helpful,
+   without some additional navigable tree of partial-command letters (maybe technically rather like a "trie" structure) or better filtration, limitation,
+   sorting, and searching capabilities, or whatever better solution your team could deem sufficient and worthwhile.
+ I personally would appreciate learning about your latest Bang Commands starting from smallest to largest, and from recently reading an article on Quora I
+   got the distinct impression that you all sincerely desire and consider user feedback, I figured this feature-request sort of suggestion could broaden
+   both understanding and usage of DuckDuckGo Bang pretty intuitively.
+ I hope you consider these ideas worthwhile and possibly worth implementing, but my greater hope is for your company, services, and ethics to all survive
+   and thrive ahead. You should be able to reach me by the provided e-mail address above if you wish to consult me on anything further.
+   Thanks for all the clear good you're doing! =)           Cheers,  -PipStuart;

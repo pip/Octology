@@ -1,0 +1,67 @@
+Hey all,
+
+Here's my executive problem summary:
+
+I've been struggling to get FunPark to build for Wii most of this week.  Kevin && Joe have been as helpful as they could, spending hours with me, trying to discover the problem causes, but together none of us has been able to get the build to run smoothly on my machine yet.  I've discovered that a major conflict (which might even be the only real hindrance I've had this whole time) is occurring between my routine use of CygWin && our Windows Domain's policies on security as implemented through Access Control Lists (ACLs).  I'm still not quite sure how to best resolve this conflict but I'm writing this e-mail to document my findings so far, to suggest which directions ahead seem most promising, && to solicit advice or assistance from your audience when available.  The summary of my directions ahead is to compare the command-line .exe utilities && Perl Modules to hopefully seamlessly wrap all my typical CygWin activities that have been botching up ACLs with scripts that are conscious enough of this issue to preserve them or at least re-establish workable ones for destination files && directories.
+
+A bit of background:
+
+You IT guys setup my machine at the beginning of this week with a default C:\Cygwin environment before you gave it to me.  Since that initial environment lacked my editor (`vim`), my shell (`zsh`), && many other utilities I've grown accustomed to, I copied the entire original aside before running CygWin's setup.exe to get all the latest updates && new packages I'm wanting.  This whole process seemed to go fine at the time.
+
+Yesterday morning, I resolved to restore that original environment, just to see if that would enable me to succeed or at least get further along in building for Wii.  I renamed my heavily modified C:\Cygwin && copied the original back to that location.  Then I started getting a lot of new permission errors when just trying to copy files or run regular batch files from within Windows Explorer.  This included directories that were outside of \Cygwin, like my \CW_RVL\bin\regservers.bat.  Within my older CygWin's `bash` shell, I had copied my entire CodeWarrior_ReVoLution (CW_RVL) hierarchy into the C: root from where I had initially installed it in C:\NDEV\CW_RVL since I thought maybe the build process wasn't correctly picking up my Environment Variable setting for %CWFOLDER_RVL% in an atypical path.  The cascading permission errors led me on an incontinent journey into the bowels of MicroSoft Windows Advanced Security mechanisms, particularly dealing with their entirely idiosyncratic notion of Access Control Lists (ACLs) when managed by Windows Domains && how these interoperate or conflict with CygWin's approach to providing POSIX file && directory permissions, extended attributes, ACLs through its NTSec module.
+
+What's so frustrating about this situation is that I'm using an account (pstuart) for Domain login (SEVENSTUDIOS) which has membership in the Administrators group of my local machine (W-PSTUART).  Windows ACLs have default rules (also called ACEs for Access Control Entries) almost everywhere which grants full access to any member of the Administrators group.  It appears that the most perplexing problems have arisen when I've manipulated files or directories from zsh (my CygWin shell) in ways which conflict with MicroSoft's expectation of recursive inheritance in particular file-system hierarchies.  The break between parent directory && subdirectory or contained file, when noticed, is remedied by injecting a new "special access" rule just for my account (SEVENSTUDIOS\pstuart) to limit me to reading files.  Even though I'm granted write && execute access at the Admin level, the rules proceed in order && the newly appended one that's more specific to my login account only grants read access, so I get progressively more restricted from all sorts of essential activities, the more I work in zsh && perturb MicroSoft's expectation for how to preserve machine security with their ACL policies.  Accesses that are not granted are denied by default.  When these new rules automatically get injected specifically granting read access for my user-account, through omission they serve to deny me write && execute.  Since I'm still a local Administrator, I can just go change all the higher-level permissions but it's a totally ridiculous pain that things can get this jumbled under such relatively normal circumstances.  I've run CygWin under Windows Domains for a long time && have never encountered this so horribly before.  I suspect that maybe our Domain here is configured to enforce a security level with ACL policies that is sufficiently higher than anywhere else I've been, to the point that these conflicts are cascading with aggressive enforcement of inheritance rules && overly restrictive resolution procedures.
+
+Researched sites:
+
+HTTP://WWW.CodeProject.Com/KB/winsdk/accessctrl1.aspx (thorough 4-part article on Windows Access Control Model)
+
+HTTP://WWW.CodeProject.Com/KB/winsdk/accessctrl4.aspx (final part describing ACL editing utility with source)
+
+HTTP://Blogs.MSDN.Com/oldnewthing/archive/2007/06/08/3150719.aspx (discussion of ACE ordering problems within ACLs)
+
+HTTP://Lists.SaMBa.Org/archive/rsync/2006-October/016532.html (mention of difficulty getting CygWin's POSIX ACLs to cooperate with Windows && custom ACL-enabled `rsync`)
+
+HTTP://OSDev.Org/osfaq2/index.php/CygwinIssues (CygWin problems with an Unexpected Behaviors section that includes an entry on GetFACL / SetFACL)
+
+HTTP://CygWin.Com/cygwin-ug-net/using-utils.html#getfacl (CygWin User Guide Get File ACL utility entry)
+
+HTTP://CygWin.Com/cygwin-ug-net/using-utils.html#setfacl (CygWin User Guide Set File ACL utility entry)
+
+HTTP://CygWin.Com/cygwin-ug-net/ntsec.html (CygWin User Guide on Windows NT Security)
+
+HTTPS://WWW.MicroSoft.Com/resources/documentation/windows/xp/all/proddocs/en-us/cacls.mspx (C:\Windows\System32\CACLs.exe utility documentation)
+
+HTTP://Support.MicroSoft.Com/kb/135268 (using CACLs.exe in .bat files requires piping or redirecting "y" for confirmation dialog dismissal)
+
+HTTP://En.Wikipedia.Org/wiki/Cacls (related info)
+
+HTTP://SS64.Com/nt/xcalcs.html (XCACLs Syntax... with silly typographical error made in calculating the ULR ;) )
+
+HTTP://Support.MicroSoft.Com/kb/318754 (XCACLs.exe How To)
+
+HTTP://WWW.MicroSoft.Com/technet/technetmag/issues/2007/07/SecurityWatch (apparently ICACLs.exe only works for Vista && Server2003SP2, not XP yet, if ever)
+
+HTTP://SF.Net/projects/setacl (SourceForge SetACL utility under the GNU GPL)
+
+HTTP://PerlMonks.Org/?node_id=638748 (forum post about problems setting ACLs from Perl)
+
+Perl Modules for manipulating ACLs:
+
+HTTP://Search.CPAN.Org/~teverett/Win32-Security-0.50/lib/Win32/Security/ACL.pm
+HTTP://Search.CPAN.Org/~teverett/Win32-Security-0.50/lib/Win32/Security/Raw.pm
+HTTP://Search.CPAN.Org/~tojo/Win32-SDDL-0.06/lib/Win32/SDDL.pm
+HTTP://Search.CPAN.Org/~makarow/Win32-Script-0.58/lib/Win32/Script.pod 
+
+Conclusion:
+
+So this problem is pretty complex.  I have a relatively thorough understanding of what's going on but I still need to conduct a bunch more testing && do a little aliasing && scripting to determine which tools seem best able to resolve or minimize the negative effects on my client-side.  For example, I've already also discovered that aliasing my copy command to `cp -p` instructs it to preserve file ownership, group, && permission data as well as possible when performing file-copy operations, which makes things a lot closer to usable than the default behavior of clean-slating all that information at the new destination.
+
+If anyone knows about these issues or tools better than me already, or if you IT homies can please ease up on the server-side restrictions, by toning down ACL policies slightly for our Windows Domain, that would be totally awesome!  I've been really bummed that I couldn’t be more productive this week but at least I've learned a lot about Windows security && what a mess it can become. ;)  Hopefully a good remedy will present itself shortly && I’ll get up to speed more smoothly next year.
+
+Thanks dudes.  I hope you each enjoy great holiday times ahead && I look forward to seeing you again once we’re all back. =)
+
+Sincerely,
+-Pip
+’
+’

@@ -1,0 +1,18 @@
+#!/usr/bin/perl -w
+# 45UBvZt - hex (CoNVert decimal string parameter to hexadecimal)
+#
+# Most source code should be Free!
+#   Code I have lawful authority over is && shall be!
+# Copyright: (c) 2003, Pip Stuart.  All rights reserved.
+# Copyleft :  I license this software under the GNU General Public 
+#   License (version 2).  Please consult the Free Software Foundation 
+#   (http://www.fsf.org) for important information about your freedom.
+# Thank you.  TTFN.
+#                                           -Pip@CPAN.Org
+use strict;
+use Math::BaseCnv qw(hex);
+my $numb = shift; my $argc = scalar(@ARGV);
+while(defined($numb)){
+  if(!defined($numb) || $numb =~ /^-+[h\?]/i) { die("USAGE: `hex <DecimalNumberStringToConvertToHexadecimal>`\n"); }
+  $numb = hex($numb); print '0' if($argc > 1 && length($numb) == 1); print($numb); $numb = shift;
+}

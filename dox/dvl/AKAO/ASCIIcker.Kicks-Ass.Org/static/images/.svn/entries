@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wc-entries
+   xmlns="svn:">
+<entry
+   committed-rev="2"
+   name=""
+   committed-date="2006-02-08T06:34:11.845372Z"
+   url="file:///var/svn/WWW-ASCIIcker/trunk/htdocs/static/images"
+   last-author="beppu"
+   kind="dir"
+   uuid="e1cdcca2-420c-0410-82d0-d9cb0be6e355"
+   revision="10"/>
+<entry
+   committed-rev="2"
+   name="btn_120x50_powered_shadow.png"
+   text-time="2006-02-17T04:39:21.000000Z"
+   committed-date="2006-02-08T06:34:11.845372Z"
+   checksum="e31367d87a07883149e9adf062c19a6d"
+   last-author="beppu"
+   kind="file"
+   prop-time="2006-02-17T04:39:21.000000Z"/>
+<entry
+   committed-rev="2"
+   name="btn_88x31_built.png"
+   text-time="2006-02-17T04:39:21.000000Z"
+   committed-date="2006-02-08T06:34:11.845372Z"
+   checksum="8fcf95dbb72c10ca7fc2741e0fadd930"
+   last-author="beppu"
+   kind="file"
+   prop-time="2006-02-17T04:39:21.000000Z"/>
+<entry
+   committed-rev="2"
+   name="btn_120x50_built.png"
+   text-time="2006-02-17T04:39:21.000000Z"
+   committed-date="2006-02-08T06:34:11.845372Z"
+   checksum="80882ba2ba7a120380e6fbd9bc6d3c1d"
+   last-author="beppu"
+   kind="file"
+   prop-time="2006-02-17T04:39:21.000000Z"/>
+<entry
+   committed-rev="2"
+   name="btn_88x31_built_shadow.png"
+   text-time="2006-02-17T04:39:21.000000Z"
+   committed-date="2006-02-08T06:34:11.845372Z"
+   checksum="d1bb9b536baf04d7d028aae112d862df"
+   last-author="beppu"
+   kind="file"
+   prop-time="2006-02-17T04:39:21.000000Z"/>
+<entry
+   committed-rev="2"
+   name="btn_88x31_powered.png"
+   text-time="2006-02-17T04:39:21.000000Z"
+   committed-date="2006-02-08T06:34:11.845372Z"
+   checksum="ce262154306dc4c1be39ee0870e05739"
+   last-author="beppu"
+   kind="file"
+   prop-time="2006-02-17T04:39:21.000000Z"/>
+<entry
+   committed-rev="2"
+   name="catalyst_logo.png"
+   text-time="2006-02-17T04:39:21.000000Z"
+   committed-date="2006-02-08T06:34:11.845372Z"
+   checksum="34a776e1439d2865820a2c409d8f4caa"
+   last-author="beppu"
+   kind="file"
+   prop-time="2006-02-17T04:39:21.000000Z"/>
+<entry
+   committed-rev="2"
+   name="btn_120x50_built_shadow.png"
+   text-time="2006-02-17T04:39:21.000000Z"
+   committed-date="2006-02-08T06:34:11.845372Z"
+   checksum="1d4ae4ad508b4456355b85696e90fda1"
+   last-author="beppu"
+   kind="file"
+   prop-time="2006-02-17T04:39:21.000000Z"/>
+<entry
+   committed-rev="2"
+   name="btn_120x50_powered.png"
+   text-time="2006-02-17T04:39:21.000000Z"
+   committed-date="2006-02-08T06:34:11.845372Z"
+   checksum="30f5ccc177c3aa9e5ea8c80079f61877"
+   last-author="beppu"
+   kind="file"
+   prop-time="2006-02-17T04:39:21.000000Z"/>
+<entry
+   committed-rev="2"
+   name="btn_88x31_powered_shadow.png"
+   text-time="2006-02-17T04:39:21.000000Z"
+   committed-date="2006-02-08T06:34:11.845372Z"
+   checksum="75b6173ab4a9a657b0d05c8636fb1a09"
+   last-author="beppu"
+   kind="file"
+   prop-time="2006-02-17T04:39:21.000000Z"/>
+</wc-entries>

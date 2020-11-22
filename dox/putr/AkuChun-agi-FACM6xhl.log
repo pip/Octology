@@ -1,0 +1,77 @@
+[pip@AkuFACM6jjj~](zc $(ls -tr /var/log/apt/history.log*.gz);cat /var/log/apt/history.log)|eg '^(Start-Date:|Commandline:)'|eg -v 'aptdaemon|autoremove|upgrade'|eg -B1 '^Commandline:'|eg -v '^--$'     
+Start-Date: 2014-11-18  01:51:22
+Commandline: apt-get install mplayer2 mpv smplayer smplayer-themes
+Start-Date: 2014-12-03  09:14:03
+Commandline: apt-get install wmctrl xdotool
+Start-Date: 2015-04-27  19:28:32
+Commandline: apt-get install gconf-editor
+Start-Date: 2015-04-28  20:19:32
+Commandline: apt-get install expect
+Start-Date: 2015-04-28  21:07:24
+Commandline: apt-get install abook bastet clex cmus cmus-plugin-ffmpeg dav-text dhex gom gtypist iselect lnav moc moc-ffmpeg-plugin mtr ncdu ncmpc ncmpc-lyrics ncurses-hexedit ninvaders pacman4console radio rexima tig vifm yacpi dnet-common libroar-plugins-universal roaraudio pinentry-curses slpd socat openslp-doc mpd
+Start-Date: 2015-04-28  21:16:24
+Commandline: apt-get install aumix
+Start-Date: 2015-04-28  21:22:50
+Commandline: apt-get install vorbis-tools gst123 mpg123 mpg321
+Start-Date: 2015-04-28  22:07:04
+Commandline: apt-get install tk8.6 tk8.6-blt2.5 tk8.6-dev tk8.6-doc libtogl1 libtogl-dev tcl-tclreadline tk-table tk-tile tkdnd tkpng libtk-img libtk-img-doc tktreectrl togl-demos libtcl8.6 libtcl8.6-dbg tcl8.6 tcl8.6-dev tcl8.6-doc tcl-expect tcl-expect-dev graphviz libgv-tcl tcl-signal tcl-tclreadline tcl-thread tcl-udp tcl-xpa tclgeoip tclxml tclxml-dev graphviz-dev graphviz-doc xdot libtool-doc autoconf automake blt-demo pd-import autoconf-archive gnu-standards autoconf-doc
+Start-Date: 2015-05-19  12:38:25
+Commandline: apt-get install fish
+Start-Date: 2015-05-26  10:56:16
+Commandline: apt-get install adjtimex
+Start-Date: 2015-05-26  11:19:48
+Commandline: apt-get install ntpdate ntp-doc ntpstat
+Start-Date: 2015-05-26  13:17:39
+Commandline: apt-get install ntp
+Start-Date: 2015-05-26  22:43:34
+Commandline: apt-get install cgmanager libcgmanager0 libcgmanager-dev cgmanager-tests
+Start-Date: 2015-05-26  22:44:24
+Commandline: apt-get install lxcfs
+Start-Date: 2015-05-26  22:51:55
+Commandline: apt-get install lxc lxc-dev lxc-templates lxc-tests lxc-dbg lua-lxc python3-lxc lxc-android-config lxctl
+Start-Date: 2015-05-26  22:54:20
+Commandline: apt-get install uuid uuid-dev
+Start-Date: 2015-05-26  22:55:36
+Commandline: apt-get install lxd lxd-client
+Start-Date: 2015-05-26  22:56:26
+Commandline: apt-get install criu criu-dbg
+Start-Date: 2015-05-27  09:18:29
+Commandline: apt-get install build-essential subversion subversion-tools
+Start-Date: 2015-05-27  09:21:50
+Commandline: apt-get install libsdl2-ttf-2.0-0 mess-data mess mame mame-extra mame-tools gnome-video-arcade
+Start-Date: 2015-06-07  04:48:54
+Commandline: apt-get install tmux
+Start-Date: 2015-06-07  04:50:23
+Commandline: apt-get install ccze byobu
+Start-Date: 2015-06-08  11:41:27
+Commandline: apt-get install cvs
+Start-Date: 2015-06-15  04:13:33
+Commandline: apt-get install festival festival-freebsoft-utils festival-dev festival-doc festvox-us1 festvox-us2 festvox-us3 festvox-don festvox-en1 festvox-rablpc16k festvox-kallpc16k festvox-kdlpc16k stardict-plugin-festival espeak espeak-data stardict-plugin-espeak docbook docbook-xml docbook-xsl docbook-dsssl docbook-defguide mbrola-en1 mbrola-us1 mbrola-us2 mbrola-us3 cicero speech-tools-doc opensp sgml-data stardict-common stardict-gnome stardict-plugin w3-recs libxml2-utils
+Start-Date: 2015-06-15  04:29:55
+Commandline: apt-get install ytalk
+[pip@AkuFACM6jsN~]
+
+[pip@ChunFACM6tg3~](zc $(ls -tr /var/log/apt/history.log*.gz);cat /var/log/apt/history.log)|eg '^(Start-Date:|Commandline:)'|eg -v 'aptdaemon|autoremove|upgrade'|eg -B1 '^Commandline:'|eg -v '^--$'
+Start-Date: 2014-11-17  14:26:43
+Commandline: apt-get install mplayer2 mpv smplayer smplayer-themes
+Start-Date: 2014-11-27  11:28:39
+Commandline: apt-get install dictd dict dict-devil dict-elements dict-foldoc dict-gazetteer2k dict-gcide dict-jargon dict-moby-thesaurus dict-stardic dict-vera dict-wn dict-xdict dictzip
+Start-Date: 2014-11-29  20:37:17
+Commandline: apt-get install wmctrl xdotool
+Start-Date: 2014-12-25  06:20:49
+Commandline: apt-get install gpm
+Start-Date: 2015-03-29  20:04:05
+Commandline: apt-get install libtie-toobject-perl
+Start-Date: 2015-04-17  14:10:26
+Commandline: apt-get install launchy launchy-skins launchy-plugins
+Start-Date: 2015-04-17  14:26:54
+Commandline: apt-get install gnome-tweak-tool
+Start-Date: 2015-07-19  21:16:26
+Commandline: apt-get install chromium-browser
+Start-Date: 2015-09-05  15:26:45
+Commandline: apt-get install scrot
+Start-Date: 2015-09-05  15:38:05
+Commandline: apt-get install cdparanoia
+Start-Date: 2015-09-12  11:28:34
+Commandline: apt-get install xclip
+[pip@ChunFACM6txk~]

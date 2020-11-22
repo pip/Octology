@@ -1,0 +1,339 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html>
+<head>
+	<meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+	<title>XHTML and CSS Style Guide</title>
+	<style>
+	html {
+		font-family: Helvetica, Arial;
+		font-size: 90%;
+		
+		padding-bottom: 48px;
+		border-bottom: 8px solid #ccc;
+	}
+	
+	h1, h2, h3 {
+		font-weight: normal;
+		margin: 1.5em 0 .2em 0;
+	}
+	
+	h4 { 
+		font-size: 1em;
+		font-weight: bold;
+		margin: 1.5em 0 .2em 0;
+	}
+	
+
+	p {
+		margin: 0 0 1em 0;
+		line-height: 1.2em;
+	}
+	
+	pre, code {
+		position: relative;
+		background: #eee;
+		font-size: 1em;
+	}
+	
+	pre { 
+		display: block;
+		padding: 5px 10px 5px 25px;
+		margin: 0 0 1.5em 0;
+	}
+	
+	code {
+		display: inline;
+		padding: 3px;
+	}	
+	
+	</style>
+</head>
+<body>
+<h1>Differences between XHTML and HTML</h1>
+<p>
+Style Guide by <a href="mailto:ewright@oversee.net">Eric Wright</a>, Lead Front-End Developer.   Draft 5 October 2005.  For more information see the <a href="http://www.w3.org/TR/xhtml1/">W3C XHTML spec</a>.
+</p>
+<p>
+For an excellent overview of why web standards are A Good Thing, see <a href="http://www.456bereastreet.com/lab/developing_with_web_standards/">Developing With Web Standards</a>.
+</p>
+<h2>1. Elements Must Be Properly Nested</h2>
+<p>
+	In HTML, some elements can be improperly nested within each other, like this:
+</p>
+<pre>
+&lt;b&gt;&lt;i&gt;This text is bold and italic&lt;/b&gt;&lt;/i&gt;
+</pre>
+<p>
+	In XHTML, all elements must be properly nested within each other, like this:
+</p>
+<pre>
+&lt;b&gt;&lt;i&gt;This text is bold and italic&lt;/i&gt;&lt;/b&gt;
+</pre>
+<p>
+	<strong>Note</strong>: A common mistake in nested lists is to forget that the inside list must be within an <code>&lt;li&gt;</code> element. This is wrong (missing a <code>&lt;/li&gt;</code>):
+</p>
+<pre>
+&lt;ul&gt;
+  &lt;li&gt;Coffee&lt;/li&gt;
+  &lt;li&gt;Tea
+    &lt;ul&gt;
+      &lt;li&gt;Black tea&lt;/li&gt;
+      &lt;li&gt;Green tea&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;li&gt;Milk&lt;/li&gt;
+&lt;/ul&gt;
+</pre>
+<p>
+This is correct (notice that we have inserted a <code>&lt;/li&gt;</code> tag after the <code>&lt;/ul&gt;</code> tag):
+</p>
+<pre>
+&lt;ul&gt;
+  &lt;li&gt;Coffee&lt;/li&gt;
+  &lt;li&gt;Tea
+    &lt;ul&gt;
+      &lt;li&gt;Black tea&lt;/li&gt;
+      &lt;li&gt;Green tea&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Milk&lt;/li&gt;
+&lt;/ul&gt;
+</pre>
+<p>&nbsp;
+</p>
+<h2>2. Documents Must Be Well-formed</h2>
+<h3>Nesting</h3>
+<p>
+	All XHTML elements must be nested within the <code>&lt;html&gt;</code> root element. All elements must be in pairs and correctly nested within their parent element. The basic document structure is:
+</p>
+<pre>
+&lt;html&gt;
+  &lt;head&gt; ... &lt;/head&gt;
+  &lt;body&gt; ... &lt;/body&gt;
+&lt;/html&gt;
+</pre>
+
+<h3>DOCTYPE</h3>
+<p>
+	All documents should also have a proper DOCTYPE, which should be the very first thing in the document. These are proper XHTML DOCTYPEs (I recommend XHTML Transitional.):
+</p>
+<pre>
+&lt;!DOCTYPE html PUBLIC &quot;-//W3C//DTD XHTML 1.0 Strict//EN&quot;
+&quot;http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd&quot;&gt;
+
+&lt;!DOCTYPE html PUBLIC &quot;-//W3C//DTD XHTML 1.0 Transitional//EN&quot;
+&quot;http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd&quot;&gt;
+
+&lt;!DOCTYPE html PUBLIC &quot;-//W3C//DTD XHTML 1.0 Frameset//EN&quot;
+&quot;http://www.w3.org/TR/xhtml1/DTD/xhtml1-frameset.dtd&quot;&gt;
+</pre>
+<h3>Character Encoding</h3>
+<p>
+All XHTML documents must specify their character encoding, as soon as possible.  The most common way is to include this information as your first <code>meta</code> tag.
+</p>
+<p>
+There are several options for character encoding, but I recomment UTF-8. 
+<pre>
+&lt;meta http-equiv=&quot;content-type&quot; content=&quot;text/html; charset=UTF-8&quot; /&gt;
+</pre>
+<h2>3. Tag Names Must Be Lower Case</h2>
+<p>
+	This is because XHTML documents are XML applications, and XML is case-sensitive. This means <code>&lt;br&gt;</code> and <code>&lt;BR&gt;</code> are two different animals.
+</p>
+<p>
+	This is wrong:
+</p>
+<pre>
+&lt;BODY&gt;
+  &lt;P&gt;This is a paragraph.&lt;/P&gt;
+&lt;/BODY&gt;
+</pre>
+<p>
+	This is correct:
+</p>
+<pre>
+&lt;body&gt;
+  &lt;p&gt;This is a paragraph.&lt;/p&gt;
+&lt;/body&gt;
+</pre>
+<h2>4. All Elements Must Be Closed</h2>
+<h4>Non-empty elements must have an end tag.</h4>
+<p>
+	This is wrong:
+</p>
+<pre>
+&lt;p&gt;This is a paragraph
+&lt;p&gt;This is another paragraph
+</pre>
+<p>
+	This is correct:
+</p>
+<pre>
+&lt;p&gt;This is a paragraph&lt;/p&gt;
+&lt;p&gt;This is another paragraph&lt;/p&gt;
+</pre>
+<h4>Empty Elements Must Also Be Closed</h4>
+<p>
+	Empty elements must either have an end tag or the start tag must end with /&gt;.
+</p>
+<p>
+	This is wrong:
+</p>
+<pre>
+This is a break&lt;br&gt;
+Here comes a horizontal rule:&lt;hr&gt;
+Here's an image &lt;img src=&quot;happy.gif&quot; alt=&quot;Happy face&quot;&gt;
+</pre>
+<p>
+	This is correct:
+</p>
+<pre>
+This is a break&lt;br /&gt;
+Here comes a horizontal rule:&lt;hr /&gt;
+Here's an image &lt;img src=&quot;happy.gif&quot; alt=&quot;Happy face&quot; /&gt;
+</pre>
+<p>
+	<strong>Compatibility Note:</strong> To make XHTML compatible with today's browsers, add an extra space before the &quot;/&quot; symbol like this:
+</p>
+<pre>
+&lt;br /&gt;
+&lt;hr /&gt;
+</pre>
+<h2>5. Attributes Must Be Well-Formed </h2>
+<h4>Attributes Must Always Be Quoted</h4>
+<p>
+	This is wrong:
+</p>
+<pre>
+&lt;p id=summary&gt;Not much happened.&lt;/p&gt;
+</pre>
+<p>
+	This is correct:
+</p>
+<pre>
+&lt;p id=&quot;summary&quot;&gt;Not much happened.&lt;/p&gt;
+</pre>
+<h4>Attributes Must Always Have a Value</h4>
+<p>
+	In HTML, attributes can exists without a value.  
+</p>
+<pre>
+&lt;ul compact&gt;
+&lt;option selected&gt;
+&lt;td nowrap&gt; text &lt;/td&gt;
+&lt;input type=&quot;radio&quot; checked&gt;
+&lt;input type=&quot;checkbox&quot; checked&gt;
+</pre>
+<p>
+	This isn't allowed in XHTML. Instead, write attributes without a value as <code>attribute=&quot;attribute&quot;</code>, like this:
+</p>
+<pre>
+&lt;ul compact=&quot;compact&quot;&gt;
+&lt;option selected=&quot;selected&quot;&gt;
+&lt;td nowrap=&quot;nowrap&quot;&gt; text &lt;/td&gt;
+&lt;input type=&quot;radio&quot; checked=&quot;checked&quot; /&gt;
+&lt;input type=&quot;checkbox&quot; checked=&quot;checked&quot; /&gt;
+</pre>
+<h1>Organizing CSS</h1>
+<p>
+	There are several possible ways to organize CSS, and it's hard to say which one is &quot;best&quot;. Below is the method I use.
+</p>
+<h2>0. Imported Styles Before Anything Else</h2>
+<p>
+	Any imported stylesheets must be listed first. We split all browser-specific rules into their own stylesheets, which are imported at the top of main.css.
+</p>
+<h2>1. List the &quot;Basics&quot; First</h2>
+<p>
+	All CSS applied to straight tags comes first. This includes <code> html, body, p, h<em>n</em>, ul, ol, li, :link, :visited, :hover, :active, table, form, input </code>
+</p>
+<h2>2. List Elements As Ordered In The Markup</h2>
+<p>
+	Next, divide elements into sections based on the order they occur the in markup. For example:
+</p>
+<pre>
+/* #header
+--------------------------------------------------*/
+div#header { }
+div#header h1 { }
+
+
+/* #page_content
+--------------------------------------------------*/
+div#page_content { }
+div#page_content p { }
+
+
+/* #nav_menu
+--------------------------------------------------*/
+div#nav_menu { }
+div#nav_menu li { }
+div#nav_menu li.current { }
+
+
+/* #footer
+--------------------------------------------------*/
+div#footer { }
+div#footer #copyright { }
+</pre>
+<p>
+	I also use a row of 50 dashes as a header underline. This make it easier to find sections when scrolling through the document. Also, you&rsquo;ll be able to search for a certain section using <code style="white-space: nowrap;">/* #section_id</code>.
+</p>
+<h2>3. Organize Page-Specific Elements By Page </h2>
+<p>
+	Finally, have sections for elements that apply only to certain pages. For example:
+</p>
+<pre>
+/* 2.0 Settings
+--------------------------------------------------*/
+div#user_settings { }
+input#save_user { }
+
+
+/* 4.0 Personnel
+--------------------------------------------------*/
+div#personnel { }
+div#personnel h3.first_name { }
+</pre>
+<h2>4. Organize Attributes Into Three Logical Sections</h2>
+<p>
+	I organize the attributes inside a CSS declaration into <strong>three logical sections</strong>. The basic prototype is this:
+</p>
+<pre>
+div#whatever {
+    /* Behavioral attributes */
+    position: ;
+    display: ;
+    top: ;
+    left ;
+    height ;
+    width: ;
+    float ;
+
+    /* The Three Musketeers */
+    border: ;
+    margin: ;
+    padding: ;
+
+    /* Look and Feel */
+    background: ;
+    color: ;
+    font: ;
+    text-decoration: ;
+    text-indent: ;
+    list-style: ;
+}
+
+</pre>
+<h4>Section 1: Behavioral Attributes</h4>
+<p>
+	This section sometimes includes only position and display, but if necessary it contains all attributes that determine the way this element behaves in relation to other elements and the flow of the document (with the noted exception of the Three Musketeers in Section 2).
+</p>
+<h4>Section 2: The Three Musketeers</h4>
+<p>
+	This section is easy: it's always border, margin, and padding. Occasionally something related like border-collapse might make sense here, but that&rsquo;s rare.
+</p>
+<h4>Section 3: Look and Feel</h4>
+<p>
+	Finally, the third section is where you find all cosmetic attributes. Often this is only background and color, but it also contains everything to do with text (like font), as well as other presentation attributes like list-style.
+</p>
+</body>
+</html>

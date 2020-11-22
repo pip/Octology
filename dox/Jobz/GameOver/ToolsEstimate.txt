@@ -1,0 +1,28 @@
+36H9Lbu - A guess at which tools we'll need for GO && how much we should spend.
+
+Tool                                                             Estimated Cost
+_______________________________________________________________________________
+
+Router                                                                     200
+Drill Press                                                                400
+Circular Saw                                                               150
+
+
+
+
+Notes: 
+  The rubber edging on X-Arcade sticks is probably called "base trim" or
+    "insert trim extrusion".  Should be available at McMurray Pacific on
+    7th St. in SF off Bryant.
+  Some good stuff for a flexible but durable-seeming clear top layer for the
+    face of the stick is available at OSH called Crystallite Fiberglass.
+    They had 1'x2' for $5 && 3'x4' for $23.  I have not experimented with it
+    yet but maybe if it is good, we should get wider base trim to account for
+    the added thickness this crystallite adds.
+  X-Arcade sticks use 3/4" thick fibreboard for the top panel which holds the
+    stick && most buttons.  All remaining walls of the box are 1/4" thick && 
+    precisely machine cut... very hard to compete with near-perfect quality 
+    utilizing hand tools but a good finish on nice wood which won't warp could
+    go a long way towards a finer appearance, texture, && durability.  The 
+    exacting process of cutting all the wood so consistently that they all
+    fit together very tightly will come with repetition of a good process.

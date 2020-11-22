@@ -1,0 +1,12 @@
+Seagate  Barracuda 7200.10 320GB
+Serial ATA
++ 5V 0.72A
++12V 0.52A
+S/N 5QF36JEV
+ST3320620AS
+P/N 98J14G-308
+Firmware 3.AAJ
+Date Code 07265
+Site Code WU
+Looking on w/ power left-most, SATA data port middle, jumper block right:
+  closing right-most two pins limits to 1.5Gb/s, otherwise full 3

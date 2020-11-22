@@ -1,0 +1,9 @@
+
+Disk /dev/hda: 16709 cylinders, 255 heads, 63 sectors/track
+Units = cylinders of 8225280 bytes, blocks of 1024 bytes, counting from 0
+
+   Device Boot Start     End   #cyls   #blocks   Id  System
+/dev/hda1   *      0+      3       4-    32098+  83  Linux
+/dev/hda2          4      68      65    522112+  82  Linux swap
+/dev/hda3         69    8388    8320  66830400   83  Linux
+/dev/hda4       8389   16708    8320  66830400   83  Linux

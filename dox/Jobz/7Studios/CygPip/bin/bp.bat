@@ -1,0 +1,1 @@
+@PROMPT=$e[1;31m$D $e[32m$T $e[36m%%@dosmem[bc]$e[30m[$e[33m$z$e[30m][$e[37m$+$e[30m][$e[0;36m$xc:$e[1;30m][$e[35m$xd:$e[30m]$_$e[1;31m$xe:$xf:$xg: $e[0;33m$xh:$xi:$xj: $e[1;33m$xk:$xl:$xm: $e[0;36m$xn:$xo:$xp: $e[37m$xq:$xr:$xs: $e[1;30m[$e[34m$P$g$e[32m

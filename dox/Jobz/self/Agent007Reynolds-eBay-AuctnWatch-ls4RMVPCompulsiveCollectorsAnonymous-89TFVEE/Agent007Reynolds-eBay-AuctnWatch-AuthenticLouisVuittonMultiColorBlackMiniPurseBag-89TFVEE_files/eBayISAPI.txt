@@ -1,0 +1,1 @@
+ebay.oDocument.oPage.showCounter([{"result":1,"vicount":366,"item":"110290656767"}]);

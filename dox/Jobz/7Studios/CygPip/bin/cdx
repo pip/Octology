@@ -1,0 +1,24 @@
+#!/usr/bin/perl -w
+# Pipz CDXtraction script
+# `cdx <directory> <title>`
+my $mp3d = shift || ""; $mp3d =~ s/-$//; $mp3d = "mp3/" . $mp3d;
+my $titl = shift || ""; $titl =~ s/_$//; 
+unless ($titl) { $titl = $mp3d; $mp3d = "mp3/unsorted"; }
+my $file = ""; my $mp3f = "";
+system("cdparanoia -B -- '1-'"); # rip the whole cd
+foreach $file (glob("*.wav")) {  # turn all the .wav'z to .mp3'z
+	$mp3f = $file; $mp3f =~ s/\.wav$/\.mp3/;
+	if ($titl) { $mp3f = "";
+		unless ($mp3d eq "mp3/unsorted") { 
+			$mp3f = $mp3d . "-"; $mp3f =~ s/^mp3\///; 
+		}
+		if ($file =~ /^track(\d+)/) { $mp3f .= $titl . "_" . $1 . ".mp3"; }
+	}
+#	print "lame --r3mix -b 256 $file $mp3f\n";
+#	print "lame -b 256 -h -m s $file $mp3f\n";
+	system("lame -b 256 -h -m s $file $mp3f");
+	system("rm $file");
+	unless (-d "${mp3d}") { mkdir("${mp3d}", 0755); }
+	unless (-d "${mp3d}/${titl}") { mkdir("${mp3d}/${titl}", 0755); }
+	system("mv $mp3f ${mp3d}/${titl}");
+}

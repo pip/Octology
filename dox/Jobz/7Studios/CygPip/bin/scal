@@ -1,0 +1,86 @@
+#!/usr/bin/perl -w
+# LHHcl - scal : a quick Gimp_Perl script to scale images
+# Synt: `scal <ImageToScale> <NewWidth> <NewHeight> [OutFile] [saveAspectFlag]`
+
+use Gimp ":auto"; 
+use Gimp::Fu;
+use strict;
+
+sub scaleimg () {
+    my $inpi = shift || return; # must get an input image parameter
+    my $neww = shift || 32;
+    my $newh = shift || 32;
+    my $outi = shift || undef; 
+    my $aspf = shift || 0; my $temp = 0;
+    my $imag = gimp_file_load( RUN_NONINTERACTIVE, $inpi, $inpi );
+    my $widt = gimp_image_width(  $imag );
+    my $hite = gimp_image_height( $imag );
+    my $draw = gimp_image_active_drawable( $imag );
+
+    unless ($neww =~ /^\d+$/) { $outi = $neww; $neww = 32; }
+    if ($aspf) {
+        if (($widt/$hite) >= ($neww/$newh)) {
+            $temp = $neww / $widt;
+            $newh = int($temp * $hite);
+        } else {
+            $temp = $newh / $hite;
+            $neww = int($temp * $widt);
+        }
+    }
+    unless (defined($outi)) {
+        $outi = $inpi;
+        $outi =~ s/\..*//;
+        $outi .= "_$neww" . "x$newh";
+    }
+    $outi .= ".png" unless $outi =~ /\.png$/;
+    if ($widt != $neww || $hite != $newh) {
+        gimp_image_scale( $imag, $neww, $newh );
+    }
+    gimp_file_save( RUN_NONINTERACTIVE, $imag, $draw, $outi, $outi );
+#    save_image( $imag, "PNG-C7:$outi" );
+# Gimp::Fu::save_image(imag, [(GIF|JPG|JPEG|PNM|PNG)[OPTIONS...]:]filespec)"
+#  optn: all  +F     flatten the image (default depends on the image)
+#        PNG  -Cn    use compression level n
+#             -E     Do not skip ancillary chunks (default)
+#             -I     do not save as interlaced (default) (works for GIF also)
+#        GIF  -L     save as non-looping animation (default) (anims: use -F)
+#             -Dn    default frame delay (default is 0)      (anims: use -F)
+#             -Pn    frame disposal method: 0=don't care,1=combine,2=replace
+#       JPEG  -Qn    use quality "n" to save file (JPEG only)
+#             -S     do not smooth (default)
+#  xmpl: test.jpg          save the image as a simple jpeg
+#        JPG:test.jpg      same
+#        JPG-Q70:test.jpg  same but force a quality of 70
+#        GIF-I-F:test.jpg  save as GIF image(!) named test.jpg non-int non-flat
+
+    gimp_image_delete ( $imag );
+    print "Scaled: $inpi (", 
+          ( ((1.0*$neww/$widt) + (1.0*$newh/$hite)) / 2.0 )*100, 
+          "%) from ", $widt, "x$hite to ", $neww, "x$newh\n",
+          "    as: $outi";
+    if ($aspf) { print " preserving"; }
+    else       { print " discarding"; }
+    print " aspect ratio.\n";
+
+    return;
+}
+
+register                                          
+    "scaleimg",                                   
+    "Scale an image",                             
+    "Used by MagicRainbowBattle",                 
+    "PipTigger",                                  
+    "Pip Stuart (c)",                             
+    "2002-06-07 [I7Muv]",                         
+    "<Toolbox>/Xtns/Perl-Fu/ScaleImg",            
+    "*",                                          
+    [                                             
+      [PF_STRING, "inpi",    "Input Image",   ""],
+      [PF_STRING, "neww",    "New Width",   "32"],
+      [PF_STRING, "newh",    "New Height",  "32"],
+      [PF_STRING, "outi",    "Output Image",  ""],
+      [PF_STRING, "aspf",    "Aspect Flag",  "0"],
+    ],                                            
+    \&scaleimg;
+
+exit main(); 

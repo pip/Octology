@@ -1,0 +1,108 @@
+                              JP Software
+
+            Trial (Shareware) Version Distribution Policies
+
+                   4DOS, 4OS2, 4NT, Take Command/16,
+                 Take Command/32, Take Command for OS/2
+
+                             April 12, 1999
+
+
+Copyright 1999, JP Software Inc., All Rights Reserved.  Published by JP
+Software Inc., P.O. Box 1470, E. Arlington, MA 02474 USA.
+
+
+This file provides information for user groups, online system
+adminstrators, and shareware vendors on the distribution of shareware
+(trial) versions of 4DOS, 4OS2, 4NT, Take Command/16, Take Command/32,
+and Take Command for OS/2.
+
+We are glad to work with you in the distribution of our products, as
+online services, user groups, and vendors are a key part of the
+shareware distribution system.
+
+To distribute our trial version files online, or provide links to them,
+you must clearly mark them as trial or shareware versions, and properly
+identify us as the author.  The products may NEVER be described in any
+way as as "free" software, or otherwise described as anything but trial
+versions requiring payment to the author for continued use.
+
+Online services may not distribute registered or purchased versions of
+JP Software products for a fee without a written distribution agreement
+with us.
+
+Before placing any JP Software product, or any part of any JP Software
+program package, in any user group, shareware, or other disk or CD
+library, or distributing shareware copies for a fee in any way, you must
+meet these conditions:
+
+   * If you are a U.S.-based shareware vendor, you must be an approved
+     member of the Association of Shareware Professionals (ASP), and
+     your application must be fully approved in writing by the ASP, not
+     simply submitted or awaiting review.  If you are not an ASP member,
+     we cannot currently offer you permission to distribute our
+     products.  We apologize for any inconvenience this may cause you,
+     but we have found that the administrative overhead required to
+     handle non-ASP vendors from within the U.S. is simply too high.
+
+   * If you are a U.S.-based, non-profit, tax-exempt user group, you may
+     place shareware copies of our programs in your library without
+     prior written permission, provided you obtain your copy from one of
+     our upload locations (see below), and check regualrly to keep it up
+     to date.
+
+   * If you are a vendor based outside the U.S., you must either be an
+     ASP member, or you must obtain prior written permission from us
+     before distributing our products.
+
+   * If you distribute our products, you MUST obtain your copy directly
+     from one of our official upload locations:  Our web site or ftp
+     site (both access the same physical set of files), or our
+     CompuServe file area.  Details on all locations are below.
+     
+   * CD-ROM distribution is permitted but ONLY if you contact us for
+     permission prior to starting distribution of any JP Software
+     product via CD-ROM.  You only need to contact us once for each
+     product, not separately for each edition of your CD-ROM.  We
+     reserve the right to revoke permission for CD-ROM distribution at
+     any time, and for any reason.  If we do so you must cease
+     distribution of our products on CD-ROM the next time your CD is
+     remastered after we notify you of the revocation.
+     
+   * JP SOFTWARE DOES NOT PERMIT RETAIL RACK DISTRIBUTION OF OUR
+     PRODUCTS UNDER ANY CIRCUMSTANCES.  Please do not contact us for
+     approval of rack distribution, as it will be denied.  This applies
+     even if you have distributed our products via rack or CD- ROM in
+     the past.
+
+Non-ASP vendors who wish to consider becoming ASP approved can obtain
+information from:
+
+           Association of Shareware Professionals
+           PO Box 1554
+           Ballwin, MO 63022
+
+           Web site:  http://www.asp-shareware.org/
+
+You can contact JP Software at any of the addresses below:
+
+   Internet      sales@jpsoft.com (sales / customer service), or
+                 support@jpsoft.com (technical support)
+
+   WWW           http://www.jpsoft.com/
+
+   FTP           ftp.jpsoft.com (product directories are below the main
+                 directory)
+
+   CompuServe    For sales / customer service send mail to user ID
+                 75020,244.  For our support forum use the Quick
+                 Reference Word JPSOFT (for off-line readers use GO
+                 CVTHREE, section 2), user ID 75300,1215.
+
+   Voice         (781) 646-3975, days Eastern US time
+   Fax           (781) 646-0904
+
+   US Mail       JP Software
+                 P.O. Box 1470
+                 E. Arlington, MA 02474, USA
+

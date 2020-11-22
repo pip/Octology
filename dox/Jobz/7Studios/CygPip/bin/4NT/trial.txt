@@ -1,0 +1,192 @@
+
+                               4NT v3.02
+
+                      TRIAL.TXT -- April 12, 1999
+
+                            JP Software Inc.
+                             P.O. Box 1470
+                      E. Arlington, MA 02474, USA
+
+                             (781) 646-3975
+                           fax (781) 646-0904
+                         Email sales@jpsoft.com
+                       Web http://www.jpsoft.com/
+
+
+Greetings, and thanks for trying 4NT!
+
+This file explains how trial versions of 4NT work, and
+how you can give a purchased copy of 4NT to a friend to
+use as a trial version.
+
+For instructions on using a downloaded trial version to upgrade your
+previous purchased copy to a new maintenance release see README.TXT.
+
+
+Trial Version Basics
+--------------------
+
+   We distribute trial or "shareware" versions of our software to allow
+   you to "try before you buy".  Most users obtain trial versions by
+   downloading them.  You might also have one if a friend gave you a copy
+   of their software -- as long as they don't give you their serial number
+   and registration key (which would be illegal), the software they gave
+   you will operate as a trial version.
+   
+   Trial versions are covered under the trial version license in the
+   LICENSE.TXT file, which you should read before using your software.
+   
+   We explain here how trial versions work because we believe that full
+   disclosure of what you can expect from your software is the best policy
+   for both you and us.  Our timing mechanism is designed to give you a
+   fair opportunity to try our software, order it, and receive it without
+   significant restrictions on use.  It's also designed to make sure that
+   use of the software becomes restricted if you significantly exceed the
+   normal evaluation period.
+   
+   Trial versions of our products are fully functional evaluation copies
+   which are not "crippled" or feature-limited in any way except for the
+   trial timing mechanism described here.
+
+
+Trial Version Timing
+--------------------
+
+   When you first install a trial version on your computer, it begins to
+   count the number of days on which you use it.  Only actual days of use
+   are counted -- if you go away for a few days, or are busy with other
+   things and don't work with the product for a bit, the intervening days
+   are not counted.
+   
+   You are given a 21-day evaluation period (remember that's 21 days of
+   actual use -- three weeks if you use the product every day, or a little
+   more than four 5-day work weeks of uninterrupted use).  The number of
+   days remaining in the evaluation period is displayed when you start
+   the program, and can be redisplayed at any time with the VER /R
+   command.  At startup the software pauses briefly to allow you to read
+   the information; this pause can be interrupted with a keystroke if
+   you wish.  During the last 7 days of the evaluation period a short
+   two-tone beep draws your attention to the signon message.
+   
+   Once you have reached 21 days of use the evaluation period expires and
+   you are given a grace period of 14 additional days (of actual use) to
+   make sure you have time to receive your order of a purchased copy.
+   During this period you are advised at signon that usage will be
+   restricted once the grace period expires, and of the number of days
+   remaining (use VER /R to redisplay the number of days remaining).
+   Also, the startup delay for reading the signon message becomes slightly
+   longer, the first part of the delay is no longer interruptible with a
+   keystroke (to continue, just wait a couple of seconds, then press a
+   key), and a sequence of beeps is used to draw your attention to the
+   reminder messages.
+
+   After expiration of the grace period your use of the software is
+   restricted by limiting the number of commands you can enter before
+   the program exits automatically and must be restarted.  You are advised
+   of the usage restriction each time you start the program.  There is
+   also a significant delay each time the program starts, and a
+   substantial portion of that delay is not interruptible with a
+   keystroke.
+
+   Once use is restricted the software will also sound a noticeably longer
+   sequence of beeps each time it is started.
+
+   If you have ordered a copy of our software directly from us, at or
+   before the end of the evaluation period, and find that the grace period
+   expires and use becomes restricted before your order arrives, please
+   contact us for assistance.
+
+
+Installing the Purchased Version After a Trial
+----------------------------------------------
+
+   When you install a purchased copy of 4NT, you may
+   choose to:
+   
+      - Install it in a new directory, and then delete the trial version
+        directory;
+        
+      - Install the purchased version "over" (in the same directory as)
+        the trial version;
+        
+      - Install only the "branding" program from the purchased version
+        (when this option is offered by the installation software), and
+        use it to "brand" the trial version with your name and serial
+        number, converting it to a purchased copy.
+   
+   In each case, once you install the purchased copy and "brand" it with
+   your name and serial number, all trial messages and delays should
+   stop.  (If 4NT was running during installation of the
+   purchased version you must exit and restart for the newly installed
+   name and serial number to take full effect).
+
+
+Giving Copies to Others to Try
+------------------------------
+
+   We know many of our customers may want to give a copy of one of our
+   products to a friend or colleague to try.
+   
+   We encourage you to share your purchased copy of our software with
+   individuals you know personally.  The only restriction is that you
+   must use the simple approach described here to avoid violating your
+   license agreement or disclosing the registration key (for which you
+   paid!) to others.
+   
+   To give a copy of your software to someone else for evaluation
+   purposes, simply let them borrow or make a copy of your diskette, CD
+   (or the desired subirectory from the CD), or downloaded electronic
+   purchase.  When your friend or colleague installs the software you've
+   passed along to them in this way, without your serial number and
+   validation key, the program will automatically become a trial version
+   using the system described earlier in this file.  The recipient may
+   then decide whether to purchase the software under our normal trial
+   version policies.
+   
+   Please note that under our license and trial version policies there
+   are also some things you may NOT do:
+   
+      - You may not give the other person your serial number or branding
+        codes, as these are private and represent the license you paid
+        for (giving them to others is a violation of your license
+        agreement).
+   
+      - You may not give the other person copies of installed files from
+        your hard disk, as these may have the serial number and code
+        embedded in them.
+   
+      - You may not place copies of your purchased copy of our software
+        on any Internet or other electronic distribution site, or in any
+        user group or other shareware library, or distribute them to the
+        public at large in any way.  This policy only allows you to
+        distribute copies to friends and colleagues you know personally
+        and privately.
+   
+   You should also read LICENSE.TXT, and remind the recipient to read
+   that license and this file for complete licensing and trial version
+   information.
+   
+   PLEASE NOTE:  This policy allows for only one level of distribution;
+   those who receive copies of your purchased software for trial use
+   under this policy may NOT further redistribute those copies to their
+   friends and colleagues.
+
+   If you need a true trial copy for general distribution, download one
+   from our web site at http://www.jpsoft.com/.
+
+
+LEGAL STUFF
+-----------
+
+Copyright 1999, JP Software Inc., All Rights Reserved.  Published by JP
+Software Inc., P.O. Box 1470, E. Arlington, MA 02474, U.S.A., phone
+781-646-3975, fax 781-646-0904.
+
+Take Command and 4DOS are registered trademarks of JP Software Inc.
+4DOS, 4OS2, and 4NT are JP Software Inc.'s trademarks for its family of
+character-mode command processors.  JP Software, jpsoft.com, and all JP
+Software designs and logos are also trademarks of JP Software Inc. Other
+product and company names are trademarks of their respective owners.
+
+All prices and terms subject to change without notice.
+

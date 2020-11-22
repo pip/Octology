@@ -1,0 +1,319 @@
+                                                                P0/9
+                                                               3AGHLwk
+Dear Dad,
+
+  --- 0 ---
+
+  Thank you for your PIP.302
+letter too.  I'm glad the post
+office has been reliable && speedy
+... sorry I'm not always. =)
+
+  --- 1 --- 3AGHQiR
+
+  Well part of the reason I've
+lagged so long in replying is
+that I've wanted to refine
+&& document my PT (PakTime or
+PipTime) code && make it available
+on the CPAN already (the
+Comprehensive Perl Archive Network
+at http://www.CPAN.org) but I've
+been too busy to finish the
+object system I have in mind so
+I figured it's time to just
+describe it to you as how I
+intend it to be once released.
+
+Hmmm... so here's a warning that
+a lot of the following details
+are nerdy && maybe tedious but
+I hope I have made good logical
+
+                                                                P1/9
+                                                               3AGHYJL
+decisions.  Please feel free to
+comment on or question anything or
+even skip this section if it gets
+too tedious && boring.
+
+ok so basics: I use a base-64
+encoding (which I usually refer
+to as b64 or expand as basS64
+as a little joke because I really
+enjoy driving bass beats).  So
+my digit set is comprised of
+  - traditional decimal digits     0..9 (10)
+  - traditional uppercase letters  A..Z (26)
+  -             lowercase          a..z (26)
+  -                        Period  "."  (1)
+  -                    Underscore  "_"  (1)
+                                    --------
+                                    sum (64)
+Normal time fields (except the Year)
+wouldn't have opportunity to need
+indices 62 or 63 but they have
+special exceptions too which I'll
+explain later.
+
+I chose . && _ to round out my
+b64 charset because they are
+both natural (ie. don't require
+command-line escapes) filename
+characters && they allow b64
+sentences to be constructed using
+
+                                                                P2/9
+                                                               3AGHlEW
+_ as a space && . as a sentence
+terminator.  Such sentences could
+be used to hide codes or
+messages in mundane-looking text.
+
+So, as I said, most fields wouldn't
+normally utilize their available
+64-char spectrum so I didn't
+want to waste space (bits) if
+not necessary so field mapping
+breaks down as follows:
+  0) the Year field is normally added
+    to 2000.
+  1) each 12 added to the Month
+    field adds 64 to the base Year.
+  2) 24 added to the Hour field
+    adds 320 to the base Year.
+  3) 31 added to the Day field
+    makes the Year negative from 2000.
+
+With these rules, valid 4(or more)-
+character PipTimes can represent
+any hour which has occurred or
+will occur between 1361 C.E. && 
+2639 C.E..  The common case
+of the upcoming future is in the
+simplest to decipher span of
+2000-2063 but additional
+centuries are possible now.
+
+                                                                P3/9
+                                                               3AGI1cZ
+I've made some other big changes.
+The normal (ie. default) representation
+of a PT includes 7 characters
+for Year, Month, Day, hour, minute, second,
+                                      frame
+where a frame is 1/60th of a second.
+The assumed timezone is PST (16).
+
+I've added 3 new optional fields
+to the object structure.  A
+Century field can now precede
+the Year field.  If Century is
+present, the Century + Year
+fulcrum becomes 1 B.C.E. instead
+of 2000 C.E. which allows all of
+recorded human history to be
+encompassed if needed.
+
+Two new fields have been appended
+to the bass7 now too.  After
+the frame field can come Jink.
+A Jink would normally be 1/60th of-a-frame
+The plural of jink is jinx.  I chose
+the name "jink" for many reasons but
+the main ones are:
+  0) I like the sound (like "hijinx")
+  1) abbreviation is unique from other fields
+  2) combination of "jiffy" && "blink" which
+    both mean very fast.
+Normally a jink would be about 0.3 milliseconds.
+
+                                                                P4/9
+                                                               3AGIFiq
+I say normally because the objects
+contain member functions which
+facilitate redefinition of the
+ratios governing the relationship
+between seconds && frames && jinx.
+
+The 10th (index [9]) && final field
+is Zone.  Zone is the numerical
+hour offset from GMT.
+
+Whenever individual fields can
+be colored (as in all my shell
+prompts or my realtime PT clock)
+they should be colored as:
+  Century    Dark Red
+  Year       Red
+  Month      Orange
+  Day        Yellow
+  hour       Green
+  minute     Cyan
+  second     Blue
+  frame      Purple
+  jink       Dark Purple
+  Zone       Gray or White
+
+to help isolate fields' representations.
+                            as a distinct field
+I don't include Day-Of-Week ^ since it is a
+simple function of Year, Month, && Day.
+
+                                                                P5/9
+                                                               3AGISIC
+So I already have my utility handling
+most of these developments fine && 
+can convert to or from different
+representations.  So the birthdays
+you sent convert as follows:
+  Dad      0 h88KU  # the line you wrote
+   Sun. Aug.  8 20:30 1943 -> v8dKU
+  Mom      6 q5H??  # the line you wrote
+   Sat. May  17  ?:?  1952 -> m5m
+  Philip   1 -CD6X
+   Mon. Dec. 13  6:33 1976 -> OCi6X
+  Angela   4 -610f
+   Thu. Jun.  1  0:41 1978 -> M6W0f
+  Timothy  2 -9U62
+   Tue. Sep. 30  6:02 1980 -> K9z62
+
+I'll ask Mom what time she was born
+when I remember.  So we're:
+  D v8dKU
+  M m5m
+  P OCi6X
+  A M6W0f
+  T K9z62
+
+So what do you think of PipTime?
+The rainbow colors make it pretty
+too.  I've got objects to store
+durations of time too using the
+same fields so you can add "2 weeks"
+to some PT object with an overloaded
+
+                                                                P6/9
+                                                               3AGItwN
+"+" operator.  You're so right
+that code is never done. =)
+I'm happy with PT... just need
+more time to work on it.
+
+So as you have gathered, ambiguity
+arises with 1, l, I, i && 0, O, oso
+I try to employ fonts which
+distinguish them.
+
+  --- 2 --- 3AGIxoO
+
+Sirlin && I have had no luck getting
+GameOver off the ground so far.
+Loan officers && Landlords have
+not seen promise in our business
+aspirations && plans to reach
+profit.  I've had to return to
+In-N-Out Burger to make ends
+meet.  Friends && food are great
+there but pay is poverty.
+Sirlin is living off savings so he
+is still plugging away on
+loans && locations for GO.  I
+hope we can open soon or I
+find some better income to tide
+me over.
+
+                                                                P7/9
+                                                               3AGJ5iG
+  --- 3 ---
+How are Ange && Tim?
+
+They're both well.  Ange is
+still in Wisconsin working hard,
+loving herself, her fam && her cat.
+She's supposed to visit me
+in Cali sometime soon.  She might
+move back here in a year or two.
+We chat on the phone every couple
+days.  I miss her so && can't
+wait to give a big hug.
+
+Tim dropped out of college to
+focus on business.  He ran
+a mildly successful limo service
+for a while, wanted to move
+into the restaurant business,...
+but then decided to become
+a stock broker for the challenge
+since he was bored && felt
+stagnant.  He's up in the San
+Fran Bay Area right now for
+some training.  I was hoping
+to get dinner with him tonight
+but it's starting to get late.
+I asked for Saturday off so he
+&& I could chill together though.
+I think there's a kickboxing tournament
+he wants to go to... should be cool.
+
+                                                                P8/9
+                                                               3AGJFUD
+  --- 4 ---
+
+Glad to hear of your Museum
+work && study.  Sounds fun.
+
+  --- 5 ---
+
+I'm sorry I don't remember
+Animatch but I'm glad a new
+incarnation lives on.  I'd like
+to see it again someday if
+possible.  It's sweet.
+
+  --- 6 ---
+
+Hmmm... The Ruggery sounds like
+a rough endeavor even if sales
+would have been better.  10
+hours of work + material costs
+sold for $30-40 doesn't sound
+lucrative enough.  I've done
+something similar.  I've built
+8 arcade fighting sticks &&
+sold 2 for $100 each.  Parts
+cost me about $40 && each took
+about 8 hours to make.  Inside,
+they're basically cracked-open
+Sony PlayStation controllers wired
+up to real arcade replacement
+parts.  Fun to play with.
+
+                                                                P9/9
+                                                               3AGJP7H
+I'd like to make && sell more
+when I have time.  We'll see.
+It's sure not profitable enough
+to do as more than a side
+hobby for me.  I don't have
+very good tools for the wood
+either.  I'd like to see or
+have one of your rugs if you've
+kept them.  Do you play
+video games?
+
+  --- 7 ---
+
+heh  Thanks for the help.
+
+Well I'm gonna drop this in the
+mail && try to find Tim.
+
+  --- eof --- but nteomelfy ---
+
+            I love you Dad
+
+                 -Pip
+
+p.s. What is the URL to your (our)
+  home page?

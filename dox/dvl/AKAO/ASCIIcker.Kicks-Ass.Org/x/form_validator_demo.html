@@ -1,0 +1,161 @@
+[% PROCESS header.tt title = "Form.Validator Demo" %]
+
+  <style type="text/css" title="currentStyle">
+    @import "styles.css"; /* from iusethis.com */
+
+    body {
+      margin-left: 8em;
+      margin-right: 8em;
+      width: 400px;
+    }
+
+    /* note the underscore -- styles.css has .errormessages */
+    .error_messages {
+      display: block;
+      margin-top: 0;
+      padding-top: 0;
+      padding-bottom: 1em;
+    }
+
+  </style>
+
+  <script type="text/javascript" src="[% c.uri_for('js/Form/Validator.js') %]"></script>
+  <script type="text/javascript" src="[% c.uri_for('js/Form/Validator/Report/AlertAll.js') %]"></script>
+  <script type="text/javascript" src="[% c.uri_for('js/Form/Validator/Report/AlertFirst.js') %]"></script>
+  <script type="text/javascript" src="[% c.uri_for('js/Form/Validator/Report/InnerHTML.js') %]"></script>
+
+  <h1>Form.Validator Demo</h1>
+
+  <p>Please `View Source` for the details.</p>
+
+  <div>
+    <!-- I took this form from http://beta.iusethis.com/register . -->
+    <form action="/weapons_of_mass_destruction" id="register" method="post">
+    <fieldset>
+    <label for="register_screenname" id="register_screenname_label">Screen name
+    <input class="textfield" id="register_screenname" name="screenname" type="text" /></label>
+    <span class="error_messages" id="register_screenname_errors"></span>
+    <label for="register_email" id="register_email_label">E-mail
+    <input class="textfield" id="register_email" name="email" type="text" /></label>
+    <span class="error_messages" id="register_email_errors"></span>
+    <label for="register_password" id="register_password_label">Password
+    <input class="password" id="register_password" name="password" type="password" /></label>
+    <span class="error_messages" id="register_password_errors"></span>
+    <label for="register_passconfirm" id="register_passconfirm_label">Repeat Password
+    <input class="password" id="register_passconfirm" name="passconfirm" type="password" /></label>
+    <span class="error_messages" id="register_passconfirm_errors"></span>
+    <label for="register_invitation" id="register_invitation_label">Invitation Code
+    <input class="textfield" id="register_invitation" name="invitation" type="text" /></label>
+    <span class="error_messages" id="register_invitation_errors"></span>
+    <input class="submit" id="register_register" name="register" type="submit" value="Register" /></fieldset></form>
+  </div>
+
+  <script>
+    // Constructor
+    var fv = new Form.Validator(document.getElementById('register'));
+
+    // Define your constraints.
+    var naive_email_regex = /^([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})$/;
+    function matchPassword(fv, field) {
+      return (fv.form['password'].value == fv.form['passconfirm'].value);
+    }
+    fv.set('screenname',  'notBlank',           'Field required');
+    fv.set('screenname',  fv.makeLengthMin(3),  'Must be at least 3 characters long');
+    fv.set('screenname',  fv.makeLengthMax(16), 'Must be no greater than 16 characters long');
+    fv.set('email',       'notBlank',           'Field required');
+    fv.set('email',       fv.makeOptional(fv.makeMatchRegex(naive_email_regex)), 
+                                                'Please provide a valid email address.');
+    fv.set('password',    'notBlank',           'Field required');
+    fv.set('passconfirm', 'notBlank',           'Field required');
+    fv.set('passconfirm', matchPassword,        'Must match password');
+
+    // Regardless of reporting style (AlertAll, AlertFirst, InnerHTML) 
+    // you should always setup an onsubmit handler.
+    var form = fv.form;
+    form.onsubmit = function() { return fv.validate() }
+
+    // Setting up the InnerHTML report takes a little more work.
+    // I would like to provide a method to do this part more automatically.
+    var report = fv.reporter('InnerHTML');
+    report.prefix = 'register_';
+    report.suffix = '_errors';
+    function setup(form, field) {
+      var f = form[field];
+      f.onfocus = f.onblur = f.onkeyup = function(event) {
+        fv.validate(field);
+      }
+    }
+    setup(form, 'screenname');
+    setup(form, 'email');
+    setup(form, 'password');
+    setup(form, 'passconfirm');
+
+    // Call validate to setup the initial state of the page.
+    fv.validate();
+  </script>
+
+  <h1>Poor Man's Javascript Shell</h1>
+  (for debugging)
+  <div>
+    <form name="f">
+      <textarea name="js" cols="64" rows="8"></textarea><br />
+      <input type="button" name="submit" value="eval" onclick="try { eval(document.f.js.value) } catch(e) { alert(e) }; return false;"/>
+    </form>
+  </div>
+
+  <h1>The AJAX Dilemma</h1>
+  <p>
+    I managed to organize the code such that all the AJAX stuff can be
+    implemented outside of the validation framework.  Typically, the
+    AJAX stuff would happen inside constraint functions, and you're
+    free to use whatever AJAX library you like to implement them.  Thus,
+    Form.Validator has no dependencies on Prototype or any other library
+    for that matter.
+  </p>
+  <p>
+    However, in my own experiments with using AJAX for constraint functions,
+    I encountered a problem.
+  </p>
+  <ul>
+    <li>
+      If I use asynchronous requests, I can't make good constraint functions
+      for Form.Validator, because the constraint functions need to be able to
+      return the results of the request in a timely manner.
+    </li>
+    <li>
+      If I use synchronous requests, anything that has on onkeyup handler
+      becomes unbearably slow, because the whole page will be blocked until
+      the request finishes.
+    </li>
+  </ul>
+
+  <h2>Synchronous AJAX Requests Aren't Responsive</h2>
+  <p>Under Construction</p>
+
+  <h1>So...</h1>
+  <p>
+    I'd like to hash these issues out and make it work well with HTML::Widget
+    before I release this on JSAN.  However, for those of you who want to have
+    a sneak preview of what's in store, I've provided a download link.
+  </p>
+  <p>
+    (Note that the current demo does not use AJAX for validation.)
+  </p>
+
+  <h1>Download</h1>
+  <ul>
+    <li><a href="Form.Validator-0.32.tar.gz">Form.Validator-0.32.tar.gz</a></li>
+    <li><a href="Form.Validator-0.31.tar.gz">Form.Validator-0.31.tar.gz</a></li>
+    <li><a href="Form.Validator-0.30.tar.gz">Form.Validator-0.30.tar.gz</a></li>
+  </ul>
+
+  <h1>Documentation</h1>
+  <ul>
+    <li><a href="Validator.js.html">Form.Validator</a></li>
+    <li><a href="AlertAll.js.html">Form.Validator.Report.AlertAll</a></li>
+    <li><a href="AlertFirst.js.html">Form.Validator.Report.AlertFirst</a></li>
+    <li><a href="Data.js.html">Form.Validator.Report.Data</a></li>
+    <li><a href="InnerHTML.js.html">Form.Validator.Report.InnerHTML</a></li>
+  </ul>
+
+[% PROCESS footer.tt %]

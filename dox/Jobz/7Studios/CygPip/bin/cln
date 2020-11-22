@@ -1,0 +1,10 @@
+#!/usr/bin/perl -w
+# 5575tCZ - calc created by Pip@CPAN.Org to wrap perl as a cmd-line calculator.
+#   Please see `perldoc Pip::Utl` for more info.
+# Lice: Most source code should be Free!
+#     Code I have lawful authority over is && shall be!
+#   Copyright: (c) 2005, Pip Stuart.
+#   Copyleft :  I license this software under the GNU General Public
+#     License (version 2).  Please consult the Free Software Foundation
+#     (http://www.fsf.org) for important information about your freedom.
+use strict; use Pip::Utl; calc(@ARGV);

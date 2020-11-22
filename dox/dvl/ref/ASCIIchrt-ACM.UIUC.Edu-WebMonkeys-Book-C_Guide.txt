@@ -1,0 +1,144 @@
+88UIwpu - HTTP://ACM.UIUC.Edu/webmonkeys/book/c_guide/a.html
+
+| Table of Contents | Index |
+Appendix A
+
+ASCII Chart
+Decimal   Octal   Hex    Character
+  0        0       00      NUL
+  1        1       01      SOH
+  2        2       02      STX
+  3        3       03      ETX
+  4        4       04      EOT
+  5        5       05      ENQ
+  6        6       06      ACK
+  7        7       07      BEL
+  8        10      08      BS
+  9        11      09      HT
+  10       12      0A      LF
+  11       13      0B      VT
+  12       14      0C      FF
+  13       15      0D      CR
+  14       16      0E      SO
+  15       17      0F      SI
+Decimal   Octal   Hex    Character
+  16       20      10      DLE
+  17       21      11      DC1
+  18       22      12      DC2
+  19       23      13      DC3
+  20       24      14      DC4
+  21       25      15      NAK
+  22       26      16      SYM
+  23       27      17      ETB
+  24       30      18      CAN
+  25       31      19      EM
+  26       32      1A      SUB
+  27       33      1B      ESC
+  28       34      1C      FS
+  29       35      1D      GS
+  30       36      1E      RS
+  31       37      1F      US
+Decimal   Octal   Hex    Character
+  32       40      20      SP
+  33       41      21      !
+  34       42      22      "
+  35       43      23      #
+  36       44      24      $
+  37       45      25      %
+  38       46      26      &
+  39       47      27      '
+  40       50      28      (
+  41       51      29      )
+  42       52      2A      *
+  43       53      2B      +
+  44       54      2C      ,
+  45       55      2D      -
+  46       56      2E      .
+  47       57      2F      /
+Decimal   Octal   Hex    Character
+  48       60      30      0
+  49       61      31      1
+  50       62      32      2
+  51       63      33      3
+  52       64      34      4
+  53       65      35      5
+  54       66      36      6
+  55       67      37      7
+  56       70      38      8
+  57       71      39      9
+  58       72      3A      :
+  59       73      3B      ;
+  60       74      3C      <
+  61       75      3D      =
+  62       76      3E      >
+  63       77      3F      ?
+Decimal   Octal   Hex    Character
+  64       100     40      @
+  65       101     41      A
+  66       102     42      B
+  67       103     43      C
+  68       104     44      D
+  69       105     45      E
+  70       106     46      F
+  71       107     47      G
+  72       110     48      H
+  73       111     49      I
+  74       112     4A      J
+  75       113     4B      K
+  76       114     4C      L
+  77       115     4D      M
+  78       116     4E      N
+  79       117     4F      O
+Decimal   Octal   Hex    Character
+  80       120     50      P
+  81       121     51      Q
+  82       122     52      R
+  83       123     53      S
+  84       124     54      T
+  85       125     55      U
+  86       126     56      V
+  87       127     57      W
+  88       130     58      X
+  89       131     59      Y
+  90       132     5A      Z
+  91       133     5B      [
+  92       134     5C      \
+  93       135     5D      ]
+  94       136     5E      ^
+  95       137     5F      _
+Decimal   Octal   Hex    Character
+  96       140     60      `
+  97       141     61      a
+  98       142     62      b
+  99       143     63      c
+  100      144     64      d
+  101      145     65      e
+  102      146     66      f
+  103      147     67      g
+  104      150     68      h
+  105      151     69      i
+  106      152     6A      j
+  107      153     6B      k
+  108      154     6C      l
+  109      155     6D      m
+  110      156     6E      n
+  111      157     6F      o
+Decimal   Octal   Hex    Character
+  112      160     70      p
+  113      161     71      q
+  114      162     72      r
+  115      163     73      s
+  116      164     74      t
+  117      165     75      u
+  118      166     76      v
+  119      167     77      w
+  120      170     78      x
+  121      171     79      y
+  122      172     7A      z
+  123      173     7B      {
+  124      174     7C      |
+  125      175     7D      }
+  126      176     7E      ~
+  127      177     7F      DEL
+Decimal   Octal   Hex    Character
+| Table of Contents | Index |

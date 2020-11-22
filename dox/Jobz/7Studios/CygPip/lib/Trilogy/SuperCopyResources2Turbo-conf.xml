@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<conf><!-- 7AJGh8Q - SuperCopyResources2Turbo-conf.xml created by Pip Stuart <Pip@TrilogyStudios.Com> to hold all configuration info for SCR2T utilities -->
+<!-- GUIString -->
+  <titl>--- === [[[ {{{   SuperCopyResources2Turbo (SCR2T)   }}} ]]] === ---</titl>                                            <!-- gui TITLe             -->
+  <mncm>ManualCopyMode! (2047 chars max,or around 31 files at a time,by dir depth)</mncm>                                      <!-- MaNualCopymodeMessage -->
+  <sycm>  SyncCopyMode!</sycm>                                                                                                 <!-- SYnc  CopymodeMessage -->
+<!-- Note: The following sections are the text for Perl Regular Expressions which will match their respective fields. -->
+<!-- PER4orce  -->
+  <p4dm> - deleted as </p4dm>                                                                                                  <!-- Per4orce   DelModez   -->
+  <p4nm> - (added as|updating|refreshing) </p4nm>                                                                              <!-- Per4orceNormalModez   -->
+<!-- FileTYPe  -->
+  <cnft>\.(jpg|dds|animation)$</cnft>                                                                                          <!-- CoNvertFileTypez      -->
+  <cpft>\.(model|skeleton|skute|emotion|aconf|scene|settings|agsc|wmv|ts|swf|xml)$</cpft>                                      <!-- CoPy   FileTypez      -->
+</conf>

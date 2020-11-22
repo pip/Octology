@@ -1,0 +1,16 @@
+CC1Atlr Wanting to auto-hotkey kill crashed flash firefox plugin, forgot about
+killall flash && figured out:
+kill `ps ax | grep flash | grep plugin | cut -d' ' -f1`
+which led me to ask for a perl better than cut or awk that I couldn't remember
+either so I googled this which I should learn to understand:
+perl -lane 'sub pr{$,=" ";print $p, ($c>1?$n1."-".$n2:$n1), $c;$c=0; $n1=$F[1];}
+if($p ne $F[0] || $F[1]-1 != $n2){ &pr() }
+$p=$F[0];
+$n2=$F[1];
+$c++;
+END{ &pr() }
+' infile
+but so then I tried binding in both ccsm Compiz Command && Ubuntu 10.04 (IIRC)
+Gnome System > Preferences > Keyboard Shortcuts && neither worked. Lame. =(
+Maybe I should learn this stuff better, make a terse perl awk wrapper, && get
+some hotkeys to work?

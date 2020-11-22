@@ -1,0 +1,11 @@
+#!/usr/bin/perl -w
+# 315F0ZS - comma created by Pip@Ax9.org to add commas to strings 
+#   as if they were long numbers
+use strict;
+my $strn = shift; my $comc = shift || ","; my $blok = shift || 3;
+unless(defined $strn && $strn) { $strn .= $_ while(<STDIN>); }
+if(defined $strn && $strn) {
+  $strn = reverse($strn); $strn =~ s/(.{$blok})/$1$comc/g;
+  $strn = reverse($strn); $strn =~ s/^$comc//;
+  print $strn;
+}

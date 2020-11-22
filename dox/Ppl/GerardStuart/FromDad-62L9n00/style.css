@@ -1,0 +1,432 @@
+/*  This is the  "STYLE-29.CSS"  file  */
+
+/*  The following is universal "style" stuff  */
+
+/* */
+
+body        {color:                       black;
+	     background:                  white;
+	     margin:                      0 1% 0 0;
+	     scrollbar-3dlight-color:     lightblue;
+	     scrollbar-highlight-color:   white;
+	     scrollbar-face-color:        tan;
+	     scrollbar-darkshadow-color:  lightblue;
+	     scrollbar-shadow-color:      white;
+	     scrollbar-arrow-color:       brown;
+	     scrollbar-track-color:       white;
+	    }
+tr          {text-align:        left;
+	    }
+h1, h2      {font:              serif;
+	     color:             #8B4513;
+	     text-align:        center;
+	    }
+h2.section  {text-align:        left;
+	    }
+h3          {font:              serif;
+	     color:             #8B4513;
+	     text-align:        left;
+	    }
+h3.center   {text-align:        center;
+	    }
+h5          {font:              serif;
+	     color:             #8B4513;
+	     text-align:        right;
+	    }
+a:link      {color:             blue;
+	     text-decoration:   none;  
+	    }
+a:visited   {color:             red;
+	     text-decoration:   none;  
+	    }
+a:hover     {color:             lightblue;
+	     background:        blue;
+	     text-decoration:   none;  
+	    }
+a:active    {color:             lightblue;
+	     background:        red;
+	     text-decoration:   none;  
+	    }
+a.green:link     {color:             green;
+		  background:        white;
+		  text-decoration:   none;  
+		 }
+a.green:visited  {color:             green;
+		  background:        white;
+		  text-decoration:   none;  
+		 }
+a.green:hover    {color:             green;
+		  background:        white;
+		  text-decoration:   none;  
+		 }
+a.green:active   {color:             green;
+		  background:        white;
+		  text-decoration:   none;  
+		 }
+
+/*  The following is for the MAI-Frame  */
+
+table#update {width:            96%;
+	      margin:           6px         6px   6px         6px;
+	      border-width:     1px         0px   1px         0px;
+	      border-color:     #8B4513     white #8B4513     white;
+	      border-style:     dotted      none  dotted      none;
+	      padding:          4px         4px   4px         4px;
+	      font-size:        x-small;
+	     }
+tr#update    {text-align:       center;
+	     }
+table#footer {width:            91%;
+	      margin:           0px         10px  4px         10px;
+	      border-width:     0px         0px   0px         0px;
+	      border-color:     white       white white       white;
+	      border-style:     none        none  none        none;
+	      padding:          0px         0px   0px         0px;
+	      font:     x-small/1.5 Verdana, Helvetica, sans-serif;
+	      color:            #8B4513;
+	     }
+tr#footer    {vertical-align:   middle;
+	      text-align:       center;
+	     }
+table#quiz   {float:            left;
+	      border:           6 double purple;
+	      cellpadding:      10;
+	      font:        medium/1.5 bold "comic sans ms", sans-serif;
+	      text-align:       center;
+	     }
+table#quiza  {float:            none;
+	      border:           6 double purple;
+	      cellpadding:      10;
+	      font:        medium/1.5 bold "comic sans ms", sans-serif;
+	      text-align:       center;
+	     }
+th           {text-align:       center;
+	     }
+td#center    {text-align:       center;
+	     }
+td#qbutton   {text-align:       right;
+	      vertical-align:   super;
+	     }
+
+span#sbrown  {color:            #8B4513;
+	     }
+span#bb      {color:            #8B4513;
+	      font-weight:      bold;
+	     }
+ 
+   /*  sbrown = SaddleBROWN  */
+
+   /*  bb = Brown-Bold  */
+
+/*  Duryea Day 2003 Style Section  (for more info, see STL-NOTE.1)  */
+
+img.left     {float:           left;
+	      vertical-align:  top;
+	      padding:         2;
+	      border:          0 silver solid;
+	      margin:          0 20 10 0;
+	     }
+img.right    {float:           right;
+	      vertical-align:  top;
+	      padding:         2;
+	      border:          0 silver solid;
+	      margin:          0 0 10 20;
+	     }
+span#green   {color:           green;
+	      text-decoration: none;  
+	     }
+h3.award     {text-align:      center;
+	     }
+abbr         {color:           green;
+	      text-decoration: none;  
+	     }
+
+/*  End of Duryea Day 2003 Style Section  */
+
+/*  The following is for the NAV-Frame  */
+ 
+   /*  nbt = Nav-Bar-Text  */
+
+tr#nbt         {text-align:     right;
+	       }
+table#barsbox  {position:       absolute;
+		left:           -5;
+		top:            29;
+		width:          144;
+		border          0;
+		cellspacing:    0;
+		cellpadding:    0;
+	       }
+table#golink   {width:          134;
+		height:         10;
+		font:           7pt "Verdana", helvetica, sans-serif;
+		line-height:    70%;
+		color:          blue;             
+		background:     lightblue;
+		border:         2 black solid;
+		cellspacing:    0;
+		cellpadding:    0;
+		margin:         0 0 3 0;
+	       }
+table#thispage {width:          134;
+		height:         10;
+		font:           7pt "Verdana", helvetica, sans-serif;
+		line-height:    70%;
+		color:          white;             
+		background:     red;
+		border:         2 black solid;
+		cellspacing:    0;
+		cellpadding:    0;
+		margin:         0 0 3 0;
+	       }
+td#graphic     {width:          100;
+		vertical-align: top;
+		text-align:     left;
+	       }
+td#thispage    {font:           7pt "Verdana", helvetica, sans-serif;
+		line-height:    70%;
+		text-align:     right;
+		color:          white;
+		background:     red;
+	       }
+td#golink      {text-align:     right;
+	       }
+a.navf:link    {font:           7pt "Verdana", "Helvetica", sans-serif;
+		line-height:    70%;
+		color:          blue;
+		background:     lightblue;
+		text-decoration:none;  
+	       }
+a.navf:visited {font:           7pt "Verdana", "Helvetica", sans-serif;
+		line-height:    70%;
+		color:          red;
+		background:     lightblue;
+		text-decoration:none;  
+	       }
+a.navf:hover   {font:           7pt "Verdana", "Helvetica", sans-serif;
+		line-height:    70%;
+		color:          lightblue;
+		background:     blue;
+		text-decoration:none;  
+	       }
+a.navf:active  {font:           7pt "Verdana", "Helvetica", sans-serif;
+		line-height:    70%;
+		color:          lightblue;
+		background:     red;
+		text-decoration:none;  
+	       }
+
+/*  The following is for Contents tables  */
+
+table#contents{float:           left;
+	      border:           14 outset #00A5C6;
+	      cellpadding:      30;
+	      cellspacing:      50;
+	      background:       white;
+	      text-align:       right;
+	      margin:           0 15 10 0;
+	     }
+table#ctent    {height:         10;
+		border:         6;
+		cellspacing:    0;
+		cellpadding:    0;
+		margin:         0 0 3 0;
+		text-align:     right;
+	       }
+table#rtn    {border:           0 solid black;
+	      width:            100%;
+	     }
+table#rtc    {border:           5 solid #0084A5;
+	     }
+tr#ctent       {text-align:     center;
+	       }
+td#contents    {font:         small/1.5 Verdana, Helvetica, sans-serif;
+		text-align:       right;
+	       }
+td#head        {font:      medium/1.5 bold "comic sans ms", sans-serif;
+		color:            #0084A5;
+		text-align:       center;
+	       }
+a.ctent:link   {font:           12pt Times, "Times New Roman", serif;
+		color:          #006B84;
+		background:     inherit;
+		text-decoration:none;  
+	       }
+a.ctent:visited{font:           12pt Times, "Times New Roman", serif;
+		color:          red;
+		background:     inherit;
+		text-decoration:none;  
+	       }
+a.ctent:hover  {font:           12pt Times, "Times New Roman", serif;
+		color:          white;
+		background:     #0084A5;
+		text-decoration:none;  
+	       }
+a.ctent:active {font:           12pt Times, "Times New Roman", serif;
+		color:          lightblue;
+		background:     red;
+		text-decoration:none;  
+	       }
+
+a.rtc:link     {font:           9pt Times, "Times New Roman", serif;
+		color:          #006B84;
+		background:     white;
+		text-decoration:none;  
+	       }
+a.rtc:visited  {font:           9pt Times, "Times New Roman", serif;
+		color:          red;
+		background:     white;
+		text-decoration:none;  
+	       }
+a.rtc:hover    {font:           9pt Times, "Times New Roman", serif;
+		color:          white;
+		background:     #0084A5;
+		text-decoration:none;  
+	       }
+a.rtc:active   {font:           9pt Times, "Times New Roman", serif;
+		color:          lightblue;
+		background:     red;
+		text-decoration:none;  
+	       }
+
+/*  The following is for the BTN-Frame  */
+
+a.btnf:link    {font:           9pt "Verdana", "Helvetica", sans-serif;
+		color:          blue;
+		background:     lightblue;
+		text-decoration:none;  
+	       }
+a.btnf:visited {font:           9pt "Verdana", "Helvetica", sans-serif;
+		color:          blue;
+		background:     lightblue;
+		text-decoration:none;  
+	       }
+a.btnf:hover   {font:           9pt "Verdana", "Helvetica", sans-serif;
+		color:          lightblue;
+		background:     blue;
+		text-decoration:none;  
+	       }
+a.btnf:active  {font:           9pt "Verdana", "Helvetica", sans-serif;
+		color:          lightblue;
+		background:     red;
+		text-decoration:none;  
+	       }
+tr#top         {vertical-align: top;
+		text-align:     left;
+	       }
+tr#mid         {vertical-align: middle;
+		text-align:     left;
+	       }
+tr#bot         {vertical-align: bottom;
+		text-align:     left;
+	       }
+
+/*  Added 1'11-24-03 for 24MAI.HTM  */
+
+.secttl     {font-family:   Times, "Times New Roman", serif;
+	     font-size:     large;
+	     font-weight:   bold;
+	     color:         #8B4513;
+	     text-align:    center;
+	    }
+
+.dept       {font-family:   Times, "Times New Roman", serif;
+	     font-size:     medium;
+	     font-weight:   bold;
+	     color:         #8B4513;
+	     text-align:    center;
+	    }
+
+.copyr      {font-family:   "Verdana", helvetica, sans-serif;
+	     font-size:     7pt;
+	     font-weight:   normal;
+	     color:         #8B4513;
+	     text-align:    center;
+	    }
+
+/*  Added 4'11-27-03 for the pink navbar in NAVBR.HTM  */
+
+table#pinklink {width:          134;
+		height:         10;
+		font:           7pt "Verdana", helvetica, sans-serif;
+		line-height:    70%;
+		color:          blue;             
+		background:     pink;
+		border:         2 black solid;
+		cellspacing:    0;
+		cellpadding:    0;
+		margin:         0 0 3 0;
+	       }
+td#pinklink    {text-align:     right;
+	       }
+a.navp:link    {font:           7pt "Verdana", "Helvetica", sans-serif;
+		line-height:    70%;
+		color:          blue;
+		background:     pink;
+		text-decoration:none;  
+	       }
+a.navp:visited {font:           7pt "Verdana", "Helvetica", sans-serif;
+		line-height:    70%;
+		color:          red;
+		background:     pink;
+		text-decoration:none;  
+	       }
+a.navp:hover   {font:           7pt "Verdana", "Helvetica", sans-serif;
+		line-height:    70%;
+		color:          lightblue;
+		background:     blue;
+		text-decoration:none;  
+	       }
+a.navp:active  {font:           7pt "Verdana", "Helvetica", sans-serif;
+		line-height:    70%;
+		color:          lightblue;
+		background:     red;
+		text-decoration:none;  
+	       }
+
+/*  Added 6'12-20-03 for 26MAI and future needs   */
+/*           Priorly     15MAI had this embedded  */
+
+td#fl {text-align: left;}
+td#fr {text-align: right;}
+
+/*  Added 5'01-06-06 for 34MAI and future needs   */
+/*           Priorly     34MAI had this embedded  */
+
+font#v   { color: darkviolet; }
+font#vb  { color: darkviolet; font-weight: bold; }
+
+font#a   { color: #00a000;    }
+font#ab  { color: #00a000;    font-weight: bold; }
+
+font#o   { color: orange;     }
+font#ob  { color: orange;     font-weight: bold; }
+
+/*  Added 3'01-25-06 for 13MAI and future needs   */
+/*           Priorly     43MAI had this embedded  */
+
+img.messl  {float: left;
+	    vertical-align: top;
+	    padding: 2;
+	    border: 0 silver solid;
+	    margin: 0 10 5 0;
+	   }
+
+img.messr  {float: right;
+	    vertical-align: top;
+	    padding: 2;
+	    border: 0 silver solid;
+	    margin: 0 0 5 10;
+	   }
+
+/*  Added 5'01-27-06 for 13MAI and future needs   */
+/*           Priorly     27MAI had this embedded  */
+
+table#allnav   {font: 7pt "Verdana", helvetica, sans-serif;
+		vertical-align: top;
+		color: blue;             
+		background: white;
+		border: 1 solid #C6EFF7;
+	       }
+
+/*  End of style specifications  */

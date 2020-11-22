@@ -1,0 +1,164 @@
+<html>
+<head>
+	<title>TSP Art</title>
+	<link rel="stylesheet" href="http://www.cgl.uwaterloo.ca/~csk/basic.css" type="text/css">
+</head>
+<body>
+<h1>TSP Art</h1>
+
+<center>
+	<a href="images/penguins.pdf"><img
+		border=0 alt="[penguins]" width=705 height=455
+		src="images/penguins.png"/></a>
+</center>
+<p>
+
+The traveling salesman problem (TSP) is an old and well-studied problem
+in computer science.  Given a collection of cities on a map, a salesman
+must make a tour of the cities, visiting each once, and returning to the
+city from which he started.  Of all the ways that he could travel from
+city to city, he must find the one that requires him to travel the least
+total distance (our salesman is nothing if not frugal).
+Mathematically, we can view this form of the TSP as finding the minimum
+length closed path connecting a collection of points in the plane.
+<p>
+The tour that results from a collection of cities tends to have some of
+the same density properties as the collection itself.  In other words,
+in regions where cities are packed tightly together, you get a lot of
+traveling in tight little knots; where cities are spaced out, you tend 
+to travel in long straightaways.  When the tour is drawn (say, as a black
+line on a white background), the darkness of the picture will correspond
+roughly to the density of the cities.
+<p>
+We can exploit this relationship to produce a new 
+<a href="http://en.wikipedia.org/wiki/Halftone">halftoning</a> algorithm
+(halftoning is any process that approximates a continuous-toned image with
+black-and-white marks).  We distribute cities with a density that 
+locally approximates the darkness of a source image, and pass the cities
+to a program that finds a TSP tour.  The result is a kind of twisty
+closed path that resembles the original image.
+<p>
+How do we distribute cities?  Our goal is to place points in a way that
+approximates an image.  That is itself a form of halftoning, and is a 
+area of computer graphics rich with solutions.  We make use of two approaches.
+<a href="http://mrl.nyu.edu/~ajsecord/stipples.html">Weighted Voronoi
+stippling</a> uses optimization to space out a collection of points evenly
+while still conveying image tone. 
+<a href="http://en.wikipedia.org/wiki/Dithering">Ordered dithering</a>
+selectively turns pixels on and off in fixed patterns.  Both approaches
+produce city distributions suitable for the TSP, and yield dramatically
+different final images.
+<p>
+To produce the final tour, we pass the cities obtained above to the
+<a href="http://www.tsp.gatech.edu/concorde.html">Concorde TSP Solver</a>.
+We don't try to find the true optimal solution; the reason why we shouldn't
+expect to do so is what makes the TSP such an interesting problem in 
+computer science!  But Concorde produces
+a heuristic solution that's more than good enough aesthetically.  Most
+importantly, the path it produces never crosses itself; it can be proven
+that an optimal solution never will.
+<p>
+Once we have the tour, we can draw it pretty easily as a closed polygon.
+Fancier rendering styles are possible, such as varying the thickness of
+the lines or curving them. 
+<p>
+
+<h2>Gallery</h2>
+
+Here are several sample images of TSP Art.  Clicking on each one will
+open a PDF of the same image (because this is line art, the PDFs work
+much better).  Some results are based on photographs by 
+<a href="http://philip.greenspun.com/">Phil Greenspun</a>.
+
+<center>
+	<table cellpadding=10 border=0>
+	<tr>
+	<td align=center valign=bottom>
+		<a href="images/chris.pdf"><img 
+			src="images/chris.png" width=293 height=406 border=0/></a><br>
+		<em>Chris</em>
+	</td>
+	<td align=center valign=bottom>
+		<a href="images/coliseum.pdf"><img 
+			src="images/coliseum.png" width=406 height=360 border=0/></a><br>
+		<em>Coliseum</em>
+	</td>
+	</tr>
+
+	<tr>
+	<td align=center valign=bottom>
+		<a href="images/mona.pdf"><img 
+			src="images/mona.png" width=299 height=406 border=0/></a><br>
+		<em>Mona</em>
+	</td>
+	<td align=center valign=bottom>
+		<a href="images/hummingbird.pdf"><img
+			src="images/hummingbird.png" width=358 height=406 border=0/></a><br>
+		<em>Hummingbird</em>
+	</td>
+	</tr>
+
+	<tr>
+	<td colspan=2 align=center valign=bottom>
+		<a href="images/zebra.pdf"><img
+			src="images/zebra.png" width=705 height=484 border=0/></a><br>
+		<em>Zebra</em>
+	</td>
+	</tr>
+	<tr>
+	<td colspan=2 align=center valign=bottom>
+		<a href="images/david.pdf"><img
+			src="images/david.png" width=377 height=406 border=0/></a><br>
+		<em>David</em>
+	</td>
+	</tr>
+</table>
+</center>
+
+<h2>Papers</h2>
+
+<ul>
+	<li><a href="http://www.cgl.uwaterloo.ca/~csk/papers/bridges2005b.html">
+		TSP Art</a>.  Bridges 2005.
+	</li>
+</ul>
+
+<h2>Other resources</h2>
+
+Ivars Peterson wrote an article about TSP Art for the April 2005 issue
+of <a href="http://www.cricketmag.com/ProductDetail.asp?pid=12">Muse
+Magazine</a>.  Note that the article falsely attributes the technique
+to Robert Bosch and Adrianne Herman.  They worked together on an earlier
+version of TSP art; all the pictures here (and the penguins that appear
+in the magazine) were produced by a more recent collaboration between me
+and Robert.  The magazine will publish a correction in late 2005.
+<p>
+Robert Bosch's <a href="http://www.oberlin.edu/math/faculty/bosch.html">home
+page</a> has links to his previous paper on TSP art and sample images.
+<p>
+A couple of years ago, a colleague sent me some photos of billboards in
+downtown Los Angeles that have images strikingly similar to TSP Art.
+I'm happy to say that we now know who the artist is.  J. Eric Morales
+(Mo) has a <a href="http://www.virtualmo.com/">website</a> where you
+can see his TSP Art images (he calls them "labyrinthine projections").
+<p>
+A couple of TSP Art images appear in the 
+new <a href="http://www.tsp.gatech.edu/book/index.html">TSP book</a> by 
+Applegate, Bixby, Chv&aacute;tal and Cook.
+<p>
+
+<font size=-1>
+All images are copyright 2005 by Craig S. Kaplan.  You are
+free to use them for <b>personal</b> and <b>non-commercial</b> purposes.
+Please check with me about any other uses.
+</font>
+
+<hr>
+	<table width="100%" border=0 cellpadding=0 cellspacing=0><tr>
+		<td align=left><a href="http://www.cgl.uwaterloo.ca/~csk/">
+			Craig S. Kaplan</a></td>
+	<td align=right><em>Last updated: Wednesday, 02-May-2007 13:18:47 EDT</em>
+	</td></tr></table>
+
+</body>
+</HTML>

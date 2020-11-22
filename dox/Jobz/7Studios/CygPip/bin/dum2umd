@@ -1,0 +1,47 @@
+#!/usr/bin/perl -w
+use strict;my($auth,$vers,$name)=('Pip@CPAN.org','37VB1xa','dum2umd');
+# 1CKLhG0 - dum2umd created by Pip@CPAN.org to replace dtou.exe && 
+#   utod.exe because they choke on ascii 26 (Ctrl-Z == EOF in normal 
+#   Win32 ie. w/o binmode).  Old utils clobbered a bunch of my files 
+#   =( ... I knew Perl could do better =)
+# 23FBRE0 - added 's' parameter to turn all double newlines into singles
+# Usag: First param is file to convert.  Optional param can be "d" or "m"
+#   for result file to get Dos or Mac formatted EndOfLines respectively.
+#   No second param will result in unix format.
+# Note: No intermediate file is used so you need enough RAM to store the
+#   whole file in a scalar.  It might be bad news if you try to use this
+#   util on a huge binary file but changing newlines is only useful for
+#   text anyway.  Whatever.
+# All source code should be free!  Code I have authority over is && shall be!
+# This code is licensed under the GNU GPL v2.
+#                                             -Pip@CPAN.org
+
+my $flnm = shift || '-h'; my $rslt = shift || 'u'; my $oopt = shift || '';
+my $coun = 1; my $snrf = ''; 
+($flnm, $rslt) = ($rslt, $flnm) if(-e $rslt);
+($flnm, $oopt) = ($oopt, $flnm) if(-e $oopt);
+if($rslt =~ /^-*s$/i) { $coun = 2; $rslt = $oopt; }
+if($oopt =~ /^-*s$/i) { $coun = 2; }
+if($flnm =~ /^-*[h?](elp)?$/i || $rslt =~ /^-*[h?](elp)?$/i) { # print help
+  print "Usage: $name FILE [OPTIONS]
+Convert newline characters between different common formats.
+
+      -u  convert newlines in FILE to UNIX format
+      -m  convert newlines in FILE to MAC  format
+      -d  convert newlines in FILE to DOS  format
+      -s  convert double newlines in FILE to SINGLES
+      -h  display this help and exit
+
+  dum2umd vers:$vers by auth:$auth
+"; exit();
+}
+exit() unless(-e $flnm);
+open(FILE, "<$flnm"); binmode(FILE); $snrf = join '', <FILE>; close(FILE);
+if     (lc($rslt) =~ /^-*d/i) { # Dos 1512 CRLF
+  $snrf =~ s/(\015\012|\015|\012){$coun}/\015\012/g;
+} elsif(lc($rslt) =~ /^-*m/i) { # Mac 15   CR
+  $snrf =~ s/(\015\012|\015|\012){$coun}/\015/g;
+} else                        { # (Uni|GNU/Linu)x 12 LF
+  $snrf =~ s/(\015\012|\015|\012){$coun}/\012/g; 
+} 
+open(FILE, ">$flnm"); binmode(FILE); print FILE $snrf;        close(FILE);

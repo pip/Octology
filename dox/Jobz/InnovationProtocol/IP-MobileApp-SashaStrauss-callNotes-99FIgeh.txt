@@ -1,0 +1,20 @@
+99FIgeh - IP (InnovationProtocol) MobileApp SashaStrauss callNotes: (P.S. My Rose BlakBeryCurv seemz2log tymz belo abou 5minz l8r than else eg editng this fyl)
+99FIi00-99FIwU0(Tue Sep 15 18:44:00:00  6:44:00pm - 18:58:30:00  6:58:30pm[dur8n14m:30s] 2009): Sasha call dropped.
+99FIx00-99FJD80(Tue Sep 15 18:59:00:00  6:59:00pm - 19:13:08:00  7:13:08pm[dur8n14m:08s] 2009): Reconnected, we discussed mobile focus-group app. Notes:
+Focus groups, participants get free iPhone or other compensation models, push|pull tasks, queries, quotas, points,
+give phones to 3 people as test-bed, then pitch to VC's, maybe Google Android easier develop prototype open-source on then transition to BlackBerry && iPhone,
+UserStory: IP rep goes to Kraft, asks what they'd like to know: "Where do consumers shop? What catches their eye in the canned-food aisle?", then we produce
+  custom survey questions, generate result reports, etc.
+  users take pics of products, "Who are you shopping with?", need to interlace information e.g., focus exclusively on 25YO SoCal men;
+  BrandX might want exclusive data precisely on target but lots of other data could be gathered in anticipation of selling it beyond just BrandX;
+  anonymity like Google, gather points; compensation of $100 / month to user can be sold by Sasha for ~$1000?!
+
+emrg python-docs ant antlr bcel bsf jakarta-regexp jakarta-oro jakarta-jstl log4j junit ant-antlr ant-apache-bcel ant-apache-bsf ant-apache-regexp
+  ant-apache-oro ant-apache-log4j ant-junit ant-junit4 ant-contrib ant-ivy ant_menu(vimPlugIn) dev-util/android-sdk(unmask1st||just use dl'd l8st 1.6 SDK.tgz?)
+  javacc libreadline-java dbus-java dcopjava qtjava kdejava java-dep-check java-getopt java-gnome java-sdk-docs java-help javassist
+  gnu-javamail javamail sun-javamail sun-java3d-bin(pkg!found) ant-javamail
+
+99GIk00-99GImg0(Wed Sep 16 18:46:00:00  6:46:00pm - 18:48:42:00  6:48:42pm[dur8n 2m:42s] 2009): Another Sasha call dropped.
+99GIn20-99GJ000(Wed Sep 16 18:49:02:00  6:49:02pm - 19:00:00:00  7:00:00pm[dur8n10m:58s] 2009): Reconnected, we discussed Android difficulties && he asked me2
+  rsrch l8st PalmOS && Symbian dvl2cmpr. I mentiond W9 from Meital && he said I've done well over $100 of work already && I should ask her for 1099 nstd since
+  budget will xeed $600.

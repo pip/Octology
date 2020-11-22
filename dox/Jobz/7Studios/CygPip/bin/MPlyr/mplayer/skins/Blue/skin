@@ -1,0 +1,199 @@
+section = movieplayer
+
+ window = main
+
+  ;base=bitmap,x,y
+  ; x:            | y:
+  ;  -  0: left   |  -  0: top
+  ;  - -1: center |  - -1: center
+  ;  - -2: right  |  - -2: bottom
+;  base = main-silver, -2, -2
+  base = main, -2, -2
+
+
+  ;button=bitmap,x,y,sx,sy,msg
+  ; 1. bitmap: pressed  | x,y: position in window
+  ; 2. bitmap: released | msg: name of system message
+  ; 3. bitmap: disabled | sx,sy: size of button
+
+  button = exit,     412,  47, 19, 24, evExit
+  button = minimize, 169, 101, 28, 13, evIconify
+  button = prefs,     50,  48, 19, 24, evPreferences
+
+  button = skinb,     82,  22, 10, 10, evSkinBrowser
+  button = subload,   94,  22, 10, 15, evLoadSubtitle
+  button = playlist, 110,  22, 10, 15, evPlaylist
+  button = eqb,      107,  39, 10, 15, evEqualizer
+  button = zoom-3,    79,  40, 10, 13, evFullScreen
+  button = mute,      93,  40, 10, 14, evMute
+
+
+  button = load,     168,   6, 28, 13, evLoadPlay
+  button = play,     145,  21, 37, 29, evPlaySwitchToPause
+  button = play,     145,  21, 37, 29, evPauseSwitchToPlay
+  button = stop,     183,  18, 36, 31, evStop
+
+  button = prev,     143,  49, 39, 26, evPrev
+  button = next,     183,  49, 42, 26, evNext
+  button = rev,      147,  75, 35, 24, evBackward10sec
+  button = forward,  183,  75, 38, 25, evForward10sec
+
+  button = about,    322,  86, 80, 12, evAbout
+
+  ; hpotmeter=buttonbitmaps,sx,sy,phasebitmaps,phases,default value,x,y,sx,sy,msg
+  hpotmeter = pos, 13, 10, NULL, 100,  0, 242, 79, 82, 10, evSetMoviePosition
+  hpotmeter = pos, 13, 10, NULL,  50, 50,  78, 59, 42, 10, evSetBalance
+  hpotmeter = pos, 13, 10, NULL,  50, 50,  79, 78, 44, 10, evSetVolume
+
+  ; potmeter=phasebitmaps,phases,default value,x,y,sx,sy,msg
+    potmeter = progres-long2d, 46, 0, 245, 67, 141, 5, evSetMoviePosition
+
+
+  ; font=fontname,fontid
+  font =  symbols, symbols2
+  font =     font, font-pl
+  font = symbolsg, symbols2
+
+  ; dynamic label
+  ; dlabel=x,y,sx,align,fontid,string ...
+  ;  align: 0: right 1: center 2: left
+  ;  str: $1  = hh:mm:ss
+  ;       $2  = mmmm:ss
+  ;       $3  = hh
+  ;       $4  = mm
+  ;       $5  = ss
+  ;       $6  = movie length, hh:mm:ss
+  ;       $7  = movie length, mmmm:ss
+  ;       $v  = volume, xxx.xx%
+  ;       $V  = volume, xxx.x
+  ;       $b  = balance, xxx.xx%
+  ;       $B  = balance, xxx.x
+  ;       $$  = draw $
+  ;       $a  = audio type ( nosound: char n, mono: char m, stereo: char t, etc )
+  ;       $t  = track number
+  ;       $o  = filename
+  ;       $f  = filename with lower case
+  ;       $F  = filename with upper case
+  ;
+  ;       $T  = stream type ( file: f, video cd: v, dvd: d, url: u ), if
+  ;              font contain needed symbol.
+  ;       $l  = draw play symbol, if mplayer is playing movie and font
+  ;              contain playing symbol. ( char l )
+  ;       $s  = draw stop symbol, if mplayer not playing movie and font
+  ;              contain stop symbol. ( char s )
+  ;       $e  = draw pause symbol, if playing is paused and font contain
+  ;              pause symbol ( char e )
+
+
+
+  dlabel = 242, 26, 150, 0,    font, "$t - $o  "
+
+  dlabel = 246, 42,  22, 0, symbols, "$T"
+  dlabel = 270, 42,   9, 0, symbols, "$l"
+  dlabel = 270, 42,   9, 0, symbols, "$e"
+  dlabel = 270, 42,   9, 0, symbols, "$s"
+  dlabel = 280, 40,  56, 0,    font, "$1"
+  dlabel = 324, 40,  62, 0,    font, "/"
+  dlabel = 325, 40,  62, 0,    font, " $6"
+
+
+  dlabel = 230, 55,  92, 1,    font, "v: $v"
+  dlabel = 285, 55,  99, 1,    font, " bal:$b"
+  dlabel = 364, 57,  25, 1, symbols, "$a"
+
+; dlabel = 117, 25,  50, 1, symbols, "$T"
+
+  ; static label
+  ; slabel=x,y,fontid,string ...
+  ; slabel =  10, 10, symbols, "12345 - 67890"
+  ; slabel = 120, 10,    font, "Eyes on Me"
+
+ end
+
+ window = sub
+
+  ;base=bitmap,x,y,sx,sy
+  ; x:            | y:
+  ;  -  0: left   |  -  0: top
+  ;  - -1: center |  - -1: center
+  ;  - -2: right  |  - -2: bottom
+  base = subblue, -1,-1, 640, 480
+  ; background=r,g,b
+  ; window background color, default is black
+  ; only subwindow, and decimal numbers
+  background = 128,128,255
+
+ end
+
+ window = menu
+
+  ; base=bitmap
+  base = menu
+
+  ; selected=bitmap
+  selected = menus
+
+  ; menu = x,y,width,height,msg
+  menu = 3,   6, 122, 14, evAbout
+  menu = 3,  28, 122, 14, evLoad
+  menu = 3,  43, 122, 14, evNone         ; Add playlist
+  menu = 3,  60, 122, 14, evPlay
+  menu = 3,  84, 122, 14, evPlaylist
+  menu = 3, 100, 122, 14, evEqualizer
+
+  menu = 3, 116, 122, 14, evSkinBrowser
+  menu = 3, 140, 122, 14, evPreferences
+;  menu = 3, 156, 122, 14, evNone
+  menu = 3, 180, 122, 14, evNormalSize
+  menu = 3, 196, 122, 14, evDoubleSize
+  menu = 3, 212, 122, 14, evFullScreen
+  menu = 3, 228, 122, 14, evIconify
+  menu = 3, 244, 122, 14, evExit
+ end
+
+ window = playbar
+  base = playbar, -1, -2
+
+  button = barstop,    77, 56, 30, 16, evStop
+  button = barplay,    54, 73, 32, 16, evPlaySwitchToPause
+  button = barplay,    54, 73, 32, 16, evPauseSwitchToPlay
+
+  button = barrev,    139, 37, 30, 16, evBackward10sec
+  button = barfwd,    174, 32, 30, 16, evForward10sec
+
+  button = barrevv,   107, 44, 30, 16, evBackward1min
+  button = barffwd,   209, 28, 30, 16, evForward1min
+
+  button = bareqb,    287, 32, 30, 16, evEqualizer
+  button = barzoom,   251, 28, 30, 16, evFullScreen
+  button = NULL,      327, 42, 30, 16, evPreferences
+
+  button = barmute,   359, 52, 30, 16, evMute
+  button = barexit,   386, 68, 30, 16, evExit
+
+
+  dlabel = 195, 59, 9, 0,   symbols, "$l"
+  dlabel = 195, 59, 9, 0,   symbols, "$e"
+  dlabel = 195, 59, 9, 0,   symbols, "$s"
+
+
+  dlabel = 205, 58, 56, 0,     font, "$1"
+; dlabel = 264, 59, 22, 0,  symbols, "$T"
+
+  dlabel = 292, 65, 22, 1, symbolsg, "$a"
+
+
+  dlabel = 132, 70, 27, 0,  symbols, "$T "
+  dlabel = 160, 68, 95, 0,     font, "$o "
+
+
+  button = NULL, 258, 70, 11, 8, evDecVolume
+  button = NULL, 331, 70, 11, 8, evIncVolume
+
+  hpotmeter = pos, 13, 10, NULL, 100,  0, 120, 79, 231, 10, evSetMoviePosition
+  hpotmeter = pos, 13, 10, NULL,  50, 50, 269, 70,  61, 10, evSetVolume
+
+ end
+
+end
+

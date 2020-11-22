@@ -1,0 +1,31 @@
+5CMMGxJ - copied from Z-Axis e-mail:
+
+Original "Pip's Top-10 Video Game Hate List":
+1) the inability to remap buttons easily from anywhere it could possibly make sense to (a corollary to this hate rule is: "stupid default control schemes")
+2) bad framerate (Usually anything less than 60fps perturbs me.)
+3) unskippable cutscenes
+4) loading times
+5) heavy RPG elements (I prefer to skill up my own play abilities rather than arbitrarily leveling up some initially gimped character.  Can you imagine if
+     Street Fighter let you grind to get a Level 60 Ryu that can't be hit by newbs?  The gamers should skill up as they play, not the avatars.)
+6) unresponsive core game mechanics (like overly elaborate jumping animations in a platformer or attacks in a brawler) or core game mechanics with poor
+     feedback (e.g., Under identical conditions, multiple perfectly timed passes and receptions in Madden will be dropped according to retarded real-world
+     completion percentages of the QB and Receiver.)
+7) online lag
+8) AI in general but particularly those that cheat or are annoyingly retarded
+9) flimsy gameplay systems (e.g., infinite combos, too much invunerability, too much reward/incentive to do inane things... like wait around... I'm looking in
+     your direction Wolverine ;) )
+10) getting lost (i.e., giant levels with no map [or an unhelpful one] and no guiding indicators or no clear idea how to progress when you want to)
+
+Honorable Mentions:
+-invisible walls
+-terrain pop-up
+-slow save game processes and poor management of multiple memory cards
+-crappy or absent calibration screens for gamma or HD settings
+-confined levels when expansive play-spaces would be more fun
+
+Suggested Research Topics:
+-button mapping interfaces and profiles
+-input sequences and patterns
+-LOD
+-fast development iterations
+-guidelines/metrics for everything

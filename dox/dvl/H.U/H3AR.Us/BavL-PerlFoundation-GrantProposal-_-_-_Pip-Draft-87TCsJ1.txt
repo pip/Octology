@@ -1,0 +1,199 @@
+This e-mail below was written at the beginning of this week when I thought I'd be shortly ready to send my edits back to you... but instead, Vee && I are just submitting it here && copying you on the text. Later, dude. =)
+
+---- old msg follows ----
+
+Hi Beppu-san (&& my precious Vee =) <3 ),
+
+Things have been retardedly hectic over the weekend here for us... && it didn't help that I got off on a gnarly tangent of YCombinator.Com, PaulGraham.Com, MichaelNielsen.Org, etc. && then it was timely that my old friend, Lynn Gabbay (MIT dude I met through Sirlin), came over since he was in L.A. for ComiCon, visiting from N.Y.. He's a sharp coder && has lots of potentially helpful VC experience for funding a start-up so I've been juggling lots of involved thoughts about all of those realms && their potential benefits. Sorry I've been lagging on this proposal. My displays are setup finally but my network && dvl-box aren't positioned or wired cleanly yet since too much else has pre-empted (although I did try to clean install the UbuHardy8.04LTS on Vee's box downstairs && it failed in several ways that I didn't have time to dive deeper on so I went back to Feisty7.10 to start that fresh && it seems to be in decent shape again now, even after updating the hundreds of 7.10 pkgz that have seen updates since last fall... so yay on that! ;) ). Anyway, please feel free to make any final edits or just give us the go-ahead on the below within the next day or two && Vee or I will be glad to submit it. Thanks dude. Hopefully all is well with you (&& the 5.8 earthquake a couple hours ago didn't rock you too hard). Please let us know if anything has gone awry for you (with Bavl, quake, Srini, etc.) since we're eager to help as well as we can, or at least provide moral support. =) I'll try to SMS then call you later tonight to let you know that I've e-mailed this to you too, in case you're staying offline for a while.
+
+Ja matta,
+-Pip && Vee
+
+----
+
+Name
+
+  John Beppu
+  Pip Stuart
+
+Email
+
+  john.beppu@gmail.com
+  Pip@CPAN.Org
+
+Project Title
+
+  Bavl (pronounced "bah-vell", as Tower of "Babel" in Hebrew)
+
+Synopsis
+
+  Bavl is a Free (GPLv3'd) web application for collaboratively learning
+  how to comprehend && speak foreign languages. At its core, it is a
+  system for searching through a database of words, phrases, or lessons
+  each accompanied by translations. However, instead of just presenting
+  mere text back, each phrase also can have one or more audio recordings
+  associated with it. This will let people actually *HEAR* how to
+  correctly enunciate unfamiliar words (even in a visitor's native
+  language), including valid alternatives, such as the silent or hard
+  "t" in the English word "often". This feature will provide a
+  tremendous benefit to anyone interested in improving their
+  spoken-language skills (i.e., Scholars, Pupils, Students, Learners,
+  etc. of Languages && Social Sciences).
+
+  In addition to learning, helping others to learn will be easy too. The
+  UI is designed to encourage multi-lingual contributors to publicly
+  offer literal or figurative translations, native pronunciations,
+  answer questions, provide lesson plans, advice, && pupil feedback.
+  Audio recording && playback will be implemented using embedded Adobe
+  Flash-based widgets (via haXe) within the pages of Bavl.
+
+Benefits to the Perl community
+
+  Bavl is good for the Perl community, because it is good for all of
+  humanity... but Bavl is especially beneficial for our particular
+  subset of humanity; as Perl hackers, we share reverence of linguistic
+  mastery, && as individuals, we tend to say, interpret, && do things
+  in more than many ways that might seem equivalent, yet they remain
+  subtly distinct. These common ideologies among Perl hackers seperates
+  us from other programming communities, no matter our citizenship or
+  native language - our distinctive features are reflected through the
+  characteristics of Perl (our common language). We Perl hackers value
+  our ability to cultivate && creatively express diverse visions within
+  Perl's gracefully expansive language. We hope Bavl will encourage the
+  celebration of pioneers of all linguistic frontiers, enabling
+  neophytes and visionaries alike to increase knowledge && multiply
+  wisdom fruitfully.
+
+  Humanity has always struggled to communicate effectively; our often
+  celebrated && widely diverse cultures && languages lead to
+  misunderstandings && inhibited progress because we lack a widely
+  available, && contextually accurate, translation system. We consider
+  Bavl to be a compelling solution to this fundamental problem, because
+  of its inherent simplicity and ubiquitous applicability. As a
+  universally accessible system, Bavl represents the dominant mechanism
+  for language learning of the future.
+
+  If Bavl achieves even a small level of global success, it stands to
+  dramatically improve international, intercultural, && interpersonal
+  relations by lessening misunderstandings && cultural ignorance. The
+  Perl community's affinity for linguistics could become a sort of
+  contagious vaccination among all peoples. Someday, the masses might
+  have fun adopting new languages, increasing vocabularies, && teaching
+  philosophies with cross-culturally eloquent accuracy. Plus, Perl
+  hackers would enjoy learning desired languages through an underlying
+  system built primarily from their favorite programming language. This
+  is the human aspect of Bavl's benefits.
+
+  On the technical side, Bavl will promote the awareness &&
+  understanding of a few new && interesting technologies.
+
+  Bavl will be using a Perl module called Continuity, due to its ability
+  to handle many concurrent && long-lived HTTP connections. This
+  provides the technical foundation necessary to implement COMET-based
+  soft-realtime updates on web pages. Thus, Bavl would inform people of
+  the existence of this useful Perl module && give them a potent example
+  of how it can be put to great use.
+
+  Bavl will be using CouchDB for storage. Since CouchDB suggests it
+  could become a compelling alternative to relational databases, we
+  intend to determine whether certain application data-sets are
+  substantially easier to express through CouchDB than with a
+  traditional relational database.
+
+  Finally, Bavl will alert the Perl community to the existence of
+  haXeVideo, which is a Free (GPL'd) streaming Flash media server. This
+  will let the Perl community know that if you want to stream audio or
+  video content via Flash, it can be done without purchasing a
+  prohibitively expensive media server from Adobe. You still have to
+  pay for bandwidth, though. ;-)
+
+  ----
+
+  Our hope is that the entirety of the Bavl project will reinvigorate
+  the Perl community && inspire other ambitious && prodigious projects
+  to follow.
+
+Deliverables
+
+  * a Bavl Perl module distribution will be uploaded to the CPAN
+  * Bavl will be deployed to HTTP://Towr.of.Bavl.Org/
+
+Project Details
+
+  Its technical foundation is as follows:
+
+  * CouchDB will be used for storage.
+  * haXeVideo will be used for streaming Flash audio.
+  * haXe will be used to implement the Flash player && recorder widgets.
+  * Squatting will be used as the app's MVC framework,
+    && it'll be running (or squatting) on top of Continuity.
+  * Locale::Maketext will be used for i18n && l10n.
+  * The Google Language API will be used to do some automatic translation
+    of text (but this functionality may not make it to the first release).
+
+  The web application itself will start off with a fairly simple layout.
+  The major controllers of this app are as follows:
+
+  * Home -- This will display a list of the most recently added phrases.
+
+  * Learning -- The vision for this is that you'd select 2 languages --
+    one that you know, && one that you'd like to learn. Then you'd be
+    presented with a search prompt where you could ask the system how to say a
+    phrase. When you get results back, you'll also get a chance to hold on to
+    the phrase for future reference, && this will let you build a collection
+    of related phrases.
+
+  * Lesson -- The collection of phrases you built while using the
+    Learning controller can be turned into a Lesson. Lessons are a
+    collection of phrases that should have a cohesive theme.
+
+  * Chat -- I eventually want to have some chat-like functionality, so that
+    people who are interested in the same languages can actually chat with
+    each other while they're using the site. It'll be like the Chatter Box
+    on HTTP://PerlMonks.Org/ but way more responsive, because we'll be using
+    Continuity.
+
+  * Profile -- If you register an account on the site, you'll get a profile
+    page that gives you a summary of all that you've contributed to the system.
+    It'll also present you with a feed of questions that you may be able to
+    answer for other people (because you've told the system that you know how
+    to speak a certain language).
+
+Project Schedule
+
+  We've already started building the core pieces of this project. Beppu-san
+  wrote an MVC framwork called Squatting, because he's a big fan of the
+  Camping framework from the Ruby world, && we wanted to have access to a
+  similar API for building Bavl. He's also written a non-blocking CouchDB
+  client called AnyEvent::CouchDB that will be uploaded to the CPAN soon.
+
+  The major pieces that left are:
+
+  * (1 week) The Flash-based audio playing widget.
+  * (1 week) The Flash-based audio recording widget.
+  * (5-7 weeks) The actual web application that brings everything together.
+  * (1 week) Deployment of the web application.
+
+Bio
+
+  Beppu: I am a programmer who has been using Perl for 10 years, now.
+  However, for the last 2 years, I took a trip into the worlds of Ruby
+  && JavaScript to see what they had to offer. I have recently returned
+  to Perl, because I decided that it was time to implement the idea for
+  a language learning site that my friend && I have been sitting on, &&
+  I believed that Perl (the language created by our favorite
+  linguist/programmer) would be the most appropriate tool for the job.
+
+  Pip: I'm JAPH who loves to learn, dream, && design ambitious things
+  that I don't always quite know how to do all the needed work for...
+  which is why Beppu-san && I make a solid team. I've always hacked at
+  HP48GX calculators, early x86 asm, low-level graphics && 3D, which led
+  to my decade-long career in game-development. I have contributed Free
+  Software to facilitate better tools, data-formats, && interoperability
+  among games whenever I could. I too believe Perl is the most
+  appropriate language for our Bavl project to bloom.
+
+Amount Requested
+
+  $4,095.63
+

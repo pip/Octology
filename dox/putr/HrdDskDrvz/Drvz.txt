@@ -1,0 +1,17 @@
+Hard Drives:
+
+Size   IF    Make     Model     Locations: BIOS  System  GNU/Linux Mount
+------------------------------------------------------------------------
+36GB  WSCSI  IBM      DDYS-T36950N          S1   /dev/sda   Gen:/c/
+  Had boot sector (MBR) lilo choosing to boot Gen GNU/Linux off Quantum
+    or Win95 from self.  Probably only one partition, all vfat.
+18GB  WSCSI  Quantum  QM318000TD-SW         S3   /dev/sdb1  Gen:/boot
+  Wouldn't boot alone. =(  Maybe need more       /dev/sdb2  Gen:/
+    lilo attention to load MBR with good         /dev/sdb3  Gen:/home
+    boot files.  Don't forget SCSI termination!  /dev/sdb4  Gen:sw
+ 4GB  WSCSI  Seagate  ST34573W              S5   /dev/sdc
+  Bootable fresh Win2k partition.  Maybe secondary 1GB partition for
+    making cd backups... which is useless now that DVD's are burnable.
+    May use this drive with my Adaptec 29160 controller to mk Mike's
+    broken Dell bootable again so that we can at least recover his music.
+  Windows Admin pswd:kaka

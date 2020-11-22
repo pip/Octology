@@ -1,0 +1,233 @@
+Return-Path: <sirlin@alum.mit.edu>
+Delivered-To: piptigger@lbox.org
+Received: (qmail 94938 invoked by uid 1022); 15 Mar 2004 03:32:07 -0000
+Delivered-To: Pip@Ax9.Org
+Received: (qmail 94935 invoked from network); 15 Mar 2004 03:32:07 -0000
+Received: from pop.sanbrunocable.com (65.172.230.120)
+  by wsip-64-147-11-54.oc.oc.cox.net with SMTP; 15 Mar 2004 03:32:07 -0000
+Received: from Raven (cpe-65-172-238-93.sanbrunocable.com [65.172.238.93])
+	by pop.sanbrunocable.com (8.11.6/8.11.6) with SMTP id i2F3Sxj08670
+	for <Pip@Ax9.Org>; Sun, 14 Mar 2004 19:28:59 -0800
+From: "David Sirlin" <sirlin@alum.mit.edu>
+To: "Pip Stuart" <Pip@Ax9.Org>
+Subject: RE: Why frames?
+Date: Sun, 14 Mar 2004 19:31:25 -0800
+Message-ID: <HHEALDALMGFFCGFNIGPACEHNCJAA.sirlin@alum.mit.edu>
+MIME-Version: 1.0
+Content-Type: text/plain;
+	charset="us-ascii"
+Content-Transfer-Encoding: 7bit
+X-Priority: 3 (Normal)
+X-MSMail-Priority: Normal
+X-Mailer: Microsoft Outlook IMO, Build 9.0.2416 (9.0.2911.0)
+Importance: Normal
+In-Reply-To: <20040314164155.GA35628@lbox.org>
+X-MimeOLE: Produced By Microsoft MimeOLE V6.00.2800.1165
+Content-Length: 10377
+
+My version isn't any shorter, but I think it's more understandable. When I
+read your "metric for potentially fluctuating graphic rendering frequeny"
+the first thing I thought of was comedian Bill Maher's show Politically
+Incorrect. He showed a clip of President Bush talking about Iraq. Bush said
+this phrase verbatim "Weapons of mass destruction and reltated program
+activities...and other unauthorized equipment." Bill Maher went on and on
+about that, how it was a whole lot of words, but what is a "related program
+activity" and what is "unauthorized equipment," anyway? He then wrote and
+performed on his show a country-western song with the chorus of "weapons of
+mass destruction and related program activities...and other unauthorized
+equipment." He could have written a great song about "metrics for
+potentially fluctuating graphical rendering frequencies," I'm sure. ;)
+
+--Sirlin
+
+-----------------
+
+A "frame," here, means 1/60th of a second, corresponding to the 60 times per
+second that the game checks the inputs from the player. This is a separate
+concept from the graphical "frame rate" (which might update only 30 times
+per second, or experience "slow downs," or other fluctuations).
+
+Many games--including Mucha Lucha--require timing down to the frame.
+Complicated games like Virtua Fighter basically require the player to know
+how many frames of recovery this move has versus that move, but that is not
+at all what I'm talking about here. A sound effect on a footstep must be
+played at exactly the right frame, or it just doesn't sound right. A
+particle effect (blood, sweat, special effects, etc) triggered a few frames
+off just feels wrong. And all games that have fighting moves, whether simple
+or complicated, describe moves in three phases: 1) startup, 2) hitscan
+(where the move can actually hit), and 3) recovery. Moves are usually less
+than one second long, which means these three time periods are very short.
+So-called "chain combos" (when the player can cancel one move into the next
+in the series) are very frame-dependent. There is a window during which the
+move can be cancelled to the next, and the hitstun each move gives the
+victim must be long enough so that the next move in the series will still
+"combo." If this isn't true, the victim can simply block in the middle,
+which isn't very satisfying. If the hitstun is too long, the attacker can
+just repeat the first two moves of the chain forever. Too many details, but
+the point is that there's a lot going on at the timing level of the frame,
+and designers need to talk about those events a lot.
+
+Frames are really the most natural way to talk about those events. If I tell
+you a move is 23 frames long, and has it's hitscan during frames 10-13, it
+gives you a pretty intuitive feeling of which part of the move can hit. It's
+nice to be dealing with small, whole numbers. Compare the case of the same
+move that is 0.3833 seconds long, and hits between 0.1667 seconds and 0.2167
+seconds.
+
+There's more than just mere convenience to measuring in frames, though.
+Frames are a discrete scale, while seconds are continuous. Using seconds
+incorrectly implies that the thing we are measuring is actually continuous.
+The thing we most concerned with measuring-the time between the checks of
+the player's inputs-is a discrete scale with 1/60ths of a second gaps.
+
+Suppose a move has some input window where it can fork to this or that combo
+depending on what the player inputs. Suppose the window is, oh, 16 frames
+long. That means there will be exactly 16 checks of what the player inputs,
+not the "infinite" number of checks one might think of when using a
+continuous measuring scale such as seconds. Furthermore, what if it's
+determined that the window is a little too short? It sure helps to know what
+the meaningful increments are. Measured in seconds, this window is 0.2667
+seconds long. What is the next largest meaningful increment? And the one
+after that? If you answered 0.2833 seconds and 0.3000 seconds, you're right!
+It's much easier to answer in frames, though: 17 and 18 frames are the two
+next largest choices.
+
+Finally, it's somewhat "elegant" to break down time into 60 pieces in order
+to make it more manageable. Rather than talk about going to lunch in 180
+minutes, we say "3 hours." There are 60 minutes in an hour, 60 seconds in a
+minute, and.60 frames in a second.
+
+I recommend that we use integer seconds, followed by a colon, followed by
+integer frames for all internal game timing. For example, 2:23 is 2 and
+23/60ths of a second. The tools could support display of both the "s:f"
+format and the "float seconds" format if needed, but it would be nice for
+everyone to agree and use the same timing measurement system, for
+consistency's sake.
+
+The possible counter-argument: there are lots things that will be scripted
+that don't require timing down to the frame. For example, when a vat of goo
+is set to dump every 8.5 seconds in one of the levels, it's probably more
+natural to just call it "8.5 seconds." It doesn't have anything to do with
+player input, and it would also be tuned by much larger increments than a
+frame. Probably changed to 9 or 10 seconds, rather than 8.567 seconds. Even
+still, all the sound effects, visual effects, and triggering of scripts that
+the vat of goo require do come down to split-second timing. And since all
+the mechanics involving character moves and player input *really* should be
+in frames, I'm hoping the guy tuning the vat of goo can just deal with
+ "8:30" (rather than "8.5") for the sake of the greater good.
+
+---------------------------
+
+
+
+
+
+-----Original Message-----
+From: Pip Stuart [mailto:Pip@Ax9.Org]
+Sent: Sunday, March 14, 2004 8:42 AM
+To: David Sirlin
+Subject: Why frames?
+
+
+Hey Sirlin... below are polished notes.  I'm planning to e-mail this to
+Rob, Micah, && Lars on Monday before Rob, Micah, && I meet to discuss it.
+Please reply if you have anything to add or update.  Thanks for your help.
+
+-Pip
+
+  PREMISES:
+
+"Frames" (as far as this argument is concerned) means input timing.  A frame
+is almost always a 60th-of-a-second.  They are not a metric for potentially
+fluctuating graphic rendering frequency (which is likely the more common
+use of the term).
+
+Most games have (&& definitely Mucha Lucha has) moves which need lots of
+timed tags with sub-second precision.  In fighting game terms, the major
+phases of every attack are: Activation, Hitscan, && Recovery.  A major
+component of tuning is changing the timing on each of these (even though
+the animation they all exist in may not need to change appearance in any
+way).  Other important timed events are PlaySound, Start/StopEffect
+(particles, lighting, etc.), ForkCombo (the right input event that
+interrupts the current animation with the next one in a combo sequence),
+RunScript, etc..  Each of these have nuances like the ForkCombo could
+fork only if the input event is right at the time instant the marker is
+reached or it could be associated with a prior input detection range which
+is already closed when the anim reaches the marker && forks.  These
+details may need to be discussed separately but their relevance here is
+that they employ precise sub-second timing.
+
+*NOTE* There are other events which are triggered by occurrences unrelated
+to time such as when an attack hits, it should activate sound && graphical
+effects, hit reaction animation, damage calculation, maybe run a script,
+etc..
+
+Timing should be consistent.
+
+  WHAT I'M TRYING TO PROVE:
+
+Frames are the natural && best timing language for games in general &&
+competitive games in particular (&& fighting games even more particularly).
+This is why we should use them at least optionally if not universally.
+
+  TEST: (make a good guess if you don't know)
+
+A) Let's say you set the initial timing of a boulder to roll into the arena
+every 8.5 seconds.  Then after testing it, you realize it must be a tiny bit
+more but it must be only the most minimal change possible.
+What time do you use?
+
+B) Let's say you set the initial timing of the same boulder to roll
+every 8s:30f.  The same change is needed.
+What time do you use?
+
+  ARGUMENT:
+
+I talked to David Sirlin about this issue over the weekend.
+
+He said: There are 3 points in increasing importance:
+
+  0) Everyone does it. Capcom[StreetFighter, PowerStone], Namco[SoulCalibur,
+Tekken], Sega[VirtuaFighter], Arc[GuiltyGear]... they all have been designed
+around && explained in frames.  It's not a coincindence... It is the
+natural language.
+
+  1) Frames are the easiest way to talk about sub-second timing.  It would
+be ridiculous to describe the distance between cities in astronomical units
+(eg. L.A. to S.F. is 0.000127au).  Small integers are much easier to deal
+with && more intuitive than floats. If you say "This move is 37 frames
+long; hitscan is between 19 && 28", it gives a clear && succinct picture
+of all the pertinant timing properties. Contrast that to "This move is
+0.616666666666667 seconds long; hitscan is between 0.316666666666667 &&
+0.466666666666667". Of course these 3 numbers can be rounded but they would
+still be inaccurate, cumbersome, && unnatural. Natures progression of
+time is consistent:
+  60 minutes in an hour, 60 seconds in a minute, 60 frames in a second.
+h:60m:60s:60f rather than 0.635s.
+
+  2) A second is a continuous scale but frames are discreet.  Seconds imply
+a false continuum.  If you have a move where a 16 frame window matters,
+it is exactly 16 checks of input that will occur, not an infinite number
+between 0 && 0.266666666666667 seconds.  Having a continuum of seconds is
+bad
+because there is not a continuum.
+
+A frame is: 0.0166666666666667 seconds.
+
+Integer frames are natural.
+
+We should think of, communicate, && specify sub-second timing in frames.
+
+My preference && recommendation is that we use integer seconds && integer
+frames separated by a colon for all internal game timing.  Of course our
+tools can support (&& optionally display) time in either s:f or float
+seconds if some people insist on using decimal sub-seconds but I would
+prefer we mandate that all game timing will only && always be in s:f
+because it is natural && best.  I hope you agree.
+
+Counter: ML && every following bbengine game is going to be so simple that
+we don't need to care about (or it isn't worth the time investment to
+support) anything other than (what is already in place) floating seconds.
+
+
+

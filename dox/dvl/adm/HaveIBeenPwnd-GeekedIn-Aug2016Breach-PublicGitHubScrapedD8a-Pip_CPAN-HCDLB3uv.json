@@ -1,0 +1,49 @@
+{
+    "_id": "13367199-f1c9-48f1-8a3a-12c8ce7cd1451467584823287",
+    "_class": "com.geekedin.domain.entities.mongo.EDeveloper",
+    "scores": [],
+    "libraryScores": [],
+    "compactLibraries": [],
+    "name": "PipStuart",
+    "email": "Pip@CPAN.Org",
+    "location": "Appleton, Wisconsin, USA",
+    "country": "US",
+    "city": "e571e8d7-f6b6-4b72-ae2f-e156e2323dc61448621636975",
+    "score": 0,
+    "scanCompleted": false,
+    "socialNetworks": [
+        {
+            "_id": "https://github.com/pip",
+            "socialNetwork": "other",
+            "url": "https://github.com/pip"
+        },
+        {
+            "_id": "pip",
+            "socialNetwork": "github",
+            "url": "https://github.com/pip"
+        }
+    ],
+    "locationPoint": {
+        "x": -88.41538,
+        "y": 44.26193
+    },
+    "yearsOfExperience": 0,
+    "otherLocations": [],
+    "extraEmails": [],
+    "locateTryFailed": false,
+    "locateTried": false,
+    "beingLocated": false,
+    "remoteLocateTried": true,
+    "blogFindTried": false,
+    "contactIsPossible": true,
+    "freelancer": false,
+    "compactLibrariesComputed": false,
+    "compactLibrariesBeingComputed": false,
+    "followersFound": true,
+    "emailAddresses": [
+        {
+            "email": "Pip@CPAN.Org",
+            "type": "primary"
+        }
+    ]
+}

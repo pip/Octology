@@ -1,0 +1,187 @@
+
+  I know an additional response wasn't asked for but I feel it's quite 
+necessary to address Mr. Fish's latest submissions.  I will try to be 
+brief because I was really hoping that I could already be done with the 
+all the explanations but I cannot permit Mr. Fish's latest falsehoods to
+go unchallenged.
+  1) Regarding the claimed entirely useless??quote here?? inaccessible code:
+    a. All of it resides on his server's harddrive, his personal 
+        workstation's harddrive, && his lawyer's harddrive (presumably 
+        since I emailed the documented archive to him repeatedly).
+    b. Mr. Fish chose the `root` password for the server himself.  After
+        doing so, he told me what it was so that I could utilize it for
+        development.  I never changed it.  I memorized it then.  I don't
+        happen to remember it any longer (nor where I might have it 
+        written).  This password is not even necessary to access any of 
+        the code I developed.
+    c. Mr. Fish still should have his own personal account on the server 
+        (which he also chose all the pertinant information for).  His 
+        personal account is sufficient to read, copy, && modify all the 
+        code on his server.
+    d. Since he has the server's hard drive in his direct possession, he 
+        can easily utilize any normal Linux boot-disk (like the one that 
+        came with his RedHat distribution) && directly access the entire 
+        harddrive volume.  Every boot-disk I have ever used has had a 
+        "rescue" option for such a purpose.
+     It is a bold-faced lie to say that I have somehow witheld the code 
+      from Mr. Fish.  It is very accessible to him && it always has been.
+  2) Regarding the speculation about my earnings && my purported 
+      dishonesty:
+    a. I had never done contract work before I met Mr. Fish.
+    b. I did not simultaneously work on other contracts while I worked on
+        800Telephone (though it shouldn't have been illegal if I had done
+        so).
+    c. I have not been paid for consulting or contract-work since I dealt 
+        with Mr. Fish.  I was not an experienced mature professional 
+        contract programmer as he likes to claim.
+    d. I have not updated my Guru profile since I left TelcoBid.com.  I 
+        plan to do so once this case is concluded.
+    e. I did unintentionally misrepresent the duration of my "independent"
+        status since I have worked indepedently since I stopped attending 
+        the University of California at Irvine.
+    f. TelcoBid.com fell apart before I was hired.  My programming enabled 
+        it to have a protracted appeal to investors but a terribly poor 
+        business model inevitably overcame the available venture capital 
+        && greedy management tactics scared all the competent help away.
+    g. Other than while working for Mr. Fish, I have enjoyed stable 
+        employment through salaried positions everywhere I have worked 
+        (except for a special agreement with my close relative's company 
+        [BCI Group] where I was paid $3k each month for almost 3 months 
+        for completing 3 substantial tasks).
+    h. I was paid a 50k / year salary as of last week when MindFire && I 
+        mutually agreed that I was no longer useful towards the new 
+        direction they have decided to persue.  I did not quit && I was 
+        not fired.  I left on very good terms && may well return should 
+        they decide to develop new products in the future rather than 
+        predominantly support existing clients && resell their existing 
+        products as they plan to do for now.
+    i. I am prepared to open up all of my bank records.  I have nothing 
+        to hide.  I have not intentionally falsified anything.  I also 
+        have not fabricated anything for this arbitration process.
+    j. As I stated before, I do not have any savings nor do I own anything 
+        of great value (ie. worth more than $5k).  I normally have less 
+        than $1500 in my checking account as the extent of my financial 
+        resources.
+    k. I did not then && do not now, have a lawyer.
+    l. I did not exhaustively review the original contract.  I also did 
+        not "demand" that contract without any modifications as written 
+        for another programmer.
+    m. I did not choose OpenMerchant.
+    n. I was previously unable to afford the expense of the arbitration
+        costs.  I am now capable of paying the latest arbitration 
+        expenses since my final checks from MindFire have inflated my 
+        balance (even if temporarily).  I have also just landed a 
+        new job which pays 40k / year so my financial situation is not 
+        likely to be much better than it has been as of late.  I'm 
+        not sure that I should have to pay since I have only defended 
+        myself (ie. I make no counter-claim) && by Mr. Fish's own 
+        admission, "[I] never came anywhere close to performing under the 
+        terms of the agreement, not even the first week".  I was never 
+        capable of fulfilling the original contract which contained the 
+        arbitration clause.  Mr. Fish paid me, regardless of my 
+        incapacity so that he could control me since I had living 
+        expenses that I could not otherwise afford.
+    o. I have been busy since then paying the same expenses.  I have not 
+        intended to "ignore the legal process".  I have responded as 
+        promptly && directly as I am able (without legal assistance).
+  3) Regarding Mr. Fish's false accusations:
+    a. I did provide documentation for the software I wrote.
+    b. Mr. Fish bought me two books (not ten) which I have not returned 
+        (but am willing to).
+    c. Mr. Fish did not buy my cable modem or pay for my access bills or 
+        ever absorb any of the hardware expenses I was forced to endure 
+        when I experienced a catastrophic harddisk controller failure 
+        which incapacitated my development machine.
+    d. Mr. Fish might have met me at a restaurant five or six times over 
+        the three months that we dealt with each other.  One of the 
+        times, he suggested that I would have to pay for our meals 
+        sometimes.  Toward the end of the development effort, Mr. Fish 
+        chose to meet at an expensive restaurant (with his lawyer) to 
+        persuade me to finish the project quickly so that I would not 
+        have to face the litigation he was preparing.  I ordered 
+        somewhat extravagantly since I was not being paid enough to 
+        afford my bills by that time.  I doubt he ever took me out to 
+        eat twice in a single week as he claims to have done every week.
+        
+  I know it all boils down to his word versus mine && I feel I may be at 
+a great disadvantage since Mr. Fish has lied so consistently while I have 
+adhered to the truth.  He has quoted me out of context whenever it has 
+suited him.  Many other falsehoods were presented by Mr. Fish that hardly 
+seem worth arguing.  Hopefully it is apparent that my "assets and earning 
+power" are not as voluminous as Mr. Fish had hoped && they have not been 
+lied about.  I have been as direct && honest as I could be.  I have not 
+tried to hide anything.  If there is any information that can help us to 
+be done with this once && for all, I am willing to produce any records I 
+have.  I have done this as well as I could from the outset.  That's why 
+this all seems so pointless to me.  It should also be apparent that I've 
+never dealt with this sort of business before && that I don't have money 
+bags to hand over because of some imagined damage I mysteriously caused.  
+I have not sabotaged any of Mr. Fish's hardware or software.  If I have 
+told other people about how he has treated me, it was only because I did 
+not want to see other people manipulated && abused as I was.  I 
+certainly earned at least the $5k I was paid.  I should not be held 
+responsible for Mr. Fish's office or Business Plans or Accountants or 
+server hardware or new programming expenses.  None of them have hinged 
+on me or if they have, it is Mr. Fish's fault, not mine.
+  Something else that seems particularly relevant is the projected 
+expense of hiring "a new group to start from scratch in an expedited time 
+frame", "new programmers", && "a new programming staff" that Mr. Fish has 
+referred to as the most expensive damage I have caused.  This valuation of
+the associated cost of development of the system Mr. Fish is asking for has 
+yielded an average quotation of $75k.  Clearly multiple teams of 
+programmers have been contacted since this project was (&& is) no small 
+task.  To expect that a single early-twenties programmer could simply 
+accomplish this same task for less than 1/7th of the average quoted price 
+as calculated by experienced professional contracting firms (presumably) 
+in an equivalent timeframe is obviously unreasonable && heartily bolsters 
+my argument that I could not have possibly met Mr. Fish's expectations.
+  I'm not even sure what is happening anymore.  I think I have 
+demonstrated that I was incapable of completing the contract as written.  
+This was visible sometime between the first && third weeks of this twelve-
+week effort.  Clearly, I was still being paid for months after this 
+"breach" && the situation only got worse as Mr. Fish && I both seem to 
+attest to.  Our initial agreement must have deteriorated quickly.  I 
+contend that we fundamentally altered the original agreement when we 
+verbally agreed to not utilize OpenMerchant (since I couldn't get it 
+to work).  Apparently Mr. Fish argues that I didn't even come close to 
+fulfilling the first (or any following) week's deliverables according to 
+the contract.  Either way, I couldn't complete even the beginnings of the 
+contract on time.  The time necessary for software development (of any 
+kind) routinely exceeds even the most careful && experienced projections.  
+I was not experienced but was as careful as I could be under the 
+financial pressures I was facing.  It's all pretty simple.  I worked as 
+hard as I could to be paid as much as I could until I was unable to 
+afford even my basic living expenses.  I could not depend upon my 
+roommates to cover my share of our bills for very long since they are all 
+students who work part-time if at all.  I had to find a normal job where 
+I would be able to survive.  Mr. Fish && I agreed to change our original 
+agreement (which I was incapable of adequately performing).  I did not 
+have a better option than to try to rewrite OpenMerchant's core 
+functionality myself since I could not benefit from the system as it was 
+then (even if others were able to utilize it).  I would have continued 
+to work on 800Telephone if Mr. Fish would have ongoingly paid me enough 
+to live.  Since he did not, I was unable to continue developing software 
+for him.  Now I don't like him anymore && don't want to deal with him 
+ever again.  That's it.  I'm convinced that he is crazy && cruel.  Please 
+let me know if there's any more information or clarification I could 
+provide that would be helpful in further evaluating this case.  Thank 
+you.
+
+-Pip Stuart
+
+p.s. I'm not sure how the hazy issue of Point-to-Point (P2P) intellectual
+property (as it pertains to the Napster case) is actually precedent or 
+even germain in the context of the present case but it might be 
+interesting to be enlightened if it somehow can be shown to be.  Maybe 
+it's an analogy suggesting that Old/obsolete/abusive versus 
+Young/clever/defiant-when-mistreated is an ongoing battle.  I could see 
+that.
+p.p.s. I'm sorry I did not type in all capital letters, underline or 
+boldface my text above.  It seems that gratuitous use of these 
+mechanisms is necessary for Mr. Fish to recognize emphasis.  Hopefully 
+plain text can be descriptive enough for the purpose of plainly 
+addressing each point.
+p.p.p.s. I do happen to enjoy playing video games.  I also enjoy 
+software development.  I do each quite a bit.  Hopefully neither 
+is sufficient proof of criminal or amoral underpinnings which 
+necessarily lead to a conviction in any disputable matter.  TTFN.

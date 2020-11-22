@@ -1,0 +1,141 @@
+
+                   International Shipping Information
+                     and International Dealer List
+
+                            JP Software Inc.
+                             P.O. Box 1470
+                      E. Arlington, MA 02474, USA
+
+                             April 12, 1999
+
+This file is for customers outside the U.S., and includes shipping rates
+and a list of international dealers.
+
+If you have questions which are not answered here, or want to contact our
+Sales and Customer Service departments directly for any other reason, we
+be reached as follows:
+
+       World Wide Web        http://www.jpsoft.com/
+       Email inquiries       sales@jpsoft.com
+       Dealer inquiries      dealers@jpsoft.com
+       Phone inquiries       781-646-3975
+       Fax line              781-646-0904
+
+
+INTERNATIONAL SHIPPING
+----------------------
+   Orders typically require 2 - 3 business days processing time before
+   shipment, and may take more or less depending on our order backlog.
+   All shipping and delivery times may vary during peak upgrade periods.
+
+   Rates for shipments outside the U.S. are based on total weight, as
+   shown in the table below.  The numbers in parentheses show the typical
+   time from shipment to delivery, in days.  Please contact us for orders
+   over 10 pounds.
+
+
+                       CANADA ONLY           ALL OTHER COUNTRIES
+         Weight    Standard     Express     Standard     Express
+         (lbs)      (7-10)       (3-5)       (7-28)       (2-6)
+         ------    --------     -------     --------     -------
+           1         $6           $30          $9          $40
+           2         $7           $34          $16         $46
+           3         $8           $38          $22         $51
+           4         $10          $42          $28         $56
+           5         $15          $46          $33         $61
+           6         $16          $50          $38         $66
+           7         $17          $54          $42         $71
+           8         $17          $58          $46         $76
+           9         $18          $62          $50         $81
+           10        $19          $66          $54         $85
+
+   STANDARD shipping is via mail-based services (Air Mail, Air Parcel
+   Post, or Fedex mail drop service).  Delivery times vary significantly
+   depending on destination and local mail service.
+   
+      PLEASE NOTE:  Standard service is not traceable and can NOT be
+      used to ship non-JP Software products (Partition Magic, Boxer,
+      REXX, etc.).  For these products use Express service (Canadian
+      customers can also contact us for information on UPS Ground
+      shipping for non-JP Software products).
+   
+   EXPRESS shipping is via Federal Express to most countries, and via
+   Express Mail or another similar service to locations where FedEx
+   rates are unusually high.  Delivery times are generally short and
+   reliable.  This service can be used for any product.
+
+   If you receive international shipments via a freight forwarder in the
+   U.S. please include both your address and the U.S. shipping address,
+   and use the U.S. rate chart on the order form.
+
+
+INTERNATIONAL DEALERS
+---------------------
+   If you are ordering from outside the U.S. please check the list of
+   international dealers below.  Purchasing through these dealers can
+   save you the delay and inconvenience involved in dealing with
+   currency conversions and international shipping, and provide you with
+   a local source for support and service.
+
+   This list was up to date at the time of release, but our dealer list
+   does change.  An up to date list is available on our web site at
+   http://www.jpsoft.com/.
+
+   PLEASE NOTE that international dealers set their own pricing; some
+   also set their own upgrade policies, which may not be the same as
+   those of JP Software.  Check with your dealer for details.
+
+     AUSTRALIA      BEK Software             Phone: +61-0412-311-507
+                    197 Hull Rd.               Fax: +61-3-9722-9043
+                    PO Box 352
+                    Mooroolbark, VIC 3138
+                    AUSTRALIA
+
+                    Email: beksoft@usa.net
+
+
+     CANADA         Saltspring Software      Phone: 519-673-6618
+                    123 Saint George Street    Fax: 519-673-0696
+                    Suite 200
+                    London, ON  N6A 3A1
+                    CANADA
+
+                    Email: sales@saltspring.com
+                    Saltspring Software services Corporate and
+                    Government clients
+
+
+     GERMANY        Computer Solutions       Phone: 49-8092-5018
+                    Gartenstr. 2               Fax: 49-8092-31727
+                    D-85567 Grafing
+                    GERMANY
+
+                    Email: info@compsol.de
+                    World Wide Web: http://www.compsol.de/
+
+
+     NETHERLANDS    The Owl's Nest           Phone: 31-591-393299
+                    Kloostermanswijk WZ32      Fax: 31-591-393244
+                    NL-7891 HG Klazienaveen
+                    NETHERLANDS
+
+                    Email: info@owlsnest.nl
+                    World Wide Web:  http://www.dutch.nl/owlsnest/
+
+
+     UNITED         Atlantic Coast plc.      Phone: (44) 1297 552222
+     KINGDOM        The Shareware Village      Fax: (44) 1297 553366
+                    Station Road
+                    Colyton, Devon EX13 6HA
+                    ENGLAND
+
+                    Email: sales@atlantic-coast.com (orders only)
+                    World Wide Web:  http://www.atlantic-coast.com
+
+
+--------------------------------------------------------------------------
+[Legal Stuff:  Copyright 1999, JP Software Inc., All Rights Reserved.
+Published by JP Software Inc., P.O. Box 1470, E. Arlington, MA 02474,
+U.S.A., phone 781-646-3975, fax 781-646-0904.  All prices and terms
+subject to change without notice.]
+

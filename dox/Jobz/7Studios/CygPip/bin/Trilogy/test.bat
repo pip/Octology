@@ -1,0 +1,5 @@
+echo %@format[%1,%2]
+echo %@format[-%1,%2]
+echo %@format[.%1,%2]
+echo %@format[-.%1,%2]
+echo %@format[-%1.%1,%2]

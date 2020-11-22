@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wc-entries
+   xmlns="svn:">
+<entry
+   committed-rev="9"
+   name=""
+   committed-date="2006-02-20T21:24:19.999529Z"
+   url="file:///var/svn/WWW-ASCIIcker/trunk/htdocs/js"
+   last-author="beppu"
+   kind="dir"
+   uuid="e1cdcca2-420c-0410-82d0-d9cb0be6e355"
+   revision="10"/>
+<entry
+   name="Form"
+   kind="dir"/>
+<entry
+   committed-rev="9"
+   name="JSAN.js"
+   text-time="2006-02-20T21:25:38.000000Z"
+   committed-date="2006-02-20T21:24:19.999529Z"
+   checksum="09ff4bffc42a26a9240d3ab89b7811bb"
+   last-author="beppu"
+   kind="file"
+   prop-time="2006-02-20T21:25:38.000000Z"/>
+</wc-entries>

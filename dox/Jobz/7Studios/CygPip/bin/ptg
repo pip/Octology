@@ -1,0 +1,33 @@
+#!/usr/bin/perl
+# 73TJoTg - ptg (Pak[Pip]TimeGmail[Gerry]) created by Pip@CPAN.Org to stamp e-mails for my dad (Gerry - Gtime) and I (Pip - Ptime).
+use strict; use warnings; use Time::PT; my $parm = join(' ', @ARGV); my $ptim = Time::PT->new();
+if(exists($ENV{'TZ' }) && $ENV{'TZ'} eq 'UTC') { my $DST = 0;
+  (exists($ENV{'DST'})) ? $DST = $ENV{'DST'} : $DST  = 1; # Daylight Savings Time module or tst here?
+  $ptim -= '8000'; $ptim += '1000' if($DST); }
+my @fldz =(            0, $ptim->month()   , $ptim->day(),
+           $ptim->year(), $ptim->hour() + 3, $ptim->min());
+if($fldz[4] <    0 ) { $fldz[4] %= 24; $fldz[2]--;
+  unless(  $fldz[2]) { $fldz[1]--;
+    unless($fldz[1]) { $fldz[1]  = 12; $fldz[3]--; }
+    $fldz[2] = Time::DaysInMonth::days_in($fldz[3], $fldz[1]);
+  }
+}
+if($fldz[4] > 23) { $fldz[4] %= 24; $fldz[2]++;
+  if($fldz[2] > Time::DaysInMonth::days_in($fldz[3], $fldz[1])) { $fldz[2] = 1; $fldz[1]++; if($fldz[1] > 12) { $fldz[1] = 1; $fldz[3]++; } }
+}
+my @mnth = Time::DayOfWeek::MonthNames();                            $fldz[4] = sprintf("%02d", $fldz[4]);
+$fldz[0] = Time::DayOfWeek::DayOfWeek($fldz[3], $fldz[1], $fldz[2]); $fldz[5] = sprintf("%02d", $fldz[5]); $fldz[1] = $mnth[$fldz[1] - 1];
+$_ =            $fldz[0] . ', ' . $fldz[1] . ' '  . $fldz[2] . ', ' . $fldz[3]. ', '. $fldz[4]. $fldz[5] . ' Gtime / ' . sprintf("%02d", ($fldz[4] + 21) % 24).
+                $fldz[5] . ' Ptime '   . $ptim;#. '"|xclip -i'; # -sel [psc]
+$_  = 'echo "' . $_ . '"';
+$_ .= '| xclip -f -si -se p -l 1' if(!exists($ENV{'PipsHost'}) || $ENV{'PipsHost'} ne 'Taki'); # -sel [psc]
+#$_ = 'echo "' . $_ . '"| xclip -f -si -se c -l 1'; # -sel [psc]
+#$_ = 'echo "' . $_ . '"| xclip -filter -silent -selection primary -loop 1';
+# specify which  X selection to use: "primary" to use XA_PRIMARY (default),
+#                                  "secondary" for    XA_SECONDARY  or
+#                                  "clipboard" for    XA_CLIPBOARD
+#print($_, "\n");
+system($_);
+#print "Thursday, March 29, 2007, 2038 Gtime / 1738 Ptime 73THcMG\n"; # to clip
+# It looks like vim could add it to both the primary (mouse-button driven) && regular Ctrl-XCV keyboard clipboards simultaneously by macroing:  :r!ptg^M"+YV
+# Yeah.  Forget about stupid xclip... unless I can recompile the source to be easier to use standalone later.  A Vim macro will just work already.

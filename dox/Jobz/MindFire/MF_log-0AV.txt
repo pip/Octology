@@ -1,0 +1,54 @@
+Done:
+     Hmm... I arrived at the office on Monday afternoon at 2pm.  I slept
+    in the office from about 2am until 7am.  Then took a nap again from
+    3pm to 5pm.  Now it's after 3:30am on Wednesday.  I'm writing my
+    journal and finishing up so I can go.
+
+     I've been getting reacclimated to the nuances of mass database
+    population as I've finally began running these import scripts.
+    Today I created the records for the ~80 merchants that were included
+    in the siteinfo.txt file.  They have been created on Helium and
+    Quark.  The scripts and description of my procedure can be found on
+    either server in ~pip/dvl/PnGS/*.  I'm aware of how little I really
+    know what does what wherewithall the scripts and data etc.
+    Hopefully my grasp on the structure and interdependencies will
+    continue to solidify respectably.  I abstracted the specific details
+    of Expanets' setup process as much as I could so that making a new
+    Partner would be less painful.  I'll be able to do this better once
+    I have a comprehensive understanding of the steps involved but it
+    already feels much better than when I began.
+
+     We had a developers meeting today to discuss responsibilities etc.
+    and it appears that my main priority is getting the Locator function
+    written and running smoothly with the branch sites and flash
+    animation etc.  Thereafter, I'm responsible for specifying the HR
+    tool, Press Release Tool, && the rest of the Expanets site.
+
+ToDo:
+     Consider Locator && simple configurable crawler/cacher code.
+
+     Spec. future Expanets' site components.
+
+     As soon as Expanets is pacified, we need to get all coders together
+    and thoroughly map our process.  That means which projects, what
+    interfaces, what data structures, discuss && hopefully resolve
+    forking / stability issues.  Consider && agree communally upon a
+    staging mechanism / development lifecycle for new project &&
+    functionality development from spec through retirement.  Get a real
+    team game plan together so we all know where we are, where we're
+    going, and how we all thinq we can best get there.  Consider all
+    hardware && software concerns.
+
+Thots:
+     I can't tell if there's still much code to be written or not.  It
+    appears that almost everything is coming together, we just need to
+    keep the reigns under control so that everyone is moving in more
+    similar directions.  I can't see much functionality or haven't
+    encountered discussion (other than Julia's recommendation that PnGC
+    gets rewritten entirely) that would suggest that the current
+    projects need to do much more than they already do.  Maybe they
+    could be rewritten partially in order to attain better efficiency /
+    performance.  Hopefully we can consider some potential benchmarking
+    mechanisms as well.  I'm ready to take another nap on the couch for
+    a little bit.  Beppu's already ganked my spot in the corner. =)
+
