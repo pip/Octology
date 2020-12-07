@@ -693,3 +693,348 @@ KBHLEARN:Tweet from 'Jordan Peterson Quotes': "To be fully self-conscious means 
   "... and then to make the decision to move forward into the land of the unknown..anyway". I disagree with this for several reasons and intend to reply with
   my own tweet which says something to the effect of: "To be beneficially self-conscious, strive to be predominantly aware of your own limit8ions and how..."
   "... you might be hurt. Then attempt to proceed and move forward into the uncertainty that potential futures represent, in spite of the risks assoC8d!" -PS;
+KBOLANCI:HTTPS://YouTu.be/jTjctSX-qAc "Atheist Deb8s: Parables - Why Would a God Use Them?" # KAV:Fm0 by MattDillahunty highlighting all sorts of Bible idioms;
+KBOLAZER:HTTPS://YouTu.be/jTjctSX-qAc "This Material is Nearly UnCuttable - Proteus" # KAQ:6P0 of SciShow discussing how ceramic-spheres+ wear down saw-blades;
+KBOLBOUS:HTTPS://YouTu.be/TUgqiopdURE "The Secrets of Life's Toughest Material - Nacre" # KAO:3v0 of SciShow highlighting n8ure's toughness beating human-made;
+KBPLMAnn:Announcement-_Beyond_Order-_12_More_Rules_for_Life-JordanBPeterson-Iu635BJxBQE-KBN-KBPLCWCM.subs HTTPS://YouTu.be/Iu635BJxBQE # KBN:Ad0 of Dr.P && PP;
+{000} Hi. I'd like to announce my new book:          # Hello. I am PedantPip && I would like to preface this video with a disclaimer: Of course I have not
+{040} Beyond Order: 12 More Rules for Life,          #   had any opportunity to read Dr. Peterson's new book yet. Also, he should not have been expected to
+{080} which I've been working on diligently          #   address every possible criticism when he is merely introducing the material through obvious
+{090} for the past three years.                      #   summariz8ion of the topics that l8r chapters surely delve into much gr8r detail on. Please take my
+{0D0} As of today, the book is available for         #   commentary && critiques with a "grain-of-salt". I would prefer that I, && others, be fair with him.
+{0F0} pre-order in the U.S.,                         # I have planned to skip past sections of his original announcement video for which I have little to
+{0G0} the U.K., and Canada. I've linked to some      #   nothing worthwhile to say about, but please try to keep as much as possible in-context, even though
+{0K0} major retailers,                               #   it is not reproduced in its entirety here. The target dur8ion for each video I intend to present on
+{0L0} including international links for Amazon,      #   this channel should hopefully always remain between 8 && 9 minutes total, so I must necessarily
+{0N0} in the video's description                     #   remove significant portions from his original 11-minute video, in order to try to meet my goal.
+{0Pi} below. I've also included a link to the
+{0Rf} Beyond Order page on my website:
+{0UU} JordanBPeterson.Com, where links to book
+{0Xc} retailers in different countries
+{0Ya} will be posted, as they become available.
+{0cn} Beyond Order will also be published as
+{0er} an e-book, and as an audio book, which I
+{0gE} have nearly finished recording.
+{0ja} All formats will be released on Tuesday,
+{0ld} March 2nd, 2021.
+{0qm} I want to provide you with a sense of
+{0sE} the book, in addition to announcing its
+{0uU} existence. So I thought I would read you
+{0xR} a section from the Overture,
+{10g} the introduction, which describes the
+{12r} book's contents in some detail.
+{168} Beyond Order: 12 More Rules for Life.
+{1B0} Why Beyond Order? It is simple in some         # Does "Beyond Order" just indic8 "Chaos" that is past the periphery of any established and known order?
+{1F0} regard.                                        # While I can agree, at least, that it *is* simple, in some regard, I think you're oversimplifying here.
+{1G0} Order is explored territory. We are in         # Order is also, technically, sequences of traversal thru unexplored territory, or not territory at all.
+{1J0} order when the actions we deem                 # Aren't we "in-order" when just any actions produce orderly results somehow, regardless of deem or aim?
+{1K0} approprE8 produce the results we aim           # Are you also counting inaction as a thing that is sometimes deemed an approprE8 "action"? Just curious.
+{1N0} at. We regard such outcomes positively,        # When "in-order", do actions always require that an eventual outcome aim accompany them ahead-of-time?
+{1Q0} indic8ing as they do,                          # Are you sure that produced results are fully equivalent to outcomes? Are aims also always desires?
+{1R0} first, that we have moved closer to what       # I'd also contend that production of aimed-at results is different than merely moving somewhat closer
+{1T0} we desire, and second,                         #   to whatever it might be that "we" desire. Our aims, desires, actions, results, etc. are not the same!
+{1U0} that our theory about how the world            # I also don't think every orderly action needs to depend on a coherent theory of how the world works.
+{1W0} works remains acceptably accur8.               # How could anyone be determining meaningfully whether our collective theory remains "acceptably accur8"?
+{1Z0} Nonetheless, all st8s of order, no             # I disagree with "all" here. Probably some st8s of order are properly understood as flawless, at least
+{1b0} matter how secure and comfortable,             #   for some purposes, && under known constraints. I think it *does* matter gr8ly just how secure st8s
+{1e0} have their flaws. Our knowledge of how to      #   of order are. Comfort shouldn't factor in much. Maybe you mean something unobvious with st8 "flaws"?
+{1h0} act in the world remains eternally             # Speak for yourself! You don't know what I know. Knowledge of many sorts may remain somewhat incomplete
+{1j0} incomplete,                                    #   but even just the "world" is probably not "eternal". Maybe you just mean like "almost constantly"?
+{1k0} partly because of our profound ignorance       # How to act perfectly in the world may prove impossible due to sufficiently, essentially, or effectively
+{1m0} of the vast unknown,                           #   boundless "unknowns", but knowledge generally grows at the expense of any ignorance. Profound how?
+{1n0} partly because of our willful blindness,       # Please speak for yourself again! I am not willfully blind in any way that I know of, so I probably do
+{1q0} and partly because the world continues,        #   not belong in your use of "our". I'd suggest that the "entropic manner" of the world causes most
+{1s0} in its entropic manner, to transform           #   transform8ions we care about to be predictable && expectable. You sure the world transforms itself?
+{1v0} itself unexpectedly.                           # Just because *you* don't expect transform8ions that occur doesn't mean that nobody did, or could have.
+{200} Furthermore, the order we strive to            # Personally, I don't strive to impose hardly any order on the world. In what ways do you? Yes, imposed
+{220} impose on the world can rigidify as a          #   "order" can be too rigid, especially when intending to elimin8 all unknowns foolishly, but exactly
+{240} consequence of ill-advised attempts            #   who are you talking about that advises others to try to do so? Upon reflection, it seems you don't
+{260} to eradic8 from consider8ion all that          #   mean "advise" literally, but are just trying to convey that such attempts are bad ideas. Is imposed
+{290} is unknown.                                    #   order ever *not* rigid though? I guess there can be "too flimsy" or "too inflexible" for some cases.
+{2A0} When such attempts go too far,                 # So then, by "impose on the world" are you meaning just on other people, but not the actual planet? ...
+{2C0} totalitarianism threatens,                     #   or are you using "totalitarianism" in a broader sense as being applicable to our whole environment?
+{2E0} driven by the desire to exercise full          # Are you even sure anyone actually desires "full" control, of the entire world (&& maybe universe too)?
+{2G0} control,                                       # Who even thinks "full" control *is* possible? Eradic8ing most from consider8ion is closed-mindedness.
+{2H0} where such control is not possible, even       # For some reasonable definitions of "full", I would argue that it *is* possible to control the world.
+{2K0} in principle.                                  #   Such cases are probably especially possible when someone is just exerting control "in principle".
+{2M0} This means risking a dangerous                 # What do you mean by "this" here? Desire for full control? Again, do you mean "world-control" as only
+{2N0} restriction of all the psychological and       #   applicable to humans? Why say the "world" when you mean something more like "civiliz8ion" instead?
+{2P0} social changes                                 # I highly doubt whatever "this" was truly risks restriction of "all" changes that are necessary. Many?
+{2Q0} necessary to maintain adapt8ion to the         # Are you even sure psychological && social changes are absolutely "necessary" for adapt8ion either?
+{2T0} ever-changing world,                           # Honestly, in most of the ways we're primarily concerned with, our "world" is *not* "ever-changing".
+{2V0} and so we find ourselves inescapably           # There might be some "escapes", though we're probably faced with many more than just *one* single need.
+{2Y0} faced with a need to move beyond order,        # Sometimes we may need to move from some particular order to different ones, not just into pure chaos.
+{2a0} into its opposite, chaos.                      # I think order versus chaos is often a false-dichotomy, but even ignoring that, it seems that they're
+                                                     #   not always best understood as technically opposites either. To be a thorough opposite of something,
+                                                     #   an entity probably needs some threshold degree of order to prove sufficiently capable of opposing.
+                                                     # Is there some ambiguous "middle-ground" laying between order && chaos that can be discerned as neither?
+                                                     # Can there be a third category that's not just a combin8ion of those, but rather fundamentally distinct?
+                                                     # What I am trying to get at here is the likelihood that a proper opposite of an "order" is something
+                                                     #   like the reverse-order, not the more degener8 case of apparent dis-order. Other inverses are useful.
+{2d0} If order is where what we want makes           # Speak for yourself again, please! I doubt that order *is* the only place where what *you* want occurs.
+{2f0} itself known when we act in accordance         # You probably don't really mean "makes itself known" there, right? Like things wanted are usually not
+{2h0} with our hard-won wisdom,                      #   conscious themselves or capable of making anything known, revealing themselves, or self-manifesting.
+                                                     # Plenty of wants are achieved without any wise actions. Do you mean all humanity wisely wants the same?
+                                                     # I take issue with your insistence that both order && chaos are separable places "where" some particular
+                                                     #   thing or another occurs. Are you certain that each are localizable && properly understood regionally?
+{2j0} chaos is where what we do not expect, or       # Just because "we" did not expect something, I don't think this sufficiently indic8s being inside chaos.
+{2l0} ever remain blind to,                          # Probably no human-being can live forever, therefore we cannot "ever" remain blind (or anything else).
+{2m0} leaps forward from the potential that          # So you're saying chaos has directionality && an ability to abruptly lurch? Just from potential around?
+{2o0} surrounds us.                                  # If there's any way I discover to avoid remaining "blind" to something "visible", I intend to employ it.
+{2q0} The fact that something has occurred           # It probably depends on what that "something" is though. The fact that star-matter moved around many
+{2r0} many times in the past, is no guarantee        #   times in the past, is probably as good as a guarantee that it will continue to, in a similar manner.
+{2u0} that it will continue to occur in the          # I guess it also hinges on what you're assuming or implying qualifies as "guarantee" or adequ8ly "same".
+{2v0} same manner.                                   #   The paradox: "The only constant is change!" springs to mind, after listening to your phrasing there.
+{2x0} There exists, eternally, a domain beyond       # I am skeptical that any overwhelmingly finite being (such as man) can feasibly identify any "eternity".
+{320} what we know and can predict.                  # According to you, is the domain that lays within what we know && can predict also existing eternally?
+                                                     # Can there only be something like a "zero-sum-game" oper8ing between these unlimited competing domains?
+{340} Chaos is anomaly, novelty,                     # If you're overwhelmingly engulfed in chaos for long enough, then it's order that becomes anomalous,
+{360} unpredictability,                              #   novel, unexpected, transform8ive, && disturbing... at least as I seem to recall encountering each.
+{380} transform8ion, disruption, and all too often   # Speak for yourself. Just because *you* take the reliability of things for granted doesn't mean "we" do.
+{3B0} dissent, as what we have come to take for      # Assuming that unreliable things are comprehensible as merely static && trustworthy *is* a big problem!
+{3D0} granted reveals itself as unreliable.          # Similarly, assumptions && presumptions that reliable things will behave in uncertain ways is also dumb.
+{3H0} Sometimes it manifests itself gently,          # I must be quite the agent of chaos then, since I sometimes manifest myself gently, but not usually! ;}
+{3K0} revealing its mysteries and experiences
+{3L0} that makes us curious,                         # I have to wrap this up. Haven't you had enough of my contentiousness yet, Dr. Peterson? Never quit? =}
+{3N0} compelled, and interested. This is
+{3Q0} particularly likely, although not
+{3R0} inevitable,
+{3S0} when we approach what we do not
+{3U0} understand voluntarily, with careful
+{3W0} prepar8ion
+{3X0} and discipline. Other times, the
+{3Z0} unexpected makes itself known terribly
+{3c0} suddenly, accidentally. So we are undone
+{3f0} and fall apart,
+{3g0} and can only put ourselves back together
+{3i0} with great difficulty,
+{3k0} if at all. Neither the st8 of order nor
+{3o0} the st8 of chaos is preferable,
+{3p0} intrinsically,
+{3q0} to the other. That is the wrong way to
+{3t0} look at it.
+{3u0} Nonetheless, in my previous book: 12 Rules
+{3x0} for Life:
+{400} An Antidote to Chaos, I focus more on how
+{430} the consequences of too much chaos might
+{450} be remeD8d.
+{460} We respond to sudden and unpredictable
+{490} change by preparing,
+{4A0} physiologically and psychologically, for
+{4C0} the worst,
+{4E0} and because only God Himself knows what
+{4G0} this worst might be,
+{4H0} we must, in our ignorance, prepare for all
+{4K0} eventualities,
+{4M0} and the problem with that continual
+{4N0} prepR8ion is that,
+{4P0} in excess, it exhausts us,
+{4S0} but that does not imply in any manner
+{4U0} that chaos should be elimin8d.
+{4W0} An impossibility in any case. Although
+{4Y0} what is unknown needs to be managed
+{4a0} carefully,
+{4b0} as my previous book repeatedly stressed.
+{4e0} Whatever is not touched by the new
+{4g0} stagn8s and it is certainly the case
+{4i0} that a life without curiosity,
+{4l0} that instinct pushing us out into the
+{4n0} unknown, would be a much
+{4o0} diminished form of existence.
+{4r0} What is new is also what is exciting,
+{4t0} compelling, and provoc8ive,
+{4v0} assuming that the r8 at which it is
+{4x0} introduced does not intolerably
+{500} undermine and destabilize our st8 of
+{550} being. Like 12 Rules for Life, the current
+{570} volume provides an explic8ion of rules
+{5A0} drawn from a longer list of 42, originally
+{5C0} published and popularized on the Q-&&-A
+{5E0} website: Quora. Unlike my previous book,
+{5I0} Beyond Order explores, as its overarching theme,
+{5L0} how the dangers of too much security and
+{5N0} control might be profitably avoided.
+{5R0} Because what we understand is
+{5T0} insufficient, as we discover when things
+{5V0} we are striving to control
+{5W0} nonetheless go wrong around us, we need
+{5Z0} to keep one foot within
+{5a0} order, while stretching the other
+{5c0} tent8ively into the beyond,
+{5f0} and so we are driven to explore and find
+{5i0} the deepest of meanings in standing on
+{5k0} the frontier,
+{5l0} secure enough to keep our fear under
+{5n0} control, but learning,
+{5o0} constantly learning, as we face what we
+{5r0} have not yet made peace with or adapted to.
+{5v0} It is this instinctive meaning, something
+{5x0} far deeper than mere thought,
+{610} that orients us properly in life, so that
+{630} we do not become overwhelmed by what is
+{650} beyond us
+{660} or, equally dangerously, stultified and
+{690} stunted by d8d,
+{6B0} too narrow, or too pridefully paraded
+{6D0} systems of value and belief.
+{6H0} What have I written about, more
+{6J0} specifically?
+{6L0} Rule 1 describes the rel8ionship
+{6N0} between stable
+{6O0} predictable social structures and
+{6Q0} individual psychological health,
+{6S0} and makes the case that such structures
+{6U0} need to be upd8d by crE8ive people, if
+{6X0} they are to retain
+{6Y0} their vitality. Rule 2
+{6b0} analyzes a centuries-old alchemical
+{6d0} image, relying on several stories,
+{6f0} ancient and modern, to illumin8 the
+{6i0} n8ure and development of the integr8d
+{6k0} human personality.
+{6m0} Rule 3 warns of the dangers of avoiding
+{6p0} the inform8ion,
+{6q0} vital to the continued rejuven8ion of
+{6s0} the psyche,
+{6t0} signaled by the emergence of neg8ive
+{6v0} emotions such as pain,
+{6x0} anxiety, and fear.
+{720} Rule 4 argues that the meaning that
+{740} sustains people through difficult times,
+{760} is to be found not so much in happiness,
+{790} which is fleeting,
+{7A0} but in the voluntary adoption of m8ure
+{7C0} responsibility for the self and others.
+{7G0} Rule 5 uses a single example, drawn from
+{7J0} my experience as a clinical psychologist,
+{7M0} to illustr8 the personal and social
+{7O0} necessity of attending to the dict8s
+{7Q0} of conscience.
+{7S0} Rule 6 describes the danger of
+{7U0} attributing the cause of complex
+{7W0} individual and social problems
+{7Y0} to single variables, such as sex, class,
+{7b0} or power. Rule 7
+{7f0} outlines the crucial rel8ionship
+{7h0} between discipline striving in a single
+{7j0} direction,
+{7k0} and forging of the individual character
+{7m0} capable of resilience in the face of
+{7o0} adversity.
+{7q0} Rule 8 focuses on the vital importance
+{7t0} of aesthetic experience
+{7u0} as a guide to what is true, good, and
+{7x0} sustaining,
+{800} in the human world of experience.
+{830} Rule 9 makes the case that past
+{860} experiences,
+{870} whose current recall remains laden with
+{890} pain and fear,
+{8A0} can be stripped of their horror by
+{8C0} voluntary verbal explor8ion
+{8E0} and reconsider8ion.
+{8I0} Rule 10 notes the importance of explicit
+{8L0} negotE8ion,
+{8M0} to maintenance of the good-will, mutual
+{8P0} regard, and
+{8Q0} heartfelt cooper8ion, without which no
+{8S0} true romance can be sustained.
+{8W0} Rule 11 opens by describing the world of
+{8Y0} human experience
+{8Z0} in a manner that explains what motiv8s
+{8b0} three common, but
+{8d0} direly dangerous, patterns of
+{8e0} psychological response,
+{8g0} delinE8s the catastrophic consequences
+{8j0} of falling prey to any, or all, of them,
+{8l0} and lays out an altern8ive route.
+{8o0} Rule 12, finally, makes the case that
+{8s0} thankfulness, in the face of the
+{8t0} inevitable tragedies of life,
+{8w0} should be regarded as a primary
+{8x0} manifest8ion of the admirable moral courage
+{920} required to continue our difficult march
+{980} uphill. I hope that I am somewhat wiser in my
+{9A0} explic8ion of this second set of 12
+{9C0} rules than I was four years ago,
+{9E0} when I wrote about the first dozen, not
+{9G0} least because of the inform8ive
+{9I0} feedback I received in the course of my
+{9K0} efforts to formul8 my ideas for
+{9M0} audiences around the world,
+{9O0} in-person, on YouTube, and through my
+{9Q0} podcast and blog.
+{9T0} I hope, in consequence, that I have
+{9V0} managed to clarify some of the issues
+{9W0} that were perhaps
+{9X0} left less than optimally developed in my
+{9Z0} previous work,
+{9a0} as well as presenting much that is
+{9c0} original.
+{9e0} Finally, I hope that people find this
+{9h0} book as helpful personally,
+{9j0} as they seem to have found the first set
+{9k0} of twelve rules.
+{9m0} It has been a source of immense
+{9o0} gratific8ion, that so many people have
+{9q0} reported drawing strength from the
+{9s0} thoughts and the stories
+{9t0} I have had the privilege of bringing
+{9v0} forth, and sharing.
+{A00} That was the second half of the Overture
+{A30} from Beyond Order:
+{A40} 12 More Rules for Life.
+{A80} Once again, the book, in all its forms,
+{AA0} will be published March 2nd,
+{AC0} 2021. Links for pre-sale
+{AF0} are posted in the description below.
+{AJ0} Thank you, from the bottom of my heart,
+{AM0} for your interest in,
+{AN0} and support of, my work. ;
+KBSLBash:HTTPS://YouTu.be/-jM2fpm6fnA "JordanPeterson - TheTyrannicalFather and TheDevouringMother" # HAA:2x0 seeming to be not so applicable to DotMathews;
+{000} You're an admirer of Erich Neumann {020} and of Carl Jung. (Yes.) Yeah and that's... the Neumann {040} connection is really interesting 'cause I
+{050} think he's a bloody genius. (Yes.) I really like {080} The Great Mother. [It] is a great book and {090} really a gr8 warning that book... and
+{0B0} also The Origins and History of {0D0} Consciousness. (Yeah, one of the most influential books, yep.) That's so interesting. {0H0} I read an essay that
+  you wrote. (Yes.) I don't remember what it was. (A lecture I gave on Neumann at N.Y.U..) Yes, it's {0N0} always been staggering to me that that
+{0P0} book hasn't had the impact that it {0R0} should have had, I mean Jung himself in the {0S0} preface to that book wrote that that was {0V0} the book that
+  he wished that he would {0W0} have written. It's very much assoC8d {0X0} with Jung's Symbols of Transform8ion and {0a0} it was a major influence on my book:
+  Maps {0c0} of Meaning, which was an attempt to {0e0} outline the universal archetypes {0g0} that are portrayed in the kind of {0i0} religious structures
+  that you {0k0} put forward, but the thing that I really {0m0} see happening, and you can tell me what {0n0} you think about this, in Neumann's book
+{0q0} consciousness, which is masculine, {0s0} symbolically masculine for a variety of {0u0} reasons, is viewed as rising up {0x0} against the counter-vailing
+  force of {120} tragedy from an underlying feminine, {140} symbolically feminine, unconsciousness, {160} right, and it's something that can always
+{180} be pulled back into that unconsciousness. {1A0} That would be... the microcosm of that {1C0} would be the Freudian Oedipal Mother {1E0} familial dynamic
+  where the mother {1G0} was so over-protective and {1J0} all-encompassing that she interferes {1K0} with the development of the competence {1M0} not only of
+  her sons, but also of her {1O0} daughters, of her children in general and {1P0} it seems to me that that's the dynamic {1S0} that's being played out in our
+  society {1U0} right now is that there's this... and it's {1W0} rel8d in some way that I don't {1X0} understand, to this insistence {1Z0} that all forms of
+  masculine authority {1c0} are nothing but tyrannical power. So the {1e0} symbolic represent8ion is tyrannical {1h0} father with no appreC8ion for the
+{1k0} benevolent father, and benevolent mother {1m0} with no appreC8ion whatsoever for the {1p0} tyrannical mother, right? ... and that's that...
+{1q0} 'cause I thought of ideologies as {1t0} fragmentary mythologies. That's where {1v0} they get their archetypal and {1w0} psychological power, right? ...
+  and so in a {200} balanced represent8ion, you have the {220} terrible mother and the gr8 mother, as {240} Neumann laid out so nicely, and you have
+{270} the terrible father and the gr8 father, {290} so that's the fact that culture mangles {2B0} you half-to-death, while it's also promoting you and
+{2D0} developing you. You have to see that as {2F0} balanced, and then you have the heroic {2H0} and adversarial individual, but in the {2J0} post-modern
+  world, and this seems to be {2L0} something that's increasingly seeping {2N0} out into the culture at large, you have {2P0} nothing but the tyrannical
+  father, {2R0} nothing but the destructive force of {2U0} masculine consciousness, and nothing but {2W0} the benevolent gr8 mother, {2Z0} and it's an
+  appalling ideology {2b0} and it seems to me that it's sucking the {2d0} vitality, which is exactly what you would {2f0} expect symbolically, it's sucking
+  the {2h0} vitality of our culture. You see that {2j0} with the increasing demolition of {2m0} young men, and not only young men, in {2p0} terms of their
+  academic performance, {2r0} which they're falling way behind in {2t0} elementary school, way behind in junior {2u0} high, and bailing out of the
+  universities {2w0} like mad.    HTTPS://YouTu.be/-jM2fpm6fnA "JP-TF&&DM" HAA:2x0 && HTTPS://YouTu.be/XD6qeWSA6rA "JP:TheDevouringMotherArchetype" # I4A:1WZ0;
+# According to the recurring description of the Devouring Mother as primarily over-protective, it seems to be a rel8ively bad-fit for my Mom's parenting style;
+KBSLEEPY:HTTPS://YouTu.be/CsqVRauiAn4 "Jonathan Pageau vs. Stephen Woodford | Metaphorical Truth" # KBR:1FE0 of gr8 RationalityRules on MetaT of BretWeinstein;
+KBSLIMED:HTTPS://YouTu.be/7wuWsQBIwoI "Jordan Peterson and Russell Brand on 'The Devouring Mother' Archetype" # I2G:4h0 with pretty good queries and responses;
+KBSLIMER:HTTPS://YouTu.be/Vc8AXX50BjI "Jordan Peterson: Nice Guys With Tyrannical Fathers" # d8?:AXE from EssentialTruth channel, also dealing with archetypes;
+KBSLIMES:HTTPS://YouTu.be/p9YMeFEfLbs "The Secret to Becoming UnStoppable - Jordan Peterson Motiv8ion" # KA8:Awe on improving literacy, vocabulary, && writing;
+KBSLIMEY:HTTPS://YouTu.be/O2AAR-5hg1c "Jordan Peterson: How to Spot Good Friends" # K7P:975 about focusing on friends who want the best 4 you && who can talk2;
+KBSLINKS:HTTPS://YouTu.be/-PgOsslDABo "3 Ancient Questions About Jesus That You've Never Considered" # KBD:HV0 which includes fascin8ing Marcianites &&BadGod!;
+KBSLINKY:HTTPS://YouTu.be/g_-yxT3aZQU "Miyamoto Musashi-SenSee Quotes - Dokkodo - The Path of Aloneness | Philosophy" # K62:5E0 of much good&&agreeable advice;
+KBSLIPAG:HTTPS://YouTu.be/mpjjWq81VSw "Bruce Lee: How to Live Successfully in a World with No Rules | Shannon Lee | Big Think" # KBR:5o0 of more gr8 practices;
+KBSLIPER:HTTPS://YouTu.be/ML9yaJknTic "Nothing Fails Like Bible History - Episode 2" # K1Q:A98 of HolyKoolAid destroying notions that Joshua was a real leader;
+KBSLIPIN:HTTPS://YouTu.be/y4S-Sj0IRsU "Miscellaneous Myths: The Zodiac" # KBR:L20 of OverlySarcasticProductions conveying gr8 constL8ions history for cultures;
+KC2LBIOL:HTTPS://YouTu.be/rXBjHcWkq6U "Jamie Metzl on the Portal (with Host Eric Weinstein) Ep. #029 - The Bio-Hacker Will See You Now" # KBI:1w30 having a gr8
+#   talk which mentions Sydney Brenner's insight about everyone being genetically rel8d, Ginger Rogers Principle about doing everything Fred Astaire could do,
+#   except backwards && in high-heels (but of course not "backwards" to her), Fischer (sp?) "equivalence" as an important concept for gender rel8ions, supposed
+#   Chess-like competitive game which women could be best at because it could be somehow more intuition-based && more interactive && could include reading the
+#   emotional-st8s of opponents seems to me to be a non-starter because women just tend to be far less competitive than men && whatever theoretical game would
+#   need to be ancient && deep in order to give rise to "Grand-Master" levels of experts so I don't think such a game could be found, Jennifer Doudna mentioned
+#   as co-inventor of CRISPR Cas-9 system, Dean Atchison && George Marshall as having pushed out into the world the gr8 principles of "American Values" maybe?
+# Minds && memories might be useful to conceive of as a "build-up of st8" && bodies (with cancers?) showing something like resource-leaks or recursion-limits?
+# Regarding their final discussion topic, it seems as though more people sepR8ly && collabor8ively constructing codific8ions of ethics && values would be good;

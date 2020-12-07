@@ -3,13 +3,15 @@
 # 2du:mv2 a8.pm,reformat && colr diff 4 out8,maybe add famd mod pre-checks;
 use strict;use warnings;use utf8;use v5.10;use Encode;use Path::Tiny;#se Octology::a8;
 open my $out8,'>&',STDOUT or die "Can't open  duplic8 STDOUT handle: $!";binmode $out8,':encoding(UTF-8)';#print $out8 oupd(@ARGV); # crE8 local duplic8
-my  $VERSION='0.0';my $d8VS='K51MKeep';my $lcld='/dvl/t8/Octl/Octology';my @chgz=();
+my  $VERSION='0.0';my $d8VS='KC7L1ted';my $lcld='/dvl/t8/Octl/Octology';my @chgz=();my @spcz=();
 my  $logd=$ENV{'HOME'} . $lcld     ;chdir($logd); # Local     Octology Git Directory
 my  $ldir= path(        "$logd"      );my @codf ; # Current   Octology     Directory Files (only want 8 dot-files from repo root,rest shud B Dpr nrml fIlz)
 my  $iter=$ldir->iterator( { 'recurse' =>  1 } ); #  can also flag 'follow_symlinks' to 1, if needed l8r
 while(my $path=$iter->()){push(@codf,$path) unless(-d "$path" || $path=~ /\.git(\/|$)/);} # Path::Iterator::Rule is more powerful,with built-in loop-avoidance
-for(@codf){   unless(-d "$_" || /\/(\.(\.|git)?|LICENSE|README.md)$/ ){my $lclf=$_ ; $lclf=~ s/$lcld//;my $fdif ; # hopefully BlO fixz Unicode diff rslt prntz
-    if(-e "$lclf" && -e "$_" && (-M "$lclf" != -M "$_" || -C "$lclf" != -C "$_")){   $fdif= `diff $lclf $_`; $fdif=decode('UTF-8',$fdif);}
-    if(defined($fdif) && length($fdif)){say $out8 "cp -a $lclf\n      $_\n$fdif";system("cp -a $lclf $_");push(@chgz,$lclf);}}}
-say     $out8 "chgz: " . join(" ",@chgz) if(@chgz);
+for(@codf){push(@spcz,$_) if(/\s/); # start logging any code-files that contain any white-space within their paths or file-names, 2print out l8r aftr othrstuf
+  unless            (-d "$_" || /\/(\.(\.|git)?|LICENSE|README.md)$/ ){my $lclf=$_ ; $lclf=~ s/$lcld//;my $fdif ; # hopefully BlO fixz Unicode diff rslt prntz
+    if(-e "$lclf" && -e "$_" && (-M "$lclf" != -M "$_" || -C "$lclf" != -C "$_")){   $fdif= `diff "$lclf" "$_"`; $fdif=decode('UTF-8',$fdif);}
+    if(defined($fdif) && length($fdif)){say $out8 "cp -a $lclf\n      $_\n$fdif";system("cp -a \"$lclf\" \"$_\"");push(@chgz,$lclf);}}}
+say     $out8 "chgz: " . join(" "   ,@chgz) if(@chgz);if(@spcz){$spcz[0]=':' . $spcz[0];$spcz[-1].=';';} # setup any spacez in namez 2 all B aftr : && Nd wi ;
+say     $out8 "spcz: " . join(";\n:",@spcz) if(@spcz);
 close   $out8             or die "Can't close duplic8 STDOUT handle: $!";
