@@ -1031,10 +1031,15 @@ KBSLIPER:HTTPS://YouTu.be/ML9yaJknTic "Nothing Fails Like Bible History - Episod
 KBSLIPIN:HTTPS://YouTu.be/y4S-Sj0IRsU "Miscellaneous Myths: The Zodiac" # KBR:L20 of OverlySarcasticProductions conveying gr8 constL8ions history for cultures;
 KC2LBIOL:HTTPS://YouTu.be/rXBjHcWkq6U "Jamie Metzl on the Portal (with Host Eric Weinstein) Ep. #029 - The Bio-Hacker Will See You Now" # KBI:1w30 having a gr8
 #   talk which mentions Sydney Brenner's insight about everyone being genetically rel8d, Ginger Rogers Principle about doing everything Fred Astaire could do,
-#   except backwards && in high-heels (but of course not "backwards" to her), Fischer (sp?) "equivalence" as an important concept for gender rel8ions, supposed
+#   except backwards && in high-heels (but of course not "backwards" 2 her), Fischer (sp?) "equivalence" as an important concept for gender rel8ions, supposed
 #   Chess-like competitive game which women could be best at because it could be somehow more intuition-based && more interactive && could include reading the
 #   emotional-st8s of opponents seems to me to be a non-starter because women just tend to be far less competitive than men && whatever theoretical game would
-#   need to be ancient && deep in order to give rise to "Grand-Master" levels of experts so I don't think such a game could be found, Jennifer Doudna mentioned
+#   need to be ancient && deep in order to give rise to "Grand-Master" levels of experts so I don't think such a game could be found, JenniferDoudna mentioned
 #   as co-inventor of CRISPR Cas-9 system, Dean Atchison && George Marshall as having pushed out into the world the gr8 principles of "American Values" maybe?
 # Minds && memories might be useful to conceive of as a "build-up of st8" && bodies (with cancers?) showing something like resource-leaks or recursion-limits?
-# Regarding their final discussion topic, it seems as though more people sepR8ly && collabor8ively constructing codific8ions of ethics && values would be good;
+# Regarding their final discussion topic, it seems as though more people sepR8ly && collabor8ively constructing codific8ions of ethics && values would B good;
+KC7LHOLE:HTTPS://YouTu.be/gLZJlf5rHVs "What If Earth Got Kicked Out of the Solar System? Rogue Earth" # KC1:9j0 of Kurzgesagt about surviving on frozen Earth;
+KC7LHOME:HTTPS://YouTu.be/phpV_0Oi7lk "24 Planets Even Better for Life Than Earth" # KBN:A10 of BrightSide discussing most colonizable planets and warp-drive;
+KC7LHONE:HTTPS://YouTu.be/xLnsY5io964 "Could God Be Evil?" # KC4:HA0 of CosmicSkeptic explaining Cambridge's StephenLaw's gr8 Evil-God Challenge. Answer:Yes!;
+KC7LHOPE:HTTPS://YouTu.be/Bq9xR5PUs6s "Is Infinity Real?" # KC5:C10 of SabineHossenfelder attempting to convey math && physics Infinity concepts. Answer: No!;
+KC9LHitc:HTTPS://YouTu.be/FPcRT_4cI7c "ChristopherHitchens vs. JordanPeterson | Deb8ing about Religion, Morality, && Culture" # J7R:Ops gr8 HolyKoolaid anim8n;

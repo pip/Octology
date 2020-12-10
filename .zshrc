@@ -30,7 +30,7 @@ unsetopt                \
 # auto_pushd            \# setng addz dirz 2 stack wN just normally chngng 2 thM (wich I du not normally lIk or want)
 # ksh_arrays            \# rEmMbr wNwrItng scrptz[or funcz]2include'setopt [localoptions] ksharrays'sO arAzR 0-bAsed(but!glOblBcuzmOst scrptzRstndrdly 1-bAsed)
 # re_____match_____pcre \# mA want2set for Z-SHell scripting RegularExpressions to utilize PerlCompatibility styles && mA insert 'zmodload zsh/(pc)?re(gex)?';
-export Vers='0.0';export d8VS='KBFLGmUv';export Auth='PipStuart <Pip@CPAN.Org>'; # not Xportng $b sinc cOlIdz wi sort{$a <=> $b} /defhijlnqstuvx/i + AZ 4golf;
+export Vers='0.0';export d8VS='KC8LDark';export Auth='PipStuart <Pip@CPAN.Org>'; # not Xportng $b sinc cOlIdz wi sort{$a <=> $b} /defhijlnqstuvx/i + AZ 4golf;
 if     [[       "$SHELL"    == "" ]]; then       export SHELL=`  which zsh`;fi # 8sh should parse this && OverId it    # shud `man zshall` /OSTYP 2lern4BlO
 if     [[       "$HOSTNAME" == "" ]]; then       export HOSTNAME=`hostname`;fi #`hostname`retnz fsckd nwlInz\n4CygWinzRxvt... ||smthng els lame  =(
 if     [[       "$HOST"     == "" ]]; then       export HOST   ="$HOSTNAME";fi;export VERBOSE='1'; # set flag to print debug && status info from system utilz
@@ -717,6 +717,8 @@ alias     rens="ren 's/ /_/g' *"; # simply REName all Spaces to proper underscor
 alias     sho='cd ~/gfx/sho;shot -u'; # change to typical local Octology screenshot directory && take a shot of the focUsed window (no border) in 3 seconds
 alias     br0='byzanz-record -a -c -d 122 -w 1920 -h 1080 Octl-ScrnCap-1080p-`d8`.webm &'; # Byz-Rec up-left monitor 0 zer0 for 2mins2secs to non-ogg .ogv 4m@;
 alias     kaz='kazam';alias ssr='simplescreenrecorder'; # K6EMFMIC: HTTPS://ItsFOSS.Com/best-linux-screen-recorders with `obs` OpenBroadcasterSoftwareStudio;
+alias     kam='kamoso --style        ddark >/dev/null 2>&1'; # KC8LDark:Avail:dsemilight,dsemidark,dlight,ddark,kvantum-dark,kvantum,cde  && try2sNd stderorz
+alias     kad='kamoso --style kvantum-dark >/dev/null 2>&1'; #          Stylz:cleanlooks,gtk2,motif,plastique,qt5ct-style,Windows,Fusion  && stdoutpt2devnul;
 alias    resp='   reso spec'; # joining like =~ /^respect/ shortcut to list resolution specific8ionz  # abovUsed2B S=shl,s=shl8 but S repurposed in a8 4 SKpz
 alias    resg='   res  GA  ';alias res=' reso';alias re='res'; # basic a8.pm resolution HD limit8ion (not to get confused with resoLVE or resoURCE varE8ionz)
 alias    resh='   re   HD  ';alias resa='re Andr';re16='re 16/9';alias re64='re 64/27';alias res9='re /9';alias rest='reso;res9;resp;re16;resg;resh;resa;re64';
