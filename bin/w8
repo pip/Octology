@@ -1,11 +1,12 @@
 #!/usr/bin/perl
-# H99MFsec:w8 crE8d by PipStuart <Pip@CPAN.Org> to just 'wait' (i.e., sleep) for a parameter dur8ion length, initially with frame (60th-of-second) precision;
-# 2du:XtNd d8:fldz to enable jinx && float framez somehow (maybe just as extra w8 method parameter),XtNd help text with auth && more explained examples,
-#   compil8ion && interpret8ion overhead seems rather significant so try to HiRes time typical full script startup && empty execution to fine-tune usleep
-#     parameter for better accuracy but parameterize adjustment from here so that w8 called within longer running code won't then be always too fast either,
-#   consider maybe adding a whole tangential interface of probably more b8-rel8d standard measurement conversions from the 'weight' altern8 spelling angle;
-use strict;use warnings;use utf8;use v5.10;use Octology::d8::dur8;my $d8VS='H99MFsec';my $durs;my $dur8;
-if(@ARGV){if($ARGV[0]=~ /^--?h/i){ # only detect single possible -help option so far
+# J5JM2RLG:w8 crE8d by PipStuart <Pip@CPAN.Org> to just handle 'weight' basic standards conversions (like $x pounds equals $y grams). Repurposed 4 dur8 l8r;
+# 2du:consider adding whole tangential interface of probably more b8-rel8d standards measurement conversions from homophone 'weight' altern8 spelling angle;
+# H99MFsec:w8 crE8d by PipStuart <Pip@CPAN.Org> to just 'wait' (i.e., sleep) for a parameter dur8ion length,initially with phass (60th-of-second) precision;
+# 2du:XtNd d8:fldz to enable jinx && float phassez somehow (maybe just as extra w8 method parameter), extend help text with auth && more explained examples,
+#   compil8ion && interpret8ion overhead seems 2B rather significant so try to HiRes time typical full script startup && empty execution to fine-tune usleep
+#     parameter for better accuracy but parameterize adjustment from here so that w8 called within longer running code won't then be always too fast either;
+use strict;use warnings;use utf8;use v5.10;use Octology::d8::dur8;my $d8VS='KCLL3Cw8';my $durs;my $dur8;
+if(@ARGV){if($ARGV[0]=~ /^--?h/i){ # only detect single possible -help option so far (but plain 'h' parameter without dash prefix flag just w8z 43 phassez);
     open my $out8,'>&',STDOUT or die "Can't open  duplic8 STDOUT handle: $!";binmode $out8,':encoding(UTF-8)'; # crE8 local duplic8 of global
     print   $out8 " w8 to wait for a dur8ion; d8VS:$d8VS\n -h display this Help text and exit\n    try passing a dur8 like '3U' for 3.5 seconds;";
     close   $out8             or die "Can't close duplic8 STDOUT handle: $!";exit();}

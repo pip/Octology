@@ -49,10 +49,10 @@ our @EXPORT= qw(bfr8c    b8c    d8c   dur8c @d8cl  d8cs  a8c   chti  c8fn  o8 S2
  $SKp8 $SKp0 $SKp1 $SKp2 b8clr  $SKpf $SKpt %pmap %cmap       %pl8n  ftst acS e %f8fm %f8pm %sgrm %sgrn @Dayz @Day  lrc      comma  curs  sumb @x256  @sb64
     $z    $k    $r    $o    $y    $g     $c $SKpb    $m    $p    $w  tstc    $K    $R    $O    $Y    $G    $C    $B    $M    $P    $W    %p622 %p222   upd8
          $bk   $br   $bo   $by   $bg    $bc   $bb   $bm   $bp   $bw         $hK   $hR   $hO   $hY   $hG   $hC   $hB   $hM   $hP   $hW     h2rl  rl2h   drkh
-    $t    $u    $d    $s    $n          $T     $U    $D    $S    $N         $HK   $HR   $HO   $HY   $HG   $HC   $HB   $HM   $HP   $HW      hl           xe
- $tnhf $ucdf  spff  spfd  spfX   shfl  reso $Auth %cmsp %p8k2 @p82k  chp8     S2f4 c2f4 dm2u cdst %crgb %cbrt @snls @mrls %cdrd %cdrn    %nrgb         gnp8);
+    $t    $u    $d    $s    $n          $T     $U    $D    $S    $N %gtpo   $HK   $HR   $HO   $HY   $HG   $HC   $HB   $HM   $HP   $HW %pldh hl $pfil pP xe
+ $tnhf $ucdf  spff  spfd  spfX   shfl  reso $Auth %cmsp %p8k2 @p82k  chp8     S2f4 c2f4 dm2u cdst %crgb %cbrt @snls @mrls %cdrd %cdrn    %nrgb $lfil   gnp8);
  # of 52 posibl sngl-letr var nmz,a8 Xportz 20,$b && $a unavail,so shudB thEs30 lFt4quik shortSt nAmz: 'def hij l n  q stuv x', 'A  DEF HIJ L N  Q STUV X Z';
-our $VERSION='0.0';my  $d8VS='KC7L1pip';our $Auth='PipStuart <Pip@CPAN.Org>'; # above not exporting $b since collidez with sort{$a  <=> $b};unalloc'd sOlOz^;
+our $VERSION='0.0';my  $d8VS='KCOLFine';our $Auth='PipStuart <Pip@CPAN.Org>'; # above not exporting $b since collidez with sort{$a  <=> $b};unalloc'd sOlOz^;
 our $ucdf= eval('use Color::Similarity::RGB qw(distance);1') || 0; # try2set UseColorDistanceFlag if optional module is available; /defhijlnqstuvx/i + /AZ/^;
 our @Monz=qw(January February March   April     May June July   August September October November December);our @Mon=();push(@Mon,substr($_,0,3)) for(@Monz);
 our @Dayz=qw(Sunday  Monday   Tuesday Wednesday Thursday Friday Saturday                                  );our @Day=();push(@Day,substr($_,0,3)) for(@Dayz);
@@ -77,6 +77,28 @@ our %cmap=('VGA' =>'kbgcrPOw KBGCRMYW', # supported Colr MAP sequencez of index 
          'd8bo'  =>         'RoYGCBMp', # altern8 pal8 but meant to be used to allow all 8 to be able to display in Bold together
 #    'pal8'8bow'd8bo' =>    'YGTBUDSN', # KC7L1mbo:started switching above 3 color maps back to original rainbow-style before Red,Orange,Magenta were swapped;
            'U2b8'=>         'CSGUY'  ); # altern8 colr sequence for 64-bitz in 11-digit b64 b8 numberz probably using 'url' URLSafe charset for YouTube IDz
+our %gtpo=('d'   => ['a', 'f'],   # 'PipsCkm8GnomTerm-NiceFont-DC9LDaPt', 'PipsCkm8GnomTerm-NiceFont-DC9LDaPt', Gnome-Terminal-Profile-Order (l8st hot-keyz);
+           'p'   => ['g', 'h'],   # 'PipsPdntGnomTerm-NiceFont-KCJLJJJJ', 'PipsPinkGnomTerm-NiceFont-KCKL82tx', '1', 'd8fd',
+           'c'   => ['8', '9'],   # 'PipsCainGnomTerm-NiceFont-KCNLAKER', 'PipsCionGnomTerm-NiceFont-KCNLAMER', '2', 'd8k4',
+           'j'   => ['d', 'e'],   # 'PipsJew8GnomTerm-NiceFont-KCNLANDS', 'PipsJsusGnomTerm-NiceFont-KCNLAPEL', '3', 'd8k8',
+           'g'   => ['b', 'c'],   # 'PipsGuy8GnomTerm-NiceFont-KCNLASER', 'PipsGwayGnomTerm-NiceFont-KCNLATER', '4', 'd8ok',
+           'i'   => ['a', 'f'],   # 'PipsCkm8GnomTerm-NiceFont-DC9LDaPt', 'PipsOthrGnomTerm-TestFont-CCIHPS8' , '5', 'Default',
+           'R'   => ['a', 'f'],   # 'PipsCkm8GnomTerm-NiceFont-DC9LDaPt', 'PipsOthrGnomTerm-TestFont-CCIHPS8' , '6', 'Oni-160x50-J34LDWit',
+           'L'   => ['a', 'f'],   # 'PipsCkm8GnomTerm-NiceFont-DC9LDaPt', 'PipsOthrGnomTerm-TestFont-CCIHPS8' , '7', 'Pips8025GnomTerm-NiceFont-K2FL8025',
+           'B'   => ['a', 'f'],   # 'PipsCkm8GnomTerm-NiceFont-DC9LDaPt', 'PipsOthrGnomTerm-TestFont-CCIHPS8' ,
+           'W'   => ['a', 'f'],   # 'PipsCkm8GnomTerm-NiceFont-DC9LDaPt', 'PipsOthrGnomTerm-TestFont-CCIHPS8' ,
+           'k'   => ['a', 'f'],   # 'PipsCkm8GnomTerm-NiceFont-DC9LDaPt', 'PipsOthrGnomTerm-TestFont-CCIHPS8' , 'i', 'PipsTestGnomTerm-DiffFont-D1NBxCf' ,
+           'v'   => ['a', 'f'],); # 'PipsCkm8GnomTerm-NiceFont-DC9LDaPt', 'PipsOthrGnomTerm-TestFont-CCIHPS8' , 'j', 'Unnamed',
+our $pfil=$ENV{'HOME'} . "/.log/p";our %pldh;
+our $lfil=$ENV{'HOME'} . "/.log/prof.ls"; # load ProfileListD8aHash key => val (just spcd) pairz thN ck just p picked-profile-file for d8bo OvrId selection;
+if     (defined(      $lfil) && -r $lfil){
+  open  my  $lflh,'<',$lfil or die "!*EROR*! Couldn't open  lfil:$lfil for reading! $!\n";binmode $lflh,':encoding(UTF-8)';
+  while(   <$lflh>){if($_ !~ /^\s*#/ && /^\s*(\w+)\s+(\S+)/ ){$pldh{lc($1)}=$pldh{uc($1)}=$2;}}
+  close     $lflh           or die "!*EROR*! Couldn't close lflh! $!\n"   ;
+  if   (defined(      $pfil) && -r $pfil){
+    open my $pflh,'<',$pfil or die "!*EROR*! Couldn't open  pfil:$pfil for reading! $!\n";binmode $pflh,':encoding(UTF-8)';
+    while( <$pflh>){if($_ !~ /^\s*#/ && /^\s*(\w+)/ && exists($pldh{   $1 })){$cmap{'d8bo'}=$pldh{   $1 };}}
+    close   $pflh           or die "!*EROR*! Couldn't close pflh! $!\n"   ;}}
 our %cmsp;for(keys %cmap){my $mstr=$cmap{$_};$mstr=~ s/\s+//g;$cmsp{$_}= [split(//,$mstr)];} # should load all Color Mapz already SPlit apart
 our %pl8n=('K'=>'blacK'     ,'R'=>'Red'      ,'Y'=>'Yellow','G'=>    'Green'  ,  'C'=>'Cyan'        ,'B'=>     'Blue','M'=>'Magenta' ,'W'=>       'White',
            'E'=>'dimgrEy'   ,'H'=>'Hotpink'  ,'O'=>'Orange','D'=>  'oliveDrab',  'T'=>'Turquoise'   ,'S'=>  'Skyblue','P'=>'PurPle'  ,'I'=>       'Ivory',
@@ -994,7 +1016,7 @@ sub sumb{  my $widt=0;$widt=1 if(exists($ENV{'COLUMNS'}) && $ENV{'COLUMNS'} >= 1
     'dm2u'  => "a8 *converter of Dos or Mac line-endings to Unix  (double to Single -s)   ",
     'dur8c' => "a8  colorizer for d8 dur8(ion) time-spans   (>Right>-to-<Left<< <Bkwd<)   ",
     'ftst'  => "a8 *colorful listing of Perl File-TeSTs  (and backslashed escape codes)   ",
-    'gnp8'  => "a8  GeNer8 full 256-Pal8 color blocks (with 4 planes of 4 shifts of 16)   ", # mAB these colr pal8 blox shud B new optnz for tstc or tsgr nstd
+    'gnp8'  => "a8 *GeNer8 full 256-Pal8 color blocks (with 4 planes of 4 shifts of 16)   ", # mAB these colr pal8 blox shud B new optnz for tstc or tsgr nstd
     'h2rl'  => "a8  converter from 6-char HEX to b64 Rgb with 4th char as Low-bit-pairs   ",
     'lodH'  => "a8  load ~/.Hrc into d8a-structure and print out colorfully (like `a8`)   ", # mAB rEtIr once a8 struct&&color becomes more capable
     'lrc'   => "a8 *utility to gener8 ~/.lsrc file from ~/.lrc format   (for LS_COLORS)   ",
@@ -2341,6 +2363,16 @@ sub gnp8{my %p226= reverse(%p622);my %g8lm; # gener8 3 new 8pal8z based on vario
           if(defined($nndx) && !exists($p226{$nndx})){$g8lm{$plnk}{$p8ky}=$nndx;$p226{$nndx}="$plnk$p8ky"; # should apply to orig layr even if shifted lite
             for my $sndx (0..$#snls){if($nndx == $snls[$sndx]){splice(@snls,$sndx,1);$pikf=1;last;}} # loop to rm pickd index from snls for less to srch next
             last if($pikf);}} last if($pikf);}}}
+  my $htxt=" gnp8 - GeNer8 8Pal8 crE8d by $Auth to perform as many color swaps && rot8ions are needed to arrange all 256 values into 4 8x8 families;
+   h  - print this Help text out && then just simply go exit;
+   c=P- set new Parameter c8 Color-Code Prefix (b d a l o h);
+   p  - Print 8Pal8 d8a-struct out as Perl for (b d a l    );
+   l  - layers in bd,al blocks in bigger 8pal8 lowercase first (like q vs. Q, but this was! not! implemented yet!);
+   L  - Layers in bd,al blocks in bigger 8pal8 normal    first (like q vs. Q, but this was! not! implemented yet!);
+   q  - quads  of b then d each with own 8pal8, then lower row for a && l but all lowercase grouped then UpperCase;
+   Q  - Quads  of b then d each with own 8pal8, then lower row for a && l but all UpperCase grouped then lowercase;
+   s  - like `tstc s` for Squeezemode of 8pal8              ;
+";if    ($argz=~ /(^|\s)-?-?h/i){print $htxt;exit();}
   my $cpfx='F:kx'; # could better error-check code to end in x or X (or % or #)
   # note that pal8 change SKp codes with something like this \e]4;%d;%2.2x;%2.2x;%2.2x\e\\ && it works for remapping any decimal x256 index until `reset`
   if    ($argz=~ /(^|\s)-?-?c=?\s*(\S+)/i){$cpfx=$2;} # set a new parameter c8 code prefix
@@ -2352,8 +2384,8 @@ sub gnp8{my %p226= reverse(%p622);my %g8lm; # gener8 3 new 8pal8z based on vario
         else                                                   {                 print   "$p8ky not found!,";}
         if(++$l == 64){print '],';}elsif(!($l % 16)){print "\n        ";}elsif(!($l % 8)){print '  ';}}}
     for(0..255){print "Missing: $_\n" unless(exists($foun{$_}));} say '';
-  }elsif($argz=~ /(^|\s)-?-?l/){ # layers in bd,al blocks in bigger 8pal8 lowercase first (like q versus Q)
-  }elsif($argz=~ /(^|\s)-?-?L/){ # Layers in bd,al blocks in bigger normal 8pal8
+# }elsif($argz=~ /(^|\s)-?-?l/){ # layers in bd,al blocks in bigger 8pal8 lowercase first (like q versus Q)
+# }elsif($argz=~ /(^|\s)-?-?L/){ # Layers in bd,al blocks in bigger normal 8pal8
     # think about cleaner way to gener8 less duplic8 code
   }elsif($argz=~ /(^|\s)-?-?q/){ # quads of b then d each own 8pal8, then lower row for a && l but all lowercase grouped then uppercase
     for   my $plnk (qw(b d)){$g8po='krOgcbPw';
@@ -3412,7 +3444,7 @@ sub xe{ # `xte` X-windows Test Event autom8ion; Command-LookUpTable mapz most ba
             'Rt'=>'Right'    , 'SR'=>'Shift_R'    , 'sR'=>'Super_R'  , 'SK'=>'Escape'   , '^'=>'asciicircum', '.'=>'period'    , "'"=>'quote'   ,
             'Up'=>'Up'       , 'PU'=>'Page_Up'    , 'ML'=>'Meta_L'   , 'Dl'=>'Delete'   , '|'=>'bar'        , '_'=>'underscore', # also shift?
             'Dn'=>'Down'     , 'PD'=>'Page_Down'  , 'MR'=>'Meta_R'   , 'MK'=>'Multi_key'); # note each phass(60th-of-second) is ~16,667usecs(micro,millionth)
-  my $cmds='';my $cfil=$ENV{'HOME'} . '/gfx/sho/LT-K6O-dMO-K6M.xe';if(@ARGV && -e $ARGV[0]){$cfil=shift(@ARGV);} # maybe eventually treat filename as UTF-8
+  my $cmds='';my $cfil=$ENV{'HOME'} . '/gfx/sho/LT-K6O-dMO-K6M.xe';if(@_ && -e $_[0]){$cfil=shift(@_);} # maybe eventually treat filename as UTF-8
   if  (defined($cfil) && -r $cfil){open my $cflh,'<',$cfil or die "!*EROR*! Couldn't open  cfil:$cfil for reading! $!\n";binmode $cflh,':encoding(UTF-8)';
     my  @cd8a=<$cflh>;             close   $cflh           or die "!*EROR*! Couldn't close cflh"              . "! $!\n"; # open Command-FILe wi binmode UTF-8
     for(@cd8a){s/(^|;)\s*#.*/$1/; chomp;my @cmdz=split(/;/,$_);for my $scmd   (@cmdz){my $dfuz=266_672; # strip pound cmntz, parse semi-sepR8d cmndz, ...
@@ -3430,6 +3462,22 @@ sub xe{ # `xte` X-windows Test Event autom8ion; Command-LookUpTable mapz most ba
             $cmds                              .=" '$clut{$cmdn} $kchr'";$cmds.=" 'usleep $p6uz'" if($cmdn ne 'u');
             if  ($tchr=~ /^[A-Z?^|:_"]$/){$cmds.=" 'keyup Shift_L'   'usleep $p6uz'";}}} # doesn't yet handle trickier special cases of semis inside!
     }} if($cmds){system("xte $cmds");return();}}} # mIt l8r want2 backtick && furthr process B4 returning (2 probably B printed out by wrapr)
+sub pP{my $prof='d';$prof=$ENV{'HPrf'} if(exists($ENV{'HPrf'}) && defined($ENV{'HPrf'}) && length($ENV{'HPrf'})); # profilPikr 2swich2 P d(falt)2 pcjgiRLBWkv;
+  if(@_){if($_[0]=~ /^-?-?h(elp)?/i){return(qq( pP Help text: writes to profile p file, gNr8z xe scrpt 4 mouse+key EvNtz 2 ch GT Profilez 4 Ech p prof;
+ pP (profile-Picker 4 d (falt d8bo) or param 2 set 2), pP PS,pp PedantPip,pc CC8,pj JJ8, pg GG, piRLBWkv;)); # retn help text
+    } elsif($_[0]=~ /^ \s* (\S+) /x){$prof=$1;}}
+  if($prof=~ /([dpcjgiRLBWkv])/i){my $prfc=$1; #print `echo -n $prfc>$pfil;d8 -a`; # shud proly l8r do propr open or die,binmode,print in2,&& close or die;
+    if(  defined($pfil) && (!-e "$pfil" || -w "$pfil")){
+        open  my $pflh,'>',$pfil or die "!*EROR*! Couldn't open  pfil:$pfil for writing! $!;";binmode    $pflh,':encoding(UTF-8)';
+        print    $pflh     $prfc;
+        close    $pflh           or die "!*EROR*! Couldn't close pflh"              . "! $!;";  print    `d8 -a`; }
+    if(exists($gtpo{$prfc})){my  $efil=$ENV{'HOME'} . '/gfx/sho/pP-GT-gNr8d-KCN.xe'; # DrF in2 anon-ArA 4 ndx 0 key 4 left mvz && 2 key 4 rite muz, && gNr8;
+      if(defined($efil) && (!-e "$efil" || -w "$efil")){
+        open  my $eflh,'>',$efil or die "!*EROR*! Couldn't open  efil:$efil for writing! $!;";binmode    $eflh,':encoding(UTF-8)';
+        print    $eflh "# pP-GT-gNr8d-KCN.xe crE8d by PipStuart <Pip\@CPAN.Org> to script the `xte` commands through Octology's a8.pm xe() wrapper which" .
+  " should expand its file param;\nv   64 128;c 3;w 4;y r;y " . $gtpo{$prfc}->[0] . ";w 4;y C;y Re;" . # now sends a final left-click into Othr GT in lOlFt;
+                                  "v 1856 128;c 3;w 4;y r;y " . $gtpo{$prfc}->[1] . ";w 4;y C;y Re;k AL;y Tb;y Tb;K AL;v 1856 1208;c 1;";
+        close    $eflh           or die "!*EROR*! Couldn't close eflh"              . "! $!;"; return(xe($efil));}}}} # gN proper xe scrpt 4 Ech prof 2 upd8;
 8;
 
 =encoding utf8
@@ -3465,13 +3513,6 @@ with embedded ANSI escape color codes.
 a8 object method which traverses back through the components to reconstruct the identical original ~/.Hrc d8a file, but introduces ANSI escape color codes.
 
 =head2 bfr8c()
-
-                bfr8c    b8c    d8c   dur8c @d8cl  d8cs  a8c   chti  c8fn  o8 S2   c2  S c   sS    lodl @Monz @Mon     %mc2F %mc2b %mF2c %mb2c @Kana  %sb10
- $SKp8 $SKp0 $SKp1 $SKp2 b8clr  $SKpf $SKpt %pmap %cmap       %pl8n  ftst acS e %f8fm %f8pm %sgrm %sgrn @Dayz @Day  lrc      comma  curs  sumb @x256  @sb64
-    $z    $k    $r    $o    $y    $g     $c $SKpb    $m    $p    $w  tstc    $K    $R    $O    $Y    $G    $C    $B    $M    $P    $W    %p622 %p222   upd8
-         $bk   $br   $bo   $by   $bg    $bc   $bb   $bm   $bp   $bw         $hK   $hR   $hO   $hY   $hG   $hC   $hB   $hM   $hP   $hW     h2rl  rl2h   drkh
-                                                                            $HK   $HR   $HO   $HY   $HG   $HC   $HB   $HM   $HP   $HW
- $tnhf $ucdf  spff  spfd  spfX   shfl  reso $Auth %cmsp %p8k2 @p82k  chp8     S2f4 c2f4 dm2u cdst %crgb %cbrt @snls @mrls %cdrd %cdrn    %nrgb         gnp8
 
 =head1 CHANGES
 

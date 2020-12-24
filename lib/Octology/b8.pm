@@ -29,8 +29,8 @@ use         Encode; # mAB l8r grOw accuracy to 64xx4 == 16_777_216 or 64xx3 == 2
 use         Carp; # orig Math::BaseCnv BlO memoized Sum8(as summ) hEr&&had nO Fibo&&OnlyXportd cnv byDflt but now Octology Xportz almOst evrythng promiscuously
 use Memoize;memoize('Fact');memoize('Chus');memoize('Fibo');memoize('Prim');
 our @EXPORT= qw(b8 cnv ocT deC dec heX HEX b10 b64 b64sort b110 b128 b210 b256 dig diginit @kana
-    cma coma  Sum8 Sumz   Fact Fctz  Chus  Fibo Fibz  Prim Prmz  rotW rot1    calQ   $umbc);
-our $VERSION='0.0';my  $d8VS='K69MJBIG';my $Auth='PipStuart <Pip@CPAN.Org>';
+    cma coma  Sum8 Sumz   Fact Fctz  Chus  Fibo Fibz  Prim Prmz  rotW rot1    calQ   $umbc  txt8);
+our $VERSION='0.0';my  $d8VS='KCLL3txt';my $Auth='PipStuart <Pip@CPAN.Org>';
 our @kana=qw(ぁあぃいぅうぇえぉおかがきぎくぐけげこごさざしじすずせぜそぞた
 だちぢっつづてでとどなにぬねのはばぱひびぴふぶぷへべぺほぼぽまみ
 むめもゃやゅゆょよらりるれろゎわゐゑをんゔゕゖ゗1゛゜ゝゞゟ
@@ -502,7 +502,83 @@ sub calQ{my $ajps='';if(@_){$ajps=join('',@_);}elsif(!-t STDIN){$ajps=join('',<S
 # if(#$prefix ne '' &&  # 0x, 0, 0b
 #    $tbase <= $signedBase && $tref ne 'user'){return($sign . $prefix . $nstr);} # base in signed set
 #                                              return(        $prefix . $nstr);}
-#package Octology::b8;
+sub txt8{ # KCKL8txt:txt8 2 stRt turning 8 k'z in2 any tXt thru CquNcz of top64 opr8nz gNr8d in autOm8d wAz (mAB initially from dic.log && U2b CC transcriptz);
+  # 2du:split off $hwrd space-sepR8d multi-wordz && don't lc them into %dlog keyz,q avg word lengthz && b10 of all char valz,stuD dictd 4 getng avgz of all DB;
+  my $logd="$ENV{'HOME'}/.log";my  %dlog  ;my $strt;my $trgt; # setup LogDirectory && DicLog hash, then Dclare l8r-used b8-object references 4 start && target;
+  mkdir (   $logd,0750) unless(-d "$logd");my $dlfn= $logd  .   '/dic.log'; # attempt to crE8 non-XistNt log-directory in User's ~ && setup DicLogFileName
+  if    (    -e $dlfn){my $csum=0;my $ccnt=0;my $lsum=0;my $lcnt=0; # my $argz= join(' ',@_); # cavg:46.2; lavg:8.6; ccnt:15220; lcnt:1767; keyz:1767;
+    open     my $out8,'>&',STDOUT or die "!*EROR*! Can't open  duplic8 STDOUT handle: $!";              binmode $out8,':encoding(UTF-8)';select($out8);$|=1;
+    open     my $dlfh,'<' ,$dlfn  or die "!*EROR*! Couldn't open  dic log file:$dlfn for reading! $!\n";binmode $dlfh,':encoding(UTF-8)';
+    while     (<$dlfh>){if(/^\s*[0-9A-Z._]{8}:(.+)$/i){my $hwrd=$1;$hwrd=~ s/\s*#.*//;$hwrd=~ s/(^\s+|\s+$)//g;print $out8 '.' unless($lcnt % 8);
+        for  my $swrd (split(/\s+/,$hwrd)){if(exists($dlog{$swrd})){print $out8 "!$swrd;";}else{$dlog{$swrd}=1;} $lsum+=length($swrd);$lcnt++;
+         for my $char (split(//   ,$swrd)){if($char=~ /^[0-9A-Z._]$/i){$csum+=b10($char);$ccnt++;}}}}}         say   $out8 '';
+    close       $dlfh             or die "!*EROR*! Couldn't close dic log file:$dlfn! $!\n";
+    if($csum && $ccnt){my $cavg=$csum/$ccnt;say $out8 "cavg:$cavg;";}
+    if($lsum && $lcnt){my $lavg=$lsum/$lcnt;say $out8 "lavg:$lavg;";} say $out8 "ccnt:$ccnt;\nlcnt:$lcnt;\nkeyz:" . scalar(keys(%dlog)) . ";";
+    close       $out8             or die "!*EROR*! Can't close duplic8 STDOUT handle: $!";}
+  my @opr8=( # thought about just autom8ing inclusion of increasing Prime numbers as oper8ion parameters (&& may still), but beginning with (2**n)-1 2 Bgin;
+    'plus___1', # 0 :add      incr
+    'mnus___1', #    subtract decr
+    'xmlt___2', #    'x' as "times" (double2) or Multiply
+    'dvid___2', #    '/' as "2half" (halfby2) or Divide   (note: auto-integers afterward, dropping fractional parts in digitz past decimal-point, like floor);
+    'expn___2', # 4 :Squared        ($x ** 2) ExponentE8
+    'root___2', #    squaRe-Root    (Radical)
+    'plus___3',
+    'mnus___3',
+    'xmlt___3', # 8
+    'dvid___3', # 9 : ##     `b10 iiiiiiii`      iz?: b10:196,585,698,020,140    (also each piping thru cma 2 tri-group digitz in most typical long-numb styl);
+    'expn___3', # A :cubed  ## `q 196585698020140xx3|cma` = 7,597,238,435,140,642,978,212,863,102,253,611,578,744,000 or as b64: LpP6,yx1E,agW5,QVJv,DgEx,mjp0;
+    'plus___7',
+    'mnus___7', # C
+    'xmlt___7',
+    'dvid___7',
+    'plus__15',
+    'mnus__15', # G
+    'xmlt__15',
+    'dvid__15',
+    'plus__31',
+    'mnus__31', # K
+    'xmlt__31',
+    'dvid__31',
+    'plus__63',
+    'mnus__63', # O
+    'xmlt__63', # P :25                                        ; ## could have just Sum8 or Fact 4 current $strt 2, && mAB du lIk HP48GX RPN stacked oper8ionz;
+    'dvid__63', # Q :26 as last ndx of 27 totl oper8ionz so far; ## mAB add PSFF NtrEz 4 selecting current $strt as int value of n-th as new valU or oper-pRam;
+  );
+  $strt=b10('k'    x 8);my $cqun='';      ## assuming 'i' x 8 ought 2 B much better more efficient start 4 avrg wordz than just 8 cud B;
+  $trgt=b10('word'    ); # mAB try2 srch4 && autO-gNr8 whatever CquNc is nEded 2 get from stRt 8 2 tRget as @lEst 1 bAs-Ks 2 work with?;
+  # srch thru ordrz of oper8nz wich can turn strt in2 trgt word filling cqun with opr8 ndxz as concatN8d b64 charz ...
+  for(split(//,$cqun)){my $l=b10(   $_     )  ;
+    if    ($opr8[$l] eq 'plus___1'){$strt++   ;
+    }elsif($opr8[$l] eq 'mnus___1'){$strt--   ;
+    }elsif($opr8[$l] eq 'xmlt___2'){$strt *= 2;
+    }elsif($opr8[$l] eq 'dvid___2'){$strt /= 2;$strt  = int(     $strt );
+    }elsif($opr8[$l] eq 'expn___2'){$strt**= 2;
+    }elsif($opr8[$l] eq 'root___2'){$strt  =            int(sqrt($strt));
+    }elsif($opr8[$l] eq 'plus___3'){$strt += 3;
+    }elsif($opr8[$l] eq 'mnus___3'){$strt -= 3;
+    }elsif($opr8[$l] eq 'xmlt___3'){$strt *= 3;
+    }elsif($opr8[$l] eq 'dvid___3'){$strt /= 3;$strt  = int(     $strt );
+    }elsif($opr8[$l] eq 'expn___3'){$strt**= 3;
+    }elsif($opr8[$l] eq 'plus___7'){$strt += 7;
+    }elsif($opr8[$l] eq 'mnus___7'){$strt -= 7;
+    }elsif($opr8[$l] eq 'xmlt___7'){$strt *= 7;
+    }elsif($opr8[$l] eq 'dvid___7'){$strt /= 7;$strt  = int(     $strt );
+    }elsif($opr8[$l] eq 'plus__15'){$strt +=15;
+    }elsif($opr8[$l] eq 'mnus__15'){$strt -=15;
+    }elsif($opr8[$l] eq 'xmlt__15'){$strt *=15;
+    }elsif($opr8[$l] eq 'dvid__15'){$strt /=15;$strt  = int(     $strt );
+    }elsif($opr8[$l] eq 'plus__31'){$strt +=31;
+    }elsif($opr8[$l] eq 'mnus__31'){$strt -=31;
+    }elsif($opr8[$l] eq 'xmlt__31'){$strt *=31;
+    }elsif($opr8[$l] eq 'dvid__31'){$strt /=31;$strt  = int(     $strt );
+    }elsif($opr8[$l] eq 'plus__63'){$strt +=63;
+    }elsif($opr8[$l] eq 'mnus__63'){$strt -=63;
+    }elsif($opr8[$l] eq 'xmlt__63'){$strt *=63;
+    }elsif($opr8[$l] eq 'dvid__63'){$strt /=63;$strt  = int(     $strt );
+    }
+  } # mAB prnt 8 ... oper8ion-CquNc ... Nd $strt 2 C if arriving @ $trgt correctly?
+}
 8;
 
 =encoding utf8

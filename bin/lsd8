@@ -24,7 +24,7 @@
 use strict;use warnings;use utf8;use v5.10; # mAB tSt if just regUlR -t STDIN && -t STDOUT R Dtectng intractiviT corectly 1st,B4 fallng bak on IO::Interactive
 #se IO::Interactive qw(is_interactive); # employ if(is_interactive()){} around all colring to attempt to behave like `ls --color=auto` when piped away
 use Encode;use Octology::a8;#se Octology::c8;
-           use Octology::b8;use Octology::d8;use Time::PT;my $VERSION='0.0';my $d8VS='KA6MEthr';my $sllw=0; # SymLink LargestWidth to track for alignment
+           use Octology::b8;use Octology::d8;use Time::PT;my $VERSION='0.0';my $d8VS='KCJLAcat';my $sllw=0; # SymLink LargestWidth to track for alignment
 open my $out8,'>&',STDOUT or die "Can't open  duplic8 STDOUT handle: $!"; binmode $out8,':encoding(UTF-8)';my $cauf=1;my $cnvf=0; # crE8 local duplic8 of globl
 my $vsrt='-v'; my @b64d;my $t;my $sbdr;my $b64c;my($pwnw,$grpw,$grpx);$pwnw=$grpw=$grpx=0; # default -v Version SoRT,reversed b8 Colr List matchz Dfalt d8 ordr
 my $jfdz=join('|',@Day);my $jfmz=join('|',@Mon); # Joined Fieldz for DayZ and MonthZ to regex with  # BlO mAB some ARGVz shud!B sNt thru -d tSt so Dtect 1st?
@@ -146,7 +146,7 @@ for(@ldat){if(($prmz,$blsz,$pwnr,$grup,$fsiz,$d8tz,$fnam)= /^(\S{10})(\s+\d+)(\s
     my $tryc=0;my $trym=8; # Try Count && Max since need some additional fall-through mechanism so all these while loops below don't hang
     while($tnam=~/^.*-(\e\[([\d;]*)m)*(((19|20)\d\d)([01]\d)([0123]\d))               (\e\[([\d;]*)m)*([-.*\/]|\d|$)/x                      && # YYYYMMDD
       $tryc++ < $trym){my($dYMD,$dd8Y,$dd8M,$dd8D)=($3,$4,$6,$7); # this one needs to go before d8 since these match both
-      if($fnam=~/-$dYMD([-._*\/]|\d|$)/){                    my $etim="$Y$dd8Y$G$dd8M$T$dd8D";$tnam=~s/$dYMD/$etim/;}}               $tryc=0;
+      if($fnam=~/-$dYMD([-._*\/]|\d|$)/){                    my $etim="$R$dd8Y$o$dd8M$Y$dd8D";$tnam=~s/$dYMD/$etim/;}}               $tryc=0;
     while($tnam=~/^.*-(\e\[([\d;]*)m)*([0-9A-D][1-9A-C][1-9A-V][0-9A-N][0-9A-Za-x]{3})                        (\e\[([\d;]*)m)*([-.*\/]|$)/x &&
       $tryc++ < $trym){my $ptvr=$3;my $ptim=undef;
       if($fnam=~/-$ptvr([-._*\/]|$)/){$ptim=    Time::PT->new($ptvr);my $stim=$ptim->color('ansi');$stim.=$M.'0' if($ptvr=~/0$/);
@@ -162,17 +162,17 @@ for(@ldat){if(($prmz,$blsz,$pwnr,$grup,$fsiz,$d8tz,$fnam)= /^(\S{10})(\s+\d+)(\s
       $tnam =~s/  -((?:\e\[[\d;]*m)*)(n)(o)(w)((?:\e\[[\d;]*m)*)([-.*\/]|$)/-$M$2$M$3$M$4$secz$eecz$ettc/x;} # match 'now' diff from just YMD
     while($tnam=~/^.*-(   \e\[([\d;]*)m)*([0-9A-Za-z._])([0-9A-Za-q])([0-9A-Za-z._])(\e\[([\d;]*)m)*([-.*\/]|$)/x                           && # d8-4m@ YMD
       $tryc++ < $trym){my(      $d8vY,$d8vM,$d8vD)=($3,$4,$5   ); # rmvd d8-obj crE8ion&&leng valid8n4quik d8-4m@ -YMD-
-      $tnam =~s/  -((?:\e\[ [\d;]* m)*)($d8vY)($d8vM)($d8vD)/-$Y$2$G$3$T$4$1/x;}                                                     $tryc=0;
+      $tnam =~s/  -((?:\e\[ [\d;]* m)*)($d8vY)($d8vM)($d8vD)/-$R$2$o$3$Y$4$1/x;}                                                     $tryc=0;
     while($tnam=~/^.*-(\e\[([\d;]*)m)*(($jfdz)?($jfmz)([0123]?\d)(st|nd|rd|th)?((19|20)\d\d))(\e\[([\d;]*)m)*([-.*\/]|$)/                   && # DowMonDthYear
       $tryc++ < $trym){my($dMDY,$dd8Y,$dd8M,$dd8D)=($3,$8,$5,$6);my($dd8w,$dd8s)=('','');$dd8w=$4 if(defined($4));$dd8s=$7 if(defined($7));
-      if($fnam=~/-$dMDY([-._*\/]|$)/){                        my $etim="$T$dd8w$G$dd8M$T$dd8D$B$dd8s$Y$dd8Y";$tnam=~s/$dMDY/$etim/;}} $tryc=0;
+      if($fnam=~/-$dMDY([-._*\/]|$)/){                        my $etim="$Y$dd8w$o$dd8M$Y$dd8D$M$dd8s$R$dd8Y";$tnam=~s/$dMDY/$etim/;}} $tryc=0;
     while($tnam=~/^.*-(\e\[([\d;]*)m)*(        ($jfmz|___(\e\[[\d;]*m)*      ) ((19|20)\d\d))(\e\[([\d;]*)m)*([-.*\/]|$)/x                  && #    -MonYear-
       $tryc++ < $trym){my($dM_Y,$dd8Y,$dd8M      )=($3,$6,$4   );my $d_MY=sS($dM_Y);$dM_Y=~s/\e\[([\d;]+)/\e\\[$1/g; # no Day V8z needed            -MMMYYYY-
-      if($fnam=~/-$d_MY([-._*\/]|$)/){                        my $etim=       "$G$dd8M" .          "$Y$dd8Y";$tnam=~s/$dM_Y/$etim/;}} $tryc=0; # or -___YYYY-
+      if($fnam=~/-$d_MY([-._*\/]|$)/){                        my $etim=       "$o$dd8M" .          "$R$dd8Y";$tnam=~s/$dM_Y/$etim/;}} $tryc=0; # or -___YYYY-
     while($tnam=~/^.*-(\e\[(?:[\d;]*)m)*(([01]?\d)(\e\[(?:[\d;]*)m)*-(\e\[(?:[\d;]*)m)*([0123]?\d)(\e\[(?:[\d;]*)m)*
                      -(\e\[(?:[\d;]*)m)*((19|20)\d\d))(\e\[(?:[\d;]*)m)*([-._*\/]|\d|$)/x                                                   && #  MM-DD-YYYY
       $tryc++ < $trym){my($dMDY,$dd8Y,$dd8M,$dd8D)=($2,$9,$3,$6);$dMDY=~s/(\[)/\\$1/g;
-      if($tnam=~ /   -(\e\[(  [\d;]*)m)*$dMDY         (\e\[(  [\d;]*)m)*([-._*\/]|\d|$)/x){my $etim="$G$dd8M$B-$T$dd8D$B-$Y$dd8Y";$tnam=~s/$dMDY/$etim/;}}
+      if($tnam=~ /   -(\e\[(  [\d;]*)m)*$dMDY         (\e\[(  [\d;]*)m)*([-._*\/]|\d|$)/x){my $etim="$o$dd8M$B-$Y$dd8D$B-$R$dd8Y";$tnam=~s/$dMDY/$etim/;}}
     my $fnmz= 'Pip   |Heather    |Danny  |Maga   |Bill   |John  |Tom  |Pat     |DanNGin|Marty |Mike    '; # capitalIzd proper First && Last names 2 hIlIt
     my $lnmz= 'Stuart|Gozdzialski|Wyckoff|Mathews|Carlson|Womble|Jadin|Steffens|Lennon |Arnold|Lopresti'; # mABBlOshudBcAsinsNsitiv&&match no prECdngSKp cOdez?
     if($tnam=~ /(\e\[[\d;]*m)+(([0-9A-Za-z._,]+|\e\[[\d;]*m)+)(Vs)(([0-9A-Za-z._,]+|\e\[[\d;]*m)+)/x){ # try2m@ch any Wht_Vs_blK wo Xplicit nmz

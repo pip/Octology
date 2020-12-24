@@ -1,7 +1,7 @@
 # HBQLISTV:know.ls crE8d by PipStuart <Pip@CPAN.Org> to duplic8 Dr. Jordan B. Peterson's Quora.Com answer of "40 most valuable things everyone should know";
-# $VERSION='0.0';$d8VS='K93M6dec'; # While this document origin8d around (&& still mainly intends to focus on) Dr. Peterson's knowledge, many others fE8ure;
+# $VERSION='0.0';$d8VS='KCOLFocu'; # While this document origin8d around (&& still mainly intends to focus on) Dr. Peterson's knowledge, many others fE8ure;
 # 2du:start chronicling Dr. Peterson's many topical videos with new section for post-title subject summaries or explor8ion;
-0) Tell the truth.                 
+0) Tell the truth.
 1) Do not do things that you h8.
 2) Act so that you can tell the truth about how you act.
 3) Pursue what is meaningful, not what is expedient.
@@ -1043,3 +1043,33 @@ KC7LHOME:HTTPS://YouTu.be/phpV_0Oi7lk "24 Planets Even Better for Life Than Eart
 KC7LHONE:HTTPS://YouTu.be/xLnsY5io964 "Could God Be Evil?" # KC4:HA0 of CosmicSkeptic explaining Cambridge's StephenLaw's gr8 Evil-God Challenge. Answer:Yes!;
 KC7LHOPE:HTTPS://YouTu.be/Bq9xR5PUs6s "Is Infinity Real?" # KC5:C10 of SabineHossenfelder attempting to convey math && physics Infinity concepts. Answer: No!;
 KC9LHitc:HTTPS://YouTu.be/FPcRT_4cI7c "ChristopherHitchens vs. JordanPeterson | Deb8ing about Religion, Morality, && Culture" # J7R:Ops gr8 HolyKoolaid anim8n;
+KCHLKeep:HTTPS://YouTu.be/LjQM8PzCEY0 "Steven Pinker: What Our Language Habits Reveal" # 7??:Hf0 of 2007 TEDTalk with gr8 breakdown of linguistic communic8ion;
+KCHLKind:HTTPS://YouTu.be/Q-B_ONJIEcE "Steven Pinker: Linguistics as a Window to Understanding the Brain | Big Think" # CA6:o00 of SP on more gr8 linguistics;
+KCHLKnow:HTTPS://YouTu.be/gGuZVuUBeiQ "OverComing Bad Inner Voices" # G54:6B0 with The_School_Of_Life explaining how almost everyone has voices in their minds;
+KCHLL0UD:HTTPS://YouTu.be/95otBlepVHc "The Science of the Voices in Your Head - with Charles Fernyhough" # G9E:10O0 of The_Royal_Institution discussing voices;
+KCHLL1VE:HTTPS://YouTu.be/riJ3QH6QCQc "Jordan Peterson - How to Listen to Your Conscience" # I6G:2q0 of FilipVanHoute with JP lectures on conscience as voice?;
+KCHLLACK:HTTPS://YouTu.be/Yii6JBGWHms "Jordan Peterson: Fixing Rel8ionships" # H??:870 of EssentialTruth with JP doing "No... No!" double-take around dur8:7be;
+KCHLLAMP:HTTPS://YouTu.be/Ek0tCv0YCVE "The Physical Path to Exploring the Hero Archetype with Wim Hof && Jordan Peterson" # KC6:D10 on WH focusing on kinds of
+#   special breathing techniques to get to genetic ancestors && Dr.JBP referring to the Hero Archetype as needing to rescue his sleeping Father from the Abyss;
+KCHLLAND:HTTPS://YouTu.be/mSQ_pZCP1w8 "[Live Stream] Dr. Jordan Peterson: The Devouring Mother" # H4M:2Xn0 of BaronMedia && TherynMeyer interviewing Dr.J.B.P.;
+KCHLLAPS:HTTPS://YouTu.be/wywUQc-4Opk "Carl Jung - What are the Archetypes?" # H2E:Bm0 of Academy_Of_Ideas with a bunch of material maybe my PP could critique;
+KCHLLARP:HTTPS://YouTu.be/o64q6HSP9Gw "The 10 Things You Should Always Keep To Yourself" # I3U:5r0 of BrainyDose with more for PP (maybe only agreeing on #7?);
+KCHLLAST:HTTPS://YouTu.be/vrgqkKbKgHk "Male Lust Wilts Under Feminist Attack" # JB5:Tj0 of BettinaArndt with possibly gr8 material for CC8 to try to work with;
+KCILI8JP:Twitter:JordanPetersonQuotes:"Exactly what you should be doing is trying to figure out who it is that you're trying to be. Right? And you aim @ that."
+ "And then you use everything you learn as a means of building that person that you want to be." # "Wrong! One of the things I should be doing is figuring out
+# who I'm trying to be. Right! I'm already aiming in some general direction and can try to use much of what I learn (that is sufficiently rel8d) as a means of
+# building myself into this person I want to be. Not 'exactly' && not 'everything', but maybe just some of what I should be doing && much of my learning?" -PS
+KCILI8MM:HTTPS://YouTu.be/bhlvYmn1IUQ "Miyamoto Musashi-SenSee | The Way of the Ronin (Dokkodo)" # KCH:DJ0 of Einzelganger breaking down pretty poor teachings;
+KCILI8SH:HTTPS://YouTu.be/UwjD4hfrDsg "Sam Harris Free-Will Thought-Experiment" # IB4:6Z0 of Critical_Thoughts maybe badly clipping SH garbage out-of-context?;
+KCMLNxtD:HTTPS://YouTu.be/zEKKIWCKhD8 '"The nobler the aim," Jordan Peterson "the better your life."' # I9U:960 of TheArchAngel911 && dur8:W0 4infwAz2luk@txt8;
+KCNL2Men:HTTPS://YouTu.be/zSErYhxNLX0 '"The Best Men I Know Are Dangerous" (building a strong character) - Jordan Peterson Motiv8ion' # K5P:A50 meek inherits?;
+KCNL4RNG:HTTPS://YouTu.be/JmuXwbirmZQ "Why 7 is the Least Random of All Numbers" # KCL:Jb0 of Thoughty2 not demonstr8ing the Title except by a weak study from
+# 8500 students asked "Pick now! 1 through 10?" && most chose 7. Bad test. He wrongly indic8d && anim8d PRNG should produce the same number of 7's as 10's but
+# 7's should only be as regular as other *single* digits too, not a pair. I posit that supposed "True" Randoms from 0) Atmospheric Noise, 1) Cosmic Background
+# RaD8ion, 2) PhotoElectric Effect, && 3) RadioActive Decay might not be "T" if we studied them more && better eventually. Maybe not though? He also presented
+# that pips on dice were "dots" && CryptographiclySecurePseudoRandomNumGen no "acronym"! End had pretty cool gamer prayer to RNGesus like Pip.BavL.Org/PP ;) :
+# "{Ik0} I thought it would be {Im0} fitting to end things with a quick {Io0} prayer to the man who made this video {Iq0} possible, P?RNGesus. Please bow your
+#  heads. {Iv0} RNGesus who art in procedurally {Ix0} gener8d heaven, {J00} hallowed be thy ability to screw me over. {J30} Thy random numbers come. Thy {I60}
+#  unpredictable will be done. {I70} In HearthStone,as it is in Destiny. {JB0} Give us this day, our daily loot-boxes, {JD0} && 4give us our rage quits, {JF0}
+#  as we 4give those who rage quit {JH0} against us, 4 thine is the maddening {JJ8} variability, {JL0} the arbitrary, && the nonsense,{JO0}4ever&&ever.Amen!";
+KCOLCode:HTTPS://YouTu.be/ttcflCFd5B8 "Every Type of Programmer" # KCI:4E0 of KeepOnCoding with quite funny take on stereotypes, many of which have fit me wL;

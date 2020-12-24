@@ -21,7 +21,7 @@ my $hirs   = eval("use Time::HiRes; 8") || 0;
 my $locl   = eval("use Time::Local; 8") || 0;
 my $zown   = eval("use Time::Zone ; 8") || 0;
 #ur @EXPORT= qw(); # eventually export d8() here as new wrapper
-our $VERSION='0.0';my $d8VS='K5JMIDAS';
+our $VERSION='0.0';my $d8VS='KCJL9hot';
 my @_tzofsetz=( # global storage for TimeZone Offsets matching /^[-+][01]\d(00|30|45)$/ shhmm (with non-integer offsets mapping in b64 between R(27)..g(42))
   '-1130',#NUT
   '-0930',
@@ -169,10 +169,10 @@ sub _sub{
   return($rslt);}
 sub d8cc{my $frmt=shift(@_)||0;my($ptst,$ptsb); # Generic d8 c8 Color Code strings (derived from old Curses::Simp) as class method
 #                       `d8 e`->Wed Jul 16 00:03:31:30 -0500 2003
-  if    ($frmt=~ /-*f/i){$ptst='TTT GGG TT UUWDDWSSWNN BBBBB YYYY';
+  if    ($frmt=~ /-*f/i){$ptst='YYY ooo YY CCWBBWMMWpp GGGGG RRRR';
     if  ($frmt=~ /-*k/i){$ptsb='           bbbbbbbbbbb wwwww     ';}
     else                {$ptsb='                                 ';}
-  }else                 {$ptst='YGTBUDSN';
+  }else                 {$ptst='RoYGCBMp';
     if  ($frmt=~ /-*k/i){$ptsb='   wbbbb';}# same as below but with white 'z' background && 'hmsp' backed in darkblue
     else                {$ptsb='        ';}
   } return($ptst,$ptsb);} # d8->YMDzhmsp
@@ -187,8 +187,9 @@ sub expand{ # returns a d8 object's expanded string form, although might need ev
     $mont=   $mnth[        $self->M-1];
     $mont=~ s/^(...).*/$1/;} # keep only 1st 3 chars
   if($xpop=~ /a/){my $W="\e\[1;37m"; # eXPand OPtion to enable Ansi color codes in returned string
-    return(sprintf("%s%3s %s%3s %s%2d %s%02d$W:%s%02d$W:%s%02d$W:%s%02d %s%-5s %s%4d", $dfcl{'T'},$dofw, $dfcl{'G'},$mont, $dfcl{'T'},$self->D,
-      $dfcl{'U'},$self->h, $dfcl{'D'},$self->m, $dfcl{'S'},$self->s, $dfcl{'N'},$self->p, $dfcl{'B'},$self->zone_offset, $dfcl{'Y'},$self->Y));
+    return(sprintf("%s%3s %s%3s %s%2d %s%02d$W:%s%02d$W:%s%02d$W:%s%02d %s%-5s %s%4d", $dfcl{$cclz->[2]},$dofw, $dfcl{$cclz->[1]},$mont,
+      $dfcl{$cclz->[2]},$self->D, $dfcl{$cclz->[4]},$self->h, $dfcl{$cclz->[5]},$self->m, $dfcl{$cclz->[6]},$self->s, $dfcl{$cclz->[7]},$self->p,
+      $dfcl{$cclz->[3]},$self->zone_offset, $dfcl{$cclz->[0]},$self->Y));
   }else{ # maybe eventually support additional coloring schemes for expanded d8 d8a here
     return(sprintf("%3s %3s %2d %02d:%02d:%02d:%02d %-5s %4d", $dofw, $mont, $self->Dhmsp, $self->zone_offset, $self->Y));}}
 sub lsft{ # returns a d8 object's ls --full-time string form
@@ -197,10 +198,11 @@ sub lsft{ # returns a d8 object's ls --full-time string form
   my $aclz=  $self->_field_colors('a');my %dfcl=();for(0..@{$cclz}-1){$dfcl{$cclz->[$_]}=$aclz->[$_];} # load c8=>ansi from fields colors d8a
   my $frcp=  $self->p / $self->{'_pps'};$frcp =~s/^0\.//;$frcp.='0' while(length($frcp) < 9);$frcp=substr($frcp,0,9) if(length($frcp) > 9);
   if($xpop=~ /a/){my $W="\e\[1;37m"; # eXPand OPtion to enable Ansi color codes in returned string
-    return(sprintf("%s%4d$W-%s%02d$W-%s%02d %s%02d$W:%s%02d$W:%s%02d$W.%s%9d %s%-5s", $dfcl{'Y'},$self->Y, $dfcl{'G'},$self->M, $dfcl{'T'},$self->D,
-      $dfcl{'U'},$self->h, $dfcl{'D'},$self->m, $dfcl{'S'},$self->s, $dfcl{'N'},$frcp,$dfcl{'B'},$self->zone_offset));
+    return(sprintf("%s%4d$W-%s%02d$W-%s%02d %s%02d$W:%s%02d$W:%s%02d$W.%s%-9d %s%-5s",    $dfcl{$cclz->[0]},$self->Y, $dfcl{$cclz->[1]},$self->M,
+      $dfcl{$cclz->[2]},$self->D, $dfcl{$cclz->[4]},$self->h, $dfcl{$cclz->[5]},$self->m, $dfcl{$cclz->[6]},$self->s, $dfcl{$cclz->[7]},$frcp,
+      $dfcl{$cclz->[3]},$self->zone_offset));
   }else{ #          '2013-08-15 12:55:23.833703078 -0500'
-    return(sprintf("%4d-%02d-%02d %02d:%02d:%02d.%9d %-5s", $self->YMDhms, $frcp, $self->zone_offset));}}
+    return(sprintf("%4d-%02d-%02d %02d:%02d:%02d.%-9d %-5s", $self->YMDhms, $frcp, $self->zone_offset));}}
 sub cpan{ # returns a d8 object's cpan && pause string form
   my $self=shift(@_);my $xpop=shift(@_)||'';my @mnth;my $dofw='   ';my $mont='   ';my $zabr='GMT';
   my $cclz=  $self->_field_colors('c'); # load refs to anon color arrays
@@ -213,8 +215,8 @@ sub cpan{ # returns a d8 object's cpan && pause string form
   if($zown){$zabr=tz_name();if(defined($zabr) && length($zabr)){$zabr=uc($zabr);}else{$zabr='GMT';}} # if Time::Zone loaded, try to find local abbreV8d name
   else     {for(sort(keys(%_knwntzab))){if($_knwntzab{$_} == $self->{'z'}){$zabr=$_;last;}}} # just match the first alphabetical abbreV8d name in same zone
   if($xpop=~ /a/){my $W="\e\[1;37m"; # eXPand OPtion to enable Ansi color codes in returned string
-    return(sprintf("%s%3s$W, %s%02d %s%3s %s%4d %s%02d$W:%s%02d$W:%s%02d %s%s", $dfcl{'T'},$dofw, $dfcl{'T'},$self->D, $dfcl{'G'},$mont, $dfcl{'Y'},$self->Y,
-      $dfcl{'U'},$self->h, $dfcl{'D'},$self->m, $dfcl{'S'},$self->s, $dfcl{'B'},$zabr));
+    return(sprintf("%s%3s$W, %s%02d %s%3s %s%4d %s%02d$W:%s%02d$W:%s%02d %s%s", $dfcl{$cclz->[2]},$dofw, $dfcl{$cclz->[2]},$self->D, $dfcl{$cclz->[1]},$mont,
+      $dfcl{$cclz->[0]},$self->Y,                $dfcl{$cclz->[4]},$self->h, $dfcl{$cclz->[5]},$self->m, $dfcl{$cclz->[6]},$self->s, $dfcl{$cclz->[3]},$zabr));
   }else{ #          'Wed, 14 Aug 2013 15:08:07 GMT'
     return(sprintf("%3s, %02d %3s %4d %02d:%02d:%02d %s", $dofw, $self->D, $mont, $self->Yhms, $zabr));}}
 sub iso{ # returns a d8 object's ISO 8601 complete string form
@@ -224,8 +226,9 @@ sub iso{ # returns a d8 object's ISO 8601 complete string form
   my $frcp=  $self->p / $self->{'_pps'};$frcp =~s/^0\.//;$frcp.='0' while(length($frcp) < 2);$frcp=substr($frcp,0,2) if(length($frcp) > 2);
   my $zowc=  $self->zone_offset();  $zowc =~s/^([-+]\d\d)(\d\d)$/$1:$2/;
   if($xpop=~ /a/){my $W="\e\[1;37m";my($zosn,$zohh,$zomm)=$zowc =~/^([-+])(\d\d):(\d\d)$/; # eXPand OPtion with Ansi color codes embedded
-    return(sprintf("%s%4d$W-%s%02d$W-%s%02d${W}T%s%02d$W:%s%02d$W:%s%02d$W.%s%02d$W%s%s%02d$W:%s%02d", $dfcl{'Y'},$self->Y, $dfcl{'G'},$self->M,
-      $dfcl{'T'},$self->D, $dfcl{'U'},$self->h, $dfcl{'D'},$self->m, $dfcl{'S'},$self->s, $dfcl{'N'},$frcp, $zosn, $dfcl{'B'},$zohh, $dfcl{'B'},$zomm));
+    return(sprintf("%s%4d$W-%s%02d$W-%s%02d${W}T%s%02d$W:%s%02d$W:%s%02d$W.%s%02d$W%s%s%02d$W:%s%02d", $dfcl{$cclz->[0]},$self->Y, $dfcl{$cclz->[1]},$self->M,
+      $dfcl{$cclz->[2]},$self->D, $dfcl{$cclz->[4]},$self->h, $dfcl{$cclz->[5]},$self->m, $dfcl{$cclz->[6]},$self->s, $dfcl{$cclz->[7]},$frcp, $zosn,
+      $dfcl{$cclz->[3]},$zohh   , $dfcl{$cclz->[3]},$zomm));
   }else{ #            '1997-07-16T19:20:30.45+01:00'      # YYYY-MM-DDThh:mm:ss.sTZD
     return(sprintf("%4d-%02d-%02dT%02d:%02d:%02d.%02d%-6s", $self->YMDhms, $frcp, $zowc));}}
 sub bak{#H5JM2bMF:`bak`l8st major upd8; 267KBPZA:auto-backup a file into './.bak/' with a -`d8` appended before the extension, or at the end if none

@@ -2,7 +2,7 @@
 package    Octology::d8::fldz;
 use strict;use warnings;use utf8;use v5.10;
 use vars qw( $AUTOLOAD );
-my $VERSION='0.0';my $d8VS='K5KM2KYK';
+my $VERSION='0.0';my $d8VS='KCBL2RoY';
 use overload
   q("") => sub{ # anonymous verbose fldz stringify()
              my @fdat=$_[0]->YMDzhmsp();
@@ -14,81 +14,81 @@ use overload
              } return($tstr);};
 use Octology::a8;
 use Octology::b8;
-use Carp;
-my $locl=eval("use Time::Local           ; 1") || 0;
+use Carp;my @d8bo=split(//,$cmap{'d8bo'}); # setup what was a8.pm ColorMAP originally for pal8, then 8bow, then d8bo here (were RoYGCBMp B4 YGTBUDSN);
+my $locl=eval("use Time::Local           ; 1") || 0; # 2nd d8bo was:  Yellow, Green, Turquoise, Blue,   bisqUe, oliveDrab, Skyblue, Navy;
 my $hirs=eval("use Time::HiRes qw(usleep); 1") || 0; # hopefully usleep or nanosleep can be loaded like this
 my   @_attrnamz=split(//,'YMDzhmsp');my %_attrdflt=();$_attrdflt{$_    }=  0 for(@_attrnamz); # ordered attribute names array && default value (0) hash
 push(@_attrnamz,'_pps'             );   $_attrdflt{'_pps'              }= 60; # r8io of phasses-per-second
 push(@_attrnamz,'_time_separator'  );   $_attrdflt{'_time_separator'   }=':'; # might utilize these fields for more configurable printing l8r
 push(@_attrnamz,'_date_separator'  );   $_attrdflt{'_date_separator'   }='-'; # might utilize these fields for more configurable printing l8r
 my %_fielclrz=( # global field color codes in a hash of arrays
-  'c' => [         'Y',         # Yellow     Year    c8 col8 colr codz
-                   'G',         # Green      Month   # K5IMMUOl:s/RoMp/Newz/;
-                   'T',         # Turquoise  Day
-                   'B',         # Blue        zone
-                   'U',         # bisqUe      hour
-                   'D',         # oliveDrab   minute
-                   'S',         # Skyblue     second
-                   'N'],        # Navy        phass
-  '4' => [        '0c',         # Yellow     Year    4NT # stil nEd2 YGTBUDSN 4hw
-                  '06',         # Green      Month
-                  '0e',         # Turquoise  Day
-                  '0a',         # Blue        zone
-                  '0b',         # bisqUe      hour
-                  '09',         # oliveDrab   minute
-                  '0d',         # Skyblue     second
-                  '05'],        # Navy        phass
-  'h' => [      '_6A_',         # Yellow     Year    web (Html) dRk h (2du: fil in l8r wi a8:drkh() mAB as RGBl form nstd of HEX
-                '_UA_',         # Green      Month
-                '__6_',         # Turquoise  Day
-                '6_E_',         # Blue        zone
-                '6___',         # bisqUe      hour
-                '6U__',         # oliveDrab   minute
-                'k6__',         # Skyblue     second
-                'U2l_'],        # Navy        phass
-  'w' => [    'FF1B2B',  #'_6A_'# Yellow     Year    web (HTML)
-              'FF7B2B',  #'_UA_'# Green      Month
-              'FFFF1B',  #'__6_'# Turquoise  Day
-              '1BFF3B',  #'6_E_'# Blue        zone
-              '1BFFFF',  #'6___'# bisqUe      hour
-              '1B7BFF',  #'6U__'# oliveDrab   minute
-              'BB1BFF',  #'k6__'# Skyblue     second
-              '7B0BBF'], #'U2l_'# Navy        phass
-  'a' => [     S('Y'),        # Yellow     Year    ANSI (calling a8:S to gener8 SKp codez)
-               S('G'),        # Green      Month
-               S('T'),        # Turquoise  Day
-               S('B'),        # Blue        zone
-               S('U'),        # bisqUe      hour
-               S('D'),        # oliveDrab   minute
-               S('S'),        # Skyblue     second
-               S('N')],       # Navy        phass
-  'z' => ["%{".S('Y')."%}",   # Yellow     Year    zsh (wrapping ANSI)
-          "%{".S('G')."%}",   # Green      Month
-          "%{".S('T')."%}",   # Turquoise  Day
-          "%{".S('B')."%}",   # Blue        zone
-          "%{".S('U')."%}",   # bisqUe      hour
-          "%{".S('D')."%}",   # oliveDrab   minute
-          "%{".S('S')."%}",   # Skyblue     second
-          "%{".S('N')."%}"],);# Navy        phass  # below try2only use new exclusively dflt Bold colrs from 256 palette where they are supported
+  'c' => [       $d8bo[0] ,          # Year    c8 col8 colr codz
+                 $d8bo[1] ,          # Month   # K5IMMUOl:s/RoMp/Newz/;
+                 $d8bo[2] ,          # Day
+                 $d8bo[3] ,          #  zone
+                 $d8bo[4] ,          #  hour
+                 $d8bo[5] ,          #  minute
+                 $d8bo[6] ,          #  second
+                 $d8bo[7] ],         #  phass
+  '4' => [            '0c',          # Year    4NT # stil nEd2 YGTBUDSN 4hw
+                      '06',          # Month
+                      '0e',          # Day
+                      '0a',          #  zone
+                      '0b',          #  hour
+                      '09',          #  minute
+                      '0d',          #  second
+                      '05'],         #  phass
+  'h' => [          '_6A_',          # Year    web (Html) dRk h (2du: fil in l8r wi a8:drkh() mAB as RGBl form nstd of HEX
+                    '_UA_',          # Month
+                    '__6_',          # Day
+                    '6_E_',          #  zone
+                    '6___',          #  hour
+                    '6U__',          #  minute
+                    'k6__',          #  second
+                    'U2l_'],         #  phass
+  'w' => [        'FF1B2B',  #'_6A_' # Year    web (HTML)
+                  'FF7B2B',  #'_UA_' # Month
+                  'FFFF1B',  #'__6_' # Day
+                  '1BFF3B',  #'6_E_' #  zone
+                  '1BFFFF',  #'6___' #  hour
+                  '1B7BFF',  #'6U__' #  minute
+                  'BB1BFF',  #'k6__' #  second
+                  '7B0BBF'], #'U2l_' #  phass
+  'a' => [     S($d8bo[0]),          # Year    ANSI (calling a8:S to gener8 SKp codez)
+               S($d8bo[1]),          # Month
+               S($d8bo[2]),          # Day
+               S($d8bo[3]),          #  zone
+               S($d8bo[4]),          #  hour
+               S($d8bo[5]),          #  minute
+               S($d8bo[6]),          #  second
+               S($d8bo[7])],         #  phass
+  'z' => ["%{".S($d8bo[0])."%}",     # Year    zsh (wrapping ANSI)
+          "%{".S($d8bo[1])."%}",     # Month
+          "%{".S($d8bo[2])."%}",     # Day
+          "%{".S($d8bo[3])."%}",     #  zone
+          "%{".S($d8bo[4])."%}",     #  hour
+          "%{".S($d8bo[5])."%}",     #  minute
+          "%{".S($d8bo[6])."%}",     #  second
+          "%{".S($d8bo[7])."%}"],);  #  phass  # below try2only use new exclusively dflt Bold colrs from 256 palette where they are supported
 if(exists($ENV{'DISPLAY'}) || (exists($ENV{'TERM'}) && $ENV{'TERM'}=~ /^(sakura|u?rxvt|st|u?xterm)/ && $ENV{'TERM'} ne 'linux')){$_fielclrz{'a'} = [
   # maybe there are yet better ways to detect when most likely wanting colors from the full-screen text console(in.zshrc?) or betr thngz mising?
-               S('Y'),        # Yellow     Year    ANSI (calling a8:S to gener8 SKp codez)
-               S('G'),        # Green      Month
-               S('T'),        # Turquoise  Day
-               S('B'),        # Blue        zone
-               S('U'),        # bisqUe      hour
-               S('D'),        # oliveDrab   minute
-               S('S'),        # Skyblue     second
-               S('N')];       # Navy        phass
+               S($d8bo[0]),          # Year    ANSI (calling a8:S to gener8 SKp codez)
+               S($d8bo[1]),          # Month
+               S($d8bo[2]),          # Day
+               S($d8bo[3]),          #  zone
+               S($d8bo[4]),          #  hour
+               S($d8bo[5]),          #  minute
+               S($d8bo[6]),          #  second
+               S($d8bo[7])];         #  phass
   $_fielclrz{'z'} = [
-          "%{".S('Y')."%}",   # Yellow     Year    zsh (wrapping ANSI)
-          "%{".S('G')."%}",   # Green      Month
-          "%{".S('T')."%}",   # Turquoise  Day
-          "%{".S('B')."%}",   # Blue        zone
-          "%{".S('U')."%}",   # bisqUe      hour
-          "%{".S('D')."%}",   # oliveDrab   minute
-          "%{".S('S')."%}",   # Skyblue     second
-          "%{".S('N')."%}"]; }# Navy        phass
+          "%{".S($d8bo[0])."%}",     # Year    zsh (wrapping ANSI)
+          "%{".S($d8bo[1])."%}",     # Month
+          "%{".S($d8bo[2])."%}",     # Day
+          "%{".S($d8bo[3])."%}",     #  zone
+          "%{".S($d8bo[4])."%}",     #  hour
+          "%{".S($d8bo[5])."%}",     #  minute
+          "%{".S($d8bo[6])."%}",     #  second
+          "%{".S($d8bo[7])."%}"]; }  #  phass
 sub _default_value{my($self,$attr)=@_;$_attrdflt{$attr}} # methods
 sub _attribute_names{@_attrnamz}
 sub _Time_Local{$locl} # can Time::Local be used?

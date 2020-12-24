@@ -30,7 +30,7 @@ unsetopt                \
 # auto_pushd            \# setng addz dirz 2 stack wN just normally chngng 2 thM (wich I du not normally lIk or want)
 # ksh_arrays            \# rEmMbr wNwrItng scrptz[or funcz]2include'setopt [localoptions] ksharrays'sO arAzR 0-bAsed(but!glOblBcuzmOst scrptzRstndrdly 1-bAsed)
 # re_____match_____pcre \# mA want2set for Z-SHell scripting RegularExpressions to utilize PerlCompatibility styles && mA insert 'zmodload zsh/(pc)?re(gex)?';
-export Vers='0.0';export d8VS='KC8LDark';export Auth='PipStuart <Pip@CPAN.Org>'; # not Xportng $b sinc cOlIdz wi sort{$a <=> $b} /defhijlnqstuvx/i + AZ 4golf;
+export Vers='0.0';export d8VS='KCMLEARN';export Auth='PipStuart <Pip@CPAN.Org>'; # not Xportng $b sinc cOlIdz wi sort{$a <=> $b} /defhijlnqstuvx/i + AZ 4golf;
 if     [[       "$SHELL"    == "" ]]; then       export SHELL=`  which zsh`;fi # 8sh should parse this && OverId it    # shud `man zshall` /OSTYP 2lern4BlO
 if     [[       "$HOSTNAME" == "" ]]; then       export HOSTNAME=`hostname`;fi #`hostname`retnz fsckd nwlInz\n4CygWinzRxvt... ||smthng els lame  =(
 if     [[       "$HOST"     == "" ]]; then       export HOST   ="$HOSTNAME";fi;export VERBOSE='1'; # set flag to print debug && status info from system utilz
@@ -590,8 +590,13 @@ alias       M='   m   ';
 alias      mm=' mikmod'; # prolly scream 3 times if you can read hahahaha !!! :)
 alias       P='   pal8'; #  P    :           pal8 terminal color setting utility from my Octology::f8 module ("f8ful 0per8ion" for handling f0nt && pal8 d8a)
 alias       p='   CCC '; #  p    :            CCC (p used to be just 'ps' "Process Snapshot" but remapped to super Clear from above for easy one-hand entry)
-alias      pp='pu;p;po'; #  pp   :       prepriv8 (same as single p for CCC cd,clear,cut scrollback but wrapped with pushd && popd aliases to undo the cd ~)
-alias       pl='  perl'; #  pl   :           perl
+alias      PP='   ppp '; #  PP
+alias      pl='   perl'; #  pl   :           perl
+alias      pL='pP L';    #  pL   :       pP     L (aidyLaicyLiteral LuciousLadyLumps LovelyLivelyLoudy LastLiasLpro)
+alias      pk='pP k';    #  pk   :       pP     k # pA() BlO is: profileAll 2 thrO out P PipStu d falt, PP, CC8, JJ8, GG, II, RR, LL, (BB, WW, KK,)? && VV;
+alias      pp='pP p';alias pc='pP c';alias pj='pP j';alias pg='pP g';alias pi='pP i';alias pR='pP R';alias pB='pP B';alias pW='pP W';alias pv='pP v';
+           pA() { for HPrF in d p c j g i R L B W k v; do echo -n "$HPrF ";pP "$HPrF";echo -e -n "$z;"; done; } # why did en && een aliases have probz?
+alias     ppp='pu;p;po'; #  ppp  :       prepriv8 (same as single p for CCC cd,clear,cut scrollback but wrapped with pushd && popd aliases to undo the cd ~)
 alias       T='   tee '; #  tee  :            tee (maybe can wrap into c8 with cut,cat,colored columns?); rEmMbr standRd `tr -d ...` is transl8 DlEt like subS
 alias       t='   tmux'; #  tmux :           tmux|screen ... any other altern8ive multiplexers forked out there? (orig:  `tsgr b` shO xtrm256colr pal8 Blox)
 alias       x='   exit'; #  x    :           exit
@@ -1363,7 +1368,34 @@ else # following settings will hopefully work well for single-screen Ryu, Ken, &
         gtss;wmc -r :ACTIVE: -T muz                 ;
              gt --geometry=+0-0       --show-menubar --window-with-profile=PipsCkm8GnomTerm-NiceFont-DC9LDaPt --role=mvz    --working-directory=~/mvz/U2b   &;
         gtss;wmc -r :ACTIVE: -T mvz                ';
-  alias gti='gtI;gtss;chv1;gtss;gtm;gtss;chv2;gtss;gt3;gtss;chv3;gtss;gt3;gtss;chv0'; fi
+  alias gti='gtI;gtss;chv1;gtss;gtm;gtss;chv2;gtss;gt3;gtss;chv3;gtss;gt3;gtss;chv0'; fi; export Hm='muz';export HM='mvz'; # can I even use these 4 anythingd?;
+export HpPp=`cat ~/.log/p`;export HGTD='GnomTerm-NiceFont-KC'; # stil nEd 2 fix sx 2 know what 2 crE8 in scrn if!s -x || !in sls;
+gtM() { # mAB ck $# != 0 && $1 optn 2?
+  if     [[ "${(L)HpPp}" ==     d   ]]; then
+             gt --geometry=-$HWd0+0   --show-menubar --window-with-profile=PipsOthrGnomTerm-TestFont-CCIHPS8  --role=muz    --working-directory=~/muz/U2b    \
+                -- screen -x muz  & ;gtss;wmc -r :ACTIVE: -T muz  ;
+             gt --geometry=+0+0       --show-menubar --window-with-profile=PipsCkm8GnomTerm-NiceFont-DC9LDaPt --role=mvz    --working-directory=~/mvz/U2b    \
+                -- screen -x mvz  & ;gtss;wmc -r :ACTIVE: -T mvz  ;
+  elif   [[ "${(L)HpPp}" ==     p   ]]; then
+             gt --geometry=-$HWd0+0   --show-menubar --window-with-profile="PipsPink${HGTD}KL82tx"            --role=muz    --working-directory=~/muz/U2b    \
+                -- screen -x muz  & ;gtss;wmc -r :ACTIVE: -T muz  ;
+             gt --geometry=+0+0       --show-menubar --window-with-profile="PipsPdnt${HGTD}JLJJJJ"            --role=mvz    --working-directory=~/mvz/U2b    \
+                -- screen -x mvz  & ;gtss;wmc -r :ACTIVE: -T mvz  ;
+  elif   [[ "${(L)HpPp}" ==     c   ]]; then
+             gt --geometry=-$HWd0+0   --show-menubar --window-with-profile="PipsPink${HGTD}KL82tx"            --role=muz    --working-directory=~/muz/U2b    \
+                -- screen -x muz  & ;gtss;wmc -r :ACTIVE: -T muz  ;
+             gt --geometry=+0+0       --show-menubar --window-with-profile="PipsPdnt${HGTD}JLJJJJ"            --role=mvz    --working-directory=~/mvz/U2b    \
+                -- screen -x mvz  & ;gtss;wmc -r :ACTIVE: -T mvz  ;
+  elif   [[ "${(L)HpPp}" ==     j   ]]; then
+             gt --geometry=-$HWd0+0   --show-menubar --window-with-profile="PipsPink${HGTD}KL82tx"            --role=muz    --working-directory=~/muz/U2b    \
+                -- screen -x muz  & ;gtss;wmc -r :ACTIVE: -T muz  ;
+             gt --geometry=+0+0       --show-menubar --window-with-profile="PipsPdnt${HGTD}JLJJJJ"            --role=mvz    --working-directory=~/mvz/U2b    \
+                -- screen -x mvz  & ;gtss;wmc -r :ACTIVE: -T mvz  ;
+  elif   [[ "${(L)HpPp}" ==     g   ]]; then
+             gt --geometry=-$HWd0+0   --show-menubar --window-with-profile="PipsPink${HGTD}KL82tx"            --role=muz    --working-directory=~/muz/U2b    \
+                -- screen -x muz  & ;gtss;wmc -r :ACTIVE: -T muz  ;
+             gt --geometry=+0+0       --show-menubar --window-with-profile="PipsPdnt${HGTD}JLJJJJ"            --role=mvz    --working-directory=~/mvz/U2b    \
+                -- screen -x mvz  & ;gtss;wmc -r :ACTIVE: -T mvz  ; fi; }
 alias cti='ct init'; # ChangeTitle 2 Init as quick simple similar command B4 gti or ti to call right after booting up && starting my first default GnomTerm;
 alias  ti='cti;gti'; # maybe l8r mk a custom TermInit alias here wich spawnz more than just GTz but mAB some alpha'd Sakuraz|LilyTermz|QTerminalz etc. too;
 #lias gti='gtI;sleep 3;wmctrl -o 1280,0;sleep 3;gt3;sleep 3;wmctrl -o 2560,0;sleep 3;gt3;sleep 3;wmctrl -o 3840,0;sleep 3;gt3;sleep 3;wmctrl -o 0,0';

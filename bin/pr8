@@ -1,0 +1,15 @@
+#!/usr/bin/perl
+# K6EM8888:pr8 crE8d by PipStuart <Pip@CPAN.Org> to handle basic human evalU8ions as the new preferred form of prayer && to eventually be like Twitter too;
+# best to pass in 8 names (NoSpaces) && 9th param of valU8ion (r8) scores;
+use strict;use warnings;use utf8;use v5.10;use Encode;use Octology::d8;my $d8VS='K6EM8888';
+if(@ARGV){if($ARGV[0]=~ /^--?h/i){ # only detect single possible -help option so far
+    open my $out8,'>&',STDOUT or die "Can't open  duplic8 STDOUT handle: $!";binmode $out8,':encoding(UTF-8)'; # crE8 local duplic8 of global
+    print   $out8 " pr8 to pray for a simply better world; d8VS:$d8VS\n -h display this Help text and exit\n    pass in at least names for 0 (bad), 1 (good);";
+    close   $out8             or die "Can't close duplic8 STDOUT handle: $!";exit();}
+  else  {my $d8nw=Octology::d8->new();my $home='.';$home=$ENV{'HOME'} if(exists($ENV{'HOME'}));my $logd="$home/.log";unless(-d $logd){mkdir($logd, 0750);}
+         my $logf=    "$logd/pr8.log";
+    open my $logh,'>>',$logf  or die "Can't open  pr8.log  file  handle: $!";binmode $logh,':encoding(UTF-8)';
+    say     $logh "$d8nw:@ARGV;"; # l8r change to .Hrc-style format for auto-abbreV8d names with middle-map scores
+    close   $logh             or die "Can't close pr8.log  file  handle: $!";
+  }}else{ # no params so just print out summary of aggreg8d l8st d8a results in best default way for now
+}
