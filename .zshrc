@@ -376,10 +376,14 @@ alias calg="(zc \$(ls -tr /var/log/apt/history.log*.gz);cat /var/log/apt/history
              eg -B1 '^Commandline:'";alias amsm='apt-mark showmanual';alias almi='apt list --manual-installed'; # CatAptLogz in2Grepz shOz instl d8z reversed;
 alias dgsc="dpkg -l|g ^ii|sed 's_  _\t_g'|cut -f 2 > ~/.tmp/InstalledPkgz-\`d8\`.ls";alias agip='agiy $(< ~/.tmp/InstalledPkgz-*.ls)'; # mIt nEd SKpd bkslsh?;
 # HTTPS://AskUbuntu.Com/questions/17823/how-to-list-all-installed-packages forum thread has 23 extensive answers with varying ways to go about logging instlz;
-alias gse='gsettings';alias gsg='gse get';alias gsls='gse list-schemas    ';alias gslk='gse list-keys    ';alias gslrs='gse list-relocatable-schemas   ';
-alias gseh='gse help';alias gss='gse set';alias gslr='gse list-recursively';alias gslc='gse list-children';alias gsr='  gse reset';alias gsR='gse range';
-alias gsm=' gse monitor                 ';alias gsw=' gse writable        ';alias gsd=' gse describe     ';alias gsrr=' gse reset-recursively          ';
-alias gsgL='                gsg  com.canonical.Unity.Launcher  favorites  '; # from HTTPS://Help.Ubuntu.Com/community/UnityLaunchersAndDesktopFiles outputs on:
+alias dC='dconf    ';alias dcl='dC list';alias dcw='dC write';alias dcd='dC dump';alias dcc='dC compile';alias dcR='dC reset';alias dcr='dC read  ';
+alias dH='dC  help ';alias dcL='dC load';alias dcW='dC watch';alias dcdgt='dcd /org/gnome/terminal/legacy/profiles:/        ';alias dcu='dC update';
+alias GS='gsettings';alias gsg='GS  get';alias gsls='GS list-schemas    ';alias gslk='GS list-keys';alias gslrs='GS list-relocatable-schemas';alias gse='GS';
+alias GH='GS  help ';alias gss='GS  set';alias gslr='GS list-recursively';alias gslc='GS list-children ';alias gsR='GS reset';alias gsr='GS range ';
+alias gsm='GS monitor';alias gset='gse ';alias gsw=' GS writable        ';alias gsd=' GS describe     ';alias gsRR='GS reset-recursively';alias gsrr='gsRR';
+alias dch='dH';alias gsgtl='gsg org.gnome.Terminal.ProfilesList list    '; # HTTPS://Wiki.Gnome.Org/Apps/Terminal/FAQ#How_can_I_change_a_profile_setting_...
+alias gsh='GH';alias gsgtd='gsg org.gnome.Terminal.ProfilesList default '; #   ...from_the_command_line.3F had info about using gsettings like these 4 profz;
+alias gsgL='                gsg com.canonical.Unity.Launcher  favorites '; # from HTTPS://Help.Ubuntu.Com/community/UnityLaunchersAndDesktopFiles outputs on:
 # K2LLCLau: ['unity://running-apps', 'application://org.gnome.Terminal.desktop', 'application://sakura.desktop', 'application://brave-browser.desktop',
 #   'application://firefox.desktop', 'application://krita.desktop', 'application://gimp.desktop', 'application://inkscape.desktop',
 #   'application://fontforge.desktop', 'application://audacity.desktop', 'application://update-manager.desktop', 'application://ccsm.desktop',
@@ -592,10 +596,19 @@ alias       P='   pal8'; #  P    :           pal8 terminal color setting utility
 alias       p='   CCC '; #  p    :            CCC (p used to be just 'ps' "Process Snapshot" but remapped to super Clear from above for easy one-hand entry)
 alias      PP='   ppp '; #  PP
 alias      pl='   perl'; #  pl   :           perl
-alias      pL='pP L';    #  pL   :       pP     L (aidyLaicyLiteral LuciousLadyLumps LovelyLivelyLoudy LastLiasLpro)
-alias      pk='pP k';    #  pk   :       pP     k # pA() BlO is: profileAll 2 thrO out P PipStu d falt, PP, CC8, JJ8, GG, II, RR, LL, (BB, WW, KK,)? && VV;
+alias      pL='pP L';    #  pL   :           pP L (aidyLaicyLiteral LuciousLadyLumps LovelyLivelyLoudy LastLiasLpro)
+alias      pk='pP k';alias p_='pP _'; #  pk_:pP k # pA() BlO is: profileAll 2 thrO out P PipStu d falt, PP, CC8, JJ8, GG, II, RR, LL, (BB, WW, KK,)? && VV;
 alias      pp='pP p';alias pc='pP c';alias pj='pP j';alias pg='pP g';alias pi='pP i';alias pR='pP R';alias pB='pP B';alias pW='pP W';alias pv='pP v';
-           pA() { for HPrF in d p c j g i R L B W k v; do echo -n "$HPrF ";pP "$HPrF";echo -e -n "$z;"; done; } # why did en && een aliases have probz?
+alias      p0='pP 0';alias p1='pP 1';alias p2='pP 2';alias p3='pP 3';alias p4='pP 4';alias p5='pP 5';alias p6='pP 6';alias p7='pP 7';alias p8='pP 8';
+alias      p9='pP 9';alias PA='pP A';alias PB='pP b';alias pC='pP C';alias pD='pP D';alias pE='pP E';alias pF='pP F';alias pG='pP G';alias pH='pP H';
+alias      pI='pP I';alias pJ='pP J';alias pK='pP K';alias PL='pP l';alias pM='pP M';alias pN='pP N';alias pO='pP O';alias Pp='pP P';alias pQ='pP Q';
+alias      PR='pP r';alias pS='pP S';alias PT='pP T';alias pU='pP U';alias pV='pP V';alias PW='pP w';alias pX='pP X';alias pY='pP Y';alias pZ='pP Z';
+alias      Pa='pP a';alias Pb='pP b';alias PC='pP C';alias PD='pP d';alias PE='pP e';alias PF='pP f';alias PG='pP g';alias ph='pP h';alias PI='pP i';
+alias      PJ='pP j';alias PK='pP k';alias Pl='pP l';alias Pm='pP m';alias Pn='pP n';alias Po='pP o';alias P6='pP p';alias pq='pP q';alias Pr='pP r';
+alias      Ps='pP s';alias P2='pP t';alias Pu='pP u';alias Pv='pP v';alias Pw='pP w';alias Px='pP x';alias Py='pP y';alias Pz='pP z';alias p.='pP .';
+pA() { for HPrF in d p c j g i R L B W k v o; do echo -en "$W$HPrF ";pP "$HPrF";d8 -a;echo -en "$z;";done;echo; # why did en && een aliasez hav probz?
+  for      HPrF in 0 1 2 3 4 5 6 7 8 9 A B C D E F  G H I J K L M N O P Q R S T U V  W X Y Z a b c d e f g h i j k l  m n o p q r s t u v w x y z '.' '_'; do
+                                                 echo -en "$W$HPrF ";pP "$HPrF";d8 -a;echo -en "$z;";if [[ $HPrF =~ ^([CPcp]) ]]; then echo;fi;w8  8;done;pP;}
 alias     ppp='pu;p;po'; #  ppp  :       prepriv8 (same as single p for CCC cd,clear,cut scrollback but wrapped with pushd && popd aliases to undo the cd ~)
 alias       T='   tee '; #  tee  :            tee (maybe can wrap into c8 with cut,cat,colored columns?); rEmMbr standRd `tr -d ...` is transl8 DlEt like subS
 alias       t='   tmux'; #  tmux :           tmux|screen ... any other altern8ive multiplexers forked out there? (orig:  `tsgr b` shO xtrm256colr pal8 Blox)
@@ -1369,33 +1382,6 @@ else # following settings will hopefully work well for single-screen Ryu, Ken, &
              gt --geometry=+0-0       --show-menubar --window-with-profile=PipsCkm8GnomTerm-NiceFont-DC9LDaPt --role=mvz    --working-directory=~/mvz/U2b   &;
         gtss;wmc -r :ACTIVE: -T mvz                ';
   alias gti='gtI;gtss;chv1;gtss;gtm;gtss;chv2;gtss;gt3;gtss;chv3;gtss;gt3;gtss;chv0'; fi; export Hm='muz';export HM='mvz'; # can I even use these 4 anythingd?;
-export HpPp=`cat ~/.log/p`;export HGTD='GnomTerm-NiceFont-KC'; # stil nEd 2 fix sx 2 know what 2 crE8 in scrn if!s -x || !in sls;
-gtM() { # mAB ck $# != 0 && $1 optn 2?
-  if     [[ "${(L)HpPp}" ==     d   ]]; then
-             gt --geometry=-$HWd0+0   --show-menubar --window-with-profile=PipsOthrGnomTerm-TestFont-CCIHPS8  --role=muz    --working-directory=~/muz/U2b    \
-                -- screen -x muz  & ;gtss;wmc -r :ACTIVE: -T muz  ;
-             gt --geometry=+0+0       --show-menubar --window-with-profile=PipsCkm8GnomTerm-NiceFont-DC9LDaPt --role=mvz    --working-directory=~/mvz/U2b    \
-                -- screen -x mvz  & ;gtss;wmc -r :ACTIVE: -T mvz  ;
-  elif   [[ "${(L)HpPp}" ==     p   ]]; then
-             gt --geometry=-$HWd0+0   --show-menubar --window-with-profile="PipsPink${HGTD}KL82tx"            --role=muz    --working-directory=~/muz/U2b    \
-                -- screen -x muz  & ;gtss;wmc -r :ACTIVE: -T muz  ;
-             gt --geometry=+0+0       --show-menubar --window-with-profile="PipsPdnt${HGTD}JLJJJJ"            --role=mvz    --working-directory=~/mvz/U2b    \
-                -- screen -x mvz  & ;gtss;wmc -r :ACTIVE: -T mvz  ;
-  elif   [[ "${(L)HpPp}" ==     c   ]]; then
-             gt --geometry=-$HWd0+0   --show-menubar --window-with-profile="PipsPink${HGTD}KL82tx"            --role=muz    --working-directory=~/muz/U2b    \
-                -- screen -x muz  & ;gtss;wmc -r :ACTIVE: -T muz  ;
-             gt --geometry=+0+0       --show-menubar --window-with-profile="PipsPdnt${HGTD}JLJJJJ"            --role=mvz    --working-directory=~/mvz/U2b    \
-                -- screen -x mvz  & ;gtss;wmc -r :ACTIVE: -T mvz  ;
-  elif   [[ "${(L)HpPp}" ==     j   ]]; then
-             gt --geometry=-$HWd0+0   --show-menubar --window-with-profile="PipsPink${HGTD}KL82tx"            --role=muz    --working-directory=~/muz/U2b    \
-                -- screen -x muz  & ;gtss;wmc -r :ACTIVE: -T muz  ;
-             gt --geometry=+0+0       --show-menubar --window-with-profile="PipsPdnt${HGTD}JLJJJJ"            --role=mvz    --working-directory=~/mvz/U2b    \
-                -- screen -x mvz  & ;gtss;wmc -r :ACTIVE: -T mvz  ;
-  elif   [[ "${(L)HpPp}" ==     g   ]]; then
-             gt --geometry=-$HWd0+0   --show-menubar --window-with-profile="PipsPink${HGTD}KL82tx"            --role=muz    --working-directory=~/muz/U2b    \
-                -- screen -x muz  & ;gtss;wmc -r :ACTIVE: -T muz  ;
-             gt --geometry=+0+0       --show-menubar --window-with-profile="PipsPdnt${HGTD}JLJJJJ"            --role=mvz    --working-directory=~/mvz/U2b    \
-                -- screen -x mvz  & ;gtss;wmc -r :ACTIVE: -T mvz  ; fi; }
 alias cti='ct init'; # ChangeTitle 2 Init as quick simple similar command B4 gti or ti to call right after booting up && starting my first default GnomTerm;
 alias  ti='cti;gti'; # maybe l8r mk a custom TermInit alias here wich spawnz more than just GTz but mAB some alpha'd Sakuraz|LilyTermz|QTerminalz etc. too;
 #lias gti='gtI;sleep 3;wmctrl -o 1280,0;sleep 3;gt3;sleep 3;wmctrl -o 2560,0;sleep 3;gt3;sleep 3;wmctrl -o 3840,0;sleep 3;gt3;sleep 3;wmctrl -o 0,0';

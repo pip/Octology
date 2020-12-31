@@ -19,7 +19,7 @@
 #     `pkg-config --libs $(pkg-config --print-requires --print-requires-private cairo)` which produced:
 #     "-lgobject-2.0 -lglib-2.0 -lpixman-1 -lfontconfig -lfreetype -lpng16 -lz -lxcb-shm -lxcb -lxcb-render -lXrender -lX11 -lXext" so trying to add those...
 #   but had to add them to both the project's main root Makefile as well as the very similar one which was within the src/ sub-directory before `mk` worked!;
-use strict;use warnings;use utf8;use Octology::a8;my $VERSION='0.0';my $d8VS='KCOLFoxW'; # consider detecting && adding custom Xtra --help basic tXt output2;
+use strict;use warnings;use utf8;use Octology::a8;my $VERSION='0.0';my $d8VS='KCULDUSC'; # consider detecting && adding custom Xtra --help basic tXt output2;
 use Term::ReadKey;     # note that you can pass in as many -d=\d+ DelayDur8ionInSeconds (like MPlayer -endpos) for as many file-name params follow 2 B plAyd;
 END{      ReadMode 0;} # good practice to auto-restore orig TTY read settingz at END
           ReadMode 3;  # setup 4 raw mode or 3 cbreak mode where Ctrl-C workz since signalz are enabled
@@ -185,19 +185,18 @@ sub cb{my $cx=shift;$si=''; # CallBack for non-stream Time A of B
                                               $cx->send($kr{$si});} # try2rEmap arOw keyz  # any Othr unDtectd keyz shud prnt out 4l8r altern8 mapz
   elsif(length($si) &&     ord($si) == 3){                                 #rint $M."Ord3$G"."Keyz$W:$Y$zi$W;\n";
                                               $cx->send(    $si );} # try2pass Ctrl-C break thru
-  elsif(length($si)                     ){                                 #rint $B."Othr$K"."Keyz$W:$Y$zi$W;\n";
-                                                               }
+# elsif(length($si)                     ){                        }        #rint $B."Othr$K"."Keyz$W:$Y$zi$W;\n";
   my  $pfmc=eval("(-M \'$pfil\')");
-  if ($pfmc != $pfms){  $pfms=       $pfmc;
-    if     (defined(      $lfil) && -r $lfil){
-      open  my  $lflh,'<',$lfil or die "!*EROR*! Couldn't open  lfil:$lfil for reading! $!\n";binmode $lflh,':encoding(UTF-8)';
-      while(   <$lflh>){if($_ !~ /^\s*#/ && /^\s*(\w+)\s+(\S+)/ ){$pldh{lc($1)}=$pldh{uc($1)}=$2;}} # poor-man's case-insensitivity with hash 2 both lc && uc;
-      close     $lflh           or die "!*EROR*! Couldn't close lflh! $!\n"   ;
-      if   (defined(      $pfil) && -r $pfil){
-        open my $pflh,'<',$pfil or die "!*EROR*! Couldn't open  pfil:$pfil for reading! $!\n";binmode $pflh,':encoding(UTF-8)';
-        while( <$pflh>){if($_ !~ /^\s*#/ && /^\s*(\w+)/ && exists($pldh{   $1 })){$prof        =$pldh{   $1 };$cmap{'d8bo'}=$prof;
-            @d8cs=split(//,$prof);for(@d8cs){$_=S($_);}}} # should nicely hot-load any detected changes or upd8s saved to the files of which p(rofile)&&l(ist);
-        close   $pflh           or die "!*EROR*! Couldn't close pflh! $!\n"   ;}}}                               exp_continue;}
+  if ($pfmc != $pfms){  $pfms=  $pfmc;
+    if     (defined(            $lfil) && -r "$lfil"){my $line;
+      open     my    $lflh, '<',$lfil or die "!*EROR*! Couldn't open  lfil:$lfil for reading! $!\n";binmode $lflh,':encoding(UTF-8)';
+      while(  $line=<$lflh>){if($line !~ /^\s*#/ && $line=~ /^\s*([0-9A-Z._]+)[^0-9A-Z._]+([0-9A-Z._]+)/ix){$pldh{$1}=$2;}}
+      close          $lflh            or die "!*EROR*! Couldn't close lflh! $!\n"      ;
+      if   (defined(            $pfil) && -r "$pfil"){
+        open   my    $pflh, '<',$pfil or die "!*EROR*! Couldn't open  pfil:$pfil for reading! $!\n";binmode $pflh,':encoding(UTF-8)';
+        while($line=<$pflh>){if($line !~ /^\s*#/ && $line=~ /^\s*([0-9A-Z._]+)                /ix && exists($pldh{$1})){$cmap{'d8bo'}=$prof=$pldh{$1};
+            @d8cs=split(//,$prof);for my $cndx (0..$#d8cs){$d8cs[$cndx]=S($d8cs[$cndx]);}}} # shud hot-lOd Dtectd chngz or upd8s sAvd2fIlz4 p(rofile)&&l(ist);
+        close        $pflh            or die "!*EROR*! Couldn't close pflh! $!\n"      ;}}}                      exp_continue;}
 sub xx{ $xp->expect($to, [qr/(^|\s*)Playing\s+(file|http):\/\/[^\n]+\n/i            => sub {my $cx=shift;mp($cx);exp_continue;}],
                          [qr/(^|\s*)Title\s*:[^\n]+\n/i                             => sub {my $cx=shift;mp($cx);exp_continue;}],
                          [qr/(^|\s*)Album\s*:[^\n]+\n/i                             => sub {my $cx=shift;mp($cx);exp_continue;}],

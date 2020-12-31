@@ -1,14 +1,65 @@
 # KCJL6Pls:~/.log/prof.ls crE8d by PipStuart <Pip@CPAN.Org> 2 provide a key-table list 4 looking up which YouTube channel profile d8bo color sequences 2 use;
-d RoYGCBMp
-p RrFfHh32
-c CcZzTt98
-j Yy54UuOo
-g AaGg76Dd
-i NnSsVvMm
-# RiteLeft BlueWite OnlyUpKs
-R YGTBUDSN
-L LlHhvV23
-B SBbsXx1N
-W WJIqQwij
-k KeEk10Nn
-v VvMmLlPp
+d RoYGCBMp # PipStuart primary U2bchanL ;
+p RfFrHh32 # PedantPip secndry U2bchanL ;
+c CzZcTt98 # CapCtion8 tertiry U2bchanL ;
+j Y45OUuyo # JewJesus8 skeptic U2bchanL ;
+g AaGg76Dd # GuyGooway MGTOWay U2bchanL ;
+i NnSsVvMm # Improvis8 Ingland U2bchanL?;
+R YGTBUDSN # RappingRt AntiRed U2bchanL?RiteLeft BlueWite FrstUpKs BcuzCmdz prplpbpw weretAkN ;
+L LlHhvV23 # LaidyLaicyLiteral U2bchanL?;
+B SBsbXx1N # BluBoieB8 NonBGnd U2bchanL?;
+W WJIqQwij # WigWearW8 costume U2bchanL?;
+k KeEk10Nn # KecKpepe8 MemeR8n U2bchanL?;
+v VvMmLlPp # ValVocal8 BtBoxin U2bchanL?;
+o o5YOUJo4 # OldObsid8 DubStep U2bchanL?;
+0 BoGYCRMp # PsRandom gener8d8 KCULCULK 0-7Eight JustShfl TheBasic 8bOwd8bO DfltFrst DfIndPrf ;
+1 BYpMoRGC # PsRandom gener8d8 KCULCULK ;
+2 CMYoGpRB # PsRandom gener8d8 KCULCULK ;
+3 BYpoGRCM # PsRandom gener8d8 KCULCULK ;
+4 pGCoMRYB # PsRandom gener8d8 KCULCULK ;
+5 YpGoBRMC # PsRandom gener8d8 KCULCULK ;
+6 BoCpGRMY # PsRandom gener8d8 KCULCULK ;
+7 RBMopGYC # PsRandom gener8d8 KCULCULK ;
+8 YcbwIEeG # PsRandom gener8d8 KCULDope 8-_unUzd RandPick OnlyDiff ColrCodz W8ngUntl GivnOrdr ;
+9 uncw07sF # PsRandom gener8d8 KCULDope ;
+A 5oQcHfGB # PsRandom gener8d8 KCULDope ;
+C ftu6DWHN # PsRandom gener8d8 KCULDope ;
+D XTw5eJVr # PsRandom gener8d8 KCULDope ;
+E PADTH7Gw # PsRandom gener8d8 KCULDope ;
+F 3nCYWUAg # PsRandom gener8d8 KCULDope ;
+G nqP38BVs # PsRandom gener8d8 KCULDope ;
+H fqVapnXU # PsRandom gener8d8 KCULDope ;
+I m03fqaMk # PsRandom gener8d8 KCULDope ;
+J YzOKj3va # PsRandom gener8d8 KCULDope ;
+K IYXv0ocB # PsRandom gener8d8 KCULDope ;
+M cPXLZB83 # PsRandom gener8d8 KCULDope ;
+N R4OLMU9e # PsRandom gener8d8 KCULDope ;
+O .OMd9mTC # PsRandom gener8d8 KCULDope ;
+P bSBJXIxm # PsRandom gener8d8 KCULDope ;
+Q IZ8GWVgU # PsRandom gener8d8 KCULDope ;
+S kyPLmAlc # PsRandom gener8d8 KCULDope ;
+T N69fcnZ2 # PsRandom gener8d8 KCULDope ;
+U dZHtK_LY # PsRandom gener8d8 KCULDope ;
+V g6yGIH8K # PsRandom gener8d8 KCULDope ;
+X MZiGIV7h # PsRandom gener8d8 KCULDope ;
+Y R9ckFJsn # PsRandom gener8d8 KCULDope ;
+Z vUq9Tce6 # PsRandom gener8d8 KCULDope ;
+a I9cdOhFU # PsRandom gener8d8 KCULDope ;
+b 9mfR5Qgo # PsRandom gener8d8 KCULDope ;
+e GbOnuJse # PsRandom gener8d8 KCULDope ;
+f DaCQwY5O # PsRandom gener8d8 KCULDope ;
+h hOVWm9tN # PsRandom gener8d8 KCULDope ;
+l Z4712Ywq # PsRandom gener8d8 KCULDope ;
+m _QqScxns # PsRandom gener8d8 KCULDope ;
+n eXd3BfM9 # PsRandom gener8d8 KCULDope ;
+q 3p86HQmu # PsRandom gener8d8 KCULDope ;
+r 4SUhMCHV # PsRandom gener8d8 KCULDope ;
+s wWujBFn. # PsRandom gener8d8 KCULDope ;
+t e5pUDglJ # PsRandom gener8d8 KCULDope ;
+u qrjd7UN_ # PsRandom gener8d8 KCULDope ;
+w m1Fi_uLa # PsRandom gener8d8 KCULDope ;
+x 6PfBO7_l # PsRandom gener8d8 KCULDope ;
+y 29m0aJEi # PsRandom gener8d8 KCULDope ;
+z RV.KvDZp # PsRandom gener8d8 KCULDope ;
+. ZagL.tB_ # PsRandom gener8d8 KCULDope ;
+_ 7sY_zyhW # PsRandom gener8d8 KCULDope ;
