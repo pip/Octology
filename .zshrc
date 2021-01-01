@@ -368,7 +368,7 @@ alias ak='apt-key  ';alias aka='ak     add';alias akd='aka -    ';alias akad='ak
 alias ag='apt-get  ';alias agi='ag install';alias agu='ag update';alias aguu='agu;ag upgrade'; # Debian && Ubuntu apt shortcuts  # agdu BlO nEdz v sources.list
 alias ac='apt-cache';alias acs='acS       ';alias agr='ag remove';alias agrm='agr';alias agar='ag autoremove';alias agdu='ag dist-upgrade'; # thN aguu B4hand
 alias ai='apt install';alias acsrch='ac search';alias au='apt update';alias auu='au;apt upgrade';alias acsp='ac showpkg';alias agri='ag reinstall'; #shOpkgDtlz
-alias apts='apt search';alias asrch='apts';alias aar='apt autoremove'; # alreD /usr/bin/as GNU ASsembler,shud rEd wut Ls apt(itude)? do betr than ag 2add here
+alias apts='apt search';alias asrch='apts';alias aar='apt autoremove';alias ari='apt reinstall'; # alreD /usr/bin/as GNU ASsembler,shud stuD apt over ag 2add;
 alias   AS='apts';alias aS='acS';alias As='en KAKMAKoK';alias 666='gi alias ~/.zshrc|wc -l';alias gicoa='gi -co alias ~/.zshrc'; # -Count -Onlym@ch; 6more?
 alias ali=' apt list             --installed';alias dli='dpkg -l'; # super basic commandz to use Apt or Dpkg(-query)? to List Installed packagez on Ubuntu or
 alias alim="aptitude search      '~i!~M' ";alias agiy='agi -y'; # shud just List pkgz wich were Instld Manually (!as DpNdNCz); /var/lib/apt/extended_states 2?
@@ -596,8 +596,8 @@ alias       P='   pal8'; #  P    :           pal8 terminal color setting utility
 alias       p='   CCC '; #  p    :            CCC (p used to be just 'ps' "Process Snapshot" but remapped to super Clear from above for easy one-hand entry)
 alias      PP='   ppp '; #  PP
 alias      pl='   perl'; #  pl   :           perl
-alias      pL='pP L';    #  pL   :           pP L (aidyLaicyLiteral LuciousLadyLumps LovelyLivelyLoudy LastLiasLpro)
-alias      pk='pP k';alias p_='pP _'; #  pk_:pP k # pA() BlO is: profileAll 2 thrO out P PipStu d falt, PP, CC8, JJ8, GG, II, RR, LL, (BB, WW, KK,)? && VV;
+alias      pL='pP L';    #  pL   :           pP L (aidyLaicyLiteral LuciousLadyLumps LovelyLivelyLoudy LastLiasLpro); pPA triez 2 loop in Perl nstd of ZshL;
+alias      pk='pP k';alias p_='pP _'; #  pk_:pP k # pA() BlO is: profileAll 2 thrO out P PipStu d falt, pp, cc8, jj8, gg, ii, RR, BB, LL, OO, WW, kk, && vv;
 alias      pp='pP p';alias pc='pP c';alias pj='pP j';alias pg='pP g';alias pi='pP i';alias pR='pP R';alias pB='pP B';alias pW='pP W';alias pv='pP v';
 alias      p0='pP 0';alias p1='pP 1';alias p2='pP 2';alias p3='pP 3';alias p4='pP 4';alias p5='pP 5';alias p6='pP 6';alias p7='pP 7';alias p8='pP 8';
 alias      p9='pP 9';alias PA='pP A';alias PB='pP b';alias pC='pP C';alias pD='pP D';alias pE='pP E';alias pF='pP F';alias pG='pP G';alias pH='pP H';
@@ -606,9 +606,11 @@ alias      PR='pP r';alias pS='pP S';alias PT='pP T';alias pU='pP U';alias pV='p
 alias      Pa='pP a';alias Pb='pP b';alias PC='pP C';alias PD='pP d';alias PE='pP e';alias PF='pP f';alias PG='pP g';alias ph='pP h';alias PI='pP i';
 alias      PJ='pP j';alias PK='pP k';alias Pl='pP l';alias Pm='pP m';alias Pn='pP n';alias Po='pP o';alias P6='pP p';alias pq='pP q';alias Pr='pP r';
 alias      Ps='pP s';alias P2='pP t';alias Pu='pP u';alias Pv='pP v';alias Pw='pP w';alias Px='pP x';alias Py='pP y';alias Pz='pP z';alias p.='pP .';
-pA() { for HPrF in d p c j g i R L B W k v o; do echo -en "$W$HPrF ";pP "$HPrF";d8 -a;echo -en "$z;";done;echo; # why did en && een aliasez hav probz?
+pA() { for HPrF in d p c j g i R B L O W k v; do echo -en "$W$HPrF ";pP "$HPrF";d8 -a;echo -en "$z;";done;echo; # why did en && een aliasez hav probz?
   for      HPrF in 0 1 2 3 4 5 6 7 8 9 A B C D E F  G H I J K L M N O P Q R S T U V  W X Y Z a b c d e f g h i j k l  m n o p q r s t u v w x y z '.' '_'; do
-                                                 echo -en "$W$HPrF ";pP "$HPrF";d8 -a;echo -en "$z;";if [[ $HPrF =~ ^([CPcp]) ]]; then echo;fi;w8  8;done;pP;}
+                                                 echo -en "$W$HPrF ";pP "$HPrF";d8 -a;echo -en "$z;";if [[ $HPrF =~ ^([CPcp]) ]]; then echo;fi      ;done;pP;}
+pPA(){     pP      d p c j g i R B L O W k v - \
+                   0 1 2 3 4 5 6 7 8 9 A B C - D E F G H I J K L M N O P - Q R S T U V W X Y Z a b c - d e f g h i j k l m n o p - q r s t u v w x y z . _ d;}
 alias     ppp='pu;p;po'; #  ppp  :       prepriv8 (same as single p for CCC cd,clear,cut scrollback but wrapped with pushd && popd aliases to undo the cd ~)
 alias       T='   tee '; #  tee  :            tee (maybe can wrap into c8 with cut,cat,colored columns?); rEmMbr standRd `tr -d ...` is transl8 DlEt like subS
 alias       t='   tmux'; #  tmux :           tmux|screen ... any other altern8ive multiplexers forked out there? (orig:  `tsgr b` shO xtrm256colr pal8 Blox)

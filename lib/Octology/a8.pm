@@ -48,11 +48,11 @@ use base     qw(Exporter); # mainly exporting global utility functions && variab
 our @EXPORT= qw(bfr8c    b8c    d8c   dur8c @d8cl  d8cs  a8c   chti  c8fn  o8 S2   c2  S c   sS    lodl @Monz @Mon     %mc2F %mc2b %mF2c %mb2c @Kana  %sb10
  $SKp8 $SKp0 $SKp1 $SKp2 b8clr  $SKpf $SKpt %pmap %cmap       %pl8n  ftst acS e %f8fm %f8pm %sgrm %sgrn @Dayz @Day  lrc      comma  curs  sumb @x256  @sb64
     $z    $k    $r    $o    $y    $g     $c $SKpb    $m    $p    $w  tstc    $K    $R    $O    $Y    $G    $C    $B    $M    $P    $W    %p622 %p222   upd8
-         $bk   $br   $bo   $by   $bg    $bc   $bb   $bm   $bp   $bw         $hK   $hR   $hO   $hY   $hG   $hC   $hB   $hM   $hP   $hW     h2rl  rl2h   drkh
-    $t    $u    $d    $s    $n          $T     $U    $D    $S    $N         $HK   $HR   $HO   $HY   $HG   $HC   $HB   $HM   $HP   $HW %pldh hl $pfil pP xe
+         $bk   $br   $bo   $by   $bg    $bc   $bb   $bm   $bp   $bw %pldl   $hK   $hR   $hO   $hY   $hG   $hC   $hB   $hM   $hP   $hW     h2rl  rl2h   drkh
+    $t    $u    $d    $s    $n          $T     $U    $D    $S    $N %plds   $HK   $HR   $HO   $HY   $HG   $HC   $HB   $HM   $HP   $HW %pldh hl $pfil pP xe
  $tnhf $ucdf  spff  spfd  spfX   shfl  reso $Auth %cmsp %p8k2 @p82k  chp8     S2f4 c2f4 dm2u cdst %crgb %cbrt @snls @mrls %cdrd %cdrn    %nrgb $lfil   gnp8);
  # of 52 posibl sngl-letr var nmz,a8 Xportz 20,$b && $a unavail,so shudB thEs30 lFt4quik shortSt nAmz: 'def hij l n  q stuv x', 'A  DEF HIJ L N  Q STUV X Z';
-our $VERSION='0.0';my  $d8VS='KCULANCE';our $Auth='PipStuart <Pip@CPAN.Org>'; # above not exporting $b since collidez with sort{$a  <=> $b};unalloc'd sOlOz^;
+our $VERSION='0.0';my  $d8VS='KCVLAfix';our $Auth='PipStuart <Pip@CPAN.Org>'; # above not exporting $b since collidez with sort{$a  <=> $b};unalloc'd sOlOz^;
 our $ucdf= eval('use Color::Similarity::RGB qw(distance);1') || 0; # try2set UseColorDistanceFlag if optional module is available; /defhijlnqstuvx/i + /AZ/^;
 our @sb64=('0'..'9','A'..'Z','a'..'z','.','_'); # SingleBase64 array && Base10 hash (since it's probably best not to use b8.pm here in a8)
 our %sb10=();$sb10{$sb64[$_]}=$_ for(0..$#sb64);our %crgb;our %cbrt;our @snls;our @mrls;our %cdrd;our %cdrn; # DclAr ColrDist d8a:BRiTness,Srch iNdex LiSt,
@@ -92,22 +92,33 @@ our %cmap=('VGA' =>'kbgcrPOw KBGCRMYW', # supported Colr MAP sequencez of index 
            'pal8'=>         'RoYGCBMp', # maybe  *pal8 d8a should all be stored and detected from within filez having the same .pal8 extension?
           '8bow' =>         'RoYGCBMp', # altern8 pal8 (a single palette of just 8 colrz with an alias of 8bow, but mAB pal8 should be KRYGCBMW instead?)
          'd8bo'  =>         'RoYGCBMp', # altern8 pal8 but meant to be used to allow all 8 to be able to display in Bold together
+         'd8bl'  =>         'FFDDAALL', # attempt 2 add new DAL layer d8a 2 correspond with str8 d8bo that dfltz in all just F
+         'd8bs'  =>         'IIUULLCC', # attempt 2 add new SGR plane d8a 2 correspond with str8 d8bo (but might l8r need multiple planez of these?)
 #    'pal8'8bow'd8bo' =>    'YGTBUDSN', # KC7L1mbo:started switching above 3 color maps back to original rainbow-style before Red,Orange,Magenta were swapped;
            'U2b8'=>         'CSGUY'  ); # altern8 colr sequence for 64-bitz in 11-digit b64 b8 numberz probably using 'url' URLSafe charset for YouTube IDz
-our $pfil=$ENV{'HOME'} . "/.log/p";our %pldh; # `dd if=/dev/urandom count=1 bs=128 | sha512sum` can B Used 4 gNr8ing crypto-secure tOkNz && mAB bs=6 4 b64?;
+our %pldh;our %pldl;our %plds;
+our $pfil=$ENV{'HOME'} . "/.log/p"; # `dd if=/dev/urandom count=1 bs=128 | sha512sum` can B Used 4 gNr8ing crypto-secure tOkNz && mAB bs=6 4 b64?;
 our $lfil=$ENV{'HOME'} . "/.log/prof.ls"; # load ProfileListD8aHash key => val (just spcd) pairz thN ck just p picked-profile-file for d8bo OvrId selection;
 if     (defined(            $lfil) && -r "$lfil"){my $line; # HTTPS://AskUbuntu.Com/questions/192203/how-to-use-dev-urandom `ec $RANDOM`,`shuf`,&&`dd if=/d/ur
   open      my   $lflh, '<',$lfil or die "!*EROR*! Couldn't open  lfil:$lfil for reading! $!\n";binmode $lflh,':encoding(UTF-8)'; # count=4 bs=8 of=~/ur-$(d8)`
-  while  ($line=<$lflh>){if($line!~ /^\s*#/ && $line=~ /^\s*([0-9A-Z._]+)[^0-9A-Z._]+([0-9A-Z._]+)/i  ){$pldh{$1   }=$2   ;}} # && `c8 /d/ur>~/ur` Ctrl-C
+  while  ($line=<$lflh>){if($line!~ /^\s*#/ && $line=~ /^\s*([0-9A-Z._]+)[^0-9A-Z._]+([0-9A-Z._]+.*)/i){my $pkey=$1;my $rest=$2 ; # && `c8 /d/ur>~/ur` Ctrl-C
+      if ($rest=~ s/^([0-9A-Z._]+)[^0-9A-Z._]*//i){$pldh{$pkey}=$1;}
+      if ($rest=~ s/^([0-9A-Z._]+)[^0-9A-Z._]*//i){$pldl{$pkey}=$1;}
+      if ($rest=~ s/^([0-9A-Z._]+)[^0-9A-Z._]*//i){$plds{$pkey}=$1;}}} # l8r gNr8 rand layerz && SGR planez 2;
   close          $lflh            or die "!*EROR*! Couldn't close lflh! $!\n"; # below tries 2 get tricky && auto-gNr8 full sb64 map of pseudo-random profilez;
   open           $lflh,'>>',$lfil or die "!*EROR*! Couldn't open  lfil:$lfil for writing! $!\n";binmode $lflh,':encoding(UTF-8)'; # `head -8 /d/ur>~/ur` 8 bytz
   for my $b64n ( 0..63 ){my $b64c=$sb64[$b64n];if(!exists($pldh{$b64c})){my $rnd8=shfl($cmap{'d8bo'}); # cmNtd lIn BlO wud try2psrandomly bild d8bOz 4 MpT p'z;
                             $rnd8=$sb64[int(rand(64))];while(length($rnd8) < 8){my $rndc=$sb64[int(rand(64))];$rnd8.=$rndc if($rnd8 !~ /[$rndc]/);}
-      say        $lflh                   "$b64c $rnd8 # PsRandom gener8d8 KCULDope ;";                  $pldh{$b64c}=$rnd8;}}
+                         my $rndl=substr('FDALOH'          ,int(rand( 6)),1);while(length($rndl) < 8){$rndl.=substr('FDALOH'          ,int(rand( 6)),1);}
+                         my $rnds=substr('NBAIULKRVCFDSMEO',int(rand(16)),1);while(length($rnds) < 8){$rnds.=substr('NBAIULKRVCFDSMEO',int(rand(16)),1);}
+                         # 2du l8r:best abov would be to just join all l8r %sgrm keyz in2 str && rand its own full length with all togglez && attrz;
+      say        $lflh                   "$b64c $rnd8 $rndl $rnds # PsRandom gener8d8 KCVLABIA ;";      $pldh{$b64c}=$rnd8;$pldl{$b64c}=$rndl;
+                                                                                                        $plds{$b64c}=$rnds;                   }}
   close          $lflh            or die "!*EROR*! Couldn't close lflh! $!\n";
   if   (defined(            $pfil) && -r "$pfil"){
     open    my   $pflh, '<',$pfil or die "!*EROR*! Couldn't open  pfil:$pfil for reading! $!\n";binmode $pflh,':encoding(UTF-8)';
-    while($line=<$pflh>){if($line!~ /^\s*#/ && $line=~ /^\s*([0-9A-Z._]+)                 /ix && exists($pldh{$1   })){$cmap{'d8bo'}=$pldh{$1};}}
+    while($line=<$pflh>){if($line!~ /^\s*#/ && $line=~ /^\s*([0-9A-Z._]+)                 /ix && exists($pldh{$1   })){$cmap{'d8bo'}=$pldh{$1};
+                     $cmap{'d8bl'}=$pldl{$1} if(exists($pldl{$1   }));$cmap{'d8bs'}=$plds{$1} if(exists($plds{$1   }));}}
     close        $pflh            or die "!*EROR*! Couldn't close pflh! $!\n";}}
 our %cmsp;for(keys %cmap){my $mstr=$cmap{$_};$mstr=~ s/\s+//g;$cmsp{$_}= [split(//,$mstr)];} # should load all Color Mapz already SPlit apart
 our %pl8n=('K'=>'blacK'     ,'R'=>'Red'      ,'Y'=>'Yellow','G'=>    'Green'  ,  'C'=>'Cyan'        ,'B'=>     'Blue','M'=>'Magenta' ,'W'=>       'White',
@@ -143,7 +154,9 @@ our %p8k2=( # 1st good Pal8 maps gener8d for full Keyz 2 256 from `gnp8 p` (but 
   'L' => {'k'=>234,'r'=>126,'O'=>215,'g'=> 40,'c'=> 38,'b'=>238,'P'=>171,'w'=>252, 'K'=>249,'R'=>197,'Y'=>227,'G'=> 47,'C'=> 87,'B'=> 57,'M'=>207,'W'=>255,
           'e'=>240,'h'=>198,'o'=>208,'d'=> 71,'t'=> 37,'s'=> 67,'p'=>134,'i'=>114, 'E'=>109,'H'=>206,'y'=>186,'D'=>118,'T'=>122,'S'=>117,'m'=>129,'I'=>191,
           '.'=>217,'f'=>167,'u'=>143,'a'=> 78,'z'=>115,'n'=> 62,'l'=>177,'j'=>246, '_'=>152,'F'=>210,'U'=>230,'A'=>121,'Z'=>159,'N'=> 69,'L'=>189,'J'=>253,
-          '0'=>174,'2'=>199,'4'=>214,'6'=> 84,'8'=> 75,'x'=>147,'v'=>183,'q'=>150, '1'=>141,'3'=>216,'5'=>222,'7'=>156,'9'=>195,'X'=> 63,'V'=>219,'Q'=>231,});
+          '0'=>174,'2'=>199,'4'=>214,'6'=> 84,'8'=> 75,'x'=>147,'v'=>183,'q'=>150, '1'=>141,'3'=>216,'5'=>222,'7'=>156,'9'=>195,'X'=> 63,'V'=>219,'Q'=>231,},
+# 'O' => {                  'O'=>  3,'o'=> 11,}, # probably adding this got rid of weird undef issue but caused o && Y to appear the same, so not gr8 fix;
+); # can I just load special O:O && O:o for fixing the undef weird attempted lookup on pk:O layr:O colr:O || o?
 our @p82k;for(keys %p8k2){for my $p8ky (keys %{$p8k2{$_}}){$p82k[$p8k2{$_}{$p8ky}]="$_$p8ky";}} # popul8 Pal8 256 2 Keyz reverse-lookup
 my $dfpl= "000 g00 gL0 0g0 0gg 00g g0g ggg  LLL _LL __L L_L L__ LL_ _L_ ___"; # DeFault kernel PaL8 colors after booting (in 2pal8 order) but =~ s/P/L/g;
 my $cmpl= "000 g00 _SI 0g0 0gg DPf g0g CCC  ggg z99 __L L_L L__ Sdp kOr ___"; # CnvGTP28($cmsv); # CheckMate ckm8 PaL8 colors (from GnomTerm) 2pal8 order
@@ -954,21 +967,30 @@ sub   b8clr  {my $rtns = ''; # Dtect commaz && % B4 coloring  # mAB base4 [bd][f
     push(@_,split(/ /,decode('UTF-8',$inln)));}} # for some reason backtickz like "b8clr `Prmz 47 1`" aren't including the typical nwlInz,mAB tix get noColmz?
   for my $b8st (@_){my $tdst;my $iprt=0;my $fprt=0;my $comw=0;my $nwlf=0; # shud also tune b8clr 2 hndl b256 as well as b64
     if  ($b8st=~ /^(.+?)[%](.+)$/){$iprt=$1;$fprt=$2;}else{$iprt=$b8st;}
-    if  ($iprt=~ /,([^,]+)$/){$comw= length($1);} d8cs('YGTBWUDSNW') if($comw); # assume coma 4 b64 char blox
+    if  ($iprt=~ /,([^,]+)$/){$comw= length($1);} d8cs(substr($cmap{'d8bo'},0,4).'W'.substr($cmap{'d8bo'},4,4).'W') if($comw); # assume coma 4 b64 char blox
     $nwlf=1 if($iprt=~ s/\n$//);
     $tdst   =            b8c($iprt);
     if  ($fprt){$comw=0; # used to $rtns =~ s/\s$//; before d8cs('d8bo'); was restored, but seems to join d8a lines unnecessarily so match just tail real space
-      if($fprt=~ /^([^,]+),/){$comw= length($1);} d8cs('WYGTBWUDSN') if($comw); # assume coma 4 b64 char blox reversed
+      if($fprt=~ /^([^,]+),/){$comw= length($1);} d8cs('W'.substr($cmap{'d8bo'},0,4).'W'.substr($cmap{'d8bo'},4,4)) if($comw); # assum coma4 b64 chr blox rvrsd
       $tdst.= "$W\%" . bfr8c($fprt) . $z;} $rtns.= "$tdst ";$rtns=~ s/ $/\n/ if($nwlf);}
   $rtns=~ s/ $//;d8cs('d8bo');return($rtns);} # try2rEstOr Dflt ColrSequ B4 rEturning
-sub   d8cs   {my $dccs = ''; # d8 ColrSet (or ColrSequence), d8 ColrCodeString
+sub   d8cs   {my $dccs='';my $dcbl='';my $dcbs=''; # d8 ColrSet (or ColrSequence), d8 ColrCodeString
   if(!@_ && !-t STDIN){chomp(@_=<STDIN>);} # turn only piping thru into paramz
   if(!@_){           unshift(@_,'d8bo' );} # should loop through all @_ paramz below appending to dccs,accepting XtNded colr cOdez && use S() nstd of eval $c
-  for(@_){if   (/^--?g(et)?    $/ix){ } # do something for get? maybe empty above should be just -get instead && Xplicit 'd8bo' or --reset is better interface?
-          elsif(exists($cmap{$_}  )){$dccs.= $cmap{$_};}    # %cmap key namez getz valuz  # might want 2 accept /^m:/i 4DfInd cMapz && /^s:/i 4Xplicit set|sequ
+  for(@_){if   (/^--?h(elp)?   $/ix){$dccs=" d8cs help text by $Auth on $d8VS to assign the d8bo Color-Sequence taking S SKpd paramz;";return($dccs);}
+          elsif(/^--?g(et)?    $/ix){$dccs='';$dccs.=c($_) for(@d8cl);return($dccs);} # du something dif than Dflt 4 -get?
+          # mAB MpT abov shudB just -get nstd && Xplicit 'd8bo' or --reset is betr interface-wise?
+          elsif(exists($cmap{$_}  )){
+            if   ($_ eq 'd8bl'     ){$dcbl.= $cmap{$_};}
+            elsif($_ eq 'd8bs'     ){$dcbs.= $cmap{$_};}
+            else                    {$dccs.= $cmap{$_};}}   # %cmap key namez getz valuz  # might want 2 accept /^m:/i 4DfInd cMapz && /^s:/i 4Xplicit set|sequ
+          elsif(/^([NBAIULKRVCFDSMEO]+)$/i && length($dcbl) && length($dcbl) == length($1)){$dcbs.=       $_ ;}
+          elsif(/^([FDALOH]+  )$/x         && length($dccs) && length($dccs) == length($1)){$dcbl.=       $_ ;}
           elsif(/^([0-9A-Z._]+)$/i ){$dccs.=       $_ ;}}   # 8pal8 colr codz             # below popUl8 @d8ColrList wi Xpnded cOdz  #  /^[KROYGCBMPW]+$/i old
 # for some strange reason I either needed to call d8cs("$1") with quotes from 8ct or crE8 a new pointless $1 capture group above to avoid uninitd $_ warningz
-  if           (length($dccs      )){$dccs =~ s/[^0-9A-Za-z._]+//g;@d8cl=();for(split(//,$dccs)){push(@d8cl,S($_));}} # replaced old end SKpz wi S($_)
+  if           (length($dccs      )){$dccs =~ s/[^0-9A-Z._]+//gi;@d8cl=();for(0..length($dccs)-1){my $cchr=substr($dccs,$_,1);my $lchr='F';my $schr='B';
+      $lchr=substr($dcbl,$_,1) if(length($dcbl) >= $_+1);
+      $schr=substr($dcbs,$_,1) if(length($dcbs) >= $_+1);   push(@d8cl,S("$lchr:$cchr$schr"));}}
   elsif        ($_[0] =~ /\e/      ){@d8cl =       @_ ;}    # assume othr pRamz are already Xpanded list of SKpd colrz 2 rEplAce Dflt (if 1st has SKp)
   $dccs='';     $dccs .= c($_)   for(@d8cl);return($dccs);} # reconstruct ColrCodeString from l8st ColrList (which still must contain SKpz for usage)
 sub sumb{  my $widt=0;$widt=1 if(exists($ENV{'COLUMNS'}) && $ENV{'COLUMNS'} >= 158); # suport norml or doubl wId outpt (wi just widthOK flag4now, nstd of valu)
@@ -1102,9 +1124,11 @@ sub sumb{  my $widt=0;$widt=1 if(exists($ENV{'COLUMNS'}) && $ENV{'COLUMNS'} >= 1
     'acS'   => "a8  apt-cache Search wrapper which coll8z`dpkg -l`resultz into together   ", # hLp shO nstl8n st8us of DscrIbd packages of searched interest;
     'CJ'    => "a8  CoViD-19 (`b64 19`) script to parse Comma-SepR8d-Values && compute    ", # mAB belongs with a different module than a8.pm?
     'cJ'    => "a8  CoViD-19 (`b10  J`) script to get d8a-files && parse key fields out   ", # mAB belongs with a different module than a8.pm?
+    'd8cs'  => "a8 *ColorSequence d8 (Date and Time) d8bo setting 4 d8c,dur8c,b8c,bfr8c   ",
     'drkh'  => "a8  converter from 6-char HEX to b64 RgbLow with 8th of intensities on    ", # mIt want2add a8:drkh with 8ths of colr chanLz from input too
     'e'     => "a8  EDITOR wrapper which includes fragile old package templ8ing system    ", # mAB rEwrIt mOst Useful BhAVor as nw clEnr a8:e or let dokr:e
     'hl'    => "a8  utility combining head && tail oper8ions over STDIN using b64 sizes   ",
+    'pP'    => "a8 *profilePicker 4 PedantPip && GnomTerm gsets 4 bkgrnds && transparNC   ",
     'uri'   => "a8  URI capitaliz8ion Utility resulting from Beppu-san's procrastin8ion   ",
     'xe'    => "a8  X-windows Event autom8ion (as abbreV8d `xte` test wrapping utility)   ",
 
@@ -1113,6 +1137,7 @@ sub sumb{  my $widt=0;$widt=1 if(exists($ENV{'COLUMNS'}) && $ENV{'COLUMNS'} >= 1
     'Fibz'  => "b8  FIBonacZ listed up to filling in 48 lines with normally 160 columns   ",
     'Prmz'  => "b8  PRiMe..Z listed up to filling in 48 lines with normally 160 columns   ",
     'Sumz'  => "b8  SUM8ionZ listed up to filling in 48 lines with normally 160 columns   ",
+    'txt8'  => "b8  rather crazy util 2 gNer8 calQ oper8ions 4 k x 8 or word2word jumps   ",
 
     'cmc8'  => "c8  SDL graphical 8x5-character-wide summary of Octology in dense color   ",
     'cmc80' => "c8  SDL graphical 80 -character-wide summary of Octology in dense color   ",
@@ -1122,6 +1147,7 @@ sub sumb{  my $widt=0;$widt=1 if(exists($ENV{'COLUMNS'}) && $ENV{'COLUMNS'} >= 1
 
     'bak'   => "d8  auto-save now d8-stamp in the end-name of a .bak/ BAcK-up file copy   ", # used to be called Pip::Utl.pm->bak() B4 migr8d 2 d8.pm method
     'L'     => "d8 *barely reformatted `ls -Cv` (which packs&&pads&&aligns up2 5 dense)   ", # mAB shud ren 2 LsCv && mv from d8 2 a8 since duz!Uz --fulltime
+    'pr8'   => "d8 *rudimentary util 4 comput8ional new r8ing 4 prayer (or l8r Twitter)   ", # proly ditch the chalNging aggreg8ing prayer idea &&mkTwEtznstd
 
     'pt'    => "Time::PT *for original PipTime module  (main precursor to Octology::d8)   ", # J1OL7CR8:DcIded2swpout Pg1 pt,bak,e 4 Pg2 tstn,supd,oupd ;
 
@@ -2363,8 +2389,8 @@ sub gnp8{my %p226= reverse(%p622);my %g8lm; # gener8 3 new 8pal8z based on vario
    L  - Layers in bd,al blocks in bigger 8pal8 normal    first (like q vs. Q, but this was! not! implemented yet!);
    q  - quads  of b then d each with own 8pal8, then lower row for a && l but all lowercase grouped then UpperCase;
    Q  - Quads  of b then d each with own 8pal8, then lower row for a && l but all UpperCase grouped then lowercase;
-   s  - like `tstc s` for Squeezemode of 8pal8              ;
-";if    ($argz=~ /(^|\s)-?-?h/i){print $htxt;exit();}
+   s  - like `tstc s` for Squeezemode of 8pal8              ;";
+  if    ($argz=~ /(^|\s)-?-?h/i){print $htxt;exit();}
   my $cpfx='F:kx'; # could better error-check code to end in x or X (or % or #)
   # note that pal8 change SKp codes with something like this \e]4;%d;%2.2x;%2.2x;%2.2x\e\\ && it works for remapping any decimal x256 index until `reset`
   if    ($argz=~ /(^|\s)-?-?c=?\s*(\S+)/i){$cpfx=$2;} # set a new parameter c8 code prefix
@@ -2832,18 +2858,18 @@ sub tstc{my $retn='';my $argz='';my $widt=80;$widt=$ENV{'COLUMNS'} if(exists($EN
     elsif    (   $gren ==  3){$retn.="$C #   Octology makes them far";}
     elsif    (   $gren ==  4){$retn.="$C #   more widespread in the" ;}
     elsif    (   $gren ==  5){$retn.="$C #   more colorful future.=)"  ;}
-    $retn.="\n$z";} # now the grayscale ramp #$retn.="Grayscale ramp:\n";
+    $retn.="\n$z";} d8cs('8bow'); # now the grayscale ramp #$retn.="Grayscale ramp:\n";
  $retn.="${G}Even after much use, I still consider long digit codes like \"\\e[01;33;44m\" or \"\\x1B[01;38;5;085;48;5;017m\" too unwieldy. So I sorted and searched
   rgb.txt and colors.txt to represent colors as just 1 or 2 descriptive characters. There are also High intensity Foregrnd 90..97 and backgrnd 100..107.
 I call a \"pal8\" a generic term for 8 (or any multiple) of such remapped color-codes. A \"2pal8\" is meant to describe the old standard first 16 colors
   renamed (or l8r extended sets of 16 that correspond back to the original 16). In order to attain my default \"8bow\" of " . d8c($cmap{'8bow'}) . "$G, I needed to promote
  $O dark$Y yellow$G to$O bright Orange$G and$P dark$M magenta$G to$P bright PurPle$G. I'm still not sure if$P PurPle$G should order before$M Magenta$G, being closer to$B Blue$G?
-So the original ANSI in 2pal8 form is '"  ;for(@{$cmsp{ 'ANSI'}}){$retn.= S($_) . $_;$retn.=' ' if(/^w$/);} # krgObPcw KRGYBMCW  shud colr neon wash melo BlO2
-  $retn.="$G' and my reordering '"        ;for(@{$cmsp{'2pal8'}}){$retn.= S($_) . $_;$retn.=' ' if(/^w$/);} # krOgcbPw KRYGCBMW  shud colr dark avrg lite BlO2
+So the original ANSI in 2pal8 form is '"       ;for(@{$cmsp{ 'ANSI'}}){$retn.= S($_) . $_;$retn.=' ' if(/^w$/);} # krgObPcw KRGYBMCW  shud colr neon wash melo
+  $retn.="$G' and my reordering '";d8cs('d8bo');for(@{$cmsp{'2pal8'}}){$retn.= S($_) . $_;$retn.=' ' if(/^w$/);} # krOgcbPw KRYGCBMW  shud colr dark avrg lite
   $retn.="$G'. Then shifting 2pal8 from clen into neon, wash, and melo.
-They were all named closely too as in '"  ;for(        16..63   ){$retn.= S($cmsp{    '8pal8'}[$_]) . $cmsp{'8pal8'}[$_]; # ehodtspi EHyDTSmI  l8r 48 of 64
-                                                                  $retn.=' ' if($cmsp{'8pal8'}[$_]=~ /^[ijqIJ]$/ );       # .fuaznlj _FUAZNLJ
-                                                                  $retn.=' ' if($cmsp{'8pal8'}[$_]=~ /^   [IJ]$/x);}      # 02468xvq 13579XVQ
+They were all named closely too as in '"       ;for(        16..63   ){$retn.= S($cmsp{    '8pal8'}[$_]) . $cmsp{'8pal8'}[$_]; # ehodtspi EHyDTSmI l8r 48 of 64
+                                                                       $retn.=' ' if($cmsp{'8pal8'}[$_]=~ /^[ijqIJ]$/ );       # .fuaznlj _FUAZNLJ
+                                                                       $retn.=' ' if($cmsp{'8pal8'}[$_]=~ /^   [IJ]$/x);}      # 02468xvq 13579XVQ
   $retn.="$G' following Uppercase, odd, and underscore all correspond
   to brighter versions of dim lowercase, even, and dot colors. Then 8pal8 remaps Fclr to Dark, Avrg, Lite to cover 256.";
 # Because of the Bold heritage, the 8 dark Foreground colors could not display in a Bold font-face, even if they were modified to appear similarly bright and
@@ -3477,25 +3503,39 @@ sub xe{ # `xte` X-windows Test Event autom8ion; Command-LookUpTable mapz most ba
 # [:b9549ec2-8025-4f99-8b07-8ca977b25e9c] background-color='rgb(4,5,6)'    visible-name='d8k4'
 # [:c7c3d39e-a7d4-45b5-b7d3-76647071d7c8] background-color='rgb(33,48,63)' visible-name='d8ok'
 # [:ea2bfc5d-7d03-4bcc-ac97-ae832ecbd8c9] background-color='rgb(33,48,63)' visible-name='d8k8'
-# [:f20de500-bcc8-4543-b560-f210594dfe1b] background-color='rgb(35,36,4)'  visible-name='PipsJew8GnomTerm-NiceFont-KCNLANDS'
 sub pP{my $prof='d';$prof=$ENV{'HPrf'} if(exists($ENV{'HPrf'}) && defined($ENV{'HPrf'}) && length($ENV{'HPrf'})); # profilPikr 2swich2 P d(falt)2 pcjgiRLBWkv;
-  my      $drks= 16;my $retn='';my %umap=( # ndx in2 d8bo 4 wich colr code char 2use, then darkness-scale factor wich divides found RGB valuez by 2mk bkgrndz;
-  'b9549ec2-8025-4f99-8b07-8ca977b25e9c' => [7,    1 ],  # background-color='rgb(4,5,6)'    visible-name='d8k4'   # 2du l8r:`dcdgt`2get vis-nmz nstd of UUIDz;
-  'ea2bfc5d-7d03-4bcc-ac97-ae832ecbd8c9' => [2,    2 ],  # background-color='rgb(33,48,63)' visible-name='d8k8'
-  '35f0c566-3662-460f-bd8e-20d3c4252a98' => [0, $drks],  # background-color='rgb(4,5,6)'    visible-name='PipsCkm8GnomTerm-NiceFont-DC9LDaPt'
-  'aab108a4-da33-4bfd-bc63-681830e51030' => [4, $drks],  # background-color='rgb(3,9,4)'    visible-name='PipsOthrGnomTerm-TestFont-CCIHPS8'
-  'b07e7805-134c-40ed-a474-0e18fd07c672' => [6, $drks]); # background-color='rgb(5,10,13)'  visible-name='PipsTestGnomTerm-DiffFont-D1NBxCf'
-  for(@_){if(/^-+h(elp)?      /xi){ # 2du l8r:tk mor pRamz && NvIronmNt varz 2 set dRknS-sKl B4 prof 2 pik && mAB othr custmIz8nz th@ wud B nIc 2 autO-gNr8 4;
+my @pl;my $drks= 16;my $retn='';my %umap=( # ndx in2 d8bo 4 wich colr code char 2use, then darkness-scale factor wich divides found RGB valuez by 2mk bkgrndz;
+  'c7c3d39e-a7d4-45b5-b7d3-76647071d7c8'=>[1,$drks/8  ,88], # background-color='rgb(33,48,63)' 94% visible-name='d8ok' # 2du l8r:`dcdgt`4 vis-nmz nstdofUUIDz;
+  'b9549ec2-8025-4f99-8b07-8ca977b25e9c'=>[3,$drks/8  ,64], # background-color='rgb(4,5,6)'    88% visible-name='d8k4'
+  'ea2bfc5d-7d03-4bcc-ac97-ae832ecbd8c9'=>[5,$drks/8  ,72], # background-color='rgb(33,48,63)' 94% visible-name='d8k8'
+  '14880507-33c4-4dba-aad2-3150676e3a7f'=>[7,$drks/4  , 2], # background-color='rgb(5,10,13)'   3% visible-name='Oni-160x50-J34LDWit'
+  '35f0c566-3662-460f-bd8e-20d3c4252a98'=>[0,$drks    , 8], # background-color='rgb(4,5,6)'     3% visible-name='PipsCkm8GnomTerm-NiceFont-DC9LDaPt'
+  '50f58d4c-9a3b-4cdd-abc2-da0995a7a77b'=>[2,$drks/2  ,12], # background-color='rgb(4,5,6)'     9% visible-name='Pips8025GnomTerm-NiceFont-K2FL8025'
+  'b07e7805-134c-40ed-a474-0e18fd07c672'=>[4,$drks/2  , 4], # background-color='rgb(5,10,13)'   3% visible-name='PipsTestGnomTerm-DiffFont-D1NBxCf'
+  'aab108a4-da33-4bfd-bc63-681830e51030'=>[6,$drks/2  , 8], # background-color='rgb(3,9,4)'     6% visible-name='PipsOthrGnomTerm-TestFont-CCIHPS8'
+);for(@_){if(/^-+h(elp)?       /xi){ # 2du l8r:tk mor pRamz && NvIronmNt varz 2 set dRknS-sKl B4 prof 2 pik && mAB othr custmIz8nz th@ wud B nIc2 autO-gNr8 4;
       return(qq( pP Help text: writes 2 prOfIl ~/.log/p fIl, gNr8z gsetz 2chng GnomTerm Profile bkgrndz 4Ech p DfInd in prof.ls;
- pP profile-Picker 4 d (falt d8bo PS) or param 2 set 2, pp PedantPip, pc CaptainCaption8, pj JJ8,pg GG,piRLBWkv;));} # retn help text
-    elsif   (/^\s*([0-9A-Z._]+)/i){$prof=$1;}} # get the profile parameter of just b64 charz (probably initially only a single char, but mAB l8r mor cudBcool;
-  if(exists($pldh{$prof})){ # only upd8 profile disk file with name key if there already exists a prof.ls entry for that profile name so don't switch 2 none!;
-    if(defined($pfil) && (!-e "$pfil" || -w "$pfil")){
-      open  my $pflh,'>',$pfil or die "!*EROR*! Couldn't open  pfil:$pfil for writing! $!;";binmode $pflh,':encoding(UTF-8)';print $pflh $prof;
-      close    $pflh           or die "!*EROR*! Couldn't close pflh"              . "! $!;";}
-    for(keys(%umap)){my $spnc=substr($pldh{$prof},$umap{$_}[0],1);my $pp8k=$p8k2{'F'}{$spnc};my $psdr=int(hex(substr($x256[$pp8k],0,2)) /$umap{$_}[1]) . ',' .
-      int(         hex(substr($x256[$pp8k],2,2)) /$umap{$_}[1]) . ',' .                               int(hex(substr($x256[$pp8k],4,2)) /$umap{$_}[1]);
-      $retn.=`gsettings set org.gnome.Terminal.Legacy.Profile:/org/gnome/terminal/legacy/profiles:/:$_/ background-color 'rgb($psdr)'`;} return($retn);}}
+ pP profile-Picker 4 d (falt d8bo PS) or param 2 set 2, pp PedantPip, pc CaptainCaption8,pj JJ8,pg GG,piRBLOWkv;));} # retn help text
+    elsif   (/^\s*([0-9A-Z._-]+)/i){push(@pl,$1);}} # get profile parameterz of just b64 chrz (probably initially only single char, but mAB l8r mor cudBcool);
+  open my     $out8,'>&',STDOUT  or die "Can't open  duplic8 STDOUT handle: $!";binmode $out8,':encoding(UTF-8)';my $co=0; # count loopz 2skip final d (falt);
+  push(@pl,$prof) unless(@pl); # looping pPA here does about 78 profile switchez in 45 secondz while pA looping in shL takez about an extra 15 secondz 4 d8z2;
+  for my $pk (@pl){$co++; # try 2 setup an auto-loop on any valid ProfileKey pRamEterz wich shud B nIcely fastr than the ZShell pA() func calling all sepR8ly;
+    if(exists($pldh{$pk})){ # only upd8 profile disk file with name key if there already exists a prof.ls entry for that profile name so don't switch 2 none!;
+      if(defined($pfil) && (!-e "$pfil" || -w "$pfil")){
+        open  my $pflh,'>',$pfil or die "!*EROR*! Couldn't open  pfil:$pfil for writing! $!;";binmode $pflh,':encoding(UTF-8)';print $pflh $pk;
+        close    $pflh           or die "!*EROR*! Couldn't close pflh"              . "! $!;";}
+      for(keys(%umap)){my $spnc=substr($pldh{$pk},$umap{$_}[0],1);my $spnl='F'  ;$spnl=substr($pldl{$pk},$umap{$_}[0],1) if(exists($pldl{$pk}));
+        $spnl='F' if($spnl!~ /^[FDALOH]$/);                       my $spns='B'  ;$spns=substr($plds{$pk},$umap{$_}[0],1) if(exists($plds{$pk}));
+        $spns='B' if($spns!~ /^[NBAIULKRVCFDSMEO]$/i);            my $pp8k=$p8k2{$spnl}{$spnc};           unless(defined($pp8k)){$pp8k=3; # why uninit warnz?
+                                                                 #print $out8 "k:$pk;l:$spnl;c:$spnc; "; # DfInd now just for O:O && O:o probz?
+                                                                 }my @drgb=(int(hex(substr($x256[$pp8k],0,2)) /$umap{$_}[1]),
+        int(       hex(substr($x256[$pp8k],2,2)) /$umap{$_}[1]),            int(hex(substr($x256[$pp8k],4,2)) /$umap{$_}[1]));
+        $drgb[0]=255 if($drgb[0] > 255);$drgb[1]=255 if($drgb[1] > 255);$drgb[2]=255 if($drgb[2] > 255);my $psdr=join(',',@drgb);
+        $retn.=`gsettings set org.gnome.Terminal.Legacy.Profile:/org/gnome/terminal/legacy/profiles:/:$_/ background-transparency-percent   $umap{$_}[2]`;
+        $retn.=`gsettings set org.gnome.Terminal.Legacy.Profile:/org/gnome/terminal/legacy/profiles:/:$_/ background-color 'rgb($psdr)'`;}
+      if($#pl && ($retn eq '' || $pk ne 'd')){d8cs($pldh{$pk},$pldl{$pk},$plds{$pk});
+        print $out8 "$W$pk ".d8c($pldh{$pk})."$z;" if($co < $#pl || $pk ne 'd');}}elsif($retn eq '' && $co < $#pl){say $out8 '';}}
+  close       $out8              or die "Can't close duplic8 STDOUT handle: $!"; return($retn);}
 8;
 
 =encoding utf8

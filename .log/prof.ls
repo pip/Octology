@@ -1,18 +1,19 @@
-# KCJL6Pls:~/.log/prof.ls crE8d by PipStuart <Pip@CPAN.Org> 2 provide a key-table list 4 looking up which YouTube channel profile d8bo color sequences 2 use;
-d RoYGCBMp # PipStuart primary U2bchanL ;
-p RfFrHh32 # PedantPip secndry U2bchanL ;
-c CzZcTt98 # CapCtion8 tertiry U2bchanL ;
-j Y45OUuyo # JewJesus8 skeptic U2bchanL ;
-g AaGg76Dd # GuyGooway MGTOWay U2bchanL ;
-i NnSsVvMm # Improvis8 Ingland U2bchanL?;
-R YGTBUDSN # RappingRt AntiRed U2bchanL?RiteLeft BlueWite FrstUpKs BcuzCmdz prplpbpw weretAkN ;
-L LlHhvV23 # LaidyLaicyLiteral U2bchanL?;
-B SBsbXx1N # BluBoieB8 NonBGnd U2bchanL?;
-W WJIqQwij # WigWearW8 costume U2bchanL?;
-k KeEk10Nn # KecKpepe8 MemeR8n U2bchanL?;
-v VvMmLlPp # ValVocal8 BtBoxin U2bchanL?;
-o o5YOUJo4 # OldObsid8 DubStep U2bchanL?;
-0 BoGYCRMp # PsRandom gener8d8 KCULCULK 0-7Eight JustShfl TheBasic 8bOwd8bO DfltFrst DfIndPrf ;
+# KCJL6Pls:~/.log/prof.ls crE8d by PipStuart <Pip@CPAN.Org> 4 a b64 key-table list of YouTube channel profile d8bo master color-sequences;my $d8VS='KCVLFine';
+# 2du:stRt adding optional extra layerz for DarkAvrgLite && SGRcodez B4 mAB also bkgrndaloh BtwEn && multiSGRz 2 flag attrz on thru all d8bo usagez;
+d RoYGCBMp                   # PipStuart Primary U2bchanL ; RoYGCBMp
+p RFHrRFHf FFDDALAL BIUDLCOA # PedantPip Secndry U2bchanL ; RfFrHh32
+c CzZcTt98 FFDDAALL BIUDLCOA # CapCtion8 terTary U2bchanL ; CzZcTt98
+j Y45OUuyo FFDDAALL BIUDLCOA # JewJesus8 Skeptic U2bchanL ; Y45OUuyo ## Note: CantAlow OhhhHooo ;
+g AaGg76Dd FFDDAALL BIUDLCOA # GuyGooway MGTOWay U2bchanL ; AaGg76Dd
+i NnSsVvMm FFDDAALL BIUDLCOA # ImprovIs8 Ingland U2bchanL?; NnSsVvMm
+R YGTBUDSN                   # RappingRt AntiRed U2bchanL?; YGTBUDSN RiteBlue LeftOrng WiteUpKs BcuzCmdz prpbplow weretAkN ;
+B SBsbXx1N                   # BluBoieB8 NonBinG U2bchanL?; SBsbXx1N
+L LlHhvV23                   # LadyLacy8-Literal U2bchanL?; LlHhvV23
+O o5YOUJ4u                   # OldObsid8 DubStep U2bchanL?; o5YOUJo4 ## Note: DublOwoo WarnBugy ;
+W WJIqQwij                   # WigWearW8 costume U2bchanL?; WJIqQwij
+k KeEk10Nn                   # KekPepeK8 MemeR8n U2bchanL?; KeEk10Nn
+v VvMmLlPp                   # ValVocal8 BtBoxin U2bchanL?; VvMmLlPp
+0 BoGYCRMp # PsRandom gener8d8 KCULCULK ; 0-7Eight JustShfl TheBasic 8bOwd8bO DfltFrst DfIndPrf ;
 1 BYpMoRGC # PsRandom gener8d8 KCULCULK ;
 2 CMYoGpRB # PsRandom gener8d8 KCULCULK ;
 3 BYpoGRCM # PsRandom gener8d8 KCULCULK ;
@@ -34,7 +35,6 @@ J YzOKj3va # PsRandom gener8d8 KCULDope ;
 K IYXv0ocB # PsRandom gener8d8 KCULDope ;
 M cPXLZB83 # PsRandom gener8d8 KCULDope ;
 N R4OLMU9e # PsRandom gener8d8 KCULDope ;
-O .OMd9mTC # PsRandom gener8d8 KCULDope ;
 P bSBJXIxm # PsRandom gener8d8 KCULDope ;
 Q IZ8GWVgU # PsRandom gener8d8 KCULDope ;
 S kyPLmAlc # PsRandom gener8d8 KCULDope ;
@@ -52,6 +52,7 @@ h hOVWm9tN # PsRandom gener8d8 KCULDope ;
 l Z4712Ywq # PsRandom gener8d8 KCULDope ;
 m _QqScxns # PsRandom gener8d8 KCULDope ;
 n eXd3BfM9 # PsRandom gener8d8 KCULDope ;
+o .OMd9mTC # PsRandom gener8d8 KCULDope ;
 q 3p86HQmu # PsRandom gener8d8 KCULDope ;
 r 4SUhMCHV # PsRandom gener8d8 KCULDope ;
 s wWujBFn. # PsRandom gener8d8 KCULDope ;
