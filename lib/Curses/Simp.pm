@@ -5,7 +5,7 @@ use        Curses;use Tie::Array;
 my $curs=8; # used to set this to 0 for old 4NT rendering so now should remove all tests for it
 my $ptim=0;#eval('use Time::PT   ;8') || 0;
 my $fram=0;#eval('use Time::Frame;8') || 0;
-my $VERSION  =  '1.6';my $d8VS='J54MLRES'; # remember that 1.2 is really that float and not automatically 1.002 without 'v1.2' or '1.2.0'
+my $VERSION  =  '1.6';my $d8VS='L11L9LYR'; # remember that 1.2 is really that float and not automatically 1.002 without 'v1.2' or '1.2.0'
 END{CScr();} # auto-execute CloseScreen() on exit()
 my %GLBL=( # GLOBAL CLASS VARIABLES  # maybe used to need to declare this before END would register a test for FLAGOPEN?
   'FLAGOPEN' => 0,   # flag for if a main curses screen has been opened yet
@@ -264,7 +264,15 @@ my %pl8n =( #'krOgcbPw KRYGCBMW  ehodtspi EHyDTSmI   .fuaznlj _FUAZNLJ  02468xvq
    $pl8n{  '.'}=uc($pl8n{'_'});$pl8n{'.'}=~ s/_/./; # additionally load pal8 name map with dark dot,even,&& lowercase versions
 for(split(//,'02468')){$pl8n{ $_ }=$pl8n{   $_+1};$pl8n{$_}=~ y/a-z13579/A-Z02468/;}
 for(        'a'..'z' ){$pl8n{ $_ }=$pl8n{uc($_) };$pl8n{$_}=~ y/a-zA-Z/A-Za-z/    ;}
-my %p622 =('k'=>  0, 'r'=>  1,  'O'=>  3, 'g'=>  2,   'c'=>  6, 'b'=>  4,  'P'=>  5, 'w'=>  7, # 8Pal8 64 to 256 map which shud eventually fully replace %clet
+#my %p222=('k'=>  0, 'r'=>  1,  'O'=>  3, 'g'=>  2,   'c'=>  6, 'b'=>  4,  'P'=>  5, 'w'=>  7,  #   this shud remap basic 16 by ANSI order
+#          'K'=>  8, 'R'=>  9,  'Y'=> 11, 'G'=> 10,   'C'=> 14, 'B'=> 12,  'M'=> 13, 'W'=> 15); # 2Pal8    to 256 (just for   Bold 16 nstd of standard 2pal8)
+#my %p622=('e'=>237, 'h'=>126,  'o'=>172, 'd'=>236,   't'=> 23, 's'=> 60,  'p'=> 92, 'i'=>244,  #  Pal8 64 to 256 (just for xtnded 48 past 16 standard 2pal8)
+#          'E'=>242, 'H'=>205,  'y'=>184, 'D'=> 64,   'T'=> 80, 'S'=>116,  'm'=>164, 'I'=>231,
+#          '.'=>239, 'f'=> 52,  'u'=> 58, 'a'=> 65,   'z'=> 30, 'n'=> 17,  'l'=>103, 'j'=> 95,
+#          '_'=>247, 'F'=>160,  'U'=>229, 'A'=>122,   'Z'=> 44, 'N'=> 19,  'L'=>225, 'J'=>223,
+#          '0'=>235, '2'=> 89,  '4'=> 94, '6'=> 22,   '8'=> 31, 'x'=> 24,  'v'=> 96, 'q'=>243,
+#          '1'=> 18, '3'=>131,  '5'=>220, '7'=> 77,   '9'=> 81, 'X'=>033,  'V'=>213, 'Q'=>224);
+my  %p622=('k'=>  0, 'r'=>  1,  'O'=>  3, 'g'=>  2,   'c'=>  6, 'b'=>  4,  'P'=>  5, 'w'=>  7, # 8Pal8 64 to 256 map which shud eventually fully replace %clet
            'K'=>  8, 'R'=>  9,  'Y'=> 11, 'G'=> 10,   'C'=> 14, 'B'=> 12,  'M'=> 13, 'W'=> 15,
           #'K'=>241, 'R'=>196,  'Y'=>226, 'G'=>190,   'C'=>123, 'B'=> 21,  'M'=>201, 'W'=>255, # altern8 base 2pal8 brights mapped into 256
            'e'=>237, 'h'=>126,  'o'=>172, 'd'=>236,   't'=> 23, 's'=> 60,  'p'=> 92, 'i'=>244,
@@ -273,6 +281,23 @@ my %p622 =('k'=>  0, 'r'=>  1,  'O'=>  3, 'g'=>  2,   'c'=>  6, 'b'=>  4,  'P'=>
            '_'=>247, 'F'=>160,  'U'=>229, 'A'=>122,   'Z'=> 44, 'N'=> 19,  'L'=>225, 'J'=>223,
            '0'=>235, '2'=> 89,  '4'=> 94, '6'=> 22,   '8'=> 31, 'x'=> 24,  'v'=> 96, 'q'=>243,
            '1'=> 18, '3'=>131,  '5'=>220, '7'=> 77,   '9'=> 81, 'X'=>033,  'V'=>213, 'Q'=>224);
+my  %p8k2=( # 1st good Pal8 maps gener8d for full Keyz 2 256 from `gnp8 p` (but using FDAL instead of bdal to favor just F default now)
+  'F' => {'k'=>  0,'r'=>  1,'O'=>  3,'g'=>  2,'c'=>  6,'b'=>  4,'P'=>  5,'w'=>  7, 'K'=>  8,'R'=>  9,'Y'=> 11,'G'=> 10,'C'=> 14,'B'=> 12,'M'=> 13,'W'=> 15,
+          'e'=>237,'h'=>125,'o'=>172,'d'=> 22,'t'=> 23,'s'=> 54,'p'=> 92,'i'=>244, 'E'=>242,'H'=>205,'y'=>184,'D'=> 64,'T'=> 80,'S'=>116,'m'=>164,'I'=>254,
+          '.'=>239,'f'=> 52,'u'=> 58,'a'=> 65,'z'=> 30,'n'=> 17,'l'=>103,'j'=> 95, '_'=>247,'F'=>160,'U'=>229,'A'=> 85,'Z'=> 44,'N'=> 19,'L'=>225,'J'=>223,
+          '0'=>235,'2'=> 89,'4'=> 94,'6'=> 28,'8'=> 31,'x'=> 24,'v'=> 96,'q'=>243, '1'=> 18,'3'=>132,'5'=>220,'7'=> 77,'9'=> 81,'X'=> 27,'V'=>213,'Q'=>224,},
+  'D' => {'k'=> 16,'r'=> 88,'O'=>136,'g'=> 29,'c'=> 66,'b'=>233,'P'=> 90,'w'=>250, 'K'=>102,'R'=>162,'Y'=>190,'G'=> 41,'C'=> 45,'B'=> 56,'M'=>165,'W'=>193,
+          'e'=>241,'h'=>161,'o'=>130,'d'=>101,'t'=> 25,'s'=> 60,'p'=> 53,'i'=>106, 'E'=> 72,'H'=>169,'y'=>179,'D'=> 46,'T'=> 74,'S'=>110,'m'=>127,'I'=>148,
+          '.'=>138,'f'=>166,'u'=>100,'a'=> 76,'z'=> 43,'n'=> 98,'l'=>133,'j'=>144, '_'=>248,'F'=>168,'U'=>192,'A'=> 48,'Z'=> 50,'N'=> 21,'L'=>146,'J'=>187,
+          '0'=>137,'2'=>175,'4'=>173,'6'=> 83,'8'=> 73,'x'=> 20,'v'=>176,'q'=> 70, '1'=> 93,'3'=>200,'5'=>180,'7'=>155,'9'=>153,'X'=> 55,'V'=>212,'Q'=>151,},
+  'A' => {'k'=>232,'r'=>124,'O'=>178,'g'=> 34,'c'=> 36,'b'=>236,'P'=> 97,'w'=>251, 'K'=>245,'R'=>196,'Y'=>226,'G'=> 82,'C'=> 51,'B'=> 26,'M'=>201,'W'=>194,
+          'e'=> 59,'h'=>163,'o'=>202,'d'=> 35,'t'=> 32,'s'=> 61,'p'=> 91,'i'=>113, 'E'=>108,'H'=>170,'y'=>185,'D'=>112,'T'=> 86,'S'=>111,'m'=>128,'I'=>154,
+          '.'=>181,'f'=>131,'u'=>142,'a'=> 42,'z'=> 79,'n'=> 68,'l'=>135,'j'=>139, '_'=>145,'F'=>203,'U'=>228,'A'=> 49,'Z'=>123,'N'=> 99,'L'=>182,'J'=>188,
+          '0'=>107,'2'=>204,'4'=>209,'6'=>119,'8'=> 39,'x'=>105,'v'=>140,'q'=>149, '1'=>104,'3'=>211,'5'=>221,'7'=>120,'9'=>158,'X'=> 33,'V'=>218,'Q'=>157,},
+  'L' => {'k'=>234,'r'=>126,'O'=>215,'g'=> 40,'c'=> 38,'b'=>238,'P'=>171,'w'=>252, 'K'=>249,'R'=>197,'Y'=>227,'G'=> 47,'C'=> 87,'B'=> 57,'M'=>207,'W'=>255,
+          'e'=>240,'h'=>198,'o'=>208,'d'=> 71,'t'=> 37,'s'=> 67,'p'=>134,'i'=>114, 'E'=>109,'H'=>206,'y'=>186,'D'=>118,'T'=>122,'S'=>117,'m'=>129,'I'=>191,
+          '.'=>217,'f'=>167,'u'=>143,'a'=> 78,'z'=>115,'n'=> 62,'l'=>177,'j'=>246, '_'=>152,'F'=>210,'U'=>230,'A'=>121,'Z'=>159,'N'=> 69,'L'=>189,'J'=>253,
+          '0'=>174,'2'=>199,'4'=>214,'6'=> 84,'8'=> 75,'x'=>147,'v'=>183,'q'=>150, '1'=>141,'3'=>216,'5'=>222,'7'=>156,'9'=>195,'X'=> 63,'V'=>219,'Q'=>231,},);
 # ordered attribute names array && default attribute data hash
 my   @_attrnamz=();     my %_attrdata=();
                 my %_verbose_attrnamz=();
@@ -285,6 +310,10 @@ push(@_attrnamz, '_fclr'); $_attrdata{$_attrnamz[-1]} = []; # fg color data
                    $_verbose_attrnamz{$_attrnamz[-1]} = 'ForegroundColorData';
 push(@_attrnamz, '_bclr'); $_attrdata{$_attrnamz[-1]} = []; # bg color data
                    $_verbose_attrnamz{$_attrnamz[-1]} = 'BackgroundColorData';
+push(@_attrnamz, '_flyr'); $_attrdata{$_attrnamz[-1]} = []; # fg layer data
+                   $_verbose_attrnamz{$_attrnamz[-1]} = 'ForegroundLayerData';
+push(@_attrnamz, '_blyr'); $_attrdata{$_attrnamz[-1]} = []; # bg layer data
+                   $_verbose_attrnamz{$_attrnamz[-1]} = 'BackgroundLayerData';
 push(@_attrnamz, '_kque'); $_attrdata{$_attrnamz[-1]} = []; # Key Queue
                    $_verbose_attrnamz{$_attrnamz[-1]} = 'KeyQueue';
 push(@_attrnamz, '_mque'); $_attrdata{$_attrnamz[-1]} = []; # Key Mod Queue
@@ -586,6 +615,8 @@ sub MkMethdz{
 MkMethdz( 'NAME' => 'Text', 'ARAY' => 1 );
 MkMethdz( 'NAME' => 'FClr', 'ARAY' => 1 );
 MkMethdz( 'NAME' => 'BClr', 'ARAY' => 1 );
+MkMethdz( 'NAME' => 'FLyr', 'ARAY' => 1 );
+MkMethdz( 'NAME' => 'BLyr', 'ARAY' => 1 );
 MkMethdz( 'NAME' => 'KQue', 'ARAY' => 1 );
 MkMethdz( 'NAME' => 'MQue', 'ARAY' => 1 );
 MkMethdz( 'NAME' => 'Hite', 'RSIZ' => 1 );
@@ -597,7 +628,7 @@ MkMethdz( 'NAME' => 'XCrs', 'MVCR' => 1 );
 MkMethdz( 'NAME' => 'BTyp', 'LOOP' => 1 );
 MkMethdz( 'NAME' => 'BrFC', 'ARAY' => 1 );
 MkMethdz( 'NAME' => 'BrBC', 'ARAY' => 1 );
-MkMethdz( 'NAME' => 'Titl' );
+MkMethdz( 'NAME' => 'Titl'              );
 MkMethdz( 'NAME' => 'TtFC', 'ARAY' => 1 );
 MkMethdz( 'NAME' => 'TtBC', 'ARAY' => 1 );
 MkMethdz( 'NAME' => 'DNdx', 'DSTK' => 1 );

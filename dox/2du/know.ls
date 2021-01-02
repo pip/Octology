@@ -1,5 +1,5 @@
 # HBQLISTV:know.ls crE8d by PipStuart <Pip@CPAN.Org> to duplic8 Dr. Jordan B. Peterson's Quora.Com answer of "40 most valuable things everyone should know";
-# $VERSION='0.0';$d8VS='KCULLike'; # While this document origin8d around (&& still mainly intends to focus on) Dr. Peterson's knowledge, many others fE8ure;
+# $VERSION='0.0';$d8VS='L11LATER'; # While this document origin8d around (&& still mainly intends to focus on) Dr. Peterson's knowledge, many others fE8ure;
 # 2du:start chronicling Dr. Peterson's many topical videos with new section for post-title subject summaries or explor8ion;
 0) Tell the truth.
 1) Do not do things that you h8.
@@ -1074,3 +1074,5 @@ KCNL4RNG:HTTPS://YouTu.be/JmuXwbirmZQ "Why 7 is the Least Random of All Numbers"
 #  as we 4give those who rage quit {JH0} against us, 4 thine is the maddening {JJ8} variability, {JL0} the arbitrary, && the nonsense,{JO0}4ever&&ever.Amen!";
 KCOLCode:HTTPS://YouTu.be/ttcflCFd5B8 "Every Type of Programmer" # KCI:4E0 of KeepOnCoding with quite funny take on stereotypes, many of which have fit me wL;
 KCULLove:HTTPS://YouTu.be/fn3KWM1kuAw "Do You Love Me?" # KCT:2s0 of BostonDynamics showing totally amazing 4 robots doing graceful synchronized group dances;
+L11LCloc:HTTPS://YouTu.be/ogDBFD7tr90 "We Just Leveled Up Our Time-Keeping Skills - Entangled Atom Clock" # KCT:DT0 of AntonPetrov explaining historic clocks;
+L11LDidU:HTTPS://YouTu.be/kSG4Rfc9YIw "How to Talk Like a Physicist" # KCU:5w0 of SabineHossenfelder correcting a bunch of very common physics misconceptions;
