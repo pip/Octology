@@ -30,7 +30,7 @@ unsetopt                \
 # auto_pushd            \# setng addz dirz 2 stack wN just normally chngng 2 thM (wich I du not normally lIk or want)
 # ksh_arrays            \# rEmMbr wNwrItng scrptz[or funcz]2include'setopt [localoptions] ksharrays'sO arAzR 0-bAsed(but!glOblBcuzmOst scrptzRstndrdly 1-bAsed)
 # re_____match_____pcre \# mA want2set for Z-SHell scripting RegularExpressions to utilize PerlCompatibility styles && mA insert 'zmodload zsh/(pc)?re(gex)?';
-export Vers='0.0';export d8VS='KCMLEARN';export Auth='PipStuart <Pip@CPAN.Org>'; # not Xportng $b sinc cOlIdz wi sort{$a <=> $b} /defhijlnqstuvx/i + AZ 4golf;
+export Vers='0.0';export d8VS='L19LFAST';export Auth='PipStuart <Pip@CPAN.Org>'; # not Xportng $b sinc cOlIdz wi sort{$a <=> $b} /defhijlnqstuvx/i + AZ 4golf;
 if     [[       "$SHELL"    == "" ]]; then       export SHELL=`  which zsh`;fi # 8sh should parse this && OverId it    # shud `man zshall` /OSTYP 2lern4BlO
 if     [[       "$HOSTNAME" == "" ]]; then       export HOSTNAME=`hostname`;fi #`hostname`retnz fsckd nwlInz\n4CygWinzRxvt... ||smthng els lame  =(
 if     [[       "$HOST"     == "" ]]; then       export HOST   ="$HOSTNAME";fi;export VERBOSE='1'; # set flag to print debug && status info from system utilz
@@ -44,20 +44,29 @@ export XConfHom="$HOME/.config";     export XConfDrz="/etc/xdg";alias mkt='mktem
 export XDataHom="$HOME/.local/share";export XDataDrz="/usr/local/share:/usr/share";export   XDG_DATA_HOME="$XDataHom";export   XDG_DATA_DIRS="$XDataDrz";
 export XCachHom="$HOME/.cache";      export XSESSION='Gnome'   ;                   export  XDG_CACHE_HOME="$XCachHom";export XDG_MENU_PREFIX='gnome-';
 export SNAP_USER_DATA="$XDG_DATA_HOME/snap"; # J54MISNA:HTTPS://Bugs.LaunchPad.Net/ubuntu/+source/snapd/+bug/1575053 HTTPS://AskUbuntu.Com/questions/882562 ;
+if     [   -z  "${debian_chroot:-}" ] && [ -r /etc/debian_chroot ]; then   # set variable IdNtifyng the chroot U wrk in (Used in prmpt bElO)
+  debian_chroot=$(cat                         /etc/debian_chroot) ;  fi;export HMOa='-MOctology::a8';export HMOb='-MOctology::b8';export HMOd='-MOctology::d8';
+alias xprt='export';alias Xp='export'; # even shorter versions of export command which might need 2 become functions 2 avoid multi-pRam unwantd aliasXpansion?;
 # BlO  TMP from HTTPS://StackOverFlow.Com/questions/2435062/what-happened-to-the-tmp-environment-variable (mAB add -d -t 2 mktemp call aftr rEding man pgz?);
-export TMP="${TMP:-$(dirname  $(mkt -u))}/"; # OvrIdDflt /tmp wi ~/.tmp if the latter Xistz, thN Xport othr 3 common ENV varz which mIt B Used 2 design8 TMP;
-if     [[  -d   "$HOME/.tmp"      ]]; then       export TMP="$HOME/.tmp/"  ;fi;export TEMP="$TMP";export TMPDIR="$TMP";export TMPPREFIX="$TMP";
-export bk="\e[40m"   ;export br="\e[41m"   ;export bo="\e[43m"   ;export by="\e[43m"   ;export bg="\e[42m"   ; # set shell col8 colr escape codez akin to a8.pm
-export bc="\e[46m"   ;export bb="\e[44m"   ;export bm="\e[45m"   ;export bp="\e[45m"   ;export bw="\e[47m"   ; # first add bkgr colrz, then shorter fgrndclrz
-export  k="\e[22;30m";export  r="\e[22;31m";export  o="\e[22;33m";export  y="\e[22;33m";export  g="\e[22;32m"; # set shell col8 colr escape codez akin to a8.pm
-export  c="\e[22;36m";export  b="\e[22;34m";export  m="\e[22;35m";export  p="\e[22;35m";export  w="\e[22;37m";export SKpb="$b"; # like a8.pm altern8 cmp $b
-export  K="\e[01;30m";export  R="\e[01;31m";export  O="\e[22;33m";export  Y="\e[01;33m";export  G="\e[01;32m";export    z="\e[00m"; # like a8 $SKp0 . 'm'
-export  C="\e[01;36m";export  B="\e[01;34m";export  M="\e[01;35m";export  P="\e[22;35m";export  W="\e[01;37m"; # these then should become able to use in Uk etc
-export hK="\e[100m"  ;export hR="\e[101m"  ;export hO="\e[103m"  ;export hY="\e[103m"  ;export hG="\e[102m"  ; # also setup High-intensity varE8ionz, which
-export hC="\e[106m"  ;export hB="\e[104m"  ;export hM="\e[105m"  ;export hP="\e[105m"  ;export hW="\e[107m"  ; #   a8.pm doesn't even include to export yet
-export HK="\e[90m"   ;export HR="\e[91m"   ;export HO="\e[93m"   ;export HY="\e[93m"   ;export HG="\e[92m"   ; # '_'=>'01;30'  '^'=>'00'
-export HC="\e[96m"   ;export HB="\e[94m"   ;export HM="\e[95m"   ;export HP="\e[95m"   ;export HW="\e[97m"   ; # '.'=>'22;30' cnsidr adng $f[0-9A-Za-z._] f0ntz
-# HCSL8BCz:nOte th@ all thEse new minimal var nAmz 4 color-codes have a good chance of collIding in minimal shL-script Usagez DfInd l8r BlO, sO B careful;
+export TMP="${TMP:-$(dirname $(mkt  -u))}/"; # OvrIdDflt /tmp wi ~/.tmp if the latter Xistz, thN Xport othr 3 common ENV varz which mIt B Used 2 design8 TMP;
+if     [[  -d   "$HOME/.tmp"      ]]; then  export      TMP="$HOME/.tmp/"  ;fi;export TEMP="$TMP";export TMPDIR="$TMP";export TMPPREFIX="$TMP";
+#xport bk="\e[40m"   ;export br="\e[41m"   ;export bo="\e[43m"   ;export by="\e[43m"   ;export bg="\e[42m"   ; # L13LCuts: bkslsh SKpz here had2go literal BlO;
+export bk="[40m"   ;export br="[41m"   ;export bo="[43m"   ;export by="[43m"   ;export bg="[42m"   ; # set shell col8 colr escape codez akin to a8.pm
+export bc="[46m"   ;export bb="[44m"   ;export bm="[45m"   ;export bp="[45m"   ;export bw="[47m"   ; # first add bkgr colrz, then shorter fgrndclrz
+export  k="[22;30m";export  r="[22;31m";export  o="[22;33m";export  y="[22;33m";export  g="[22;32m"; # set shell col8 colr escape codez akin to a8.pm
+export  c="[22;36m";export  b="[22;34m";export  m="[22;35m";export  p="[22;35m";export  w="[22;37m";export SKpb="$b"; # like a8.pm altern8 cmp $b
+export  K="[01;30m";export  R="[01;31m";export  O="[22;33m";export  Y="[01;33m";export  G="[01;32m";export    z="[00m"; # like a8 $SKp0 . 'm'
+export  C="[01;36m";export  B="[01;34m";export  M="[01;35m";export  P="[22;35m";export  W="[01;37m"; # these then should become able to use in Uk etc
+export hK="[100m"  ;export hR="[101m"  ;export hO="[103m"  ;export hY="[103m"  ;export hG="[102m"  ; # also setup High-intensity varE8ionz, which
+export hC="[106m"  ;export hB="[104m"  ;export hM="[105m"  ;export hP="[105m"  ;export hW="[107m"  ; #   a8.pm doesn't even include to export yet
+export HK="[90m"   ;export HR="[91m"   ;export HO="[93m"   ;export HY="[93m"   ;export HG="[92m"   ; # '_'=>'01;30'  '^'=>'00'
+export HC="[96m"   ;export HB="[94m"   ;export HM="[95m"   ;export HP="[95m"   ;export HW="[97m"   ; # '.'=>'22;30' cnsidr adng $f[0-9A-Za-z._] f0ntz
+export HpPF='1'; # set 8sh "H" profilePicker Flag to 1 to popul8 base single-char color variablez with l8st d8bo entries as desired override of standard Dfltz;
+if     [[       "$HpPF"    != ""  ]]; then  export  R=`  perl $HMOa -e "print \\\$d8cS[0]"`;export C=`perl $HMOa -e "print \\\$d8cS[4]"`;
+  export O=`perl $HMOa -e "print \\\$d8cS[1]"`;export o=`perl $HMOa -e "print \\\$d8cS[1]"`;export B=`perl $HMOa -e "print \\\$d8cS[5]"`;
+  export p=`perl $HMOa -e "print \\\$d8cS[7]"`;export Y=`perl $HMOa -e "print \\\$d8cS[2]"`;export M=`perl $HMOa -e "print \\\$d8cS[6]"`;
+  export P=`perl $HMOa -e "print \\\$d8cS[7]"`;export G=`perl $HMOa -e "print \\\$d8cS[3]"`;fi; # ck H pickProfileFlag 4 custom base-color Xportz;
+# HCSL8BCz:nOte th@ all thEse new minimal var nAmz 4 color-codes have a good chance of collIding in minimal shL-script Usagez DfInd l8r BlO, sO try2B careful;
 if     [[ "$HWid"         -lt 160 ]]; then # print tSt set 4 bSt mAjor colr-cOdz 2 suport && try 2 fit at least pretty well within 80 or 160-wId termz 2 stRt;
      alias clrz='ee  "${z}nOt:b alsO DfInd2B SKpb 2m@ch glObal sort perl var in a8.pm;
  hK:$hK#$z; hR:$hR#$z; hO:$hO#$z; hY:$hY#$z; hG:$hG#$z; hC:$hC#$z; hB:$hB#$z; hM:$hM#$z; hP:$hP#$z; hW:$hW#$z;
@@ -247,9 +256,6 @@ alias  gpnt=' grp  -nubTH';alias gpnz='gpnt -Z';alias gca='grep --color=auto'; #
 #   needed on terminals on which EL is not supported.  It is otherwise useful on terminals for  which  the  back_color_erase (bce) boolean terminfo capability
 #   does not apply, when the chosen highlight colors do not affect the background, or when EL is too slow or causes too much flicker. The default is false
 #   (i.e., the capability is omitted). nOt:bool capabilities have no "=..." part. They are omitted (false) by default && become true when specified;
-if     [   -z  "${debian_chroot:-}" ] && [ -r /etc/debian_chroot ]; then   # set variable IdNtifyng the chroot U wrk in (Used in prmpt bElO)
-  debian_chroot=$(cat                         /etc/debian_chroot) ;   fi
-alias xprt='export';alias Xp='export'; # even shorter versions of export command which might need 2 become functions 2 avoid multi-pRam unwantd aliasXpansion?;
 # OldeBashStylPrmt:   PS1='%{[1;33m%}[%{[1;36m%}%n%{[1;37m%}@%{[1;36m%}%m%{[1;31m%}`pt`%{[1;34m%}%~%{[1;33m%}]%{[1;32m%}%(!.#.$) ';
 # NewZshStlPmt:export PS1='%{[1;33m%}%[%{[1;36m%}%n%{[1;37m%}@%{[1;36m%}%m%{[1;31m%}`pt`%{[1;34m%}%~%{[1;33m%}]%{[0;33m%}%(!.#.$)%{[1;32m%}';
 #xport PS1='%{[1;33m%}%(!.<.[)%{[1;36m%}%n%{[1;37m%}@%{[1;36m%}$HHst%{[1;31m%}`pt -cp`%{[1;34m%}%~%{[1;33m%}%(!.>.])%{[1;32m%}';
@@ -257,9 +263,10 @@ alias xprt='export';alias Xp='export'; # even shorter versions of export command
 #xport PS1='%{[1;37m%}%(!.<.[)%{[1;33m%}%n%{[1;34m%}@%{[1;35m%}$HHst`d8 -z`%{[1;34m%}%~%{[1;37m%}%(!.>.])%{[1;32m%}'; # F1PLEswI:s/%~/c8fn/;
 #xport  K="\e[01;30m";export  R="\e[01;31m";export  O="\e[22;33m";export  Y="\e[01;33m";export  G="\e[01;32m";export    z="\e[00m"; # like a8 $SKp0 . 'm'
 #xport  C="\e[01;36m";export  B="\e[01;34m";export  M="\e[01;35m";export  P="\e[22;35m";export  W="\e[01;37m"; # these then should become able to use in Uk etc
-export  K="[01;38;5;247m";export  R="[01;38;5;009m";export  O="[22;38;5;172m";export  Y="[01;38;5;011m";export  G="[01;38;5;010m";export z="[00m";
-export  C="[01;38;5;014m";export  B="[01;38;5;012m";export  M="[22;38;5;013m";export  P="[01;38;5;092m";export  W="[01;38;5;015m";export Z="[01m";
-export       PS1='%{$W%}%(!.<.[)%{$G%}%n%{$B%}@%{$C%}$HHst` d8 -z `%{$B%}` c8fn -z $PWD `%{$W%}%(!.>.])%{$G%}'; # see if sakura can accept colr varz in prmpt
+#xport  K="[01;38;5;247m";export  R="[01;38;5;009m";export  O="[22;38;5;172m";export  Y="[01;38;5;011m";export  G="[01;38;5;010m";export z="[00m";
+#xport  C="[01;38;5;014m";export  B="[01;38;5;012m";export  M="[22;38;5;013m";export  P="[01;38;5;092m";export  W="[01;38;5;015m";export Z="[01m";
+export  K="[01;38;5;247m";export  W="[01;38;5;015m";export  Z="[01m"; # these re-define basic color variables from earlier 1z around line 63 && abit B4;
+export       PS1='%{$W%}%(!.<.[)%{$G%}%n%{$z$B%}@%{$C%}$HHst`d8 -z`%{$z$B%}`c8fn -z $PWD`%{$W%}%(!.>.])%{$z$G%}'; # see if sakura can accept colr varz in prmpt
 # it seems that sakura won't bright bold 01;30..37 like other termz but setting prompt with xterm-256color SKp cOdz will work 4 her like it does elsewhere;
 #xport       PS1='%{[1;37m%}%(!.<.[)%{[1;32m%}%n%{[1;34m%}@%{[1;36m%}$HHst` d8 -z `%{[1;34m%}` c8fn -z $PWD `%{[1;37m%}%(!.>.])%{[1;32m%}';
 alias xp="Xp PS1='%{[1;33m%}%(!.<.[)%{[1;36m%}%n%{[1;37m%}@%{[1;36m%}$HHst\`d8 -f|sS z\`%{[1;34m%}%~%{[01;01;01;1;33m%}%(!.>.])%{[1;32m%}'";
@@ -594,8 +601,8 @@ alias       M='   m   ';
 alias      mm=' mikmod'; # prolly scream 3 times if you can read hahahaha !!! :)
 alias       P='   pal8'; #  P    :           pal8 terminal color setting utility from my Octology::f8 module ("f8ful 0per8ion" for handling f0nt && pal8 d8a)
 alias       p='   CCC '; #  p    :            CCC (p used to be just 'ps' "Process Snapshot" but remapped to super Clear from above for easy one-hand entry)
-alias      PP='   ppp '; #  PP
-alias      pl='   perl'; #  pl   :           perl
+alias      PP='   ppp '; #  PP   :  pull pushd, purge previous back to just a plain prompt, then popd so that past scrlbak wipez with working dir preserved;
+alias      pl='   perl'; #  pl   :           perl (with the most common file-extension for typical Perl code as a way to invoke the interpreter itself also)
 alias      pL='pP L';    #  pL   :           pP L (aidyLaicyLiteral LuciousLadyLumps LovelyLivelyLoudy LastLiasLpro); pPA triez 2 loop in Perl nstd of ZshL;
 alias      pk='pP k';alias p_='pP _'; #  pk_:pP k # pA() BlO is: profileAll 2 thrO out P PipStu d falt, pp, cc8, jj8, gg, ii, RR, BB, LL, OO, WW, kk, && vv;
 alias      pp='pP p';alias pc='pP c';alias pj='pP j';alias pg='pP g';alias pi='pP i';alias pR='pP R';alias pB='pP B';alias pW='pP W';alias pv='pP v';
@@ -606,11 +613,16 @@ alias      PR='pP r';alias pS='pP S';alias PT='pP T';alias pU='pP U';alias pV='p
 alias      Pa='pP a';alias Pb='pP b';alias PC='pP C';alias PD='pP d';alias PE='pP e';alias PF='pP f';alias PG='pP g';alias ph='pP h';alias PI='pP i';
 alias      PJ='pP j';alias PK='pP k';alias Pl='pP l';alias Pm='pP m';alias Pn='pP n';alias Po='pP o';alias P6='pP p';alias pq='pP q';alias Pr='pP r';
 alias      Ps='pP s';alias P2='pP t';alias Pu='pP u';alias Pv='pP v';alias Pw='pP w';alias Px='pP x';alias Py='pP y';alias Pz='pP z';alias p.='pP .';
-pA() { for HPrF in d p c j g i R B L O W k v; do echo -en "$W$HPrF ";pP "$HPrF";d8 -a;echo -en "$z;";done;echo; # why did en && een aliasez hav probz?
-  for      HPrF in 0 1 2 3 4 5 6 7 8 9 A B C D E F  G H I J K L M N O P Q R S T U V  W X Y Z a b c d e f g h i j k l  m n o p q r s t u v w x y z '.' '_'; do
-                                                 echo -en "$W$HPrF ";pP "$HPrF";d8 -a;echo -en "$z;";if [[ $HPrF =~ ^([CPcp]) ]]; then echo;fi      ;done;pP;}
-pPA(){     pP      d p c j g i R B L O W k v - \
-                   0 1 2 3 4 5 6 7 8 9 A B C - D E F G H I J K L M N O P - Q R S T U V W X Y Z a b c - d e f g h i j k l m n o p - q r s t u v w x y z . _ d;}
+pA() { for HPrF in d p c j g i R   B L O W k v; do   echo -en "$W$HPrF ";pP "$HPrF";     d8 -a;echo -en "$z;"; # why did en && een aliasez hav probz?
+    if    [[ $COLUMNS -lt 160 && $HPrF == R ]]; then echo             ;fi;done;echo; # w8 W abov && belo NAbld almost all pP callz 2 finish B4 d8 -a stRtd2;
+  for      HPrF in 0 1 2 3 4 5 6   7 8 9 A B C D E F  G H I J K L M N O P Q R S T U V  W X Y Z a b c d e f g h i j k l  m n o p q r s t u v w x y z '.' '_';
+                                                do   echo -en "$W$HPrF ";pP "$HPrF";     d8 -a;echo -en "$z;";if [[ $HPrF =~ ^([CPcp]) ]]; then echo;fi;
+    if    [[ $COLUMNS -lt 160 && $HPrF =~ ^([6JWjw]) ]]; then     echo;fi;done;pP  ;};alias ppa='pA';alias PPA='pPA'; # altrn8 3-char all UP or low aliasez;
+pPA(){ if [[ $COLUMNS -lt 160               ]]; then # above does shell environment looping while this 1 below here passes all profile keyz as direct pRamz;
+           pP      d p c j g i R - B L O W k v - 0 1 2 3 4 5 6 - 7 8 9 A B C - D E F G H I J - K L M N O P - Q R S T U V W - X Y Z a b c - \
+                   d e f g h i j - k l m n o p - q r s t u v w - x y z . _ d;
+     else  pP      d p c j g i R   B L O W k v - 0 1 2 3 4 5 6   7 8 9 A B C - D E F G H I J   K L M N O P - Q R S T U V W   X Y Z a b c - \
+                   d e f g h i j   k l m n o p - q r s t u v w   x y z . _ d;  fi  ;}
 alias     ppp='pu;p;po'; #  ppp  :       prepriv8 (same as single p for CCC cd,clear,cut scrollback but wrapped with pushd && popd aliases to undo the cd ~)
 alias       T='   tee '; #  tee  :            tee (maybe can wrap into c8 with cut,cat,colored columns?); rEmMbr standRd `tr -d ...` is transl8 DlEt like subS
 alias       t='   tmux'; #  tmux :           tmux|screen ... any other altern8ive multiplexers forked out there? (orig:  `tsgr b` shO xtrm256colr pal8 Blox)
@@ -1383,7 +1395,7 @@ else # following settings will hopefully work well for single-screen Ryu, Ken, &
         gtss;wmc -r :ACTIVE: -T muz                 ;
              gt --geometry=+0-0       --show-menubar --window-with-profile=PipsCkm8GnomTerm-NiceFont-DC9LDaPt --role=mvz    --working-directory=~/mvz/U2b   &;
         gtss;wmc -r :ACTIVE: -T mvz                ';
-  alias gti='gtI;gtss;chv1;gtss;gtm;gtss;chv2;gtss;gt3;gtss;chv3;gtss;gt3;gtss;chv0'; fi; export Hm='muz';export HM='mvz'; # can I even use these 4 anythingd?;
+  alias gti='gtI;gtss;chv1;gtss;gtm;gtss;chv2;gtss;gt3;gtss;chv3;gtss;gt3;gtss;chv0'; fi; #xport Hm='muz';export HM='mvz'; # can I even use these 4 anythingd?;
 alias cti='ct init'; # ChangeTitle 2 Init as quick simple similar command B4 gti or ti to call right after booting up && starting my first default GnomTerm;
 alias  ti='cti;gti'; # maybe l8r mk a custom TermInit alias here wich spawnz more than just GTz but mAB some alpha'd Sakuraz|LilyTermz|QTerminalz etc. too;
 #lias gti='gtI;sleep 3;wmctrl -o 1280,0;sleep 3;gt3;sleep 3;wmctrl -o 2560,0;sleep 3;gt3;sleep 3;wmctrl -o 3840,0;sleep 3;gt3;sleep 3;wmctrl -o 0,0';

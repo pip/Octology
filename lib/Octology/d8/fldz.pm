@@ -15,8 +15,8 @@ use overload
 use Octology::a8;
 use Octology::b8;
 use Carp;my @d8bo=split(//,$cmap{'d8bo'}); # setup what was a8.pm ColorMAP originally for pal8, then 8bow, then d8bo here (were RoYGCBMp B4 YGTBUDSN);
-         my @d8bl=split(//,$cmap{'d8bl'}); # setup FDAL layerz 2;
-         my @d8bs=split(//,$cmap{'d8bs'}); # setup SGR  planez 2;
+       # my @d8bl=split(//,$cmap{'d8bl'}); # setup FDAL layerz 2;
+       # my @d8bs=split(//,$cmap{'d8bs'}); # setup SGR  planez 2;
 my $locl=eval("use Time::Local           ; 1") || 0; # 2nd d8bo was:  Yellow, Green, Turquoise, Blue,   bisqUe, oliveDrab, Skyblue, Navy;
 my $hirs=eval("use Time::HiRes qw(usleep); 1") || 0; # hopefully usleep or nanosleep can be loaded like this
 my   @_attrnamz=split(//,'YMDzhmsp');my %_attrdflt=();$_attrdflt{$_    }=  0 for(@_attrnamz); # ordered attribute names array && default value (0) hash
@@ -56,41 +56,41 @@ my %_fielclrz=( # global field color codes in a hash of arrays
                   '1B7BFF',  #'6U__' #  minute
                   'BB1BFF',  #'k6__' #  second
                   '7B0BBF'], #'U2l_' #  phass
-  'a' => [     S("$d8bl[0]:$d8bo[0]$d8bs[0]"),          # Year    ANSI (calling a8:S to gener8 SKp codez)
-               S("$d8bl[1]:$d8bo[1]$d8bs[1]"),          # Month
-               S("$d8bl[2]:$d8bo[2]$d8bs[2]"),          # Day
-               S("$d8bl[3]:$d8bo[3]$d8bs[3]"),          #  zone
-               S("$d8bl[4]:$d8bo[4]$d8bs[4]"),          #  hour
-               S("$d8bl[5]:$d8bo[5]$d8bs[5]"),          #  minute
-               S("$d8bl[6]:$d8bo[6]$d8bs[6]"),          #  second
-               S("$d8bl[7]:$d8bo[7]$d8bs[7]")],         #  phass
-  'z' => ["%{".S("$d8bl[0]:$d8bo[0]$d8bs[0]")."%}",     # Year    zsh (wrapping ANSI)
-          "%{".S("$d8bl[1]:$d8bo[1]$d8bs[1]")."%}",     # Month
-          "%{".S("$d8bl[2]:$d8bo[2]$d8bs[2]")."%}",     # Day
-          "%{".S("$d8bl[3]:$d8bo[3]$d8bs[3]")."%}",     #  zone
-          "%{".S("$d8bl[4]:$d8bo[4]$d8bs[4]")."%}",     #  hour
-          "%{".S("$d8bl[5]:$d8bo[5]$d8bs[5]")."%}",     #  minute
-          "%{".S("$d8bl[6]:$d8bo[6]$d8bs[6]")."%}",     #  second
-          "%{".S("$d8bl[7]:$d8bo[7]$d8bs[7]")."%}"],);  #  phass  # below try2only use new exclusively dflt Bold colrs from 256 palette where they are supported
+  'a' => [     $d8cS[0],          # Year    ANSI (calling a8:S to gener8 SKp codez)
+               $d8cS[1],          # Month
+               $d8cS[2],          # Day
+               $d8cS[3],          #  zone
+               $d8cS[4],          #  hour
+               $d8cS[5],          #  minute
+               $d8cS[6],          #  second
+               $d8cS[7]],         #  phass
+  'z' => ["%{".$d8cS[0]."%}",     # Year    zsh (wrapping ANSI)
+          "%{".$d8cS[1]."%}",     # Month
+          "%{".$d8cS[2]."%}",     # Day
+          "%{".$d8cS[3]."%}",     #  zone
+          "%{".$d8cS[4]."%}",     #  hour
+          "%{".$d8cS[5]."%}",     #  minute
+          "%{".$d8cS[6]."%}",     #  second
+          "%{".$d8cS[7]."%}"],);  #  phass  # below try2only use new exclusively dflt Bold colrs from 256 palette where they are supported
 if(exists($ENV{'DISPLAY'}) || (exists($ENV{'TERM'}) && $ENV{'TERM'}=~ /^(sakura|u?rxvt|st|u?xterm)/ && $ENV{'TERM'} ne 'linux')){$_fielclrz{'a'} = [
   # maybe there are yet better ways to detect when most likely wanting colors from the full-screen text console(in.zshrc?) or betr thngz mising?
-               S("$d8bl[0]:$d8bo[0]$d8bs[0]"),          # Year    ANSI (calling a8:S to gener8 SKp codez)
-               S("$d8bl[1]:$d8bo[1]$d8bs[1]"),          # Month
-               S("$d8bl[2]:$d8bo[2]$d8bs[2]"),          # Day
-               S("$d8bl[3]:$d8bo[3]$d8bs[3]"),          #  zone
-               S("$d8bl[4]:$d8bo[4]$d8bs[4]"),          #  hour
-               S("$d8bl[5]:$d8bo[5]$d8bs[5]"),          #  minute
-               S("$d8bl[6]:$d8bo[6]$d8bs[6]"),          #  second
-               S("$d8bl[7]:$d8bo[7]$d8bs[7]")];         #  phass
+               $d8cS[0],          # Year    ANSI (calling a8:S to gener8 SKp codez)
+               $d8cS[1],          # Month
+               $d8cS[2],          # Day
+               $d8cS[3],          #  zone
+               $d8cS[4],          #  hour
+               $d8cS[5],          #  minute
+               $d8cS[6],          #  second
+               $d8cS[7]];         #  phass
   $_fielclrz{'z'} = [
-          "%{".S("$d8bl[0]:$d8bo[0]$d8bs[0]")."%}",     # Year    zsh (wrapping ANSI)
-          "%{".S("$d8bl[1]:$d8bo[1]$d8bs[1]")."%}",     # Month
-          "%{".S("$d8bl[2]:$d8bo[2]$d8bs[2]")."%}",     # Day
-          "%{".S("$d8bl[3]:$d8bo[3]$d8bs[3]")."%}",     #  zone
-          "%{".S("$d8bl[4]:$d8bo[4]$d8bs[4]")."%}",     #  hour
-          "%{".S("$d8bl[5]:$d8bo[5]$d8bs[5]")."%}",     #  minute
-          "%{".S("$d8bl[6]:$d8bo[6]$d8bs[6]")."%}",     #  second
-          "%{".S("$d8bl[7]:$d8bo[7]$d8bs[7]")."%}"]; }  #  phass
+          "%{".$d8cS[0]."%}",     # Year    zsh (wrapping ANSI)
+          "%{".$d8cS[1]."%}",     # Month
+          "%{".$d8cS[2]."%}",     # Day
+          "%{".$d8cS[3]."%}",     #  zone
+          "%{".$d8cS[4]."%}",     #  hour
+          "%{".$d8cS[5]."%}",     #  minute
+          "%{".$d8cS[6]."%}",     #  second
+          "%{".$d8cS[7]."%}"]; }  #  phass
 sub _default_value{my($self,$attr)=@_;$_attrdflt{$attr}} # methods
 sub _attribute_names{@_attrnamz}
 sub _Time_Local{$locl} # can Time::Local be used?

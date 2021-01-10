@@ -4,12 +4,13 @@
 #   upd8 -help mesg,add special -d d8 hndlng4B4 2000&&fR fUtur,add 2|3|4|6|12 colm wId mOdz,add wId 8wEk zoom wi c8 bclr Year && Month or good figlet optz,
 #   mkup betr wkdy colr progrSion than just RoYGCBM mAB wi bg k BhInd wkNdz,add paded YYYYJan wNfitz wEk0 line,apNd wkdy map2botm wi YYYY+1,Xpnd rsn 2 58 lInz,
 #   optimIz loop gNer8ion prntout sPd,wudB Useful2hav intractiv c8 mOd l8r 4 d8 selectz too;  # `rsn` ReSize4calN 171x57 shOz past 19-Yearz from 2000-2018;
-use strict;use warnings;use utf8;use v5.10;my $VERSION='0.0';my $d8VS='KCJL9LJC'; # whN runing `q2` 240x67 term N (probably btwn _ && 0) getz uninit on lIn 39;
+use strict;use warnings;use utf8;use v5.10;my $VERSION='0.0';my $d8VS='L18L6tux'; # whN runing `q2` 240x67 term N (probably btwn _ && 0) getz uninit on lIn 39;
 use      Octology::a8; # mAB Use @Mon  # mABUse just Time::DaysInMonth && DayOfWeek without nEdng d8.pm BlO? (lIkUsng a8:@sb64 nstd of b8.pm:b64())
 use      Octology::d8;use Time::DaysInMonth;my $d8nw;my $d8fY;my $hlpf=0;my $Stxt='';my $optn='';$optn=join(' ',@ARGV) if(@ARGV); # l8r support other formatz
 $d8nw   =Octology::d8->new();my $wndx=1;my $Yrmx=16;if(exists($ENV{'COLUMNS'})){$Yrmx=int($ENV{'COLUMNS'} / 9) - 1;} # sIzbak Yearz by term widt (!<2K yet)
-my($R,$o,$Y,$G)=(S($cmsp{'d8bo'}[0]),S($cmsp{'d8bo'}[1]),S($cmsp{'d8bo'}[2]),S($cmsp{'d8bo'}[3])); # temp remap base-level 8bow singlez with curNt d8bo;
-my($C,$B,$M,$p)=(S($cmsp{'d8bo'}[4]),S($cmsp{'d8bo'}[5]),S($cmsp{'d8bo'}[6]),S($cmsp{'d8bo'}[7]));
+#y($R,$o,$Y,$G)=(S($cmsp{'d8bo'}[0]),S($cmsp{'d8bo'}[1]),S($cmsp{'d8bo'}[2]),S($cmsp{'d8bo'}[3])); # temp remap base-level 8bow singlez with curNt d8bo;
+#y($C,$B,$M,$p)=(S($cmsp{'d8bo'}[4]),S($cmsp{'d8bo'}[5]),S($cmsp{'d8bo'}[6]),S($cmsp{'d8bo'}[7])); # use d8cl below instead of just old solo cmsp d8bo fldz;
+#y($R,$o,$Y,$G, $B,$C,$M,$p)=($d8cS[0],$d8cS[1],$d8cS[2],$d8cS[3], $d8cS[4],$d8cS[5],$d8cS[6],$d8cS[7]); # hopefully tmp lOd prOfIl?;
 if($optn=~s/(^| )(-?-?h(elp)?)( |$)//i){$hlpf=1;} # strip single Help flag to just explain l8st option pRamEterz
 if($optn=~s/(^| )(-?-?y)( |$)//i      ){$Yrmx=0;} # strip single Year flag as sOlO column  # below appendz dflt '11' for MD when just given sOlO Year
 if($optn=~ /(^| )(-?-?d? ?)([0-9A-Z._]{1,8})/i){my $d8ps=$3;if(length($d8ps) < 3){$d8ps.='1' x (3-length($d8ps));} # lOd custom -dYMD optz
@@ -37,7 +38,9 @@ elsif($Yrmx){my @wndz;my @d8Yz;my @wtxz; # tst loop for past 16Years before curr
         if    ( ($_  +  $d8fM->dow()                                                            ) % 7){next;}else{$wtxz[$Year][$wndz[$Year]].=$z;}
         if    (  $_  >  days_in(                        $d8Yz[$Year]->Y(),               $Mnth  ) - 7){
           if  ($Mnth <  12){$wtxz[$Year][$wndz[$Year]+1].=$z.   $R .      $sb64[$d8Yz[$Year]->Y()-2000].$o.$sb64[$Mnth + 1 ];}
-          else             {$wtxz[$Year][$wndz[$Year]+1].=$z.   $R .      $sb64[$d8Yz[$Year]->Y()-1999].$o.             '1' ;} $wndz[$Year]++;
+        # else             {$wtxz[$Year][$wndz[$Year]+1].=$z.   $R .      $sb64[$d8Yz[$Year]->Y()-1999].$o.             '1' ;} $wndz[$Year]++;
+          else             {if(defined( $wtxz[$Year][$wndz[$Year]+1]) && defined($sb64[$d8Yz[$Year]->Y()-1999])){
+                            $wtxz[$Year][$wndz[$Year]+1].=$z.   $R .      $sb64[$d8Yz[$Year]->Y()-1999].$o.             '1' ;}}$wndz[$Year]++;
           if  ($Mnth == 12 && $_ == 31){$wtxz[$Year][$wndz[$Year]].=' 'x 7;}} # pad extra empty blank line for new Year starting Sunday Jan1st
         else               {$wtxz[$Year][$wndz[$Year]+1].=$z;
           if  ($d8nw->M() == $Mnth){$wtxz[$Year][$wndz[$Year]+1].=S('KO');}else{$wtxz[$Year][$wndz[$Year]+1].=$K;}

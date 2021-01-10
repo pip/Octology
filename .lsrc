@@ -2,7 +2,7 @@
 # $VERSION='0.0';$d8VS='KA1M6job'; 2du:mkUtl2gNr8 altrn8 versN of .lsrc th@purposfuly varEz colrz of comon typz,try addng bakgrnd colrz2all dFz&&tst,
 #   add interaction2 lsd8 wN it Dtectz unrecognIzd XtNshNz offerng c@egOrEz with comon colr2autOm@ically insrt chOsN NtrEz,mAB add *-* NtrEz from .zshrc hEr &&
 #   mk lrc gNr8 either,confirm all accept f0nt cOdez wi dash accepting Dfalt foreground then redo NORMAL FILE LINK as no fi ln,mAB 8trm added2TERM ls someday;
-# This file was gNR8d by `lrc` Vers:0.0 d8VS:K6OM5Pxe on d8:KA1M6mIG. Please edit ~/.lrc and run `lrc` then `src` to see changes;
+# This file was gNR8d by `lrc` Vers:0.0 d8VS:L19LEaw8 on d8:L19LHQQW. Please edit ~/.lrc and run `lrc` then `src` to see changes;
 # nOt:I'm pretty sure itz Chunz(!Takiz)`ls`&&`dircolors`th@cud!hndl (MULTI)?HARDLINK sO rEmMbr2kEp th@ lIn cmNtd out4her(&&kEptstng2cnfirm);
 # Keywords COLOR,OPTIONS,&& EIGHTBIT (honored by Slackware dircolors) are recognized but ignored; TERMz && XtNsionz syncd2 2016;
 # Copyright(C) 1996-2016 FreeSoftwareFound8ion,Inc. Copying and distribution of this file, with or without modific8ion, are permitted provided the
@@ -87,12 +87,12 @@ TERM xterm*
 RESET                     00               #rs= 00          00ReSet2"normal"colr&&mAB rEplAcingNORMAL&&FILEsinc theyRcomNtd out of rEcNt`dircolors -p`
 NORMAL                    00               #no= 00          00riginal NOrmal   Dflt (althO idealy everything shud Bcome something distinct)
 FILE                      00               #fi= 00          00        normal   FIle
-DIR                       01;38;5;012      #di= 01;34       01;34     normal   DIrectory
+DIR                       01;38;5;125;48;5;052;55;23 #di= 01;34       01;34     normal   DIrectory
 LINK                      01;38;5;015      #ln= 01;37       01;36     symbolic LiNk (if set2'target'instd of colr;codez,colr inherits file symlinked2)
 MULTIHARDLINK             00               #mh= 00          00        regular  file with more than one link (Usd2B"HARDLINK"wi 44;37 B4 9A6J8d7P)
 ORPHAN                    01;38;5;009;48;5;006;5 #or= 01;31;46;05 01;31;40  sym------link to nonexistent file
 MISSING                   01;38;5;015;48;5;001;5 #mi= 01;37;41;05 00          && the MISSING file it points to (blinkng alert?)
-EXEC                      01;38;5;010      #ex= 01;32       01;32     file w/ EXECute permission                 (+x    )
+EXEC                      01;38;5;052;48;5;236;24;23;29 #ex= 01;32       01;32     file w/ EXECute permission                 (+x    )
 SETUID                    01;38;5;015;48;5;002 #su= 01;37;42    00;37;41  file that is        SETUID                 (   u+s)
 SETGID                    01;38;5;000;48;5;003 #sg= 00;30;43    00;30;43  file that is        SETGID                 (   g+s)
 CAPABILITY                01;38;5;000;48;5;001 #ca= 00;30;41    00;30;41  file with capability?
@@ -100,318 +100,318 @@ STICKY                    01;38;5;015;48;5;004 #st= 01;37;44    00;37;44  dir  w
 OTHER_WRITABLE            01;38;5;012;48;5;002 #ow= 01;34;42    00;34;42  dir  w/ sticky bit !set &&  OTHER-WRITABLE (   o+w)
 STICKY_OTHER_WRITABLE     01;38;5;000;48;5;005 #tw= 00;30;45    00;30;42  dir  w/ STICKY bit  set &&  OTHER-WRITABLE (+t,o+w)
 FIFO                      01;38;5;003;48;5;000 #pi= 00;33;40    00;33;40  pipe  (First-In,First-Out)
-SOCK                      01;38;5;013      #so= 01;35       01;35     SOCKet
-DOOR                      01;38;5;013      #do= 01;35       01;35     DOOR  (not sureYwas cmNtd outB4? I'd gues is POSIX||BSD-cNtric but!in Linux FylSys?)
+SOCK                      01;38;5;089;48;5;004;3 #so= 01;35       01;35     SOCKet
+DOOR                      01;38;5;089;48;5;004;3 #do= 01;35       01;35     DOOR  (not sureYwas cmNtd outB4? I'd gues is POSIX||BSD-cNtric but!in Linux FylSys?)
 BLK                       01;38;5;011;48;5;000 #bd= 01;33;40    01;33;40  BLocK     device driver
 CHR                       01;38;5;011;48;5;000 #cd= 01;33;40    01;33;40  CHaRacter device driver
 #.$extension    \s+    $color_init_string  # $optional_comment
 #YY
 #YY
-.2du                      01;38;5;011      # .2d*, .*shrc && cfg (incl this .lsrc && old DIR_COLORS filz), muz audio, difference,patch,&& log filz
-.2d8                      01;38;5;003      # .2d8 (new ToDate  lyk():YMDhmsfjz2D8)
-.2da                      01;38;5;011      # .2da (new Today  stylz)
-.2di                      01;38;5;009      # .2di (new ToDie..4wut?)
-.2dy                      01;38;5;011      # .2dy (new ToDyn..amix?)
-.2do                      01;38;5;003      # .2do (old ToDo.ls fylz)
-.2de                      01;38;5;011      # .2de (old 2 Dey -> 2dA)
-.4mtd                     01;38;5;172      # H9NMDKNO:~/.irssi/ custom-aligned cfg && Dflt.theme filez (trying lower-case 'o' for non-2pal8 orange here);
-.am                       01;38;5;011      # AutoMake script (like my git cloned source repo for xdg-desktop-portal-gtk, wich stil didn't rid syslog erorz)
-.ac                       01;38;5;172      # AutoConf script (or maybe an AnonymousCoward on SlashDot or something)
-.cfg                      01;38;5;011
-.cnf                      01;38;5;011
-.config                   01;38;5;011
-.conf-sample              01;38;5;011
-.ckm8                     01;38;5;011      # my own SDL && Curses Chess program's game-recording output file-format
-.dox                      01;38;5;011      # my personal doQmNt8ion files (first used for logging my HTTPS://Screeps.Com 2torials progress)
-.dd                       01;38;5;011      # my personal ~/dox/dvl/GTrm/GnomTerm-dconf-dump file but could also be for DiskDriveD8aDuplic8ion files
-.sgf                      01;38;5;011      # HTTPS://En.WikiPedia.Org/wiki/Smart_Game_Format                which is used by HTTPS://Online-Go.Com
-.pgn                      01;38;5;003      # HTTPS://En.WikiPedia.Org/wiki/Portable_Game_Notation           hopefully to be l8r loaded by ckm8
-.fen                      01;38;5;014      # HTTPS://En.WikiPedia.Org/wiki/Forsyth%E2%80%93Edwards_Notation hopefully to be l8r loaded by ckm8
-.gnu                      01;38;5;011      # `jack_test` frame*-1024. but probably some GNU standard for config file formats
-.git                      01;38;5;011
-.hax                      01;38;5;011
-.emacs                    01;38;5;003
-.vimrc                    01;38;5;011
-.Hrc                      01;38;5;010      #  8sh ~ fyl
-.brc                      01;38;5;010      #      ~ bashrc
-.lrc                      01;38;5;010      #  lsd8    lsrc
-.zrc                      01;38;5;010      #      ~  zshrc
-.qrc                      01;38;5;011      # Qt5 && QMake ResourCe files that seem kinda similar to .sh or .ini variable-setting files
-.bxrc                     01;38;5;011
-.shrc                     01;38;5;011
-.zshrc                    01;38;5;011
-.pshrc                    01;38;5;011
-.kshrc                    01;38;5;011
-.cshrc                    01;38;5;011
-.tcshrc                   01;38;5;011
-.bashrc                   01;38;5;011
-.pmixrc                   01;38;5;011
-.yiqsrc                   01;38;5;011
-.muttrc                   01;38;5;011
-.ttreerc                  01;38;5;011
-.gtkrc-2.0                01;38;5;011
-.properties               01;38;5;011
-.renamecategories         01;38;5;013      # /etc/xdg/            filz
-.categories               01;38;5;011      # /etc/xdg/            filz
-.codes                    01;38;5;014      # /etc/xdg/            filz
-.areas                    01;38;5;009      # /etc/xdg/            filz
-.recommended              01;38;5;011      # /etc/zsh/newuser.zshrc.recommended
-.minicpanrc               01;38;5;011
-.slice                    01;38;5;013      # /lib/systemd/system/ filz `man systemd.special` documents User&&Session or VirtualMachine&&Container Slices
-.automount                01;38;5;003      # /lib/systemd/system/ filz
-.mount                    01;38;5;011      # /etc/systemd/system/ filz
-.modes                    01;38;5;011      # /etc/fb.modes        filz probably for: `fbset` Frame-Buffer configur8ionz with resolutionz && timingz etc.
-.message                  01;38;5;011
-.mesg                     01;38;5;011      # MEsSaGe az(ch@EmlInstantTxtMedia*) messagez
-.ch3tm                    01;38;5;013      # /**/*.ch3tm(chEtmz)azCheatSheet.htm HTML fylz
-.ch3t                     01;38;5;011      # /**/*.ch3t (chEtz)prImrLE4 ~pip/dox/dvl/ref/(Vim|XML|Zsh|Perl|.*)(Cheat(Sheet)?)?.txt fylz2trnzitN2
-.chat                     01;38;5;011      # GTalk|JabR|IRC|ICQ|Y!IM|AIM|XMPP|SMS|MMS|*IM.chat, mAB ~pip/dox/dvl/ref/*Cheat* canB .ch3t?
-.cht                      01;38;5;011      # PyQt.cht  (chRtz), ATIRadeonMSLose98Doze32BitDrvrz.CompressedHelpText?
-.real                     01;38;5;011      # /etc/apparmor.d/     filz
-.man                      01;38;5;011      # /etc/apparmor.d/     filz
-.mSj                      01;38;5;011
-.msg                      01;38;5;011
-.gml                      01;38;5;011
-.GmAl                     01;38;5;011
-.gmail                    01;38;5;011
-.dIL0g                    01;38;5;011
-.dL0g                     01;38;5;011
-.L0g                      01;38;5;011
-.dlg                      01;38;5;011      # ~/mvz/lnf8 MooVeeZ linez script dialog fated
-.pot                      01;38;5;092      # ~/dvl/g8/jack/xdp/po/xdg-desktop-portal.pot maybe Portal or Project Object Texts with MIME-Type && msgid strings
-.Po                       01;38;5;011      # ~/dvl/g8/jack/xdp/src/.deps/xdg_desktop_portal-xdg-desktop-portal.Po maybe Pre-configured Object component lists
-.IZ                       01;38;5;011      # NumbFuck/curs/ncurses/README.IZ
-.key                      01;38;5;011
-.keys                     01;38;5;011      # NumbFuck/curs/include/
-.aix4                     01;38;5;003      # NumbFuck/curs/include/
-.hpux11                   01;38;5;013      # NumbFuck/curs/include/
+.2du                      01;38;5;216      # .2d*, .*shrc && cfg (incl this .lsrc && old DIR_COLORS filz), muz audio, difference,patch,&& log filz
+.2d8                      01;38;5;203;21;9;55;25 # .2d8 (new ToDate  lyk():YMDhmsfjz2D8)
+.2da                      01;38;5;216      # .2da (new Today  stylz)
+.2di                      01;38;5;162;4;3;29 # .2di (new ToDie..4wut?)
+.2dy                      01;38;5;216      # .2dy (new ToDyn..amix?)
+.2do                      01;38;5;203;21;9;55;25 # .2do (old ToDo.ls fylz)
+.2de                      01;38;5;216      # .2de (old 2 Dey -> 2dA)
+.4mtd                     01;38;5;203;21;9;55;25 # H9NMDKNO:~/.irssi/ custom-aligned cfg && Dflt.theme filez (trying lower-case 'o' for non-2pal8 orange here);
+.am                       01;38;5;216      # AutoMake script (like my git cloned source repo for xdg-desktop-portal-gtk, wich stil didn't rid syslog erorz)
+.ac                       01;38;5;203;21;9;55;25 # AutoConf script (or maybe an AnonymousCoward on SlashDot or something)
+.cfg                      01;38;5;216
+.cnf                      01;38;5;216
+.config                   01;38;5;216
+.conf-sample              01;38;5;216
+.ckm8                     01;38;5;216      # my own SDL && Curses Chess program's game-recording output file-format
+.dox                      01;38;5;216      # my personal doQmNt8ion files (first used for logging my HTTPS://Screeps.Com 2torials progress)
+.dd                       01;38;5;216      # my personal ~/dox/dvl/GTrm/GnomTerm-dconf-dump file but could also be for DiskDriveD8aDuplic8ion files
+.sgf                      01;38;5;216      # HTTPS://En.WikiPedia.Org/wiki/Smart_Game_Format                which is used by HTTPS://Online-Go.Com
+.pgn                      01;38;5;203;21;9;55;25 # HTTPS://En.WikiPedia.Org/wiki/Portable_Game_Notation           hopefully to be l8r loaded by ckm8
+.fen                      01;38;5;169;53;3 # HTTPS://En.WikiPedia.Org/wiki/Forsyth%E2%80%93Edwards_Notation hopefully to be l8r loaded by ckm8
+.gnu                      01;38;5;216      # `jack_test` frame*-1024. but probably some GNU standard for config file formats
+.git                      01;38;5;216
+.hax                      01;38;5;216
+.emacs                    01;38;5;203;21;9;55;25
+.vimrc                    01;38;5;216
+.Hrc                      01;38;5;052;48;5;236;24;23;29 #  8sh ~ fyl
+.brc                      01;38;5;052;48;5;236;24;23;29 #      ~ bashrc
+.lrc                      01;38;5;052;48;5;236;24;23;29 #  lsd8    lsrc
+.zrc                      01;38;5;052;48;5;236;24;23;29 #      ~  zshrc
+.qrc                      01;38;5;216      # Qt5 && QMake ResourCe files that seem kinda similar to .sh or .ini variable-setting files
+.bxrc                     01;38;5;216
+.shrc                     01;38;5;216
+.zshrc                    01;38;5;216
+.pshrc                    01;38;5;216
+.kshrc                    01;38;5;216
+.cshrc                    01;38;5;216
+.tcshrc                   01;38;5;216
+.bashrc                   01;38;5;216
+.pmixrc                   01;38;5;216
+.yiqsrc                   01;38;5;216
+.muttrc                   01;38;5;216
+.ttreerc                  01;38;5;216
+.gtkrc-2.0                01;38;5;216
+.properties               01;38;5;216
+.renamecategories         01;38;5;089;48;5;004;3 # /etc/xdg/            filz
+.categories               01;38;5;216      # /etc/xdg/            filz
+.codes                    01;38;5;169;53;3 # /etc/xdg/            filz
+.areas                    01;38;5;162;4;3;29 # /etc/xdg/            filz
+.recommended              01;38;5;216      # /etc/zsh/newuser.zshrc.recommended
+.minicpanrc               01;38;5;216
+.slice                    01;38;5;089;48;5;004;3 # /lib/systemd/system/ filz `man systemd.special` documents User&&Session or VirtualMachine&&Container Slices
+.automount                01;38;5;203;21;9;55;25 # /lib/systemd/system/ filz
+.mount                    01;38;5;216      # /etc/systemd/system/ filz
+.modes                    01;38;5;216      # /etc/fb.modes        filz probably for: `fbset` Frame-Buffer configur8ionz with resolutionz && timingz etc.
+.message                  01;38;5;216
+.mesg                     01;38;5;216      # MEsSaGe az(ch@EmlInstantTxtMedia*) messagez
+.ch3tm                    01;38;5;089;48;5;004;3 # /**/*.ch3tm(chEtmz)azCheatSheet.htm HTML fylz
+.ch3t                     01;38;5;216      # /**/*.ch3t (chEtz)prImrLE4 ~pip/dox/dvl/ref/(Vim|XML|Zsh|Perl|.*)(Cheat(Sheet)?)?.txt fylz2trnzitN2
+.chat                     01;38;5;216      # GTalk|JabR|IRC|ICQ|Y!IM|AIM|XMPP|SMS|MMS|*IM.chat, mAB ~pip/dox/dvl/ref/*Cheat* canB .ch3t?
+.cht                      01;38;5;216      # PyQt.cht  (chRtz), ATIRadeonMSLose98Doze32BitDrvrz.CompressedHelpText?
+.real                     01;38;5;216      # /etc/apparmor.d/     filz
+.man                      01;38;5;216      # /etc/apparmor.d/     filz
+.mSj                      01;38;5;216
+.msg                      01;38;5;216
+.gml                      01;38;5;216
+.GmAl                     01;38;5;216
+.gmail                    01;38;5;216
+.dIL0g                    01;38;5;216
+.dL0g                     01;38;5;216
+.L0g                      01;38;5;216
+.dlg                      01;38;5;216      # ~/mvz/lnf8 MooVeeZ linez script dialog fated
+.pot                      01;38;5;001;48;5;000;23 # ~/dvl/g8/jack/xdp/po/xdg-desktop-portal.pot maybe Portal or Project Object Texts with MIME-Type && msgid strings
+.Po                       01;38;5;216      # ~/dvl/g8/jack/xdp/src/.deps/xdg_desktop_portal-xdg-desktop-portal.Po maybe Pre-configured Object component lists
+.IZ                       01;38;5;216      # NumbFuck/curs/ncurses/README.IZ
+.key                      01;38;5;216
+.keys                     01;38;5;216      # NumbFuck/curs/include/
+.aix4                     01;38;5;203;21;9;55;25 # NumbFuck/curs/include/
+.hpux11                   01;38;5;089;48;5;004;3 # NumbFuck/curs/include/
 .osf1r5                   01;38;5;006      # NumbFuck/curs/include/
-.tail                     01;38;5;003      # NumbFuck/curs/*/
-.head                     01;38;5;011      # NumbFuck/curs/man/
+.tail                     01;38;5;203;21;9;55;25 # NumbFuck/curs/*/
+.head                     01;38;5;216      # NumbFuck/curs/man/
 .hin                      01;38;5;006      # NumbFuck/curs/*/
-.ref                      01;38;5;013      # NumbFuck/curs/*/
-.renames                  01;38;5;013      # NumbFuck/curs/man/
-.wide                     01;38;5;013      # NumbFuck/curs/include/
-.uwin                     01;38;5;005      # NumbFuck/curs/include/
-.supp                     01;38;5;005      # NumbFuck/curs/misc/
-.1m                       01;38;5;009      # NumbFuck/curs/man/
+.ref                      01;38;5;089;48;5;004;3 # NumbFuck/curs/*/
+.renames                  01;38;5;089;48;5;004;3 # NumbFuck/curs/man/
+.wide                     01;38;5;089;48;5;004;3 # NumbFuck/curs/include/
+.uwin                     01;38;5;001;48;5;000;23 # NumbFuck/curs/include/
+.supp                     01;38;5;001;48;5;000;23 # NumbFuck/curs/misc/
+.1m                       01;38;5;162;4;3;29 # NumbFuck/curs/man/
 .3x                       01;38;5;006      # NumbFuck/curs/man/
-.xsm                      01;38;5;011      # X.orgSessionManager (/etc/X11/xsm/*) or eXtraSimpleMusic or LEXIS-NEXIS Tracker
-.ovpn                     01;38;5;011      # /etc/windscribe files
-.ogg                      01;38;5;011
-.flac                     01;38;5;011
-.flf                      01;38;5;011      # FigLet Font (with fonts mainly being stored in /usr/share/figlet/ or my ~/dvl/f8/flet/*fonts*/ directories)
-.tlf                      01;38;5;172      # ToiLet Font (with fonts mainly being stored in /usr/share/figlet/ or my ~/dvl/f8/flet/*fonts*/ directories)
-.plf                      01;38;5;011
-.pal8                     01;38;5;011      # f80p pal8
-.pipe                     01;38;5;011      # ~/.cache/corona/ fIlz th@ wer sAvd by rEdIrectng STDOUT from`curl https://corona-stats.online`wi subdirz||?pRamz
-.prl                      01;38;5;011      # like .ini or .sh variable files that seem to accompany /usr/lib/ .so SharedObject library files
+.xsm                      01;38;5;216      # X.orgSessionManager (/etc/X11/xsm/*) or eXtraSimpleMusic or LEXIS-NEXIS Tracker
+.ovpn                     01;38;5;216      # /etc/windscribe files
+.ogg                      01;38;5;216
+.flac                     01;38;5;216
+.flf                      01;38;5;216      # FigLet Font (with fonts mainly being stored in /usr/share/figlet/ or my ~/dvl/f8/flet/*fonts*/ directories)
+.tlf                      01;38;5;203;21;9;55;25 # ToiLet Font (with fonts mainly being stored in /usr/share/figlet/ or my ~/dvl/f8/flet/*fonts*/ directories)
+.plf                      01;38;5;216
+.pal8                     01;38;5;216      # f80p pal8
+.pipe                     01;38;5;216      # ~/.cache/corona/ fIlz th@ wer sAvd by rEdIrectng STDOUT from`curl https://corona-stats.online`wi subdirz||?pRamz
+.prl                      01;38;5;216      # like .ini or .sh variable files that seem to accompany /usr/lib/ .so SharedObject library files
 .tqd                      01;38;5;006      # TorqDJ song in4m8ion fIl (by AvidTechnologyInc.) (from muz/mp3/unsorted/)
-.spc                      01;38;5;011      # Super Nintendo PCM? muz
-.rsn                      01;38;5;011      # RAR compressed archives of abov .spc fIl
-.aac                      01;38;5;011
-.au                       01;38;5;011
-.ecs                      01;38;5;011      # ECASound ChainSetup  files. Syntax is more or less the same as with the comparable command-line arguments.
-.ecp                      01;38;5;011      # ECASound ChainPreset files. Used for storing effect and chain oper8or presets. See user’s guide for more docs.
-.ews                      01;38;5;011      # ECASound Wave Stats. These files are used to cache waveform d8a && allow skipping to precise dur8ion points.
-.mid                      01;38;5;011
-.midi                     01;38;5;011
-.mka                      01;38;5;011
-.m4a                      01;38;5;011
-.mpc                      01;38;5;011
-.mp2                      01;38;5;003      # MPEG-2 (mIt B Ethr audio or video fIl?) (from muz/mp3/misc/PowerPuffGirls-TechnoRemix.mp2 && lotz of old .arc)
-.mp3                      01;38;5;011
-.MP3                      01;38;5;011
-.s3m                      01;38;5;011
-.S3M                      01;38;5;011
-.mod                      01;38;5;011
-.pod                      01;38;5;011
-.pa                       01;38;5;011
-.ra                       01;38;5;011
-.ram                      01;38;5;011
-.raw                      01;38;5;011
-.wav                      01;38;5;011
-.webm                     01;38;5;011      # ogg Media fIl or Movie for the web? Seems2Bjust audio files when coming from youtube-dl && Opus codec in gst123;
-.opus                     01;38;5;011      # HTTP://Wiki.Xiph.Org/index.php/MIME_Types_and_File_Extensions ; Some UKF_Dubstep audio from youtube-dl;
-.wma                      01;38;5;003      # Windows Media Audio
-.WMA                      01;38;5;003      # Windows Media Audio
-.xm                       01;38;5;011
-.it                       01;38;5;011
-.trx                      01;38;5;003
+.spc                      01;38;5;216      # Super Nintendo PCM? muz
+.rsn                      01;38;5;216      # RAR compressed archives of abov .spc fIl
+.aac                      01;38;5;216
+.au                       01;38;5;216
+.ecs                      01;38;5;216      # ECASound ChainSetup  files. Syntax is more or less the same as with the comparable command-line arguments.
+.ecp                      01;38;5;216      # ECASound ChainPreset files. Used for storing effect and chain oper8or presets. See user’s guide for more docs.
+.ews                      01;38;5;216      # ECASound Wave Stats. These files are used to cache waveform d8a && allow skipping to precise dur8ion points.
+.mid                      01;38;5;216
+.midi                     01;38;5;216
+.mka                      01;38;5;216
+.m4a                      01;38;5;216
+.mpc                      01;38;5;216
+.mp2                      01;38;5;203;21;9;55;25 # MPEG-2 (mIt B Ethr audio or video fIl?) (from muz/mp3/misc/PowerPuffGirls-TechnoRemix.mp2 && lotz of old .arc)
+.mp3                      01;38;5;216
+.MP3                      01;38;5;216
+.s3m                      01;38;5;216
+.S3M                      01;38;5;216
+.mod                      01;38;5;216
+.pod                      01;38;5;216
+.pa                       01;38;5;216
+.ra                       01;38;5;216
+.ram                      01;38;5;216
+.raw                      01;38;5;216
+.wav                      01;38;5;216
+.webm                     01;38;5;216      # ogg Media fIl or Movie for the web? Seems2Bjust audio files when coming from youtube-dl && Opus codec in gst123;
+.opus                     01;38;5;216      # HTTP://Wiki.Xiph.Org/index.php/MIME_Types_and_File_Extensions ; Some UKF_Dubstep audio from youtube-dl;
+.wma                      01;38;5;203;21;9;55;25 # Windows Media Audio
+.WMA                      01;38;5;203;21;9;55;25 # Windows Media Audio
+.xm                       01;38;5;216
+.it                       01;38;5;216
+.trx                      01;38;5;203;21;9;55;25
 .xib                      01;38;5;015      # Qt5/qtbase/mkspecs     files
-.xcscheme                 01;38;5;011      # Qt5/qtbase/mkspecs     files
-.xcsettings               01;38;5;172      # Qt5/qtbase/mkspecs     files
-.plist                    01;38;5;092      # Qt5/qtbase/mkspecs     files
-.soundlist                01;38;5;011
-.modules                  01;38;5;011
-.torrent                  01;38;5;011
-.tor                      01;38;5;011
-.tbl                      01;38;5;011      # brltty           character TaBLe               for daemon driving refreshable console Braille display
-.TAG                      01;38;5;011      # ~/.dvdcss/CACHEDIR.
-.def                      01;38;5;011
-.dif                      01;38;5;011
-.diff                     01;38;5;011
-.ldif                     01;38;5;011
-.list                     01;38;5;011      # /etc/apt/* Debian/Ubuntu sources
-.distUpgrade              01;38;5;003      # /etc/apt/* Debian/Ubuntu sources
-.apt                      01;38;5;003      # such apt && Perl -MCPAN -e "install ..." && Force are likely lists of commands needed for those package systems
-.pmei                     01;38;5;014
-.pmfi                     01;38;5;013
-.qdocconf                 01;38;5;172      # Qt5/qtbase/qmake/doc   files
-.qdoc                     01;38;5;011      # Qt5/qtbase/src/testlib files
-.mm                       01;38;5;009      # Qt5/qtbase/src/testlib files
-.btree                    01;38;5;011
-.rules                    01;38;5;011
-.ini                      01;38;5;011
+.xcscheme                 01;38;5;216      # Qt5/qtbase/mkspecs     files
+.xcsettings               01;38;5;203;21;9;55;25 # Qt5/qtbase/mkspecs     files
+.plist                    01;38;5;001;48;5;000;23 # Qt5/qtbase/mkspecs     files
+.soundlist                01;38;5;216
+.modules                  01;38;5;216
+.torrent                  01;38;5;216
+.tor                      01;38;5;216
+.tbl                      01;38;5;216      # brltty           character TaBLe               for daemon driving refreshable console Braille display
+.TAG                      01;38;5;216      # ~/.dvdcss/CACHEDIR.
+.def                      01;38;5;216
+.dif                      01;38;5;216
+.diff                     01;38;5;216
+.ldif                     01;38;5;216
+.list                     01;38;5;216      # /etc/apt/* Debian/Ubuntu sources
+.distUpgrade              01;38;5;203;21;9;55;25 # /etc/apt/* Debian/Ubuntu sources
+.apt                      01;38;5;203;21;9;55;25 # such apt && Perl -MCPAN -e "install ..." && Force are likely lists of commands needed for those package systems
+.pmei                     01;38;5;169;53;3
+.pmfi                     01;38;5;089;48;5;004;3
+.qdocconf                 01;38;5;203;21;9;55;25 # Qt5/qtbase/qmake/doc   files
+.qdoc                     01;38;5;216      # Qt5/qtbase/src/testlib files
+.mm                       01;38;5;162;4;3;29 # Qt5/qtbase/src/testlib files
+.btree                    01;38;5;216
+.rules                    01;38;5;216
+.ini                      01;38;5;216
 .ini8                     01;38;5;184;48;5;000
-.btx                      01;38;5;011
-.emx                      01;38;5;011
-.fnt                      01;38;5;011      # old-skool txt-mode(DOS?)char-fontz kinda like 8x16.psfz wo the header(wich my`etfp -s -f -o`can load)
-.Fnt                      01;38;5;011
-.FNT                      01;38;5;011
-.sfd                      01;38;5;011      # SourceFontforge type Data? FontForge.SF.Net TypeData in *.sfd similR2 *.[ot]tf
-.sf2                      01;38;5;011      # /usr/share/sounds/sf2/MuseScore_General_Full.sf2 SoundFont v2 filz
-.sf3                      01;38;5;003      #     /etc/alternatives/MuseScore_General.sf3      SoundFont v3 filz (on Oni this sf3 sym-links to the sf2 above)
-.slut                     01;38;5;003      # LookUpTbl(EquBpu)azinSndFX,Sprite,Save,Secure,Stuff,Str,Sex,SmRt,sMpL,Scrot,Shot,SystM,Sum1,St8z,St@z..
-.lut                      01;38;5;011      # LookUpTbl(EquBpu)
-.hlut                     01;38;5;003      # LookUpTbl(EquBpu)azinH3AR.Uslut || HelpLkUpTable(eg, ~pip/dox/dvl/ref/vim.hlut)
-.letter                   01;38;5;011
-.version                  01;38;5;011
-.symvers                  01;38;5;011
-.sysctl                   01;38;5;011      # /etc/sysctl.d          files
-.unmask                   01;38;5;011
-.ebuild                   01;38;5;011
-.2emrg                    01;38;5;011
-.md8a                     01;38;5;011      # ~/lib/Octology/p8/psps/gmap/ Map (terrain) D8a files for local manipul8ion of HTTPS://Screeps.Com Global Maps
-.data                     01;38;5;011      # /etc/defoma/
-.data2                    01;38;5;003      # /etc/defoma/
-.patch                    01;38;5;011
-.pid                      01;38;5;011      # /run/
+.btx                      01;38;5;216
+.emx                      01;38;5;216
+.fnt                      01;38;5;216      # old-skool txt-mode(DOS?)char-fontz kinda like 8x16.psfz wo the header(wich my`etfp -s -f -o`can load)
+.Fnt                      01;38;5;216
+.FNT                      01;38;5;216
+.sfd                      01;38;5;216      # SourceFontforge type Data? FontForge.SF.Net TypeData in *.sfd similR2 *.[ot]tf
+.sf2                      01;38;5;216      # /usr/share/sounds/sf2/MuseScore_General_Full.sf2 SoundFont v2 filz
+.sf3                      01;38;5;203;21;9;55;25 #     /etc/alternatives/MuseScore_General.sf3      SoundFont v3 filz (on Oni this sf3 sym-links to the sf2 above)
+.slut                     01;38;5;203;21;9;55;25 # LookUpTbl(EquBpu)azinSndFX,Sprite,Save,Secure,Stuff,Str,Sex,SmRt,sMpL,Scrot,Shot,SystM,Sum1,St8z,St@z..
+.lut                      01;38;5;216      # LookUpTbl(EquBpu)
+.hlut                     01;38;5;203;21;9;55;25 # LookUpTbl(EquBpu)azinH3AR.Uslut || HelpLkUpTable(eg, ~pip/dox/dvl/ref/vim.hlut)
+.letter                   01;38;5;216
+.version                  01;38;5;216
+.symvers                  01;38;5;216
+.sysctl                   01;38;5;216      # /etc/sysctl.d          files
+.unmask                   01;38;5;216
+.ebuild                   01;38;5;216
+.2emrg                    01;38;5;216
+.md8a                     01;38;5;216      # ~/lib/Octology/p8/psps/gmap/ Map (terrain) D8a files for local manipul8ion of HTTPS://Screeps.Com Global Maps
+.data                     01;38;5;216      # /etc/defoma/
+.data2                    01;38;5;203;21;9;55;25 # /etc/defoma/
+.patch                    01;38;5;216
+.pid                      01;38;5;216      # /run/
 .al                       01;38;5;015
 .all                      01;38;5;015
-.erc                      01;38;5;011
-.log                      01;38;5;011
-.lsrc                     01;38;5;011
-.ls_clrz                  01;38;5;011
-.ls_colors                01;38;5;011
-.LS_COLORS                01;38;5;011
-.LS_COLORS-zsh            01;38;5;011
-.LS_COLORS-Ryu            01;38;5;011
-.LS_COLORS-4nt            01;38;5;011
-.LS_COLORS-4NT            01;38;5;011
-.LS_COLORS-Taki           01;38;5;011
-.LS_COLORS-LBox           01;38;5;011
-.DIR_COLORS               01;38;5;011
-.dir_colors               01;38;5;011
-.dirs                     01;38;5;011
+.erc                      01;38;5;216
+.log                      01;38;5;216
+.lsrc                     01;38;5;216
+.ls_clrz                  01;38;5;216
+.ls_colors                01;38;5;216
+.LS_COLORS                01;38;5;216
+.LS_COLORS-zsh            01;38;5;216
+.LS_COLORS-Ryu            01;38;5;216
+.LS_COLORS-4nt            01;38;5;216
+.LS_COLORS-4NT            01;38;5;216
+.LS_COLORS-Taki           01;38;5;216
+.LS_COLORS-LBox           01;38;5;216
+.DIR_COLORS               01;38;5;216
+.dir_colors               01;38;5;216
+.dirs                     01;38;5;216
 #OO
 #OO
-.G-Force                  01;38;5;003      # Lib-Vizualiz8ion GForce actor plug-in file that showed up in ~;
-.locale                   01;38;5;003
-.dconf-defaults           01;38;5;009      # /etc/gdm3 files
-.dconf                    01;38;5;003      # J6JMKNID:probably something like the output of `dconf dump /org/gnome/terminal/legacy/` to "load" l8r;
-.conf                     01;38;5;003      # config filz,(basic) play-list filz,shell-scripts,bookmarks,&& DOS-style executablz
-.conffiles                01;38;5;003      # /var/lib/dpkg/info/rxvt-unicode.conffiles
-.dmrc                     01;38;5;003      # Dsktp Menu|Mngr? on Chun
-.gtkrc                    01;38;5;003
-.toprc                    01;38;5;003      # nstd of htop, can input "zxcVm1t0" then g[2-4] to go2 sepR8 wndoz&&du similR inputz then W writez cnfg
-.mmixrc                   01;38;5;003
-.alsarc                   01;38;5;009
-.aumixrc                  01;38;5;003
-.jack3rc                  01;38;5;003
-.jackdrc                  01;38;5;005
-.runescape                01;38;5;003      # Jagex game Kyle (UserName:"I Am TRK") wanted to play together, but has horribly tiny unscalable UI on 24" 1080p
-.default_mixer            01;38;5;003
-.mikmod_playlist          01;38;5;005
-.mikmodrc                 01;38;5;003
-.dvdriprc                 01;38;5;003
-.bitchxrc                 01;38;5;003
-.bxp4prc                  01;38;5;003
-.fterc                    01;38;5;003      # FoldingTextEditor (for programmers)
-.knsrc                    01;38;5;003      # /etc/xdg/konsole KoNSole ResourCe file
-.inputrc                  01;38;5;003
-.joy2keyrc                01;38;5;003
-.blackboxrc               01;38;5;003
-.pc                       01;38;5;003
-.Xrc                      01;38;5;011
-.Xresources               01;38;5;003
-.xtermcontrol             01;38;5;003
-.doxy                     01;38;5;003      #         file in Qt5 qtdeclarative/ project sub-directory
-.Chromium                 01;38;5;003      # LICENSE file in Qt5 qtwebengine/   project sub-directory
-.QT-LICENSE-AGREEMENT     01;38;5;003      # LICENSE file in Qt5 qtbase/        project sub-directory && in `git clone git://code.qt.io/qt/qt5.git` qt5/
-.milkytracker_config      01;38;5;003
-.fbhighscores             01;38;5;003
-.linux_logo               01;38;5;003
-.gitconfig                01;38;5;003
-.netrwhist                01;38;5;003      # ~/.vim/
-.opt                      01;38;5;003      # configure script parameter options file (with each option on a sepR8 line)
-.options                  01;38;5;003
-.cvspass                  01;38;5;003
-.dynamic                  01;38;5;003      # /run/
-.desktop                  01;38;5;003
-.dsktp                    01;38;5;003
-.nvdp                     01;38;5;003
-.nvp                      01;38;5;003      # NVidiaPr0fyl(128MyBRAM4TakizG4bsgO7400) || l.e.NverMathverixDbltrivLngKr0zCkIzingVrsezUrLAkingzPrpLpr88R
-.email                    01;38;5;011
-.EmAl                     01;38;5;011
-.eml                      01;38;5;011
-.sig                      01;38;5;003      # 4um||eml .signature sigN82R typ fylz
-.SH                       01;38;5;003      # ~/.inst/perl-5.8.8/pod/Makefile.
-.sh                       01;38;5;003
-.zsh                      01;38;5;003
-.psh                      01;38;5;003
-.ksh                      01;38;5;003
-.csh                      01;38;5;003
-.tcsh                     01;38;5;003
-.fish                     01;38;5;003
-.bash                     01;38;5;003
-.bat                      01;38;5;011
-.Bat                      01;38;5;011
-.BAT                      01;38;5;010
-.btm                      01;38;5;010
-.cti                      01;38;5;003      # brltty           Character Table International for daemon driving refreshable console Braille display
-.cmd                      01;38;5;003
-.com                      01;38;5;003
-.Com                      01;38;5;003
-.COM                      01;38;5;003
-.elf                      01;38;5;011      # /boot/memtest86+.elf (Executable Linux? Format)
-.nexe                     01;38;5;003
-.exe                      01;38;5;003
-.Exe                      01;38;5;003
-.EXE                      01;38;5;003
-.opts                     01;38;5;003      # /etc/pcmcia/ && /usr/lib/pcmciautils/
-.otf                      01;38;5;003      # OpenTypeFont
-.Otf                      01;38;5;003
-.OTF                      01;38;5;003
-.f0nt                     01;38;5;003      # f80p f0nt fylz
-.fon                      01;38;5;003      # Windows bitmapped FONt to accompany TTF?
-.Fon                      01;38;5;003
-.FON                      01;38;5;003
-.face                     01;38;5;003
-.fgz                      01;38;5;005      # .pcfFontFile          GZipd
-.hqx                      01;38;5;005      # Mac FontFile||CmprsdArcZip? (mAB.hqx iz cmprSd arc of bin.sit Mac fnt thN?)
-.sit                      01;38;5;003      # Mac FontFile||CmprsdArcZip?
-.sfv                      01;38;5;003      # SimpleFileVerific8ion storing CRC32 cksumz from muz/mp3/sndtrx/KatamariDamacy-Fortissimo/
-.swf                      01;38;5;003      # Adobe ShockWave Flash
-.jfc                      01;38;5;003      # /etc/java-11-openjdk/jfr files
-.ja                       01;38;5;003      # probably Japanese file from /etc/java-*-openjdk/ or /usr/(lib/(firefox|thunderbird)|share/aptitude)/
-.bbl                      01;38;5;003
-.vrs                      01;38;5;003      # likely UTF-8 text file containing Bible VeRSes (possibly including some Hebrew transl8ions)
-.rdf                      01;38;5;003
-.gws                      01;38;5;003      # NetGearRoutr GateWaySettings
-.sub                      01;38;5;003      # configur8ion valid8ion Subroutine script, probably from the Free Software Foundation, Inc.
-.subs                     01;38;5;003      # ~/muz/U2ba   Music-Subtitles
-.lrx                      01;38;5;003      # ~/muz/lrx    MusicLyricSings
-.lnx                      01;38;5;003      #      LiNX like tabz && linkz && URL'z
-.webloc                   01;38;5;003
-.urlview                  01;38;5;003
-.url                      01;38;5;003      # text filz containing web URLs
-.URL                      01;38;5;003
-.use                      01;38;5;003
-.xl8                      01;38;5;003      # ~/dvl/t8/**/xl8/ gener8d  d8a-files from attempt to autom8 complex transl8ion evalU8ions with xdotool .xd2 scripts
-.certs                    01;38;5;003      # /etc/java-11-openjdk/security files
-.MANIFEST                 01;38;5;003
-.bookmarks                01;38;5;003
+.G-Force                  01;38;5;203;21;9;55;25 # Lib-Vizualiz8ion GForce actor plug-in file that showed up in ~;
+.locale                   01;38;5;203;21;9;55;25
+.dconf-defaults           01;38;5;162;4;3;29 # /etc/gdm3 files
+.dconf                    01;38;5;203;21;9;55;25 # J6JMKNID:probably something like the output of `dconf dump /org/gnome/terminal/legacy/` to "load" l8r;
+.conf                     01;38;5;203;21;9;55;25 # config filz,(basic) play-list filz,shell-scripts,bookmarks,&& DOS-style executablz
+.conffiles                01;38;5;203;21;9;55;25 # /var/lib/dpkg/info/rxvt-unicode.conffiles
+.dmrc                     01;38;5;203;21;9;55;25 # Dsktp Menu|Mngr? on Chun
+.gtkrc                    01;38;5;203;21;9;55;25
+.toprc                    01;38;5;203;21;9;55;25 # nstd of htop, can input "zxcVm1t0" then g[2-4] to go2 sepR8 wndoz&&du similR inputz then W writez cnfg
+.mmixrc                   01;38;5;203;21;9;55;25
+.alsarc                   01;38;5;162;4;3;29
+.aumixrc                  01;38;5;203;21;9;55;25
+.jack3rc                  01;38;5;203;21;9;55;25
+.jackdrc                  01;38;5;001;48;5;000;23
+.runescape                01;38;5;203;21;9;55;25 # Jagex game Kyle (UserName:"I Am TRK") wanted to play together, but has horribly tiny unscalable UI on 24" 1080p
+.default_mixer            01;38;5;203;21;9;55;25
+.mikmod_playlist          01;38;5;001;48;5;000;23
+.mikmodrc                 01;38;5;203;21;9;55;25
+.dvdriprc                 01;38;5;203;21;9;55;25
+.bitchxrc                 01;38;5;203;21;9;55;25
+.bxp4prc                  01;38;5;203;21;9;55;25
+.fterc                    01;38;5;203;21;9;55;25 # FoldingTextEditor (for programmers)
+.knsrc                    01;38;5;203;21;9;55;25 # /etc/xdg/konsole KoNSole ResourCe file
+.inputrc                  01;38;5;203;21;9;55;25
+.joy2keyrc                01;38;5;203;21;9;55;25
+.blackboxrc               01;38;5;203;21;9;55;25
+.pc                       01;38;5;203;21;9;55;25
+.Xrc                      01;38;5;216
+.Xresources               01;38;5;203;21;9;55;25
+.xtermcontrol             01;38;5;203;21;9;55;25
+.doxy                     01;38;5;203;21;9;55;25 #         file in Qt5 qtdeclarative/ project sub-directory
+.Chromium                 01;38;5;203;21;9;55;25 # LICENSE file in Qt5 qtwebengine/   project sub-directory
+.QT-LICENSE-AGREEMENT     01;38;5;203;21;9;55;25 # LICENSE file in Qt5 qtbase/        project sub-directory && in `git clone git://code.qt.io/qt/qt5.git` qt5/
+.milkytracker_config      01;38;5;203;21;9;55;25
+.fbhighscores             01;38;5;203;21;9;55;25
+.linux_logo               01;38;5;203;21;9;55;25
+.gitconfig                01;38;5;203;21;9;55;25
+.netrwhist                01;38;5;203;21;9;55;25 # ~/.vim/
+.opt                      01;38;5;203;21;9;55;25 # configure script parameter options file (with each option on a sepR8 line)
+.options                  01;38;5;203;21;9;55;25
+.cvspass                  01;38;5;203;21;9;55;25
+.dynamic                  01;38;5;203;21;9;55;25 # /run/
+.desktop                  01;38;5;203;21;9;55;25
+.dsktp                    01;38;5;203;21;9;55;25
+.nvdp                     01;38;5;203;21;9;55;25
+.nvp                      01;38;5;203;21;9;55;25 # NVidiaPr0fyl(128MyBRAM4TakizG4bsgO7400) || l.e.NverMathverixDbltrivLngKr0zCkIzingVrsezUrLAkingzPrpLpr88R
+.email                    01;38;5;216
+.EmAl                     01;38;5;216
+.eml                      01;38;5;216
+.sig                      01;38;5;203;21;9;55;25 # 4um||eml .signature sigN82R typ fylz
+.SH                       01;38;5;203;21;9;55;25 # ~/.inst/perl-5.8.8/pod/Makefile.
+.sh                       01;38;5;203;21;9;55;25
+.zsh                      01;38;5;203;21;9;55;25
+.psh                      01;38;5;203;21;9;55;25
+.ksh                      01;38;5;203;21;9;55;25
+.csh                      01;38;5;203;21;9;55;25
+.tcsh                     01;38;5;203;21;9;55;25
+.fish                     01;38;5;203;21;9;55;25
+.bash                     01;38;5;203;21;9;55;25
+.bat                      01;38;5;216
+.Bat                      01;38;5;216
+.BAT                      01;38;5;052;48;5;236;24;23;29
+.btm                      01;38;5;052;48;5;236;24;23;29
+.cti                      01;38;5;203;21;9;55;25 # brltty           Character Table International for daemon driving refreshable console Braille display
+.cmd                      01;38;5;203;21;9;55;25
+.com                      01;38;5;203;21;9;55;25
+.Com                      01;38;5;203;21;9;55;25
+.COM                      01;38;5;203;21;9;55;25
+.elf                      01;38;5;216      # /boot/memtest86+.elf (Executable Linux? Format)
+.nexe                     01;38;5;203;21;9;55;25
+.exe                      01;38;5;203;21;9;55;25
+.Exe                      01;38;5;203;21;9;55;25
+.EXE                      01;38;5;203;21;9;55;25
+.opts                     01;38;5;203;21;9;55;25 # /etc/pcmcia/ && /usr/lib/pcmciautils/
+.otf                      01;38;5;203;21;9;55;25 # OpenTypeFont
+.Otf                      01;38;5;203;21;9;55;25
+.OTF                      01;38;5;203;21;9;55;25
+.f0nt                     01;38;5;203;21;9;55;25 # f80p f0nt fylz
+.fon                      01;38;5;203;21;9;55;25 # Windows bitmapped FONt to accompany TTF?
+.Fon                      01;38;5;203;21;9;55;25
+.FON                      01;38;5;203;21;9;55;25
+.face                     01;38;5;203;21;9;55;25
+.fgz                      01;38;5;001;48;5;000;23 # .pcfFontFile          GZipd
+.hqx                      01;38;5;001;48;5;000;23 # Mac FontFile||CmprsdArcZip? (mAB.hqx iz cmprSd arc of bin.sit Mac fnt thN?)
+.sit                      01;38;5;203;21;9;55;25 # Mac FontFile||CmprsdArcZip?
+.sfv                      01;38;5;203;21;9;55;25 # SimpleFileVerific8ion storing CRC32 cksumz from muz/mp3/sndtrx/KatamariDamacy-Fortissimo/
+.swf                      01;38;5;203;21;9;55;25 # Adobe ShockWave Flash
+.jfc                      01;38;5;203;21;9;55;25 # /etc/java-11-openjdk/jfr files
+.ja                       01;38;5;203;21;9;55;25 # probably Japanese file from /etc/java-*-openjdk/ or /usr/(lib/(firefox|thunderbird)|share/aptitude)/
+.bbl                      01;38;5;203;21;9;55;25
+.vrs                      01;38;5;203;21;9;55;25 # likely UTF-8 text file containing Bible VeRSes (possibly including some Hebrew transl8ions)
+.rdf                      01;38;5;203;21;9;55;25
+.gws                      01;38;5;203;21;9;55;25 # NetGearRoutr GateWaySettings
+.sub                      01;38;5;203;21;9;55;25 # configur8ion valid8ion Subroutine script, probably from the Free Software Foundation, Inc.
+.subs                     01;38;5;203;21;9;55;25 # ~/muz/U2ba   Music-Subtitles
+.lrx                      01;38;5;203;21;9;55;25 # ~/muz/lrx    MusicLyricSings
+.lnx                      01;38;5;203;21;9;55;25 #      LiNX like tabz && linkz && URL'z
+.webloc                   01;38;5;203;21;9;55;25
+.urlview                  01;38;5;203;21;9;55;25
+.url                      01;38;5;203;21;9;55;25 # text filz containing web URLs
+.URL                      01;38;5;203;21;9;55;25
+.use                      01;38;5;203;21;9;55;25
+.xl8                      01;38;5;203;21;9;55;25 # ~/dvl/t8/**/xl8/ gener8d  d8a-files from attempt to autom8 complex transl8ion evalU8ions with xdotool .xd2 scripts
+.certs                    01;38;5;203;21;9;55;25 # /etc/java-11-openjdk/security files
+.MANIFEST                 01;38;5;203;21;9;55;25
+.bookmarks                01;38;5;203;21;9;55;25
 .gtk-bookmarks            01;38;5;006      # ~ file that I'd rather vary the color of seen commonly there than match other *.bookmarks elsewhere
 #WW
 #WW
@@ -421,7 +421,7 @@ CHR                       01;38;5;011;48;5;000 #cd= 01;33;40    01;33;40  CHaRac
 .dir                      01;38;5;015
 .df                       01;38;5;015
 .du                       01;38;5;015
-.ls                       01;38;5;014      # try2difrNtE8 colrz of my growing number of LiSt filez as altern8ive to ubiquitous plain .txt filez
+.ls                       01;38;5;169;53;3 # try2difrNtE8 colrz of my growing number of LiSt filez as altern8ive to ubiquitous plain .txt filez
 .lsh                      01;38;5;006      # ICULHdWf:whIl mOst .ls fIlz abov wil stRt as just UTF8 [conf] 4m@z4 vim,l8r mA 4k off lIk this new `lshw` varE8n;
 .lst                      01;38;5;015
 .1st                      01;38;5;015
@@ -452,7 +452,7 @@ CHR                       01;38;5;011;48;5;000 #cd= 01;33;40    01;33;40  CHaRac
 .keywords                 01;38;5;015
 .example                  01;38;5;015
 .sample                   01;38;5;015
-.xmpl                     01;38;5;014
+.xmpl                     01;38;5;169;53;3
 .trs                      01;38;5;015      # ~/dvl/g8/jack/xdp/ xdg-desktop-portal Test ReSults filz
 .readme                   01;38;5;015
 .README                   01;38;5;015
@@ -475,8 +475,8 @@ CHR                       01;38;5;011;48;5;000 #cd= 01;33;40    01;33;40  CHaRac
 .lib                      01;38;5;008
 .Lib                      01;38;5;008
 .libs                     01;38;5;008      # ~/.inst/perl-5.8.8/ext.
-.pods                     01;38;5;011      # ~/.inst/perl-5.8.8/extra.
-.fnc                      01;38;5;003      # ~/.inst/perl-5.8.8/embed.
+.pods                     01;38;5;216      # ~/.inst/perl-5.8.8/extra.
+.fnc                      01;38;5;203;21;9;55;25 # ~/.inst/perl-5.8.8/embed.
 .micro                    01;38;5;008      # ~/.inst/perl-5.8.8/(Makefile|README|Todo).
 .dll                      01;38;5;008
 .Dll                      01;38;5;008
@@ -512,256 +512,256 @@ CHR                       01;38;5;011;48;5;000 #cd= 01;33;40    01;33;40  CHaRac
 .prv8                     01;38;5;000;48;5;000;8 # immeD8 overidez of Foregrnd && backgrnd colrz plus inVisible SGR flag (so shud B dbl-clikabl but rarely seen)
 #MM
 #MM
-.htm                      01;38;5;013      # HTML && YA?ML && XML && (detailed) play-list filz && .profile && .history filz
-.HTM                      01;38;5;013
-.html                     01;38;5;013
-.HTML                     01;38;5;013
-.TOML                     01;38;5;013      # apparently some other Tcl Object Markup Language or something with rustup for cargo build inside nushell release
-.toml                     01;38;5;013
-.qml                      01;38;5;013      # Qt Mark-up Language            filz
-.qmlc                     01;38;5;092      # Qt Mark-up Language Cache      filz (from ~/.cache/krita/qmlcache/)
-.jsc                      01;38;5;172      # Qt JavaScript?      Cache      filz (from ~/.cache/krita/qmlcache/)
-.json                     01;38;5;013
-.xml~                     01;38;5;092
-.xml                      01;38;5;013
-.XML                      01;38;5;013
-.xhtml                    01;38;5;013
-.XHTML                    01;38;5;013
-.YAML                     01;38;5;013
-.yaml                     01;38;5;013
-.yml                      01;38;5;013
-.YML                      01;38;5;013
-.DAE                      01;38;5;013
-.dae                      01;38;5;013      # COLLADA Digital Asset Exchange filz
-.hkx                      01;38;5;013      # HavoK  (physics data)  Xml     filz
-.HKX                      01;38;5;013
-.hko                      01;38;5;013      # HavoK  (physics data)  Xml     filz
-.HKO                      01;38;5;013
-.ppx                      01;38;5;013      # Pip's Poker            XML     filz
-.roc                      01;38;5;013      # RazOrb Config                  filz
-.usm                      01;38;5;013      # UCI Showdown Move              filz
-.fpx                      01;38;5;013      # FPal (Font && Palette) XML     filz
-.fp                       01;38;5;013
-.fpf                      01;38;5;013
-.fpp                      01;38;5;013
-.pal                      01;38;5;013
-.psf                      01;38;5;013      # PostScript (Type2?) Font
-.hlp                      01;38;5;013      # HeLP                           filz
-.help                     01;38;5;013
-.desc                     01;38;5;013      # /usr/share/tasksel/ or ~/.mplayer/font/
-.vars                     01;38;5;013
-.order                    01;38;5;013
-.portal                   01;38;5;013      # /usr/(local/)?share/xdg-desktop-portal/portals probably just for gnome-shell, gtk, && kde
-.BUILDINFO                01;38;5;013      # cadence 0.9.1-1 lists all my system's installed libraries with versions neatly after the variable section;
+.htm                      01;38;5;089;48;5;004;3 # HTML && YA?ML && XML && (detailed) play-list filz && .profile && .history filz
+.HTM                      01;38;5;089;48;5;004;3
+.html                     01;38;5;089;48;5;004;3
+.HTML                     01;38;5;089;48;5;004;3
+.TOML                     01;38;5;089;48;5;004;3 # apparently some other Tcl Object Markup Language or something with rustup for cargo build inside nushell release
+.toml                     01;38;5;089;48;5;004;3
+.qml                      01;38;5;089;48;5;004;3 # Qt Mark-up Language            filz
+.qmlc                     01;38;5;001;48;5;000;23 # Qt Mark-up Language Cache      filz (from ~/.cache/krita/qmlcache/)
+.jsc                      01;38;5;203;21;9;55;25 # Qt JavaScript?      Cache      filz (from ~/.cache/krita/qmlcache/)
+.json                     01;38;5;089;48;5;004;3
+.xml~                     01;38;5;001;48;5;000;23
+.xml                      01;38;5;089;48;5;004;3
+.XML                      01;38;5;089;48;5;004;3
+.xhtml                    01;38;5;089;48;5;004;3
+.XHTML                    01;38;5;089;48;5;004;3
+.YAML                     01;38;5;089;48;5;004;3
+.yaml                     01;38;5;089;48;5;004;3
+.yml                      01;38;5;089;48;5;004;3
+.YML                      01;38;5;089;48;5;004;3
+.DAE                      01;38;5;089;48;5;004;3
+.dae                      01;38;5;089;48;5;004;3 # COLLADA Digital Asset Exchange filz
+.hkx                      01;38;5;089;48;5;004;3 # HavoK  (physics data)  Xml     filz
+.HKX                      01;38;5;089;48;5;004;3
+.hko                      01;38;5;089;48;5;004;3 # HavoK  (physics data)  Xml     filz
+.HKO                      01;38;5;089;48;5;004;3
+.ppx                      01;38;5;089;48;5;004;3 # Pip's Poker            XML     filz
+.roc                      01;38;5;089;48;5;004;3 # RazOrb Config                  filz
+.usm                      01;38;5;089;48;5;004;3 # UCI Showdown Move              filz
+.fpx                      01;38;5;089;48;5;004;3 # FPal (Font && Palette) XML     filz
+.fp                       01;38;5;089;48;5;004;3
+.fpf                      01;38;5;089;48;5;004;3
+.fpp                      01;38;5;089;48;5;004;3
+.pal                      01;38;5;089;48;5;004;3
+.psf                      01;38;5;089;48;5;004;3 # PostScript (Type2?) Font
+.hlp                      01;38;5;089;48;5;004;3 # HeLP                           filz
+.help                     01;38;5;089;48;5;004;3
+.desc                     01;38;5;089;48;5;004;3 # /usr/share/tasksel/ or ~/.mplayer/font/
+.vars                     01;38;5;089;48;5;004;3
+.order                    01;38;5;089;48;5;004;3
+.portal                   01;38;5;089;48;5;004;3 # /usr/(local/)?share/xdg-desktop-portal/portals probably just for gnome-shell, gtk, && kde
+.BUILDINFO                01;38;5;089;48;5;004;3 # cadence 0.9.1-1 lists all my system's installed libraries with versions neatly after the variable section;
 .MTREE                    01;38;5;008      # cad && qjc qJackCtl seem to be the 2 awkward ways to setup JACK but I can't seem to get audio out of either;
 .PKGINFO                  01;38;5;006      # cadence output for makepkg && fakeroot with various bridges to JACK that don't seem to work for playback yet;
-.info                     01;38;5;013
-.inf                      01;38;5;013
-.img                      01;38;5;013      # putr-NetRtrG8Wz FirmWare IMaGe
-.vti                      01;38;5;013      # VTK Image d8a from ParaView by KitwareInc. to visualize large d8a sets
-.ass                      01;38;5;172      # Audio Sub-title System for like video overlay text for closed-captioning    (from ~/.config/smplayer/*)
-.m3u8                     01;38;5;013      # basic   playlist muz filz in a .txt simpleformat (presumably a UTF-8 variant from ~/.config/smplayer/*)
-.m3u                      01;38;5;005      # basic   playlist muz filz in a .txt simpleformat (proly just listing filepath&&name/line,wi no metad8a)
-.pls                      01;38;5;013      #         PlayLiSt muz filz in a .ini style format
-.tox                      01;38;5;013      # ~/.xine PlayList muz filz in a .json or MakeFile style format (also for mvz videos too)
-.wpl                      01;38;5;013      # Windows PlayList muz filz in a  XML       format for Microsoft WindowsMediaPlayer
-.spi                      01;38;5;013
-.itl                      01;38;5;005      # iTunes Library
-.aup                      01;38;5;013      # Audacity Project
-.anx                      01;38;5;013      # HTTP://Wiki.Xiph.Org/index.php/MIME_Types_and_File_Extensions
-.axv                      01;38;5;013      # HTTP://Wiki.Xiph.Org/index.php/MIME_Types_and_File_Extensions
-.ogv                      01;38;5;013      # HTTP://Wiki.Xiph.Org/index.php/MIME_Types_and_File_Extensions
-.ogx                      01;38;5;013      # HTTP://Wiki.Xiph.Org/index.php/MIME_Types_and_File_Extensions
-.diz                      01;38;5;013
-.heavy                    01;38;5;005      # /usr/share/cups/charsets/
-.simple                   01;38;5;013      # /usr/share/cups/charsets/ or /usr/share/misc/ or ~/.subversion/auth/
-.summary                  01;38;5;013      # configure script result summary output files
-.subst-rule               01;38;5;013      # /etc/defoma/
-.settings                 01;38;5;013
-.terminfo                 01;38;5;013
-.quiltrc                  01;38;5;013
-.emerald                  01;38;5;013
-.markers                  01;38;5;013
-.mailmap                  01;38;5;013
-.mmixer                   01;38;5;013
-.menus                    01;38;5;013      # /etc/ardour5 files
-.menu                     01;38;5;013
-.m4                       01;38;5;013
-.md                       01;38;5;013      # MarkDown file like ~/.inst/youtube-dl/README.
-.mk                       01;38;5;013
-.mak                      01;38;5;013
-.make                     01;38;5;013
-.cmake                    01;38;5;013
-.makefile                 01;38;5;013
-.Makefile                 01;38;5;013
-.MakeFile                 01;38;5;013
-.MAKEFILE                 01;38;5;013
-.vspscc                   01;38;5;013
-.yafray                   01;38;5;013
-.bitmap                   01;38;5;013      # MSWindows QuickTime/QTSystem/ or Safari/CoreFoundation.resources/CharacterSets/
-.bhs                      01;38;5;013      # ~ bash_history
-.zhs                      01;38;5;013      # ~  zsh_history
-.qtx                      01;38;5;005      # MSWindows QuickTime/QTSystem/ or Safari/CoreFoundation.resources/CharacterSets/
+.info                     01;38;5;089;48;5;004;3
+.inf                      01;38;5;089;48;5;004;3
+.img                      01;38;5;089;48;5;004;3 # putr-NetRtrG8Wz FirmWare IMaGe
+.vti                      01;38;5;089;48;5;004;3 # VTK Image d8a from ParaView by KitwareInc. to visualize large d8a sets
+.ass                      01;38;5;203;21;9;55;25 # Audio Sub-title System for like video overlay text for closed-captioning    (from ~/.config/smplayer/*)
+.m3u8                     01;38;5;089;48;5;004;3 # basic   playlist muz filz in a .txt simpleformat (presumably a UTF-8 variant from ~/.config/smplayer/*)
+.m3u                      01;38;5;001;48;5;000;23 # basic   playlist muz filz in a .txt simpleformat (proly just listing filepath&&name/line,wi no metad8a)
+.pls                      01;38;5;089;48;5;004;3 #         PlayLiSt muz filz in a .ini style format
+.tox                      01;38;5;089;48;5;004;3 # ~/.xine PlayList muz filz in a .json or MakeFile style format (also for mvz videos too)
+.wpl                      01;38;5;089;48;5;004;3 # Windows PlayList muz filz in a  XML       format for Microsoft WindowsMediaPlayer
+.spi                      01;38;5;089;48;5;004;3
+.itl                      01;38;5;001;48;5;000;23 # iTunes Library
+.aup                      01;38;5;089;48;5;004;3 # Audacity Project
+.anx                      01;38;5;089;48;5;004;3 # HTTP://Wiki.Xiph.Org/index.php/MIME_Types_and_File_Extensions
+.axv                      01;38;5;089;48;5;004;3 # HTTP://Wiki.Xiph.Org/index.php/MIME_Types_and_File_Extensions
+.ogv                      01;38;5;089;48;5;004;3 # HTTP://Wiki.Xiph.Org/index.php/MIME_Types_and_File_Extensions
+.ogx                      01;38;5;089;48;5;004;3 # HTTP://Wiki.Xiph.Org/index.php/MIME_Types_and_File_Extensions
+.diz                      01;38;5;089;48;5;004;3
+.heavy                    01;38;5;001;48;5;000;23 # /usr/share/cups/charsets/
+.simple                   01;38;5;089;48;5;004;3 # /usr/share/cups/charsets/ or /usr/share/misc/ or ~/.subversion/auth/
+.summary                  01;38;5;089;48;5;004;3 # configure script result summary output files
+.subst-rule               01;38;5;089;48;5;004;3 # /etc/defoma/
+.settings                 01;38;5;089;48;5;004;3
+.terminfo                 01;38;5;089;48;5;004;3
+.quiltrc                  01;38;5;089;48;5;004;3
+.emerald                  01;38;5;089;48;5;004;3
+.markers                  01;38;5;089;48;5;004;3
+.mailmap                  01;38;5;089;48;5;004;3
+.mmixer                   01;38;5;089;48;5;004;3
+.menus                    01;38;5;089;48;5;004;3 # /etc/ardour5 files
+.menu                     01;38;5;089;48;5;004;3
+.m4                       01;38;5;089;48;5;004;3
+.md                       01;38;5;089;48;5;004;3 # MarkDown file like ~/.inst/youtube-dl/README.
+.mk                       01;38;5;089;48;5;004;3
+.mak                      01;38;5;089;48;5;004;3
+.make                     01;38;5;089;48;5;004;3
+.cmake                    01;38;5;089;48;5;004;3
+.makefile                 01;38;5;089;48;5;004;3
+.Makefile                 01;38;5;089;48;5;004;3
+.MakeFile                 01;38;5;089;48;5;004;3
+.MAKEFILE                 01;38;5;089;48;5;004;3
+.vspscc                   01;38;5;089;48;5;004;3
+.yafray                   01;38;5;089;48;5;004;3
+.bitmap                   01;38;5;089;48;5;004;3 # MSWindows QuickTime/QTSystem/ or Safari/CoreFoundation.resources/CharacterSets/
+.bhs                      01;38;5;089;48;5;004;3 # ~ bash_history
+.zhs                      01;38;5;089;48;5;004;3 # ~  zsh_history
+.qtx                      01;38;5;001;48;5;000;23 # MSWindows QuickTime/QTSystem/ or Safari/CoreFoundation.resources/CharacterSets/
 .qts                      01;38;5;006      # MSWindows QuickTime/QTSystem/ or Safari/CoreFoundation.resources/CharacterSets/
-.ui                       01;38;5;013      # Qt5 UserInterface files which go to bin/uic (seem to be XML without header d8a)
-.S                        01;38;5;013
-.cf                       01;38;5;013      # /(etc|usr/share)/spamassassin/
-.cgm                      01;38;5;013      # image format
-.emf                      01;38;5;013      # image format
-.dic                      01;38;5;013      # ~/.config/enchant/en_US.  MT file && also possible ~/dox/2du/8.dic uniform list of dictionary && thesaurus entries
-.exc                      01;38;5;005      # ~/.config/enchant/en_US.  MT file
-.atCBDC                   01;38;5;013      # ~/.config/google-chrome/.com.google.Chrome. (forget Chrome's spAcd fIlnAmz but mAB add -journal 2.zshrc)
-.stamp                    01;38;5;013      # ~/.cache/unity/first_run. MT file
-.pb                       01;38;5;009      # ~/.cache/compizconfig-1/ bin filz
-.ttb                      01;38;5;013      # /etc/brltty/
-.tti                      01;38;5;005      # /etc/brltty/
-.kti                      01;38;5;014      # /etc/brltty/
+.ui                       01;38;5;089;48;5;004;3 # Qt5 UserInterface files which go to bin/uic (seem to be XML without header d8a)
+.S                        01;38;5;089;48;5;004;3
+.cf                       01;38;5;089;48;5;004;3 # /(etc|usr/share)/spamassassin/
+.cgm                      01;38;5;089;48;5;004;3 # image format
+.emf                      01;38;5;089;48;5;004;3 # image format
+.dic                      01;38;5;089;48;5;004;3 # ~/.config/enchant/en_US.  MT file && also possible ~/dox/2du/8.dic uniform list of dictionary && thesaurus entries
+.exc                      01;38;5;001;48;5;000;23 # ~/.config/enchant/en_US.  MT file
+.atCBDC                   01;38;5;089;48;5;004;3 # ~/.config/google-chrome/.com.google.Chrome. (forget Chrome's spAcd fIlnAmz but mAB add -journal 2.zshrc)
+.stamp                    01;38;5;089;48;5;004;3 # ~/.cache/unity/first_run. MT file
+.pb                       01;38;5;162;4;3;29 # ~/.cache/compizconfig-1/ bin filz
+.ttb                      01;38;5;089;48;5;004;3 # /etc/brltty/
+.tti                      01;38;5;001;48;5;000;23 # /etc/brltty/
+.kti                      01;38;5;169;53;3 # /etc/brltty/
 .ktb                      01;38;5;006      # /etc/brltty/
-.atb                      01;38;5;011      # /etc/brltty/
-.la                       01;38;5;013      # ~/dvl/m8/sudo/plugins/sudoers/ filz which are GNU Libtool Librariez
-.lss                      01;38;5;013      # Lynx Style Settings file like /etc/lynx.lss
-.logo                     01;38;5;013      # ASCII art file maybe containing ANSI escaped colors && figlet-gend text (e.g., /etc/issue.logo wi "Gentoo")
-.login                    01;38;5;013
-.lesshst                  01;38;5;013
-.wget-hsts                01;38;5;013
-.history                  01;38;5;013
-.zsh_history              01;38;5;013      # .*history
+.atb                      01;38;5;216      # /etc/brltty/
+.la                       01;38;5;089;48;5;004;3 # ~/dvl/m8/sudo/plugins/sudoers/ filz which are GNU Libtool Librariez
+.lss                      01;38;5;089;48;5;004;3 # Lynx Style Settings file like /etc/lynx.lss
+.logo                     01;38;5;089;48;5;004;3 # ASCII art file maybe containing ANSI escaped colors && figlet-gend text (e.g., /etc/issue.logo wi "Gentoo")
+.login                    01;38;5;089;48;5;004;3
+.lesshst                  01;38;5;089;48;5;004;3
+.wget-hsts                01;38;5;089;48;5;004;3
+.history                  01;38;5;089;48;5;004;3
+.zsh_history              01;38;5;089;48;5;004;3 # .*history
 .zprofile                 01;38;5;006
 .profile                  01;38;5;006      # .*profile
 .bash_profile             01;38;5;006
-.bash_history             01;38;5;013      # .*history
-.lvm_history              01;38;5;013
-.psh_history              01;38;5;013
-.ptksh_history            01;38;5;013
-.mysql_history            01;38;5;013
-.sqlite_history           01;38;5;013
-.ratpoison_history        01;38;5;013
-.fbhighlevelshistory      01;38;5;013
-.nvidia-settings-rc       01;38;5;013
-.concalcvariables         01;38;5;005      # console calQl8or more like cl than orpie
-.captstate                01;38;5;013
+.bash_history             01;38;5;089;48;5;004;3 # .*history
+.lvm_history              01;38;5;089;48;5;004;3
+.psh_history              01;38;5;089;48;5;004;3
+.ptksh_history            01;38;5;089;48;5;004;3
+.mysql_history            01;38;5;089;48;5;004;3
+.sqlite_history           01;38;5;089;48;5;004;3
+.ratpoison_history        01;38;5;089;48;5;004;3
+.fbhighlevelshistory      01;38;5;089;48;5;004;3
+.nvidia-settings-rc       01;38;5;089;48;5;004;3
+.concalcvariables         01;38;5;001;48;5;000;23 # console calQl8or more like cl than orpie
+.captstate                01;38;5;089;48;5;004;3
 .CAP                      01;38;5;006      # IC4L6Her:added 4 AsusROG C6H BIOS upd8;
 #CC
 #CC
-.asm                      01;38;5;014      # src-cod&&PAUSE(Perl Authors Upload SErver)cfg file for putting modules on CPAN && .fbrc && .themes
-.nasm                     01;38;5;014      # NetwydAzMblur NAsm.Us
-.nzm                      01;38;5;014      # NetwydAzMblur NAsm.Us
-.nsm                      01;38;5;014      # NetwydAzMblur NAsm.Us
-.nam                      01;38;5;014      # NetwydAzMblur NAsm.Us
-.nas                      01;38;5;014      # NetwydAzMblur NAsm.Us
-.nb                       01;38;5;014      # Mathematica   SrcCod(!IDa wer"NB"iz from,but myn iz:maze-gen4img-Hernan.Moraldo.Com.Ar_mazegen_code...)
-.n                        01;38;5;014      # NetwydAzMblur NAsm.Us
-.m                        01;38;5;014
-.h                        01;38;5;172      # C/C++  Header filz were Cyan like main source files but plain ls was getting some kind of orange, so setting it
-.c                        01;38;5;014      # C      source filz
-.cc                       01;38;5;014
-.cli                      01;38;5;014      # ~/dox/putr/Oni/Oni-systemd-services file logging root commands used to manage running services
-.app                      01;38;5;014      # Qt5/qtbase/mkspecs/macx-* filz (as well as GNUstep terminal.app binary,which will be green for XeQtable thO)
-.cpp                      01;38;5;014      #   C++  source filz
-.cgi                      01;38;5;014      # probably Common-G8way-Interface  or  Computer-Gener8d-Image filz
-.inc                      01;38;5;014
-.src                      01;38;5;014
-.vlt                      01;38;5;014      # ~/.local/share/vlc/skins2/*  VLC VideoLAN.Org Theme / skin2 filz
-.vsc                      01;38;5;014      # VimScrptClipbord(eg:ptg2clip.vsc)
-.vim                      01;38;5;014
-.pd                       01;38;5;014      # /etc/alternatives/gemdefaultwindow.pd -> sym-link to -> /usr/lib/pd/extra/Gem/gemdefaultwindow-glx.pd (PointD8a?)
-.PL                       01;38;5;014
-.pl                       01;38;5;014      # PerL   script filz
-.pm                       01;38;5;014      # Perl   Module filz
+.asm                      01;38;5;169;53;3 # src-cod&&PAUSE(Perl Authors Upload SErver)cfg file for putting modules on CPAN && .fbrc && .themes
+.nasm                     01;38;5;169;53;3 # NetwydAzMblur NAsm.Us
+.nzm                      01;38;5;169;53;3 # NetwydAzMblur NAsm.Us
+.nsm                      01;38;5;169;53;3 # NetwydAzMblur NAsm.Us
+.nam                      01;38;5;169;53;3 # NetwydAzMblur NAsm.Us
+.nas                      01;38;5;169;53;3 # NetwydAzMblur NAsm.Us
+.nb                       01;38;5;169;53;3 # Mathematica   SrcCod(!IDa wer"NB"iz from,but myn iz:maze-gen4img-Hernan.Moraldo.Com.Ar_mazegen_code...)
+.n                        01;38;5;169;53;3 # NetwydAzMblur NAsm.Us
+.m                        01;38;5;169;53;3
+.h                        01;38;5;203;21;9;55;25 # C/C++  Header filz were Cyan like main source files but plain ls was getting some kind of orange, so setting it
+.c                        01;38;5;169;53;3 # C      source filz
+.cc                       01;38;5;169;53;3
+.cli                      01;38;5;169;53;3 # ~/dox/putr/Oni/Oni-systemd-services file logging root commands used to manage running services
+.app                      01;38;5;169;53;3 # Qt5/qtbase/mkspecs/macx-* filz (as well as GNUstep terminal.app binary,which will be green for XeQtable thO)
+.cpp                      01;38;5;169;53;3 #   C++  source filz
+.cgi                      01;38;5;169;53;3 # probably Common-G8way-Interface  or  Computer-Gener8d-Image filz
+.inc                      01;38;5;169;53;3
+.src                      01;38;5;169;53;3
+.vlt                      01;38;5;169;53;3 # ~/.local/share/vlc/skins2/*  VLC VideoLAN.Org Theme / skin2 filz
+.vsc                      01;38;5;169;53;3 # VimScrptClipbord(eg:ptg2clip.vsc)
+.vim                      01;38;5;169;53;3
+.pd                       01;38;5;169;53;3 # /etc/alternatives/gemdefaultwindow.pd -> sym-link to -> /usr/lib/pd/extra/Gem/gemdefaultwindow-glx.pd (PointD8a?)
+.PL                       01;38;5;169;53;3
+.pl                       01;38;5;169;53;3 # PerL   script filz
+.pm                       01;38;5;169;53;3 # Perl   Module filz
 .pm~                      01;38;5;001      # ~/.cpan/CPAN/MyConfig.
-.py                       01;38;5;014      # PYthon script filz
-.pyc                      01;38;5;014
-.php                      01;38;5;014
-.pas                      01;38;5;014      # PAScal source filz
-.pro                      01;38;5;009      # according to HTTPS://File.Org/extension/pro generic cross-platform project files (found in cool-retro-term && Qt5)
-.pt                       01;38;5;014      # PipTyme||PerlTst
-.p                        01;38;5;014
-.t                        01;38;5;014
-.tp                       01;38;5;014      # TstPlan
-.tt                       01;38;5;014      # Template::Toolkit`ttree`
-.tst                      01;38;5;014
-.test                     01;38;5;014
+.py                       01;38;5;169;53;3 # PYthon script filz
+.pyc                      01;38;5;169;53;3
+.php                      01;38;5;169;53;3
+.pas                      01;38;5;169;53;3 # PAScal source filz
+.pro                      01;38;5;162;4;3;29 # according to HTTPS://File.Org/extension/pro generic cross-platform project files (found in cool-retro-term && Qt5)
+.pt                       01;38;5;169;53;3 # PipTyme||PerlTst
+.p                        01;38;5;169;53;3
+.t                        01;38;5;169;53;3
+.tp                       01;38;5;169;53;3 # TstPlan
+.tt                       01;38;5;169;53;3 # Template::Toolkit`ttree`
+.tst                      01;38;5;169;53;3
+.test                     01;38;5;169;53;3
 .load                     01;38;5;006      # /etc/apache2/mods-available files
-.save                     01;38;5;014      # /usr/share/doc/xfix/html/ or /usr/share/unity/icons/ or old SaveGamz
-.sed                      01;38;5;014      # NumbFuck/curs/man/
-.scm                      01;38;5;014
-.tcl                      01;38;5;014
-.lua                      01;38;5;014      # /etc/wireshark/init.lua
-.awk                      01;38;5;014
-.bdf                      01;38;5;014
-.dia                      01;38;5;014      # ~/.dia default files
-.el                       01;38;5;014      # EmacsLisp
-.js                       01;38;5;014
-.gen                      01;38;5;014
-.nfo                      01;38;5;014      # DemoSene iNFO(simLR2:file_id.diz)
-.iso                      01;38;5;014
-.lang                     01;38;5;014      # /usr/share/source-highlight shl language definition files
-.resx                     01;38;5;014      # MicroSoft's yucky .Net Resources XML,bleh!
-.rnc                      01;38;5;014      # RELAX NG XML schema                              file
-.rng                      01;38;5;014      # RELAX NG XML schema                              file
-.xsd                      01;38;5;014      # W3C      XML Schema Definition                   file
-.xslt                     01;38;5;014      # eXtensible   Style  Language for Transformations file
-.shtml                    01;38;5;014
-.source                   01;38;5;014      # /usr/share/doc/rxvt-unicode/README.source describing git command to obtain code repository
-.senddoc                  01;38;5;014      # /etc/apparmor.d files
-.schemas                  01;38;5;014
-.aliases                  01;38;5;014
-.globals                  01;38;5;014
-.preset                   01;38;5;014      # ~/.qmmp/eq .ini style file for storing the Equalizer settings between program invoc8ionz
-.build                    01;38;5;014
-.ninja                    01;38;5;014      # meson advanced build filz used for GitHub flatpak's libportal to upd8 xdg-desktop-portal(-gtk)? there too
-.pause                    01;38;5;014
-.prf                      01;38;5;014      # Kenta Cho Sh'mups preferences && high-score d8a like for Parsec47 and R-Rootage
+.save                     01;38;5;169;53;3 # /usr/share/doc/xfix/html/ or /usr/share/unity/icons/ or old SaveGamz
+.sed                      01;38;5;169;53;3 # NumbFuck/curs/man/
+.scm                      01;38;5;169;53;3
+.tcl                      01;38;5;169;53;3
+.lua                      01;38;5;169;53;3 # /etc/wireshark/init.lua
+.awk                      01;38;5;169;53;3
+.bdf                      01;38;5;169;53;3
+.dia                      01;38;5;169;53;3 # ~/.dia default files
+.el                       01;38;5;169;53;3 # EmacsLisp
+.js                       01;38;5;169;53;3
+.gen                      01;38;5;169;53;3
+.nfo                      01;38;5;169;53;3 # DemoSene iNFO(simLR2:file_id.diz)
+.iso                      01;38;5;169;53;3
+.lang                     01;38;5;169;53;3 # /usr/share/source-highlight shl language definition files
+.resx                     01;38;5;169;53;3 # MicroSoft's yucky .Net Resources XML,bleh!
+.rnc                      01;38;5;169;53;3 # RELAX NG XML schema                              file
+.rng                      01;38;5;169;53;3 # RELAX NG XML schema                              file
+.xsd                      01;38;5;169;53;3 # W3C      XML Schema Definition                   file
+.xslt                     01;38;5;169;53;3 # eXtensible   Style  Language for Transformations file
+.shtml                    01;38;5;169;53;3
+.source                   01;38;5;169;53;3 # /usr/share/doc/rxvt-unicode/README.source describing git command to obtain code repository
+.senddoc                  01;38;5;169;53;3 # /etc/apparmor.d files
+.schemas                  01;38;5;169;53;3
+.aliases                  01;38;5;169;53;3
+.globals                  01;38;5;169;53;3
+.preset                   01;38;5;169;53;3 # ~/.qmmp/eq .ini style file for storing the Equalizer settings between program invoc8ionz
+.build                    01;38;5;169;53;3
+.ninja                    01;38;5;169;53;3 # meson advanced build filz used for GitHub flatpak's libportal to upd8 xdg-desktop-portal(-gtk)? there too
+.pause                    01;38;5;169;53;3
+.prf                      01;38;5;169;53;3 # Kenta Cho Sh'mups preferences && high-score d8a like for Parsec47 and R-Rootage
 .pri                      01;38;5;006      # maybe Qt configure.pri as PRoject or PRofile Init or Include (&& also altern8 .prf files in similar loc8ions)
-.rc                       01;38;5;014
-.fbrc                     01;38;5;014
-.mrbrc                    01;38;5;014
-.captrc                   01;38;5;014
-.deityrc                  01;38;5;014
-.cgobanrc                 01;38;5;014
-.kobodlrc                 01;38;5;014
-.glaxiumrc                01;38;5;014
-.placeholder              01;38;5;014      # /etc/cron.*/
-.fallback                 01;38;5;014      # /etc/mysql/
-.0verkill                 01;38;5;014
-.rafkill                  01;38;5;014
-.usermap                  01;38;5;014
-.mailcap                  01;38;5;014
-.termcap                  01;38;5;014
-.themes                   01;38;5;014
-.keyring                  01;38;5;013      # ~/.local/share/keyrings
+.rc                       01;38;5;169;53;3
+.fbrc                     01;38;5;169;53;3
+.mrbrc                    01;38;5;169;53;3
+.captrc                   01;38;5;169;53;3
+.deityrc                  01;38;5;169;53;3
+.cgobanrc                 01;38;5;169;53;3
+.kobodlrc                 01;38;5;169;53;3
+.glaxiumrc                01;38;5;169;53;3
+.placeholder              01;38;5;169;53;3 # /etc/cron.*/
+.fallback                 01;38;5;169;53;3 # /etc/mysql/
+.0verkill                 01;38;5;169;53;3
+.rafkill                  01;38;5;169;53;3
+.usermap                  01;38;5;169;53;3
+.mailcap                  01;38;5;169;53;3
+.termcap                  01;38;5;169;53;3
+.themes                   01;38;5;169;53;3
+.keyring                  01;38;5;089;48;5;004;3 # ~/.local/share/keyrings
 .keystore                 01;38;5;006      # ~/.android/
-.keyset                   01;38;5;014      # ~/.android/
-.keymap                   01;38;5;014      # /etc/vga/ or /usr/(share/)?doc/w3m/ja/
+.keyset                   01;38;5;169;53;3 # ~/.android/
+.keymap                   01;38;5;169;53;3 # /etc/vga/ or /usr/(share/)?doc/w3m/ja/
 .et4000                   01;38;5;006      # /etc/vga/
-.env                      01;38;5;014
-.envd                     01;38;5;014
-.cenv                     01;38;5;014
-.gpg                      01;38;5;014
+.env                      01;38;5;169;53;3
+.envd                     01;38;5;169;53;3
+.cenv                     01;38;5;169;53;3
+.gpg                      01;38;5;169;53;3
 .gpg~                     01;38;5;006
-.pgp                      01;38;5;014
-.sxp                      01;38;5;014
-.xe                       01;38;5;014      # Octology a8.pm X-windows Event (`xte`) autom8ion wrapper script (stRted2dMonstr8 functionaliT of manual cmndz)
-.xd2                      01;38;5;014      # xdotool command script to gener8 ~/dvl/t8/**/xl8/ d8a files in attempt to autom8 complex transl8ion evalU8ions
-.xinitrc                  01;38;5;014      # ch2brItCyan from drkGrn .x* dflt4xinitz
-.xinitrc-compiz           01;38;5;014
-.xinitrc-flux2x2          01;38;5;014
-.legacy-bootordering      01;38;5;014      # /etc/init.d/ empty file
-.dat                      01;38;5;014
-.DAT                      01;38;5;014
+.pgp                      01;38;5;169;53;3
+.sxp                      01;38;5;169;53;3
+.xe                       01;38;5;169;53;3 # Octology a8.pm X-windows Event (`xte`) autom8ion wrapper script (stRted2dMonstr8 functionaliT of manual cmndz)
+.xd2                      01;38;5;169;53;3 # xdotool command script to gener8 ~/dvl/t8/**/xl8/ d8a files in attempt to autom8 complex transl8ion evalU8ions
+.xinitrc                  01;38;5;169;53;3 # ch2brItCyan from drkGrn .x* dflt4xinitz
+.xinitrc-compiz           01;38;5;169;53;3
+.xinitrc-flux2x2          01;38;5;169;53;3
+.legacy-bootordering      01;38;5;169;53;3 # /etc/init.d/ empty file
+.dat                      01;38;5;169;53;3
+.DAT                      01;38;5;169;53;3
 .sql                      01;38;5;006      # d8a && d8abase filz(SQL)
 .sqlite                   01;38;5;006
 .sqlite3                  01;38;5;006
-.sqlite-journal           01;38;5;014
-.sqlite-shm               01;38;5;013      # ~/.local/share/zeitgeist/activity.
-.sqlite-wal               01;38;5;009      # ~/.local/share/zeitgeist/activity.
-.baseA                    01;38;5;011      # ~/.local/share/zeitgeist/fts.index
-.baseB                    01;38;5;013      # ~/.local/share/zeitgeist/fts.index
-.DB                       01;38;5;014      # ~/.local/share/zeitgeist/fts.index
+.sqlite-journal           01;38;5;169;53;3
+.sqlite-shm               01;38;5;089;48;5;004;3 # ~/.local/share/zeitgeist/activity.
+.sqlite-wal               01;38;5;162;4;3;29 # ~/.local/share/zeitgeist/activity.
+.baseA                    01;38;5;216      # ~/.local/share/zeitgeist/fts.index
+.baseB                    01;38;5;089;48;5;004;3 # ~/.local/share/zeitgeist/fts.index
+.DB                       01;38;5;169;53;3 # ~/.local/share/zeitgeist/fts.index
 .db                       01;38;5;006
-.db-journal               01;38;5;014      # ~/.config/libaccounts-glib/accounts.
-.db-shm                   01;38;5;013      # ~/.config/libaccounts-glib/accounts.
-.db-wal                   01;38;5;009      # ~/.config/libaccounts-glib/accounts.
+.db-journal               01;38;5;169;53;3 # ~/.config/libaccounts-glib/accounts.
+.db-shm                   01;38;5;089;48;5;004;3 # ~/.config/libaccounts-glib/accounts.
+.db-wal                   01;38;5;162;4;3;29 # ~/.config/libaccounts-glib/accounts.
 .csv                      01;38;5;006
 .tab                      01;38;5;006
 .tdb                      01;38;5;006      # ~/.pulse
@@ -769,7 +769,7 @@ CHR                       01;38;5;011;48;5;000 #cd= 01;33;40    01;33;40  CHaRac
 .legal-displayed          01;38;5;015      # ~/.cache/motd.
 .ai                       01;38;5;006      # Adobe    Illustrator
 .psd                      01;38;5;006      # Adobe    PostScriptDocument?
-.pif                      01;38;5;014      # 4Dos     ProductIn4m80nFile?
+.pif                      01;38;5;169;53;3 # 4Dos     ProductIn4m80nFile?
 #cc
 #cc
 .chm                      01;38;5;006
@@ -778,7 +778,7 @@ CHR                       01;38;5;011;48;5;000 #cd= 01;33;40    01;33;40  CHaRac
 .MS                       01;38;5;006
 .pfa                      01;38;5;006
 .ipa                      01;38;5;006      #  IPhone Applic8ion likely resulting from Expo && React_n8ive development for $99  AppStore license (Yearly)
-.apk                      01;38;5;014      # Android PacKages   likely resulting from Expo && React_n8ive development for $25 PlayStore license (!once!)
+.apk                      01;38;5;169;53;3 # Android PacKages   likely resulting from Expo && React_n8ive development for $25 PlayStore license (!once!)
 .axa                      01;38;5;006      # HTTP://Wiki.Xiph.Org/index.php/MIME_Types_and_File_Extensions
 .oga                      01;38;5;006      # HTTP://Wiki.Xiph.Org/index.php/MIME_Types_and_File_Extensions
 .spx                      01;38;5;006      # HTTP://Wiki.Xiph.Org/index.php/MIME_Types_and_File_Extensions
@@ -805,7 +805,7 @@ CHR                       01;38;5;011;48;5;000 #cd= 01;33;40    01;33;40  CHaRac
 .Xdefaults                01;38;5;002      # .X && .x filz && .ds[pw] && ScrnSavercfilz  # mAB g is already Dfalt so this section is sorta pointless
 .xscreensaver             01;38;5;002
 .xsl                      01;38;5;002      # eXtensible   Style  Language          file
-.xtc                      01;38;5;003      #          XML::Tidy  Compressed        file (probably just files in Tidy/t/ to test big xmlstrip results)
+.xtc                      01;38;5;203;21;9;55;25 #          XML::Tidy  Compressed        file (probably just files in Tidy/t/ to test big xmlstrip results)
 .xtb                      01;38;5;002      #          XML::Tidy  Binary            file
 .rni                      01;38;5;002      # RELAX NG XML schema Include           file
 .dtd                      01;38;5;002      #          XML Document-Type Definition file
@@ -819,13 +819,13 @@ CHR                       01;38;5;011;48;5;000 #cd= 01;33;40    01;33;40  CHaRac
 .csproj                   01;38;5;002
 .ccaldb                   01;38;5;002
 .jython                   01;38;5;002
-.java                     01;38;5;010
-.bfc                      01;38;5;010      # /etc/java-6-openjdk/fontconfig.bfc or /**/*jre*/lib/fontconfig*.bfc
+.java                     01;38;5;052;48;5;236;24;23;29
+.bfc                      01;38;5;052;48;5;236;24;23;29 # /etc/java-6-openjdk/fontconfig.bfc or /**/*jre*/lib/fontconfig*.bfc
 .pjt                      01;38;5;002      # Perl J? Tmpl8 #2du:pj1? && kdelnk
 .sln                      01;38;5;002
 .sudo                     01;38;5;002
 .state                    01;38;5;002      # /run/zed      file
-.client                   01;38;5;011      # /etc/exim4
+.client                   01;38;5;216      # /etc/exim4
 .template                 01;38;5;002      # /etc/exim4
 .textmaze                 01;38;5;002
 .screenrc                 01;38;5;002
@@ -838,7 +838,7 @@ CHR                       01;38;5;011;48;5;000 #cd= 01;33;40    01;33;40  CHaRac
 #rr
 .part                     01;38;5;001
 .pre                      01;38;5;001      # object&&other intermediate filz&&old,tmp,swp,lnk,or backup filz&&generated vim && zsh info filz
-.cnt                      01;38;5;009      # old4Dos CouNT file?
+.cnt                      01;38;5;162;4;3;29 # old4Dos CouNT file?
 .o                        01;38;5;001
 .og                       01;38;5;001
 .obj                      01;38;5;001
@@ -877,10 +877,10 @@ CHR                       01;38;5;011;48;5;000 #cd= 01;33;40    01;33;40  CHaRac
 .Win32                    01;38;5;001
 .Cache                    01;38;5;001
 .cache                    01;38;5;001
-.cache-1                  01;38;5;013
-.cache-2                  01;38;5;009
-.cache-3                  01;38;5;013      # ~/.cache/fontconfig/[0-9a-f]{32}-le64.
-.cache-4                  01;38;5;009      # ~/.cache/fontconfig/[0-9a-f]{32}-le64.
+.cache-1                  01;38;5;089;48;5;004;3
+.cache-2                  01;38;5;162;4;3;29
+.cache-3                  01;38;5;089;48;5;004;3 # ~/.cache/fontconfig/[0-9a-f]{32}-le64.
+.cache-4                  01;38;5;162;4;3;29 # ~/.cache/fontconfig/[0-9a-f]{32}-le64.
 .xftcache                 01;38;5;001
 .jcache                   01;38;5;001      # ~/gmz/Rune/Jagex/RuneScape/  filz (RS crE8d Jagex/ in ~ but wi .zshrc alias I mv 2 gmz 4 less $HOME clutter)
 .journal                  01;38;5;001      # ~/.local/share/tracker/data/ filz (could do .ontology.journal distinctly)
@@ -897,100 +897,100 @@ CHR                       01;38;5;011;48;5;000 #cd= 01;33;40    01;33;40  CHaRac
 #RR
 #RR
 .WTF                      01;38;5;009;48;5;011;4;5;3 # WhatTheFsck ?! Ryu smashes thru ChunLi !?
-.start                    01;38;5;010      # .start filz (/etc/conf.d/local.start)
-.stop                     01;38;5;009      # compressed archives && zips && cd rc filz
-.swo                      01;38;5;009      # vim.swp++
-.new                      01;38;5;009      # new|nw vs. old|orig|og
-.nw                       01;38;5;009
-.ace                      01;38;5;009
-.arc                      01;38;5;009
-.arj                      01;38;5;009
-.alz                      01;38;5;009
-.bz                       01;38;5;009
-.bz2                      01;38;5;009
-.ior                      01;38;5;009
-.cab                      01;38;5;009
-.ctb                      01;38;5;009      # brltty Country's character TaBle               for daemon driving refreshable console Braille display
-.cpio                     01;38;5;009
-.crate                    01;38;5;009      # ~/.cargo/registry/cache/github.com-*/ filz which contain managed packagez for the Rust language
-.crash                    01;38;5;009      # /var/crash/ files
-.upload                   01;38;5;092      # /var/crash/ files
+.start                    01;38;5;052;48;5;236;24;23;29 # .start filz (/etc/conf.d/local.start)
+.stop                     01;38;5;162;4;3;29 # compressed archives && zips && cd rc filz
+.swo                      01;38;5;162;4;3;29 # vim.swp++
+.new                      01;38;5;162;4;3;29 # new|nw vs. old|orig|og
+.nw                       01;38;5;162;4;3;29
+.ace                      01;38;5;162;4;3;29
+.arc                      01;38;5;162;4;3;29
+.arj                      01;38;5;162;4;3;29
+.alz                      01;38;5;162;4;3;29
+.bz                       01;38;5;162;4;3;29
+.bz2                      01;38;5;162;4;3;29
+.ior                      01;38;5;162;4;3;29
+.cab                      01;38;5;162;4;3;29
+.ctb                      01;38;5;162;4;3;29 # brltty Country's character TaBle               for daemon driving refreshable console Braille display
+.cpio                     01;38;5;162;4;3;29
+.crate                    01;38;5;162;4;3;29 # ~/.cargo/registry/cache/github.com-*/ filz which contain managed packagez for the Rust language
+.crash                    01;38;5;162;4;3;29 # /var/crash/ files
+.upload                   01;38;5;001;48;5;000;23 # /var/crash/ files
 .uploaded                 01;38;5;002      # /var/crash/ files (possibly containing the IPv6 address to which a crash-log has finished uploading to?)
-.driver                   01;38;5;009      # /etc/libibverbs.d files
-.d                        01;38;5;009
-.dz                       01;38;5;009
-.deb                      01;38;5;009
-.gz                       01;38;5;009
-.lz                       01;38;5;009
-.lz4                      01;38;5;009
-.lzo                      01;38;5;009
-.lha                      01;38;5;009
-.lrz                      01;38;5;009
-.lzh                      01;38;5;009
-.lzma                     01;38;5;009
-.ear                      01;38;5;009
-.jar                      01;38;5;009
-.par                      01;38;5;009
-.sar                      01;38;5;009
-.war                      01;38;5;009
-.rar                      01;38;5;009
-.rpm                      01;38;5;009
-.rz                       01;38;5;009
-.tar                      01;38;5;009
-.taz                      01;38;5;009
-.tbz                      01;38;5;009
-.tb2                      01;38;5;009
-.tz2                      01;38;5;009
-.tbz2                     01;38;5;009
-.tgz                      01;38;5;009
-.tlz                      01;38;5;009
-.txz                      01;38;5;009
-.tzo                      01;38;5;009
-.tz                       01;38;5;009
-.xz                       01;38;5;009
-.t7z                      01;38;5;009
-.7z                       01;38;5;009
-.z                        01;38;5;009
-.Z                        01;38;5;009
-.ZIP                      01;38;5;009
-.zip                      01;38;5;009
-.zoo                      01;38;5;009
-.zst                      01;38;5;009      # H4MM4MM4:new Zip format (maybe with Tar && something else?);
-.tzst                     01;38;5;009
-.prt                      01;38;5;009
-.pak                      01;38;5;009
-.rdb                      01;38;5;009
-.red                      01;38;5;009      # likely UTF-8 text file containing alREaDy REaD excerpts from e-mail or other similar convers8ion thREaDs
-.err                      01;38;5;009
-.fla                      01;38;5;009
-.3rc                      01;38;5;009      # /etc/qt3/ or ~/.qt/
-.blo                      01;38;5;009      # ~ bash_logout
-.esd                      01;38;5;009      # I73M73MI:upd8ng 4 l8st krnl identified these 4 new aliases as newest candid8z 4 incorpor8ion here;
-.kbx                      01;38;5;009      # ~/.gnupg pubring files
+.driver                   01;38;5;162;4;3;29 # /etc/libibverbs.d files
+.d                        01;38;5;162;4;3;29
+.dz                       01;38;5;162;4;3;29
+.deb                      01;38;5;162;4;3;29
+.gz                       01;38;5;162;4;3;29
+.lz                       01;38;5;162;4;3;29
+.lz4                      01;38;5;162;4;3;29
+.lzo                      01;38;5;162;4;3;29
+.lha                      01;38;5;162;4;3;29
+.lrz                      01;38;5;162;4;3;29
+.lzh                      01;38;5;162;4;3;29
+.lzma                     01;38;5;162;4;3;29
+.ear                      01;38;5;162;4;3;29
+.jar                      01;38;5;162;4;3;29
+.par                      01;38;5;162;4;3;29
+.sar                      01;38;5;162;4;3;29
+.war                      01;38;5;162;4;3;29
+.rar                      01;38;5;162;4;3;29
+.rpm                      01;38;5;162;4;3;29
+.rz                       01;38;5;162;4;3;29
+.tar                      01;38;5;162;4;3;29
+.taz                      01;38;5;162;4;3;29
+.tbz                      01;38;5;162;4;3;29
+.tb2                      01;38;5;162;4;3;29
+.tz2                      01;38;5;162;4;3;29
+.tbz2                     01;38;5;162;4;3;29
+.tgz                      01;38;5;162;4;3;29
+.tlz                      01;38;5;162;4;3;29
+.txz                      01;38;5;162;4;3;29
+.tzo                      01;38;5;162;4;3;29
+.tz                       01;38;5;162;4;3;29
+.xz                       01;38;5;162;4;3;29
+.t7z                      01;38;5;162;4;3;29
+.7z                       01;38;5;162;4;3;29
+.z                        01;38;5;162;4;3;29
+.Z                        01;38;5;162;4;3;29
+.ZIP                      01;38;5;162;4;3;29
+.zip                      01;38;5;162;4;3;29
+.zoo                      01;38;5;162;4;3;29
+.zst                      01;38;5;162;4;3;29 # H4MM4MM4:new Zip format (maybe with Tar && something else?);
+.tzst                     01;38;5;162;4;3;29
+.prt                      01;38;5;162;4;3;29
+.pak                      01;38;5;162;4;3;29
+.rdb                      01;38;5;162;4;3;29
+.red                      01;38;5;162;4;3;29 # likely UTF-8 text file containing alREaDy REaD excerpts from e-mail or other similar convers8ion thREaDs
+.err                      01;38;5;162;4;3;29
+.fla                      01;38;5;162;4;3;29
+.3rc                      01;38;5;162;4;3;29 # /etc/qt3/ or ~/.qt/
+.blo                      01;38;5;162;4;3;29 # ~ bash_logout
+.esd                      01;38;5;162;4;3;29 # I73M73MI:upd8ng 4 l8st krnl identified these 4 new aliases as newest candid8z 4 incorpor8ion here;
+.kbx                      01;38;5;162;4;3;29 # ~/.gnupg pubring files
 .kbx~                     01;38;5;001      # ~/.gnupg pubring files
-.dwm                      01;38;5;009
-.swm                      01;38;5;009
-.wim                      01;38;5;009
-.deny                     01;38;5;009
-.LDAP                     01;38;5;009      # ~/dvl/m8/sudo/README  file which describes configuring && building functionality that's optional for sudo
-.SKIP                     01;38;5;009      # MANIFEST.SKIP from Perl packages
-.lock                     01;38;5;009
-.rxvt                     01;38;5;009      # /usr/share/terminfo/s/screen(-bce)?.rxvt
-.mrxvt                    01;38;5;013      # /usr/share/terminfo/s/screen(-bce)?.mrxvt
-.xlockrc                  01;38;5;009
-.cdcdrc                   01;38;5;009
-.cdserverrc               01;38;5;009
-.defaults                 01;38;5;009      # /etc/(xdg|texmf/texdoctk)/
-.md5sums                  01;38;5;009      # /var/lib/dpkg/info/ filz
-.reboot                   01;38;5;009      # /run/
-.handmap                  01;38;5;009
-.failsafe                 01;38;5;009
-.original                 01;38;5;009
-.override                 01;38;5;009      # /etc/dpkg/ && /usr/share/glib-2.0/schemas/
-.bash_logout              01;38;5;009      # ~/ fyl4wN bash iz login shL && thN iz Xitd
-.xsession-errors          01;38;5;009
-.MCOP-random-seed         01;38;5;009
-.sudo_as_admin_successful 01;38;5;009      # kindaWTFlong inChun:~pip
+.dwm                      01;38;5;162;4;3;29
+.swm                      01;38;5;162;4;3;29
+.wim                      01;38;5;162;4;3;29
+.deny                     01;38;5;162;4;3;29
+.LDAP                     01;38;5;162;4;3;29 # ~/dvl/m8/sudo/README  file which describes configuring && building functionality that's optional for sudo
+.SKIP                     01;38;5;162;4;3;29 # MANIFEST.SKIP from Perl packages
+.lock                     01;38;5;162;4;3;29
+.rxvt                     01;38;5;162;4;3;29 # /usr/share/terminfo/s/screen(-bce)?.rxvt
+.mrxvt                    01;38;5;089;48;5;004;3 # /usr/share/terminfo/s/screen(-bce)?.mrxvt
+.xlockrc                  01;38;5;162;4;3;29
+.cdcdrc                   01;38;5;162;4;3;29
+.cdserverrc               01;38;5;162;4;3;29
+.defaults                 01;38;5;162;4;3;29 # /etc/(xdg|texmf/texdoctk)/
+.md5sums                  01;38;5;162;4;3;29 # /var/lib/dpkg/info/ filz
+.reboot                   01;38;5;162;4;3;29 # /run/
+.handmap                  01;38;5;162;4;3;29
+.failsafe                 01;38;5;162;4;3;29
+.original                 01;38;5;162;4;3;29
+.override                 01;38;5;162;4;3;29 # /etc/dpkg/ && /usr/share/glib-2.0/schemas/
+.bash_logout              01;38;5;162;4;3;29 # ~/ fyl4wN bash iz login shL && thN iz Xitd
+.xsession-errors          01;38;5;162;4;3;29
+.MCOP-random-seed         01;38;5;162;4;3;29
+.sudo_as_admin_successful 01;38;5;162;4;3;29 # kindaWTFlong inChun:~pip
 #mm
 #mm
 .avi                      01;38;5;164      # img|vid 4m@z && (Open)?Office (word-processing,spreadsheet,presentation,etc.) && other .bash_ fylz
@@ -1010,18 +1010,18 @@ CHR                       01;38;5;011;48;5;000 #cd= 01;33;40    01;33;40  CHaRac
 .jpeg                     01;38;5;164
 .JPG                      01;38;5;001
 .jpg                      01;38;5;164
-.kra                      01;38;5;014      # Krita.Org Art
+.kra                      01;38;5;169;53;3 # Krita.Org Art
 .kra~                     01;38;5;006      # Krita.Org Art (autom8d backup)
 .mng                      01;38;5;164
 .mkv                      01;38;5;164      # Matroska.Org
 .m2v                      01;38;5;164      # MPEG-2 Video    only
 .m4v                      01;38;5;164      # MPEG-4 Video    only
 .mo                       01;38;5;164      # /usr/(local/)?share/locale/*/LC_MESSAGES/xdg-desktop-portal(-gtk|-kde)? probably binary MIME-Object filz
-.mov                      01;38;5;013      # MPNS-?\VD0gIna?coctaineR?  hUnterScumFal0PN werEgamEt0cIt amystREplacNta&&hmbLcLc||dCthruCapaCT NQb8R 0m
-.MOV                      01;38;5;013
-.dot                      01;38;5;013      # graphvizfyl
-.mpa                      01;38;5;013      # MPNS-?/Archive?cuntaiheR? pr0 t0mzN 2Bz||!2Bz evN2LEwilfl0z 0+blud lyk0agUl8d WatwilfrtLIz by0lajik wum;
-.mp4                      01;38;5;013      # MPEG-4'Offical'container
+.mov                      01;38;5;089;48;5;004;3 # MPNS-?\VD0gIna?coctaineR?  hUnterScumFal0PN werEgamEt0cIt amystREplacNta&&hmbLcLc||dCthruCapaCT NQb8R 0m
+.MOV                      01;38;5;089;48;5;004;3
+.dot                      01;38;5;089;48;5;004;3 # graphvizfyl
+.mpa                      01;38;5;089;48;5;004;3 # MPNS-?/Archive?cuntaiheR? pr0 t0mzN 2Bz||!2Bz evN2LEwilfl0z 0+blud lyk0agUl8d WatwilfrtLIz by0lajik wum;
+.mp4                      01;38;5;089;48;5;004;3 # MPEG-4'Offical'container
 .mp4v                     01;38;5;164      # MPEG-4 Video    only
 .mpeg                     01;38;5;164      # MPEG-?''
 .mpg                      01;38;5;164      # M    ?
@@ -1053,25 +1053,25 @@ CHR                       01;38;5;011;48;5;000 #cd= 01;33;40    01;33;40  CHaRac
 .kdbx                     01;38;5;164      # KeePassX v2 DataBase
 .uot                      01;38;5;164      # LibreOffice Writer  Unified Office format Text
 .odt                      01;38;5;164      # LibreOffice Writer  ODF Text Document
-.odt#                     01;38;5;009      # LibreOffice .~lock  file
-.fodt                     01;38;5;013      # LibreOffice Writer  ODF Text Document (OpenDocument Text FlatXML)
-.ott                      01;38;5;011      # LibreOffice Writer  ODF Text Document (Template)
+.odt#                     01;38;5;162;4;3;29 # LibreOffice .~lock  file
+.fodt                     01;38;5;089;48;5;004;3 # LibreOffice Writer  ODF Text Document (OpenDocument Text FlatXML)
+.ott                      01;38;5;216      # LibreOffice Writer  ODF Text Document (Template)
 .dmg                      01;38;5;164
 .doc                      01;38;5;164
-.docx                     01;38;5;013      #      Office Open XML Text  or  Microsoft Word 2007/2010/2013 XML
-.docx#                    01;38;5;009      # LibreOffice .~lock  file
+.docx                     01;38;5;089;48;5;004;3 #      Office Open XML Text  or  Microsoft Word 2007/2010/2013 XML
+.docx#                    01;38;5;162;4;3;29 # LibreOffice .~lock  file
 .bp1                      01;38;5;164      # BusiPlan
-.css                      01;38;5;013      # Cascading Style Sheets
-.sxw                      01;38;5;013      #  OpenOffice.Org Stndrd?XmlWord-processing dox?  # below simple URL probably for Danny's l8st public thoughts
-.tex                      01;38;5;014      # DonKnuth LaTeX  DVI,etc. (Dopeish), HTTP://Web.CVS.Savannah.NonGNU.Org/viewvc/bool2/bool2/theory/goodaut.tex
+.css                      01;38;5;089;48;5;004;3 # Cascading Style Sheets
+.sxw                      01;38;5;089;48;5;004;3 #  OpenOffice.Org Stndrd?XmlWord-processing dox?  # below simple URL probably for Danny's l8st public thoughts
+.tex                      01;38;5;169;53;3 # DonKnuth LaTeX  DVI,etc. (Dopeish), HTTP://Web.CVS.Savannah.NonGNU.Org/viewvc/bool2/bool2/theory/goodaut.tex
 .aux                      01;38;5;164      # DonKnuth LaTeX  AUXiliary file (along with .log as extra output from `pdflatex *.tex`) for cross-referencing
 .djvu                     01;38;5;164      # DjVu              image          4m@
 .xpdfimport               01;38;5;164      # /etc/apparmor.d files
-.pdf                      01;38;5;013      # AdObE           P0rtable DocUmNt 4m@
-.ps                       01;38;5;013      # AdObE           P0st Scrpt
-.pp                       01;38;5;092      # ~/dvl/m8/sudo/sudo    file which is probably rel8d to Providing Privileges, but might stand for Packages etc.
+.pdf                      01;38;5;089;48;5;004;3 # AdObE           P0rtable DocUmNt 4m@
+.ps                       01;38;5;089;48;5;004;3 # AdObE           P0st Scrpt
+.pp                       01;38;5;001;48;5;000;23 # ~/dvl/m8/sudo/sudo    file which is probably rel8d to Providing Privileges, but might stand for Packages etc.
 .ppt                      01;38;5;164      # P0wRlS PtlS M$  PrEzNtAshN4m@ =(
-.pptx                     01;38;5;013
+.pptx                     01;38;5;089;48;5;004;3
 .xls                      01;38;5;164
 .wpd                      01;38;5;164
 .map                      01;38;5;164
@@ -1089,94 +1089,94 @@ CHR                       01;38;5;011;48;5;000 #cd= 01;33;40    01;33;40  CHaRac
 .zcompdump                01;38;5;164
 .screen_exchange          01;38;5;164
 # general /etc && 8bow listz BlO (but any !~/\..*$/&&=~/[-_]?.*$/ nd2post-modify the $ENV{'LS_COLORS'} result of`dircolors`within .zshrc Bcuz they du!wrk hEr)
-.dpkg-new                 01;38;5;014      # /etc/skel
-.dpkg-dist                01;38;5;013      # /etc/skel
+.dpkg-new                 01;38;5;169;53;3 # /etc/skel
+.dpkg-dist                01;38;5;089;48;5;004;3 # /etc/skel
 .dpkg-remove              01;38;5;001      # /etc/bluetooth
 .dpkg-bak                 01;38;5;001      # /etc
 .dpkg-old                 01;38;5;001      # /etc
 .blacklist                01;38;5;008      # /etc
 .whitelist                01;38;5;015      # /etc
-.org                      01;38;5;014      # /etc
-.net                      01;38;5;013      # /etc
-.fuselock                 01;38;5;005      # /etc
-.logout                   01;38;5;014      # /etc
+.org                      01;38;5;169;53;3 # /etc
+.net                      01;38;5;089;48;5;004;3 # /etc
+.fuselock                 01;38;5;001;48;5;000;23 # /etc
+.logout                   01;38;5;169;53;3 # /etc
 .colors                   01;38;5;006      # /etc/xdg/colors
-.icc                      01;38;5;014      # /etc/alternatives/ghostscript-current/iccprofiles
-.upp                      01;38;5;011      # /etc/alternatives/ghostscript-current/lib
-.rpd                      01;38;5;009      # /etc/alternatives/ghostscript-current/lib
+.icc                      01;38;5;169;53;3 # /etc/alternatives/ghostscript-current/iccprofiles
+.upp                      01;38;5;216      # /etc/alternatives/ghostscript-current/lib
+.rpd                      01;38;5;162;4;3;29 # /etc/alternatives/ghostscript-current/lib
 .ppd                      01;38;5;006      # /etc/alternatives/ghostscript-current/lib
-.GS                       01;38;5;014      # /etc/alternatives/ghostscript-current/Resource/Init
-.grub                     01;38;5;011      # /etc/alternatives/* -> /lib/plymouth/themes
-.plymouth                 01;38;5;013      # /etc/alternatives/* -> /lib/plymouth/themes
-.script                   01;38;5;014      # /etc/alternatives/* -> /lib/plymouth/themes
-.gih                      01;38;5;011      # /etc/alternatives/* -> /usr/share/gnuplot
-.gp                       01;38;5;009      # /etc/alternatives/* -> /usr/share/gnuplot
-.libgksu-sudo             01;38;5;003      # /etc/alternatives/* -> /usr/share/libgksu/debian
-.binfmt                   01;38;5;005      # /etc/alternatives/* -> /usr/lib/jvm/java-7-openjdk-amd64/jre/lib
-.dhclient3                01;38;5;009      # /etc/apparmor.d
+.GS                       01;38;5;169;53;3 # /etc/alternatives/ghostscript-current/Resource/Init
+.grub                     01;38;5;216      # /etc/alternatives/* -> /lib/plymouth/themes
+.plymouth                 01;38;5;089;48;5;004;3 # /etc/alternatives/* -> /lib/plymouth/themes
+.script                   01;38;5;169;53;3 # /etc/alternatives/* -> /lib/plymouth/themes
+.gih                      01;38;5;216      # /etc/alternatives/* -> /usr/share/gnuplot
+.gp                       01;38;5;162;4;3;29 # /etc/alternatives/* -> /usr/share/gnuplot
+.libgksu-sudo             01;38;5;203;21;9;55;25 # /etc/alternatives/* -> /usr/share/libgksu/debian
+.binfmt                   01;38;5;001;48;5;000;23 # /etc/alternatives/* -> /usr/lib/jvm/java-7-openjdk-amd64/jre/lib
+.dhclient3                01;38;5;162;4;3;29 # /etc/apparmor.d
 .dhclient                 01;38;5;001      # /etc/apparmor.d
-.evince                   01;38;5;009      # /etc/apparmor.d
-.firefox                  01;38;5;003      # /etc/apparmor.d
-.telepathy                01;38;5;011      # /etc/apparmor.d
+.evince                   01;38;5;162;4;3;29 # /etc/apparmor.d
+.firefox                  01;38;5;203;21;9;55;25 # /etc/apparmor.d
+.telepathy                01;38;5;216      # /etc/apparmor.d
 #                skip         G            #   since I don't want to confuse rel8ively normal files with executables
 .cups-browsed             01;38;5;006      # /etc/apparmor.d
-.cupsd                    01;38;5;014      # /etc/apparmor.d
+.cupsd                    01;38;5;169;53;3 # /etc/apparmor.d
 #                skip         B            #   since I don't want to confuse rel8ively normal files with directories
-.ippusbxd                 01;38;5;013      # /etc/apparmor.d
-.ntpd                     01;38;5;005      # /etc/apparmor.d
-.rsyslogd                 01;38;5;009      # /etc/apparmor.d
-.tcpdump                  01;38;5;003      # /etc/apparmor.d
-.lxc-start                01;38;5;011      # /etc/apparmor.d
-.webbrowser-app           01;38;5;014      # /etc/apparmor.d
-.lxd-bridge-proxy         01;38;5;013      # /etc/apparmor.d
+.ippusbxd                 01;38;5;089;48;5;004;3 # /etc/apparmor.d
+.ntpd                     01;38;5;001;48;5;000;23 # /etc/apparmor.d
+.rsyslogd                 01;38;5;162;4;3;29 # /etc/apparmor.d
+.tcpdump                  01;38;5;203;21;9;55;25 # /etc/apparmor.d
+.lxc-start                01;38;5;216      # /etc/apparmor.d
+.webbrowser-app           01;38;5;169;53;3 # /etc/apparmor.d
+.lxd-bridge-proxy         01;38;5;089;48;5;004;3 # /etc/apparmor.d
 .features                 01;38;5;015      # /etc/apparmor.d/cache
-.service                  01;38;5;014      # /etc/avahi/services && /(etc|lib)/systemd/system/
-.socket                   01;38;5;009      #                        /(etc|lib)/systemd/system/
-.target                   01;38;5;172      #                        /(etc|lib)/systemd/system/
-.timer                    01;38;5;011      #                        /(etc|lib)/systemd/system/
-.path                     01;38;5;092      #                        /(etc|lib)/systemd/system/
-.upgrade                  01;38;5;013      # /etc/compizconfig/upgrades
+.service                  01;38;5;169;53;3 # /etc/avahi/services && /(etc|lib)/systemd/system/
+.socket                   01;38;5;162;4;3;29 #                        /(etc|lib)/systemd/system/
+.target                   01;38;5;203;21;9;55;25 #                        /(etc|lib)/systemd/system/
+.timer                    01;38;5;216      #                        /(etc|lib)/systemd/system/
+.path                     01;38;5;001;48;5;000;23 #                        /(etc|lib)/systemd/system/
+.upgrade                  01;38;5;089;48;5;004;3 # /etc/compizconfig/upgrades
 .seat                     01;38;5;006      # /etc/ConsoleKit/seats.d
-.acm                      01;38;5;013      # /etc/console-setup
-.vga                      01;38;5;011      # /etc/console-setup
-.dbus                     01;38;5;009      # /etc/dbus-1/system.d
-.ucf-dist                 01;38;5;003      # /etc/default
+.acm                      01;38;5;089;48;5;004;3 # /etc/console-setup
+.vga                      01;38;5;216      # /etc/console-setup
+.dbus                     01;38;5;162;4;3;29 # /etc/dbus-1/system.d
+.ucf-dist                 01;38;5;203;21;9;55;25 # /etc/default
 .Debian                   01;38;5;015      # /etc/dkms/template-dkms-mkdeb/debian
 .elc                      01;38;5;006      # /etc/emacs24/site-start.d
-.password                 01;38;5;009      # /etc/java-7-openjdk/management
-.acl                      01;38;5;013      # /etc/java-7-openjdk/management
-.policy                   01;38;5;014      # /etc/java-7-openjdk/security
-.security                 01;38;5;009      # /etc/java-7-openjdk/security
-.vg                       01;38;5;011      # /etc/lvm/archive
-.keepme                   01;38;5;014      # /etc/mysql/conf.d
-.eth0                     01;38;5;014      # /etc/network/run
-.lo                       01;38;5;011      # /etc/network/run
-.name                     01;38;5;014      # /etc/NetworkManager/VPN
-.ubuntu                   01;38;5;011      # /etc/newt
-.module                   01;38;5;013      # /etc/pkcs11/modules
-.pptp                     01;38;5;013      # /etc/ppp
-.pem                      01;38;5;013      # /etc/ssl/certs
-.crt                      01;38;5;014      # /etc/ssl/certs
-.init                     01;38;5;014      # /etc/ufw
-.theme                    01;38;5;011      # /etc/X11/cursors
-.scale                    01;38;5;011      # /etc/X11/fonts/Type1
+.password                 01;38;5;162;4;3;29 # /etc/java-7-openjdk/management
+.acl                      01;38;5;089;48;5;004;3 # /etc/java-7-openjdk/management
+.policy                   01;38;5;169;53;3 # /etc/java-7-openjdk/security
+.security                 01;38;5;162;4;3;29 # /etc/java-7-openjdk/security
+.vg                       01;38;5;216      # /etc/lvm/archive
+.keepme                   01;38;5;169;53;3 # /etc/mysql/conf.d
+.eth0                     01;38;5;169;53;3 # /etc/network/run
+.lo                       01;38;5;216      # /etc/network/run
+.name                     01;38;5;169;53;3 # /etc/NetworkManager/VPN
+.ubuntu                   01;38;5;216      # /etc/newt
+.module                   01;38;5;089;48;5;004;3 # /etc/pkcs11/modules
+.pptp                     01;38;5;089;48;5;004;3 # /etc/ppp
+.pem                      01;38;5;089;48;5;004;3 # /etc/ssl/certs
+.crt                      01;38;5;169;53;3 # /etc/ssl/certs
+.init                     01;38;5;169;53;3 # /etc/ufw
+.theme                    01;38;5;216      # /etc/X11/cursors
+.scale                    01;38;5;216      # /etc/X11/fonts/Type1
 .revdep-rebuild           01;38;5;015      # Gentoo `revdep-rebuild` output files detailing relatively thorough build-dependency issues&&faild fixz
 .0_env                    01;38;5;001
-.1_files                  01;38;5;009
-.2_ldpath                 01;38;5;003
-.3_rebuild                01;38;5;011
-.4_ebuilds                01;38;5;010
-.5_order                  01;38;5;014
-.5a_status                01;38;5;012
-.6_status                 01;38;5;013
-.old1                     01;38;5;009      # \.old1?[0-9]  dotted versions (actually \.old([1-9]|1[0-6]) for super-basic InnovationProtocol.Com VCS)
-.old2                     01;38;5;003
-.old3                     01;38;5;011
-.old4                     01;38;5;010
-.old5                     01;38;5;014
-.old6                     01;38;5;012
-.old7                     01;38;5;013
-.old8                     01;38;5;005
+.1_files                  01;38;5;162;4;3;29
+.2_ldpath                 01;38;5;203;21;9;55;25
+.3_rebuild                01;38;5;216
+.4_ebuilds                01;38;5;052;48;5;236;24;23;29
+.5_order                  01;38;5;169;53;3
+.5a_status                01;38;5;125;48;5;052;55;23
+.6_status                 01;38;5;089;48;5;004;3
+.old1                     01;38;5;162;4;3;29 # \.old1?[0-9]  dotted versions (actually \.old([1-9]|1[0-6]) for super-basic InnovationProtocol.Com VCS)
+.old2                     01;38;5;203;21;9;55;25
+.old3                     01;38;5;216
+.old4                     01;38;5;052;48;5;236;24;23;29
+.old5                     01;38;5;169;53;3
+.old6                     01;38;5;125;48;5;052;55;23
+.old7                     01;38;5;089;48;5;004;3
+.old8                     01;38;5;001;48;5;000;23
 .old9                     01;38;5;008
 .old10                    01;38;5;015
 .old11                    01;38;5;007
@@ -1186,19 +1186,19 @@ CHR                       01;38;5;011;48;5;000 #cd= 01;33;40    01;33;40  CHaRac
 .old15                    01;38;5;004
 .old16                    01;38;5;000
 .older                    01;38;5;001      # Note: These extensions were also discovered in the IP.Com site files && would be nice to colorize too.
-.addHandlerBak            01;38;5;009
-.obsolete                 01;38;5;003
-.x                        01;38;5;011
-.x2                       01;38;5;010
-.poop                     01;38;5;014
-.0                        01;38;5;009      # \.[0-9A-F]    dotted versions
-.1                        01;38;5;003
-.2                        01;38;5;011
-.3                        01;38;5;010
-.4                        01;38;5;014
-.5                        01;38;5;012
-.6                        01;38;5;013
-.7                        01;38;5;005
+.addHandlerBak            01;38;5;162;4;3;29
+.obsolete                 01;38;5;203;21;9;55;25
+.x                        01;38;5;216
+.x2                       01;38;5;052;48;5;236;24;23;29
+.poop                     01;38;5;169;53;3
+.0                        01;38;5;162;4;3;29 # \.[0-9A-F]    dotted versions
+.1                        01;38;5;203;21;9;55;25
+.2                        01;38;5;216
+.3                        01;38;5;052;48;5;236;24;23;29
+.4                        01;38;5;169;53;3
+.5                        01;38;5;125;48;5;052;55;23
+.6                        01;38;5;089;48;5;004;3
+.7                        01;38;5;001;48;5;000;23
 .8                        01;38;5;008
 .9                        01;38;5;015
 .A                        01;38;5;007      # Note: CaseSensitivity distinguishes .A .C .D from well-established .a .c .d extensions so can be diff
@@ -1207,62 +1207,62 @@ CHR                       01;38;5;011;48;5;000 #cd= 01;33;40    01;33;40  CHaRac
 .D                        01;38;5;002
 .E                        01;38;5;004
 .F                        01;38;5;000
-.G                        01;38;5;009      # just repeat mostly bright 8bow for remainder
-.H                        01;38;5;003
-.I                        01;38;5;011
-.J                        01;38;5;010
-.K                        01;38;5;014
-.L                        01;38;5;012
-.M                        01;38;5;013
-.N                        01;38;5;005
-.O                        01;38;5;009
-.P                        01;38;5;003
-.Q                        01;38;5;011
-.R                        01;38;5;010
+.G                        01;38;5;162;4;3;29 # just repeat mostly bright 8bow for remainder
+.H                        01;38;5;203;21;9;55;25
+.I                        01;38;5;216
+.J                        01;38;5;052;48;5;236;24;23;29
+.K                        01;38;5;169;53;3
+.L                        01;38;5;125;48;5;052;55;23
+.M                        01;38;5;089;48;5;004;3
+.N                        01;38;5;001;48;5;000;23
+.O                        01;38;5;162;4;3;29
+.P                        01;38;5;203;21;9;55;25
+.Q                        01;38;5;216
+.R                        01;38;5;052;48;5;236;24;23;29
 #S                            C            # already was a .S above
-.T                        01;38;5;012
-.U                        01;38;5;013
-.V                        01;38;5;005
-.W                        01;38;5;009
-.X                        01;38;5;003
-.Y                        01;38;5;011
+.T                        01;38;5;125;48;5;052;55;23
+.U                        01;38;5;089;48;5;004;3
+.V                        01;38;5;001;48;5;000;23
+.W                        01;38;5;162;4;3;29
+.X                        01;38;5;203;21;9;55;25
+.Y                        01;38;5;216
 #Z                            G            # already was a .Z above for Zipz
 #a                            C            # already was a .a above ...
-.b                        01;38;5;012
+.b                        01;38;5;125;48;5;052;55;23
 #c                            M
 #d                            P
-.e                        01;38;5;009
-.f                        01;38;5;003
-.g                        01;38;5;011
+.e                        01;38;5;162;4;3;29
+.f                        01;38;5;203;21;9;55;25
+.g                        01;38;5;216
 #h                            G
-.i                        01;38;5;014
-.j                        01;38;5;012
-.k                        01;38;5;013
-.l                        01;38;5;005
+.i                        01;38;5;169;53;3
+.j                        01;38;5;125;48;5;052;55;23
+.k                        01;38;5;089;48;5;004;3
+.l                        01;38;5;001;48;5;000;23
 #m                            R
 #n                            O
 #o                            Y
 #p                            G
-.q                        01;38;5;014
-.r                        01;38;5;012
-.s                        01;38;5;013
+.q                        01;38;5;169;53;3
+.r                        01;38;5;125;48;5;052;55;23
+.s                        01;38;5;089;48;5;004;3
 #t                            P
-.u                        01;38;5;009
-.v                        01;38;5;003
-.w                        01;38;5;011
+.u                        01;38;5;162;4;3;29
+.v                        01;38;5;203;21;9;55;25
+.w                        01;38;5;216
 #x                            G
-.y                        01;38;5;014
+.y                        01;38;5;169;53;3
 #z                            B
 #.                            M            # .. && ._ do work for plain ls but my lsd8 recolors final chars according to extra separ8or regexes
-._                        01;38;5;005
-.00                       01;38;5;009      # \.[0-9A-F]    dotted versions
-.01                       01;38;5;003
-.02                       01;38;5;011
-.03                       01;38;5;010
-.04                       01;38;5;014
-.05                       01;38;5;012
-.06                       01;38;5;013
-.07                       01;38;5;005
+._                        01;38;5;001;48;5;000;23
+.00                       01;38;5;162;4;3;29 # \.[0-9A-F]    dotted versions
+.01                       01;38;5;203;21;9;55;25
+.02                       01;38;5;216
+.03                       01;38;5;052;48;5;236;24;23;29
+.04                       01;38;5;169;53;3
+.05                       01;38;5;125;48;5;052;55;23
+.06                       01;38;5;089;48;5;004;3
+.07                       01;38;5;001;48;5;000;23
 .08                       01;38;5;008
 .09                       01;38;5;015
 .10                       01;38;5;007      # now do top64 double digits
@@ -1271,227 +1271,227 @@ CHR                       01;38;5;011;48;5;000 #cd= 01;33;40    01;33;40  CHaRac
 .13                       01;38;5;002
 .14                       01;38;5;004
 .15                       01;38;5;000
-.16                       01;38;5;009      # keep repeat mostly bright 8bow for remainder
-.17                       01;38;5;003
-.18                       01;38;5;011
-.19                       01;38;5;010
-.20                       01;38;5;014
-.21                       01;38;5;012
-.22                       01;38;5;013
-.23                       01;38;5;005
-.24                       01;38;5;009
-.25                       01;38;5;003
-.26                       01;38;5;011
-.27                       01;38;5;010
-.28                       01;38;5;014
-.29                       01;38;5;012
-.30                       01;38;5;013
-.31                       01;38;5;005
-.32                       01;38;5;009
-.33                       01;38;5;003
-.34                       01;38;5;011
-.35                       01;38;5;010
-.36                       01;38;5;014
-.37                       01;38;5;012
-.38                       01;38;5;013
-.39                       01;38;5;005
-.40                       01;38;5;009
-.41                       01;38;5;003
-.42                       01;38;5;011
-.43                       01;38;5;010
-.44                       01;38;5;014
-.45                       01;38;5;012
-.46                       01;38;5;013
-.47                       01;38;5;005
-.48                       01;38;5;009
-.49                       01;38;5;003
-.50                       01;38;5;011
-.51                       01;38;5;010
-.52                       01;38;5;014
-.53                       01;38;5;012
-.54                       01;38;5;013
-.55                       01;38;5;005
-.56                       01;38;5;009
-.57                       01;38;5;003
-.58                       01;38;5;011
-.59                       01;38;5;010
-.60                       01;38;5;014
-.61                       01;38;5;012
-.62                       01;38;5;013
-.63                       01;38;5;005
+.16                       01;38;5;162;4;3;29 # keep repeat mostly bright 8bow for remainder
+.17                       01;38;5;203;21;9;55;25
+.18                       01;38;5;216
+.19                       01;38;5;052;48;5;236;24;23;29
+.20                       01;38;5;169;53;3
+.21                       01;38;5;125;48;5;052;55;23
+.22                       01;38;5;089;48;5;004;3
+.23                       01;38;5;001;48;5;000;23
+.24                       01;38;5;162;4;3;29
+.25                       01;38;5;203;21;9;55;25
+.26                       01;38;5;216
+.27                       01;38;5;052;48;5;236;24;23;29
+.28                       01;38;5;169;53;3
+.29                       01;38;5;125;48;5;052;55;23
+.30                       01;38;5;089;48;5;004;3
+.31                       01;38;5;001;48;5;000;23
+.32                       01;38;5;162;4;3;29
+.33                       01;38;5;203;21;9;55;25
+.34                       01;38;5;216
+.35                       01;38;5;052;48;5;236;24;23;29
+.36                       01;38;5;169;53;3
+.37                       01;38;5;125;48;5;052;55;23
+.38                       01;38;5;089;48;5;004;3
+.39                       01;38;5;001;48;5;000;23
+.40                       01;38;5;162;4;3;29
+.41                       01;38;5;203;21;9;55;25
+.42                       01;38;5;216
+.43                       01;38;5;052;48;5;236;24;23;29
+.44                       01;38;5;169;53;3
+.45                       01;38;5;125;48;5;052;55;23
+.46                       01;38;5;089;48;5;004;3
+.47                       01;38;5;001;48;5;000;23
+.48                       01;38;5;162;4;3;29
+.49                       01;38;5;203;21;9;55;25
+.50                       01;38;5;216
+.51                       01;38;5;052;48;5;236;24;23;29
+.52                       01;38;5;169;53;3
+.53                       01;38;5;125;48;5;052;55;23
+.54                       01;38;5;089;48;5;004;3
+.55                       01;38;5;001;48;5;000;23
+.56                       01;38;5;162;4;3;29
+.57                       01;38;5;203;21;9;55;25
+.58                       01;38;5;216
+.59                       01;38;5;052;48;5;236;24;23;29
+.60                       01;38;5;169;53;3
+.61                       01;38;5;125;48;5;052;55;23
+.62                       01;38;5;089;48;5;004;3
+.63                       01;38;5;001;48;5;000;23
 .000                      01;38;5;001      # \.[0-9]{3} decdotted versions (8bow skipng blacks,greens,blues,&&whites) ~/.inst/perl-5.8.8/Changes5.
-.001                      01;38;5;009
-.002                      01;38;5;003
-.003                      01;38;5;011
+.001                      01;38;5;162;4;3;29
+.002                      01;38;5;203;21;9;55;25
+.003                      01;38;5;216
 .004                      01;38;5;006
-.005                      01;38;5;014
-.006                      01;38;5;013
-.007                      01;38;5;005
+.005                      01;38;5;169;53;3
+.006                      01;38;5;089;48;5;004;3
+.007                      01;38;5;001;48;5;000;23
 .008                      01;38;5;001
-.009                      01;38;5;009
-.010                      01;38;5;003
-.011                      01;38;5;011
+.009                      01;38;5;162;4;3;29
+.010                      01;38;5;203;21;9;55;25
+.011                      01;38;5;216
 .012                      01;38;5;006
-.013                      01;38;5;014
-.014                      01;38;5;013
-.015                      01;38;5;005
+.013                      01;38;5;169;53;3
+.014                      01;38;5;089;48;5;004;3
+.015                      01;38;5;001;48;5;000;23
 .aix                      01;38;5;001      # ~/.inst/perl-5.8.8/README.    (8bow skipng blacks,greens,blues,&&whites)
-.amiga                    01;38;5;009
-.apollo                   01;38;5;003
-.beos                     01;38;5;011
+.amiga                    01;38;5;162;4;3;29
+.apollo                   01;38;5;203;21;9;55;25
+.beos                     01;38;5;216
 .bs2000                   01;38;5;006
-.ce                       01;38;5;014
-.cn                       01;38;5;013
-.cygwin                   01;38;5;005
+.ce                       01;38;5;169;53;3
+.cn                       01;38;5;089;48;5;004;3
+.cygwin                   01;38;5;001;48;5;000;23
 .dgux                     01;38;5;001
-.dos                      01;38;5;009
-.epoc                     01;38;5;003
-.freebsd                  01;38;5;011
+.dos                      01;38;5;162;4;3;29
+.epoc                     01;38;5;203;21;9;55;25
+.freebsd                  01;38;5;216
 .hpux                     01;38;5;006
-.hurd                     01;38;5;014
-.irix                     01;38;5;013
-.jp                       01;38;5;005
+.hurd                     01;38;5;169;53;3
+.irix                     01;38;5;089;48;5;004;3
+.jp                       01;38;5;001;48;5;000;23
 .ko                       01;38;5;001
-.linux                    01;38;5;009
-.machten                  01;38;5;003
-.macos                    01;38;5;011
+.linux                    01;38;5;162;4;3;29
+.machten                  01;38;5;203;21;9;55;25
+.macos                    01;38;5;216
 .macosx                   01;38;5;006
-.mingw                    01;38;5;009
-.mint                     01;38;5;014
-.mpeix                    01;38;5;013
-.netware                  01;38;5;005
+.mingw                    01;38;5;162;4;3;29
+.mint                     01;38;5;169;53;3
+.mpeix                    01;38;5;089;48;5;004;3
+.netware                  01;38;5;001;48;5;000;23
 .openbsd                  01;38;5;001
-.os390                    01;38;5;009
-.os400                    01;38;5;003
-.plan9                    01;38;5;011
+.os390                    01;38;5;162;4;3;29
+.os400                    01;38;5;203;21;9;55;25
+.plan9                    01;38;5;216
 .qnx                      01;38;5;006
-.solaris                  01;38;5;014
-.tru64                    01;38;5;013
-.tw                       01;38;5;005
+.solaris                  01;38;5;169;53;3
+.tru64                    01;38;5;089;48;5;004;3
+.tw                       01;38;5;001;48;5;000;23
 .unix                     01;38;5;015
 .uts                      01;38;5;001
-.vmesa                    01;38;5;009
-.vms                      01;38;5;003
-.vos                      01;38;5;011
+.vmesa                    01;38;5;162;4;3;29
+.vms                      01;38;5;203;21;9;55;25
+.vos                      01;38;5;216
 .Y2K                      01;38;5;006
-.haiku                    01;38;5;014      # ~/.inst/perl*5.10*/README.
-.riscos                   01;38;5;013
-.symbian                  01;38;5;005
-.act                      01;38;5;005      # ~/.inst/perl*5.10*/perly.
+.haiku                    01;38;5;169;53;3 # ~/.inst/perl*5.10*/README.
+.riscos                   01;38;5;089;48;5;004;3
+.symbian                  01;38;5;001;48;5;000;23
+.act                      01;38;5;001;48;5;000;23 # ~/.inst/perl*5.10*/perly.
 .chk                      01;38;5;008      # ~/.inst/firefox/lib(freebl|softokn)3.
-.autoreg                  01;38;5;009      # ~/.inst/firefox/
-.translations             01;38;5;011      # ~/dvl/c8/trm8/roxterm/README l10n file (from HTTP://ROXTerm.SF.Net custom instl sinc not pkgd 4 Ubu NEmor)
-.install                  01;38;5;009      # ~/dvl/c8/trm8/roxterm/debian/roxterm(-data)? filz
-.postinst                 01;38;5;013      #               roxterm debian
-.prerm                    01;38;5;092      #               roxterm debian
+.autoreg                  01;38;5;162;4;3;29 # ~/.inst/firefox/
+.translations             01;38;5;216      # ~/dvl/c8/trm8/roxterm/README l10n file (from HTTP://ROXTerm.SF.Net custom instl sinc not pkgd 4 Ubu NEmor)
+.install                  01;38;5;162;4;3;29 # ~/dvl/c8/trm8/roxterm/debian/roxterm(-data)? filz
+.postinst                 01;38;5;089;48;5;004;3 #               roxterm debian
+.prerm                    01;38;5;001;48;5;000;23 #               roxterm debian
 .lintian-overrides        01;38;5;001      #               roxterm debian source          file
-.po                       01;38;5;092      #               roxterm/po(4a)?/           POT filz
-.its                      01;38;5;013      #               roxterm/poxml/appdata          file
-.tracepoints              01;38;5;172      # Qt5/qtbase/src/widgets       filz
-.dynlist                  01;38;5;011      # Qt5/qtbase/src/widgets       filz
+.po                       01;38;5;001;48;5;000;23 #               roxterm/po(4a)?/           POT filz
+.its                      01;38;5;089;48;5;004;3 #               roxterm/poxml/appdata          file
+.tracepoints              01;38;5;203;21;9;55;25 # Qt5/qtbase/src/widgets       filz
+.dynlist                  01;38;5;216      # Qt5/qtbase/src/widgets       filz
 .header                   01;38;5;002      # Qt5/qtbase/util/glgen        filz
 .footer                   01;38;5;001      # Qt5/qtbase/util/glgen        filz
-.lexgen                   01;38;5;011      # Qt5/qtbase/util/lexgen       filz
+.lexgen                   01;38;5;216      # Qt5/qtbase/util/lexgen       filz
 .BSD                      01;38;5;006      # Qt5/qtbase/header && LICENSE filz
-.MIT                      01;38;5;013
+.MIT                      01;38;5;089;48;5;004;3
 .COMM                     01;38;5;008
 .FDL                      01;38;5;007
-.GPL                      01;38;5;172
-.GPL2                     01;38;5;011
-.GPLv2                    01;38;5;011
+.GPL                      01;38;5;203;21;9;55;25
+.GPL2                     01;38;5;216
+.GPLv2                    01;38;5;216
 .GPL3                     01;38;5;015
 .GPLv3                    01;38;5;015
-.LGPL                     01;38;5;172
+.LGPL                     01;38;5;203;21;9;55;25
 .LGPL3                    01;38;5;015
 .LGPLv3                   01;38;5;015
-.LGPLv21                  01;38;5;011
+.LGPLv21                  01;38;5;216
 .LGPL3-COMM               01;38;5;008
 .LGPL-ONLY                01;38;5;001
-.LGPL-NOGPL2              01;38;5;009
-.GPL3-EXCEPT              01;38;5;014
-.GPL-EXCEPT               01;38;5;014
-.2CEping                  01;38;5;009      # Qt5/qtbase/dist/changes-*    files
-.3CEconan                 01;38;5;172
-.3CEkicker                01;38;5;011
-.3CEsweetandsour          01;38;5;010
-.3CE-tp1                  01;38;5;014
-.4-temple                 01;38;5;009
+.LGPL-NOGPL2              01;38;5;162;4;3;29
+.GPL3-EXCEPT              01;38;5;169;53;3
+.GPL-EXCEPT               01;38;5;169;53;3
+.2CEping                  01;38;5;162;4;3;29 # Qt5/qtbase/dist/changes-*    files
+.3CEconan                 01;38;5;203;21;9;55;25
+.3CEkicker                01;38;5;216
+.3CEsweetandsour          01;38;5;052;48;5;236;24;23;29
+.3CE-tp1                  01;38;5;169;53;3
+.4-temple                 01;38;5;162;4;3;29
 .0-garden                 01;38;5;002
 .2-tower                  01;38;5;007
-.0-rc0                    01;38;5;009      # Qt5/qtbase/dist/changes-*    files
-.0-rc1                    01;38;5;003
-.0-rc2                    01;38;5;011
-.0-rc3                    01;38;5;010
+.0-rc0                    01;38;5;162;4;3;29 # Qt5/qtbase/dist/changes-*    files
+.0-rc1                    01;38;5;203;21;9;55;25
+.0-rc2                    01;38;5;216
+.0-rc3                    01;38;5;052;48;5;236;24;23;29
 .0-tp0                    01;38;5;006
-.0-tp1                    01;38;5;014
-.0-tp2                    01;38;5;012
-.0-tp3                    01;38;5;013
-.92                       01;38;5;009      # Qt5/qtbase/dist/changes-*    files
-.93                       01;38;5;003
-.94                       01;38;5;011
-.95                       01;38;5;010
-.96                       01;38;5;014
-.97                       01;38;5;012
-.98                       01;38;5;013
-.99                       01;38;5;005
-.00beta0                  01;38;5;009      # Qt5/qtbase/dist/changes-*    files
-.00beta1                  01;38;5;003
-.00beta2                  01;38;5;011
-.00beta3                  01;38;5;010
-.00beta4                  01;38;5;014
-.00beta5                  01;38;5;012
-.00beta6                  01;38;5;013
-.00beta7                  01;38;5;005
-.0-beta0                  01;38;5;009      # Qt5/qtbase/dist/changes-*    files
-.0-beta1                  01;38;5;003
-.0-beta2                  01;38;5;011
-.0-beta3                  01;38;5;010
-.0-beta4                  01;38;5;014
-.0-beta5                  01;38;5;012
-.0-beta6                  01;38;5;013
-.0-beta7                  01;38;5;005
-.0-b0                     01;38;5;009      # Qt5/qtbase/dist/changes-*    files
-.0-b1                     01;38;5;003
-.0-b2                     01;38;5;011
-.0-b3                     01;38;5;010
-.0-b4                     01;38;5;014
-.0-b5                     01;38;5;012
-.0-b6                     01;38;5;013
-.0-b7                     01;38;5;005
+.0-tp1                    01;38;5;169;53;3
+.0-tp2                    01;38;5;125;48;5;052;55;23
+.0-tp3                    01;38;5;089;48;5;004;3
+.92                       01;38;5;162;4;3;29 # Qt5/qtbase/dist/changes-*    files
+.93                       01;38;5;203;21;9;55;25
+.94                       01;38;5;216
+.95                       01;38;5;052;48;5;236;24;23;29
+.96                       01;38;5;169;53;3
+.97                       01;38;5;125;48;5;052;55;23
+.98                       01;38;5;089;48;5;004;3
+.99                       01;38;5;001;48;5;000;23
+.00beta0                  01;38;5;162;4;3;29 # Qt5/qtbase/dist/changes-*    files
+.00beta1                  01;38;5;203;21;9;55;25
+.00beta2                  01;38;5;216
+.00beta3                  01;38;5;052;48;5;236;24;23;29
+.00beta4                  01;38;5;169;53;3
+.00beta5                  01;38;5;125;48;5;052;55;23
+.00beta6                  01;38;5;089;48;5;004;3
+.00beta7                  01;38;5;001;48;5;000;23
+.0-beta0                  01;38;5;162;4;3;29 # Qt5/qtbase/dist/changes-*    files
+.0-beta1                  01;38;5;203;21;9;55;25
+.0-beta2                  01;38;5;216
+.0-beta3                  01;38;5;052;48;5;236;24;23;29
+.0-beta4                  01;38;5;169;53;3
+.0-beta5                  01;38;5;125;48;5;052;55;23
+.0-beta6                  01;38;5;089;48;5;004;3
+.0-beta7                  01;38;5;001;48;5;000;23
+.0-b0                     01;38;5;162;4;3;29 # Qt5/qtbase/dist/changes-*    files
+.0-b1                     01;38;5;203;21;9;55;25
+.0-b2                     01;38;5;216
+.0-b3                     01;38;5;052;48;5;236;24;23;29
+.0-b4                     01;38;5;169;53;3
+.0-b5                     01;38;5;125;48;5;052;55;23
+.0-b6                     01;38;5;089;48;5;004;3
+.0-b7                     01;38;5;001;48;5;000;23
 .0.0                      01;38;5;007      # \.[0-9A-F]\.0 dotted versions
 .1.0                      01;38;5;001
-.2.0                      01;38;5;009
-.3.0                      01;38;5;003
-.4.0                      01;38;5;011
-.5.0                      01;38;5;010
-.6.0                      01;38;5;014
-.7.0                      01;38;5;012
-.8.0                      01;38;5;013
-.9.0                      01;38;5;005
+.2.0                      01;38;5;162;4;3;29
+.3.0                      01;38;5;203;21;9;55;25
+.4.0                      01;38;5;216
+.5.0                      01;38;5;052;48;5;236;24;23;29
+.6.0                      01;38;5;169;53;3
+.7.0                      01;38;5;125;48;5;052;55;23
+.8.0                      01;38;5;089;48;5;004;3
+.9.0                      01;38;5;001;48;5;000;23
 .A.0                      01;38;5;008
 .B.0                      01;38;5;015
 .C.0                      01;38;5;006
 .D.0                      01;38;5;002
 .E.0                      01;38;5;004
 .F.0                      01;38;5;000
-.asc                      01;38;5;172      # I74M2ASC:added entries for PGP-signed 7776 pswd list from Diceware && stored in ~/dox/dvl/ref/ plain ASCII text;
-.ascii                    01;38;5;003
-.ansi                     01;38;5;011
+.asc                      01;38;5;203;21;9;55;25 # I74M2ASC:added entries for PGP-signed 7776 pswd list from Diceware && stored in ~/dox/dvl/ref/ plain ASCII text;
+.ascii                    01;38;5;203;21;9;55;25
+.ansi                     01;38;5;216
 .ANSI.00.30               01;38;5;000      # \.ANSI\.[01]\.3[0-7] dotted color-code extensions
 .ANSI.00.31               01;38;5;001
 .ANSI.00.32               01;38;5;002
-.ANSI.00.33               01;38;5;003
+.ANSI.00.33               01;38;5;203;21;9;55;25
 .ANSI.00.34               01;38;5;004
-.ANSI.00.35               01;38;5;005
+.ANSI.00.35               01;38;5;001;48;5;000;23
 .ANSI.00.36               01;38;5;006
 .ANSI.00.37               01;38;5;007
 .ANSI.01.30               01;38;5;008
-.ANSI.01.31               01;38;5;009
-.ANSI.01.32               01;38;5;010
-.ANSI.01.33               01;38;5;011
-.ANSI.01.34               01;38;5;012
-.ANSI.01.35               01;38;5;013
-.ANSI.01.36               01;38;5;014
+.ANSI.01.31               01;38;5;162;4;3;29
+.ANSI.01.32               01;38;5;052;48;5;236;24;23;29
+.ANSI.01.33               01;38;5;216
+.ANSI.01.34               01;38;5;125;48;5;052;55;23
+.ANSI.01.35               01;38;5;089;48;5;004;3
+.ANSI.01.36               01;38;5;169;53;3
 .ANSI.01.37               01;38;5;015
 .8.0-46-generic           01;38;5;015      # for very old 4.8.* kernelz, just releg8 them all to bright White, since they should be quite anomalous in future
 .8.0-45-generic           01;38;5;015
@@ -1505,15 +1505,15 @@ CHR                       01;38;5;011;48;5;000 #cd= 01;33;40    01;33;40  CHaRac
 .8.0-27-generic           01;38;5;015
 .8.0-26-generic           01;38;5;015
 .10.0-38-generic          01;38;5;001      # for older 4.10.* kernelz which should be mostly retired by now, invert default color case for mostly dark shadez
-.10.0-37-generic          01;38;5;003
+.10.0-37-generic          01;38;5;203;21;9;55;25
 .10.0-35-generic          01;38;5;184
 .10.0-33-generic          01;38;5;002
 .10.0-32-generic          01;38;5;006
 .10.0-30-generic          01;38;5;004
 .10.0-28-generic          01;38;5;164
-.10.0-26-generic          01;38;5;005
+.10.0-26-generic          01;38;5;001;48;5;000;23
 .10.0-24-generic          01;38;5;001
-.10.0-22-generic          01;38;5;003
+.10.0-22-generic          01;38;5;203;21;9;55;25
 .10.0-21-generic          01;38;5;184
 .10.0-20-generic          01;38;5;002
 .10.0-19-generic          01;38;5;006
@@ -1559,20 +1559,20 @@ CHR                       01;38;5;011;48;5;000 #cd= 01;33;40    01;33;40  CHaRac
 .0.0-16-generic           01;38;5;014;48;5;006
 .0.0-15-generic           01;38;5;012;48;5;006
 .0.0-13-generic           01;38;5;013;48;5;006 # BlO /boot Linux kernelz versionz 5.3.0 onward started with Ubuntu 19.10 Eoan Ermine, so dark cyan bkgr 5.0 abov
-.3.0-64-generic           01;38;5;172      # now omitting Red && purple 2 loop just middle 6 of the 8bow, since reddish may be a no-no in Heaven && sO Earth
-.3.0-62-generic           01;38;5;011
-.3.0-61-generic           01;38;5;010
-.3.0-59-generic           01;38;5;014
-.3.0-55-generic           01;38;5;012
-.3.0-53-generic           01;38;5;013
-.3.0-51-generic           01;38;5;172
-.3.0-46-generic           01;38;5;011
-.3.0-45-generic           01;38;5;010
-.3.0-42-generic           01;38;5;014
-.3.0-40-generic           01;38;5;012
-.3.0-26-generic           01;38;5;013
-.3.0-24-generic           01;38;5;172
-.3.0-23-generic           01;38;5;011
+.3.0-64-generic           01;38;5;203;21;9;55;25 # now omitting Red && purple 2 loop just middle 6 of the 8bow, since reddish may be a no-no in Heaven && sO Earth
+.3.0-62-generic           01;38;5;216
+.3.0-61-generic           01;38;5;052;48;5;236;24;23;29
+.3.0-59-generic           01;38;5;169;53;3
+.3.0-55-generic           01;38;5;125;48;5;052;55;23
+.3.0-53-generic           01;38;5;089;48;5;004;3
+.3.0-51-generic           01;38;5;203;21;9;55;25
+.3.0-46-generic           01;38;5;216
+.3.0-45-generic           01;38;5;052;48;5;236;24;23;29
+.3.0-42-generic           01;38;5;169;53;3
+.3.0-40-generic           01;38;5;125;48;5;052;55;23
+.3.0-26-generic           01;38;5;089;48;5;004;3
+.3.0-24-generic           01;38;5;203;21;9;55;25
+.3.0-23-generic           01;38;5;216
 #                                          # zsh wraps '%{' ANSI '%}' && vim User[1-9] colrz specify BlO ForeGroundz all on darkblue BakGrnd4statuslIn
 #     4NT    etfp   vim  c8  color              ANSI      HTML    Octology::d8::fldz (`d8`)
 #     0f     Fsy_   %*    W WhiteBright         \e[1;37m  FEFDFF            # vim %* resets statuslIn colr 2 Dfalt   White on darkblue so has max 10 colrz

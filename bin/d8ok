@@ -9,7 +9,7 @@
 #     'x|q|Esc' eXitz.    -f -B -b -d -c -s -p -r -h (with the same meaningz as above) can be given on the command-line.
 use strict;use warnings;use utf8;use v5.10;use Octology::a8;use Octology::b8;
                         use Encode;        use Octology::d8;use Curses::Simp;
-my $VERSION='0.0';my $d8VS='KCULDUDE';my $Auth='PipStuart <Pip@CPAN.Org>';my $name=$0;$name=~s/.*\///;my $d8im;my @fldz;my @lasf;my @text;my @fclr;my $okey='';
+my $VERSION='0.0';my $d8VS='L19L36L9';my $Auth='PipStuart <Pip@CPAN.Org>';my $name=$0;$name=~s/.*\///;my $d8im;my @fldz;my @lasf;my @text;my @fclr;my $okey='';
 my $sepr=  'wKKw';my $d8bo=$cmap{'d8bo'};my $prof=$d8bo;my $tmbo=substr( $d8bo,4);my @limz=(63,12,31,42,23); # 'YGTBUDSN'&&'Fo57ZNVp' altrn8z4antiRed&&XprimNt
 # now all default base colrz @bclz below start Bold being above index 7, downside being that custom .pal8 filez won't be able to change o or p like RYGCBM
 my $bilt=0;       my @bclz= split( //,$d8bo);my $fulc=' ';my $parm='';my $barz=0;my $bold=0;my $sbld=1;my $sped= 0.987;my @spdz=(0, 0.015, 0.151, $sped);
@@ -125,16 +125,7 @@ while  (lc($keey) ne 'x' && lc($keey) ne 'q' && ord($keey) != 27){
                            if($barz ^=   1 ){ $bilt = 0; BildBarz(); $simp->FlagMaxi(1); } $simp->ShokScrn(2);$simp->Draw();}
   elsif(lc($keey) eq 's'){ for(0..$#spdz){ if($sped == $spdz[$_]){ if($_ == $#spdz){ $sped = $spdz[0];      } # cycle speed
                                                                    else            { $sped = $spdz[$_ + 1]; } last; } }     }
-  my  $pfmc=eval("(-M \'$pfil\')");
-  if ($pfmc != $pfms){  $pfms=  $pfmc;
-    if     (defined(            $lfil) && -r "$lfil"){my $line;
-      open     my    $lflh, '<',$lfil or die "!*EROR*! Couldn't open  lfil:$lfil for reading! $!\n";binmode $lflh,':encoding(UTF-8)';
-      while(  $line=<$lflh>){if($line !~ /^\s*#/ && $line=~ /^\s*([0-9A-Z._]+)[^0-9A-Z._]+([0-9A-Z._]+)/ix){$pldh{$1}=$2;}}
-      close          $lflh            or die "!*EROR*! Couldn't close lflh! $!\n"      ;
-      if   (defined(            $pfil) && -r "$pfil"){
-        open   my    $pflh, '<',$pfil or die "!*EROR*! Couldn't open  pfil:$pfil for reading! $!\n";binmode $pflh,':encoding(UTF-8)';
-        while($line=<$pflh>){if($line !~ /^\s*#/ && $line=~ /^\s*([0-9A-Z._]+)                /ix && exists($pldh{$1})){$cmap{'d8bo'}=$prof=$pldh{$1};}}
-        close        $pflh            or die "!*EROR*! Couldn't close pflh! $!\n"      ;}}}
+  PrfM();  $prof=$cmap{'d8bo'}; #=$prof=$pldh{$1};
   if (     $d8bo  ne $prof && length($prof) >= 8){$d8bo=$prof;$tmbo=substr($d8bo,4);@bclz=split(//,$d8bo);
     $fulc=               $bclz[2] x 3 . ' ' . $bclz[1] x 3 . ' ' . $bclz[2] x 2 . ' ' . $bclz[4] x 2 . 'W' .
     $bclz[5] x 2 . 'W' . $bclz[6] x 2 . 'W' . $bclz[7] x 2 . ' ' . $bclz[3] x 5 . ' ' . $bclz[0] x 4 . ' ' ;

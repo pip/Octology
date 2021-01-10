@@ -1,11 +1,13 @@
-# KCJL6Pls:~/.log/prof.ls crE8d by PipStuart <Pip@CPAN.Org> 4 a b64 key-table list of YouTube channel profile d8bo master color-sequences;my $d8VS='L11LBuds';
+# KCJL6Pls:~/.log/prof.ls crE8d by PipStuart <Pip@CPAN.Org> 4 a b64 key-table list of YouTube channel profile d8bo master color-sequences;my $d8VS='L18L6Ckp';
 # 2du:stRt adding optional extra layerz for DarkAvrgLite && SGRcodez B4 mAB also bkgrndaloh BtwEn && multiSGRz 2 flag attrz on thru all d8bo usagez;
 d RoYGCBMp                   # PipStuart Primary U2bchanL ; RoYGCBMp
-p RHFrRHFf FFFFLLLL BIlLlUiu # PedantPip Secndry U2bchanL ; RfFrHh32
-c CzZcTt98 FFDDAALL BUILDlOi # CapCtion8 terTary U2bchanL ; CzZcTt98
-j Y45OUuyo FFDDAALL BUILDlOi # JewJesus8 Skeptic U2bchanL ; Y45OUuyo
-g AaGg76Dd FFLLAADD UIlLODCl # GuyGooway MGTOWay U2bchanL ; AaGg76Dd ## Note: CantAlow OhhhHooo?;
-i NnSsVvMm FFLLAADD UIlLODCl # ImprovIs8 Ingland U2bchanL?; NnSsVvMm
+# RF3Hh2fr                   # PedantPip Secndry U2bchanL ; RfFrHh32 RHFrRHFf FFFFLLLL iIiuDUDu ;
+# R F 3 r H h 2 f            # Ped8bSPip Secndry U2bchanL ; RfFrHh32
+p D:RUIc A:FDCol L:3 Fa:fbuic D:HOI hfoi 2bI rki #D:RUIc A:FDCol L:3 Fa:rbuicL D:HOI hfoil 2b fk;
+c CzZTt98c FFDDAALL DuDiCIci # CapCtion8 terTary U2bchanL ; CzZcTt98
+j Y45UuyoO FFDDAALL OUiDIuoi # JewJesus8 Skeptic U2bchanL ; Y45OUuyo
+g AaG76Ddg FFLLAADD iuDuIOio # GuyGooway MGTOWay U2bchanL ; AaGg76Dd ## Note: CantAlow OhhhHooo?;
+i NnSVvMms FFLLAADD UDuDUlLl # ImprovIs8 Ingland U2bchanL?; NnSsVvMm
 R YGTBUDSN                   # RappingRt AntiRed U2bchanL?; YGTBUDSN RiteBlue LeftOrng WiteUpKs ;
 B SBsbXx1N                   # BluBoieB8 NonBinG U2bchanL?; SBsbXx1N BcuzCmdz prpbplow weretAkN ;
 L LlHhvV23                   # LadyLacy8 Literal U2bchanL?; LlHhvV23

@@ -8,7 +8,7 @@
 #   add optn to prnt out raD8ing blox of closest matchez going Up 1st clockwise R D L then UL UR DR DL && beyond top8 maybe further ringz start UL str8 around,
 #   consider renaming to better reflect purpose && capabilitiez,add new list sorting RGB channel dominance to complement distance listz,
 #   figure out why -size keeps shrinking for multiple -cH;
-use strict;use warnings;use utf8;use v5.10;use Octology::a8;use Color::Similarity::RGB qw(distance);my $VERSION='0.0';my $d8VS='K3RMNAut';
+use strict;use warnings;use utf8;use v5.10;use Octology::a8;use Color::Similarity::RGB qw(distance);my $VERSION='0.0';my $d8VS='L13L8XSR';
 my $tmsz=1;my $cndx= undef;my %pb10;my %pcdm;my %mb10;my @brit;my %rcdm; # Pal8Base10 && Pal8ColrDistMap && MapdBase10 && colrBRIghTness && ResultColrDistMapz
 my $pkyz=$cmap{'8pal8'};$pkyz=~ s/\s+//g;for my $pkey  (split(//,$pkyz)){my $pb6r=$pmap{$pkey};
   my($pred,$pgrn,$pblu)= map { $sb10{$_} * 4 } split(//,$pb6r)  ;$pb10{"o$pkey"}=[$pred,$pgrn,$pblu];} # rEmMbr thEs Orig b64 RGBz wer handmade from clrz.txt
@@ -29,7 +29,7 @@ sub pm2x{my $flgz= join(' ',@_) || '';my $ddcf=0; # Did Do Closest Flag for when
   h    - print this Help text and exit;  pm2x is based on sorted Color::Similarity::RGB->distance() results among xterm 256 colors
   d    - Design8 Decimal results listed for any -cHX call (maybe should also l8r change parse from HX input to dec)
   t    - check Tops among original 8pal8 mapping (ignoring .pal8 file actions) into remaining 192 to gener8 3 new layers from
-  n    - No spaces between results;  You can do `S ::R;pm2x c3F` to get Reverse to backgrounds.
+  n    - No spaces between results;  You can do `S :R;pm2x c3F` to get Reverse to backgrounds.
   sD   - Set Selection Size to D decimal number
   cHX  - Calcul8 Closest Colors to HX HEX index;";return();}
   if  ($flgz=~  /(^|\s)-?-?s=?\s*( \d+    )/ix){$tmsz=     $2 ;} # set Size param to TopMatchSiZe
