@@ -1,5 +1,5 @@
 # HBQLISTV:know.ls crE8d by PipStuart <Pip@CPAN.Org> to duplic8 Dr. Jordan B. Peterson's Quora.Com answer of "40 most valuable things everyone should know";
-# $VERSION='0.0';$d8VS='L11LATER'; # While this document origin8d around (&& still mainly intends to focus on) Dr. Peterson's knowledge, many others fE8ure;
+# $VERSION='0.0';$d8VS='L1CL4cat'; # While this document origin8d around (&& still mainly intends to focus on) Dr. Peterson's knowledge, many others fE8ure;
 # 2du:start chronicling Dr. Peterson's many topical videos with new section for post-title subject summaries or explor8ion;
 0) Tell the truth.
 1) Do not do things that you h8.
@@ -1076,3 +1076,5 @@ KCOLCode:HTTPS://YouTu.be/ttcflCFd5B8 "Every Type of Programmer" # KCI:4E0 of Ke
 KCULLove:HTTPS://YouTu.be/fn3KWM1kuAw "Do You Love Me?" # KCT:2s0 of BostonDynamics showing totally amazing 4 robots doing graceful synchronized group dances;
 L11LCloc:HTTPS://YouTu.be/ogDBFD7tr90 "We Just Leveled Up Our Time-Keeping Skills - Entangled Atom Clock" # KCT:DT0 of AntonPetrov explaining historic clocks;
 L11LDidU:HTTPS://YouTu.be/kSG4Rfc9YIw "How to Talk Like a Physicist" # KCU:5w0 of SabineHossenfelder correcting a bunch of very common physics misconceptions;
+L1BLKNOW:HTTPS://YouTu.be/zHL9GP_B30E "Illusions of Time" # L18:V70 by Vsauce totally blasting a triple-double hat-trick grand-slam on naming time illusions!;
+L1CL4cat:HTTPS://YouTu.be/kTXTPe3wahc "Parallel Worlds Probably Exist. Here's Why" # K36:Jx0 of Veritasium explaining quantum-theory && waves+cats collapsing;
