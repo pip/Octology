@@ -30,7 +30,7 @@ unsetopt                \
 # auto_pushd            \# setng addz dirz 2 stack wN just normally chngng 2 thM (wich I du not normally lIk or want)
 # ksh_arrays            \# rEmMbr wNwrItng scrptz[or funcz]2include'setopt [localoptions] ksharrays'sO arAzR 0-bAsed(but!glOblBcuzmOst scrptzRstndrdly 1-bAsed)
 # re_____match_____pcre \# mA want2set for Z-SHell scripting RegularExpressions to utilize PerlCompatibility styles && mA insert 'zmodload zsh/(pc)?re(gex)?';
-export Vers='0.0';export d8VS='L1ALMOND';export Auth='PipStuart <Pip@CPAN.Org>'; # not Xportng $b sinc cOlIdz wi sort{$a <=> $b} /defhijlnqstuvx/i + AZ 4golf;
+export Vers='0.0';export d8VS='L1NL4ptm';export Auth='PipStuart <Pip@CPAN.Org>'; # not Xportng $b sinc cOlIdz wi sort{$a <=> $b} /defhijlnqstuvx/i + AZ 4golf;
 if     [[       "$SHELL"    == "" ]]; then       export SHELL=`  which zsh`;fi # 8sh should parse this && OverId it    # shud `man zshall` /OSTYP 2lern4BlO
 if     [[       "$HOSTNAME" == "" ]]; then       export HOSTNAME=`hostname`;fi #`hostname`retnz fsckd nwlInz\n4CygWinzRxvt... ||smthng els lame  =(
 if     [[       "$HOST"     == "" ]]; then       export HOST   ="$HOSTNAME";fi;export VERBOSE='1'; # set flag to print debug && status info from system utilz
@@ -136,7 +136,7 @@ alias krav='QT_QPA_PLATFORM=xcb   QT_QPA_VERBOSE=1 QT_SCALE_FACTOR=1.25 krita &'
 alias kraw='QT_QPA_PLATFORM=wayland-xcomposite-glx QT_SCALE_FACTOR=1.25 krita &'; # test wayland; Below from HTTPS://Forum.KDE.Org/viewtopic.php?t=151602 ;
 alias krit='QT_QPA_PLATFORM=xcb   QT_QPA_VERBOSE=1 QT_SCALE_FACTOR=1.2  krita &'; # scales whole Krita interface down a bit to fit my display much more nicely;
 alias lddk='ldd -r =krita|cut -d " " -f 1'; # try `QT_DEBUG_PLUGINS=1   krita &` if plugins mAB core-dumping. Also QML_IMPORT_TRACE && QT_QML_DEBUG_NO_WARNING;
-#xport GTK_IM_MODULE='uim'; #2uze uim-skk:`em skk-jisyo`;4DfltInptMethd add2~/.uim:(define default-im-name 'skk|anthy|*');#2fyndIMz:`uim-im-switcher-[gq]tk?`;
+#xport GTK_IM_MODULE='uim'; #2uze uim-skk:`em skk-jisyo`;4DfltInptMethd add2~/.uim:(define default-im-name 'skk|anthy|*'); #2fyndIMz:`uim-im-switcher-[gq]tk?`;
 #xport  QT_IM_MODULE='uim';export XMODIFIERS=@im=uim ; #export CD_ROOT="$HOME/gmz"; #Xportng CD_ROOT=~/gmz was tmp needed2`em quake3`(ioq3);mayb s/uim/scim/g;
 export CVS_RSH=`which ssh`;export CVSROOT='/var/cvs';export LS_OPTIONS='--color=auto'; # LsOptz: --color=always|yes|force|never|no|none|auto|tty|if-tty
 dircolors=`which dircolors`||dircolors=`which gdircolors`;export dircolors;alias drc='dircolors';export COLORFGBG='default;default'; # abov Dfalt CVSRootPath..
@@ -158,7 +158,7 @@ else                                   eval $($dircolors -b            ); fi #  
          LS_COLORS="$LS_COLORS*-PCLPS2=01;33:"; #</etc/alternati*/ghostscript-current/Resource/Init #^/etc/alternatives/ghostscript-current/Resource/Font
          LS_COLORS="$LS_COLORS*-WMode=01;31:*copyright=01;37:*null=00;31:"; # xdpg&&/dev/null symlnx #/etc/alternatives/ghostscript-current/Resource/SubstCID
          LS_COLORS="$LS_COLORS*-account=01;31:*-auth=00;33:*-password=01;33:*-session=01;36:*-noninteractive=01;35:*-daemon=01;31:*-screensaver=01;35:";
-         LS_COLORS="$LS_COLORS*-autologin=00;35:*-greeter=01;36:*-freerdp=00;33:*-containers=01;36:";# (~8bow cycl) /etc/(apparmor|pam).d
+         LS_COLORS="$LS_COLORS*-autologin=00;35:*-greeter=01;36:*-freerdp=00;33:*-containers=01;36:"; #(~8bow cycl) /etc/(apparmor|pam).d
          LS_COLORS="$LS_COLORS*-uccsconfigure=01;33:*-1=00;35:*-user=00;36:*-l=01;31:*utmp=00;31:";  #   more       /etc/          pam .d && /run/ fIl dRk-red
          LS_COLORS="$LS_COLORS*-common=01;31:*-client=00;33:*-accessibility=01;33:*-strict=00;36:*-integration=01;36:*-browser=01;35:*-kit=00;35:";
          LS_COLORS="$LS_COLORS*-files=00;31:*_certs=01;31:*_keys=00;33:*-repositories=01;33:*-clients=00;36:*-browsers=01;36:*-email=01;35:*-readers=00;35:";
@@ -377,7 +377,9 @@ alias ag='apt-get  ';alias agi='ag install';alias agu='ag update';alias aguu='ag
 alias ac='apt-cache';alias acs='acS       ';alias agr='ag remove';alias agrm='agr';alias agar='ag autoremove';alias agdu='ag dist-upgrade'; # thN aguu B4hand
 alias ai='apt install';alias acsrch='ac search';alias au='apt update';alias auu='au;apt upgrade';alias acsp='ac showpkg';alias agri='ag reinstall'; #shOpkgDtlz
 alias apts='apt search';alias asrch='apts';alias aar='apt autoremove';alias ari='apt reinstall'; # alreD /usr/bin/as GNU ASsembler,shud stuD apt over ag 2add;
-alias   AS='apts';alias aS='acS';alias As='en KAKMAKoK';alias 666='gi alias ~/.zshrc|wc -l';alias gicoa='gi -co alias ~/.zshrc'; # -Count -Onlym@ch; 6more?
+alias   AS='apts   ';alias  aS='acS';alias goe='g -o export ~/.zshrc|wc -l'; # short altern8 aliasz 4 sepR8 apt && apt-cache srch cmndz 4 querying dpkg d8a;
+alias d6='en " 666+A gcaz KAKMAKoK"';alias 666='g    alias  ~/.zshrc|wc -l';alias gcaz='g -c alias ~/.zshrc'; # -Count; 666 lInzHazAFew2ManyNow?; 1333vs.1391;
+alias da='en "1333/2 goa  L1NL1333"';alias goa='g -o alias  ~/.zshrc|wc -l'; # -Onlym@ch; gca is alreD --color=auto sO abov nEded z but!goa; clOse2 8.utf^8wc;
 alias ali=' apt list             --installed';alias dli='dpkg -l'; # super basic commandz to use Apt or Dpkg(-query)? to List Installed packagez on Ubuntu or
 alias alim="aptitude search      '~i!~M' ";alias agiy='agi -y'; # shud just List pkgz wich were Instld Manually (!as DpNdNCz); /var/lib/apt/extended_states 2?
 alias calg="(zc \$(ls -tr /var/log/apt/history.log*.gz);cat /var/log/apt/history.log) 2>/dev/null|eg '^(Start-Date:|Commandline:)'|gv aptdaemon|
@@ -563,6 +565,7 @@ alias       f='   find'; #  f    :           find            (with combined inte
 #lias       g='   grp '; #  g    :          sarep|(e|f)?grep (sed|awk too?)
             g() { grp   $@; }    # unalias    g   (redefining as simple function wrapper resolves parameter alias expansion problem [but still will glob ok])
 alias      gi='   g -i'; #                              grep -i to      Ignore_case
+alias      go='   g -o'; #                              grep -o to      Only_matchz
 alias      gv='   g -v'; #                              grep -v to                     inVert_match_results (gs is already GhostScript so not aliased to g -s)
 alias      gS='   g -s'; #                              grep -s to SupreSS warningS
 alias      gH='   g -H'; #                              grep -H to sHow Header_file_name
@@ -570,6 +573,7 @@ alias      gT='   g -T'; #                              grep -T to make sure -n 
 alias      gn='   g -n'; #                              grep -n to show liNe_Number
 alias      gb='   g -b'; #                              grep -b to show Byte_offset && also want -u to Use-Unix-byte-offsets for MS-DOS or MS-Windows OpSystMz
 alias     gbu=' gb  -u';
+alias     goi=' gi  -o'; #                              grep    to both Ignore_case && Only___match_include (but alreD was /usr/bin/gio 4 mAB GLib InptOutpt?)
 alias     giv=' gi  -v'; #                              grep    to both Ignore_case && inVert_match_results
 alias     gis=' gi  -s'; #                              grep -s to both Ignore_case && --no-messages suppress messages like glob * getting directories
 alias     gvs=' gv  -s'; #                              grep -s to both                inVert_match_results && --no-messages  # gs already taken by GhostScript
@@ -600,29 +604,30 @@ alias       M='   m   ';
 #lias       m='   mn  '; #  m    :            man (mn() already zsh function below, but may soon extract to preserve parameter history like d8:dic)
             m() { mn   $@; }     # unalias   m && redefining as simple function wrapper resolves manpage param alias expansion problem (but still will glob)
 alias      mm=' mikmod'; # prolly scream 3 times if you can read hahahaha !!! :)
+alias      P0='pP 0';alias P1='pP 1';alias P2='pP 2';alias P3='pP 3';alias P4='pP 4';alias P5='pP 5';alias P6='pP 6';alias P7='pP 7'; # run 64 basic prOfIlez
+alias      P8='pP 8';alias P9='pP 9';alias PA='pP A';alias PB='pP B';alias PC='pP C';alias PD='pP D';alias PE='pP E';alias PF='pP F'; # thru Picker all up-Pz
+alias      PG='pP G';alias PH='pP H';alias PI='pP I';alias PJ='pP J';alias PK='pP K';alias PL='pP L';alias PM='pP M';alias PN='pP N';
+alias      PO='pP O';alias Pp='pP P';alias PQ='pP Q';alias PR='pP R';alias PS='pP S';alias PT='pP T';alias PU='pP U';alias PV='pP V';
+alias      PW='pP W';alias PX='pP X';alias PY='pP Y';alias PZ='pP Z';alias Pa='pP a';alias Pb='pP b';alias Pc='pP c';alias Pd='pP d';
+alias      Pe='pP e';alias Pf='pP f';alias Pg='pP g';alias Ph='pP h';alias Pi='pP i';alias Pj='pP j';alias Pk='pP k';alias Pl='pP l';
+alias      Pm='pP m';alias Pn='pP n';alias Po='pP o';alias Pp='pP p';alias Pq='pP q';alias Pr='pP r';alias Ps='pP s';alias Pt='pP t';
+alias      Pu='pP u';alias Pv='pP v';alias Pw='pP w';alias Px='pP x';alias Py='pP y';alias Pz='pP z';alias P.='pP .';alias P_='pP _';
 alias       P='   pal8'; #  P    :           pal8 terminal color setting utility from my Octology::f8 module ("f8ful 0per8ion" for handling f0nt && pal8 d8a)
 alias       p='   CCC '; #  p    :            CCC (p used to be just 'ps' "Process Snapshot" but remapped to super Clear from above for easy one-hand entry)
-alias      PP='   ppp '; #  PP   :  pull pushd, purge previous back to just a plain prompt, then popd so that past scrlbak wipez with working dir preserved;
+alias     PPP='   ppp '; #  PPP  :  pull pushd, purge previous back to just a plain prompt, then popd so that past scrlbak wipez with working dir preserved;
 alias      pl='   perl'; #  pl   :           perl (with the most common file-extension for typical Perl code as a way to invoke the interpreter itself also)
-alias      pL='pP L';    #  pL   :           pP L (aidyLaicyLiteral LuciousLadyLumps LovelyLivelyLoudy LastLiasLpro); pPA triez 2 loop in Perl nstd of ZshL;
-alias      pk='pP k';alias p_='pP _'; #  pk_:pP k # pA() BlO is: profileAll 2 thrO out P PipStu d falt, pp, cc8, jj8, gg, ii, RR, BB, LL, OO, WW, kk, && vv;
-alias      pp='pP p';alias pc='pP c';alias pj='pP j';alias pg='pP g';alias pi='pP i';alias pR='pP R';alias pB='pP B';alias pW='pP W';alias pv='pP v';
-alias      p0='pP 0';alias p1='pP 1';alias p2='pP 2';alias p3='pP 3';alias p4='pP 4';alias p5='pP 5';alias p6='pP 6';alias p7='pP 7';alias p8='pP 8';
-alias      p9='pP 9';alias PA='pP A';alias PB='pP b';alias pC='pP C';alias pD='pP D';alias pE='pP E';alias pF='pP F';alias pG='pP G';alias pH='pP H';
-alias      pI='pP I';alias pJ='pP J';alias pK='pP K';alias PL='pP l';alias pM='pP M';alias pN='pP N';alias pO='pP O';alias Pp='pP P';alias pQ='pP Q';
-alias      PR='pP r';alias pS='pP S';alias PT='pP T';alias pU='pP U';alias pV='pP V';alias PW='pP w';alias pX='pP X';alias pY='pP Y';alias pZ='pP Z';
-alias      Pa='pP a';alias Pb='pP b';alias PC='pP C';alias PD='pP d';alias PE='pP e';alias PF='pP f';alias PG='pP g';alias ph='pP h';alias PI='pP i';
-alias      PJ='pP j';alias PK='pP k';alias Pl='pP l';alias Pm='pP m';alias Pn='pP n';alias Po='pP o';alias P6='pP p';alias pq='pP q';alias Pr='pP r';
-alias      Ps='pP s';alias P2='pP t';alias Pu='pP u';alias Pv='pP v';alias Pw='pP w';alias Px='pP x';alias Py='pP y';alias Pz='pP z';alias p.='pP .';
-pA() { for HPrF in d p c j g i R   B L O W k v; do   echo -en "$W$HPrF ";pP "$HPrF";     d8 -a;echo -en "$z;"; # why did en && een aliasez hav probz?
+#lias      pL='pP L   '; #  pL   :           pP L (aidyLaicyLiteral LuciousLadyLumps LovelyLivelyLoudy LastLiasLpro); pPA triez 2 loop in Perl nstd of ZshL;
+alias      pp='Pp';      #  pp   :pP p # pA() BlO is: profileAll 2 thrO out P PipStu d falt, pp, cc8, gg, jj8, ii, RR, BB, LL, OO, WW,   kk, &&        vv;
+alias      pc='Pc';alias pg='Pg';alias pj='Pj';alias pi='Pi';alias pR='PR';alias pB='PB';alias pL='PL';alias pO='PO';alias pW='PW';alias pk='Pk';alias pv='Pv';
+pA() { for HPrF in d p c g j i R   B L O W k v; do   echo -en "$W$HPrF ";pP "$HPrF";     d8 -a;echo -en "$z;"; # why did en && een aliasez hav probz?
     if    [[ $COLUMNS -lt 160 && $HPrF == R ]]; then echo             ;fi;done;echo; # w8 W abov && belo NAbld almost all pP callz 2 finish B4 d8 -a stRtd2;
   for      HPrF in 0 1 2 3 4 5 6   7 8 9 A B C D E F  G H I J K L M N O P Q R S T U V  W X Y Z a b c d e f g h i j k l  m n o p q r s t u v w x y z '.' '_';
                                                 do   echo -en "$W$HPrF ";pP "$HPrF";     d8 -a;echo -en "$z;";if [[ $HPrF =~ ^([CPcp]) ]]; then echo;fi;
     if    [[ $COLUMNS -lt 160 && $HPrF =~ ^([6JWjw]) ]]; then     echo;fi;done;pP  ;};alias ppa='pA';alias PPA='pPA'; # altrn8 3-char all UP or low aliasez;
 pPA(){ if [[ $COLUMNS -lt 160               ]]; then # above does shell environment looping while this 1 below here passes all profile keyz as direct pRamz;
-           pP      d p c j g i R - B L O W k v - 0 1 2 3 4 5 6 - 7 8 9 A B C - D E F G H I J - K L M N O P - Q R S T U V W - X Y Z a b c - \
+           pP      d p c g j i R - B L O W k v - 0 1 2 3 4 5 6 - 7 8 9 A B C - D E F G H I J - K L M N O P - Q R S T U V W - X Y Z a b c - \
                    d e f g h i j - k l m n o p - q r s t u v w - x y z . _ d;
-     else  pP      d p c j g i R   B L O W k v - 0 1 2 3 4 5 6   7 8 9 A B C - D E F G H I J   K L M N O P - Q R S T U V W   X Y Z a b c - \
+     else  pP      d p c g j i R   B L O W k v - 0 1 2 3 4 5 6   7 8 9 A B C - D E F G H I J   K L M N O P - Q R S T U V W   X Y Z a b c - \
                    d e f g h i j   k l m n o p - q r s t u v w   x y z . _ d;  fi  ;}
 alias     ppp='pu;p;po'; #  ppp  :       prepriv8 (same as single p for CCC cd,clear,cut scrollback but wrapped with pushd && popd aliases to undo the cd ~)
 alias       T='   tee '; #  tee  :            tee (maybe can wrap into c8 with cut,cat,colored columns?); rEmMbr standRd `tr -d ...` is transl8 DlEt like subS
@@ -944,7 +949,7 @@ alias SLS=' pabd "\$u=0;\$v=q(screen -ls);\$v.=qq( @ARGV) if(@ARGV > 0);\$S=\`\$
   \$d=Octology::d8->new(q(expand)=>\$Mon[\$N-1].q( ).\$D.q( ).\$T.q( ).\$E);\$e=\$d->colr(q(a) );\$S=~ s/\Q\$L\E/\$I\$K:\$A\$H\$z\t\$e \$G\$t\$z\n/igixi;};
 \$S  =~ s/(There)( are| is a)( screens?)( on)(:)/\$B\$1\$p\$2\$G\$3\$o\$4\$W\$5/gig;\$x=q(XtracmNt:sinc -ls tAk m@chpRam,1st passin ARGV B4wrap ZshLfunc;);
 if(\$S=~ /(\d+)( Sockets?)( in )(.+)\..*/){\$s=b8c(b64(\$1));\$X=\$2;\$i=\$3;\$F=c8fn(\$4);\$x=q(XtracmNt:CmzlIk6.5solidsourclInz puttz mE undrpR4ashole;);
-  \$S=~ s/(\d+)( Sockets?)( in )(.+)\..*/\$s\$C\$X\$p\$i\$Y\$F\$W;\$z/;} \$S=~ s/\\t/  /g;#\$S=~ s/\\n//g;
+  \$S=~ s/(\d+)( Sockets?)( in )(.+)\..*/\$s\$C\$X\$p\$i\$Y\$F\$W;\$z/;} \$S=~ s/\\t/  /g; #\$S=~ s/\\n//g;
   chomp \$S;print \$S;"'; # 2du:migr8 SLS 2 proly U8.pm 4nEded [abd]8,    ## Xtra nOte on chomp-lIkBhAvior in shL(bash @lEst): str="${str%\\n}"; #rEmvzfromNd;
 # proly chop-off "There * screen* on:" 1st unimportant line && join last 2 lines so counted socketz with path follows list's last detaild entry mor compactly,
 # prEpNd DtAlz list Ntryz wi b64 ndxz wich can Bcom altrn8 wA 2 pik session 2 scrn -x rEconect 2,add scls BlO 2 U8.pm also as sls -*h(elp)? duing bOth wi -*v,
@@ -1012,6 +1017,7 @@ alias mpns='cd ~/mvz/U2b/nxt;mp $(ls B* Dr* *Tut* Ex* M* O*-Res* Var* *Trap* *Tr
 alias mpx='  mp   -fs'; #-x 1920 -y 1080'; # originally long ago, I used to include -noborder optn abov but thN cud!mv wndw
 alias mplo=' mplr -vo xv    -fixed-vo -ao sdl   -framedrop -delay -4 -cache 16384 -cache-min 88 -autosync 30 -demuxer +lavfpref -vfm ffmpeg -lavdopts lowres=1:fast:skiploopfilter=all -v ~/mvz/U2b/nxt/O*On*'; # try to play Obsidia One_Winged_Angel thru SDL audio since Pulse stutters && ALSA totally freezes up;
 mjoin() { ffmpeg -i $1 -i $2 -acodec copy -vcodec copy $3; } # IB6LExci:was in ~/.tmp/ aftr trying;
+alias ffll='ffmpeg -loglevel verbose -i'; # should now just take single Input filename to do verbose logging of details about, mainly for me looking up dur8nz;
 # IAIMFFMP:ffmpjoin.sh crE8d by PipStuart <Pip@CPAN.Org> to take 2 sepR8 file parameters of audio && video (probably from calls to U2b8) && join in2 cntAnr4m@;
 # 2du:upd8 U2b8 autom8ion to test -F output first && harvest out best audio && video available then gener8 joined container name; nOt:out.avi did!work,mp4 did;
 alias smp=' smplayer';alias aply='aplay';alias aplr='alsaplayer';
@@ -1027,7 +1033,7 @@ alias kscr='k $(psag "/screeps_server\$"|g " Ssl "|head -n 1|cut -c10-14)'; # tr
 alias kamp='ka -q -9 mplayer'; # -quiet (!warn if!mtch) && -9 kill force signal  ## du! actually kill any @all (if U can hLp it, plEz)!
 alias kasd='ka -q speech-dispatcher'; # resolve Aku's buggy loud HDMI audio clicking loop from "cicero" tXt2sPch4 mbrola wich surfaced aftr watching Twitch vid
 alias kisp='kasd';alias kasp='kasd';alias ksp='kasp';alias kspd='kasp'; # make a bunch of other good guesses at what the alias was when forgotten J5CMGnwN;
-alias kafp='ka -q plugin-container'; #'kill `ps ax | grep firefox | grep flash | cut -d" " -f1`'; # Kill crashed adobe Flash plugin (altho bad if ever running additional firefox plugins && will have to restart those too). Could also use   | c8 0';#now instead.
+alias kafp='ka -q plugin-container'; #'kill `ps ax | grep firefox | grep flash | cut -d" " -f1`'; # Kill crashed adobe Flash plugin (altho bad if ever running additional firefox plugins && will have to restart those too). Could also use   | c8 0'; #now instead.
 #/usr/lib/firefox/plugin-container /usr/lib/flashplugin-installer/libflashplayer.so -greomni /usr/lib/firefox/omni.ja 1881 true plugin
 # sudo modprobe pcspkr;say 'you have a speaker voice'; # ALSA lib pcm_dmix.c:1108:(snd_pcm_dmix_open) unable to open slave; espeak 'you have a speaker voice';
 # zsh: command not found: espeak [pip@OniK2HL78q9~]acs espeak;acs beep;  HTTPS://YouTu.be/M0eEwqUpKDc "How to Haunt a Computer Using SSH" # K2HL7Lr0:19m09s;
@@ -1123,8 +1129,8 @@ alias iT='i80';alias i80='lil80';
 alias ko='kon';alias kon='konsl';
 alias It='tit';alias tit='trmit';
 alias IT='T80';alias T80='tit80';
-alias Pt='ptm';alias ptm='Pterm';
-alias pT='p80';alias p80='ptm80';
+alias pT='ptm';alias ptm='Pterm';
+alias p8='p80';alias p80='ptm80';
 alias Ut='urx';alias urx='Urxvt';
 alias UT='U80';alias U80='urx80'; # also study tio 4 anythng useful?
 alias Rt='rxu';alias rxu='rxvtu'; # should l8r go through `trmz` list below && re-order the major groupz to prioritize displaying the best onez first
@@ -1155,7 +1161,7 @@ alias  Etrm='env TERM_PROGRAM=et Eterm --geometry 160x50 --scrollbar-width 15 --
 #lias gnomterm='gtd0 --class=gnomterm --geometry  80x51+0+0      --show-menubar --window-with-profile=GT80x39CourierBold20        --title=zsh          &';
 #lias gtpt='    gtd0 --class=ptok     --geometry  27x1-0-0       --hide-menubar --window-with-profile=GT27x1AndaleMonoBold40-ptok --title=ptok -e ptok &';
 #lias gtpto='   gtd0 --class=ptok     --geometry  27x1+3002+1141 --hide-menubar --window-with-profile=GT27x1AndaleMono40-ptok     --title=ptok -e ptok &';
-#lias gtpm='    gtd0 --class=pmix     --geometry 160x3+1921+1141 --hide-menubar --window-with-profile=GT67x3Lincoln12-pmix --title=pmix -e pmix&';#160,180,282
+#lias gtpm='    gtd0 --class=pmix     --geometry 160x3+1921+1141 --hide-menubar --window-with-profile=GT67x3Lincoln12-pmix --title=pmix -e pmix&'; #160,180,282
 if       [[ "${(L)HHst}" ==  oni    ]] || # nOt:looks lIk sleep from GNU CoreUtils v8.30 of September 2019 accepts floating-point numbers or dhms suffixes;
          [[ "${(L)HHst}" ==  aku    ]]; then  alias gtss='sleep 1'; # GnomeTerminal SleepSeconds 2 delay 4 gti init   # only Akuma was fast Enuf2kEp up with 1
 else                                          alias gtss='sleep 2'; fi            # ... second before && hopefully Ryu, Ken, && Chun can all handle just 2 now

@@ -52,7 +52,7 @@ our @EXPORT= qw(bfr8c    b8c    d8c   dur8c @d8cl @d8cS  a8c   chti  c8fn  o8 S2
     $t    $u    $d    $s    $n   $pP    $T     $U    $D    $S    $N %pldS   $HK   $HR   $HO   $HY   $HG   $HC   $HB   $HM   $HP   $HW %pldh hl $pfil pP xe
  $tnhf $ucdf  spff  spfd  spfX   shfl  reso $Auth %cmsp %p8k2 @p82k  chp8 aw8 S2f4 c2f4 dm2u cdst %crgb %cbrt @snls @mrls %cdrd %cdrn    %nrgb $lfil   gnp8);
  # of 52 posibl sngl-letr var nmz,a8 Xportz 20,$b && $a unavail,so shudB thEs30 lFt4quik shortSt nAmz: 'def hij l n  q stuv x', 'A  DEF HIJ L N  Q STUV X Z';
-our $VERSION='0.0';my  $d8VS='L1CLEARL';our $Auth='PipStuart <Pip@CPAN.Org>'; # above not exporting $b since collidez with sort{$a  <=> $b};unalloc'd sOlOz^;
+our $VERSION='0.0';my  $d8VS='L1NLINUX';our $Auth='PipStuart <Pip@CPAN.Org>'; # above not exporting $b since collidez with sort{$a  <=> $b};unalloc'd sOlOz^;
 our $ucdf= eval('use Color::Similarity::RGB qw(distance);1') || 0; # try2set UseColorDistanceFlag if optional module is available; /defhijlnqstuvx/i + /AZ/^;
 our @sb64=('0'..'9','A'..'Z','a'..'z','.','_'); # SingleBase64 array && Base10 hash (since it's probably best not to use b8.pm here in a8)
 our %sb10=();$sb10{$sb64[$_]}=$_ for(0..$#sb64);our %crgb;our %cbrt;our @snls;our @mrls;our %cdrd;our %cdrn; # DclAr ColrDist d8a:BRiTness,Srch iNdex LiSt,
@@ -721,77 +721,68 @@ sub lrc{ # G8SM73VD:lrc crE8d by PipStuart <Pip@CPAN.Org> to gener8 ~/.lsrc from
   my $srcf="$ENV{'HOME'}/.lrc" ;my $sxxc;my $sxxp;my $ckpf =1;my $prff=1; # Section xx (c8 OverDraw) Color && Previous, ChecK dircolors -P Flag, PRoFile Flag;
   $prff^=1 if(@_&&$_[0]=~/^[-Ppsrh]+$/ &&$_[0]=~/P/);$ckpf^=1 if(@_&& $_[0]=~ /^[-Ppsrh]+$/ && $_[0]=~ /p/); # also accept paramz  for`dircolors -p`&&help tXt2
   my $dstf="$ENV{'HOME'}/.lsrc";($srcf,$dstf)=($dstf,$srcf)   if(@_&& $_[0]=~ /^[-Ppsrh]+$/ && $_[0]=~ /s/); #   && Swap default .lrc=>.lsrc for .lsrc=>.lrc
-  my $cist= join('|',qw(RESET NORMAL FILE DIR LINK MULTIHARDLINK ORPHAN MISSING EXEC SETUID SETGID CAPABILITY STICKY OTHER_WRITABLE STICKY_OTHER_WRITABLE FIFO
-    SOCK DOOR BLK CHR));my $cisr= qr/^($cist)\s/; # ColorInitStringTypez && regex to match them (need space after to get to STICKY_OTHER_WRITABLE)
-  my %pcnr=( # ProfileColorNdxRemapping 4 transl8ing basic default 2pal8 in2 l8st d8bo of current pickedProfile; # ^ B W RcL WrL G Wg kO kr Wb Bg kP Ok M Yk
-    'R'   => 0,             'C'   => 4, # might want 2 l8r add some special extra ones for like: W w K k r c etc.?;
-    'o'   => 1, 'O'   => 1, 'B'   => 5,
-    'Y'   => 2,             'M'   => 6,
-    'G'   => 3, 'p'   => 7, 'P'   => 7,);
+  my $cist= join('|',qw(RESET NORMAL FILE DIR EXEC LINK MULTIHARDLINK SETUID SETGID STICKY OTHER_WRITABLE FIFO LEFTCODE RIGHTCODE ENDCODE
+    SOCK DOOR BLK CHR COLOR EIGHTBIT OPTIONS ORPHAN MISSING CAPABILITY  SUID   SGID STICKY_OTHER_WRITABLE));my $cisr= qr/^($cist)\s/; # ColrInitStringTypz &&
+  my %pcnr=('R'   => 0, 'O'   => 1, 'C'   => 4,   #   ... ColrInitStringquotedRegx (STICKY_OTHER_WRITABLE nEded spAc aftr 2 get it 2 m@ch 2,thO!yet sure why);
+            'o'   => 1, 'y'   => 2, 'B'   => 5,   # ProfileColorNdxRemapping 4 transl8ing basic default 2pal8 in2 l8st d8bo of current pickedProfile;
+            'Y'   => 2, 'm'   => 6, 'M'   => 6,   # from ~/.lrc S colr-cOd spSific8ionz 4 just cist NtrEz: ^ B W RcL WrL G Wg kO kr Wb Bg kP Ok M Yk;
+            'G'   => 3, 'p'   => 7, 'P'   => 7,); # might want 2 l8r add some special extra ones for like: W w K k r g b c && mAB sm othr gd1z etc.?;
   my $jlhl='# F1RLLK2K:~/.lrc  by PipStuart <Pip@CPAN.Org> as an altern8 format for .lsrc ideally having new ~/bin/lrc gNR8 either from the other;';
   my $lshl='# 819J2Pip:~/.lsrc by PipStuart <Pip@CPAN.Org> izAheavily modifId`dircolors`cfgfIl(Orig ~/.DIR_COLORS)wich setz $ENV{\'LS_COLORS\'} 4GNU' .
     '`ls --color`&&`lsd8`;'; # Just L && LS Header Linez abov shudBmain difrNcz on lInz 1&&5 wich don't lNd thMsLvz2auto-gNR8ion thru sprintf lIk rSt of d8a;
-  open my $out8,'>&',STDOUT or die "Can't open  duplic8 STDOUT handle: $!";binmode $out8,':encoding(UTF-8)'; # crE8 local duplic8 of global
-  if(@_ && $_[0]=~ /^[-Ppsrh]+(elp)?$/ && $_[0]=~ /h/){
-    print $out8 # in case any Unicode added l8r
-"  lrc - gener8 ~/.lsrc from ~/.lrc       Vers:$VERSION  d8VS:$d8VS
-  Auth: $Auth
-   P  - do *not* Produce pP Picked-Profile colors, just keep defaults
-   p  - do *not* check temporary dircolors -p output for recent upd8s
-   s  - Swap order of gener8ion  (.lsrc=>.lrc *not* implemented yet!)
-   r  - geneR8 Random bRight coloRs foR eveRy file type and extension
-   h  - print this Help text and exit\n";return(0);}
+  open my $out8,'>&',STDOUT or die "Can't open  duplic8 STDOUT handle: $!";binmode $out8,':encoding(UTF-8)'; # crE8 locl duplic8 of globl in Ks UnicOd aded l8r
+  if(@_ && $_[0]=~ /^[-Ppsrh]+(elp)?$/ && $_[0]=~ /h/){print $out8 "  lrc - gener8 ~/.lsrc from ~/.lrc       Vers:$VERSION  d8VS:$d8VS  Auth:$Auth;
+   P  - do *not* Produce pP Picked-Profile colors, just keep defaults;\n   p  - do *not* check temporary dircolors -p output for recent upd8s;
+   s  - Swap order of gener8ion  (.lsrc=>.lrc *not* implemented yet!);\n   r  - geneR8 Random bRight coloRs foR eveRy file type and extension;
+   h  - print this Help text and exit;";return(0);} # mAB l8r add optnz 4 dif gNr8n typz 4 dif termz && bypas .lsrc NtIrly && just hav .zshrc Eval lrc str8;
   open my $srch,'<' ,$srcf  or die $!;binmode $srch,':encoding(UTF-8)';my @srcd=<$srch>;close $srch || die $!;my $ccod='';
   open my $dsth,'>' ,$dstf  or die $!;binmode $dsth,':encoding(UTF-8)';my $bpck='KROYGCBMPW';$bpck= join('','13579','A'..'Z','_'); # BrightPal8ColorKeyz
-  for  my $srcl(0..$#srcd){ # might just need {2} below instead of trying to ref back to $1
+  for  my $srcl(0..$#srcd){ # might just need {2} below instead of trying to ref back to $1 with SKpd \1 inside match part of regex
     if(@_ && $_[0]=~ /^[-Ppsrh]+$/ && $_[0]=~ /s/){ # handle reversal of default behavior so ls is gener8ing l
       if   (      $srcl == 0){$srcd[$srcl]="$jlhl\n";}
-      elsif(      $srcl == 4){$srcd[$srcl]="$lshl\n";} # used to [YOWKMCcgrRmP] below but better to allow any b64 future color sectionz
-      elsif($srcd[$srcl]=~/^#([0-9A-Za-z._])\1$/){$sxxp=$sxxc if(defined($sxxc));$sxxc=$1;} # track encountered Section colorz to popul8 following d8a linez
-      elsif($srcd[$srcl]=~/^\./){chomp($srcd[$srcl]);}} # 2du:wrap digitz&&semiz in SKpz then convert via c()
+      elsif(      $srcl == 4){$srcd[$srcl]="$lshl\n";} # used to [YyoOWKkmMCcgrRPp] below but better to allow any b64 future color sectionz
+      elsif($srcd[$srcl]=~/^\s*#+\s*(([0-9A-Za-z\._:\^])\s*\2\s*)+/){$sxxp=$sxxc if(defined($sxxc));$sxxc=$1;my $stcz='';for my $sndx(0..int(length($sxxc)/2)){
+          $stcz.=substr($sxxc,$sndx*2,1);} $sxxc=$stcz;} # track Ncountrd Section colrz 2 popUl8 folOng d8a lInz && skip by 2z doubled cOde charz 4 mAB long1z;
+      elsif($srcd[$srcl]=~/^\s*[\*\.]/){chomp($srcd[$srcl]);}} # 2du:wrap digitz&&sMIz in SKpz thN cnvrt via c() 4 mAB l8r suportng cnv bak frm .lsrc 2 .lrc;
     else{ # default behavior so .lrc is gener8ing .lsrc
       if   (      $srcl == 0){$srcd[$srcl]="$lshl\n";}
       elsif(      $srcl == 4){$srcd[$srcl]="# This file was gNR8d by `lrc` Vers:$VERSION d8VS:$d8VS on d8:" . `d8` . ". Please edit ~/.lrc and run `lrc` " .
         "then `src` to see changes;\n";}
-      elsif($srcd[$srcl]=~/^#([0-9A-Za-z._])\1$/){$sxxp=$sxxc if(defined($sxxc));$sxxc=$1;} # track encountered Section colorz to popul8 following d8a linez
-      elsif($srcd[$srcl]=~/$cisr/){chomp $srcd[$srcl];$srcd[$srcl].=' 'x(44-length $srcd[$srcl]) if length $srcd[$srcl] < 44;$srcd[$srcl].="\n";my $styp=$1;
+      elsif($srcd[$srcl]=~/^\s*#+\s*(([0-9A-Za-z\._:\^])\s*\2\s*)+/){$sxxp=$sxxc if(defined($sxxc));$sxxc=$1;my $stcz='';for my $sndx(0..int(length($sxxc)/2)){
+          $stcz.=substr($sxxc,$sndx*2,1);} $sxxc=$stcz;}
+      elsif($srcd[$srcl]=~/$cisr/     ){chomp $srcd[$srcl];$srcd[$srcl].=' 'x(48-length $srcd[$srcl]) if length $srcd[$srcl]<48;$srcd[$srcl].="\n";my $styp=$1;
         if ($srcd[$srcl]=~/^$styp\s+(\S+)/){my $chnk=$1;if($prff && exists($pcnr{$chnk})){ # since styp in ColorInitStringTypez, trnsl8 chnk in2 profile remap;
             # want 2 mk a   ProfileColorNdxRemap hash turning orig chnk c8 color code string in2 the correct indicez in d8cl 4 wich shud B transl8d 2,but how?;
             $ccod=sS($d8cS[$pcnr{$chnk}],'d');}else    {$ccod=sS(S($chnk),'d');} # probably better to just lookup %mc2F instead of sS d on S
-          if(@_ && $_[0]=~/^[-Ppsrh]+$/ && $_[0]=~ /r/){$ccod=sS(S(substr($bpck,int(rand(length($bpck))),1)),'d');}
-                               substr($srcd[$srcl],26,16,sprintf("%-16s",$ccod));}}
-      elsif($srcd[$srcl]=~/^\./  ){chomp $srcd[$srcl];$srcd[$srcl].=' 'x(44-length $srcd[$srcl]) if length $srcd[$srcl] < 44;$srcd[$srcl].="\n";
-        if  (                  substr($srcd[$srcl],30, 1)        eq ' '  && defined($sxxp) && $sxxc eq $sxxp            ){$ccod=sS(S($sxxc),'d');
-          if($prff && exists($pcnr{$sxxc})){$ccod=sS($d8cS[$pcnr{$sxxc}],'d');}}
-        else{my $chnk='';$chnk=substr($srcd[$srcl],30,12);$chnk=~s/\s+//g;if(length($chnk) && $chnk=~ /^[:0-9A-Z._^]+$/i){$ccod=sS(S($chnk),'d');
-          if($prff && exists($pcnr{$chnk})){$ccod=sS($d8cS[$pcnr{$chnk}],'d');}}}
-        if  (@_ && $_[0]=~/^[-Ppsrh]+$/ && $_[0]=~ /r/){$ccod=sS(S(substr($bpck,int(rand(length($bpck))),1)),'d');}
-                               substr($srcd[$srcl],26,16,sprintf("%-16s",$ccod));}}
-    $srcd[$srcl]=~ s/\s+$/\n/;print $dsth $srcd[$srcl];} close $dsth || die $!;
-  if($ckpf){ # default is to check if drc -p has been upd8d with new extension entries (but this doesn't yet match against TERM or file type lines)
-    system('dircolors -p > /tmp/dc-p.lrc'); # these should all maybe use $ENV{'TMP'} ||TEMP||TMPDIR||TMPPREFIX 4 which dir to write to (if any of them exist)
-    if    (           -r  '/tmp/dc-p.lrc'){ # try just basic hashz2match respectiv NtrEz AgNst Blow
-      open my $dcph,  '<','/tmp/dc-p.lrc' || die $!;binmode $dcph,':encoding(UTF-8)';my @dcpd=<$dcph>;close $dcph || die $!;my %sdee;my %ddee;
-      unlink(             '/tmp/dc-p.lrc'); # tidy up /tmp
-      for(0..$#srcd){if($srcd[$_]=~ /^(\.\S+)/){$sdee{$1}=1;}} # should just need flag for if extension was detected
-      for(0..$#dcpd){if($dcpd[$_]=~ /^(\.\S+)/){$ddee{$1}=$dcpd[$_];chomp($ddee{$1});}}
-      for(sort(keys(%ddee))){printf $out8 "%-16s sEmz2!Xist in .lrc d8a yet.\n",$ddee{$_} unless(exists($sdee{$_}));}}}
-  close   $out8             or die "Can't close duplic8 STDOUT handle: $!";}
-my %lsp8;my %lspt;
-sub lodl{ # LOaD Ls_colors
-  for(split(':',$ENV{'LS_COLORS'})){ my   ($g2re,$fx2e);
-    if   (/^([^=]*[\*\+\?]+[^=]+)=(.+)$/){($g2re,$fx2e)=($1,"$SKp8$2m");$g2re=~s/([.])/\\$1/g;$g2re=~s/\?/./g;$g2re=~s/(\*|\+)/.$1/g;
-      $lsp8{qr/^.*\s*$g2re$/}=$fx2e;}
-    elsif(              /^([^=]+)=(.+)$/){($g2re,$fx2e)=($1,"$SKp8$2m");
-      $lspt{         $g2re  }=$fx2e;}} # regex at bottom uses NOrmal at end but after `eval $(dircolors)` resets $LS_COLORS to defaults,'no' does!exist giving:
-      $lspt{         'no'   }="${SKp8}00m" unless(exists($lspt{'no'}));} # "Use of uninitialized value in concatenation (.) or string..." so making sure exists
+          if(@_ && $_[0]=~/^[-Ppsrh]+$/ && $_[0]=~ /r/){$ccod=sS(S(substr($bpck,int(rand(length($bpck))),1)),'d');}         $ccod=~s/^(0[01];)+/$1/; #1Bold?
+                               substr($srcd[$srcl],26,20,sprintf("%-20s",$ccod));}}
+      elsif($srcd[$srcl]=~/^\s*[\*\.]/){chomp $srcd[$srcl];$srcd[$srcl].=' 'x(48-length $srcd[$srcl]) if length $srcd[$srcl]<48;$srcd[$srcl].="\n";
+        if  (                  substr($srcd[$srcl],31, 1)        eq ' '  && defined($sxxp) && $sxxc eq $sxxp              ){$ccod=sS(S($sxxc),'d');
+          if($prff && exists($pcnr{$sxxc})){$ccod=sS($d8cS[$pcnr{$sxxc}],'d');                                              $ccod=~s/^(0[01];)+/$1/;}}
+        else{my $chnk='';$chnk=substr($srcd[$srcl],31,15);$chnk=~s/\s+//g;if(length($chnk) && $chnk=~ /^[0-9A-Z\._:\^]+$/i){$ccod=sS(S($chnk),'d');
+          if($prff && exists($pcnr{$chnk})){$ccod=sS($d8cS[$pcnr{$chnk}],'d');                                              $ccod=~s/^(0[01];)+/$1/;}}}
+        if  (@_ && $_[0]=~/^[-Ppsrh]+$/ && $_[0]=~ /r/){$ccod=sS(S(substr($bpck,int(rand(length($bpck))),1)),'d');}         $ccod=~s/^(0[01];)+/$1/; #1Bold?
+                               substr($srcd[$srcl],26,20,sprintf("%-20s",$ccod));}}
+    $srcd[$srcl]=~ s/\s+$/\n/;print $dsth $srcd[$srcl];} close $dsth || die $!; # HTTPS://Man7.Org/linux/man-pages/man5/dir_colors.5.html has 2018or2020upd8z;
+  if($ckpf){my %sdee;my %ddee;my @dcpd=split(/\n+/,decode('UTF-8',`dircolors -p`)); # Dfalt2ck if drc -p hasBn upd8d wi newXtNsion NtrEz (but is!4 $cisr yet);
+    if    (    @dcpd){ # sinc baktix workz nstd of orig old tmp fIl, add $cisr ckz BlO2; # shud just nEd flag 4 if XtNsion was Dtectd;
+      for (0..$#srcd){if($srcd[$_]=~ /^\s*(\*\S+|TERM\s+\S+|$cisr)/){$sdee{$1}=1;}}
+      for (0..$#dcpd){if($dcpd[$_]=~ /^\s*(\*\S+|TERM\s+\S+|$cisr)/){$ddee{$1}=$dcpd[$_]; chomp($ddee{$1});}} # .lrc fIl-4m@ duz!suport hUge *colr* dubl-glob;
+      for (sort(keys(%ddee))){printf $out8 "%-78s sEmz 2 ! Xist in .lrc d8a yet, sO B warnd.\n",$ddee{$_} unless(exists($sdee{$_}) || /\*color\*/);}}}
+  close   $out8               or die "Can't close duplic8 STDOUT handle: $!";} #STICKY_OTHER_WRITABLE 30;42 # dir that is sticky and other-writable (+t,o+w)
+my %lsp8;my %lspt; # LOaDLs_colors   from ENVironmNt in2 both lsp hashez probably mainly just for c8fn 2 B Abl 2 simply colorIz bAsed on XtNsionz akin 2 ls;
+sub lodl{if(exists $ENV{'LS_COLORS'}){for(split(':',$ENV{'LS_COLORS'})){my($g2re,$fx2e); # probably call smthng lIk cklc($_) 2 lOd triE graf 4 cOlIdz 2 warn;
+      if   (  /^([^=]*?[\*\?]+[^=]*)=(.+)$/){($g2re,$fx2e)=($1,"$SKp8$2m");$g2re=~s/(\.)/\\$1/g;$g2re=~s/\?/./g;$g2re=~s/\*/.*/g;$lsp8{qr/^.*$g2re$/}=$fx2e;}
+      elsif(               /^([^=]+)=(.+)$/){($g2re,$fx2e)=($1,"$SKp8$2m");                                                      $lspt{      $g2re  }=$fx2e;}}}
+  # regX @botm uses NOrmal @Nd but aftr `eval $(dircolors)` rEsets $LS_COLORS 2 Dfaltz,'no' does!Xist giving: "Use of uninit'd val in conc@N8n (.) or str..."
+  $lspt{'no'}="${SKp8}00m" unless(exists($lspt{'no'}));} #   ... so making sure exists, EvN if nuthin Ls duz;
 sub spcs{my($ssfn,$q)=@_; # subroutine handling SPeCial separ8or character Substitutions, those being Special Substs on FileNames && identified Qolor params
   if(       $ssfn=~/\s->\s.+\*$/                              ){$q=$lspt{'ex'};
             $ssfn=~s/^(.+?)(\s->\s)([^*]+)(\*)$/$lspt{'ln'}$1$Y$2$q$3$W$4/x; #         executable symlink handling
   }else{ if($ssfn=~/\s->\s(\e\[([\d;]*)m)*(.+)$/){my $ltfn=$3;$ltfn=~s/(\e\[([\d;]*)m)+//g; # srch below 4 subdir arg which should replace '.'
            if(!-e "$ltfn")                                     {$q=$lspt{'mi'};$ltfn=~s/(\[)/\\$1/g; # try escaping brackets to not become char class?
             $ssfn=~s/^(.*)($ltfn)              /$1$q$2/x;}}                  # end broken         symlink handling
-            $ssfn=~s/^(.+?)(\s->\s)            /$lspt{'ln'}$1$O$2$q/x;       # end non-executable symlink handling
+            $ssfn=~s/^(.+?)(\s->\s)            /$lspt{'ln'}$1$o$2$q/x;       # end non-executable symlink handling
   }         $ssfn=~s/(\.+)                     /$W$1$q/xg   if($q ne $W);
             $ssfn=~s/(\.+)                     /$C$1$q/xg   if($q eq $W);
             $ssfn=~s/(-+)([^>])                /$Y$1$q$2/xg if($q ne $Y);
@@ -801,6 +792,61 @@ sub spcs{my($ssfn,$q)=@_; # subroutine handling SPeCial separ8or character Subst
             $ssfn=~s/(\++)                     /$R$1$q/xg   if($q ne $R);
             $ssfn=~s/(\++)                     /$B$1$q/xg   if($q eq $R);
   return   ($ssfn);} # 2du:fix c8fn UTF8 decoding to try to only do where needed like lsd8,sync all highlightz,
+sub c8fn{  my $fnam;my $aflg=0;$aflg=1 if(@_);my $zflg=0;if($aflg && $_[0] =~ /^-*z$/){$zflg=1; shift(@_);$aflg=0 unless(@_);}my $sflg=0;my $rtxt='';
+  open my $sin8,'<&','STDIN'  or die "Can't open  duplic8 STDIN  handle: $!";binmode $sin8,':encoding(UTF-8)'; # crE8 local duplic8 of global
+  lodl() unless(%lsp8 && %lspt);my $Y=$d8cS[2] if(defined($d8cS[2])); # mk sure global LS_COLORS d8a regXz R lOded,&& set nwlocl Y dir-sepR8or2prOfIl pal8Ntry;
+  if(!$aflg && !-t $sin8){     $sflg=1;   @_=<$sin8>;} # BlO renamed $k $kolumn_x to $v for Named color && String 2!colide with
+  while($fnam=decode('UTF-8',shift(@_))){ # fix pIping for GT:ls|c8fn to work on multi-line && -w 160 to go proper wide
+    if(defined($fnam) && length($fnam)){#chomp($fnam);
+      my $tnam=$fnam;my($v,$s); # process filename colr  # single-letter variables holding primary escaped colors
+  #   if($subd eq '.'&& @ARGV){my $andx=0;while(!-d "$ARGV[$andx]"&& $andx<$#ARGV){$andx++;}if(-d "$ARGV[$andx]"){$subd="$ARGV[$andx]";$subd=~s/\/+$//;}}
+  #   above was for when ls output enabled tracking the traversed subdirectory, but such context is likely to remain unknowable from here within c8fn()
+      if($tnam=~  /-([-0-9A-Z_]{11})-([0-9A-Z._]{6})-(NA_|[0-9A-Z._][1-9A-C][1-9A-V])\./i){my $epch=b8c($2);my $uld8=d8c($3);d8cs('U2b8');
+         $uld8="$M$3" if($3 eq 'NA_');                                                     my $idnt=b8c($1);                 d8cs();
+        # above override default d8 colr8ion when uldt was Not Available  # this hIlIting is specifically for U2b8 -> U2b4 name resultz
+        # might want to try to strip out idnt && epch so l8r spcs won't recolr their /[-._]/, then after add back before uldt.xtn
+         $tnam=~ s/-([-0-9A-Z_]{11})-([0-9A-Z._]{6})-(NA_|[0-9A-Z._][1-9A-C][1-9A-V])\./-$idnt-$epch-$uld8./i; # l8r colr uldr && mAB Artist columz sepR8ly2
+        # since most of my typical audio filez are colrd $Y by .ls?rc && vidz are $P, subfield colrz here mostly avoid those unless they're mainly in the othr
+         $tnam=~ s/(^|\D)([12]\d{3})(\D)/$1$R$2$3/g;} # basic detection of potential Year from previous or this millennium, wrapped by non-digitz (2du:@Monz)
+      for  my $svgl(keys(%lspt)){                      $v=$lspt{$svgl};my($bgin,$fsnm);                      #Typz
+        if   ($svgl eq'ex'&& (($bgin,$fsnm)= $fnam=~/^(.*?)(.+?)\*+  $/x)&& -x "$fsnm"){
+              $tnam=~s/^($bgin)($fsnm)(\*+)   $/$1$v$2$W$3/x;               $tnam=spcs(   $tnam ,$v);     }    # escape special /lost+found/ globs below
+        elsif($svgl eq'di'&& (($bgin,$fsnm)= $fnam=~/^(.*?)(.+?)\/+  $/x)             ){  $fsnm =~ s/\+/\\+/g; # allow ending slash to design8 dirz even if!-d
+              $tnam=~s/^($bgin)($fsnm)(\/+)   $/$1$v$2$Y$3/x;               $tnam=spcs(   $tnam ,$v);     }  # !sure how2mk paths up to files color dirs right
+        elsif($svgl eq'di'&&                 $fnam=~/^          \/+  $/x && -d "$fnam"){                     # testing solo root / Red, might want solo ~
+              $tnam=~s/^              (\/+)   $/$R$1/x;                     $tnam=spcs(   $tnam ,$v);     }  #   or  always root / or home ~
+        elsif($svgl eq'ln'&& (($bgin,$fsnm)= $fnam=~/^(.+?)\s->\s(.+)$/x)&& -l "$bgin"){my $fanm=$fsnm;
+          for my $shgl(sort keys(%lsp8)){if($fsnm=~/$shgl/){$s=$lsp8{$shgl};$fanm=spcs("$s$fsnm",$s);last;}} # color symlink's target by extension
+              $tnam=~s/^($bgin)(\s->\s)($fsnm)$/$W$1$Y$2$g$fanm/x;          $tnam=spcs(   $tnam ,$v);     }}
+      for     my $shgl(sort keys(%lsp8)){if($tnam=~/$shgl/){$v=$lsp8{$shgl};$tnam=spcs("$v$tnam",$v);last;}} #Gl0b
+      # matching against both names below to hopefully avoid splitting escapes as though they were valid PT or d8 characters (&& can't s/// d8 1st without $v)
+      # setup matching PT range below to be somewhat tightly constrained to just the most expected values && trying to detect dash already with escape prefix
+      if($tnam=~/^.*-(\e\[([\d;]*)m)*([0-9A-D][1-9A-C][1-9A-V][0-9A-Za-x]{4})                (\e\[([\d;]*)m)*([-.*\/]|$)/x){my $ptvr=$3;#y $ptim=undef; # oldPT
+        if($fnam=~/-$ptvr([-.*\/]|$)/){#ptim=    Time::PT->new($ptvr);my $stim=$ptim->color('ansi');$stim.=$M.'0' if($ptvr=~/0$/);
+          my @ptfl= split(//,$ptvr);my $stim="$R$ptfl[0]$o$ptfl[1]$Y$ptfl[2]$G$ptfl[3]$C$ptfl[4]$B$ptfl[5]$M$ptfl[6]";
+          $tnam=~s/$ptvr/$stim/ if(length($stim)==(length($ptvr)  *12  ));}}
+   while($tnam=~/^.*-(\e\[([\d;]*)m)*([0-9A-Za-z._][1-9A-C][1-9A-V][0-9A-Za-g][0-9A-Za-x]{4})(\e\[([\d;]*)m)*([-.*\/]|$)/x){my $d8vr=$3;#y $dtim=undef; # newd8
+        if($fnam=~/-$d8vr([-.*\/]|$)/){#dtim=Octology::d8->new($d8vr);my $etim=$dtim->color('a'   );#etim.=$P.'0' if($d8vr=~/0$/); # try2wrk around!using d8.pm
+#         my @d8fl= split(//,$d8vr);my $etim="$R$d8fl[0]$O$d8fl[1]$Y$d8fl[2]$G$d8fl[3]$C$d8fl[4]$B$d8fl[5]$M$d8fl[6]$P$d8fl[7]"  ; # but rEmMbrUcan use d8c
+          my $etim=d8c($d8vr);                                                                                                         $tnam=~s/$d8vr/$etim/;}}
+      $tnam  =~s/   -                (n)(o)(w)                                                  ([-.*\/]|$)/-$M$1$M$2$M$3$4/x;     # Dtect now dif from YMD BlO
+   while($tnam=~/^.*-(\e\[([\d;]*)m)*([0-9A-Za-z._])([0-9A-Za-q])([0-9A-Za-z._])(\e\[([\d;]*)m)*([-.*\/]|$)/x){my($d8vY,$d8vM,$d8vD)=($3,$4,$5);  # && -YMD- d8
+          my $etim="$R$d8vY$o$d8vM$Y$d8vD";if($d8vY ne 'n' || $d8vM ne 'o' || $d8vD ne 'w'){                                 $tnam=~s/$d8vY$d8vM$d8vD/$etim/;}}
+      if($tnam=~/^.*-(\e\[([\d;]*)m)*(((19|20)\d\d)([01]\d)([0123]\d))          (\e\[([\d;]*)m)*([-.*\/]|$)/x){my($dYMD,$dY,$dM,$dD)=($3,$4,$6,$7);
+        if($fnam=~/-$dYMD([-.*\/]|$)/){                               my $etim="$R$dY$o$dM$Y$dD";                                                 # && YYYYMMDD
+          $tnam=~s/$dYMD/$etim/ if(length($etim)==((length($dYMD)+3)*12));}} $lspt{'di'}=$B unless(exists($lspt{'di'}));
+      $tnam    =~s/^\/home\/$ENV{'USER'}/$lspt{'di'}~/ if($zflg); # replace absolute path with rel8ive home in regular dir colr (only4Zsh prmpt,but bash ndz2!)
+      #f($tnam =~s/(\/)([-0-9A-Z._~+]+)/$Y$1$B$2/gi){$tnam=~s/([-0-9A-Z._~+]+)(\/)/$1$Y$2/i;} # F1FLAAER:atMpt2mk c8fn colrnAmd pathdirz&&sepR8orz(l8rUz'di')
+      #  $tnam =~s/([-0-9A-Z._~+]+)(\/)/$lspt{'di'}$1$Y$2/gi;                                 # F26LB0Ib:atMpt2mk c8fn colrnAmd pathz&&sepR8orz(l8rUzHrc:s 4Y)
+      if($tnam =~s/(\/)([-0-9A-Z._~+]+)/$Y$1$lspt{'di'}$2/gi){$tnam=~s/([-0-9A-Z._~+]+)(\/)/$1$Y$2/i;} # maybe replace all of these if just $tnam =~ /\//
+      $fnam=~ s/^.*$/$g$tnam$lspt{'no'}/; # abov fix just / $Y,don't $B ovrId stRt of fIlnAm@Nd,alow stRting rel8ive non-absolute dirname,NAbl zshcolrz4prmpt
+      if($aflg){                 $rtxt .="$fnam ";} # substitute colorz && reset 2 NOrmal then append return text && strip spacez at end
+      else     {$fnam =~ s/\n$//;$rtxt .= $fnam  ;}}} $rtxt =~ s/\s$//                    if($aflg);my $lpno=$lspt{'no'};$lpno=~ s/(\[)/\\$1/g;
+                                                      $rtxt =~ s/\n($lpno)$/$1/           if($sflg); # maybe need additional escapez in lpno above?
+                                            if($zflg){$rtxt =~ s/(\e\[([\d;]+)           [A-MPSTXZm])/%{$1%}/gx; # zflg should wrap all common SKpz
+                                                      $rtxt =~ s/(\e\]50;[^\a\e]*          (\a|\e\\))/%{$1%}/gx;
+                                                      $rtxt =~ s/(\e\]4;\d+;#[0-9A-Fa-f]{6}(\a|\e\\))/%{$1%}/g;}
+  close $sin8 or die "Can't close duplic8 STDIN  handle: $!";return($rtxt);} # should probably enable c8fn to loop on multiple parameters to process together?
 # HTTPS://AskUbuntu.Com/questions/731774/how-to-change-gnome-terminal-profile-preferences-using-dconf-or-gsettings has some decent advice && linkz to:
 # HTTPS://Wiki.Gnome.Org/Apps/Terminal/FAQ#How_can_I_change_a_profile_setting_from_the_command_line.3F wi `dconf dump /org/gnome/terminal/legacy/profiles:/` 4
 #   all profile d8a listed out. `gsg org.gnome.Terminal.ProfilesList list` && s/list$/default/ 2 get UUID 4 profile identifier which can then be used within:
@@ -1676,61 +1722,6 @@ sub a8c {my $self=shift;return unless(defined($self) && exists($self->{'Hftd'}))
       $a8xt    .=     S($self->{'Hftd'}[$tndx][1]) . $self->{'Hftd'}[$tndx][1];} # try to just color map keyz to start
     else{$a8xt .=       $self->{'Hftd'}[$tndx][1];}}
   return($a8xt);}
-sub c8fn{  my $fnam;my $aflg=0;$aflg=1 if(@_);my $zflg=0;if($aflg && $_[0] =~ /^-*z$/){$zflg=1; shift(@_);$aflg=0 unless(@_);}my $sflg=0;my $rtxt='';
-  open my $sin8,'<&','STDIN'  or die "Can't open  duplic8 STDIN  handle: $!";binmode $sin8,':encoding(UTF-8)'; # crE8 local duplic8 of global
-  lodl() unless(%lsp8 && %lspt);my $Y=$d8cS[2] if(defined($d8cS[2])); # mk sure global LS_COLORS d8a regXz R lOded,&& set nwlocl Y dir-sepR8or2prOfIl pal8Ntry;
-  if(!$aflg && !-t $sin8){     $sflg=1;   @_=<$sin8>;} # BlO renamed $k $kolumn_x to $v for Named color && String 2!colide with
-  while($fnam=decode('UTF-8',shift(@_))){ # fix pIping for GT:ls|c8fn to work on multi-line && -w 160 to go proper wide
-    if(defined($fnam) && length($fnam)){#chomp($fnam);
-      my $tnam=$fnam;my($v,$s); # process filename colr  # single-letter variables holding primary escaped colors
-  #   if($subd eq '.'&& @ARGV){my $andx=0;while(!-d "$ARGV[$andx]"&& $andx<$#ARGV){$andx++;}if(-d "$ARGV[$andx]"){$subd="$ARGV[$andx]";$subd=~s/\/+$//;}}
-  #   above was for when ls output enabled tracking the traversed subdirectory, but such context is likely to remain unknowable from here within c8fn()
-      if($tnam=~  /-([-0-9A-Z_]{11})-([0-9A-Z._]{6})-(NA_|[0-9A-Z._][1-9A-C][1-9A-V])\./i){my $epch=b8c($2);my $uld8=d8c($3);d8cs('U2b8');
-         $uld8="$M$3" if($3 eq 'NA_');                                                     my $idnt=b8c($1);                 d8cs();
-        # above override default d8 colr8ion when uldt was Not Available  # this hIlIting is specifically for U2b8 -> U2b4 name resultz
-        # might want to try to strip out idnt && epch so l8r spcs won't recolr their /[-._]/, then after add back before uldt.xtn
-         $tnam=~ s/-([-0-9A-Z_]{11})-([0-9A-Z._]{6})-(NA_|[0-9A-Z._][1-9A-C][1-9A-V])\./-$idnt-$epch-$uld8./i; # l8r colr uldr && mAB Artist columz sepR8ly2
-        # since most of my typical audio filez are colrd $Y by .ls?rc && vidz are $P, subfield colrz here mostly avoid those unless they're mainly in the othr
-         $tnam=~ s/(^|\D)([12]\d{3})(\D)/$1$R$2$3/g;} # basic detection of potential Year from previous or this millennium, wrapped by non-digitz (2du:@Monz)
-      for  my $svgl(keys(%lspt)){                      $v=$lspt{$svgl};my($bgin,$fsnm);                      #Typz
-        if   ($svgl eq'ex'&& (($bgin,$fsnm)= $fnam=~/^(.*?)(.+?)\*+  $/x)&& -x "$fsnm"){
-              $tnam=~s/^($bgin)($fsnm)(\*+)   $/$1$v$2$W$3/x;               $tnam=spcs(   $tnam ,$v);     }    # escape special /lost+found/ globs below
-        elsif($svgl eq'di'&& (($bgin,$fsnm)= $fnam=~/^(.*?)(.+?)\/+  $/x)             ){  $fsnm =~ s/\+/\\+/g; # allow ending slash to design8 dirz even if!-d
-              $tnam=~s/^($bgin)($fsnm)(\/+)   $/$1$v$2$Y$3/x;               $tnam=spcs(   $tnam ,$v);     }  # !sure how2mk paths up to files color dirs right
-        elsif($svgl eq'di'&&                 $fnam=~/^          \/+  $/x && -d "$fnam"){                     # testing solo root / Red, might want solo ~
-              $tnam=~s/^              (\/+)   $/$R$1/x;                     $tnam=spcs(   $tnam ,$v);     }  #   or  always root / or home ~
-        elsif($svgl eq'ln'&& (($bgin,$fsnm)= $fnam=~/^(.+?)\s->\s(.+)$/x)&& -l "$bgin"){my $fanm=$fsnm;
-          for my $shgl(sort keys(%lsp8)){if($fsnm=~/$shgl/){$s=$lsp8{$shgl};$fanm=spcs("$s$fsnm",$s);last;}} # color symlink's target by extension
-              $tnam=~s/^($bgin)(\s->\s)($fsnm)$/$W$1$Y$2$g$fanm/x;          $tnam=spcs(   $tnam ,$v);     }}
-      for     my $shgl(sort keys(%lsp8)){if($tnam=~/$shgl/){$v=$lsp8{$shgl};$tnam=spcs("$v$tnam",$v);last;}} #Gl0b
-      # matching against both names below to hopefully avoid splitting escapes as though they were valid PT or d8 characters (&& can't s/// d8 1st without $v)
-      # setup matching PT range below to be somewhat tightly constrained to just the most expected values && trying to detect dash already with escape prefix
-      if($tnam=~/^.*-(\e\[([\d;]*)m)*([0-9A-D][1-9A-C][1-9A-V][0-9A-Za-x]{4})                (\e\[([\d;]*)m)*([-.*\/]|$)/x){my $ptvr=$3;#y $ptim=undef; # oldPT
-        if($fnam=~/-$ptvr([-.*\/]|$)/){#ptim=    Time::PT->new($ptvr);my $stim=$ptim->color('ansi');$stim.=$M.'0' if($ptvr=~/0$/);
-          my @ptfl= split(//,$ptvr);my $stim="$R$ptfl[0]$O$ptfl[1]$Y$ptfl[2]$G$ptfl[3]$C$ptfl[4]$B$ptfl[5]$M$ptfl[6]";
-          $tnam=~s/$ptvr/$stim/ if(length($stim)==(length($ptvr)  *12  ));}}
-   while($tnam=~/^.*-(\e\[([\d;]*)m)*([0-9A-Za-z._][1-9A-C][1-9A-V][0-9A-Za-g][0-9A-Za-x]{4})(\e\[([\d;]*)m)*([-.*\/]|$)/x){my $d8vr=$3;#y $dtim=undef; # newd8
-        if($fnam=~/-$d8vr([-.*\/]|$)/){#dtim=Octology::d8->new($d8vr);my $etim=$dtim->color('a'   );#etim.=$P.'0' if($d8vr=~/0$/); # try2wrk around!using d8.pm
-#         my @d8fl= split(//,$d8vr);my $etim="$R$d8fl[0]$O$d8fl[1]$Y$d8fl[2]$G$d8fl[3]$C$d8fl[4]$B$d8fl[5]$M$d8fl[6]$P$d8fl[7]"  ; # but rEmMbrUcan use d8c
-          my $etim=d8c($d8vr);                                                                                                         $tnam=~s/$d8vr/$etim/;}}
-      $tnam  =~s/   -                (n)(o)(w)                                                  ([-.*\/]|$)/-$M$1$M$2$M$3$4/x;     # Dtect now dif from YMD BlO
-   while($tnam=~/^.*-(\e\[([\d;]*)m)*([0-9A-Za-z._])([0-9A-Za-q])([0-9A-Za-z._])(\e\[([\d;]*)m)*([-.*\/]|$)/x){my($d8vY,$d8vM,$d8vD)=($3,$4,$5);  # && -YMD- d8
-          my $etim="$R$d8vY$O$d8vM$Y$d8vD";if($d8vY ne 'n' || $d8vM ne 'o' || $d8vD ne 'w'){                                 $tnam=~s/$d8vY$d8vM$d8vD/$etim/;}}
-      if($tnam=~/^.*-(\e\[([\d;]*)m)*(((19|20)\d\d)([01]\d)([0123]\d))          (\e\[([\d;]*)m)*([-.*\/]|$)/x){my($dYMD,$dY,$dM,$dD)=($3,$4,$6,$7);
-        if($fnam=~/-$dYMD([-.*\/]|$)/){                               my $etim="$R$dY$O$dM$Y$dD";                                                 # && YYYYMMDD
-          $tnam=~s/$dYMD/$etim/ if(length($etim)==((length($dYMD)+3)*12));}} $lspt{'di'}=$B unless(exists($lspt{'di'}));
-      $tnam    =~s/^\/home\/$ENV{'USER'}/$lspt{'di'}~/ if($zflg); # replace absolute path with rel8ive home in regular dir colr (only4Zsh prmpt,but bash ndz2!)
-      #f($tnam =~s/(\/)([-0-9A-Z._~+]+)/$Y$1$B$2/gi){$tnam=~s/([-0-9A-Z._~+]+)(\/)/$1$Y$2/i;} # F1FLAAER:atMpt2mk c8fn colrnAmd pathdirz&&sepR8orz(l8rUz'di')
-      #  $tnam =~s/([-0-9A-Z._~+]+)(\/)/$lspt{'di'}$1$Y$2/gi;                                 # F26LB0Ib:atMpt2mk c8fn colrnAmd pathz&&sepR8orz(l8rUzHrc:s 4Y)
-      if($tnam =~s/(\/)([-0-9A-Z._~+]+)/$Y$1$lspt{'di'}$2/gi){$tnam=~s/([-0-9A-Z._~+]+)(\/)/$1$Y$2/i;} # maybe replace all of these if just $tnam =~ /\//
-      $fnam=~ s/^.*$/$g$tnam$lspt{'no'}/; # abov fix just / $Y,don't $B ovrId stRt of fIlnAm@Nd,alow stRting rel8ive non-absolute dirname,NAbl zshcolrz4prmpt
-      if($aflg){                 $rtxt .="$fnam ";} # substitute colorz && reset 2 NOrmal then append return text && strip spacez at end
-      else     {$fnam =~ s/\n$//;$rtxt .= $fnam  ;}}} $rtxt =~ s/\s$//                    if($aflg);my $lpno=$lspt{'no'};$lpno=~ s/(\[)/\\$1/g;
-                                                      $rtxt =~ s/\n($lpno)$/$1/           if($sflg); # maybe need additional escapez in lpno above?
-                                            if($zflg){$rtxt =~ s/(\e\[([\d;]+)           [A-MPSTXZm])/%{$1%}/gx; # zflg should wrap all common SKpz
-                                                      $rtxt =~ s/(\e\]50;[^\a\e]*          (\a|\e\\))/%{$1%}/gx;
-                                                      $rtxt =~ s/(\e\]4;\d+;#[0-9A-Fa-f]{6}(\a|\e\\))/%{$1%}/g;}
-  close $sin8 or die "Can't close duplic8 STDIN  handle: $!";return($rtxt);} # should probably enable c8fn to loop on multiple parameters to process together?
 sub chti{ my $ptxt=shift;my $whti=0;my $ttxt;my %wlut=('b'=>0,'i'=>1,'w'=>2); # CHangeTItle;  ParameterTeXT, WHichTItle, TitleTeXT, WhichLookUpTable;
   if(defined($ptxt) && $ptxt=~ /^-+h(elp)?$/){say " chti  - CHange TItle of terminal window       Vers:$VERSION  d8VS:$d8VS by Auth:$Auth
   Usage: chti <NewTitleText> [TargetOption]     (this utility should generally be equivalent to calling 'wmctrl -r :ACTIVE: -T NewTitleText')

@@ -5,8 +5,8 @@ d RoYGCBMp                   # PipStuart Primary U2bchanL ; RoYGCBMp
 # R F 3 r H h 2 f            # Ped8bSPip Secndry U2bchanL ; RfFrHh32
 p D:RUIc A:FDCol L:3 Fa:fbuic D:HOI hfoi 2bI rki #D:RUIc A:FDCol L:3 Fa:rbuicL D:HOI hfoil 2b fk;
 c Cz8tZT9c FFDDAALL uiLlUIui # CapCtion8 terTary U2bchanL ; CzZcTt98
-j Y45UuyoO FFDDAALL OUiDIuoi # JewJesus8 Skeptic U2bchanL ; Y45OUuyo
-g AaG76Ddg FFLLAADD iuDuIOio # GuyGooway MGTOWay U2bchanL ; AaGg76Dd ## Note: CantAlow OhhhHooo?;
+g AG76Dadg FFLLAADD iuDuIOio # GuyGooway MGTOWay U2bchanL ; AaGg76Dd
+j Y45UuyoO FFDDAALL OUiDIuoi # JewJesus8 Skeptic U2bchanL ; Y45OUuyo ## Note: CantAlow OhhhHooo?;
 i NnSVvMms FFLLAADD UDuDUlLl # ImprovIs8 Ingland U2bchanL?; NnSsVvMm
 R YGTBUDSN                   # RappingRt AntiRed U2bchanL?; YGTBUDSN RiteBlue LeftOrng WiteUpKs ;
 B SBsbXx1N                   # BluBoieB8 NonBinG U2bchanL?; SBsbXx1N BcuzCmdz prpbplow weretAkN ;
