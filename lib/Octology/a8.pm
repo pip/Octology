@@ -52,7 +52,7 @@ our @EXPORT= qw(bfr8c    b8c    d8c   dur8c @d8cl @d8cS  a8c   chti  c8fn  o8 S2
     $t    $u    $d    $s    $n   $pP    $T     $U    $D    $S    $N %pldS   $HK   $HR   $HO   $HY   $HG   $HC   $HB   $HM   $HP   $HW %pldh hl $pfil pP xe
  $tnhf $ucdf  spff  spfd  spfX   shfl  reso $Auth %cmsp %p8k2 @p82k  chp8 aw8 S2f4 c2f4 dm2u cdst %crgb %cbrt @snls @mrls %cdrd %cdrn    %nrgb $lfil   gnp8);
  # of 52 posibl sngl-letr var nmz,a8 Xportz 20,$b && $a unavail,so shudB thEs30 lFt4quik shortSt nAmz: 'def hij l n  q stuv x', 'A  DEF HIJ L N  Q STUV X Z';
-our $VERSION='0.0';my  $d8VS='L1NLINUX';our $Auth='PipStuart <Pip@CPAN.Org>'; # above not exporting $b since collidez with sort{$a  <=> $b};unalloc'd sOlOz^;
+our $VERSION='0.0';my  $d8VS='L1OL8pip';our $Auth='PipStuart <Pip@CPAN.Org>'; # above not exporting $b since collidez with sort{$a  <=> $b};unalloc'd sOlOz^;
 our $ucdf= eval('use Color::Similarity::RGB qw(distance);1') || 0; # try2set UseColorDistanceFlag if optional module is available; /defhijlnqstuvx/i + /AZ/^;
 our @sb64=('0'..'9','A'..'Z','a'..'z','.','_'); # SingleBase64 array && Base10 hash (since it's probably best not to use b8.pm here in a8)
 our %sb10=();$sb10{$sb64[$_]}=$_ for(0..$#sb64);our %crgb;our %cbrt;our @snls;our @mrls;our %cdrd;our %cdrn; # DclAr ColrDist d8a:BRiTness,Srch iNdex LiSt,
@@ -770,8 +770,16 @@ sub lrc{ # G8SM73VD:lrc crE8d by PipStuart <Pip@CPAN.Org> to gener8 ~/.lsrc from
       for (0..$#dcpd){if($dcpd[$_]=~ /^\s*(\*\S+|TERM\s+\S+|$cisr)/){$ddee{$1}=$dcpd[$_]; chomp($ddee{$1});}} # .lrc fIl-4m@ duz!suport hUge *colr* dubl-glob;
       for (sort(keys(%ddee))){printf $out8 "%-78s sEmz 2 ! Xist in .lrc d8a yet, sO B warnd.\n",$ddee{$_} unless(exists($sdee{$_}) || /\*color\*/);}}}
   close   $out8               or die "Can't close duplic8 STDOUT handle: $!";} #STICKY_OTHER_WRITABLE 30;42 # dir that is sticky and other-writable (+t,o+w)
+my %cklt; # ChecKLsTrie hash for use in cklc() 2 ck 4 LsColorz NtrEz which l8r mask over earlier DfInd 1z wich shud B warnd about && probably corrected 4 2;
+sub cklc{return() unless(@_);my @ntry=reverse(split(//,decode('UTF-8',shift(@_))));my $ashr=\%cklt; # entry charz array && AnonSubHashRef 2 trak triE depth;
+  shift(@ntry) while($ntry[0] ne '=');shift(@ntry);o8($G . reverse(join('',@ntry)) . "$z\n") if($#ntry > 1 &&0); # tSt lFt
+  for my    $cndx (0..$#ntry){ # try 2 loop thru all charz && bild up DpNing triE traversal 2 fInd hOpefuly just new Nd nOdz 2 DfIn;
+    if     ($cndx == ($#ntry-1) &&  defined($ashr->{$ntry[$cndx]}) && scalar(keys(%{$ashr->{$ntry[$cndx]}})) &&
+                1 <   $#ntry    && ! exists($ashr->{$ntry[$cndx]}->{'*'})){o8("${o}Warn$R!$W:$G" . join('',reverse(@ntry)) . "$W;$z\n");}
+    elsif  (                       !defined($ashr->{$ntry[$cndx]})){      $ashr->{$ntry[$cndx]}={};}
+    if     (                        defined($ashr->{$ntry[$cndx]})){$ashr=$ashr->{$ntry[$cndx]};o8("$C$ntry[$cndx]$B;$z") if($#ntry > 1 &&0);}}}
 my %lsp8;my %lspt; # LOaDLs_colors   from ENVironmNt in2 both lsp hashez probably mainly just for c8fn 2 B Abl 2 simply colorIz bAsed on XtNsionz akin 2 ls;
-sub lodl{if(exists $ENV{'LS_COLORS'}){for(split(':',$ENV{'LS_COLORS'})){my($g2re,$fx2e); # probably call smthng lIk cklc($_) 2 lOd triE graf 4 cOlIdz 2 warn;
+sub lodl{if(exists $ENV{'LS_COLORS'}){for(split(':',$ENV{'LS_COLORS'})){my($g2re,$fx2e);cklc($_); # call ChecKLsColors($_) 2 lOd triE graf 4 cOlIdez 2 warn;
       if   (  /^([^=]*?[\*\?]+[^=]*)=(.+)$/){($g2re,$fx2e)=($1,"$SKp8$2m");$g2re=~s/(\.)/\\$1/g;$g2re=~s/\?/./g;$g2re=~s/\*/.*/g;$lsp8{qr/^.*$g2re$/}=$fx2e;}
       elsif(               /^([^=]+)=(.+)$/){($g2re,$fx2e)=($1,"$SKp8$2m");                                                      $lspt{      $g2re  }=$fx2e;}}}
   # regX @botm uses NOrmal @Nd but aftr `eval $(dircolors)` rEsets $LS_COLORS 2 Dfaltz,'no' does!Xist giving: "Use of uninit'd val in conc@N8n (.) or str..."
@@ -835,7 +843,7 @@ sub c8fn{  my $fnam;my $aflg=0;$aflg=1 if(@_);my $zflg=0;if($aflg && $_[0] =~ /^
       if($tnam=~/^.*-(\e\[([\d;]*)m)*(((19|20)\d\d)([01]\d)([0123]\d))          (\e\[([\d;]*)m)*([-.*\/]|$)/x){my($dYMD,$dY,$dM,$dD)=($3,$4,$6,$7);
         if($fnam=~/-$dYMD([-.*\/]|$)/){                               my $etim="$R$dY$o$dM$Y$dD";                                                 # && YYYYMMDD
           $tnam=~s/$dYMD/$etim/ if(length($etim)==((length($dYMD)+3)*12));}} $lspt{'di'}=$B unless(exists($lspt{'di'}));
-      $tnam    =~s/^\/home\/$ENV{'USER'}/$lspt{'di'}~/ if($zflg); # replace absolute path with rel8ive home in regular dir colr (only4Zsh prmpt,but bash ndz2!)
+      $tnam    =~s/\/home\/$ENV{'USER'}/$lspt{'di'}~/ if($zflg); # replace absolute path with rel8ive home in regular dir colr (only4Zsh prmpt,but bash ndz2!)
       #f($tnam =~s/(\/)([-0-9A-Z._~+]+)/$Y$1$B$2/gi){$tnam=~s/([-0-9A-Z._~+]+)(\/)/$1$Y$2/i;} # F1FLAAER:atMpt2mk c8fn colrnAmd pathdirz&&sepR8orz(l8rUz'di')
       #  $tnam =~s/([-0-9A-Z._~+]+)(\/)/$lspt{'di'}$1$Y$2/gi;                                 # F26LB0Ib:atMpt2mk c8fn colrnAmd pathz&&sepR8orz(l8rUzHrc:s 4Y)
       if($tnam =~s/(\/)([-0-9A-Z._~+]+)/$Y$1$lspt{'di'}$2/gi){$tnam=~s/([-0-9A-Z._~+]+)(\/)/$1$Y$2/i;} # maybe replace all of these if just $tnam =~ /\//

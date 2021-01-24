@@ -1,8 +1,8 @@
 # 819J2Pip:~/.lsrc by PipStuart <Pip@CPAN.Org> izAheavily modifId`dircolors`cfgfIl(Orig ~/.DIR_COLORS)wich setz $ENV{'LS_COLORS'} 4GNU`ls --color`&&`lsd8`;
-# $VERSION='0.0';$d8VS='L1NLINUX'; 2du:lrc optn2gNr8 altrn8 versN th@purposfuly varEz colrzof comon typz,add *[-_?]* NtrEz frm .zshrc hEr,audit oldz,ck /etc/*,
+# $VERSION='0.0';$d8VS='L1OL8ALS'; 2du:lrc optn2gNr8 altrn8 versN th@purposfuly varEz colrzof comon typz,add *[-_?]* NtrEz frm .zshrc hEr,audit oldz,ck /etc/*,
 #   add interaction2 lsd8 wN it Dtectz unrecognIzd XtNshNz offerng c@egOrEz with comon colr2autOm@ically insrt chOsN NtrEz,mk lrc gNr8 Xportd LS_COLORS 4 Eval,
 #   confirm all accept f0nt cOdez wi dash accepting Dfalt 4grnd thN redo NORMAL FILE LINK as no fi ln,Dtect cOlIdz OvrIdz&&warn,mAB 8trm aded2 TERM ls sumdA?;
-# This file was gNR8d by `lrc` Vers:0.0 d8VS:L1NLINUX on d8:L1NLJFrX. Please edit ~/.lrc and run `lrc` then `src` to see changes;
+# This file was gNR8d by `lrc` Vers:0.0 d8VS:L1OL8pip on d8:L1OLArjH. Please edit ~/.lrc and run `lrc` then `src` to see changes;
 # nOt:I'm pretty sure itz Chunz(!Takiz)`ls`&&`dircolors`th@cud!hndl (MULTI)?HARDLINK sO rEmMbr2kEp th@ lIn cmNtd out4her(&&kEptstng2cnfirm);
 # Keywords COLOR,OPTIONS,&& EIGHTBIT (honored by Slackware dircolors) are recognized but ignored; TERMz && XtNsionz syncd2 2016;
 # Copyright(C) 1996-2018 FreeSoftwareFound8ion,Inc. Copying and distribution of this file, with or without modific8ion, are permitted provided the
@@ -115,7 +115,7 @@ CHR                       01;38;5;011;48;5;000 #cd= 01;33;40    01;33;40  CHaRac
 *2do                      01;38;5;172          # .2do (old ToDo.ls fylz)
 *2de                      01;38;5;011          # .2de (old 2 Dey -> 2dA)
 *4mtd                     01;38;5;172          # H9NMDKNO:~/.irssi/ custom-aligned cfg && Dflt.theme filez (trying lower-case 'o' for non-2pal8 orange here);
-*am                       01;38;5;011          # AutoMake script (like my git cloned source repo for xdg-desktop-portal-gtk, wich stil didn't rid syslog erorz)
+*am                       01;38;5;011          # AutoMake script (lIk my git clOnd source rEpO 4 xdg-desktop-portal-gtk, wich stil didn't rid syslog erorz)
 *ac                       01;38;5;172          # AutoConf script (or maybe an AnonymousCoward on SlashDot or something)
 *cfg                      01;38;5;011
 *cnf                      01;38;5;011
@@ -132,10 +132,11 @@ CHR                       01;38;5;011;48;5;000 #cd= 01;33;40    01;33;40  CHaRac
 *hax                      01;38;5;011
 *emacs                    01;38;5;172
 *vimrc                    01;38;5;011
-*Hrc                      01;38;5;010          #  8sh ~ fyl
+*Hrc                      01;38;5;010          #  8sh ~ fyl ## mAB very strangely requiring just the non-star(astarisk)-glob only-dot-form for plain ls why?
+*zrc                      01;38;5;010          #      ~  zshrc ## or actually not that but instead like a max ENV LS_COLORS size 4 ls so these @ Nd du work;
 *brc                      01;38;5;010          #      ~ bashrc
-*lrc                      01;38;5;010          #  lsd8    lsrc
-*zrc                      01;38;5;010          #      ~  zshrc
+*.lrc                     01;38;5;010          #  lsd8    lsrc
+*.lsrc                    01;38;5;011
 *qrc                      01;38;5;011          # Qt5 && QMake ResourCe files that seem kinda similar to .sh or .ini variable-setting files
 *bxrc                     01;38;5;011
 *shrc                     01;38;5;011
@@ -149,18 +150,19 @@ CHR                       01;38;5;011;48;5;000 #cd= 01;33;40    01;33;40  CHaRac
 *yiqsrc                   01;38;5;011
 *muttrc                   01;38;5;011
 *ttreerc                  01;38;5;011
-*gtkrc-2.0                01;38;5;011
+*.0                       01;38;5;009          # \.[0-9A-F]    dotted versions    ## Note: precedence mask issue required defining this here, rest far below;
+*gtkrc-2.0                01;38;5;001
 *properties               01;38;5;011
-*renamecategories         01;38;5;013          # /etc/xdg/            filz
 *categories               01;38;5;011          # /etc/xdg/            filz
+*renamecategories         01;38;5;013          # /etc/xdg/            filz
 *codes                    01;38;5;014          # /etc/xdg/            filz
 *areas                    01;38;5;009          # /etc/xdg/            filz
 *recommended              01;38;5;011          # /etc/zsh/newuser.zshrc.recommended
 *minicpanrc               01;38;5;011
 *slice                    01;38;5;013          # /lib/systemd/system/ filz `man systemd.special` documents User&&Session or VirtualMachine&&Container Slices
-*automount                01;38;5;172          # /lib/systemd/system/ filz
-*mount                    01;38;5;011          # /etc/systemd/system/ filz
 *modes                    01;38;5;011          # /etc/fb.modes        filz probably for: `fbset` Frame-Buffer configur8ionz with resolutionz && timingz etc.
+*mount                    01;38;5;011          # /etc/systemd/system/ filz
+*automount                01;38;5;172          # /lib/systemd/system/ filz
 *message                  01;38;5;011
 *mesg                     01;38;5;011          # MEsSaGe az(ch@EmlInstantTxtMedia*) messagez
 *ch3tm                    01;38;5;013          # /**/*.ch3tm(chEtmz)azCheatSheet.htm HTML fylz
@@ -174,9 +176,9 @@ CHR                       01;38;5;011;48;5;000 #cd= 01;33;40    01;33;40  CHaRac
 *gml                      01;38;5;011
 *GmAl                     01;38;5;011
 *gmail                    01;38;5;011
-*dIL0g                    01;38;5;011
-*dL0g                     01;38;5;011
 *L0g                      01;38;5;011
+*dL0g                     01;38;5;011
+*dIL0g                    01;38;5;011
 *dlg                      01;38;5;011          # ~/mvz/lnf8 MooVeeZ linez script dialog fated
 *pot                      01;38;5;092          # ~/dvl/g8/jack/xdp/po/xdg-desktop-portal.pot maybe Portal or Project Object Texts wi MIME-Type && msgid strings
 *Po                       01;38;5;011          # ~/dvl/g8/jack/xdp/src/.deps/xdg_desktop_portal-xdg-desktop-portal.Po mAB Pre-configured Object component lists
@@ -236,7 +238,7 @@ CHR                       01;38;5;011;48;5;000 #cd= 01;33;40    01;33;40  CHaRac
 *wma                      01;38;5;172          # Windows Media Audio
 *WMA                      01;38;5;172          # Windows Media Audio
 *xm                       01;38;5;011
-*it                       01;38;5;011
+*.it                      01;38;5;011
 *trx                      01;38;5;172
 *xib                      01;38;5;015          # Qt5/qtbase/mkspecs     files
 *xcscheme                 01;38;5;011          # Qt5/qtbase/mkspecs     files
@@ -252,7 +254,7 @@ CHR                       01;38;5;011;48;5;000 #cd= 01;33;40    01;33;40  CHaRac
 *dif                      01;38;5;011
 *diff                     01;38;5;011
 *ldif                     01;38;5;011
-*list                     01;38;5;011          # /etc/apt/* Debian/Ubuntu sources
+*.list                    01;38;5;011          # /etc/apt/* Debian/Ubuntu sources
 *distUpgrade              01;38;5;172          # /etc/apt/* Debian/Ubuntu sources
 *apt                      01;38;5;172          # such apt && Perl -MCPAN -e "install ..." && Force are lIkly lists of cmndz nEded 4 thOse package systems
 *pmei                     01;38;5;014
@@ -272,8 +274,8 @@ CHR                       01;38;5;011;48;5;000 #cd= 01;33;40    01;33;40  CHaRac
 *sfd                      01;38;5;011          # SourceFontforge type Data? FontForge.SF.Net TypeData in *.sfd similR2 *.[ot]tf
 *sf2                      01;38;5;011          # /usr/share/sounds/sf2/MuseScore_General_Full.sf2 SoundFont v2 filz
 *sf3                      01;38;5;172          #     /etc/alternatives/MuseScore_General.sf3      SoundFont v3 filz (on Oni this sf3 sym-linx 2 the sf2 abov)
+*lut                      01;38;5;011          # LookUpTbl(EquBpu) the awesome Nip,SatoshiBeppu-san himself ;)
 *slut                     01;38;5;172          # LookUpTbl(EquBpu)azinSndFX,Sprite,Save,Secure,Stuff,Str,Sex,SmRt,sMpL,Scrot,Shot,SystM,Sum1,St8z,St@z..
-*lut                      01;38;5;011          # LookUpTbl(EquBpu)
 *hlut                     01;38;5;172          # LookUpTbl(EquBpu)azinH3AR.Uslut || HelpLkUpTable(eg, ~pip/dox/dvl/ref/vim.hlut)
 *letter                   01;38;5;011
 *version                  01;38;5;011
@@ -287,11 +289,10 @@ CHR                       01;38;5;011;48;5;000 #cd= 01;33;40    01;33;40  CHaRac
 *data2                    01;38;5;172          # /etc/defoma/
 *patch                    01;38;5;011
 *pid                      01;38;5;011          # /run/
-*al                       01;38;5;015
+*.al                      01;38;5;015
 *all                      01;38;5;015
-*erc                      01;38;5;011
+*.erc                     01;38;5;011
 *log                      01;38;5;011
-*lsrc                     01;38;5;011
 *ls_clrz                  01;38;5;011
 *ls_colors                01;38;5;011
 *LS_COLORS                01;38;5;011
@@ -308,10 +309,10 @@ CHR                       01;38;5;011;48;5;000 #cd= 01;33;40    01;33;40  CHaRac
 #oo
 *G-Force                  01;38;5;172          # Lib-Vizualiz8ion GForce actor plug-in file that showed up in ~;
 *locale                   01;38;5;172
+*.conf                    01;38;5;172          # config filz,(basic) play-list filz,shell-scripts,bookmarks,&& DOS-style executablz
+*conffiles                01;38;5;172          # /var/lib/dpkg/info/rxvt-unicode.conffiles
 *dconf-defaults           01;38;5;009          # /etc/gdm3 files
 *dconf                    01;38;5;172          # J6JMKNID:probably something like the output of `dconf dump /org/gnome/terminal/legacy/` to "load" l8r;
-*conf                     01;38;5;172          # config filz,(basic) play-list filz,shell-scripts,bookmarks,&& DOS-style executablz
-*conffiles                01;38;5;172          # /var/lib/dpkg/info/rxvt-unicode.conffiles
 *dmrc                     01;38;5;172          # Dsktp Menu|Mngr? on Chun
 *gtkrc                    01;38;5;172
 *toprc                    01;38;5;172          # nstd of htop, can input "zxcVm1t0" then g[2-4] to go2 sepR8 wndoz&&du similR inputz then W writez cnfg
@@ -322,8 +323,8 @@ CHR                       01;38;5;011;48;5;000 #cd= 01;33;40    01;33;40  CHaRac
 *jackdrc                  01;38;5;092
 *runescape                01;38;5;172          # Jagex gAm Kyle (UserName:"I Am TRK") wanted 2 play together, but has horibly tiny unscalable UI on 24" 1080p
 *default_mixer            01;38;5;172
-*mikmod_playlist          01;38;5;092
-*mikmodrc                 01;38;5;172
+*.mikmod_playlist         01;38;5;092
+*.mikmodrc                01;38;5;172
 *dvdriprc                 01;38;5;172
 *bitchxrc                 01;38;5;172
 *bxp4prc                  01;38;5;172
@@ -332,8 +333,8 @@ CHR                       01;38;5;011;48;5;000 #cd= 01;33;40    01;33;40  CHaRac
 *inputrc                  01;38;5;172
 *joy2keyrc                01;38;5;172
 *blackboxrc               01;38;5;172
-*pc                       01;38;5;172
-*Xrc                      01;38;5;011
+*.pc                      01;38;5;172
+*Xrc                      01;38;5;010
 *Xresources               01;38;5;172
 *xtermcontrol             01;38;5;172
 *doxy                     01;38;5;172          #         file in Qt5 qtdeclarative/ project sub-directory
@@ -357,8 +358,8 @@ CHR                       01;38;5;011;48;5;000 #cd= 01;33;40    01;33;40  CHaRac
 *eml                      01;38;5;011
 *sig                      01;38;5;172          # 4um||eml .signature sigN82R typ fylz
 *SH                       01;38;5;172          # ~/.inst/perl-5.8.8/pod/Makefile.
-*sh                       01;38;5;172
-*zsh                      01;38;5;172
+*.sh                      01;38;5;172
+*.zsh                     01;38;5;172
 *psh                      01;38;5;172
 *ksh                      01;38;5;172
 *csh                      01;38;5;172
@@ -375,10 +376,10 @@ CHR                       01;38;5;011;48;5;000 #cd= 01;33;40    01;33;40  CHaRac
 *Com                      01;38;5;172
 *COM                      01;38;5;172
 *elf                      01;38;5;011          # /boot/memtest86+.elf (Executable Linux? Format)
-*nexe                     01;38;5;172
 *exe                      01;38;5;172
 *Exe                      01;38;5;172
 *EXE                      01;38;5;172
+*nexe                     01;38;5;172
 *opts                     01;38;5;172          # /etc/pcmcia/ && /usr/lib/pcmciautils/
 *otf                      01;38;5;172          # OpenTypeFont
 *Otf                      01;38;5;172
@@ -419,8 +420,8 @@ CHR                       01;38;5;011;48;5;000 #cd= 01;33;40    01;33;40  CHaRac
 *TXT                      01;38;5;015
 *rtf                      01;38;5;015
 *dir                      01;38;5;015
-*df                       01;38;5;015
-*du                       01;38;5;015
+*.df                      01;38;5;015
+*.du                      01;38;5;015
 *ls                       01;38;5;014          # try2difrNtE8 colrz of my growing number of LiSt filez as altern8ive to ubiquitous plain .txt filez
 *lsh                      01;38;5;006          # ICULHdWf:whIl mOst .ls fIlz abov wil stRt as just UTF8 [conf] 4m@z4 vim,l8r mA 4k off lIk this `lshw` varE8n;
 *lst                      01;38;5;015
@@ -451,13 +452,13 @@ CHR                       01;38;5;011;48;5;000 #cd= 01;33;40    01;33;40  CHaRac
 *compiled                 01;38;5;015
 *keywords                 01;38;5;015
 *example                  01;38;5;015
-*sample                   01;38;5;015
+*.sample                  01;38;5;015
 *xmpl                     01;38;5;014
 *trs                      01;38;5;015          # ~/dvl/g8/jack/xdp/ xdg-desktop-portal Test ReSults filz
-*readme                   01;38;5;015
-*README                   01;38;5;015
-*ME                       01;38;5;015          # NumbFuck/curs/(form|menu)/READ.ME
 *BY                       01;38;5;015          # ~/.cpan/sources/MIRRORED.BY
+*ME                       01;38;5;015          # NumbFuck/curs/(form|menu)/READ.ME
+*README                   01;38;5;015
+*readme                   01;38;5;015
 *inst                     01;38;5;015          # probably just UTF-8 or ASCII text-files containing any special install8ion instructions && notes
 *INSTALL                  01;38;5;015
 *NEWS                     01;38;5;015
@@ -484,8 +485,8 @@ CHR                       01;38;5;011;48;5;000 #cd= 01;33;40    01;33;40  CHaRac
 *DS_Store                 01;38;5;008
 *a                        01;38;5;008
 *so                       01;38;5;008
-*id                       01;38;5;008
-*in                       01;38;5;008
+*.id                      01;38;5;008
+*.in                      01;38;5;008
 *in~                      01;38;5;001          # ~/dvl/g8/jack/xdp/ xdg-desktop-portal presumably .h.in backup file from previous ./configure run
 *cps                      01;38;5;008
 *rej                      01;38;5;008          # ~/dvl/c8/trm8/st/  REJected filz from attempted patching of source treez with .diff filz
@@ -495,7 +496,7 @@ CHR                       01;38;5;011;48;5;000 #cd= 01;33;40    01;33;40  CHaRac
 *sysinit                  01;38;5;008
 *initialize               01;38;5;008
 *gitignore                01;38;5;008
-*resources                01;38;5;008
+*.resources               01;38;5;008
 *parentlock               01;38;5;008
 *clockywock               01;38;5;008
 *Xauthority               01;38;5;008
@@ -559,7 +560,7 @@ CHR                       01;38;5;011;48;5;000 #cd= 01;33;40    01;33;40  CHaRac
 *inf                      01;38;5;013
 *img                      01;38;5;013          # putr-NetRtrG8Wz FirmWare IMaGe
 *vti                      01;38;5;013          # VTK Image d8a from ParaView by KitwareInc. to visualize large d8a sets
-*ass                      01;38;5;172          # Audio Sub-title System for like video overlay text for closed-captioning    (from ~/.config/smplayer/*)
+*.ass                     01;38;5;172          # Audio Sub-title System for like video overlay text for closed-captioning    (from ~/.config/smplayer/*)
 *m3u8                     01;38;5;013          # basic   playlist muz filz in a .txt simpleformat (presumably a UTF-8 variant from ~/.config/smplayer/*)
 *m3u                      01;38;5;092          # basic   playlist muz filz in a .txt simpleformat (proly just listing filepath&&name/line,wi no metad8a)
 *pls                      01;38;5;013          #         PlayLiSt muz filz in a .ini style format
@@ -577,7 +578,7 @@ CHR                       01;38;5;011;48;5;000 #cd= 01;33;40    01;33;40  CHaRac
 *simple                   01;38;5;013          # /usr/share/cups/charsets/ or /usr/share/misc/ or ~/.subversion/auth/
 *summary                  01;38;5;013          # configure script result summary output files
 *subst-rule               01;38;5;013          # /etc/defoma/
-*settings                 01;38;5;013
+*.settings                01;38;5;013
 *terminfo                 01;38;5;013
 *quiltrc                  01;38;5;013
 *emerald                  01;38;5;013
@@ -587,7 +588,7 @@ CHR                       01;38;5;011;48;5;000 #cd= 01;33;40    01;33;40  CHaRac
 *menus                    01;38;5;013          # /etc/ardour5 files
 *menu                     01;38;5;013
 *m4                       01;38;5;013
-*md                       01;38;5;013          # MarkDown file like ~/.inst/youtube-dl/README.
+*.md                      01;38;5;013          # MarkDown file like ~/.inst/youtube-dl/README.
 *mk                       01;38;5;013
 *mak                      01;38;5;013
 *make                     01;38;5;013
@@ -620,14 +621,14 @@ CHR                       01;38;5;011;48;5;000 #cd= 01;33;40    01;33;40  CHaRac
 *atb                      01;38;5;011          # /etc/brltty/
 *la                       01;38;5;013          # ~/dvl/m8/sudo/plugins/sudoers/ filz which are GNU Libtool Librariez
 *lss                      01;38;5;013          # Lynx Style Settings file like /etc/lynx.lss
-*logo                     01;38;5;013          # ASCII art file maybe containing ANSI escaped colors && figlet-gend text (e.g., /etc/issue.logo wi "Gentoo")
+*.logo                    01;38;5;013          # ASCII art file maybe containing ANSI escaped colors && figlet-gend text (e.g., /etc/issue.logo wi "Gentoo")
 *login                    01;38;5;013
 *lesshst                  01;38;5;013
 *wget-hsts                01;38;5;013
 *history                  01;38;5;013
 *zsh_history              01;38;5;013          # .*history
-*zprofile                 01;38;5;006
 *profile                  01;38;5;006          # .*profile
+*zprofile                 01;38;5;006
 *bash_profile             01;38;5;006
 *bash_history             01;38;5;013          # .*history
 *lvm_history              01;38;5;013
@@ -654,19 +655,19 @@ CHR                       01;38;5;011;48;5;000 #cd= 01;33;40    01;33;40  CHaRac
 *m                        01;38;5;014
 *h                        01;38;5;172          # C/C++  Header filz were Cyan like main src fIlz but plain ls was getting some kind of orange, so setting it
 *c                        01;38;5;014          # C      source filz
-*cc                       01;38;5;014
+*.cc                      01;38;5;014
 *cli                      01;38;5;014          # ~/dox/putr/Oni/Oni-systemd-services file logging root commands used to manage running services
 *app                      01;38;5;014          # Qt5/qtbase/mkspecs/macx-* filz (as well as GNUstep terminal.app binary,which will be green for XeQtable thO)
 *cpp                      01;38;5;014          #   C++  source filz
 *cgi                      01;38;5;014          # probably Common-G8way-Interface  or  Computer-Gener8d-Image filz
 *inc                      01;38;5;014
-*src                      01;38;5;014
+*.src                     01;38;5;014
 *vlt                      01;38;5;014          # ~/.local/share/vlc/skins2/*  VLC VideoLAN.Org Theme / skin2 filz
 *vsc                      01;38;5;014          # VimScrptClipbord(eg:ptg2clip.vsc)
 *vim                      01;38;5;014
 *pd                       01;38;5;014          # /etc/alternatives/gemdefaultwindow.pd ->sym-link2-> /usr/lib/pd/extra/Gem/gemdefaultwindow-glx.pd (PointD8a?)
 *PL                       01;38;5;014
-*pl                       01;38;5;014          # PerL   script filz
+*.pl                      01;38;5;014          # PerL   script filz
 *pm                       01;38;5;014          # Perl   Module filz
 *pm~                      01;38;5;001          # ~/.cpan/CPAN/MyConfig.
 *py                       01;38;5;014          # PYthon script filz
@@ -674,10 +675,10 @@ CHR                       01;38;5;011;48;5;000 #cd= 01;33;40    01;33;40  CHaRac
 *php                      01;38;5;014
 *pas                      01;38;5;014          # PAScal source filz
 *pro                      01;38;5;009          # acording 2 HTTPS://File.Org/extension/pro gNeric cros-plat4m project files (found in Cool-Retro-Term && Qt5)
-*pt                       01;38;5;014          # PipTyme||PerlTst
+*.pt                      01;38;5;014          # PipTyme||PerlTst
 *p                        01;38;5;014
 *t                        01;38;5;014
-*tp                       01;38;5;014          # TstPlan
+*.tp                      01;38;5;014          # TstPlan
 *tt                       01;38;5;014          # Template::Toolkit`ttree`
 *tst                      01;38;5;014
 *test                     01;38;5;014
@@ -693,7 +694,7 @@ CHR                       01;38;5;011;48;5;000 #cd= 01;33;40    01;33;40  CHaRac
 *el                       01;38;5;014          # EmacsLisp
 *js                       01;38;5;014
 *gen                      01;38;5;014
-*nfo                      01;38;5;014          # DemoSene iNFO(simLR2:file_id.diz)
+*.nfo                     01;38;5;014          # DemoSene iNFO(simLR2:file_id.diz)
 *iso                      01;38;5;014
 *lang                     01;38;5;014          # /usr/share/source-highlight shl language definition files
 *resx                     01;38;5;014          # MicroSoft's yucky .Net Resources XML,bleh!
@@ -708,12 +709,12 @@ CHR                       01;38;5;011;48;5;000 #cd= 01;33;40    01;33;40  CHaRac
 *aliases                  01;38;5;014
 *globals                  01;38;5;014
 *preset                   01;38;5;014          # ~/.qmmp/eq .ini style file for storing the Equalizer settings between program invoc8ionz
-*build                    01;38;5;014
+*.build                   01;38;5;014
 *ninja                    01;38;5;014          # meson advanced build filz used for GitHub flatpak's libportal to upd8 xdg-desktop-portal(-gtk)? there too
 *pause                    01;38;5;014
 *prf                      01;38;5;014          # Kenta Cho Sh'mups preferences && high-score d8a like for Parsec47 and R-Rootage
 *pri                      01;38;5;006          # maybe Qt configure.pri as PRoject or PRofile Init or Include (&& also altern8 .prf files in similar loc8ions)
-*rc                       01;38;5;014
+*.rc                      01;38;5;014
 *fbrc                     01;38;5;014
 *mrbrc                    01;38;5;014
 *captrc                   01;38;5;014
@@ -741,7 +742,7 @@ CHR                       01;38;5;011;48;5;000 #cd= 01;33;40    01;33;40  CHaRac
 *gpg~                     01;38;5;006
 *pgp                      01;38;5;014
 *sxp                      01;38;5;014
-*xe                       01;38;5;014          # Octology a8.pm X-windows Event (`xte`) autom8ion wrapper script (stRted2dMonstr8 functionaliT of manual cmndz)
+*.xe                      01;38;5;014          # Octology a8.pm X-windows Event (`xte`) autom8ion wrapper script (stRted2dMonstr8 functionaliT of manual cmndz)
 *xd2                      01;38;5;014          # xdotool command script to gener8 ~/dvl/t8/**/xl8/ d8a files in attempt to autom8 complex transl8ion evalU8ions
 *xinitrc                  01;38;5;014          # ch2brItCyan from drkGrn .x* dflt4xinitz
 *xinitrc-compiz           01;38;5;014
@@ -773,7 +774,7 @@ CHR                       01;38;5;011;48;5;000 #cd= 01;33;40    01;33;40  CHaRac
 #cc
 #cc
 *chm                      01;38;5;006
-*cs                       01;38;5;006          # C#(yuck!,should be MS CDull or CFlat nstd,barely dsrvz colrng such filthy code-files,pretty turdz! =( )
+*.cs                      01;38;5;006          # C#(yuck!,should be MS CDull or CFlat nstd,barely dsrvz colrng such filthy code-files,pretty turdz! =( )
 *ms                       01;38;5;006          # AutoDesk 3DStudio MaxScript
 *MS                       01;38;5;006
 *pfa                      01;38;5;006
@@ -795,7 +796,7 @@ CHR                       01;38;5;011;48;5;000 #cd= 01;33;40    01;33;40  CHaRac
 *convs                    01;38;5;006
 *style                    01;38;5;006          # /usr/share/source-highlight shl filez
 *tzlist                   01;38;5;006          # tzselect && tzwatch console clockz
-*access                   01;38;5;006
+*.access                  01;38;5;006
 *loaders                  01;38;5;006
 *xboardrc                 01;38;5;006
 *functions                01;38;5;006
@@ -824,7 +825,7 @@ CHR                       01;38;5;011;48;5;000 #cd= 01;33;40    01;33;40  CHaRac
 *pjt                      01;38;5;002          # Perl J? Tmpl8 #2du:pj1? && kdelnk
 *sln                      01;38;5;002
 *sudo                     01;38;5;002
-*state                    01;38;5;002          # /run/zed      file
+*.state                   01;38;5;002          # /run/zed      file
 *client                   01;38;5;011          # /etc/exim4
 *template                 01;38;5;002          # /etc/exim4
 *textmaze                 01;38;5;002
@@ -840,7 +841,7 @@ CHR                       01;38;5;011;48;5;000 #cd= 01;33;40    01;33;40  CHaRac
 *pre                      01;38;5;001          # object&&other intermediate filz&&old,tmp,swp,lnk,or backup filz&&generated vim && zsh info filz
 *cnt                      01;38;5;009          # old4Dos CouNT file?
 *o                        01;38;5;001
-*og                       01;38;5;001
+*.og                      01;38;5;001
 *obj                      01;38;5;001
 *old                      01;38;5;001
 *orig                     01;38;5;001
@@ -855,7 +856,7 @@ CHR                       01;38;5;011;48;5;000 #cd= 01;33;40    01;33;40  CHaRac
 *TXT~                     01;38;5;001
 *Txt~                     01;38;5;001
 *txt~                     01;38;5;001
-*swp                      01;38;5;001
+*.swp                     01;38;5;001
 *suo                      01;38;5;001
 *sys                      01;38;5;001
 *Sys                      01;38;5;001
@@ -872,7 +873,7 @@ CHR                       01;38;5;011;48;5;000 #cd= 01;33;40    01;33;40  CHaRac
 *backup                   01;38;5;001
 *os2                      01;38;5;001
 *iss                      01;38;5;001
-*mask                     01;38;5;001
+*.mask                    01;38;5;001
 *win32                    01;38;5;001
 *Win32                    01;38;5;001
 *Cache                    01;38;5;001
@@ -883,7 +884,7 @@ CHR                       01;38;5;011;48;5;000 #cd= 01;33;40    01;33;40  CHaRac
 *cache-4                  01;38;5;009          # ~/.cache/fontconfig/[0-9a-f]{32}-le64.
 *xftcache                 01;38;5;001
 *jcache                   01;38;5;001          # ~/gmz/Rune/Jagex/RuneScape/  filz (RS crE8d Jagex/ in ~ but wi .zshrc alias I mv 2 gmz 4 less $HOME clutter)
-*journal                  01;38;5;001          # ~/.local/share/tracker/data/ filz (could do .ontology.journal distinctly)
+*.journal                 01;38;5;001          # ~/.local/share/tracker/data/ filz (could do .ontology.journal distinctly)
 *dist                     01;38;5;001
 *distmap                  01;38;5;001
 *default                  01;38;5;001
@@ -902,8 +903,8 @@ CHR                       01;38;5;011;48;5;000 #cd= 01;33;40    01;33;40  CHaRac
 *swo                      01;38;5;009          # vim.swp++
 *new                      01;38;5;009          # new|nw vs. old|orig|og
 *nw                       01;38;5;009
-*ace                      01;38;5;009
-*arc                      01;38;5;009
+*.ace                     01;38;5;009
+*.arc                     01;38;5;009
 *arj                      01;38;5;009
 *alz                      01;38;5;009
 *bz                       01;38;5;009
@@ -920,12 +921,12 @@ CHR                       01;38;5;011;48;5;000 #cd= 01;33;40    01;33;40  CHaRac
 *d                        01;38;5;009
 *dz                       01;38;5;009
 *deb                      01;38;5;009
-*gz                       01;38;5;009
-*lz                       01;38;5;009
+*.gz                      01;38;5;009
+*.lz                      01;38;5;009
 *lz4                      01;38;5;009
 *lzo                      01;38;5;009
 *lha                      01;38;5;009
-*lrz                      01;38;5;009
+*.lrz                     01;38;5;009
 *lzh                      01;38;5;009
 *lzma                     01;38;5;009
 *ear                      01;38;5;009
@@ -935,7 +936,7 @@ CHR                       01;38;5;011;48;5;000 #cd= 01;33;40    01;33;40  CHaRac
 *war                      01;38;5;009
 *rar                      01;38;5;009
 *rpm                      01;38;5;009
-*rz                       01;38;5;009
+*.rz                      01;38;5;009
 *tar                      01;38;5;009
 *taz                      01;38;5;009
 *tbz                      01;38;5;009
@@ -944,12 +945,12 @@ CHR                       01;38;5;011;48;5;000 #cd= 01;33;40    01;33;40  CHaRac
 *tbz2                     01;38;5;009
 *tgz                      01;38;5;009
 *tlz                      01;38;5;009
+*xz                       01;38;5;009
 *txz                      01;38;5;009
 *tzo                      01;38;5;009
 *tz                       01;38;5;009
-*xz                       01;38;5;009
-*t7z                      01;38;5;009
 *7z                       01;38;5;009
+*t7z                      01;38;5;009
 *z                        01;38;5;009
 *Z                        01;38;5;009
 *ZIP                      01;38;5;009
@@ -963,7 +964,7 @@ CHR                       01;38;5;011;48;5;000 #cd= 01;33;40    01;33;40  CHaRac
 *red                      01;38;5;009          # likely UTF-8 text file containing alREaDy REaD excerpts from e-mail or other similar convers8ion thREaDs
 *err                      01;38;5;009
 *fla                      01;38;5;009
-*3rc                      01;38;5;009          # /etc/qt3/ or ~/.qt/
+*.3rc                     01;38;5;009          # /etc/qt3/ or ~/.qt/
 *blo                      01;38;5;009          # ~ bash_logout
 *esd                      01;38;5;009          # I73M73MI:upd8ng 4 l8st krnl identified these 4 new aliases as newest candid8z 4 incorpor8ion here;
 *kbx                      01;38;5;009          # ~/.gnupg pubring files
@@ -974,13 +975,13 @@ CHR                       01;38;5;011;48;5;000 #cd= 01;33;40    01;33;40  CHaRac
 *deny                     01;38;5;009
 *LDAP                     01;38;5;009          # ~/dvl/m8/sudo/README  file which describes configuring && building functionality that's optional for sudo
 *SKIP                     01;38;5;009          # MANIFEST.SKIP from Perl packages
-*lock                     01;38;5;009
+*.lock                    01;38;5;009
 *rxvt                     01;38;5;009          # /usr/share/terminfo/s/screen(-bce)?.rxvt
 *mrxvt                    01;38;5;013          # /usr/share/terminfo/s/screen(-bce)?.mrxvt
 *xlockrc                  01;38;5;009
 *cdcdrc                   01;38;5;009
 *cdserverrc               01;38;5;009
-*defaults                 01;38;5;009          # /etc/(xdg|texmf/texdoctk)/
+*.defaults                01;38;5;009          # /etc/(xdg|texmf/texdoctk)/
 *md5sums                  01;38;5;009          # /var/lib/dpkg/info/ filz
 *reboot                   01;38;5;009          # /run/
 *handmap                  01;38;5;009
@@ -1005,11 +1006,11 @@ CHR                       01;38;5;011;48;5;000 #cd= 01;33;40    01;33;40  CHaRac
 *gl                       01;38;5;092
 *ico                      01;38;5;092
 *icns                     01;38;5;092
-*mjpg                     01;38;5;092          # H4MM4MM4:new Moving JPEG format;
-*mjpeg                    01;38;5;092
 *jpeg                     01;38;5;092
 *JPG                      01;38;5;001
 *jpg                      01;38;5;092
+*mjpg                     01;38;5;092          # H4MM4MM4:new Moving JPEG format;
+*mjpeg                    01;38;5;092
 *kra                      01;38;5;014          # Krita.Org Art
 *kra~                     01;38;5;006          # Krita.Org Art (autom8d backup)
 *mng                      01;38;5;092
@@ -1057,7 +1058,7 @@ CHR                       01;38;5;011;48;5;000 #cd= 01;33;40    01;33;40  CHaRac
 *fodt                     01;38;5;013          # LibreOffice Writer  ODF Text Document (OpenDocument Text FlatXML)
 *ott                      01;38;5;011          # LibreOffice Writer  ODF Text Document (Template)
 *dmg                      01;38;5;092
-*doc                      01;38;5;092
+*.doc                     01;38;5;092
 *docx                     01;38;5;013          #      Office Open XML Text  or  Microsoft Word 2007/2010/2013 XML
 *docx#                    01;38;5;009          # LibreOffice .~lock  file
 *bp1                      01;38;5;092          # BusiPlan
@@ -1068,13 +1069,13 @@ CHR                       01;38;5;011;48;5;000 #cd= 01;33;40    01;33;40  CHaRac
 *djvu                     01;38;5;092          # DjVu              image          4m@
 *xpdfimport               01;38;5;092          # /etc/apparmor.d files
 *pdf                      01;38;5;013          # AdObE           P0rtable DocUmNt 4m@
-*ps                       01;38;5;013          # AdObE           P0st Scrpt
-*pp                       01;38;5;092          # ~/dvl/m8/sudo/sudo    file which is probably rel8d to Providing Privileges, but might stand for Packages etc.
+*.ps                      01;38;5;013          # AdObE           P0st Scrpt
+*.pp                      01;38;5;092          # ~/dvl/m8/sudo/sudo    file which is probably rel8d to Providing Privileges, but might stand for Packages etc.
 *ppt                      01;38;5;092          # P0wRlS PtlS M$  PrEzNtAshN4m@ =(
 *pptx                     01;38;5;013
 *xls                      01;38;5;092
 *wpd                      01;38;5;092
-*map                      01;38;5;092
+*.map                     01;38;5;092
 *pub                      01;38;5;092
 *xbel                     01;38;5;092
 *local                    01;38;5;092
@@ -1086,7 +1087,7 @@ CHR                       01;38;5;011;48;5;000 #cd= 01;33;40    01;33;40  CHaRac
 *asoundrc                 01;38;5;092
 *configure                01;38;5;092          # ~/dvl/m8/sudo/INSTALL file which describes prepR8ion for make compiling source-code repositories
 *immodules                01;38;5;092
-*zcompdump                01;38;5;092
+*.zcompdump               01;38;5;092
 *screen_exchange          01;38;5;092
 # gNeral /etc && 8bOw listz BlO (but mAB any !~ /\..*$/ && =~ /[-_]?.*$/ du!nEd2pOst-modify $ENV{'LS_COLORS'} rEsult of`dircolors`in .zshrc Bcuz they wrk hEr?)
 *dpkg-new                 01;38;5;014          # /etc/skel
@@ -1099,8 +1100,8 @@ CHR                       01;38;5;011;48;5;000 #cd= 01;33;40    01;33;40  CHaRac
 *.org                     01;38;5;014          # /etc      ## as of `d8 L1NLG8LN` inserted dotz as part of just shortSt 2 && 3-char XtNsionz 2 sepR8;
 *.net                     01;38;5;013          # /etc
 *fuselock                 01;38;5;092          # /etc
-*logout                   01;38;5;014          # /etc
-*colors                   01;38;5;006          # /etc/xdg/colors
+*.logout                  01;38;5;014          # /etc
+*.colors                  01;38;5;006          # /etc/xdg/colors
 *.icc                     01;38;5;014          # /etc/alternatives/ghostscript-current/iccprofiles
 *.upp                     01;38;5;011          # /etc/alternatives/ghostscript-current/lib
 *.rpd                     01;38;5;009          # /etc/alternatives/ghostscript-current/lib
@@ -1157,7 +1158,7 @@ CHR                       01;38;5;011;48;5;000 #cd= 01;33;40    01;33;40  CHaRac
 *pptp                     01;38;5;013          # /etc/ppp
 *.pem                     01;38;5;013          # /etc/ssl/certs
 *.crt                     01;38;5;014          # /etc/ssl/certs
-*init                     01;38;5;014          # /etc/ufw
+*.init                    01;38;5;014          # /etc/ufw
 *theme                    01;38;5;011          # /etc/X11/cursors
 *scale                    01;38;5;011          # /etc/X11/fonts/Type1
 *revdep-rebuild           01;38;5;015          # Gentoo `revdep-rebuild` output files detailing relatively thorough build-dependency issues&&faild fixz
@@ -1185,13 +1186,13 @@ CHR                       01;38;5;011;48;5;000 #cd= 01;33;40    01;33;40  CHaRac
 *old14                    01;38;5;002
 *old15                    01;38;5;004
 *old16                    01;38;5;000
-*older                    01;38;5;001          # Note: These extensions were also discovered in the IP.Com site files && would be nice to colorize too.
+*.older                   01;38;5;001          # Note: These extensions were also discovered in the IP.Com site files && would be nice to colorize too.
 *addHandlerBak            01;38;5;009
 *obsolete                 01;38;5;172
 *.x                       01;38;5;011
 *.x2                      01;38;5;010
 *poop                     01;38;5;014
-*.0                       01;38;5;009          # \.[0-9A-F]    dotted versions
+#.0                            R               # \.[0-9A-F]    dotted versions    ## Note: had 2 define this way up near the top for precedence mask issue;
 *.1                       01;38;5;172
 *.2                       01;38;5;011
 *.3                       01;38;5;010
@@ -1493,72 +1494,72 @@ CHR                       01;38;5;011;48;5;000 #cd= 01;33;40    01;33;40  CHaRac
 *ANSI.01.35               01;38;5;013
 *ANSI.01.36               01;38;5;014
 *ANSI.01.37               01;38;5;015
-*-4.8.0-46-generic        01;38;5;015          # 4 very old 4.8.* kernelz, just releg8 thM all 2 Whitez&&blacKz, sinc they shud B quIt anomalous in fUture
-*-4.8.0-45-generic        01;38;5;007
-*-4.8.0-44-generic        01;38;5;008
-*-4.8.0-41-generic        01;38;5;015
-*-4.8.0-40-generic        01;38;5;007
-*-4.8.0-39-generic        01;38;5;008
-*-4.8.0-34-generic        01;38;5;015
-*-4.8.0-30-generic        01;38;5;007
-*-4.8.0-28-generic        01;38;5;008
-*-4.8.0-27-generic        01;38;5;015
-*-4.8.0-26-generic        01;38;5;007
-*-4.10.0-38-generic       01;38;5;001          # 4 older 4.10.* kernelz wich shud B mostly rEtIrd by now, invert default color case 4 mostly dRk shAdz
-*-4.10.0-37-generic       01;38;5;172
-*-4.10.0-35-generic       01;38;5;011
-*-4.10.0-33-generic       01;38;5;002
-*-4.10.0-32-generic       01;38;5;006
-*-4.10.0-30-generic       01;38;5;004
-*-4.10.0-28-generic       01;38;5;092
-*-4.10.0-26-generic       01;38;5;001
-*-4.10.0-24-generic       01;38;5;172
-*-4.10.0-22-generic       01;38;5;002
-*-4.10.0-21-generic       01;38;5;006
-*-4.10.0-20-generic       01;38;5;004
-*-4.10.0-19-generic       01;38;5;092
-*-4.13.0-45-generic       01;38;5;009;48;5;004 # 4 old 4.13.* kernelz B4 upgrading to Ubuntu 18.04 on Chun 1st, then maybe sync R2K, then upgr KRA
-*-4.13.0-43-generic       01;38;5;172;48;5;004
-*-4.13.0-41-generic       01;38;5;011;48;5;004
-*-4.13.0-39-generic       01;38;5;010;48;5;004
-*-4.13.0-37-generic       01;38;5;014;48;5;004
-*-4.13.0-36-generic       01;38;5;012;48;5;004
-*-4.13.0-32-generic       01;38;5;013;48;5;004
-*-4.13.0-31-generic       01;38;5;092;48;5;004
-*-4.13.0-25-generic       01;38;5;009;48;5;004
-*-4.13.0-21-generic       01;38;5;172;48;5;004
-*-4.13.0-17-generic       01;38;5;011;48;5;004
-*-4.13.0-16-generic       01;38;5;010;48;5;004 # BlO /boot Linux kernelz versionz  # F1ELGnuL:ROYG CBMP => 1;3[1o32 645p]; mAB EvN2LE gNr8 upd8z frm`ls /boot`
-*-4.15.0-45-generic       01;38;5;009;48;5;002
-*-4.15.0-44-generic       01;38;5;172;48;5;002
-*-4.15.0-43-generic       01;38;5;011;48;5;002
-*-4.15.0-42-generic       01;38;5;010;48;5;002
-*-4.15.0-39-generic       01;38;5;014;48;5;002
-*-4.15.0-38-generic       01;38;5;012;48;5;002
-*-4.15.0-36-generic       01;38;5;013;48;5;002
-*-4.15.0-34-generic       01;38;5;092;48;5;002
-*-4.15.0-33-generic       01;38;5;001;48;5;002
-*-4.15.0-32-generic       01;38;5;003;48;5;002
-*-4.15.0-30-generic       01;38;5;184;48;5;002
-*-4.15.0-29-generic       01;38;5;002;48;5;002
-*-4.15.0-24-generic       01;38;5;006;48;5;002
-*-4.15.0-23-generic       01;38;5;004;48;5;002
-*-4.15.0-22-generic       01;38;5;005;48;5;002 # BlO /boot Linux kernelz versionz 5.0.0 onward stRtd wi Ubuntu 19.04 Disco Dingo, so dRk grn bkgr 4.15 abov
-*-5.0.0-38-generic        01;38;5;009;48;5;006
-*-5.0.0-36-generic        01;38;5;172;48;5;006
-*-5.0.0-32-generic        01;38;5;011;48;5;006
-*-5.0.0-31-generic        01;38;5;010;48;5;006
-*-5.0.0-29-generic        01;38;5;014;48;5;006
-*-5.0.0-27-generic        01;38;5;012;48;5;006
-*-5.0.0-25-generic        01;38;5;013;48;5;006
-*-5.0.0-23-generic        01;38;5;092;48;5;006
-*-5.0.0-21-generic        01;38;5;009;48;5;006
-*-5.0.0-20-generic        01;38;5;172;48;5;006
-*-5.0.0-19-generic        01;38;5;011;48;5;006
-*-5.0.0-17-generic        01;38;5;010;48;5;006
-*-5.0.0-16-generic        01;38;5;014;48;5;006
-*-5.0.0-15-generic        01;38;5;012;48;5;006
-*-5.0.0-13-generic        01;38;5;013;48;5;006 # BlO /boot Linux kernelz versionz 5.3.0 onward stRtd wi Ubuntu 19.10 Eoan Ermine, so dRk cyan bkgr 5.0 abov
+#*-4.8.0-46-generic             W               # 4 very old 4.8.* kernelz, just releg8 thM all 2 Whitez&&blacKz, sinc they shud B quIt anomalous in fUture
+#*-4.8.0-45-generic             w               # L1OLAMER:commented out most old kernels since apparently regular ls can't handle all the d8a I have now!;
+#*-4.8.0-44-generic             K
+#*-4.8.0-41-generic             W
+#*-4.8.0-40-generic             w
+#*-4.8.0-39-generic             K
+#*-4.8.0-34-generic             W
+#*-4.8.0-30-generic             w
+#*-4.8.0-28-generic             K
+#*-4.8.0-27-generic             W
+#*-4.8.0-26-generic             w
+#*-4.10.0-38-generic            r               # 4 older 4.10.* kernelz wich shud B mostly rEtIrd by now, invert default color case 4 mostly dRk shAdz
+#*-4.10.0-37-generic            O
+#*-4.10.0-35-generic            y
+#*-4.10.0-33-generic            g
+#*-4.10.0-32-generic            c
+#*-4.10.0-30-generic            b
+#*-4.10.0-28-generic            P
+#*-4.10.0-26-generic            r
+#*-4.10.0-24-generic            O
+#*-4.10.0-22-generic            g
+#*-4.10.0-21-generic            c
+#*-4.10.0-20-generic            b
+#*-4.10.0-19-generic            P
+#*-4.13.0-45-generic            Rb              # 4 old 4.13.* kernelz B4 upgrading to Ubuntu 18.04 on Chun 1st, then maybe sync R2K, then upgr KRA
+#*-4.13.0-43-generic            ob
+#*-4.13.0-41-generic            Yb
+#*-4.13.0-39-generic            Gb
+#*-4.13.0-37-generic            Cb
+#*-4.13.0-36-generic            Bb
+#*-4.13.0-32-generic            Mb
+#*-4.13.0-31-generic            pb
+#*-4.13.0-25-generic            Rb
+#*-4.13.0-21-generic            ob
+#*-4.13.0-17-generic            Yb
+#*-4.13.0-16-generic            Gb              # BlO /boot Linux kernelz versionz  # F1ELGnuL:ROYG CBMP => 1;3[1o32 645p]; mAB EvN2LE gNr8 upd8z frm`ls /boot`
+#*-4.15.0-45-generic            Rg
+#*-4.15.0-44-generic            og
+#*-4.15.0-43-generic            Yg
+#*-4.15.0-42-generic            Gg
+#*-4.15.0-39-generic            Cg
+#*-4.15.0-38-generic            Bg
+#*-4.15.0-36-generic            Mg
+#*-4.15.0-34-generic            pg
+#*-4.15.0-33-generic            rg
+#*-4.15.0-32-generic            Og
+#*-4.15.0-30-generic            yg
+#*-4.15.0-29-generic            gg
+#*-4.15.0-24-generic            cg
+#*-4.15.0-23-generic            bg
+#*-4.15.0-22-generic            Pg              # BlO /boot Linux kernelz versionz 5.0.0 onward stRtd wi Ubuntu 19.04 Disco Dingo, so dRk grn bkgr 4.15 abov
+#*-5.0.0-38-generic             Rc
+#*-5.0.0-36-generic             oc
+#*-5.0.0-32-generic             Yc
+#*-5.0.0-31-generic             Gc
+#*-5.0.0-29-generic             Cc
+#*-5.0.0-27-generic             Bc
+#*-5.0.0-25-generic             Mc
+#*-5.0.0-23-generic             pc
+#*-5.0.0-21-generic             Rc
+#*-5.0.0-20-generic             oc
+#*-5.0.0-19-generic             Yc
+#*-5.0.0-17-generic             Gc
+#*-5.0.0-16-generic             Cc
+#*-5.0.0-15-generic             Bc
+#*-5.0.0-13-generic             Mc              # BlO /boot Linux kernelz versionz 5.3.0 onward stRtd wi Ubuntu 19.10 Eoan Ermine, so dRk cyan bkgr 5.0 abov
 *-5.3.0-64-generic        01;38;5;172;48;5;001 # was omitting Red && purple 2 loop just middle 6 of the 8bow, sinc redish mA B a no-no in HeavN && sO Earth?
 *-5.3.0-62-generic        01;38;5;011;48;5;001
 *-5.3.0-61-generic        01;38;5;010;48;5;001
@@ -1577,6 +1578,17 @@ CHR                       01;38;5;011;48;5;000 #cd= 01;33;40    01;33;40  CHaRac
 *-5.4.0-62-generic        01;38;5;172
 *-5.4.0-60-generic        01;38;5;011
 *-5.4.0-58-generic        01;38;5;010
+#YY
+#YY
+*Xrc                      01;38;5;010
+*Hrc                      01;38;5;010          #  8sh ~ fyl ## mAB very strangely requiring just the non-star(astarisk)-glob only-dot-form for plain ls why?
+*brc                      01;38;5;010          #      ~ bashrc
+*.lrc                     01;38;5;010          #  lsd8    lsrc
+*.lsrc                    01;38;5;011          #  lsd8    lsrc
+*zrc                      01;38;5;010          #      ~  zshrc
+*zshrc                    01;38;5;011
+*bashrc                   01;38;5;011
+*vimrc                    01;38;5;011
 #                                              # zsh wraps '%{' ANSI '%}' && vim User[1-9] colrz specify BlO ForeGroundz all on darkblue BakGrnd4statuslIn
 #     4NT    etfp   vim  c8  color              ANSI      HTML    Octology::d8::fldz (`d8`)
 #     0f     Fsy_   %*    W WhiteBright         \e[1;37m  FEFDFF            # vim %* resets statuslIn colr 2 Dfalt   White on darkblue so has max 10 colrz
