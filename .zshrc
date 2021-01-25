@@ -1021,7 +1021,7 @@ mjoin() { ffmpeg -i $1 -i $2 -acodec copy -vcodec copy $3; } # IB6LExci:was in ~
 alias ffll='ffmpeg -loglevel verbose -i'; # should now just take single Input filename to do verbose logging of details about, mainly for me looking up dur8nz;
 # IAIMFFMP:ffmpjoin.sh crE8d by PipStuart <Pip@CPAN.Org> to take 2 sepR8 file parameters of audio && video (probably from calls to U2b8) && join in2 cntAnr4m@;
 # 2du:upd8 U2b8 autom8ion to test -F output first && harvest out best audio && video available then gener8 joined container name; nOt:out.avi did!work,mp4 did;
-alias smp=' smplayer';alias aply='aplay';alias aplr='alsaplayer';
+alias ff='ffll';alias smp='smplayer';alias aply='aplay';alias aplr='alsaplayer';
 # in addition to mplayer, gst123, xine, qmmp, && xmms2, smplayer, vlc, mpv, aplay, alsaplayer, mikmod I've already been using, Oni did following apt install:
 # ai gir1.2-rb-3.0 totem totem-plugins adplay ario-common ario audacious bplay clementine cmus-plugin-ffmpeg cmus cplay draai easyh10 faad gbemol glurp       \
 #   gmerlin-data gmerlin libgrooveplayer-dev libgrooveplayer4 libgroove4 libsmpeg-dev libsmpeg0 smpeg-gtv smpeg-plaympeg libjs-mediaelement                   \

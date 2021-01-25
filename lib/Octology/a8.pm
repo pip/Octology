@@ -52,7 +52,7 @@ our @EXPORT= qw(bfr8c    b8c    d8c   dur8c @d8cl @d8cS  a8c   chti  c8fn  o8 S2
     $t    $u    $d    $s    $n   $pP    $T     $U    $D    $S    $N %pldS   $HK   $HR   $HO   $HY   $HG   $HC   $HB   $HM   $HP   $HW %pldh hl $pfil pP xe
  $tnhf $ucdf  spff  spfd  spfX   shfl  reso $Auth %cmsp %p8k2 @p82k  chp8 aw8 S2f4 c2f4 dm2u cdst %crgb %cbrt @snls @mrls %cdrd %cdrn    %nrgb $lfil   gnp8);
  # of 52 posibl sngl-letr var nmz,a8 Xportz 20,$b && $a unavail,so shudB thEs30 lFt4quik shortSt nAmz: 'def hij l n  q stuv x', 'A  DEF HIJ L N  Q STUV X Z';
-our $VERSION='0.0';my  $d8VS='L1OL8pip';our $Auth='PipStuart <Pip@CPAN.Org>'; # above not exporting $b since collidez with sort{$a  <=> $b};unalloc'd sOlOz^;
+our $VERSION='0.0';my  $d8VS='L1PLAJJ8';our $Auth='PipStuart <Pip@CPAN.Org>'; # above not exporting $b since collidez with sort{$a  <=> $b};unalloc'd sOlOz^;
 our $ucdf= eval('use Color::Similarity::RGB qw(distance);1') || 0; # try2set UseColorDistanceFlag if optional module is available; /defhijlnqstuvx/i + /AZ/^;
 our @sb64=('0'..'9','A'..'Z','a'..'z','.','_'); # SingleBase64 array && Base10 hash (since it's probably best not to use b8.pm here in a8)
 our %sb10=();$sb10{$sb64[$_]}=$_ for(0..$#sb64);our %crgb;our %cbrt;our @snls;our @mrls;our %cdrd;our %cdrn; # DclAr ColrDist d8a:BRiTness,Srch iNdex LiSt,
@@ -769,7 +769,7 @@ sub lrc{ # G8SM73VD:lrc crE8d by PipStuart <Pip@CPAN.Org> to gener8 ~/.lsrc from
       for (0..$#srcd){if($srcd[$_]=~ /^\s*(\*\S+|TERM\s+\S+|$cisr)/){$sdee{$1}=1;}}
       for (0..$#dcpd){if($dcpd[$_]=~ /^\s*(\*\S+|TERM\s+\S+|$cisr)/){$ddee{$1}=$dcpd[$_]; chomp($ddee{$1});}} # .lrc fIl-4m@ duz!suport hUge *colr* dubl-glob;
       for (sort(keys(%ddee))){printf $out8 "%-78s sEmz 2 ! Xist in .lrc d8a yet, sO B warnd.\n",$ddee{$_} unless(exists($sdee{$_}) || /\*color\*/);}}}
-  close   $out8               or die "Can't close duplic8 STDOUT handle: $!";} #STICKY_OTHER_WRITABLE 30;42 # dir that is sticky and other-writable (+t,o+w)
+  close   $out8               or die "Can't close duplic8 STDOUT handle: $!";return();} #STICKY_OTHER_WRITABLE 30;42 # sticky dir and other-writable (+t,o+w)
 my %cklt; # ChecKLsTrie hash for use in cklc() 2 ck 4 LsColorz NtrEz which l8r mask over earlier DfInd 1z wich shud B warnd about && probably corrected 4 2;
 sub cklc{return() unless(@_);my @ntry=reverse(split(//,decode('UTF-8',shift(@_))));my $ashr=\%cklt; # entry charz array && AnonSubHashRef 2 trak triE depth;
   shift(@ntry) while($ntry[0] ne '=');shift(@ntry);o8($G . reverse(join('',@ntry)) . "$z\n") if($#ntry > 1 &&0); # tSt lFt
@@ -1794,6 +1794,7 @@ sub curs{ # console cursor changing utility learned from HTTP://TLDP.Org (seems 
   elsif($csiz == -1){system("/bin/echo -n -e '\e[?2c'                     ");} # NormBlinkU
   elsif($csiz == -2){system("/bin/echo -n -e '\e[?17;0;64c'               ");} # RedNon-BlinkBlock
   elsif($csiz == -3){system("/bin/echo -n -e '\e[?17;14;224c'             ");} # YelNon-BlinkBlock  # \e[?12l may just disable blinking (re-enable with?)
+  return();
 } # with csiz:17 && varying csms                                         with csiz:17 && varying ctms
   #   0: norm blink u            16: drkblue?  bg, same fgz as above       0: green     fg normal blinking u                   16: drkblack? bg w/ green? fg
   #   1: invis but  cyan? fg     32: drkgreen  bg, same fgz                1: cyan      fg invis                               32: drkgreen  bg
@@ -2170,7 +2171,7 @@ sub upd8{my($upfl,$ubfl,$upxt)=('','',''); $upfl=shift(@_) if @_;$upfl=$ENV{'Hv8
       if(length($udif) &&  length($updc) && $updc=~ /syntax OK/){  `cp $upfl  $udfl`;print $out8 $G.'upd8 '.c8fn($upfl).' '.c8fn($udfl);}
       else                                                      {die "!*ErOr*! upd8 cud not 'cp $upfl $udfl',no perl -c sntx ck:$updc:udif:$udif:\n";}
       if(    $Hsub eq 'bin' || -x $upfl){      chmod(0755,"$udfl");}print $out8 `$udfl` if(-x $udfl &&0);} # mOst bin cOd nEdz pRamz2tSt sO autOcall proly!good
-    close $out8 or die "Can't close out8 duplic8d STDOUT handle: $!";}} # better to call known t/*.t to valid8 expected behavior more thoroughly
+    close $out8 or die "Can't close out8 duplic8d STDOUT handle: $!";}return();} # better to call known t/*.t to valid8 expected behavior more thoroughly
   # maybe .Hrc can whitelist bin code filez && desired parameterz that should get auto-called at the end of upd8 to autom8 some basic testing also
 sub spff{my $frmt='%12.12f';if(@_ && defined($_[0]) && $_[0]=~ /%/){$frmt= shift(@_);} if(@_){return( sprintf("%16s",sprintf("$frmt",shift(@_))));}} # SPFfloat
 sub spfd{my $frmt='%03d'   ;if(@_ && defined($_[0]) && $_[0]=~ /%/){$frmt= shift(@_);} if(@_ && defined($_[0]) && $_[0]=~ /^\d+$/){

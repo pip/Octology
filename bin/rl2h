@@ -1,2 +1,2 @@
 #!/usr/bin/perl
-use strict;use warnings;use utf8;use Octology::a8;o8(rl2h(@ARGV));
+use strict;use warnings;use utf8;use Octology::a8;o8( rl2h(@ARGV));
