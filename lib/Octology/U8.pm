@@ -18,7 +18,7 @@ our @EXPORT=qw(Upd8 U2b8 U2b2 U2b3 U2b4 UTF8 Udl8); # autom8d U2bdl-upd8 Utl, Yo
 #END{      ReadMode 0;} # good practice to auto-restore orig TTY read settingz at END
 #          ReadMode 3;  # setup 4 raw mode or 3 cbreak mode where Ctrl-C workz since signalz are enabled
 #$ENV{'TERM'}='linux';  # this is needed for arrow cursor keyz to get interpreted properly (vt100 does not do it)
-our $VERSION='0.0';my $d8VS='K3KMFULL';my $Dbug= 0; #   4 4name 4matting, UTF-8 (or ASCII) tables, U2b-DownLoad altern8 Xpect version;
+our $VERSION='0.0';my $d8VS='L1PLGREE';my $Dbug= 0; #   4 4name 4matting, UTF-8 (or ASCII) tables, U2b-DownLoad altern8 Xpect version;
 sub Upd8{my $Ud='youtube-dl';my $home='/home/pip';$home='/home/' . $ENV{'USER'} if(exists($ENV{'USER'}));$home=$ENV{'HOME'} if(exists($ENV{'HOME'}));
   $_=`cd /tmp;wget https://$Ud.org/downloads/latest/$Ud;mv $Ud $home/bin/U2bdl;cd $home/bin;chmod 755 U2bdl;bak U2bdl`;return($_);} # bAsic YouTube-DL upd8r
   # Upd8 very similar to .zshrc aliasez but oper8z on my own local ~pip/bin/ version instead of my system-wide /usr/local/bin/ version with alias:
@@ -212,7 +212,7 @@ sub UTF8{my $optz=join(' ',@_);my $strt=0;my $uprb= 256; # 2BNJCDfo:asci utility
    -C    set start and end around Cards and Chess 127136-127199 and 9812-9823
    -k    set start and end around Kana      (Nipponese Hiragana and Katakana need some special handling to restore alignment.) 12352-12543=192
    -r    set start and end around Radicals  (CJK Supplement     and Kangxi) (note terminals need to stretch to 225 chars wId.) 11904-12255=352
-   -h    display this Help text and exit                            (See HTTP://Unicode.Org/charts for more character blocks.)
+   -h    display this Help text and exit    (Greek 913-970= 67)     (See HTTP://Unicode.Org/charts for more character blocks.)
   Note : If you pass a single parameter  of just digits, it will be treated as the new upper-bounds for UTF-8 instead of 256.
     If you pass in two separ8 parameters of just digits, they will be treated as the decimal values to use for start and end.
   2du  : Add some more letter options as shortcuts to set the start and end around majorly useful named blocks of characters.

@@ -42,7 +42,7 @@
 #     jumping to each solid block at a time). Then for any of the axes of rel8ionship dark 6 to bright 10 as Clen through Neon, Wash, Melo && as Fpl8 through
 #     Dark, Avrg, Lite, Orig, High or any arbitrary order can be picked && shud scale dense or sparse,mk Fbl cnv layer keyz so only need F keyz in %p8k2;
 package     Octology::a8;
-use strict; use warnings;use utf8;use v5.10;use Encode;use Time::HiRes qw(sleep gettimeofday);
+use strict; use warnings;use utf8;use v5.10;use Encode;use Path::Tiny;use Time::HiRes qw(sleep gettimeofday);
 require         Exporter;  # add new colr systM
 use base     qw(Exporter); # mainly exporting global utility functions && variables originally inherited from c8.pm as well as a few f8.pm d8a structures
 our @EXPORT= qw(bfr8c    b8c    d8c   dur8c @d8cl @d8cS  a8c   chti  c8fn  o8 S2   c2  S c   sS    lodl @Monz @Mon     %mc2F %mc2b %mF2c %mb2c @Kana  %sb10
@@ -723,10 +723,10 @@ sub lrc{ # G8SM73VD:lrc crE8d by PipStuart <Pip@CPAN.Org> to gener8 ~/.lsrc from
   my $dstf="$ENV{'HOME'}/.lsrc";($srcf,$dstf)=($dstf,$srcf)   if(@_&& $_[0]=~ /^[-Ppsrh]+$/ && $_[0]=~ /s/); #   && Swap default .lrc=>.lsrc for .lsrc=>.lrc
   my $cist= join('|',qw(RESET NORMAL FILE DIR EXEC LINK MULTIHARDLINK SETUID SETGID STICKY OTHER_WRITABLE FIFO LEFTCODE RIGHTCODE ENDCODE
     SOCK DOOR BLK CHR COLOR EIGHTBIT OPTIONS ORPHAN MISSING CAPABILITY  SUID   SGID STICKY_OTHER_WRITABLE));my $cisr= qr/^($cist)\s/; # ColrInitStringTypz &&
-  my %pcnr=('R'   => 0, 'O'   => 1, 'C'   => 4,   #   ... ColrInitStringquotedRegx (STICKY_OTHER_WRITABLE nEded spAc aftr 2 get it 2 m@ch 2,thO!yet sure why);
-            'o'   => 1, 'y'   => 2, 'B'   => 5,   # ProfileColorNdxRemapping 4 transl8ing basic default 2pal8 in2 l8st d8bo of current pickedProfile;
-            'Y'   => 2, 'm'   => 6, 'M'   => 6,   # from ~/.lrc S colr-cOd spSific8ionz 4 just cist NtrEz: ^ B W RcL WrL G Wg kO kr Wb Bg kP Ok M Yk;
-            'G'   => 3, 'p'   => 7, 'P'   => 7,); # might want 2 l8r add some special extra ones for like: W w K k r g b c && mAB sm othr gd1z etc.?;
+  my %pcnr=('R'   => 0, 'C'   => 4,   #   ... ColrInitStringquotedRegx (STICKY_OTHER_WRITABLE nEded spAc aftr 2 get it 2 m@ch 2,thO!yet sure why);
+            'o'   => 1, 'B'   => 5,   # ProfileColorNdxRemapping 4 transl8ing basic default 2pal8 in2 l8st d8bo of current pickedProfile;
+            'Y'   => 2, 'M'   => 6,   # from ~/.lrc S colr-cOd spSific8ionz 4 just cist NtrEz: ^ B W RcL WrL G Wg kO kr Wb Bg kP Ok M Yk;
+            'G'   => 3, 'p'   => 7,); # might want 2 l8r add some special extra ones for like: W w K k r g b c && mAB sm othr gd1z etc.?;
   my $jlhl='# F1RLLK2K:~/.lrc  by PipStuart <Pip@CPAN.Org> as an altern8 format for .lsrc ideally having new ~/bin/lrc gNR8 either from the other;';
   my $lshl='# 819J2Pip:~/.lsrc by PipStuart <Pip@CPAN.Org> izAheavily modifId`dircolors`cfgfIl(Orig ~/.DIR_COLORS)wich setz $ENV{\'LS_COLORS\'} 4GNU' .
     '`ls --color`&&`lsd8`;'; # Just L && LS Header Linez abov shudBmain difrNcz on lInz 1&&5 wich don't lNd thMsLvz2auto-gNR8ion thru sprintf lIk rSt of d8a;
@@ -737,20 +737,21 @@ sub lrc{ # G8SM73VD:lrc crE8d by PipStuart <Pip@CPAN.Org> to gener8 ~/.lsrc from
    h  - print this Help text and exit;";return(0);} # mAB l8r add optnz 4 dif gNr8n typz 4 dif termz && bypas .lsrc NtIrly && just hav .zshrc Eval lrc str8;
   open my $srch,'<' ,$srcf  or die $!;binmode $srch,':encoding(UTF-8)';my @srcd=<$srch>;close $srch || die $!;my $ccod='';
   open my $dsth,'>' ,$dstf  or die $!;binmode $dsth,':encoding(UTF-8)';my $bpck='KROYGCBMPW';$bpck= join('','13579','A'..'Z','_'); # BrightPal8ColorKeyz
-  for  my $srcl(0..$#srcd){ # might just need {2} below instead of trying to ref back to $1 with SKpd \1 inside match part of regex
+  for  my $srcl(0..$#srcd){
     if(@_ && $_[0]=~ /^[-Ppsrh]+$/ && $_[0]=~ /s/){ # handle reversal of default behavior so ls is gener8ing l
       if   (      $srcl == 0){$srcd[$srcl]="$jlhl\n";}
       elsif(      $srcl == 4){$srcd[$srcl]="$lshl\n";} # used to [YyoOWKkmMCcgrRPp] below but better to allow any b64 future color sectionz
-      elsif($srcd[$srcl]=~/^\s*#+\s*(([0-9A-Za-z\._:\^])\s*\2\s*)+/){$sxxp=$sxxc if(defined($sxxc));$sxxc=$1;my $stcz='';for my $sndx(0..int(length($sxxc)/2)){
+      elsif($srcd[$srcl]=~/^\s*#+\s*(([0-9A-Za-z\._:\^])\2\s*)+/){$sxxp=$sxxc if(defined($sxxc));$sxxc=$1;my $stcz='';for my $sndx(0..int(length($sxxc)/2)){
           $stcz.=substr($sxxc,$sndx*2,1);} $sxxc=$stcz;} # track Ncountrd Section colrz 2 popUl8 folOng d8a lInz && skip by 2z doubled cOde charz 4 mAB long1z;
       elsif($srcd[$srcl]=~/^\s*[\*\.]/){chomp($srcd[$srcl]);}} # 2du:wrap digitz&&sMIz in SKpz thN cnvrt via c() 4 mAB l8r suportng cnv bak frm .lsrc 2 .lrc;
     else{ # default behavior so .lrc is gener8ing .lsrc
       if   (      $srcl == 0){$srcd[$srcl]="$lshl\n";}
       elsif(      $srcl == 4){$srcd[$srcl]="# This file was gNR8d by `lrc` Vers:$VERSION d8VS:$d8VS on d8:" . `d8` . ". Please edit ~/.lrc and run `lrc` " .
         "then `src` to see changes;\n";}
-      elsif($srcd[$srcl]=~/^\s*#+\s*(([0-9A-Za-z\._:\^])\s*\2\s*)+/){$sxxp=$sxxc if(defined($sxxc));$sxxc=$1;my $stcz='';for my $sndx(0..int(length($sxxc)/2)){
-          $stcz.=substr($sxxc,$sndx*2,1);} $sxxc=$stcz;}
+      elsif($srcd[$srcl]=~/^\s*#+\s*(([0-9A-Za-z\._:\^])\2\s*)+/){$sxxp=$sxxc if(defined($sxxc));$sxxc=$1;my $stcz='';for my $sndx(0..int(length($sxxc)/2)){
+          $stcz.=substr($sxxc,$sndx*2,1);}  $sxxc=$stcz if($stcz=~ /^[0-9A-Za-z\._:\^]+$/);}
       elsif($srcd[$srcl]=~/$cisr/     ){chomp $srcd[$srcl];$srcd[$srcl].=' 'x(48-length $srcd[$srcl]) if length $srcd[$srcl]<48;$srcd[$srcl].="\n";my $styp=$1;
+        $styp=~ s/([\.\?\*\+])/\\$1/g; # try to maybe SKp what I thought could be special regex charz within extensions, but these are just cisr basic nAmz =(;
         if ($srcd[$srcl]=~/^$styp\s+(\S+)/){my $chnk=$1;if($prff && exists($pcnr{$chnk})){ # since styp in ColorInitStringTypez, trnsl8 chnk in2 profile remap;
             # want 2 mk a   ProfileColorNdxRemap hash turning orig chnk c8 color code string in2 the correct indicez in d8cl 4 wich shud B transl8d 2,but how?;
             $ccod=sS($d8cS[$pcnr{$chnk}],'d');}else    {$ccod=sS(S($chnk),'d');} # probably better to just lookup %mc2F instead of sS d on S
@@ -2152,7 +2153,7 @@ sub upd8{my($upfl,$ubfl,$upxt)=('','',''); $upfl=shift(@_) if @_;$upfl=$ENV{'Hv8
     if(     $upfl=~ /([^\/]+)\.pm$/){$ubfl=$1   ;$Hsub='lib';$Hpth=`grep -m 1 -a '^ *package ' $upfl`;chomp($Hpth); # -a like --text like --binary-files=text
                                                              $Hpth=~ s/(^\s*package\s+)//;$Hpth=~ s/::$ubfl.*//;} # this will fail if same pm name used twice
     # J67M0vit:as liter8 as it was to have upd8 back in U8.pm, it had dependencies of a8, b8, && d8 but upd8 needs only a8::c8fn && it's inconvenient to get
-    #   this blockd by any failure in them, so I mvd upd8 to a8 here; 2du:replace backtick greps with Path::Tiny slurp_utf8 && builtin grep,
+    #   this blockd by any failure in them, so I mvd upd8 to a8 here; 2du:replace backtick greps with Path::Tiny $Hpth=path($upfl)->slurp_utf8 && builtin grep,
     #   fix mkdirz to use $ENV{'PERL5LIB'} if exists && give param to crE8 all of Octology/f8/pal8/ at once there,also replace `cp ...` at end wi Perl copy;
     if(length($Hpth) && $Hpth=~/[^:\/]/){$Hpth=~s/::/\//g;$Hpth="/$Hpth" unless($Hpth=~/^\//);my @psbz= split(/\//,$Hpth); # need to crE8 destin8ion subdirz?
       my $tpth="$ENV{'HOME'}/$Hsub";shift(@psbz);for my $oned (@psbz){$tpth .= "/$oned";if(!-d "$tpth"){mkdir("$tpth",0755);}}} # shud loop mkng Temp PaTH SuBZ

@@ -146,90 +146,13 @@ if   [[ -r   "$HOME/.lsrc"   ]]; then  eval $($dircolors -b $HOME/.lsrc);    # o
 else                                   eval $($dircolors -b            ); fi #   I'll need to further support any of those; just init sysdefaults if!.lsrc
 # K R 0oO Y G C B M W  # a8,c8,f8::pal8 `S` colrz mapd to ANSI SGR wi CSI then 1; then 30+$BlOn;
 # 0 1 0;3 3 2 6 4 5 7  # KRoYG CBMW => 01-32 6457 ;
-# `ls` can h&l all kIndz of globz >than `dircolors` mkz but! [chrz]||dbl*, .lsrc can!hv[-_?], && Uz ~/.lrc && `lrc` 2help sync nw .XtNz with `dircolors -p`;
-# nOt:ther hv been afew problMz wi thEse l8r apNded dFinitNz clobrng earlier .XtN defz sO I've mAde nOticd 1z mor specific but mAB should just Only prEpNd all?
-#        LS_COLORS="$LS_COLORS*-ignore=01;31:*-conf=01;33:*-magic=01;31:*-release=01;36:*-xsessions=01;35:*-=00;31:*_COLORS=01;33:*_vimrc=00;33:";
-#        LS_COLORS="$LS_COLORS*_completion=01;35:*_version=00;36:*_not_found=01;31:";                #/etc Xtra _XtNz (here)    && -(release|xsessions)? (abov)
-#        LS_COLORS="$LS_COLORS*_Dingbats=01;31:*_Symbol=01;33:*_Unicode=01;36:*_Wingdings=01;35:";   #/etc/alternatives/ghostscript-current/Resource/Decoding
-#        LS_COLORS="$LS_COLORS*-down=00;31:*-up=01;31:*-off=00;35:*-on=01;35:*-aticonfig=01;36:*-wireless=01;33:*-undock=00;36:*-cmos=00;33:"; #/e*/acpi/events
-#        LS_COLORS="$LS_COLORS*-Bold=01;31:*-BoldItal=00;33:*-Ital=01;33:*-Roma=00;36:*-BoldObli=01;36:*-Regu=01;35:*-ReguObli=00;35:*-Medi=00;31:";
-#        LS_COLORS="$LS_COLORS*-MediItal=01;31:*-ReguItal=00;33:*-BoldCond=01;33:*-BoldCondItal=00;36:*-ReguCond=01;36:*-ReguCondItal=01;35:*-DemiBold=00;35:";
-#        LS_COLORS="$LS_COLORS*-DemiBoldItal=00;31:*-Ligh=01;31:*-LighItal=00;33:*-Book=01;33:*-BookObli=00;36:*-Demi=01;36:*-DemiObli=01;35:";
-#        LS_COLORS="$LS_COLORS*-PCLPS2=01;33:"; #</etc/alternati*/ghostscript-current/Resource/Init #^/etc/alternatives/ghostscript-current/Resource/Font
-#        LS_COLORS="$LS_COLORS*-WMode=01;31:*copyright=01;37:*null=00;31:"; # xdpg&&/dev/null symlnx #/etc/alternatives/ghostscript-current/Resource/SubstCID
-#        LS_COLORS="$LS_COLORS*-account=01;31:*-auth=00;33:*-password=01;33:*-session=01;36:*-noninteractive=01;35:*-daemon=01;31:*-screensaver=01;35:";
-#        LS_COLORS="$LS_COLORS*-autologin=00;35:*-greeter=01;36:*-freerdp=00;33:*-containers=01;36:"; #(~8bow cycl) /etc/(apparmor|pam).d
-#        LS_COLORS="$LS_COLORS*-uccsconfigure=01;33:*-1=00;35:*-user=00;36:*-l=01;31:*utmp=00;31:";  #   more       /etc/          pam .d && /run/ fIl dRk-red
-#        LS_COLORS="$LS_COLORS*-common=01;31:*-client=00;33:*-accessibility=01;33:*-strict=00;36:*-integration=01;36:*-browser=01;35:*-kit=00;35:";
-#        LS_COLORS="$LS_COLORS*-files=00;31:*_certs=01;31:*_keys=00;33:*-repositories=01;33:*-clients=00;36:*-browsers=01;36:*-email=01;35:*-readers=00;35:";
-#        LS_COLORS="$LS_COLORS*-terminal=01;33:*-helpers=00;31:*-konsole=01;31:*-players=00;33:*-base=01;33:*-launcher=00;36:*-messaging=01;36:*-xterm=01;35:";
-#        LS_COLORS="$LS_COLORS*-download=00;35:*-mail=00;31:*-manpages=01;31:*-tmp=00;33:*-write=01;33:*-data=00;36:*-desktop=01;36:"; #/etc/ap*.d/abstractions
-#        LS_COLORS="$LS_COLORS*-enumerate=01;35:*-systemd=01;36:*-intel=01;33:*-mesa=01;37:*-nvidia=00;32:*-pocl=01;30:";         #/etc/apparmor.d/abstractions
-#        LS_COLORS="$LS_COLORS*change_profile=01;35:*find_mountpoint=01;36:*is_enabled=01;33:";      #/etc/apparmor.d/abstractions/apparmor_api
-#        LS_COLORS="$LS_COLORS*-editors=01;33:*-xul=01;35:*_release=01;33:*_modprobe=01;35:";        #/etc/apparmor.d/abstractions/ubuntu-browsers.d
-#        LS_COLORS="$LS_COLORS*-dirs=01;35:"; # all these /etc/** entries are mainly defined here in default `ls` order           #/etc/apparmor.d/tunables
-#        LS_COLORS="$LS_COLORS*-kernels=01;31:*-stamp=01;33:*-notifier=01;36:";                                                   #/etc/apt/apt.conf.d
-#        LS_COLORS="$LS_COLORS*-cache=01;31:*-validate=00;36:*-prompt=01;33:*-tools=01;36:*-highlight=01;36:*-completion=00;35:"; #/etc/bash_completion.d
-#        LS_COLORS="$LS_COLORS*_complete=01;31:";                                                                                 #/etc/bash_completion.d
-#        LS_COLORS="$LS_COLORS*-contest=01;36:*-linux=01;31:*_all=01;33:*-to-rootrc=00;36:*_format=01;37:";                       #/etc/cron.d && /etc/*
-#        LS_COLORS="$LS_COLORS*-settings=01;33:"; # care has been taken to attempt to distribute colors pretty evenly in dirz     #/etc/dconf/db/ibus.d
-#        LS_COLORS="$LS_COLORS*-support=01;35:*-setup=00;36:*-chrome=01;36:*-config=01;33:*-3g=01;35:*-dispatcher=00;35:";        #/etc/default
-#        LS_COLORS="$LS_COLORS*-tips=01;31:*-net=01;31:*-bridge=00;33:*-inetd=01;36:*-microcode=01;30:*-htcacheclean=01;37:";     #/etc/default
-#        LS_COLORS="$LS_COLORS*-functions=01;35:*_ed25519_key=01;31:";                                                            #/etc/zfs   && /etc/ssh
-#        LS_COLORS="$LS_COLORS*-fingerprint=00;31:*-environment=00;32:*-default-hostfile=01;32:";                                 #/etc/pam.d && /etc/openmpi
-#        LS_COLORS="$LS_COLORS*-routes=01;35:";                                                                                   #*/dhcp/dhclient-exit-hooks.d
-#        LS_COLORS="$LS_COLORS*-default=00;31:*-english=01;33:";                                                                  #/etc/dictionaries-common
-#        LS_COLORS="$LS_COLORS*-whitelist=01;37:";                                                                                #/etc/gnome-app-install
-#        LS_COLORS="$LS_COLORS*skeleton=01;31:*_clang-format=00;33:";                                                             #/etc/init.d && Qt5configfile
-#        LS_COLORS="$LS_COLORS*_map=01;31:*_dsfield=00;33:*_protos=01;33:*_realms=01;36:*_scopes=01;35:*_tables=00;35:";          #/etc/iproute2   (~8bow cycl)
-#        LS_COLORS="$LS_COLORS*-runtime=01;31:";                                                                                  #*/logcheck/ignore.d.paranoid
-#        LS_COLORS="$LS_COLORS*-service=01;35:*-paniclog=00;33:*-utils=01;36:*-syslog=01;31:";                                    #/etc/logrotate.d
-#        LS_COLORS="$LS_COLORS*-usernet=01;36:*_menus=01;31:";                                                                    #/etc/lxc &&/etc/menu-methods
-#        LS_COLORS="$LS_COLORS*-palette=01;35:*_pinning=01;30:";                                                                  #/etc/newt&&/etc/iproute2
-#        LS_COLORS="$LS_COLORS*-secrets=01;31:*_probes=01;31:";                                                                   #/etc/ppp &&/etc/GNUstep
-#        LS_COLORS="$LS_COLORS*debian_config=01;33:*_builtin_shaders64=00;33:";                                                   #/etc/python*&&~/.cache/radv*
-#        LS_COLORS="$LS_COLORS*COPYING=01;33:*-LGPL=00;33:*NEWS=00;37:*TODO=00;37:*changelog=01;36:*swapfile=01;33:";             #~/dvl/c8/trm8/roxterm/ && /
-#        LS_COLORS="$LS_COLORS*README=01;37:";                                                                                    #/etc/(rc*|sysctl).d|terminfo
-#        LS_COLORS="$LS_COLORS*-order=01;35:";                                                                                    #/etc/resolvconf
-#        LS_COLORS="$LS_COLORS*ssh_config=01;33:*sshd_config=00;33:*sa_key=01;36:*_import_id=01;35:*baloofilerc=01;31:";          #/etc/ssh && ~/.config KDEf5
-#        LS_COLORS="$LS_COLORS*-paths=01;33:";                                                                                    #/etc/system-image
-#        LS_COLORS="$LS_COLORS*-server=01;36:";                                                                                   #/etc/ufw/applications.d
-#        LS_COLORS="$LS_COLORS*-upgrades=01;35:";                                                                                 #/etc/update-manager
-#        LS_COLORS="$LS_COLORS*-manager=01;35:*core=01;31:*.conf.01162014=00;31:"; #/etc/X11    can't double star *.conf.* or charclass for *.conf.[0-9]{8}
-#        LS_COLORS="$LS_COLORS*-color=01;36:*-nocase=01;33:*-chrtr=00;33:*-belgian=00;36:*-danish=01;35:*-fitaly=00;35:*-french=00;31:*-french2=01;31:";
-#        LS_COLORS="$LS_COLORS*-german=00;33:*-greek=01;33:*-hebrew=00;36:*-icelandic=01;36:*-italian=01;35:*-jisx6002=00;35:*-jisx6004=00;31:";
-#        LS_COLORS="$LS_COLORS*-korean=01;31:*-latin1=00;33:*-norwegian=01;33:*-portuguese=00;36:*-russian=01;36:*-slovene=01;35:*-small=00;35:";
-#        LS_COLORS="$LS_COLORS*-spanish=00;31:*-strip=01;31:*-swedish=00;33:*-swissgerman=01;33:*-turkish=00;36:*-uk=01;36:";     #/etc/X11/app-defaults (~8bO)
-#        LS_COLORS="$LS_COLORS*-args=00;31:*_xresources=01;31:*-local=00;33:*_xsessionrc=01;33:*_support=00;36:*-startup=01;36:*_gnomerc=01;35:";
-#        LS_COLORS="$LS_COLORS*_localhost=00;35:*_path=00;31:*-update=01;31:*_launch=00;33:*-launch=01;33:*-gtk3=00;36:*-scrollbar=01;36:";
-#        LS_COLORS="$LS_COLORS*-xim=01;35:*-gtk=01;33:";                                                                          #/etc/X11/xinit/xinput.d
-#        LS_COLORS="$LS_COLORS*-a11y=01;35:*-agent=00;35:*_start=01;31:*_stop=00;31:*-va-gl=01;35:*-adaptor=01;31:*-env=00;33:";  #/etc/X11/Xsession.d
-#        LS_COLORS="$LS_COLORS*-addresses=00;35:*drkonqirc=01;36:*patchagerc=01;31:*konsolerc=01;33:";                            #/etc/email-addresses (exim)
-#        LS_COLORS="$LS_COLORS*machine-id=01;30:*karboncalligraphyrc=01;31:*kritadisplayrc=00;36:*kritarc=01;36:";                #/etc && ~/.config (abov too)
-#        LS_COLORS="$LS_COLORS*-repository-8_xml=01;35:*-addons_list-2_xml=00;35:*-sys-img_xml=01;31:*-addon_xml=01;36:";         #~/.android/cache
-#        LS_COLORS="$LS_COLORS*meta-release-lts=01;35:"; # E95M5MJR:done adding Aku:/etc && ~/.*/* but stil nd2recurse furthr l8r #~/.cache/update-manager-core
-#        LS_COLORS="*done_upgrades=01;31:$LS_COLORS";                                                                             #~/.co*/compiz-1/compizconfig
-#        LS_COLORS="*bookmarks=00;33:$LS_COLORS";                                                                                 #~/.config/gtk-3.0
-#        LS_COLORS="$LS_COLORS*desktop-metadata=01;31:*search-metadata=01;33:";                                                   #~/.config/nautilus
-#        LS_COLORS="$LS_COLORS*hooks_seen=01;35:";                                                                                #~/.config/update-notifier
-#        LS_COLORS="$LS_COLORS*_migration-ubuntu=01;35:*.converted-launchers=01;33:*-data-convert=00;33:";                        #~/.local/share
-#        LS_COLORS="$LS_COLORS*_migration-ubuntu-wayland=01;31:*_migration-unity=01;36:*-lock=00;33:";                            #~/.local/share&&/tmp gdm fIl
-#        LS_COLORS="$LS_COLORS*-default-sink=01;33:*-default-source=01;36:*-initial-setup-done=00;31:";                           #~/.pulse && ~/.config/gnom*
-#        LS_COLORS="*config=01;33:*config~=00;31:*known_hosts=01;31:*history=01;35:$LS_COLORS"; # prEpNdng thEse2!clobr l8r .XtNz #~/.(mplayer|schism|ssh|w3m)
-#        LS_COLORS="*Metadata=00;31:$LS_COLORS";                                                                                  #~/.cpan (binary file?)
-#        LS_COLORS="*Makefile=01;32:*INSTALL=01;36:*MANIFEST=01;33:*AUTHORS=01;36:*CHANGELOG=01;33:*LICENSE=01;37:$LS_COLORS";    #~/.inst/(youtube-dl|perl*)
-#        LS_COLORS="*makefile=01;35:*installhtml=01;35:*Artistic=01;37:*Changes=00;33:*Copying=01;37:$LS_COLORS"; #`lsd8`duz gout #~/.inst/perl-5.8.8
-#xport   LS_COLORS="abi-3.*-generic=01;31:config-3.*-generic=00;33:initrd.img-3.*-generic=01;33:System.map-3.*-generic=01;32:vmlinuz-3.*-generic=01;36:$LS_COLORS"; # /boot spec from both endz is unparsable && just front end duz!wrk; ECKL6HM1:below the Linux kernel version numbers as p@rnzR ROYG CBMP newest to oldest;
-#        LS_COLORS="*-3.16.0-29-generic=01;31:*-3.16.0-28-generic=00;33:*-3.16.0-25-generic=01;33:*-3.13.0-39-generic=01;32:$LS_COLORS";  # /boot altern8 versN
-#        LS_COLORS="*-3.11.0-19-generic=01;36:*-3.8.0-33-generic=01;34:*-3.5.0-36-generic=01;35:*-3.2.0-35-generic=00;35:$LS_COLORS";     #   && oldrfrom ChunW
 # F1ELGnuL:RoYG CBMp => 1;3[1o32 645p] thEse lInz should evN2LE get gNR8d from `ls /boot`; I98M89I9:rEsortd2XplicitNtrEzB4quStnz sinc wrkin lsd8 but!nrml `ls`;
-#        LS_COLORS="$LS_COLORS*.3.=0;34:*.33.=0;30:*.66.=0;34;40:*.0.=0;30:*.O.=0;33;43:*.=00;34:*.96.=0;34;42:"; # 3nd0tn6Xtraz  # gN96z # .?upd8?
-#        LS_COLORS="$LS_COLORS*.G.=0;44:*.GG.=0;34:*.G9.=0;30;40:*.9.=0;34:*...=0;30;44:*..=0;30:*.9G.=0;32;44:"; # endotnGXtraz  # gN9Gz # .?bbkbkk prv? +nw g
-#        LS_COLORS="$LS_COLORS*.png.=0;35;45:*.Hrc.=0;30:*.ls.=0;34;44:*.log.=0;32:*.kdb.=0;30;40:*.txt.=0;36:";  # somemAnXtraz  # gNrl  # .?mkbgkc prvz m b k
-#        LS_COLORS="$LS_COLORS*.g.=0;35:*.gg.=0;30:*.g6.=0;34;44:*.6.=0;32:*.H.=0;30;40:*.8.=0;36:*.prv8.=0;34:"; # moremAnXtraz  # gNg8z # .?mkbgkc prvz +nw b
-#        LS_COLORS="$LS_COLORS*-interface-security=01;31:*-shim-state=01;36:*.?.=0;36:*.??.=0;34:*.???.=0;30:*.????.=0;32:";      # /run  # .?. cbkg prvz
-#xport   LS_COLORS="$LS_COLORS*.serverauth.???=00;32:*.serverauth.????=00;31:*.serverauth.?????=00;35:*.goutputstream-??????=00;31:"; #*.gout*-? duz!wrk4 `ls`;
-export   LS_COLORS;
+         LS_COLORS="$LS_COLORS*-interface-security=01;31:*-shim-state=01;36:*.?.=0;36:*.??.=0;34:*.???.=0;30:*.????.=0;32:";      # /run  # .?. cbkg prvz
+         LS_COLORS="$LS_COLORS*.3.=0;34:*.33.=0;30:*.66.=0;34;40:*.0.=0;30:*.O.=0;33;43:*.96.=0;34;42:*.9G.=0;32;44:"; #3nd0tn6Xz # gN96z # .?upd8?
+         LS_COLORS="$LS_COLORS*.G.=0;44:*.GG.=0;34:*.G9.=0;30;40:*.9.=0;34:*...=0;30;44:*.*.=0;30:*.=01;00;34:";  # endotnGXtraz  # gN9Gz # .?bbkbkk prv? +nw g
+         LS_COLORS="$LS_COLORS*.png.=0;35;45:*.Hrc.=0;30:*.ls.=0;34;44:*.log.=0;32:*.kdb.=0;30;40:*.txt.=0;36:";  # somemAnXtraz  # gNrl  # .?mkbgkc prvz m b k
+         LS_COLORS="$LS_COLORS*.g.=0;35:*.gg.=0;30:*.g6.=0;34;44:*.6.=0;32:*.H.=0;30;40:*.8.=0;36:*.prv8.=0;34:"; # moremAnXtraz  # gNg8z # .?mkbgkc prvz +nw b
+export   LS_COLORS="$LS_COLORS*.serverauth.???=00;32:*.serverauth.????=00;31:*.serverauth.?????=00;35:*.goutputstream-??????=00;31:"; #*.gout*-? duz!wrk4 `ls`;
 #xport GREP_COLORS="mt=01;34"; bindkey -v; #`bindkey -e`setzEmacs-stylCmdLynEdtng; -v hazBn betRsofR4mE,butdu!4getEmaxAtaxBax; #rEmMbr"^foo^bar"subst prEv cmd;
 export GREP_COLORS="ms=01;04;94:mc=01;02;33:sl=:cx=:fn=01;03;95:ln=01;92:bn=00;33:se=01;96";bindkey -v; #RoYG CBMp=>1o32 645p;RGY BMC;`gis -Hnb`shOFlNmLNumBytN
 alias  grp='  grep --color=auto'; # want grep --color=auto all za tym2(&&mayB`dircolrz ~/.gprc`?)&&2hv -nubTHZ?fulnSwi:Hedrfylnmz,lyNumZeroUnixTabalyndBytofstz

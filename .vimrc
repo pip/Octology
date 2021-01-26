@@ -80,7 +80,7 @@ se   t_ci=
 if   has('spell')
   setl    spell spelllang=en  " use locl English SpelCkr4ASCII,Latin1,UTF-8 encodingz, try :help spell 4detailz
   setl  nospell               " setup SpelCkr lang then turn off by default
-en
+en " 
 "(([clisnoxv](un)?|un)m|map) cmdln,[ci],insrt-only,sele,norm,oper-pendng,visual,[sv] modes wi <(C|S|[AM])- for Ctrl,Shft,&&(Alt==Meta)    map  == all([nov])map
 " preceding mapped key wi <silent> tells Vim not to print msg when running cmd    exception sm==smagic (substitution) so use smap         map! == all( [ci])map
 " 2du:fix C-f 2Format again below && stuD which other Ctrl cmdz (or regularz like 'E') might be currently least used, next best onez to remap when needed;

@@ -31,7 +31,7 @@
 #   rural / suburban / inner-city dwellers, multi-gener8ional homes, household incomes, heights, w8s, BMI's, asthmatics, allergies, apneas, etc. to account 4;
 # K5GMHELP:It just occured to me that death percentage would be potentially much more in4m8ive if it included how many nEded unavailable ventil8ors 2 survive;
 use strict;use warnings;use utf8;use v5.10;use Octology::a8;use Octology::d8;use Text::CSV; # should also track how many tSts done&&ventil8ors Ech county has;
-my $Vers='0.0';my $d8VS='KCJL5red';   my %sd8a;my %flcb=('C'=> 3,'D'=> 4,'R'=> 5,'A'=>-1);my %flcm=('C'=>$c,'D'=>$Y,'R'=>$g,'A'=>$K);my $lupc=0;
+my $Vers='0.0';my $d8VS='L1QL4WUH';   my %sd8a;my %flcb=('C'=> 3,'D'=> 4,'R'=> 5,'A'=>-1);my %flcm=('C'=>$c,'D'=>$Y,'R'=>$g,'A'=>$K);my $lupc=0;
 my @flck=qw(Confirmed Deaths Recovered Active);my %flcn=('C'=> 7,'D'=> 8,'R'=> 9,'A'=>10); # USt8 AbbreV8ionz below R not even used anymore,sO scrap l8r;
 my      $covp=$ENV{'HOME'};$covp.="/dvl/c8/CJ";my $whg8=`which git`;`mkdir -p $covp` unless(-d $covp     );      chdir($covp     ); # mk sure CSV d8a gotN
 if(!-d "$covp/COVID-19" && length($whg8)){system("  git clone https://github.com/CSSEGISandData/COVID-19");}else{chdir("COVID-19");system("  git pull");}
@@ -307,8 +307,9 @@ open my        $out8,'>&',STDOUT or die "Can't open  duplic8 STDOUT handle: $!";
 if(@ARGV && $ARGV[0]=~ /^-*h(elp)?$/i){print $out8 " CJ - CoronavirusJ (19) d8a aggreg8ion utility by $Auth Vers:$Vers d8VS:$d8VS\n -h - print this Help
     - Any UnitedSt8 name can also be given as a parameter to override the default output for the author's current home St8 of Wisconsin;\n";exit;}
 my      $csvp=   $covp . "/COVID-19/csse_covid_19_data/csse_covid_19_daily_reports";my %clrd;my $i=S($cmsp{'d8bo'}[0]);my $j=S($cmsp{'d8bo'}[1]);
-for  my $dfil (<"$csvp/*.csv">){my $d8nw=Octology::d8->new();my $ndfl=$dfil;$ndfl=~ s/^(.+)\.(\w+)$/$1-$d8nw.$2/;      my $l=S($cmsp{'d8bo'}[2]);
-                                                             my $dfd8=$dfil;$dfd8=~ s/^(.+)\/([^.]+)\.(\w+)$/$2/; # isol8 *MM-DD-YYYY* 2 say l8r
+for  my $dfil (<"$csvp/*-2020.csv">){my $d8nw=Octology::d8->new();my $ndfl=$dfil;my $dfd8=$dfil;                       my $l=S($cmsp{'d8bo'}[2]);
+             #,<"$csvp/*-2021.csv">) # cmnt-out glob to process different new 2021 Year files since they aren't handled properly yet, so just stick 2 old 2020;
+  $ndfl=~ s/^(.+)\.(\w+)$/$1-$d8nw.$2/; $dfd8=~ s/^(.+)\/([^.]+)\.(\w+)$/$2/; # isol8 *MM-DD-YYYY* 2 say l8r
   if        (1){#$dfd8=~ /^06-2/){ # only June 20-somethingthDay of 2020 Year Dfalt comput8ion hard-coded for PerlConferenceInTheCloud, instead of trying 2 ...
   # above if was added 4 PerlConf; #   ... incr $lupc for loop-count limit8ion, so probably just replace this with if(1){ instead of this to handle other d8z;
     my       $csvo=                         Text::CSV->new({'binary' => 1}); #, auto_diag => 1 });

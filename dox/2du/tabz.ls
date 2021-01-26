@@ -1,5 +1,7 @@
 # D4QMFYJV:tabz.ls crE8d by PipStuart <Pip@CPAN.Org> to at least .LiSt (if not also describe && comment on) collectionz of web-browser TAB address URL linkz;
 # Note:While I usually prefer to append d8a to most listz being extended in text-files, tabz.ls varE8ion invertz this tendency to prepend insertions instead;
+L1PLGodL: HTTPS://YouTu.be/tyYr0REV3kg "What Do We Do in Heaven? What it Hell?" # JCO:0600 of CrossExamined FrankTurek with amazing Capz&&Puncz also CC8 l8r;
+L1PLFUCK: HTTPS://YouTu.be/CxntkiNauh4 "S8n Tried to Ban This Video! (Find Out Why)" # K8M:08D0 of OffTheKirbMinistries Joe wi gnarly Vietnamese for CC8 l8r;
 K6OMDbad: HTTPS://Usenix.Org/system-administrators-code-ethics "Ethical-Hacker Moral-Compass: 2003" # KevinA.McGrail, a code-security expert's recommend8ion;
 K6HM0Sun: HTTPS://YouTu.be/urgYWNCN-RA "Greek Physics: Calcul8ing the Distance to the Sun and Moon" # IAO:25m14s of PhysicsExplained on ways 2 find distance;
 K48MGPKs: HTTPS://OldSportsCards.Com/garbage-pail-kids-cards # describes how I have many of the most valuable cards, probably worth several thousands obuckz.
