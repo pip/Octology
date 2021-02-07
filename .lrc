@@ -1899,10 +1899,11 @@ CHR                            Yk              #cd= 01;33;40    01;33;40  CHaRac
 *-5.3.0-26-generic             Mr
 *-5.3.0-24-generic             or
 *-5.3.0-23-generic             Yr              # BlO back to just manual d8bo 8bow for 5.4.0 onward again with Ubu 20.04 for now, but should upd8 SSD 4 20.10
-*-5.4.0-64-generic             R
-*-5.4.0-62-generic             o
-*-5.4.0-60-generic             Y
-*-5.4.0-58-generic             G
+*-5.4.0-65-generic             R
+*-5.4.0-64-generic             o
+*-5.4.0-62-generic             GbL
+*-5.4.0-60-generic             BrL
+*-5.4.0-58-generic             Y
 #                                              # zsh wraps '%{' ANSI '%}' && vim User[1-9] colrz specify BlO ForeGroundz all on darkblue BakGrnd4statuslIn
 #     4NT    etfp   vim  c8  color              ANSI      HTML    Octology::d8::fldz (`d8`)
 #     0f     Fsy_   %*    W WhiteBright         \e[1;37m  FEFDFF            # vim %* resets statuslIn colr 2 Dfalt   White on darkblue so has max 10 colrz

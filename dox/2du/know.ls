@@ -1,5 +1,5 @@
 # HBQLISTV:know.ls crE8d by PipStuart <Pip@CPAN.Org> to duplic8 Dr. Jordan B. Peterson's Quora.Com answer of "40 most valuable things everyone should know";
-# $VERSION='0.0';$d8VS='L1CL4cat'; # While this document origin8d around (&& still mainly intends to focus on) Dr. Peterson's knowledge, many others fE8ure;
+# $VERSION='0.0';$d8VS='L1SL0WER'; # While this document origin8d around (&& still mainly intends to focus on) Dr. Peterson's knowledge, many others fE8ure;
 # 2du:start chronicling Dr. Peterson's many topical videos with new section for post-title subject summaries or explor8ion;
 0) Tell the truth.
 1) Do not do things that you h8.
@@ -1078,3 +1078,12 @@ L11LCloc:HTTPS://YouTu.be/ogDBFD7tr90 "We Just Leveled Up Our Time-Keeping Skill
 L11LDidU:HTTPS://YouTu.be/kSG4Rfc9YIw "How to Talk Like a Physicist" # KCU:5w0 of SabineHossenfelder correcting a bunch of very common physics misconceptions;
 L1BLKNOW:HTTPS://YouTu.be/zHL9GP_B30E "Illusions of Time" # L18:V70 by Vsauce totally blasting a triple-double hat-trick grand-slam on naming time illusions!;
 L1CL4cat:HTTPS://YouTu.be/kTXTPe3wahc "Parallel Worlds Probably Exist. Here's Why" # K36:Jx0 of Veritasium explaining quantum-theory && waves+cats collapsing;
+L1SLAtom:HTTPS://YouTu.be/yszguz5uAW4 "Where Do Atoms Come From?" # L1N:08l0 of SabineH again showing off cool explan8ions of TableOfLMNtz && how most formed;
+L1VLAnim:HTTPS://ChinaHighLights.Com/travelguide/chinese-zodiac #RatOxTigerRabbitDragonSnakeHorseGoatMonkeyRoosterDogPig:PigSnRatRooRabGoatOxHorsMonkTigDogDr;
+L1VLBlak:HTTPS://YouTu.be/QCv87K_y97w "How Do We Know There's a Black Hole in Every Galaxy Center?" # J1G:0Pm0 of Dr.Becky explaining history of Black Holes!;
+L1VLDark:HTTPS://YouTu.be/nbE8B7zggUg "How Do We Know Dark Matter Exists? A Century's Worth of Science History" # J8S:0Tn0 of Dr.Becky wiWolf'sBDay@0Jp0 Sep5;
+L1VLFast:HTTPS://YouTu.be/V7PU1WN9jWY "How Did We Measure the Fastest Speed There Is? Speed of Light History,Pt.1" # JC4:0OP0 Dr.Becky J3sz m/s,17UU Kibi m/s;
+L1VLFold:HTTPS://YouTu.be/yhJWAdZl-Ck "Has Protein Folding Been Solved?" # L1U:0C00 of SabineHossenfelder discussing DeepMind && all the protein complexities;
+L21LCarl:HTTPS://YouTu.be/oQ1TJ7oUMHg "Why I, as an Atheist, Am No Longer a Humanist" # L1V:0FY0 of Drew of GeneticallyModifiedSkeptic channel on PaleBlueDot;
+L21LMorl:HTTPS://YouTu.be/3Oyz-Oy7EY8 "Does Survival Explain Morality? (feat. Scott Clifton) (Greg Koukl Response)" # L21:0G70 of gr8 Paulogia && moral guest;
+L21LMoon:HTTPS://YouTu.be/At17Klp_pRI "How Did the Moon Form? 5 Things We Learned From the Apollo Moon Landings" # J7H:0HN0 of Dr.Becky "geeking-out".Yay! =);

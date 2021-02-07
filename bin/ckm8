@@ -50,7 +50,7 @@
 #   Octo is 8base d8a applic8ions:V8 abbreV8ions,b8 nums,d8 stamps,f8 RU(Red)E4||2lern8bow?pal8NtrE RGB && f0nt -##-,c8 col8 scrn,r8 valU8,m8 rel8,l8 skedul8r?
 use strict;use warnings;use utf8;use v5.10;use Encode;
 use Octology::a8;#se Octology::c8;
-use Octology::b8;use Octology::d8;my $VERSION='0.0';my $d8VS='K7BM4SnG';my $name=$0;$name =~ s/^.*\///;my $Dbug=0; # version,program name
+use Octology::b8;use Octology::d8;my $VERSION='0.0';my $d8VS='L26LATEN';my $name=$0;$name =~ s/^.*\///;my $Dbug=0; # version,program name
 open my $out8,'>&',STDOUT or die "Can't open  duplic8 STDOUT handle: $!";binmode $out8,':encoding(UTF-8)';select($out8);$|=1; # crE8 locl autoflush dup of glbl
 if(           @ARGV && $ARGV[0]=~ /^-*h/i){say $out8 " ckm8  - experimental   Curses and SDL Chess program  Vers:$VERSION  d8VS:$d8VS by Auth:$Auth
   <pW>v<pK>  sets roster tags for Players White and BlacK and for output filename where pW and pK are single-letter keys in the player registry hash (v optnal)
@@ -1287,8 +1287,8 @@ while(!defined($keey) || ($keey !~ /^[xq]$/i && ord($keey) != 27)){$keey = '-1';
         else{my $opwn;for my $b64n (keys(%pkpz)){ if(substr($bord,$pkpz{$b64n},1) =~ /^[PAWNCDEF]$/i){if(defined($opwn)){$opwn=undef;  last;}
                                                                                                       else              {$opwn=$pkpz{$b64n};}}}
           if(defined($opwn)){                               $pikd=      $opwn ;Pr4mPcMv();DrawBord();$pikd=undef;PrntMove();}}}}}
-} if($ucsf){$simp->CScr();}else{say $out8 '';} # CloseScrn(retn2console)&&prnt && mAB shud alsO termin8 SDL window @this pt2? unlS stilshud prOvId fInal progrS
-for(0..$#text){$text[$_]=~ s/\s+$/ /;if($nocf){say $out8 $text[$_];}else{
+} if($ucsf){$simp->EndW();}else{say $out8 '';} # CloseScrn(retn2console)&&prnt && mAB shud alsO termin8 SDL window @this pt2? unlS stilshud prOvId fInal progrS
+for(0..$#text){$text[$_]=~ s/\s+$/ /;if($nocf){say $out8 $text[$_];}else{ # L26LATEN:switched abov $simp->CScr() wich is broken to EndW() wich shud work betr;
     my @splt=split(//,$text[$_]);
     my @splF=split(//,$Fclr[$_]);for my $cndx (0..$#splt){print $out8 S($splF[$cndx]),$splt[$cndx];} # try2just escape Foreground colorz ahead of each txt char
     say $out8 ''; #$W,$text[$_]; # c2($text[$_],$Fclr[$_],$bclr[$_],'t' x length($text[$_])); # figure out why c2 is just returning single colored zeroez

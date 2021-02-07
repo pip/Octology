@@ -5,7 +5,7 @@ use        Curses;use Tie::Array;
 my $curs=8; # used to set this to 0 for old 4NT rendering so now should remove all tests for it
 my $ptim=0;#eval('use Time::PT   ;8') || 0;
 my $fram=0;#eval('use Time::Frame;8') || 0;
-my $VERSION  =  '1.6';my $d8VS='L11L9LYR'; # remember that 1.2 is really that float and not automatically 1.002 without 'v1.2' or '1.2.0'
+my $VERSION  =  '1.6';my $d8VS='L26L26L2'; # remember that 1.2 is really that float and not automatically 1.002 without 'v1.2' or '1.2.0'
 END{CScr();} # auto-execute CloseScreen() on exit()
 my %GLBL=( # GLOBAL CLASS VARIABLES  # maybe used to need to declare this before END would register a test for FLAGOPEN?
   'FLAGOPEN' => 0,   # flag for if a main curses screen has been opened yet
@@ -706,15 +706,13 @@ sub KNum{ return %knum; } # I thought I might be able to just call clear() && @{
 sub CLet{ return %p622; } # now returning new Pal8 64 to 256 Color Letter map instead of original with just 16 plus the few altern8s
 sub OScr{ no strict 'subs'; # Open a new Curses Screen && setup useful options
   unless($GLBL{'FLAGOPEN'}){ $GLBL{'FLAGOPEN'} = 1;
-    # raw() allows ^C,^S,^Z 2simply pass thru,unlike cbreak(),but raw requirz`reset`from the cmdline,if the app crashes; napms($ms) 2nap millisecs;
-   #use_env(0);
+   #use_env(0); # raw() allows ^C,^S,^Z 2simply pass thru,unlike cbreak(),but raw requirz`reset`from the cmdline,if the app crashes; napms($ms) 2nap millisecs;
     initscr();noecho();nonl();raw();start_color();$GLBL{'FLAGUDCL'} = eval('use_default_colors(); 1') || 0;
     # H4RM7w9G:added use_env && use_tioctl above to hopefully better handle window resize events from SIGWINCH && KEY_RESIZE. Dfalt 1,0 try 1,1 0,1 or 0,0
     #   from HTTP://Invisible-Island.Net/ncurses/man/curs_util.3x.html ... poopy, my Curses doesn't have use_tioctl && use_env(0) pegs term at 80x24  =(
     # start_color without use_default_colors was making transparent GnomeTerminal BackGround solid blacK; A7QAMqt: ... but since use_default_colors() above is
     #   not defined in some SunOS/Solaris Curses libraries, I've wrapped it in an eval to hopefully pass their CPAN tests; # below: nodelay()||timeout(-1)...
-    curs_set(0);keypad(1);meta(1);intrflush(0);notimeout(0);timeout(0);clear();move(getmaxy()-1,getmaxx()-1);             # ... for non||blocking getch()
-    refresh();
+    curs_set(0);keypad(1);meta(1);intrflush(0);notimeout(0);timeout(0);clear();move(getmaxy()-1,getmaxx()-1);refresh();    # ... for non||blocking getch()
     @BORDSETS = ( # initscr initializes line-draw chars for my border hash
       { 'ul' => ACS_ULCORNER,                  'ur' => ACS_URCORNER,
                      'rt' => ACS_RTEE,  'lt' => ACS_LTEE,
@@ -950,7 +948,10 @@ sub OScr{ no strict 'subs'; # Open a new Curses Screen && setup useful options
 #       $abld = $kndx[$i] if($kndx[$i] =~ /^\d+$/);last; #$abld = 2097152;
     } } } return; }
 sub CScr{ # Close previously OpenedCursesScreen # Following are Curses funcs that might be useful to call in CloseScreen(): termname(),erasechar(),killchar()
-  if($curs && $GLBL{'FLAGOPEN'}){${$DISPSTAK[-1]}->DelW() while(@DISPSTAK);$GLBL{'FLAGOPEN'}=0;return(endwin());}} # delete all simp objects before end
+  if($curs && $GLBL{'FLAGOPEN'}){${$DISPSTAK[-1]}->DelW() while(@DISPSTAK);$GLBL{'FLAGOPEN'}=0; # delete all simp objects before end
+    endwin();
+  } return(); }
+sub EndW{ return(endwin()); } # just func alone can wrap things up nicely enough for l8r printz to work afterward from calling script? Not sure how or why!;
 sub NumC{ return(COLORS()); }                                     # might also need delscreen() after endwin() above before returning?
 # Curses::Simp object constructor as class method or copy as object method. First param can be ref to copy. Not including optional ref from copy,
 #   default is no params to create a new empty Simp object. If params are supplied, they must be hash key => value pairs.
