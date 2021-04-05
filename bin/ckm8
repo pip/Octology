@@ -50,7 +50,7 @@
 #   Octo is 8base d8a applic8ions:V8 abbreV8ions,b8 nums,d8 stamps,f8 RU(Red)E4||2lern8bow?pal8NtrE RGB && f0nt -##-,c8 col8 scrn,r8 valU8,m8 rel8,l8 skedul8r?
 use strict;use warnings;use utf8;use v5.10;use Encode;
 use Octology::a8;#se Octology::c8;
-use Octology::b8;use Octology::d8;my $VERSION='0.0';my $d8VS='L26LATEN';my $name=$0;$name =~ s/^.*\///;my $Dbug=0; # version,program name
+use Octology::b8;use Octology::d8;my $VERSION='0.0';my $d8VS='L2RLIKEN';my $name=$0;$name =~ s/^.*\///;my $Dbug=0; # version,program name
 open my $out8,'>&',STDOUT or die "Can't open  duplic8 STDOUT handle: $!";binmode $out8,':encoding(UTF-8)';select($out8);$|=1; # crE8 locl autoflush dup of glbl
 if(           @ARGV && $ARGV[0]=~ /^-*h/i){say $out8 " ckm8  - experimental   Curses and SDL Chess program  Vers:$VERSION  d8VS:$d8VS by Auth:$Auth
   <pW>v<pK>  sets roster tags for Players White and BlacK and for output filename where pW and pK are single-letter keys in the player registry hash (v optnal)
@@ -138,13 +138,13 @@ if(      2 <= @ARGV && $ARGV[0]=~ /^-*b/i){my $xcbd=decode('UTF-8',$ARGV[1]);if(
 #     Rook   ♖ Rosie   Roost           Pawn ♙ Philip  Phalanx              pawn ♟ porter poison         rook   ♜ rachel  ruins
 #   knIght   ♘ Igor    Isle           pAwn  ♙ Angie   Anvil               pawn  ♟ audry  arid         knight   ♞ ivan    injure
 #     Bishop ♗ Brenda  Brave         paWn   ♙ William Water              pawn   ♟ wayne  waste          bishop ♝ barbara blood
-#     King   ♔ Kyle    Kind         pawN    ♙ Natalie Nature            pawn    ♟ norma  noose          king   ♚ kilgore kraven
+#     King   ♔ Ken     Kind         pawN    ♙ Natalie Nature            pawn    ♟ norma  noose          king   ♚ kilgore kraven
 #     Queen  ♕ Quill   Quest      pawn C    ♙ Curtis  Carver          pawn c    ♟ clint  caustic        queen  ♛ quartz  quasher
 #   biShop   ♗ Steven  Smith      pawn D    ♙ Dottie  Driver          pawn d    ♟ donna  decay        bishop   ♝ shawn   slayer
 #knighT      ♘ Timmy   Trotter    pawn E    ♙ Evan    EvergrEn        pawn e    ♟ exon   evil      knight      ♞ trina   trample
 #    rOok    ♖ Orville Olive      pawn F    ♙ Fran    Fire            pawn f    ♟ fiona  frost         rook    ♜ oden    operose
 my %Pnmz =('P'=>['     PimP  ','Poploly','Phatty  '],  # could pick random 8th of: 'PYROpyro' keyz to produce constant Pip promotions along with plyz;
-           'p'=>['     Phawn ','Phil   ','Phoenix '],
+           'p'=>['     Phawn ','Phil   ','Phoenix '],  # 2du:mk PawnPip auto-exchange positions whenever captured, so I&&KingKen keep each othr alive;
            'Y'=>['Pyro-maniac','Pip    ','Piper   '],  # Phlame && phire phrom phuel pressing powdered product to produce plumes of amPhetamine vaPor;
            'y'=>['Pyro-techno','Pippi  ','Peerless'],
            'R'=>['Presidente ','Phelipe','Primero '],  # Phallic Pito, Penocha Puss, y Puta ... con todos del Phuego!  ;)  L8r add Phil Pants or Pi8?;
@@ -154,7 +154,7 @@ my %Pnmz =('P'=>['     PimP  ','Poploly','Phatty  '],  # could pick random 8th o
 my %pnam =('R'=>['     Rook  ','Rachel ','Roost   '],  # now lots of names from more extended family: uncles, aunts, cousins, nephews, nieces, pets...
            'I'=>['   knIght  ','Isaac  ','Isle    '],  #   ...leaving only a handful of first names now unoccuppied by rel8ives in some 4m or another;
            'B'=>['     Bishop','BowBeau','Brave   '],
-           'K'=>['     King  ','Kyle   ','Kind    '],
+           'K'=>['     King  ','Ken    ','Knowing '],
            'Q'=>['     Queen ','Quill  ','Quest   '],
            'S'=>['   biShop  ','Stuart ','Smith   '],
            'T'=>['knighT     ','Timmy  ','Trotter '],  # Tim promoted as sole exception to gendered start square color && side (Bfore Emerson joined);

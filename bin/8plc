@@ -14,7 +14,7 @@
 #   try arranging according to top-list order, add manual guidance of relevance groups, see if queries can yield correct results from interrog8ion, try to
 #   represent values as multi-float vector formats in 3D or n-ary spaces, build sepR8 side caches of results && trials to preserve && learn to grow from;
 use strict;use warnings;use utf8;use v5.10;use Octology::a8;use Octology::b8;
-my $d8VS='K44MGwRO';my $clrf=1;my $fulf=0;my $argz='';$argz= join(' ',@ARGV) if(@ARGV);my $Stxt='';my $Smap='';my $folf=0; # add 4-Or-Less-Flag
+my $d8VS='L3PMANIA';my $clrf=1;my $fulf=0;my $argz='';$argz= join(' ',@ARGV) if(@ARGV);my $Stxt='';my $Smap='';my $folf=0; # add 4-Or-Less-Flag
 my $edVS=        '';my $pg1f=0;   $pg1f=1 if($argz=~ /(^|\s)-?-?[^p]*p/i); # find -?p(age) flag2limit some extra long output to first 48-line page
 my $clmz=        80;my $lpsf=0;   $lpsf=1 if($argz=~ /(^|\s)-?-?[^l]*l/i); # find -?LetrPrecursShortsFlag  # if MaXWordSize evr grOz,wil nEd2incrEs|Dtct
 my $linz=        24;my $gm8f=0;   $gm8f=1 if($argz=~ /(^|\s)-?-?[^g]*g/i); # find -?g(m8r) flag2count&&adorn wi math 4mUl8ions stRting wi 2letr
@@ -41,10 +41,15 @@ if($argz=~ /(^|\s)-?-?[^h]*h/i){$Stxt.=" $name - 8.utf Precursor Letter Counter 
         if($lsiz + length($tokn) > $clmz){$Stxt.="\n" . (' ' x 8);$lsiz=8;$tokn=~ s/^\s+//;} $Stxt.=$tokn;$lsiz+=length($tokn);} $Stxt.="\n";}}o8($Stxt);exit;}
 my $efyl ='8.txt';my $ufyl=$efyl;$ufyl=~ s/txt$/utf/i;if(!-e $efyl && -e $ufyl){$efyl=$ufyl;} # setup transition to .utf as better format to migr8 .txt to;
 my @lcnt;$lcnt[$_]=0 for(0..b10('z'));my @acnt;$acnt[$_]=0 for(0..b10('z'));my $donw=0;my $t0tl=0;my $text;my $actx;my $sclc;my $gttl=0;
+my $Sc="\e[?25l\e[1G";my $wc;my $wm=1391; # mv 2frst colm,ErAs crsr2BoL, or "\e[1K\e[1G"; # try2not erase, just Home?, && 8-Word-Counter, && 8-Word-Maximum;
+my $Se="\e[1G\e[?25h" . (' ' x $clmz) . "\e[1G"; # se SKp-End cOdz2rEstor crsr-viz&&retn crsr2hOm of curNt lIn (rOw) && clEar lIn wi spAcz (&& 1G or K aftr?);
+open my $out8,'>&',STDOUT or die "Can't open  duplic8 STDOUT handle: $!";binmode $out8,':encoding(UTF-8)';select($out8);$|=1; # crE8 local duplic8 of global
 unless(-r         "$efyl"){$efyl="$ENV{'HOME'}/dox/2du/$efyl" if(exists($ENV{'HOME'})  );} # try2add likely path when file not in local dir
 unless(-r         "$efyl"){$efyl="$ENV{'HOME'}/dox/2du/8.utf" if(  -r  "$ENV{'HOME'}/dox/2du/8.utf");} # try2add likely path with Xplicit XtNsion from home
 open(my $eflh,'<',"$efyl") or die "!*EROR*! Couldn't open eight-file to read counts! $!";binmode $eflh,':encoding(UTF-8)';my %adw8;my %adpl;
 while( <$eflh>){my $ldat=$_;$donw=1 if(/^$/); # sets DONe-Words true when 1st blank line found (shud be 1-based line#:8-word cnt+1blnk+6cmnt-hedr,4now)
+  $wc=0 unless(defined($wc));$wc++ if($wc < $wm);
+  if($wc && $clmz >= 8){my $prgc=int($wc/$wm*($clmz-2));print $out8 $Sc . '[' . ('#' x $prgc) . ('-' x ($clmz-2-$prgc)) . "]";}
   if(/^#.*?\$d8VS\s*=\s*(['"])([0-9A-Za-z._]{8})\1\s*;/){$edVS=$2;} # this match regex seems to still need \1 && presumably ${1} would work in s/// replacement
   if  (!$donw &&   $ldat  =~ /^\s*[a-z8@]*8[a-z8@]*\s*:.*?\s+add\S*\s+([^\n]*[^*\n]([a-z])8\S*)/i){my $psta=$1;
     if( $psta=~ /.*?(\S+([a-z])8.*)/i && $1 ne 'form8ion' && $1 ne 'filtr8ion' && $1 ne 'combin8ions of applic8ions' && $1 ne 'gr8fulness' && $1 ne 'silic8'
@@ -68,15 +73,17 @@ while( <$eflh>){my $ldat=$_;$donw=1 if(/^$/); # sets DONe-Words true when 1st bl
       $lcnt[b10(   $pltr )]++   if(defined($pltr));}} # wrapng $pltr in lc() B4 b10() shOz just 23(/35) countz in rEvrs ordr:rcln etzg mdvp ubsf xhkw ioy
       $text .=     $ldat;       if($fulf){my @chrz= split(//,$ldat);for my $char (@chrz ){$fulc{$char}++;}}} # !lc:rcln Etzg mdpv bsuC DLNR UVGf xBhk wIMP OSy
 my    $letz  =join('',keys(%lpsd)); # these PLz won't be in order, but should be good enough for regex char-classes; abov lc() 23 ruinz 12 grupz in2 15 nstd
-close($eflh)               or die "!*EROR*! Couldn't close eight-file after reading! $!";
+close($eflh)               or die "!*EROR*! Couldn't close eight-file after reading! $!";$wc=0;print $out8 $Se;
 #if($fulf){%fulc=();for(split(//,'the of and to a in is I that it for you was with on as have but be they')){$fulc{$_}=0 if(!exists($fulc{$_}));$fulc{$_}++;}}
 # temporarily try to hijack fullcharcounts above to just look within top 20 English words to compare; should extract ccnt to be like this && wc wi vary columnz
 # results: Idrv:1, bfuwy:2, ns:3, ei:4, oh:5, a:6, t:8, ' ':19; # "I drive by your freeway and say 'oh a tea Space!'"
 while($text=~ s/(\w)8//){$acnt[b10($1)]++;}   # counts chopping out all PLs && 8s
 my @scnt = sort { $a <=> $b } (@lcnt);my $pttl=0;my $apcn=0;my $brtc=' ->';
+# $wc=0;$wc++ if($wc < $#scnt); # not sure which part of main compute is slowest && in most need of progress-meter attempt below?;
+# if($wc && $clmz >= 8){my $prgc=int($wc/$#scnt*($clmz-2));print $out8 $Sc . '[' . ('#' x $prgc) . ('-' x ($clmz-2-$prgc)) . "]";}
 for(my $sndx=$#scnt;$sndx >= 0;$sndx--){
   if(($sndx > 0 && $scnt[$sndx] == $scnt[$sndx - 1]) || ($sndx == 0 && $scnt[0] == 0)){splice(@scnt,$sndx,1);}} # below2 sepR8 prnt blox for not color or with
-$Stxt.=                               sprintf("${C}8${M}Pre-cursor${Y}Letter${R}Counter$W:$G d8VS$C=%s$G\n",            d8c($d8VS));
+$Stxt.=    $Se                  .     sprintf("${C}8${M}Pre-cursor${Y}Letter${R}Counter$W:$G d8VS$C=%s$G\n",            d8c($d8VS));
 my $efsz = length($efyl);$Stxt  .=    sprintf("$O  efyl$C=%s".(' 'x abs(18-$efsz)).      "$G edVS$C=%s$G\n",c8fn($efyl),d8c($edVS));
 $Stxt.=                                       "${C}8${M}Pc${Y}Ltr$R Ct$C Full${W}Document${R}Counts$Y Sz${p}b10${M}Ct${G}Percent$W%\n";
 $Stxt.=                                       "$B------ -- ---$c-$B--$c-$B--$c-$B--$c-$B--$c-$B-- --$c-$B---$c-$B-------$W-\n";
@@ -113,6 +120,8 @@ $Stxt.=                                            sprintf   "$B------ -- ---$r 
                                                                                    my $cttl=$B . cma($gttl);$cttl=~ s/(,)/$Y$1$B/g; # pre-colr comma'd total
 $Stxt.=                                            sprintf("${C}t${M}0${C}tlz  %s %s $z(${r}b64$z)$W  :  $z(${p}b10$z) %s   %s$W;$z",
                                                        b8c(sprintf("%2s",b64($t0tl))),b8c(sprintf("%2s",b64($gttl))),$ct0t,$cttl);
+print   $out8     "$Se"; # no $Stxt here since done just after this, below;
+close   $out8             or die "Can't close duplic8 STDOUT handle: $!";
 $Stxt=sS('--',$Stxt) unless($clrf);o8($Stxt);$Stxt ='';  print  "$R!*EROR*! pttl:$pttl != t0tl:$t0tl;$z\n" if($pttl != $t0tl); # eror ck Xpectng t0tal match
 if($lpsf){$Stxt.="\n${W}All${R}Counts${o}Not${M}Matching${C}Words${B}List$G -$K likely from just d8-stamps, pal8 codes, or other non-word strings with 8";
   my $ptot=0;my @acor;my $slin= '';$Stxt.=" (ordered by freq then letr)$W:\n"; # PrevrowTOTalwidth, AllCountsORdered, SortedLINe

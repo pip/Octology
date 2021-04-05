@@ -1,6 +1,8 @@
 # E4TMAL2W:/home/pip/dox/2du/putr.ls crE8d by PipStuart <Pip@CPAN.Org> as main doQmNt 4 DtAling what compUter hRdware && rel8d EquipmNt sEmz bSt 2 buy nXt;
 # ~/dox/putr/ contains more general computer hardware or software document8ion as well as my machine-specific directories && configur8ions;
 # Note: This file (similar to my current tabz.ls file) goes against my typical preference to append new details, prepending new insertions here instead;
+L35LLogi: NewEgg sale 4 3-more-days $146 (orig. $166) LogiTech Z625 2.1THX (980-001258), 35WattS@LItz, 130WattSub, 200WattRMS/400WattPeak, came-out on d8:GCF;
+L35LCors: 2ndCorsAirSP2500 sub dies && Head-Fi.Org && LinusTechTips forums had:ck Controller,Cables,Fuse,PowerSupply,Capacitors,Diodes,Wires,&&C903 3843GM-E1;
 K23L7MEM: NewEggOrder#:473048473 SeaGate FireCuda 520 M.2 2280 500GB PCIe Gen4 x4, NVMe 1.3 3D TLC Internal Solid State Drive (SSD) ZP500GM3A002 made today;
 K21LAsus: Maga today ordered me a new $190 Asus VG24VQ curved 144Hz monitor (with no DVI this time,but still has speakers,headphone jack,2HDMI && 1DP inputz);
 K15LKNEW: For rebuilding Chun from Ubu19.04 had to `sudo bash;apt update;apt install zsh vim git ncurses\*;exit` then `mkdir /home/pip/dox;cd /home/pip/dox`,

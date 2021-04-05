@@ -1,7 +1,19 @@
 # D4QMFYJV:tabz.ls crE8d by PipStuart <Pip@CPAN.Org> to at least .LiSt (if not also describe && comment on) collectionz of web-browser TAB address URL linkz;
 # Note:While I usually prefer to append d8a to most listz being extended in text-files, tabz.ls varE8ion invertz this tendency to prepend insertions instead;
+L3SM0KED: HTTPS://YouTu.be/mu4TwhJRv3I "What Do They Teach in Schools These Days?" # L3Q:0XH0 of VicedRhino && another VietNamEse Captz of super-knowing AI?;
+L3RMANam: HTTPS://YouTu.be/RWxGp2UH5MM "Why Does Time Even Exist?" # L3C:0700 of SciencePhileTheAI on time itself with VietNamEse Captionz found still again;
+L2SLIFOX: HTTPS://YouTu.be/Cra2tdtagqA "Best Gaming Music 2021 - Best of EDM - NCS,MonsterCat,Trap,Bass,DubStep,DnB,House" # L2M:1J80 7cloud HotSt 4Fox4Fux!;
+L2SLICER: HTTPS://YouTu.be/s7fHM3vB3rk "Ram Parts" # J9Q:03r0 of GhostD8a && apparently somewhat odd sparse yet simple German CrAZCaptz of die && otherstuff;
+L2SLICED: HTTPS://YouTu.be/zIVipc5wvyU "Eye of the Storm (ft. Skye Light)" # KA7:06N0 of GhostD8a && some real strange Korean CrAZCaptz of many 222 34555won;
+L2QLAnti: HTTPS://YouTu.be/fCGcGuFcAj8 "Does the AntiChrist Really Exist?" # L2Q:0HP0 of Thoughty2 on AntiChrist, with VietNamEse Captz && much odd English2;
+L2PLGvsA: HTTPS://YouTu.be/KN4654qFxzk "God vs. Abortion" # L2M:0FL0 of DarkMatter2525 with many rel8d Bible quotes && VietNamEse Captz in yet another video;
+L2ILBone: HTTPS://YouTu.be/lWd4SrA59sw "If We Ignore DNA, We Only Have One Bone!" # L2H:0RR0 of VicedRhino && yet anew VietNamEse Captz way disjointed why?!;
+L2FLMind: HTTPS://YouTu.be/Oly5eWQuX04 "Why Mind Reading Might Be Possible" # L28:0ID0 of Thoughty2 having another odd VietNamEse Captionz && many Capitalz2;
+L2FLHeli: HTTPS://YouTu.be/saX38OPN05E "The World's Helium Problem: When Will We Run Out?" # L28:08w0 of RealLifeLore, VietNamEse Captionz && mostly English;
+L2FLESPA: HTTPS://YouTu.be/3Z2rcusREKU "What Women Fear Most (This Terrifies Them!)" # L2E:08Z0 of AlexGrace on judgment as Caption altern8z English/Espanol;
+L1PLNamV: HTTPS://YouTu.be/CxntkiNauh4 "S8n Tried to Ban This Video! (Find Out Why)" # K8M:08D0 of OffTheKirbMinistries Joe wi gnarly VietNamEse for CC8 l8r;
 L1PLGodL: HTTPS://YouTu.be/tyYr0REV3kg "What Do We Do in Heaven? What it Hell?" # JCO:0600 of CrossExamined FrankTurek with amazing Capz&&Puncz also CC8 l8r;
-L1PLFUCK: HTTPS://YouTu.be/CxntkiNauh4 "S8n Tried to Ban This Video! (Find Out Why)" # K8M:08D0 of OffTheKirbMinistries Joe wi gnarly Vietnamese for CC8 l8r;
+L11LNewY: HTTPS://YouTu.be/1uicRKhgzAQ "New Year Resolution Help" # KCV:02T0 of Dr.JordanPeterson with short message, but strange Dutch auto-gNr8d 4 CC8 l8r;
 K6OMDbad: HTTPS://Usenix.Org/system-administrators-code-ethics "Ethical-Hacker Moral-Compass: 2003" # KevinA.McGrail, a code-security expert's recommend8ion;
 K6HM0Sun: HTTPS://YouTu.be/urgYWNCN-RA "Greek Physics: Calcul8ing the Distance to the Sun and Moon" # IAO:25m14s of PhysicsExplained on ways 2 find distance;
 K48MGPKs: HTTPS://OldSportsCards.Com/garbage-pail-kids-cards # describes how I have many of the most valuable cards, probably worth several thousands obuckz.

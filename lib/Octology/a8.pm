@@ -47,12 +47,12 @@ require         Exporter;  # add new colr systM
 use base     qw(Exporter); # mainly exporting global utility functions && variables originally inherited from c8.pm as well as a few f8.pm d8a structures
 our @EXPORT= qw(bfr8c    b8c    d8c   dur8c @d8cl @d8cS  a8c   chti  c8fn  o8 S2   c2  S c   sS    lodl @Monz @Mon     %mc2F %mc2b %mF2c %mb2c @Kana  %sb10
  $SKp8 $SKp0 $SKp1 $SKp2 b8clr  $SKpf $SKpt %pmap %cmap %pldl %pl8n  ftst acS e %f8fm %f8pm %sgrm %sgrn @Dayz @Day  lrc d8cs comma  curs  sumb @x256  @sb64
-    $z    $k    $r    $o    $y    $g     $c $SKpb    $m    $p    $w  tstc    $K    $R    $O    $Y    $G    $C    $B    $M    $P    $W    %p622 %p222   upd8
+$lowb $z  $k    $r    $o    $y    $g     $c $SKpb    $m    $p    $w  tstc    $K    $R    $O    $Y    $G    $C    $B    $M    $P    $W    %p622 %p222   upd8
   PrfM   $bk   $br   $bo   $by   $bg    $bc   $bb   $bm   $bp   $bw %plds   $hK   $hR   $hO   $hY   $hG   $hC   $hB   $hM   $hP   $hW     h2rl  rl2h   drkh
     $t    $u    $d    $s    $n   $pP    $T     $U    $D    $S    $N %pldS   $HK   $HR   $HO   $HY   $HG   $HC   $HB   $HM   $HP   $HW %pldh hl $pfil pP xe
  $tnhf $ucdf  spff  spfd  spfX   shfl  reso $Auth %cmsp %p8k2 @p82k  chp8 aw8 S2f4 c2f4 dm2u cdst %crgb %cbrt @snls @mrls %cdrd %cdrn    %nrgb $lfil   gnp8);
  # of 52 posibl sngl-letr var nmz,a8 Xportz 20,$b && $a unavail,so shudB thEs30 lFt4quik shortSt nAmz: 'def hij l n  q stuv x', 'A  DEF HIJ L N  Q STUV X Z';
-our $VERSION='0.0';my  $d8VS='L1PLAJJ8';our $Auth='PipStuart <Pip@CPAN.Org>'; # above not exporting $b since collidez with sort{$a  <=> $b};unalloc'd sOlOz^;
+our $VERSION='0.0';my  $d8VS='L45M1Prf';our $Auth='PipStuart <Pip@CPAN.Org>'; # above not exporting $b since collidez with sort{$a  <=> $b};unalloc'd sOlOz^;
 our $ucdf= eval('use Color::Similarity::RGB qw(distance);1') || 0; # try2set UseColorDistanceFlag if optional module is available; /defhijlnqstuvx/i + /AZ/^;
 our @sb64=('0'..'9','A'..'Z','a'..'z','.','_'); # SingleBase64 array && Base10 hash (since it's probably best not to use b8.pm here in a8)
 our %sb10=();$sb10{$sb64[$_]}=$_ for(0..$#sb64);our %crgb;our %cbrt;our @snls;our @mrls;our %cdrd;our %cdrn; # DclAr ColrDist d8a:BRiTness,Srch iNdex LiSt,
@@ -174,7 +174,7 @@ my %Sdsr=('_' =>'01;30', '^'  => '00', '.' => '22;30', 'H_' =>'90','h.' => '100'
 our %mc2F;our %mc2b;our %mF2c;our %mb2c; # MapC8Col8ColrCodz2ForeBackgrnd && rEverse  # also adding 8trm below restored main lsd8 colors
 if(exists($ENV{'TERM'}) && $ENV{'TERM'} !~ /^(([Ex]|st)(term)?|screen|rxvt|linux|8trm)/){$tnhf=1;} # TermNoHandleFlag (nEd linux hEr 2 4 console colrz)
 our $t ;our $u ;our $d ;our $s ;our $n ;
-our $T ;our $U ;our $D ;our $S ;our $N ;
+our $T ;our $U ;our $D ;our $S ;our $N ;       our $lowb;
 our $k ;our $r ;our $o ;our $y ;our $g ;our $c;our $SKpb;our $m;our $p ;our $w ; # avoid sort's global $b variable with special $SKpb 4 4grnd dRk-blue instead
 our $K ;our $R ;our $O ;our $Y ;our $G ;our $C;our    $B;our $M;our $P ;our $W ; # Fclr shrtcutz to get set,reset,shifted,or randomized in CHangePal8 function
 our $bk;our $br;our $bo;our $by;our $bg;our $bc;our $bb;our $bm;our $bp;our $bw; # bclr shrtcutz (may want 2B careful th@ none of thEse cOlId wi Xistng Usagz)
@@ -199,8 +199,8 @@ sub chp8{ # should do similar stuff but all may need to use joined layer keyz wi
                    $mc2b{$p8ky    }=   '48;5;' . spfd($_);$mb2c{$mc2b{$p8ky    }}=$p8ky    ;}}
   $t=S('t');$u=S('u');$d=S('d');$s=S('s');$n=S('n');
   $T=S('T');$U=S('U');$D=S('D');$S=S('S');$N=S('N');
-  $k=S('k');$r=S('r');$o=S('o');$y=S('y');$g=S('g'); $c=S('c');$SKpb=S('b');$m=S('m');$p=S('p');$w=S('w'); # avoid sort $b
-  $K=S('K');$R=S('R');$O=S('O');$Y=S('Y');$G=S('G'); $C=S('C');   $B=S('B');$M=S('M');$P=S('P');$W=S('W'); # Fclr shrtcutz
+  $k=S('k');$r=S('r');$o=S('o');$y=S('y');$g=S('g'); $c=S('c');$lowb=$SKpb=S('b');$m=S('m');$p=S('p');$w=S('w'); # avoid sort $b
+  $K=S('K');$R=S('R');$O=S('O');$Y=S('Y');$G=S('G'); $C=S('C');   $B=      S('B');$M=S('M');$P=S('P');$W=S('W'); # Fclr shrtcutz
   $bk=$SKp8.$Sdsr{'bk'}.'m';$br=$SKp8.$Sdsr{'br'}.'m';$bo=$SKp8.$Sdsr{'bo'}.'m';$by=$SKp8.$Sdsr{'by'}.'m';$bg=$SKp8.$Sdsr{'bg'}.'m';
   $bc=$SKp8.$Sdsr{'bc'}.'m';$bb=$SKp8.$Sdsr{'bb'}.'m';$bm=$SKp8.$Sdsr{'bm'}.'m';$bp=$SKp8.$Sdsr{'bp'}.'m';$bw=$SKp8.$Sdsr{'bw'}.'m';
   $hK=$SKp8.$Sdsr{'hK'}.'m';$hR=$SKp8.$Sdsr{'hR'}.'m';$hO=$SKp8.$Sdsr{'hO'}.'m';$hY=$SKp8.$Sdsr{'hY'}.'m';$hG=$SKp8.$Sdsr{'hG'}.'m';
@@ -629,10 +629,33 @@ sub shfl{ # takes an arrayref or list of items to shuffle, or pipe thru by lines
     for(my $indx = ($size-1);$indx;$indx--){my $rand=int(rand($indx+1));($aref->[$indx],$aref->[$rand])=($aref->[$rand],$aref->[$indx]) if($rand != $indx);}}}
   if($aflg){return($aref);}elsif($sflg && $#data){return(join('',@data));}else{return(join("\n",@data));}} # add optz lIk -help && @lEast `m shuf` manUal tXt
 our @d8cl=();our @d8cS=();my $pfms=0;my @sccz=();my($ptsz,$ptms)=(0,0); #gettimeofday(); # dflt d8ColrList lOded wi SKpd 4mz of ColrMap's d8bo,FDALyr,SGRplane;
-our $pfil=$ENV{'HOME'} . "/.log/p";our $pP; # `dd if=/dev/urandom count=1 bs=128 | sha512sum` can B Used 4 gNr8ing crypto-secure tOkNz && mAB bs=6 4 b64?;
-our $lfil=$ENV{'HOME'} . "/.log/prof.ls"; # load ProfileListD8aHash key => val (just spcd) pairz thN ck just p picked-profile-file for d8bo OvrId selection;
+our $pfil="$ENV{'HOME'}/.log/p";our $pP; # `dd if=/dev/urandom count=1 bs=128 | sha512sum` can B Used 4 gNr8ing crypto-secure tOkNz && mAB bs=6 4 b64?;
+our $lfil="$ENV{'HOME'}/.log/prof.ls"; # load ProfileListD8aHash key => val (just spcd) pairz thN ck just p picked-profile-file for d8bo OvrId selection;
+if  (!-d  "$ENV{'HOME'}/.log"          ){mkdir("$ENV{'HOME'}/.log",0750);
+  open        my   $pflh, '>',$pfil or die "!*EROR*! Couldn't open  pfil:$pfil for writing! $!\n";binmode $pflh,':encoding(UTF-8)';print $pflh 'd';
+  close            $pflh            or die "!*EROR*! Couldn't close pfil:$pfil for writing! $!\n";
+  open        my   $lflh, '>',$lfil or die "!*EROR*! Couldn't open  lfil:$lfil for writing! $!\n";binmode $lflh,':encoding(UTF-8)';
+  print            $lflh q(# KCJL6Pls:~/.log/prof.ls crE8d by PipStuart <Pip@CPAN.Org> 4 a b64 key-table list of YouTube channel profile d8bo master color-sequences;my $d8VS='L1CLEAR1';
+# 2du:stRt adding optional extra layerz for DarkAvrgLite && SGRcodez B4 mAB also bkgrndaloh BtwEn && multiSGRz 2 flag attrz on thru all d8bo usagez;
+d RoYGCBMp                   # PipStuart Primary U2bchanL ; RoYGCBMp
+# RF3Hh2fr                   # PedantPip Secndry U2bchanL ; RfFrHh32 RHFrRHFf FFFFLLLL iIiuDUDu ;
+# R F 3 r H h 2 f            # Ped8bSPip Secndry U2bchanL ; RfFrHh32
+p D:RUIc A:FDCol L:3 Fa:fbuic D:HOI hfoi 2bI rki #D:RUIc A:FDCol L:3 Fa:rbuicL D:HOI hfoil 2b fk;
+c Cz8tZT9c FFDDAALL uiLlUIui # CapCtion8 terTary U2bchanL ; CzZcTt98
+g AG76Dadg FFLLAADD iuDuIOio # GuyGooway MGTOWay U2bchanL ; AaGg76Dd
+j Y45UuyoO FFDDAALL OUiDIuoi # JewJesus8 Skeptic U2bchanL ; Y45OUuyo ## Note: CantAlow OhhhHooo?;
+i NnSVvMms FFLLAADD UDuDUlLl # ImprovIs8 Ingland U2bchanL?; NnSsVvMm
+R YGTBUDSN                   # RappingRt AntiRed U2bchanL?; YGTBUDSN RiteBlue LeftOrng WiteUpKs ;
+B SBsbXx1N                   # BluBoieB8 NonBinG U2bchanL?; SBsbXx1N BcuzCmdz prpbplow weretAkN ;
+L LlHhvV23                   # LadyLacy8 Literal U2bchanL?; LlHhvV23
+O o5YOUJ4u                   # OldObsid8 DubStep U2bchanL?; o5YOUJo4 ## Note: DublOwoo WarnBugy?;
+W WJIqQwij                   # WigWearW8 costume U2bchanL?; WJIqQwij
+k KeEk10Nn                   # KekPepeK8 MemeR8n U2bchanL?; KeEk10Nn
+v VvMmLlPp                   # ValVocal8 BtBoxin U2bchanL?; VvMmLlPp
+);close            $lflh            or die "!*EROR*! Couldn't close lfil:$lfil for writing! $!\n";}
 sub PrfM{my($pcsz,$pcms)=gettimeofday() ;return() if($pcsz == $ptsz);($ptsz,$ptms)=($pcsz,$pcms); # just retn rIt AwA if calld multi tImz during sAm second;
-  my $pfmc=eval("(-M        \"$pfil\")");return() if($pfmc == $pfms); $pfms=$pfmc; # probably okay 2 upd8 ProFile Modific8ion Start B4 Nd of subroutine;
+  my $pfmc=eval("(-M        \"$pfil\")");return() if(defined( $pfmc) && # proly OK2upd8 ProFile Modific8ion Start B4 Nd of subroutine;
+                                                     $pfmc == $pfms); $pfmc=0 unless(defined($pfmc)); $pfms=$pfmc;
   if     (defined(            $lfil) && -r "$lfil"){my $line; # HTTPS://AskUbuntu.Com/questions/192203/how-to-use-dev-urandom `ec $RANDOM` && `shuf`
     open      my   $lflh, '<',$lfil or die "!*EROR*! Couldn't open  lfil:$lfil for reading! $!\n";binmode $lflh,':encoding(UTF-8)';
     while  ($line=<$lflh>){ # `dd if=/dev/urandom count=4 bs=8 of=~/ur-$(d8)` && `c8 /d/ur>~/ur` Ctrl-C && `head -8 /d/ur>~/ur` 8 bytz
@@ -1623,7 +1646,7 @@ sub sumb{  my $widt=0;$widt=1 if(exists($ENV{'COLUMNS'}) && $ENV{'COLUMNS'} >= 1
                                    printf($out8 "$h%-6s",$bfls[$_        ]);print $out8 $bfst{$bfls[$_        ]} if(exists($bfst{$bfls[$_        ]}));}
                                    say    $out8  $z;}}
   if($sunf){                       print  $out8  $z,join(' ',reverse(@ufls));} # Show UNdescribed File LiSt at end (mAB reorg into 2nd bkgr desc sumb page?)
-  close   $out8             or die "Can't close duplic8 STDOUT handle: $!";}
+  close   $out8             or die "Can't close duplic8 STDOUT handle: $!";return();}
 our %f8fm=( # defining default F8F0ntMap top64 with unique b64 keys && favorites mapping to first letter of names, others map to any letter of name
             #   or are arranged otherwise logically like BinC are ._, foreign cyrillic, greek, hebrew, && thai are all uppercase of their first letters
             #   bigserif and sanserif are Xx, roman-1 is 1, futura-2 is 2, lat4 are 34, gr.f16 is 6, etc.; '.' was temporarily 'dmn8' to test dominoez f0nt;
@@ -1835,7 +1858,7 @@ sub dm2u{my $flnm=shift||'h';my $rslt=shift||'u';my $oopt=shift||'';my $coun=1;m
   if   (lc($rslt)=~/^-*d/i){$snrf=~s/(\015\012|\015|\012){$coun}/\015\012/g} # Dos             1512 CRLF
   elsif(lc($rslt)=~/^-*m/i){$snrf=~s/(\015\012|\015|\012){$coun}/\015/g    } # Mac             15   CR
   else                     {$snrf=~s/(\015\012|\015|\012){$coun}/\012/g    } # (Uni|GNU/Linu)x   12   LF
-  open my $floh,'>',$flnm or die $!;binmode($floh);      print    $floh $snrf;close $floh or die $!;}
+  open my $floh,'>',$flnm or die $!;binmode($floh);      print    $floh $snrf;close $floh or die $!;return();}
 sub comma{my $strn=shift;my $comc=shift||',';my $blok=shift||3; # ECKLNcb3:`cma`cre,8d2,add,com,mas,2lo,ng#,str
   if(!defined($strn) && !-t STDIN){$strn.=$_ while(<STDIN>);}   #   HTTP://Perl.Com/doc/manual/html/pod/perlfaq5.html#How_can_I_output_my_numbers_with
   if(!defined($strn)){$strn='';} # set strn to empty string if not loaded from param or piping through

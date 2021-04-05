@@ -14,7 +14,7 @@ Pretern8ural    Selection   ;    Prickly      Sens8ion   ;    Pig         Skin  
 Primordial      Soup        ;    Paper        Shredder   ;    Pittsburgh  Steelers  ;
 Progresso       Soup        ;    Pithy        Saying     ;
 Public          Storage     ;    Pumpkin      Squash     ;    Pumpkin     Spice     ;
-Personal        Savior      ;    Person (1st) Shooter    ;    Pie         Slice     ;
+Personal        Savior      ;    Person '1st' Shooter    ;    Pie         Slice     ;
 Prayer       && Supplic8ion ;    Playing      Safe       ;    Pickle      Spears    ;
 Pepper       && Salt        ;    Peanutbutter Sandwich   ;    Pastrami    Sandwich  ;
 Potatos      && Steak       ;    Pasta        Sauce      ;    Porterhouse Steak     ;
@@ -26,12 +26,12 @@ Puff         of Smoke       ;    Potent       Stimulant  ;    Pint     of Stout 
 Piece        of Shit        ;    Personal     Space      ;
 Point        of Sale        ;    Personal     Sign8ure   ;    Peace       Sign      ;
 Pork            Soda        ;    Planetary    System     ;
-Pant          - Suit        ;    Plain     && Simple     ;
-Pain          - Staking     ;    Putter    && Sand-wedge ;
+Pant           -Suit        ;    Plain     && Simple     ;
+Pain           -Staking     ;    Putter    && Sand-wedge ;
 Phillips        Screwdriver ;    Peace     && Serenity   ;
 Pick-up         Sticks      ;    Poop         Stain      ;    Pay         Stub      ;
-Pretty          Stupid      ;    Pressure   - Sensitive  ;    Pro       - Social    ;
-Puget           Sound       ;    Pl8        - Shifter    ;    Psycho    - Somatic   ;
+Pretty          Stupid      ;    Pressure    -Sensitive  ;    Pro       - Social    ;
+Puget           Sound       ;    Pl8'Ferarri'-Shifter    ;    Psycho    - Somatic   ;
 Prime           Sequence    ;    Paradigm     Shift      ;
 Protein         Sequence    ;    Prodigal     Son        ;
 Professional    Software    ;    Process      Snapshot   ;

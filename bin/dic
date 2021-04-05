@@ -18,14 +18,18 @@
 #web1913 gcide wn foldoc jargon vera devil elements easton hitchcock bouvier gazetteer gaz2k-zips gaz2k-places gaz2k-counties moby-thesaurus
 # HC2LNewD:fixd `d BLT` to properly Decode UTF-8 double-quotes from dict && noted also qw(server reverse reserve severer)=~ s/e//g; # srvr rvrs rsrv svrr;
 # Currently, the only special pRameter that `dic` swallows 4 itself is lone '-w' which design8s any dFinitions should be formatted as *NOT* default Wide mode.
-use strict;use warnings;use utf8;use v5.10;use Encode;my $VERSION='0.0';my $d8VS='L18L6vim'; # orig from TeST Substitute Input,now XtNded d8 util,l8r c8 IF?
+use strict;use warnings;use utf8;use v5.10;use Encode;my $VERSION='0.0';my $d8VS='L3OM9Naw'; # orig from TeST Substitute Input,now XtNded d8 util,l8r c8 IF?
 use Octology::a8;my $word='';my $wclr=S('Wr');my $logd="$ENV{'HOME'}/.log";my %dlog; # setup global word colr SKp && LogDirectory && DicLog hash
 use Octology::d8;my $Stxt   ;my $eclr=S('Yf');my $widf=1  ; # BlO hopefully strips -w param 2flag disabling dflt wide-mode or load $word 4l8r colr8ion if!flag
 my $cw=160;$cw=$ENV{'COLUMNS'} if(exists($ENV{'COLUMNS'})); # try to setup potentially wider ColumnWidth for when attempting to join shorter linez
+my $aw=  0; # attempt to AlignWebster (1913) blocks to end-of-line flag. disabling by default for now since multi-line definition blocks were getting lost;
 mkdir ( $logd,0750) unless(-d "$logd");my $dlfn= $logd . '/dic.log'; # attempt to crE8 non-XistNt log-directory in User's ~ && setup DicLogFileName
+my $ppcf=1; # setup new parameter -c to override default of coloring output with pickedProfileC8ColorCodezFlag to be cleared 2 just use normal non-Prof colrz;
+if(@ARGV){for(my $andx=$#ARGV;$andx>=0;$andx--){if($ARGV[$andx]=~ /^-?-?c$/){$ppcf=0;splice(@ARGV,$andx,1);}}}
 #y($R,$o,$Y,$G)=(S($cmsp{'d8bo'}[0]),S($cmsp{'d8bo'}[1]),S($cmsp{'d8bo'}[2]),S($cmsp{'d8bo'}[3])); # temp remap base-level 8bow singlez with curNt d8bo;
 #y($C,$B,$M,$p)=(S($cmsp{'d8bo'}[4]),S($cmsp{'d8bo'}[5]),S($cmsp{'d8bo'}[6]),S($cmsp{'d8bo'}[7])); # just S on cmsp might not get FDAL layr or SGRz in d8cl;
-my($R,$o,$Y,$G, $B,$C,$M,$p)=($d8cS[0],$d8cS[1],$d8cS[2],$d8cS[3], $d8cS[4],$d8cS[5],$d8cS[6],$d8cS[7]); # hopefully tmp lOd prOfIl?;
+my($R,$o,$Y,$G, $B,$C,$M,$p)=($R,$o,$Y,$G, $B,$C,$M,$p); # just initialize my own copies of the original a8.pm exportz in case default prOfIl colrz RUzdBlO;
+  ($R,$o,$Y,$G, $B,$C,$M,$p)=($d8cS[0],$d8cS[1],$d8cS[2],$d8cS[3], $d8cS[4],$d8cS[5],$d8cS[6],$d8cS[7]) if($ppcf); # hopefully tmp lOd pickd-prOfIl-c8colrz;
 open my $out8,'>&',STDOUT or die "Can't open  duplic8 STDOUT handle: $!";                            binmode $out8,':encoding(UTF-8)'; # crE8 local duplic8
 unless(    -e $dlfn){ # initialize dic log "history" file if none existz
   open     my $dlfh,'>' ,$dlfn or die "!*EROR*! Couldn't open  dic log file:$dlfn for writing! $!\n";binmode $dlfh,':encoding(UTF-8)';
@@ -49,23 +53,22 @@ elsif(!-t STDIN){$Stxt= join('',           <STDIN>);  # enable piping through li
       my $nwd8=Octology::d8->new();say $dlfh "$nwd8:$word";
       close   $dlfh            or die "!*EROR*! Couldn't close dic log file:$dlfn! $!\n";}}}
 exit unless(length($Stxt)); # probably "No definitions found..." already output on STDERR so just exit having nothing to color
+#     $Stxt=~ s/\s*(\[1913 Webster\]\n)(  \n)+\n*/ $1/g; # try a different approach to joining multi-blank linez first with further new-line charz required?;
       $Stxt=~ s/\s*(\[1913 Webster\]\n)\n*/ $1/g; # these need to strip leading spaces in order to attempt desired right alignment next
+#     $Stxt=~ s/\s*(\[1913 Webster\]\n)([\t ]*\n+)*/ $1/g; # can this clean up extra blank linez in way above can't?;
       $Stxt=~ s/\s*(\[PJC\])/ $1/g;
-my @St=split(/\n/,$Stxt);$Stxt='';
-for(0..$#St-1){my $bp; # BlockPad
-if(0){ # alignment attempt introducez trailing newlinez && sometimez skipz over unexpectedly, just not behaving as intended so disable for now
-  if    ($St[$_  ]=~  /^(.*)(\[(1913 Webster)\].*)$/                ){$bp=' 'x ($cw - length("$1$2")); # maybe should space align all regexez using /x
-         $St[$_  ]= "$1$bp$2";}
+my @St=split(/\n/,$Stxt);$Stxt=''; # so thN above just try 2 singl-spAc any remaining dbl-spAcd lInz AgN (EvN thO probably only occur aftr 1913Web)?;
+for(0..$#St-1){my $bp;if($aw){ # alIgnmNt atMpt intrOducz trailng newlInz && sometImz skipz Over unXpectedly,just !BhAving as intNded sO disAbl4now;  #BlokPad;
+  if    ($St[$_  ]=~  /^(.*)(\[1913 Webster\].*)$/                  ){$bp=' 'x ($cw - length("$1$2")); # maybe should space align all regexez using /x
+         $St[$_  ]= "$1$bp$2";}             # .*$/
   elsif ($St[$_  ]=~  /^(.*)(\[cant\] \[PJC\].*)$/                  ){$bp=' 'x ($cw - length("$1$2")); # need sepR8 tSt4 rFz th@ canB 2gether already
          $St[$_  ]= "$1$bp$2";}
   elsif ($St[$_  ]!~  /\[cant\]/ && $St[$_  ]=~  /^(.*)(\[PJC\].*)$/){$bp=' 'x ($cw - length("$1$2")); # try Xclusively cant vs. PJC?
          $St[$_  ]= "$1$bp$2";}
-}
-  if($widf){ # this wide-mode line concaten8ion is extremely basic && may ruin some l8r color8ion && alignment of some numbered lists && such
+} if($widf){ # this wide-mode line concaten8ion is extremely basic && may ruin some l8r color8ion && alignment of some numbered lists && such
     if    ($St[$_  ]=~  /^( {4,})/         ){my $il=length($1); # IndentLength
       if  ($St[$_+1]=~  /^ {$il}/ &&  length("$St[$_]$St[$_+1]") < $cw){
            $St[$_+1]=~ s/^ +/  / ;$St[$_].=$St[$_+1];$St[$_+1]='';}}
-
 # sinc `d Caliphate` shOwd mor than just2lInz shud proly B joind smtImz,tryd 2 add 3rd BlO && workd just for that but ruind `d four`&&proly othrz so cmntd4now
 #   if    ($St[$_  ]=~  /^  +/             ){
 #     if  ($St[$_+1]=~  /^  +/ &&  length("$St[$_]$St[$_+1]") < $cw){
@@ -78,17 +81,13 @@ if(0){ # alignment attempt introducez trailing newlinez && sometimez skipz over 
 # if(length("$St[$_]$St[$_+2]") - length($1) < $cw){ # try 2 not Xpect IndentLength spAcez on 3rd lIn but at lEst 2?
 ##rint "$R GotHere!\n";
 #          $St[$_+2]=~ s/^  +/  /;$St[$_].=$St[$_+2];$St[$_+2]='';}}} # mAB nEd 4th or thEs shud just B loopz until leng wud surpass $cw nstd?
-# }
-#}
-
+# }}
     if    ($St[$_  ]=~  /^(  \S| {7}\d+\.)/){my $il=length($1); # IndentLength  # sepR8 smarter indent tests for Bouvier where normal blocks seem to have just
       if  ($St[$_+1]=~  /^  / &&  $St[$_+1]!~  /^ {7}\d+\./ && length("$St[$_]$St[$_+1]") < $cw){ # 2-spc indNt but furthr NtrEz have 7-spc indNt then \d+\.
            $St[$_+1]=~ s/^  +/  /;$St[$_].=$St[$_+1];$St[$_+1]='';}}}
       $Stxt.="$St[$_]\n";}# if(length($St[$_])); # decent attempt to join consecutive linez with the same indent level (but \d[.:]|(\w) should DpN)
       $Stxt.="$St[-1]\n"; # finish rebuilding last line
-
 #     $Stxt=~ s/([^:]\n) *\n/$1/g; # try 2 strip blank lInz left from 3-lIn join atMptz 4 Caliphate wich brOk othrz so cmntd4now
-
       # if non-STDERR results
       $Stxt=~ s/(;)/$C$1$G/g; # this ruined SKpz when done l8r
       $Stxt=~ s/(Collaborative)( International)( Dictionary)( of)( English)/$C$1$M$2$W$3$c$4$Y$5/g; # doing this early so *ative can do 8-word colr BlO
@@ -133,8 +132,14 @@ if(   $Stxt=~  /(\n +?)(\d+) Moby Thesaurus words/ ){my $MTct=$2;my $MTin=$1;cho
       $Stxt=~ s/(\()(\d+ )(December )((19|20)\d\d)(\))/$M$1$Y$2$o$3$R$4$M$6$G/g;   # apparently newest FOlDoC d8 seen in `d syllogism` if not all now
       $Stxt=~ s/(\[)(Webster )(1913 )(Suppl\.)(\])(\n|$)/$C$1$B$2$R$3$M$4$C$5$G/g; # from `d manic `
       $Stxt=~ s/(\[)(1913)( Webster \+)(PJC)(\])(\n|$)/$C$1$R$2$B$3$C$4$C$5$G/g;   # from `d epigee`
-      $Stxt=~ s/(\[)(1913)( Webster)(\])(\s|$)/$C$1$R$2$B$3$C$4$5$G/g;
-      $Stxt=~ s/(\[)(PJC)(\])(\n|$)/$Y$1$C$2$Y$3$G/g;
+      @St  =  split(/\[1913 Webster\]/,$Stxt);$Stxt=''; # L2QL6xWe:tried 2 split bakout 4 Web blox 2 rIt-alIgn by counting up sS lengthz from prev newlIn?;
+      # L2QL7bp1:disabled atMpt 2 alIgn blox since weird off-by-2 errors (or 4) are showing up, so I'll have to return to fixing it all nicely sometIm l8r;
+for(0..$#St-1){my $bp;if($aw){ # alIgnmNt atMpt intrOducz trailng newlInz && sometImz skipz Over unXpectedly, just not BhAving as intNded sO disAbl 4 now;
+  if    ($St[$_]=~  /\n([^\n]*\n*)$/ && length($1) < ($cw - 16)){$bp=' 'x ($cw - length(sS($1) . '[1913 Webster]'));$St[$_]= "\n$1$bp";}
+} $Stxt.=$St[$_] . '[1913 Webster]'; } $Stxt.=$St[-1]; # re-join last line also after end (which shudn't have split on 1913Web blok);
+#     $Stxt=~ s/(\[)(1913)(\sWebster)(\])(\s|$)(\s\s)?\n*/$C$1$R$2$B$3$C$4$G$5/g ; # L2QL6new: tried 2 apNd (  )?\n* 2 strip blank lInz hEr nstd of abov,
+      $Stxt=~ s/(\[)(1913)(\sWebster)(\])(\s|$)       \n*/$C$1$R$2$B$3$C$4$G$5/gx; # L2QLJFJF: trying 2 apNd without 2-spAcd as better, or worse? Guessing! ;)
+      $Stxt=~ s/(\[)(PJC)(\])(\n|$)/$Y$1$C$2$Y$3$G/g;                          #   but just swapping $5 2 B aftr $G did the trick finally!  =)  ;
       $Stxt=~ s/(\[)(cant)(\] ?)/$Y$1$M$2$Y$3$G/g; # so far only seen preceding PJC so not testing \n|$ yet
       $Stxt=~ s/\s*\n(From (The)?)/\n$K$1/g;
       $Stxt=~ s/(\W)(syn:)/$1$M$2/gi;
@@ -142,7 +147,7 @@ if(   $Stxt=~  /(\n +?)(\d+) Moby Thesaurus words/ ){my $MTct=$2;my $MTin=$1;cho
       $Stxt=~ s/(\W)(imp|vb|v|t|i|n|p|pr|cf|fr|a|adv)(\.)/$1$R$2$3/g;  # try 2 keep watch 4 any othrz that shO up uncolrd 2 add here l8r too
       $Stxt=~ s/(\n +?)(n|v|adj|adv) +(\d+[\.:] )/$1$R$2 $C$3/g; # shud upd8 2 accept all pRtz of sPch B4 NdX && mAB shft bak so digz alIn
       $Stxt=~ s/(\n +?|\S  )(\d+[\.:] )/$1$C$2/g; # try 2 altern8ly accept already joined new NdXz wich shud folO just 2 spAcz aftr prEv tXt
-      $Stxt=~ s/(\n +?)(\()([a-z])(\) )/$1$P$2$Y$3$P$4$G/g;
+      $Stxt=~ s/(\n? +?)(\()([a-z])(\) )/$1$P$2$Y$3$P$4$G/g;
       $Stxt=~ s/(\D[^m\e])([\[\]])/$1$O$2$G/g; # colr all remaining [] which aren't already prECded by SKpz from above && aren't part of SKpz either
       $Stxt=~ s/(\D[^m])([\(\)])/$1$B$2$G/g;   # `d soar` has 1993] so failz the non-Digit char
       $Stxt=~ s/( km)([\)])/$1$B$2$G/g;        # `d gate` gaz2k shows /km\)$/ matching SKp code end so no colr, may need to parse apart 2B thorough

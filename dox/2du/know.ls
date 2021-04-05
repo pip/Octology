@@ -1,46 +1,26 @@
 # HBQLISTV:know.ls crE8d by PipStuart <Pip@CPAN.Org> to duplic8 Dr. Jordan B. Peterson's Quora.Com answer of "40 most valuable things everyone should know";
-# $VERSION='0.0';$d8VS='L1SL0WER'; # While this document origin8d around (&& still mainly intends to focus on) Dr. Peterson's knowledge, many others fE8ure;
+# $VERSION='0.0';$d8VS='L44MIRTL'; # While this document origin8d around (&& still mainly intends to focus on) Dr. Peterson's knowledge, many others fE8ure;
 # 2du:start chronicling Dr. Peterson's many topical videos with new section for post-title subject summaries or explor8ion;
-0) Tell the truth.
-1) Do not do things that you h8.
-2) Act so that you can tell the truth about how you act.
-3) Pursue what is meaningful, not what is expedient.
-4) If you have to choose, be the one who does things, instead of the one who is seen to do things.
-5) Pay attention.
-6) Assume that the person you are listening to might know something you need to know. Listen to them hard enough so that they will share it with you.
-7) Plan && work diligently to maintain the romance in your rel8ionships.
-8) Be careful who you share good news with.
-9) Be careful who you share bad  news with.
-A) Make at least one thing better every single place you go.
-B) Imagine who you could be, && then aim single-mindedly at that.
-C) Do not allow yourself to become arrogant or resentful.
-D) Try to make one room in your house as beautiful as possible.
-E) Compare yourself to who you were yesterday, not to who someone else is today.
-F) Work as hard as you possibly can on at least one thing && see what happens.
-G) If old memories still make you cry, write them down carefully && completely.
-H) Maintain your connections with people.
-I) Do not carelessly denigr8 social institutions or artistic achievement.
-J) Treat yourself as if you were someone that you are responsible for helping.
-K) Ask someone to do you a small favour, so that he or she can ask you to do one in the future.
-L) Make friends with people who want the best for you.
-M) Do not try to rescue someone who does not want to be rescued, && be very careful about rescuing someone who does.
-N) Nothing well done is insignificant.
-O) Set your house in perfect order before you criticize the world.
-P) Dress like the person you want to be.
-Q) Be precise in your speech.
-R) Stand up str8 with your shoulders back.
-S) Don't avoid something frightening if it stands in your way -- && don't do unnecessarily dangerous things.
-T) Do not let your children do anything that makes you dislike them.
-U) Do not transform your wife into a maid.
-V) Do not hide unwanted things in the fog.
-W) Notice that opportunity lurks where responsibility has been abdic8d.
-X) Read something written by someone gr8.
-Y) Pet a cat when you encounter one on the street.
-Z) Do not bother children when they are sk8boarding.
-a) Don't let bullies get away with it.
-b) Write a letter to the government if you see something that needs fixing -- && propose a solution.
-c) Remember that what you do not yet know is more important than what you already know.
-d) Be gr8ful in spite of your suffering.
+0)"Tell the truth."                                            K) Ask someone to do you a small favour, so that he or she can ask you to do one in the future.
+1) Do not do things that you h8.                               L)"Make friends with people who want the best for you."
+2)"Act so that you can tell the truth about how you act."      M) Do not try to rescue someone who doesn't want rescue && be very careful for someone who does.
+3) Pursue what is meaningful, not what is expedient.           N)"Nothing well done is insignificant."
+4)"If you must choose, be the one who does things, instead of who is seen to do things."    O) Set your house in perfect order before you criticize the world.
+5) Pay attention.                                              P)"Dress like the person you want to be."
+6)"Assume the person you're listening to might know something you need to know. Listen hard enough so they share it with you."    Q) Be precise in your speech.
+7) Plan && work diligently to maintain the romance in your rel8ionships.         R)"Stand up str8 with your shoulders back."
+8)"Be careful who you share good news with."                   S) Do not avoid the frightening standing in your way && don't do unnecessarily dangerous things.
+9) Be careful who you share bad  news with.                    T)"Do not let your children do anything that makes you dislike them."
+A)"Make at least one thing better every single place you go."  U) Do not transform your wife into a maid.
+B) Imagine who you could be, && then aim single-mindedly at that.                V)"Do not hide unwanted things in the fog."
+C)"Do not allow yourself to become arrogant or resentful."                       W) Notice that opportunity lurks where responsibility has been abdic8d.
+D) Try to make one room in your house as beautiful as possible.                  X)"Read something written by someone gr8."
+E)"Compare yourself to who you were yesterday,not to who someone else is today." Y) Pet a cat when you encounter one on the street.
+F) Work as hard as you possibly can on at least one thing && see what happens.   Z)"Do not bother children when they are sk8boarding."
+G)"If old memories still make you cry, write them down carefully && completely." a) Don't let bullies get away with it.
+H) Maintain your connections with people.                      b)"Write a letter to government if you see something that needs fixing && propose a solution."
+I)"Do not carelessly denigr8 social institutions or artistic achievement."       c) What you don't yet know is more important than what you already know.
+J) Treat yourself as if you were someone that you are responsible for helping.   d)"Be gr8ful in spite of your suffering."
 # Dr. Peterson's l8st book,"12 Rules for Life: An Antidote to Chaos" is distilled from the above list && should become available during l8 January of 2018;
 # HCULCODE:started compiling good extra quotes up to _ 63 (so start competition for next 24 best lessons to also glean from his relevant lecture material);
 e) Criticize boxes of the culture as represent8ions of both "Wise King" and "Despot/Tyrant" with gratitude, not resentment, arrogance, or deceit. # 9fDJqkmoXW4
@@ -1087,3 +1067,43 @@ L1VLFold:HTTPS://YouTu.be/yhJWAdZl-Ck "Has Protein Folding Been Solved?" # L1U:0
 L21LCarl:HTTPS://YouTu.be/oQ1TJ7oUMHg "Why I, as an Atheist, Am No Longer a Humanist" # L1V:0FY0 of Drew of GeneticallyModifiedSkeptic channel on PaleBlueDot;
 L21LMorl:HTTPS://YouTu.be/3Oyz-Oy7EY8 "Does Survival Explain Morality? (feat. Scott Clifton) (Greg Koukl Response)" # L21:0G70 of gr8 Paulogia && moral guest;
 L21LMoon:HTTPS://YouTu.be/At17Klp_pRI "How Did the Moon Form? 5 Things We Learned From the Apollo Moon Landings" # J7H:0HN0 of Dr.Becky "geeking-out".Yay! =);
+L2DL2DL2:HTTPS://YouTu.be/ZeMJEOMiE-s "The Paradox of the Cold Sun" # L2C:07J0 of SciencePhileTheAI delving into anim8d explor8ion of Sun/Earth heat theories;
+L2FLEXPL:HTTPS://YouTu.be/qNMmcvaRPSc "Exploring the Universe with Video Games" # L2A:06X0 of BlowFan clipping old JonBlow888 with rad anim8ions && good talk;
+L2GLEEKS:HTTPS://YouTu.be/Ac5ksZTvZN8 "Miscellaneous Myths: Hades && Persephone" # L2C:0KS0 of OverlySarcasticProductions on amazing Greeks:Hades&&Persephone;
+L2GLDoll:HTTPS://YouTu.be/JW97L8aVpaE "Love Dolls Will End the Human Race" # K42:0KF0 of Mission with ElonMusk on [NGS]AI,BostonDynamics,&&RealBotix LoveBots;
+L2GLDead:HTTPS://ScienceAlert.Com/what-are-the-worlds-15-deadliest-animals "Top Human-Killing Species" # I2N of LydiaRamsey's n8ure article 4 BusinessInsider:
+  0)'Mosquito' 2t6m, 1)"Human" 1gi8, 2)'Snake' OQW, 3)'Dog' 8Yu, 4)'FreshWater-Snail' 4uW+, 5)'AssAssIn-Bug' 2xW, 6)'TseTse-Fly'2SG, 7)'AscAris-RoundWorm'16K,
+  8)'CrocOdile' Fe, 9)'TapeWorm' Ay, *A)'HippoPotAmus' 7q, *B)'ElePhant' 7q, C)'BuffAlo' 38, D)'Lion' M+, E)'Wolf' A, F)'Shark' 6; # *AB:tie,MortalRiskz2knO!;
+L2GLISTN:HTTPS://YouTu.be/tv_aBHbVmCQ "This is the Most Terrifying Animal on the Planet" # K7V:0Ew0 of Thoughty2 somewhat upd8ing && omitting a lot of above!;
+L2GLEvol:HTTPS://YouTu.be/gQqQhZp4uG8 "Pl8-Tectonic Evolution from 1-Billion Years Ago to the Present" # L21:00e0 of EarthByte showing dope movement anim8ion;
+L2HL2Sla:HTTPS://YouTu.be/lxWDAazMwsE "How We Learned That Slavery is Wrong - Professor AlecRyrie" # FBK:0qZ0 of GreshamCollege with 1st gr8 lecture out of 4;
+L36LBang:HTTPS://YouTu.be/YycAzdtUIko "Are Space && Time an Illusion?" # F4M:08s0 of PBS_Space_Time with Gabe explaining gr8 intro to Causality causing Time?;
+'! ! ! !'HTTPS://YouTu.be/NblR01hHK6U "Is     Gravity    an Illusion?" # F63:0CW0 of PBS_Space_Time discussing how EinStein may suggest Gravity doesn't exist;
+ "Let's" HTTPS://YouTu.be/D3GVVkPb3OI "Can a  Circle  Be a Str8 Line?" # F72:0AL0 of PBS_Space_Time (PBS_Digital_Studios) on GeneralRel8ivity&&CurvdSpaceTime;
+  'go!'  HTTPS://YouTu.be/P4rW_pPbD-U "Can You Trust Your Eyes in SpaceTime?" # F7F:09I0 of PBS_S_T discussing mind-bendingly how geometry works in SpaceTime;
+  'out'  HTTPS://YouTu.be/msVuCEs8Ydo "The Speed of Light is NOT About Light" # FA7:0Cj0 of PBS_S_T on SoL as EFFECT, not CAUSE. What is cause of cosmic sPd?;
+ 'with'  HTTPS://YouTu.be/1YFrISfN7jo "The Geometry of Causality" # H22:0G60 of SpaceTime with deeper dive in2 rel8ionship BtwEn Space&&Time, 2 map Causality;
+ 'a ;) ' HTTPS://YouTu.be/6MfJ59lkABY "Can We Break the Universe?" # L1J:0Gg0 of SpacTime on famous TwinParadox,LadderParadox(AKA.BarnPole),&&viewer-suggSted;
+ 'Bang!' HTTPS://YouTu.be/GKD1vDAPkFQ "How Does Gravity Warp the Flow of Time?" # L2A:0Ch0 of ST on gravit8ional fields seeming to slow pace of Time: dil8ion;
+ 'Fire!' HTTPS://YouTu.be/L9L_gNogNes "Gravit8ional-Wave BackGround Discovered?" # L2H:0IP0 of ST on black-hole && galaxy-spanning gravit8ional-wave detector;
+ 'Frei!' HTTPS://YouTu.be/UKxQTvqcpSg "Does Time Cause Gravity?" # L2O:0Cf0 of ST on why && how gravity causes the flow-of-Time to slow-down, but not to warp;
+L3CLEARN:HTTPS://YouTu.be/WwTpfVQgkU0 "The Things All Gr8 Teachers Do - Nick Fuhrman - TEDxUGA" # I4B:0NM0 of TEDxTalks with RangerNick teaching how2C.A.R.E.:
+  0)Celebr8 mistakes."Teachable moments."  1)AppreC8 differences."Perspectives."  2)Relay feedback."Encourage students."  3)EvalU8 yourself."Gauge teaching.";
+L3PMATHS:HTTPS://YouTu.be/34FNWQ9trY8 "An Infinity ParaDox - How Many Balls Are in the Vase?" # L38:0EC0 of UpAndAtom on lemnisc8 figure-8 && poor "infinity";
+L3PMDino:HTTPS://YouTu.be/yOw82HzEjHM 'The "Tail" That Hangs Like a Tree!' # L3H:0Qo0 of VicedRhino also on Centaurs, Chimeras, Dragons, && Dinosaur-Penis =);
+L3PMDrag:HTTPS://YouTu.be/7GfGw5rCbwo "A Modern Tale of OuroBoros" # L3M:0D60 of Thinking-Ape (StarDusk) on Far-Left as Serpent/Dragon-8 "Eating-Tail" (self);
+ 'All three (3) of the above videos are in-d8-order from less than the past three (3) Weeks.' # Each mentions my Chinese or Greek mythological Zodiac symbols;
+# I've also discovered that the King-James(-Stuart)-Version Bible includes around: 35 "Dragons" && 53 "Serpents". Am I more like good myth, or terrible ones?;
+L3QMETHU:HTTPS://YouTu.be/l_WOxn2Oct8 'Is the "MethuSelah" Star Older Than the Universe?' # L3P:0FB0 of Dr.Becky on how HD140283 is *not* older than Universe;
+L3QMNOPi:HTTPS://YouTu.be/gMlf1ELvRzc "The Discovery That Transformed Pi" # L3G:0Id0 of Veritasium explaining mechanisms which have been used for approxim8ing
+#   Pi, from anciently known > 3 from inscribed hexagon && < 4 from surrounding square, to Archimedes (in around 250 B.C.E.) using inscribed and circumscribed
+#   dodecagon (12-sided), on up until SirIsaacNewton (in 1666, at age 23) developed the converging series... but it seems to contain several errors as shown?;
+L3RM8Tao:HTTPS://YouTu.be/IrTiOjUvoIw "Taoism - The Most MisUnderstood Philosophy in the West - Hundred Schools of Thought" # K5N:07a0 of CoolHistoryBros with
+#   pretty amazingly awesome (likely n8ive) pronunC8ions of so many historical Chinese words and proper names that are probably incredibly gr8 to learn about;
+L3RM9Arc:HTTPS://YouTu.be/46mw-b8VDc0 "CharActer ArcheTypes in Fighting Games - Full BreakDown / Video Essay" # KB4:0Ff0 of EddVenture describing differences;
+L3RMCirc:HTTPS://YouTu.be/sfilRCCtJtA "How Many Sides Does a Circle Have?" # L39:0760 of VSauce2 on how a circle may have 0, 1, 2, or "infinite" sides?!  =( ;
+L3RMHitc:HTTPS://YouTu.be/3F78CTvd3gA "Christopher Hitchens: All-Time Best Arguments Against Religion/Faith #5" # L2J:0Bc0 of TheWonderfulTruth && Hitch gr8z;
+L3RMNeur:HTTPS://YouTu.be/qkZ4Rm4LWqI "How NeuraLink Will Change Humanity" # L3J:0EX0 of TheTeslaSpace covering a nice overview about brain surgery&&implants;
+L3TMCSJT:HTTPS://NewDiscourses.Com/2020/07/woke-wont-debate-you-heres-why "Why Won't Woke Db8?" # K7U:~0sjw 2rEad JamesLindsay on CriticalSocialJusticeTheory;
+L44MIRTL:HTTPS://YouTu.be/A_KZ3X71yQg "Why You Could Be Living Inside a Computer in Ten Years?" # L42:0OB0 of Thoughty2 on Kurzweil && futurist singularities;
+L44MMULL:HTTPS://YouTu.be/qFyCJU3AFSA "The Bizarre World of Fake Psychics, F8h Healers, and Mediums" # L3R:0l90 of SuperEyePatchWolf dealing with many frauds;

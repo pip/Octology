@@ -3,7 +3,7 @@
 # HTTPS://GitHub.Com/CSSEGISandData/COVID-19/tree/master/csse_covid_19_data/csse_covid_19_daily_reports has JohnsHopkinsUniversity CSV d8a-fIlz upd8d daily;
 # 2du:l8r add percentages of recoveries to deaths,start sepR8ing each new day's d8a files into a d8 subdir instead of dumping so many all2gether in Corona/;
 use strict;use warnings;use utf8;use v5.10;use Octology::a8;use Octology::b8;use Octology::d8;
-my $d8VS='KCJL5act';my $Vers='0.0'; # unfortun8ly it seems that both source 1 && 2 for USA now have only to total but no sepR8 St8s;
+my $d8VS='L3RMDocJ';my $Vers='0.0'; # unfortun8ly it seems that both source 1 && 2 for USA now have only to total but no sepR8 St8s;
 my $d8nw=Octology::d8->new();my $d82D=substr("$d8nw",0,3); # nEd2get d8a2Day wi just lFt3 charz2m@chB4 *.pipe BlO; # Used2Use`...|cut -c1-3`B4 c8 workd wLEnuf;
 unless(-d $ENV{'HOME'} . "/.cache"       ){mkdir($ENV{'HOME'} . "/.cache"       , 0755);}
 unless(-d $ENV{'HOME'} . "/.cache/Corona"){mkdir($ENV{'HOME'} . "/.cache/Corona", 0755);}
@@ -60,6 +60,7 @@ while(  <$dFho>){
 open (my $dSho, '<', $d8aS) or die $!;binmode $dSho,':encoding(UTF-8)';my $dayc;my $dayd;my $actv;
 while(  <$dSho>){my $rcvd=$dayc=$dayd=$actv=0;my $rpct=0.0;my $spcl='';
   my $cfmd=  1;my $dlbf=0;if((@ARGV && $ARGV[0] =~ /^-*a(ll)?$/i && /^\e\[\d+m║\e\[\d+m ([1-9] |[1-4]\d|5[01]) /) || /(To|Wis|Pe|uri|Cal|Yo|Mich)/){
+                   # s/(Cases)\s\/\s(1M)/$1\/$2/;        s/(\|\s*)\s\s([0-9.,]+)(\s║)/$1$2$3/; # not sure where these might need to go to re-align. Whatevz! ;
     $dlbf =  1;s/\e\[32m/$c/;s/\e\[92m/$g/;s/\e\[91m/$r/;s/([NS])(o[ru]th )(Carolina\e\[\d+m) */$1.$3   /;s/District Of Columbia\e\[\d+m */WashingtonDC /;}
   my $dthz=  0;chomp;s/                //;s/(.*│)/$1              /;s/(║.*)(║)/$1                            $2/;
   my $pcnt=0.0;      s/^(.+)(  )(.+?Active)/$1$3$2/;

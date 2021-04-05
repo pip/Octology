@@ -19,7 +19,7 @@
 #     `pkg-config --libs $(pkg-config --print-requires --print-requires-private cairo)` which produced:
 #     "-lgobject-2.0 -lglib-2.0 -lpixman-1 -lfontconfig -lfreetype -lpng16 -lz -lxcb-shm -lxcb -lxcb-render -lXrender -lX11 -lXext" so trying to add those...
 #   but had to add them to both the project's main root Makefile as well as the very similar one which was within the src/ sub-directory before `mk` worked!;
-use strict;use warnings;use utf8;use Octology::a8;my $VERSION='0.0';my $d8VS='L19L2win'; # consider detecting && adding custom Xtra --help basic tXt output2;
+use strict;use warnings;use utf8;use Octology::a8;my $VERSION='0.0';my $d8VS='L2FL8UTF'; # consider detecting && adding custom Xtra --help basic tXt output2;
 use Term::ReadKey;     # note that you can pass in as many -d=\d+ DelayDur8ionInSeconds (like MPlayer -endpos) for as many file-name params follow 2 B plAyd;
 END{      ReadMode 0;} # good practice to auto-restore orig TTY read settingz at END
           ReadMode 3;  # setup 4 raw mode or 3 cbreak mode where Ctrl-C workz since signalz are enabled
@@ -115,9 +115,10 @@ sub sn{my $ns=shift||'';$ns=decode('UTF-8',$ns);$ns=~ s/\n+/\n/g; # StripNewline
   $ns=~ s/(MPEG)(-)(4)( AAC)/$R$1$Y$2$G$3$P$4                      /g;        $ns=~ s/(Vorbis)/$M$1                          /g;
   $ns=~ s/(Uncompressed)( 16)(-)(bit)( PCM)( audio)/$M$1$Y$2$C$3$B$4$R$5$P$6   /g;$ns=~ s/(W)(M)(A)( Version)( 8)/$K$1$Y$2$P$3$c$4$G$5                   /g;
   my $mf=0;my $pf=0;$mf=1 if($ns=~ s/(\[MUTED\])//g);$pf=1 if($ns=~ s/(\[PAUSED\])//g);$ns=~ s/(\()(audio)(\))/$Y$1$C$2$Y$3/gi;
-  if    ( $ns=~  /(^|\s*)(Play)(ing )(file|http)(:)(\/\/)([^\n]+)(\n|$)/i){push(@pl,$7);my $cf=c8fn($7);my $f=$7;my $pt='plA '; # set C8Filename,File,&&PlayTxt
-          if($4 eq 'file'){$cf=~ s/%20/ /g;$cf=~ s/%C3%B4/ô/g;$cf=~ s/%C3%A9/é/g;$cf=~ s/%C3%B6/ö/g;$cf=~ s/%C3%BF/ÿ/g;$cf=~ s/%C3%BC/ü/g;}
-          $ksst=0; # reset sKipSecsStrtTime at Ech new fIl plAyd, && abov just special for Fanto,Pepe,Bjork,Qrych,&&Crux but l8r should generalize
+  if    ( $ns=~  /(^|\s*)(Play)(ing )(file|http)(:)(\/\/)([^\n]+)(\n|$)/i){my $f7=               $7 ;push(@pl,$f7);my $cf=c8fn($f7);my $f=$f7;my $pt='plA ';
+    # L2FL8UTF:aded abov decode,set C8Filename,File,&&PlayTxt. BlO prob!nEded;
+          if($4 eq 'file'){$cf=~ s/%20/ /g;$cf=~ s/%C3%B4/ô/g;$cf=~ s/%C3%A9/é/g;$cf=~ s/%C3%B6/ö/g;$cf=~ s/%C3%BF/ÿ/g;$cf=~ s/%C3%BC/ü/g;$cf=~ s/%C4/Ä/g;$cf=~ s/%E4/ä/g;}
+          $ksst=0; # reset sKipSecsStrtTime @Ech new fIl plAyd,&&abov just special4 Fanto,Pepe,Bjork,Qrych,&&Crux (&&Mauke/Die*Ger*) but l8r shud gNeralIz;
           $pt='' if(148 < length($f) && length($f) < 154); # rEstor fIl spAcez nstd of URL SKpz && no 'plA ' 4file2fit line
           $ns=~ s/(^|\s*)(Play)(ing )(file|http)(:)(\/\/)([^\n]+)(\n|$)/\n$Y$pt$G$4$W$5$o$6$cf\n/gi;}
   elsif ( $ns=~  /.*?(\s*)(Title)(\s*:)([^\n]+)(\n|$)/i){my $ts=$4;$ts=~ s/\s*(Artist)/ $1/;if($ts=~ /^(.+?)Artist/){my $as=''; #AlinSpcz
