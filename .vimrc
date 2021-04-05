@@ -10,7 +10,7 @@ se   nocp                     " nocompatible    - add  Vim NhancmNtz without str
 se    enc=utf-8               "     encoding    - was already loading utf-8 from current $LANG locale, && might need termencoding also if they diverge
 "se  fenc=utf-8               " fileencoding    - might needed this if ever trying LightLine + ALE with special chars from HTTPS://StaticO.GitHub.IO/vim3.html
 let  g:VERSION='0.0'
-let     g:d8VS='KCJL7new'     " d8VersionString - l8st significant upd8 to whole file was then
+let     g:d8VS='L45M7sma'     " d8VersionString - l8st significant upd8 to whole file was then
 let     g:vid8=system('d8')   " VimInit d8      - save d8 when this Vim session first stRtz up to use as dRk pRt at Nd of STatusLine just before bright upd8 d8
 let     g:cucf=1              " CUrsorColumFlag - flag to toggle whether :se cuc should be used (since dflt of it on gets slow whN lots of syntx hili on scrn)
 let     g:culb=1              " CUrsorLineBold  - flag to toggle whether :se cul below should use highlight with bold across whole line (dbl-mapd2Ctrl-L&&hls)
@@ -417,49 +417,49 @@ function! CheckForPerl6 ()
   endif
 endfunction
 "====[ Smart completion via <Tab> and <S-Tab> ]====
-runtime plugin/smartcom.vim
+"runtime plugin/smartcom.vim
 " Add extra completions (mainly for Perl programming)...
 let ANYTHING = ""
 let NOTHING  = ""
 let EOL      = '\s*$'
                 " Left     Right      Insert                             Reset cursor
                 " =====    =====      ===============================    ============
-call SmartcomAdd( '<<',    ANYTHING,  '>>',                              {'restore':1} )
-call SmartcomAdd( '<<',    '>>',      "\<CR>\<Esc>O\<Tab>"                             )
-call SmartcomAdd( '?',     ANYTHING,  '?',                               {'restore':1} )
-call SmartcomAdd( '?',     '?',       "\<CR>\<Esc>O\<Tab>"                             )
-call SmartcomAdd( '{{',    ANYTHING,  '}}',                              {'restore':1} )
-call SmartcomAdd( '{{',    '}}',      NOTHING,                                         )
-call SmartcomAdd( 'qr{',   ANYTHING,  '}xms',                            {'restore':1} )
-call SmartcomAdd( 'qr{',   '}xms',    "\<CR>\<C-D>\<Esc>O\<C-D>\<Tab>"                 )
-call SmartcomAdd( 'm{',    ANYTHING,  '}xms',                            {'restore':1} )
-call SmartcomAdd( 'm{',    '}xms',    "\<CR>\<C-D>\<Esc>O\<C-D>\<Tab>",                )
-call SmartcomAdd( 's{',    ANYTHING,  '}{}xms',                          {'restore':1} )
-call SmartcomAdd( 's{',    '}{}xms',  "\<CR>\<C-D>\<Esc>O\<C-D>\<Tab>",                )
-call SmartcomAdd( '\*\*',  ANYTHING,  '**',                              {'restore':1} )
-call SmartcomAdd( '\*\*',  '\*\*',    NOTHING,                                         )
+"call SmartcomAdd( '<<',    ANYTHING,  '>>',                              {'restore':1} )
+"call SmartcomAdd( '<<',    '>>',      "\<CR>\<Esc>O\<Tab>"                             )
+"call SmartcomAdd( '?',     ANYTHING,  '?',                               {'restore':1} )
+"call SmartcomAdd( '?',     '?',       "\<CR>\<Esc>O\<Tab>"                             )
+"call SmartcomAdd( '{{',    ANYTHING,  '}}',                              {'restore':1} )
+"call SmartcomAdd( '{{',    '}}',      NOTHING,                                         )
+"call SmartcomAdd( 'qr{',   ANYTHING,  '}xms',                            {'restore':1} )
+"call SmartcomAdd( 'qr{',   '}xms',    "\<CR>\<C-D>\<Esc>O\<C-D>\<Tab>"                 )
+"call SmartcomAdd( 'm{',    ANYTHING,  '}xms',                            {'restore':1} )
+"call SmartcomAdd( 'm{',    '}xms',    "\<CR>\<C-D>\<Esc>O\<C-D>\<Tab>",                )
+"call SmartcomAdd( 's{',    ANYTHING,  '}{}xms',                          {'restore':1} )
+"call SmartcomAdd( 's{',    '}{}xms',  "\<CR>\<C-D>\<Esc>O\<C-D>\<Tab>",                )
+"call SmartcomAdd( '\*\*',  ANYTHING,  '**',                              {'restore':1} )
+"call SmartcomAdd( '\*\*',  '\*\*',    NOTHING,                                         )
 " Handle single : correctly...
-call SmartcomAdd( '^:\|[^:]:',  EOL,  "\<Tab>" )
+"call SmartcomAdd( '^:\|[^:]:',  EOL,  "\<Tab>" )
 "After an alignable, align...
 function! AlignOnPat (pat)
   return "\<Esc>:call EQAS_Align('nmap',{'pattern':'" . a:pat . "'})\<CR>A"
 endfunction
                 " Left         Right        Insert
                 " ==========   =====        =============================
-call SmartcomAdd( '=',         ANYTHING,    "\<Esc>:call EQAS_Align('nmap')\<CR>A")
-call SmartcomAdd( '=>',        ANYTHING,    AlignOnPat('=>') )
-call SmartcomAdd( '\s#',       ANYTHING,    AlignOnPat('\%(\S\s*\)\@<= #') )
-call SmartcomAdd( '[''"]\s*:', ANYTHING,    AlignOnPat(':'),                   {'filetype':'vim'} )
-call SmartcomAdd( ':',         ANYTHING,    "\<Tab>",                          {'filetype':'vim'} )
+"call SmartcomAdd( '=',         ANYTHING,    "\<Esc>:call EQAS_Align('nmap')\<CR>A")
+"call SmartcomAdd( '=>',        ANYTHING,    AlignOnPat('=>') )
+"call SmartcomAdd( '\s#',       ANYTHING,    AlignOnPat('\%(\S\s*\)\@<= #') )
+"call SmartcomAdd( '[''"]\s*:', ANYTHING,    AlignOnPat(':'),                   {'filetype':'vim'} )
+"call SmartcomAdd( ':',         ANYTHING,    "\<Tab>",                          {'filetype':'vim'} )
 " Perl keywords...
                 " Left         Right   Insert                                  Where
                 " ==========   =====   =============================           ===================
 "                        was inserting " my $___ (___){\n___\n}\n___" originally, but trying to compact for me
-call SmartcomAdd( '^\s*for',   EOL,    " my $___ (___){___}\n___",             {'filetype':'perl'} )
-call SmartcomAdd( '^\s*if',    EOL,             "(___){___}\n___",             {'filetype':'perl'} )
-call SmartcomAdd( '^\s*while', EOL,             "(___){___}\n___",             {'filetype':'perl'} )
-call SmartcomAdd( '^\s*given', EOL,             "(___){___}\n___",             {'filetype':'perl'} )
-call SmartcomAdd( '^\s*when',  EOL,             "(___){___}\n___",             {'filetype':'perl'} )
+"call SmartcomAdd( '^\s*for',   EOL,    " my $___ (___){___}\n___",             {'filetype':'perl'} )
+"call SmartcomAdd( '^\s*if',    EOL,             "(___){___}\n___",             {'filetype':'perl'} )
+"call SmartcomAdd( '^\s*while', EOL,             "(___){___}\n___",             {'filetype':'perl'} )
+"call SmartcomAdd( '^\s*given', EOL,             "(___){___}\n___",             {'filetype':'perl'} )
+"call SmartcomAdd( '^\s*when',  EOL,             "(___){___}\n___",             {'filetype':'perl'} )
 "====[ Correct common mistypings in-the-fly ]====
 iab        ,,  =>
 iab    retrun  return

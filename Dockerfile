@@ -1,11 +1,12 @@
 # L43MEANS:Dockerfile crE8d by JohnBeppu-san <Beppu@CPAN.Org> for Pip's GitHub Octology;
 # Use a big desktop distro (Ubu) as base, so graphical and audio packages are available;
 FROM ubuntu:20.04
-# Force TZ to avoid interactive configur8ion;
+# Force TZ to avoid interactive configur8ion; Also TERM BlO mAy quell warnings;
 # HTTPS://Dev.To/setevoy/docker-configure-tzdata-and-timezone-during-build-20bk
 ENV TZ=America/Chicago
-RUN ln -snf /usr/share/zoneinfo/$TZ /etc/localtime && echo $TZ > /etc/timezone
-#           Install packages;
+RUN ln -snf /usr/share/zoneinfo/$TZ /etc/localtime &&  echo $TZ > /etc/timezone
+ENV TERM=xterm-256color
+#           install packages; # try to just get apt-utils first, so dconf uses;
 RUN apt-get update  &&      \
     apt-get install -y      \
     apt-utils               \
@@ -15,18 +16,24 @@ RUN apt-get update  &&      \
   readline-common           \
   libreadline5              \
   libreadline8              \
+  perl                      \
+  perl-doc                  \
+  cpanminus                 \
+  libterm-readline-gnu-perl
+RUN apt-get install -y      \
   libncurses-dev            \
   ncurses-base              \
   ncurses-bin               \
+  libdconf-dev              \
+  libdconf1                 \
+  dconf-gsettings-backend   \
+  dconf-service             \
+  dconf-cli                 \
   bzip2                     \
   sudo                      \
   curl                      \
   git                       \
   zsh                       \
-  perl                      \
-  perl-doc                  \
-  cpanminus                 \
-  libterm-readline-gnu-perl \
   libsdl-kitchensink-dev    \
   libsdl-kitchensink1       \
   libsdl-console-dev        \
@@ -45,18 +52,28 @@ RUN apt-get update  &&      \
   vim-nox                   \
   gst123                    \
   xclip                     \
+  most                      \
+  dict                      \
+  dictd                     \
+  dict-wn                   \
+  dict-vera                 \
+  dict-devil                \
+  dict-gcide                \
+  dict-foldoc               \
+  dict-jargon               \
+  dict-elements             \
   && rm -rf /var/lib/apt/lists/* && \
   locale-gen "en_US.UTF-8"
 # locale setting;
 # HTTPS://StackOverFlow.Com/a/57158691
-ENV      LANG=en_US.UTF-8 \
-       LC_ALL=en_US.UTF-8 \
+ENV      LANG=en_US.UTF-8   \
+       LC_ALL=en_US.UTF-8   \
      LANGUAGE=en_US:en
-# Install 3rd-party Perl dependencies;
-RUN cpanm --notest        \
-  Time::DaysInMonth       \
-  Time::PT                \
-  Curses                  \
+# install 3rd-party Perl dependencies;
+RUN cpanm  --notest         \
+  Time::DaysInMonth         \
+  Time::PT                  \
+  Curses                    \
   Color::Similarity
 # Add a unix user;
 # HTTPS://StackOverFlow.Com/a/27703359
@@ -74,22 +91,22 @@ COPY --chown=pip:pip  gfx  /home/pip/gfx/
 COPY --chown=pip:pip  gmz  /home/pip/gmz/
 COPY --chown=pip:pip  muz  /home/pip/muz/
 COPY --chown=pip:pip  mvz  /home/pip/mvz/
-# Install                     vim-plug;
+# install                     vim-plug;
 # HTTPS://GitHub.Com/junegunn/vim-plug
 # HTTPS://GitHub.Com/junegunn/vim-plug/issues/675
 RUN  curl  -sfLo      /home/pip/.vim/autoload/plug.vim --create-dirs  \
   https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim \
   && chown -R pip:pip /home/pip/.vim
-# su -c "vim +'PlugInstall --sync' +qa" pip
+#   su     -c "vim +'PlugInstall --sync' +qa" pip
 # Set a default command for the container;
-CMD su - pip
-# Build:    dkrb
+CMD su     -                pip
+# Build:   `dkrb`
 #   docker build . -t octology
-# Run  :    dkrn
+# Run  :   `dkrn`
 #   docker run    -it octology
-# Run w/ local directory mounted inside container:   dkrnmtio
+# Run w/ local directory mounted inside container:        `dkrnmtio`
 #   docker run --mount type=bind,source=/local/dir,target=/container/dir -it octology
-# List currently running docker containers
+# List currently running docker containers       :        `dkrp`
 #   docker ps
-# Connect to running docker container by id (found via `docker ps`)
+# Connect to running docker container by id (found via `docker ps`): `dkre` or `dkrx`
 #   docker exec   -it $id zsh

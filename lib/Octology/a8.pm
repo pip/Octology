@@ -889,8 +889,9 @@ sub c8fn{  my $fnam;my $aflg=0;$aflg=1 if(@_);my $zflg=0;if($aflg && $_[0] =~ /^
 # background-color='rgb(5,10,13)'
 # background-transparency-percent=3\n...
 sub pP{my $prfl='d';$prfl=$ENV{'HPrf'} if(exists($ENV{'HPrf'}) && defined($ENV{'HPrf'}) && length($ENV{'HPrf'})); # profilPikr 2swich2 P d(falt)2 pcjgiRLBWkv;
-my @pl;my $drks= 16;my $retn='';my @dump=split(/\n/,`dconf dump /org/gnome/terminal/legacy/profiles:/`);my %vnui=();my $cuid=''; # curNt UUID 4 viz-nAm
-  for  my $dndx (0..$#dump){if($dump[$dndx]=~ /^\[:([0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12})\]$/){$cuid=$1;}
+my @pl;my $drks= 16;my $retn='';my @dump=();if(-x `which dconf`){ # not sure if this is a decent way to determine whether some executable file is available?;
+                                   @dump=split(/\n/, `dconf dump /org/gnome/terminal/legacy/profiles:/`);} my %vnui=();my $cuid=''; # curNt UUID 4 viz-nAm
+  for  my $dndx (0..$#dump){if($dump[$dndx]=~ /^\[:([0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12})\]$/){   $cuid=$1;}
     if(length($cuid) == 36  && $dump[$dndx]=~ /^visible-name='([^']+)'$/){$vnui{$1}=$cuid;}} # this shud remap viz-nAmz 2 16-byt 32-heX charz UUIDz per-host;
   my %umap=( # ndx in2 d8bo 4 wich colr code char 2use, then darkness-scale factor wich divides found RGB valuez by 2mk bkgrndz, then bkgrnd trncparNC prcNt;
     'd8ok'                              =>[1,$drks/8  ,88], # background-color='rgb(33,48,63)' 94% 'c7c3d39e-a7d4-45b5-b7d3-76647071d7c8'
