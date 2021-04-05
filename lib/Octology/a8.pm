@@ -889,8 +889,11 @@ sub c8fn{  my $fnam;my $aflg=0;$aflg=1 if(@_);my $zflg=0;if($aflg && $_[0] =~ /^
 # background-color='rgb(5,10,13)'
 # background-transparency-percent=3\n...
 sub pP{my $prfl='d';$prfl=$ENV{'HPrf'} if(exists($ENV{'HPrf'}) && defined($ENV{'HPrf'}) && length($ENV{'HPrf'})); # profilPikr 2swich2 P d(falt)2 pcjgiRLBWkv;
-my @pl;my $drks= 16;my $retn='';my @dump=();if(-x `which dconf`){ # not sure if this is a decent way to determine whether some executable file is available?;
-                                   @dump=split(/\n/, `dconf dump /org/gnome/terminal/legacy/profiles:/`);} my %vnui=();my $cuid=''; # curNt UUID 4 viz-nAm
+my @pl;my $drks= 16;my $retn='';my @dump=();if(exists($ENV{'DISPLAY'}) && length($ENV{'DISPLAY'})){
+                                   @dump=split(/\n/, `dconf dump /org/gnome/terminal/legacy/profiles:/`);}
+                                         elsif(exists($ENV{'TERM_PROGRAM'})){print "tprg:".$ENV{'TERM_PROGRAM'}.";\n";}
+                                       # elsif(exists($ENV{'TERM'        })){print "term:".$ENV{'TERM'        }.";\n";}
+                                   my %vnui=();my $cuid=''; # curNt UUID 4 viz-nAm
   for  my $dndx (0..$#dump){if($dump[$dndx]=~ /^\[:([0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12})\]$/){   $cuid=$1;}
     if(length($cuid) == 36  && $dump[$dndx]=~ /^visible-name='([^']+)'$/){$vnui{$1}=$cuid;}} # this shud remap viz-nAmz 2 16-byt 32-heX charz UUIDz per-host;
   my %umap=( # ndx in2 d8bo 4 wich colr code char 2use, then darkness-scale factor wich divides found RGB valuez by 2mk bkgrndz, then bkgrnd trncparNC prcNt;
@@ -921,8 +924,13 @@ my @pl;my $drks= 16;my $retn='';my @dump=();if(-x `which dconf`){ # not sure if 
                                                                }my @drgb=(int(hex(substr($x256[$pp8k],0,2)) /$umap{$_}[1]),
           int(       hex(substr($x256[$pp8k],2,2)) /$umap{$_}[1]),        int(hex(substr($x256[$pp8k],4,2)) /$umap{$_}[1]));$ui=$cuid unless(defined($ui));
           $drgb[0]=255 if($drgb[0] > 255);$drgb[1]=255 if($drgb[1] > 255);$drgb[2]=255 if($drgb[2] > 255);my $psdr=join(',',@drgb);
-          $retn.=`gsettings set org.gnome.Terminal.Legacy.Profile:/org/gnome/terminal/legacy/profiles:/:$ui/ background-transparency-percent $umap{$_}[2]`;
-          $retn.=`gsettings set org.gnome.Terminal.Legacy.Profile:/org/gnome/terminal/legacy/profiles:/:$ui/ background-color 'rgb($psdr)'`;}}
+          my $gsgo=`gsettings get org.gnome.Terminal.Legacy.Profile:/org/gnome/terminal/legacy/profiles:/:$ui/ background-transparency-percent`;
+             $gsgo=chomp($gsgo);
+          if(defined($gsgo) && $gsgo =~ /^\d+$/ && exists($ENV{'DISPLAY'}) && length($ENV{'DISPLAY'})){ # "No such schema"?! ;
+            $retn.=`gsettings set org.gnome.Terminal.Legacy.Profile:/org/gnome/terminal/legacy/profiles:/:$ui/ background-transparency-percent $umap{$_}[2]`;
+            $retn.=`gsettings set org.gnome.Terminal.Legacy.Profile:/org/gnome/terminal/legacy/profiles:/:$ui/ background-color 'rgb($psdr)'`;}
+        # else{$retn.="gsgo:$gsgo;\n";}
+        }}
       if($#pl && ($retn eq '' || $pk ne 'd')){d8cs($pldh{$pk},$pldl{$pk},$plds{$pk}); # probably d8cs having probz wi varied SGR stringz not hndlng pldS yet;
         print $out8 "$W$pk ".d8c($pldh{$pk})."$z;" if($co < $#pl || $pk ne 'd');}}elsif($retn eq '' && $co < $#pl){say $out8 '';}} lrc();aw8('P');
   close       $out8              or die "Can't close duplic8 STDOUT handle: $!"; return($retn);} # stil proly want 2 src .zshrc after any pP profile changez;

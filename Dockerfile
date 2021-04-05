@@ -1,31 +1,43 @@
-# L43MEANS:Dockerfile crE8d by JohnBeppu-san <Beppu@CPAN.Org> for Pip's GitHub Octology;
-# Use a big desktop distro (Ubu) as base, so graphical and audio packages are available;
+# L43MEANS:Dockerfile crE8d by JohnBeppu-san <Beppu@CPAN.Org> for Pip's GitHub Octology;my $d8VS='L45MEATY';
+# Use a big desktop distro (Ubuntu) as base, so that graphical && audio packages are available in container;
 FROM ubuntu:20.04
 # Force TZ to avoid interactive configur8ion; Also TERM BlO mAy quell warnings;
 # HTTPS://Dev.To/setevoy/docker-configure-tzdata-and-timezone-during-build-20bk
 ENV TZ=America/Chicago
 RUN ln -snf /usr/share/zoneinfo/$TZ /etc/localtime &&  echo $TZ > /etc/timezone
-ENV TERM=xterm-256color
-#           install packages; # try to just get apt-utils first, so dconf uses;
-RUN apt-get update  &&      \
-    apt-get install -y      \
-    apt-utils               \
+ENV DEBIAN_FRONTEND=noninteractive \
+    TERM=xterm-256color     \
+    XKBMODEL=pc105          \
+    XKBLAYOUT=us            \
+    XKBVARIANT=""           \
+    XKBOPTIONS=""           \
+    BACKSPACE=guess
+#           install packages; # try to just get apt-utils first, so dconf uses;  # bash `set -x` enables outputting executing cmndz mainly 4Dbuging scrptz;
+RUN set               -x && \
+    apt-get update       && \
+    apt-get install      -y \
+    --no-install-recommends \
+    apt-utils            && \
+    apt-get install      -y \
+    --no-install-recommends \
   locales                   \
   build-essential           \
   libreadline-dev           \
   readline-common           \
-  libreadline5              \
   libreadline8              \
   perl                      \
   perl-doc                  \
   cpanminus                 \
+  libpath-tiny-perl         \
   libterm-readline-gnu-perl
-RUN apt-get install -y      \
+RUN apt-get install      -y \
+    --no-install-recommends \
   libncurses-dev            \
   ncurses-base              \
   ncurses-bin               \
   libdconf-dev              \
   libdconf1                 \
+  pulseaudio-utils          \
   dconf-gsettings-backend   \
   dconf-service             \
   dconf-cli                 \
@@ -33,23 +45,25 @@ RUN apt-get install -y      \
   sudo                      \
   curl                      \
   git                       \
+  tio                       \
   zsh                       \
-  libsdl-kitchensink-dev    \
-  libsdl-kitchensink1       \
-  libsdl-console-dev        \
-  libsdl-console            \
+  libsmpeg-dev              \
+  libsmpeg0                 \
+  libsdl-sge-dev            \
+  libsdl-sge                \
   libsdl-gfx1.2-dev         \
   libsdl-gfx1.2-5           \
   libsdl-pango-dev          \
   libsdl-pango1             \
-  libsdl-sge-dev            \
-  libsdl-sge                \
-  libsmpeg-dev              \
-  libsmpeg0                 \
+  libsdl-console-dev        \
+  libsdl-console            \
+  libsdl-kitchensink-dev    \
+  libsdl-kitchensink1       \
   libalien-sdl-dev-perl     \
   libalien-sdl-perl         \
   libsdl-perl               \
-  vim-nox                   \
+  vim-tiny                  \
+  xdotool                   \
   gst123                    \
   xclip                     \
   most                      \
@@ -62,9 +76,29 @@ RUN apt-get install -y      \
   dict-foldoc               \
   dict-jargon               \
   dict-elements             \
+  gnome-terminal            \
+  xfce4-terminal            \
+  mate-terminal             \
+  rxvt-unicode              \
+  terminology               \
+  terminator                \
+  lxterminal                \
+  stterm                    \
+  sakura                    \
+  s3dvt                     \
+  aterm                     \
+  pterm                     \
+  eterm                     \
+  xterm                     \
+  termit                    \
+  konsole                   \
+  lilyterm                  \
+  qterminal                 \
+  terminal.app              \
+  cool-retro-term           \
   && rm -rf /var/lib/apt/lists/* && \
   locale-gen "en_US.UTF-8"
-# locale setting;
+# locale setting;  # above appended long list of terminal emul8or programs which may come in handy, even if Gnome-Terminal is mostly used ahead of altern8z;
 # HTTPS://StackOverFlow.Com/a/57158691
 ENV      LANG=en_US.UTF-8   \
        LC_ALL=en_US.UTF-8   \
@@ -73,6 +107,7 @@ ENV      LANG=en_US.UTF-8   \
 RUN cpanm  --notest         \
   Time::DaysInMonth         \
   Time::PT                  \
+  Term::ReadKey             \
   Curses                    \
   Color::Similarity
 # Add a unix user;
@@ -97,16 +132,16 @@ COPY --chown=pip:pip  mvz  /home/pip/mvz/
 RUN  curl  -sfLo      /home/pip/.vim/autoload/plug.vim --create-dirs  \
   https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim \
   && chown -R pip:pip /home/pip/.vim
-#   su     -c "vim +'PlugInstall --sync' +qa" pip
+#    su    -c "vim +'PlugInstall --sync' +qa" pip
 # Set a default command for the container;
-CMD su     -                pip
+CMD  su - pip
 # Build:   `dkrb`
-#   docker build . -t octology
+#   docker build . -t oct
 # Run  :   `dkrn`
-#   docker run    -it octology
+#   docker run    -it oct
 # Run w/ local directory mounted inside container:        `dkrnmtio`
-#   docker run --mount type=bind,source=/local/dir,target=/container/dir -it octology
+#   docker run --mount type=bind,source=/local/dir,target=/container/dir -it oct
 # List currently running docker containers       :        `dkrp`
 #   docker ps
-# Connect to running docker container by id (found via `docker ps`): `dkre` or `dkrx`
+# Connect to running docker container by id (found via `docker ps`): `dkre` or `dkrx` (latter zsh function which captures first id from dkrp output list);
 #   docker exec   -it $id zsh
