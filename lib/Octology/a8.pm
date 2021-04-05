@@ -2012,7 +2012,7 @@ sub ftst{ # 37MK06SK:ftst Utl2run thruPerlzFileTeSTz on its parameter Filename
   # pattern matching oper8ions m//, s///, && tr/// (AKA y///) when used without an =~ oper8or.    default iter8or variable in for(each) loop if none supplied.
   # implicit iter8or variable in grep() and map() functions.  implicit variable of given().   the default place to put the next value or input record when a
   #   <FH> , readline, readdir, or each oper8ion's result is tSted by itself as the sole criterion of a while tSt. outside a while tSt, this will not happen;
-  close   $out8             or die "Can't close duplic8 STDOUT handle: $!";} # should learn all the above functions && eventually print somehow as colrd rFrNc;
+  close   $out8             or die "Can't close duplic8 STDOUT handle: $!";return();} # shud lern all abov functns && eventually print somehow as colrd rFrNc;
 # favorite resoz:320x200,640x400(2x2),1280x800(4x4*320x200),1920x1200(6x6),2560x1600(8x8*320x200) then 1920x1080p of my AsusHDMI monitors&&SamsungGalXS4Phone;
 sub reso{my $optz=join(' ',@_)||''; # 598KBvas:reso crE8d by PipStuart <Pip@CPAN.Org> 2rank display resolutions by totl pixlz&&aspect r8ioz.  # ^4x4=10240x6400
   my($R,$o,$Y,$G, $B,$C,$M,$p)=($d8cS[0],$d8cS[1],$d8cS[2],$d8cS[3], $d8cS[4],$d8cS[5],$d8cS[6],$d8cS[7]); # hopefully tmp lOd prOfIl?;
