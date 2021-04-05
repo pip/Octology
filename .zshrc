@@ -607,8 +607,9 @@ alias    gac='     gaa; gcm     '; # should setup gcm to auto-commit basic gener
 alias    gacm='    gac          '; # should maybe make as function which takes parameter or gener8d commit message then gpom with auto user Pip pRam or cnfg?
 alias    gpom='    git push origin master';alias g8st8='g8st';alias g8s='g8 s';alias g8h='g8 h';alias g8l='g8 l';alias g8d='g8 d';alias g8p='g8 p';
          gap()  {  gac $1;gpom   } # above shortcuts are: status,           show,            help,            log,             diff,            pull
-alias    dkr=' docker ';alias dkrb='dkr build';alias dkrn='dkr run';alias dokr='dkr'; # Beppu-san did Docker, && build proly nEdz -t, && run -it ?;
-alias       n=' ncal  ';
+alias    dkr='  docker';alias dkrb='dkr build';alias dkrn='dkr run';alias dokr='dkr'; # Beppu-san did Docker, && build proly nEdz ". -t oct", && run "-it oct";
+                        alias dkrp='dkr ps';alias dkrnmio='dkrn --mount type=bind,source=/local/dir,target=/container/dir -it octology';
+alias       n=' ncal  ';alias dkre='dkr exec -it'; # && append (from dkrp) "$id zsh";
 alias       N='  calN '; #  N    :            calN (use `rsn` ReSize4calN 171x57 to show 19-Years, 2000-2018 solidly in slightly lRgr than Dflt 160x50 size)
 alias    caln='  calN ';
 alias      l8='  calN '; #  l8   :            cal|cron|at|batch

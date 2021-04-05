@@ -46,14 +46,15 @@ RUN useradd -m -G sudo -s /bin/zsh -p aaoCFznDGNVHs pip
 
 # Copy Octology files into pip's $HOME.
 COPY --chown=pip:pip \
-  .Hrc .Xrc .bashrc .lrc .lsrc .shl.style .vimrc .zshrc \
+  .Hrc .Xrc .bashrc  .lrc .lsrc .shl.style .vimrc .zshrc \
   /home/pip/
-COPY --chown=pip:pip dox /home/pip/dox/
-COPY --chown=pip:pip dvl /home/pip/dvl/
-COPY --chown=pip:pip gfx /home/pip/gfx/
-COPY --chown=pip:pip muz /home/pip/muz/
-COPY --chown=pip:pip bin /home/pip/bin/
-COPY --chown=pip:pip lib /home/pip/lib/
+COPY --chown=pip:pip .log /home/pip/.log/
+COPY --chown=pip:pip  lib /home/pip/lib/
+COPY --chown=pip:pip  dvl /home/pip/dvl/
+COPY --chown=pip:pip  dox /home/pip/dox/
+COPY --chown=pip:pip  gfx /home/pip/gfx/
+COPY --chown=pip:pip  muz /home/pip/muz/
+COPY --chown=pip:pip  bin /home/pip/bin/
 
 # Install vim-plug.
 # https://github.com/junegunn/vim-plug
@@ -66,11 +67,11 @@ RUN curl -sfLo /home/pip/.vim/autoload/plug.vim --create-dirs \
 # Set a default command for the container.
 CMD su - pip
 
-# Build
+# Build:    dkrb
 #   docker build . -t octology
 #
-# Run
-#   docker run -it octology
+# Run  :    dkrn
+#   docker run    -it octology
 #
 # Run w/ local directory mounted inside container
 #   docker run --mount type=bind,source=/local/dir,target=/container/dir -it octology
@@ -79,4 +80,4 @@ CMD su - pip
 #   docker ps
 #
 # Connect to running docker container by id (found via `docker ps`)
-#   docker exec -it $id zsh
+#   docker exec   -it $id zsh
