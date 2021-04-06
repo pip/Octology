@@ -1,4 +1,4 @@
-# L43MEANS:Dockerfile crE8d by JohnBeppu-san <Beppu@CPAN.Org> for Pip's GitHub Octology;my $d8VS='L46M4vim';
+# L43MEANS:Dockerfile crE8d by JohnBeppu-san <Beppu@CPAN.Org> for Pip's GitHub Octology;my $d8VS='L46M64CJ';
 # Use a big desktop distro (Ubuntu) as base, so that graphical && audio packages are available in container;
 FROM ubuntu:20.04
 # Force TZ to avoid interactive configur8ion; Also TERM BlO mAy quell warnings;
@@ -155,6 +155,7 @@ ENV      LANG=en_US.UTF-8   \
 RUN cpanm  --notest         \
   Time::DaysInMonth         \
   Time::PT                  \
+  Text::CSV                 \
   Term::ReadKey             \
   Curses                    \
   Color::Similarity
