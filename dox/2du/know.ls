@@ -1107,3 +1107,4 @@ L3RMNeur:HTTPS://YouTu.be/qkZ4Rm4LWqI "How NeuraLink Will Change Humanity" # L3J
 L3TMCSJT:HTTPS://NewDiscourses.Com/2020/07/woke-wont-debate-you-heres-why "Why Won't Woke Db8?" # K7U:~0sjw 2rEad JamesLindsay on CriticalSocialJusticeTheory;
 L44MIRTL:HTTPS://YouTu.be/A_KZ3X71yQg "Why You Could Be Living Inside a Computer in Ten Years?" # L42:0OB0 of Thoughty2 on Kurzweil && futurist singularities;
 L44MMULL:HTTPS://YouTu.be/qFyCJU3AFSA "The Bizarre World of Fake Psychics, F8h Healers, and Mediums" # L3R:0l90 of SuperEyePatchWolf dealing with many frauds;
+L45MFals:HTTPS://YouTu.be/mDV3Vlrqwhc "Why Your Best Memories Might Not Have Actually Happened" # L3V:0HQ0 of Thoughty2 on frnd Wolf maybe wrongly convicted!;

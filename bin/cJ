@@ -42,7 +42,7 @@ while(  <$dFho>){
   my $cfmd=  1;my $dlbf=0;$dlbf=1 if(/│/); # set D8a-Line-Bar-Flag && remember these chars are UTF-8 line-drawing bar chars && not usual pipe,but look same;
   my $dthz=  0;chomp unless(/To/);s/(try  | \(US\)|d    )/$1    /;
   my $pcnt=0.0;my $rcvd=0;my $rpct=0.0;
-  if($dlbf){s/\e\[32m/$c/;s/\e\[92m/$g/;s/\e\[91m/$r/;
+  if($dlbf){s/\e\[32m/$c/;s/\e\[92m/$g/;s/\e\[91m/$r/;s/(║.*?) (.*) (.*║)/$1$2$3/;s/(Active) / $1/;
     if(/USA/){ $usln=$_;}
     else{print $out8 $_;}}
   if(/(USA|World)/){s/\s+//g;s/║//g;s/│/ /g;my @fldz=split(/\s/,$_); #print $out8 "fldz:@fldz;\n";
@@ -62,9 +62,9 @@ while(  <$dSho>){my $rcvd=$dayc=$dayd=$actv=0;my $rpct=0.0;my $spcl='';
   my $cfmd=  1;my $dlbf=0;if((@ARGV && $ARGV[0] =~ /^-*a(ll)?$/i && /^\e\[\d+m║\e\[\d+m ([1-9] |[1-4]\d|5[01]) /) || /(To|Wis|Pe|uri|Cal|Yo|Mich)/){
                    # s/(Cases)\s\/\s(1M)/$1\/$2/;        s/(\|\s*)\s\s([0-9.,]+)(\s║)/$1$2$3/; # not sure where these might need to go to re-align. Whatevz! ;
     $dlbf =  1;s/\e\[32m/$c/;s/\e\[92m/$g/;s/\e\[91m/$r/;s/([NS])(o[ru]th )(Carolina\e\[\d+m) */$1.$3   /;s/District Of Columbia\e\[\d+m */WashingtonDC /;}
-  my $dthz=  0;chomp;s/                //;s/(.*│)/$1              /;s/(║.*)(║)/$1                            $2/;
-  my $pcnt=0.0;      s/^(.+)(  )(.+?Active)/$1$3$2/;
-                     s/             (.+?Active )/ Recovered  │$1/;
+  my $dthz=  0;chomp;s/                //;s/(.*│)/$1               /;s/(║.*?) (.*) (.*║)/$1$2                            $3/;
+  my $pcnt=0.0;      s/^(.+)( )(.+? Active) /$1$3$2/;
+                     s/             (.+?Active  )/ Recovered   │$1/;
   if($dlbf){$spcl=$_;s/\s+//g;s/║//g;s/│/ /g;my @fldz=split(/\s/,$_); #print $out8 "fldz:@fldz;\n";
     $cfmd=sS('--',$fldz[2]);$cfmd=~ s/(^--|,)//g;if(length($fldz[3])){$dayc=$fldz[3];}else{$dayc="$B~$W?";} # nEd2lOd yStrdA 4 difng dAzcnfrmd&&dAzdethz
     $dthz=sS('--',$fldz[4]);$dthz=~ s/(^--|,)//g;if(length($fldz[5])){$dayd=$fldz[5];}else{$dayd="$B~$W?";}$actv=$fldz[6] if(length($fldz[6]));

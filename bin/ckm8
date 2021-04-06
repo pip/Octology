@@ -46,11 +46,12 @@
 #   4m@ wi cmprSd bord lookupz aftr evry8plyz2jump2&&apply mvz from l8r&&Ech ply justPc,Go,&&Rest wich lNd thMsLvz2max32x64x27dir&&fIl hIerRchy2bild d8abAs2ndX
 #   wich registry gmzRsimilR2rEfer2whNDcIdng on bStnXtmv. sepR8 bord reg4any early or midgAmNcountrdEnuftImz&&anothr4allknOwnNdgmzEvNiftheyOnlyapErd once sOfR;
 # K7AMERIC:HTTPS://WikiHow.Com/Read-Algebraic-Chess-Notation indic8s it was a Philipp Stamma who first introduced Algebraic Chess Not8ion. Quite coincident! ;)
+# L46M46AI:HTTPS://YouTu.be/U4ogK0MIzqk "Coding Adventure: Chess AI" # L2C:0TL0 of SebastianLague walking through JavaScript development, testing, && bugfixes;
 # old:could fixSimp wi wantarray2alow $simp->Text('non-ary'),mk bullet blastz,mk game srvr,plyr matchr,abiliT2anOt8 or plA ahed on both sIdz whil w8ng4oppo2mv;
 #   Octo is 8base d8a applic8ions:V8 abbreV8ions,b8 nums,d8 stamps,f8 RU(Red)E4||2lern8bow?pal8NtrE RGB && f0nt -##-,c8 col8 scrn,r8 valU8,m8 rel8,l8 skedul8r?
 use strict;use warnings;use utf8;use v5.10;use Encode;
 use Octology::a8;#se Octology::c8;
-use Octology::b8;use Octology::d8;my $VERSION='0.0';my $d8VS='L2RLIKEN';my $name=$0;$name =~ s/^.*\///;my $Dbug=0; # version,program name
+use Octology::b8;use Octology::d8;my $VERSION='0.0';my $d8VS='L46M46AI';my $name=$0;$name =~ s/^.*\///;my $Dbug=0; # version,program name
 open my $out8,'>&',STDOUT or die "Can't open  duplic8 STDOUT handle: $!";binmode $out8,':encoding(UTF-8)';select($out8);$|=1; # crE8 locl autoflush dup of glbl
 if(           @ARGV && $ARGV[0]=~ /^-*h/i){say $out8 " ckm8  - experimental   Curses and SDL Chess program  Vers:$VERSION  d8VS:$d8VS by Auth:$Auth
   <pW>v<pK>  sets roster tags for Players White and BlacK and for output filename where pW and pK are single-letter keys in the player registry hash (v optnal)
@@ -135,17 +136,17 @@ if(      2 <= @ARGV && $ARGV[0]=~ /^-*b/i){my $xcbd=decode('UTF-8',$ARGV[1]);if(
 #                            WQueen    ♕     U+2655   &#9813;         kqueen    ♛     U+265B   &#9819;         # White   KQRBIP: ♔ ♕ ♖ ♗ ♘ ♙
 #                            WPawn     ♙     U+2659   &#9817;         kpawn     ♟     U+265F   &#9823;         # black   kqrbip: ♚ ♛ ♜ ♝ ♞ ♟
 #32 characters:RIBKQSTO                PAWNCDEF      <White         black> pawncdef                     ribkqsto
-#     Rook   ♖ Rosie   Roost           Pawn ♙ Philip  Phalanx              pawn ♟ porter poison         rook   ♜ rachel  ruins
-#   knIght   ♘ Igor    Isle           pAwn  ♙ Angie   Anvil               pawn  ♟ audry  arid         knight   ♞ ivan    injure
-#     Bishop ♗ Brenda  Brave         paWn   ♙ William Water              pawn   ♟ wayne  waste          bishop ♝ barbara blood
-#     King   ♔ Ken     Kind         pawN    ♙ Natalie Nature            pawn    ♟ norma  noose          king   ♚ kilgore kraven
+#     Rook   ♖ Rachel  Roost           Pawn ♙ Philip  Phalanx              pawn ♟ porter poison         rook   ♜ rosie   ruins
+#   knIght   ♘ Isaac   Isle           pAwn  ♙ Angie   Anxiety             pawn  ♟ audry  arid         knight   ♞ ivan    injure
+#     Bishop ♗ Beppu   Blaksmth      paWn   ♙ William Water              pawn   ♟ wayne  waste          bishop ♝ barbara blood
+#     King   ♔ Ken     Knowing      pawN    ♙ Natalie Nature            pawn    ♟ norma  noose          king   ♚ kilgore kraven
 #     Queen  ♕ Quill   Quest      pawn C    ♙ Curtis  Carver          pawn c    ♟ clint  caustic        queen  ♛ quartz  quasher
-#   biShop   ♗ Steven  Smith      pawn D    ♙ Dottie  Driver          pawn d    ♟ donna  decay        bishop   ♝ shawn   slayer
+#   biShop   ♗ Stuart  Smith      pawn D    ♙ Darjee  Dashing         pawn d    ♟ dottie drowns       bishop   ♝ shawn   slayer
 #knighT      ♘ Timmy   Trotter    pawn E    ♙ Evan    EvergrEn        pawn e    ♟ exon   evil      knight      ♞ trina   trample
 #    rOok    ♖ Orville Olive      pawn F    ♙ Fran    Fire            pawn f    ♟ fiona  frost         rook    ♜ oden    operose
 my %Pnmz =('P'=>['     PimP  ','Poploly','Phatty  '],  # could pick random 8th of: 'PYROpyro' keyz to produce constant Pip promotions along with plyz;
-           'p'=>['     Phawn ','Phil   ','Phoenix '],  # 2du:mk PawnPip auto-exchange positions whenever captured, so I&&KingKen keep each othr alive;
-           'Y'=>['Pyro-maniac','Pip    ','Piper   '],  # Phlame && phire phrom phuel pressing powdered product to produce plumes of amPhetamine vaPor;
+           'p'=>['     Phawn ','Peppy  ','Power   '],  # 2du:mk PawnPip auto-exchange positions whenever captured, so I&&KingKen keep each othr alive;
+           'Y'=>['Pyro-maniac','Pip    ','Phoenix '],  # Phlame && phire phrom phuel pressing powdered product to produce plumes of amPhetamine vaPor;
            'y'=>['Pyro-techno','Pippi  ','Peerless'],
            'R'=>['Presidente ','Phelipe','Primero '],  # Phallic Pito, Penocha Puss, y Puta ... con todos del Phuego!  ;)  L8r add Phil Pants or Pi8?;
            'r'=>['President  ','Pepper ','Pickle  '],
@@ -153,43 +154,46 @@ my %Pnmz =('P'=>['     PimP  ','Poploly','Phatty  '],  # could pick random 8th o
            'o'=>['Purr-king  ','Papa   ','Petting '],);
 my %pnam =('R'=>['     Rook  ','Rachel ','Roost   '],  # now lots of names from more extended family: uncles, aunts, cousins, nephews, nieces, pets...
            'I'=>['   knIght  ','Isaac  ','Isle    '],  #   ...leaving only a handful of first names now unoccuppied by rel8ives in some 4m or another;
-           'B'=>['     Bishop','BowBeau','Brave   '],
+           'B'=>['     Bishop','Beppu  ','Blaksmth'],  # or Bright or Brave or Balls or Boner or Brash or Badass or Beast or Bruiser or BigBud or Bit;
            'K'=>['     King  ','Ken    ','Knowing '],
            'Q'=>['     Queen ','Quill  ','Quest   '],
            'S'=>['   biShop  ','Stuart ','Smith   '],
            'T'=>['knighT     ','Timmy  ','Trotter '],  # Tim promoted as sole exception to gendered start square color && side (Bfore Emerson joined);
            'O'=>['   roOk    ','Orville','Olive   '],
            'P'=>['     Pawn  ','Philip ','Phalanx '],  # consider re-gener8ing any or all of my 3 P-names promoting me (with every ply made anywhere);
-           'A'=>['    pAwn   ','Angie  ','Anvil   '],
+           'A'=>['    pAwn   ','Angie  ','Anxiety '],
            'W'=>['   paWn    ','William','Water   '],  # Chris' && our childhood cat Walter (White/Grey TuxedoBoy) also nearly mentioned with "Water";
            'N'=>['  pawN     ','Natalie','N8ure   '],  # may add gender ambiguous name "Chris" for Stearns && Nitzschke over Tim && amanda's son Crew;
            'C'=>['pawn C     ','Crew   ','Courage '],  # Dottie Divine demoted, Darjeeling (Darjee Darling) promoted, Tim now tipping more male again;
-           'D'=>['pawn D     ','Duke   ','Daring  '],  # Dottie Dream  demoted, Darjeeling (Darjee Divine ) promoted, after staying as D in altern8Pc;
+           'D'=>['pawn D     ','Darjee ','DjangDog'],  # Dottie Dream  demoted, Darjeeling (Darjee Divine ) promoted, after staying as D in altern8Pc;
            'E'=>['pawn E     ','Emerson','EvergrEn'],  # added more of Tim&&amanda's kids' names onto the White side of P&&A neice&&nephew pawns2gthr;
-           'F'=>['pawn F     ','Finley ','Fire    '],  # sorry if I got any names or spelling wrong, not sorry though since family has ostracized me!;
+           'F'=>['pawn F     ','Felicia','Fire    '],  # sorry if I got any names or spelling wrong, not sorry though since family has ostracized me!;
            'p'=>['     pawn  ','piper  ','poison  '],
            'a'=>['    pawn   ','amanda ','arid    '],  # could add Tim's wife amanda here on White-side by displacing Angie to blacK-side withDot&&Ro;
            'w'=>['   pawn    ','walter ','w8r-tux '],
            'n'=>['  pawn     ','nina   ','noachite'],
            'c'=>['pawn c     ','chris  ','caustic '],
-           'd'=>['pawn d     ','darjee ','darkdot '],  # dottie drunk  demoted again to not matter in my ranking of close family compared with my cat;
+           'd'=>['pawn d     ','dan4th ','darkdot '],  # dottie drunk  demoted again to not matter in my ranking of close family compared with my cat;
            'e'=>['pawn e     ','emma   ','erosion '],  # interesting that "pawn d" or "pd" are rot8ions of each other with 4mer far mor vers8ile than;
-           'f'=>['pawn f     ','fiona  ','frost   '],
+           'f'=>['pawn f     ','finley ','frost   '],
            'r'=>['     rook  ','rosann ','rosary  '],  # demoted Rosie to the dark-side along with Maga as now just a DarkDot punctu8ing pd last-name;
-           'i'=>['   knight  ','ivan   ','injure  '],
-           'b'=>['brutlbishop','breakin','boxstein'],  # David, Edith, && DaughterChoker should go broke paying me back 4all they stole in Jan.2009! ;
+           'i'=>['   knight  ','ivan   ','injury  '],
+           'b'=>['bleedbishop','broken ','boxstein'],  # David, Edith, && DaughterChoker should go broke paying me back 4all they stole in Jan.2009! ;
            'k'=>['     king  ','kilgore','kraven  '],  ##  4 above, I've wanted pay-back && property-restor8ion,B4 chopd right thumbs && crucifiX3ion;
            'q'=>['     queen ','quartz ','quasher '],
-           's'=>['   bishop  ','s8n    ','slayer  '],  # sounds lIk: "Satan's Lair" or Slayer of s8n but actually just this bloodbiShop's 1st && last;
+           's'=>['sinbishopsx','s8n-s0n','slayersx'],  # soundz lIk:"Satan's Own Lair" or Slayer of s8n-s0n but actually just this biShop's 1st&&last;
            't'=>['knight     ','tony   ','trample '],
-           'o'=>['   rook    ','oden   ','operose '],
+           'o'=>['   rook    ','oshkosh','operose '],
            'j'=>['     joker ','josh   ','junkyard'],  # decided hiding White:Jesus Versus. blacK:s8n could work out better for maybe l8r meta-battle dynamix;
            'J'=>['     Joker ','Jesus  ','Jouster '],  # had goYim && Yid 4 Y'shua instead of Jesus or Josh (hiding from s8n on White-side in back-up roster);
+          #'J'=>['  JewJumps ','Jenica4','JackJobs'],  # maybe I could throw a priv8 sensual sweaty Happy 18th BirthDay party to celebr8 && taste ripe adult?;
            'G'=>['Grandmaster','Gerry  ','Gentle  '],  # could add ginny && dan altern8s after emma && noah (sort of made into non-dark last name for nina)
            'g'=>['grandmaster','gina   ','glutton '],  # add othr custom charz wi maybe mapping of new types to existing to inherit icon && color maps
            'M'=>['     Master','Maggie ','Magnet  '],  #  ... or design8 new unique values in appropriate hashes
            'm'=>['     master','mary   ','malice  '],  # could add connor && montana Gill for more Mathews cousins to be fE8ured
-          #'H'=>['     Host  ','Happy  ','Homeboy '],  # added my Dad as "G" above && Angie's dog here, along with my old sweetest cat below
+          #'m'=>['     master','montana','mission '],  # added my Dad "G" above && Angie's Django (l8r rmvd), along with my old sweetest cat (Hiro) below;
+          #'c'=>['pawn c     ','connor ','crafty  '],
+          #'H'=>['     Host  ','Happy  ','Homeboy '],
            'H'=>['  cHancelor','Hiro   ','Honor   '],  # chancellor (R+I) from Capablanca on 10x8 && other variants
            'h'=>['archbishop ','hamhand','h8rhamer']); # archbishop (B+I)  ... but need better name letrz && more room 2 fit
    $n2tm{  'M'} ='B'; # for now add Master as alias to Bishop, even though it sounds like a cool name for a new Pc type that combines aspects of RIB by

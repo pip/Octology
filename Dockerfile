@@ -1,4 +1,4 @@
-# L43MEANS:Dockerfile crE8d by JohnBeppu-san <Beppu@CPAN.Org> for Pip's GitHub Octology;my $d8VS='L45MEATY';
+# L43MEANS:Dockerfile crE8d by JohnBeppu-san <Beppu@CPAN.Org> for Pip's GitHub Octology;my $d8VS='L46M4vim';
 # Use a big desktop distro (Ubuntu) as base, so that graphical && audio packages are available in container;
 FROM ubuntu:20.04
 # Force TZ to avoid interactive configur8ion; Also TERM BlO mAy quell warnings;
@@ -37,16 +37,56 @@ RUN apt-get install      -y \
   ncurses-bin               \
   libdconf-dev              \
   libdconf1                 \
+  bsdmainutils              \
   pulseaudio-utils          \
+   source-highlight          \
+  libsource-highlight4v5     \
+  libsource-highlight-common \
   dconf-gsettings-backend   \
   dconf-service             \
   dconf-cli                 \
+  xbindkeys                 \
+  xbindkeys-config          \
+  tourney-manager           \
+  dreamchess                \
+  glaurung                  \
+  gnuchess                  \
+  hoichess                  \
+  polyglot                  \
+  phalanx                   \
+  pychess                   \
+  chessx                    \
+  crafty                    \
+  sjeng                     \
+  hachu                     \
+  tagua                     \
+  uci2wb                    \
+  xboard                    \
+  sjaakii                   \
+  fairymax                  \
+  stockfish                 \
+  p7zip-full                \
+  xz-utils                  \
+  screen                    \
+  orpie                     \
   bzip2                     \
+  aview                     \
+  perl6                     \
+  scrot                     \
   sudo                      \
+  tmux                      \
+  yelp                      \
+  htop                      \
   curl                      \
+  dfc                       \
+  zsh                       \
   git                       \
   tio                       \
-  zsh                       \
+  vim                       \
+  vim-tiny                  \
+  vim-common                \
+  vim-runtime               \
+  youtube-dl                \
   libsmpeg-dev              \
   libsmpeg0                 \
   libsdl-sge-dev            \
@@ -62,8 +102,16 @@ RUN apt-get install      -y \
   libalien-sdl-dev-perl     \
   libalien-sdl-perl         \
   libsdl-perl               \
-  vim-tiny                  \
+  vorbis-tools              \
+  irssi-scripts             \
+  irssi-dev                 \
+  irssi                     \
+  libflac-dev               \
+  libflac8                  \
+     flac                   \
   xdotool                   \
+  mpg321                    \
+  mpg123                    \
   gst123                    \
   xclip                     \
   most                      \
