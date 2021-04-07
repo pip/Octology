@@ -1108,3 +1108,7 @@ L3TMCSJT:HTTPS://NewDiscourses.Com/2020/07/woke-wont-debate-you-heres-why "Why W
 L44MIRTL:HTTPS://YouTu.be/A_KZ3X71yQg "Why You Could Be Living Inside a Computer in Ten Years?" # L42:0OB0 of Thoughty2 on Kurzweil && futurist singularities;
 L44MMULL:HTTPS://YouTu.be/qFyCJU3AFSA "The Bizarre World of Fake Psychics, F8h Healers, and Mediums" # L3R:0l90 of SuperEyePatchWolf dealing with many frauds;
 L45MFals:HTTPS://YouTu.be/mDV3Vlrqwhc "Why Your Best Memories Might Not Have Actually Happened" # L3V:0HQ0 of Thoughty2 on frnd Wolf maybe wrongly convicted!;
+L46MFire:HTTPS://YouTu.be/xV1aKUdlljU "Firing-Squad Synchroniz8ion Problem" # L3Q:08k0 of udiprod demonstr8ing movement patterns that sync many robot gunners;
+L46MIDAS:HTTPS://YouTu.be/VB_GWz25B3Q "What if the World Turned to Gold? - The Gold Apocalypse" # L39:09G0 of Kurzgesagt on some lame gold, but dur8:08L0 rad!
+# They've crE8d an incredibly vivid && probably carefully researched && super-inform8ive "Map of Evolution" which I would really like to Bcome able to afford;
+L46MKTIM:HTTPS://YouTu.be/kUIYI34CdkE "Why Don't We Have Metric Time? | Answers With Joe" # L38:0JW0 of JoeScott on France && attempt to adopt b10 MetricTime;

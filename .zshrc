@@ -30,7 +30,7 @@ unsetopt                \
 # auto_pushd            \# setng addz dirz 2 stack wN just normally chngng 2 thM (wich I du not normally lIk or want)
 # ksh_arrays            \# rEmMbr wNwrItng scrptz[or funcz]2include'setopt [localoptions] ksharrays'sO arAzR 0-bAsed(but!glOblBcuzmOst scrptzRstndrdly 1-bAsed)
 # re_____match_____pcre \# mA want2set for Z-SHell scripting RegularExpressions to utilize PerlCompatibility styles && mA insert 'zmodload zsh/(pc)?re(gex)?';
-export Vers='0.0';export d8VS='L45M1Dkr';export Auth='PipStuart <Pip@CPAN.Org>'; # not Xportng $b sinc cOlIdz wi sort{$a <=> $b} /defhijlnqstuvx/i + AZ 4golf;
+export Vers='0.0';export d8VS='L46MEmax';export Auth='PipStuart <Pip@CPAN.Org>'; # not Xportng $b sinc cOlIdz wi sort{$a <=> $b} /defhijlnqstuvx/i + AZ 4golf;
 if     [[       "$SHELL"    == "" ]]; then       export SHELL=`  which zsh`;fi # 8sh should parse this && OverId it    # shud `man zshall` /OSTYP 2lern4BlO
 if     [[       "$HOSTNAME" == "" ]]; then       export HOSTNAME=`hostname`;fi #`hostname`retnz fsckd nwlInz\n4CygWinzRxvt... ||smthng els lame  =(
 if     [[       "$HOST"     == "" ]]; then       export HOST   ="$HOSTNAME";fi;export VERBOSE='1'; # set flag to print debug && status info from system utilz
@@ -89,9 +89,9 @@ else alias clrz='een "${z}nOt:b alsO DfInd2B SKpb 2m@ch glObal sort perl var in 
 export JAVA_HOME='/usr/lib/jvm/default-java';export LLVM_INSTALL_DIR='/usr/include/llvm';     # D7PM1TjA:upd8d4Ubu13.04&&ant4Android dvl 2add2pathBlO
 export NODE_VERSION='v10.16.0'; # J5BMGHVf:NodeJS installed into /usr/local/lib/nodejs/node-v10.15.3-linux-x64/ according to:  J6KM5W16:upd8d to LTS version;
 export NODE_DISTRO='linux-x64';alias  erd='expo r d80k';alias epd='expo p d80k'; #   HTTPS://GitHub.Com/nodejs/help/wiki/installation instructionz; r=start
-                               alias xord='erd';  alias xopd='epd';alias xo='expo';  # used to prefer xo => expo, but 4-char is already short enuf; p=publish
+alias em='emacs';              alias xord='erd';  alias xopd='epd';alias xo='expo';  # used to prefer xo => expo, but 4-char is already short enuf; p=publish
 ulimit  -c 65536; # 33,553,920-bytes # setz coredump size limit2 32MB (4Dbugng) wher #-param is *512-byte blox or 'unlimited' canBUsed  # /opt/Qt5.13.1-pnp/bin
-typeset -U path ;path=($HOME/bin $HOME/.local/bin /usr/local/sbin /usr/sbin /sbin . $HOME/dvl/t8/node/node-$NODE_VERSION-$NODE_DISTRO/bin
+typeset -U path ;path=($HOME/bin $HOME/.local/bin /usr/local/sbin /usr/sbin /sbin . $HOME/dvl/t8/node/node-$NODE_VERSION-$NODE_DISTRO/bin $HOME/.emacs.d/bin
   /usr/local/bin /usr/bin /bin /opt/bin $HOME/lib/perl5/bin $HOME/lib/Octology/f8/pal8 $HOME/dvl/t8/dmd/linux/bin $JAVA_HOME/bin $HOME/.vim/bundle/vim-superman/bin $path);
 # old:atmptd2nstl DMDv2.052 on Java7OpenJDK && GoogleAndroid-18 (4.2), now J5BMGPOM:tryng2setup l8st NodeJS 4 React_n8ive Expo d8ok nstdof nodebrew hopefully;
 #          path=($path  $HOME/dvl/t8/node $HOME/.nodebrew/current/bin );export path; # I7CMBrew:got GitHub NodeBrew 4NodeJS; Not sure why src doesn't get this?
@@ -322,7 +322,7 @@ alias gsgL='                gsg com.canonical.Unity.Launcher  favorites '; # fro
 #   'application://firefox.desktop', 'application://krita.desktop', 'application://gimp.desktop', 'application://inkscape.desktop',
 #   'application://fontforge.desktop', 'application://audacity.desktop', 'application://update-manager.desktop', 'application://ccsm.desktop',
 #            'unity://expo-icon', 'unity://devices', 'application://org.gnome.Nautilus.desktop']; # where .desktop files could be in (/usr|~/.local)/share/ap*;
-alias emrg='     echo "emrg justAbrvz: emerge Try em 4shrtDfltOptz"; emerge';alias em='emu'; # fav emrg dfaltz:    --colmz -va --kp-go -Du (+-N 4sys|wrld)
+alias emrg='     echo "emrg justAbrvz: emerge Try em 4shrtDfltOptz"; emerge'; #ias em='emu'; # fav emrg dfaltz:    --colmz -va --kp-go -Du (+-N 4sys|wrld)
 alias emcol='emerge --columns -v';alias eM='em     -v' # --columns vert-alinz pkg-name,vers,use-flagz       (-v == --verbose      )
 alias emrga='    emcol  -a';alias emrge='   emrga  -e' # --ask                                              (-e == --emptytree    ) (eg,wrld4UsrModeLnux)
 alias emrgk='emrga  --keep-going';alias eN='em     -N' # --ask --keep-going was my preferred emrg dflt optz (-i == --info         )
@@ -608,8 +608,9 @@ alias    gacm='    gac          '; # should maybe make as function which takes p
 alias    gpom='    git push origin master';alias g8st8='g8st';alias g8s='g8 s';alias g8h='g8 h';alias g8l='g8 l';alias g8d='g8 d';alias g8p='g8 p';
          gap()  {  gac $1;gpom   } # above shortcuts are: status,           show,            help,            log,             diff,            pull
 alias    dkr='  docker';alias dkrb='dkr build . -t oct';alias dkrun='dkr run';alias dkri='dkr images'; # Beppu-san did Docker, build ". -t oct", run "-it oct";
-alias    dokr='   dkr ';alias dkrp='dkr ps';alias dkrn='dkrun --mount type=bind,source=/home/pip/.log,target=/home/pip/.log -it oct'; # 2du:prune imgz! ;
-alias       n=' ncal  ';alias dkre='dkr exec -it';alias dkrnmtio='dkrn'; dkrx(){dkre `dkrp|hl 2 1|c8 0-1` zsh} # && apNd (from dkrp) "$id zsh" wi id 14hx-chrz;
+alias    dokr='   dkr ';alias dkrp='dkr ps'; #ias dkrn='dkrun --mount type=bind,source=/home/pip/.log,target=/home/pip/.log -it oct'; # 2du:prune imgz! ;
+alias    dkrn=" dkrun -e DISPLAY -v type=bind,source=/home/pip/.log,target=/home/pip/.log  -v /tmp/.X11-unix:/tmp/.X11-unix -it oct";
+alias       n=' ncal  ';alias dkre='dkr exec -it';dkrx(){dkre `dkrp|hl 2 1|c8 0-1` zsh} # && apNd (from dkrp) "$id zsh" wi id 14hx-chrz;
 alias       N='  calN '; #  N    :            calN (use `rsn` ReSize4calN 171x57 to show 19-Years, 2000-2018 solidly in slightly lRgr than Dflt 160x50 size)
 alias    caln='  calN ';
 alias      l8='  calN '; #  l8   :            cal|cron|at|batch

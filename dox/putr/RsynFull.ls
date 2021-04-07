@@ -5,6 +5,7 @@ lib/Math
 lib/Pip
 bin
 .Hrc
+.Hrc.
 .lrc
 .lsrc
 .zshrc
@@ -13,9 +14,12 @@ bin
 .vim
 .Xrc
 .xinitrc
+.mikmodrc
 .gitconfig
 .shl.style
+.emacs.d
 .mplayer
+.docker
 .irssi
 .bak
 .log

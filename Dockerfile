@@ -181,16 +181,17 @@ COPY --chown=pip:pip  mvz  /home/pip/mvz/
 RUN  curl  -sfLo      /home/pip/.vim/autoload/plug.vim --create-dirs  \
   https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim \
   && chown -R pip:pip /home/pip/.vim
-#    su    -c "vim +'PlugInstall --sync' +qa" pip
+ENV  NO_AT_BRIDGE=1
 # Set a default command for the container;
-CMD  su - pip
-# Build:   `dkrb`
+#    su    -c "vim +'PlugInstall --sync' +qa" pip
+CMD  su    -l pip  -w DISPLAY,NO_AT_BRIDGE  -c 'echo "Welcome to Pip's Octology! Please try: en $R Red $o orn $Y Yel $G Grn $C Cyn $B Blu $M Mgn $p prp $z;"'
+# Build:  `dkrb`
 #   docker build . -t oct
-# Run  :   `dkrn`
+# Run  :  `dkrun`
 #   docker run    -it oct
-# Run w/ local directory mounted inside container:        `dkrnmtio`
-#   docker run --mount type=bind,source=/local/dir,target=/container/dir -it oct
-# List currently running docker containers       :        `dkrp`
+# Run w/ local directory mounted inside container :        `dkrn`
+#   docker run -v type=bind,source=/local/dir,target=/cntnr/dir -it oct
+# List   currently   running   docker   containers:        `dkrp`
 #   docker ps
 # Connect to running docker container by id (found via `docker ps`): `dkre` or `dkrx` (latter zsh function which captures first id from dkrp output list);
 #   docker exec   -it $id zsh

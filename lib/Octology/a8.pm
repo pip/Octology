@@ -184,7 +184,13 @@ sub chp8{ # should do similar stuff but all may need to use joined layer keyz wi
   for(0..$#{$cmsp{'8ANSI'}}){my $mlet=$cmsp{'8ANSI'}[$_]; # also now doing H && h very similarly here (had to add 90/100+ map in %Sdsr above)
                              my $modc=$_ % 16;      $mc2F{'O'.$mlet} =$Sdsr{       $cmsp{'8ANSI'}[$modc] };
                                               $mF2c{$mc2F{'O'.$mlet}}=      'O'.   $cmsp{'8ANSI'}[$modc]  ;
-                             my $s220=              $mc2F{'O'.$mlet}; $s220=~ s/22/00/;
+                                                    $mc2F{    $mlet} =$Sdsr{       $cmsp{'8ANSI'}[$modc] };
+                                              $mF2c{$mc2F{    $mlet}}=      'O'.   $cmsp{'8ANSI'}[$modc]  ;
+                             my $s220=              $mc2F{'O'.$mlet}; $s220=~ s/^ 22 /00/x; # double-map the SKp-cOd digitz that just unBold 2du Normal2;
+                                              $mF2c{          $s220 }=      'O'.   $cmsp{'8ANSI'}[$modc]  ;
+                                                                      $s220=~ s/^ 0    //x; # trying2get `een "\e[0;32m"|c` && `een "\e[1;32m"|c` 2work!;
+                                              $mF2c{          $s220 }=      'O'.   $cmsp{'8ANSI'}[$modc]  ;
+                                                                      $s220=~ s/^[01]; //x; #   && try2get just 30..37 also as altern8 mapz2 Orig layer2;
                                               $mF2c{          $s220 }=      'O'.   $cmsp{'8ANSI'}[$modc]  ;
                                 $modc=$_ %  8;      $mc2b{'o'.$mlet} =$Sdsr{'b'.lc($cmsp{'8ANSI'}[$modc])};
                                               $mb2c{$mc2b{'o'.$mlet}}=      'o'.   $cmsp{'8ANSI'}[$modc]  ;
@@ -595,9 +601,10 @@ sub c{my $Sstr=shift;if(!defined($Sstr) && !-t STDIN){chomp($Sstr= join('',<STDI
             $Sstr='' unless  ( defined($Sstr));
   while    ($Sstr=~ s/\e\[([\d;]+)m //x){my $numz=$1;
     while  ($numz=~ s/^ ;?( \d+  );?//x){my $digz=$1; # could a semicolon precede digitz? might want to substitute out of numz below after confirmed existz
-      if   ($digz=~  /^(0[01]|22)$/  && $numz=~ s/^(3[0-7]  );?//x && exists($mF2c{"$digz;$1"})){$codF = $mF2c{ "$digz;$1"};} # Dtect stndRd singl colrz
-      elsif($digz=~  /^ 4[0-7]   $/x &&                               exists($mb2c{ $digz    })){$codb = $mb2c{  $digz    };} # with O or o layer
-      elsif($digz=~  /^ 9[0-7]   $/x &&                               exists($mF2c{ $digz    })){$codF = $mF2c{  $digz    };} # &&   H or h layers now too
+      if   ($digz=~/^(0*?[01]|22)$/x && $numz=~ s/^(3[0-7]  );?//x && exists($mF2c{"$digz;$1"})){$codF = $mF2c{ "$digz;$1"};} # Dtect stndRd singl colrz
+      elsif($digz=~  /^ 3[0-7]   $/x &&                               exists($mF2c{ $digz    })){$codF = $mF2c{  $digz    };} # with O or o layers
+      elsif($digz=~  /^ 4[0-7]   $/x &&                               exists($mb2c{ $digz    })){$codb = $mb2c{  $digz    };}
+      elsif($digz=~  /^ 9[0-7]   $/x &&                               exists($mF2c{ $digz    })){$codF = $mF2c{  $digz    };} #   && H or h layers now too
       elsif($digz=~  /^10[0-7]   $/x &&                               exists($mb2c{ $digz    })){$codb = $mb2c{  $digz    };}
       elsif($digz=~  /^(0[01]|22)$/x && $numz=~  /^(38;5;\d+);? /x && exists($mF2c{"$digz;$1"})){$codF = $mF2c{ "$digz;$1"};  # catch new Bold XtNdedz
                                         $numz=~ s/^(38;5;\d+);?//x;                                                         }
