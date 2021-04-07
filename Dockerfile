@@ -47,6 +47,7 @@ RUN apt-get install      -y \
   dconf-cli                 \
   xbindkeys                 \
   xbindkeys-config          \
+  x11-xserver-utils         \
   tourney-manager           \
   dreamchess                \
   glaurung                  \
@@ -178,17 +179,18 @@ COPY --chown=pip:pip  mvz  /home/pip/mvz/
 # install                     vim-plug;
 # HTTPS://GitHub.Com/junegunn/vim-plug
 # HTTPS://GitHub.Com/junegunn/vim-plug/issues/675
-RUN  curl  -sfLo      /home/pip/.vim/autoload/plug.vim --create-dirs  \
+RUN  curl  -sfLo       /home/pip/.vim/autoload/plug.vim --create-dirs \
   https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim \
-  && chown -R pip:pip /home/pip/.vim
+  && chown -R  pip:pip /home/pip/.vim
 ENV  NO_AT_BRIDGE=1
-# Set a default command for the container;
+# Set a default command for the container;  # Not sure how to best go about running a new container with own login which starts by printing some help text? ;
 #    su    -c "vim +'PlugInstall --sync' +qa" pip
-CMD  su    -l pip  -w DISPLAY,NO_AT_BRIDGE  -c 'echo "Welcome to Pip's Octology! Please try: en $R Red $o orn $Y Yel $G Grn $C Cyn $B Blu $M Mgn $p prp $z;"'
+CMD  su    -l  pip  -w DISPLAY,NO_AT_BRIDGE
+#          -c 'echo "Welcome to PipS Octology! Please try2run: ec \$R Red \$o orn \$Y Yel \$G Grn \$C Cyn \$B Blu \$M Mgn \$p prp \$z" '
 # Build:  `dkrb`
-#   docker build . -t oct
+#   docker build .  -t oct
 # Run  :  `dkrun`
-#   docker run    -it oct
+#   docker   run   -it oct
 # Run w/ local directory mounted inside container :        `dkrn`
 #   docker run -v type=bind,source=/local/dir,target=/cntnr/dir -it oct
 # List   currently   running   docker   containers:        `dkrp`
