@@ -1,2 +1,10 @@
-Welcome to PipS Octology! Please try2run:  ec $R Red $o orn $Y Yel $G Grn $C Cyn $B Blu $M Mgn $p prp $z;
+Welcome 2 PipS Octology! Please try2Run: `ec $R Red $o orn $Y Yel $G Grn $C Cyn $B Blu $M Mgn $p prp $z`;
   to see how Zsh environment variables map old ANSI escape codes and then study ~/bin/S format to gener8;
+Run: `v ~/.lrc`  # to open vim && see a lot of examples of how the Octology::c8 color code 4m@ on fIlziz;
+Rn2: `lrc;src`   # to load modific8ions to ~/.lrc, first into the dircolors-compat .lsrc, then into Zsh!;
+Rn3: `S -h;ec;c -h`  # to see the current very basic help text from S(eScape-gener8or) && c(8-color8or)!;
+Rn4: `ftst`      # to see the gamut of Perl (&& often shell-script too) file-tests with many other d8az!;
+Rn5: `a8;lodH`   # to see ~/.Hrc rendered with colors according to 2 different types of d8a-struct loadz;
+Rn6: `wh8`       # to see 80x25 or 160x50 big colored block of my first 64 single-char (+otherz) aliasez;
+Rn7: `sumb`      # to see the prime 96 ~/bin binary-executable files that Octology has (`sumb 2` 4 Xtra);
+# If you can configure your hopefully Gnome-Terminal (or at least VTE-based) PTTY program 2 160x50, duit;

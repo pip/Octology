@@ -165,7 +165,9 @@ RUN cpanm  --notest         \
 # HTTPS://StackOverFlow.Com/a/1022024
 RUN useradd -m -G sudo -s /bin/zsh -p aaoCFznDGNVHs pip
 RUN echo 'cat /etc/motd' >> /etc/zsh/zprofile
-# Copy core Octology files into: pip's $HOME;
+RUN echo 'Oct'    > /etc/hostname
+RUN echo "l8r run: 'sudo hostname Oct;' or 'dkrx' then 'hn Oct;x' ;"
+# Copy core Octology files into: pip's $HOME; Above set what probably came from Oni,Aku,Ryu,Ken to Oct;
 COPY --chown=pip:pip .Hrc .Xrc .bashrc .lrc .lsrc \
   .shl.style .vimrc .zshrc /home/pip/
 COPY       .log/motd .log/asound.conf /etc/
@@ -191,7 +193,7 @@ CMD  su    -l  pip  -w DISPLAY,NO_AT_BRIDGE
 #          -c 'echo "Welcome to PipS Octology! Please try2run: ec \$R Red \$o orn \$Y Yel \$G Grn \$C Cyn \$B Blu \$M Mgn \$p prp \$z" '
 # Build:  `dkrb`
 #   docker build .  -t oct
-# Run  :  `dkrun`
+# Run  :  `dkrun`    # probably `dkrs` prunes system && `dkra` for -all
 #   docker   run   -it oct
 # Run w/ local directory mounted inside container :        `dkrn`
 #   docker run -v type=bind,source=/local/dir,target=/cntnr/dir -it oct
