@@ -164,9 +164,11 @@ RUN cpanm  --notest         \
 # HTTPS://StackOverFlow.Com/a/27703359
 # HTTPS://StackOverFlow.Com/a/1022024
 RUN useradd -m -G sudo -s /bin/zsh -p aaoCFznDGNVHs pip
+RUN echo 'cat /etc/motd' >> /etc/zsh/zprofile
 # Copy core Octology files into: pip's $HOME;
 COPY --chown=pip:pip .Hrc .Xrc .bashrc .lrc .lsrc \
   .shl.style .vimrc .zshrc /home/pip/
+COPY       .log/motd .log/asound.conf /etc/
 COPY --chown=pip:pip .log  /home/pip/.log/
 COPY --chown=pip:pip  lib  /home/pip/lib/
 COPY --chown=pip:pip  bin  /home/pip/bin/

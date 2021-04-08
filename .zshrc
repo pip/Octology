@@ -30,7 +30,7 @@ unsetopt                \
 # auto_pushd            \# setng addz dirz 2 stack wN just normally chngng 2 thM (wich I du not normally lIk or want)
 # ksh_arrays            \# rEmMbr wNwrItng scrptz[or funcz]2include'setopt [localoptions] ksharrays'sO arAzR 0-bAsed(but!glOblBcuzmOst scrptzRstndrdly 1-bAsed)
 # re_____match_____pcre \# mA want2set for Z-SHell scripting RegularExpressions to utilize PerlCompatibility styles && mA insert 'zmodload zsh/(pc)?re(gex)?';
-export Vers='0.0';export d8VS='L46MEmax';export Auth='PipStuart <Pip@CPAN.Org>'; # not Xportng $b sinc cOlIdz wi sort{$a <=> $b} /defhijlnqstuvx/i + AZ 4golf;
+export Vers='0.0';export d8VS='L48MHspa';export Auth='PipStuart <Pip@CPAN.Org>'; # not Xportng $b sinc cOlIdz wi sort{$a <=> $b} /defhijlnqstuvx/i + AZ 4golf;
 if     [[       "$SHELL"    == "" ]]; then       export SHELL=`  which zsh`;fi # 8sh should parse this && OverId it    # shud `man zshall` /OSTYP 2lern4BlO
 if     [[       "$HOSTNAME" == "" ]]; then       export HOSTNAME=`hostname`;fi #`hostname`retnz fsckd nwlInz\n4CygWinzRxvt... ||smthng els lame  =(
 if     [[       "$HOST"     == "" ]]; then       export HOST   ="$HOSTNAME";fi;export VERBOSE='1'; # set flag to print debug && status info from system utilz
@@ -609,8 +609,8 @@ alias    gpom='    git push origin master';alias g8st8='g8st';alias g8s='g8 s';a
          gap()  {  gac $1;gpom   } # above shortcuts are: status,           show,            help,            log,             diff,            pull
 alias    dkr='  docker';alias dkrb='dkr build . -t oct';alias dkrun='dkr run';alias dkri='dkr images'; # Beppu-san did Docker, build ". -t oct", run "-it oct";
 alias    dokr='   dkr ';alias dkrp='dkr ps'; #ias dkrn='dkrun --mount type=bind,source=/home/pip/.log,target=/home/pip/.log -it oct'; # 2du:prune imgz! ;
-alias    dkrn=" dkrun -e DISPLAY -v type=bind,source=/home/pip/.log,target=/home/pip/.log  -v /tmp/.X11-unix:/tmp/.X11-unix -it oct";
-alias       n=' ncal  ';alias dkre='dkr exec -it';dkrx(){dkre `dkrp|hl 2 1|c8 0-1` zsh} # && apNd (from dkrp) "$id zsh" wi id 14hx-chrz;
+alias    dkrn="dkrun -e DISPLAY --mount type=bind,source=/home/pip/.log,target=/home/pip/.log -v /tmp/.X11-unix:/tmp/.X11-unix -it oct";
+alias       n=' ncal  ';alias dkre='dkr exec -it';alias dkrs='dkr system prune -a';dkrx(){dkre `dkrp|hl 2 1|c8 0-1` zsh} # && apNd fm`dkrp` "$id zsh"14hx-chrz;
 alias       N='  calN '; #  N    :            calN (use `rsn` ReSize4calN 171x57 to show 19-Years, 2000-2018 solidly in slightly lRgr than Dflt 160x50 size)
 alias    caln='  calN ';
 alias      l8='  calN '; #  l8   :            cal|cron|at|batch
