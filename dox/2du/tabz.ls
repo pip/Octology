@@ -1,5 +1,6 @@
 # D4QMFYJV:tabz.ls crE8d by PipStuart <Pip@CPAN.Org> to at least .LiSt (if not also describe && comment on) collectionz of web-browser TAB address URL linkz;
 # Note:While I usually prefer to append d8a to most listz being extended in text-files, tabz.ls varE8ion invertz this tendency to prepend insertions instead;
+L49MEANS: HTTPS://YouTu.be/Ws6qmXDJgwU "A Mathematician's Lament" # L2C:0BI0 of Tibees with still yet another very odd VietNamEse Captz of quite-knowing AI?;
 L3SM0KED: HTTPS://YouTu.be/mu4TwhJRv3I "What Do They Teach in Schools These Days?" # L3Q:0XH0 of VicedRhino && another VietNamEse Captz of super-knowing AI?;
 L3RMANam: HTTPS://YouTu.be/RWxGp2UH5MM "Why Does Time Even Exist?" # L3C:0700 of SciencePhileTheAI on time itself with VietNamEse Captionz found still again;
 L2SLIFOX: HTTPS://YouTu.be/Cra2tdtagqA "Best Gaming Music 2021 - Best of EDM - NCS,MonsterCat,Trap,Bass,DubStep,DnB,House" # L2M:1J80 7cloud HotSt 4Fox4Fux!;

@@ -1,5 +1,5 @@
 # HBQLISTV:know.ls crE8d by PipStuart <Pip@CPAN.Org> to duplic8 Dr. Jordan B. Peterson's Quora.Com answer of "40 most valuable things everyone should know";
-# $VERSION='0.0';$d8VS='L44MIRTL'; # While this document origin8d around (&& still mainly intends to focus on) Dr. Peterson's knowledge, many others fE8ure;
+# $VERSION='0.0';$d8VS='L4DMAn8r'; # While this document origin8d around (&& still mainly intends to focus on) Dr. Peterson's knowledge, many others fE8ure;
 # 2du:start chronicling Dr. Peterson's many topical videos with new section for post-title subject summaries or explor8ion;
 0)"Tell the truth."                                            K) Ask someone to do you a small favour, so that he or she can ask you to do one in the future.
 1) Do not do things that you h8.                               L)"Make friends with people who want the best for you."
@@ -343,7 +343,7 @@ HTTPS://YouTu.be/NL4uBOA9Dnk "Always Check the Label!" # I6PMLabl:8m of ShannonQ
 #   just a distill8ion into something like "Modern Bibles are the best proof of Yisrael's God's perceived influence, involvement, && maybe somehow inerrancy"
 #   such that there must remain scarcely any new opportunities to witness acts of any possibly recognizable gods or God, if any exist sufficiently beyond
 #   inculc8d && indoctrin8d imagin8ions. An observable (even if unapproachable) god, or not by sight but verifiable as somehow conspicuously && ongoingly
-#   active in some part of our physical universe, then time would accumul8 commonality of accounts vouching for some actual deity performing in Mothern8ure.
+#   active in some part of our physical universe, then time would accumul8 commonality of accounts vouching for some actual deity performing in Mother-n8ure.
 # Contempl8ing the probably progressively increasingly accur8 estim8ions for the age of our universe, star, plan8, && life contrasting anachronistic crE8ion
 #   accounts complic8ing the word "Day", as conveniently taking symbolic mythical meaning once literal interpret8ion has become sufficiently contradicted.
 # Then maybe it was always necessarily a fable in a form our minds could identify with, even if a Day makes no sense without our plan8 rot8ing to our Sun?
@@ -1112,3 +1112,13 @@ L46MFire:HTTPS://YouTu.be/xV1aKUdlljU "Firing-Squad Synchroniz8ion Problem" # L3
 L46MIDAS:HTTPS://YouTu.be/VB_GWz25B3Q "What if the World Turned to Gold? - The Gold Apocalypse" # L39:09G0 of Kurzgesagt on some lame gold, but dur8:08L0 rad!
 # They've crE8d an incredibly vivid && probably carefully researched && super-inform8ive "Map of Evolution" which I would really like to Bcome able to afford;
 L46MKTIM:HTTPS://YouTu.be/kUIYI34CdkE "Why Don't We Have Metric Time? | Answers With Joe" # L38:0JW0 of JoeScott on France && attempt to adopt b10 MetricTime;
+L48MLcpu:HTTPS://YouTu.be/CkNn98WE5_k "Why Making Chips is So Hard" # L3P:0G20 of TechAltar on InstructionSetArchs,ChipDesign,Fabric8ion,Equip&&SoftWare,Pkgz;
+L4DMBlue:HTTPS://YouTu.be/D1-WuBbVe2E "Why the Ancient Greeks Couldn't See Blue" # KBO:06d0 of ASAPScience on how almost every early civiliz8ion developed the
+#   words for blacK, White, && Red first, followed by Green && Yellow, && finally Blue (then possibly Pink && others). Named colors seem to modify perception;
+L4DMBone:HTTPS://YouTu.be/_zJzTMuemBI "Why Do Our Bones Make Our Blood?" # L3G:04F0 of SciShow on how land-animal bones && marrow shield hematopoietic stem &&
+#   progenitor cells from harmful effects of direct SunLight, which would cause UV-damage if unobstructed. For fish && tadpoles, kidneys or liver makes blood;
+L4DMCanU:HTTPS://YouTu.be/mlzV6fS-3SY "Can You Reason with UnReasonable People?" # L49:1UY0 of TheThinkingAtheist (SethAndrews) on how doubting && leaving f8h
+#   behind can be reasoned through via thoughtful convers8ions. Has ex-Christian call-in about his Dad && StreetEpistemology (AnthonyMagnabosco) talk methods;
+L4DMKNOW:HTTPS://YouTu.be/F2s7vyKucis "Is the Universe Finite?" # JC2:0Gc0 of PBSSpaceTime on CosmicMicrowaveBackground && positive-curv8ure for hyper-sphere;
+L4FMECHQ:HTTPS://YouTu.be/tQSbms5MDvY "Planck's Constant and the Origin of Quantum Mechanics | SpaceTime | PBSDigitalStudios" # G6M:0FF0 of gr8 PBSSpaceTime!;
+L4FMFACE:HTTPS://YouTu.be/w2OHZ9avd2M "The Changing Face of Jesus" # IB6:0Rm0 of TheThinkingAtheist (SethAndrews) on how apologist views are quite subjective;

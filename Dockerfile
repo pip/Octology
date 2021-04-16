@@ -151,23 +151,24 @@ RUN apt-get install      -y \
 # HTTPS://StackOverFlow.Com/a/57158691
 ENV      LANG=en_US.UTF-8   \
        LC_ALL=en_US.UTF-8   \
-     LANGUAGE=en_US:en
-# install 3rd-party Perl dependencies;
+     LANGUAGE=en_US:en      \
+ NO_AT_BRIDGE=1
+# install 3rd-party Perl5 dependencies;
 RUN cpanm  --notest         \
   Time::DaysInMonth         \
   Time::PT                  \
   Text::CSV                 \
   Term::ReadKey             \
-  Curses                    \
-  Color::Similarity
-# Add a unix user;
+  Color::Similarity         \
+  Curses
+# Add a unix user (just 'pip' for now);
 # HTTPS://StackOverFlow.Com/a/27703359
 # HTTPS://StackOverFlow.Com/a/1022024
 RUN useradd -m -G sudo -s /bin/zsh -p aaoCFznDGNVHs pip
-RUN echo 'cat /etc/motd' >> /etc/zsh/zprofile
-RUN echo 'Oct'    > /etc/hostname
-RUN echo "l8r run: 'sudo hostname Oct;' or 'dkrx' then 'hn Oct;x' ;"
-# Copy core Octology files into: pip's $HOME; Above set what probably came from Oni,Aku,Ryu,Ken to Oct;
+RUN echo 'cat /etc/motd;export HHst=Oct;' >> /etc/zsh/zprofile
+RUN echo 'Oct'                            >  /etc/hostname
+# RUN echo "l8r run: 'sudo hostname Oct' or 'dkrx' then 'hn Oct' ;" # Set what probably came from Oni,Aku,Ryu,orKen to Oct (or whatever HostName you want?);
+# Copy core Octology files into: pip's $HOME;  # Above should call host something other than Docker's default hexadecimal name for the container image made;
 COPY --chown=pip:pip .Hrc .Xrc .bashrc .lrc .lsrc \
   .shl.style .vimrc .zshrc /home/pip/
 COPY       .log/motd .log/asound.conf /etc/
@@ -186,7 +187,6 @@ COPY --chown=pip:pip  mvz  /home/pip/mvz/
 RUN  curl  -sfLo       /home/pip/.vim/autoload/plug.vim --create-dirs \
   https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim \
   && chown -R  pip:pip /home/pip/.vim
-ENV  NO_AT_BRIDGE=1
 # Set a default command for the container;  # Not sure how to best go about running a new container with own login which starts by printing some help text? ;
 #    su    -c "vim +'PlugInstall --sync' +qa" pip
 CMD  su    -l  pip  -w DISPLAY,NO_AT_BRIDGE

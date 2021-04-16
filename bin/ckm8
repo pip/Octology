@@ -51,7 +51,7 @@
 #   Octo is 8base d8a applic8ions:V8 abbreV8ions,b8 nums,d8 stamps,f8 RU(Red)E4||2lern8bow?pal8NtrE RGB && f0nt -##-,c8 col8 scrn,r8 valU8,m8 rel8,l8 skedul8r?
 use strict;use warnings;use utf8;use v5.10;use Encode;
 use Octology::a8;#se Octology::c8;
-use Octology::b8;use Octology::d8;my $VERSION='0.0';my $d8VS='L46M46AI';my $name=$0;$name =~ s/^.*\///;my $Dbug=0; # version,program name
+use Octology::b8;use Octology::d8;my $VERSION='0.0';my $d8VS='L4AMIKAI';my $name=$0;$name =~ s/^.*\///;my $Dbug=0; # version,program name
 open my $out8,'>&',STDOUT or die "Can't open  duplic8 STDOUT handle: $!";binmode $out8,':encoding(UTF-8)';select($out8);$|=1; # crE8 locl autoflush dup of glbl
 if(           @ARGV && $ARGV[0]=~ /^-*h/i){say $out8 " ckm8  - experimental   Curses and SDL Chess program  Vers:$VERSION  d8VS:$d8VS by Auth:$Auth
   <pW>v<pK>  sets roster tags for Players White and BlacK and for output filename where pW and pK are single-letter keys in the player registry hash (v optnal)
@@ -155,7 +155,7 @@ my %Pnmz =('P'=>['     PimP  ','Poploly','Phatty  '],  # could pick random 8th o
 my %pnam =('R'=>['     Rook  ','Rachel ','Roost   '],  # now lots of names from more extended family: uncles, aunts, cousins, nephews, nieces, pets...
            'I'=>['   knIght  ','Isaac  ','Isle    '],  #   ...leaving only a handful of first names now unoccuppied by rel8ives in some 4m or another;
            'B'=>['     Bishop','Beppu  ','Blaksmth'],  # or Bright or Brave or Balls or Boner or Brash or Badass or Beast or Bruiser or BigBud or Bit;
-           'K'=>['     King  ','Ken    ','Knowing '],
+           'K'=>['     King  ','Kenwolf','Knowing '],
            'Q'=>['     Queen ','Quill  ','Quest   '],
            'S'=>['   biShop  ','Stuart ','Smith   '],
            'T'=>['knighT     ','Timmy  ','Trotter '],  # Tim promoted as sole exception to gendered start square color && side (Bfore Emerson joined);
@@ -163,7 +163,7 @@ my %pnam =('R'=>['     Rook  ','Rachel ','Roost   '],  # now lots of names from 
            'P'=>['     Pawn  ','Philip ','Phalanx '],  # consider re-gener8ing any or all of my 3 P-names promoting me (with every ply made anywhere);
            'A'=>['    pAwn   ','Angie  ','Anxiety '],
            'W'=>['   paWn    ','William','Water   '],  # Chris' && our childhood cat Walter (White/Grey TuxedoBoy) also nearly mentioned with "Water";
-           'N'=>['  pawN     ','Natalie','N8ure   '],  # may add gender ambiguous name "Chris" for Stearns && Nitzschke over Tim && amanda's son Crew;
+           'N'=>['  pawN     ','Nathan ','Nat8or  '],  # may add gender ambiguous name "Chris" for Stearns (Natalie's), over Tim && amanda's son Crew;
            'C'=>['pawn C     ','Crew   ','Courage '],  # Dottie Divine demoted, Darjeeling (Darjee Darling) promoted, Tim now tipping more male again;
            'D'=>['pawn D     ','Darjee ','DjangDog'],  # Dottie Dream  demoted, Darjeeling (Darjee Divine ) promoted, after staying as D in altern8Pc;
            'E'=>['pawn E     ','Emerson','EvergrEn'],  # added more of Tim&&amanda's kids' names onto the White side of P&&A neice&&nephew pawns2gthr;
@@ -171,7 +171,7 @@ my %pnam =('R'=>['     Rook  ','Rachel ','Roost   '],  # now lots of names from 
            'p'=>['     pawn  ','piper  ','poison  '],
            'a'=>['    pawn   ','amanda ','arid    '],  # could add Tim's wife amanda here on White-side by displacing Angie to blacK-side withDot&&Ro;
            'w'=>['   pawn    ','walter ','w8r-tux '],
-           'n'=>['  pawn     ','nina   ','noachite'],
+           'n'=>['  pawn     ','natalie','n8urist '],  # basically half-sister Nat as "person practicing nudity for health or religion", not Nina now;
            'c'=>['pawn c     ','chris  ','caustic '],
            'd'=>['pawn d     ','dan4th ','darkdot '],  # dottie drunk  demoted again to not matter in my ranking of close family compared with my cat;
            'e'=>['pawn e     ','emma   ','erosion '],  # interesting that "pawn d" or "pd" are rot8ions of each other with 4mer far mor vers8ile than;
@@ -179,7 +179,7 @@ my %pnam =('R'=>['     Rook  ','Rachel ','Roost   '],  # now lots of names from 
            'r'=>['     rook  ','rosann ','rosary  '],  # demoted Rosie to the dark-side along with Maga as now just a DarkDot punctu8ing pd last-name;
            'i'=>['   knight  ','ivan   ','injury  '],
            'b'=>['bleedbishop','broken ','boxstein'],  # David, Edith, && DaughterChoker should go broke paying me back 4all they stole in Jan.2009! ;
-           'k'=>['     king  ','kilgore','kraven  '],  ##  4 above, I've wanted pay-back && property-restor8ion,B4 chopd right thumbs && crucifiX3ion;
+           'k'=>['     king  ','kyle   ','kilgore '],  ##  4 above, I've wanted pay-back && property-restor8ion,B4 chopd right thumbs && crucifiX3ion;
            'q'=>['     queen ','quartz ','quasher '],
            's'=>['sinbishopsx','s8n-s0n','slayersx'],  # soundz lIk:"Satan's Own Lair" or Slayer of s8n-s0n but actually just this biShop's 1st&&last;
            't'=>['knight     ','tony   ','trample '],
