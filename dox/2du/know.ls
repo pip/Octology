@@ -1122,3 +1122,4 @@ L4DMCanU:HTTPS://YouTu.be/mlzV6fS-3SY "Can You Reason with UnReasonable People?"
 L4DMKNOW:HTTPS://YouTu.be/F2s7vyKucis "Is the Universe Finite?" # JC2:0Gc0 of PBSSpaceTime on CosmicMicrowaveBackground && positive-curv8ure for hyper-sphere;
 L4FMECHQ:HTTPS://YouTu.be/tQSbms5MDvY "Planck's Constant and the Origin of Quantum Mechanics | SpaceTime | PBSDigitalStudios" # G6M:0FF0 of gr8 PBSSpaceTime!;
 L4FMFACE:HTTPS://YouTu.be/w2OHZ9avd2M "The Changing Face of Jesus" # IB6:0Rm0 of TheThinkingAtheist (SethAndrews) on how apologist views are quite subjective;
+L4IMAYIM:HTTPS://YouTu.be/vKQ5280A2mM "The Origins of Hebrew" # L4E:0Ax0 of ReligionForBreakfast discussing Akkadian, Ugaritic, Cuneiform,&& some abecedaries;

@@ -5,7 +5,7 @@ Octology,the ontology of 8, for a new gener8ion of Perl Hackers who coordin8 and
 Care to learn an immense amount of Perl, GNU/Linux, Zsh, Vim, System-Administr8ion, minimal abbreV8ions, code condens8ion, diverse d8a-represent8ions, autom8d coloriz8ion, lossless conversions, math comput8ion, problem-solving, video-game development, etc. in an hour? Then this is the talk for you!
   Description_: (supporting MarkDown)
 # Octology
-This talk is about an unimaginably ambitious project which aims to become a rigorous ontology by which all future comput8ion could be subsumed.
+This talk is about an unimaginably ambitious project which aims to become a rigorous ontology by which much of possible future comput8ion could be subsumed.
 
 ## DownLoad
 It is presently hosted on [GitHub](https://github.com/pip/Octology) and [SourceForge](https://sourceforge.net/p/octology) with intention to prepare it for a [CPAN](https://metacpan.org/author/PIP) release within June of 2021 (8 years after it was essentially started).
@@ -104,6 +104,50 @@ Thank you again.
 
 Conference in the Cloud Organizers
 
+####
+Lightning Talks Day 1              - rGeoffrey Avery   # Lightning Talk submission accepted;
+Octology on GitHub and SourceForge - Pip       Stuart  # Scheduled for 2nd talk on 1st day, but no YouTube link to my video was provided on old 2020 site;
+This talk is all about bolts of Lightning from the Perly-G8s in the Clouds. It is a detailed demonstr8ion of what new users will become capable of doing by exploring all that Octology has to offer. Enjoy!
+PipPresents: Octology's SysAdmin/WhiteHat/BlackJack Year 21-Variables for Colors, But a 0 Ain't 1  ("tstc tsgr") -PipStuart # Scheduled 4 ?st talk on ?st day;
+  This is a 20-minute talk about using 20 simple Colors from Perl as in Bash/Zsh scripts with terse mnemonic abbreV8d names, as well as final Zero/^ to reset.
+The talk will explain the d8-bow of "ROYG CBMP" enclosed by (blacK)"K and W"(White) with lowercased versions being dark and how "S" (for eScape) gener8s them.
+Then "tstc" and "tsgr" will briefly show much more than just the basic 20 plus 1(Zero) for reset, should anyone require the now rel8ively standard 256 colors,
+  as well as Octology's re-mapping of Select-Graphic-Rendition text attributes which can also easily be toggled now mnemonically too. Hope all will enjoy it!;
+PipPresents: Octology's 8-Pre-cursor-Letter-Counter Gener8d From 8.utf Into Many Perspectives           ("8plc") -PipStuart # Scheduled 4 ?nd talk on ?nd day;
+# This is a 20-minute mid-length-talk about ...
+PipPresents: Octology's Audio/Video-Player gst123 Expect-Wrapper with LibVisualiz8ion Spectrum-Analysis ("g3"  ) -PipStuart # Scheduled 4 ?rd talk on ?rd day;
+# This is a 20-minute mid-length-talk about ...
+PipPresents: Octology's File-Test EvalU8or for Executable Perl and Shell Reference with Regex Escapes   ("ftst") -PipStuart # Scheduled 4 ?st talk on ?st day;
+# This is a 20-minute mid-length-talk about ...
+#### try "d8" and "d8ok", "8ct", "gnp8", "pP", "kpc", "wh8", "wdht", "qbix", "w0rm", "mix8", "die8", "8trm", "c8", "g8", "pal8", etc.? ;
+PipPresents: Octology's Dictionary Definition History-Log and Reformul8ion-Wrapper       ("dic"  or just "d"   ) -PipStuart # Scheduled 4 ?rd talk on ?rd day;
+# This is a  5-minute  lightning-talk about ...
+PipPresents: Octology's Monitor/Display-Resolution Gener8or for the Church-of-Pixels     ("reso" or test "rest") -PipStuart # Scheduled 4 ?th talk on ?th day;
+# This is a  5-minute  lightning-talk about ...
+PipPresents: Octology's Colorful Help-Text Performing Summariz8ion of Binary Executables                ("sumb") -PipStuart # Scheduled 4 ?th talk on ?th day;
+# This is a  5-minute  lightning-talk about ...
+PipPresents: Octology's Chess Program Innov8ing New Board Formats and Move/Ply Not8ion                  ("ckm8") -PipStuart # Scheduled 4 ?th talk on ?th day;
+# This is a  5-minute  lightning-talk about ...
+#ipPresents: Octology's LS_COLORS Monumental File-Extension and Type Coloring Scheme                    ("lrc" ) -PipStuart # Scheduled 4 ?nd talk on ?nd day;
+# This is a  5-minute  lightning-talk about ...
+#ipPresents: Octology's Primes/Summ8ions/Fibonaccis/Factorials                           ("Prmz Sumz Fibz Fctz") -PipStuart # Scheduled 4 ?th talk on ?th day;
+# This is a  5-minute  lightning-talk about ...
+####
+20z:BlackJack (c8 20-Colors+1-ZeroReset), PPOCaseStudy#21 (Fibo 8) L+l (CoolRockHell'sBellsUPeckers), PPOCS#13 (Fibo 7) d+g3, PPOCS#8 (Fibo 6) qbix+ckm8,
+ 5z:ftst+?, d8ok+calN, Respect reso && the rest of 8plc a, sumb+cred(+rant mAB?);
+Tagz: Perl,GNU/Linux,Zsh,Bash,Vim,Curses,SDL,Git,Ubuntu,Unity,Compiz,YouTube,KeePass,Screeps,GnomeTerminal,Sakura,CoolRetroTerm,STTerm,ANSI,EscapeCodes,???;
+Talk(~30-45min)Title:"PipPres: Octology Case-Study #21 `Fibo 8`:  `L` + `l`  (simple versus thorough manipul8ion of the `ls` command)"; AudienceLevel:"All";
+Elev8orPitch:"GNU's core-utils `ls` command is... I guess you could say pretty standard when users desire directory listings. While modifying it does not seem"
+  "to be a particularly popular thing to do, it may still be quite valuable to know ways that you might benefit from at least being able to do so. Check L&&l."
+Description :?; Notes:?; Tagz:?; # above Elev8orPitch max chars: 300;
+L4JMDu:HTTPS://Conf.LinuxAppSummit.Org/event/3/registrations/6/?token=9dbb806f-c53f-4f55-addc-6574013f3fad
+Main Track: HTTPS://LinuxAppSummit.Org/attend
+Pin   Code: "573010MainTrack!"
+"PipPresents: Octology in 2021: BlackJack Year for WhiteHat/SysAdmins, 20-minutes, 20-colors (c8), and 1-reset (zero $z)" # orig. 20-minute plan;
+             "Octology in 2021: BlackJack Year for WhiteHats? 20-Colors (letter $k [Jack]) + 1-Reset (zero $z [Ace])"     # newer ~5-10-min plan;
+~20mPlan:~2m mAB shO 21 && go off on Blacks && Jacks of different common types, ~2m Docker load tst? @Oct,retn ~2m bildup 21 phasing in:kcmyRGBopW?,
+  ~2m lrc, 5th~2m `ls -A` + LA (I want 2 live in pixieFranKsis) + la, ~2m L + l ~ && ~/*, ~2m d8 in l && d8ok sorts nice, 8th~2m dic + resp,
+  ~2m S + c, ~2m tstc + tsgr; "Please open eyelids, not eyes!" # ... but I Digressin4FireFireInTheTacoBellFierFrei !in crowd thE8r, OK?; `Fibo 8` wher?;
 ####
 Search lyrics sites for "Pearly Whites", "casting Pearls before Swine", && "Pearl necklaces" to clip song segments together for musical references or comedy.
 
@@ -237,3 +281,7 @@ L3OM4ths: - FudShr,calN,dic,mk yzst slIdr,upd8 oupd 2ck wich dox/dvl R!yet in Oc
 L46MANIM: - ck Shamiko.Org AnimeShitPost && gr8 vim EasyMotion (like Emacs "Avy") PlugIn; + L46M8fix:fix S && c rndtrip AgN,mk $RoYGCBMp && S 2torEal in MotD?;
 L46MCitC:   mAB mk PerlRakuConf_in_theCloud 50-min Octl proposal,dvl nud8,Yz,MC,&& 4.utf;   L4EMH2OW:H2OWireLess.Com 'Blu' Android SamsunGalaxy phonez mItBgud;
 L4FMANUB:   LeviGoodEvilTatz,SFVRoseGeislerSJWChrist,&&SCVI KEN-VIBE ShlomoDavis62Anubis;   L4GMAILS:GmlBep4hLp autOtrAdng,igotcramps33winz,Pine64?,fUzstrIVe?;
+L4TMKEEW:   wh wIx3dAzd&&confUzd?,DayzInMonthz:Jan=VS?Mar=VU May=VU Jul=VV Sep=UV Nov=UV;   L4TMKENS:Amzn ordr:CrystalNudlz,ashtrAz,fold chAirz,DC?gr8sk8shoez;
+L53M842K:   8YearOldDragonBoy,4thWallGirl,2+2SkinBoy as my imaginary Ms.BhAvinRugRatsLag;   L53M8AVO:8thAnnualVictimOlympixMedal:RhineStone/TinFoil/CopperWire;
+L53M9PSH:   Pr0nSuperHentaiMario6X"Another Castle"getz theWrench!N8ivAmercnBabe getzBiz!;   L53MNATE:DroveLarry2Pig,sawIndiaCrisis@Wolf's,hung@#5wiMLK,N8shAD!;
+L5AMCGRT:   RATSLAGRHINOMGoodRightTruth,who DcIdz? && thought betr Bcuz multi-opposites?;   L5AMCgrt:gBadEvil(Poor too?) rWrongLeft(rEad) tFalsehoodLie(+tell);

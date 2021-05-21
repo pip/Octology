@@ -1,4 +1,4 @@
-# L43MEANS:Dockerfile crE8d by JohnBeppu-san <Beppu@CPAN.Org> for Pip's GitHub Octology;my $d8VS='L46M64CJ';
+# L43MEANS:Dockerfile crE8d by JohnBeppu-san <Beppu@CPAN.Org> for Pip's GitHub Octology;my $d8VS='L5KMInat';
 # Use a big desktop distro (Ubuntu) as base, so that graphical && audio packages are available in container;
 FROM ubuntu:20.04
 # Force TZ to avoid interactive configur8ion; Also TERM BlO mAy quell warnings;
@@ -161,36 +161,36 @@ RUN cpanm  --notest         \
   Term::ReadKey             \
   Color::Similarity         \
   Curses
-# Add a unix user (just 'pip' for now);
-# HTTPS://StackOverFlow.Com/a/27703359
+# Add a unix user (just 'tst' for now [was 'pip' originally from Beppu-san, but probably better as just palindromatic "test" instead for trying out]);
+# HTTPS://StackOverFlow.Com/a/27703359   [ -p aaoCFznDGNVHs was with User 'pip' prior to changing to 'tst' && piping through instead chpasswd fine ]
 # HTTPS://StackOverFlow.Com/a/1022024
-RUN useradd -m -G sudo -s /bin/zsh -p aaoCFznDGNVHs pip
+RUN useradd -m -G sudo -s /bin/zsh  tst   && echo tst:test | chpasswd
 RUN echo 'cat /etc/motd;export HHst=Oct;' >> /etc/zsh/zprofile
-RUN echo 'Oct'                            >  /etc/hostname
+RUN echo                           'Oct'  >  /etc/hostname
 # RUN echo "l8r run: 'sudo hostname Oct' or 'dkrx' then 'hn Oct' ;" # Set what probably came from Oni,Aku,Ryu,orKen to Oct (or whatever HostName you want?);
-# Copy core Octology files into: pip's $HOME;  # Above should call host something other than Docker's default hexadecimal name for the container image made;
-COPY --chown=pip:pip .Hrc .Xrc .bashrc .lrc .lsrc \
-  .shl.style .vimrc .zshrc /home/pip/
+# Copy core Octology files into: tst's $HOME;  # Above should call host something other than Docker's default hexadecimal name for the container image made;
+COPY --chown=tst:tst .Hrc .Xrc .bashrc .lrc .lsrc \
+  .shl.style .vimrc .zshrc /home/tst/
 COPY       .log/motd .log/asound.conf /etc/
-COPY --chown=pip:pip .log  /home/pip/.log/
-COPY --chown=pip:pip  lib  /home/pip/lib/
-COPY --chown=pip:pip  bin  /home/pip/bin/
-COPY --chown=pip:pip  dvl  /home/pip/dvl/
-COPY --chown=pip:pip  dox  /home/pip/dox/
-COPY --chown=pip:pip  gfx  /home/pip/gfx/
-COPY --chown=pip:pip  gmz  /home/pip/gmz/
-COPY --chown=pip:pip  muz  /home/pip/muz/
-COPY --chown=pip:pip  mvz  /home/pip/mvz/
+COPY --chown=tst:tst .log  /home/tst/.log/
+COPY --chown=tst:tst  lib  /home/tst/lib/
+COPY --chown=tst:tst  bin  /home/tst/bin/
+COPY --chown=tst:tst  dvl  /home/tst/dvl/
+COPY --chown=tst:tst  dox  /home/tst/dox/
+COPY --chown=tst:tst  gfx  /home/tst/gfx/
+COPY --chown=tst:tst  gmz  /home/tst/gmz/
+COPY --chown=tst:tst  muz  /home/tst/muz/
+COPY --chown=tst:tst  mvz  /home/tst/mvz/
 # install                     vim-plug;
 # HTTPS://GitHub.Com/junegunn/vim-plug
 # HTTPS://GitHub.Com/junegunn/vim-plug/issues/675
-RUN  curl  -sfLo       /home/pip/.vim/autoload/plug.vim --create-dirs \
+RUN  curl  -sfLo       /home/tst/.vim/autoload/plug.vim --create-dirs \
   https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim \
-  && chown -R  pip:pip /home/pip/.vim
+  && chown -R  tst:tst /home/tst/.vim
 # Set a default command for the container;  # Not sure how to best go about running a new container with own login which starts by printing some help text? ;
-#    su    -c "vim +'PlugInstall --sync' +qa" pip
-CMD  su    -l  pip  -w DISPLAY,NO_AT_BRIDGE
-#          -c 'echo "Welcome to PipS Octology! Please try2run: ec \$R Red \$o orn \$Y Yel \$G Grn \$C Cyn \$B Blu \$M Mgn \$p prp \$z" '
+#    su    -c "vim +'PlugInstall --sync' +qa" tst
+CMD  su    -l  tst  -w DISPLAY,NO_AT_BRIDGE
+#          -c 'echo "Welcome to PipS Octology! Please try2run: ec \$R Red \$O Orn \$Y Yel \$G Grn \$C Cyn \$B Blu \$M Mgn \$P Prp \$z zero-Reset" '
 # Build:  `dkrb`
 #   docker build .  -t oct
 # Run  :  `dkrun`    # probably `dkrs` prunes system && `dkra` for -all

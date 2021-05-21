@@ -19,12 +19,12 @@
 #     `pkg-config --libs $(pkg-config --print-requires --print-requires-private cairo)` which produced:
 #     "-lgobject-2.0 -lglib-2.0 -lpixman-1 -lfontconfig -lfreetype -lpng16 -lz -lxcb-shm -lxcb -lxcb-render -lXrender -lX11 -lXext" so trying to add those...
 #   but had to add them to both the project's main root Makefile as well as the very similar one which was within the src/ sub-directory before `mk` worked!;
-use strict;use warnings;use utf8;use Octology::a8;my $VERSION='0.0';my $d8VS='L2FL8UTF'; # consider detecting && adding custom Xtra --help basic tXt output2;
+use strict;use warnings;use utf8;use Octology::a8;my $VERSION='0.0';my $d8VS='L4RMIX81'; # consider detecting && adding custom Xtra --help basic tXt output2;
 use Term::ReadKey;     # note that you can pass in as many -d=\d+ DelayDur8ionInSeconds (like MPlayer -endpos) for as many file-name params follow 2 B plAyd;
 END{      ReadMode 0;} # good practice to auto-restore orig TTY read settingz at END
           ReadMode 3;  # setup 4 raw mode or 3 cbreak mode where Ctrl-C workz since signalz are enabled
 $ENV{'TERM'}='linux';  # this is needed for arrow cursor keyz to get interpreted properly (vt100 does not do it)
-use    Encode;open my $out8,'>&',STDOUT or die "Can't open  duplic8 STDOUT handle: $!";binmode $out8,':encoding(UTF-8)'; # crE8 local duplic8 of global
+use    Encode;open my $out8,'>&',STDOUT or die "Can't open  duplic8 STDOUT handle: $!";binmode $out8,':encoding(UTF-8)';my $m8; # crE8 local duplic8 of global
 use    Expect;my $cm='gst123';my $to= 2;my $so=0.28;my $tS=0;$tS=1 if(-t STDIN);my @pl; # CoMand strng, TimeOutsecz, SelectOutflsecz, ttySTDIN?, @PlayList
 my %kr=('u'=>"\e[A" ,'d'=>"\e[B" ,'r'=>"\e[C",'l'=>"\e[D", # arOkEz working,Yay! `man 5 terminfo`UDRL=>cuu1,cud1,cuf1,cub1`v=$(tput cuu1)` `printf '%q\n' "$v"`
         'z'=>"\e[6~",'a'=>"\e[5~",'w'=>'+','s'=>'-','>'=>'n','h'=>'?','p'=>' ',chr(127)=>'m',"\n"=>'n',';'=>'f','v'=>'1','C'=>'','x'=>'q');my @dscz; #KeyzRemap
@@ -74,16 +74,17 @@ my $ht ="==================== gst123 keyboard commands =========================
     l / r or cursor left/right  -  seek 10 seconds  backwards/forwards    ;    p or     space  -  toggle pause  # XtraXpect kyz du!wrk4vizwndOz
     d / u or cursor down/up     -  seek 1  minute   backwards/forwards    ;    m or backspace  -  toggle mute/unmute
     z / a or page   down/up     -  seek 10 minutes  backwards/forwards    ;    f or semicolon  -  toggle fullscreen (only for videos)
-    w / s or + / -              -  increase/decrease     volume by 10%    ;    1 or v          -  normal video size (only for videos)
-    n     or >   or      enter  -  play next file                         ;  # should try to add prev file by tracking params && restart?
+    w / s or + / -  or `/\\ ~/|  -  increase/decrease     volume by 10%    ;    1 or v          -  normal video size (only for videos)
+    n     or >   or      enter  -  play next file; orXtra^volmix8by1/4    ;  # should try to add prev file by tracking params && restart?
     h     or ?                  -  this help                              ;    q or x          -  quit (exit) g3
-========= -V == Vizualiz8ionz == == can be provided merely by single ... === b64 index below == == txt .help. reordrng actors list ======";   # HelpText wIde
+========= -V == Vizualiz8ionz == == can be provided merely by single ... === b64 index to -v == == with fancy reordrng actors list ======";   # HelpText wIde
 if(exists($ENV{'COLUMNS'}) && $ENV{'COLUMNS'} < 138){$ht ="==================== gst123 keyboard commands =>
                   =>   g3     kybd     cmdz   ========================
     l / r or cursor left/right  -  seek 10 seconds  backwards/forwards
     d / u or cursor down/up     -  seek 1  minute   backwards/forwards
     z / a or page   down/up     -  seek 10 minutes  backwards/forwards
     w / s or         +  /  -    -  increase/decrease     volume by 10%
+    ` / \\ or         ~  /  |    -  increase/decrease mix8volume by 1/4
     m     or         backspace  -  toggle mute/unmute
     p     or             space  -  toggle pause
     f     or         semicolon  -  toggle fullscreen (only for videos)
@@ -104,6 +105,7 @@ $ht=~ s/(left           )/$Y$1/gx;$ht=~ s/(for       )/$G$1/gx;$ht=~ s/(this  )/
 $ht=~ s/(right          )/$R$1/gx;$ht=~ s/(in)(crease)/$G$1$c$2/gx;$ht=~s/(help   )/$B$1$r/gx ;$ht=~s/(videos?)/$z$1/gx;$ht=~ s/(size)/$c$1/;
 $ht=~ s/(down           )/$M$1/gx;$ht=~ s/(de)(crease)/$R$1$c$2/gx;$ht=~s/(backspace)/$R$1/gx ;$ht=~s/(quit   )/$W$1/gx;$ht=~s/ (or) / $w$1 /g;
 $ht=~ s/ (>) / $M$1 /;$ht=~ s/ (h) / $B$1 /;$ht=~ s/ (v) / $o$1 / ;$ht=~   s/ (space) / $M$1 /;$ht=~s/ (p) / $M$1 /;$ht=~s/(exit)/$W$1/gx;$ht=~s/ (x) / $W$1 /;
+$ht=~ s/(mix8           )/$G$1/gx;
 $xp->debug(       0);$xp->raw_pty(     1); # raw_pty doez need 2B B4 spawn along wi proly mOst optnz
 $xp->exp_internal(0);$xp->log_stdout(  0); # setup object BhAvior  # setng notrns(1) BlO wil!DlEt matchzfrom aQmUl8or,Dflt:0; 1 gOzwi (set|clear)_accum()
 #xp->notransfer(  0);$xp->restart_timeout_upon_receive(1); # NAblng rEstRt_tImout_upon_rECv shudlet g3 plyr liveon aslong astImr upd8z continU2prnt
@@ -185,6 +187,10 @@ sub cb{my $cx=shift;$si=''; # CallBack for non-stream Time A of B
                                               $cx->send($kr{$si});} # try2rEmap arOw keyz  # any Othr unDtectd keyz shud prnt out 4l8r altern8 mapz
   elsif(length($si) &&     ord($si) == 3){                                 #rint $M."Ord3$G"."Keyz$W:$Y$zi$W;\n";
                                               $cx->send(    $si );} # try2pass Ctrl-C break thru
+  elsif(length($si) &&         $si  eq '`' ){ $m8=`mix8  1`;chomp($m8);    o8("; $m8");aw8('_');} # PulseAudio CoManD wrapr vol up ~1.6%
+  elsif(length($si) &&         $si  eq '\\'){ $m8=`mix8   `;chomp($m8);    o8("; $m8");aw8('_');} # PulseAudio CoManD wrapr vol dn ~1.6%
+  elsif(length($si) &&         $si  eq '~' ){ $m8=`mix8  4`;chomp($m8);    o8("; $m8");aw8('_');} # PulseAudio CoManD wrapr vol up ~6.4%
+  elsif(length($si) &&         $si  eq '|' ){ $m8=`mix8 -4`;chomp($m8);    o8("; $m8");aw8('_');} # PulseAudio CoManD wrapr vol dn ~6.4%
 # elsif(length($si)                     ){                        }        #rint $B."Othr$K"."Keyz$W:$Y$zi$W;\n";
   PrfM();                                                                                                        exp_continue;} # call PRoFile Mod time ck
 sub xx{ $xp->expect($to, [qr/(^|\s*)Playing\s+(file|http):\/\/[^\n]+\n/i            => sub {my $cx=shift;mp($cx);exp_continue;}],
