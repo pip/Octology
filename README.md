@@ -1,5 +1,5 @@
 # Octology
-The ontology of 8. Ocho dude. Aucht! `$VERSION='0.0';$d8VS='K87MDemo';`
+The ontology of 8. Ocho dude. Aucht! `$VERSION='0.0';$d8VS='L5TMJ8IT';`
 
 What is an ontology, you may ask (behind your mask)? Essentially quarantined from deadly spread of SARS CoV-2 CoronaVirus? See l8st `cJ` && `CJ` 4 d8a;
 
@@ -54,6 +54,12 @@ If your paths and Perl environment are setup similarly, to gain a bearing on fun
 <!-- * `gnp8 ` - GeNerate a complete Pal8 mapping of b64 into 256-colors
  * `calN ` - display a CALeNdar of the colored d8-based recent Years-->
 <!-- * `lodH ` - LOaD ~/.Hrc d8a-file to parse and print colorized fields-->
+
+Probably the best way to evalU8 Octology is to build and run a Docker container specified by these following commands, which facilit8 test:
+
+  `docker build . -t oct` # to be run in the root directory of a git cloned local repository from this project's main oper8ional hyperlink;
+
+  `docker run -e DISPLAY --mount type=bind,source=/home/pip/.log,target=/home/tst/.log -v /tmp/.X11-unix:/tmp/.X11-unix -it oct` #mostworkz
 
 To get something close to a similar setup to mine, you'll probably want to execute the following sequences of commands to get going first:
 

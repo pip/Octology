@@ -33,10 +33,10 @@ sub Upd8WdHt {($smpw,$smph, $pxlw,$pxlh)=GetTerminalSize();          $wdht=$smpw
   if   ($keyp eq 'KEY_RESIZE'){$simp->Rsiz(-1,-1);#simp->endwin();$simp->refresh(); # rEsIz EvNt but CScr()&&endwin() stil fail2rEstor normal term oper8ion =(
     Upd8WdHt();} # maybe doupdate() can work instead of refresh()? use_tioctl(1) sounds like the way2go && I think I'm giving up on resize for now without it
   elsif($keyp ne         '-1'){ # try to setup some hot-keys which will call a resize event to my preferred standard dimensions && hopefully upd8 on return
-    if   ($keyp=~ /[hlad]/){system("resize -s       $smph " . ++$smpw . " >/dev/null");Upd8WdHt();}
-    elsif($keyp=~ /[HLAD]/){system("resize -s       $smph " . --$smpw . " >/dev/null");Upd8WdHt();}
-    elsif($keyp=~ /[jksw]/){system("resize -s " . ++$smph   . " $smpw     >/dev/null");Upd8WdHt();}
-    elsif($keyp=~ /[JKSW]/){system("resize -s " . --$smph   . " $smpw     >/dev/null");Upd8WdHt();}
+    if   ($keyp=~ /[lLdD]/){system("resize -s       $smph " . ++$smpw . " >/dev/null");Upd8WdHt();} # vim hjkl home-row arrows plus wads push or pull Rt&&Dn;
+    elsif($keyp=~ /[hHaA]/){system("resize -s       $smph " . --$smpw . " >/dev/null");Upd8WdHt();}
+    elsif($keyp=~ /[jJsS]/){system("resize -s " . ++$smph   . " $smpw     >/dev/null");Upd8WdHt();}
+    elsif($keyp=~ /[kKwW]/){system("resize -s " . --$smph   . " $smpw     >/dev/null");Upd8WdHt();}
     elsif($keyp=~ /[280i]/){system("resize -s 25  80                      >/dev/null");Upd8WdHt();}
     elsif($keyp=~ /[516b]/){system("resize -s 50 160                      >/dev/null");Upd8WdHt();}
     elsif($keyp=~ /[fd34]/){system("resize -s  1  34                      >/dev/null");Upd8WdHt();} # Gnome-Terminal only allows resize to 34x4 without wmctrl
