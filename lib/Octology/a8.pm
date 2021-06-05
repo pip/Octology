@@ -47,12 +47,12 @@ require         Exporter;  # add new colr systM
 use base     qw(Exporter); # mainly exporting global utility functions && variables originally inherited from c8.pm as well as a few f8.pm d8a structures
 our @EXPORT= qw(bfr8c    b8c    d8c   dur8c @d8cl @d8cS  a8c   chti  c8fn  o8 S2   c2  S c   sS    lodl @Monz @Mon     %mc2F %mc2b %mF2c %mb2c @Kana  %sb10
  $SKp8 $SKp0 $SKp1 $SKp2 b8clr  $SKpf $SKpt %pmap %cmap %pldl %pl8n  ftst acS e %f8fm %f8pm %sgrm %sgrn @Dayz @Day  lrc d8cs comma  curs  sumb @x256  @sb64
-$lowb $z  $k    $r    $o    $y    $g     $c $SKpb    $m    $p    $w  tstc    $K    $R    $O    $Y    $G    $C    $B    $M    $P    $W    %p622 %p222   upd8
+    $z    $k    $r    $o    $y    $g     $c   $Sb    $m    $p    $w  tstc    $K    $R    $O    $Y    $G    $C    $B    $M    $P    $W    %p622 %p222   upd8
   PrfM   $bk   $br   $bo   $by   $bg    $bc   $bb   $bm   $bp   $bw %plds   $hK   $hR   $hO   $hY   $hG   $hC   $hB   $hM   $hP   $hW     h2rl  rl2h   drkh
     $t    $u    $d    $s    $n   $pP    $T     $U    $D    $S    $N %pldS   $HK   $HR   $HO   $HY   $HG   $HC   $HB   $HM   $HP   $HW %pldh hl $pfil pP xe
  $tnhf $ucdf  spff  spfd  spfX   shfl  reso $Auth %cmsp %p8k2 @p82k  chp8 aw8 S2f4 c2f4 dm2u cdst %crgb %cbrt @snls @mrls %cdrd %cdrn    %nrgb $lfil   gnp8);
  # of 52 posibl sngl-letr var nmz,a8 Xportz 20,$b && $a unavail,so shudB thEs30 lFt4quik shortSt nAmz: 'def hij l n  q stuv x', 'A  DEF HIJ L N  Q STUV X Z';
-our $VERSION='0.0';my  $d8VS='L45M1Prf';our $Auth='PipStuart <Pip@CPAN.Org>'; # above not exporting $b since collidez with sort{$a  <=> $b};unalloc'd sOlOz^;
+our $VERSION='0.0';my  $d8VS='L64MDrPp';our $Auth='PipStuart <Pip@CPAN.Org>'; # above not exporting $b since collidez with sort{$a  <=> $b};unalloc'd sOlOz^;
 our $ucdf= eval('use Color::Similarity::RGB qw(distance);1') || 0; # try2set UseColorDistanceFlag if optional module is available; /defhijlnqstuvx/i + /AZ/^;
 our @sb64=('0'..'9','A'..'Z','a'..'z','.','_'); # SingleBase64 array && Base10 hash (since it's probably best not to use b8.pm here in a8)
 our %sb10=();$sb10{$sb64[$_]}=$_ for(0..$#sb64);our %crgb;our %cbrt;our @snls;our @mrls;our %cdrd;our %cdrn; # DclAr ColrDist d8a:BRiTness,Srch iNdex LiSt,
@@ -158,25 +158,25 @@ my @fvpl=($cmpl,
 my @fpsp= split(/\s+/, join(' ',@fvpl));our %pmap=();#FavPalSePar8d||SPlit && Pal8 abrV8ion letters SePar8d
 for(0..63){$pmap{$cmsp{'8pal8'}[$_]} = $fpsp[$_];}
 my $jpms=''; # Joined Pal8 Mapd Strngs
-my %Sdsr=('_' =>'01;30', '^'  => '00', '.' => '22;30', 'H_' =>'90','h.' => '100', # ScapeDigitSequenceReverse lookup
-          'K' =>'01;30', 'bk' => '40', 'k' => '22;30', 'HK' =>'90','hK' => '100', # sinc rEnAmd /^h[kroygcbmp]$/ 2UprCaseColrXports,thot no longr nEded ...
-          'R' =>'01;31', 'br' => '41', 'r' => '22;31', 'HR' =>'91','hR' => '101', #   ... /^[bh][OP]$/ either but mAB %mc2b warnz Km from /^[ho].$/ !uc()?
-          'O' =>'22;33', 'bo' => '43', 'o' => '22;33', 'HO' =>'93','hO' => '103', #'bO' => '43', # extra uppercase Orange background && 22 for Foreground
-          'Y' =>'01;33', 'by' => '43', 'y' => '22;33', 'HY' =>'93','hY' => '103',
-          'G' =>'01;32', 'bg' => '42', 'g' => '22;32', 'HG' =>'92','hG' => '102',
-          'C' =>'01;36', 'bc' => '46', 'c' => '22;36', 'HC' =>'96','hC' => '106',
-          'B' =>'01;34', 'bb' => '44', 'b' => '22;34', 'HB' =>'94','hB' => '104',
-          'M' =>'01;35', 'bm' => '45', 'm' => '22;35', 'HM' =>'95','hM' => '105',
-          'P' =>'22;35', 'bp' => '45', 'p' => '22;35', 'HP' =>'95','hP' => '105', #'bP' => '45', # extra uppercase Purples
-          'W' =>'01;37', 'bw' => '47', 'w' => '22;37', 'HW' =>'97','hW' => '107'); # try 2 rEmMber map where KW easily => 07 but RoYG CBMp => 1o32 645p
+my %Sdsr=('^'  => '00', '.' => '22;30', '_' =>'01;30', 'H_' =>'90','h.' => '100', # ScapeDigitSequenceReverse lookup
+          'bk' => '40', 'k' => '22;30', 'K' =>'01;30', 'HK' =>'90','hK' => '100', # sinc rEnAmd /^h[kroygcbmp]$/ 2UprCaseColrXports,thot no longr nEded ...
+          'br' => '41', 'r' => '22;31', 'R' =>'01;31', 'HR' =>'91','hR' => '101', #   ... /^[bh][OP]$/ either but mAB %mc2b warnz Km from /^[ho].$/ !uc()?
+          'bo' => '43', 'o' => '22;33', 'O' =>'22;33', 'HO' =>'93','hO' => '103', #'bO' => '43', # extra uppercase Orange background && 22 for Foreground
+          'by' => '43', 'y' => '22;33', 'Y' =>'01;33', 'HY' =>'93','hY' => '103',
+          'bg' => '42', 'g' => '22;32', 'G' =>'01;32', 'HG' =>'92','hG' => '102',
+          'bc' => '46', 'c' => '22;36', 'C' =>'01;36', 'HC' =>'96','hC' => '106',
+          'bb' => '44', 'b' => '22;34', 'B' =>'01;34', 'HB' =>'94','hB' => '104', 'Sb' => '22;34', # just in case I need the Special eScape lOw-cAse b too l8r;
+          'bm' => '45', 'm' => '22;35', 'M' =>'01;35', 'HM' =>'95','hM' => '105',
+          'bp' => '45', 'p' => '22;35', 'P' =>'22;35', 'HP' =>'95','hP' => '105', #'bP' => '45', # extra uppercase Purples
+          'bw' => '47', 'w' => '22;37', 'W' =>'01;37', 'HW' =>'97','hW' => '107'); # try 2 rEmMber map where KW easily => 07 but RoYG CBMp => 1o32 645p
           # remember that SKp2 not handled by c8 && 8trm yet so b8c    && die8 are only printing   boldz
           # should setup 0 to really reset attributez, f0ntz, && everything && prefer just 22     4bold off;
 our %mc2F;our %mc2b;our %mF2c;our %mb2c; # MapC8Col8ColrCodz2ForeBackgrnd && rEverse  # also adding 8trm below restored main lsd8 colors
 if(exists($ENV{'TERM'}) && $ENV{'TERM'} !~ /^(([Ex]|st)(term)?|screen|rxvt|linux|8trm)/){$tnhf=1;} # TermNoHandleFlag (nEd linux hEr 2 4 console colrz)
 our $t ;our $u ;our $d ;our $s ;our $n ;
-our $T ;our $U ;our $D ;our $S ;our $N ;       our $lowb;
-our $k ;our $r ;our $o ;our $y ;our $g ;our $c;our $SKpb;our $m;our $p ;our $w ; # avoid sort's global $b variable with special $SKpb 4 4grnd dRk-blue instead
-our $K ;our $R ;our $O ;our $Y ;our $G ;our $C;our    $B;our $M;our $P ;our $W ; # Fclr shrtcutz to get set,reset,shifted,or randomized in CHangePal8 function
+our $T ;our $U ;our $D ;our $S ;our $N ;
+our $k ;our $r ;our $o ;our $y ;our $g ;our $c ;our $Sb;our $m ;our $p ;our $w ; # avoid sort's global $b variable with a special $Sb 4 4grnd dRk-blue instead
+our $K ;our $R ;our $O ;our $Y ;our $G ;our $C ;our  $B;our $M ;our $P ;our $W ; # Fclr shrtcutz to get set,reset,shifted,or randomized in CHangePal8 function
 our $bk;our $br;our $bo;our $by;our $bg;our $bc;our $bb;our $bm;our $bp;our $bw; # bclr shrtcutz (may want 2B careful th@ none of thEse cOlId wi Xistng Usagz)
 our $hK;our $hR;our $hO;our $hY;our $hG;our $hC;our $hB;our $hM;our $hP;our $hW; # now these Xported variablez should perfectly coincide with .zshrc ENV varz
 our $HK;our $HR;our $HO;our $HY;our $HG;our $HC;our $HB;our $HM;our $HP;our $HW; # HigH-intensity shortcutz
@@ -205,8 +205,8 @@ sub chp8{ # should do similar stuff but all may need to use joined layer keyz wi
                    $mc2b{$p8ky    }=   '48;5;' . spfd($_);$mb2c{$mc2b{$p8ky    }}=$p8ky    ;}}
   $t=S('t');$u=S('u');$d=S('d');$s=S('s');$n=S('n');
   $T=S('T');$U=S('U');$D=S('D');$S=S('S');$N=S('N');
-  $k=S('k');$r=S('r');$o=S('o');$y=S('y');$g=S('g'); $c=S('c');$lowb=$SKpb=S('b');$m=S('m');$p=S('p');$w=S('w'); # avoid sort $b
-  $K=S('K');$R=S('R');$O=S('O');$Y=S('Y');$G=S('G'); $C=S('C');   $B=      S('B');$M=S('M');$P=S('P');$W=S('W'); # Fclr shrtcutz
+  $k=S('k');$r=S('r');$o=S('o');$y=S('y');$g=S('g'); $c=S('c');$Sb=S('b');$m=S('m');$p=S('p');$w=S('w'); # avoid sort $b
+  $K=S('K');$R=S('R');$O=S('O');$Y=S('Y');$G=S('G'); $C=S('C'); $B=S('B');$M=S('M');$P=S('P');$W=S('W'); # Fclr shrtcutz
   $bk=$SKp8.$Sdsr{'bk'}.'m';$br=$SKp8.$Sdsr{'br'}.'m';$bo=$SKp8.$Sdsr{'bo'}.'m';$by=$SKp8.$Sdsr{'by'}.'m';$bg=$SKp8.$Sdsr{'bg'}.'m';
   $bc=$SKp8.$Sdsr{'bc'}.'m';$bb=$SKp8.$Sdsr{'bb'}.'m';$bm=$SKp8.$Sdsr{'bm'}.'m';$bp=$SKp8.$Sdsr{'bp'}.'m';$bw=$SKp8.$Sdsr{'bw'}.'m';
   $hK=$SKp8.$Sdsr{'hK'}.'m';$hR=$SKp8.$Sdsr{'hR'}.'m';$hO=$SKp8.$Sdsr{'hO'}.'m';$hY=$SKp8.$Sdsr{'hY'}.'m';$hG=$SKp8.$Sdsr{'hG'}.'m';
@@ -755,6 +755,7 @@ sub lrc{ # G8SM73VD:lrc crE8d by PipStuart <Pip@CPAN.Org> to gener8 ~/.lsrc from
     SOCK DOOR BLK CHR COLOR EIGHTBIT OPTIONS ORPHAN MISSING CAPABILITY  SUID   SGID STICKY_OTHER_WRITABLE));my $cisr= qr/^($cist)\s/; # ColrInitStringTypz &&
   my %pcnr=('R'   => 0, 'C'   => 4,   #   ... ColrInitStringquotedRegx (STICKY_OTHER_WRITABLE nEded spAc aftr 2 get it 2 m@ch 2,thO!yet sure why);
             'o'   => 1, 'B'   => 5,   # ProfileColorNdxRemapping 4 transl8ing basic default 2pal8 in2 l8st d8bo of current pickedProfile;
+            'O'   => 1, 'P'   => 7,   # ProfileColorNdxRemapping 4 transl8ing basic default 2pal8 in2 l8st d8bo of current pickedProfile;
             'Y'   => 2, 'M'   => 6,   # from ~/.lrc S colr-cOd spSific8ionz 4 just cist NtrEz: ^ B W RcL WrL G Wg kO kr Wb Bg kP Ok M Yk;
             'G'   => 3, 'p'   => 7,); # might want 2 l8r add some special extra ones for like: W w K k r g b c && mAB sm othr gd1z etc.?;
   my $jlhl='# F1RLLK2K:~/.lrc  by PipStuart <Pip@CPAN.Org> as an altern8 format for .lsrc ideally having new ~/bin/lrc gNR8 either from the other;';
@@ -810,7 +811,7 @@ sub cklc{return() unless(@_);my @ntry=reverse(split(//,decode('UTF-8',shift(@_))
     elsif  (                       !defined($ashr->{$ntry[$cndx]})){      $ashr->{$ntry[$cndx]}={};}
     if     (                        defined($ashr->{$ntry[$cndx]})){$ashr=$ashr->{$ntry[$cndx]};o8("$C$ntry[$cndx]$B;$z") if($#ntry > 1 &&0);}}}
 my %lsp8;my %lspt; # LOaDLs_colors   from ENVironmNt in2 both lsp hashez probably mainly just for c8fn 2 B Abl 2 simply colorIz bAsed on XtNsionz akin 2 ls;
-sub lodl{if(exists $ENV{'LS_COLORS'}){for(split(':',$ENV{'LS_COLORS'})){my($g2re,$fx2e);cklc($_); # call ChecKLsColors($_) 2 lOd triE graf 4 cOlIdez 2 warn;
+sub lodl{if(exists $ENV{'LS_COLORS'}){for(split(':',$ENV{'LS_COLORS'})){my($g2re,$fx2e);cklc($_) if(0); # call ChecKLsColors($_)?2lOd triE graf4cOlIdez2warn;
       if   (  /^([^=]*?[\*\?]+[^=]*)=(.+)$/){($g2re,$fx2e)=($1,"$SKp8$2m");$g2re=~s/(\.)/\\$1/g;$g2re=~s/\?/./g;$g2re=~s/\*/.*/g;$lsp8{qr/^.*$g2re$/}=$fx2e;}
       elsif(               /^([^=]+)=(.+)$/){($g2re,$fx2e)=($1,"$SKp8$2m");                                                      $lspt{      $g2re  }=$fx2e;}}}
   # regX @botm uses NOrmal @Nd but aftr `eval $(dircolors)` rEsets $LS_COLORS 2 Dfaltz,'no' does!Xist giving: "Use of uninit'd val in conc@N8n (.) or str..."
@@ -958,29 +959,29 @@ sub rl2h{ # convert any typical b64 RGBL into RRGGBB HEX with Last Low bits Load
       $valu= $sb10{$rgbd[0]} * 4;$valu+=2 if($sb10{$rgbd[3]} & 32);$valu+=1 if($sb10{$rgbd[3]} & 16);$rgbr.= sprintf("%2.2X",$valu);
       $valu= $sb10{$rgbd[1]} * 4;$valu+=2 if($sb10{$rgbd[3]} &  8);$valu+=1 if($sb10{$rgbd[3]} &  4);$rgbr.= sprintf("%2.2X",$valu);
       $valu= $sb10{$rgbd[2]} * 4;$valu+=2 if($sb10{$rgbd[3]} &  2);$valu+=1 if($sb10{$rgbd[3]} &  1);$rgbr.= sprintf("%2.2X",$valu);
-      $rgbp      =~ s/(^|\s)([0-9A-Z._]{4})(\s|$)/$1$rgbr$3/i ;} next unless($twbf);
+      $rgbp      =~ s/(^|\s)([0-9A-Z._]{4})(\s|$)/$1$rgbr$3/i ;} if($twbf){
     while($rgbp  =~  /(^|\s)([0-9A-Z._]{2})(\s|$)/i  ){my $rgbh=$2;my $rgbr='';my  $valu= 0; #$rgbh=uc($rgbh) if($rgbh=~  /[a-z]/);
       my @rgbd=split(//,$rgbh); # do $sb64[..] aftr Ech b10 valU pRtoff b64 6-bit chars whIl filng lobits
       $valu=     $sb10{$rgbd[0]} & 15 ;                                                                      $rgbr.= sprintf("%1.1X",$valu);
       $valu= int($sb10{$rgbd[0]} / 16);$valu+= 4 if($sb10{$rgbd[1]} & 16);$valu+= 8 if($sb10{$rgbd[1]} & 32);$rgbr.= sprintf("%1.1X",$valu);
       $valu=     $sb10{$rgbd[1]} & 15 ;                                                                      $rgbr.= sprintf("%1.1X",$valu);
-      $rgbp      =~ s/(^|\s)([0-9A-Z._]{2})(\s|$)/$1$rgbr$3/i ;} $rgbs.="$rgbp ";} $rgbs=~ s/ $//;return($rgbs);}
+      $rgbp      =~ s/(^|\s)([0-9A-Z._]{2})(\s|$)/$1$rgbr$3/i ;}} $rgbs.="$rgbp ";} $rgbs=~ s/ $//;return($rgbs);}
 sub h2rl{ # convert any typical HEX RRGGBB into RGBL b64 with Last Low bits Layered (might not want to uc() if 4-char leng or maybe flagd 2cnv bak2 HEX)
   my $twbf=0; # could also accept basic 12-bit HTML HEX #RGB into b64 RB
   if(!@_ && !-t STDIN){push(@_,<STDIN>);} #unshift(@_,decode('UTF-8',join('',<STDIN>)));} # probably need to ck STDIN if not -tty && no params passed in
   my      $rgbs='';my $rgbp;while($rgbp=shift(@_)){ # re-tokenize any param d8a nstd of requiring actual params be exactly 6 HEX chars only
-    if   ($rgbp  =~  /(^|\s)-?-h(elp     )?(\s|$)/ix ){$rgbs.=" h2rl -h Help text for looping && parsing from 6 HEX RRGGBB to b64 RGBL with rl2h reverse;\n";}
-    if   ($rgbp  =~  /(^|\s)-?-t(welvebit)?(\s|$)/i  ){$twbf^=   1;}
-    while($rgbp  =~  /(^|\s)([0-9A-F]{6}  )(\s|$)/ix ){my $rgbh=$2;my $rgbr='';my  $valu= 0;my $lowb=0;
+    if   ($rgbp  =~  /(^|\s)-?-h(elp      )?(\s|$)/ix ){$rgbs.=" h2rl -h Help text for looping && parsing from 6 HEX RRGGBB to b64 RGBL with rl2h reverse;\n";}
+    if   ($rgbp  =~  /(^|\s)-?-t(welvebit )?(\s|$)/i  ){$twbf^=   1;}
+    while($rgbp  =~  /(^|\s)\#?([0-9A-F]{6})(\s|$)/ix ){my $rgbh=$2;my $rgbr='';my  $valu= 0;my $lowb=0;
       my  @rgbd= split(//,$rgbh); # do $sb64[..] aftr Ech b10 valU pRtoff b64 6-bit chars whIl filng lobits
       $valu  = hex($rgbd[0]) * 16 +  hex($rgbd[1]);$rgbr.=$sb64[int($valu/4)];$lowb+=2 if($valu & 2);$lowb+=1 if($valu & 1);$lowb*=4;
       $valu  = hex($rgbd[2]) * 16 +  hex($rgbd[3]);$rgbr.=$sb64[int($valu/4)];$lowb+=2 if($valu & 2);$lowb+=1 if($valu & 1);$lowb*=4;
       $valu  = hex($rgbd[4]) * 16 +  hex($rgbd[5]);$rgbr.=$sb64[int($valu/4)];$lowb+=2 if($valu & 2);$lowb+=1 if($valu & 1);$rgbr.=$sb64[$lowb];
-      $rgbp      =~ s/(^|\s)([0-9A-F]{6}  )(\s|$)/$1$rgbr$3/ix;} next unless($twbf); # try tighter twelve-bit RGB from HEX to RB in b64
-    while($rgbp  =~  /(^|\s)([0-9A-F]{3}  )(\s|$)/ix ){my $rgbh=$2;my $rgbr='';my  $valu= 0; my @rgbd= split(//,$rgbh); # do $sb64[..] aftr Ech b10 valU
+      $rgbp      =~ s/(^|\s)\#?([0-9A-F]{6})(\s|$)/$1$rgbr$3/ix;} if($twbf){ # try tighter twelve-bit RGB from HEX to RB in b64
+    while($rgbp  =~  /(^|\s)\#?([0-9A-F]{3})(\s|$)/ix ){my $rgbh=$2;my $rgbr='';my  $valu= 0; my @rgbd= split(//,$rgbh); # do $sb64[..] aftr Ech b10 valU
       $valu  = hex($rgbd[0]);$valu+=16 if(hex($rgbd[1]) &  1);$valu+=32 if(hex($rgbd[1]) &  2);$rgbr.=$sb64[$valu];
       $valu  = hex($rgbd[2]);$valu+=16 if(hex($rgbd[1]) &  4);$valu+=32 if(hex($rgbd[1]) &  8);$rgbr.=$sb64[$valu]; # shud add -twelvebit 2rvrs
-      $rgbp      =~ s/(^|\s)([0-9A-F]{3}  )(\s|$)/$1$rgbr$3/ix;} $rgbs.="$rgbp ";} $rgbs=~ s/ $//;return($rgbs);}
+      $rgbp      =~ s/(^|\s)\#?([0-9A-F]{3})(\s|$)/$1$rgbr$3/ix;}} $rgbs.="$rgbp ";} $rgbs=~ s/ $//;return($rgbs);}
 sub hl{my $head=48;my $tail=48;if(@_){$head=0;my $bndx=0;for(reverse(split(//,shift(@_)))){$head+=(64**$bndx++)*$sb10{$_};}
                                if(@_){$tail=0;   $bndx=0;for(reverse(split(//,shift(@_)))){$tail+=(64**$bndx++)*$sb10{$_};}}else{$tail=$head;}}
   if(!-t STDIN){my @id8a=<STDIN>;my @hd8a;my @td8a; # this subroutine is a very basic combin8ion of head && tail taking b64 sizes as params to oper8 on STDIN;

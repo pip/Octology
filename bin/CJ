@@ -31,7 +31,7 @@
 #   rural / suburban / inner-city dwellers, multi-gener8ional homes, household incomes, heights, w8s, BMI's, asthmatics, allergies, apneas, etc. to account 4;
 # K5GMHELP:It just occured to me that death percentage would be potentially much more in4m8ive if it included how many nEded unavailable ventil8ors 2 survive;
 use strict;use warnings;use utf8;use v5.10;use Octology::a8;use Octology::d8;use Text::CSV; # should also track how many tSts done&&ventil8ors Ech county has;
-my $Vers='0.0';my $d8VS='L1QL4WUH';   my %sd8a;my %flcb=('C'=> 3,'D'=> 4,'R'=> 5,'A'=>-1);my %flcm=('C'=>$c,'D'=>$Y,'R'=>$g,'A'=>$K);my $lupc=0;
+my $Vers='0.0';my $d8VS='L64ME4Sb';   my %sd8a;my %flcb=('C'=> 3,'D'=> 4,'R'=> 5,'A'=>-1);my %flcm=('C'=>$c,'D'=>$Y,'R'=>$g,'A'=>$K);my $lupc=0;
 my @flck=qw(Confirmed Deaths Recovered Active);my %flcn=('C'=> 7,'D'=> 8,'R'=> 9,'A'=>10); # USt8 AbbreV8ionz below R not even used anymore,sO scrap l8r;
 my      $covp=$ENV{'HOME'};$covp.="/dvl/c8/CJ";my $whg8=`which git`;`mkdir -p $covp` unless(-d $covp     );      chdir($covp     ); # mk sure CSV d8a gotN
 if(!-d "$covp/COVID-19" && length($whg8)){system("  git clone https://github.com/CSSEGISandData/COVID-19");}else{chdir("COVID-19");system("  git pull");}
@@ -333,7 +333,7 @@ for  my $dfil (<"$csvp/*-2020.csv">){my $d8nw=Octology::d8->new();my $ndfl=$dfil
         for my $fldk (@flck){
           my $frst=substr($fldk,0,1); # below skip Recovered && Active if blank fieldz or only added zeroez && still empty, sinc !in d8a
           if($sd8a{$dfd8}{$st8n}{$frst}){ printf $out8 "%s$frst$W:$z%s%10s$z  ",$flcm{$frst},$flcm{$frst},comma($sd8a{$dfd8}{$st8n}{$frst});
-          }else                         { printf $out8 "$k$frst$SKpb:$k%10s$z  ",0;
+          }else                         { printf $out8 "$k$frst$Sb:$k%10s$z  ",0;
           }} say $out8 "$W;$z";
       }} close(  $fhnd                            ) or die "$dfil: $!";}} # loop thru MM-DD-YYYY %sd8a kEz2thN bild dLta chgz byDay thNDscrIb or grafgrOth r8z;
 my $msas='Wisc';#|Penn|ouri|Cali|York

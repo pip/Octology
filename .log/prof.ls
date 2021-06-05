@@ -1,4 +1,4 @@
-# KCJL6Pls:~/.log/prof.ls crE8d by PipStuart <Pip@CPAN.Org> 4 a b64 key-table list of YouTube channel profile d8bo master color-sequences;my $d8VS='L1CLEAR1';
+# KCJL6Pls:~/.log/prof.ls crE8d by PipStuart <Pip@CPAN.Org> 4 a b64 key-table list of YouTube channel profile d8bo master color-sequences;my $d8VS='L61MAILS';
 # 2du:stRt adding optional extra layerz for DarkAvrgLite && SGRcodez B4 mAB also bkgrndaloh BtwEn && multiSGRz 2 flag attrz on thru all d8bo usagez;
 d RoYGCBMp                   # PipStuart Primary U2bchanL ; RoYGCBMp
 # RF3Hh2fr                   # PedantPip Secndry U2bchanL ; RfFrHh32 RHFrRHFf FFFFLLLL iIiuDUDu ;
@@ -23,7 +23,7 @@ v VvMmLlPp                   # ValVocal8 BtBoxin U2bchanL?; VvMmLlPp
 5 YpGoBRMC # PsRandom gener8d8 KCULCULK ;
 6 BoCpGRMY # PsRandom gener8d8 KCULCULK ;
 7 RBMopGYC # PsRandom gener8d8 KCULCULK ;
-8 YcbwIEeG # PsRandom gener8d8 KCULDope ; 8-_unUzd RandPick OnlyDiff ColrCodz W8ngUntl GivnOrdr ;
+8 YcbwIEeG # PsRandom gener8d8 KCULDope ; 8unUzdPs udRndPik OnlyDiff ColrCodz W8ngUntl GivnOrdr ;
 9 uncw07sF # PsRandom gener8d8 KCULDope ;
 A 5oQcHfGB # PsRandom gener8d8 KCULDope ;
 C ftu6DWHN # PsRandom gener8d8 KCULDope ;

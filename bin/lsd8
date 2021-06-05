@@ -24,7 +24,7 @@
 use strict;use warnings;use utf8;use v5.10; # mAB tSt if just regUlR -t STDIN && -t STDOUT R Dtectng intractiviT corectly 1st,B4 fallng bak on IO::Interactive
 #se IO::Interactive qw(is_interactive); # employ if(is_interactive()){} around all colring to attempt to behave like `ls --color=auto` when piped away
 use Encode;use Octology::a8;#se Octology::c8;
-           use Octology::b8;use Octology::d8;use Time::PT;my $VERSION='0.0';my $d8VS='KCJLAcat';my $sllw=0; # SymLink LargestWidth to track for alignment
+           use Octology::b8;use Octology::d8;use Time::PT;my $VERSION='0.0';my $d8VS='L64ME4U2';my $sllw=0; # SymLink LargestWidth to track for alignment
 open my $out8,'>&',STDOUT or die "Can't open  duplic8 STDOUT handle: $!"; binmode $out8,':encoding(UTF-8)';my $cauf=1;my $cnvf=0; # crE8 local duplic8 of globl
 my $vsrt='-v'; my @b64d;my $t;my $sbdr;my $b64c;my($pwnw,$grpw,$grpx);$pwnw=$grpw=$grpx=0; # default -v Version SoRT,reversed b8 Colr List matchz Dfalt d8 ordr
 my $jfdz=join('|',@Day);my $jfmz=join('|',@Mon); # Joined Fieldz for DayZ and MonthZ to regex with  # BlO mAB some ARGVz shud!B sNt thru -d tSt so Dtect 1st?
@@ -71,7 +71,7 @@ for(@ldat){if(($prmz,$blsz,$pwnr,$grup,$fsiz,$d8tz,$fnam)= /^(\S{10})(\s+\d+)(\s
     $b6fs=b8c(   ' 'x(b6wd(length($fsiz),1)-length($b6fs)).$b6fs);my($n,$s); # renAmd $k $kolumn_x 2 $n 4 Named colr 2!collide with a8's eScapd dark blacK colr
     $cmpr=$prmz;$cmpr=~s/^(d)/$B$1/;my $d8im=Octology::d8->new('lsft'=>$d8tz);my $ttim=$d8im->colr('a').$k;
     $cmpr=~s/^(-)/$W$1/; $ttim.='0'x(8-int((length($ttim)-7)/8)) if(length($ttim)<(8*8 +7));
-    $cmpr=~s/rwx/${S}7/g;$cmpr=~s/-wx/${SKpb}3/g;$cmpr=~s/rws/${Y}7/g;$cmpr=~s/rwt/${m}7/g;
+    $cmpr=~s/rwx/${S}7/g;$cmpr=~s/-wx/${Sb}3/g;$cmpr=~s/rws/${Y}7/g;$cmpr=~s/rwt/${m}7/g;
     $cmpr=~s/rw-/${C}6/g;$cmpr=~s/-w-/${O}2/g; # stil wnt2Uz ~/.lsrc 2mABNcod prmz asumng PXX(400,644,755..[azB64?]) 2OvrId fIl colrz by .X10shn
     $cmpr=~s/r-x/${M}5/g;$cmpr=~s/--x/${g}1/g;$cmpr=~s/r-s/${O}5/g;$cmpr=~s/r-t/${m}5/g; #Uzr&&Grp?
     $cmpr=~s/r--/${B}4/g;$cmpr=~s/---/${G}0/g; #?prmzRblszYpwnrCgrupPfsiz?dayt?tymeGtz0n?fnam..
@@ -188,7 +188,7 @@ for(@ldat){if(($prmz,$blsz,$pwnr,$grup,$fsiz,$d8tz,$fnam)= /^(\S{10})(\s+\d+)(\s
     $tnam=~ s/(Black |Night)/$K$1$n/gix;$tnam=~ s/(Snakes?)/$Y$1$n/gix;$tnam=~ s/(M)(u)(s)(h)(r)(o)(o)(m)   /$R$1$o$2$Y$3$G$4$C$5$B$6$M$7$P$8$n/gix;
     $tnam=~ s/(Blast |White)/$W$1$n/gix;$tnam=~ s/(First  )/$G$1$n/gix;#tnam=~ s/(C)(o)(l)(o)(r)            /$R$1$Y$2$G$3$B$4$M$5$n/gix; # alIn $[1-9] columnz
                                                                        $tnam=~ s/(C)(o)(l)(o)(r)            /$C$1$o$2$M$3$o$4$S$5$n/gix; # new CoMoS order
-    $tnam=~ s/(Bone  |Death)/$w$1$n/gix;$tnam=~ s/(Album  )/$o$1$n/gix;$tnam=~ s/(N)(u)(c)(l)(e)(a)(r)   /$SKpb$1$K$2$w$3$r$4$R$5$o$6$Y$7$n/gix;
+    $tnam=~ s/(Bone  |Death)/$w$1$n/gix;$tnam=~ s/(Album  )/$o$1$n/gix;$tnam=~ s/(N)(u)(c)(l)(e)(a)(r)     /$Sb$1$K$2$w$3$r$4$R$5$o$6$Y$7$n/gix;
     $tnam=~ s/(Snow  |Sheep)/$W$1$n/gix;$tnam=~ s/(Ravens?)/$K$1$n/gix;$tnam=~ s/(C)(h)(r)(i)(s)(t)(m)(a)(s)/$R$1$G$2$R$3$G$4$R$5$G$6$R$7$G$8$R$9$n/gix;
     $tnam=~ s/(Gold        )/$o$1$n/gix;$tnam=~ s/(Gecko  )/$G$1$n/gix;$tnam=~ s/(DanykaNadeau)/$G$1$n/gix ;$tnam=~ s/(Au5)/$o$1$n/gx;
     my $H=S('H');                       $tnam=~ s/(Money  )/$z$1$n/gix;$tnam=~ s/(Stars?)([^t])/$Y$1$n$2/gi; # rEdu yLO stRz *<^>* but!amidst comon "Start"

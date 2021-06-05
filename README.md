@@ -1,20 +1,20 @@
-# Octology
-The ontology of 8. Ocho dude. Aucht! `$VERSION='0.0';$d8VS='L5TMJ8IT';`
+#    Octology
+ The ontology of 8. Ocho dude. Hachi-desu. Wheet. Aucht! `$VERSION='0.0';$d8VS='L64MNOPQ';`
 
-What is an ontology, you may ask (behind your mask)? Essentially quarantined from deadly spread of SARS CoV-2 CoronaVirus? See l8st `cJ` && `CJ` 4 d8a;
+`dic ontology`:  # query the dictd (Dictionary-Daemon) for salient definitions that project visitors might find inform8ive;
 
-<ol><li>n. (Computer Science) a rigorous and exhaustive organiz8ion of some knowledge domain that is usually hierarchical and contains all the relevant
-  entities and their rel8ions.</li>
-    <li>n. (Philosophy) the metaphysical study of the n8ure of being and existence.</li>
-    <li>n. (Logic) the set of entities presupposed by a theory.</li>
+<ol><li>n. `(Computer Science)` a rigorous and exhaustive organiz8ion of some knowledge domain that is usually hierarchical
+      and contains all the relevant entities and their rel8ions.</li>
+    <li>n. `(Philosophy      )` the metaphysical study of the n8ure of being and existence.</li>
+    <li>n. `(Logic           )` the set of entities presupposed by a theory.</li>
 </ol>
 
-I expect after some point (probably passed) anyone who studies Octology thoroughly would become able to develop any new videogame and problem-solve.
+I expect after some point (probably passed) anyone who studies Octology thoroughly would be able to develop new video-games and problem-solve well.
 
-"Perl 5 was a machine-shop for making other tools." -LarryWall on d8=J6K TPCiP interview. I'd like Octology to be regarded similarly for game tools.
+"Perl 5 was a machine-shop for making other tools." -LarryWall `d8=J6K` TPCiP interview. I'd like Octology to be regarded similarly for game-tools.
 
 Please watch the [5-and-a-half minute video](https://YouTu.be/Oul8KrS7TQk) which is what I presented as a Lightning-Talk during
-  the-Perl-Conference-in-the-Cloud on June 24th, 2020.
+  the-Perl-Conference-in-the-Cloud on June 24th, 2020 (`d8=K6O`). Hopefully I will be giving another talk at the 2021 Perl/Raku Conference (`d8=L69`);
 
 <!-- even though of course originally above command && below screen shot lists were each Top8, they're now more focused on just most public Top6 or 4 -->
 ## Current Top Screen Shots
@@ -33,11 +33,7 @@ Please watch the [5-and-a-half minute video](https://YouTu.be/Oul8KrS7TQk) which
 ![Octology-calN-shot_1294x914-I46MK8B8](https://github.com/pip/Octology/raw/master/gfx/sho/Octology-calN-shot_1294x914-I46MK8B8.png "Octology-calN-I46MK8B8")-->
 <!-- show  tstc short after lsd8 ~ && reso spec HD pre Pi color greps elabor8 aliases,fully amidst reph new crystal clarity layers of some transparency now;-->
 
-This was basically a public preview of my early development files. I am nearly ready for serious collaboration, but welcome any sorts of feedback.
-
-I mainly wanted to start this repository as my locus for future efforts and to start showing top screen shots that convey noteworthy capabilities.
-
-Many `bin/` commands print useful Help text when given a `-h` parameter (white stars on blue after class name in `sumb` results, mainly a8 && d8).
+This repository was started in 2017 (`d8=HAD`) to be the locus for future collabor8ive efforts, and as a site to show top noteworthy screen shots.
 
 If your paths and Perl environment are setup similarly, to gain a bearing on fundamental Octology utilities and organiz8ion, please try executing:
 
@@ -55,56 +51,75 @@ If your paths and Perl environment are setup similarly, to gain a bearing on fun
  * `calN ` - display a CALeNdar of the colored d8-based recent Years-->
 <!-- * `lodH ` - LOaD ~/.Hrc d8a-file to parse and print colorized fields-->
 
-Probably the best way to evalU8 Octology is to build and run a Docker container specified by these following commands, which facilit8 test:
+Probably the best way to evalU8 Octology is to build and run a Docker container specified by the following commands, which facilit8 testing:
 
-  `docker build . -t oct` # to be run in the root directory of a git cloned local repository from this project's main oper8ional hyperlink;
+  `docker build . -t oct`  # to be run in the root directory of a git cloned local repository from this project's main oper8ional hyperlink;
 
-  `docker run -e DISPLAY --mount type=bind,source=/home/pip/.log,target=/home/tst/.log -v /tmp/.X11-unix:/tmp/.X11-unix -it oct` #mostworkz
+  `docker run -e DISPLAY --mount type=bind,source=/home/pip/.log,target=/home/tst/.log -v /tmp/.X11-unix:/tmp/.X11-unix -it oct`  #mostworks
 
-To get something close to a similar setup to mine, you'll probably want to execute the following sequences of commands to get going first:
+To build something close to a similar setup to mine, you'll probably want to execute the following sequences of commands to get going first:
 
-  `git clone https://GitHub.Com/Pip/Octology` which should crE8 the Octology/ sub-directory in your Current-Working-Directory (or: `pwd` ),
+  `git clone https://GitHub.Com/Pip/Octology`  # which should crE8 the Octology/ sub-directory in your Current-Working-Directory (or:`pwd`),
 
-  then: `cd Octology; cp -a lib bin dox dvl gfx muz .Hrc .Xrc .bashrc .lrc .lsrc .shl.style .vimrc .zshrc ~; chsh $(which zsh); cd ~; zsh;`
+  `cd Octology; cp -a lib bin dox dvl gfx gmz muz mvz .Hrc .Xrc .bashrc .lrc .lsrc .shl.style .vimrc .zshrc ~; chsh $(which zsh); cd ~; zsh`
 
-  && you'll want to: `cpan ...` or `pmei Time::DaysInMonth;` since I (through Octology) depend on that module, but am not maintainer of it;
+  and you'll want to: `cpanm ...` or `pmei Time::DaysInMonth` since I (through Octology) depend on that module, but am not maintainer of it;
 
-  Also the `Color::Similarity::RGB` module is used in my `pm2x` to gener8 an expanded pal8 map from the rel8ive proximity of nearby colors;
+  Also the `Color::Similarity::RGB` module is employed in `pm2x` to gener8 an expanded pal8 map from the rel8ive proximity of nearby colors;
 
 ### Great Thanks, AppreC8ion, and Gratitude
-I'd first like to thank every p8ient Chess player who endured me logging personal matches in ckm8, then thank you to all developers who ever contributed to:
+I'd first like to thank the p8ient Chess players who endured me logging personal matches in `ckm8`, then thanks to the many contributors of:
 
-  * [YouTube](https://youtu.be), [youtube-dl](https://youtube-dl.org), [kpcli](https://kpcli.sourceforge.net), [slowcat.pl](http://artscene.textfiles.com/viewers/linux/slowcat.pl), [Screeps](https://screeps.com),
+  * [Pine64](https://pine64.org), [YouTube](https://youtu.be), [youtube-dl](https://youtube-dl.org), [kpcli](https://kpcli.sourceforge.net),
+  [slowcat.pl](http://artscene.textfiles.com/viewers/linux/slowcat.pl), [Screeps](https://screeps.com),
 
-  * [git](https://git-scm.com), [gst123](https://github.com/swesterfeld/gst123), [FIGlet](http://www.figlet.org), [zinf](http://zinf.org), [Vim](https://www.vim.org), [FLAC](https://xiph.org/flac), [cdparanoia](https://xiph.org/paranoia),
+  * [Peni64](https://peni64.org), [git](https://git-scm.com), [gst123](https://github.com/swesterfeld/gst123), [FIGlet](http://www.figlet.org),
+  [zinf](http://zinf.org), [Vim](https://www.vim.org), [FLAC](https://xiph.org/flac), [cdparanoia](https://xiph.org/paranoia),
 
-  * [TheFreeDictionary](https://thefreedictionary.com) as well as [dictd](https://en.wikipedia.org/wiki/DICT) && all dictionaries,
+  * [Docker](https://hub.docker.com), [TheFreeDictionary](https://thefreedictionary.com) as well as
+  [dictd](https://en.wikipedia.org/wiki/DICT) and all dictionaries which were made for that daemon,
 
-  * anonymous makers of MS-DOS .com files before .f0nt,
+  * anonymous makers of all old MS-DOS .com files (which were binaries before the .f0nt format re-made most of them to now be easily editable),
 
-  * [Perl](https://www.perl.org), [Curses](https://metacpan.org/pod/Curses), [SDL](https://libsdl.org), [GNU](https://gnu.org), [Linux](https://www.kernel.org), [Ubuntu](https://ubuntu.com), [Compiz](http://www.compiz.org),
+  * [Perl](https://www.perl.org), [Curses](https://metacpan.org/pod/Curses), [SDL](https://libsdl.org), [GNU](https://gnu.org),
+  [Linux](https://www.kernel.org), [Ubuntu](https://ubuntu.com), [Compiz](http://www.compiz.org),
 
-  * [Irssi](https://irssi.org), [FireFox](https://www.mozilla.org/en-US/firefox), [Krita](https://krita.org/en), [Zsh](https://www.zsh.org), [GMail](https://gmail.com), [DuckDuckGo](https://duckduckgo.com),
+  * [Irssi](https://irssi.org), [FireFox](https://www.mozilla.org/en-US/firefox), [Krita](https://krita.org/en),
+  [Zsh](https://www.zsh.org), [GMail](https://gmail.com), [DuckDuckGo](https://duckduckgo.com),
 
-  * [Gnome-Terminal](https://wiki.gnome.org/Apps/Terminal), [PulseAudio](https://www.freedesktop.org/wiki/Software/PulseAudio), [Rubik's Cube](https://www.rubiks.com), [AMD](https://www.amd.com/en), etc.
+  * [Gnome-Terminal](https://wiki.gnome.org/Apps/Terminal), [PulseAudio](https://www.freedesktop.org/wiki/Software/PulseAudio),
+  [Rubik's Cube](https://www.rubiks.com), [AMD](https://www.amd.com/en), [CheyenneCigars](https://CheyenneCigars.Com), etc.
 
-  * [Obsidia](https://www.youtube.com/user/ObsidiaMedia), [MonsterCat](https://www.youtube.com/user/MonstercatMedia), [UKF](https://www.youtube.com/user/UKFDubstep), [TrapNation](https://www.youtube.com/user/AllTrapNation), [TrapCity](https://www.youtube.com/user/OfficialTrapCity)...
+  * [Obsidia](https://www.youtube.com/user/ObsidiaMedia), [MonsterCat](https://youtube.com/user/MonstercatMedia), [UKF](https://youtube.com/user/UKFDubstep),
+  [TrapNation](https://www.youtube.com/user/AllTrapNation), [TrapCity](https://youtube.com/user/OfficialTrapCity), 7Cloud, 9Cloud, InfinityEDM, ...
 
 More thanks go out to all of the competitive, cooper8ive, casual, etc. game players who have ever particip8d in versions of Go, Chess, Screeps, or Rubik's Cube
   descriptions, demonstr8ions, discussions, groups, or gatherings.
 
-Also all cards, dominoes, and dice game players who have ever lived contributed (at least indirectly) to my gr8st sources for communal educ8ion and inspir8ion.
-  Good games! GoGo gamers! Grow gratitude! Grip gr8fulness!
+Also all cards, dominoes, and dice game players have contributed (at least indirectly) to some of my gr8st sources for communal educ8ion and inspir8ion.
+  Good-Games! Go-Gamers! Grow-Gratitude! Gain-Gr8fulness!
 
-If I have failed or in any way improperly identified any other entity who is deserving of better credit and recognition, please recognize this as unintentional
-  and let me know the best way to remedy it.
+If I have failed to acknowledge, or in any way improperly identified, any other entity who is deserving of better credit and recognition, please appreC8
+  that such an omission was entirely unintentional... and please let me know the best way I could remedy it.
+
+### Octology is *NOT* Ready for Production!
+
+I must emphasize this software system is *NOT* ready yet for prime-time. Do *NOT* use it in a production environment, without careful testing beforehand!
+
+Octology has not been stress-tested for any security purposes. Please use at your own risk and know there are many bugs, document8ion remains troublingly
+  incomplete in many areas, it is sorely missing some needed fE8ures, and it contains probably several possible security issues.
+
+Most of the included code works primarily as designed and performs what it was originally intended to, but it badly needs to undergo more serious testing!
+
+To reiter8: Do *NOT* use Octology in any Mission-Critical situ8ions! It has many experimental and untested parts. It has essentially been merely an overly
+  ambitious hobby-project, implemented by just a single coder (with effectively no budget, and has had no real concrete goals or milestone schedules yet).
 
 ### Forgive Some Self-Promotion
 If you are willing to fund this development effort, please visit my [SubscribeStar](https://SubscribeStar.Com/Pip "Pip's Octology SubscribeStar Page")
   or                                                                      [Patreon](https://patreon.com/PipStuart "Pip's Octology Patreon       Page")
-  and feel free to send me the **Top8** new fixes and fE8ures you would want most.
+  and feel free to send me the *Top8* new fixes and fE8ures you would want most.
 
-Please also contact me if you are an open-minded thinker interested in any convers8ion or friendship (especially near Oshkosh, Wisconsin).
+Please also contact me if you are an open-minded thinker interested in any convers8ion or friendship (especially near OSHkOSH, Wisconsin).
 
 To learn about the long-term goals, plans, thinking, and research behind this expansive project, please consult l8St development notes at:
   [8.utf](https://github.com/pip/Octology/blob/master/dox/2du/8.utf "dox/2du/8.utf")
@@ -136,4 +151,4 @@ If I ever become unable to continue developing this project further, my hope is 
 ##### (*here's my 3 crosses, making 4K HD together*)
 ![Octology-cros-shot_3840x2160-K44MHuBF](https://github.com/pip/Octology/raw/master/gfx/sho/Octology-cros-shot_3840x2160-K44MHuBF.png "Octology-cros-K44MHuBF")
 
-P.S. I also hope someday aspects of above shots might be seen as logical utility UTF-8 or ASCII art, or at least inspire bits of art. I'd like elabor8ions;
+P.S. I also hope someday aspects of above shots could be seen as logical utility UTF-8 && ASCII-art, or at least inspire bits of crE8ivity && gr8 elabor8ions!;

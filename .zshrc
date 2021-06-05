@@ -31,7 +31,7 @@ unsetopt                \
 # ksh_arrays            \# rEmMbr wNwrItng scrptz[or funcz]2include'setopt [localoptions] ksharrays'sO arAzR 0-bAsed(but!glOblBcuzmOst scrptzRstndrdly 1-bAsed)
 # re_____match_____pcre \# mA want2set for Z-SHell scripting RegularExpressions to utilize PerlCompatibility styles && mA insert 'zmodload zsh/(pc)?re(gex)?';
 export Vers='0.0';export d8VS='L5SMITHS';export Auth='PipStuart <Pip@CPAN.Org>'; # not Xportng $b sinc cOlIdz wi sort{$a <=> $b} /defhijlnqstuvx/i + AZ 4golf;
-if     [[       "$SHELL"    == "" ]]; then       export SHELL=`  which zsh`;fi   # 8sh should parse this && OverId it    # shud `man zshall` /OSTYP 2lern4BlO
+if     [[       "$SHELL"    == "" ]]; then       export SHELL=` which  zsh`;fi   # 8sh should parse this && OverId it    # shud `man zshall` /OSTYP 2lern4BlO
 if     [[       "$HOSTNAME" == "" ]]; then       export HOSTNAME=`hostname`;fi   #`hostname`retnz fsckd nwlInz\n4CygWinzRxvt... ||smthng els lame  =(
 if     [[       "$HOST"     == "" ]]; then       export HOST   ="$HOSTNAME";fi;export VERBOSE='1'; # set flag to print debug && status info from system utilz
 #f     [[       "$HHst"     == "" ]]; then       export HHst   ="$HOST"    ;fi;  # hopefully stop clobbering Docker container /etc/zsh/zprofile set of $HHst;
@@ -52,40 +52,46 @@ if     [   -z  "${debian_chroot:-}" ] && [ -r /etc/debian_chroot ]; then   # set
 alias xprt='export';alias Xp='export'; # even shorter versions of export command which might need 2 become functions 2 avoid multi-pRam unwantd aliasXpansion?;
 # BlO  TMP from HTTPS://StackOverFlow.Com/questions/2435062/what-happened-to-the-tmp-environment-variable (mAB add -d -t 2 mktemp call aftr rEding man pgz?);
 export TMP="${TMP:-$(dirname $(mkt  -u))}/"; # OvrIdDflt /tmp wi ~/.tmp if the latter Xistz, thN Xport othr 3 common ENV varz which mIt B Used 2 design8 TMP;
-if     [[  -d   "$HOME/.tmp"      ]]; then  export      TMP="$HOME/.tmp/"  ;fi;export TEMP="$TMP";export TMPDIR="$TMP";export TMPPREFIX="$TMP";
+if     [[  -d   "$HOME/.tmp"        ]]; then  export      TMP="$HOME/.tmp/";fi;export TEMP="$TMP";export TMPDIR="$TMP";export TMPPREFIX="$TMP";
 export EDITOR="$HEdt";export PERL5LIB="$HOME/lib:$HOME/lib/perl5/lib/perl5/x86_64-linux-gnu-thread-multi:$HOME/lib/perl5/lib/perl5:./lib";
 export  PAGER="$HPgr";export PERL_TEST_POD='1'   ; #`which most`||PAGER=`which less`||PAGER=`which more`;export PAGER; #a good practice for Perl Kwalitee
                       export PERL_TEST_CRITIC='1';export PMARSHOME='/usr/share/games/pmars/macros'; #fyn,letz get crit! ;) && pmars-sdl needz its macroz;
                       export SDL_VIDEO_CENTERED='center'; #xport SDL_VIDEO_WINDOW_POS='x,y'; try2cNtrSDLapzfrom: HTTP://SDL.Beuc.Net/sdl.wiki/SDL_SetVideoMode
 #                     export SDL_WINDOWPOS_CENTERED='1' ; #                   try 2 center SDL applic8ionz from:
 #                            HTTP://Wiki.LibSDL.Org/moin.cgi/SDL_SetWindowPosition?highlight=%28\bCategoryVideo\b%29|%28CategoryEnum%29|%28CategoryStruct%29
+alias  ec='echo ';alias een='ene  ';
+alias  ee='ec -e';alias ece='ee   ';
+alias  en='ec -n';alias ene='en -e';
 #xport bk="\e[40m"   ;export br="\e[41m"   ;export bo="\e[43m"   ;export by="\e[43m"   ;export bg="\e[42m"   ; # L13LCuts: bkslsh SKpz here had2go literal BlO;
-export bk="[40m"   ;export br="[41m"   ;export bo="[43m"   ;export by="[43m"   ;export bg="[42m"   ; # set shell col8 colr escape codez akin to a8.pm
-export bc="[46m"   ;export bb="[44m"   ;export bm="[45m"   ;export bp="[45m"   ;export bw="[47m"   ; # first add bkgr colrz, then shorter fgrndclrz
-export  k="[22;30m";export  r="[22;31m";export  o="[22;33m";export  y="[22;33m";export  g="[22;32m"; # set shell col8 colr escape codez akin to a8.pm
-export  c="[22;36m";export  b="[22;34m";export  m="[22;35m";export  p="[22;35m";export  w="[22;37m";export SKpb="$b"; # like a8.pm altern8 cmp $b
-export  K="[01;30m";export  R="[01;31m";export  O="[22;33m";export  Y="[01;33m";export  G="[01;32m";export    z="[00m"; # like a8 $SKp0 . 'm'
-export  C="[01;36m";export  B="[01;34m";export  M="[01;35m";export  P="[22;35m";export  W="[01;37m"; # these then should become able to use in Uk etc
-export hK="[100m"  ;export hR="[101m"  ;export hO="[103m"  ;export hY="[103m"  ;export hG="[102m"  ; # also setup High-intensity varE8ionz, which
-export hC="[106m"  ;export hB="[104m"  ;export hM="[105m"  ;export hP="[105m"  ;export hW="[107m"  ; #   a8.pm doesn't even include to export yet
-export HK="[90m"   ;export HR="[91m"   ;export HO="[93m"   ;export HY="[93m"   ;export HG="[92m"   ; # '_'=>'01;30'  '^'=>'00'
-export HC="[96m"   ;export HB="[94m"   ;export HM="[95m"   ;export HP="[95m"   ;export HW="[97m"   ; # '.'=>'22;30' cnsidr adng $f[0-9A-Za-z._] f0ntz
-export HpPF='1'; # set 8sh "H" profilePicker Flag to 1 to popul8 base single-char color variablez with l8st d8bo entries as desired override of standard Dfltz;
-if     [[       "$HpPF"    != ""  ]]; then  export  R=`  perl $HMOa -e "print \\\$d8cS[0]"`;export C=`perl $HMOa -e "print \\\$d8cS[4]"`;
+export bk="[40m"   ;export br="[41m"   ;export bo="[43m"   ;export by="[43m"   ;export bg="[42m"   ; # set isol8d bkgrnd codez;
+export bc="[46m"   ;export bb="[44m"   ;export bm="[45m"   ;export bp="[45m"   ;export bw="[47m"   ;
+export  k="[22;30m";export  r="[22;31m";export  o="[22;33m";export  y="[22;33m";export  g="[22;32m";export z="[00m"; #XLBJ Xport d8:L (2021)BlkJk;
+export  c="[22;36m";export Sb="[22;34m";export  m="[22;35m";export  p="[22;35m";export  w="[22;37m"; # low-z zeroReset #XLBJ SKp21 a8-styl colrcodz;
+export  K="[01;30m";export  R="[01;31m";export  O="[22;33m";export  Y="[01;33m";export  G="[01;32m";                   #XLBJ TEN10 BRIGHT FOREGRNDZ;
+export  C="[01;36m";export  B="[01;34m";export  M="[01;35m";export  P="[22;35m";export  W="[01;37m";                   #XLBJ Purpl=dRk-M,Orng=dRk-Y;
+export hK="[100m"  ;export hR="[101m"  ;export hO="[103m"  ;export hY="[103m"  ;export hG="[102m"  ; # can:export W=$'\e[01;37m'; nstdof literalSKp;
+export hC="[106m"  ;export hB="[104m"  ;export hM="[105m"  ;export hP="[105m"  ;export hW="[107m"  ; # set high-intensity (bg);
+export HK="[90m"   ;export HR="[91m"   ;export HO="[93m"   ;export HY="[93m"   ;export HG="[92m"   ; # set HIGH-INTENSITY (FG);
+export HC="[96m"   ;export HB="[94m"   ;export HM="[95m"   ;export HP="[95m"   ;export HW="[97m"   ;
+export HpPF='0'; # set 8sh "H" profilePicker Flag to 1 to popul8 base single-char color variablez with l8st d8bo entries as desired override of standard Dfltz;
+if     [[       "$HpPF"     == "1"  ]] &&  # try to remember that non-"pip" users are not going to see these profile-based changes when sourcing this file!;
+       [[       "$HUsr"     == *I   ]]; then   export R=`perl $HMOa -e "print \\\$d8cS[0]"`;export C=`perl $HMOa -e "print \\\$d8cS[4]"`;
   export O=`perl $HMOa -e "print \\\$d8cS[1]"`;export o=`perl $HMOa -e "print \\\$d8cS[1]"`;export B=`perl $HMOa -e "print \\\$d8cS[5]"`;
   export p=`perl $HMOa -e "print \\\$d8cS[7]"`;export Y=`perl $HMOa -e "print \\\$d8cS[2]"`;export M=`perl $HMOa -e "print \\\$d8cS[6]"`;
   export P=`perl $HMOa -e "print \\\$d8cS[7]"`;export G=`perl $HMOa -e "print \\\$d8cS[3]"`;fi; # ck H pickProfileFlag 4 custom base-color Xportz;
 # HCSL8BCz:nOte th@ all thEse new minimal var nAmz 4 color-codes have a good chance of collIding in minimal shL-script Usagez DfInd l8r BlO, sO try2B careful;
-if     [[ "$HWid"         -lt 160 ]]; then # print tSt set 4 bSt mAjor colr-cOdz 2 suport && try 2 fit at least pretty well within 80 or 160-wId termz 2 stRt;
-     alias clrz='ee  "${z}nOt:b alsO DfInd2B SKpb 2m@ch glObal sort perl var in a8.pm;
+clrz() {
+  if   [[       "$HWid"    -lt  160 ]]; then # prnt tSt set 4 bSt mAjor colr-cOdz 2 suport && try2 fit at least pretty well within 80 or 160-wId termz 2 stRt;
+    ee  "${z}nOte:lOwr-cAse b OnlyDfInd2B Sb 2avoid glObal sort perl var;
  hK:$hK#$z; hR:$hR#$z; hO:$hO#$z; hY:$hY#$z; hG:$hG#$z; hC:$hC#$z; hB:$hB#$z; hM:$hM#$z; hP:$hP#$z; hW:$hW#$z;
  bk:$bk#$z; br:$br#$z; bo:$bo#$z; by:$by#$z; bg:$bg#$z; bc:$bc#$z; bb:$bb#$z; bm:$bm#$z; bp:$bp#$z; bw:$bw#$z;
-  k:$k#$z;  r:$r#$z;  o:$o#$z;  y:$y#$z;  g:$g#$z;  c:$c#$z;  b:$b#$z;  m:$m#$z;  p:$p#$z;  w:$w#$z;
-  K:$K#$z;  R:$R#$z;  O:$O#$z;  Y:$Y#$z;  G:$G#$z;  C:$C#$z;  B:$B#$z;  M:$M#$z;  P:$P#$z;  W:$W#$z;
- HK:$HK#$z; HR:$HR#$z; HO:$HO#$z; HY:$HY#$z; HG:$HG#$z; HC:$HC#$z; HB:$HB#$z; HM:$HM#$z; HP:$HP#$z; HW:$HW#$z;"';
-else alias clrz='een "${z}nOt:b alsO DfInd2B SKpb 2m@ch glObal sort perl var in a8.pm;    k:$k#$z;  r:$r#$z;  o:$o#$z;  y:$y#$z;  g:$g#$z;  c:$c#$z;  b:$b#$z;  m:$m#$z;  p:$p#$z;  w:$w#$z;
+  k:$k#$z;  r:$r#$z;  o:$o#$z;  y:$y#$z;  g:$g#$z;  c:$c#$z; Sb:$B$Sb#$z;  m:$m#$z;  p:$p#$z;  w:$w#$z;
+  K:$K#$z;  R:$R#$z;  O:$O#$z;  Y:$Y#$z;  G:$G#$z;  C:$C#$z;  B:$Sb$B#$z;  M:$M#$z;  P:$P#$z;  W:$W#$z;
+ HK:$HK#$z; HR:$HR#$z; HO:$HO#$z; HY:$HY#$z; HG:$HG#$z; HC:$HC#$z; HB:$HB#$z; HM:$HM#$z; HP:$HP#$z; HW:$HW#$z;";
+  else
+    een "${z}nOte:lOwr-cAse b OnlyDfInd2B Sb 2avoid glObal sort perl var;    k:$k#$z;  r:$r#$z;  o:$o#$z;  y:$y#$z;  g:$g#$z;  c:$c#$z; Sb:$Sb#$z;  m:$m#$z;  p:$p#$z;  w:$w#$z;
  bk:$bk#$z; br:$br#$z; bo:$bo#$z; by:$by#$z; bg:$bg#$z; bc:$bc#$z; bb:$bb#$z; bm:$bm#$z; bp:$bp#$z; bw:$bw#$z;    K:$K#$z;  R:$R#$z;  O:$O#$z;  Y:$Y#$z;  G:$G#$z;  C:$C#$z;  B:$B#$z;  M:$M#$z;  P:$P#$z;  W:$W#$z;
- hK:$hK#$z; hR:$hR#$z; hO:$hO#$z; hY:$hY#$z; hG:$hG#$z; hC:$hC#$z; hB:$hB#$z; hM:$hM#$z; hP:$hP#$z; hW:$hW#$z;   HK:$HK#$z; HR:$HR#$z; HO:$HO#$z; HY:$HY#$z; HG:$HG#$z; HC:$HC#$z; HB:$HB#$z; HM:$HM#$z; HP:$HP#$z; HW:$HW#$z;"'; fi;
+ hK:$hK#$z; hR:$hR#$z; hO:$hO#$z; hY:$hY#$z; hG:$hG#$z; hC:$hC#$z; hB:$hB#$z; hM:$hM#$z; hP:$hP#$z; hW:$hW#$z;   HK:$HK#$z; HR:$HR#$z; HO:$HO#$z; HY:$HY#$z; HG:$HG#$z; HC:$HC#$z; HB:$HB#$z; HM:$HM#$z; HP:$HP#$z; HW:$HW#$z;"; fi; }
 # 99RJGN8g:from old gN2 root@Ryu`em xinit`:IfUUse`startx`nstd ofa login mngr like gdm/kdm,Ucan set XSESSION 2anythng in /etc/X11/Sessions/ or any executable.
 #   wNU`startx`,itwilrunthis astheloginsession.Ucan set this ina filein /etc/env.d 4NtIrsys,orsetit perUser in ~/.bash_profile (or similR4othr shLz). Xamplof
 #   setng4wholsys:`echo XSESSION="Gnome" > /etc/env.d/90xsession; env-update && source /etc/profile`; EBJLAkY8:AkuUbu14.10 nolongrhas thOsdirz sOprolyunUsed;
@@ -152,7 +158,7 @@ else                                   eval $($dircolors -b            ); fi #  
 # F1ELGnuL:RoYG CBMp => 1;3[1o32 645p] thEse lInz should evN2LE get gNR8d from `ls /boot`; I98M89I9:rEsortd2XplicitNtrEzB4quStnz sinc wrkin lsd8 but!nrml `ls`;
          LS_COLORS="$LS_COLORS*-interface-security=01;31:*-shim-state=01;36:*.?.=0;36:*.??.=0;34:*.???.=0;30:*.????.=0;32:";      # /run  # .?. cbkg prvz
          LS_COLORS="$LS_COLORS*.3.=0;34:*.33.=0;30:*.66.=0;34;40:*.0.=0;30:*.O.=0;33;43:*.96.=0;34;42:*.9G.=0;32;44:"; #3nd0tn6Xz # gN96z # .?upd8?
-         LS_COLORS="$LS_COLORS*.G.=0;44:*.GG.=0;34:*.G9.=0;30;40:*.9.=0;34:*...=0;30;44:*.*.=0;30:*.=01;00;34:";  # endotnGXtraz  # gN9Gz # .?bbkbkk prv? +nw g
+         LS_COLORS="$LS_COLORS*.G.=0;44:*.GG.=0;34:*.G9.=0;30;40:*.9.=0;34:*.=01;00;34:*..=00;30:*...=0;30;44:";  # endotnGXtraz  # gN9Gz # .?bbkbkk prv? +nw g
          LS_COLORS="$LS_COLORS*.png.=0;35;45:*.Hrc.=0;30:*.ls.=0;34;44:*.log.=0;32:*.kdb.=0;30;40:*.txt.=0;36:";  # somemAnXtraz  # gNrl  # .?mkbgkc prvz m b k
          LS_COLORS="$LS_COLORS*.g.=0;35:*.gg.=0;30:*.g6.=0;34;44:*.6.=0;32:*.H.=0;30;40:*.8.=0;36:*.prv8.=0;34:"; # moremAnXtraz  # gNg8z # .?mkbgkc prvz +nw b
 export   LS_COLORS="$LS_COLORS*.serverauth.???=00;32:*.serverauth.????=00;31:*.serverauth.?????=00;35:*.goutputstream-??????=00;31:"; #*.gout*-? duz!wrk4 `ls`;
@@ -193,7 +199,7 @@ alias  gpnt=' grp  -nubTH';alias gpnz='gpnt -Z';alias gca='grep --color=auto'; #
 #xport  C="\e[01;36m";export  B="\e[01;34m";export  M="\e[01;35m";export  P="\e[22;35m";export  W="\e[01;37m"; # these then should become able to use in Uk etc
 #xport  K="[01;38;5;247m";export  R="[01;38;5;009m";export  O="[22;38;5;172m";export  Y="[01;38;5;011m";export  G="[01;38;5;010m";export z="[00m";
 #xport  C="[01;38;5;014m";export  B="[01;38;5;012m";export  M="[22;38;5;013m";export  P="[01;38;5;092m";export  W="[01;38;5;015m";export Z="[01m";
-export  K="[01;38;5;247m";export  W="[01;38;5;015m";export  Z="[01m"; # these re-define basic color variables from earlier 1z around line 63 && abit B4;
+#xport  K="[01;38;5;247m";export  W="[01;38;5;015m";export  Z="[01m"; # these re-define basic color variables from earlier 1z around line 63 && abit B4;
 export       PS1='%{$W%}%(!.<.[)%{$G%}%n%{$z$B%}@%{$C%}$HHst`d8 -z`%{$z$B%}`c8fn -z $PWD`%{$W%}%(!.>.])%{$z$G%}'; # see if sakura can accept colr varz in prmpt
 # it seems that sakura won't bright bold 01;30..37 like other termz but setting prompt with xterm-256color SKp cOdz will work 4 her like it does elsewhere;
 #xport       PS1='%{[1;37m%}%(!.<.[)%{[1;32m%}%n%{[1;34m%}@%{[1;36m%}$HHst` d8 -z `%{[1;34m%}` c8fn -z $PWD `%{[1;37m%}%(!.>.])%{[1;32m%}';
@@ -658,12 +664,6 @@ alias      zp='    tar czvf'; #zp:            tgz|tar|zip|7z (eventually inspect
 alias       z='     zp';
 #          uz() already function below
 #lias      uz='  unzip'; #  uz   :          unzip
-alias      ec='  echo '; #  ec   :           echo
-alias      ee='  ec -e';
-alias     en='   ec -n';
-alias     ene='  en -e';
-alias     een='  ene  ';
-alias     ece='  ee   ';
 alias      ev=' evince'; #  ev   :           evince (decent PDF document reader)
 alias    cncl=' cancel'; #  cncl :         cancel
 alias   comma=' cma   '; #  comma:            cma (like coma inserts by 4, these insert after 3)
