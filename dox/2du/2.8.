@@ -87,9 +87,7 @@ PrepR8ion
 I will try to prepare and rehearse whatever seems most worthwhile to present within the allotted time, and hope to revitalize some of the Perl community’s earlier vigor and enthusiasm by demonstr8ing gr8 power.
 
 Submitted Co-Presenters;
-
 ####
-
 Feedback About Submission: The Perl and Raku Conf on May 05, 2020 10:01 CDT
 
 Dear Pip Stuart,
@@ -103,107 +101,6 @@ Hopefully we will still you see at Conference in the Cloud.
 Thank you again.
 
 Conference in the Cloud Organizers
-
-####
-Lightning Talks Day 1              - rGeoffrey Avery   # Lightning Talk submission accepted;
-Octology on GitHub and SourceForge - Pip       Stuart  # Scheduled for 2nd talk on 1st day, but no YouTube link to my video was provided on old 2020 site;
-This talk is all about bolts of Lightning from the Perly-G8s in the Clouds. It is a detailed demonstr8ion of what new users will become capable of doing by exploring all that Octology has to offer. Enjoy!
-PipPresents: Octology's SysAdmin/WhiteHat/BlackJack Year 21-Variables for Colors, But a 0 Ain't 1  ("tstc tsgr") -PipStuart # Scheduled 4 ?st talk on ?st day;
-  This is a 20-minute talk about using 20 simple Colors from Perl as in Bash/Zsh scripts with terse mnemonic abbreV8d names, as well as final Zero/^ to reset.
-The talk will explain the d8-bow of "ROYG CBMP" enclosed by (blacK)"K and W"(White) with lowercased versions being dark and how "S" (for eScape) gener8s them.
-Then "tstc" and "tsgr" will briefly show much more than just the basic 20 plus 1(Zero) for reset, should anyone require the now rel8ively standard 256 colors,
-  as well as Octology's re-mapping of Select-Graphic-Rendition text attributes which can also easily be toggled now mnemonically too. Hope all will enjoy it!;
-PipPresents: Octology's 8-Pre-cursor-Letter-Counter Gener8d From 8.utf Into Many Perspectives           ("8plc") -PipStuart # Scheduled 4 ?nd talk on ?nd day;
-# This is a 20-minute mid-length-talk about ...
-PipPresents: Octology's Audio/Video-Player gst123 Expect-Wrapper with LibVisualiz8ion Spectrum-Analysis ("g3"  ) -PipStuart # Scheduled 4 ?rd talk on ?rd day;
-# This is a 20-minute mid-length-talk about ...
-PipPresents: Octology's File-Test EvalU8or for Executable Perl and Shell Reference with Regex Escapes   ("ftst") -PipStuart # Scheduled 4 ?st talk on ?st day;
-# This is a 20-minute mid-length-talk about ...
-#### try "d8" and "d8ok", "8ct", "gnp8", "pP", "kpc", "wh8", "wdht", "qbix", "w0rm", "mix8", "die8", "8trm", "c8", "g8", "pal8", etc.? ;
-PipPresents: Octology's Dictionary Definition History-Log and Reformul8ion-Wrapper       ("dic"  or just "d"   ) -PipStuart # Scheduled 4 ?rd talk on ?rd day;
-# This is a  5-minute  lightning-talk about ...
-PipPresents: Octology's Monitor/Display-Resolution Gener8or for the Church-of-Pixels     ("reso" or test "rest") -PipStuart # Scheduled 4 ?th talk on ?th day;
-# This is a  5-minute  lightning-talk about ...
-PipPresents: Octology's Colorful Help-Text Performing Summariz8ion of Binary Executables                ("sumb") -PipStuart # Scheduled 4 ?th talk on ?th day;
-# This is a  5-minute  lightning-talk about ...
-PipPresents: Octology's Chess Program Innov8ing New Board Formats and Move/Ply Not8ion                  ("ckm8") -PipStuart # Scheduled 4 ?th talk on ?th day;
-# This is a  5-minute  lightning-talk about ...
-#ipPresents: Octology's LS_COLORS Monumental File-Extension and Type Coloring Scheme                    ("lrc" ) -PipStuart # Scheduled 4 ?nd talk on ?nd day;
-# This is a  5-minute  lightning-talk about ...
-#ipPresents: Octology's Primes/Summ8ions/Fibonaccis/Factorials                           ("Prmz Sumz Fibz Fctz") -PipStuart # Scheduled 4 ?th talk on ?th day;
-# This is a  5-minute  lightning-talk about ...
-####
-20z:BlackJack (c8 20-Colors+1-ZeroReset), PPOCaseStudy#21 (Fibo 8) L+l (CoolRockHell'sBellsUPeckers), PPOCS#13 (Fibo 7) d+g3, PPOCS#8 (Fibo 6) qbix+ckm8,
- 5z:ftst+?, d8ok+calN, Respect reso && the rest of 8plc a, sumb+cred(+rant mAB?);
-Tagz: Perl,GNU/Linux,Zsh,Bash,Vim,Curses,SDL,Git,Ubuntu,Unity,Compiz,YouTube,KeePass,Screeps,GnomeTerminal,Sakura,CoolRetroTerm,STTerm,ANSI,EscapeCodes,???;
-Talk(~30-45min)Title:"PipPres: Octology Case-Study #21 `Fibo 8`:  `L` + `l`  (simple versus thorough manipul8ion of the `ls` command)"; AudienceLevel:"All";
-Elev8orPitch:"GNU's core-utils `ls` command is... I guess you could say pretty standard when users desire directory listings. While modifying it does not seem"
-  "to be a particularly popular thing to do, it may still be quite valuable to know ways that you might benefit from at least being able to do so. Check L&&l."
-Description :?; Notes:?; Tagz:?; # above Elev8orPitch max chars: 300;
-L4JMDu:HTTPS://Conf.LinuxAppSummit.Org/event/3/registrations/6/?token=9dbb806f-c53f-4f55-addc-6574013f3fad
-Main Track: HTTPS://LinuxAppSummit.Org/attend
-Pin   Code: "573010MainTrack!"
-"PipPresents: Octology in 2021: BlackJack Year for WhiteHat/SysAdmins, 20-minutes, 20-colors (c8), and 1-reset (zero $z)" # orig. 20-minute plan;
-             "Octology in 2021: BlackJack Year for WhiteHats? 20-Colors (letter $k [Jack]) + 1-Reset (zero $z [Ace])"     # newer ~5-10-min plan;
-~20mPlanA:~2m mAB shO 21 && go off on Blacks && Jacks of different common types, ~2m Docker load tst? @Oct,retn ~2m bildup 21 phasing in:kcmyRGBopW?,
-  ~2m lrc, 5th~2m `ls -A` + LA (I want 2 live in pixieFranKsis) + la, ~2m L + l ~ && ~/*, ~2m d8 in l && d8ok sorts nice, 8th~2m dic + resp,
-  ~2m S + c, ~2m tstc + tsgr; "Please open eyelids, not eyes!" # ... but I Digressin4FireFireInTheTacoBellFierFrei !in crowd thE8r, OK?; `Fibo 8` wher?;
-~20mPlanB:~1m FairUse CopyRight DisClaimer && BiPolarMania MatureAdult NotSafe4KidsOrWork OffensiveHumor ProfaneBlasphemous TriggerWarning SensitiveSwitchTrax,
-  ~1m d8bo 'ROYG CBMP' within blac'K && W'hite as 10 main Bright UpperCase Jack, then 10 dark lowercase + 'z' zeroReset as Ace 11 all introduced && emphasized,
-  ~2m git clone Octology repo, Docker build && run container as tst@Oct to try-out Octology behavior easily, ~1m return to d8bo phasing in RGB, CMYK, OP, && W,
-  ~1m explain Bash/Zsh && a8.pm 21 variable exports, ~1m 20 color-code-chars also work through 'S' (eScape-gener8or) && how LS_COLORS exports from 'dircolors',
-  ~2m lrc shown parsing ~/.lrc file to gener8 ~/.lsrc for src to reload into %ENV && contrast default lsa with lsrc-loaded then mention FrankBlack && LA && la,
-  ~2m return to d8bo && show CaptainBlack cigars along with clip of CaptainJackSparrow && BlackPerl then show vim dic with hls on 10 Jack regex search 4 usage,
-  ~2m d8 && d8ok employing d8bo for 8-char descending-size fields to get 60th-of-second precision in any time-zone for over a thousand-Year span && ls 4 chron,
-  ~2m clip comedian LewisBlack fits then show how 'resp' uses Jack UpCase 10 to gener8 display resolution specific8ions && JackBlack NachoLibre School_of_Rock,
-  ~2m maybe emphasize 10 UpCase Jack colors again with clips 4 MasterJackLiu ("under-parts") && JackSkellington && Jack&&Jill && Jack&&BeanStalk && JackRipper,
-  ~2m G::C::Poker or other b128 letter-to-card mappings with Sum8 6 && Fibo 8 (21), Fibo 7 (13) as cards suit or half AlphaBet, Fibo 6 (8) loop BlackJack demo,
-  ~1m of return to d8bo && wrapping up how quick && easy it can become to start employing 10 or 20 common colors in almost any uncolored shell or Perl scripts;
-RationalityRules StephenWoodford "TEDx's DE-FACTO Blasphemy Law | Maryam Namazie" ~3m18s:"Some viewers may find elements of this talk to be distressing or ..."
-  "... objectionable. TEDx events are independently organized by volunteers. The guidelines we give TEDx organizers are described in more detail here: "
-  HTTPS://Pip.BavL.Org/cocx/manuals/t.... "Please note that the content of any talk does not necessarily represent the views of the TEDx organizers." then also
-  "I am Cock-a-trix! Hear me roar! ... Purr-meow. *lick* *groom*" then Metro-Goldwyn-Mayer Lion with Male-Genital-Mutil8ion (A.K.A."HolyCircumcision/Crucifix")
-  then 21st-Century-Fox && the FuxFox ButterflyBabe && start in on some BlackJack Casino-style montage to set the stage for the above to follow? Sounds gEd! ;)
-  With lsa LindseyStirling Love4SleepWalkingHeistShadowCrystallize:"I hope I never corrupt you. Sheer perfection. Sublime!" then end IndigoWhite||NatWynn plz?
-  Maybe OctologySoftHardPeni64HeadQuarters (OSHP64HQ.Com) could be where we penetr8 && serve Osh&&FoxCities with treats for pix of local Bitches && Pussies! ;)
-  Probably take the MaryamNarazie RationalityRules TEDx TriggerWarning shot&&add Peni64-In-Pussy ... Cat-Or-Cut, Code-Of-(Ms.)Conduct ... Purpose-In-Profanity;
-  Maybe wrap up with something like:"Get Vaccin8d Today! Code-Of-Very-Inclusive-Diversity_21 is the BlackJackPill for the Woke. Just a Prick is all you need!";
-  My Californic8ion is Fighting-Like-a-Brave && what I've got, you've got to put it in your daughter, since I ("Penocha Sex") identify as AttackHeliCockPit! ;)
-  Also, starting a gr8 new cover-band called "Rage-Against-The-Sewing-Machine" should put Meaningful within RATS-M-LAGRHINO-GRT && deal with Singer/Fiskers! ;)
-  "Octology makes easy things efficiently trivial, and hard things easy (if possible)!" && new overload "Just-Another-PRO-Hacker" 4Perl-Raku-Octology JAPH! =);
-  Also consider compiling after "Laziness, Imp8ience, Hubris" next 61 candid8s of virtues to autom8 mechanism for tabul8ing Top5 to build anagram initialism or
-    ... ideally an acronym out of, when joined with "LIH" so anyone can e-mail me their 0.._ (63) r8ings for the 61 choices which I'll show we can upd8 2 l8st;
-  Pip.BavL.Org/PRO Perl-Raku-Octology should describe plan to pick best [AEO] virtue then collect Top4 of 64 new virtues for the healthy future of PerlComUniT;
-  Pip.BavL.Org/L8D of Dr.HeatherHeying,Dr.Becky,NatalieWynn,MaryamNamazie,CassieJaye,LianaKerzner,LindseyStirling,&&AshleyMathews(RileyReid) discussing Irthe!;
-  Pip.BavL.Org/LAD can then plan 5 of L8D with 4 pools of 8 men to select amongst for a Top10 October from Intellectuals,MGTOWs,Skeptics,&&MilitaryVeterans?=);
-    Intellectuals: ElonMusk, JonathanHaidt, Dr.JordanPeterson , Dr.CarlL.Hart , DanielSchmachtenberger, both Bret && EricWeinstein, && SamHarris; # ThisWorks?;
-    MRAs / MGTOWs: PaulElam, JohnTheOther , AlexGrace,huMAN,HammerHand,CoachGregAdams,KarenStraughan,?; # !pseudonyms:SandMan,StarDusk(ThinkingApe),TFM,RF(Ph);
-    SkepticAtheis: Paulogia, VicedRhino, AronRa, MattDillahunty, Logicked, StephenWoodford (RationalityRules), AlexO'Connor(CosmicSkeptic), && Drew(GMSkeptic);
-    Military_Vets: JockoWilink (?), AnthonyTran (ATF/USPS), 4 most honorable && decor8d vets, LarryGenz (Marines), && maybe DadGerryStuart (inVietNam,USArmy)?;
-  For LS add LayShepherd && LadySovereign, then do languages with "LaRaza" (who's racist?) && "NegroSabado" into HoodFigga "Yellow, White, Red, Brown" && then:
-    "My Tesla sits on 21's, flats look like BlackJacks, waffles, ye know?! Yah? ... Yeah! But enough SuperSayinShit, Let's begin! DragonBalls. HaDouKen!" etc.;
-  Intro warning should explain that I have suffered from persistent hyper-mania for 16 Years && have lived exclusively off SSDI DisAbility for "Ace" 11 Years!;
-  Discrimin8ing against me for DisAbility, Orient8ion, Ethnicity, &&/|| Gender ("Psychotic-Str8-White-Male Lives Matter too!") ought to be hypocritical shite!;
-  BlackJack(NachoFreeLibreSoft),Capt.Black(CursesOfBlackPerl),FrankBlack(LA),JetBlack(CowBoyBeBop),LewisBlack(MiddleFingers),BlackSheep,BlackCrows,BlackEydPs,
-  BlackSabbath,BlackIsTheNewOrange,Black(Bubonic?)Plague,BlackHoleSun(SoundGarden),BackInBlack(AC/DC),BlackTa2(PerlJam),JackLivesMatter,Black8Ball,BlackBeard,
-  BlackTea&&Cat(Darjeeling),BlackList,BlackBird,BlackHeart,BlackEye,BlackNBlue,BlackTarHeroin,BlackCock(Big),BlackNigga,BlackSwan,BlackFly,BlackHead,BlackTop,
-V BlackBoard,BlackMail,BlackNDecker,BlackNTan,BlackOut,BlackerThanBlack,BlackFriDay,BlackScreen,BlackPanther,BlackPower,BlackPride,BlackSafeSpaces ;) snOflAx,
-  BlackHawkDown(WarMovie),BlackCherry(PoppinDaddyz),BlackBerry,BlackCurrant,BlackCoffee(Strong),BlackDiamond,BlackDragon,BlackSquirrel(NutzInMouth),BlackFace,
-q BlackLungSyndrome,PitchBlack,PotCallsKettleBlack,BlackBodyRaD8ion,BlackenedSalmon,BlackCulturalApproprE8ion,BlackLocalColor(Slang/Lingo),BlackSmith(Swords),
-y BlackBear,BlakkRob,BlackOper8ions,BlackSea,BlackDeath,BlackWater,BlackMirror,BlackKnight,BlackDahlia,BlackAdder,BlackBogusBeauty(NeoExcellentWyldStallions),
-  BlackStrobeLight,Black&&Mild(SweetWineJazzCasinoCigars),BlackPepper;JackYouUp,JackYourCarUp,CarJack(GTAReSpawn),JackAss,FullMetalJacket,JackYourBody(House),
-  JackBlack(TenD:SchoolOfRockNRollHerGently),Capt.JackSparrow(BlackPerl),JackSkellington,JackNicholson,(Black)JackInTheBox,JackNJill,JackNBeanstalk,JackSprat,
-88Jacks(BounceBall+spikeys),Jax(MortalKombat),JackOLantern(PumpKingHead),JackLalane,JackTheRipper,JackTripper(3'sACrowd),Jackal(Anubis),JackingOff(&&OnAgain),
-  JackJumpedOverCandleStick,Jack(Manny&&Moe,PepBoys),JackRyan?(HarrisonFord,Clear&&PresentDanger),JackDaniels(BlackLabelTennesseeSouthernWhiskey?),AppleJacks;
-1b"This BlackJack 21 talk is based on my Octology software system. I need to emphasize that it is *NOT* ready for prime-time. Do *NOT* use it in a production"
-    "... environment, without thorough testing beforehand. Octology has not been stress-tested for any security purposes. Please use at your own risk && know"
-    "... there are bugs, incomplete document8ion, sorely missing fE8ures, and probably many possible exploits. Most code works as designed but needs testing!"
-  # Do *NOT* use Octology in any Mission-Critical situ8ions. It is largely experimental && untested. It is the hobby-project of a single coder with no budget;
-  .zshrc BJ exports had problem with "\e" instead of literal "" eScape chr(27) back on L13 && now L63 it works again, but Docker had $HHst problem recently.
-  I guess I want to find any non-alpha characters that can be in both Zsh && Bash variable names && hopefully also in unSKpd paramz to a8.pm S to gener8 same.
-  On one hand, it would be pretty nice to move main 21 single-char Orig spec 30-37 to O prefix (like FDALOH) && sepR8 out Bold 1 && bOLD 22 but mAB!sO cmp@bl?
-  $K && $W && $Z are set again just before PS1 prompt so probably just scrap those. Also, $HpPF profile-Picker Flag auto-loads from Perl, right after exports.
-  `S _|c` doesn't retn "_" as Xpectd! Why does c8fn call a8:cklc when it should not have to? Maybe a8:o8 should not be testing for flags which shud pas2calld;
 ####
 Search lyrics sites for "Pearly Whites", "casting Pearls before Swine", && "Pearl necklaces" to clip song segments together for musical references or comedy.
 
@@ -237,30 +134,178 @@ Zoom: In browser open HTTPS://Zoom.US && select "Host a Meeting" > "with video o
 `g3lt` is gst123 wrapper for LightningTalk with pre-timed audio playlist of gst123 on Oiki for demonstr8ion of original GnomeSTreamer basic output to press
   '?' on within remaining 19-seconds of play-time to show help-text, then spawns `g3` with LibVis monoscope on 63-secs of Figure8, 36-secs of PoopNastyPip,
   63-secs of Cobra, && 63-secs of WhyDuITry to wrap the whole sequence up real close to 4-mins 8-secs total. Might want to add some 8-secs song4 sloc cred;
-
-#### K6FMHIRE: `g3lt`  is the alias which wraps gst123 && g3 4my LightningTalk;
- 0) GL       ; ? ; h ; "I WelcomeU2 my Octology!" (you will get to suck pipes);
- 1) dict pip ; d pip ; "So how does my dict8? ;)" (my seed's like sweet fruit);
- 2) wh64  8  ; wh64  ; c8 .Hrc|g '^A'; # shouldB past Groove just into Figure8;
-  a8|hl 1P 9 ; lodH|hl 1P 9 ; tstn ; ckm8 ; sumb ;  GG  ;  S2 t2|c2 ;
- 3) tsgr  b  ; tstc  ; resp ; gnp8 ; Prmz ; Sumz ; Fibz ; Fctz 47 2 ;
-## `xe` autom8z everything but manual moving of ckm8 && then qbix && SC at end;
- 4)     ftst ; d8ok D; "Use 8 (or 5) chars 2 design8 1489 _eX0O _pV0lxxx 2511."
- 6)   cJ  a  ;  CJ   ; "My p8 has a Royal-Crown from viral code, not CoViD-19!"
- 5)'BlO\/q80';  SC8  ; "sloc output tmp lodH, $gs calN.ansi, && $gs 8plc.ansi;"
- 7)qbix*ftst*; *SC*  ; "SlowCat blasting bolts from my Lightning-Talk Credits;"
-#### K6GMCRED: if(-s cred.utf){bytes: 2291x8 = 18328/16 = 1145.5 };
-# Hello. Welcome! My name is Pip and today I'd like to introduce U 2 Octology.
-" Octology will enable you 2 control computers far more efficiently than U ..."
-"  ... could before.   You will become a master of the command-line, easily..."
-"  ... able to add colors or attributes to any textual programs.   It will ..."
-"  ... even improve your vocabulary && also your understanding of mathematics."
-# Octology can && will do all this && much more. I hope you enjoy using it.  =)
-" Well gr8 thanks 2 all U viewers. Please check-out Octology on GitHub! GGPO. "
-K6MME2Id:upd8 cred,add xe (xte wrapr) 2 a8.pm,upd8 shots,clEn $gs ~/gfx/sho,
-  gac && gpom,rEview Dad chat,add intro,rec new vid && ul 2 U2b,chat wi Dad;
-K6NM9LIV:brk apRt PSFF,tSt rec phOn,prep vocalscript,practice thN rec Take1;
-K6OM35MX:script conclusion && some quality explan8ions for the middle,`gap`;
+#### K6FMHIRE: `g3lt`  is the alias which wraps gst123 && g3 4my LightningTalk; ## `xe` autom8z everything but manual moving of ckm8 && then qbix && SC at end;
+ 0) GL       ; ? ; h ; "I WelcomeU2 my Octology!" (you will get to suck pipes);  4)     ftst ; d8ok D; "Use 8 (or 5) chars 2 design8 1489 _eX0O _pV0lxxx 2511."
+ 1) dict pip ; d pip ; "So how does my dict8? ;)" (my seed's like sweet fruit);  6)   cJ  a  ;  CJ   ; "My p8 has a Royal-Crown from viral code, not CoViD-19!"
+ 2) wh64  8  ; wh64  ; c8 .Hrc|g '^A'; # shouldB past Groove just into Figure8;  5)'BlO\/q80';  SC8  ; "sloc output tmp lodH, $gs calN.ansi, && $gs 8plc.ansi;"
+  a8|hl 1P 9 ; lodH|hl 1P 9 ; tstn ; ckm8 ; sumb ;  GG  ;  S2 t2|c2 ;            7)qbix*ftst*; *SC*  ; "SlowCat blasting bolts from my Lightning-Talk Credits;"
+ 3) tsgr  b  ; tstc  ; resp ; gnp8 ; Prmz ; Sumz ; Fibz ; Fctz 47 2 ;           #### K6GMCRED: if(-s cred.utf){ bytes: 2291x8 = 18328/16 = 1145.5 }; # q baud;
+# Hello. Welcome! My name is Pip and today I'd like to introduce U 2 Octology.  #### K6R     : It's been Xactly7Years since I Bgan ~/dox/2du/8.utf officially!;
+" Octology will enable you 2 control computers far more efficiently than U ..." "  ... could before.   You will become a master of the command-line, easily..."
+"  ... able to add colors or attributes to any textual programs.   It will ..." "  ... even improve your vocabulary && also your understanding of mathematics."
+" Well gr8 thanks 2 all U viewers. Please check-out Octology on GitHub! GGPO. " # Octology can && will do all this && much more. I hope you enjoy using it. =)
+Lightning Talks Day 1              - rGeoffrey Avery   # Lightning Talk submission accepted; Yay! Try not to fuck it up too badly, unless it's a bad bitch! ;)
+Octology on GitHub and SourceForge - Pip       Stuart  # Scheduled for 2nd talk on 1st day, but no YouTube link to my video was provided on old 2020 website;
+This talk is all about bolts of Lightning from the Perly-G8s in the Clouds. It is a detailed demonstr8ion of what new users will become capable of doing by...
+  ... exploring all that Octology has to offer. Enjoy! # Here and above were Lightning-Talk details from Perl-Conference 2020. Below is plans 4 2021 PerlConf;
+PipPresents: Octology's SysAdmin/WhiteHat/BlackJack Year 21-Variables for Colors, But a 0 Ain't 1  ("tstc tsgr") -PipStuart # Scheduled 4 ?st talk on ?st day;
+  This is a 20-minute talk about using 20 simple Colors from Perl as in Bash/Zsh scripts with terse mnemonic abbreV8d names, as well as final Zero/^ to reset.
+The talk will explain the d8-bow of "ROYG CBMP" enclosed by (blacK)"K and W"(White) with lowercased versions being dark and how "S" (for eScape) gener8s them.
+Then "tstc" and "tsgr" will briefly show much more than just the basic 20 plus 1(Zero) for reset, should anyone require the now rel8ively standard 256 colors,
+  as well as Octology's re-mapping of Select-Graphic-Rendition text attributes which can also easily be toggled now mnemonically too. Hope all will enjoy it!;
+PipPresents: Octology's 8-Pre-cursor-Letter-Counter Gener8d From 8.utf Into Many Perspectives           ("8plc") -PipStuart # Scheduled 4 ?nd talk on ?nd day;
+# This is a 20-minute mid-length-talk about ...
+PipPresents: Octology's Audio/Video-Player gst123 Expect-Wrapper with LibVisualiz8ion Spectrum-Analysis ("g3"  ) -PipStuart # Scheduled 4 ?rd talk on ?rd day;
+# This is a 20-minute mid-length-talk about ...
+PipPresents: Octology's File-Test EvalU8or for Executable Perl and Shell Reference with Regex Escapes   ("ftst") -PipStuart # Scheduled 4 ?st talk on ?st day;
+# This is a 20-minute mid-length-talk about ...
+#### try "d8" and "d8ok", "8ct", "gnp8", "pP", "kpc", "wh8", "wdht", "qbix", "w0rm", "mix8", "die8", "8trm", "c8", "g8", "pal8", etc.? ;
+PipPresents: Octology's Dictionary Definition History-Log and Reformul8ion-Wrapper       ("dic"  or just "d"   ) -PipStuart # Scheduled 4 ?rd talk on ?rd day;
+# This is a  5-minute  lightning-talk about ...
+PipPresents: Octology's Monitor/Display-Resolution Gener8or for the Church-of-Pixels     ("reso" or test "rest") -PipStuart # Scheduled 4 ?th talk on ?th day;
+# This is a  5-minute  lightning-talk about ...
+PipPresents: Octology's Colorful Help-Text Performing Summariz8ion of Binary Executables                ("sumb") -PipStuart # Scheduled 4 ?th talk on ?th day;
+# This is a  5-minute  lightning-talk about ...
+PipPresents: Octology's Chess Program Innov8ing New Board Formats and Move/Ply Not8ion                  ("ckm8") -PipStuart # Scheduled 4 ?th talk on ?th day;
+# This is a  5-minute  lightning-talk about ...
+#ipPresents: Octology's LS_COLORS Monumental File-Extension and Type Coloring Scheme                    ("lrc" ) -PipStuart # Scheduled 4 ?nd talk on ?nd day;
+# This is a  5-minute  lightning-talk about ...
+#ipPresents: Octology's Primes/Summ8ions/Fibonaccis/Factorials                           ("Prmz Sumz Fibz Fctz") -PipStuart # Scheduled 4 ?th talk on ?th day;
+# This is a  5-minute  lightning-talk about ...
+20z:BlackJack (c8 20-Colors+1-ZeroReset), PPOCaseStudy#21 (Fibo 8) L+l (CoolRockHell'sBellsUPeckers), PPOCS#13 (Fibo 7) d+g3, PPOCS#8 (Fibo 6) qbix+ckm8,
+ 5z:ftst+?, d8ok+calN, Respect reso && the rest of 8plc a, sumb+cred(+rant mAB?);
+Tagz: Perl,GNU/Linux,Zsh,Bash,Vim,Curses,SDL,Git,Ubuntu,Unity,Compiz,YouTube,KeePass,Screeps,GnomeTerminal,Sakura,CoolRetroTerm,STTerm,ANSI,EscapeCodes,???;
+Talk(~30-45min)Title:"PipPres: Octology Case-Study #21 `Fibo 8`:  `L` + `l`  (simple versus thorough manipul8ion of the `ls` command)"; AudienceLevel:"All";
+Elev8orPitch:"GNU's core-utils `ls` command is... I guess you could say pretty standard when users desire directory listings. While modifying it does not seem"
+  "to be a particularly popular thing to do, it may still be quite valuable to know ways that you might benefit from at least being able to do so. Check L&&l."
+L4JMDu:HTTPS://Conf.LinuxAppSummit.Org/event/3/registrations/6/?token=9dbb806f-c53f-4f55-addc-6574013f3fad
+Main Track: HTTPS://LinuxAppSummit.Org/attend ;  Pin Code: "573010MainTrack!";    Description :?; Notes:?; Tagz:?;        # above Elev8orPitch Max Chars: 300;
+"PipPresents: Octology in 2021: BlAcKJAcK Year for WhiteHat/SysAdmins, 20-minutes, 20-colors (c8), and 1-reset (zero $z)" # orig. 20-minute plan;
+             "Octology in 2021: BlAcKJAcK Year for WhiteHats? 20-Colors (letter $k [Jack]) + 1-Reset (zero $z [Ace])"     # newer ~5-10-min plan;
+~20mPlanA:~2m mAB shO 21 && go off on BlAcKs && JAcKs of different common types, ~2m Docker load tst? @Oct,retn ~2m bildup 21 phasing in:kcmyRGBopW?,
+  ~2m lrc, 5th~2m `ls -A` + LA (I want 2 live in pixieFranKsis) + la, ~2m L + l ~ && ~/*, ~2m d8 in l && d8ok sorts nice, 8th~2m dic + resp,
+  ~2m S + c, ~2m tstc + tsgr; "Please open eyelids, not eyes!" # ... but I Digressin4FireFireInTheTacoBellFierFrei !in crowd thE8r, OK?; `Fibo 8` wher?;
+~20mPlanB:~1m FairUse CopyRight DisClaimer && BiPolarMania MatureAdult NotSafe4KidsOrWork OffensiveHumor ProfaneBlasphemous TriggerWarning SensitiveSwitchTrax,
+  ~1m d8bo 'ROYG CBMP' within blac'K && W'hite as 10 main Bright UpperCase Jack, then 10 dark lowercase + 'z' zeroReset as Ace 11 all introduced && emphasized,
+  ~2m git clone Octology repo, Docker build && run container as tst@Oct to try-out Octology behavior easily, ~1m return to d8bo phasing in RGB, CMYK, OP, && W,
+  ~1m explain Bash/Zsh && a8.pm 21 variable exports, ~1m 20 color-code-chars also work through 'S' (eScape-gener8or) && how LS_COLORS exports from 'dircolors',
+  ~2m lrc shown parsing ~/.lrc file to gener8 ~/.lsrc for src to reload into %ENV && contrast default lsa with lsrc-loaded then mention FrankBlack && LA && la,
+  ~2m return to d8bo && show CaptainBlack cigars along with clip of CaptainJackSparrow && BlackPerl then show vim dic with hls on 10 Jack regex search 4 usage,
+  ~2m d8 && d8ok employing d8bo for 8-char descending-size fields to get 60th-of-second precision in any time-zone for over a thousand-Year span && ls 4 chron,
+  ~2m clip comedian LewisBlack fits then show how 'resp' uses Jack UpCase 10 to gener8 display resolution specific8ions && JackBlack NachoLibre School_of_Rock,
+  ~2m maybe emphasize 10 UpCase Jack colors again with clips 4 MasterJackLiu ("under-parts") && JackSkellington && Jack&&Jill && Jack&&BeanStalk && JackRipper,
+  ~2m G::C::Poker or other b128 letter-to-card mappings with Sum8 6 && Fibo 8 (21), Fibo 7 (13) as cards suit or half AlphaBet, Fibo 6 (8) loop BlackJack demo,
+  ~1m of return to d8bo && wrapping up how quick && easy it can become to start employing 10 or 20 common colors in almost any uncolored shell or Perl scripts;
+#!# Last Year (June 2020), my Lightning-Talk was barred from inclusion on the Perl-Conference YouTube-channel web-site due to my mental-illness (BiPolar Type-1
+#!#   DisOrder), which had caused me to become hyper-manic under the pressures && stresses which built-up as I tried to prepare my Talk. I have been surviving
+#!#   by receiving Social-Security (SSDI) DisAbility benefits for the past 11 'Eleven' (also as any 'Ace' in BJ) Years (since early 2010). Right after my Talk,
+#!#   I was informed by two Code-of-Conduct enforcers that I had used two unacceptable words in my rapid-fire (and fleetingly momentary) ending 'Talk-Credits'
+#!#   section (which was entirely intended to show simply self-deprec8ing humor, to express sarcasm for levity, and to relieve some stress). I think it should
+#!#   have been quite clear that most of my Talk then was a frantic product of hyper-mania. Credits weren't intended 2 directly offend anyone personally. I was
+#!#   shooting for ridiculous and preposterous. I seriously hope this Year will not be a repeat of discrimin8ing against me if I do inadvertently offend again;
+  "Welcome2 Pip's 20-minute 2021-BlAcKJAcK OcTalk! The main point of this present8ion is2impress upon attendees the underappreC8d benefits of recognizing all"
+2 "... letters as numbers symbolically too. As programmers (or 'hackers', if you prefer?), we tend2Balready pretty comfortable with HEXadecimal where letters"
+  "... 'A' through 'F' signify Ten to FifTeen. I aim to demonstr8 that extending this convention is typically quite worth doing, for mostly obvious (and also"
+4 "... some subtle) reasons. This principle can apply readily to color-codes (which is the primary emphasis of this talk), as well as many other types of d8a."
+   Beyond colors, letters can be thoughtfully assoC8d with many other number-ordered sets of elements, such as additional text attributes, which fonts should
+   ... be applied, palettes to select existing colors from, document formatting conventions, audio recordings (like music or sound-effect files) to select for
+   ... playback, graphical image files (like clip-art collections) to be displayed, United St8s names, country names, big cities, sports team names, currently
+8  ... active professional players, hall-of-famers, block-buster movies, popular TV shows, lead-actors, famous bands, musicians and singers, local attractions
+  "... tourists like to visit, souvenirs && trinkets, vehicle brand names, model lines for any make, champion racers, top fighters, trainers, event promoters,"
+  "... video-game publishers, well-p8ronized game franchises, board games, dominos (the brick pieces from 0/0 through 9/9 pips), standard gambling and playing"
+  "... card decks (with 'Ace', 'King', down through 'Two' [13 Ranks] across 'spade', 'heart', 'diamond', and 'club' [4 suits]), beloved comic books, liter8ure"
+12"... authors, best-selling novels, politicians, philosophers, scientists, Nobel-Prize winners, artists, Chemistry Elements of the Periodic Table, world-wide"
+   ... actively spoken languages, dialects, famous quot8ions (usually thought past 'wisdom'), fables, myths, archetypes, arch-villains, super-heroes, deities,
+   ... demi-gods, religions, creeds, rituals, traditions, holidays, birthdays, rel8ives, friends, human races, animal species, phyla (for groups of languages,
+   ... animals, and plants), endangered species, extinctions, dinosaurs, types of modern birds, varieties of flowers, insect families, reptiles, fish, sharks,
+16 ... whales, octopi (8-armed [&& 8-brained?!] cephalopods), bacterial strains, viruses, vaccines, deepest ocean trenches, tallest mountains, widest canyons,
+  "... active volcanoes, earthquake fault-lines, constL8ions, named galaxies, habitable planetoids, asteroids, meteorites, satellites, standardized units for"
+  "... measurement, pornography genres/fetishes, porn-stars, tentacle-hentai, love-motels, samurai, spartans, caesars, dict8ors, decor8d generals, prodigies,"
+  "... commemor8ive monuments, public sculptures, high-powered telescopes, particle-acceler8ors, nuclear power-plants, nuclear warhead-missle-silos, newcular"
+20"... Ms.PronunC8ion, universities, mascots, sk8board companies, surfboard manufacturers, olympic-medal-winning athletes, Guinness-Book world-record-holders,"
+LKA... champions, serial-killers, breakfast cereals, genocides, famous assassin8ions, conspiracy theories, superstitions, best Darwin-Awards, expert surgeons;
+#!#... wealthiest people, oldest people alive, gr8st cartoons, best music videos, classical symphony compositions, hardest puzzles, longest Chess matches, Go!;
+#!# Are you getting the significance of this big idea yet?  Please say: "Yes."  Pretty please, with cream and semen on top?  ;)  Letters abbreV8 names better!;
+  If you have a problem with the usage of letters to signify numbers, why not gripe and whine to the N8ional FootBall ("U.S.PigSkin", not WorldSoccer) League4
+2   their "SuperBowl MCXXVIII" whatever? You might also want to waggle your pitchfork at the Jews for Gem8ria that uses Hebrew (or Aramaic?) to represent most
+    letters as context-sensitive number values too (which are organized foolishly in Base-Ten[Base-10Decimal] not8ion, quite similarly 2 Roman-Numerals above);
+4 "Prior 2 those 2 very similar Decimal systems was probably the rather familiar 4 vertical stripes, grouped together by a 5th diagonal slash (up-rt 2 dn-lt)";
+  "Arabic numerals && Decimal not8ions should B phased-out diligently && promptly, since n8ure adheres far more consistently2 Base-2(Binary) or Base-8(Octal)";
+6  #Decimal not8ion achieves approxim8ly 3.25-bits per character in d8a-density. If you were to switch over to my (Pip's) Octology::b8 (Base-64), 6-bits/char;
+  "While I can agree that United-St8sian English typically relies upon the distinction of the 0-9 (Zero-to-Nine) digits, the fact that we can also spell them"
+8 "... (and our other numbers in between, like 'One', 'Two', ... 'Seven', 'Eight') out should also provide some justific8ion for recognizing Letters2BNumbers;"
+  Furthermore, if you notice in BlAcKJAcK, the Playing-Cards represent any 'Ace' as both 'One' *and* 'Eleven' (1 && 11) while any 'JAcK' counted is worth only
+10 ... 'Ten' (10 conventionally, as are the other 'Face'-Cards: any 'Queen' and any 'King'). Hopefully it's clear in BJ:"K", "Q", "J" all indic8 valU of "Ten";
+BJ #P.S. If you count up and add the number of letters in 'spade' + 'heart' and 'diamond' + 'club', you also arrive @BJ: JAcK = Ten and Ace = Eleven for "21"!;
+RationalityRules StephenWoodford "TEDx's DE-FACTO Blasphemy Law | Maryam Namazie" ~3m18s:"Some viewers may find elements of this talk to be distressing or ..."
+  "... objectionable. TEDx events are independently organized by volunteers. The guidelines we give TEDx organizers are described in more detail here: " # sux?
+  HTTPS://Pip.BavL.Org/cocx/manuals/t.... "Please note that the content of any talk does not necessarily represent the views of the TEDx organizers." then also
+  "I am Cock-a-trix! Hear me roar! ... Purr-meow. *lick* *groom*" then Metro-Goldwyn-Mayer Lion with Male-Genital-Mutil8ion (A.K.A."HolyCircumcision/Crucifix")
+  then 21st-Century-Fox && the FuxFox ButterflyBabe && start in on some BlackJack Casino-style montage to set the stage for the above to follow? Sounds gEd! ;)
+  With lsa LindseyStirling Love4SleepWalkingHeistShadowCrystallize:"I hope I never corrupt you. Sheer perfection. Sublime!" then end IndigoWhite||NatWynn plEz?
+  Maybe OctologySoftHardPeni64HeadQuarters (OSHP64HQ.Com) could be where we penetr8 && serve Osh&&FoxCities with treats for pix of local Bitches && Pussies! ;)
+  Probably take the MaryamNamazie RationalityRules TEDx TriggerWarning shot&&add Peni64-In-Pussy ... Cat-Or-Cut, Code-Of-(Ms.)Conduct ... Purpose-In-Profanity;
+  Maybe wrap up with something like:"Get Vaccin8d Today! Code-Of-Very-Inclusive-Diversity_21 is the BlackJackPill for the Woke. Just a Prick is all you need!";
+  My Californic8ion is FightingLikeABrave&&what I've got,you've got 2 put it in your daughter,since I("PenochaSex/SirPsycho")identify as RattackHeliCockPit! ;)
+  Also, starting a gr8 new cover-band called "Rage-Against-The-Sewing-Machine" should put Meaningful within RATS-M-LAGRHINO-GRT && deal with Singer/Fiskers! ;)
+  "Octology makes easy things efficiently trivial, and hard things easy (if possible)!" && new overload "Just-Another-PRO-Hacker" 4Perl-Raku-Octology JAPH! =);
+  Also consider compiling after "Laziness, Imp8ience, Hubris" next 61 candid8s of virtues to autom8 mechanism for tabul8ing Top5 to build anagram initialism or
+    ... ideally an acronym out of, when joined with "LIH" so anyone can e-mail me their 0.._ (63) r8ings for the 61 choices which I'll show we can upd8 2 l8st;
+  Pip.BavL.Org/PRO Perl-Raku-Octology should describe plan to pick best [AEO] virtue then collect Top4 of 64 new virtues for the healthy future of PerlComUniT;
+  Pip.BavL.Org/L8D of Dr.HeatherHeying,Dr.Becky,NatalieWynn,MaryamNamazie,CassieJaye,LianaKerzner,LindseyStirling,&&AshleyMathews(RileyReid) discussing Irthe!;
+  Pip.BavL.Org/LAD can then plan 5 of L8D with 4 pools of 8 men to select amongst for a Top10 October from Intellectuals,MGTOWs,Skeptics,&&MilitaryVeterans?=);
+    Intellectuals: ElonMusk, JonathanHaidt, Dr.JordanPeterson , Dr.CarlL.Hart , DanielSchmachtenberger, both Bret && EricWeinstein, && SamHarris; # ThisWorks?;
+    MRAs / MGTOWs: PaulElam, JohnTheOther , AlexGrace,huMAN,HammerHand,CoachGregAdams,KarenStraughan,?; # !pseudonyms:SandMan,StarDusk(ThinkingApe),TFM,RF(Ph);
+    SkepticAtheis: Paulogia, VicedRhino, AronRa, MattDillahunty, Logicked, StephenWoodford (RationalityRules), AlexO'Connor(CosmicSkeptic), && Drew(GMSkeptic);
+    Military_Vets: JockoWilink (?), AnthonyTran (ATF/USPS), 4 most honorable && decor8d vets, LarryGenz (Marines), && maybe DadGerryStuart (inVietNam,USArmy)?;
+  For LS LindseyStirling && LadySovereign, then do languages with "LaRaza" (Who's racist?) && "NegroSabado" into HoodFigga "Yellow, White, Red, Brown" && then:
+    "My Tesla sits on 21's, flats look like BlackJacks, waffles, ye know?! Yah? ... Yeah! But Enuf SuperSayinShit RepFish, Let's Bgin! DragonBallz. HaDouKen!";
+  Intro warning should explain that I have suffered from persistent hyper-mania for 16 Years && have lived exclusively off SSDI DisAbility for "Ace" 11 Years!;
+  Discrimin8ing against me for DisAbility, Orient8ion, Ethnicity, &&/|| Gender ("Psychotic-Str8-White-Male Lives Matter too!") ought to be hypocritical shite!;
+  BlackJack(NachoFreeLibreSoft),Capt.Black(CursesOfBlackPerl),FrankBlack(LA),JetBlack(CowBoyBeBop),LewisBlack(MiddleFingers),BlackSheep,BlackCrows,BlackEydPs,
+  BlackSabbath,BlackIsTheNewOrange,Black(Bubonic?)Plague,BlackHoleSun(SoundGarden),BackInBlack(AC/DC),BlackTa2(PerlJam),JackLivesMatter,Black8Ball,BlackBeard,
+  BlackTea&&Cat(Darjeeling),BlackList,BlackBird,BlackHeart,BlackEye,BlackNBlue,BlackTarHeroin,BlackCock(Big),BlackNigga,BlackSwan,BlackFly,BlackHead,BlackTop,
+V BlackBoard,BlackMail,BlackNDecker,BlackNTan,BlackOut,BlackerThanBlack,BlackFriDay,BlackScreen,BlackPanther,BlackPower,BlackPride,BlackSafeSpaces ;) snOflAx,
+  BlackHawkDown(WarMovie),BlackCherry(PoppinDaddyz),BlackBerry,BlackCurrant,BlackCoffee(Strong),BlackDiamond,BlackDragon,BlackSquirrel(NutzInMouth),BlackFace,
+q BlackLungSyndrome,PitchBlack,PotCallsKettleBlack,BlackBodyRaD8ion,BlackenedSalmon,BlackCulturalApproprE8ion,BlackLocalColor(Slang/Lingo),BlackSmith(Swords),
+y BlackBear,BlakkRob,BlackOper8ions,BlackSea,BlackDeath,BlackWater,BlackMirror,BlackKnight,BlackDahlia,BlackAdder,BlackBogusBeauty(NeoExcellentWyldStallions),
+  BlackStrobeLight,Black&&Mild(SweetWineJazzCasinoCigars),BlackPepper;JackYouUp,JackYourCarUp,CarJack(GTAReSpawn),JackAss,FullMetalJacket,JackYourBody(House),
+  JackBlack(TenD:SchoolOfRockNRollHerGently),Capt.JackSparrow(BlackPerl),JackSkellington,JackNicholson,(Black)JackInTheBox,JackNJill,JackNBeanstalk,JackSprat,
+88Jacks(BounceBall+spikeys),Jax(MortalKombat),JackOLantern(PumpKingHead),JackLalane,JackTheRipper,JackTripper(3'sACrowd),Jackal(Anubis),JackingOff(&&OnAgain),
+  JackJumpedOverCandleStick,Jack(Manny&&Moe,PepBoys),JackRyan?(HarrisonFord,Clear&&PresentDanger),JackDaniels(BlackLabelTennesseeSouthernWhiskey?),AppleJacks;
+1b"This BlackJack 21 talk is based on my Octology software system. I need to emphasize that it is *NOT* ready for prime-time. Do *NOT* use it in a production"
+    "... environment, without thorough testing beforehand. Octology has not been stress-tested for any security purposes. Please use at your own risk && know"
+    "... there are bugs, incomplete document8ion, sorely missing fE8ures, and probably many possible exploits. Most code works as designed but needs testing!"
+  # Do *NOT* use Octology in any Mission-Critical situ8ions. It is largely experimental && untested. It is the hobby-project of a single coder with no budget;
+  .zshrc BJ exports had problem with "\e" instead of literal "" eScape chr(27) back on L13 && now L63 it works again, but Docker had $HHst problem recently.
+  I guess I want to find any non-alpha characters that can be in both Zsh && Bash variable names && hopefully also in unSKpd paramz to a8.pm S to gener8 same.
+  On one hand, it would be pretty nice to move main 21 single-char Orig spec 30-37 to O prefix (like FDALOH) && sepR8 out Bold 1 && bOLD 22 but mAB!sO cmp@bl?
+  $K && $W && $Z are set again just before PS1 prompt so probably just scrap those. Also, $HpPF profile-Picker Flag auto-loads from Perl, right after exports.
+  `S _|c` doesn't retn "_" as Xpectd! Why does c8fn call a8:cklc when it should not have to? Maybe a8:o8 should not be testing for flags which shud pas2calld;
+"2du:*ReMemBer* to fix `b10 ..` soon, with whatever it takes to make it work consistently && reliably. The brokenness is a big bad bug && must be fixed quick!"
+  "also fix oupd when trying to show diff of .zshrc with embedded real literal eScape chars with probably some substitution like: s/\e/^[/g or whatever works;"
+  Remember to consider mkng .zshrc aliases for xargs since it's a crucial CLI utility which there should almost certainly be quick easy access to employ well;
+ 2du:"DisClaimer": Item0:"I have BiPolar-Type1-DisOrder. I've been DisAbled (on SSDI) for 11-Years. I'm often hyper-manic && prone to profanity (fukN?)Curses."
+  Item1:"Last Year, 4 PerlConf 2020, I gave a Lightning-Talk on Octology which wasn't allowed on the Conference site due to offensive words. Please allow now."
+  Item2:"Octology is *NOT* ready for 'Prime-Time'. It is largely experimental && promiscuous. It has had no users && has barely been tested. Please do not ..."
+   "... use it in any Production-environment. Anything 'Mission-Critical' should avoid my code. It likely has several security holes. It's not even Alpha yet!"
+  Goal0:"Impart to at least some sharp audience-members that Year 2021 is partly here now so that hackers can learn and use 21 shell and Perl color variables."
+  Goal1:"Convey that every letter, punctu8ion-mark, character, symbol, shape, etc. stands for bigger and better numbers (quantities) than 0..9 did (or could)!"
+  Goal2:"There's not enough time (or tears) available to go deep on this, but plant the seeds for an eventual: 'Deprec8-Decimal!' project to grow and blossom;"
+  Xmpl0:"c8ic shows the main talk details. `g XLBJ ~/.zshrc` should show ZShell export examples. `v ~/lib/Octology/a8.pm` can show PerlModule export examples."
+  Xmpl1:"c8ic source can show most primary 21 color-codes (without the $dollar sigils) being used in a similar (but distinct) Curses::Simp (terminal) context."
+  Xmpl2:"`which   wh`, `  wh ag agu aguu agi agr agar f g h i j k l m pl pa pla plb pe`." ...?
+  Xmpl3:"`which pewh`, `pewh ag agu aguu agi agr agar f g h i j k l m pl pa pla plb pe`." ...?
+  Xmpl4:"`pewh dkr dkrb dkrun dkrn` && `dkrb` && `dkrn` as rel8ively best safest way to try-out && test containerized Octology behaviors && functionality too."
+  Xmpl5:"`lsrc` && `v ~/.l*rc` && explain dircolors, mention trapd00r or whoever it was that has fine competition for Octology LS_COLORS setting configur8ion."
+  Xmpl6:"`d8ok` && d8bo as d8-bow like RainBow of ROYG CBMP mapping in-order to descending-size fields of:Year,Month,Day, zone(time),hour,minute,second,phass."
+  Xmpl7:"`dict  dice`, `dict dice | colorit`, `m colorit`, `v /etc/**/colorit.conf` (or whatever it is), `wh d dic`, `dic dice`, `d dick`, `dict dick|suckit`."
+  Xmpl8:"`v =dic` && :se hls! && :se ic! && /\$[K ROYG CBMP W && BlacKSpace them && add any lower-cases that HighLightSearch too && explain dic.log 4 history."
+  Xmpl9:"`resp` && respond si-vou-plait with respir8ion && respite, in resplendent fashion for responsible respelling of RESPECT 4:'resolution specific8ions'."
+  XmplA:"`ftst` && see all the ways that letters abbreV8 words, names, terms, concepts, oper8ions, etc. && also stand for numbering codes that assoC8 with'em;"
+#### - #### Above are PerlConf 2021 BlackJack4WhiteHats notes; Below are all the d8d logs from 2du, other plans, notes, && ideas which followed 2020 PerlConf;
+K6MME2Id:upd8 cred,add xe (xte wrapr) 2 a8.pm,upd8 shots,clEn $gs ~/gfx/sho, gac && gpom,rEview Dad chat,add intro,rec new vid && ul 2 U2b,chat wi Dad; # <3 ?;
+K6NM9LIV:break apart PSFF,test rec phOn,prep vocal-script,practice then rec Take1; K6OM35MX:script conclusion && some quality explan8ions for the middle,`gap`;
 K6UMLQUE: - rsrch max SSDI income,audit all 2du lstz into here 4 BlO,think over feasible mutual internal consistency agreement pact treaty alliance union etc.,
 - prep l8st Resume 4 Pip.BavL.Org/Res ,rsrch PerlJobz,contempl8 pr0n more && try harder ;) to think of down-sides on an individual (&&/or society-wide) basisz,
 - think more about GPS DegMinSec where 1st char may normally be expected to be just 0..5 thN all following R base60 0..59(x) && full coords split LongLatEvNly;
@@ -344,5 +389,20 @@ L5AMCGRT: - RATSLAGRHINOMGoodRightTruth,who DcIdz? && thought betr Bcuz multi-op
 L5KMJUNE: + register4DockerCon, reply2 MikeWLeccese 4RockStarJob mAB 4mE in mid-l8 June?; + L5MMEdic:fix d8bo swap BC && add new .zshrc pewh 4 auto-colr which;
 L5OMBust: - consider adding AntiDisEstablishMentArianIz8ion to 8.utf wi all th@ Ntailz!?;   L5SMACKS:add gset dump org.gnome.Term.Leg.Sets in2 dokr&&runGTprof;
 L5SMALLS: - add dokr cmdz 2 ReadMe.md, tst non-dokr instl cmdz, && yank out cJ && CJ too; - L5SMASHS:fix wdht hjkl && arOz 2 rEsIz lOrIt crnr,rEdo shot,mk g40;
-L62M62ML: - fix h2rl &&unify $Sb,sync .zshrc Ovr2 bash &&tSt,add2 ReadMe Docker&& Pine64; - L62M6HAD:ckng bank balanc,msgBep4registrar2get Peni64,rply2Lemonug;
-L64MBTSD: - notPost-Traumatic but Be,Think,Say,Du is sortof an orderof unobvious 4me. =(;
+L62M62ML: - fix h2rl &&unify $Sb,sync .zshrc Ovr2 bash &&tSt,add2 ReadMe Docker&& Pine64; + L62M6HAD:ckng bank balanc,msgBep4registrar2get Peni64,rply2Lemonug;
+L64MBTSD: - notPost-Traumatic but Be,Think,Say,Du is sortof an orderof unobvious 4me. =(; - L65MBSux:"Hey Big-Mouth, why don't U suck on somebody Ur Own sIz?";
+L6CMFART:   up-load bSt BlKJK talk viDO 2 'PipStuart' U2b chanL&&nAm betr than: 'Pillip';   L6CMNILL:but mAB mk fun of how Pip B. 'Illin'? ("Naw, he's sick!");
+'Ache''Ahol','Anal''Apex','Arse''Assx', 'Bang''Beer','Blow''Bone','Boob''Butt', 'Caca''Clit','Cock''Crap','Cums''Cunt', 'Deep''Dick','Dong''Dope','Duce''Dung',
+'Eats''Edge','Eggs''Epht','Evil''Exit', 'FUCK''Faps','Fart''Fire','Fish''Funk', 'GGPO''Gags','Game''Grip','Grnd''Gush', 'HATE''Hell','Hold''Huge','Hump''Hung',
+'ICUP''Iced','Idea''Inch','Into''Itch', 'JIZZ''Jack','Jams''Jive','Jolt''Junk', 'Kaka''Kick','Kind''Kink','Kiss''Kush', 'LOVE''Lbia','Lewd''Lick','Lips''Lust',
+'Maid''Mash','Meat''Moan','Mrb8''Muff', 'NSFW''Nads','Nail''Nite','Nude''Nuts', '0RGY''0ild','0pen''0ral','0vum''0wnd', '42n8''4get','4kno''4pla','4skn''4wrd';
+Show each above 4-Word's time as on-deck && coming up-next, then slide by as they pass, && bump all others from alreD earlier during Day to snake around in 69;
+Get Ryu && Mika up close to Oni level of Docker+ agi sets with Unity too where possible && then start re-constructing Aku also && prepare to mk new Oni wi SSD;
+"Figure8 some way to make fucking money!"  Just post Octology-type services on Craig'sList then w8 for the cash to start rolling in.  # No prob!  ;)  <3  ;P  ;
+"Make Peni64.Org logo && basic site with SSL-certific8 setup to host HTTPS beside BavL, on MetaNotes ancient cloud server lacking security upd8s since: G4 ?!";
+Put blkjk, bj96, && c8r into Octl probably && gap them up, just in case anyone wants to find them && try them out (yeah, likely, I know!), but also there 4l8r;
+See if I can pursue either the cPanel or StealthPerl job opportunities (even though either are probably a pretty long-shot) && check out other Jobs.Perl.Org 2;
+Try to build up an initial V8 gener8or which can accept category candid8 lists which will get popul8d into .Hrc perhaps && can explore the potential4 A-Z numz;
+On L6P start recording: "21BlAcKJAcK 4RedHats/SexAdmins 20Colors+1Zer0reset x3up2:63+1;" B4 L6R (8.utf Bgun) 2 up-load bSt as new chance 4 human-doings 2 lern;
+L6DM96BJ:   mk bj96 show bj purse progress short && 69 Bs && Js spiral-in 40x12 && 80x25;   L6DM96LN:reply2 LemonNuggets extensive questions in GitHub issue#0;
+L6DMDone:   mk betr than Python "Progress: [ XX%] [#####...]" mEter 4 all slO Octl Utilz;   L6EMDTim:m-min call"UR!Alone.Don'tWantU2Die",Jen,BepGoodSites.Tech;

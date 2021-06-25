@@ -2032,7 +2032,7 @@ sub ftst{ # 37MK06SK:ftst Utl2run thruPerlzFileTeSTz on its parameter Filename
   close   $out8             or die "Can't close duplic8 STDOUT handle: $!";return();} # shud lern all abov functns && eventually print somehow as colrd rFrNc;
 # favorite resoz:320x200,640x400(2x2),1280x800(4x4*320x200),1920x1200(6x6),2560x1600(8x8*320x200) then 1920x1080p of my AsusHDMI monitors&&SamsungGalXS4Phone;
 sub reso{my $optz=join(' ',@_)||''; # 598KBvas:reso crE8d by PipStuart <Pip@CPAN.Org> 2rank display resolutions by totl pixlz&&aspect r8ioz.  # ^4x4=10240x6400
-  my($R,$o,$Y,$G, $B,$C,$M,$p)=($d8cS[0],$d8cS[1],$d8cS[2],$d8cS[3], $d8cS[4],$d8cS[5],$d8cS[6],$d8cS[7]); # hopefully tmp lOd prOfIl?;
+  my($R,$o,$Y,$G, $C,$B,$M,$p)=($d8cS[0],$d8cS[1],$d8cS[2],$d8cS[3], $d8cS[4],$d8cS[5],$d8cS[6],$d8cS[7]); # hopefully tmp lOd prOfIl?;
   my $whby=4; # 2du:add colrz&&optnz BsIdz matchz,mAB rm WdHt/\d columnz,stuD film resoz lIk supr-wId 2.89:1,PanasonicAnamorphic 2.4:1,etc&&add BlO;
   my @wdmz=(10240,8192,7680,6400,5120,4096,3840,3280,3200,3072,2960,2560,2456,2304,2220,2048,1920,1856,1800,1792,1680,1600,1480,1440,1400,1366,1280,1152,1024);
   my @hdmz=( 6400,4800,4320,4096,3072,2400,2304,2160,2048,1920,     1800,1600,1536,     1440,1392,1350,1344,1280,1200,1152,     1080,1024,1050, 960, 900, 864);

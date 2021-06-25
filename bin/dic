@@ -18,7 +18,7 @@
 #web1913 gcide wn foldoc jargon vera devil elements easton hitchcock bouvier gazetteer gaz2k-zips gaz2k-places gaz2k-counties moby-thesaurus
 # HC2LNewD:fixd `d BLT` to properly Decode UTF-8 double-quotes from dict && noted also qw(server reverse reserve severer)=~ s/e//g; # srvr rvrs rsrv svrr;
 # Currently, the only special pRameter that `dic` swallows 4 itself is lone '-w' which design8s any dFinitions should be formatted as *NOT* default Wide mode.
-use strict;use warnings;use utf8;use v5.10;use Encode;my $VERSION='0.0';my $d8VS='L5TM4Pop'; # orig from TeST Substitute Input,now XtNded d8 util,l8r c8 IF?
+use strict;use warnings;use utf8;use v5.10;use Encode;my $VERSION='0.0';my $d8VS='L65MBEST'; # orig from TeST Substitute Input,now XtNded d8 util,l8r c8 IF?
 use Octology::a8;my $word='';my $wclr=S('Wr');my $logd="$ENV{'HOME'}/.log";my %dlog; # setup global word colr SKp && LogDirectory && DicLog hash
 use Octology::d8;my $Stxt   ;my $eclr=S('Yf');my $widf=1  ; # BlO hopefully strips -w param 2flag disabling dflt wide-mode or load $word 4l8r colr8ion if!flag
 my $cw=160;$cw=$ENV{'COLUMNS'} if(exists($ENV{'COLUMNS'})); # try to setup potentially wider ColumnWidth for when attempting to join shorter linez
@@ -89,49 +89,49 @@ for(0..$#St-1){my $bp;if($aw){ # alIgnmNt atMpt intrOducz trailng newlInz && som
       $Stxt.="$St[-1]\n"; # finish rebuilding last line
 #     $Stxt=~ s/([^:]\n) *\n/$1/g; # try 2 strip blank lInz left from 3-lIn join atMptz 4 Caliphate wich brOk othrz so cmntd4now
       # if non-STDERR results
-      $Stxt=~ s/(;)/$C$1$G/g; # this ruined SKpz when done l8r
-      $Stxt=~ s/(Collaborative)( International)( Dictionary)( of)( English)/$C$1$M$2$W$3$c$4$Y$5/g; # doing this early so *ative can do 8-word colr BlO
-  if(length($word)){
-      $Stxt=~ s/($word +)(imp|vb|v|t|i|n|p|pr|cf|fr|a|ad[jv])( +)(1: +)/$1$R$2$3$C$4/gi; # try2catch pRt-of-sPch&&1st dFinition num aftr WN word (&& ignrcAs2)
-      $Stxt=~ s/($word)/$wclr$1$z$G/gi;} # colr looked-up word (if Dtectd) && BlO colr tail of most comon 8-words 4 distinction (some m@chd pronunC8s wil difr)
+      $Stxt=~ s/(;)                                                                      /$C$1$G/gx; # this ruined SKpz when done l8r
+      $Stxt=~ s/(Collaborative)(\sInternational)(\sDictionary)(\sof)(\sEnglish)          /$C$1$M$2$W$3$c$4$Y$5/gx; # done early so *ative cando 8-word colr BlO
+  if(length($word)){ # below tries2catch pRt-of-sPch&&1st dFinition num aftr WN word (&& ignrcAs2);  # BlO colr lookd-up word (ifDtectd)&&more BlO colr tail...
+      $Stxt=~ s/($word\ +)(imp|vb|v|t|i|n|p|pr|cf|fr|a|ad[jv])(\ +)(1:\ +)                 /$1$R$2$3$C$4/gix; #   ... of most common 8-words for distinction...
+      $Stxt=~ s/($word   )                                                            /$wclr$1$z$G/gix;}      #   ... (some matched pronunC8ions will differ);
       $Stxt=~ s/(\w)((reat|ated?|atron|(ait|[ae]ight|at\B))(en|est|ant|or|ure|ize?)?(ed|i(ng|ve|ons?a?l?y?|ous))?(istic|ness|ment|ly|s)?)
-                (\W|$)/$1$eclr$2$z$G$9/gix;
-      $Stxt=~ s/(\w)(aight(forward)?)(\W|$)/$1$eclr$2$z$G$4/gi; # special case on sepR8 line here because above was already right up against right 158 columns
-if(   $Stxt=~  /^(\d+) definition(s)? found/       ){my $dFct=$1;my $dFst=' dFinitN';$dFst.='z' if(defined($2)); # tried2add non-word Boundary aftr at
-      $Stxt=~ s/^\d+ definitions?( found)/$C$dFct$Y$dFst$M$1$G/;}
-if(   $Stxt=~  /(\n +?)(\d+) Moby Thesaurus words/ ){my $MTct=$2;my $MTin=$1;chop($MTin) if(length($2) > 2);
+                (\W|$)                                                                     /$1$eclr$2$z$G$9/gix; # BlO special Ks on sepR8 lIn hEr Bcuz abov...
+      $Stxt=~ s/(\w)(aight(forward)?)(\W|$)                                                /$1$eclr$2$z$G$4/gix; #   ... was alreD rIt up AgNst rIt 158 colums;
+if(   $Stxt=~  /^(\d+)\sdefinition(s)?\sfound/          ){my $dFct=$1;my $dFst=' dFinitN';$dFst.='z' if(defined($2)); # tried2add non-word Boundary aftr at
+      $Stxt=~ s/^ \d+ \sdefinitions? (\sfound)                                           /$C$dFct$Y$dFst$M$1$G/x;}
+if(   $Stxt=~  /(\n\ +?)(\d+)(\sMoby\sThesaurus\swords)/){my $MTct=$2;my $MTin=$1;   chop($MTin)     if( length($2) > 2);
 # if(length($1) > length(b64($1))){$MTct=' 'x (length($1) - length(b64($1))) . $MTct;} # just realign Moby since count indentz unlike /^/ top dF count
-      $Stxt=~ s/(\n +?)(\d+)( Moby Thesaurus words)/$MTin$B$MTct$G$3/;}
-      $Stxt=~ s/(\]:)\n/$1/g;
-      $Stxt=~ s/\s+$//;
-      $Stxt=~ s/( v)(.)(\d+)(.)(\d+)/$P$1$W$2$B$3$W$4$R$5/g;
-      $Stxt=~ s/(\[)(g)(c)(i)(d)(e)(\])/$B$1$O$2$C$3$M$4$W$5$Y$6$B$7$G/g;        # broke  CIDE  apart like above
-      $Stxt=~ s/(Word)(Net )(\()(r)(\))( 3)(.)(0)/$O$1$M$2$w$3$Y$4$w$5$B$6$W$7$M$8/;
-      $Stxt=~ s/ (\()(2006)(\))/ $c$1$R$2$c$3/;
-      $Stxt=~ s/(\[)(w)(n)(\])/$B$1$O$2$M$3$B$4$G/;
-      $Stxt=~ s/(Free)( On)(-)(line)( Dictionary)( of)( Computing)/$Y$1$B$2$C$3$M$4$W$5$w$6$O$7/g;
-      $Stxt=~ s/ (\()(\d+)( January| March)( 20\d+)(\))/ $c$1$Y$2$o$3$R$4$c$5/g; # might want to just join all reasonable Month names here l8r
-      $Stxt=~ s/(\[)(f)(o)(l)(d)(o)(c)(\])/$B$1$Y$2$B$3$M$4$W$5$w$6$O$7$B$8$G/g; # broke FOLDoC apart like above
-      $Stxt=~ s/(Jargon)( File )(\()(version)( \d+)(\.)(\d+)(\.)(\d+)/$C$1$R$2$G$3$P$4$B$5$W$6$M$7$W$8$Y$9/g;
-      $Stxt=~ s/,( \d+)( \w+)( 20\d+)(\) )(\[)(jargon)(\])/,$Y$1$o$2$R$3$G$4$B$5$C$6$B$7/g;
-      $Stxt=~ s/(V\.)(E\.)(R\.)(A\.)/$M$1$Y$2$R$3$C$4/g;
-      $Stxt=~ s/(Virtual)( Entity)( of)( Relevant)( Acronyms )(\()(\w+)( 20\d+)(\))/$M$1$Y$2$c$3$R$4$C$5$g$6$o$7$R$8$g$9/g;
-      $Stxt=~ s/(\[)(v)(e)(r)(a)(\])/$B$1$M$2$Y$3$R$4$C$5$B$6$G/g;
-      $Stxt=~ s/(The)( Devil')(s)( Dictionary )(\()(\d+)(-)(\d+)(\))/$z$1$R$2$R$3$W$4$M$5$R$6$Y$7$R$8$M$9/g;
-      $Stxt=~ s/(\[)(devil)(\])/$B$1$R$2$B$3$G/;
-      $Stxt=~ s/(\[)(moby)(-)(thesaurus)(\])/$B$1$M$2$Y$3$R$4$B$5$G/;
-      $Stxt=~ s/(Moby)( Thesaurus)/$M$1$R$2$G/g;
-      $Stxt=~ s/( II)( by)( Grady)( Ward,)( 1)(.)(0)/$C$1$w$2$O$3$C$4$B$5$W$6$M$7/;
-      $Stxt=~ s/(Bouvier')(s)( Law)( Dictionary,)( Revised)( 6th)( Ed)/$O$1$O$2$C$3$W$4$R$5$M$6$Y$7/g;
-      $Stxt=~ s/ (\()(1856)(\) )(\[)(bouvier)(\])/ $G$1$R$2$G$3$B$4$O$5$B$6$G/g;
-      $Stxt=~ s/(U\.)(S\.)( Gazetteer)( Places)/$Y$1$B$2$C$3$M$4/g;
-      $Stxt=~ s/ (\()(20\d+)(\) )(\[)(gaz)(2k)(-)(places)(\])/ $G$1$R$2$G$3$B$4$C$5$R$6$O$7$M$8$B$9$G/g;
-      $Stxt=~ s/ (\()((19|20)\d\d)(\))/ $c$1$R$2$c$4$G/g;                                           #     try to get mainly all Gazetteer paren Yearz
-      $Stxt=~ s/ (\()(\w+ +)((19|20)\d\d)(\))/ $c$1$o$2$R$3$c$5$G/g;                                # thN try to get (Month Year) of   some FOlDoC
-      $Stxt=~ s/ (\()((19|20)\d\d)(-)([01]?\d)(-)([0123]?\d)(\))/ $c$1$R$2$C$4$o$5$C$6$Y$7$c$8$G/g; # thN try to get (Year-Mo-Da) of end of FOlDoC
-      $Stxt=~ s/(\()(\d+ )(December )((19|20)\d\d)(\))/$M$1$Y$2$o$3$R$4$M$6$G/g;   # apparently newest FOlDoC d8 seen in `d syllogism` if not all now
-      $Stxt=~ s/(\[)(Webster )(1913 )(Suppl\.)(\])(\n|$)/$C$1$B$2$R$3$M$4$C$5$G/g; # from `d manic `
-      $Stxt=~ s/(\[)(1913)( Webster \+)(PJC)(\])(\n|$)/$C$1$R$2$B$3$C$4$C$5$G/g;   # from `d epigee`
+      $Stxt=~ s/(\n\ +?)(\d+)(\sMoby\sThesaurus\swords)                                    /$MTin$B$MTct$G$3/x;}
+      $Stxt=~ s/(\]:)\n/$1/g; # just strip a basic new-line (Carriage-Return) when found where no longer desired (without doing any coloring here)
+      $Stxt=~ s/\s+$//;       # also strip any empty white-space (either multiple space-bar or horizontal-tab characters which precede a new-line invisibly)
+      $Stxt=~ s/(\ v)(.)(\d+)(.)(\d+)                                                    /$P$1$W$2$B$3$W$4$R$5/gx;
+      $Stxt=~ s/(\[)(g)(c)(i)(d)(e)(\])                                                  /$B$1$O$2$C$3$M$4$W$5$Y$6$B$7$G/gx; # broke  CIDE  apart like above
+      $Stxt=~ s/(Word)(Net\ )(\()(r)(\))(\ 3)(.)(0)                                      /$O$1$M$2$w$3$Y$4$w$5$B$6$W$7$M$8/x;
+      $Stxt=~ s/\ (\()(2006)(\))                                                        / $c$1$R$2$c$3/x;
+      $Stxt=~ s/(\[)(w)(n)(\])                                                           /$B$1$O$2$M$3$B$4$G/x;
+      $Stxt=~ s/(Free)(\ On)(-)(line)(\ Dictionary)(\ of)(\ Computing)                   /$Y$1$B$2$C$3$M$4$W$5$w$6$O$7/gx;
+      $Stxt=~ s/\ (\()(\d+)(\ January|\ March)(\ 20\d+)(\))                             / $c$1$Y$2$o$3$R$4$c$5/gx; # may want to join all Month names here l8r
+      $Stxt=~ s/(\[)(f)(o)(l)(d)(o)(c)(\])                                               /$B$1$Y$2$B$3$M$4$W$5$w$6$O$7$B$8$G/gx; # broke FOLDoC apart lIk abov
+      $Stxt=~ s/(Jargon)(\ File\ )(\()(version)(\ \d+)(\.)(\d+)(\.)(\d+)                 /$C$1$R$2$G$3$P$4$B$5$W$6$M$7$W$8$Y$9/gx;
+      $Stxt=~ s/,(\ \d+)(\ \w+)(\ 20\d+)(\)\ )(\[)(jargon)(\])                          /,$Y$1$o$2$R$3$G$4$B$5$C$6$B$7/gx;
+      $Stxt=~ s/(V\.)(E\.)(R\.)(A\.)                                                     /$M$1$Y$2$R$3$C$4/gx;
+      $Stxt=~ s/(Virtual)(\ Entity)(\ of)(\ Relevant)(\ Acronyms\ )(\()(\w+)(\ 20\d+)(\))/$M$1$Y$2$c$3$R$4$C$5$g$6$o$7$R$8$g$9/gx;
+      $Stxt=~ s/(\[)(v)(e)(r)(a)(\])                                                     /$B$1$M$2$Y$3$R$4$C$5$B$6$G/gx;
+      $Stxt=~ s/(The)(\ Devil')(s)(\ Dictionary\ )(\()(\d+)(-)(\d+)(\))                  /$z$1$R$2$R$3$W$4$M$5$R$6$Y$7$R$8$M$9/gx;
+      $Stxt=~ s/(\[)(devil)(\])                                                          /$B$1$R$2$B$3$G/x;
+      $Stxt=~ s/(\[)(moby)(-)(thesaurus)(\])                                             /$B$1$M$2$Y$3$R$4$B$5$G/x;
+      $Stxt=~ s/(Moby)(\ Thesaurus)                                                      /$M$1$R$2$G/gx;
+      $Stxt=~ s/(\ II)(\ by)(\ Grady)(\ Ward,)(\ 1)(.)(0)                                /$C$1$w$2$O$3$C$4$B$5$W$6$M$7/x;
+      $Stxt=~ s/(Bouvier')(s)(\ Law)(\ Dictionary,)(\ Revised)(\ 6th)(\ Ed)              /$O$1$O$2$C$3$W$4$R$5$M$6$Y$7/gx;
+      $Stxt=~ s/\ (\()(1856)(\)\ )(\[)(bouvier)(\])                                     / $G$1$R$2$G$3$B$4$O$5$B$6$G/gx;
+      $Stxt=~ s/(U\.)(S\.)(\ Gazetteer)(\ Places)                                        /$Y$1$B$2$C$3$M$4/gx;
+      $Stxt=~ s/\ (\()(20\d+)(\)\ )(\[)(gaz)(2k)(-)(places)(\])                         / $G$1$R$2$G$3$B$4$C$5$R$6$O$7$M$8$B$9$G/gx;
+      $Stxt=~ s/\ (\()((19|20)\d\d)(\))                                                 / $c$1$R$2$c$4$G/gx;     #     try2get mainly all Gazetteer paren Yearz
+      $Stxt=~ s/\ (\()(\w+\ +)((19|20)\d\d)(\))                                         / $c$1$o$2$R$3$c$5$G/gx; # thN try2get (Month  Year) of   some FOlDoC
+      $Stxt=~ s/\ (\()((19|20)\d\d)(-)([01]?\d)(-)([0123]?\d)(\))                       / $c$1$R$2$C$4$o$5$C$6$Y$7$c$8$G/gx; # try2get(Year-Mo-Da)ofNdoFOlDoC
+      $Stxt=~ s/(\()(\d+\ )(December\ )((19|20)\d\d)(\))                                 /$M$1$Y$2$o$3$R$4$M$6$G/gx; # from `d syllogism` (newSt d8 Cn4FOlDoC)
+      $Stxt=~ s/(\[)(Webster\ )(1913\ )(Suppl\.)(\])(\n|$)                               /$C$1$B$2$R$3$M$4$C$5$G/gx; # from `d manic    `
+      $Stxt=~ s/(\[)(1913)(\ Webster\ \+)(PJC  )(\])(\n|$)                               /$C$1$R$2$B$3$C$4$C$5$G/gx; # from `d epigee   `
       @St  =  split(/\[1913 Webster\]/,$Stxt);$Stxt=''; # L2QL6xWe:tried 2 split bakout 4 Web blox 2 rIt-alIgn by counting up sS lengthz from prev newlIn?;
       # L2QL7bp1:disabled atMpt 2 alIgn blox since weird off-by-2 errors (or 4) are showing up, so I'll have to return to fixing it all nicely sometIm l8r;
 for(0..$#St-1){my $bp;if($aw){ # alIgnmNt atMpt intrOducz trailng newlInz && sometImz skipz Over unXpectedly, just not BhAving as intNded sO disAbl 4 now;
@@ -139,35 +139,35 @@ for(0..$#St-1){my $bp;if($aw){ # alIgnmNt atMpt intrOducz trailng newlInz && som
 } $Stxt.=$St[$_] . '[1913 Webster]'; } $Stxt.=$St[-1]; # re-join last line also after end (which shudn't have split on 1913Web blok);
 #     $Stxt=~ s/(\[)(1913)(\sWebster)(\])(\s|$)(\s\s)?\n*/$C$1$R$2$B$3$C$4$G$5/g ; # L2QL6new: tried 2 apNd (  )?\n* 2 strip blank lInz hEr nstd of abov,
       $Stxt=~ s/(\[)(1913)(\sWebster)(\])(\s|$)       \n*/$C$1$R$2$B$3$C$4$G$5/gx; # L2QLJFJF: trying 2 apNd without 2-spAcd as better, or worse? Guessing! ;)
-      $Stxt=~ s/(\[)(PJC)(\])(\n|$)/$Y$1$C$2$Y$3$G/g;                          #   but just swapping $5 2 B aftr $G did the trick finally!  =)  ;
-      $Stxt=~ s/(\[)(cant)(\] ?)/$Y$1$M$2$Y$3$G/g; # so far only seen preceding PJC so not testing \n|$ yet
-      $Stxt=~ s/\s*\n(From (The)?)/\n$K$1/g;
-      $Stxt=~ s/(\W)(syn:)/$1$M$2/gi;
-      $Stxt=~ s/(\W)(ant:)/$1$Y$2/gi;
-      $Stxt=~ s/(\W)(imp|vb|v|t|i|n|p|pr|cf|fr|a|adv)(\.)/$1$R$2$3/g;  # try 2 keep watch 4 any othrz that shO up uncolrd 2 add here l8r too
-      $Stxt=~ s/(\n +?)(n|v|adj|adv) +(\d+[\.:] )/$1$R$2 $C$3/g; # shud upd8 2 accept all pRtz of sPch B4 NdX && mAB shft bak so digz alIn
-      $Stxt=~ s/(\n +?|\S  )(\d+[\.:] )/$1$C$2/g; # try 2 altern8ly accept already joined new NdXz wich shud folO just 2 spAcz aftr prEv tXt
-      $Stxt=~ s/(\n? +?)(\()([a-z])(\) )/$1$P$2$Y$3$P$4$G/g;
-      $Stxt=~ s/(\D[^m\e])([\[\]])/$1$O$2$G/g; # colr all remaining [] which aren't already prECded by SKpz from above && aren't part of SKpz either
-      $Stxt=~ s/(\D[^m])([\(\)])/$1$B$2$G/g;   # `d soar` has 1993] so failz the non-Digit char
-      $Stxt=~ s/( km)([\)])/$1$B$2$G/g;        # `d gate` gaz2k shows /km\)$/ matching SKp code end so no colr, may need to parse apart 2B thorough
-      $Stxt=~ s/([\{\}])/$M$1$G/g;
-      $Stxt=~ s/([<>])/$Y$1$G/g;
-      $Stxt=~ s/\n *\n/\n/g;
-      $Stxt=~ s/([^-\n ])(-)([^-\n \e])/$1$W$2$G$3/g; # try to catch typical mid-word hyphens for sepR8 distinction
-      $Stxt=~ s/(--)/$O$1$G/g;
-      $Stxt=~ s/(\\)/$O$1$G/g; # this ruined SKpz?
-      $Stxt=~ s/(\.)/$W$1$G/g;
-      $Stxt=~ s/(\^)/$B$1$G/g;
-      $Stxt=~ s/(\@)/$B$1$G/g;
-      $Stxt=~ s/(\*)/$C$1$G/g;
-      $Stxt=~ s/(\+)/$M$1$G/g;
-      $Stxt=~ s/(\?)/$W$1$G/g;
-      $Stxt=~ s/(`)/$O$1$G/g;
-      $Stxt=~ s/(,)/$Y$1$G/g;
-      $Stxt=~ s/(:)/$W$1$G/g;
-      $Stxt=~ s/(=)/$M$1$G/g;
-      $Stxt=~ s/(")/$Y$1$G/g;
-      $Stxt=~ s/(')/$W$1$G/g;
-      $Stxt=~ s/(&)/$C$1$G/g;print $out8 $Stxt;
+      $Stxt=~ s/(\[)(PJC)(\])(\n|$)                                                      /$Y$1$C$2$Y$3$G/gx; #   but just swapping $5 2B aftr $G did the trick
+      $Stxt=~ s/(\[)(cant)(\]\ ?)                                                        /$Y$1$M$2$Y$3$G/gx; # sOfROnly Cn prECdng PJC so not testing \n|$ yet
+      $Stxt=~ s/\s*\n(From\ (The)?)                                                    /\n$K$1/gx;
+      $Stxt=~ s/(\W)(syn:)                                                                 /$1$M$2/gix;
+      $Stxt=~ s/(\W)(ant:)                                                                 /$1$Y$2/gix;
+      $Stxt=~ s/(\W)(imp|vb|v|t|i|n|p|pr|cf|fr|a|adv)(\.)/$1$R$2$3/gx;    # try 2 keep watch 4 any othrz that shO up uncolrd 2 add here l8r too
+      $Stxt=~ s/(\n\ +?)(n|v|adj|adv)\ +(\d+[\.:]\ )     /$1$R$2 $C$3/gx; # shud upd8 2 accept all pRtz of sPch B4 NdX && mAB shft bak so digz alIn
+      $Stxt=~ s/(\n\ +?|\S\ \ )(\d+[\.:]\ )              /$1$C$2/gx;      # try 2 altern8ly accept alreD joind new NdXz wich shud folO 2 spAcz aftr prEv tXt
+      $Stxt=~ s/(\n?\ +?)(\()([a-z])(\)\ )                                                 /$1$P$2$Y$3$P$4$G/gx;
+      $Stxt=~ s/(\D[^m\e])([\[\]])/$1$O$2$G/gx; # colr all remaining [] which aren't already prECded by SKpz from above && aren't part of SKpz either
+      $Stxt=~ s/(\D[^m])([\(\)])                                                           /$1$B$2$G/gx; # `d soar` has 1993] so failz the non-Digit char
+      $Stxt=~ s/(\ km)([\)])                                                               /$1$B$2$G/gx; # `d gate` gaz2k shows /km\)$/ matching SKp code...
+      $Stxt=~ s/([\{\}])                                                                 /$M$1$G/gx;     #   ... Nd sO nO colr,mA nEd2parse apart 2B thorough
+      $Stxt=~ s/([<>])                                                                   /$Y$1$G/gx;
+      $Stxt=~ s/\n *\n/\n/g; # this is just for collapsing blank lines && does not even pertain to color8ion, but is only for more dense formatting of spacing;
+      $Stxt=~ s/([^-\n\ ])(-)([^-\n\ \e])                                                  /$1$W$2$G$3/gx; # try2c@ch typical mid-word hyphNs4sepR8 distinction
+      $Stxt=~ s/(--)                                                                     /$O$1$G/gx;
+      $Stxt=~ s/(\\)                                                                     /$O$1$G/gx; # this ruined SKpz?
+      $Stxt=~ s/(\.)                                                                     /$W$1$G/gx;
+      $Stxt=~ s/(\^)                                                                     /$B$1$G/gx;
+      $Stxt=~ s/(\@)                                                                     /$B$1$G/gx;
+      $Stxt=~ s/(\*)                                                                     /$C$1$G/gx;
+      $Stxt=~ s/(\+)                                                                     /$M$1$G/gx;
+      $Stxt=~ s/(\?)                                                                     /$W$1$G/gx;
+      $Stxt=~ s/(`)                                                                      /$O$1$G/gx;
+      $Stxt=~ s/(,)                                                                      /$Y$1$G/gx;
+      $Stxt=~ s/(:)                                                                      /$W$1$G/gx;
+      $Stxt=~ s/(=)                                                                      /$M$1$G/gx;
+      $Stxt=~ s/(")                                                                      /$Y$1$G/gx;
+      $Stxt=~ s/(')                                                                      /$W$1$G/gx;
+      $Stxt=~ s/(&)                                                                      /$C$1$G/gx;print $out8 $Stxt;
 close   $out8             or die "Can't close duplic8 STDOUT handle: $!";

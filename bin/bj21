@@ -1,0 +1,46 @@
+#!/usr/bin/perl
+# L58MBJ21:bj21 crE8d by PipStuart <Pip@CPAN.Org> to adapt Simp syncolor.pl to
+#   c8ic then try testing Curses slides 4 BlackJack 21-varz as c8 color-codez;
+use strict;use warnings;use utf8;use Curses::Simp  ;my   @text  ;my   @fclr  ;
+my $simp=  tie(@text,               'Curses::Simp');my   $d8VS='L69METAL'    ;
+my $keey  ;tie(@fclr,               'Curses::Simp::FClr',$simp) ;my   $ornt=0;
+while(!defined($keey) || $keey !~  /^[xq]$/i){if($ornt ^= 1){ # press'x'2eXit;
+   @text=('$k !B L A C$K!!'.'0123456789ABCDEFGHIJKL=21', # ~25 eXtra columns2;
+          '   !! J A C K !',
+          '$r $R e d'      ,
+          '$o $O r A n g e',
+          '$y $Y e l l o w',
+          '$g $G r e e n'  ,
+          '$c $C y A n'    ,
+          '$Sb$B l u e'    ,
+          '$m $M A gen T A',
+          '$p $P u r p l e',
+          '$w $W h i T e'  ,
+          '$z zer0 (reset)');
+   @fclr=('kk JK K f tKKJj'.'KROYGCBMPWKROYGCBMPWKRkbb',
+          '   jJ T f t K J',
+          'rr RR g g'      ,
+          'oo OO g K g g g',
+          'yy YY g g g g g',
+          'gg GG g g g g'  ,
+          'cc CC g K g'    ,
+          'bbbBB g g g'    ,
+          'mm MM F gkg K F',
+          'pp PP g g g g g',
+          'ww WW g g K g'  ,
+          'AA AaaJ WaaaaaW');}else{
+   @text=('$k!!  $r $o $y $g  $c$Sb $m $p  $w (r$z ',
+          ' B !  $R $O $Y $G  $C $B $M $P  $W  e e ',
+          ' L J   e  r  e  r   y  l  A  u   h  s r ',
+          ' A A   d  A  l  e   A  u  ge r   i  e 0 ',
+          ' C C      n  l  e   n  e  n  p   T  t)  ',
+          '$K K      g  o  n         T  l   e      ',
+          ' !!!      e  w            A  e          ','0','1','2','3','4');
+   @fclr=('kkJj  rr oo yy gg  ccbbb mm pp  ww waAA ',
+          ' K J  RR OO YY GG  CC BB MM PP  WW  a a ',
+          ' K T   g  g  g  g   g  g  F  g   g  a a ',
+          ' f f   g  K  g  g   K  g  gk g   g  a J ',
+          ' t t      g  g  g   g  g  g  g   K  aw  ',
+          'KK K      g  g  g         K  g   g      ',
+          ' JjJ      g  g            F  g          ','K','R','O','Y','G');}
+   $keey=$simp->GetK(10*($ornt+1));} # w8 10 or 20 seconds for any key-press?;

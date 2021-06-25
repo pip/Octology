@@ -30,7 +30,7 @@ unsetopt                \
 # auto_pushd            \# setng addz dirz 2 stack wN just normally chngng 2 thM (wich I du not normally lIk or want)
 # ksh_arrays            \# rEmMbr wNwrItng scrptz[or funcz]2include'setopt [localoptions] ksharrays'sO arAzR 0-bAsed(but!glOblBcuzmOst scrptzRstndrdly 1-bAsed)
 # re_____match_____pcre \# mA want2set for Z-SHell scripting RegularExpressions to utilize PerlCompatibility styles && mA insert 'zmodload zsh/(pc)?re(gex)?';
-export Vers='0.0';export d8VS='L5SMITHS';export Auth='PipStuart <Pip@CPAN.Org>'; # not Xportng $b sinc cOlIdz wi sort{$a <=> $b} /defhijlnqstuvx/i + AZ 4golf;
+export Vers='0.0';export d8VS='L66MGT40';export Auth='PipStuart <Pip@CPAN.Org>'; # not Xportng $b sinc cOlIdz wi sort{$a <=> $b} /defhijlnqstuvx/i + AZ 4golf;
 if     [[       "$SHELL"    == "" ]]; then       export SHELL=` which  zsh`;fi   # 8sh should parse this && OverId it    # shud `man zshall` /OSTYP 2lern4BlO
 if     [[       "$HOSTNAME" == "" ]]; then       export HOSTNAME=`hostname`;fi   #`hostname`retnz fsckd nwlInz\n4CygWinzRxvt... ||smthng els lame  =(
 if     [[       "$HOST"     == "" ]]; then       export HOST   ="$HOSTNAME";fi;export VERBOSE='1'; # set flag to print debug && status info from system utilz
@@ -471,6 +471,7 @@ alias      HU='g3 188 $mu/chl/Hack*Univ* -k 3420 -v goom2k1'; # Fil_Far's HackrC
            GG()  { pu $d2/.bak/.g6./.GG.;if [[ $# -gt 0 ]]; then ./GG $@; else ./GG -a; fi; po; } # GuyGooway's: GoodGames GoneGrooving GropingGirlies;
 alias    g3BRO="cd ~/muz/U2b/nxt;ec 'g3 -vi -Z BtieBoys RammRage Obsidia8';g3 -vi -Z \$(ls ~/muz/flac/Rage*/*/*.flac ~/muz/flac/B*Boys/**/*.flac ~/muz/mp3/BadR*/*/*.mp3 ~/muz/mp3/RonD*/*/*.mp3 ~/muz/mp3/Rammstein/[12][90][90][5714]*/*.mp3 A* Bee* E*-[NRT][eaoh]* G* O* O* Ra* S[eh]* V* ../O* ../O* ../obs/*Nig* ../obs/*Nig* ../obs/*Meta* ../obs/*Dead* ../obs/*Dead* ../obs/*Die* | gv jpg | g '.mp3$\\|.ogg$\\|.flac\\|.m4a$\\|.opus$' | gv 'Meister\\|Riechst\\|Sehnsucht\\|Tier\\|Spiel\\|Klavier\\|Alter\\|Eifersucht\\|English\\|Spieluhr\\|Zwitter\\|Rein_Raus\\|Adios\|Nebel\\|Morgenstern\\|Amour\\|Modell\\|Unit\\|80-85')";
 alias    g3f='g3 11 -k 363 ~/muz/flac/Boo*/Boo*/14*Hell*'; # BBoyz-FknMthaFka!
+alias     bj='blkjk|pe "s/Player\\d+\\s+cmp2D:\\s+\\S+\\n//g;s/(Player)(\\d+)/\$p\$1\$W\$2\$z/;s/(Dealer)(\\d+)/\$M\$1\$w\$2\$z/;s/(Purse)/\$C\$1\$z/;s/(\\s+\\d+\\s+)(hand)/\$W\$1\$r\$2\$z/;s/( S)(c)(o\\w+)/\$C\$1\$c\$2\$C\$3\$y/;s/([: ])(\\w[hd])/\$W\$1\$R\$2\$z/g;s/([: ])(\\w[sc])/\$w\$1\$K\$2\$z/g;s/(:)(\\$)(\\s*\\d+)(\\.)(\\d\\d)/\$Y\$1\$B\$2\$G\$3\$O\$4\$P\$5\$z/g"';
 # HTTPS://YouTu.be/J0TWTnYZBdM LimpBizkit-FuckinSong
 # HTTPS://YouTu.be/UrgpZ0fUixs DenisLeary-AssHole
 # Many of these Octology aliases should become special V8 via c8 coloriz8ion command wrappers or otherwise enhanced (&& simplified?) && unified funcs or cmdz:
@@ -996,7 +997,8 @@ alias xr='xrnr --output DVI-D-0 --mode 1920x1080 --rate 60';alias cx='ct "init";
 #    `xt` used to be a sym-link to ~/bin/xmltidy (or l8r just xtidy) but is more consistent with st, at, gt, et, etc. to have it alias for XTerm now instead;
 alias xt='   env TERM_PROGRAM=xt   xterm          -geometry 160x50 -fa        "Monospace" -fs 12              &';
 alias xtm80='env TERM_PROGRAM=x80  xterm          -geometry 80x25  -fa        "Monospace" -fs 24              &'; # atMpt2mk big dbl-sIz xt wi FontSize pRam;
-alias gtm80='env TERM_PROGRAM=g80 gnome-terminal --geometry=80x25 --window-with-profile=Pips8025GnomTerm-NiceFont-K2FL8025 2>/dev/null &'; # mk dbl-sIzd gt;
+alias gtm80='env TERM_PROGRAM=g80 gnome-terminal --geometry=80x25 --window-with-profile=Pips8025GnomTerm-NiceFont-K2FL8025  2>/dev/null &'; # mk dbl-sIzd gt;
+alias gtm40='env TERM_PROGRAM=g40 gnome-terminal --geometry=40x12 --window-with-profile=Pips40x12GnomTerm-NiceFont-L66MGG40 2>/dev/null &'; # mkquad-sIzd gt;
 alias uxtrm='env TERM_PROGRAM=uxt uxterm          -geometry 160x50 -bc -bcn 512 -bcf 256                      &'; #`appres XTerm|gi utf8font`shOwz mNU fontz;
 alias utm80='env TERM_PROGRAM=u80 uxterm          -geometry  80x25 -bc           &'; # setup consistNtly 2 or 3-char aliases for almost all usable termz;
 alias lxtrm='env TERM_PROGRAM=lxt lxterm          -geometry 160x50               &'; # =lxterm is sepR8 sh scrpt wich tStz locale&&wrapz plain uxterm 4 UTF-8;
@@ -1019,6 +1021,7 @@ alias qterm='env TERM_PROGRAM=qtm qterminal                     1>/dev/null 2>&1
 alias qt240='env TERM_PROGRAM=q24 qterminal       -p qt240x67   1>/dev/null 2>&1 &'; # HTTPS://GitHub.Com/lxqt/qterminal/issues/488 says must be in ~/.config/
 alias qt160='env TERM_PROGRAM=q16 qterminal       -p qt160x50   1>/dev/null 2>&1 &'; #   as .conf files that are manually configurd but thN sAv st8 whN editd;
 alias qtm80='env TERM_PROGRAM=q80 qterminal       -p qt_80x25   1>/dev/null 2>&1 &'; # can I customize an 80x25 qterminal somehow? proly hv2mk -p profilez4it;
+alias qtm40='env TERM_PROGRAM=q80 qterminal       -p qt_40x12   1>/dev/null 2>&1 &'; # still need to mk a 40x12 qterm profile for this 2 eventually work rite;
 alias Trmnl='env TERM_PROGRAM=Trm Terminal                      2>/dev/null      &'; # looks lIk Terminal app so old that it can hardly render prmpt or colrz;
 alias liltm='env TERM_PROGRAM=ltm lilyterm        -g        160x50   -T ltm    2>/dev/null &'; # lily&&termit spew lots ofGTK warnz2STDERR;
 alias lil80='env TERM_PROGRAM=i80 lilyterm        -g         80x25   -T i80    2>/dev/null &'; # lily in 80-column mode getz 'i80' Title since l80 && L80 tAkN;
@@ -1042,6 +1045,7 @@ alias smci='sudo make clean install;rmSS'; # HTTPS://BrianBuccola.Com/how-to-bui
 alias vtst='vttest'; # `vtst` might be good to run all termz thru 2 see which have what fE8urez; BlO echo compact term alias mapingz;
 alias xT='x80';alias x80='xtm80'; # tSt setng all my 3-char && smaller aliasez 2 prefix larger 5-char aliasez with ENV var lIk GNUstep_Terminal.app has;
 alias GT='g80';alias g80='gtm80';   # I'm not sure yet if each of these are detected as different behaviorz bAsd on $0;
+alias g4='g40';alias g40='gtm40';   # new 40x12 profile;
 alias ut='uxt';alias uxt='uxtrm';   #lrwxrwxrwx 1 root root       5 Sep  5 06:08 /usr/bin/rxvt         -> urxvt
 alias uT='u80';alias u80='utm80';   #lrwxrwxrwx 1 root root       5 Sep  5 06:08 /usr/bin/rxvt-unicode -> urxvt
 alias lt='lxt';alias lxt='lxtrm';   #lrwxrwxrwx 1 root root       5 Sep  5 06:08 /usr/bin/rxvt-xpm     -> urxvt
@@ -1063,7 +1067,8 @@ alias tT='t80';alias t80='tmg80'; # I am unabashedly heels-over-head reeling in 
 alias qt='qtm';alias qtm='qterm'; # qt should be almost identical to qt160 (with -p profile ~/.config/qt160x50.conf that's not in qterminal.org/ path);
 alias q2='q24';alias q24='qt240';
 alias q1='q16';alias q16='qt160';
-alias qT='q80';alias q80='qtm80'; # Damn! ~/.GNUstep/ Terminal.app is so horribly broken with all the settings I could try to saddle it wi sOfR.4getit?
+alias q8='q80';alias q80='qtm80'; # Damn! ~/.GNUstep/ Terminal.app is so horribly broken with all the settings I could try to saddle it wi sOfR.4getit?
+alias q4='q40';alias q40='qtm40'; # new 40x12 profile that still needs a config file to be capable of running;
 alias TT='Trm';alias Trm='Trmnl'; # mAB this 1 will get overridden by GNUstep so shud vary,or mAB all varz shud just B shrunk 2 only TERM_(PROG|ALIAS)?
 alias it='ltm';alias ltm='liltm'; # it might also be betr 2 rEwrIt all thEz az shL functionz wich can pass argz in2 term programz B4 & thM 2 bkgr jobz?
 alias iT='i80';alias i80='lil80';

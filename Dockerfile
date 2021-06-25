@@ -1,4 +1,4 @@
-# L43MEANS:Dockerfile crE8d by JohnBeppu-san <Beppu@CPAN.Org> for Pip's GitHub Octology;my $d8VS='L5SMLexp';
+# L43MEANS:Dockerfile crE8d by JohnBeppu-san <Beppu@CPAN.Org> for Pip's GitHub Octology;my $d8VS='L6DMDunT';
 # Use a big desktop distro (Ubuntu) as base, so that graphical && audio packages are available in container;
 FROM ubuntu:20.04
 # Force TZ to avoid interactive configur8ion; Also TERM BlO mAy quell warnings;
@@ -116,6 +116,7 @@ RUN set                     -x &&  \
   mpg321                           \
   mpg123                           \
   gst123                           \
+  unity                            \
   xclip                            \
   most                             \
   dict                             \

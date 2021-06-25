@@ -1,8 +1,8 @@
 # 819J2Pip:~/.lsrc by PipStuart <Pip@CPAN.Org> izAheavily modifId`dircolors`cfgfIl(Orig ~/.DIR_COLORS)wich setz $ENV{'LS_COLORS'} 4GNU`ls --color`&&`lsd8`;
-# $VERSION='0.0';$d8VS='L4CMGG71'; 2du:lrc optn2gNr8 altrn8 versN th@purposfuly varEz colrzof comon typz,add *[-_?]* NtrEz frm .zshrc hEr,audit oldz,ck /etc/*,
+# $VERSION='0.0';$d8VS='L6PM1tXt'; 2du:lrc optn2gNr8 altrn8 versN th@purposfuly varEz colrzof comon typz,add *[-_?]* NtrEz frm .zshrc hEr,audit oldz,ck /etc/*,
 #   add interaction2 lsd8 wN it Dtectz unrecognIzd XtNshNz offerng c@egOrEz with comon colr2autOm@ically insrt chOsN NtrEz,mk lrc gNr8 Xportd LS_COLORS 4 Eval,
 #   confirm all accept f0nt cOdez wi dash accepting Dfalt 4grnd thN redo NORMAL FILE LINK as no fi ln,Dtect cOlIdz OvrIdz&&warn,mAB 8trm aded2 TERM ls sumdA?;
-# This file was gNR8d by `lrc` Vers:0.0 d8VS:L45M1Prf on d8:L63MKbVc. Please edit ~/.lrc and run `lrc` then `src` to see changes;
+# This file was gNR8d by `lrc` Vers:0.0 d8VS:L64MDrPp on d8:L6PM2Dt7. Please edit ~/.lrc and run `lrc` then `src` to see changes;
 # nOt:I'm pretty sure itz Chunz(!Takiz)`ls`&&`dircolors`th@cud!hndl (MULTI)?HARDLINK sO rEmMbr2kEp th@ lIn cmNtd out4her(&&kEptstng2cnfirm);
 # Keywords COLOR,OPTIONS,&& EIGHTBIT (honored by Slackware dircolors) are recognized but ignored; TERMz && XtNsionz syncd2 2016;
 # Copyright(C) 1996-2018 FreeSoftwareFound8ion,Inc. Copying and distribution of this file, with or without modific8ion, are permitted provided the
@@ -131,7 +131,7 @@ CHR                       01;38;5;011;48;5;000 #cd= 01;33;40    01;33;40  CHaRac
 *2dy                      01;38;5;011          # .2dy (new ToDyn..amix?)
 *2do                      01;38;5;172          # .2do (old ToDo.ls fylz)
 *2de                      01;38;5;011          # .2de (old 2 Dey -> 2dA)
-*4mtd                     01;38;5;003          # H9NMDKNO:~/.irssi/ custom-aligned cfg && Dflt.theme filez (trying lower-case 'o' for non-2pal8 orange here);
+*4mtd                     01;38;5;172          # H9NMDKNO:~/.irssi/ custom-aligned cfg && Dflt.theme filez (trying lower-case 'o' for non-2pal8 orange here);
 *.am                      01;38;5;011          # AutoMake script (lIk my git clOnd source rEpO 4 xdg-desktop-portal-gtk, wich stil didn't rid syslog erorz)
 *.ac                      01;38;5;172          # AutoConf script (or maybe an AnonymousCoward on SlashDot or something)
 *cfg                      01;38;5;011
@@ -341,7 +341,7 @@ CHR                       01;38;5;011;48;5;000 #cd= 01;33;40    01;33;40  CHaRac
 *jackdrc                  01;38;5;092
 *runescape                01;38;5;172          # Jagex gAm Kyle (UserName:"I Am TRK") wanted 2 play together, but has horibly tiny unscalable UI on 24" 1080p
 *default_mixer            01;38;5;172
-*mikmod_playlist          01;38;5;003
+*mikmod_playlist          01;38;5;172
 *mikmodrc                 01;38;5;172
 *dvdriprc                 01;38;5;172
 *bitchxrc                 01;38;5;172
@@ -435,6 +435,7 @@ CHR                       01;38;5;011;48;5;000 #cd= 01;33;40    01;33;40  CHaRac
 #WW
 #WW
 *txt                      01;38;5;015          # text filz && .vimrc && .vimperatorrc (vim-like plug-in for FireFox)
+*tXt                      01;38;5;015
 *TXT                      01;38;5;015
 *rtf                      01;38;5;015
 *dir                      01;38;5;015
@@ -864,6 +865,7 @@ CHR                       01;38;5;011;48;5;000 #cd= 01;33;40    01;33;40  CHaRac
 *obj                      01;38;5;001
 *old                      01;38;5;001
 *orig                     01;38;5;001
+*dbug                     01;38;5;001
 *done                     01;38;5;001
 *lnk                      01;38;5;001
 *fh                       01;38;5;001          # /etc/alternatives/mpi-x86_64-linux-gnu FileHandlers?
@@ -1496,14 +1498,14 @@ CHR                       01;38;5;011;48;5;000 #cd= 01;33;40    01;33;40  CHaRac
 *.E.0                     01;38;5;004
 *.F.0                     01;38;5;000
 *asc                      01;38;5;172          # I74M2ASC:added NtrEz 4 PGP-signed 7776 pswd list from Diceware && stored in ~/dox/dvl/ref/ plAn ASCII tXt
-*ascii                    01;38;5;003
+*ascii                    01;38;5;172
 *ansi                     01;38;5;011
 *ANSI.00.30               01;38;5;000          # \.ANSI\.[01]\.3[0-7] dotted color-code extensions
 *ANSI.00.31               01;38;5;001
 *ANSI.00.32               01;38;5;002
-*ANSI.00.33               01;38;5;003
+*ANSI.00.33               01;38;5;172
 *ANSI.00.34               01;38;5;004
-*ANSI.00.35               01;38;5;005
+*ANSI.00.35               01;38;5;092
 *ANSI.00.36               01;38;5;006
 *ANSI.00.37               01;38;5;007
 *ANSI.01.30               01;38;5;008
@@ -1546,7 +1548,7 @@ CHR                       01;38;5;011;48;5;000 #cd= 01;33;40    01;33;40  CHaRac
 *-Roma                    01;38;5;006
 *-BoldObli                01;38;5;014
 *-Regu                    01;38;5;013
-*-ReguObli                01;38;5;005
+*-ReguObli                01;38;5;092
 *-Medi                    01;38;5;001
 *-MediItal                01;38;5;009
 *-ReguItal                01;38;5;172          #^/etc/alternatives/ghostscript-current/Resource/Font
@@ -1554,7 +1556,7 @@ CHR                       01;38;5;011;48;5;000 #cd= 01;33;40    01;33;40  CHaRac
 *-BoldCondItal            01;38;5;006
 *-ReguCond                01;38;5;014
 *-ReguCondItal            01;38;5;013
-*-DemiBold                01;38;5;005
+*-DemiBold                01;38;5;092
 *-DemiBoldItal            01;38;5;001
 *-Ligh                    01;38;5;009
 *-LighItal                01;38;5;172
@@ -1573,7 +1575,7 @@ CHR                       01;38;5;011;48;5;000 #cd= 01;33;40    01;33;40  CHaRac
 *-noninteractive          01;38;5;013
 *-daemon                  01;38;5;009          #  more       /etc/          pam .d && /run/ fIl dRk-red
 *-screensaver             01;38;5;013
-*-autologin               01;38;5;005
+*-autologin               01;38;5;092
 *-greeter                 01;38;5;014
 *-freerdp                 01;38;5;172
 *-containers              01;38;5;014
@@ -1588,7 +1590,7 @@ CHR                       01;38;5;011;48;5;000 #cd= 01;33;40    01;33;40  CHaRac
 *-strict                  01;38;5;006
 *-integration             01;38;5;014
 *-browser                 01;38;5;013
-*-kit                     01;38;5;005
+*-kit                     01;38;5;092
 *-files                   01;38;5;001
 *_certs                   01;38;5;009
 *_keys                    01;38;5;172
@@ -1596,7 +1598,7 @@ CHR                       01;38;5;011;48;5;000 #cd= 01;33;40    01;33;40  CHaRac
 *-clients                 01;38;5;006
 *-browsers                01;38;5;014
 *-email                   01;38;5;013
-*-readers                 01;38;5;005
+*-readers                 01;38;5;092
 *-terminal                01;38;5;011
 *-helpers                 01;38;5;001
 *-konsole                 01;38;5;009
@@ -1605,7 +1607,7 @@ CHR                       01;38;5;011;48;5;000 #cd= 01;33;40    01;33;40  CHaRac
 *-launcher                01;38;5;006
 *-messaging               01;38;5;014
 *-xterm                   01;38;5;013
-*-download                01;38;5;005
+*-download                01;38;5;092
 *-mail                    01;38;5;001
 *-manpages                01;38;5;009
 *-tmp                     01;38;5;172
@@ -1635,7 +1637,7 @@ CHR                       01;38;5;011;48;5;000 #cd= 01;33;40    01;33;40  CHaRac
 *-prompt                  01;38;5;011
 *-tools                   01;38;5;014
 *-highlight               01;38;5;014
-*-completion              01;38;5;005          #/etc/bash_completion.d
+*-completion              01;38;5;092          #/etc/bash_completion.d
 *_complete                01;38;5;009          #/etc/bash_completion.d
 *-contest                 01;38;5;014
 *-linux                   01;38;5;009
@@ -1649,7 +1651,7 @@ CHR                       01;38;5;011;48;5;000 #cd= 01;33;40    01;33;40  CHaRac
 *-chrome                  01;38;5;014
 *-config                  01;38;5;011
 *-3g                      01;38;5;013
-*-dispatcher              01;38;5;005          #/etc/default
+*-dispatcher              01;38;5;092          #/etc/default
 *-tips                    01;38;5;009
 *-net                     01;38;5;009
 *-bridge                  01;38;5;172
@@ -1672,7 +1674,7 @@ CHR                       01;38;5;011;48;5;000 #cd= 01;33;40    01;33;40  CHaRac
 *_protos                  01;38;5;011
 *_realms                  01;38;5;014
 *_scopes                  01;38;5;013
-*_tables                  01;38;5;005          #/etc/iproute2   (~8bow cycl)
+*_tables                  01;38;5;092          #/etc/iproute2   (~8bow cycl)
 *-runtime                 01;38;5;009          #*/logcheck/ignore.d.paranoid
 *-service                 01;38;5;013
 *-paniclog                01;38;5;172
@@ -1710,7 +1712,7 @@ CHR                       01;38;5;011;48;5;000 #cd= 01;33;40    01;33;40  CHaRac
 *-chrtr                   01;38;5;172
 *-belgian                 01;38;5;006
 *-danish                  01;38;5;013
-*-fitaly                  01;38;5;005
+*-fitaly                  01;38;5;092
 *-french                  01;38;5;001
 *-french2                 01;38;5;009
 *-german                  01;38;5;172
@@ -1718,7 +1720,7 @@ CHR                       01;38;5;011;48;5;000 #cd= 01;33;40    01;33;40  CHaRac
 *-hebrew                  01;38;5;006
 *-icelandic               01;38;5;014
 *-italian                 01;38;5;013
-*-jisx6002                01;38;5;005
+*-jisx6002                01;38;5;092
 *-jisx6004                01;38;5;001
 *-korean                  01;38;5;009
 *-latin1                  01;38;5;172
@@ -1726,7 +1728,7 @@ CHR                       01;38;5;011;48;5;000 #cd= 01;33;40    01;33;40  CHaRac
 *-portuguese              01;38;5;006
 *-russian                 01;38;5;014
 *-slovene                 01;38;5;013
-*-small                   01;38;5;005
+*-small                   01;38;5;092
 *-spanish                 01;38;5;001
 *-strip                   01;38;5;009
 *-swedish                 01;38;5;172
@@ -1740,7 +1742,7 @@ CHR                       01;38;5;011;48;5;000 #cd= 01;33;40    01;33;40  CHaRac
 *_support                 01;38;5;006
 *-startup                 01;38;5;014
 *_gnomerc                 01;38;5;013
-*_localhost               01;38;5;005
+*_localhost               01;38;5;092
 *_path                    01;38;5;001
 *-update                  01;38;5;009
 *_launch                  01;38;5;172
@@ -1750,13 +1752,13 @@ CHR                       01;38;5;011;48;5;000 #cd= 01;33;40    01;33;40  CHaRac
 *-xim                     01;38;5;013
 *-gtk                     01;38;5;011          #/etc/X11/xinit/xinput.d
 *-a11y                    01;38;5;013
-*-agent                   01;38;5;005
+*-agent                   01;38;5;092
 *_start                   01;38;5;009
 *_stop                    01;38;5;001
 *-va-gl                   01;38;5;013
 *-adaptor                 01;38;5;009
 *-env                     01;38;5;172          #/etc/X11/Xsession.d
-*-addresses               01;38;5;005
+*-addresses               01;38;5;092
 *drkonqirc                01;38;5;014
 *patchagerc               01;38;5;009
 *konsolerc                01;38;5;011          #/etc/email-addresses (exim)
@@ -1765,7 +1767,7 @@ CHR                       01;38;5;011;48;5;000 #cd= 01;33;40    01;33;40  CHaRac
 *kritadisplayrc           01;38;5;006
 *kritarc                  01;38;5;014          #/etc && ~/.config (abov too)
 *-repository-8_xml        01;38;5;013          #~/.android/cache  # E95M5MJR:done adding Aku
-*-addons_list-2_xml       01;38;5;005          # /etc && ~/.*/* but stil nd2rEcurs furthr l8r
+*-addons_list-2_xml       01;38;5;092          # /etc && ~/.*/* but stil nd2rEcurs furthr l8r
 *-sys-img_xml             01;38;5;009
 *-addon_xml               01;38;5;014
 *meta-release-lts         01;38;5;013          #~/.cache/update-manager-core
@@ -1832,18 +1834,18 @@ CHR                       01;38;5;011;48;5;000 #cd= 01;33;40    01;33;40  CHaRac
 *-4.8.0-27-generic        01;38;5;015
 *-4.8.0-26-generic        01;38;5;007
 *-4.10.0-38-generic       01;38;5;001          # 4 older 4.10.* kernelz wich shud B mostly rEtIrd by now, invert default color case 4 mostly dRk shAdz
-*-4.10.0-37-generic       01;38;5;003
+*-4.10.0-37-generic       01;38;5;172
 *-4.10.0-35-generic       01;38;5;184
 *-4.10.0-33-generic       01;38;5;002
 *-4.10.0-32-generic       01;38;5;006
 *-4.10.0-30-generic       01;38;5;004
-*-4.10.0-28-generic       01;38;5;005
+*-4.10.0-28-generic       01;38;5;092
 *-4.10.0-26-generic       01;38;5;001
-*-4.10.0-24-generic       01;38;5;003
+*-4.10.0-24-generic       01;38;5;172
 *-4.10.0-22-generic       01;38;5;002
 *-4.10.0-21-generic       01;38;5;006
 *-4.10.0-20-generic       01;38;5;004
-*-4.10.0-19-generic       01;38;5;005
+*-4.10.0-19-generic       01;38;5;092
 *-4.13.0-45-generic       01;38;5;009;48;5;004 # 4 old 4.13.* kernelz B4 upgrading to Ubuntu 18.04 on Chun 1st, then maybe sync R2K, then upgr KRA
 *-4.13.0-43-generic       01;38;5;172;48;5;004
 *-4.13.0-41-generic       01;38;5;011;48;5;004

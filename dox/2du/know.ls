@@ -1,5 +1,5 @@
 # HBQLISTV:know.ls crE8d by PipStuart <Pip@CPAN.Org> to duplic8 Dr. Jordan B. Peterson's Quora.Com answer of "40 most valuable things everyone should know";
-# $VERSION='0.0';$d8VS='L4DMAn8r'; # While this document origin8d around (&& still mainly intends to focus on) Dr. Peterson's knowledge, many others fE8ure;
+# $VERSION='0.0';$d8VS='L69M8DrP'; # While this document origin8d around (&& still mainly intends to focus on) Dr. Peterson's knowledge, many others fE8ure;
 # 2du:start chronicling Dr. Peterson's many topical videos with new section for post-title subject summaries or explor8ion;
 0)"Tell the truth."                                            K) Ask someone to do you a small favour, so that he or she can ask you to do one in the future.
 1) Do not do things that you h8.                               L)"Make friends with people who want the best for you."
@@ -1123,3 +1123,5 @@ L4DMKNOW:HTTPS://YouTu.be/F2s7vyKucis "Is the Universe Finite?" # JC2:0Gc0 of PB
 L4FMECHQ:HTTPS://YouTu.be/tQSbms5MDvY "Planck's Constant and the Origin of Quantum Mechanics | SpaceTime | PBSDigitalStudios" # G6M:0FF0 of gr8 PBSSpaceTime!;
 L4FMFACE:HTTPS://YouTu.be/w2OHZ9avd2M "The Changing Face of Jesus" # IB6:0Rm0 of TheThinkingAtheist (SethAndrews) on how apologist views are quite subjective;
 L4IMAYIM:HTTPS://YouTu.be/vKQ5280A2mM "The Origins of Hebrew" # L4E:0Ax0 of ReligionForBreakfast discussing Akkadian, Ugaritic, Cuneiform,&& some abecedaries;
+L69M8LIT: "You want to be weak? Stay illiter8. You want to be strong? It's like, put yourself together physically, fair enough, man, get brave and street ..."
+ "... smart. But then you could add some literacy to that and you're an unstoppable machine!" -Dr.JordanB.Peterson quot8ion tweet 4 my Twitter Anniversary =P;
