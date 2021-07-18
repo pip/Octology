@@ -1,8 +1,8 @@
 # 819J2Pip:~/.lsrc by PipStuart <Pip@CPAN.Org> izAheavily modifId`dircolors`cfgfIl(Orig ~/.DIR_COLORS)wich setz $ENV{'LS_COLORS'} 4GNU`ls --color`&&`lsd8`;
-# $VERSION='0.0';$d8VS='L6PM1tXt'; 2du:lrc optn2gNr8 altrn8 versN th@purposfuly varEz colrzof comon typz,add *[-_?]* NtrEz frm .zshrc hEr,audit oldz,ck /etc/*,
+# $VERSION='0.0';$d8VS='L7AM2Txt'; 2du:lrc optn2gNr8 altrn8 versN th@purposfuly varEz colrzof comon typz,add *[-_?]* NtrEz frm .zshrc hEr,audit oldz,ck /etc/*,
 #   add interaction2 lsd8 wN it Dtectz unrecognIzd XtNshNz offerng c@egOrEz with comon colr2autOm@ically insrt chOsN NtrEz,mk lrc gNr8 Xportd LS_COLORS 4 Eval,
 #   confirm all accept f0nt cOdez wi dash accepting Dfalt 4grnd thN redo NORMAL FILE LINK as no fi ln,Dtect cOlIdz OvrIdz&&warn,mAB 8trm aded2 TERM ls sumdA?;
-# This file was gNR8d by `lrc` Vers:0.0 d8VS:L64MDrPp on d8:L6PM2Dt7. Please edit ~/.lrc and run `lrc` then `src` to see changes;
+# This file was gNR8d by `lrc` Vers:0.0 d8VS:L7BMIYif on d8:L7HMI1ZR. Please edit ~/.lrc and run `lrc` then `src` to see changes;
 # nOt:I'm pretty sure itz Chunz(!Takiz)`ls`&&`dircolors`th@cud!hndl (MULTI)?HARDLINK sO rEmMbr2kEp th@ lIn cmNtd out4her(&&kEptstng2cnfirm);
 # Keywords COLOR,OPTIONS,&& EIGHTBIT (honored by Slackware dircolors) are recognized but ignored; TERMz && XtNsionz syncd2 2016;
 # Copyright(C) 1996-2018 FreeSoftwareFound8ion,Inc. Copying and distribution of this file, with or without modific8ion, are permitted provided the
@@ -542,6 +542,7 @@ CHR                       01;38;5;011;48;5;000 #cd= 01;33;40    01;33;40  CHaRac
 *qmlc                     01;38;5;092          # Qt Mark-up Language Cache      filz (from ~/.cache/krita/qmlcache/)
 *jsc                      01;38;5;172          # Qt JavaScript?      Cache      filz (from ~/.cache/krita/qmlcache/)
 *json                     01;38;5;013
+*jso                      01;38;5;092          #    JavaScript (JohnSatoshi) perhaps converted Over to Other Octology d8 && b64 format for Perl(PipScrpt)purps?
 *xml~                     01;38;5;092
 *xml                      01;38;5;013
 *XML                      01;38;5;013
@@ -612,6 +613,7 @@ CHR                       01;38;5;011;48;5;000 #cd= 01;33;40    01;33;40  CHaRac
 *mak                      01;38;5;013
 *make                     01;38;5;013
 *cmake                    01;38;5;013
+*textile                  01;38;5;013          # Tex-Tile file like ~/dvl/Ppl/bep/mad*/README.
 *makefile                 01;38;5;013
 *Makefile                 01;38;5;013
 *MakeFile                 01;38;5;013

@@ -52,7 +52,7 @@ our @EXPORT= qw(bfr8c    b8c    d8c   dur8c @d8cl @d8cS  a8c   chti  c8fn  o8 S2
     $t    $u    $d    $s    $n   $pP    $T     $U    $D    $S    $N %pldS   $HK   $HR   $HO   $HY   $HG   $HC   $HB   $HM   $HP   $HW %pldh hl $pfil pP xe
  $tnhf $ucdf  spff  spfd  spfX   shfl  reso $Auth %cmsp %p8k2 @p82k  chp8 aw8 S2f4 c2f4 dm2u cdst %crgb %cbrt @snls @mrls %cdrd %cdrn    %nrgb $lfil   gnp8);
  # of 52 posibl sngl-letr var nmz,a8 Xportz 20,$b && $a unavail,so shudB thEs30 lFt4quik shortSt nAmz: 'def hij l n  q stuv x', 'A  DEF HIJ L N  Q STUV X Z';
-our $VERSION='0.0';my  $d8VS='L64MDrPp';our $Auth='PipStuart <Pip@CPAN.Org>'; # above not exporting $b since collidez with sort{$a  <=> $b};unalloc'd sOlOz^;
+our $VERSION='0.0';my  $d8VS='L7BMIYif';our $Auth='PipStuart <Pip@CPAN.Org>'; # above not exporting $b since collidez with sort{$a  <=> $b};unalloc'd sOlOz^;
 our $ucdf= eval('use Color::Similarity::RGB qw(distance);1') || 0; # try2set UseColorDistanceFlag if optional module is available; /defhijlnqstuvx/i + /AZ/^;
 our @sb64=('0'..'9','A'..'Z','a'..'z','.','_'); # SingleBase64 array && Base10 hash (since it's probably best not to use b8.pm here in a8)
 our %sb10=();$sb10{$sb64[$_]}=$_ for(0..$#sb64);our %crgb;our %cbrt;our @snls;our @mrls;our %cdrd;our %cdrn; # DclAr ColrDist d8a:BRiTness,Srch iNdex LiSt,
@@ -1393,7 +1393,7 @@ sub sumb{  my $widt=0;$widt=1 if(exists($ENV{'COLUMNS'}) && $ENV{'COLUMNS'} >= 1
     'xtidy' => "m8  XML::Tidy inserts indenting whitespace for mixed-node nesting depth   ",
     'xtx'   => "m8  XML  Text   eXpand  utility (restores orig. .xml from before `xtc`)   ",
 
-    'tstn'  => "p8  TeST random Navig8ion of A* paths thru HTTPS://Screeps.Com maps d8a   ", # new PurPle colr p8 section here is re-comNted sinc just tst4now
+    'tstn'  => "p8  TeST PsRandm Navig8ion of A* paths thru HTTPS://Screeps.Com map d8a   ", # new PurPle colr p8 section here is re-comNted sinc just tst4now
 
     'UTF8'  => "U8 *wide printing of most UTF-8 (or ASCII) chars up to index (or range)   ", # mAB add more sets of logical blocks && colr b8 char-sets
 

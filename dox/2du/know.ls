@@ -1,5 +1,5 @@
 # HBQLISTV:know.ls crE8d by PipStuart <Pip@CPAN.Org> to duplic8 Dr. Jordan B. Peterson's Quora.Com answer of "40 most valuable things everyone should know";
-# $VERSION='0.0';$d8VS='L69M8DrP'; # While this document origin8d around (&& still mainly intends to focus on) Dr. Peterson's knowledge, many others fE8ure;
+# $VERSION='0.0';$d8VS='L7IMHIGH'; # While this document origin8d around (&& still mainly intends to focus on) Dr. Peterson's knowledge, many others fE8ure;
 # 2du:start chronicling Dr. Peterson's many topical videos with new section for post-title subject summaries or explor8ion;
 0)"Tell the truth."                                            K) Ask someone to do you a small favour, so that he or she can ask you to do one in the future.
 1) Do not do things that you h8.                               L)"Make friends with people who want the best for you."
@@ -776,201 +776,71 @@ KBPLMAnn:Announcement-_Beyond_Order-_12_More_Rules_for_Life-JordanBPeterson-Iu63
 {3H0} Sometimes it manifests itself gently,          # I must be quite the agent of chaos then, since I sometimes manifest myself gently, but not usually! ;}
 {3K0} revealing its mysteries and experiences
 {3L0} that makes us curious,                         # I have to wrap this up. Haven't you had enough of my contentiousness yet, Dr. Peterson? Never quit? =}
-{3N0} compelled, and interested. This is
-{3Q0} particularly likely, although not
-{3R0} inevitable,
-{3S0} when we approach what we do not
-{3U0} understand voluntarily, with careful
-{3W0} prepar8ion
-{3X0} and discipline. Other times, the
-{3Z0} unexpected makes itself known terribly
-{3c0} suddenly, accidentally. So we are undone
-{3f0} and fall apart,
-{3g0} and can only put ourselves back together
-{3i0} with great difficulty,
-{3k0} if at all. Neither the st8 of order nor
-{3o0} the st8 of chaos is preferable,
-{3p0} intrinsically,
-{3q0} to the other. That is the wrong way to
-{3t0} look at it.
-{3u0} Nonetheless, in my previous book: 12 Rules
-{3x0} for Life:
-{400} An Antidote to Chaos, I focus more on how
-{430} the consequences of too much chaos might
-{450} be remeD8d.
-{460} We respond to sudden and unpredictable
-{490} change by preparing,
-{4A0} physiologically and psychologically, for
-{4C0} the worst,
-{4E0} and because only God Himself knows what
-{4G0} this worst might be,
-{4H0} we must, in our ignorance, prepare for all
-{4K0} eventualities,
-{4M0} and the problem with that continual
-{4N0} prepR8ion is that,
-{4P0} in excess, it exhausts us,
-{4S0} but that does not imply in any manner
-{4U0} that chaos should be elimin8d.
-{4W0} An impossibility in any case. Although
-{4Y0} what is unknown needs to be managed
-{4a0} carefully,
-{4b0} as my previous book repeatedly stressed.
-{4e0} Whatever is not touched by the new
-{4g0} stagn8s and it is certainly the case
-{4i0} that a life without curiosity,
-{4l0} that instinct pushing us out into the
-{4n0} unknown, would be a much
-{4o0} diminished form of existence.
-{4r0} What is new is also what is exciting,
-{4t0} compelling, and provoc8ive,
-{4v0} assuming that the r8 at which it is
-{4x0} introduced does not intolerably
-{500} undermine and destabilize our st8 of
-{550} being. Like 12 Rules for Life, the current
-{570} volume provides an explic8ion of rules
-{5A0} drawn from a longer list of 42, originally
-{5C0} published and popularized on the Q-&&-A
-{5E0} website: Quora. Unlike my previous book,
-{5I0} Beyond Order explores, as its overarching theme,
-{5L0} how the dangers of too much security and
-{5N0} control might be profitably avoided.
-{5R0} Because what we understand is
-{5T0} insufficient, as we discover when things
-{5V0} we are striving to control
-{5W0} nonetheless go wrong around us, we need
-{5Z0} to keep one foot within
-{5a0} order, while stretching the other
-{5c0} tent8ively into the beyond,
-{5f0} and so we are driven to explore and find
-{5i0} the deepest of meanings in standing on
-{5k0} the frontier,
-{5l0} secure enough to keep our fear under
-{5n0} control, but learning,
-{5o0} constantly learning, as we face what we
-{5r0} have not yet made peace with or adapted to.
-{5v0} It is this instinctive meaning, something
-{5x0} far deeper than mere thought,
-{610} that orients us properly in life, so that
-{630} we do not become overwhelmed by what is
-{650} beyond us
-{660} or, equally dangerously, stultified and
-{690} stunted by d8d,
-{6B0} too narrow, or too pridefully paraded
-{6D0} systems of value and belief.
-{6H0} What have I written about, more
-{6J0} specifically?
-{6L0} Rule 1 describes the rel8ionship
-{6N0} between stable
-{6O0} predictable social structures and
-{6Q0} individual psychological health,
-{6S0} and makes the case that such structures
-{6U0} need to be upd8d by crE8ive people, if
-{6X0} they are to retain
-{6Y0} their vitality. Rule 2
-{6b0} analyzes a centuries-old alchemical
-{6d0} image, relying on several stories,
-{6f0} ancient and modern, to illumin8 the
-{6i0} n8ure and development of the integr8d
-{6k0} human personality.
-{6m0} Rule 3 warns of the dangers of avoiding
-{6p0} the inform8ion,
-{6q0} vital to the continued rejuven8ion of
-{6s0} the psyche,
-{6t0} signaled by the emergence of neg8ive
-{6v0} emotions such as pain,
-{6x0} anxiety, and fear.
-{720} Rule 4 argues that the meaning that
-{740} sustains people through difficult times,
-{760} is to be found not so much in happiness,
-{790} which is fleeting,
-{7A0} but in the voluntary adoption of m8ure
-{7C0} responsibility for the self and others.
-{7G0} Rule 5 uses a single example, drawn from
-{7J0} my experience as a clinical psychologist,
-{7M0} to illustr8 the personal and social
-{7O0} necessity of attending to the dict8s
-{7Q0} of conscience.
-{7S0} Rule 6 describes the danger of
-{7U0} attributing the cause of complex
-{7W0} individual and social problems
-{7Y0} to single variables, such as sex, class,
-{7b0} or power. Rule 7
-{7f0} outlines the crucial rel8ionship
-{7h0} between discipline striving in a single
-{7j0} direction,
-{7k0} and forging of the individual character
-{7m0} capable of resilience in the face of
-{7o0} adversity.
-{7q0} Rule 8 focuses on the vital importance
-{7t0} of aesthetic experience
-{7u0} as a guide to what is true, good, and
-{7x0} sustaining,
-{800} in the human world of experience.
-{830} Rule 9 makes the case that past
-{860} experiences,
-{870} whose current recall remains laden with
-{890} pain and fear,
-{8A0} can be stripped of their horror by
-{8C0} voluntary verbal explor8ion
-{8E0} and reconsider8ion.
-{8I0} Rule 10 notes the importance of explicit
-{8L0} negotE8ion,
-{8M0} to maintenance of the good-will, mutual
-{8P0} regard, and
-{8Q0} heartfelt cooper8ion, without which no
-{8S0} true romance can be sustained.
-{8W0} Rule 11 opens by describing the world of
-{8Y0} human experience
-{8Z0} in a manner that explains what motiv8s
-{8b0} three common, but
-{8d0} direly dangerous, patterns of
-{8e0} psychological response,
-{8g0} delinE8s the catastrophic consequences
-{8j0} of falling prey to any, or all, of them,
-{8l0} and lays out an altern8ive route.
-{8o0} Rule 12, finally, makes the case that
-{8s0} thankfulness, in the face of the
-{8t0} inevitable tragedies of life,
-{8w0} should be regarded as a primary
-{8x0} manifest8ion of the admirable moral courage
-{920} required to continue our difficult march
-{980} uphill. I hope that I am somewhat wiser in my
-{9A0} explic8ion of this second set of 12
-{9C0} rules than I was four years ago,
-{9E0} when I wrote about the first dozen, not
-{9G0} least because of the inform8ive
-{9I0} feedback I received in the course of my
-{9K0} efforts to formul8 my ideas for
-{9M0} audiences around the world,
-{9O0} in-person, on YouTube, and through my
-{9Q0} podcast and blog.
-{9T0} I hope, in consequence, that I have
-{9V0} managed to clarify some of the issues
-{9W0} that were perhaps
-{9X0} left less than optimally developed in my
-{9Z0} previous work,
-{9a0} as well as presenting much that is
-{9c0} original.
-{9e0} Finally, I hope that people find this
-{9h0} book as helpful personally,
-{9j0} as they seem to have found the first set
-{9k0} of twelve rules.
-{9m0} It has been a source of immense
-{9o0} gratific8ion, that so many people have
-{9q0} reported drawing strength from the
-{9s0} thoughts and the stories
-{9t0} I have had the privilege of bringing
-{9v0} forth, and sharing.
-{A00} That was the second half of the Overture
-{A30} from Beyond Order:
-{A40} 12 More Rules for Life.
-{A80} Once again, the book, in all its forms,
-{AA0} will be published March 2nd,
-{AC0} 2021. Links for pre-sale
-{AF0} are posted in the description below.
-{AJ0} Thank you, from the bottom of my heart,
-{AM0} for your interest in,
-{AN0} and support of, my work. ;
+{3N0} compelled, and interested. This is             {5f0} and so we are driven to explore and find         {830} Rule 9 makes the case that past  # 64lInzlFt;
+{3Q0} particularly likely, although not              {5i0} the deepest of meanings in standing on           {860} experiences,
+{3R0} inevitable,                                    {5k0} the frontier,                                    {870} whose current recall remains laden with
+{3S0} when we approach what we do not                {5l0} secure enough to keep our fear under             {890} pain and fear,
+{3U0} understand voluntarily, with careful           {5n0} control, but learning,                           {8A0} can be stripped of their horror by
+{3W0} prepar8ion                                     {5o0} constantly learning, as we face what we          {8C0} voluntary verbal explor8ion
+{3X0} and discipline. Other times, the               {5r0} have not yet made peace with or adapted to.      {8E0} and reconsider8ion.
+{3Z0} unexpected makes itself known terribly         {5v0} It is this instinctive meaning, something        {8I0} Rule 10 notes the importance of explicit
+{3c0} suddenly, accidentally. So we are undone       {5x0} far deeper than mere thought,                    {8L0} negotE8ion,
+{3f0} and fall apart,                                {610} that orients us properly in life, so that        {8M0} to maintenance of the good-will, mutual
+{3g0} and can only put ourselves back together       {630} we do not become overwhelmed by what is          {8P0} regard, and
+{3i0} with great difficulty,                         {650} beyond us                                        {8Q0} heartfelt cooper8ion, without which no
+{3k0} if at all. Neither the st8 of order nor        {660} or, equally dangerously, stultified and          {8S0} true romance can be sustained.
+{3o0} the st8 of chaos is preferable,                {690} stunted by d8d,                                  {8W0} Rule 11 opens by describing the world of
+{3p0} intrinsically,                                 {6B0} too narrow, or too pridefully paraded            {8Y0} human experience
+{3q0} to the other. That is the wrong way to         {6D0} systems of value and belief.                     {8Z0} in a manner that explains what motiv8s
+{3t0} look at it.                                    {6H0} What have I written about, more                  {8b0} three common, but
+{3u0} Nonetheless, in my previous book: 12 Rules     {6J0} specifically?                                    {8d0} direly dangerous, patterns of
+{3x0} for Life:                                      {6L0} Rule 1 describes the rel8ionship                 {8e0} psychological response,
+{400} An Antidote to Chaos, I focus more on how      {6N0} between stable                                   {8g0} delinE8s the catastrophic consequences
+{430} the consequences of too much chaos might       {6O0} predictable social structures and                {8j0} of falling prey to any, or all, of them,
+{450} be remeD8d.                                    {6Q0} individual psychological health,                 {8l0} and lays out an altern8ive route.
+{460} We respond to sudden and unpredictable         {6S0} and makes the case that such structures          {8o0} Rule 12, finally, makes the case that
+{490} change by preparing,                           {6U0} need to be upd8d by crE8ive people, if           {8s0} thankfulness, in the face of the
+{4A0} physiologically and psychologically, for       {6X0} they are to retain                               {8t0} inevitable tragedies of life,
+{4C0} the worst,                                     {6Y0} their vitality. Rule 2                           {8w0} should be regarded as a primary
+{4E0} and because only God Himself knows what        {6b0} analyzes a centuries-old alchemical              {8x0} manifest8ion of the admirable moral courage
+{4G0} this worst might be,                           {6d0} image, relying on several stories,               {920} required to continue our difficult march
+{4H0} we must, in our ignorance, prepare for all     {6f0} ancient and modern, to illumin8 the              {980} uphill. I hope that I am somewhat wiser in my
+{4K0} eventualities,                                 {6i0} n8ure and development of the integr8d            {9A0} explic8ion of this second set of 12
+{4M0} and the problem with that continual            {6k0} human personality.                               {9C0} rules than I was four years ago,
+{4N0} prepR8ion is that,                             {6m0} Rule 3 warns of the dangers of avoiding          {9E0} when I wrote about the first dozen, not
+{4P0} in excess, it exhausts us,                     {6p0} the inform8ion,                                  {9G0} least because of the inform8ive
+{4S0} but that does not imply in any manner          {6q0} vital to the continued rejuven8ion of            {9I0} feedback I received in the course of my
+{4U0} that chaos should be elimin8d.                 {6s0} the psyche,                                      {9K0} efforts to formul8 my ideas for
+{4W0} An impossibility in any case. Although         {6t0} signaled by the emergence of neg8ive             {9M0} audiences around the world,
+{4Y0} what is unknown needs to be managed            {6v0} emotions such as pain,                           {9O0} in-person, on YouTube, and through my
+{4a0} carefully,                                     {6x0} anxiety, and fear.                               {9Q0} podcast and blog.
+{4b0} as my previous book repeatedly stressed.       {720} Rule 4 argues that the meaning that              {9T0} I hope, in consequence, that I have
+{4e0} Whatever is not touched by the new             {740} sustains people through difficult times,         {9V0} managed to clarify some of the issues
+{4g0} stagn8s and it is certainly the case           {760} is to be found not so much in happiness,         {9W0} that were perhaps
+{4i0} that a life without curiosity,                 {790} which is fleeting,                               {9X0} left less than optimally developed in my
+{4l0} that instinct pushing us out into the          {7A0} but in the voluntary adoption of m8ure           {9Z0} previous work,
+{4n0} unknown, would be a much                       {7C0} responsibility for the self and others.          {9a0} as well as presenting much that is
+{4o0} diminished form of existence.                  {7G0} Rule 5 uses a single example, drawn from         {9c0} original.
+{4r0} What is new is also what is exciting,          {7J0} my experience as a clinical psychologist,        {9e0} Finally, I hope that people find this
+{4t0} compelling, and provoc8ive,                    {7M0} to illustr8 the personal and social              {9h0} book as helpful personally,
+{4v0} assuming that the r8 at which it is            {7O0} necessity of attending to the dict8s             {9j0} as they seem to have found the first set
+{4x0} introduced does not intolerably                {7Q0} of conscience.                                   {9k0} of twelve rules.
+{500} undermine and destabilize our st8 of           {7S0} Rule 6 describes the danger of                   {9m0} It has been a source of immense
+{550} being. Like 12 Rules for Life, the current     {7U0} attributing the cause of complex                 {9o0} gratific8ion, that so many people have
+{570} volume provides an explic8ion of rules         {7W0} individual and social problems                   {9q0} reported drawing strength from the
+{5A0} drawn from a longer list of 42, originally     {7Y0} to single variables, such as sex, class,         {9s0} thoughts and the stories
+{5C0} published and popularized on the Q-&&-A        {7b0} or power. Rule 7                                 {9t0} I have had the privilege of bringing
+{5E0} website: Quora. Unlike my previous book,       {7f0} outlines the crucial rel8ionship                 {9v0} forth, and sharing.
+{5I0} Beyond Order explores, as its overarching      {7h0} between discipline striving in a single          {A00} That was the second half of the Overture
+{5L0} theme how the dangers of too much security and {7j0} direction,                                       {A30} from Beyond Order:
+{5N0} control might be profitably avoided.           {7k0} and forging of the individual character          {A40} 12 More Rules for Life.
+{5R0} Because what we understand is                  {7m0} capable of resilience in the face of             {A80} Once again, the book, in all its forms,
+{5T0} insufficient, as we discover when things       {7o0} adversity.                                       {AA0} will be published March 2nd,
+{5V0} we are striving to control                     {7q0} Rule 8 focuses on the vital importance           {AC0} 2021. Links for pre-sale
+{5W0} nonetheless go wrong around us, we need        {7t0} of aesthetic experience                          {AF0} are posted in the description below.
+{5Z0} to keep one foot within                        {7u0} as a guide to what is true, good, and            {AJ0} Thank you, from the bottom of my heart,
+{5a0} order, while stretching the other              {7x0} sustaining,                                      {AM0} for your interest in,
+{5c0} tent8ively into the beyond,                    {800} in the human world of experience.                {AN0} and support of, my work. ; # mAB l8r retn2?;
 KBSLBash:HTTPS://YouTu.be/-jM2fpm6fnA "JordanPeterson - TheTyrannicalFather and TheDevouringMother" # HAA:2x0 seeming to be not so applicable to DotMathews;
 {000} You're an admirer of Erich Neumann {020} and of Carl Jung. (Yes.) Yeah and that's... the Neumann {040} connection is really interesting 'cause I
 {050} think he's a bloody genius. (Yes.) I really like {080} The Great Mother. [It] is a great book and {090} really a gr8 warning that book... and
@@ -1125,3 +995,28 @@ L4FMFACE:HTTPS://YouTu.be/w2OHZ9avd2M "The Changing Face of Jesus" # IB6:0Rm0 of
 L4IMAYIM:HTTPS://YouTu.be/vKQ5280A2mM "The Origins of Hebrew" # L4E:0Ax0 of ReligionForBreakfast discussing Akkadian, Ugaritic, Cuneiform,&& some abecedaries;
 L69M8LIT: "You want to be weak? Stay illiter8. You want to be strong? It's like, put yourself together physically, fair enough, man, get brave and street ..."
  "... smart. But then you could add some literacy to that and you're an unstoppable machine!" -Dr.JordanB.Peterson quot8ion tweet 4 my Twitter Anniversary =P;
+L6QMESIN:HTTPS://YouTu.be/wSNYgHiB-N4 "Trope Talk: Sins of the Father" # L5L:0Hg0 of OverlySarcasticProductions discussing vengeance ethics&&motiv8ion issues;
+L6RMFour:HTTPS://YouTu.be/0WPY5cfOOIM "2+2 Doesn't Always Equal 4" # L6C:09b0 of SabineHossenfelder with timely discussion of altern8 + oper8ors && 2 symbolz;
+L6SM6FIN:HTTPS://YouTu.be/cVKMHYZEqpo "Infinity is Fake | Jordan Ellenberg" # L6E:06o0 of LexFridman's PodCast talking on Finitism && qualms about "Infinity";
+L6SM64pP:HTTPS://YouTu.be/-7SARGr36T4 "Prime Numbers && Free-Will | Jordan Ellenberg" # L6D:0FM0 of Lex && Jordan talking Fermat's PseudoPrimality:2xxN%N==2?;
+L6SM96FU:HTTPS://YouTu.be/_BOyzTCiGPM "If You Think About Things, You're Stupid!" # L6L:0Et0 of VicedRhino tangentially handling swearing && many "fuck" uses;
+L6SMGod4:HTTPS://YouTu.be/VcLAdBf8bwo "5 Reasons to ReThink Jesus' Sacrifice" # L6S:0Af0 of DarkMatter2525 dropping reverse-order && God asking *us* 4 4gvnS?;
+L6SMANIA:HTTPS://YouTu.be/gjo8EDXGUl0 "What Happened to Nietzsche? - Madness && the Divine Mania" # L6H:0GT0 of AcademyOfIdeas on Dionysus && gr8-heal mania?;
+L71MDace:HTTPS://Science.SlashDot.Org/story/21/06/30/2311257/scientists-develop-wireless-pacemaker-that-dissolves-in-body#comments "DissolvePaceMakerWell?" #;
+L74M0GEN:HTTPS://YouTu.be/A69hGDOGRYw "Did Y'shua Really Exist? Rabbi Tovia Singer UnCovers the Myth Sparked in Nazareth" # L6U:0CC0 says Jesus was illiter8!;
+L74M0SHI:HTTPS://Google.Com/maps/@31.7357413,35.1763023,13.25z 'Yerushalayim/BeitLechem', HTTPS://Google.Com/maps/@40.5377594,-75.5122184,10z # my birthplace;
+L74MINFI:HTTPS://YouTu.be/ZTDbUE83JyI "The Kalam CosmoLogical Argument ft.MajestyOfReason Ep1" # L73:0PP0 of RationalityRules 6-PartSeries with "infinitudes";
+L7AMLeap:HTTPS://YouTu.be/C2D7GPRmC7Q "Scientists Are in a Race Against Time && Earth's Rot8ion" # L6U:0530 of Seeker discussing Leap-seconds && some history;
+L7BM2ime:HTTPS://YouTu.be/QkWT-xMTm1M "The Arrow of Time && How to Reverse It" # KBI:0EK0 of PBSSpaceTime with rather bad take on entropy && what's "random"?;
+L7BMCoin:HTTPS://YouTu.be/wHr-TAU78wA "Exactly How Bad is BitCoin for the Environment? Answers with Joe" # L75:0J10 of JoeScott tackling BTC piluses&&minuses;
+L7BMNtel:HTTPS://YouTu.be/KblYtFxgDEI "The Future of Intelligence: A Convers8ion with Jeff Hawkins (Episode #255)" # L79:0w80 of SamHarris on rFrAms&&models2;
+L7CMDrag:HTTPS://YouTu.be/7J16VAiuO9g "Meet Dragon Man, Humans' Possible New Rel8ive | SciShow News" # L72:0570 on ancient old skull fossils && plague genome;
+L7DMAliv:HTTPS://YouTu.be/FXqmzKwBB_w "Are Viruses Alive?" # L55:0Bl0 of SciShow giving a bunch of well-reasoned arguments on defining "life" inclusively some
+#   ways, or excluding either. Lots of solid consider8ion seems to have gone into framing && phrasing the script. Brilliant.Org's "Infinity" course may suck!;
+L7DMAnti:HTTPS://YouTu.be/GWFJteC7kIk "Hacking the N8ure of Reality" # K1R:0Gq0 of PBSSpaceTime talking "crosng-symmetry" ex. anti-matter as m@r bak tIm trvl;
+L7GM5wrd:HTTPS://YouTu.be/vy0Z0H4QxWE "Why Are Japanese Swords Curved? (You May Be Surprised by the Answer.)" # KA3:09N0 of Linfamy on blade-smithing a tachi;
+L7GMCaus:HTTPS://YouTu.be/FGH5o-3fNRY "The Laws of Physics May Change with Time | Sara Walker && Lex Fridman" # L7F:03b0 discussing how time (causality) might
+#   be fundamental, leaving space to be an emergent property. She also indic8s there are simple "low-memory" laws of physics that the universe may implement?;
+L7HMIrth:HTTPS://YouTu.be/-tSovkMfH5I "Origin of Life on Irthe | Sara Walker" # L7D:08B0 of LexFridman && gr8 life emerging continuously && shadow-biosphere?;
+L7IM5th4:HTTPS://YouTu.be/N79rTxce6bI "What's the Fifth Force?" # L7H:03X0 of SabineHossenfelder on GenRel8ivGrav,ElectroMagntic,Strong&&WeakNuclear,&&new4c?;
+L7IMETHI:HTTPS://YouTu.be/ojjzXyQCzso "Why Aren't You Making Meth Videos? (Also, Now There's a 3b1b PodCast)" # L7G:0OK0 of GrantSanderson on SoME1 4 d8:L8M?;

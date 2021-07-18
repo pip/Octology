@@ -18,9 +18,10 @@
 #   for important inform8ion about your freedom. This is Free Software: you
 #   are free to change and redistribute it. There is NO WARRANTY, to the
 #   extent permitted by law.  Please see HTTPS://FSF.Org for more inform8ion.
-use strict;use warnings;                    # tryd sorta rElEs version with no
-                        use utf8;use v5.10; #   strict or warns4 cd ~/../sig but then it just tried to load utf8.pm && failed again so mAB $PERL5LIB is prob? ;
-use      Octology::d8;my $VERSION='0.0';my $d8VS='K3RMNAut';my $Auth='PipStuart <Pip@CPAN.Org>';my $parm=join(' ',@ARGV);my @id8a;
+use strict; use warnings;use utf8;use v5.10;
+use Time::HiRes qw(time);use Time::Piece;
+use      Octology::a8;use Octology::b8;
+use      Octology::d8;my $VERSION='0.0';my $d8VS='L7HMEPOC';my $Auth='PipStuart <Pip@CPAN.Org>';my $parm=join(' ',@ARGV);my @id8a;
 my $d8im=Octology::d8->new();
 open my $out8,'>&',STDOUT or die "Can't open  duplic8 STDOUT handle: $!";binmode $out8,':encoding(UTF-8)'; # crE8 local duplic8 of global
 if(!@ARGV && !-t STDIN){chomp(@id8a=<STDIN>);$parm=join(' ',@id8a);} # should eventually handle piping in d8 d8a while giving optionz too
@@ -36,11 +37,11 @@ if($parm=~ /(^|\s)-+h/i){ # should probably upd8 to use GetOpts or something mor
 `d8 _eX` to `d8 _pV` && `d8 _eX0O` to `d8 _pV0l`,  &&  append 'xxx' for last;
   -h    this Help
  coloring options: (preceded with a dash)   ##  d8 fields (left-right,lo-hi)
-  -z    Zsh (SHELL)                         ## Y Year     2000 - 2063
-  -v    Vim (EDITOR)                        ## M Month      01 -   12
-  -4    4nt (MS-DOS)                        ## D Day        01 -   31
-  -w    Web (HTML)5?                        ##       offset or index codes z:
-  -a      colored Ansi   # Adore            ##  z zONE       0 -   37?
+  -z    Zsh (SHELL)                 .       ## Y Year     2000 - 2063
+  -v    Vim (EDITOR)    -E Epoch-in,d8-out  ## M Month      01 -   12
+  -4    4nt (MS-DOS)                0       ## D Day        01 -   31
+  -w    Web (HTML)5?    -e Epoch(sec.nds)   ##       offset or index codes z:
+  -a      colored Ansi   # Adore    0       ##  z zONE       0 -   37?
   -f    Full with ansi   # Fuzzy            ##  h hOUR       0 -   23
   -l    Lsft with ansi   # LittLe           ##  m mINUTE    00 -   59
   -c    Cpan with ansi   # CrE8ures         ##  s sECOND    00 -   59
@@ -58,6 +59,7 @@ if($parm=~ /(^|\s)-+h/i){ # should probably upd8 to use GetOpts or something mor
   -v    Vim (EDITOR)  # Vigor     / Vision  ## M Month      01 -   12   (neutral pairing)          == Not a Problem!  # Now Pip nstdof blip mItB good newuse?
   -4    4nt (MS-DOS)  # -4for4     / 4fwd4  ## D Day        01 -   31     [= - N P - =]          || # Non-deterministic Polynomial (could be: hard||complete)
   -w    Web (HTML)5?  # Worst!! ;     [We]  # Well When Would We Wonder Why World Webbed 4m@ Was Wanted With Wiser gener8ion && markup option altern8ives?  ;
+  -e    Epochwith Ansi  (sec.nds) from Time::HiRes::time() as float &&  -E input Epoch float-seconds to obtain corresponding d8-stamp code bak out as string;
   -a      colored Ansi   # Adore   [ All ]  ##  z zONE       0 -   37? offset or index codes   <<--Pip's double-hash-pounded depth listed internal d8 fields.
   -f    Full with ansi   # Fuzzy  / Furry   ##  h hOUR       0 -   23     [= N + + P =]          ||
   -l    Lsft with ansi   # LittLe  / Lover  ##  m mINUTE    00 -   59   (n8ural parenths)          == Never Perfect!  # Neither Phase orSixtiethSofSecS,butp?
@@ -68,18 +70,44 @@ if($parm=~ /(^|\s)-+h/i){ # should probably upd8 to use GetOpts or something mor
    l    show now's d8 in `ls  --full-time` 4m@ format  # Rather curiously, original implement8ion design8d that dashy -h was best way for Help to avoid h d8;
    c    show now's d8 in CPAN  (&& PAuSe)  4m@ format  # (&& Pip Alex Stu... Pi appreC8s you 4for at least 8 XponentE8able implicit reasons unmet *too2*!)  ;)
    i    show now's d8 in complete ISO 8601 4m@ format  #  'You *can* say it too! I appreC8 you!' --2An PiPi Stu     8<3;";
-}elsif($parm=~ /(^|\s)-+([zv4waflci])\s*(.*)$/){$d8im=Octology::d8->new('d8'=>$3) if(defined($3)&& length($3)); # used to be 'verbose',then 'str',before 'd8'
-  if   ($2  eq  'f'      ){print $out8 $d8im->expand('a');} # used to also accept 'e' for Expand but favor Full now   #              Full with ansi
-  elsif($2  eq  'l'      ){print $out8 $d8im->lsft(  'a');}                                                           #              Lsft with ansi
-  elsif($2  eq  'c'      ){print $out8 $d8im->cpan(  'a');}                                                           #              Cpan with ansi
-  elsif($2  eq  'i'      ){print $out8 $d8im->iso(   'a');}                                                           #               Iso with ansi
-  else                    {print $out8 $d8im->colr(   $2);} exit;
-}elsif($parm=~ /^(f|d8)$/){print $out8 $d8im->expand(   );  exit;                                                     # shortcuts to Full d8
-}elsif($parm=~ /^l$/     ){print $out8 $d8im->lsft(     );  exit;                                                     # shortcut  to Lsft d8
-}elsif($parm=~ /^c$/     ){print $out8 $d8im->cpan(     );  exit;                                                     # shortcut  to Cpan d8
-}elsif($parm=~ /^i$/     ){print $out8 $d8im->iso(      );  exit;                                                     # shortcut  to  Iso d8
+}elsif($parm=~ /(^|\s)-+([zv4wpeaflci])\s*(.*)$/){my($icfc,$icg3,$icg4)=($2,'',''); # InputCaptureFlagChar,Groups3&&4 for maybe special parameter parsing;
+  if(defined($3) && length($3)){ $icg3=$3;}
+  $d8im=Octology::d8->new('d8'=> $icg3) if(length($icg3) && $icg3=~ /^[0-9A-Z._]{1,8}$/i);
+  if   ($icfc eq 'p'     ){   my $epch=Time::HiRes::time();
+    if ($icg3 =~ /^(\d+)/){   my $sptm=Time::Piece->strptime($1,'%s');$sptm=~ s/^\s*(\S+)( \S+)(  ?\d+) (\d+)(:\d+)(:\d+)( \d+)\s*$/$1,$3$2$7 00$5$6 UTC/;
+      $icg4   =  $4; # try2rEd curNt $d8im{'z'} offset from UTC && apply2 $icg4 (modifying Day too,if wrapping MidNight) thN stick in 4 00 above2prnt;
+      $sptm   =~ s/ 00:/ $icg4:/;
+      $d8im   =Octology::d8->new('cpan'  =>  $sptm); # try2tk all digits aftr -e as input epoch float seconds 2mk a Piece from thN mk new d8 obj2prnt;
+                           print $out8 $d8im->colr(   'a');}else{
+                           print $out8  b8clr( b64($epch));}} # should probably just use a8 && b8.pm for this, but just wanting to see if it works;
+  elsif($icfc eq 'e'     ){   my $epch=Time::HiRes::time();
+                           print $out8 $epch              ;}
+  elsif($icfc eq 'f'     ){print $out8 $d8im->expand( 'a');} # used to also accept 'e' for Expand but favor Full now   #              Full with ansi
+  elsif($icfc eq 'l'     ){print $out8 $d8im->lsft(   'a');}                                                           #              Lsft with ansi
+  elsif($icfc eq 'c'     ){print $out8 $d8im->cpan(   'a');}                                                           #              Cpan with ansi
+  elsif($icfc eq 'i'     ){print $out8 $d8im->iso(    'a');}                                                           #              Iso  with ansi
+  else                    {print $out8 $d8im->colr( $icfc);} exit;
+# print Time::HiRes::time(); # 1626539195
+# print Time::Piece->strptime('1626539195','%s'); # Sat Jul 17 17:41:48 2021 *UTC
+}elsif($parm=~ /^e$/     ){print $out8 Time::HiRes::time();  exit;                                                     # shortcut  to Epoc (float-seconds)
+}elsif($parm=~ /^(f|d8)$/){print $out8 $d8im->expand(    );  exit;                                                     # shortcuts to Full d8
+}elsif($parm=~ /^l$/     ){print $out8 $d8im->lsft(      );  exit;                                                     # shortcut  to Lsft d8
+}elsif($parm=~ /^c$/     ){print $out8 $d8im->cpan(      );  exit;                                                     # shortcut  to Cpan d8
+}elsif($parm=~ /^i$/     ){print $out8 $d8im->iso(       );  exit;                                                     # shortcut  to Iso  d8
 }elsif(length($parm)){
-  if(@ARGV> 1 || @id8a> 1){$d8im=Octology::d8->new('expand'=>$parm)          ;} # might need to match expand string in $id8a[0] since it likely won't be split
-  if(@ARGV==1 || @id8a==1){$d8im=Octology::d8->new('d8'    =>$parm)->expand();}
-}              print $out8 $d8im;
+  if   (@ARGV> 1 || @id8a> 1){
+    if   ($parm=~ /^\s*\d{4}-\d\d-\d\d                T                          \d\d:\d\d:?\d*\.?\d*   [-+]?\d*:?\d*\s*$/xi){
+      $d8im=Octology::d8->new('iso'   =>$parm)           ;}  # 2021-07-17T11:10:41.25-05:00
+    elsif($parm=~ /^\s*\d{4}-\d\d-\d\d                                        \s+\d\d:\d\d:?\d*\.?\d*\s*[-+]?\d*:?\d*\s*$/x ){
+      $d8im=Octology::d8->new('lsft'  =>$parm)           ;}  # 2021-07-17 11:09:06.600000000 -0500
+    elsif($parm=~ /^\s*[SMTWF]?[a-z]?[a-z]?\s*,?\s*\d+\s+[JFMASOND][a-z][a-z]+\s+\d\d:\d\d:?\d*\.?\d*\s*[A-Z]*       \s*$/xi){
+      $d8im=Octology::d8->new('cpan'  =>$parm)           ;}  # Sat, 17 Jul 2021 11:03:49 CDT
+    else {
+      $d8im=Octology::d8->new('expand'=>$parm)           ;}} # mIt need to match expand string in $id8a[0] since it likely won't be split
+  if   (@ARGV==1 || @id8a==1){
+    if   ($parm=~ /^\s*\d{4}-\d\d-\d\d                T                          \d\d:\d\d:?\d*\.?\d*   [-+]?\d*:?\d*\s*$/xi){
+      $d8im=Octology::d8->new('iso'   =>$parm)           ;}  # 2021-07-17T11:10:41.25-05:00
+    else {
+      $d8im=Octology::d8->new('d8'    =>$parm)->expand() ;}} # hopefully just accept a standard d8 format parameter to then expand 2 Full
+} print $out8 $d8im;
 close   $out8             or die "Can't close duplic8 STDOUT handle: $!";

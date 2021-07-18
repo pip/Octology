@@ -1,0 +1,16 @@
+#!/usr/bin/perl
+# L6PMHiLi:d8z crE8d by PipStuart <Pip@CPAN.Org> to mimic Beppu-san's TimeZoneHiLite.bash script mAB with Octology d8 time-zone specific8ion instead of `date`;
+use strict;use warnings;use utf8;use v5.10;use Octology::a8;use Octology::d8;my $d8VS='L7HMCUTC';my @tznz=qw(
+  Pacific/Honolulu     America/Los_Angeles   America/Phoenix      America/Denver        America/Chicago       America/New_York
+   Europe/London        Europe/Berlin         Europe/Helsinki      Europe/Moscow           Asia/Bangkok          Asia/Shanghai
+     Asia/Singapore       Asia/Tokyo            Asia/Seoul      Australia/Sydney               );my %qrep=  ( # 6-lines of zone declR8ion, 4-lines code colors;
+  qr/^Amer.*eles$/ => 'America/Los_AngeLes,CaliForNia,U.St8s',  qr/^Asia.*okyo$/ =>       'Asia/            SakuraJima,Nippon',  # Pip h8z whIte-spAce az Evil;
+  qr/^Amer.*cago$/ => 'America/    OshKOsh, WisConSin,U.St8s',  qr/^Aust.*dney$/ =>  'Australia/     SydNey,notMelBourneAgnSH'); # ;) AuZshL Usrz !lIke MBAsh!;
+for my $tzon (@tznz){ my $zone=$tzon;my $hilf=0;for(keys(%qrep)){if($zone=~ /$_/){$hilf=1;$zone=$qrep{$_};last;}}o8(($hilf) ?  $G  :$z);$ENV{'TZ'}=$tzon; # ;);
+  my $dato= `date +"%Z"`;$zone=$tzon='Etc/Universal'  if($dato=~ /^BST$/); # swp Europe/London in BritStndrdTime with /usr/share/zoneinfo/Etc/UTC since better;
+  if($zone=~ /^([^\/]+)(\/?.*)$/){my($psiz,$tsiz)=(length($1),length($2));o8(' ' x (9-$psiz) .  $zone .    ' ' x (30-$tsiz) ." $Y"    );$ENV{'TZ'}=$tzon; # ;P;
+     $dato= `date +"%a %F %T %Z"      `;$dato=~ s/^(\S+\s)(\d{4})(-)([01]\d)(-)([0-3]\d  \s   ) /$Y$1$R$2$B$3$o$4$B$5$Y$6/x      ;my $nsec=  `date    +"%N"  `;
+  my $date= `date +"%b %e %T:66 %z %Y"`;$dato=~ s/    (\s  \d\d )(:)(  \d\d)(:)(   \d\d)(\s\S+)$/$C$1$O$2$B$3$O$4$M$5$O:${p}66$G$6/x;$nsec=~ s/^(...).*$/0.$1/;
+     $nsec=   int($nsec  *   60);$nsec=~ s/^(.)$/0$1/;$date=~ s/:66 /:$nsec /; # calQl8 && propag8 NanoSeconds in2 phasses (60ths-of-sec) && slip in2 xpnd plc;
+  my $phas=substr($date,16,2); chomp(   $date );      $dato=~ s/ 66  /$nsec/x; # try to regex substitute in the hand-computed ns-to-phas nsec 2 added  66 @end;
+  my $d8im=Octology::d8->new('expand'=>"$date");   o8($d8im->colr('a') . " $dato");}} # I tried2 %T.%N for ns B4 new xpnd but might just need 2 leave :66 phas;

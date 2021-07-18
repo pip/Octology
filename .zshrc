@@ -30,7 +30,7 @@ unsetopt                \
 # auto_pushd            \# setng addz dirz 2 stack wN just normally chngng 2 thM (wich I du not normally lIk or want)
 # ksh_arrays            \# rEmMbr wNwrItng scrptz[or funcz]2include'setopt [localoptions] ksharrays'sO arAzR 0-bAsed(but!glOblBcuzmOst scrptzRstndrdly 1-bAsed)
 # re_____match_____pcre \# mA want2set for Z-SHell scripting RegularExpressions to utilize PerlCompatibility styles && mA insert 'zmodload zsh/(pc)?re(gex)?';
-export Vers='0.0';export d8VS='L66MGT40';export Auth='PipStuart <Pip@CPAN.Org>'; # not Xportng $b sinc cOlIdz wi sort{$a <=> $b} /defhijlnqstuvx/i + AZ 4golf;
+export Vers='0.0';export d8VS='L7CMDude';export Auth='PipStuart <Pip@CPAN.Org>'; # not Xportng $b sinc cOlIdz wi sort{$a <=> $b} /defhijlnqstuvx/i + AZ 4golf;
 if     [[       "$SHELL"    == "" ]]; then       export SHELL=` which  zsh`;fi   # 8sh should parse this && OverId it    # shud `man zshall` /OSTYP 2lern4BlO
 if     [[       "$HOSTNAME" == "" ]]; then       export HOSTNAME=`hostname`;fi   #`hostname`retnz fsckd nwlInz\n4CygWinzRxvt... ||smthng els lame  =(
 if     [[       "$HOST"     == "" ]]; then       export HOST   ="$HOSTNAME";fi;export VERBOSE='1'; # set flag to print debug && status info from system utilz
@@ -59,9 +59,10 @@ export  PAGER="$HPgr";export PERL_TEST_POD='1'   ; #`which most`||PAGER=`which l
                       export SDL_VIDEO_CENTERED='center'; #xport SDL_VIDEO_WINDOW_POS='x,y'; try2cNtrSDLapzfrom: HTTP://SDL.Beuc.Net/sdl.wiki/SDL_SetVideoMode
 #                     export SDL_WINDOWPOS_CENTERED='1' ; #                   try 2 center SDL applic8ionz from:
 #                            HTTP://Wiki.LibSDL.Org/moin.cgi/SDL_SetWindowPosition?highlight=%28\bCategoryVideo\b%29|%28CategoryEnum%29|%28CategoryStruct%29
-alias  ec='echo ';alias een='ene  ';
-alias  ee='ec -e';alias ece='ee   ';
-alias  en='ec -n';alias ene='en -e';
+alias  ec='echo ';alias eE='ec -E';alias enE='en -E';alias eEn='enE'; # if -E (supposedly default?), back-slash (bkslsh) escape-codes interpret8ion: disabled ;
+alias  en='ec -n';alias ee='ec -e';alias ene='en -e';alias een='ene'; # if -e escape interprt8ion enabled for:\\ bkslsh,\a alert(BEL),\b bkspc,\c no-mor-outpt,
+# \e escape, \f form-feed, \n new-line, \r carriage-return, \t horizontal-tab, \v vertical-tab, \0NNN byte-wi-octal-val-NNN(1to3digits), \xHH byte-Hexa-val-HH;
+# Note:Your shell may have its own version of echo, which usually supercedes version described in `m echo`. Please refer 2 shL dox 4 DtAlz about suportd optnz;
 #xport bk="\e[40m"   ;export br="\e[41m"   ;export bo="\e[43m"   ;export by="\e[43m"   ;export bg="\e[42m"   ; # L13LCuts: bkslsh SKpz here had2go literal BlO;
 export bk="[40m"   ;export br="[41m"   ;export bo="[43m"   ;export by="[43m"   ;export bg="[42m"   ; # set isol8d bkgrnd codez;
 export bc="[46m"   ;export bb="[44m"   ;export bm="[45m"   ;export bp="[45m"   ;export bw="[47m"   ;
@@ -95,6 +96,8 @@ clrz() {
 # 99RJGN8g:from old gN2 root@Ryu`em xinit`:IfUUse`startx`nstd ofa login mngr like gdm/kdm,Ucan set XSESSION 2anythng in /etc/X11/Sessions/ or any executable.
 #   wNU`startx`,itwilrunthis astheloginsession.Ucan set this ina filein /etc/env.d 4NtIrsys,orsetit perUser in ~/.bash_profile (or similR4othr shLz). Xamplof
 #   setng4wholsys:`echo XSESSION="Gnome" > /etc/env.d/90xsession; env-update && source /etc/profile`; EBJLAkY8:AkuUbu14.10 nolongrhas thOsdirz sOprolyunUsed;
+export  NVM_DIR="$HOME/.config/nvm"; # L6TMEXIC:strtd setngup GitHub nvm to run Beppu-san's MAD-Sci-Lab/ta/bin/mexico to obtain TradeActivity candle-d8a JSON;
+[ -s  "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"; # sources the shell-script to load nvm (with the templ8 from bash originally, which should work fine4 zsh);
 export JAVA_HOME='/usr/lib/jvm/default-java';export LLVM_INSTALL_DIR='/usr/include/llvm';     # D7PM1TjA:upd8d4Ubu13.04&&ant4Android dvl 2add2pathBlO
 export NODE_VERSION='v10.16.0'; # J5BMGHVf:NodeJS installed into /usr/local/lib/nodejs/node-v10.15.3-linux-x64/ according to:  J6KM5W16:upd8d to LTS version;
 export NODE_DISTRO='linux-x64';alias  erd='expo r d80k';alias epd='expo p d80k'; #   HTTPS://GitHub.Com/nodejs/help/wiki/installation instructionz; r=start
@@ -383,11 +386,14 @@ alias      po='   popd';alias una='un -a ';alias sus='sudo -E -s zsh'; # -c "rm 
 #lias    pabd='   perl -MOctology::a8 -MOctology::b8 -MOctology::d8  -e'; # Perl eval with A8 && B8 && D8 (although d8 mainly crE8s new objects, not exports)
 #lias     pep='   perl -MOctology::a8 -MOctology::b8 -MOctology::d8 -pe'; # Perl Eval with A8 && B8 && D8 for Piping filtr8ion
 alias      pe='   perl -MOctology::a8                               -CS   -pe'; # tried to add -Mutf8 to aliases but may need some more specific flag?
-alias      pa='   perl -MOctology::a8                               -CS    -e'; # would like to just alias to -e so that double-quoted code can follow, ...
-alias     pla='   pa  '; # pb is already taken by pingb                         #   ... but may need function to include "binmode STDOUT,':utf8'" somehow?
+#lias      pa='   perl -MOctology::a8                               -CS    -e'; # would like to just alias to -e so that double-quoted code can follow, ...
+alias     pla='   perl -MOctology::a8                               -CS    -e'; #   ... but may need function to include "binmode STDOUT,':utf8'" somehow?
 alias     plb='   perl                -MOctology::b8                -CS    -e'; # `m perlrun` described -CS as indic8ing UTF-8 for all 3 of STD(IN|OUT|ERR)
 alias     pab='   perl -MOctology::a8 -MOctology::b8                -CS    -e'; # `pab "binmode STDOUT,':utf8';print b256(calQ('15xx63'))"` gets rid of ...
+alias     pad='   perl -MOctology::a8                -MOctology::d8 -CS    -e';alias pa='pabd'; # pb was already taken by pingb && pa can be all of a8,b8,d8;
 alias    pabd='   perl -MOctology::a8 -MOctology::b8 -MOctology::d8 -CS    -e'; #   ... the warning about "Wide character in print at -e line 1."
+alias     peb='   perl -MOctology::a8 -MOctology::b8                -CS   -pe'; # -CSDL is the same as just -C && gets all the STDz && i/o && @ARGV
+alias     ped='   perl -MOctology::a8                -MOctology::d8 -CS   -pe'; # -CSDL is the same as just -C && gets all the STDz && i/o && @ARGV
 alias     pep='   perl -MOctology::a8 -MOctology::b8 -MOctology::d8 -CS   -pe'; # -CSDL is the same as just -C && gets all the STDz && i/o && @ARGV
 pewh() { wh $@|pe 's/;/$W;$y/g;s/-/$C-$y/g;s/:/\t$R/;s/:/$B:$Y/g;s/^/$G/;s/  +/ /;s/ to /$o to$Y /;s/\|/$M|$O/g;s/=/$B=$C/'; } # xmpl which pRamz 2 pe colrng;
 # abov loox good in 80x25 term with cmnd to show xpandng many aliasz like this: `pewh ag agu aguu au auu agr agar aar ai ac acs h H D T Q N n grp psag pl pe` ;
@@ -395,6 +401,8 @@ alias    b102='en " 0 000";b8  0 10 2;ec;en " 1 000";b8  1 10 2;ec;en " 2 00" ;b
                en " 4 0"  ;b8  4 10 2;ec;en " 5 0"  ;b8  5 10 2;ec;en " 6 0"  ;b8  6 10 2;ec;en " 7 0"  ;b8  7 10 2;ec;
                en " 8 "   ;b8  8 10 2;ec;en " 9 "   ;b8  9 10 2;ec;en "10 "   ;b8 10 10 2;ec;en "11 "   ;b8 11 10 2;ec;
                en "12 "   ;b8 12 10 2;ec;en "13 "   ;b8 13 10 2;ec;en "14 "   ;b8 14 10 2;ec;en "15 "   ;b8 15 10 2;'; # echo alignd b8z; 2du:l8r 4loop nstd;
+alias    ba='  bA'; bA() { pa "for(0..63){ \$bb=b8( \$_,10,2);\$bl=length(\$bb);\$bb= '0' x (6 - \$bl) . \$bb;o8(' ') if(\$_ <= 9);o8(\"\$_:\$bb \"); \
+                                o8(\"\\n\") unless((\$_+1) % 8);}";} # simple quick-&&-dirty kinda run-thru for printing Binary-Bits of All-Away-from-A(deci);
 #lias      gg='   perl ~/dvl/d8/bin/gg   '; # basic perl call to priv8 non-executable development utility to Gener8 G-mail stamps for Gerry (my Dad)
 alias    drkh='   pa  "print drkh(@ARGV)"'; # HEX to RgbL with 8th intensities  # abov gg was alias but changed to shell function so 'p' pRam doesn't Xpand;
 #lias    h2rl='   pa  "print h2rl(@ARGV)"'; # HEX to RgbLowbitz    # actually trying to reform these alias wrappers to standalone usable new ~/bin page2 utlz
@@ -443,9 +451,9 @@ alias     shl=' s               '; # above srchl changes from default HTML outpu
 s(){  ifil="$1";synl='';if [[ "$#" -gt 1 && "$2" != "" && -e "$2" ]]; then synl="$1";ifil="$2" ; elif [[ "$#" -lt 1 ]]; then ifil="$HOME/bin/8ct";
   elif   [[ -e "$1" ]]; then # BlO 2 stRt adng elif tStz 4 XtNsion nAmz (mAB wi $(E) something too?) 4 autOpik lang; srchl --lang-list|g $XtNs;
     if   [[ ${(L)1} =~ \.sh$ ]]; then synl='bash'; elif [[ ${(L)1} =~ \.html$ ]]; then synl='htm'; elif [[ ${(L)1} =~ \.cfg$ ]]; then synl='conf';
-    elif [[ ${(L)1} =~ \.py$ ]]; then synl='py'  ; elif [[ ${(L)1} =~  \.xml$ ]]; then synl='xml'; elif [[ ${(L)1} =~ \.cnf$ ]]; then synl='conf';
-    elif [[ `cat "$1"|head -n 1|grep -l '^#!.*zsh' ` != "" ]]; then synl='bash'; # tryd2Dtect Zsh script #! line to set syntax language,but zsh.lang hangz =(
-    elif [[ `cat "$1"|head -n 1|grep -l '^#!.*perl'` != "" ]]; then synl='perl'; fi; fi;  # multi -i B4 othr pRam ls? used2question that at very end;
+    elif [[ ${(L)1} =~ \.py$ ]]; then synl='py'  ; elif [[ ${(L)1} =~  \.xml$ ]]; then synl='xml'; elif [[ ${(L)1} =~ \.8\.$ ]]; then synl='conf';
+    elif [[ `cat "$1"|head -n 1|grep -l '^#!.*zsh' ` != "" ]]; then synl='bash'; fi; # tryd2Dtect Zsh script #! lIn2set syntax language,but zsh.lang hangz =(
+    if   [[ `cat "$1"|head -n 1|grep -l '^#!.*perl'` != "" ]]; then synl='perl'; fi; fi;  # multi -i B4 othr pRam ls? used2question that at very end; YnEd if?;
   if     [[ "$synl" !=    "" ]]; then echo " source-highlight -f esc --style-file=~/.shl.style -s $synl -i $ifil;"; srchl -s $synl -i $ifil; # 2du:tStallsynlz;
   else                                echo " source-highlight -f esc --style-file=~/.shl.style          -i $ifil;"; srchl          -i $ifil; fi; }
 alias    d8wf='d8=`d8`;en "d8:$d8;"|flet                     ;ec;ec "d8B4:$d8;";ec "d8af:`d8`;"'; # d8-timer Wraps Fusion of d8 thru Figlet Font Filez;
@@ -461,6 +469,7 @@ alias      LS="$HOME/mvz/U2b/vid/;mp -fs L*To* L*Sh* L*He*"; # LindseyStirling w
 #lias      ML="mplyr -nosound -ss 11 -endpos 299 -fs -geometry 1920x1080+0+0 $HOME/mvz/dvl/rec/PS-Octology-PerlConfer*-Take0-K6G*.mp4"; #run audio-less video;
 alias      ML="mplyr          -ss  4 -endpos 310 ~/mvz/dvl/rec/PipStuart-Octology-PerlConferenceInTheCloud-LightningTalk-June24-26th_2020-Take2-K6OM84Me.mp4";
 alias      GL='g3lt   '; # GoodLuck GodsLove GameLife GoneLong GrabLunch GetLadies GutLosers GiveLicense GoLast GraphicsLibrary Gr8Laser GroupLeaders GetLoud;
+mpls () {  mp $(ls $@|shfl); } # MPlayer listing paramz piped thru my basic shfl. Should eventually try to incorpor8 some perhaps more thorough -z -Z options;
 #lias    g3lt='cd; pu $mu;wh g3lt;gst123 -k  212 Oi*;g3 63 36 63 63 u*/El* ../f*/Bo*/T*/B* *br* c*/Gi* -v monoscope;ec;g3 ../wa*/Bo*/B*;ec;Hlt;ec;po';
 alias    g3lt='cd; pu $mu;wh g3lt;gst123 -k  212 Oi*;g3 63 36 63 63 u*/El* ../f*/Bo*/T*/B* *br* c*/Gi*             ;ec;g3 ../wa*/Bo*/B*;ec;Hlt;ec;po';
 alias     Hlt='g3  48 $mu/chl/Hack*Univ* -k 3420'; # add just 1st seconds of gr8 part 2 push above 4mins12secs right up against 5mins total 4 LightTalk;
@@ -516,15 +525,16 @@ alias      gH='   g -H'; #                              grep -H to sHow Header_f
 alias      gT='   g -T'; #                              grep -T to make sure -n liNeNumber && -b Byteoffset && matchingtextline start on initial-Tab stopz2alIn
 alias      gn='   g -n'; #                              grep -n to show liNe_Number
 alias      gb='   g -b'; #                              grep -b to show Byte_offset && also want -u to Use-Unix-byte-offsets for MS-DOS or MS-Windows OpSystMz
-alias     gbu=' gb  -u';
-alias     goi=' gi  -o'; #                              grep    to both Ignore_case && Only___match_include (but alreD was /usr/bin/gio 4 mAB GLib InptOutpt?)
+alias     gio=' gi  -o';alias goi='gio';alias gbu='gb -u';alias gnv='gn -v';alias gvn='gnv';alias ginv='gin -v';alias givn='ginv';
+alias     gin=' gi  -n'; #                              grep    to both Ignore_case && Only___match_include (but alreD was /usr/bin/gio 4 mAB GLib InptOutpt?)
 alias     giv=' gi  -v'; #                              grep    to both Ignore_case && inVert_match_results
 alias     gis=' gi  -s'; #                              grep -s to both Ignore_case && --no-messages suppress messages like glob * getting directories
 alias     gvs=' gv  -s'; #                              grep -s to both                inVert_match_results && --no-messages  # gs already taken by GhostScript
 alias    givs=' giv -s'; #                              grep -s to      Ignore_case && inVert_match_results && --no-messages  #   which is proly like evince
 alias     gvH='  gv -H'; #                              grep -H permut8ionz... but all these should probably be re-grouped tightly near `ls` permut8ionz above
-alias     gHs='  gH -s';alias    givH=' giv -H';alias    gvsH=' gvs -H';
-alias     gsH='  gH -s';alias    gisH=' gis -H';alias   givsH='givs -H';
+alias     gHs='  gH -s';alias    givH=' giv -H';alias    gvsH='  gvs -H';
+alias     gsH='  gH -s';alias    gisH=' gis -H';alias   givsH=' givs -H';
+alias    gcwd=" gnv '[ ?]?' ~/dox/Ppl/Dad/ChatWithDad-K43MJ000.utf|g '\\([KL][0-9A-C].[ML]\\|?\\)'"; # grep d8z && non-spaced lone question-marks in Ch@WiDad;
 alias    gadd='  gi "^ *[a-z8]*8[a-z8]* *[:#].* add.*8" ~/dox/2du/8.utf'; # early varE8ion which didn't require pound after colon,like BlOw expecting both l8r
 alias    gad8='  gi "^ *[a-z8]*8[a-z8]* *:.*#.* add.*8" ~/dox/2du/8.utf'; # utility alias to grep 8.utf for all comments describing potential words to add l8r
 alias     gad='  gad8 '; # while the above 2 originally differed into more restricted result count, material text has been upd8d such that they match on I98
@@ -958,7 +968,7 @@ alias mp='   mplr -vo xv    -fixed-vo -ao sdl                        -cache 1638
 alias mpns='cd ~/mvz/U2b/nxt;mp $(ls B* Dr* *Tut* Ex* M* O*-Res* Var* *Trap* *Trap* *Boy*|shfl);cd ..'; # mk MPlyrNxtShfl 4 quik favor8 mvz Drub&&Trap vidzls
 alias mpx='  mp   -fs'; #-x 1920 -y 1080'; # originally long ago, I used to include -noborder optn abov but thN cud!mv wndw
 alias mplo=' mplr -vo xv    -fixed-vo -ao sdl   -framedrop -delay -4 -cache 16384 -cache-min 88 -autosync 30 -demuxer +lavfpref -vfm ffmpeg -lavdopts lowres=1:fast:skiploopfilter=all -v ~/mvz/U2b/nxt/O*On*'; # try to play Obsidia One_Winged_Angel thru SDL audio since Pulse stutters && ALSA totally freezes up;
-mjoin() { ffmpeg -i $1 -i $2 -acodec copy -vcodec copy $3; } # IB6LExci:was in ~/.tmp/ aftr trying;
+alias mj='   mjoin'; mjoin() {ffmpeg -i $1 -i $2 -acodec copy -vcodec copy $3; } # IB6LExci:was in ~/.tmp/ aftr trying;
 alias ffll='ffmpeg -loglevel verbose -i'; # should now just take single Input filename to do verbose logging of details about, mainly for me looking up dur8nz;
 # IAIMFFMP:ffmpjoin.sh crE8d by PipStuart <Pip@CPAN.Org> to take 2 sepR8 file parameters of audio && video (probably from calls to U2b8) && join in2 cntAnr4m@;
 # 2du:upd8 U2b8 autom8ion to test -F output first && harvest out best audio && video available then gener8 joined container name; nOt:out.avi did!work,mp4 did;

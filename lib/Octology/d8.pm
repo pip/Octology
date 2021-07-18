@@ -21,7 +21,7 @@ my $hirs   = eval("use Time::HiRes; 8") || 0;
 my $locl   = eval("use Time::Local; 8") || 0;
 my $zown   = eval("use Time::Zone ; 8") || 0;
 #ur @EXPORT= qw(); # eventually export d8() here as new wrapper
-our $VERSION='0.0';my $d8VS='KCJL9hot';
+our $VERSION='0.0';my $d8VS='L7HMAISO';
 my @_tzofsetz=( # global storage for TimeZone Offsets matching /^[-+][01]\d(00|30|45)$/ shhmm (with non-integer offsets mapping in b64 between R(27)..g(42))
   '-1130',#NUT
   '-0930',
@@ -353,10 +353,11 @@ sub new{my($nvkr,$ityp,$idat)=@_;my $nobj=ref($nvkr);
         if($self->{'p'}=~ /^\./){$self->{'p'}='0'.$self->{'p'};$self->{'p'}=int($self->{'p'}*$self->{'_pps'});}
         else                    {$self->{'p'}=~ s/^://;} # compute phasses from float seconds or just strip colon
       } else{croak "!*EROR*! d8::new 'lsft' initializ8ion type could not be matched with the expected format!\n";}
-    }elsif($ityp=~ /^e/i){ # handle 'expand' string param as expanded            date &&/or time text
-      $rgxs='^\\s*(('.join('|',@dayo).')\\S*)?\\s*('.
-                      join('|',@mnth).')\\S*\\s*(\\d+)'.
-             '\\s+(\\d+(\D+(\\d+)){0,3})\\s+([-+]\d{1,4})?\\s*(\d+)\\s*$';
+    }elsif($ityp=~ /^e/i){ # handle 'expand' string param as expanded            date &&/or time text    # print Time::HiRes::time(); #1626539195   # below UTC
+# 2du: replace all: 'e' expands with 'epoch' && use 'f' for 'full' nstd of old uses; #print Time::Piece->strptime('1626539195','%s'); #Sat Jul 17 17:41:48 2021
+      $rgxs='^\\s*(('. join('|',@dayo).')\\S*)?\\s*('.
+                       join('|',@mnth).')\\S*\\s*(\\d+)'.
+             '\\s+(\\d+(\\D+(\\d+)){0,3})\\s+([-+]\d{1,4})?\\s*(\d+)\\s*$';
       if($idat=~ /$rgxs/i){
 #print "idat:$idat\nrgxs:$rgxs\nDow?$2 Mon$3 dy$4 hr:mn?:sc?:fr?$5 +-zon YEAR!\n";
         $mont                     =$3;
@@ -366,9 +367,9 @@ sub new{my($nvkr,$ityp,$idat)=@_;my $nobj=ref($nvkr);
         ($self->{'h'},
          $self->{'m'},
          $self->{'s'},
-         $self->{'f'})=split(/\D+/,$5);
+         $self->{'p'})=split(/\D+/,$5);
         $self->{ 'Y'}             =$9;
-#print "M:$mont D:$self->{'D'} h:$self->{'h'} m:$self->{'m'} s:$self->{'s'} f:$self->{'f'} z:$self->{'z'} Y:$self->{'Y'}\n";
+#print "M:$mont D:$self->{'D'} h:$self->{'h'} m:$self->{'m'} s:$self->{'s'} f:$self->{'p'} z:$self->{'z'} Y:$self->{'Y'}\n";
       }else{
         $rgxs='^\\s*(('.join('|',@dayo).')\\S*)?\\s*('.
                         join('|',@mnth).')\\S*\\s*('.
@@ -412,19 +413,19 @@ sub new{my($nvkr,$ityp,$idat)=@_;my $nobj=ref($nvkr);
             $self->{'M'}=($i+1); # ($i+1) for 1-based month field
           }}}
     }elsif($ityp=~ /^i/i){my $ilen=length($idat); # 'iso' => '1997-07-16T19:20:30.45+01:00') # YYYY-MM-DDThh:mm:ss.sTZD ISO 8601 format
-      $rgxs='^\\s*(\\d{4})-(\\d\\d)-(\\d\\d)T(\\d\\d):(\\d\\d):(\\d\\d)\\.(\\d\\d)([-+]\\d\\d:\\d\\d)\\s*$';
+      $rgxs='^\\s*(\\d{4})-(\\d\\d)-(\\d\\d)T(\\d\\d):(\\d\\d):?(\\d\\d)?\\.?(\\d*)([-+]\\d\\d:\\d\\d)?\\s*$';
       if($idat=~ /$rgxs/i){
         $self->{'Y'}=$1;
         $self->{'M'}=$2;
         $self->{'D'}=$3;
-        $self->{'z'}=$bzsf;if(defined($8)&& length($8)){$self->{'z'}=$8;$self->{'z'}=~s/://;
-                             if(exists($_ofst2ndx{$self->{'z'}})){$self->{'z'}=$_ofst2ndx{$self->{'z'}};}else{$self->{'z'}=$bzsf;}}
+        $self->{'z'}=$bzsf;if( defined($8) && length($8)){$self->{'z'}=$8;$self->{'z'}=~s/://;
+                             if(exists($_ofst2ndx{        $self->{'z'}})){$self->{'z'}=$_ofst2ndx{$self->{'z'}};}else{$self->{'z'}=$bzsf;}}
         $self->{'h'}=$4;
         $self->{'m'}=$5;
-        $self->{'s'}=$6;
-        $self->{'p'}=int($self->{'_pps'} * "0.$7");}
+        $self->{'s'}= 0;   if( defined($6) && length($6)){$self->{'s'}=$6;}
+        $self->{'p'}= 0;   if( defined($7) && length($7)){$self->{'p'}=int($self->{'_pps'} * "0.$7");}}
     }elsif($ityp=~ /^d/i){my $ilen=length($idat); # handling main 'd8' format as growing right from Year field through YMDzhmsp
-      for(my $i=0;$i<$ilen;$i++){$self->{$attz[$i]}=b10($1) if($idat=~ s/^([0-9A-Za-z._])//);} # break down d8 str from left side && construct field attrz
+      for(my $i=0;$i<$ilen && $i<8;$i++){$self->{$attz[$i]}=b10($1) if($idat=~ s/^([0-9A-Za-z._])//);} # break down d8 str from left side && build field attrz
       $self->{'z'}%=@_tzofsetz; # just modulo wrap zone values that are gr8r than the number of defined offsets
       $self->{'Y'}+=      2000;
     }else{

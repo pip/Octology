@@ -148,7 +148,7 @@ for(@ldat){if(($prmz,$blsz,$pwnr,$grup,$fsiz,$d8tz,$fnam)= /^(\S{10})(\s+\d+)(\s
       $tryc++ < $trym){my($dYMD,$dd8Y,$dd8M,$dd8D)=($3,$4,$6,$7); # this one needs to go before d8 since these match both
       if($fnam=~/-$dYMD([-._*\/]|\d|$)/){                    my $etim="$R$dd8Y$o$dd8M$Y$dd8D";$tnam=~s/$dYMD/$etim/;}}               $tryc=0;
     while($tnam=~/^.*-(\e\[([\d;]*)m)*([0-9A-D][1-9A-C][1-9A-V][0-9A-N][0-9A-Za-x]{3})                        (\e\[([\d;]*)m)*([-.*\/]|$)/x &&
-      $tryc++ < $trym){my $ptvr=$3;my $ptim=undef;
+      $tryc++ < $trym){my $ptvr=$3;my $ptim=undef; # 2du:fix somewher in hEr probably cOd chngng ~/dox/Ppl/Dad/To_*/*-03LHu00.txt to just like ptold: '3LHu0' ;
       if($fnam=~/-$ptvr([-._*\/]|$)/){$ptim=    Time::PT->new($ptvr);my $stim=$ptim->color('ansi');$stim.=$M.'0' if($ptvr=~/0$/);
         $stim=~s/(\e\[[\d;]+)(m)/$1;41$2/g;$stim.=$z; # try2insrt bg dark red2betr distnguish old PT from d8
         $tnam=~s/$ptvr/$stim/;}}                                                                                                     $tryc=0; # putr/NetRtrG8Wz

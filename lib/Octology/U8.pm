@@ -18,7 +18,7 @@ our @EXPORT=qw(Upd8 U2b8 U2b2 U2b3 U2b4 UTF8 Udl8); # autom8d U2bdl-upd8 Utl, Yo
 #END{      ReadMode 0;} # good practice to auto-restore orig TTY read settingz at END
 #          ReadMode 3;  # setup 4 raw mode or 3 cbreak mode where Ctrl-C workz since signalz are enabled
 #$ENV{'TERM'}='linux';  # this is needed for arrow cursor keyz to get interpreted properly (vt100 does not do it)
-our $VERSION='0.0';my $d8VS='L1PLGREE';my $Dbug= 0; #   4 4name 4matting, UTF-8 (or ASCII) tables, U2b-DownLoad altern8 Xpect version;
+our $VERSION='0.0';my $d8VS='L7AMHuBC';my $Dbug= 0; #   4 4name 4matting, UTF-8 (or ASCII) tables, U2b-DownLoad altern8 Xpect version;
 sub Upd8{my $Ud='youtube-dl';my $home='/home/pip';$home='/home/' . $ENV{'USER'} if(exists($ENV{'USER'}));$home=$ENV{'HOME'} if(exists($ENV{'HOME'}));
   $_=`cd /tmp;wget https://$Ud.org/downloads/latest/$Ud;mv $Ud $home/bin/U2bdl;cd $home/bin;chmod 755 U2bdl;bak U2bdl`;return($_);} # bAsic YouTube-DL upd8r
   # Upd8 very similar to .zshrc aliasez but oper8z on my own local ~pip/bin/ version instead of my system-wide /usr/local/bin/ version with alias:
@@ -156,10 +156,10 @@ sub U2b4{my   $ogfn=shift(@_);my($psfn,$ocfn,$pcfn); # U2b4m@r (youtube-dl forma
       $tItL=~ s/^(Dr?u[bm]step|DnB|Tra(p|nce)|Glitch_Hop|Electro)_  (.*)$/$3_$1/ix if($uldr=~ /Vital/i); # try similar shift of genre to end for Vital
       $tItL=~ s/^((Progr)essive(_House)?)_-_(.*)$/$4___$2svH/i;$tItL=~ s/_DnB$/_DrumBass/i; # special genre && Xpansion2 all8 nAmB4padng since !handled BlO
       $tItL=~ s/^(House)_-_(.*)$/$2___Std$1/i;$tItL=~ s/_F(ea)?t\._*/_ft./i; # label Standard House &&  shrink Featurings
-      if(length($tItL) < $twid){if($tItL=~  /^(.*?)_*-/){my$tpad= ''; # mAB mv any /f(ea)t\.[-_]?([^-_]+)/ft.$1/ 2TrackNd
-                                                           $tpad= '_' x ($awid-length($1)) if(($awid-length($1)) > 0);
-                                   $tItL=~ s/^(.*?)_*-_?/$1$tpad-/;}  # try to 1st pad likely Artist name lazy up to 1st dash, then pad whole tItL
-        $tItL.='_' x ($twid-length($tItL));} # 4 consistNC mAB reordr Track-Artist for 'First_of_*-_Skrillex*'?
+      if(length($tItL) < $twid){   if($tItL=~  /^(.*?)_*-/){my$tpad= ''; # mAB mv any /f(ea)t\.[-_]?([^-_]+)/ft.$1/ 2TrackNd
+                                                              $tpad= '_' x ($awid-length($1)) if(($awid-length($1)) > 0);
+                                      $tItL=~ s/^(.*?)_*-_?/$1$tpad-/;}  # try to 1st pad likely Artist name lazy up to 1st dash, then pad whole tItL
+        $tItL.='_' x abs($twid-length($tItL));} # 4 consistNC mAB reordr Track-Artist for 'First_of_*-_Skrillex*'?
       $tItL=~ s/^(.*)([-_])Dubstep_(_+)$/$1$2DrubStep$3/i ;$tItL=~ s/^(.*)(Dubstyle )(_+)$/$1DrubStyl$3/ix;$tItL=~ s/^(.*)(Hard)style(_+)$/$1_$2Styl$3/ix;
       $tItL=~ s/^(.*)(Drum_Bass   )(_+)$/$1DrumBass_$3/ix ;$tItL=~ s/^(.*)(Chillstep)(_+)$/$1ChilStep_$3/i;
       $tItL=~ s/^(.*)(Glitch_Hop  )(_+)$/$1GlitcHop__$3/ix;$tItL=~ s/^(.*)(Electro_ )(_+)$/$1ElectroH$3/ix;
