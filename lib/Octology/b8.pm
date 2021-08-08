@@ -30,7 +30,7 @@ use         Carp; # orig Math::BaseCnv BlO memoized Sum8(as summ) hEr&&had nO Fi
 use Memoize;memoize('Fact');memoize('Chus');memoize('Fibo');memoize('Prim');
 our @EXPORT= qw(b8 cnv ocT deC dec heX HEX b10 b64 b64sort b110 b128 b210 b256 dig diginit @kana
     cma coma  Sum8 Sumz   Fact Fctz  Chus  Fibo Fibz  Prim Prmz  rotW rot1    calQ   $umbc  txt8);
-our $VERSION='0.0';my  $d8VS='KCLL3txt';my $Auth='PipStuart <Pip@CPAN.Org>';
+our $VERSION='0.0';my  $d8VS='L7VM5qrt';my $Auth='PipStuart <Pip@CPAN.Org>';
 our @kana=qw(ぁあぃいぅうぇえぉおかがきぎくぐけげこごさざしじすずせぜそぞた
 だちぢっつづてでとどなにぬねのはばぱひびぴふぶぷへべぺほぼぽまみ
 むめもゃやゅゆょよらりるれろゎわゐゑをんゔゕゖ゗1゛゜ゝゞゟ
@@ -400,13 +400,14 @@ sub calQ{my $ajps='';if(@_){$ajps=join('',@_);}elsif(!-t STDIN){$ajps=join('',<S
        all altern8s below are case-insensitive except 'x' times and 'X' Xor. two adjacent times characters like 'xx' can be used for exponentE8ion.
    l - altern8 for Left     ( parenthesis  # note a nice approxim8ion for Pi to demonstr8 is `q 355/113|c8 0-1_` to just trunc8 to show 1 line of precision;
    r - altern8 for Right    ) parenthesis
-   b - altern8 for Bang     ! exclam8ion  (unary logical  neg8ion not implemented yet!)
+   b - altern8 for Bang     ! exclam8ion  (unary logical  neg8ion not implemented yet!) # might want 2 apply this Bang symbol for factorials or just up-'B';
    n - altern8 for Neg8     ~ tilde       (unary bit-wise neg8ion not implemented yet!)
-   x - altern8 for multiply * asterisk    (this option is particularly useful for avoiding normal shell file-globbing behavior when asterisk is unescaped)
-   d - altern8 for Divide   / slash
+   x - altern8 for multiply * asterisk    (this option is particularly useful for avoiding normal shell file-globbing behavior, when asterisk is unescaped);
+   d - altern8 for Divide   / slash       (above double xx does exponentE8ion, or double escaped asterisks to raise a particular base number to some power);
    m - altern8 for Modulo   % percent
-   p - altern8 for add      + Plus        (also P should be Pi approxim8d from the Math::BigFloat->bpi() function)
+   q - altern8 for sQuaroot #  hash/pound/octothorpe  (but probably would prove better to take n-th root, instead of just some basic sQuare for versatiliT);
    s - altern8 for Subtract - minus
+   p - altern8 for add      + Plus        (also P should be Pi approxim8d from the Math::BigFloat->bpi() function)
    a - altern8 for And      & AmpersAnd
    o - altern8 for Or       | pipe
    X - altern8 for Xor      ^ caret
@@ -418,9 +419,10 @@ sub calQ{my $ajps='';if(@_){$ajps=join('',@_);}elsif(!-t STDIN){$ajps=join('',<S
        2du:rewrite parsing to handle arbitrary expressions in parens, expand sub-expressions in real precedence order, handle unary oper8ors, add ++ and --;
 ";} # clear all other parameters && assign return value BiGFLoat to hold Help text instead
   $ajps=~ s/s/-/gi;$ajps=~ s/p/+/g ;$ajps=~ s/d/\//gi;$ajps=~ s/o/|/gi;$ajps=~ s/a/&/gi;$ajps=~ s/x/*/g;$ajps=~ s/X/^/g;$ajps=~ s/n/~/gi;$ajps=~ s/m/%/gi;
-  $ajps=~ s/l/(/gi;$ajps=~ s/r/)/gi;$ajps=~ s/b/!/gi; # strips spaces,underscores,commas, then allows 'x' times to altern8 for multiply asterisk && also takes:
-  if($ajps=~ /P/){my $bfpi= Math::BigFloat->bpi();my $bpis="$bfpi";$ajps=~ s/P/$bpis/g;} # something like this should work for calQl8ing with Pi,but hangz4now;
-  # Left&&Right parens,Bang,Neg8,Divide,Modulo,Plus,Subtract,And,Or,Xor, all are case-insensitive except x times && Xor; # HTTPS://PerlDoc.Perl.Org/perlop.html
+  $ajps=~ s/l/(/gi;$ajps=~ s/r/)/gi;$ajps=~ s/b/!/gi; # strips spaces, (low-basses) "underscores", && commas up above help-text, then...
+  $ajps=~ s/q/#/gi; #   ... allows 'x' times altern8 for multiply asterisk && also takes: Left&&Right parens,Bang,Neg8,Divide,Modulo,Plus,Subtract,And,Or,Xor;
+  # All altern8s above are case-insensitive except x times && Xor;  # HTTPS://PerlDoc.Perl.Org/perlop.html
+  if($ajps=~ /P/){my $bfpi= Math::BigFloat->bpi();my $bpis="$bfpi";$ajps=~ s/P/$bpis/g;} # something like this should work 4 calQl8ing with Pi,but hangz 4now;
   while  ($ajps=~  / (\(                 (-?\.?\d+(\.\d+)?([Ee][-+]?\d+)?)
                      (\*\*|[-+*\/&|^!~%])(-?\.?\d+(\.\d+)?([Ee][-+]?\d+)?)\))/x){my $grup=$1;$bgfl=Math::BigFloat->new("$2"   );
                                                                                  my $oper=$5;my $nxtn = $6; # OPER8or  && NeXTNumber
@@ -438,7 +440,7 @@ sub calQ{my $ajps='';if(@_){$ajps=join('',@_);}elsif(!-t STDIN){$ajps=join('',<S
     $ajps      =~ s/\Q$grup\E/$bgfl/g;} # try to supplant most nested parens with their computed value before processing basic left-to-right on results below
   if     ($ajps=~ s/^                    (-?\.?\d+(\.\d+)?([Ee][-+]?\d+)?)  //x){         $bgfl  = Math::BigFloat->new("$1"   ); # mAB XtNd Dfalt precision?
     while($ajps=~ s/^(\*\*|[-+*\/&|^!~%])(-?\.?\d+(\.\d+)?([Ee][-+]?\d+)?)  //x){my $oper=$1;my $nxtn = $2; # OPER8or  && NeXTNumber
-      if   ($oper eq '**'){$bgfl**= Math::BigFloat->new("$nxtn");}
+      if   ($oper eq '**'){$bgfl**= Math::BigFloat->new("$nxtn");} # 2du:add q/# as sQuare (or n-th) root l8r;
   #   elsif($oper eq  '!'){$bgfl  =                     !$bgfl  ;}elsif($oper    eq  '~'){$bgfl  =                     ~$bgfl  ;}
       elsif($oper eq  '*'){$bgfl *= Math::BigFloat->new("$nxtn");}elsif($oper    eq  '/'){$bgfl /= Math::BigFloat->new("$nxtn");}
       elsif($oper eq  '%'){$bgfl %= Math::BigFloat->new("$nxtn");}

@@ -45,8 +45,8 @@ package     Octology::a8;
 use strict; use warnings;use utf8;use v5.10;use Encode;use Path::Tiny;use Time::HiRes qw(sleep gettimeofday);
 require         Exporter;  # add new colr systM
 use base     qw(Exporter); # mainly exporting global utility functions && variables originally inherited from c8.pm as well as a few f8.pm d8a structures
-our @EXPORT= qw(bfr8c    b8c    d8c   dur8c @d8cl @d8cS  a8c   chti  c8fn  o8 S2   c2  S c   sS    lodl @Monz @Mon     %mc2F %mc2b %mF2c %mb2c @Kana  %sb10
- $SKp8 $SKp0 $SKp1 $SKp2 b8clr  $SKpf $SKpt %pmap %cmap %pldl %pl8n  ftst acS e %f8fm %f8pm %sgrm %sgrn @Dayz @Day  lrc d8cs comma  curs  sumb @x256  @sb64
+our @EXPORT= qw(bfr8c    b8c    d8c   dur8c @d8cl @d8cS  a8c   chti  c8fn  o8 S2   c2  S c sS olde lodl @Monz @Mon     %mc2F %mc2b %mF2c %mb2c @Kana  %sb10
+ $SKp8 $SKp0 $SKp1 $SKp2 b8clr  $SKpf $SKpt %pmap %cmap %pldl %pl8n  ftst acS   %f8fm %f8pm %sgrm %sgrn @Dayz @Day  lrc d8cs comma  curs  sumb @x256  @sb64
     $z    $k    $r    $o    $y    $g     $c   $Sb    $m    $p    $w  tstc    $K    $R    $O    $Y    $G    $C    $B    $M    $P    $W    %p622 %p222   upd8
   PrfM   $bk   $br   $bo   $by   $bg    $bc   $bb   $bm   $bp   $bw %plds   $hK   $hR   $hO   $hY   $hG   $hC   $hB   $hM   $hP   $hW     h2rl  rl2h   drkh
     $t    $u    $d    $s    $n   $pP    $T     $U    $D    $S    $N %pldS   $HK   $HR   $HO   $HY   $HG   $HC   $HB   $HM   $HP   $HW %pldh hl $pfil pP xe
@@ -3037,7 +3037,7 @@ sub acS{ # apt-cache Search wrapper which coll8z dpkg -l resultz in together to 
       $rslt.=sprintf("$G%-${mxnl}s  $M%2s  $Y%-${mxvl}s  $R%-${mxal}s  $C%s$z\n",$pkgn,@{$fd8a{$pkgn}});}}
   if ($gflg){my $Wb=S('Wb');$rslt=~ s/($gstr)/$Wb$1$z$C/g;} # if gflg shud alsO hIlIt gstr Xplicit m@chz (but assuming folO wi Cyan in desc,!Green name)
   return($rslt);} # l8r mAB du -s st8us nstd of -l? mIt B much fastr 2du dpkg -l in bulk rathr than sO many baktix && hedr stripz;
-sub e{my($d8vs,$name)=('E4IM2Qjq','e'); # considering whether 8 alias && e shud B distinct for now to offer different options?
+sub olde{my($d8vs,$name)=('E4IM2Qjq','olde'); # considering whether 8 alias && e shud B distinct for now to offer different options?
   # 398GX2X: e crE8d by Pip@CPAN.Org to manage file Editing  # can't create merely sub 8{} in Perl here, but alias should wrap eventual vim clone
   # 2du:refactor ~/.erc/ searching code from e,bak,updt,cfdd with ~/.erc/* into ~/.e/ instead (/rc$/ being ResourceConfig text files rather than subdir names)
   #   mv .e/.erc .. && experiment with allowing perl with quotable d8a string hash maps when detected not mere sparsest split (which should also take comments)
@@ -3175,9 +3175,9 @@ sub e{my($d8vs,$name)=('E4IM2Qjq','e'); # considering whether 8 alias && e shud 
       elsif(@ldat <= length($file)) { $file = $ldat[-1]}
       else { $file = splice(@ldat, length($file),    1)}}}
   if(exists $pref{$file}) { $file = $pref{$file}; $file =~ s/~/$home/; }
-  if     ($file eq 'dvl') { system('cd ~/dvl; ls'); # 'dvl' file case
-  } elsif($file eq 'up' ) { updt();                 # 'up'  file case to update ~lib|bin
-  } elsif($file eq 'pkg') {                         # 'pkg' file case
+  if     ($file eq 'dvl') { system( 'ls ~/dvl' ); # 'dvl' file case
+  } elsif($file eq 'up' ) { updt();               # 'up'  file case to update ~lib|bin
+  } elsif($file eq 'pkg') {                       # 'pkg' file case
   # Possible to ck Perl's $^O for OS info.
   #So generation (through `e pkg`) should:
     $pkgd{'fail'} = 1;

@@ -7,7 +7,7 @@ use strict; use warnings;use utf8;use v5.10;
 #   tStz should include a lot of attemptz to roundtrip most value edge-cases primarily surrounding Year shifts,cNtralIz _separ8or valUz 4 stringz && matchez,
 #   research how to implement d8's own extensible epoch,tzoffset,julian_day,mjd,week,&&is_leap_year,then add them to POD,dvl XtNded d8 4m@ 4atlEst10e-9 4NTP,
 #   stuD HTTPS://Cr.yp.to/daemontools/tai64n.html which puts a precise 12-byte lowercase hex timestamp on each line from stdin in external TAI64N format;
-require     Octology::d8::fldz;
+require     Octology::d8::fldz; # probably l8r also want to use AUTOLOAD to wrap class object member method functions like expand() && xpnd() around: full();
 #equire                        Exporter;
 use base qw(Octology::d8::fldz);#porter);
 use         Octology::d8::dur8;
@@ -20,8 +20,8 @@ use         Time::DaysInMonth;
 my $hirs   = eval("use Time::HiRes; 8") || 0;
 my $locl   = eval("use Time::Local; 8") || 0;
 my $zown   = eval("use Time::Zone ; 8") || 0;
-#ur @EXPORT= qw(); # eventually export d8() here as new wrapper
-our $VERSION='0.0';my $d8VS='L7HMAISO';
+#ur @EXPORT= qw(); # originally thought about wanting to eventually export d8() here as new() wrapper, but probably no longer needed for those older usages;
+our $VERSION='0.0';my $d8VS='L87MC87D';
 my @_tzofsetz=( # global storage for TimeZone Offsets matching /^[-+][01]\d(00|30|45)$/ shhmm (with non-integer offsets mapping in b64 between R(27)..g(42))
   '-1130',#NUT
   '-0930',
@@ -103,7 +103,7 @@ sub _stringify{ # cat non-zero b64 d8 fields
   for(my $i=0;$i<@fdat;$i++){
     if($toob)                                   {$tstr.=$attz[$i].':'.$fdat[$i];$tstr.=', ' if($i<$#fdat);}
     else                                        { # verbose above for too big, compressed below for fitting
-      if(defined($fdat[$i])&& length($fdat[$i])){$tstr.=          b64($fdat[$i]);}
+      if(defined($fdat[$i])&& length($fdat[$i])){$tstr.=          b64($fdat[$i]);}  # might need to restore this a8.pm array with old b8.pm b64() func call?;
       else                                      {$tstr.=                     ' ';}} # add spaces for any found empty fields
   } return($tstr);}
 sub _cmp_num{my($larg,$rarg,$srvr)=@_;
@@ -133,7 +133,7 @@ sub _add{
   my($larg,$rarg,$srvr)=@_;my $rslt=Octology::d8->new('');
     ($larg,$rarg)=($rarg,Octology::d8::dur8->new($larg)) if($srvr);
            $rarg =       Octology::d8::dur8->new($rarg)  unless(ref($rarg) && $rarg->isa('Octology::d8::dur8'));
-  $rslt->{'f'}=$larg->p+$rarg->p;
+  $rslt->{'p'}=$larg->p+$rarg->p;
   $rslt->{'s'}=$larg->s+$rarg->s;
   $rslt->{'m'}=$larg->m+$rarg->m;
   $rslt->{'h'}=$larg->h+$rarg->h;
@@ -177,7 +177,19 @@ sub d8cc{my $frmt=shift(@_)||0;my($ptst,$ptsb); # Generic d8 c8 Color Code strin
     else                {$ptsb='        ';}
   } return($ptst,$ptsb);} # d8->YMDzhmsp
 # Note:`d8` && `d8ok` utilz use 'f' for Full Format to invoke this original expand form (e was phased out since Octology almost always uses x for eXpand now);
-sub expand{ # returns a d8 object's expanded string form, although might need even more expanded form for when /^.../ is not unique in Mon or Dow
+sub epoc{ # returns a d8 object's epoch float       seconds value
+  my $self=shift(@_);my $xpop=shift(@_)||'';
+  if(defined($self)&&      $self->e ){ # trying to just call ->e was still geting undef subroutine &Octology::a8::e calld@/home/pip/lib/Oct*/d8.pm ln:182;
+    return(                $self->e );}}
+sub msep{ # returns a d8 object's epoch   int milli-seconds value
+  my $self=shift(@_);my $xpop=shift(@_)||'';
+  if(defined($self)&&      $self->e ){
+    return(  int(1_000 *   $self->e));}}
+sub tmep{ # returns a d8 object's epoch float       seconds value from original object crE8ion time
+  my $self=shift(@_);my $xpop=shift(@_)||'';
+  if(defined($self)&&      $self->t ){
+    return(                $self->t );}}
+sub full{ # returns a d8 object's full (expanded) string form, although might need even more expanded form for when /^.../ is not unique in Mon or Dow
   my $self=shift(@_);my $xpop=shift(@_)||'';my @mnth;my $dofw='   ';my $mont='   ';
   my $cclz=  $self->_field_colors('c'); # load refs to anon color arrays
   my $aclz=  $self->_field_colors('a');my %dfcl=();for(0..@{$cclz}-1){$dfcl{$cclz->[$_]}=$aclz->[$_];} # load c8=>ansi from fields colors d8a
@@ -204,7 +216,7 @@ sub lsft{ # returns a d8 object's ls --full-time string form
   }else{ #          '2013-08-15 12:55:23.833703078 -0500'
     return(sprintf("%4d-%02d-%02d %02d:%02d:%02d.%-9d %-5s", $self->YMDhms, $frcp, $self->zone_offset));}}
 sub cpan{ # returns a d8 object's cpan && pause string form
-  my $self=shift(@_);my $xpop=shift(@_)||'';my @mnth;my $dofw='   ';my $mont='   ';my $zabr='GMT';
+  my $self=shift(@_);my $xpop=shift(@_)||'';my @mnth;my $dofw='   ';my $mont='   ';my $zabr='UTC'; # L87MC00R:was GMT;
   my $cclz=  $self->_field_colors('c'); # load refs to anon color arrays
   my $aclz=  $self->_field_colors('a');my %dfcl=();for(0..@{$cclz}-1){$dfcl{$cclz->[$_]}=$aclz->[$_];} # load c8=>ansi from fields colors d8a
   if(defined($self)&&      $self->M){
@@ -212,14 +224,14 @@ sub cpan{ # returns a d8 object's cpan && pause string form
     @mnth= Time::DayOfWeek::MonthNames();
     $mont=   $mnth[        $self->M-1];
     $mont=~ s/^(...).*/$1/;} # keep only 1st 3 chars
-  if($zown){$zabr=tz_name();if(defined($zabr) && length($zabr)){$zabr=uc($zabr);}else{$zabr='GMT';}} # if Time::Zone loaded, try to find local abbreV8d name
+  if($zown){$zabr=tz_name();if(defined($zabr) && length($zabr)){$zabr=uc($zabr);}else{$zabr='UTC';}} # if Time::Zone loaded, try to find local abbreV8d name
   else     {for(sort(keys(%_knwntzab))){if($_knwntzab{$_} == $self->{'z'}){$zabr=$_;last;}}} # just match the first alphabetical abbreV8d name in same zone
   if($xpop=~ /a/){my $W="\e\[1;37m"; # eXPand OPtion to enable Ansi color codes in returned string
     return(sprintf("%s%3s$W, %s%02d %s%3s %s%4d %s%02d$W:%s%02d$W:%s%02d %s%s", $dfcl{$cclz->[2]},$dofw, $dfcl{$cclz->[2]},$self->D, $dfcl{$cclz->[1]},$mont,
       $dfcl{$cclz->[0]},$self->Y,                $dfcl{$cclz->[4]},$self->h, $dfcl{$cclz->[5]},$self->m, $dfcl{$cclz->[6]},$self->s, $dfcl{$cclz->[3]},$zabr));
   }else{ #          'Wed, 14 Aug 2013 15:08:07 GMT'
     return(sprintf("%3s, %02d %3s %4d %02d:%02d:%02d %s", $dofw, $self->D, $mont, $self->Yhms, $zabr));}}
-sub iso{ # returns a d8 object's ISO 8601 complete string form
+sub iso8{ # returns a d8 object's ISO 8601 complete string form
   my $self=shift(@_);my $xpop=shift(@_)||'';
   my $cclz=  $self->_field_colors('c'); # load refs to anon color arrays
   my $aclz=  $self->_field_colors('a');my %dfcl=();for(0..@{$cclz}-1){$dfcl{$cclz->[$_]}=$aclz->[$_];} # load c8=>ansi from fields colors d8a
@@ -229,7 +241,7 @@ sub iso{ # returns a d8 object's ISO 8601 complete string form
     return(sprintf("%s%4d$W-%s%02d$W-%s%02d${W}T%s%02d$W:%s%02d$W:%s%02d$W.%s%02d$W%s%s%02d$W:%s%02d", $dfcl{$cclz->[0]},$self->Y, $dfcl{$cclz->[1]},$self->M,
       $dfcl{$cclz->[2]},$self->D, $dfcl{$cclz->[4]},$self->h, $dfcl{$cclz->[5]},$self->m, $dfcl{$cclz->[6]},$self->s, $dfcl{$cclz->[7]},$frcp, $zosn,
       $dfcl{$cclz->[3]},$zohh   , $dfcl{$cclz->[3]},$zomm));
-  }else{ #            '1997-07-16T19:20:30.45+01:00'      # YYYY-MM-DDThh:mm:ss.sTZD
+  }else{ #            '1997-07-16T19:20:30.45+01:00'      # YYYY-MM-DDThh:mm:ss.sssZoneD8a
     return(sprintf("%4d-%02d-%02dT%02d:%02d:%02d.%02d%-6s", $self->YMDhms, $frcp, $zowc));}}
 sub bak{#H5JM2bMF:`bak`l8st major upd8; 267KBPZA:auto-backup a file into './.bak/' with a -`d8` appended before the extension, or at the end if none
   my $self=shift(@_);my $bcou=0; # K3SM2cwP:migr8ing Pip::Utl.pm->bak() here as d8.pm object method (instead of str8 exported function);
@@ -291,16 +303,18 @@ sub bak{#H5JM2bMF:`bak`l8st major upd8; 267KBPZA:auto-backup a file into './.bak
 # d8 object constructor as class method or copy as object method.
 # First param can be ref to copy. Not including optional ref from copy, default is no params to crE8 a new d8 object auto-popul8d with now d8a.
 # If parameters are supplied, they must either be a lone single detectable string represent8ion or a single key => value pair signifying a supported format.
-# The key must be one of the following types of constructor initializ8ion mechanisms:
-#    -1) <packedB64InitStringImplies'd8'type> (eg,              'D8FMLTqh') with no key since 'd8' is implied, but other formats should also be detectable
-#     0) 'd8'      => <packedB64InitString>   (eg, 'd8'      => '01234567')
-#     1) 'array'   => <arrayRef>              (eg, 'array'   => [0, 1, 2..7])
-#     2) 'hash'    => <hashRef>               (eg, 'hash'    => {'h' => 8})
-#     3) 'expand'  => <expandedInitString>    (eg, 'expand'  => 'Fri Aug 16 14:26:27:12 -0500 2013')
-#     4) 'lsft'    => <expandedLSFullTime>    (eg, 'lsft'    => '2013-08-15 12:55:23.833703078 -0500') like output from `ls -l --full-time`
-#     5) 'cpan'    => <cpanDateTimeStamp>     (eg. 'cpan'    => 'Wed, 14 Aug 2013 15:08:07 GMT')
-#     6) 'iso'     => <iso8601FullDateTime>   (eg. 'iso'     => '1997-07-16T19:20:30.45+01:00') # YYYY-MM-DDThh:mm:ss.sTZD ISO 8601 format
-#     7) 'YYYYMMDD'=> <eightDigitDate>        (eg. 'YYYYMMDD'=> '20131231') # This format probably shouldn't be explicit but should be handled through some
+# Key must be one of the following types of constructor initializ8ion mechanisms:
+#    -1)<pakdB64StringImplies'd84m'type> (e.g.,           'D8FMLoad') with no key since 'd84m' is implied, but other formats should also be detectable too?;
+#     0) 'd84m' => <packedB64InitString> (e.g., 'd84m' => '01234567') using defalt fldz:"YMDzhmsp" as Year_Mnth_Daay_zone_-_hour_mnut_scnd_phas Base64 valz;
+#     1) 'epoc' => <epochFloatSecondIni> (e.g., 'epoc' =>  1_627_227_510.16383 ) where _underscores_, instead of commas, are optional; # && can go B4 Milli;
+#     2) 'msep' => <epochMilliSecondInt> (e.g., 'msep' =>  1_627_227_510_1638  ) where 4 extra digits specify integer initializ8ion of MilliSecondEPochtime;
+#     3) 'aray' => <arrayd8a__Reference> (e.g., 'aray' => [0,     1,      2..7]) where 0 key also just 'd8', 1 'epoch', 2 'array', 4 'xpnd', 8 'YYMD', etc.;
+#     4) 'hash' => <hash_d8a__Reference> (e.g., 'hash' => {'h' => 8, 'm' => 15}) where 8 key also'YYYYMMDD', 7 'ISO8601', 6 'PAUSE', 5 'LsFullTime', 4 'ex';
+#     5) 'full' => <expanded_FullString> (e.g., 'full' => 'Fri Aug 16 14:26:27:12 -0500 2013'  ) was 'expand' before 'xpnd' B4 'full';
+#     6) 'lsft' => <expandedLS_FullTime> (e.g., 'lsft' => '2013-08-15 12:55:23.833703078 -0500') like output from `ls -l --full-time`;
+#     7) 'cpan' => <cpan_Stamp_DateTime> (e.g., 'cpan' => 'Wed, 14 Aug 2013 15:08:07 UTC') # L87MC00R:was GMT;
+#     8) 'iso8' => <iso8601FullDateTime> (e.g., 'iso8' => '1997-07-16T19:20:30.456+01:00') # YYYY-MM-DDThh:mm:ss.sss+/-ZoneD8a in ISO-8601 format;
+#     9) 'ymd8' => <eightDigit_DateOnly> (e.g., 'ymd8' => '20151231') # This format probably shouldn't be explicit but should be handled through some
 #   more general strptime pattern for then parsing constructor strings; Handling arbitrary as well as explicit formats should maybe be dynamically detected in
 #   constructors or as composite output formats with field aware coloring or maybe ->expand should become part of ->_stringify which tests new internal
 #   present8ion values for configurable output && optional coloring formats;
@@ -309,17 +323,19 @@ sub bak{#H5JM2bMF:`bak`l8st major upd8; 267KBPZA:auto-backup a file into './.bak
 sub new{my($nvkr,$ityp,$idat)=@_;my $nobj=ref($nvkr);
   my $clas=$ityp;$clas=$nobj|| $nvkr if(!defined($ityp)|| $ityp!~ /::/);
   my $self=Octology::d8::fldz->new($clas);my $rgxs;my $mont;my $zfou=0;my($lofs,$hofs,$mofs);my @attz=$self->_attribute_names();
-# timelocal($sec,$min,$hour,$mday,$mon,$year,$wday,$yday,$isdst)
-  my @ltim=localtime();my $subs=0;if($hirs){$subs=Time::HiRes::time();$subs-=int($subs);}
+         # timelocal($sec,$min,$hour,$mday,$mon,$year,$wday,$yday,$isdst)
+  my @ltim=localtime();my $subs= 0;if($hirs){$subs=Time::HiRes::time();}
   my @dayo=Time::DayOfWeek::DayNames  ();for(@dayo){$_=substr($_,0,3) if(length($_)> 3);} # trunc8 to expected uniq 1st 3chrz, if longer
   my @mnth=Time::DayOfWeek::MonthNames();for(@mnth){$_=substr($_,0,3) if(length($_)> 3);}
   for(@attz){if($nobj){$self->{$_}=$nvkr->{              $_};}  # copy if supposed to (because iNvoker OBJect has become a proper ref)
              else     {$self->{$_}=$self->_default_value($_);}} #   or init defaults  (although maybe defaults always just get overridden with now, so ptless?)
+  $self->{  't'}=$subs;$subs-=int($subs);
   unless($nobj){#print "ltim:@ltim:\n    :s  m  h  Md M Y   Wd Yd isdst\n";
     $self->{'Y'}=$ltim[5]+1900;
     $self->{'M'}=$ltim[4]+   1;
     $self->{'D'}=$ltim[3];
-    $self->{'z'}=            0; # '0' GMT +0000 as default zone prior to any detection attempt
+    $self->{'e'}=$self->{'t'} ; # load epoc fieldofTime::HiRes::time();
+    $self->{'z'}=            0; # '0' UTC +0000 as default zone prior to any detection attempt (was GMT B4 UTC)
     $self->{'h'}=$ltim[2]; #22; # 'M' CDT -0500 was my hard-coded zone before checking Time::Zone methods below
     $self->{'m'}=$ltim[1];
     $self->{'s'}=$ltim[0];
@@ -337,9 +353,24 @@ sub new{my($nvkr,$ityp,$idat)=@_;my $nobj=ref($nvkr);
   if(defined($ityp)&& $ityp!~ /::/){ # there were initializ8ion params
     my $bzsf=$self->{'z'}; # Best Zone So Far to reset to if attempted match fails
     $self->{$_}=$self->_default_value($_) for(@attz); # maybe necessary to re-init defaults after now localtime typically popul8d over them?
-    unless(defined($idat)){($ityp,$idat)=('d8',$ityp); # rather than slipping in an automatic 'd8' type here, better to detect many types && dispatch instead
-    }
-    if    ($ityp=~ /^l/i){ # handle 'lsft'   string param as `ls -l --full-time` date &&    time text '2013-08-15 12:55:23.833703078 -0500'
+    unless(defined($idat)){($ityp,$idat)=('d84m',$ityp);} # rather than slipping in an automatic 'd84m' type here, l8r betr2Dtect many types&&dispatch nstd?
+    if    ($ityp=~ /^m/i){ # handle 'msep'   string param as epoch int millisecs date &&/or time text
+      if  ($idat=~ /^([0-9._]*)$/){    $idat= 0 unless(defined($1));$idat=~ s/_//g;$idat=int($idat/1000);$ityp='epoc';} #lIkBlO but /= 1000 1st;
+    }   if($ityp=~ /^e/i){ # handle 'epoc'   string param as epoch float    secs date &&/or time text
+# 2du:replace all: 'e' expands with 'epoc' && use 'f' for 'full' nstd of oldr uses; #print Time::HiRes::time(); # 1626539195 # below UTC;
+      if  ($idat=~ /^([0-9._]*)$/){    $idat= 0 unless(defined($1));$idat=~ s/_//g; #print Time::Piece->strptime('1626539195','%s'); #Sat Jul 17 17:41:48 2021
+        $self->{'e'}              =    $idat                    ; # keep 't' wi obj crE8 proly HiRes time() epoch float secs but init 'e' wi cnstrctr tIm;
+        $self->{'p'}              =           0                 ; # brk apRt float secs by othr field sIzes&&get pOst-decimal fractnl-pRt in2phasses alsO;
+        $self->{'Y'}              =int($idat/31_556_930.0 +1970);$idat-=(($self->{'Y'} -1970)*31_556_930); # ONE_YEAR  ; 31_556_930.0 was too big;
+        $self->{'M'}              =int($idat/ 2_629_744.0 +   1);$idat-=(($self->{'M'} -   1)* 2_629_744); # ONE_MONTH ;  2_629_744.0 30.0*24*3_600 M B4;
+        $self->{'D'}              =int($idat/    86_400.0 +   1);$idat-=(($self->{'D'} -   1)*    86_400); # ONE_DAY   ; # nEded2 int the reconstructs...
+        $self->{'h'}              =int($idat/     3_600.0      );$idat-=( $self->{'h'}       *     3_600); # ONE_HOUR  ; #   4the partials 2 line-up rIt;
+        $self->{'m'}              =int($idat/        60.0      );$idat-=( $self->{'m'}       *        60); # ONE_MINUTE; 365.0*86_400;
+        $self->{'s'}              =int($idat                   );$idat-=  $self->{'s'};$idat+=int($hofs*3_600.0) if($hofs);$idat+=int($mofs*60.0) if($mofs);
+        $self->{'p'}              =int($idat*$self->{'_pps'}) if($idat=~ /\d/); $self->{'z'} =    $bzsf;}  # d8 e|cma;ec;d8 t|cma;ec;d8 `d8 e`;ec;d8 `d8 t`:
+                                                                                                           # L87MJH8w ; 1,628,399,466.68333 ; # off a few hours
+                                                                                                           # L87MJNBF ; 1,628,399,828.82717 ; # like 360-mins!;
+    }elsif($ityp=~ /^l/i){ # handle 'lsft'   string param as `ls -l --full-time` date &&    time text '2013-08-15 12:55:23.833703078 -0500'
       if($idat=~ /^(\d{4})-(\d\d)-(\d\d)\s(\d\d):(\d\d):(\d\d)(:\d\d|\.\d{9})\s([-+]?\d{1,4})/){
         $self->{'Y'}              =$1;
         $self->{'M'}              =$2;
@@ -352,9 +383,13 @@ sub new{my($nvkr,$ityp,$idat)=@_;my $nobj=ref($nvkr);
         if(exists($_ofst2ndx{$self->{'z'}})){$self->{'z'}=$_ofst2ndx{$self->{'z'}};}else{$self->{'z'}=$bzsf;} # specified zone offset reset if not found
         if($self->{'p'}=~ /^\./){$self->{'p'}='0'.$self->{'p'};$self->{'p'}=int($self->{'p'}*$self->{'_pps'});}
         else                    {$self->{'p'}=~ s/^://;} # compute phasses from float seconds or just strip colon
+        # below epoch needs adjustment for Years before 2000 to have 32 + Day && handling for Month shifts of 64 Years per 13 && hour 256 Years if >= 24;
+        $self->{'e'}         =($self->{'Y'}-1970)*31_556_930.0 + ($self->{'M'}-1)*2_629_744.0 + ($self->{'D'}-1)*86_400 +
+                               $self->{'h'}      *     3_600.0 +  $self->{'m'}   *       60.0 +  $self->{'s'}           + $self->{'p'}/$self->{'_pps'};
+        $self->{'e'}+=int($hofs*3_600.0) if($hofs);
+        $self->{'e'}+=int($mofs*   60.0) if($mofs);
       } else{croak "!*EROR*! d8::new 'lsft' initializ8ion type could not be matched with the expected format!\n";}
-    }elsif($ityp=~ /^e/i){ # handle 'expand' string param as expanded            date &&/or time text    # print Time::HiRes::time(); #1626539195   # below UTC
-# 2du: replace all: 'e' expands with 'epoch' && use 'f' for 'full' nstd of old uses; #print Time::Piece->strptime('1626539195','%s'); #Sat Jul 17 17:41:48 2021
+    }elsif($ityp=~ /^f/i){ # handle 'full'           string param  as full                              date &&/or time text
       $rgxs='^\\s*(('. join('|',@dayo).')\\S*)?\\s*('.
                        join('|',@mnth).')\\S*\\s*(\\d+)'.
              '\\s+(\\d+(\\D+(\\d+)){0,3})\\s+([-+]\d{1,4})?\\s*(\d+)\\s*$';
@@ -369,6 +404,11 @@ sub new{my($nvkr,$ityp,$idat)=@_;my $nobj=ref($nvkr);
          $self->{'s'},
          $self->{'p'})=split(/\D+/,$5);
         $self->{ 'Y'}             =$9;
+        for my $mndx (0..$#mnth){if(lc($mnth[$mndx]) eq lc($mont)){$self->{'M'}=$mndx+1;last;}}
+        $self->{'e'}         =($self->{'Y'}-1970)*31_556_930.0 + ($self->{'M'}-1)*2_629_744.0 + ($self->{'D'}-1)*86_400 +
+                               $self->{'h'}      *     3_600.0 +  $self->{'m'}   *       60.0 +  $self->{'s'}           + $self->{'p'}/$self->{'_pps'};
+        $self->{'e'}+=int($hofs*3_600.0) if($hofs);
+        $self->{'e'}+=int($mofs*   60.0) if($mofs);
 #print "M:$mont D:$self->{'D'} h:$self->{'h'} m:$self->{'m'} s:$self->{'s'} f:$self->{'p'} z:$self->{'z'} Y:$self->{'Y'}\n";
       }else{
         $rgxs='^\\s*(('.join('|',@dayo).')\\S*)?\\s*('.
@@ -380,24 +420,24 @@ sub new{my($nvkr,$ityp,$idat)=@_;my $nobj=ref($nvkr);
           $mont       =$3;
           $self->{'D'}=$4;
           $self->{'Y'}=$5;
+          for my $mndx (0..$#mnth){if(lc($mnth[$mndx]) eq lc($mont)){$self->{'M'}=$mndx+1;last;}}
         }else{
           $rgxs='^\\s*(\\d{2})(\D+(\\d{2}))?(\D+(\\d{2}))?(\D+(\\d{2}))?\\s*$'; #  18(:02(:16(:32)?)?)?
           if($idat=~ /$rgxs/i){
             $self->{'h'}=$1;
             $self->{'m'}=$3 if(defined($3) && length($3));
             $self->{'s'}=$5 if(defined($5) && length($5));
-            $self->{'f'}=$7 if(defined($7) && length($7));
-#print "hr:mn?:sc?:fr? - $self->{'h'}:$self->{'m'}:$self->{'s'}:$self->{'f'}!\n";
-          }}}
-      if(defined($mont)){#convert named month to proper index number
-        for(my $i=0;$i<@mnth;$i++){ # find which month name
-          if(lc($mont)eq lc($mnth[$i])){
-            $self->{'M'}=($i+1); # ($i+1) for 1-based month field
-          }}}
+            $self->{'p'}=$7 if(defined($7) && length($7));
+#print "hr:mn?:sc?:ps? - $self->{'h'}:$self->{'m'}:$self->{'s'}:$self->{'p'}!\n";
+          }}
+        $self->{'e'}         =($self->{'Y'}-1970)*31_556_930.0 + ($self->{'M'}-1)*2_629_744.0 + ($self->{'D'}-1)*86_400 +
+                               $self->{'h'}      *     3_600.0 +  $self->{'m'}   *       60.0 +  $self->{'s'}           + $self->{'p'}/$self->{'_pps'};
+        $self->{'e'}+=int($hofs*3_600.0) if($hofs);
+        $self->{'e'}+=int($mofs*   60.0) if($mofs);}
     }elsif($ityp=~ /^c/i){my $ilen=length($idat); # 'cpan' => 'Wed, 14 Aug 2013 15:08:07 GMT'
       $rgxs='^\\s*(('.join('|',@dayo).')\\S*)?\\s*(\\d+)\\s*('.
                       join('|',@mnth).')\\S*\\s*(\\d{4})'.
-             '\\s+(\\d{2})\D+(\\d{2})\D+(\\d{2})\\s+(\w+)\\s*$';
+             '\\s+(\\d{2})\D+(\\d{2})\D+(\\d{2}\\.?\\d*)\\s+(\w+)\\s*$';
       if($idat=~ /$rgxs/i){
         $self->{'D'}=$3;
         $mont       =$4;
@@ -405,15 +445,15 @@ sub new{my($nvkr,$ityp,$idat)=@_;my $nobj=ref($nvkr);
         $self->{'z'}=$bzsf;if(defined($9)&& length($9)){$self->{'z'}=$9;
                              if(exists($_knwntzab{$self->{'z'}})){$self->{'z'}=$_knwntzab{$self->{'z'}};}else{$self->{'z'}=$bzsf;}}
         $self->{'h'}=$6;
-        $self->{'m'}=$7;
-        $self->{'s'}=$8;}
-      if(defined($mont)){#convert named month to proper index number
-        for(my $i=0;$i<@mnth;$i++){ # find which month name
-          if(lc($mont)eq lc($mnth[$i])){
-            $self->{'M'}=($i+1); # ($i+1) for 1-based month field
-          }}}
-    }elsif($ityp=~ /^i/i){my $ilen=length($idat); # 'iso' => '1997-07-16T19:20:30.45+01:00') # YYYY-MM-DDThh:mm:ss.sTZD ISO 8601 format
-      $rgxs='^\\s*(\\d{4})-(\\d\\d)-(\\d\\d)T(\\d\\d):(\\d\\d):?(\\d\\d)?\\.?(\\d*)([-+]\\d\\d:\\d\\d)?\\s*$';
+        $self->{'m'}=$7;my $seco=$8;my $ssec='0';if($seco=~ s/(\.\d+)$//){$ssec.=$1;$self->{'p'}=int($ssec*60.0);} # load phasses as optional sub-seconds;
+        $self->{'s'}=$seco;}
+      for my $mndx (0..$#mnth){if(lc($mnth[$mndx]) eq lc($mont)){$self->{'M'}=$mndx+1;last;}}
+      $self->{'e'}           =($self->{'Y'}-1970)*31_556_930.0 + ($self->{'M'}-1)*2_629_744.0 + ($self->{'D'}-1)*86_400 +
+                               $self->{'h'}      *     3_600.0 +  $self->{'m'}   *       60.0 +  $self->{'s'}           + $self->{'p'}/$self->{'_pps'};
+      $self->{'e'}+=int($hofs*3_600.0) if($hofs);
+      $self->{'e'}+=int($mofs*   60.0) if($mofs);
+    }elsif($ityp=~ /^i/i){my $ilen=length($idat); # 'iso8' => '1997-07-16T19:20:30.45+01:00') # YYYY-MM-DDThh:mm:ss.sssZoneD8a ISO-8601 format
+      $rgxs='^\\s*(\\d{4})-(\\d\\d)-(\\d\\d)T(\\d\\d):(\\d\\d):?(\\d\\d)?\\.?(\\d*)([-+]\\d\\d:?\\d\\d)?\\s*$';
       if($idat=~ /$rgxs/i){
         $self->{'Y'}=$1;
         $self->{'M'}=$2;
@@ -425,19 +465,23 @@ sub new{my($nvkr,$ityp,$idat)=@_;my $nobj=ref($nvkr);
         $self->{'s'}= 0;   if( defined($6) && length($6)){$self->{'s'}=$6;}
         $self->{'p'}= 0;   if( defined($7) && length($7)){$self->{'p'}=int($self->{'_pps'} * "0.$7");}}
     }elsif($ityp=~ /^d/i){my $ilen=length($idat); # handling main 'd8' format as growing right from Year field through YMDzhmsp
-      for(my $i=0;$i<$ilen && $i<8;$i++){$self->{$attz[$i]}=b10($1) if($idat=~ s/^([0-9A-Za-z._])//);} # break down d8 str from left side && build field attrz
+      for(my $i=0;$i<$ilen && $i<8;$i++){$self->{$attz[$i]}=$sb10{$1 }  if($idat=~ s/^([0-9A-Za-z._])//);} # breakdn d8 str from left side&&build field attrz
       $self->{'z'}%=@_tzofsetz; # just modulo wrap zone values that are gr8r than the number of defined offsets
       $self->{'Y'}+=      2000;
+      $self->{'e'}           =($self->{'Y'}-1970)*31_556_930.0 + ($self->{'M'}-1)*2_629_744.0 + ($self->{'D'}-1)*86_400 +
+                               $self->{'h'}      *     3_600.0 +  $self->{'m'}   *       60.0 +  $self->{'s'}           + $self->{'p'}/$self->{'_pps'};
+      $self->{'e'}+=int($hofs*3_600.0) if($hofs);
+      $self->{'e'}+=int($mofs*   60.0) if($mofs);
     }else{
       for my $attr(@attz){
-        if    ($ityp=~ /^a/i){ # 'array'
+        if    ($ityp=~ /^a/i){ # 'aray'
           $self->{$attr}=shift(@{$idat}) if(@{$idat}); # shift array vals
         }elsif($ityp=~ /^h/i){ # 'hash'
           for(keys(%{$idat})){ # do some searching to find hash key that matches
             if($attr=~ /$_/ ){$self->{$attr}=$idat->{$_} ;
                                       delete($idat->{$_});}}
         }else{ # undetected init type
-          croak "!*EROR*! d8::new initializ8ion type: $ityp did not match 'd8', 'array', 'hash', 'expand', 'lsft', 'cpan', or 'iso'!\n";
+          croak "!*EROR*! d8::new initializ8ion type:$ityp did not match:'d84m', 'aray', 'hash', 'epoc', 'msep', 'full', 'lsft', 'cpan', 'iso8', or 'ymd8'!\n";
         }}}}
   for my $attr(@attz){ # re-initialize default values for any fields that have somehow become undefined
     $self->{$attr}=$self->_default_value($attr) unless(defined($self->{$attr}));}
@@ -454,7 +498,11 @@ sub new{my($nvkr,$ityp,$idat)=@_;my $nobj=ref($nvkr);
   while ($self->{'M'}  > 12  ){$self->{'Y'}+= 64;$self->{'M'}-=13;}
   if    ($self->{'h'}  > 23  ){$self->{'Y'}+=256;$self->{'h'}-=24;}
   if    ($self->{'D'}  > 31  ){$self->{'Y'}*= -1;$self->{'D'}-=32;} $self->{'Y'}+=2000;
-  return($self);}
+  $self->{'e'}               =($self->{'Y'}-1970)*31_556_930.0 + ($self->{'M'}-1)*2_629_744.0 + ($self->{'D'}-1)*86_400 +
+                               $self->{'h'}      *     3_600.0 +  $self->{'m'}   *       60.0 +  $self->{'s'}           + $self->{'p'}/$self->{'_pps'};
+  $self->{'e'}+=int($hofs*3_600.0) if($hofs); # `d8 e|cma;ec;d8 t|cma` is still resulting in approxim8ly 6-minutes (360-seconds) discrepancy,not sure where;
+  $self->{'e'}+=int($mofs*   60.0) if($mofs);
+  return($self);}  # just disable l8 comput8ion of upd8d Epoch float seconds above since they're getting values off by about 1.5Million seconds,4getngZone?;
 sub subsecond{  my $self=shift(@_);return(           $self->p(@_));}
 sub zone_offset{my $self=shift(@_);return($_tzofsetz[$self->z]   );}
 sub _mon{       my($self,$nwvl)=@_; # 0-based month
@@ -513,15 +561,16 @@ sub day_of_year     {return(yday(     @_));}
 sub isdst{my($self,$nwvl)=@_; # IS Daylight Savings Time? && why even gobble any nwvl if it can't or shouldn't be assigned?
   my @ltdt=localtime(timelocal($self->smhD,$self->_mon,$self->Y)); # need 0-based month as timelocal() param
   return($ltdt[-1]);}
-sub daylight_savings{return(isdst(    @_));}
-sub cdate           {return(expand(   @_));}
-sub compress        {return(stringify(@_));}
-sub epoch           {return(0);} # floating point seconds since the epoch
-sub tzoffset        {return(0);} # timezone offset in a Time::Seconds (which will need to be used in header) object
-sub julian_day      {return(0);} # number of days since Julian period began
-sub mjd             {return(0);} # modified Julian date (JD-2400000.5 days)
-sub week            {return(0);} # week number (ISO 8601)
-sub    is_leap_year {return(0);} # true if it is a leap year
+sub daylight_savings{return(         isdst(@_));}
+sub cdate           {return(          full(@_));}
+sub compress        {return(     stringify(@_));}
+sub epoch           {return(        $_[0]->e  );} # floating point seconds since the epoch (hopefully properly computed wi changes);
+sub timep           {return(        $_[0]->t  );} # floating point seconds since the epoch of Time::HiRes::time() at object crE8ion;
+sub tzoffset        {return(           0      );} # timezone offset in a Time::Seconds (which will need to be used in header) object
+sub julian_day      {return(           0      );} # number of days since Julian period began
+sub mjd             {return(           0      );} # modified Julian date (JD-2400000.5 days)
+sub week            {return(           0      );} # week number (ISO-8601)
+sub    is_leap_year {return(           0      );} # true if it is a leap year
 sub month_last_day  {return(days_in($_[0]->YM));} # 28-31
 sub DESTROY         {} # do nothing but define in case && to calm warning in test.pl
 8;
@@ -530,7 +579,7 @@ sub DESTROY         {} # do nothing but define in case && to calm warning in tes
 
 =head1 NAME
 
-Octology::d8 - objects to store a dated instant in time
+Octology::d8 - objects to store a dated phass (60th-of-a-second) moment in time
 
 =head1 VERSION
 
@@ -540,13 +589,14 @@ This document8ion refers to version 0.0 of Octology::d8, which was released on d
 
   use       Octology::d8;use v5.10;
   my  $d8 = Octology::d8->new();
-  say "d8 is: $d8";
-  say 'The Day-of-Week today is: ',$d8->dow();
+  say 'd8 is: ',     $d8       ;
+  say 'The Day-of-Week toDay is: ',$d8->dow();
 
 =head1 DESCRIPTION
 
 By default, Octology::d8 stores time descriptions precise to
-60ths-of-a-second (0.016667 seconds).
+60ths-of-a-second (0.016667 seconds, referred to as a "phass"
+which is a new term for a hybrid between a phase and a pass).
 
 This module has been adapted from the L<Time::Piece> module
 written by Matt Sergeant <matt@sergeant.org> && Jarkko
@@ -826,16 +876,16 @@ Octology::d8 objects:
   "<",  ">",  "<=", ">=", "<=>", "==" &&  "!="
   "lt", "gt", "le", "ge", "cmp", "eq" and "ne"
 
-=head2 YYYY-MM-DDThh:mm:ss
+=head2 YYYY-MM-DDThh:mm:ss.sssZoneD8a
 
-The ISO 8601 standard defines the date format to be YYYY-MM-DD, and
-the time format to be hh:mm:ss (24 hour clock), and if combined,
-they should be concatenated with date first and with a capital 'T'
+The ISO-8601 standard defines the date format to be YYYY-MM-DD, and
+the time format to be hh:mm:ss.sss (24-hour clock), and if combined,
+they should be concatN8d with date first and with a capital 'T'
 in front of the time.
 
 =head2 Week Number
 
-The ISO 8601 standard specifies that weeks begin on Monday and the first
+The ISO-8601 standard specifies that weeks begin on Monday and the first
 week of the year is the one that includes both January 4th and the
 first Thursday of the year. In other words, if the first Monday of
 January is the 2nd, 3rd, or 4th, the preceding days are part of the
@@ -847,14 +897,14 @@ Whenever individual Octology::d8 attributes are going to be
 printed or an entire object can be printed with multi-colors,
 the following 8bow mapping should be employed whenever possible:
 
-      D  Year    -> Yellow
-      A  Month   -> Green
-      T  Day     -> Turquoise
-      E   zone   -> Blue
-       t  hour   -> bisqUe
-       i  minute -> oliveDrab
-       m  second -> Skyblue
-       e  phass  -> Navy
+      D  Year    -> Red
+      A  Month   -> Orange
+      T  Day     -> Yellow
+      E   zone   -> Green
+       t  hour   -> Cyan
+       i  minute -> Blue
+       m  second -> Magenta
+       e  phass  -> Purple
 
 Please see the colr() member function in the USAGE section.
 
@@ -871,6 +921,8 @@ Revision history for Perl extension Octology::d8:
 =over 2
 
 =item - pAKGvERS  d8VSD8vs
+
+* renamed expand() to full(), iso() to iso8(), && began implementing new epoc() method
 
 * moved d(ur)?8color subs to a8 && stopped exporting d8cc too to simplify d8 usage && started s/fields/fldz/g && s/(dur8)ion/$1/g
 
@@ -974,7 +1026,7 @@ L<Octology::d8::dur8>    to represent spans of time
 
 Octology::d8 uses (if available):
 
-L<Time::HiRes>           to provide subsecond time precision
+L<Time::HiRes>           to provide sub-second time precision
 
 L<Time::Local>           to turn epoch seconds back into a real date
 
@@ -987,12 +1039,12 @@ L<Octology::d8::dur8>
 =head1 LICENSE
 
 Most source code should be Free! Code I have lawful authority over is and shall be!
-Copyright: (c) 2014-2016, Pip Stuart.
+Copyright: (c) 2014-2021, Pip Stuart.
 Copyleft :  This software is licensed under the GNU General Public License
-  (version 3 or later). Please consult L<HTTP://GNU.Org/licenses/gpl-3.0.txt>
-  for important information about your freedom. This is Free Software: you
+  (version 3 or l8r). Please consult: L<HTTPS://GNU.Org/licenses/gpl-3.0.txt>
+  for important inform8ion about your freedom. This is Free Software: you
   are free to change and redistribute it. There is NO WARRANTY, to the
-  extent permitted by law. See L<HTTP://FSF.Org> for further information.
+  extent permitted by law. See L<HTTPS://FSF.Org> for further inform8ion.
 
 =head1 AUTHOR
 

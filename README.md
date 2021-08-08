@@ -1,5 +1,5 @@
 #    Octology
- The ontology of 8. Ocho dude. Hachi-desu. Wheet. Aucht! `$VERSION='0.0';$d8VS='L64MNOPQ';`
+ The ontology of 8. Ocho dude. Hachi-desu. Wheet. Aucht! `$VERSION='0.0';$d8VS='L88MF84L';`
 
 `dic ontology`:  # query the dictd (Dictionary-Daemon) for salient definitions that project visitors might find inform8ive;
 
@@ -13,8 +13,8 @@ I expect after some point (probably passed) anyone who studies Octology thorough
 
 "Perl 5 was a machine-shop for making other tools." -LarryWall `d8=J6K` TPCiP interview. I'd like Octology to be regarded similarly for game-tools.
 
-Please watch the [5-and-a-half minute video](https://YouTu.be/Oul8KrS7TQk) which is what I presented as a Lightning-Talk during
-  the-Perl-Conference-in-the-Cloud on June 24th, 2020 (`d8=K6O`). Hopefully I will be giving another talk at the 2021 Perl/Raku Conference (`d8=L69`);
+Please watch my [6-minute Lightning-Talk](https://YouTu.be/Oul8KrS7TQk) which I presented during the-Perl-Conference-in-the-Cloud on June 24th, 2020 (`d8=K6O`)
+ then my [21-minute Black-Jack Tech-Talk](https://YouTu.be/FgS6IXq-xVE) from this Year, at: the-Perl/Raku-Conference-in-the-Cloud on June  9th, 2021 (`d8=L69`);
 
 <!-- even though of course originally above command && below screen shot lists were each Top8, they're now more focused on just most public Top6 or 4 -->
 ## Current Top Screen Shots
@@ -33,7 +33,7 @@ Please watch the [5-and-a-half minute video](https://YouTu.be/Oul8KrS7TQk) which
 ![Octology-calN-shot_1294x914-I46MK8B8](https://github.com/pip/Octology/raw/master/gfx/sho/Octology-calN-shot_1294x914-I46MK8B8.png "Octology-calN-I46MK8B8")-->
 <!-- show  tstc short after lsd8 ~ && reso spec HD pre Pi color greps elabor8 aliases,fully amidst reph new crystal clarity layers of some transparency now;-->
 
-This repository was started in 2017 (`d8=HAD`) to be the locus for future collabor8ive efforts, and as a site to show top noteworthy screen shots.
+This repository was started in 2017 (`d8=HAD`) to be the locus for future collabor8ive efforts, and as a site to show top noteworthy screen-shots.
 
 If your paths and Perl environment are setup similarly, to gain a bearing on fundamental Octology utilities and organiz8ion, please try executing:
 
@@ -55,7 +55,7 @@ Probably the best way to evalU8 Octology is to build and run a Docker container 
 
   `docker build . -t oct`  # to be run in the root directory of a git cloned local repository from this project's main oper8ional hyperlink;
 
-  `docker run -e DISPLAY --mount type=bind,source=/home/pip/.log,target=/home/tst/.log -v /tmp/.X11-unix:/tmp/.X11-unix -it oct`  #mostworks
+  `docker run -e DISPLAY --mount type=bind,source=/home/pip/.log,target=/home/tst/.log -v /tmp/.X11-unix:/tmp/.X11-unix -it oct`  #muchworks
 
 To build something close to a similar setup to mine, you'll probably want to execute the following sequences of commands to get going first:
 
@@ -91,7 +91,7 @@ I'd first like to thank the p8ient Chess players who endured me logging personal
   [Rubik's Cube](https://www.rubiks.com), [AMD](https://www.amd.com/en), [CheyenneCigars](https://CheyenneCigars.Com), etc.
 
   * [Obsidia](https://www.youtube.com/user/ObsidiaMedia), [MonsterCat](https://youtube.com/user/MonstercatMedia), [UKF](https://youtube.com/user/UKFDubstep),
-  [TrapNation](https://www.youtube.com/user/AllTrapNation), [TrapCity](https://youtube.com/user/OfficialTrapCity), 7Cloud, 9Cloud, InfinityEDM, ...
+  [TrapNation](https://www.youtube.com/user/AllTrapNation), [TrapCity](https://youtube.com/user/OfficialTrapCity), 7Cloud, Infinity, Diversity, ...
 
 More thanks go out to all of the competitive, cooper8ive, casual, etc. game players who have ever particip8d in versions of Go, Chess, Screeps, or Rubik's Cube
   descriptions, demonstr8ions, discussions, groups, or gatherings.
@@ -119,7 +119,7 @@ If you are willing to fund this development effort, please visit my [SubscribeSt
   or                                                                      [Patreon](https://patreon.com/PipStuart "Pip's Octology Patreon       Page")
   and feel free to send me the *Top8* new fixes and fE8ures you would want most.
 
-Please also contact me if you are an open-minded thinker interested in any convers8ion or friendship (especially near OSHkOSH, Wisconsin).
+Please also contact me if you are an open-minded thinker interested in any convers8ion or friendship (especially near OshKOsh, WisConSin).
 
 To learn about the long-term goals, plans, thinking, and research behind this expansive project, please consult l8St development notes at:
   [8.utf](https://github.com/pip/Octology/blob/master/dox/2du/8.utf "dox/2du/8.utf")
@@ -127,7 +127,7 @@ To learn about the long-term goals, plans, thinking, and research behind this ex
 Thank you for your consider8ion as well as any constructive criticism, recommend8ions, or whatever other feedback you may be able to offer.
 ```
 Sincerely,
-  -PipStuart  8<3  NfN8L0v3  8pI  Ate Pie  =)  Eight-Π
+  -PipStuart  8pI  Ate-Pie  =)  Eight-Π
 ```
 ---
 ### Public Purpose

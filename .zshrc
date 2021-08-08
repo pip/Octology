@@ -30,7 +30,7 @@ unsetopt                \
 # auto_pushd            \# setng addz dirz 2 stack wN just normally chngng 2 thM (wich I du not normally lIk or want)
 # ksh_arrays            \# rEmMbr wNwrItng scrptz[or funcz]2include'setopt [localoptions] ksharrays'sO arAzR 0-bAsed(but!glOblBcuzmOst scrptzRstndrdly 1-bAsed)
 # re_____match_____pcre \# mA want2set for Z-SHell scripting RegularExpressions to utilize PerlCompatibility styles && mA insert 'zmodload zsh/(pc)?re(gex)?';
-export Vers='0.0';export d8VS='L7CMDude';export Auth='PipStuart <Pip@CPAN.Org>'; # not Xportng $b sinc cOlIdz wi sort{$a <=> $b} /defhijlnqstuvx/i + AZ 4golf;
+export Vers='0.0';export d8VS='L87MFULL';export Auth='PipStuart <Pip@CPAN.Org>'; # not Xportng $b sinc cOlIdz wi sort{$a <=> $b} /defhijlnqstuvx/i + AZ 4golf;
 if     [[       "$SHELL"    == "" ]]; then       export SHELL=` which  zsh`;fi   # 8sh should parse this && OverId it    # shud `man zshall` /OSTYP 2lern4BlO
 if     [[       "$HOSTNAME" == "" ]]; then       export HOSTNAME=`hostname`;fi   #`hostname`retnz fsckd nwlInz\n4CygWinzRxvt... ||smthng els lame  =(
 if     [[       "$HOST"     == "" ]]; then       export HOST   ="$HOSTNAME";fi;export VERBOSE='1'; # set flag to print debug && status info from system utilz
@@ -290,9 +290,9 @@ alias lads='la -d  .*|sS';alias lad='lads';alias ls8='ec "Stuv, rXU.: Size time 
 # Note: While it may fit nicely for now to setup ls8 as a Sort-set echo print before calling my standard: lsd8, might prefer l8r to make ls8 normal widezetc.;
 # for some reason, old ea='e a' could shell out2`bak` from ~/dvl/Utl/.bak/ but can't create .bak/ EROR from ~/.arc/Aku_-arc-full-Ubu10.04-D1KD1KD/var/log/apt/
 # mAB stRting ./ as root owned  (even if not that restrictive 755 permissions) can't find way to ~/ from there? Wrap p[uo] makes sense 2rElEtRgetfromNEwher
-ea(){ if [[ `dirs` != '~' ]]; then pushd ~; fi;e a; # try to quell warning "popd: directory stack empty" && not found pu or po;  # loc8r BlO calls wi --Regex
-      if [[ `dirs` != '~' ]]; then popd   ; fi}     # Orig: alias ea='pu ~;e a;po';  # loc8r is in findutils-default 4m@ th@ is lIk emacs but . m@chz newline
-alias olde='olde    $TTY';alias up='        upd8  ';alias e2='pu ~/dox/2du;e 2;po';alias e3='e 3     ';alias upd8-mime-d8bs='md8';alias larv='laff; ripv';
+ea(){ if [[ `dirs` != '~' ]]; then pushd ~; fi;olde a; # try2quell warning "popd: directory stack empty" && not found pu or po;  # loc8r BlO calls wi --Regex
+      if [[ `dirs` != '~' ]]; then popd   ; fi}        # Orig: alias ea='pu ~;e a;po'; # loc8r is in findutils-default 4m@ th@ is lIk emacs but . m@chz nwlIn
+alias oldE='olde    $TTY';alias up='        upd8  ';alias e2='pu ~/dox/2du;e 2;po';alias e3='e 3     ';alias upd8-mime-d8bs='md8';alias larv='laff; ripv';
 alias e4='     e    4   ';alias e5='     e 5      ';alias e6='             e 6   ';alias e7='e 7     ';alias   e8='pu ~/dox/2du;e 8;po';alias e9='e 9';
 alias oldb='oldb    $TTY';alias loc8r='loc8 -r    ';alias upd8-mdb=' md8       ';alias upd8-md8b='md8';alias update-mime-db='md8';alias lar8='larv; updb';
 alias ud='     updb     ';alias loc8='      locate';alias mdb-upd8=' md8       ';alias md8b-upd8='md8';alias mime-db-update='md8';alias mdb8='  mdb-upd8';
@@ -385,6 +385,8 @@ alias      po='   popd';alias una='un -a ';alias sus='sudo -E -s zsh'; # -c "rm 
 #lias     pab='   perl -MOctology::a8 -MOctology::b8  -e'; # Perl eval with A8  &&  B8   exports together like `pab       "b8colr(  b64(calQ('4095xx2047')))"`
 #lias    pabd='   perl -MOctology::a8 -MOctology::b8 -MOctology::d8  -e'; # Perl eval with A8 && B8 && D8 (although d8 mainly crE8s new objects, not exports)
 #lias     pep='   perl -MOctology::a8 -MOctology::b8 -MOctology::d8 -pe'; # Perl Eval with A8 && B8 && D8 for Piping filtr8ion
+alias    epoc='   perl -MTime::HiRes -e "print Time::HiRes::time"    | cma      '; # setng alias 2 gener8 non-colrd epoch float seconds from Perl Time::HiRes;
+alias      ep='   perl -MTime::HiRes -e "print Time::HiRes::time"|b64|coma|b8clr'; # setng alias 2 gener8 b64-colrd epoch float seconds from Perl Time::HiRes;
 alias      pe='   perl -MOctology::a8                               -CS   -pe'; # tried to add -Mutf8 to aliases but may need some more specific flag?
 #lias      pa='   perl -MOctology::a8                               -CS    -e'; # would like to just alias to -e so that double-quoted code can follow, ...
 alias     pla='   perl -MOctology::a8                               -CS    -e'; #   ... but may need function to include "binmode STDOUT,':utf8'" somehow?
@@ -396,7 +398,7 @@ alias     peb='   perl -MOctology::a8 -MOctology::b8                -CS   -pe'; 
 alias     ped='   perl -MOctology::a8                -MOctology::d8 -CS   -pe'; # -CSDL is the same as just -C && gets all the STDz && i/o && @ARGV
 alias     pep='   perl -MOctology::a8 -MOctology::b8 -MOctology::d8 -CS   -pe'; # -CSDL is the same as just -C && gets all the STDz && i/o && @ARGV
 pewh() { wh $@|pe 's/;/$W;$y/g;s/-/$C-$y/g;s/:/\t$R/;s/:/$B:$Y/g;s/^/$G/;s/  +/ /;s/ to /$o to$Y /;s/\|/$M|$O/g;s/=/$B=$C/'; } # xmpl which pRamz 2 pe colrng;
-# abov loox good in 80x25 term with cmnd to show xpandng many aliasz like this: `pewh ag agu aguu au auu agr agar aar ai ac acs h H D T Q N n grp psag pl pe` ;
+# abov loox bood in 80x25 term with cmnd to show xpandng many aliasz like this: `pewh ag agu aguu au auu agr agar aar ai ac acs h H D T Q N n grp psag pl pe` ;
 alias    b102='en " 0 000";b8  0 10 2;ec;en " 1 000";b8  1 10 2;ec;en " 2 00" ;b8  2 10 2;ec;en " 3 00" ;b8  3 10 2;ec;
                en " 4 0"  ;b8  4 10 2;ec;en " 5 0"  ;b8  5 10 2;ec;en " 6 0"  ;b8  6 10 2;ec;en " 7 0"  ;b8  7 10 2;ec;
                en " 8 "   ;b8  8 10 2;ec;en " 9 "   ;b8  9 10 2;ec;en "10 "   ;b8 10 10 2;ec;en "11 "   ;b8 11 10 2;ec;
@@ -573,6 +575,7 @@ alias      pl='   perl'; #  pl   :           perl (with the most common file-ext
 #lias      pL='pP L   '; #  pL   :           pP L (aidyLaicyLiteral LuciousLadyLumps LovelyLivelyLoudy LastLiasLpro); pPA triez 2 loop in Perl nstd of ZshL;
 alias      pp='Pp';      #  pp   :pP p # pA() BlO is: profileAll 2 thrO out P PipStu d falt, pp, cc8, gg, jj8, ii, RR, BB, LL, OO, WW,   kk, &&        vv;
 alias      pc='Pc';alias pg='Pg';alias pj='Pj';alias pi='Pi';alias pR='PR';alias pB='PB';alias pL='PL';alias pO='PO';alias pW='PW';alias pk='Pk';alias pv='Pv';
+mX() { cd $HOME/dvl/Ppl/bep/mad-scientists-lab/ta;for Mrkt in BTC ETH EOS XRP;do bin/mexico -x bybit -m $Mrkt/USD -t 1m -s last -l 160 -v;done;};alias mx='mX';
 pA() { for HPrF in d p c g j i R   B L O W k v; do   echo -en "$W$HPrF ";pP "$HPrF";     d8 -a;echo -en "$z;"; # why did en && een aliasez hav probz?
     if    [[ $COLUMNS -lt 160 && $HPrF == R ]]; then echo             ;fi;done;echo; # w8 W abov && belo NAbld almost all pP callz 2 finish B4 d8 -a stRtd2;
   for      HPrF in 0 1 2 3 4 5 6   7 8 9 A B C D E F  G H I J K L M N O P Q R S T U V  W X Y Z a b c d e f g h i j k l  m n o p q r s t u v w x y z '.' '_';
@@ -898,7 +901,7 @@ alias SLS=' pabd "\$u=0;\$v=q(screen -ls);\$v.=qq( @ARGV) if(@ARGV > 0);\$S=\`\$
   \$9;\$x=S(q(Rr));\$d=2;\$t=\$x.\$t if(\$t=~ /D/);\$h=int(\$u++ / \$d)+1;if(!(\$u % \$d)){\$e=abs(\$d- 1)*abs(\$h- 0);\$S=~
   s/^(.*([^\\n]*\\n){\$e}[^\\n]*)\\n/\$1/;\$S.=qq(Logic4DivideNotBy2StillBuggy:e=\$e;) if(0);}
   if(\$n=~ /P/ && \$T=~ /^(\d+):/){\$h=\$1+12;\$h%=24;\$T=~ s/^(\d+):/\$h:/;} \$A= S(     q(Ab));\$x=q(XtracmNt:Repurposd RedOnRed detached in2filr text;);
-  \$d=Octology::d8->new(q(expand)=>\$Mon[\$N-1].q( ).\$D.q( ).\$T.q( ).\$E);\$e=\$d->colr(q(a) );\$S=~ s/\Q\$L\E/\$I\$K:\$A\$H\$z\t\$e \$G\$t\$z\n/igixi;};
+  \$d=Octology::d8->new(q(full)=>\$Mon[\$N-1].q( ).\$D.q( ).\$T.q( ).\$E);\$e=\$d->colr(q(a) );\$S=~ s/\Q\$L\E/\$I\$K:\$A\$H\$z\t\$e \$G\$t\$z\n/igixi;};
 \$S  =~ s/(There)( are| is a)( screens?)( on)(:)/\$B\$1\$p\$2\$G\$3\$o\$4\$W\$5/gig;\$x=q(XtracmNt:sinc -ls tAk m@chpRam,1st passin ARGV B4wrap ZshLfunc;);
 if(\$S=~ /(\d+)( Sockets?)( in )(.+)\..*/){\$s=b8c(b64(\$1));\$X=\$2;\$i=\$3;\$F=c8fn(\$4);\$x=q(XtracmNt:CmzlIk6.5solidsourclInz puttz mE undrpR4ashole;);
   \$S=~ s/(\d+)( Sockets?)( in )(.+)\..*/\$s\$C\$X\$p\$i\$Y\$F\$W;\$z/;} \$S=~ s/\\t/  /g; #\$S=~ s/\\n//g;
@@ -966,7 +969,7 @@ alias mpp='  mplr -vo xv    -fixed-vo -ao pulse                      -cache 1638
 alias mpa='  mplr -vo xv    -fixed-vo -ao alsa                       -cache 16384 -cache-min 64'; # should try different -vo (xv was default) for performance
 alias mp='   mplr -vo xv    -fixed-vo -ao sdl                        -cache 16384 -cache-min 64'; # should try different -vo (xv was default) for performance
 alias mpns='cd ~/mvz/U2b/nxt;mp $(ls B* Dr* *Tut* Ex* M* O*-Res* Var* *Trap* *Trap* *Boy*|shfl);cd ..'; # mk MPlyrNxtShfl 4 quik favor8 mvz Drub&&Trap vidzls
-alias mpx='  mp   -fs'; #-x 1920 -y 1080'; # originally long ago, I used to include -noborder optn abov but thN cud!mv wndw
+alias mpx='  mp   -fs';alias vnk='cd ~/mvz/U2b/.vnk;mpx -loop 0 *o[bm]* *tr*'; #-x 1920 -y 1080'; # long ago,IUzd2includ -noborder abov but thN cud!mv wndw;
 alias mplo=' mplr -vo xv    -fixed-vo -ao sdl   -framedrop -delay -4 -cache 16384 -cache-min 88 -autosync 30 -demuxer +lavfpref -vfm ffmpeg -lavdopts lowres=1:fast:skiploopfilter=all -v ~/mvz/U2b/nxt/O*On*'; # try to play Obsidia One_Winged_Angel thru SDL audio since Pulse stutters && ALSA totally freezes up;
 alias mj='   mjoin'; mjoin() {ffmpeg -i $1 -i $2 -acodec copy -vcodec copy $3; } # IB6LExci:was in ~/.tmp/ aftr trying;
 alias ffll='ffmpeg -loglevel verbose -i'; # should now just take single Input filename to do verbose logging of details about, mainly for me looking up dur8nz;
@@ -998,7 +1001,7 @@ alias echos='echon  ';alias ewh="ene '${C}$COLUMNS${w}x$O$LINES'"; # echo (with 
 alias eqx='/home/pip/dvl/m8/clda/eqx/eqx-0.9.4.26/equinox3d-0.9.4.26-Linux64bit/eqx &'; # Gabor Nagy's awesome EQuinoX3D
 alias fstat='  perl -MTime::PT     -e "@s=split(/ /,scalar(localtime((stat(shift))[9])));print   \"@s\"      ;"';
 #lias fstatpt='perl -MTime::PT     -e "@s=split(/ /,scalar(localtime((stat(shift))[9])));print `pt @s`,\"\n\";"'; #pt(@s) not exported,so try shell,leav Nwln?
-alias fstd8='  perl -MOctology::d8 -e "@s=split(/ /,scalar(localtime((stat(shift))[9])));print Octology::d8->new(\"expand\"=>\"@s\");"'; 
+alias fstd8='  perl -MOctology::d8 -e "@s=split(/ /,scalar(localtime((stat(shift))[9])));print Octology::d8->new(\"full\"=>\"@s\");"'; 
 alias wmc='  wmctrl ';alias gtt=' gnome-tweaks  '; # Uzd2B gt-tool scAling all fontz2 1.5&&mkCapsLock Ctrl;XperimNt wiCaps2:Hyper,Menu,orWin 2CwutLsIcan map2;
 alias gt='   env TERM_PROGRAM=gt  gnome-terminal'; # wrap GnomTerm wi ENV var to be l8r capable of determining the actual term apart from just xterm-256color;
 alias xrnr='xrandr';alias xrg="xrnr|g '^[DH][^ ]*'"; # shud mk func tkng [hdp]\d* 4Hdmi,Dvi,disPlayPort thNwich ndx2cfg r8z whN cRd,Kbl,&&displA suportz 144?;
@@ -1565,10 +1568,12 @@ pmfi()     { if     [[ "$HUsr"      != "root" ]]; then sudo perl -MCPAN -e "forc
 pmverck()  { cpan -D $1; } # used to check with perl -MExtUtils::MakeMaker -le 'print MM->parse_version(shift)' $1; but that old method no longer seems to work
 alias  pdoc='perldoc'; # used to have problem with most needing -t for text-only version (not pod2man | nroff -man | $PAGER) or to just pipe thru less instead
 alias prsyn='rsyncmd'; # PRint RSYN; K1VLIVES:upd8d rsyncmd below to now default to Full.ls since Chun && Taki are both dead, so Core is no longer significant
-rsyncmd()  {                                                echo      "rsync -avr  --files-from=dox/putr/RsynFull.ls . DstH:"; # common rsyn cmd
-                                                            echo      "  add    -n 4dryruN2tSt,add --delete usualy whN SrcH is Oni 2propag8,"; # just2Ryu now
-                                                            echo      "  s/Full/Core/ btwn Oni && laptop,&& might want SrcH: not just s/^/cd;/ thN . ;";
-                                                            echo   -n "rsync -avr  --delete --files-from=dox/putr/RsynFull.ls . Ryu:"|xclip -si -se p -l 1;}
+rsyncmd()  {                                                echo      "rsync -avrm --files-from=dox/putr/RsynFull.ls  . DstH:"; # common rsyn cmd
+                                                            echo      "  add    -n 4dryruN2tSt, add --delete usualy whN SrcH is Oni 2propag8,"; # just2Ryu now
+                                                            echo      "  s/Full/Core/ btwn Oni && laptop, && might want SrcH: not just s/^/cd ;/ thN . ;";
+                                                            echo      "  for   /Core/ also  --exclude='\*.swp' --exclude='\*.zip' --exclude='.bak/'etc.;";
+                                                            echo   -n "rsync -avrm --delete --files-from=dox/putr/RsynFull.ls . Ryu: " \
+                                                              |        xclip -si    -se   p  -l   1 ; }  #  -m = --prune-empty-dirs (chains from file-ls);
 rsyn()     { # rsync -n --dry-run 2tst,try --(in|ex)clude=PATRN or .='-from=FILE' also for  --files-from listng source filenmz,-t rEdundnt but -tavrn EZ2rEmMbr
              #sEF="--exclude='*.swp' --files-from=dox/putr"; # Rsyn Exclude && FilesFrom parameter (tries to start getting all of ~?)
              #sEF="                  --files-from=dox/putr"; # Rsyn Exclude && FilesFrom parameter (any $RsEF Xpansion BlO echoz good but hOsez rsync)

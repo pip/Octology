@@ -1,6 +1,9 @@
 #!/usr/bin/perl
 # L6PMHiLi:d8z crE8d by PipStuart <Pip@CPAN.Org> to mimic Beppu-san's TimeZoneHiLite.bash script mAB with Octology d8 time-zone specific8ion instead of `date`;
-use strict;use warnings;use utf8;use v5.10;use Octology::a8;use Octology::d8;my $d8VS='L7HMCUTC';my @tznz=qw(
+use strict;use warnings;use utf8;use v5.10;use Octology::a8;use Octology::d8;my $d8VS='L7PM9ipP';my $ppcf=1; # setup new param -c to override defalt of colr...
+if(@ARGV){for(my $andx=$#ARGV;$andx>=0;$andx--){if($ARGV[$andx]=~ /^-?-?c$/){$ppcf=0;splice(@ARGV,$andx,1);}}} # ...output wi pikdProfileC8ColorCodezFlag 2 0?;
+my($R,$O,$o,$Y,$G, $C,$B,$M,$P,$p)=($R,$O,$o,$Y,$G, $C,$B,$M,$P,$p); # just init my own copies of original a8.pm exportz in case default prOfIl colrz RUzd BlO;
+  ($R,$O,$o,$Y,$G, $C,$B,$M,$P,$p)=($d8cS[0],$d8cS[1],$d8cS[1],$d8cS[2],$d8cS[3], $d8cS[4],$d8cS[5],$d8cS[6],$d8cS[7],$d8cS[7]) if($ppcf);my @tznz=qw(
   Pacific/Honolulu     America/Los_Angeles   America/Phoenix      America/Denver        America/Chicago       America/New_York
    Europe/London        Europe/Berlin         Europe/Helsinki      Europe/Moscow           Asia/Bangkok          Asia/Shanghai
      Asia/Singapore       Asia/Tokyo            Asia/Seoul      Australia/Sydney               );my %qrep=  ( # 6-lines of zone declR8ion, 4-lines code colors;
@@ -13,4 +16,4 @@ for my $tzon (@tznz){ my $zone=$tzon;my $hilf=0;for(keys(%qrep)){if($zone=~ /$_/
   my $date= `date +"%b %e %T:66 %z %Y"`;$dato=~ s/    (\s  \d\d )(:)(  \d\d)(:)(   \d\d)(\s\S+)$/$C$1$O$2$B$3$O$4$M$5$O:${p}66$G$6/x;$nsec=~ s/^(...).*$/0.$1/;
      $nsec=   int($nsec  *   60);$nsec=~ s/^(.)$/0$1/;$date=~ s/:66 /:$nsec /; # calQl8 && propag8 NanoSeconds in2 phasses (60ths-of-sec) && slip in2 xpnd plc;
   my $phas=substr($date,16,2); chomp(   $date );      $dato=~ s/ 66  /$nsec/x; # try to regex substitute in the hand-computed ns-to-phas nsec 2 added  66 @end;
-  my $d8im=Octology::d8->new('expand'=>"$date");   o8($d8im->colr('a') . " $dato");}} # I tried2 %T.%N for ns B4 new xpnd but might just need 2 leave :66 phas;
+  my $d8im=Octology::d8->new('full'=>  "$date");   o8($d8im->colr('a') . " $dato");}} # I tried2 %T.%N for ns B4 new xpnd but might just need 2 leave :66 phas;

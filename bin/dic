@@ -18,7 +18,7 @@
 #web1913 gcide wn foldoc jargon vera devil elements easton hitchcock bouvier gazetteer gaz2k-zips gaz2k-places gaz2k-counties moby-thesaurus
 # HC2LNewD:fixd `d BLT` to properly Decode UTF-8 double-quotes from dict && noted also qw(server reverse reserve severer)=~ s/e//g; # srvr rvrs rsrv svrr;
 # Currently, the only special pRameter that `dic` swallows 4 itself is lone '-w' which design8s any dFinitions should be formatted as *NOT* default Wide mode.
-use strict;use warnings;use utf8;use v5.10;use Encode;my $VERSION='0.0';my $d8VS='L65MBEST'; # orig from TeST Substitute Input,now XtNded d8 util,l8r c8 IF?
+use strict;use warnings;use utf8;use v5.10;use Encode;my $VERSION='0.0';my $d8VS='L7PM9nut'; # orig from TeST Substitute Input,now XtNded d8 util,l8r c8 IF?
 use Octology::a8;my $word='';my $wclr=S('Wr');my $logd="$ENV{'HOME'}/.log";my %dlog; # setup global word colr SKp && LogDirectory && DicLog hash
 use Octology::d8;my $Stxt   ;my $eclr=S('Yf');my $widf=1  ; # BlO hopefully strips -w param 2flag disabling dflt wide-mode or load $word 4l8r colr8ion if!flag
 my $cw=160;$cw=$ENV{'COLUMNS'} if(exists($ENV{'COLUMNS'})); # try to setup potentially wider ColumnWidth for when attempting to join shorter linez
@@ -26,10 +26,10 @@ my $aw=  0; # attempt to AlignWebster (1913) blocks to end-of-line flag. disabli
 mkdir ( $logd,0750) unless(-d "$logd");my $dlfn= $logd . '/dic.log'; # attempt to crE8 non-XistNt log-directory in User's ~ && setup DicLogFileName
 my $ppcf=1; # setup new parameter -c to override default of coloring output with pickedProfileC8ColorCodezFlag to be cleared 2 just use normal non-Prof colrz;
 if(@ARGV){for(my $andx=$#ARGV;$andx>=0;$andx--){if($ARGV[$andx]=~ /^-?-?c$/){$ppcf=0;splice(@ARGV,$andx,1);}}}
-#y($R,$O,$o,$Y,$G)=(S($cmsp{'d8bo'}[0]),S($cmsp{'d8bo'}[1]),S($cmsp{'d8bo'}[1]),S($cmsp{'d8bo'}[2]),S($cmsp{'d8bo'}[3])); # temp remap base-level 8bow singlez with curNt d8bo;
-#y($C,$B,$M,$P,$p)=(S($cmsp{'d8bo'}[4]),S($cmsp{'d8bo'}[5]),S($cmsp{'d8bo'}[6]),S($cmsp{'d8bo'}[7]),S($cmsp{'d8bo'}[7])); # just S on cmsp might not get FDAL layr or SGRz in d8cl;
-my($R,$O,$o,$Y,$G, $C,$B,$M,$P,$p)=($R,$O,$o,$Y,$G, $C,$B,$M,$P,$p); # just initialize my own copies of the original a8.pm exportz in case default prOfIl colrz RUzdBlO;
-  ($R,$O,$o,$Y,$G, $C,$B,$M,$P,$p)=($d8cS[0],$d8cS[1],$d8cS[1],$d8cS[2],$d8cS[3], $d8cS[4],$d8cS[5],$d8cS[6],$d8cS[7],$d8cS[7]) if($ppcf); # hopefully tmp lOd pickd-prOfIl-c8colrz;
+#y($R,$O,$o,$Y,$G)=(S($cmsp{'d8bo'}[0]),S($cmsp{'d8bo'}[1]),S($cmsp{'d8bo'}[1]),S($cmsp{'d8bo'}[2]),S($cmsp{'d8bo'}[3])); # tmprEmap bAslvl8bOsnglz wicur d8bo;
+#y($C,$B,$M,$P,$p)=(S($cmsp{'d8bo'}[4]),S($cmsp{'d8bo'}[5]),S($cmsp{'d8bo'}[6]),S($cmsp{'d8bo'}[7]),S($cmsp{'d8bo'}[7])); # just S on cmsp mIt!get FDAL orSGRz;
+my($R,$O,$o,$Y,$G, $C,$B,$M,$P,$p)=($R,$O,$o,$Y,$G, $C,$B,$M,$P,$p); # just init own copies of the original a8.pm exportz in case default prOfIl colrz RUzdBlO;
+  ($R,$O,$o,$Y,$G, $C,$B,$M,$P,$p)=($d8cS[0],$d8cS[1],$d8cS[1],$d8cS[2],$d8cS[3], $d8cS[4],$d8cS[5],$d8cS[6],$d8cS[7],$d8cS[7]) if($ppcf); # hopefully tmp lOd;
 open my $out8,'>&',STDOUT or die "Can't open  duplic8 STDOUT handle: $!";                            binmode $out8,':encoding(UTF-8)'; # crE8 local duplic8
 unless(    -e $dlfn){ # initialize dic log "history" file if none existz
   open     my $dlfh,'>' ,$dlfn or die "!*EROR*! Couldn't open  dic log file:$dlfn for writing! $!\n";binmode $dlfh,':encoding(UTF-8)';

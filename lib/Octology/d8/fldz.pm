@@ -2,7 +2,7 @@
 package    Octology::d8::fldz;
 use strict;use warnings;use utf8;use v5.10;
 use vars qw( $AUTOLOAD );
-my $VERSION='0.0';my $d8VS='L11L9Fls';
+my $VERSION='0.0';my $d8VS='L87MIPet';
 use overload
   q("") => sub{ # anonymous verbose fldz stringify()
              my @fdat=$_[0]->YMDzhmsp();
@@ -17,12 +17,12 @@ use Octology::b8;
 use Carp;my @d8bo=split(//,$cmap{'d8bo'}); # setup what was a8.pm ColorMAP originally for pal8, then 8bow, then d8bo here (were RoYGCBMp B4 YGTBUDSN);
        # my @d8bl=split(//,$cmap{'d8bl'}); # setup FDAL layerz 2;
        # my @d8bs=split(//,$cmap{'d8bs'}); # setup SGR  planez 2;
-my $locl=eval("use Time::Local           ; 1") || 0; # 2nd d8bo was:  Yellow, Green, Turquoise, Blue,   bisqUe, oliveDrab, Skyblue, Navy;
+my $locl=eval("use Time::Local           ; 1") || 0;
 my $hirs=eval("use Time::HiRes qw(usleep); 1") || 0; # hopefully usleep or nanosleep can be loaded like this
-my   @_attrnamz=split(//,'YMDzhmsp');my %_attrdflt=();$_attrdflt{$_    }=  0 for(@_attrnamz); # ordered attribute names array && default value (0) hash
-push(@_attrnamz,'_pps'             );   $_attrdflt{'_pps'              }= 60; # r8io of phasses-per-second
-push(@_attrnamz,'_time_separator'  );   $_attrdflt{'_time_separator'   }=':'; # might utilize these fields for more configurable printing l8r
-push(@_attrnamz,'_date_separator'  );   $_attrdflt{'_date_separator'   }='-'; # might utilize these fields for more configurable printing l8r
+my   @_attrnamz=split(//,'YMDzhmspet');my %_attrdflt=();$_attrdflt{$_    }=  0 for(@_attrnamz); # ordered attribute names array && default value (0) hash
+push(@_attrnamz,'_pps'               );   $_attrdflt{'_pps'              }= 60; # r8io of phasses-per-second
+push(@_attrnamz,'_time_separator'    );   $_attrdflt{'_time_separator'   }=':'; # might utilize these fields for more configurable printing l8r
+push(@_attrnamz,'_date_separator'    );   $_attrdflt{'_date_separator'   }='-'; # might utilize these fields for more configurable printing l8r
 my %_fielclrz=( # global field color codes in a hash of arrays
   'c' => [       $d8bo[0] ,          # Year    c8 col8 colr codz
                  $d8bo[1] ,          # Month   # K5IMMUOl:s/RoMp/Newz/;
@@ -31,7 +31,9 @@ my %_fielclrz=( # global field color codes in a hash of arrays
                  $d8bo[4] ,          #  hour
                  $d8bo[5] ,          #  minute
                  $d8bo[6] ,          #  second
-                 $d8bo[7] ],         #  phass
+                 $d8bo[7] ,          #  phass
+                 $d8bo[0] ,          #  epoch
+                 $d8bo[2]],          # time
   '4' => [            '0c',          # Year    4NT # stil nEd2 YGTBUDSN 4hw
                       '06',          # Month
                       '0e',          # Day
@@ -39,7 +41,9 @@ my %_fielclrz=( # global field color codes in a hash of arrays
                       '0b',          #  hour
                       '09',          #  minute
                       '0d',          #  second
-                      '05'],         #  phass
+                      '05',          #  phass
+                      '0c',          #  epoch
+                      '0e'],         # time
   'h' => [          '_6A_',          # Year    web (Html) dRk h (2du: fil in l8r wi a8:drkh() mAB as RGBl form nstd of HEX
                     '_UA_',          # Month
                     '__6_',          # Day
@@ -47,7 +51,9 @@ my %_fielclrz=( # global field color codes in a hash of arrays
                     '6___',          #  hour
                     '6U__',          #  minute
                     'k6__',          #  second
-                    'U2l_'],         #  phass
+                    'U2l_',          #  phass
+                    '_6A_',          #  epoch
+                    '__6_'],         # time
   'w' => [        'FF1B2B',  #'_6A_' # Year    web (HTML)
                   'FF7B2B',  #'_UA_' # Month
                   'FFFF1B',  #'__6_' # Day
@@ -55,7 +61,9 @@ my %_fielclrz=( # global field color codes in a hash of arrays
                   '1BFFFF',  #'6___' #  hour
                   '1B7BFF',  #'6U__' #  minute
                   'BB1BFF',  #'k6__' #  second
-                  '7B0BBF'], #'U2l_' #  phass
+                  '7B0BBF',  #'U2l_' #  phass
+                  'FF1B2B',  #'_6A_' #  epoch
+                  'FFFF1B'], #'__6_' # time
   'a' => [     $d8cS[0],          # Year    ANSI (calling a8:S to gener8 SKp codez)
                $d8cS[1],          # Month
                $d8cS[2],          # Day
@@ -63,7 +71,9 @@ my %_fielclrz=( # global field color codes in a hash of arrays
                $d8cS[4],          #  hour
                $d8cS[5],          #  minute
                $d8cS[6],          #  second
-               $d8cS[7]],         #  phass
+               $d8cS[7],          #  phass
+               $d8cS[0],          #  epoch
+               $d8cS[2]],         # time
   'z' => ["%{".$d8cS[0]."%}",     # Year    zsh (wrapping ANSI)
           "%{".$d8cS[1]."%}",     # Month
           "%{".$d8cS[2]."%}",     # Day
@@ -71,7 +81,9 @@ my %_fielclrz=( # global field color codes in a hash of arrays
           "%{".$d8cS[4]."%}",     #  hour
           "%{".$d8cS[5]."%}",     #  minute
           "%{".$d8cS[6]."%}",     #  second
-          "%{".$d8cS[7]."%}"],);  #  phass  # below try2only use new exclusively dflt Bold colrs from 256 palette where they are supported
+          "%{".$d8cS[7]."%}",     #  phass
+          "%{".$d8cS[0]."%}",     #  epoch
+          "%{".$d8cS[2]."%}"],);  # time    # below try2only use new exclusively dflt Bold colrs from 256 palette where they are supported
 if(exists($ENV{'DISPLAY'}) || (exists($ENV{'TERM'}) && $ENV{'TERM'}=~ /^(sakura|u?rxvt|st|u?xterm)/ && $ENV{'TERM'} ne 'linux')){$_fielclrz{'a'} = [
   # maybe there are yet better ways to detect when most likely wanting colors from the full-screen text console(in.zshrc?) or betr thngz mising?
                $d8cS[0],          # Year    ANSI (calling a8:S to gener8 SKp codez)
@@ -81,7 +93,9 @@ if(exists($ENV{'DISPLAY'}) || (exists($ENV{'TERM'}) && $ENV{'TERM'}=~ /^(sakura|
                $d8cS[4],          #  hour
                $d8cS[5],          #  minute
                $d8cS[6],          #  second
-               $d8cS[7]];         #  phass
+               $d8cS[7],          #  phass
+               $d8cS[0],          #  epoch
+               $d8cS[2]];         # time
   $_fielclrz{'z'} = [
           "%{".$d8cS[0]."%}",     # Year    zsh (wrapping ANSI)
           "%{".$d8cS[1]."%}",     # Month
@@ -90,7 +104,9 @@ if(exists($ENV{'DISPLAY'}) || (exists($ENV{'TERM'}) && $ENV{'TERM'}=~ /^(sakura|
           "%{".$d8cS[4]."%}",     #  hour
           "%{".$d8cS[5]."%}",     #  minute
           "%{".$d8cS[6]."%}",     #  second
-          "%{".$d8cS[7]."%}"]; }  #  phass
+          "%{".$d8cS[7]."%}",     #  phass
+          "%{".$d8cS[0]."%}",     #  epoch
+          "%{".$d8cS[2]."%}"]; }  # time
 sub _default_value{my($self,$attr)=@_;$_attrdflt{$attr}} # methods
 sub _attribute_names{@_attrnamz}
 sub _Time_Local{$locl} # can Time::Local be used?
@@ -224,17 +240,17 @@ sub  all    {my $self=shift;return($self->YMDzhmsp(@_));}
 sub     dt  {my $self=shift;return($self->YMDzhmsp(@_));}
 sub datetime{return(sprintf("%04d-%02d-%02dT%02d:%02d:%02d",$_[0]->YMDhms()));} # 2000-02-29T12:34:56 (ISO 8601)
 sub time_separator{$_[0]->{'_time_separator'}=$_[1] if(@_>1); # set the default separator (default ":")
-  return($_[0]->{'_time_separator'});}
+  return(          $_[0]->{'_time_separator'});}
 sub date_separator{$_[0]->{'_date_separator'}=$_[1] if(@_>1); # set the default separator (default "-")
-  return($_[0]->{'_date_separator'});}
+  return(          $_[0]->{'_date_separator'});}
 sub day_list{my $self=shift; # set the default weekdays
-  return(Time::DayOfWeek::DayNames(@_));}
+  return(Time::DayOfWeek::DayNames(  @_));}
 sub mon_list{my $self=shift; # set the default months
   return(Time::DayOfWeek::MonthNames(@_));}
 sub AUTOLOAD{ # methods (created as necessary)
   no strict 'refs';
   my($self,$nwvl)=@_;
-  if    ($AUTOLOAD=~ /.*::([YMDzhmsp][YMDzhmsp]+)$/i){ # all joint field methods (eg. YMD, mdy, hms(), etc.)
+  if    ($AUTOLOAD=~ /.*::([YMDzhmspet][YMDzhmspet]+)$/i){ # all joint field methods (eg. YMD, mdy, hms(), etc.)
     my @fldl=split(//,$1);
     my($self,@nval)=@_;my @rval=();my $atnm='';my $rgex;
     for(my $i=0;$i<$#fldl;$i++){ # handle Month / minute exceptions
@@ -252,7 +268,7 @@ sub AUTOLOAD{ # methods (created as necessary)
         if(lc($attr)eq 'm'){if($fldl[$i]=~ /^$attr/ ){$self->{$attr}=$nval[$i] if($i<@nval);push(@rval,$self->{$attr});}}
         else               {if($fldl[$i]=~ /^$attr/i){$self->{$attr}=$nval[$i] if($i<@nval);push(@rval,$self->{$attr});}}}
     }return(@rval);
-  }elsif($AUTOLOAD=~ /.*::_?([YMDzhmsp])(.)?/){ # sweeping matches to handle partial keys, should probably be case-insensitive again l8r
+  }elsif($AUTOLOAD=~ /.*::_?([YMDzhmspet])(.)?/){ # sweeping matches to handle partial keys, should probably be case-insensitive again l8r
     my($atl1,$atl2)=($1,$2);my $atnm;
     $atl1='M' if($atl1 eq 'm'&& defined($atl2)&& lc($atl2)eq 'o');
     $atl1='m' if($atl1 eq 'M'&& defined($atl2)&& lc($atl2)eq 'i');

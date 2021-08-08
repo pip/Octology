@@ -1,5 +1,5 @@
 # HBQLISTV:know.ls crE8d by PipStuart <Pip@CPAN.Org> to duplic8 Dr. Jordan B. Peterson's Quora.Com answer of "40 most valuable things everyone should know";
-# $VERSION='0.0';$d8VS='L7IMHIGH'; # While this document origin8d around (&& still mainly intends to focus on) Dr. Peterson's knowledge, many others fE8ure;
+# $VERSION='0.0';$d8VS='L7LMDick'; # While this document origin8d around (&& still mainly intends to focus on) Dr. Peterson's knowledge, many others fE8ure;
 # 2du:start chronicling Dr. Peterson's many topical videos with new section for post-title subject summaries or explor8ion;
 0)"Tell the truth."                                            K) Ask someone to do you a small favour, so that he or she can ask you to do one in the future.
 1) Do not do things that you h8.                               L)"Make friends with people who want the best for you."
@@ -1020,3 +1020,23 @@ L7GMCaus:HTTPS://YouTu.be/FGH5o-3fNRY "The Laws of Physics May Change with Time 
 L7HMIrth:HTTPS://YouTu.be/-tSovkMfH5I "Origin of Life on Irthe | Sara Walker" # L7D:08B0 of LexFridman && gr8 life emerging continuously && shadow-biosphere?;
 L7IM5th4:HTTPS://YouTu.be/N79rTxce6bI "What's the Fifth Force?" # L7H:03X0 of SabineHossenfelder on GenRel8ivGrav,ElectroMagntic,Strong&&WeakNuclear,&&new4c?;
 L7IMETHI:HTTPS://YouTu.be/ojjzXyQCzso "Why Aren't You Making Meth Videos? (Also, Now There's a 3b1b PodCast)" # L7G:0OK0 of GrantSanderson on SoME1 4 d8:L8M?;
+L7KMDice:HTTPS://YouTu.be/kviwvLpnZSY "Hidden Dice Faces" # L6E:0AP0 of NumberPhile's BenSparks explaining BinarySearch while Blindfolded,Showing Pip-Subsets;
+L7LMBPeh:HTTPS://YouTu.be/TgUAbPSuZ48 "CirCumCisIon in the Jewish Religion | Daniel-Fl | ThE ATheIst ExPerIEnce" # L7H:0AI0 of MattDillAhunTy discussing awful
+#  MetzitzahB'Peh (MBP) A.K.A. Deadly "Oral-Suckage" (DOS) as ancient Talmudic tradition mostly still practiced by OrthoDox HareDi JewIsh moHelIm(+RevDragon);
+L7LMCmpU:HTTPS://YouTu.be/QZwneRb-zqA "Exploring How CompUters Work" # KBG:0IB0 of SebastianLague with so-so intro, but rest of video seems to be quite solid;
+L7LMEven:HTTPS://YouTu.be/8t1TC-5OLdM "Is Zer0 Even?" # CC2:06h0 of NumberPhile on LeonardoDePiza ("Fibonacci"?) 12thCentury (or l8r 9thCent?) inventing Zer0,
+#   to represent not "nothing" (but yes, "Naught") for counting flowers (since no sheep or plow-shares don't make "sense", but "five-ness" does to me) && also
+#   Arabic numerals didn't contain Zer0 originally but supposedly BavL (.Org er, Babylonians had a "space" or underscore/low-bar/low-bass) && Zer0 mAB EvN 4NE
+#   dFinition (almost!). Also apparently introduction of Zer0 made mathematics "understood" by "everyone" (but probably "everynone" would be more correct)! ;)
+L7QMDill:HTTPS://YouTu.be/WqHVqsDZgJ4 "Pascal's Wager, No True Christian, Morality | Matthew - NC | Atheist Experience 21.19" # H62:0SI0 of JenPeeples && Matt
+#   Dillahunty strangely switching dude's name to "James?!" with Jen here, but totally p0wning f8th letting you believe anything hoped for && giving some full
+#  -throated declR8ions about any form of slavery being an unchallengeable abomin8ion && always purely immoral. I beg 2 differ. Slavery could become extremely
+#   moral, ethical, desirable, preferrable, etc. ahead someDay, someHow, even if it never quite has been prior. I think wives should possibly be man-property;
+L7VM7Ru2:HTTPS://YouTu.be/5sKah3pJnHI "Root 2" # C2R?:08m0 of NumberPhile discussing Pythagorean-Theorem, irr8ional-numbers, && proportions of paper as Root2.
+# Around dur8:03d0 ProfessorRogerBowley explains how harmonious musical notes are achieved with instrument string half-lengths (&& double-lengths), coinciding
+#   with my growing confidence that doubles && halves are generally more fundamental than add && subtract arithmetic. Around dur8:04L0 Prof.Bowley tells about
+#   Hippasus (containing my 8-shell 'H' with 'Pip' && 'Asus' which are 3 of my HD1080p monitors) who discovered irr8ionals && was drowned at sea, or abandoned
+#   on an island for it. Dr.JamesGrime says "irr8ional-numbers were a new thing that went on forever!" which I dispute. Then around dur8:05V0 Prof.RogerBowley
+#   says "[Hippasus] was one of the first people to be persecuted for proving people wrong with their previous ideas." && he continues around dur8:06Y0 saying
+#  "If you come up with an idea which is right, but goes against conventional wisdom, you can be sent to a desert island, or burnt at the stake, or executed,"
+#  "  because people don't like their ideas about how the world should be upset, even if you can [prove] it!" which I think PhipAlexStus here can reson8 with;

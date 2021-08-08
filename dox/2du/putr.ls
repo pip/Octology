@@ -1,14 +1,15 @@
-# E4TMAL2W:/home/pip/dox/2du/putr.ls crE8d by PipStuart <Pip@CPAN.Org> as main doQmNt 4 DtAling what compUter hRdware && rel8d EquipmNt sEmz bSt 2 buy nXt;
-# ~/dox/putr/ contains more general computer hardware or software document8ion as well as my machine-specific directories && configur8ions;
-# Note: This file (similar to my current tabz.ls file) goes against my typical preference to append new details, prepending new insertions here instead;
+# E4TMAL2W:/home/pip/dox/2du/putr.ls crE8d by PipStuart <Pip@CPAN.Org> as main doQmNt 4 DtAling what compUter hRdware && rel8d EquipmNt sEmz bSt 2try2 buy nXt;
+# ~/dox/putr/ contains more general computer hardware or software document8ion as well as my machine-specific directories && configur8ions;my $d8VS='L7UM9in9';
+# Note: This file (similar to my current tabz.ls file) goes against my typical preference to append new details, prepending new insertions @head here instead;
+L7UM9FT9: Oni aded bep 2 smbshr, dokr, &&? ;) grpz && had tss:x:143:$ (with weird full blank-line up2 far \n), vboxsf:x:144:$,vde2-net:x:145:$, vboxusers:146;
 L5SMKASD: Try 2 remember that whenever Oni (or presumably also Akuma, Ryu, or Ken too) starts getting terrible static from PulseAudio, calling `kasd` may fix;
 L35LLogi: NewEgg sale 4 3-more-days $146 (orig. $166) LogiTech Z625 2.1THX (980-001258), 35WattS@LItz, 130WattSub, 200WattRMS/400WattPeak, came-out on d8:GCF;
 L35LCors: 2ndCorsAirSP2500 sub dies && Head-Fi.Org && LinusTechTips forums had:ck Controller,Cables,Fuse,PowerSupply,Capacitors,Diodes,Wires,&&C903 3843GM-E1;
-K23L7MEM: NewEggOrder#:473048473 SeaGate FireCuda 520 M.2 2280 500GB PCIe Gen4 x4, NVMe 1.3 3D TLC Internal Solid State Drive (SSD) ZP500GM3A002 made today;
+K23L7MEM: NewEggOrder#:473048473 SeaGate FireCuda 520 M.2 2280 500GB PCIe Gen4 x4, NVMe 1.3 3D TLC Internal Solid State Drive (SSD) ZP500GM3A002 made on 2Day;
 K21LAsus: Maga today ordered me a new $190 Asus VG24VQ curved 144Hz monitor (with no DVI this time,but still has speakers,headphone jack,2HDMI && 1DP inputz);
-K15LKNEW: For rebuilding Chun from Ubu19.04 had to `sudo bash;apt update;apt install zsh vim git ncurses\*;exit` then `mkdir /home/pip/dox;cd /home/pip/dox`,
-  `mkdir putr;cd putr;rsync -av pip@192.168.8.17:dox/putr/RsynCore.ls .;rsync -avr --files-from=dox/putr/RsynCore.ls pip@192.168.8.17: .` && w8 hours 4 sync,
-  then `chsh pip` with /usr/bin/zsh then rsync && `vim /etc/hosts /etc/default/grub` to replace Oni entries with Chun && rm 'quiet splash'; `update-grub;x` ,
+K15LKNEW: For rebuilding Chun from Ubu19.04 had to `sudo bash;apt update;apt install zsh vim git ncurses\*;exit` then `mkdir /home/pip/dox;cd /home/pip/dox `,
+  `mkdir putr;cd putr;rsync -av pip@192.168.8.17:dox/putr/RsynCore.ls .;rsync -avr --files-from=dox/putr/RsynCore.ls pip@192.168.8.17: . ` && w8 hours 4 sync,
+  then `chsh pip` with /usr/bin/zsh then rsync && `vim /etc/hosts /etc/default/grub` to replace Oni entries with Chun && rm 'quiet splash'; `update-grub; x `,
   && `ai unity-tweak-tool darkcold-gtk-theme` so that I could run the former && pick the latter as good theme, as well as 'Humanity-dark' familiar icon-theme,
   `ai xclip indicator-multiload` to start configuring top-menu-bar with 63 or 127 pixels && 511 milliseconds upd8 interval && choose Traditional color scheme;
 J1HL8888: PrIoriTz:'ASRXTU QVL RAM,SSD',CybrPowr b@rEz,MicroSDXC 5pax+IOGearUSB3rEdrz,AsusVG279Q,bStlongDPKblz,XFX RX580 XXX,spkrz,Juri laptop,DasKybd,SlmBld;

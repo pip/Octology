@@ -5,23 +5,18 @@ require      Octology::d8::fldz;
 use base qw( Octology::d8::fldz );
 use          Octology::b8;
 use          Carp;
-my $VERSION='0.0';my $d8VS='GAVMA7ku';
-use constant ONE_MINUTE          => '1 min';                  #         60;
-use constant ONE_HOUR            => '1 hour';                 #      3_600;
-use constant ONE_DAY             => '1 day';                  #     86_400;
-use constant ONE_WEEK            => '1 week';                 #    604_800;
-use constant ONE_REAL_MONTH      => '1 month';                #        '1M';
-use constant ONE_REAL_YEAR       => '1 year';                 #        '1Y';
-use constant ONE_MONTH           => '1 average month';        #  2_629_744;
-                                                               # ONE_YEAR / 12
-use constant ONE_FINANCIAL_MONTH => '1 financial month';      #  2_592_000;
-                                                               # 30 days
-use constant ONE_YEAR            => '1 average year';         # 31_556_930;
-                                                               # 365.24225 days
-use constant LEAP_YEAR           => '1 leap year';            # 31_622_400;
-                                                               # 366 * ONE_DAY
-use constant NON_LEAP_YEAR       => '1 nonleap year';         # 31_536_000;
-                                                               # 365 * ONE_DAY
+my $VERSION='0.0';my $d8VS='L87MDAYS';
+use constant ONE_MINUTE          => '1 min'               ;   #         60;
+use constant ONE_HOUR            => '1 hour'              ;   #      3_600;
+use constant ONE_DAY             => '1 day'               ;   #     86_400;
+use constant ONE_WEEK            => '1 week'              ;   #    604_800;
+use constant ONE_MONTH           => '1 average '  .'month';   #  2_629_744;  # ONE_YEAR / 12;
+use constant ONE_FINANCIAL_MONTH => '1 financial '.'month';   #  2_592_000;  #  30 *     days
+use constant ONE_REAL_MONTH      => '1 '          .'month';   #       '1M';
+use constant ONE_REAL_YEAR       => '1 '          .'year' ;   #       '1Y';
+use constant ONE_YEAR            => '1 average '  .'year' ;   # 31_556_930;  # 365.24225 days
+use constant     LEAP_YEAR       => '1 '.'leap '  .'year' ;   # 31_622_400;  # 366 * ONE_DAY;
+use constant NON_LEAP_YEAR       => '1 nonleap '  .'year' ;   # 31_536_000;  # 365 * ONE_DAY;
 use overload
   q("")  => \&_stringify,
   q(<=>) => \&_cmp_num,
@@ -62,7 +57,7 @@ sub _add{
      (ref($rarg)&& $rarg->isa('Octology::d8'))){
     $rslt=$larg+$rarg; # pass off calculation to d8.pm
   }else{
-    $rslt=Octology::d8::dur8->new();
+    $rslt=Octology::d8::dur8->new(); # 2du:maybe also attempt to handle math on orig 't' HiRes::time() epoch float secs && 'e' specified epoch fsecs too?;
     $rslt->{'p'}=$larg->p+$rarg->p;
     $rslt->{'s'}=$larg->s+$rarg->s;
     $rslt->{'m'}=$larg->m+$rarg->m;
