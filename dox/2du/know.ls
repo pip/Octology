@@ -1,5 +1,5 @@
 # HBQLISTV:know.ls crE8d by PipStuart <Pip@CPAN.Org> to duplic8 Dr. Jordan B. Peterson's Quora.Com answer of "40 most valuable things everyone should know";
-# $VERSION='0.0';$d8VS='L7LMDick'; # While this document origin8d around (&& still mainly intends to focus on) Dr. Peterson's knowledge, many others fE8ure;
+# $VERSION='0.0';$d8VS='L8MMINFI'; # While this document origin8d around (&& still mainly intends to focus on) Dr. Peterson's knowledge, many others fE8ure;
 # 2du:start chronicling Dr. Peterson's many topical videos with new section for post-title subject summaries or explor8ion;
 0)"Tell the truth."                                            K) Ask someone to do you a small favour, so that he or she can ask you to do one in the future.
 1) Do not do things that you h8.                               L)"Make friends with people who want the best for you."
@@ -1040,3 +1040,6 @@ L7VM7Ru2:HTTPS://YouTu.be/5sKah3pJnHI "Root 2" # C2R?:08m0 of NumberPhile discus
 #   says "[Hippasus] was one of the first people to be persecuted for proving people wrong with their previous ideas." && he continues around dur8:06Y0 saying
 #  "If you come up with an idea which is right, but goes against conventional wisdom, you can be sent to a desert island, or burnt at the stake, or executed,"
 #  "  because people don't like their ideas about how the world should be upset, even if you can [prove] it!" which I think PhipAlexStus here can reson8 with;
+L8MMANIA:HTTPS://YouTu.be/uO6FugTlaxs "WOTM: Jordan Peterson Must Be a Genocidal Maniac" # L2O:06s0 of MisterDeity (BrianDalton) slashing JP's RATSLAGR apart;
+L8MMDrug:HTTPS://YouTu.be/xOItnbkArxk "Jesus && Psychedelics in Ancient Times | Brian Muraresku" # L8G:0FG0 of LexFridman && BrianM. on early Christian drugs;
+L8MMINFI:HTTPS://YouTu.be/CbFDtpEK82s "Infinity is Fake: The Base Layer of Reality is Discrete | Joscha Bach" # L8M:06u0 of LexFridman && JoschaB. say NoInf!;

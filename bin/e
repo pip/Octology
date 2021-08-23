@@ -1,2 +1,0 @@
-#!/usr/bin/perl
-use strict;use warnings;use utf8;use Octology::a8;o8(    e(@ARGV));

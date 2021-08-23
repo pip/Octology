@@ -51,7 +51,7 @@
 #   Octo is 8base d8a applic8ions:V8 abbreV8ions,b8 nums,d8 stamps,f8 RU(Red)E4||2lern8bow?pal8NtrE RGB && f0nt -##-,c8 col8 scrn,r8 valU8,m8 rel8,l8 skedul8r?
 use strict;use warnings;use utf8;use v5.10;use Encode;
 use Octology::a8;#se Octology::c8;
-use Octology::b8;use Octology::d8;my $VERSION='0.0';my $d8VS='L5TMHEAL';my $name=$0;$name =~ s/^.*\///;my $Dbug=0; # version,program name
+use Octology::b8;use Octology::d8;my $VERSION='0.0';my $d8VS='L8MMKing';my $name=$0;$name =~ s/^.*\///;my $Dbug=0; # version,program name
 open my $out8,'>&',STDOUT or die "Can't open  duplic8 STDOUT handle: $!";binmode $out8,':encoding(UTF-8)';select($out8);$|=1; # crE8 locl autoflush dup of glbl
 if(           @ARGV && $ARGV[0]=~ /^-*h/i){say $out8 " ckm8  - experimental   Curses and SDL Chess program  Vers:$VERSION  d8VS:$d8VS by Auth:$Auth
   <pW>v<pK>  sets roster tags for Players White and BlacK and for output filename where pW and pK are single-letter keys in the player registry hash (v optnal)
@@ -145,17 +145,17 @@ if(      2 <= @ARGV && $ARGV[0]=~ /^-*b/i){my $xcbd=decode('UTF-8',$ARGV[1]);if(
 #knighT      ♘ Timmy   Trotter    pawn E    ♙ Evan    EvergrEn        pawn e    ♟ exon   evil      knight      ♞ trina   trample
 #    rOok    ♖ Orville Olive      pawn F    ♙ Fran    Fire            pawn f    ♟ fiona  frost         rook    ♜ oden    operose
 my %Pnmz =('P'=>['     PimP  ','Poploly','Phatty  '],  # could pick random 8th of: 'PYROpyro' keyz to produce constant Pip promotions along with plyz;
-           'p'=>['     Phawn ','Peppy  ','Power   '],  # 2du:mk PawnPip auto-exchange positions whenever captured, so I&&KingKen keep each othr alive;
+           'p'=>['     Phawn ','Peppy  ','Phallus '],  # 2du:mk PawnPip auto-exchange positions whenever captured, so I&&KingKen keep each othr alive;
            'Y'=>['Pyro-maniac','Pip    ','Phoenix '],  # Phlame && phire phrom phuel pressing powdered product to produce plumes of amPhetamine vaPor;
            'y'=>['Pyro-techno','Pippi  ','Peerless'],
            'R'=>['Presidente ','Phelipe','Primero '],  # Phallic Pito, Penocha Puss, y Puta ... con todos del Phuego!  ;)  L8r add Phil Pants or Pi8?;
-           'r'=>['President  ','Pepper ','Pickle  '],
+           'r'=>['Pervertoid ','Pepper ','Prickle '],
            'O'=>['Pour-king  ','Pepe   ','Porter  '],  # these actually indic8 that I'm being promoted 2 essentially primary King,but playin it priv8;
            'o'=>['Purr-king  ','Papa   ','Petting '],);
 my %pnam =('R'=>['     Rook  ','Rachel ','Roost   '],  # now lots of names from more extended family: uncles, aunts, cousins, nephews, nieces, pets...
            'I'=>['   knIght  ','Isaac  ','Isle    '],  #   ...leaving only a handful of first names now unoccuppied by rel8ives in some 4m or another;
            'B'=>['     Bishop','Beppu  ','Blaksmth'],  # or Bright or Brave or Balls or Boner or Brash or Badass or Beast or Bruiser or BigBud or Bit;
-           'K'=>['     King  ','Kenwolf','Knowing '],
+           'K'=>['     King  ','Kyle   ','Kindling'],  ## 'kilgore '],
            'Q'=>['     Queen ','Quill  ','Quest   '],
            'S'=>['   biShop  ','Stuart ','Smith   '],
            'T'=>['knighT     ','Timmy  ','Trotter '],  # Tim promoted as sole exception to gendered start square color && side (Bfore Emerson joined);
@@ -179,7 +179,7 @@ my %pnam =('R'=>['     Rook  ','Rachel ','Roost   '],  # now lots of names from 
            'r'=>['     rook  ','rosann ','rosary  '],  # demoted Rosie to the dark-side along with Maga as now just a DarkDot punctu8ing pd last-name;
            'i'=>['   knight  ','ivan   ','injury  '],
            'b'=>['bleedbishop','broken ','boxstein'],  # David, Edith, && DaughterChoker should go broke paying me back 4all they stole in Jan.2009! ;
-           'k'=>['     king  ','kyle   ','kilgore '],  ##  4 above, I've wanted pay-back && property-restor8ion,B4 chopd right thumbs && crucifiX3ion;
+           'k'=>['     king  ','kenwolf','kidrey-p'],  ##  4 above, I've wanted pay-back && property-restor8ion,B4 chopd right thumbs && crucifiX3ion;
            'q'=>['     queen ','quartz ','quasher '],
            's'=>['sinbishopsx','s8n-s0n','slayersx'],  # soundz lIk:"Satan's Own Lair" or Slayer of s8n-s0n but actually just this biShop's 1st&&last;
            't'=>['knight     ','tony   ','trample '],
@@ -966,9 +966,12 @@ sub Pr4mPcMv{ # default mv pikd 2 sele in bord
   }elsif(substr($pbrd,$psel,1) eq 'O'){           $crmf[1] = '-' if($ugbf);
   }elsif(substr($pbrd,$psel,1) eq 'r'){$crmf[2] =            '-' if($ugbf);
   }elsif(substr($pbrd,$psel,1) eq 'o'){           $crmf[3] = '-' if($ugbf);}
+  if    ($scpc =~ /^P$/){ # try2mk my PipiPawn auto-swp && Bcom uncapturable... Muhahaha!  ;)
+  substr(       $pbrd,$ppik,1,'P'); # probably want to $xmdf='P' or some other symbol to indic8 my Piece wasn't a normal capture;
+  substr(       $pbrc,$ppik,1,'P');}else{ # also want to auto-promote to Queen if swapping into back-row (easier than allowing non-4wRd mvz);
   substr(       $pbrd,$ppik,1,'_');
   substr(       $pbrd,$ppik,1,'.') if(substr($bbrd,$ppik,1) eq 'k');
-  substr(       $pbrc,$ppik,1,        substr($bbrd,$ppik,1)       );
+  substr(       $pbrc,$ppik,1,        substr($bbrd,$ppik,1)       );}
   if($ugbf){$bord = $pbrd;$borc = $pbrc; # try to tst 4 ck on oppo King at $awkl or king at $akkl now after mv done
     my $ptyp = $n2tm{substr($bord,$sele,1)};my $psyd = 'W';$psyd = 'k' if($ptyp eq lc($ptyp));my $pccf = 0;my $ocmf = 0; # PcCanCkFlag && OpponentCanMvFlag
     for my $tndx (0..63){ # loop thru bord to first find Actual black&&White King Loc8ionz

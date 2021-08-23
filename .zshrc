@@ -30,7 +30,7 @@ unsetopt                \
 # auto_pushd            \# setng addz dirz 2 stack wN just normally chngng 2 thM (wich I du not normally lIk or want)
 # ksh_arrays            \# rEmMbr wNwrItng scrptz[or funcz]2include'setopt [localoptions] ksharrays'sO arAzR 0-bAsed(but!glOblBcuzmOst scrptzRstndrdly 1-bAsed)
 # re_____match_____pcre \# mA want2set for Z-SHell scripting RegularExpressions to utilize PerlCompatibility styles && mA insert 'zmodload zsh/(pc)?re(gex)?';
-export Vers='0.0';export d8VS='L87MFULL';export Auth='PipStuart <Pip@CPAN.Org>'; # not Xportng $b sinc cOlIdz wi sort{$a <=> $b} /defhijlnqstuvx/i + AZ 4golf;
+export Vers='0.0';export d8VS='L8MMMM8L';export Auth='PipStuart <Pip@CPAN.Org>'; # not Xportng $b sinc cOlIdz wi sort{$a <=> $b} /defhijlnqstuvx/i + AZ 4golf;
 if     [[       "$SHELL"    == "" ]]; then       export SHELL=` which  zsh`;fi   # 8sh should parse this && OverId it    # shud `man zshall` /OSTYP 2lern4BlO
 if     [[       "$HOSTNAME" == "" ]]; then       export HOSTNAME=`hostname`;fi   #`hostname`retnz fsckd nwlInz\n4CygWinzRxvt... ||smthng els lame  =(
 if     [[       "$HOST"     == "" ]]; then       export HOST   ="$HOSTNAME";fi;export VERBOSE='1'; # set flag to print debug && status info from system utilz
@@ -101,7 +101,7 @@ export  NVM_DIR="$HOME/.config/nvm"; # L6TMEXIC:strtd setngup GitHub nvm to run 
 export JAVA_HOME='/usr/lib/jvm/default-java';export LLVM_INSTALL_DIR='/usr/include/llvm';     # D7PM1TjA:upd8d4Ubu13.04&&ant4Android dvl 2add2pathBlO
 export NODE_VERSION='v10.16.0'; # J5BMGHVf:NodeJS installed into /usr/local/lib/nodejs/node-v10.15.3-linux-x64/ according to:  J6KM5W16:upd8d to LTS version;
 export NODE_DISTRO='linux-x64';alias  erd='expo r d80k';alias epd='expo p d80k'; #   HTTPS://GitHub.Com/nodejs/help/wiki/installation instructionz; r=start
-alias em='emacs';              alias xord='erd';  alias xopd='epd';alias xo='expo';  # used to prefer xo => expo, but 4-char is already short enuf; p=publish
+alias em='emacs';alias  e='em';alias xord='erd';  alias xopd='epd';alias xo='expo';  # used to prefer xo => expo, but 4-char is already short enuf; p=publish
 ulimit  -c 65536; # 33,553,920-bytes # setz coredump size limit2 32MB (4Dbugng) wher #-param is *512-byte blox or 'unlimited' canBUsed  # /opt/Qt5.13.1-pnp/bin
 typeset -U path ;path=($HOME/bin $HOME/.local/bin /usr/local/sbin /usr/sbin /sbin . $HOME/dvl/t8/node/node-$NODE_VERSION-$NODE_DISTRO/bin $HOME/.emacs.d/bin
   /usr/local/bin /usr/bin /bin /opt/bin $HOME/lib/perl5/bin $HOME/lib/Octology/f8/pal8 $HOME/dvl/t8/dmd/linux/bin $JAVA_HOME/bin $HOME/.vim/bundle/vim-superman/bin $path);
@@ -314,8 +314,9 @@ alias ac='apt-cache';alias acs='acS       ';alias agr='ag remove';alias agrm='ag
 alias ai='apt install';alias acsrch='ac search';alias au='apt update';alias auu='au;apt upgrade';alias acsp='ac showpkg';alias agri='ag reinstall'; #shOpkgDtlz
 alias apts='apt search';alias asrch='apts';alias aar='apt autoremove';alias ari='apt reinstall'; # alreD /usr/bin/as GNU ASsembler,shud stuD apt over ag 2add;
 alias   AS='apts   ';alias  aS='acS';alias goe='g -o export ~/.zshrc|wc -l'; # short altern8 aliasz 4 sepR8 apt && apt-cache srch cmndz 4 querying dpkg d8a;
-alias d6='en " 666+A gcaz KAKMAKoK"';alias 666='g    alias  ~/.zshrc|wc -l';alias gcaz='g -c alias ~/.zshrc'; # -Count; 666 lInzHazAFew2ManyNow?; 1333vs.1391;
-alias da='en "1333/2 goa  L1NL1333"';alias goa='g -o alias  ~/.zshrc|wc -l'; # -Onlym@ch; gca is alreD --color=auto sO abov nEded z but!goa; clOse2 8.utf^8wc;
+alias d6='en " 666+T=gc6 L8AMNION  "';alias 666='g    alias  ~/.zshrc|wc -l ';alias gc6='g -c alias ~/.zshrc'; # -Count; 666 lInzHaz:28 2ManyNow; 1384vs.1391;
+alias da='en "1333+r=goa L8AM1333/2"';alias goa='g -o alias  ~/.zshrc|wc -l '; # -Onlym@ch;gca is alreD --color=auto sO abov nEded z but!goa; clOse2 8.utf^8wc;
+alias a6='en "goe: ";goe;en "da :";da;ec ";";en "goa:";goa;en "d6 :";d6;ec ";";en "666: ";666;en "gc6: ";gc6'; # L8AMLIAS:a6 countz exportz&&aliasz4 .zsh* hEr;
 alias ali=' apt list             --installed';alias dli='dpkg -l'; # super basic commandz to use Apt or Dpkg(-query)? to List Installed packagez on Ubuntu or
 alias alim="aptitude search      '~i!~M' ";alias agiy='agi -y'; # shud just List pkgz wich were Instld Manually (!as DpNdNCz); /var/lib/apt/extended_states 2?
 alias calg="(zc \$(ls -tr /var/log/apt/history.log*.gz);cat /var/log/apt/history.log) 2>/dev/null|eg '^(Start-Date:|Commandline:)'|gv aptdaemon|
@@ -474,15 +475,15 @@ alias      GL='g3lt   '; # GoodLuck GodsLove GameLife GoneLong GrabLunch GetLadi
 mpls () {  mp $(ls $@|shfl); } # MPlayer listing paramz piped thru my basic shfl. Should eventually try to incorpor8 some perhaps more thorough -z -Z options;
 #lias    g3lt='cd; pu $mu;wh g3lt;gst123 -k  212 Oi*;g3 63 36 63 63 u*/El* ../f*/Bo*/T*/B* *br* c*/Gi* -v monoscope;ec;g3 ../wa*/Bo*/B*;ec;Hlt;ec;po';
 alias    g3lt='cd; pu $mu;wh g3lt;gst123 -k  212 Oi*;g3 63 36 63 63 u*/El* ../f*/Bo*/T*/B* *br* c*/Gi*             ;ec;g3 ../wa*/Bo*/B*;ec;Hlt;ec;po';
-alias     Hlt='g3  48 $mu/chl/Hack*Univ* -k 3420'; # add just 1st seconds of gr8 part 2 push above 4mins12secs right up against 5mins total 4 LightTalk;
-alias      HU='g3 188 $mu/chl/Hack*Univ* -k 3420 -v goom2k1'; # Fil_Far's HackrCodingMusic Universe awesome Nd-pRt2 -k --sKip 2 (57mins==`q 57x60`secs);
-           SC8() { d8=`d8`;lodH              >/tmp/S.H-$d8.ansi;sloc -b 262144 /tmp/S.H-$d8.ansi $gs/calN-160x50-K6GM*.ansi $gs/8plc-160x50-K6NMAPag.ansi;
+alias     Hlt='g3  48 $mu/chl/Hack*Univ* -k 3420'; # add just 1st seconds of gr8 part 2 push above 4mins12secs right up against 5mins total 4 LightninTalk;
+alias      HU='g3 188 $mu/chl/Hack*Univ* -k 3420 -vk'; # Fil_Far's HackrCodngMusic Universe rad Nd-pRt2 -k --sKip 2 (57mins==`q 57x60`secs) GooM2K1 -v(is);
+           SC8() { d8=`d8`;lodH              >/tmp/S.H-$d8.ansi;sloc -b 262144 /tmp/S.H-$d8.ansi $gs/calN-160x50-K6GM*.ansi $gs/8plc-160x50-K6NMAPag.ansi ;
                                                                                                  rm /tmp/S.H-$d8.ansi; }
            SC()  { d8=`d8`;shlc $d2/cred.utf >/tmp/SCu-$d8.ansi;sloc -b   1146 /tmp/SCu-$d8.ansi;rm /tmp/SCu-$d8.ansi; }
            GG()  { pu $d2/.bak/.g6./.GG.;if [[ $# -gt 0 ]]; then ./GG $@; else ./GG -a; fi; po; } # GuyGooway's: GoodGames GoneGrooving GropingGirlies;
 alias    g3BRO="cd ~/muz/U2b/nxt;ec 'g3 -vi -Z BtieBoys RammRage Obsidia8';g3 -vi -Z \$(ls ~/muz/flac/Rage*/*/*.flac ~/muz/flac/B*Boys/**/*.flac ~/muz/mp3/BadR*/*/*.mp3 ~/muz/mp3/RonD*/*/*.mp3 ~/muz/mp3/Rammstein/[12][90][90][5714]*/*.mp3 A* Bee* E*-[NRT][eaoh]* G* O* O* Ra* S[eh]* V* ../O* ../O* ../obs/*Nig* ../obs/*Nig* ../obs/*Meta* ../obs/*Dead* ../obs/*Dead* ../obs/*Die* | gv jpg | g '.mp3$\\|.ogg$\\|.flac\\|.m4a$\\|.opus$' | gv 'Meister\\|Riechst\\|Sehnsucht\\|Tier\\|Spiel\\|Klavier\\|Alter\\|Eifersucht\\|English\\|Spieluhr\\|Zwitter\\|Rein_Raus\\|Adios\|Nebel\\|Morgenstern\\|Amour\\|Modell\\|Unit\\|80-85')";
 alias    g3f='g3 11 -k 363 ~/muz/flac/Boo*/Boo*/14*Hell*'; # BBoyz-FknMthaFka!
-alias     bj='blkjk|pe "s/Player\\d+\\s+cmp2D:\\s+\\S+\\n//g;s/(Player)(\\d+)/\$p\$1\$W\$2\$z/;s/(Dealer)(\\d+)/\$M\$1\$w\$2\$z/;s/(Purse)/\$C\$1\$z/;s/(\\s+\\d+\\s+)(hand)/\$W\$1\$r\$2\$z/;s/( S)(c)(o\\w+)/\$C\$1\$c\$2\$C\$3\$y/;s/([: ])(\\w[hd])/\$W\$1\$R\$2\$z/g;s/([: ])(\\w[sc])/\$w\$1\$K\$2\$z/g;s/(:)(\\$)(\\s*\\d+)(\\.)(\\d\\d)/\$Y\$1\$B\$2\$G\$3\$O\$4\$P\$5\$z/g"';
+alias     bj='blkjk|pe "s/Player\\d+\\s+cmp2D:\\s+\\S+\\n//g;s/(Player)(\\d+)/\$p\$1\$W\$2\$z/;s/(Dealer)(\\d+)/\$M\$1\$w\$2\$z/;s/(Purse)/\$C\$1\$z/;s/(\\s*\\d+\\s+)(hand)/\$W\$1\$r\$2\$z/;s/(Black)(Jack)(!)/\$K\$1\$R\$2\$W\$3\$z/;s/(Busted)(!)(Jk)(!)/\$Y\$1\$W\$2\$r\$3\$W\$4\$z/;s/( S)(c)(o\\w+)/\$C\$1\$c\$2\$C\$3\$y/;s/([: ])(\\w[hd])/\$W\$1\$R\$2\$z/g;s/([: ])(\\w[sc])/\$w\$1\$K\$2\$z/g;s/(:)(\\$)(\\s*\\d+)(\\.)(\\d\\d)/\$Y\$1\$B\$2\$G\$3\$O\$4\$P\$5\$z/g"';
 # HTTPS://YouTu.be/J0TWTnYZBdM LimpBizkit-FuckinSong
 # HTTPS://YouTu.be/UrgpZ0fUixs DenisLeary-AssHole
 # Many of these Octology aliases should become special V8 via c8 coloriz8ion command wrappers or otherwise enhanced (&& simplified?) && unified funcs or cmdz:
@@ -961,15 +962,15 @@ alias dvdb=' dvdbackup -M -p';alias dvdbak='dvdb';  # default DVD backups -Mirro
 # gl              OpenGL                                         dfbmga   DirectFB/Matrox G200/G400/G450/G550       tga      Targa        output
 # gl_tiled   X11 (OpenGL) - multiple textures version            xvidix   X11    (VIDIX)                            pnm      PPM/PGM/PGMYUV file
 # matrixview     (OpenGL) MatrixView                             cvidix   console VIDIX                             md5sum   md5sum of each frame
-# dga        DGA (Direct Graphic Access V2.0)                    null     Null video output   # drvrz listed in likely most useful ordr(&&bak2 xv fixd stutr)
-#    -fixed-vo only with xv, x11, xvidix, gl, gl_tiled, && svga (ignoring irrelevant Matrox); # swapping mp && mplyr alias dFinitionz due2frEquNC of use&&mM
+# dga        DGA (Direct Graphic Access V2.0)                    null     Null video output   # drvrz listd in likely most useful ordr(&&bak2 xv fixd stutr);
+#    -fixed-vo only with xv, x11, xvidix, gl, gl_tiled, && svga (ignoring irrelevant Matrox); # swapping mp && mplyr alias dFinitionz due2frEquNC of use&&mM;
 # K1DLDSDL:upd8d mp to use -ao sdl or openal since they don't seem to stutter, but alsa under-runs && stops right away && pulse skips quite annoyingly 4 now;
-alias mplyr='mplayer';alias mplr='mplyr'; # EBIL4AcZ:upgraded all putrs2 mplayer2 sOnEd --no-keepaspect 2alow sKlng2ful wndw dimNsions;`mplyr -ao help` 4list;
-alias mpp='  mplr -vo xv    -fixed-vo -ao pulse                      -cache 16384 -cache-min 64'; # should try different -vo (xv was default) for performance
-alias mpa='  mplr -vo xv    -fixed-vo -ao alsa                       -cache 16384 -cache-min 64'; # should try different -vo (xv was default) for performance
-alias mp='   mplr -vo xv    -fixed-vo -ao sdl                        -cache 16384 -cache-min 64'; # should try different -vo (xv was default) for performance
-alias mpns='cd ~/mvz/U2b/nxt;mp $(ls B* Dr* *Tut* Ex* M* O*-Res* Var* *Trap* *Trap* *Boy*|shfl);cd ..'; # mk MPlyrNxtShfl 4 quik favor8 mvz Drub&&Trap vidzls
-alias mpx='  mp   -fs';alias vnk='cd ~/mvz/U2b/.vnk;mpx -loop 0 *o[bm]* *tr*'; #-x 1920 -y 1080'; # long ago,IUzd2includ -noborder abov but thN cud!mv wndw;
+alias mplyr='mplayer';alias mplr='mplyr';alias mplx='mpx -loop 0'; # EBIL4AcZ:upgrAded all putrs2 mplayer2 sO nEdz --no-keepaspect 2sKl 2full wndw dimNsionz;
+alias mpp='  mplr -vo xv    -fixed-vo -ao pulse                      -cache 16384 -cache-min 64'; # should try different -vo (xv was Dfault) for performance;
+alias mpa='  mplr -vo xv    -fixed-vo -ao alsa                       -cache 16384 -cache-min 64'; # `mplyr -ao help` 4list; BlO Vonikk+Obsidia vidz 4 EZ mpx;
+alias mp='   mplr -vo xv    -fixed-vo -ao sdl                        -cache 16384 -cache-min 64';alias vo='cd ~/mvz;mplx $(ls **/[VO][ob]* **/[VO][ob]*|shfl)';
+alias mpns='cd ~/mvz/U2b/nxt;mp $(ls B* Dr* *Tut* Ex* M* O*-Res* Var* *Trap* *Trap* *Boy*|shfl);cd ..'; # mk MPlyrNxtShfl 4quik favor8 mvz Drub&&Trap vidzls;
+alias mpx='  mp   -fs';alias vnk='cd ~/mvz/U2b/vnk;mplx V?n?k?*[DKS][ot][bor]*'; #-x 1920 -y 1080'; # long agOIUzd2includ -noborder abov but thN cud!mv wndw;
 alias mplo=' mplr -vo xv    -fixed-vo -ao sdl   -framedrop -delay -4 -cache 16384 -cache-min 88 -autosync 30 -demuxer +lavfpref -vfm ffmpeg -lavdopts lowres=1:fast:skiploopfilter=all -v ~/mvz/U2b/nxt/O*On*'; # try to play Obsidia One_Winged_Angel thru SDL audio since Pulse stutters && ALSA totally freezes up;
 alias mj='   mjoin'; mjoin() {ffmpeg -i $1 -i $2 -acodec copy -vcodec copy $3; } # IB6LExci:was in ~/.tmp/ aftr trying;
 alias ffll='ffmpeg -loglevel verbose -i'; # should now just take single Input filename to do verbose logging of details about, mainly for me looking up dur8nz;
@@ -1135,12 +1136,12 @@ if       [[ "${(L)HHst}" ==  chun*  ]] || [[ "${(L)HHst}" ==  taki*  ]]; then ex
 #alias mpx='  mp      -fs'; #-x 1920 -y 1080'; # originally quite a long time ago, I used to include -noborder optn abov but thN cud!mv wndw... rEdFIning rL8iv
 alias Mply='  en "er -vo xv  -fixed-vo -nosound -loop 0          -geometry  1916x$(q $HVH1 - 28)+0+0"   '; # try Mply echo dbl-quOtd ...?
 alias mply=' mplayer -vo xv  -fixed-vo -nosound -loop 0          -geometry "1916x$(q $HVH1 - 28)+0+0"    '; #-x 1916 -y 1052' # mplayer canOnly stRt wi1920maxBcuzXinerama?
-alias mpb='  mpr0    -speed 0.025                 -keepaspect    -geometry   640x1024+1928+8  ~/mvz/pr0/mp4/Bl*';
+alias mpb='  mpr0    -speed 0.025                 -keepaspect    -geometry   640x1024+1928+8  ~/mvz/.pr0/mp4/Bl*';
 #lias mpr0=' mplayer                   -nosound --no-keepaspect  -geometry "1920x$(q $HVH1 - 28)+0+0"    '; # still needs vid file params like: ~/mvz/U2b/**/*Obsidia*.opus
 alias mpr0=' mplayer -vo xv  -fixed-vo -nosound -nokeepaspect    -geometry "1920x$(q $HVH1 - 28)+0+0"    -loop 0'; # this 4 MPlayer && above 4 MPlayer2 (wich I had4 awhIl)
 alias mpr1=' mplayer -vo xv  -fixed-vo -nosound -nokeepaspect    -geometry "1920x$(q $HVH1 - 28)+888+88" -loop 0'; # this 4 same as mpr0 but on Aku's  middle   24" display
 alias mpr2=' mplayer -vo xv            -nosound -nokeepaspect    -geometry "1920x$(q $HVH1 - 28)+1919+0" -loop 0'; # this 4 same as mpr0 but on Aku's far right 50" display
-alias mpr0t='mplayer -vo xv  -fixed-vo -nosound -msgcolor -noborder -cache 16384 -cache-min 99 -geometry "1916x$(q $HVH1 - 28)+0+0" -msglevel all=0:identify=4 ~/mvz/pr0/tst/Aut0pr0-9AS4gTn/pr0-*/*'; # test if messages can report desired details; # for some reason,above mpr1 won't take geom 2full midl display so just offset a bit?
+alias mpr0t='mplayer -vo xv  -fixed-vo -nosound -msgcolor -noborder -cache 16384 -cache-min 99 -geometry "1916x$(q $HVH1 - 28)+0+0" -msglevel all=0:identify=4 ~/mvz/.pr0/tst/Aut0pr0-9AS4gTn/pr0-*/*'; # test if messages can report desired details; # for some reason,above mpr1 won't take geom 2full midl display so just offset a bit?
 alias mpfb=' mplayer -vo fbdev -vf scale=640:400   -loop 0'; # ~/mvz/U2b/* for some old scaled FrameBuffer modes
 alias mpfbs='mplayer -vo fbdev -vf scale=1920:1200 -loop 0'; # ~/mvz/muV/*
 alias mpf8=' mplayer -vo fbdev        -nosound --no-keepaspect  -vf scale=1920:1080 '; # still needs vid file params to follow
@@ -1152,14 +1153,14 @@ m0() { # mplayer pr0n function, but called aliases reloc8d to below host tests D
       echo                               ' 2 - runs mpr2 on mpg,wmv,avi     ht*;'
       echo                               ' s - runs mpr2 on mpg,wmv,avi shfl   ;'
       echo                               ' v - runs  vp  in   .VelvetPound/    ;    Other pRams will just be passed on to mpr0 for now;';return 0;
-    elif   [[ "$1"  ==  *v ]]; then                                                cd ~/mvz/pr0/.VP/      ;vp
-    elif   [[ "$1"  ==  *1 ]]; then                                                cd ~/mvz/pr0/          ;mpr1 mpg/ht* wmv/ht* avi/ht*
-    elif   [[ "$1"  ==  *2 ]]; then                                                cd ~/mvz/pr0/          ;mpr2         wmv/*   avi/*   mpg/*
-    elif   [[ "$1"  ==  *s ]]; then                                                cd ~/mvz/pr0/          ;mpr2 $(ls    wmv/*   avi/*   mpg/* | shfl)
+    elif   [[ "$1"  ==  *v ]]; then                                                cd ~/mvz/.pr0/.VP/     ;vp
+    elif   [[ "$1"  ==  *1 ]]; then                                                cd ~/mvz/.pr0/         ;mpr1 mpg/ht* wmv/ht* avi/ht*
+    elif   [[ "$1"  ==  *2 ]]; then                                                cd ~/mvz/.pr0/         ;mpr2         wmv/*   avi/*   mpg/*
+    elif   [[ "$1"  ==  *s ]]; then                                                cd ~/mvz/.pr0/         ;mpr2 $(ls    wmv/*   avi/*   mpg/* | shfl)
       # & \ abov just bkgrndz 0 procS so nEd2du smthng lIk vp 2spawn 2sepR8 windOz && 4nO pRamz else BlO  ;mpr0 wmv/ht* avi/ht* mpg/ht*
     else                                                                                                   mpr0 $@;fi # assume othr pRamz mEn alreD in fIn dir
   elif     [[ `pwd` ==  *pr0/mpg/   ]] || [[ `pwd` ==  *pr0/wmv/   ]] || [[ `pwd` ==  *pr0/avi/   ]]; then mpr0 *
-  else                                                                             cd ~/mvz/pr0/          ;mpr0 mpg/*   wmv/*   avi/*;fi }
+  else                                                                             cd ~/mvz/.pr0/         ;mpr0 mpg/*   wmv/*   avi/*;fi }
 alias m1='m0 1'; # could also try to add |g -v "_server /home/" or |g steam|g " Ssl " below to inVert match to try to not get child processes first
 alias m2='m0 2'; #   Screeps was below, but for some reason spawning server process was uniquely showing up with space for second 's' but no longer
 chvp() { # CHange ViewPort ("virtual desktop") thru wmc -o ... based on host dimz && Compiz 8 viewportz in 4x2 grid
@@ -1451,7 +1452,7 @@ wh8()   {  LP_F='0'; # same as wh64  BlO but wi 8rows flipd2 8columns,othrwIz ve
   # 2du:contMpl8 adng au, agr, && ee ene around en;  ## note that execution is really rather slow for all the sub-shells, taking around 40-seconds to run;
   if       [[ "$#" -gt   0 && "${(L)1}" =~  h  ]]; then echo -n " wh8 - show WHich primary single b64 && other valued commands by:$Auth Vers:$Vers d8VS:$d8VS;
   h  - print out this basic Help text message then return; Any parameter other than h right now just strips colors && SGR attributes out;";return 0;fi
-  for B64N in 0 8 G O W e m u   1 9 H P X f n v   2 A I Q Y g o w   3 B J R Z h p x   4 C K S a i q y   5 D L T b j r z   6 E M U c k s '.'   7 F N V d l t '_'   mk sz pu po pdoc ka pe  pa pla plb pab  drkh gg dv ac acs apts  ag auu aar ai ic  s8 d2u u2d del copy move attrib  s8n grp asci utf8 u8 CC CCC cls  eg zg hX k9 pp lS mo md rd  dm ct chm cho chg chr chs chf cht  mnt umnt bk c8 zc d8 fp  fixfont g8 gaa gcm gac  gacm gpom caln l8 sl calq calQ cln  cl comma hd dif loc8 dic zp ud  updb up updt uptm ec en  uni cncl tl tp wd pw pn pb msg  ren wh lsm lsc lsp lsu xical shlc  srchl shlp shl sho S8  p47 a7 rr tt tf gtt viii  lc chv0  uc chv7 ss wmc resp ctor scrn sx gt xt st uxtrm uxt lxt lxtrm tmn8r  sakra sak xf4tm rox Etrm x4t roxtm Et un ev pl xbk dirp  xb xbsf kp xdt s2 s28 sb sd si au agr  .. ......... mkjg mtst rmSS  ... ........ mkjG mkck SS SN  .... ....... mkj8 mkcl SSR  ..... ...... mkj4 mki mi SH  pabd m80 SR  pep  L80 r80 S80 q80  T80 X80 p80 R80 u80 g80 i80 l80  s80 t80 U80 x80  Hlt GL shll  HU;do
+  for B64N in 0 8 G O W e m u   1 9 H P X f n v   2 A I Q Y g o w   3 B J R Z h p x   4 C K S a i q y   5 D L T b j r z   6 E M U c k s '.'   7 F N V d l t '_'   mk sz pu po pdoc ka pe  pa pla plb pab  drkh gg dv ac acs apts  ag auu aar ai ic  s8 d2u u2d del copy move attrib  s8n grp asci utf8 u8 CC CCC cls  eg zg hX k9 pp lS mo md rd  dm ct chm cho chg chr chs chf cht  mnt umnt bk c8 zc d8 fp  fixfont g8 gaa gcm gac  gacm gpom caln l8 sl calq calQ cln  cl comma dif loc8 dic zp ud  updb up updt uptm ec en  uni cncl tl tp wd pw pn pb msg  ren wh lsm lsc lsp lsu xical shlc  srchl shlp shl sho S8  p47 a7 rr tt tf gtt viii  lc chv0  uc chv7 ss wmc resp ctor scrn sx gt xt st uxtrm uxt lxt lxtrm tmn8r  sakra sak xf4tm rox Etrm x4t roxtm Et un ev pl xbk dirp  xb xbsf kp xdt s2 s28 sb sd si au agr  .. ......... mkjg mtst rmSS  ... ........ mkjG mkck SS SN  .... ....... mkj8 mkcl SSR  ..... ...... mkj4 mki mi SH  pabd m80 SR  pep  L80 r80 S80 q80  T80 X80 p80 R80 u80 g80 i80 l80  s80 t80 U80 x80  Hlt GL shll  HU;do
  # crmm='chromium-browser  ';alias crom=' google-chrome         ';alias epip='epiphany';alias aror='arora';alias dilo='dillo';alias lnx2='links2';
  # brav='brave';brvb='brave';alias brv='brave';alias bb='brvb';alias irc='irssi'; # prEferprv8bb&&ffmornow
  # 2lo=' perl -e "rename(\$_,lc) for @ARGV"'; # orig fIlnAm lOwrcAsng 1-lInr was ~/bin/tolo thN as 2lo but mAB zsh func can't stRt wi '2'? Alias workz tho!
@@ -1482,7 +1483,7 @@ wh8()   {  LP_F='0'; # same as wh64  BlO but wi 8rows flipd2 8columns,othrwIz ve
     elif   [[ $B64N == "gg"         ]]; then BNWH='gg() {perl ~/dvl/d8/bin/gg $@}';
     elif   [[ $B64N == "attrib"     ]]; then BNWH="attrib:alias2'en \"4Get MS-DOS. Use chmod!\"'"; fi;
     # below left-to-right order of or 80-column limits then and with not wide then back to or for main dflt 160-colm limits
-    if     [[ $B64N =~ ^([3LSXqwc]|[cdfg]8|hd|dic|mutt)$ ]]; then BNWH=${BNWH:gs/ /};BNWH="$B64N= ${BNWH:gs/\'/}";fi # subst to just chop end space?
+    if     [[ $B64N =~ ^([3LSXqwc]|[cdfg]8|dic|mutt)$ ]]; then BNWH=${BNWH:gs/ /};BNWH="$B64N= ${BNWH:gs/\'/}";fi # subst to just chop end space?
     if     [[ $LP_F =~ ^[0]$        ]]; then printf "%-18s" $BNWH; else echo -n $BNWH;fi # mAB try2!pad up past top64
     echo -n `S W`';'; # tried2add /bin/ matchz wi $ end but syntax && escaping must be somewhat unconventional, probably nEd2rEd&&stuD mor PCRE dox
     if     [[ $B64N =~ ^(pb|zg|wd|lsm|lsu|srchl|shl|resp|ctor|tt|lc|uc|wmc|pp|c8|fixfont|gaa|up|uptm|rr|sx|dirp|sb)$      ]]                          ||

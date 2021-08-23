@@ -9,11 +9,11 @@
 #     'x|q|Esc' eXitz.    -f -B -b -d -c -s -p -r -h (with the same meaningz as above) can be given on the command-line.
 use strict;use warnings;use utf8;use v5.10;use Octology::a8;use Octology::b8;
                         use Encode;        use Octology::d8;use Curses::Simp;
-my $VERSION='0.0';my $d8VS='L19L36L9';my $Auth='PipStuart <Pip@CPAN.Org>';my $name=$0;$name=~s/.*\///;my $d8im;my @fldz;my @lasf;my @text;my @fclr;my $okey='';
+my $VERSION='0.0';my $d8VS='L8FM1GHT';my $Auth='PipStuart <Pip@CPAN.Org>';my $name=$0;$name=~s/.*\///;my $d8im;my @fldz;my @lasf;my @text;my @fclr;my $okey='';
 my $sepr=  'wKKw';my $d8bo=$cmap{'d8bo'};my $prof=$d8bo;my $tmbo=substr( $d8bo,4);my @limz=(63,12,31,42,23); # 'YGTBUDSN'&&'Fo57ZNVp' altrn8z4antiRed&&XprimNt
 # now all default base colrz @bclz below start Bold being above index 7, downside being that custom .pal8 filez won't be able to change o or p like RYGCBM
-my $bilt=0;       my @bclz= split( //,$d8bo);my $fulc=' ';my $parm='';my $barz=0;my $bold=0;my $sbld=1;my $sped= 0.987;my @spdz=(0, 0.015, 0.151, $sped);
-my $argz='';$argz= join(' ',@ARGV) if(@ARGV);my $bchr='#';my $keey=-1;my $rand=0;my $clea=0;my $demo=0; # old speed progression:(0.016, 0.064, 0.256   )
+my $bilt=0;       my @bclz= split( //,$d8bo);my $fulc=' ';my $parm='';my $barz=0;my $bold=0;my $sbld=1;my $sped= 0.975;my @spdz=(0, 0.015, 0.151, 0.475,$sped);
+my $argz='';$argz= join(' ',@ARGV) if(@ARGV);my $bchr='#';my $keey=-1;my $rand=0;my $clea=0;my $demo=0; # old speed progression:(   0.016, 0.064, 0.256      )
 if($argz=~ /h/i){print " $name v$VERSION $d8VS - by $Auth
  $name is a basic interactive Curses::Simp d8 clOcK for Octology.
  $name command-line parameters are very similar to the keys that
@@ -191,10 +191,10 @@ while  (lc($keey) ne 'x' && lc($keey) ne 'q' && ord($keey) != 27){
   RandClrz() if($rand);$d8im = Octology::d8->new();@fldz = split(//, $d8im);@lasf = @fldz unless(@lasf);
   $d128= b128(b10($fldz[4])+64) . ' ' . b128(b10($fldz[5])+64) . ' ' .
          b128(b10($fldz[6])+64) . ' ' . b128(b10($fldz[7])+64) . ' ' ;      # reload spaced out Chess && Cards represent8ionz of time hmsp fieldz;
-  if   ($parm eq 'f'){$text[0] =                   $d8im->expand( ) . ' ';} # used to do `pt $parm` here before there was a d8 object with methodz
-  elsif($parm eq '1'){$text[0] = "$d8im$d128"    . $d8im->expand( ) . ' ';}
-  elsif($parm eq '4'){$text[0] = "$d8im  -==-  " . $d8im->expand( ) . ' ';} # maybe betr l8r 2 nest 4 test in f test so else 4 can stRt wi d8im!spcz
-  elsif($parm eq '8'){$text[0] =  $d8im                             . ' ';}
-  else               {$text[0] = ' ' x 25        . $d8im            . ' ';}
+  if   ($parm eq 'f'){$text[0] =                   $d8im->full( ) . ' ';} # used to do `pt $parm` here before there was a d8 object with methodz
+  elsif($parm eq '1'){$text[0] = "$d8im$d128"    . $d8im->full( ) . ' ';}
+  elsif($parm eq '4'){$text[0] = "$d8im  -==-  " . $d8im->full( ) . ' ';} # maybe betr l8r 2 nest 4 test in f test so else 4 can stRt wi d8im!spcz
+  elsif($parm eq '8'){$text[0] =  $d8im                           . ' ';}
+  else               {$text[0] = ' ' x 25        . $d8im          . ' ';}
   if   ($sbld       ){$bold   ^=  1;$simp->FlagABA7('asin' =>  $bold    );} # SpeedBold flipper; 2du:stil need 2 try 2 add test 4 w4mb && way 2 limt
   $simp->ShokScrn(3 ) if($clea); if($barz){BildBarz();}else{$simp->Draw();} $keey=$simp->GetK($sped);$keey='h' if($demo == 256);}

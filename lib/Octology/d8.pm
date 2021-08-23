@@ -502,6 +502,7 @@ sub new{my($nvkr,$ityp,$idat)=@_;my $nobj=ref($nvkr);
                                $self->{'h'}      *     3_600.0 +  $self->{'m'}   *       60.0 +  $self->{'s'}           + $self->{'p'}/$self->{'_pps'};
   $self->{'e'}+=int($hofs*3_600.0) if($hofs); # `d8 e|cma;ec;d8 t|cma` is still resulting in approxim8ly 6-minutes (360-seconds) discrepancy,not sure where;
   $self->{'e'}+=int($mofs*   60.0) if($mofs);
+  $self->{'e'}+=            362.0; # add still needed adjustmNt?
   return($self);}  # just disable l8 comput8ion of upd8d Epoch float seconds above since they're getting values off by about 1.5Million seconds,4getngZone?;
 sub subsecond{  my $self=shift(@_);return(           $self->p(@_));}
 sub zone_offset{my $self=shift(@_);return($_tzofsetz[$self->z]   );}
