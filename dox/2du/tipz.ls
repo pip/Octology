@@ -178,3 +178,81 @@ K27LBROX:After attempting `~/dvl/c8/trm8/;g8c git://git.code.sf.net/p/roxterm/co
 K28LBGDM:HTTP://Forums.Debian.Net/viewtopic.php?f=6&t=122320 has `sz;/var/lib/gdm3/.config/;cp ~/.config/monitors.xml .;cho gdm:gdm monitors.xml` 2OriNtGDM;
 K47MM7MM:`agr linux-headers-5.3.0-40 linux-headers-5.3.0-40-generic linux-image-5.3.0-40-generic linux-modules-5.3.0-40-generic lin*-extra-5.3.0-40-generic`
   was going to run just now, but decided to leave these 5.3.0-40-generic packages installed (even though *-42-generic already agar'd with 45 && 46 current);
+L8MMMUni:[pip@OniL8MMMacs~]acs unity g unity  # try to figure out all Unity packages Oni has which probably Ryu && Aku are also going to need for their D.E.;
+gir1.2-unity-5.0                              ii  7.1.4+19.04.20190319-0ubuntu3    amd64   GObject introspection data for      the Unity     library
+libunity-dev                                  ii  7.1.4+19.04.20190319-0ubuntu3    amd64   binding to get places into the launcher - development files
+libunity-protocol-private0                    ii  7.1.4+19.04.20190319-0ubuntu3    amd64   binding to get places into the launcher - private library
+libunity-scopes-json-def-desktop              ii  7.1.4+19.04.20190319-0ubuntu3    all     binding to get places into the launcher - desktop def file
+libunity9                                     ii  7.1.4+19.04.20190319-0ubuntu3    amd64   binding to get places into the launcher - shared  library
+yaru-theme-gnome-shell                        ii  20.04.11.1                       all     Yaru GNOME Shell desktop theme from the Ubuntu Community
+yaru-theme-gtk                                ii  20.04.11.1                       all     Yaru GTK                 theme from the Ubuntu Community
+yaru-theme-icon                               ii  20.04.11.1                       all     Yaru icon                theme from the Ubuntu Community
+yaru-theme-sound                              ii  20.04.11.1                       all     Yaru sound               theme from the Ubuntu Community
+libunity-api-dev                              ii  8.7+17.04.20170404-0ubuntu4      amd64   Header files  for Unity API
+libunity-api-doc                                                                           Documentation for Unity API
+libunity-api0                                 ii  8.7+17.04.20170404-0ubuntu4      amd64   API for Unity shell integration
+libunity-control-center-dev                   ii  15.04.0+19.10.20190921-0ubuntu3  amd64   utilities to configure the GNOME desktop
+libunity-control-center1                      ii  15.04.0+19.10.20190921-0ubuntu3  amd64   utilities to configure the GNOME desktop
+libunity-core-6.0-9                           ii  7.5.0+20.04.20200312-0ubuntu1    amd64   core library for the Unity interface
+libunity-core-6.0-dev                         ii  7.5.0+20.04.20200312-0ubuntu1    amd64   Core library for the Unity interface - development files
+libunity-gtk-parser-dev-common                ii  0.0.0+18.04.20171202-0ubuntu2    all     Common files for GtkMenuShell to GMenuModel parser
+libunity-gtk2-parser-dev                      ii  0.0.0+18.04.20171202-0ubuntu2    amd64   GtkMenuShell to GMenuModel parser
+libunity-gtk2-parser0                         ii  0.0.0+18.04.20171202-0ubuntu2    amd64   GtkMenuShell to GMenuModel parser
+libunity-gtk3-parser-dev                      ii  0.0.0+18.04.20171202-0ubuntu2    amd64   GtkMenuShell to GMenuModel parser
+libunity-gtk3-parser0                         ii  0.0.0+18.04.20171202-0ubuntu2    amd64   GtkMenuShell to GMenuModel parser
+libunity-misc-dev                             ii  4.0.5+14.04.20140115-0ubuntu3    amd64   Miscellaneous functions for Unity - development files
+libunity-misc-doc                                                                          Miscellaneous functions for Unity - documentation
+libunity-misc4                                ii  4.0.5+14.04.20140115-0ubuntu3    amd64   Miscellaneous functions for Unity - shared library
+libunity-scopes-json-def-phone                                                             binding to get scopes into the launcher - phone def file
+libunity-settings-daemon-dev                  ii  15.04.1+20.04.20200325-0ubuntu1  amd64   Helper library for accessing settings (development files)
+libunity-settings-daemon1                     ii  15.04.1+20.04.20200325-0ubuntu1  amd64   Helper library for accessing settings
+libunity-tools                                                                             binding to get places into the launcher - debugging tools
+surf                                          un  <none>                           <none>  Simple web browser by suckless community
+tldr-py                                                                                    Python client for tldr: simplified and community-driven man pages
+ubuntu-unity-desktop                          ii  0.2                              amd64   The Ubuntu Unity desktop system
+unity                                         ii  7.5.0+20.04.20200312-0ubuntu1    amd64   Interface designed for efficiency of space and interaction.
+unity-accessibility-profiles                  ii  0.1.11-0ubuntu4                  all     Accessibility Profile Manager - Unity profile data
+unity-asset-pool                              ii  0.8.24+17.10.20170507-0ubuntu1   all     Unity Assets Pool
+unity-autopilot                                                                            Autopiloted tests for Unity
+unity-china-video-scope                                                                    China video scope for Unity
+unity-control-center                          ii  15.04.0+19.10.20190921-0ubuntu3  amd64   utilities to configure the GNOME desktop
+unity-control-center-dev                      ii  15.04.0+19.10.20190921-0ubuntu3  all     utilities to configure the GNOME desktop
+unity-greeter                                 ii  18.04.0+20.04.20200312-0ubuntu2  amd64   Unity Greeter
+unity-greeter-badges                                                                       Additional badges for Unity Greeter
+unity-gtk-module-autopilot                                                                 GtkMenuShell D-Bus Autopilot tests
+unity-gtk-module-common                       ii  0.0.0+18.04.20171202-0ubuntu2    all     Common files for GtkMenuShell D-Bus exporter
+unity-gtk2-module                             ii  0.0.0+18.04.20171202-0ubuntu2    amd64   GtkMenuShell D-Bus exporter
+unity-gtk3-module                             ii  0.0.0+18.04.20171202-0ubuntu2    amd64   GtkMenuShell D-Bus exporter
+unity-lens-applications                       ii  7.1.0+16.10.20160927-0ubuntu5    amd64   Application     lens for unity
+unity-lens-files                              ii  7.1.0+17.10.20170605-0ubuntu2    amd64   File            lens for unity
+unity-lens-music                              un  <none>                           <none>  Music           lens for unity
+unity-lens-photos                                                                          Photos          lens for Unity
+unity-lens-video                              un  <none>                           <none>  Unity Video     lens
+unity-mail                                                                                 Mail notifications and count for Unity/MATE/Xfce/LXDE/etc.
+unity-schemas                                 ii  7.5.0+20.04.20200312-0ubuntu1    all     Interface designed for efficiency of space and interaction.
+unity-scope-calculator                        un  <none>                           <none>  Calculator     scope for Unity
+unity-scope-devhelp                                                                        devhelp        scope for Unity
+unity-scope-gnote                                                                          Gnote          scope for Unity
+unity-scope-home                              ii  6.8.2+19.04.20190412-0ubuntu2    amd64   Home scope that aggregates results from multiple scopes
+unity-scope-launchpad                         un  <none>                           <none>  Launchpad      scope for Unity
+unity-scope-manpages                          un  <none>                           <none>  Manual pages   scope for Unity
+unity-scope-soundcloud                        un  <none>                           <none>  SoundCloud     scope for Unity
+unity-scope-tomboy                                                                         Tomboy         scope for Unity
+unity-scope-video-remote                                                                   Remote videos engine
+unity-scope-virtualbox                        ii  0.1+13.10.20130723-0ubuntu2      all     VirtualBox     scope for Unity
+unity-scope-yahoostock                        un  <none>                           <none>  Yahoo! Finance scope for Unity
+unity-scope-zotero                                                                         Zotero         scope for Unity
+unity-scopes-master-default                   ii  6.8.2+19.04.20190412-0ubuntu2    all     Home scope that aggregates results from multiple scopes
+unity-scopes-runner                           ii  7.1.4+19.04.20190319-0ubuntu3    all     desktop runner for misceallenous scopes
+unity-services                                ii  7.5.0+20.04.20200312-0ubuntu1    amd64   Services for the Unity interface
+unity-session                                 ii  3.36.0-2ubuntu1                  all     Unity session, previous ubuntu default experience.
+unity-settings-daemon                         ii  15.04.1+20.04.20200325-0ubuntu1  amd64   daemon handling the Unity session settings
+unity-settings-daemon-dev                     ii  15.04.1+20.04.20200325-0ubuntu1  amd64   Headers for building applic8ns communic8ng wi unity-settings-daemon
+unity-settings-daemon-schemas                 ii  15.04.1+20.04.20200325-0ubuntu1  all     Shared schemas for gnome-settings-daemon
+unity-tweak-tool                              ii  0.0.7+-0ubuntu6                  all     configuration tool for the Unity desktop environment
+xubuntu-community-wallpapers                                                               Xubuntu community wallpapers
+xubuntu-community-wallpapers-bionic                                                        Xubuntu community wallpapers (Bionic)
+xubuntu-community-wallpapers-focal                                                         Xubuntu community wallpapers (Focal )
+xubuntu-community-wallpapers-trusty                                                        Xubuntu community wallpapers (Trusty)
+xubuntu-community-wallpapers-xenial                                                        Xubuntu community wallpapers (Xenial)
+yaru-theme-unity                                                                           Yaru Unity theme from the Ubuntu Community ; # shud be most needed;

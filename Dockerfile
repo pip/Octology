@@ -1,4 +1,4 @@
-# L43MEANS:Dockerfile crE8d by JohnBeppu-san <Beppu@CPAN.Org> for Pip's GitHub Octology;my $d8VS='L6DMDunT';
+# L43MEANS:Dockerfile crE8d by JohnBeppu-san <Beppu@CPAN.Org> for Pip's GitHub Octology;my $d8VS='L8NM0Uni';
 # Use a big desktop distro (Ubuntu) as base, so that graphical && audio packages are available in container;
 FROM ubuntu:20.04
 # Force TZ to avoid interactive configur8ion; Also TERM BlO mAy quell warnings;
@@ -13,6 +13,7 @@ ENV DEBIAN_FRONTEND=noninteractive \
     XKBOPTIONS=""                  \
     BACKSPACE=guess
 #           install packages; # try to just get apt-utils first, so dconf uses;  # bash `set -x` enables outputting executing cmndz mainly 4Dbuging scrptz;
+# L8NM0Uni: included almost all of Oni's Unity-rel8d packages 2try on Ryu&&Aku;
 RUN set                     -x &&  \
     apt-get update             &&  \
     apt-get install         -y     \
@@ -116,7 +117,6 @@ RUN set                     -x &&  \
   mpg321                           \
   mpg123                           \
   gst123                           \
-  unity                            \
   xclip                            \
   most                             \
   dict                             \
@@ -147,7 +147,61 @@ RUN set                     -x &&  \
   lilyterm                         \
   qterminal                        \
   terminal.app                     \
-  cool-retro-term              &&  \
+  cool-retro-term                  \
+  libunity-protocol-private0       \
+  libunity9                        \
+  libunity-dev                     \
+  libunity-api-dev                 \
+  libunity-api-doc                 \
+  libunity-api0                    \
+  libunity-control-center-dev      \
+  libunity-control-center1         \
+  libunity-core-6.0-9              \
+  libunity-core-6.0-dev            \
+  libunity-gtk-parser-dev-common   \
+  libunity-gtk2-parser-dev         \
+  libunity-gtk2-parser0            \
+  libunity-gtk3-parser-dev         \
+  libunity-gtk3-parser0            \
+  libunity-misc-dev                \
+  libunity-misc-doc                \
+  libunity-misc4                   \
+  libunity-settings-daemon-dev     \
+  libunity-settings-daemon1        \
+  libunity-tools                   \
+  ubuntu-unity-desktop             \
+  unity                            \
+  unity-accessibility-profiles     \
+  unity-asset-pool                 \
+  unity-autopilot                  \
+  unity-control-center             \
+  unity-control-center-dev         \
+  unity-greeter                    \
+  unity-greeter-badges             \
+  unity-gtk-module-autopilot       \
+  unity-gtk-module-common          \
+  unity-gtk2-module                \
+  unity-gtk3-module                \
+  unity-lens-applications          \
+  unity-lens-files                 \
+  unity-schemas                    \
+  unity-scope-devhelp              \
+  unity-scope-home                 \
+  unity-scope-video-remote         \
+  unity-scope-virtualbox           \
+  unity-scopes-master-default      \
+  unity-scopes-runner              \
+  unity-services                   \
+  unity-session                    \
+  unity-settings-daemon            \
+  unity-settings-daemon-dev        \
+  unity-settings-daemon-schemas    \
+  unity-tweak-tool                 \
+  yaru-theme-gnome-shell           \
+  yaru-theme-gtk                   \
+  yaru-theme-icon                  \
+  yaru-theme-sound                 \
+  yaru-theme-unity             &&  \
   rm  -rf /var/lib/apt/lists/* &&  \
   locale-gen "en_US.UTF-8"
 # locale setting;  # above appended long list of terminal emul8or programs which may come in handy, even if Gnome-Terminal is mostly used ahead of altern8z;
