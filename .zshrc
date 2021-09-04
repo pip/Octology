@@ -30,7 +30,7 @@ unsetopt                \
 # auto_pushd            \# setng addz dirz 2 stack wN just normally chngng 2 thM (wich I du not normally lIk or want)
 # ksh_arrays            \# rEmMbr wNwrItng scrptz[or funcz]2include'setopt [localoptions] ksharrays'sO arAzR 0-bAsed(but!glOblBcuzmOst scrptzRstndrdly 1-bAsed)
 # re_____match_____pcre \# mA want2set for Z-SHell scripting RegularExpressions to utilize PerlCompatibility styles && mA insert 'zmodload zsh/(pc)?re(gex)?';
-export Vers='0.0';export d8VS='L8MMMM8L';export Auth='PipStuart <Pip@CPAN.Org>'; # not Xportng $b sinc cOlIdz wi sort{$a <=> $b} /defhijlnqstuvx/i + AZ 4golf;
+export Vers='0.0';export d8VS='L92M3Vnk';export Auth='PipStuart <Pip@CPAN.Org>'; # not Xportng $b sinc cOlIdz wi sort{$a <=> $b} /defhijlnqstuvx/i + AZ 4golf;
 if     [[       "$SHELL"    == "" ]]; then       export SHELL=` which  zsh`;fi   # 8sh should parse this && OverId it    # shud `man zshall` /OSTYP 2lern4BlO
 if     [[       "$HOSTNAME" == "" ]]; then       export HOSTNAME=`hostname`;fi   #`hostname`retnz fsckd nwlInz\n4CygWinzRxvt... ||smthng els lame  =(
 if     [[       "$HOST"     == "" ]]; then       export HOST   ="$HOSTNAME";fi;export VERBOSE='1'; # set flag to print debug && status info from system utilz
@@ -966,13 +966,13 @@ alias dvdb=' dvdbackup -M -p';alias dvdbak='dvdb';  # default DVD backups -Mirro
 #    -fixed-vo only with xv, x11, xvidix, gl, gl_tiled, && svga (ignoring irrelevant Matrox); # swapping mp && mplyr alias dFinitionz due2frEquNC of use&&mM;
 # K1DLDSDL:upd8d mp to use -ao sdl or openal since they don't seem to stutter, but alsa under-runs && stops right away && pulse skips quite annoyingly 4 now;
 alias mplyr='mplayer';alias mplr='mplyr';alias mplx='mpx -loop 0'; # EBIL4AcZ:upgrAded all putrs2 mplayer2 sO nEdz --no-keepaspect 2sKl 2full wndw dimNsionz;
-alias mpp='  mplr -vo xv    -fixed-vo -ao pulse                      -cache 16384 -cache-min 64'; # should try different -vo (xv was Dfault) for performance;
-alias mpa='  mplr -vo xv    -fixed-vo -ao alsa                       -cache 16384 -cache-min 64'; # `mplyr -ao help` 4list; BlO Vonikk+Obsidia vidz 4 EZ mpx;
-alias mp='   mplr -vo xv    -fixed-vo -ao sdl                        -cache 16384 -cache-min 64';alias vo='cd ~/mvz;mplx $(ls **/[VO][ob]* **/[VO][ob]*|shfl)';
+alias mpp='  mplr -vo xv    -fixed-vo -ao pulse -cache 16384 -cache-min 64'; # shudtrydif -vo (xv was Dfalt) 4per4manc;`mplr -ao help`4list;
+alias mpa='  mplr -vo xv    -fixed-vo -ao alsa  -cache 16384 -cache-min 64';alias ov='cd ~/mvz;mpx  $(ls **/*[OV][ob][sn]*|shfl)'; #Obs+Vnk;
+alias mp='   mplr -vo xv    -fixed-vo -ao sdl   -cache 16384 -cache-min 64';alias vo='cd ~/mvz;mplx $(ls **/*[VO][ob][sn]*|shfl)'; #Vnl+Obs;
 alias mpns='cd ~/mvz/U2b/nxt;mp $(ls B* Dr* *Tut* Ex* M* O*-Res* Var* *Trap* *Trap* *Boy*|shfl);cd ..'; # mk MPlyrNxtShfl 4quik favor8 mvz Drub&&Trap vidzls;
-alias mpx='  mp   -fs';alias vnk='cd ~/mvz/U2b/vnk;mplx V?n?k?*[DKS][ot][bor]*'; #-x 1920 -y 1080'; # long agOIUzd2includ -noborder abov but thN cud!mv wndw;
-alias mplo=' mplr -vo xv    -fixed-vo -ao sdl   -framedrop -delay -4 -cache 16384 -cache-min 88 -autosync 30 -demuxer +lavfpref -vfm ffmpeg -lavdopts lowres=1:fast:skiploopfilter=all -v ~/mvz/U2b/nxt/O*On*'; # try to play Obsidia One_Winged_Angel thru SDL audio since Pulse stutters && ALSA totally freezes up;
-alias mj='   mjoin'; mjoin() {ffmpeg -i $1 -i $2 -acodec copy -vcodec copy $3; } # IB6LExci:was in ~/.tmp/ aftr trying;
+alias mpx='  mp   -fs';alias vnk='cd ~/mvz/U2b;mpx vnk/V?n?k*';alias vnl='cd;mvz/U2b/;mplx vnk/V?n?k*'; #-x 1920 -y 1080'; had -noborder but thN cud!mv wndw;
+alias mplo=' mplr -vo xv    -fixed-vo -ao sdl   -cache 16384 -cache-min 88 -framedrop -delay -4 -autosync 30 -demuxer +lavfpref -vfm ffmpeg -lavdopts lowres=1:fast:skiploopfilter=all -v ~/mvz/U2b/nxt/O*On*'; # try to play Obsidia One_Winged_Angel thru SDL audio since Pulse stutters && ALSA totally freezes up;
+alias mj='   mjoin'; mjoin() {ffmpeg -i $1 -i $2 -acodec copy -vcodec copy $3;};alias Vnk='cd ~/mvz/U2b/vnk;mpx *Doo* *Kob* *Str*'; # IB6LExci:in ~/.tmp/ aftr;
 alias ffll='ffmpeg -loglevel verbose -i'; # should now just take single Input filename to do verbose logging of details about, mainly for me looking up dur8nz;
 # IAIMFFMP:ffmpjoin.sh crE8d by PipStuart <Pip@CPAN.Org> to take 2 sepR8 file parameters of audio && video (probably from calls to U2b8) && join in2 cntAnr4m@;
 # 2du:upd8 U2b8 autom8ion to test -F output first && harvest out best audio && video available then gener8 joined container name; nOt:out.avi did!work,mp4 did;

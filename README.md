@@ -1,5 +1,5 @@
 #    Octology
- The ontology of 8. Ocho dude. Hachi-desu. Wheet. Aucht! `$VERSION='0.0';$d8VS='L88MF84L';`
+ The ontology of 8. Ocho dude. Hachi-desu. Wheet. Aucht! `$VERSION='0.0';$d8VS='L94MBuT2';`
 
 `dic ontology`:  # query the dictd (Dictionary-Daemon) for salient definitions that project visitors might find inform8ive;
 
@@ -13,10 +13,17 @@ I expect after some point (probably passed) anyone who studies Octology thorough
 
 "Perl 5 was a machine-shop for making other tools." -LarryWall `d8=J6K` TPCiP interview. I'd like Octology to be regarded similarly for game-tools.
 
-Please watch my [6-minute Lightning-Talk](https://YouTu.be/Oul8KrS7TQk) which I presented during the-Perl-Conference-in-the-Cloud on June 24th, 2020 (`d8=K6O`)
- then my [21-minute Black-Jack Tech-Talk](https://YouTu.be/FgS6IXq-xVE) from this Year, at: the-Perl/Raku-Conference-in-the-Cloud on June  9th, 2021 (`d8=L69`);
+Please watch my [6-minute Lightning-Talk](https://YouTu.be/Oul8KrS7TQk) which I presented for the-Perl-Conference-in-the-Cloud on June 24th, 2020 (`d8=K6O`)
+ then my [21-minute Black-Jack Tech-Talk](https://YouTu.be/FgS6IXq-xVE) more recently at:the-Perl/Raku-Conference-in-the-Cloud on June  9th, 2021 (`d8=L69`);
 
-<!-- even though of course originally above command && below screen shot lists were each Top8, they're now more focused on just most public Top6 or 4 -->
+<!-- # Hopefully I won't remain off-line for too long && won't need to try to explain my potential absence with these drafted details below here. We'll see;
+On August 24th, 2021 (`d8=L8O`) my old NetGear Cable-Modem/Router stopped working. This stranded me basically Off8Line at home (with only GalaxyS8 phone on).
+I've attempted to obtain and setup a replacement without success so far, and now it's September and I'm not sure how or when I'll become able to re-connect.
+
+This may be my last upd8 for probably quite a while ahead, since only Wolf values what I do. I can barely afford to maintain computers at home anymore.
+Ken, Chun, and Akuma won't boot. Ryu and Oni languish. I hoped Octology would make waves, but it hasn't. I've done what I could, but may be done!  =( ; -->
+
+<!-- even though of course originally above command && below screen shot lists were each Top8, they're now more focused on just most public Top6 or 4 ; -->
 ## Current Top Screen Shots
 ##### (*examples match those below*)
 ![Octology-ftst-shot_1454x927-J5AMD1gZ](https://github.com/pip/Octology/raw/master/gfx/sho/Octology-ftst-shot_1454x927-J5AMD1gZ.png "Octology-ftst-J5AMD1gZ")

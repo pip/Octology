@@ -1,4 +1,4 @@
-# ECILIpU5:~/dox/2du/tipz.ls crE8d by PipStuart <Pip@CPAN.Org> to track full-scrn GNU/Linux console login fortune-like tipz worth remembering;$d8VS='K27LBROX';
+# ECILIpU5:~/dox/2du/tipz.ls crE8d by PipStuart <Pip@CPAN.Org> to track full-scrn GNU/Linux console login fortune-like tipz worth remembering;$d8VS='L91M8bak';
  ApNd ssh kE2srvr's authkEz wi`ssh-copy-id user@srvradrS`&& GitHub advIsez`eval "$(ssh-agent -s)"`&&`ssh-add -l`2tk nOt of fngrprntz2tSt4m@ch acctSSH kEz;
  Shell curly bracez iter8 comma separ8d list like: `cp /long/path/to/file/name{,.orig}`;
 F6IME9nq:For getting precise Google search resultz, you can perform a search query first then under 'Search Tools' drop-down 'All Results' can be changed
@@ -256,3 +256,30 @@ xubuntu-community-wallpapers-focal                                              
 xubuntu-community-wallpapers-trusty                                                        Xubuntu community wallpapers (Trusty)
 xubuntu-community-wallpapers-xenial                                                        Xubuntu community wallpapers (Xenial)
 yaru-theme-unity                                                                           Yaru Unity theme from the Ubuntu Community ; # shud be most needed;
+<root@OniL91M8fAH/etc/NetworkManager/system-connections>ec 'Yipes, spaces in filenames makes bak choke when diff called.';l
+t0tl:   OK                                               #  Yipes, spaces in filenames makes bak choke when diff called!?;
+-600 1 root root 5J K7JM7cEi DarjNet.nmconnection
+-600 1 root root 5L L6PM7SXf DarjNet5.nmconnection
+-600 1 root root 51 L8OMIeTO DarjNet5 1.nmconnection
+-600 1 root root 67 J34LBiO5 DarjNet-5G
+-600 1 root root 5t J3AM9kb3 Verizon-SM-G950U-8E51
+-600 1 root root 6Q K1VLJ6Me Wired connection 2.nmconnection
+<root@OniL91M8fBO/etc/NetworkManager/system-connections>b *
+diff: extra operand '1.nmconnection'
+diff: Try 'diff --help' for more information.
+!*EROR*! File: 'DarjNet5 1.nmconnection' already bak'd up as '.bak/DarjNet5'!
+bakd DarjNet-5G       as .bak/DarjNet-5G-L91M8fWU
+bakd DarjNet5.nmconnection as .bak/DarjNet5.nmconnection-L91M8fWU
+bakd DarjNet.nmconnection as .bak/DarjNet.nmconnection-L91M8fWU
+bakd Verizon-SM-G950U-8E51 as .bak/Verizon-SM-G950U-8E51-L91M8fWU
+diff: extra operand 'connection'
+diff: Try 'diff --help' for more information.
+!*EROR*! File: 'Wired connection 2.nmconnection' already bak'd up as 'connection'!
+<root@OniL91M8fWo/etc/NetworkManager/system-connections>.bak/
+<root@OniL91M8ktH/etc/NetworkManager/system-connections/.bak>la
+t0tl:   GK
+-600 1 root root 5L L91M8fWa DarjNet5.nmconnection-L91M8fWU
+-600 1 root root 67 L91M8fWY DarjNet-5G-L91M8fWU
+-600 1 root root 5J L91M8fWc DarjNet.nmconnection-L91M8fWU
+-600 1 root root 5t L91M8fWe Verizon-SM-G950U-8E51-L91M8fWU
+<root@OniL91M8kuM/etc/NetworkManager/system-connections/.bak>

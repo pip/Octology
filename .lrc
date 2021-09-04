@@ -1,5 +1,5 @@
 # F1RLLK2K:~/.lrc  by PipStuart <Pip@CPAN.Org> as an altern8 format for .lsrc ideally having new ~/bin/lrc gNR8 either from the other;
-# $VERSION='0.0';$d8VS='L8MM5481'; 2du:lrc optn2gNr8 altrn8 versN th@purposfuly varEz colrzof comon typz,add *[-_?]* NtrEz frm .zshrc hEr,audit oldz,ck /etc/*,
+# $VERSION='0.0';$d8VS='L91M8nmc'; 2du:lrc optn2gNr8 altrn8 versN th@purposfuly varEz colrzof comon typz,add *[-_?]* NtrEz frm .zshrc hEr,audit oldz,ck /etc/*,
 #   add interaction2 lsd8 wN it Dtectz unrecognIzd XtNshNz offerng c@egOrEz with comon colr2autOm@ically insrt chOsN NtrEz,mk lrc gNr8 Xportd LS_COLORS 4 Eval,
 #   confirm all accept f0nt cOdez wi dash accepting Dfalt 4grnd thN redo NORMAL FILE LINK as no fi ln,Dtect cOlIdz OvrIdz&&warn,mAB 8trm aded2 TERM ls sumdA?;
 # 819J2Pip:~/.lsrc by PipStuart <Pip@CPAN.Org> izAheavily modifId`dircolors`cfgfIl(Orig ~/.DIR_COLORS)wich setz $ENV{'LS_COLORS'} 4GNU`ls --color`&&`lsd8`;
@@ -140,7 +140,8 @@ CHR                            Yk              #cd= 01;33;40    01;33;40  CHaRac
 *config~                       r
 *.config
 *conf-sample
-*ckm8                                          # my own SDL && Curses Chess program's game-recording output file-format
+*nmconnection                                  # L91M8nmc: /etc/NetworkManager/system-connections/* had DarjNet-5G && Samsung-SM-G950U =~ s/Samsung/Verizon/;
+*ckm8                                          # my own SDL && Curses Chess program's game-recording output file-format;   Above also .=  '-8E51' MAC last4?;
 *dox                                           # my personal doQmNt8ion files (first used for logging my HTTPS://Screeps.Com 2torials progress)
 *.dd                                           # my personal ~/dox/dvl/GTrm/GnomTerm-dconf-dump file but could also be for DiskDriveD8aDuplic8ion files
 *sgf                                           # HTTPS://En.WikiPedia.Org/wiki/Smart_Game_Format                which is used by HTTPS://Online-Go.Com

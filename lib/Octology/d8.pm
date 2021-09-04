@@ -21,7 +21,7 @@ my $hirs   = eval("use Time::HiRes; 8") || 0;
 my $locl   = eval("use Time::Local; 8") || 0;
 my $zown   = eval("use Time::Zone ; 8") || 0;
 #ur @EXPORT= qw(); # originally thought about wanting to eventually export d8() here as new() wrapper, but probably no longer needed for those older usages;
-our $VERSION='0.0';my $d8VS='L87MC87D';
+our $VERSION='0.0';my $d8VS='L94MAuni';
 my @_tzofsetz=( # global storage for TimeZone Offsets matching /^[-+][01]\d(00|30|45)$/ shhmm (with non-integer offsets mapping in b64 between R(27)..g(42))
   '-1130',#NUT
   '-0930',
@@ -405,8 +405,11 @@ sub new{my($nvkr,$ityp,$idat)=@_;my $nobj=ref($nvkr);
          $self->{'p'})=split(/\D+/,$5);
         $self->{ 'Y'}             =$9;
         for my $mndx (0..$#mnth){if(lc($mnth[$mndx]) eq lc($mont)){$self->{'M'}=$mndx+1;last;}}
+        my $slfp=0;
+        if  (exists($self->{ 'p'  }) && defined($self->{ 'p'  })){$slfp =$self->{ 'p'  };
+          if(exists($self->{'_pps'}) && defined($self->{'_pps'})){$slfp/=$self->{'_pps'};}} # may need 2 set slfp to just int part of divide-by phass-per-sec;
         $self->{'e'}         =($self->{'Y'}-1970)*31_556_930.0 + ($self->{'M'}-1)*2_629_744.0 + ($self->{'D'}-1)*86_400 +
-                               $self->{'h'}      *     3_600.0 +  $self->{'m'}   *       60.0 +  $self->{'s'}           + $self->{'p'}/$self->{'_pps'};
+                               $self->{'h'}      *     3_600.0 +  $self->{'m'}   *       60.0 +  $self->{'s'}           + $slfp;
         $self->{'e'}+=int($hofs*3_600.0) if($hofs);
         $self->{'e'}+=int($mofs*   60.0) if($mofs);
 #print "M:$mont D:$self->{'D'} h:$self->{'h'} m:$self->{'m'} s:$self->{'s'} f:$self->{'p'} z:$self->{'z'} Y:$self->{'Y'}\n";

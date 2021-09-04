@@ -5,6 +5,17 @@
 # DisplayPort-2    connected         1920x1080+0+1080    (normal left inverted right x axis y axis) 531mm x 299mm
 #      HDMI-A-0    connected         1920x1080+1920+1080 (normal left inverted right x axis y axis) 531mm x 299mm
 #       DVI-D-0    connected         1920x1080+0+0       (normal left inverted right x axis y axis) 698mm x 393mm
+# L91MIGHT:when called without tablet plugged into USB   (which should be detected for && handled maybe more gracefully), yields:
+# Cannot find device 'Wacom Intuos PT M 2 Pad pad'.
+# Cannot find device 'Wacom Intuos PT M 2 Pad pad'.
+# Cannot find device 'Wacom Intuos PT M 2 Pad pad'.
+# Cannot find device 'Wacom Intuos PT M 2 Pad pad'.
+# Cannot find device 'Wacom Intuos PT M 2 Pad pad'.
+# Cannot find device 'Wacom Intuos PT M 2 Pad pad'.
+# Usage: xinput map-to-output <device> <output name>
+# Stylus mapped to: HDMI-A-0 && DisplayPort-2 :is where Touch is mapped (but Touch disabled by Dflt);
+# Usage: xinput map-to-output <device> <output name>
+# unable to find device Wacom Intuos PT M 2 Finger touch;
   VERSION='0.0';d8VS='K7PMEPip'; # HTTPS://UbuntuForums.Org/showthread.php?t=1515562 describes setting up /etc/X11/xorg.conf && other somewhat old stuff;
  HDisplUR='DisplayPort-0';               #                                      (my UpRight  screen)  ## mAB 2du l8r is Dtect && add -h --help tXt message;
  HDisplDL='DisplayPort-2';               # desired display device from `xrandr` (my DnLeft   screen)  ## executable name "tib" short for TabletInitButtons,
