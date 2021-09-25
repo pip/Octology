@@ -8,7 +8,7 @@
 use strict;use warnings;use utf8;use v5.10; # DfltParm,T0tl,Lz,LineTxt,TxtLeng
 use Octology::b8;my $dp=' --color=always ';my $t0;my @lz;my $lt;my $tl;
 use Octology::d8;my $cw=160;$cw=$ENV{'COLUMNS'} if exists($ENV{'COLUMNS'});
-my $VERSION='0.0';my $d8VS='L7AM3wsc';my $Auth='PipStuart <Pip@CPAN.Org>';
+my $VERSION='0.0';my $d8VS='L97MJack';my $Auth='PipStuart <Pip@CPAN.Org>';
 open my   $out8,'>&',STDOUT or die "Can't open  duplic8 STDOUT handle: $!";
 binmode   $out8,':encoding(UTF-8)'; # crE8 local duplic8 of global handle
 my @ldat=`ls -Cv -w $cw $dp @ARGV`;my $az="@ARGV";my $pt=0;my $ws=5; #PrevT0tl
@@ -26,5 +26,8 @@ if($az=~ /(^|\s)-+(h)/i){print $out8 "  $0 - sLightLy manipuL8d Ls coLumnar" .
       ' ' x (3-$sl);s/^(\S+):/$1$sp:/;} # try2spc-out colon 2 subdrz 3-or-lS;
     if  (/^(\S+\s*:)\s*$/    ){s/\s+$//      ;$pt=1;}
     else{$_ =(' ' x ($ws-  1)) . $_  if(!$pt);$pt=0;}
+    s/\s       (\e?\[?[0-9;]*m?      )+
+      (Octology(\e?\[?[0-9;]*m?|\s*)*)+
+      \s       (\e?\[?[0-9;]*m?|Pip)+/$1 $2 $4/x;
     print $out8 $_ if /\S/;}}
 close     $out8             or die "Can't close duplic8 STDOUT handle: $!";

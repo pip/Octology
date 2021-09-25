@@ -30,7 +30,7 @@ unsetopt                \
 # auto_pushd            \# setng addz dirz 2 stack wN just normally chngng 2 thM (wich I du not normally lIk or want)
 # ksh_arrays            \# rEmMbr wNwrItng scrptz[or funcz]2include'setopt [localoptions] ksharrays'sO arAzR 0-bAsed(but!glOblBcuzmOst scrptzRstndrdly 1-bAsed)
 # re_____match_____pcre \# mA want2set for Z-SHell scripting RegularExpressions to utilize PerlCompatibility styles && mA insert 'zmodload zsh/(pc)?re(gex)?';
-export Vers='0.0';export d8VS='L92M3Vnk';export Auth='PipStuart <Pip@CPAN.Org>'; # not Xportng $b sinc cOlIdz wi sort{$a <=> $b} /defhijlnqstuvx/i + AZ 4golf;
+export Vers='0.0';export d8VS='L94MFIRM';export Auth='PipStuart <Pip@CPAN.Org>'; # not Xportng $b sinc cOlIdz wi sort{$a <=> $b} /defhijlnqstuvx/i + AZ 4golf;
 if     [[       "$SHELL"    == "" ]]; then       export SHELL=` which  zsh`;fi   # 8sh should parse this && OverId it    # shud `man zshall` /OSTYP 2lern4BlO
 if     [[       "$HOSTNAME" == "" ]]; then       export HOSTNAME=`hostname`;fi   #`hostname`retnz fsckd nwlInz\n4CygWinzRxvt... ||smthng els lame  =(
 if     [[       "$HOST"     == "" ]]; then       export HOST   ="$HOSTNAME";fi;export VERBOSE='1'; # set flag to print debug && status info from system utilz
@@ -1569,12 +1569,12 @@ pmfi()     { if     [[ "$HUsr"      != "root" ]]; then sudo perl -MCPAN -e "forc
 pmverck()  { cpan -D $1; } # used to check with perl -MExtUtils::MakeMaker -le 'print MM->parse_version(shift)' $1; but that old method no longer seems to work
 alias  pdoc='perldoc'; # used to have problem with most needing -t for text-only version (not pod2man | nroff -man | $PAGER) or to just pipe thru less instead
 alias prsyn='rsyncmd'; # PRint RSYN; K1VLIVES:upd8d rsyncmd below to now default to Full.ls since Chun && Taki are both dead, so Core is no longer significant
-rsyncmd()  {                                                echo      "rsync -avrm --files-from=dox/putr/RsynFull.ls  . DstH:"; # common rsyn cmd
+rsyncmd()  {                                                echo      "rsync -avr  --files-from=dox/putr/RsynFull.ls  . DstH:"; # common rsyn cmd
                                                             echo      "  add    -n 4dryruN2tSt, add --delete usualy whN SrcH is Oni 2propag8,"; # just2Ryu now
                                                             echo      "  s/Full/Core/ btwn Oni && laptop, && might want SrcH: not just s/^/cd ;/ thN . ;";
                                                             echo      "  for   /Core/ also  --exclude='\*.swp' --exclude='\*.zip' --exclude='.bak/'etc.;";
-                                                            echo   -n "rsync -avrm --delete --files-from=dox/putr/RsynFull.ls . Ryu: " \
-                                                              |        xclip -si    -se   p  -l   1 ; }  #  -m = --prune-empty-dirs (chains from file-ls);
+                                                            echo   -n "rsync -avr  --delete --files-from=dox/putr/RsynFull.ls . Ryu: " \
+                                                              |        xclip -si    -se   p  -l   1 ; } # -m != --prune-empty-dirs? (chains from file-ls);
 rsyn()     { # rsync -n --dry-run 2tst,try --(in|ex)clude=PATRN or .='-from=FILE' also for  --files-from listng source filenmz,-t rEdundnt but -tavrn EZ2rEmMbr
              #sEF="--exclude='*.swp' --files-from=dox/putr"; # Rsyn Exclude && FilesFrom parameter (tries to start getting all of ~?)
              #sEF="                  --files-from=dox/putr"; # Rsyn Exclude && FilesFrom parameter (any $RsEF Xpansion BlO echoz good but hOsez rsync)

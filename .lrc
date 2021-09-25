@@ -1,5 +1,5 @@
 # F1RLLK2K:~/.lrc  by PipStuart <Pip@CPAN.Org> as an altern8 format for .lsrc ideally having new ~/bin/lrc gNR8 either from the other;
-# $VERSION='0.0';$d8VS='L91M8nmc'; 2du:lrc optn2gNr8 altrn8 versN th@purposfuly varEz colrzof comon typz,add *[-_?]* NtrEz frm .zshrc hEr,audit oldz,ck /etc/*,
+# $VERSION='0.0';$d8VS='L9NMKill'; 2du:lrc optn2gNr8 altrn8 versN th@purposfuly varEz colrzof comon typz,add *[-_?]* NtrEz frm .zshrc hEr,audit oldz,ck /etc/*,
 #   add interaction2 lsd8 wN it Dtectz unrecognIzd XtNshNz offerng c@egOrEz with comon colr2autOm@ically insrt chOsN NtrEz,mk lrc gNr8 Xportd LS_COLORS 4 Eval,
 #   confirm all accept f0nt cOdez wi dash accepting Dfalt 4grnd thN redo NORMAL FILE LINK as no fi ln,Dtect cOlIdz OvrIdz&&warn,mAB 8trm aded2 TERM ls sumdA?;
 # 819J2Pip:~/.lsrc by PipStuart <Pip@CPAN.Org> izAheavily modifId`dircolors`cfgfIl(Orig ~/.DIR_COLORS)wich setz $ENV{'LS_COLORS'} 4GNU`ls --color`&&`lsd8`;
@@ -1906,18 +1906,20 @@ CHR                            Yk              #cd= 01;33;40    01;33;40  CHaRac
 *-5.3.0-26-generic             Mr
 *-5.3.0-24-generic             or
 *-5.3.0-23-generic             Yr              # BlO back to just manual d8bo 8bow for 5.4.0 onward again with Ubu 20.04 for now, but should upd8 SSD 4 20.10
-*-5.4.0-81-generic             R
-*-5.4.0-80-generic             o
-*-5.4.0-77-generic             Y
-*-5.4.0-71-generic             G
-*-5.4.0-70-generic             C
-*-5.4.0-67-generic             B
-*-5.4.0-66-generic             M
-*-5.4.0-65-generic             p
-*-5.4.0-64-generic             R
-*-5.4.0-62-generic             o
-*-5.4.0-60-generic             Y
-*-5.4.0-58-generic             G
+*-5.4.0-86-generic             R
+*-5.4.0-84-generic             o
+*-5.4.0-81-generic             Y
+*-5.4.0-80-generic             G
+*-5.4.0-77-generic             C
+*-5.4.0-71-generic             B
+*-5.4.0-70-generic             M
+*-5.4.0-67-generic             p
+*-5.4.0-66-generic             R
+*-5.4.0-65-generic             o
+*-5.4.0-64-generic             Y
+*-5.4.0-62-generic             G
+*-5.4.0-60-generic             C
+*-5.4.0-58-generic             B
 #                                              # zsh wraps '%{' ANSI '%}' && vim User[1-9] colrz specify BlO ForeGroundz all on darkblue BakGrnd4statuslIn
 #     4NT    etfp   vim  c8  color              ANSI      HTML    Octology::d8::fldz (`d8`)
 #     0f     Fsy_   %*    W WhiteBright         \e[1;37m  FEFDFF            # vim %* resets statuslIn colr 2 Dfalt   White on darkblue so has max 10 colrz
