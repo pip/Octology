@@ -30,7 +30,7 @@ unsetopt                \
 # auto_pushd            \# setng addz dirz 2 stack wN just normally chngng 2 thM (wich I du not normally lIk or want)
 # ksh_arrays            \# rEmMbr wNwrItng scrptz[or funcz]2include'setopt [localoptions] ksharrays'sO arAzR 0-bAsed(but!glOblBcuzmOst scrptzRstndrdly 1-bAsed)
 # re_____match_____pcre \# mA want2set for Z-SHell scripting RegularExpressions to utilize PerlCompatibility styles && mA insert 'zmodload zsh/(pc)?re(gex)?';
-export Vers='0.0';export d8VS='L94MFIRM';export Auth='PipStuart <Pip@CPAN.Org>'; # not Xportng $b sinc cOlIdz wi sort{$a <=> $b} /defhijlnqstuvx/i + AZ 4golf;
+export Vers='0.0';export d8VS='LBBL8gns';export Auth='PipStuart <Pip@CPAN.Org>'; # not Xportng $b sinc cOlIdz wi sort{$a <=> $b} /defhijlnqstuvx/i + AZ 4golf;
 if     [[       "$SHELL"    == "" ]]; then       export SHELL=` which  zsh`;fi   # 8sh should parse this && OverId it    # shud `man zshall` /OSTYP 2lern4BlO
 if     [[       "$HOSTNAME" == "" ]]; then       export HOSTNAME=`hostname`;fi   #`hostname`retnz fsckd nwlInz\n4CygWinzRxvt... ||smthng els lame  =(
 if     [[       "$HOST"     == "" ]]; then       export HOST   ="$HOSTNAME";fi;export VERBOSE='1'; # set flag to print debug && status info from system utilz
@@ -461,7 +461,8 @@ s(){  ifil="$1";synl='';if [[ "$#" -gt 1 && "$2" != "" && -e "$2" ]]; then synl=
   else                                echo " source-highlight -f esc --style-file=~/.shl.style          -i $ifil;"; srchl          -i $ifil; fi; }
 alias    d8wf='d8=`d8`;en "d8:$d8;"|flet                     ;ec;ec "d8B4:$d8;";ec "d8af:`d8`;"'; # d8-timer Wraps Fusion of d8 thru Figlet Font Filez;
 alias      fl='d8=`d8`;en "d8:$d8;"|flet > ~/.log/flet-"$d8".log;ec "d8B4:$d8;";en "d8af:`d8`;"'; # run flet as just fl && redirect STDOUT 2 .log file 2ck;
-alias      wf='d8wf'; # just Wrap   Flet in d8z;
+alias      wf='d8wf';FL() {  figlet -w $COLUMNS -f $1; # just Wrap   Flet in d8z;also mkFL just for auto d8 4 now,l8r any pipe2; # BlO can inXclud2&&mapb64+;
+}; alias lsfl="ls /usr/share/figlet/*|gv -|pe 's/\\/usr\\/share\\/figlet\\///;s/\\.flf\\n/ /g;s/ \[0-9a-z_\]+ / /g;'"; # umm quik dope-as-fsck!  ;)
 alias      S8='   shl8'; # my primitive c8:SourceHighLight8 Utl to hopefully eventually approach functional parity with source-highlight before surpassing it
 export     d2="$HOME/dox/2du"; # K6LMLhot: `ai libgtkhotkey-dev libgtkhotkey1 sxhkd triggerhappy khotkeys-data khotkeys-dev khotkeys` to hotkey Octology demo;
 export     gs="$HOME/gfx/sho"; # K6MMGFix: actually adding xe() to a8.pm to wrap `xte` for Octl dMO autom8ion seems better than above hotkey options (so far);
@@ -523,12 +524,12 @@ alias       f='   find'; #  f    :           find            (with combined inte
 alias      gi='   g -i'; #                              grep -i to      Ignore_case
 alias      go='   g -o'; #                              grep -o to      Only_matchz
 alias      gv='   g -v'; #                              grep -v to                     inVert_match_results (gs is already GhostScript so not aliased to g -s)
-alias      gS='   g -s'; #                              grep -s to SupreSS warningS
+alias      gS='   g -s';alias grs='gS';alias gms='gS'; #grep -s to SupreSS warningS        ## -s also like gns a bit below;
 alias      gH='   g -H'; #                              grep -H to sHow Header_file_name
 alias      gT='   g -T'; #                              grep -T to make sure -n liNeNumber && -b Byteoffset && matchingtextline start on initial-Tab stopz2alIn
 alias      gn='   g -n'; #                              grep -n to show liNe_Number
 alias      gb='   g -b'; #                              grep -b to show Byte_offset && also want -u to Use-Unix-byte-offsets for MS-DOS or MS-Windows OpSystMz
-alias     gio=' gi  -o';alias goi='gio';alias gbu='gb -u';alias gnv='gn -v';alias gvn='gnv';alias ginv='gin -v';alias givn='ginv';
+alias     gio=' gi  -o';alias goi='gio';alias gbu='gb -u';alias gnv='gn -v';alias gvn='gnv';alias ginv='gin -v';alias givn='ginv';alias gns='g -s'; #-no-mSgz;
 alias     gin=' gi  -n'; #                              grep    to both Ignore_case && Only___match_include (but alreD was /usr/bin/gio 4 mAB GLib InptOutpt?)
 alias     giv=' gi  -v'; #                              grep    to both Ignore_case && inVert_match_results
 alias     gis=' gi  -s'; #                              grep -s to both Ignore_case && --no-messages suppress messages like glob * getting directories
@@ -969,6 +970,7 @@ alias mplyr='mplayer';alias mplr='mplyr';alias mplx='mpx -loop 0'; # EBIL4AcZ:up
 alias mpp='  mplr -vo xv    -fixed-vo -ao pulse -cache 16384 -cache-min 64'; # shudtrydif -vo (xv was Dfalt) 4per4manc;`mplr -ao help`4list;
 alias mpa='  mplr -vo xv    -fixed-vo -ao alsa  -cache 16384 -cache-min 64';alias ov='cd ~/mvz;mpx  $(ls **/*[OV][ob][sn]*|shfl)'; #Obs+Vnk;
 alias mp='   mplr -vo xv    -fixed-vo -ao sdl   -cache 16384 -cache-min 64';alias vo='cd ~/mvz;mplx $(ls **/*[VO][ob][sn]*|shfl)'; #Vnl+Obs;
+alias hg='   mplx ~/mvz/U2b/vnk/*Head*'; # not Mercurial!  ;)  Grind!
 alias mpns='cd ~/mvz/U2b/nxt;mp $(ls B* Dr* *Tut* Ex* M* O*-Res* Var* *Trap* *Trap* *Boy*|shfl);cd ..'; # mk MPlyrNxtShfl 4quik favor8 mvz Drub&&Trap vidzls;
 alias mpx='  mp   -fs';alias vnk='cd ~/mvz/U2b;mpx vnk/V?n?k*';alias vnl='cd;mvz/U2b/;mplx vnk/V?n?k*'; #-x 1920 -y 1080'; had -noborder but thN cud!mv wndw;
 alias mplo=' mplr -vo xv    -fixed-vo -ao sdl   -cache 16384 -cache-min 88 -framedrop -delay -4 -autosync 30 -demuxer +lavfpref -vfm ffmpeg -lavdopts lowres=1:fast:skiploopfilter=all -v ~/mvz/U2b/nxt/O*On*'; # try to play Obsidia One_Winged_Angel thru SDL audio since Pulse stutters && ALSA totally freezes up;

@@ -1,5 +1,5 @@
 # F1RLLK2K:~/.lrc  by PipStuart <Pip@CPAN.Org> as an altern8 format for .lsrc ideally having new ~/bin/lrc gNR8 either from the other;
-# $VERSION='0.0';$d8VS='L9NMKill'; 2du:lrc optn2gNr8 altrn8 versN th@purposfuly varEz colrzof comon typz,add *[-_?]* NtrEz frm .zshrc hEr,audit oldz,ck /etc/*,
+# $VERSION='0.0';$d8VS='LBALLARD'; 2du:lrc optn2gNr8 altrn8 versN th@purposfuly varEz colrzof comon typz,add *[-_?]* NtrEz frm .zshrc hEr,audit oldz,ck /etc/*,
 #   add interaction2 lsd8 wN it Dtectz unrecognIzd XtNshNz offerng c@egOrEz with comon colr2autOm@ically insrt chOsN NtrEz,mk lrc gNr8 Xportd LS_COLORS 4 Eval,
 #   confirm all accept f0nt cOdez wi dash accepting Dfalt 4grnd thN redo NORMAL FILE LINK as no fi ln,Dtect cOlIdz OvrIdz&&warn,mAB 8trm aded2 TERM ls sumdA?;
 # 819J2Pip:~/.lsrc by PipStuart <Pip@CPAN.Org> izAheavily modifId`dircolors`cfgfIl(Orig ~/.DIR_COLORS)wich setz $ENV{'LS_COLORS'} 4GNU`ls --color`&&`lsd8`;
@@ -157,6 +157,7 @@ CHR                            Yk              #cd= 01;33;40    01;33;40  CHaRac
 *brc                           G               #      ~ bashrc altern8
 *.lrc                          G               #  lsd8 ls lsrc lrc
 *.lsrc
+*.lircrc                       I               # InVega InDigo whIte yo! Not even sure what lirc && it's rEsourcez file refer to, but whatevz?  :P  m0 v !fnd;
 *qrc                                           # Qt5 && QMake ResourCe files that seem kinda similar to .sh or .ini variable-setting files
 *bxrc
 *shrc

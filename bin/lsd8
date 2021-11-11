@@ -24,7 +24,7 @@
 use strict;use warnings;use utf8;use v5.10; # mAB tSt if just regUlR -t STDIN && -t STDOUT R Dtectng intractiviT corectly 1st,B4 fallng bak on IO::Interactive
 #se IO::Interactive qw(is_interactive); # employ if(is_interactive()){} around all colring to attempt to behave like `ls --color=auto` when piped away
 use Encode;use Octology::a8;#se Octology::c8;
-           use Octology::b8;use Octology::d8;use Time::PT;my $VERSION='0.0';my $d8VS='L64ME4U2';my $sllw=0; # SymLink LargestWidth to track for alignment
+           use Octology::b8;use Octology::d8;use Time::PT;my $VERSION='0.0';my $d8VS='LAFMGeed';my $sllw=0; # SymLink LargestWidth to track for alignment
 open my $out8,'>&',STDOUT or die "Can't open  duplic8 STDOUT handle: $!"; binmode $out8,':encoding(UTF-8)';my $cauf=1;my $cnvf=0; # crE8 local duplic8 of globl
 my $vsrt='-v'; my @b64d;my $t;my $sbdr;my $b64c;my($pwnw,$grpw,$grpx);$pwnw=$grpw=$grpx=0; # default -v Version SoRT,reversed b8 Colr List matchz Dfalt d8 ordr
 my $jfdz=join('|',@Day);my $jfmz=join('|',@Mon); # Joined Fieldz for DayZ and MonthZ to regex with  # BlO mAB some ARGVz shud!B sNt thru -d tSt so Dtect 1st?
@@ -94,9 +94,11 @@ for(@ldat){if(($prmz,$blsz,$pwnr,$grup,$fsiz,$d8tz,$fnam)= /^(\S{10})(\s+\d+)(\s
        $tnam=~ s/(Dr?ubstep        )/$C$1/gix;$tnam=~ s/(Liquid     )/$B$1/gix;$tnam=~ s/(F(ea)?t\.)/$B$1/gix;$tnam=~s/(Mr)(Suicide)/$C$1$N$2/gix;
        $tnam=~ s/(Chillout         )/$B$1/gix;$tnam=~ s/(Deep_*House?)/$c$1/gi;$tnam=~ s/(Ambient  )/$g$1/gix;$tnam=~s/(Dope(st)?|Ganja)(  [^A-Z])/$z$1$3/gix;
        $tnam=~ s/(Chil+step        )/$w$1/gix;$tnam=~ s/(Vocal      )/$z$1/gix;$tnam=~ s/(Free     )/$B$1/gix;$tnam=~s/(Drop|Blue|Water)(s?[^A-Z])/$B$1$2/gix;
+       $tnam=~ s/(Co?mple?Xt?r?o?  )/$r$1/gix;$tnam=~ s/(Net)(Work)/$B$1$W$2/g;$tnam=~ s/(King     )/$K$1/gix;$tnam=~s/(Dope|Blow|Job  )(s?[^A-Z])/$G$1$2/gix;
        $tnam=~ s/(Unbelievable     )/$c$1/gix;$tnam=~ s/(PlayList   )/$B$1/gix;$tnam=~ s/(New      )/$C$1/gix;$tnam=~s/(Sun |Burn|Fire )(  [^A-Z])/$o$1$2/gix;
        $tnam=~ s/(Download         )/$g$1/gix;$tnam=~ s/(Mega       )/$O$1/gix;$tnam=~ s/([^m])(Bass   )/$1$S$2/gix;$tnam=~ s/(Vol(ume)?)/$M$1/gix;
        $tnam=~ s/(Kisses           )/$G$1/gix;$tnam=~ s/(Nova       )/$o$1/gix;$tnam=~ s/(Explode      )/$o$1/gix  ;$tnam=~ s/(  _(N)_)/_$z$2_/gix;
+       $tnam=~ s/(Vonikk           )/$G$1/gix;$tnam=~ s/(Mavrik+    )/$M$1/gix;$tnam=~ s/(Di|In  )(vers(ity)?)/$g$1$p$2/gix; $tnam=~ s/(Kyra)/$c$1/gx;
        $tnam=~ s/(Fonik            )/$G$1/gix;$tnam=~ s/(Best       )/$B$1/gix;$tnam=~ s/(Obsidia)([-_]|Media)/$G$1$N$2/gix; $tnam=~ s/(CoMa)/$M$1/gx;
        $tnam=~ s/(Knife   [-_]?)(Party[^A-Z])/$o$1$o$2/gix;$tnam=~ s/(Aero[-_]?)(Chord[^A-Z])/$U$1$U$2/gix;$tnam=~ s/(DotEXE)/$Y$1/gix; # Dtect more Rtistz
        $tnam=~ s/(Rich  [-_]?)(Edwards[^A-Z])/$S$1$S$2/gix;$tnam=~ s/(Tut [-_]?)(Tut[-_]?)(Child[^A-Z])/$B$1$B$2$B$3/gix;$tnam=~ s/(StdHouse)/$o$1/gi;
@@ -108,8 +110,9 @@ for(@ldat){if(($prmz,$blsz,$pwnr,$grup,$fsiz,$d8tz,$fnam)= /^(\S{10})(\s+\d+)(\s
        $tnam=~ s/(Trap    (Bass)?  )/$K$1/gix;$tnam=~ s/(Monstercat )/$B$1/gix;$tnam=~ s/(Release      )/$w$1/gix  ;$tnam=~ s/(VIP)/$M$1/gx;
        $tnam=~ s/(Drum[-_]?Bass|DnB)/$R$1/gix;$tnam=~ s/(Official   )/$Y$1/gix;$tnam=~ s/([-_])( EP[-_])/$1$K$2/gx ;$tnam=~ s/(^|[-_.])( 1 [-_.])/$1$o$2/gix;
        $tnam=~ s/(Tran+ce          )/$C$1/gix;$tnam=~ s/(Lyrics     )/$U$1/gix;$tnam=~ s/([-_])( HQ[-_])/$1$S$2/gx ;$tnam=~ s/(^|[-_.])( 2 [-_.])/$1$y$2/gix;
+       $tnam=~ s/(Electro(niz)?[de]+)/$O$1/gi;$tnam=~ s/(Dub)(Station)/$C$1${Y}St8ion${z}_/gx;$tnam=~s/(S)(tep|uper)/$o$1$y$2/gx;$tnam=~s/(Music)/$m$1$z/gix;
        $tnam=~ s/(Electro_?H(ouse)?)/$Y$1/gix;$tnam=~ s/(EDM        )/$c$1/gx ;$tnam=~ s/([-_])( HD[-_])/$1$W$2/gx ;$tnam=~ s/(^|[-_.])( 3 [-_.])/$1$B$2/gix;
-       $tnam=~ s/(Progr(es)?si?ve?_?H(ouse)?)/$o$1/gix;                        $tnam=~ s/([-_])( DJ[-_])/$1$G$2/gx ;$tnam=~ s/(^|[-_.])(One[-_.])/$1$o$2/gix;
+       $tnam=~ s/(Progr(es)?si?ve?_?H(ouse)?)/$o$1/gix;$tnam=~s/(Origi)/$P$1/g;$tnam=~ s/([-_])( DJ[-_])/$1$G$2/gx ;$tnam=~ s/(^|[-_.])(One[-_.])/$1$o$2/gix;
        $tnam=~ s/(^|[-_.])((Moon)?Lights?)([-_.])/$1$Y$2$4/gi;      $tnam=~ s/(^|[-_.])(Three[-_.])/$1$B$2/gi ;$tnam=~ s/(^|[-_.])((Tw|Du)o[-_.])/$1$y$2/gi;
        $tnam=~ s/(Aphenda          )/$G$1/gix;$tnam=~s/(Pulse)(8)(Music)/$M$1$G$2$U$3/gix;$tnam=~ s/(Music)(HD)(TV)/$O$1$W$2$c$3/gix;
        $tnam=~ s/(Rachael)(Lust)/$Y$1$S$2/gix;$tnam=~s/(Pulse)(8)/$B$1$G$2/gix;}

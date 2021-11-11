@@ -1,0 +1,320 @@
+# L6RMGood:Pip-LAB-LAD-MAD-MAN-_6Years_NOPQR_Ichi_Ni_Beppu-SAN-SCI.utf crE8d by PipStuart <Pip@CPAN.Org> as more descriptive rename of earlier notes orig.just:
+# L6RMGKRk:pip.utf crE8d by PipStuart <Pip@CPAN.Org> to start documenting the commands && directions Beppu-san initially showed me in order to write str@s l8r;
+bin/backtest --exchange bybit --market BTC/USD --timeframe 1m --strategy HeikinAshi --config @cfg.json -S 2021-01-01 --begin 2021-02-01 --balance 500000  -v  ;
+bin/mexico   --exchange bybit --market BTC/USD --timeframe 1m --since last --limit 160 -v # ETH  EOS  XRP  (BTC/USDT  ETH  BNB  ADA  DOGE  XRP  DOT  UNI ... );
+bin/mexico  -x bybit  -m BTC/USD  -t 1m  -s last  -l 160  -v; # du-smal-poptnz;  -S=--start-processing-at 2021-01-01 --begin 2021-02-01 --balance 500000  -v  ;
+bin/mexico  -x bybit  -i  -v ; # lists -verbose info on markets && time-frames;  spa? Start-pross-Sing -S L(auto.=11) - Bgin ~ -B L21 (any1m?) -b 160000  ;b64?
+"exchange":"bybit", "markets": [ # only left 4 [BEX]*/USD mRkts (of28)trIdsOfR;  # maybe config could default apply lc() market into some design8or char? ;'?'?
+  ''  "BTC/USD" ,  "BTC/USDT",  "BTCUSDU21",  "BTCUSDZ21",   b B U Z '<>' ; # -=-~-=- # b=BTC/USD B=BTC U=BTCUSDU21 Z=BTCUSDZ21 ; # All bybit markets have been
+  ''  "ETH/USD" ,  "ETH/USDT",  "ETHUSDU21",  "ETHUSDZ21",   e E u z  ''  ; # <= - => # e=ETH/USD E=ETH u=ETHUSDU21 z=ETHUSDZ21 ; #   ... mapped 2 just 1 char;
+  ''  "EOS/USD" ,  "EOS/USDT", "ADA/USDT"  , "dOt-USdt/!",   o O a d "/!" ; # =-=~=-= # o=EOS/USD O=EOS a=ADA d=dOt ;( # All 21$ of [Uu] or [Zz] above && /USD$
+  ''  "XRP/USD" ,  "XRP/USDT", "BCH/USDT"  , "BNB/USDT"  ,   x X h n  ''  ; # <= - => # x=XRP/USD X=XRP h=BCH n=BNB ;P #   ... on left as [beox] are completed,
+ "''" "XEM/USDT",  "XTZ/USDT", "ETC/USDT"  , "UNI/USDT"  ,   m t c i '<>' ; # -=-~-=- # m=XEM     t=XTZ c=ETC i=UNI ;) #   ... but all others need2: .="/USDT";
+ '' "MATIC/USDT",  "SOL/USDT", "LTC/USDT"  , "FIL/USDT"  ,   M s l f "\n" : S A D L ; # M=MATIC   s=SOL l=LTC f=FIL \n S=SUSHI A=AAVE D=DOGE L=LINK; #rCOWgl?;)
+ '' "SUSHI/USDT", "AAVE/USDT","DOGE/USDT"  ,"LINK/USDT" ],   "timeframes" : # assuming Time::Frame, or Octology::d8::dur8(ion) wi autO-apNd '00' MpT sec&&phas:
+["1m","3m","5m","15m","30m","1h","2h","4h","6h","12h","1d","1w","1M","1y"]; #   qw( 1 3 5 F U 10 20 40 60 C0 1000 7000 10000 100000 ); # does same spans O'tIm;
+# --since should start off with some rel8ively small (but still non-zero, due to some bugs) like 2000 for my first run (which might need about an hour to get).
+# After completing an initial load, then providing special 'last' should pick up wherever had previously been left off from. Use `nvm` to install Node.JS next.
+# CandleStick d8a: 0..5: timestamp, open, high, low, close, volume  where one block is the d8a for a single candle on which math is performed on, for strateGz.
+# https://www.bybit.com/trade/inverse/BTCUSD  should be a useful supplementary resource for when developing strategies && have need of candle graphs to follow.
+# ~/strategies/HeikinAshi.js has str@ functn which is my responsibility to construct. First param is stratSt8 with purpose of letting strat know what it should
+#   ... do, to build up st8 in order to make decisions as to what actions should l8r be taken. marketSt8 is a bit more str84ward which includes the candles th@
+#   ... are going 2B used 2 build up the desired st8-d8a 4 implementing whatever varE8ion is becoming specified by the larger str@. my $d8VS='L7HMBEOX'; # 0-L;
+# mainLoop = pipeline.mainLoopFn('1h', specs)
+#   in REPL the command can be used to build up an RSI (Rel8ive-Strength-Index)
+# pipeline.loadCandlesFromFS('data', 'bybit', 'BTC/USD', '1h', start).then((nc) => x.nc = nc)
+# x.ms crE8s a MarketSt8 thing of x as a global stash of stuff.
+# Object.keys(x.ms)
+# imd IndexMarketD8a
+# Object.keys(x.ms.imd1d)
+# [ timestamp, open, high, low, close, volume, rsi ]
+# x.ms.imd1d.open[0]
+# x.ms.imd1d.open[1]
+# x.ms.imd1d.open[2]
+# x.ms.imd1d.timestamp[0]
+# DateTime.fromMillis(x.ms.imd1d.timestamp[9])
+# vim x.js
+  start = DateTime.fromISO("2018-11-24T17:00:00.000-07:00")
+  indicators = [['rsi']]
+  timeframes = ['1h', '4h', '1d']
+  specs = {}
+  timeframes.forEach((tf) => {specs[tf] = indicators.map((indi) => indi)})
+  mainLoop = pipeline.mainLoopFn('1h', specs)
+  pipeline.loadCandlesFromFS('data', 'bybit', 'BTC/USD', '1h', start).then((nc) => x.nc = nc)
+  nextCandle = x.nc
+  pipeline.runLoop(mainLoop, nextCandle).then((ms) => x.ms = ms)
+# this is how to crE8 a MarketSt8. Check out BabyPips tutorial; 1pt2;
+[pip@OniL6RMG4YH~]ssh pip@167.179.101.146
+pip@167.179.101.146's password:
+Welcome to Ubuntu 20.04.2 LTS (GNU/Linux 5.4.0-70-generic x86_64)
+
+ * Documentation:  https://help.ubuntu.com
+ * Management:     https://landscape.canonical.com
+ * Support:        https://ubuntu.com/advantage
+
+  System information as of Sun 27 Jun 2021 09:05:08 PM UTC
+
+  System load:           0.0
+  Usage of /:            34.5% of 23.41GB
+  Memory usage:          20%
+  Swap usage:            7%
+  Processes:             123
+  Users logged in:       1
+  IPv4 address for ens3: 167.179.101.146
+  IPv6 address for ens3: 2401:c080:1000:4dc6:5400:3ff:fe4c:1e86
+
+ * Super-optimized for small spaces - read how we shrank the memory
+   footprint of MicroK8s to make it the smallest full K8s around.
+
+   https://ubuntu.com/blog/microk8s-memory-optimisation
+
+101 updates can be installed immediately.
+54 of these updates are security updates.
+To see these additional updates run: apt list --upgradable
+
+The programs included with the Ubuntu system are free software;
+the exact distribution terms for each program are described in the
+individual files in /usr/share/doc/*/copyright.
+
+Ubuntu comes with ABSOLUTELY NO WARRANTY, to the extent permitted by
+applicable law.
+
+pip@trader0:~$ ls
+pip@trader0:~$ ls -a
+.  ..  .bash_logout  .bashrc  .cache  .profile
+pip@trader0:~$ ls -A
+.bash_logout  .bashrc  .cache  .profile
+pip@trader0:~$ ls -lA
+total 16
+-rw-r--r-- 1 pip pip  220 Jun 27 20:39 .bash_logout
+-rw-r--r-- 1 pip pip 3771 Jun 27 20:39 .bashrc
+drwx------ 2 pip pip 4096 Jun 27 21:05 .cache
+-rw-r--r-- 1 pip pip  807 Jun 27 20:39 .profile
+pip@trader0:~$ w
+ 21:06:52 up 76 days,  5:50,  3 users,  load average: 0.01, 0.02, 0.04
+USER     TTY      FROM             LOGIN@   IDLE   JCPU   PCPU WHAT
+iris     pts/0    72.134.250.71    20:52    1:18   0.20s  0.20s -zsh
+iris     pts/8    72.134.250.71    20:16   26:34   0.28s  0.28s -zsh
+pip      pts/12   24.208.13.237    21:05    0.00s  0.02s  0.00s w
+pip@trader0:~$ tmux -S /tmp/shareds attach -t shared
+error connecting to /tmp/shareds (Permission denied)
+pip@trader0:~$ tmux -S /tmp/shareds^Cttach -t shared
+pip@trader0:~$ id
+uid=1001(pip) gid=1001(pip) groups=1001(pip),50(staff)
+pip@trader0:~$ tmux -S /tmp/shareds attach -t shared
+[exited]
+pip@trader0:~$
+[pip@OniL6TMF429~/dvl/t8/node/nvm]./install.sh
+=> Downloading nvm from git to '/home/pip/.config/nvm'
+=> Cloning into '/home/pip/.config/nvm'...
+remote: Enumerating objects: 347, done.
+remote: Counting objects: 100% (347/347), done.
+remote: Compressing objects: 100% (295/295), done.
+remote: Total 347 (delta 39), reused 163 (delta 27), pack-reused 0
+Receiving objects: 100% (347/347), 203.77 KiB | 2.58 MiB/s, done.
+Resolving deltas: 100% (39/39), done.
+=> Compressing and cleaning up git repository
+
+=> Appending nvm source string to /home/pip/.bashrc
+=> Appending bash_completion source string to /home/pip/.bashrc
+=> You currently have modules installed globally with `npm`. These will no
+=> longer be linked to the active version of Node when you install a new node
+=> with `nvm`; and they may (depending on how you construct your `$PATH`)
+=> override the binaries of modules installed with `nvm`:
+
+/home/pip/dvl/t8/node/node-v10.16.0-linux-x64/lib
+├── coronavirus-tracker-cli@0.8.0
+├── expo-cli@3.4.0
+=> If you wish to uninstall them at a later point (or re-install them under your
+=> `nvm` Nodes), you can remove them from the system Node as follows:
+
+     $ nvm use system
+     $ npm uninstall -g a_module
+
+=> Installing Node.js version v10.16.0
+Downloading and installing node v10.16.0...
+Downloading https://nodejs.org/dist/v10.16.0/node-v10.16.0-linux-x64.tar.xz...
+######################################################################################################################################################## 100.0%
+Computing checksum with sha256sum
+Checksums matched!
+Now using node v10.16.0 (npm v6.9.0)
+Creating default alias: default -> v10.16.0
+=> Node.js version v10.16.0 has been successfully installed
+=> Close and reopen your terminal to start using nvm or run the following to use it now:
+
+export NVM_DIR="$HOME/.config/nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+[pip@OniL6TMF6kq~/dvl/t8/node/nvm]en $SHELL
+/usr/bin/zsh[pip@OniL6TMF707~/dvl/t8/node/nvm]
+L6UMMNOP:from trader0:tmux -S /tmp/shared a -t debug;  # to find:
+# Market Visualization
+- TradingView = https://www.tradingview.com/
+- GoCharting  = https://gocharting.com/
+- Gnuplot     = http://gnuplot.info/
+# Misc
+- tmux reference = https://tmuxcheatsheet.com/
+# Beppu-san wants to do a calQl8ion to give strategies biases we want. Hull-Suite might be a rel8ively simple way to look at the moving average to set bias?
+https://www.tradingview.com/script/hg92pFwS-Hull-Suite/
+# Study stop-loss strategy && stop-hunting && trailing-stop with something more dynamic than just a constant difference from the most recent closing price,
+#   like a percentage of the trend or a moving-average. Expect to run lots of tests to evalU8 over which ranges some things work better than others.
+# ${SSH_TTY:+"%F{9}%n%f%F{7}@%f%F{3}%m%f "}%F{4}${_prompt_sorin_pwd}%(!. %B%F{1}#%f%b.)${editor_info[keymap]}  # result of his `echo $PS1` to use zpresto
+#   which may auto-collapse like mad-scientists-lab/ down to just m/ && others similarly when expected to be understood as known && too long to leave full.
+gnuplot> set terminal dumb ansi256 size 160,45 enhanced
+
+Terminal type is now 'dumb'
+Options are 'feed enhanced size 160, 45 aspect 2, 1 ansi256'
+gnuplot> set terminal svg size 1920,1080
+
+Terminal type is now 'svg'
+Options are 'size 1920,1080 fixed enhanced font 'Arial,12' butt dashlength 1.0 '
+gnuplot> set output "x.svg"
+gnuplot> replot
+# this made:http://167.179.101.146:8888/log/backtest/20210201.bybit.BTCUSD.HeikinAshi.1d/x.svg as a new plot with different upper y-axis limit && blue color.
+"Is the price above the 200 daily-moving-average?"  "Sometimes what works for BitCoin doesn't work for Ethereum."  "Different strats work diff on diff assets."
+iris@trader0 ~/m/ta ❯❯❯ cat cfg.eth.json
+{
+  "trendTf": "1d",
+  "entryTf": "1h",
+  "fixedPositionSize": 25
+}
+iris@trader0 ~/m/ta ❯❯❯ cat cfg.btc.json
+{
+  "trendTf": "1d",
+  "entryTf": "1h",
+  "fixedPositionSize": 3
+}
+iris@trader0 ~/m/ta ❯❯❯ bin/backtest --exchange bybit --market ETH/USD --timeframe 1m --strategy HeikinAshi --config cfg.eth.json --start-processing-at 2021-01-01 --begin 2021-02-01 --balance 500000 -v --gnuplot
+# head 2021-02-01.log | jq . ;
+{
+  "level": 30,
+  "time": 1625083879390,
+  "pid": 2451358,
+  "hostname": "trader0",
+  "ts": "2021-02-16T00:00:00.000+00:00",
+  "side": "sell",
+  "type": "market",
+  "symbol": "ETH/USD",
+  "quantity": 25,
+  "price": 1781.6,
+  "fee": 0.01875,
+  "fee$": 33.404999999999994,
+  "v": 1
+}
+{
+  "level": 30,
+  "time": 1625083879390,
+  "pid": 2451358,
+  "hostname": "trader0",
+  "ts": "2021-02-16T00:00:00.000+00:00",
+  "side": "sell",
+  "type": "market",
+  "symbol": "ETH/USD",
+  "quantity": 25,
+  "price": 1781.6,
+  "fee": 0.01875,
+  "fee$": 33.404999999999994,
+  "v": 1
+}
+{
+  "level": 30,
+  "time": 1625083879656,
+  "pid": 2451358,
+  "hostname": "trader0",
+  "ts": "2021-02-18T00:00:00.000+00:00",
+  "side": "buy",
+  "type": "market",
+  "symbol": "ETH/USD",
+  "quantity": 25,
+  "price": 1848.85,
+  "fee": 0.01875,
+  "fee$": 34.6659375,
+  "v": 1
+}
+iris@trader0 ~/m/t/l/b/20210201.bybit.ETHUSD.HeikinAshi.1d ❯❯❯ 
+# tmux: Ctrl-b [
+# try epub on 1lib.us e-book reader calibre is preferred  HTTPS://Calibre-EBook.Com/download_linux
+iris@trader0 ~/m/t/l/b/20210201.bybit.ETHUSD.HeikinAshi.1d ❯❯❯ prompt-pwd
+~/m/t/l/b/20210201.bybit.ETHUSD.HeikinAshi.1d
+iris@trader0 ~/m/t/l/b/20210201.bybit.ETHUSD.HeikinAshi.1d ❯❯❯ which prompt-pwd
+prompt-pwd () {
+        setopt localoptions extendedglob
+        local current_pwd="${PWD/#$HOME/~}"
+        local ret_directory
+        if [[ "$current_pwd" == (#m)[/~] ]]
+        then
+                ret_directory="$MATCH"
+                unset MATCH
+        elif zstyle -m ':prezto:module:prompt' pwd-length 'full'
+        then
+                ret_directory=${PWD}
+        elif zstyle -m ':prezto:module:prompt' pwd-length 'long'
+        then
+                ret_directory=${current_pwd}
+        else
+                ret_directory="${${${${(@j:/:M)${(@s:/:)current_pwd}##.#?}:h}%/}//\%/%%}/${${current_pwd:t}//\%/%%}"
+        fi
+        unset current_pwd
+        print "$ret_directory"
+}
+iris@trader0 ~/m/t/l/b/20210201.bybit.ETHUSD.HeikinAshi.1d ❯❯❯ echo -n "Is there any chance we could please git clone Octology onto here or a ~pip or tst too?"
+Is there any chance we could please git clone Octology onto here or a ~pip or tst too?                                                                          iris@trader0 ~/m/t/l/b/20210201.bybit.ETHUSD.HeikinAshi.1d ❯❯❯
+iris@trader0 ~/m/t/l/b/20210201.bybit.ETHUSD.HeikinAshi.1d ❯❯❯ echo    "... or can we figure out how you could reverse-ssh back into Oni here 2 share screen2?"
+... or can we figure out how you could reverse-ssh back into Oni here 2 share screen2?
+iris@trader0 ~/m/t/l/b/20210201.bybit.ETHUSD.HeikinAshi.1d ❯❯❯ alias en='echo "Why in fucking hell would -n not not newline...";echo -n'
+iris@trader0 ~/m/t/l/b/20210201.bybit.ETHUSD.HeikinAshi.1d ❯❯❯ en "I think I get that MadSciLab matters a gr8 deal and describes a ton of work, deserving..."
+Why in fucking hell would -n not not newline...
+I think I get that MadSciLab matters a gr8 deal and describes a ton of work, deserving...                                                                       iris@trader0 ~/m/t/l/b/20210201.bybit.ETHUSD.HeikinAshi.1d ❯❯❯ en "... help for strategy-writing and more, but why isn't Octology also similarly important?"
+Why in fucking hell would -n not not newline...
+... help for strategy-writing and more, but why isn't Octology also similarly important?                                                                        iris@trader0 ~/m/t/l/b/20210201.bybit.ETHUSD.HeikinAshi.1d ❯❯❯ en "Can you seriously think d8z results and style on the right shows nothing concerning to..."
+Why in fucking hell would -n not not newline...
+Can you seriously think d8z results and style on the right shows nothing concerning to...                                                                       iris@trader0 ~/m/t/l/b/20210201.bybit.ETHUSD.HeikinAshi.1d ❯❯❯ en "... your ~/m/ interface thinking /20210201.bybit.ETHUSD.HeikinAshi.1d would be efficient?"
+Why in fucking hell would -n not not newline...
+... your ~/m/ interface thinking /20210201.bybit.ETHUSD.HeikinAshi.1d would be efficient?                                                                       iris@trader0 ~/m/t/l/b/20210201.bybit.ETHUSD.HeikinAshi.1d ❯❯❯
+iris@trader0 ~/m/t/l/b/20210201.bybit.ETHUSD.HeikinAshi.1d ❯❯❯ en "I also take some offense that you don't care to include Octology d8 in your prompts. Why?"
+Why in fucking hell would -n not not newline...
+I also take some offense that you don't care to include Octology d8 in your prompts. Why?
+alias en='echo -n';
+[pip@OniL7AM4uSh~/dvl/Ppl/bep/mad-scientists-lab/ta]bin/backtest --exchange bybit --market BTC/USD --timeframe 1m --strategy HeikinAshi --config cfg.btc.json --start-processing-at 2021-01-01 --begin 2021-02-01 --balance 500000 -v
+indicatorSpecs { '1d': [ [ 'heikinAshi' ] ],
+  '1h': [ [ 'bbands' ] ],
+  inverted: true }
+events.js:174
+      throw er; // Unhandled 'error' event
+      ^
+
+Error: ENOENT: no such file or directory, open './log/backtest/activity.log'
+Emitted 'error' event at:
+    at SonicBoom.filterBrokenPipe (/home/pip/dvl/Ppl/bep/mad-scientists-lab/ta/node_modules/pino/lib/tools.js:271:12)
+    at SonicBoom.emit (events.js:198:13)
+    at fs.open (/home/pip/dvl/Ppl/bep/mad-scientists-lab/ta/node_modules/sonic-boom/index.js:25:13)
+    at FSReqWrap.args [as oncomplete] (fs.js:140:20)
+[pip@OniL7AM4w7M~/dvl/Ppl/bep/mad-scientists-lab/ta]
+[pip@OniL7AM511p~/dvl/Ppl/bep/mad-scientists-lab/ta]touch log/backtest/activity.log
+# apparently activity.log must already exist for backtest to be able to run;
+# output also looks like it runs right up thru toDay so results will differ;
+# L7AM6Lta:I am pretty sure Beppu-san said mad-sci-*/ta/ was originally for:
+#   "Technical-Analysis" then also became "Trading-Autom8ion", but confirm?;
+# 2du:S_BabyPips.Com/learn (&& tk nOtz), stuD mexico && port2pl, stuD bktst;
+HTTPS://BabyPipS.Com/learn/forex stands as "FOReign-EXchange" market or "FX"
+  being the largest decentralized financial market in (i.e., on) the world!
+Exchange r8s change per-second, so the market is in rel8ively constant flux.
+Most currency transactions in the "FX" market occur for specul8ive reasons.
+Currency traders (A.K.A. "specul8ors") buy hoping to l8r be able to sell at
+  higher prices in the future. The "NYSE" (NewYorkStockExchange) handles just
+  $22.4 Billion-per-Day volume, while the "ForEx" market does: $6.6 Trillion!
+  TokyoStockExchange does about $18.9 Billion-per-Day && London $7.2 Billion.
+The "spot" market (the part most relevant to ForEx traders) does $2 Trillion.
+Daily trading volume from retail traders might be about 3-5% or $250 Billion.
+The "FX" market stays open 24-hours 5-Days-a-Week (only closing on WeekEnds).
+HTTPS://MarketMilk.BabyPipS.Com/crypto has SnapShot of l8st market activity.
+"FX"(non-Crypto): "USD"=UnitedSt8s$ "EUR"=EURo "CAD"=CAnada$ "NZD"=NewZealand$  # ACUZ($)
+  "GBP"=Gr8BritainPound "CHF"=SwissFranc "JPY"=JaPanYen "AUD"=AUstraliaDollar$  # EFPY(#)
+Top-8 "major" currencies (with /^(CA|NZ|AU)D$/ sometimes labeled "commodity").  # >/\$ A2
+1973: "ISO 4217 Currency Codes" established 3-letters for each in use toDay.    # >>^^ Z$
+  "GBP" is world's oldest currency still used, d8ing back to the 8th-Century.
+  "USD" also:"bucks,bread,cheese ,paper ,benjis   ,dead-presidents,greenbacks,"
+ ~"15"-slang:"bones,dough,cheddar,moolah,benjamins,loot,scrilla,&& cash-money!"
+"FX" trading through "broker" or "CFD provider" is the simultaneous buying of
+  one currency and the selling of another currency (trading happens in pairs);
+HTTPS://BabyPips.Com/learn/forex/buing-selling-currency-pairs as "PreSchool Lesson 3 of 43":;

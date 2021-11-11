@@ -1,5 +1,5 @@
 # HBQLISTV:know.ls crE8d by PipStuart <Pip@CPAN.Org> to duplic8 Dr. Jordan B. Peterson's Quora.Com answer of "40 most valuable things everyone should know";
-# $VERSION='0.0';$d8VS='L8MMINFI'; # While this document origin8d around (&& still mainly intends to focus on) Dr. Peterson's knowledge, many others fE8ure;
+# $VERSION='0.0';$d8VS='LAFMEMOR'; # While this document origin8d around (&& still mainly intends to focus on) Dr. Peterson's knowledge, many others fE8ure;
 # 2du:start chronicling Dr. Peterson's many topical videos with new section for post-title subject summaries or explor8ion;
 0)"Tell the truth."                                            K) Ask someone to do you a small favour, so that he or she can ask you to do one in the future.
 1) Do not do things that you h8.                               L)"Make friends with people who want the best for you."
@@ -1040,6 +1040,23 @@ L7VM7Ru2:HTTPS://YouTu.be/5sKah3pJnHI "Root 2" # C2R?:08m0 of NumberPhile discus
 #   says "[Hippasus] was one of the first people to be persecuted for proving people wrong with their previous ideas." && he continues around dur8:06Y0 saying
 #  "If you come up with an idea which is right, but goes against conventional wisdom, you can be sent to a desert island, or burnt at the stake, or executed,"
 #  "  because people don't like their ideas about how the world should be upset, even if you can [prove] it!" which I think PhipAlexStus here can reson8 with;
+LAFMDECI:HTTPS://YouTu.be/VmWVXOIQblM "A Brief History of Banned Numbers - Alessandra King" # H9Q:04g0 of TED-Ed on PhipAsus AgN && Hindu-Arabic numeral zer0;
+LAFMEb64:HTTPS://YouTu.be/cZH0YnFpjwU "A Brief History of Numerical Systems - AlSNdra King" # H1J:0570 of TED-Ed on base-systems like DuoDecimal(AKA Dozenal);
 L8MMANIA:HTTPS://YouTu.be/uO6FugTlaxs "WOTM: Jordan Peterson Must Be a Genocidal Maniac" # L2O:06s0 of MisterDeity (BrianDalton) slashing JP's RATSLAGR apart;
 L8MMDrug:HTTPS://YouTu.be/xOItnbkArxk "Jesus && Psychedelics in Ancient Times | Brian Muraresku" # L8G:0FG0 of LexFridman && BrianM. on early Christian drugs;
 L8MMINFI:HTTPS://YouTu.be/CbFDtpEK82s "Infinity is Fake: The Base Layer of Reality is Discrete | Joscha Bach" # L8M:06u0 of LexFridman && JoschaB. say NoInf!;
+LAEMANIA:HTTPS://YouTu.be/PYtuNM45aT8 "God is an Utter Maniac | Stephen Fry and Jordan Peterson" # LA8:0K30 of RationalityRules with dur8:0JL0 showing a quote
+#   (which I doubt I've heard before) from CharlesDarwin in 1856 as: "What a book a Devil's chaplain might write on the clumsy, wasteful, blundering low, ..."
+#  "  and horridly cruel works of n8ure!" that he bolstered in his auto-biography saying: "A being so powerful and so full of knowledge as a God who could..."
+#  "  crE8 the universe, is to our finite minds omnipotent and omniscient   --   and it revolts our understanding to suppose that His benevolence is not  ..."
+#  "  unbounded, for what advantage can there be in the sufferings of millions of the lower animals throughout almost endless time? This very old argument..."
+#  "  from the existence of suffering against the existence of an intelligent first cause seems to me a strong one." These remarks seem quite poignant to me!;
+LAEMMANU:HTTPS://YouTu.be/6_xn8hDZl-A "Occam's Razor Will Cut Your God Off!" # LA4:0MM0 of VicedRhino with dur8:0310 with "God did it." versus very excellent:
+#  "The cyclic multiverse has multiple branes - each a universe - that collided, causing Big Bangs. The universes bounce back and pass through time, until..."
+#  "  they are pulled back together and again collide, destroying the old contents and crE8ing them anew." I don't know where VR got this from, but it's gr8!;
+LAEMMIND:HTTPS://YouTu.be/e3EsCIjvrSw "Why an Obsession with Safety CrE8s Sick Minds and Sick Society" # L7L:09k0 of AcademyOfIdeas on harms of risk-aversion;
+LAFM0SHI:HTTPS://YouTu.be/qawNgLPuJWc "Who Then is the Jewish Messiah?" # L9B:0E40 of RabbiToviaSinger explaining distinctions between Christian Christ && Jew
+#   Moshiach who would not heal or perform miracles, would judge the n8ions && be followed by all of them, speaking && rebuking many peoples (so not a mute!),
+#   such that weapons are forged into tools for agriculture && similar purposes, there becomes a time without war, && all Jews gather into God's Holy Yisrael;
+LAFMEMBR:HTTPS://YouTu.be/xg5y6Ao7VE4 "How Do You Know What's True? - Sheila Marie Orfano" # L6A:05B0 of TED-Ed channel with gr8 talk about Nipponese Rashomon
+#   phenomenon of warring perspectives from early 1920's "In a Grove" short-story by author Ryunosuke Akutagawa-san && also 1950 film from Akira Kurosawa-san;
