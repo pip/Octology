@@ -30,7 +30,7 @@ unsetopt                \
 # auto_pushd            \# setng addz dirz 2 stack wN just normally chngng 2 thM (wich I du not normally lIk or want)
 # ksh_arrays            \# rEmMbr wNwrItng scrptz[or funcz]2include'setopt [localoptions] ksharrays'sO arAzR 0-bAsed(but!glOblBcuzmOst scrptzRstndrdly 1-bAsed)
 # re_____match_____pcre \# mA want2set for Z-SHell scripting RegularExpressions to utilize PerlCompatibility styles && mA insert 'zmodload zsh/(pc)?re(gex)?';
-export Vers='0.0';export d8VS='LBBL8gns';export Auth='PipStuart <Pip@CPAN.Org>'; # not Xportng $b sinc cOlIdz wi sort{$a <=> $b} /defhijlnqstuvx/i + AZ 4golf;
+export Vers='0.0';export d8VS='LBCLIMPS';export Auth='PipStuart <Pip@CPAN.Org>'; # not Xportng $b sinc cOlIdz wi sort{$a <=> $b} /defhijlnqstuvx/i + AZ 4golf;
 if     [[       "$SHELL"    == "" ]]; then       export SHELL=` which  zsh`;fi   # 8sh should parse this && OverId it    # shud `man zshall` /OSTYP 2lern4BlO
 if     [[       "$HOSTNAME" == "" ]]; then       export HOSTNAME=`hostname`;fi   #`hostname`retnz fsckd nwlInz\n4CygWinzRxvt... ||smthng els lame  =(
 if     [[       "$HOST"     == "" ]]; then       export HOST   ="$HOSTNAME";fi;export VERBOSE='1'; # set flag to print debug && status info from system utilz
@@ -473,7 +473,7 @@ alias      LS="$HOME/mvz/U2b/vid/;mp -fs L*To* L*Sh* L*He*"; # LindseyStirling w
 #lias      ML="mplyr -nosound -ss 11 -endpos 299 -fs -geometry 1920x1080+0+0 $HOME/mvz/dvl/rec/PS-Octology-PerlConfer*-Take0-K6G*.mp4"; #run audio-less video;
 alias      ML="mplyr          -ss  4 -endpos 310 ~/mvz/dvl/rec/PipStuart-Octology-PerlConferenceInTheCloud-LightningTalk-June24-26th_2020-Take2-K6OM84Me.mp4";
 alias      GL='g3lt   '; # GoodLuck GodsLove GameLife GoneLong GrabLunch GetLadies GutLosers GiveLicense GoLast GraphicsLibrary Gr8Laser GroupLeaders GetLoud;
-mpls () {  mp $(ls $@|shfl); } # MPlayer listing paramz piped thru my basic shfl. Should eventually try to incorpor8 some perhaps more thorough -z -Z options;
+mpls () {  if [[ $# -gt 0 ]]; then mp $(ls $@|shfl); else mp $(ls|shfl); fi; } # MPlayer LiSting paramz piped thru my basic ShfL. Shud try2 add -z -Z options;
 #lias    g3lt='cd; pu $mu;wh g3lt;gst123 -k  212 Oi*;g3 63 36 63 63 u*/El* ../f*/Bo*/T*/B* *br* c*/Gi* -v monoscope;ec;g3 ../wa*/Bo*/B*;ec;Hlt;ec;po';
 alias    g3lt='cd; pu $mu;wh g3lt;gst123 -k  212 Oi*;g3 63 36 63 63 u*/El* ../f*/Bo*/T*/B* *br* c*/Gi*             ;ec;g3 ../wa*/Bo*/B*;ec;Hlt;ec;po';
 alias     Hlt='g3  48 $mu/chl/Hack*Univ* -k 3420'; # add just 1st seconds of gr8 part 2 push above 4mins12secs right up against 5mins total 4 LightninTalk;
