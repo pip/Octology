@@ -1,6 +1,7 @@
 #    Octology
- The ontology of 8. Ocho dude. Hachi-desu. Wheet. Aucht! `$VERSION='0.0';$d8VS='L94MBuT2';`
+ The ontology of 8. Ocho dude. Hachi-desu. Wheet. Aucht! `$VERSION='0.0';$d8VS='LBDLGapS';`
 
+<!-- suck my fscking: !!!d8!=!LBD!  ;)  -PipStuPid (git) ... err, PlaySt8ionPortable 4 DeathJr. with RicoChet && pOt8O; -->
 `dic ontology`:  # query the dictd (Dictionary-Daemon) for salient definitions that project visitors might find inform8ive;
 
 <ol><li>n. `(Computer Science)` a rigorous and exhaustive organiz8ion of some knowledge domain that is usually hierarchical

@@ -1,5 +1,5 @@
 # HBQLISTV:know.ls crE8d by PipStuart <Pip@CPAN.Org> to duplic8 Dr. Jordan B. Peterson's Quora.Com answer of "40 most valuable things everyone should know";
-# $VERSION='0.0';$d8VS='LBCLFMAM'; # While this document origin8d around (&& still mainly intends to focus on) Dr. Peterson's knowledge, many others fE8ure;
+# $VERSION='0.0';$d8VS='LBDLG8N8'; # While this document origin8d around (&& still mainly intends to focus on) Dr. Peterson's knowledge, many others fE8ure;
 # 2du:start chronicling Dr. Peterson's many topical videos with new section for post-title subject summaries or explor8ion;
 0)"Tell the truth."                                            K) Ask someone to do you a small favour, so that he or she can ask you to do one in the future.
 1) Do not do things that you h8.                               L)"Make friends with people who want the best for you."
@@ -1068,3 +1068,5 @@ LBCLFIXD:HTTPS://YouTu.be/wgbV6DLVezo "How Exactly Does Binary Code Work? - Jos√
 LBCLFath:HTTPS://YouTu.be/FJ5X6W_y554 "Explosive Confront8ion with Yerushalayim Street Missionary! Rabbi Tovia Singer Turns Table on Preacher" # LB8:07v0 with
 #   utterly awesome encounter for both men of strict sincere resolve! Can I please moder8 a deb8 on f8h, music, && dance between T.Singer && LindseyStirling?!
 # Is Rabbi Singer "HaShem", Stirling "RuachHaKodesh", && Stuart "HaMashiach"? Does anyone know???SSS!!!HHH... Pork, Lechuga, y Tomates?! ;) TreifShiksa4Piplz;
+LBDLGdlS:HTTPS://YouTu.be/7gt_ylQSP5Q "Why You Shouldn't Put God && Freedumb in Your Bio (or Goddess, but Godless Cool)" # LAQ:05Z0 by DotMathPP HaHa -MoMoM!;
+LBDLGone:HTTPS://YouTu.be/IysCXVLpEyw "Dr. Jordan B. Peterson: 'Women Are Right (Correct); You Are Wrong!'" # LB3:0DO0 of Thinking-Ape doing a number on Dr.P;
