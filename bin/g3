@@ -19,7 +19,7 @@
 #     `pkg-config --libs $(pkg-config --print-requires --print-requires-private cairo)` which produced:
 #     "-lgobject-2.0 -lglib-2.0 -lpixman-1 -lfontconfig -lfreetype -lpng16 -lz -lxcb-shm -lxcb -lxcb-render -lXrender -lX11 -lXext" so trying to add those...
 #   but had to add them to both the project's main root Makefile as well as the very similar one which was within the src/ sub-directory before `mk` worked!;
-use strict;use warnings;use utf8;use Octology::a8;my $VERSION='0.0';my $d8VS='L4RMIX81'; # consider detecting && adding custom Xtra --help basic tXt output2;
+use strict;use warnings;use utf8;use Octology::a8;my $VERSION='0.0';my $d8VS='LBHLDrip'; # consider detecting && adding custom Xtra --help basic tXt output2;
 use Term::ReadKey;     # note that you can pass in as many -d=\d+ DelayDur8ionInSeconds (like MPlayer -endpos) for as many file-name params follow 2 B plAyd;
 END{      ReadMode 0;} # good practice to auto-restore orig TTY read settingz at END
           ReadMode 3;  # setup 4 raw mode or 3 cbreak mode where Ctrl-C workz since signalz are enabled
@@ -136,17 +136,17 @@ sub sn{my $ns=shift||'';$ns=decode('UTF-8',$ns);$ns=~ s/\n+/\n/g; # StripNewline
   elsif ( $ns=~  /.*?(\n*)(Codec)(\s*:)([^\n]+)(\n|$)/i){my $tb=$4;$tb=~ s/\s*(Bit)(rate )(:)(.*?)( \w)(bit)(\/)(s).*/    $o$1$R$2$W$3$M$4$C$5$B$6$Y$7$M$8/gi;
     my $tc;#f($cs && $cs eq "$2$3$4$5"){$tc=$B."\nCodec$R"."Dup\n";}else{$cs="$2$3$4$5";$cs=~ s/\s*$/\n/;$cs=~ s/\s*Bitrate :.*/$tb/i;}
     if(defined($tc)){
-          $ns=~ s/.*?(\n*)(Codec)(\s*:)([^\n]+)(\n|$).*/\n$tc/gi;} # try to skip out any surrounding Time: linez
-    else {$ns=~ s/.*?(\n*)(Codec)(\s*:)([^\n]+)(\n|$).*/ $B$2$W$3$tb$5/gi;}} # For Vonikk-HardAttack.mp3 Codec follows Title instead of Time =(
+          $ns=~ s/.*?(\n*)(Codec)(\s*:)\s([^\n]+)(\n|$).*/\n$tc/gi;} # try to skip out any surrounding Time: linez
+    else {$ns=~ s/.*?(\n*)(Codec)(\s*:)\s([^\n]+)(\n|$).*/ $B$2$W$3$tb$5/gi;}} # For Vonikk-HardAttack.mp3 Codec follows Title instead of Time =(
   elsif ( $ns=~  /==+\s+gst123\s+keyboard\s+commands\s+==+(\n)/i){ # detect help output   # mIt need to decode below output if any UTF-8 gets used l8r
           $ns=~ s/==+\s+gst123\s+keyboard\s+commands\s+==+(\n)/\n$ht\n/xi;}
-  elsif ( $ns=~  /.*?(\n?)(Time)(:.*Time:\s*)(\d+:\d+:\d+\.\d+).*( of )(\d+:\d+:\d+\.\d+)\s*?(\n|$)/i){my $tn=$4;my $tt=$6; # break d8 fieldz
+  elsif ( $ns=~  /.*?(\n?)(Time)(:.*Time:\s*)\s(\d+:\d+:\d+\.\d+).*( of )(\d+:\d+:\d+\.\d+)\s*?(\n|$)/i){my $tn=$4;my $tt=$6; # break d8 fieldz
           $tn=~        s/(\d+)(:)(\d+)(:)(\d+)(\.)(\d+)/$d8cS[4]$1$W$2$d8cS[5]$3$W$4$d8cS[6]$5$Y$6$d8cS[7]$7/g  ;my $Sc="\e[16G"; # mv2colm16,ErAscrsr2BoL
     unless($ksst){$ksst=3600*$1+60*$3+$5;} # atMpt2set whatevr init stRt tIm cudB Dtectd first aftr audio playing has begun
     if    (@dscz &&     3600*$1+60*$3+$5 >= $ksst+$dscz[0]-1){shift(@dscz);$nnxt=1;$ksst=0;}
           $tt=~        s/(\d+)(:)(\d+)(:)(\d+)(\.)(\d+)/$d8cS[4]$1$W$2$d8cS[5]$3$W$4$d8cS[6]$5$Y$6$d8cS[7]$7/g  ;   $Sc="\e[?25l\e[1G"; # try2hide cursor
                                                                  # $Sc.="\e[1K\e[1G"; # try2not erase,justHome?
-          $ns=~ s/(^|\s*)(Time)(:.*Time:\s*)(\d+:\d+:\d+\.\d+).*( of )(\d+:\d+:\d+\.\d+)\s*?(\n|$)/$Sc$o$2$W: $tn$c$5$tt/gi; #\e[31G\e[?25h/gi;
+          $ns=~ s/(^|\s*)(Time)(:.*Time:\s*)\s(\d+:\d+:\d+\.\d+).*( of )(\d+:\d+:\d+\.\d+)\s*?(\n|$)/$Sc$o$2$W: $tn$c$5$tt/gi; #\e[31G\e[?25h/gi;
                                                                                               $lt="$Sc$o$2$W: $tn$c$5$tt";}
           # tryd2mv cursor2Nd 31 2kEpdrwn butstil flashd blankz til no erase, now trying to hide B4 && unhide cursor at Nd
   elsif ( $ns=~  /.*(Time)(: \s*)(\d+:\d+:\d+  \.  \d+)/ix){    my $Sc="\e[16G";my $tn=$3; # break d8 fieldz

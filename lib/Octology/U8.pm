@@ -18,7 +18,7 @@ our @EXPORT=qw(Upd8 U2b8 U2b2 U2b3 U2b4 UTF8 Udl8); # autom8d U2bdl-upd8 Utl, Yo
 #END{      ReadMode 0;} # good practice to auto-restore orig TTY read settingz at END
 #          ReadMode 3;  # setup 4 raw mode or 3 cbreak mode where Ctrl-C workz since signalz are enabled
 #$ENV{'TERM'}='linux';  # this is needed for arrow cursor keyz to get interpreted properly (vt100 does not do it)
-our $VERSION='0.0';my $d8VS='L7AMHuBC';my $Dbug= 0; #   4 4name 4matting, UTF-8 (or ASCII) tables, U2b-DownLoad altern8 Xpect version;
+our $VERSION='0.0';my $d8VS='LBJLBJBJ';my $Dbug= 0; #   4 4name 4matting, UTF-8 (or ASCII) tables, U2b-DownLoad altern8 Xpect version;
 sub Upd8{my $Ud='youtube-dl';my $home='/home/pip';$home='/home/' . $ENV{'USER'} if(exists($ENV{'USER'}));$home=$ENV{'HOME'} if(exists($ENV{'HOME'}));
   $_=`cd /tmp;wget https://$Ud.org/downloads/latest/$Ud;mv $Ud $home/bin/U2bdl;cd $home/bin;chmod 755 U2bdl;bak U2bdl`;return($_);} # bAsic YouTube-DL upd8r
   # Upd8 very similar to .zshrc aliasez but oper8z on my own local ~pip/bin/ version instead of my system-wide /usr/local/bin/ version with alias:
@@ -222,7 +222,9 @@ sub UTF8{my $optz=join(' ',@_);my $strt=0;my $uprb= 256; # 2BNJCDfo:asci utility
          Figure out a decent set of 4096 characters that mostly align well with fixed widths for a new b8:b4k and b410 bases.
      Kana && Radicals are not so good for this since almost all charz appear double-width. Pretty though. b4k might not resemble the M8rix much.
      Should probably also replace slightly wide Chess && Cards since even slight overlapping makes distinguishment difficult.
-     Also evalU8 actual stored byte-widths since saving more than 2 bytes per many or most employed chars somewhat defeats compression purpose.";
+     Also evalU8 actual stored byte-widths, since saving more than 2 bytes per many or most employed chars somewhat defeats compression purpose.
+  HuBro: ^ Wölf Assück  PejmonJ.BrianL.Paiψ.Rules Fantômas PepeDeluxé'\$'\\351  # TötötemM Aph-EZ-DolHitr-Pi~Tau~Psi  JacobyShaddix\/PapaRoachBand;
+# &*Eat8π Björk  CrüxShadows #@# ΑΕΠ-Ζ8Τ  ΨPledge\\=` ✡⎈✡-אבגדהוזחטיכלמנסעפצקרשת_ഒ࿕࿗྾྿※࿘࿖-_ΒΓΔ__ΗΘΙΚΛΜΝΞΟ_ΡΣ_ΥΦΧ_Ω-SirLinUx-ⵥ✳✴✷✵✸❂❋米-¡ȣ°¿?°Ȣ!";
   }else{                                my $clrf= 1;
     if($optz =~ s/(^|\s)(-*c)(\s|$)/$1$3/){$clrf= 0;} # -c parameter design8z Colorless output (disabling the CoLoRFlag)
     if($optz =~ s/(^|\s)(-*p)(\s|$)/$1$3/){$strt=32;} # -p parameter design8z skipping to mainly Printable characterz

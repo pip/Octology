@@ -1070,3 +1070,5 @@ LBCLFath:HTTPS://YouTu.be/FJ5X6W_y554 "Explosive Confront8ion with Yerushalayim 
 # Is Rabbi Singer "HaShem", Stirling "RuachHaKodesh", && Stuart "HaMashiach"? Does anyone know???SSS!!!HHH... Pork, Lechuga, y Tomates?! ;) TreifShiksa4Piplz;
 LBDLGdlS:HTTPS://YouTu.be/7gt_ylQSP5Q "Why You Shouldn't Put God && Freedumb in Your Bio (or Goddess, but Godless Cool)" # LAQ:05Z0 by DotMathPP HaHa -MoMoM!;
 LBDLGone:HTTPS://YouTu.be/IysCXVLpEyw "Dr. Jordan B. Peterson: 'Women Are Right (Correct); You Are Wrong!'" # LB3:0DO0 of Thinking-Ape doing a number on Dr.P;
+LBEL3wlf:"The thing about dreams is that... you can just get as close as you can!" # -WiseWildWolf58;#  -  ### - "Damn!" -Pip: -- ## -- # bep ipi n8n tst wlf;
+"... but me, I am gonna get everything I dreampt of... to a point -- maybe.  ;)  " # -WiserWldWolf IrtheWolfe "honor && respect, but no response from BepuSan";
