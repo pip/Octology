@@ -18,7 +18,7 @@ our @EXPORT=qw(Upd8 U2b8 U2b2 U2b3 U2b4 UTF8 Udl8); # autom8d U2bdl-upd8 Utl, Yo
 #END{      ReadMode 0;} # good practice to auto-restore orig TTY read settingz at END
 #          ReadMode 3;  # setup 4 raw mode or 3 cbreak mode where Ctrl-C workz since signalz are enabled
 #$ENV{'TERM'}='linux';  # this is needed for arrow cursor keyz to get interpreted properly (vt100 does not do it)
-our $VERSION='0.0';my $d8VS='LBJLBJBJ';my $Dbug= 0; #   4 4name 4matting, UTF-8 (or ASCII) tables, U2b-DownLoad altern8 Xpect version;
+our $VERSION='0.0';my $d8VS='LBJLINTX';my $Dbug= 0; #   4 4name 4matting, UTF-8 (or ASCII) tables, U2b-DownLoad altern8 Xpect version;
 sub Upd8{my $Ud='youtube-dl';my $home='/home/pip';$home='/home/' . $ENV{'USER'} if(exists($ENV{'USER'}));$home=$ENV{'HOME'} if(exists($ENV{'HOME'}));
   $_=`cd /tmp;wget https://$Ud.org/downloads/latest/$Ud;mv $Ud $home/bin/U2bdl;cd $home/bin;chmod 755 U2bdl;bak U2bdl`;return($_);} # bAsic YouTube-DL upd8r
   # Upd8 very similar to .zshrc aliasez but oper8z on my own local ~pip/bin/ version instead of my system-wide /usr/local/bin/ version with alias:
@@ -205,11 +205,15 @@ sub UTF8{my $optz=join(' ',@_);my $strt=0;my $uprb= 256; # 2BNJCDfo:asci utility
   my $trmp='gtm';$trmp=$ENV{'TERM_PROGRAM'} if(exists($ENV{'TERM_PROGRAM'})); # might need to test for special-cases on per-term-prog + font basis l8r
   my $lang='en_US.UTF-8';$lang=$ENV{'LANG'} if(exists($ENV{'LANG'   })); # abov try2test wich term typez shud group in with screen && xterm 4 BlO handling
   if($tsxf && $lang =~ /UTF-?8/i){binmode $out8,':encoding(UTF-8)';} # need to encode output if acceptable terminal && language environment settingz
-  if  ($optz =~  /(^|\s)(-*h(elp)?)(\s|$)/){ # -h parameter design8z to just print help text as output && exit
+  if    ($optz =~  /(^|\s)(-*H(ELP)?)(\s|$)/){ # -H parameter design8z to just print HELP text as output && exit
+    $outp = dur8c(" utf8  -Hprint out 256 colorful utf-8 or Ascii characters in order  Vers:$VERSION  d8VS:$d8VS  by Auth:$Auth\n"                          ) .
+ b8c(" -HuBro: ^ Wölf Assück  PejmonJ.BrianL.Paiψ.Rules Fantômas PepeDeluxé'\$'\\351  # TötötemM Aph-EZ-DolHitr-Pi~Tau~Psi  JacobyShaddix\/PapaRoachBand;\n") .
+ d8c("# &*Eat8π Björk  CrüxShadows #@# ΑΕΠ-Ζ8Τ  ΨPledge\\=` ✡⎈✡-אבגדהוזחטיכלמנסעפצקרשת_ഒ࿕࿗྾྿※࿘࿖-_ΒΓΔ__ΗΘΙΚΛΜΝΞΟ_ΡΣ_ΥΦΧ_Ω-SirLinUx-ⵥ✳✴✷✵✸❂❋米-¡ȣ°¿?°Ȣ!"    ) ;
+  }elsif($optz =~  /(^|\s)(-*h(elp)?)(\s|$)/){ # -h parameter design8z to just print help text as output && exit
     $outp = " UTF8  - print out 256 colorful UTF-8 or ASCII characters in order  Vers:$VERSION  d8VS:$d8VS  by Auth:$Auth
    -p    skips over first 32 to start from the predominantly Printable characters  (since most of the 1st 32 are control chars)
    -c    disable printing of escape sequences which are used to Color the default output in 8bow and index columns
-   -C    set start and end around Cards and Chess 127136-127199 and 9812-9823
+   -C    set start and end around Cards and Chess 127136-127199 and 9812-9823  ## -H should do some special color8ion of help;
    -k    set start and end around Kana      (Nipponese Hiragana and Katakana need some special handling to restore alignment.) 12352-12543=192
    -r    set start and end around Radicals  (CJK Supplement     and Kangxi) (note terminals need to stretch to 225 chars wId.) 11904-12255=352
    -h    display this Help text and exit    (Greek 913-970= 67)     (See HTTP://Unicode.Org/charts for more character blocks.)

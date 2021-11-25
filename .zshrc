@@ -30,7 +30,7 @@ unsetopt                \
 # auto_pushd            \# setng addz dirz 2 stack wN just normally chngng 2 thM (wich I du not normally lIk or want)
 # ksh_arrays            \# rEmMbr wNwrItng scrptz[or funcz]2include'setopt [localoptions] ksharrays'sO arAzR 0-bAsed(but!glOblBcuzmOst scrptzRstndrdly 1-bAsed)
 # re_____match_____pcre \# mA want2set for Z-SHell scripting RegularExpressions to utilize PerlCompatibility styles && mA insert 'zmodload zsh/(pc)?re(gex)?';
-export Vers='0.0';export d8VS='LBCLIMPS';export Auth='PipStuart <Pip@CPAN.Org>'; # not Xportng $b sinc cOlIdz wi sort{$a <=> $b} /defhijlnqstuvx/i + AZ 4golf;
+export Vers='0.0';export d8VS='LBOL2Fit';export Auth='PipStuart <Pip@CPAN.Org>'; # not Xportng $b sinc cOlIdz wi sort{$a <=> $b} /defhijlnqstuvx/i + AZ 4golf;
 if     [[       "$SHELL"    == "" ]]; then       export SHELL=` which  zsh`;fi   # 8sh should parse this && OverId it    # shud `man zshall` /OSTYP 2lern4BlO
 if     [[       "$HOSTNAME" == "" ]]; then       export HOSTNAME=`hostname`;fi   #`hostname`retnz fsckd nwlInz\n4CygWinzRxvt... ||smthng els lame  =(
 if     [[       "$HOST"     == "" ]]; then       export HOST   ="$HOSTNAME";fi;export VERBOSE='1'; # set flag to print debug && status info from system utilz
@@ -500,7 +500,7 @@ alias       7='    7z '; #  7    :              7z 7-Zip - file-archiver with hi
 alias       9='  c99  '; #  9    :            c99 (ANSI [1999] C compiler,where status of fE8urz in GCC described@: HTTP://GCC.GNU.Org/gcc-9/c99status.html )
 alias    a='asciiview '; #  a    :           asciiview (An Ascii-Art imAge/Anim8ion browser depends on `aview --help` 4list of options thN filename.p[ngbp]m)
 alias    A='asci      '; #  A    :           asci (Another AliAs2Auto-Aligned Ascii And Accentu8d ApprAisAl of Artistic Attributes of AvAilAble Acters[chAr])
-alias    asci='   ASCI'; #       :                (default call U8.pm UTF8 to print just most of the first 256 characters, or take other params as UTF8 can)
+alias    asci='   ASCI';alias AH='A -H'; #HitAdolf(default call U8.pm UTF8 to print just most of the first 256 characters, or take other params as UTF8 can)
 alias    ASCI='   utf8'; #       :           UTF8 (default already 256 internally wi no $1) # BlO setup function to default $1 end indX 4 how many UTF8 chars
          utf8() { if [[ $# -gt 0 ]]; then UTF8 $@; else UTF8 4096; fi; } # hopefully GnomTerm, XTerm, STTerm, && Sakura can each stay mostly aligned up2 4096
 alias      u8='   utf8'; #       :                (renamed asci to UTF8 in U8.pm && ~/bin/, then made utf8 here a function 2take parameters or default hIghr)
@@ -1365,7 +1365,7 @@ else # following settings will hopefully work well for single-screen Ryu, Ken, &
              gt --geometry=+0-0       --show-menubar --window-with-profile=PipsCkm8GnomTerm-NiceFont-DC9LDaPt --role=mvz    --working-directory=~/mvz/U2b   &;
         gtss;wmc -r :ACTIVE: -T mvz                ';
   alias gti='gtI;gtss;chv1;gtss;gtm;gtss;chv2;gtss;gt3;gtss;chv3;gtss;gt3;gtss;chv0'; fi; #xport Hm='muz';export HM='mvz'; # can I even use these 4 anythingd?;
-alias cti='ct init'; # ChangeTitle 2 Init as quick simple similar command B4 gti or ti to call right after booting up && starting my first default GnomTerm;
+alias cti='ct   ti'; # ChangeTitle 2 Init as quick simple similar command B4 gti or ti to call right after booting up && starting my first default GnomTerm;
 alias  ti='cti;gti'; # maybe l8r mk a custom TermInit alias here wich spawnz more than just GTz but mAB some alpha'd Sakuraz|LilyTermz|QTerminalz etc. too;
 #lias gti='gtI;sleep 3;wmctrl -o 1280,0;sleep 3;gt3;sleep 3;wmctrl -o 2560,0;sleep 3;gt3;sleep 3;wmctrl -o 3840,0;sleep 3;gt3;sleep 3;wmctrl -o 0,0';
 # abov are new Ubu14.10 GT aliasz tstd on Chun; mA nEd geom chgz 4 Akuz 2 monitorz; tryd 2 ch d8ok profile 2 autorun d8ok nstd of zsh but can't figure out yet;
