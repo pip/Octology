@@ -1,13 +1,13 @@
 #    Octology
- The ontology of 8. Ocho dude. Hachi-desu. Wheet. Aucht! `$VERSION='0.0';$d8VS='LBDLGapS';`
+ The ontology of 8. Ocho dude. Hachi-desu. Wheet. Aucht! `$VERSION='0.0';$d8VS='LBQL0UCY';`
 
 <!-- suck my fscking: !!!d8!=!LBD!  ;)  -PipStuPid (git) ... err, PlaySt8ionPortable 4 DeathJr. with RicoChet && pOt8O; -->
 `dic ontology`:  # query the dictd (Dictionary-Daemon) for salient definitions that project visitors might find inform8ive;
 
 <ol><li>n. `(Computer Science)` a rigorous and exhaustive organiz8ion of some knowledge domain that is usually hierarchical
-      and contains all the relevant entities and their rel8ions.</li>
+      and contains all the relevant entities and their rel8ions... or lack there-of!WutUsA?</li>
     <li>n. `(Philosophy      )` the metaphysical study of the n8ure of being and existence.</li>
-    <li>n. `(Logic           )` the set of entities presupposed by a theory.</li>
+    <li>n. `(Logic           )` the set of entities presupposed by a theory... or any law?!</li>
 </ol>
 
 I expect after some point (probably passed) anyone who studies Octology thoroughly would be able to develop new video-games and problem-solve well.
