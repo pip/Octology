@@ -1,5 +1,6 @@
 #    Octology
- The ontology of 8. Ocho dude. Hachi-desu. Wheet. Aucht! `$VERSION='0.0';$d8VS='LBQL0UCY';`
+ The ontology of 8. Ocho dude. Hachi-desu. Wheet. Aucht! `$VERSION='0.0';$d8VS='LCALI4NI';`
+<!-- just dropped f0n stRt in2 dvl/t8/tst 4 l8r doing 10-digit USA 3-AreaCode 3-PreFix 3-SufFix + 1 0..9 "bin" 2 B64-ify any triplet as pair-o-chrz wi XX-YY+ZZ0-9 Y0H0hohoe, proper garden tools Victoria, Patricia, && Deanna? Tweeted me in last 2 Dayz. Hmmm.  ;)  =P  <3 -->
 
 <!-- suck my fscking: !!!d8!=!LBD!  ;)  -PipStuPid (git) ... err, PlaySt8ionPortable 4 DeathJr. with RicoChet && pOt8O; -->
 `dic ontology`:  # query the dictd (Dictionary-Daemon) for salient definitions that project visitors might find inform8ive;
