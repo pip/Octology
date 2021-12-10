@@ -1,20 +1,21 @@
 # KCJL6Pls:~/.log/prof.ls crE8d by PipStuart <Pip@CPAN.Org> 4 a b64 key-table list of YouTube channel profile d8bo master color-sequences;my $d8VS='L61MAILS';
 # 2du:stRt adding optional extra layerz for DarkAvrgLite && SGRcodez B4 mAB also bkgrndaloh BtwEn && multiSGRz 2 flag attrz on thru all d8bo usagez;
-d RoYGCBMp                   # PipStuart Primary U2bchanL ; RoYGCBMp
+d rOygcbmP FLADblad CoolcOOL # PipStuart Primary U2bchanL ; RoYGCBMp
 # RF3Hh2fr                   # PedantPip Secndry U2bchanL ; RfFrHh32 RHFrRHFf FFFFLLLL iIiuDUDu ;
 # R F 3 r H h 2 f            # Ped8bSPip Secndry U2bchanL ; RfFrHh32
-p D:RUIc A:FDCol L:3 Fa:fbuic D:HOI hfoi 2bI rki #D:RUIc A:FDCol L:3 Fa:rbuicL D:HOI hfoil 2b fk;
-c Cz8tZT9c FFDDAALL uiLlUIui # CapCtion8 terTary U2bchanL ; CzZcTt98
-g AG76Dadg FFLLAADD iuDuIOio # GuyGooway MGTOWay U2bchanL ; AaGg76Dd
-j Y45UuyoO FFDDAALL OUiDIuoi # JewJesus8 Skeptic U2bchanL ; Y45OUuyo ## Note: CantAlow OhhhHooo?;
-i NnSVvMms FFLLAADD UDuDUlLl # ImprovIs8 Ingland U2bchanL?; NnSsVvMm
+# D:RUIc A:FDCol L:3 Fa:fbuic D:HOI hfoi 2bI rki #D:RUIc A:FDCol L:3 Fa:rbuicL D:HOI hfoil 2b fk;
+p PIPSpeni bladFLAD          # RoseWhite,VioBlue,FuckYou2!; very muy muchachos mucha lucha 3a me!
+c CRIScris FFDDAALL uiLlUIui # CapCtion8 terTary U2bchanL ; CzZcTt98
+g Ax76DadG FFLLAADD iuDuIOio # GuyGooway MGTOWay U2bchanL ; AaGg76Dd
+j JEWjezus FFDDAALL OUiDIuoi # JewJesus8 Skeptic U2bchanL ; Y45OUuyo ## Note: CantAlow OhhhHooo?;
+i ImprovIs FFLLAADD UDuDUlLl # ImprovIs8 Ingland U2bchanL?; NnSsVvMm
 R YGTBUDSN                   # RappingRt AntiRed U2bchanL?; YGTBUDSN RiteBlue LeftOrng WiteUpKs ;
 B SBsbXx1N                   # BluBoieB8 NonBinG U2bchanL?; SBsbXx1N BcuzCmdz prpbplow weretAkN ;
 L LlHhvV23                   # LadyLacy8 Literal U2bchanL?; LlHhvV23
-O o5YOUJ4u                   # OldObsid8 DubStep U2bchanL?; o5YOUJo4 ## Note: DublOwoo WarnBugy?;
-W WJIqQwij                   # WigWearW8 costume U2bchanL?; WJIqQwij
-k KeEk10Nn                   # KekPepeK8 MemeR8n U2bchanL?; KeEk10Nn
-v VvMmLlPp                   # ValVocal8 BtBoxin U2bchanL?; VvMmLlPp
+O I3YOUtwo                   # OldObsid8 DubStep U2bchanL?; o5YOUJo4 ## Note: DublOwoo WarnBugy?;
+W WolfwOLF                   # WigWearW8 costume U2bchanL?; WJIqQwij
+k KenkENVC                   # KekPepeK8 MemeR8n U2bchanL?; KeEk10Nn
+v VMarieSc                   # ValVocal8 BtBoxin U2bchanL?; VvMmLlPp
 0 BoGYCRMp # PsRandom gener8d8 KCULCULK ; 0-7Eight JustShfl TheBasic 8bOwd8bO DfltFrst DfIndPrf ;
 1 BYpMoRGC # PsRandom gener8d8 KCULCULK ;
 2 CMYoGpRB # PsRandom gener8d8 KCULCULK ;

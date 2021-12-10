@@ -30,7 +30,7 @@ unsetopt                \
 # auto_pushd            \# setng addz dirz 2 stack wN just normally chngng 2 thM (wich I du not normally lIk or want)
 # ksh_arrays            \# rEmMbr wNwrItng scrptz[or funcz]2include'setopt [localoptions] ksharrays'sO arAzR 0-bAsed(but!glOblBcuzmOst scrptzRstndrdly 1-bAsed)
 # re_____match_____pcre \# mA want2set for Z-SHell scripting RegularExpressions to utilize PerlCompatibility styles && mA insert 'zmodload zsh/(pc)?re(gex)?';
-export Vers='0.0';export d8VS='LBOL2Fit';export Auth='PipStuart <Pip@CPAN.Org>'; # not Xportng $b sinc cOlIdz wi sort{$a <=> $b} /defhijlnqstuvx/i + AZ 4golf;
+export Vers='0.0';export d8VS='LC9L8oki';export Auth='PipStuart <Pip@CPAN.Org>'; # not Xportng $b sinc cOlIdz wi sort{$a <=> $b} /defhijlnqstuvx/i + AZ 4golf;
 if     [[       "$SHELL"    == "" ]]; then       export SHELL=` which  zsh`;fi   # 8sh should parse this && OverId it    # shud `man zshall` /OSTYP 2lern4BlO
 if     [[       "$HOSTNAME" == "" ]]; then       export HOSTNAME=`hostname`;fi   #`hostname`retnz fsckd nwlInz\n4CygWinzRxvt... ||smthng els lame  =(
 if     [[       "$HOST"     == "" ]]; then       export HOST   ="$HOSTNAME";fi;export VERBOSE='1'; # set flag to print debug && status info from system utilz
@@ -362,8 +362,8 @@ alias MkNwKrnl='echo "em gen2-srcz;/usr/src/linux;mkMnuCfg;mk;mkModIns;bak.cfg;c
 #Ec= [cC] -[cC]       #-clean(|Clip|Cut|ChopUMrg!)#Ep=  [pP] -[pP]       #-pretend(|Prune!) -vp --depclean best2dpndntlyAware rmPkgz(prtndng1st)
 alias vimuse='vim /usr/portage/profiles/use.desc /etc/make.conf /usr/portage/profiles/use.local.desc /etc/portage/package.use   /etc/portage/package.keywords';
 alias vimUz=' vimuse                                                                                 /etc/portage/package.*mask /etc/portage/color.map';
-#lias scp='noglob scp'; # still want to glob locally so just intentionally escape remote globs wi \* etc; #Rot13perLyn:`vim $fyl`Vg?
-alias              ..='cd ..                 ';alias cdup='..';alias cd..='..                      ';
+#lias scp='noglob scp'; # still want to glob locally so just intentionally escape remote globs wi \* etc; #Rot13perLyn:`vim $fyl`Vg?; # hn=hostname; hn != hH ;
+alias              ..='cd ..                 ';alias cdup='..';alias cd..='..                      ';alias nh='hN';alias nr='rN';alias SSH='sH';alias SSR='sR';
 alias             ...='cd ../..                              ';alias cd...='...                    '; # mItBAbl2Uz -c wi && aftr sz zsh 2run rmSS as sngl cmd?;
 alias            ....='cd ../../..                           ';alias cd....='....                  '; # 4 `sz` BlO fIl is Only rEmovd aftr `x` logz mE out thO;
 alias           .....='cd ../../../..                        ';alias cd.....='.....                '; # so ReMove.SudoSuccessful fIl aftr most callz2 sudo BlO;
@@ -376,8 +376,12 @@ alias     ...........='cd ../../../../../../../../../..      ';alias cd.........
 alias    ............='cd ../../../../../../../../../../..   ';alias cd............='............  ';         alias mkck='mk check';alias mkjG='mk -j16';
 alias   .............='cd ../../../../../../../../../../../..';alias cd.............='.............';         alias mkcl='mk clean';alias mkj8='mk -j8 ';
 alias      mk='   make';alias mki='mk install';alias mi='mkin';alias smi='sudo make install;rmSS';alias smki='smi';alias mkin='mki';alias mkj4='mk -j4 ';
-alias   sz='sudo -E zsh;rmSS ';alias SS='sudo shutdown -h now';alias SSR='sudo shutdown -r now;rmSS';alias SN='SSR'; # EmergNC !Sudo Shutdown or Reboot *now*!
-alias      pu='  pushd';alias  ua='un    ';alias SH='shutdown -h';alias SR='   shutdown -r ;rmSS'; # thEz aliaszR4aftr`sz`whNIcan w8 1minute4shutdn||rEboot;
+export sd='sudo   ';export SD='shutdown';export Sh="$SD -h ";export SH="$Sh";export sH="$sd$SH";export Hn="$SH$NR";export HN="$Hn";export hN="$sH$NR";
+export sD="$sd$SD ";export NR='now;rmSS';export Sr="$SD -r ";export SR="$Sr";export sR="$sd$SR";export Rn="$SR$NR";export RN="$Rn";export rN="$sR$NR";
+export hH="$hN";export nh="$hN";alias Sd="$sd";alias SD="$SD";alias Sh="$Sh";alias SH='Sh';alias sH="$sH";alias Hn="$Hn";alias HN='Hn';alias hN="$hN";
+export rn="$rN";export nr="$rN";alias sD="$sD";alias SS="$hN";alias Sr="$Sr";alias SR='Sr';alias sR="$sR";alias Rn="$Rn";alias RN='Rn';alias rN="$rN";
+alias  sz="$sd -E zsh;rmSS";alias rn='rN ';alias SSHN='hN';alias SN='RN'; # EmergNC!!! Sudo Shutdown or Reboot *now*!!!
+alias      pu='  pushd';alias  ua='un    ';alias SSRN='rN';alias sN='rN'; # aliasz4aftr`sz`whNIcanw8 1min4shutdn||rEbt;
 alias      po='   popd';alias una='un -a ';alias sus='sudo -E -s zsh'; # -c "rm $HOME/.sudo_as_admin_successful"'; # abrEV8nz 4 sys-info which call un();
 #lias      pe='   perl -MOctology::a8 -pe'; # setup Perl Eval filter easy to give a 's///' after;  # sudo abov cannot run both -Intractiv && -Shell optz;
 #lias      pa='   perl -MOctology::a8  -e'; # setup Perl eval        with Attribute Auto-export globals of A8 # the below printz wer nEded&&b64 imprecise?;
@@ -473,7 +477,6 @@ alias      LS="$HOME/mvz/U2b/vid/;mp -fs L*To* L*Sh* L*He*"; # LindseyStirling w
 #lias      ML="mplyr -nosound -ss 11 -endpos 299 -fs -geometry 1920x1080+0+0 $HOME/mvz/dvl/rec/PS-Octology-PerlConfer*-Take0-K6G*.mp4"; #run audio-less video;
 alias      ML="mplyr          -ss  4 -endpos 310 ~/mvz/dvl/rec/PipStuart-Octology-PerlConferenceInTheCloud-LightningTalk-June24-26th_2020-Take2-K6OM84Me.mp4";
 alias      GL='g3lt   '; # GoodLuck GodsLove GameLife GoneLong GrabLunch GetLadies GutLosers GiveLicense GoLast GraphicsLibrary Gr8Laser GroupLeaders GetLoud;
-mpls () {  if [[ $# -gt 0 ]]; then mp $(ls $@|shfl); else mp $(ls|shfl); fi; } # MPlayer LiSting paramz piped thru my basic ShfL. Shud try2 add -z -Z options;
 #lias    g3lt='cd; pu $mu;wh g3lt;gst123 -k  212 Oi*;g3 63 36 63 63 u*/El* ../f*/Bo*/T*/B* *br* c*/Gi* -v monoscope;ec;g3 ../wa*/Bo*/B*;ec;Hlt;ec;po';
 alias    g3lt='cd; pu $mu;wh g3lt;gst123 -k  212 Oi*;g3 63 36 63 63 u*/El* ../f*/Bo*/T*/B* *br* c*/Gi*             ;ec;g3 ../wa*/Bo*/B*;ec;Hlt;ec;po';
 alias     Hlt='g3  48 $mu/chl/Hack*Univ* -k 3420'; # add just 1st seconds of gr8 part 2 push above 4mins12secs right up against 5mins total 4 LightninTalk;
@@ -588,6 +591,24 @@ pPA(){ if [[ $COLUMNS -lt 160               ]]; then # above does shell environm
                    d e f g h i j - k l m n o p - q r s t u v w - x y z . _ d;
      else  pP      d p c g j i R   B L O W k v - 0 1 2 3 4 5 6   7 8 9 A B C - D E F G H I J   K L M N O P - Q R S T U V W   X Y Z a b c - \
                    d e f g h i j   k l m n o p - q r s t u v w   x y z . _ d;  fi  ;}
+LK (){ if [[ $COLUMNS -lt 160               ]]; then # new LoKi StarLord Quill (Quest?) ChristopherNitzchke brother-man (not LiuKang) to show b10 of b64 LK;
+    export lk='lOkI';       b10 $lk|cma|b8clr;ec "$W=${m}l${O}O${k}k${p}I$g as$B b10$w;$z"; # l8r substr/regex out sub-charz && auto y/// or UC($lk) 42 LK;
+    export LK='LoKi';en ' ';b10 $LK|cma|b8clr;ec "$W=${M}L${o}o${K}K${P}i$G as$B b10$W;$z"; fi }
+alias lk='LK'; # [pip@OniLC9L8jKm~]lk
+# 12,422,034=lOkI as b10;
+#  5,711,148=LoKi as b10;
+# [pip@OniLC9L8jLw~]en '(920)636-6271'
+# (920)636-6271[pip@OniLC9L8l5G~]b64 920
+# EO[pip@OniLC9L8lDi~]b64 636
+# 9y[pip@OniLC9L8lIH~]b64 6271
+# 1X_[pip@OniLC9L8lMV~]b10 EO
+# 920[pip@OniLC9L8lUV~]b10 9y
+# 636[pip@OniLC9L8lXs~]b10 1X_
+# 6271[pip@OniLC9L8lbj~]en '(920)637-8634'
+# (920)637-8634[pip@OniLC9L8mCH~]b64 637
+# 9z[pip@OniLC9L8mLE~]b64 8634
+# 26w[pip@OniLC9L8mc5~]en "(EO)9y(z)-1X_(2"
+# (EO)9y(z)-1X_(26w)[pip@OniLC9L8nNv~]ec ';';
 alias     ppp='pu;p;po'; #  ppp  :       prepriv8 (same as single p for CCC cd,clear,cut scrollback but wrapped with pushd && popd aliases to undo the cd ~)
 alias       T='   tee '; #  tee  :            tee (maybe can wrap into c8 with cut,cat,colored columns?); rEmMbr standRd `tr -d ...` is transl8 DlEt like subS
 alias       t='   tmux'; #  tmux :           tmux|screen ... any other altern8ive multiplexers forked out there? (orig:  `tsgr b` shO xtrm256colr pal8 Blox)
@@ -970,7 +991,7 @@ alias mplyr='mplayer';alias mplr='mplyr';alias mplx='mpx -loop 0'; # EBIL4AcZ:up
 alias mpp='  mplr -vo xv    -fixed-vo -ao pulse -cache 16384 -cache-min 64'; # shudtrydif -vo (xv was Dfalt) 4per4manc;`mplr -ao help`4list;
 alias mpa='  mplr -vo xv    -fixed-vo -ao alsa  -cache 16384 -cache-min 64';alias ov='cd ~/mvz;mpx  $(ls **/*[OV][ob][sn]*|shfl)'; #Obs+Vnk;
 alias mp='   mplr -vo xv    -fixed-vo -ao sdl   -cache 16384 -cache-min 64';alias vo='cd ~/mvz;mplx $(ls **/*[VO][ob][sn]*|shfl)'; #Vnl+Obs;
-alias hg='   mplx ~/mvz/U2b/vnk/*Head*'; # not Mercurial!  ;)  Grind!
+      mpls () { if [[ $# -gt 0 ]]; then mp $(ls $@|shfl); else mp $(ls|shfl); fi; } # MPlayer LiSting paramz piped thru basic ShfL. try2add -z && -Z options;
 alias mpns='cd ~/mvz/U2b/nxt;mp $(ls B* Dr* *Tut* Ex* M* O*-Res* Var* *Trap* *Trap* *Boy*|shfl);cd ..'; # mk MPlyrNxtShfl 4quik favor8 mvz Drub&&Trap vidzls;
 alias mpx='  mp   -fs';alias vnk='cd ~/mvz/U2b;mpx vnk/V?n?k*';alias vnl='cd;mvz/U2b/;mplx vnk/V?n?k*'; #-x 1920 -y 1080'; had -noborder but thN cud!mv wndw;
 alias mplo=' mplr -vo xv    -fixed-vo -ao sdl   -cache 16384 -cache-min 88 -framedrop -delay -4 -autosync 30 -demuxer +lavfpref -vfm ffmpeg -lavdopts lowres=1:fast:skiploopfilter=all -v ~/mvz/U2b/nxt/O*On*'; # try to play Obsidia One_Winged_Angel thru SDL audio since Pulse stutters && ALSA totally freezes up;
@@ -978,7 +999,7 @@ alias mj='   mjoin'; mjoin() {ffmpeg -i $1 -i $2 -acodec copy -vcodec copy $3;};
 alias ffll='ffmpeg -loglevel verbose -i'; # should now just take single Input filename to do verbose logging of details about, mainly for me looking up dur8nz;
 # IAIMFFMP:ffmpjoin.sh crE8d by PipStuart <Pip@CPAN.Org> to take 2 sepR8 file parameters of audio && video (probably from calls to U2b8) && join in2 cntAnr4m@;
 # 2du:upd8 U2b8 autom8ion to test -F output first && harvest out best audio && video available then gener8 joined container name; nOt:out.avi did!work,mp4 did;
-alias ff='ffll';alias smp='smplayer';alias aply='aplay';alias aplr='alsaplayer';
+alias ff='ffll';alias smp='smplayer';alias aply='aplay';alias aplr='alsaplayer';alias hg='mplx ~/mvz/U2b/vnk/*Head*'; # not Mercurial!  ;)  HeadGrindr bSt evR!
 # in addition to mplayer, gst123, xine, qmmp, && xmms2, smplayer, vlc, mpv, aplay, alsaplayer, mikmod I've already been using, Oni did following apt install:
 # ai gir1.2-rb-3.0 totem totem-plugins adplay ario-common ario audacious bplay clementine cmus-plugin-ffmpeg cmus cplay draai easyh10 faad gbemol glurp       \
 #   gmerlin-data gmerlin libgrooveplayer-dev libgrooveplayer4 libgroove4 libsmpeg-dev libsmpeg0 smpeg-gtv smpeg-plaympeg libjs-mediaelement                   \
