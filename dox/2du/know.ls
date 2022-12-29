@@ -1,5 +1,5 @@
 # HBQLISTV:know.ls crE8d by PipStuart <Pip@CPAN.Org> to duplic8 Dr. Jordan B. Peterson's Quora.Com answer of "40 most valuable things everyone should know";
-# $VERSION='0.0';$d8VS='LBDLG8N8'; # While this document origin8d around (&& still mainly intends to focus on) Dr. Peterson's knowledge, many others fE8ure;
+# $VERSION='0.0';$d8VS='MCTL6v6v'; # While this document origin8d around (&& still mainly intends to focus on) Dr. Peterson's knowledge, many others fE8ure;
 # 2du:start chronicling Dr. Peterson's many topical videos with new section for post-title subject summaries or explor8ion;
 0)"Tell the truth."                                            K) Ask someone to do you a small favour, so that he or she can ask you to do one in the future.
 1) Do not do things that you h8.                               L)"Make friends with people who want the best for you."
@@ -1072,3 +1072,4 @@ LBDLGdlS:HTTPS://YouTu.be/7gt_ylQSP5Q "Why You Shouldn't Put God && Freedumb in 
 LBDLGone:HTTPS://YouTu.be/IysCXVLpEyw "Dr. Jordan B. Peterson: 'Women Are Right (Correct); You Are Wrong!'" # LB3:0DO0 of Thinking-Ape doing a number on Dr.P;
 LBEL3wlf:"The thing about dreams is that... you can just get as close as you can!" # -WiseWildWolf58;#  -  ### - "Damn!" -Pip: -- ## -- # bep ipi n8n tst wlf;
 "... but me, I am gonna get everything I dreampt of... to a point -- maybe.  ;)  " # -WiserWldWolf IrtheWolfe "honor && respect, but no response from BepuSan";
+MCCLChes:HTTPS://YouTu.be/YeB-1F-UKO0 "A Brief History of Chess - Alex Gendler" # J:05d0 of TED-Ed describing 6th-Century India origins of the famed 8x8 Chess;

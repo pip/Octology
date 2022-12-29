@@ -1,5 +1,7 @@
 #!/usr/bin/zsh
 # HB5L80f8:~/bin/tib crE8d by PipStuart <Pip@CPAN.Org> from HTTPS://AskUbuntu.Com/questions/839161/limit-a-graphics-tablet-to-one-monitor for tablet; `xrg`:
+# M8FMGNUL:used to have 4 displays in a grid but now just have 3 in a horizontal bar so no more UpLt DnRt && now just l,m,r;
+# M8MMEnew:added Dell 2407WFP to have grid again so reverted settings but should use TI to obtain displays in layout so won't have to redo settings often;
 # DisplayPort-0    connected primary 1920x1080+1920+0    (normal left inverted right x axis y axis) 521mm x 293mm
 # DisplayPort-1 disconnected                             (normal left inverted right x axis y axis)
 # DisplayPort-2    connected         1920x1080+0+1080    (normal left inverted right x axis y axis) 531mm x 299mm
@@ -16,22 +18,39 @@
 # Stylus mapped to: HDMI-A-0 && DisplayPort-2 :is where Touch is mapped (but Touch disabled by Dflt);
 # Usage: xinput map-to-output <device> <output name>
 # unable to find device Wacom Intuos PT M 2 Finger touch;
-  VERSION='0.0';d8VS='L9BMCexC'; # HTTPS://UbuntuForums.Org/showthread.php?t=1515562 describes setting up /etc/X11/xorg.conf && other somewhat old stuff;
- HDisplUR='DisplayPort-0';               #                                      (my UpRight  screen)  ## mAB 2du l8r is Dtect && add -h --help tXt message;
- HDisplDL='DisplayPort-2';               # desired display device from `xrandr` (my DnLeft   screen)  ## executable name "tib" short for TabletInitButtons,
- HDisplDR='HDMI-A-0';                    # desired display device from `xrandr` (my DnRight  screen)  ##   but also maps display input && disables touch;
- HDisplUL='DVI-D-0';                     #                                      (my UpLeft   screen)  ## nOt:conditional syntax BlO mIt nEd /usr/bin/zsh?;
+  VERSION='0.0';d8VS='M8FMGNUL'; # HTTPS://UbuntuForums.Org/showthread.php?t=1515562 describes setting up /etc/X11/xorg.conf && other somewhat old stuff;
+#HDisplLt='DisplayPort-0';
+HDisplMd='DisplayPort-1';
+#HDisplRt='DisplayPort-2'; # M9IMHDTI:shud use TI 2 get xrandr layout;
+ HDisplLt='DisplayPort-0';
+ HDisplRt='DisplayPort-1';
+#HDisplUR='DisplayPort-0';               #                                      (my UpRight  screen)  ## mAB 2du l8r is Dtect && add -h --help tXt message;
+#HDisplDL='DisplayPort-2';               # desired display device from `xrandr` (my DnLeft   screen)  ## executable name "tib" short for TabletInitButtons,
+#HDisplDR='HDMI-A-0';                    # desired display device from `xrandr` (my DnRight  screen)  ##   but also maps display input && disables touch;
+#HDisplUL='DVI-D-0';                     #                                      (my UpLeft   screen)  ## nOt:conditional syntax BlO mIt nEd /usr/bin/zsh?;
+ HDisplUL='DVI-D-0';
+ HDisplUR='DisplayPort-2';
+ HDisplDL='DisplayPort-0';
+ HDisplDR='DisplayPort-1';
  HPTPadDv='Wacom Intuos PT M 2 Pad pad'; # desired    pad  device from `xinput`
- HStylsDi="$HDisplDR";  ## DnRt is Dflt; # l8r allow Command-Line-Parameters to specify remap of Stylus Identifier to any Display device in my quad-grid;
+ HStylsDi="$HDisplDL";  ## DnRt is Dflt; # l8r allow Command-Line-Parameters to specify remap of Stylus Identifier to any Display device in my quad-grid;
+#HStylsDi="$HDisplMd";  ## Midl is Dflt;
  HStylsId=`xinput | grep                "Pen stylus"                    | cut -f 2 | cut -c 4-5`;
  HTouchId=`xinput | grep                                 "Finger touch" | cut -f 2 | cut -c 4-5`;
- HTouchDi="$HDisplDL";  ## DnLt is Dflt; # l8r allow Command-Line-Parameters to specify remap of Touch  Identifier to any Display device in my quad-grid;
-echo -e "$G      DVI-D-0  <=  UpLt, UpRt  =>  DisplayPort-0;";
-echo      'DisplayPort-2  <=  DnLt, DnRt  =>       HDMI-A-0;';
-echo      'Dflt HDMI-A-0            DnRt  =>  xinput map-to-output stylus ...';
-echo 'unless $1 param is: UL,UR,DL,DR or D0,P0,P2,H0 to remap from Dflt DnRt;';
-echo      'Wacom Intuos PT M 2 Pad pad, "Pen stylus" and "Finger touch",  Tou';
-echo 'ch and Gesture off, Buttons:  UpLtFar 3, Cls Ctrl-z,  UpRtCls h, Far e;';
+#HTouchDi="$HDisplRt";  ## Rite is Dflt;
+ HTouchDi="$HDisplDR";  ## DnLt is Dflt; # l8r allow Command-Line-Parameters to specify remap of Touch  Identifier to any Display device in my quad-grid;
+echo -e "$G DisplayPort-0  <=    Lt,   Rt  =>  DisplayPort-1;";
+#echo -e "$G      DVI-D-0  <=  UpLt, UpRt  =>  DisplayPort-0;";
+#echo      'DisplayPort-2  <=  DnLt, DnRt  =>       HDMI-A-0;';
+#echo      'Dflt HDMI-A-0            DnRt  =>  xinput map-to-output stylus ...';
+#echo 'unless $1 param is: UL,UR,DL,DR or D0,P0,P2,H0 to remap from Dflt DnRt;';
+#echo      'Wacom Intuos PT M 2 Pad pad, "Pen stylus" and "Finger touch",  Tou';
+#echo 'ch and Gesture off, Buttons:  UpLtFar 3, Cls Ctrl-z,  UpRtCls h, Far e;';
+#echo -e "$G DisplayPort-0  <=  Left, *DP-1 == Midl, Rite  =>  DisplayPort-2 ;";
+#echo      ' Dflt               Midl   DP-1 => xinput map-to-output stylus ...';
+#echo 'unless $1 param is: l,m,r or 0,1,2 to remap from Dflt Midl;';
+#echo 'Wacom Intuos PT M 2 Pad pad, "Pen stylus" and "Finger touch", Touch and';
+#echo ' Gesture off, Buttons:  UpLtFar 3, ULClose Ctrl-z,  UpRtClose h, Far e;';
 # undo (pad upper-left close Btn 1) pen lower middle-mouse-btn3, upper right-mouse-btn2, stylus contact with pad left-mouse-btn1
 xsetwacom set "$HPTPadDv" Touch                        off; # mAB 2du l8r add pRam tStz 4 NAbling Touch && Gesturez AgN;
 xsetwacom set "$HPTPadDv" Gesture                      off;
@@ -41,6 +60,9 @@ xsetwacom set "$HPTPadDv" Button 3 "key        3         "; # UpLtFar 3 AutoZoom
 xsetwacom set "$HPTPadDv" Button 8 "key        h         "; # UpRtCls HotColrBar (Krita)
 xsetwacom set "$HPTPadDv" Button 9 "key        e         "; # UpRtFar EraserMode (Krita)
 if     [[ "$1" !=   "" ]]; then # test command-line params for anything resembling display loc8ion or interface with index number as 2-char codes to ID them;
+# if   [[ "$1" ==  "l" || "$1" ==  "0"                                                                 ]]; then HStylsDi="$HDisplLt";
+# elif [[ "$1" ==  "m" || "$1" ==  "1"                                                                 ]]; then HStylsDi="$HDisplMd";
+# elif [[ "$1" ==  "r" || "$1" ==  "2"                                                                 ]]; then HStylsDi="$HDisplRt"; fi; fi
   if   [[ "$1" == "UL" || "$1" == "ul" || "$1" == "D0" || "$1" == "d0" || "$1" == "DV" || "$1" == "dv" ]]; then HStylsDi="$HDisplUL";
   elif [[ "$1" == "UR" || "$1" == "ur" || "$1" == "P0" || "$1" == "p0" || "$1" == "DP" || "$1" == "dp" ]]; then HStylsDi="$HDisplUR";
   elif [[ "$1" == "DL" || "$1" == "dl" || "$1" == "P2" || "$1" == "p2" || "$1" == "2P" || "$1" == "2p" ]]; then HStylsDi="$HDisplDL";
@@ -50,6 +72,9 @@ if     [[ "$1" !=   "" ]]; then # test command-line params for anything resembli
   elif [[ "$1" == "BL" || "$1" == "bl"                                                                 ]]; then HStylsDi="$HDisplDL";
   elif [[ "$1" == "BR" || "$1" == "br"                                                                 ]]; then HStylsDi="$HDisplDR"; fi; fi
 if     [[ "$2" !=   "" ]]; then # && allow for a second parameter in the same format as the first for specifying a display for just touch instead of stylus;
+# if   [[ "$2" ==  "l" || "$2" ==  "0"                                                                 ]]; then HTouchDi="$HDisplLt";
+# elif [[ "$2" ==  "m" || "$2" ==  "1"                                                                 ]]; then HTouchDi="$HDisplMd";
+# elif [[ "$2" ==  "r" || "$2" ==  "2"                                                                 ]]; then HTouchDi="$HDisplRt"; fi; fi
   if   [[ "$2" == "UL" || "$2" == "ul" || "$2" == "D0" || "$2" == "d0" || "$2" == "DV" || "$2" == "dv" ]]; then HTouchDi="$HDisplUL";
   elif [[ "$2" == "UR" || "$2" == "ur" || "$2" == "P0" || "$2" == "p0" || "$2" == "DP" || "$2" == "dp" ]]; then HTouchDi="$HDisplUR";
   elif [[ "$2" == "DL" || "$2" == "dl" || "$2" == "P2" || "$2" == "p2" || "$2" == "2P" || "$2" == "2p" ]]; then HTouchDi="$HDisplDL";

@@ -21,7 +21,7 @@ my $hirs   = eval("use Time::HiRes; 8") || 0;
 my $locl   = eval("use Time::Local; 8") || 0;
 my $zown   = eval("use Time::Zone ; 8") || 0;
 #ur @EXPORT= qw(); # originally thought about wanting to eventually export d8() here as new() wrapper, but probably no longer needed for those older usages;
-our $VERSION='0.0';my $d8VS='L94MAuni';
+our $VERSION='0.0';my $d8VS='MCSLASHS';
 my @_tzofsetz=( # global storage for TimeZone Offsets matching /^[-+][01]\d(00|30|45)$/ shhmm (with non-integer offsets mapping in b64 between R(27)..g(42))
   '-1130',#NUT
   '-0930',
@@ -324,7 +324,8 @@ sub new{my($nvkr,$ityp,$idat)=@_;my $nobj=ref($nvkr);
   my $clas=$ityp;$clas=$nobj|| $nvkr if(!defined($ityp)|| $ityp!~ /::/);
   my $self=Octology::d8::fldz->new($clas);my $rgxs;my $mont;my $zfou=0;my($lofs,$hofs,$mofs);my @attz=$self->_attribute_names();
          # timelocal($sec,$min,$hour,$mday,$mon,$year,$wday,$yday,$isdst)
-  my @ltim=localtime();my $subs= 0;if($hirs){$subs=Time::HiRes::time();}
+  my $subs= 0;if($hirs){$subs=Time::HiRes::time();} my @ltim=();  # tried HiRes before localtime but delay between might account for d8ok phass wiggle?
+  if($subs){@ltim=localtime(int($subs));}else{@ltim=localtime();} # now trying to localtime on result seconds of HiRes (if any);
   my @dayo=Time::DayOfWeek::DayNames  ();for(@dayo){$_=substr($_,0,3) if(length($_)> 3);} # trunc8 to expected uniq 1st 3chrz, if longer
   my @mnth=Time::DayOfWeek::MonthNames();for(@mnth){$_=substr($_,0,3) if(length($_)> 3);}
   for(@attz){if($nobj){$self->{$_}=$nvkr->{              $_};}  # copy if supposed to (because iNvoker OBJect has become a proper ref)
@@ -334,11 +335,14 @@ sub new{my($nvkr,$ityp,$idat)=@_;my $nobj=ref($nvkr);
     $self->{'Y'}=$ltim[5]+1900;
     $self->{'M'}=$ltim[4]+   1;
     $self->{'D'}=$ltim[3];
+    $self->{'W'}=$ltim[6];
+    $self->{'yday'}=$ltim[7]; # MCSLASHS:store WeekDay YearDay && isDST from localtime in objects too;
+    $self->{'i'}=$ltim[8];
     $self->{'e'}=$self->{'t'} ; # load epoc fieldofTime::HiRes::time();
     $self->{'z'}=            0; # '0' UTC +0000 as default zone prior to any detection attempt (was GMT B4 UTC)
     $self->{'h'}=$ltim[2]; #22; # 'M' CDT -0500 was my hard-coded zone before checking Time::Zone methods below
     $self->{'m'}=$ltim[1];
-    $self->{'s'}=$ltim[0];
+    $self->{'s'}=$ltim[0]; # try *not* rounding below instead of just int to see if phass 00 -> 59 can just repeat second once && not on 00?
     $self->{'p'}=int($subs*$self->{'_pps'});#$subs*=$self->{'_pps'};$subs-=int($subs); # this would prepare $subs to be used to calcul8 sub-phasses l8r
     if(exists($ENV{'d8tzofst'})){ # let explicit d8 ENVironment variable directly set zone with expected offset format: /^[-+]?[01]?\d(00|30|45)?$/
       $lofs  =$ENV{'d8tzofst'};$lofs=~ s/^(\d)/+$1/;$lofs=~ s/^([-+])(\d)$/${1}0${2}00/;$lofs=~ s/^([-+]\d\d)$/${1}00/;
@@ -506,6 +510,8 @@ sub new{my($nvkr,$ityp,$idat)=@_;my $nobj=ref($nvkr);
   $self->{'e'}+=int($hofs*3_600.0) if($hofs); # `d8 e|cma;ec;d8 t|cma` is still resulting in approxim8ly 6-minutes (360-seconds) discrepancy,not sure where;
   $self->{'e'}+=int($mofs*   60.0) if($mofs);
   $self->{'e'}+=            362.0; # add still needed adjustmNt?
+  if($self->{'M'} && $self->{'D'}){$self->{'k'}=$self->yday() / 6;
+                                   $self->{'K'}=$self->yday() % 6;} # set k for Yk && K for YkDay for when Month && Day are set;
   return($self);}  # just disable l8 comput8ion of upd8d Epoch float seconds above since they're getting values off by about 1.5Million seconds,4getngZone?;
 sub subsecond{  my $self=shift(@_);return(           $self->p(@_));}
 sub zone_offset{my $self=shift(@_);return($_tzofsetz[$self->z]   );}
@@ -574,8 +580,9 @@ sub tzoffset        {return(           0      );} # timezone offset in a Time::S
 sub julian_day      {return(           0      );} # number of days since Julian period began
 sub mjd             {return(           0      );} # modified Julian date (JD-2400000.5 days)
 sub week            {return(           0      );} # week number (ISO-8601)
-sub    is_leap_year {return(           0      );} # true if it is a leap year
 sub month_last_day  {return(days_in($_[0]->YM));} # 28-31
+sub    is_leap_year {if    (days_in($_[0]->Y, 2) == 29){return(1);}  # was true if it is was leap year when d8 obj crE8d but *not* when
+                     else                              {return(0);}} #   Y set without ILY calQl8ion but trying to calQl8 now;
 sub DESTROY         {} # do nothing but define in case && to calm warning in test.pl
 8;
 

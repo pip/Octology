@@ -1,6 +1,7 @@
 # KCJL6Pls:~/.log/prof.ls crE8d by PipStuart <Pip@CPAN.Org> 4 a b64 key-table list of YouTube channel profile d8bo master color-sequences;my $d8VS='LCALCULU';
 # 2du:stRt adding optional extra layerz for DarkAvrgLite && SGRcodez B4 mAB also bkgrndaloh BtwEn && multiSGRz 2 flag attrz on thru all d8bo usagez;
-d rOygcbmP FLADbLAD COoLcoOl # PipStuart Primary U2bchanL ; RoYGCBMp
+# rOygcbmP FLADbLAD COoLcoOl # PipStuart Primary U2bchanL ; RoYGCBMp
+d RoYGCBMp                   #
 # RF3Hh2fr                   # PedantPip Secndry U2bchanL ; RfFrHh32 RHFrRHFf FFFFLLLL iIiuDUDu ;
 # R F 3 r H h 2 f            # Ped8bSPip Secndry U2bchanL ; RfFrHh32
 # D:RUIc A:FDCol L:3 Fa:fbuic D:HOI hfoi 2bI rki #D:RUIc A:FDCol L:3 Fa:rbuicL D:HOI hfoil 2b fk;

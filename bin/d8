@@ -21,7 +21,7 @@
 use strict; use warnings;use utf8;use v5.10;
 use Time::HiRes qw(time);use Time::Piece;
 use      Octology::a8;use Octology::b8;
-use      Octology::d8;my $VERSION='0.0';my $d8VS='L87MMETS';my $Auth='PipStuart <Pip@CPAN.Org>';my $parm=join(' ',@ARGV);my @id8a;
+use      Octology::d8;my $VERSION='0.0';my $d8VS='MB9LCRAP';my $Auth='PipStuart <Pip@CPAN.Org>';my $parm=join(' ',@ARGV);my @id8a;
 my $d8im=Octology::d8->new();
 open my $out8,'>&',STDOUT or die "Can't open  duplic8 STDOUT handle: $!";binmode $out8,':encoding(UTF-8)'; # crE8 local duplic8 of global
 if(!@ARGV && !-t STDIN){chomp(@id8a=<STDIN>);$parm=join(' ',@id8a);} # should eventually handle piping in d8 d8a while giving optionz too
@@ -86,7 +86,7 @@ if($parm=~ /(^|\s)-+h/i){ # should probably upd8 to use GetOpts or something mor
       $d8im   =Octology::d8->new('cpan'  =>  $sptm); # try2tk all digits aftr -e as input epoch float seconds 2mk a Piece from thN mk new d8 obj2prnt;
                            print $out8 $d8im->colr(   'a');}else{
                            print $out8  b8clr( b64($epch));}} # should probably just use a8 && b8.pm for this, but just wanting to see if it works;
-  elsif($icfc=~/^(f|d8)/i){print $out8 $d8im->full(   'a');}  # used to also accept 'e' for Expand but favor Full now  #              Full with ansi
+  elsif($icfc=~/^(f|d8)/ ){print $out8 $d8im->full(   'a');}  # used to also accept 'e' for Expand but favor Full now  #              Full with ansi
   elsif($icfc eq 'l'     ){print $out8 $d8im->lsft(   'a');}                                                           #              Lsft with ansi
   elsif($icfc eq 'c'     ){print $out8 $d8im->cpan(   'a');}                                                           #              Cpan with ansi
   elsif($icfc eq 'i'     ){print $out8 $d8im->iso8(   'a');}                                                           #              Iso8 with ansi
@@ -94,13 +94,13 @@ if($parm=~ /(^|\s)-+h/i){ # should probably upd8 to use GetOpts or something mor
   elsif($icfc eq 'e'     ){print $out8 $d8im->epoc(   'a');}                                                           #              Epoc (floatsEconds);
   elsif($icfc eq 't'     ){print $out8 $d8im->tmep(   'a');}                                                           #              Tmep (floatsEconds);
   else                    {print $out8 $d8im->colr( $icfc);} exit;}
-elsif  ($parm=~/^(f|d8)/i){print $out8 $d8im->full(      );  exit;}                                                    # shortcuts to Full d8 justxt
-elsif  ($parm=~ /^l/i    ){print $out8 $d8im->lsft(      );  exit;}                                                    # shortcut  to Lsft d8 justxt
-elsif  ($parm=~ /^c/i    ){print $out8 $d8im->cpan(      );  exit;}                                                    # shortcut  to Cpan d8 justxt
-elsif  ($parm=~ /^i/i    ){print $out8 $d8im->iso8(      );  exit;}                                                    # shortcut  to Iso8 d8 justxt
-elsif  ($parm=~ /^m/i    ){print $out8 $d8im->msep(      );  exit;}                                                    # shortcut  to Msep (intMillisecs);
-elsif  ($parm=~ /^e/i    ){print $out8 $d8im->epoc(      );  exit;}                                                    # shortcut  to Epoc (floatsEconds);
-elsif  ($parm=~ /^t/i    ){print $out8 $d8im->tmep(      );  exit;}                                                    # shortcut  to Tmep (floatsEconds);
+elsif  ($parm=~/^(f|d8)/ ){print $out8 $d8im->full(      );  exit;}                                                    # shortcuts to Full d8 justxt
+elsif  ($parm=~ /^l/     ){print $out8 $d8im->lsft(      );  exit;}                                                    # shortcut  to Lsft d8 justxt
+elsif  ($parm=~ /^c/     ){print $out8 $d8im->cpan(      );  exit;}                                                    # shortcut  to Cpan d8 justxt
+elsif  ($parm=~ /^i/     ){print $out8 $d8im->iso8(      );  exit;}                                                    # shortcut  to Iso8 d8 justxt
+elsif  ($parm=~ /^m/     ){print $out8 $d8im->msep(      );  exit;}                                                    # shortcut  to Msep (intMillisecs);
+elsif  ($parm=~ /^e/     ){print $out8 $d8im->epoc(      );  exit;}                                                    # shortcut  to Epoc (floatsEconds);
+elsif  ($parm=~ /^t/     ){print $out8 $d8im->tmep(      );  exit;}                                                    # shortcut  to Tmep (floatsEconds);
 elsif(length($parm)){
   if   (@ARGV> 1 || @id8a> 1){
     if   ($parm=~ /^\s*([0-9._]+)                                                                                    \s*$/x ){

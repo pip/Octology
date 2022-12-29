@@ -1,6 +1,30 @@
 #!/usr/bin/perl
-use strict;use warnings;use utf8;use v5.10;use Octology::a8;use Octology::b8;
-my $d8VS='LCALAMAR'; # 2du:slurp f0n.ls && gener8 4mz of all b64 area-codez regionally (not Default sorted numerical order), 3-prefixes numerical, 3-suffix+1;
+use strict;use warnings;use utf8;use v5.10;use Octology::a8;use Octology::b8;my $d8VS='MCFLIfox';
+# 2du:slurp f0n.ls && gener8 4mz of all b64 area-codez regionally (not Default sorted numerical order), 3-prefixes numerical, 3-suffix+1decimal;
+my $f0nf="$ENV{'HOME'}/dox/Ppl/fOn.ls";my $name='';my @fldz=();my %mppl=();my $b64f='';my $b64p='';my $b64s='';my $b64n='';
+open(my $f0nh, '<', $f0nf);
+while( <$f0nh>){
+  if(/^(.{20})/){my $head=$1;$name=sprintf("%-20s",$head) if($head=~ /\w/);}
+  if(/\((\d\d\d)\)\s?(\d\d\d)-(\d\d\d)(\d)/){
+    my $ac0d=$1;my $prfx=$2;my $sufx=$3;my $fnal=$4;$b64f=b64("$ac0d$prfx$sufx$fnal");my $b64t=b10($b64f);
+    my @b64d=(b64($1),b64($2),b64($3),    $4 );my $leng=0;for my $digt (@b64d){$leng+=length($digt);} my $spad=' ' x (7-$leng);
+    if($b64t=~/(\d\d\d)(\d\d\d)(\d\d\d\d)/){@fldz=($1,$2,$3);}   $b64p="($b64d[0])$b64d[1]-$b64d[2]\[$b64d[3]\]";
+                                                                 $b64n='(' . b64($fldz[0]) . ')' . b64("$fldz[1]$fldz[2]");
+    my $fld0=$fldz[0] . substr($fldz[1],0,2);my $fld1=substr($fldz[1],2,1) . $fldz[2];$b64s= b64($fld0) . '-' . b64($fld1);
+    push(@{$mppl{$name}},[$fldz[0],$fldz[1],$fldz[2],$b64p.$spad,$b64n,$b64f,$b64s]);
+    o8("$name ($ac0d)$prfx-$sufx$fnal => $b64p$spad => (" .
+      sprintf("%03d",b10($b64d[0])) . ')' .
+      sprintf("%03d",b10($b64d[1])) . '-' .
+      sprintf("%03d",b10($b64d[2])) . b10($b64d[3]) . " -> $b64f -> ($fldz[0])$fldz[1]-$fldz[2] => $b64s ;\n");}}
+close(  $f0nh);my %acdz=();
+for(sort keys %mppl){
+  for my $indx (0..$#{$mppl{$_}}){
+    @fldz=($mppl{$_}[$indx][0],$mppl{$_}[$indx][1],$mppl{$_}[$indx][2]);
+    $b64p= $mppl{$_}[$indx][3];$b64n= $mppl{$_}[$indx][4];
+    $b64f= $mppl{$_}[$indx][5];$b64s= $mppl{$_}[$indx][6];$acdz{$_}{$fldz[0]}="$fldz[1]-$fldz[2] $b64p $b64n $b64f $b64s";}}
+for(sort keys %acdz){
+  for my $acod (sort {$a <=> $b} keys %{$acdz{$_}}){
+    o8("$_ ($acod)$acdz{$_}{$acod};\n");}}
 #    setup gNpr0 2tk 64 4-letr werdz && gNR8 ~/.log/prof.ls from pr0.ls 4LoKi;
 # LK (){ if [[ $COLUMNS -lt 160               ]]; then # new LoKi StarLord Quill (Quest?) ChristopherNitzchke brother-man (not LiuKang) to show b10 of b64 LK;
 #   export lk='lOkI';       b10 $lk|cma|b8clr;ec "$W=${m}l${O}O${k}k${p}I$g as$B b10$w;$z"; # l8r substr/regex out sub-charz && auto y/// or UC($lk) 42 LK;

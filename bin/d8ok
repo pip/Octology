@@ -9,8 +9,8 @@
 #     'x|q|Esc' eXitz.    -f -B -b -d -c -s -p -r -h (with the same meaningz as above) can be given on the command-line.
 use strict;use warnings;use utf8;use v5.10;use Octology::a8;use Octology::b8;
                         use Encode;        use Octology::d8;use Curses::Simp;
-my $VERSION='0.0';my $d8VS='L8FM1GHT';my $Auth='PipStuart <Pip@CPAN.Org>';my $name=$0;$name=~s/.*\///;my $d8im;my @fldz;my @lasf;my @text;my @fclr;my $okey='';
-my $sepr=  'wKKw';my $d8bo=$cmap{'d8bo'};my $prof=$d8bo;my $tmbo=substr( $d8bo,4);my @limz=(63,12,31,42,23); # 'YGTBUDSN'&&'Fo57ZNVp' altrn8z4antiRed&&XprimNt
+my $VERSION='0.0';my $d8VS='MCSLCert';my $Auth='PipStuart <Pip@CPAN.Org>';my $name=$0;$name=~s/.*\///;my $d8im;my @fldz;my @lasf;my @text;my @fclr;my $okey='';
+my $sepr='YwKKwO';my $d8bo=$cmap{'d8bo'};my $prof=$d8bo;my $tmbo=substr( $d8bo,4);my @limz=(63,12,31,42,23); # 'YGTBUDSN'&&'Fo57ZNVp';
 # now all default base colrz @bclz below start Bold being above index 7, downside being that custom .pal8 filez won't be able to change o or p like RYGCBM
 my $bilt=0;       my @bclz= split( //,$d8bo);my $fulc=' ';my $parm='';my $barz=0;my $bold=0;my $sbld=1;my $sped= 0.975;my @spdz=(0, 0.015, 0.151, 0.475,$sped);
 my $argz='';$argz= join(' ',@ARGV) if(@ARGV);my $bchr='#';my $keey=-1;my $rand=0;my $clea=0;my $demo=0; # old speed progression:(   0.016, 0.064, 0.256      )
@@ -48,10 +48,10 @@ while($argz=~ s/s//i){ for(0..$#spdz){ if($sped == $spdz[$_]){ if($_ == $#spdz){
                                                                else            { $sped = $spdz[$_ + 1]; } last; } } }
 $fulc  =                $bclz[2] x 3 . ' ' . $bclz[1] x 3 . ' ' . $bclz[2] x 2 . ' ' . $bclz[4] x 2 . 'W' .
    $bclz[5] x 2 . 'W' . $bclz[6] x 2 . 'W' . $bclz[7] x 2 . ' ' . $bclz[3] x 5 . ' ' . $bclz[0] x 4 . ' ' ;
-if($argz=~ /f/i){$parm  = 'f';$fclr[0] =               $fulc ;$okey=$parm;} # do some very basic parameter flag handling
+if($argz=~ /f/i){$parm  = 'f';$fclr[0] =             $fulc ;$okey=$parm;} # do some very basic parameter flag handling
 if($argz=~ /1/ ){$parm  = '1';$fclr[0] ="$d8bo  $tmbo  $fulc";$okey=$parm;}
-if($argz=~ /4/ ){$parm  = '4';$fclr[0] ="$d8bo  $sepr  $fulc";$okey=$parm;} # proly 48pt TrueTypeFont && 49 or 50 charz wId
-if($argz=~ /8/ ){$parm  = '8';$fclr[0] ="$d8bo "             ;$okey=$parm;}
+if($argz=~ /4/ ){$parm  = '4';$fclr[0] ="$d8bo $sepr $fulc";$okey=$parm;} # proly 48pt TrueTypeFont && 49 or 50 charz wId
+if($argz=~ /8/ ){$parm  = '8';$fclr[0] ="$d8bo "           ;$okey=$parm;}
 if($argz=~ /r/i){$rand ^=  1 ;RandClrz();$simp->Draw();} # this rand is pretty poor. will be better to use a8:2&&8pal8 rot8z. 'f' twice resets in interactive.
 if($argz=~ /b/ ){$bold ^=  1 ;}
 if($argz=~ /d/ ){$sbld ^=  1 ;}
@@ -129,17 +129,17 @@ while  (lc($keey) ne 'x' && lc($keey) ne 'q' && ord($keey) != 27){
   if (     $d8bo  ne $prof && length($prof) >= 8){$d8bo=$prof;$tmbo=substr($d8bo,4);@bclz=split(//,$d8bo);
     $fulc=               $bclz[2] x 3 . ' ' . $bclz[1] x 3 . ' ' . $bclz[2] x 2 . ' ' . $bclz[4] x 2 . 'W' .
     $bclz[5] x 2 . 'W' . $bclz[6] x 2 . 'W' . $bclz[7] x 2 . ' ' . $bclz[3] x 5 . ' ' . $bclz[0] x 4 . ' ' ;
-                           if(length($parm)){ $parm =  '';                                  }
-                           else             { $parm = $okey                                ;}
-           $keey=$okey;    while( $#text){pop(@text);} while($#fclr){pop(@fclr);}   $bilt=0;}
-  if   (lc($keey) eq 'f'){ if(length($parm)){ $parm =  ''; $fclr[0] = ' ' x 25 .   "$d8bo ";}
-                           else             { $parm = 'f'; $fclr[0] =               $fulc  ;}$okey=$keey;}
-  elsif(   $keey  eq '1'){ if(length($parm)){ $parm =  ''; $fclr[0] = ' ' x 25 .   "$d8bo ";}
+                           if(length($parm)){ $parm =  '';                                }
+                           else             { $parm = $okey                              ;}
+           $keey=$okey;    while( $#text){pop(@text);} while($#fclr){pop(@fclr);} $bilt=0;}
+  if   (lc($keey) eq 'f'){ if(length($parm)){ $parm =  ''; $fclr[0] = ' ' x 25 . "$d8bo ";}
+                           else             { $parm = 'f'; $fclr[0] =             $fulc  ;}$okey=$keey;}
+  elsif(   $keey  eq '1'){ if(length($parm)){ $parm =  ''; $fclr[0] = ' ' x 25 . "$d8bo ";}
                            else             { $parm = '1'; $fclr[0] ="$d8bo  $tmbo  $fulc" ;}$okey=$keey;}
-  elsif(   $keey  eq '4'){ if(length($parm)){ $parm =  ''; $fclr[0] = ' ' x 25 .   "$d8bo ";}
-                           else             { $parm = '4'; $fclr[0] ="$d8bo  $sepr  $fulc" ;}$okey=$keey;}
-  elsif(   $keey  eq '8'){ if(length($parm)){ $parm =  ''; $fclr[0] = ' ' x 25 .   "$d8bo ";}
-                           else             { $parm = '8'; $fclr[0] ="$d8bo "              ;}$okey=$keey;}
+  elsif(   $keey  eq '4'){ if(length($parm)){ $parm =  ''; $fclr[0] = ' ' x 25 . "$d8bo ";}
+                           else             { $parm = '4'; $fclr[0] ="$d8bo $sepr $fulc" ;}$okey=$keey;}
+  elsif(   $keey  eq '8'){ if(length($parm)){ $parm =  ''; $fclr[0] = ' ' x 25 . "$d8bo ";}
+                           else             { $parm = '8'; $fclr[0] ="$d8bo "            ;}$okey=$keey;}
   elsif(lc($keey) eq 'r'){    $rand ^=   1 ;             RandClrz();                       $simp->Draw()  ; } # toggle Randomized Colorz
   elsif(lc($keey) eq 'i'){
     if($simp->Widt() >= 53 && $simp->Hite() >= 17){ # only if the whole dialog with borders will fit in the terminal...
@@ -181,20 +181,20 @@ while  (lc($keey) ne 'x' && lc($keey) ne 'q' && ord($keey) != 27){
                    System Stuff:
    ?/H/F1 - Help  :  i - Info  :  x/q/Esc - eXit   ");}else{$simp->Move(0,0);$simp->Prnt("$name - press 'x' to eXit,841fBbdrsCcD");$simp->GetK(4);}}
   if   ($demo       ){$sped= 0 ;
-    if ($demo ==  1 ){$parm='f';$fclr[0] =               $fulc ;}
-    if ($demo == 48 ){$parm='4';$fclr[0] ="$d8bo  $sepr  $fulc";}
-    if ($demo == 88 ){$parm='8';$fclr[0] ="$d8bo "             ;}
+    if ($demo ==  1 ){$parm='f';$fclr[0] =             $fulc ;}
+    if ($demo == 48 ){$parm='4';$fclr[0] ="$d8bo $sepr $fulc";}
+    if ($demo == 88 ){$parm='8';$fclr[0] ="$d8bo "           ;}
     if ($demo ==128 ){$bold^=1 ;}
     if ($demo ==168 ){$rand^=1 ;}
     if ($demo ==208 ){$barz^=1 ;}
         $demo++;}
   RandClrz() if($rand);$d8im = Octology::d8->new();@fldz = split(//, $d8im);@lasf = @fldz unless(@lasf);
   $d128= b128(b10($fldz[4])+64) . ' ' . b128(b10($fldz[5])+64) . ' ' .
-         b128(b10($fldz[6])+64) . ' ' . b128(b10($fldz[7])+64) . ' ' ;      # reload spaced out Chess && Cards represent8ionz of time hmsp fieldz;
+         b128(b10($fldz[6])+64) . ' ' . b128(b10($fldz[7])+64) . ' ' ;    # reload spaced out Chess && Cards represent8ionz of time hmsp fieldz;
   if   ($parm eq 'f'){$text[0] =                   $d8im->full( ) . ' ';} # used to do `pt $parm` here before there was a d8 object with methodz
-  elsif($parm eq '1'){$text[0] = "$d8im$d128"    . $d8im->full( ) . ' ';}
-  elsif($parm eq '4'){$text[0] = "$d8im  -==-  " . $d8im->full( ) . ' ';} # maybe betr l8r 2 nest 4 test in f test so else 4 can stRt wi d8im!spcz
-  elsif($parm eq '8'){$text[0] =  $d8im                           . ' ';}
+  elsif($parm eq '1'){$text[0] = "$d8im$d128"    . $d8im->full( ) . ' ';} # added Yk && YkDay (k && K) to 4 below;
+  elsif($parm eq '4'){$text[0] = "$d8im " . b64(int($d8im->{'k'})) . '-==-' . $d8im->{'K'} . ' ' . $d8im->full( ) . ' ';} # mAB betr l8r 2 nest 4 tst in f tst
+  elsif($parm eq '8'){$text[0] =  $d8im                           . ' ';}                                                 #   so else 4 can stRt wi d8im!spcz;
   else               {$text[0] = ' ' x 25        . $d8im          . ' ';}
   if   ($sbld       ){$bold   ^=  1;$simp->FlagABA7('asin' =>  $bold    );} # SpeedBold flipper; 2du:stil need 2 try 2 add test 4 w4mb && way 2 limt
   $simp->ShokScrn(3 ) if($clea); if($barz){BildBarz();}else{$simp->Draw();} $keey=$simp->GetK($sped);$keey='h' if($demo == 256);}

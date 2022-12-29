@@ -1,5 +1,12 @@
 # D4QMFYJV:tabz.ls crE8d by PipStuart <Pip@CPAN.Org> to at least .LiSt (if not also describe && comment on) collectionz of web-browser TAB address URL linkz;
 # Note:While I usually prefer to append d8a to most listz being extended in text-files, tabz.ls varE8ion invertz this tendency to prepend insertions instead;
+MBJL8m3x: HTTPS://YouTu.be/YeB-1F-UKO0 "A Brief History of Chess"
+          HTTPS://YouTu.be/MB0O1NRNSVs "TrapNation | 30M Subscribers Music Mix (10 Hours)"
+          HTTPS://Canonical.Com/careers/all     "Ubuntu Jobs"
+          HTTPS://Canonical.Com/careers/3290946 "Junior DevOps"
+          HTTPS://GitHub.Com/orgs/libsdl-org/repositories?type=all
+          HTTPS://WWW.ParallelRealities.Co.UK/tutorials/shooter/shooter3.php
+          HTTPS://Wiki.LibSDL.Org/SDL_Scancode
 L6RM0Vie: HTTPS://YouTu.be/w-0QCSTcTTw "Women Should Feel Uncomfortable Around Men" # L6M:0FF0 of AlexGrace && another VietNamEse odd allowed OpNscrpt && cp;
 L49MEANS: HTTPS://YouTu.be/Ws6qmXDJgwU "A Mathematician's Lament" # L2C:0BI0 of Tibees with still yet another very odd VietNamEse Captz of quite-knowing AI?;
 L3SM0KED: HTTPS://YouTu.be/mu4TwhJRv3I "What Do They Teach in Schools These Days?" # L3Q:0XH0 of VicedRhino && another VietNamEse Captz of super-knowing AI?;
